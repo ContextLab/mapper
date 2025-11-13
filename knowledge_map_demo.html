@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Map Demo - Conceptual Learning Visualization</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .question-section {
+            margin-bottom: 30px;
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .question-number {
+            font-size: 0.9em;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .question-text {
+            font-size: 1.3em;
+            color: #333;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            padding: 18px 24px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.05em;
+            display: flex;
+            align-items: center;
+        }
+
+        .option:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+            transform: translateX(5px);
+        }
+
+        .option.selected {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+
+        .option.correct {
+            border-color: #4caf50;
+            background: #e8f5e9;
+        }
+
+        .option.incorrect {
+            border-color: #f44336;
+            background: #ffebee;
+        }
+
+        .option-label {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #667eea;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 15px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.05em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 600px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .map-header h2 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .map-header p {
+            color: #666;
+            font-size: 1.05em;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: #e0e0e0;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 1.5em;
+            }
+
+            .question-text {
+                font-size: 1.1em;
+            }
+
+            .map-container {
+                height: 400px;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        .legend {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            font-size: 0.9em;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Knowledge Map Explorer</h1>
+            <p>Answer questions to visualize your conceptual understanding</p>
+        </div>
+
+        <div class="content">
+            <!-- Quiz Section -->
+            <div id="quiz-section" class="quiz-section">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+
+                <div class="question-section fade-in" id="question-container">
+                    <div class="question-header">
+                        <span class="question-number" id="question-number">Question 1 of 10</span>
+                    </div>
+                    <div class="question-text" id="question-text"></div>
+                    <div class="options" id="options-container"></div>
+                </div>
+
+                <div class="button-container">
+                    <button class="btn btn-secondary hidden" id="prev-btn">← Previous</button>
+                    <button class="btn btn-primary" id="next-btn" disabled>Next →</button>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div id="map-section" class="map-section hidden">
+                <div class="map-header">
+                    <h2>Your Knowledge Map</h2>
+                    <p>Visual representation of your conceptual understanding</p>
+                </div>
+
+                <div class="map-container">
+                    <canvas id="map-canvas"></canvas>
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background: #4caf50;"></div>
+                            <span>Correct</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background: #f44336;"></div>
+                            <span>Incorrect</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background: #999;"></div>
+                            <span>Unanswered</span>
+                        </div>
+                    </div>
+                    <div class="loading hidden" id="loading">
+                        <div class="spinner"></div>
+                        <p>Generating your knowledge map...</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="correct-count">0</div>
+                        <div class="stat-label">Correct</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="accuracy-pct">0%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="total-count">10</div>
+                        <div class="stat-label">Total Questions</div>
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button class="btn btn-secondary" id="restart-btn">🔄 Start Over</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample questions dataset (Khan Academy style - Biology/Cellular topics)
+        const questionsData = [
+            {
+                question: "What is the primary function of mitochondria in cells?",
+                options: [
+                    "Protein synthesis",
+                    "Energy production",
+                    "DNA storage",
+                    "Cell division"
+                ],
+                correctIndex: 1,
+                topic: "cell_organelles",
+                embedding: [0.8, 0.3, -0.2, 0.6, 0.1]
+            },
+            {
+                question: "Which process allows plants to convert sunlight into chemical energy?",
+                options: [
+                    "Cellular respiration",
+                    "Photosynthesis",
+                    "Fermentation",
+                    "Glycolysis"
+                ],
+                correctIndex: 1,
+                topic: "photosynthesis",
+                embedding: [0.7, 0.6, 0.2, -0.3, 0.4]
+            },
+            {
+                question: "What is the basic unit of heredity?",
+                options: [
+                    "Chromosome",
+                    "DNA",
+                    "Gene",
+                    "Protein"
+                ],
+                correctIndex: 2,
+                topic: "genetics",
+                embedding: [-0.2, 0.8, 0.5, 0.1, -0.4]
+            },
+            {
+                question: "Which structure controls what enters and exits a cell?",
+                options: [
+                    "Cell wall",
+                    "Nucleus",
+                    "Cell membrane",
+                    "Cytoplasm"
+                ],
+                correctIndex: 2,
+                topic: "cell_structure",
+                embedding: [0.9, 0.2, -0.3, 0.5, 0.2]
+            },
+            {
+                question: "What type of bond holds the two strands of DNA together?",
+                options: [
+                    "Ionic bonds",
+                    "Covalent bonds",
+                    "Hydrogen bonds",
+                    "Peptide bonds"
+                ],
+                correctIndex: 2,
+                topic: "molecular_biology",
+                embedding: [-0.1, 0.7, 0.6, 0.2, -0.5]
+            },
+            {
+                question: "In which organelle does photosynthesis occur?",
+                options: [
+                    "Mitochondria",
+                    "Chloroplast",
+                    "Ribosome",
+                    "Endoplasmic reticulum"
+                ],
+                correctIndex: 1,
+                topic: "photosynthesis",
+                embedding: [0.6, 0.7, 0.1, -0.2, 0.5]
+            },
+            {
+                question: "What is the product of cellular respiration?",
+                options: [
+                    "Glucose and oxygen",
+                    "Carbon dioxide and water",
+                    "ATP energy",
+                    "Both B and C"
+                ],
+                correctIndex: 3,
+                topic: "cellular_respiration",
+                embedding: [0.5, 0.4, -0.1, 0.7, 0.3]
+            },
+            {
+                question: "Which macromolecule stores genetic information?",
+                options: [
+                    "Carbohydrates",
+                    "Lipids",
+                    "Proteins",
+                    "Nucleic acids"
+                ],
+                correctIndex: 3,
+                topic: "biomolecules",
+                embedding: [-0.3, 0.9, 0.4, 0.3, -0.3]
+            },
+            {
+                question: "What process do cells use to divide and create identical copies?",
+                options: [
+                    "Meiosis",
+                    "Mitosis",
+                    "Binary fission",
+                    "Budding"
+                ],
+                correctIndex: 1,
+                topic: "cell_division",
+                embedding: [0.3, 0.5, -0.4, 0.2, 0.8]
+            },
+            {
+                question: "Where does protein synthesis occur in the cell?",
+                options: [
+                    "Nucleus",
+                    "Golgi apparatus",
+                    "Ribosomes",
+                    "Lysosomes"
+                ],
+                correctIndex: 2,
+                topic: "protein_synthesis",
+                embedding: [0.7, 0.1, -0.2, 0.6, 0.4]
+            }
+        ];
+
+        // Application state
+        let currentQuestion = 0;
+        let userResponses = [];
+        let selectedOption = null;
+
+        // DOM elements
+        const quizSection = document.getElementById('quiz-section');
+        const mapSection = document.getElementById('map-section');
+        const questionContainer = document.getElementById('question-container');
+        const questionNumber = document.getElementById('question-number');
+        const questionText = document.getElementById('question-text');
+        const optionsContainer = document.getElementById('options-container');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const restartBtn = document.getElementById('restart-btn');
+        const progressFill = document.getElementById('progress-fill');
+        const canvas = document.getElementById('map-canvas');
+        const ctx = canvas.getContext('2d');
+        const loading = document.getElementById('loading');
+
+        // Initialize
+        renderQuestion();
+
+        // Event listeners
+        nextBtn.addEventListener('click', handleNext);
+        prevBtn.addEventListener('click', handlePrevious);
+        restartBtn.addEventListener('click', restart);
+
+        function renderQuestion() {
+            const q = questionsData[currentQuestion];
+            questionNumber.textContent = `Question ${currentQuestion + 1} of ${questionsData.length}`;
+            questionText.textContent = q.question;
+            
+            // Update progress bar
+            progressFill.style.width = `${(currentQuestion / questionsData.length) * 100}%`;
+
+            // Render options
+            optionsContainer.innerHTML = '';
+            q.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'option';
+                
+                const savedResponse = userResponses[currentQuestion];
+                if (savedResponse !== undefined && savedResponse === index) {
+                    optionDiv.classList.add('selected');
+                    selectedOption = index;
+                }
+
+                optionDiv.innerHTML = `
+                    <span class="option-label">${String.fromCharCode(65 + index)}</span>
+                    ${option}
+                `;
+                
+                optionDiv.addEventListener('click', () => selectOption(index, optionDiv));
+                optionsContainer.appendChild(optionDiv);
+            });
+
+            // Update button states
+            prevBtn.classList.toggle('hidden', currentQuestion === 0);
+            nextBtn.disabled = selectedOption === null;
+            nextBtn.textContent = currentQuestion === questionsData.length - 1 ? 'See Results →' : 'Next →';
+
+            // Fade in animation
+            questionContainer.classList.remove('fade-in');
+            void questionContainer.offsetWidth; // Trigger reflow
+            questionContainer.classList.add('fade-in');
+        }
+
+        function selectOption(index, optionElement) {
+            // Remove previous selection
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+
+            // Add new selection
+            optionElement.classList.add('selected');
+            selectedOption = index;
+            nextBtn.disabled = false;
+        }
+
+        function handleNext() {
+            // Save response
+            userResponses[currentQuestion] = selectedOption;
+
+            if (currentQuestion < questionsData.length - 1) {
+                currentQuestion++;
+                selectedOption = null;
+                renderQuestion();
+            } else {
+                // Show results
+                showResults();
+            }
+        }
+
+        function handlePrevious() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                selectedOption = userResponses[currentQuestion] ?? null;
+                renderQuestion();
+            }
+        }
+
+        function showResults() {
+            quizSection.classList.add('hidden');
+            mapSection.classList.remove('hidden');
+            loading.classList.remove('hidden');
+
+            // Calculate stats
+            let correct = 0;
+            userResponses.forEach((response, index) => {
+                if (response === questionsData[index].correctIndex) {
+                    correct++;
+                }
+            });
+
+            document.getElementById('correct-count').textContent = correct;
+            document.getElementById('accuracy-pct').textContent = `${Math.round((correct / questionsData.length) * 100)}%`;
+            document.getElementById('total-count').textContent = questionsData.length;
+
+            // Generate knowledge map
+            setTimeout(() => {
+                loading.classList.add('hidden');
+                generateKnowledgeMap();
+            }, 1500);
+        }
+
+        function generateKnowledgeMap() {
+            // Set canvas size
+            const container = canvas.parentElement;
+            canvas.width = container.clientWidth;
+            canvas.height = container.clientHeight;
+
+            // Simple 2D projection using PCA-like approach
+            // In reality, you'd use actual embeddings and dimensionality reduction
+            const points = questionsData.map((q, idx) => {
+                // Project 5D embedding to 2D (simplified)
+                const x = q.embedding[0] * 0.6 + q.embedding[2] * 0.4;
+                const y = q.embedding[1] * 0.6 + q.embedding[3] * 0.4;
+                
+                // Normalize to canvas coordinates
+                const canvasX = (x + 1) * (canvas.width / 2.5) + canvas.width * 0.2;
+                const canvasY = (y + 1) * (canvas.height / 2.5) + canvas.height * 0.2;
+                
+                const isCorrect = userResponses[idx] === q.correctIndex;
+                const wasAnswered = userResponses[idx] !== undefined;
+                
+                return {
+                    x: canvasX,
+                    y: canvasY,
+                    question: q.question,
+                    topic: q.topic,
+                    isCorrect,
+                    wasAnswered,
+                    index: idx
+                };
+            });
+
+            // Animation
+            let animationProgress = 0;
+            const animate = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw connections first (lighter)
+                ctx.strokeStyle = 'rgba(150, 150, 150, 0.2)';
+                ctx.lineWidth = 1;
+                
+                points.forEach((p1, i) => {
+                    points.forEach((p2, j) => {
+                        if (i < j) {
+                            const dist = Math.hypot(p2.x - p1.x, p2.y - p1.y);
+                            if (dist < 200) { // Only connect nearby points
+                                ctx.beginPath();
+                                ctx.moveTo(p1.x, p1.y);
+                                ctx.lineTo(p2.x, p2.y);
+                                ctx.stroke();
+                            }
+                        }
+                    });
+                });
+
+                // Draw points
+                points.forEach((point, idx) => {
+                    const delay = idx * 50;
+                    if (animationProgress > delay) {
+                        const progress = Math.min(1, (animationProgress - delay) / 300);
+                        const radius = 15 * progress;
+
+                        // Determine color
+                        let color;
+                        if (!point.wasAnswered) {
+                            color = '#999';
+                        } else if (point.isCorrect) {
+                            color = '#4caf50';
+                        } else {
+                            color = '#f44336';
+                        }
+
+                        // Draw point
+                        ctx.beginPath();
+                        ctx.arc(point.x, point.y, radius, 0, Math.PI * 2);
+                        ctx.fillStyle = color;
+                        ctx.fill();
+                        
+                        // Draw border
+                        ctx.strokeStyle = 'white';
+                        ctx.lineWidth = 3;
+                        ctx.stroke();
+
+                        // Draw label
+                        if (progress > 0.7) {
+                            ctx.fillStyle = '#333';
+                            ctx.font = 'bold 14px sans-serif';
+                            ctx.textAlign = 'center';
+                            ctx.fillText(`Q${idx + 1}`, point.x, point.y + 5);
+                        }
+                    }
+                });
+
+                animationProgress += 16;
+                if (animationProgress < 1500) {
+                    requestAnimationFrame(animate);
+                }
+            };
+
+            animate();
+
+            // Add hover interaction
+            canvas.addEventListener('mousemove', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+
+                let hovering = false;
+                points.forEach(point => {
+                    const dist = Math.hypot(mouseX - point.x, mouseY - point.y);
+                    if (dist < 20) {
+                        canvas.style.cursor = 'pointer';
+                        hovering = true;
+                        
+                        // Show tooltip (simplified)
+                        canvas.title = `Q${point.index + 1}: ${point.question.substring(0, 50)}...`;
+                    }
+                });
+
+                if (!hovering) {
+                    canvas.style.cursor = 'default';
+                    canvas.title = '';
+                }
+            });
+        }
+
+        function restart() {
+            currentQuestion = 0;
+            userResponses = [];
+            selectedOption = null;
+            mapSection.classList.add('hidden');
+            quizSection.classList.remove('hidden');
+            progressFill.style.width = '0%';
+            renderQuestion();
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (!mapSection.classList.contains('hidden')) {
+                generateKnowledgeMap();
+            }
+        });
+    </script>
+</body>
+</html>

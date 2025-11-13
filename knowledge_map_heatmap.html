@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Map Demo - Heatmap Visualization</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .question-section {
+            margin-bottom: 30px;
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .question-number {
+            font-size: 0.9em;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .question-text {
+            font-size: 1.3em;
+            color: #333;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            padding: 18px 24px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.05em;
+            display: flex;
+            align-items: center;
+        }
+
+        .option:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+            transform: translateX(5px);
+        }
+
+        .option.selected {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+
+        .option-label {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #667eea;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 15px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.05em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 700px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .map-header h2 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .map-header p {
+            color: #666;
+            font-size: 1.05em;
+        }
+
+        #map-canvas {
+            width: 100%;
+            height: 100%;
+            cursor: crosshair;
+        }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: #e0e0e0;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .legend {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            font-size: 0.9em;
+            z-index: 5;
+        }
+
+        .legend h4 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .legend-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin-right: 8px;
+            border: 2px solid white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .colorbar {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 5;
+        }
+
+        .colorbar h4 {
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            color: #333;
+        }
+
+        .colorbar-gradient {
+            width: 200px;
+            height: 20px;
+            background: linear-gradient(to right, 
+                rgba(68, 1, 84, 0.8),
+                rgba(59, 82, 139, 0.8),
+                rgba(33, 145, 140, 0.8),
+                rgba(94, 201, 98, 0.8),
+                rgba(253, 231, 37, 0.8)
+            );
+            border-radius: 4px;
+        }
+
+        .colorbar-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            pointer-events: none;
+            z-index: 1000;
+            max-width: 300px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .tooltip-hidden {
+            display: none;
+        }
+
+        .tooltip-question {
+            font-weight: 600;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .tooltip-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tooltip-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 1.5em;
+            }
+
+            .question-text {
+                font-size: 1.1em;
+            }
+
+            .map-container {
+                height: 400px;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .legend, .colorbar {
+                font-size: 0.8em;
+                padding: 10px;
+            }
+
+            .colorbar-gradient {
+                width: 150px;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Knowledge Map Explorer</h1>
+            <p>Answer questions to visualize your conceptual understanding</p>
+        </div>
+
+        <div class="content">
+            <!-- Quiz Section -->
+            <div id="quiz-section" class="quiz-section">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+
+                <div class="question-section fade-in" id="question-container">
+                    <div class="question-header">
+                        <span class="question-number" id="question-number">Question 1 of 10</span>
+                    </div>
+                    <div class="question-text" id="question-text"></div>
+                    <div class="options" id="options-container"></div>
+                </div>
+
+                <div class="button-container">
+                    <button class="btn btn-secondary hidden" id="prev-btn">← Previous</button>
+                    <button class="btn btn-primary" id="next-btn" disabled>Next →</button>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div id="map-section" class="map-section hidden">
+                <div class="map-header">
+                    <h2>Your Knowledge Map</h2>
+                    <p>Heatmap showing inferred knowledge across conceptual space</p>
+                </div>
+
+                <div class="map-container">
+                    <canvas id="map-canvas"></canvas>
+                    
+                    <div class="legend">
+                        <h4>Question Status</h4>
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background: #22c55e;"></div>
+                            <span>Correct</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background: #ef4444;"></div>
+                            <span>Incorrect</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background: #94a3b8;"></div>
+                            <span>Unanswered</span>
+                        </div>
+                    </div>
+
+                    <div class="colorbar">
+                        <h4>Inferred Knowledge</h4>
+                        <div class="colorbar-gradient"></div>
+                        <div class="colorbar-labels">
+                            <span>Low</span>
+                            <span>High</span>
+                        </div>
+                    </div>
+
+                    <div class="tooltip tooltip-hidden" id="tooltip"></div>
+                    
+                    <div class="loading hidden" id="loading">
+                        <div class="spinner"></div>
+                        <p>Generating your knowledge map...</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="correct-count">0</div>
+                        <div class="stat-label">Correct</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="accuracy-pct">0%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="total-count">10</div>
+                        <div class="stat-label">Total Questions</div>
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button class="btn btn-secondary" id="restart-btn">🔄 Start Over</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample questions dataset with 2D coordinates
+        const questionsData = [
+            {
+                question: "What is the primary function of mitochondria in cells?",
+                options: ["Protein synthesis", "Energy production", "DNA storage", "Cell division"],
+                correctIndex: 1,
+                topic: "cell_organelles",
+                x: 0.25, y: 0.35  // Normalized coordinates [0,1]
+            },
+            {
+                question: "Which process allows plants to convert sunlight into chemical energy?",
+                options: ["Cellular respiration", "Photosynthesis", "Fermentation", "Glycolysis"],
+                correctIndex: 1,
+                topic: "photosynthesis",
+                x: 0.65, y: 0.45
+            },
+            {
+                question: "What is the basic unit of heredity?",
+                options: ["Chromosome", "DNA", "Gene", "Protein"],
+                correctIndex: 2,
+                topic: "genetics",
+                x: 0.45, y: 0.75
+            },
+            {
+                question: "Which structure controls what enters and exits a cell?",
+                options: ["Cell wall", "Nucleus", "Cell membrane", "Cytoplasm"],
+                correctIndex: 2,
+                topic: "cell_structure",
+                x: 0.30, y: 0.25
+            },
+            {
+                question: "What type of bond holds the two strands of DNA together?",
+                options: ["Ionic bonds", "Covalent bonds", "Hydrogen bonds", "Peptide bonds"],
+                correctIndex: 2,
+                topic: "molecular_biology",
+                x: 0.55, y: 0.70
+            },
+            {
+                question: "In which organelle does photosynthesis occur?",
+                options: ["Mitochondria", "Chloroplast", "Ribosome", "Endoplasmic reticulum"],
+                correctIndex: 1,
+                topic: "photosynthesis",
+                x: 0.70, y: 0.50
+            },
+            {
+                question: "What is the product of cellular respiration?",
+                options: ["Glucose and oxygen", "Carbon dioxide and water", "ATP energy", "Both B and C"],
+                correctIndex: 3,
+                topic: "cellular_respiration",
+                x: 0.20, y: 0.50
+            },
+            {
+                question: "Which macromolecule stores genetic information?",
+                options: ["Carbohydrates", "Lipids", "Proteins", "Nucleic acids"],
+                correctIndex: 3,
+                topic: "biomolecules",
+                x: 0.50, y: 0.80
+            },
+            {
+                question: "What process do cells use to divide and create identical copies?",
+                options: ["Meiosis", "Mitosis", "Binary fission", "Budding"],
+                correctIndex: 1,
+                topic: "cell_division",
+                x: 0.75, y: 0.30
+            },
+            {
+                question: "Where does protein synthesis occur in the cell?",
+                options: ["Nucleus", "Golgi apparatus", "Ribosomes", "Lysosomes"],
+                correctIndex: 2,
+                topic: "protein_synthesis",
+                x: 0.35, y: 0.60
+            }
+        ];
+
+        // Application state
+        let currentQuestion = 0;
+        let userResponses = [];
+        let selectedOption = null;
+
+        // DOM elements
+        const quizSection = document.getElementById('quiz-section');
+        const mapSection = document.getElementById('map-section');
+        const questionContainer = document.getElementById('question-container');
+        const questionNumber = document.getElementById('question-number');
+        const questionText = document.getElementById('question-text');
+        const optionsContainer = document.getElementById('options-container');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const restartBtn = document.getElementById('restart-btn');
+        const progressFill = document.getElementById('progress-fill');
+        const canvas = document.getElementById('map-canvas');
+        const ctx = canvas.getContext('2d');
+        const loading = document.getElementById('loading');
+        const tooltip = document.getElementById('tooltip');
+
+        // Initialize
+        renderQuestion();
+
+        // Event listeners
+        nextBtn.addEventListener('click', handleNext);
+        prevBtn.addEventListener('click', handlePrevious);
+        restartBtn.addEventListener('click', restart);
+
+        function renderQuestion() {
+            const q = questionsData[currentQuestion];
+            questionNumber.textContent = `Question ${currentQuestion + 1} of ${questionsData.length}`;
+            questionText.textContent = q.question;
+            
+            progressFill.style.width = `${(currentQuestion / questionsData.length) * 100}%`;
+
+            optionsContainer.innerHTML = '';
+            q.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'option';
+                
+                const savedResponse = userResponses[currentQuestion];
+                if (savedResponse !== undefined && savedResponse === index) {
+                    optionDiv.classList.add('selected');
+                    selectedOption = index;
+                }
+
+                optionDiv.innerHTML = `
+                    <span class="option-label">${String.fromCharCode(65 + index)}</span>
+                    ${option}
+                `;
+                
+                optionDiv.addEventListener('click', () => selectOption(index, optionDiv));
+                optionsContainer.appendChild(optionDiv);
+            });
+
+            prevBtn.classList.toggle('hidden', currentQuestion === 0);
+            nextBtn.disabled = selectedOption === null;
+            nextBtn.textContent = currentQuestion === questionsData.length - 1 ? 'See Results →' : 'Next →';
+
+            questionContainer.classList.remove('fade-in');
+            void questionContainer.offsetWidth;
+            questionContainer.classList.add('fade-in');
+        }
+
+        function selectOption(index, optionElement) {
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+
+            optionElement.classList.add('selected');
+            selectedOption = index;
+            nextBtn.disabled = false;
+        }
+
+        function handleNext() {
+            userResponses[currentQuestion] = selectedOption;
+
+            if (currentQuestion < questionsData.length - 1) {
+                currentQuestion++;
+                selectedOption = null;
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function handlePrevious() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                selectedOption = userResponses[currentQuestion] ?? null;
+                renderQuestion();
+            }
+        }
+
+        function showResults() {
+            quizSection.classList.add('hidden');
+            mapSection.classList.remove('hidden');
+            loading.classList.remove('hidden');
+
+            let correct = 0;
+            userResponses.forEach((response, index) => {
+                if (response === questionsData[index].correctIndex) {
+                    correct++;
+                }
+            });
+
+            document.getElementById('correct-count').textContent = correct;
+            document.getElementById('accuracy-pct').textContent = `${Math.round((correct / questionsData.length) * 100)}%`;
+            document.getElementById('total-count').textContent = questionsData.length;
+
+            setTimeout(() => {
+                loading.classList.add('hidden');
+                generateKnowledgeMap();
+            }, 1500);
+        }
+
+        function generateKnowledgeMap() {
+            const container = canvas.parentElement;
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = container.clientWidth * dpr;
+            canvas.height = container.clientHeight * dpr;
+            canvas.style.width = container.clientWidth + 'px';
+            canvas.style.height = container.clientHeight + 'px';
+            ctx.scale(dpr, dpr);
+
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+
+            // Create knowledge heatmap
+            drawKnowledgeHeatmap(width, height);
+
+            // Draw question markers
+            drawQuestionMarkers(width, height);
+
+            // Add interactivity
+            addInteractivity(width, height);
+        }
+
+        function drawKnowledgeHeatmap(width, height) {
+            const gridSize = 40;
+            const sigma = 0.15; // Gaussian kernel width
+
+            // Create a 2D grid of knowledge values
+            const grid = [];
+            for (let gy = 0; gy < gridSize; gy++) {
+                grid[gy] = [];
+                for (let gx = 0; gx < gridSize; gx++) {
+                    const x = gx / (gridSize - 1);
+                    const y = gy / (gridSize - 1);
+                    
+                    // Calculate knowledge at this point based on nearby correct/incorrect answers
+                    let knowledge = 0;
+                    let totalWeight = 0;
+                    
+                    questionsData.forEach((q, idx) => {
+                        const dx = x - q.x;
+                        const dy = y - q.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        const weight = Math.exp(-(dist * dist) / (2 * sigma * sigma));
+                        
+                        if (userResponses[idx] !== undefined) {
+                            const isCorrect = userResponses[idx] === q.correctIndex;
+                            knowledge += weight * (isCorrect ? 1 : 0);
+                            totalWeight += weight;
+                        }
+                    });
+                    
+                    grid[gy][gx] = totalWeight > 0 ? knowledge / totalWeight : 0.5;
+                }
+            }
+
+            // Draw heatmap
+            const cellWidth = width / (gridSize - 1);
+            const cellHeight = height / (gridSize - 1);
+
+            for (let gy = 0; gy < gridSize - 1; gy++) {
+                for (let gx = 0; gx < gridSize - 1; gx++) {
+                    const value = grid[gy][gx];
+                    const color = viridisColor(value);
+                    
+                    ctx.fillStyle = color;
+                    ctx.fillRect(
+                        gx * cellWidth,
+                        gy * cellHeight,
+                        cellWidth + 1,
+                        cellHeight + 1
+                    );
+                }
+            }
+        }
+
+        function viridisColor(value) {
+            // Viridis colormap approximation
+            const colors = [
+                [68, 1, 84],      // Purple (low)
+                [59, 82, 139],    // Blue
+                [33, 145, 140],   // Cyan
+                [94, 201, 98],    // Green
+                [253, 231, 37]    // Yellow (high)
+            ];
+
+            const scaled = value * (colors.length - 1);
+            const idx = Math.floor(scaled);
+            const t = scaled - idx;
+
+            if (idx >= colors.length - 1) {
+                const c = colors[colors.length - 1];
+                return `rgba(${c[0]}, ${c[1]}, ${c[2]}, 0.8)`;
+            }
+
+            const c1 = colors[idx];
+            const c2 = colors[idx + 1];
+            
+            const r = Math.round(c1[0] + (c2[0] - c1[0]) * t);
+            const g = Math.round(c1[1] + (c2[1] - c1[1]) * t);
+            const b = Math.round(c1[2] + (c2[2] - c1[2]) * t);
+
+            return `rgba(${r}, ${g}, ${b}, 0.8)`;
+        }
+
+        function drawQuestionMarkers(width, height) {
+            questionsData.forEach((q, idx) => {
+                const x = q.x * width;
+                const y = q.y * height;
+                const radius = 12;
+
+                const wasAnswered = userResponses[idx] !== undefined;
+                const isCorrect = userResponses[idx] === q.correctIndex;
+
+                let color;
+                if (!wasAnswered) {
+                    color = '#94a3b8';
+                } else if (isCorrect) {
+                    color = '#22c55e';
+                } else {
+                    color = '#ef4444';
+                }
+
+                // Draw marker with white border
+                ctx.beginPath();
+                ctx.arc(x, y, radius + 2, 0, Math.PI * 2);
+                ctx.fillStyle = 'white';
+                ctx.fill();
+
+                ctx.beginPath();
+                ctx.arc(x, y, radius, 0, Math.PI * 2);
+                ctx.fillStyle = color;
+                ctx.fill();
+
+                // Draw question number
+                ctx.fillStyle = 'white';
+                ctx.font = 'bold 11px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText((idx + 1).toString(), x, y);
+            });
+        }
+
+        function addInteractivity(width, height) {
+            canvas.addEventListener('mousemove', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                const mouseX = (e.clientX - rect.left) / rect.width * width;
+                const mouseY = (e.clientY - rect.top) / rect.height * height;
+
+                let hoveredQuestion = null;
+                questionsData.forEach((q, idx) => {
+                    const x = q.x * width;
+                    const y = q.y * height;
+                    const dist = Math.sqrt((mouseX - x) ** 2 + (mouseY - y) ** 2);
+                    
+                    if (dist < 15) {
+                        hoveredQuestion = { ...q, index: idx };
+                    }
+                });
+
+                if (hoveredQuestion) {
+                    showTooltip(e.clientX, e.clientY, hoveredQuestion);
+                    canvas.style.cursor = 'pointer';
+                } else {
+                    hideTooltip();
+                    canvas.style.cursor = 'crosshair';
+                }
+            });
+
+            canvas.addEventListener('mouseleave', hideTooltip);
+        }
+
+        function showTooltip(x, y, question) {
+            const wasAnswered = userResponses[question.index] !== undefined;
+            const isCorrect = userResponses[question.index] === question.correctIndex;
+
+            let status, statusColor;
+            if (!wasAnswered) {
+                status = 'Unanswered';
+                statusColor = '#94a3b8';
+            } else if (isCorrect) {
+                status = 'Correct';
+                statusColor = '#22c55e';
+            } else {
+                status = 'Incorrect';
+                statusColor = '#ef4444';
+            }
+
+            tooltip.innerHTML = `
+                <div class="tooltip-question">Q${question.index + 1}: ${question.question}</div>
+                <div class="tooltip-status">
+                    <div class="tooltip-dot" style="background: ${statusColor};"></div>
+                    <span>${status}</span>
+                </div>
+            `;
+
+            tooltip.classList.remove('tooltip-hidden');
+            
+            // Position tooltip
+            const tooltipRect = tooltip.getBoundingClientRect();
+            let left = x + 15;
+            let top = y - tooltipRect.height / 2;
+
+            // Keep tooltip on screen
+            if (left + tooltipRect.width > window.innerWidth) {
+                left = x - tooltipRect.width - 15;
+            }
+            if (top < 0) {
+                top = 10;
+            }
+            if (top + tooltipRect.height > window.innerHeight) {
+                top = window.innerHeight - tooltipRect.height - 10;
+            }
+
+            tooltip.style.left = left + 'px';
+            tooltip.style.top = top + 'px';
+        }
+
+        function hideTooltip() {
+            tooltip.classList.add('tooltip-hidden');
+        }
+
+        function restart() {
+            currentQuestion = 0;
+            userResponses = [];
+            selectedOption = null;
+            mapSection.classList.add('hidden');
+            quizSection.classList.remove('hidden');
+            progressFill.style.width = '0%';
+            hideTooltip();
+            renderQuestion();
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (!mapSection.classList.contains('hidden')) {
+                generateKnowledgeMap();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -9,13 +9,20 @@ Requirements:
     pip install sentence-transformers scikit-learn numpy
 """
 
+import os
 import json
 import re
 import numpy as np
-from sentence_transformers import SentenceTransformer
-from sklearn.decomposition import PCA
-from sklearn.manifold import TSNE
 import argparse
+
+# Fix for macOS mutex/threading issues with PyTorch
+# Set BEFORE importing sentence_transformers
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
+
+# Import heavy ML libraries only when needed (lazy imports)
+# This avoids loading PyTorch when just validating/preserving coordinates
 
 
 def normalize_question_format(question):
@@ -90,37 +97,44 @@ def extract_questions_from_js(js_file_path):
 def generate_embeddings(questions, model_name='all-MiniLM-L6-v2'):
     """
     Generate embeddings for questions using sentence-transformers.
-    
+
     Args:
         questions: List of question dictionaries
         model_name: Name of sentence-transformer model to use
-        
+
     Popular models:
         - 'all-MiniLM-L6-v2': Fast, good quality (384 dim)
         - 'all-mpnet-base-v2': Better quality, slower (768 dim)
         - 'paraphrase-multilingual-MiniLM-L12-v2': Multilingual
     """
+    # Lazy import to avoid loading PyTorch when not needed
+    from sentence_transformers import SentenceTransformer
+
     print(f"Loading model: {model_name}")
     model = SentenceTransformer(model_name)
-    
+
     print("Generating embeddings...")
     question_texts = [q['question'] for q in questions]
     embeddings = model.encode(question_texts, show_progress_bar=True)
-    
+
     return embeddings
 
 
 def reduce_dimensions(embeddings, method='pca', n_components=2):
     """
     Reduce embedding dimensions for visualization.
-    
+
     Args:
         embeddings: High-dimensional embeddings
         method: 'pca' or 'tsne'
         n_components: Number of dimensions (typically 2 for visualization)
     """
+    # Lazy imports to avoid loading sklearn when not needed
+    from sklearn.decomposition import PCA
+    from sklearn.manifold import TSNE
+
     print(f"Reducing dimensions using {method.upper()}...")
-    
+
     if method == 'pca':
         reducer = PCA(n_components=n_components)
         reduced = reducer.fit_transform(embeddings)
@@ -130,7 +144,7 @@ def reduce_dimensions(embeddings, method='pca', n_components=2):
         reduced = reducer.fit_transform(embeddings)
     else:
         raise ValueError(f"Unknown method: {method}")
-    
+
     return reduced
 
 

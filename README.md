@@ -11,21 +11,38 @@ Complete implementation matching the visualization from your notebook (7_knowled
    - Color-coded by correct/incorrect/unanswered
    - Viridis colormap for knowledge density
    - Mobile responsive
+   - Loads questions from questions.json
 
-2. **generate_embeddings.py** - Python script for data preparation
-   - Extracts questions from experiment.js
+2. **questions.json** - Question database
+   - Contains all quiz questions with coordinates
+   - Shared by both index.html and generate_embeddings.py
+   - Easy to edit and extend
+
+3. **generate_embeddings.py** - Python script for data preparation
+   - Reads questions from questions.json or experiment.js
    - Generates embeddings using sentence-transformers
    - Reduces to 2D coordinates (PCA or t-SNE)
    - Normalizes coordinates to [0, 1] range
-   - Outputs JSON for direct use in HTML
+   - Can update questions.json in-place
 
-3. **implementation_guide.md** - Technical documentation
-4. **README.md** - This file
+4. **implementation_guide.md** - Technical documentation
+5. **README.md** - This file
 
 ## 🚀 Quick Start
 
 ### Try the Demo
-Open `index.html` in your browser. Answer the biology questions and see your knowledge map!
+
+**Important:** The demo must be served via HTTP(S) to load questions.json. Simply opening index.html directly won't work.
+
+```bash
+# Start a local web server
+python -m http.server 8000
+
+# Open in your browser
+# http://localhost:8000/index.html
+```
+
+Answer the biology questions and see your knowledge map!
 
 ### Use Your Data
 
@@ -33,10 +50,14 @@ Open `index.html` in your browser. Answer the biology questions and see your kno
 # Install dependencies
 pip install sentence-transformers scikit-learn numpy
 
-# Generate 2D coordinates from your experiment
-python generate_embeddings.py --input path/to/experiment.js
+# Option 1: Edit questions.json directly
+# Add/modify questions in the JSON file, then regenerate embeddings:
+python generate_embeddings.py --questions-json questions.json --update-in-place
 
-# This creates questions_with_embeddings.json with structure:
+# Option 2: Generate from experiment.js
+python generate_embeddings.py --input path/to/experiment.js --output questions.json
+
+# The questions.json structure:
 # [
 #   {
 #     "question": "...",
@@ -49,7 +70,7 @@ python generate_embeddings.py --input path/to/experiment.js
 #   ...
 # ]
 
-# Copy this JSON into the questionsData array in the HTML file
+# The HTML file automatically loads from questions.json - no manual copying needed!
 ```
 
 ## 📊 How the Heatmap Works

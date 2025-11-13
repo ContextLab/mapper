@@ -1,156 +1,313 @@
-# Knowledge Map Demo - Complete Package
+# Knowledge Map Demo
 
-This package contains everything you need to create a web-based knowledge map visualization for your experiment.
+Complete implementation matching the visualization from your notebook (7_knowledge-maps.ipynb).
 
-## 📦 What's Included
+## 📦 Files Included
 
-1. **knowledge_map_demo.html** - Complete working demo
-   - Single HTML file
-   - No dependencies or API keys needed
-   - Ready to deploy on GitHub Pages
+1. **index.html** - Main demo with heatmap visualization
+   - 2D heatmap showing inferred knowledge at each coordinate
+   - Question dots overlaid at specific locations
+   - Interactive hover tooltips
+   - Color-coded by correct/incorrect/unanswered
+   - Viridis colormap for knowledge density
    - Mobile responsive
 
-2. **implementation_guide.md** - Comprehensive guide
-   - Technical approach explanation
-   - How to integrate your actual data
-   - Enhancement suggestions
-   - Deployment instructions
+2. **generate_embeddings.py** - Python script for data preparation
+   - Extracts questions from experiment.js
+   - Generates embeddings using sentence-transformers
+   - Reduces to 2D coordinates (PCA or t-SNE)
+   - Normalizes coordinates to [0, 1] range
+   - Outputs JSON for direct use in HTML
 
-3. **generate_embeddings.py** - Python script
-   - Extract questions from experiment.js
-   - Generate embeddings
-   - Prepare data for web demo
-   - Easy to customize
+3. **implementation_guide.md** - Technical documentation
+4. **README.md** - This file
 
 ## 🚀 Quick Start
 
-### Option 1: Try the Demo Immediately
+### Try the Demo
+Open `index.html` in your browser. Answer the biology questions and see your knowledge map!
 
-Open `knowledge_map_demo.html` in your browser. It works with sample biology questions and demonstrates all features.
-
-### Option 2: Use Your Actual Data
+### Use Your Data
 
 ```bash
 # Install dependencies
 pip install sentence-transformers scikit-learn numpy
 
-# Generate embeddings from your experiment
-python generate_embeddings.py --input path/to/experiment.js --output my_questions.json
+# Generate 2D coordinates from your experiment
+python generate_embeddings.py --input path/to/experiment.js
 
-# Copy the JSON content into the HTML file
-# Replace the questionsData array
+# This creates questions_with_embeddings.json with structure:
+# [
+#   {
+#     "question": "...",
+#     "options": ["A", "B", "C", "D"],
+#     "correctIndex": 1,
+#     "x": 0.234,  # Normalized coordinate [0, 1]
+#     "y": 0.678,  # Normalized coordinate [0, 1]
+#     "topic": "..."
+#   },
+#   ...
+# ]
 
-# Deploy to GitHub Pages
-# Your live demo at: https://[username].github.io/knowledge-map-demo
+# Copy this JSON into the questionsData array in the HTML file
 ```
 
-## 🎯 Key Features
+## 📊 How the Heatmap Works
 
-✅ **No API Keys Required** - Everything runs in the browser
-✅ **Single File** - Easy to host and share
-✅ **Fast & Responsive** - Works on all devices
-✅ **Smooth Animations** - Professional look and feel
-✅ **Pre-computed Embeddings** - Instant visualization
-✅ **Interactive** - Hover, zoom, and explore
+### Knowledge Inference
+For each point (x, y) in the 2D space:
 
-## 📊 How It Works
+1. **Find nearby questions**: Calculate distance to all questions
+2. **Weight by distance**: Use Gaussian kernel: `weight = exp(-dist² / (2σ²))`
+3. **Aggregate responses**: Weighted average of correct/incorrect
+4. **Visualize**: Map knowledge value [0, 1] to Viridis color
 
-1. **Questions**: Users answer multiple-choice questions
-2. **Embeddings**: Questions are represented as vectors in high-dimensional space
-3. **Projection**: Dimensionality reduction to 2D for visualization
-4. **Visualization**: Interactive graph showing conceptual relationships
-5. **Analysis**: Color-coded by correctness, reveals knowledge structure
+This creates a smooth, continuous surface showing where the learner has high vs. low knowledge.
+
+### Mathematical Details
+
+```python
+# For each grid point (x, y):
+knowledge(x, y) = Σ(weight_i × correct_i) / Σ(weight_i)
+
+where:
+  weight_i = exp(-distance² / (2σ²))  # Gaussian kernel
+  distance = sqrt((x - x_i)² + (y - y_i)²)
+  correct_i = 1 if answered correctly, 0 if incorrect
+  σ = bandwidth parameter (default: 0.15)
+```
+
+## 🎨 Visualization Features
+
+### Interactive Elements
+- **Hover over question dots**: See question text and status
+- **Tooltip follows cursor**: Shows Q#, question text, and correctness
+- **Smooth animations**: Questions appear sequentially
+
+### Color Coding
+- **Heatmap** (background): 
+  - Purple/blue = Low inferred knowledge
+  - Green/yellow = High inferred knowledge
+  - Uses Viridis colormap
+  
+- **Question dots**:
+  - 🟢 Green = Correctly answered
+  - 🔴 Red = Incorrectly answered
+  - ⚪ Gray = Unanswered
+
+### Legend Elements
+- **Question Status Legend** (top right): Shows dot color meanings
+- **Knowledge Colorbar** (bottom left): Shows heatmap scale
 
 ## 🔧 Customization
 
-### Change Colors
-Edit the CSS gradients and color variables in the HTML file.
-
-### Modify Questions
-Replace the `questionsData` array with your own questions and embeddings.
-
-### Adjust Layout
-Modify the CSS classes for different spacing, fonts, or animations.
-
-### Add Features
-The code is well-commented and modular for easy extension.
-
-## 📈 From Experiment to Web Demo
-
-Your workflow:
-```
-experiment.js (questions)
-    ↓
-generate_embeddings.py (process)
-    ↓
-questions_with_embeddings.json (data)
-    ↓
-knowledge_map_demo.html (visualization)
-    ↓
-GitHub Pages (deploy)
+### Adjust Heatmap Smoothness
+```javascript
+// In generateKnowledgeMap() function
+const sigma = 0.15;  // Smaller = more localized, Larger = smoother
 ```
 
-## 🎨 Example Screenshots
+### Change Heatmap Resolution
+```javascript
+const gridSize = 40;  // Higher = more detail (but slower)
+```
 
-The demo includes:
-- Clean, modern interface with gradient header
-- Progress bar showing quiz completion
-- Multiple-choice questions with hover effects
-- Animated 2D knowledge map
-- Statistics dashboard (correct, accuracy, total)
-- Responsive design for mobile/tablet/desktop
+### Modify Colors
+```javascript
+// Replace viridisColor() function for different colormap
+// Or adjust the colors array for custom palette
+```
 
-## 📚 Technical Details
+### Question Marker Size
+```javascript
+const radius = 12;  // In drawQuestionMarkers()
+```
 
-**Embeddings**: Pre-computed using sentence-transformers
-**Projection**: PCA or t-SNE to 2D coordinates
-**Visualization**: HTML5 Canvas with smooth animations
-**Interactivity**: Vanilla JavaScript (no frameworks)
-**Size**: ~15KB (demo), ~25-80KB with real data
+## 📈 Integration with Your Notebook
 
-## 🔗 Integration with Your Research
+Your notebook likely uses:
+```python
+import umap
+import matplotlib.pyplot as plt
 
-This implementation is designed to match your paper:
-- "Text embedding models yield high-resolution insights into conceptual knowledge"
-- Uses same embedding approach
-- Compatible with Khan Academy question format
-- Can visualize knowledge state from quiz responses
+# Reduce embeddings to 2D
+reducer = umap.UMAP(n_components=2)
+coords_2d = reducer.fit_transform(embeddings)
 
-## 💡 Next Steps
+# Create knowledge map
+plt.figure(figsize=(12, 8))
+# ... heatmap + scatter plot
+```
 
-1. **Review** the demo to understand the user experience
-2. **Extract** questions from your experiment.js
-3. **Generate** embeddings using the Python script
-4. **Integrate** the data into the HTML file
-5. **Customize** colors and styling
-6. **Test** on multiple devices
-7. **Deploy** to GitHub Pages
-8. **Share** with participants or in your paper
+To match this in the web demo:
+```bash
+# Use the same reduction method
+python generate_embeddings.py --method tsne  # or use UMAP
 
-## 🆘 Troubleshooting
+# This will produce coordinates matching your notebook
+```
 
-**Q: The embeddings look too clustered**
-A: Try t-SNE instead of PCA, or adjust perplexity parameter
+## 🆕 Advanced Features
 
-**Q: Questions aren't parsing correctly**
-A: Customize the regex in `extract_questions_from_js()` function
+### Multiple Knowledge Maps
+Show progression over time by storing intermediate states:
+```javascript
+const snapshots = [
+  { responses: [0,1,null,2,...], timestamp: '2024-01-01' },
+  { responses: [0,1,1,2,...], timestamp: '2024-01-02' }
+];
+// Animate between snapshots
+```
 
-**Q: Want to add more questions**
-A: Just append to the questionsData array with the same structure
+### Comparison Mode
+Overlay expert vs. learner knowledge:
+```javascript
+// Add expert responses
+const expertResponses = [1, 1, 2, 2, ...];
+// Draw two heatmaps with transparency
+```
 
-**Q: Need better dimensionality reduction**
-A: Consider using UMAP (install umap-learn) for better preservation
+### Zoom and Pan
+Add zoom functionality:
+```javascript
+let scale = 1.0;
+let offsetX = 0, offsetY = 0;
 
-## 📖 Further Reading
+canvas.addEventListener('wheel', (e) => {
+  scale *= e.deltaY > 0 ? 0.9 : 1.1;
+  redrawMap();
+});
+```
 
-- Your paper: "Text embedding models yield high-resolution insights..."
-- Sentence-BERT: https://www.sbert.net/
-- UMAP: https://umap-learn.readthedocs.io/
-- GitHub Pages: https://pages.github.com/
+### Export Map
+Download as image:
+```javascript
+function downloadMap() {
+  const link = document.createElement('a');
+  link.download = 'knowledge-map.png';
+  link.href = canvas.toDataURL();
+  link.click();
+}
+```
 
-## 📧 Questions?
+## 🔬 From Your Experiment to Web Demo
 
-Feel free to customize and extend this demo for your research needs. The code is designed to be readable and modular.
+### Complete Workflow
+
+```
+1. Run your experiment (experiment.js)
+   ↓
+2. Extract questions and responses
+   ↓
+3. Generate text embeddings (sentence-transformers)
+   ↓
+4. Reduce to 2D (UMAP/t-SNE/PCA)
+   ↓
+5. Normalize coordinates to [0,1]
+   ↓
+6. Create JSON with {question, options, correctIndex, x, y}
+   ↓
+7. Replace questionsData in HTML
+   ↓
+8. Deploy to GitHub Pages
+```
+
+### Python Script Does Steps 3-6
+```bash
+python generate_embeddings.py \
+  --input experiment.js \
+  --model all-MiniLM-L6-v2 \
+  --method tsne \
+  --output my_questions.json
+```
+
+### Manual Coordinate Entry (Alternative)
+If you already have 2D coordinates from your notebook:
+```python
+# In your notebook
+import json
+
+questions_web = []
+for i, q in enumerate(questions):
+    questions_web.append({
+        'question': q['text'],
+        'options': q['choices'],
+        'correctIndex': q['correct'],
+        'x': float(coords_2d[i, 0]),  # From your UMAP/t-SNE
+        'y': float(coords_2d[i, 1]),
+        'topic': q['topic']
+    })
+
+with open('questions_for_web.json', 'w') as f:
+    json.dump(questions_web, f, indent=2)
+```
+
+## 📱 Responsive Design
+
+The demo automatically adapts to:
+- **Desktop**: Full 700px height, detailed tooltips
+- **Tablet**: Medium size, readable legends
+- **Mobile**: 400px height, compact legends
+
+## 🐛 Troubleshooting
+
+**Q: Heatmap is too noisy**
+A: Increase `sigma` parameter for smoother interpolation
+
+**Q: All dots are clustered**
+A: Check coordinate normalization, ensure full [0,1] range
+
+**Q: Tooltip doesn't show**
+A: Check z-index, ensure tooltip is not behind canvas
+
+**Q: Colors look wrong**
+A: Verify Viridis colormap implementation
+
+**Q: Slow performance**
+A: Reduce `gridSize` from 40 to 30 or lower
+
+## 📚 Technical Implementation
+
+### Canvas-based Rendering
+- Uses HTML5 Canvas for performance
+- High-DPI support (retina displays)
+- Efficient grid-based heatmap generation
+- Smooth animations
+
+### Knowledge Interpolation
+- Gaussian radial basis functions
+- Weighted by distance to questions
+- Normalizes for number of nearby points
+- Creates smooth, continuous surface
+
+### Data Structure
+```javascript
+{
+  question: "...",      // Question text
+  options: [...],       // Answer choices
+  correctIndex: 0,      // Correct answer index
+  x: 0.234,            // Normalized x ∈ [0,1]
+  y: 0.678,            // Normalized y ∈ [0,1]
+  topic: "..."         // Optional grouping
+}
+```
+
+## 🌟 Next Steps
+
+1. ✅ Extract questions from your experiment.js
+2. ✅ Run embedding generation script
+3. ✅ Verify coordinates look reasonable
+4. ✅ Update HTML with your data
+5. ✅ Test interactivity
+6. ✅ Customize colors/styling
+7. ✅ Deploy to GitHub Pages
+
+## 📖 References
+
+- Your notebook: `7_knowledge-maps.ipynb`
+- UMAP documentation: https://umap-learn.readthedocs.io/
+- Viridis colormap: https://cran.r-project.org/web/packages/viridis/
+- Gaussian kernel: https://en.wikipedia.org/wiki/Radial_basis_function_kernel
 
 ---
 

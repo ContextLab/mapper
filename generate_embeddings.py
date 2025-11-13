@@ -94,9 +94,12 @@ def extract_questions_from_js(js_file_path):
     return [normalize_question_format(q) for q in questions]
 
 
-def generate_embeddings(questions, model_name='all-MiniLM-L6-v2'):
+def generate_embeddings(questions, model_name='all-mpnet-base-v2'):
     """
-    Generate embeddings for questions using sentence-transformers.
+    Generate embeddings for questions using datawrangler (pydata-wrangler).
+
+    This avoids PyTorch mutex issues on macOS by using datawrangler's
+    embedding interface.
 
     Args:
         questions: List of question dictionaries
@@ -107,43 +110,63 @@ def generate_embeddings(questions, model_name='all-MiniLM-L6-v2'):
         - 'all-mpnet-base-v2': Better quality, slower (768 dim)
         - 'paraphrase-multilingual-MiniLM-L12-v2': Multilingual
     """
-    # Lazy import to avoid loading PyTorch when not needed
-    from sentence_transformers import SentenceTransformer
+    # Use datawrangler to avoid PyTorch mutex issues
+    import datawrangler as dw
 
-    print(f"Loading model: {model_name}")
-    model = SentenceTransformer(model_name)
-
-    print("Generating embeddings...")
+    print(f"Generating embeddings with datawrangler using model: {model_name}")
     question_texts = [q['question'] for q in questions]
-    embeddings = model.encode(question_texts, show_progress_bar=True)
+    print(f"Processing {len(question_texts)} questions...")
 
+    embeddings = dw.wrangle(question_texts, text_kwargs={'model': model_name})
+
+    print(f"Generated embeddings with shape: {embeddings.shape}")
     return embeddings
 
 
-def reduce_dimensions(embeddings, method='pca', n_components=2):
+def reduce_dimensions(embeddings, method='umap', n_components=2):
     """
     Reduce embedding dimensions for visualization.
 
     Args:
         embeddings: High-dimensional embeddings
-        method: 'pca' or 'tsne'
+        method: 'pca', 'tsne', or 'umap' (recommended)
         n_components: Number of dimensions (typically 2 for visualization)
     """
-    # Lazy imports to avoid loading sklearn when not needed
-    from sklearn.decomposition import PCA
-    from sklearn.manifold import TSNE
-
     print(f"Reducing dimensions using {method.upper()}...")
 
     if method == 'pca':
-        reducer = PCA(n_components=n_components)
+        from sklearn.decomposition import PCA
+        reducer = PCA(n_components=n_components, random_state=42)
         reduced = reducer.fit_transform(embeddings)
         print(f"Explained variance: {sum(reducer.explained_variance_ratio_):.2%}")
     elif method == 'tsne':
-        reducer = TSNE(n_components=n_components, random_state=42)
+        from sklearn.manifold import TSNE
+        perplexity = min(30, len(embeddings) - 1)
+        reducer = TSNE(n_components=n_components, random_state=42, perplexity=perplexity)
         reduced = reducer.fit_transform(embeddings)
+    elif method == 'umap':
+        try:
+            import umap
+        except ImportError:
+            print("UMAP not installed. Install with: pip install umap-learn")
+            print("Falling back to PCA...")
+            from sklearn.decomposition import PCA
+            reducer = PCA(n_components=n_components, random_state=42)
+            reduced = reducer.fit_transform(embeddings)
+            return reduced
+
+        n_neighbors = min(15, len(embeddings) - 1)
+        reducer = umap.UMAP(
+            n_components=n_components,
+            n_neighbors=n_neighbors,
+            min_dist=0.1,
+            metric='cosine',
+            random_state=42
+        )
+        reduced = reducer.fit_transform(embeddings)
+        print(f"UMAP reduction complete")
     else:
-        raise ValueError(f"Unknown method: {method}")
+        raise ValueError(f"Unknown method: {method}. Use 'pca', 'tsne', or 'umap'")
 
     return reduced
 
@@ -232,7 +255,7 @@ def main():
     parser.add_argument('--input', help='Path to experiment.js file')
     parser.add_argument('--questions-json', help='Path to questions JSON file (alternative to parsing JS)')
     parser.add_argument('--model', default='all-MiniLM-L6-v2', help='Sentence transformer model')
-    parser.add_argument('--method', default='pca', choices=['pca', 'tsne'], help='Dimensionality reduction method')
+    parser.add_argument('--method', default='umap', choices=['pca', 'tsne', 'umap'], help='Dimensionality reduction method (umap recommended)')
     parser.add_argument('--output', default='questions_with_embeddings.json', help='Output file path')
     parser.add_argument('--html-snippet', action='store_true', help='Generate HTML snippet')
     parser.add_argument('--preserve-coordinates', action='store_true',

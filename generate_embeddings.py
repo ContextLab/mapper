@@ -18,40 +18,73 @@ from sklearn.manifold import TSNE
 import argparse
 
 
+def normalize_question_format(question):
+    """
+    Normalize question format to use consistent keys.
+    Handles both 'choices'/'correct' and 'options'/'correctIndex' formats.
+    """
+    normalized = {
+        'question': question['question']
+    }
+
+    # Normalize options/choices
+    if 'options' in question:
+        normalized['options'] = question['options']
+    elif 'choices' in question:
+        normalized['options'] = question['choices']
+    else:
+        raise ValueError(f"Question missing 'options' or 'choices': {question}")
+
+    # Normalize correctIndex/correct
+    if 'correctIndex' in question:
+        normalized['correctIndex'] = question['correctIndex']
+    elif 'correct' in question:
+        normalized['correctIndex'] = question['correct']
+    else:
+        raise ValueError(f"Question missing 'correctIndex' or 'correct': {question}")
+
+    # Copy over other fields if present
+    for key in ['topic', 'x', 'y', 'embedding_full']:
+        if key in question:
+            normalized[key] = question[key]
+
+    return normalized
+
+
 def extract_questions_from_js(js_file_path):
     """
     Extract questions from experiment.js file.
-    
+
     Adjust the parsing logic based on your actual file structure.
     """
     with open(js_file_path, 'r') as f:
         content = f.read()
-    
+
     # Example parsing - adjust based on your actual structure
     # This is a placeholder that you'll need to customize
     questions = []
-    
+
     # Pattern to find question objects
     # You'll need to adjust this regex based on your actual format
     pattern = r'{\s*question:\s*["\']([^"\']+)["\']\s*,\s*choices:\s*\[([^\]]+)\]\s*,\s*correct:\s*(\d+)'
-    
+
     matches = re.finditer(pattern, content)
-    
+
     for match in matches:
         question_text = match.group(1)
         choices_str = match.group(2)
         correct_idx = int(match.group(3))
-        
+
         # Parse choices
         choices = re.findall(r'["\']([^"\']+)["\']', choices_str)
-        
+
         questions.append({
             'question': question_text,
             'choices': choices,
             'correct': correct_idx
         })
-    
-    return questions
+
+    return [normalize_question_format(q) for q in questions]
 
 
 def generate_embeddings(questions, model_name='all-MiniLM-L6-v2'):
@@ -125,16 +158,21 @@ def create_web_data(questions, embeddings_2d, embeddings_full=None):
     for i, q in enumerate(questions):
         question_data = {
             'question': q['question'],
-            'options': q['choices'],
-            'correctIndex': q['correct'],
+            'options': q['options'],
+            'correctIndex': q['correctIndex'],
             'x': float(x_normalized[i]),  # Normalized x coordinate [0, 1]
             'y': float(y_normalized[i]),  # Normalized y coordinate [0, 1]
-            'topic': extract_topic(q['question'])  # Optional: extract topic
         }
-        
+
+        # Add topic if it exists, otherwise extract it
+        if 'topic' in q:
+            question_data['topic'] = q['topic']
+        else:
+            question_data['topic'] = extract_topic(q['question'])
+
         if embeddings_full is not None:
             question_data['embedding_full'] = embeddings_full[i].tolist()
-        
+
         web_questions.append(question_data)
     
     return web_questions
@@ -183,9 +221,22 @@ def main():
     parser.add_argument('--method', default='pca', choices=['pca', 'tsne'], help='Dimensionality reduction method')
     parser.add_argument('--output', default='questions_with_embeddings.json', help='Output file path')
     parser.add_argument('--html-snippet', action='store_true', help='Generate HTML snippet')
-    
+    parser.add_argument('--preserve-coordinates', action='store_true',
+                       help='Preserve existing x,y coordinates if present in input')
+    parser.add_argument('--update-in-place', action='store_true',
+                       help='Update the input questions.json file in place (sets --preserve-coordinates)')
+
     args = parser.parse_args()
-    
+
+    # If update-in-place is set, enable preserve-coordinates and set output to input file
+    if args.update_in_place:
+        if not args.questions_json:
+            print("Error: --update-in-place requires --questions-json")
+            return
+        args.preserve_coordinates = True
+        args.output = args.questions_json
+        print(f"Updating {args.questions_json} in place, preserving coordinates...")
+
     # Load questions
     if args.input:
         print(f"Parsing questions from {args.input}...")
@@ -193,12 +244,23 @@ def main():
     elif args.questions_json:
         print(f"Loading questions from {args.questions_json}...")
         with open(args.questions_json, 'r') as f:
-            questions = json.load(f)
+            raw_questions = json.load(f)
+        questions = [normalize_question_format(q) for q in raw_questions]
     else:
         print("Error: Must provide either --input or --questions-json")
         return
-    
+
     print(f"Loaded {len(questions)} questions")
+
+    # Check if questions already have coordinates
+    has_coordinates = all('x' in q and 'y' in q for q in questions)
+    if has_coordinates and args.preserve_coordinates:
+        print("Questions already have coordinates - preserving them")
+        # Just validate and save as-is
+        web_data = questions
+        save_for_web(web_data, args.output)
+        print("\n✅ Done! Questions validated and saved.")
+        return
     
     # Generate embeddings
     embeddings = generate_embeddings(questions, args.model)

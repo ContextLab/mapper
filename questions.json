@@ -1,0 +1,82 @@
+[
+  {
+    "question": "What is the primary function of mitochondria in cells?",
+    "options": ["Protein synthesis", "Energy production", "DNA storage", "Cell division"],
+    "correctIndex": 1,
+    "topic": "cell_organelles",
+    "x": 0.25,
+    "y": 0.35
+  },
+  {
+    "question": "Which process allows plants to convert sunlight into chemical energy?",
+    "options": ["Cellular respiration", "Photosynthesis", "Fermentation", "Glycolysis"],
+    "correctIndex": 1,
+    "topic": "photosynthesis",
+    "x": 0.65,
+    "y": 0.45
+  },
+  {
+    "question": "What is the basic unit of heredity?",
+    "options": ["Chromosome", "DNA", "Gene", "Protein"],
+    "correctIndex": 2,
+    "topic": "genetics",
+    "x": 0.45,
+    "y": 0.75
+  },
+  {
+    "question": "Which structure controls what enters and exits a cell?",
+    "options": ["Cell wall", "Nucleus", "Cell membrane", "Cytoplasm"],
+    "correctIndex": 2,
+    "topic": "cell_structure",
+    "x": 0.30,
+    "y": 0.25
+  },
+  {
+    "question": "What type of bond holds the two strands of DNA together?",
+    "options": ["Ionic bonds", "Covalent bonds", "Hydrogen bonds", "Peptide bonds"],
+    "correctIndex": 2,
+    "topic": "molecular_biology",
+    "x": 0.55,
+    "y": 0.70
+  },
+  {
+    "question": "In which organelle does photosynthesis occur?",
+    "options": ["Mitochondria", "Chloroplast", "Ribosome", "Endoplasmic reticulum"],
+    "correctIndex": 1,
+    "topic": "photosynthesis",
+    "x": 0.70,
+    "y": 0.50
+  },
+  {
+    "question": "What is the product of cellular respiration?",
+    "options": ["Glucose and oxygen", "Carbon dioxide and water", "ATP energy", "Both B and C"],
+    "correctIndex": 3,
+    "topic": "cellular_respiration",
+    "x": 0.20,
+    "y": 0.50
+  },
+  {
+    "question": "Which macromolecule stores genetic information?",
+    "options": ["Carbohydrates", "Lipids", "Proteins", "Nucleic acids"],
+    "correctIndex": 3,
+    "topic": "biomolecules",
+    "x": 0.50,
+    "y": 0.80
+  },
+  {
+    "question": "What process do cells use to divide and create identical copies?",
+    "options": ["Meiosis", "Mitosis", "Binary fission", "Budding"],
+    "correctIndex": 1,
+    "topic": "cell_division",
+    "x": 0.75,
+    "y": 0.30
+  },
+  {
+    "question": "Where does protein synthesis occur in the cell?",
+    "options": ["Nucleus", "Golgi apparatus", "Ribosomes", "Lysosomes"],
+    "correctIndex": 2,
+    "topic": "protein_synthesis",
+    "x": 0.35,
+    "y": 0.60
+  }
+]

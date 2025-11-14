@@ -1052,12 +1052,14 @@
                         hoveredHeatmapCell = cell;
                         showHeatmapTooltip(rect, cell);
                         canvas.style.cursor = 'crosshair';
-                        startAnimation(); // Ensure dots animate back if they were hovered
+                        redrawCanvas(); // Immediate redraw to darken heatmap cell
+                        startAnimation(); // Also ensure dots animate back if they were hovered
                     } else {
                         hoveredDotIndex = null;
                         hoveredHeatmapCell = null;
                         hideTooltip();
                         canvas.style.cursor = 'default';
+                        redrawCanvas(); // Immediate redraw to un-darken heatmap cells
                         startAnimation(); // Animate dots back to normal
                     }
                 }

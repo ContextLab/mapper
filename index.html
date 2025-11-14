@@ -926,7 +926,7 @@
                     const shadowRadius = radius + (2 * animProgress);
                     ctx.save();
                     ctx.shadowColor = `rgba(0, 0, 0, ${0.15 * animProgress})`; // Very low alpha for soft edges
-                    ctx.shadowBlur = 32 * animProgress; // Large blur radius for diffuse, soft shadows
+                    ctx.shadowBlur = 50 * animProgress; // Extra large blur radius for very diffuse, soft shadows
                     ctx.shadowOffsetX = 0;
                     ctx.shadowOffsetY = 0;
 
@@ -1052,7 +1052,7 @@
                         hoveredHeatmapCell = cell;
                         showHeatmapTooltip(rect, cell);
                         canvas.style.cursor = 'crosshair';
-                        redrawCanvas(); // Immediate redraw for heatmap (no animation)
+                        startAnimation(); // Ensure dots animate back if they were hovered
                     } else {
                         hoveredDotIndex = null;
                         hoveredHeatmapCell = null;

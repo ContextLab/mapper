@@ -1,0 +1,75 @@
+{
+  "device": "mps",
+  "sample_size": 1000,
+  "batch_sizes_tested": [
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128,
+    256
+  ],
+  "results": [
+    {
+      "batch_size": 2,
+      "time_per_item": 0.08293338012695313,
+      "items_per_sec": 12.057871010071164,
+      "total_time": 82.93338012695312,
+      "estimated_full_time_hours": 5.759262508816189
+    },
+    {
+      "batch_size": 4,
+      "time_per_item": 0.06345732879638671,
+      "items_per_sec": 15.75862109179957,
+      "total_time": 63.45732879638672,
+      "estimated_full_time_hours": 4.406758944193522
+    },
+    {
+      "batch_size": 8,
+      "time_per_item": 0.05598141002655029,
+      "items_per_sec": 17.863072750860155,
+      "total_time": 55.98141002655029,
+      "estimated_full_time_hours": 3.887597918510437
+    },
+    {
+      "batch_size": 16,
+      "time_per_item": 0.055710190057754516,
+      "items_per_sec": 17.950037487994642,
+      "total_time": 55.71019005775452,
+      "estimated_full_time_hours": 3.868763198455175
+    },
+    {
+      "batch_size": 32,
+      "time_per_item": 0.06894007873535156,
+      "items_per_sec": 14.505350419439154,
+      "total_time": 68.94007873535156,
+      "estimated_full_time_hours": 4.787505467732747
+    },
+    {
+      "batch_size": 64,
+      "time_per_item": null,
+      "items_per_sec": 0,
+      "total_time": null,
+      "estimated_full_time_hours": null
+    },
+    {
+      "batch_size": 128,
+      "time_per_item": null,
+      "items_per_sec": 0,
+      "total_time": null,
+      "estimated_full_time_hours": null
+    },
+    {
+      "batch_size": 256,
+      "time_per_item": 0.14075783109664916,
+      "items_per_sec": 7.104400460059416,
+      "total_time": 140.75783109664917,
+      "estimated_full_time_hours": 9.774849381711748
+    }
+  ],
+  "optimal_batch_size": 16,
+  "optimal_rate": 17.950037487994642,
+  "optimal_time_hours": 3.868763198455175
+}

@@ -61,6 +61,9 @@ local_settings.py
 db.sqlite3
 db.sqlite3-journal
 
+# Project log files
+logs/
+
 # Flask stuff:
 instance/
 .webassets-cache
@@ -215,3 +218,20 @@ umap_reducer.pkl
 umap_bounds.pkl
 *.credentials
 .credentials/
+
+# Logs
+logs/
+*.log
+
+# Large data files
+wikipedia.pkl
+
+# Temporary outputs (keep some specific ones)
+spot_check_output.txt
+spot_check_final.txt
+spot_check_run.txt
+diagnosis_output.txt
+
+# Checkpoints
+embeddings/cluster*.pkl
+embeddings/*_checkpoint_*.pkl

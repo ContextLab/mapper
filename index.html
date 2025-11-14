@@ -827,7 +827,7 @@
                 });
 
                 if (hoveredQuestion) {
-                    showTooltip(rect, hoveredQuestion, width, height);
+                    showTooltip(rect, hoveredQuestion);
                     canvas.style.cursor = 'pointer';
                 } else {
                     hideTooltip();
@@ -838,7 +838,7 @@
             canvas.addEventListener('mouseleave', hideTooltip);
         }
 
-        function showTooltip(canvasRect, question, canvasLogicalWidth, canvasLogicalHeight) {
+        function showTooltip(canvasRect, question) {
             const wasAnswered = userResponses[question.index] !== undefined;
             const isCorrect = userResponses[question.index] === question.correctIndex;
 
@@ -864,17 +864,10 @@
 
             tooltip.classList.remove('tooltip-hidden');
 
-            // Convert normalized question coordinates (0-1) to canvas logical coordinates
-            // then scale to screen coordinates
-            const dotCanvasX = question.x * canvasLogicalWidth;
-            const dotCanvasY = question.y * canvasLogicalHeight;
-
-            // Scale from logical canvas coordinates to actual screen coordinates
-            const scaleX = canvasRect.width / canvasLogicalWidth;
-            const scaleY = canvasRect.height / canvasLogicalHeight;
-
-            const dotScreenX = canvasRect.left + (dotCanvasX * scaleX);
-            const dotScreenY = canvasRect.top + (dotCanvasY * scaleY);
+            // Convert normalized question coordinates (0-1) directly to screen coordinates
+            // canvasRect.width and canvasRect.height should equal the canvas display size
+            const dotScreenX = canvasRect.left + (question.x * canvasRect.width);
+            const dotScreenY = canvasRect.top + (question.y * canvasRect.height);
 
             // Position tooltip very close to dot
             const tooltipRect = tooltip.getBoundingClientRect();

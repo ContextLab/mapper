@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knowledge Map Demo - Heatmap Visualization</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -13,7 +15,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #00693E 0%, #004d2c 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -31,7 +33,7 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #00693E 0%, #004d2c 100%);
             color: white;
             padding: 30px;
             text-align: center;
@@ -64,7 +66,7 @@
 
         .question-number {
             font-size: 0.9em;
-            color: #667eea;
+            color: #00693E;
             font-weight: 600;
         }
 
@@ -93,14 +95,14 @@
         }
 
         .option:hover {
-            border-color: #667eea;
-            background: #f8f9ff;
+            border-color: #00693E;
+            background: #e8f5f1;
             transform: translateX(5px);
         }
 
         .option.selected {
-            border-color: #667eea;
-            background: #f8f9ff;
+            border-color: #00693E;
+            background: #e8f5f1;
         }
 
         .option-label {
@@ -108,7 +110,7 @@
             width: 30px;
             height: 30px;
             border-radius: 50%;
-            background: #667eea;
+            background: #00693E;
             color: white;
             text-align: center;
             line-height: 30px;
@@ -135,13 +137,13 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #00693E 0%, #004d2c 100%);
             color: white;
         }
 
         .btn-primary:hover:not(:disabled) {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 5px 15px rgba(0, 105, 62, 0.4);
         }
 
         .btn-primary:disabled {
@@ -202,7 +204,7 @@
             width: 50px;
             height: 50px;
             border: 4px solid #f3f3f3;
-            border-top: 4px solid #667eea;
+            border-top: 4px solid #00693E;
             border-radius: 50%;
             animation: spin 1s linear infinite;
             margin: 0 auto 15px;
@@ -229,7 +231,7 @@
         .stat-value {
             font-size: 2em;
             font-weight: 700;
-            color: #667eea;
+            color: #00693E;
         }
 
         .stat-label {
@@ -251,7 +253,7 @@
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(90deg, #00693E 0%, #004d2c 100%);
             width: 0%;
             transition: width 0.5s ease;
         }
@@ -308,12 +310,12 @@
         .colorbar-gradient {
             width: 200px;
             height: 20px;
-            background: linear-gradient(to right, 
-                rgba(68, 1, 84, 0.8),
-                rgba(59, 82, 139, 0.8),
-                rgba(33, 145, 140, 0.8),
-                rgba(94, 201, 98, 0.8),
-                rgba(253, 231, 37, 0.8)
+            background: linear-gradient(to right,
+                rgba(139, 69, 19, 0.8),
+                rgba(184, 134, 11, 0.8),
+                rgba(218, 165, 32, 0.8),
+                rgba(0, 133, 66, 0.8),
+                rgba(0, 105, 62, 0.8)
             );
             border-radius: 4px;
         }
@@ -433,8 +435,9 @@
                 </div>
 
                 <div class="button-container">
-                    <button class="btn btn-secondary hidden" id="prev-btn">← Previous</button>
-                    <button class="btn btn-primary" id="next-btn" disabled>Next →</button>
+                    <button class="btn btn-secondary hidden" id="prev-btn"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="btn btn-secondary" id="skip-btn">Skip <i class="fas fa-forward"></i></button>
+                    <button class="btn btn-primary" id="next-btn" disabled>Next <i class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
 
@@ -521,6 +524,7 @@
         const optionsContainer = document.getElementById('options-container');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
+        const skipBtn = document.getElementById('skip-btn');
         const restartBtn = document.getElementById('restart-btn');
         const progressFill = document.getElementById('progress-fill');
         const canvas = document.getElementById('map-canvas');
@@ -558,6 +562,7 @@
         // Event listeners
         nextBtn.addEventListener('click', handleNext);
         prevBtn.addEventListener('click', handlePrevious);
+        skipBtn.addEventListener('click', handleSkip);
         restartBtn.addEventListener('click', restart);
 
         function renderQuestion() {
@@ -589,7 +594,9 @@
 
             prevBtn.classList.toggle('hidden', currentQuestion === 0);
             nextBtn.disabled = selectedOption === null;
-            nextBtn.textContent = currentQuestion === questionsData.length - 1 ? 'See Results →' : 'Next →';
+            nextBtn.innerHTML = currentQuestion === questionsData.length - 1 ?
+                'See Results <i class="fas fa-chart-line"></i>' :
+                'Next <i class="fas fa-arrow-right"></i>';
 
             questionContainer.classList.remove('fade-in');
             void questionContainer.offsetWidth;
@@ -623,6 +630,17 @@
                 currentQuestion--;
                 selectedOption = userResponses[currentQuestion] ?? null;
                 renderQuestion();
+            }
+        }
+
+        function handleSkip() {
+            // Leave current question unanswered
+            if (currentQuestion < questionsData.length - 1) {
+                currentQuestion++;
+                selectedOption = null;
+                renderQuestion();
+            } else {
+                showResults();
             }
         }
 
@@ -724,13 +742,13 @@
         }
 
         function viridisColor(value) {
-            // Viridis colormap approximation
+            // Bronze-to-Green colormap (complementary to Dartmouth Green)
             const colors = [
-                [68, 1, 84],      // Purple (low)
-                [59, 82, 139],    // Blue
-                [33, 145, 140],   // Cyan
-                [94, 201, 98],    // Green
-                [253, 231, 37]    // Yellow (high)
+                [139, 69, 19],    // Saddle Brown (low)
+                [184, 134, 11],   // Dark Goldenrod
+                [218, 165, 32],   // Goldenrod
+                [0, 133, 66],     // Medium Green
+                [0, 105, 62]      // Dartmouth Green (high)
             ];
 
             const scaled = value * (colors.length - 1);
@@ -845,20 +863,21 @@
 
             tooltip.classList.remove('tooltip-hidden');
             
-            // Position tooltip
+            // Position tooltip close to dot
             const tooltipRect = tooltip.getBoundingClientRect();
-            let left = x + 15;
-            let top = y - tooltipRect.height / 2;
+            const offset = 5;  // Minimal offset from dot
+            let left = x + offset;
+            let top = y - tooltipRect.height - offset;
 
             // Keep tooltip on screen
             if (left + tooltipRect.width > window.innerWidth) {
-                left = x - tooltipRect.width - 15;
+                left = x - tooltipRect.width - offset;
             }
             if (top < 0) {
-                top = 10;
+                top = y + offset;
             }
             if (top + tooltipRect.height > window.innerHeight) {
-                top = window.innerHeight - tooltipRect.height - 10;
+                top = window.innerHeight - tooltipRect.height - offset;
             }
 
             tooltip.style.left = left + 'px';

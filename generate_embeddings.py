@@ -161,7 +161,10 @@ def generate_embeddings(questions, model_name='all-mpnet-base-v2', use_openai=Fa
     question_texts = [q['question'] for q in questions]
     print(f"Processing {len(question_texts)} questions...")
 
-    embeddings = dw.wrangle(question_texts, text_kwargs={'model': model_name})
+    embeddings_df = dw.wrangle(question_texts, text_kwargs={'model': model_name})
+
+    # Convert DataFrame to numpy array (datawrangler returns DataFrame)
+    embeddings = embeddings_df.values
 
     print(f"Generated embeddings with shape: {embeddings.shape}")
     return embeddings

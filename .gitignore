@@ -208,3 +208,8 @@ __marimo__/
 
 # Project-specific
 CLAUDE.md
+
+# Cell label cache files (until validated)
+heatmap_cell_labels.json
+umap_reducer.pkl
+umap_bounds.pkl

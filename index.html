@@ -828,7 +828,7 @@
             for (let gy = 0; gy < gridSize - 1; gy++) {
                 for (let gx = 0; gx < gridSize - 1; gx++) {
                     const value = grid[gy][gx];
-                    let color = viridisColor(value);
+                    let color = mapToColor(value);
 
                     // Darken if this is the hovered cell
                     if (hoveredHeatmapCell && hoveredHeatmapCell.gx === gx && hoveredHeatmapCell.gy === gy) {
@@ -846,7 +846,7 @@
             }
         }
 
-        function viridisColor(value) {
+        function mapToColor(value) {
             // Bronze-to-Green colormap (complementary to Dartmouth Green)
             const colors = [
                 [139, 69, 19],    // Saddle Brown (low)

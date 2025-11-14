@@ -864,11 +864,11 @@
 
             tooltip.classList.remove('tooltip-hidden');
 
-            // Convert canvas logical coordinates to screen coordinates
-            // canvasX and canvasY are in the logical coordinate space (container.clientWidth/Height)
-            // canvasRect.width and canvasRect.height are the display dimensions
-            const dotScreenX = canvasRect.left + question.canvasX;
-            const dotScreenY = canvasRect.top + question.canvasY;
+            // Convert normalized question coordinates (0-1) directly to screen coordinates
+            // question.x and question.y are normalized [0, 1]
+            // Scale by canvas display size and add canvas position
+            const dotScreenX = canvasRect.left + (question.x * canvasRect.width);
+            const dotScreenY = canvasRect.top + (question.y * canvasRect.height);
 
             // Position tooltip very close to dot
             const tooltipRect = tooltip.getBoundingClientRect();

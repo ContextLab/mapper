@@ -340,6 +340,12 @@
             z-index: 1000;
             max-width: 300px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 200ms ease-in-out;
+        }
+
+        .tooltip.visible {
+            opacity: 1;
         }
 
         .tooltip-hidden {
@@ -533,6 +539,13 @@
         const loading = document.getElementById('loading');
         const tooltip = document.getElementById('tooltip');
 
+        // Hover state for animations
+        let hoveredDotIndex = null;
+        let hoveredHeatmapCell = null;
+        let dotAnimationProgress = {}; // Maps dot index to animation progress (0-1)
+        let animationFrameId = null;
+        let lastFrameTime = performance.now();
+
         // Load questions and initialize
         async function loadQuestions() {
             try {
@@ -689,6 +702,59 @@
             addInteractivity(width, height);
         }
 
+        function redrawCanvas() {
+            // Get current canvas dimensions
+            const container = canvas.parentElement;
+            const width = canvas.width / window.devicePixelRatio;
+            const height = canvas.height / window.devicePixelRatio;
+
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Redraw heatmap and markers
+            drawKnowledgeHeatmap(width, height);
+            drawQuestionMarkers(width, height);
+        }
+
+        function animateCanvas() {
+            const currentTime = performance.now();
+            const deltaTime = currentTime - lastFrameTime;
+            lastFrameTime = currentTime;
+
+            let needsRedraw = false;
+
+            // Update animation progress for all dots
+            questionsData.forEach((q, idx) => {
+                const isHovered = (hoveredDotIndex === idx);
+                const target = isHovered ? 1 : 0;
+                const current = dotAnimationProgress[idx] || 0;
+
+                if (Math.abs(current - target) > 0.01) {
+                    // Smooth transition (200ms duration)
+                    const speed = 1 / 200; // Progress per millisecond
+                    const delta = (target - current) * Math.min(speed * deltaTime, 1);
+                    dotAnimationProgress[idx] = Math.max(0, Math.min(1, current + delta));
+                    needsRedraw = true;
+                } else {
+                    dotAnimationProgress[idx] = target;
+                }
+            });
+
+            if (needsRedraw) {
+                redrawCanvas();
+                animationFrameId = requestAnimationFrame(animateCanvas);
+            } else {
+                animationFrameId = null;
+            }
+        }
+
+        function startAnimation() {
+            if (!animationFrameId) {
+                lastFrameTime = performance.now();
+                animationFrameId = requestAnimationFrame(animateCanvas);
+            }
+        }
+
         function drawKnowledgeHeatmap(width, height) {
             const gridSize = 40;
             const sigma = 0.15; // Gaussian kernel width
@@ -729,8 +795,13 @@
             for (let gy = 0; gy < gridSize - 1; gy++) {
                 for (let gx = 0; gx < gridSize - 1; gx++) {
                     const value = grid[gy][gx];
-                    const color = viridisColor(value);
-                    
+                    let color = viridisColor(value);
+
+                    // Darken if this is the hovered cell
+                    if (hoveredHeatmapCell && hoveredHeatmapCell.gx === gx && hoveredHeatmapCell.gy === gy) {
+                        color = darkenColor(color, 0.15);
+                    }
+
                     ctx.fillStyle = color;
                     ctx.fillRect(
                         gx * cellWidth,
@@ -771,35 +842,76 @@
             return `rgba(${r}, ${g}, ${b}, 0.8)`;
         }
 
+        function darkenColor(colorString, amount = 0.2) {
+            // Parse RGB/RGBA color string and darken it
+            const matches = colorString.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/);
+            if (!matches) return colorString;
+
+            const r = Math.floor(parseInt(matches[1]) * (1 - amount));
+            const g = Math.floor(parseInt(matches[2]) * (1 - amount));
+            const b = Math.floor(parseInt(matches[3]) * (1 - amount));
+            const a = matches[4] !== undefined ? parseFloat(matches[4]) : 1;
+
+            return `rgba(${r}, ${g}, ${b}, ${a})`;
+        }
+
         function drawQuestionMarkers(width, height) {
             questionsData.forEach((q, idx) => {
-                const x = q.x * width;
-                const y = q.y * height;
+                const baseX = q.x * width;
+                const baseY = q.y * height;
                 const radius = 12;
 
                 const wasAnswered = userResponses[idx] !== undefined;
                 const isCorrect = userResponses[idx] === q.correctIndex;
 
-                let color;
+                // Get animation progress for this dot (0 = not hovered, 1 = fully hovered)
+                const animProgress = dotAnimationProgress[idx] || 0;
+
+                // Calculate hover offset (3px up and right when fully hovered)
+                const offsetX = 3 * animProgress;
+                const offsetY = -3 * animProgress;
+                const currentX = baseX + offsetX;
+                const currentY = baseY + offsetY;
+
+                let baseColor;
                 if (!wasAnswered) {
                     // Unanswered - intermediate knowledge (goldenrod)
-                    color = 'rgb(218, 165, 32)';
+                    baseColor = 'rgb(218, 165, 32)';
                 } else if (isCorrect) {
                     // Correct - high knowledge (Dartmouth Green)
-                    color = 'rgb(0, 105, 62)';
+                    baseColor = 'rgb(0, 105, 62)';
                 } else {
                     // Incorrect - low knowledge (saddle brown)
-                    color = 'rgb(139, 69, 19)';
+                    baseColor = 'rgb(139, 69, 19)';
                 }
 
-                // Draw marker with white border
+                // Darken color when hovered
+                const color = animProgress > 0 ? darkenColor(baseColor, 0.2 * animProgress) : baseColor;
+
+                // Draw drop shadow at original position when hovered
+                if (animProgress > 0) {
+                    const shadowRadius = radius + (2 * animProgress);
+                    ctx.save();
+                    ctx.shadowColor = `rgba(0, 0, 0, ${0.5 * animProgress})`;
+                    ctx.shadowBlur = 8 * animProgress;
+                    ctx.shadowOffsetX = 0;
+                    ctx.shadowOffsetY = 0;
+
+                    ctx.beginPath();
+                    ctx.arc(baseX, baseY, shadowRadius, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(0, 0, 0, ${0.3 * animProgress})`;
+                    ctx.fill();
+                    ctx.restore();
+                }
+
+                // Draw marker with white border (at current position with offset)
                 ctx.beginPath();
-                ctx.arc(x, y, radius + 2, 0, Math.PI * 2);
+                ctx.arc(currentX, currentY, radius + 2, 0, Math.PI * 2);
                 ctx.fillStyle = 'white';
                 ctx.fill();
 
                 ctx.beginPath();
-                ctx.arc(x, y, radius, 0, Math.PI * 2);
+                ctx.arc(currentX, currentY, radius, 0, Math.PI * 2);
                 ctx.fillStyle = color;
                 ctx.fill();
 
@@ -808,8 +920,69 @@
                 ctx.font = 'bold 11px sans-serif';
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
-                ctx.fillText((idx + 1).toString(), x, y);
+                ctx.fillText((idx + 1).toString(), currentX, currentY);
             });
+        }
+
+        function getHeatmapCell(mouseX, mouseY, width, height) {
+            const gridSize = 40;
+            const cellWidth = width / (gridSize - 1);
+            const cellHeight = height / (gridSize - 1);
+
+            const gx = Math.floor(mouseX / cellWidth);
+            const gy = Math.floor(mouseY / cellHeight);
+
+            if (gx >= 0 && gx < gridSize - 1 && gy >= 0 && gy < gridSize - 1) {
+                // Return cell center in normalized coordinates
+                const centerX = (gx + 0.5) / (gridSize - 1);
+                const centerY = (gy + 0.5) / (gridSize - 1);
+                return { gx, gy, centerX, centerY };
+            }
+            return null;
+        }
+
+        function showHeatmapTooltip(canvasRect, cell) {
+            tooltip.innerHTML = `
+                <div class="tooltip-question">Heatmap Cell</div>
+                <div class="tooltip-status">
+                    <span>Position: (${cell.centerX.toFixed(3)}, ${cell.centerY.toFixed(3)})</span>
+                </div>
+            `;
+
+            tooltip.classList.remove('tooltip-hidden');
+            setTimeout(() => tooltip.classList.add('visible'), 10);
+
+            // Calculate cell center position on screen
+            const cellCanvasX = cell.centerX * canvasRect.width;
+            const cellCanvasY = cell.centerY * canvasRect.height;
+            const cellScreenX = canvasRect.left + cellCanvasX;
+            const cellScreenY = canvasRect.top + cellCanvasY;
+
+            // Get tooltip dimensions
+            const tooltipRect = tooltip.getBoundingClientRect();
+            const offset = 15;
+
+            // Determine quadrant based on normalized position
+            const isLeftHalf = cell.centerX < 0.5;
+            const isTopHalf = cell.centerY < 0.5;
+
+            let left, top;
+
+            // Position tooltip based on quadrant
+            if (isLeftHalf) {
+                left = cellScreenX + offset;
+            } else {
+                left = cellScreenX - tooltipRect.width - offset;
+            }
+
+            if (isTopHalf) {
+                top = cellScreenY + offset;
+            } else {
+                top = cellScreenY - tooltipRect.height - offset;
+            }
+
+            tooltip.style.left = left + 'px';
+            tooltip.style.top = top + 'px';
         }
 
         function addInteractivity(width, height) {
@@ -818,6 +991,7 @@
                 const mouseX = (e.clientX - rect.left) / rect.width * width;
                 const mouseY = (e.clientY - rect.top) / rect.height * height;
 
+                // Check for question dot hover (priority over heatmap)
                 let hoveredQuestion = null;
                 questionsData.forEach((q, idx) => {
                     const x = q.x * width;
@@ -825,20 +999,43 @@
                     const dist = Math.sqrt((mouseX - x) ** 2 + (mouseY - y) ** 2);
 
                     if (dist < 15) {
-                        hoveredQuestion = { ...q, index: idx, canvasX: x, canvasY: y };
+                        hoveredQuestion = { ...q, index: idx };
                     }
                 });
 
                 if (hoveredQuestion) {
+                    // Question dot takes priority
+                    hoveredDotIndex = hoveredQuestion.index;
+                    hoveredHeatmapCell = null;
                     showTooltip(rect, hoveredQuestion);
                     canvas.style.cursor = 'pointer';
+                    startAnimation();
                 } else {
-                    hideTooltip();
-                    canvas.style.cursor = 'crosshair';
+                    // Check for heatmap cell hover
+                    const cell = getHeatmapCell(mouseX, mouseY, width, height);
+
+                    if (cell) {
+                        hoveredDotIndex = null;
+                        hoveredHeatmapCell = cell;
+                        showHeatmapTooltip(rect, cell);
+                        canvas.style.cursor = 'crosshair';
+                        redrawCanvas(); // Immediate redraw for heatmap (no animation)
+                    } else {
+                        hoveredDotIndex = null;
+                        hoveredHeatmapCell = null;
+                        hideTooltip();
+                        canvas.style.cursor = 'default';
+                        startAnimation(); // Animate dots back to normal
+                    }
                 }
             });
 
-            canvas.addEventListener('mouseleave', hideTooltip);
+            canvas.addEventListener('mouseleave', () => {
+                hoveredDotIndex = null;
+                hoveredHeatmapCell = null;
+                hideTooltip();
+                startAnimation();
+            });
         }
 
         function showTooltip(canvasRect, question) {
@@ -866,6 +1063,7 @@
             `;
 
             tooltip.classList.remove('tooltip-hidden');
+            setTimeout(() => tooltip.classList.add('visible'), 10);
 
             // Calculate dot position on screen
             const dotCanvasX = question.x * canvasRect.width;
@@ -906,7 +1104,10 @@
         }
 
         function hideTooltip() {
-            tooltip.classList.add('tooltip-hidden');
+            tooltip.classList.remove('visible');
+            setTimeout(() => {
+                tooltip.classList.add('tooltip-hidden');
+            }, 200); // Match CSS transition duration
         }
 
         function restart() {

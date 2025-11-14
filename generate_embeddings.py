@@ -134,7 +134,7 @@ def generate_embeddings_openai(questions, model_name='text-embedding-3-small'):
     return embeddings
 
 
-def generate_embeddings(questions, model_name='all-mpnet-base-v2', use_openai=False):
+def generate_embeddings(questions, model_name='sentence-transformers/gtr-t5-base', use_openai=False):
     """
     Generate embeddings for questions.
 
@@ -144,12 +144,12 @@ def generate_embeddings(questions, model_name='all-mpnet-base-v2', use_openai=Fa
         use_openai: If True, use OpenAI API (avoids PyTorch mutex issues)
 
     OpenAI models (use_openai=True):
-        - 'text-embedding-3-small': Fast, cheap, 1536 dim
-        - 'text-embedding-3-large': Better quality, 3072 dim
+        - 'text-embedding-ada-002': Supported by vec2text, 1536 dim
 
     Local models (use_openai=False, may have mutex issues on macOS):
-        - 'all-MiniLM-L6-v2': Fast, good quality (384 dim)
-        - 'all-mpnet-base-v2': Better quality, slower (768 dim)
+        - 'sentence-transformers/gtr-t5-base': Supported by vec2text, 768 dim (RECOMMENDED)
+        - 'all-MiniLM-L6-v2': Fast, good quality (384 dim) - NOT supported by vec2text
+        - 'all-mpnet-base-v2': Better quality, slower (768 dim) - NOT supported by vec2text
     """
     if use_openai:
         return generate_embeddings_openai(questions, model_name)
@@ -326,7 +326,7 @@ def main():
     parser = argparse.ArgumentParser(description='Generate embeddings for knowledge map')
     parser.add_argument('--input', help='Path to experiment.js file')
     parser.add_argument('--questions-json', help='Path to questions JSON file (alternative to parsing JS)')
-    parser.add_argument('--model', default='all-MiniLM-L6-v2', help='Sentence transformer model')
+    parser.add_argument('--model', default='sentence-transformers/gtr-t5-base', help='Sentence transformer model (use gtr-t5-base for vec2text support)')
     parser.add_argument('--method', default='umap', choices=['pca', 'tsne', 'umap'], help='Dimensionality reduction method (umap recommended)')
     parser.add_argument('--output', default='questions_with_embeddings.json', help='Output file path')
     parser.add_argument('--html-snippet', action='store_true', help='Generate HTML snippet')

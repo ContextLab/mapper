@@ -167,7 +167,7 @@ def generate_embeddings(questions, model_name='all-mpnet-base-v2', use_openai=Fa
     return embeddings
 
 
-def reduce_dimensions(embeddings, method='umap', n_components=2):
+def reduce_dimensions(embeddings, method='umap', n_components=2, save_reducer=False):
     """
     Reduce embedding dimensions for visualization.
 
@@ -175,6 +175,7 @@ def reduce_dimensions(embeddings, method='umap', n_components=2):
         embeddings: High-dimensional embeddings
         method: 'pca', 'tsne', or 'umap' (recommended)
         n_components: Number of dimensions (typically 2 for visualization)
+        save_reducer: If True, save fitted reducer for inverse transforms (UMAP only)
     """
     print(f"Reducing dimensions using {method.upper()}...")
 
@@ -191,6 +192,7 @@ def reduce_dimensions(embeddings, method='umap', n_components=2):
     elif method == 'umap':
         try:
             import umap
+            import pickle
         except ImportError:
             print("UMAP not installed. Install with: pip install umap-learn")
             print("Falling back to PCA...")
@@ -200,6 +202,8 @@ def reduce_dimensions(embeddings, method='umap', n_components=2):
             return reduced
 
         n_neighbors = min(15, len(embeddings) - 1)
+
+        # Use .fit() instead of .fit_transform() to retain model for inverse_transform
         reducer = umap.UMAP(
             n_components=n_components,
             n_neighbors=n_neighbors,
@@ -207,8 +211,29 @@ def reduce_dimensions(embeddings, method='umap', n_components=2):
             metric='cosine',
             random_state=42
         )
-        reduced = reducer.fit_transform(embeddings)
+
+        # Fit the model (don't use fit_transform!)
+        reducer.fit(embeddings)
+        reduced = reducer.transform(embeddings)
+
         print(f"UMAP reduction complete")
+
+        # Save the reducer if requested
+        if save_reducer:
+            with open('umap_reducer.pkl', 'wb') as f:
+                pickle.dump(reducer, f)
+            print("Saved UMAP reducer to umap_reducer.pkl")
+
+            # Also save the bounds for inverse transform
+            bounds = {
+                'x_min': float(reduced[:, 0].min()),
+                'x_max': float(reduced[:, 0].max()),
+                'y_min': float(reduced[:, 1].min()),
+                'y_max': float(reduced[:, 1].max()),
+            }
+            with open('umap_bounds.pkl', 'wb') as f:
+                pickle.dump(bounds, f)
+            print("Saved UMAP bounds to umap_bounds.pkl")
     else:
         raise ValueError(f"Unknown method: {method}. Use 'pca', 'tsne', or 'umap'")
 
@@ -306,6 +331,8 @@ def main():
                        help='Preserve existing x,y coordinates if present in input')
     parser.add_argument('--update-in-place', action='store_true',
                        help='Update the input questions.json file in place (sets --preserve-coordinates)')
+    parser.add_argument('--save-reducer', action='store_true',
+                       help='Save UMAP reducer and bounds for inverse transforms (UMAP only)')
 
     args = parser.parse_args()
 
@@ -345,10 +372,10 @@ def main():
     
     # Generate embeddings
     embeddings = generate_embeddings(questions, args.model)
-    
+
     # Reduce dimensions
-    embeddings_2d = reduce_dimensions(embeddings, method=args.method)
-    
+    embeddings_2d = reduce_dimensions(embeddings, method=args.method, save_reducer=args.save_reducer)
+
     # Create web data
     web_data = create_web_data(questions, embeddings_2d, embeddings)
     

@@ -679,17 +679,6 @@
             const width = container.clientWidth;
             const height = container.clientHeight;
 
-            console.log('=== CANVAS SETUP ===');
-            console.log('devicePixelRatio:', dpr);
-            console.log('container.clientWidth:', container.clientWidth);
-            console.log('container.clientHeight:', container.clientHeight);
-            console.log('canvas.width (internal):', canvas.width);
-            console.log('canvas.height (internal):', canvas.height);
-            console.log('canvas.style.width:', canvas.style.width);
-            console.log('canvas.style.height:', canvas.style.height);
-            console.log('canvas.getBoundingClientRect():', canvas.getBoundingClientRect());
-            console.log('====================');
-
             // Create knowledge heatmap
             drawKnowledgeHeatmap(width, height);
 
@@ -834,12 +823,6 @@
 
                     if (dist < 15) {
                         hoveredQuestion = { ...q, index: idx, canvasX: x, canvasY: y };
-                        console.log('=== HOVER DETECTION ===');
-                        console.log('Canvas dimensions (width, height):', width, height);
-                        console.log('Canvas rect:', rect);
-                        console.log('Question normalized (x, y):', q.x, q.y);
-                        console.log('Dot position in canvas (x, y):', x, y);
-                        console.log('=======================');
                     }
                 });
 
@@ -881,46 +864,39 @@
 
             tooltip.classList.remove('tooltip-hidden');
 
-            // DEBUG: Log all coordinate calculations
-            console.log('=== TOOLTIP POSITIONING DEBUG ===');
-            console.log('Question normalized coords:', { x: question.x, y: question.y });
-            console.log('canvasRect:', canvasRect);
-
-            // Calculate position using CURRENT canvas dimensions, not stored canvasX/canvasY
-            // because the canvas size might have changed since hover detection
+            // Calculate dot position on screen
             const dotCanvasX = question.x * canvasRect.width;
             const dotCanvasY = question.y * canvasRect.height;
-            console.log('Calculated canvas-local position:', { dotCanvasX, dotCanvasY });
-
             const dotScreenX = canvasRect.left + dotCanvasX;
             const dotScreenY = canvasRect.top + dotCanvasY;
-            console.log('Calculated screen position:', { dotScreenX, dotScreenY });
 
-            // Position tooltip very close to dot
+            // Get tooltip dimensions
             const tooltipRect = tooltip.getBoundingClientRect();
-            console.log('tooltipRect:', tooltipRect);
+            const offset = 15;  // Offset from dot (in pixels)
 
-            const offset = 2;  // Small offset from dot
-            let left = dotScreenX + offset;
-            let top = dotScreenY - tooltipRect.height - offset;
-            console.log('Initial tooltip position:', { left, top });
+            // Determine quadrant based on normalized position (0-1 range)
+            // This ensures tooltips stay within heatmap bounds
+            const isLeftHalf = question.x < 0.5;
+            const isTopHalf = question.y < 0.5;
 
-            // Keep tooltip on screen
-            if (left + tooltipRect.width > window.innerWidth) {
+            let left, top;
+
+            // Position tooltip based on quadrant
+            if (isLeftHalf) {
+                // Dot is on left side - show tooltip to the right
+                left = dotScreenX + offset;
+            } else {
+                // Dot is on right side - show tooltip to the left
                 left = dotScreenX - tooltipRect.width - offset;
-                console.log('Adjusted left (too far right):', left);
-            }
-            if (top < 0) {
-                top = dotScreenY + offset;
-                console.log('Adjusted top (too far up):', top);
-            }
-            if (top + tooltipRect.height > window.innerHeight) {
-                top = window.innerHeight - tooltipRect.height - offset;
-                console.log('Adjusted top (too far down):', top);
             }
 
-            console.log('Final tooltip position:', { left, top });
-            console.log('================================');
+            if (isTopHalf) {
+                // Dot is on top half - show tooltip below
+                top = dotScreenY + offset;
+            } else {
+                // Dot is on bottom half - show tooltip above
+                top = dotScreenY - tooltipRect.height - offset;
+            }
 
             tooltip.style.left = left + 'px';
             tooltip.style.top = top + 'px';

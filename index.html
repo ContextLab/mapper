@@ -763,8 +763,8 @@
                 const current = dotAnimationProgress[idx] || 0;
 
                 if (Math.abs(current - target) > 0.01) {
-                    // Smooth transition (133ms duration - 50% faster than original 200ms)
-                    const speed = 1 / 133; // Progress per millisecond
+                    // Smooth transition (50ms duration - very snappy)
+                    const speed = 1 / 50; // Progress per millisecond
                     const delta = (target - current) * Math.min(speed * deltaTime, 1);
                     dotAnimationProgress[idx] = Math.max(0, Math.min(1, current + delta));
                     needsRedraw = true;
@@ -925,14 +925,14 @@
                 if (animProgress > 0) {
                     const shadowRadius = radius + (2 * animProgress);
                     ctx.save();
-                    ctx.shadowColor = `rgba(0, 0, 0, ${0.3 * animProgress})`; // Reduced from 0.5 for subtlety
-                    ctx.shadowBlur = 16 * animProgress; // Increased from 8 for larger blur
+                    ctx.shadowColor = `rgba(0, 0, 0, ${0.15 * animProgress})`; // Very low alpha for soft edges
+                    ctx.shadowBlur = 32 * animProgress; // Large blur radius for diffuse, soft shadows
                     ctx.shadowOffsetX = 0;
                     ctx.shadowOffsetY = 0;
 
                     ctx.beginPath();
                     ctx.arc(baseX, baseY, shadowRadius, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(0, 0, 0, ${0.2 * animProgress})`; // Reduced from 0.3 for subtlety
+                    ctx.fillStyle = `rgba(0, 0, 0, ${0.1 * animProgress})`; // Very low fill alpha for soft appearance
                     ctx.fill();
                     ctx.restore();
                 }

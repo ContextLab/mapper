@@ -28,7 +28,8 @@
             width: 100%;
             background: white;
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+            border: 3px solid rgba(255, 255, 255, 0.2);
             overflow: hidden;
         }
 
@@ -415,7 +416,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>📚 Knowledge Map Explorer</h1>
+            <h1><i class="fas fa-brain"></i> Knowledge Map Explorer</h1>
             <p>Answer questions to visualize your conceptual understanding</p>
         </div>
 
@@ -500,7 +501,7 @@
                 </div>
 
                 <div class="button-container">
-                    <button class="btn btn-secondary" id="restart-btn">🔄 Start Over</button>
+                    <button class="btn btn-secondary" id="restart-btn"><i class="fas fa-rotate-right"></i> Start Over</button>
                 </div>
             </div>
         </div>
@@ -863,9 +864,9 @@
 
             tooltip.classList.remove('tooltip-hidden');
             
-            // Position tooltip close to dot
+            // Position tooltip very close to dot (10% of previous 5px = 0.5px)
             const tooltipRect = tooltip.getBoundingClientRect();
-            const offset = 5;  // Minimal offset from dot
+            const offset = 0.5;  // Ultra-minimal offset from dot
             let left = x + offset;
             let top = y - tooltipRect.height - offset;
 

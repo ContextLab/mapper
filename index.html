@@ -263,7 +263,7 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.8);
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -295,7 +295,7 @@
             position: absolute;
             bottom: 20px;
             left: 20px;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.8);
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -446,7 +446,7 @@
             <div id="map-section" class="map-section hidden">
                 <div class="map-header">
                     <h2>Your Knowledge Map</h2>
-                    <p>Heatmap showing inferred knowledge across conceptual space</p>
+                    <p>Hover over the map to explore our model of your knowledge</p>
                 </div>
 
                 <div class="map-container">
@@ -455,16 +455,16 @@
                     <div class="legend">
                         <h4>Question Status</h4>
                         <div class="legend-item">
-                            <div class="legend-dot" style="background: #22c55e;"></div>
+                            <div class="legend-dot" style="background: rgb(0, 105, 62);"></div>
                             <span>Correct</span>
                         </div>
                         <div class="legend-item">
-                            <div class="legend-dot" style="background: #ef4444;"></div>
-                            <span>Incorrect</span>
+                            <div class="legend-dot" style="background: rgb(218, 165, 32);"></div>
+                            <span>Unanswered</span>
                         </div>
                         <div class="legend-item">
-                            <div class="legend-dot" style="background: #94a3b8;"></div>
-                            <span>Unanswered</span>
+                            <div class="legend-dot" style="background: rgb(139, 69, 19);"></div>
+                            <span>Incorrect</span>
                         </div>
                     </div>
 
@@ -782,11 +782,14 @@
 
                 let color;
                 if (!wasAnswered) {
-                    color = '#94a3b8';
+                    // Unanswered - intermediate knowledge (goldenrod)
+                    color = 'rgb(218, 165, 32)';
                 } else if (isCorrect) {
-                    color = '#22c55e';
+                    // Correct - high knowledge (Dartmouth Green)
+                    color = 'rgb(0, 105, 62)';
                 } else {
-                    color = '#ef4444';
+                    // Incorrect - low knowledge (saddle brown)
+                    color = 'rgb(139, 69, 19)';
                 }
 
                 // Draw marker with white border
@@ -845,13 +848,13 @@
             let status, statusColor;
             if (!wasAnswered) {
                 status = 'Unanswered';
-                statusColor = '#94a3b8';
+                statusColor = 'rgb(218, 165, 32)';  // Intermediate knowledge (goldenrod)
             } else if (isCorrect) {
                 status = 'Correct';
-                statusColor = '#22c55e';
+                statusColor = 'rgb(0, 105, 62)';  // High knowledge (Dartmouth Green)
             } else {
                 status = 'Incorrect';
-                statusColor = '#ef4444';
+                statusColor = 'rgb(139, 69, 19)';  // Low knowledge (saddle brown)
             }
 
             tooltip.innerHTML = `

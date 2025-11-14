@@ -864,10 +864,11 @@
 
             tooltip.classList.remove('tooltip-hidden');
 
-            // Convert normalized question coordinates (0-1) directly to screen coordinates
-            // canvasRect.width and canvasRect.height should equal the canvas display size
-            const dotScreenX = canvasRect.left + (question.x * canvasRect.width);
-            const dotScreenY = canvasRect.top + (question.y * canvasRect.height);
+            // Use the SAME coordinate calculation as the dots are drawn with
+            // question.canvasX and canvasY are already calculated as q.x * width and q.y * height
+            // Now convert from canvas-local coordinates to screen coordinates
+            const dotScreenX = canvasRect.left + question.canvasX;
+            const dotScreenY = canvasRect.top + question.canvasY;
 
             // Position tooltip very close to dot
             const tooltipRect = tooltip.getBoundingClientRect();

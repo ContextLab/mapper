@@ -823,6 +823,12 @@
 
                     if (dist < 15) {
                         hoveredQuestion = { ...q, index: idx, canvasX: x, canvasY: y };
+                        console.log('=== HOVER DETECTION ===');
+                        console.log('Canvas dimensions (width, height):', width, height);
+                        console.log('Canvas rect:', rect);
+                        console.log('Question normalized (x, y):', q.x, q.y);
+                        console.log('Dot position in canvas (x, y):', x, y);
+                        console.log('=======================');
                     }
                 });
 
@@ -864,29 +870,46 @@
 
             tooltip.classList.remove('tooltip-hidden');
 
+            // DEBUG: Log all coordinate calculations
+            console.log('=== TOOLTIP POSITIONING DEBUG ===');
+            console.log('Question normalized coords:', { x: question.x, y: question.y });
+            console.log('canvasRect:', canvasRect);
+
             // Calculate position using CURRENT canvas dimensions, not stored canvasX/canvasY
             // because the canvas size might have changed since hover detection
             const dotCanvasX = question.x * canvasRect.width;
             const dotCanvasY = question.y * canvasRect.height;
+            console.log('Calculated canvas-local position:', { dotCanvasX, dotCanvasY });
+
             const dotScreenX = canvasRect.left + dotCanvasX;
             const dotScreenY = canvasRect.top + dotCanvasY;
+            console.log('Calculated screen position:', { dotScreenX, dotScreenY });
 
             // Position tooltip very close to dot
             const tooltipRect = tooltip.getBoundingClientRect();
+            console.log('tooltipRect:', tooltipRect);
+
             const offset = 2;  // Small offset from dot
             let left = dotScreenX + offset;
             let top = dotScreenY - tooltipRect.height - offset;
+            console.log('Initial tooltip position:', { left, top });
 
             // Keep tooltip on screen
             if (left + tooltipRect.width > window.innerWidth) {
                 left = dotScreenX - tooltipRect.width - offset;
+                console.log('Adjusted left (too far right):', left);
             }
             if (top < 0) {
                 top = dotScreenY + offset;
+                console.log('Adjusted top (too far up):', top);
             }
             if (top + tooltipRect.height > window.innerHeight) {
                 top = window.innerHeight - tooltipRect.height - offset;
+                console.log('Adjusted top (too far down):', top);
             }
+
+            console.log('Final tooltip position:', { left, top });
+            console.log('================================');
 
             tooltip.style.left = left + 'px';
             tooltip.style.top = top + 'px';

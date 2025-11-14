@@ -213,3 +213,5 @@ CLAUDE.md
 heatmap_cell_labels.json
 umap_reducer.pkl
 umap_bounds.pkl
+*.credentials
+.credentials/

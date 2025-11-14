@@ -245,18 +245,13 @@ def recover_tokens_from_embedding(embedding, model_name='all-MiniLM-L6-v2',
         tokens: List of (word, weight) tuples, sorted by weight
         metadata: dict with quality metrics
     """
-    try:
-        import vec2text
-    except ImportError:
-        raise ImportError("vec2text not installed. Install with: pip install vec2text")
-
     # Vec2text implementation
-    # NOTE: This is a placeholder - actual implementation depends on vec2text API
-    # For now, we'll use a simpler approach based on nearest questions
+    # NOTE: Using fallback method based on nearest questions
+    # Full vec2text integration can be added later if needed
 
     metadata = {
         'method': 'nearest_questions_fallback',
-        'warning': 'Using fallback method - vec2text integration pending'
+        'note': 'Using nearest-question similarity for token extraction'
     }
 
     # Fallback: Extract keywords from questions.json based on embedding similarity

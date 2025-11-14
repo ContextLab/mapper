@@ -21,93 +21,67 @@ import torch
 from sentence_transformers import SentenceTransformer
 from datetime import datetime
 
-def load_questions():
-    """Load the 10 questions from questions.json."""
-    questions_file = Path(__file__).parent / "mapper.io" / "questions.json"
-
-    if not questions_file.exists():
-        print(f"Warning: questions.json not found at {questions_file}")
-        return []
-
-    with open(questions_file, 'r') as f:
-        questions_data = json.load(f)
-
-    # Extract question texts
-    question_texts = []
-    for q in questions_data:
-        question_texts.append(q['question'])
-
-    print(f"  Loaded {len(question_texts)} questions")
-    return question_texts
-
-def generate_embeddings_gpu(cluster_id, gpu_id, total_gpus=8):
+def generate_embeddings_gpu(cluster_id, gpu_id, total_gpus=8, total_clusters=1):
     """
     Generate embeddings for a subset of articles on a specific GPU.
 
     Args:
-        cluster_id: 1 or 2 (which cluster)
+        cluster_id: 0, 1, 2, ... (sequential cluster ID, 0-indexed)
         gpu_id: 0-7 (which GPU on this cluster)
         total_gpus: Total GPUs per cluster (default 8)
+        total_clusters: Total number of active clusters (default 1)
     """
 
     # Constants
     TOTAL_ARTICLES = 250_000
-    TOTAL_QUESTIONS = 10
-    TOTAL_ITEMS = TOTAL_ARTICLES + TOTAL_QUESTIONS
-    ITEMS_PER_CLUSTER = TOTAL_ITEMS // 2  # 125,005 per cluster
+    TOTAL_ITEMS = TOTAL_ARTICLES  # Only embed Wikipedia articles, NOT questions
 
-    # Calculate this worker's range
-    if cluster_id == 1:
-        cluster_start = 0
-        cluster_end = ITEMS_PER_CLUSTER
-    else:  # cluster_id == 2
-        cluster_start = ITEMS_PER_CLUSTER
-        cluster_end = TOTAL_ITEMS
+    # Calculate global worker position
+    total_workers = total_clusters * total_gpus
+    global_worker_id = (cluster_id * total_gpus) + gpu_id
 
-    items_per_gpu = (cluster_end - cluster_start) // total_gpus
-    gpu_start = cluster_start + (gpu_id * items_per_gpu)
+    # Distribute items across all workers
+    items_per_worker = TOTAL_ITEMS // total_workers
+    gpu_start = global_worker_id * items_per_worker
 
-    # Last GPU gets any remainder
-    if gpu_id == total_gpus - 1:
-        gpu_end = cluster_end
+    # Last worker gets any remainder
+    if global_worker_id == total_workers - 1:
+        gpu_end = TOTAL_ITEMS
     else:
-        gpu_end = gpu_start + items_per_gpu
+        gpu_end = gpu_start + items_per_worker
 
     print("="*80)
     print(f"GPU WORKER: Cluster {cluster_id}, GPU {gpu_id}")
     print("="*80)
     print(f"Total items: {TOTAL_ITEMS:,}")
-    print(f"Cluster range: {cluster_start:,} - {cluster_end:,} ({cluster_end - cluster_start:,} items)")
-    print(f"GPU range: {gpu_start:,} - {gpu_end:,} ({gpu_end - gpu_start:,} items)")
+    print(f"Total clusters: {total_clusters}")
+    print(f"Total workers: {total_workers} ({total_clusters} clusters × {total_gpus} GPUs)")
+    print(f"Global worker ID: {global_worker_id}")
+    print(f"This worker range: {gpu_start:,} - {gpu_end:,} ({gpu_end - gpu_start:,} items)")
     print(f"Started: {datetime.now()}")
     print("")
 
     # Set GPU device
-    device = f"cuda:{gpu_id}"
-    print(f"[1/6] Setting GPU device to {device}...")
-    torch.cuda.set_device(gpu_id)
-    print(f"  ✓ Using: {torch.cuda.get_device_name(gpu_id)}")
-    print(f"  Memory: {torch.cuda.get_device_properties(gpu_id).total_memory / 1e9:.2f} GB")
+    # When CUDA_VISIBLE_DEVICES is set, use device 0 (the only visible GPU)
+    device = "cuda:0"
+    print(f"[1/6] Setting GPU device to {device} (CUDA_VISIBLE_DEVICES={gpu_id})...")
+    torch.cuda.set_device(0)
+    print(f"  ✓ Using: {torch.cuda.get_device_name(0)}")
+    print(f"  Memory: {torch.cuda.get_device_properties(0).total_memory / 1e9:.2f} GB")
     print("")
 
     # Load Wikipedia articles
     print("[2/6] Loading Wikipedia articles...")
     start = time.time()
-    with open('../wikipedia.pkl', 'rb') as f:
+    with open('wikipedia.pkl', 'rb') as f:
         wiki_articles = pickle.load(f)
     load_time = time.time() - start
     print(f"  ✓ Loaded {len(wiki_articles):,} articles in {load_time:.2f}s")
     print("")
 
-    # Load questions
-    print("[3/6] Loading questions...")
-    question_texts = load_questions()
-    print("")
-
-    # Combine articles + questions
+    # Extract article text (questions NOT included)
+    print("[3/6] Extracting article text...")
     all_items = []
-
-    # Add articles
     for article in wiki_articles:
         if isinstance(article, dict):
             text = article.get('text', article.get('content', str(article)))
@@ -115,12 +89,7 @@ def generate_embeddings_gpu(cluster_id, gpu_id, total_gpus=8):
             text = str(article)
         all_items.append(text)
 
-    # Add questions at the end
-    all_items.extend(question_texts)
-
-    print(f"Total items combined: {len(all_items):,}")
-    print(f"  Articles: {len(wiki_articles):,}")
-    print(f"  Questions: {len(question_texts)}")
+    print(f"Total articles: {len(all_items):,}")
     print("")
 
     # Extract this GPU's subset
@@ -128,30 +97,77 @@ def generate_embeddings_gpu(cluster_id, gpu_id, total_gpus=8):
     print(f"This GPU will process {len(my_items):,} items (indices {gpu_start:,}-{gpu_end-1:,})")
     print("")
 
+    # Authenticate with HuggingFace if token available
+    hf_token_file = Path(__file__).parent / ".credentials" / "hf.token"
+    if hf_token_file.exists():
+        print("[3/5] Authenticating with HuggingFace...")
+        with open(hf_token_file, 'r') as f:
+            hf_token = f.read().strip()
+
+        from huggingface_hub import login
+        login(token=hf_token)
+        print("  ✓ Authenticated with HuggingFace")
+        print("")
+
     # Load embedding model
-    print("[4/6] Loading Qwen/Qwen3-Embedding-0.6B on GPU...")
+    print("[4/5] Loading google/embeddinggemma-300m on GPU...")
     model_start = time.time()
-    model = SentenceTransformer('Qwen/Qwen3-Embedding-0.6B', trust_remote_code=True, device=device)
+    model = SentenceTransformer('google/embeddinggemma-300m', device=device)
     model_time = time.time() - model_start
     dim = model.get_sentence_embedding_dimension()
     print(f"  ✓ Model loaded in {model_time:.2f}s")
     print(f"  Embedding dimension: {dim}")
     print("")
 
-    # Generate embeddings
-    print(f"[5/6] Generating embeddings for {len(my_items):,} items...")
+    # Generate embeddings with checkpointing
+    print(f"[5/5] Generating embeddings for {len(my_items):,} articles...")
     print(f"  Batch size: 32")
-    print(f"  Show progress: Every 1000 items")
+    print(f"  Checkpoint: Every 1000 items")
     print("")
 
+    # Create output directory
+    output_dir = Path("embeddings")
+    output_dir.mkdir(exist_ok=True)
+
     embed_start = time.time()
-    embeddings = model.encode(
-        my_items,
-        batch_size=32,
-        show_progress_bar=True,
-        convert_to_numpy=True,
-        device=device
-    )
+
+    # Process in chunks of 1000 items to enable checkpointing
+    CHECKPOINT_INTERVAL = 1000
+    all_embeddings = []
+
+    for chunk_start in range(0, len(my_items), CHECKPOINT_INTERVAL):
+        chunk_end = min(chunk_start + CHECKPOINT_INTERVAL, len(my_items))
+        chunk_items = my_items[chunk_start:chunk_end]
+
+        print(f"\nProcessing items {gpu_start + chunk_start:,} to {gpu_start + chunk_end-1:,} ({len(chunk_items)} items)...")
+        chunk_embeddings = model.encode(
+            chunk_items,
+            batch_size=32,
+            show_progress_bar=True,
+            convert_to_numpy=True,
+            device=device
+        )
+        all_embeddings.append(chunk_embeddings)
+
+        # Save checkpoint
+        checkpoint_file = output_dir / f"cluster{cluster_id}_gpu{gpu_id}_checkpoint_{gpu_start + chunk_end}.pkl"
+        checkpoint_data = {
+            'embeddings': np.vstack(all_embeddings),
+            'start_index': gpu_start,
+            'end_index': gpu_start + chunk_end,
+            'items_processed': chunk_end,
+            'cluster_id': cluster_id,
+            'gpu_id': gpu_id,
+            'timestamp': datetime.now().isoformat(),
+            'model': 'google/embeddinggemma-300m'
+        }
+
+        with open(checkpoint_file, 'wb') as f:
+            pickle.dump(checkpoint_data, f)
+
+        print(f"  ✓ Checkpoint saved: {checkpoint_file.name}")
+
+    embeddings = np.vstack(all_embeddings)
     embed_time = time.time() - embed_start
 
     rate = len(my_items) / embed_time
@@ -161,11 +177,8 @@ def generate_embeddings_gpu(cluster_id, gpu_id, total_gpus=8):
     print(f"  Rate: {rate:.2f} items/sec")
     print("")
 
-    # Save embeddings
-    print("[6/6] Saving embeddings...")
-    output_dir = Path("../embeddings")
-    output_dir.mkdir(exist_ok=True)
-
+    # Save final embeddings
+    print("[6/6] Saving final embeddings...")
     output_file = output_dir / f"cluster{cluster_id}_gpu{gpu_id}.pkl"
 
     checkpoint_data = {
@@ -177,7 +190,7 @@ def generate_embeddings_gpu(cluster_id, gpu_id, total_gpus=8):
         'timestamp': datetime.now().isoformat(),
         'processing_time': embed_time,
         'rate': rate,
-        'model': 'Qwen/Qwen3-Embedding-0.6B'
+        'model': 'google/embeddinggemma-300m'
     }
 
     with open(output_file, 'wb') as f:
@@ -249,13 +262,15 @@ def generate_embeddings_gpu(cluster_id, gpu_id, total_gpus=8):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Generate embeddings on GPU')
-    parser.add_argument('--cluster', type=int, required=True, choices=[1, 2],
-                        help='Cluster ID (1 or 2)')
+    parser.add_argument('--cluster', type=int, required=True,
+                        help='Cluster ID (0-indexed, e.g., 0, 1, 2, ...)')
     parser.add_argument('--gpu', type=int, required=True, choices=range(8),
                         help='GPU ID (0-7)')
     parser.add_argument('--total-gpus', type=int, default=8,
                         help='Total GPUs per cluster (default: 8)')
+    parser.add_argument('--total-clusters', type=int, default=1,
+                        help='Total number of active clusters (default: 1)')
 
     args = parser.parse_args()
 
-    generate_embeddings_gpu(args.cluster, args.gpu, args.total_gpus)
+    generate_embeddings_gpu(args.cluster, args.gpu, args.total_gpus, args.total_clusters)

@@ -100,18 +100,69 @@ def compute_convex_hull_distance(x, y, bounds):
         return 1.0  # Well inside hull
 
 
-def invert_umap_coordinates(x_norm, y_norm, umap_reducer, bounds):
+def invert_umap_coordinates_knn(x_norm, y_norm, questions, k=5):
     """
-    Use UMAP's native inverse_transform to recover embeddings.
+    Recover high-dim embeddings using K-nearest neighbors interpolation.
+
+    This approach is more reliable than UMAP's inverse_transform, which
+    produces embeddings with incorrect norms and negative cosine similarities.
+
+    Instead, we:
+    1. Find k nearest questions in 2D space
+    2. Compute distance-weighted average of their embeddings
+    3. L2-normalize the result
 
     Args:
         x_norm, y_norm: Normalized coordinates [0, 1]
-        umap_reducer: Fitted UMAP object with inverse_transform support
-        bounds: Dict with {x_min, x_max, y_min, y_max}
+        questions: List of question dicts with 'x', 'y', 'embedding_full'
+        k: Number of nearest neighbors to use
 
     Returns:
-        embedding: High-dim embedding vector
-        quality_score: Confidence metric (0-1)
+        embedding: High-dim embedding vector (L2-normalized)
+        quality_score: Confidence metric (0-1) based on distance to nearest neighbor
+    """
+    # Extract 2D coordinates and embeddings from questions
+    coords_2d = np.array([[q['x'], q['y']] for q in questions])
+    embeddings = np.array([q['embedding_full'] for q in questions])
+
+    # Compute distances to all questions
+    target_coord = np.array([x_norm, y_norm])
+    distances = np.linalg.norm(coords_2d - target_coord, axis=1)
+
+    # Find k nearest neighbors
+    k_actual = min(k, len(questions))
+    nearest_indices = np.argpartition(distances, k_actual-1)[:k_actual]
+    nearest_distances = distances[nearest_indices]
+    nearest_embeddings = embeddings[nearest_indices]
+
+    # Compute weights using inverse distance weighting
+    # Add small epsilon to avoid division by zero
+    epsilon = 1e-8
+    weights = 1.0 / (nearest_distances + epsilon)
+    weights = weights / weights.sum()  # Normalize to sum to 1
+
+    # Weighted average of embeddings
+    interpolated = np.sum(weights[:, np.newaxis] * nearest_embeddings, axis=0)
+
+    # L2-normalize (embeddings are L2-normalized, so result should be too)
+    norm = np.linalg.norm(interpolated)
+    if norm > 0:
+        interpolated = interpolated / norm
+
+    # Quality score based on distance to nearest neighbor
+    # Closer = higher quality (1.0 at distance 0, decreases with distance)
+    min_distance = nearest_distances.min()
+    quality_score = np.exp(-5 * min_distance)  # Exponential decay
+
+    return interpolated, quality_score
+
+
+def invert_umap_coordinates(x_norm, y_norm, umap_reducer, bounds):
+    """
+    DEPRECATED: UMAP's inverse_transform produces embeddings with negative
+    cosine similarities and incorrect norms. Use invert_umap_coordinates_knn instead.
+
+    This function is kept for backwards compatibility but should not be used.
     """
     # Convert normalized [0,1] coords back to UMAP space
     x_umap = x_norm * (bounds['x_max'] - bounds['x_min']) + bounds['x_min']
@@ -658,14 +709,13 @@ def generate_cell_labels(grid_size=40, force=False, verbose=False):
         return cached
 
     # Load required data
-    print("\nLoading UMAP model and questions...")
-    umap_reducer = load_umap_model()
-    bounds = load_umap_bounds()
+    print("\nLoading questions...")
     questions = load_questions()
 
-    # Get reference embeddings
+    # Get reference embeddings (for metadata)
     reference_embeddings = np.array([q['embedding_full'] for q in questions])
     print(f"Loaded {len(questions)} questions with {reference_embeddings.shape[1]}-dim embeddings")
+    print(f"Using KNN interpolation (k=5) for embedding recovery")
 
     # Generate labels for grid
     print(f"\nGenerating labels for {grid_size}x{grid_size} grid...")
@@ -684,22 +734,13 @@ def generate_cell_labels(grid_size=40, force=False, verbose=False):
             if verbose or cell_num % 100 == 0:
                 print(f"\n[{cell_num}/{total_cells}] Processing cell ({gx}, {gy})...")
 
-            # Step 1: Invert UMAP coordinates
-            embedding, quality = invert_umap_coordinates(x_norm, y_norm, umap_reducer, bounds)
+            # Step 1: Recover embedding using KNN interpolation
+            embedding, quality = invert_umap_coordinates_knn(x_norm, y_norm, questions, k=5)
 
             if verbose:
                 print(f"  Quality score: {quality:.3f}")
 
-            # Step 2: Validate and repair embedding
-            is_valid, diagnostics = validate_embedding(embedding, reference_embeddings)
-
-            if not is_valid:
-                if verbose:
-                    print(f"  Invalid embedding - repairing...")
-                embedding, repair_log = repair_embedding(embedding, reference_embeddings, quality)
-                if verbose:
-                    for msg in repair_log:
-                        print(f"    {msg}")
+            # KNN interpolation produces well-behaved embeddings, so we skip validation/repair
 
             # Step 3: Recover tokens
             tokens, token_metadata = recover_tokens_from_embedding(embedding)
@@ -737,9 +778,7 @@ def generate_cell_labels(grid_size=40, force=False, verbose=False):
                 'tokens': filtered_tokens[:5],  # Store top 5 tokens
                 'quality_score': float(quality),
                 'metadata': {
-                    'is_valid': is_valid,
-                    'diagnostics': {k: float(v) if isinstance(v, (int, float, np.number)) else v
-                                   for k, v in diagnostics.items()} if diagnostics else {},
+                    'interpolation_method': 'knn',
                     'token_metadata': token_metadata,
                     'label_metadata': label_metadata
                 }

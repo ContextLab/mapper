@@ -820,14 +820,14 @@
                     const x = q.x * width;
                     const y = q.y * height;
                     const dist = Math.sqrt((mouseX - x) ** 2 + (mouseY - y) ** 2);
-                    
+
                     if (dist < 15) {
-                        hoveredQuestion = { ...q, index: idx };
+                        hoveredQuestion = { ...q, index: idx, canvasX: x, canvasY: y };
                     }
                 });
 
                 if (hoveredQuestion) {
-                    showTooltip(e.clientX, e.clientY, hoveredQuestion);
+                    showTooltip(rect, hoveredQuestion);
                     canvas.style.cursor = 'pointer';
                 } else {
                     hideTooltip();
@@ -838,7 +838,7 @@
             canvas.addEventListener('mouseleave', hideTooltip);
         }
 
-        function showTooltip(x, y, question) {
+        function showTooltip(canvasRect, question) {
             const wasAnswered = userResponses[question.index] !== undefined;
             const isCorrect = userResponses[question.index] === question.correctIndex;
 
@@ -863,19 +863,23 @@
             `;
 
             tooltip.classList.remove('tooltip-hidden');
-            
-            // Position tooltip very close to dot (10% of previous 5px = 0.5px)
+
+            // Convert canvas coordinates to screen coordinates
+            const dotScreenX = canvasRect.left + (question.canvasX / canvas.width * canvasRect.width);
+            const dotScreenY = canvasRect.top + (question.canvasY / canvas.height * canvasRect.height);
+
+            // Position tooltip very close to dot
             const tooltipRect = tooltip.getBoundingClientRect();
-            const offset = 0.5;  // Ultra-minimal offset from dot
-            let left = x + offset;
-            let top = y - tooltipRect.height - offset;
+            const offset = 2;  // Small offset from dot
+            let left = dotScreenX + offset;
+            let top = dotScreenY - tooltipRect.height - offset;
 
             // Keep tooltip on screen
             if (left + tooltipRect.width > window.innerWidth) {
-                left = x - tooltipRect.width - offset;
+                left = dotScreenX - tooltipRect.width - offset;
             }
             if (top < 0) {
-                top = y + offset;
+                top = dotScreenY + offset;
             }
             if (top + tooltipRect.height > window.innerHeight) {
                 top = window.innerHeight - tooltipRect.height - offset;

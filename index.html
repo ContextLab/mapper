@@ -540,6 +540,7 @@
     <script>
         // Questions data loaded from external file
         let questionsData = [];
+        let cellLabelsData = null; // Cell labels for heatmap tooltips
 
         // Application state
         let currentQuestion = 0;
@@ -594,8 +595,48 @@
             }
         }
 
+        // Load cell labels for heatmap tooltips
+        async function loadCellLabels() {
+            try {
+                const response = await fetch('heatmap_cell_labels.json');
+                if (!response.ok) {
+                    console.warn('Cell labels not found - tooltips will show basic info only');
+                    return;
+                }
+                const data = await response.json();
+                cellLabelsData = data.cells;
+                console.log(`Loaded ${cellLabelsData.length} cell labels`);
+            } catch (error) {
+                console.warn('Could not load cell labels:', error);
+            }
+        }
+
+        // Calculate inferred knowledge percentage for a cell
+        function calculateCellKnowledge(centerX, centerY) {
+            const sigma = 0.15; // Same as drawKnowledgeHeatmap
+            let knowledge = 0;
+            let totalWeight = 0;
+
+            questionsData.forEach((q, idx) => {
+                const dx = centerX - q.x;
+                const dy = centerY - q.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                const weight = Math.exp(-(dist * dist) / (2 * sigma * sigma));
+
+                if (userResponses[idx] !== undefined && userResponses[idx] !== null) {
+                    const isCorrect = userResponses[idx] === q.correctIndex;
+                    knowledge += weight * (isCorrect ? 1 : 0);
+                    totalWeight += weight;
+                }
+            });
+
+            const value = totalWeight > 0 ? knowledge / totalWeight : 0.5;
+            return Math.round(value * 100);
+        }
+
         // Initialize
         loadQuestions();
+        loadCellLabels();
 
         // Event listeners
         nextBtn.addEventListener('click', handleNext);
@@ -975,10 +1016,25 @@
         }
 
         function showHeatmapTooltip(canvasRect, cell) {
+            // Find cell label if available
+            let label = 'Unknown Region';
+            if (cellLabelsData) {
+                const cellData = cellLabelsData.find(c =>
+                    Math.abs(c.center_x - cell.centerX) < 0.001 &&
+                    Math.abs(c.center_y - cell.centerY) < 0.001
+                );
+                if (cellData && cellData.label) {
+                    label = cellData.label;
+                }
+            }
+
+            // Calculate knowledge percentage
+            const knowledgePct = calculateCellKnowledge(cell.centerX, cell.centerY);
+
             tooltip.innerHTML = `
-                <div class="tooltip-question">Heatmap Cell</div>
+                <div class="tooltip-question">${label}</div>
                 <div class="tooltip-status">
-                    <span>Position: (${cell.centerX.toFixed(3)}, ${cell.centerY.toFixed(3)})</span>
+                    <span>Inferred Knowledge: ${knowledgePct}%</span>
                 </div>
             `;
 

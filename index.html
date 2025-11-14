@@ -679,6 +679,17 @@
             const width = container.clientWidth;
             const height = container.clientHeight;
 
+            console.log('=== CANVAS SETUP ===');
+            console.log('devicePixelRatio:', dpr);
+            console.log('container.clientWidth:', container.clientWidth);
+            console.log('container.clientHeight:', container.clientHeight);
+            console.log('canvas.width (internal):', canvas.width);
+            console.log('canvas.height (internal):', canvas.height);
+            console.log('canvas.style.width:', canvas.style.width);
+            console.log('canvas.style.height:', canvas.style.height);
+            console.log('canvas.getBoundingClientRect():', canvas.getBoundingClientRect());
+            console.log('====================');
+
             // Create knowledge heatmap
             drawKnowledgeHeatmap(width, height);
 

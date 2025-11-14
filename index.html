@@ -269,6 +269,18 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             font-size: 0.9em;
             z-index: 5;
+            cursor: move;
+            user-select: none;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .legend:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .legend.dragging {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            cursor: grabbing;
         }
 
         .legend h4 {
@@ -300,6 +312,18 @@
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             z-index: 5;
+            cursor: move;
+            user-select: none;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .colorbar:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .colorbar.dragging {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            cursor: grabbing;
         }
 
         .colorbar h4 {
@@ -700,6 +724,15 @@
 
             // Add interactivity
             addInteractivity(width, height);
+
+            // Make legend and colorbar draggable (only initialize once)
+            if (!canvas.dataset.draggableInitialized) {
+                const legend = document.querySelector('.legend');
+                const colorbar = document.querySelector('.colorbar');
+                if (legend) makeDraggable(legend);
+                if (colorbar) makeDraggable(colorbar);
+                canvas.dataset.draggableInitialized = 'true';
+            }
         }
 
         function redrawCanvas() {
@@ -730,8 +763,8 @@
                 const current = dotAnimationProgress[idx] || 0;
 
                 if (Math.abs(current - target) > 0.01) {
-                    // Smooth transition (200ms duration)
-                    const speed = 1 / 200; // Progress per millisecond
+                    // Smooth transition (133ms duration - 50% faster than original 200ms)
+                    const speed = 1 / 133; // Progress per millisecond
                     const delta = (target - current) * Math.min(speed * deltaTime, 1);
                     dotAnimationProgress[idx] = Math.max(0, Math.min(1, current + delta));
                     needsRedraw = true;
@@ -892,14 +925,14 @@
                 if (animProgress > 0) {
                     const shadowRadius = radius + (2 * animProgress);
                     ctx.save();
-                    ctx.shadowColor = `rgba(0, 0, 0, ${0.5 * animProgress})`;
-                    ctx.shadowBlur = 8 * animProgress;
+                    ctx.shadowColor = `rgba(0, 0, 0, ${0.3 * animProgress})`; // Reduced from 0.5 for subtlety
+                    ctx.shadowBlur = 16 * animProgress; // Increased from 8 for larger blur
                     ctx.shadowOffsetX = 0;
                     ctx.shadowOffsetY = 0;
 
                     ctx.beginPath();
                     ctx.arc(baseX, baseY, shadowRadius, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(0, 0, 0, ${0.3 * animProgress})`;
+                    ctx.fillStyle = `rgba(0, 0, 0, ${0.2 * animProgress})`; // Reduced from 0.3 for subtlety
                     ctx.fill();
                     ctx.restore();
                 }
@@ -1108,6 +1141,59 @@
             setTimeout(() => {
                 tooltip.classList.add('tooltip-hidden');
             }, 200); // Match CSS transition duration
+        }
+
+        function makeDraggable(element) {
+            let isDragging = false;
+            let currentX;
+            let currentY;
+            let initialX;
+            let initialY;
+
+            element.addEventListener('mousedown', (e) => {
+                // Only start drag if clicking on the element itself, not child elements
+                isDragging = true;
+                element.classList.add('dragging');
+
+                initialX = e.clientX - element.offsetLeft;
+                initialY = e.clientY - element.offsetTop;
+
+                e.preventDefault();
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging) {
+                    e.preventDefault();
+
+                    currentX = e.clientX - initialX;
+                    currentY = e.clientY - initialY;
+
+                    // Get parent container bounds
+                    const parent = element.parentElement;
+                    const parentRect = parent.getBoundingClientRect();
+                    const elementRect = element.getBoundingClientRect();
+
+                    // Constrain within parent bounds
+                    const maxX = parentRect.width - elementRect.width;
+                    const maxY = parentRect.height - elementRect.height;
+
+                    currentX = Math.max(0, Math.min(currentX, maxX));
+                    currentY = Math.max(0, Math.min(currentY, maxY));
+
+                    // Update position (remove any existing top/bottom/left/right)
+                    element.style.top = currentY + 'px';
+                    element.style.left = currentX + 'px';
+                    element.style.right = 'auto';
+                    element.style.bottom = 'auto';
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                if (isDragging) {
+                    isDragging = false;
+                    element.classList.remove('dragging');
+                }
+            });
         }
 
         function restart() {

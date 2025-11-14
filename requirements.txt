@@ -1,6 +1,11 @@
 # Core dependencies for knowledge map embedding generation
-numpy>=1.24.0
+numpy>=1.24.0,<2.2.0
 scikit-learn>=1.3.0
+
+# TensorFlow - pinned to 2.19 to avoid macOS mutex blocking error in 2.20
+# See: https://github.com/tensorflow/tensorflow/issues/... (TF 2.20 has threading issues on macOS)
+tensorflow==2.19.0
+tf-keras==2.19.0
 
 # Text embedding models
 sentence-transformers>=2.2.0

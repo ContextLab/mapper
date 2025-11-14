@@ -94,23 +94,67 @@ def extract_questions_from_js(js_file_path):
     return [normalize_question_format(q) for q in questions]
 
 
-def generate_embeddings(questions, model_name='all-mpnet-base-v2'):
+def generate_embeddings_openai(questions, model_name='text-embedding-3-small'):
     """
-    Generate embeddings for questions using datawrangler (pydata-wrangler).
-
-    This avoids PyTorch mutex issues on macOS by using datawrangler's
-    embedding interface.
+    Generate embeddings using OpenAI API (no PyTorch, no mutex issues).
 
     Args:
         questions: List of question dictionaries
-        model_name: Name of sentence-transformer model to use
+        model_name: OpenAI embedding model name
+            - 'text-embedding-3-small': Fast, cheap, 1536 dim
+            - 'text-embedding-3-large': Better quality, 3072 dim
+            - 'text-embedding-ada-002': Legacy, 1536 dim
 
-    Popular models:
+    Requires: pip install openai
+    Set OPENAI_API_KEY environment variable
+    """
+    try:
+        from openai import OpenAI
+    except ImportError:
+        raise ImportError("OpenAI not installed. Install with: pip install openai")
+
+    import os
+    api_key = os.getenv('OPENAI_API_KEY')
+    if not api_key:
+        raise ValueError("OPENAI_API_KEY environment variable not set")
+
+    client = OpenAI(api_key=api_key)
+    question_texts = [q['question'] for q in questions]
+
+    print(f"Generating embeddings via OpenAI API using model: {model_name}")
+    print(f"Processing {len(question_texts)} questions...")
+
+    response = client.embeddings.create(
+        model=model_name,
+        input=question_texts
+    )
+
+    embeddings = np.array([item.embedding for item in response.data])
+    print(f"Generated embeddings with shape: {embeddings.shape}")
+    return embeddings
+
+
+def generate_embeddings(questions, model_name='all-mpnet-base-v2', use_openai=False):
+    """
+    Generate embeddings for questions.
+
+    Args:
+        questions: List of question dictionaries
+        model_name: Model name (OpenAI or sentence-transformer)
+        use_openai: If True, use OpenAI API (avoids PyTorch mutex issues)
+
+    OpenAI models (use_openai=True):
+        - 'text-embedding-3-small': Fast, cheap, 1536 dim
+        - 'text-embedding-3-large': Better quality, 3072 dim
+
+    Local models (use_openai=False, may have mutex issues on macOS):
         - 'all-MiniLM-L6-v2': Fast, good quality (384 dim)
         - 'all-mpnet-base-v2': Better quality, slower (768 dim)
-        - 'paraphrase-multilingual-MiniLM-L12-v2': Multilingual
     """
-    # Use datawrangler to avoid PyTorch mutex issues
+    if use_openai:
+        return generate_embeddings_openai(questions, model_name)
+
+    # Use datawrangler (note: still uses PyTorch underneath)
     import datawrangler as dw
 
     print(f"Generating embeddings with datawrangler using model: {model_name}")

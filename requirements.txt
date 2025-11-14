@@ -1,0 +1,13 @@
+# Core dependencies for knowledge map embedding generation
+numpy>=1.24.0
+scikit-learn>=1.3.0
+
+# Text embedding models
+sentence-transformers>=2.2.0
+pydata-wrangler>=0.1.0
+
+# Dimensionality reduction
+umap-learn>=0.5.3
+
+# Optional: OpenAI API support (for alternative embedding generation)
+openai>=1.0.0

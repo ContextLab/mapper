@@ -73,6 +73,36 @@ python generate_embeddings.py --input path/to/experiment.js --output questions.j
 # The HTML file automatically loads from questions.json - no manual copying needed!
 ```
 
+### Using Docker (Recommended for macOS)
+
+If you encounter mutex/threading issues on macOS when running `generate_embeddings.py`, use Docker to run the script in an Ubuntu container:
+
+```bash
+# Build the Docker image (first time only)
+docker-compose build
+
+# Generate embeddings with UMAP (recommended)
+docker-compose run --rm embeddings python generate_embeddings.py \
+  --questions-json questions.json --update-in-place --method umap
+
+# Generate embeddings with PCA (faster)
+docker-compose run --rm embeddings python generate_embeddings.py \
+  --questions-json questions.json --update-in-place --method pca
+
+# Use OpenAI API (requires OPENAI_API_KEY environment variable)
+docker-compose run --rm -e OPENAI_API_KEY="your-key" embeddings \
+  python generate_embeddings.py --questions-json questions.json \
+  --update-in-place --use-openai --model text-embedding-3-small
+
+# Show help
+docker-compose run --rm embeddings python generate_embeddings.py --help
+```
+
+**Why Docker?**
+- Avoids macOS-specific PyTorch mutex blocking errors
+- Consistent environment across different machines
+- No need to manage Python dependencies locally
+
 ## 📊 How the Heatmap Works
 
 ### Knowledge Inference
@@ -271,6 +301,21 @@ The demo automatically adapts to:
 - **Mobile**: 400px height, compact legends
 
 ## 🐛 Troubleshooting
+
+**Q: PyTorch mutex blocking error on macOS (`[mutex.cc : 452] RAW: Lock blocking`)**
+A: This is a macOS-specific threading issue with PyTorch. Use the Docker setup instead:
+```bash
+docker-compose build
+docker-compose run --rm embeddings python generate_embeddings.py --questions-json questions.json --update-in-place --method umap
+```
+The Docker container runs Ubuntu and avoids this issue entirely.
+
+**Q: Questions don't load in browser**
+A: The HTML file uses `fetch()` which requires HTTP(S). Serve it with:
+```bash
+python -m http.server 8000
+# Then open http://localhost:8000/index.html
+```
 
 **Q: Heatmap is too noisy**
 A: Increase `sigma` parameter for smoother interpolation

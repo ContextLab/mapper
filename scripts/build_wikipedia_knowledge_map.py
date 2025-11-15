@@ -91,7 +91,7 @@ def load_wikipedia_articles():
     # Source 2: Dropbox pickle file (250k articles - USE ALL OF THEM)
     print("\n2. Loading ALL articles from wikipedia.pkl...")
     try:
-        with open('wikipedia.pkl', 'rb') as f:
+        with open('data/wikipedia.pkl', 'rb') as f:
             wiki_dropbox = pickle.load(f)
 
         print(f"   Total articles in file: {len(wiki_dropbox):,}")

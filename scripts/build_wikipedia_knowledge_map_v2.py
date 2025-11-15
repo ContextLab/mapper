@@ -59,7 +59,7 @@ def load_wikipedia_articles():
     # Load from Dropbox pickle file (250k articles - USE ALL OF THEM)
     print("\nLoading ALL articles from wikipedia.pkl...")
     try:
-        with open('wikipedia.pkl', 'rb') as f:
+        with open('data/wikipedia.pkl', 'rb') as f:
             wiki_dropbox = pickle.load(f)
 
         print(f"   Total articles in file: {len(wiki_dropbox):,}")
@@ -119,6 +119,43 @@ def load_questions():
 
     print(f"\n✓ Loaded {len(question_items)} questions")
     return question_items
+
+def load_precomputed_embeddings():
+    """
+    Load precomputed embeddings for Wikipedia articles and questions.
+
+    Returns:
+        tuple: (combined_embeddings, article_count, question_count)
+    """
+    print("\n" + "="*80)
+    print("Loading Precomputed Embeddings")
+    print("="*80)
+
+    # Load Wikipedia embeddings
+    print("\nLoading Wikipedia embeddings from embeddings/wikipedia_embeddings.pkl...")
+    with open('embeddings/wikipedia_embeddings.pkl', 'rb') as f:
+        wiki_data = pickle.load(f)
+    wiki_embeddings = wiki_data['embeddings']
+    print(f"  ✓ Loaded {wiki_embeddings.shape[0]:,} Wikipedia article embeddings (dim={wiki_embeddings.shape[1]})")
+
+    # Load question embeddings
+    print("\nLoading question embeddings from embeddings/question_embeddings.pkl...")
+    with open('embeddings/question_embeddings.pkl', 'rb') as f:
+        q_data = pickle.load(f)
+    question_embeddings = q_data['embeddings']
+    print(f"  ✓ Loaded {question_embeddings.shape[0]} question embeddings (dim={question_embeddings.shape[1]})")
+
+    # Verify dimensions match
+    if wiki_embeddings.shape[1] != question_embeddings.shape[1]:
+        raise ValueError(f"Embedding dimension mismatch: Wikipedia={wiki_embeddings.shape[1]}, Questions={question_embeddings.shape[1]}")
+
+    # Combine embeddings (articles first, then questions)
+    combined_embeddings = np.vstack([wiki_embeddings, question_embeddings])
+    print(f"\n✓ Combined embeddings shape: {combined_embeddings.shape}")
+    print(f"  Articles: {wiki_embeddings.shape[0]:,}")
+    print(f"  Questions: {question_embeddings.shape[0]}")
+
+    return combined_embeddings, wiki_embeddings.shape[0], question_embeddings.shape[0]
 
 def generate_embeddings_qwen(texts, batch_size=32, cache_file='embeddings.pkl'):
     """
@@ -316,6 +353,132 @@ def compute_umap_embeddings(embeddings, n_components=2, n_neighbors=15, min_dist
 
     return coords_2d, reducer
 
+def save_question_coordinates(question_items, coords_2d, article_count, output_file='data/question_coordinates.pkl'):
+    """
+    Save question coordinates to separate file.
+
+    Args:
+        question_items: List of question dictionaries
+        coords_2d: Full UMAP coordinates (articles + questions)
+        article_count: Number of articles (questions start at this index)
+        output_file: Output pickle file path
+    """
+    print("\n" + "="*80)
+    print("Saving Question Coordinates")
+    print("="*80)
+
+    # Extract question coordinates (they come after articles)
+    question_coords = coords_2d[article_count:, :]
+
+    # Normalize to [0, 1]
+    x_min, x_max = coords_2d[:, 0].min(), coords_2d[:, 0].max()
+    y_min, y_max = coords_2d[:, 1].min(), coords_2d[:, 1].max()
+
+    coords_normalized = np.zeros_like(question_coords)
+    coords_normalized[:, 0] = (question_coords[:, 0] - x_min) / (x_max - x_min)
+    coords_normalized[:, 1] = (question_coords[:, 1] - y_min) / (y_max - y_min)
+
+    # Compute bounds for question region
+    q_x_min, q_x_max = coords_normalized[:, 0].min(), coords_normalized[:, 0].max()
+    q_y_min, q_y_max = coords_normalized[:, 1].min(), coords_normalized[:, 1].max()
+
+    question_data = {
+        'coordinates': coords_normalized,
+        'questions': [q['question_data'] for q in question_items],
+        'bounds': {
+            'x_min': float(q_x_min),
+            'x_max': float(q_x_max),
+            'y_min': float(q_y_min),
+            'y_max': float(q_y_max)
+        },
+        'global_bounds': {
+            'x_min': float(x_min),
+            'x_max': float(x_max),
+            'y_min': float(y_min),
+            'y_max': float(y_max)
+        },
+        'timestamp': datetime.now().isoformat()
+    }
+
+    print(f"\nQuestion coordinate statistics:")
+    print(f"  Total questions: {len(question_items)}")
+    print(f"  Coordinate range (normalized):")
+    print(f"    X: [{q_x_min:.3f}, {q_x_max:.3f}]")
+    print(f"    Y: [{q_y_min:.3f}, {q_y_max:.3f}]")
+
+    print(f"\nSaving to {output_file}...")
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    with open(output_file, 'wb') as f:
+        pickle.dump(question_data, f)
+
+    file_size = os.path.getsize(output_file) / 1024
+    print(f"✓ Saved ({file_size:.1f} KB)")
+
+    return question_data
+
+def update_umap_bounds(coords_2d, article_count, output_file='data/umap_bounds.pkl'):
+    """
+    Update UMAP bounds to include both articles and questions.
+
+    Args:
+        coords_2d: Full UMAP coordinates (articles + questions)
+        article_count: Number of articles (questions start at this index)
+        output_file: Output pickle file path
+    """
+    print("\n" + "="*80)
+    print("Updating UMAP Bounds")
+    print("="*80)
+
+    # Compute global bounds (all points)
+    x_min, x_max = coords_2d[:, 0].min(), coords_2d[:, 0].max()
+    y_min, y_max = coords_2d[:, 1].min(), coords_2d[:, 1].max()
+
+    # Compute article-only bounds
+    article_coords = coords_2d[:article_count, :]
+    a_x_min, a_x_max = article_coords[:, 0].min(), article_coords[:, 0].max()
+    a_y_min, a_y_max = article_coords[:, 1].min(), article_coords[:, 1].max()
+
+    # Compute question-only bounds
+    question_coords = coords_2d[article_count:, :]
+    q_x_min, q_x_max = question_coords[:, 0].min(), question_coords[:, 0].max()
+    q_y_min, q_y_max = question_coords[:, 1].min(), question_coords[:, 1].max()
+
+    bounds_data = {
+        'global': {
+            'x_min': float(x_min),
+            'x_max': float(x_max),
+            'y_min': float(y_min),
+            'y_max': float(y_max)
+        },
+        'articles': {
+            'x_min': float(a_x_min),
+            'x_max': float(a_x_max),
+            'y_min': float(a_y_min),
+            'y_max': float(a_y_max)
+        },
+        'questions': {
+            'x_min': float(q_x_min),
+            'x_max': float(q_x_max),
+            'y_min': float(q_y_min),
+            'y_max': float(q_y_max)
+        },
+        'timestamp': datetime.now().isoformat()
+    }
+
+    print(f"\nBounds summary:")
+    print(f"  Global: X=[{x_min:.3f}, {x_max:.3f}], Y=[{y_min:.3f}, {y_max:.3f}]")
+    print(f"  Articles: X=[{a_x_min:.3f}, {a_x_max:.3f}], Y=[{a_y_min:.3f}, {a_y_max:.3f}]")
+    print(f"  Questions: X=[{q_x_min:.3f}, {q_x_max:.3f}], Y=[{q_y_min:.3f}, {q_y_max:.3f}]")
+
+    print(f"\nSaving to {output_file}...")
+    with open(output_file, 'wb') as f:
+        pickle.dump(bounds_data, f)
+
+    file_size = os.path.getsize(output_file) / 1024
+    print(f"✓ Saved ({file_size:.1f} KB)")
+
+    return bounds_data
+
 def save_knowledge_map(items, embeddings, coords_2d, reducer, output_file='knowledge_map.pkl'):
     """Save complete knowledge map to pickle file."""
     print("\n" + "="*80)
@@ -416,43 +579,56 @@ def main():
     print("WIKIPEDIA KNOWLEDGE MAP BUILDER V2")
     print("="*80)
     print("\nBuilding knowledge map with:")
-    print("  - Wikipedia articles (hypertools + dropbox)")
-    print("  - Quiz questions")
-    print("  - Qwen/Qwen3-Embedding-0.6B embeddings (1024-dim)")
-    print("  - UMAP 2D projection")
-    print("\nCaching strategy:")
-    print("  - embeddings.pkl: Embeddings cache (resume from here)")
-    print("  - umap_coords.pkl: UMAP coordinates cache (resume from here)")
-    print("  - knowledge_map.pkl: Final output")
+    print("  - Wikipedia articles (precomputed embeddings)")
+    print("  - Quiz questions (precomputed embeddings)")
+    print("  - Combined UMAP 2D projection")
+    print("\nThis version uses precomputed embeddings from:")
+    print("  - embeddings/wikipedia_embeddings.pkl")
+    print("  - embeddings/question_embeddings.pkl")
 
-    # Step 1: Load data
+    # Step 1: Load precomputed embeddings
+    combined_embeddings, article_count, question_count = load_precomputed_embeddings()
+
+    # Step 2: Load metadata for articles and questions
     articles = load_wikipedia_articles()
     questions = load_questions()
 
-    # Combine
+    # Verify counts match
+    if len(articles) != article_count:
+        print(f"\n⚠ Warning: Article count mismatch (loaded: {len(articles)}, expected: {article_count})")
+        print("  Using first {article_count} articles to match embeddings")
+        articles = articles[:article_count]
+
+    if len(questions) != question_count:
+        raise ValueError(f"Question count mismatch: loaded={len(questions)}, expected={question_count}")
+
+    # Combine items
     all_items = articles + questions
-    all_texts = [item['text'] for item in all_items]
 
-    print(f"\n✓ Total items to embed: {len(all_items):,}")
+    print(f"\n✓ Total items: {len(all_items):,} (articles: {article_count:,}, questions: {question_count})")
 
-    # Step 2: Generate embeddings (with caching)
-    embeddings = generate_embeddings_qwen(all_texts, cache_file='embeddings.pkl')
+    # Step 3: Compute UMAP on combined embeddings (with caching)
+    coords_2d, reducer = compute_umap_embeddings(combined_embeddings, cache_file='umap_coords.pkl')
 
-    # Step 3: Compute UMAP (with caching)
-    coords_2d, reducer = compute_umap_embeddings(embeddings, cache_file='umap_coords.pkl')
+    # Step 4: Save question coordinates separately
+    question_data = save_question_coordinates(questions, coords_2d, article_count)
 
-    # Step 4: Save final knowledge map
-    knowledge_map = save_knowledge_map(all_items, embeddings, coords_2d, reducer)
+    # Step 5: Update UMAP bounds to include questions
+    bounds_data = update_umap_bounds(coords_2d, article_count)
+
+    # Step 6: Save final knowledge map
+    knowledge_map = save_knowledge_map(all_items, combined_embeddings, coords_2d, reducer)
 
     print("\n" + "="*80)
     print("✓ Knowledge map built successfully!")
     print("="*80)
     print("\nGenerated files:")
-    print("  - embeddings.pkl: Cached embeddings (reusable)")
-    print("  - umap_coords.pkl: Cached UMAP coordinates (reusable)")
+    print("  - umap_coords.pkl: UMAP coordinates for all items")
+    print("  - data/question_coordinates.pkl: Question coordinates and bounds")
+    print("  - data/umap_bounds.pkl: Updated bounds including questions")
     print("  - knowledge_map.pkl: Final knowledge map")
     print("\nNext steps:")
-    print("  1. Create new generate_cell_labels.py using KNN with articles")
+    print("  1. Use question_coordinates.pkl for visualization")
     print("  2. Update heatmap to zoom on question region")
     print("  3. Generate cell labels from nearest Wikipedia articles")
 

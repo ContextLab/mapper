@@ -236,3 +236,4 @@ diagnosis_output.txt
 embeddings/cluster*.pkl
 embeddings/*_checkpoint_*.pkl
 embeddings/current_checkpoint.pkl
+.DS_Store

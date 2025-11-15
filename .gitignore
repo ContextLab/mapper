@@ -235,3 +235,4 @@ diagnosis_output.txt
 # Checkpoints
 embeddings/cluster*.pkl
 embeddings/*_checkpoint_*.pkl
+embeddings/current_checkpoint.pkl

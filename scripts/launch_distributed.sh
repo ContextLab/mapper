@@ -50,13 +50,13 @@ launch_cluster() {
         echo "  ✓ wikipedia.pkl already exists, skipping upload"
         # Upload only small files
         sshpass -p "$PASSWORD" scp -o StrictHostKeyChecking=no \
-            generate_embeddings_gpu.py \
+            scripts/generate_embeddings_gpu.py \
             questions.json \
             ${USERNAME}@${ADDRESS}:~/mapper_embeddings/ 2>/dev/null
     else
         echo "  Uploading all files (including 752MB wikipedia.pkl)..."
         sshpass -p "$PASSWORD" scp -o StrictHostKeyChecking=no \
-            generate_embeddings_gpu.py \
+            scripts/generate_embeddings_gpu.py \
             questions.json \
             wikipedia.pkl \
             ${USERNAME}@${ADDRESS}:~/mapper_embeddings/ 2>/dev/null

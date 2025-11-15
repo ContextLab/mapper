@@ -19,12 +19,12 @@ def load_questions(filepath='questions.json'):
     with open(filepath) as f:
         return json.load(f)
 
-def load_umap_model(filepath='umap_reducer.pkl'):
+def load_umap_model(filepath='data/umap_reducer.pkl'):
     """Load UMAP model."""
     with open(filepath, 'rb') as f:
         return pickle.load(f)
 
-def load_umap_bounds(filepath='umap_bounds.pkl'):
+def load_umap_bounds(filepath='data/umap_bounds.pkl'):
     """Load UMAP bounds."""
     with open(filepath, 'rb') as f:
         return pickle.load(f)
@@ -35,8 +35,8 @@ print("=" * 80)
 
 # Load data
 questions = load_questions('questions.json')
-reducer = load_umap_model('umap_reducer.pkl')
-bounds = load_umap_bounds('umap_bounds.pkl')
+reducer = load_umap_model('data/umap_reducer.pkl')
+bounds = load_umap_bounds('data/umap_bounds.pkl')
 
 print(f"\nLoaded {len(questions)} questions")
 print(f"Embedding dimension: {len(questions[0]['embedding_full'])}")

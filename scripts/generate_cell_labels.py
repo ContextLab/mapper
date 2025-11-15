@@ -35,7 +35,7 @@ if "PYTORCH_MPS_DISABLE" not in os.environ:
     os.environ["PYTORCH_MPS_DISABLE"] = "1"
 
 
-def load_umap_model(model_path='umap_reducer.pkl'):
+def load_umap_model(model_path='data/umap_reducer.pkl'):
     """Load pre-fitted UMAP model for inverse transforms."""
     if not os.path.exists(model_path):
         raise FileNotFoundError(f"UMAP model not found at {model_path}. "
@@ -44,7 +44,7 @@ def load_umap_model(model_path='umap_reducer.pkl'):
         return pickle.load(f)
 
 
-def load_umap_bounds(bounds_path='umap_bounds.pkl'):
+def load_umap_bounds(bounds_path='data/umap_bounds.pkl'):
     """Load UMAP coordinate bounds for denormalization."""
     if not os.path.exists(bounds_path):
         raise FileNotFoundError(f"UMAP bounds not found at {bounds_path}. "

@@ -27,7 +27,7 @@ def test_embedding_speed(num_samples=10):
     print("\n[1/4] Loading wikipedia.pkl...")
     start = time.time()
 
-    with open('wikipedia.pkl', 'rb') as f:
+    with open('data/wikipedia.pkl', 'rb') as f:
         wiki_articles = pickle.load(f)
 
     load_time = time.time() - start

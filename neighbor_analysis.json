@@ -1,0 +1,822 @@
+[
+  {
+    "question": "What is the primary function of mitochondria in cells?",
+    "question_coord": [
+      5.013549327850342,
+      4.756615161895752
+    ],
+    "embedding_neighbors": [
+      {
+        "index": 14605,
+        "title": "Mir-186 microRNA precursor family",
+        "similarity": 0.3449919521808624
+      },
+      {
+        "index": 6246,
+        "title": "Exopher",
+        "similarity": 0.3200332522392273
+      },
+      {
+        "index": 23511,
+        "title": "DGUOK",
+        "similarity": 0.3106519877910614
+      },
+      {
+        "index": 17920,
+        "title": "Trichocyte (algae)",
+        "similarity": 0.30372506380081177
+      },
+      {
+        "index": 15858,
+        "title": "MicL sRNA",
+        "similarity": 0.2744736671447754
+      }
+    ],
+    "umap_neighbors": [
+      {
+        "index": 23002,
+        "title": "Y+L amino acid transporter 1",
+        "distance": 0.11804549396038055,
+        "coordinates": [
+          5.100879192352295,
+          4.8360395431518555
+        ]
+      },
+      {
+        "index": 14605,
+        "title": "Mir-186 microRNA precursor family",
+        "distance": 0.1530502438545227,
+        "coordinates": [
+          5.12458610534668,
+          4.8619489669799805
+        ]
+      },
+      {
+        "index": 21446,
+        "title": "Pseudomonas sRNA P1",
+        "distance": 0.16666977107524872,
+        "coordinates": [
+          5.093645095825195,
+          4.902777671813965
+        ]
+      },
+      {
+        "index": 20368,
+        "title": "EPPE-holin family",
+        "distance": 0.17612707614898682,
+        "coordinates": [
+          5.091339588165283,
+          4.914632320404053
+        ]
+      },
+      {
+        "index": 17589,
+        "title": "Breast cancer\u2013related regulator of tp53",
+        "distance": 0.24009187519550323,
+        "coordinates": [
+          5.210629463195801,
+          4.893741130828857
+        ]
+      }
+    ],
+    "overlap_count": 1
+  },
+  {
+    "question": "Which process allows plants to convert sunlight into chemical energy?",
+    "question_coord": [
+      4.978586196899414,
+      4.726935386657715
+    ],
+    "embedding_neighbors": [
+      {
+        "index": 13948,
+        "title": "Solar Power",
+        "similarity": 0.40392446517944336
+      },
+      {
+        "index": 10381,
+        "title": "Oxygen-evolving complex",
+        "similarity": 0.32169267535209656
+      },
+      {
+        "index": 5671,
+        "title": "Algae bioreactor",
+        "similarity": 0.31050705909729004
+      },
+      {
+        "index": 9469,
+        "title": "Phytoecdysteroid",
+        "similarity": 0.28937944769859314
+      },
+      {
+        "index": 17920,
+        "title": "Trichocyte (algae)",
+        "similarity": 0.27408650517463684
+      }
+    ],
+    "umap_neighbors": [
+      {
+        "index": 23002,
+        "title": "Y+L amino acid transporter 1",
+        "distance": 0.16388805210590363,
+        "coordinates": [
+          5.100879192352295,
+          4.8360395431518555
+        ]
+      },
+      {
+        "index": 14605,
+        "title": "Mir-186 microRNA precursor family",
+        "distance": 0.1988583505153656,
+        "coordinates": [
+          5.12458610534668,
+          4.8619489669799805
+        ]
+      },
+      {
+        "index": 21446,
+        "title": "Pseudomonas sRNA P1",
+        "distance": 0.21014057099819183,
+        "coordinates": [
+          5.093645095825195,
+          4.902777671813965
+        ]
+      },
+      {
+        "index": 20368,
+        "title": "EPPE-holin family",
+        "distance": 0.2189599573612213,
+        "coordinates": [
+          5.091339588165283,
+          4.914632320404053
+        ]
+      },
+      {
+        "index": 17589,
+        "title": "Breast cancer\u2013related regulator of tp53",
+        "distance": 0.2857765555381775,
+        "coordinates": [
+          5.210629463195801,
+          4.893741130828857
+        ]
+      }
+    ],
+    "overlap_count": 0
+  },
+  {
+    "question": "What is the basic unit of heredity?",
+    "question_coord": [
+      5.010082721710205,
+      4.722326755523682
+    ],
+    "embedding_neighbors": [
+      {
+        "index": 1811,
+        "title": "Journal of Heredity",
+        "similarity": 0.35196220874786377
+      },
+      {
+        "index": 5818,
+        "title": "HMITL",
+        "similarity": 0.26842743158340454
+      },
+      {
+        "index": 15782,
+        "title": "National heritage",
+        "similarity": 0.26108041405677795
+      },
+      {
+        "index": 14196,
+        "title": "POLR1A",
+        "similarity": 0.2592547535896301
+      },
+      {
+        "index": 18112,
+        "title": "Revolutions per minute (disambiguation)",
+        "similarity": 0.25389206409454346
+      }
+    ],
+    "umap_neighbors": [
+      {
+        "index": 23002,
+        "title": "Y+L amino acid transporter 1",
+        "distance": 0.14551493525505066,
+        "coordinates": [
+          5.100879192352295,
+          4.8360395431518555
+        ]
+      },
+      {
+        "index": 14605,
+        "title": "Mir-186 microRNA precursor family",
+        "distance": 0.1805696189403534,
+        "coordinates": [
+          5.12458610534668,
+          4.8619489669799805
+        ]
+      },
+      {
+        "index": 21446,
+        "title": "Pseudomonas sRNA P1",
+        "distance": 0.19885976612567902,
+        "coordinates": [
+          5.093645095825195,
+          4.902777671813965
+        ]
+      },
+      {
+        "index": 20368,
+        "title": "EPPE-holin family",
+        "distance": 0.2087680697441101,
+        "coordinates": [
+          5.091339588165283,
+          4.914632320404053
+        ]
+      },
+      {
+        "index": 17589,
+        "title": "Breast cancer\u2013related regulator of tp53",
+        "distance": 0.26382169127464294,
+        "coordinates": [
+          5.210629463195801,
+          4.893741130828857
+        ]
+      }
+    ],
+    "overlap_count": 0
+  },
+  {
+    "question": "Which structure controls what enters and exits a cell?",
+    "question_coord": [
+      5.026511192321777,
+      4.7730865478515625
+    ],
+    "embedding_neighbors": [
+      {
+        "index": 6246,
+        "title": "Exopher",
+        "similarity": 0.34486883878707886
+      },
+      {
+        "index": 21605,
+        "title": "Connexon",
+        "similarity": 0.32392555475234985
+      },
+      {
+        "index": 23941,
+        "title": "EXOC3L2",
+        "similarity": 0.32242366671562195
+      },
+      {
+        "index": 17920,
+        "title": "Trichocyte (algae)",
+        "similarity": 0.3214553892612457
+      },
+      {
+        "index": 14531,
+        "title": "Karyopherin",
+        "similarity": 0.3113638460636139
+      }
+    ],
+    "umap_neighbors": [
+      {
+        "index": 23002,
+        "title": "Y+L amino acid transporter 1",
+        "distance": 0.09743551164865494,
+        "coordinates": [
+          5.100879192352295,
+          4.8360395431518555
+        ]
+      },
+      {
+        "index": 14605,
+        "title": "Mir-186 microRNA precursor family",
+        "distance": 0.1323450654745102,
+        "coordinates": [
+          5.12458610534668,
+          4.8619489669799805
+        ]
+      },
+      {
+        "index": 21446,
+        "title": "Pseudomonas sRNA P1",
+        "distance": 0.1460368037223816,
+        "coordinates": [
+          5.093645095825195,
+          4.902777671813965
+        ]
+      },
+      {
+        "index": 20368,
+        "title": "EPPE-holin family",
+        "distance": 0.15568535029888153,
+        "coordinates": [
+          5.091339588165283,
+          4.914632320404053
+        ]
+      },
+      {
+        "index": 17589,
+        "title": "Breast cancer\u2013related regulator of tp53",
+        "distance": 0.22012965381145477,
+        "coordinates": [
+          5.210629463195801,
+          4.893741130828857
+        ]
+      }
+    ],
+    "overlap_count": 0
+  },
+  {
+    "question": "What type of bond holds the two strands of DNA together?",
+    "question_coord": [
+      5.014463901519775,
+      4.770599365234375
+    ],
+    "embedding_neighbors": [
+      {
+        "index": 9965,
+        "title": "Ligand (disambiguation)",
+        "similarity": 0.32640019059181213
+      },
+      {
+        "index": 21651,
+        "title": "Iteron",
+        "similarity": 0.31171008944511414
+      },
+      {
+        "index": 16290,
+        "title": "T7 DNA helicase",
+        "similarity": 0.3011713922023773
+      },
+      {
+        "index": 17408,
+        "title": "Beta turn",
+        "similarity": 0.29375049471855164
+      },
+      {
+        "index": 5004,
+        "title": "Bond plus option",
+        "similarity": 0.2698814272880554
+      }
+    ],
+    "umap_neighbors": [
+      {
+        "index": 23002,
+        "title": "Y+L amino acid transporter 1",
+        "distance": 0.10839750617742538,
+        "coordinates": [
+          5.100879192352295,
+          4.8360395431518555
+        ]
+      },
+      {
+        "index": 14605,
+        "title": "Mir-186 microRNA precursor family",
+        "distance": 0.14307917654514313,
+        "coordinates": [
+          5.12458610534668,
+          4.8619489669799805
+        ]
+      },
+      {
+        "index": 21446,
+        "title": "Pseudomonas sRNA P1",
+        "distance": 0.15408039093017578,
+        "coordinates": [
+          5.093645095825195,
+          4.902777671813965
+        ]
+      },
+      {
+        "index": 20368,
+        "title": "EPPE-holin family",
+        "distance": 0.1632647067308426,
+        "coordinates": [
+          5.091339588165283,
+          4.914632320404053
+        ]
+      },
+      {
+        "index": 17589,
+        "title": "Breast cancer\u2013related regulator of tp53",
+        "distance": 0.23161351680755615,
+        "coordinates": [
+          5.210629463195801,
+          4.893741130828857
+        ]
+      }
+    ],
+    "overlap_count": 0
+  },
+  {
+    "question": "In which organelle does photosynthesis occur?",
+    "question_coord": [
+      5.003021240234375,
+      4.728931903839111
+    ],
+    "embedding_neighbors": [
+      {
+        "index": 10381,
+        "title": "Oxygen-evolving complex",
+        "similarity": 0.4093513488769531
+      },
+      {
+        "index": 17920,
+        "title": "Trichocyte (algae)",
+        "similarity": 0.3261907398700714
+      },
+      {
+        "index": 16290,
+        "title": "T7 DNA helicase",
+        "similarity": 0.2806347608566284
+      },
+      {
+        "index": 5671,
+        "title": "Algae bioreactor",
+        "similarity": 0.2805318534374237
+      },
+      {
+        "index": 5,
+        "title": "ATP cone",
+        "similarity": 0.27705076336860657
+      }
+    ],
+    "umap_neighbors": [
+      {
+        "index": 23002,
+        "title": "Y+L amino acid transporter 1",
+        "distance": 0.1450800597667694,
+        "coordinates": [
+          5.100879192352295,
+          4.8360395431518555
+        ]
+      },
+      {
+        "index": 14605,
+        "title": "Mir-186 microRNA precursor family",
+        "distance": 0.18019865453243256,
+        "coordinates": [
+          5.12458610534668,
+          4.8619489669799805
+        ]
+      },
+      {
+        "index": 21446,
+        "title": "Pseudomonas sRNA P1",
+        "distance": 0.1960485577583313,
+        "coordinates": [
+          5.093645095825195,
+          4.902777671813965
+        ]
+      },
+      {
+        "index": 20368,
+        "title": "EPPE-holin family",
+        "distance": 0.20563262701034546,
+        "coordinates": [
+          5.091339588165283,
+          4.914632320404053
+        ]
+      },
+      {
+        "index": 17589,
+        "title": "Breast cancer\u2013related regulator of tp53",
+        "distance": 0.26507216691970825,
+        "coordinates": [
+          5.210629463195801,
+          4.893741130828857
+        ]
+      }
+    ],
+    "overlap_count": 0
+  },
+  {
+    "question": "What is the product of cellular respiration?",
+    "question_coord": [
+      4.994956970214844,
+      4.762441635131836
+    ],
+    "embedding_neighbors": [
+      {
+        "index": 32,
+        "title": "Coniferyl-alcohol dehydrogenase",
+        "similarity": 0.3198706805706024
+      },
+      {
+        "index": 14739,
+        "title": "Sulfopyruvate decarboxylase",
+        "similarity": 0.31026920676231384
+      },
+      {
+        "index": 7578,
+        "title": "2,4-dichlorobenzoyl-CoA reductase",
+        "similarity": 0.298366904258728
+      },
+      {
+        "index": 9060,
+        "title": "Marginal profit",
+        "similarity": 0.2893449366092682
+      },
+      {
+        "index": 17824,
+        "title": "HTTR",
+        "similarity": 0.28067445755004883
+      }
+    ],
+    "umap_neighbors": [
+      {
+        "index": 23002,
+        "title": "Y+L amino acid transporter 1",
+        "distance": 0.12898127734661102,
+        "coordinates": [
+          5.100879192352295,
+          4.8360395431518555
+        ]
+      },
+      {
+        "index": 14605,
+        "title": "Mir-186 microRNA precursor family",
+        "distance": 0.16341793537139893,
+        "coordinates": [
+          5.12458610534668,
+          4.8619489669799805
+        ]
+      },
+      {
+        "index": 21446,
+        "title": "Pseudomonas sRNA P1",
+        "distance": 0.1715620905160904,
+        "coordinates": [
+          5.093645095825195,
+          4.902777671813965
+        ]
+      },
+      {
+        "index": 20368,
+        "title": "EPPE-holin family",
+        "distance": 0.1801433116197586,
+        "coordinates": [
+          5.091339588165283,
+          4.914632320404053
+        ]
+      },
+      {
+        "index": 17589,
+        "title": "Breast cancer\u2013related regulator of tp53",
+        "distance": 0.2524958848953247,
+        "coordinates": [
+          5.210629463195801,
+          4.893741130828857
+        ]
+      }
+    ],
+    "overlap_count": 0
+  },
+  {
+    "question": "Which macromolecule stores genetic information?",
+    "question_coord": [
+      5.016509056091309,
+      4.762597560882568
+    ],
+    "embedding_neighbors": [
+      {
+        "index": 14196,
+        "title": "POLR1A",
+        "similarity": 0.369724839925766
+      },
+      {
+        "index": 17589,
+        "title": "Breast cancer\u2013related regulator of tp53",
+        "similarity": 0.338565468788147
+      },
+      {
+        "index": 7514,
+        "title": "VWA5A",
+        "similarity": 0.3236945569515228
+      },
+      {
+        "index": 9359,
+        "title": "PCNX",
+        "similarity": 0.3232240378856659
+      },
+      {
+        "index": 16290,
+        "title": "T7 DNA helicase",
+        "similarity": 0.31878888607025146
+      }
+    ],
+    "umap_neighbors": [
+      {
+        "index": 23002,
+        "title": "Y+L amino acid transporter 1",
+        "distance": 0.11185725033283234,
+        "coordinates": [
+          5.100879192352295,
+          4.8360395431518555
+        ]
+      },
+      {
+        "index": 14605,
+        "title": "Mir-186 microRNA precursor family",
+        "distance": 0.14680378139019012,
+        "coordinates": [
+          5.12458610534668,
+          4.8619489669799805
+        ]
+      },
+      {
+        "index": 21446,
+        "title": "Pseudomonas sRNA P1",
+        "distance": 0.16000135242938995,
+        "coordinates": [
+          5.093645095825195,
+          4.902777671813965
+        ]
+      },
+      {
+        "index": 20368,
+        "title": "EPPE-holin family",
+        "distance": 0.16945257782936096,
+        "coordinates": [
+          5.091339588165283,
+          4.914632320404053
+        ]
+      },
+      {
+        "index": 17589,
+        "title": "Breast cancer\u2013related regulator of tp53",
+        "distance": 0.2342677265405655,
+        "coordinates": [
+          5.210629463195801,
+          4.893741130828857
+        ]
+      }
+    ],
+    "overlap_count": 1
+  },
+  {
+    "question": "What process do cells use to divide and create identical copies?",
+    "question_coord": [
+      5.027657508850098,
+      4.7570366859436035
+    ],
+    "embedding_neighbors": [
+      {
+        "index": 8550,
+        "title": "Cell Research",
+        "similarity": 0.29339438676834106
+      },
+      {
+        "index": 15291,
+        "title": "Imitative learning",
+        "similarity": 0.26462769508361816
+      },
+      {
+        "index": 1449,
+        "title": "George Otto Gey",
+        "similarity": 0.26431336998939514
+      },
+      {
+        "index": 21605,
+        "title": "Connexon",
+        "similarity": 0.2538650631904602
+      },
+      {
+        "index": 14533,
+        "title": "Viral synapse",
+        "similarity": 0.25301897525787354
+      }
+    ],
+    "umap_neighbors": [
+      {
+        "index": 23002,
+        "title": "Y+L amino acid transporter 1",
+        "distance": 0.10771660506725311,
+        "coordinates": [
+          5.100879192352295,
+          4.8360395431518555
+        ]
+      },
+      {
+        "index": 14605,
+        "title": "Mir-186 microRNA precursor family",
+        "distance": 0.14283466339111328,
+        "coordinates": [
+          5.12458610534668,
+          4.8619489669799805
+        ]
+      },
+      {
+        "index": 21446,
+        "title": "Pseudomonas sRNA P1",
+        "distance": 0.15998373925685883,
+        "coordinates": [
+          5.093645095825195,
+          4.902777671813965
+        ]
+      },
+      {
+        "index": 20368,
+        "title": "EPPE-holin family",
+        "distance": 0.16997584700584412,
+        "coordinates": [
+          5.091339588165283,
+          4.914632320404053
+        ]
+      },
+      {
+        "index": 17589,
+        "title": "Breast cancer\u2013related regulator of tp53",
+        "distance": 0.22840061783790588,
+        "coordinates": [
+          5.210629463195801,
+          4.893741130828857
+        ]
+      }
+    ],
+    "overlap_count": 0
+  },
+  {
+    "question": "Where does protein synthesis occur in the cell?",
+    "question_coord": [
+      5.061389923095703,
+      4.798851013183594
+    ],
+    "embedding_neighbors": [
+      {
+        "index": 8266,
+        "title": "SPR domain",
+        "similarity": 0.2862512469291687
+      },
+      {
+        "index": 17177,
+        "title": "RABGEF1",
+        "similarity": 0.28144970536231995
+      },
+      {
+        "index": 21605,
+        "title": "Connexon",
+        "similarity": 0.27834269404411316
+      },
+      {
+        "index": 4366,
+        "title": "ZFYVE1",
+        "similarity": 0.27699562907218933
+      },
+      {
+        "index": 5,
+        "title": "ATP cone",
+        "similarity": 0.27597102522850037
+      }
+    ],
+    "umap_neighbors": [
+      {
+        "index": 23002,
+        "title": "Y+L amino acid transporter 1",
+        "distance": 0.0542437918484211,
+        "coordinates": [
+          5.100879192352295,
+          4.8360395431518555
+        ]
+      },
+      {
+        "index": 14605,
+        "title": "Mir-186 microRNA precursor family",
+        "distance": 0.08930346369743347,
+        "coordinates": [
+          5.12458610534668,
+          4.8619489669799805
+        ]
+      },
+      {
+        "index": 21446,
+        "title": "Pseudomonas sRNA P1",
+        "distance": 0.10881703346967697,
+        "coordinates": [
+          5.093645095825195,
+          4.902777671813965
+        ]
+      },
+      {
+        "index": 20368,
+        "title": "EPPE-holin family",
+        "distance": 0.11959219723939896,
+        "coordinates": [
+          5.091339588165283,
+          4.914632320404053
+        ]
+      },
+      {
+        "index": 17589,
+        "title": "Breast cancer\u2013related regulator of tp53",
+        "distance": 0.17685185372829437,
+        "coordinates": [
+          5.210629463195801,
+          4.893741130828857
+        ]
+      }
+    ],
+    "overlap_count": 0
+  }
+]

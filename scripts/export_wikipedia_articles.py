@@ -55,8 +55,11 @@ def load_bounds():
     """Load heatmap bounds from data/umap_bounds.pkl"""
     print("Loading bounds...")
     with open('data/umap_bounds.pkl', 'rb') as f:
-        bounds = pickle.load(f)
-    print(f"  Bounds: x=[{bounds['x_min']:.2f}, {bounds['x_max']:.2f}], y=[{bounds['y_min']:.2f}, {bounds['y_max']:.2f}]")
+        bounds_data = pickle.load(f)
+
+    # Extract article bounds (full range)
+    bounds = bounds_data['articles']
+    print(f"  Article bounds: x=[{bounds['x_min']:.2f}, {bounds['x_max']:.2f}], y=[{bounds['y_min']:.2f}, {bounds['y_max']:.2f}]")
     return bounds
 
 
@@ -69,37 +72,23 @@ def project_embeddings(embeddings, reducer):
 
 
 def filter_by_bounds(articles, coords_2d, bounds):
-    """Filter articles to those within bounds and return ALL with coordinates"""
+    """Collect all articles with their coordinates"""
     print("Processing articles with coordinates...")
-
-    x_min = bounds['x_min']
-    x_max = bounds['x_max']
-    y_min = bounds['y_min']
-    y_max = bounds['y_max']
 
     # Collect all articles with their coordinates
     all_articles = []
-    within_bounds = 0
 
     for i, (article, coord) in enumerate(zip(articles, coords_2d)):
         x, y = coord
         all_articles.append((article, x, y))
 
-        if x_min <= x <= x_max and y_min <= y <= y_max:
-            within_bounds += 1
-
     print(f"  Total articles: {len(all_articles):,}")
-    print(f"  Articles within question bounds: {within_bounds} ({within_bounds/len(all_articles)*100:.1f}%)")
-
-    # Since few/no articles are within the narrow question bounds,
-    # we'll return ALL articles and normalize to the same coordinate system
-    print(f"  → Using ALL articles to provide full knowledge context")
     return all_articles
 
 
 def normalize_coordinates(filtered_articles, bounds):
-    """Normalize coordinates to [0, 1] range using question bounds"""
-    print("Normalizing coordinates to [0, 1] using question bounds...")
+    """Normalize coordinates to [0, 1] range using full article bounds"""
+    print("Normalizing coordinates to [0, 1] using full article bounds...")
 
     x_min = bounds['x_min']
     x_max = bounds['x_max']
@@ -107,23 +96,15 @@ def normalize_coordinates(filtered_articles, bounds):
     y_max = bounds['y_max']
 
     normalized = []
-    outside_bounds = 0
 
     for article, x, y in filtered_articles:
-        # Normalize to [0, 1] based on question bounds
-        # Articles outside bounds will have coords < 0 or > 1
+        # Normalize to [0, 1] based on full article bounds
         x_norm = (x - x_min) / (x_max - x_min)
         y_norm = (y - y_min) / (y_max - y_min)
 
-        # Only include articles that are reasonably close to the question region
-        # Allow some margin (e.g., -0.5 to 1.5) to show context
-        if -0.5 <= x_norm <= 1.5 and -0.5 <= y_norm <= 1.5:
-            normalized.append((article, x_norm, y_norm))
-        else:
-            outside_bounds += 1
+        normalized.append((article, x_norm, y_norm))
 
-    print(f"  Kept {len(normalized):,} articles in extended region")
-    print(f"  Filtered {outside_bounds:,} articles too far from question region")
+    print(f"  Normalized {len(normalized):,} articles to [0, 1] range")
 
     return normalized
 

@@ -83,7 +83,7 @@ def main():
     # Load Wikipedia articles
     print("[1/3] Loading Wikipedia articles...")
     start = time.time()
-    with open('wikipedia.pkl', 'rb') as f:
+    with open('data/wikipedia.pkl', 'rb') as f:
         wiki_articles = pickle.load(f)
     load_time = time.time() - start
     print(f"  ✓ Loaded {len(wiki_articles):,} articles in {load_time:.2f}s")

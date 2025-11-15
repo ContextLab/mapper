@@ -129,19 +129,19 @@ def main():
     print(f"  y: [{article_coords[:, 1].min():.3f}, {article_coords[:, 1].max():.3f}]")
     print()
 
-    # Calculate bounding box with 10% padding
+    # Calculate bounding box with 50% padding
     q_x_min, q_x_max = question_coords[:, 0].min(), question_coords[:, 0].max()
     q_y_min, q_y_max = question_coords[:, 1].min(), question_coords[:, 1].max()
 
     x_range = q_x_max - q_x_min
     y_range = q_y_max - q_y_min
 
-    bbox_x_min = q_x_min - 0.1 * x_range
-    bbox_x_max = q_x_max + 0.1 * x_range
-    bbox_y_min = q_y_min - 0.1 * y_range
-    bbox_y_max = q_y_max + 0.1 * y_range
+    bbox_x_min = q_x_min - 0.5 * x_range
+    bbox_x_max = q_x_max + 0.5 * x_range
+    bbox_y_min = q_y_min - 0.5 * y_range
+    bbox_y_max = q_y_max + 0.5 * y_range
 
-    print("Question bounding box (with 10% padding):")
+    print("Question bounding box (with 50% padding):")
     print(f"  x: [{bbox_x_min:.3f}, {bbox_x_max:.3f}]")
     print(f"  y: [{bbox_y_min:.3f}, {bbox_y_max:.3f}]")
     print()

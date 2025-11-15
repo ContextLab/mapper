@@ -52,7 +52,7 @@ def save_checkpoint(checkpoint_file, data):
 
 def generate_embeddings_checkpointed(
     num_articles=25000,
-    batch_size=128,
+    batch_size=32,
     checkpoint_interval=1000,
     use_mps=True,
     resume=False
@@ -62,7 +62,7 @@ def generate_embeddings_checkpointed(
 
     Args:
         num_articles: Number of articles to embed in this run
-        batch_size: Batch size for embedding generation
+        batch_size: Batch size for embedding generation (default: 32, safe for MPS)
         checkpoint_interval: Save checkpoint every N articles
         use_mps: Whether to use Metal Performance Shaders
         resume: Whether to resume from existing checkpoint
@@ -312,8 +312,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Generate embeddings with checkpointing')
     parser.add_argument('--num-articles', type=int, default=25000,
                         help='Number of articles to process (default: 25000)')
-    parser.add_argument('--batch-size', type=int, default=128,
-                        help='Batch size for embedding generation (default: 128)')
+    parser.add_argument('--batch-size', type=int, default=32,
+                        help='Batch size for embedding generation (default: 32, safe for MPS)')
     parser.add_argument('--checkpoint-interval', type=int, default=1000,
                         help='Save checkpoint every N articles (default: 1000)')
     parser.add_argument('--cpu-only', action='store_true',

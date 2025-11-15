@@ -223,9 +223,9 @@ def reduce_dimensions(embeddings, method='umap', n_components=2, save_reducer=Fa
 
         # Save the reducer if requested
         if save_reducer:
-            with open('umap_reducer.pkl', 'wb') as f:
+            with open('data/umap_reducer.pkl', 'wb') as f:
                 pickle.dump(reducer, f)
-            print("Saved UMAP reducer to umap_reducer.pkl")
+            print("Saved UMAP reducer to data/umap_reducer.pkl")
 
             # Also save the bounds for inverse transform
             bounds = {
@@ -234,9 +234,9 @@ def reduce_dimensions(embeddings, method='umap', n_components=2, save_reducer=Fa
                 'y_min': float(reduced[:, 1].min()),
                 'y_max': float(reduced[:, 1].max()),
             }
-            with open('umap_bounds.pkl', 'wb') as f:
+            with open('data/umap_bounds.pkl', 'wb') as f:
                 pickle.dump(bounds, f)
-            print("Saved UMAP bounds to umap_bounds.pkl")
+            print("Saved UMAP bounds to data/umap_bounds.pkl")
     else:
         raise ValueError(f"Unknown method: {method}. Use 'pca', 'tsne', or 'umap'")
 

@@ -35,7 +35,7 @@ except Exception as e:
 # 2. Dropbox pickle
 print("\n2. Dropbox wikipedia.pkl:")
 try:
-    with open('wikipedia.pkl', 'rb') as f:
+    with open('data/wikipedia.pkl', 'rb') as f:
         wiki_db = pickle.load(f)
 
     print(f"   Type: {type(wiki_db)}")

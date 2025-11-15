@@ -74,7 +74,7 @@ def generate_embeddings_local(num_articles=None, use_mps=True, batch_size=128, i
     # Load Wikipedia articles
     print("[1/5] Loading Wikipedia articles...")
     start = time.time()
-    with open('wikipedia.pkl', 'rb') as f:
+    with open('data/wikipedia.pkl', 'rb') as f:
         wiki_articles = pickle.load(f)
     load_time = time.time() - start
     print(f"  ✓ Loaded {len(wiki_articles):,} articles in {load_time:.2f}s")

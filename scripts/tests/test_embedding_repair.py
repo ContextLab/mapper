@@ -14,13 +14,13 @@ os.environ["OMP_NUM_THREADS"] = "1"
 os.environ["MKL_NUM_THREADS"] = "1"
 
 
-def load_umap_model(model_path='umap_reducer.pkl'):
+def load_umap_model(model_path='data/umap_reducer.pkl'):
     """Load pre-fitted UMAP model."""
     with open(model_path, 'rb') as f:
         return pickle.load(f)
 
 
-def load_umap_bounds(bounds_path='umap_bounds.pkl'):
+def load_umap_bounds(bounds_path='data/umap_bounds.pkl'):
     """Load UMAP coordinate bounds."""
     with open(bounds_path, 'rb') as f:
         return pickle.load(f)

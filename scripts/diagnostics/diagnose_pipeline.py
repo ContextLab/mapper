@@ -41,8 +41,8 @@ def test_umap_inversion():
 
     # Load data
     questions = load_questions('questions.json')
-    reducer = load_umap_model('umap_reducer.pkl')
-    bounds = load_umap_bounds('umap_bounds.pkl')
+    reducer = load_umap_model('data/umap_reducer.pkl')
+    bounds = load_umap_bounds('data/umap_bounds.pkl')
 
     print(f"\nLoaded {len(questions)} questions")
     print(f"Embedding dimension: {len(questions[0]['embedding_full'])}")
@@ -174,8 +174,8 @@ def test_vec2text_recovery():
     print_section("PHASE 2: Vec2text Token Recovery Quality")
 
     questions = load_questions('questions.json')
-    reducer = load_umap_model('umap_reducer.pkl')
-    bounds = load_umap_bounds('umap_bounds.pkl')
+    reducer = load_umap_model('data/umap_reducer.pkl')
+    bounds = load_umap_bounds('data/umap_bounds.pkl')
     reference_embeddings = np.array([q['embedding_full'] for q in questions])
 
     print("\nTesting vec2text recovery for question coordinates...\n")

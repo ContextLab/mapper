@@ -100,8 +100,8 @@ def generate_single_cell_label(gx, gy, grid_size=40, verbose=False):
 
     # Load data
     questions = load_questions('questions.json')
-    reducer = load_umap_model('umap_reducer.pkl')
-    bounds = load_umap_bounds('umap_bounds.pkl')
+    reducer = load_umap_model('data/umap_reducer.pkl')
+    bounds = load_umap_bounds('data/umap_bounds.pkl')
 
     # Convert grid coords to normalized coords
     x_norm, y_norm = denormalize_grid(gx, gy, grid_size)

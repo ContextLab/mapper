@@ -541,6 +541,7 @@
         // Questions data loaded from external file
         let questionsData = [];
         let cellLabelsData = null; // Cell labels for heatmap tooltips
+        let wikipediaArticles = []; // Wikipedia articles with coordinates
 
         // Application state
         let currentQuestion = 0;
@@ -567,7 +568,9 @@
         // Hover state for animations
         let hoveredDotIndex = null;
         let hoveredHeatmapCell = null;
+        let hoveredArticleIndex = null; // Wikipedia article hover state
         let dotAnimationProgress = {}; // Maps dot index to animation progress (0-1)
+        let articleAnimationProgress = {}; // Maps article index to animation progress (0-1)
         let animationFrameId = null;
         let lastFrameTime = performance.now();
 
@@ -611,6 +614,21 @@
             }
         }
 
+        // Load Wikipedia articles
+        async function loadWikipediaArticles() {
+            try {
+                const response = await fetch('wikipedia_articles.json');
+                if (!response.ok) {
+                    console.warn('Wikipedia articles not found - visualization will show questions only');
+                    return;
+                }
+                wikipediaArticles = await response.json();
+                console.log(`Loaded ${wikipediaArticles.length} Wikipedia articles`);
+            } catch (error) {
+                console.warn('Could not load Wikipedia articles:', error);
+            }
+        }
+
         // Calculate inferred knowledge percentage for a cell
         function calculateCellKnowledge(centerX, centerY) {
             const sigma = 0.15; // Same as drawKnowledgeHeatmap
@@ -637,6 +655,7 @@
         // Initialize
         loadQuestions();
         loadCellLabels();
+        loadWikipediaArticles();
 
         // Event listeners
         nextBtn.addEventListener('click', handleNext);
@@ -760,6 +779,9 @@
             // Create knowledge heatmap
             drawKnowledgeHeatmap(width, height);
 
+            // Draw Wikipedia article dots (between heatmap and questions)
+            drawWikipediaArticles(width, height);
+
             // Draw question markers
             drawQuestionMarkers(width, height);
 
@@ -785,8 +807,9 @@
             // Clear canvas
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Redraw heatmap and markers
+            // Redraw heatmap, articles, and markers
             drawKnowledgeHeatmap(width, height);
+            drawWikipediaArticles(width, height);
             drawQuestionMarkers(width, height);
         }
 
@@ -797,7 +820,7 @@
 
             let needsRedraw = false;
 
-            // Update animation progress for all dots
+            // Update animation progress for all question dots
             questionsData.forEach((q, idx) => {
                 const isHovered = (hoveredDotIndex === idx);
                 const target = isHovered ? 1 : 0;
@@ -811,6 +834,23 @@
                     needsRedraw = true;
                 } else {
                     dotAnimationProgress[idx] = target;
+                }
+            });
+
+            // Update animation progress for Wikipedia article dots
+            wikipediaArticles.forEach((article, idx) => {
+                const isHovered = (hoveredArticleIndex === idx);
+                const target = isHovered ? 1 : 0;
+                const current = articleAnimationProgress[idx] || 0;
+
+                if (Math.abs(current - target) > 0.01) {
+                    // Smooth transition (50ms duration - same as questions)
+                    const speed = 1 / 50; // Progress per millisecond
+                    const delta = (target - current) * Math.min(speed * deltaTime, 1);
+                    articleAnimationProgress[idx] = Math.max(0, Math.min(1, current + delta));
+                    needsRedraw = true;
+                } else {
+                    articleAnimationProgress[idx] = target;
                 }
             });
 
@@ -927,6 +967,43 @@
             const a = matches[4] !== undefined ? parseFloat(matches[4]) : 1;
 
             return `rgba(${r}, ${g}, ${b}, ${a})`;
+        }
+
+        function drawWikipediaArticles(width, height) {
+            // Render articles in extended region (includes articles outside [0,1] for context)
+            wikipediaArticles.forEach((article, idx) => {
+                const x = article.x;
+                const y = article.y;
+
+                // Skip articles outside the extended region [-0.5, 1.5]
+                // (matches the filtering in export script)
+                if (x < -0.5 || x > 1.5 || y < -0.5 || y > 1.5) {
+                    return;
+                }
+
+                const baseX = x * width;
+                const baseY = y * height;
+
+                // Get animation progress for this article (0 = not hovered, 1 = fully hovered)
+                const animProgress = articleAnimationProgress[idx] || 0;
+
+                // Base radius for article dots (small, as specified)
+                const baseRadius = 2;
+
+                // When hovered, grow slightly
+                const radius = baseRadius + (1 * animProgress);
+
+                // Base alpha (very subtle when not hovered)
+                const baseAlpha = 0.1;
+                const hoverAlpha = 0.5;
+                const alpha = baseAlpha + (hoverAlpha - baseAlpha) * animProgress;
+
+                // Draw article dot (black)
+                ctx.beginPath();
+                ctx.arc(baseX, baseY, radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(0, 0, 0, ${alpha})`;
+                ctx.fill();
+            });
         }
 
         function drawQuestionMarkers(width, height) {
@@ -1080,7 +1157,7 @@
                 const mouseX = (e.clientX - rect.left) / rect.width * width;
                 const mouseY = (e.clientY - rect.top) / rect.height * height;
 
-                // Check for question dot hover (priority over heatmap)
+                // Check for question dot hover (highest priority)
                 let hoveredQuestion = null;
                 questionsData.forEach((q, idx) => {
                     const x = q.x * width;
@@ -1095,37 +1172,98 @@
                 if (hoveredQuestion) {
                     // Question dot takes priority
                     hoveredDotIndex = hoveredQuestion.index;
+                    hoveredArticleIndex = null;
                     hoveredHeatmapCell = null;
                     showTooltip(rect, hoveredQuestion);
                     canvas.style.cursor = 'pointer';
                     startAnimation();
                 } else {
-                    // Check for heatmap cell hover
-                    const cell = getHeatmapCell(mouseX, mouseY, width, height);
+                    // Check for Wikipedia article hover (second priority)
+                    let hoveredArticle = null;
+                    wikipediaArticles.forEach((article, idx) => {
+                        // Skip articles outside extended region
+                        if (article.x < -0.5 || article.x > 1.5 || article.y < -0.5 || article.y > 1.5) {
+                            return;
+                        }
 
-                    if (cell) {
+                        const x = article.x * width;
+                        const y = article.y * height;
+                        const dist = Math.sqrt((mouseX - x) ** 2 + (mouseY - y) ** 2);
+
+                        // Use larger hover radius for easier interaction
+                        if (dist < 8) {
+                            hoveredArticle = { ...article, index: idx };
+                        }
+                    });
+
+                    if (hoveredArticle) {
+                        // Wikipedia article hover
                         hoveredDotIndex = null;
-                        hoveredHeatmapCell = cell;
-                        showHeatmapTooltip(rect, cell);
-                        canvas.style.cursor = 'crosshair';
-                        redrawCanvas(); // Immediate redraw to darken heatmap cell
-                        startAnimation(); // Also ensure dots animate back if they were hovered
-                    } else {
-                        hoveredDotIndex = null;
+                        hoveredArticleIndex = hoveredArticle.index;
                         hoveredHeatmapCell = null;
-                        hideTooltip();
-                        canvas.style.cursor = 'default';
-                        redrawCanvas(); // Immediate redraw to un-darken heatmap cells
-                        startAnimation(); // Animate dots back to normal
+                        showArticleTooltip(rect, hoveredArticle);
+                        canvas.style.cursor = 'pointer';
+                        startAnimation();
+                    } else {
+                        // Check for heatmap cell hover (lowest priority)
+                        const cell = getHeatmapCell(mouseX, mouseY, width, height);
+
+                        if (cell) {
+                            hoveredDotIndex = null;
+                            hoveredArticleIndex = null;
+                            hoveredHeatmapCell = cell;
+                            showHeatmapTooltip(rect, cell);
+                            canvas.style.cursor = 'crosshair';
+                            redrawCanvas(); // Immediate redraw to darken heatmap cell
+                            startAnimation(); // Also ensure dots animate back if they were hovered
+                        } else {
+                            hoveredDotIndex = null;
+                            hoveredArticleIndex = null;
+                            hoveredHeatmapCell = null;
+                            hideTooltip();
+                            canvas.style.cursor = 'default';
+                            redrawCanvas(); // Immediate redraw to un-darken heatmap cells
+                            startAnimation(); // Animate dots back to normal
+                        }
                     }
                 }
             });
 
             canvas.addEventListener('mouseleave', () => {
                 hoveredDotIndex = null;
+                hoveredArticleIndex = null;
                 hoveredHeatmapCell = null;
                 hideTooltip();
                 startAnimation();
+            });
+
+            // Add click handler for Wikipedia articles
+            canvas.addEventListener('click', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                const mouseX = (e.clientX - rect.left) / rect.width * width;
+                const mouseY = (e.clientY - rect.top) / rect.height * height;
+
+                // Check if clicking on a Wikipedia article
+                let clickedArticle = null;
+                wikipediaArticles.forEach((article, idx) => {
+                    // Skip articles outside extended region
+                    if (article.x < -0.5 || article.x > 1.5 || article.y < -0.5 || article.y > 1.5) {
+                        return;
+                    }
+
+                    const x = article.x * width;
+                    const y = article.y * height;
+                    const dist = Math.sqrt((mouseX - x) ** 2 + (mouseY - y) ** 2);
+
+                    if (dist < 8) {
+                        clickedArticle = article;
+                    }
+                });
+
+                // Open Wikipedia article in new tab
+                if (clickedArticle && clickedArticle.url) {
+                    window.open(clickedArticle.url, '_blank');
+                }
             });
         }
 
@@ -1188,6 +1326,55 @@
             } else {
                 // Dot is on bottom half - show tooltip above
                 top = dotScreenY - tooltipRect.height - offset;
+            }
+
+            tooltip.style.left = left + 'px';
+            tooltip.style.top = top + 'px';
+        }
+
+        function showArticleTooltip(canvasRect, article) {
+            // Display article title and excerpt
+            tooltip.innerHTML = `
+                <div class="tooltip-question">${article.title}</div>
+                <div class="tooltip-status">
+                    <span>${article.excerpt}</span>
+                </div>
+            `;
+
+            tooltip.classList.remove('tooltip-hidden');
+            setTimeout(() => tooltip.classList.add('visible'), 10);
+
+            // Calculate article position on screen
+            const articleCanvasX = article.x * canvasRect.width;
+            const articleCanvasY = article.y * canvasRect.height;
+            const articleScreenX = canvasRect.left + articleCanvasX;
+            const articleScreenY = canvasRect.top + articleCanvasY;
+
+            // Get tooltip dimensions
+            const tooltipRect = tooltip.getBoundingClientRect();
+            const offset = 15;  // Offset from dot (in pixels)
+
+            // Determine quadrant based on normalized position (0-1 range)
+            const isLeftHalf = article.x < 0.5;
+            const isTopHalf = article.y < 0.5;
+
+            let left, top;
+
+            // Position tooltip based on quadrant to avoid overlap
+            if (isLeftHalf) {
+                // Article is on left side - show tooltip to the right
+                left = articleScreenX + offset;
+            } else {
+                // Article is on right side - show tooltip to the left
+                left = articleScreenX - tooltipRect.width - offset;
+            }
+
+            if (isTopHalf) {
+                // Article is on top half - show tooltip below
+                top = articleScreenY + offset;
+            } else {
+                // Article is on bottom half - show tooltip above
+                top = articleScreenY - tooltipRect.height - offset;
             }
 
             tooltip.style.left = left + 'px';

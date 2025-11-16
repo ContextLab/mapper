@@ -895,25 +895,29 @@
             <div id="map-section" class="map-section hidden">
                 <div class="map-header">
                     <h2>Your Knowledge Map</h2>
-                    <p>Hover over the map to explore our model of your knowledge</p>
+                    <p>Hover to explore your knowledge map</p>
                 </div>
 
                 <div class="map-container">
                     <canvas id="map-canvas"></canvas>
                     
                     <div class="legend">
-                        <h4>Question Status</h4>
+                        <h4>Legend</h4>
                         <div class="legend-item">
                             <div class="legend-dot" style="background: rgb(0, 105, 62);"></div>
-                            <span>Correct</span>
+                            <span>Correct response</span>
                         </div>
                         <div class="legend-item">
                             <div class="legend-dot" style="background: rgb(218, 165, 32);"></div>
-                            <span>Unanswered</span>
+                            <span>Skipped question</span>
                         </div>
                         <div class="legend-item">
                             <div class="legend-dot" style="background: rgb(139, 69, 19);"></div>
-                            <span>Incorrect</span>
+                            <span>Incorrect response</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background: rgba(0, 0, 0, 0.1); border: 1px solid rgba(0, 0, 0, 0.3); width: 6px; height: 6px; margin-left: 5px; margin-right: 13px;"></div>
+                            <span>Wikipedia article</span>
                         </div>
                     </div>
 

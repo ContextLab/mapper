@@ -212,8 +212,7 @@ __marimo__/
 # Project-specific
 CLAUDE.md
 
-# Cell label cache files (until validated)
-heatmap_cell_labels.json
+# UMAP model files
 umap_reducer.pkl
 umap_bounds.pkl
 *.credentials
@@ -225,6 +224,10 @@ logs/
 
 # Large data files
 wikipedia.pkl
+embeddings/wikipedia_embeddings.pkl
+knowledge_map.pkl
+umap_coords.pkl
+data/question_coordinates.pkl
 
 # Temporary outputs (keep some specific ones)
 spot_check_output.txt
@@ -237,3 +240,6 @@ embeddings/cluster*.pkl
 embeddings/*_checkpoint_*.pkl
 embeddings/current_checkpoint.pkl
 .DS_Store
+*/.DS_Store
+*/*/.DS_Store
+*/*/*/.DS_Store

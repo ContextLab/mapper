@@ -65,8 +65,9 @@ def main():
     print()
     print("This pipeline will:")
     print("  1. Generate question embeddings (if not skipped)")
-    print("  2. Export Wikipedia articles with UMAP coordinates")
-    print("  3. Generate heatmap cell labels using LLM")
+    print("  2. Rebuild UMAP projections (if not skipped)")
+    print("  3. Export Wikipedia articles with UMAP coordinates")
+    print("  4. Generate heatmap cell labels using LLM")
     print()
 
     # Step 1: Generate question embeddings
@@ -79,23 +80,33 @@ def main():
         print("Skipping question embedding generation (--skip-embeddings)")
         print()
 
-    # Step 2: Export Wikipedia articles
+    # Step 2: Rebuild UMAP projections
+    if not args.skip_embeddings:  # Only rebuild if we generated new embeddings
+        run_command(
+            ['python3', 'scripts/rebuild_umap.py'],
+            "Step 2: Rebuilding UMAP projections"
+        )
+    else:
+        print("Skipping UMAP rebuild (--skip-embeddings implies existing UMAP)")
+        print()
+
+    # Step 3: Export Wikipedia articles
     if not args.skip_export:
         run_command(
             ['python3', 'scripts/export_wikipedia_articles.py'],
-            "Step 2: Exporting Wikipedia articles and questions"
+            "Step 3: Exporting Wikipedia articles and questions"
         )
     else:
         print("Skipping Wikipedia article export (--skip-export)")
         print()
 
-    # Step 3: Generate heatmap labels
+    # Step 4: Generate heatmap labels
     if not args.skip_labels:
         run_command(
             ['python3', 'scripts/generate_heatmap_labels.py',
              '--grid-size', str(args.grid_size),
              '--k', str(args.k)],
-            "Step 3: Generating heatmap cell labels"
+            "Step 4: Generating heatmap cell labels"
         )
     else:
         print("Skipping heatmap label generation (--skip-labels)")
@@ -107,11 +118,16 @@ def main():
     print("=" * 80)
     print()
     print("Generated files:")
-    print("  - embeddings/question_embeddings.pkl")
-    print("  - wikipedia_articles.json")
-    print("  - question_coordinates.json")
-    print("  - questions.json (updated coordinates)")
-    print("  - heatmap_cell_labels.json")
+    print("  - embeddings/question_embeddings.pkl - Question embeddings")
+    print("  - umap_coords.pkl - Full UMAP coordinates")
+    print("  - data/umap_reducer.pkl - Trained UMAP model")
+    print("  - data/umap_bounds.pkl - Coordinate bounds")
+    print("  - data/question_coordinates.pkl - Question coordinates")
+    print("  - knowledge_map.pkl - Complete knowledge map")
+    print("  - wikipedia_articles.json - Filtered articles with 2D coordinates")
+    print("  - question_coordinates.json - Question coordinate backup")
+    print("  - questions.json - Updated with normalized coordinates")
+    print("  - heatmap_cell_labels.json - 1,521 semantic labels")
     print()
     print("You can now view the visualization by opening index.html in a web browser")
     print("(make sure to serve it via HTTP, e.g., python -m http.server 8000)")

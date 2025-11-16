@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Generate human-readable labels for heatmap cells using GPT-OSS-20B via LM Studio.
+Generate human-readable labels for heatmap cells using Qwen3-14B via LM Studio.
 
 For each cell in the heatmap grid:
-1. Find k-nearest Wikipedia articles and questions in UMAP space
-2. Prompt GPT-OSS-20B with titles and distances
+1. Find k-nearest Wikipedia articles in normalized [0,1] space
+2. Prompt Qwen3-14B with article titles and distances
 3. Generate a brief 2-5 word label describing the concept at that cell
 4. Save to heatmap_cell_labels.json
 """
@@ -32,55 +32,32 @@ def load_articles():
     return titles, coords
 
 
-def load_questions():
-    """Load questions with normalized coordinates from JSON"""
-    print("Loading questions...")
-    with open('questions.json', 'r') as f:
-        questions_data = json.load(f)
-
-    # Extract texts and normalized coordinates
-    texts = [q['question'] for q in questions_data]
-    coords = np.array([[q['x'], q['y']] for q in questions_data])
-
-    print(f"  Loaded {len(texts)} questions with normalized coords")
-    print(f"  Coord range: x=[{coords[:, 0].min():.3f}, {coords[:, 0].max():.3f}], y=[{coords[:, 1].min():.3f}, {coords[:, 1].max():.3f}]")
-    return texts, coords
-
-
-def find_nearest_neighbors(cell_center, article_coords, article_titles,
-                          question_coords, question_texts, k=10):
+def find_nearest_neighbors(cell_center, article_coords, article_titles, k=10):
     """
-    Find k-nearest articles and questions to a cell center.
+    Find k-nearest Wikipedia articles to a cell center in normalized [0,1] space.
 
-    Returns combined list of (distance, type, title/text) tuples, sorted by distance.
+    Args:
+        cell_center: (x, y) tuple in normalized [0,1] coordinates
+        article_coords: np.array of shape (N, 2) with article coordinates
+        article_titles: list of N article titles
+        k: number of nearest neighbors to return
+
+    Returns:
+        List of (distance, title) tuples, sorted by distance (closest first).
     """
     cell_point = np.array([cell_center[0], cell_center[1]])
 
-    # Calculate distances to all articles
+    # Calculate Euclidean distances to all articles
     article_distances = np.sqrt(((article_coords - cell_point)**2).sum(axis=1))
-
-    # Calculate distances to all questions
-    question_distances = np.sqrt(((question_coords - cell_point)**2).sum(axis=1))
 
     # Get k nearest articles
     article_nearest_idx = np.argsort(article_distances)[:k]
     article_neighbors = [
-        (article_distances[idx], 'article', article_titles[idx])
+        (article_distances[idx], article_titles[idx])
         for idx in article_nearest_idx
     ]
 
-    # Get k nearest questions
-    question_nearest_idx = np.argsort(question_distances)[:k]
-    question_neighbors = [
-        (question_distances[idx], 'question', question_texts[idx])
-        for idx in question_nearest_idx
-    ]
-
-    # Combine and sort by distance
-    all_neighbors = article_neighbors + question_neighbors
-    all_neighbors.sort(key=lambda x: x[0])
-
-    return all_neighbors[:k]
+    return article_neighbors
 
 
 def generate_label_with_gpt(neighbors, cell_center, lm_studio_url="http://localhost:1234/v1/chat/completions"):
@@ -88,7 +65,7 @@ def generate_label_with_gpt(neighbors, cell_center, lm_studio_url="http://localh
     Generate a 2-5 word label for a cell using Qwen3-14B via LM Studio with structured outputs.
 
     Args:
-        neighbors: List of (distance, type, title/text) tuples
+        neighbors: List of (distance, title) tuples for nearest Wikipedia articles
         cell_center: (x, y) coordinates of cell center
         lm_studio_url: URL of LM Studio API endpoint
 
@@ -97,20 +74,20 @@ def generate_label_with_gpt(neighbors, cell_center, lm_studio_url="http://localh
     """
     # Build context from nearest neighbors
     context_lines = []
-    for i, (dist, typ, text) in enumerate(neighbors):
-        # Truncate long texts
-        text_short = text[:80] + '...' if len(text) > 80 else text
-        context_lines.append(f"  {i+1}. [{typ}] {text_short} (distance: {dist:.3f})")
+    for i, (dist, title) in enumerate(neighbors):
+        # Truncate long titles
+        title_short = title[:80] + '...' if len(title) > 80 else title
+        context_lines.append(f"  {i+1}. {title_short} (distance: {dist:.3f})")
 
     context = '\n'.join(context_lines)
 
     # Construct prompt - keep it simple and direct
     prompt = f"""In a 2D text embedding space, provide a human-readable label (2-5 words) for coordinate ({cell_center[0]:.3f}, {cell_center[1]:.3f}).
 
-The nearest neighbors at this coordinate are:
+The nearest Wikipedia articles at this coordinate are:
 {context}
 
-Based on these neighbors, what is the best short label for this location?"""
+Based on these article titles, what is the best short label for this location?"""
 
     # Define JSON schema for structured output
     response_schema = {
@@ -192,11 +169,11 @@ Based on these neighbors, what is the best short label for this location?"""
 
 def generate_cell_labels(grid_size=40, k=10, max_cells=None):
     """
-    Generate labels for all cells in the heatmap grid.
+    Generate labels for all cells in the heatmap grid using Wikipedia articles.
 
     Args:
         grid_size: Size of heatmap grid (default 40x40)
-        k: Number of nearest neighbors to consider
+        k: Number of nearest Wikipedia articles to consider
         max_cells: Maximum number of cells to label (for testing)
     """
     print("="*80)
@@ -206,11 +183,10 @@ def generate_cell_labels(grid_size=40, k=10, max_cells=None):
 
     # Load data
     article_titles, article_coords = load_articles()
-    question_texts, question_coords = load_questions()
 
     print()
     print(f"Generating labels for {grid_size}x{grid_size} grid...")
-    print(f"  Using k={k} nearest neighbors")
+    print(f"  Using k={k} nearest Wikipedia articles per cell")
     if max_cells:
         print(f"  Limiting to first {max_cells} cells (testing mode)")
     print()
@@ -234,13 +210,11 @@ def generate_cell_labels(grid_size=40, k=10, max_cells=None):
 
             print(f"Cell {cell_count + 1}/{total_cells}: ({gx}, {gy}) center=({center_x:.3f}, {center_y:.3f})")
 
-            # Find nearest neighbors
+            # Find nearest neighbors (Wikipedia articles only)
             neighbors = find_nearest_neighbors(
                 (center_x, center_y),
                 article_coords,
                 article_titles,
-                question_coords,
-                question_texts,
                 k=k
             )
 
@@ -261,10 +235,9 @@ def generate_cell_labels(grid_size=40, k=10, max_cells=None):
                 'neighbors': [
                     {
                         'distance': float(dist),
-                        'type': typ,
-                        'text': text
+                        'title': title
                     }
-                    for dist, typ, text in neighbors
+                    for dist, title in neighbors
                 ],
                 'label_metadata': {
                     'model': 'qwen3-14b',
@@ -292,8 +265,9 @@ def save_labels(cells, output_file='heatmap_cell_labels.json'):
             'grid_size': 40,
             'generated_at': datetime.now().isoformat(),
             'num_cells': len(cells),
-            'method': 'qwen3-nearest-neighbors',
-            'model': 'qwen3-14b'
+            'method': 'qwen3-nearest-neighbors-articles-only',
+            'model': 'qwen3-14b',
+            'source': 'wikipedia_articles.json'
         },
         'cells': cells
     }

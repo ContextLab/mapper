@@ -38,6 +38,7 @@
             color: white;
             padding: 30px;
             text-align: center;
+            position: relative;
         }
 
         .header h1 {
@@ -47,6 +48,34 @@
 
         .header p {
             opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .btn-about {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-about:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-about i {
             font-size: 1.1em;
         }
 
@@ -441,6 +470,372 @@
                 transform: translateY(0);
             }
         }
+
+        /* Introduction Screen */
+        .intro-section {
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .intro-section h1 {
+            font-size: 2.5em;
+            color: #00693E;
+            margin-bottom: 20px;
+        }
+
+        .intro-description {
+            font-size: 1.2em;
+            color: #666;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .intro-instructions {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            text-align: left;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .intro-instructions h3 {
+            font-size: 1.3em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .intro-instructions ol {
+            font-size: 1.1em;
+            color: #666;
+            line-height: 2;
+            padding-left: 25px;
+        }
+
+        .intro-instructions li {
+            margin-bottom: 10px;
+        }
+
+        /* About Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.hidden {
+            display: none !important;
+        }
+
+        .modal-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            position: relative;
+            background: white;
+            border-radius: 16px;
+            max-width: 700px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            z-index: 2001;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            font-size: 1.5em;
+            color: #999;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .modal-content h2 {
+            font-size: 2em;
+            color: #00693E;
+            margin-bottom: 30px;
+        }
+
+        .about-section {
+            margin-bottom: 35px;
+        }
+
+        .about-section h3 {
+            font-size: 1.4em;
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .about-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            margin: 6px 0;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .about-link:hover {
+            background: #f8f9fa;
+            border-color: #00693E;
+            transform: translateX(5px);
+        }
+
+        .link-logo {
+            height: 24px;
+            width: auto;
+            flex-shrink: 0;
+        }
+
+        .citation {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 0.95em;
+            line-height: 1.8;
+            color: #555;
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .citation strong {
+            color: #333;
+        }
+
+        .citation-text {
+            margin-bottom: 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .copy-citation-btn {
+            background: #00693E;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .copy-citation-btn:hover {
+            background: #004d2c;
+            transform: translateY(-1px);
+        }
+
+        .copy-citation-btn.copied {
+            background: #28a745;
+        }
+
+        .note {
+            font-size: 0.9em;
+            color: #888;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #00693E;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit-btn {
+            background: #00693E;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-submit-btn:hover {
+            background: #004d2c;
+            transform: translateY(-1px);
+        }
+
+        .form-submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+
+        .contact-info p {
+            margin: 4px 0;
+            color: #555;
+        }
+
+        .contact-info strong {
+            color: #00693E;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        .contact-info a {
+            color: #00693E;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .btn-about {
+                top: 20px;
+                right: 20px;
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+
+            .intro-section {
+                padding: 40px 20px;
+            }
+
+            .intro-section h1 {
+                font-size: 1.8em;
+            }
+
+            .intro-instructions {
+                padding: 20px;
+            }
+
+            .modal-content {
+                padding: 30px 20px;
+                max-height: 90vh;
+            }
+
+            .modal-content h2 {
+                font-size: 1.6em;
+                margin-bottom: 20px;
+            }
+
+            .about-link {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .link-logo {
+                height: 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -448,11 +843,35 @@
         <div class="header">
             <h1><i class="fas fa-brain"></i> Knowledge Map Explorer</h1>
             <p>Answer questions to visualize your conceptual understanding</p>
+            <button class="btn-about" id="about-btn">
+                <i class="fas fa-info-circle"></i> About
+            </button>
         </div>
 
         <div class="content">
+            <!-- Introduction Section -->
+            <div id="intro-section" class="intro-section">
+                <h1>Welcome!</h1>
+                <p class="intro-description">
+                    This interactive demo uses text embedding models to create a visual
+                    map of your conceptual knowledge based on your quiz responses. Discover
+                    how your understanding of biology concepts relates to each other in semantic space.
+                </p>
+                <div class="intro-instructions">
+                    <h3>How it works:</h3>
+                    <ol>
+                        <li>Answer 10 biology questions at your own pace</li>
+                        <li>View your personalized 2D knowledge map</li>
+                        <li>Explore areas of strength and opportunities to learn</li>
+                    </ol>
+                </div>
+                <button class="btn btn-primary" id="start-quiz-btn">
+                    Start Quiz <i class="fas fa-play"></i>
+                </button>
+            </div>
+
             <!-- Quiz Section -->
-            <div id="quiz-section" class="quiz-section">
+            <div id="quiz-section" class="quiz-section hidden">
                 <div class="progress-bar">
                     <div class="progress-fill" id="progress-fill"></div>
                 </div>
@@ -537,6 +956,97 @@
         </div>
     </div>
 
+    <!-- About Modal -->
+    <div id="about-modal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="close-about" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <h2>About This Project</h2>
+
+            <section class="about-section">
+                <h3>Research Paper</h3>
+                <a href="https://osf.io/preprints/psyarxiv/dh3q2_v2" target="_blank" rel="noopener noreferrer" class="about-link">
+                    <img src="logos/nature.png" alt="Nature Communications logo" class="link-logo">
+                    <span>Text embedding models yield high-resolution insights into conceptual knowledge</span>
+                </a>
+                <div class="citation">
+                    <div class="citation-text" id="citation-text">
+                        Fitzpatrick, P. C., Heusser, A. C., & Manning, J. R. (2025). Text embedding models yield high-resolution insights into conceptual knowledge from short multiple-choice quizzes. <em>Nature Communications</em>: In press.
+                    </div>
+                    <button class="copy-citation-btn" id="copy-citation-btn">
+                        <i class="fas fa-copy"></i> Copy Citation
+                    </button>
+                </div>
+                <p class="note">
+                    Note: This paper is currently in press. The link above leads to the preprint version. Once published in Nature Communications, this link will be updated with the official DOI.
+                </p>
+            </section>
+
+            <section class="about-section">
+                <h3>Related Resources</h3>
+                <a href="https://github.com/ContextLab/efficient-learning-khan" target="_blank" rel="noopener noreferrer" class="about-link">
+                    <img src="logos/github.svg" alt="GitHub logo" class="link-logo">
+                    <span>Khan Academy Efficient Learning Repository</span>
+                </a>
+                <a href="https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2145172&HistoricalAwards=false" target="_blank" rel="noopener noreferrer" class="about-link">
+                    <img src="logos/nsf.png" alt="National Science Foundation logo" class="link-logo">
+                    <span>NSF Award #2145172 - Supporting this research</span>
+                </a>
+                <a href="https://context-lab.com" target="_blank" rel="noopener noreferrer" class="about-link">
+                    <img src="logos/cdl.png" alt="Context Lab logo" class="link-logo">
+                    <span>Context Dynamics Lab at Dartmouth College</span>
+                </a>
+            </section>
+
+            <section class="about-section">
+                <h3>Contact</h3>
+
+                <div class="contact-info">
+                    <strong>Contextual Dynamics Lab</strong>
+                    <p>Department of Psychological and Brain Sciences</p>
+                    <p>Dartmouth College</p>
+                    <p>349 Moore Hall, HB 6207</p>
+                    <p>Hanover, NH 03755</p>
+                    <p style="margin-top: 12px;">
+                        <a href="mailto:contextualdynamics@gmail.com">contextualdynamics@gmail.com</a><br>
+                        <a href="tel:6036460070">603.646.0070</a>
+                    </p>
+                </div>
+
+                <form class="contact-form" id="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-first-name">First Name *</label>
+                            <input type="text" id="contact-first-name" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-last-name">Last Name *</label>
+                            <input type="text" id="contact-last-name" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email Address *</label>
+                        <input type="email" id="contact-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-subject">Subject *</label>
+                        <input type="text" id="contact-subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message *</label>
+                        <textarea id="contact-message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </section>
+        </div>
+    </div>
+
     <script>
         // Questions data loaded from external file
         let questionsData = [];
@@ -549,6 +1059,7 @@
         let selectedOption = null;
 
         // DOM elements
+        const introSection = document.getElementById('intro-section');
         const quizSection = document.getElementById('quiz-section');
         const mapSection = document.getElementById('map-section');
         const questionContainer = document.getElementById('question-container');
@@ -559,6 +1070,12 @@
         const nextBtn = document.getElementById('next-btn');
         const skipBtn = document.getElementById('skip-btn');
         const restartBtn = document.getElementById('restart-btn');
+        const startQuizBtn = document.getElementById('start-quiz-btn');
+        const aboutBtn = document.getElementById('about-btn');
+        const aboutModal = document.getElementById('about-modal');
+        const closeAboutBtn = document.getElementById('close-about');
+        const copyCitationBtn = document.getElementById('copy-citation-btn');
+        const contactForm = document.getElementById('contact-form');
         const progressFill = document.getElementById('progress-fill');
         const canvas = document.getElementById('map-canvas');
         const ctx = canvas.getContext('2d');
@@ -662,6 +1179,86 @@
         prevBtn.addEventListener('click', handlePrevious);
         skipBtn.addEventListener('click', handleSkip);
         restartBtn.addEventListener('click', restart);
+        startQuizBtn.addEventListener('click', startQuiz);
+        aboutBtn.addEventListener('click', openAbout);
+        closeAboutBtn.addEventListener('click', closeAbout);
+        copyCitationBtn.addEventListener('click', copyCitation);
+
+        // About modal functions
+        function openAbout() {
+            aboutModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeAbout() {
+            aboutModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on backdrop click
+        aboutModal.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal-backdrop')) {
+                closeAbout();
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !aboutModal.classList.contains('hidden')) {
+                closeAbout();
+            }
+        });
+
+        // Copy citation to clipboard
+        function copyCitation() {
+            const citationText = document.getElementById('citation-text').innerText;
+            navigator.clipboard.writeText(citationText).then(() => {
+                const btn = copyCitationBtn;
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy citation:', err);
+                alert('Failed to copy citation. Please copy manually.');
+            });
+        }
+
+        // Handle contact form submission
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Get form values
+            const firstName = document.getElementById('contact-first-name').value.trim();
+            const lastName = document.getElementById('contact-last-name').value.trim();
+            const email = document.getElementById('contact-email').value.trim();
+            const subject = document.getElementById('contact-subject').value.trim();
+            const message = document.getElementById('contact-message').value.trim();
+
+            // Build mailto link
+            const to = 'contextualdynamics@gmail.com';
+            const fullSubject = `[MAPPER] ${subject}`;
+            const body = `From: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`;
+
+            const mailtoLink = `mailto:${to}?subject=${encodeURIComponent(fullSubject)}&body=${encodeURIComponent(body)}`;
+
+            // Open mailto link
+            window.location.href = mailtoLink;
+
+            // Reset form after slight delay
+            setTimeout(() => {
+                contactForm.reset();
+            }, 100);
+        });
+
+        // Start quiz (hide intro, show quiz)
+        function startQuiz() {
+            introSection.classList.add('hidden');
+            quizSection.classList.remove('hidden');
+        }
 
         function renderQuestion() {
             const q = questionsData[currentQuestion];
@@ -1446,10 +2043,10 @@
             userResponses = [];
             selectedOption = null;
             mapSection.classList.add('hidden');
-            quizSection.classList.remove('hidden');
+            quizSection.classList.add('hidden');
+            introSection.classList.remove('hidden');
             progressFill.style.width = '0%';
             hideTooltip();
-            renderQuestion();
         }
 
         // Handle window resize

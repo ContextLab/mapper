@@ -69,6 +69,37 @@ index.html
 
 ## Quick Start
 
+### Simplified Pipeline (Recommended)
+
+For most users, the simplest way to generate a complete knowledge map is to use the automated pipeline script:
+
+```bash
+# Full pipeline: generate embeddings, export data, and create labels
+python scripts/run_full_pipeline.py
+
+# Skip steps if you already have the data
+python scripts/run_full_pipeline.py --skip-embeddings  # Use existing embeddings
+python scripts/run_full_pipeline.py --skip-export      # Use existing exports
+python scripts/run_full_pipeline.py --skip-labels      # Use existing labels
+
+# Custom grid size for heatmap labels
+python scripts/run_full_pipeline.py --grid-size 40 --k 10
+```
+
+**What this pipeline does:**
+1. Generates question embeddings from quiz questions
+2. Projects Wikipedia articles and questions into 2D UMAP space
+3. Filters articles within question bounding box for visualization
+4. Generates semantic labels for heatmap cells using LLM (requires LM Studio)
+5. Exports all data to JSON files for visualization
+
+**Output files:**
+- `embeddings/question_embeddings.pkl` - Question embeddings
+- `wikipedia_articles.json` - Filtered Wikipedia articles with 2D coordinates
+- `question_coordinates.json` - Question coordinates backup
+- `questions.json` - Updated with normalized coordinates
+- `heatmap_cell_labels.json` - 1,521 semantic labels for visualization
+
 ### Prerequisites
 
 ```bash

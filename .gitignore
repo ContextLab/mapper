@@ -243,3 +243,5 @@ embeddings/current_checkpoint.pkl
 */.DS_Store
 */*/.DS_Store
 */*/*/.DS_Store
+embeddings/wikipedia_embeddings.pkl
+umap_coords.pkl

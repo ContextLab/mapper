@@ -100,6 +100,55 @@
             font-weight: 600;
         }
 
+        .confidence-display {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px solid #00693E;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .confidence-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .confidence-label {
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .confidence-value {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #00693E;
+        }
+
+        .confidence-bar {
+            height: 8px;
+            background: #dee2e6;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .confidence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00693E 0%, #00a859 100%);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .confidence-message {
+            font-size: 0.85em;
+            color: #666;
+            margin: 0;
+            text-align: center;
+        }
+
         .question-text {
             font-size: 1.3em;
             color: #333;
@@ -853,14 +902,14 @@
             <div id="intro-section" class="intro-section">
                 <h1>Welcome!</h1>
                 <p class="intro-description">
-                    This interactive demo uses text embedding models to create a visual
-                    map of your conceptual knowledge based on your quiz responses. Discover
-                    how your understanding of biology concepts relates to each other in semantic space.
+                    This interactive demo maps out an approximation of your knowledge across all topics,
+                    using Wikipedia as a reference and LLM text embeddings to define a coordinate system for the map.
+                    Answer quiz questions to visualize your conceptual understanding in a 2D semantic space.
                 </p>
                 <div class="intro-instructions">
                     <h3>How it works:</h3>
                     <ol>
-                        <li>Answer 10 biology questions at your own pace</li>
+                        <li>Answer questions about various topics at your own pace</li>
                         <li>View your personalized 2D knowledge map</li>
                         <li>Explore areas of strength and opportunities to learn</li>
                     </ol>
@@ -880,6 +929,19 @@
                     <div class="question-header">
                         <span class="question-number" id="question-number">Question 1 of 10</span>
                     </div>
+
+                    <!-- Confidence Display (for adaptive sampling) -->
+                    <div class="confidence-display hidden" id="confidence-display">
+                        <div class="confidence-header">
+                            <span class="confidence-label">Map Coverage Confidence</span>
+                            <span class="confidence-value" id="confidence-value">0%</span>
+                        </div>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" id="confidence-fill"></div>
+                        </div>
+                        <p class="confidence-message" id="confidence-message">Answer more questions to build confidence...</p>
+                    </div>
+
                     <div class="question-text" id="question-text"></div>
                     <div class="options" id="options-container"></div>
                 </div>
@@ -1068,6 +1130,11 @@
         let currentRound = 0; // Current round number
         let selectedOption = null;
 
+        // Adaptive sampling state
+        let cellDistances = null; // Precomputed distance matrix
+        let adaptiveSampler = null; // AdaptiveSampler instance
+        let cellQuestionsData = null; // Original cell-based questions structure
+
         // DOM elements
         const introSection = document.getElementById('intro-section');
         const quizSection = document.getElementById('quiz-section');
@@ -1088,6 +1155,10 @@
         const copyCitationBtn = document.getElementById('copy-citation-btn');
         const contactForm = document.getElementById('contact-form');
         const progressFill = document.getElementById('progress-fill');
+        const confidenceDisplay = document.getElementById('confidence-display');
+        const confidenceValue = document.getElementById('confidence-value');
+        const confidenceFill = document.getElementById('confidence-fill');
+        const confidenceMessage = document.getElementById('confidence-message');
         const canvas = document.getElementById('map-canvas');
         const ctx = canvas.getContext('2d');
         const loading = document.getElementById('loading');
@@ -1101,6 +1172,358 @@
         let articleAnimationProgress = {}; // Maps article index to animation progress (0-1)
         let animationFrameId = null;
         let lastFrameTime = performance.now();
+
+        // ====== AdaptiveSampler Class ======
+        class AdaptiveSampler {
+            constructor(questionsPool, distances, config) {
+                this.questionsPool = questionsPool;
+                this.distances = distances.distances;  // 2D array
+                this.cellKeys = distances.cell_keys;   // Array of "gx_gy" strings
+                this.config = {
+                    mode: 'adaptive-uncertainty',
+                    initialRandomQuestions: 2,
+                    minQuestionsBeforeExit: 3,
+                    confidenceThreshold: 0.85,
+                    maxQuestions: 10,
+                    K: 5,
+                    sigma: 0.15,
+                    alpha: 1.0,
+                    beta: 1.0,
+                    coverageDistance: 0.15,
+                    ...config  // Allow override
+                };
+
+                // Build cell index mappings
+                this.cellKeyToIndex = {};
+                this.indexToCellKey = {};
+                this.cellKeys.forEach((key, idx) => {
+                    this.cellKeyToIndex[key] = idx;
+                    this.indexToCellKey[idx] = key;
+                });
+
+                this.allCellKeys = this.cellKeys;
+
+                // State
+                this.askedCells = [];
+                this.responses = {};  // cellKey → true/false
+                this.uncertaintyMap = {};
+            }
+
+            // === Phase 1: Infrastructure ===
+
+            _getAvailableQuestions() {
+                // Return all questions from cells that haven't been asked
+                const available = [];
+                for (const cellData of this.questionsPool.cells) {
+                    const cellKey = `${cellData.cell.gx}_${cellData.cell.gy}`;
+                    if (!this.askedCells.includes(cellKey)) {
+                        for (const question of cellData.questions) {
+                            available.push({ ...question, cellKey, cellData });
+                        }
+                    }
+                }
+                return available;
+            }
+
+            _groupByCell(questions) {
+                const grouped = {};
+                for (const q of questions) {
+                    if (!grouped[q.cellKey]) {
+                        grouped[q.cellKey] = [];
+                    }
+                    grouped[q.cellKey].push(q);
+                }
+                return grouped;
+            }
+
+            _selectRandom(items) {
+                return items[Math.floor(Math.random() * items.length)];
+            }
+
+            // === Phase 2: Uncertainty Estimation ===
+
+            findKNearestAsked(cellKey, askedCells, K) {
+                const cellIdx = this.cellKeyToIndex[cellKey];
+                const distances = [];
+
+                for (const askedCell of askedCells) {
+                    const askedIdx = this.cellKeyToIndex[askedCell];
+                    const dist = this.distances[cellIdx][askedIdx];
+                    distances.push({ cellKey: askedCell, distance: dist });
+                }
+
+                distances.sort((a, b) => a.distance - b.distance);
+                return distances.slice(0, K);
+            }
+
+            estimateUncertainty(cellKey, askedCells, responses) {
+                const K = this.config.K;
+                const sigma = this.config.sigma;
+
+                const nearest = this.findKNearestAsked(cellKey, askedCells, K);
+
+                if (nearest.length === 0) {
+                    return {
+                        predictedCorrectness: 0.5,
+                        uncertainty: 1.0,
+                        confidence: 0.0
+                    };
+                }
+
+                let totalWeight = 0;
+                let weightedCorrectness = 0;
+
+                for (const neighbor of nearest) {
+                    const dist = neighbor.distance;
+                    const weight = Math.exp(-dist * dist / (2 * sigma * sigma));
+                    const correct = responses[neighbor.cellKey] ? 1.0 : 0.0;
+
+                    weightedCorrectness += weight * correct;
+                    totalWeight += weight;
+                }
+
+                const p = totalWeight > 0 ? weightedCorrectness / totalWeight : 0.5;
+
+                const epsilon = 1e-10;
+                const pClipped = Math.max(epsilon, Math.min(1 - epsilon, p));
+                const uncertainty = -(pClipped * Math.log2(pClipped) +
+                                     (1 - pClipped) * Math.log2(1 - pClipped));
+
+                return {
+                    predictedCorrectness: p,
+                    uncertainty: uncertainty,
+                    confidence: 1 - uncertainty,
+                    numNeighbors: nearest.length
+                };
+            }
+
+            updateUncertaintyMap(askedCells, responses) {
+                const uncertaintyMap = {};
+
+                for (const cellKey of this.allCellKeys) {
+                    if (!askedCells.includes(cellKey)) {
+                        uncertaintyMap[cellKey] = this.estimateUncertainty(
+                            cellKey,
+                            askedCells,
+                            responses
+                        );
+                    } else {
+                        uncertaintyMap[cellKey] = {
+                            predictedCorrectness: responses[cellKey] ? 1.0 : 0.0,
+                            uncertainty: 0.0,
+                            confidence: 1.0
+                        };
+                    }
+                }
+
+                return uncertaintyMap;
+            }
+
+            // === Phase 3: Uncertainty-Weighted Selection ===
+
+            scoreCell(cellKey, askedCells, uncertaintyMap) {
+                const alpha = this.config.alpha;
+                const beta = this.config.beta;
+
+                let minDistance = 1.0;
+                if (askedCells.length > 0) {
+                    const cellIdx = this.cellKeyToIndex[cellKey];
+                    minDistance = Math.min(...askedCells.map(asked => {
+                        const askedIdx = this.cellKeyToIndex[asked];
+                        return this.distances[cellIdx][askedIdx];
+                    }));
+                }
+
+                const uncertainty = uncertaintyMap[cellKey]?.uncertainty || 1.0;
+                const score = Math.pow(minDistance, alpha) * Math.pow(uncertainty, beta);
+
+                return score;
+            }
+
+            _selectGeometric(availableQuestions) {
+                // Fallback to geometric sampling for first N questions
+                const questionsByCell = this._groupByCell(availableQuestions);
+                let maxMinDistance = -Infinity;
+                let bestQuestion = null;
+
+                for (const [cellKey, questions] of Object.entries(questionsByCell)) {
+                    if (this.askedCells.includes(cellKey)) continue;
+
+                    const cellIdx = this.cellKeyToIndex[cellKey];
+                    let minDist = Infinity;
+
+                    if (this.askedCells.length > 0) {
+                        minDist = Math.min(...this.askedCells.map(asked => {
+                            const askedIdx = this.cellKeyToIndex[asked];
+                            return this.distances[cellIdx][askedIdx];
+                        }));
+                    } else {
+                        minDist = Math.random();  // Random for very first question
+                    }
+
+                    if (minDist > maxMinDistance) {
+                        maxMinDistance = minDist;
+                        bestQuestion = this._selectRandom(questions);
+                    }
+                }
+
+                return bestQuestion;
+            }
+
+            _selectUncertaintyWeighted(availableQuestions) {
+                this.uncertaintyMap = this.updateUncertaintyMap(
+                    this.askedCells,
+                    this.responses
+                );
+
+                const questionsByCell = this._groupByCell(availableQuestions);
+                let bestScore = -Infinity;
+                let bestQuestion = null;
+                let bestCellKey = null;
+
+                for (const [cellKey, questions] of Object.entries(questionsByCell)) {
+                    if (this.askedCells.includes(cellKey)) continue;
+
+                    const score = this.scoreCell(cellKey, this.askedCells, this.uncertaintyMap);
+
+                    if (score > bestScore) {
+                        bestScore = score;
+                        bestCellKey = cellKey;
+                        bestQuestion = this._selectRandom(questions);
+                    }
+                }
+
+                console.log(`Selected cell ${bestCellKey}, score: ${bestScore.toFixed(3)}, ` +
+                            `uncertainty: ${this.uncertaintyMap[bestCellKey]?.uncertainty.toFixed(3)}`);
+
+                return bestQuestion;
+            }
+
+            selectNextQuestion() {
+                const availableQuestions = this._getAvailableQuestions();
+
+                if (availableQuestions.length === 0) {
+                    return null;
+                }
+
+                if (this.askedCells.length < this.config.initialRandomQuestions) {
+                    return this._selectGeometric(availableQuestions);
+                }
+
+                return this._selectUncertaintyWeighted(availableQuestions);
+            }
+
+            recordResponse(cellKey, isCorrect) {
+                if (!this.askedCells.includes(cellKey)) {
+                    this.askedCells.push(cellKey);
+                }
+                this.responses[cellKey] = isCorrect;
+            }
+
+            // === Phase 4: Confidence Metrics ===
+
+            computeConfidence() {
+                if (this.askedCells.length === 0) {
+                    return {
+                        overallConfidence: 0,
+                        coverageConfidence: 0,
+                        uncertaintyConfidence: 0,
+                        coveredCells: 0,
+                        totalCells: this.allCellKeys.length
+                    };
+                }
+
+                let coveredCells = 0;
+                const threshold = this.config.coverageDistance;
+
+                for (const cellKey of this.allCellKeys) {
+                    const cellIdx = this.cellKeyToIndex[cellKey];
+                    let minDist = Infinity;
+
+                    for (const askedCell of this.askedCells) {
+                        const askedIdx = this.cellKeyToIndex[askedCell];
+                        const dist = this.distances[cellIdx][askedIdx];
+                        minDist = Math.min(minDist, dist);
+                    }
+
+                    if (minDist < threshold) {
+                        coveredCells++;
+                    }
+                }
+
+                const coverageConfidence = coveredCells / this.allCellKeys.length;
+
+                // Update uncertainty map if not already updated
+                if (Object.keys(this.uncertaintyMap).length === 0) {
+                    this.uncertaintyMap = this.updateUncertaintyMap(
+                        this.askedCells,
+                        this.responses
+                    );
+                }
+
+                let totalConfidence = 0;
+                for (const cellKey of this.allCellKeys) {
+                    totalConfidence += this.uncertaintyMap[cellKey]?.confidence || 0;
+                }
+                const uncertaintyConfidence = totalConfidence / this.allCellKeys.length;
+
+                const combinedConfidence = (coverageConfidence + uncertaintyConfidence) / 2;
+
+                return {
+                    overallConfidence: combinedConfidence,
+                    coverageConfidence: coverageConfidence,
+                    uncertaintyConfidence: uncertaintyConfidence,
+                    coveredCells: coveredCells,
+                    totalCells: this.allCellKeys.length
+                };
+            }
+
+            canEarlyExit() {
+                const confidence = this.computeConfidence();
+                return (
+                    this.askedCells.length >= this.config.minQuestionsBeforeExit &&
+                    confidence.overallConfidence >= this.config.confidenceThreshold
+                );
+            }
+
+            // === Utility Methods ===
+
+            getUncertaintyMap() {
+                return this.uncertaintyMap;
+            }
+
+            getStats() {
+                const confidence = this.computeConfidence();
+                return {
+                    questionsAsked: this.askedCells.length,
+                    ...confidence,
+                    canExit: this.canEarlyExit()
+                };
+            }
+
+            reset() {
+                this.askedCells = [];
+                this.responses = {};
+                this.uncertaintyMap = {};
+            }
+        }
+
+        // Load cell distances
+        async function loadCellDistances() {
+            try {
+                const response = await fetch('cell_distances.json');
+                if (!response.ok) {
+                    console.warn('Cell distances not found - will use random sampling');
+                    return null;
+                }
+                const data = await response.json();
+                console.log(`Loaded ${data.metadata.num_cells}×${data.metadata.num_cells} distance matrix`);
+                return data;
+            } catch (error) {
+                console.warn('Could not load cell distances:', error);
+                return null;
+            }
+        }
 
         // Load questions and initialize
         async function loadQuestions() {
@@ -1153,6 +1576,22 @@
 
                 console.log(`Loaded ${allQuestionsPool.length} total questions from ${data.cells.length} cells`);
 
+                // Store original cell-based data for adaptive sampler
+                cellQuestionsData = data;
+
+                // Load cell distances and initialize adaptive sampler
+                cellDistances = await loadCellDistances();
+                if (cellDistances) {
+                    adaptiveSampler = new AdaptiveSampler(cellQuestionsData, cellDistances, {
+                        maxQuestions: 10,
+                        minQuestionsBeforeExit: 3,
+                        confidenceThreshold: 0.85
+                    });
+                    console.log('Adaptive sampling enabled');
+                } else {
+                    console.log('Using random sampling (distances not available)');
+                }
+
                 // Start first quiz round (select 10 random questions)
                 startNewQuizRound();
             } catch (error) {
@@ -1169,43 +1608,89 @@
             }
         }
 
-        // Start a new quiz round by selecting 10 new random questions
+        // Start a new quiz round by selecting 10 new questions (adaptive or random)
         function startNewQuizRound() {
-            // Find available question indices (not yet asked)
-            const availableIndices = [];
-            for (let i = 0; i < allQuestionsPool.length; i++) {
-                if (!askedQuestionIndices.includes(i)) {
-                    availableIndices.push(i);
-                }
-            }
-
-            // Check if we have enough questions
-            if (availableIndices.length < 10) {
-                console.log(`Only ${availableIndices.length} questions remaining. Resetting question pool.`);
-                // Reset the pool - user has answered most questions
-                askedQuestionIndices = [];
-                availableIndices.length = 0;
-                for (let i = 0; i < allQuestionsPool.length; i++) {
-                    availableIndices.push(i);
-                }
-            }
-
-            // Randomly select 10 questions
-            const shuffled = availableIndices.sort(() => Math.random() - 0.5);
-            const selectedIndices = shuffled.slice(0, 10);
-
-            // Update questionsData with selected questions
-            questionsData = selectedIndices.map(i => allQuestionsPool[i]);
-
-            // Mark these questions as asked
-            askedQuestionIndices.push(...selectedIndices);
-
             // Reset for new round
             currentQuestion = 0;
             currentRound++;
             userResponses = []; // Clear current round responses
 
-            console.log(`Round ${currentRound}: Selected ${questionsData.length} new questions`);
+            if (adaptiveSampler) {
+                // Use adaptive sampling
+                questionsData = [];
+                const maxQuestions = adaptiveSampler.config.maxQuestions;
+
+                // Select questions one at a time using adaptive algorithm
+                for (let i = 0; i < maxQuestions; i++) {
+                    const selectedQuestion = adaptiveSampler.selectNextQuestion();
+                    if (!selectedQuestion) {
+                        console.log(`No more questions available after ${i} questions`);
+                        break;
+                    }
+
+                    // Convert to allQuestionsPool format
+                    const cellData = selectedQuestion.cellData;
+                    const gridSize = 40;
+                    const cellWidth = 1.0 / (gridSize - 1);
+                    const cellHeight = 1.0 / (gridSize - 1);
+                    const jitterX = (Math.random() - 0.5) * cellWidth;
+                    const jitterY = (Math.random() - 0.5) * cellHeight;
+
+                    let correctIndex;
+                    if (selectedQuestion.correct_index !== undefined) {
+                        correctIndex = selectedQuestion.correct_index;
+                    } else if (selectedQuestion.correct_answer !== undefined) {
+                        correctIndex = selectedQuestion.correct_answer.charCodeAt(0) - 65;
+                    } else {
+                        console.error('Question missing correct answer:', selectedQuestion);
+                        correctIndex = 0;
+                    }
+
+                    const question = {
+                        question: selectedQuestion.question,
+                        options: selectedQuestion.options,
+                        correctIndex: correctIndex,
+                        x: cellData.cell.center_x + jitterX,
+                        y: cellData.cell.center_y + jitterY,
+                        topic: selectedQuestion.topic || 'general',
+                        cell_gx: cellData.cell.gx,
+                        cell_gy: cellData.cell.gy,
+                        cellKey: selectedQuestion.cellKey
+                    };
+
+                    questionsData.push(question);
+                }
+
+                console.log(`Round ${currentRound}: Selected ${questionsData.length} questions using adaptive sampling`);
+                const stats = adaptiveSampler.getStats();
+                console.log(`Coverage: ${(stats.coverageConfidence * 100).toFixed(1)}%, ` +
+                           `Uncertainty confidence: ${(stats.uncertaintyConfidence * 100).toFixed(1)}%`);
+            } else {
+                // Fall back to random sampling
+                const availableIndices = [];
+                for (let i = 0; i < allQuestionsPool.length; i++) {
+                    if (!askedQuestionIndices.includes(i)) {
+                        availableIndices.push(i);
+                    }
+                }
+
+                if (availableIndices.length < 10) {
+                    console.log(`Only ${availableIndices.length} questions remaining. Resetting question pool.`);
+                    askedQuestionIndices = [];
+                    availableIndices.length = 0;
+                    for (let i = 0; i < allQuestionsPool.length; i++) {
+                        availableIndices.push(i);
+                    }
+                }
+
+                const shuffled = availableIndices.sort(() => Math.random() - 0.5);
+                const selectedIndices = shuffled.slice(0, 10);
+                questionsData = selectedIndices.map(i => allQuestionsPool[i]);
+                askedQuestionIndices.push(...selectedIndices);
+
+                console.log(`Round ${currentRound}: Selected ${questionsData.length} questions (random sampling)`);
+            }
+
             renderQuestion();
         }
 
@@ -1367,6 +1852,42 @@
         function startQuiz() {
             introSection.classList.add('hidden');
             quizSection.classList.remove('hidden');
+
+            // Show confidence display if adaptive sampling is enabled
+            if (adaptiveSampler) {
+                confidenceDisplay.classList.remove('hidden');
+            }
+        }
+
+        // Update confidence display
+        function updateConfidenceDisplay() {
+            if (!adaptiveSampler) return;
+
+            const stats = adaptiveSampler.getStats();
+            const percent = Math.round(stats.overallConfidence * 100);
+            const threshold = Math.round(adaptiveSampler.config.confidenceThreshold * 100);
+            const minQuestions = adaptiveSampler.config.minQuestionsBeforeExit;
+
+            // Update display
+            confidenceValue.textContent = `${percent}%`;
+            confidenceFill.style.width = `${percent}%`;
+
+            // Update message based on confidence level
+            if (stats.canExit) {
+                confidenceMessage.textContent = `${percent}% confidence - You can view your results now!`;
+                confidenceMessage.style.color = '#00693E';
+                confidenceMessage.style.fontWeight = '600';
+            } else if (stats.questionsAsked < minQuestions) {
+                const remaining = minQuestions - stats.questionsAsked;
+                confidenceMessage.textContent = `Answer ${remaining} more question${remaining > 1 ? 's' : ''} to view results`;
+                confidenceMessage.style.color = '#666';
+                confidenceMessage.style.fontWeight = 'normal';
+            } else {
+                const needed = threshold - percent;
+                confidenceMessage.textContent = `${percent}% confidence - ${needed}% more needed for high confidence`;
+                confidenceMessage.style.color = '#666';
+                confidenceMessage.style.fontWeight = 'normal';
+            }
         }
 
         function renderQuestion() {
@@ -1421,6 +1942,21 @@
 
         function handleNext() {
             userResponses[currentQuestion] = selectedOption;
+
+            // Record response in adaptive sampler if available
+            if (adaptiveSampler && questionsData[currentQuestion].cellKey) {
+                const isCorrect = selectedOption === questionsData[currentQuestion].correctIndex;
+                adaptiveSampler.recordResponse(questionsData[currentQuestion].cellKey, isCorrect);
+
+                // Update confidence display
+                updateConfidenceDisplay();
+
+                // Log confidence stats
+                const stats = adaptiveSampler.getStats();
+                console.log(`Question ${currentQuestion + 1}: ${isCorrect ? 'Correct' : 'Incorrect'} | ` +
+                           `Confidence: ${(stats.overallConfidence * 100).toFixed(1)}% | ` +
+                           `Coverage: ${(stats.coverageConfidence * 100).toFixed(1)}%`);
+            }
 
             if (currentQuestion < questionsData.length - 1) {
                 currentQuestion++;

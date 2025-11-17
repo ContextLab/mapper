@@ -1,0 +1,36 @@
+================================================================================
+QUESTION GENERATION QUALITY REPORT
+================================================================================
+
+Generated: 2025-11-16T13:25:54.062846
+Model: qwen3-14b
+Method: wikipedia-article-based-conceptual
+
+Coverage: 50 cells × 4 questions = 200 total
+
+QUALITY METRICS
+--------------------------------------------------------------------------------
+
+✓ Self-contained questions: 193/200 (96.5%)
+✗ Not self-contained: 7 (3.5%)
+  Examples:
+    - Cell (26, 38): Which adaptation is most likely facilitated by the creeping habit of Iris acutiloba's rhizomes, as d...
+    - Cell (34, 38): What is the primary purpose of hosting events like 'The Battle at The Border' according to the artic...
+    - Cell (24, 28): What is the primary purpose of a Surgical Checklist implemented in hospitals, as described in the ar...
+
+✓ Conceptual questions: 123/200 (61.5%)
+
+⚠ Mitochondria placeholder: 10/200 (5.0%)
+  NOTE: LLM appears to be using fallback when article content is insufficient
+
+RECOMMENDATION
+--------------------------------------------------------------------------------
+
+✓ Quality is acceptable for full generation
+  - 96.5% self-contained (target: >95%)
+  - 61.5% conceptual (target: >50%)
+  - 5.0% placeholder (target: <10%)
+
+  The {mitochondria} mitochondria questions are acceptable given they come from
+  very short stub articles that lack sufficient content for meaningful questions.
+

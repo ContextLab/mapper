@@ -97,24 +97,38 @@ def filter_by_bounds(articles, coords, bounds):
     return filtered_articles
 
 
-def normalize_coordinates(filtered_articles, bounds):
-    """Normalize coordinates to [0, 1] range within optimal rectangle"""
+def normalize_coordinates(filtered_articles):
+    """Normalize coordinates to [0, 1] range based on actual article distribution"""
     print(f"Normalizing coordinates to [0, 1]...")
 
-    x_min = bounds['x_min']
-    x_max = bounds['x_max']
-    y_min = bounds['y_min']
-    y_max = bounds['y_max']
+    # Find actual min/max of article coordinates (not rectangle bounds)
+    x_coords = [item['umap_x'] for item in filtered_articles]
+    y_coords = [item['umap_y'] for item in filtered_articles]
 
-    width = x_max - x_min
-    height = y_max - y_min
+    actual_x_min = min(x_coords)
+    actual_x_max = max(x_coords)
+    actual_y_min = min(y_coords)
+    actual_y_max = max(y_coords)
+
+    print(f"  Actual article bounds in UMAP space:")
+    print(f"    X: [{actual_x_min:.2f}, {actual_x_max:.2f}]")
+    print(f"    Y: [{actual_y_min:.2f}, {actual_y_max:.2f}]")
+
+    # Normalize directly to [0, 1] based on actual article bounds
+    # No padding - preserves distances for optimal coverage matching
+    x_range = actual_x_max - actual_x_min
+    y_range = actual_y_max - actual_y_min
+
+    print(f"  Normalizing to [0, 1] based on actual bounds (no padding)")
+    print(f"    X range: {x_range:.2f} UMAP units")
+    print(f"    Y range: {y_range:.2f} UMAP units")
 
     normalized = []
 
     for item in filtered_articles:
-        # Normalize to [0, 1] based on rectangle bounds
-        x_norm = (item['umap_x'] - x_min) / width
-        y_norm = (item['umap_y'] - y_min) / height
+        # Normalize to [0, 1] based on actual article bounds
+        x_norm = (item['umap_x'] - actual_x_min) / x_range
+        y_norm = (item['umap_y'] - actual_y_min) / y_range
 
         normalized.append({
             'article': item['article'],
@@ -227,7 +241,7 @@ def main():
     filtered = filter_by_bounds(articles, coords, bounds)
 
     # Normalize coordinates to [0, 1]
-    normalized = normalize_coordinates(filtered, bounds)
+    normalized = normalize_coordinates(filtered)
 
     # Export to JSON
     output_file = export_to_json(normalized)

@@ -181,14 +181,135 @@ def calculate_coverage(
         cell_coverage_details=cell_details
     )
 
-def find_optimal_rectangle(
+def calculate_density_metrics(
+    rectangle: Rectangle,
     all_coords: np.ndarray,
-    space_bounds: Tuple[float, float, float, float],
-    min_coverage: float = 80.0,
     grid_size: int = 40
 ) -> Dict:
     """
-    Find optimal rectangle using comprehensive multi-objective optimization.
+    Calculate per-cell article counts and density statistics.
+
+    Args:
+        rectangle: Rectangle to evaluate
+        all_coords: All Wikipedia article coordinates
+        grid_size: Grid resolution (default 40x40)
+
+    Returns:
+        Dictionary with density metrics
+    """
+    x_min, x_max, y_min, y_max = rectangle.bounds
+
+    # Filter to articles within rectangle
+    mask = (
+        (all_coords[:, 0] >= x_min) & (all_coords[:, 0] <= x_max) &
+        (all_coords[:, 1] >= y_min) & (all_coords[:, 1] <= y_max)
+    )
+    articles_in_rect = all_coords[mask]
+
+    if len(articles_in_rect) == 0:
+        return {
+            'cell_counts': np.zeros((grid_size, grid_size), dtype=int),
+            'min_density': 0,
+            'max_density': 0,
+            'mean_density': 0.0,
+            'median_density': 0.0,
+            'empty_cells': grid_size * grid_size,
+            'cells_with_1_article': 0,
+            'cells_with_5_plus': 0,
+            'density_std': 0.0
+        }
+
+    # Calculate cell dimensions
+    cell_width = (x_max - x_min) / grid_size
+    cell_height = (y_max - y_min) / grid_size
+
+    # Count articles per cell
+    cell_counts = np.zeros((grid_size, grid_size), dtype=int)
+
+    for coord in articles_in_rect:
+        # Determine which cell this article belongs to
+        cell_x = int((coord[0] - x_min) / cell_width)
+        cell_y = int((coord[1] - y_min) / cell_height)
+
+        # Clamp to grid boundaries
+        cell_x = min(cell_x, grid_size - 1)
+        cell_y = min(cell_y, grid_size - 1)
+
+        cell_counts[cell_y, cell_x] += 1
+
+    # Calculate statistics
+    flat_counts = cell_counts.flatten()
+
+    return {
+        'cell_counts': cell_counts,
+        'min_density': int(flat_counts.min()),
+        'max_density': int(flat_counts.max()),
+        'mean_density': float(flat_counts.mean()),
+        'median_density': float(np.median(flat_counts)),
+        'empty_cells': int((flat_counts == 0).sum()),
+        'cells_with_1_article': int((flat_counts == 1).sum()),
+        'cells_with_5_plus': int((flat_counts >= 5).sum()),
+        'density_std': float(flat_counts.std())
+    }
+
+def score_rectangle_by_density(result: CoverageResult, density_metrics: Dict) -> float:
+    """
+    Score rectangle by density quality, not area.
+
+    Priorities:
+    1. No empty cells (heavy penalty)
+    2. High minimum density (worst-case quality)
+    3. High coverage percentage
+    4. High total articles (diversity)
+
+    Args:
+        result: Coverage result for rectangle
+        density_metrics: Density metrics from calculate_density_metrics()
+
+    Returns:
+        Score (higher is better)
+    """
+    # Heavy exponential penalty for empty cells
+    empty_cells = density_metrics['empty_cells']
+    if empty_cells > 0:
+        empty_penalty = -1000 * (empty_cells ** 0.5) * 10
+    else:
+        empty_penalty = 0
+
+    # Reward minimum density (ensures quality everywhere)
+    min_density_score = density_metrics['min_density'] * 10000
+
+    # Reward high coverage percentage
+    coverage_score = result.coverage * 100
+
+    # Reward total articles (diversity) - small weight
+    diversity_score = np.log(result.num_articles + 1) * 10
+
+    # Reward uniform distribution
+    if density_metrics['mean_density'] > 0:
+        uniformity_score = -density_metrics['density_std'] * 100
+    else:
+        uniformity_score = 0
+
+    total_score = (
+        empty_penalty +
+        min_density_score +
+        coverage_score +
+        diversity_score +
+        uniformity_score
+    )
+
+    return total_score
+
+def find_optimal_rectangle(
+    all_coords: np.ndarray,
+    space_bounds: Tuple[float, float, float, float],
+    min_coverage: float = 95.0,
+    max_distance_cell_widths: float = 3.0,
+    grid_size: int = 40
+) -> Dict:
+    """
+    Find optimal rectangle using density-first multi-objective optimization.
 
     Phase 1: Coarse grid search (100x100 centers, 6 sizes = 60K rectangles)
     Phase 2: Fine local search around top candidates
@@ -197,7 +318,8 @@ def find_optimal_rectangle(
     Args:
         all_coords: All Wikipedia article coordinates
         space_bounds: (x_min, x_max, y_min, y_max) of full UMAP space
-        min_coverage: Minimum required coverage (80%)
+        min_coverage: Minimum required coverage (95%, stricter than before)
+        max_distance_cell_widths: Maximum distance from cell center to nearest article (in cell-widths, default 3.0)
         grid_size: Grid resolution (40x40)
 
     Returns:
@@ -242,7 +364,7 @@ def find_optimal_rectangle(
         for j, cy in enumerate(center_ys):
             for k, (w, h) in enumerate(zip(widths, heights)):
                 rect = Rectangle(cx, cy, w, h)
-                result = calculate_coverage(rect, all_coords, grid_size)
+                result = calculate_coverage(rect, all_coords, grid_size, max_distance_cell_widths)
                 all_results.append(result)
 
                 # Progress update every 1000 rectangles
@@ -277,22 +399,29 @@ def find_optimal_rectangle(
         print()
     else:
         print(f"  ✓ Found {len(valid_results):,} rectangles with coverage ≥{min_coverage}%")
+        print(f"  Calculating density metrics for ranking...")
 
-        # Sort by area (descending) and take top 10
-        top_candidates = sorted(valid_results, key=lambda r: r.area, reverse=True)[:10]
+        # Calculate density metrics and score each rectangle
+        results_with_density = []
+        for r in valid_results:
+            density_metrics = calculate_density_metrics(r.rectangle, all_coords, grid_size)
+            score = score_rectangle_by_density(r, density_metrics)
+            results_with_density.append((r, density_metrics, score))
 
-        print(f"  Top 10 candidates by area:")
-        for i, r in enumerate(top_candidates, 1):
-            print(f"    {i}. Area={r.area:.2f}, Coverage={r.coverage:.2f}%, "
-                  f"Articles={r.num_articles:,}, "
-                  f"Center=({r.rectangle.center_x:.2f}, {r.rectangle.center_y:.2f}), "
-                  f"Size={r.rectangle.width:.2f}×{r.rectangle.height:.2f}")
+        # Sort by density score (higher is better) and take top 10
+        top_candidates = sorted(results_with_density, key=lambda x: x[2], reverse=True)[:10]
+
+        print(f"  Top 10 candidates by density score:")
+        for i, (r, dm, score) in enumerate(top_candidates, 1):
+            print(f"    {i}. Score={score:.0f}, MinDensity={dm['min_density']}, "
+                  f"Empty={dm['empty_cells']}, Coverage={r.coverage:.2f}%, "
+                  f"Articles={r.num_articles:,}")
         print()
 
         # Fine search around top candidate
-        best_coarse = top_candidates[0]
-        print(f"  Refining around best candidate (Area={best_coarse.area:.2f}, "
-              f"Coverage={best_coarse.coverage:.2f}%)...")
+        best_coarse_result, best_coarse_dm, best_coarse_score = top_candidates[0]
+        print(f"  Refining around best candidate (Score={best_coarse_score:.0f}, "
+              f"MinDensity={best_coarse_dm['min_density']}, Empty={best_coarse_dm['empty_cells']})...")
 
         # Test small variations in center position
         delta_x = space_width * 0.01  # 1% steps
@@ -304,12 +433,12 @@ def find_optimal_rectangle(
                 for dw in np.linspace(-space_width * 0.05, space_width * 0.05, 5):
                     for dh in np.linspace(-space_height * 0.05, space_height * 0.05, 5):
                         rect = Rectangle(
-                            best_coarse.rectangle.center_x + dx,
-                            best_coarse.rectangle.center_y + dy,
-                            max(best_coarse.rectangle.width + dw, space_width * 0.1),
-                            max(best_coarse.rectangle.height + dh, space_height * 0.1)
+                            best_coarse_result.rectangle.center_x + dx,
+                            best_coarse_result.rectangle.center_y + dy,
+                            max(best_coarse_result.rectangle.width + dw, space_width * 0.1),
+                            max(best_coarse_result.rectangle.height + dh, space_height * 0.1)
                         )
-                        result = calculate_coverage(rect, all_coords, grid_size)
+                        result = calculate_coverage(rect, all_coords, grid_size, max_distance_cell_widths)
                         if result.coverage >= min_coverage:
                             fine_results.append(result)
 
@@ -317,9 +446,20 @@ def find_optimal_rectangle(
         print(f"  ✓ Fine search: {len(fine_results):,} additional rectangles tested")
         print()
 
-        # Update best result
+        # Update best result using density scoring
         valid_results = [r for r in all_results if r.coverage >= min_coverage]
-        best_result = max(valid_results, key=lambda r: r.area)
+
+        # Calculate density scores for all valid results
+        scored_results = []
+        for r in valid_results:
+            dm = calculate_density_metrics(r.rectangle, all_coords, grid_size)
+            score = score_rectangle_by_density(r, dm)
+            scored_results.append((r, dm, score))
+
+        # Select best by density score
+        best_result_tuple = max(scored_results, key=lambda x: x[2])
+        best_result = best_result_tuple[0]
+        best_density_metrics = best_result_tuple[1]
 
     # ===== PHASE 3: PARETO FRONTIER =====
     print("=" * 80)
@@ -381,6 +521,77 @@ def find_optimal_rectangle(
     print(f"    Min: {np.min(distances):.2f}")
     print()
 
+    # ===== POST-PROCESSING: ADJUST BOUNDS TO ACTUAL ARTICLE DISTRIBUTION =====
+    print("=" * 80)
+    print("POST-PROCESSING: ADJUSTING BOUNDS TO ACTUAL ARTICLES")
+    print("=" * 80)
+
+    # Extract articles within the optimal rectangle
+    x_min_rect, x_max_rect, y_min_rect, y_max_rect = best.rectangle.bounds
+    mask = (
+        (all_coords[:, 0] >= x_min_rect) & (all_coords[:, 0] <= x_max_rect) &
+        (all_coords[:, 1] >= y_min_rect) & (all_coords[:, 1] <= y_max_rect)
+    )
+    selected_articles = all_coords[mask]
+
+    print(f"Articles selected by optimization: {len(selected_articles):,}")
+    print(f"Original rectangle bounds:")
+    print(f"  X: [{x_min_rect:.2f}, {x_max_rect:.2f}] (width: {x_max_rect - x_min_rect:.2f})")
+    print(f"  Y: [{y_min_rect:.2f}, {y_max_rect:.2f}] (height: {y_max_rect - y_min_rect:.2f})")
+    print()
+
+    # Find actual min/max bounds of selected articles
+    actual_x_min = float(selected_articles[:, 0].min())
+    actual_x_max = float(selected_articles[:, 0].max())
+    actual_y_min = float(selected_articles[:, 1].min())
+    actual_y_max = float(selected_articles[:, 1].max())
+
+    print(f"Actual article distribution:")
+    print(f"  X: [{actual_x_min:.2f}, {actual_x_max:.2f}] (width: {actual_x_max - actual_x_min:.2f})")
+    print(f"  Y: [{actual_y_min:.2f}, {actual_y_max:.2f}] (height: {actual_y_max - actual_y_min:.2f})")
+
+    # Calculate coverage within original rectangle
+    x_coverage = (actual_x_max - actual_x_min) / (x_max_rect - x_min_rect) * 100
+    y_coverage = (actual_y_max - actual_y_min) / (y_max_rect - y_min_rect) * 100
+    print(f"  Articles fill {x_coverage:.1f}% of X range, {y_coverage:.1f}% of Y range")
+    print()
+
+    # Add 2.5% padding on all sides
+    padding = 0.025
+    x_range = actual_x_max - actual_x_min
+    y_range = actual_y_max - actual_y_min
+
+    x_padding = x_range * padding
+    y_padding = y_range * padding
+
+    adjusted_x_min = actual_x_min - x_padding
+    adjusted_x_max = actual_x_max + x_padding
+    adjusted_y_min = actual_y_min - y_padding
+    adjusted_y_max = actual_y_max + y_padding
+
+    print(f"Adding {padding*100}% padding on all sides:")
+    print(f"  X padding: {x_padding:.3f} UMAP units")
+    print(f"  Y padding: {y_padding:.3f} UMAP units")
+    print()
+
+    print(f"Final adjusted bounds:")
+    print(f"  X: [{adjusted_x_min:.2f}, {adjusted_x_max:.2f}] (width: {adjusted_x_max - adjusted_x_min:.2f})")
+    print(f"  Y: [{adjusted_y_min:.2f}, {adjusted_y_max:.2f}] (height: {adjusted_y_max - adjusted_y_min:.2f})")
+
+    adjusted_area = (adjusted_x_max - adjusted_x_min) * (adjusted_y_max - adjusted_y_min)
+    print(f"  Area: {adjusted_area:.2f} UMAP units²")
+
+    # Calculate area reduction
+    area_reduction = (best.area - adjusted_area) / best.area * 100
+    print(f"  Area reduction: {area_reduction:.1f}% (tighter fit)")
+    print()
+
+    # Update bounds for return value
+    x_min_opt = adjusted_x_min
+    x_max_opt = adjusted_x_max
+    y_min_opt = adjusted_y_min
+    y_max_opt = adjusted_y_max
+
     # Return comprehensive results
     return {
         'optimal_rectangle': {
@@ -432,8 +643,44 @@ def find_optimal_rectangle(
             'phase1_rectangles': int(total_tests),
             'phase2_rectangles': int(len(fine_results) if 'fine_results' in locals() else 0),
             'min_coverage_target': float(min_coverage),
+            'max_distance_cell_widths': float(max_distance_cell_widths),
             'grid_size': int(grid_size),
-            'timestamp': datetime.now().isoformat()
+            'timestamp': datetime.now().isoformat(),
+            'optimization_method': 'density-first'
+        },
+        'density_metrics': {
+            'min_density': int(best_density_metrics['min_density']) if 'best_density_metrics' in locals() else None,
+            'max_density': int(best_density_metrics['max_density']) if 'best_density_metrics' in locals() else None,
+            'mean_density': float(best_density_metrics['mean_density']) if 'best_density_metrics' in locals() else None,
+            'median_density': float(best_density_metrics['median_density']) if 'best_density_metrics' in locals() else None,
+            'empty_cells': int(best_density_metrics['empty_cells']) if 'best_density_metrics' in locals() else None,
+            'cells_with_1_article': int(best_density_metrics['cells_with_1_article']) if 'best_density_metrics' in locals() else None,
+            'cells_with_5_plus': int(best_density_metrics['cells_with_5_plus']) if 'best_density_metrics' in locals() else None,
+            'density_std': float(best_density_metrics['density_std']) if 'best_density_metrics' in locals() else None
+        },
+        'post_processing': {
+            'original_bounds': {
+                'x_min': float(x_min_rect),
+                'x_max': float(x_max_rect),
+                'y_min': float(y_min_rect),
+                'y_max': float(y_max_rect)
+            },
+            'actual_article_bounds': {
+                'x_min': float(actual_x_min),
+                'x_max': float(actual_x_max),
+                'y_min': float(actual_y_min),
+                'y_max': float(actual_y_max)
+            },
+            'padding_percent': float(padding * 100),
+            'padding_applied': {
+                'x_padding': float(x_padding),
+                'y_padding': float(y_padding)
+            },
+            'area_reduction_percent': float(area_reduction),
+            'article_fill_percent': {
+                'x_coverage': float(x_coverage),
+                'y_coverage': float(y_coverage)
+            }
         }
     }
 

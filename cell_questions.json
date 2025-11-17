@@ -1,0 +1,407 @@
+{
+  "metadata": {
+    "generated_at": "2025-11-17T00:18:09.389984",
+    "num_cells": 5,
+    "questions_per_cell": 4,
+    "total_questions": 19,
+    "model": "qwen3-14b",
+    "method": "wikipedia-article-based-conceptual",
+    "status": "completed"
+  },
+  "cells": [
+    {
+      "cell": {
+        "gx": 8,
+        "gy": 21,
+        "center_x": 0.21794871794871795,
+        "center_y": 0.5512820512820513,
+        "label": "Sports and Medicine Topics"
+      },
+      "questions": [
+        {
+          "question": "What is the primary purpose of a 'hundred' in English administrative geography?",
+          "options": {
+            "A": "A unit of land measurement for agricultural taxation",
+            "B": "A type of historic battlefield formation",
+            "C": "A regional division used for local governance and legal jurisdiction",
+            "D": "A unit of currency in medieval England"
+          },
+          "correct_answer": "C",
+          "cell_x": 0.21794871794871795,
+          "cell_y": 0.5512820512820513,
+          "cell_gx": 8,
+          "cell_gy": 21,
+          "source_article": "Hundred of Coombe"
+        },
+        {
+          "question": "What is the primary purpose of a hundred in a regional governance structure?",
+          "options": {
+            "A": "To serve as a judicial district for legal proceedings.",
+            "B": "To act as an administrative division for managing local resources and governance.",
+            "C": "To function as a military fortification against external threats.",
+            "D": "To operate as an economic trade zone with specific tariffs and commerce rules."
+          },
+          "correct_answer": "B",
+          "cell_x": 0.21794871794871795,
+          "cell_y": 0.5512820512820513,
+          "cell_gx": 8,
+          "cell_gy": 21,
+          "source_article": "Hundred of Coombe"
+        },
+        {
+          "question": "What was a key factor that determined PEC Zwolle's final position in the Eredivisie for the 2019\u201320 season?",
+          "options": {
+            "A": "The team's performance in the KNVB Cup",
+            "B": "The number of players loaned out during the season",
+            "C": "The abrupt cancellation of the league due to the COVID-19 pandemic",
+            "D": "The team's results in friendly matches"
+          },
+          "correct_answer": "C",
+          "cell_x": 0.21794871794871795,
+          "cell_y": 0.5512820512820513,
+          "cell_gx": 8,
+          "cell_gy": 21,
+          "source_article": "2019\u201320 PEC Zwolle season"
+        },
+        {
+          "question": "What is the primary focus of Andrea White's work as an author and community leader?",
+          "options": {
+            "A": "Writing exclusively for adult audiences",
+            "B": "Advocating for environmental conservation through literature",
+            "C": "Combining storytelling with community engagement to support youth education",
+            "D": "Promoting international travel through fictional narratives"
+          },
+          "correct_answer": "C",
+          "cell_x": 0.21794871794871795,
+          "cell_y": 0.5512820512820513,
+          "cell_gx": 8,
+          "cell_gy": 21,
+          "source_article": "Andrea White"
+        }
+      ],
+      "metadata": {
+        "source_articles": [
+          "Hundred of Coombe",
+          "Hundred of Coombe",
+          "2019\u201320 PEC Zwolle season",
+          "Andrea White"
+        ],
+        "total_tokens": 2950,
+        "questions_generated": 4,
+        "questions_requested": 4
+      }
+    },
+    {
+      "cell": {
+        "gx": 38,
+        "gy": 19,
+        "center_x": 0.9871794871794872,
+        "center_y": 0.5,
+        "label": "Media and Sports Figures"
+      },
+      "questions": [
+        {
+          "question": "What was a primary reason that wealthy patrons commissioned imaginative landscape paintings like 'Landscape with Grotto and a Rider' during the 17th century?",
+          "options": {
+            "A": "To display their knowledge of exotic geography",
+            "B": "To support the careers of Flemish painters",
+            "C": "To satisfy their desire for realistic natural scenes",
+            "D": "To showcase their refined and sophisticated taste"
+          },
+          "correct_answer": "D",
+          "cell_x": 0.9871794871794872,
+          "cell_y": 0.5,
+          "cell_gx": 38,
+          "cell_gy": 19,
+          "source_article": "Landscape with Grotto and a Rider"
+        },
+        {
+          "question": "What is a key reason why community radio stations often rely on local programming and content?",
+          "options": {
+            "A": "To reduce operational costs by minimizing staff requirements",
+            "B": "To ensure compliance with national broadcasting regulations",
+            "C": "To foster stronger connections with the local audience and community",
+            "D": "To avoid competition from larger, commercial radio stations"
+          },
+          "correct_answer": "C",
+          "cell_x": 0.9871794871794872,
+          "cell_y": 0.5,
+          "cell_gx": 38,
+          "cell_gy": 19,
+          "source_article": "Point FM"
+        },
+        {
+          "question": "What was the primary reason for the discontinuation of the Women's Hockey Champions Challenge II tournament?",
+          "options": {
+            "A": "The competition was deemed too expensive to maintain.",
+            "B": "It was replaced by a new international tournament structure.",
+            "C": "Participating teams requested its removal from the calendar.",
+            "D": "The event failed to attract sufficient global interest."
+          },
+          "correct_answer": "B",
+          "cell_x": 0.9871794871794872,
+          "cell_y": 0.5,
+          "cell_gx": 38,
+          "cell_gy": 19,
+          "source_article": "Women's Hockey Champions Challenge II"
+        },
+        {
+          "question": "What was the primary reason for discontinuing the Women's Hockey Champions Challenge II tournament?",
+          "options": {
+            "A": "To create space for a new, more competitive international hockey league.",
+            "B": "Due to lack of interest from participating countries.",
+            "C": "Because the tournament was no longer financially viable for organizers.",
+            "D": "To reduce the number of international field hockey competitions globally."
+          },
+          "correct_answer": "A",
+          "cell_x": 0.9871794871794872,
+          "cell_y": 0.5,
+          "cell_gx": 38,
+          "cell_gy": 19,
+          "source_article": "Women's Hockey Champions Challenge II"
+        }
+      ],
+      "metadata": {
+        "source_articles": [
+          "Landscape with Grotto and a Rider",
+          "Point FM",
+          "Women's Hockey Champions Challenge II",
+          "Women's Hockey Champions Challenge II"
+        ],
+        "total_tokens": 3216,
+        "questions_generated": 4,
+        "questions_requested": 4
+      }
+    },
+    {
+      "cell": {
+        "gx": 19,
+        "gy": 10,
+        "center_x": 0.5,
+        "center_y": 0.2692307692307692,
+        "label": "Miscellaneous Topics"
+      },
+      "questions": [
+        {
+          "question": "What is a key characteristic that defines Saint-Pierre-de-Belleville's administrative status in France?",
+          "options": {
+            "A": "It is a sovereign nation within France.",
+            "B": "It is a region with its own independent government.",
+            "C": "It is a commune within the Savoie department.",
+            "D": "It is a metropolitan city in the Auvergne-Rh\u00f4ne-Alpes region."
+          },
+          "correct_answer": "C",
+          "cell_x": 0.5,
+          "cell_y": 0.2692307692307692,
+          "cell_gx": 19,
+          "cell_gy": 10,
+          "source_article": "Saint-Pierre-de-Belleville"
+        },
+        {
+          "question": "What is the primary purpose of a public school district like Davison Community Schools?",
+          "options": {
+            "A": "To provide healthcare services to the local community",
+            "B": "To manage and administer local government operations",
+            "C": "To educate students from preschool through 12th grade",
+            "D": "To oversee the operations of local businesses and industries"
+          },
+          "correct_answer": "C",
+          "cell_x": 0.5,
+          "cell_y": 0.2692307692307692,
+          "cell_gx": 19,
+          "cell_gy": 10,
+          "source_article": "Davison Community Schools"
+        },
+        {
+          "question": "What is the primary significance of Segamat railway station in the context of regional transportation?",
+          "options": {
+            "A": "It serves as a major hub for international freight shipping.",
+            "B": "It provides essential local commuter services within the town.",
+            "C": "It connects the region to broader rail networks through KTM Intercity services.",
+            "D": "It functions as a terminal for long-distance bus and taxi services only."
+          },
+          "correct_answer": "C",
+          "cell_x": 0.5,
+          "cell_y": 0.2692307692307692,
+          "cell_gx": 19,
+          "cell_gy": 10,
+          "source_article": "Segamat railway station"
+        },
+        {
+          "question": "What is a key ecological factor that defines the habitat of Brevibora fish?",
+          "options": {
+            "A": "Presence of large, fast-moving rivers",
+            "B": "High salinity levels in marine environments",
+            "C": "Acidic, low-nutrient freshwater environments",
+            "D": "Temperate climate zones with seasonal temperature changes"
+          },
+          "correct_answer": "C",
+          "cell_x": 0.5,
+          "cell_y": 0.2692307692307692,
+          "cell_gx": 19,
+          "cell_gy": 10,
+          "source_article": "Brevibora"
+        }
+      ],
+      "metadata": {
+        "source_articles": [
+          "Saint-Pierre-de-Belleville",
+          "Davison Community Schools",
+          "Segamat railway station",
+          "Brevibora"
+        ],
+        "total_tokens": 3176,
+        "questions_generated": 4,
+        "questions_requested": 4
+      }
+    },
+    {
+      "cell": {
+        "gx": 18,
+        "gy": 31,
+        "center_x": 0.47435897435897434,
+        "center_y": 0.8076923076923077,
+        "label": "Software/Technology Hub"
+      },
+      "questions": [
+        {
+          "question": "What is Zoran Feri\u0107 primarily recognized for in the literary world?",
+          "options": {
+            "A": "Pioneering work in Croatian children's literature",
+            "B": "Contributions to Croatian short story writing and novelists",
+            "C": "Innovations in Croatian science fiction genres",
+            "D": "Leadership in Croatian literary criticism and theory"
+          },
+          "correct_answer": "B",
+          "cell_x": 0.47435897435897434,
+          "cell_y": 0.8076923076923077,
+          "cell_gx": 18,
+          "cell_gy": 31,
+          "source_article": "Zoran Feri\u0107"
+        },
+        {
+          "question": "What is the primary focus of Zoran Feri\u0107's career, as indicated by his work and accolades?",
+          "options": {
+            "A": "Politics and public policy",
+            "B": "Literature and writing",
+            "C": "Science and technology",
+            "D": "Business and finance"
+          },
+          "correct_answer": "B",
+          "cell_x": 0.47435897435897434,
+          "cell_y": 0.8076923076923077,
+          "cell_gx": 18,
+          "cell_gy": 31,
+          "source_article": "Zoran Feri\u0107"
+        },
+        {
+          "question": "What is the primary purpose of the design concept described in the text?",
+          "options": {
+            "A": "To maximize residential density through vertical construction",
+            "B": "To reflect the cultural and historical identity of Bia\u0142ystok in its architecture",
+            "C": "To create a mixed-use development with commercial and residential spaces",
+            "D": "To emphasize environmental sustainability through green building practices"
+          },
+          "correct_answer": "A",
+          "cell_x": 0.47435897435897434,
+          "cell_y": 0.8076923076923077,
+          "cell_gx": 18,
+          "cell_gy": 31,
+          "source_article": "Osiedle S\u0142oneczny Stok, Bia\u0142ystok"
+        },
+        {
+          "question": "What is the primary focus of Desmond Ravenstone's current work, as indicated by his blog and advocacy efforts?",
+          "options": {
+            "A": "Promoting traditional religious practices within Unitarian Universalism",
+            "B": "Advocating for the rights of sex workers and related communities",
+            "C": "Educating the public on historical Unitarian Universalist doctrines",
+            "D": "Developing new forms of erotic role-play for the BDSM community"
+          },
+          "correct_answer": "B",
+          "cell_x": 0.47435897435897434,
+          "cell_y": 0.8076923076923077,
+          "cell_gx": 18,
+          "cell_gy": 31,
+          "source_article": "Desmond Ravenstone"
+        }
+      ],
+      "metadata": {
+        "source_articles": [
+          "Zoran Feri\u0107",
+          "Zoran Feri\u0107",
+          "Osiedle S\u0142oneczny Stok, Bia\u0142ystok",
+          "Desmond Ravenstone"
+        ],
+        "total_tokens": 4086,
+        "questions_generated": 4,
+        "questions_requested": 4
+      }
+    },
+    {
+      "cell": {
+        "gx": 15,
+        "gy": 9,
+        "center_x": 0.3974358974358974,
+        "center_y": 0.24358974358974358,
+        "label": "Sports and Culture"
+      },
+      "questions": [
+        {
+          "question": "What is the primary role of a midfielder in association football?",
+          "options": {
+            "A": "To score goals and be the primary offensive player",
+            "B": "To defend the team's goal and prevent scoring opportunities",
+            "C": "To organize plays, control the tempo of the game, and link defense with attack",
+            "D": "To be a substitute player who enters the game in late stages of the match"
+          },
+          "correct_answer": "C",
+          "cell_x": 0.3974358974358974,
+          "cell_y": 0.24358974358974358,
+          "cell_gx": 15,
+          "cell_gy": 9,
+          "source_article": "R\u0103zvan Greu"
+        },
+        {
+          "question": "What is a key characteristic that defines Casanova Lonati's geographic significance within the Lombardy region?",
+          "options": {
+            "A": "It is a major industrial hub driving economic growth in Lombardy.",
+            "B": "It serves as the largest urban center for the Province of Pavia.",
+            "C": "It is a small, rural municipality with limited economic activity.",
+            "D": "It plays a critical role in the transportation infrastructure connecting Milan and Pavia."
+          },
+          "correct_answer": "C",
+          "cell_x": 0.3974358974358974,
+          "cell_y": 0.24358974358974358,
+          "cell_gx": 15,
+          "cell_gy": 9,
+          "source_article": "Casanova Lonati"
+        },
+        {
+          "question": "What is the primary role of the character Audrey Parker in the supernatural drama 'Haven'?",
+          "options": {
+            "A": "She is a town resident who accidentally discovers the supernatural nature of Haven.",
+            "B": "She is an FBI agent sent to investigate a criminal case but becomes involved with the town's supernatural issues.",
+            "C": "She is a local historian who documents the town's history of supernatural events.",
+            "D": "She is a Troubled individual with unique abilities that help resolve the town's supernatural problems."
+          },
+          "correct_answer": "B",
+          "cell_x": 0.3974358974358974,
+          "cell_y": 0.24358974358974358,
+          "cell_gx": 15,
+          "cell_gy": 9,
+          "source_article": "List of Haven characters"
+        }
+      ],
+      "metadata": {
+        "source_articles": [
+          "R\u0103zvan Greu",
+          "Casanova Lonati",
+          "List of Haven characters"
+        ],
+        "total_tokens": 2585,
+        "questions_generated": 3,
+        "questions_requested": 4
+      }
+    }
+  ]
+}

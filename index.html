@@ -954,6 +954,7 @@
                 </div>
 
                 <div class="button-container">
+                    <button class="btn btn-primary" id="another-round-btn"><i class="fas fa-play"></i> Another Round</button>
                     <button class="btn btn-secondary" id="restart-btn"><i class="fas fa-rotate-right"></i> Start Over</button>
                 </div>
             </div>
@@ -1053,13 +1054,17 @@
 
     <script>
         // Questions data loaded from external file
-        let questionsData = [];
+        let questionsData = []; // Current round's questions (10 questions)
+        let allQuestionsPool = []; // All available questions loaded from JSON
         let cellLabelsData = null; // Cell labels for heatmap tooltips
         let wikipediaArticles = []; // Wikipedia articles with coordinates
 
         // Application state
         let currentQuestion = 0;
-        let userResponses = [];
+        let userResponses = []; // Current round responses
+        let allUserResponses = []; // Full history across all rounds
+        let askedQuestionIndices = []; // Track which questions have been asked
+        let currentRound = 0; // Current round number
         let selectedOption = null;
 
         // DOM elements
@@ -1074,6 +1079,7 @@
         const nextBtn = document.getElementById('next-btn');
         const skipBtn = document.getElementById('skip-btn');
         const restartBtn = document.getElementById('restart-btn');
+        const anotherRoundBtn = document.getElementById('another-round-btn');
         const startQuizBtn = document.getElementById('start-quiz-btn');
         const aboutBtn = document.getElementById('about-btn');
         const aboutModal = document.getElementById('about-modal');
@@ -1098,25 +1104,90 @@
         // Load questions and initialize
         async function loadQuestions() {
             try {
-                const response = await fetch('questions.json');
+                // Use cell_questions_sample.json as placeholder (will be cell_questions.json when generation completes)
+                const response = await fetch('cell_questions_sample.json');
                 if (!response.ok) {
                     throw new Error(`Failed to load questions: ${response.status}`);
                 }
-                questionsData = await response.json();
-                console.log(`Loaded ${questionsData.length} questions`);
-                renderQuestion();
+                const data = await response.json();
+
+                // Flatten all questions from all cells into the pool
+                allQuestionsPool = [];
+                data.cells.forEach(cellData => {
+                    cellData.questions.forEach(q => {
+                        // Add random jitter to cell center coordinates
+                        const jitterX = (Math.random() - 0.5) * 0.04; // ±0.02 range
+                        const jitterY = (Math.random() - 0.5) * 0.04; // ±0.02 range
+
+                        allQuestionsPool.push({
+                            question: q.question,
+                            options: q.options,
+                            correctIndex: q.correct_index,
+                            x: cellData.cell.center_x + jitterX,
+                            y: cellData.cell.center_y + jitterY,
+                            topic: q.topic || 'general',
+                            cell_gx: cellData.cell.gx,
+                            cell_gy: cellData.cell.gy
+                        });
+                    });
+                });
+
+                console.log(`Loaded ${allQuestionsPool.length} total questions from ${data.cells.length} cells`);
+
+                // Start first quiz round (select 10 random questions)
+                startNewQuizRound();
             } catch (error) {
                 console.error('Error loading questions:', error);
                 questionContainer.innerHTML = `
                     <div style="text-align: center; padding: 40px; color: #e74c3c;">
                         <h3>Error Loading Questions</h3>
-                        <p>Could not load questions.json. Please ensure the file exists and the page is served via HTTP(S).</p>
+                        <p>Could not load cell_questions_sample.json. Please ensure the file exists and the page is served via HTTP(S).</p>
                         <p style="font-size: 0.9em; color: #666; margin-top: 20px;">
                             If testing locally, use a local server like: <code>python -m http.server 8000</code>
                         </p>
                     </div>
                 `;
             }
+        }
+
+        // Start a new quiz round by selecting 10 new random questions
+        function startNewQuizRound() {
+            // Find available question indices (not yet asked)
+            const availableIndices = [];
+            for (let i = 0; i < allQuestionsPool.length; i++) {
+                if (!askedQuestionIndices.includes(i)) {
+                    availableIndices.push(i);
+                }
+            }
+
+            // Check if we have enough questions
+            if (availableIndices.length < 10) {
+                console.log(`Only ${availableIndices.length} questions remaining. Resetting question pool.`);
+                // Reset the pool - user has answered most questions
+                askedQuestionIndices = [];
+                availableIndices.length = 0;
+                for (let i = 0; i < allQuestionsPool.length; i++) {
+                    availableIndices.push(i);
+                }
+            }
+
+            // Randomly select 10 questions
+            const shuffled = availableIndices.sort(() => Math.random() - 0.5);
+            const selectedIndices = shuffled.slice(0, 10);
+
+            // Update questionsData with selected questions
+            questionsData = selectedIndices.map(i => allQuestionsPool[i]);
+
+            // Mark these questions as asked
+            askedQuestionIndices.push(...selectedIndices);
+
+            // Reset for new round
+            currentQuestion = 0;
+            currentRound++;
+            userResponses = []; // Clear current round responses
+
+            console.log(`Round ${currentRound}: Selected ${questionsData.length} new questions`);
+            renderQuestion();
         }
 
         // Load cell labels for heatmap tooltips
@@ -1183,6 +1254,7 @@
         prevBtn.addEventListener('click', handlePrevious);
         skipBtn.addEventListener('click', handleSkip);
         restartBtn.addEventListener('click', restart);
+        anotherRoundBtn.addEventListener('click', startAnotherRound);
         startQuizBtn.addEventListener('click', startQuiz);
         aboutBtn.addEventListener('click', openAbout);
         closeAboutBtn.addEventListener('click', closeAbout);
@@ -1272,10 +1344,12 @@
             progressFill.style.width = `${(currentQuestion / questionsData.length) * 100}%`;
 
             optionsContainer.innerHTML = '';
-            q.options.forEach((option, index) => {
+            // Convert options object {A: "...", B: "...", C: "...", D: "..."} to array
+            const optionsArray = Object.values(q.options);
+            optionsArray.forEach((option, index) => {
                 const optionDiv = document.createElement('div');
                 optionDiv.className = 'option';
-                
+
                 const savedResponse = userResponses[currentQuestion];
                 if (savedResponse !== undefined && savedResponse === index) {
                     optionDiv.classList.add('selected');
@@ -1286,7 +1360,7 @@
                     <span class="option-label">${String.fromCharCode(65 + index)}</span>
                     ${option}
                 `;
-                
+
                 optionDiv.addEventListener('click', () => selectOption(index, optionDiv));
                 optionsContainer.appendChild(optionDiv);
             });
@@ -1348,6 +1422,10 @@
             mapSection.classList.remove('hidden');
             loading.classList.remove('hidden');
 
+            // Add current round responses to full history
+            allUserResponses.push(...userResponses);
+
+            // Calculate accuracy for current round
             let correct = 0;
             userResponses.forEach((response, index) => {
                 if (response === questionsData[index].correctIndex) {
@@ -1355,14 +1433,55 @@
                 }
             });
 
+            // Update stats (current round)
             document.getElementById('correct-count').textContent = correct;
             document.getElementById('accuracy-pct').textContent = `${Math.round((correct / questionsData.length) * 100)}%`;
             document.getElementById('total-count').textContent = questionsData.length;
 
             setTimeout(() => {
                 loading.classList.add('hidden');
-                generateKnowledgeMap();
+                // Generate map using ALL responses from all rounds
+                generateKnowledgeMapWithHistory();
             }, 1500);
+        }
+
+        // Generate knowledge map using full response history (all rounds)
+        function generateKnowledgeMapWithHistory() {
+            // Temporarily swap questionsData and userResponses with full history
+            const tempQuestionsData = questionsData;
+            const tempUserResponses = userResponses;
+
+            // Build combined questions and responses from all rounds
+            const allQuestions = [];
+            const allResponses = [];
+
+            let responseIndex = 0;
+            for (let roundIndex = 0; roundIndex < currentRound; roundIndex++) {
+                const roundSize = (roundIndex === currentRound - 1) ? tempUserResponses.length : 10;
+
+                for (let i = 0; i < roundSize; i++) {
+                    if (responseIndex < allUserResponses.length) {
+                        // Find the question from the pool using askedQuestionIndices
+                        const questionPoolIndex = askedQuestionIndices[responseIndex];
+                        if (questionPoolIndex !== undefined && questionPoolIndex < allQuestionsPool.length) {
+                            allQuestions.push(allQuestionsPool[questionPoolIndex]);
+                            allResponses.push(allUserResponses[responseIndex]);
+                        }
+                        responseIndex++;
+                    }
+                }
+            }
+
+            // Temporarily replace with full history for map generation
+            questionsData = allQuestions;
+            userResponses = allResponses;
+
+            // Generate map with full history
+            generateKnowledgeMap();
+
+            // Restore original (current round) data
+            questionsData = tempQuestionsData;
+            userResponses = tempUserResponses;
         }
 
         function generateKnowledgeMap() {
@@ -1589,13 +1708,13 @@
                 const animProgress = articleAnimationProgress[idx] || 0;
 
                 // Base radius for article dots (small, as specified)
-                const baseRadius = 2;
+                const baseRadius = 1;
 
                 // When hovered, grow slightly
                 const radius = baseRadius + (1 * animProgress);
 
                 // Base alpha (very subtle when not hovered)
-                const baseAlpha = 0.1;
+                const baseAlpha = 0.05;
                 const hoverAlpha = 0.5;
                 const alpha = baseAlpha + (hoverAlpha - baseAlpha) * animProgress;
 
@@ -2042,10 +2161,27 @@
             });
         }
 
+        function startAnotherRound() {
+            // Hide map, show quiz
+            mapSection.classList.add('hidden');
+            quizSection.classList.remove('hidden');
+            hideTooltip();
+
+            // Start a new quiz round with 10 new questions
+            startNewQuizRound();
+        }
+
         function restart() {
+            // Reset ALL state variables
             currentQuestion = 0;
             userResponses = [];
+            allUserResponses = [];
+            askedQuestionIndices = [];
+            currentRound = 0;
             selectedOption = null;
+            questionsData = [];
+
+            // Hide quiz and map, show intro
             mapSection.classList.add('hidden');
             quizSection.classList.add('hidden');
             introSection.classList.remove('hidden');

@@ -1063,6 +1063,7 @@
         let currentQuestion = 0;
         let userResponses = []; // Current round responses
         let allUserResponses = []; // Full history across all rounds
+        let allQuestionsShown = []; // All questions shown across all rounds (for cumulative map display)
         let askedQuestionIndices = []; // Track which questions have been asked
         let currentRound = 0; // Current round number
         let selectedOption = null;
@@ -1105,7 +1106,7 @@
         async function loadQuestions() {
             try {
                 // Use cell_questions_sample.json as placeholder (will be cell_questions.json when generation completes)
-                const response = await fetch('cell_questions_sample.json');
+                const response = await fetch('cell_questions.json');
                 if (!response.ok) {
                     throw new Error(`Failed to load questions: ${response.status}`);
                 }
@@ -1113,16 +1114,34 @@
 
                 // Flatten all questions from all cells into the pool
                 allQuestionsPool = [];
+                // Calculate cell dimensions for jitter
+                const gridSize = 40;
+                const cellWidth = 1.0 / (gridSize - 1);  // Normalized [0,1] space
+                const cellHeight = 1.0 / (gridSize - 1);
+
                 data.cells.forEach(cellData => {
                     cellData.questions.forEach(q => {
-                        // Add random jitter to cell center coordinates
-                        const jitterX = (Math.random() - 0.5) * 0.04; // ±0.02 range
-                        const jitterY = (Math.random() - 0.5) * 0.04; // ±0.02 range
+                        // Add uniform random jitter within cell bounds
+                        // Place question uniformly at random within its cell
+                        const jitterX = (Math.random() - 0.5) * cellWidth;  // Uniform within cell
+                        const jitterY = (Math.random() - 0.5) * cellHeight;
+
+                        // Convert correct_answer letter (e.g., "D") to index (e.g., 3)
+                        let correctIndex;
+                        if (q.correct_index !== undefined) {
+                            correctIndex = q.correct_index;  // Already a number
+                        } else if (q.correct_answer !== undefined) {
+                            // Convert letter to index: "A" → 0, "B" → 1, "C" → 2, "D" → 3
+                            correctIndex = q.correct_answer.charCodeAt(0) - 65;
+                        } else {
+                            console.error('Question missing correct answer:', q);
+                            correctIndex = 0;  // Fallback
+                        }
 
                         allQuestionsPool.push({
                             question: q.question,
                             options: q.options,
-                            correctIndex: q.correct_index,
+                            correctIndex: correctIndex,
                             x: cellData.cell.center_x + jitterX,
                             y: cellData.cell.center_y + jitterY,
                             topic: q.topic || 'general',
@@ -1242,6 +1261,20 @@
 
             const value = totalWeight > 0 ? knowledge / totalWeight : 0.5;
             return Math.round(value * 100);
+        }
+
+        function knowledgePercentToLabel(knowledgePct) {
+            // Convert percentage to categorical label
+            // Low (<= 25%), Low-Intermediate (25-50%), High-Intermediate (50-75%), High (>= 75%)
+            if (knowledgePct <= 25) {
+                return 'Low';
+            } else if (knowledgePct <= 50) {
+                return 'Low-Intermediate';
+            } else if (knowledgePct <= 75) {
+                return 'High-Intermediate';
+            } else {
+                return 'High';
+            }
         }
 
         // Initialize
@@ -1422,8 +1455,9 @@
             mapSection.classList.remove('hidden');
             loading.classList.remove('hidden');
 
-            // Add current round responses to full history
+            // Add current round questions and responses to full history
             allUserResponses.push(...userResponses);
+            allQuestionsShown.push(...questionsData);
 
             // Calculate accuracy for current round
             let correct = 0;
@@ -1447,41 +1481,16 @@
 
         // Generate knowledge map using full response history (all rounds)
         function generateKnowledgeMapWithHistory() {
-            // Temporarily swap questionsData and userResponses with full history
-            const tempQuestionsData = questionsData;
-            const tempUserResponses = userResponses;
+            // Use the accumulated questions and responses from all rounds
+            // No need to rebuild - allQuestionsShown and allUserResponses already have everything
 
-            // Build combined questions and responses from all rounds
-            const allQuestions = [];
-            const allResponses = [];
-
-            let responseIndex = 0;
-            for (let roundIndex = 0; roundIndex < currentRound; roundIndex++) {
-                const roundSize = (roundIndex === currentRound - 1) ? tempUserResponses.length : 10;
-
-                for (let i = 0; i < roundSize; i++) {
-                    if (responseIndex < allUserResponses.length) {
-                        // Find the question from the pool using askedQuestionIndices
-                        const questionPoolIndex = askedQuestionIndices[responseIndex];
-                        if (questionPoolIndex !== undefined && questionPoolIndex < allQuestionsPool.length) {
-                            allQuestions.push(allQuestionsPool[questionPoolIndex]);
-                            allResponses.push(allUserResponses[responseIndex]);
-                        }
-                        responseIndex++;
-                    }
-                }
-            }
-
-            // Temporarily replace with full history for map generation
-            questionsData = allQuestions;
-            userResponses = allResponses;
+            // Update global arrays to show full accumulated history
+            // Don't restore - we want these to persist for animation frames and future redraws
+            questionsData = allQuestionsShown;
+            userResponses = allUserResponses;
 
             // Generate map with full history
             generateKnowledgeMap();
-
-            // Restore original (current round) data
-            questionsData = tempQuestionsData;
-            userResponses = tempUserResponses;
         }
 
         function generateKnowledgeMap() {
@@ -1786,7 +1795,7 @@
                 ctx.fillStyle = color;
                 ctx.fill();
 
-                // Draw question number
+                // Draw question number (simple index, no offset needed since questionsData contains all questions via swap)
                 ctx.fillStyle = 'white';
                 ctx.font = 'bold 11px sans-serif';
                 ctx.textAlign = 'center';
@@ -1825,15 +1834,23 @@
                 }
             }
 
-            // Calculate knowledge percentage
+            // Calculate knowledge percentage and convert to categorical label
             const knowledgePct = calculateCellKnowledge(cell.centerX, cell.centerY);
+            const knowledgeLabel = knowledgePercentToLabel(knowledgePct);
+            const knowledgeValue = knowledgePct / 100; // Normalize to [0, 1] for colormap
+
+            // Get background color from custom colormap
+            const bgColor = mapToColor(knowledgeValue);
 
             tooltip.innerHTML = `
                 <div class="tooltip-question">${label}</div>
                 <div class="tooltip-status">
-                    <span>Inferred Knowledge: ${knowledgePct}%</span>
+                    <span>Inferred Knowledge: ${knowledgeLabel}</span>
                 </div>
             `;
+
+            // Apply colormap background color
+            tooltip.style.backgroundColor = bgColor;
 
             tooltip.classList.remove('tooltip-hidden');
             setTimeout(() => tooltip.classList.add('visible'), 10);
@@ -1991,6 +2008,9 @@
             const wasAnswered = userResponses[question.index] !== undefined;
             const isCorrect = userResponses[question.index] === question.correctIndex;
 
+            // Display question number (simple index, no offset needed since questionsData contains all questions via swap)
+            const displayQuestionNumber = question.index + 1;
+
             let status, statusColor;
             if (!wasAnswered) {
                 status = 'Unanswered';
@@ -2004,12 +2024,15 @@
             }
 
             tooltip.innerHTML = `
-                <div class="tooltip-question">Q${question.index + 1}: ${question.question}</div>
+                <div class="tooltip-question">Q${displayQuestionNumber}: ${question.question}</div>
                 <div class="tooltip-status">
                     <div class="tooltip-dot" style="background: ${statusColor};"></div>
                     <span>${status}</span>
                 </div>
             `;
+
+            // Reset background to default black for question tooltips
+            tooltip.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
 
             tooltip.classList.remove('tooltip-hidden');
             setTimeout(() => tooltip.classList.add('visible'), 10);
@@ -2053,13 +2076,26 @@
         }
 
         function showArticleTooltip(canvasRect, article) {
-            // Display article title and excerpt
+            // Calculate knowledge percentage and convert to categorical label
+            const knowledgePct = calculateCellKnowledge(article.x, article.y);
+            const knowledgeLabel = knowledgePercentToLabel(knowledgePct);
+            const knowledgeValue = knowledgePct / 100; // Normalize to [0, 1] for colormap
+
+            // Get background color from custom colormap
+            const bgColor = mapToColor(knowledgeValue);
+
+            // Display article title, excerpt, and knowledge
             tooltip.innerHTML = `
                 <div class="tooltip-question">${article.title}</div>
                 <div class="tooltip-status">
                     <span>${article.excerpt}</span>
+                    <br>
+                    <span>Inferred Knowledge: ${knowledgeLabel}</span>
                 </div>
             `;
+
+            // Apply colormap background color
+            tooltip.style.backgroundColor = bgColor;
 
             tooltip.classList.remove('tooltip-hidden');
             setTimeout(() => tooltip.classList.add('visible'), 10);
@@ -2105,6 +2141,8 @@
             tooltip.classList.remove('visible');
             setTimeout(() => {
                 tooltip.classList.add('tooltip-hidden');
+                // Reset background to default when hiding
+                tooltip.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
             }, 200); // Match CSS transition duration
         }
 
@@ -2176,6 +2214,7 @@
             currentQuestion = 0;
             userResponses = [];
             allUserResponses = [];
+            allQuestionsShown = [];
             askedQuestionIndices = [];
             currentRound = 0;
             selectedOption = null;
@@ -2192,7 +2231,12 @@
         // Handle window resize
         window.addEventListener('resize', () => {
             if (!mapSection.classList.contains('hidden')) {
-                generateKnowledgeMap();
+                // Use history version if we have accumulated questions, otherwise regular version
+                if (allQuestionsShown.length > 0) {
+                    generateKnowledgeMapWithHistory();
+                } else {
+                    generateKnowledgeMap();
+                }
             }
         });
     </script>

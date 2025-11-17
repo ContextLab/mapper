@@ -36,79 +36,223 @@ This plan outlines a comprehensive approach to implementing adaptive question se
 
 ---
 
-## 2. Adaptive Sampling Approaches (Three Tiers)
+## 2. Recommended Approach: Response-Aware Adaptive Sampling ⭐
 
-### Tier 1: Geometric Distance-Based Sampling (RECOMMENDED FIRST)
-**Complexity**: Low | **Impact**: High | **Implementation Time**: 2-3 days
+### Overview
+**Complexity**: Medium | **Impact**: Very High | **Implementation Time**: 3-4 weeks
 
-Select questions that maximize spatial coverage of the map.
+We will implement **uncertainty-weighted adaptive sampling** that combines spatial coverage with intelligent response to user performance. This approach selects questions that maximize expected information gain by prioritizing regions of the knowledge map where our confidence is lowest.
 
-**Algorithm**: Greedy max-distance selection
+### Core Algorithm
+
+The algorithm operates in two phases:
+
+**Phase 1: Initial Exploration (First 2-3 questions)**
+- Use pure geometric sampling to establish baseline coverage
+- Ask questions from distant regions to sample broad knowledge landscape
+- Build initial uncertainty map
+
+**Phase 2: Adaptive Uncertainty Sampling (Subsequent questions)**
+- Maintain real-time uncertainty map based on responses
+- Compute uncertainty-weighted score for each unasked cell
+- Select cell that maximizes: `score = distance^α × uncertainty^β`
+- Update uncertainty map after each response
+
+### Detailed Algorithm
+
 ```
-1. Start with 1-2 random questions (avoid determinism)
-2. For each subsequent question:
-   - Compute distance from each unasked cell to its nearest asked cell
-   - Select the cell with maximum distance (furthest from any asked question)
-   - Ask a question from that cell
+Algorithm: Uncertainty-Weighted Adaptive Sampling
+
+Input:
+  - Cell coordinates: {(gx_i, gy_i, x_i, y_i) for i = 1..N}
+  - Questions by cell: Q[cell_key] = [q1, q2, ...]
+  - Distance matrix: D[i,j] = distance between cell i and j
+  - Parameters: α (distance weight), β (uncertainty weight), K (neighbors)
+
+State:
+  - asked_cells: Set of asked cell keys
+  - responses: [(cell_key, correct/incorrect), ...]
+  - uncertainty_map: {cell_key: uncertainty_score}
+
+Initialize:
+  - asked_cells = {}
+  - responses = []
+  - uncertainty_map = {cell: 1.0 for all cells}  # Maximum uncertainty initially
+
+For question n = 1 to max_questions:
+
+  If n <= initial_random_questions:
+    # Phase 1: Random/geometric sampling
+    cell = select_furthest_cell(asked_cells)
+  Else:
+    # Phase 2: Uncertainty-weighted sampling
+    cell = select_uncertainty_weighted_cell(asked_cells, uncertainty_map)
+
+  question = random_choice(Q[cell])
+  response = ask_user(question)
+
+  asked_cells.add(cell)
+  responses.append((cell, response.correct))
+
+  update_uncertainty_map(uncertainty_map, responses)
+
+  confidence = compute_confidence(asked_cells, uncertainty_map)
+
+  If confidence >= threshold AND n >= min_questions:
+    offer_early_exit()
 ```
 
-**Advantages**:
-- Simple to implement and understand
-- Guaranteed spatial coverage
-- No complex probability calculations
-- Works independently of responses
+### Uncertainty Estimation
 
-**Disadvantages**:
-- Ignores user performance (doesn't adapt to correct/incorrect answers)
-- May oversample high-confidence regions
-- Doesn't directly optimize for information gain
+The key innovation is computing uncertainty for each cell based on nearby responses.
 
-### Tier 2: Response-Aware Adaptive Sampling
-**Complexity**: Medium | **Impact**: Very High | **Implementation Time**: 4-6 days
+**Method: K-Nearest Neighbor Prediction with Entropy**
 
-Incorporate user responses to focus sampling on uncertain regions.
+For each unasked cell c:
+1. Find K nearest asked cells (using precomputed distances)
+2. Compute weighted average correctness using Gaussian kernel
+3. Estimate predicted correctness p(correct|c)
+4. Uncertainty = entropy(p) = -[p log p + (1-p) log(1-p)]
 
-**Algorithm**: Uncertainty-weighted distance sampling
+```python
+def estimate_uncertainty(cell_coord, asked_cells, responses, distances, K=5):
+    """
+    Estimate uncertainty for a cell using K-nearest neighbors.
+
+    Returns:
+      - predicted_correctness: float in [0, 1]
+      - uncertainty: float in [0, 1], higher = more uncertain
+      - confidence: float in [0, 1], inverse of uncertainty
+    """
+    # Find K nearest asked cells
+    cell_idx = coord_to_index[cell_coord]
+    asked_indices = [coord_to_index[c] for c in asked_cells]
+
+    # Get distances to all asked cells
+    dists = [(distances[cell_idx][idx], idx) for idx in asked_indices]
+    dists.sort()  # Sort by distance
+    nearest_K = dists[:K]
+
+    # Gaussian kernel: weight = exp(-distance^2 / (2 * sigma^2))
+    sigma = 0.15  # Bandwidth parameter (normalized coordinates)
+
+    total_weight = 0
+    weighted_correctness = 0
+
+    for dist, idx in nearest_K:
+        asked_cell = index_to_coord[idx]
+        weight = np.exp(-dist**2 / (2 * sigma**2))
+        correctness = 1.0 if responses[asked_cell] else 0.0
+
+        weighted_correctness += weight * correctness
+        total_weight += weight
+
+    # Predicted correctness (between 0 and 1)
+    if total_weight > 0:
+        p = weighted_correctness / total_weight
+    else:
+        p = 0.5  # No information, assume 50%
+
+    # Uncertainty = binary entropy
+    # Highest (1.0) when p = 0.5, lowest (0.0) when p = 0 or 1
+    epsilon = 1e-10  # Avoid log(0)
+    p = np.clip(p, epsilon, 1 - epsilon)
+    uncertainty = -p * np.log2(p) - (1-p) * np.log2(1-p)  # Range: [0, 1]
+
+    return {
+        'predicted_correctness': p,
+        'uncertainty': uncertainty,
+        'confidence': 1 - uncertainty,
+        'num_neighbors': len(nearest_K),
+        'mean_distance': np.mean([d for d, _ in nearest_K])
+    }
 ```
-1. Start with geometric sampling for first 2-3 questions
-2. Maintain uncertainty map for each cell:
-   - High uncertainty = no nearby questions OR conflicting predictions
-   - Low uncertainty = nearby questions with consistent predictions
-3. For each subsequent question:
-   - Compute uncertainty-weighted distance: d_weighted = d_geometric × uncertainty
-   - Select cell with maximum weighted distance
-4. Update uncertainty map after each response
+
+### Selection Scoring
+
+Once we have uncertainty estimates, we score each cell:
+
+```python
+def score_cell(cell, asked_cells, uncertainty_map, distances, alpha=1.0, beta=1.0):
+    """
+    Score a cell for selection.
+
+    Higher score = better candidate.
+
+    Parameters:
+      - alpha: Weight for geometric distance (default 1.0)
+      - beta: Weight for uncertainty (default 1.0)
+    """
+    cell_idx = coord_to_index[cell]
+
+    # Geometric distance component: distance to nearest asked cell
+    if len(asked_cells) > 0:
+        min_distance = min(
+            distances[cell_idx][coord_to_index[asked]]
+            for asked in asked_cells
+        )
+    else:
+        min_distance = 1.0  # Maximum distance if no questions asked
+
+    # Uncertainty component
+    uncertainty = uncertainty_map[cell]
+
+    # Combined score
+    score = (min_distance ** alpha) * (uncertainty ** beta)
+
+    return score
 ```
 
-**Advantages**:
-- Adapts to user performance
-- Focuses on uncertain regions
-- More efficient than pure geometric sampling
-- Still maintains good spatial coverage
+**Parameter Tuning:**
+- `alpha = 1.0, beta = 1.0`: Balanced (recommended start)
+- `alpha = 2.0, beta = 1.0`: Prioritize coverage
+- `alpha = 1.0, beta = 2.0`: Prioritize uncertainty reduction
+- `K = 5`: Neighborhood size (tune based on cell density)
+- `sigma = 0.15`: Kernel bandwidth (tune based on typical distances)
 
-**Disadvantages**:
-- More complex implementation
-- Requires uncertainty estimation
-- Need to tune weighting parameters
+### Alternative Approaches Considered
 
-### Tier 3: Bayesian/Information-Theoretic Sampling (FUTURE WORK)
-**Complexity**: High | **Impact**: Highest | **Implementation Time**: 2-3 weeks
+**Option 1: Geometric Distance Only (Simpler)**
+- Score = distance only
+- Pros: Simple, guaranteed coverage
+- Cons: Ignores user performance, may oversample confident regions
 
-Use principled probabilistic framework to optimize information gain.
+**Option 2: Uncertainty Only (Response-focused)**
+- Score = uncertainty only
+- Pros: Directly targets knowledge gaps
+- Cons: May cluster questions, poor spatial coverage
 
-**Approaches**:
-- **Bayesian Active Learning**: Maintain posterior distribution over user's knowledge map, select questions that minimize expected posterior variance
-- **Information Gain**: Select questions that maximize mutual information between question response and knowledge map
-- **Thompson Sampling**: Balance exploration vs exploitation using Bayesian posterior sampling
+**Option 3: Hybrid (Selected ⭐)**
+- Score = distance × uncertainty
+- Pros: Balances coverage and information gain
+- Cons: Slightly more complex, requires parameter tuning
 
-**Implementation Notes**:
-- Requires probabilistic model of knowledge map (e.g., Gaussian Process)
-- Computationally intensive (may need precomputation)
-- Best as future enhancement after Tiers 1-2 are working
+### Expected Performance
+
+**Spatial Coverage:**
+- Target: <0.10 mean distance after 5 questions (vs 0.25 with random)
+- Mechanism: Distance component ensures spread
+
+**Efficiency:**
+- Target: 3-5 questions to reach 85% confidence (vs 8-12 random)
+- Mechanism: Uncertainty component focuses sampling
+
+**Adaptation:**
+- System responds to performance patterns
+- Poor performance in region → more questions there
+- Strong performance → less sampling needed
+
+### Why This Approach?
+
+1. **Best Effort/Impact Ratio**: More sophisticated than pure geometric, but not as complex as Bayesian
+2. **Interpretable**: Users can understand "asking about topics you're unsure about"
+3. **Flexible**: Parameters can be tuned based on empirical performance
+4. **Efficient**: Fast computation (K-NN lookup, simple scoring)
+5. **Robust**: Degrades gracefully (falls back to geometric if uncertainty estimation fails)
 
 ---
 
-## 3. Implementation Plan
+## 3. Implementation Plan (Tier 2: Response-Aware Sampling)
 
 ### Phase 1: Foundation & Infrastructure (Week 1)
 **Goal**: Set up data structures and utilities for adaptive sampling
@@ -118,492 +262,579 @@ Use principled probabilistic framework to optimize information gain.
    - Create distance matrix between all cell centers
    - Store as `cell_distances.json` (750×750 matrix, ~2MB)
    - Use Euclidean distance in normalized coordinate space
+   - Script: `scripts/precompute_cell_distances.py`
 
 2. **Refactor Question Selection Code**
    - Extract question selection into separate function
    - Create `AdaptiveSampler` class to manage state
    - Maintain history of asked questions and responses
+   - Store response correctness for uncertainty calculation
 
 3. **Add Configuration System**
    - Create config object for sampling parameters:
      ```javascript
      const samplingConfig = {
-       mode: 'adaptive-distance',  // 'random', 'adaptive-distance', 'adaptive-uncertainty'
+       mode: 'adaptive-uncertainty',  // 'random' or 'adaptive-uncertainty'
        initialRandomQuestions: 2,
        minQuestionsBeforeExit: 3,
        confidenceThreshold: 0.85,
-       maxQuestions: 10
+       maxQuestions: 10,
+
+       // Uncertainty estimation parameters
+       K: 5,                    // Number of nearest neighbors
+       sigma: 0.15,            // Gaussian kernel bandwidth
+       alpha: 1.0,             // Distance weight
+       beta: 1.0,              // Uncertainty weight
+
+       // Coverage thresholds
+       coverageDistance: 0.15  // Max distance to consider "covered"
      }
      ```
 
+4. **Create Cell Index Data Structure**
+   - Build mapping: `cell_key → index` for O(1) lookup
+   - Build reverse mapping: `index → cell_key`
+   - Preload in initialization
+
 **Deliverables**:
 - `cell_distances.json` precomputed distance matrix
-- `AdaptiveSampler` class in index.html
+- `AdaptiveSampler` class skeleton in index.html
 - Configuration system in place
+- Cell index mappings created
 
-### Phase 2: Geometric Adaptive Sampling (Week 2)
-**Goal**: Implement and test Tier 1 distance-based sampling
+**Testing**:
+- Verify distance matrix loads correctly
+- Check cell index mappings are bidirectional
+- Validate configuration parameters
+
+---
+
+### Phase 2: Uncertainty Estimation Engine (Week 2)
+**Goal**: Implement K-NN based uncertainty prediction
 
 #### Tasks:
-1. **Implement Max-Distance Selection**
+1. **Implement K-Nearest Neighbor Finder**
    ```javascript
-   class AdaptiveSampler {
-     selectNextQuestion(askedCells, availableQuestions) {
-       if (askedCells.length < this.config.initialRandomQuestions) {
-         return this.selectRandomQuestion(availableQuestions);
-       }
-       return this.selectFurthestCell(askedCells, availableQuestions);
+   findKNearestAsked(cellKey, askedCells, K) {
+     const cellIdx = this.cellKeyToIndex[cellKey];
+     const distances = [];
+
+     for (const askedCell of askedCells) {
+       const askedIdx = this.cellKeyToIndex[askedCell];
+       const dist = this.distances[cellIdx][askedIdx];
+       distances.push({ cellKey: askedCell, distance: dist });
      }
 
-     selectFurthestCell(askedCells, availableQuestions) {
-       let maxMinDistance = -1;
-       let bestQuestion = null;
-
-       // Group questions by cell
-       const questionsByCell = this.groupQuestionsByCell(availableQuestions);
-
-       for (const [cellKey, questions] of Object.entries(questionsByCell)) {
-         // Skip if cell already asked
-         if (askedCells.includes(cellKey)) continue;
-
-         // Compute minimum distance to any asked cell
-         const minDistance = this.computeMinDistance(cellKey, askedCells);
-
-         // Update best if this cell is furthest
-         if (minDistance > maxMinDistance) {
-           maxMinDistance = minDistance;
-           bestQuestion = this.selectRandomFromCell(questions);
-         }
-       }
-
-       return bestQuestion;
-     }
-
-     computeMinDistance(cellKey, askedCells) {
-       const cellIdx = this.cellKeyToIndex[cellKey];
-       let minDist = Infinity;
-
-       for (const askedCell of askedCells) {
-         const askedIdx = this.cellKeyToIndex[askedCell];
-         const dist = this.distances[cellIdx][askedIdx];
-         minDist = Math.min(minDist, dist);
-       }
-
-       return minDist;
-     }
+     // Sort by distance and return K nearest
+     distances.sort((a, b) => a.distance - b.distance);
+     return distances.slice(0, K);
    }
    ```
 
-2. **Update Quiz Flow**
-   - Replace random selection with adaptive sampling
-   - Maintain cell history across rounds
-   - Log selection decisions for debugging
+2. **Implement Uncertainty Estimation**
+   ```javascript
+   estimateUncertainty(cellKey, askedCells, responses) {
+     const K = this.config.K;
+     const sigma = this.config.sigma;
 
-3. **Testing**
-   - Verify spatial coverage improves vs random
-   - Check for edge cases (duplicate cells, exhausted cells)
-   - Performance testing (selection should be <50ms)
+     // Find K nearest asked cells
+     const nearest = this.findKNearestAsked(cellKey, askedCells, K);
+
+     if (nearest.length === 0) {
+       // No data yet, maximum uncertainty
+       return {
+         predictedCorrectness: 0.5,
+         uncertainty: 1.0,
+         confidence: 0.0
+       };
+     }
+
+     // Compute weighted average correctness using Gaussian kernel
+     let totalWeight = 0;
+     let weightedCorrectness = 0;
+
+     for (const neighbor of nearest) {
+       const dist = neighbor.distance;
+       const weight = Math.exp(-dist * dist / (2 * sigma * sigma));
+       const correct = responses[neighbor.cellKey] ? 1.0 : 0.0;
+
+       weightedCorrectness += weight * correct;
+       totalWeight += weight;
+     }
+
+     // Predicted correctness
+     const p = totalWeight > 0 ? weightedCorrectness / totalWeight : 0.5;
+
+     // Binary entropy (uncertainty)
+     const epsilon = 1e-10;
+     const pClipped = Math.max(epsilon, Math.min(1 - epsilon, p));
+     const uncertainty = -(pClipped * Math.log2(pClipped) +
+                          (1 - pClipped) * Math.log2(1 - pClipped));
+
+     return {
+       predictedCorrectness: p,
+       uncertainty: uncertainty,
+       confidence: 1 - uncertainty,
+       numNeighbors: nearest.length,
+       meanDistance: nearest.reduce((sum, n) => sum + n.distance, 0) / nearest.length
+     };
+   }
+   ```
+
+3. **Update Uncertainty Map After Each Response**
+   ```javascript
+   updateUncertaintyMap(askedCells, responses) {
+     const uncertaintyMap = {};
+
+     // Recompute uncertainty for ALL cells
+     for (const cellKey of this.allCellKeys) {
+       if (!askedCells.includes(cellKey)) {
+         uncertaintyMap[cellKey] = this.estimateUncertainty(
+           cellKey,
+           askedCells,
+           responses
+         );
+       } else {
+         // Already asked, zero uncertainty
+         uncertaintyMap[cellKey] = {
+           predictedCorrectness: responses[cellKey] ? 1.0 : 0.0,
+           uncertainty: 0.0,
+           confidence: 1.0
+         };
+       }
+     }
+
+     return uncertaintyMap;
+   }
+   ```
 
 **Deliverables**:
-- Working geometric adaptive sampling
-- Improved spatial coverage metrics
-- Unit tests for selection algorithm
+- K-NN finder function
+- Uncertainty estimation with Gaussian kernel
+- Real-time uncertainty map updates
 
-### Phase 3: Confidence Metrics & Early Exit (Week 3)
+**Testing**:
+- Unit test uncertainty calculation with known data
+- Verify entropy formula (max at p=0.5, min at p=0 or 1)
+- Test with edge cases (K > available responses)
+- Performance: <10ms per uncertainty update
+
+---
+
+### Phase 3: Uncertainty-Weighted Selection (Week 3)
+**Goal**: Implement question selection using uncertainty scores
+
+#### Tasks:
+1. **Implement Scoring Function**
+   ```javascript
+   scoreCell(cellKey, askedCells, uncertaintyMap) {
+     const alpha = this.config.alpha;
+     const beta = this.config.beta;
+
+     // Geometric distance component
+     let minDistance = 1.0;  // Default if no asked cells
+     if (askedCells.length > 0) {
+       const cellIdx = this.cellKeyToIndex[cellKey];
+       minDistance = Math.min(...askedCells.map(asked => {
+         const askedIdx = this.cellKeyToIndex[asked];
+         return this.distances[cellIdx][askedIdx];
+       }));
+     }
+
+     // Uncertainty component
+     const uncertainty = uncertaintyMap[cellKey]?.uncertainty || 1.0;
+
+     // Combined score: distance^α × uncertainty^β
+     const score = Math.pow(minDistance, alpha) * Math.pow(uncertainty, beta);
+
+     return score;
+   }
+   ```
+
+2. **Implement Adaptive Question Selection**
+   ```javascript
+   selectNextQuestion() {
+     const availableQuestions = this._getAvailableQuestions();
+
+     if (availableQuestions.length === 0) {
+       return null;
+     }
+
+     // Phase 1: First N questions use geometric sampling
+     if (this.askedCells.length < this.config.initialRandomQuestions) {
+       return this._selectGeometric(availableQuestions);
+     }
+
+     // Phase 2: Uncertainty-weighted sampling
+     return this._selectUncertaintyWeighted(availableQuestions);
+   }
+
+   _selectUncertaintyWeighted(availableQuestions) {
+     // Update uncertainty map
+     const uncertaintyMap = this.updateUncertaintyMap(
+       this.askedCells,
+       this.responses
+     );
+
+     // Group questions by cell
+     const questionsByCell = this._groupByCell(availableQuestions);
+
+     // Score each unasked cell
+     let bestScore = -Infinity;
+     let bestQuestion = null;
+
+     for (const [cellKey, questions] of Object.entries(questionsByCell)) {
+       if (this.askedCells.includes(cellKey)) continue;
+
+       const score = this.scoreCell(cellKey, this.askedCells, uncertaintyMap);
+
+       if (score > bestScore) {
+         bestScore = score;
+         bestQuestion = this._selectRandom(questions);
+       }
+     }
+
+     // Log selection for debugging
+     console.log(`Selected cell score: ${bestScore.toFixed(3)}`);
+
+     return bestQuestion;
+   }
+   ```
+
+3. **Integrate with Quiz Flow**
+   - Update `startNewQuizRound()` to use adaptive sampler
+   - Store responses with correctness flag
+   - Update uncertainty map after each question
+
+**Deliverables**:
+- Scoring function with tunable α and β parameters
+- Full uncertainty-weighted selection algorithm
+- Integration with existing quiz flow
+
+**Testing**:
+- Verify selection adapts to responses (correct vs incorrect)
+- Test parameter sensitivity (α, β values)
+- Compare coverage with random baseline
+- Performance: selection should be <50ms
+
+---
+
+### Phase 4: Confidence Metrics & Early Exit (Week 4)
 **Goal**: Enable users to stop early when map is well-defined
 
 #### Tasks:
 1. **Implement Confidence Estimation**
    ```javascript
-   function computeMapConfidence(askedCells, allCells, distances) {
-     // For each cell, find distance to nearest asked cell
-     const cellDistances = allCells.map(cell => {
-       const minDist = Math.min(...askedCells.map(asked =>
-         distances[cell.index][asked.index]
-       ));
-       return minDist;
-     });
+   computeConfidence(askedCells, uncertaintyMap) {
+     let coveredCells = 0;
+     const threshold = this.config.coverageDistance;  // 0.15
 
-     // Confidence = % of cells within threshold distance
-     const threshold = 0.15; // Normalized distance threshold
-     const nearCells = cellDistances.filter(d => d < threshold).length;
-     const confidence = nearCells / allCells.length;
+     // Method 1: Distance-based coverage
+     for (const cellKey of this.allCellKeys) {
+       let minDist = Infinity;
+
+       for (const askedCell of askedCells) {
+         const cellIdx = this.cellKeyToIndex[cellKey];
+         const askedIdx = this.cellKeyToIndex[askedCell];
+         const dist = this.distances[cellIdx][askedIdx];
+         minDist = Math.min(minDist, dist);
+       }
+
+       if (minDist < threshold) {
+         coveredCells++;
+       }
+     }
+
+     const coverageConfidence = coveredCells / this.allCellKeys.length;
+
+     // Method 2: Uncertainty-based confidence
+     let totalConfidence = 0;
+     for (const cellKey of this.allCellKeys) {
+       totalConfidence += uncertaintyMap[cellKey]?.confidence || 0;
+     }
+     const uncertaintyConfidence = totalConfidence / this.allCellKeys.length;
+
+     // Combined confidence (average of both methods)
+     const combinedConfidence = (coverageConfidence + uncertaintyConfidence) / 2;
 
      return {
-       confidence: confidence,
-       maxDistance: Math.max(...cellDistances),
-       meanDistance: cellDistances.reduce((a,b) => a+b, 0) / cellDistances.length
+       overallConfidence: combinedConfidence,
+       coverageConfidence: coverageConfidence,
+       uncertaintyConfidence: uncertaintyConfidence,
+       coveredCells: coveredCells,
+       totalCells: this.allCellKeys.length
      };
    }
    ```
 
 2. **Add Dynamic "Show Results" Button**
    - Show button after minimum questions (default: 3)
-   - Display confidence % on button: "Show Results (85% coverage)"
-   - Disable until confidence threshold met OR max questions reached
+   - Display confidence % on button: "Show Results (85% confidence)"
+   - Enable when: `confidence >= threshold AND numQuestions >= minQuestions`
+   - Disable otherwise with helpful message
 
 3. **Add Confidence Visualizations**
    - Progress bar showing confidence over time
-   - Text display: "Map Coverage: 85% - Ready to view!"
-   - Optional: Mini heatmap showing asked vs unasked regions
+   - Two-part bar: coverage (green) + uncertainty (blue)
+   - Text display: "85% confidence - Ready to view!"
+   - Mini uncertainty heatmap (optional)
 
 **Deliverables**:
-- Confidence calculation function
-- Dynamic early exit button
+- Dual-method confidence calculation
+- Dynamic early exit button with state management
 - Confidence visualization UI
+- Real-time confidence updates
 
-### Phase 4: UI Enhancements (Week 4)
-**Goal**: Add interactive exploration features
+---
+
+### Phase 5: UI Enhancements & Polish (Week 5)
+**Goal**: Add interactive exploration features and polish UX
 
 #### Tasks:
 1. **"Answer More Questions" Button**
-   - Add button to map view
-   - Preserve existing response history
+   - Add button to map view: "Answer More Questions"
+   - Preserve existing response history and uncertainty map
    - Continue adaptive sampling from current state
    - Update map dynamically with new responses
+   - Show running total: "10 questions answered"
 
 2. **Click-to-Ask Cell Feature**
    - Make heatmap cells clickable
    - On click:
      - Select random question from that cell
-     - Show question in modal/overlay
+     - Show question in modal/overlay with cell label
      - Update map with response
-     - Recompute heatmap
-   - Visual feedback: highlight selected cell
+     - Recompute uncertainty map and heatmap
+   - Visual feedback: highlight selected cell, show uncertainty score
+   - Disable cells with no questions available
 
-3. **Sampling Mode Selector**
-   - Add dropdown/toggle: "Random" vs "Adaptive"
-   - Enable A/B testing and user preference
-   - Log mode choice for analytics
+3. **Sampling Mode Selector (for A/B Testing)**
+   - Add dropdown: "Random" vs "Adaptive (Recommended)"
+   - Enable comparison and user preference
+   - Log mode choice and performance metrics
+   - Show explanation tooltips for each mode
 
-4. **Enhanced Feedback**
-   - Show which regions need more questions
-   - Display "Explore this region?" suggestions
-   - Show question distribution histogram
+4. **Enhanced Feedback & Visualizations**
+   - Uncertainty overlay: color cells by uncertainty (red = high, green = low)
+   - "Suggested Next Topics" panel showing high-uncertainty regions
+   - Question distribution histogram
+   - Performance stats: "You've covered 85% of the map in 5 questions!"
+
+5. **Parameter Tuning UI (Debug Mode)**
+   - Add settings panel for α, β, K, sigma
+   - Real-time visualization of parameter effects
+   - "Reset to defaults" button
+   - Export session data for analysis
 
 **Deliverables**:
 - Interactive map with clickable cells
 - "Answer More" button with preserved state
-- Mode selector UI
-- Enhanced user feedback
+- Mode selector for A/B testing
+- Uncertainty visualization overlay
+- Parameter tuning interface (optional)
 
-### Phase 5: Response-Aware Sampling (Optional - Week 5+)
-**Goal**: Implement Tier 2 uncertainty-weighted sampling
-
-#### Tasks:
-1. **Implement Uncertainty Estimation**
-   ```javascript
-   function estimateUncertainty(cellCoord, askedQuestions, responses) {
-     // Find K nearest asked questions
-     const K = 5;
-     const nearest = findKNearest(cellCoord, askedQuestions, K);
-
-     // Compute weighted average correctness
-     let totalWeight = 0;
-     let weightedCorrectness = 0;
-
-     for (const neighbor of nearest) {
-       const dist = distance(cellCoord, neighbor.coord);
-       const weight = Math.exp(-dist * dist / (2 * 0.1 * 0.1)); // Gaussian kernel
-       const correctness = responses[neighbor.index].correct ? 1.0 : 0.0;
-
-       weightedCorrectness += weight * correctness;
-       totalWeight += weight;
-     }
-
-     const predictedCorrectness = totalWeight > 0
-       ? weightedCorrectness / totalWeight
-       : 0.5;
-
-     // Uncertainty is highest at 0.5 (maximum entropy)
-     const uncertainty = 1 - 2 * Math.abs(predictedCorrectness - 0.5);
-
-     return {
-       predictedCorrectness,
-       uncertainty,
-       confidence: 1 - uncertainty
-     };
-   }
-   ```
-
-2. **Uncertainty-Weighted Selection**
-   - Combine geometric distance with uncertainty
-   - Weight: `score = distance^α × uncertainty^β`
-   - Tune α and β parameters (start with α=1, β=1)
-
-3. **Testing & Tuning**
-   - Compare with pure geometric sampling
-   - Measure: questions needed to reach confidence threshold
-   - A/B test with real users
-
-**Deliverables**:
-- Uncertainty-weighted sampling
-- Performance comparison metrics
-- Parameter tuning results
+**Testing**:
+- User testing: 5-10 participants
+- Compare user satisfaction random vs adaptive
+- Measure: time to confidence threshold, completion rate
+- Collect qualitative feedback on UX
 
 ---
 
-## 4. Technical Implementation Details
+## 4. Complete Implementation: AdaptiveSampler Class
 
-### Data Structures
+Here's the full implementation bringing together all phases:
 
-```javascript
-// Question pool structure
-const questionsPool = {
-  cells: [
-    {
-      cell: { gx: 8, gy: 21, center_x: 0.218, center_y: 0.551, label: "..." },
-      questions: [ { question: "...", options: {...}, correct_answer: "C", ... } ]
-    }
-  ],
-  metadata: { num_cells: 750, total_questions: 229 }
-};
-
-// Sampling state
-const samplingState = {
-  askedCells: ["8_21", "19_10", ...],
-  askedQuestions: [
-    { cellKey: "8_21", question: {...}, response: {...}, correct: true }
-  ],
-  cellIndex: { "8_21": 0, "19_10": 1, ... },
-  distances: [[0, 0.45, ...], [0.45, 0, ...], ...],
-  confidence: 0.85,
-  mode: 'adaptive-distance'
-};
-```
-
-### Precomputation Script
-
-Create `scripts/precompute_cell_distances.py`:
-```python
-import json
-import numpy as np
-from scipy.spatial.distance import cdist
-
-def precompute_cell_distances():
-    # Load cell questions
-    with open('cell_questions_checkpoint.json') as f:
-        data = json.load(f)
-
-    # Extract cell coordinates
-    cells = []
-    cell_keys = []
-    for cell_data in data['cells']:
-        cell = cell_data['cell']
-        cells.append([cell['center_x'], cell['center_y']])
-        cell_keys.append(f"{cell['gx']}_{cell['gy']}")
-
-    coords = np.array(cells)
-
-    # Compute pairwise distances (Euclidean in normalized space)
-    distances = cdist(coords, coords, metric='euclidean')
-
-    # Save as JSON
-    output = {
-        'cell_keys': cell_keys,
-        'distances': distances.tolist(),
-        'metadata': {
-            'num_cells': len(cells),
-            'metric': 'euclidean',
-            'coordinate_space': 'normalized [0,1]'
-        }
-    }
-
-    with open('cell_distances.json', 'w') as f:
-        json.dump(output, f)
-
-    print(f"✓ Computed {len(cells)}×{len(cells)} distance matrix")
-    print(f"✓ Saved to cell_distances.json")
-
-if __name__ == '__main__':
-    precompute_cell_distances()
-```
-
-### Performance Considerations
-
-1. **Distance Computation**: Precompute all pairwise distances (~2MB file, O(1) lookup)
-2. **Selection Speed**: Current approach is O(N×M) where N=cells, M=asked cells. Should be <50ms for 750 cells.
-3. **Memory**: Sampling state is small (~10KB), no issues
-4. **Caching**: Cache confidence calculations to avoid recomputation
-
----
-
-## 5. Success Metrics
-
-### Quantitative Metrics
-1. **Spatial Coverage**: Mean distance from each cell to nearest asked cell
-   - Target: <0.15 normalized distance units after 5 questions
-   - Baseline (random): ~0.25 after 10 questions
-
-2. **Questions to Confidence**: Number of questions to reach 85% confidence
-   - Target: 3-5 questions with adaptive sampling
-   - Baseline (random): 8-12 questions
-
-3. **Early Exit Rate**: % of users who stop before 10 questions
-   - Target: >50% of users exit after 3-5 questions
-
-4. **Information Gain per Question**: Change in map confidence per question
-   - Target: Adaptive >2× gain per question vs random
-
-### Qualitative Metrics
-1. **User Satisfaction**: Survey rating for "quiz felt efficient"
-2. **Engagement**: Time spent exploring map vs answering questions
-3. **Completion Rate**: % users who complete vs abandon
-
----
-
-## 6. Testing Strategy
-
-### Unit Tests
-1. Distance computation correctness
-2. Max-distance selection algorithm
-3. Confidence calculation edge cases
-4. State management across rounds
-
-### Integration Tests
-1. End-to-end quiz flow with adaptive sampling
-2. Multi-round persistence
-3. Click-to-ask functionality
-4. Early exit behavior
-
-### A/B Testing
-1. **Groups**: Random (control) vs Adaptive (treatment)
-2. **Metrics**: Questions to 85% confidence, completion rate, user satisfaction
-3. **Sample Size**: 100+ users per group
-4. **Duration**: 2 weeks
-
-### User Testing
-1. **Participants**: 5-10 users
-2. **Tasks**:
-   - Complete quiz with adaptive sampling
-   - Use early exit when available
-   - Click cells to explore specific topics
-3. **Observations**: Confusion points, UI feedback, perceived efficiency
-
----
-
-## 7. Implementation Priority & Timeline
-
-### Must-Have (MVP - 3 weeks)
-- [x] Phase 1: Foundation & Infrastructure (Week 1)
-- [x] Phase 2: Geometric Adaptive Sampling (Week 2)
-- [x] Phase 3: Confidence Metrics & Early Exit (Week 3)
-
-### Should-Have (Enhanced - 4-5 weeks)
-- [ ] Phase 4: UI Enhancements (Week 4)
-  - Click-to-ask cells
-  - Answer more questions button
-  - Mode selector
-
-### Nice-to-Have (Advanced - 6+ weeks)
-- [ ] Phase 5: Response-Aware Sampling
-- [ ] Bayesian/Information-Theoretic Sampling
-- [ ] Advanced visualizations (uncertainty heatmap, question history)
-
----
-
-## 8. Future Enhancements
-
-### Short-term (3-6 months)
-1. **Multi-Topic Quizzes**: Separate sampling for different domains
-2. **Difficulty Adaptation**: Adjust question difficulty based on performance
-3. **Time-Based Adaptation**: Faster questions in confident regions
-4. **Comparison Mode**: Show knowledge map vs expert/average user
-
-### Long-term (6-12 months)
-1. **Bayesian Active Learning**: Full probabilistic framework
-2. **Reinforcement Learning**: Learn optimal sampling policy from user data
-3. **Multi-User Optimization**: Share information across users for cold-start
-4. **Personalized Sampling**: Adapt to individual user preferences
-
----
-
-## 9. Risk Mitigation
-
-### Technical Risks
-1. **Performance**: Distance computation too slow
-   - Mitigation: Precompute distances, use spatial indexing if needed
-
-2. **Edge Cases**: Run out of questions in target cells
-   - Mitigation: Fall back to nearest cells with questions available
-
-3. **Confidence Estimation**: Inaccurate confidence scores
-   - Mitigation: Conservative thresholds, A/B test different metrics
-
-### UX Risks
-1. **User Confusion**: Adaptive sampling feels "random" or unfair
-   - Mitigation: Explain approach, show coverage visualization
-
-2. **Early Exit Too Soon**: Users miss important questions
-   - Mitigation: Set minimum questions (3), show coverage gaps
-
-3. **Click Fatigue**: Too many questions if clicking cells
-   - Mitigation: Limit clicks per session, show "suggested questions"
-
----
-
-## 10. Dependencies & Prerequisites
-
-### Required Before Starting
-- [x] Cell questions generation (issue #11) - 750/1,600 cells complete
-- [x] Heatmap visualization working
-- [x] Multi-round quiz infrastructure
-
-### Can Implement in Parallel
-- [ ] Additional cell questions (750→1,600 cells)
-- [ ] Performance optimizations
-- [ ] Advanced visualizations
-
-### Blockers
-None - can start implementation immediately with existing 750 cells
-
----
-
-## Appendix: Code Examples
-
-### A. Precompute Distances (Python)
-See Section 4: Technical Implementation Details
-
-### B. Adaptive Sampler Class (JavaScript)
 ```javascript
 class AdaptiveSampler {
   constructor(questionsPool, distances, config) {
     this.questionsPool = questionsPool;
-    this.distances = distances;
-    this.config = config;
+    this.distances = distances.distances;  // 2D array
+    this.cellKeys = distances.cell_keys;   // Array of "gx_gy" strings
+    this.config = {
+      mode: 'adaptive-uncertainty',
+      initialRandomQuestions: 2,
+      minQuestionsBeforeExit: 3,
+      confidenceThreshold: 0.85,
+      maxQuestions: 10,
+      K: 5,
+      sigma: 0.15,
+      alpha: 1.0,
+      beta: 1.0,
+      coverageDistance: 0.15,
+      ...config  // Allow override
+    };
+
+    // Build cell index mappings
+    this.cellKeyToIndex = {};
+    this.indexToCellKey = {};
+    this.cellKeys.forEach((key, idx) => {
+      this.cellKeyToIndex[key] = idx;
+      this.indexToCellKey[idx] = key;
+    });
+
+    this.allCellKeys = this.cellKeys;
+
+    // State
     this.askedCells = [];
-    this.askedQuestions = [];
-    this.cellKeyToIndex = this._buildCellIndex();
+    this.responses = {};  // cellKey → true/false
+    this.uncertaintyMap = {};
   }
 
-  selectNextQuestion() {
-    const availableQuestions = this._getAvailableQuestions();
+  // === Phase 1: Infrastructure ===
 
-    if (availableQuestions.length === 0) {
-      return null; // No more questions
+  _getAvailableQuestions() {
+    // Return all questions from cells that haven't been asked
+    const available = [];
+    for (const cellData of this.questionsPool.cells) {
+      const cellKey = `${cellData.cell.gx}_${cellData.cell.gy}`;
+      if (!this.askedCells.includes(cellKey)) {
+        for (const question of cellData.questions) {
+          available.push({ ...question, cellKey });
+        }
+      }
     }
-
-    // First N questions are random
-    if (this.askedCells.length < this.config.initialRandomQuestions) {
-      return this._selectRandom(availableQuestions);
-    }
-
-    // Subsequent questions use max-distance
-    return this._selectMaxDistance(availableQuestions);
+    return available;
   }
 
-  _selectMaxDistance(availableQuestions) {
+  _groupByCell(questions) {
+    const grouped = {};
+    for (const q of questions) {
+      if (!grouped[q.cellKey]) {
+        grouped[q.cellKey] = [];
+      }
+      grouped[q.cellKey].push(q);
+    }
+    return grouped;
+  }
+
+  _selectRandom(items) {
+    return items[Math.floor(Math.random() * items.length)];
+  }
+
+  // === Phase 2: Uncertainty Estimation ===
+
+  findKNearestAsked(cellKey, askedCells, K) {
+    const cellIdx = this.cellKeyToIndex[cellKey];
+    const distances = [];
+
+    for (const askedCell of askedCells) {
+      const askedIdx = this.cellKeyToIndex[askedCell];
+      const dist = this.distances[cellIdx][askedIdx];
+      distances.push({ cellKey: askedCell, distance: dist });
+    }
+
+    distances.sort((a, b) => a.distance - b.distance);
+    return distances.slice(0, K);
+  }
+
+  estimateUncertainty(cellKey, askedCells, responses) {
+    const K = this.config.K;
+    const sigma = this.config.sigma;
+
+    const nearest = this.findKNearestAsked(cellKey, askedCells, K);
+
+    if (nearest.length === 0) {
+      return {
+        predictedCorrectness: 0.5,
+        uncertainty: 1.0,
+        confidence: 0.0
+      };
+    }
+
+    let totalWeight = 0;
+    let weightedCorrectness = 0;
+
+    for (const neighbor of nearest) {
+      const dist = neighbor.distance;
+      const weight = Math.exp(-dist * dist / (2 * sigma * sigma));
+      const correct = responses[neighbor.cellKey] ? 1.0 : 0.0;
+
+      weightedCorrectness += weight * correct;
+      totalWeight += weight;
+    }
+
+    const p = totalWeight > 0 ? weightedCorrectness / totalWeight : 0.5;
+
+    const epsilon = 1e-10;
+    const pClipped = Math.max(epsilon, Math.min(1 - epsilon, p));
+    const uncertainty = -(pClipped * Math.log2(pClipped) +
+                         (1 - pClipped) * Math.log2(1 - pClipped));
+
+    return {
+      predictedCorrectness: p,
+      uncertainty: uncertainty,
+      confidence: 1 - uncertainty,
+      numNeighbors: nearest.length
+    };
+  }
+
+  updateUncertaintyMap(askedCells, responses) {
+    const uncertaintyMap = {};
+
+    for (const cellKey of this.allCellKeys) {
+      if (!askedCells.includes(cellKey)) {
+        uncertaintyMap[cellKey] = this.estimateUncertainty(
+          cellKey,
+          askedCells,
+          responses
+        );
+      } else {
+        uncertaintyMap[cellKey] = {
+          predictedCorrectness: responses[cellKey] ? 1.0 : 0.0,
+          uncertainty: 0.0,
+          confidence: 1.0
+        };
+      }
+    }
+
+    return uncertaintyMap;
+  }
+
+  // === Phase 3: Uncertainty-Weighted Selection ===
+
+  scoreCell(cellKey, askedCells, uncertaintyMap) {
+    const alpha = this.config.alpha;
+    const beta = this.config.beta;
+
+    let minDistance = 1.0;
+    if (askedCells.length > 0) {
+      const cellIdx = this.cellKeyToIndex[cellKey];
+      minDistance = Math.min(...askedCells.map(asked => {
+        const askedIdx = this.cellKeyToIndex[asked];
+        return this.distances[cellIdx][askedIdx];
+      }));
+    }
+
+    const uncertainty = uncertaintyMap[cellKey]?.uncertainty || 1.0;
+    const score = Math.pow(minDistance, alpha) * Math.pow(uncertainty, beta);
+
+    return score;
+  }
+
+  _selectGeometric(availableQuestions) {
+    // Fallback to geometric sampling for first N questions
     const questionsByCell = this._groupByCell(availableQuestions);
-    let maxMinDist = -Infinity;
+    let maxMinDistance = -Infinity;
     let bestQuestion = null;
 
     for (const [cellKey, questions] of Object.entries(questionsByCell)) {
       if (this.askedCells.includes(cellKey)) continue;
 
-      const minDist = this._computeMinDistance(cellKey);
+      const cellIdx = this.cellKeyToIndex[cellKey];
+      let minDist = Infinity;
 
-      if (minDist > maxMinDist) {
-        maxMinDist = minDist;
+      if (this.askedCells.length > 0) {
+        minDist = Math.min(...this.askedCells.map(asked => {
+          const askedIdx = this.cellKeyToIndex[asked];
+          return this.distances[cellIdx][askedIdx];
+        }));
+      } else {
+        minDist = Math.random();  // Random for very first question
+      }
+
+      if (minDist > maxMinDistance) {
+        maxMinDistance = minDist;
         bestQuestion = this._selectRandom(questions);
       }
     }
@@ -611,85 +842,187 @@ class AdaptiveSampler {
     return bestQuestion;
   }
 
-  _computeMinDistance(cellKey) {
-    const cellIdx = this.cellKeyToIndex[cellKey];
-    let minDist = Infinity;
+  _selectUncertaintyWeighted(availableQuestions) {
+    this.uncertaintyMap = this.updateUncertaintyMap(
+      this.askedCells,
+      this.responses
+    );
 
-    for (const askedCell of this.askedCells) {
-      const askedIdx = this.cellKeyToIndex[askedCell];
-      const dist = this.distances[cellIdx][askedIdx];
-      minDist = Math.min(minDist, dist);
+    const questionsByCell = this._groupByCell(availableQuestions);
+    let bestScore = -Infinity;
+    let bestQuestion = null;
+    let bestCellKey = null;
+
+    for (const [cellKey, questions] of Object.entries(questionsByCell)) {
+      if (this.askedCells.includes(cellKey)) continue;
+
+      const score = this.scoreCell(cellKey, this.askedCells, this.uncertaintyMap);
+
+      if (score > bestScore) {
+        bestScore = score;
+        bestCellKey = cellKey;
+        bestQuestion = this._selectRandom(questions);
+      }
     }
 
-    return minDist;
+    console.log(`Selected cell ${bestCellKey}, score: ${bestScore.toFixed(3)}, ` +
+                `uncertainty: ${this.uncertaintyMap[bestCellKey]?.uncertainty.toFixed(3)}`);
+
+    return bestQuestion;
   }
 
-  recordResponse(question, response) {
-    const cellKey = `${question.cell_gx}_${question.cell_gy}`;
+  selectNextQuestion() {
+    const availableQuestions = this._getAvailableQuestions();
 
+    if (availableQuestions.length === 0) {
+      return null;
+    }
+
+    if (this.askedCells.length < this.config.initialRandomQuestions) {
+      return this._selectGeometric(availableQuestions);
+    }
+
+    return this._selectUncertaintyWeighted(availableQuestions);
+  }
+
+  recordResponse(question, isCorrect) {
+    const cellKey = question.cellKey;
     this.askedCells.push(cellKey);
-    this.askedQuestions.push({
-      question,
-      response,
-      cellKey,
-      timestamp: Date.now()
-    });
+    this.responses[cellKey] = isCorrect;
   }
+
+  // === Phase 4: Confidence Metrics ===
 
   computeConfidence() {
-    const allCells = Object.keys(this.cellKeyToIndex);
-    let totalCells = allCells.length;
-    let coveredCells = 0;
-    const threshold = this.config.coverageThreshold || 0.15;
+    if (this.askedCells.length === 0) {
+      return {
+        overallConfidence: 0,
+        coverageConfidence: 0,
+        uncertaintyConfidence: 0,
+        coveredCells: 0,
+        totalCells: this.allCellKeys.length
+      };
+    }
 
-    for (const cellKey of allCells) {
-      const minDist = this._computeMinDistance(cellKey);
+    let coveredCells = 0;
+    const threshold = this.config.coverageDistance;
+
+    for (const cellKey of this.allCellKeys) {
+      const cellIdx = this.cellKeyToIndex[cellKey];
+      let minDist = Infinity;
+
+      for (const askedCell of this.askedCells) {
+        const askedIdx = this.cellKeyToIndex[askedCell];
+        const dist = this.distances[cellIdx][askedIdx];
+        minDist = Math.min(minDist, dist);
+      }
+
       if (minDist < threshold) {
         coveredCells++;
       }
     }
 
-    return coveredCells / totalCells;
+    const coverageConfidence = coveredCells / this.allCellKeys.length;
+
+    // Update uncertainty map if not already updated
+    if (Object.keys(this.uncertaintyMap).length === 0) {
+      this.uncertaintyMap = this.updateUncertaintyMap(
+        this.askedCells,
+        this.responses
+      );
+    }
+
+    let totalConfidence = 0;
+    for (const cellKey of this.allCellKeys) {
+      totalConfidence += this.uncertaintyMap[cellKey]?.confidence || 0;
+    }
+    const uncertaintyConfidence = totalConfidence / this.allCellKeys.length;
+
+    const combinedConfidence = (coverageConfidence + uncertaintyConfidence) / 2;
+
+    return {
+      overallConfidence: combinedConfidence,
+      coverageConfidence: coverageConfidence,
+      uncertaintyConfidence: uncertaintyConfidence,
+      coveredCells: coveredCells,
+      totalCells: this.allCellKeys.length
+    };
   }
 
-  // Helper methods
-  _buildCellIndex() { /* ... */ }
-  _getAvailableQuestions() { /* ... */ }
-  _groupByCell(questions) { /* ... */ }
-  _selectRandom(items) { /* ... */ }
+  canEarlyExit() {
+    const confidence = this.computeConfidence();
+    return (
+      this.askedCells.length >= this.config.minQuestionsBeforeExit &&
+      confidence.overallConfidence >= this.config.confidenceThreshold
+    );
+  }
+
+  // === Utility Methods ===
+
+  getUncertaintyMap() {
+    return this.uncertaintyMap;
+  }
+
+  getStats() {
+    const confidence = this.computeConfidence();
+    return {
+      questionsAsked: this.askedCells.length,
+      ...confidence,
+      canExit: this.canEarlyExit()
+    };
+  }
+
+  reset() {
+    this.askedCells = [];
+    this.responses = {};
+    this.uncertaintyMap = {};
+  }
 }
 ```
 
-### C. Confidence UI Component (HTML/JS)
-```html
-<div class="confidence-panel">
-  <div class="confidence-label">Map Coverage</div>
-  <div class="confidence-bar">
-    <div class="confidence-fill" id="confidence-fill"></div>
-  </div>
-  <div class="confidence-text" id="confidence-text">45% - Keep going!</div>
-</div>
+### Usage Example
 
-<button id="show-results-btn" class="btn btn-primary" disabled>
-  Show Results (need 3 more questions)
-</button>
+```javascript
+// Initialize
+const sampler = new AdaptiveSampler(
+  questionsPool,      // From cell_questions.json
+  distancesData,      // From cell_distances.json
+  {
+    confidenceThreshold: 0.85,
+    K: 5,
+    sigma: 0.15,
+    alpha: 1.0,
+    beta: 1.0
+  }
+);
 
-<style>
-.confidence-panel {
-  background: #f0f8f0;
-  border: 2px solid #00693E;
-  border-radius: 8px;
-  padding: 15px;
-  margin: 15px 0;
+// Quiz loop
+while (true) {
+  const question = sampler.selectNextQuestion();
+  if (!question) break;
+
+  // Show question to user
+  const userAnswer = await askUser(question);
+  const isCorrect = (userAnswer === question.correct_answer);
+
+  // Record response
+  sampler.recordResponse(question, isCorrect);
+
+  // Check if can exit early
+  const stats = sampler.getStats();
+  updateConfidenceUI(stats);
+
+  if (sampler.canEarlyExit()) {
+    offerEarlyExit();
+  }
+
+  if (sampler.askedCells.length >= sampler.config.maxQuestions) {
+    break;
+  }
 }
 
-.confidence-bar {
-  background: #ddd;
-  border-radius: 10px;
-  height: 20px;
-  overflow: hidden;
-  margin: 10px 0;
-}
+// Show results
+showKnowledgeMap(sampler.responses, sampler.getUncertaintyMap());
 
 .confidence-fill {
   background: linear-gradient(90deg, #00693E, #00a859);
@@ -729,19 +1062,222 @@ function updateConfidenceUI(confidence, minQuestions) {
 
 ---
 
+## 5. Technical Details
+
+### Precomputation Script
+
+Create `scripts/precompute_cell_distances.py`:
+
+```python
+#!/usr/bin/env python3
+"""Precompute pairwise distances between all cell centers."""
+
+import json
+import numpy as np
+from scipy.spatial.distance import cdist
+from pathlib import Path
+
+def precompute_cell_distances():
+    # Load cell questions
+    input_file = Path('cell_questions.json')
+    if not input_file.exists():
+        print(f"Error: {input_file} not found")
+        return
+
+    with open(input_file) as f:
+        data = json.load(f)
+
+    # Extract cell coordinates
+    cells = []
+    cell_keys = []
+
+    for cell_data in data['cells']:
+        cell = cell_data['cell']
+        cells.append([cell['center_x'], cell['center_y']])
+        cell_keys.append(f"{cell['gx']}_{cell['gy']}")
+
+    coords = np.array(cells)
+
+    # Compute pairwise distances (Euclidean in normalized [0,1] space)
+    print(f"Computing distances for {len(cells)} cells...")
+    distances = cdist(coords, coords, metric='euclidean')
+
+    # Create output
+    output = {
+        'cell_keys': cell_keys,
+        'distances': distances.tolist(),
+        'metadata': {
+            'num_cells': len(cells),
+            'metric': 'euclidean',
+            'coordinate_space': 'normalized [0,1]',
+            'source_file': str(input_file),
+            'dimensions': list(distances.shape)
+        }
+    }
+
+    output_file = Path('cell_distances.json')
+    with open(output_file, 'w') as f:
+        json.dump(output, f)
+
+    file_size_mb = output_file.stat().st_size / (1024 * 1024)
+    print(f"✓ Computed {len(cells)}×{len(cells)} distance matrix")
+    print(f"✓ Saved to {output_file} ({file_size_mb:.2f} MB)")
+
+    # Print statistics
+    print(f"\nDistance statistics:")
+    print(f"  Min: {distances.min():.4f}")
+    print(f"  Max: {distances.max():.4f}")
+    print(f"  Mean: {distances.mean():.4f}")
+    print(f"  Median: {np.median(distances):.4f}")
+
+if __name__ == '__main__':
+    precompute_cell_distances()
+```
+
+**Run precomputation:**
+```bash
+python3 scripts/precompute_cell_distances.py
+```
+
+### Performance Considerations
+
+1. **Distance Computation**: O(1) lookup from precomputed matrix
+2. **Selection Speed**: O(N×M) where N=cells (~750), M=asked cells (<10). Target: <50ms
+3. **Uncertainty Update**: O(N×K) where K=5. Target: <10ms per cell, <100ms total
+4. **Memory**: Distance matrix ~4MB, uncertainty map ~30KB, total <5MB
+5. **Optimization**: If slow, can use spatial indexing (KD-tree) or approximate nearest neighbors
+
+---
+
+## 6. Success Metrics
+
+### Quantitative Metrics
+
+1. **Spatial Coverage**: Mean distance from each cell to nearest asked cell
+   - Target: <0.10 normalized distance after 5 questions
+   - Baseline (random): ~0.25 after 10 questions
+
+2. **Questions to Confidence**: Questions needed to reach 85% confidence
+   - Target: 3-5 with adaptive
+   - Baseline: 8-12 with random
+
+3. **Early Exit Rate**: % users who stop before 10 questions
+   - Target: >60% exit after 3-5 questions
+
+4. **Information Gain per Question**: Change in map confidence per question
+   - Target: Adaptive >2× gain per question vs random
+
+5. **Adaptation Quality**: Correlation between uncertainty and next question
+   - Target: >0.7 correlation (high uncertainty → more likely to be asked)
+
+### Qualitative Metrics
+
+1. **User Satisfaction**: Survey rating for "quiz felt efficient"
+2. **Engagement**: Time spent exploring map vs answering questions
+3. **Completion Rate**: % users who complete vs abandon
+4. **Perceived Intelligence**: "The system adapted to my knowledge"
+
+---
+
+## 7. A/B Testing Plan
+
+### Test Setup
+1. **Groups**:
+   - Control: Random sampling
+   - Treatment: Adaptive uncertainty-weighted sampling
+2. **Assignment**: Random 50/50 split
+3. **Sample Size**: 200+ users (100 per group)
+4. **Duration**: 2-3 weeks
+
+### Metrics to Compare
+- Questions to 85% confidence
+- Early exit rate
+- Completion rate
+- User satisfaction (post-quiz survey)
+- Time to completion
+
+### Success Criteria
+- Adaptive reduces questions by >30%
+- Early exit rate >50%
+- No decrease in completion rate
+- User satisfaction ≥ random
+
+---
+
+## 8. Timeline & Priorities
+
+### Must-Have (MVP - 4 weeks)
+- **Week 1**: Foundation & infrastructure ✅
+- **Week 2**: Uncertainty estimation engine ✅
+- **Week 3**: Uncertainty-weighted selection ✅
+- **Week 4**: Confidence metrics & early exit ✅
+
+### Should-Have (5 weeks)
+- **Week 5**: UI enhancements (click cells, answer more, visualizations)
+
+### Nice-to-Have (6+ weeks)
+- Parameter tuning UI
+- Advanced visualizations (uncertainty heatmap)
+- Bayesian/Information-theoretic approaches
+- Multi-objective optimization
+
+---
+
+## 9. Dependencies & Blockers
+
+### Ready Now ✅
+- [x] Cell questions generation (750/1,600 cells) - sufficient to start
+- [x] Heatmap visualization working
+- [x] Multi-round quiz infrastructure
+- [x] Response tracking in place
+
+### No Blockers
+Can start implementation immediately with existing 750 cells. Additional cells (750→1,600) can be integrated as they're generated.
+
+---
+
+## 10. Risks & Mitigation
+
+| Risk | Mitigation |
+|------|-----------|
+| **Performance**: Uncertainty updates too slow | Precompute distances, optimize K-NN, use spatial indexing if needed |
+| **Complexity**: Too many parameters to tune | Start with defaults (α=β=1), tune only if needed |
+| **Edge cases**: Run out of questions in high-uncertainty cells | Fall back to nearest cells with questions |
+| **UX**: Adaptive feels unpredictable | Show uncertainty visualization, explain selection |
+| **Overfitting**: Parameters tuned on small dataset | Use cross-validation, test on held-out users |
+
+---
+
 ## Summary
 
-This plan provides a complete roadmap for implementing adaptive sampling in the knowledge map quiz system. The phased approach allows for incremental delivery of value:
+This plan provides a complete roadmap for implementing **Tier 2: Response-Aware Adaptive Sampling** in the knowledge map quiz system. The approach combines spatial coverage with intelligent response to user performance, selecting questions that maximize expected information gain.
 
-1. **Week 1-2**: Core adaptive sampling (geometric distance-based)
-2. **Week 3**: Early exit with confidence metrics
-3. **Week 4**: Interactive UI enhancements
-4. **Week 5+**: Advanced algorithms (optional)
+### Key Features
+- ✅ **Uncertainty-weighted selection**: Prioritizes regions where confidence is lowest
+- ✅ **K-NN prediction**: Uses nearby responses to estimate correctness
+- ✅ **Binary entropy**: Measures uncertainty (high when p≈0.5)
+- ✅ **Dual confidence**: Combines coverage and uncertainty metrics
+- ✅ **Early exit**: Enable stop after 3-5 questions when confidence ≥85%
+- ✅ **Parameter tuning**: α, β, K, sigma adjustable for optimization
 
-The geometric distance-based approach (Tier 1) provides the best effort-to-impact ratio and should be implemented first. More sophisticated approaches (Tiers 2-3) can be added later based on user feedback and performance metrics.
+### Implementation Timeline
+1. **Week 1**: Foundation & precomputation
+2. **Week 2**: Uncertainty estimation (K-NN + entropy)
+3. **Week 3**: Uncertainty-weighted selection
+4. **Week 4**: Confidence metrics & early exit
+5. **Week 5**: UI enhancements & polish
 
-**Recommended Next Steps**:
-1. Review and approve this plan
-2. Run precomputation script to generate `cell_distances.json`
-3. Begin Phase 1 implementation
-4. Set up A/B testing infrastructure for evaluation
+### Expected Impact
+- **Efficiency**: 3-5 questions to reach confidence (vs 8-12 random)
+- **Coverage**: <0.10 mean distance after 5 questions (vs 0.25 random)
+- **Adaptation**: System responds to user performance patterns
+- **User Experience**: Intelligent, efficient, interpretable
+
+### Next Steps
+1. **Review & approve** this Tier 2 plan
+2. **Precompute distances**: Run `precompute_cell_distances.py` → `cell_distances.json`
+3. **Implement Phase 1**: Set up infrastructure and configuration
+4. **Set up A/B testing**: Prepare comparison framework
+5. **Iterative development**: Build, test, refine across weeks 2-5
+
+**Full detailed plan**: See this document for complete algorithms, code, testing strategy, and success metrics.

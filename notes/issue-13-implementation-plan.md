@@ -952,10 +952,10 @@ def test_no_duplicate_articles():
 ## Decisions & Answers to Implementation Questions
 
 1. **UMAP Verification**: ✅ Only rebuild if verification fails
-   - **Additional step if rebuild needed**: Estimate GPT-4o-mini regeneration cost
+   - **Additional step if rebuild needed**: Estimate GPT-5-nano regeneration cost
    - Agent will generate sample labels/questions for test cells
    - Track input/output tokens to estimate full regeneration cost
-   - GPT-4o-mini pricing: $0.05/1M input tokens ($0.005/1M cached), $0.40/1M output tokens
+   - GPT-5-nano pricing: $0.05/1M input tokens ($0.005/1M cached), $0.40/1M output tokens
    - If cost-effective: Regenerate labels/questions via parallel OpenAI API batches (much faster)
 
 2. **Article Suggestion Count**: ✅ 1-3 articles per lower-level article

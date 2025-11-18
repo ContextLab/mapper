@@ -98,6 +98,80 @@
             font-size: 0.9em;
             color: #00693E;
             font-weight: 600;
+            display: none; /* Hidden per issue #4 */
+        }
+
+        .confidence-display {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px solid #00693E;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .confidence-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .confidence-label {
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .confidence-value {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #00693E;
+        }
+
+        .confidence-bar {
+            height: 8px;
+            background: #dee2e6;
+            border-radius: 4px;
+            overflow: visible;
+            margin-bottom: 28px;
+            position: relative;
+        }
+
+        .confidence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00693E 0%, #00a859 100%);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .confidence-threshold {
+            position: absolute;
+            left: 90%;
+            top: -8px;
+            bottom: -8px;
+            width: 2px;
+            background: #333;
+            z-index: 10;
+        }
+
+        .confidence-threshold::after {
+            content: 'High Confidence';
+            position: absolute;
+            bottom: -22px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75em;
+            color: #333;
+            white-space: nowrap;
+            font-weight: 600;
+        }
+
+        .confidence-message {
+            font-size: 0.85em;
+            color: #666;
+            margin: 0;
+            text-align: center;
+            display: none; /* Hidden per issue #5 */
         }
 
         .question-text {
@@ -167,13 +241,14 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #00693E 0%, #004d2c 100%);
-            color: white;
+            background: #dee2e6;
+            color: #333;
         }
 
         .btn-primary:hover:not(:disabled) {
+            background: #ced4da;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 105, 62, 0.4);
+            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
         }
 
         .btn-primary:disabled {
@@ -182,12 +257,50 @@
         }
 
         .btn-secondary {
-            background: #f5f5f5;
+            background: #dee2e6;
             color: #333;
         }
 
         .btn-secondary:hover {
-            background: #e0e0e0;
+            background: #ced4da;
+        }
+
+        .btn-info {
+            background: #dee2e6;
+            color: #333;
+        }
+
+        .btn-info:hover:not(:disabled) {
+            background: #ced4da;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
+        }
+
+        .btn-info:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-info.high-confidence {
+            background: linear-gradient(135deg, #00693E, #004d2c);
+            color: white;
+        }
+
+        .btn-info.high-confidence:hover:not(:disabled) {
+            background: linear-gradient(135deg, #004d2c, #003520);
+            box-shadow: 0 5px 15px rgba(0, 105, 62, 0.4);
+        }
+
+        .btn-skip {
+            background: #dee2e6;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .btn-skip:hover {
+            background: #ced4da;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
         }
 
         .map-container {
@@ -273,20 +386,6 @@
             display: none;
         }
 
-        .progress-bar {
-            height: 6px;
-            background: #e0e0e0;
-            border-radius: 3px;
-            overflow: hidden;
-            margin-bottom: 30px;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #00693E 0%, #004d2c 100%);
-            width: 0%;
-            transition: width 0.5s ease;
-        }
 
         .legend {
             position: absolute;
@@ -853,14 +952,14 @@
             <div id="intro-section" class="intro-section">
                 <h1>Welcome!</h1>
                 <p class="intro-description">
-                    This interactive demo uses text embedding models to create a visual
-                    map of your conceptual knowledge based on your quiz responses. Discover
-                    how your understanding of biology concepts relates to each other in semantic space.
+                    This interactive demo maps out an approximation of your knowledge across all topics,
+                    using Wikipedia as a reference and LLM text embeddings to define a coordinate system for the map.
+                    Answer quiz questions to visualize your conceptual understanding in a 2D semantic space.
                 </p>
                 <div class="intro-instructions">
                     <h3>How it works:</h3>
                     <ol>
-                        <li>Answer 10 biology questions at your own pace</li>
+                        <li>Answer questions about various topics at your own pace</li>
                         <li>View your personalized 2D knowledge map</li>
                         <li>Explore areas of strength and opportunities to learn</li>
                     </ol>
@@ -872,21 +971,32 @@
 
             <!-- Quiz Section -->
             <div id="quiz-section" class="quiz-section hidden">
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progress-fill"></div>
-                </div>
-
                 <div class="question-section fade-in" id="question-container">
                     <div class="question-header">
                         <span class="question-number" id="question-number">Question 1 of 10</span>
                     </div>
+
+                    <!-- Confidence Display (for adaptive sampling) -->
+                    <div class="confidence-display hidden" id="confidence-display">
+                        <div class="confidence-header">
+                            <span class="confidence-label">Map Coverage Confidence</span>
+                            <span class="confidence-value" id="confidence-value">0%</span>
+                        </div>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" id="confidence-fill"></div>
+                            <div class="confidence-threshold"></div>
+                        </div>
+                        <p class="confidence-message" id="confidence-message">Answer more questions to build confidence...</p>
+                    </div>
+
                     <div class="question-text" id="question-text"></div>
                     <div class="options" id="options-container"></div>
                 </div>
 
                 <div class="button-container">
                     <button class="btn btn-secondary hidden" id="prev-btn"><i class="fas fa-arrow-left"></i> Previous</button>
-                    <button class="btn btn-secondary" id="skip-btn">Skip <i class="fas fa-forward"></i></button>
+                    <button class="btn btn-skip" id="dont-know-btn"><i class="fas fa-question-circle"></i> I Don't Know</button>
+                    <button class="btn btn-info" id="show-map-btn"><i class="fas fa-map"></i> Show Map</button>
                     <button class="btn btn-primary" id="next-btn" disabled>Next <i class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
@@ -896,6 +1006,19 @@
                 <div class="map-header">
                     <h2>Your Knowledge Map</h2>
                     <p>Hover to explore your knowledge map</p>
+                </div>
+
+                <!-- Confidence Display (also shown on map when adaptive sampling is active) -->
+                <div class="confidence-display hidden" id="map-confidence-display">
+                    <div class="confidence-header">
+                        <span class="confidence-label">Map Coverage Confidence</span>
+                        <span class="confidence-value" id="map-confidence-value">0%</span>
+                    </div>
+                    <div class="confidence-bar">
+                        <div class="confidence-fill" id="map-confidence-fill"></div>
+                        <div class="confidence-threshold"></div>
+                    </div>
+                    <p class="confidence-message" id="map-confidence-message">Answer more questions to build confidence...</p>
                 </div>
 
                 <div class="map-container">
@@ -908,8 +1031,8 @@
                             <span>Correct response</span>
                         </div>
                         <div class="legend-item">
-                            <div class="legend-dot" style="background: rgb(218, 165, 32);"></div>
-                            <span>Skipped question</span>
+                            <div class="legend-dot" style="background: rgb(255, 193, 7);"></div>
+                            <span>Skipped/Unsure</span>
                         </div>
                         <div class="legend-item">
                             <div class="legend-dot" style="background: rgb(139, 69, 19);"></div>
@@ -938,7 +1061,8 @@
                     </div>
                 </div>
 
-                <div class="stats">
+                <!-- Hidden stats elements (kept for JavaScript compatibility) -->
+                <div class="stats hidden">
                     <div class="stat-item">
                         <div class="stat-value" id="correct-count">0</div>
                         <div class="stat-label">Correct</div>
@@ -954,7 +1078,7 @@
                 </div>
 
                 <div class="button-container">
-                    <button class="btn btn-primary" id="another-round-btn"><i class="fas fa-play"></i> Another Round</button>
+                    <button class="btn btn-primary" id="another-round-btn"><i class="fas fa-play"></i> Answer More Questions</button>
                     <button class="btn btn-secondary" id="restart-btn"><i class="fas fa-rotate-right"></i> Start Over</button>
                 </div>
             </div>
@@ -1068,6 +1192,11 @@
         let currentRound = 0; // Current round number
         let selectedOption = null;
 
+        // Adaptive sampling state
+        let cellDistances = null; // Precomputed distance matrix
+        let adaptiveSampler = null; // AdaptiveSampler instance
+        let cellQuestionsData = null; // Original cell-based questions structure
+
         // DOM elements
         const introSection = document.getElementById('intro-section');
         const quizSection = document.getElementById('quiz-section');
@@ -1078,7 +1207,8 @@
         const optionsContainer = document.getElementById('options-container');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
-        const skipBtn = document.getElementById('skip-btn');
+        const dontKnowBtn = document.getElementById('dont-know-btn');
+        const showMapBtn = document.getElementById('show-map-btn');
         const restartBtn = document.getElementById('restart-btn');
         const anotherRoundBtn = document.getElementById('another-round-btn');
         const startQuizBtn = document.getElementById('start-quiz-btn');
@@ -1087,7 +1217,10 @@
         const closeAboutBtn = document.getElementById('close-about');
         const copyCitationBtn = document.getElementById('copy-citation-btn');
         const contactForm = document.getElementById('contact-form');
-        const progressFill = document.getElementById('progress-fill');
+        const confidenceDisplay = document.getElementById('confidence-display');
+        const confidenceValue = document.getElementById('confidence-value');
+        const confidenceFill = document.getElementById('confidence-fill');
+        const confidenceMessage = document.getElementById('confidence-message');
         const canvas = document.getElementById('map-canvas');
         const ctx = canvas.getContext('2d');
         const loading = document.getElementById('loading');
@@ -1101,6 +1234,390 @@
         let articleAnimationProgress = {}; // Maps article index to animation progress (0-1)
         let animationFrameId = null;
         let lastFrameTime = performance.now();
+
+        // ====== AdaptiveSampler Class ======
+        class AdaptiveSampler {
+            constructor(questionsPool, distances, config) {
+                this.questionsPool = questionsPool;
+                this.distances = distances.distances;  // 2D array
+                this.cellKeys = distances.cell_keys;   // Array of "gx_gy" strings
+                this.config = {
+                    mode: 'adaptive-uncertainty',
+                    initialRandomQuestions: 2,
+                    minQuestionsBeforeExit: 3,
+                    confidenceThreshold: 0.85,
+                    maxQuestions: 10,
+                    K: 5,
+                    sigma: 0.15,
+                    alpha: 1.0,
+                    beta: 1.0,
+                    coverageDistance: 0.15,
+                    ...config  // Allow override
+                };
+
+                // Build cell index mappings
+                this.cellKeyToIndex = {};
+                this.indexToCellKey = {};
+                this.cellKeys.forEach((key, idx) => {
+                    this.cellKeyToIndex[key] = idx;
+                    this.indexToCellKey[idx] = key;
+                });
+
+                this.allCellKeys = this.cellKeys;
+
+                // State
+                this.askedCells = [];
+                this.responses = {};  // cellKey → true/false
+                this.uncertaintyMap = {};
+                this.askedQuestions = new Set();  // Track individual question IDs to prevent re-asking
+            }
+
+            // === Phase 1: Infrastructure ===
+
+            _getAvailableQuestions() {
+                // Return all questions from cells that haven't been fully exhausted
+                const available = [];
+                for (const cellData of this.questionsPool.cells) {
+                    const cellKey = `${cellData.cell.gx}_${cellData.cell.gy}`;
+                    // Include cells even if asked before, but filter individual questions
+                    for (let i = 0; i < cellData.questions.length; i++) {
+                        const question = cellData.questions[i];
+                        const questionId = `${cellKey}_${i}`;
+                        // Only include questions that haven't been asked
+                        if (!this.askedQuestions.has(questionId)) {
+                            available.push({ ...question, cellKey, cellData, questionId });
+                        }
+                    }
+                }
+                return available;
+            }
+
+            _groupByCell(questions) {
+                const grouped = {};
+                for (const q of questions) {
+                    if (!grouped[q.cellKey]) {
+                        grouped[q.cellKey] = [];
+                    }
+                    grouped[q.cellKey].push(q);
+                }
+                return grouped;
+            }
+
+            _selectRandom(items) {
+                return items[Math.floor(Math.random() * items.length)];
+            }
+
+            // === Phase 2: Uncertainty Estimation ===
+
+            findKNearestAsked(cellKey, askedCells, K) {
+                const cellIdx = this.cellKeyToIndex[cellKey];
+                const distances = [];
+
+                for (const askedCell of askedCells) {
+                    const askedIdx = this.cellKeyToIndex[askedCell];
+                    const dist = this.distances[cellIdx][askedIdx];
+                    distances.push({ cellKey: askedCell, distance: dist });
+                }
+
+                distances.sort((a, b) => a.distance - b.distance);
+                return distances.slice(0, K);
+            }
+
+            estimateUncertainty(cellKey, askedCells, responses) {
+                const sigma = this.config.sigma;
+
+                // If no questions answered, return default values
+                if (askedCells.length === 0) {
+                    return {
+                        predictedCorrectness: 0.5,
+                        uncertainty: 1.0,
+                        confidence: 0.0
+                    };
+                }
+
+                // Use ALL answered questions with Gaussian kernel weighting
+                const cellIdx = this.cellKeyToIndex[cellKey];
+                let totalWeight = 0;
+                let weightedCorrectness = 0;
+
+                for (const askedCell of askedCells) {
+                    const askedIdx = this.cellKeyToIndex[askedCell];
+                    const dist = this.distances[cellIdx][askedIdx];
+                    const weight = Math.exp(-dist * dist / (2 * sigma * sigma));
+
+                    // Handle fractional correctness values
+                    const correct = typeof responses[askedCell] === 'number' ?
+                                    responses[askedCell] :
+                                    (responses[askedCell] ? 1.0 : 0.0);
+
+                    weightedCorrectness += weight * correct;
+                    totalWeight += weight;
+                }
+
+                const p = totalWeight > 0 ? weightedCorrectness / totalWeight : 0.5;
+
+                const epsilon = 1e-10;
+                const pClipped = Math.max(epsilon, Math.min(1 - epsilon, p));
+                const uncertainty = -(pClipped * Math.log2(pClipped) +
+                                     (1 - pClipped) * Math.log2(1 - pClipped));
+
+                return {
+                    predictedCorrectness: p,
+                    uncertainty: uncertainty,
+                    confidence: 1 - uncertainty,
+                    numNeighbors: askedCells.length
+                };
+            }
+
+            updateUncertaintyMap(askedCells, responses) {
+                const uncertaintyMap = {};
+
+                for (const cellKey of this.allCellKeys) {
+                    if (!askedCells.includes(cellKey)) {
+                        uncertaintyMap[cellKey] = this.estimateUncertainty(
+                            cellKey,
+                            askedCells,
+                            responses
+                        );
+                    } else {
+                        // Handle fractional correctness values
+                        const correctness = typeof responses[cellKey] === 'number' ?
+                                          responses[cellKey] :
+                                          (responses[cellKey] ? 1.0 : 0.0);
+                        uncertaintyMap[cellKey] = {
+                            predictedCorrectness: correctness,
+                            uncertainty: 0.0,
+                            confidence: 1.0
+                        };
+                    }
+                }
+
+                return uncertaintyMap;
+            }
+
+            // === Phase 3: Uncertainty-Weighted Selection ===
+
+            scoreCell(cellKey, askedCells, uncertaintyMap) {
+                // Calculate alpha and beta dynamically based on confidence
+                // When confidence is low: prioritize spreading out (high alpha, low beta)
+                // When confidence is high: prioritize uncertainty reduction (low alpha, high beta)
+                const confidence = this.computeConfidence().overallConfidence;
+                const alpha = 2 * (1 - confidence);
+                const beta = 2 * confidence;
+
+                let minDistance = 1.0;
+                if (askedCells.length > 0) {
+                    const cellIdx = this.cellKeyToIndex[cellKey];
+                    minDistance = Math.min(...askedCells.map(asked => {
+                        const askedIdx = this.cellKeyToIndex[asked];
+                        return this.distances[cellIdx][askedIdx];
+                    }));
+                }
+
+                const uncertainty = uncertaintyMap[cellKey]?.uncertainty || 1.0;
+                const score = Math.pow(minDistance, alpha) * Math.pow(uncertainty, beta);
+
+                return score;
+            }
+
+            _selectGeometric(availableQuestions) {
+                // Fallback to geometric sampling for first N questions
+                const questionsByCell = this._groupByCell(availableQuestions);
+                let maxMinDistance = -Infinity;
+                let bestQuestion = null;
+
+                for (const [cellKey, questions] of Object.entries(questionsByCell)) {
+                    if (this.askedCells.includes(cellKey)) continue;
+
+                    const cellIdx = this.cellKeyToIndex[cellKey];
+                    let minDist = Infinity;
+
+                    if (this.askedCells.length > 0) {
+                        minDist = Math.min(...this.askedCells.map(asked => {
+                            const askedIdx = this.cellKeyToIndex[asked];
+                            return this.distances[cellIdx][askedIdx];
+                        }));
+                    } else {
+                        minDist = Math.random();  // Random for very first question
+                    }
+
+                    if (minDist > maxMinDistance) {
+                        maxMinDistance = minDist;
+                        bestQuestion = this._selectRandom(questions);
+                    }
+                }
+
+                return bestQuestion;
+            }
+
+            _selectUncertaintyWeighted(availableQuestions) {
+                this.uncertaintyMap = this.updateUncertaintyMap(
+                    this.askedCells,
+                    this.responses
+                );
+
+                const questionsByCell = this._groupByCell(availableQuestions);
+                let bestScore = -Infinity;
+                let bestQuestion = null;
+                let bestCellKey = null;
+
+                for (const [cellKey, questions] of Object.entries(questionsByCell)) {
+                    if (this.askedCells.includes(cellKey)) continue;
+
+                    const score = this.scoreCell(cellKey, this.askedCells, this.uncertaintyMap);
+
+                    if (score > bestScore) {
+                        bestScore = score;
+                        bestCellKey = cellKey;
+                        bestQuestion = this._selectRandom(questions);
+                    }
+                }
+
+                console.log(`Selected cell ${bestCellKey}, score: ${bestScore.toFixed(3)}, ` +
+                            `uncertainty: ${this.uncertaintyMap[bestCellKey]?.uncertainty.toFixed(3)}`);
+
+                return bestQuestion;
+            }
+
+            selectNextQuestion() {
+                const availableQuestions = this._getAvailableQuestions();
+
+                if (availableQuestions.length === 0) {
+                    return null;
+                }
+
+                let selectedQuestion;
+                if (this.askedCells.length < this.config.initialRandomQuestions) {
+                    selectedQuestion = this._selectGeometric(availableQuestions);
+                } else {
+                    selectedQuestion = this._selectUncertaintyWeighted(availableQuestions);
+                }
+
+                // Mark question as asked
+                if (selectedQuestion && selectedQuestion.questionId) {
+                    this.askedQuestions.add(selectedQuestion.questionId);
+                }
+
+                return selectedQuestion;
+            }
+
+            recordResponse(cellKey, isCorrect, fractionalCorrectness = null) {
+                if (!this.askedCells.includes(cellKey)) {
+                    this.askedCells.push(cellKey);
+                }
+                // Support fractional correctness (e.g., 0.1 for "I Don't Know")
+                if (fractionalCorrectness !== null) {
+                    this.responses[cellKey] = fractionalCorrectness;
+                } else {
+                    this.responses[cellKey] = isCorrect ? 1.0 : 0.0;
+                }
+            }
+
+            // === Phase 4: Confidence Metrics ===
+
+            computeConfidence() {
+                if (this.askedCells.length === 0) {
+                    return {
+                        overallConfidence: 0,
+                        coverageConfidence: 0,
+                        uncertaintyConfidence: 0,
+                        coveredCells: 0,
+                        totalCells: this.allCellKeys.length
+                    };
+                }
+
+                let coveredCells = 0;
+                const threshold = this.config.coverageDistance;
+
+                for (const cellKey of this.allCellKeys) {
+                    const cellIdx = this.cellKeyToIndex[cellKey];
+                    let minDist = Infinity;
+
+                    for (const askedCell of this.askedCells) {
+                        const askedIdx = this.cellKeyToIndex[askedCell];
+                        const dist = this.distances[cellIdx][askedIdx];
+                        minDist = Math.min(minDist, dist);
+                    }
+
+                    if (minDist < threshold) {
+                        coveredCells++;
+                    }
+                }
+
+                const coverageConfidence = coveredCells / this.allCellKeys.length;
+
+                // Update uncertainty map if not already updated
+                if (Object.keys(this.uncertaintyMap).length === 0) {
+                    this.uncertaintyMap = this.updateUncertaintyMap(
+                        this.askedCells,
+                        this.responses
+                    );
+                }
+
+                let totalConfidence = 0;
+                for (const cellKey of this.allCellKeys) {
+                    totalConfidence += this.uncertaintyMap[cellKey]?.confidence || 0;
+                }
+                const uncertaintyConfidence = totalConfidence / this.allCellKeys.length;
+
+                const combinedConfidence = (coverageConfidence + uncertaintyConfidence) / 2;
+
+                return {
+                    overallConfidence: combinedConfidence,
+                    coverageConfidence: coverageConfidence,
+                    uncertaintyConfidence: uncertaintyConfidence,
+                    coveredCells: coveredCells,
+                    totalCells: this.allCellKeys.length
+                };
+            }
+
+            canEarlyExit() {
+                const confidence = this.computeConfidence();
+                return (
+                    this.askedCells.length >= this.config.minQuestionsBeforeExit &&
+                    confidence.overallConfidence >= this.config.confidenceThreshold
+                );
+            }
+
+            // === Utility Methods ===
+
+            getUncertaintyMap() {
+                return this.uncertaintyMap;
+            }
+
+            getStats() {
+                const confidence = this.computeConfidence();
+                return {
+                    questionsAsked: this.askedCells.length,
+                    ...confidence,
+                    canExit: this.canEarlyExit()
+                };
+            }
+
+            reset() {
+                this.askedCells = [];
+                this.responses = {};
+                this.uncertaintyMap = {};
+                this.askedQuestions = new Set();
+            }
+        }
+
+        // Load cell distances
+        async function loadCellDistances() {
+            try {
+                const response = await fetch('cell_distances.json');
+                if (!response.ok) {
+                    console.warn('Cell distances not found - will use random sampling');
+                    return null;
+                }
+                const data = await response.json();
+                console.log(`Loaded ${data.metadata.num_cells}×${data.metadata.num_cells} distance matrix`);
+                return data;
+            } catch (error) {
+                console.warn('Could not load cell distances:', error);
+                return null;
+            }
+        }
 
         // Load questions and initialize
         async function loadQuestions() {
@@ -1153,6 +1670,22 @@
 
                 console.log(`Loaded ${allQuestionsPool.length} total questions from ${data.cells.length} cells`);
 
+                // Store original cell-based data for adaptive sampler
+                cellQuestionsData = data;
+
+                // Load cell distances and initialize adaptive sampler
+                cellDistances = await loadCellDistances();
+                if (cellDistances) {
+                    adaptiveSampler = new AdaptiveSampler(cellQuestionsData, cellDistances, {
+                        maxQuestions: 10,
+                        minQuestionsBeforeExit: 3,
+                        confidenceThreshold: 0.85
+                    });
+                    console.log('Adaptive sampling enabled');
+                } else {
+                    console.log('Using random sampling (distances not available)');
+                }
+
                 // Start first quiz round (select 10 random questions)
                 startNewQuizRound();
             } catch (error) {
@@ -1169,43 +1702,89 @@
             }
         }
 
-        // Start a new quiz round by selecting 10 new random questions
+        // Start a new quiz round by selecting 10 new questions (adaptive or random)
         function startNewQuizRound() {
-            // Find available question indices (not yet asked)
-            const availableIndices = [];
-            for (let i = 0; i < allQuestionsPool.length; i++) {
-                if (!askedQuestionIndices.includes(i)) {
-                    availableIndices.push(i);
-                }
-            }
-
-            // Check if we have enough questions
-            if (availableIndices.length < 10) {
-                console.log(`Only ${availableIndices.length} questions remaining. Resetting question pool.`);
-                // Reset the pool - user has answered most questions
-                askedQuestionIndices = [];
-                availableIndices.length = 0;
-                for (let i = 0; i < allQuestionsPool.length; i++) {
-                    availableIndices.push(i);
-                }
-            }
-
-            // Randomly select 10 questions
-            const shuffled = availableIndices.sort(() => Math.random() - 0.5);
-            const selectedIndices = shuffled.slice(0, 10);
-
-            // Update questionsData with selected questions
-            questionsData = selectedIndices.map(i => allQuestionsPool[i]);
-
-            // Mark these questions as asked
-            askedQuestionIndices.push(...selectedIndices);
-
             // Reset for new round
             currentQuestion = 0;
             currentRound++;
             userResponses = []; // Clear current round responses
 
-            console.log(`Round ${currentRound}: Selected ${questionsData.length} new questions`);
+            if (adaptiveSampler) {
+                // Use adaptive sampling
+                questionsData = [];
+                const maxQuestions = adaptiveSampler.config.maxQuestions;
+
+                // Select questions one at a time using adaptive algorithm
+                for (let i = 0; i < maxQuestions; i++) {
+                    const selectedQuestion = adaptiveSampler.selectNextQuestion();
+                    if (!selectedQuestion) {
+                        console.log(`No more questions available after ${i} questions`);
+                        break;
+                    }
+
+                    // Convert to allQuestionsPool format
+                    const cellData = selectedQuestion.cellData;
+                    const gridSize = 40;
+                    const cellWidth = 1.0 / (gridSize - 1);
+                    const cellHeight = 1.0 / (gridSize - 1);
+                    const jitterX = (Math.random() - 0.5) * cellWidth;
+                    const jitterY = (Math.random() - 0.5) * cellHeight;
+
+                    let correctIndex;
+                    if (selectedQuestion.correct_index !== undefined) {
+                        correctIndex = selectedQuestion.correct_index;
+                    } else if (selectedQuestion.correct_answer !== undefined) {
+                        correctIndex = selectedQuestion.correct_answer.charCodeAt(0) - 65;
+                    } else {
+                        console.error('Question missing correct answer:', selectedQuestion);
+                        correctIndex = 0;
+                    }
+
+                    const question = {
+                        question: selectedQuestion.question,
+                        options: selectedQuestion.options,
+                        correctIndex: correctIndex,
+                        x: cellData.cell.center_x + jitterX,
+                        y: cellData.cell.center_y + jitterY,
+                        topic: selectedQuestion.topic || 'general',
+                        cell_gx: cellData.cell.gx,
+                        cell_gy: cellData.cell.gy,
+                        cellKey: selectedQuestion.cellKey
+                    };
+
+                    questionsData.push(question);
+                }
+
+                console.log(`Round ${currentRound}: Selected ${questionsData.length} questions using adaptive sampling`);
+                const stats = adaptiveSampler.getStats();
+                console.log(`Coverage: ${(stats.coverageConfidence * 100).toFixed(1)}%, ` +
+                           `Uncertainty confidence: ${(stats.uncertaintyConfidence * 100).toFixed(1)}%`);
+            } else {
+                // Fall back to random sampling
+                const availableIndices = [];
+                for (let i = 0; i < allQuestionsPool.length; i++) {
+                    if (!askedQuestionIndices.includes(i)) {
+                        availableIndices.push(i);
+                    }
+                }
+
+                if (availableIndices.length < 10) {
+                    console.log(`Only ${availableIndices.length} questions remaining. Resetting question pool.`);
+                    askedQuestionIndices = [];
+                    availableIndices.length = 0;
+                    for (let i = 0; i < allQuestionsPool.length; i++) {
+                        availableIndices.push(i);
+                    }
+                }
+
+                const shuffled = availableIndices.sort(() => Math.random() - 0.5);
+                const selectedIndices = shuffled.slice(0, 10);
+                questionsData = selectedIndices.map(i => allQuestionsPool[i]);
+                askedQuestionIndices.push(...selectedIndices);
+
+                console.log(`Round ${currentRound}: Selected ${questionsData.length} questions (random sampling)`);
+            }
+
             renderQuestion();
         }
 
@@ -1253,8 +1832,15 @@
                 const weight = Math.exp(-(dist * dist) / (2 * sigma * sigma));
 
                 if (userResponses[idx] !== undefined && userResponses[idx] !== null) {
-                    const isCorrect = userResponses[idx] === q.correctIndex;
-                    knowledge += weight * (isCorrect ? 1 : 0);
+                    let correctness;
+                    if (userResponses[idx] === -1 || q.skipped) {
+                        // "I Don't Know" - 0.1 correctness
+                        correctness = 0.1;
+                    } else {
+                        const isCorrect = userResponses[idx] === q.correctIndex;
+                        correctness = isCorrect ? 1 : 0;
+                    }
+                    knowledge += weight * correctness;
                     totalWeight += weight;
                 }
             });
@@ -1285,7 +1871,8 @@
         // Event listeners
         nextBtn.addEventListener('click', handleNext);
         prevBtn.addEventListener('click', handlePrevious);
-        skipBtn.addEventListener('click', handleSkip);
+        dontKnowBtn.addEventListener('click', handleDontKnow);
+        showMapBtn.addEventListener('click', handleShowMap);
         restartBtn.addEventListener('click', restart);
         anotherRoundBtn.addEventListener('click', startAnotherRound);
         startQuizBtn.addEventListener('click', startQuiz);
@@ -1367,14 +1954,58 @@
         function startQuiz() {
             introSection.classList.add('hidden');
             quizSection.classList.remove('hidden');
+
+            // Show confidence display if adaptive sampling is enabled
+            if (adaptiveSampler) {
+                confidenceDisplay.classList.remove('hidden');
+            }
+        }
+
+        // Update confidence display
+        function updateConfidenceDisplay() {
+            if (!adaptiveSampler) return;
+
+            const stats = adaptiveSampler.getStats();
+            const percent = Math.round(stats.overallConfidence * 100);
+            const threshold = Math.round(adaptiveSampler.config.confidenceThreshold * 100);
+            const minQuestions = adaptiveSampler.config.minQuestionsBeforeExit;
+
+            // Update display
+            confidenceValue.textContent = `${percent}%`;
+            confidenceFill.style.width = `${percent}%`;
+
+            // Update "Show Map" button color based on confidence
+            const showMapBtn = document.getElementById('show-map-btn');
+            if (showMapBtn) {
+                if (percent >= 90) {
+                    showMapBtn.classList.add('high-confidence');
+                } else {
+                    showMapBtn.classList.remove('high-confidence');
+                }
+            }
+
+            // Update message based on confidence level
+            if (stats.canExit) {
+                confidenceMessage.textContent = `${percent}% confidence - You can view your results now!`;
+                confidenceMessage.style.color = '#00693E';
+                confidenceMessage.style.fontWeight = '600';
+            } else if (stats.questionsAsked < minQuestions) {
+                const remaining = minQuestions - stats.questionsAsked;
+                confidenceMessage.textContent = `Answer ${remaining} more question${remaining > 1 ? 's' : ''} to view results`;
+                confidenceMessage.style.color = '#666';
+                confidenceMessage.style.fontWeight = 'normal';
+            } else {
+                const needed = threshold - percent;
+                confidenceMessage.textContent = `${percent}% confidence - ${needed}% more needed for high confidence`;
+                confidenceMessage.style.color = '#666';
+                confidenceMessage.style.fontWeight = 'normal';
+            }
         }
 
         function renderQuestion() {
             const q = questionsData[currentQuestion];
             questionNumber.textContent = `Question ${currentQuestion + 1} of ${questionsData.length}`;
             questionText.textContent = q.question;
-            
-            progressFill.style.width = `${(currentQuestion / questionsData.length) * 100}%`;
 
             optionsContainer.innerHTML = '';
             // Convert options object {A: "...", B: "...", C: "...", D: "..."} to array
@@ -1400,9 +2031,7 @@
 
             prevBtn.classList.toggle('hidden', currentQuestion === 0);
             nextBtn.disabled = selectedOption === null;
-            nextBtn.innerHTML = currentQuestion === questionsData.length - 1 ?
-                'See Results <i class="fas fa-chart-line"></i>' :
-                'Next <i class="fas fa-arrow-right"></i>';
+            nextBtn.innerHTML = 'Next <i class="fas fa-arrow-right"></i>';
 
             questionContainer.classList.remove('fade-in');
             void questionContainer.offsetWidth;
@@ -1422,6 +2051,21 @@
         function handleNext() {
             userResponses[currentQuestion] = selectedOption;
 
+            // Record response in adaptive sampler if available
+            if (adaptiveSampler && questionsData[currentQuestion].cellKey) {
+                const isCorrect = selectedOption === questionsData[currentQuestion].correctIndex;
+                adaptiveSampler.recordResponse(questionsData[currentQuestion].cellKey, isCorrect);
+
+                // Update confidence display
+                updateConfidenceDisplay();
+
+                // Log confidence stats
+                const stats = adaptiveSampler.getStats();
+                console.log(`Question ${currentQuestion + 1}: ${isCorrect ? 'Correct' : 'Incorrect'} | ` +
+                           `Confidence: ${(stats.overallConfidence * 100).toFixed(1)}% | ` +
+                           `Coverage: ${(stats.coverageConfidence * 100).toFixed(1)}%`);
+            }
+
             if (currentQuestion < questionsData.length - 1) {
                 currentQuestion++;
                 selectedOption = null;
@@ -1439,8 +2083,29 @@
             }
         }
 
-        function handleSkip() {
-            // Leave current question unanswered
+        function handleDontKnow() {
+            // Record "I Don't Know" response with correctness=0.1
+            const skippedIndex = -1; // Special marker for "I Don't Know"
+            userResponses[currentQuestion] = skippedIndex;
+
+            // Mark this question as skipped
+            questionsData[currentQuestion].skipped = true;
+
+            // Record response in adaptive sampler with low correctness
+            if (adaptiveSampler && questionsData[currentQuestion].cellKey) {
+                adaptiveSampler.recordResponse(questionsData[currentQuestion].cellKey, false, 0.1);
+
+                // Update confidence display
+                updateConfidenceDisplay();
+
+                // Log confidence stats
+                const stats = adaptiveSampler.getStats();
+                console.log(`Question ${currentQuestion + 1}: I Don't Know (0.1 correctness) | ` +
+                           `Confidence: ${(stats.overallConfidence * 100).toFixed(1)}% | ` +
+                           `Coverage: ${(stats.coverageConfidence * 100).toFixed(1)}%`);
+            }
+
+            // Move to next question or show results
             if (currentQuestion < questionsData.length - 1) {
                 currentQuestion++;
                 selectedOption = null;
@@ -1450,27 +2115,67 @@
             }
         }
 
+        function handleShowMap() {
+            // Show map at any time, even if no questions answered (will show all 0.5)
+            showResults();
+        }
+
         function showResults() {
             quizSection.classList.add('hidden');
             mapSection.classList.remove('hidden');
             loading.classList.remove('hidden');
 
+            // Show confidence display on map if adaptive sampling is enabled
+            if (adaptiveSampler) {
+                const mapConfidenceDisplay = document.getElementById('map-confidence-display');
+                const mapConfidenceValue = document.getElementById('map-confidence-value');
+                const mapConfidenceFill = document.getElementById('map-confidence-fill');
+
+                const stats = adaptiveSampler.getStats();
+                const percent = Math.round(stats.overallConfidence * 100);
+
+                mapConfidenceValue.textContent = `${percent}%`;
+                mapConfidenceFill.style.width = `${percent}%`;
+                mapConfidenceDisplay.classList.remove('hidden');
+
+                // Check if all questions are exhausted
+                const availableQuestions = adaptiveSampler._getAvailableQuestions();
+                if (availableQuestions.length === 0) {
+                    anotherRoundBtn.disabled = true;
+                    anotherRoundBtn.innerHTML = '<i class="fas fa-check"></i> All Questions Completed';
+                } else {
+                    anotherRoundBtn.disabled = false;
+                    anotherRoundBtn.innerHTML = '<i class="fas fa-play"></i> Answer More Questions';
+                }
+            }
+
             // Add current round questions and responses to full history
-            allUserResponses.push(...userResponses);
-            allQuestionsShown.push(...questionsData);
+            // Only include questions that have actually been answered (have a response)
+            const answeredQuestions = [];
+            const answeredResponses = [];
+
+            for (let i = 0; i < questionsData.length; i++) {
+                if (userResponses[i] !== undefined) {
+                    answeredQuestions.push(questionsData[i]);
+                    answeredResponses.push(userResponses[i]);
+                }
+            }
+
+            allUserResponses.push(...answeredResponses);
+            allQuestionsShown.push(...answeredQuestions);
 
             // Calculate accuracy for current round
             let correct = 0;
-            userResponses.forEach((response, index) => {
-                if (response === questionsData[index].correctIndex) {
+            answeredResponses.forEach((response, index) => {
+                if (response !== undefined && response === answeredQuestions[index].correctIndex) {
                     correct++;
                 }
             });
 
-            // Update stats (current round)
+            // Stats will be removed from display, but keeping calculation for potential future use
             document.getElementById('correct-count').textContent = correct;
-            document.getElementById('accuracy-pct').textContent = `${Math.round((correct / questionsData.length) * 100)}%`;
-            document.getElementById('total-count').textContent = questionsData.length;
+            document.getElementById('accuracy-pct').textContent = answeredResponses.length > 0 ? `${Math.round((correct / answeredResponses.length) * 100)}%` : '0%';
+            document.getElementById('total-count').textContent = answeredResponses.length;
 
             setTimeout(() => {
                 loading.classList.add('hidden');
@@ -1508,11 +2213,15 @@
             // Create knowledge heatmap
             drawKnowledgeHeatmap(width, height);
 
-            // Draw Wikipedia article dots (between heatmap and questions)
-            drawWikipediaArticles(width, height);
+            // Defer drawing markers until next frame to ensure canvas is properly sized
+            // This prevents the visual glitch where dots appear in wrong positions during heatmap generation
+            requestAnimationFrame(() => {
+                // Draw Wikipedia article dots (between heatmap and questions)
+                drawWikipediaArticles(width, height);
 
-            // Draw question markers
-            drawQuestionMarkers(width, height);
+                // Draw question markers
+                drawQuestionMarkers(width, height);
+            });
 
             // Add interactivity
             addInteractivity(width, height);
@@ -1619,10 +2328,17 @@
                         const dy = y - q.y;
                         const dist = Math.sqrt(dx * dx + dy * dy);
                         const weight = Math.exp(-(dist * dist) / (2 * sigma * sigma));
-                        
+
                         if (userResponses[idx] !== undefined) {
-                            const isCorrect = userResponses[idx] === q.correctIndex;
-                            knowledge += weight * (isCorrect ? 1 : 0);
+                            let correctness;
+                            if (userResponses[idx] === -1 || q.skipped) {
+                                // "I Don't Know" - 0.1 correctness
+                                correctness = 0.1;
+                            } else {
+                                const isCorrect = userResponses[idx] === q.correctIndex;
+                                correctness = isCorrect ? 1 : 0;
+                            }
+                            knowledge += weight * correctness;
                             totalWeight += weight;
                         }
                     });
@@ -1742,6 +2458,7 @@
                 const radius = 12;
 
                 const wasAnswered = userResponses[idx] !== undefined;
+                const isSkipped = userResponses[idx] === -1 || q.skipped;
                 const isCorrect = userResponses[idx] === q.correctIndex;
 
                 // Get animation progress for this dot (0 = not hovered, 1 = fully hovered)
@@ -1757,6 +2474,9 @@
                 if (!wasAnswered) {
                     // Unanswered - intermediate knowledge (goldenrod)
                     baseColor = 'rgb(218, 165, 32)';
+                } else if (isSkipped) {
+                    // "I Don't Know" - yellow
+                    baseColor = 'rgb(255, 193, 7)';
                 } else if (isCorrect) {
                     // Correct - high knowledge (Dartmouth Green)
                     baseColor = 'rgb(0, 105, 62)';
@@ -1980,8 +2700,26 @@
                 const mouseX = (e.clientX - rect.left) / rect.width * width;
                 const mouseY = (e.clientY - rect.top) / rect.height * height;
 
-                // Check if clicking on a Wikipedia article
+                // First, check if hovering over a question dot - if so, don't handle article clicks
+                let hoveringQuestion = false;
+                questionsData.forEach((q, idx) => {
+                    const x = q.x * width;
+                    const y = q.y * height;
+                    const dist = Math.sqrt((mouseX - x) ** 2 + (mouseY - y) ** 2);
+                    if (dist < 15) {
+                        hoveringQuestion = true;
+                    }
+                });
+
+                // If hovering over a question, don't process article clicks
+                if (hoveringQuestion) {
+                    return;
+                }
+
+                // Check if clicking on a Wikipedia article (find closest one within threshold)
                 let clickedArticle = null;
+                let minDist = 8; // Threshold distance
+
                 wikipediaArticles.forEach((article, idx) => {
                     // Skip articles outside extended region
                     if (article.x < -0.5 || article.x > 1.5 || article.y < -0.5 || article.y > 1.5) {
@@ -1992,12 +2730,14 @@
                     const y = article.y * height;
                     const dist = Math.sqrt((mouseX - x) ** 2 + (mouseY - y) ** 2);
 
-                    if (dist < 8) {
+                    // Only select if closer than current closest (prevents multiple opens)
+                    if (dist < minDist) {
+                        minDist = dist;
                         clickedArticle = article;
                     }
                 });
 
-                // Open Wikipedia article in new tab
+                // Open Wikipedia article in new tab (only opens one article - the closest)
                 if (clickedArticle && clickedArticle.url) {
                     window.open(clickedArticle.url, '_blank');
                 }
@@ -2006,6 +2746,7 @@
 
         function showTooltip(canvasRect, question) {
             const wasAnswered = userResponses[question.index] !== undefined;
+            const isSkipped = userResponses[question.index] === -1 || question.skipped;
             const isCorrect = userResponses[question.index] === question.correctIndex;
 
             // Display question number (simple index, no offset needed since questionsData contains all questions via swap)
@@ -2015,6 +2756,9 @@
             if (!wasAnswered) {
                 status = 'Unanswered';
                 statusColor = 'rgb(218, 165, 32)';  // Intermediate knowledge (goldenrod)
+            } else if (isSkipped) {
+                status = "I Don't Know";
+                statusColor = 'rgb(255, 193, 7)';  // Yellow
             } else if (isCorrect) {
                 status = 'Correct';
                 statusColor = 'rgb(0, 105, 62)';  // High knowledge (Dartmouth Green)
@@ -2200,32 +2944,28 @@
         }
 
         function startAnotherRound() {
+            // Check if there are any questions left
+            if (adaptiveSampler) {
+                const availableQuestions = adaptiveSampler._getAvailableQuestions();
+                if (availableQuestions.length === 0) {
+                    alert('All questions have been asked! No more questions available.');
+                    anotherRoundBtn.disabled = true;
+                    return;
+                }
+            }
+
             // Hide map, show quiz
             mapSection.classList.add('hidden');
             quizSection.classList.remove('hidden');
             hideTooltip();
 
-            // Start a new quiz round with 10 new questions
+            // Start a new quiz round with new questions
             startNewQuizRound();
         }
 
         function restart() {
-            // Reset ALL state variables
-            currentQuestion = 0;
-            userResponses = [];
-            allUserResponses = [];
-            allQuestionsShown = [];
-            askedQuestionIndices = [];
-            currentRound = 0;
-            selectedOption = null;
-            questionsData = [];
-
-            // Hide quiz and map, show intro
-            mapSection.classList.add('hidden');
-            quizSection.classList.add('hidden');
-            introSection.classList.remove('hidden');
-            progressFill.style.width = '0%';
-            hideTooltip();
+            // Simply reload the page to fully reset all state
+            location.reload();
         }
 
         // Handle window resize

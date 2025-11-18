@@ -2213,11 +2213,15 @@
             // Create knowledge heatmap
             drawKnowledgeHeatmap(width, height);
 
-            // Draw Wikipedia article dots (between heatmap and questions)
-            drawWikipediaArticles(width, height);
+            // Defer drawing markers until next frame to ensure canvas is properly sized
+            // This prevents the visual glitch where dots appear in wrong positions during heatmap generation
+            requestAnimationFrame(() => {
+                // Draw Wikipedia article dots (between heatmap and questions)
+                drawWikipediaArticles(width, height);
 
-            // Draw question markers
-            drawQuestionMarkers(width, height);
+                // Draw question markers
+                drawQuestionMarkers(width, height);
+            });
 
             // Add interactivity
             addInteractivity(width, height);

@@ -2700,8 +2700,26 @@
                 const mouseX = (e.clientX - rect.left) / rect.width * width;
                 const mouseY = (e.clientY - rect.top) / rect.height * height;
 
-                // Check if clicking on a Wikipedia article
+                // First, check if hovering over a question dot - if so, don't handle article clicks
+                let hoveringQuestion = false;
+                questionsData.forEach((q, idx) => {
+                    const x = q.x * width;
+                    const y = q.y * height;
+                    const dist = Math.sqrt((mouseX - x) ** 2 + (mouseY - y) ** 2);
+                    if (dist < 15) {
+                        hoveringQuestion = true;
+                    }
+                });
+
+                // If hovering over a question, don't process article clicks
+                if (hoveringQuestion) {
+                    return;
+                }
+
+                // Check if clicking on a Wikipedia article (find closest one within threshold)
                 let clickedArticle = null;
+                let minDist = 8; // Threshold distance
+
                 wikipediaArticles.forEach((article, idx) => {
                     // Skip articles outside extended region
                     if (article.x < -0.5 || article.x > 1.5 || article.y < -0.5 || article.y > 1.5) {
@@ -2712,12 +2730,14 @@
                     const y = article.y * height;
                     const dist = Math.sqrt((mouseX - x) ** 2 + (mouseY - y) ** 2);
 
-                    if (dist < 8) {
+                    // Only select if closer than current closest (prevents multiple opens)
+                    if (dist < minDist) {
+                        minDist = dist;
                         clickedArticle = article;
                     }
                 });
 
-                // Open Wikipedia article in new tab
+                // Open Wikipedia article in new tab (only opens one article - the closest)
                 if (clickedArticle && clickedArticle.url) {
                     window.open(clickedArticle.url, '_blank');
                 }

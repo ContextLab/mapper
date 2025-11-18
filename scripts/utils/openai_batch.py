@@ -67,9 +67,12 @@ def create_batch_request(
         body = {
             "model": model,
             "messages": messages,
-            "temperature": temperature,
             "max_completion_tokens": max_tokens  # Use max_completion_tokens for GPT-5-nano
         }
+
+        # Only add temperature if not using default (GPT-5-nano only supports temperature=1)
+        if temperature != 1.0:
+            body["temperature"] = temperature
 
         # Add response format if provided
         if response_format:

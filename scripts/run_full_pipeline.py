@@ -1,138 +1,357 @@
 #!/usr/bin/env python3
 """
-Full Knowledge Map Pipeline
+Full Multi-Level Knowledge Map Pipeline
 
-This script runs the complete pipeline to generate a knowledge map visualization:
-1. Generate question embeddings
-2. Project Wikipedia articles and questions to 2D UMAP space
-3. Filter articles within question bounding box
-4. Generate heatmap cell labels using LLM
-5. Export all visualization data to JSON
+This script orchestrates the complete pipeline to generate a 5-level hierarchical
+knowledge map using GPT-5-nano Batch API.
+
+Pipeline Steps:
+1. Rebuild UMAP (250K articles, ~30-60 min)
+2. Find optimal rectangle
+3. Export level-0 articles
+4. Generate heatmap labels (GPT-5-nano batched)
+5. Extract level-0 concepts (GPT-5-nano batched)
+6. Generate level-0 questions (GPT-5-nano batched)
+7. Generate levels 1-4 (iterative broadening)
+8. Merge all levels into final outputs
+9. Validate results
 
 Usage:
-    python scripts/run_full_pipeline.py [--skip-embeddings] [--skip-export] [--skip-labels]
+    python scripts/run_full_pipeline.py [options]
 
 Options:
-    --skip-embeddings    Skip question embedding generation (use existing)
-    --skip-export       Skip Wikipedia article export (use existing)
-    --skip-labels       Skip heatmap label generation (use existing)
-    --grid-size N       Heatmap grid size (default: 40)
-    --k N              Number of nearest neighbors for labeling (default: 10)
+    --skip-umap             Skip UMAP rebuild (use existing)
+    --skip-rectangle        Skip optimal rectangle finding
+    --skip-labels           Skip heatmap label generation
+    --skip-level-0          Skip level-0 generation
+    --levels START END      Generate specific levels (e.g., --levels 1 3)
+    --skip-merge            Skip final data merging
+    --dry-run               Show what would run without executing
+
+Related to Issue #13
 """
 
 import subprocess
 import sys
 import argparse
 from pathlib import Path
+from datetime import datetime
 
 
-def run_command(cmd, description):
-    """Run a command and handle errors"""
-    print("=" * 80)
-    print(f"{description}")
-    print("=" * 80)
-    print(f"Running: {' '.join(cmd)}")
+def print_header(text):
+    """Print formatted header"""
     print()
+    print("=" * 80)
+    print(text)
+    print("=" * 80)
+    print()
+
+
+def print_step(step_num, total_steps, description):
+    """Print step header"""
+    print()
+    print("=" * 80)
+    print(f"STEP {step_num}/{total_steps}: {description}")
+    print("=" * 80)
+    print()
+
+
+def run_command(cmd, description, dry_run=False):
+    """Run a command and handle errors"""
+    print(f"Command: {' '.join(cmd)}")
+    print()
+
+    if dry_run:
+        print("[DRY RUN] Would execute command")
+        return True
 
     result = subprocess.run(cmd, capture_output=False)
 
     if result.returncode != 0:
         print(f"\n✗ Error: {description} failed with code {result.returncode}")
-        sys.exit(1)
+        print("Pipeline stopped.")
+        return False
 
     print(f"\n✓ {description} completed successfully")
-    print()
+    return True
+
+
+def check_file_exists(filepath, description):
+    """Check if required file exists"""
+    if not Path(filepath).exists():
+        print(f"✗ Error: Required file missing: {filepath}")
+        print(f"   {description}")
+        return False
+    return True
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Run full knowledge map pipeline')
-    parser.add_argument('--skip-embeddings', action='store_true',
-                       help='Skip question embedding generation')
-    parser.add_argument('--skip-export', action='store_true',
-                       help='Skip Wikipedia article export')
+    parser = argparse.ArgumentParser(
+        description='Run full multi-level knowledge map pipeline',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  # Full pipeline (all steps)
+  python scripts/run_full_pipeline.py
+
+  # Skip UMAP rebuild (use existing)
+  python scripts/run_full_pipeline.py --skip-umap
+
+  # Generate only levels 1-2
+  python scripts/run_full_pipeline.py --skip-level-0 --levels 1 2
+
+  # Dry run (show what would execute)
+  python scripts/run_full_pipeline.py --dry-run
+        """
+    )
+
+    parser.add_argument('--skip-umap', action='store_true',
+                       help='Skip UMAP rebuild (use existing)')
+    parser.add_argument('--skip-rectangle', action='store_true',
+                       help='Skip optimal rectangle finding')
     parser.add_argument('--skip-labels', action='store_true',
                        help='Skip heatmap label generation')
-    parser.add_argument('--grid-size', type=int, default=40,
-                       help='Heatmap grid size (default: 40)')
-    parser.add_argument('--k', type=int, default=10,
-                       help='Number of nearest neighbors for labeling (default: 10)')
+    parser.add_argument('--skip-level-0', action='store_true',
+                       help='Skip level-0 generation')
+    parser.add_argument('--levels', nargs=2, type=int, metavar=('START', 'END'),
+                       help='Generate specific levels (e.g., --levels 1 3)')
+    parser.add_argument('--skip-merge', action='store_true',
+                       help='Skip final data merging')
+    parser.add_argument('--dry-run', action='store_true',
+                       help='Show what would run without executing')
 
     args = parser.parse_args()
 
-    print("=" * 80)
-    print("KNOWLEDGE MAP GENERATION PIPELINE")
-    print("=" * 80)
-    print()
-    print("This pipeline will:")
-    print("  1. Generate question embeddings (if not skipped)")
-    print("  2. Rebuild UMAP projections (if not skipped)")
-    print("  3. Export Wikipedia articles with UMAP coordinates")
-    print("  4. Generate heatmap cell labels using LLM")
-    print()
-
-    # Step 1: Generate question embeddings
-    if not args.skip_embeddings:
-        run_command(
-            ['python3', 'scripts/generate_question_embeddings.py'],
-            "Step 1: Generating question embeddings"
-        )
-    else:
-        print("Skipping question embedding generation (--skip-embeddings)")
-        print()
-
-    # Step 2: Rebuild UMAP projections
-    if not args.skip_embeddings:  # Only rebuild if we generated new embeddings
-        run_command(
-            ['python3', 'scripts/rebuild_umap.py'],
-            "Step 2: Rebuilding UMAP projections"
-        )
-    else:
-        print("Skipping UMAP rebuild (--skip-embeddings implies existing UMAP)")
-        print()
-
-    # Step 3: Export Wikipedia articles
-    if not args.skip_export:
-        run_command(
-            ['python3', 'scripts/export_wikipedia_articles.py'],
-            "Step 3: Exporting Wikipedia articles and questions"
-        )
-    else:
-        print("Skipping Wikipedia article export (--skip-export)")
-        print()
-
-    # Step 4: Generate heatmap labels
+    # Calculate total steps
+    total_steps = 0
+    if not args.skip_umap:
+        total_steps += 1
+    if not args.skip_rectangle:
+        total_steps += 1
+    if not args.skip_rectangle:
+        total_steps += 1  # export articles
     if not args.skip_labels:
-        run_command(
-            ['python3', 'scripts/generate_heatmap_labels.py',
-             '--grid-size', str(args.grid_size),
-             '--k', str(args.k)],
-            "Step 4: Generating heatmap cell labels"
-        )
+        total_steps += 1
+    if not args.skip_level_0:
+        total_steps += 2  # concepts + questions
+
+    # Level 1-4 generation
+    if args.levels:
+        level_range = range(args.levels[0], args.levels[1] + 1)
     else:
-        print("Skipping heatmap label generation (--skip-labels)")
+        level_range = range(1, 5) if not args.skip_level_0 else range(1, 5)
+    total_steps += len(level_range)
+
+    if not args.skip_merge:
+        total_steps += 1
+
+    # Print pipeline overview
+    print_header("MULTI-LEVEL KNOWLEDGE MAP PIPELINE")
+    print(f"Started: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"Total steps: {total_steps}")
+    print()
+    print("Pipeline configuration:")
+    print(f"  UMAP rebuild: {'SKIP' if args.skip_umap else 'RUN'}")
+    print(f"  Optimal rectangle: {'SKIP' if args.skip_rectangle else 'RUN'}")
+    print(f"  Heatmap labels: {'SKIP' if args.skip_labels else 'RUN'}")
+    print(f"  Level 0: {'SKIP' if args.skip_level_0 else 'RUN'}")
+    print(f"  Levels 1-4: {list(level_range)}")
+    print(f"  Data merging: {'SKIP' if args.skip_merge else 'RUN'}")
+    print(f"  Mode: {'DRY RUN' if args.dry_run else 'EXECUTE'}")
+    print()
+
+    if args.dry_run:
+        print("DRY RUN MODE: Commands will be displayed but not executed")
         print()
 
-    # Summary
-    print("=" * 80)
-    print("✓ PIPELINE COMPLETE")
-    print("=" * 80)
+    current_step = 0
+
+    # Step: Rebuild UMAP (250K articles)
+    if not args.skip_umap:
+        current_step += 1
+        print_step(current_step, total_steps, "Rebuild UMAP (250K articles)")
+
+        print("This step fits UMAP on all 250K Wikipedia articles.")
+        print("Estimated time: 30-60 minutes")
+        print()
+
+        if not run_command(
+            ['python3', 'scripts/rebuild_umap.py'],
+            "UMAP rebuild",
+            args.dry_run
+        ):
+            return 1
+
+    # Step: Find optimal rectangle
+    if not args.skip_rectangle:
+        current_step += 1
+        print_step(current_step, total_steps, "Find optimal coverage rectangle")
+
+        print("This step finds the optimal rectangle that maximizes article coverage.")
+        print("Estimated time: 5-10 minutes")
+        print()
+
+        if not run_command(
+            ['python3', 'scripts/find_optimal_coverage_rectangle.py'],
+            "Optimal rectangle finding",
+            args.dry_run
+        ):
+            return 1
+
+    # Step: Export level-0 articles
+    if not args.skip_rectangle:
+        current_step += 1
+        print_step(current_step, total_steps, "Export level-0 articles")
+
+        print("This step exports articles within the optimal rectangle.")
+        print("Estimated time: 1-2 minutes")
+        print()
+
+        if not run_command(
+            ['python3', 'scripts/export_wikipedia_articles.py'],
+            "Article export",
+            args.dry_run
+        ):
+            return 1
+
+    # Step: Generate heatmap labels
+    if not args.skip_labels:
+        current_step += 1
+        print_step(current_step, total_steps, "Generate heatmap cell labels (GPT-5-nano)")
+
+        print("This step generates semantic labels for 1,521 heatmap cells.")
+        print("Uses: OpenAI Batch API with prompt caching")
+        print("Estimated time: 1-2 hours")
+        print("Estimated cost: $0.01-0.02")
+        print()
+
+        if not run_command(
+            ['python3', 'scripts/generate_heatmap_labels_gpt5.py'],
+            "Heatmap label generation",
+            args.dry_run
+        ):
+            return 1
+
+    # Step: Extract level-0 concepts
+    if not args.skip_level_0:
+        current_step += 1
+        print_step(current_step, total_steps, "Extract level-0 concepts (GPT-5-nano)")
+
+        print("This step extracts 2-4 concepts from each level-0 article.")
+        print("Uses: OpenAI Batch API with prompt caching")
+        print("Estimated time: 2-3 hours")
+        print("Estimated cost: $0.01-0.02")
+        print()
+
+        if not run_command(
+            ['python3', 'scripts/extract_level_0_concepts_gpt5.py'],
+            "Level-0 concept extraction",
+            args.dry_run
+        ):
+            return 1
+
+    # Step: Generate level-0 questions
+    if not args.skip_level_0:
+        current_step += 1
+        print_step(current_step, total_steps, "Generate level-0 questions (GPT-5-nano)")
+
+        print("This step generates 1 question per concept.")
+        print("Uses: OpenAI Batch API with prompt caching")
+        print("Estimated time: 2-3 hours")
+        print("Estimated cost: $0.01-0.02")
+        print()
+
+        if not run_command(
+            ['python3', 'scripts/generate_level_0_questions_gpt5.py'],
+            "Level-0 question generation",
+            args.dry_run
+        ):
+            return 1
+
+    # Steps: Generate levels 1-4
+    for level in level_range:
+        current_step += 1
+        print_step(current_step, total_steps, f"Generate level {level} (broader concepts)")
+
+        print(f"This step generates progressively broader content for level {level}:")
+        print("  1. Suggest broader Wikipedia articles (GPT-5-nano)")
+        print("  2. Download articles")
+        print("  3. Generate embeddings and project to UMAP")
+        print("  4. Extract concepts (GPT-5-nano)")
+        print("  5. Generate questions (GPT-5-nano)")
+        print(f"Estimated time: 2-3 hours per level")
+        print(f"Estimated cost: ~$0.50 per level")
+        print()
+
+        if not run_command(
+            ['python3', 'scripts/generate_level_n.py', '--level', str(level)],
+            f"Level {level} generation",
+            args.dry_run
+        ):
+            return 1
+
+    # Step: Merge all levels
+    if not args.skip_merge:
+        current_step += 1
+        print_step(current_step, total_steps, "Merge multi-level data")
+
+        print("This step merges all level outputs into final unified files.")
+        print("Outputs:")
+        print("  - wikipedia_articles.json (deduplicated)")
+        print("  - cell_questions.json (merged by cell)")
+        print("Estimated time: 1-2 minutes")
+        print()
+
+        if not run_command(
+            ['python3', 'scripts/merge_multi_level_data.py'],
+            "Data merging",
+            args.dry_run
+        ):
+            return 1
+
+    # Pipeline complete
+    print_header("✓ PIPELINE COMPLETE")
+    print(f"Completed: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print()
-    print("Generated files:")
-    print("  - embeddings/question_embeddings.pkl - Question embeddings")
-    print("  - umap_coords.pkl - Full UMAP coordinates")
-    print("  - data/umap_reducer.pkl - Trained UMAP model")
-    print("  - data/umap_bounds.pkl - Coordinate bounds")
-    print("  - data/question_coordinates.pkl - Question coordinates")
-    print("  - knowledge_map.pkl - Complete knowledge map")
-    print("  - wikipedia_articles.json - Filtered articles with 2D coordinates")
-    print("  - question_coordinates.json - Question coordinate backup")
-    print("  - questions.json - Updated with normalized coordinates")
-    print("  - heatmap_cell_labels.json - 1,521 semantic labels")
+
+    if not args.dry_run:
+        print("Generated files:")
+        print()
+        print("UMAP & Coordinates:")
+        print("  - umap_coords.pkl - Full UMAP coordinates (250K articles)")
+        print("  - data/umap_reducer.pkl - Trained UMAP model")
+        print("  - data/umap_bounds.pkl - Coordinate bounds")
+        print("  - knowledge_map.pkl - Complete knowledge map")
+        print()
+        print("Level 0:")
+        print("  - optimal_rectangle.json - Optimal coverage rectangle")
+        print("  - wikipedia_articles_level_0.json - Level-0 articles")
+        print("  - heatmap_cell_labels.json - Semantic cell labels")
+        print("  - level_0_concepts.json - Extracted concepts")
+        print("  - cell_questions_level_0.json - Level-0 questions")
+        print()
+        print("Levels 1-4:")
+        for level in level_range:
+            print(f"  - wikipedia_articles_level_{level}.json")
+            print(f"  - level_{level}_concepts.json")
+            print(f"  - cell_questions_level_{level}.json")
+        print()
+        print("Final Merged Outputs:")
+        print("  - wikipedia_articles.json - All articles (deduplicated)")
+        print("  - cell_questions.json - All questions (merged by cell)")
+        print("  - notes/merge_validation_report.json - Validation results")
+        print()
+        print("Next steps:")
+        print("  1. Review validation report: cat notes/merge_validation_report.json")
+        print("  2. View visualization: python -m http.server 8000")
+        print("     Then open: http://localhost:8000/index.html")
+    else:
+        print("DRY RUN completed. No files were modified.")
+        print("Run without --dry-run to execute the pipeline.")
+
     print()
-    print("You can now view the visualization by opening index.html in a web browser")
-    print("(make sure to serve it via HTTP, e.g., python -m http.server 8000)")
-    print()
+    return 0
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

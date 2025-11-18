@@ -139,7 +139,7 @@ def wait_for_batch(
     client: OpenAI,
     batch_id: str,
     poll_interval: int = 60,
-    timeout: int = 3600
+    timeout: Optional[int] = 3600
 ) -> Dict[str, Any]:
     """
     Wait for batch to complete, polling status periodically.
@@ -148,7 +148,7 @@ def wait_for_batch(
         client: OpenAI client
         batch_id: Batch ID to monitor
         poll_interval: Seconds between status checks (default: 60)
-        timeout: Maximum seconds to wait (default: 3600 = 1 hour)
+        timeout: Maximum seconds to wait (default: 3600 = 1 hour), None for no timeout
 
     Returns:
         Dict containing batch status and metadata
@@ -160,13 +160,16 @@ def wait_for_batch(
     start_time = time.time()
 
     print(f"Waiting for batch {batch_id} to complete...")
-    print(f"Polling every {poll_interval}s (timeout: {timeout}s)")
+    if timeout is None:
+        print(f"Polling every {poll_interval}s (no timeout)")
+    else:
+        print(f"Polling every {poll_interval}s (timeout: {timeout}s)")
     print()
 
     while True:
-        # Check timeout
+        # Check timeout (if set)
         elapsed = time.time() - start_time
-        if elapsed > timeout:
+        if timeout is not None and elapsed > timeout:
             raise TimeoutError(
                 f"Batch {batch_id} did not complete within {timeout}s"
             )
@@ -283,15 +286,37 @@ def parse_batch_results(
         # Get message content
         content = response['body']['choices'][0]['message']['content']
 
-        # Parse JSON if requested
+        # Parse JSON if requested (with retry logic)
         if extract_json:
-            try:
-                content = json.loads(content)
-            except json.JSONDecodeError as e:
-                errors[custom_id] = f"JSON parse error: {e}"
-                continue
+            max_retries = 3
+            parsed_content = None
 
-        results[custom_id] = content
+            for attempt in range(max_retries):
+                try:
+                    parsed_content = json.loads(content)
+                    break  # Success
+                except json.JSONDecodeError as e:
+                    if attempt < max_retries - 1:
+                        # Retry - content might have formatting issues
+                        # Try stripping whitespace and removing markdown code blocks
+                        content = content.strip()
+                        if content.startswith('```json'):
+                            content = content[7:]
+                        if content.startswith('```'):
+                            content = content[3:]
+                        if content.endswith('```'):
+                            content = content[:-3]
+                        content = content.strip()
+                    else:
+                        # Final attempt failed - skip this result
+                        errors[custom_id] = f"JSON parse error after {max_retries} attempts: {e}"
+                        break
+
+            if parsed_content is not None:
+                results[custom_id] = parsed_content
+            # If still None after retries, the error was already logged
+        else:
+            results[custom_id] = content
 
     print(f"Parsed {len(results)} successful results, {len(errors)} errors")
 
@@ -315,7 +340,7 @@ def batch_with_cache(
     max_tokens: int = 500,
     response_format: Optional[Dict] = None,
     poll_interval: int = 60,
-    timeout: int = 3600
+    timeout: Optional[int] = 3600
 ) -> Dict[str, Any]:
     """
     Complete batch workflow with prompt caching.

@@ -1,0 +1,69 @@
+{
+  "articles": {
+    "total_articles": 0,
+    "duplicate_titles": [],
+    "missing_fields": [],
+    "invalid_coordinates": [],
+    "errors": []
+  },
+  "cell_questions": {
+    "total_cells": 0,
+    "total_questions": 0,
+    "duplicate_cells": [],
+    "invalid_coordinates": [],
+    "missing_cell_fields": [],
+    "missing_question_fields": [],
+    "errors": []
+  },
+  "merge_stats": {
+    "articles": {
+      "0": {
+        "total": 0,
+        "unique": 0,
+        "duplicates": 0
+      },
+      "1": {
+        "total": 0,
+        "unique": 0,
+        "duplicates": 0
+      },
+      "2": {
+        "total": 0,
+        "unique": 0,
+        "duplicates": 0
+      },
+      "3": {
+        "total": 0,
+        "unique": 0,
+        "duplicates": 0
+      },
+      "4": {
+        "total": 0,
+        "unique": 0,
+        "duplicates": 0
+      }
+    },
+    "cell_questions": {
+      "0": {
+        "cells": 0,
+        "questions": 0
+      },
+      "1": {
+        "cells": 0,
+        "questions": 0
+      },
+      "2": {
+        "cells": 0,
+        "questions": 0
+      },
+      "3": {
+        "cells": 0,
+        "questions": 0
+      },
+      "4": {
+        "cells": 0,
+        "questions": 0
+      }
+    }
+  }
+}

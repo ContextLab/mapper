@@ -98,6 +98,7 @@
             font-size: 0.9em;
             color: #00693E;
             font-weight: 600;
+            display: none; /* Hidden per issue #4 */
         }
 
         .confidence-display {
@@ -131,8 +132,9 @@
             height: 8px;
             background: #dee2e6;
             border-radius: 4px;
-            overflow: hidden;
+            overflow: visible;
             margin-bottom: 8px;
+            position: relative;
         }
 
         .confidence-fill {
@@ -142,11 +144,34 @@
             transition: width 0.5s ease;
         }
 
+        .confidence-threshold {
+            position: absolute;
+            left: 90%;
+            top: -8px;
+            bottom: -8px;
+            width: 2px;
+            background: #333;
+            z-index: 10;
+        }
+
+        .confidence-threshold::after {
+            content: 'High confidence threshold';
+            position: absolute;
+            top: -22px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75em;
+            color: #333;
+            white-space: nowrap;
+            font-weight: 600;
+        }
+
         .confidence-message {
             font-size: 0.85em;
             color: #666;
             margin: 0;
             text-align: center;
+            display: none; /* Hidden per issue #5 */
         }
 
         .question-text {
@@ -237,6 +262,34 @@
 
         .btn-secondary:hover {
             background: #e0e0e0;
+        }
+
+        .btn-info {
+            background: #17a2b8;
+            color: white;
+        }
+
+        .btn-info:hover:not(:disabled) {
+            background: #138496;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(23, 162, 184, 0.4);
+        }
+
+        .btn-info:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-skip {
+            background: #ffc107;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .btn-skip:hover {
+            background: #e0a800;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
         }
 
         .map-container {
@@ -938,6 +991,7 @@
                         </div>
                         <div class="confidence-bar">
                             <div class="confidence-fill" id="confidence-fill"></div>
+                            <div class="confidence-threshold"></div>
                         </div>
                         <p class="confidence-message" id="confidence-message">Answer more questions to build confidence...</p>
                     </div>
@@ -948,7 +1002,8 @@
 
                 <div class="button-container">
                     <button class="btn btn-secondary hidden" id="prev-btn"><i class="fas fa-arrow-left"></i> Previous</button>
-                    <button class="btn btn-secondary" id="skip-btn">Skip <i class="fas fa-forward"></i></button>
+                    <button class="btn btn-skip" id="dont-know-btn"><i class="fas fa-question-circle"></i> I Don't Know</button>
+                    <button class="btn btn-info" id="show-map-btn"><i class="fas fa-map"></i> Show Map</button>
                     <button class="btn btn-primary" id="next-btn" disabled>Next <i class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
@@ -958,6 +1013,19 @@
                 <div class="map-header">
                     <h2>Your Knowledge Map</h2>
                     <p>Hover to explore your knowledge map</p>
+                </div>
+
+                <!-- Confidence Display (also shown on map when adaptive sampling is active) -->
+                <div class="confidence-display hidden" id="map-confidence-display">
+                    <div class="confidence-header">
+                        <span class="confidence-label">Map Coverage Confidence</span>
+                        <span class="confidence-value" id="map-confidence-value">0%</span>
+                    </div>
+                    <div class="confidence-bar">
+                        <div class="confidence-fill" id="map-confidence-fill"></div>
+                        <div class="confidence-threshold"></div>
+                    </div>
+                    <p class="confidence-message" id="map-confidence-message">Answer more questions to build confidence...</p>
                 </div>
 
                 <div class="map-container">
@@ -970,8 +1038,8 @@
                             <span>Correct response</span>
                         </div>
                         <div class="legend-item">
-                            <div class="legend-dot" style="background: rgb(218, 165, 32);"></div>
-                            <span>Skipped question</span>
+                            <div class="legend-dot" style="background: rgb(255, 193, 7);"></div>
+                            <span>I Don't Know</span>
                         </div>
                         <div class="legend-item">
                             <div class="legend-dot" style="background: rgb(139, 69, 19);"></div>
@@ -1016,7 +1084,7 @@
                 </div>
 
                 <div class="button-container">
-                    <button class="btn btn-primary" id="another-round-btn"><i class="fas fa-play"></i> Another Round</button>
+                    <button class="btn btn-primary" id="another-round-btn"><i class="fas fa-play"></i> Answer More Questions</button>
                     <button class="btn btn-secondary" id="restart-btn"><i class="fas fa-rotate-right"></i> Start Over</button>
                 </div>
             </div>
@@ -1145,7 +1213,8 @@
         const optionsContainer = document.getElementById('options-container');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
-        const skipBtn = document.getElementById('skip-btn');
+        const dontKnowBtn = document.getElementById('dont-know-btn');
+        const showMapBtn = document.getElementById('show-map-btn');
         const restartBtn = document.getElementById('restart-btn');
         const anotherRoundBtn = document.getElementById('another-round-btn');
         const startQuizBtn = document.getElementById('start-quiz-btn');
@@ -1207,18 +1276,23 @@
                 this.askedCells = [];
                 this.responses = {};  // cellKey → true/false
                 this.uncertaintyMap = {};
+                this.askedQuestions = new Set();  // Track individual question IDs to prevent re-asking
             }
 
             // === Phase 1: Infrastructure ===
 
             _getAvailableQuestions() {
-                // Return all questions from cells that haven't been asked
+                // Return all questions from cells that haven't been fully exhausted
                 const available = [];
                 for (const cellData of this.questionsPool.cells) {
                     const cellKey = `${cellData.cell.gx}_${cellData.cell.gy}`;
-                    if (!this.askedCells.includes(cellKey)) {
-                        for (const question of cellData.questions) {
-                            available.push({ ...question, cellKey, cellData });
+                    // Include cells even if asked before, but filter individual questions
+                    for (let i = 0; i < cellData.questions.length; i++) {
+                        const question = cellData.questions[i];
+                        const questionId = `${cellKey}_${i}`;
+                        // Only include questions that haven't been asked
+                        if (!this.askedQuestions.has(questionId)) {
+                            available.push({ ...question, cellKey, cellData, questionId });
                         }
                     }
                 }
@@ -1276,7 +1350,10 @@
                 for (const neighbor of nearest) {
                     const dist = neighbor.distance;
                     const weight = Math.exp(-dist * dist / (2 * sigma * sigma));
-                    const correct = responses[neighbor.cellKey] ? 1.0 : 0.0;
+                    // Handle fractional correctness values
+                    const correct = typeof responses[neighbor.cellKey] === 'number' ?
+                                    responses[neighbor.cellKey] :
+                                    (responses[neighbor.cellKey] ? 1.0 : 0.0);
 
                     weightedCorrectness += weight * correct;
                     totalWeight += weight;
@@ -1308,8 +1385,12 @@
                             responses
                         );
                     } else {
+                        // Handle fractional correctness values
+                        const correctness = typeof responses[cellKey] === 'number' ?
+                                          responses[cellKey] :
+                                          (responses[cellKey] ? 1.0 : 0.0);
                         uncertaintyMap[cellKey] = {
-                            predictedCorrectness: responses[cellKey] ? 1.0 : 0.0,
+                            predictedCorrectness: correctness,
                             uncertainty: 0.0,
                             confidence: 1.0
                         };
@@ -1406,18 +1487,31 @@
                     return null;
                 }
 
+                let selectedQuestion;
                 if (this.askedCells.length < this.config.initialRandomQuestions) {
-                    return this._selectGeometric(availableQuestions);
+                    selectedQuestion = this._selectGeometric(availableQuestions);
+                } else {
+                    selectedQuestion = this._selectUncertaintyWeighted(availableQuestions);
                 }
 
-                return this._selectUncertaintyWeighted(availableQuestions);
+                // Mark question as asked
+                if (selectedQuestion && selectedQuestion.questionId) {
+                    this.askedQuestions.add(selectedQuestion.questionId);
+                }
+
+                return selectedQuestion;
             }
 
-            recordResponse(cellKey, isCorrect) {
+            recordResponse(cellKey, isCorrect, fractionalCorrectness = null) {
                 if (!this.askedCells.includes(cellKey)) {
                     this.askedCells.push(cellKey);
                 }
-                this.responses[cellKey] = isCorrect;
+                // Support fractional correctness (e.g., 0.1 for "I Don't Know")
+                if (fractionalCorrectness !== null) {
+                    this.responses[cellKey] = fractionalCorrectness;
+                } else {
+                    this.responses[cellKey] = isCorrect ? 1.0 : 0.0;
+                }
             }
 
             // === Phase 4: Confidence Metrics ===
@@ -1505,6 +1599,7 @@
                 this.askedCells = [];
                 this.responses = {};
                 this.uncertaintyMap = {};
+                this.askedQuestions = new Set();
             }
         }
 
@@ -1738,8 +1833,15 @@
                 const weight = Math.exp(-(dist * dist) / (2 * sigma * sigma));
 
                 if (userResponses[idx] !== undefined && userResponses[idx] !== null) {
-                    const isCorrect = userResponses[idx] === q.correctIndex;
-                    knowledge += weight * (isCorrect ? 1 : 0);
+                    let correctness;
+                    if (userResponses[idx] === -1 || q.skipped) {
+                        // "I Don't Know" - 0.1 correctness
+                        correctness = 0.1;
+                    } else {
+                        const isCorrect = userResponses[idx] === q.correctIndex;
+                        correctness = isCorrect ? 1 : 0;
+                    }
+                    knowledge += weight * correctness;
                     totalWeight += weight;
                 }
             });
@@ -1770,7 +1872,8 @@
         // Event listeners
         nextBtn.addEventListener('click', handleNext);
         prevBtn.addEventListener('click', handlePrevious);
-        skipBtn.addEventListener('click', handleSkip);
+        dontKnowBtn.addEventListener('click', handleDontKnow);
+        showMapBtn.addEventListener('click', handleShowMap);
         restartBtn.addEventListener('click', restart);
         anotherRoundBtn.addEventListener('click', startAnotherRound);
         startQuizBtn.addEventListener('click', startQuiz);
@@ -1975,8 +2078,29 @@
             }
         }
 
-        function handleSkip() {
-            // Leave current question unanswered
+        function handleDontKnow() {
+            // Record "I Don't Know" response with correctness=0.1
+            const skippedIndex = -1; // Special marker for "I Don't Know"
+            userResponses[currentQuestion] = skippedIndex;
+
+            // Mark this question as skipped
+            questionsData[currentQuestion].skipped = true;
+
+            // Record response in adaptive sampler with low correctness
+            if (adaptiveSampler && questionsData[currentQuestion].cellKey) {
+                adaptiveSampler.recordResponse(questionsData[currentQuestion].cellKey, false, 0.1);
+
+                // Update confidence display
+                updateConfidenceDisplay();
+
+                // Log confidence stats
+                const stats = adaptiveSampler.getStats();
+                console.log(`Question ${currentQuestion + 1}: I Don't Know (0.1 correctness) | ` +
+                           `Confidence: ${(stats.overallConfidence * 100).toFixed(1)}% | ` +
+                           `Coverage: ${(stats.coverageConfidence * 100).toFixed(1)}%`);
+            }
+
+            // Move to next question or show results
             if (currentQuestion < questionsData.length - 1) {
                 currentQuestion++;
                 selectedOption = null;
@@ -1986,10 +2110,44 @@
             }
         }
 
+        function handleShowMap() {
+            // Show map at any time, even if not all questions answered
+            if (userResponses.length === 0 && currentQuestion === 0) {
+                // No questions answered yet, don't show map
+                alert('Please answer at least one question before viewing the map.');
+                return;
+            }
+            showResults();
+        }
+
         function showResults() {
             quizSection.classList.add('hidden');
             mapSection.classList.remove('hidden');
             loading.classList.remove('hidden');
+
+            // Show confidence display on map if adaptive sampling is enabled
+            if (adaptiveSampler) {
+                const mapConfidenceDisplay = document.getElementById('map-confidence-display');
+                const mapConfidenceValue = document.getElementById('map-confidence-value');
+                const mapConfidenceFill = document.getElementById('map-confidence-fill');
+
+                const stats = adaptiveSampler.getStats();
+                const percent = Math.round(stats.overallConfidence * 100);
+
+                mapConfidenceValue.textContent = `${percent}%`;
+                mapConfidenceFill.style.width = `${percent}%`;
+                mapConfidenceDisplay.classList.remove('hidden');
+
+                // Check if all questions are exhausted
+                const availableQuestions = adaptiveSampler._getAvailableQuestions();
+                if (availableQuestions.length === 0) {
+                    anotherRoundBtn.disabled = true;
+                    anotherRoundBtn.innerHTML = '<i class="fas fa-check"></i> All Questions Completed';
+                } else {
+                    anotherRoundBtn.disabled = false;
+                    anotherRoundBtn.innerHTML = '<i class="fas fa-play"></i> Answer More Questions';
+                }
+            }
 
             // Add current round questions and responses to full history
             allUserResponses.push(...userResponses);
@@ -2155,10 +2313,17 @@
                         const dy = y - q.y;
                         const dist = Math.sqrt(dx * dx + dy * dy);
                         const weight = Math.exp(-(dist * dist) / (2 * sigma * sigma));
-                        
+
                         if (userResponses[idx] !== undefined) {
-                            const isCorrect = userResponses[idx] === q.correctIndex;
-                            knowledge += weight * (isCorrect ? 1 : 0);
+                            let correctness;
+                            if (userResponses[idx] === -1 || q.skipped) {
+                                // "I Don't Know" - 0.1 correctness
+                                correctness = 0.1;
+                            } else {
+                                const isCorrect = userResponses[idx] === q.correctIndex;
+                                correctness = isCorrect ? 1 : 0;
+                            }
+                            knowledge += weight * correctness;
                             totalWeight += weight;
                         }
                     });
@@ -2278,6 +2443,7 @@
                 const radius = 12;
 
                 const wasAnswered = userResponses[idx] !== undefined;
+                const isSkipped = userResponses[idx] === -1 || q.skipped;
                 const isCorrect = userResponses[idx] === q.correctIndex;
 
                 // Get animation progress for this dot (0 = not hovered, 1 = fully hovered)
@@ -2293,6 +2459,9 @@
                 if (!wasAnswered) {
                     // Unanswered - intermediate knowledge (goldenrod)
                     baseColor = 'rgb(218, 165, 32)';
+                } else if (isSkipped) {
+                    // "I Don't Know" - yellow
+                    baseColor = 'rgb(255, 193, 7)';
                 } else if (isCorrect) {
                     // Correct - high knowledge (Dartmouth Green)
                     baseColor = 'rgb(0, 105, 62)';
@@ -2542,6 +2711,7 @@
 
         function showTooltip(canvasRect, question) {
             const wasAnswered = userResponses[question.index] !== undefined;
+            const isSkipped = userResponses[question.index] === -1 || question.skipped;
             const isCorrect = userResponses[question.index] === question.correctIndex;
 
             // Display question number (simple index, no offset needed since questionsData contains all questions via swap)
@@ -2551,6 +2721,9 @@
             if (!wasAnswered) {
                 status = 'Unanswered';
                 statusColor = 'rgb(218, 165, 32)';  // Intermediate knowledge (goldenrod)
+            } else if (isSkipped) {
+                status = "I Don't Know";
+                statusColor = 'rgb(255, 193, 7)';  // Yellow
             } else if (isCorrect) {
                 status = 'Correct';
                 statusColor = 'rgb(0, 105, 62)';  // High knowledge (Dartmouth Green)
@@ -2736,12 +2909,22 @@
         }
 
         function startAnotherRound() {
+            // Check if there are any questions left
+            if (adaptiveSampler) {
+                const availableQuestions = adaptiveSampler._getAvailableQuestions();
+                if (availableQuestions.length === 0) {
+                    alert('All questions have been asked! No more questions available.');
+                    anotherRoundBtn.disabled = true;
+                    return;
+                }
+            }
+
             // Hide map, show quiz
             mapSection.classList.add('hidden');
             quizSection.classList.remove('hidden');
             hideTooltip();
 
-            // Start a new quiz round with 10 new questions
+            // Start a new quiz round with new questions
             startNewQuizRound();
         }
 
@@ -2755,6 +2938,24 @@
             currentRound = 0;
             selectedOption = null;
             questionsData = [];
+
+            // Reset adaptive sampler state
+            if (adaptiveSampler) {
+                adaptiveSampler.reset();
+            }
+
+            // Re-enable "Answer More Questions" button
+            anotherRoundBtn.disabled = false;
+
+            // Hide confidence displays
+            confidenceDisplay.classList.add('hidden');
+            confidenceValue.textContent = '0%';
+            confidenceFill.style.width = '0%';
+
+            const mapConfidenceDisplay = document.getElementById('map-confidence-display');
+            if (mapConfidenceDisplay) {
+                mapConfidenceDisplay.classList.add('hidden');
+            }
 
             // Hide quiz and map, show intro
             mapSection.classList.add('hidden');

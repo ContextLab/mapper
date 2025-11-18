@@ -61,17 +61,19 @@ from utils.openai_batch import batch_with_cache
 
 
 # System prompt for caching across all requests
+# NOTE: GPT-5-nano does not support structured outputs, so we ask for plain text only
 SYSTEM_PROMPT = """You are an expert at creating concise, meaningful labels for clusters of related academic articles.
 
-Given a list of article titles and excerpts, generate a SHORT (2-4 word) label that captures the main theme.
+Given a list of article titles, generate a SHORT (2-5 word) label that captures the main theme.
 
 The label should be:
-- Concise and descriptive
+- Concise and descriptive (2-5 words maximum)
 - Capturing the common theme across articles
 - Suitable for a knowledge map visualization
 - Academic and professional in tone
+- Title Case formatting
 
-Return JSON: {"label": "short label", "reasoning": "brief explanation"}"""
+Respond with ONLY the label, nothing else."""
 
 
 def load_api_key() -> str:
@@ -327,8 +329,19 @@ def update_cells_with_labels(
         if custom_id in results:
             result = results[custom_id]
 
-            # Extract label and reasoning
-            if isinstance(result, dict) and 'label' in result:
+            # GPT-5-nano returns plain text (not structured JSON)
+            # Just use the text as the label
+            if isinstance(result, str):
+                label = result.strip()
+                updated_cell['label'] = label
+                updated_cell['label_metadata'] = {
+                    'model': 'gpt-5-nano',
+                    'generated_at': datetime.now().isoformat(),
+                    'num_articles': len(updated_cell['articles_in_cell'])
+                }
+                successful += 1
+            elif isinstance(result, dict) and 'label' in result:
+                # Legacy support for structured JSON (shouldn't happen with GPT-5-nano)
                 updated_cell['label'] = result['label']
                 updated_cell['label_metadata'] = {
                     'model': 'gpt-5-nano',
@@ -438,31 +451,11 @@ def main():
     # Prepare batch requests
     requests, cell_articles = prepare_batch_requests(cells, articles, grid_size)
 
-    # Define JSON schema for structured output
-    response_format = {
-        "type": "json_schema",
-        "json_schema": {
-            "name": "cell_label_response",
-            "strict": True,
-            "schema": {
-                "type": "object",
-                "properties": {
-                    "label": {
-                        "type": "string",
-                        "description": "A concise 2-4 word label for the cell"
-                    },
-                    "reasoning": {
-                        "type": "string",
-                        "description": "Brief explanation of why this label was chosen"
-                    }
-                },
-                "required": ["label", "reasoning"],
-                "additionalProperties": False
-            }
-        }
-    }
-
     # Run batch with caching (no timeout - will wait indefinitely)
+    # NOTE: GPT-5-nano does NOT support:
+    #   - structured outputs (response_format)
+    #   - custom temperature (only default temp=1)
+    #   - Uses reasoning tokens that count toward max_completion_tokens
     print("Submitting batch to OpenAI...")
     print()
 
@@ -473,9 +466,9 @@ def main():
             system_prompt=SYSTEM_PROMPT,
             description="Heatmap cell label generation (GPT-5-nano)",
             model="gpt-5-nano",
-            temperature=0.7,
-            max_tokens=300,
-            response_format=response_format,
+            temperature=0.7,  # Will be ignored for gpt-5-nano (uses temp=1)
+            max_tokens=1500,  # Higher limit to account for reasoning tokens
+            response_format=None,  # GPT-5-nano does not support structured outputs
             poll_interval=60,
             timeout=None  # No timeout - wait indefinitely
         )

@@ -70,8 +70,9 @@ def create_batch_request(
             "max_completion_tokens": max_tokens  # Use max_completion_tokens for GPT-5-nano
         }
 
-        # Only add temperature if not using default (GPT-5-nano only supports temperature=1)
-        if temperature != 1.0:
+        # GPT-5-nano only supports temperature=1 (default), so don't include it
+        # For other models, include temperature if not using default
+        if model != "gpt-5-nano" and temperature != 1.0:
             body["temperature"] = temperature
 
         # Add response format if provided

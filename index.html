@@ -2150,9 +2150,16 @@
             }
 
             // Add current round questions and responses to full history
-            // Only include questions that have actually been answered (up to currentQuestion)
-            const answeredQuestions = questionsData.slice(0, Math.max(currentQuestion + 1, userResponses.length));
-            const answeredResponses = userResponses.slice(0, answeredQuestions.length);
+            // Only include questions that have actually been answered (have a response)
+            const answeredQuestions = [];
+            const answeredResponses = [];
+
+            for (let i = 0; i < questionsData.length; i++) {
+                if (userResponses[i] !== undefined) {
+                    answeredQuestions.push(questionsData[i]);
+                    answeredResponses.push(userResponses[i]);
+                }
+            }
 
             allUserResponses.push(...answeredResponses);
             allQuestionsShown.push(...answeredQuestions);
@@ -2933,42 +2940,8 @@
         }
 
         function restart() {
-            // Reset ALL state variables
-            currentQuestion = 0;
-            userResponses = [];
-            allUserResponses = [];
-            allQuestionsShown = [];
-            askedQuestionIndices = [];
-            currentRound = 0;
-            selectedOption = null;
-            questionsData = [];
-
-            // Reset adaptive sampler state
-            if (adaptiveSampler) {
-                adaptiveSampler.reset();
-            }
-
-            // Re-enable "Answer More Questions" button
-            anotherRoundBtn.disabled = false;
-
-            // Hide confidence displays
-            confidenceDisplay.classList.add('hidden');
-            confidenceValue.textContent = '0%';
-            confidenceFill.style.width = '0%';
-
-            const mapConfidenceDisplay = document.getElementById('map-confidence-display');
-            if (mapConfidenceDisplay) {
-                mapConfidenceDisplay.classList.add('hidden');
-            }
-
-            // Hide quiz and map, show intro
-            mapSection.classList.add('hidden');
-            quizSection.classList.add('hidden');
-            introSection.classList.remove('hidden');
-            hideTooltip();
-
-            // Reinitialize the quiz by calling startQuiz
-            startQuiz();
+            // Simply reload the page to fully reset all state
+            location.reload();
         }
 
         // Handle window resize

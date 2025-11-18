@@ -588,10 +588,10 @@ class MultiLevelAdaptiveSampler extends AdaptiveSampler {
         const confidence = this.computeConfidence();
         const questionsAsked = this.askedCells.length;
 
-        // Progression criteria
+        // Progression criteria (updated per user feedback)
         const coverageThreshold = 0.70;
         const confidenceThreshold = 0.85;
-        const minQuestions = 3;
+        const minQuestions = 5;  // Require 5 questions per level
 
         return (
             questionsAsked >= minQuestions &&
@@ -605,7 +605,7 @@ class MultiLevelAdaptiveSampler extends AdaptiveSampler {
 **Tests** (`tests/test_multi_level_adaptive_sampler.js`):
 1. ✅ **Level progression**: Start at level 4, progress to 3, 2, 1, 0
 2. ✅ **Coverage threshold**: Don't progress until 70% coverage
-3. ✅ **Minimum questions**: Don't progress before 3 questions per level
+3. ✅ **Minimum questions**: Don't progress before 5 questions per level
 4. ✅ **Performance weighting**: Sample from correct areas (expertise) and incorrect areas (gaps)
 5. ✅ **Early exit**: Allow exit at any level if confidence ≥ 90%
 
@@ -949,14 +949,26 @@ def test_no_duplicate_articles():
 
 ---
 
-## Questions for Discussion
+## Decisions & Answers to Implementation Questions
 
-1. **UMAP Verification**: Should we rebuild UMAP proactively, or only if verification fails?
-2. **Article Suggestion Count**: Start with 1-3 suggestions per question, or use 2-5 for better coverage at higher levels?
-3. **Level Progression Speed**: Should we require 3 or 5 questions per level before progressing?
-4. **Parallel Generation**: Should levels 1-4 be generated in parallel (faster) or sequentially (safer)?
-5. **Backup Strategy**: Keep all backups indefinitely, or only most recent 3?
+1. **UMAP Verification**: ✅ Only rebuild if verification fails
+   - **Additional step if rebuild needed**: Estimate GPT-4o-mini regeneration cost
+   - Agent will generate sample labels/questions for test cells
+   - Track input/output tokens to estimate full regeneration cost
+   - GPT-4o-mini pricing: $0.05/1M input tokens ($0.005/1M cached), $0.40/1M output tokens
+   - If cost-effective: Regenerate labels/questions via parallel OpenAI API batches (much faster)
+
+2. **Article Suggestion Count**: ✅ 1-3 articles per lower-level article
+
+3. **Level Progression Speed**: ✅ Require 5 questions per level before progressing
+
+4. **Parallel Generation**: ✅ Sequential generation (levels depend on previous level)
+
+5. **Backup Strategy**: ✅ One-time manual backup of files ≥100MB (not on GitHub)
+   - No automated backup system needed
+   - Only backup current versions before modification
+   - Focus on large files that can't be stored on GitHub
 
 ---
 
-**Ready for review and feedback!**
+**Status**: Approved - Ready for implementation

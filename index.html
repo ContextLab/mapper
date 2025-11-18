@@ -133,7 +133,7 @@
             background: #dee2e6;
             border-radius: 4px;
             overflow: visible;
-            margin-bottom: 8px;
+            margin-bottom: 28px;
             position: relative;
         }
 
@@ -155,9 +155,9 @@
         }
 
         .confidence-threshold::after {
-            content: 'High confidence threshold';
+            content: 'High Confidence';
             position: absolute;
-            top: -22px;
+            bottom: -22px;
             left: 50%;
             transform: translateX(-50%);
             font-size: 0.75em;
@@ -241,13 +241,14 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #00693E 0%, #004d2c 100%);
-            color: white;
+            background: #dee2e6;
+            color: #333;
         }
 
         .btn-primary:hover:not(:disabled) {
+            background: #ced4da;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 105, 62, 0.4);
+            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
         }
 
         .btn-primary:disabled {
@@ -256,23 +257,23 @@
         }
 
         .btn-secondary {
-            background: #f5f5f5;
+            background: #dee2e6;
             color: #333;
         }
 
         .btn-secondary:hover {
-            background: #e0e0e0;
+            background: #ced4da;
         }
 
         .btn-info {
-            background: #17a2b8;
-            color: white;
+            background: #dee2e6;
+            color: #333;
         }
 
         .btn-info:hover:not(:disabled) {
-            background: #138496;
+            background: #ced4da;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(23, 162, 184, 0.4);
+            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
         }
 
         .btn-info:disabled {
@@ -280,16 +281,26 @@
             cursor: not-allowed;
         }
 
+        .btn-info.high-confidence {
+            background: linear-gradient(135deg, #00693E, #004d2c);
+            color: white;
+        }
+
+        .btn-info.high-confidence:hover:not(:disabled) {
+            background: linear-gradient(135deg, #004d2c, #003520);
+            box-shadow: 0 5px 15px rgba(0, 105, 62, 0.4);
+        }
+
         .btn-skip {
-            background: #ffc107;
+            background: #dee2e6;
             color: #333;
             font-weight: 600;
         }
 
         .btn-skip:hover {
-            background: #e0a800;
+            background: #ced4da;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
         }
 
         .map-container {
@@ -375,20 +386,6 @@
             display: none;
         }
 
-        .progress-bar {
-            height: 6px;
-            background: #e0e0e0;
-            border-radius: 3px;
-            overflow: hidden;
-            margin-bottom: 30px;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #00693E 0%, #004d2c 100%);
-            width: 0%;
-            transition: width 0.5s ease;
-        }
 
         .legend {
             position: absolute;
@@ -974,10 +971,6 @@
 
             <!-- Quiz Section -->
             <div id="quiz-section" class="quiz-section hidden">
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progress-fill"></div>
-                </div>
-
                 <div class="question-section fade-in" id="question-container">
                     <div class="question-header">
                         <span class="question-number" id="question-number">Question 1 of 10</span>
@@ -1039,7 +1032,7 @@
                         </div>
                         <div class="legend-item">
                             <div class="legend-dot" style="background: rgb(255, 193, 7);"></div>
-                            <span>I Don't Know</span>
+                            <span>Skipped/Unsure</span>
                         </div>
                         <div class="legend-item">
                             <div class="legend-dot" style="background: rgb(139, 69, 19);"></div>
@@ -1068,7 +1061,8 @@
                     </div>
                 </div>
 
-                <div class="stats">
+                <!-- Hidden stats elements (kept for JavaScript compatibility) -->
+                <div class="stats hidden">
                     <div class="stat-item">
                         <div class="stat-value" id="correct-count">0</div>
                         <div class="stat-label">Correct</div>
@@ -1223,7 +1217,6 @@
         const closeAboutBtn = document.getElementById('close-about');
         const copyCitationBtn = document.getElementById('copy-citation-btn');
         const contactForm = document.getElementById('contact-form');
-        const progressFill = document.getElementById('progress-fill');
         const confidenceDisplay = document.getElementById('confidence-display');
         const confidenceValue = document.getElementById('confidence-value');
         const confidenceFill = document.getElementById('confidence-fill');
@@ -1331,12 +1324,10 @@
             }
 
             estimateUncertainty(cellKey, askedCells, responses) {
-                const K = this.config.K;
                 const sigma = this.config.sigma;
 
-                const nearest = this.findKNearestAsked(cellKey, askedCells, K);
-
-                if (nearest.length === 0) {
+                // If no questions answered, return default values
+                if (askedCells.length === 0) {
                     return {
                         predictedCorrectness: 0.5,
                         uncertainty: 1.0,
@@ -1344,16 +1335,20 @@
                     };
                 }
 
+                // Use ALL answered questions with Gaussian kernel weighting
+                const cellIdx = this.cellKeyToIndex[cellKey];
                 let totalWeight = 0;
                 let weightedCorrectness = 0;
 
-                for (const neighbor of nearest) {
-                    const dist = neighbor.distance;
+                for (const askedCell of askedCells) {
+                    const askedIdx = this.cellKeyToIndex[askedCell];
+                    const dist = this.distances[cellIdx][askedIdx];
                     const weight = Math.exp(-dist * dist / (2 * sigma * sigma));
+
                     // Handle fractional correctness values
-                    const correct = typeof responses[neighbor.cellKey] === 'number' ?
-                                    responses[neighbor.cellKey] :
-                                    (responses[neighbor.cellKey] ? 1.0 : 0.0);
+                    const correct = typeof responses[askedCell] === 'number' ?
+                                    responses[askedCell] :
+                                    (responses[askedCell] ? 1.0 : 0.0);
 
                     weightedCorrectness += weight * correct;
                     totalWeight += weight;
@@ -1370,7 +1365,7 @@
                     predictedCorrectness: p,
                     uncertainty: uncertainty,
                     confidence: 1 - uncertainty,
-                    numNeighbors: nearest.length
+                    numNeighbors: askedCells.length
                 };
             }
 
@@ -1403,8 +1398,12 @@
             // === Phase 3: Uncertainty-Weighted Selection ===
 
             scoreCell(cellKey, askedCells, uncertaintyMap) {
-                const alpha = this.config.alpha;
-                const beta = this.config.beta;
+                // Calculate alpha and beta dynamically based on confidence
+                // When confidence is low: prioritize spreading out (high alpha, low beta)
+                // When confidence is high: prioritize uncertainty reduction (low alpha, high beta)
+                const confidence = this.computeConfidence().overallConfidence;
+                const alpha = 2 * (1 - confidence);
+                const beta = 2 * confidence;
 
                 let minDistance = 1.0;
                 if (askedCells.length > 0) {
@@ -1975,6 +1974,16 @@
             confidenceValue.textContent = `${percent}%`;
             confidenceFill.style.width = `${percent}%`;
 
+            // Update "Show Map" button color based on confidence
+            const showMapBtn = document.getElementById('show-map-btn');
+            if (showMapBtn) {
+                if (percent >= 90) {
+                    showMapBtn.classList.add('high-confidence');
+                } else {
+                    showMapBtn.classList.remove('high-confidence');
+                }
+            }
+
             // Update message based on confidence level
             if (stats.canExit) {
                 confidenceMessage.textContent = `${percent}% confidence - You can view your results now!`;
@@ -1997,8 +2006,6 @@
             const q = questionsData[currentQuestion];
             questionNumber.textContent = `Question ${currentQuestion + 1} of ${questionsData.length}`;
             questionText.textContent = q.question;
-            
-            progressFill.style.width = `${(currentQuestion / questionsData.length) * 100}%`;
 
             optionsContainer.innerHTML = '';
             // Convert options object {A: "...", B: "...", C: "...", D: "..."} to array
@@ -2024,9 +2031,7 @@
 
             prevBtn.classList.toggle('hidden', currentQuestion === 0);
             nextBtn.disabled = selectedOption === null;
-            nextBtn.innerHTML = currentQuestion === questionsData.length - 1 ?
-                'See Results <i class="fas fa-chart-line"></i>' :
-                'Next <i class="fas fa-arrow-right"></i>';
+            nextBtn.innerHTML = 'Next <i class="fas fa-arrow-right"></i>';
 
             questionContainer.classList.remove('fade-in');
             void questionContainer.offsetWidth;
@@ -2111,12 +2116,7 @@
         }
 
         function handleShowMap() {
-            // Show map at any time, even if not all questions answered
-            if (userResponses.length === 0 && currentQuestion === 0) {
-                // No questions answered yet, don't show map
-                alert('Please answer at least one question before viewing the map.');
-                return;
-            }
+            // Show map at any time, even if no questions answered (will show all 0.5)
             showResults();
         }
 
@@ -2150,21 +2150,25 @@
             }
 
             // Add current round questions and responses to full history
-            allUserResponses.push(...userResponses);
-            allQuestionsShown.push(...questionsData);
+            // Only include questions that have actually been answered (up to currentQuestion)
+            const answeredQuestions = questionsData.slice(0, Math.max(currentQuestion + 1, userResponses.length));
+            const answeredResponses = userResponses.slice(0, answeredQuestions.length);
+
+            allUserResponses.push(...answeredResponses);
+            allQuestionsShown.push(...answeredQuestions);
 
             // Calculate accuracy for current round
             let correct = 0;
-            userResponses.forEach((response, index) => {
-                if (response === questionsData[index].correctIndex) {
+            answeredResponses.forEach((response, index) => {
+                if (response !== undefined && response === answeredQuestions[index].correctIndex) {
                     correct++;
                 }
             });
 
-            // Update stats (current round)
+            // Stats will be removed from display, but keeping calculation for potential future use
             document.getElementById('correct-count').textContent = correct;
-            document.getElementById('accuracy-pct').textContent = `${Math.round((correct / questionsData.length) * 100)}%`;
-            document.getElementById('total-count').textContent = questionsData.length;
+            document.getElementById('accuracy-pct').textContent = answeredResponses.length > 0 ? `${Math.round((correct / answeredResponses.length) * 100)}%` : '0%';
+            document.getElementById('total-count').textContent = answeredResponses.length;
 
             setTimeout(() => {
                 loading.classList.add('hidden');
@@ -2961,8 +2965,10 @@
             mapSection.classList.add('hidden');
             quizSection.classList.add('hidden');
             introSection.classList.remove('hidden');
-            progressFill.style.width = '0%';
             hideTooltip();
+
+            // Reinitialize the quiz by calling startQuiz
+            startQuiz();
         }
 
         // Handle window resize

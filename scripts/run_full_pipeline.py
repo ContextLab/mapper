@@ -133,7 +133,7 @@ Examples:
     if not args.skip_labels:
         total_steps += 1
     if not args.skip_level_0:
-        total_steps += 2  # concepts + questions
+        total_steps += 1  # level 0 (unified concepts + questions)
 
     # Level 1-4 generation
     if args.levels:
@@ -232,38 +232,22 @@ Examples:
         ):
             return 1
 
-    # Step: Extract level-0 concepts
+    # Step: Generate level 0 (unified script)
     if not args.skip_level_0:
         current_step += 1
-        print_step(current_step, total_steps, "Extract level-0 concepts (GPT-5-nano)")
+        print_step(current_step, total_steps, "Generate level 0 (concepts + questions)")
 
-        print("This step extracts 2-4 concepts from each level-0 article.")
+        print("This step processes existing Wikipedia articles to:")
+        print("  1. Extract 1-3 concepts per article (GPT-5-nano)")
+        print("  2. Generate 1 question per suitable concept (GPT-5-nano)")
         print("Uses: OpenAI Batch API with prompt caching")
         print("Estimated time: 2-3 hours")
-        print("Estimated cost: $0.01-0.02")
+        print("Estimated cost: $0.02-0.05")
         print()
 
         if not run_command(
-            ['python3', 'scripts/extract_level_0_concepts_gpt5.py'],
-            "Level-0 concept extraction",
-            args.dry_run
-        ):
-            return 1
-
-    # Step: Generate level-0 questions
-    if not args.skip_level_0:
-        current_step += 1
-        print_step(current_step, total_steps, "Generate level-0 questions (GPT-5-nano)")
-
-        print("This step generates 1 question per concept.")
-        print("Uses: OpenAI Batch API with prompt caching")
-        print("Estimated time: 2-3 hours")
-        print("Estimated cost: $0.01-0.02")
-        print()
-
-        if not run_command(
-            ['python3', 'scripts/generate_level_0_questions_gpt5.py'],
-            "Level-0 question generation",
+            ['python3', '-u', 'scripts/generate_level_n.py', '--level', '0'],
+            "Level 0 generation",
             args.dry_run
         ):
             return 1
@@ -284,7 +268,7 @@ Examples:
         print()
 
         if not run_command(
-            ['python3', 'scripts/generate_level_n.py', '--level', str(level)],
+            ['python3', '-u', 'scripts/generate_level_n.py', '--level', str(level)],
             f"Level {level} generation",
             args.dry_run
         ):
@@ -325,10 +309,11 @@ Examples:
         print()
         print("Level 0:")
         print("  - optimal_rectangle.json - Optimal coverage rectangle")
-        print("  - wikipedia_articles_level_0.json - Level-0 articles")
+        print("  - wikipedia_articles.json - Base articles (with coordinates)")
         print("  - heatmap_cell_labels.json - Semantic cell labels")
         print("  - level_0_concepts.json - Extracted concepts")
         print("  - cell_questions_level_0.json - Level-0 questions")
+        print("  - wikipedia_articles_level_0.json - Copy of base articles")
         print()
         print("Levels 1-4:")
         for level in level_range:

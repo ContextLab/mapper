@@ -55,19 +55,18 @@ Given a specific concept and source article, suggest 1-3 Wikipedia article title
 - Connect to broader themes or principles
 - Are more comprehensive than the source article
 
-Return JSON with this exact structure:
-{
-  "suggestions": [
-    {"title": "Article Title 1", "reasoning": "Why this is broader..."},
-    {"title": "Article Title 2", "reasoning": "Why this is broader..."}
-  ]
-}
+Format your response as pipe-delimited lines (one per suggestion):
+TITLE|Reasoning why this is broader
 
 Guidelines:
 - Suggest REAL Wikipedia articles (verify titles exist)
 - Move up the conceptual hierarchy (specific → general)
 - Avoid lateral connections (stay focused on broadening)
 - Return 1-3 suggestions per concept (quality over quantity)
+
+Example:
+Cellular respiration|Provides broader context for mitochondrial function
+Bioenergetics|Covers energy transformations across biological systems
 """
 
 CONCEPT_EXTRACTION_SYSTEM_PROMPT = """You are an expert at analyzing educational content to identify conceptual vs. factual material.
@@ -76,12 +75,15 @@ You distinguish between articles that test understanding of principles (suitable
 
 Extract 1-3 core concepts/principles from the article that could be tested with "why/how" questions.
 
-Return JSON with this exact structure:
-{
-  "suitable": true/false,
-  "concepts": ["concept 1", "concept 2", "concept 3"],
-  "reasoning": "Brief explanation of suitability"
-}
+Format your response as:
+SUITABLE: yes/no
+REASONING: Brief explanation
+CONCEPTS:
+- Concept 1
+- Concept 2
+- Concept 3
+
+If unsuitable, you may omit the CONCEPTS section.
 """
 
 QUESTION_GENERATION_SYSTEM_PROMPT = """You are an expert educator who creates conceptual questions testing understanding of WHY and HOW, not WHAT or WHEN.
@@ -89,6 +91,14 @@ QUESTION_GENERATION_SYSTEM_PROMPT = """You are an expert educator who creates co
 Your questions test principles and mechanisms, never definitions or facts.
 
 Your questions are completely self-contained and never reference source material.
+
+Format your response as:
+QUESTION: [question text]
+A: [option A]
+B: [option B]
+C: [option C]
+D: [option D]
+CORRECT: [A/B/C/D]
 
 Generate questions that:
 - Test understanding of WHY or HOW a principle/mechanism works
@@ -244,51 +254,36 @@ Return 1-3 suggestions."""
             'user_prompt': prompt
         })
 
-    # Define response format
-    response_format = {
-        "type": "json_schema",
-        "json_schema": {
-            "name": "article_suggestions",
-            "strict": True,
-            "schema": {
-                "type": "object",
-                "properties": {
-                    "suggestions": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "title": {"type": "string"},
-                                "reasoning": {"type": "string"}
-                            },
-                            "required": ["title", "reasoning"],
-                            "additionalProperties": False
-                        }
-                    }
-                },
-                "required": ["suggestions"],
-                "additionalProperties": False
-            }
-        }
-    }
-
-    # Submit batch
+    # Submit batch (NO response_format for GPT-5-nano)
     results = batch_with_cache(
         client=client,
         requests=requests,
         system_prompt=ARTICLE_SUGGESTION_SYSTEM_PROMPT,
         description=f"Level N article suggestions ({len(concepts)} concepts)",
-        response_format=response_format,
-        temperature=0.7,
-        max_tokens=500
+        response_format=None,  # GPT-5-nano doesn't support structured outputs
+        temperature=1.0,  # GPT-5-nano only supports temp=1
+        max_tokens=1500,  # Higher limit for reasoning tokens
+        timeout=None  # No timeout - wait indefinitely for batch to complete
     )
 
-    # Parse results
+    # Parse plain text results
     suggestions_by_concept = {}
     for i, concept_data in enumerate(concepts):
         custom_id = f'concept-{i}'
         if custom_id in results:
-            suggestions_by_concept[custom_id] = results[custom_id].get('suggestions', [])
+            # Parse pipe-delimited format
+            suggestions = []
+            text = results[custom_id]
+            for line in text.strip().split('\n'):
+                line = line.strip()
+                if '|' in line:
+                    parts = line.split('|', 1)
+                    if len(parts) == 2:
+                        suggestions.append({
+                            'title': parts[0].strip(),
+                            'reasoning': parts[1].strip()
+                        })
+            suggestions_by_concept[custom_id] = suggestions
         else:
             suggestions_by_concept[custom_id] = []
 
@@ -408,10 +403,20 @@ def generate_and_project_embeddings(
     print(f"Projecting to UMAP space...")
     umap_coords = umap_reducer.transform(embeddings)
 
-    # Normalize to [0, 1] range
-    x_min, x_max = umap_coords[:, 0].min(), umap_coords[:, 0].max()
-    y_min, y_max = umap_coords[:, 1].min(), umap_coords[:, 1].max()
+    # Load level 0 normalization bounds from wikipedia_articles.json
+    # (so all levels use the same coordinate space as the heatmap)
+    print(f"Loading level 0 coordinate bounds for normalization...")
+    with open('wikipedia_articles.json', 'r') as f:
+        level_0_articles = json.load(f)
 
+    level_0_umap_x = [a['umap_x'] for a in level_0_articles]
+    level_0_umap_y = [a['umap_y'] for a in level_0_articles]
+    x_min, x_max = min(level_0_umap_x), max(level_0_umap_x)
+    y_min, y_max = min(level_0_umap_y), max(level_0_umap_y)
+
+    print(f"  Level 0 UMAP bounds: x=[{x_min:.3f}, {x_max:.3f}], y=[{y_min:.3f}, {y_max:.3f}]")
+
+    # Normalize new articles to [0, 1] range using level 0 bounds
     x_norm = (umap_coords[:, 0] - x_min) / (x_max - x_min)
     y_norm = (umap_coords[:, 1] - y_min) / (y_max - y_min)
 
@@ -426,7 +431,8 @@ def generate_and_project_embeddings(
 
     print()
     print(f"✓ Generated embeddings and projected to UMAP space")
-    print(f"  Coord range: x=[{x_norm.min():.3f}, {x_norm.max():.3f}], y=[{y_norm.min():.3f}, {y_norm.max():.3f}]")
+    print(f"  New articles coord range: x=[{x_norm.min():.3f}, {x_norm.max():.3f}], y=[{y_norm.min():.3f}, {y_norm.max():.3f}]")
+    print(f"  (Note: May extend beyond [0,1] if articles are broader than level 0)")
     print()
 
     return articles
@@ -496,48 +502,58 @@ UNSUITABLE articles are primarily:
             'user_prompt': prompt
         })
 
-    # Define response format
-    response_format = {
-        "type": "json_schema",
-        "json_schema": {
-            "name": "concept_extraction",
-            "strict": True,
-            "schema": {
-                "type": "object",
-                "properties": {
-                    "suitable": {"type": "boolean"},
-                    "concepts": {
-                        "type": "array",
-                        "items": {"type": "string"}
-                    },
-                    "reasoning": {"type": "string"}
-                },
-                "required": ["suitable", "concepts", "reasoning"],
-                "additionalProperties": False
-            }
-        }
-    }
-
-    # Submit batch
+    # Submit batch (NO response_format for GPT-5-nano)
     results = batch_with_cache(
         client=client,
         requests=requests,
         system_prompt=CONCEPT_EXTRACTION_SYSTEM_PROMPT,
         description=f"Level N concept extraction ({len(articles)} articles)",
-        response_format=response_format,
-        temperature=0.3,
-        max_tokens=400
+        response_format=None,  # GPT-5-nano doesn't support structured outputs
+        temperature=1.0,  # GPT-5-nano only supports temp=1
+        max_tokens=1500,  # Higher limit for reasoning tokens
+        timeout=None  # No timeout - wait indefinitely for batch to complete
     )
 
+    # Parse plain text results
+    parsed_results = {}
+    for article_id, text in results.items():
+        # Parse structured text format
+        suitable = False
+        concepts = []
+        reasoning = ""
+
+        lines = text.strip().split('\n')
+        in_concepts = False
+
+        for line in lines:
+            line = line.strip()
+            if line.startswith('SUITABLE:'):
+                suitable_text = line.split(':', 1)[1].strip().lower()
+                suitable = suitable_text in ['yes', 'true', 'y']
+            elif line.startswith('REASONING:'):
+                reasoning = line.split(':', 1)[1].strip()
+            elif line.startswith('CONCEPTS:'):
+                in_concepts = True
+            elif in_concepts and line.startswith('-'):
+                concept = line[1:].strip()
+                if concept:
+                    concepts.append(concept)
+
+        parsed_results[article_id] = {
+            'suitable': suitable,
+            'concepts': concepts,
+            'reasoning': reasoning
+        }
+
     print()
-    print(f"✓ Extracted concepts from {len(results)}/{len(articles)} articles")
+    print(f"✓ Extracted concepts from {len(parsed_results)}/{len(articles)} articles")
 
     # Count suitable articles
-    suitable = sum(1 for r in results.values() if r.get('suitable', False))
-    print(f"  Suitable articles: {suitable}/{len(results)}")
+    suitable = sum(1 for r in parsed_results.values() if r.get('suitable', False))
+    print(f"  Suitable articles: {suitable}/{len(parsed_results)}")
     print()
 
-    return results
+    return parsed_results
 
 
 # ============================================================================
@@ -625,62 +641,63 @@ Generate ONE question that:
         })
         article_id_map[request_id] = i
 
-    # Define response format
-    response_format = {
-        "type": "json_schema",
-        "json_schema": {
-            "name": "conceptual_question",
-            "strict": True,
-            "schema": {
-                "type": "object",
-                "properties": {
-                    "question": {"type": "string"},
-                    "options": {
-                        "type": "object",
-                        "properties": {
-                            "A": {"type": "string"},
-                            "B": {"type": "string"},
-                            "C": {"type": "string"},
-                            "D": {"type": "string"}
-                        },
-                        "required": ["A", "B", "C", "D"],
-                        "additionalProperties": False
-                    },
-                    "correct_answer": {"type": "string"}
-                },
-                "required": ["question", "options", "correct_answer"],
-                "additionalProperties": False
-            }
-        }
-    }
-
-    # Submit batch
+    # Submit batch (NO response_format for GPT-5-nano)
     results = batch_with_cache(
         client=client,
         requests=requests,
         system_prompt=QUESTION_GENERATION_SYSTEM_PROMPT,
         description=f"Level N question generation ({len(requests)} articles)",
-        response_format=response_format,
-        temperature=0.7,
-        max_tokens=500
+        response_format=None,  # GPT-5-nano doesn't support structured outputs
+        temperature=1.0,  # GPT-5-nano only supports temp=1
+        max_tokens=2000,  # Higher limit for reasoning tokens
+        timeout=None  # No timeout - wait indefinitely for batch to complete
     )
 
-    # Organize results by article
+    # Parse plain text results and organize by article
     questions_by_article = {}
-    for request_id, question_data in results.items():
+    for request_id, text in results.items():
         article_idx = article_id_map.get(request_id)
-        if article_idx is not None:
+        if article_idx is None:
+            continue
+
+        # Parse structured text format
+        question = ""
+        options = {}
+        correct_answer = ""
+
+        lines = text.strip().split('\n')
+        for line in lines:
+            line = line.strip()
+            if line.startswith('QUESTION:'):
+                question = line.split(':', 1)[1].strip()
+            elif line.startswith('A:'):
+                options['A'] = line.split(':', 1)[1].strip()
+            elif line.startswith('B:'):
+                options['B'] = line.split(':', 1)[1].strip()
+            elif line.startswith('C:'):
+                options['C'] = line.split(':', 1)[1].strip()
+            elif line.startswith('D:'):
+                options['D'] = line.split(':', 1)[1].strip()
+            elif line.startswith('CORRECT:'):
+                correct_answer = line.split(':', 1)[1].strip()
+
+        # Only add if we got all required fields
+        if question and len(options) == 4 and correct_answer:
             article_id = f'article-{article_idx}'
             article = articles[article_idx]
             concepts = concept_data[article_id].get('concepts', [])
 
-            # Add metadata
-            question_data['source_article'] = article['title']
-            question_data['x'] = article['x']
-            question_data['y'] = article['y']
-            question_data['concepts_tested'] = concepts
-            question_data['parent_concepts'] = article.get('parent_concepts', [])
-            question_data['parent_articles'] = article.get('parent_articles', [])
+            question_data = {
+                'question': question,
+                'options': options,
+                'correct_answer': correct_answer,
+                'source_article': article['title'],
+                'x': article['x'],
+                'y': article['y'],
+                'concepts_tested': concepts,
+                'parent_concepts': article.get('parent_concepts', []),
+                'parent_articles': article.get('parent_articles', [])
+            }
 
             questions_by_article[article_id] = [question_data]
 
@@ -786,6 +803,158 @@ def save_level_outputs(
 # Main Pipeline
 # ============================================================================
 
+def load_level_0_articles() -> List[Dict[str, Any]]:
+    """
+    Load existing wikipedia_articles.json for level 0.
+
+    Merges coordinate data from wikipedia_articles.json with full text
+    from data/wikipedia.pkl.
+
+    Returns:
+        List of article dicts with coordinates and full text
+    """
+    articles_path = 'wikipedia_articles.json'
+    if not os.path.exists(articles_path):
+        raise FileNotFoundError(
+            f"Level 0 articles not found: {articles_path}\n"
+            f"Run export_wikipedia_articles.py first to create level 0 articles."
+        )
+
+    print(f"Loading level 0 articles from {articles_path}...")
+    with open(articles_path, 'r') as f:
+        articles = json.load(f)
+
+    # Load full article text from wikipedia_filtered.pkl (faster than loading all 250K articles)
+    wikipedia_pkl_path = 'data/wikipedia_filtered.pkl'
+    if not os.path.exists(wikipedia_pkl_path):
+        raise FileNotFoundError(
+            f"Wikipedia data not found: {wikipedia_pkl_path}\n"
+            f"This file contains full article text needed for concept extraction.\n"
+            f"Run: python3 scripts/create_filtered_wikipedia.py to generate it."
+        )
+
+    print(f"Loading full article text from {wikipedia_pkl_path}...")
+    with open(wikipedia_pkl_path, 'rb') as f:
+        all_wikipedia_articles = pickle.load(f)
+
+    # Create title -> article mapping for fast lookup
+    title_to_article = {article['title']: article for article in all_wikipedia_articles}
+
+    # Merge text into articles
+    articles_with_text = []
+    missing_text_count = 0
+    for i, article in enumerate(articles):
+        title = article['title']
+
+        # Get full article text if available
+        if title in title_to_article:
+            full_article = title_to_article[title]
+            article['text'] = full_article['text']
+        else:
+            # Fall back to excerpt if full text not found
+            article['text'] = article.get('excerpt', '')
+            missing_text_count += 1
+
+        # Ensure articles have required fields
+        if 'index' not in article:
+            article['index'] = i
+
+        # Level 0 articles have no parents
+        article['parent_concepts'] = []
+        article['parent_articles'] = []
+        article['parent_reasoning'] = []
+
+        articles_with_text.append(article)
+
+    print(f"  Loaded {len(articles_with_text)} articles")
+    if missing_text_count > 0:
+        print(f"  Warning: {missing_text_count} articles missing full text (using excerpts)")
+
+    return articles_with_text
+
+
+def generate_level_0(
+    checkpoint_interval: int = 50,
+    resume_from_checkpoint: bool = True
+):
+    """
+    Generate level 0 (base level) from existing wikipedia_articles.json.
+
+    Level 0 is special - it uses existing articles and skips:
+    - Article suggestion (step 1)
+    - Article download (step 2)
+    - Embedding/UMAP projection (step 3)
+
+    It only performs:
+    - Step 4: Extract concepts from existing articles
+    - Step 5: Generate questions from concepts
+    - Step 6: Save outputs
+
+    Args:
+        checkpoint_interval: Save checkpoint every N articles
+        resume_from_checkpoint: Resume from checkpoint if exists
+    """
+    level = 0
+
+    print("="*80)
+    print(f"LEVEL {level} GENERATION PIPELINE")
+    print("="*80)
+    print()
+    print(f"Timestamp: {datetime.now().isoformat()}")
+    print(f"Level: {level} (BASE LEVEL)")
+    print()
+
+    # Load dependencies
+    articles = load_level_0_articles()
+    client = create_openai_client()
+
+    print(f"Loaded {len(articles)} articles for level 0")
+    print()
+
+    # Step 4: Extract concepts (skip steps 1-3 for level 0)
+    concept_results = extract_concepts_batch(articles, client)
+
+    # Build concept list (no parent tracking for level 0)
+    new_concepts = []
+    for i, article in enumerate(articles):
+        article_id = f'article-{i}'
+        if article_id in concept_results and concept_results[article_id].get('suitable', False):
+            for concept in concept_results[article_id].get('concepts', []):
+                new_concepts.append({
+                    'concept': concept,
+                    'source_article': article['title'],
+                    'level': level,
+                    'x': article['x'],
+                    'y': article['y'],
+                    'parent_concepts': [],  # No parents for level 0
+                    'parent_articles': [],
+                    'reasoning': concept_results[article_id].get('reasoning', '')
+                })
+
+    # Checkpoint
+    save_checkpoint(level, articles, new_concepts, [], 'after_concepts')
+
+    # Step 5: Generate questions
+    questions_by_article = generate_questions_batch(articles, concept_results, client)
+
+    # Flatten to question list
+    all_questions = []
+    for article_questions in questions_by_article.values():
+        all_questions.extend(article_questions)
+
+    # Checkpoint
+    save_checkpoint(level, articles, new_concepts, all_questions, 'final')
+
+    # Step 6: Save outputs
+    save_level_outputs(level, articles, new_concepts, all_questions)
+
+    return {
+        'articles': articles,
+        'concepts': new_concepts,
+        'questions': all_questions
+    }
+
+
 def generate_level_n(
     level: int,
     checkpoint_interval: int = 50,
@@ -795,12 +964,16 @@ def generate_level_n(
     Main pipeline for generating level N.
 
     Args:
-        level: Level to generate (1-4)
+        level: Level to generate (0-4, where 0 is base level)
         checkpoint_interval: Save checkpoint every N articles
         resume_from_checkpoint: Resume from checkpoint if exists
     """
-    if level < 1 or level > 4:
-        raise ValueError(f"Level must be 1-4, got {level}")
+    if level < 0 or level > 4:
+        raise ValueError(f"Level must be 0-4, got {level}")
+
+    # Level 0 is special - uses existing articles
+    if level == 0:
+        return generate_level_0(checkpoint_interval, resume_from_checkpoint)
 
     print("="*80)
     print(f"LEVEL {level} GENERATION PIPELINE")
@@ -884,10 +1057,13 @@ def generate_level_n(
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Generate progressively broader articles and questions for levels 1-4',
+        description='Generate progressively broader articles and questions for levels 0-4',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
+  # Generate level 0 (base level from existing wikipedia_articles.json)
+  python generate_level_n.py --level 0
+
   # Generate level 1 from level 0
   python generate_level_n.py --level 1
 
@@ -901,6 +1077,9 @@ Output files:
   - wikipedia_articles_level_{N}.json: Articles with parent tracking
   - level_{N}_concepts.json: Concepts extracted from articles
   - cell_questions_level_{N}.json: Questions with parent relationships
+
+Note: Level 0 uses existing wikipedia_articles.json and only extracts concepts
+and generates questions (no article suggestion/download/embedding needed).
         """
     )
 
@@ -908,8 +1087,8 @@ Output files:
         '--level',
         type=int,
         required=True,
-        choices=[1, 2, 3, 4],
-        help='Level to generate (1-4)'
+        choices=[0, 1, 2, 3, 4],
+        help='Level to generate (0-4, where 0 is base level)'
     )
 
     parser.add_argument(

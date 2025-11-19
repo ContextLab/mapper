@@ -245,3 +245,4 @@ embeddings/current_checkpoint.pkl
 */*/*/.DS_Store
 embeddings/wikipedia_embeddings.pkl
 umap_coords.pkl
+data/wikipedia_filtered.pkl

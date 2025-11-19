@@ -257,3 +257,8 @@ data/wikipedia_filtered.pkl
 checkpoints.zip
 wikipedia_articles_level_0.json.zip
 level_0_concepts.json.zip
+data.zip
+.gitignore
+backups/embeddings.zip
+backups/large_checkpoints/level_0_final.json
+backups/large_checkpoints/level_1_after_download.json

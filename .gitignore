@@ -246,3 +246,6 @@ embeddings/current_checkpoint.pkl
 embeddings/wikipedia_embeddings.pkl
 umap_coords.pkl
 data/wikipedia_filtered.pkl
+checkpoints.zip
+wikipedia_articles_level_0.json.zip
+level_0_concepts.json.zip

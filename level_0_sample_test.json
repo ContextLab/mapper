@@ -1,0 +1,201 @@
+{
+  "metadata": {
+    "level": 0,
+    "sample_size": 10,
+    "total_questions": 16
+  },
+  "questions": [
+    {
+      "article": "Gracias Por Estar Aqu\u00ed",
+      "concept": "The English translation of the album title: \"Thank You For Being Here\"",
+      "question": "The title \"Gracias Por Estar Aqu\u00ed\" translates to which English phrase?",
+      "options": {
+        "A": "You're Welcome Here",
+        "B": "Thank You For Being Here",
+        "C": "Thanks For Being Here",
+        "D": "Thank You For Staying Here"
+      },
+      "correct": "B"
+    },
+    {
+      "article": "Gracias Por Estar Aqu\u00ed",
+      "concept": "The artist is Mexican",
+      "question": "What is the nationality of the artist who released the album \"Gracias Por Estar Aqu\u00ed\"?",
+      "options": {
+        "A": "Mexican",
+        "B": "Spanish",
+        "C": "American",
+        "D": "Brazilian"
+      },
+      "correct": "A"
+    },
+    {
+      "article": "Angaston Football Club",
+      "concept": "The club's nickname (Panthers)",
+      "question": "Which nickname is used to refer to the Angaston Football Club?",
+      "options": {
+        "A": "Panthers",
+        "B": "Eagles",
+        "C": "Bulldogs",
+        "D": "Kangaroos"
+      },
+      "correct": "A"
+    },
+    {
+      "article": "Angaston Football Club",
+      "concept": "The sport the club plays (Australian rules football)",
+      "question": "Which sport does the Angaston Football Club play?",
+      "options": {
+        "A": "Australian rules football",
+        "B": "Soccer (association football)",
+        "C": "Rugby union",
+        "D": "Cricket"
+      },
+      "correct": "A"
+    },
+    {
+      "article": "Angaston Football Club",
+      "concept": "The club's location (Angaston)",
+      "question": "In which town is the Angaston Football Club based?",
+      "options": {
+        "A": "Angaston",
+        "B": "Tanunda",
+        "C": "Nuriootpa",
+        "D": "Gawler"
+      },
+      "correct": "A"
+    },
+    {
+      "article": "Breakthrough (Colbie Caillat album)",
+      "concept": "Breakthrough is the second studio album by Colbie Caillat.",
+      "question": "In the context of Colbie Caillat's discography, Breakthrough is best described as which of the following?",
+      "options": {
+        "A": "Her debut studio album",
+        "B": "Her second studio album",
+        "C": "A live album",
+        "D": "A greatest-hits compilation"
+      },
+      "correct": "B"
+    },
+    {
+      "article": "Breakthrough (Colbie Caillat album)",
+      "concept": "The artist behind Breakthrough is Colbie Caillat.",
+      "question": "Breakthrough is the second studio album by which artist?",
+      "options": {
+        "A": "Colbie Caillat",
+        "B": "Sara Bareilles",
+        "C": "Norah Jones",
+        "D": "Vanessa Carlton"
+      },
+      "correct": "A"
+    },
+    {
+      "article": "Breakthrough (Colbie Caillat album)",
+      "concept": "Breakthrough is a studio album (not a live album, EP, or compilation).",
+      "question": "Breakthrough is described as Colbie Caillat's second studio album. Which option best defines a studio album, as distinct from a live album, an EP, or a compilation?",
+      "options": {
+        "A": "A live album, recorded during a concert with audience sound.",
+        "B": "An EP, a short release with only a few tracks.",
+        "C": "A compilation, collecting previously released songs from multiple sources.",
+        "D": "A studio album consisting of new, originally recorded material produced in a recording studio."
+      },
+      "correct": "D"
+    },
+    {
+      "article": "Jacobin pigeon",
+      "concept": "Concept 1: The Jacobin is a breed of fancy pigeon.",
+      "question": "Which statement best captures the concept that the Jacobin is a breed of fancy pigeon?",
+      "options": {
+        "A": "It is a wild pigeon species that lives in urban areas.",
+        "B": "It is a breed of fancy pigeon developed through selective breeding.",
+        "C": "It is a homing pigeon bred for message delivery.",
+        "D": "It is a meat-producing pigeon breed raised for squab."
+      },
+      "correct": "B"
+    },
+    {
+      "article": "Jacobin pigeon",
+      "concept": "Concept 2: The Jacobin was developed through long-term selective breeding.",
+      "question": "Which statement best explains how the Jacobin pigeon came to have its distinctive appearance?",
+      "options": {
+        "A": "It evolved its features through natural selection in the wild without human intervention.",
+        "B": "It was produced by a single recent crossbreeding event between two pigeon species.",
+        "C": "It was developed over many generations through deliberate, long-term selective breeding by humans.",
+        "D": "Its traits arose from a spontaneous mutation in one individual that spread rapidly across the population."
+      },
+      "correct": "C"
+    },
+    {
+      "article": "Kichanovo",
+      "concept": "Kichanovo is a rural locality, specifically a village",
+      "question": "Based on the concept of rural localities in Russia, which statement best describes what a village like Kichanovo represents?",
+      "options": {
+        "A": "A large urban center with a complex administrative structure.",
+        "B": "An urban locality with a substantial industrial economy.",
+        "C": "A non-urban inhabited locality, typically with a small population and agricultural or local services.",
+        "D": "A temporary settlement established for seasonal work."
+      },
+      "correct": "C"
+    },
+    {
+      "article": "The Island Packet",
+      "concept": "The Island Packet is a daily morning broadsheet newspaper (format and publication schedule)",
+      "question": "The term \"daily morning broadsheet newspaper\" describes a publication that is:",
+      "options": {
+        "A": "issued weekly in a compact tabloid format.",
+        "B": "issued every morning in a large-format newspaper.",
+        "C": "issued monthly as a digital newsletter.",
+        "D": "issued every afternoon in a small-format newspaper."
+      },
+      "correct": "B"
+    },
+    {
+      "article": "The Island Packet",
+      "concept": "The Island Packet is owned by Chatham Asset Management (ownership)",
+      "question": "The fact that The Island Packet is owned by Chatham Asset Management best illustrates which concept?",
+      "options": {
+        "A": "A private investment firm owning and potentially influencing a newspaper's strategic decisions.",
+        "B": "Public ownership by a government entity.",
+        "C": "Ownership by a broad reader cooperative with no single controlling owner.",
+        "D": "Ownership by a charitable foundation with strict mission constraints."
+      },
+      "correct": "A"
+    },
+    {
+      "article": "ATP cone",
+      "concept": "The ATP-cone as an ATP-binding regulatory domain in proteins.",
+      "question": "Which statement best describes the ATP-cone in proteins?",
+      "options": {
+        "A": "It is an ATP-binding regulatory domain that modulates the protein's activity in response to ATP binding.",
+        "B": "It cleaves ATP to release energy for catalysis.",
+        "C": "It serves as a DNA-binding domain that regulates gene expression.",
+        "D": "It functions as an ATPase catalytic domain that hydrolyzes ATP to drive reactions."
+      },
+      "correct": "A"
+    },
+    {
+      "article": "ATP cone",
+      "concept": "The evolutionary mobility of the ATP-cone (its ability to move between different proteins/domains).",
+      "question": "The evolutionary mobility of the ATP-cone refers to its ability to:",
+      "options": {
+        "A": "remain permanently associated with a single enzyme, limiting regulatory flexibility",
+        "B": "be transferred and integrated into different protein contexts to regulate diverse enzymes via ATP binding",
+        "C": "catalyze ATP hydrolysis across multiple enzyme families",
+        "D": "exist only in a specific lineage and stay tied to a single genomic locus"
+      },
+      "correct": "B"
+    },
+    {
+      "article": "ATP cone",
+      "concept": "How ATP binding to the ATP-cone regulates the activity of the host protein.",
+      "question": "How does ATP binding to the ATP-cone regulate the activity of the host protein?",
+      "options": {
+        "A": "It serves as a substrate and is consumed to power the reaction.",
+        "B": "It triggers proteolytic cleavage that activates the protein.",
+        "C": "It induces a regulatory conformational change (allosteric effect) that increases or decreases activity.",
+        "D": "It recruits an external cofactor that directly supplies catalytic groups."
+      },
+      "correct": "C"
+    }
+  ]
+}

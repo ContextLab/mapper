@@ -192,8 +192,12 @@ def load_umap_reducer() -> Any:
         return pickle.load(f)
 
 
-def load_embedding_model(model_name: str = 'sentence-transformers/all-MiniLM-L6-v2'):
-    """Load sentence-transformers model for embedding generation."""
+def load_embedding_model(model_name: str = 'google/embeddinggemma-300m'):
+    """Load sentence-transformers model for embedding generation.
+
+    Default model is google/embeddinggemma-300m (768 dims) to match the
+    pre-trained UMAP reducer which was trained on 768-dimensional embeddings.
+    """
     from sentence_transformers import SentenceTransformer
 
     print(f"Loading embedding model: {model_name}...")
@@ -399,9 +403,78 @@ def generate_and_project_embeddings(
         batch_size=32,
         normalize_embeddings=True
     )
+    print(f"  ✓ Generated {len(embeddings)} embeddings with shape {embeddings.shape}")
 
-    print(f"Projecting to UMAP space...")
-    umap_coords = umap_reducer.transform(embeddings)
+    # Save embeddings to temp file for subprocess
+    import tempfile
+    import subprocess
+    import sys
+
+    temp_embeddings_file = tempfile.NamedTemporaryFile(mode='w+b', suffix='.npy', delete=False)
+    temp_coords_file = tempfile.NamedTemporaryFile(mode='w+b', suffix='.npy', delete=False)
+
+    try:
+        # Save embeddings
+        print(f"  Saving embeddings to temp file...")
+        np.save(temp_embeddings_file.name, embeddings)
+        temp_embeddings_file.close()
+
+        # Run UMAP transform in subprocess to avoid library conflicts
+        print(f"Projecting to UMAP space (running in subprocess to avoid segfaults)...")
+
+        umap_subprocess_code = f"""
+import os
+import numpy as np
+import pickle
+
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["OPENBLAS_NUM_THREADS"] = "1"
+
+# Load embeddings
+embeddings = np.load('{temp_embeddings_file.name}')
+print(f"  Loaded embeddings: {{embeddings.shape}}")
+
+# Load UMAP reducer
+with open('data/umap_reducer.pkl', 'rb') as f:
+    umap_reducer = pickle.load(f)
+
+print(f"  UMAP expects {{umap_reducer._raw_data.shape[1]}}-dim input")
+
+# Transform embeddings to 2D coordinates
+coords = umap_reducer.transform(embeddings)
+print(f"  ✓ Projected {{len(coords)}} embeddings to 2D")
+
+# Save coordinates
+np.save('{temp_coords_file.name}', coords)
+"""
+
+        result = subprocess.run(
+            [sys.executable, '-c', umap_subprocess_code],
+            capture_output=True,
+            text=True,
+            timeout=600  # 10 minute timeout
+        )
+
+        print(result.stdout)
+
+        if result.returncode != 0:
+            print(f"✗ UMAP subprocess failed with exit code {result.returncode}")
+            print(f"stderr: {result.stderr}")
+            raise RuntimeError(f"UMAP transform failed: {result.stderr}")
+
+        # Load coordinates from temp file
+        temp_coords_file.close()
+        umap_coords = np.load(temp_coords_file.name)
+        print(f"  ✓ Loaded {len(umap_coords)} coordinates")
+
+    finally:
+        # Clean up temp files
+        import os as os_module
+        try:
+            os_module.unlink(temp_embeddings_file.name)
+            os_module.unlink(temp_coords_file.name)
+        except:
+            pass
 
     # Load level 0 normalization bounds from wikipedia_articles.json
     # (so all levels use the same coordinate space as the heatmap)
@@ -992,57 +1065,110 @@ def generate_level_n(
     print(f"Loaded {len(prev_concepts)} concepts from level {level - 1}")
     print()
 
+    # Check for existing checkpoints to resume from
+    articles = None
+    new_concepts = []
+    all_questions = []
+    resume_from_step = 1
+
+    if resume_from_checkpoint:
+        # Check checkpoints in reverse order (most recent first)
+        checkpoint_stages = ['final', 'after_questions', 'after_concepts', 'after_umap', 'after_download']
+        for stage in checkpoint_stages:
+            checkpoint_path = f'checkpoints/level_{level}_{stage}.json'
+            if Path(checkpoint_path).exists():
+                print(f"Found checkpoint: {checkpoint_path}")
+                print(f"Resuming from {stage}...")
+                with open(checkpoint_path, 'r') as f:
+                    checkpoint_data = json.load(f)
+
+                articles = checkpoint_data.get('articles', [])
+                new_concepts = checkpoint_data.get('concepts', [])
+                all_questions = checkpoint_data.get('questions', [])
+
+                # Determine which step to resume from
+                if stage == 'final':
+                    print("  ✓ All steps completed! Nothing to do.")
+                    return {'articles': articles, 'concepts': new_concepts, 'questions': all_questions}
+                elif stage == 'after_questions':
+                    resume_from_step = 6  # Save outputs
+                elif stage == 'after_concepts':
+                    resume_from_step = 5  # Generate questions
+                elif stage == 'after_umap':
+                    resume_from_step = 4  # Extract concepts
+                elif stage == 'after_download':
+                    resume_from_step = 3  # Generate embeddings
+
+                print(f"  Loaded {len(articles)} articles, {len(new_concepts)} concepts, {len(all_questions)} questions")
+                print(f"  Resuming from step {resume_from_step}")
+                print()
+                break
+
     # Step 1: Suggest broader articles
-    suggestions = suggest_broader_articles_batch(prev_concepts, client)
+    if resume_from_step <= 1:
+        suggestions = suggest_broader_articles_batch(prev_concepts, client)
+    else:
+        print(f"Skipping step 1 (suggest articles) - resuming from checkpoint")
 
     # Step 2: Download articles
-    articles = download_suggested_articles(suggestions, prev_concepts)
-
-    # Checkpoint
-    save_checkpoint(level, articles, [], [], 'after_download')
+    if resume_from_step <= 2:
+        articles = download_suggested_articles(suggestions, prev_concepts)
+        save_checkpoint(level, articles, [], [], 'after_download')
+    else:
+        print(f"Skipping step 2 (download articles) - resuming from checkpoint")
 
     # Step 3: Generate embeddings and project to UMAP
-    articles = generate_and_project_embeddings(articles, embedding_model, umap_reducer)
-
-    # Checkpoint
-    save_checkpoint(level, articles, [], [], 'after_umap')
+    if resume_from_step <= 3:
+        articles = generate_and_project_embeddings(articles, embedding_model, umap_reducer)
+        save_checkpoint(level, articles, [], [], 'after_umap')
+    else:
+        print(f"Skipping step 3 (embeddings/UMAP) - resuming from checkpoint")
 
     # Step 4: Extract concepts
-    concept_results = extract_concepts_batch(articles, client)
+    if resume_from_step <= 4:
+        concept_results = extract_concepts_batch(articles, client)
 
-    # Build concept list with parent tracking
-    new_concepts = []
-    for i, article in enumerate(articles):
-        article_id = f'article-{i}'
-        if article_id in concept_results and concept_results[article_id].get('suitable', False):
-            for concept in concept_results[article_id].get('concepts', []):
-                new_concepts.append({
-                    'concept': concept,
-                    'source_article': article['title'],
-                    'level': level,
-                    'x': article['x'],
-                    'y': article['y'],
-                    'parent_concepts': article.get('parent_concepts', []),
-                    'parent_articles': article.get('parent_articles', []),
-                    'reasoning': concept_results[article_id].get('reasoning', '')
-                })
+        # Build concept list with parent tracking
+        new_concepts = []
+        for i, article in enumerate(articles):
+            article_id = f'article-{i}'
+            if article_id in concept_results and concept_results[article_id].get('suitable', False):
+                for concept in concept_results[article_id].get('concepts', []):
+                    new_concepts.append({
+                        'concept': concept,
+                        'source_article': article['title'],
+                        'level': level,
+                        'x': article['x'],
+                        'y': article['y'],
+                        'parent_concepts': article.get('parent_concepts', []),
+                        'parent_articles': article.get('parent_articles', []),
+                        'reasoning': concept_results[article_id].get('reasoning', '')
+                    })
 
-    # Checkpoint
-    save_checkpoint(level, articles, new_concepts, [], 'after_concepts')
+        save_checkpoint(level, articles, new_concepts, [], 'after_concepts')
+    else:
+        print(f"Skipping step 4 (extract concepts) - resuming from checkpoint")
+        # Still need concept_results for question generation
+        concept_results = {}
 
     # Step 5: Generate questions
-    questions_by_article = generate_questions_batch(articles, concept_results, client)
+    if resume_from_step <= 5:
+        questions_by_article = generate_questions_batch(articles, concept_results, client)
 
-    # Flatten to question list
-    all_questions = []
-    for article_questions in questions_by_article.values():
-        all_questions.extend(article_questions)
+        # Flatten to question list
+        all_questions = []
+        for article_questions in questions_by_article.values():
+            all_questions.extend(article_questions)
 
-    # Checkpoint
-    save_checkpoint(level, articles, new_concepts, all_questions, 'final')
+        save_checkpoint(level, articles, new_concepts, all_questions, 'final')
+    else:
+        print(f"Skipping step 5 (generate questions) - resuming from checkpoint")
 
     # Step 6: Save outputs
-    save_level_outputs(level, articles, new_concepts, all_questions)
+    if resume_from_step <= 6:
+        save_level_outputs(level, articles, new_concepts, all_questions)
+    else:
+        print(f"Skipping step 6 (save outputs) - resuming from checkpoint")
 
     return {
         'articles': articles,

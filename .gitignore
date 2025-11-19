@@ -239,6 +239,10 @@ diagnosis_output.txt
 embeddings/cluster*.pkl
 embeddings/*_checkpoint_*.pkl
 embeddings/current_checkpoint.pkl
+
+# Large checkpoint JSON files (>100MB) - keep locally but don't commit
+checkpoints/level_*_after_*.json
+checkpoints/level_*_final.json
 .DS_Store
 */.DS_Store
 */*/.DS_Store

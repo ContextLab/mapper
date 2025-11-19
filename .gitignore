@@ -243,6 +243,10 @@ embeddings/current_checkpoint.pkl
 # Large checkpoint JSON files (>100MB) - keep locally but don't commit
 checkpoints/level_*_after_*.json
 checkpoints/level_*_final.json
+
+# Large output files (>50MB)
+wikipedia_articles_level_*.json
+level_*_concepts.json
 .DS_Store
 */.DS_Store
 */*/.DS_Store

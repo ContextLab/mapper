@@ -40,6 +40,7 @@ import sys
 sys.path.append(str(Path(__file__).parent.parent))
 
 from scripts.utils.api_utils import create_openai_client
+from scripts.utils.openai_batch import batch_with_cache
 
 # Try to import textstat for readability scoring
 try:
@@ -512,94 +513,18 @@ def load_articles(level: int, base_path: Path) -> Dict[str, str]:
     return articles
 
 
-def process_single_question(args):
-    """
-    Process a single question (for parallel execution).
-
-    Args:
-        args: Tuple of (index, question, article_text, level, client)
-
-    Returns:
-        Dict with result, stats, and exclusion info
-    """
-    i, question, article_text, level, client = args
-
-    result = {
-        'index': i,
-        'question': question,
-        'simplified': None,
-        'excluded': None,
-        'stats_update': {
-            'pass_1_success': 0,
-            'pass_1_retry': 0,
-            'pass_1_failed': 0,
-            'pass_2_success': 0,
-            'pass_2_failed': 0,
-            'excluded': 0,
-            'exclusion_reason': None
-        }
-    }
-
-    # Pass 1: Try simplification
-    simplified, status, reason = simplify_question(question, article_text, level, client)
-
-    if status == 'success':
-        result['simplified'] = simplified
-        result['stats_update']['pass_1_success'] = 1
-        result['status_msg'] = f"✅ Pass 1 success: {reason}"
-    elif status == 'retry':
-        result['stats_update']['pass_1_retry'] = 1
-        result['status_msg'] = f"🔄 Pass 1 needs retry: {reason} → Attempting Pass 2..."
-
-        # Pass 2: Try generating new question
-        new_q, status2, reason2 = generate_new_question(question, article_text, level, client)
-
-        if status2 == 'success':
-            result['simplified'] = new_q
-            result['stats_update']['pass_2_success'] = 1
-            result['status_msg'] += f" → ✅ Pass 2 success: {reason2}"
-        else:
-            result['excluded'] = {
-                'original_question': question,
-                'reason': 'content_loss_both_passes',
-                'pass_1_attempt': simplified,
-                'pass_1_reason': reason,
-                'pass_2_attempt': new_q,
-                'pass_2_reason': reason2
-            }
-            result['stats_update']['pass_2_failed'] = 1
-            result['stats_update']['excluded'] = 1
-            result['stats_update']['exclusion_reason'] = 'content_loss_both_passes'
-            result['status_msg'] += f" → ❌ Pass 2 failed: {reason2} → Excluded"
-    else:  # status == 'failed'
-        result['excluded'] = {
-            'original_question': question,
-            'reason': 'pass_1_api_error',
-            'pass_1_attempt': None,
-            'pass_2_attempt': None
-        }
-        result['stats_update']['pass_1_failed'] = 1
-        result['stats_update']['excluded'] = 1
-        result['stats_update']['exclusion_reason'] = 'pass_1_api_error'
-        result['status_msg'] = f"❌ Pass 1 failed: {reason} → Excluded"
-
-    return result
-
-
 def simplify_level(
     level: int,
     pilot: Optional[int] = None,
-    base_path: Path = Path('.'),
-    max_workers: int = 10
+    base_path: Path = Path('.')
 ) -> Tuple[List[Dict], Dict[str, Any]]:
     """
-    Simplify all questions for a level using parallel processing.
+    Simplify all questions for a level using OpenAI Batch API.
 
     Args:
         level: Question level (0-4)
         pilot: If set, only process this many questions
         base_path: Base directory path
-        max_workers: Maximum parallel workers (default: 10)
 
     Returns:
         (simplified_questions, stats) tuple
@@ -609,7 +534,6 @@ def simplify_level(
     print(f"Target audience: {LEVEL_CONFIG[level]['target_audience']}")
     if pilot:
         print(f"PILOT MODE: Processing only {pilot} questions")
-    print(f"Parallel workers: {max_workers}")
     print(f"{'='*60}\n")
 
     # Create OpenAI client
@@ -632,33 +556,100 @@ def simplify_level(
     # Load articles
     articles = load_articles(level, base_path)
 
-    # Filter questions with missing articles
-    valid_questions = []
+    # Filter questions with missing articles and prepare batch requests
+    batch_requests = []
+    question_metadata = []  # Track original questions for later processing
     excluded_questions = []
 
-    for question in all_questions:
+    for i, question in enumerate(all_questions):
         article_title = question.get('source_article', '')
         if article_title not in articles:
-            print(f"⚠️  Article '{article_title}' not found for question, excluding...")
+            print(f"⚠️  Article '{article_title}' not found for question {i+1}, excluding...")
             excluded_questions.append({
                 'original_question': question,
                 'reason': 'article_not_found',
                 'pass_1_attempt': None,
                 'pass_2_attempt': None
             })
-        else:
-            valid_questions.append((question, articles[article_title]))
+            continue
 
-    print(f"Processing {len(valid_questions)} questions ({len(excluded_questions)} excluded due to missing articles)\n")
+        # Get article text
+        article_text = articles[article_title]
 
-    # Prepare arguments for parallel processing
-    process_args = [
-        (i, question, article_text, level, client)
-        for i, (question, article_text) in enumerate(valid_questions, 1)
-    ]
+        # Create batch request for Pass 1 (simplification)
+        user_prompt = create_simplification_request(question, article_text, level)
 
-    # Process questions in parallel
+        batch_requests.append({
+            'custom_id': f'q{i}_pass1',
+            'user_prompt': user_prompt
+        })
+
+        # Store metadata for this question
+        question_metadata.append({
+            'index': i,
+            'question': question,
+            'article_text': article_text
+        })
+
+    print(f"Prepared {len(batch_requests)} batch requests for Pass 1\n")
+
+    # Submit Pass 1 batch
+    system_prompt = get_simplification_prompt(level)
+
+    # Define JSON schema for structured output
+    response_format = {
+        "type": "json_schema",
+        "json_schema": {
+            "name": "simplified_question",
+            "strict": True,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "question": {"type": "string"},
+                    "options": {
+                        "type": "object",
+                        "properties": {
+                            "A": {"type": "string"},
+                            "B": {"type": "string"},
+                            "C": {"type": "string"},
+                            "D": {"type": "string"}
+                        },
+                        "required": ["A", "B", "C", "D"],
+                        "additionalProperties": False
+                    },
+                    "correct_answer": {"type": "string"},
+                    "simplification_notes": {"type": "string"},
+                    "content_preserved": {"type": "boolean"}
+                },
+                "required": ["question", "options", "correct_answer", "simplification_notes", "content_preserved"],
+                "additionalProperties": False
+            }
+        }
+    }
+
+    print("="*60)
+    print("PASS 1: Submitting simplification batch")
+    print("="*60)
+
+    pass1_results = batch_with_cache(
+        client=client,
+        requests=batch_requests,
+        system_prompt=system_prompt,
+        description=f"Level {level} simplification (Pass 1)",
+        model="gpt-5-mini",
+        temperature=1.0,  # gpt-5-mini only supports temperature=1
+        max_tokens=1000,
+        response_format=response_format,
+        poll_interval=60,
+        timeout=None  # No timeout
+    )
+
+    print(f"\n✓ Pass 1 batch complete: {len(pass1_results)} results\n")
+
+    # Process Pass 1 results and identify questions needing Pass 2
     simplified_questions = []
+    pass2_requests = []
+    pass2_metadata = []
 
     stats = {
         'total_original': len(all_questions),
@@ -671,42 +662,184 @@ def simplify_level(
         'exclusion_reasons': defaultdict(int)
     }
 
-    # Add article_not_found exclusions to stats
     stats['exclusion_reasons']['article_not_found'] = len(excluded_questions)
 
-    print(f"Starting parallel processing with {max_workers} workers...\n")
+    for i, metadata in enumerate(question_metadata):
+        custom_id = f'q{metadata["index"]}_pass1'
+        question = metadata['question']
+        article_text = metadata['article_text']
 
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        # Submit all tasks
-        futures = {executor.submit(process_single_question, args): args[0] for args in process_args}
+        if custom_id not in pass1_results:
+            print(f"⚠️  Question {metadata['index']+1}: No result from Pass 1, excluding...")
+            excluded_questions.append({
+                'original_question': question,
+                'reason': 'pass_1_api_error',
+                'pass_1_attempt': None,
+                'pass_2_attempt': None
+            })
+            stats['pass_1_failed'] += 1
+            stats['excluded'] += 1
+            stats['exclusion_reasons']['pass_1_api_error'] += 1
+            continue
 
-        # Process completed tasks as they finish
-        completed = 0
-        for future in as_completed(futures):
-            completed += 1
-            result = future.result()
+        result = pass1_results[custom_id]
 
-            # Print status
-            i = result['index']
-            total = len(valid_questions)
-            print(f"[{completed}/{total}] Q{i}: {result['status_msg']}")
+        # Validate result
+        is_valid, reason = validate_simplified_question(question, result, level)
 
-            # Update stats
-            for key, value in result['stats_update'].items():
-                if key == 'exclusion_reason':
-                    if value:
-                        stats['exclusion_reasons'][value] += 1
-                elif key in stats:
-                    stats[key] += value
+        if is_valid:
+            # Add metadata
+            result['source_article'] = question['source_article']
+            result['x'] = question['x']
+            result['y'] = question['y']
+            result['level'] = level
+            result['concepts_tested'] = question.get('concepts_tested', [])
+            result['original_question_hash'] = hash_question(question['question'])
 
-            # Collect results
-            if result['simplified']:
-                simplified_questions.append(result['simplified'])
-            if result['excluded']:
-                excluded_questions.append(result['excluded'])
+            simplified_questions.append(result)
+            stats['pass_1_success'] += 1
+            print(f"✅ Question {metadata['index']+1}: Pass 1 success ({reason})")
+        else:
+            # Needs Pass 2
+            print(f"🔄 Question {metadata['index']+1}: Pass 1 needs retry ({reason}), scheduling Pass 2...")
+            stats['pass_1_retry'] += 1
 
-    # Sort simplified questions by original index (optional, for consistency)
-    # simplified_questions is already in completion order, which is fine
+            # Create Pass 2 request
+            user_prompt = create_generation_request(question, article_text, level)
+
+            pass2_requests.append({
+                'custom_id': f'q{metadata["index"]}_pass2',
+                'user_prompt': user_prompt
+            })
+
+            pass2_metadata.append({
+                'index': metadata['index'],
+                'question': question,
+                'pass_1_attempt': result,
+                'pass_1_reason': reason
+            })
+
+    # Run Pass 2 if needed
+    if pass2_requests:
+        print(f"\n{'='*60}")
+        print(f"PASS 2: Submitting generation batch for {len(pass2_requests)} questions")
+        print(f"{'='*60}")
+
+        system_prompt_pass2 = get_generation_prompt(level)
+
+        # JSON schema for Pass 2
+        response_format_pass2 = {
+            "type": "json_schema",
+            "json_schema": {
+                "name": "generated_question",
+                "strict": True,
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "question": {"type": "string"},
+                        "options": {
+                            "type": "object",
+                            "properties": {
+                                "A": {"type": "string"},
+                                "B": {"type": "string"},
+                                "C": {"type": "string"},
+                                "D": {"type": "string"}
+                            },
+                            "required": ["A", "B", "C", "D"],
+                            "additionalProperties": False
+                        },
+                        "correct_answer": {"type": "string"},
+                        "generation_notes": {"type": "string"},
+                        "concepts_tested": {
+                            "type": "array",
+                            "items": {"type": "string"}
+                        }
+                    },
+                    "required": ["question", "options", "correct_answer", "generation_notes", "concepts_tested"],
+                    "additionalProperties": False
+                }
+            }
+        }
+
+        pass2_results = batch_with_cache(
+            client=client,
+            requests=pass2_requests,
+            system_prompt=system_prompt_pass2,
+            description=f"Level {level} generation (Pass 2)",
+            model="gpt-5-mini",
+            temperature=1.0,
+            max_tokens=1000,
+            response_format=response_format_pass2,
+            poll_interval=60,
+            timeout=None  # No timeout
+        )
+
+        print(f"\n✓ Pass 2 batch complete: {len(pass2_results)} results\n")
+
+        # Process Pass 2 results
+        for metadata in pass2_metadata:
+            custom_id = f'q{metadata["index"]}_pass2'
+            question = metadata['question']
+
+            if custom_id not in pass2_results:
+                print(f"❌ Question {metadata['index']+1}: No result from Pass 2, excluding...")
+                excluded_questions.append({
+                    'original_question': question,
+                    'reason': 'content_loss_both_passes',
+                    'pass_1_attempt': metadata['pass_1_attempt'],
+                    'pass_1_reason': metadata['pass_1_reason'],
+                    'pass_2_attempt': None,
+                    'pass_2_reason': 'api_error'
+                })
+                stats['pass_2_failed'] += 1
+                stats['excluded'] += 1
+                stats['exclusion_reasons']['content_loss_both_passes'] += 1
+                continue
+
+            result = pass2_results[custom_id]
+
+            # Validate Pass 2 result
+            # Check required fields
+            required = ['question', 'options', 'correct_answer']
+            is_valid = all(field in result for field in required) and len(result.get('options', {})) == 4
+
+            # Check readability
+            if is_valid and HAS_TEXTSTAT and level in [4, 3, 2]:
+                grade_level = calculate_flesch_kincaid(result['question'])
+                max_grade = LEVEL_CONFIG[level]['max_grade_level']
+                if grade_level > max_grade + 2:
+                    is_valid = False
+                    reason = f"readability_too_high_{grade_level:.1f}_vs_{max_grade}"
+                else:
+                    reason = "validated"
+            else:
+                reason = "validated"
+
+            if is_valid:
+                # Add metadata
+                result['source_article'] = question['source_article']
+                result['x'] = question['x']
+                result['y'] = question['y']
+                result['level'] = level
+                result['concepts_tested'] = result.get('concepts_tested', question.get('concepts_tested', []))
+                result['original_question_hash'] = hash_question(question['question'])
+
+                simplified_questions.append(result)
+                stats['pass_2_success'] += 1
+                print(f"✅ Question {metadata['index']+1}: Pass 2 success ({reason})")
+            else:
+                print(f"❌ Question {metadata['index']+1}: Pass 2 failed ({reason}), excluding...")
+                excluded_questions.append({
+                    'original_question': question,
+                    'reason': 'content_loss_both_passes',
+                    'pass_1_attempt': metadata['pass_1_attempt'],
+                    'pass_1_reason': metadata['pass_1_reason'],
+                    'pass_2_attempt': result,
+                    'pass_2_reason': reason
+                })
+                stats['pass_2_failed'] += 1
+                stats['excluded'] += 1
+                stats['exclusion_reasons']['content_loss_both_passes'] += 1
 
     # Print summary
     print(f"\n{'='*60}")

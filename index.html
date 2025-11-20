@@ -2366,6 +2366,7 @@
 
             if (shouldStartNewRound) {
                 // Skip remaining questions and start new round
+                selectedOption = null;  // Reset selection for new round
                 startNewQuizRound();
             } else if (currentQuestion < questionsData.length - 1) {
                 currentQuestion++;

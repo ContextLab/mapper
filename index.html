@@ -128,34 +128,86 @@
             color: #00693E;
         }
 
+        /* Stacked level bars container */
+        .level-bars-container {
+            position: relative;
+            margin-bottom: 28px;
+        }
+
+        .level-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .level-label {
+            font-size: 0.75em;
+            font-weight: 600;
+            color: #555;
+            min-width: 24px;
+        }
+
+        .level-percent {
+            font-size: 0.75em;
+            font-weight: 600;
+            color: #555;
+            min-width: 35px;
+            text-align: right;
+        }
+
         .confidence-bar {
             height: 8px;
             background: #dee2e6;
             border-radius: 4px;
-            overflow: visible;
-            margin-bottom: 28px;
+            overflow: hidden;
             position: relative;
+            flex: 1;
         }
 
         .confidence-fill {
             height: 100%;
-            background: linear-gradient(90deg, #00693E 0%, #00a859 100%);
             width: 0%;
             transition: width 0.5s ease;
         }
 
-        .confidence-threshold {
+        /* Level-specific colors (reverse gradient: bronze at L4 to green at L0) */
+        .level-bar-row[data-level="4"] .confidence-fill {
+            background: linear-gradient(90deg, #8B4513 0%, #A0522D 100%); /* Bronze */
+        }
+
+        .level-bar-row[data-level="3"] .confidence-fill {
+            background: linear-gradient(90deg, #B8860B 0%, #DAA520 100%); /* Goldenrod */
+        }
+
+        .level-bar-row[data-level="2"] .confidence-fill {
+            background: linear-gradient(90deg, #D4AF37 0%, #FFD700 100%); /* Gold */
+        }
+
+        .level-bar-row[data-level="1"] .confidence-fill {
+            background: linear-gradient(90deg, #85BB65 0%, #9ACD32 100%); /* Yellow-Green */
+        }
+
+        .level-bar-row[data-level="0"] .confidence-fill {
+            background: linear-gradient(90deg, #00693E 0%, #00a859 100%); /* Dartmouth Green */
+        }
+
+        /* Shared coverage threshold line */
+        .coverage-threshold {
             position: absolute;
-            left: 90%;
-            top: -8px;
-            bottom: -8px;
+            /* Calculate position: label (24px) + gap (8px) + 90% of the bar width
+               Bar width = 100% - (24px + 8px + 35px + 8px) = 100% - 75px */
+            left: calc(32px + (100% - 75px) * 0.90);
+            top: 0;
+            bottom: 0;
             width: 2px;
             background: #333;
             z-index: 10;
+            pointer-events: none;
         }
 
-        .confidence-threshold::after {
-            content: 'High Confidence';
+        .coverage-threshold::after {
+            content: 'Target Coverage';
             position: absolute;
             bottom: -22px;
             left: 50%;
@@ -246,9 +298,11 @@
         }
 
         .btn-primary:hover:not(:disabled) {
-            background: #ced4da;
+            background: #00693E;
+            color: white;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 105, 62, 0.4);
+            animation: none; /* Stop pulsing on hover */
         }
 
         .btn-primary:disabled {
@@ -271,9 +325,11 @@
         }
 
         .btn-info:hover:not(:disabled) {
-            background: #ced4da;
+            background: #00693E;
+            color: white;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 105, 62, 0.4);
+            animation: none; /* Stop pulsing on hover */
         }
 
         .btn-info:disabled {
@@ -281,14 +337,41 @@
             cursor: not-allowed;
         }
 
+        /* Pulse animation for high-confidence button */
+        @keyframes pulse-green-bg {
+            0%, 100% {
+                background-color: #dee2e6;
+                box-shadow: 0 3px 10px rgba(108, 117, 125, 0.2);
+            }
+            50% {
+                background-color: #00693E;
+                box-shadow: 0 3px 10px rgba(0, 105, 62, 0.3);
+            }
+        }
+
+        @keyframes pulse-green-text {
+            0%, 100% {
+                color: #333;
+            }
+            50% {
+                color: white;
+            }
+        }
+
         .btn-info.high-confidence {
-            background: linear-gradient(135deg, #00693E, #004d2c);
-            color: white;
+            animation: pulse-green-bg 6s ease-in-out infinite, pulse-green-text 6s ease-in-out infinite;
+        }
+
+        /* Apply same pulsing to Start Quiz button */
+        .btn-primary:not(:disabled) {
+            animation: pulse-green-bg 6s ease-in-out infinite, pulse-green-text 6s ease-in-out infinite;
         }
 
         .btn-info.high-confidence:hover:not(:disabled) {
-            background: linear-gradient(135deg, #004d2c, #003520);
+            background: #00693E;
+            color: white;
             box-shadow: 0 5px 15px rgba(0, 105, 62, 0.4);
+            animation: none; /* Stop pulsing on hover */
         }
 
         .btn-skip {
@@ -979,14 +1062,49 @@
                     <!-- Confidence Display (for adaptive sampling) -->
                     <div class="confidence-display hidden" id="confidence-display">
                         <div class="confidence-header">
-                            <span class="confidence-label">Map Coverage Confidence</span>
-                            <span class="confidence-value" id="confidence-value">0%</span>
+                            <span class="confidence-label">Coverage</span>
                         </div>
-                        <div class="confidence-bar">
-                            <div class="confidence-fill" id="confidence-fill"></div>
-                            <div class="confidence-threshold"></div>
+                        <!-- Stacked per-level coverage bars (Level 4 to Level 0) -->
+                        <div class="level-bars-container">
+                            <div class="level-bar-row" data-level="4">
+                                <span class="level-label">L4</span>
+                                <div class="confidence-bar">
+                                    <div class="confidence-fill" id="confidence-fill-4"></div>
+                                </div>
+                                <span class="level-percent" id="level-percent-4">0%</span>
+                            </div>
+                            <div class="level-bar-row" data-level="3">
+                                <span class="level-label">L3</span>
+                                <div class="confidence-bar">
+                                    <div class="confidence-fill" id="confidence-fill-3"></div>
+                                </div>
+                                <span class="level-percent" id="level-percent-3">0%</span>
+                            </div>
+                            <div class="level-bar-row" data-level="2">
+                                <span class="level-label">L2</span>
+                                <div class="confidence-bar">
+                                    <div class="confidence-fill" id="confidence-fill-2"></div>
+                                </div>
+                                <span class="level-percent" id="level-percent-2">0%</span>
+                            </div>
+                            <div class="level-bar-row" data-level="1">
+                                <span class="level-label">L1</span>
+                                <div class="confidence-bar">
+                                    <div class="confidence-fill" id="confidence-fill-1"></div>
+                                </div>
+                                <span class="level-percent" id="level-percent-1">0%</span>
+                            </div>
+                            <div class="level-bar-row" data-level="0">
+                                <span class="level-label">L0</span>
+                                <div class="confidence-bar">
+                                    <div class="confidence-fill" id="confidence-fill-0"></div>
+                                </div>
+                                <span class="level-percent" id="level-percent-0">0%</span>
+                            </div>
+                            <!-- Shared threshold line across all levels -->
+                            <div class="coverage-threshold"></div>
                         </div>
-                        <p class="confidence-message" id="confidence-message">Answer more questions to build confidence...</p>
+                        <p class="confidence-message" id="confidence-message">Answer more questions to build coverage...</p>
                     </div>
 
                     <div class="question-text" id="question-text"></div>
@@ -1008,17 +1126,52 @@
                     <p>Hover to explore your knowledge map</p>
                 </div>
 
-                <!-- Confidence Display (also shown on map when adaptive sampling is active) -->
+                <!-- Coverage Display (also shown on map when adaptive sampling is active) -->
                 <div class="confidence-display hidden" id="map-confidence-display">
                     <div class="confidence-header">
-                        <span class="confidence-label">Map Coverage Confidence</span>
-                        <span class="confidence-value" id="map-confidence-value">0%</span>
+                        <span class="confidence-label">Coverage</span>
                     </div>
-                    <div class="confidence-bar">
-                        <div class="confidence-fill" id="map-confidence-fill"></div>
-                        <div class="confidence-threshold"></div>
+                    <!-- Stacked per-level coverage bars (Level 4 to Level 0) -->
+                    <div class="level-bars-container">
+                        <div class="level-bar-row" data-level="4">
+                            <span class="level-label">L4</span>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="map-confidence-fill-4"></div>
+                            </div>
+                            <span class="level-percent" id="map-level-percent-4">0%</span>
+                        </div>
+                        <div class="level-bar-row" data-level="3">
+                            <span class="level-label">L3</span>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="map-confidence-fill-3"></div>
+                            </div>
+                            <span class="level-percent" id="map-level-percent-3">0%</span>
+                        </div>
+                        <div class="level-bar-row" data-level="2">
+                            <span class="level-label">L2</span>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="map-confidence-fill-2"></div>
+                            </div>
+                            <span class="level-percent" id="map-level-percent-2">0%</span>
+                        </div>
+                        <div class="level-bar-row" data-level="1">
+                            <span class="level-label">L1</span>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="map-confidence-fill-1"></div>
+                            </div>
+                            <span class="level-percent" id="map-level-percent-1">0%</span>
+                        </div>
+                        <div class="level-bar-row" data-level="0">
+                            <span class="level-label">L0</span>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="map-confidence-fill-0"></div>
+                            </div>
+                            <span class="level-percent" id="map-level-percent-0">0%</span>
+                        </div>
+                        <!-- Shared threshold line across all levels -->
+                        <div class="coverage-threshold"></div>
                     </div>
-                    <p class="confidence-message" id="map-confidence-message">Answer more questions to build confidence...</p>
+                    <p class="confidence-message" id="map-confidence-message">Answer more questions to build coverage...</p>
                 </div>
 
                 <div class="map-container">
@@ -1278,6 +1431,18 @@
                 this.responses = {};  // questionIndex → correctness value
                 this.currentLevel = 4;  // Start with highest (broadest) level
                 this.levelTransitions = []; // Track when we transition levels
+
+                // Per-level tracking
+                this.perLevelState = {
+                    0: { askedIndices: [], pendingIndices: [], coverage: 0 },
+                    1: { askedIndices: [], pendingIndices: [], coverage: 0 },
+                    2: { askedIndices: [], pendingIndices: [], coverage: 0 },
+                    3: { askedIndices: [], pendingIndices: [], coverage: 0 },
+                    4: { askedIndices: [], pendingIndices: [], coverage: 0 }
+                };
+
+                // Coverage threshold (default 90%)
+                this.coverageThreshold = 0.90;
             }
 
             // === Geometric Sampling Methods ===
@@ -1310,9 +1475,10 @@
             }
 
             _selectFurthestQuestion(availableQuestions) {
-                // Select the question furthest from all asked questions
-                if (this.askedQuestionIndices.length === 0) {
-                    // First question: select randomly
+                // Select the question furthest from all asked questions AND pending questions
+                // This ensures that within a single round, questions are spread out from each other
+                if (this.askedQuestionIndices.length === 0 && this.pendingQuestionIndices.length === 0) {
+                    // First question ever: select randomly
                     const randomIdx = Math.floor(Math.random() * availableQuestions.length);
                     return availableQuestions[randomIdx];
                 }
@@ -1320,13 +1486,15 @@
                 let furthestQuestion = null;
                 let maxMinDistance = -Infinity;
 
-                const askedQuestions = this.askedQuestionIndices.map(idx => this.allQuestions[idx]);
+                // Combine asked and pending indices to get all "sampled" questions
+                const sampledIndices = [...this.askedQuestionIndices, ...this.pendingQuestionIndices];
+                const sampledQuestions = sampledIndices.map(idx => this.allQuestions[idx]);
 
                 for (const candidate of availableQuestions) {
-                    // Find minimum distance to any asked question
+                    // Find minimum distance to any sampled question (asked or pending)
                     let minDistance = Infinity;
-                    for (const asked of askedQuestions) {
-                        const dist = this._calculateDistance(candidate, asked);
+                    for (const sampled of sampledQuestions) {
+                        const dist = this._calculateDistance(candidate, sampled);
                         minDistance = Math.min(minDistance, dist);
                     }
 
@@ -1337,7 +1505,7 @@
                     }
                 }
 
-                console.log(`Selected question at distance ${maxMinDistance.toFixed(4)} from nearest asked question`);
+                console.log(`Selected question at distance ${maxMinDistance.toFixed(4)} from nearest sampled question`);
                 return furthestQuestion;
             }
 
@@ -1366,28 +1534,29 @@
             }
 
             _checkAndTransitionLevel() {
-                // Check if we should transition to next level based on sampling density
+                // Check if we should transition to next level based on coverage threshold
                 if (this.currentLevel === 0) {
                     return false; // Already at finest level
                 }
 
-                const avgMinDist = this._calculateCoverageDensity();
-                const sigma = this.config.sigma[this.currentLevel];
-                const threshold = sigma * this.config.coverageMultiplier;
+                const currentLevelCoverage = this.perLevelState[this.currentLevel].coverage;
+                const availableAtCurrentLevel = this._getAvailableQuestions(this.currentLevel).length;
 
-                // Transition when average spacing is less than threshold
-                if (avgMinDist < threshold) {
+                // Transition when coverage exceeds threshold OR no more questions available at current level
+                if (currentLevelCoverage >= this.coverageThreshold || availableAtCurrentLevel === 0) {
                     const oldLevel = this.currentLevel;
                     this.currentLevel--;
                     this.levelTransitions.push({
                         fromLevel: oldLevel,
                         toLevel: this.currentLevel,
-                        avgMinDistance: avgMinDist,
-                        threshold: threshold,
-                        questionsAsked: this.askedQuestionIndices.length
+                        coverage: currentLevelCoverage,
+                        threshold: this.coverageThreshold,
+                        questionsAsked: this.perLevelState[oldLevel].askedIndices.length,
+                        reason: availableAtCurrentLevel === 0 ? 'exhausted' : 'coverage_met'
                     });
                     console.log(`📊 Level transition: ${oldLevel} → ${this.currentLevel} ` +
-                               `(density: ${avgMinDist.toFixed(4)} < ${threshold.toFixed(4)})`);
+                               `(coverage: ${(currentLevelCoverage * 100).toFixed(1)}%, ` +
+                               `reason: ${availableAtCurrentLevel === 0 ? 'exhausted' : 'target reached'})`);
                     return true;
                 }
 
@@ -1419,6 +1588,9 @@
                 // Add to pendingQuestionIndices to prevent selecting again in this round
                 if (selectedQuestion) {
                     this.pendingQuestionIndices.push(selectedQuestion.index);
+                    // Also track in per-level state
+                    const level = selectedQuestion.level !== undefined ? selectedQuestion.level : 0;
+                    this.perLevelState[level].pendingIndices.push(selectedQuestion.index);
                 }
 
                 // NOTE: Don't add to askedQuestionIndices here!
@@ -1433,6 +1605,10 @@
                 const correctness = fractionalCorrectness !== null ? fractionalCorrectness : (isCorrect ? 1.0 : 0.0);
                 this.responses[questionIndex] = correctness;
 
+                // Get question level for per-level tracking
+                const question = this.allQuestions[questionIndex];
+                const level = question && question.level !== undefined ? question.level : 0;
+
                 // Move from pending to asked
                 const pendingIndex = this.pendingQuestionIndices.indexOf(questionIndex);
                 if (pendingIndex !== -1) {
@@ -1443,14 +1619,98 @@
                 if (!this.askedQuestionIndices.includes(questionIndex)) {
                     this.askedQuestionIndices.push(questionIndex);
                 }
+
+                // Update per-level tracking
+                const levelPendingIdx = this.perLevelState[level].pendingIndices.indexOf(questionIndex);
+                if (levelPendingIdx !== -1) {
+                    this.perLevelState[level].pendingIndices.splice(levelPendingIdx, 1);
+                }
+                if (!this.perLevelState[level].askedIndices.includes(questionIndex)) {
+                    this.perLevelState[level].askedIndices.push(questionIndex);
+                }
+
+                // Update coverage for this level
+                this._updateLevelCoverage(level);
             }
 
             clearPendingQuestions() {
                 // Clear pending questions (e.g., when starting a new round)
                 this.pendingQuestionIndices = [];
+                // Also clear per-level pending
+                for (let level = 0; level <= 4; level++) {
+                    this.perLevelState[level].pendingIndices = [];
+                }
             }
 
             // === Utility Methods ===
+
+            _updateLevelCoverage(level) {
+                // Compute coverage for a specific level using the confidence formula
+                const levelAskedIndices = this.perLevelState[level].askedIndices;
+
+                if (levelAskedIndices.length === 0) {
+                    this.perLevelState[level].coverage = 0;
+                    return;
+                }
+
+                // Get all questions at this level
+                const levelQuestions = this.allQuestions.filter(q => {
+                    const qLevel = q.level !== undefined ? q.level : 0;
+                    return qLevel === level;
+                });
+
+                if (levelQuestions.length === 0) {
+                    this.perLevelState[level].coverage = 0;
+                    return;
+                }
+
+                // Generate grid of cell centers (39x39 grid covering [0,1] x [0,1])
+                const gridSize = 39;
+                const cellCenters = [];
+                for (let gx = 0; gx < gridSize; gx++) {
+                    for (let gy = 0; gy < gridSize; gy++) {
+                        const x = (gx + 0.5) / gridSize;
+                        const y = (gy + 0.5) / gridSize;
+                        cellCenters.push({x, y});
+                    }
+                }
+
+                // Compute max distance to nearest question for different scenarios
+                const computeMaxDist = (questions) => {
+                    let maxDist = 0;
+                    for (const center of cellCenters) {
+                        let minDist = Infinity;
+                        for (const q of questions) {
+                            const dist = this._calculateDistance(center, q);
+                            minDist = Math.min(minDist, dist);
+                        }
+                        maxDist = Math.max(maxDist, minDist);
+                    }
+                    return maxDist;
+                };
+
+                // Z: Current max distance (with currently asked questions at this level)
+                const askedQuestions = levelAskedIndices.map(idx => this.allQuestions[idx]);
+                const Z = computeMaxDist(askedQuestions);
+
+                // X: Best case (all questions at this level answered)
+                const X = computeMaxDist(levelQuestions);
+
+                // Y: Worst case (one question at corner (0,0))
+                const worstCaseQuestion = [{x: 0, y: 0}];
+                const Y = computeMaxDist(worstCaseQuestion);
+
+                // Coverage: (Y - Z) / (Y - X)
+                let coverage = 0;
+                if (Y > X) {
+                    coverage = (Y - Z) / (Y - X);
+                    coverage = Math.max(0, Math.min(1, coverage));
+                } else {
+                    coverage = Z <= X ? 1.0 : 0.0;
+                }
+
+                this.perLevelState[level].coverage = coverage;
+            }
 
             _computeConfidence() {
                 // Confidence based on coverage distance
@@ -1522,6 +1782,17 @@
             getStats() {
                 const avgMinDist = this._calculateCoverageDensity();
                 const confidenceData = this._computeConfidence();
+
+                // Return per-level coverage data
+                const perLevelCoverage = {};
+                for (let level = 0; level <= 4; level++) {
+                    perLevelCoverage[level] = {
+                        coverage: this.perLevelState[level].coverage,
+                        questionsAsked: this.perLevelState[level].askedIndices.length,
+                        questionsPending: this.perLevelState[level].pendingIndices.length
+                    };
+                }
+
                 return {
                     questionsAsked: this.askedQuestionIndices.length,
                     currentLevel: this.currentLevel,
@@ -1530,15 +1801,26 @@
                     confidence: confidenceData.confidence,
                     maxDistCurrent: confidenceData.maxDistCurrent,
                     maxDistBest: confidenceData.maxDistBest,
-                    maxDistWorst: confidenceData.maxDistWorst
+                    maxDistWorst: confidenceData.maxDistWorst,
+                    perLevelCoverage: perLevelCoverage
                 };
             }
 
             reset() {
                 this.askedQuestionIndices = [];
+                this.pendingQuestionIndices = [];
                 this.responses = {};
                 this.currentLevel = 4;
                 this.levelTransitions = [];
+
+                // Reset per-level tracking
+                for (let level = 0; level <= 4; level++) {
+                    this.perLevelState[level] = {
+                        askedIndices: [],
+                        pendingIndices: [],
+                        coverage: 0
+                    };
+                }
             }
         }
 
@@ -1933,20 +2215,39 @@
             if (!adaptiveSampler) return;
 
             const stats = adaptiveSampler.getStats();
-            const percent = Math.round(stats.confidence * 100);
 
-            // Update display elements if they exist
-            const confidenceValue = document.getElementById('confidence-value');
-            const confidenceFill = document.getElementById('confidence-fill');
-            if (confidenceValue && confidenceFill) {
-                confidenceValue.textContent = `${percent}%`;
-                confidenceFill.style.width = `${percent}%`;
+            // Update per-level coverage bars (levels 0-4)
+            for (let level = 0; level <= 4; level++) {
+                const levelData = stats.perLevelCoverage[level];
+                const percent = Math.round(levelData.coverage * 100);
+
+                // Update quiz section bars
+                const fillElement = document.getElementById(`confidence-fill-${level}`);
+                const percentElement = document.getElementById(`level-percent-${level}`);
+                if (fillElement) {
+                    fillElement.style.width = `${percent}%`;
+                }
+                if (percentElement) {
+                    percentElement.textContent = `${percent}%`;
+                }
+
+                // Update map section bars
+                const mapFillElement = document.getElementById(`map-confidence-fill-${level}`);
+                const mapPercentElement = document.getElementById(`map-level-percent-${level}`);
+                if (mapFillElement) {
+                    mapFillElement.style.width = `${percent}%`;
+                }
+                if (mapPercentElement) {
+                    mapPercentElement.textContent = `${percent}%`;
+                }
             }
 
-            console.log(`Level ${stats.currentLevel}, Confidence: ${percent}%, ` +
-                       `Z (current): ${stats.maxDistCurrent.toFixed(4)}, ` +
-                       `X (best): ${stats.maxDistBest.toFixed(4)}, ` +
-                       `Y (worst): ${stats.maxDistWorst.toFixed(4)}`);
+            console.log(`Level ${stats.currentLevel}, Per-Level Coverage: ` +
+                       `L4=${Math.round(stats.perLevelCoverage[4].coverage * 100)}%, ` +
+                       `L3=${Math.round(stats.perLevelCoverage[3].coverage * 100)}%, ` +
+                       `L2=${Math.round(stats.perLevelCoverage[2].coverage * 100)}%, ` +
+                       `L1=${Math.round(stats.perLevelCoverage[1].coverage * 100)}%, ` +
+                       `L0=${Math.round(stats.perLevelCoverage[0].coverage * 100)}%`);
         }
 
         function renderQuestion() {
@@ -2001,10 +2302,22 @@
             // Record response in adaptive sampler if available
             if (adaptiveSampler && questionsData[currentQuestion].index !== undefined) {
                 const isCorrect = selectedOption === questionsData[currentQuestion].correctIndex;
+                const previousLevel = adaptiveSampler.currentLevel;
+                const previousCoverage = adaptiveSampler.perLevelState[previousLevel].coverage;
+
                 adaptiveSampler.recordResponse(questionsData[currentQuestion].index, isCorrect);
 
                 // Update confidence display
                 updateConfidenceDisplay();
+
+                // Check if we just crossed the threshold for this level
+                const newCoverage = adaptiveSampler.perLevelState[previousLevel].coverage;
+                if (previousCoverage < adaptiveSampler.coverageThreshold &&
+                    newCoverage >= adaptiveSampler.coverageThreshold) {
+                    // Threshold crossed! Highlight the Show Map button
+                    showMapBtn.classList.add('high-confidence');
+                    console.log(`🎯 Level ${previousLevel} threshold reached! Coverage: ${Math.round(newCoverage * 100)}%`);
+                }
 
                 // Log stats
                 const stats = adaptiveSampler.getStats();
@@ -2017,7 +2330,58 @@
                 selectedOption = null;
                 renderQuestion();
             } else {
-                showResults();
+                // Reached end of current batch - automatically load more questions
+                if (adaptiveSampler) {
+                    const selectedQuestion = adaptiveSampler.selectNextQuestion();
+                    if (selectedQuestion) {
+                        // Add new question to questionsData
+                        let correctIndex;
+                        if (selectedQuestion.correct_index !== undefined) {
+                            correctIndex = selectedQuestion.correct_index;
+                        } else if (selectedQuestion.correct_answer !== undefined) {
+                            correctIndex = selectedQuestion.correct_answer.charCodeAt(0) - 65;
+                        } else {
+                            correctIndex = 0;
+                        }
+
+                        let optionsArray;
+                        if (Array.isArray(selectedQuestion.options)) {
+                            optionsArray = selectedQuestion.options;
+                        } else if (typeof selectedQuestion.options === 'object') {
+                            optionsArray = [
+                                selectedQuestion.options.A || selectedQuestion.options['A'],
+                                selectedQuestion.options.B || selectedQuestion.options['B'],
+                                selectedQuestion.options.C || selectedQuestion.options['C'],
+                                selectedQuestion.options.D || selectedQuestion.options['D']
+                            ];
+                        } else {
+                            optionsArray = [];
+                        }
+
+                        const question = {
+                            question: selectedQuestion.question,
+                            options: optionsArray,
+                            correctIndex: correctIndex,
+                            x: selectedQuestion.x,
+                            y: selectedQuestion.y,
+                            topic: selectedQuestion.topic || 'general',
+                            cell_gx: selectedQuestion.cellData.cell.gx,
+                            cell_gy: selectedQuestion.cellData.cell.gy,
+                            cellKey: selectedQuestion.cellKey,
+                            index: selectedQuestion.index
+                        };
+
+                        questionsData.push(question);
+                        userResponses.push(undefined);
+                        currentQuestion++;
+                        selectedOption = null;
+                        renderQuestion();
+                    } else {
+                        // No more questions available
+                        questionContainer.innerHTML = '<p style="text-align: center; padding: 40px; font-size: 1.2em;">No more questions available. Click "Show Map" to view your results.</p>';
+                        nextBtn.disabled = true;
+                    }
+                }
             }
         }
 
@@ -2039,10 +2403,22 @@
 
             // Record response in adaptive sampler with low correctness
             if (adaptiveSampler && questionsData[currentQuestion].index !== undefined) {
+                const previousLevel = adaptiveSampler.currentLevel;
+                const previousCoverage = adaptiveSampler.perLevelState[previousLevel].coverage;
+
                 adaptiveSampler.recordResponse(questionsData[currentQuestion].index, false, 0.1);
 
                 // Update confidence display
                 updateConfidenceDisplay();
+
+                // Check if we just crossed the threshold for this level
+                const newCoverage = adaptiveSampler.perLevelState[previousLevel].coverage;
+                if (previousCoverage < adaptiveSampler.coverageThreshold &&
+                    newCoverage >= adaptiveSampler.coverageThreshold) {
+                    // Threshold crossed! Highlight the Show Map button
+                    showMapBtn.classList.add('high-confidence');
+                    console.log(`🎯 Level ${previousLevel} threshold reached! Coverage: ${Math.round(newCoverage * 100)}%`);
+                }
 
                 // Log stats
                 const stats = adaptiveSampler.getStats();
@@ -2050,17 +2426,71 @@
                            `Level: ${stats.currentLevel} | Density: ${stats.avgMinDistance.toFixed(4)}`);
             }
 
-            // Move to next question or show results
+            // Move to next question or load more
             if (currentQuestion < questionsData.length - 1) {
                 currentQuestion++;
                 selectedOption = null;
                 renderQuestion();
             } else {
-                showResults();
+                // Reached end of current batch - automatically load more questions
+                if (adaptiveSampler) {
+                    const selectedQuestion = adaptiveSampler.selectNextQuestion();
+                    if (selectedQuestion) {
+                        // Add new question to questionsData
+                        let correctIndex;
+                        if (selectedQuestion.correct_index !== undefined) {
+                            correctIndex = selectedQuestion.correct_index;
+                        } else if (selectedQuestion.correct_answer !== undefined) {
+                            correctIndex = selectedQuestion.correct_answer.charCodeAt(0) - 65;
+                        } else {
+                            correctIndex = 0;
+                        }
+
+                        let optionsArray;
+                        if (Array.isArray(selectedQuestion.options)) {
+                            optionsArray = selectedQuestion.options;
+                        } else if (typeof selectedQuestion.options === 'object') {
+                            optionsArray = [
+                                selectedQuestion.options.A || selectedQuestion.options['A'],
+                                selectedQuestion.options.B || selectedQuestion.options['B'],
+                                selectedQuestion.options.C || selectedQuestion.options['C'],
+                                selectedQuestion.options.D || selectedQuestion.options['D']
+                            ];
+                        } else {
+                            optionsArray = [];
+                        }
+
+                        const question = {
+                            question: selectedQuestion.question,
+                            options: optionsArray,
+                            correctIndex: correctIndex,
+                            x: selectedQuestion.x,
+                            y: selectedQuestion.y,
+                            topic: selectedQuestion.topic || 'general',
+                            cell_gx: selectedQuestion.cellData.cell.gx,
+                            cell_gy: selectedQuestion.cellData.cell.gy,
+                            cellKey: selectedQuestion.cellKey,
+                            index: selectedQuestion.index
+                        };
+
+                        questionsData.push(question);
+                        userResponses.push(undefined);
+                        currentQuestion++;
+                        selectedOption = null;
+                        renderQuestion();
+                    } else {
+                        // No more questions available
+                        questionContainer.innerHTML = '<p style="text-align: center; padding: 40px; font-size: 1.2em;">No more questions available. Click "Show Map" to view your results.</p>';
+                        nextBtn.disabled = true;
+                    }
+                }
             }
         }
 
         function handleShowMap() {
+            // Reset the Show Map button color when clicked
+            showMapBtn.classList.remove('high-confidence');
+
             // Show map at any time, even if no questions answered (will show all 0.5)
             showResults();
         }
@@ -2070,22 +2500,17 @@
             mapSection.classList.remove('hidden');
             loading.classList.remove('hidden');
 
-            // Show confidence display on map if adaptive sampling is enabled
+            // Show coverage display on map if adaptive sampling is enabled
             if (adaptiveSampler) {
                 const mapConfidenceDisplay = document.getElementById('map-confidence-display');
-                const mapConfidenceValue = document.getElementById('map-confidence-value');
-                const mapConfidenceFill = document.getElementById('map-confidence-fill');
-
-                const stats = adaptiveSampler.getStats();
-                const percent = Math.round(stats.confidence * 100);
-
-                mapConfidenceValue.textContent = `${percent}%`;
-                mapConfidenceFill.style.width = `${percent}%`;
                 mapConfidenceDisplay.classList.remove('hidden');
 
-                // Check if all questions are exhausted
+                // Update per-level coverage bars on map
+                updateConfidenceDisplay();
+
+                // Check if all questions are exhausted at current level
                 const availableQuestions = adaptiveSampler._getAvailableQuestions();
-                if (availableQuestions.length === 0) {
+                if (availableQuestions.length === 0 && adaptiveSampler.currentLevel === 0) {
                     anotherRoundBtn.disabled = true;
                     anotherRoundBtn.innerHTML = '<i class="fas fa-check"></i> All Questions Completed';
                 } else {
@@ -2155,6 +2580,9 @@
             const width = container.clientWidth;
             const height = container.clientHeight;
 
+            // Hide canvas until everything is rendered
+            canvas.style.visibility = 'hidden';
+
             // Create knowledge heatmap
             drawKnowledgeHeatmap(width, height);
 
@@ -2166,6 +2594,9 @@
 
                 // Draw question markers
                 drawQuestionMarkers(width, height);
+
+                // Show canvas now that everything is rendered
+                canvas.style.visibility = 'visible';
             });
 
             // Add interactivity
@@ -2554,6 +2985,12 @@
         }
 
         function addInteractivity(width, height) {
+            // Only add event listeners once to prevent duplicates
+            if (canvas.dataset.interactivityInitialized) {
+                return;
+            }
+            canvas.dataset.interactivityInitialized = 'true';
+
             canvas.addEventListener('mousemove', (e) => {
                 const rect = canvas.getBoundingClientRect();
                 const mouseX = (e.clientX - rect.left) / rect.width * width;
@@ -2905,6 +3342,9 @@
                     return;
                 }
             }
+
+            // Reset Show Map button color when starting a new round
+            showMapBtn.classList.remove('high-confidence');
 
             // Hide map, show quiz
             mapSection.classList.add('hidden');

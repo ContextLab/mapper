@@ -128,34 +128,86 @@
             color: #00693E;
         }
 
+        /* Stacked level bars container */
+        .level-bars-container {
+            position: relative;
+            margin-bottom: 28px;
+        }
+
+        .level-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .level-label {
+            font-size: 0.75em;
+            font-weight: 600;
+            color: #555;
+            min-width: 24px;
+        }
+
+        .level-percent {
+            font-size: 0.75em;
+            font-weight: 600;
+            color: #555;
+            min-width: 35px;
+            text-align: right;
+        }
+
         .confidence-bar {
             height: 8px;
             background: #dee2e6;
             border-radius: 4px;
-            overflow: visible;
-            margin-bottom: 28px;
+            overflow: hidden;
             position: relative;
+            flex: 1;
         }
 
         .confidence-fill {
             height: 100%;
-            background: linear-gradient(90deg, #00693E 0%, #00a859 100%);
             width: 0%;
             transition: width 0.5s ease;
         }
 
-        .confidence-threshold {
+        /* Level-specific colors (reverse gradient: bronze at L4 to green at L0) */
+        .level-bar-row[data-level="4"] .confidence-fill {
+            background: linear-gradient(90deg, #8B4513 0%, #A0522D 100%); /* Bronze */
+        }
+
+        .level-bar-row[data-level="3"] .confidence-fill {
+            background: linear-gradient(90deg, #B8860B 0%, #DAA520 100%); /* Goldenrod */
+        }
+
+        .level-bar-row[data-level="2"] .confidence-fill {
+            background: linear-gradient(90deg, #D4AF37 0%, #FFD700 100%); /* Gold */
+        }
+
+        .level-bar-row[data-level="1"] .confidence-fill {
+            background: linear-gradient(90deg, #85BB65 0%, #9ACD32 100%); /* Yellow-Green */
+        }
+
+        .level-bar-row[data-level="0"] .confidence-fill {
+            background: linear-gradient(90deg, #00693E 0%, #00a859 100%); /* Dartmouth Green */
+        }
+
+        /* Shared coverage threshold line */
+        .coverage-threshold {
             position: absolute;
-            left: 90%;
-            top: -8px;
-            bottom: -8px;
+            /* Calculate position: label (24px) + gap (8px) + 90% of the bar width
+               Bar width = 100% - (24px + 8px + 35px + 8px) = 100% - 75px */
+            left: calc(32px + (100% - 75px) * 0.90);
+            top: 0;
+            bottom: 0;
             width: 2px;
             background: #333;
             z-index: 10;
+            pointer-events: none;
         }
 
-        .confidence-threshold::after {
-            content: 'High Confidence';
+        .coverage-threshold::after {
+            content: 'Target Coverage';
             position: absolute;
             bottom: -22px;
             left: 50%;
@@ -246,9 +298,11 @@
         }
 
         .btn-primary:hover:not(:disabled) {
-            background: #ced4da;
+            background: #00693E;
+            color: white;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 105, 62, 0.4);
+            animation: none; /* Stop pulsing on hover */
         }
 
         .btn-primary:disabled {
@@ -271,9 +325,11 @@
         }
 
         .btn-info:hover:not(:disabled) {
-            background: #ced4da;
+            background: #00693E;
+            color: white;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 105, 62, 0.4);
+            animation: none; /* Stop pulsing on hover */
         }
 
         .btn-info:disabled {
@@ -281,14 +337,41 @@
             cursor: not-allowed;
         }
 
+        /* Pulse animation for high-confidence button */
+        @keyframes pulse-green-bg {
+            0%, 100% {
+                background-color: #dee2e6;
+                box-shadow: 0 3px 10px rgba(108, 117, 125, 0.2);
+            }
+            50% {
+                background-color: #00693E;
+                box-shadow: 0 3px 10px rgba(0, 105, 62, 0.3);
+            }
+        }
+
+        @keyframes pulse-green-text {
+            0%, 100% {
+                color: #333;
+            }
+            50% {
+                color: white;
+            }
+        }
+
         .btn-info.high-confidence {
-            background: linear-gradient(135deg, #00693E, #004d2c);
-            color: white;
+            animation: pulse-green-bg 6s ease-in-out infinite, pulse-green-text 6s ease-in-out infinite;
+        }
+
+        /* Apply same pulsing to Start Quiz button */
+        .btn-primary:not(:disabled) {
+            animation: pulse-green-bg 6s ease-in-out infinite, pulse-green-text 6s ease-in-out infinite;
         }
 
         .btn-info.high-confidence:hover:not(:disabled) {
-            background: linear-gradient(135deg, #004d2c, #003520);
+            background: #00693E;
+            color: white;
             box-shadow: 0 5px 15px rgba(0, 105, 62, 0.4);
+            animation: none; /* Stop pulsing on hover */
         }
 
         .btn-skip {
@@ -979,14 +1062,49 @@
                     <!-- Confidence Display (for adaptive sampling) -->
                     <div class="confidence-display hidden" id="confidence-display">
                         <div class="confidence-header">
-                            <span class="confidence-label">Map Coverage Confidence</span>
-                            <span class="confidence-value" id="confidence-value">0%</span>
+                            <span class="confidence-label">Coverage</span>
                         </div>
-                        <div class="confidence-bar">
-                            <div class="confidence-fill" id="confidence-fill"></div>
-                            <div class="confidence-threshold"></div>
+                        <!-- Stacked per-level coverage bars (Level 4 to Level 0) -->
+                        <div class="level-bars-container">
+                            <div class="level-bar-row" data-level="4">
+                                <span class="level-label">L4</span>
+                                <div class="confidence-bar">
+                                    <div class="confidence-fill" id="confidence-fill-4"></div>
+                                </div>
+                                <span class="level-percent" id="level-percent-4">0%</span>
+                            </div>
+                            <div class="level-bar-row" data-level="3">
+                                <span class="level-label">L3</span>
+                                <div class="confidence-bar">
+                                    <div class="confidence-fill" id="confidence-fill-3"></div>
+                                </div>
+                                <span class="level-percent" id="level-percent-3">0%</span>
+                            </div>
+                            <div class="level-bar-row" data-level="2">
+                                <span class="level-label">L2</span>
+                                <div class="confidence-bar">
+                                    <div class="confidence-fill" id="confidence-fill-2"></div>
+                                </div>
+                                <span class="level-percent" id="level-percent-2">0%</span>
+                            </div>
+                            <div class="level-bar-row" data-level="1">
+                                <span class="level-label">L1</span>
+                                <div class="confidence-bar">
+                                    <div class="confidence-fill" id="confidence-fill-1"></div>
+                                </div>
+                                <span class="level-percent" id="level-percent-1">0%</span>
+                            </div>
+                            <div class="level-bar-row" data-level="0">
+                                <span class="level-label">L0</span>
+                                <div class="confidence-bar">
+                                    <div class="confidence-fill" id="confidence-fill-0"></div>
+                                </div>
+                                <span class="level-percent" id="level-percent-0">0%</span>
+                            </div>
+                            <!-- Shared threshold line across all levels -->
+                            <div class="coverage-threshold"></div>
                         </div>
-                        <p class="confidence-message" id="confidence-message">Answer more questions to build confidence...</p>
+                        <p class="confidence-message" id="confidence-message">Answer more questions to build coverage...</p>
                     </div>
 
                     <div class="question-text" id="question-text"></div>
@@ -1008,17 +1126,52 @@
                     <p>Hover to explore your knowledge map</p>
                 </div>
 
-                <!-- Confidence Display (also shown on map when adaptive sampling is active) -->
+                <!-- Coverage Display (also shown on map when adaptive sampling is active) -->
                 <div class="confidence-display hidden" id="map-confidence-display">
                     <div class="confidence-header">
-                        <span class="confidence-label">Map Coverage Confidence</span>
-                        <span class="confidence-value" id="map-confidence-value">0%</span>
+                        <span class="confidence-label">Coverage</span>
                     </div>
-                    <div class="confidence-bar">
-                        <div class="confidence-fill" id="map-confidence-fill"></div>
-                        <div class="confidence-threshold"></div>
+                    <!-- Stacked per-level coverage bars (Level 4 to Level 0) -->
+                    <div class="level-bars-container">
+                        <div class="level-bar-row" data-level="4">
+                            <span class="level-label">L4</span>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="map-confidence-fill-4"></div>
+                            </div>
+                            <span class="level-percent" id="map-level-percent-4">0%</span>
+                        </div>
+                        <div class="level-bar-row" data-level="3">
+                            <span class="level-label">L3</span>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="map-confidence-fill-3"></div>
+                            </div>
+                            <span class="level-percent" id="map-level-percent-3">0%</span>
+                        </div>
+                        <div class="level-bar-row" data-level="2">
+                            <span class="level-label">L2</span>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="map-confidence-fill-2"></div>
+                            </div>
+                            <span class="level-percent" id="map-level-percent-2">0%</span>
+                        </div>
+                        <div class="level-bar-row" data-level="1">
+                            <span class="level-label">L1</span>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="map-confidence-fill-1"></div>
+                            </div>
+                            <span class="level-percent" id="map-level-percent-1">0%</span>
+                        </div>
+                        <div class="level-bar-row" data-level="0">
+                            <span class="level-label">L0</span>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="map-confidence-fill-0"></div>
+                            </div>
+                            <span class="level-percent" id="map-level-percent-0">0%</span>
+                        </div>
+                        <!-- Shared threshold line across all levels -->
+                        <div class="coverage-threshold"></div>
                     </div>
-                    <p class="confidence-message" id="map-confidence-message">Answer more questions to build confidence...</p>
+                    <p class="confidence-message" id="map-confidence-message">Answer more questions to build coverage...</p>
                 </div>
 
                 <div class="map-container">
@@ -1118,15 +1271,15 @@
                 <h3>Related Resources</h3>
                 <a href="https://github.com/ContextLab/efficient-learning-khan" target="_blank" rel="noopener noreferrer" class="about-link">
                     <img src="logos/github.svg" alt="GitHub logo" class="link-logo">
-                    <span>Khan Academy Efficient Learning Repository</span>
+                    <span>GitHub repository for this project</span>
                 </a>
                 <a href="https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2145172&HistoricalAwards=false" target="_blank" rel="noopener noreferrer" class="about-link">
                     <img src="logos/nsf.png" alt="National Science Foundation logo" class="link-logo">
-                    <span>NSF Award #2145172 - Supporting this research</span>
+                    <span>Information about the NSF Award (#2145172) that supports this work</span>
                 </a>
                 <a href="https://context-lab.com" target="_blank" rel="noopener noreferrer" class="about-link">
                     <img src="logos/cdl.png" alt="Context Lab logo" class="link-logo">
-                    <span>Context Dynamics Lab at Dartmouth College</span>
+                    <span>Learn more about the Contextual Dynamics Lab at Dartmouth College</span>
                 </a>
             </section>
 
@@ -1134,7 +1287,7 @@
                 <h3>Contact</h3>
 
                 <div class="contact-info">
-                    <strong>Contextual Dynamics Lab</strong>
+                    <strong><a href="https://context-lab.com" target="_blank" rel="noopener noreferrer">Contextual Dynamics Lab</a></strong>
                     <p>Department of Psychological and Brain Sciences</p>
                     <p>Dartmouth College</p>
                     <p>349 Moore Hall, HB 6207</p>
@@ -1239,366 +1392,435 @@
         class AdaptiveSampler {
             constructor(questionsPool, distances, config) {
                 this.questionsPool = questionsPool;
-                this.distances = distances.distances;  // 2D array
+                this.distances = distances.distances;  // 2D array (not used in geometric sampling)
                 this.cellKeys = distances.cell_keys;   // Array of "gx_gy" strings
                 this.config = {
-                    mode: 'adaptive-uncertainty',
-                    initialRandomQuestions: 2,
-                    minQuestionsBeforeExit: 3,
-                    confidenceThreshold: 0.85,
                     maxQuestions: 10,
-                    K: 5,
-                    sigma: 0.15,
-                    alpha: 1.0,
-                    beta: 1.0,
-                    coverageDistance: 0.15,
+                    // RBF sigma values per level (from knowledge estimation)
+                    sigma: {
+                        0: 0.01,   // Level 0: 1% of space
+                        1: 0.05,   // Level 1: 5% of space
+                        2: 0.075,  // Level 2: 7.5% of space
+                        3: 0.10,   // Level 3: 10% of space
+                        4: 0.15    // Level 4: 15% of space
+                    },
+                    // Coverage multiplier: transition when avg min distance < sigma * multiplier
+                    coverageMultiplier: 2.0,
                     ...config  // Allow override
                 };
 
-                // Build cell index mappings
-                this.cellKeyToIndex = {};
-                this.indexToCellKey = {};
-                this.cellKeys.forEach((key, idx) => {
-                    this.cellKeyToIndex[key] = idx;
-                    this.indexToCellKey[idx] = key;
-                });
-
-                this.allCellKeys = this.cellKeys;
-
-                // State
-                this.askedCells = [];
-                this.responses = {};  // cellKey → true/false
-                this.uncertaintyMap = {};
-                this.askedQuestions = new Set();  // Track individual question IDs to prevent re-asking
-            }
-
-            // === Phase 1: Infrastructure ===
-
-            _getAvailableQuestions() {
-                // Return all questions from cells that haven't been fully exhausted
-                const available = [];
+                // Flatten all questions into a single pool with coordinates
+                this.allQuestions = [];
                 for (const cellData of this.questionsPool.cells) {
                     const cellKey = `${cellData.cell.gx}_${cellData.cell.gy}`;
-                    // Include cells even if asked before, but filter individual questions
                     for (let i = 0; i < cellData.questions.length; i++) {
-                        const question = cellData.questions[i];
-                        const questionId = `${cellKey}_${i}`;
-                        // Only include questions that haven't been asked
-                        if (!this.askedQuestions.has(questionId)) {
-                            available.push({ ...question, cellKey, cellData, questionId });
-                        }
+                        const q = cellData.questions[i];
+                        this.allQuestions.push({
+                            ...q,
+                            cellKey,
+                            cellData,
+                            questionId: `${cellKey}_${i}`,
+                            index: this.allQuestions.length
+                        });
+                    }
+                }
+
+                // State
+                this.askedQuestionIndices = [];  // Indices of asked questions
+                this.pendingQuestionIndices = [];  // Indices of questions selected but not yet answered
+                this.responses = {};  // questionIndex → correctness value
+                this.currentLevel = 4;  // Start with highest (broadest) level
+                this.levelTransitions = []; // Track when we transition levels
+
+                // Per-level tracking
+                this.perLevelState = {
+                    0: { askedIndices: [], pendingIndices: [], coverage: 0 },
+                    1: { askedIndices: [], pendingIndices: [], coverage: 0 },
+                    2: { askedIndices: [], pendingIndices: [], coverage: 0 },
+                    3: { askedIndices: [], pendingIndices: [], coverage: 0 },
+                    4: { askedIndices: [], pendingIndices: [], coverage: 0 }
+                };
+
+                // Coverage threshold (default 90%)
+                this.coverageThreshold = 0.90;
+            }
+
+            // === Geometric Sampling Methods ===
+
+            _getAvailableQuestions(level = null) {
+                // Return questions from the specified level (or current level if not specified)
+                const targetLevel = level !== null ? level : this.currentLevel;
+                const available = [];
+
+                for (const q of this.allQuestions) {
+                    const questionLevel = q.level !== undefined ? q.level : 0;
+                    // Only include questions that:
+                    // 1. Haven't been asked (answered)
+                    // 2. Haven't been selected for current round (pending)
+                    // 3. Match the target level
+                    if (!this.askedQuestionIndices.includes(q.index) &&
+                        !this.pendingQuestionIndices.includes(q.index) &&
+                        questionLevel === targetLevel) {
+                        available.push(q);
                     }
                 }
                 return available;
             }
 
-            _groupByCell(questions) {
-                const grouped = {};
-                for (const q of questions) {
-                    if (!grouped[q.cellKey]) {
-                        grouped[q.cellKey] = [];
-                    }
-                    grouped[q.cellKey].push(q);
-                }
-                return grouped;
+            _calculateDistance(q1, q2) {
+                // Euclidean distance between two questions
+                const dx = q1.x - q2.x;
+                const dy = q1.y - q2.y;
+                return Math.sqrt(dx * dx + dy * dy);
             }
 
-            _selectRandom(items) {
-                return items[Math.floor(Math.random() * items.length)];
-            }
-
-            // === Phase 2: Uncertainty Estimation ===
-
-            findKNearestAsked(cellKey, askedCells, K) {
-                const cellIdx = this.cellKeyToIndex[cellKey];
-                const distances = [];
-
-                for (const askedCell of askedCells) {
-                    const askedIdx = this.cellKeyToIndex[askedCell];
-                    const dist = this.distances[cellIdx][askedIdx];
-                    distances.push({ cellKey: askedCell, distance: dist });
+            _selectFurthestQuestion(availableQuestions) {
+                // Select the question furthest from all asked questions AND pending questions
+                // This ensures that within a single round, questions are spread out from each other
+                if (this.askedQuestionIndices.length === 0 && this.pendingQuestionIndices.length === 0) {
+                    // First question ever: select randomly
+                    const randomIdx = Math.floor(Math.random() * availableQuestions.length);
+                    return availableQuestions[randomIdx];
                 }
 
-                distances.sort((a, b) => a.distance - b.distance);
-                return distances.slice(0, K);
-            }
-
-            estimateUncertainty(cellKey, askedCells, responses) {
-                const sigma = this.config.sigma;
-
-                // If no questions answered, return default values
-                if (askedCells.length === 0) {
-                    return {
-                        predictedCorrectness: 0.5,
-                        uncertainty: 1.0,
-                        confidence: 0.0
-                    };
-                }
-
-                // Use ALL answered questions with Gaussian kernel weighting
-                const cellIdx = this.cellKeyToIndex[cellKey];
-                let totalWeight = 0;
-                let weightedCorrectness = 0;
-
-                for (const askedCell of askedCells) {
-                    const askedIdx = this.cellKeyToIndex[askedCell];
-                    const dist = this.distances[cellIdx][askedIdx];
-                    const weight = Math.exp(-dist * dist / (2 * sigma * sigma));
-
-                    // Handle fractional correctness values
-                    const correct = typeof responses[askedCell] === 'number' ?
-                                    responses[askedCell] :
-                                    (responses[askedCell] ? 1.0 : 0.0);
-
-                    weightedCorrectness += weight * correct;
-                    totalWeight += weight;
-                }
-
-                const p = totalWeight > 0 ? weightedCorrectness / totalWeight : 0.5;
-
-                const epsilon = 1e-10;
-                const pClipped = Math.max(epsilon, Math.min(1 - epsilon, p));
-                const uncertainty = -(pClipped * Math.log2(pClipped) +
-                                     (1 - pClipped) * Math.log2(1 - pClipped));
-
-                return {
-                    predictedCorrectness: p,
-                    uncertainty: uncertainty,
-                    confidence: 1 - uncertainty,
-                    numNeighbors: askedCells.length
-                };
-            }
-
-            updateUncertaintyMap(askedCells, responses) {
-                const uncertaintyMap = {};
-
-                for (const cellKey of this.allCellKeys) {
-                    if (!askedCells.includes(cellKey)) {
-                        uncertaintyMap[cellKey] = this.estimateUncertainty(
-                            cellKey,
-                            askedCells,
-                            responses
-                        );
-                    } else {
-                        // Handle fractional correctness values
-                        const correctness = typeof responses[cellKey] === 'number' ?
-                                          responses[cellKey] :
-                                          (responses[cellKey] ? 1.0 : 0.0);
-                        uncertaintyMap[cellKey] = {
-                            predictedCorrectness: correctness,
-                            uncertainty: 0.0,
-                            confidence: 1.0
-                        };
-                    }
-                }
-
-                return uncertaintyMap;
-            }
-
-            // === Phase 3: Uncertainty-Weighted Selection ===
-
-            scoreCell(cellKey, askedCells, uncertaintyMap) {
-                // Calculate alpha and beta dynamically based on confidence
-                // When confidence is low: prioritize spreading out (high alpha, low beta)
-                // When confidence is high: prioritize uncertainty reduction (low alpha, high beta)
-                const confidence = this.computeConfidence().overallConfidence;
-                const alpha = 2 * (1 - confidence);
-                const beta = 2 * confidence;
-
-                let minDistance = 1.0;
-                if (askedCells.length > 0) {
-                    const cellIdx = this.cellKeyToIndex[cellKey];
-                    minDistance = Math.min(...askedCells.map(asked => {
-                        const askedIdx = this.cellKeyToIndex[asked];
-                        return this.distances[cellIdx][askedIdx];
-                    }));
-                }
-
-                const uncertainty = uncertaintyMap[cellKey]?.uncertainty || 1.0;
-                const score = Math.pow(minDistance, alpha) * Math.pow(uncertainty, beta);
-
-                return score;
-            }
-
-            _selectGeometric(availableQuestions) {
-                // Fallback to geometric sampling for first N questions
-                const questionsByCell = this._groupByCell(availableQuestions);
+                let furthestQuestion = null;
                 let maxMinDistance = -Infinity;
-                let bestQuestion = null;
 
-                for (const [cellKey, questions] of Object.entries(questionsByCell)) {
-                    if (this.askedCells.includes(cellKey)) continue;
+                // Combine asked and pending indices to get all "sampled" questions
+                const sampledIndices = [...this.askedQuestionIndices, ...this.pendingQuestionIndices];
+                const sampledQuestions = sampledIndices.map(idx => this.allQuestions[idx]);
 
-                    const cellIdx = this.cellKeyToIndex[cellKey];
+                for (const candidate of availableQuestions) {
+                    // Find minimum distance to any sampled question (asked or pending)
+                    let minDistance = Infinity;
+                    for (const sampled of sampledQuestions) {
+                        const dist = this._calculateDistance(candidate, sampled);
+                        minDistance = Math.min(minDistance, dist);
+                    }
+
+                    // Select candidate with maximum of these minimum distances
+                    if (minDistance > maxMinDistance) {
+                        maxMinDistance = minDistance;
+                        furthestQuestion = candidate;
+                    }
+                }
+
+                console.log(`Selected question at distance ${maxMinDistance.toFixed(4)} from nearest sampled question`);
+                return furthestQuestion;
+            }
+
+            _calculateCoverageDensity() {
+                // Calculate average minimum distance between asked questions
+                // This tells us how densely we've sampled the space
+                if (this.askedQuestionIndices.length < 2) {
+                    return Infinity; // Not enough questions to calculate density
+                }
+
+                const askedQuestions = this.askedQuestionIndices.map(idx => this.allQuestions[idx]);
+                let totalMinDistance = 0;
+
+                for (const q of askedQuestions) {
                     let minDist = Infinity;
-
-                    if (this.askedCells.length > 0) {
-                        minDist = Math.min(...this.askedCells.map(asked => {
-                            const askedIdx = this.cellKeyToIndex[asked];
-                            return this.distances[cellIdx][askedIdx];
-                        }));
-                    } else {
-                        minDist = Math.random();  // Random for very first question
+                    for (const other of askedQuestions) {
+                        if (q.index !== other.index) {
+                            const dist = this._calculateDistance(q, other);
+                            minDist = Math.min(minDist, dist);
+                        }
                     }
-
-                    if (minDist > maxMinDistance) {
-                        maxMinDistance = minDist;
-                        bestQuestion = this._selectRandom(questions);
-                    }
+                    totalMinDistance += minDist;
                 }
 
-                return bestQuestion;
+                return totalMinDistance / askedQuestions.length;
             }
 
-            _selectUncertaintyWeighted(availableQuestions) {
-                this.uncertaintyMap = this.updateUncertaintyMap(
-                    this.askedCells,
-                    this.responses
-                );
-
-                const questionsByCell = this._groupByCell(availableQuestions);
-                let bestScore = -Infinity;
-                let bestQuestion = null;
-                let bestCellKey = null;
-
-                for (const [cellKey, questions] of Object.entries(questionsByCell)) {
-                    if (this.askedCells.includes(cellKey)) continue;
-
-                    const score = this.scoreCell(cellKey, this.askedCells, this.uncertaintyMap);
-
-                    if (score > bestScore) {
-                        bestScore = score;
-                        bestCellKey = cellKey;
-                        bestQuestion = this._selectRandom(questions);
-                    }
+            _checkAndTransitionLevel() {
+                // Check if we should transition to next level based on coverage threshold
+                if (this.currentLevel === 0) {
+                    return false; // Already at finest level
                 }
 
-                console.log(`Selected cell ${bestCellKey}, score: ${bestScore.toFixed(3)}, ` +
-                            `uncertainty: ${this.uncertaintyMap[bestCellKey]?.uncertainty.toFixed(3)}`);
+                const currentLevelCoverage = this.perLevelState[this.currentLevel].coverage;
+                const availableAtCurrentLevel = this._getAvailableQuestions(this.currentLevel).length;
 
-                return bestQuestion;
+                // Transition when coverage exceeds threshold OR no more questions available at current level
+                if (currentLevelCoverage >= this.coverageThreshold || availableAtCurrentLevel === 0) {
+                    const oldLevel = this.currentLevel;
+                    this.currentLevel--;
+                    this.levelTransitions.push({
+                        fromLevel: oldLevel,
+                        toLevel: this.currentLevel,
+                        coverage: currentLevelCoverage,
+                        threshold: this.coverageThreshold,
+                        questionsAsked: this.perLevelState[oldLevel].askedIndices.length,
+                        reason: availableAtCurrentLevel === 0 ? 'exhausted' : 'coverage_met'
+                    });
+                    console.log(`📊 Level transition: ${oldLevel} → ${this.currentLevel} ` +
+                               `(coverage: ${(currentLevelCoverage * 100).toFixed(1)}%, ` +
+                               `reason: ${availableAtCurrentLevel === 0 ? 'exhausted' : 'target reached'})`);
+                    return true;
+                }
+
+                return false;
             }
+
+            // === Selection and Recording ===
 
             selectNextQuestion() {
+                // Check if we should transition to next level
+                this._checkAndTransitionLevel();
+
+                // Get available questions for current level
                 const availableQuestions = this._getAvailableQuestions();
 
                 if (availableQuestions.length === 0) {
+                    // No more questions at current level - try to transition
+                    if (this.currentLevel > 0) {
+                        console.log(`No questions available at level ${this.currentLevel}, transitioning to level ${this.currentLevel - 1}`);
+                        this.currentLevel--;
+                        return this.selectNextQuestion(); // Recursive call with new level
+                    }
                     return null;
                 }
 
-                let selectedQuestion;
-                if (this.askedCells.length < this.config.initialRandomQuestions) {
-                    selectedQuestion = this._selectGeometric(availableQuestions);
-                } else {
-                    selectedQuestion = this._selectUncertaintyWeighted(availableQuestions);
+                // Use pure geometric sampling: select furthest question
+                const selectedQuestion = this._selectFurthestQuestion(availableQuestions);
+
+                // Add to pendingQuestionIndices to prevent selecting again in this round
+                if (selectedQuestion) {
+                    this.pendingQuestionIndices.push(selectedQuestion.index);
+                    // Also track in per-level state
+                    const level = selectedQuestion.level !== undefined ? selectedQuestion.level : 0;
+                    this.perLevelState[level].pendingIndices.push(selectedQuestion.index);
                 }
 
-                // Mark question as asked
-                if (selectedQuestion && selectedQuestion.questionId) {
-                    this.askedQuestions.add(selectedQuestion.questionId);
-                }
+                // NOTE: Don't add to askedQuestionIndices here!
+                // Questions are only marked as "asked" when recordResponse() is called
+                // after the user actually answers them
 
                 return selectedQuestion;
             }
 
-            recordResponse(cellKey, isCorrect, fractionalCorrectness = null) {
-                if (!this.askedCells.includes(cellKey)) {
-                    this.askedCells.push(cellKey);
+            recordResponse(questionIndex, isCorrect, fractionalCorrectness = null) {
+                // Record response for a question by its index
+                const correctness = fractionalCorrectness !== null ? fractionalCorrectness : (isCorrect ? 1.0 : 0.0);
+                this.responses[questionIndex] = correctness;
+
+                // Get question level for per-level tracking
+                const question = this.allQuestions[questionIndex];
+                const level = question && question.level !== undefined ? question.level : 0;
+
+                // Move from pending to asked
+                const pendingIndex = this.pendingQuestionIndices.indexOf(questionIndex);
+                if (pendingIndex !== -1) {
+                    this.pendingQuestionIndices.splice(pendingIndex, 1);
                 }
-                // Support fractional correctness (e.g., 0.1 for "I Don't Know")
-                if (fractionalCorrectness !== null) {
-                    this.responses[cellKey] = fractionalCorrectness;
-                } else {
-                    this.responses[cellKey] = isCorrect ? 1.0 : 0.0;
+
+                // Add to askedQuestionIndices if not already there
+                if (!this.askedQuestionIndices.includes(questionIndex)) {
+                    this.askedQuestionIndices.push(questionIndex);
                 }
+
+                // Update per-level tracking
+                const levelPendingIdx = this.perLevelState[level].pendingIndices.indexOf(questionIndex);
+                if (levelPendingIdx !== -1) {
+                    this.perLevelState[level].pendingIndices.splice(levelPendingIdx, 1);
+                }
+                if (!this.perLevelState[level].askedIndices.includes(questionIndex)) {
+                    this.perLevelState[level].askedIndices.push(questionIndex);
+                }
+
+                // Update coverage for this level
+                this._updateLevelCoverage(level);
             }
 
-            // === Phase 4: Confidence Metrics ===
-
-            computeConfidence() {
-                if (this.askedCells.length === 0) {
-                    return {
-                        overallConfidence: 0,
-                        coverageConfidence: 0,
-                        uncertaintyConfidence: 0,
-                        coveredCells: 0,
-                        totalCells: this.allCellKeys.length
-                    };
+            clearPendingQuestions() {
+                // Clear pending questions (e.g., when starting a new round)
+                this.pendingQuestionIndices = [];
+                // Also clear per-level pending
+                for (let level = 0; level <= 4; level++) {
+                    this.perLevelState[level].pendingIndices = [];
                 }
-
-                let coveredCells = 0;
-                const threshold = this.config.coverageDistance;
-
-                for (const cellKey of this.allCellKeys) {
-                    const cellIdx = this.cellKeyToIndex[cellKey];
-                    let minDist = Infinity;
-
-                    for (const askedCell of this.askedCells) {
-                        const askedIdx = this.cellKeyToIndex[askedCell];
-                        const dist = this.distances[cellIdx][askedIdx];
-                        minDist = Math.min(minDist, dist);
-                    }
-
-                    if (minDist < threshold) {
-                        coveredCells++;
-                    }
-                }
-
-                const coverageConfidence = coveredCells / this.allCellKeys.length;
-
-                // Update uncertainty map if not already updated
-                if (Object.keys(this.uncertaintyMap).length === 0) {
-                    this.uncertaintyMap = this.updateUncertaintyMap(
-                        this.askedCells,
-                        this.responses
-                    );
-                }
-
-                let totalConfidence = 0;
-                for (const cellKey of this.allCellKeys) {
-                    totalConfidence += this.uncertaintyMap[cellKey]?.confidence || 0;
-                }
-                const uncertaintyConfidence = totalConfidence / this.allCellKeys.length;
-
-                const combinedConfidence = (coverageConfidence + uncertaintyConfidence) / 2;
-
-                return {
-                    overallConfidence: combinedConfidence,
-                    coverageConfidence: coverageConfidence,
-                    uncertaintyConfidence: uncertaintyConfidence,
-                    coveredCells: coveredCells,
-                    totalCells: this.allCellKeys.length
-                };
-            }
-
-            canEarlyExit() {
-                const confidence = this.computeConfidence();
-                return (
-                    this.askedCells.length >= this.config.minQuestionsBeforeExit &&
-                    confidence.overallConfidence >= this.config.confidenceThreshold
-                );
             }
 
             // === Utility Methods ===
 
-            getUncertaintyMap() {
-                return this.uncertaintyMap;
+            _updateLevelCoverage(level) {
+                // Compute coverage for a specific level using the confidence formula
+                const levelAskedIndices = this.perLevelState[level].askedIndices;
+
+                if (levelAskedIndices.length === 0) {
+                    this.perLevelState[level].coverage = 0;
+                    return;
+                }
+
+                // Get all questions at this level
+                const levelQuestions = this.allQuestions.filter(q => {
+                    const qLevel = q.level !== undefined ? q.level : 0;
+                    return qLevel === level;
+                });
+
+                if (levelQuestions.length === 0) {
+                    this.perLevelState[level].coverage = 0;
+                    return;
+                }
+
+                // Generate grid of cell centers (39x39 grid covering [0,1] x [0,1])
+                const gridSize = 39;
+                const cellCenters = [];
+                for (let gx = 0; gx < gridSize; gx++) {
+                    for (let gy = 0; gy < gridSize; gy++) {
+                        const x = (gx + 0.5) / gridSize;
+                        const y = (gy + 0.5) / gridSize;
+                        cellCenters.push({x, y});
+                    }
+                }
+
+                // Compute max distance to nearest question for different scenarios
+                const computeMaxDist = (questions) => {
+                    let maxDist = 0;
+                    for (const center of cellCenters) {
+                        let minDist = Infinity;
+                        for (const q of questions) {
+                            const dist = this._calculateDistance(center, q);
+                            minDist = Math.min(minDist, dist);
+                        }
+                        maxDist = Math.max(maxDist, minDist);
+                    }
+                    return maxDist;
+                };
+
+                // Z: Current max distance (with currently asked questions at this level)
+                const askedQuestions = levelAskedIndices.map(idx => this.allQuestions[idx]);
+                const Z = computeMaxDist(askedQuestions);
+
+                // X: Best case (all questions at this level answered)
+                const X = computeMaxDist(levelQuestions);
+
+                // Y: Worst case (one question at corner (0,0))
+                const worstCaseQuestion = [{x: 0, y: 0}];
+                const Y = computeMaxDist(worstCaseQuestion);
+
+                // Coverage: (Y - Z) / (Y - X)
+                let coverage = 0;
+                if (Y > X) {
+                    coverage = (Y - Z) / (Y - X);
+                    coverage = Math.max(0, Math.min(1, coverage));
+                } else {
+                    coverage = Z <= X ? 1.0 : 0.0;
+                }
+
+                this.perLevelState[level].coverage = coverage;
+            }
+
+            _computeConfidence() {
+                // Confidence based on coverage distance
+                // Formula: confidence = (Y - Z) / (Y - X)
+                // where:
+                //   X = best case (max dist when ALL questions answered)
+                //   Y = worst case (max dist when 1 corner question answered)
+                //   Z = current max dist to nearest asked question
+
+                if (this.askedQuestionIndices.length === 0) {
+                    return { confidence: 0, maxDistCurrent: Infinity, maxDistBest: 0, maxDistWorst: 0 };
+                }
+
+                // Generate grid of cell centers (39x39 grid covering [0,1] x [0,1])
+                const gridSize = 39;
+                const cellCenters = [];
+                for (let gx = 0; gx < gridSize; gx++) {
+                    for (let gy = 0; gy < gridSize; gy++) {
+                        const x = (gx + 0.5) / gridSize;
+                        const y = (gy + 0.5) / gridSize;
+                        cellCenters.push({x, y});
+                    }
+                }
+
+                // Compute max distance to nearest question for different scenarios
+                const computeMaxDist = (questions) => {
+                    let maxDist = 0;
+                    for (const center of cellCenters) {
+                        let minDist = Infinity;
+                        for (const q of questions) {
+                            const dist = this._calculateDistance(center, q);
+                            minDist = Math.min(minDist, dist);
+                        }
+                        maxDist = Math.max(maxDist, minDist);
+                    }
+                    return maxDist;
+                };
+
+                // Z: Current max distance (with currently asked questions)
+                const askedQuestions = this.askedQuestionIndices.map(idx => this.allQuestions[idx]);
+                const Z = computeMaxDist(askedQuestions);
+
+                // X: Best case (all questions answered)
+                const X = computeMaxDist(this.allQuestions);
+
+                // Y: Worst case (one question at corner (0,0))
+                const worstCaseQuestion = [{x: 0, y: 0}];
+                const Y = computeMaxDist(worstCaseQuestion);
+
+                // Confidence: (Y - Z) / (Y - X)
+                // When Z = Y (worst case), confidence = 0%
+                // When Z = X (best case), confidence = 100%
+                let confidence = 0;
+                if (Y > X) {
+                    confidence = (Y - Z) / (Y - X);
+                    confidence = Math.max(0, Math.min(1, confidence));
+                } else {
+                    confidence = Z <= X ? 1.0 : 0.0;
+                }
+
+                return {
+                    confidence: confidence,
+                    maxDistCurrent: Z,
+                    maxDistBest: X,
+                    maxDistWorst: Y
+                };
             }
 
             getStats() {
-                const confidence = this.computeConfidence();
+                const avgMinDist = this._calculateCoverageDensity();
+                const confidenceData = this._computeConfidence();
+
+                // Return per-level coverage data
+                const perLevelCoverage = {};
+                for (let level = 0; level <= 4; level++) {
+                    perLevelCoverage[level] = {
+                        coverage: this.perLevelState[level].coverage,
+                        questionsAsked: this.perLevelState[level].askedIndices.length,
+                        questionsPending: this.perLevelState[level].pendingIndices.length
+                    };
+                }
+
                 return {
-                    questionsAsked: this.askedCells.length,
-                    ...confidence,
-                    canExit: this.canEarlyExit()
+                    questionsAsked: this.askedQuestionIndices.length,
+                    currentLevel: this.currentLevel,
+                    avgMinDistance: avgMinDist,
+                    levelTransitions: this.levelTransitions.length,
+                    confidence: confidenceData.confidence,
+                    maxDistCurrent: confidenceData.maxDistCurrent,
+                    maxDistBest: confidenceData.maxDistBest,
+                    maxDistWorst: confidenceData.maxDistWorst,
+                    perLevelCoverage: perLevelCoverage
                 };
             }
 
             reset() {
-                this.askedCells = [];
+                this.askedQuestionIndices = [];
+                this.pendingQuestionIndices = [];
                 this.responses = {};
-                this.uncertaintyMap = {};
-                this.askedQuestions = new Set();
+                this.currentLevel = 4;
+                this.levelTransitions = [];
+
+                // Reset per-level tracking
+                for (let level = 0; level <= 4; level++) {
+                    this.perLevelState[level] = {
+                        askedIndices: [],
+                        pendingIndices: [],
+                        coverage: 0
+                    };
+                }
             }
         }
 
@@ -1638,11 +1860,6 @@
 
                 data.cells.forEach(cellData => {
                     cellData.questions.forEach(q => {
-                        // Add uniform random jitter within cell bounds
-                        // Place question uniformly at random within its cell
-                        const jitterX = (Math.random() - 0.5) * cellWidth;  // Uniform within cell
-                        const jitterY = (Math.random() - 0.5) * cellHeight;
-
                         // Convert correct_answer letter (e.g., "D") to index (e.g., 3)
                         let correctIndex;
                         if (q.correct_index !== undefined) {
@@ -1655,12 +1872,30 @@
                             correctIndex = 0;  // Fallback
                         }
 
+                        // Convert options from dict {A: "...", B: "...", C: "...", D: "..."} to array
+                        let optionsArray;
+                        if (Array.isArray(q.options)) {
+                            optionsArray = q.options;
+                        } else if (typeof q.options === 'object') {
+                            // Convert dict to array in correct order
+                            optionsArray = [
+                                q.options.A || q.options['A'],
+                                q.options.B || q.options['B'],
+                                q.options.C || q.options['C'],
+                                q.options.D || q.options['D']
+                            ];
+                        } else {
+                            console.error('Question has invalid options format:', q);
+                            optionsArray = [];
+                        }
+
+                        // Questions already have x,y coordinates from merge script
                         allQuestionsPool.push({
                             question: q.question,
-                            options: q.options,
+                            options: optionsArray,
                             correctIndex: correctIndex,
-                            x: cellData.cell.center_x + jitterX,
-                            y: cellData.cell.center_y + jitterY,
+                            x: q.x,
+                            y: q.y,
                             topic: q.topic || 'general',
                             cell_gx: cellData.cell.gx,
                             cell_gy: cellData.cell.gy
@@ -1710,6 +1945,9 @@
             userResponses = []; // Clear current round responses
 
             if (adaptiveSampler) {
+                // Clear pending questions from previous round
+                adaptiveSampler.clearPendingQuestions();
+
                 // Use adaptive sampling
                 questionsData = [];
                 const maxQuestions = adaptiveSampler.config.maxQuestions;
@@ -1722,14 +1960,7 @@
                         break;
                     }
 
-                    // Convert to allQuestionsPool format
-                    const cellData = selectedQuestion.cellData;
-                    const gridSize = 40;
-                    const cellWidth = 1.0 / (gridSize - 1);
-                    const cellHeight = 1.0 / (gridSize - 1);
-                    const jitterX = (Math.random() - 0.5) * cellWidth;
-                    const jitterY = (Math.random() - 0.5) * cellHeight;
-
+                    // Convert to questionsData format
                     let correctIndex;
                     if (selectedQuestion.correct_index !== undefined) {
                         correctIndex = selectedQuestion.correct_index;
@@ -1740,16 +1971,33 @@
                         correctIndex = 0;
                     }
 
+                    // Convert options from dict to array if needed
+                    let optionsArray;
+                    if (Array.isArray(selectedQuestion.options)) {
+                        optionsArray = selectedQuestion.options;
+                    } else if (typeof selectedQuestion.options === 'object') {
+                        optionsArray = [
+                            selectedQuestion.options.A || selectedQuestion.options['A'],
+                            selectedQuestion.options.B || selectedQuestion.options['B'],
+                            selectedQuestion.options.C || selectedQuestion.options['C'],
+                            selectedQuestion.options.D || selectedQuestion.options['D']
+                        ];
+                    } else {
+                        console.error('Question has invalid options format:', selectedQuestion);
+                        optionsArray = [];
+                    }
+
                     const question = {
                         question: selectedQuestion.question,
-                        options: selectedQuestion.options,
+                        options: optionsArray,
                         correctIndex: correctIndex,
-                        x: cellData.cell.center_x + jitterX,
-                        y: cellData.cell.center_y + jitterY,
+                        x: selectedQuestion.x,
+                        y: selectedQuestion.y,
                         topic: selectedQuestion.topic || 'general',
-                        cell_gx: cellData.cell.gx,
-                        cell_gy: cellData.cell.gy,
-                        cellKey: selectedQuestion.cellKey
+                        cell_gx: selectedQuestion.cellData.cell.gx,
+                        cell_gy: selectedQuestion.cellData.cell.gy,
+                        cellKey: selectedQuestion.cellKey,
+                        index: selectedQuestion.index  // IMPORTANT: preserve index for recordResponse()
                     };
 
                     questionsData.push(question);
@@ -1958,6 +2206,7 @@
             // Show confidence display if adaptive sampling is enabled
             if (adaptiveSampler) {
                 confidenceDisplay.classList.remove('hidden');
+                updateConfidenceDisplay(); // Initialize display to 0%
             }
         }
 
@@ -1966,40 +2215,39 @@
             if (!adaptiveSampler) return;
 
             const stats = adaptiveSampler.getStats();
-            const percent = Math.round(stats.overallConfidence * 100);
-            const threshold = Math.round(adaptiveSampler.config.confidenceThreshold * 100);
-            const minQuestions = adaptiveSampler.config.minQuestionsBeforeExit;
 
-            // Update display
-            confidenceValue.textContent = `${percent}%`;
-            confidenceFill.style.width = `${percent}%`;
+            // Update per-level coverage bars (levels 0-4)
+            for (let level = 0; level <= 4; level++) {
+                const levelData = stats.perLevelCoverage[level];
+                const percent = Math.round(levelData.coverage * 100);
 
-            // Update "Show Map" button color based on confidence
-            const showMapBtn = document.getElementById('show-map-btn');
-            if (showMapBtn) {
-                if (percent >= 90) {
-                    showMapBtn.classList.add('high-confidence');
-                } else {
-                    showMapBtn.classList.remove('high-confidence');
+                // Update quiz section bars
+                const fillElement = document.getElementById(`confidence-fill-${level}`);
+                const percentElement = document.getElementById(`level-percent-${level}`);
+                if (fillElement) {
+                    fillElement.style.width = `${percent}%`;
+                }
+                if (percentElement) {
+                    percentElement.textContent = `${percent}%`;
+                }
+
+                // Update map section bars
+                const mapFillElement = document.getElementById(`map-confidence-fill-${level}`);
+                const mapPercentElement = document.getElementById(`map-level-percent-${level}`);
+                if (mapFillElement) {
+                    mapFillElement.style.width = `${percent}%`;
+                }
+                if (mapPercentElement) {
+                    mapPercentElement.textContent = `${percent}%`;
                 }
             }
 
-            // Update message based on confidence level
-            if (stats.canExit) {
-                confidenceMessage.textContent = `${percent}% confidence - You can view your results now!`;
-                confidenceMessage.style.color = '#00693E';
-                confidenceMessage.style.fontWeight = '600';
-            } else if (stats.questionsAsked < minQuestions) {
-                const remaining = minQuestions - stats.questionsAsked;
-                confidenceMessage.textContent = `Answer ${remaining} more question${remaining > 1 ? 's' : ''} to view results`;
-                confidenceMessage.style.color = '#666';
-                confidenceMessage.style.fontWeight = 'normal';
-            } else {
-                const needed = threshold - percent;
-                confidenceMessage.textContent = `${percent}% confidence - ${needed}% more needed for high confidence`;
-                confidenceMessage.style.color = '#666';
-                confidenceMessage.style.fontWeight = 'normal';
-            }
+            console.log(`Level ${stats.currentLevel}, Per-Level Coverage: ` +
+                       `L4=${Math.round(stats.perLevelCoverage[4].coverage * 100)}%, ` +
+                       `L3=${Math.round(stats.perLevelCoverage[3].coverage * 100)}%, ` +
+                       `L2=${Math.round(stats.perLevelCoverage[2].coverage * 100)}%, ` +
+                       `L1=${Math.round(stats.perLevelCoverage[1].coverage * 100)}%, ` +
+                       `L0=${Math.round(stats.perLevelCoverage[0].coverage * 100)}%`);
         }
 
         function renderQuestion() {
@@ -2052,18 +2300,29 @@
             userResponses[currentQuestion] = selectedOption;
 
             // Record response in adaptive sampler if available
-            if (adaptiveSampler && questionsData[currentQuestion].cellKey) {
+            if (adaptiveSampler && questionsData[currentQuestion].index !== undefined) {
                 const isCorrect = selectedOption === questionsData[currentQuestion].correctIndex;
-                adaptiveSampler.recordResponse(questionsData[currentQuestion].cellKey, isCorrect);
+                const previousLevel = adaptiveSampler.currentLevel;
+                const previousCoverage = adaptiveSampler.perLevelState[previousLevel].coverage;
+
+                adaptiveSampler.recordResponse(questionsData[currentQuestion].index, isCorrect);
 
                 // Update confidence display
                 updateConfidenceDisplay();
 
-                // Log confidence stats
+                // Check if we just crossed the threshold for this level
+                const newCoverage = adaptiveSampler.perLevelState[previousLevel].coverage;
+                if (previousCoverage < adaptiveSampler.coverageThreshold &&
+                    newCoverage >= adaptiveSampler.coverageThreshold) {
+                    // Threshold crossed! Highlight the Show Map button
+                    showMapBtn.classList.add('high-confidence');
+                    console.log(`🎯 Level ${previousLevel} threshold reached! Coverage: ${Math.round(newCoverage * 100)}%`);
+                }
+
+                // Log stats
                 const stats = adaptiveSampler.getStats();
                 console.log(`Question ${currentQuestion + 1}: ${isCorrect ? 'Correct' : 'Incorrect'} | ` +
-                           `Confidence: ${(stats.overallConfidence * 100).toFixed(1)}% | ` +
-                           `Coverage: ${(stats.coverageConfidence * 100).toFixed(1)}%`);
+                           `Level: ${stats.currentLevel} | Density: ${stats.avgMinDistance.toFixed(4)}`);
             }
 
             if (currentQuestion < questionsData.length - 1) {
@@ -2071,7 +2330,58 @@
                 selectedOption = null;
                 renderQuestion();
             } else {
-                showResults();
+                // Reached end of current batch - automatically load more questions
+                if (adaptiveSampler) {
+                    const selectedQuestion = adaptiveSampler.selectNextQuestion();
+                    if (selectedQuestion) {
+                        // Add new question to questionsData
+                        let correctIndex;
+                        if (selectedQuestion.correct_index !== undefined) {
+                            correctIndex = selectedQuestion.correct_index;
+                        } else if (selectedQuestion.correct_answer !== undefined) {
+                            correctIndex = selectedQuestion.correct_answer.charCodeAt(0) - 65;
+                        } else {
+                            correctIndex = 0;
+                        }
+
+                        let optionsArray;
+                        if (Array.isArray(selectedQuestion.options)) {
+                            optionsArray = selectedQuestion.options;
+                        } else if (typeof selectedQuestion.options === 'object') {
+                            optionsArray = [
+                                selectedQuestion.options.A || selectedQuestion.options['A'],
+                                selectedQuestion.options.B || selectedQuestion.options['B'],
+                                selectedQuestion.options.C || selectedQuestion.options['C'],
+                                selectedQuestion.options.D || selectedQuestion.options['D']
+                            ];
+                        } else {
+                            optionsArray = [];
+                        }
+
+                        const question = {
+                            question: selectedQuestion.question,
+                            options: optionsArray,
+                            correctIndex: correctIndex,
+                            x: selectedQuestion.x,
+                            y: selectedQuestion.y,
+                            topic: selectedQuestion.topic || 'general',
+                            cell_gx: selectedQuestion.cellData.cell.gx,
+                            cell_gy: selectedQuestion.cellData.cell.gy,
+                            cellKey: selectedQuestion.cellKey,
+                            index: selectedQuestion.index
+                        };
+
+                        questionsData.push(question);
+                        userResponses.push(undefined);
+                        currentQuestion++;
+                        selectedOption = null;
+                        renderQuestion();
+                    } else {
+                        // No more questions available
+                        questionContainer.innerHTML = '<p style="text-align: center; padding: 40px; font-size: 1.2em;">No more questions available. Click "Show Map" to view your results.</p>';
+                        nextBtn.disabled = true;
+                    }
+                }
             }
         }
 
@@ -2092,30 +2402,95 @@
             questionsData[currentQuestion].skipped = true;
 
             // Record response in adaptive sampler with low correctness
-            if (adaptiveSampler && questionsData[currentQuestion].cellKey) {
-                adaptiveSampler.recordResponse(questionsData[currentQuestion].cellKey, false, 0.1);
+            if (adaptiveSampler && questionsData[currentQuestion].index !== undefined) {
+                const previousLevel = adaptiveSampler.currentLevel;
+                const previousCoverage = adaptiveSampler.perLevelState[previousLevel].coverage;
+
+                adaptiveSampler.recordResponse(questionsData[currentQuestion].index, false, 0.1);
 
                 // Update confidence display
                 updateConfidenceDisplay();
 
-                // Log confidence stats
+                // Check if we just crossed the threshold for this level
+                const newCoverage = adaptiveSampler.perLevelState[previousLevel].coverage;
+                if (previousCoverage < adaptiveSampler.coverageThreshold &&
+                    newCoverage >= adaptiveSampler.coverageThreshold) {
+                    // Threshold crossed! Highlight the Show Map button
+                    showMapBtn.classList.add('high-confidence');
+                    console.log(`🎯 Level ${previousLevel} threshold reached! Coverage: ${Math.round(newCoverage * 100)}%`);
+                }
+
+                // Log stats
                 const stats = adaptiveSampler.getStats();
                 console.log(`Question ${currentQuestion + 1}: I Don't Know (0.1 correctness) | ` +
-                           `Confidence: ${(stats.overallConfidence * 100).toFixed(1)}% | ` +
-                           `Coverage: ${(stats.coverageConfidence * 100).toFixed(1)}%`);
+                           `Level: ${stats.currentLevel} | Density: ${stats.avgMinDistance.toFixed(4)}`);
             }
 
-            // Move to next question or show results
+            // Move to next question or load more
             if (currentQuestion < questionsData.length - 1) {
                 currentQuestion++;
                 selectedOption = null;
                 renderQuestion();
             } else {
-                showResults();
+                // Reached end of current batch - automatically load more questions
+                if (adaptiveSampler) {
+                    const selectedQuestion = adaptiveSampler.selectNextQuestion();
+                    if (selectedQuestion) {
+                        // Add new question to questionsData
+                        let correctIndex;
+                        if (selectedQuestion.correct_index !== undefined) {
+                            correctIndex = selectedQuestion.correct_index;
+                        } else if (selectedQuestion.correct_answer !== undefined) {
+                            correctIndex = selectedQuestion.correct_answer.charCodeAt(0) - 65;
+                        } else {
+                            correctIndex = 0;
+                        }
+
+                        let optionsArray;
+                        if (Array.isArray(selectedQuestion.options)) {
+                            optionsArray = selectedQuestion.options;
+                        } else if (typeof selectedQuestion.options === 'object') {
+                            optionsArray = [
+                                selectedQuestion.options.A || selectedQuestion.options['A'],
+                                selectedQuestion.options.B || selectedQuestion.options['B'],
+                                selectedQuestion.options.C || selectedQuestion.options['C'],
+                                selectedQuestion.options.D || selectedQuestion.options['D']
+                            ];
+                        } else {
+                            optionsArray = [];
+                        }
+
+                        const question = {
+                            question: selectedQuestion.question,
+                            options: optionsArray,
+                            correctIndex: correctIndex,
+                            x: selectedQuestion.x,
+                            y: selectedQuestion.y,
+                            topic: selectedQuestion.topic || 'general',
+                            cell_gx: selectedQuestion.cellData.cell.gx,
+                            cell_gy: selectedQuestion.cellData.cell.gy,
+                            cellKey: selectedQuestion.cellKey,
+                            index: selectedQuestion.index
+                        };
+
+                        questionsData.push(question);
+                        userResponses.push(undefined);
+                        currentQuestion++;
+                        selectedOption = null;
+                        renderQuestion();
+                    } else {
+                        // No more questions available
+                        questionContainer.innerHTML = '<p style="text-align: center; padding: 40px; font-size: 1.2em;">No more questions available. Click "Show Map" to view your results.</p>';
+                        nextBtn.disabled = true;
+                    }
+                }
             }
         }
 
         function handleShowMap() {
+            // Reset the Show Map button color when clicked
+            showMapBtn.classList.remove('high-confidence');
+
             // Show map at any time, even if no questions answered (will show all 0.5)
             showResults();
         }
@@ -2125,22 +2500,17 @@
             mapSection.classList.remove('hidden');
             loading.classList.remove('hidden');
 
-            // Show confidence display on map if adaptive sampling is enabled
+            // Show coverage display on map if adaptive sampling is enabled
             if (adaptiveSampler) {
                 const mapConfidenceDisplay = document.getElementById('map-confidence-display');
-                const mapConfidenceValue = document.getElementById('map-confidence-value');
-                const mapConfidenceFill = document.getElementById('map-confidence-fill');
-
-                const stats = adaptiveSampler.getStats();
-                const percent = Math.round(stats.overallConfidence * 100);
-
-                mapConfidenceValue.textContent = `${percent}%`;
-                mapConfidenceFill.style.width = `${percent}%`;
                 mapConfidenceDisplay.classList.remove('hidden');
 
-                // Check if all questions are exhausted
+                // Update per-level coverage bars on map
+                updateConfidenceDisplay();
+
+                // Check if all questions are exhausted at current level
                 const availableQuestions = adaptiveSampler._getAvailableQuestions();
-                if (availableQuestions.length === 0) {
+                if (availableQuestions.length === 0 && adaptiveSampler.currentLevel === 0) {
                     anotherRoundBtn.disabled = true;
                     anotherRoundBtn.innerHTML = '<i class="fas fa-check"></i> All Questions Completed';
                 } else {
@@ -2210,6 +2580,9 @@
             const width = container.clientWidth;
             const height = container.clientHeight;
 
+            // Hide canvas until everything is rendered
+            canvas.style.visibility = 'hidden';
+
             // Create knowledge heatmap
             drawKnowledgeHeatmap(width, height);
 
@@ -2221,6 +2594,9 @@
 
                 // Draw question markers
                 drawQuestionMarkers(width, height);
+
+                // Show canvas now that everything is rendered
+                canvas.style.visibility = 'visible';
             });
 
             // Add interactivity
@@ -2609,6 +2985,12 @@
         }
 
         function addInteractivity(width, height) {
+            // Only add event listeners once to prevent duplicates
+            if (canvas.dataset.interactivityInitialized) {
+                return;
+            }
+            canvas.dataset.interactivityInitialized = 'true';
+
             canvas.addEventListener('mousemove', (e) => {
                 const rect = canvas.getBoundingClientRect();
                 const mouseX = (e.clientX - rect.left) / rect.width * width;
@@ -2716,28 +3098,35 @@
                     return;
                 }
 
-                // Check if clicking on a Wikipedia article (find closest one within threshold)
+                // Prefer the currently hovered article if one is being shown
                 let clickedArticle = null;
-                let minDist = 8; // Threshold distance
 
-                wikipediaArticles.forEach((article, idx) => {
-                    // Skip articles outside extended region
-                    if (article.x < -0.5 || article.x > 1.5 || article.y < -0.5 || article.y > 1.5) {
-                        return;
-                    }
+                if (hoveredArticleIndex !== null && hoveredArticleIndex >= 0 && hoveredArticleIndex < wikipediaArticles.length) {
+                    // Use the hovered article (whose tooltip is currently shown)
+                    clickedArticle = wikipediaArticles[hoveredArticleIndex];
+                } else {
+                    // No hovered article - find closest one within threshold
+                    let minDist = 8; // Threshold distance
 
-                    const x = article.x * width;
-                    const y = article.y * height;
-                    const dist = Math.sqrt((mouseX - x) ** 2 + (mouseY - y) ** 2);
+                    wikipediaArticles.forEach((article, idx) => {
+                        // Skip articles outside extended region
+                        if (article.x < -0.5 || article.x > 1.5 || article.y < -0.5 || article.y > 1.5) {
+                            return;
+                        }
 
-                    // Only select if closer than current closest (prevents multiple opens)
-                    if (dist < minDist) {
-                        minDist = dist;
-                        clickedArticle = article;
-                    }
-                });
+                        const x = article.x * width;
+                        const y = article.y * height;
+                        const dist = Math.sqrt((mouseX - x) ** 2 + (mouseY - y) ** 2);
 
-                // Open Wikipedia article in new tab (only opens one article - the closest)
+                        // Only select if closer than current closest (prevents multiple opens)
+                        if (dist < minDist) {
+                            minDist = dist;
+                            clickedArticle = article;
+                        }
+                    });
+                }
+
+                // Open Wikipedia article in new tab
                 if (clickedArticle && clickedArticle.url) {
                     window.open(clickedArticle.url, '_blank');
                 }
@@ -2953,6 +3342,9 @@
                     return;
                 }
             }
+
+            // Reset Show Map button color when starting a new round
+            showMapBtn.classList.remove('high-confidence');
 
             // Hide map, show quiz
             mapSection.classList.add('hidden');

@@ -42,7 +42,7 @@ from datetime import datetime
 
 
 def load_embeddings():
-    """Load article and question embeddings."""
+    """Load article embeddings (articles only, no questions per Issue #13)."""
     print("="*80)
     print("STEP 1: Loading Embeddings")
     print("="*80)
@@ -62,44 +62,28 @@ def load_embeddings():
     print(f"    Model: {wiki_data.get('model', 'unknown')}")
     print()
 
-    # Load question embeddings
-    print("Loading question embeddings...")
-    with open('embeddings/question_embeddings.pkl', 'rb') as f:
-        question_data = pickle.load(f)
-
-    question_embeddings = question_data['embeddings']
-    question_texts = question_data['questions']
-
-    print(f"  ✓ Loaded {len(question_embeddings)} questions")
-    print(f"    Shape: {question_embeddings.shape}")
-    print(f"    Model: {question_data.get('model', 'unknown')}")
+    print("NOTE: Per Issue #13, UMAP is fitted on articles only (no questions)")
     print()
 
     return {
         'wiki_embeddings': wiki_embeddings,
         'wiki_titles': wiki_titles,
-        'wiki_urls': wiki_urls,
-        'question_embeddings': question_embeddings,
-        'question_texts': question_texts
+        'wiki_urls': wiki_urls
     }
 
 
 def compute_umap(embeddings_data):
-    """Compute UMAP projection on combined embeddings."""
+    """Compute UMAP projection on article embeddings only."""
     print("="*80)
     print("STEP 2: Computing UMAP Projection")
     print("="*80)
     print()
 
     wiki_embeddings = embeddings_data['wiki_embeddings']
-    question_embeddings = embeddings_data['question_embeddings']
 
-    # Combine embeddings (articles FIRST, then questions)
-    print("Combining embeddings...")
-    combined_embeddings = np.vstack([wiki_embeddings, question_embeddings])
-    print(f"  Combined shape: {combined_embeddings.shape}")
-    print(f"  Articles: indices 0-{len(wiki_embeddings)-1}")
-    print(f"  Questions: indices {len(wiki_embeddings)}-{len(combined_embeddings)-1}")
+    # Use article embeddings only (per Issue #13)
+    print(f"Preparing embeddings for UMAP...")
+    print(f"  Article embeddings shape: {wiki_embeddings.shape}")
     print()
 
     # Configure UMAP
@@ -114,10 +98,13 @@ def compute_umap(embeddings_data):
     print(f"  Parameters: {umap_params}")
     print()
 
-    # Fit UMAP on combined data
-    print("Fitting UMAP (this may take several minutes)...")
+    # Fit UMAP on article embeddings
+    print(f"Fitting UMAP on {len(wiki_embeddings):,} articles...")
+    print("This may take 30-60 minutes for 250K articles...")
+    print()
+
     reducer = umap.UMAP(**umap_params)
-    coords_2d = reducer.fit_transform(combined_embeddings)
+    coords_2d = reducer.fit_transform(wiki_embeddings)
 
     print(f"  ✓ UMAP projection complete")
     print(f"    Output shape: {coords_2d.shape}")
@@ -129,13 +116,16 @@ def compute_umap(embeddings_data):
 
 
 def save_umap_data(coords_2d, reducer, embeddings_data):
-    """Save UMAP coordinates, bounds, and question coordinates."""
+    """Save UMAP coordinates and bounds (articles only)."""
     print("="*80)
     print("STEP 3: Saving UMAP Data")
     print("="*80)
     print()
 
     article_count = len(embeddings_data['wiki_embeddings'])
+
+    print(f"NOTE: Saving {article_count:,} article coordinates (no questions)")
+    print()
 
     # Create data directory if needed
     Path('data').mkdir(exist_ok=True)
@@ -158,19 +148,11 @@ def save_umap_data(coords_2d, reducer, embeddings_data):
     print(f"  ✓ Saved to data/umap_reducer.pkl")
     print()
 
-    # 3. Compute and save bounds
+    # 3. Compute and save bounds (articles only)
     print("Computing coordinate bounds...")
 
-    # Global bounds (all points)
-    global_bounds = {
-        'x_min': float(coords_2d[:, 0].min()),
-        'x_max': float(coords_2d[:, 0].max()),
-        'y_min': float(coords_2d[:, 1].min()),
-        'y_max': float(coords_2d[:, 1].max())
-    }
-
-    # Article bounds
-    article_coords = coords_2d[:article_count, :]
+    # Article bounds (same as global since we only have articles)
+    article_coords = coords_2d
     article_bounds = {
         'x_min': float(article_coords[:, 0].min()),
         'x_max': float(article_coords[:, 0].max()),
@@ -178,57 +160,19 @@ def save_umap_data(coords_2d, reducer, embeddings_data):
         'y_max': float(article_coords[:, 1].max())
     }
 
-    # Question bounds
-    question_coords = coords_2d[article_count:, :]
-    question_bounds = {
-        'x_min': float(question_coords[:, 0].min()),
-        'x_max': float(question_coords[:, 0].max()),
-        'y_min': float(question_coords[:, 1].min()),
-        'y_max': float(question_coords[:, 1].max())
-    }
-
     bounds_data = {
-        'global': global_bounds,
+        'global': article_bounds,  # Global = articles (no questions)
         'articles': article_bounds,
-        'questions': question_bounds,
-        'timestamp': datetime.now().isoformat()
+        'timestamp': datetime.now().isoformat(),
+        'note': 'Per Issue #13: UMAP fitted on articles only (no questions)'
     }
 
     with open('data/umap_bounds.pkl', 'wb') as f:
         pickle.dump(bounds_data, f)
 
     print(f"  ✓ Saved to data/umap_bounds.pkl")
-    print(f"    Global: x=[{global_bounds['x_min']:.2f}, {global_bounds['x_max']:.2f}], "
-          f"y=[{global_bounds['y_min']:.2f}, {global_bounds['y_max']:.2f}]")
     print(f"    Articles: x=[{article_bounds['x_min']:.2f}, {article_bounds['x_max']:.2f}], "
           f"y=[{article_bounds['y_min']:.2f}, {article_bounds['y_max']:.2f}]")
-    print(f"    Questions: x=[{question_bounds['x_min']:.2f}, {question_bounds['x_max']:.2f}], "
-          f"y=[{question_bounds['y_min']:.2f}, {question_bounds['y_max']:.2f}]")
-    print()
-
-    # 4. Save normalized question coordinates [0, 1]
-    print("Saving normalized question coordinates...")
-
-    # Normalize using global bounds
-    x_range = global_bounds['x_max'] - global_bounds['x_min']
-    y_range = global_bounds['y_max'] - global_bounds['y_min']
-
-    coords_normalized = np.zeros_like(question_coords)
-    coords_normalized[:, 0] = (question_coords[:, 0] - global_bounds['x_min']) / x_range
-    coords_normalized[:, 1] = (question_coords[:, 1] - global_bounds['y_min']) / y_range
-
-    question_coord_data = {
-        'coordinates': coords_normalized,
-        'questions': embeddings_data['question_texts'],
-        'bounds_used': 'global',
-        'timestamp': datetime.now().isoformat()
-    }
-
-    with open('data/question_coordinates.pkl', 'wb') as f:
-        pickle.dump(question_coord_data, f)
-
-    print(f"  ✓ Saved to data/question_coordinates.pkl")
-    print(f"    Normalized to [0, 1] using global bounds")
     print()
 
     return article_coords, article_bounds
@@ -299,21 +243,18 @@ def export_articles_json(article_coords, article_bounds, embeddings_data):
 
 
 def save_knowledge_map(coords_2d, embeddings_data):
-    """Save complete knowledge map data."""
+    """Save knowledge map data (articles only)."""
     print("="*80)
     print("STEP 5: Saving Knowledge Map")
     print("="*80)
     print()
 
-    article_count = len(embeddings_data['wiki_embeddings'])
-
     knowledge_map_data = {
-        'article_coordinates': coords_2d[:article_count, :],
+        'article_coordinates': coords_2d,
         'article_titles': embeddings_data['wiki_titles'],
         'article_urls': embeddings_data['wiki_urls'],
-        'question_coordinates': coords_2d[article_count:, :],
-        'question_texts': embeddings_data['question_texts'],
-        'timestamp': datetime.now().isoformat()
+        'timestamp': datetime.now().isoformat(),
+        'note': 'Per Issue #13: UMAP fitted on articles only (no questions)'
     }
 
     with open('knowledge_map.pkl', 'wb') as f:

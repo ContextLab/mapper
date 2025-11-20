@@ -1,0 +1,64 @@
+{
+  "articles": {
+    "total_articles": 49430,
+    "duplicate_titles": [],
+    "missing_fields": [],
+    "invalid_coordinates": [],
+    "errors": []
+  },
+  "cell_questions": {
+    "total_cells": 1457,
+    "total_questions": 14294,
+    "duplicate_cells": [],
+    "invalid_coordinates": [],
+    "errors": []
+  },
+  "merge_stats": {
+    "articles": {
+      "0": {
+        "total": 46185,
+        "unique": 46185,
+        "duplicates": 0,
+        "merged": 0
+      },
+      "1": {
+        "total": 4247,
+        "unique": 3905,
+        "duplicates": 24,
+        "merged": 318
+      },
+      "2": {
+        "total": 1744,
+        "unique": 410,
+        "duplicates": 1241,
+        "merged": 93
+      },
+      "3": {
+        "total": 884,
+        "unique": 91,
+        "duplicates": 748,
+        "merged": 45
+      },
+      "4": {
+        "total": 499,
+        "unique": 33,
+        "duplicates": 451,
+        "merged": 15
+      }
+    },
+    "coordinates": {
+      "level_0_kept": 46156,
+      "level_1_assigned": 2205,
+      "level_2_assigned": 599,
+      "level_3_assigned": 238,
+      "level_4_assigned": 232,
+      "removed_no_parents": 1194
+    },
+    "questions": {
+      "total_questions": 14294,
+      "questions_with_coords": 14294,
+      "questions_no_coords": 1618,
+      "unique_cells": 1457
+    }
+  }
+}

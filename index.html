@@ -1638,11 +1638,6 @@
 
                 data.cells.forEach(cellData => {
                     cellData.questions.forEach(q => {
-                        // Add uniform random jitter within cell bounds
-                        // Place question uniformly at random within its cell
-                        const jitterX = (Math.random() - 0.5) * cellWidth;  // Uniform within cell
-                        const jitterY = (Math.random() - 0.5) * cellHeight;
-
                         // Convert correct_answer letter (e.g., "D") to index (e.g., 3)
                         let correctIndex;
                         if (q.correct_index !== undefined) {
@@ -1655,12 +1650,30 @@
                             correctIndex = 0;  // Fallback
                         }
 
+                        // Convert options from dict {A: "...", B: "...", C: "...", D: "..."} to array
+                        let optionsArray;
+                        if (Array.isArray(q.options)) {
+                            optionsArray = q.options;
+                        } else if (typeof q.options === 'object') {
+                            // Convert dict to array in correct order
+                            optionsArray = [
+                                q.options.A || q.options['A'],
+                                q.options.B || q.options['B'],
+                                q.options.C || q.options['C'],
+                                q.options.D || q.options['D']
+                            ];
+                        } else {
+                            console.error('Question has invalid options format:', q);
+                            optionsArray = [];
+                        }
+
+                        // Questions already have x,y coordinates from merge script
                         allQuestionsPool.push({
                             question: q.question,
-                            options: q.options,
+                            options: optionsArray,
                             correctIndex: correctIndex,
-                            x: cellData.cell.center_x + jitterX,
-                            y: cellData.cell.center_y + jitterY,
+                            x: q.x,
+                            y: q.y,
                             topic: q.topic || 'general',
                             cell_gx: cellData.cell.gx,
                             cell_gy: cellData.cell.gy
@@ -1722,14 +1735,7 @@
                         break;
                     }
 
-                    // Convert to allQuestionsPool format
-                    const cellData = selectedQuestion.cellData;
-                    const gridSize = 40;
-                    const cellWidth = 1.0 / (gridSize - 1);
-                    const cellHeight = 1.0 / (gridSize - 1);
-                    const jitterX = (Math.random() - 0.5) * cellWidth;
-                    const jitterY = (Math.random() - 0.5) * cellHeight;
-
+                    // Convert to questionsData format
                     let correctIndex;
                     if (selectedQuestion.correct_index !== undefined) {
                         correctIndex = selectedQuestion.correct_index;
@@ -1740,15 +1746,31 @@
                         correctIndex = 0;
                     }
 
+                    // Convert options from dict to array if needed
+                    let optionsArray;
+                    if (Array.isArray(selectedQuestion.options)) {
+                        optionsArray = selectedQuestion.options;
+                    } else if (typeof selectedQuestion.options === 'object') {
+                        optionsArray = [
+                            selectedQuestion.options.A || selectedQuestion.options['A'],
+                            selectedQuestion.options.B || selectedQuestion.options['B'],
+                            selectedQuestion.options.C || selectedQuestion.options['C'],
+                            selectedQuestion.options.D || selectedQuestion.options['D']
+                        ];
+                    } else {
+                        console.error('Question has invalid options format:', selectedQuestion);
+                        optionsArray = [];
+                    }
+
                     const question = {
                         question: selectedQuestion.question,
-                        options: selectedQuestion.options,
+                        options: optionsArray,
                         correctIndex: correctIndex,
-                        x: cellData.cell.center_x + jitterX,
-                        y: cellData.cell.center_y + jitterY,
+                        x: selectedQuestion.x,
+                        y: selectedQuestion.y,
                         topic: selectedQuestion.topic || 'general',
-                        cell_gx: cellData.cell.gx,
-                        cell_gy: cellData.cell.gy,
+                        cell_gx: selectedQuestion.cellData.cell.gx,
+                        cell_gy: selectedQuestion.cellData.cell.gy,
                         cellKey: selectedQuestion.cellKey
                     };
 

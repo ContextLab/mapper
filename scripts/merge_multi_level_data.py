@@ -111,7 +111,7 @@ def strip_article_fields(article: Dict) -> Dict:
     # Required fields
     stripped['title'] = article.get('title', '')
     stripped['url'] = article.get('url', '')
-    stripped['summary'] = article.get('summary') or article.get('excerpt', '')
+    stripped['excerpt'] = article.get('excerpt', '')
 
     # Coordinates (will be reassigned for levels 1-4)
     stripped['x'] = article.get('x', 0.0)
@@ -435,7 +435,7 @@ def validate_articles(articles: List[Dict]) -> Dict[str, Any]:
     }
 
     seen_titles = set()
-    required_fields = ['title', 'url', 'summary', 'x', 'y', 'level']
+    required_fields = ['title', 'url', 'excerpt', 'x', 'y', 'level']
 
     for i, article in enumerate(articles):
         title = article.get('title', '')

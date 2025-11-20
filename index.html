@@ -1331,20 +1331,21 @@
 
     <script>
         // Level-based scaling parameters
+        // Note: Articles are much more visible now - minimum is 3x larger than before
         const ARTICLE_PARAMS = {
-            0: { baseRadius: 0.25, baseAlpha: 0.01, hoverAlpha: 0.1 },
-            1: { baseRadius: 0.5,  baseAlpha: 0.02, hoverAlpha: 0.2 },
-            2: { baseRadius: 0.75, baseAlpha: 0.03, hoverAlpha: 0.3 },
-            3: { baseRadius: 1.0,  baseAlpha: 0.04, hoverAlpha: 0.4 },
-            4: { baseRadius: 1.5,  baseAlpha: 0.05, hoverAlpha: 0.5 }
+            0: { baseRadius: 1.5,  baseAlpha: 0.05, hoverAlpha: 0.5 },  // Most specific (smallest at this scale)
+            1: { baseRadius: 2.25, baseAlpha: 0.06, hoverAlpha: 0.6 },
+            2: { baseRadius: 3.0,  baseAlpha: 0.07, hoverAlpha: 0.7 },
+            3: { baseRadius: 4.0,  baseAlpha: 0.08, hoverAlpha: 0.8 },
+            4: { baseRadius: 6.0,  baseAlpha: 0.10, hoverAlpha: 1.0 }   // Most abstract (largest)
         };
 
         const QUESTION_PARAMS = {
-            0: { radius: 8,  baseFontSize: 6 },
+            0: { radius: 8,  baseFontSize: 6 },   // Most specific (smallest)
             1: { radius: 10, baseFontSize: 8 },
             2: { radius: 12, baseFontSize: 10 },
             3: { radius: 14, baseFontSize: 12 },
-            4: { radius: 16, baseFontSize: 14 }
+            4: { radius: 16, baseFontSize: 14 }   // Most abstract (largest)
         };
 
         // Questions data loaded from external file

@@ -1336,8 +1336,8 @@
             0: { baseRadius: 1.5,  baseAlpha: 0.05, hoverAlpha: 0.5 },  // Most specific (smallest at this scale)
             1: { baseRadius: 2.25, baseAlpha: 0.06, hoverAlpha: 0.6 },
             2: { baseRadius: 3.0,  baseAlpha: 0.07, hoverAlpha: 0.7 },
-            3: { baseRadius: 4.0,  baseAlpha: 0.08, hoverAlpha: 0.8 },
-            4: { baseRadius: 6.0,  baseAlpha: 0.10, hoverAlpha: 1.0 }   // Most abstract (largest)
+            3: { baseRadius: 3.5,  baseAlpha: 0.08, hoverAlpha: 0.8 },
+            4: { baseRadius: 4.0,  baseAlpha: 0.10, hoverAlpha: 1.0 }   // Most abstract (largest)
         };
 
         const QUESTION_PARAMS = {
@@ -2879,6 +2879,15 @@
         }
 
         function drawQuestionMarkers(width, height) {
+            // Debug: Log first 5 questions to verify levels
+            if (questionsData.length > 0 && !window.questionLevelsLogged) {
+                console.log('DEBUG: Question levels (first 5):');
+                questionsData.slice(0, 5).forEach((q, idx) => {
+                    console.log(`  Question ${idx + 1}: level=${q.level}, x=${q.x?.toFixed(3)}, y=${q.y?.toFixed(3)}`);
+                });
+                window.questionLevelsLogged = true;
+            }
+
             questionsData.forEach((q, idx) => {
                 const baseX = q.x * width;
                 const baseY = q.y * height;
@@ -2887,6 +2896,12 @@
                 const level = q.level !== undefined ? q.level : 0;
                 const params = QUESTION_PARAMS[level] || QUESTION_PARAMS[0];
                 const radius = params.radius;
+
+                // Debug: Log first few question parameters
+                if (idx < 5 && !window.questionParamsLogged) {
+                    console.log(`  Question ${idx + 1}: level=${level}, radius=${radius}, baseFontSize=${params.baseFontSize}`);
+                    if (idx === 4) window.questionParamsLogged = true;
+                }
 
                 const wasAnswered = userResponses[idx] !== undefined;
                 const isSkipped = userResponses[idx] === -1 || q.skipped;

@@ -1274,6 +1274,7 @@
 
                 // State
                 this.askedQuestionIndices = [];  // Indices of asked questions
+                this.pendingQuestionIndices = [];  // Indices of questions selected but not yet answered
                 this.responses = {};  // questionIndex → correctness value
                 this.currentLevel = 4;  // Start with highest (broadest) level
                 this.levelTransitions = []; // Track when we transition levels
@@ -1289,9 +1290,12 @@
                 for (const q of this.allQuestions) {
                     const questionLevel = q.level !== undefined ? q.level : 0;
                     // Only include questions that:
-                    // 1. Haven't been asked
-                    // 2. Match the target level
-                    if (!this.askedQuestionIndices.includes(q.index) && questionLevel === targetLevel) {
+                    // 1. Haven't been asked (answered)
+                    // 2. Haven't been selected for current round (pending)
+                    // 3. Match the target level
+                    if (!this.askedQuestionIndices.includes(q.index) &&
+                        !this.pendingQuestionIndices.includes(q.index) &&
+                        questionLevel === targetLevel) {
                         available.push(q);
                     }
                 }
@@ -1412,10 +1416,14 @@
                 // Use pure geometric sampling: select furthest question
                 const selectedQuestion = this._selectFurthestQuestion(availableQuestions);
 
-                // Mark question as asked
+                // Add to pendingQuestionIndices to prevent selecting again in this round
                 if (selectedQuestion) {
-                    this.askedQuestionIndices.push(selectedQuestion.index);
+                    this.pendingQuestionIndices.push(selectedQuestion.index);
                 }
+
+                // NOTE: Don't add to askedQuestionIndices here!
+                // Questions are only marked as "asked" when recordResponse() is called
+                // after the user actually answers them
 
                 return selectedQuestion;
             }
@@ -1424,14 +1432,36 @@
                 // Record response for a question by its index
                 const correctness = fractionalCorrectness !== null ? fractionalCorrectness : (isCorrect ? 1.0 : 0.0);
                 this.responses[questionIndex] = correctness;
+
+                // Move from pending to asked
+                const pendingIndex = this.pendingQuestionIndices.indexOf(questionIndex);
+                if (pendingIndex !== -1) {
+                    this.pendingQuestionIndices.splice(pendingIndex, 1);
+                }
+
+                // Add to askedQuestionIndices if not already there
+                if (!this.askedQuestionIndices.includes(questionIndex)) {
+                    this.askedQuestionIndices.push(questionIndex);
+                }
+            }
+
+            clearPendingQuestions() {
+                // Clear pending questions (e.g., when starting a new round)
+                this.pendingQuestionIndices = [];
             }
 
             // === Utility Methods ===
 
             _computeConfidence() {
                 // Confidence based on coverage distance
+                // Formula: confidence = (Y - Z) / (Y - X)
+                // where:
+                //   X = best case (max dist when ALL questions answered)
+                //   Y = worst case (max dist when 1 corner question answered)
+                //   Z = current max dist to nearest asked question
+
                 if (this.askedQuestionIndices.length === 0) {
-                    return { confidence: 0, maxDistToAsked: Infinity, maxDistToAny: 0 };
+                    return { confidence: 0, maxDistCurrent: Infinity, maxDistBest: 0, maxDistWorst: 0 };
                 }
 
                 // Generate grid of cell centers (39x39 grid covering [0,1] x [0,1])
@@ -1445,39 +1475,47 @@
                     }
                 }
 
+                // Compute max distance to nearest question for different scenarios
+                const computeMaxDist = (questions) => {
+                    let maxDist = 0;
+                    for (const center of cellCenters) {
+                        let minDist = Infinity;
+                        for (const q of questions) {
+                            const dist = this._calculateDistance(center, q);
+                            minDist = Math.min(minDist, dist);
+                        }
+                        maxDist = Math.max(maxDist, minDist);
+                    }
+                    return maxDist;
+                };
+
+                // Z: Current max distance (with currently asked questions)
                 const askedQuestions = this.askedQuestionIndices.map(idx => this.allQuestions[idx]);
+                const Z = computeMaxDist(askedQuestions);
 
-                // X: Maximum distance from any cell center to nearest ASKED question
-                let X = 0;
-                for (const center of cellCenters) {
-                    let minDistToAsked = Infinity;
-                    for (const asked of askedQuestions) {
-                        const dist = this._calculateDistance(center, asked);
-                        minDistToAsked = Math.min(minDistToAsked, dist);
-                    }
-                    X = Math.max(X, minDistToAsked);
+                // X: Best case (all questions answered)
+                const X = computeMaxDist(this.allQuestions);
+
+                // Y: Worst case (one question at corner (0,0))
+                const worstCaseQuestion = [{x: 0, y: 0}];
+                const Y = computeMaxDist(worstCaseQuestion);
+
+                // Confidence: (Y - Z) / (Y - X)
+                // When Z = Y (worst case), confidence = 0%
+                // When Z = X (best case), confidence = 100%
+                let confidence = 0;
+                if (Y > X) {
+                    confidence = (Y - Z) / (Y - X);
+                    confidence = Math.max(0, Math.min(1, confidence));
+                } else {
+                    confidence = Z <= X ? 1.0 : 0.0;
                 }
-
-                // Y: Maximum distance from any cell center to ANY question (theoretical max coverage)
-                let Y = 0;
-                for (const center of cellCenters) {
-                    let minDistToAny = Infinity;
-                    for (const q of this.allQuestions) {
-                        const dist = this._calculateDistance(center, q);
-                        minDistToAny = Math.min(minDistToAny, dist);
-                    }
-                    Y = Math.max(Y, minDistToAny);
-                }
-
-                // Confidence: as X approaches Y, confidence approaches 1
-                // When X = 0 (perfect coverage), confidence = 1
-                // When X = Y (no questions asked), confidence = 0
-                const confidence = Y > 0 ? 1 - (X / Y) : 0;
 
                 return {
                     confidence: confidence,
-                    maxDistToAsked: X,
-                    maxDistToAny: Y
+                    maxDistCurrent: Z,
+                    maxDistBest: X,
+                    maxDistWorst: Y
                 };
             }
 
@@ -1490,8 +1528,9 @@
                     avgMinDistance: avgMinDist,
                     levelTransitions: this.levelTransitions.length,
                     confidence: confidenceData.confidence,
-                    maxDistToAsked: confidenceData.maxDistToAsked,
-                    maxDistToAny: confidenceData.maxDistToAny
+                    maxDistCurrent: confidenceData.maxDistCurrent,
+                    maxDistBest: confidenceData.maxDistBest,
+                    maxDistWorst: confidenceData.maxDistWorst
                 };
             }
 
@@ -1624,6 +1663,9 @@
             userResponses = []; // Clear current round responses
 
             if (adaptiveSampler) {
+                // Clear pending questions from previous round
+                adaptiveSampler.clearPendingQuestions();
+
                 // Use adaptive sampling
                 questionsData = [];
                 const maxQuestions = adaptiveSampler.config.maxQuestions;
@@ -1672,7 +1714,8 @@
                         topic: selectedQuestion.topic || 'general',
                         cell_gx: selectedQuestion.cellData.cell.gx,
                         cell_gy: selectedQuestion.cellData.cell.gy,
-                        cellKey: selectedQuestion.cellKey
+                        cellKey: selectedQuestion.cellKey,
+                        index: selectedQuestion.index  // IMPORTANT: preserve index for recordResponse()
                     };
 
                     questionsData.push(question);
@@ -1881,6 +1924,7 @@
             // Show confidence display if adaptive sampling is enabled
             if (adaptiveSampler) {
                 confidenceDisplay.classList.remove('hidden');
+                updateConfidenceDisplay(); // Initialize display to 0%
             }
         }
 
@@ -1900,7 +1944,9 @@
             }
 
             console.log(`Level ${stats.currentLevel}, Confidence: ${percent}%, ` +
-                       `X: ${stats.maxDistToAsked.toFixed(4)}, Y: ${stats.maxDistToAny.toFixed(4)}`);
+                       `Z (current): ${stats.maxDistCurrent.toFixed(4)}, ` +
+                       `X (best): ${stats.maxDistBest.toFixed(4)}, ` +
+                       `Y (worst): ${stats.maxDistWorst.toFixed(4)}`);
         }
 
         function renderQuestion() {
@@ -1957,6 +2003,9 @@
                 const isCorrect = selectedOption === questionsData[currentQuestion].correctIndex;
                 adaptiveSampler.recordResponse(questionsData[currentQuestion].index, isCorrect);
 
+                // Update confidence display
+                updateConfidenceDisplay();
+
                 // Log stats
                 const stats = adaptiveSampler.getStats();
                 console.log(`Question ${currentQuestion + 1}: ${isCorrect ? 'Correct' : 'Incorrect'} | ` +
@@ -1991,6 +2040,9 @@
             // Record response in adaptive sampler with low correctness
             if (adaptiveSampler && questionsData[currentQuestion].index !== undefined) {
                 adaptiveSampler.recordResponse(questionsData[currentQuestion].index, false, 0.1);
+
+                // Update confidence display
+                updateConfidenceDisplay();
 
                 // Log stats
                 const stats = adaptiveSampler.getStats();

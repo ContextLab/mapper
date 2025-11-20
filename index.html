@@ -2549,7 +2549,8 @@
 
         function showResults() {
             quizSection.classList.add('hidden');
-            mapSection.classList.remove('hidden');
+            // Keep map section hidden until rendering is complete
+            // mapSection.classList.remove('hidden');
             loading.classList.remove('hidden');
 
             // Show coverage display on map if adaptive sampling is enabled
@@ -2649,6 +2650,9 @@
 
                 // Show canvas now that everything is rendered
                 canvas.style.visibility = 'visible';
+
+                // Show map section now that rendering is complete
+                mapSection.classList.remove('hidden');
             });
 
             // Add interactivity

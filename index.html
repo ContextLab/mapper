@@ -1118,15 +1118,15 @@
                 <h3>Related Resources</h3>
                 <a href="https://github.com/ContextLab/efficient-learning-khan" target="_blank" rel="noopener noreferrer" class="about-link">
                     <img src="logos/github.svg" alt="GitHub logo" class="link-logo">
-                    <span>Khan Academy Efficient Learning Repository</span>
+                    <span>GitHub repository for this project</span>
                 </a>
                 <a href="https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2145172&HistoricalAwards=false" target="_blank" rel="noopener noreferrer" class="about-link">
                     <img src="logos/nsf.png" alt="National Science Foundation logo" class="link-logo">
-                    <span>NSF Award #2145172 - Supporting this research</span>
+                    <span>Information about the NSF Award (#2145172) that supports this work</span>
                 </a>
                 <a href="https://context-lab.com" target="_blank" rel="noopener noreferrer" class="about-link">
                     <img src="logos/cdl.png" alt="Context Lab logo" class="link-logo">
-                    <span>Context Dynamics Lab at Dartmouth College</span>
+                    <span>Learn more about the Contextual Dynamics Lab at Dartmouth College</span>
                 </a>
             </section>
 
@@ -1134,7 +1134,7 @@
                 <h3>Contact</h3>
 
                 <div class="contact-info">
-                    <strong>Contextual Dynamics Lab</strong>
+                    <strong><a href="https://context-lab.com" target="_blank" rel="noopener noreferrer">Contextual Dynamics Lab</a></strong>
                     <p>Department of Psychological and Brain Sciences</p>
                     <p>Dartmouth College</p>
                     <p>349 Moore Hall, HB 6207</p>
@@ -2716,28 +2716,35 @@
                     return;
                 }
 
-                // Check if clicking on a Wikipedia article (find closest one within threshold)
+                // Prefer the currently hovered article if one is being shown
                 let clickedArticle = null;
-                let minDist = 8; // Threshold distance
 
-                wikipediaArticles.forEach((article, idx) => {
-                    // Skip articles outside extended region
-                    if (article.x < -0.5 || article.x > 1.5 || article.y < -0.5 || article.y > 1.5) {
-                        return;
-                    }
+                if (hoveredArticleIndex !== null && hoveredArticleIndex >= 0 && hoveredArticleIndex < wikipediaArticles.length) {
+                    // Use the hovered article (whose tooltip is currently shown)
+                    clickedArticle = wikipediaArticles[hoveredArticleIndex];
+                } else {
+                    // No hovered article - find closest one within threshold
+                    let minDist = 8; // Threshold distance
 
-                    const x = article.x * width;
-                    const y = article.y * height;
-                    const dist = Math.sqrt((mouseX - x) ** 2 + (mouseY - y) ** 2);
+                    wikipediaArticles.forEach((article, idx) => {
+                        // Skip articles outside extended region
+                        if (article.x < -0.5 || article.x > 1.5 || article.y < -0.5 || article.y > 1.5) {
+                            return;
+                        }
 
-                    // Only select if closer than current closest (prevents multiple opens)
-                    if (dist < minDist) {
-                        minDist = dist;
-                        clickedArticle = article;
-                    }
-                });
+                        const x = article.x * width;
+                        const y = article.y * height;
+                        const dist = Math.sqrt((mouseX - x) ** 2 + (mouseY - y) ** 2);
 
-                // Open Wikipedia article in new tab (only opens one article - the closest)
+                        // Only select if closer than current closest (prevents multiple opens)
+                        if (dist < minDist) {
+                            minDist = dist;
+                            clickedArticle = article;
+                        }
+                    });
+                }
+
+                // Open Wikipedia article in new tab
                 if (clickedArticle && clickedArticle.url) {
                     window.open(clickedArticle.url, '_blank');
                 }

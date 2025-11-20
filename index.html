@@ -2365,6 +2365,14 @@
             }
 
             if (shouldStartNewRound) {
+                // Save answered questions from this partial round before starting new round
+                for (let i = 0; i <= currentQuestion; i++) {
+                    if (userResponses[i] !== undefined) {
+                        allQuestionsShown.push(questionsData[i]);
+                        allUserResponses.push(userResponses[i]);
+                    }
+                }
+
                 // Skip remaining questions and start new round
                 selectedOption = null;  // Reset selection for new round
                 startNewQuizRound();

@@ -2022,6 +2022,7 @@
                         correctIndex: correctIndex,
                         x: selectedQuestion.x,
                         y: selectedQuestion.y,
+                        level: selectedQuestion.level !== undefined ? selectedQuestion.level : 0,  // Preserve level for rendering
                         topic: selectedQuestion.topic || 'general',
                         cell_gx: selectedQuestion.cellData.cell.gx,
                         cell_gy: selectedQuestion.cellData.cell.gy,

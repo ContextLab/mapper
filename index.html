@@ -1252,6 +1252,12 @@
                     alpha: 1.0,
                     beta: 1.0,
                     coverageDistance: 0.15,
+                    // Multi-level sampling parameters
+                    level4Coverage: 0.5,      // 50% coverage before moving to level 3
+                    level3Coverage: 0.65,     // 65% coverage before moving to level 2
+                    level2Coverage: 0.75,     // 75% coverage before moving to level 1
+                    level1Coverage: 0.85,     // 85% coverage before moving to level 0
+                    expertiseWeight: 0.7,     // Weight for correct areas (0.7 = prefer correct, 0.3 = sample incorrect)
                     ...config  // Allow override
                 };
 
@@ -1270,22 +1276,32 @@
                 this.responses = {};  // cellKey → true/false
                 this.uncertaintyMap = {};
                 this.askedQuestions = new Set();  // Track individual question IDs to prevent re-asking
+
+                // Multi-level sampling state
+                this.currentLevel = 4;  // Start with highest (broadest) level
+                this.levelTransitions = []; // Track when we transition levels
             }
 
             // === Phase 1: Infrastructure ===
 
-            _getAvailableQuestions() {
-                // Return all questions from cells that haven't been fully exhausted
+            _getAvailableQuestions(level = null) {
+                // Return questions from the specified level (or current level if not specified)
+                const targetLevel = level !== null ? level : this.currentLevel;
                 const available = [];
+
                 for (const cellData of this.questionsPool.cells) {
                     const cellKey = `${cellData.cell.gx}_${cellData.cell.gy}`;
                     // Include cells even if asked before, but filter individual questions
                     for (let i = 0; i < cellData.questions.length; i++) {
                         const question = cellData.questions[i];
                         const questionId = `${cellKey}_${i}`;
-                        // Only include questions that haven't been asked
-                        if (!this.askedQuestions.has(questionId)) {
-                            available.push({ ...question, cellKey, cellData, questionId });
+                        const questionLevel = question.level !== undefined ? question.level : 0;
+
+                        // Only include questions that:
+                        // 1. Haven't been asked
+                        // 2. Match the target level
+                        if (!this.askedQuestions.has(questionId) && questionLevel === targetLevel) {
+                            available.push({ ...question, cellKey, cellData, questionId, level: questionLevel });
                         }
                     }
                 }
@@ -1395,6 +1411,36 @@
                 return uncertaintyMap;
             }
 
+            // === Phase 2.5: Multi-Level Progression ===
+
+            _checkAndTransitionLevel() {
+                // Check if we should move to the next (lower, more detailed) level
+                const coverage = this.computeConfidence().coverageConfidence;
+
+                // Define coverage thresholds for each level
+                const thresholds = {
+                    4: this.config.level4Coverage,
+                    3: this.config.level3Coverage,
+                    2: this.config.level2Coverage,
+                    1: this.config.level1Coverage
+                };
+
+                // Check if we should transition to next level
+                if (this.currentLevel > 0 && coverage >= thresholds[this.currentLevel]) {
+                    const oldLevel = this.currentLevel;
+                    this.currentLevel--;
+                    this.levelTransitions.push({
+                        fromLevel: oldLevel,
+                        toLevel: this.currentLevel,
+                        coverage: coverage,
+                        questionsAsked: this.askedQuestions.size
+                    });
+                    console.log(`📊 Level transition: ${oldLevel} → ${this.currentLevel} (coverage: ${(coverage * 100).toFixed(1)}%)`);
+                    return true;
+                }
+                return false;
+            }
+
             // === Phase 3: Uncertainty-Weighted Selection ===
 
             scoreCell(cellKey, askedCells, uncertaintyMap) {
@@ -1479,18 +1525,81 @@
                 return bestQuestion;
             }
 
+            _selectExpertiseWeighted(availableQuestions) {
+                // Refine estimates by preferring areas of expertise (correct answers)
+                // but still sampling weaker areas to catch potential errors
+                this.uncertaintyMap = this.updateUncertaintyMap(
+                    this.askedCells,
+                    this.responses
+                );
+
+                const questionsByCell = this._groupByCell(availableQuestions);
+                const cellScores = [];
+
+                for (const [cellKey, questions] of Object.entries(questionsByCell)) {
+                    if (this.askedCells.includes(cellKey)) continue;
+
+                    const estimation = this.uncertaintyMap[cellKey];
+                    const predictedCorrectness = estimation?.predictedCorrectness || 0.5;
+                    const uncertainty = estimation?.uncertainty || 1.0;
+
+                    // Weight score by expertise: prefer high-correctness areas
+                    // but maintain some probability for low-correctness areas
+                    const expertiseWeight = this.config.expertiseWeight;
+                    const expertiseScore = expertiseWeight * predictedCorrectness +
+                                          (1 - expertiseWeight) * (1 - predictedCorrectness);
+
+                    // Combine expertise with uncertainty for refinement
+                    const score = expertiseScore * uncertainty;
+
+                    cellScores.push({ cellKey, questions, score, predictedCorrectness, uncertainty });
+                }
+
+                if (cellScores.length === 0) {
+                    return null;
+                }
+
+                // Sort by score and select from top candidates
+                cellScores.sort((a, b) => b.score - a.score);
+                const selected = cellScores[0];
+
+                console.log(`Selected cell ${selected.cellKey} (level ${this.currentLevel}), ` +
+                           `expertise: ${(selected.predictedCorrectness * 100).toFixed(1)}%, ` +
+                           `uncertainty: ${selected.uncertainty.toFixed(3)}`);
+
+                return this._selectRandom(selected.questions);
+            }
+
             selectNextQuestion() {
+                // Check if we should transition to next level
+                this._checkAndTransitionLevel();
+
+                // Get available questions for current level
                 const availableQuestions = this._getAvailableQuestions();
 
                 if (availableQuestions.length === 0) {
+                    // No more questions at current level - try to transition
+                    if (this.currentLevel > 0) {
+                        console.log(`No questions available at level ${this.currentLevel}, transitioning to level ${this.currentLevel - 1}`);
+                        this.currentLevel--;
+                        return this.selectNextQuestion(); // Recursive call with new level
+                    }
                     return null;
                 }
 
                 let selectedQuestion;
-                if (this.askedCells.length < this.config.initialRandomQuestions) {
+
+                // Multi-level sampling strategy:
+                // Level 4 (broad): Use geometric sampling for coverage
+                // Levels 3-1 (refining): Use expertise-weighted sampling
+                // Level 0 (fine-grained): Use expertise-weighted for detailed mapping
+
+                if (this.currentLevel === 4) {
+                    // Start with geometric sampling for broad coverage
                     selectedQuestion = this._selectGeometric(availableQuestions);
                 } else {
-                    selectedQuestion = this._selectUncertaintyWeighted(availableQuestions);
+                    // Refine using expertise-weighted sampling
+                    selectedQuestion = this._selectExpertiseWeighted(availableQuestions);
                 }
 
                 // Mark question as asked

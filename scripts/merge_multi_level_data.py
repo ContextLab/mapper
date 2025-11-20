@@ -358,8 +358,8 @@ def merge_cell_questions(articles: List[Dict], questions_by_article: Dict[str, L
     """
     print("\n=== Merging Questions by Cell ===")
 
-    # Build article title -> coordinates lookup
-    article_coords = {a['title']: (a['x'], a['y']) for a in articles}
+    # Build article title -> (coordinates, level) lookup
+    article_data = {a['title']: {'x': a['x'], 'y': a['y'], 'level': a['level']} for a in articles}
 
     all_cells = {}  # Key: (gx, gy), Value: cell data
     stats = {
@@ -370,19 +370,22 @@ def merge_cell_questions(articles: List[Dict], questions_by_article: Dict[str, L
     }
 
     for article_title, questions in questions_by_article.items():
-        if article_title not in article_coords:
+        if article_title not in article_data:
             # Article was removed (no valid parents)
             stats['questions_no_coords'] += len(questions)
             continue
 
-        x, y = article_coords[article_title]
+        article_info = article_data[article_title]
+        x, y = article_info['x'], article_info['y']
+        level = article_info['level']
         gx, gy = xy_to_grid(x, y)
         key = (gx, gy)
 
-        # Update each question with inherited coordinates
+        # Update each question with inherited coordinates and level
         for question in questions:
             question['x'] = x
             question['y'] = y
+            question['level'] = level  # Add level from source article
             stats['total_questions'] += 1
             stats['questions_with_coords'] += 1
 

@@ -1330,6 +1330,23 @@
     </div>
 
     <script>
+        // Level-based scaling parameters
+        const ARTICLE_PARAMS = {
+            0: { baseRadius: 0.25, baseAlpha: 0.01, hoverAlpha: 0.1 },
+            1: { baseRadius: 0.5,  baseAlpha: 0.02, hoverAlpha: 0.2 },
+            2: { baseRadius: 0.75, baseAlpha: 0.03, hoverAlpha: 0.3 },
+            3: { baseRadius: 1.0,  baseAlpha: 0.04, hoverAlpha: 0.4 },
+            4: { baseRadius: 1.5,  baseAlpha: 0.05, hoverAlpha: 0.5 }
+        };
+
+        const QUESTION_PARAMS = {
+            0: { radius: 8,  baseFontSize: 6 },
+            1: { radius: 10, baseFontSize: 8 },
+            2: { radius: 12, baseFontSize: 10 },
+            3: { radius: 14, baseFontSize: 12 },
+            4: { radius: 16, baseFontSize: 14 }
+        };
+
         // Questions data loaded from external file
         let questionsData = []; // Current round's questions (10 questions)
         let allQuestionsPool = []; // All available questions loaded from JSON
@@ -2790,6 +2807,40 @@
             return `rgba(${r}, ${g}, ${b}, ${a})`;
         }
 
+        /**
+         * Calculate scaled font size for question markers based on number of digits
+         * Ensures text fits within the circle regardless of question number
+         *
+         * @param {number} questionNumber - The question number to display
+         * @param {number} baseFontSize - Base font size for this level
+         * @param {number} radius - Circle radius for this level
+         * @returns {number} Scaled font size in pixels
+         */
+        function getScaledFontSize(questionNumber, baseFontSize, radius) {
+            const numDigits = questionNumber.toString().length;
+
+            // Scale factor: reduce font size by ~15% per additional digit
+            // This is empirically tuned to keep text within circle bounds
+            const scaleFactor = Math.pow(0.85, numDigits - 1);
+
+            // Calculate scaled font size
+            let fontSize = baseFontSize * scaleFactor;
+
+            // Enforce minimum readable size (4px)
+            fontSize = Math.max(4, fontSize);
+
+            // Ensure text width fits within circle diameter
+            // Approximate: each digit is ~0.6 * fontSize wide
+            const estimatedTextWidth = numDigits * 0.6 * fontSize;
+            const maxWidth = radius * 2 * 0.8; // 80% of diameter for padding
+
+            if (estimatedTextWidth > maxWidth) {
+                fontSize = (maxWidth / (numDigits * 0.6));
+            }
+
+            return Math.round(fontSize);
+        }
+
         function drawWikipediaArticles(width, height) {
             // Render articles in extended region (includes articles outside [0,1] for context)
             wikipediaArticles.forEach((article, idx) => {
@@ -2808,16 +2859,15 @@
                 // Get animation progress for this article (0 = not hovered, 1 = fully hovered)
                 const animProgress = articleAnimationProgress[idx] || 0;
 
-                // Base radius for article dots (small, as specified)
-                const baseRadius = 1;
+                // Get level-specific parameters (default to level 0 if undefined)
+                const level = article.level !== undefined ? article.level : 0;
+                const params = ARTICLE_PARAMS[level] || ARTICLE_PARAMS[0];
 
-                // When hovered, grow slightly
-                const radius = baseRadius + (1 * animProgress);
+                // When hovered, grow proportionally to base radius
+                const radius = params.baseRadius + (params.baseRadius * animProgress);
 
-                // Base alpha (very subtle when not hovered)
-                const baseAlpha = 0.05;
-                const hoverAlpha = 0.5;
-                const alpha = baseAlpha + (hoverAlpha - baseAlpha) * animProgress;
+                // Interpolate alpha based on hover state
+                const alpha = params.baseAlpha + (params.hoverAlpha - params.baseAlpha) * animProgress;
 
                 // Draw article dot (black)
                 ctx.beginPath();
@@ -2831,7 +2881,11 @@
             questionsData.forEach((q, idx) => {
                 const baseX = q.x * width;
                 const baseY = q.y * height;
-                const radius = 12;
+
+                // Get level-specific parameters (default to level 0 if undefined)
+                const level = q.level !== undefined ? q.level : 0;
+                const params = QUESTION_PARAMS[level] || QUESTION_PARAMS[0];
+                const radius = params.radius;
 
                 const wasAnswered = userResponses[idx] !== undefined;
                 const isSkipped = userResponses[idx] === -1 || q.skipped;
@@ -2891,12 +2945,15 @@
                 ctx.fillStyle = color;
                 ctx.fill();
 
-                // Draw question number (simple index, no offset needed since questionsData contains all questions via swap)
+                // Draw question number with adaptive font size
+                const questionNumber = idx + 1;
+                const fontSize = getScaledFontSize(questionNumber, params.baseFontSize, radius);
+
                 ctx.fillStyle = 'white';
-                ctx.font = 'bold 11px sans-serif';
+                ctx.font = `bold ${fontSize}px sans-serif`;
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
-                ctx.fillText((idx + 1).toString(), currentX, currentY);
+                ctx.fillText(questionNumber.toString(), currentX, currentY);
             });
         }
 

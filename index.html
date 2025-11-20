@@ -1560,6 +1560,17 @@
                 const currentLevelCoverage = this.perLevelState[this.currentLevel].coverage;
                 const availableAtCurrentLevel = this._getAvailableQuestions(this.currentLevel).length;
 
+                // Debug: Log coverage check for level 4
+                if (this.currentLevel === 4 && !window.level4CoverageLogged) {
+                    console.log(`DEBUG: Level 4 coverage check:`);
+                    console.log(`  currentLevelCoverage: ${(currentLevelCoverage * 100).toFixed(2)}%`);
+                    console.log(`  coverageThreshold: ${(this.coverageThreshold * 100).toFixed(2)}%`);
+                    console.log(`  availableAtCurrentLevel: ${availableAtCurrentLevel}`);
+                    console.log(`  askedQuestions at L4: ${this.perLevelState[4].askedIndices.length}`);
+                    console.log(`  Should transition? ${currentLevelCoverage >= this.coverageThreshold || availableAtCurrentLevel === 0}`);
+                    window.level4CoverageLogged = true;
+                }
+
                 // Transition when coverage exceeds threshold OR no more questions available at current level
                 if (currentLevelCoverage >= this.coverageThreshold || availableAtCurrentLevel === 0) {
                     const oldLevel = this.currentLevel;

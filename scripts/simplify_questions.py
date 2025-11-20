@@ -33,6 +33,7 @@ from pathlib import Path
 from datetime import datetime
 from typing import List, Dict, Any, Optional, Tuple
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import sys
 
 # Add parent directory to path for imports
@@ -511,18 +512,94 @@ def load_articles(level: int, base_path: Path) -> Dict[str, str]:
     return articles
 
 
+def process_single_question(args):
+    """
+    Process a single question (for parallel execution).
+
+    Args:
+        args: Tuple of (index, question, article_text, level, client)
+
+    Returns:
+        Dict with result, stats, and exclusion info
+    """
+    i, question, article_text, level, client = args
+
+    result = {
+        'index': i,
+        'question': question,
+        'simplified': None,
+        'excluded': None,
+        'stats_update': {
+            'pass_1_success': 0,
+            'pass_1_retry': 0,
+            'pass_1_failed': 0,
+            'pass_2_success': 0,
+            'pass_2_failed': 0,
+            'excluded': 0,
+            'exclusion_reason': None
+        }
+    }
+
+    # Pass 1: Try simplification
+    simplified, status, reason = simplify_question(question, article_text, level, client)
+
+    if status == 'success':
+        result['simplified'] = simplified
+        result['stats_update']['pass_1_success'] = 1
+        result['status_msg'] = f"✅ Pass 1 success: {reason}"
+    elif status == 'retry':
+        result['stats_update']['pass_1_retry'] = 1
+        result['status_msg'] = f"🔄 Pass 1 needs retry: {reason} → Attempting Pass 2..."
+
+        # Pass 2: Try generating new question
+        new_q, status2, reason2 = generate_new_question(question, article_text, level, client)
+
+        if status2 == 'success':
+            result['simplified'] = new_q
+            result['stats_update']['pass_2_success'] = 1
+            result['status_msg'] += f" → ✅ Pass 2 success: {reason2}"
+        else:
+            result['excluded'] = {
+                'original_question': question,
+                'reason': 'content_loss_both_passes',
+                'pass_1_attempt': simplified,
+                'pass_1_reason': reason,
+                'pass_2_attempt': new_q,
+                'pass_2_reason': reason2
+            }
+            result['stats_update']['pass_2_failed'] = 1
+            result['stats_update']['excluded'] = 1
+            result['stats_update']['exclusion_reason'] = 'content_loss_both_passes'
+            result['status_msg'] += f" → ❌ Pass 2 failed: {reason2} → Excluded"
+    else:  # status == 'failed'
+        result['excluded'] = {
+            'original_question': question,
+            'reason': 'pass_1_api_error',
+            'pass_1_attempt': None,
+            'pass_2_attempt': None
+        }
+        result['stats_update']['pass_1_failed'] = 1
+        result['stats_update']['excluded'] = 1
+        result['stats_update']['exclusion_reason'] = 'pass_1_api_error'
+        result['status_msg'] = f"❌ Pass 1 failed: {reason} → Excluded"
+
+    return result
+
+
 def simplify_level(
     level: int,
     pilot: Optional[int] = None,
-    base_path: Path = Path('.')
+    base_path: Path = Path('.'),
+    max_workers: int = 10
 ) -> Tuple[List[Dict], Dict[str, Any]]:
     """
-    Simplify all questions for a level.
+    Simplify all questions for a level using parallel processing.
 
     Args:
         level: Question level (0-4)
         pilot: If set, only process this many questions
         base_path: Base directory path
+        max_workers: Maximum parallel workers (default: 10)
 
     Returns:
         (simplified_questions, stats) tuple
@@ -532,6 +609,7 @@ def simplify_level(
     print(f"Target audience: {LEVEL_CONFIG[level]['target_audience']}")
     if pilot:
         print(f"PILOT MODE: Processing only {pilot} questions")
+    print(f"Parallel workers: {max_workers}")
     print(f"{'='*60}\n")
 
     # Create OpenAI client
@@ -554,9 +632,33 @@ def simplify_level(
     # Load articles
     articles = load_articles(level, base_path)
 
-    # Process questions
-    simplified_questions = []
+    # Filter questions with missing articles
+    valid_questions = []
     excluded_questions = []
+
+    for question in all_questions:
+        article_title = question.get('source_article', '')
+        if article_title not in articles:
+            print(f"⚠️  Article '{article_title}' not found for question, excluding...")
+            excluded_questions.append({
+                'original_question': question,
+                'reason': 'article_not_found',
+                'pass_1_attempt': None,
+                'pass_2_attempt': None
+            })
+        else:
+            valid_questions.append((question, articles[article_title]))
+
+    print(f"Processing {len(valid_questions)} questions ({len(excluded_questions)} excluded due to missing articles)\n")
+
+    # Prepare arguments for parallel processing
+    process_args = [
+        (i, question, article_text, level, client)
+        for i, (question, article_text) in enumerate(valid_questions, 1)
+    ]
+
+    # Process questions in parallel
+    simplified_questions = []
 
     stats = {
         'total_original': len(all_questions),
@@ -565,74 +667,46 @@ def simplify_level(
         'pass_1_failed': 0,
         'pass_2_success': 0,
         'pass_2_failed': 0,
-        'excluded': 0,
+        'excluded': len(excluded_questions),
         'exclusion_reasons': defaultdict(int)
     }
 
-    for i, question in enumerate(all_questions, 1):
-        print(f"[{i}/{len(all_questions)}] Processing: {question['question'][:60]}...")
+    # Add article_not_found exclusions to stats
+    stats['exclusion_reasons']['article_not_found'] = len(excluded_questions)
 
-        # Get article text
-        article_title = question.get('source_article', '')
-        if article_title not in articles:
-            print(f"  ⚠️  Article '{article_title}' not found, skipping question")
-            excluded_questions.append({
-                'original_question': question,
-                'reason': 'article_not_found',
-                'pass_1_attempt': None,
-                'pass_2_attempt': None
-            })
-            stats['excluded'] += 1
-            stats['exclusion_reasons']['article_not_found'] += 1
-            continue
+    print(f"Starting parallel processing with {max_workers} workers...\n")
 
-        article_text = articles[article_title]
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        # Submit all tasks
+        futures = {executor.submit(process_single_question, args): args[0] for args in process_args}
 
-        # Pass 1: Try simplification
-        simplified, status, reason = simplify_question(question, article_text, level, client)
+        # Process completed tasks as they finish
+        completed = 0
+        for future in as_completed(futures):
+            completed += 1
+            result = future.result()
 
-        if status == 'success':
-            print(f"  ✅ Pass 1 success: {reason}")
-            simplified_questions.append(simplified)
-            stats['pass_1_success'] += 1
-        elif status == 'retry':
-            print(f"  🔄 Pass 1 needs retry: {reason}")
-            stats['pass_1_retry'] += 1
+            # Print status
+            i = result['index']
+            total = len(valid_questions)
+            print(f"[{completed}/{total}] Q{i}: {result['status_msg']}")
 
-            # Pass 2: Try generating new question
-            print(f"  Attempting Pass 2 (new generation)...")
-            new_q, status2, reason2 = generate_new_question(question, article_text, level, client)
+            # Update stats
+            for key, value in result['stats_update'].items():
+                if key == 'exclusion_reason':
+                    if value:
+                        stats['exclusion_reasons'][value] += 1
+                elif key in stats:
+                    stats[key] += value
 
-            if status2 == 'success':
-                print(f"  ✅ Pass 2 success: {reason2}")
-                simplified_questions.append(new_q)
-                stats['pass_2_success'] += 1
-            else:
-                print(f"  ❌ Pass 2 failed: {reason2}")
-                print(f"  Excluding question (both passes failed)")
-                excluded_questions.append({
-                    'original_question': question,
-                    'reason': 'content_loss_both_passes',
-                    'pass_1_attempt': simplified,
-                    'pass_1_reason': reason,
-                    'pass_2_attempt': new_q,
-                    'pass_2_reason': reason2
-                })
-                stats['pass_2_failed'] += 1
-                stats['excluded'] += 1
-                stats['exclusion_reasons']['content_loss_both_passes'] += 1
-        else:  # status == 'failed'
-            print(f"  ❌ Pass 1 failed: {reason}")
-            print(f"  Excluding question (API error)")
-            excluded_questions.append({
-                'original_question': question,
-                'reason': 'pass_1_api_error',
-                'pass_1_attempt': None,
-                'pass_2_attempt': None
-            })
-            stats['pass_1_failed'] += 1
-            stats['excluded'] += 1
-            stats['exclusion_reasons']['pass_1_api_error'] += 1
+            # Collect results
+            if result['simplified']:
+                simplified_questions.append(result['simplified'])
+            if result['excluded']:
+                excluded_questions.append(result['excluded'])
+
+    # Sort simplified questions by original index (optional, for consistency)
+    # simplified_questions is already in completion order, which is fine
 
     # Print summary
     print(f"\n{'='*60}")

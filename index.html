@@ -2828,11 +2828,11 @@
             // Get background color from custom colormap
             const bgColor = mapToColor(knowledgeValue);
 
-            // Display article title, excerpt, and knowledge
+            // Display article title, summary, and knowledge
             tooltip.innerHTML = `
                 <div class="tooltip-question">${article.title}</div>
                 <div class="tooltip-status">
-                    <span>${article.excerpt}</span>
+                    <span>${article.summary || article.excerpt || ''}</span>
                     <br>
                     <span>Inferred Knowledge: ${knowledgeLabel}</span>
                 </div>

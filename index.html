@@ -2342,11 +2342,20 @@
 
                 // Check if we just crossed the threshold for this level
                 const newCoverage = adaptiveSampler.perLevelState[previousLevel].coverage;
+                let shouldStartNewRound = false;
                 if (previousCoverage < adaptiveSampler.coverageThreshold &&
                     newCoverage >= adaptiveSampler.coverageThreshold) {
                     // Threshold crossed! Highlight the Show Map button
                     showMapBtn.classList.add('high-confidence');
                     console.log(`🎯 Level ${previousLevel} threshold reached! Coverage: ${Math.round(newCoverage * 100)}%`);
+
+                    // Trigger level transition check
+                    const transitioned = adaptiveSampler._checkAndTransitionLevel();
+                    if (transitioned) {
+                        // Level changed - start new round immediately with new level questions
+                        shouldStartNewRound = true;
+                        console.log(`⚡ Starting new round immediately at level ${adaptiveSampler.currentLevel}`);
+                    }
                 }
 
                 // Log stats
@@ -2355,7 +2364,10 @@
                            `Level: ${stats.currentLevel} | Density: ${stats.avgMinDistance.toFixed(4)}`);
             }
 
-            if (currentQuestion < questionsData.length - 1) {
+            if (shouldStartNewRound) {
+                // Skip remaining questions and start new round
+                startNewQuizRound();
+            } else if (currentQuestion < questionsData.length - 1) {
                 currentQuestion++;
                 selectedOption = null;
                 renderQuestion();

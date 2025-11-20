@@ -1330,6 +1330,24 @@
     </div>
 
     <script>
+        // Level-based scaling parameters
+        // Note: Articles are much more visible now - minimum is 3x larger than before
+        const ARTICLE_PARAMS = {
+            0: { baseRadius: 1.5,  baseAlpha: 0.05, hoverAlpha: 0.5 },  // Most specific (smallest at this scale)
+            1: { baseRadius: 2.25, baseAlpha: 0.06, hoverAlpha: 0.6 },
+            2: { baseRadius: 3.0,  baseAlpha: 0.07, hoverAlpha: 0.7 },
+            3: { baseRadius: 3.5,  baseAlpha: 0.08, hoverAlpha: 0.8 },
+            4: { baseRadius: 4.0,  baseAlpha: 0.10, hoverAlpha: 1.0 }   // Most abstract (largest)
+        };
+
+        const QUESTION_PARAMS = {
+            0: { radius: 8,  baseFontSize: 6 },   // Most specific (smallest)
+            1: { radius: 10, baseFontSize: 8 },
+            2: { radius: 12, baseFontSize: 10 },
+            3: { radius: 14, baseFontSize: 12 },
+            4: { radius: 16, baseFontSize: 14 }   // Most abstract (largest)
+        };
+
         // Questions data loaded from external file
         let questionsData = []; // Current round's questions (10 questions)
         let allQuestionsPool = []; // All available questions loaded from JSON
@@ -1541,6 +1559,17 @@
 
                 const currentLevelCoverage = this.perLevelState[this.currentLevel].coverage;
                 const availableAtCurrentLevel = this._getAvailableQuestions(this.currentLevel).length;
+
+                // Debug: Log coverage check for level 4
+                if (this.currentLevel === 4 && !window.level4CoverageLogged) {
+                    console.log(`DEBUG: Level 4 coverage check:`);
+                    console.log(`  currentLevelCoverage: ${(currentLevelCoverage * 100).toFixed(2)}%`);
+                    console.log(`  coverageThreshold: ${(this.coverageThreshold * 100).toFixed(2)}%`);
+                    console.log(`  availableAtCurrentLevel: ${availableAtCurrentLevel}`);
+                    console.log(`  askedQuestions at L4: ${this.perLevelState[4].askedIndices.length}`);
+                    console.log(`  Should transition? ${currentLevelCoverage >= this.coverageThreshold || availableAtCurrentLevel === 0}`);
+                    window.level4CoverageLogged = true;
+                }
 
                 // Transition when coverage exceeds threshold OR no more questions available at current level
                 if (currentLevelCoverage >= this.coverageThreshold || availableAtCurrentLevel === 0) {
@@ -1993,6 +2022,7 @@
                         correctIndex: correctIndex,
                         x: selectedQuestion.x,
                         y: selectedQuestion.y,
+                        level: selectedQuestion.level !== undefined ? selectedQuestion.level : 0,  // Preserve level for rendering
                         topic: selectedQuestion.topic || 'general',
                         cell_gx: selectedQuestion.cellData.cell.gx,
                         cell_gy: selectedQuestion.cellData.cell.gy,
@@ -2298,6 +2328,7 @@
 
         function handleNext() {
             userResponses[currentQuestion] = selectedOption;
+            let shouldStartNewRound = false;  // Declare here so it's accessible throughout the function
 
             // Record response in adaptive sampler if available
             if (adaptiveSampler && questionsData[currentQuestion].index !== undefined) {
@@ -2317,6 +2348,14 @@
                     // Threshold crossed! Highlight the Show Map button
                     showMapBtn.classList.add('high-confidence');
                     console.log(`🎯 Level ${previousLevel} threshold reached! Coverage: ${Math.round(newCoverage * 100)}%`);
+
+                    // Trigger level transition check
+                    const transitioned = adaptiveSampler._checkAndTransitionLevel();
+                    if (transitioned) {
+                        // Level changed - start new round immediately with new level questions
+                        shouldStartNewRound = true;
+                        console.log(`⚡ Starting new round immediately at level ${adaptiveSampler.currentLevel}`);
+                    }
                 }
 
                 // Log stats
@@ -2325,7 +2364,20 @@
                            `Level: ${stats.currentLevel} | Density: ${stats.avgMinDistance.toFixed(4)}`);
             }
 
-            if (currentQuestion < questionsData.length - 1) {
+            if (shouldStartNewRound) {
+                // Save answered questions from this partial round before starting new round
+                for (let i = 0; i <= currentQuestion; i++) {
+                    if (userResponses[i] !== undefined) {
+                        allQuestionsShown.push(questionsData[i]);
+                        allUserResponses.push(userResponses[i]);
+                    }
+                }
+
+                // Skip remaining questions and start new round
+                selectedOption = null;  // Reset selection for new round
+                startNewQuizRound();
+                return;  // Exit handleNext() to prevent further processing
+            } else if (currentQuestion < questionsData.length - 1) {
                 currentQuestion++;
                 selectedOption = null;
                 renderQuestion();
@@ -2790,6 +2842,40 @@
             return `rgba(${r}, ${g}, ${b}, ${a})`;
         }
 
+        /**
+         * Calculate scaled font size for question markers based on number of digits
+         * Ensures text fits within the circle regardless of question number
+         *
+         * @param {number} questionNumber - The question number to display
+         * @param {number} baseFontSize - Base font size for this level
+         * @param {number} radius - Circle radius for this level
+         * @returns {number} Scaled font size in pixels
+         */
+        function getScaledFontSize(questionNumber, baseFontSize, radius) {
+            const numDigits = questionNumber.toString().length;
+
+            // Scale factor: reduce font size by ~15% per additional digit
+            // This is empirically tuned to keep text within circle bounds
+            const scaleFactor = Math.pow(0.85, numDigits - 1);
+
+            // Calculate scaled font size
+            let fontSize = baseFontSize * scaleFactor;
+
+            // Enforce minimum readable size (4px)
+            fontSize = Math.max(4, fontSize);
+
+            // Ensure text width fits within circle diameter
+            // Approximate: each digit is ~0.6 * fontSize wide
+            const estimatedTextWidth = numDigits * 0.6 * fontSize;
+            const maxWidth = radius * 2 * 0.8; // 80% of diameter for padding
+
+            if (estimatedTextWidth > maxWidth) {
+                fontSize = (maxWidth / (numDigits * 0.6));
+            }
+
+            return Math.round(fontSize);
+        }
+
         function drawWikipediaArticles(width, height) {
             // Render articles in extended region (includes articles outside [0,1] for context)
             wikipediaArticles.forEach((article, idx) => {
@@ -2808,16 +2894,15 @@
                 // Get animation progress for this article (0 = not hovered, 1 = fully hovered)
                 const animProgress = articleAnimationProgress[idx] || 0;
 
-                // Base radius for article dots (small, as specified)
-                const baseRadius = 1;
+                // Get level-specific parameters (default to level 0 if undefined)
+                const level = article.level !== undefined ? article.level : 0;
+                const params = ARTICLE_PARAMS[level] || ARTICLE_PARAMS[0];
 
-                // When hovered, grow slightly
-                const radius = baseRadius + (1 * animProgress);
+                // When hovered, grow proportionally to base radius
+                const radius = params.baseRadius + (params.baseRadius * animProgress);
 
-                // Base alpha (very subtle when not hovered)
-                const baseAlpha = 0.05;
-                const hoverAlpha = 0.5;
-                const alpha = baseAlpha + (hoverAlpha - baseAlpha) * animProgress;
+                // Interpolate alpha based on hover state
+                const alpha = params.baseAlpha + (params.hoverAlpha - params.baseAlpha) * animProgress;
 
                 // Draw article dot (black)
                 ctx.beginPath();
@@ -2828,10 +2913,29 @@
         }
 
         function drawQuestionMarkers(width, height) {
+            // Debug: Log first 5 questions to verify levels
+            if (questionsData.length > 0 && !window.questionLevelsLogged) {
+                console.log('DEBUG: Question levels (first 5):');
+                questionsData.slice(0, 5).forEach((q, idx) => {
+                    console.log(`  Question ${idx + 1}: level=${q.level}, x=${q.x?.toFixed(3)}, y=${q.y?.toFixed(3)}`);
+                });
+                window.questionLevelsLogged = true;
+            }
+
             questionsData.forEach((q, idx) => {
                 const baseX = q.x * width;
                 const baseY = q.y * height;
-                const radius = 12;
+
+                // Get level-specific parameters (default to level 0 if undefined)
+                const level = q.level !== undefined ? q.level : 0;
+                const params = QUESTION_PARAMS[level] || QUESTION_PARAMS[0];
+                const radius = params.radius;
+
+                // Debug: Log first few question parameters
+                if (idx < 5 && !window.questionParamsLogged) {
+                    console.log(`  Question ${idx + 1}: level=${level}, radius=${radius}, baseFontSize=${params.baseFontSize}`);
+                    if (idx === 4) window.questionParamsLogged = true;
+                }
 
                 const wasAnswered = userResponses[idx] !== undefined;
                 const isSkipped = userResponses[idx] === -1 || q.skipped;
@@ -2891,12 +2995,15 @@
                 ctx.fillStyle = color;
                 ctx.fill();
 
-                // Draw question number (simple index, no offset needed since questionsData contains all questions via swap)
+                // Draw question number with adaptive font size
+                const questionNumber = idx + 1;
+                const fontSize = getScaledFontSize(questionNumber, params.baseFontSize, radius);
+
                 ctx.fillStyle = 'white';
-                ctx.font = 'bold 11px sans-serif';
+                ctx.font = `bold ${fontSize}px sans-serif`;
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
-                ctx.fillText((idx + 1).toString(), currentX, currentY);
+                ctx.fillText(questionNumber.toString(), currentX, currentY);
             });
         }
 

@@ -111,7 +111,15 @@ def strip_article_fields(article: Dict) -> Dict:
     # Required fields
     stripped['title'] = article.get('title', '')
     stripped['url'] = article.get('url', '')
-    stripped['excerpt'] = article.get('excerpt', '')
+
+    # Use excerpt if available, otherwise truncate summary to ~200 chars
+    excerpt = article.get('excerpt', '')
+    if not excerpt:
+        summary = article.get('summary', '')
+        if summary:
+            # Truncate to first sentence or ~200 chars, whichever is shorter
+            excerpt = summary[:200].rsplit('.', 1)[0] + '.' if '.' in summary[:200] else summary[:200]
+    stripped['excerpt'] = excerpt
 
     # Coordinates (will be reassigned for levels 1-4)
     stripped['x'] = article.get('x', 0.0)

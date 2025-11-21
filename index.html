@@ -1498,14 +1498,60 @@
             }
 
             _selectFurthestQuestion(availableQuestions) {
-                // Select the question furthest from all asked questions AND pending questions
-                // This ensures that within a single round, questions are spread out from each other
+                // Select the question based on adaptive criteria
+                // First question: deterministic selection (lowest grade, highest ease, best coverage)
+                // Subsequent: furthest from asked/pending questions (maximizes coverage)
+
                 if (this.askedQuestionIndices.length === 0 && this.pendingQuestionIndices.length === 0) {
-                    // First question ever: select randomly
-                    const randomIdx = Math.floor(Math.random() * availableQuestions.length);
-                    return availableQuestions[randomIdx];
+                    // First question ever: select deterministically
+                    // Criteria: lowest grade level, highest reading ease, minimize distance to cell centers
+
+                    // Get 39x39 grid of cell centers
+                    const gridSize = 39;
+                    const cellCenters = [];
+                    for (let gx = 0; gx < gridSize; gx++) {
+                        for (let gy = 0; gy < gridSize; gy++) {
+                            const x = (gx + 0.5) / gridSize;
+                            const y = (gy + 0.5) / gridSize;
+                            cellCenters.push({x, y});
+                        }
+                    }
+
+                    let bestQuestion = null;
+                    let bestScore = Infinity;  // Lower is better
+
+                    for (const q of availableQuestions) {
+                        const grade = q.flesch_kincaid_grade || 12.0;
+                        const ease = q.flesch_reading_ease || 50.0;
+
+                        // Calculate average distance to all cell centers
+                        let sumDist = 0;
+                        for (const center of cellCenters) {
+                            const dx = q.x - center.x;
+                            const dy = q.y - center.y;
+                            sumDist += Math.sqrt(dx * dx + dy * dy);
+                        }
+                        const avgDist = sumDist / cellCenters.length;
+
+                        // Score: prioritize low grade, then high ease, then low avg distance
+                        // Normalize: grade [0-20], ease [0-100], distance [0-1.4]
+                        const score = (grade / 20.0) * 10 + ((100 - ease) / 100.0) * 5 + (avgDist / 1.4) * 1;
+
+                        if (score < bestScore) {
+                            bestScore = score;
+                            bestQuestion = q;
+                        }
+                    }
+
+                    if (bestQuestion) {
+                        console.log(`First question selected: grade=${bestQuestion.flesch_kincaid_grade?.toFixed(1)}, ` +
+                                   `ease=${bestQuestion.flesch_reading_ease?.toFixed(1)}, ` +
+                                   `level=${bestQuestion.level}`);
+                    }
+                    return bestQuestion;
                 }
 
+                // Subsequent questions: maximize coverage (furthest from asked/pending)
                 let furthestQuestion = null;
                 let maxMinDistance = -Infinity;
 
@@ -1616,8 +1662,23 @@
                     return null;
                 }
 
-                // Use pure geometric sampling: select furthest question
-                const selectedQuestion = this._selectFurthestQuestion(availableQuestions);
+                // Filter by eligibility (based on demonstrated ability)
+                const eligibleQuestions = availableQuestions.filter(q => this._isQuestionEligible(q));
+
+                if (eligibleQuestions.length === 0) {
+                    console.log(`No eligible questions at level ${this.currentLevel} (${availableQuestions.length} available but not eligible)`);
+                    // Try transitioning to next level
+                    if (this.currentLevel > 0) {
+                        this.currentLevel--;
+                        return this.selectNextQuestion(); // Recursive call with new level
+                    }
+                    return null;
+                }
+
+                console.log(`Eligible questions: ${eligibleQuestions.length}/${availableQuestions.length} at level ${this.currentLevel}`);
+
+                // Select from eligible questions using adaptive criteria
+                const selectedQuestion = this._selectFurthestQuestion(eligibleQuestions);
 
                 // Add to pendingQuestionIndices to prevent selecting again in this round
                 if (selectedQuestion) {
@@ -1742,6 +1803,44 @@
 
                 // Return weighted average
                 return valueSum / weightSum;
+            }
+
+            _isQuestionEligible(question) {
+                // Check if a question is eligible based on demonstrated ability
+                // Eligibility criteria:
+                //   - First question: always eligible (start with easiest L4)
+                //   - Grade level: demonstrated gradeLevel + 1 (strict)
+                //   - Reading ease: demonstrated readingEase - 1 (strict, lower = harder)
+                //   - Level: demonstrated level - 1 (lower = more specific)
+                //
+                // Returns: true if eligible, false otherwise
+
+                // First question: always eligible
+                if (this.responsesDetailed.length === 0) {
+                    return true;
+                }
+
+                // Get demonstrated ability at this question's location
+                const demonstratedGrade = this._computeRBFWeightedMax(question.x, question.y, 'gradeLevel');
+                const demonstratedEase = this._computeRBFWeightedMax(question.x, question.y, 'readingEase');
+                const demonstratedLevel = this._computeRBFWeightedMax(question.x, question.y, 'level');
+
+                // Get question difficulty
+                const questionGrade = question.flesch_kincaid_grade || 12.0;
+                const questionEase = question.flesch_reading_ease || 50.0;
+                const questionLevel = question.level !== undefined ? question.level : 0;
+
+                // Check eligibility (strict: +1 tolerance for grade, -1 for ease, -1 for level)
+                // Grade level: can handle up to demonstrated + 1
+                const gradeEligible = questionGrade <= (demonstratedGrade + 1);
+
+                // Reading ease: can handle down to demonstrated - 1 (lower = harder)
+                const easeEligible = questionEase >= (demonstratedEase - 1);
+
+                // Level (specificity): can handle down to demonstrated - 1 (lower = more specific)
+                const levelEligible = questionLevel >= (demonstratedLevel - 1);
+
+                return gradeEligible && easeEligible && levelEligible;
             }
 
             // === Utility Methods ===

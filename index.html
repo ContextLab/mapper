@@ -1404,8 +1404,25 @@
                 // Subsequent: furthest from asked/pending questions (maximizes coverage)
 
                 if (this.askedQuestionIndices.length === 0 && this.pendingQuestionIndices.length === 0) {
-                    // First question ever: select deterministically
-                    // Criteria: lowest grade level, highest reading ease, minimize distance to cell centers
+                    // First question ever: select the EASIEST question
+                    // Primary: lowest grade level
+                    // Secondary: highest reading ease
+                    // Tertiary: best coverage (minimize distance to cell centers)
+
+                    // Sort by grade (ascending), then ease (descending)
+                    const sorted = [...availableQuestions].sort((a, b) => {
+                        const gradeA = a.flesch_kincaid_grade || 12.0;
+                        const gradeB = b.flesch_kincaid_grade || 12.0;
+                        if (Math.abs(gradeA - gradeB) > 0.1) {
+                            return gradeA - gradeB; // Lower grade first
+                        }
+                        const easeA = a.flesch_reading_ease || 50.0;
+                        const easeB = b.flesch_reading_ease || 50.0;
+                        return easeB - easeA; // Higher ease first
+                    });
+
+                    // Take the easiest 10 questions and choose best coverage among them
+                    const easiest10 = sorted.slice(0, Math.min(10, sorted.length));
 
                     // Get 39x39 grid of cell centers
                     const gridSize = 39;
@@ -1419,12 +1436,9 @@
                     }
 
                     let bestQuestion = null;
-                    let bestScore = Infinity;  // Lower is better
+                    let bestAvgDist = Infinity;
 
-                    for (const q of availableQuestions) {
-                        const grade = q.flesch_kincaid_grade || 12.0;
-                        const ease = q.flesch_reading_ease || 50.0;
-
+                    for (const q of easiest10) {
                         // Calculate average distance to all cell centers
                         let sumDist = 0;
                         for (const center of cellCenters) {
@@ -1434,18 +1448,14 @@
                         }
                         const avgDist = sumDist / cellCenters.length;
 
-                        // Score: prioritize low grade, then high ease, then low avg distance
-                        // Normalize: grade [0-20], ease [0-100], distance [0-1.4]
-                        const score = (grade / 20.0) * 10 + ((100 - ease) / 100.0) * 5 + (avgDist / 1.4) * 1;
-
-                        if (score < bestScore) {
-                            bestScore = score;
+                        if (avgDist < bestAvgDist) {
+                            bestAvgDist = avgDist;
                             bestQuestion = q;
                         }
                     }
 
                     if (bestQuestion) {
-                        console.log(`First question selected: grade=${bestQuestion.flesch_kincaid_grade?.toFixed(1)}, ` +
+                        console.log(`First question selected (EASIEST): grade=${bestQuestion.flesch_kincaid_grade?.toFixed(1)}, ` +
                                    `ease=${bestQuestion.flesch_reading_ease?.toFixed(1)}, ` +
                                    `level=${bestQuestion.level}`);
                     }
@@ -2319,17 +2329,20 @@
 
             const stats = adaptiveSampler.getStats();
 
-            // Calculate progress: weighted average of level completions
-            // Level 4 → 0 represents 0% → 100% progress
-            let totalProgress = 0;
-            let totalWeight = 0;
-            for (let level = 0; level <= 4; level++) {
-                const levelData = stats.perLevelCoverage[level];
-                const levelProgress = (4 - level) / 4.0;  // L4=0%, L3=25%, L2=50%, L1=75%, L0=100%
-                totalProgress += levelData.coverage * levelProgress;
-                totalWeight += levelData.coverage;
-            }
-            const overallProgress = totalWeight > 0 ? (totalProgress / totalWeight) : 0;
+            // Calculate progress: Each level represents 20% of total progress
+            // L4: 0-20%, L3: 20-40%, L2: 40-60%, L1: 60-80%, L0: 80-100%
+            // Progress accumulates within each level based on coverage
+            const currentLevel = stats.currentLevel;
+            const currentLevelCoverage = stats.perLevelCoverage[currentLevel].coverage;
+
+            // Base progress from completed levels (higher levels)
+            const completedLevelsProgress = (4 - currentLevel) * 0.20;
+
+            // Progress within current level (coverage * 20% for this level)
+            const currentLevelProgress = currentLevelCoverage * 0.20;
+
+            // Total progress
+            const overallProgress = completedLevelsProgress + currentLevelProgress;
             const progressPercent = Math.round(overallProgress * 100);
 
             // Compute average grade level from all correct responses
@@ -2430,66 +2443,7 @@
 
             // Render LaTeX with KaTeX after DOM update
             if (typeof renderMathInElement !== 'undefined') {
-                // Pre-process text to replace currency patterns with HTML entities
-                // This prevents KaTeX from treating "$1.0$B" as LaTeX delimiters
-                const escapeCurrency = (element) => {
-                    console.log('escapeCurrency called on:', element.innerHTML.substring(0, 200));
-
-                    // Walk through all text nodes
-                    const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
-                    const textNodes = [];
-                    while (walker.nextNode()) {
-                        textNodes.push(walker.currentNode);
-                    }
-
-                    console.log('Found', textNodes.length, 'text nodes');
-
-                    // Process each text node
-                    textNodes.forEach(node => {
-                        const original = node.textContent;
-                        // Match $number$ patterns (with or without space) followed by B/billion/etc
-                        // IMPORTANT: We need to replace with HTML entity $ (which becomes $ in the DOM)
-                        // BUT we're working with textContent, not innerHTML, so we can't use HTML entities!
-                        // Instead, we'll use a placeholder that we convert after
-                        let modified = original.replace(/\$(\d+(?:\.\d+)?)\$\s*([BbMmKk]|billion|million|thousand)/g, (match, number, suffix) => {
-                            console.log('Matched currency pattern:', match, '-> replacing with placeholder');
-                            return '___DOLLAR___' + number + ' ' + suffix;
-                        });
-
-                        // Also handle standalone $number$ that's likely currency (no suffix)
-                        // Only if it's a simple number without operators
-                        modified = modified.replace(/\$(\d+(?:\.\d+)?)\$/g, (match, number, offset, string) => {
-                            // Check if this looks like currency (simple number, not part of math expression)
-                            // Don't replace if it's followed by math operators or surrounded by backslashes
-                            const before = string[offset - 1] || '';
-                            const after = string[offset + match.length] || '';
-
-                            if (before !== '\\' && after !== '\\' && !/[+\-*/^_=<>\\]/.test(after)) {
-                                console.log('Matched standalone currency:', match, '-> replacing with placeholder');
-                                return '___DOLLAR___' + number;
-                            }
-                            return match;
-                        });
-
-                        if (modified !== original) {
-                            console.log('Text changed from:', original.substring(0, 100));
-                            console.log('              to:', modified.substring(0, 100));
-                            node.textContent = modified;
-                        }
-                    });
-
-                    // After KaTeX won't see them, replace placeholders with actual $ via innerHTML
-                    // This is safe because we're only replacing our own placeholders
-                    const tempHTML = element.innerHTML;
-                    if (tempHTML.includes('___DOLLAR___')) {
-                        element.innerHTML = tempHTML.replace(/___DOLLAR___([\d.]+(?:\s+(?:[BbMmKk]|billion|million|thousand))?)/g, '<span class="no-katex">$$$1</span>');
-                        console.log('Replaced placeholders with currency spans (no-katex class)');
-                    }
-                };
-
-                // Escape currency patterns in question and options
-                escapeCurrency(questionText);
-
+                // Render LaTeX in question text
                 renderMathInElement(questionText, {
                     delimiters: [
                         {left: '$$', right: '$$', display: true},
@@ -2497,13 +2451,11 @@
                         {left: '$', right: '$', display: false}
                     ],
                     ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-                    ignoredClasses: ['no-katex'],
                     throwOnError: false
                 });
 
                 // Render LaTeX in all option texts
                 document.querySelectorAll('.option-text').forEach(el => {
-                    escapeCurrency(el);
                     renderMathInElement(el, {
                         delimiters: [
                             {left: '$$', right: '$$', display: true},
@@ -2511,7 +2463,6 @@
                             {left: '$', right: '$', display: false}
                         ],
                         ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-                        ignoredClasses: ['no-katex'],
                         throwOnError: false
                     });
                 });

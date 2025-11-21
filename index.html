@@ -2321,25 +2321,45 @@
 
             // Render LaTeX with KaTeX after DOM update
             if (typeof renderMathInElement !== 'undefined') {
+                // Pre-process text to escape currency patterns before KaTeX processes them
+                // Matches patterns like "$1.0$B" or "$2.0$ billion" where the $ delimiters
+                // immediately surround just a number (likely currency, not math)
+                const escapeCurrency = (element) => {
+                    // Walk through all text nodes
+                    const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
+                    const textNodes = [];
+                    while (walker.nextNode()) {
+                        textNodes.push(walker.currentNode);
+                    }
+
+                    // Process each text node
+                    textNodes.forEach(node => {
+                        const original = node.textContent;
+                        // Match $number$ patterns followed by optional B/billion/million etc.
+                        // These are likely currency amounts, not mathematical expressions
+                        let modified = original.replace(/\$(\d+(?:\.\d+)?)\$\s*([BbMmKk]|billion|million|thousand)?/g, '\\$$1 $2');
+                        if (modified !== original) {
+                            node.textContent = modified;
+                        }
+                    });
+                };
+
+                // Escape currency patterns in question and options
+                escapeCurrency(questionText);
+
                 renderMathInElement(questionText, {
                     delimiters: [
                         {left: '$$', right: '$$', display: true},
                         {left: '\\(', right: '\\)', display: false},
                         {left: '$', right: '$', display: false}
                     ],
-                    // Ignore standalone $ followed immediately by digits (currency)
-                    // This prevents $1.0 from being interpreted as LaTeX
                     ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-                    throwOnError: false,
-                    // Custom processor to skip $ signs that look like currency
-                    preProcess: (text) => {
-                        // Replace currency patterns like "$1.0" or "$2.0" with escaped version
-                        // to prevent them from being treated as LaTeX delimiters
-                        return text.replace(/\$(\d+(?:\.\d+)?(?:B|billion|M|million|K|thousand)?)\b/gi, '\\$$1');
-                    }
+                    throwOnError: false
                 });
+
                 // Render LaTeX in all option texts
                 document.querySelectorAll('.option-text').forEach(el => {
+                    escapeCurrency(el);
                     renderMathInElement(el, {
                         delimiters: [
                             {left: '$$', right: '$$', display: true},
@@ -2347,10 +2367,7 @@
                             {left: '$', right: '$', display: false}
                         ],
                         ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-                        throwOnError: false,
-                        preProcess: (text) => {
-                            return text.replace(/\$(\d+(?:\.\d+)?(?:B|billion|M|million|K|thousand)?)\b/gi, '\\$$1');
-                        }
+                        throwOnError: false
                     });
                 });
             }

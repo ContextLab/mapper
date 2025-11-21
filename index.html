@@ -126,100 +126,53 @@
             color: #333;
         }
 
-        .confidence-value {
-            font-size: 1.1em;
-            font-weight: 700;
+        .level-indicator {
+            font-size: 0.85em;
+            font-weight: 600;
             color: #00693E;
         }
 
-        /* Stacked level bars container */
-        .level-bars-container {
-            position: relative;
-            margin-bottom: 28px;
+        /* Single progress bar container */
+        .progress-bar-container {
+            margin-bottom: 10px;
         }
 
-        .level-bar-row {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 4px;
-        }
-
-        .level-label {
-            font-size: 0.75em;
-            font-weight: 600;
-            color: #555;
-            min-width: 24px;
-        }
-
-        .level-percent {
-            font-size: 0.75em;
-            font-weight: 600;
-            color: #555;
-            min-width: 35px;
-            text-align: right;
-        }
-
-        .confidence-bar {
-            height: 8px;
+        .progress-bar {
+            height: 24px;
             background: #dee2e6;
-            border-radius: 4px;
+            border-radius: 6px;
             overflow: hidden;
             position: relative;
-            flex: 1;
+            margin-bottom: 8px;
         }
 
-        .confidence-fill {
+        .progress-fill {
             height: 100%;
             width: 0%;
-            transition: width 0.5s ease;
+            transition: width 0.5s ease, background 0.5s ease;
+            border-radius: 6px;
+            /* Gradient set dynamically based on grade level */
+            background: linear-gradient(90deg, hsl(200, 80%, 70%) 0%, hsl(220, 80%, 60%) 100%);
         }
 
-        /* Level-specific colors (reverse gradient: bronze at L4 to green at L0) */
-        .level-bar-row[data-level="4"] .confidence-fill {
-            background: linear-gradient(90deg, #8B4513 0%, #A0522D 100%); /* Bronze */
+        .progress-labels {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 4px;
         }
 
-        .level-bar-row[data-level="3"] .confidence-fill {
-            background: linear-gradient(90deg, #B8860B 0%, #DAA520 100%); /* Goldenrod */
-        }
-
-        .level-bar-row[data-level="2"] .confidence-fill {
-            background: linear-gradient(90deg, #D4AF37 0%, #FFD700 100%); /* Gold */
-        }
-
-        .level-bar-row[data-level="1"] .confidence-fill {
-            background: linear-gradient(90deg, #85BB65 0%, #9ACD32 100%); /* Yellow-Green */
-        }
-
-        .level-bar-row[data-level="0"] .confidence-fill {
-            background: linear-gradient(90deg, #00693E 0%, #00a859 100%); /* Dartmouth Green */
-        }
-
-        /* Shared coverage threshold line */
-        .coverage-threshold {
-            position: absolute;
-            /* Calculate position: label (24px) + gap (8px) + 90% of the bar width
-               Bar width = 100% - (24px + 8px + 35px + 8px) = 100% - 75px */
-            left: calc(32px + (100% - 75px) * 0.90);
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #333;
-            z-index: 10;
-            pointer-events: none;
-        }
-
-        .coverage-threshold::after {
-            content: 'Target Coverage';
-            position: absolute;
-            bottom: -22px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.75em;
-            color: #333;
-            white-space: nowrap;
+        .progress-label {
+            font-size: 0.7em;
             font-weight: 600;
+            color: #666;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .progress-label small {
+            font-size: 0.85em;
+            font-weight: 400;
+            color: #999;
         }
 
         .confidence-message {
@@ -1063,52 +1016,26 @@
                         <span class="question-number" id="question-number">Question 1 of 10</span>
                     </div>
 
-                    <!-- Confidence Display (for adaptive sampling) -->
+                    <!-- Adaptive Progress Display (single gradient bar) -->
                     <div class="confidence-display hidden" id="confidence-display">
                         <div class="confidence-header">
-                            <span class="confidence-label">Coverage</span>
+                            <span class="confidence-label">Progress</span>
+                            <span class="level-indicator" id="level-indicator">Starting at L4</span>
                         </div>
-                        <!-- Stacked per-level coverage bars (Level 4 to Level 0) -->
-                        <div class="level-bars-container">
-                            <div class="level-bar-row" data-level="4">
-                                <span class="level-label">L4</span>
-                                <div class="confidence-bar">
-                                    <div class="confidence-fill" id="confidence-fill-4"></div>
-                                </div>
-                                <span class="level-percent" id="level-percent-4">0%</span>
+                        <!-- Single progress bar with level-based gradient -->
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="progress-bar">
+                                <div class="progress-fill" id="progress-fill"></div>
                             </div>
-                            <div class="level-bar-row" data-level="3">
-                                <span class="level-label">L3</span>
-                                <div class="confidence-bar">
-                                    <div class="confidence-fill" id="confidence-fill-3"></div>
-                                </div>
-                                <span class="level-percent" id="level-percent-3">0%</span>
+                            <div class="progress-labels">
+                                <span class="progress-label">L4<br><small>Broad</small></span>
+                                <span class="progress-label">L3</span>
+                                <span class="progress-label">L2</span>
+                                <span class="progress-label">L1</span>
+                                <span class="progress-label">L0<br><small>Specific</small></span>
                             </div>
-                            <div class="level-bar-row" data-level="2">
-                                <span class="level-label">L2</span>
-                                <div class="confidence-bar">
-                                    <div class="confidence-fill" id="confidence-fill-2"></div>
-                                </div>
-                                <span class="level-percent" id="level-percent-2">0%</span>
-                            </div>
-                            <div class="level-bar-row" data-level="1">
-                                <span class="level-label">L1</span>
-                                <div class="confidence-bar">
-                                    <div class="confidence-fill" id="confidence-fill-1"></div>
-                                </div>
-                                <span class="level-percent" id="level-percent-1">0%</span>
-                            </div>
-                            <div class="level-bar-row" data-level="0">
-                                <span class="level-label">L0</span>
-                                <div class="confidence-bar">
-                                    <div class="confidence-fill" id="confidence-fill-0"></div>
-                                </div>
-                                <span class="level-percent" id="level-percent-0">0%</span>
-                            </div>
-                            <!-- Shared threshold line across all levels -->
-                            <div class="coverage-threshold"></div>
                         </div>
-                        <p class="confidence-message" id="confidence-message">Answer more questions to build coverage...</p>
+                        <p class="confidence-message" id="confidence-message">Answer questions to progress...</p>
                     </div>
 
                     <div class="question-text" id="question-text"></div>
@@ -1130,52 +1057,26 @@
                     <p>Hover to explore your knowledge map</p>
                 </div>
 
-                <!-- Coverage Display (also shown on map when adaptive sampling is active) -->
+                <!-- Adaptive Progress Display (single gradient bar) -->
                 <div class="confidence-display hidden" id="map-confidence-display">
                     <div class="confidence-header">
-                        <span class="confidence-label">Coverage</span>
+                        <span class="confidence-label">Progress</span>
+                        <span class="level-indicator" id="map-level-indicator">Starting at L4</span>
                     </div>
-                    <!-- Stacked per-level coverage bars (Level 4 to Level 0) -->
-                    <div class="level-bars-container">
-                        <div class="level-bar-row" data-level="4">
-                            <span class="level-label">L4</span>
-                            <div class="confidence-bar">
-                                <div class="confidence-fill" id="map-confidence-fill-4"></div>
-                            </div>
-                            <span class="level-percent" id="map-level-percent-4">0%</span>
+                    <!-- Single progress bar with level-based gradient -->
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="map-progress-bar">
+                            <div class="progress-fill" id="map-progress-fill"></div>
                         </div>
-                        <div class="level-bar-row" data-level="3">
-                            <span class="level-label">L3</span>
-                            <div class="confidence-bar">
-                                <div class="confidence-fill" id="map-confidence-fill-3"></div>
-                            </div>
-                            <span class="level-percent" id="map-level-percent-3">0%</span>
+                        <div class="progress-labels">
+                            <span class="progress-label">L4<br><small>Broad</small></span>
+                            <span class="progress-label">L3</span>
+                            <span class="progress-label">L2</span>
+                            <span class="progress-label">L1</span>
+                            <span class="progress-label">L0<br><small>Specific</small></span>
                         </div>
-                        <div class="level-bar-row" data-level="2">
-                            <span class="level-label">L2</span>
-                            <div class="confidence-bar">
-                                <div class="confidence-fill" id="map-confidence-fill-2"></div>
-                            </div>
-                            <span class="level-percent" id="map-level-percent-2">0%</span>
-                        </div>
-                        <div class="level-bar-row" data-level="1">
-                            <span class="level-label">L1</span>
-                            <div class="confidence-bar">
-                                <div class="confidence-fill" id="map-confidence-fill-1"></div>
-                            </div>
-                            <span class="level-percent" id="map-level-percent-1">0%</span>
-                        </div>
-                        <div class="level-bar-row" data-level="0">
-                            <span class="level-label">L0</span>
-                            <div class="confidence-bar">
-                                <div class="confidence-fill" id="map-confidence-fill-0"></div>
-                            </div>
-                            <span class="level-percent" id="map-level-percent-0">0%</span>
-                        </div>
-                        <!-- Shared threshold line across all levels -->
-                        <div class="coverage-threshold"></div>
                     </div>
-                    <p class="confidence-message" id="map-confidence-message">Answer more questions to build coverage...</p>
+                    <p class="confidence-message" id="map-confidence-message">Answer questions to progress...</p>
                 </div>
 
                 <div class="map-container">
@@ -2412,40 +2313,80 @@
             }
         }
 
-        // Update confidence display
+        // Update confidence display (single gradient progress bar)
         function updateConfidenceDisplay() {
             if (!adaptiveSampler) return;
 
             const stats = adaptiveSampler.getStats();
 
-            // Update per-level coverage bars (levels 0-4)
+            // Calculate progress: weighted average of level completions
+            // Level 4 → 0 represents 0% → 100% progress
+            let totalProgress = 0;
+            let totalWeight = 0;
             for (let level = 0; level <= 4; level++) {
                 const levelData = stats.perLevelCoverage[level];
-                const percent = Math.round(levelData.coverage * 100);
+                const levelProgress = (4 - level) / 4.0;  // L4=0%, L3=25%, L2=50%, L1=75%, L0=100%
+                totalProgress += levelData.coverage * levelProgress;
+                totalWeight += levelData.coverage;
+            }
+            const overallProgress = totalWeight > 0 ? (totalProgress / totalWeight) : 0;
+            const progressPercent = Math.round(overallProgress * 100);
 
-                // Update quiz section bars
-                const fillElement = document.getElementById(`confidence-fill-${level}`);
-                const percentElement = document.getElementById(`level-percent-${level}`);
-                if (fillElement) {
-                    fillElement.style.width = `${percent}%`;
-                }
-                if (percentElement) {
-                    percentElement.textContent = `${percent}%`;
-                }
-
-                // Update map section bars
-                const mapFillElement = document.getElementById(`map-confidence-fill-${level}`);
-                const mapPercentElement = document.getElementById(`map-level-percent-${level}`);
-                if (mapFillElement) {
-                    mapFillElement.style.width = `${percent}%`;
-                }
-                if (mapPercentElement) {
-                    mapPercentElement.textContent = `${percent}%`;
+            // Compute average grade level from all correct responses
+            let avgGradeLevel = 8.0;  // Default (middle school)
+            if (adaptiveSampler.responsesDetailed && adaptiveSampler.responsesDetailed.length > 0) {
+                const correctResponses = adaptiveSampler.responsesDetailed.filter(r => r.isCorrect >= 0.5);
+                if (correctResponses.length > 0) {
+                    const sumGrade = correctResponses.reduce((sum, r) => sum + r.gradeLevel, 0);
+                    avgGradeLevel = sumGrade / correctResponses.length;
                 }
             }
 
-            console.log(`Level ${stats.currentLevel}, Per-Level Coverage: ` +
-                       `L4=${Math.round(stats.perLevelCoverage[4].coverage * 100)}%, ` +
+            // Map grade level to gradient darkness (6-18 → light to dark)
+            // Grade 6-8 (middle school): light colors
+            // Grade 18+ (expert): dark colors
+            const gradeDarkness = Math.max(0, Math.min(1, (avgGradeLevel - 6) / 12));
+
+            // Update both quiz section and map section progress bars
+            ['progress-fill', 'map-progress-fill'].forEach(id => {
+                const fillElement = document.getElementById(id);
+                if (fillElement) {
+                    fillElement.style.width = `${progressPercent}%`;
+
+                    // Apply gradient with darkness based on grade level
+                    // Light (easy): hsl(200, 80%, 70%) - light blue
+                    // Dark (hard): hsl(200, 80%, 30%) - dark blue
+                    const lightness = 70 - (gradeDarkness * 40);  // 70% → 30%
+                    fillElement.style.background = `linear-gradient(90deg,
+                        hsl(200, 80%, ${lightness}%) 0%,
+                        hsl(220, 80%, ${lightness - 10}%) 100%)`;
+                }
+            });
+
+            // Update level indicator text
+            const levelNames = {0: 'L0 (Specific)', 1: 'L1', 2: 'L2', 3: 'L3', 4: 'L4 (Broad)'};
+            const currentLevelText = levelNames[stats.currentLevel];
+            ['level-indicator', 'map-level-indicator'].forEach(id => {
+                const indicator = document.getElementById(id);
+                if (indicator) {
+                    indicator.textContent = `Currently: ${currentLevelText}`;
+                }
+            });
+
+            // Update message
+            const message = progressPercent === 0 ?
+                'Answer questions to progress...' :
+                `${progressPercent}% progress - Avg grade: ${avgGradeLevel.toFixed(1)}`;
+            ['confidence-message', 'map-confidence-message'].forEach(id => {
+                const msgElement = document.getElementById(id);
+                if (msgElement) {
+                    msgElement.textContent = message;
+                }
+            });
+
+            console.log(`Level ${stats.currentLevel}, Progress: ${progressPercent}%, ` +
+                       `Avg Grade: ${avgGradeLevel.toFixed(1)}, ` +
+                       `Per-Level Coverage: L4=${Math.round(stats.perLevelCoverage[4].coverage * 100)}%, ` +
                        `L3=${Math.round(stats.perLevelCoverage[3].coverage * 100)}%, ` +
                        `L2=${Math.round(stats.perLevelCoverage[2].coverage * 100)}%, ` +
                        `L1=${Math.round(stats.perLevelCoverage[1].coverage * 100)}%, ` +

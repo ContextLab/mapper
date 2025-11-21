@@ -66,7 +66,7 @@ echo ""
 # Note: Levels 1 and 0 don't need simplification - they're already at graduate/expert level
 
 # Step 4: Merge all data
-echo -e "${GREEN}Step 4/5: Merging all level data${NC}"
+echo -e "${GREEN}Step 4/6: Merging all level data${NC}"
 python3 scripts/merge_multi_level_data.py
 if [ $? -ne 0 ]; then
     echo -e "${RED}Error: Data merge failed${NC}"
@@ -74,8 +74,17 @@ if [ $? -ne 0 ]; then
 fi
 echo ""
 
-# Step 5: Summary
-echo -e "${GREEN}Step 5/5: Pipeline Summary${NC}"
+# Step 5: Add readability scores
+echo -e "${GREEN}Step 5/6: Adding readability scores to questions${NC}"
+python3 scripts/add_readability_scores.py
+if [ $? -ne 0 ]; then
+    echo -e "${RED}Error: Adding readability scores failed${NC}"
+    exit 1
+fi
+echo ""
+
+# Step 6: Summary
+echo -e "${GREEN}Step 6/6: Pipeline Summary${NC}"
 echo -e "${BLUE}========================================${NC}"
 echo -e "${GREEN}✓ Pipeline completed successfully!${NC}"
 echo ""

@@ -14,7 +14,8 @@ Pipeline Steps:
 6. Generate level-0 questions (GPT-5-nano batched)
 7. Generate levels 1-4 (iterative broadening)
 8. Merge all levels into final outputs
-9. Validate results
+9. Add readability scores to questions
+10. Validate results
 
 Usage:
     python scripts/run_full_pipeline.py [options]
@@ -26,6 +27,7 @@ Options:
     --skip-level-0          Skip level-0 generation
     --levels START END      Generate specific levels (e.g., --levels 1 3)
     --skip-merge            Skip final data merging
+    --skip-readability      Skip adding readability scores
     --dry-run               Show what would run without executing
 
 Related to Issue #13
@@ -34,6 +36,7 @@ Related to Issue #13
 import subprocess
 import sys
 import argparse
+import json
 from pathlib import Path
 from datetime import datetime
 
@@ -83,6 +86,36 @@ def check_file_exists(filepath, description):
         print(f"   {description}")
         return False
     return True
+
+
+def check_readability_scores_exist():
+    """
+    Check if readability scores already exist in cell_questions.json
+
+    Returns:
+        bool: True if scores exist for all questions, False otherwise
+    """
+    questions_file = Path('cell_questions.json')
+    if not questions_file.exists():
+        return False
+
+    try:
+        with open(questions_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        # Check first 10 questions to see if they have readability scores
+        questions_checked = 0
+        for cell in data.get('cells', []):
+            for question in cell.get('questions', []):
+                if 'flesch_reading_ease' not in question or 'flesch_kincaid_grade' not in question:
+                    return False
+                questions_checked += 1
+                if questions_checked >= 10:
+                    return True  # Sample check passed
+
+        return questions_checked > 0  # True if we found at least one question with scores
+    except Exception:
+        return False
 
 
 def should_skip_step(output_files, force_flag, global_force):
@@ -152,6 +185,8 @@ Examples:
                        help='Generate specific levels (e.g., --levels 1 3)')
     parser.add_argument('--skip-merge', action='store_true',
                        help='Skip final data merging')
+    parser.add_argument('--skip-readability', action='store_true',
+                       help='Skip adding readability scores')
     parser.add_argument('--dry-run', action='store_true',
                        help='Show what would run without executing')
 
@@ -170,6 +205,8 @@ Examples:
                        help='Force question simplification even if outputs exist')
     parser.add_argument('--force-merge', action='store_true',
                        help='Force data merging even if outputs exist')
+    parser.add_argument('--force-readability', action='store_true',
+                       help='Force readability score addition even if scores exist')
 
     args = parser.parse_args()
 
@@ -200,6 +237,9 @@ Examples:
     if not args.skip_merge:
         total_steps += 1
 
+    if not args.skip_readability:
+        total_steps += 1
+
     # Print pipeline overview
     print_header("MULTI-LEVEL KNOWLEDGE MAP PIPELINE")
     print(f"Started: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -212,6 +252,7 @@ Examples:
     print(f"  Level 0: {'SKIP' if args.skip_level_0 else 'RUN'}")
     print(f"  Levels 1-4: {list(level_range)}")
     print(f"  Data merging: {'SKIP' if args.skip_merge else 'RUN'}")
+    print(f"  Readability scores: {'SKIP' if args.skip_readability else 'RUN'}")
     print(f"  Mode: {'DRY RUN' if args.dry_run else 'EXECUTE'}")
     print()
 
@@ -466,6 +507,37 @@ Examples:
             if not run_command(
                 ['python3', 'scripts/merge_multi_level_data.py'],
                 "Data merging",
+                args.dry_run
+            ):
+                return 1
+
+    # Step: Add readability scores
+    if not args.skip_readability:
+        current_step += 1
+        print_step(current_step, total_steps, "Add readability scores to questions")
+
+        # Check if readability scores already exist
+        has_scores = check_readability_scores_exist()
+        force_readability = args.force_readability or args.force
+
+        if has_scores and not force_readability:
+            print(f"⏭️  Skipping readability scores - already exist in cell_questions.json")
+            print(f"   Use --force-readability or --force to rerun")
+            print()
+        else:
+            print("This step adds Flesch Reading Ease and Flesch-Kincaid Grade Level")
+            print("scores to all questions in cell_questions.json.")
+            print("Outputs:")
+            print("  - cell_questions.json (updated with readability scores)")
+            print("  - cell_questions.json.backup (backup of original)")
+            print("Estimated time: < 1 minute")
+            if force_readability or args.force:
+                print(f"⚠️  Forcing rebuild (will recalculate all scores)")
+            print()
+
+            if not run_command(
+                ['python3', 'scripts/add_readability_scores.py'],
+                "Adding readability scores",
                 args.dry_run
             ):
                 return 1

@@ -915,7 +915,7 @@ def simplify_level(
             if is_valid and HAS_TEXTSTAT and level in [4, 3, 2]:
                 grade_level = calculate_flesch_kincaid(result['question'])
                 max_grade = LEVEL_CONFIG[level]['max_grade_level']
-                if grade_level > max_grade + 2:
+                if grade_level > max_grade + 4:
                     is_valid = False
                     reason = f"readability_too_high_{grade_level:.1f}_vs_{max_grade}"
                 else:

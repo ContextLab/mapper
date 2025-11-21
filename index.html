@@ -1451,6 +1451,7 @@
                 this.askedQuestionIndices = [];  // Indices of asked questions
                 this.pendingQuestionIndices = [];  // Indices of questions selected but not yet answered
                 this.responses = {};  // questionIndex → correctness value
+                this.responsesDetailed = [];  // Detailed response objects for RBF-weighted tracking
                 this.currentLevel = 4;  // Start with highest (broadest) level
                 this.levelTransitions = []; // Track when we transition levels
 
@@ -1633,14 +1634,27 @@
                 return selectedQuestion;
             }
 
-            recordResponse(questionIndex, isCorrect, fractionalCorrectness = null) {
+            recordResponse(questionIndex, isCorrect, fractionalCorrectness = null, readingEase = null, gradeLevel = null) {
                 // Record response for a question by its index
                 const correctness = fractionalCorrectness !== null ? fractionalCorrectness : (isCorrect ? 1.0 : 0.0);
                 this.responses[questionIndex] = correctness;
 
-                // Get question level for per-level tracking
+                // Get question for detailed tracking
                 const question = this.allQuestions[questionIndex];
                 const level = question && question.level !== undefined ? question.level : 0;
+
+                // Store detailed response object for RBF-weighted tracking
+                this.responsesDetailed.push({
+                    questionId: question.questionId,
+                    questionIndex: questionIndex,
+                    x: question.x,
+                    y: question.y,
+                    level: level,
+                    isCorrect: correctness,
+                    readingEase: readingEase !== null ? readingEase : (question.flesch_reading_ease || 50.0),
+                    gradeLevel: gradeLevel !== null ? gradeLevel : (question.flesch_kincaid_grade || 12.0),
+                    timestamp: new Date()
+                });
 
                 // Move from pending to asked
                 const pendingIndex = this.pendingQuestionIndices.indexOf(questionIndex);
@@ -1673,6 +1687,61 @@
                 for (let level = 0; level <= 4; level++) {
                     this.perLevelState[level].pendingIndices = [];
                 }
+            }
+
+            _computeRBFWeightedMax(x_query, y_query, metric) {
+                // Compute RBF-weighted maximum for a given metric at a query location
+                // This tells us the maximum difficulty level demonstrated at this location
+                //
+                // Args:
+                //   x_query, y_query: coordinates to query (0-1 range)
+                //   metric: 'readingEase', 'gradeLevel', or 'level' (specificity)
+                //
+                // Returns:
+                //   RBF-weighted max value, or 0 if no correct responses
+
+                // Filter for correct responses only (correctness >= 0.5)
+                const correctResponses = this.responsesDetailed.filter(r => r.isCorrect >= 0.5);
+
+                if (correctResponses.length === 0) {
+                    return 0;  // No correct responses yet
+                }
+
+                let weightSum = 0;
+                let valueSum = 0;
+
+                for (const response of correctResponses) {
+                    // Calculate Euclidean distance
+                    const dx = x_query - response.x;
+                    const dy = y_query - response.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    // Get sigma for this response's level
+                    const sigma = this.config.sigma[response.level];
+
+                    // Calculate RBF weight: exp(-distance² / (2σ²))
+                    const weight = Math.exp(-(distance * distance) / (2 * sigma * sigma));
+
+                    // Get metric value
+                    let value;
+                    if (metric === 'readingEase') {
+                        value = response.readingEase;
+                    } else if (metric === 'gradeLevel') {
+                        value = response.gradeLevel;
+                    } else if (metric === 'level') {
+                        // For specificity: lower level = more specific
+                        value = response.level;
+                    } else {
+                        console.error(`Unknown metric: ${metric}`);
+                        value = 0;
+                    }
+
+                    weightSum += weight;
+                    valueSum += weight * value;
+                }
+
+                // Return weighted average
+                return valueSum / weightSum;
             }
 
             // === Utility Methods ===

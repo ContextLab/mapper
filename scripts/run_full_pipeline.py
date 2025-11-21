@@ -85,6 +85,31 @@ def check_file_exists(filepath, description):
     return True
 
 
+def should_skip_step(output_files, force_flag, global_force):
+    """
+    Check if step should be skipped based on existing outputs.
+
+    Args:
+        output_files: List of output file paths to check
+        force_flag: Step-specific force flag (e.g., args.force_umap)
+        global_force: Global force flag (args.force)
+
+    Returns:
+        (should_skip, reason) tuple
+    """
+    # If any force flag is set, don't skip
+    if global_force or force_flag:
+        return (False, "forced")
+
+    # Check if all output files exist
+    all_exist = all(Path(f).exists() for f in output_files)
+
+    if all_exist:
+        return (True, "outputs exist")
+    else:
+        return (False, "outputs missing")
+
+
 def main():
     parser = argparse.ArgumentParser(
         description='Run full multi-level knowledge map pipeline',
@@ -119,6 +144,22 @@ Examples:
                        help='Skip final data merging')
     parser.add_argument('--dry-run', action='store_true',
                        help='Show what would run without executing')
+
+    # Force flags for idempotency
+    parser.add_argument('--force', action='store_true',
+                       help='Force rerun all steps (ignore existing outputs)')
+    parser.add_argument('--force-umap', action='store_true',
+                       help='Force UMAP rebuild even if outputs exist')
+    parser.add_argument('--force-rectangle', action='store_true',
+                       help='Force rectangle finding even if outputs exist')
+    parser.add_argument('--force-labels', action='store_true',
+                       help='Force label generation even if outputs exist')
+    parser.add_argument('--force-level', action='store_true',
+                       help='Force level generation even if outputs exist')
+    parser.add_argument('--force-simplify', action='store_true',
+                       help='Force question simplification even if outputs exist')
+    parser.add_argument('--force-merge', action='store_true',
+                       help='Force data merging even if outputs exist')
 
     args = parser.parse_args()
 
@@ -175,86 +216,146 @@ Examples:
         current_step += 1
         print_step(current_step, total_steps, "Rebuild UMAP (250K articles)")
 
-        print("This step fits UMAP on all 250K Wikipedia articles.")
-        print("Estimated time: 30-60 minutes")
-        print()
+        # Check if outputs already exist
+        umap_outputs = ['umap_coords.pkl', 'data/umap_reducer.pkl', 'data/umap_bounds.pkl']
+        should_skip, reason = should_skip_step(umap_outputs, args.force_umap, args.force)
 
-        if not run_command(
-            ['python3', 'scripts/rebuild_umap.py'],
-            "UMAP rebuild",
-            args.dry_run
-        ):
-            return 1
+        if should_skip:
+            print(f"⏭️  Skipping UMAP rebuild - {reason}")
+            print(f"   Existing files: {', '.join(umap_outputs)}")
+            print(f"   Use --force-umap or --force to rerun")
+            print()
+        else:
+            print("This step fits UMAP on all 250K Wikipedia articles.")
+            print("Estimated time: 30-60 minutes")
+            if reason == "forced":
+                print(f"⚠️  Forcing rebuild (will overwrite existing files)")
+            print()
+
+            if not run_command(
+                ['python3', 'scripts/rebuild_umap.py'],
+                "UMAP rebuild",
+                args.dry_run
+            ):
+                return 1
 
     # Step: Find optimal rectangle
     if not args.skip_rectangle:
         current_step += 1
         print_step(current_step, total_steps, "Find optimal coverage rectangle")
 
-        print("This step finds the optimal rectangle that maximizes article coverage.")
-        print("Estimated time: 5-10 minutes")
-        print()
+        # Check if outputs already exist
+        rectangle_outputs = ['optimal_rectangle.json']
+        should_skip, reason = should_skip_step(rectangle_outputs, args.force_rectangle, args.force)
 
-        if not run_command(
-            ['python3', 'scripts/find_optimal_coverage_rectangle.py'],
-            "Optimal rectangle finding",
-            args.dry_run
-        ):
-            return 1
+        if should_skip:
+            print(f"⏭️  Skipping rectangle finding - {reason}")
+            print(f"   Existing files: {', '.join(rectangle_outputs)}")
+            print(f"   Use --force-rectangle or --force to rerun")
+            print()
+        else:
+            print("This step finds the optimal rectangle that maximizes article coverage.")
+            print("Estimated time: 5-10 minutes")
+            if reason == "forced":
+                print(f"⚠️  Forcing rebuild (will overwrite existing files)")
+            print()
+
+            if not run_command(
+                ['python3', 'scripts/find_optimal_coverage_rectangle.py'],
+                "Optimal rectangle finding",
+                args.dry_run
+            ):
+                return 1
 
     # Step: Export level-0 articles
     if not args.skip_rectangle:
         current_step += 1
         print_step(current_step, total_steps, "Export level-0 articles")
 
-        print("This step exports articles within the optimal rectangle.")
-        print("Estimated time: 1-2 minutes")
-        print()
+        # Check if outputs already exist
+        article_outputs = ['wikipedia_articles_level_0.json']
+        should_skip, reason = should_skip_step(article_outputs, args.force_rectangle, args.force)
 
-        if not run_command(
-            ['python3', 'scripts/export_wikipedia_articles.py'],
-            "Article export",
-            args.dry_run
-        ):
-            return 1
+        if should_skip:
+            print(f"⏭️  Skipping article export - {reason}")
+            print(f"   Existing files: {', '.join(article_outputs)}")
+            print(f"   Use --force-rectangle or --force to rerun")
+            print()
+        else:
+            print("This step exports articles within the optimal rectangle.")
+            print("Estimated time: 1-2 minutes")
+            if reason == "forced":
+                print(f"⚠️  Forcing rebuild (will overwrite existing files)")
+            print()
+
+            if not run_command(
+                ['python3', 'scripts/export_wikipedia_articles.py'],
+                "Article export",
+                args.dry_run
+            ):
+                return 1
 
     # Step: Generate heatmap labels
     if not args.skip_labels:
         current_step += 1
         print_step(current_step, total_steps, "Generate heatmap cell labels (GPT-5-nano)")
 
-        print("This step generates semantic labels for 1,521 heatmap cells.")
-        print("Uses: OpenAI Batch API with prompt caching")
-        print("Estimated time: 1-2 hours")
-        print("Estimated cost: $0.01-0.02")
-        print()
+        # Check if outputs already exist
+        label_outputs = ['heatmap_cell_labels.json']
+        should_skip, reason = should_skip_step(label_outputs, args.force_labels, args.force)
 
-        if not run_command(
-            ['python3', 'scripts/generate_heatmap_labels_gpt5.py'],
-            "Heatmap label generation",
-            args.dry_run
-        ):
-            return 1
+        if should_skip:
+            print(f"⏭️  Skipping label generation - {reason}")
+            print(f"   Existing files: {', '.join(label_outputs)}")
+            print(f"   Use --force-labels or --force to rerun")
+            print()
+        else:
+            print("This step generates semantic labels for 1,521 heatmap cells.")
+            print("Uses: OpenAI Batch API with prompt caching")
+            print("Estimated time: 1-2 hours")
+            print("Estimated cost: $0.01-0.02")
+            if reason == "forced":
+                print(f"⚠️  Forcing rebuild (will overwrite existing files)")
+            print()
+
+            if not run_command(
+                ['python3', 'scripts/generate_heatmap_labels_gpt5.py'],
+                "Heatmap label generation",
+                args.dry_run
+            ):
+                return 1
 
     # Step: Generate level 0 (unified script)
     if not args.skip_level_0:
         current_step += 1
         print_step(current_step, total_steps, "Generate level 0 (concepts + questions)")
 
-        print("This step processes existing Wikipedia articles to:")
-        print("  1. Extract 1-3 concepts per article (GPT-5-nano)")
-        print("  2. Generate 1 question per suitable concept (GPT-5-nano)")
-        print("Uses: OpenAI Batch API with prompt caching")
-        print("Estimated time: 2-3 hours")
-        print("Estimated cost: $0.02-0.05")
-        print()
+        # Check if outputs already exist
+        level0_outputs = ['level_0_concepts.json', 'cell_questions_level_0.json']
+        should_skip, reason = should_skip_step(level0_outputs, args.force_level, args.force)
 
-        if not run_command(
-            ['python3', '-u', 'scripts/generate_level_n.py', '--level', '0'],
-            "Level 0 generation",
-            args.dry_run
-        ):
-            return 1
+        if should_skip:
+            print(f"⏭️  Skipping level 0 generation - {reason}")
+            print(f"   Existing files: {', '.join(level0_outputs)}")
+            print(f"   Use --force-level or --force to rerun")
+            print()
+        else:
+            print("This step processes existing Wikipedia articles to:")
+            print("  1. Extract 1-3 concepts per article (GPT-5-nano)")
+            print("  2. Generate 1 question per suitable concept (GPT-5-nano)")
+            print("Uses: OpenAI Batch API with prompt caching")
+            print("Estimated time: 2-3 hours")
+            print("Estimated cost: $0.02-0.05")
+            if reason == "forced":
+                print(f"⚠️  Forcing rebuild (will overwrite existing files)")
+            print()
+
+            if not run_command(
+                ['python3', '-u', 'scripts/generate_level_n.py', '--level', '0'],
+                "Level 0 generation",
+                args.dry_run
+            ):
+                return 1
 
     # Steps: Generate levels 1-4
     for level in level_range:

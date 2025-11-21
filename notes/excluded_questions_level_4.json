@@ -1,59 +1,228 @@
 [
   {
     "original_question": {
-      "question": "How does meritocracy attempt to separate advancement from hereditary privilege, and what common systemic limitation can still undermine true equality of opportunity?",
+      "question": "Why does administrative law structure rulemaking, adjudication, and enforcement as distinct functional activities within government agencies rather than letting a single unit perform all three?",
       "options": {
-        "A": "It assigns positions randomly, which eliminates privilege.",
-        "B": "It bases advancement on demonstrated ability and performance, but unequal access to resources (education, preparation, mentorship) means not everyone can demonstrate ability equally, undermining equality of opportunity.",
-        "C": "It guarantees equal funding to education for all, ensuring everyone can demonstrate ability equally.",
-        "D": "It completely eliminates any family influence by law, ensuring equal outcomes."
+        "A": "To maximize speed of policy changes by keeping all decisions centralized in one body.",
+        "B": "To create checks and balances, ensure due process, and apply specialized expertise, so rules are made, applied, and reviewed in ways that limit bias and arbitrary decision-making.",
+        "C": "To prevent any possibility of public participation in how laws are implemented.",
+        "D": "To align administrative practice with private-law court procedures for consistency across sectors."
       },
       "correct_answer": "B",
-      "source_article": "Meritocracy",
-      "x": 1.2255743741989136,
-      "y": 0.9673568606376648,
+      "source_article": "Administrative law",
+      "x": 1.2349334955215454,
+      "y": 0.7999059557914734,
       "concepts_tested": [
-        "Concept 1: Merit as measured by demonstrated ability and performance (examinations, IQ, credentials) and its role as the mechanism for advancement",
-        "Concept 2: Relationship to equality of opportunity and anti-nepotism/hereditary privilege (meritocracy as a pathway to fair advancement vs. nepotism/aristocracy)",
-        "Concept 3: Historical and conceptual complexities (origins of the term, satirical critique, evolving broader usage, and philosophical connections such as Ethos)"
+        "Concept 1: The core mechanisms of administrative law (rulemaking, adjudication, enforcement) as the functional activities of executive branch agencies.",
+        "Concept 2: The civil law tradition’s use of specialized administrative courts and procedures tailored to administrative cases, highlighting institutional design differences from private-law proceedings.",
+        "Concept 3: The influence of supranational or international legal orders on domestic administrative law, driving changes in concepts like judicial control and the development of international/public administration."
       ],
       "parent_concepts": [
-        "Concept 2: Schooling patterns Reflecting and reinforcing social stratification (class, race, gender) rather than challenging it."
+        "Concept 3: Historical and institutional development of proportionality (origin in German administrative law and its adoption into constitutional law), illustrating how a principle becomes a testable framework."
       ],
       "parent_articles": [
-        "Sociology of education"
+        "Proportionality (law)"
       ]
     },
     "reason": "content_loss_both_passes",
     "pass_1_attempt": {
-      "question": "How does meritocracy try to let people move up by ability rather than by family birth, and what common problem still blocks true equal chances?",
+      "question": "Why do governments keep rulemaking, adjudication, and enforcement separate instead of letting one unit do all three?",
       "options": {
-        "A": "It would pick people by luck or random choice to remove family advantage.",
-        "B": "It rewards demonstrated ability and performance, but unequal access to education, test prep, and mentorship keeps chances unfair.",
-        "C": "It promises equal money for all schools so everyone can show their ability equally.",
-        "D": "It bans family help by law so no one can use parents or relatives to get ahead."
+        "A": "To make policy changes faster by putting all power in one place.",
+        "B": "To create checks and balances, protect fair process, and use experts so rules are made, applied, and reviewed.",
+        "C": "To stop the public from taking part in how laws are carried out.",
+        "D": "To copy private court procedures so government and private cases look the same."
       },
       "correct_answer": "B",
-      "simplification_notes": "Used short sentences and simple words. Kept the two main ideas: advancement by ability (tests, performance) and the real limit of unequal access to resources.",
+      "simplification_notes": "Used short sentences and simple words. Kept the core idea that separation gives checks and balances, fair process, and expert review. Made all options plausible but kept B as correct.",
       "content_preserved": true
     },
-    "pass_1_reason": "readability_too_high_13.0_vs_8",
+    "pass_1_reason": "readability_too_high_13.3_vs_8",
     "pass_2_attempt": {
-      "question": "A town hires its new library director by picking the person with the highest exam score, not by who their parents are. Which statement best explains how this matches the idea of meritocracy and a common criticism of it?",
+      "question": "A national agency orders factories to cut pollution, holds hearings, and fines violators. Country X uses special administrative courts to review these agency actions. Later, Country X joins an international environmental agreement that sets new standards and creates a coordinating body. Which statement best explains what this story shows about administrative law?",
       "options": {
-        "A": "They chose by tested ability and performance, not family ties. That matches meritocracy and opposes nepotism. Critics say tests and unequal education make it unfair. Michael Young popularized the term as a satire.",
-        "B": "They chose by exam, so meritocracy always gives equal results. Michael Young invented the exams.",
-        "C": "They chose by exam, but meritocracy means the richest always rule. Critics praise this. Confucius coined the word.",
-        "D": "They chose by exam, so it is an aristocracy where birth decides power. Meritocracy favours families. Michael Young supported this."
+        "A": "It shows agencies do rulemaking, adjudication, and enforcement; special courts review their actions; international rules change national law.",
+        "B": "Only courts make rules; agencies only enforce them; international agreements do not change domestic law.",
+        "C": "Specialized courts stop people from challenging agency decisions; international bodies replace national courts.",
+        "D": "Agency hearings are the same as private trials; joining an international treaty only affects trade rules."
       },
       "correct_answer": "A",
-      "generation_notes": "Made a concrete hiring scenario to test definition of meritocracy, its anti-nepotism goal, common criticism about unequal access, and Michael Young's satirical role.",
+      "generation_notes": "Created a concrete pollution-agency story. Each option links to the agency's three functions, special administrative courts, and supranational influence. Chose one clear, accurate explanation.",
       "concepts_tested": [
-        "Merit based on demonstrated ability and exams",
-        "Meritocracy versus nepotism and equality of opportunity",
-        "Historical origin and satirical critique by Michael Young"
+        "Agencies perform rulemaking, adjudication, and enforcement",
+        "Civil law tradition uses specialized administrative courts for administrative cases",
+        "Supranational agreements can change domestic administrative law and create coordinating bodies"
       ]
     },
-    "pass_2_reason": "readability_too_high_10.8_vs_8"
+    "pass_2_reason": "readability_too_high_12.9_vs_8"
+  },
+  {
+    "original_question": {
+      "question": "Which explanation best captures why social change is typically understood as arising from the interaction between stable structural conditions and contingent, random events?",
+      "options": {
+        "A": "Structural factors alone determine the direction and magnitude of change, making contingency irrelevant.",
+        "B": "Contingent events alone determine change, since structural conditions are stable and passive.",
+        "C": "Structural conditions create a stable environment with certain vulnerabilities and opportunities, while contingent events act as triggers that push the system past thresholds, so change emerges from their interaction.",
+        "D": "Social change is purely cyclical and independent of both structure and contingency."
+      },
+      "correct_answer": "C",
+      "source_article": "Social change",
+      "x": 1.203518033027649,
+      "y": 0.969777524471283,
+      "concepts_tested": [
+        "Concept 1: Social change results from a combination of systematic (structural) factors and unique (contingent/random) factors, implying an interaction between stable conditions and variables.",
+        "Concept 2: Theories of social change identify core components—structural aspects, processes/mechanisms, and directions of change—as a framework for explaining how change happens.",
+        "Concept 3: Different theoretical frameworks propose distinct mechanisms for change (e.g., Hegelian dialectic with conflict and synthesis; Marxist class struggle and materialist history; Kuhnian paradigm shifts and critical junctures), highlighting how the underlying drivers differ across theories."
+      ],
+      "parent_concepts": [
+        "Concept 3: Outcomes and level-specific relationships (group-level changes in institutions and practices; individual-level effects on psychological/physical well-being; possible results such as integration, marginalization, coexistence, or cultural evolution).",
+        "Concept 3: Technology-induced social change — new technologies reconfigure social structures and daily life (e.g., smartphones altering family dynamics)."
+      ],
+      "parent_articles": [
+        "Acculturation",
+        "Media studies"
+      ]
+    },
+    "reason": "content_loss_both_passes",
+    "pass_1_attempt": {
+      "question": "Which choice best explains why social change usually happens when long-term social conditions and sudden events work together?",
+      "options": {
+        "A": "Long-term structures alone shape how change happens, so random events do not matter.",
+        "B": "Random, one-time events alone cause change because structures stay stable and do nothing.",
+        "C": "Long-term structures set up opportunities and weak spots, and sudden events trigger changes past tipping points.",
+        "D": "Change just repeats in cycles and does not depend on structures or sudden events."
+      },
+      "correct_answer": "C",
+      "simplification_notes": "Rewrote the question in simpler words. Replaced 'structural conditions' with 'long-term social conditions' and 'contingent/random events' with 'sudden events'. Shortened sentences and kept the idea that structures provide conditions while events trigger change.",
+      "content_preserved": true
+    },
+    "pass_1_reason": "readability_too_high_12.4_vs_8",
+    "pass_2_attempt": {
+      "question": "River Town changed after three events: (1) a highway built years ago, (2) a sudden storm collapsed a bridge, and (3) two groups argued and then made a compromise. Which choice correctly names (a) a systematic factor, (b) a unique factor, (c) what a social-change theory should include, and (d) which theory explains arguing that leads to a compromise?",
+      "options": {
+        "A": "Systematic factor: the long-term highway. Unique factor: the sudden storm collapse. Theory parts: structure, processes, direction. Arguing→compromise fits Hegelian dialectic.",
+        "B": "Systematic factor: the storm collapse. Unique factor: the highway. Theory parts: classes, markets, power. Arguing fits Marxist class struggle.",
+        "C": "Systematic factor: the highway. Unique factor: the storm collapse. Theory parts: causes, effects, outcomes. Arguing fits Marxist class struggle.",
+        "D": "Systematic factor: the highway. Unique factor: the storm collapse. Theory parts: structure, processes, direction. Arguing fits a Kuhnian paradigm shift."
+      },
+      "correct_answer": "A",
+      "generation_notes": "Made a town scenario with a long-term structural cause and a sudden unique event. Options test identification of systematic vs unique causes, the three core theory parts, and matching Hegelian vs Marxist vs Kuhnian mechanisms.",
+      "concepts_tested": [
+        "Systematic (structural) vs unique (contingent) causes of social change",
+        "Core components of a social-change theory: structure, processes, direction",
+        "Different theories' mechanisms: Hegelian dialectic vs Marxist class struggle vs Kuhnian paradigm shift"
+      ]
+    },
+    "pass_2_reason": "readability_too_high_13.1_vs_8"
+  },
+  {
+    "original_question": {
+      "question": "Why does employing a faceted classification approach, supported by information technology, better serve diverse user groups and their search tasks than a single hierarchical taxonomy?",
+      "options": {
+        "A": "It restricts search paths to a predefined order, reducing cognitive load but limiting flexibility.",
+        "B": "It provides multiple independent facets that users can combine to reflect their different tasks and contexts, and modern IT supports dynamic filtering, cross-domain search, and relevance ranking across facets.",
+        "C": "It eliminates the need for metadata and allows keyword-only search to retrieve precise results.",
+        "D": "It guarantees identical navigation experiences for all users because facets standardize the structure."
+      },
+      "correct_answer": "B",
+      "source_article": "Library and information science",
+      "x": 1.1367442607879639,
+      "y": 0.9321359992027283,
+      "concepts_tested": [
+        "Concept 1: The relationship and overlap between library science and information science and how this relationship influences professional practice.",
+        "Concept 2: The mechanism by which information resources are organized and classified to serve diverse user groups, including the interaction with classification systems and technology.",
+        "Concept 3: The ethical, legal, and political economy considerations that govern library and information services and their impact on practice."
+      ],
+      "parent_concepts": [],
+      "parent_articles": []
+    },
+    "reason": "content_loss_both_passes",
+    "pass_1_attempt": {
+      "question": "Why does using faceted classification with modern information technology help many different users and search tasks more than using one fixed hierarchical taxonomy?",
+      "options": {
+        "A": "It forces users to follow one set path. That lowers the mental work but reduces flexibility.",
+        "B": "It gives separate facets like topic, date, or format that users can mix. Computers let you filter quickly, search across subjects, and rank best matches.",
+        "C": "It removes the need for metadata and lets keyword-only searches find exact results.",
+        "D": "It makes everyone have the same navigation because facets create one standard structure."
+      },
+      "correct_answer": "B",
+      "simplification_notes": "Rewrote the question in simple words, split long ideas into short sentences, replaced technical phrases with clear examples (topic, date, format). Kept the original correct answer and core idea about facets and IT support.",
+      "content_preserved": true
+    },
+    "pass_1_reason": "readability_too_high_18.0_vs_8",
+    "pass_2_attempt": {
+      "question": "A school hires a librarian and an information scientist to redesign the library. They must organize items, choose technology, and follow rules about privacy and access. Which plan best shows use of both library science and information science, helps different user groups, and respects ethical and legal concerns?",
+      "options": {
+        "A": "Keep books alphabetically and use only a paper card catalog. No online search.",
+        "B": "Create a subject-based classification with simple tags. Build an online search for kids and teachers. Protect privacy and give equal access.",
+        "C": "Make some sections for teachers only to save money. Hire a private company that charges users to search special collections.",
+        "D": "Install a company-run app that tracks which students read what. Let the company sell the data to pay for the app."
+      },
+      "correct_answer": "B",
+      "generation_notes": "School library team scenario combining classification, technology choice, and ethics. Distractors show poor tech, access, or privacy choices.",
+      "concepts_tested": [
+        "Overlap of library science and information science in practice",
+        "Organizing and classifying resources for diverse user groups using classification systems and technology",
+        "Ethical, legal, and political-economy concerns (privacy, access, funding)"
+      ]
+    },
+    "pass_2_reason": "readability_too_high_12.0_vs_8"
+  },
+  {
+    "original_question": {
+      "question": "In an ecosystem-inspired, systems-based view of industrial ecology, why can optimizing a single technology in isolation fail to improve overall sustainability, and how does the ecosystem metaphor explain this phenomenon?",
+      "options": {
+        "A": "Because optimizing one component can alter the broader network of material and energy flows through feedbacks, causing compensating or new inefficiencies elsewhere and potentially offsetting gains.",
+        "B": "Because the ecosystem metaphor suggests that each subsystem operates in complete independence; improving one has no effect on others.",
+        "C": "Because natural ecosystems have no waste, so any waste produced by an industrial system is irrelevant to overall sustainability.",
+        "D": "Because policy and markets always ensure that local optimizations scale to global benefits, making system-scale thinking unnecessary."
+      },
+      "correct_answer": "A",
+      "source_article": "Industrial ecology",
+      "x": 1.5577996969223022,
+      "y": 0.9561868906021118,
+      "concepts_tested": [
+        "Concept 1: Closed-loop / industrial metabolism — shifting from open-loop waste generation to loops where wastes become inputs for new processes, highlighting material and energy flow as a systemic phenomenon.",
+        "Concept 2: Ecosystem-inspired, systems-based view — understanding emergent behavior and interdependencies of industrial and natural systems, using ecosystem metaphors to guide sustainable design.",
+        "Concept 3: Life-cycle thinking and eco-design (including product stewardship) — designing and evaluating products and processes across their entire life cycle to reduce environmental impact and decarbonize/dematerialize."
+      ],
+      "parent_concepts": [
+        "Concept 1: The three base principles of a circular economy (designing out waste and pollution; keeping products/materials in use; regenerating natural systems) as a framework for transformation."
+      ],
+      "parent_articles": [
+        "Circular economy"
+      ]
+    },
+    "reason": "content_loss_both_passes",
+    "pass_1_attempt": {
+      "question": "If we only improve one technology without looking at the whole industrial system, why might the overall sustainability not get better? How does the \"ecosystem\" idea explain this?",
+      "options": {
+        "A": "Because improving one part can change material and energy flows in the whole network. Feedbacks can cause new wastes or losses that cancel the gains.",
+        "B": "Because the ecosystem idea says each part works by itself; changing one part does not affect the others.",
+        "C": "Because natural ecosystems have no waste, so any waste from industry does not matter for overall sustainability.",
+        "D": "Because markets and laws always make local improvements become global benefits, so you do not need to study the whole system."
+      },
+      "correct_answer": "A",
+      "simplification_notes": "Shortened sentences, used simple words, removed jargon like 'emergent behavior' and 'industrial metabolism', kept idea that parts interact and feedbacks can negate gains.",
+      "content_preserved": true
+    },
+    "pass_1_reason": "readability_too_high_12.2_vs_8",
+    "pass_2_attempt": {
+      "question": "A shoe company does three things: (1) it collects old shoes and grinds them into new soles, (2) it designs shoes to use less material and to be repaired, and (3) it shares waste heat with a nearby bakery so the bakery uses the heat for ovens. Which statement correctly links each action to the right industrial ecology idea?",
+      "options": {
+        "A": "Closed-loop = (1); Ecosystem-inspired systems = (3); Life-cycle thinking and eco-design = (2)",
+        "B": "Closed-loop = (2); Ecosystem-inspired systems = (1); Life-cycle thinking and eco-design = (3)",
+        "C": "Closed-loop = (3); Ecosystem-inspired systems = (2); Life-cycle thinking and eco-design = (1)",
+        "D": "Closed-loop = (1); Ecosystem-inspired systems = (2); Life-cycle thinking and eco-design = (3)"
+      },
+      "correct_answer": "A",
+      "generation_notes": "Created a concrete factory scenario and asked students to match actions to closed-loop, ecosystem metaphor, and life-cycle/eco-design concepts. Options give plausible but different mappings.",
+      "concepts_tested": [
+        "Closed-loop / industrial metabolism",
+        "Ecosystem-inspired systems thinking",
+        "Life-cycle thinking and eco-design"
+      ]
+    },
+    "pass_2_reason": "readability_too_high_13.3_vs_8"
   }
 ]

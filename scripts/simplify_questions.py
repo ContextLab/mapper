@@ -638,7 +638,7 @@ def simplify_level(
         description=f"Level {level} simplification (Pass 1)",
         model="gpt-5-nano",
         temperature=1.0,  # gpt-5-nano default is 1.0
-        max_tokens=2000,  # Increased for reasoning + output
+        max_tokens=10000,  # Large limit for reasoning + output (gpt-5-nano uses reasoning tokens)
         response_format=response_format,
         poll_interval=60,
         timeout=3600  # 1 hour timeout
@@ -768,7 +768,7 @@ def simplify_level(
             description=f"Level {level} generation (Pass 2)",
             model="gpt-5-nano",
             temperature=1.0,  # gpt-5-nano default is 1.0
-            max_tokens=2000,  # Increased for reasoning + output
+            max_tokens=10000,  # Large limit for reasoning + output (gpt-5-nano uses reasoning tokens)
             response_format=response_format_pass2,
             poll_interval=60,
             timeout=3600  # 1 hour timeout

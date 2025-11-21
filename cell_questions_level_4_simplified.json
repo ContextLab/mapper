@@ -1,0 +1,427 @@
+{
+  "questions": [
+    {
+      "question": "Why do complex brain abilities, like learning and consciousness, come from many neurons, glia, and circuits working together? Why can't one neuron make these abilities by itself?",
+      "options": {
+        "A": "Because brain parts work alone, so adding single-neuron outputs explains higher functions.",
+        "B": "Because neurons, glia, and circuits interact in complicated ways and feed back across levels. This network organization makes new patterns no single cell can produce.",
+        "C": "Because information sits only in chemical signals at synapses, and network activity does not matter.",
+        "D": "Because emergent properties are fixed during development and do not need ongoing circuit activity."
+      },
+      "correct_answer": "B",
+      "simplification_notes": "Shortened sentences, simpler words, active voice, and included 'neurons, glia, and circuits'. Kept the original cause-and-effect idea that network interactions create new properties.",
+      "content_preserved": true,
+      "source_article": "Neuroscience",
+      "x": 1.8032488822937012,
+      "y": 1.1452748775482178,
+      "level": 4,
+      "concepts_tested": [
+        "Emergence: How complex properties of brains and behavior arise from interactions among neurons, glia, and neural circuits.",
+        "Multiscale/integrative approach: Connecting molecular, cellular, system, and cognitive levels using diverse disciplines and techniques.",
+        "Brain–behavior relationships: The links between neural mechanisms and learning, memory, perception, behavior, and consciousness."
+      ],
+      "original_question_hash": "47c4d6c3"
+    },
+    {
+      "question": "How do cells and tissues work together so the body makes a clear response when something disturbs it?",
+      "options": {
+        "A": "Only by fast electrical signals that reach every cell at once, so all cells react the same.",
+        "B": "By using many kinds of signals (nerve signals, hormones, nearby signals, and self-signals). Different cells interpret the disturbance for their job and coordinate local and whole-body responses.",
+        "C": "By keeping signaling inside one tissue so each tissue reacts alone without feedback from others.",
+        "D": "By making every tissue have the same receptors so every cell responds identically to a signal."
+      },
+      "correct_answer": "B",
+      "simplification_notes": "Replaced 'perturbation' with 'disturbs' and 'multilevel integration' with 'cells and tissues work together'. Listed signal types in simple terms and split into short sentences.",
+      "content_preserved": true,
+      "source_article": "Physiology",
+      "x": 1.9025288820266724,
+      "y": 1.1100101470947266,
+      "level": 4,
+      "concepts_tested": [
+        "Homeostasis: the regulatory mechanisms that maintain a stable internal environment.",
+        "Structure–Function relationship: how anatomical organization at molecular, cellular, and organ levels dictates and supports physiological function.",
+        "Multilevel integration and communication: coordination of biophysical/biochemical processes through cell-to-cell signaling to achieve coherent organismal function."
+      ],
+      "original_question_hash": "4a836fb6"
+    },
+    {
+      "question": "In a system, new whole-system properties appear when parts interact. Which explanation best shows how these new properties come about?",
+      "options": {
+        "A": "Each part hides a property that only appears when the parts join together.",
+        "B": "Parts interact and make feedback loops and cooperation that produce new patterns you cannot predict from one part alone.",
+        "C": "New properties happen because the system's boundaries stop information from flowing between parts.",
+        "D": "New properties are just the simple average of all the parts' properties."
+      },
+      "correct_answer": "B",
+      "simplification_notes": "Rewrote the question in short sentences. Replaced 'emergence' and 'synergy' with 'new whole-system properties'. Simplified technical phrases (e.g., 'nonlinear feedback and cooperative dynamics') to 'feedback loops and cooperation' while keeping the main idea.",
+      "content_preserved": true,
+      "source_article": "Systems theory",
+      "x": 1.4896122217178345,
+      "y": 1.0901458263397217,
+      "level": 4,
+      "concepts_tested": [
+        "Emergence and synergy: systems exhibit properties that arise from interactions of parts and are not reducible to individual components.",
+        "Boundaries, context, structure, function, and relations: how a system is defined and how its environment and internal organization shape behavior and interactions with other systems.",
+        "Adaptation and equifinality: systems learn and adapt depending on engagement with their environment, and different paths can lead to the same end state."
+      ],
+      "original_question_hash": "984ee326"
+    },
+    {
+      "question": "In an experiment, people are put at random into a treatment group or a control group. Why does random assignment make it stronger to say the treatment caused the result than when people choose their own groups?",
+      "options": {
+        "A": "Random assignment makes groups identical by design, guaranteeing the same outcomes in both groups.",
+        "B": "Random assignment makes groups similar on average for seen and unseen factors. So differences in outcomes are more likely caused by the treatment.",
+        "C": "Random assignment removes the need for any statistical tests because differences become automatically causal.",
+        "D": "Random assignment makes the sample perfectly represent the whole population, so results apply to everyone."
+      },
+      "correct_answer": "B",
+      "simplification_notes": "Rewrote in short sentences with simple words. Removed technical terms and long clauses. Kept the idea that randomization balances seen and unseen factors, supporting causal claims.",
+      "content_preserved": true,
+      "source_article": "Statistics",
+      "x": 1.5725957155227661,
+      "y": 1.1284596920013428,
+      "level": 4,
+      "concepts_tested": [
+        "Descriptive vs. inferential statistics and how sampling variation affects generalization from a sample to a population",
+        "Hypothesis testing framework, including null hypothesis, alternative hypothesis, and Type I/Type II errors",
+        "Experimental vs. observational study designs and the role of manipulation/randomization in establishing causal inferences and the importance of representative sampling"
+      ],
+      "original_question_hash": "d4b97c73"
+    },
+    {
+      "question": "Why are knowledge networks and collaborations important in science policy? How do they shape what science is done and who has expertise, equipment, and hands-on know-how?",
+      "options": {
+        "A": "They give everyone equal access to all resources and remove any coordination costs.",
+        "B": "They let the most talented person decide results alone, no matter the network.",
+        "C": "They shape which problems people choose and how fast ideas spread. Networks bring different skills and shared special equipment together. This lets people mix ideas and share hands-on know-how. Trust, coordination, and rewards affect how well the network works.",
+        "D": "They automatically cause quick breakthroughs because international networks beat local limits with no extra costs."
+      },
+      "correct_answer": "C",
+      "simplification_notes": "Made sentences shorter and used simple words. Replaced 'tacit know-how' with 'hands-on know-how'. Kept the core idea that networks affect which problems are studied, idea spread, sharing of skills and equipment, and need for trust, coordination, and incentives.",
+      "content_preserved": true,
+      "source_article": "Science policy",
+      "x": 1.2675955295562744,
+      "y": 0.9988622665405273,
+      "level": 4,
+      "concepts_tested": [
+        "Concept 1: Resource allocation and funding as mechanisms to align science with public interest and economic development.",
+        "Concept 2: Knowledge networks and collaborations as essential structures shaping how science is produced (distribution of expertise, equipment, and know-how).",
+        "Concept 3: The multi-actor, international ecosystem (governments, firms, NGOs, universities) and its influence on science policy and global research agendas."
+      ],
+      "original_question_hash": "a2bef2d5"
+    },
+    {
+      "question": "How do rules about who gets resources and large social systems work together to decide who gets rights and services? Why does this process tend to keep inequality going across generations?",
+      "options": {
+        "A": "They set rules and shape institutions. This sends resources to certain groups and makes unequal outcomes stick across generations.",
+        "B": "They only reflect existing inequality and do not cause who gets access.",
+        "C": "They matter only in kinship-based societies and vanish in modern economies.",
+        "D": "They do not matter; individual effort and talent alone decide outcomes."
+      },
+      "correct_answer": "A",
+      "simplification_notes": "Rewrote the question in two short, clear sentences. Replaced technical terms with simple words like 'rules', 'resources', and 'social systems'. Kept each option short and plausible.",
+      "content_preserved": true,
+      "source_article": "Social inequality",
+      "x": 1.2012434005737305,
+      "y": 0.9159548878669739,
+      "level": 4,
+      "concepts_tested": [
+        "Concept 1: Norms of allocation and structural factors determine who gains access to social goods and rights.",
+        "Concept 2: Cultural narratives and social identities (e.g., deserving/undeserving) influence beliefs about inequality and help justify or perpetuate it.",
+        "Concept 3: Variations in societal organization (egalitarian, ranked, stratified; kinship-oriented vs. materially oriented) affect the level and progression of inequality."
+      ],
+      "original_question_hash": "0dbb53be"
+    },
+    {
+      "question": "Universalists say we should give the same basic political rights to everyone. What reason do they use to justify this, and why do cultural relativists disagree?",
+      "options": {
+        "A": "They say all humans share the same rational ability, so the same basic rights apply everywhere. Cultural relativists say moral rules depend on each culture, so universal rights are not valid everywhere.",
+        "B": "They claim rights come from the most powerful culture's laws and so spread to others. Cultural relativists object and say power does not make morals right.",
+        "C": "They rely on history and local facts to show rights vary by place. Cultural relativism supports this, saying no single rule fits all cultures.",
+        "D": "They use facts about many cultures to find common practices and call them universal rights. Cultural relativists reply that shared practices do not prove shared meaning."
+      },
+      "correct_answer": "A",
+      "simplification_notes": "Made language simple and clear. Broke long ideas into short sentences. Kept core idea: universalists appeal to shared human reason/nature; cultural relativists say norms come from culture.",
+      "content_preserved": true,
+      "source_article": "Political philosophy",
+      "x": 1.1842470169067383,
+      "y": 0.9559603929519653,
+      "level": 4,
+      "concepts_tested": [
+        "Normative vs empirical study in political inquiry: why political philosophy emphasizes what ought to be (values like justice, equality, liberty) and how this contrasts with empirical political science.",
+        "Ideological foundations and justification of political action: how different ideologies (anarchism, liberalism, conservatism, socialism) tie their core values to views on state power, legitimacy, and social order.",
+        "Methodological approaches to political knowledge: foundationalist vs particularist methods; universalist vs cultural relativist claims, and how these frameworks shape the construction and critique of political theories."
+      ],
+      "original_question_hash": "ceb672f6"
+    },
+    {
+      "question": "If people save more, how does that affect firms' investment and the economy's long-run growth? What process causes this effect?",
+      "options": {
+        "A": "More saving directly raises current consumption, so firms invest to meet higher sales.",
+        "B": "More saving adds funds to banks and financial markets. This lowers real interest rates and makes loans cheaper for firms. Cheaper borrowing lets firms buy more capital, which raises productive capacity and long-run growth.",
+        "C": "More saving reduces current production because saved resources are not used now. That can cut income and lower investment.",
+        "D": "It has no effect on investment because saving and investment happen in different markets."
+      },
+      "correct_answer": "B",
+      "simplification_notes": "Rewrote the question in short sentences and simple words. Replaced technical phrases with plain terms (e.g., 'money in banks' → 'funds to banks and financial markets'). Kept the core chain: higher saving → more loanable funds → lower real interest rates → cheaper borrowing → more investment → higher long-run growth.",
+      "content_preserved": true,
+      "source_article": "Economics",
+      "x": 1.224186658859253,
+      "y": 0.9389249682426453,
+      "level": 4,
+      "concepts_tested": [
+        "Concept 1: Micro vs. Macro analysis as different levels of economic interactions (agents/markets vs. systemic production/distribution/consumption and related variables).",
+        "Concept 2: Interactions among production, distribution, consumption, savings, and investment, and how factors of production (labor, capital, land, enterprise) and macro factors (inflation, growth, public policy) shape economic outcomes.",
+        "Concept 3: The distinction between positive (what is) and normative (what ought to be) economics and the existence of different theoretical frameworks (rational vs. behavioral, mainstream vs. heterodox)."
+      ],
+      "original_question_hash": "ca6e1a89"
+    },
+    {
+      "question": "A scientist studies two systems. One is a sealed bottle of gas with millions of molecules moving randomly. The other is a small town where people trade, join clubs, and make rules together. Which statement best explains the difference between the two?",
+      "options": {
+        "A": "The gas is disorganized complexity: many independent parts fit probability models. The town is organized complexity with correlated relationships and emergence.",
+        "B": "Both systems are the same type of complexity and need the same probability methods to be understood.",
+        "C": "The town shows disorganized randomness because many people act alone. The gas shows organized patterns.",
+        "D": "Complexity only counts parts number. More parts always make a system more complex."
+      },
+      "correct_answer": "A",
+      "generation_notes": "Used a concrete gas vs town scenario to contrast disorganized (random, many independent parts, probability methods) and organized complexity (correlated relationships producing emergence and higher-order behavior).",
+      "concepts_tested": [
+        "Emergence from interacting components",
+        "Organized vs. disorganized complexity",
+        "Relational regimes and distinguishable connections"
+      ],
+      "source_article": "Complexity",
+      "x": 1.5851572751998901,
+      "y": 1.149272084236145,
+      "level": 4,
+      "original_question_hash": "5290e3aa"
+    },
+    {
+      "question": "A scientist studies $1000$ small robots. Each robot only follows the rule: \"move forward and stop if blocked.\" Together they dig a tunnel that lets others pass. No single robot can make a tunnel. The scientist can predict tunnel formation by simulating the $1000$ robots. What does this most clearly show?",
+      "options": {
+        "A": "This is emergence, and specifically weak emergence, because the tunnel appears from interactions and can be simulated.",
+        "B": "This is strong emergence, because the tunnel gives each robot a new inner power they did not have before.",
+        "C": "This is not emergence, because each robot's rule fully explains the tunnel without looking at the group.",
+        "D": "This is supernatural, because only magic could make many simple robots create a tunnel."
+      },
+      "correct_answer": "A",
+      "generation_notes": "Used a concrete robot colony scenario to test: system-level emergent property arises from interactions and is simulatable, matching weak emergence.",
+      "concepts_tested": [
+        "System-level emergent properties arising from interactions",
+        "Weak vs strong emergence: simulatable and reducible (weak) versus irreducible/downward causation (strong)"
+      ],
+      "source_article": "Emergence",
+      "x": 1.4476832151412964,
+      "y": 1.132567286491394,
+      "level": 4,
+      "original_question_hash": "62351995"
+    },
+    {
+      "question": "A school team builds a small robot to find apples in a room. The robot stores a simple floor map inside, uses rules to update the map when it sees an apple, the team watches the robot's wires and sensors, and they also test whether people think the robot chose well. Which idea from cognitive science does this example best show?",
+      "options": {
+        "A": "Thinking uses internal representations (the robot's map) and procedures, studied across wires, behavior, and many fields.",
+        "B": "Only the robot's visible actions matter, so studying its map or wires is not useful.",
+        "C": "If a machine finds apples, it is alive and needs no study.",
+        "D": "Writing computer code alone fully explains how human minds work."
+      },
+      "correct_answer": "A",
+      "generation_notes": "Used a concrete robot-in-classroom scenario to link internal maps and rules, multi-level study (wires to behavior), and interdisciplinary teamwork.",
+      "concepts_tested": [
+        "representational structures and computational procedures",
+        "multiple levels of analysis from neural-like wiring to behavior",
+        "interdisciplinary integration of fields to study cognition"
+      ],
+      "source_article": "Cognitive science",
+      "x": 1.2828636169433594,
+      "y": 1.0253710746765137,
+      "level": 4,
+      "original_question_hash": "62330c24"
+    },
+    {
+      "question": "Alex can choose: (A) get $10 for sure, or (B) flip a fair coin: heads get $25, tails get $0. The expected money for B is $0.5\\times25+0.5\\times0=12.5$ dollars. A normative decision theory that treats money linearly says which choice is rational? If many people still pick the sure $10, what does that show?",
+      "options": {
+        "A": "Choose A; this proves normative expected-utility theory is always wrong.",
+        "B": "Choose B; many people pick A because real choices show risk aversion and prospect-theory effects.",
+        "C": "Choose B; many people pick A only because they did the math wrong.",
+        "D": "Choose A; many people pick A because Bayesian updating favors the sure option."
+      },
+      "correct_answer": "B",
+      "generation_notes": "Created a concrete gamble with expected value $0.5\\times25+0.5\\times0=12.5$. Asks which option normative expected-utility theory prefers, and why real people often choose differently (behavioral bias).",
+      "concepts_tested": [
+        "expected utility / expected value",
+        "normative vs descriptive decision theory",
+        "behavioral biases (risk aversion, prospect theory)"
+      ],
+      "source_article": "Decision theory",
+      "x": 1.3975611925125122,
+      "y": 1.0570943355560303,
+      "level": 4,
+      "original_question_hash": "ecfdef45"
+    },
+    {
+      "question": "A village used a river for mills and farms for 200 years. Trees were cut, fish fell, and the river changed. In 2020 engineers, ecologists, and local elders study why. Which choice best shows what environmental historians do?",
+      "options": {
+        "A": "Scientists measure river flow this year and recommend a new dam.",
+        "B": "Engineers decide to stop logging now to prevent future floods.",
+        "C": "A team studies old maps, tree rings, farming records, and local stories to explain 200 years of river change.",
+        "D": "A farmer sues the government for money lost after last year's flood."
+      },
+      "correct_answer": "C",
+      "generation_notes": "Made a concrete village-river story that asks which study mixes long time scales, nature change, human use, beliefs, and teamwork across science and humanities.",
+      "concepts_tested": [
+        "reciprocal relationship between humans and the environment",
+        "three-part framework: changes in nature, human use and impacts, human ideas about nature",
+        "interdisciplinarity and broad time-scale study across sciences and humanities"
+      ],
+      "source_article": "Environmental history",
+      "x": 1.3189517259597778,
+      "y": 0.9244641661643982,
+      "level": 4,
+      "original_question_hash": "ce542314"
+    },
+    {
+      "question": "A small town passes a law banning chemical pesticides to protect bees. Farmers stop using pesticides, but some burn crop waste instead. Smoke causes worse air pollution and breathing problems for children. What does this real example tell us about environmental policy?",
+      "options": {
+        "A": "The ban fixed all problems, so a single rule is enough to protect the environment.",
+        "B": "It shows top-down regulation always works; people will obey and no side effects appear.",
+        "C": "Solving one problem can create another, so policies must consider spillovers and social and economic effects.",
+        "D": "Environmental policy should ignore people's health and focus only on saving insects."
+      },
+      "correct_answer": "C",
+      "generation_notes": "Created a concrete town example showing a pesticide ban led to burning waste. Tested spillover effects, the need for mixed instruments, and social/economic trade-offs for sustainability.",
+      "concepts_tested": [
+        "Interconnectedness and spillover effects of environmental actions",
+        "Policy instruments influence human activity to prevent environmental harm",
+        "Multi-dimensional scope of environmental policy including social, economic, and future generations"
+      ],
+      "source_article": "Environmental policy",
+      "x": 1.368301272392273,
+      "y": 0.8586468696594238,
+      "level": 4,
+      "original_question_hash": "f790bf85"
+    },
+    {
+      "question": "The school's garden club plans to grow food for the cafeteria. Which example best shows governance at work in the club?",
+      "options": {
+        "A": "Members elect three students to make rules, manage money, and choose to plant tomatoes.",
+        "B": "Two friends plan to plant beans but never tell the group or make rules.",
+        "C": "Everyone argues each week and no one decides who waters or buys seeds.",
+        "D": "Each person brings a snack to meetings, but they don't set goals or rules."
+      },
+      "correct_answer": "A",
+      "generation_notes": "Created a garden club scenario. Option A shows a formal governing body making rules, allocating money, and setting a direction. Other choices show informal action or no governance.",
+      "concepts_tested": [
+        "rules and norms guiding decision-making",
+        "role of governing bodies in enforcing rules and overseeing operations",
+        "allocation and use of resources and setting collective direction"
+      ],
+      "source_article": "Governance",
+      "x": 1.2119635343551636,
+      "y": 0.9210273027420044,
+      "level": 4,
+      "original_question_hash": "a71300ea"
+    },
+    {
+      "question": "A town passes a new curfew for teenagers. Maya counts how many teens broke curfew before and after. Luis writes that the curfew is unfair to teens who work. Aisha studies past laws, town budgets, and family habits that led to the curfew. Which sentence best matches what each person is doing?",
+      "options": {
+        "A": "Maya measures facts (positive); Luis judges fairness (normative); Aisha studies structures and borrows other fields.",
+        "B": "Maya judges fairness; Luis measures facts; Aisha studies only individual teen choices, not wider structures.",
+        "C": "All three do the same kind of study: they measure how many teens broke curfew and why.",
+        "D": "Maya measures facts; Luis studies budgets and laws; Aisha tells if the curfew is fair."
+      },
+      "correct_answer": "A",
+      "generation_notes": "Created a town curfew scenario. Mapped Maya to positive research, Luis to normative judgment, and Aisha to structure analysis and interdisciplinarity.",
+      "concepts_tested": [
+        "Positive vs normative political science",
+        "Structure vs agency in political analysis",
+        "Disciplinary borrowing and interdisciplinarity in political science"
+      ],
+      "source_article": "Political science",
+      "x": 1.213088035583496,
+      "y": 0.9449244141578674,
+      "level": 4,
+      "original_question_hash": "b3554666"
+    },
+    {
+      "question": "Mia goes to a public school where teachers invite questions. She joins a coding club after school. Her grandmother teaches her cooking at home. Her friend Luis goes to a school where teachers only give facts and discourage questions. Luis has no home computer and his parents work long hours. Which option best explains why Mia will likely learn more skills and think more critically later?",
+      "options": {
+        "A": "Mia learns in formal, non-formal, and informal settings; teachers encourage questions; she has tech access and family support.",
+        "B": "Only formal school matters, so after-school clubs and home learning do not affect Mia's future skills or thinking.",
+        "C": "Being taught facts without questions prepares students for tests, so Luis will likely think more critically and get better jobs.",
+        "D": "Success comes only from native intelligence, so teaching style, technology, and parent help do not change outcomes."
+      },
+      "correct_answer": "A",
+      "generation_notes": "Created a concrete student scenario showing formal, non-formal, and informal learning plus differences in teaching style, technology, and parental support. Options contrast the combined-factor explanation with single-factor alternatives.",
+      "concepts_tested": [
+        "Formal, non-formal, and informal learning support skill development and socialization",
+        "Critical thinking versus indoctrination influenced by teaching style and policy",
+        "Determinants of educational success: motivation, technology access, teacher quality, parental involvement"
+      ],
+      "source_article": "Education",
+      "x": 1.2670472860336304,
+      "y": 0.9651527404785156,
+      "level": 4,
+      "original_question_hash": "c8ce4c95"
+    },
+    {
+      "question": "Two communities: A is a small hunting band where people share food and tease big hunters. B is a large industrial city with factories, rich owners, and elite schools that pass advantages to children. B shows larger gaps in income, power, and privilege. Which choice best explains why B is more stratified and what shapes people's rank? Which choice also sums up how action and conflict theories explain stratification?",
+      "options": {
+        "A": "Because B is more complex, people have unequal access to wealth, jobs, education, and power. Action theory says hierarchy helps keep order. Conflict theory (Marx) says owners hoard resources and limit mobility.",
+        "B": "B is more stratified only because people in B want more wealth. So social class is a personal choice.",
+        "C": "Stratification comes only from birth and kinship. Education, jobs, race, or gender do not affect rank.",
+        "D": "As societies grow, inequality always disappears and social mobility always rises for everyone."
+      },
+      "correct_answer": "A",
+      "generation_notes": "Created a concrete two-community scenario. Option A links complexity, multiple bases of rank, and both action and conflict theory views. Other options are plausible but incorrect.",
+      "concepts_tested": [
+        "Stratification increases with social complexity and unequal access to resources",
+        "Bases of stratification such as wealth, jobs, education, power, race, and gender",
+        "Theoretical perspectives: action theory (hierarchy as order) versus conflict/Marx (owners hoard resources and limit mobility)"
+      ],
+      "source_article": "Social stratification",
+      "x": 1.2176662683486938,
+      "y": 0.94220370054245,
+      "level": 4,
+      "original_question_hash": "68d308cb"
+    },
+    {
+      "question": "A school with a lunch line must decide how many servers to open. Students arrive at random times. Each server costs $\\$5$ per period. Let $x$ be servers and $w$ be average wait in minutes. The principal wants to minimize cost plus wait, written as minimize $5x + 2w$. Because arrivals are random, $w$ is hard to find exactly. Which action best follows operations research steps? It should include modeling, optimizing, and choosing a method when arrivals are random and computers are slow.",
+      "options": {
+        "A": "Build a model with $x$ and $w$. Use the objective minimize $5x+2w$. Run a simulation to estimate $w$ for $x=1,2,3$. Pick the $x$ with the lowest total. If computers are slow, test fewer $x$ values.",
+        "B": "Skip making a model. Keep adding servers until waits feel short. Do not count the server costs.",
+        "C": "Assume arrivals follow a fixed schedule. Use only algebra to get $w$ and then minimize $5x+2w$ for many $x$ values.",
+        "D": "Choose the least expensive plan. Open no servers to save money. Ignore wait times in the lunch line."
+      },
+      "correct_answer": "A",
+      "generation_notes": "Made a cafeteria scenario with objective $5x+2w$. Correct option builds a model, sets objective, and uses simulation for randomness while noting compute limits.",
+      "concepts_tested": [
+        "Mathematical modeling",
+        "Optimization objective (minimize cost and wait)",
+        "Method selection under randomness and computing limits"
+      ],
+      "source_article": "Operations research",
+      "x": 1.6620818376541138,
+      "y": 0.7664583921432495,
+      "level": 4,
+      "original_question_hash": "be2c60e3"
+    }
+  ],
+  "metadata": {
+    "level": 4,
+    "target_audience": "middle school students (ages 11-14)",
+    "total_original": 20,
+    "total_simplified": 19,
+    "pass_1_success": 8,
+    "pass_2_success": 11,
+    "excluded": 1,
+    "exclusion_reasons": {
+      "article_not_found": 0,
+      "content_loss_both_passes": 1
+    },
+    "simplification_date": "2025-11-21T00:29:38.560988",
+    "api_model": "gpt-5-mini",
+    "pilot_mode": true,
+    "pilot_count": 20
+  }
+}

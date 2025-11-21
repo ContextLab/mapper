@@ -1,0 +1,59 @@
+[
+  {
+    "original_question": {
+      "question": "How does meritocracy attempt to separate advancement from hereditary privilege, and what common systemic limitation can still undermine true equality of opportunity?",
+      "options": {
+        "A": "It assigns positions randomly, which eliminates privilege.",
+        "B": "It bases advancement on demonstrated ability and performance, but unequal access to resources (education, preparation, mentorship) means not everyone can demonstrate ability equally, undermining equality of opportunity.",
+        "C": "It guarantees equal funding to education for all, ensuring everyone can demonstrate ability equally.",
+        "D": "It completely eliminates any family influence by law, ensuring equal outcomes."
+      },
+      "correct_answer": "B",
+      "source_article": "Meritocracy",
+      "x": 1.2255743741989136,
+      "y": 0.9673568606376648,
+      "concepts_tested": [
+        "Concept 1: Merit as measured by demonstrated ability and performance (examinations, IQ, credentials) and its role as the mechanism for advancement",
+        "Concept 2: Relationship to equality of opportunity and anti-nepotism/hereditary privilege (meritocracy as a pathway to fair advancement vs. nepotism/aristocracy)",
+        "Concept 3: Historical and conceptual complexities (origins of the term, satirical critique, evolving broader usage, and philosophical connections such as Ethos)"
+      ],
+      "parent_concepts": [
+        "Concept 2: Schooling patterns Reflecting and reinforcing social stratification (class, race, gender) rather than challenging it."
+      ],
+      "parent_articles": [
+        "Sociology of education"
+      ]
+    },
+    "reason": "content_loss_both_passes",
+    "pass_1_attempt": {
+      "question": "How does meritocracy try to let people move up by ability rather than by family birth, and what common problem still blocks true equal chances?",
+      "options": {
+        "A": "It would pick people by luck or random choice to remove family advantage.",
+        "B": "It rewards demonstrated ability and performance, but unequal access to education, test prep, and mentorship keeps chances unfair.",
+        "C": "It promises equal money for all schools so everyone can show their ability equally.",
+        "D": "It bans family help by law so no one can use parents or relatives to get ahead."
+      },
+      "correct_answer": "B",
+      "simplification_notes": "Used short sentences and simple words. Kept the two main ideas: advancement by ability (tests, performance) and the real limit of unequal access to resources.",
+      "content_preserved": true
+    },
+    "pass_1_reason": "readability_too_high_13.0_vs_8",
+    "pass_2_attempt": {
+      "question": "A town hires its new library director by picking the person with the highest exam score, not by who their parents are. Which statement best explains how this matches the idea of meritocracy and a common criticism of it?",
+      "options": {
+        "A": "They chose by tested ability and performance, not family ties. That matches meritocracy and opposes nepotism. Critics say tests and unequal education make it unfair. Michael Young popularized the term as a satire.",
+        "B": "They chose by exam, so meritocracy always gives equal results. Michael Young invented the exams.",
+        "C": "They chose by exam, but meritocracy means the richest always rule. Critics praise this. Confucius coined the word.",
+        "D": "They chose by exam, so it is an aristocracy where birth decides power. Meritocracy favours families. Michael Young supported this."
+      },
+      "correct_answer": "A",
+      "generation_notes": "Made a concrete hiring scenario to test definition of meritocracy, its anti-nepotism goal, common criticism about unequal access, and Michael Young's satirical role.",
+      "concepts_tested": [
+        "Merit based on demonstrated ability and exams",
+        "Meritocracy versus nepotism and equality of opportunity",
+        "Historical origin and satirical critique by Michael Young"
+      ]
+    },
+    "pass_2_reason": "readability_too_high_10.8_vs_8"
+  }
+]

@@ -3081,7 +3081,23 @@
             tooltip.style.backgroundColor = bgColor;
 
             tooltip.classList.remove('tooltip-hidden');
-            setTimeout(() => tooltip.classList.add('visible'), 10);
+            setTimeout(() => {
+                tooltip.classList.add('visible');
+
+                // Render LaTeX in tooltip after it becomes visible
+                if (typeof renderMathInElement !== 'undefined') {
+                    const tooltipQuestion = tooltip.querySelector('.tooltip-question');
+                    if (tooltipQuestion) {
+                        renderMathInElement(tooltipQuestion, {
+                            delimiters: [
+                                {left: '$$', right: '$$', display: true},
+                                {left: '$', right: '$', display: false}
+                            ],
+                            throwOnError: false
+                        });
+                    }
+                }
+            }, 10);
 
             // Calculate cell center position on screen
             const cellCanvasX = cell.centerX * canvasRect.width;

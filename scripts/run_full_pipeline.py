@@ -142,6 +142,10 @@ Examples:
         level_range = range(1, 5) if not args.skip_level_0 else range(1, 5)
     total_steps += len(level_range)
 
+    # Question simplification for levels 2, 3, 4
+    simplify_levels = [l for l in [2, 3, 4] if l in level_range or not args.skip_level_0]
+    total_steps += len(simplify_levels)
+
     if not args.skip_merge:
         total_steps += 1
 
@@ -270,6 +274,28 @@ Examples:
         if not run_command(
             ['python3', '-u', 'scripts/generate_level_n.py', '--level', str(level)],
             f"Level {level} generation",
+            args.dry_run
+        ):
+            return 1
+
+    # Step: Simplify questions for levels 2, 3, 4
+    simplify_levels = [l for l in [2, 3, 4] if l in level_range or not args.skip_level_0]
+    for level in simplify_levels:
+        current_step += 1
+        level_name = {4: "middle school", 3: "high school", 2: "undergraduate"}[level]
+        print_step(current_step, total_steps, f"Simplify level {level} questions ({level_name})")
+
+        print(f"This step simplifies level {level} questions to {level_name} reading level:")
+        print("  - Pass 1: Simplify existing questions with readability validation")
+        print("  - Pass 2: Generate new questions if Pass 1 fails")
+        print("  - Uses LaTeX notation for math ($x^2$, $\\frac{1}{2}$, etc.)")
+        print(f"Estimated time: 15-30 minutes")
+        print(f"Estimated cost: ~$0.05-0.10")
+        print()
+
+        if not run_command(
+            ['python3', '-u', 'scripts/simplify_questions.py', '--level', str(level)],
+            f"Level {level} simplification",
             args.dry_run
         ):
             return 1

@@ -305,6 +305,9 @@ def load_all_questions(base_path: str, num_levels: int = 5) -> Dict[str, List[Di
     """
     Load all questions from level files, indexed by source article.
 
+    Prioritizes simplified questions (_simplified.json files).
+    If simplified version doesn't exist, skips that level with a warning.
+
     Args:
         base_path: Directory containing level files
         num_levels: Number of levels to load
@@ -318,7 +321,24 @@ def load_all_questions(base_path: str, num_levels: int = 5) -> Dict[str, List[Di
     total_questions = 0
 
     for level in range(num_levels):
-        filepath = os.path.join(base_path, f'cell_questions_level_{level}.json')
+        # Try simplified version first
+        simplified_filepath = os.path.join(base_path, f'cell_questions_level_{level}_simplified.json')
+        original_filepath = os.path.join(base_path, f'cell_questions_level_{level}.json')
+
+        filepath = None
+        is_simplified = False
+
+        if os.path.exists(simplified_filepath):
+            filepath = simplified_filepath
+            is_simplified = True
+        elif os.path.exists(original_filepath):
+            # Warn that simplified version doesn't exist
+            print(f"⚠️  Level {level}: No simplified questions found ({simplified_filepath}), skipping...")
+            continue
+        else:
+            # Neither file exists
+            continue
+
         data = load_json(filepath)
 
         if data is None:
@@ -334,7 +354,8 @@ def load_all_questions(base_path: str, num_levels: int = 5) -> Dict[str, List[Di
                 level_questions += 1
 
         total_questions += level_questions
-        print(f"Level {level}: Loaded {level_questions} questions")
+        status = "simplified" if is_simplified else "original"
+        print(f"Level {level}: Loaded {level_questions} questions ({status})")
 
     print(f"\nTotal questions loaded: {total_questions}")
     print(f"Questions distributed across {len(questions_by_article)} articles")

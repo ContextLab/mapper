@@ -127,6 +127,16 @@ Examples:
 
   # Dry run (show what would execute)
   python scripts/run_full_pipeline.py --dry-run
+
+  # Force rerun all steps (ignore existing outputs)
+  python scripts/run_full_pipeline.py --force
+
+  # Force rerun only simplification
+  python scripts/run_full_pipeline.py --force-simplify
+
+  # Idempotent: Skip steps with existing outputs
+  python scripts/run_full_pipeline.py
+  # (This is the default behavior - steps with existing outputs are skipped)
         """
     )
 
@@ -362,22 +372,38 @@ Examples:
         current_step += 1
         print_step(current_step, total_steps, f"Generate level {level} (broader concepts)")
 
-        print(f"This step generates progressively broader content for level {level}:")
-        print("  1. Suggest broader Wikipedia articles (GPT-5-nano)")
-        print("  2. Download articles")
-        print("  3. Generate embeddings and project to UMAP")
-        print("  4. Extract concepts (GPT-5-nano)")
-        print("  5. Generate questions (GPT-5-nano)")
-        print(f"Estimated time: 2-3 hours per level")
-        print(f"Estimated cost: ~$0.50 per level")
-        print()
+        # Check if outputs already exist
+        level_outputs = [
+            f'wikipedia_articles_level_{level}.json',
+            f'level_{level}_concepts.json',
+            f'cell_questions_level_{level}.json'
+        ]
+        should_skip, reason = should_skip_step(level_outputs, args.force_level, args.force)
 
-        if not run_command(
-            ['python3', '-u', 'scripts/generate_level_n.py', '--level', str(level)],
-            f"Level {level} generation",
-            args.dry_run
-        ):
-            return 1
+        if should_skip:
+            print(f"⏭️  Skipping level {level} generation - {reason}")
+            print(f"   Existing files: {', '.join(level_outputs)}")
+            print(f"   Use --force-level or --force to rerun")
+            print()
+        else:
+            print(f"This step generates progressively broader content for level {level}:")
+            print("  1. Suggest broader Wikipedia articles (GPT-5-nano)")
+            print("  2. Download articles")
+            print("  3. Generate embeddings and project to UMAP")
+            print("  4. Extract concepts (GPT-5-nano)")
+            print("  5. Generate questions (GPT-5-nano)")
+            print(f"Estimated time: 2-3 hours per level")
+            print(f"Estimated cost: ~$0.50 per level")
+            if reason == "forced":
+                print(f"⚠️  Forcing rebuild (will overwrite existing files)")
+            print()
+
+            if not run_command(
+                ['python3', '-u', 'scripts/generate_level_n.py', '--level', str(level)],
+                f"Level {level} generation",
+                args.dry_run
+            ):
+                return 1
 
     # Step: Simplify questions for levels 2, 3, 4
     simplify_levels = [l for l in [2, 3, 4] if l in level_range or not args.skip_level_0]
@@ -386,39 +412,63 @@ Examples:
         level_name = {4: "middle school", 3: "high school", 2: "undergraduate"}[level]
         print_step(current_step, total_steps, f"Simplify level {level} questions ({level_name})")
 
-        print(f"This step simplifies level {level} questions to {level_name} reading level:")
-        print("  - Pass 1: Simplify existing questions with readability validation")
-        print("  - Pass 2: Generate new questions if Pass 1 fails")
-        print("  - Uses LaTeX notation for math ($x^2$, $\\frac{1}{2}$, etc.)")
-        print(f"Estimated time: 15-30 minutes")
-        print(f"Estimated cost: ~$0.05-0.10")
-        print()
+        # Check if outputs already exist
+        simplify_outputs = [f'cell_questions_level_{level}_simplified.json']
+        should_skip, reason = should_skip_step(simplify_outputs, args.force_simplify, args.force)
 
-        if not run_command(
-            ['python3', '-u', 'scripts/simplify_questions.py', '--level', str(level)],
-            f"Level {level} simplification",
-            args.dry_run
-        ):
-            return 1
+        if should_skip:
+            print(f"⏭️  Skipping level {level} simplification - {reason}")
+            print(f"   Existing files: {', '.join(simplify_outputs)}")
+            print(f"   Use --force-simplify or --force to rerun")
+            print()
+        else:
+            print(f"This step simplifies level {level} questions to {level_name} reading level:")
+            print("  - Pass 1: Simplify existing questions with readability validation")
+            print("  - Pass 2: Generate new questions if Pass 1 fails")
+            print("  - Uses LaTeX notation for math ($x^2$, $\\frac{1}{2}$, etc.)")
+            print(f"Estimated time: 15-30 minutes")
+            print(f"Estimated cost: ~$0.05-0.10")
+            if reason == "forced":
+                print(f"⚠️  Forcing rebuild (will overwrite existing files)")
+            print()
+
+            if not run_command(
+                ['python3', '-u', 'scripts/simplify_questions.py', '--level', str(level)],
+                f"Level {level} simplification",
+                args.dry_run
+            ):
+                return 1
 
     # Step: Merge all levels
     if not args.skip_merge:
         current_step += 1
         print_step(current_step, total_steps, "Merge multi-level data")
 
-        print("This step merges all level outputs into final unified files.")
-        print("Outputs:")
-        print("  - wikipedia_articles.json (deduplicated)")
-        print("  - cell_questions.json (merged by cell)")
-        print("Estimated time: 1-2 minutes")
-        print()
+        # Check if outputs already exist
+        merge_outputs = ['wikipedia_articles.json', 'cell_questions.json', 'notes/merge_validation_report.json']
+        should_skip, reason = should_skip_step(merge_outputs, args.force_merge, args.force)
 
-        if not run_command(
-            ['python3', 'scripts/merge_multi_level_data.py'],
-            "Data merging",
-            args.dry_run
-        ):
-            return 1
+        if should_skip:
+            print(f"⏭️  Skipping data merge - {reason}")
+            print(f"   Existing files: {', '.join(merge_outputs)}")
+            print(f"   Use --force-merge or --force to rerun")
+            print()
+        else:
+            print("This step merges all level outputs into final unified files.")
+            print("Outputs:")
+            print("  - wikipedia_articles.json (deduplicated)")
+            print("  - cell_questions.json (merged by cell)")
+            print("Estimated time: 1-2 minutes")
+            if reason == "forced":
+                print(f"⚠️  Forcing rebuild (will overwrite existing files)")
+            print()
+
+            if not run_command(
+                ['python3', 'scripts/merge_multi_level_data.py'],
+                "Data merging",
+                args.dry_run
+            ):
+                return 1
 
     # Pipeline complete
     print_header("✓ PIPELINE COMPLETE")

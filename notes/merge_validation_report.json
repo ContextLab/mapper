@@ -7,8 +7,8 @@
     "errors": []
   },
   "cell_questions": {
-    "total_cells": 1457,
-    "total_questions": 14294,
+    "total_cells": 339,
+    "total_questions": 1059,
     "duplicate_cells": [],
     "invalid_coordinates": [],
     "errors": []
@@ -55,10 +55,10 @@
       "removed_no_parents": 1194
     },
     "questions": {
-      "total_questions": 14294,
-      "questions_with_coords": 14294,
-      "questions_no_coords": 1618,
-      "unique_cells": 1457
+      "total_questions": 1059,
+      "questions_with_coords": 1059,
+      "questions_no_coords": 828,
+      "unique_cells": 339
     }
   }
 }

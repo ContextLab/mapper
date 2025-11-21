@@ -2409,7 +2409,8 @@
         function renderQuestion() {
             const q = questionsData[currentQuestion];
             questionNumber.textContent = `Question ${currentQuestion + 1} of ${questionsData.length}`;
-            questionText.innerHTML = q.question;
+            // Use textContent to safely insert the question text (avoids HTML parsing issues with < > etc)
+            questionText.textContent = q.question;
 
             optionsContainer.innerHTML = '';
             // Convert options object {A: "...", B: "...", C: "...", D: "..."} to array
@@ -2424,10 +2425,17 @@
                     selectedOption = index;
                 }
 
-                optionDiv.innerHTML = `
-                    <span class="option-label">${String.fromCharCode(65 + index)}</span>
-                    <span class="option-text">${option}</span>
-                `;
+                // Create label and text elements separately to use textContent
+                const labelSpan = document.createElement('span');
+                labelSpan.className = 'option-label';
+                labelSpan.textContent = String.fromCharCode(65 + index);
+
+                const textSpan = document.createElement('span');
+                textSpan.className = 'option-text';
+                textSpan.textContent = option;
+
+                optionDiv.appendChild(labelSpan);
+                optionDiv.appendChild(textSpan);
 
                 optionDiv.addEventListener('click', () => selectOption(index, optionDiv));
                 optionsContainer.appendChild(optionDiv);

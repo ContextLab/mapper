@@ -136,13 +136,66 @@ def get_simplification_prompt(level: int) -> str:
     """
     config = LEVEL_CONFIG[level]
 
+    # Add readability examples for levels that need simplification
+    readability_guidance = ""
+    if level == 4:  # Middle school
+        readability_guidance = """
+
+READABILITY TARGET: Flesch-Kincaid grade level 6-8 (middle school reading level)
+
+Writing Rules for Middle School (ages 11-14):
+- Use sentences under 20 words
+- Break complex sentences into shorter ones
+- Use simple, everyday words instead of technical terms
+- Use active voice (subject does action): "Neurons send signals" not "Signals are sent by neurons"
+- Avoid multi-clause sentences with embedded explanations
+- Replace abstract concepts with concrete examples when possible
+
+EXAMPLES OF GOOD SIMPLIFICATION:
+
+Example 1:
+❌ BAD (Grade 14): "Why do emergent properties of the brain, such as patterns of learning, arise from interactions among neurons rather than being localized in a single neuron?"
+✅ GOOD (Grade 8): "Why do complex brain abilities like learning come from many neurons working together instead of from just one neuron?"
+
+Example 2:
+❌ BAD (Grade 15): "How does multilevel integration and communication across cells and tissues enable a coherent physiological response to a perturbation?"
+✅ GOOD (Grade 8): "When something disturbs the body, how do different body parts work together to respond in a coordinated way?"
+
+Example 3:
+❌ BAD (Grade 16): "Emergent properties arise from nonlinear interactions and feedback across multiple scales generating novel patterns."
+✅ GOOD (Grade 7): "New patterns appear when many parts interact and affect each other in complex ways."
+
+Example 4:
+❌ BAD (Grade 13): "The implementation of recursive algorithms necessitates consideration of computational complexity."
+✅ GOOD (Grade 8): "When you use a function that calls itself, you need to think about how much time and memory it uses."""
+    elif level == 3:  # High school
+        readability_guidance = """
+
+READABILITY TARGET: Flesch-Kincaid grade level 10-12 (high school reading level)
+
+Writing Rules:
+- Keep sentences clear and under 25 words when possible
+- Use intermediate-level vocabulary
+- Break very complex sentences into two sentences
+- Keep some technical terms but explain them simply"""
+    elif level == 2:  # Undergraduate
+        readability_guidance = """
+
+READABILITY TARGET: Flesch-Kincaid grade level 14-16 (undergraduate reading level)
+
+Writing Rules:
+- Use clear academic language
+- Technical terms are acceptable when necessary
+- Maintain precision while being reasonably concise"""
+
     return f"""You are an expert educator simplifying questions for {config['target_audience']}.
+{readability_guidance}
 
 Given a Wikipedia article and a complex question:
 1. Simplify the question content to be age-appropriate for {config['target_audience']}
    - Simplification level: {config['simplification_level']}
    - Target concepts: {config['example_concepts']}
-2. Simplify wording to be clear and concise
+2. Simplify wording to be clear and concise - FOLLOW THE WRITING RULES ABOVE
 3. Convert any math notation to inline LaTeX using $...$ delimiters
    Examples:
    - x^2 → $x^2$ or $x^{{2}}$
@@ -181,16 +234,71 @@ def get_generation_prompt(level: int) -> str:
     """
     config = LEVEL_CONFIG[level]
 
+    # Add readability examples for levels that need simplification
+    readability_guidance = ""
+    if level == 4:  # Middle school
+        readability_guidance = """
+
+READABILITY TARGET: Flesch-Kincaid grade level 6-8 (middle school reading level)
+
+Writing Rules for Middle School (ages 11-14):
+- Use sentences under 20 words
+- Use simple, concrete scenarios instead of abstract explanations
+- Use everyday words, not technical jargon
+- Use active voice: "The mouse runs" not "Running is done by the mouse"
+- Ask about specific examples or experiments, not general principles
+- Break complex ideas into simple cause-and-effect
+
+EXAMPLES OF GOOD MIDDLE SCHOOL QUESTIONS:
+
+Example 1 (Biology):
+"A scientist removes a small part of a mouse's brain. The mouse can still see and hear, but it cannot remember how to find food it stored yesterday. What does this tell us about the brain?"
+(Grade 7 - concrete scenario, simple cause-effect)
+
+Example 2 (Physics):
+"You drop a ball from a ladder. It bounces back up but not as high as where you dropped it. Where did some of the energy go?"
+(Grade 8 - everyday scenario, simple question)
+
+Example 3 (Systems thinking):
+"In a school club, one person makes rules, another person checks if rules are followed, and another person manages the money. Why does splitting up these jobs help the club work better?"
+(Grade 7 - relatable analogy, concrete roles)
+
+Example 4 (Decision theory):
+"Sam can choose: (A) get $10 for sure, or (B) flip a coin and get $25 if heads, $0 if tails. Most people pick option A even though B has higher average value. Why?"
+(Grade 8 - simple numbers, relatable choice)"""
+    elif level == 3:  # High school
+        readability_guidance = """
+
+READABILITY TARGET: Flesch-Kincaid grade level 10-12 (high school reading level)
+
+Writing Rules:
+- Use clear scenarios or examples
+- Keep sentences under 25 words when possible
+- Use intermediate-level vocabulary
+- Some technical terms are okay if explained in context"""
+    elif level == 2:  # Undergraduate
+        readability_guidance = """
+
+READABILITY TARGET: Flesch-Kincaid grade level 14-16 (undergraduate reading level)
+
+Writing Rules:
+- Use clear academic language
+- Technical terms are acceptable when necessary
+- Can use more complex scenarios and multi-step reasoning"""
+
     return f"""You are an expert educator creating NEW questions for {config['target_audience']}.
+{readability_guidance}
 
 Given a Wikipedia article and concepts that should be tested:
 1. Generate a NEW question (not a simplification) at the appropriate level
    - Target audience: {config['target_audience']}
    - Target concepts: {config['example_concepts']}
+   - FOLLOW THE WRITING RULES AND EXAMPLES ABOVE
 2. Test the same core concepts as the original
-3. Use inline LaTeX for any math: $x^2$, $\\frac{{1}}{{2}}$, $\\sqrt{{x}}$, $\\alpha$
-4. Maintain factual accuracy based on the article
-5. Create 4 plausible options with one clearly correct answer
+3. Use concrete scenarios and examples (not abstract explanations)
+4. Use inline LaTeX for any math: $x^2$, $\\frac{{1}}{{2}}$, $\\sqrt{{x}}$, $\\alpha$
+5. Maintain factual accuracy based on the article
+6. Create 4 plausible options with one clearly correct answer
 
 Return ONLY valid JSON (no markdown, no explanation):
 {{
@@ -638,7 +746,7 @@ def simplify_level(
         description=f"Level {level} simplification (Pass 1)",
         model="gpt-5-mini",
         temperature=1.0,
-        max_tokens=1000,
+        max_tokens=10000,
         response_format=response_format,
         poll_interval=60,
         timeout=3600  # 1 hour timeout
@@ -768,7 +876,7 @@ def simplify_level(
             description=f"Level {level} generation (Pass 2)",
             model="gpt-5-mini",
             temperature=1.0,
-            max_tokens=1000,
+            max_tokens=10000,
             response_format=response_format_pass2,
             poll_interval=60,
             timeout=3600  # 1 hour timeout

@@ -2321,10 +2321,11 @@
 
             // Render LaTeX with KaTeX after DOM update
             if (typeof renderMathInElement !== 'undefined') {
-                // Pre-process text to escape currency patterns before KaTeX processes them
-                // Matches patterns like "$1.0$B" or "$2.0$ billion" where the $ delimiters
-                // immediately surround just a number (likely currency, not math)
+                // Pre-process text to replace currency patterns with HTML entities
+                // This prevents KaTeX from treating "$1.0$B" as LaTeX delimiters
                 const escapeCurrency = (element) => {
+                    console.log('escapeCurrency called on:', element.innerHTML.substring(0, 200));
+
                     // Walk through all text nodes
                     const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
                     const textNodes = [];
@@ -2332,16 +2333,49 @@
                         textNodes.push(walker.currentNode);
                     }
 
+                    console.log('Found', textNodes.length, 'text nodes');
+
                     // Process each text node
                     textNodes.forEach(node => {
                         const original = node.textContent;
-                        // Match $number$ patterns followed by optional B/billion/million etc.
-                        // These are likely currency amounts, not mathematical expressions
-                        let modified = original.replace(/\$(\d+(?:\.\d+)?)\$\s*([BbMmKk]|billion|million|thousand)?/g, '\\$$1 $2');
+                        // Match $number$ patterns (with or without space) followed by B/billion/etc
+                        // IMPORTANT: We need to replace with HTML entity $ (which becomes $ in the DOM)
+                        // BUT we're working with textContent, not innerHTML, so we can't use HTML entities!
+                        // Instead, we'll use a placeholder that we convert after
+                        let modified = original.replace(/\$(\d+(?:\.\d+)?)\$\s*([BbMmKk]|billion|million|thousand)/g, (match, number, suffix) => {
+                            console.log('Matched currency pattern:', match, '-> replacing with placeholder');
+                            return '___DOLLAR___' + number + ' ' + suffix;
+                        });
+
+                        // Also handle standalone $number$ that's likely currency (no suffix)
+                        // Only if it's a simple number without operators
+                        modified = modified.replace(/\$(\d+(?:\.\d+)?)\$/g, (match, number, offset, string) => {
+                            // Check if this looks like currency (simple number, not part of math expression)
+                            // Don't replace if it's followed by math operators or surrounded by backslashes
+                            const before = string[offset - 1] || '';
+                            const after = string[offset + match.length] || '';
+
+                            if (before !== '\\' && after !== '\\' && !/[+\-*/^_=<>\\]/.test(after)) {
+                                console.log('Matched standalone currency:', match, '-> replacing with placeholder');
+                                return '___DOLLAR___' + number;
+                            }
+                            return match;
+                        });
+
                         if (modified !== original) {
+                            console.log('Text changed from:', original.substring(0, 100));
+                            console.log('              to:', modified.substring(0, 100));
                             node.textContent = modified;
                         }
                     });
+
+                    // After KaTeX won't see them, replace placeholders with actual $ via innerHTML
+                    // This is safe because we're only replacing our own placeholders
+                    const tempHTML = element.innerHTML;
+                    if (tempHTML.includes('___DOLLAR___')) {
+                        element.innerHTML = tempHTML.replace(/___DOLLAR___([\d.]+(?:\s+(?:[BbMmKk]|billion|million|thousand))?)/g, '<span class="no-katex">$$$1</span>');
+                        console.log('Replaced placeholders with currency spans (no-katex class)');
+                    }
                 };
 
                 // Escape currency patterns in question and options
@@ -2354,6 +2388,7 @@
                         {left: '$', right: '$', display: false}
                     ],
                     ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+                    ignoredClasses: ['no-katex'],
                     throwOnError: false
                 });
 
@@ -2367,6 +2402,7 @@
                             {left: '$', right: '$', display: false}
                         ],
                         ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+                        ignoredClasses: ['no-katex'],
                         throwOnError: false
                     });
                 });

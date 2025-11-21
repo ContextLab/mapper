@@ -636,9 +636,9 @@ def simplify_level(
         requests=batch_requests,
         system_prompt=system_prompt,
         description=f"Level {level} simplification (Pass 1)",
-        model="gpt-5-nano",
-        temperature=1.0,  # gpt-5-nano default is 1.0
-        max_tokens=10000,  # Large limit for reasoning + output (gpt-5-nano uses reasoning tokens)
+        model="gpt-5-mini",
+        temperature=1.0,
+        max_tokens=1000,
         response_format=response_format,
         poll_interval=60,
         timeout=3600  # 1 hour timeout
@@ -766,9 +766,9 @@ def simplify_level(
             requests=pass2_requests,
             system_prompt=system_prompt_pass2,
             description=f"Level {level} generation (Pass 2)",
-            model="gpt-5-nano",
-            temperature=1.0,  # gpt-5-nano default is 1.0
-            max_tokens=10000,  # Large limit for reasoning + output (gpt-5-nano uses reasoning tokens)
+            model="gpt-5-mini",
+            temperature=1.0,
+            max_tokens=1000,
             response_format=response_format_pass2,
             poll_interval=60,
             timeout=3600  # 1 hour timeout

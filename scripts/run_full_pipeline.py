@@ -187,6 +187,8 @@ Examples:
                        help='Skip final data merging')
     parser.add_argument('--skip-readability', action='store_true',
                        help='Skip adding readability scores')
+    parser.add_argument('--skip-latex', action='store_true',
+                       help='Skip LaTeX disambiguation')
     parser.add_argument('--dry-run', action='store_true',
                        help='Show what would run without executing')
 
@@ -207,6 +209,8 @@ Examples:
                        help='Force data merging even if outputs exist')
     parser.add_argument('--force-readability', action='store_true',
                        help='Force readability score addition even if scores exist')
+    parser.add_argument('--force-latex', action='store_true',
+                       help='Force LaTeX disambiguation even if cell_questions_parsed.json exists')
 
     args = parser.parse_args()
 
@@ -240,6 +244,9 @@ Examples:
     if not args.skip_readability:
         total_steps += 1
 
+    if not args.skip_latex:
+        total_steps += 1
+
     # Print pipeline overview
     print_header("MULTI-LEVEL KNOWLEDGE MAP PIPELINE")
     print(f"Started: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -253,6 +260,7 @@ Examples:
     print(f"  Levels 1-4: {list(level_range)}")
     print(f"  Data merging: {'SKIP' if args.skip_merge else 'RUN'}")
     print(f"  Readability scores: {'SKIP' if args.skip_readability else 'RUN'}")
+    print(f"  LaTeX disambiguation: {'SKIP' if args.skip_latex else 'RUN'}")
     print(f"  Mode: {'DRY RUN' if args.dry_run else 'EXECUTE'}")
     print()
 
@@ -542,6 +550,39 @@ Examples:
             ):
                 return 1
 
+    # Step: Disambiguate LaTeX from currency symbols
+    if not args.skip_latex:
+        current_step += 1
+        print_step(current_step, total_steps, "Disambiguate LaTeX from currency symbols")
+
+        # Check if outputs already exist
+        latex_outputs = ['cell_questions_parsed.json', 'notes/latex_disambiguation_report.json']
+        should_skip, reason = should_skip_step(latex_outputs, args.force_latex, args.force)
+
+        if should_skip:
+            print(f"⏭️  Skipping LaTeX disambiguation - {reason}")
+            print(f"   Existing files: {', '.join(latex_outputs)}")
+            print(f"   Use --force-latex or --force to rerun")
+            print()
+        else:
+            print("This step uses GPT-5-nano to distinguish LaTeX math notation")
+            print("from currency symbols in all questions.")
+            print("Outputs:")
+            print("  - cell_questions_parsed.json (disambiguated questions)")
+            print("  - notes/latex_disambiguation_report.json (processing report)")
+            print("Estimated time: 2-5 minutes")
+            print("Estimated cost: $0.01-0.02")
+            if reason == "forced":
+                print(f"⚠️  Forcing rebuild (will overwrite existing files)")
+            print()
+
+            if not run_command(
+                ['python3', 'scripts/disambiguate_latex.py'],
+                "LaTeX disambiguation",
+                args.dry_run
+            ):
+                return 1
+
     # Pipeline complete
     print_header("✓ PIPELINE COMPLETE")
     print(f"Completed: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -573,7 +614,9 @@ Examples:
         print("Final Merged Outputs:")
         print("  - wikipedia_articles.json - All articles (deduplicated)")
         print("  - cell_questions.json - All questions (merged by cell)")
+        print("  - cell_questions_parsed.json - LaTeX-disambiguated questions")
         print("  - notes/merge_validation_report.json - Validation results")
+        print("  - notes/latex_disambiguation_report.json - LaTeX processing report")
         print()
         print("Next steps:")
         print("  1. Review validation report: cat notes/merge_validation_report.json")

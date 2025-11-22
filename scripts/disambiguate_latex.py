@@ -98,26 +98,47 @@ def disambiguate_string_batch(strings: List[str]) -> List[str]:
     examples = [
         {
             "input": "The GDP is $5.2 trillion but growth follows $x^2$ where $x$ is years.",
-            "output": "The GDP is \\$5.2 trillion but growth follows $x^2$ where $x$ is years."
+            "output": "The GDP is \\$5.2 trillion but growth follows $x^2$ where $x$ is years.",
+            "explanation": "Currency phrase vs LaTeX math expression"
         },
         {
             "input": "Calculate $\\frac{1}{2}$ of $100 billion",
-            "output": "Calculate $\\frac{1}{2}$ of \\$100 billion"
+            "output": "Calculate $\\frac{1}{2}$ of \\$100 billion",
+            "explanation": "LaTeX fraction vs currency amount with word 'billion'"
         },
         {
             "input": "If $a > b$ and costs $50, find $c = a + b$",
-            "output": "If $a > b$ and costs \\$50, find $c = a + b$"
+            "output": "If $a > b$ and costs \\$50, find $c = a + b$",
+            "explanation": "LaTeX inequalities/equations vs standalone currency with 'costs'"
+        },
+        {
+            "input": "Reserve $20$ of the $100$ seats for students",
+            "output": "Reserve $20$ of the $100$ seats for students",
+            "explanation": "Both are numbers in LaTeX delimiters for consistency, not currency"
+        },
+        {
+            "input": "Admits $90$ students from Group A and $10$ from Group B",
+            "output": "Admits $90$ students from Group A and $10$ from Group B",
+            "explanation": "Numbers of students in LaTeX delimiters, not currency"
         }
     ]
 
-    prompt = f"""You are a LaTeX disambiguation expert. Your task is to distinguish between LaTeX math notation (like $x^2$, $\\frac{{1}}{{2}}$) and currency symbols (like $5 billion, $100).
+    prompt = f"""You are a LaTeX disambiguation expert. Your task is to distinguish between LaTeX math notation and currency symbols.
 
-Rules:
-1. LaTeX math uses $ delimiters: $expression$ or $$expression$$
-2. Currency uses $ before numbers: $5, $100 billion, $1.2 trillion
-3. For currency, escape the $ as \\$ so it won't be interpreted as LaTeX
-4. For LaTeX math, keep $ delimiters unchanged
-5. Preserve all other text exactly as-is
+CRITICAL RULES:
+1. If a number is ALREADY wrapped in LaTeX delimiters (like $20$ or $100$), keep it unchanged - it's intentional LaTeX formatting
+2. Only escape $ when it appears BEFORE a number WITHOUT closing delimiter (like $5 billion, $100 million, $1.2 trillion)
+3. LaTeX delimiters come in pairs: $...$ or $$...$$
+4. Currency $ is typically followed by space or number and currency words (billion, million, trillion, thousand)
+5. When text has "costs $50" or "$50 fee" (unpaired $), that's currency - escape it as \\$50
+6. Mathematical expressions ($x^2$, $\\frac{{1}}{{2}}$, $a > b$, $Q_{{d}}=Q_{{s}}$) always keep delimiters
+7. Preserve all other text exactly as-is
+
+Key distinction:
+- "$20$ students" = LaTeX formatting (both $ are delimiters) → KEEP AS IS
+- "$20 million" = Currency (single $ before amount) → ESCAPE as \\$20 million
+- "costs $50" = Currency (unpaired $) → ESCAPE as costs \\$50
+- "$x^2$ growth" = LaTeX math → KEEP AS IS
 
 Examples:
 {json.dumps(examples, indent=2)}
@@ -125,7 +146,7 @@ Examples:
 Now process these strings:
 {json.dumps(strings, indent=2)}
 
-Return a JSON array of disambiguated strings in the same order, with currency $ escaped as \\$."""
+Return a JSON array of disambiguated strings in the same order. Only escape unpaired $ symbols that represent currency."""
 
     try:
         response = client.chat.completions.create(

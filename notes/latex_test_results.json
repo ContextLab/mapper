@@ -1,0 +1,185 @@
+{
+  "total_candidates": 20,
+  "candidates": [
+    {
+      "index": 0,
+      "type": "option",
+      "question_id": "",
+      "option_key": "B",
+      "original": "Private decisions ignore external costs or benefits, so quantity is determined by private marginal benefit and private marginal cost ($PMB$ and $PMC$) rather than social marginal benefit and social marginal cost ($SMB$ and $SMC$); for non\u2011excludable public goods, free\u2011rider behaviour reduces private provision, causing under\u2011provision relative to the social optimum.",
+      "disambiguated": "Private decisions ignore external costs or benefits, so quantity is determined by private marginal benefit and private marginal cost ($PMB$ and $PMC$) rather than social marginal benefit and social marginal cost ($SMB$ and $SMC$); for non\u2001excludable public goods, free\u2001rider behaviour reduces private provision, causing under\u2001provision relative to the social optimum.",
+      "changed": true
+    },
+    {
+      "index": 1,
+      "type": "question",
+      "question_id": "",
+      "option_key": null,
+      "original": "A town of 100,000 faces a contagious viral illness and rising opioid misuse. Most residents have insurance that pays 90% of treatment costs. Private clinics offer extra procedures, and patients rarely see the full price. A new vaccine costs $200 per person and directly increases an individual's quality-adjusted life years (QALYs) by 0.01. Because vaccination reduces transmission, the indirect benefit per vaccinated person is estimated to raise total QALYs by 0.03. Health officials must choose a policy. Which option best follows health-economics reasoning about third-party payers, externalities, and QALY measurement uncertainty? (Note: direct cost per QALY = $200/0.01 = $20,000; including indirect benefits cost per QALY \u2248 $200/0.03 = $6,667.)",
+      "disambiguated": "A town of 100,000 faces a contagious viral illness and rising opioid misuse. Most residents have insurance that pays 90% of treatment costs. Private clinics offer extra procedures, and patients rarely see the full price. A new vaccine costs \\$200 per person and directly increases an individual's quality-adjusted life years (QALYs) by 0.01. Because vaccination reduces transmission, the indirect benefit per vaccinated person is estimated to raise total QALYs by 0.03. Health officials must choose a policy. Which option best follows health-economics reasoning about third-party payers, externalities, and QALY measurement uncertainty? (Note: direct cost per QALY = \\$200/0.01 = \\$20,000; including indirect benefits cost per QALY \u2248 \\$200/0.03 = \\$6,667.)",
+      "changed": true
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "question_id": "",
+      "option_key": null,
+      "original": "Astronomers report two newly discovered Sun-orbiting bodies. Object X has mean radius $650\\,\\mathrm{km}$, bulk density $1.6\\,\\mathrm{g\\,cm^{-3}}$, an approximately ellipsoidal shape in images, and a nearly circular orbit at $42\\,$AU within the classical Kuiper belt. Object Y has mean radius $400\\,\\mathrm{km}$, bulk density $3.2\\,\\mathrm{g\\,cm^{-3}}$, an irregular, non-equilibrium shape, and an orbit with semimajor axis $1.02\\,$AU and perihelion $0.80\\,$AU that crosses Earth's orbit. According to the IAU criteria and the taxonomy of small bodies, which classification best fits these objects and why?",
+      "disambiguated": "Astronomers report two newly discovered Sun-orbiting bodies. Object X has mean radius $650\\,\\mathrm{km}$, bulk density $1.6\\,\\mathrm{g\\,cm^{-3}}$, an approximately ellipsoidal shape in images, and a nearly circular orbit at $42\\,$AU within the classical Kuiper belt. Object Y has mean radius $400\\,\\mathrm{km}$, bulk density $3.2\\,\\mathrm{g\\,cm^{-3}}$, an irregular, non-equilibrium shape, and an orbit with semimajor axis $1.02\\,$AU and perihelion $0.80\\,$AU that crosses Earth's orbit. According to the IAU criteria and the taxonomy of small bodies, which classification best fits these objects and why?",
+      "changed": false
+    },
+    {
+      "index": 3,
+      "type": "option",
+      "question_id": "",
+      "option_key": "D",
+      "original": "Object X should be classed as a planet because its radius exceeds $600\\,$km so it must clear a neighbourhood eventually, and Object Y is most properly classified as a comet because Earth\u2011crossing orbits imply volatile activity even if none has been observed.",
+      "disambiguated": "Object X should be classed as a planet because its radius exceeds $600\\,$km so it must clear a neighbourhood eventually, and Object Y is most properly classified as a comet because Earth\u2010crossing orbits imply volatile activity even if none has been observed.",
+      "changed": true
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "question_id": "",
+      "option_key": null,
+      "original": "A public university admits $100$ students each year from an applicant pool of $800$ majority-group applicants (Group A) and $200$ underrepresented-group applicants (Group B). Under baseline meritocratic admissions (no special measures) the university admits $90$ students from Group A and $10$ from Group B; graduation probabilities are $0.90$ for admitted Group A students and $0.70$ for admitted Group B students. Two policy alternatives are proposed:\n\nPolicy 1 (Quota): reserve $20$ of the $100$ seats for Group B (the other $80$ filled by merit); assume Group B admitted under the quota have a lower graduation probability of $0.60$ due to preparedness mismatch, while Group A graduates at $0.90$.\n\nPolicy 2 (Positive action + supports): no rigid quota, but targeted outreach increases Group B applicants so that the university admits $25$ Group B and $75$ Group A; the university also adds mentoring and bridge programs that raise Group B admitted students' graduation probability to $0.85$, while Group A graduation remains $0.90$.\n\nUsing these numbers, which policy best advances the normative goal of substantive equality (bridging inequality in both participation and successful outcomes) while minimizing the principal trade-offs discussed in debates (reverse discrimination and mismatch)?",
+      "disambiguated": "A public university admits $100$ students each year from an applicant pool of $800$ majority-group applicants (Group A) and $200$ underrepresented-group applicants (Group B). Under baseline meritocratic admissions (no special measures) the university admits $90$ students from Group A and $10$ from Group B; graduation probabilities are $0.90$ for admitted Group A students and $0.70$ for admitted Group B students. Two policy alternatives are proposed:\n\nPolicy 1 (Quota): reserve \\$20 of the $100$ seats for Group B (the other $80$ filled by merit); assume Group B admitted under the quota have a lower graduation probability of $0.60$ due to preparedness mismatch, while Group A graduates at $0.90$.\n\nPolicy 2 (Positive action + supports): no rigid quota, but targeted outreach increases Group B applicants so that the university admits $25$ Group B and $75$ Group A; the university also adds mentoring and bridge programs that raise Group B admitted students' graduation probability to $0.85$, while Group A graduation remains $0.90$.\n\nUsing these numbers, which policy best advances the normative goal of substantive equality (bridging inequality in both participation and successful outcomes) while minimizing the principal trade-offs discussed in debates (reverse discrimination and mismatch)?",
+      "changed": true
+    },
+    {
+      "index": 5,
+      "type": "option",
+      "question_id": "",
+      "option_key": "A",
+      "original": "Policy 2. It yields $75\\times0.90=67.5$ Group A graduates and $25\\times0.85=21.25$ Group B graduates (total $88.75$ graduates), raises Group B representation among admitted students to 25% and among graduates to ~24%, and mitigates mismatch through supports while avoiding a rigid quota that could trigger stronger reverse-discrimination objections.",
+      "disambiguated": "Policy 2. It yields $75\\times0.90=67.5$ Group A graduates and $25\\times0.85=21.25$ Group B graduates (total $88.75$ graduates), raises Group B representation among admitted students to 25% and among graduates to ~24%, and mitigates mismatch through supports while avoiding a rigid quota that could trigger stronger reverse-discrimination objections.",
+      "changed": false
+    },
+    {
+      "index": 6,
+      "type": "option",
+      "question_id": "",
+      "option_key": "B",
+      "original": "Policy 1. The quota raises Group B admissions to 20 and produces $80\\times0.90=72$ Group A graduates plus $20\\times0.60=12$ Group B graduates (total $84$ graduates). It clearly increases representation relative to baseline but reduces overall successful outcomes and risks mismatch and stronger claims of reverse discrimination.",
+      "disambiguated": "Policy 1. The quota raises Group B admissions to 20 and produces $80\\times0.90=72$ Group A graduates plus $20\\times0.60=12$ Group B graduates (total $84$ graduates). It clearly increases representation relative to baseline but reduces overall successful outcomes and risks mismatch and stronger claims of reverse discrimination.",
+      "changed": false
+    },
+    {
+      "index": 7,
+      "type": "option",
+      "question_id": "",
+      "option_key": "C",
+      "original": "Baseline meritocratic admissions. It produces $90\\times0.90=81$ Group A graduates and $10\\times0.70=7$ Group B graduates (total $88$ graduates), maximizes per-student preparedness and avoids reverse-discrimination, and therefore best satisfies substantive equality by preserving academic standards.",
+      "disambiguated": "Baseline meritocratic admissions. It produces $90\\times0.90=81$ Group A graduates and $10\\times0.70=7$ Group B graduates (total $88$ graduates), maximizes per-student preparedness and avoids reverse-discrimination, and therefore best satisfies substantive equality by preserving academic standards.",
+      "changed": false
+    },
+    {
+      "index": 8,
+      "type": "question",
+      "question_id": "",
+      "option_key": null,
+      "original": "In a perfectly competitive market, why do prices tend to move to the market-clearing level where $Q_{d}=Q_{s}$, and how does price adjustment operate when either the demand or supply curve shifts?",
+      "disambiguated": "In a perfectly competitive market, why do prices tend to move to the market-clearing level where $Q_{d}=Q_{s}$, and how does price adjustment operate when either the demand or supply curve shifts?",
+      "changed": false
+    },
+    {
+      "index": 9,
+      "type": "option",
+      "question_id": "",
+      "option_key": "A",
+      "original": "A central planner or authority sets the price so that $Q_{d}=Q_{s}$, deliberately balancing the two quantities.",
+      "disambiguated": "A central planner or authority sets the price so that $Q_{d}=Q_{s}$, deliberately balancing the two quantities.",
+      "changed": false
+    },
+    {
+      "index": 10,
+      "type": "option",
+      "question_id": "",
+      "option_key": "B",
+      "original": "If $Q_{d}>Q_{s}$ (excess demand) this puts upward pressure on price, and if $Q_{s}>Q_{d}$ (excess supply) this puts downward pressure on price; those price changes change quantities demanded and supplied until $Q_{d}=Q_{s}$.",
+      "disambiguated": "If $Q_{d}>Q_{s}$ (excess demand) this puts upward pressure on price, and if $Q_{s}>Q_{d}$ (excess supply) this puts downward pressure on price; those price changes change quantities demanded and supplied until $Q_{d}=Q_{s}$.",
+      "changed": false
+    },
+    {
+      "index": 11,
+      "type": "option",
+      "question_id": "",
+      "option_key": "C",
+      "original": "Because at the original price there is a surplus ($Q_{s} > Q_{d}$). Price falls to eliminate the surplus. As price falls, $Q_{d}$ rises and $Q_{s}$ falls until $Q_{d} = Q_{s}$, giving a lower price and higher quantity.",
+      "disambiguated": "Because at the original price there is a surplus ($Q_{s} > Q_{d}$). Price falls to eliminate the surplus. As price falls, $Q_{d}$ rises and $Q_{s}$ falls until $Q_{d} = Q_{s}$, giving a lower price and higher quantity.",
+      "changed": false
+    },
+    {
+      "index": 12,
+      "type": "question",
+      "question_id": "",
+      "option_key": null,
+      "original": "Country Z experiences an unanticipated $10\\%$ increase in the aggregate price level $P$ while nominal wages are fixed by year-long contracts. At the time of the shock many firms run substantially underused capital (idle machines) but some industries already operate near capacity. Which of the following best describes the short-run and long-run effects on real output $Y$ and explains why the aggregate supply curve has flat and steep regions?",
+      "disambiguated": "Country Z experiences an unanticipated $10\\%$ increase in the aggregate price level $P$ while nominal wages are fixed by year-long contracts. At the time of the shock many firms run substantially underused capital (idle machines) but some industries already operate near capacity. Which of the following best describes the short-run and long-run effects on real output $Y$ and explains why the aggregate supply curve has flat and steep regions?",
+      "changed": false
+    },
+    {
+      "index": 13,
+      "type": "option",
+      "question_id": "",
+      "option_key": "A",
+      "original": "Short run: with nominal wages fixed, the $10\\%$ rise in $P$ reduces real wages, firms hire more labour and increase $Y$ (SRAS slopes upward). Because many firms have underused fixed capital, initial increases in demand occur on a relatively flat portion of SRAS; as utilisation rises and bottlenecks appear in capacity-constrained sectors, SRAS becomes much steeper. Long run: nominal wages and other input prices adjust, so output returns to potential determined by capital, labour and technology (LRAS vertical).",
+      "disambiguated": "Short run: with nominal wages fixed, the $10\\%$ rise in $P$ reduces real wages, firms hire more labour and increase $Y$ (SRAS slopes upward). Because many firms have underused fixed capital, initial increases in demand occur on a relatively flat portion of SRAS; as utilisation rises and bottlenecks appear in capacity-constrained sectors, SRAS becomes much steeper. Long run: nominal wages and other input prices adjust, so output returns to potential determined by capital, labour and technology (LRAS vertical).",
+      "changed": false
+    },
+    {
+      "index": 14,
+      "type": "option",
+      "question_id": "",
+      "option_key": "B",
+      "original": "Short run: nominal wages immediately rise proportionally to the price level (indexation), so real wages are unchanged and $Y$ does not change; the aggregate supply curve is vertical in both the short and long run. Long run: higher prices permanently raise output because firms always expand capacity when prices rise.",
+      "disambiguated": "Short run: nominal wages immediately rise proportionally to the price level (indexation), so real wages are unchanged and $Y$ does not change; the aggregate supply curve is vertical in both the short and long run. Long run: higher prices permanently raise output because firms always expand capacity when prices rise.",
+      "changed": false
+    },
+    {
+      "index": 15,
+      "type": "option",
+      "question_id": "",
+      "option_key": "D",
+      "original": "Short run: because many firms have idle capital, any increase in $P$ is absorbed without substantial change in $Y$, so SRAS is horizontal at all output levels; as demand grows further, firms simply invest immediately and expand capacity so the AS curve never becomes steep. Long run: higher $P$ permanently increases potential output (LRAS shifts right).",
+      "disambiguated": "Short run: because many firms have idle capital, any increase in $P$ is absorbed without substantial change in $Y$, so SRAS is horizontal at all output levels; as demand grows further, firms simply invest immediately and expand capacity so the AS curve never becomes steep. Long run: higher $P$ permanently increases potential output (LRAS shifts right).",
+      "changed": false
+    },
+    {
+      "index": 16,
+      "type": "question",
+      "question_id": "",
+      "option_key": null,
+      "original": "Country Aloria has two regions, North and South, both with GDP per capita of $10{,}000$. North has strong institutions and $60\\%$ secondary-school enrollment. South has weak institutions and $30\\%$ enrollment. The national government has $100\\text{ million}$ per year and considers two multi-year plans. Plan X: a two-year firm tax cut to spur immediate investment. Plan Y: a ten-year program funding education and legal reforms to build human capital and improve institutions. If the government's main goal is long-term poverty reduction and convergence of incomes across regions, which policy is most likely to succeed and why?",
+      "disambiguated": "Country Aloria has two regions, North and South, both with GDP per capita of \\$10{,}000$. North has strong institutions and $60\\%$ secondary-school enrollment. South has weak institutions and $30\\%$ enrollment. The national government has \\$100\\text{ million}$ per year and considers two multi-year plans. Plan X: a two-year firm tax cut to spur immediate investment. Plan Y: a ten-year program funding education and legal reforms to build human capital and improve institutions. If the government's main goal is long-term poverty reduction and convergence of incomes across regions, which policy is most likely to succeed and why?",
+      "changed": true
+    },
+    {
+      "index": 17,
+      "type": "question",
+      "question_id": "",
+      "option_key": null,
+      "original": "In a genome-wide study you find the effect of allele A at gene X changes depending on which allele is present at gene Y. The combined effect of A and Y is not equal to the sum of their separate effects ($effect(A)+effect(Y)$). Why is this a hallmark of epistasis, and what is a main implication for genetic risk models that assume additive effects?",
+      "disambiguated": "In a genome-wide study you find the effect of allele A at gene X changes depending on which allele is present at gene Y. The combined effect of A and Y is not equal to the sum of their separate effects ($effect(A)+effect(Y)$). Why is this a hallmark of epistasis, and what is a main implication for genetic risk models that assume additive effects?",
+      "changed": false
+    },
+    {
+      "index": 18,
+      "type": "option",
+      "question_id": "",
+      "option_key": "B",
+      "original": "Build a Bayesian-network-based diagnostic model that integrates telemetry (packet-loss metrics), log-derived events (driver exceptions), and contextual variables (shift change), compute posterior probabilities $P(\\text{cause}|\\text{evidence})$ for candidate causes, and use the probabilistic rankings (with Occam's razor as a model-selection heuristic) to prioritize mitigations and experiments.",
+      "disambiguated": "Build a Bayesian-network-based diagnostic model that integrates telemetry (packet-loss metrics), log-derived events (driver exceptions), and contextual variables (shift change), compute posterior probabilities $P(\\text{cause}|\\text{evidence})$ for candidate causes, and use the probabilistic rankings (with Occam's razor as a model-selection heuristic) to prioritize mitigations and experiments.",
+      "changed": false
+    },
+    {
+      "index": 19,
+      "type": "question",
+      "question_id": "",
+      "option_key": null,
+      "original": "A peptide therapeutic has oral bioavailability $<1\\%$ and a plasma half-life of 1 hour. The development team wants to (i) increase systemic bioavailability to >30\\%, (ii) prolong duration of action to reduce dosing frequency, (iii) deliver antigenic signals to dermal antigen-presenting cells for a vaccine-like immune response, and (iv) enable safe self-administration without conventional hypodermic needles. Which delivery strategy best satisfies these objectives and correctly exemplifies the distinction between \"route of administration\" and \"dosage form\"?",
+      "disambiguated": "A peptide therapeutic has oral bioavailability $<1\\%$ and a plasma half-life of 1 hour. The development team wants to (i) increase systemic bioavailability to >30\\%, (ii) prolong duration of action to reduce dosing frequency, (iii) deliver antigenic signals to dermal antigen-presenting cells for a vaccine-like immune response, and (iv) enable safe self-administration without conventional hypodermic needles. Which delivery strategy best satisfies these objectives and correctly exemplifies the distinction between \"route of administration\" and \"dosage form\"?",
+      "changed": false
+    }
+  ]
+}

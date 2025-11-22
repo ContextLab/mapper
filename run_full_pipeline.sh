@@ -9,6 +9,8 @@
 # Steps:
 # 1. Run simplification for levels 4, 3, 2 (levels 1 and 0 don't need simplification)
 # 2. Merge all level data into final output files
+# 3. Add readability scores to all questions
+# 4. Disambiguate LaTeX math notation from currency symbols
 #
 # Usage:
 #   ./run_full_pipeline.sh              # Run full pipeline
@@ -37,7 +39,7 @@ echo -e "${BLUE}========================================${NC}"
 echo ""
 
 # Step 1: Simplify Level 4 (Middle School)
-echo -e "${GREEN}Step 1/5: Simplifying Level 4 (Middle School)${NC}"
+echo -e "${GREEN}Step 1/7: Simplifying Level 4 (Middle School)${NC}"
 python3 scripts/simplify_questions.py --level 4 $PILOT_FLAG
 if [ $? -ne 0 ]; then
     echo -e "${RED}Error: Level 4 simplification failed${NC}"
@@ -46,7 +48,7 @@ fi
 echo ""
 
 # Step 2: Simplify Level 3 (High School)
-echo -e "${GREEN}Step 2/5: Simplifying Level 3 (High School)${NC}"
+echo -e "${GREEN}Step 2/7: Simplifying Level 3 (High School)${NC}"
 python3 scripts/simplify_questions.py --level 3 $PILOT_FLAG
 if [ $? -ne 0 ]; then
     echo -e "${RED}Error: Level 3 simplification failed${NC}"
@@ -55,7 +57,7 @@ fi
 echo ""
 
 # Step 3: Simplify Level 2 (Undergraduate)
-echo -e "${GREEN}Step 3/5: Simplifying Level 2 (Undergraduate)${NC}"
+echo -e "${GREEN}Step 3/7: Simplifying Level 2 (Undergraduate)${NC}"
 python3 scripts/simplify_questions.py --level 2 $PILOT_FLAG
 if [ $? -ne 0 ]; then
     echo -e "${RED}Error: Level 2 simplification failed${NC}"
@@ -66,7 +68,7 @@ echo ""
 # Note: Levels 1 and 0 don't need simplification - they're already at graduate/expert level
 
 # Step 4: Merge all data
-echo -e "${GREEN}Step 4/6: Merging all level data${NC}"
+echo -e "${GREEN}Step 4/7: Merging all level data${NC}"
 python3 scripts/merge_multi_level_data.py
 if [ $? -ne 0 ]; then
     echo -e "${RED}Error: Data merge failed${NC}"
@@ -75,7 +77,7 @@ fi
 echo ""
 
 # Step 5: Add readability scores
-echo -e "${GREEN}Step 5/6: Adding readability scores to questions${NC}"
+echo -e "${GREEN}Step 5/7: Adding readability scores to questions${NC}"
 python3 scripts/add_readability_scores.py
 if [ $? -ne 0 ]; then
     echo -e "${RED}Error: Adding readability scores failed${NC}"
@@ -83,8 +85,17 @@ if [ $? -ne 0 ]; then
 fi
 echo ""
 
-# Step 6: Summary
-echo -e "${GREEN}Step 6/6: Pipeline Summary${NC}"
+# Step 6: Disambiguate LaTeX from currency symbols
+echo -e "${GREEN}Step 6/7: Disambiguating LaTeX from currency symbols${NC}"
+python3 scripts/disambiguate_latex.py
+if [ $? -ne 0 ]; then
+    echo -e "${RED}Error: LaTeX disambiguation failed${NC}"
+    exit 1
+fi
+echo ""
+
+# Step 7: Summary
+echo -e "${GREEN}Step 7/7: Pipeline Summary${NC}"
 echo -e "${BLUE}========================================${NC}"
 echo -e "${GREEN}✓ Pipeline completed successfully!${NC}"
 echo ""
@@ -93,12 +104,14 @@ echo "  - cell_questions_level_4_simplified.json"
 echo "  - cell_questions_level_3_simplified.json"
 echo "  - cell_questions_level_2_simplified.json"
 echo "  - wikipedia_articles.json (merged articles)"
-echo "  - cell_questions.json (merged questions)"
+echo "  - cell_questions.json (merged questions with readability)"
+echo "  - cell_questions_parsed.json (LaTeX-disambiguated questions)"
 echo ""
 echo "Exclusion reports:"
 echo "  - notes/excluded_questions_level_4.json"
 echo "  - notes/excluded_questions_level_3.json"
 echo "  - notes/excluded_questions_level_2.json"
 echo "  - notes/merge_validation_report.json"
+echo "  - notes/latex_disambiguation_report.json"
 echo ""
 echo -e "${BLUE}========================================${NC}"

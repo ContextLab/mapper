@@ -364,6 +364,71 @@ Potential improvements not included in this implementation:
 4. Visual heatmap overlay showing demonstrated ability
 5. Historical progress tracking across sessions
 
+## Phase 7: Bug Fixes and LaTeX Disambiguation
+
+### Bug Fixes (Commits: 7ba4d6f, e7e0c20)
+
+**Bug 1 - Progress Bar Not Accumulating**:
+- Issue: Progress stayed at 0% within L4 because `levelProgress = (4 - level) / 4.0` made L4=0%
+- Fix: Changed to direct accumulation where each level represents 20% of total progress
+- Formula: `completedLevelsProgress + (currentLevelCoverage * 0.20)`
+
+**Bug 2 - First Question Not Starting Simply**:
+- Issue: Complex composite score didn't always select easiest question
+- Fix: Changed to direct sorting by grade (ascending), then reading ease (descending)
+- Result: First question is now deterministically the absolute easiest
+
+**Bug 3 - LaTeX Rendering Issues**:
+- Issue: HTML parsing caused problems with special characters (<, >, &)
+- Initial fix: Used `textContent` instead of `innerHTML` for safe text insertion
+- Comprehensive fix: Implemented LLM-based disambiguation (see below)
+
+### LaTeX Disambiguation Implementation (Commits: ff0131f, 1b83f5d)
+
+**Problem**: Questions containing both LaTeX math notation ($x^2$) and currency symbols ($200) caused rendering ambiguity.
+
+**Solution**: Two-pass LLM-based disambiguation system
+
+**Files Created**:
+- [scripts/disambiguate_latex.py](../scripts/disambiguate_latex.py) - Main disambiguation script
+- [test_latex_disambiguation.py](../test_latex_disambiguation.py) - Test script for manual inspection
+
+**Files Updated**:
+- [scripts/run_full_pipeline.py](../scripts/run_full_pipeline.py) - Added LaTeX step with --skip-latex/--force-latex flags
+- [run_full_pipeline.sh](../run_full_pipeline.sh) - Added Step 6 for LaTeX disambiguation
+- [index.html](../index.html) - Used textContent for safe text rendering
+
+**Implementation Details**:
+
+Pass 1 (Automated Identification):
+- Scan all questions and options in cell_questions.json
+- Tag strings with ≥2 dollar signs as candidates
+- Assign unique indices for tracking
+
+Pass 2 (LLM Disambiguation):
+- Use GPT-4o-mini (placeholder for gpt-5-nano) with structured JSON outputs
+- Batch processing: 20 strings per API call
+- Temperature: 1.0, Max tokens: 2000
+- Rules provided:
+  - LaTeX math: Keep $ delimiters unchanged ($x^2$, $\frac{1}{2}$)
+  - Currency: Escape $ as \$ (\$200, \$5 billion)
+
+**Test Results** (20 candidates from cell_questions.json):
+- Total candidates: 20
+- Changed: 5 (25%)
+- Successfully escaped currency: $200 → \$200, $20,000 → \$20,000
+- Preserved LaTeX: $PMB$, $Q_{d}=Q_{s}$, $10\%$ unchanged
+- Complex cases handled: $20$ of the $100 → \$20 of the $100
+
+**Output Files**:
+- `cell_questions_parsed.json` - LaTeX-disambiguated questions (final output)
+- `notes/latex_disambiguation_report.json` - Processing statistics and samples
+
+**Pipeline Integration**:
+- Python: Added as step after readability scores in run_full_pipeline.py
+- Bash: Added as Step 6/7 in run_full_pipeline.sh
+- Idempotent: Skip/force flags available for both pipelines
+
 ## Completion Status
 
 - ✅ Phase 1: Readability scores added
@@ -372,5 +437,6 @@ Potential improvements not included in this implementation:
 - ✅ Phase 4: Single gradient progress bar
 - ✅ Phase 5: Manual testing documentation
 - ✅ Phase 6: Complete documentation and flow diagram
+- ✅ Phase 7: Bug fixes and LaTeX disambiguation
 
 **All phases complete!** Ready for user testing and feedback.

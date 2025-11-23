@@ -114,31 +114,42 @@ def disambiguate_string_batch(strings: List[str]) -> List[str]:
         {
             "input": "Reserve $20$ of the $100$ seats for students",
             "output": "Reserve $20$ of the $100$ seats for students",
-            "explanation": "Both are numbers in LaTeX delimiters for consistency, not currency"
+            "explanation": "Both are numbers in LaTeX delimiters (counts, not currency)"
         },
         {
             "input": "Admits $90$ students from Group A and $10$ from Group B",
             "output": "Admits $90$ students from Group A and $10$ from Group B",
             "explanation": "Numbers of students in LaTeX delimiters, not currency"
+        },
+        {
+            "input": "GDP per capita of $10{{,}}000$. Government has $100\\text{{ million}}$ per year",
+            "output": "GDP per capita of \\$10{{,}}000. Government has \\$100\\text{{ million}} per year",
+            "explanation": "Even in LaTeX delimiters, numbers with currency context should be escaped"
+        },
+        {
+            "input": "Budget of $60M$ for the $30\\text{{M}}$ facility",
+            "output": "Budget of \\$60M for the \\$30\\text{{M}} facility",
+            "explanation": "M/B/K suffixes indicate currency even in LaTeX delimiters"
         }
     ]
 
     prompt = f"""You are a LaTeX disambiguation expert. Your task is to distinguish between LaTeX math notation and currency symbols.
 
 CRITICAL RULES:
-1. If a number is ALREADY wrapped in LaTeX delimiters (like $20$ or $100$), keep it unchanged - it's intentional LaTeX formatting
-2. Only escape $ when it appears BEFORE a number WITHOUT closing delimiter (like $5 billion, $100 million, $1.2 trillion)
-3. LaTeX delimiters come in pairs: $...$ or $$...$$
-4. Currency $ is typically followed by space or number and currency words (billion, million, trillion, thousand)
-5. When text has "costs $50" or "$50 fee" (unpaired $), that's currency - escape it as \\$50
-6. Mathematical expressions ($x^2$, $\\frac{{1}}{{2}}$, $a > b$, $Q_{{d}}=Q_{{s}}$) always keep delimiters
-7. Preserve all other text exactly as-is
+1. Numbers used as COUNTS in LaTeX delimiters (like $20$ students, $100$ seats) → KEEP AS IS
+2. Numbers representing MONEY, even in LaTeX delimiters, must be escaped:
+   - Currency amounts: $10{{,}}000$, $100\\text{{ million}}$, $60M$, $30B$ → ESCAPE as \\$
+   - Look for context: "GDP", "budget", "costs", "million", "billion", "M", "B", "K"
+3. Mathematical expressions always keep delimiters: $x^2$, $\\frac{{1}}{{2}}$, $a > b$, $Q_{{d}}=Q_{{s}}$
+4. Percentages and pure numbers in LaTeX are NOT currency: $60\\%$, $0.90$, $10\\%$ → KEEP AS IS
+5. Unpaired $ before numbers is always currency: $5 billion, $50 → ESCAPE as \\$
 
-Key distinction:
-- "$20$ students" = LaTeX formatting (both $ are delimiters) → KEEP AS IS
-- "$20 million" = Currency (single $ before amount) → ESCAPE as \\$20 million
-- "costs $50" = Currency (unpaired $) → ESCAPE as costs \\$50
-- "$x^2$ growth" = LaTeX math → KEEP AS IS
+Decision tree:
+- Is it math (variables, operators, fractions)? → KEEP delimiters
+- Is it a percentage ($60\\%$) or decimal ($0.90$)? → KEEP delimiters
+- Is it a count ($20$ students, $100$ seats)? → KEEP delimiters
+- Is it money (has million/billion/M/B/K or GDP/budget/cost context)? → ESCAPE as \\$
+- Is it unpaired $ before a number? → ESCAPE as \\$
 
 Examples:
 {json.dumps(examples, indent=2)}
@@ -146,7 +157,7 @@ Examples:
 Now process these strings:
 {json.dumps(strings, indent=2)}
 
-Return a JSON array of disambiguated strings in the same order. Only escape unpaired $ symbols that represent currency."""
+Return a JSON array of disambiguated strings in the same order. Escape $ for currency, keep $ for math/counts/percentages."""
 
     try:
         response = client.chat.completions.create(

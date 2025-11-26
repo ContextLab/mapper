@@ -53,22 +53,23 @@ except ImportError:
 
 
 # Level-specific configuration
+# NOTE: Reading levels calibrated DOWN by ~2 grades to account for generation overshoot
 LEVEL_CONFIG = {
     4: {
-        'target_audience': 'middle school students (ages 11-14)',
-        'max_grade_level': 8,
+        'target_audience': 'elementary school students (ages 8-10, 3rd grade)',
+        'max_grade_level': 5,  # Lowered from 8 to account for overshoot
         'simplification_level': 'major',
         'example_concepts': 'basic scientific concepts, simple cause and effect'
     },
     3: {
-        'target_audience': 'high school students (ages 14-18)',
-        'max_grade_level': 12,
+        'target_audience': 'middle school students (ages 11-13, 6th grade)',
+        'max_grade_level': 9,  # Lowered from 12 to account for overshoot
         'simplification_level': 'moderate',
         'example_concepts': 'intermediate scientific principles, multi-step reasoning'
     },
     2: {
-        'target_audience': 'undergraduate students',
-        'max_grade_level': 16,
+        'target_audience': 'high school students (ages 14-17, 9th grade)',
+        'max_grade_level': 12,  # Lowered from 16 to account for overshoot
         'simplification_level': 'some',
         'example_concepts': 'advanced concepts, domain-specific terminology'
     },
@@ -141,52 +142,68 @@ def get_simplification_prompt(level: int) -> str:
     if level == 4:  # Middle school
         readability_guidance = """
 
-READABILITY TARGET: Flesch-Kincaid grade level 6-8 (middle school reading level)
+READABILITY TARGET: Flesch-Kincaid grade level 3-5 (elementary school reading level)
 
-Writing Rules for Middle School (ages 11-14):
-- Use sentences under 20 words
-- Break complex sentences into shorter ones
-- Use simple, everyday words instead of technical terms
-- Use active voice (subject does action): "Neurons send signals" not "Signals are sent by neurons"
-- Avoid multi-clause sentences with embedded explanations
-- Replace abstract concepts with concrete examples when possible
+CRITICAL BREVITY RULES - STRICTLY ENFORCE THESE:
+1. Each sentence MUST be under 15 words - count carefully!
+2. Questions: 1 sentence only (max 2 if absolutely necessary)
+3. Answer options: 1 short sentence each (under 15 words)
+4. NO compound sentences with "and," "but," "so" connecting clauses
+5. NO parenthetical additions like "(both known and unknown)"
+6. NO multi-clause structures like "which explains why..."
+7. Use ONLY simple subject-verb-object sentences
 
-EXAMPLES OF GOOD SIMPLIFICATION:
+Writing Rules for Elementary School (ages 8-10, 3rd grade):
+- Use simple, everyday words - NO academic vocabulary
+- Use active voice: "The brain sends signals" not "Signals are sent"
+- One idea per sentence - no exceptions
+- Use concrete examples: "brain cells" not "neurons"
+- Avoid ALL technical terms: "systematic," "hierarchical," "faceted," "contingent"
 
-Example 1:
+EXAMPLES SHOWING COMMON MISTAKES TO AVOID:
+
+Example 1 - Too many clauses:
+❌ BAD (18 words, Grade 12): "Long-term structures set up opportunities and weak spots, and sudden events trigger changes past tipping points."
+✅ GOOD (13 words, Grade 4): "Big events can cause change when conditions are right for it."
+
+Example 2 - Academic vocabulary:
+❌ BAD (23 words, Grade 18): "Why does using faceted classification with modern information technology help many different users and search tasks more than using one fixed hierarchical taxonomy?"
+✅ GOOD (14 words, Grade 5): "Why does sorting things many ways help more than sorting just one way?"
+
+Example 3 - Original good examples:
 ❌ BAD (Grade 14): "Why do emergent properties of the brain, such as patterns of learning, arise from interactions among neurons rather than being localized in a single neuron?"
-✅ GOOD (Grade 8): "Why do complex brain abilities like learning come from many neurons working together instead of from just one neuron?"
-
-Example 2:
-❌ BAD (Grade 15): "How does multilevel integration and communication across cells and tissues enable a coherent physiological response to a perturbation?"
-✅ GOOD (Grade 8): "When something disturbs the body, how do different body parts work together to respond in a coordinated way?"
-
-Example 3:
-❌ BAD (Grade 16): "Emergent properties arise from nonlinear interactions and feedback across multiple scales generating novel patterns."
-✅ GOOD (Grade 7): "New patterns appear when many parts interact and affect each other in complex ways."
+✅ GOOD (Grade 4): "Why does learning need many brain cells working together instead of just one brain cell?"
 
 Example 4:
+❌ BAD (Grade 15): "How does multilevel integration and communication across cells and tissues enable a coherent physiological response to a perturbation?"
+✅ GOOD (Grade 5): "When something bothers your body, how do different parts work together to fix it?"
+
+Example 5:
 ❌ BAD (Grade 13): "The implementation of recursive algorithms necessitates consideration of computational complexity."
-✅ GOOD (Grade 8): "When you use a function that calls itself, you need to think about how much time and memory it uses."""
-    elif level == 3:  # High school
+✅ GOOD (Grade 5): "When a computer repeats the same steps over and over, you need to think about how long it will take."""
+    elif level == 3:  # High school → Middle school
         readability_guidance = """
 
-READABILITY TARGET: Flesch-Kincaid grade level 10-12 (high school reading level)
+READABILITY TARGET: Flesch-Kincaid grade level 6-9 (middle school reading level)
 
-Writing Rules:
-- Keep sentences clear and under 25 words when possible
-- Use intermediate-level vocabulary
-- Break very complex sentences into two sentences
-- Keep some technical terms but explain them simply"""
-    elif level == 2:  # Undergraduate
+Writing Rules for Middle School (ages 11-13, 6th grade level):
+- BREVITY: Questions must be 1-2 sentences maximum
+- BREVITY: Answer choices must be short phrases or single sentences, max 2 sentences
+- Keep sentences clear and under 20 words when possible
+- Use intermediate-level vocabulary - avoid overly technical terms
+- Break complex sentences into two shorter sentences
+- Explain technical terms when necessary"""
+    elif level == 2:  # Undergraduate → High school
         readability_guidance = """
 
-READABILITY TARGET: Flesch-Kincaid grade level 14-16 (undergraduate reading level)
+READABILITY TARGET: Flesch-Kincaid grade level 9-12 (high school reading level)
 
-Writing Rules:
-- Use clear academic language
-- Technical terms are acceptable when necessary
-- Maintain precision while being reasonably concise"""
+Writing Rules for High School (ages 14-17, 9th grade level):
+- BREVITY: Questions should be 1-2 sentences when possible
+- BREVITY: Answer choices should be concise, max 2 sentences
+- Use clear, direct language
+- Technical terms are acceptable but should be explained in context
+- Maintain precision while being concise"""
 
     return f"""You are an expert educator simplifying questions for {config['target_audience']}.
 {readability_guidance}
@@ -197,15 +214,18 @@ Given a Wikipedia article and a complex question:
    - Target concepts: {config['example_concepts']}
 2. Simplify wording to be clear and concise - FOLLOW THE WRITING RULES ABOVE
 3. Convert any math notation to inline LaTeX using $...$ delimiters
-   Examples:
-   - x^2 → $x^2$ or $x^{{2}}$
-   - 1/2 → $\\frac{{1}}{{2}}$
-   - sqrt(x) → $\\sqrt{{x}}$
-   - alpha → $\\alpha$
-4. Maintain factual accuracy based on the article
-5. Keep the correct answer the same (same letter: A, B, C, or D)
-6. Ensure all 4 options are plausible
-7. IMPORTANT: Do not lose essential content or change the core concept being tested
+   - The ENTIRE math expression must be enclosed: $x^2$, $\\frac{{1}}{{2}}$, $\\sqrt{{x}}$, $\\alpha$
+   - Do NOT partially enclose: "$x$^2" is WRONG, "$x^2$" is CORRECT
+   - Examples: x^2 → $x^2$, 1/2 → $\\frac{{1}}{{2}}$, sqrt(x) → $\\sqrt{{x}}$
+4. CRITICAL - LaTeX Dollar Sign Escaping:
+   - When writing currency amounts, ALWAYS escape the dollar sign as \\$ to prevent LaTeX rendering conflicts
+   - Examples: "$200 million" → "\\$200 million", "GDP of $10,000" → "GDP of \\$10,000"
+   - Only use unescaped $ for actual math expressions like $x^2$ or $\\frac{{1}}{{2}}$
+   - Physical unit counts are NOT currency: "10,000 cars" stays as plain text
+5. Maintain factual accuracy based on the article
+6. Keep the correct answer the same (same letter: A, B, C, or D)
+7. Ensure all 4 options are plausible
+8. IMPORTANT: Do not lose essential content or change the core concept being tested
 
 Return ONLY valid JSON (no markdown, no explanation):
 {{
@@ -236,55 +256,68 @@ def get_generation_prompt(level: int) -> str:
 
     # Add readability examples for levels that need simplification
     readability_guidance = ""
-    if level == 4:  # Middle school
+    if level == 4:  # Elementary school
         readability_guidance = """
 
-READABILITY TARGET: Flesch-Kincaid grade level 6-8 (middle school reading level)
+READABILITY TARGET: Flesch-Kincaid grade level 3-5 (elementary school reading level)
 
-Writing Rules for Middle School (ages 11-14):
-- Use sentences under 20 words
-- Use simple, concrete scenarios instead of abstract explanations
-- Use everyday words, not technical jargon
+CRITICAL BREVITY RULES - STRICTLY ENFORCE THESE:
+1. Each sentence MUST be under 15 words - count carefully!
+2. Questions: 1-2 sentences maximum
+3. Answer options: 1 short sentence each (under 15 words)
+4. NO compound sentences with "and," "but," "so" connecting clauses
+5. NO parenthetical additions like "(both known and unknown)"
+6. NO multi-clause structures like "which explains why..."
+7. Use ONLY simple subject-verb-object sentences
+
+Writing Rules for Elementary School (ages 8-10, 3rd grade):
+- Use simple, everyday words - NO academic vocabulary
 - Use active voice: "The mouse runs" not "Running is done by the mouse"
+- One simple idea per sentence - no exceptions
 - Ask about specific examples or experiments, not general principles
-- Break complex ideas into simple cause-and-effect
+- Use concrete, relatable scenarios from daily life
+- Avoid ALL technical terms: "systematic," "hierarchical," "faceted," "contingent"
 
-EXAMPLES OF GOOD MIDDLE SCHOOL QUESTIONS:
+EXAMPLES OF GOOD ELEMENTARY SCHOOL QUESTIONS:
 
-Example 1 (Biology):
-"A scientist removes a small part of a mouse's brain. The mouse can still see and hear, but it cannot remember how to find food it stored yesterday. What does this tell us about the brain?"
-(Grade 7 - concrete scenario, simple cause-effect)
+Example 1 (Biology) - Concrete scenario, simple cause-effect:
+"A scientist removes part of a mouse's brain. The mouse can still see and hear. But it cannot remember where it stored food yesterday. What does this tell us about the brain?"
+(Grade 5 - 4 short sentences, each under 15 words)
 
-Example 2 (Physics):
-"You drop a ball from a ladder. It bounces back up but not as high as where you dropped it. Where did some of the energy go?"
-(Grade 8 - everyday scenario, simple question)
+Example 2 (Physics) - Everyday scenario, simple question:
+"You drop a ball from a ladder. It bounces back up. But it does not go as high as before. Where did some of the energy go?"
+(Grade 5 - 4 short sentences, clear and simple)
 
-Example 3 (Systems thinking):
-"In a school club, one person makes rules, another person checks if rules are followed, and another person manages the money. Why does splitting up these jobs help the club work better?"
-(Grade 7 - relatable analogy, concrete roles)
+Example 3 (Systems thinking) - Relatable analogy:
+"A school club has three people. One makes rules. Another checks if rules are followed. The third manages money. Why does splitting jobs help the club work better?"
+(Grade 5 - short simple sentences)
 
-Example 4 (Decision theory):
-"Sam can choose: (A) get $10 for sure, or (B) flip a coin and get $25 if heads, $0 if tails. Most people pick option A even though B has higher average value. Why?"
-(Grade 8 - simple numbers, relatable choice)"""
-    elif level == 3:  # High school
+Example 4 (Decision theory) - Simple numbers, relatable choice, LaTeX escaping:
+"Sam can pick two choices. Choice A: Get \\$10 for sure. Choice B: Flip a coin. Heads gets \\$25. Tails gets \\$0. Most people pick A even though B has a higher average. Why?"
+(Grade 5 - broken into very short sentences, dollar signs properly escaped as \\$)"""
+    elif level == 3:  # High school → Middle school
         readability_guidance = """
 
-READABILITY TARGET: Flesch-Kincaid grade level 10-12 (high school reading level)
+READABILITY TARGET: Flesch-Kincaid grade level 6-9 (middle school reading level)
 
-Writing Rules:
+Writing Rules for Middle School (ages 11-13, 6th grade level):
+- BREVITY: Questions must be 1-2 sentences maximum
+- BREVITY: Answer choices must be short phrases or single sentences, max 2 sentences
 - Use clear scenarios or examples
-- Keep sentences under 25 words when possible
+- Keep sentences under 20 words when possible
 - Use intermediate-level vocabulary
-- Some technical terms are okay if explained in context"""
-    elif level == 2:  # Undergraduate
+- Avoid overly technical terms - explain when necessary"""
+    elif level == 2:  # Undergraduate → High school
         readability_guidance = """
 
-READABILITY TARGET: Flesch-Kincaid grade level 14-16 (undergraduate reading level)
+READABILITY TARGET: Flesch-Kincaid grade level 9-12 (high school reading level)
 
-Writing Rules:
+Writing Rules for High School (ages 14-17, 9th grade level):
+- BREVITY: Questions should be 1-2 sentences when possible
+- BREVITY: Answer choices should be concise, max 2 sentences
 - Use clear academic language
-- Technical terms are acceptable when necessary
-- Can use more complex scenarios and multi-step reasoning"""
+- Technical terms are acceptable but should be explained in context
+- Can use multi-step reasoning but keep it clear"""
 
     return f"""You are an expert educator creating NEW questions for {config['target_audience']}.
 {readability_guidance}
@@ -296,9 +329,16 @@ Given a Wikipedia article and concepts that should be tested:
    - FOLLOW THE WRITING RULES AND EXAMPLES ABOVE
 2. Test the same core concepts as the original
 3. Use concrete scenarios and examples (not abstract explanations)
-4. Use inline LaTeX for any math: $x^2$, $\\frac{{1}}{{2}}$, $\\sqrt{{x}}$, $\\alpha$
-5. Maintain factual accuracy based on the article
-6. Create 4 plausible options with one clearly correct answer
+4. Use inline LaTeX for any math
+   - The ENTIRE math expression must be enclosed: $x^2$, $\\frac{{1}}{{2}}$, $\\sqrt{{x}}$, $\\alpha$
+   - Do NOT partially enclose: "$x$^2" is WRONG, "$x^2$" is CORRECT
+5. CRITICAL - LaTeX Dollar Sign Escaping:
+   - When writing currency amounts, ALWAYS escape the dollar sign as \\$ to prevent LaTeX rendering conflicts
+   - Examples: "$200 million" → "\\$200 million", "GDP of $10,000" → "GDP of \\$10,000"
+   - Only use unescaped $ for actual math expressions like $x^2$ or $\\frac{{1}}{{2}}$
+   - Physical unit counts are NOT currency: "10,000 cars" stays as plain text
+6. Maintain factual accuracy based on the article
+7. Create 4 plausible options with one clearly correct answer
 
 Return ONLY valid JSON (no markdown, no explanation):
 {{
@@ -748,8 +788,7 @@ def simplify_level(
         temperature=1.0,
         max_tokens=10000,
         response_format=response_format,
-        poll_interval=60,
-        timeout=3600  # 1 hour timeout
+        poll_interval=60
     )
 
     print(f"\n✓ Pass 1 batch complete: {len(pass1_results)} results\n")
@@ -878,8 +917,7 @@ def simplify_level(
             temperature=1.0,
             max_tokens=10000,
             response_format=response_format_pass2,
-            poll_interval=60,
-            timeout=3600  # 1 hour timeout
+            poll_interval=60
         )
 
         print(f"\n✓ Pass 2 batch complete: {len(pass2_results)} results\n")

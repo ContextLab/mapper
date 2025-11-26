@@ -142,8 +142,7 @@ def submit_batch(
 def wait_for_batch(
     client: OpenAI,
     batch_id: str,
-    poll_interval: int = 60,
-    timeout: Optional[int] = 3600
+    poll_interval: int = 60
 ) -> Dict[str, Any]:
     """
     Wait for batch to complete, polling status periodically.
@@ -152,31 +151,22 @@ def wait_for_batch(
         client: OpenAI client
         batch_id: Batch ID to monitor
         poll_interval: Seconds between status checks (default: 60)
-        timeout: Maximum seconds to wait (default: 3600 = 1 hour), None for no timeout
 
     Returns:
         Dict containing batch status and metadata
 
     Raises:
-        TimeoutError: If batch doesn't complete within timeout
         RuntimeError: If batch fails
     """
     start_time = time.time()
 
     print(f"Waiting for batch {batch_id} to complete...")
-    if timeout is None:
-        print(f"Polling every {poll_interval}s (no timeout)")
-    else:
-        print(f"Polling every {poll_interval}s (timeout: {timeout}s)")
+    print(f"Polling every {poll_interval}s (no timeout - will wait until completion or API error)")
     print()
 
     while True:
-        # Check timeout (if set)
+        # Track elapsed time for reporting only
         elapsed = time.time() - start_time
-        if timeout is not None and elapsed > timeout:
-            raise TimeoutError(
-                f"Batch {batch_id} did not complete within {timeout}s"
-            )
 
         # Get batch status
         batch = client.batches.retrieve(batch_id)
@@ -343,8 +333,7 @@ def batch_with_cache(
     temperature: float = 0.7,
     max_tokens: int = 500,
     response_format: Optional[Dict] = None,
-    poll_interval: int = 60,
-    timeout: Optional[int] = 3600
+    poll_interval: int = 60
 ) -> Dict[str, Any]:
     """
     Complete batch workflow with prompt caching.
@@ -365,7 +354,6 @@ def batch_with_cache(
         max_tokens: Max tokens in response
         response_format: Optional JSON schema for structured outputs
         poll_interval: Status check interval in seconds
-        timeout: Maximum wait time in seconds
 
     Returns:
         Dict mapping custom_id to response content
@@ -390,7 +378,7 @@ def batch_with_cache(
     batch_id = submit_batch(client, jsonl_lines, description)
 
     # Step 3: Wait for completion
-    batch_info = wait_for_batch(client, batch_id, poll_interval, timeout)
+    batch_info = wait_for_batch(client, batch_id, poll_interval)
 
     # Step 4: Download results
     result_lines = download_batch_results(client, batch_info['output_file_id'])

@@ -2,6 +2,20 @@
 
 A distributed GPU system for generating and visualizing semantic knowledge maps from 250,000 Wikipedia articles. This project implements the research from "Text embedding models yield high-resolution insights into conceptual knowledge" using distributed GPU computing and interactive web visualization.
 
+## Quick Start - View the Demo
+
+Start a local web server and open the visualization in your browser:
+
+```bash
+# Start HTTP server (required for loading JSON files)
+python -m http.server 8000
+
+# Open in your browser:
+# http://localhost:8000/index.html
+```
+
+**Why HTTP server?** The browser's `fetch()` API requires files to be served over HTTP/HTTPS, not accessed directly via `file://` protocol.
+
 ## Project Overview
 
 This system generates semantic embeddings for 250,000 Wikipedia articles using state-of-the-art transformer models, then visualizes them as interactive 2D knowledge maps. The pipeline supports both distributed GPU clusters (for production-scale processing) and local Metal-accelerated generation (for development/testing).
@@ -642,12 +656,15 @@ with open('knowledge_map_export.json', 'w') as f:
 
 ## Citation
 
-Based on the research paper:
+If you use this code or data in your research, please cite:
 
 ```
-"Text embedding models yield high-resolution insights into conceptual knowledge"
-[Add paper citation when published]
+Fitzpatrick PC, Heusser AC, Manning JR (2025). Text embedding models yield
+high-resolution insights into conceptual knowledge from short multiple-choice
+quizzes. Nature Communications: In press.
 ```
+
+**Preprint:** https://doi.org/10.31234/osf.io/dh3q2_v2
 
 ## License
 

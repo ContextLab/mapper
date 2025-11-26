@@ -1,0 +1,578 @@
+================================================================================
+LATEX DISAMBIGUATION TEST (First 50 Candidates)
+================================================================================
+
+Loading: cell_questions.json
+
+Extracting first 50 candidate strings...
+Found 50 candidates
+
+Disambiguating with GPT-4o-mini...
+Processing in batches of 20...
+
+Batch 1/3: Processing 20 strings...
+Warning: Expected 20 results, got 23. Using original strings.
+Batch 2/3: Processing 20 strings...
+Batch 3/3: Processing 10 strings...
+================================================================================
+RESULTS
+================================================================================
+
+--- Candidate 1 (option) ---
+Question ID: 
+Option: B
+
+ORIGINAL:
+  Private decisions ignore external costs or benefits, so quantity is determined by private marginal benefit and private marginal cost ($PMB$ and $PMC$) rather than social marginal benefit and social marginal cost ($SMB$ and $SMC$); for non‑excludable public goods, free‑rider behaviour reduces private provision, causing under‑provision relative to the social optimum.
+
+DISAMBIGUATED:
+  Private decisions ignore external costs or benefits, so quantity is determined by private marginal benefit and private marginal cost ($PMB$ and $PMC$) rather than social marginal benefit and social marginal cost ($SMB$ and $SMC$); for non‑excludable public goods, free‑rider behaviour reduces private provision, causing under‑provision relative to the social optimum.
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 2 (question) ---
+Question ID: 
+
+ORIGINAL:
+  A town of 100,000 faces a contagious viral illness and rising opioid misuse. Most residents have insurance that pays 90% of treatment costs. Private clinics offer extra procedures, and patients rarely see the full price. A new vaccine costs $200 per person and directly increases an individual's quality-adjusted life years (QALYs) by 0.01. Because vaccination reduces transmission, the indirect benefit per vaccinated person is estimated to raise total QALYs by 0.03. Health officials must choose a policy. Which option best follows health-economics reasoning about third-party payers, externalities, and QALY measurement uncertainty? (Note: direct cost per QALY = $200/0.01 = $20,000; including indirect benefits cost per QALY ≈ $200/0.03 = $6,667.)
+
+DISAMBIGUATED:
+  A town of 100,000 faces a contagious viral illness and rising opioid misuse. Most residents have insurance that pays 90% of treatment costs. Private clinics offer extra procedures, and patients rarely see the full price. A new vaccine costs $200 per person and directly increases an individual's quality-adjusted life years (QALYs) by 0.01. Because vaccination reduces transmission, the indirect benefit per vaccinated person is estimated to raise total QALYs by 0.03. Health officials must choose a policy. Which option best follows health-economics reasoning about third-party payers, externalities, and QALY measurement uncertainty? (Note: direct cost per QALY = $200/0.01 = $20,000; including indirect benefits cost per QALY ≈ $200/0.03 = $6,667.)
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 3 (question) ---
+Question ID: 
+
+ORIGINAL:
+  Astronomers report two newly discovered Sun-orbiting bodies. Object X has mean radius $650\,\mathrm{km}$, bulk density $1.6\,\mathrm{g\,cm^{-3}}$, an approximately ellipsoidal shape in images, and a nearly circular orbit at $42\,$AU within the classical Kuiper belt. Object Y has mean radius $400\,\mathrm{km}$, bulk density $3.2\,\mathrm{g\,cm^{-3}}$, an irregular, non-equilibrium shape, and an orbit with semimajor axis $1.02\,$AU and perihelion $0.80\,$AU that crosses Earth's orbit. According to the IAU criteria and the taxonomy of small bodies, which classification best fits these objects and why?
+
+DISAMBIGUATED:
+  Astronomers report two newly discovered Sun-orbiting bodies. Object X has mean radius $650\,\mathrm{km}$, bulk density $1.6\,\mathrm{g\,cm^{-3}}$, an approximately ellipsoidal shape in images, and a nearly circular orbit at $42\,$AU within the classical Kuiper belt. Object Y has mean radius $400\,\mathrm{km}$, bulk density $3.2\,\mathrm{g\,cm^{-3}}$, an irregular, non-equilibrium shape, and an orbit with semimajor axis $1.02\,$AU and perihelion $0.80\,$AU that crosses Earth's orbit. According to the IAU criteria and the taxonomy of small bodies, which classification best fits these objects and why?
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 4 (option) ---
+Question ID: 
+Option: D
+
+ORIGINAL:
+  Object X should be classed as a planet because its radius exceeds $600\,$km so it must clear a neighbourhood eventually, and Object Y is most properly classified as a comet because Earth‑crossing orbits imply volatile activity even if none has been observed.
+
+DISAMBIGUATED:
+  Object X should be classed as a planet because its radius exceeds $600\,$km so it must clear a neighbourhood eventually, and Object Y is most properly classified as a comet because Earth‑crossing orbits imply volatile activity even if none has been observed.
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 5 (question) ---
+Question ID: 
+
+ORIGINAL:
+  A public university admits $100$ students each year from an applicant pool of $800$ majority-group applicants (Group A) and $200$ underrepresented-group applicants (Group B). Under baseline meritocratic admissions (no special measures) the university admits $90$ students from Group A and $10$ from Group B; graduation probabilities are $0.90$ for admitted Group A students and $0.70$ for admitted Group B students. Two policy alternatives are proposed:
+
+Policy 1 (Quota): reserve $20$ of the $100$ seats for Group B (the other $80$ filled by merit); assume Group B admitted under the quota have a lower graduation probability of $0.60$ due to preparedness mismatch, while Group A graduates at $0.90$.
+
+Policy 2 (Positive action + supports): no rigid quota, but targeted outreach increases Group B applicants so that the university admits $25$ Group B and $75$ Group A; the university also adds mentoring and bridge programs that raise Group B admitted students' graduation probability to $0.85$, while Group A graduation remains $0.90$.
+
+Using these numbers, which policy best advances the normative goal of substantive equality (bridging inequality in both participation and successful outcomes) while minimizing the principal trade-offs discussed in debates (reverse discrimination and mismatch)?
+
+DISAMBIGUATED:
+  A public university admits $100$ students each year from an applicant pool of $800$ majority-group applicants (Group A) and $200$ underrepresented-group applicants (Group B). Under baseline meritocratic admissions (no special measures) the university admits $90$ students from Group A and $10$ from Group B; graduation probabilities are $0.90$ for admitted Group A students and $0.70$ for admitted Group B students. Two policy alternatives are proposed:
+
+Policy 1 (Quota): reserve $20$ of the $100$ seats for Group B (the other $80$ filled by merit); assume Group B admitted under the quota have a lower graduation probability of $0.60$ due to preparedness mismatch, while Group A graduates at $0.90$.
+
+Policy 2 (Positive action + supports): no rigid quota, but targeted outreach increases Group B applicants so that the university admits $25$ Group B and $75$ Group A; the university also adds mentoring and bridge programs that raise Group B admitted students' graduation probability to $0.85$, while Group A graduation remains $0.90$.
+
+Using these numbers, which policy best advances the normative goal of substantive equality (bridging inequality in both participation and successful outcomes) while minimizing the principal trade-offs discussed in debates (reverse discrimination and mismatch)?
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 6 (option) ---
+Question ID: 
+Option: A
+
+ORIGINAL:
+  Policy 2. It yields $75\times0.90=67.5$ Group A graduates and $25\times0.85=21.25$ Group B graduates (total $88.75$ graduates), raises Group B representation among admitted students to 25% and among graduates to ~24%, and mitigates mismatch through supports while avoiding a rigid quota that could trigger stronger reverse-discrimination objections.
+
+DISAMBIGUATED:
+  Policy 2. It yields $75\times0.90=67.5$ Group A graduates and $25\times0.85=21.25$ Group B graduates (total $88.75$ graduates), raises Group B representation among admitted students to 25% and among graduates to ~24%, and mitigates mismatch through supports while avoiding a rigid quota that could trigger stronger reverse-discrimination objections.
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 7 (option) ---
+Question ID: 
+Option: B
+
+ORIGINAL:
+  Policy 1. The quota raises Group B admissions to 20 and produces $80\times0.90=72$ Group A graduates plus $20\times0.60=12$ Group B graduates (total $84$ graduates). It clearly increases representation relative to baseline but reduces overall successful outcomes and risks mismatch and stronger claims of reverse discrimination.
+
+DISAMBIGUATED:
+  Policy 1. The quota raises Group B admissions to 20 and produces $80\times0.90=72$ Group A graduates plus $20\times0.60=12$ Group B graduates (total $84$ graduates). It clearly increases representation relative to baseline but reduces overall successful outcomes and risks mismatch and stronger claims of reverse discrimination.
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 8 (option) ---
+Question ID: 
+Option: C
+
+ORIGINAL:
+  Baseline meritocratic admissions. It produces $90\times0.90=81$ Group A graduates and $10\times0.70=7$ Group B graduates (total $88$ graduates), maximizes per-student preparedness and avoids reverse-discrimination, and therefore best satisfies substantive equality by preserving academic standards.
+
+DISAMBIGUATED:
+  Baseline meritocratic admissions. It produces $90\times0.90=81$ Group A graduates and $10\times0.70=7$ Group B graduates (total $88$ graduates), maximizes per-student preparedness and avoids reverse-discrimination, and therefore best satisfies substantive equality by preserving academic standards.
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 9 (question) ---
+Question ID: 
+
+ORIGINAL:
+  In a perfectly competitive market, why do prices tend to move to the market-clearing level where $Q_{d}=Q_{s}$, and how does price adjustment operate when either the demand or supply curve shifts?
+
+DISAMBIGUATED:
+  In a perfectly competitive market, why do prices tend to move to the market-clearing level where $Q_{d}=Q_{s}$, and how does price adjustment operate when either the demand or supply curve shifts?
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 10 (option) ---
+Question ID: 
+Option: A
+
+ORIGINAL:
+  A central planner or authority sets the price so that $Q_{d}=Q_{s}$, deliberately balancing the two quantities.
+
+DISAMBIGUATED:
+  A central planner or authority sets the price so that $Q_{d}=Q_{s}$, deliberately balancing the two quantities.
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 11 (option) ---
+Question ID: 
+Option: B
+
+ORIGINAL:
+  If $Q_{d}>Q_{s}$ (excess demand) this puts upward pressure on price, and if $Q_{s}>Q_{d}$ (excess supply) this puts downward pressure on price; those price changes change quantities demanded and supplied until $Q_{d}=Q_{s}$.
+
+DISAMBIGUATED:
+  If $Q_{d}>Q_{s}$ (excess demand) this puts upward pressure on price, and if $Q_{s}>Q_{d}$ (excess supply) this puts downward pressure on price; those price changes change quantities demanded and supplied until $Q_{d}=Q_{s}$.
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 12 (option) ---
+Question ID: 
+Option: C
+
+ORIGINAL:
+  Because at the original price there is a surplus ($Q_{s} > Q_{d}$). Price falls to eliminate the surplus. As price falls, $Q_{d}$ rises and $Q_{s}$ falls until $Q_{d} = Q_{s}$, giving a lower price and higher quantity.
+
+DISAMBIGUATED:
+  Because at the original price there is a surplus ($Q_{s} > Q_{d}$). Price falls to eliminate the surplus. As price falls, $Q_{d}$ rises and $Q_{s}$ falls until $Q_{d} = Q_{s}$, giving a lower price and higher quantity.
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 13 (question) ---
+Question ID: 
+
+ORIGINAL:
+  Country Z experiences an unanticipated $10\%$ increase in the aggregate price level $P$ while nominal wages are fixed by year-long contracts. At the time of the shock many firms run substantially underused capital (idle machines) but some industries already operate near capacity. Which of the following best describes the short-run and long-run effects on real output $Y$ and explains why the aggregate supply curve has flat and steep regions?
+
+DISAMBIGUATED:
+  Country Z experiences an unanticipated $10\%$ increase in the aggregate price level $P$ while nominal wages are fixed by year-long contracts. At the time of the shock many firms run substantially underused capital (idle machines) but some industries already operate near capacity. Which of the following best describes the short-run and long-run effects on real output $Y$ and explains why the aggregate supply curve has flat and steep regions?
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 14 (option) ---
+Question ID: 
+Option: A
+
+ORIGINAL:
+  Short run: with nominal wages fixed, the $10\%$ rise in $P$ reduces real wages, firms hire more labour and increase $Y$ (SRAS slopes upward). Because many firms have underused fixed capital, initial increases in demand occur on a relatively flat portion of SRAS; as utilisation rises and bottlenecks appear in capacity-constrained sectors, SRAS becomes much steeper. Long run: nominal wages and other input prices adjust, so output returns to potential determined by capital, labour and technology (LRAS vertical).
+
+DISAMBIGUATED:
+  Short run: with nominal wages fixed, the $10\%$ rise in $P$ reduces real wages, firms hire more labour and increase $Y$ (SRAS slopes upward). Because many firms have underused fixed capital, initial increases in demand occur on a relatively flat portion of SRAS; as utilisation rises and bottlenecks appear in capacity-constrained sectors, SRAS becomes much steeper. Long run: nominal wages and other input prices adjust, so output returns to potential determined by capital, labour and technology (LRAS vertical).
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 15 (option) ---
+Question ID: 
+Option: B
+
+ORIGINAL:
+  Short run: nominal wages immediately rise proportionally to the price level (indexation), so real wages are unchanged and $Y$ does not change; the aggregate supply curve is vertical in both the short and long run. Long run: higher prices permanently raise output because firms always expand capacity when prices rise.
+
+DISAMBIGUATED:
+  Short run: nominal wages immediately rise proportionally to the price level (indexation), so real wages are unchanged and $Y$ does not change; the aggregate supply curve is vertical in both the short and long run. Long run: higher prices permanently raise output because firms always expand capacity when prices rise.
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 16 (option) ---
+Question ID: 
+Option: D
+
+ORIGINAL:
+  Short run: because many firms have idle capital, any increase in $P$ is absorbed without substantial change in $Y$, so SRAS is horizontal at all output levels; as demand grows further, firms simply invest immediately and expand capacity so the AS curve never becomes steep. Long run: higher $P$ permanently increases potential output (LRAS shifts right).
+
+DISAMBIGUATED:
+  Short run: because many firms have idle capital, any increase in $P$ is absorbed without substantial change in $Y$, so SRAS is horizontal at all output levels; as demand grows further, firms simply invest immediately and expand capacity so the AS curve never becomes steep. Long run: higher $P$ permanently increases potential output (LRAS shifts right).
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 17 (question) ---
+Question ID: 
+
+ORIGINAL:
+  Country Aloria has two regions, North and South, both with GDP per capita of $10{,}000$. North has strong institutions and $60\%$ secondary-school enrollment. South has weak institutions and $30\%$ enrollment. The national government has $100\text{ million}$ per year and considers two multi-year plans. Plan X: a two-year firm tax cut to spur immediate investment. Plan Y: a ten-year program funding education and legal reforms to build human capital and improve institutions. If the government's main goal is long-term poverty reduction and convergence of incomes across regions, which policy is most likely to succeed and why?
+
+DISAMBIGUATED:
+  Country Aloria has two regions, North and South, both with GDP per capita of $10{,}000$. North has strong institutions and $60\%$ secondary-school enrollment. South has weak institutions and $30\%$ enrollment. The national government has $100\text{ million}$ per year and considers two multi-year plans. Plan X: a two-year firm tax cut to spur immediate investment. Plan Y: a ten-year program funding education and legal reforms to build human capital and improve institutions. If the government's main goal is long-term poverty reduction and convergence of incomes across regions, which policy is most likely to succeed and why?
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 18 (question) ---
+Question ID: 
+
+ORIGINAL:
+  In a genome-wide study you find the effect of allele A at gene X changes depending on which allele is present at gene Y. The combined effect of A and Y is not equal to the sum of their separate effects ($effect(A)+effect(Y)$). Why is this a hallmark of epistasis, and what is a main implication for genetic risk models that assume additive effects?
+
+DISAMBIGUATED:
+  In a genome-wide study you find the effect of allele A at gene X changes depending on which allele is present at gene Y. The combined effect of A and Y is not equal to the sum of their separate effects ($effect(A)+effect(Y)$). Why is this a hallmark of epistasis, and what is a main implication for genetic risk models that assume additive effects?
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 19 (option) ---
+Question ID: 
+Option: B
+
+ORIGINAL:
+  Build a Bayesian-network-based diagnostic model that integrates telemetry (packet-loss metrics), log-derived events (driver exceptions), and contextual variables (shift change), compute posterior probabilities $P(\text{cause}|\text{evidence})$ for candidate causes, and use the probabilistic rankings (with Occam's razor as a model-selection heuristic) to prioritize mitigations and experiments.
+
+DISAMBIGUATED:
+  Build a Bayesian-network-based diagnostic model that integrates telemetry (packet-loss metrics), log-derived events (driver exceptions), and contextual variables (shift change), compute posterior probabilities $P(\text{cause}|\text{evidence})$ for candidate causes, and use the probabilistic rankings (with Occam's razor as a model-selection heuristic) to prioritize mitigations and experiments.
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 20 (question) ---
+Question ID: 
+
+ORIGINAL:
+  A peptide therapeutic has oral bioavailability $<1\%$ and a plasma half-life of 1 hour. The development team wants to (i) increase systemic bioavailability to >30\%, (ii) prolong duration of action to reduce dosing frequency, (iii) deliver antigenic signals to dermal antigen-presenting cells for a vaccine-like immune response, and (iv) enable safe self-administration without conventional hypodermic needles. Which delivery strategy best satisfies these objectives and correctly exemplifies the distinction between "route of administration" and "dosage form"?
+
+DISAMBIGUATED:
+  A peptide therapeutic has oral bioavailability $<1\%$ and a plasma half-life of 1 hour. The development team wants to (i) increase systemic bioavailability to >30\%, (ii) prolong duration of action to reduce dosing frequency, (iii) deliver antigenic signals to dermal antigen-presenting cells for a vaccine-like immune response, and (iv) enable safe self-administration without conventional hypodermic needles. Which delivery strategy best satisfies these objectives and correctly exemplifies the distinction between "route of administration" and "dosage form"?
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 21 (question) ---
+Question ID: 
+
+ORIGINAL:
+  A toy company must make 10,000 identical toy cars in one year. Craft method: one worker needs $10$ hours to finish one car. Wage is $\$15$/hour and other costs are $\$1$ per car. Mass production: an assembly line has $10$ stations. Each station takes $6$ minutes per car (so each station worker spends $0.1$ hour per car). Wages are $\$15$/hour. Machinery cost is $\$400{,}000$ amortized over $5$ years. Annual energy for the line is $\$20{,}000$. Standardized interchangeable parts are used, so no extra finishing time. Based on these numbers, which statement is correct?
+
+DISAMBIGUATED:
+  A toy company must make 10,000 identical toy cars in one year. Craft method: one worker needs $10$ hours to finish one car. Wage is \$15/hour and other costs are \$1 per car. Mass production: an assembly line has $10$ stations. Each station takes $6$ minutes per car (so each station worker spends $0.1$ hour per car). Wages are \$15/hour. Machinery cost is \$400{,}000 amortized over $5$ years. Annual energy for the line is \$20{,}000. Standardized interchangeable parts are used, so no extra finishing time. Based on these numbers, which statement is correct?
+
+CHANGED: YES
+  Original $ positions: [94, 97, 132, 134, 137, 164, 166, 168, 217, 220, 251, 253, 302, 306, 333, 335, 338, 364, 366, 376, 393, 395, 434, 436, 445]
+  Result $ positions: [94, 97, 133, 163, 213, 216, 247, 249, 298, 302, 330, 359, 385, 387, 427]
+
+--------------------------------------------------------------------------------
+
+--- Candidate 22 (option) ---
+Question ID: 
+Option: A
+
+ORIGINAL:
+  Mass production cuts labour per car from $10$ hours to $1$ hour. Labour cost falls from $10\times\$15=\$150$ to $10\times0.1\times\$15=\$15$. Capital per car is $\$400000/(5\times10000)=\$8$, energy $\$2$. Total mass cost = $\$25$, craft cost = $\$151$, so mass saves $\$126$ per car.
+
+DISAMBIGUATED:
+  Mass production cuts labour per car from $10$ hours to $1$ hour. Labour cost falls from $10\times\$15=\$150$ to $10\times0.1\times\$15=\$15$. Capital per car is \$400000/(5\times10000)=\$8$, energy \$2. Total mass cost = \$25$, craft cost = \$151$, so mass saves \$126 per car.
+
+CHANGED: YES
+  Original $ positions: [41, 44, 55, 57, 88, 98, 103, 107, 112, 131, 136, 139, 161, 163, 187, 189, 199, 201, 203, 224, 226, 229, 245, 247, 251, 268, 270, 274]
+  Result $ positions: [41, 44, 55, 57, 88, 98, 103, 107, 112, 131, 136, 139, 162, 186, 188, 199, 222, 225, 242, 246, 264]
+
+--------------------------------------------------------------------------------
+
+--- Candidate 23 (option) ---
+Question ID: 
+Option: B
+
+ORIGINAL:
+  Mass production lowers labour to $\$15$ per car, but machinery and energy push the total mass cost above $\$200$ per car, so craft at $\$151$ remains cheaper.
+
+DISAMBIGUATED:
+  Mass production lowers labour to \$15 per car, but machinery and energy push the total mass cost above \$200 per car, so craft at \$151 remains cheaper.
+
+CHANGED: YES
+  Original $ positions: [33, 35, 38, 105, 107, 111, 134, 136, 140]
+  Result $ positions: [34, 104, 131]
+
+--------------------------------------------------------------------------------
+
+--- Candidate 24 (option) ---
+Question ID: 
+Option: C
+
+ORIGINAL:
+  Because machinery costs $\$400{,}000$, mass production is only cheaper if the factory makes more than $50{,}000$ cars per year; here craft at $\$151$ per car is cheaper than mass at $\$25$.
+
+DISAMBIGUATED:
+  Because machinery costs \$400{,}000, mass production is only cheaper if the factory makes more than $50{,}000$ cars per year; here craft at \$151 per car is cheaper than mass at \$25.
+
+CHANGED: YES
+  Original $ positions: [24, 26, 36, 102, 111, 142, 144, 148, 182, 184, 187]
+  Result $ positions: [25, 100, 109, 141, 179]
+
+--------------------------------------------------------------------------------
+
+--- Candidate 25 (question) ---
+Question ID: 
+
+ORIGINAL:
+  A high school stores student health records digitally and on paper. The digital database value is $\$200{,}000$. Three threats and their yearly probabilities and impacts are: ransomware (probability $0.02$, impact $\$150{,}000$), paper theft (probability $0.05$, impact $\$30{,}000$), accidental deletion (probability $0.10$, impact $\$20{,}000$). The principal (legal) requirement is to protect confidentiality of student records. The principal wants a control that (1) best reduces expected annual loss, (2) preserves availability and integrity, and (3) satisfies the confidentiality requirement. Which single control choice best meets all three goals? (Expected loss = probability \times impact.)
+
+DISAMBIGUATED:
+  A high school stores student health records digitally and on paper. The digital database value is \$200{,}000. Three threats and their yearly probabilities and impacts are: ransomware (probability $0.02$, impact \$150{,}000), paper theft (probability $0.05$, impact \$30{,}000), accidental deletion (probability $0.10$, impact \$20{,}000). The principal (legal) requirement is to protect confidentiality of student records. The principal wants a control that (1) best reduces expected annual loss, (2) preserves availability and integrity, and (3) satisfies the confidentiality requirement. Which single control choice best meets all three goals? (Expected loss = probability \times impact.)
+
+CHANGED: YES
+  Original $ positions: [98, 100, 110, 199, 204, 214, 216, 226, 255, 260, 270, 272, 281, 318, 323, 333, 335, 344]
+  Result $ positions: [99, 197, 202, 213, 251, 256, 267, 312, 317, 328]
+
+--------------------------------------------------------------------------------
+
+--- Candidate 26 (option) ---
+Question ID: 
+Option: A
+
+ORIGINAL:
+  Pay $\$10{,}000$ per year for offsite encrypted backups. This reduces ransomware and accidental deletion impacts to $\$10{,}000$ and $\$5{,}000$ respectively, and keeps data encrypted offsite.
+
+DISAMBIGUATED:
+  Pay \$10{,}000 per year for offsite encrypted backups. This reduces ransomware and accidental deletion impacts to \$10{,}000 and \$5{,}000 respectively, and keeps data encrypted offsite.
+
+CHANGED: YES
+  Original $ positions: [4, 6, 15, 116, 118, 127, 133, 135, 143]
+  Result $ positions: [5, 115, 130]
+
+--------------------------------------------------------------------------------
+
+--- Candidate 27 (option) ---
+Question ID: 
+Option: B
+
+ORIGINAL:
+  Spend $\$2{,}000$ to install locks and alarms for paper files. This reduces paper theft impact to $\$5{,}000$, but does not affect digital threats.
+
+DISAMBIGUATED:
+  Spend \$2{,}000 to install locks and alarms for paper files. This reduces paper theft impact to \$5{,}000, but does not affect digital threats.
+
+CHANGED: YES
+  Original $ positions: [6, 8, 16, 98, 100, 108]
+  Result $ positions: [7, 97]
+
+--------------------------------------------------------------------------------
+
+--- Candidate 28 (option) ---
+Question ID: 
+Option: C
+
+ORIGINAL:
+  Implement multi-factor authentication (MFA) for $\$5{,}000$ per year. MFA cuts ransomware probability by 80% and accidental deletion probability by 50%, but leaves paper files unchanged.
+
+DISAMBIGUATED:
+  Implement multi-factor authentication (MFA) for \$5{,}000 per year. MFA cuts ransomware probability by 80% and accidental deletion probability by 50%, but leaves paper files unchanged.
+
+CHANGED: YES
+  Original $ positions: [48, 50, 58]
+  Result $ positions: [49]
+
+--------------------------------------------------------------------------------
+
+--- Candidate 29 (question) ---
+Question ID: 
+
+ORIGINAL:
+  A startup builds a smart home camera. They must meet user needs: remote access, easy setup, and privacy, with a tight budget. Retrofit encryption after shipping gives a breach probability of $0.08$ per device per year. Designing end-to-end encryption into the product plus a simpler setup lowers breach probability to $0.01$ per device per year. Each breach costs an average of $\$2000$ in damages. They will sell 10,000 units. Integrating encryption adds $\$20$ upfront per unit. Which decision best follows security engineering principles and yields the best financial outcome?
+
+DISAMBIGUATED:
+  A startup builds a smart home camera. They must meet user needs: remote access, easy setup, and privacy, with a tight budget. Retrofit encryption after shipping gives a breach probability of $0.08$ per device per year. Designing end-to-end encryption into the product plus a simpler setup lowers breach probability to $0.01$ per device per year. Each breach costs an average of \$2000 in damages. They will sell 10,000 units. Integrating encryption adds \$20 upfront per unit. Which decision best follows security engineering principles and yields the best financial outcome?
+
+CHANGED: YES
+  Original $ positions: [191, 196, 318, 323, 378, 380, 385, 456, 458, 461]
+  Result $ positions: [191, 196, 318, 323, 379, 455]
+
+--------------------------------------------------------------------------------
+
+--- Candidate 30 (option) ---
+Question ID: 
+Option: B
+
+ORIGINAL:
+  Integrate end-to-end encryption and a fail-well user interface. Upfront cost = $\$20\times10{,}000=\$200{,}000$. Expected breach costs: retrofit $=10{,}000\times0.08\times\$2000=\$1{,}600{,}000$, integrated $=10{,}000\times0.01\times\$2000=\$200{,}000$. Net savings justify integration and follow security engineering principles.
+
+DISAMBIGUATED:
+  Integrate end-to-end encryption and a fail-well user interface. Upfront cost = \$20\times10{,}000=\$200{,}000. Expected breach costs: retrofit $=10{,}000\times0.08\times\$2000=\$1{,}600{,}000$, integrated $=10{,}000\times0.01\times\$2000=\$200{,}000$. Net savings justify integration and follow security engineering principles.
+
+CHANGED: YES
+  Original $ positions: [79, 81, 100, 110, 145, 172, 179, 193, 207, 234, 241, 251]
+  Result $ positions: [80, 99, 143, 170, 177, 191, 205, 232, 239, 249]
+
+--------------------------------------------------------------------------------
+
+--- Candidate 31 (question) ---
+Question ID: 
+
+ORIGINAL:
+  Company Alpha reports cash of $200{,}000$, cash equivalents $50{,}000$, short-term investments $150{,}000$ and notes payable of $300{,}000$. Its annual gross operating surplus is $80{,}000$ and expected annual loan repayments are $70{,}000$. Total debt is $500{,}000$ and equity is $250{,}000$. Based on the Net Liquid Balance formula $NLB = \text{cash} + \text{cash equivalents} + \text{short-term investments} - \text{notes payable}$ and the other data, which of the following conclusions is most accurate regarding Alpha's short-term solvency, long-term viability, likely borrowing terms, and the applicability of cryptographic proofs of liabilities/assets?
+
+DISAMBIGUATED:
+  Company Alpha reports cash of $200{,}000$, cash equivalents $50{,}000$, short-term investments $150{,}000$ and notes payable of $300{,}000$. Its annual gross operating surplus is $80{,}000$ and expected annual loan repayments are $70{,}000$. Total debt is $500{,}000$ and equity is $250{,}000$. Based on the Net Liquid Balance formula $NLB = \text{cash} + \text{cash equivalents} + \text{short-term investments} - \text{notes payable}$ and the other data, which of the following conclusions is most accurate regarding Alpha's short-term solvency, long-term viability, likely borrowing terms, and the applicability of cryptographic proofs of liabilities/assets?
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 32 (option) ---
+Question ID: 
+Option: A
+
+ORIGINAL:
+  Alpha's $NLB=200{,}000+50{,}000+150{,}000-300{,}000=100{,}000$, so it is short-term solvent. Long-term viability is marginal because gross operating surplus minus repayments is $80{,}000-70{,}000=10{,}000$, which is above zero but not well above it; combined with a leverage ratio of $500{,}000/250{,}000=2$ this raises credit risk, so a lender would likely charge a higher interest rate than for a lower-leverage borrower. Privacy-preserving cryptographic proofs of liabilities/assets can be used to help validate solvency without revealing complete balance-sheet details.
+
+DISAMBIGUATED:
+  Alpha's $NLB=200{,}000+50{,}000+150{,}000-300{,}000=100{,}000$, so it is short-term solvent. Long-term viability is marginal because gross operating surplus minus repayments is $80{,}000-70{,}000=10{,}000$, which is above zero but not well above it; combined with a leverage ratio of $500{,}000/250{,}000=2$ this raises credit risk, so a lender would likely charge a higher interest rate than for a lower-leverage borrower. Privacy-preserving cryptographic proofs of liabilities/assets can be used to help validate solvency without revealing complete balance-sheet details.
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 33 (option) ---
+Question ID: 
+Option: B
+
+ORIGINAL:
+  Alpha's $NLB$ is negative ($100{,}000$ in assets minus $300{,}000$ notes payable gives $-200{,}000$), so it is short-term insolvent; therefore long-term viability is moot, and lenders will refuse credit regardless of leverage. Cryptographic proofs are irrelevant because insolvency is obvious.
+
+DISAMBIGUATED:
+  Alpha's $NLB$ is negative ($100{,}000$ in assets minus \$300{,}000 notes payable gives $-200{,}000$), so it is short-term insolvent; therefore long-term viability is moot, and lenders will refuse credit regardless of leverage. Cryptographic proofs are irrelevant because insolvency is obvious.
+
+CHANGED: YES
+  Original $ positions: [8, 12, 27, 37, 55, 65, 87, 98]
+  Result $ positions: [8, 12, 27, 37, 56, 87, 98]
+
+--------------------------------------------------------------------------------
+
+--- Candidate 34 (option) ---
+Question ID: 
+Option: C
+
+ORIGINAL:
+  Alpha's $NLB=100{,}000$ so it is short-term solvent, and because $80{,}000-70{,}000=10{,}000$ is positive the company is comfortably solvent long-term; the leverage ratio of 2 is moderate and will earn Alpha more favourable interest rates than most borrowers. Cryptographic proofs cannot be used to show solvency because they only prove existence of transactions.
+
+DISAMBIGUATED:
+  Alpha's $NLB=100{,}000$ so it is short-term solvent, and because $80{,}000-70{,}000=10{,}000$ is positive the company is comfortably solvent long-term; the leverage ratio of 2 is moderate and will earn Alpha more favourable interest rates than most borrowers. Cryptographic proofs cannot be used to show solvency because they only prove existence of transactions.
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 35 (option) ---
+Question ID: 
+Option: D
+
+ORIGINAL:
+  Alpha has $NLB=100{,}000$ and therefore is fully solvent both short- and long-term; leverage is immaterial to lenders who focus only on $NLB$. Cryptographic proofs of liabilities/assets are unnecessary and cannot influence lending terms.
+
+DISAMBIGUATED:
+  Alpha has $NLB=100{,}000$ and therefore is fully solvent both short- and long-term; leverage is immaterial to lenders who focus only on $NLB$. Cryptographic proofs of liabilities/assets are unnecessary and cannot influence lending terms.
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 36 (question) ---
+Question ID: 
+
+ORIGINAL:
+  A utility company is fully equity-financed with market value $1{,}000{,}000$ and 100,000 shares. Its EBIT (operating income) is $120{,}000$ per year. The firm borrows $300{,}000$ at 6% interest and uses the proceeds to repurchase shares ($1{,}000{,}000/100{,}000=\$10$ per share). Corporate tax rate is 25%. Which option best describes the likely effects on earnings per share (EPS), overall cost of capital, and the role of regulators?
+
+DISAMBIGUATED:
+  A utility company is fully equity-financed with market value $1{,}000{,}000$ and 100,000 shares. Its EBIT (operating income) is $120{,}000$ per year. The firm borrows $300{,}000$ at 6% interest and uses the proceeds to repurchase shares (\$1{,}000{,}000/100{,}000=\$10$ per share). Corporate tax rate is 25%. Which option best describes the likely effects on earnings per share (EPS), overall cost of capital, and the role of regulators?
+
+CHANGED: YES
+  Original $ positions: [61, 75, 128, 138, 167, 177, 238, 264, 267]
+  Result $ positions: [61, 75, 128, 138, 167, 177, 239, 265, 268]
+
+--------------------------------------------------------------------------------
+
+--- Candidate 37 (option) ---
+Question ID: 
+Option: B
+
+ORIGINAL:
+  EPS rises to about $\$1.09$ (interest $=300{,}000\times0.06=\$18{,}000$, net income $=\$76{,}500$, shares $=70{,}000$, EPS $=76{,}500/70{,}000\approx\$1.09$). But higher leverage raises financial risk and can increase a firm’s overall cost of capital if debt becomes excessive. For regulated utilities, regulators often set the allowed capital structure and cost of capital for rate-setting.
+
+DISAMBIGUATED:
+  EPS rises to about \$1.09 (interest $=300{,}000\times0.06=\$18{,}000$, net income $=\$76{,}500$, shares $=70{,}000$, EPS $=76{,}500/70{,}000\approx\$1.09$). But higher leverage raises financial risk and can increase a firm’s overall cost of capital if debt becomes excessive. For regulated utilities, regulators often set the allowed capital structure and cost of capital for rate-setting.
+
+CHANGED: YES
+  Original $ positions: [19, 21, 26, 38, 61, 70, 84, 87, 96, 106, 116, 123, 150, 155]
+  Result $ positions: [20, 36, 59, 68, 82, 85, 94, 104, 114, 121, 148, 153]
+
+--------------------------------------------------------------------------------
+
+--- Candidate 38 (question) ---
+Question ID: 
+
+ORIGINAL:
+  Sam is a novice lifter with a 1RM bench press of 100 kg. He performs 3 sets of 8 reps at 70 kg (training volume per session = $3\times8\times70=1680$ kg) three times per week. His coach prescribes increasing the load by 2.5 kg each week (while keeping sets and reps constant), instructs Sam to use strict technique for all but the last set, and allows 1–2 controlled "cheat" reps on the final set when form begins to fail. After 8 weeks, which pattern of physiological adaptation and training rationale is most consistent with the principles described in the article?
+
+DISAMBIGUATED:
+  Sam is a novice lifter with a 1RM bench press of 100 kg. He performs 3 sets of 8 reps at 70 kg (training volume per session = $3\times8\times70=1680$ kg) three times per week. His coach prescribes increasing the load by 2.5 kg each week (while keeping sets and reps constant), instructs Sam to use strict technique for all but the last set, and allows 1–2 controlled "cheat" reps on the final set when form begins to fail. After 8 weeks, which pattern of physiological adaptation and training rationale is most consistent with the principles described in the article?
+
+CHANGED: NO
+
+--------------------------------------------------------------------------------
+
+--- Candidate 39 (question) ---
+Ques

@@ -1,228 +1,169 @@
 [
   {
     "original_question": {
-      "question": "Why does administrative law structure rulemaking, adjudication, and enforcement as distinct functional activities within government agencies rather than letting a single unit perform all three?",
+      "question": "How does the divergence between Humean causality and Kantian causality affect the type of historical explanation each approach tends to favor?",
       "options": {
-        "A": "To maximize speed of policy changes by keeping all decisions centralized in one body.",
-        "B": "To create checks and balances, ensure due process, and apply specialized expertise, so rules are made, applied, and reviewed in ways that limit bias and arbitrary decision-making.",
-        "C": "To prevent any possibility of public participation in how laws are implemented.",
-        "D": "To align administrative practice with private-law court procedures for consistency across sectors."
+        "A": "Humean causality treats causal links as empirical regularities derived from constant conjunctions, leading historians to explain events with patterns and probabilistic connections; Kantian causality treats causal relations as necessary conditions grounding experience, pushing historians to reveal underlying structures or conditions that render events intelligible, even if not directly observable.",
+        "B": "Humean causality requires divine intervention to explain history; Kantian causality denies any causal explanation.",
+        "C": "Both approaches endorse teleological explanations; the difference is only about the role of ethical judgments.",
+        "D": "Both approaches rely on narrative coherence as the sole criterion; the difference is negligible."
       },
-      "correct_answer": "B",
-      "source_article": "Administrative law",
-      "x": 1.2349334955215454,
-      "y": 0.7999059557914734,
+      "correct_answer": "A",
+      "source_article": "Philosophy of history",
+      "x": 1.084579586982727,
+      "y": 1.0260422229766846,
       "concepts_tested": [
-        "Concept 1: The core mechanisms of administrative law (rulemaking, adjudication, enforcement) as the functional activities of executive branch agencies.",
-        "Concept 2: The civil law tradition’s use of specialized administrative courts and procedures tailored to administrative cases, highlighting institutional design differences from private-law proceedings.",
-        "Concept 3: The influence of supranational or international legal orders on domestic administrative law, driving changes in concepts like judicial control and the development of international/public administration."
+        "Analytic vs. speculative (critical) philosophy of history: their aims (pragmatic meaning/purpose vs. foundations/implications) and how this affects historical inquiry.",
+        "Causality in historical explanation: the Hume-Kant divergence and its impact on how history explains events and processes.",
+        "Normative purpose of history: the idea that history should teach good examples or shape moral/ethical understanding, contrasted with literary or poetic treatments of history."
       ],
       "parent_concepts": [
-        "Concept 3: Historical and institutional development of proportionality (origin in German administrative law and its adoption into constitutional law), illustrating how a principle becomes a testable framework."
+        "Concept 1: Evidence-based reconstruction and source criticism as methods to explain past events"
       ],
       "parent_articles": [
-        "Proportionality (law)"
+        "History"
       ]
     },
     "reason": "content_loss_both_passes",
     "pass_1_attempt": {
-      "question": "Why do governments keep rulemaking, adjudication, and enforcement separate instead of letting one unit do all three?",
+      "question": "How do Hume's and Kant's ideas about causes change how historians explain events?",
       "options": {
-        "A": "To make policy changes faster by putting all power in one place.",
-        "B": "To create checks and balances, protect fair process, and use experts so rules are made, applied, and reviewed.",
-        "C": "To stop the public from taking part in how laws are carried out.",
-        "D": "To copy private court procedures so government and private cases look the same."
-      },
-      "correct_answer": "B",
-      "simplification_notes": "Used short sentences and simple words. Kept the core idea that separation gives checks and balances, fair process, and expert review. Made all options plausible but kept B as correct.",
-      "content_preserved": true
-    },
-    "pass_1_reason": "readability_too_high_13.3_vs_8",
-    "pass_2_attempt": {
-      "question": "A national agency orders factories to cut pollution, holds hearings, and fines violators. Country X uses special administrative courts to review these agency actions. Later, Country X joins an international environmental agreement that sets new standards and creates a coordinating body. Which statement best explains what this story shows about administrative law?",
-      "options": {
-        "A": "It shows agencies do rulemaking, adjudication, and enforcement; special courts review their actions; international rules change national law.",
-        "B": "Only courts make rules; agencies only enforce them; international agreements do not change domestic law.",
-        "C": "Specialized courts stop people from challenging agency decisions; international bodies replace national courts.",
-        "D": "Agency hearings are the same as private trials; joining an international treaty only affects trade rules."
+        "A": "Hume and Kant give different causes that shape historians' explanations: patterns versus hidden rules.",
+        "B": "Hume claims divine action causes history events.",
+        "C": "Both think history moves toward a clear goal.",
+        "D": "Both judge history only by how stories fit."
       },
       "correct_answer": "A",
-      "generation_notes": "Created a concrete pollution-agency story. Each option links to the agency's three functions, special administrative courts, and supranational influence. Chose one clear, accurate explanation.",
+      "simplification_notes": "Used simple words. Kept the Hume versus Kant contrast.",
+      "content_preserved": true
+    },
+    "pass_1_reason": "readability_too_high_10.4_vs_5",
+    "pass_2_attempt": {
+      "question": "Which description best shows the analytic approach to history?",
+      "options": {
+        "A": "A historian asks how the event changed people's lives.",
+        "B": "A historian looks for hidden deep reasons behind the event.",
+        "C": "A historian says events repeat in natural cycles.",
+        "D": "A historian tells moral stories to teach good examples."
+      },
+      "correct_answer": "A",
+      "generation_notes": "Used simple scenarios to contrast pragmatic, speculative, causal, and moral aims.",
       "concepts_tested": [
-        "Agencies perform rulemaking, adjudication, and enforcement",
-        "Civil law tradition uses specialized administrative courts for administrative cases",
-        "Supranational agreements can change domestic administrative law and create coordinating bodies"
+        "analytic versus speculative aims",
+        "historical causality",
+        "history as moral teaching"
       ]
     },
-    "pass_2_reason": "readability_too_high_12.9_vs_8"
+    "pass_2_reason": "readability_too_high_10.2_vs_5"
   },
   {
     "original_question": {
-      "question": "Which explanation best captures why social change is typically understood as arising from the interaction between stable structural conditions and contingent, random events?",
+      "question": "In mysticism understood as a pathway of personal transformation enabled by practices and experiences, what mechanism links repeated practice to lasting change in the self?",
       "options": {
-        "A": "Structural factors alone determine the direction and magnitude of change, making contingency irrelevant.",
-        "B": "Contingent events alone determine change, since structural conditions are stable and passive.",
-        "C": "Structural conditions create a stable environment with certain vulnerabilities and opportunities, while contingent events act as triggers that push the system past thresholds, so change emerges from their interaction.",
-        "D": "Social change is purely cyclical and independent of both structure and contingency."
+        "A": "Mystical transformation occurs only when experiences happen spontaneously, regardless of practice.",
+        "B": "Repeated, structured practices recalibrate attention, emotion regulation, and self-referential processing, shaping how experiences are interpreted and integrating them over time.",
+        "C": "Transformation is a direct result of memorizing doctrinal content, with no need for experiential practice.",
+        "D": "Social validation from a community is sufficient to reframe identity, independent of individual practice or experience."
       },
-      "correct_answer": "C",
-      "source_article": "Social change",
-      "x": 1.203518033027649,
-      "y": 0.969777524471283,
+      "correct_answer": "B",
+      "source_article": "Mysticism",
+      "x": 1.0818508863449097,
+      "y": 1.0543891191482544,
       "concepts_tested": [
-        "Concept 1: Social change results from a combination of systematic (structural) factors and unique (contingent/random) factors, implying an interaction between stable conditions and variables.",
-        "Concept 2: Theories of social change identify core components—structural aspects, processes/mechanisms, and directions of change—as a framework for explaining how change happens.",
-        "Concept 3: Different theoretical frameworks propose distinct mechanisms for change (e.g., Hegelian dialectic with conflict and synthesis; Marxist class struggle and materialist history; Kuhnian paradigm shifts and critical junctures), highlighting how the underlying drivers differ across theories."
+        "Concept 1: Mysticism as a pathway of personal transformation enabled by practices and religious experiences (the mechanism linking practice to transformation).",
+        "Concept 2: The relationship between mysticism and different forms of experience (unitive mystical experience vs. insight into ultimate truths or altered states like samadhi) and how these interpretations coexist or diverge across traditions.",
+        "Concept 3: Scholarly reframing of mysticism’s definitions (how and why the understanding of mysticism shifts across historical periods and across Buddhist, Hindu, Sufi, Christian contexts)."
       ],
       "parent_concepts": [
-        "Concept 3: Outcomes and level-specific relationships (group-level changes in institutions and practices; individual-level effects on psychological/physical well-being; possible results such as integration, marginalization, coexistence, or cultural evolution).",
-        "Concept 3: Technology-induced social change — new technologies reconfigure social structures and daily life (e.g., smartphones altering family dynamics)."
+        "Concept 2: Competing theoretical frameworks and typologies of mysticism (perennialism vs constructionism vs attribution; Zaehner’s/theistic/monistic/panentheistic, Stace’s extraverted vs introverted) and what they imply about universal vs context-dependent aspects of mysticism."
       ],
       "parent_articles": [
-        "Acculturation",
-        "Media studies"
+        "Mystical or religious experience"
       ]
     },
     "reason": "content_loss_both_passes",
     "pass_1_attempt": {
-      "question": "Which choice best explains why social change usually happens when long-term social conditions and sudden events work together?",
+      "question": "How can doing spiritual practices many times change a person for a long time?",
       "options": {
-        "A": "Long-term structures alone shape how change happens, so random events do not matter.",
-        "B": "Random, one-time events alone cause change because structures stay stable and do nothing.",
-        "C": "Long-term structures set up opportunities and weak spots, and sudden events trigger changes past tipping points.",
-        "D": "Change just repeats in cycles and does not depend on structures or sudden events."
+        "A": "Transformation happens only when experiences occur by chance.",
+        "B": "Regular practice changes how you pay attention, handle feelings, and see yourself.",
+        "C": "Memorizing teachings alone brings lasting change.",
+        "D": "Community approval alone changes identity without personal practice."
       },
-      "correct_answer": "C",
-      "simplification_notes": "Rewrote the question in simpler words. Replaced 'structural conditions' with 'long-term social conditions' and 'contingent/random events' with 'sudden events'. Shortened sentences and kept the idea that structures provide conditions while events trigger change.",
+      "correct_answer": "B",
+      "simplification_notes": "I used simple words and short sentences to explain that repeated practice trains attention, feelings, and self-view.",
       "content_preserved": true
     },
-    "pass_1_reason": "readability_too_high_12.4_vs_8",
+    "pass_1_reason": "readability_too_high_8.4_vs_5",
     "pass_2_attempt": {
-      "question": "River Town changed after three events: (1) a highway built years ago, (2) a sudden storm collapsed a bridge, and (3) two groups argued and then made a compromise. Which choice correctly names (a) a systematic factor, (b) a unique factor, (c) what a social-change theory should include, and (d) which theory explains arguing that leads to a compromise?",
+      "question": "Which sentence best describes mysticism?",
       "options": {
-        "A": "Systematic factor: the long-term highway. Unique factor: the sudden storm collapse. Theory parts: structure, processes, direction. Arguing→compromise fits Hegelian dialectic.",
-        "B": "Systematic factor: the storm collapse. Unique factor: the highway. Theory parts: classes, markets, power. Arguing fits Marxist class struggle.",
-        "C": "Systematic factor: the highway. Unique factor: the storm collapse. Theory parts: causes, effects, outcomes. Arguing fits Marxist class struggle.",
-        "D": "Systematic factor: the highway. Unique factor: the storm collapse. Theory parts: structure, processes, direction. Arguing fits a Kuhnian paradigm shift."
+        "A": "Religious practice and special experiences help people change.",
+        "B": "A single sudden union with God defines all mysticism.",
+        "C": "Only secret rites for a few people bring mystical power.",
+        "D": "Scholars give many different meanings to the word mysticism."
       },
       "correct_answer": "A",
-      "generation_notes": "Made a town scenario with a long-term structural cause and a sudden unique event. Options test identification of systematic vs unique causes, the three core theory parts, and matching Hegelian vs Marxist vs Kuhnian mechanisms.",
+      "generation_notes": "I made a clear question with four simple scenarios.",
       "concepts_tested": [
-        "Systematic (structural) vs unique (contingent) causes of social change",
-        "Core components of a social-change theory: structure, processes, direction",
-        "Different theories' mechanisms: Hegelian dialectic vs Marxist class struggle vs Kuhnian paradigm shift"
+        "practice leads to personal change",
+        "different kinds of mystical experience",
+        "historical and scholarly change in meaning"
       ]
     },
-    "pass_2_reason": "readability_too_high_13.1_vs_8"
+    "pass_2_reason": "readability_too_high_10.0_vs_5"
   },
   {
     "original_question": {
-      "question": "Why does employing a faceted classification approach, supported by information technology, better serve diverse user groups and their search tasks than a single hierarchical taxonomy?",
+      "question": "In a constructionist/attribution framework, how are cross-cultural reports of mystical experiences best understood, and how do Zaehner's typologies versus Stace's dichotomy relate to this understanding?",
       "options": {
-        "A": "It restricts search paths to a predefined order, reducing cognitive load but limiting flexibility.",
-        "B": "It provides multiple independent facets that users can combine to reflect their different tasks and contexts, and modern IT supports dynamic filtering, cross-domain search, and relevance ranking across facets.",
-        "C": "It eliminates the need for metadata and allows keyword-only search to retrieve precise results.",
-        "D": "It guarantees identical navigation experiences for all users because facets standardize the structure."
+        "A": "Cross-cultural similarities are explained by a universal metaphysical reality; Zaehner's typologies capture epistemic universals, and Stace's dichotomy is a redundant framing.",
+        "B": "Cross-cultural similarities are explained as products of shared cognitive and cultural frames shaping interpretation, rather than identical phenomenology; Zaehner's typologies categorize what is attributed to the experience (theistic, monistic, panentheistic), while Stace's dichotomy distinguishes how the experience is framed (extraverted vs. introverted).",
+        "C": "Cross-cultural similarities are due to identical neurophysiological activations across cultures; Zaehner and Stace map directly onto specific brain regions involved.",
+        "D": "Cross-cultural similarities are illusory; there is no substantive phenomenology, and Zaehner and Stace offer incompatible, mutually exclusive classifications."
       },
       "correct_answer": "B",
-      "source_article": "Library and information science",
-      "x": 1.1367442607879639,
-      "y": 0.9321359992027283,
+      "source_article": "Mystical or religious experience",
+      "x": 1.105865240097046,
+      "y": 1.0491325855255127,
       "concepts_tested": [
-        "Concept 1: The relationship and overlap between library science and information science and how this relationship influences professional practice.",
-        "Concept 2: The mechanism by which information resources are organized and classified to serve diverse user groups, including the interaction with classification systems and technology.",
-        "Concept 3: The ethical, legal, and political economy considerations that govern library and information services and their impact on practice."
+        "Concept 1: James's four defining qualities of mystical experiences (ineffability, noetic quality, transiency, passivity) and how they influence interpretation and epistemic status.",
+        "Concept 2: Competing theoretical frameworks (perennialism vs. constructionist/attribution approaches; Zaehner’s typologies vs. Stace’s dichotomy) and how they explain universality, mediation by frames of reference, and the classification of mysticism.",
+        "Concept 3: Neurocognitive correlates of mystical experiences (temporal lobe, parietal lobe, default mode network, anterior insula) and what these relationships imply about the brain–phenomenon link and the nature of consciousness during such experiences."
       ],
       "parent_concepts": [],
       "parent_articles": []
     },
     "reason": "content_loss_both_passes",
     "pass_1_attempt": {
-      "question": "Why does using faceted classification with modern information technology help many different users and search tasks more than using one fixed hierarchical taxonomy?",
+      "question": "How does the constructionist view explain similar mystical reports from different cultures? How do Zaehner's types differ from Stace's types in what they describe?",
       "options": {
-        "A": "It forces users to follow one set path. That lowers the mental work but reduces flexibility.",
-        "B": "It gives separate facets like topic, date, or format that users can mix. Computers let you filter quickly, search across subjects, and rank best matches.",
-        "C": "It removes the need for metadata and lets keyword-only searches find exact results.",
-        "D": "It makes everyone have the same navigation because facets create one standard structure."
+        "A": "They explain similarities by one universal spiritual reality; Zaehner shows universals; Stace repeats them.",
+        "B": "Constructionists explain similarities as cultural frames shaping interpretation; Zaehner: content types; Stace: experience types.",
+        "C": "They explain similarities by identical brain activations across cultures; Zaehner, Stace map to brain.",
+        "D": "They say similarities are illusions; no real phenomenology exists; Zaehner versus Stace conflict."
       },
       "correct_answer": "B",
-      "simplification_notes": "Rewrote the question in simple words, split long ideas into short sentences, replaced technical phrases with clear examples (topic, date, format). Kept the original correct answer and core idea about facets and IT support.",
+      "simplification_notes": "I simplified the wording. I kept the Zaehner versus Stace contrast.",
       "content_preserved": true
     },
-    "pass_1_reason": "readability_too_high_18.0_vs_8",
+    "pass_1_reason": "readability_too_high_8.8_vs_5",
     "pass_2_attempt": {
-      "question": "A school hires a librarian and an information scientist to redesign the library. They must organize items, choose technology, and follow rules about privacy and access. Which plan best shows use of both library science and information science, helps different user groups, and respects ethical and legal concerns?",
+      "question": "A person has a short, wordless feeling of unity; which option lists James's four qualities?",
       "options": {
-        "A": "Keep books alphabetically and use only a paper card catalog. No online search.",
-        "B": "Create a subject-based classification with simple tags. Build an online search for kids and teachers. Protect privacy and give equal access.",
-        "C": "Make some sections for teachers only to save money. Hire a private company that charges users to search special collections.",
-        "D": "Install a company-run app that tracks which students read what. Let the company sell the data to pay for the app."
-      },
-      "correct_answer": "B",
-      "generation_notes": "School library team scenario combining classification, technology choice, and ethics. Distractors show poor tech, access, or privacy choices.",
-      "concepts_tested": [
-        "Overlap of library science and information science in practice",
-        "Organizing and classifying resources for diverse user groups using classification systems and technology",
-        "Ethical, legal, and political-economy concerns (privacy, access, funding)"
-      ]
-    },
-    "pass_2_reason": "readability_too_high_12.0_vs_8"
-  },
-  {
-    "original_question": {
-      "question": "In an ecosystem-inspired, systems-based view of industrial ecology, why can optimizing a single technology in isolation fail to improve overall sustainability, and how does the ecosystem metaphor explain this phenomenon?",
-      "options": {
-        "A": "Because optimizing one component can alter the broader network of material and energy flows through feedbacks, causing compensating or new inefficiencies elsewhere and potentially offsetting gains.",
-        "B": "Because the ecosystem metaphor suggests that each subsystem operates in complete independence; improving one has no effect on others.",
-        "C": "Because natural ecosystems have no waste, so any waste produced by an industrial system is irrelevant to overall sustainability.",
-        "D": "Because policy and markets always ensure that local optimizations scale to global benefits, making system-scale thinking unnecessary."
+        "A": "It lists ineffability, noetic quality, transiency, passivity.",
+        "B": "It says all religions show the same inner truth.",
+        "C": "It claims culture and training shape each person's feeling.",
+        "D": "It points to the temporal lobe and anterior insula."
       },
       "correct_answer": "A",
-      "source_article": "Industrial ecology",
-      "x": 1.5577996969223022,
-      "y": 0.9561868906021118,
+      "generation_notes": "Short scenario with four choices to contrast James, theory, and brain ideas.",
       "concepts_tested": [
-        "Concept 1: Closed-loop / industrial metabolism — shifting from open-loop waste generation to loops where wastes become inputs for new processes, highlighting material and energy flow as a systemic phenomenon.",
-        "Concept 2: Ecosystem-inspired, systems-based view — understanding emergent behavior and interdependencies of industrial and natural systems, using ecosystem metaphors to guide sustainable design.",
-        "Concept 3: Life-cycle thinking and eco-design (including product stewardship) — designing and evaluating products and processes across their entire life cycle to reduce environmental impact and decarbonize/dematerialize."
-      ],
-      "parent_concepts": [
-        "Concept 1: The three base principles of a circular economy (designing out waste and pollution; keeping products/materials in use; regenerating natural systems) as a framework for transformation."
-      ],
-      "parent_articles": [
-        "Circular economy"
+        "James's four qualities of mystical experience",
+        "Competing explanations: perennialism versus constructionism",
+        "Neurocognitive correlates like temporal lobe and anterior insula"
       ]
     },
-    "reason": "content_loss_both_passes",
-    "pass_1_attempt": {
-      "question": "If we only improve one technology without looking at the whole industrial system, why might the overall sustainability not get better? How does the \"ecosystem\" idea explain this?",
-      "options": {
-        "A": "Because improving one part can change material and energy flows in the whole network. Feedbacks can cause new wastes or losses that cancel the gains.",
-        "B": "Because the ecosystem idea says each part works by itself; changing one part does not affect the others.",
-        "C": "Because natural ecosystems have no waste, so any waste from industry does not matter for overall sustainability.",
-        "D": "Because markets and laws always make local improvements become global benefits, so you do not need to study the whole system."
-      },
-      "correct_answer": "A",
-      "simplification_notes": "Shortened sentences, used simple words, removed jargon like 'emergent behavior' and 'industrial metabolism', kept idea that parts interact and feedbacks can negate gains.",
-      "content_preserved": true
-    },
-    "pass_1_reason": "readability_too_high_12.2_vs_8",
-    "pass_2_attempt": {
-      "question": "A shoe company does three things: (1) it collects old shoes and grinds them into new soles, (2) it designs shoes to use less material and to be repaired, and (3) it shares waste heat with a nearby bakery so the bakery uses the heat for ovens. Which statement correctly links each action to the right industrial ecology idea?",
-      "options": {
-        "A": "Closed-loop = (1); Ecosystem-inspired systems = (3); Life-cycle thinking and eco-design = (2)",
-        "B": "Closed-loop = (2); Ecosystem-inspired systems = (1); Life-cycle thinking and eco-design = (3)",
-        "C": "Closed-loop = (3); Ecosystem-inspired systems = (2); Life-cycle thinking and eco-design = (1)",
-        "D": "Closed-loop = (1); Ecosystem-inspired systems = (2); Life-cycle thinking and eco-design = (3)"
-      },
-      "correct_answer": "A",
-      "generation_notes": "Created a concrete factory scenario and asked students to match actions to closed-loop, ecosystem metaphor, and life-cycle/eco-design concepts. Options give plausible but different mappings.",
-      "concepts_tested": [
-        "Closed-loop / industrial metabolism",
-        "Ecosystem-inspired systems thinking",
-        "Life-cycle thinking and eco-design"
-      ]
-    },
-    "pass_2_reason": "readability_too_high_13.3_vs_8"
+    "pass_2_reason": "readability_too_high_9.1_vs_5"
   }
 ]

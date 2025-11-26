@@ -1,5 +1,5 @@
 {
-  "total_candidates": 20,
+  "total_candidates": 50,
   "candidates": [
     {
       "index": 0,
@@ -16,8 +16,8 @@
       "question_id": "",
       "option_key": null,
       "original": "A town of 100,000 faces a contagious viral illness and rising opioid misuse. Most residents have insurance that pays 90% of treatment costs. Private clinics offer extra procedures, and patients rarely see the full price. A new vaccine costs $200 per person and directly increases an individual's quality-adjusted life years (QALYs) by 0.01. Because vaccination reduces transmission, the indirect benefit per vaccinated person is estimated to raise total QALYs by 0.03. Health officials must choose a policy. Which option best follows health-economics reasoning about third-party payers, externalities, and QALY measurement uncertainty? (Note: direct cost per QALY = $200/0.01 = $20,000; including indirect benefits cost per QALY \u2248 $200/0.03 = $6,667.)",
-      "disambiguated": "A town of 100,000 faces a contagious viral illness and rising opioid misuse. Most residents have insurance that pays 90% of treatment costs. Private clinics offer extra procedures, and patients rarely see the full price. A new vaccine costs $200 per person and directly increases an individual's quality-adjusted life years (QALYs) by 0.01. Because vaccination reduces transmission, the indirect benefit per vaccinated person is estimated to raise total QALYs by 0.03. Health officials must choose a policy. Which option best follows health-economics reasoning about third-party payers, externalities, and QALY measurement uncertainty? (Note: direct cost per QALY = $200/0.01 = $20,000; including indirect benefits cost per QALY \u2248 $200/0.03 = $6,667.)",
-      "changed": false
+      "disambiguated": "A town of 100,000 faces a contagious viral illness and rising opioid misuse. Most residents have insurance that pays 90% of treatment costs. Private clinics offer extra procedures, and patients rarely see the full price. A new vaccine costs \\\\$200 per person and directly increases an individual's quality-adjusted life years (QALYs) by 0.01. Because vaccination reduces transmission, the indirect benefit per vaccinated person is estimated to raise total QALYs by 0.03. Health officials must choose a policy. Which option best follows health-economics reasoning about third-party payers, externalities, and QALY measurement uncertainty? (Note: direct cost per QALY = \\\\$200/0.01 = \\\\$20,000; including indirect benefits cost per QALY \u2248 \\\\$200/0.03 = \\\\$6,667.)",
+      "changed": true
     },
     {
       "index": 2,
@@ -151,8 +151,8 @@
       "question_id": "",
       "option_key": null,
       "original": "Country Aloria has two regions, North and South, both with GDP per capita of $10{,}000$. North has strong institutions and $60\\%$ secondary-school enrollment. South has weak institutions and $30\\%$ enrollment. The national government has $100\\text{ million}$ per year and considers two multi-year plans. Plan X: a two-year firm tax cut to spur immediate investment. Plan Y: a ten-year program funding education and legal reforms to build human capital and improve institutions. If the government's main goal is long-term poverty reduction and convergence of incomes across regions, which policy is most likely to succeed and why?",
-      "disambiguated": "Country Aloria has two regions, North and South, both with GDP per capita of $10{,}000$. North has strong institutions and $60\\%$ secondary-school enrollment. South has weak institutions and $30\\%$ enrollment. The national government has $100\\text{ million}$ per year and considers two multi-year plans. Plan X: a two-year firm tax cut to spur immediate investment. Plan Y: a ten-year program funding education and legal reforms to build human capital and improve institutions. If the government's main goal is long-term poverty reduction and convergence of incomes across regions, which policy is most likely to succeed and why?",
-      "changed": false
+      "disambiguated": "Country Aloria has two regions, North and South, both with GDP per capita of \\\\$10{,}000$. North has strong institutions and $60\\%$ secondary-school enrollment. South has weak institutions and $30\\%$ enrollment. The national government has \\\\$100\\text{ million}$ per year and considers two multi-year plans. Plan X: a two-year firm tax cut to spur immediate investment. Plan Y: a ten-year program funding education and legal reforms to build human capital and improve institutions. If the government's main goal is long-term poverty reduction and convergence of incomes across regions, which policy is most likely to succeed and why?",
+      "changed": true
     },
     {
       "index": 17,
@@ -179,6 +179,276 @@
       "option_key": null,
       "original": "A peptide therapeutic has oral bioavailability $<1\\%$ and a plasma half-life of 1 hour. The development team wants to (i) increase systemic bioavailability to >30\\%, (ii) prolong duration of action to reduce dosing frequency, (iii) deliver antigenic signals to dermal antigen-presenting cells for a vaccine-like immune response, and (iv) enable safe self-administration without conventional hypodermic needles. Which delivery strategy best satisfies these objectives and correctly exemplifies the distinction between \"route of administration\" and \"dosage form\"?",
       "disambiguated": "A peptide therapeutic has oral bioavailability $<1\\%$ and a plasma half-life of 1 hour. The development team wants to (i) increase systemic bioavailability to >30\\%, (ii) prolong duration of action to reduce dosing frequency, (iii) deliver antigenic signals to dermal antigen-presenting cells for a vaccine-like immune response, and (iv) enable safe self-administration without conventional hypodermic needles. Which delivery strategy best satisfies these objectives and correctly exemplifies the distinction between \"route of administration\" and \"dosage form\"?",
+      "changed": false
+    },
+    {
+      "index": 20,
+      "type": "question",
+      "question_id": "",
+      "option_key": null,
+      "original": "A toy company must make 10,000 identical toy cars in one year. Craft method: one worker needs $10$ hours to finish one car. Wage is $\\$15$/hour and other costs are $\\$1$ per car. Mass production: an assembly line has $10$ stations. Each station takes $6$ minutes per car (so each station worker spends $0.1$ hour per car). Wages are $\\$15$/hour. Machinery cost is $\\$400{,}000$ amortized over $5$ years. Annual energy for the line is $\\$20{,}000$. Standardized interchangeable parts are used, so no extra finishing time. Based on these numbers, which statement is correct?",
+      "disambiguated": "A toy company must make 10,000 identical toy cars in one year. Craft method: one worker needs \\$10 hours to finish one car. Wage is \\$15/hour and other costs are \\$1 per car. Mass production: an assembly line has $10$ stations. Each station takes $6$ minutes per car (so each station worker spends $0.1$ hour per car). Wages are \\$15/hour. Machinery cost is \\$400{,}000 amortized over $5$ years. Annual energy for the line is \\$20{,}000. Standardized interchangeable parts are used, so no extra finishing time. Based on these numbers, which statement is correct?",
+      "changed": true
+    },
+    {
+      "index": 21,
+      "type": "option",
+      "question_id": "",
+      "option_key": "A",
+      "original": "Mass production cuts labour per car from $10$ hours to $1$ hour. Labour cost falls from $10\\times\\$15=\\$150$ to $10\\times0.1\\times\\$15=\\$15$. Capital per car is $\\$400000/(5\\times10000)=\\$8$, energy $\\$2$. Total mass cost = $\\$25$, craft cost = $\\$151$, so mass saves $\\$126$ per car.",
+      "disambiguated": "Mass production cuts labour per car from \\$10 hours to \\$1 hour. Labour cost falls from \\$10\\times \\$15 = \\$150 to \\$10\\times 0.1\\times \\$15 = \\$15. Capital per car is \\$400,000/(5\\times 10,000) = \\$8, energy \\$2. Total mass cost = \\$25, craft cost = \\$151, so mass saves \\$126 per car.",
+      "changed": true
+    },
+    {
+      "index": 22,
+      "type": "option",
+      "question_id": "",
+      "option_key": "B",
+      "original": "Mass production lowers labour to $\\$15$ per car, but machinery and energy push the total mass cost above $\\$200$ per car, so craft at $\\$151$ remains cheaper.",
+      "disambiguated": "Mass production lowers labour to \\$15 per car, but machinery and energy push the total mass cost above \\$200 per car, so craft at \\$151 remains cheaper.",
+      "changed": true
+    },
+    {
+      "index": 23,
+      "type": "option",
+      "question_id": "",
+      "option_key": "C",
+      "original": "Because machinery costs $\\$400{,}000$, mass production is only cheaper if the factory makes more than $50{,}000$ cars per year; here craft at $\\$151$ per car is cheaper than mass at $\\$25$.",
+      "disambiguated": "Because machinery costs \\$400{,}000, mass production is only cheaper if the factory makes more than 50{,}000 cars per year; here craft at \\$151 per car is cheaper than mass at \\$25.",
+      "changed": true
+    },
+    {
+      "index": 24,
+      "type": "question",
+      "question_id": "",
+      "option_key": null,
+      "original": "A high school stores student health records digitally and on paper. The digital database value is $\\$200{,}000$. Three threats and their yearly probabilities and impacts are: ransomware (probability $0.02$, impact $\\$150{,}000$), paper theft (probability $0.05$, impact $\\$30{,}000$), accidental deletion (probability $0.10$, impact $\\$20{,}000$). The principal (legal) requirement is to protect confidentiality of student records. The principal wants a control that (1) best reduces expected annual loss, (2) preserves availability and integrity, and (3) satisfies the confidentiality requirement. Which single control choice best meets all three goals? (Expected loss = probability \\times impact.)",
+      "disambiguated": "A high school stores student health records digitally and on paper. The digital database value is \\$200{,}000. Three threats and their yearly probabilities and impacts are: ransomware (probability $0.02$, impact \\$150{,}000), paper theft (probability $0.05$, impact \\$30{,}000), accidental deletion (probability $0.10$, impact \\$20{,}000). The principal (legal) requirement is to protect confidentiality of student records. The principal wants a control that (1) best reduces expected annual loss, (2) preserves availability and integrity, and (3) satisfies the confidentiality requirement. Which single control choice best meets all three goals? (Expected loss = probability \\times impact.)",
+      "changed": true
+    },
+    {
+      "index": 25,
+      "type": "option",
+      "question_id": "",
+      "option_key": "A",
+      "original": "Pay $\\$10{,}000$ per year for offsite encrypted backups. This reduces ransomware and accidental deletion impacts to $\\$10{,}000$ and $\\$5{,}000$ respectively, and keeps data encrypted offsite.",
+      "disambiguated": "Pay \\$10{,}000 per year for offsite encrypted backups. This reduces ransomware and accidental deletion impacts to \\$10{,}000 and \\$5{,}000 respectively, and keeps data encrypted offsite.",
+      "changed": true
+    },
+    {
+      "index": 26,
+      "type": "option",
+      "question_id": "",
+      "option_key": "B",
+      "original": "Spend $\\$2{,}000$ to install locks and alarms for paper files. This reduces paper theft impact to $\\$5{,}000$, but does not affect digital threats.",
+      "disambiguated": "Spend \\$2{,}000 to install locks and alarms for paper files. This reduces paper theft impact to \\$5{,}000, but does not affect digital threats.",
+      "changed": true
+    },
+    {
+      "index": 27,
+      "type": "option",
+      "question_id": "",
+      "option_key": "C",
+      "original": "Implement multi-factor authentication (MFA) for $\\$5{,}000$ per year. MFA cuts ransomware probability by 80% and accidental deletion probability by 50%, but leaves paper files unchanged.",
+      "disambiguated": "Implement multi-factor authentication (MFA) for \\$5{,}000 per year. MFA cuts ransomware probability by 80% and accidental deletion probability by 50%, but leaves paper files unchanged.",
+      "changed": true
+    },
+    {
+      "index": 28,
+      "type": "question",
+      "question_id": "",
+      "option_key": null,
+      "original": "A startup builds a smart home camera. They must meet user needs: remote access, easy setup, and privacy, with a tight budget. Retrofit encryption after shipping gives a breach probability of $0.08$ per device per year. Designing end-to-end encryption into the product plus a simpler setup lowers breach probability to $0.01$ per device per year. Each breach costs an average of $\\$2000$ in damages. They will sell 10,000 units. Integrating encryption adds $\\$20$ upfront per unit. Which decision best follows security engineering principles and yields the best financial outcome?",
+      "disambiguated": "A startup builds a smart home camera. They must meet user needs: remote access, easy setup, and privacy, with a tight budget. Retrofit encryption after shipping gives a breach probability of $0.08$ per device per year. Designing end-to-end encryption into the product plus a simpler setup lowers breach probability to $0.01$ per device per year. Each breach costs an average of \\$2000 in damages. They will sell 10,000 units. Integrating encryption adds \\$20 upfront per unit. Which decision best follows security engineering principles and yields the best financial outcome?",
+      "changed": true
+    },
+    {
+      "index": 29,
+      "type": "option",
+      "question_id": "",
+      "option_key": "B",
+      "original": "Integrate end-to-end encryption and a fail-well user interface. Upfront cost = $\\$20\\times10{,}000=\\$200{,}000$. Expected breach costs: retrofit $=10{,}000\\times0.08\\times\\$2000=\\$1{,}600{,}000$, integrated $=10{,}000\\times0.01\\times\\$2000=\\$200{,}000$. Net savings justify integration and follow security engineering principles.",
+      "disambiguated": "Integrate end-to-end encryption and a fail-well user interface. Upfront cost = \\$20\\times 10{,}000 = \\$200{,}000. Expected breach costs: retrofit = 10{,}000\\times 0.08\\times \\$2000 = \\$1{,}600{,}000, integrated = 10{,}000\\times 0.01\\times \\$2000 = \\$200{,}000. Net savings justify integration and follow security engineering principles.",
+      "changed": true
+    },
+    {
+      "index": 30,
+      "type": "question",
+      "question_id": "",
+      "option_key": null,
+      "original": "Company Alpha reports cash of $200{,}000$, cash equivalents $50{,}000$, short-term investments $150{,}000$ and notes payable of $300{,}000$. Its annual gross operating surplus is $80{,}000$ and expected annual loan repayments are $70{,}000$. Total debt is $500{,}000$ and equity is $250{,}000$. Based on the Net Liquid Balance formula $NLB = \\text{cash} + \\text{cash equivalents} + \\text{short-term investments} - \\text{notes payable}$ and the other data, which of the following conclusions is most accurate regarding Alpha's short-term solvency, long-term viability, likely borrowing terms, and the applicability of cryptographic proofs of liabilities/assets?",
+      "disambiguated": "Company Alpha reports cash of \\$200{,}000, cash equivalents \\$50{,}000, short-term investments \\$150{,}000 and notes payable of \\$300{,}000. Its annual gross operating surplus is \\$80{,}000 and expected annual loan repayments are \\$70{,}000. Total debt is \\$500{,}000 and equity is \\$250{,}000. Based on the Net Liquid Balance formula \\$NLB = \\text{cash} + \\text{cash equivalents} + \\text{short-term investments} - \\text{notes payable}\\$ and the other data, which of the following conclusions is most accurate regarding Alpha's short-term solvency, long-term viability, likely borrowing terms, and the applicability of cryptographic proofs of liabilities/assets?",
+      "changed": true
+    },
+    {
+      "index": 31,
+      "type": "option",
+      "question_id": "",
+      "option_key": "A",
+      "original": "Alpha's $NLB=200{,}000+50{,}000+150{,}000-300{,}000=100{,}000$, so it is short-term solvent. Long-term viability is marginal because gross operating surplus minus repayments is $80{,}000-70{,}000=10{,}000$, which is above zero but not well above it; combined with a leverage ratio of $500{,}000/250{,}000=2$ this raises credit risk, so a lender would likely charge a higher interest rate than for a lower-leverage borrower. Privacy-preserving cryptographic proofs of liabilities/assets can be used to help validate solvency without revealing complete balance-sheet details.",
+      "disambiguated": "Alpha's \\$NLB = 200{,}000 + 50{,}000 + 150{,}000 - 300{,}000 = 100{,}000, so it is short-term solvent. Long-term viability is marginal because gross operating surplus minus repayments is \\$80{,}000 - \\$70{,}000 = \\$10{,}000, which is above zero but not well above it; combined with a leverage ratio of \\$500{,}000/\\$250{,}000 = 2 this raises credit risk, so a lender would likely charge a higher interest rate than for a lower-leverage borrower. Privacy-preserving cryptographic proofs of liabilities/assets can be used to help validate solvency without revealing complete balance-sheet details.",
+      "changed": true
+    },
+    {
+      "index": 32,
+      "type": "option",
+      "question_id": "",
+      "option_key": "B",
+      "original": "Alpha's $NLB$ is negative ($100{,}000$ in assets minus $300{,}000$ notes payable gives $-200{,}000$), so it is short-term insolvent; therefore long-term viability is moot, and lenders will refuse credit regardless of leverage. Cryptographic proofs are irrelevant because insolvency is obvious.",
+      "disambiguated": "Alpha's \\$NLB is negative (100{,}000 in assets minus 300{,}000 notes payable gives -200{,}000), so it is short-term insolvent; therefore long-term viability is moot, and lenders will refuse credit regardless of leverage. Cryptographic proofs are irrelevant because insolvency is obvious.",
+      "changed": true
+    },
+    {
+      "index": 33,
+      "type": "option",
+      "question_id": "",
+      "option_key": "C",
+      "original": "Alpha's $NLB=100{,}000$ so it is short-term solvent, and because $80{,}000-70{,}000=10{,}000$ is positive the company is comfortably solvent long-term; the leverage ratio of 2 is moderate and will earn Alpha more favourable interest rates than most borrowers. Cryptographic proofs cannot be used to show solvency because they only prove existence of transactions.",
+      "disambiguated": "Alpha's \\$NLB = 100{,}000 so it is short-term solvent, and because \\$80{,}000 - \\$70{,}000 = \\$10{,}000 is positive the company is comfortably solvent long-term; the leverage ratio of 2 is moderate and will earn Alpha more favourable interest rates than most borrowers. Cryptographic proofs cannot be used to show solvency because they only prove existence of transactions.",
+      "changed": true
+    },
+    {
+      "index": 34,
+      "type": "option",
+      "question_id": "",
+      "option_key": "D",
+      "original": "Alpha has $NLB=100{,}000$ and therefore is fully solvent both short- and long-term; leverage is immaterial to lenders who focus only on $NLB$. Cryptographic proofs of liabilities/assets are unnecessary and cannot influence lending terms.",
+      "disambiguated": "Alpha has \\$NLB = 100{,}000 and therefore is fully solvent both short- and long-term; leverage is immaterial to lenders who focus only on \\$NLB. Cryptographic proofs of liabilities/assets are unnecessary and cannot influence lending terms.",
+      "changed": true
+    },
+    {
+      "index": 35,
+      "type": "question",
+      "question_id": "",
+      "option_key": null,
+      "original": "A utility company is fully equity-financed with market value $1{,}000{,}000$ and 100,000 shares. Its EBIT (operating income) is $120{,}000$ per year. The firm borrows $300{,}000$ at 6% interest and uses the proceeds to repurchase shares ($1{,}000{,}000/100{,}000=\\$10$ per share). Corporate tax rate is 25%. Which option best describes the likely effects on earnings per share (EPS), overall cost of capital, and the role of regulators?",
+      "disambiguated": "A utility company is fully equity-financed with market value \\$1{,}000{,}000 and 100,000 shares. Its EBIT (operating income) is \\$120{,}000 per year. The firm borrows \\$300{,}000 at 6% interest and uses the proceeds to repurchase shares (\\$1{,}000{,}000/100,000 = \\$10 per share). Corporate tax rate is 25%. Which option best describes the likely effects on earnings per share (EPS), overall cost of capital, and the role of regulators?",
+      "changed": true
+    },
+    {
+      "index": 36,
+      "type": "option",
+      "question_id": "",
+      "option_key": "B",
+      "original": "EPS rises to about $\\$1.09$ (interest $=300{,}000\\times0.06=\\$18{,}000$, net income $=\\$76{,}500$, shares $=70{,}000$, EPS $=76{,}500/70{,}000\\approx\\$1.09$). But higher leverage raises financial risk and can increase a firm\u2019s overall cost of capital if debt becomes excessive. For regulated utilities, regulators often set the allowed capital structure and cost of capital for rate-setting.",
+      "disambiguated": "EPS rises to about \\$1.09 (interest = \\$300{,}000\\times 0.06 = \\$18{,}000, net income = \\$76{,}500, shares = 70{,}000, EPS = 76{,}500/70{,}000 \\approx \\$1.09). But higher leverage raises financial risk and can increase a firm\u2019s overall cost of capital if debt becomes excessive. For regulated utilities, regulators often set the allowed capital structure and cost of capital for rate-setting.",
+      "changed": true
+    },
+    {
+      "index": 37,
+      "type": "question",
+      "question_id": "",
+      "option_key": null,
+      "original": "Sam is a novice lifter with a 1RM bench press of 100 kg. He performs 3 sets of 8 reps at 70 kg (training volume per session = $3\\times8\\times70=1680$ kg) three times per week. His coach prescribes increasing the load by 2.5 kg each week (while keeping sets and reps constant), instructs Sam to use strict technique for all but the last set, and allows 1\u20132 controlled \"cheat\" reps on the final set when form begins to fail. After 8 weeks, which pattern of physiological adaptation and training rationale is most consistent with the principles described in the article?",
+      "disambiguated": "Sam is a novice lifter with a 1RM bench press of 100 kg. He performs 3 sets of 8 reps at 70 kg (training volume per session = $3\\times 8\\times 70 = 1680$ kg) three times per week. His coach prescribes increasing the load by 2.5 kg each week (while keeping sets and reps constant), instructs Sam to use strict technique for all but the last set, and allows 1\u20132 controlled \"cheat\" reps on the final set when form begins to fail. After 8 weeks, which pattern of physiological adaptation and training rationale is most consistent with the principles described in the article?",
+      "changed": true
+    },
+    {
+      "index": 38,
+      "type": "question",
+      "question_id": "",
+      "option_key": null,
+      "original": "Researchers trained two groups of rats on a complex maze for 30 days. Juvenile rats improved navigation efficiency by $40\\%$, adults by $15\\%$. MRI showed hippocampal map expansion in both groups, larger in juveniles. In a separate set, rats were surgically blinded early in life. After training they showed activation of auditory cortex during tasks that used visual-like spatial cues. Finally, after a small motor cortex lesion, juveniles recovered $80\\%$ of paw function but adults only $30\\%$. Which explanation best accounts for all results using principles of neuroplasticity?",
+      "disambiguated": "Researchers trained two groups of rats on a complex maze for 30 days. Juvenile rats improved navigation efficiency by $40\\%$, adults by $15\\%$. MRI showed hippocampal map expansion in both groups, larger in juveniles. In a separate set, rats were surgically blinded early in life. After training they showed activation of auditory cortex during tasks that used visual-like spatial cues. Finally, after a small motor cortex lesion, juveniles recovered $80\\%$ of paw function but adults only $30\\%$. Which explanation best accounts for all results using principles of neuroplasticity?",
+      "changed": false
+    },
+    {
+      "index": 39,
+      "type": "question",
+      "question_id": "",
+      "option_key": null,
+      "original": "A manufacturing firm operates with production function $Q=L^{0.6}K^{0.4}$. At a point in time it employs $L=125$ and its capital stock is $K=64$, composed of $60$ units of machinery (physical capital) and $4$ units of an enduring software license (intangible capital). The firm can either (i) spend 16 units on raw materials and electricity that will be consumed entirely in the current production cycle, or (ii) purchase a new machine that raises the capital stock by 16 units (so $K$ becomes 80); the new machine depreciates at 10% per period thereafter. Which of the following statements is correct?",
+      "disambiguated": "A manufacturing firm operates with production function $Q=L^{0.6}K^{0.4}$. At a point in time it employs $L=125$ and its capital stock is $K=64$, composed of $60$ units of machinery (physical capital) and $4$ units of an enduring software license (intangible capital). The firm can either (i) spend 16 units on raw materials and electricity that will be consumed entirely in the current production cycle, or (ii) purchase a new machine that raises the capital stock by 16 units (so $K$ becomes 80); the new machine depreciates at 10% per period thereafter. Which of the following statements is correct?",
+      "changed": false
+    },
+    {
+      "index": 40,
+      "type": "option",
+      "question_id": "",
+      "option_key": "A",
+      "original": "The raw materials/electricity are intermediate goods (consumed within one cycle) and do not raise $K$; the machine is a capital good (durable) and the software counts as intangible capital. Buying the machine raises $K$ to 80 and increases output from approximately $Q_0\\approx125^{0.6}\\cdot64^{0.4}\\approx97.5$ to $Q_1\\approx125^{0.6}\\cdot80^{0.4}\\approx104.6$, with the machine providing productive services over multiple cycles despite 10% depreciation.",
+      "disambiguated": "The raw materials/electricity are intermediate goods (consumed within one cycle) and do not raise $K$; the machine is a capital good (durable) and the software counts as intangible capital. Buying the machine raises $K$ to 80 and increases output from approximately $Q_0\\approx125^{0.6}\\cdot64^{0.4}\\approx97.5$ to $Q_1\\approx125^{0.6}\\cdot80^{0.4}\\approx104.6$, with the machine providing productive services over multiple cycles despite 10\\% depreciation.",
+      "changed": true
+    },
+    {
+      "index": 41,
+      "type": "option",
+      "question_id": "",
+      "option_key": "B",
+      "original": "Spending on raw materials and electricity is equivalent to increasing $K$ by 16 because inputs used to produce goods always add to the capital stock; thus $K$ becomes 80 and output rises to $Q\\approx104.6$, while buying the machine would simply be treated as an intermediate expense and not change long-run output.",
+      "disambiguated": "Spending on raw materials and electricity is equivalent to increasing $K$ by 16 because inputs used to produce goods always add to the capital stock; thus $K$ becomes 80 and output rises to $Q\\approx104.6$, while buying the machine would simply be treated as an intermediate expense and not change long-run output.",
+      "changed": false
+    },
+    {
+      "index": 42,
+      "type": "option",
+      "question_id": "",
+      "option_key": "C",
+      "original": "Only tangible machinery counts toward the capital stock, so the software should be excluded (initially $K=60$). Buying the machine would raise $K$ to 76 and increase current output accordingly, whereas purchases of raw materials never affect measured output in the production function.",
+      "disambiguated": "Only tangible machinery counts toward the capital stock, so the software should be excluded (initially $K=60$). Buying the machine would raise $K$ to 76 and increase current output accordingly, whereas purchases of raw materials never affect measured output in the production function.",
+      "changed": false
+    },
+    {
+      "index": 43,
+      "type": "question",
+      "question_id": "",
+      "option_key": null,
+      "original": "Why does it matter that the capital stock has many different physical and non-physical assets? Output depends on labor $L$ and capital $K$ ($Q=f(L,K)$).",
+      "disambiguated": "Why does it matter that the capital stock has many different physical and non-physical assets? Output depends on labor $L$ and capital $K$ ($Q=f(L,K)$).",
+      "changed": false
+    },
+    {
+      "index": 44,
+      "type": "question",
+      "question_id": "",
+      "option_key": null,
+      "original": "If land, capital, and the entrepreneur are fixed, adding more workers raises total output but each new worker adds less than the previous one. Why does this happen? (Hint: marginal product of labor $MP_{L}$.)",
+      "disambiguated": "If land, capital, and the entrepreneur are fixed, adding more workers raises total output but each new worker adds less than the previous one. Why does this happen? (Hint: marginal product of labor $MP_{L}$.)",
+      "changed": false
+    },
+    {
+      "index": 45,
+      "type": "option",
+      "question_id": "",
+      "option_key": "B",
+      "original": "Because the marginal product of labor ($MP_{L}$) falls when some inputs are fixed, so each extra worker adds less output.",
+      "disambiguated": "Because the marginal product of labor ($MP_{L}$) falls when some inputs are fixed, so each extra worker adds less output.",
+      "changed": false
+    },
+    {
+      "index": 46,
+      "type": "question",
+      "question_id": "",
+      "option_key": null,
+      "original": "Statistical learning theory models training examples as i.i.d. draws from an unknown distribution $p(x,y)$. Why is this assumption made, and how does it justify using a separate test set to assess a learned predictor's ability to generalize to new data?",
+      "disambiguated": "Statistical learning theory models training examples as i.i.d. draws from an unknown distribution $p(x,y)$. Why is this assumption made, and how does it justify using a separate test set to assess a learned predictor's ability to generalize to new data?",
+      "changed": false
+    },
+    {
+      "index": 47,
+      "type": "option",
+      "question_id": "",
+      "option_key": "B",
+      "original": "Because the predictor's true performance is the expected loss under $p(x,y)$, i.e. $E_{(x,y)\\\\sim p}[V(f(x),y)]$, which can differ from the empirical training loss; a test set sampled from the same $p(x,y)$ gives an unbiased estimate of this generalization performance.",
+      "disambiguated": "Because the predictor's true performance is the expected loss under $p(x,y)$, i.e. $E_{(x,y)\\\\sim p}[V(f(x),y)]$, which can differ from the empirical training loss; a test set sampled from the same $p(x,y)$ gives an unbiased estimate of this generalization performance.",
+      "changed": false
+    },
+    {
+      "index": 48,
+      "type": "option",
+      "question_id": "",
+      "option_key": "C",
+      "original": "Because assuming $p(x,y)$ formalizes the data's randomness and variability; thus one could rely on theoretical properties of $p(x,y)$ alone instead of using a test set to evaluate generalization.",
+      "disambiguated": "Because assuming $p(x,y)$ formalizes the data's randomness and variability; thus one could rely on theoretical properties of $p(x,y)$ alone instead of using a test set to evaluate generalization.",
+      "changed": false
+    },
+    {
+      "index": 49,
+      "type": "option",
+      "question_id": "",
+      "option_key": "D",
+      "original": "Because $p(x,y)$ implies every input\u2013output pair will eventually occur, so the model can memorize all pairs and generalization follows from memorization.",
+      "disambiguated": "Because $p(x,y)$ implies every input\u2013output pair will eventually occur, so the model can memorize all pairs and generalization follows from memorization.",
       "changed": false
     }
   ]

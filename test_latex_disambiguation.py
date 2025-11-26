@@ -20,7 +20,7 @@ def count_dollar_signs(text: str) -> int:
     return text.count('$')
 
 
-def extract_first_n_candidates(data: dict, n: int = 20) -> list:
+def extract_first_n_candidates(data: dict, n: int = 50) -> list:
     """Extract first N candidate strings (>= 2 dollar signs)."""
     candidates = []
     count = 0
@@ -64,6 +64,9 @@ def extract_first_n_candidates(data: dict, n: int = 20) -> list:
 
 def disambiguate_batch(strings: list) -> list:
     """Use GPT-4o-mini to disambiguate a batch of strings."""
+    # Use a unique delimiter that won't appear in the text
+    delimiter = "###ENDSTRING###"
+
     examples = [
         {
             "input": "The GDP is $5.2 trillion but growth follows $x^2$ where $x$ is years.",
@@ -92,13 +95,18 @@ def disambiguate_batch(strings: list) -> list:
         },
         {
             "input": "GDP per capita of $10{,}000$. Government has $100\\text{ million}$ per year",
-            "output": "GDP per capita of \\$10{,}000. Government has \\$100\\text{ million} per year",
-            "explanation": "Even in LaTeX delimiters, numbers with currency context should be escaped"
+            "output": "GDP per capita of \\$10{,}000. Government has \\$100 million per year",
+            "explanation": "Currency in LaTeX: escape BOTH delimiters AND remove \\text{} (it only works inside math mode)"
         },
         {
             "input": "Budget of $60M$ for the $30\\text{M}$ facility",
-            "output": "Budget of \\$60M for the \\$30\\text{M} facility",
-            "explanation": "M/B/K suffixes indicate currency even in LaTeX delimiters"
+            "output": "Budget of \\$60M for the \\$30M facility",
+            "explanation": "M/B/K suffixes indicate currency; escape delimiters AND remove \\text{} command"
+        },
+        {
+            "input": "A company must make 10,000 toy cars. Each costs $50 to produce.",
+            "output": "A company must make 10,000 toy cars. Each costs \\$50 to produce.",
+            "explanation": "10,000 toy cars is a count (physical units), $50 is currency"
         }
     ]
 
@@ -109,51 +117,58 @@ CRITICAL RULES:
 2. Numbers representing MONEY, even in LaTeX delimiters, must be escaped:
    - Currency amounts: $10{{,}}000$, $100\\text{{ million}}$, $60M$, $30B$ → ESCAPE as \\$
    - Look for context: "GDP", "budget", "costs", "million", "billion", "M", "B", "K"
+   - BUT if followed by physical units (cars, people, items, units, etc.), it's a COUNT not money
+   - IMPORTANT: When escaping currency in LaTeX delimiters, escape BOTH delimiters → \\$10{{,}}000 (NOT \\$10{{,}}000$)
+   - If removing delimiters, also remove \\text{{}} commands (they only work in math mode) → \\$100 million
 3. Mathematical expressions always keep delimiters: $x^2$, $\\frac{{1}}{{2}}$, $a > b$, $Q_{{d}}=Q_{{s}}$
 4. Percentages and pure numbers in LaTeX are NOT currency: $60\\%$, $0.90$, $10\\%$ → KEEP AS IS
 5. Unpaired $ before numbers is always currency: $5 billion, $50 → ESCAPE as \\$
+6. Plain numbers with commas followed by physical units are COUNTS: 10,000 cars, 5,000 people → LEAVE UNCHANGED
+7. NEVER create mismatched delimiters: If you escape one $, escape the matching $ too
+8. NEVER leave \\text{{}} outside math delimiters: it only renders inside $...$ → convert to plain text
 
 Decision tree:
 - Is it math (variables, operators, fractions)? → KEEP delimiters
 - Is it a percentage ($60\\%$) or decimal ($0.90$)? → KEEP delimiters
-- Is it a count ($20$ students, $100$ seats)? → KEEP delimiters
-- Is it money (has million/billion/M/B/K or GDP/budget/cost context)? → ESCAPE as \\$
+- Is it a count ($20$ students, $100$ seats, 10,000 cars)? → KEEP delimiters (or leave plain)
+- Is it money (has million/billion/M/B/K or GDP/budget/cost context)? → ESCAPE as \\$ (escape BOTH delimiters!)
+- Does it have physical unit words (cars, people, items, units)? → NOT currency, leave alone
 - Is it unpaired $ before a number? → ESCAPE as \\$
 
 Examples:
 {json.dumps(examples, indent=2)}
 
-Now process these strings:
-{json.dumps(strings, indent=2)}
+Now process these {len(strings)} strings. Return ONLY the disambiguated strings, separated by the delimiter "{delimiter}", in the same order as input.
 
-Return a JSON array of disambiguated strings in the same order. Escape $ for currency, keep $ for math/counts/percentages."""
+IMPORTANT: Each string can contain multiple lines. Use ONLY "{delimiter}" to separate strings, not newlines.
+
+INPUT STRINGS:
+{delimiter.join(strings)}"""
 
     try:
         response = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
-                {"role": "system", "content": "You are a LaTeX and currency disambiguation expert. Return only valid JSON."},
+                {"role": "system", "content": f"You are a LaTeX and currency disambiguation expert. Return only the disambiguated strings, separated by {delimiter}."},
                 {"role": "user", "content": prompt}
             ],
-            response_format={"type": "json_object"},
             temperature=1.0,
-            max_tokens=2000
+            max_tokens=8000
         )
 
-        result = json.loads(response.choices[0].message.content)
+        # Parse delimiter-separated response
+        result_text = response.choices[0].message.content.strip()
+        result_strings = result_text.split(delimiter)
 
-        # Handle different possible response formats
-        if 'results' in result:
-            return result['results']
-        elif 'disambiguated' in result:
-            return result['disambiguated']
-        elif 'strings' in result:
-            return result['strings']
-        elif isinstance(result, list):
-            return result
-        else:
-            print(f"Warning: Unexpected response format: {result}")
+        # Clean up strings
+        result_strings = [s.strip() for s in result_strings if s.strip()]
+
+        # Verify we got the right number of results
+        if len(result_strings) != len(strings):
+            print(f"Warning: Expected {len(strings)} results, got {len(result_strings)}. Using original strings.")
             return strings
+
+        return result_strings
 
     except Exception as e:
         print(f"Error: {e}")
@@ -162,7 +177,7 @@ Return a JSON array of disambiguated strings in the same order. Escape $ for cur
 
 def main():
     print("=" * 80)
-    print("LATEX DISAMBIGUATION TEST (First 20 Candidates)")
+    print("LATEX DISAMBIGUATION TEST (First 50 Candidates)")
     print("=" * 80)
     print()
 
@@ -177,9 +192,9 @@ def main():
         data = json.load(f)
     print()
 
-    # Extract first 20 candidates
-    print("Extracting first 20 candidate strings...")
-    candidates = extract_first_n_candidates(data, n=20)
+    # Extract first 50 candidates
+    print("Extracting first 50 candidate strings...")
+    candidates = extract_first_n_candidates(data, n=50)
     print(f"Found {len(candidates)} candidates")
     print()
 
@@ -190,10 +205,27 @@ def main():
     # Get just the text strings
     strings = [c['text'] for c in candidates]
 
-    # Disambiguate
+    # Disambiguate in batches
     print("Disambiguating with GPT-4o-mini...")
+    print(f"Processing in batches of 20...")
     print()
-    disambiguated = disambiguate_batch(strings)
+
+    batch_size = 20
+    disambiguated = []
+
+    for i in range(0, len(strings), batch_size):
+        batch_strings = strings[i:i + batch_size]
+        batch_num = (i // batch_size) + 1
+        total_batches = (len(strings) + batch_size - 1) // batch_size
+
+        print(f"Batch {batch_num}/{total_batches}: Processing {len(batch_strings)} strings...")
+        result_strings = disambiguate_batch(batch_strings)
+        disambiguated.extend(result_strings)
+
+        # Rate limiting
+        if i + batch_size < len(strings):
+            import time
+            time.sleep(0.5)
 
     # Display results
     print("=" * 80)

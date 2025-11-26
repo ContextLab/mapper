@@ -277,12 +277,12 @@
         }
 
         .btn-info {
-            background: #dee2e6;
+            background-color: #dee2e6;
             color: #333;
         }
 
         .btn-info:hover:not(:disabled) {
-            background: #00693E;
+            background-color: #00693E;
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 105, 62, 0.4);
@@ -297,8 +297,8 @@
         /* Pulse animation for high-confidence button */
         @keyframes pulse-green-bg {
             0%, 100% {
-                background-color: #dee2e6;
-                box-shadow: 0 3px 10px rgba(108, 117, 125, 0.2);
+                background-color: #495057;
+                box-shadow: 0 3px 10px rgba(73, 80, 87, 0.3);
             }
             50% {
                 background-color: #00693E;
@@ -308,7 +308,7 @@
 
         @keyframes pulse-green-text {
             0%, 100% {
-                color: #333;
+                color: white;
             }
             50% {
                 color: white;
@@ -336,12 +336,13 @@
             }
         }
 
-        /* Flash class for level transition button animation */
+        /* Flash class for level transition button animation - overrides pulse when both are present */
         .btn-info.flash {
-            animation: flash-bg 0.5s ease-in-out 6, flash-text 0.5s ease-in-out 6;
+            animation: flash-bg 0.5s ease-in-out 6, flash-text 0.5s ease-in-out 6 !important;
         }
 
-        .btn-info.high-confidence {
+        /* Pulse animation only applies when NOT flashing */
+        .btn-info.high-confidence:not(.flash) {
             animation: pulse-green-bg 6s ease-in-out infinite, pulse-green-text 6s ease-in-out infinite;
         }
 
@@ -351,7 +352,7 @@
         }
 
         .btn-info.high-confidence:hover:not(:disabled) {
-            background: #00693E;
+            background-color: #00693E;
             color: white;
             box-shadow: 0 5px 15px rgba(0, 105, 62, 0.4);
             animation: none; /* Stop pulsing on hover */

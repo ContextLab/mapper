@@ -294,9 +294,50 @@
     <!-- About Modal -->
     <div id="about-modal" class="modal" hidden>
         <div class="modal-content">
-            <h2>About Wikipedia Knowledge Map</h2>
-            <p>A distributed GPU-powered visualization of 250,000 Wikipedia articles.</p>
-            <button class="close-modal" style="margin-top: 1rem; padding: 0.5rem 1rem;">Close</button>
+            <h2 style="margin-bottom: 1rem;">About Wikipedia Knowledge Map</h2>
+            <p style="line-height: 1.6; margin-bottom: 0.75rem;">
+                This interactive demo maps your knowledge across 250,000 Wikipedia articles
+                using <strong>text embedding models</strong>. Articles are projected into a
+                2D space where semantically related topics cluster together &mdash; physics near
+                mathematics, neuroscience near biology.
+            </p>
+            <p style="line-height: 1.6; margin-bottom: 0.75rem;">
+                As you answer questions, a <strong>Gaussian process</strong> estimates your
+                knowledge across the entire domain, filling in a heatmap that reveals both
+                your strengths and gaps. The system uses <strong>active learning</strong> to
+                select the most informative questions, efficiently mapping your knowledge
+                with as few questions as possible.
+            </p>
+            <p style="line-height: 1.6; margin-bottom: 0.75rem;">
+                Because the map lives in embedding space, answering questions in one domain
+                (e.g., Mathematics) produces predictions in related domains
+                (e.g., Probability &amp; Statistics) &mdash; demonstrating that text embeddings
+                capture conceptual relationships.
+            </p>
+            <p style="line-height: 1.6; margin-bottom: 1rem;">
+                <strong>Research paper:</strong>
+                <a href="https://psyarxiv.com/dh3q2" target="_blank" rel="noopener"
+                   style="color: var(--color-primary);">
+                    Text embedding models yield high-resolution insights into conceptual knowledge
+                </a>
+            </p>
+            <p style="line-height: 1.6; margin-bottom: 1rem;">
+                <strong>Source code:</strong>
+                <a href="https://github.com/ContextLab/mapper" target="_blank" rel="noopener"
+                   style="color: var(--color-primary);">
+                    github.com/ContextLab/mapper
+                </a>
+            </p>
+            <p style="font-size: 0.85rem; color: #888; margin-bottom: 1rem;">
+                All computation runs in your browser. No data is sent to any server.
+                Your progress is saved locally and can be exported or reset at any time.
+            </p>
+            <button class="close-modal"
+                    style="padding: 0.5rem 1.5rem; border: 1px solid rgba(0,0,0,0.15);
+                           border-radius: 6px; background: white; cursor: pointer;
+                           font-size: 0.9rem;">
+                Close
+            </button>
         </div>
     </div>
 

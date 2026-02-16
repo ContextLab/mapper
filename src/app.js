@@ -15,17 +15,20 @@ import { Estimator } from './learning/estimator.js';
 import { Sampler } from './learning/sampler.js';
 import { getCentrality } from './learning/curriculum.js';
 import { Renderer } from './viz/renderer.js';
+import { Minimap } from './viz/minimap.js';
 import * as controls from './ui/controls.js';
 import * as quiz from './ui/quiz.js';
 import { showDownload, hideDownload, updateConfidence, initConfidence } from './ui/progress.js';
 import { announce, setupKeyboardNav } from './utils/accessibility.js';
 
 let renderer = null;
+let minimap = null;
 let estimator = null;
 let sampler = null;
 let currentDomainBundle = null;
 let currentViewport = { x_min: 0, x_max: 1, y_min: 0, y_max: 1 };
 let domainQuestionCount = 0;
+let switchGeneration = 0;
 
 async function boot() {
   const storageAvailable = isAvailable();
@@ -67,8 +70,15 @@ async function boot() {
   quiz.onAnswer(handleAnswer);
   initConfidence(quizPanel);
 
+  const minimapContainer = document.getElementById('minimap-container');
+  if (minimapContainer) {
+    minimap = new Minimap();
+    minimap.init(minimapContainer, registry.getDomains());
+    minimap.onClick((domainId) => $activeDomain.set(domainId));
+  }
+
   if (import.meta.env.DEV) {
-    window.__mapper = { registry, estimator, sampler, renderer, $activeDomain, $estimates, $responses };
+    window.__mapper = { registry, estimator, sampler, renderer, minimap, $activeDomain, $estimates, $responses };
   }
 
   setupKeyboardNav({ onEscape: handleEscape });
@@ -93,20 +103,39 @@ function wireSubscriptions() {
   });
 }
 
+function articlesToPoints(articles) {
+  return articles.map((a) => ({
+    id: a.title,
+    x: a.x,
+    y: a.y,
+    z: a.z || 0,
+    type: 'article',
+    color: [180, 180, 220, 100],
+    radius: 2,
+    title: a.title,
+  }));
+}
+
 async function switchDomain(domainId) {
+  const generation = ++switchGeneration;
   const landing = document.getElementById('landing');
   if (landing) landing.classList.add('hidden');
 
   const quizPanel = document.getElementById('quiz-panel');
+  const previousBundle = currentDomainBundle;
+
+  renderer.abortTransition();
 
   try {
     const bundle = await loadDomain(domainId, {
-      onProgress: ({ loaded, total, percent }) => showDownload(loaded, total),
+      onProgress: ({ loaded, total }) => showDownload(loaded, total),
       onError: (err) => {
         console.error('[app] Domain load failed:', err);
         announce(`Failed to load domain. ${err.message}`);
       },
     });
+
+    if (generation !== switchGeneration) return;
 
     currentDomainBundle = bundle;
     indexQuestions(bundle.questions);
@@ -116,7 +145,6 @@ async function switchDomain(domainId) {
     estimator.init(domain.grid_size, domain.region);
     sampler.configure(domain.grid_size, domain.region);
 
-    // Restore prior responses for cross-domain knowledge persistence
     const allResponses = $responses.get();
     if (allResponses.length > 0) {
       const relevantResponses = allResponses.filter(
@@ -128,21 +156,29 @@ async function switchDomain(domainId) {
     const estimates = estimator.predict();
     $estimates.set(estimates);
 
-    renderer.setPoints(
-      bundle.articles.map((a) => ({
-        id: a.title,
-        x: a.x,
-        y: a.y,
-        z: a.z || 0,
-        type: 'article',
-        color: [180, 180, 220, 100],
-        radius: 2,
-        title: a.title,
-      }))
-    );
+    const targetPoints = articlesToPoints(bundle.articles);
 
-    renderer.setLabels(bundle.labels);
-    await renderer.transitionTo(domain.region);
+    if (previousBundle) {
+      const sourcePoints = articlesToPoints(previousBundle.articles);
+      const sourceRegion = previousBundle.domain.region;
+      const targetRegion = domain.region;
+
+      renderer.setLabels(bundle.labels);
+      await renderer.transitionPoints(
+        sourcePoints, targetPoints, sourceRegion, targetRegion
+      );
+    } else {
+      renderer.setPoints(targetPoints);
+      renderer.setLabels(bundle.labels);
+      await renderer.transitionTo(domain.region);
+    }
+
+    if (generation !== switchGeneration) return;
+
+    if (minimap) {
+      minimap.setActive(domainId);
+      minimap.setViewport(renderer.getViewport());
+    }
 
     if (quizPanel) quizPanel.removeAttribute('hidden');
     hideDownload();
@@ -152,8 +188,10 @@ async function switchDomain(domainId) {
 
     selectAndShowNextQuestion();
   } catch (err) {
-    hideDownload();
-    console.error('[app] switchDomain failed:', err);
+    if (generation === switchGeneration) {
+      hideDownload();
+      console.error('[app] switchDomain failed:', err);
+    }
   }
 }
 
@@ -219,10 +257,13 @@ function handleReset() {
   resetAll();
   currentDomainBundle = null;
   domainQuestionCount = 0;
+  switchGeneration++;
+  renderer.abortTransition();
   estimator.reset();
   renderer.setPoints([]);
   renderer.setHeatmap([], { x_min: 0, x_max: 1, y_min: 0, y_max: 1 });
   renderer.setLabels([]);
+  if (minimap) minimap.setActive(null);
   const quizPanel = document.getElementById('quiz-panel');
   if (quizPanel) quizPanel.hidden = true;
   const landing = document.getElementById('landing');
@@ -243,6 +284,7 @@ function handleExport() {
 
 function handleViewportChange(viewport) {
   currentViewport = viewport;
+  if (minimap) minimap.setViewport(viewport);
 }
 
 function handleCellClick(_gx, _gy) {

@@ -1,24 +1,31 @@
-/** Main application entry point — wires state, domain loading, estimator, and renderer. */
+/** Main application entry point — wires state, domain loading, estimator, quiz loop, and renderer. */
 
-import { validateSchema, isAvailable } from './state/persistence.js';
+import { validateSchema, isAvailable, resetAll, exportResponses } from './state/persistence.js';
 import {
   $activeDomain,
   $responses,
   $estimates,
   $answeredIds,
-  $domainCache,
+  $coverage,
 } from './state/store.js';
 import * as registry from './domain/registry.js';
 import { load as loadDomain } from './domain/loader.js';
-import { indexQuestions } from './domain/questions.js';
+import { indexQuestions, getAvailableQuestions } from './domain/questions.js';
 import { Estimator } from './learning/estimator.js';
+import { Sampler } from './learning/sampler.js';
+import { getCentrality } from './learning/curriculum.js';
 import { Renderer } from './viz/renderer.js';
+import * as controls from './ui/controls.js';
+import * as quiz from './ui/quiz.js';
+import { showDownload, hideDownload, updateConfidence, initConfidence } from './ui/progress.js';
 import { announce, setupKeyboardNav } from './utils/accessibility.js';
 
 let renderer = null;
 let estimator = null;
+let sampler = null;
 let currentDomainBundle = null;
-let keyboardCleanup = null;
+let currentViewport = { x_min: 0, x_max: 1, y_min: 0, y_max: 1 };
+let domainQuestionCount = 0;
 
 async function boot() {
   const storageAvailable = isAvailable();
@@ -47,17 +54,24 @@ async function boot() {
   });
 
   estimator = new Estimator();
+  sampler = new Sampler();
 
-  // Expose for console debugging (Phase 2 checkpoint)
+  const headerEl = document.getElementById('app-header');
+  controls.init(headerEl);
+  controls.onDomainSelect((domainId) => $activeDomain.set(domainId));
+  controls.onReset(handleReset);
+  controls.onExport(handleExport);
+
+  const quizPanel = document.getElementById('quiz-panel');
+  quiz.init(quizPanel);
+  quiz.onAnswer(handleAnswer);
+  initConfidence(quizPanel);
+
   if (import.meta.env.DEV) {
-    window.__mapper = { registry, estimator, renderer, $activeDomain, $estimates, $responses };
+    window.__mapper = { registry, estimator, sampler, renderer, $activeDomain, $estimates, $responses };
   }
 
-  keyboardCleanup = setupKeyboardNav({
-    onEscape: handleEscape,
-  });
-
-  renderDomainSelector();
+  setupKeyboardNav({ onEscape: handleEscape });
   wireSubscriptions();
 
   announce('Wikipedia Knowledge Map loaded. Select a domain to begin.');
@@ -69,15 +83,13 @@ function wireSubscriptions() {
     await switchDomain(domainId);
   });
 
-  $responses.subscribe(() => {
-    if (!estimator || !currentDomainBundle) return;
-    const estimates = estimator.predict();
-    $estimates.set(estimates);
-  });
-
   $estimates.subscribe((estimates) => {
     if (!renderer || !currentDomainBundle) return;
     renderer.setHeatmap(estimates, currentDomainBundle.domain.region);
+  });
+
+  $coverage.subscribe((coverage) => {
+    updateConfidence(coverage);
   });
 }
 
@@ -89,7 +101,7 @@ async function switchDomain(domainId) {
 
   try {
     const bundle = await loadDomain(domainId, {
-      onProgress: ({ percent }) => updateProgress(percent),
+      onProgress: ({ loaded, total, percent }) => showDownload(loaded, total),
       onError: (err) => {
         console.error('[app] Domain load failed:', err);
         announce(`Failed to load domain. ${err.message}`);
@@ -98,9 +110,11 @@ async function switchDomain(domainId) {
 
     currentDomainBundle = bundle;
     indexQuestions(bundle.questions);
+    domainQuestionCount = 0;
 
     const domain = bundle.domain;
     estimator.init(domain.grid_size, domain.region);
+    sampler.configure(domain.grid_size, domain.region);
 
     // Restore prior responses for cross-domain knowledge persistence
     const allResponses = $responses.get();
@@ -131,64 +145,108 @@ async function switchDomain(domainId) {
     await renderer.transitionTo(domain.region);
 
     if (quizPanel) quizPanel.removeAttribute('hidden');
-    hideProgress();
+    hideDownload();
+    controls.showActionButtons();
 
     announce(`Loaded ${domain.name}. ${bundle.questions.length} questions available.`);
+
+    selectAndShowNextQuestion();
   } catch (err) {
-    hideProgress();
+    hideDownload();
     console.error('[app] switchDomain failed:', err);
   }
 }
 
-function renderDomainSelector() {
-  const selectorContainer = document.querySelector('.domain-selector');
-  if (!selectorContainer) return;
+function selectAndShowNextQuestion() {
+  if (!currentDomainBundle || !estimator || !sampler) return;
 
-  const hierarchy = registry.getHierarchy();
-  const select = document.createElement('select');
-  select.setAttribute('aria-label', 'Select knowledge domain');
-  select.id = 'domain-select';
+  const answeredIds = $answeredIds.get();
+  const available = getAvailableQuestions(currentDomainBundle, answeredIds);
 
-  const placeholder = document.createElement('option');
-  placeholder.value = '';
-  placeholder.textContent = 'Choose a domain\u2026';
-  placeholder.disabled = true;
-  placeholder.selected = true;
-  select.appendChild(placeholder);
-
-  for (const node of hierarchy) {
-    const opt = document.createElement('option');
-    opt.value = node.id;
-    opt.textContent = node.name;
-    select.appendChild(opt);
-
-    if (node.children && node.children.length > 0) {
-      for (const child of node.children) {
-        const childOpt = document.createElement('option');
-        childOpt.value = child.id;
-        childOpt.textContent = `\u00A0\u00A0\u00A0${child.name}`;
-        select.appendChild(childOpt);
-      }
-    }
+  if (available.length === 0) {
+    announce('Domain fully mapped! All questions answered. Try another domain.');
+    quiz.showQuestion(null);
+    return;
   }
 
-  select.addEventListener('change', (e) => {
-    if (e.target.value) {
-      $activeDomain.set(e.target.value);
-    }
-  });
+  const estimates = $estimates.get();
+  const scored = sampler.selectNext(available, estimates, currentViewport, answeredIds);
 
-  selectorContainer.innerHTML = '';
-  selectorContainer.appendChild(select);
-  selectorContainer.removeAttribute('hidden');
+  if (!scored) {
+    quiz.showQuestion(available[0]);
+    return;
+  }
+
+  const question = available.find((q) => q.id === scored.questionId) || available[0];
+  quiz.showQuestion(question);
 }
 
-function handleViewportChange(_viewport) {
-  // Viewport tracking for future minimap + viewport-restricted sampling
+function handleAnswer(selectedKey, question) {
+  if (!question || !currentDomainBundle) return;
+
+  const isCorrect = selectedKey === question.correct_answer;
+
+  const response = {
+    question_id: question.id,
+    domain_id: currentDomainBundle.domain.id,
+    selected: selectedKey,
+    is_correct: isCorrect,
+    timestamp: Date.now(),
+    x: question.x,
+    y: question.y,
+  };
+
+  const current = $responses.get();
+  $responses.set([...current, response]);
+
+  estimator.observe(question.x, question.y, isCorrect);
+  const estimates = estimator.predict();
+  $estimates.set(estimates);
+
+  domainQuestionCount++;
+
+  const feedback = isCorrect ? 'Correct!' : 'Incorrect.';
+  const coverage = Math.round($coverage.get() * 100);
+  announce(`${feedback} ${coverage}% of domain mapped. ${50 - domainQuestionCount} questions remaining.`);
+
+  setTimeout(() => {
+    selectAndShowNextQuestion();
+  }, 900);
+}
+
+function handleReset() {
+  if (!confirm('Are you sure? This will clear all progress.')) return;
+  resetAll();
+  currentDomainBundle = null;
+  domainQuestionCount = 0;
+  estimator.reset();
+  renderer.setPoints([]);
+  renderer.setHeatmap([], { x_min: 0, x_max: 1, y_min: 0, y_max: 1 });
+  renderer.setLabels([]);
+  const quizPanel = document.getElementById('quiz-panel');
+  if (quizPanel) quizPanel.hidden = true;
+  const landing = document.getElementById('landing');
+  if (landing) landing.classList.remove('hidden');
+  announce('All progress has been reset.');
+}
+
+function handleExport() {
+  const blob = exportResponses();
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `knowledge-map-export-${new Date().toISOString().slice(0, 10)}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+  announce('Progress exported.');
+}
+
+function handleViewportChange(viewport) {
+  currentViewport = viewport;
 }
 
 function handleCellClick(_gx, _gy) {
-  // Cell click handling for future question targeting
+  // Reserved for future question targeting by cell
 }
 
 function handleEscape() {
@@ -216,45 +274,17 @@ function showLandingError(message) {
   }
 }
 
-function updateProgress(percent) {
-  const overlay = document.getElementById('progress-overlay');
-  if (!overlay) return;
-  overlay.style.background = `linear-gradient(to right, var(--color-primary) ${percent}%, transparent ${percent}%)`;
-  overlay.setAttribute('aria-valuenow', String(percent));
-}
-
-function hideProgress() {
-  const overlay = document.getElementById('progress-overlay');
-  if (overlay) {
-    overlay.style.background = 'transparent';
-    overlay.removeAttribute('aria-valuenow');
-  }
-}
-
-// Wire the about button
 function setupAboutModal() {
   const btn = document.getElementById('about-btn');
   const modal = document.getElementById('about-modal');
   if (!btn || !modal) return;
-
-  btn.addEventListener('click', () => {
-    modal.hidden = !modal.hidden;
-  });
-
+  btn.addEventListener('click', () => { modal.hidden = !modal.hidden; });
   const closeBtn = modal.querySelector('.close-modal');
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      modal.hidden = true;
-    });
-  }
+  if (closeBtn) closeBtn.addEventListener('click', () => { modal.hidden = true; });
 }
 
-// Boot on DOM ready
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    setupAboutModal();
-    boot();
-  });
+  document.addEventListener('DOMContentLoaded', () => { setupAboutModal(); boot(); });
 } else {
   setupAboutModal();
   boot();

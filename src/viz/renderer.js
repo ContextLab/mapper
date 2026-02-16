@@ -5,8 +5,8 @@ import {
   MapView,
   ScatterplotLayer,
   TextLayer,
-  HeatmapLayer,
 } from 'deck.gl';
+import { mergeForTransition, buildTransitionFrames, needs3D } from './transitions.js';
 
 // Viridis-inspired color-blind safe palette (FR-023)
 // Maps knowledge value [0,1] → RGBA
@@ -33,6 +33,7 @@ function valueToColor(value) {
 }
 
 const TRANSITION_DURATION = 1000;
+const CROSSFADE_DURATION = 600;
 const POINT_RADIUS = 3;
 const LABEL_SIZE = 12;
 
@@ -45,6 +46,7 @@ export class Renderer {
     this._viewState = null;
     this._onViewportChange = null;
     this._onCellClick = null;
+    this._transitionAbort = null;
   }
 
   /**
@@ -188,7 +190,121 @@ export class Renderer {
     });
   }
 
+  /**
+   * Abort any in-progress point transition.
+   */
+  abortTransition() {
+    if (this._transitionAbort) {
+      this._transitionAbort();
+      this._transitionAbort = null;
+    }
+  }
+
+  /**
+   * Animate points from source set to target set with fade-in/fade-out.
+   *
+   * For nearby domains (IoU >= 0.3): merges point sets, fades leaving/entering
+   * points, and pans the viewport simultaneously.
+   *
+   * For distant domains (IoU < 0.3): crossfade — fades out all source points
+   * then fades in all target points, with a quick viewport jump.
+   *
+   * @param {Array<object>} sourcePoints - Currently displayed points
+   * @param {Array<object>} targetPoints - Destination points
+   * @param {{ x_min, x_max, y_min, y_max }} sourceRegion - Source domain region
+   * @param {{ x_min, x_max, y_min, y_max }} targetRegion - Target domain region
+   * @param {number} [duration=1000] - Transition duration in ms
+   * @returns {Promise<void>} Resolves when transition completes (or is aborted)
+   */
+  transitionPoints(sourcePoints, targetPoints, sourceRegion, targetRegion, duration = TRANSITION_DURATION) {
+    this.abortTransition();
+
+    const useCrossfade = needs3D(sourceRegion, targetRegion);
+
+    return new Promise((resolve) => {
+      let aborted = false;
+      let cleanupTimer = null;
+
+      this._transitionAbort = () => {
+        aborted = true;
+        if (cleanupTimer) clearTimeout(cleanupTimer);
+        resolve();
+      };
+
+      if (useCrossfade) {
+        this._crossfadeTransition(sourcePoints, targetPoints, targetRegion, duration, () => aborted, resolve);
+      } else {
+        this._panFadeTransition(sourcePoints, targetPoints, targetRegion, duration, () => aborted, resolve);
+      }
+    });
+  }
+
+  _panFadeTransition(sourcePoints, targetPoints, targetRegion, duration, isAborted, resolve) {
+    const { merged } = mergeForTransition(sourcePoints, targetPoints);
+    const { startData, endData } = buildTransitionFrames(merged);
+
+    this._points = startData;
+    this._render();
+
+    requestAnimationFrame(() => {
+      if (isAborted()) { resolve(); return; }
+
+      this._points = endData;
+      this._render();
+      this.transitionTo(targetRegion, duration);
+
+      setTimeout(() => {
+        if (isAborted()) { resolve(); return; }
+        this._points = targetPoints;
+        this._render();
+        this._transitionAbort = null;
+        resolve();
+      }, duration + 50);
+    });
+  }
+
+  _crossfadeTransition(sourcePoints, targetPoints, targetRegion, duration, isAborted, resolve) {
+    const half = Math.round(duration * 0.4);
+
+    // Phase 1: fade out source points
+    const fadedOut = sourcePoints.map((p) => ({
+      ...p,
+      color: [p.color?.[0] ?? 200, p.color?.[1] ?? 200, p.color?.[2] ?? 200, 0],
+    }));
+    this._points = fadedOut;
+    this._render();
+
+    setTimeout(() => {
+      if (isAborted()) { resolve(); return; }
+
+      // Phase 2: jump viewport, set target points invisible, then fade in
+      const invisible = targetPoints.map((p) => ({
+        ...p,
+        color: [p.color?.[0] ?? 200, p.color?.[1] ?? 200, p.color?.[2] ?? 200, 0],
+      }));
+      this._points = invisible;
+      this._render();
+
+      // Jump viewport to target region (fast)
+      this.transitionTo(targetRegion, 100);
+
+      requestAnimationFrame(() => {
+        if (isAborted()) { resolve(); return; }
+
+        this._points = targetPoints;
+        this._render();
+
+        setTimeout(() => {
+          if (isAborted()) { resolve(); return; }
+          this._transitionAbort = null;
+          resolve();
+        }, half + 100);
+      });
+    }, half);
+  }
+
   destroy() {
+    this.abortTransition();
     if (this._deck) {
       this._deck.finalize();
       this._deck = null;
@@ -242,7 +358,7 @@ export class Renderer {
           pickable: true,
           transitions: {
             getPosition: { duration: TRANSITION_DURATION, type: 'interpolation' },
-            getFillColor: { duration: TRANSITION_DURATION / 2 },
+            getFillColor: { duration: TRANSITION_DURATION },
           },
           getTooltip: ({ object }) => object?.title,
         })

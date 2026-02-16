@@ -89,6 +89,53 @@
         }
         #landing.hidden { opacity: 0; pointer-events: none; }
 
+        .landing-content {
+            max-width: 640px;
+            color: var(--color-text);
+        }
+        .landing-content h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .landing-content h2 {
+            font-size: 1.1rem;
+            color: rgba(0,0,0,0.6);
+            margin-bottom: 2rem;
+            font-weight: normal;
+        }
+        .landing-content p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        .landing-content a {
+            color: var(--color-primary);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--color-primary);
+        }
+        .landing-content a:hover {
+            border-bottom-style: solid;
+        }
+        .landing-cta {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+        .landing-cta i {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
         /* Quiz Panel (Sidebar) */
         #quiz-panel {
             position: absolute;
@@ -204,8 +251,28 @@
         <main id="app-main">
             <!-- Landing / Loading Screen -->
             <section id="landing">
-                <h1>Wikipedia Knowledge Map</h1>
-                <p>Loading interactive visualization...</p>
+                <div class="landing-content">
+                    <h1>Wikipedia Knowledge Map</h1>
+                    <h2>Explore what you know across 250,000 Wikipedia articles</h2>
+                    
+                    <p>
+                        <i class="fa-solid fa-map" style="color: var(--color-primary); margin-right: 8px;"></i>
+                        An interactive visualization mapping knowledge across Wikipedia using text embeddings.
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-brain" style="color: var(--color-primary); margin-right: 8px;"></i>
+                        Answer questions, watch a heatmap reveal what you know, and discover gaps and strengths.
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-graduation-cap" style="color: var(--color-primary); margin-right: 8px;"></i>
+                        Based on research using text embedding models to map conceptual knowledge. <a href="https://psyarxiv.com/dh3q2" target="_blank" rel="noopener">Read the research paper</a>.
+                    </p>
+
+                    <div class="landing-cta">
+                        <i class="fa-solid fa-arrow-up"></i>
+                        <span>Get Started: Select a domain above</span>
+                    </div>
+                </div>
             </section>
 
             <!-- Map Visualization -->

@@ -7,6 +7,7 @@ import {
   $estimates,
   $answeredIds,
   $coverage,
+  $questionMode,
 } from './state/store.js';
 import * as registry from './domain/registry.js';
 import { load as loadDomain } from './domain/loader.js';
@@ -18,6 +19,7 @@ import { Renderer } from './viz/renderer.js';
 import { Minimap } from './viz/minimap.js';
 import * as controls from './ui/controls.js';
 import * as quiz from './ui/quiz.js';
+import * as modes from './ui/modes.js';
 import { showDownload, hideDownload, updateConfidence, initConfidence } from './ui/progress.js';
 import { announce, setupKeyboardNav } from './utils/accessibility.js';
 
@@ -66,6 +68,8 @@ async function boot() {
   controls.onExport(handleExport);
 
   const quizPanel = document.getElementById('quiz-panel');
+  modes.init(quizPanel);
+  modes.onModeSelect(handleModeSelect);
   quiz.init(quizPanel);
   quiz.onAnswer(handleAnswer);
   initConfidence(quizPanel);
@@ -140,6 +144,7 @@ async function switchDomain(domainId) {
     currentDomainBundle = bundle;
     indexQuestions(bundle.questions);
     domainQuestionCount = 0;
+    modes.updateAvailability(0);
 
     const domain = bundle.domain;
     estimator.init(domain.grid_size, domain.region);
@@ -208,7 +213,10 @@ function selectAndShowNextQuestion() {
   }
 
   const estimates = $estimates.get();
-  const scored = sampler.selectNext(available, estimates, currentViewport, answeredIds);
+  const activeMode = modes.getActiveMode();
+  const scored = activeMode === 'auto'
+    ? sampler.selectNext(available, estimates, currentViewport, answeredIds)
+    : sampler.selectByMode(activeMode, available, estimates, currentViewport, answeredIds);
 
   if (!scored) {
     quiz.showQuestion(available[0]);
@@ -217,6 +225,11 @@ function selectAndShowNextQuestion() {
 
   const question = available.find((q) => q.id === scored.questionId) || available[0];
   quiz.showQuestion(question);
+}
+
+function handleModeSelect(modeId) {
+  $questionMode.set(modeId);
+  selectAndShowNextQuestion();
 }
 
 function handleAnswer(selectedKey, question) {
@@ -242,6 +255,7 @@ function handleAnswer(selectedKey, question) {
   $estimates.set(estimates);
 
   domainQuestionCount++;
+  modes.updateAvailability(domainQuestionCount);
 
   const feedback = isCorrect ? 'Correct!' : 'Incorrect.';
   const coverage = Math.round($coverage.get() * 100);

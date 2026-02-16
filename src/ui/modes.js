@@ -1,11 +1,19 @@
 /** Question mode selector with availability gating per FR-010/FR-011. */
 
 const QUESTION_MODES = [
-  { id: 'auto', label: 'Auto (best next question)', icon: 'fa-wand-magic-sparkles', minAnswers: 0 },
-  { id: 'easy', label: 'Ask me an easy question', icon: 'fa-face-smile', minAnswers: 5 },
-  { id: 'hardest-can-answer', label: 'Hardest I can answer', icon: 'fa-fire', minAnswers: 5 },
-  { id: 'dont-know', label: "Something I don't know", icon: 'fa-circle-question', minAnswers: 5 },
+  { id: 'auto', label: 'Auto (best next question)', icon: 'fa-wand-magic-sparkles', minAnswers: 0, type: 'question' },
+  { id: 'easy', label: 'Ask me an easy question', icon: 'fa-face-smile', minAnswers: 5, type: 'question' },
+  { id: 'hardest-can-answer', label: 'Hardest I can answer', icon: 'fa-fire', minAnswers: 5, type: 'question' },
+  { id: 'dont-know', label: "Something I don't know", icon: 'fa-circle-question', minAnswers: 5, type: 'question' },
 ];
+
+const INSIGHT_MODES = [
+  { id: 'expertise', label: 'My areas of expertise', icon: 'fa-trophy', minAnswers: 10, type: 'insight' },
+  { id: 'weakness', label: 'My areas of weakness', icon: 'fa-arrow-trend-down', minAnswers: 10, type: 'insight' },
+  { id: 'suggested', label: 'Suggest something to learn', icon: 'fa-lightbulb', minAnswers: 10, type: 'insight' },
+];
+
+const ALL_MODES = [...QUESTION_MODES, ...INSIGHT_MODES];
 
 let wrapper = null;
 let buttons = new Map();
@@ -55,6 +63,12 @@ export function init(container) {
         opacity: 0.4;
         cursor: not-allowed;
       }
+      .mode-btn--insight {
+        border-style: dashed;
+      }
+      .mode-btn--insight.active {
+        border-style: solid;
+      }
       .mode-btn:disabled:hover::after {
         content: attr(data-tooltip);
         position: absolute;
@@ -77,20 +91,22 @@ export function init(container) {
   wrapper = document.createElement('div');
   wrapper.className = 'modes-wrapper';
   wrapper.setAttribute('role', 'group');
-  wrapper.setAttribute('aria-label', 'Question mode');
+  wrapper.setAttribute('aria-label', 'Question and insight modes');
 
-  for (const mode of QUESTION_MODES) {
+  for (const mode of ALL_MODES) {
     const btn = document.createElement('button');
     btn.className = 'mode-btn' + (mode.id === activeMode ? ' active' : '');
+    if (mode.type === 'insight') btn.classList.add('mode-btn--insight');
     btn.innerHTML = `<i class="fa-solid ${mode.icon}"></i> ${mode.label}`;
     btn.dataset.mode = mode.id;
+    btn.dataset.type = mode.type;
     btn.dataset.tooltip = `Answer ${mode.minAnswers} more questions first`;
 
     if (mode.minAnswers > 0 && currentAnswerCount < mode.minAnswers) {
       btn.disabled = true;
     }
 
-    btn.addEventListener('click', () => handleSelect(mode.id));
+    btn.addEventListener('click', () => handleSelect(mode.id, mode.type));
     buttons.set(mode.id, btn);
     wrapper.appendChild(btn);
   }
@@ -104,7 +120,7 @@ export function onModeSelect(callback) {
 
 export function updateAvailability(responseCount) {
   currentAnswerCount = responseCount;
-  for (const mode of QUESTION_MODES) {
+  for (const mode of ALL_MODES) {
     const btn = buttons.get(mode.id);
     if (!btn) continue;
 
@@ -122,12 +138,14 @@ export function getActiveMode() {
   return activeMode;
 }
 
-function handleSelect(modeId) {
-  activeMode = modeId;
+function handleSelect(modeId, type) {
+  if (type === 'question') {
+    activeMode = modeId;
+  }
 
   for (const [id, btn] of buttons) {
     btn.classList.toggle('active', id === modeId);
   }
 
-  if (onSelectCb) onSelectCb(modeId);
+  if (onSelectCb) onSelectCb(modeId, type || 'question');
 }

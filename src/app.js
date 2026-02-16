@@ -20,6 +20,7 @@ import { Minimap } from './viz/minimap.js';
 import * as controls from './ui/controls.js';
 import * as quiz from './ui/quiz.js';
 import * as modes from './ui/modes.js';
+import * as insights from './ui/insights.js';
 import { showDownload, hideDownload, updateConfidence, initConfidence } from './ui/progress.js';
 import { announce, setupKeyboardNav } from './utils/accessibility.js';
 
@@ -72,6 +73,7 @@ async function boot() {
   modes.onModeSelect(handleModeSelect);
   quiz.init(quizPanel);
   quiz.onAnswer(handleAnswer);
+  insights.init(quizPanel);
   initConfidence(quizPanel);
 
   const minimapContainer = document.getElementById('minimap-container');
@@ -227,9 +229,15 @@ function selectAndShowNextQuestion() {
   quiz.showQuestion(question);
 }
 
-function handleModeSelect(modeId) {
-  $questionMode.set(modeId);
-  selectAndShowNextQuestion();
+function handleModeSelect(modeId, type) {
+  if (type === 'insight') {
+    insights.show(modeId, $estimates.get(), currentDomainBundle?.labels || []);
+    announce(`Showing ${modeId} insights.`);
+  } else {
+    insights.hide();
+    $questionMode.set(modeId);
+    selectAndShowNextQuestion();
+  }
 }
 
 function handleAnswer(selectedKey, question) {

@@ -234,9 +234,20 @@ audience, and the paper citation is present.
 - What happens if a CDN dependency (KaTeX, Font Awesome) fails to load?
   The system continues functioning with degraded styling; mathematical
   notation falls back to plain text representation.
+- What happens on a slow connection when domain data is loading? The
+  system displays a progress bar with percentage/bytes-loaded feedback.
+  The interface remains responsive and interactive during the download.
 - What happens on a mobile device with a small screen? The layout adapts
   to show the map and quiz panel in a stacked arrangement with touch-
   friendly controls for pan, zoom, and answer selection.
+- What happens when localStorage is unavailable (private browsing,
+  disabled, or full)? The system operates normally in a session-only
+  mode and displays a non-blocking notice that progress will not be
+  saved across visits.
+- What happens when a returning visitor's stored data is from an older
+  app version? The system detects the schema version mismatch, discards
+  the incompatible data, and starts fresh with a brief notice that
+  prior progress could not be restored.
 
 ## Requirements *(mandatory)*
 
@@ -266,7 +277,11 @@ audience, and the paper citation is present.
   switches within a single session, so that switching domains does not
   discard previously answered questions.
 - **FR-007**: System MUST persist user responses across browser sessions
-  using local storage, allowing visitors to return and continue.
+  using local storage, allowing visitors to return and continue. Stored
+  data MUST include a schema version tag. When a returning visitor's
+  stored data has an incompatible schema version, the system MUST
+  discard the old data gracefully and start fresh rather than crashing
+  or displaying corrupted state.
 - **FR-008**: System MUST compute a confidence indicator representing
   the proportion of the active domain that has been mapped, factoring in
   both the number of answered questions and the spatial coverage of the
@@ -286,10 +301,15 @@ audience, and the paper citation is present.
 - **FR-011**: System MUST disable smart question modes that require
   sufficient map coverage when the visitor has not yet answered enough
   questions, with a clear explanation of why the mode is unavailable.
-- **FR-012**: System MUST run entirely in the browser after initial page
-  load, with no server-side computation required. All question data,
-  embeddings, and labels MUST be pre-computed and bundled as static
-  assets.
+- **FR-012**: System MUST run entirely in the browser with no server-side
+  computation required. All question data, embeddings, and labels MUST
+  be pre-computed and served as static assets. Domain data (questions,
+  articles, labels) MUST be lazy-loaded per domain on demand rather
+  than bundled into a single upfront download. The initial page load
+  MUST include only the application code and the default domain's data.
+  When domain data is loading (initial or on domain switch), the system
+  MUST display a progress bar showing download progress to provide
+  instant feedback, especially on slow connections.
 - **FR-013**: System MUST include self-contained documentation accessible
   from the main interface, with links to the research preprint and
   GitHub repository.
@@ -325,6 +345,22 @@ audience, and the paper citation is present.
   coordinates. Points MUST NOT teleport, pop, or move as a rigid
   group. The per-point animation MUST be synchronized so that all
   points complete their transitions within the same time window.
+- **FR-021**: System MUST provide a visible "Reset Progress" control
+  that clears all stored user responses and returns the interface to
+  its initial first-visit state. The reset MUST require a confirmation
+  step to prevent accidental data loss.
+- **FR-022**: System MUST allow visitors to export their response
+  history (questions answered, correctness, timestamps, domains) as a
+  downloadable file before resetting, so that progress is not
+  irrecoverably lost.
+- **FR-023**: System MUST conform to WCAG 2.1 Level AA. All
+  interactive controls (domain menu, answer selection, question modes,
+  reset, export) MUST be keyboard-navigable with visible focus
+  indicators. The heatmap visualization MUST provide text alternatives
+  describing the knowledge distribution. Color contrast ratios MUST
+  meet or exceed 4.5:1 for text and 3:1 for graphical elements. The
+  heatmap color palette MUST be distinguishable by users with common
+  color vision deficiencies (deuteranopia, protanopia).
 
 ### Defined Knowledge Domains
 
@@ -340,7 +376,12 @@ The following domains MUST be included at launch:
 | Mathematics | Calculus, Linear Algebra, Number Theory, Probability and Statistics |
 
 Total: 6 general domains + 13 sub-domains = 19 selectable areas.
-Total questions: 19 × 50 = 950 pre-generated questions.
+Each domain presents exactly 50 questions. Sub-domains have dedicated
+unique questions. General domains mix questions drawn from their
+children with unique "general" questions that span the broader domain.
+"All (General)" draws from all other domains. Total unique questions
+is approximately 750–800 (less than 19 × 50 = 950 because general
+domains and "All" share some questions with sub-domains).
 
 ### Key Entities
 
@@ -350,7 +391,9 @@ Total questions: 19 × 50 = 950 pre-generated questions.
   squares.
 - **Question**: A verified quiz item with question text, answer choices,
   correct answer index, difficulty level (beginner to expert), embedding
-  coordinates, and domain membership.
+  coordinates, and domain membership. A question MAY belong to multiple
+  domains (e.g., a genetics question appears in both "Genetics" and
+  "Biology — General").
 - **Grid Label**: A unique human-readable label for one cell of the
   rectangular grid overlaying a domain's embedding region.
 - **User Response**: A record of the visitor's answer to a specific
@@ -398,6 +441,10 @@ Total questions: 19 × 50 = 950 pre-generated questions.
   no frame where any point's position jumps by more than 5% of the
   viewport dimension, as verified by Playwright frame-by-frame
   screenshot comparison.
+- **SC-013**: The demo passes WCAG 2.1 Level AA automated checks (axe
+  or Lighthouse accessibility audit) with zero critical violations on
+  all primary user flows (domain selection, question answering, mode
+  switching, reset/export).
 
 ## Assumptions
 
@@ -419,6 +466,15 @@ Total questions: 19 × 50 = 950 pre-generated questions.
   cluster. Only the final static data files are deployed to GitHub Pages.
 - The published paper URL is not yet available; the preprint link will
   be used initially and updated when the published URL is provided.
+
+## Clarifications
+
+### Session 2026-02-16
+
+- Q: How do parent-domain and sub-domain question sets relate — independent, hierarchical, or hybrid? → A: Hybrid. Sub-domains have dedicated unique questions. General domains mix questions drawn from their children with unique "general" questions. "All (General)" draws from all domains. Total unique questions ≈ 750–800.
+- Q: How should localStorage handle version mismatches and user resets? → A: Store a schema version tag; discard incompatible old data gracefully. Provide a visible "Reset Progress" button with confirmation. Allow visitors to export their response history as a downloadable file before resetting.
+- Q: What level of accessibility compliance should the demo target? → A: WCAG 2.1 Level AA — keyboard navigation, screen reader labels, 4.5:1 contrast ratios, color-blind-safe heatmap palette.
+- Q: Should all domain data load upfront or lazily? → A: Lazy-load per domain. Initial payload is code + default domain only (~2–3 MB). Show progress bars with download feedback when loading domain data on slow connections.
 
 ## Research References
 

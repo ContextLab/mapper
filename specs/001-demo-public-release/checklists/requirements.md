@@ -32,13 +32,19 @@
 ## Notes
 
 - All 16 items pass. Spec is ready for `/speckit.plan`.
-- Scope is large (6 user stories, 20 functional requirements, 12 success
-  criteria, 19 domains, 950 questions). Planning phase should consider
-  phased delivery.
+- Scope is large (6 user stories, 23 functional requirements, 13 success
+  criteria, 19 domains, ~750–800 unique questions). Planning phase should
+  consider phased delivery.
 - FR-016–FR-020 add active learning and per-point animation requirements
   informed by research (see Research References section in spec).
-- SC-011 and SC-012 add measurable benchmarks for active learning quality
-  and animation smoothness respectively.
+- FR-021–FR-023 add reset/export/accessibility requirements from
+  clarification session.
+- SC-011–SC-013 add measurable benchmarks for active learning quality,
+  animation smoothness, and WCAG compliance respectively.
+- 4 clarifications recorded in Session 2026-02-16: question allocation
+  model (hybrid), localStorage lifecycle (version tag + reset + export),
+  accessibility (WCAG 2.1 AA), data loading (lazy per domain + progress
+  bars).
 - Assumptions section documents 6 informed defaults (domain list scope,
   session persistence, embedding model, navigation graphic, pre-processing,
   paper URL) — no clarification needed from user.

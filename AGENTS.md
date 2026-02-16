@@ -133,3 +133,10 @@ python scripts/utils/sync_and_merge_embeddings.py
 - `notes/` contains 63 implementation logs — useful for understanding decisions but not code reference.
 - Cluster config: 2 clusters (tensor01, tensor02) x 8 GPUs = 16 workers. Uses `screen` sessions + `paramiko` SSH.
 - License: CC BY-NC-SA 4.0 (non-commercial).
+
+## Active Technologies
+- JavaScript ES2020+ (frontend), Python 3.11+ (pipeline) (001-demo-public-release)
+- localStorage (browser-side, versioned schema per FR-007 clarification). No server-side storage. (001-demo-public-release)
+
+## Recent Changes
+- 001-demo-public-release: Added JavaScript ES2020+ (frontend), Python 3.11+ (pipeline)

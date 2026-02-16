@@ -37,28 +37,28 @@
 
 ### State Management (src/state/)
 
-- [ ] T010 [INFRA] Implement `src/state/store.js`: All atoms from contracts/state.md — `$responses` (persistentAtom), `$schemaVersion` (persistentAtom), `$activeDomain`, `$domainCache`, `$estimates`, `$transitionState`, `$questionMode`, `$answeredIds` (computed), `$coverage` (computed), `$insightsAvailable` (computed)
-- [ ] T011 [INFRA] Implement `src/state/persistence.js`: `validateSchema()` with version check + discard-on-mismatch, `exportResponses()` returning Blob, `resetAll()` clearing all atoms, `isAvailable()` detecting localStorage support. Follow contracts/state.md exactly.
+- [x] T010 [INFRA] Implement `src/state/store.js`: All atoms from contracts/state.md — `$responses` (persistentAtom), `$schemaVersion` (persistentAtom), `$activeDomain`, `$domainCache`, `$estimates`, `$transitionState`, `$questionMode`, `$answeredIds` (computed), `$coverage` (computed), `$insightsAvailable` (computed)
+- [x] T011 [INFRA] Implement `src/state/persistence.js`: `validateSchema()` with version check + discard-on-mismatch, `exportResponses()` returning Blob, `resetAll()` clearing all atoms, `isAvailable()` detecting localStorage support. Follow contracts/state.md exactly.
 
 ### Domain Data Loading (src/domain/)
 
-- [ ] T012 [P] [INFRA] Implement `src/domain/registry.js`: Load `data/domains/index.json` at startup, expose `getDomains()`, `getDomain(id)`, `getChildren(parentId)`, `getHierarchy()` returning the 19-domain tree. Validate `domains.length === 19` in dev mode.
-- [ ] T013 [P] [INFRA] Implement `src/domain/loader.js`: Lazy-load `data/domains/{id}.json` with `onProgress` / `onComplete` / `onError` callbacks per contracts/domain-data.md. Cache loaded bundles in `$domainCache`. Use `fetch()` with `Content-Length` header for progress calculation. Emit progress events at minimum every 100ms.
-- [ ] T014 [INFRA] Implement `src/domain/questions.js`: `getAvailableQuestions(domainBundle, answeredIds)` returning unanswered questions, `getQuestionById(id)` lookup, domain-overlap logic for questions appearing in multiple domains.
+- [x] T012 [P] [INFRA] Implement `src/domain/registry.js`: Load `data/domains/index.json` at startup, expose `getDomains()`, `getDomain(id)`, `getChildren(parentId)`, `getHierarchy()` returning the 19-domain tree. Validate `domains.length === 19` in dev mode.
+- [x] T013 [P] [INFRA] Implement `src/domain/loader.js`: Lazy-load `data/domains/{id}.json` with `onProgress` / `onComplete` / `onError` callbacks per contracts/domain-data.md. Cache loaded bundles in `$domainCache`. Use `fetch()` with `Content-Length` header for progress calculation. Emit progress events at minimum every 100ms.
+- [x] T014 [INFRA] Implement `src/domain/questions.js`: `getAvailableQuestions(domainBundle, answeredIds)` returning unanswered questions, `getQuestionById(id)` lookup, domain-overlap logic for questions appearing in multiple domains.
 
 ### Knowledge Estimator (src/learning/)
 
-- [ ] T015 [INFRA] Implement `src/learning/estimator.js`: Gaussian Process with Matern 3/2 kernel per contracts/active-learner.md — `init(gridSize, region)`, `observe(x, y, correct)` with Woodbury incremental update, `predict(viewport?)` returning CellEstimate[], `predictCell(gx, gy)`, `reset()`, `restore(responses)`. State derivation: unknown/uncertain/estimated per FR-017.
-- [ ] T016 [INFRA] Implement `src/utils/math.js`: Matern 3/2 kernel function, Euclidean distance, matrix inversion utilities (Woodbury identity), sigmoid, linear interpolation, RBF kernel.
+- [x] T015 [INFRA] Implement `src/learning/estimator.js`: Gaussian Process with Matern 3/2 kernel per contracts/active-learner.md — `init(gridSize, region)`, `observe(x, y, correct)` with Woodbury incremental update, `predict(viewport?)` returning CellEstimate[], `predictCell(gx, gy)`, `reset()`, `restore(responses)`. State derivation: unknown/uncertain/estimated per FR-017.
+- [x] T016 [INFRA] Implement `src/utils/math.js`: Matern 3/2 kernel function, Euclidean distance, matrix inversion utilities (Woodbury identity), sigmoid, linear interpolation, RBF kernel.
 
 ### Renderer Shell (src/viz/)
 
-- [ ] T017 [INFRA] Implement `src/viz/renderer.js` shell: Initialize deck.gl DeckGL instance with MapView, `setPoints(points)` using ScatterplotLayer with transition config (`getPosition: { duration: 1000 }`), `setHeatmap(estimates, region)` using HeatmapLayer with color-blind safe palette (viridis), `setLabels(labels)` using TextLayer, `getViewport()`, `transitionTo(region, duration)`, `destroy()`. Wire `onViewportChange` callback on viewState changes.
-- [ ] T018 [P] [INFRA] Implement `src/utils/accessibility.js`: Focus trap utility, ARIA live region announcer, keyboard navigation helpers (arrow keys for grid, Enter for selection, Escape for close), skip-to-content link setup.
+- [x] T017 [INFRA] Implement `src/viz/renderer.js` shell: Initialize deck.gl DeckGL instance with MapView, `setPoints(points)` using ScatterplotLayer with transition config (`getPosition: { duration: 1000 }`), `setHeatmap(estimates, region)` using HeatmapLayer with color-blind safe palette (viridis), `setLabels(labels)` using TextLayer, `getViewport()`, `transitionTo(region, duration)`, `destroy()`. Wire `onViewportChange` callback on viewState changes.
+- [x] T018 [P] [INFRA] Implement `src/utils/accessibility.js`: Focus trap utility, ARIA live region announcer, keyboard navigation helpers (arrow keys for grid, Enter for selection, Escape for close), skip-to-content link setup.
 
 ### App Entry Point
 
-- [ ] T019 [INFRA] Implement `src/app.js`: Initialize persistence (validateSchema), load domain registry, render domain selector, wire up state subscriptions ($activeDomain → load domain → render, $estimates → update heatmap, $responses → re-predict). Handle localStorage unavailable case (session-only mode with notice).
+- [x] T019 [INFRA] Implement `src/app.js`: Initialize persistence (validateSchema), load domain registry, render domain selector, wire up state subscriptions ($activeDomain → load domain → render, $estimates → update heatmap, $responses → re-predict). Handle localStorage unavailable case (session-only mode with notice).
 
 **Checkpoint**: Foundation ready — `npm run dev` shows domain selector (from index.json), selecting a domain triggers a fetch (404 expected until pipeline runs), state atoms work, estimator can be called from console.
 

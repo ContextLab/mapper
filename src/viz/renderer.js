@@ -114,12 +114,19 @@ export class Renderer {
         const gridSize = Math.round(Math.sqrt(estimates.length));
         const cx = region.x_min + ((e.gx + 0.5) / gridSize) * xSpan;
         const cy = region.y_min + ((e.gy + 0.5) / gridSize) * ySpan;
+        const color = valueToColor(e.value);
+        // Cross-domain predictions (no direct evidence) get reduced opacity
+        const isCrossDomain = e.evidenceCount === 0;
+        if (isCrossDomain) {
+          color[3] = Math.round(color[3] * 0.45);
+        }
         return {
           position: [cx, cy],
           weight: e.value,
-          color: valueToColor(e.value),
+          color,
           gx: e.gx,
           gy: e.gy,
+          isCrossDomain,
         };
       });
 

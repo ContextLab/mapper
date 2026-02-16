@@ -15,15 +15,15 @@
 
 **Purpose**: Project initialization — Vite build system, dependency installation, project skeleton
 
-- [ ] T001 [INFRA] Initialize npm project: `package.json` with `name`, `version`, `scripts` (`dev`, `build`, `preview`, `test`, `bench`), `type: "module"`
-- [ ] T002 [INFRA] Install core dependencies: `deck.gl` 9+, `nanostores`, `@nanostores/persistent`
-- [ ] T003 [P] [INFRA] Install dev dependencies: `vite`, `vitest`, `@playwright/test`
-- [ ] T004 [INFRA] Create `vite.config.js`: `base: '/mapper/'`, `outDir: 'dist'`, input: `index.html`
-- [ ] T005 [P] [INFRA] Create empty module skeleton — all `src/` directories and files from plan.md Project Structure, each exporting stub functions matching their contract interfaces
-- [ ] T006 [P] [INFRA] Create `tests/algorithm/` and `tests/visual/` directory structure with empty spec files
-- [ ] T007 [INFRA] Replace `index.html` monolith with slim Vite shell: HTML structure only, `<script type="module" src="/src/app.js">`, CDN links for KaTeX + Font Awesome with integrity hashes, `<div id="map-container">`, `<div id="quiz-panel">`, `<div id="minimap-container">`
-- [ ] T008 [INFRA] Verify `npm run dev` starts Vite dev server and loads the slim `index.html` without errors
-- [ ] T009 [P] [INFRA] Create `data/domains/` directory with a placeholder `index.json` (empty domains array, `schema_version: "1.0.0"`) to unblock loader development
+- [x] T001 [INFRA] Initialize npm project: `package.json` with `name`, `version`, `scripts` (`dev`, `build`, `preview`, `test`, `bench`), `type: "module"`
+- [x] T002 [INFRA] Install core dependencies: `deck.gl` 9+, `nanostores`, `@nanostores/persistent`
+- [x] T003 [P] [INFRA] Install dev dependencies: `vite`, `vitest`, `@playwright/test`
+- [x] T004 [INFRA] Create `vite.config.js`: `base: '/mapper/'`, `outDir: 'dist'`, input: `index.html`
+- [x] T005 [P] [INFRA] Create empty module skeleton — all `src/` directories and files from plan.md Project Structure, each exporting stub functions matching their contract interfaces
+- [x] T006 [P] [INFRA] Create `tests/algorithm/` and `tests/visual/` directory structure with empty spec files
+- [x] T007 [INFRA] Replace `index.html` monolith with slim Vite shell: HTML structure only, `<script type="module" src="/src/app.js">`, CDN links for KaTeX + Font Awesome with integrity hashes, `<div id="map-container">`, `<div id="quiz-panel">`, `<div id="minimap-container">`
+- [x] T008 [INFRA] Verify `npm run dev` starts Vite dev server and loads the slim `index.html` without errors
+- [x] T009 [P] [INFRA] Create `data/domains/` directory with a placeholder `index.json` (empty domains array, `schema_version: "1.0.0"`) to unblock loader development
 
 **Checkpoint**: `npm run dev` serves a blank page with no console errors. All `src/` modules exist as stubs.
 

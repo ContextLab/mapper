@@ -109,8 +109,8 @@
 
 ### Implementation for User Story 3
 
-- [ ] T032 [US3] Implement `src/ui/modes.js` — Question mode menu: Dropdown/panel with modes from FR-010 ("Ask me an easy question", "Ask me the hardest question I can answer", "Ask me something I don't know"). Selecting a mode sets `$questionMode` and triggers `sampler.selectByMode()`. Modes requiring coverage (>5 questions) disabled with tooltip when insufficient (FR-011).
-- [ ] T033 [US3] Implement `selectByMode()` in `src/learning/sampler.js`: Mode strategies per contracts/active-learner.md — `easy`: lowest difficulty in highest-value cells, `hardest-can-answer`: highest difficulty where value > 0.6, `dont-know`: highest difficulty where value < 0.3. Falls back to `selectNext()` if no candidate matches mode criteria.
+- [x] T032 [US3] Implement `src/ui/modes.js` — Question mode menu: Dropdown/panel with modes from FR-010 ("Ask me an easy question", "Ask me the hardest question I can answer", "Ask me something I don't know"). Selecting a mode sets `$questionMode` and triggers `sampler.selectByMode()`. Modes requiring coverage (>5 questions) disabled with tooltip when insufficient (FR-011).
+- [x] T033 [US3] Implement `selectByMode()` in `src/learning/sampler.js`: Mode strategies per contracts/active-learner.md — `easy`: lowest difficulty in highest-value cells, `hardest-can-answer`: highest difficulty where value > 0.6, `dont-know`: highest difficulty where value < 0.3. Falls back to `selectNext()` if no candidate matches mode criteria.
 
 **Checkpoint**: All 3 question modes select appropriate questions. Disabled modes show explanatory tooltips. SC-010 (90% strategy match) should be achievable.
 

@@ -124,8 +124,8 @@
 
 ### Implementation for User Story 4
 
-- [ ] T034 [US4] Implement `src/ui/insights.js` — Insight panels: "Areas of expertise" (top 5 highest-value cells with labels), "Areas of weakness" (5 lowest-value cells with evidence), "Suggested learning" (5 medium-value cells where learning effort would be most productive). Uses `$estimates` and GridLabel data. Shows "Answer more questions" message when `$insightsAvailable` is false (<10 responses).
-- [ ] T035 [US4] Extend `src/ui/modes.js` to include insight modes from FR-010: "List my areas of expertise", "List my areas of weakness", "Suggest something to learn". These open the insights panel rather than selecting a question.
+- [x] T034 [US4] Implement `src/ui/insights.js` — Insight panels: "Areas of expertise" (top 5 highest-value cells with labels), "Areas of weakness" (5 lowest-value cells with evidence), "Suggested learning" (5 medium-value cells where learning effort would be most productive). Uses `$estimates` and GridLabel data. Shows "Answer more questions" message when `$insightsAvailable` is false (<10 responses).
+- [x] T035 [US4] Extend `src/ui/modes.js` to include insight modes from FR-010: "List my areas of expertise", "List my areas of weakness", "Suggest something to learn". These open the insights panel rather than selecting a question.
 
 **Checkpoint**: Insight panels display meaningful results after 20+ questions. Topics match answer patterns.
 
@@ -139,8 +139,8 @@
 
 ### Implementation for User Story 5
 
-- [ ] T036 [US5] Verify and tune GP kernel parameters in `src/learning/estimator.js`: Ensure the Matern 3/2 length-scale is calibrated so that questions answered in "Mathematics" produce visible (non-trivial) predictions in "Probability and Statistics" cells that are spatially close in embedding space. If predictions are too weak or too diffuse, adjust length-scale. Document the calibration values.
-- [ ] T037 [US5] Add visual indicator for cross-domain predictions: Cells with predictions derived entirely from other domains (no direct evidence in current domain) should be visually distinguishable from cells with direct evidence — e.g., slightly different opacity or a dotted border pattern in the heatmap.
+- [x] T036 [US5] Verify and tune GP kernel parameters in `src/learning/estimator.js`: Ensure the Matern 3/2 length-scale is calibrated so that questions answered in "Mathematics" produce visible (non-trivial) predictions in "Probability and Statistics" cells that are spatially close in embedding space. If predictions are too weak or too diffuse, adjust length-scale. Document the calibration values.
+- [x] T037 [US5] Add visual indicator for cross-domain predictions: Cells with predictions derived entirely from other domains (no direct evidence in current domain) should be visually distinguishable from cells with direct evidence — e.g., slightly different opacity or a dotted border pattern in the heatmap.
 
 **Checkpoint**: SC-009 (non-zero cross-domain estimates in related regions) validated manually for Math→Probability and Neuroscience→Biology.
 
@@ -154,9 +154,9 @@
 
 ### Implementation for User Story 6
 
-- [ ] T038 [US6] Implement About modal in `index.html` + `src/ui/controls.js`: "About" / "Learn More" button in header. Modal content: what the demo does, how embedding-based knowledge mapping works (plain language), link to preprint (https://psyarxiv.com/dh3q2), link to GitHub repo (https://github.com/ContextLab/efficient-learning-khan). Keyboard accessible (Escape to close, focus trap). Style matches overall design.
-- [ ] T039 [US6] Implement Reset Progress (FR-021) in `src/ui/controls.js`: "Reset Progress" button, confirmation dialog ("Are you sure? This will clear all progress."), calls `persistence.resetAll()`, returns to initial landing state.
-- [ ] T040 [US6] Implement Export (FR-022) in `src/ui/controls.js`: "Export Progress" button, calls `persistence.exportResponses()`, triggers download of JSON file with timestamp in filename.
+- [x] T038 [US6] Implement About modal in `index.html` + `src/ui/controls.js`: "About" / "Learn More" button in header. Modal content: what the demo does, how embedding-based knowledge mapping works (plain language), link to preprint (https://psyarxiv.com/dh3q2), link to GitHub repo (https://github.com/ContextLab/efficient-learning-khan). Keyboard accessible (Escape to close, focus trap). Style matches overall design.
+- [x] T039 [US6] Implement Reset Progress (FR-021) in `src/ui/controls.js`: "Reset Progress" button, confirmation dialog ("Are you sure? This will clear all progress."), calls `persistence.resetAll()`, returns to initial landing state.
+- [x] T040 [US6] Implement Export (FR-022) in `src/ui/controls.js`: "Export Progress" button, calls `persistence.exportResponses()`, triggers download of JSON file with timestamp in filename.
 
 **Checkpoint**: About modal, Reset, and Export all work. Links verified manually.
 

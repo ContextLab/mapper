@@ -306,10 +306,12 @@ audience, and the paper citation is present.
   be pre-computed and served as static assets. Domain data (questions,
   articles, labels) MUST be lazy-loaded per domain on demand rather
   than bundled into a single upfront download. The initial page load
-  MUST include only the application code and the default domain's data.
-  When domain data is loading (initial or on domain switch), the system
-  MUST display a progress bar showing download progress to provide
-  instant feedback, especially on slow connections.
+  MUST include only the application code and the domain registry
+  (~5 KB); no domain bundle is loaded until the visitor selects a
+  domain from the menu. When domain data is loading (initial or on
+  domain switch), the system MUST display a progress bar showing
+  download progress to provide instant feedback, especially on slow
+  connections.
 - **FR-013**: System MUST include self-contained documentation accessible
   from the main interface, with links to the research preprint and
   GitHub repository.

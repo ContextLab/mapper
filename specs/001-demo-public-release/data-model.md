@@ -174,10 +174,14 @@ switch. Not persisted — derived from responses at runtime.
 **State definitions** (per FR-017):
 - `unknown`: `evidence_count === 0` — no nearby responses, high prior
   uncertainty. Default state before any questions answered.
-- `uncertain`: `evidence_count >= 1` AND responses conflict (mix of
-  correct and incorrect nearby). High posterior uncertainty.
-- `estimated`: `evidence_count >= 1` AND responses are consistent.
-  Confidence in the estimate is meaningful.
+- `uncertain`: `evidence_count >= 1` AND `0.3 < value < 0.7` AND
+  `uncertainty < 0.2` — enough nearby responses to produce a confident
+  GP prediction (low variance), but that prediction is mid-range,
+  indicating conflicting evidence (mix of correct and incorrect nearby
+  answers pulling the mean toward 0.5).
+- `estimated`: `evidence_count >= 1` AND NOT uncertain — nearby
+  responses produce a confident estimate (value near 0 or 1, or low
+  uncertainty). Confidence in the estimate is meaningful.
 
 **Validation rules**:
 - `value` in [0.0, 1.0]

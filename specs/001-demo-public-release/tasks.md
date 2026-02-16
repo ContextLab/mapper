@@ -78,7 +78,7 @@
 - [ ] T023 [US1] Implement `src/learning/sampler.js` — Active learning question selection per contracts/active-learner.md: `selectNext()` computing expected information gain over viewport cells (FR-016), viewport restriction, cell re-selection allowed (FR-019). Must complete in <50ms.
 - [ ] T024 [US1] Implement `src/learning/curriculum.js` — Landmark→niche progression per FR-018: `getWeight(answeredCount, coveragePercent)` with sigmoid transition at ~30% coverage. `getCentrality(domainId)` returning precomputed centrality scores from article density in each cell. Weight modulates acquisition function in sampler.
 - [ ] T025 [US1] Wire quiz flow end-to-end in `src/app.js`: On domain select → load bundle → init estimator → select first question via sampler → display in quiz panel → on answer → observe → re-predict → update heatmap → select next question → loop. Show "Domain fully mapped" message when 50 questions answered (edge case).
-- [ ] T026 [US1] Implement introduction/landing state: Before first domain selection, show brief explanation of what the demo does, link to preprint (https://psyarxiv.com/dh3q2), and "Start" button. Store in `index.html` as static content, hidden after first domain select.
+- [ ] T026 [US1] Implement introduction/landing state: Before first domain selection, show brief explanation of what the demo does (~200–300 words, plain language), link to preprint (https://psyarxiv.com/dh3q2), and domain selector prompting the visitor to choose a domain. No domain data loads until selection — initial payload is app code + domain registry (~5 KB) only. Landing content hidden after first domain select.
 
 **Checkpoint**: A visitor can load the page, read the intro, select a domain, answer questions, and watch the heatmap update in real time. SC-001 (first question within 60s), SC-002 (heatmap update <500ms) should be achievable.
 
@@ -94,9 +94,8 @@
 
 - [ ] T027 [US2] Implement `src/viz/transitions.js` — 3D rotation logic: `needs3D(source, target)` using IoU < 0.3 threshold, `prepare3DPositions(points, targetPoints)` assigning PCA-3 z-coordinates. When 3D is needed, set deck.gl to OrbitView during transition, interpolate (x,y,z) → (x',y',z'), then return to MapView. When not needed, simple pan/zoom with per-point interpolation.
 - [ ] T028 [US2] Implement fade-in/fade-out for entering/leaving points: Points not in target domain get opacity animated 1→0 over transition duration. Points new in target domain get opacity animated 0→1. Merge source + target point sets during transition, each tagged with fade direction.
-- [ ] T029 [US2] Implement domain switch orchestration in `src/app.js`: On `$activeDomain` change → load new domain bundle (with progress bar) → compute merged point set → call `transitions.needs3D()` → execute transition → after animation completes, re-run estimator with ALL prior responses (cross-domain) → update heatmap. Handle rapid switching: cancel pending transitions, most recent selection wins (US2 acceptance scenario 4).
+- [ ] T029 [US2] Implement domain switch orchestration in `src/app.js`: On `$activeDomain` change → load new domain bundle (with progress bar) → compute merged point set → call `transitions.needs3D()` → execute transition → after animation completes, call `estimator.restore()` with ALL `$responses` (not just current domain's) to ensure cross-domain knowledge persistence → update heatmap. The GP kernel smoothly interpolates across embedding space, so answered questions in "Physics" produce non-zero estimates in related cells of "Quantum Physics." Handle rapid switching: cancel pending transitions, most recent selection wins (US2 acceptance scenario 4).
 - [ ] T030 [US2] Implement `src/viz/minimap.js` — Navigation overview per FR-009: Canvas-based minimap showing full embedding space (0–1 both axes), all 19 domain regions as labeled rectangles, active domain highlighted, current viewport rectangle overlaid. Click on a domain region to switch. Subscribe to `$activeDomain` for highlight updates.
-- [ ] T031 [US2] Ensure cross-domain knowledge persistence: When switching domains, `estimator.restore()` is called with ALL `$responses` (not just current domain's). The GP kernel smoothly interpolates knowledge across embedding space, so answered questions in "Physics" produce non-zero estimates in related cells of "Quantum Physics".
 
 **Checkpoint**: Domain switching animates smoothly (SC-003: 60fps, <1s), prior answers persist across switches, minimap reflects active domain. SC-012 (no point jumps >5% viewport) should pass.
 
@@ -167,12 +166,14 @@
 
 **Purpose**: Generate the 19 domain definitions, ~750–800 questions, per-domain JSON bundles for lazy loading.
 
-- [ ] T041 [P] [INFRA] Implement `scripts/define_domains.py`: Define 19 domain regions in embedding space using existing UMAP coordinates. For each domain, find the bounding rectangle of relevant articles. Output: `data/domains/index.json` per contracts/domain-data.md. Use existing `wikipedia_articles.json` and `heatmap_cell_labels.json` as input.
-- [ ] T042 [P] [INFRA] Implement `scripts/generate_domain_questions.py`: Generate 50 questions per domain using OpenAI Batch API (gpt-5-nano). For sub-domains: unique questions. For general domains: mix of child questions + unique general questions. For "All": draw from all. Target ~750–800 unique questions total. Each question verified against Wikipedia source article. Include difficulty levels 1–5 spread per domain. Output: per-domain question lists with embedding coordinates, PCA-3 z-coordinate, source article, concepts tested.
+- [ ] T040b [P] [INFRA] Implement `scripts/compute_pca3.py`: Run PCA on the full embedding matrix (from `wikipedia.pkl` or merged embeddings), extract the 3rd principal component, normalize to [0, 1], and store as a `z` coordinate on every article and question. Output: `embeddings/pca3_coordinates.pkl` mapping article/question IDs to z-values. This is consumed by T041 and T043 to populate the `z` field required by contracts/domain-data.md for 3D transitions.
+- [ ] T041 [P] [INFRA] Implement `scripts/define_domains.py`: Define 19 domain regions in embedding space using existing UMAP coordinates. For each domain, find the bounding rectangle of relevant articles and compute an appropriate `grid_size` based on region area (larger regions → finer grids). Output: `data/domains/index.json` per contracts/domain-data.md. Use existing `wikipedia_articles.json` and `heatmap_cell_labels.json` as input.
+- [ ] T042 [P] [INFRA] Implement `scripts/generate_domain_questions.py`: Generate 50 questions per domain using OpenAI Batch API (gpt-5-nano). For sub-domains: unique questions. For general domains: mix of child questions + unique general questions. For "All": draw from all. Target ~750–800 unique questions total. Include difficulty levels 1–5 spread per domain (minimum 5 questions at each level per domain). Output: per-domain question lists with embedding coordinates, PCA-3 z-coordinate, source article, concepts tested. **Accuracy requirement (Constitution §I, SC-004)**: For every generated question, the script MUST perform a web search (Wikipedia API + search engine) to verify: (a) the source article exists and is current, (b) the correct answer is factually accurate per the article, (c) all distractor options are plausible but definitively incorrect. Questions failing verification MUST be regenerated or discarded — zero tolerance for inaccurate questions in the final output.
 - [ ] T043 [INFRA] Implement `scripts/export_domain_data.py`: Read domain definitions + questions + articles + labels → produce `data/domains/{id}.json` per contracts/domain-data.md for all 19 domains. Validate invariants: 50 questions per domain, coordinates within region, grid labels cover full grid, PCA-3 z-coordinate present on all points.
-- [ ] T044 [INFRA] Run full domain pipeline: `define_domains.py` → `generate_domain_questions.py` → `export_domain_data.py`. Verify all 19 domain bundles are valid. Spot-check question accuracy against Wikipedia for >=10% of questions.
+- [ ] T044 [INFRA] Run full domain pipeline: `define_domains.py` → `generate_domain_questions.py` → `export_domain_data.py`. Verify all 19 domain bundles are valid. T042's inline verification covers 100% of questions automatically.
+- [ ] T044b [INFRA] Implement `scripts/validate_article_existence.py`: For every unique `source_article` referenced across all ~750–800 questions, query the Wikipedia REST API (`https://en.wikipedia.org/api/rest_v1/page/summary/{title}`) and confirm a 200 response. Log any missing or redirected articles. Script MUST achieve 100% existence confirmation — any failures block deployment. Run as part of pipeline after T042 and before T043.
 
-**Checkpoint**: `data/domains/index.json` + 19 `{id}.json` bundles exist, all valid per contracts. Questions spot-checked for accuracy.
+**Checkpoint**: `data/domains/index.json` + 19 `{id}.json` bundles exist, all valid per contracts. 100% of questions verified for factual accuracy during generation (T042). 100% of source articles confirmed to exist on Wikipedia (T044b).
 
 ---
 
@@ -206,10 +207,12 @@
 
 ### Principle I: Accuracy
 
-- [ ] T051 Verify question accuracy: Spot-check >=20% of questions against Wikipedia/primary sources via web search. Document results.
+- [ ] T051 Verify question accuracy (SC-004, Constitution §I): Run `scripts/validate_question_accuracy.py` — an independent verification script (separate from T042's inline checks) that re-verifies 100% of questions against primary sources via web search. For each question: fetch the Wikipedia source article, confirm the correct answer is supported by article content, confirm distractors are incorrect. Output a verification report with pass/fail per question. **100% pass rate required** — any failures must be fixed before deployment.
 - [ ] T052 Run pipeline diagnostics: `scripts/diagnostics/diagnose_pipeline.py` and `scripts/diagnostics/verify_cell_labels.py` on generated domain data. All checks pass.
 - [ ] T053 Validate active learning benchmark (SC-011): Run `npx vitest bench` — GP+EIG achieves lower MAE than random baseline over 50-question simulated sessions across all 19 domains. Document results table.
 - [ ] T054 Confirm no mock objects in any test file. Grep for `mock`, `jest.fn`, `vi.fn`, `stub` across `tests/` — zero results (excluding this documentation).
+- [ ] T054b Validate SC-005 (zero server calls after load): Playwright test that intercepts all network requests, completes initial page load, then performs a full quiz flow (select domain, answer 5 questions, switch domain, answer 3 more, view insights). Assert zero non-cached network requests after initial static asset loading. Any XHR/fetch/WebSocket calls = failure.
+- [ ] T054c Validate SC-010 (smart modes match strategy >=90%): Vitest test that creates synthetic estimate states (high-knowledge region, low-knowledge region, mixed), runs each mode selection (`easy`, `hardest-can-answer`, `dont-know`) 100 times with randomized question pools, and asserts >=90% of selections match the documented strategy (easy → lowest difficulty in highest-value cells, etc.).
 
 ### Principle II: User Delight
 
@@ -243,6 +246,7 @@
 - [ ] T070 Run `quickstart.md` validation: Fresh clone, follow every step, confirm everything works as documented.
 - [ ] T071 Final visual regression: Re-capture all Playwright screenshots, compare with Phase 12 baselines, confirm <0.1% pixel diff.
 - [ ] T072 Code cleanup: Remove any console.log debugging, ensure consistent code style, verify no TODO/FIXME comments remain in shipped code.
+- [ ] T073 [P] Archive old data files: Remove or move legacy root-level data files (`cell_questions.json`, `wikipedia_articles.json`, `heatmap_cell_labels.json`, `question_coordinates.json`, `cell_questions_level_*.json`, `wikipedia_articles_level_*.json`) that are superseded by `data/domains/` bundles. Update `.gitignore` if needed. Update any documentation referencing old paths. Preserve old files in git history — do not rewrite history.
 
 ---
 
@@ -268,7 +272,7 @@
 ```
 Phase 1 (Setup)
     ↓
-Phase 2 (Foundation)  ←──────────── Phase 9 (Pipeline) [parallel]
+Phase 2 (Foundation)  ←──────────── Phase 9 (Pipeline: T040b→T041→T042→T044b→T043→T044) [parallel]
     ↓                                     ↓
 Phase 3 (US1) + Phase 4 (US2) ──→ Phase 9 must complete for real data
     ↓              ↓
@@ -280,9 +284,9 @@ Phase 8 (US6) [can also start after Phase 2]
     ↓
 Phase 10 (Responsive) + Phase 11 (A11y) [parallel]
     ↓
-Phase 12 (Constitution Validation)
+Phase 12 (Constitution: T051→T054b→T054c + visual + compat) [100% verification]
     ↓
-Phase 13 (Polish + Deploy)
+Phase 13 (Polish + Deploy + T073 old file cleanup)
 ```
 
 ### Within Each User Story
@@ -340,4 +344,4 @@ Phase 13 (Polish + Deploy)
 - The old `index.html` monolith (3591 lines) is replaced in T007 — ensure the old version is preserved in git history
 - The old `adaptive_sampler_multilevel.js` is superseded by `src/learning/sampler.js` + `src/learning/estimator.js` + `src/learning/curriculum.js`
 - deck.gl CDN is NOT used — it's bundled via Vite for tree-shaking (research.md Decision 4)
-- Total task count: 72 tasks across 13 phases
+- Total task count: 77 tasks across 13 phases (T001–T073 including T040b, T044b, T054b, T054c)

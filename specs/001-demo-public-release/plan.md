@@ -33,7 +33,7 @@ cross-platform/WCAG AA accessibility.
 **Project Type**: Web application (static frontend + offline Python preprocessing pipeline)
 **Performance Goals**: 60fps animations (SC-003), <500ms heatmap update (SC-002), <1s domain transition (SC-003), <60s first question (SC-001)
 **Constraints**: Client-only post-load (FR-012), WCAG 2.1 AA (FR-023), lazy-load per domain (FR-012 clarification), no TF >= 2.20 (macOS bug)
-**Scale/Scope**: 19 domains, ~750–800 unique questions, ~1000 visible articles per domain, 39×39 grid cells per domain heatmap
+**Scale/Scope**: 19 domains, ~750–800 unique questions, ~1000 visible articles per domain (≤2000 for "All"), variable grid size per domain (determined by `scripts/define_domains.py` based on region area — larger regions get finer grids, sub-domains get coarser grids; see data-model.md `Domain.grid_size`)
 
 **Resolved decisions** (see [research.md](research.md) for full rationale):
 1. WebGL scatterplot: **deck.gl** (native 3D + transitions + heatmap)

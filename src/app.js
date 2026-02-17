@@ -69,10 +69,10 @@ async function boot() {
   controls.onExport(handleExport);
 
   const quizPanel = document.getElementById('quiz-panel');
-  modes.init(quizPanel);
-  modes.onModeSelect(handleModeSelect);
   quiz.init(quizPanel);
   quiz.onAnswer(handleAnswer);
+  modes.init(quizPanel);
+  modes.onModeSelect(handleModeSelect);
   insights.init(quizPanel);
   initConfidence(quizPanel);
 
@@ -265,7 +265,10 @@ function handleAnswer(selectedKey, question) {
   domainQuestionCount++;
   modes.updateAvailability(domainQuestionCount);
 
-  const feedback = isCorrect ? 'Correct!' : 'Incorrect.';
+  const feedback = isCorrect 
+    ? 'Correct!' 
+    : `Incorrect. The answer was ${question.correct_answer}.`;
+  
   const coverage = Math.round($coverage.get() * 100);
   announce(`${feedback} ${coverage}% of domain mapped. ${50 - domainQuestionCount} questions remaining.`);
 

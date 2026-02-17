@@ -1,0 +1,1247 @@
+[
+  {
+    "id": "8a9b71fcce515463",
+    "question_text": "Newton's second law F = ma relates force, mass, and acceleration. From a mathematical perspective, why is this equation a second-order ordinary differential equation, and what does that imply about the information needed to predict a particle's future motion?",
+    "options": {
+      "A": "Since a = d²x/dt², Newton's law is F = m(d²x/dt²), a second-order ODE in position x(t) — the existence and uniqueness theorem requires two initial conditions (position x₀ and velocity v₀) to fully determine the trajectory, which is why classical mechanics is deterministic: given the current state (x, v) and the forces, the entire future is fixed",
+      "B": "Newton's second law represents a first-order autonomous ordinary differential equation in the velocity variable because F=ma can be rewritten as m(dv/dt) = F(v,t), which requires only specifying the initial velocity to determine the complete future trajectory through the phase space, making it a standard initial value problem that can be solved by direct integration using standard methods from the Picard-Lindelöf existence and uniqueness theorem",
+      "C": "Newton's second law constitutes a third-order linear ODE in the position variable x(t) because the jerk (rate of change of acceleration) appears implicitly when the force depends on velocity through dissipative mechanisms, requiring specification of initial position, velocity, and acceleration to fully determine the motion of the particle through three-dimensional configuration space",
+      "D": "Newton's second law is a zeroth-order algebraic relation that does not involve any derivatives of position or velocity with respect to time, because F=ma merely relates the instantaneous force to the instantaneous acceleration without specifying how these quantities evolve, requiring additional constitutive equations from continuum mechanics to form a well-posed dynamical system"
+    },
+    "correct_answer": "A",
+    "difficulty": 1,
+    "x": 0.863056,
+    "y": 0.177881,
+    "z": 0.341702,
+    "source_article": "Newton's second law",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Newton's second law",
+      "ODE order",
+      "initial value problems",
+      "determinism"
+    ]
+  },
+  {
+    "id": "8bed7e77cd9a3a71",
+    "question_text": "The Hardy-Weinberg equilibrium predicts genotype frequencies in a population from allele frequencies. If allele frequencies are p and q = 1-p, what are the expected genotype frequencies, and why does this model serve as a null hypothesis in population genetics?",
+    "options": {
+      "A": "The Hardy-Weinberg principle serves as a statistical test for genetic equilibrium: if a chi-squared test comparing observed genotype frequencies against the predicted p², 2pq, q² distribution fails to reject the null hypothesis at the conventional 5% significance level, then the population is assumed to be in complete equilibrium with respect to the locus under investigation, meaning all evolutionary forces including mutation, migration, selection, and drift are negligible",
+      "B": "Genotype frequencies are p², 2pq, and q² for AA, Aa, and aa respectively — this follows from independent random combination of alleles (like expanding (p+q)²), and deviations from these frequencies signal evolutionary forces (selection, drift, migration, mutation, or non-random mating) acting on the population, making HW the null model against which evolution is detected",
+      "C": "Hardy-Weinberg functions as a sufficient condition for adaptive evolution: when observed genotype frequencies match the expected p², 2pq, q² proportions, this mathematical correspondence demonstrates that natural selection is actively maintaining optimal allele frequencies at the fitness maximum of the adaptive landscape, because only selection can produce exact Hardy-Weinberg proportions in populations of finite size experiencing random genetic drift",
+      "D": "The Hardy-Weinberg model is primarily a predictive tool in clinical genetics for calculating heterozygote carrier frequencies of autosomal recessive diseases from observed homozygote affected frequencies in hospital records, using the simple approximation that carrier frequency equals twice the square root of disease prevalence, but this calculation provides no information about whether evolutionary forces are operating because the model makes no testable evolutionary predictions"
+    },
+    "correct_answer": "B",
+    "difficulty": 1,
+    "x": 0.912182,
+    "y": 0.186673,
+    "z": 0.860882,
+    "source_article": "Hardy-Weinberg equilibrium",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Hardy-Weinberg equilibrium",
+      "allele frequencies",
+      "null hypothesis",
+      "population genetics"
+    ]
+  },
+  {
+    "id": "ebc8d1ab500fa321",
+    "question_text": "The Nernst equation calculates the equilibrium potential for a single ion across a cell membrane. What physical principle underlies it, and why does it involve a logarithm of the concentration ratio?",
+    "options": {
+      "A": "The Nernst equation calculates the rate constant of ion channel opening as a function of temperature by relating the activation energy barrier height to the thermal energy available per ion through the Boltzmann factor exp(-Ea/RT), where Ea is the conformational energy barrier for the protein gate transition from the closed to the open state, R is the universal gas constant, and T is the absolute temperature in Kelvin — this kinetic interpretation predicts that channels open faster at higher temperatures following Arrhenius-type behavior with a characteristic Q10 value",
+      "B": "The logarithm appears because ion concentrations decay exponentially over time due to radioactive decay of the ionic species",
+      "C": "The Nernst equation E = (RT/zF)ln([ion]_out/[ion]_in) derives from thermodynamic equilibrium where the electrical potential energy (zFE) balances the chemical free energy difference (RT ln(C_out/C_in)) — the logarithm arises from the Boltzmann distribution: at equilibrium, the ratio of concentrations across the membrane equals exp(-zFE/RT), reflecting the exponential relationship between energy and probability in statistical mechanics",
+      "D": "The Nernst equation applies only to neutral molecules and cannot describe the behavior of charged ions"
+    },
+    "correct_answer": "C",
+    "difficulty": 1,
+    "x": 0.815016,
+    "y": 0.01,
+    "z": 0.35457,
+    "source_article": "Nernst equation",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Nernst equation",
+      "thermodynamic equilibrium",
+      "Boltzmann distribution",
+      "electrochemistry"
+    ]
+  },
+  {
+    "id": "bfc550c6ed70ca11",
+    "question_text": "Linear perspective, developed in Renaissance Florence, creates the illusion of depth on a flat surface. What is the mathematical principle behind the vanishing point, and why do parallel lines appear to converge?",
+    "options": {
+      "A": "Parallel lines actually do converge at a finite distance in physical space, and artists simply record this physical reality",
+      "B": "The vanishing point is placed arbitrarily for aesthetic reasons and has no mathematical basis in the geometry of projection",
+      "C": "The convergence of parallel lines to a vanishing point in Renaissance painting represents an artistic misunderstanding of Euclidean geometry, because in actual three-dimensional Euclidean space parallel lines by definition never meet at any finite or infinite point, and the apparent convergence seen in perspective drawings is merely a psychological illusion produced by the binocular disparity processing system in the visual cortex rather than a mathematically valid projection from three-dimensional space onto a two-dimensional picture plane — Brunelleschi's demonstrations were compelling but geometrically incorrect according to Euclid's parallel postulate",
+      "D": "Perspective is a projective transformation from 3D to 2D: parallel lines in 3D space that are not parallel to the picture plane converge to a vanishing point because the projection maps their shared 'point at infinity' (direction) to a finite point on the canvas — the vanishing point lies where the viewer's line of sight parallel to the original lines intersects the picture plane, which is why the geometry is fully determined by the viewer's position"
+    },
+    "correct_answer": "D",
+    "difficulty": 1,
+    "x": 0.567202,
+    "y": 0.646257,
+    "z": 0.532926,
+    "source_article": "linear perspective",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "linear perspective",
+      "projective geometry",
+      "vanishing point",
+      "Renaissance art"
+    ]
+  },
+  {
+    "id": "01a819cbfe8a5509",
+    "question_text": "Mendel's laws of inheritance predict offspring ratios using probability. Why does a monohybrid cross Aa × Aa produce a 3:1 phenotype ratio, and what probability concept makes the 1:4 recessive homozygote frequency predictable?",
+    "options": {
+      "A": "Each parent independently contributes one allele with equal probability (1/2 for A, 1/2 for a), so the offspring genotypes follow a product rule: P(AA) = 1/4, P(Aa) = 1/2, P(aa) = 1/4 — with dominance, AA and Aa are phenotypically identical, giving 3/4 dominant and 1/4 recessive, which is a direct application of the independence and addition rules of probability",
+      "B": "The 3:1 ratio arises because dominant alleles replicate three times faster than recessive alleles during DNA synthesis",
+      "C": "Mendel's ratios work only for pea plants and cannot be applied to any other organism because the laws of probability are species-specific",
+      "D": "The ratio is 3:1 because three out of every four offspring randomly inherit the dominant allele from both parents simultaneously"
+    },
+    "correct_answer": "A",
+    "difficulty": 1,
+    "x": 0.99,
+    "y": 0.368431,
+    "z": 0.966801,
+    "source_article": "Mendelian genetics",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Mendelian genetics",
+      "probability product rule",
+      "independence",
+      "dominance"
+    ]
+  },
+  {
+    "id": "61c96cbd79ae7703",
+    "question_text": "The action potential in neurons propagates as a traveling wave. What physical analogy best captures its regenerative mechanism, and why does it travel in only one direction?",
+    "options": {
+      "A": "Action potentials are sound waves that travel at the speed of sound through neural tissue, and they travel in both directions equally",
+      "B": "The action potential is analogous to a burning fuse: each segment of membrane generates its own depolarization using local ion channels (voltage-gated Na⁺ opening), which triggers the adjacent segment — unidirectional propagation occurs because the recently fired segment is in a refractory period (Na⁺ channels inactivated), preventing backward propagation, similar to how burned fuse material cannot reignite",
+      "C": "Action potentials travel because the brain pushes electrical current through the axon like water through a pipe, and direction is set by the pump pressure",
+      "D": "The signal travels only toward the cell body (never away from it) because dendrites are the only structures that can conduct electricity"
+    },
+    "correct_answer": "B",
+    "difficulty": 1,
+    "x": 0.938858,
+    "y": 0.57419,
+    "z": 0.270054,
+    "source_article": "action potential propagation",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "action potential propagation",
+      "refractory period",
+      "regenerative mechanism",
+      "unidirectional conduction"
+    ]
+  },
+  {
+    "id": "c304d0cde4f12be4",
+    "question_text": "The golden ratio φ = (1+√5)/2 ≈ 1.618 appears in art, architecture, and nature. What mathematical property makes it unique among all numbers, and why does it produce aesthetically pleasing proportions?",
+    "options": {
+      "A": "The golden ratio φ equals exactly π/2 because both constants arise from the geometry of circles and regular polygons, and Renaissance architects who inscribed golden rectangles within circular floor plans were implicitly using the identity φ = π/2, which connects the ratio of successive Fibonacci numbers to the circumference-to-diameter ratio through the theory of cyclotomic polynomials — this deep mathematical identity was known to Euclid but was lost during the medieval period and only rediscovered during the Italian Renaissance by Luca Pacioli",
+      "B": "The golden ratio appears in Fibonacci-based musical temperament systems where the frequency ratio between adjacent notes follows powers of φ, producing intervals that are perceived as universally consonant across all human cultures because the irrational ratio prevents exact frequency overlap between harmonics, eliminating the beating interference patterns that cause dissonance in all rational-number temperament systems — this is why ancient Greek mathematicians including Pythagoras explicitly used φ rather than simple integer ratios as the foundation for their musical scale construction and acoustic theory",
+      "C": "φ is the unique positive number satisfying φ = 1 + 1/φ (equivalently, φ² = φ + 1), making it the 'most irrational' number — its continued fraction [1;1,1,1,...] has the slowest convergence of any irrational, meaning rational approximations improve as slowly as possible; whether it produces objectively pleasing proportions is debated, but self-similar subdivisions based on φ create recursive structure at multiple scales, which appears throughout phyllotaxis and Fibonacci spirals",
+      "D": "The golden ratio equals exactly 1.5 and was invented by Leonardo da Vinci specifically for the Mona Lisa's proportions"
+    },
+    "correct_answer": "C",
+    "difficulty": 1,
+    "x": 0.530188,
+    "y": 0.402801,
+    "z": 0.656325,
+    "source_article": "golden ratio",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "golden ratio",
+      "continued fractions",
+      "self-similarity",
+      "Fibonacci connection"
+    ]
+  },
+  {
+    "id": "f9b7a86af21b65d8",
+    "question_text": "The Maxwell-Boltzmann distribution describes molecular speeds in an ideal gas. Why is the distribution not symmetric (not Gaussian), and what determines the most probable speed?",
+    "options": {
+      "A": "The Maxwell-Boltzmann distribution is actually a perfect Gaussian centered at zero speed because molecular motion is equally likely in all directions",
+      "B": "The distribution is uniform — all speeds from zero to infinity are equally probable because there is no preferred speed in thermal equilibrium",
+      "C": "The most probable speed equals the speed of light divided by temperature, because relativistic effects dominate at all temperatures",
+      "D": "The distribution f(v) ∝ v² exp(-mv²/2kT) is asymmetric because speed v ≥ 0 (non-negative) and the v² factor (from the density of states in 3D velocity space: 4πv² for the spherical shell) weights higher speeds — the peak (most probable speed) at v_mp = √(2kT/m) balances the increasing v² phase space against the decreasing Boltzmann factor exp(-mv²/2kT)"
+    },
+    "correct_answer": "D",
+    "difficulty": 1,
+    "x": 0.715499,
+    "y": 0.036799,
+    "z": 0.402564,
+    "source_article": "Maxwell-Boltzmann distribution",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Maxwell-Boltzmann distribution",
+      "phase space",
+      "Boltzmann factor",
+      "most probable speed"
+    ]
+  },
+  {
+    "id": "8d2c643898828009",
+    "question_text": "Enzymes are biological catalysts that accelerate reactions by factors of 10⁶ or more. How do they achieve this without being consumed, and why does the lock-and-key model only partially capture their mechanism?",
+    "options": {
+      "A": "Enzymes lower the activation energy by stabilizing the transition state — the substrate binds, the enzyme distorts it toward the transition state geometry (reducing the energy barrier), products form, and the enzyme releases them unchanged; the lock-and-key model captures specificity but misses induced fit, where the enzyme changes shape upon binding to optimally complement the transition state rather than the ground-state substrate",
+      "B": "Enzymes increase reaction rates exclusively by raising the temperature of the local microenvironment within the active site through exothermic binding interactions between amino acid residues and the substrate molecule, effectively creating a thermal hotspot that provides sufficient kinetic energy to overcome the activation barrier — this localized heating model explains why enzyme-catalyzed reactions show apparent Arrhenius behavior with activation energies lower than the uncatalyzed reaction, because the effective local temperature at the catalytic center is substantially higher than the bulk solution temperature",
+      "C": "Enzymes function by covalently bonding to the substrate molecule and physically pulling it apart through mechanical force generated by ATP-driven conformational changes in the active site, analogous to a molecular machine that uses stored chemical energy to perform mechanical work on the substrate — the activation energy is overcome entirely by this mechanical pulling mechanism, and the enzyme releases the products after the covalent bonds in the substrate have been physically stretched beyond their breaking point, with the rate enhancement proportional to the mechanical advantage of the enzyme's lever-like domain structure",
+      "D": "Enzymes catalyze reactions by permanently altering the thermodynamic equilibrium position in favor of products through selective stabilization of the product state relative to the reactant state, thereby increasing the equilibrium constant Keq and making the forward reaction more thermodynamically favorable than it would be in the absence of the catalyst — this equilibrium-shifting mechanism fundamentally distinguishes biological catalysts from inorganic catalysts, which can only accelerate the approach to equilibrium without changing the final equilibrium concentrations of reactants and products"
+    },
+    "correct_answer": "A",
+    "difficulty": 1,
+    "x": 0.803973,
+    "y": 0.183593,
+    "z": 0.426802,
+    "source_article": "enzyme catalysis",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "enzyme catalysis",
+      "transition state theory",
+      "induced fit",
+      "activation energy"
+    ]
+  },
+  {
+    "id": "cdac5c6bae11bfd9",
+    "question_text": "Kepler's third law states T² ∝ a³ for planetary orbits. What does this law follow from mathematically, and why does it imply the gravitational force is inverse-square?",
+    "options": {
+      "A": "Kepler's third law relates the orbital period to the orbital eccentricity rather than the semi-major axis, stating that more eccentric elliptical orbits have longer orbital periods because the orbiting body must traverse a longer total path length around the more elongated ellipse, and this eccentricity-period relation arises from the non-uniform velocity distribution along the orbit as described by Kepler's second law of equal areas, with the body moving much more slowly near aphelion where gravitational attraction is weakest",
+      "B": "For a circular orbit of radius a with period T, equating gravitational force GMm/a² with centripetal force mv²/a (where v = 2πa/T) gives T² = (4π²/GM)a³ — the specific power law T² ∝ a³ emerges uniquely from an inverse-square force; any other force law (like 1/r³ or 1/r) would produce a different power relationship, so Kepler's empirical observation uniquely constrains gravity to be inverse-square",
+      "C": "Kepler's third law follows from the conservation of angular momentum in a central force field: for any radially symmetric attractive potential, the areal velocity (area swept per unit time by the position vector) remains constant along every bound orbit, and combining this conservation law with the geometric properties of conic sections yields T² ∝ a³ as a direct algebraic consequence that is independent of the specific radial dependence of the gravitational force, holding equally well for inverse-square, inverse-cube, or any other power-law central force",
+      "D": "Kepler's third law is an empirical approximation that holds only for perfectly circular orbits in a two-body gravitational system and breaks down completely for elliptical orbits, planetary systems with more than two gravitating bodies, or orbits around oblate (non-spherical) central masses, because the derivation from Newton's inverse-square law assumes both circularity and the absence of gravitational perturbations from additional bodies, making the T² ∝ a³ relation inapplicable to the actual solar system with its complex multi-body gravitational dynamics"
+    },
+    "correct_answer": "B",
+    "difficulty": 1,
+    "x": 0.758202,
+    "y": 0.095564,
+    "z": 0.34522,
+    "source_article": "Kepler's third law",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Kepler's third law",
+      "inverse-square law",
+      "circular orbit dynamics",
+      "Newton's derivation"
+    ]
+  },
+  {
+    "id": "1590db191a2da89e",
+    "question_text": "The Hodgkin-Huxley model describes neural action potentials using coupled nonlinear ODEs. Why is this system fundamentally different from linear circuits, and what mathematical phenomenon does it exhibit?",
+    "options": {
+      "A": "The Hodgkin-Huxley equations are linear because ion channels follow Ohm's law exactly, and superposition applies to all neural signals",
+      "B": "The model is a single first-order ODE that can be solved analytically in closed form using separation of variables",
+      "C": "The voltage-dependent gating of Na⁺ and K⁺ channels introduces positive feedback (Na⁺ influx → depolarization → more Na⁺ channels open) creating a nonlinear system — this exhibits threshold behavior (a limit cycle bifurcation where small subthreshold stimuli decay but suprathreshold ones trigger full action potentials), excitability, and refractory dynamics that cannot emerge from any linear model because linear systems obey superposition and cannot exhibit all-or-none responses",
+      "D": "The Hodgkin-Huxley model has been superseded by a simple resistor-capacitor circuit that fully captures all neural dynamics without nonlinearity"
+    },
+    "correct_answer": "C",
+    "difficulty": 2,
+    "x": 0.653205,
+    "y": 0.630892,
+    "z": 0.298239,
+    "source_article": "Hodgkin-Huxley model",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Hodgkin-Huxley model",
+      "nonlinear dynamics",
+      "bifurcation",
+      "excitability",
+      "threshold behavior"
+    ]
+  },
+  {
+    "id": "50250f6e0c04aaf4",
+    "question_text": "The genetic code maps 64 codons to 20 amino acids (plus stop signals). Why is the code degenerate (redundant), and what error-correcting property does this redundancy provide?",
+    "options": {
+      "A": "The degeneracy in the genetic code is a design flaw inherited from the RNA World that persists only because correcting it would require simultaneously changing every codon assignment in every gene across all organisms — if evolution could start over from scratch, the code would use a non-degenerate mapping with exactly 20 codons for 20 amino acids plus one stop codon, and the remaining 43 codons would encode additional non-standard amino acids to expand the chemical repertoire of proteins beyond the current limited set of twenty canonical building blocks",
+      "B": "The 61 sense codons are divided into 20 non-overlapping groups of approximately equal size, with each group encoding a single amino acid, and the specific assignment of codons to amino acids follows no discernible chemical or physical logic — the mapping between three-letter codons and their corresponding amino acids was frozen by historical accident during the earliest stages of the origin of life and has remained completely unchanged in all lineages since the last universal common ancestor, showing no evidence of optimization for error minimization or chemical similarity",
+      "C": "The 64 possible codons encode exactly 20 amino acids with each amino acid specified by one and only one unique codon, creating a maximally efficient one-to-one mapping between nucleotide triplets and amino acids that leaves 44 codons as permanently unused 'nonsense' codons — this lean encoding minimizes the genome size required to specify proteins and represents the evolutionary optimization of information storage density in the genetic material, analogous to Huffman coding in computer science where the most frequent symbols are assigned the shortest binary representations",
+      "D": "With 4³ = 64 codons mapping to 20 amino acids, most amino acids are encoded by 2-6 synonymous codons — critically, synonymous codons typically differ in the third (wobble) position, so single-nucleotide mutations at the wobble position often produce the same amino acid (silent mutations), functioning as a natural error-correcting code that buffers against point mutations and translation errors"
+    },
+    "correct_answer": "D",
+    "difficulty": 2,
+    "x": 0.842845,
+    "y": 0.452675,
+    "z": 0.731675,
+    "source_article": "genetic code degeneracy",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "genetic code degeneracy",
+      "wobble position",
+      "error correction",
+      "codon redundancy"
+    ]
+  },
+  {
+    "id": "781da64df921f1e0",
+    "question_text": "Noether's theorem connects symmetries of a physical system to conserved quantities. What is the precise relationship, and why does time-translation symmetry give energy conservation rather than momentum conservation?",
+    "options": {
+      "A": "Each continuous symmetry of the Lagrangian yields a conserved quantity via Noether's theorem — time-translation invariance (physics doesn't change from day to day) gives energy conservation, spatial translation invariance gives momentum conservation, and rotational invariance gives angular momentum conservation; time-translation specifically yields energy because the conserved quantity associated with a symmetry depends on how the symmetry acts, and time translation generates the Hamiltonian (energy) through the Legendre transform of the Lagrangian",
+      "B": "Noether's theorem states that every physical quantity is conserved regardless of symmetry, making conservation laws independent of any symmetry principle",
+      "C": "Time-translation symmetry gives momentum conservation, and spatial translation gives energy conservation — the association is the reverse of what most textbooks claim",
+      "D": "Noether's theorem applies only to classical mechanics and has no analog in quantum field theory or particle physics"
+    },
+    "correct_answer": "A",
+    "difficulty": 2,
+    "x": 0.481361,
+    "y": 0.182658,
+    "z": 0.173636,
+    "source_article": "Noether's theorem",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Noether's theorem",
+      "symmetry-conservation correspondence",
+      "Lagrangian mechanics",
+      "energy-momentum"
+    ]
+  },
+  {
+    "id": "f55e8b8afb5e8d27",
+    "question_text": "Signal detection theory (SDT) separates a detector's sensitivity (d') from its response bias. Why is this separation essential for understanding perception, and how does the ROC curve visualize the tradeoff?",
+    "options": {
+      "A": "Signal detection theory was developed in electrical engineering to maximize the signal-to-noise ratio of radar receivers by optimal linear filtering, and its application to psychology is purely metaphorical because human neural systems process information through discrete all-or-none action potentials rather than continuous analog signals — the mathematical framework involving likelihood ratios and receiver operating characteristic analysis has no valid interpretation in terms of actual neural computation, and d-prime merely quantifies the physical intensity difference between signal and noise stimuli presented to the observer, not any internal cognitive or perceptual discrimination process occurring within the brain's sensory processing hierarchy",
+      "B": "SDT models perception as distinguishing between two overlapping Gaussian distributions (signal+noise vs noise alone) — d' = (μ_signal - μ_noise)/σ measures sensitivity (how separable the distributions are), while the criterion c determines the observer's bias; the ROC curve plots hit rate vs false alarm rate as c varies, separating sensitivity (d' determines the curve's bowing away from the diagonal) from bias (position along the curve), which is critical because a doctor who says 'cancer' to every patient has 100% hit rate but is not actually sensitive",
+      "C": "The ROC curve plots accuracy vs sample size and has no connection to false alarm rates or response criteria",
+      "D": "Signal detection theory predicts that an ideal observer's hit rate and false alarm rate are uniquely determined by the physical stimulus parameters (signal intensity, noise variance, and presentation duration) and cannot be influenced by motivational or cognitive factors such as prior probabilities, payoff matrices, response deadlines, or the observer's internal decision criterion — this means that the receiver operating characteristic (ROC) curve for a given signal-noise discrimination task is a fixed property of the stimulus ensemble rather than a reflection of the observer's flexible decision strategy, and manipulating expected rewards and costs for correct and incorrect responses has no effect on measured performance"
+    },
+    "correct_answer": "B",
+    "difficulty": 2,
+    "x": 0.724996,
+    "y": 0.886329,
+    "z": 0.389471,
+    "source_article": "signal detection theory",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "signal detection theory",
+      "d-prime",
+      "ROC curves",
+      "sensitivity vs bias"
+    ]
+  },
+  {
+    "id": "eb0eedb1e6007c85",
+    "question_text": "Stars generate energy by nuclear fusion. Why does fusion release energy for elements lighter than iron but require energy input for elements heavier than iron?",
+    "options": {
+      "A": "Fusion always releases energy regardless of the elements involved, which is why stars can fuse iron and all heavier elements throughout their lifetimes",
+      "B": "The energy release depends on the star's temperature rather than on the nuclei being fused, so any element can release energy at sufficiently high temperatures",
+      "C": "The binding energy per nucleon peaks at iron-56 — fusing lighter nuclei moves up this curve (toward higher binding energy per nucleon), releasing the difference as energy; fusing heavier nuclei would move down the curve, requiring energy input rather than releasing it; this is why iron accumulates in stellar cores as 'nuclear ash' and why elements beyond iron are primarily forged in supernovae where gravitational collapse provides the enormous energy needed for rapid neutron capture (r-process)",
+      "D": "Iron is special only because it has the most protons of any element, and elements with fewer protons always release energy when fused"
+    },
+    "correct_answer": "C",
+    "difficulty": 2,
+    "x": 0.841774,
+    "y": 0.174632,
+    "z": 0.294977,
+    "source_article": "nuclear binding energy curve",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "nuclear binding energy curve",
+      "iron peak",
+      "stellar nucleosynthesis",
+      "r-process"
+    ]
+  },
+  {
+    "id": "a5e35406b00b4883",
+    "question_text": "The halting problem asks whether a program will eventually terminate. Why did Turing prove this is undecidable, and what does undecidability mean for the limits of computation?",
+    "options": {
+      "A": "The connection between computability theory and formal logic is that Turing proved the decidability of first-order predicate logic — showing that there exists a mechanical procedure (algorithm) that can determine in finite time whether any given first-order logical formula is a theorem, a contradiction, or independent of the axioms — and this positive decidability result motivated computer scientists to search for efficient polynomial-time algorithms for automated theorem proving, leading to the development of modern SAT solvers and resolution-based proof search methods that now form the algorithmic foundation of artificial intelligence systems",
+      "B": "Undecidability means the problem is difficult but solvable with enough computing time and memory, similar to NP-hard problems",
+      "C": "The halting problem is undecidable only for infinite programs and is completely solvable for all finite programs that fit in memory",
+      "D": "Turing proved undecidability by diagonalization: assuming a halting oracle H(P,x) exists, construct program D that runs H(D,D) and does the opposite (halts iff H says it doesn't) — this self-reference creates a contradiction, proving no such H can exist; undecidability means no algorithm, regardless of its cleverness or resources, can correctly decide termination for all programs, establishing a fundamental limit on what computation can achieve"
+    },
+    "correct_answer": "D",
+    "difficulty": 2,
+    "x": 0.374292,
+    "y": 0.490157,
+    "z": 0.634785,
+    "source_article": "halting problem",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "halting problem",
+      "undecidability",
+      "diagonalization",
+      "limits of computation"
+    ]
+  },
+  {
+    "id": "ffdfd2192953d3d9",
+    "question_text": "In quantum mechanics, observables are represented by Hermitian operators and states by vectors in Hilbert space. Why does the measurement postulate require Hermitian operators specifically, and what do their eigenvalues represent?",
+    "options": {
+      "A": "Hermitian operators H = H† have real eigenvalues and orthogonal eigenstates — measurement outcomes must be real numbers (you can't observe a complex energy or position), and orthogonality ensures distinct outcomes are distinguishable; after measuring eigenvalue λ, the state collapses to the corresponding eigenstate, and the probability of outcome λ is |⟨λ|ψ⟩|², connecting linear algebra (spectral decomposition) to the probabilistic structure of quantum mechanics",
+      "B": "Any matrix can represent a quantum observable, and the restriction to Hermitian operators is merely a convention with no physical content",
+      "C": "Observable quantities in quantum mechanics correspond to anti-Hermitian operators (operators satisfying A† = -A) because the anti-symmetry condition ensures that the expectation values are purely imaginary numbers, which can then be converted to real measurement outcomes by multiplying by the imaginary unit i — this mathematical convention was adopted by Dirac to maintain consistency with the classical Poisson bracket formulation of Hamiltonian mechanics, where the canonical commutation relations [q,p] = iℏ naturally produce anti-Hermitian generators of time translation and spatial displacement that preserve the symplectic structure of phase space",
+      "D": "Eigenvalues of quantum operators represent the probabilities of measurement outcomes rather than the values of the measured quantities"
+    },
+    "correct_answer": "A",
+    "difficulty": 2,
+    "x": 0.456393,
+    "y": 0.228045,
+    "z": 0.241246,
+    "source_article": "quantum measurement",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "quantum measurement",
+      "Hermitian operators",
+      "eigenvalues",
+      "spectral decomposition"
+    ]
+  },
+  {
+    "id": "4b7702a5ac2db18c",
+    "question_text": "Impressionist painters like Monet depicted light using broken color — small adjacent dabs of different pigments. What optical principle did they exploit, and how does it differ from traditional paint mixing?",
+    "options": {
+      "A": "Impressionist painters achieved luminosity through the technique of glazing — applying thin transparent layers of oil paint over opaque underlayers, where each successive transparent layer filters the light reflected from the opaque base according to Beer-Lambert absorption law, producing complex color effects through subtractive color mixing in the paint film itself. This multilayer subtractive process creates depth and richness that cannot be achieved by direct mixing of pigments on the palette, and it explains why Impressionist paintings appear to glow with an internal light source: the multiple semi-transparent layers create constructive interference patterns similar to those seen in thin-film optics and iridescent materials",
+      "B": "Traditional mixing is subtractive (pigments absorb wavelengths, producing darker mixtures), while Impressionists exploited optical/additive mixing where separate color dabs blend in the viewer's eye at a distance — placing complementary colors side by side creates vibrant luminosity because each pigment reflects its wavelengths independently rather than one absorbing what the other reflects, preserving more total reflected light than premixed paint would",
+      "C": "Broken color produces darker paintings than smooth mixing because more pigment is exposed to air and oxidizes faster",
+      "D": "The luminosity in Impressionist paintings results from the exclusive use of complementary color pairs placed in direct contact along sharp boundaries, which creates maximum simultaneous contrast through lateral inhibition in the retinal ganglion cell receptive fields of the viewer's visual system — Monet and Renoir systematically exploited the neurophysiological mechanism of center-surround antagonism by placing orange next to blue and red next to green in precisely calibrated proportions determined by the opponent-process theory of color vision, and this neurological rather than optical explanation accounts for the apparent vibration and shimmer perceived in their finished canvases"
+    },
+    "correct_answer": "B",
+    "difficulty": 2,
+    "x": 0.804648,
+    "y": 0.775478,
+    "z": 0.426555,
+    "source_article": "optical mixing",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "optical mixing",
+      "additive vs subtractive color",
+      "Impressionism",
+      "broken color technique"
+    ]
+  },
+  {
+    "id": "18b07ba422bf7934",
+    "question_text": "Living organisms maintain order despite the second law of thermodynamics. How is this possible without violating the law, and what role does free energy play?",
+    "options": {
+      "A": "Living organisms violate the second law of thermodynamics, which is why biology is fundamentally incompatible with physics",
+      "B": "The second law applies only to gases in closed containers and is irrelevant to biological systems of any kind",
+      "C": "Organisms are open systems that decrease their internal entropy by exporting even more entropy (as heat and waste) to their surroundings — the total entropy of the organism plus environment increases, satisfying the second law; Gibbs free energy G = H - TS captures this: life is sustained by coupling endergonic processes (ΔG > 0, like protein synthesis) to exergonic ones (ΔG < 0, like ATP hydrolysis), with the overall ΔG remaining negative",
+      "D": "Living organisms directly violate the second law of thermodynamics by creating local order from disorder through metabolic energy expenditure powered by ATP hydrolysis, and this thermodynamic violation is permitted by a special biological exemption to the second law that applies exclusively to carbon-based self-replicating systems capable of Darwinian evolution — Schrödinger's concept of 'negative entropy' or negentropy describes this unique ability of living matter to decrease its own entropy without any compensating entropy increase in the surrounding environment, fundamentally distinguishing biological thermodynamics from the ordinary thermodynamics of inanimate physical and chemical systems"
+    },
+    "correct_answer": "C",
+    "difficulty": 2,
+    "x": 0.782453,
+    "y": 0.053229,
+    "z": 0.216484,
+    "source_article": "second law of thermodynamics",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "second law of thermodynamics",
+      "open systems",
+      "Gibbs free energy",
+      "entropy export"
+    ]
+  },
+  {
+    "id": "e95438d4c9fa3f4a",
+    "question_text": "Bell's theorem shows that no local hidden variable theory can reproduce all predictions of quantum mechanics. What statistical inequality is violated, and what does this imply about the nature of reality?",
+    "options": {
+      "A": "Bell's theorem demonstrates that quantum entanglement enables instantaneous faster-than-light communication between spatially separated observers through the following mechanism: when Alice measures her entangled particle and obtains a definite result, Bob's particle instantaneously collapses into the corresponding correlated state regardless of the spatial separation between them, and Bob can detect this collapse by performing a single measurement on his particle, thereby receiving one bit of information transmitted at superluminal speed — this apparent violation of special relativity's prohibition on faster-than-light signaling is resolved by noting that the signal propagates through the entangled quantum channel rather than through ordinary spacetime",
+      "B": "Bell's theorem applies only to photons and has no implications for electrons, atoms, or any other quantum system",
+      "C": "Bell's theorem establishes that quantum mechanics is a locally realistic theory: all correlations between entangled particles can be explained by shared hidden variables established at the common source, and the CHSH inequality S ≤ 2 is always satisfied by quantum predictions because the Born rule for computing joint measurement probabilities respects the factorization condition P(a,b|x,y) = P(a|x,λ)P(b|y,λ) required by local realism — the experimental violations of the CHSH inequality reported by Aspect, Clauser, and Zeilinger were due to systematic detection efficiency loopholes and coincidence timing imperfections in their photon pair sources rather than genuine nonlocality in the underlying quantum physical process",
+      "D": "Bell derived an inequality (e.g., |E(a,b) - E(a,c)| ≤ 1 + E(b,c) in the CHSH form) that constrains correlations achievable by any local hidden variable theory — quantum entangled particles violate this bound (achieving 2√2 instead of the classical limit 2), experimentally confirmed with increasingly strict loophole-free tests, implying that nature is either nonlocal (measurement on one particle instantaneously affects the other) or that hidden variables with predetermined outcomes cannot explain quantum correlations"
+    },
+    "correct_answer": "D",
+    "difficulty": 2,
+    "x": 0.411099,
+    "y": 0.245975,
+    "z": 0.274797,
+    "source_article": "Bell's theorem",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Bell's theorem",
+      "CHSH inequality",
+      "entanglement",
+      "local realism",
+      "hidden variables"
+    ]
+  },
+  {
+    "id": "16c6de348b4739fe",
+    "question_text": "Reaction-diffusion systems (like Turing patterns) combine local chemical reactions with diffusion. Why can a homogeneous steady state become unstable when diffusion is added, even though neither reaction nor diffusion alone is destabilizing?",
+    "options": {
+      "A": "In Turing's diffusion-driven instability, two interacting species with different diffusion rates can destabilize a stable equilibrium: the activator (short-range self-enhancing) diffuses slowly while the inhibitor (long-range suppressor) diffuses fast — local activator fluctuations grow because the inhibitor diffuses away too quickly to suppress them locally, creating spatial patterns; this requires the non-intuitive condition that diffusion, which normally homogenizes, can create structure when diffusion rates differ sufficiently",
+      "B": "Turing patterns arise from a long-range attractive interaction between identical chemical species that spontaneously segregate into distinct spatial domains through a nucleation-and-growth mechanism analogous to spinodal decomposition in binary alloys — the mathematical description involves the Cahn-Hilliard equation for conserved order parameter dynamics rather than reaction-diffusion equations, and the characteristic wavelength of the resulting pattern is determined by the balance between the destabilizing long-range attractive interaction that drives phase separation and the stabilizing short-range surface energy penalty at the interface between domains of different chemical composition, with no requirement for any activator-inhibitor reaction kinetics",
+      "C": "The instability mechanism producing biological spatial patterns involves an excitable medium where propagating waves of chemical activity collide and create stationary interference patterns at their intersection points, similar to standing waves on a vibrating drumhead — this wave-interference model requires only a single diffusing species with oscillatory kinetics and predicts pattern wavelengths determined by the dispersion relation of the traveling chemical waves rather than by any instability in the spatially homogeneous steady state, and the resulting patterns are kinematic (arising from wave geometry) rather than dynamic (arising from an intrinsic symmetry-breaking bifurcation in the reaction-diffusion system)",
+      "D": "Pattern formation in biological development requires active mechanical forces generated by cytoskeletal contractility and differential cell adhesion rather than chemical diffusion, because purely diffusive chemical patterning mechanisms cannot produce patterns with wavelengths shorter than the tissue size according to the Turing instability analysis — the mathematical condition for diffusion-driven instability requires the inhibitor diffusion coefficient to exceed the activator diffusion coefficient by at least two orders of magnitude, and this extreme ratio is never realized by actual morphogen molecules in biological tissues where typical diffusion coefficients span less than one order of magnitude"
+    },
+    "correct_answer": "A",
+    "difficulty": 3,
+    "x": 0.748089,
+    "y": 0.261994,
+    "z": 0.384474,
+    "source_article": "Turing instability",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Turing instability",
+      "reaction-diffusion",
+      "activator-inhibitor",
+      "pattern formation"
+    ]
+  },
+  {
+    "id": "b8360b9d75cff626",
+    "question_text": "Shannon entropy H(X) = -Σ p(x) log p(x) quantifies uncertainty. Why does it arise uniquely from natural axioms, and what is its operational meaning in data compression?",
+    "options": {
+      "A": "Shannon entropy measures the physical thermodynamic energy cost of erasing information stored in a communication channel, and is directly equal to the Boltzmann entropy of the physical medium carrying the message — each bit of Shannon entropy corresponds to exactly kT ln(2) joules of dissipated heat energy when the information is erased according to Landauer's principle, and the optimal encoding described by Shannon's source coding theorem minimizes the total thermodynamic energy expenditure required to transmit the message, making information theory fundamentally a branch of statistical thermodynamics rather than an independent mathematical framework for communication system design",
+      "B": "Shannon's theorem shows H(X) is the unique measure (up to a constant) satisfying continuity, maximality for uniform distributions, and additivity for independent events — operationally, H(X) equals the minimum average number of bits needed to encode samples from X (the source coding theorem): no lossless compression scheme can use fewer than H(X) bits per symbol on average, and there exist schemes (like Huffman or arithmetic coding) that approach this limit arbitrarily closely",
+      "C": "Shannon entropy H(X) = -Σ p(x) log p(x) is uniquely determined (up to a positive multiplicative constant) by the axioms of non-negativity, continuity in the probability arguments, additivity for independent random variables, and the grouping axiom (which states that computing entropy in stages by first grouping outcomes yields the same result as computing entropy directly) — however, uniqueness holds only for finite discrete probability distributions, and extending the definition to continuous random variables through differential entropy h(X) = -∫ f(x) log f(x) dx introduces fundamental mathematical pathologies including negative values and dependence on the choice of coordinate system",
+      "D": "Shannon entropy quantifies the maximum achievable lossless data compression ratio for a discrete memoryless source, but this operational interpretation applies only to the highly restricted special case of independent and identically distributed (i.i.d.) source symbols drawn from a stationary probability distribution — for sources with temporal correlations and memory structure, Shannon entropy dramatically overestimates the true compressibility because it ignores the statistical redundancy encoded in the sequential dependencies between successive source outputs, and the correct measure for sources with memory is the entropy rate defined as the limiting per-symbol conditional entropy of the process"
+    },
+    "correct_answer": "B",
+    "difficulty": 3,
+    "x": 0.471275,
+    "y": 0.45534,
+    "z": 0.337256,
+    "source_article": "Shannon entropy",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Shannon entropy",
+      "uniqueness theorem",
+      "source coding theorem",
+      "data compression"
+    ]
+  },
+  {
+    "id": "4825bb354b3a338f",
+    "question_text": "Hebbian learning ('neurons that fire together wire together') is formalized as Δw ∝ pre·post activity. Why does this rule, without modification, lead to instability, and how do BCM theory and Oja's rule address this?",
+    "options": {
+      "A": "Hebbian learning is perfectly stable because synaptic weights naturally saturate at a maximum biological value, requiring no mathematical modification",
+      "B": "The instability occurs only in computer simulations and does not affect biological neural networks because real neurons have finite firing rates",
+      "C": "Pure Hebbian learning is unstable because it creates a positive feedback loop: stronger synapses drive stronger postsynaptic activity, which further strengthens those synapses, causing weights to grow without bound — BCM theory introduces a sliding threshold θ_m that depends on the neuron's recent average activity, switching from potentiation to depression when activity is too high; Oja's rule adds a weight decay term Δw = η(xy - y²w) that constrains ‖w‖ = 1, making the weight vector converge to the principal eigenvector of the input correlation matrix (performing online PCA)",
+      "D": "Hebbian learning is unstable because it always decreases all synaptic weights to zero, requiring external excitation to maintain any connectivity"
+    },
+    "correct_answer": "C",
+    "difficulty": 3,
+    "x": 0.686005,
+    "y": 0.795271,
+    "z": 0.128243,
+    "source_article": "Hebbian learning",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Hebbian learning",
+      "BCM theory",
+      "Oja's rule",
+      "synaptic plasticity",
+      "PCA connection"
+    ]
+  },
+  {
+    "id": "3cc53e81bd65e14d",
+    "question_text": "Protein folding transforms a linear amino acid chain into a specific 3D structure. Why is Levinthal's paradox important, and what does it tell us about the energy landscape of folding?",
+    "options": {
+      "A": "Levinthal's paradox is resolved by recognizing that protein folding is not a random search at all but rather a deterministic process encoded directly in the primary amino acid sequence: the local backbone dihedral angle preferences of each residue type are so strongly constrained by steric interactions that only a single folding pathway exists for each protein sequence, and the native three-dimensional structure is reached by a deterministic sequence of conformational changes that proceeds from the N-terminus to the C-terminus in strict sequential order during ribosomal translation — each residue adopts its final conformation immediately upon emerging from the ribosomal exit tunnel, making the folding process co-translational and completely deterministic rather than stochastic",
+      "B": "The paradox has been resolved by showing that proteins actually do explore all possible conformations sequentially, but they do so at the speed of light",
+      "C": "Levinthal's paradox applies only to very short peptides (< 10 amino acids) and is irrelevant for real proteins",
+      "D": "Levinthal's paradox observes that a random conformational search of a 100-residue protein (exploring ~3¹⁰⁰ conformations at nanosecond rates) would take longer than the age of the universe, yet proteins fold in milliseconds to seconds — this implies folding is guided by a funneled energy landscape: the free energy surface is biased toward the native state so that the chain doesn't explore all conformations but is guided downhill through an ensemble of partially folded intermediates, dramatically reducing the search space"
+    },
+    "correct_answer": "D",
+    "difficulty": 3,
+    "x": 0.645866,
+    "y": 0.27826,
+    "z": 0.468425,
+    "source_article": "Levinthal's paradox",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Levinthal's paradox",
+      "protein folding",
+      "energy landscape",
+      "funnel model"
+    ]
+  },
+  {
+    "id": "71bde13ad6a85cd7",
+    "question_text": "Color constancy — perceiving object colors as stable despite changing illumination — is both a perceptual phenomenon and a computational problem. What algorithm does the visual system approximately implement, and why did Edwin Land's Retinex theory challenge simple physics-based models of color?",
+    "options": {
+      "A": "Land's Retinex theory proposed that the visual system computes lightness by comparing each point's reflectance to its surround across multiple spatial scales and wavelength channels, effectively factoring the retinal image I(x) = R(x)·L(x) into reflectance R and illumination L — this challenged the simple physics view that perceived color equals the wavelength spectrum reaching the eye, because Retinex shows the brain discounts the illuminant to recover surface properties, explaining why a white paper looks white in both sunlight and candlelight despite very different spectral compositions",
+      "B": "Color constancy is achieved entirely by the lens of the eye, which filters out all illumination effects before light reaches the retina, with no neural computation required",
+      "C": "Land's theory was immediately accepted as complete and has required no refinement or extension since the 1970s",
+      "D": "Color constancy is achieved through a simple von Kries-type diagonal scaling of the three cone responses (L, M, S) by gain factors inversely proportional to the average cone stimulation across the entire visual scene — this gain normalization mechanism operates at the photoreceptor level through bleaching adaptation and completely accounts for color constancy without any higher-level cortical computation, and it predicts perfect color constancy whenever the illuminant change can be described as a simple scaling of the spectral power distribution, which is the case for all naturally occurring illuminant transitions between daylight phases. The Retinex theory proposed by Edwin Land adds no explanatory power beyond this peripheral adaptation mechanism because all experimental demonstrations of Land's Retinex algorithm can be replicated by simple diagonal chromatic adaptation applied independently to each cone class"
+    },
+    "correct_answer": "A",
+    "difficulty": 3,
+    "x": 0.698707,
+    "y": 0.876094,
+    "z": 0.494642,
+    "source_article": "color constancy",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "color constancy",
+      "Retinex theory",
+      "illuminant estimation",
+      "surface reflectance"
+    ]
+  },
+  {
+    "id": "3a58600c934bf2c4",
+    "question_text": "When geneticists use a chi-squared test to evaluate whether offspring ratios from a dihybrid cross match the expected 9:3:3:1 Mendelian prediction, how many degrees of freedom does the test have?",
+    "options": {
+      "A": "1, because only one independent ratio is being evaluated against a single null hypothesis",
+      "B": "3, because four phenotypic categories minus one constraint from the fixed total yield three independent comparisons",
+      "C": "4, because there are four distinct phenotypic categories each contributing to the overall chi-squared value",
+      "D": "2, because the two genes segregate independently so each contributes a single degree of freedom to the analysis"
+    },
+    "correct_answer": "B",
+    "difficulty": 3,
+    "x": 0.80929,
+    "y": 0.292967,
+    "z": 0.863934,
+    "source_article": "chi-squared test",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "chi-squared test",
+      "degrees of freedom",
+      "Mendelian dihybrid cross"
+    ]
+  },
+  {
+    "id": "58305c16db28bb4c",
+    "question_text": "In computational neuroscience, the firing rate of a neuron is often modeled as a linear combination of stimulus features passed through a nonlinear function. When researchers use spike-triggered averaging to characterize this neuron's receptive field, what implicit assumption about the stimulus ensemble makes this technique mathematically valid?",
+    "options": {
+      "A": "The stimulus must follow a Poisson process with stationary rate so that spike times are statistically independent of one another, inter-spike intervals are memoryless, and the conditional intensity function is constant across the recording epoch",
+      "B": "The stimulus must have finite variance to ensure that the autocorrelation matrix is well-defined and invertible",
+      "C": "The stimulus ensemble must be spherically symmetric (e.g., Gaussian white noise) so that the spike-triggered average is proportional to the relevant feature direction",
+      "D": "The stimulus must be bandlimited to the Nyquist frequency of the neural recording system in order to prevent high-frequency spectral components from being aliased into low-frequency bands and contaminating the computed spike-triggered average"
+    },
+    "correct_answer": "C",
+    "difficulty": 3,
+    "x": 0.768307,
+    "y": 0.771053,
+    "z": 0.268088,
+    "source_article": "spike-triggered average",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "spike-triggered average",
+      "receptive field estimation",
+      "Gaussian white noise stimulus"
+    ]
+  },
+  {
+    "id": "651ba11017b8ec69",
+    "question_text": "The Diffie-Hellman key exchange relies on the computational difficulty of a problem in number theory. Which problem must be hard for the protocol to be secure, and why does this connect modular arithmetic to cryptographic security?",
+    "options": {
+      "A": "The integer factorization problem: given a product of two large primes, recovering the original prime factors would allow an attacker to compute the shared secret directly by factoring the public modulus and deriving the private exponent from Euler's totient",
+      "B": "The quadratic residuosity problem: determining whether a number is a quadratic residue modulo a composite would reveal the shared secret through Euler's criterion",
+      "C": "The elliptic curve isogeny problem: finding an efficient isogeny between two elliptic curves defined over a finite field would allow systematic computation of the discrete logarithm in any cyclic group, breaking all standard public-key schemes simultaneously",
+      "D": "The discrete logarithm problem: given g, p, and g^a mod p, computing a is believed intractable for large primes, so an eavesdropper who knows g^a mod p and g^b mod p cannot feasibly compute g^(ab) mod p"
+    },
+    "correct_answer": "D",
+    "difficulty": 3,
+    "x": 0.214745,
+    "y": 0.480167,
+    "z": 0.85495,
+    "source_article": "discrete logarithm problem",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "discrete logarithm problem",
+      "Diffie-Hellman key exchange",
+      "modular exponentiation"
+    ]
+  },
+  {
+    "id": "12d089fd55c0a52c",
+    "question_text": "In traditional Chinese landscape painting (shanshui), the concept of 'qi yun sheng dong' (spirit resonance and life movement) established by Xie He relates to a deeper philosophical idea. Which philosophical framework most directly underpins this aesthetic principle, and how does it connect to the compositional structure of scroll paintings?",
+    "options": {
+      "A": "The composition reflects qi yun through the Daoist concept of qi as vital cosmic energy — the dynamic interplay of void (xu) and solid (shi) in the painting mirrors the Daoist unity of being and non-being, making empty space as compositionally essential as painted forms",
+      "B": "The principle derives from Confucian li (ritual propriety) — hierarchical arrangement of mountains, water, and figures follows the strict social order established by the Five Relationships, with the emperor's domain always positioned at the compositional apex and subordinate elements scaled proportionally to their rank within the bureaucratic hierarchy",
+      "C": "Spirit resonance expresses Buddhist sunyata (emptiness doctrine) exclusively — all painted forms are illusory manifestations of conditioned arising, and the artist's fundamental goal is to demonstrate the impermanence and insubstantiality of landscape through deliberately incomplete brushwork that evokes the dissolution of phenomenal reality into void",
+      "D": "The concept originates from Legalist philosophy — painting composition follows rigid mathematical proportions mandated by imperial decree to standardize artistic production across the bureaucratic system"
+    },
+    "correct_answer": "A",
+    "difficulty": 3,
+    "x": 0.573254,
+    "y": 0.646506,
+    "z": 0.170788,
+    "source_article": "Xie He's Six Principles",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Xie He's Six Principles",
+      "Daoist aesthetics",
+      "shanshui painting composition"
+    ]
+  },
+  {
+    "id": "5208a6e80df5316e",
+    "question_text": "Bayesian methods are increasingly used in astrophysics for parameter estimation. When fitting a cosmological model to Type Ia supernova luminosity distance data, what specific advantage does a Bayesian approach with MCMC sampling provide over a simple least-squares fit?",
+    "options": {
+      "A": "MCMC eliminates the need for a likelihood function by directly sampling from the prior distribution, bypassing any assumptions about measurement noise",
+      "B": "MCMC provides the full joint posterior distribution over all cosmological parameters (such as the matter density and dark energy equation of state), naturally revealing degeneracies and non-Gaussian correlations that a single best-fit point cannot capture",
+      "C": "Bayesian methods guarantee convergence to the true parameter values in finite time, unlike least-squares which can only provide asymptotic estimates",
+      "D": "The Bayesian framework automatically corrects for systematic errors in supernova standardization by marginalizing over all possible calibration offsets without additional modeling"
+    },
+    "correct_answer": "B",
+    "difficulty": 3,
+    "x": 0.712413,
+    "y": 0.398813,
+    "z": 0.468393,
+    "source_article": "Bayesian inference",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Bayesian inference",
+      "MCMC sampling",
+      "cosmological parameter estimation"
+    ]
+  },
+  {
+    "id": "595b3ac7a150478d",
+    "question_text": "Enzyme kinetics can be analyzed using calculus-based methods. For a Michaelis-Menten enzyme with substrate concentration S(t) being depleted over time in a closed system (no substrate replenishment), the rate equation is dS/dt = -Vmax·S/(Km + S). This ODE has an implicit analytical solution. What mathematical property of this equation makes it solvable despite being nonlinear, and what is the qualitative form of the solution?",
+    "options": {
+      "A": "The equation is linear in S after a logarithmic substitution u = ln(S), yielding exponential decay S(t) = S₀·exp(-Vmax·t/Km) for all time",
+      "B": "The equation is autonomous and can be solved by direct integration using the inverse function theorem applied to the rate function, but the resulting implicit equation relating substrate concentration to time cannot be expressed in closed form using elementary functions or standard special functions",
+      "C": "The equation is separable — rearranging to (Km + S)/S dS = -Vmax dt and integrating both sides yields the implicit solution Km·ln(S₀/S) + S₀ - S = Vmax·t, which combines logarithmic depletion at low S with linear depletion at high S",
+      "D": "The equation has an integrating factor μ(S) = (Km + S)² that converts it to an exact differential, producing a solution in terms of the Lambert W function exclusively"
+    },
+    "correct_answer": "C",
+    "difficulty": 4,
+    "x": 0.70801,
+    "y": 0.131279,
+    "z": 0.754685,
+    "source_article": "separable ODE",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "separable ODE",
+      "Michaelis-Menten kinetics",
+      "integrated rate equation"
+    ]
+  },
+  {
+    "id": "9039b39c4ef9cee3",
+    "question_text": "In evolutionary game theory, the Hawk-Dove game models conflict over a shared resource. If the value of the resource is V and the cost of fighting is C (with C > V), what is the evolutionarily stable strategy (ESS), and why does this connect evolutionary biology to Nash equilibrium concepts?",
+    "options": {
+      "A": "The ESS is a pure strategy of always playing Dove, because the cost of fighting exceeds the resource value so natural selection eliminates all Hawks from the population",
+      "B": "The ESS is a pure strategy of always playing Hawk, because aggressive individuals always secure the contested resource first regardless of the cost incurred, giving them higher lifetime reproductive fitness through consistent priority access to food, territory, and mating opportunities",
+      "C": "The ESS is for each individual to deterministically alternate between Hawk and Dove on successive encounters with conspecifics, creating a temporally stable oscillation in average population fitness that prevents either pure strategy from invading when the alternation phase is synchronized",
+      "D": "The ESS is a mixed strategy where each individual plays Hawk with probability V/C and Dove with probability 1-V/C, which is also a symmetric Nash equilibrium because no mutant strategy can invade a population at this frequency"
+    },
+    "correct_answer": "D",
+    "difficulty": 4,
+    "x": 0.773061,
+    "y": 0.268225,
+    "z": 0.752164,
+    "source_article": "evolutionarily stable strategy",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "evolutionarily stable strategy",
+      "Hawk-Dove game",
+      "Nash equilibrium"
+    ]
+  },
+  {
+    "id": "4cec49f29181a3de",
+    "question_text": "Topological concepts appear in condensed matter physics through the quantum Hall effect. In an integer quantum Hall system, the Hall conductance is quantized as σ_xy = νe²/h with integer ν. What mathematical quantity from topology ensures this precise quantization, and why is it robust against disorder?",
+    "options": {
+      "A": "The first Chern number of the occupied Bloch band's Berry connection over the Brillouin zone torus is an integer topological invariant, and because integers cannot change continuously, small perturbations (disorder, interactions) cannot alter σ_xy without closing the bulk energy gap",
+      "B": "The winding number of the edge-state wave function around the sample boundary guarantees quantization because the boundary conditions enforce single-valuedness and hence integer winding",
+      "C": "The Euler characteristic of the Fermi surface ensures quantization because the Gauss-Bonnet theorem constrains the total Gaussian curvature to integer values determined by the genus of the surface",
+      "D": "The Betti number of the magnetic flux lattice quantizes the conductance because the number of topologically distinct flux tubes threading the sample must be an integer by Dirac's quantization condition"
+    },
+    "correct_answer": "A",
+    "difficulty": 4,
+    "x": 0.193852,
+    "y": 0.044678,
+    "z": 0.132091,
+    "source_article": "Chern number",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Chern number",
+      "Berry phase",
+      "topological quantization",
+      "quantum Hall effect"
+    ]
+  },
+  {
+    "id": "e80c33b0b276c34d",
+    "question_text": "Cognitive science and artificial intelligence both study how systems learn from limited data. In machine learning, the bias-variance tradeoff governs generalization. What is the direct analogue of this tradeoff in human cognitive development, as studied in developmental psychology?",
+    "options": {
+      "A": "The tradeoff between crystallized and fluid intelligence — crystallized intelligence represents accumulated bias in the form of learned prior knowledge, cultural information, and procedural skills, while fluid intelligence represents variance through flexible reasoning applied to novel situations, and their ratio shifts systematically across the lifespan from variance-dominant in youth to bias-dominant in old age",
+      "B": "The tradeoff between strong innate constraints (inductive biases) and flexibility in hypothesis space — children's early language acquisition succeeds precisely because strong innate biases (like the shape bias or mutual exclusivity assumption) dramatically reduce the hypothesis space, sacrificing variance for low-error generalization from sparse data",
+      "C": "The tradeoff between short-term and long-term memory capacity — short-term memory has high variance but low bias while long-term memory accumulates bias through consolidation, and the hippocampal transfer process optimizes this balance",
+      "D": "The tradeoff between bottom-up sensory processing and top-down attention — bottom-up processing introduces variance through noisy and unreliable peripheral perception while top-down attention introduces bias through prior expectation and contextual modulation, and the Bayesian brain hypothesis merely formalizes this distinction as the mathematical ratio of prior probability to sensory likelihood in a hierarchical inference framework"
+    },
+    "correct_answer": "B",
+    "difficulty": 4,
+    "x": 0.678865,
+    "y": 0.99,
+    "z": 0.368238,
+    "source_article": "bias-variance tradeoff",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "bias-variance tradeoff",
+      "inductive bias",
+      "language acquisition",
+      "developmental constraints"
+    ]
+  },
+  {
+    "id": "7617828dc68c2809",
+    "question_text": "In molecular biology, the central dogma describes information flow from DNA to RNA to protein. However, epigenetic modifications add a layer of heritable information not encoded in the DNA sequence. From an information-theoretic perspective, what distinguishes epigenetic information transmission from genetic information transmission during cell division?",
+    "options": {
+      "A": "Epigenetic information has zero channel capacity because methylation patterns are completely random after replication and must be re-established de novo by interpreting transcription factor concentrations",
+      "B": "Genetic transmission uses a discrete error-correcting code based on Watson-Crick base pairing with proofreading that achieves error rates of approximately 10⁻⁹ per base per division, while epigenetic transmission is an analog channel with much higher noise rates — DNA methylation maintenance by DNMT1 has fidelity of roughly 95-99% per CpG site per cell division, meaning epigenetic states decay exponentially over successive divisions and require continuous reinforcing feedback from transcription factor networks to persist reliably across many cell generations in developing tissue",
+      "C": "Genetic transmission uses a discrete error-correcting code (base pairing with proofreading achieves error rates of ~10⁻⁹ per base per division) while epigenetic transmission is an analog channel with much higher noise — DNA methylation maintenance by DNMT1 has fidelity ~95-99% per CpG per division, meaning epigenetic states decay exponentially and require continuous reinforcing feedback to persist across many cell generations",
+      "D": "Epigenetic information is transmitted with higher fidelity than genetic information because histone modifications are directly templated by a dedicated polymerase complex that has no equivalent proofreading limitation"
+    },
+    "correct_answer": "C",
+    "difficulty": 4,
+    "x": 0.640862,
+    "y": 0.353916,
+    "z": 0.843424,
+    "source_article": "epigenetic inheritance",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "epigenetic inheritance",
+      "channel capacity",
+      "DNA methylation fidelity",
+      "error rates"
+    ]
+  },
+  {
+    "id": "763ca021392c5f18",
+    "question_text": "General relativity predicts that the expansion rate of the universe depends on its energy content through the Friedmann equations. The first Friedmann equation is H² = (8πG/3)ρ - k/a² + Λ/3. In the late 1990s, supernova observations revealed that the expansion is accelerating. What specific feature of the supernova Hubble diagram demonstrated acceleration, and why couldn't it be explained by a decelerating matter-dominated universe?",
+    "options": {
+      "A": "Nearby supernovae were brighter than expected, indicating that the local expansion rate was faster than predicted by any Friedmann model with positive energy density",
+      "B": "The scatter and intrinsic dispersion in supernova peak luminosities increased systematically with redshift in a way that indicates a stochastic and fundamentally random component to the cosmic expansion rate, which is incompatible with smooth homogeneous Friedmann-Lemaître-Robertson-Walker cosmological models that assume perfect spatial isotropy and homogeneity, requiring a fundamentally new class of inhomogeneous cosmological models to explain the observations",
+      "C": "Bayesian methods guarantee convergence to the true underlying parameter values in finite computation time, unlike frequentist least-squares methods which can only provide asymptotic parameter estimates that approach the truth in the limit of infinite data, and this guaranteed finite-time convergence makes Bayesian analysis strictly superior for any dataset regardless of size, noise level, or model complexity considerations",
+      "D": "Distant supernovae (z ~ 0.5-1) were systematically fainter than predicted by a decelerating (Ωm=1, ΩΛ=0) model, meaning their luminosity distances were larger than expected — the extra distance implies the expansion rate was slower in the past and has since accelerated, which requires a component with negative pressure (dark energy) to drive acceleration via the second Friedmann equation"
+    },
+    "correct_answer": "D",
+    "difficulty": 4,
+    "x": 0.56168,
+    "y": 0.021752,
+    "z": 0.386915,
+    "source_article": "Friedmann equations",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Friedmann equations",
+      "supernova cosmology",
+      "cosmic acceleration",
+      "dark energy"
+    ]
+  },
+  {
+    "id": "32ebd4dadfd39585",
+    "question_text": "In algebraic topology, the fundamental group π₁ classifies loops on a surface up to continuous deformation. For a closed orientable surface of genus g (a sphere with g handles), what is π₁, and how does this connect to the classification theorem for surfaces?",
+    "options": {
+      "A": "π₁ has presentation ⟨a₁,b₁,...,aₘ,bₘ | [a₁,b₁]·[a₂,b₂]···[aₘ,bₘ] = 1⟩ with m = g, where each pair (aᵢ,bᵢ) represents the two independent loops around the i-th handle and the single relation comes from the boundary of the 4g-gon in the surface's cell decomposition",
+      "B": "π₁ is the cyclic group Z/(2g), because the Euler characteristic χ = 2-2g uniquely determines the order of the fundamental group through an application of the universal coefficient theorem for singular cohomology, and since the Euler characteristic is a complete topological invariant for closed orientable surfaces, it necessarily specifies all homotopy groups",
+      "C": "π₁ has presentation ⟨a₁,b₁,...,aₘ,bₘ | [a₁,b₁]·[a₂,b₂]···[aₘ,bₘ] = 1⟩ with m = g, where each pair (aᵢ,bᵢ) represents the two independent non-contractible loops around the i-th handle and the single surface relation comes from identifying the edges of the standard 4g-sided polygon in the cell decomposition of the closed orientable surface",
+      "D": "π₁ is always abelian and equals the free abelian group Z^(2g), because the intersection form on the first homology group H₁ is skew-symmetric and antisymmetric, and all commutators of homotopy classes of loops on an orientable surface with smooth differentiable structure are trivially contractible to the constant loop through a continuous deformation"
+    },
+    "correct_answer": "A",
+    "difficulty": 4,
+    "x": 0.077034,
+    "y": 0.412896,
+    "z": 0.515855,
+    "source_article": "fundamental group",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "fundamental group",
+      "surface classification",
+      "CW-complex presentation"
+    ]
+  },
+  {
+    "id": "6467699fbe7643c1",
+    "question_text": "Statistical mechanics and art conservation intersect in the detection of forged paintings. Researchers have used fractal dimension analysis of paint crack patterns (craquelure) to distinguish authentic old masters from forgeries. What physical principle explains why natural aging cracks have different fractal properties than artificially induced cracks?",
+    "options": {
+      "A": "Natural cracks are purely random with fractal dimension exactly equal to 2.0 (making them space-filling curves that touch every region of the painted surface) because centuries of accumulated random environmental fluctuations — including temperature cycling, humidity changes, ultraviolet radiation damage, and mechanical vibration — produce patterns of maximum configurational entropy according to the Boltzmann distribution, while artificial cracks from modern forgers have fractal dimension exactly 1.0 because they follow simple straight lines through the most brittle pigment layers",
+      "B": "Natural aging cracks follow Griffith's fracture mechanics in a slowly drying, heterogeneous viscoelastic medium — stress builds over decades through differential thermal expansion and humidity cycling between paint layers with different elastic moduli, producing a hierarchical branching pattern whose fractal dimension reflects the multi-scale stress field. Artificial cracks from rapid thermal shock or chemical treatment create a more uniform stress field, yielding lower fractal dimensions with less hierarchical branching",
+      "C": "The difference in fractal cracking patterns is entirely due to pigment chemistry differences between historical and modern paint formulations — old pigments containing lead white and vermilion undergo gradual nuclear transmutation and radioactive decay over centuries that progressively weakens crystal bonds at the atomic level in a self-similar fractal pattern determined by the spatial distribution of radioactive isotopes within the paint matrix, while modern pigments synthesized without these radioactive isotope components crack cleanly along crystallographic grain boundaries",
+      "D": "Natural cracks in historically aged paintings always follow the underlying canvas weave pattern with perfect regularity and geometric precision because centuries of accumulated mechanical tension from stretcher bar forces gradually align all stress concentration points exclusively along the warp and weft directions of the linen or hemp fibers, while artificial cracks produced by modern forgers cross canvas threads at random angles and orientations because the rapid stress application does not allow time for the directional anisotropy of the textile substrate to guide the fracture propagation path"
+    },
+    "correct_answer": "B",
+    "difficulty": 4,
+    "x": 0.687074,
+    "y": 0.29125,
+    "z": 0.294207,
+    "source_article": "fractal dimension",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "fractal dimension",
+      "craquelure analysis",
+      "Griffith fracture mechanics",
+      "art authentication"
+    ]
+  },
+  {
+    "id": "46cf7f49f8366083",
+    "question_text": "Ecological systems can be modeled as dynamical systems where species populations obey coupled differential equations. In a predator-prey system described by the Lotka-Volterra equations, the trajectories in phase space are closed orbits. However, adding even a small amount of demographic stochasticity (finite population effects) qualitatively changes the long-term behavior. What is the stochastic outcome, and what mathematical framework explains the transition from the deterministic prediction?",
+    "options": {
+      "A": "Stochasticity causes the deterministic closed orbits to slowly but systematically drift outward to ever-larger amplitude oscillations with increasing peak population values because random perturbations arising from birth-death fluctuations always add kinetic energy to the dynamical system on average, following a fluctuation-dissipation-like relation, eventually driving both predator and prey populations toward arbitrarily large numbers and ultimately to mathematical infinity as predicted by the stochastic Liouville equation governing the phase-space probability density",
+      "B": "Demographic stochasticity converts the deterministic center consisting of neutrally stable closed orbits into a stochastic diffusion process where the system performs a biased random walk across the entire family of periodic orbits, and because the boundary corresponding to complete extinction of either species is a perfectly absorbing state from which no recovery is possible, eventual extinction is mathematically certain in finite time — the mean time to reach extinction scales exponentially as exp(N) where N is the characteristic population carrying capacity, as derived from a Wentzel-Kramers-Brillouin (WKB) semiclassical approximation applied to the chemical master equation",
+      "C": "Demographic stochasticity converts the deterministic center (neutrally stable closed orbits) into a stochastic process where the system performs a random walk across the family of orbits, and because the boundary (extinction of either species) is an absorbing state, extinction is certain in finite time — the mean time to extinction scales as exp(N) where N is the characteristic population size, as derived from a WKB approximation to the master equation",
+      "D": "The stochastic version of the Lotka-Volterra predator-prey system immediately converges to a globally stable fixed equilibrium point at the deterministic coexistence equilibrium because random fluctuations arising from finite population size act as an effective damping and restoring force that stabilizes the neutrally stable center of the deterministic system, converting the center into an asymptotically stable spiral attractor, in a phenomenon precisely analogous to stochastic resonance observed in classical bistable physical systems with additive Gaussian noise"
+    },
+    "correct_answer": "C",
+    "difficulty": 4,
+    "x": 0.580944,
+    "y": 0.100466,
+    "z": 0.569104,
+    "source_article": "stochastic extinction",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "stochastic extinction",
+      "master equation",
+      "WKB approximation",
+      "Lotka-Volterra dynamics"
+    ]
+  },
+  {
+    "id": "26b758eb754af0f4",
+    "question_text": "Quantum information theory defines entanglement entropy as a measure of quantum correlations. For a pure bipartite state |ψ⟩_AB, the entanglement entropy is the von Neumann entropy S(ρ_A) = -Tr(ρ_A log ρ_A) of the reduced density matrix. In the context of the AdS/CFT correspondence, what does the Ryu-Takayanagi formula assert about the geometric interpretation of this entropy?",
+    "options": {
+      "A": "The entanglement entropy of a region A in the boundary CFT equals the volume of the minimal bulk region enclosed by A's boundary, measured in Planck units, because information is stored volumetrically in quantum gravity",
+      "B": "The entanglement entropy equals the volume of the minimal-volume bulk region enclosed by the boundary of region A, measured in Planck units with appropriate gravitational coupling constant normalization, because all quantum gravitational information is fundamentally stored volumetrically rather than holographically in anti-de Sitter spacetime",
+      "C": "The entanglement entropy equals the proper geodesic distance measured between the two spatial endpoints of boundary region A, computed through the interior bulk spacetime geometry and divided by the fundamental string length scale, because quantum entanglement propagates along geodesic worldlines in the holographic radial direction",
+      "D": "The entanglement entropy equals the area of the minimal surface in the bulk AdS spacetime that is homologous to the boundary region A, divided by 4G_N — directly generalizing the Bekenstein-Hawking black hole entropy formula and implying that spacetime geometry encodes quantum entanglement structure"
+    },
+    "correct_answer": "D",
+    "difficulty": 4,
+    "x": 0.212701,
+    "y": 0.191575,
+    "z": 0.158203,
+    "source_article": "Ryu-Takayanagi formula",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Ryu-Takayanagi formula",
+      "AdS/CFT",
+      "holographic entanglement entropy"
+    ]
+  },
+  {
+    "id": "5a6de6499e9b4e92",
+    "question_text": "In population genetics, Kimura's neutral theory proposes that most molecular evolution is driven by genetic drift rather than natural selection. The fixation probability of a neutral mutation in a diploid population of effective size Nₑ is 1/(2Nₑ). Combining this with the mutation rate, what is the rate of neutral molecular evolution, and why is its simplicity considered one of the most elegant results in evolutionary biology?",
+    "options": {
+      "A": "The neutral substitution rate equals the per-individual per-generation mutation rate μ, independent of population size — because 2Nₑ new neutral mutations arise per generation and each fixes with probability 1/(2Nₑ), the Nₑ terms cancel exactly, yielding a molecular clock that ticks at a rate determined solely by the mutation rate",
+      "B": "The neutral substitution rate equals the per-individual per-generation mutation rate μ, completely independent of population size — because 2Nₑ new neutral mutations arise each generation across the diploid population and each individual mutation fixes with probability exactly 1/(2Nₑ), the Nₑ terms cancel algebraically and precisely, yielding a molecular clock that ticks at a constant rate determined solely by the intrinsic mutation rate",
+      "C": "The neutral substitution rate is μ/(2Nₑ) because each mutation's fixation probability must be weighted by the inverse of the total number of competing alleles, making molecular evolution slower in larger populations",
+      "D": "The neutral substitution rate is μ² · 2Nₑ because two independent mutations must occur on the same chromosome for fixation to proceed, and the probability of this compound event scales quadratically with mutation rate"
+    },
+    "correct_answer": "A",
+    "difficulty": 5,
+    "x": 0.892752,
+    "y": 0.21066,
+    "z": 1.0,
+    "source_article": "neutral theory",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "neutral theory",
+      "molecular clock",
+      "fixation probability",
+      "genetic drift"
+    ]
+  },
+  {
+    "id": "3058a690950f501d",
+    "question_text": "The Hodge conjecture (a Millennium Prize Problem) concerns the relationship between topology and algebraic geometry. It states that certain cohomology classes of a smooth projective variety over the complex numbers are generated by algebraic subvarieties. Specifically, which cohomology classes does the conjecture claim are algebraic, and what makes this conjecture so difficult to resolve?",
+    "options": {
+      "A": "The conjecture claims all de Rham cohomology classes are algebraic, and the difficulty is that de Rham cohomology is defined analytically while algebraicity is defined algebraically, requiring a complete bridge between analysis and algebra that currently does not exist",
+      "B": "The conjecture claims that every rational (p,p)-class — that is, every class in H^(2p)(X,Q) ∩ H^(p,p)(X) — is a rational linear combination of classes of algebraic subvarieties, and the difficulty is that while we can show many classes are Hodge classes via the Hodge decomposition, constructing the corresponding algebraic cycles (or proving they don't exist) requires techniques beyond current algebraic geometry",
+      "C": "The conjecture claims that every class in H^(p,q) with p ≠ q is algebraic, and the difficulty lies in constructing explicit algebraic cycles in odd-dimensional cohomology where intersection theory breaks down",
+      "D": "The conjecture claims that the Hodge numbers h^(p,q) uniquely determine the algebraic structure of the variety, and the difficulty is that computing Hodge numbers for varieties of dimension greater than 3 is algorithmically undecidable"
+    },
+    "correct_answer": "B",
+    "difficulty": 5,
+    "x": 0.098801,
+    "y": 0.521286,
+    "z": 0.924887,
+    "source_article": "Hodge conjecture",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Hodge conjecture",
+      "Hodge decomposition",
+      "algebraic cycles",
+      "cohomology"
+    ]
+  },
+  {
+    "id": "4fd3078b1a1dd0a2",
+    "question_text": "In theoretical neuroscience, the free energy principle (proposed by Karl Friston) unifies perception, action, and learning under a single variational inference framework. The brain is modeled as minimizing variational free energy F = E_q[log q(z) - log p(o,z)] where q(z) is an approximate posterior over hidden states z and p(o,z) is a generative model. What is the precise relationship between this free energy and the quantities familiar from machine learning, and why does minimizing F with respect to q recover perception while minimizing F with respect to action parameters recovers motor control?",
+    "options": {
+      "A": "F equals the Kullback-Leibler divergence computed from the prior distribution to the approximate posterior distribution, and minimizing the free energy functional over the recognition density q forces the brain to systematically ignore all incoming sensory data and bottom-up perceptual information entirely, relying only on internally generated top-down predictions from the hierarchical generative model — perception in this framework is therefore a purely top-down hallucination constrained only by prior expectations, with no role for sensory evidence. Minimizing over action parameters adjusts the body's effectors to match proprioceptive predictions, implementing a simple reflexive arc mediated by spinal motor neurons",
+      "B": "F is the negative log-likelihood of observations, and minimizing it over q performs maximum likelihood estimation of hidden states. Minimizing over actions selects the action maximizing expected reward, equivalent to Q-learning in reinforcement learning",
+      "C": "F equals -ELBO (negative evidence lower bound), decomposing as F = KL[q(z)||p(z|o)] - log p(o) + log p(o) = KL[q(z)||p(z|o)] + const. Minimizing F over q makes q approximate the true posterior p(z|o), implementing approximate Bayesian perception. Minimizing F over action parameters changes sensory input o to reduce prediction error, because F ≥ -log p(o) and reducing F forces observations to conform to the generative model's predictions — this is active inference, unifying motor control with perception under the same objective",
+      "D": "F is the Helmholtz free energy from statistical mechanics (F = U - TS), and the brain literally operates as a thermodynamic engine that converts metabolic energy into neural computation. Perception extracts work from sensory gradients and action dissipates excess entropy into the environment"
+    },
+    "correct_answer": "C",
+    "difficulty": 5,
+    "x": 0.651859,
+    "y": 0.728178,
+    "z": 0.0,
+    "source_article": "variational free energy",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "variational free energy",
+      "active inference",
+      "ELBO",
+      "approximate Bayesian inference"
+    ]
+  },
+  {
+    "id": "429ad1a59c24bf0b",
+    "question_text": "In analytic number theory, the distribution of prime numbers is intimately connected to the zeros of the Riemann zeta function ζ(s) = Σ n⁻ˢ. The explicit formula relates the prime counting function π(x) to a sum over the non-trivial zeros ρ of ζ(s). What is the precise role of the Riemann Hypothesis in controlling the error term of the prime number theorem?",
+    "options": {
+      "A": "The Riemann Hypothesis implies that π(x) = Li(x) exactly for all sufficiently large x, with zero error, because all non-trivial zeros on the critical line contribute oscillatory terms that cancel perfectly",
+      "B": "The Riemann Hypothesis has no connection to the prime number theorem — it concerns the distribution of twin primes exclusively, and its resolution would determine whether infinitely many twin primes exist",
+      "C": "The Riemann Hypothesis states that ζ(s) has no zeros at all in the critical strip 0 < Re(s) < 1, which would imply π(x) = Li(x) + O(log x) because the explicit formula would contain no oscillatory terms",
+      "D": "The Riemann Hypothesis implies the optimal error bound |π(x) - Li(x)| = O(√x log x), because if all non-trivial zeros have real part 1/2, the oscillatory correction terms from the explicit formula decay as x^(1/2), while any zero with real part β > 1/2 would contribute a term growing as x^β, degrading the error bound"
+    },
+    "correct_answer": "D",
+    "difficulty": 5,
+    "x": 0.273575,
+    "y": 0.288278,
+    "z": 0.772114,
+    "source_article": "Riemann Hypothesis",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Riemann Hypothesis",
+      "prime number theorem",
+      "explicit formula",
+      "zero-free region"
+    ]
+  },
+  {
+    "id": "dddf08e3fd28951d",
+    "question_text": "Quantum error correction is essential for building fault-tolerant quantum computers. The surface code, the leading candidate for practical implementation, encodes one logical qubit in a 2D array of physical qubits. What fundamental theorem guarantees that fault-tolerant quantum computation is possible if the physical error rate is below a certain threshold, and what is the key insight that makes the surface code particularly practical despite requiring thousands of physical qubits per logical qubit?",
+    "options": {
+      "A": "The threshold theorem states that arbitrarily long quantum computation is possible if the physical error rate per gate is below a constant threshold (~1%), achieved by concatenating error-correcting codes. The surface code's advantage is its exceptionally high threshold (~1%) combined with requiring only nearest-neighbor interactions on a 2D lattice — matching the connectivity constraints of superconducting qubit hardware — with syndrome extraction using only local stabilizer measurements",
+      "B": "The no-cloning theorem guarantees fault tolerance by preventing errors from propagating between qubits, and the surface code exploits this by isolating each physical qubit in a separate vacuum chamber so that errors remain uncorrelated by physical construction",
+      "C": "Shannon's noisy channel coding theorem from classical information theory directly applies to quantum systems without modification, and the surface code is simply the quantum analogue of the classical repetition code extended to two dimensions",
+      "D": "The Solovay-Kitaev theorem guarantees fault tolerance by proving that any target unitary transformation acting on a quantum register can be approximated to arbitrary precision using a discrete universal gate set with only polylogarithmic overhead in the approximation accuracy parameter epsilon, and the surface code leverages this mathematical result by directly encoding the required discrete universal gate set into the geometric structure of the two-dimensional qubit lattice so that all logical quantum gate operations can be performed transversally without requiring any additional ancilla qubits or complex multi-step gate teleportation protocols"
+    },
+    "correct_answer": "A",
+    "difficulty": 5,
+    "x": 0.334706,
+    "y": 0.363491,
+    "z": 0.28762,
+    "source_article": "threshold theorem",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "threshold theorem",
+      "surface code",
+      "fault-tolerant quantum computation",
+      "nearest-neighbor connectivity"
+    ]
+  },
+  {
+    "id": "5acd087cd6cf9c03",
+    "question_text": "In the theory of computation, the P vs NP problem asks whether every problem whose solution can be verified in polynomial time can also be solved in polynomial time. The concept of NP-completeness, established by Cook and Levin, provides a structural understanding of this question. What precisely does the Cook-Levin theorem prove, and why does it imply that resolving the status of any single NP-complete problem would resolve P vs NP?",
+    "options": {
+      "A": "The Cook-Levin theorem proves that Boolean satisfiability (SAT) requires exponential time in the worst case for any deterministic algorithm, thereby directly establishing the strict separation P ≠ NP as a mathematical theorem rather than a conjecture. The implication for other computational problems classified as NP-complete follows automatically because SAT is defined to be the single hardest decision problem in the complexity class NP by construction, and any polynomial-time algorithm for SAT would violate the time hierarchy theorem which guarantees that strictly more computational time always enables solving strictly more decision problems",
+      "B": "The Cook-Levin theorem proves that SAT is NP-complete by showing every problem in NP can be reduced to SAT in polynomial time — specifically, any polynomial-time nondeterministic Turing machine computation can be encoded as a Boolean formula. Since polynomial-time reductions compose and are transitive, if ANY NP-complete problem were in P, every NP problem could be solved in polynomial time (proving P=NP), and conversely if any NP-complete problem requires super-polynomial time, then P≠NP",
+      "C": "The Cook-Levin theorem proves that NP is closed under complement, meaning NP = co-NP, which directly implies P = NP because P is already known to be closed under complement and this shared closure property forces the classes to coincide",
+      "D": "The Cook-Levin theorem proves that every NP-complete problem can be solved by a deterministic Turing machine using polynomial space (PSPACE), and since PSPACE = P by the space hierarchy theorem, all NP-complete problems are actually in P"
+    },
+    "correct_answer": "B",
+    "difficulty": 5,
+    "x": 0.258346,
+    "y": 0.513227,
+    "z": 0.699827,
+    "source_article": "Cook-Levin theorem",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Cook-Levin theorem",
+      "NP-completeness",
+      "polynomial-time reduction",
+      "P vs NP"
+    ]
+  },
+  {
+    "id": "7faeaa56762efbc4",
+    "question_text": "Geometric phase (Berry phase) connects quantum mechanics to differential geometry. When a quantum system's Hamiltonian is adiabatically varied around a closed loop C in parameter space, the state acquires a geometric phase γ = ∮_C A·dR where A is the Berry connection. This has an observable physical consequence in molecular physics. What is it, and how does the geometric phase manifest in the Born-Oppenheimer approximation?",
+    "options": {
+      "A": "The Berry phase causes all molecular vibrational frequencies to shift by a constant proportional to the enclosed parameter-space area, detectable as a uniform displacement of infrared absorption spectra",
+      "B": "The Berry phase is always exactly zero for all real molecular systems described within the Born-Oppenheimer approximation because the electronic eigenstates of any molecular Hamiltonian can always be chosen as purely real-valued functions of the nuclear coordinate parameters throughout the entire configuration space, and since real-valued wave functions have identically vanishing Berry connection one-forms everywhere on the parameter manifold, the line integral around any closed path in nuclear configuration space necessarily evaluates to zero regardless of the topology or dimensionality of the parameter space",
+      "C": "The Berry phase manifests as the molecular Aharonov-Bohm effect: when nuclear coordinates encircle a conical intersection (degeneracy point) of electronic energy surfaces, the electronic wave function acquires a phase of π, requiring the nuclear wave function to change sign to keep the total wave function single-valued — this sign change modifies the interference pattern of nuclear wave functions and affects the selection rules for vibronic transitions",
+      "D": "The Berry phase in molecular systems is directly responsible for the quantum electrodynamic Lamb shift of atomic energy levels, because the adiabatic circulation of electronic quantum states around the nucleus in the presence of the quantized electromagnetic vacuum field generates a geometric phase factor that shifts atomic energy levels by precisely the same amount as the vacuum zero-point electromagnetic fluctuations predicted by quantum electrodynamics, making the Berry phase interpretation and the vacuum fluctuation interpretation mathematically equivalent descriptions of the same fundamental quantum radiative correction phenomenon"
+    },
+    "correct_answer": "C",
+    "difficulty": 5,
+    "x": 0.236803,
+    "y": 0.062979,
+    "z": 0.21087,
+    "source_article": "Berry phase",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Berry phase",
+      "conical intersection",
+      "Born-Oppenheimer approximation",
+      "molecular Aharonov-Bohm effect"
+    ]
+  },
+  {
+    "id": "8d17c1ac77fc8792",
+    "question_text": "Category theory provides a unifying language across mathematics. A natural transformation η: F ⇒ G between functors F,G: C → D assigns to each object X in C a morphism η_X: F(X) → G(X) such that for every morphism f: X → Y in C, the square G(f) ∘ η_X = η_Y ∘ F(f) commutes. The Yoneda lemma, often called the most important result in category theory, establishes a deep connection between natural transformations and representable functors. What precisely does the Yoneda lemma state, and why is it philosophically significant?",
+    "options": {
+      "A": "The Yoneda lemma states that every small category is equivalent to a subcategory of Set, meaning all mathematical structures are fundamentally sets with additional structure — this is significant because it validates the set-theoretic foundations of mathematics",
+      "B": "The Yoneda lemma states that every natural transformation is invertible, meaning all functors between equivalent categories are naturally isomorphic — this proves that category equivalence is the correct notion of sameness in mathematics",
+      "C": "The Yoneda lemma states that all functors between abelian categories are naturally isomorphic if and only if they agree on projective objects, and its significance is that it reduces homological algebra to the study of projective resolutions",
+      "D": "The Yoneda lemma states that for a locally small category C, the set of natural transformations from the representable functor Hom(A,−) to any functor F: C → Set is in natural bijection with F(A) — that is, Nat(Hom(A,−), F) ≅ F(A). This is philosophically significant because it means an object A is completely determined (up to isomorphism) by its web of relationships to all other objects, formalizing the structuralist view that mathematical objects have no intrinsic nature beyond their relational properties"
+    },
+    "correct_answer": "D",
+    "difficulty": 5,
+    "x": 0.232449,
+    "y": 0.581151,
+    "z": 0.596036,
+    "source_article": "Yoneda lemma",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Yoneda lemma",
+      "natural transformation",
+      "representable functor",
+      "mathematical structuralism"
+    ]
+  },
+  {
+    "id": "20f557745e6814f9",
+    "question_text": "In condensed matter physics, the renormalization group (RG) explains universality: systems with very different microscopic details can exhibit identical critical behavior near phase transitions. Consider the 2D Ising model at its critical temperature. What specific mathematical structure does the RG fixed point possess at this critical point, and how does it explain why critical exponents are identical for all systems in the same universality class?",
+    "options": {
+      "A": "The RG fixed point is a conformal field theory (CFT) — the critical 2D Ising model is invariant not just under scale transformations but under the full infinite-dimensional conformal group (Virasoro algebra with central charge c = 1/2). Universality follows because any system flowing to the same RG fixed point shares its CFT structure, and critical exponents are determined entirely by the scaling dimensions of CFT operators, which are fixed by the symmetry algebra and central charge regardless of microscopic Hamiltonian details",
+      "B": "At the RG fixed point of the two-dimensional Ising model, the exact statistical mechanical partition function becomes solvable via Onsager's transfer matrix method applied to the row-to-row transfer operator, and universality of critical exponents across different microscopic models follows because all two-dimensional systems with nearest-neighbor ferromagnetic interactions and a discrete Z₂ spin-flip symmetry have identical transfer matrix spectra at their respective critical temperatures, regardless of the specific values of the coupling constants, external field parameters, or lattice coordination number",
+      "C": "At the RG fixed point, all coupling constants in the effective Hamiltonian vanish identically so the interacting statistical field theory reduces to a massless free (non-interacting) Gaussian field theory, and the universality of critical exponents holds trivially in this framework because all free field theories in the same spatial dimensionality have identical critical exponents determined by naive dimensional analysis and power counting alone, with no role for the specific symmetry, internal degrees of freedom, or interaction structure of the original microscopic model",
+      "D": "The RG fixed point possesses a finite discrete symmetry group that is isomorphic to the point group symmetry of the original crystallographic lattice on which the microscopic Hamiltonian is defined, and universality in critical phenomena means only that systems defined on lattices sharing the same point group symmetry — such as the square lattice and triangular lattice in two dimensions — will share identical critical exponents, while systems defined on topologically distinct lattice geometries with different point group symmetries belong to entirely separate universality classes with quantitatively different critical behavior, and this lattice-dependent classification exhaustively determines all possible universality classes in statistical mechanics"
+    },
+    "correct_answer": "A",
+    "difficulty": 5,
+    "x": 0.380888,
+    "y": 0.076343,
+    "z": 0.236593,
+    "source_article": "renormalization group",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "renormalization group",
+      "conformal field theory",
+      "universality",
+      "Virasoro algebra",
+      "central charge"
+    ]
+  },
+  {
+    "id": "dacac133ea2df6e1",
+    "question_text": "In algebraic geometry, Grothendieck's scheme theory replaced the classical notion of algebraic variety with a far more general framework. The structure sheaf O_X of a scheme X = Spec(R) encodes the ring R locally. What specific advantage does the scheme-theoretic framework provide for number theory that classical varieties over algebraically closed fields cannot, and how does this connect to the proof strategy of Fermat's Last Theorem?",
+    "options": {
+      "A": "Schemes allow working over arbitrary base fields and ground rings but provide no specific advantage for problems in arithmetic or algebraic number theory because Fermat's Last Theorem was ultimately proved using purely analytic methods derived from the classical Hardy-Littlewood circle method for estimating exponential sums over major and minor arcs, combined with the Selberg sieve and large sieve inequalities from analytic and multiplicative number theory, without any essential input from algebraic geometry, scheme theory, modular forms, Galois representations, or the deformation theory of pseudo-representations developed by Mazur and others in the Langlands program",
+      "B": "Schemes over Spec(Z) allow treating arithmetic and geometric questions uniformly — an equation like x^n + y^n = z^n defines a scheme over Z whose fibers over each prime p give the equation mod p, and over Q give the rational points. Wiles's proof of FLT works by studying the scheme-theoretic properties of elliptic curves over Q: the modularity theorem (every semistable elliptic curve over Q is modular) combined with Ribet's theorem (Frey curve from a counterexample is not modular) yields a contradiction, and this argument fundamentally requires the arithmetic scheme framework to move between local (mod p) and global (over Q) information",
+      "C": "Schemes are needed because Fermat's Last Theorem is actually a statement about characteristic p algebraic geometry simultaneously for every prime number p, and the complete proof proceeds by first demonstrating that the Fermat equation x^n + y^n = z^n has no nontrivial solutions modulo a single carefully chosen auxiliary prime p using the Hasse-Minkowski local-global principle, then systematically lifting this mod p non-existence result to the integers via iterated application of Hensel's lemma for p-adic completions, and finally assembling the local results at all primes into a global conclusion using the Chinese Remainder Theorem and strong approximation theorems for algebraic groups over the adele ring of the rational numbers",
+      "D": "The advantage of schemes in modern algebraic geometry and number theory is purely computational rather than conceptual — they provide an efficient categorical framework that allows computer algebra systems such as Magma, SageMath, and Macaulay2 to systematically enumerate and certify all rational points on algebraic curves and higher-dimensional varieties up to a specified Weil height bound using effective versions of the Mordell conjecture, and Andrew Wiles's celebrated 1995 proof of Fermat's Last Theorem was actually a sophisticated exhaustive computer search over elliptic curves of bounded conductor that was subsequently verified and certified correct within the scheme-theoretic framework developed by Grothendieck and the Paris school"
+    },
+    "correct_answer": "B",
+    "difficulty": 5,
+    "x": 0.01,
+    "y": 0.541769,
+    "z": 0.843115,
+    "source_article": "scheme theory",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "scheme theory",
+      "modularity theorem",
+      "Fermat's Last Theorem",
+      "arithmetic geometry"
+    ]
+  }
+]

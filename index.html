@@ -7,11 +7,11 @@
     <title>Wikipedia Knowledge Map</title>
 
     <!-- KaTeX for LaTeX rendering -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous" onerror="console.error('KaTeX CSS failed to load')">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous" onerror="console.error('KaTeX JS failed to load')"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous" onerror="window.__katexFailed=true; console.error('KaTeX CSS failed to load'); document.getElementById('cdn-warning').hidden=false;">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous" onerror="window.__katexFailed=true; console.error('KaTeX JS failed to load'); document.getElementById('cdn-warning').hidden=false;"></script>
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous" onerror="console.error('Font Awesome failed to load')">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous" onerror="console.error('Font Awesome failed to load'); document.body.classList.add('fa-failed'); document.getElementById('cdn-warning').hidden=false;">
 
     <style>
         :root {
@@ -34,6 +34,38 @@
             height: 100vh;
             width: 100vw;
         }
+
+        /* Focus Styles (T048) */
+        :focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        /* Skip Link (T048) */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            background: var(--color-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            z-index: 9999;
+            text-decoration: none;
+            font-weight: bold;
+            transition: top 0.2s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Font Awesome Fallback (T047) */
+        body.fa-failed .fa-map::before { content: "Map"; font-style: normal; font-size: 0.9em; }
+        body.fa-failed .fa-brain::before { content: "Learn"; font-style: normal; font-size: 0.9em; }
+        body.fa-failed .fa-graduation-cap::before { content: "Research"; font-style: normal; font-size: 0.9em; }
+        body.fa-failed .fa-circle-info::before { content: "Info"; font-style: normal; font-size: 0.9em; }
+        body.fa-failed .fa-arrow-up::before { content: "Start"; font-style: normal; font-size: 0.9em; }
+        body.fa-failed .fa-check::before { content: "✓"; font-style: normal; }
+        body.fa-failed .fa-times::before { content: "✕"; font-style: normal; }
 
         /* Layout */
         #app {
@@ -71,6 +103,7 @@
             inset: 0;
             z-index: 1;
             background-color: var(--color-bg);
+            touch-action: none; /* Prevent browser handling of gestures */
         }
 
         /* Landing/Intro */
@@ -99,7 +132,7 @@
         }
         .landing-content h2 {
             font-size: 1.1rem;
-            color: rgba(0,0,0,0.6);
+            color: #595959; /* T050: Improved contrast (was rgba(0,0,0,0.6)) */
             margin-bottom: 2rem;
             font-weight: normal;
         }
@@ -217,33 +250,102 @@
         }
         [hidden] { display: none !important; }
 
-        /* Responsive */
+        /* CDN Warning */
+        #cdn-warning {
+            position: absolute; top: 0; left: 0; right: 0; 
+            background: #ffeb3b; color: #000; font-size: 0.8rem; 
+            padding: 4px; text-align: center; z-index: 2000;
+        }
+
+        /* Responsive Layout (T045) */
+        /* Tablet: 481px - 768px */
         @media (max-width: 768px) {
-            :root { --sidebar-width: 100%; }
+            :root { --sidebar-width: 50%; }
+            
+            #app-header {
+                padding: 0 1rem;
+            }
+
+            #quiz-panel {
+                /* Side drawer on tablet */
+                width: 50%; 
+                top: var(--header-height);
+                height: calc(100vh - var(--header-height));
+                box-shadow: -2px 0 12px rgba(0,0,0,0.15);
+            }
+            
+            /* Reposition minimap to bottom-left on tablet to avoid overlap with right panel */
+            #minimap-container {
+                right: auto;
+                left: 20px;
+                bottom: 20px;
+            }
+        }
+
+        /* Mobile: ≤480px */
+        @media (max-width: 480px) {
+            :root { --header-height: 50px; }
+
+            #app-header {
+                padding: 0 0.75rem;
+            }
+            .logo span { display: none; } /* Hide "Knowledge Map" text if needed, or scale down */
+            .logo { font-size: 1rem; }
+            .header-left { gap: 0.5rem; }
+
+            /* Stacked layout: Map takes full screen, panel is bottom sheet */
             #quiz-panel {
                 top: auto;
-                height: 50vh;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: 60vh; /* Takes up 60% height */
                 transform: translateY(100%);
-                box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
                 border-radius: 16px 16px 0 0;
+                box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+                z-index: 20;
             }
             #quiz-panel:not([hidden]) { transform: translateY(0); }
-            #minimap-container { display: none; } /* Hide minimap on mobile */
+
+            /* Full width domain selector */
+            .domain-selector {
+                flex-grow: 1;
+                max-width: 200px;
+            }
+
+            /* Hide minimap completely on mobile */
+            #minimap-container { display: none; }
+
+            /* Larger touch targets */
+            button, a, .quiz-option {
+                min-height: 44px;
+                min-width: 44px;
+                touch-action: manipulation; /* T046 */
+            }
         }
-        @media (max-width: 480px) {
-            #quiz-panel { height: 60vh; }
+
+        /* Dark Mode Stub (T050) */
+        @media (prefers-color-scheme: dark) {
+            /* 
+             * Future implementation:
+             * :root { --color-bg: #000; --color-text: #fff; ... } 
+             */
         }
     </style>
 </head>
 <body>
+    <a href="#map-container" class="skip-link" data-skip-to-content>Skip to content</a>
+    <div id="cdn-warning" hidden>Some visual elements may not render correctly due to network issues.</div>
+
     <div id="app">
         <header id="app-header">
             <div class="header-left">
-                <div class="logo"><i class="fa-solid fa-map"></i> Knowledge Map</div>
+                <div class="logo"><i class="fa-solid fa-map"></i> <span>Knowledge Map</span></div>
                 <!-- Domain selector placeholder -->
-                <div class="domain-selector" hidden></div>
+                <div class="domain-selector" hidden aria-label="Select knowledge domain"></div>
             </div>
-            <button id="about-btn" class="btn-icon" aria-label="About this project">
+            <button id="about-btn" class="btn-icon" aria-label="About this project" style="min-width: 44px; min-height: 44px;">
                 <i class="fa-solid fa-circle-info"></i>
             </button>
         </header>
@@ -276,7 +378,7 @@
             </section>
 
             <!-- Map Visualization -->
-            <section id="map-container" aria-label="Interactive Heatmap"></section>
+            <section id="map-container" aria-label="Interactive Heatmap" tabindex="0"></section>
 
             <!-- Quiz / Interaction Panel -->
             <aside id="quiz-panel" hidden aria-label="Quiz Question">
@@ -292,9 +394,9 @@
     </div>
 
     <!-- About Modal -->
-    <div id="about-modal" class="modal" hidden>
+    <div id="about-modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <div class="modal-content">
-            <h2 style="margin-bottom: 1rem;">About Wikipedia Knowledge Map</h2>
+            <h2 id="modal-title" style="margin-bottom: 1rem;">About Wikipedia Knowledge Map</h2>
             <p style="line-height: 1.6; margin-bottom: 0.75rem;">
                 This interactive demo maps your knowledge across 250,000 Wikipedia articles
                 using <strong>text embedding models</strong>. Articles are projected into a
@@ -328,14 +430,14 @@
                     github.com/ContextLab/mapper
                 </a>
             </p>
-            <p style="font-size: 0.85rem; color: #888; margin-bottom: 1rem;">
+            <p style="font-size: 0.85rem; color: #595959; margin-bottom: 1rem;">
                 All computation runs in your browser. No data is sent to any server.
                 Your progress is saved locally and can be exported or reset at any time.
             </p>
             <button class="close-modal"
                     style="padding: 0.5rem 1.5rem; border: 1px solid rgba(0,0,0,0.15);
                            border-radius: 6px; background: white; cursor: pointer;
-                           font-size: 0.9rem;">
+                           font-size: 0.9rem; min-height: 44px;">
                 Close
             </button>
         </div>

@@ -1,5 +1,7 @@
 /** Quiz UI for question display, answer input, and feedback. */
 
+import { announce } from '../utils/accessibility.js';
+
 let answerCallback = null;
 let currentQuestion = null;
 let uiElements = {};
@@ -43,6 +45,7 @@ export function init(container) {
         display: flex;
         align-items: center;
         width: 100%;
+        touch-action: manipulation; /* T046: Prevent double-tap zoom */
       }
       .quiz-option:hover:not(:disabled) {
         border-color: var(--color-primary, #007bff);
@@ -87,14 +90,14 @@ export function init(container) {
 
   container.innerHTML = `
     <div class="quiz-content">
-      <div class="quiz-question"></div>
-      <div class="quiz-options">
-        <button class="quiz-option" data-key="A"></button>
-        <button class="quiz-option" data-key="B"></button>
-        <button class="quiz-option" data-key="C"></button>
-        <button class="quiz-option" data-key="D"></button>
+      <div class="quiz-question" aria-live="polite"></div>
+      <div class="quiz-options" role="group" aria-label="Answer options">
+        <button class="quiz-option" data-key="A" aria-label="Option A"></button>
+        <button class="quiz-option" data-key="B" aria-label="Option B"></button>
+        <button class="quiz-option" data-key="C" aria-label="Option C"></button>
+        <button class="quiz-option" data-key="D" aria-label="Option D"></button>
       </div>
-      <div class="quiz-feedback"></div>
+      <div class="quiz-feedback" aria-live="assertive"></div>
       <div class="quiz-meta"></div>
     </div>
   `;
@@ -137,14 +140,20 @@ export function showQuestion(question) {
   }
 
   if (uiElements.question) {
-    uiElements.question.innerHTML = renderLatex(question.question_text || '');
+    const questionText = question.question_text || '';
+    uiElements.question.innerHTML = renderLatex(questionText);
+    // T049: Announce question change
+    announce(`Question: ${stripLatex(questionText)}`);
   }
 
   if (uiElements.options) {
     uiElements.options.forEach(btn => {
       const key = btn.dataset.key;
       const text = question.options ? question.options[key] : '';
-      btn.innerHTML = `<b>${key}.</b>&nbsp;${renderLatex(text || '')}`;
+      const renderedText = renderLatex(text || '');
+      btn.innerHTML = `<b>${key}.</b>&nbsp;${renderedText}`;
+      // T049: Update ARIA label with option text
+      btn.setAttribute('aria-label', `Option ${key}: ${stripLatex(text || '')}`);
       btn.disabled = false;
       btn.className = 'quiz-option';
     });
@@ -209,6 +218,7 @@ export function onAnswer(callback) {
 /**
  * Replaces $...$ with KaTeX rendered HTML.
  * Heuristic: if content between $ signs contains only numbers/punctuation, treat as currency.
+ * Fallback: if KaTeX is missing or fails, strips $ delimiters and shows raw text.
  */
 export function renderLatex(text) {
   if (!text) return '';
@@ -218,7 +228,8 @@ export function renderLatex(text) {
       return match;
     }
     
-    if (window.katex) {
+    // T047: Check global failure flag
+    if (window.katex && !window.__katexFailed) {
       try {
         return window.katex.renderToString(content, {
           throwOnError: false,
@@ -226,10 +237,18 @@ export function renderLatex(text) {
         });
       } catch (err) {
         console.warn('KaTeX render error:', err);
-        return content;
+        return content; // Fallback to raw content
       }
     }
     
-    return content;
+    return content; // Fallback to raw content
   });
+}
+
+/**
+ * Helper to strip LaTeX delimiters for screen readers
+ */
+function stripLatex(text) {
+  if (!text) return '';
+  return text.replace(/\$([^$]+)\$/g, '$1');
 }

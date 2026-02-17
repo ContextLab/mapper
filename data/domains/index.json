@@ -1,4 +1,271 @@
 {
   "schema_version": "1.0.0",
-  "domains": []
+  "domains": [
+    {
+      "id": "all",
+      "name": "All (General)",
+      "parent_id": null,
+      "level": "all",
+      "region": {
+        "x_min": 0,
+        "x_max": 1,
+        "y_min": 0,
+        "y_max": 1
+      },
+      "grid_size": 39,
+      "question_count": 50
+    },
+    {
+      "id": "physics",
+      "name": "Physics",
+      "parent_id": null,
+      "level": "general",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 0.4,
+        "y_min": 0.5,
+        "y_max": 1.0
+      },
+      "grid_size": 17,
+      "question_count": 50
+    },
+    {
+      "id": "neuroscience",
+      "name": "Neuroscience",
+      "parent_id": null,
+      "level": "general",
+      "region": {
+        "x_min": 0.4,
+        "x_max": 0.6,
+        "y_min": 0.5,
+        "y_max": 1.0
+      },
+      "grid_size": 12,
+      "question_count": 50
+    },
+    {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "parent_id": null,
+      "level": "general",
+      "region": {
+        "x_min": 0.6,
+        "x_max": 1.0,
+        "y_min": 0.5,
+        "y_max": 1.0
+      },
+      "grid_size": 17,
+      "question_count": 50
+    },
+    {
+      "id": "art-history",
+      "name": "Art History",
+      "parent_id": null,
+      "level": "general",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 0.5,
+        "y_min": 0.0,
+        "y_max": 0.5
+      },
+      "grid_size": 19,
+      "question_count": 50
+    },
+    {
+      "id": "biology",
+      "name": "Biology",
+      "parent_id": null,
+      "level": "general",
+      "region": {
+        "x_min": 0.5,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 0.5
+      },
+      "grid_size": 19,
+      "question_count": 50
+    },
+    {
+      "id": "astrophysics",
+      "name": "Astrophysics",
+      "parent_id": "physics",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 0.4,
+        "y_min": 0.75,
+        "y_max": 1.0
+      },
+      "grid_size": 12,
+      "question_count": 50
+    },
+    {
+      "id": "quantum-physics",
+      "name": "Quantum Physics",
+      "parent_id": "physics",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 0.4,
+        "y_min": 0.5,
+        "y_max": 0.75
+      },
+      "grid_size": 12,
+      "question_count": 50
+    },
+    {
+      "id": "european-art-history",
+      "name": "European Art History",
+      "parent_id": "art-history",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 0.25,
+        "y_min": 0.0,
+        "y_max": 0.5
+      },
+      "grid_size": 13,
+      "question_count": 50
+    },
+    {
+      "id": "chinese-art-history",
+      "name": "Chinese Art History",
+      "parent_id": "art-history",
+      "level": "sub",
+      "region": {
+        "x_min": 0.25,
+        "x_max": 0.5,
+        "y_min": 0.0,
+        "y_max": 0.5
+      },
+      "grid_size": 13,
+      "question_count": 50
+    },
+    {
+      "id": "molecular-cell-biology",
+      "name": "Molecular and Cell Biology",
+      "parent_id": "biology",
+      "level": "sub",
+      "region": {
+        "x_min": 0.5,
+        "x_max": 0.75,
+        "y_min": 0.0,
+        "y_max": 0.5
+      },
+      "grid_size": 13,
+      "question_count": 50
+    },
+    {
+      "id": "genetics",
+      "name": "Genetics",
+      "parent_id": "biology",
+      "level": "sub",
+      "region": {
+        "x_min": 0.75,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 0.5
+      },
+      "grid_size": 13,
+      "question_count": 50
+    },
+    {
+      "id": "cognitive-neuroscience",
+      "name": "Cognitive Neuroscience",
+      "parent_id": "neuroscience",
+      "level": "sub",
+      "region": {
+        "x_min": 0.4,
+        "x_max": 0.6,
+        "y_min": 0.833,
+        "y_max": 1.0
+      },
+      "grid_size": 8,
+      "question_count": 50
+    },
+    {
+      "id": "computational-neuroscience",
+      "name": "Computational Neuroscience",
+      "parent_id": "neuroscience",
+      "level": "sub",
+      "region": {
+        "x_min": 0.4,
+        "x_max": 0.6,
+        "y_min": 0.667,
+        "y_max": 0.833
+      },
+      "grid_size": 8,
+      "question_count": 50
+    },
+    {
+      "id": "neurobiology",
+      "name": "Neurobiology",
+      "parent_id": "neuroscience",
+      "level": "sub",
+      "region": {
+        "x_min": 0.4,
+        "x_max": 0.6,
+        "y_min": 0.5,
+        "y_max": 0.667
+      },
+      "grid_size": 8,
+      "question_count": 50
+    },
+    {
+      "id": "calculus",
+      "name": "Calculus",
+      "parent_id": "mathematics",
+      "level": "sub",
+      "region": {
+        "x_min": 0.6,
+        "x_max": 0.8,
+        "y_min": 0.75,
+        "y_max": 1.0
+      },
+      "grid_size": 8,
+      "question_count": 50
+    },
+    {
+      "id": "linear-algebra",
+      "name": "Linear Algebra",
+      "parent_id": "mathematics",
+      "level": "sub",
+      "region": {
+        "x_min": 0.8,
+        "x_max": 1.0,
+        "y_min": 0.75,
+        "y_max": 1.0
+      },
+      "grid_size": 8,
+      "question_count": 50
+    },
+    {
+      "id": "number-theory",
+      "name": "Number Theory",
+      "parent_id": "mathematics",
+      "level": "sub",
+      "region": {
+        "x_min": 0.6,
+        "x_max": 0.8,
+        "y_min": 0.5,
+        "y_max": 0.75
+      },
+      "grid_size": 8,
+      "question_count": 50
+    },
+    {
+      "id": "probability-statistics",
+      "name": "Probability and Statistics",
+      "parent_id": "mathematics",
+      "level": "sub",
+      "region": {
+        "x_min": 0.8,
+        "x_max": 1.0,
+        "y_min": 0.5,
+        "y_max": 0.75
+      },
+      "grid_size": 8,
+      "question_count": 50
+    }
+  ]
 }

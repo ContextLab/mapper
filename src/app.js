@@ -105,8 +105,10 @@ async function boot() {
     minimap = new Minimap();
     minimap.init(minimapContainer, registry.getDomains());
     minimap.onClick((domainId) => $activeDomain.set(domainId));
-    minimap.onNavigate((region) => {
-      if (renderer) renderer.transitionTo(region, 400);
+    minimap.onNavigate((region, animated) => {
+      if (!renderer) return;
+      if (animated) renderer.transitionTo(region, 400);
+      else renderer.jumpTo(region);
     });
   }
 

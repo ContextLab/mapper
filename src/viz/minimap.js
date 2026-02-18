@@ -151,7 +151,7 @@ export class Minimap {
       x_max: x_min + vpW,
       y_min,
       y_max: y_min + vpH,
-    });
+    }, false); // drag = instant (not animated)
   }
 
   _onMouseUp() {
@@ -182,7 +182,7 @@ export class Minimap {
       x_max: x_min + vpW,
       y_min,
       y_max: y_min + vpH,
-    });
+    }, true); // click = animated
   }
 
   render() {
@@ -258,7 +258,7 @@ export class Minimap {
       const isAll = d.id === 'all';
 
       if (isActive) {
-        ctx.strokeStyle = 'var(--color-primary, #ff7edb)';
+        ctx.strokeStyle = '#ff7edb';
         ctx.lineWidth = 2;
       } else if (isAll) {
         ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';

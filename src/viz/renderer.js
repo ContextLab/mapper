@@ -1,12 +1,8 @@
-/** Canvas 2D renderer for point cloud, heatmap overlay, grid labels, and answered-question dots. */
+/** Canvas 2D renderer for point cloud, heatmap overlay, and answered-question dots. */
 
 import { mergeForTransition, buildTransitionFrames, needs3D, cubicInOut } from './transitions.js';
 
-// ---- Synthwave color mapping ----
-// Maps knowledge value [0,1] to synthwave gradient:
-//   0.0 → deep purple (61,21,96)
-//   0.5 → neon pink (255,126,219)
-//   1.0 → neon cyan (54,249,246)
+// Dark mode: synthwave gradient 0→deep purple, 0.5→neon pink, 1→neon cyan
 function valueToSynthwaveColor(v) {
   const val = Math.max(0, Math.min(1, v));
   let r, g, b;
@@ -20,6 +16,24 @@ function valueToSynthwaveColor(v) {
     r = Math.round(255 + t * (54 - 255));
     g = Math.round(126 + t * (249 - 126));
     b = Math.round(219 + t * (246 - 219));
+  }
+  return [r, g, b];
+}
+
+// Light mode: 0→pale sand, 0.5→warm amber, 1→deep teal
+function valueToLightColor(v) {
+  const val = Math.max(0, Math.min(1, v));
+  let r, g, b;
+  if (val < 0.5) {
+    const t = val / 0.5;
+    r = Math.round(245 + t * (210 - 245));
+    g = Math.round(235 + t * (140 - 235));
+    b = Math.round(220 + t * (60 - 220));
+  } else {
+    const t = (val - 0.5) / 0.5;
+    r = Math.round(210 + t * (20 - 210));
+    g = Math.round(140 + t * (120 - 140));
+    b = Math.round(60 + t * (120 - 60));
   }
   return [r, g, b];
 }
@@ -39,7 +53,6 @@ export class Renderer {
     this._points = [];
     this._heatmapEstimates = [];
     this._heatmapRegion = null;
-    this._labels = [];
     this._answeredData = [];
 
     this._onReanswer = null;
@@ -108,7 +121,7 @@ export class Renderer {
       'padding:6px 10px;border-radius:6px;font-size:0.75rem;' +
       'font-family:var(--font-body);border:1px solid var(--color-border);' +
       'box-shadow:0 2px 12px rgba(0,0,0,0.3);opacity:0;transition:opacity 0.15s ease;' +
-      'white-space:nowrap;max-width:300px;overflow:hidden;text-overflow:ellipsis;';
+      'white-space:normal;max-width:320px;overflow:hidden;line-height:1.4;';
     container.style.position = 'relative';
     container.appendChild(this._tooltip);
 
@@ -150,14 +163,7 @@ export class Renderer {
     this._render();
   }
 
-  /**
-   * Update grid labels.
-   * @param {Array<object>} labels - GridLabel[]
-   */
-  setLabels(labels) {
-    this._labels = labels || [];
-    this._render();
-  }
+  setLabels() {}
 
   /**
    * Update answered-question dot overlay.
@@ -199,8 +205,22 @@ export class Renderer {
    * @param {number} [duration=600]
    * @returns {Promise<void>}
    */
+  jumpTo(region) {
+    this.abortTransition();
+    const target = this._computePanZoomForRegion(region);
+    this._panX = target.panX;
+    this._panY = target.panY;
+    this._zoom = target.zoom;
+    this._clampPanZoom();
+    this._render();
+    this._notifyViewport();
+  }
+
   transitionTo(region, duration = TRANSITION_DURATION) {
+    this.abortTransition();
     return new Promise((resolve) => {
+      if (duration <= 0) { this.jumpTo(region); resolve(); return; }
+
       const target = this._computePanZoomForRegion(region);
       const startPanX = this._panX;
       const startPanY = this._panY;
@@ -219,7 +239,6 @@ export class Renderer {
         this._panX = startPanX + (target.panX - startPanX) * e;
         this._panY = startPanY + (target.panY - startPanY) * e;
         this._zoom = startZoom + (target.zoom - startZoom) * e;
-
         this._render();
 
         if (t < 1) {
@@ -261,7 +280,6 @@ export class Renderer {
    */
   transitionPoints(sourcePoints, targetPoints, sourceRegion, targetRegion, duration = TRANSITION_DURATION) {
     this.abortTransition();
-
     const useCrossfade = needs3D(sourceRegion, targetRegion);
 
     return new Promise((resolve) => {
@@ -269,7 +287,7 @@ export class Renderer {
       this._transitionAbort = () => { aborted = true; resolve(); };
 
       if (useCrossfade) {
-        this._crossfadeTransition(sourcePoints, targetPoints, targetRegion, duration, () => aborted, resolve);
+        this._crossfadeTransition(sourcePoints, targetPoints, sourceRegion, targetRegion, duration, () => aborted, resolve);
       } else {
         this._panFadeTransition(sourcePoints, targetPoints, targetRegion, duration, () => aborted, resolve);
       }
@@ -312,6 +330,10 @@ export class Renderer {
     this._canvas.height = rect.height * this._dpr;
   }
 
+  _isLightMode() {
+    return document.documentElement.getAttribute('data-theme') === 'light';
+  }
+
   _render() {
     if (!this._ctx || !this._width || !this._height) return;
 
@@ -319,33 +341,26 @@ export class Renderer {
     const dpr = this._dpr;
     const w = this._width;
     const h = this._height;
+    const light = this._isLightMode();
 
-    // Clear
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.fillStyle = getComputedStyle(this._container).getPropertyValue('--color-bg').trim() || '#241b2f';
+    ctx.fillStyle = light ? '#f5f0eb' : (getComputedStyle(this._container).getPropertyValue('--color-bg').trim() || '#241b2f');
     ctx.fillRect(0, 0, w, h);
 
-    // Apply pan/zoom transform
     ctx.save();
     ctx.translate(this._panX, this._panY);
     ctx.scale(this._zoom, this._zoom);
 
-    // Layer 1: Heatmap
-    this._drawHeatmap(ctx, w, h);
-
-    // Layer 2: Article dots
-    this._drawPoints(ctx, w, h);
-
-    // Layer 3: Grid labels
-    this._drawLabels(ctx, w, h);
-
-    // Layer 4: Answered-question dots
-    this._drawAnsweredDots(ctx, w, h);
+    this._drawHeatmap(ctx, w, h, light);
+    this._drawPoints(ctx, w, h, light);
+    this._drawAnsweredDots(ctx, w, h, light);
 
     ctx.restore();
+
+    this._drawColorbar(ctx, w, h, light);
   }
 
-  _drawHeatmap(ctx, w, h) {
+  _drawHeatmap(ctx, w, h, light) {
     const estimates = this._heatmapEstimates;
     const region = this._heatmapRegion;
     if (!estimates || estimates.length === 0 || !region) return;
@@ -353,44 +368,37 @@ export class Renderer {
     const gridSize = Math.round(Math.sqrt(estimates.length));
     if (gridSize === 0) return;
 
-    // Region in normalized [0,1] space → pixel space is region * (w, h)
     const rx = region.x_min * w;
     const ry = region.y_min * h;
     const rw = (region.x_max - region.x_min) * w;
     const rh = (region.y_max - region.y_min) * h;
-
     const cellW = rw / gridSize;
     const cellH = rh / gridSize;
 
-    ctx.globalAlpha = HEATMAP_OPACITY;
+    ctx.globalAlpha = light ? 0.45 : HEATMAP_OPACITY;
+    const colorFn = light ? valueToLightColor : valueToSynthwaveColor;
 
     for (const e of estimates) {
       if (e.state === 'unknown') continue;
-
-      const [r, g, b] = valueToSynthwaveColor(e.value);
-      // Alpha: no evidence → faint, with evidence → stronger
+      const [r, g, b] = colorFn(e.value);
       const a = e.evidenceCount === 0 ? 0.3 : 0.75;
-
       ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
-      ctx.fillRect(
-        rx + e.gx * cellW,
-        ry + e.gy * cellH,
-        cellW + 0.5, // +0.5 avoids sub-pixel gaps
-        cellH + 0.5,
-      );
+      ctx.fillRect(rx + e.gx * cellW, ry + e.gy * cellH, cellW + 0.5, cellH + 0.5);
     }
 
     ctx.globalAlpha = 1;
   }
 
-  _drawPoints(ctx, w, h) {
+  _drawPoints(ctx, w, h, light) {
     if (this._points.length === 0) return;
 
+    const defaultColor = light ? [80, 80, 100, 80] : [180, 180, 220, 100];
     for (const p of this._points) {
       const px = p.x * w;
       const py = p.y * h;
-      const r = (p.radius || 2) / this._zoom; // Maintain consistent screen size
-      const color = p.color || [180, 180, 220, 100];
+      const r = (p.radius || 2) / this._zoom;
+      const isDefaultDark = p.color && p.color[0] === 180 && p.color[1] === 180;
+      const color = (light && isDefaultDark) ? defaultColor : (p.color || defaultColor);
       const alpha = (color[3] ?? 100) / 255;
 
       ctx.beginPath();
@@ -400,48 +408,19 @@ export class Renderer {
     }
   }
 
-  _drawLabels(ctx, w, h) {
-    if (this._labels.length === 0) return;
-
-    // Scale font size inversely with zoom so labels stay readable
-    const baseFontSize = 11;
-    const fontSize = Math.max(8, Math.min(16, baseFontSize / this._zoom));
-
-    ctx.font = `600 ${fontSize}px "Space Mono", "JetBrains Mono", monospace`;
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-
-    for (const label of this._labels) {
-      const px = label.center_x * w;
-      const py = label.center_y * h;
-
-      // Dark outline for readability
-      ctx.strokeStyle = 'rgba(0, 0, 0, 0.7)';
-      ctx.lineWidth = 3 / this._zoom;
-      ctx.lineJoin = 'round';
-      ctx.strokeText(label.label, px, py);
-
-      // White fill
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-      ctx.fillText(label.label, px, py);
-    }
-  }
-
-  _drawAnsweredDots(ctx, w, h) {
+  _drawAnsweredDots(ctx, w, h, light) {
     if (this._answeredData.length === 0) return;
 
     for (const d of this._answeredData) {
       const px = d.x * w;
       const py = d.y * h;
-      const r = 5 / this._zoom; // Consistent screen size
+      const r = 5 / this._zoom;
 
-      // White border
       ctx.beginPath();
       ctx.arc(px, py, r + 1.5 / this._zoom, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+      ctx.fillStyle = light ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.9)';
       ctx.fill();
 
-      // Colored fill
       ctx.beginPath();
       ctx.arc(px, py, r, 0, Math.PI * 2);
       const c = d.color || [200, 200, 200, 200];
@@ -450,7 +429,47 @@ export class Renderer {
     }
   }
 
-  // ======== PRIVATE: Pan/Zoom ========
+  _drawColorbar(ctx, w, h, light) {
+    if (this._heatmapEstimates.length === 0) return;
+
+    const barW = 12;
+    const barH = 120;
+    const margin = 16;
+    const x = w - barW - margin;
+    const y = h - barH - margin;
+
+    ctx.save();
+    ctx.setTransform(this._dpr, 0, 0, this._dpr, 0, 0);
+
+    ctx.fillStyle = light ? 'rgba(255,255,255,0.75)' : 'rgba(0,0,0,0.5)';
+    ctx.beginPath();
+    ctx.roundRect(x - 6, y - 20, barW + 12, barH + 36, 6);
+    ctx.fill();
+
+    const colorFn = light ? valueToLightColor : valueToSynthwaveColor;
+    const steps = 40;
+    const stepH = barH / steps;
+    for (let i = 0; i < steps; i++) {
+      const v = 1 - i / (steps - 1); // top=1.0, bottom=0.0
+      const [r, g, b] = colorFn(v);
+      ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
+      ctx.fillRect(x, y + i * stepH, barW, stepH + 0.5);
+    }
+
+    ctx.strokeStyle = light ? 'rgba(0,0,0,0.15)' : 'rgba(255,255,255,0.15)';
+    ctx.lineWidth = 0.5;
+    ctx.strokeRect(x, y, barW, barH);
+
+    ctx.font = '9px "Space Mono", monospace';
+    ctx.textAlign = 'center';
+    ctx.fillStyle = light ? '#555' : 'rgba(255,255,255,0.6)';
+    ctx.fillText('100%', x + barW / 2, y - 4);
+    ctx.fillText('0%', x + barW / 2, y + barH + 12);
+
+    ctx.restore();
+  }
+
+  // ======== Pan/Zoom ========
 
   _computePanZoomForRegion(region) {
     const w = this._width;
@@ -458,17 +477,22 @@ export class Renderer {
     const rw = region.x_max - region.x_min;
     const rh = region.y_max - region.y_min;
 
-    // Fit region with 15% padding
-    const padding = 1.15;
+    // 30% padding gives context around the domain
+    const padding = 1.3;
     const zoomX = 1 / (rw * padding);
     const zoomY = 1 / (rh * padding);
     const zoom = Math.max(1, Math.min(10, Math.min(zoomX, zoomY)));
 
-    // Center the region
     const cx = (region.x_min + region.x_max) / 2;
     const cy = (region.y_min + region.y_max) / 2;
-    const panX = w / 2 - cx * zoom * w;
-    const panY = h / 2 - cy * zoom * h;
+    let panX = w / 2 - cx * zoom * w;
+    let panY = h / 2 - cy * zoom * h;
+
+    // Clamp so content always fills screen
+    const contentW = zoom * w;
+    const contentH = zoom * h;
+    panX = Math.max(w - contentW, Math.min(0, panX));
+    panY = Math.max(h - contentH, Math.min(0, panY));
 
     return { panX, panY, zoom };
   }
@@ -562,7 +586,7 @@ export class Renderer {
     if (hit) {
       this._hoveredPoint = hit;
       this._canvas.style.cursor = 'pointer';
-      this._showTooltip(hit.title || hit.questionText || '', e.clientX - rect.left, e.clientY - rect.top);
+      this._showTooltip(this._buildTooltipText(hit), e.clientX - rect.left, e.clientY - rect.top);
     } else {
       this._hoveredPoint = null;
       this._canvas.style.cursor = '';
@@ -694,6 +718,14 @@ export class Renderer {
 
   // ======== PRIVATE: Tooltip ========
 
+  _buildTooltipText(hit) {
+    if (hit.questionId) {
+      const prefix = hit.isCorrect ? '✅' : '❌';
+      return `${prefix} ${hit.title || 'Question'}`;
+    }
+    return hit.title || '';
+  }
+
   _showTooltip(text, x, y) {
     if (!text || !this._tooltip) return;
     this._tooltip.textContent = text;
@@ -773,73 +805,58 @@ export class Renderer {
     this._animFrame = requestAnimationFrame(animate);
   }
 
-  _crossfadeTransition(sourcePoints, targetPoints, targetRegion, duration, isAborted, resolve) {
-    const half = Math.round(duration * 0.4);
+  // Smooth crossfade: viewport pans throughout, points fade at midpoint
+  _crossfadeTransition(sourcePoints, targetPoints, _sourceRegion, targetRegion, duration, isAborted, resolve) {
     const startTime = performance.now();
-
     const targetPanZoom = this._computePanZoomForRegion(targetRegion);
+    const startPanX = this._panX;
+    const startPanY = this._panY;
+    const startZoom = this._zoom;
 
-    // Phase 1: fade out source points
-    const animateOut = (now) => {
+    const animate = (now) => {
       if (isAborted()) return;
       const elapsed = now - startTime;
-      const t = Math.min(1, elapsed / half);
+      const t = Math.min(1, elapsed / duration);
       const e = cubicInOut(t);
 
-      this._points = sourcePoints.map((p) => ({
-        ...p,
-        color: [
-          p.color?.[0] ?? 200,
-          p.color?.[1] ?? 200,
-          p.color?.[2] ?? 200,
-          Math.round((p.color?.[3] ?? 150) * (1 - e)),
-        ],
-      }));
+      this._panX = startPanX + (targetPanZoom.panX - startPanX) * e;
+      this._panY = startPanY + (targetPanZoom.panY - startPanY) * e;
+      this._zoom = startZoom + (targetPanZoom.zoom - startZoom) * e;
+
+      if (t < 0.5) {
+        const fadeOut = 1 - (t / 0.5);
+        this._points = sourcePoints.map((p) => ({
+          ...p,
+          color: [p.color?.[0] ?? 200, p.color?.[1] ?? 200, p.color?.[2] ?? 200,
+            Math.round((p.color?.[3] ?? 150) * fadeOut)],
+        }));
+      } else {
+        const fadeIn = (t - 0.5) / 0.5;
+        this._points = targetPoints.map((p) => ({
+          ...p,
+          color: [p.color?.[0] ?? 200, p.color?.[1] ?? 200, p.color?.[2] ?? 200,
+            Math.round((p.color?.[3] ?? 150) * fadeIn)],
+        }));
+      }
+
       this._render();
 
       if (t < 1) {
-        this._animFrame = requestAnimationFrame(animateOut);
+        this._animFrame = requestAnimationFrame(animate);
       } else {
-        // Jump viewport
+        this._points = targetPoints;
         this._panX = targetPanZoom.panX;
         this._panY = targetPanZoom.panY;
         this._zoom = targetPanZoom.zoom;
         this._clampPanZoom();
-
-        // Phase 2: fade in target points
-        const fadeInStart = performance.now();
-        const animateIn = (now2) => {
-          if (isAborted()) return;
-          const elapsed2 = now2 - fadeInStart;
-          const t2 = Math.min(1, elapsed2 / half);
-          const e2 = cubicInOut(t2);
-
-          this._points = targetPoints.map((p) => ({
-            ...p,
-            color: [
-              p.color?.[0] ?? 200,
-              p.color?.[1] ?? 200,
-              p.color?.[2] ?? 200,
-              Math.round((p.color?.[3] ?? 150) * e2),
-            ],
-          }));
-          this._render();
-
-          if (t2 < 1) {
-            this._animFrame = requestAnimationFrame(animateIn);
-          } else {
-            this._points = targetPoints;
-            this._render();
-            this._notifyViewport();
-            this._transitionAbort = null;
-            resolve();
-          }
-        };
-        this._animFrame = requestAnimationFrame(animateIn);
+        this._render();
+        this._notifyViewport();
+        this._transitionAbort = null;
+        resolve();
       }
     };
 
-    this._animFrame = requestAnimationFrame(animateOut);
+    this._animFrame = requestAnimationFrame(animate);
   }
 
   _notifyViewport() {

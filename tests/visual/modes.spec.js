@@ -4,18 +4,20 @@ import { test, expect } from '@playwright/test';
 const LOAD_TIMEOUT = 15000;
 
 async function selectDomain(page, domainName) {
-  const sel = page.locator('.domain-selector select');
-  if (await sel.count() > 0) {
-    const value = domainName.toLowerCase().replace(/\s+/g, '-');
-    await sel.selectOption(value);
-  }
+  const value = domainName.toLowerCase().replace(/\s+/g, '-');
+  const landingTrigger = page.locator('#landing-domain-wrapper .custom-select-trigger');
+  const headerTrigger = page.locator('.domain-selector .custom-select-trigger');
+  const trigger = (await landingTrigger.isVisible()) ? landingTrigger : headerTrigger;
+  await trigger.click();
+  const parent = (await landingTrigger.isVisible()) ? page.locator('#landing-domain-wrapper') : page.locator('.domain-selector');
+  await parent.locator(`.custom-select-option[data-value="${value}"]`).click();
 }
 
 test.describe('Question Modes (US3)', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
     await page.waitForSelector('#landing', { timeout: LOAD_TIMEOUT });
-    await page.waitForSelector('.domain-selector:not([hidden])', { timeout: LOAD_TIMEOUT });
+    await page.waitForSelector('#landing-domain-wrapper .custom-select-trigger', { timeout: LOAD_TIMEOUT });
     await selectDomain(page, 'physics');
     await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
   });

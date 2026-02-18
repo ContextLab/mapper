@@ -240,39 +240,105 @@
             display: flex;
             justify-content: center;
         }
-        .landing-domain-wrapper select {
+        .custom-select {
+            position: relative;
+            display: inline-block;
+        }
+        .custom-select-trigger {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
             font-family: var(--font-body);
-            font-size: 1rem;
-            padding: 0.75rem 2.5rem 0.75rem 1rem;
-            border-radius: 8px;
-            border: 1px solid var(--color-primary);
-            background-color: var(--color-surface-raised);
+            font-size: 0.85rem;
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            border: 1px solid var(--color-border);
+            background: var(--color-surface-raised);
             color: var(--color-text);
             cursor: pointer;
             outline: none;
-            box-shadow: 0 0 16px var(--color-glow-primary);
-            appearance: none;
-            -webkit-appearance: none;
-            min-width: 280px;
-            text-align: center;
-            text-align-last: center;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ff7edb' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 0.75rem center;
             transition: border-color 0.2s, box-shadow 0.2s;
+            max-width: 240px;
+            white-space: nowrap;
         }
-        .landing-domain-wrapper select:focus {
+        .custom-select-trigger:hover,
+        .custom-select-trigger:focus {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 8px var(--color-glow-primary);
+        }
+        .custom-select-arrow {
+            font-size: 0.65rem;
+            color: var(--color-text-muted);
+            transition: transform 0.2s;
+        }
+        .custom-select.open .custom-select-arrow {
+            transform: rotate(180deg);
+        }
+        .custom-select-options {
+            display: none;
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            min-width: 100%;
+            max-height: 320px;
+            overflow-y: auto;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            z-index: 200;
+            padding: 4px 0;
+        }
+        .custom-select.open .custom-select-options {
+            display: block;
+        }
+        .custom-select-option {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            padding: 0.5rem 0.75rem;
+            color: var(--color-text);
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s;
+            white-space: nowrap;
+        }
+        .custom-select-option:hover,
+        .custom-select-option.focused {
+            background: var(--color-surface-raised);
+            color: var(--color-primary);
+        }
+        .custom-select-option--child {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+        }
+        .custom-select-option--child:hover,
+        .custom-select-option--child.focused {
+            color: var(--color-primary);
+        }
+        .custom-select--landing .custom-select-trigger {
+            font-size: 1rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 16px var(--color-glow-primary);
+            min-width: 280px;
+            justify-content: center;
+            max-width: none;
+        }
+        .custom-select--landing .custom-select-trigger:focus {
             border-color: var(--color-secondary);
             box-shadow: 0 0 20px var(--color-glow-secondary);
         }
-        .landing-domain-wrapper select option {
-            background: var(--color-surface);
-            color: var(--color-text);
+        .custom-select--landing .custom-select-options {
             text-align: left;
+        }
+        .custom-select--landing .custom-select-option {
+            font-size: 0.95rem;
+            padding: 0.6rem 1rem;
         }
 
         .landing-cta {
-            margin-top: 2.5rem;
+            margin-top: 1rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -434,7 +500,7 @@
     <div id="app">
         <header id="app-header">
             <div class="header-left">
-                <div class="logo"><i class="fa-solid fa-map"></i> <span>Knowledge Map</span></div>
+                <div class="logo"><i class="fa-solid fa-map"></i> <span>Knowledge Mapper</span></div>
                 <!-- Domain selector placeholder -->
                 <div class="domain-selector" hidden aria-label="Select knowledge domain"></div>
             </div>
@@ -474,8 +540,8 @@
                     </div>
 
                     <div class="landing-cta">
-                        <i class="fa-solid fa-arrow-down"></i>
-                        <span>Select an area to map to get started</span>
+                        <i class="fa-solid fa-arrow-up"></i>
+                        <span>Which region of your knowledge map should we explore first?</span>
                     </div>
                 </div>
             </section>
@@ -501,23 +567,27 @@
         <div class="modal-content">
             <h2 id="modal-title" style="margin-bottom: 1rem; font-family: var(--font-heading); color: var(--color-primary);">About Knowledge Mapper</h2>
             <p style="line-height: 1.7; margin-bottom: 0.75rem; font-size: 0.9rem;">
-                This interactive demo maps your knowledge across 250,000 Wikipedia articles
-                using <strong style="color:var(--color-secondary)">text embedding models</strong>. Articles are projected into a
-                2D space where semantically related topics cluster together &mdash; physics near
-                mathematics, neuroscience near biology.
+                Knowledge Mapper uses <strong style="color:var(--color-secondary)">text embedding models</strong> to
+                create a semantic coordinate system from 250,000 Wikipedia articles. Each
+                article is embedded into a high-dimensional vector space and projected onto a
+                2D map where related concepts cluster together &mdash; the articles serve as
+                guideposts that define the terrain of human knowledge.
             </p>
             <p style="line-height: 1.7; margin-bottom: 0.75rem; font-size: 0.9rem;">
-                As you answer questions, a <strong style="color:var(--color-secondary)">Gaussian process</strong> estimates your
-                knowledge across the entire domain, filling in a heatmap that reveals both
-                your strengths and gaps. The system uses <strong style="color:var(--color-secondary)">active learning</strong> to
-                select the most informative questions, efficiently mapping your knowledge
+                As you answer questions, an <strong style="color:var(--color-secondary)">adaptive estimator</strong>
+                interpolates your knowledge across nearby concepts using radial basis functions.
+                Each answer creates a ripple of evidence: getting a question right suggests
+                you likely know related topics nearby, while a wrong answer reveals gaps. The
+                system uses <strong style="color:var(--color-secondary)">uncertainty-weighted selection</strong> to
+                pick the most informative next question, efficiently mapping your understanding
                 with as few questions as possible.
             </p>
             <p style="line-height: 1.7; margin-bottom: 0.75rem; font-size: 0.9rem;">
-                Because the map lives in embedding space, answering questions in one domain
-                (e.g., Mathematics) produces predictions in related domains
-                (e.g., Probability &amp; Statistics) &mdash; demonstrating that text embeddings
-                capture conceptual relationships.
+                Because the map lives in embedding space, knowledge demonstrated in one
+                area (e.g., Mathematics) provides evidence about related areas
+                (e.g., Probability &amp; Statistics). The result is a high-resolution heatmap
+                of your conceptual knowledge &mdash; not a single score, but a spatial portrait
+                revealing both your strengths and gaps.
             </p>
             <p style="line-height: 1.7; margin-bottom: 1rem; font-size: 0.9rem;">
                 <strong>Research paper:</strong>

@@ -161,9 +161,14 @@ export class ParticleSystem {
       else levels[2].particles.push(p);
     }
 
+    const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+    const r = isDark ? 255 : 100;
+    const g = isDark ? 126 : 30;
+    const b = isDark ? 219 : 120;
+
     for (const level of levels) {
       if (level.particles.length === 0) continue;
-      ctx.fillStyle = `rgba(255, 126, 219, ${level.alpha})`;
+      ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${level.alpha})`;
       ctx.beginPath();
       for (const p of level.particles) {
         if (p.x < -10 || p.x > w + 10 || p.y < -10 || p.y > h + 10) continue;

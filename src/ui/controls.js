@@ -7,14 +7,126 @@ let onResetCb = null;
 let onExportCb = null;
 
 let container = null;
-let selectElement = null;
 let resetButton = null;
 let exportButton = null;
 
-/**
- * Initialize the domain selector in the header.
- * @param {HTMLElement} headerElement
- */
+function buildOptions() {
+  const hierarchy = getHierarchy();
+  const items = [];
+  hierarchy.forEach(node => {
+    items.push({
+      value: node.id,
+      label: node.id === 'all' ? 'All (General)' : node.name,
+      isChild: false,
+    });
+    if (node.children && node.children.length > 0) {
+      node.children.forEach(child => {
+        items.push({ value: child.id, label: child.name, isChild: true });
+      });
+    }
+  });
+  return items;
+}
+
+function createDropdown(placeholder, items, onChange) {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'custom-select';
+  wrapper.setAttribute('role', 'combobox');
+  wrapper.setAttribute('aria-expanded', 'false');
+  wrapper.setAttribute('aria-haspopup', 'listbox');
+
+  const trigger = document.createElement('button');
+  trigger.className = 'custom-select-trigger';
+  trigger.type = 'button';
+
+  const valueSpan = document.createElement('span');
+  valueSpan.className = 'custom-select-value';
+  valueSpan.textContent = placeholder;
+
+  const arrow = document.createElement('span');
+  arrow.className = 'custom-select-arrow';
+  arrow.textContent = '\u25BE';
+
+  trigger.appendChild(valueSpan);
+  trigger.appendChild(arrow);
+
+  const panel = document.createElement('div');
+  panel.className = 'custom-select-options';
+  panel.setAttribute('role', 'listbox');
+
+  let focusedIdx = -1;
+
+  for (const opt of items) {
+    const el = document.createElement('div');
+    el.className = 'custom-select-option' + (opt.isChild ? ' custom-select-option--child' : '');
+    el.setAttribute('role', 'option');
+    el.dataset.value = opt.value;
+    el.textContent = opt.isChild ? '\u00A0\u00A0\u00A0' + opt.label : opt.label;
+    panel.appendChild(el);
+  }
+
+  wrapper.appendChild(trigger);
+  wrapper.appendChild(panel);
+
+  function open() {
+    wrapper.classList.add('open');
+    wrapper.setAttribute('aria-expanded', 'true');
+    focusedIdx = -1;
+  }
+
+  function close() {
+    wrapper.classList.remove('open');
+    wrapper.setAttribute('aria-expanded', 'false');
+    focusedIdx = -1;
+    panel.querySelectorAll('.focused').forEach(el => el.classList.remove('focused'));
+  }
+
+  trigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    wrapper.classList.contains('open') ? close() : open();
+  });
+
+  panel.addEventListener('click', (e) => {
+    const item = e.target.closest('.custom-select-option');
+    if (!item) return;
+    valueSpan.textContent = item.textContent.trim();
+    wrapper.dataset.value = item.dataset.value;
+    close();
+    if (onChange) onChange(item.dataset.value);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!wrapper.contains(e.target)) close();
+  });
+
+  trigger.addEventListener('keydown', (e) => {
+    const opts = panel.querySelectorAll('.custom-select-option');
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      if (wrapper.classList.contains('open') && focusedIdx >= 0) {
+        opts[focusedIdx].click();
+      } else {
+        open();
+      }
+    } else if (e.key === 'Escape') {
+      close();
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (!wrapper.classList.contains('open')) open();
+      focusedIdx = Math.min(focusedIdx + 1, opts.length - 1);
+      opts.forEach((o, i) => o.classList.toggle('focused', i === focusedIdx));
+      opts[focusedIdx]?.scrollIntoView({ block: 'nearest' });
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      focusedIdx = Math.max(focusedIdx - 1, 0);
+      opts.forEach((o, i) => o.classList.toggle('focused', i === focusedIdx));
+      opts[focusedIdx]?.scrollIntoView({ block: 'nearest' });
+    }
+  });
+
+  return wrapper;
+}
+
 export function init(headerElement) {
   const domainSelector = headerElement.querySelector('.domain-selector');
   if (!domainSelector) {
@@ -22,10 +134,8 @@ export function init(headerElement) {
     return;
   }
   container = domainSelector;
-
   container.innerHTML = '';
-  container.hidden = false;
-  
+
   container.style.display = 'flex';
   container.style.alignItems = 'center';
   container.style.gap = '0.5rem';
@@ -34,32 +144,6 @@ export function init(headerElement) {
     const style = document.createElement('style');
     style.id = 'controls-style';
     style.textContent = `
-      .domain-selector select {
-        font-family: var(--font-body);
-        font-size: 0.85rem;
-        padding: 0.4rem 2rem 0.4rem 0.6rem;
-        border-radius: 6px;
-        border: 1px solid var(--color-border);
-        background-color: var(--color-surface-raised);
-        color: var(--color-text);
-        cursor: pointer;
-        outline: none;
-        transition: border-color 0.2s, box-shadow 0.2s;
-        max-width: 220px;
-        appearance: none;
-        -webkit-appearance: none;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23848bb2' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 0.5rem center;
-      }
-      .domain-selector select:focus {
-        border-color: var(--color-primary);
-        box-shadow: 0 0 8px var(--color-glow-primary);
-      }
-      .domain-selector select option {
-        background: var(--color-surface);
-        color: var(--color-text);
-      }
       .control-btn {
         min-height: 36px;
         width: 36px;
@@ -80,56 +164,17 @@ export function init(headerElement) {
         box-shadow: 0 0 8px var(--color-glow-primary);
       }
       @media (max-width: 768px) {
-        .header-left {
-          flex: 1;
-        }
-        .domain-selector {
-          flex: 1;
-        }
-        .domain-selector select {
-          width: 100%;
-          max-width: none;
-        }
+        .header-left { flex: 1; }
+        .domain-selector { flex: 1; }
       }
     `;
     document.head.appendChild(style);
   }
 
-  selectElement = document.createElement('select');
-  selectElement.ariaLabel = 'Select Domain';
-  
-  const placeholder = document.createElement('option');
-  placeholder.value = '';
-  placeholder.textContent = 'Choose a domain…';
-  placeholder.disabled = true;
-  placeholder.selected = true;
-  selectElement.appendChild(placeholder);
-
-  const hierarchy = getHierarchy();
-  
-  hierarchy.forEach(node => {
-    const option = document.createElement('option');
-    option.value = node.id;
-    option.textContent = node.id === 'all' ? 'All (General)' : node.name;
-    selectElement.appendChild(option);
-
-    if (node.children && node.children.length > 0) {
-      node.children.forEach(child => {
-        const childOption = document.createElement('option');
-        childOption.value = child.id;
-        childOption.textContent = `\u00A0\u00A0\u00A0${child.name}`;
-        selectElement.appendChild(childOption);
-      });
-    }
+  const dropdown = createDropdown('Choose a domain\u2026', buildOptions(), (value) => {
+    if (onDomainSelectCb) onDomainSelectCb(value);
   });
-
-  selectElement.addEventListener('change', (e) => {
-    if (onDomainSelectCb) {
-      onDomainSelectCb(e.target.value);
-    }
-  });
-
-  container.appendChild(selectElement);
+  container.appendChild(dropdown);
 
   resetButton = document.createElement('button');
   resetButton.className = 'control-btn';
@@ -178,49 +223,14 @@ export function onExport(callback) {
   onExportCb = callback;
 }
 
-
 export function showActionButtons() {
+  if (container) container.hidden = false;
   if (resetButton) resetButton.hidden = false;
   if (exportButton) exportButton.hidden = false;
 }
 
-/**
- * Create a prominent domain selector for the landing page.
- * @param {HTMLElement} container - The landing wrapper element
- * @param {function} callback - Called with domainId when selection changes
- */
 export function createLandingSelector(container, callback) {
-  const select = document.createElement('select');
-  select.ariaLabel = 'Select knowledge domain';
-
-  const placeholder = document.createElement('option');
-  placeholder.value = '';
-  placeholder.textContent = 'Choose an area to explore\u2026';
-  placeholder.disabled = true;
-  placeholder.selected = true;
-  select.appendChild(placeholder);
-
-  const hierarchy = getHierarchy();
-
-  hierarchy.forEach(node => {
-    const option = document.createElement('option');
-    option.value = node.id;
-    option.textContent = node.id === 'all' ? 'All (General)' : node.name;
-    select.appendChild(option);
-
-    if (node.children && node.children.length > 0) {
-      node.children.forEach(child => {
-        const childOption = document.createElement('option');
-        childOption.value = child.id;
-        childOption.textContent = '\u00A0\u00A0\u00A0' + child.name;
-        select.appendChild(childOption);
-      });
-    }
-  });
-
-  select.addEventListener('change', (e) => {
-    if (e.target.value) callback(e.target.value);
-  });
-
-  container.appendChild(select);
+  const dropdown = createDropdown('Choose a region to explore\u2026', buildOptions(), callback);
+  dropdown.classList.add('custom-select--landing');
+  container.appendChild(dropdown);
 }

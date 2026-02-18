@@ -39,12 +39,12 @@ test.describe('Responsive Layout (SC-008)', () => {
     });
     const page = await context.newPage();
     await page.goto('/');
-    await page.waitForSelector('.domain-selector:not([hidden])', { timeout: 15000 });
+    await page.waitForSelector('#landing-domain-wrapper .custom-select-trigger', { timeout: 15000 });
 
-    const sel = page.locator('.domain-selector select');
-    if (await sel.count() > 0) {
-      await sel.selectOption('physics');
-    }
+    const trigger = page.locator('#landing-domain-wrapper .custom-select-trigger');
+    await trigger.tap();
+    await page.locator('#landing-domain-wrapper .custom-select-option[data-value="physics"]').tap();
+
     await page.waitForSelector('.quiz-option', { timeout: 15000 });
     const btn = page.locator('.quiz-option').first();
     await btn.waitFor({ state: 'visible' });

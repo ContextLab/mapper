@@ -6,6 +6,7 @@ import {
   ScatterplotLayer,
   TextLayer,
 } from 'deck.gl';
+import { CollisionFilterExtension } from '@deck.gl/extensions';
 import { mergeForTransition, buildTransitionFrames, needs3D } from './transitions.js';
 
 // Viridis-inspired color-blind safe palette (FR-023)
@@ -32,8 +33,8 @@ function valueToColor(value) {
   ];
 }
 
-const TRANSITION_DURATION = 1000;
-const CROSSFADE_DURATION = 600;
+const TRANSITION_DURATION = 600;
+const CROSSFADE_DURATION = 400;
 const POINT_RADIUS = 3;
 const LABEL_SIZE = 12;
 
@@ -175,8 +176,14 @@ export class Renderer {
     return new Promise((resolve) => {
       const cx = (region.x_min + region.x_max) / 2;
       const cy = (region.y_min + region.y_max) / 2;
-      const span = Math.max(region.x_max - region.x_min, region.y_max - region.y_min);
-      const zoom = Math.max(6, Math.min(14, 8 - Math.log2(span)));
+      const xSpan = region.x_max - region.x_min;
+      const ySpan = region.y_max - region.y_min;
+
+      // Account for container aspect ratio
+      const container = this._deck?.canvas?.parentElement;
+      const aspect = container ? container.clientWidth / Math.max(container.clientHeight, 1) : 1;
+      const effectiveSpan = Math.max(xSpan * 1.15, ySpan * aspect * 1.15); // 15% padding
+      const zoom = Math.max(6, Math.min(14, 8 - Math.log2(effectiveSpan)));
 
       this._viewState = {
         ...this._viewState,
@@ -250,20 +257,42 @@ export class Renderer {
     const { merged } = mergeForTransition(sourcePoints, targetPoints);
     const { startData, endData } = buildTransitionFrames(merged);
 
+    // Set start state
     this._points = startData;
     this._render();
 
     requestAnimationFrame(() => {
       if (isAborted()) { resolve(); return; }
 
+      // Compute viewport inline (same as transitionTo logic)
+      const cx = (targetRegion.x_min + targetRegion.x_max) / 2;
+      const cy = (targetRegion.y_min + targetRegion.y_max) / 2;
+      const xSpan = targetRegion.x_max - targetRegion.x_min;
+      const ySpan = targetRegion.y_max - targetRegion.y_min;
+      const container = this._deck?.canvas?.parentElement;
+      const aspect = container ? container.clientWidth / Math.max(container.clientHeight, 1) : 1;
+      const effectiveSpan = Math.max(xSpan * 1.15, ySpan * aspect * 1.15);
+      const zoom = Math.max(6, Math.min(14, 8 - Math.log2(effectiveSpan)));
+
+      // Fire points + viewport TOGETHER on same frame
       this._points = endData;
-      this._render();
-      this.transitionTo(targetRegion, duration);
+      this._viewState = {
+        ...this._viewState,
+        longitude: cx,
+        latitude: cy,
+        zoom,
+        transitionDuration: duration,
+      };
+      this._deck.setProps({
+        initialViewState: this._viewState,
+        layers: this._buildLayers(),
+      });
 
       setTimeout(() => {
         if (isAborted()) { resolve(); return; }
         this._points = targetPoints;
         this._render();
+        this._notifyViewport();
         this._transitionAbort = null;
         resolve();
       }, duration + 50);
@@ -284,16 +313,33 @@ export class Renderer {
     setTimeout(() => {
       if (isAborted()) { resolve(); return; }
 
-      // Phase 2: jump viewport, set target points invisible, then fade in
+      // Compute viewport inline
+      const cx = (targetRegion.x_min + targetRegion.x_max) / 2;
+      const cy = (targetRegion.y_min + targetRegion.y_max) / 2;
+      const xSpan = targetRegion.x_max - targetRegion.x_min;
+      const ySpan = targetRegion.y_max - targetRegion.y_min;
+      const container = this._deck?.canvas?.parentElement;
+      const aspect = container ? container.clientWidth / Math.max(container.clientHeight, 1) : 1;
+      const effectiveSpan = Math.max(xSpan * 1.15, ySpan * aspect * 1.15);
+      const zoom = Math.max(6, Math.min(14, 8 - Math.log2(effectiveSpan)));
+
+      // Set invisible target points + viewport TOGETHER
       const invisible = targetPoints.map((p) => ({
         ...p,
         color: [p.color?.[0] ?? 200, p.color?.[1] ?? 200, p.color?.[2] ?? 200, 0],
       }));
       this._points = invisible;
-      this._render();
-
-      // Jump viewport to target region (fast)
-      this.transitionTo(targetRegion, 100);
+      this._viewState = {
+        ...this._viewState,
+        longitude: cx,
+        latitude: cy,
+        zoom,
+        transitionDuration: 100,
+      };
+      this._deck.setProps({
+        initialViewState: this._viewState,
+        layers: this._buildLayers(),
+      });
 
       requestAnimationFrame(() => {
         if (isAborted()) { resolve(); return; }
@@ -303,6 +349,7 @@ export class Renderer {
 
         setTimeout(() => {
           if (isAborted()) { resolve(); return; }
+          this._notifyViewport();
           this._transitionAbort = null;
           resolve();
         }, half + 100);
@@ -322,7 +369,10 @@ export class Renderer {
 
   _render() {
     if (!this._deck) return;
+    this._deck.setProps({ layers: this._buildLayers() });
+  }
 
+  _buildLayers() {
     const layers = [];
 
     // Heatmap layer — knowledge estimates overlay
@@ -380,23 +430,25 @@ export class Renderer {
           data: this._labels,
           getPosition: (d) => [d.center_x, d.center_y],
           getText: (d) => d.label,
-          getSize: LABEL_SIZE,
+          getSize: 14,
           getColor: [255, 255, 255, 200],
           getTextAnchor: 'middle',
           getAlignmentBaseline: 'center',
-          fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
+          fontFamily: "'Space Mono', 'JetBrains Mono', monospace",
           fontWeight: 600,
           outlineWidth: 2,
-          outlineColor: [0, 0, 0, 180],
-          sizeUnits: 'meters',
-          sizeMinPixels: 8,
-          sizeMaxPixels: 16,
+          outlineColor: [0, 0, 0, 200],
+          sizeUnits: 'pixels',
           billboard: true,
+          extensions: [new CollisionFilterExtension()],
+          collisionEnabled: true,
+          collisionGroup: 'labels',
+          getCollisionPriority: (d) => d.article_count || 0,
         })
       );
     }
 
-    this._deck.setProps({ layers });
+    return layers;
   }
 
   _notifyViewport() {

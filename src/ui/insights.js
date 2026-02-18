@@ -15,7 +15,7 @@ export function init(container) {
         margin-bottom: 1rem;
         padding: 0.75rem;
         border-radius: 8px;
-        background: rgba(0,0,0,0.03);
+        background: var(--color-surface-raised);
       }
       .insights-section h3 {
         font-size: 0.85rem;
@@ -35,13 +35,13 @@ export function init(container) {
         align-items: center;
         padding: 0.3rem 0;
         font-size: 0.85rem;
-        border-bottom: 1px solid rgba(0,0,0,0.06);
+        border-bottom: 1px solid var(--color-border);
       }
       .insights-list li:last-child { border-bottom: none; }
       .insights-bar {
         width: 50px;
         height: 6px;
-        background: rgba(0,0,0,0.1);
+        background: var(--color-surface);
         border-radius: 3px;
         overflow: hidden;
         flex-shrink: 0;
@@ -53,7 +53,7 @@ export function init(container) {
         transition: width 0.3s ease;
       }
       .insights-empty {
-        color: #888;
+        color: var(--color-text-muted);
         font-style: italic;
         font-size: 0.85rem;
         text-align: center;
@@ -89,17 +89,17 @@ export function show(type, estimates, labels) {
   if (type === 'expertise') {
     title = 'Areas of Expertise';
     icon = 'fa-trophy';
-    barColor = '#4caf50';
+    barColor = 'var(--color-correct)';
     items = getTopCells(estimates, 5, 'high');
   } else if (type === 'weakness') {
     title = 'Areas of Weakness';
     icon = 'fa-arrow-trend-down';
-    barColor = '#f44336';
+    barColor = 'var(--color-incorrect)';
     items = getTopCells(estimates, 5, 'low');
   } else if (type === 'suggested') {
     title = 'Suggested Learning';
     icon = 'fa-lightbulb';
-    barColor = '#ff9800';
+    barColor = 'var(--color-primary)';
     items = getTopCells(estimates, 5, 'mid');
   }
 
@@ -127,7 +127,7 @@ export function show(type, estimates, labels) {
     li.innerHTML = `
       <span>${label}</span>
       <span style="display:flex;align-items:center;gap:0.3rem;">
-        <span style="font-size:0.75rem;color:#888;">${pct}%</span>
+        <span style="font-size:0.75rem;color:var(--color-text-muted);">${pct}%</span>
         <span class="insights-bar">
           <span class="insights-bar-fill" style="width:${pct}%;background:${barColor};"></span>
         </span>

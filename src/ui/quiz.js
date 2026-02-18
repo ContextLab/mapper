@@ -46,7 +46,7 @@ export function init(container) {
         transition: all 0.2s ease;
         min-height: 44px;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         width: 100%;
         touch-action: manipulation;
       }
@@ -109,6 +109,7 @@ export function init(container) {
 
 
   container.innerHTML = `
+    <div class="resize-handle"></div>
     <div class="quiz-content">
       <div class="quiz-question" aria-live="polite"></div>
       <div class="quiz-options" role="group" aria-label="Answer options">
@@ -135,8 +136,30 @@ export function init(container) {
     btn.addEventListener('click', () => handleOptionClick(btn.dataset.key));
   });
 
-
   document.addEventListener('keydown', handleKeyDown);
+
+  const resizeHandle = container.querySelector('.resize-handle');
+  if (resizeHandle) {
+    let resizing = false;
+    resizeHandle.addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      resizing = true;
+      resizeHandle.classList.add('active');
+      const onMove = (ev) => {
+        if (!resizing) return;
+        const newWidth = Math.max(280, Math.min(600, window.innerWidth - ev.clientX));
+        document.documentElement.style.setProperty('--sidebar-width', newWidth + 'px');
+      };
+      const onUp = () => {
+        resizing = false;
+        resizeHandle.classList.remove('active');
+        document.removeEventListener('mousemove', onMove);
+        document.removeEventListener('mouseup', onUp);
+      };
+      document.addEventListener('mousemove', onMove);
+      document.addEventListener('mouseup', onUp);
+    });
+  }
 }
 
 function handleKeyDown(e) {

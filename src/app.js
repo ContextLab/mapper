@@ -129,7 +129,7 @@ function wireSubscriptions() {
   $estimates.subscribe((estimates) => {
     if (!renderer || !currentDomainBundle) return;
     renderer.setHeatmap(estimates, currentDomainBundle.domain.region);
-    if (minimap) minimap.setEstimates(estimates);
+    if (minimap) minimap.setEstimates(estimates, currentDomainBundle.domain.region);
   });
 
   $coverage.subscribe((coverage) => {
@@ -240,6 +240,7 @@ async function switchDomain(domainId) {
 
     if (minimap) {
       minimap.setActive(domainId);
+      minimap.setArticles(targetPoints);
       minimap.setViewport(renderer.getViewport());
     }
 

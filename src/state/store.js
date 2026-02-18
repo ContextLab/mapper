@@ -41,11 +41,16 @@ export const $answeredIds = computed($responses, (responses) =>
   new Set(responses.map((r) => r.question_id))
 );
 
-/** Coverage percentage for active domain */
+/** Coverage percentage for active domain (uncertainty-weighted) */
 export const $coverage = computed($estimates, (estimates) => {
   if (estimates.length === 0) return 0;
-  const withEvidence = estimates.filter((e) => e.evidenceCount > 0);
-  return withEvidence.length / estimates.length;
+  let totalCoverage = 0;
+  for (const e of estimates) {
+    if (e.state === 'unknown') continue;
+    // Each cell contributes (1 - uncertainty) — well-evidenced cells contribute more
+    totalCoverage += (1 - e.uncertainty);
+  }
+  return totalCoverage / estimates.length;
 });
 
 /** Whether insights are available (>= 10 responses) */

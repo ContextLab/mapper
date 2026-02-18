@@ -35,18 +35,30 @@ export function init(headerElement) {
     style.id = 'controls-style';
     style.textContent = `
       .domain-selector select {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.6rem;
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+        padding: 0.4rem 2rem 0.4rem 0.6rem;
         border-radius: 6px;
-        border: 1px solid rgba(0,0,0,0.15);
-        background-color: white;
+        border: 1px solid var(--color-border);
+        background-color: var(--color-surface-raised);
+        color: var(--color-text);
         cursor: pointer;
         outline: none;
-        transition: border-color 0.2s;
-        max-width: 200px;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        max-width: 220px;
+        appearance: none;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23848bb2' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.5rem center;
       }
       .domain-selector select:focus {
-        border-color: var(--color-primary, #3f51b5);
+        border-color: var(--color-primary);
+        box-shadow: 0 0 8px var(--color-glow-primary);
+      }
+      .domain-selector select option {
+        background: var(--color-surface);
+        color: var(--color-text);
       }
       .control-btn {
         min-height: 36px;
@@ -54,16 +66,18 @@ export function init(headerElement) {
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 1px solid rgba(0,0,0,0.15);
-        border-radius: 4px;
-        background: white;
+        border: 1px solid var(--color-border);
+        border-radius: 6px;
+        background: var(--color-surface-raised);
         cursor: pointer;
-        color: #555;
+        color: var(--color-text-muted);
         font-size: 1rem;
-        transition: background-color 0.2s;
+        transition: all 0.2s ease;
       }
       .control-btn:hover {
-        background-color: #f5f5f5;
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+        box-shadow: 0 0 8px var(--color-glow-primary);
       }
       @media (max-width: 768px) {
         .header-left {
@@ -136,6 +150,20 @@ export function init(headerElement) {
     if (onExportCb) onExportCb();
   });
   container.appendChild(exportButton);
+
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('mapper-theme', next);
+      const icon = themeToggle.querySelector('i');
+      if (icon) {
+        icon.className = next === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+      }
+    });
+  }
 }
 
 export function onDomainSelect(callback) {

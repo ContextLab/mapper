@@ -34,6 +34,10 @@ let domainQuestionCount = 0;
 let switchGeneration = 0;
 
 async function boot() {
+  // Restore saved theme preference
+  const savedTheme = localStorage.getItem('mapper-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+
   const storageAvailable = isAvailable();
   if (!storageAvailable) {
     showNotice('Progress won\u2019t be saved across visits (localStorage unavailable).');

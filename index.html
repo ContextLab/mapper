@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Wikipedia Knowledge Map - An interactive visualization of 250,000 Wikipedia articles, their semantic relationships, and difficulty levels.">
-    <title>Wikipedia Knowledge Map</title>
+    <title>Knowledge Mapper</title>
 
     <!-- KaTeX for LaTeX rendering -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous" onerror="window.__katexFailed=true; console.error('KaTeX CSS failed to load'); document.getElementById('cdn-warning').hidden=false;">
@@ -223,6 +223,43 @@
             border-bottom-style: solid;
             text-shadow: 0 0 8px var(--color-glow-secondary);
         }
+        .landing-domain-wrapper {
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: center;
+        }
+        .landing-domain-wrapper select {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            padding: 0.75rem 2.5rem 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--color-primary);
+            background-color: var(--color-surface-raised);
+            color: var(--color-text);
+            cursor: pointer;
+            outline: none;
+            box-shadow: 0 0 16px var(--color-glow-primary);
+            appearance: none;
+            -webkit-appearance: none;
+            min-width: 280px;
+            text-align: center;
+            text-align-last: center;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ff7edb' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .landing-domain-wrapper select:focus {
+            border-color: var(--color-secondary);
+            box-shadow: 0 0 20px var(--color-glow-secondary);
+        }
+        .landing-domain-wrapper select option {
+            background: var(--color-surface);
+            color: var(--color-text);
+            text-align: left;
+        }
+
         .landing-cta {
             margin-top: 2.5rem;
             display: flex;
@@ -404,25 +441,29 @@
             <!-- Landing / Loading Screen -->
             <section id="landing">
                 <div class="landing-content">
-                    <h1>Wikipedia Knowledge Map</h1>
-                    <h2>Explore what you know across 250,000 Wikipedia articles</h2>
+                    <h1>Knowledge Mapper</h1>
+                    <h2>Map out (an approximation of) everything you know!</h2>
                     
                     <p>
                         <i class="fa-solid fa-map" style="margin-right: 8px;"></i>
-                        An interactive visualization mapping knowledge across Wikipedia using text embeddings.
+                        Build and interact with a visualization of your own knowledge
                     </p>
                     <p>
                         <i class="fa-solid fa-brain" style="margin-right: 8px;"></i>
-                        Answer questions, watch a heatmap reveal what you know, and discover gaps and strengths.
+                        Answer questions to watch our system's model of <em>you</em> update in real time
                     </p>
                     <p>
                         <i class="fa-solid fa-graduation-cap" style="margin-right: 8px;"></i>
-                        Based on research using text embedding models to map conceptual knowledge. <a href="https://psyarxiv.com/dh3q2" target="_blank" rel="noopener">Read the research paper</a>.
+                        Read our <a href="https://psyarxiv.com/dh3q2" target="_blank" rel="noopener">research paper</a> to learn more.
                     </p>
 
+                    <div class="landing-domain-wrapper" id="landing-domain-wrapper">
+                        <!-- Populated by controls.js -->
+                    </div>
+
                     <div class="landing-cta">
-                        <i class="fa-solid fa-arrow-up"></i>
-                        <span>Get Started: Select a domain above</span>
+                        <i class="fa-solid fa-arrow-down"></i>
+                        <span>Select an area to map to get started</span>
                     </div>
                 </div>
             </section>
@@ -446,7 +487,7 @@
     <!-- About Modal -->
     <div id="about-modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <div class="modal-content">
-            <h2 id="modal-title" style="margin-bottom: 1rem; font-family: var(--font-heading); color: var(--color-primary);">About Wikipedia Knowledge Map</h2>
+            <h2 id="modal-title" style="margin-bottom: 1rem; font-family: var(--font-heading); color: var(--color-primary);">About Knowledge Mapper</h2>
             <p style="line-height: 1.7; margin-bottom: 0.75rem; font-size: 0.9rem;">
                 This interactive demo maps your knowledge across 250,000 Wikipedia articles
                 using <strong style="color:var(--color-secondary)">text embedding models</strong>. Articles are projected into a

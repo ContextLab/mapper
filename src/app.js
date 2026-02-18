@@ -72,6 +72,11 @@ async function boot() {
   controls.onReset(handleReset);
   controls.onExport(handleExport);
 
+  const landingWrapper = document.getElementById('landing-domain-wrapper');
+  if (landingWrapper) {
+    controls.createLandingSelector(landingWrapper, (domainId) => $activeDomain.set(domainId));
+  }
+
   const quizPanel = document.getElementById('quiz-panel');
   quiz.init(quizPanel);
   quiz.onAnswer(handleAnswer);
@@ -85,6 +90,9 @@ async function boot() {
     minimap = new Minimap();
     minimap.init(minimapContainer, registry.getDomains());
     minimap.onClick((domainId) => $activeDomain.set(domainId));
+    minimap.onNavigate((region) => {
+      if (renderer) renderer.transitionTo(region, 400);
+    });
   }
 
   if (import.meta.env.DEV) {
@@ -94,7 +102,7 @@ async function boot() {
   setupKeyboardNav({ onEscape: handleEscape });
   wireSubscriptions();
 
-  announce('Wikipedia Knowledge Map loaded. Select a domain to begin.');
+  announce('Knowledge Mapper loaded. Select a domain to begin.');
 }
 
 function wireSubscriptions() {
@@ -123,6 +131,7 @@ function articlesToPoints(articles) {
     color: [180, 180, 220, 100],
     radius: 2,
     title: a.title,
+    url: a.url,
   }));
 }
 
@@ -147,10 +156,10 @@ async function switchDomain(domainId) {
 
     if (generation !== switchGeneration) return;
 
-    currentDomainBundle = bundle;
-    indexQuestions(bundle.questions);
-    domainQuestionCount = 0;
-    modes.updateAvailability(0);
+     currentDomainBundle = bundle;
+     indexQuestions(bundle.questions);
+     domainQuestionCount = $responses.get().filter(r => r.domain_id === domainId).length;
+     modes.updateAvailability(domainQuestionCount);
 
     const domain = bundle.domain;
     estimator.init(domain.grid_size, domain.region);

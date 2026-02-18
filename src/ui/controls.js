@@ -178,7 +178,49 @@ export function onExport(callback) {
   onExportCb = callback;
 }
 
+
 export function showActionButtons() {
   if (resetButton) resetButton.hidden = false;
   if (exportButton) exportButton.hidden = false;
+}
+
+/**
+ * Create a prominent domain selector for the landing page.
+ * @param {HTMLElement} container - The landing wrapper element
+ * @param {function} callback - Called with domainId when selection changes
+ */
+export function createLandingSelector(container, callback) {
+  const select = document.createElement('select');
+  select.ariaLabel = 'Select knowledge domain';
+
+  const placeholder = document.createElement('option');
+  placeholder.value = '';
+  placeholder.textContent = 'Choose an area to explore\u2026';
+  placeholder.disabled = true;
+  placeholder.selected = true;
+  select.appendChild(placeholder);
+
+  const hierarchy = getHierarchy();
+
+  hierarchy.forEach(node => {
+    const option = document.createElement('option');
+    option.value = node.id;
+    option.textContent = node.id === 'all' ? 'All (General)' : node.name;
+    select.appendChild(option);
+
+    if (node.children && node.children.length > 0) {
+      node.children.forEach(child => {
+        const childOption = document.createElement('option');
+        childOption.value = child.id;
+        childOption.textContent = '\u00A0\u00A0\u00A0' + child.name;
+        select.appendChild(childOption);
+      });
+    }
+  });
+
+  select.addEventListener('change', (e) => {
+    if (e.target.value) callback(e.target.value);
+  });
+
+  container.appendChild(select);
 }

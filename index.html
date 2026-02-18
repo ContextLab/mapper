@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,55 +10,83 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous" onerror="window.__katexFailed=true; console.error('KaTeX CSS failed to load'); document.getElementById('cdn-warning').hidden=false;">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous" onerror="window.__katexFailed=true; console.error('KaTeX JS failed to load'); document.getElementById('cdn-warning').hidden=false;"></script>
 
+    <!-- Monospace fonts: Space Mono (headings) + JetBrains Mono (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous" onerror="console.error('Font Awesome failed to load'); document.body.classList.add('fa-failed'); document.getElementById('cdn-warning').hidden=false;">
 
     <style>
-        :root {
-            --color-bg: #1a1a2e; /* Dark blue-gray for map background */
+        :root, [data-theme="dark"] {
+            --color-bg: #241b2f;
+            --color-surface: #262335;
+            --color-surface-raised: #2d2847;
+            --color-primary: #ff7edb;
+            --color-secondary: #36f9f6;
+            --color-tertiary: #72f1b8;
+            --color-accent: #ff7edb;
+            --color-text: #ffffff;
+            --color-text-muted: #848bb2;
+            --color-correct: #72f1b8;
+            --color-incorrect: #ff5c5c;
+            --color-border: rgba(255,126,219,0.2);
+            --color-glow-primary: rgba(255,126,219,0.4);
+            --color-glow-secondary: rgba(54,249,246,0.3);
+            --font-heading: 'Space Mono', monospace;
+            --font-body: 'JetBrains Mono', monospace;
+            --header-height: 56px;
+            --sidebar-width: 380px;
+        }
+        [data-theme="light"] {
+            --color-bg: #f0e6ff;
             --color-surface: #ffffff;
-            --color-text: #1a1a2e;
-            --color-primary: #3f51b5;
-            --color-accent: #f50057;
-            --header-height: 60px;
-            --sidebar-width: 360px;
+            --color-surface-raised: #f5f0ff;
+            --color-primary: #c850c0;
+            --color-secondary: #4158d0;
+            --color-tertiary: #5eb88a;
+            --color-accent: #c850c0;
+            --color-text: #2d1b4e;
+            --color-text-muted: #7c6f9f;
+            --color-correct: #4caf50;
+            --color-incorrect: #e53935;
+            --color-border: rgba(200,80,192,0.2);
+            --color-glow-primary: rgba(200,80,192,0.15);
+            --color-glow-secondary: rgba(65,88,208,0.15);
         }
 
-        /* Reset & Base */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: var(--font-body);
             background-color: var(--color-bg);
             color: var(--color-text);
             overflow: hidden;
             height: 100vh;
             width: 100vw;
+            transition: background-color 0.4s ease, color 0.4s ease;
         }
 
-        /* Focus Styles (T048) */
         :focus-visible {
-            outline: 2px solid var(--color-primary);
+            outline: 2px solid var(--color-secondary);
             outline-offset: 2px;
         }
 
-        /* Skip Link (T048) */
         .skip-link {
             position: absolute;
             top: -100px;
             left: 0;
             background: var(--color-primary);
-            color: white;
+            color: #fff;
             padding: 0.5rem 1rem;
             z-index: 9999;
             text-decoration: none;
             font-weight: bold;
+            font-family: var(--font-body);
             transition: top 0.2s;
         }
-        .skip-link:focus {
-            top: 0;
-        }
+        .skip-link:focus { top: 0; }
 
-        /* Font Awesome Fallback (T047) */
         body.fa-failed .fa-map::before { content: "Map"; font-style: normal; font-size: 0.9em; }
         body.fa-failed .fa-brain::before { content: "Learn"; font-style: normal; font-size: 0.9em; }
         body.fa-failed .fa-graduation-cap::before { content: "Research"; font-style: normal; font-size: 0.9em; }
@@ -67,29 +95,58 @@
         body.fa-failed .fa-check::before { content: "✓"; font-style: normal; }
         body.fa-failed .fa-times::before { content: "✕"; font-style: normal; }
 
-        /* Layout */
         #app {
             display: grid;
             grid-template-rows: var(--header-height) 1fr;
             height: 100%;
         }
 
-        /* Header */
         #app-header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-            padding: 0 1.5rem;
+            background: var(--color-surface);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--color-border);
+            box-shadow: 0 1px 12px var(--color-glow-primary);
+            padding: 0 1.25rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
             z-index: 100;
+            transition: background-color 0.4s ease, box-shadow 0.4s ease;
         }
-        .header-left { display: flex; align-items: center; gap: 1rem; }
-        .logo { font-weight: 700; font-size: 1.1rem; color: var(--color-text); }
-        .domain-selector { font-size: 0.9rem; }
+        .header-left { display: flex; align-items: center; gap: 0.75rem; }
+        .header-right { display: flex; align-items: center; gap: 0.5rem; }
+        .logo {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--color-primary);
+            text-shadow: 0 0 12px var(--color-glow-primary);
+            letter-spacing: -0.02em;
+            transition: color 0.4s ease, text-shadow 0.4s ease;
+        }
+        .domain-selector { font-size: 0.85rem; }
 
-        /* Main Area */
+        .btn-icon {
+            min-width: 38px;
+            min-height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            color: var(--color-text-muted);
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+        .btn-icon:hover {
+            color: var(--color-primary);
+            border-color: var(--color-primary);
+            box-shadow: 0 0 10px var(--color-glow-primary);
+            transform: scale(1.05);
+        }
+
         #app-main {
             position: relative;
             width: 100%;
@@ -97,20 +154,19 @@
             overflow: hidden;
         }
 
-        /* Map Container */
         #map-container {
             position: absolute;
             inset: 0;
             z-index: 1;
             background-color: var(--color-bg);
-            touch-action: none; /* Prevent browser handling of gestures */
+            touch-action: none;
+            transition: background-color 0.4s ease;
         }
 
-        /* Landing/Intro */
         #landing {
             position: absolute;
             inset: 0;
-            background: var(--color-surface);
+            background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-surface) 40%, var(--color-bg) 100%);
             z-index: 50;
             display: flex;
             flex-direction: column;
@@ -118,219 +174,208 @@
             justify-content: center;
             text-align: center;
             padding: 2rem;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.5s ease;
         }
-        #landing.hidden { opacity: 0; pointer-events: none; }
+        #landing.hidden { opacity: 0; pointer-events: none; visibility: hidden; }
 
         .landing-content {
-            max-width: 640px;
+            max-width: 600px;
             color: var(--color-text);
         }
         .landing-content h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--color-primary);
+            text-shadow: 0 0 20px var(--color-glow-primary), 0 0 60px rgba(255,126,219,0.15);
         }
         .landing-content h2 {
-            font-size: 1.1rem;
-            color: #595959; /* T050: Improved contrast (was rgba(0,0,0,0.6)) */
-            margin-bottom: 2rem;
-            font-weight: normal;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            line-height: 1.5;
         }
         .landing-content p {
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            font-size: 1rem;
+            font-family: var(--font-body);
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+            font-size: 0.9rem;
+            color: var(--color-text);
+            text-align: left;
+        }
+        .landing-content p i {
+            color: var(--color-secondary);
+            text-shadow: 0 0 8px var(--color-glow-secondary);
+            width: 1.5em;
+            text-align: center;
         }
         .landing-content a {
-            color: var(--color-primary);
+            color: var(--color-secondary);
             text-decoration: none;
-            border-bottom: 1px dotted var(--color-primary);
+            border-bottom: 1px dotted rgba(54,249,246,0.5);
+            transition: all 0.2s ease;
         }
         .landing-content a:hover {
             border-bottom-style: solid;
+            text-shadow: 0 0 8px var(--color-glow-secondary);
         }
         .landing-cta {
-            margin-top: 2rem;
+            margin-top: 2.5rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 0.5rem;
-            color: var(--color-primary);
-            font-weight: 600;
+            color: var(--color-secondary);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-shadow: 0 0 10px var(--color-glow-secondary);
         }
         .landing-cta i {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
             animation: bounce 2s infinite;
         }
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-10px);}
-            60% {transform: translateY(-5px);}
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
         }
 
-        /* Quiz Panel (Sidebar) */
         #quiz-panel {
             position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; right: 0; bottom: 0;
             width: var(--sidebar-width);
             background: var(--color-surface);
-            box-shadow: -2px 0 12px rgba(0,0,0,0.15);
+            box-shadow: -2px 0 24px rgba(0,0,0,0.3), -1px 0 0 var(--color-border);
             z-index: 10;
             transform: translateX(100%);
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                        background-color 0.4s ease;
             display: flex;
             flex-direction: column;
-            padding: 1rem;
+            padding: 1rem 1.25rem;
             overflow-y: auto;
+            overflow-x: hidden;
         }
         #quiz-panel:not([hidden]) { transform: translateX(0); }
+        #quiz-panel::-webkit-scrollbar { width: 5px; }
+        #quiz-panel::-webkit-scrollbar-track { background: transparent; }
+        #quiz-panel::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+        #quiz-panel::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
 
-        /* Minimap */
         #minimap-container {
             position: absolute;
             bottom: 20px;
-            right: 20px;
+            left: 20px;
             width: 200px;
             height: 150px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(38,35,53,0.7);
+            border: 1px solid var(--color-border);
             border-radius: 8px;
             z-index: 5;
-            backdrop-filter: blur(4px);
+            backdrop-filter: blur(6px);
             overflow: hidden;
-            transition: opacity 0.3s;
+            transition: opacity 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 12px var(--color-glow-primary);
         }
         #minimap-container[hidden] { display: none; }
 
-        /* Progress Overlay */
         #progress-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 0; left: 0;
             width: 100%;
-            height: 4px;
+            height: 3px;
             background: transparent;
             z-index: 200;
             pointer-events: none;
         }
-        /* (Actual progress bar styling would be injected or handled via JS width) */
 
-        /* Modal */
         .modal {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.6);
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(4px);
             z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: center;
             opacity: 0;
             pointer-events: none;
-            transition: opacity 0.2s ease;
+            transition: opacity 0.25s ease;
         }
         .modal:not([hidden]) { opacity: 1; pointer-events: auto; }
         .modal-content {
             background: var(--color-surface);
+            color: var(--color-text);
             padding: 2rem;
             border-radius: 12px;
             max-width: 600px;
             width: 90%;
             max-height: 85vh;
             overflow-y: auto;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4), 0 0 30px var(--color-glow-primary);
+            border: 1px solid var(--color-border);
+            font-family: var(--font-body);
+            transition: background-color 0.4s ease;
+        }
+        .modal-content a {
+            color: var(--color-secondary);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--color-secondary);
+            transition: all 0.2s;
+        }
+        .modal-content a:hover {
+            text-shadow: 0 0 8px var(--color-glow-secondary);
+            border-bottom-style: solid;
         }
 
-        /* Utilities */
         .sr-only {
             position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
             overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
         }
         [hidden] { display: none !important; }
 
-        /* CDN Warning */
         #cdn-warning {
-            position: absolute; top: 0; left: 0; right: 0; 
-            background: #ffeb3b; color: #000; font-size: 0.8rem; 
+            position: absolute; top: 0; left: 0; right: 0;
+            background: #ffeb3b; color: #000; font-size: 0.8rem;
             padding: 4px; text-align: center; z-index: 2000;
         }
 
-        /* Responsive Layout (T045) */
-        /* Tablet: 481px - 768px */
         @media (max-width: 768px) {
             :root { --sidebar-width: 50%; }
-            
-            #app-header {
-                padding: 0 1rem;
-            }
-
+            #app-header { padding: 0 1rem; }
             #quiz-panel {
-                /* Side drawer on tablet */
-                width: 50%; 
+                width: 50%;
                 top: var(--header-height);
                 height: calc(100vh - var(--header-height));
-                box-shadow: -2px 0 12px rgba(0,0,0,0.15);
-            }
-            
-            /* Reposition minimap to bottom-left on tablet to avoid overlap with right panel */
-            #minimap-container {
-                right: auto;
-                left: 20px;
-                bottom: 20px;
             }
         }
 
-        /* Mobile: ≤480px */
         @media (max-width: 480px) {
             :root { --header-height: 50px; }
-
-            #app-header {
-                padding: 0 0.75rem;
-            }
-            .logo span { display: none; } /* Hide "Knowledge Map" text if needed, or scale down */
-            .logo { font-size: 1rem; }
-            .header-left { gap: 0.5rem; }
-
-            /* Stacked layout: Map takes full screen, panel is bottom sheet */
+            #app-header { padding: 0 0.75rem; }
+            .logo span { display: none; }
+            .logo { font-size: 0.95rem; }
+            .header-left { gap: 0.4rem; }
             #quiz-panel {
-                top: auto;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                width: 100%;
-                height: 60vh; /* Takes up 60% height */
+                top: auto; bottom: 0; left: 0; right: 0;
+                width: 100%; height: 60vh;
                 transform: translateY(100%);
                 border-radius: 16px 16px 0 0;
-                box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+                box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
                 z-index: 20;
             }
             #quiz-panel:not([hidden]) { transform: translateY(0); }
-
-            /* Full width domain selector */
-            .domain-selector {
-                flex-grow: 1;
-                max-width: 200px;
-            }
-
-            /* Hide minimap completely on mobile */
+            .domain-selector { flex-grow: 1; max-width: 200px; }
             #minimap-container { display: none; }
-
-            /* Larger touch targets */
             button, a, .quiz-option {
                 min-height: 44px;
                 min-width: 44px;
-                touch-action: manipulation; /* T046 */
+                touch-action: manipulation;
             }
-        }
-
-        /* Dark Mode Stub (T050) */
-        @media (prefers-color-scheme: dark) {
-            /* 
-             * Future implementation:
-             * :root { --color-bg: #000; --color-text: #fff; ... } 
-             */
         }
     </style>
 </head>
@@ -345,9 +390,14 @@
                 <!-- Domain selector placeholder -->
                 <div class="domain-selector" hidden aria-label="Select knowledge domain"></div>
             </div>
-            <button id="about-btn" class="btn-icon" aria-label="About this project" style="min-width: 44px; min-height: 44px;">
-                <i class="fa-solid fa-circle-info"></i>
-            </button>
+            <div class="header-right">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle light/dark theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button id="about-btn" class="btn-icon" aria-label="About this project">
+                    <i class="fa-solid fa-circle-info"></i>
+                </button>
+            </div>
         </header>
 
         <main id="app-main">
@@ -358,15 +408,15 @@
                     <h2>Explore what you know across 250,000 Wikipedia articles</h2>
                     
                     <p>
-                        <i class="fa-solid fa-map" style="color: var(--color-primary); margin-right: 8px;"></i>
+                        <i class="fa-solid fa-map" style="margin-right: 8px;"></i>
                         An interactive visualization mapping knowledge across Wikipedia using text embeddings.
                     </p>
                     <p>
-                        <i class="fa-solid fa-brain" style="color: var(--color-primary); margin-right: 8px;"></i>
+                        <i class="fa-solid fa-brain" style="margin-right: 8px;"></i>
                         Answer questions, watch a heatmap reveal what you know, and discover gaps and strengths.
                     </p>
                     <p>
-                        <i class="fa-solid fa-graduation-cap" style="color: var(--color-primary); margin-right: 8px;"></i>
+                        <i class="fa-solid fa-graduation-cap" style="margin-right: 8px;"></i>
                         Based on research using text embedding models to map conceptual knowledge. <a href="https://psyarxiv.com/dh3q2" target="_blank" rel="noopener">Read the research paper</a>.
                     </p>
 
@@ -396,48 +446,44 @@
     <!-- About Modal -->
     <div id="about-modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <div class="modal-content">
-            <h2 id="modal-title" style="margin-bottom: 1rem;">About Wikipedia Knowledge Map</h2>
-            <p style="line-height: 1.6; margin-bottom: 0.75rem;">
+            <h2 id="modal-title" style="margin-bottom: 1rem; font-family: var(--font-heading); color: var(--color-primary);">About Wikipedia Knowledge Map</h2>
+            <p style="line-height: 1.7; margin-bottom: 0.75rem; font-size: 0.9rem;">
                 This interactive demo maps your knowledge across 250,000 Wikipedia articles
-                using <strong>text embedding models</strong>. Articles are projected into a
+                using <strong style="color:var(--color-secondary)">text embedding models</strong>. Articles are projected into a
                 2D space where semantically related topics cluster together &mdash; physics near
                 mathematics, neuroscience near biology.
             </p>
-            <p style="line-height: 1.6; margin-bottom: 0.75rem;">
-                As you answer questions, a <strong>Gaussian process</strong> estimates your
+            <p style="line-height: 1.7; margin-bottom: 0.75rem; font-size: 0.9rem;">
+                As you answer questions, a <strong style="color:var(--color-secondary)">Gaussian process</strong> estimates your
                 knowledge across the entire domain, filling in a heatmap that reveals both
-                your strengths and gaps. The system uses <strong>active learning</strong> to
+                your strengths and gaps. The system uses <strong style="color:var(--color-secondary)">active learning</strong> to
                 select the most informative questions, efficiently mapping your knowledge
                 with as few questions as possible.
             </p>
-            <p style="line-height: 1.6; margin-bottom: 0.75rem;">
+            <p style="line-height: 1.7; margin-bottom: 0.75rem; font-size: 0.9rem;">
                 Because the map lives in embedding space, answering questions in one domain
                 (e.g., Mathematics) produces predictions in related domains
                 (e.g., Probability &amp; Statistics) &mdash; demonstrating that text embeddings
                 capture conceptual relationships.
             </p>
-            <p style="line-height: 1.6; margin-bottom: 1rem;">
+            <p style="line-height: 1.7; margin-bottom: 1rem; font-size: 0.9rem;">
                 <strong>Research paper:</strong>
-                <a href="https://psyarxiv.com/dh3q2" target="_blank" rel="noopener"
-                   style="color: var(--color-primary);">
+                <a href="https://psyarxiv.com/dh3q2" target="_blank" rel="noopener">
                     Text embedding models yield high-resolution insights into conceptual knowledge
                 </a>
             </p>
-            <p style="line-height: 1.6; margin-bottom: 1rem;">
+            <p style="line-height: 1.7; margin-bottom: 1rem; font-size: 0.9rem;">
                 <strong>Source code:</strong>
-                <a href="https://github.com/ContextLab/mapper" target="_blank" rel="noopener"
-                   style="color: var(--color-primary);">
+                <a href="https://github.com/ContextLab/mapper" target="_blank" rel="noopener">
                     github.com/ContextLab/mapper
                 </a>
             </p>
-            <p style="font-size: 0.85rem; color: #595959; margin-bottom: 1rem;">
+            <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 1rem;">
                 All computation runs in your browser. No data is sent to any server.
                 Your progress is saved locally and can be exported or reset at any time.
             </p>
-            <button class="close-modal"
-                    style="padding: 0.5rem 1.5rem; border: 1px solid rgba(0,0,0,0.15);
-                           border-radius: 6px; background: white; cursor: pointer;
-                           font-size: 0.9rem; min-height: 44px;">
+            <button class="close-modal btn-icon"
+                    style="width:auto; padding: 0.5rem 1.5rem; font-family: var(--font-body); font-size: 0.85rem;">
                 Close
             </button>
         </div>

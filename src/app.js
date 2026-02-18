@@ -17,6 +17,7 @@ import { Sampler } from './learning/sampler.js';
 import { getCentrality } from './learning/curriculum.js';
 import { Renderer } from './viz/renderer.js';
 import { Minimap } from './viz/minimap.js';
+import { ParticleSystem } from './viz/particles.js';
 import * as controls from './ui/controls.js';
 import * as quiz from './ui/quiz.js';
 import * as modes from './ui/modes.js';
@@ -26,12 +27,14 @@ import { announce, setupKeyboardNav } from './utils/accessibility.js';
 
 let renderer = null;
 let minimap = null;
+let particleSystem = null;
 let estimator = null;
 let sampler = null;
 let currentDomainBundle = null;
 let currentViewport = { x_min: 0, x_max: 1, y_min: 0, y_max: 1 };
 let domainQuestionCount = 0;
 let switchGeneration = 0;
+let questionIndex = new Map();
 
 async function boot() {
   // Restore saved theme preference
@@ -54,6 +57,12 @@ async function boot() {
     console.error('[app] Failed to load domain registry:', err);
     showLandingError('Could not load domain data. Please try refreshing.');
     return;
+  }
+
+  const particleCanvas = document.getElementById('particle-canvas');
+  if (particleCanvas) {
+    particleSystem = new ParticleSystem();
+    particleSystem.init(particleCanvas, import.meta.env.BASE_URL || '/');
   }
 
   renderer = new Renderer();
@@ -80,6 +89,12 @@ async function boot() {
   const quizPanel = document.getElementById('quiz-panel');
   quiz.init(quizPanel);
   quiz.onAnswer(handleAnswer);
+
+  renderer.onReanswer((questionId) => {
+    const q = questionIndex.get(questionId);
+    if (q) quiz.showQuestion(q);
+  });
+
   modes.init(quizPanel);
   modes.onModeSelect(handleModeSelect);
   insights.init(quizPanel);
@@ -114,6 +129,7 @@ function wireSubscriptions() {
   $estimates.subscribe((estimates) => {
     if (!renderer || !currentDomainBundle) return;
     renderer.setHeatmap(estimates, currentDomainBundle.domain.region);
+    if (minimap) minimap.setEstimates(estimates);
   });
 
   $coverage.subscribe((coverage) => {
@@ -135,10 +151,36 @@ function articlesToPoints(articles) {
   }));
 }
 
+function responsesToAnsweredDots(responses, qIndex) {
+  const latest = new Map();
+  for (const r of responses) {
+    latest.set(r.question_id, r);
+  }
+  const dots = [];
+  for (const [qid, r] of latest) {
+    const q = qIndex.get(qid);
+    if (!q) continue;
+    dots.push({
+      x: r.x,
+      y: r.y,
+      questionId: qid,
+      title: q.question_text,
+      isCorrect: r.is_correct,
+      color: r.is_correct ? [114, 241, 184, 200] : [255, 92, 92, 200],
+    });
+  }
+  return dots;
+}
+
 async function switchDomain(domainId) {
   const generation = ++switchGeneration;
   const landing = document.getElementById('landing');
   if (landing) landing.classList.add('hidden');
+
+  if (particleSystem) {
+    particleSystem.destroy();
+    particleSystem = null;
+  }
 
   const quizPanel = document.getElementById('quiz-panel');
   const previousBundle = currentDomainBundle;
@@ -158,6 +200,7 @@ async function switchDomain(domainId) {
 
      currentDomainBundle = bundle;
      indexQuestions(bundle.questions);
+     questionIndex = new Map(bundle.questions.map(q => [q.id, q]));
      domainQuestionCount = $responses.get().filter(r => r.domain_id === domainId).length;
      modes.updateAvailability(domainQuestionCount);
 
@@ -205,6 +248,9 @@ async function switchDomain(domainId) {
     controls.showActionButtons();
 
     announce(`Loaded ${domain.name}. ${bundle.questions.length} questions available.`);
+
+    const domainResponses = $responses.get().filter(r => r.domain_id === domainId);
+    renderer.setAnsweredQuestions(responsesToAnsweredDots(domainResponses, questionIndex));
 
     selectAndShowNextQuestion();
   } catch (err) {
@@ -269,14 +315,22 @@ function handleAnswer(selectedKey, question) {
   };
 
   const current = $responses.get();
-  $responses.set([...current, response]);
+  const filtered = current.filter(r => r.question_id !== question.id);
+  const isReanswer = filtered.length < current.length;
+  $responses.set([...filtered, response]);
 
   estimator.observe(question.x, question.y, isCorrect);
   const estimates = estimator.predict();
   $estimates.set(estimates);
 
-  domainQuestionCount++;
-  modes.updateAvailability(domainQuestionCount);
+  if (!isReanswer) {
+    domainQuestionCount++;
+    modes.updateAvailability(domainQuestionCount);
+  }
+
+  const domainId = currentDomainBundle.domain.id;
+  const domainResponses = $responses.get().filter(r => r.domain_id === domainId);
+  renderer.setAnsweredQuestions(responsesToAnsweredDots(domainResponses, questionIndex));
 
   const feedback = isCorrect 
     ? 'Correct!' 
@@ -301,7 +355,12 @@ function handleReset() {
   renderer.setPoints([]);
   renderer.setHeatmap([], { x_min: 0, x_max: 1, y_min: 0, y_max: 1 });
   renderer.setLabels([]);
-  if (minimap) minimap.setActive(null);
+  renderer.setAnsweredQuestions([]);
+  questionIndex = new Map();
+  if (minimap) {
+    minimap.setActive(null);
+    minimap.setEstimates([]);
+  }
   const quizPanel = document.getElementById('quiz-panel');
   if (quizPanel) quizPanel.hidden = true;
   const landing = document.getElementById('landing');

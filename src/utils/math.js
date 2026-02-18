@@ -129,6 +129,8 @@ export function kernelMatrix(points, kernelFn) {
   const K = new Array(n);
   for (let i = 0; i < n; i++) {
     K[i] = new Float64Array(n);
+  }
+  for (let i = 0; i < n; i++) {
     for (let j = i; j < n; j++) {
       const d = euclidean(points[i].x, points[i].y, points[j].x, points[j].y);
       const val = kernelFn(d);

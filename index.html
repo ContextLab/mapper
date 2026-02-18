@@ -178,7 +178,18 @@
         }
         #landing.hidden { opacity: 0; pointer-events: none; visibility: hidden; }
 
+        #particle-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: auto;
+        }
+
         .landing-content {
+            position: relative;
+            z-index: 1;
             max-width: 600px;
             color: var(--color-text);
         }
@@ -440,6 +451,7 @@
         <main id="app-main">
             <!-- Landing / Loading Screen -->
             <section id="landing">
+                <canvas id="particle-canvas"></canvas>
                 <div class="landing-content">
                     <h1>Knowledge Mapper</h1>
                     <h2>Map out (an approximation of) everything you know!</h2>

@@ -21,11 +21,11 @@ export function init(container) {
         to { opacity: 1; transform: translateY(0); }
       }
       .quiz-question {
-        font-family: var(--font-body);
-        font-size: 1rem;
+        font-family: var(--font-heading);
+        font-size: 0.95rem;
         line-height: 1.6;
         color: var(--color-text);
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.25rem;
       }
       .quiz-options {
         display: flex;
@@ -41,7 +41,7 @@ export function init(container) {
         cursor: pointer;
         text-align: left;
         font-family: var(--font-body);
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         color: var(--color-text);
         transition: all 0.2s ease;
         min-height: 44px;
@@ -102,7 +102,7 @@ export function init(container) {
       .quiz-meta a:hover {
         text-shadow: 0 0 6px var(--color-glow-secondary);
       }
-      .katex { font-size: 1.1em; }
+      .katex { font-size: 1.05em; }
     `;
     document.head.appendChild(style);
   }

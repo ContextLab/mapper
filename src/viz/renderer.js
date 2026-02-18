@@ -5,6 +5,7 @@ import {
   MapView,
   ScatterplotLayer,
   TextLayer,
+  BitmapLayer,
 } from 'deck.gl';
 import { CollisionFilterExtension } from '@deck.gl/extensions';
 import { mergeForTransition, buildTransitionFrames, needs3D } from './transitions.js';
@@ -43,7 +44,12 @@ export class Renderer {
     this._deck = null;
     this._points = [];
     this._heatmapData = [];
+    this._heatmapCanvas = null;
+    this._heatmapTexture = null;
+    this._heatmapRegion = null;
     this._labels = [];
+    this._answeredData = [];
+    this._onReanswer = null;
     this._viewState = null;
     this._onViewportChange = null;
     this._onCellClick = null;
@@ -79,8 +85,14 @@ export class Renderer {
         return viewState;
       },
       layers: [],
-      getTooltip: ({ object }) => object?.title || null,
     });
+
+    // Custom tooltip element
+    this._tooltip = document.createElement('div');
+    this._tooltip.className = 'map-tooltip';
+    this._tooltip.style.cssText = 'position:absolute;pointer-events:none;z-index:20;background:var(--color-surface-raised);color:var(--color-text);padding:6px 10px;border-radius:6px;font-size:0.75rem;font-family:var(--font-body);border:1px solid var(--color-border);box-shadow:0 2px 12px rgba(0,0,0,0.3);opacity:0;transition:opacity 0.15s ease;white-space:nowrap;max-width:300px;overflow:hidden;text-overflow:ellipsis;';
+    container.style.position = 'relative';
+    container.appendChild(this._tooltip);
 
     this._render();
   }
@@ -100,38 +112,73 @@ export class Renderer {
    * @param {object} region - { x_min, x_max, y_min, y_max }
    */
   setHeatmap(estimates, region) {
-    if (!estimates || !region) {
-      this._heatmapData = [];
-      this._render();
+    if (!estimates || estimates.length === 0) {
+      this._heatmapTexture = null;
+      this._heatmapRegion = null;
+    } else {
+      this._heatmapRegion = region;
+      this._heatmapTexture = this._buildHeatmapTexture(estimates, region);
+    }
+    this._render();
+  }
+
+  _buildHeatmapTexture(estimates, region) {
+    const gridSize = Math.round(Math.sqrt(estimates.length));
+    if (gridSize === 0) return null;
+    
+    if (!this._heatmapCanvas) {
+      this._heatmapCanvas = document.createElement('canvas');
+    }
+    const canvas = this._heatmapCanvas;
+    canvas.width = gridSize;
+    canvas.height = gridSize;
+    const ctx = canvas.getContext('2d');
+    const imageData = ctx.createImageData(gridSize, gridSize);
+    const data = imageData.data;
+    
+    for (const e of estimates) {
+      const idx = (e.gy * gridSize + e.gx) * 4;
+      if (idx < 0 || idx + 3 >= data.length) continue;
+      // Synthwave color: low=deep purple, mid=pink, high=cyan
+      const v = e.value;
+      let r, g, b;
+      if (v < 0.5) {
+        const t = v / 0.5;
+        r = Math.round(60 + t * 195);   // 60 → 255
+        g = Math.round(20 + t * 106);   // 20 → 126
+        b = Math.round(100 + t * 119);  // 100 → 219
+      } else {
+        const t = (v - 0.5) / 0.5;
+        r = Math.round(255 - t * 201);  // 255 → 54
+        g = Math.round(126 + t * 123);  // 126 → 249
+        b = Math.round(219 + t * 27);   // 219 → 246
+      }
+      const alpha = e.state === 'unknown' ? 0 : (e.evidenceCount === 0 ? 40 : 100);
+      data[idx] = r;
+      data[idx + 1] = g;
+      data[idx + 2] = b;
+      data[idx + 3] = alpha;
+    }
+    
+    ctx.putImageData(imageData, 0, 0);
+    return canvas;
+  }
+
+  _showTooltip(info) {
+    if (!info.object || !this._tooltip) {
+      this._hideTooltip();
       return;
     }
+    const title = info.object.title || info.object.questionText || '';
+    if (!title) { this._hideTooltip(); return; }
+    this._tooltip.textContent = title;
+    this._tooltip.style.left = (info.x + 12) + 'px';
+    this._tooltip.style.top = (info.y - 8) + 'px';
+    this._tooltip.style.opacity = '1';
+  }
 
-    const xSpan = region.x_max - region.x_min;
-    const ySpan = region.y_max - region.y_min;
-
-    this._heatmapData = estimates
-      .filter((e) => e.state !== 'unknown')
-      .map((e) => {
-        const gridSize = Math.round(Math.sqrt(estimates.length));
-        const cx = region.x_min + ((e.gx + 0.5) / gridSize) * xSpan;
-        const cy = region.y_min + ((e.gy + 0.5) / gridSize) * ySpan;
-        const color = valueToColor(e.value);
-        // Cross-domain predictions (no direct evidence) get reduced opacity
-        const isCrossDomain = e.evidenceCount === 0;
-        if (isCrossDomain) {
-          color[3] = Math.round(color[3] * 0.45);
-        }
-        return {
-          position: [cx, cy],
-          weight: e.value,
-          color,
-          gx: e.gx,
-          gy: e.gy,
-          isCrossDomain,
-        };
-      });
-
-    this._render();
+  _hideTooltip() {
+    if (this._tooltip) this._tooltip.style.opacity = '0';
   }
 
   /**
@@ -141,6 +188,23 @@ export class Renderer {
   setLabels(labels) {
     this._labels = labels || [];
     this._render();
+  }
+
+  /**
+   * Update answered-question dot overlay.
+   * @param {Array<object>} data - { x, y, questionId, title, color, isCorrect }
+   */
+  setAnsweredQuestions(data) {
+    this._answeredData = data || [];
+    this._render();
+  }
+
+  /**
+   * Register callback for re-answer clicks on answered dots.
+   * @param {function} handler - receives (questionId)
+   */
+  onReanswer(handler) {
+    this._onReanswer = handler;
   }
 
   /**
@@ -376,27 +440,21 @@ export class Renderer {
     const layers = [];
 
     // Heatmap layer — knowledge estimates overlay
-    if (this._heatmapData.length > 0) {
-      layers.push(
-        new ScatterplotLayer({
-          id: 'heatmap',
-          data: this._heatmapData,
-          getPosition: (d) => d.position,
-          getFillColor: (d) => d.color,
-          getRadius: 800,
-          radiusUnits: 'meters',
-          opacity: 0.6,
-          pickable: true,
-          onClick: (info) => {
-            if (info.object && this._onCellClick) {
-              this._onCellClick(info.object.gx, info.object.gy);
-            }
-          },
-          updateTriggers: {
-            getFillColor: this._heatmapData,
-          },
-        })
-      );
+    if (this._heatmapTexture) {
+      layers.push(new BitmapLayer({
+        id: 'heatmap',
+        image: this._heatmapTexture,
+        bounds: [
+          this._heatmapRegion.x_min, this._heatmapRegion.y_min,
+          this._heatmapRegion.x_max, this._heatmapRegion.y_max,
+        ],
+        opacity: 0.55,
+        pickable: false,
+        textureParameters: {
+          minFilter: 'linear',
+          magFilter: 'linear',
+        },
+      }));
     }
 
     // Scatterplot layer — article/question points
@@ -417,7 +475,46 @@ export class Renderer {
             getPosition: { duration: TRANSITION_DURATION, type: 'interpolation' },
             getFillColor: { duration: TRANSITION_DURATION },
           },
-          getTooltip: ({ object }) => object?.title,
+          onHover: (info) => {
+            this._showTooltip(info);
+            if (this._deck.parent) {
+              this._deck.parent.style.cursor = info.object ? 'pointer' : '';
+            }
+          },
+          onClick: (info) => {
+            if (info.object?.url) {
+              window.open(info.object.url, '_blank', 'noopener');
+            }
+          },
+        })
+      );
+    }
+
+    // Answered-question dots
+    if (this._answeredData.length > 0) {
+      layers.push(
+        new ScatterplotLayer({
+          id: 'answered-dots',
+          data: this._answeredData,
+          getPosition: (d) => [d.x, d.y],
+          getFillColor: (d) => d.color,
+          getRadius: 4,
+          radiusUnits: 'meters',
+          radiusMinPixels: 3,
+          radiusMaxPixels: 10,
+          opacity: 0.9,
+          pickable: true,
+          onHover: (info) => {
+            this._showTooltip(info);
+            if (this._deck?.parent) {
+              this._deck.parent.style.cursor = info.object ? 'pointer' : '';
+            }
+          },
+          onClick: (info) => {
+            if (info.object?.questionId && this._onReanswer) {
+              this._onReanswer(info.object.questionId);
+            }
+          },
         })
       );
     }
@@ -439,11 +536,19 @@ export class Renderer {
           outlineWidth: 2,
           outlineColor: [0, 0, 0, 200],
           sizeUnits: 'pixels',
+          sizeMaxPixels: 20,
           billboard: true,
+          maxWidth: 192,
+          wordBreak: 'break-word',
           extensions: [new CollisionFilterExtension()],
           collisionEnabled: true,
           collisionGroup: 'labels',
           getCollisionPriority: (d) => d.article_count || 0,
+          collisionTestProps: {
+            sizeScale: 4,
+            sizeMaxPixels: 64,
+          },
+          parameters: { depthTest: false },
         })
       );
     }

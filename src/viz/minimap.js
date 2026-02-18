@@ -9,8 +9,10 @@ export class Minimap {
     this.activeDomainId = null;
     this.currentViewport = null;
     this.clickHandler = null;
+    this.navigateHandler = null;
     this.width = 0;
     this.height = 0;
+    this.estimates = null;
     
     this.handleClick = this.handleClick.bind(this);
   }
@@ -58,8 +60,51 @@ export class Minimap {
     this.render();
   }
 
+  setEstimates(estimates) {
+    this.estimates = estimates;
+    this.render();
+  }
+
   onClick(handler) {
     this.clickHandler = handler;
+  }
+
+  onNavigate(handler) {
+    this.navigateHandler = handler;
+  }
+
+  _computeRegionKnowledge(region) {
+    if (!this.estimates || this.estimates.length === 0) return null;
+    
+    let sum = 0;
+    let count = 0;
+    for (const e of this.estimates) {
+      if (e.state === 'unknown') continue;
+      // Estimates have gx, gy grid coords — need to check if they map into this region
+      // Since estimates cover the active domain's grid, just average all non-unknown
+      sum += e.value;
+      count++;
+    }
+    return count > 0 ? sum / count : null;
+  }
+
+  _knowledgeColor(value) {
+    // Synthwave gradient: low=deep purple, mid=neon pink, high=neon cyan
+    if (value < 0.5) {
+      const t = value / 0.5;
+      return [
+        Math.round(60 + t * 195),   // 60 → 255
+        Math.round(20 + t * 106),   // 20 → 126
+        Math.round(100 + t * 119),  // 100 → 219
+      ];
+    } else {
+      const t = (value - 0.5) / 0.5;
+      return [
+        Math.round(255 - t * 201),  // 255 → 54
+        Math.round(126 + t * 123),  // 126 → 249
+        Math.round(219 + t * 27),   // 219 → 246
+      ];
+    }
   }
 
   handleClick(e) {
@@ -84,7 +129,11 @@ export class Minimap {
       return areaA - areaB;
     });
 
-    this.clickHandler(matches[0].id);
+    if (this.navigateHandler && matches[0].region) {
+      this.navigateHandler(matches[0].region);
+    } else if (this.clickHandler) {
+      this.clickHandler(matches[0].id);
+    }
   }
 
   render() {
@@ -143,10 +192,20 @@ export class Minimap {
     this.ctx.fillRect(x, y, w, h);
     this.ctx.strokeRect(x, y, w, h);
 
+    // Knowledge estimate overlay for active domain
+    if (isActive && this.estimates && this.estimates.length > 0) {
+      const avg = this._computeRegionKnowledge(domain.region);
+      if (avg !== null) {
+        const color = this._knowledgeColor(avg);
+        this.ctx.fillStyle = `rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.35)`;
+        this.ctx.fillRect(x, y, w, h);
+      }
+    }
+
     // Don't label 'all' to avoid clutter
     if (!isAll) {
       this.ctx.fillStyle = isActive ? '#f50057' : 'rgba(255, 255, 255, 0.6)';
-      this.ctx.font = '8px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+      this.ctx.font = '11px "Space Mono", "JetBrains Mono", monospace';
       this.ctx.textAlign = 'left';
       this.ctx.textBaseline = 'top';
       
@@ -154,7 +213,7 @@ export class Minimap {
       this.ctx.rect(x, y, w, h);
       this.ctx.clip();
       
-      if (w > 20 && h > 10) {
+      if (w > 30 && h > 14) {
         this.ctx.fillText(domain.name, x + 3, y + 3);
       }
     }

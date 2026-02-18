@@ -26,6 +26,8 @@ export function init(container) {
         line-height: 1.6;
         color: var(--color-text);
         margin-bottom: 1.25rem;
+        text-align: left;
+        text-indent: 0;
       }
       .quiz-options {
         display: flex;
@@ -63,21 +65,21 @@ export function init(container) {
       }
       .quiz-option.selected.correct {
         background-color: var(--color-correct) !important;
-        color: #0f172a !important;
+        color: #ffffff !important;
         border-color: var(--color-correct) !important;
         box-shadow: 0 0 12px rgba(16,185,129,0.3) !important;
         opacity: 1 !important;
       }
       .quiz-option.selected.incorrect {
         background-color: var(--color-incorrect) !important;
-        color: white !important;
+        color: #ffffff !important;
         border-color: var(--color-incorrect) !important;
         box-shadow: 0 0 12px rgba(239,68,68,0.3) !important;
         opacity: 1 !important;
       }
       .quiz-option.correct-highlight {
         background-color: var(--color-correct) !important;
-        color: #0f172a !important;
+        color: #ffffff !important;
         border-color: var(--color-correct) !important;
         box-shadow: 0 0 12px rgba(16,185,129,0.3) !important;
         opacity: 1 !important;

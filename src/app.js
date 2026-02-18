@@ -80,6 +80,7 @@ async function boot() {
   controls.onDomainSelect((domainId) => $activeDomain.set(domainId));
   controls.onReset(handleReset);
   controls.onExport(handleExport);
+  controls.onImport(handleImport);
 
   const landingWrapper = document.getElementById('landing-domain-wrapper');
   if (landingWrapper) {
@@ -116,6 +117,11 @@ async function boot() {
     window.__mapper = { registry, estimator, sampler, renderer, minimap, $activeDomain, $estimates, $responses };
   }
 
+  const quizToggle = document.getElementById('quiz-toggle');
+  if (quizToggle) {
+    quizToggle.addEventListener('click', () => toggleQuizPanel());
+  }
+
   setupKeyboardNav({ onEscape: handleEscape });
   wireSubscriptions();
 
@@ -150,6 +156,7 @@ function articlesToPoints(articles) {
     radius: 2,
     title: a.title,
     url: a.url,
+    excerpt: a.excerpt || '',
   }));
 }
 
@@ -246,7 +253,9 @@ async function switchDomain(domainId) {
       minimap.setViewport(renderer.getViewport());
     }
 
-    if (quizPanel) quizPanel.removeAttribute('hidden');
+    toggleQuizPanel(true);
+    const toggleBtn = document.getElementById('quiz-toggle');
+    if (toggleBtn) toggleBtn.removeAttribute('hidden');
     hideDownload();
     controls.showActionButtons();
 
@@ -364,8 +373,9 @@ function handleReset() {
     minimap.setActive(null);
     minimap.setEstimates([]);
   }
-  const quizPanel = document.getElementById('quiz-panel');
-  if (quizPanel) quizPanel.hidden = true;
+  toggleQuizPanel(false);
+  const toggleBtn = document.getElementById('quiz-toggle');
+  if (toggleBtn) toggleBtn.hidden = true;
   const landing = document.getElementById('landing');
   if (landing) landing.classList.remove('hidden');
   announce('All progress has been reset.');
@@ -380,6 +390,52 @@ function handleExport() {
   a.click();
   URL.revokeObjectURL(url);
   announce('Progress exported.');
+}
+
+function handleImport(data) {
+  if (!data) return;
+
+  let responses = [];
+  if (Array.isArray(data)) {
+    responses = data;
+  } else if (data.responses && Array.isArray(data.responses)) {
+    responses = data.responses;
+  } else {
+    alert('Unrecognized file format. Expected an array of responses or an object with a "responses" key.');
+    return;
+  }
+
+  const valid = responses.filter(r =>
+    r.question_id && r.domain_id && r.selected && typeof r.is_correct === 'boolean'
+  );
+
+  if (valid.length === 0) {
+    alert('No valid responses found in the imported file.');
+    return;
+  }
+
+  const existing = $responses.get();
+  const existingIds = new Set(existing.map(r => r.question_id));
+  const newResponses = valid.filter(r => !existingIds.has(r.question_id));
+  const merged = [...existing, ...newResponses];
+
+  $responses.set(merged);
+
+  if (currentDomainBundle && estimator) {
+    estimator.init(currentDomainBundle.domain.grid_size, currentDomainBundle.domain.region);
+    const relevant = merged.filter(r => r.x != null && r.y != null);
+    estimator.restore(relevant);
+    const estimates = estimator.predict();
+    $estimates.set(estimates);
+
+    const domainId = currentDomainBundle.domain.id;
+    domainQuestionCount = merged.filter(r => r.domain_id === domainId).length;
+    modes.updateAvailability(domainQuestionCount);
+    const domainResponses = merged.filter(r => r.domain_id === domainId);
+    renderer.setAnsweredQuestions(responsesToAnsweredDots(domainResponses, questionIndex));
+  }
+
+  announce(`Imported ${newResponses.length} new responses (${valid.length} total in file, ${existing.length} already existed).`);
 }
 
 function handleViewportChange(viewport) {
@@ -397,9 +453,30 @@ function handleEscape() {
     aboutModal.hidden = true;
     return;
   }
+  toggleQuizPanel(false);
+}
+
+function toggleQuizPanel(show) {
   const quizPanel = document.getElementById('quiz-panel');
-  if (quizPanel && !quizPanel.hidden) {
+  const toggleBtn = document.getElementById('quiz-toggle');
+  if (!quizPanel) return;
+
+  if (show === undefined) show = quizPanel.hidden;
+
+  if (show) {
+    quizPanel.removeAttribute('hidden');
+    if (toggleBtn) {
+      toggleBtn.classList.add('panel-open');
+      toggleBtn.querySelector('i').className = 'fa-solid fa-chevron-right';
+      toggleBtn.setAttribute('aria-label', 'Close quiz panel');
+    }
+  } else {
     quizPanel.hidden = true;
+    if (toggleBtn) {
+      toggleBtn.classList.remove('panel-open');
+      toggleBtn.querySelector('i').className = 'fa-solid fa-chevron-left';
+      toggleBtn.setAttribute('aria-label', 'Open quiz panel');
+    }
   }
 }
 

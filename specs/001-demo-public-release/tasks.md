@@ -250,6 +250,99 @@
 
 ---
 
+## Phase 14: UI Polish & Theme Consistency (Post-Review — 2026-02-18)
+
+**Purpose**: Fix all UI issues identified in post-implementation review. These are independent of the pipeline rebuild and can be done immediately.
+
+### Theme Consistency (FR-024, FR-025)
+
+- [ ] T074 [P] Theme change event: In `src/ui/controls.js` theme toggle handler, dispatch a `CustomEvent('theme-changed')` on `document.documentElement` after setting the attribute. All canvas-based components (renderer, minimap, particles) subscribe and re-render.
+- [ ] T075 Renderer theme awareness: In `src/viz/renderer.js`, listen for `theme-changed` event and call `_render()`. Remove hardcoded `#0f172a` fallback — always read from CSS custom property.
+- [ ] T076 Minimap theme awareness: In `src/viz/minimap.js`: (a) replace hardcoded `#0f172a` background (line 196) with theme-aware color read from CSS, (b) add light mode heatmap color function, (c) update domain outline colors for light mode, (d) listen for `theme-changed` event and re-render.
+- [ ] T077 [P] Minimap container background: In `index.html`, change `#minimap-container` background from hardcoded `rgba(15,23,42,0.7)` to use CSS custom property that changes with theme.
+- [ ] T078 [P] Quiz answer text colors: In `src/ui/quiz.js`, replace hardcoded `#0f172a` correct/incorrect text colors (lines 66, 80) with theme-aware values.
+
+### Logo Gradient (FR-032)
+
+- [ ] T079 [P] Fix logo gradient: In `index.html`, change both `.logo` (line 121) and `.landing-content h1` (line 203) gradients from `linear-gradient(135deg, #00693e, #267aba)` to all-green: `linear-gradient(135deg, #00693e, #1a8a5a, #10b981)`.
+
+### Text Alignment (FR-028)
+
+- [ ] T080 [P] Fix quiz text alignment: In `src/ui/quiz.js`, ensure `.quiz-question` and `.quiz-option` have `text-indent: 0; padding-left` consistent. Remove any first-line indentation.
+
+### Button & Tooltip Readability (FR-026, FR-027)
+
+- [ ] T081 Fix mode button active state: In `src/ui/modes.js`, change `.mode-btn.active` color from `#1a1a2e` to `#ffffff` (white text on green/blue background).
+- [ ] T082 Fix disabled tooltip: In `src/ui/modes.js`, update `.mode-btn:disabled:hover::after` to include `background: var(--color-surface); box-shadow: 0 2px 8px rgba(0,0,0,0.3)`, proper padding, and a max-width.
+
+### Quiz Panel Toggle (FR-030)
+
+- [ ] T083 Add quiz panel toggle button: Create a floating button (e.g., chevron icon) at the right edge of the map that toggles the quiz panel visibility. When panel is hidden (after Escape), the button shows. When panel is visible, the button shows a collapse icon. Wire into `src/app.js` Escape handler.
+
+### Colorbar Improvements (FR-031)
+
+- [ ] T084 Colorbar always visible: In `src/viz/renderer.js` `_drawColorbar()`, remove the `if (this._heatmapEstimates.length === 0) return;` guard — show colorbar whenever a domain is loaded. Use theme-appropriate font (system sans-serif, not "Space Mono"). Adjust x-position to account for quiz panel width when panel is visible.
+- [ ] T085 [P] Colorbar text theming: Replace hardcoded colorbar text colors with theme-aware values.
+
+### Tooltip Overhaul (FR-029)
+
+- [ ] T086 Rich tooltips: In `src/viz/renderer.js`, replace `_buildTooltipText()` with `_buildTooltipHTML()` that returns: (a) for articles: title + excerpt (truncated ~150 chars), (b) for answered questions: ✅/❌ prefix + question text + knowledge-colored background, (c) for unanswered questions: question text. Use `innerHTML` instead of `textContent`. Style the tooltip with a knowledge-colored left border and semi-transparent background.
+- [ ] T087 [P] Tooltip boundary detection: Ensure tooltip doesn't overflow canvas bounds — flip to left/above when near edges.
+
+### Keyboard Shortcuts in About Modal (FR-033)
+
+- [ ] T088 [P] Add keyboard shortcuts section to About modal: In `index.html`, add a section listing: Escape (dismiss quiz/modal), Arrow keys (pan map), +/- or scroll (zoom), Tab (cycle controls), Enter (select answer), number keys 1-4 (quick answer), T (toggle theme).
+
+### Response Import (FR-034)
+
+- [ ] T089 Add import button: In `src/ui/controls.js`, add an "Import" button (upload icon) next to Export. On click, open a file picker for `.json` files. Parse the JSON, validate it matches the export schema, merge into `$responses`, and re-estimate.
+
+### Social Sharing (FR-035)
+
+- [ ] T090 Add share button: Create `src/ui/share.js` module. Render the knowledge map to a PNG via `canvas.toDataURL()`. Compose share text with top 3 expertise areas. Provide buttons for LinkedIn, X, Bluesky, Instagram that open share URLs with the image/text.
+
+**Checkpoint**: All UI issues from post-review fixed. Theme toggles immediately. Buttons readable. Tooltips show excerpts. Quiz panel toggleable. Colorbar visible and themed.
+
+---
+
+## Phase 15: Embedding Pipeline Rebuild (Critical — P0)
+
+**Purpose**: Fix the fundamental data integrity issue where question coordinates are not in the same embedding space as articles.
+
+### Investigation Completed
+
+The following was confirmed:
+- Articles: embedded with `Qwen/Qwen3-Embedding-0.6B`, projected via UMAP
+- Questions: embedded with `google/embeddinggemma-300m`, projected via PER-DOMAIN PCA then linearly scaled to hand-drawn bounding boxes
+- Domain regions: hand-drawn grid rectangles in `data/domains/index.json`
+- Article→domain assignment: spatial filtering (whatever UMAP coords fall in the rectangle)
+
+### Rebuild Steps
+
+- [ ] T091 Embed questions through article UMAP: Write `scripts/embed_questions_umap.py` that: (a) loads the saved UMAP reducer from `umap_reducer.pkl`, (b) embeds all ~950 question texts using `Qwen/Qwen3-Embedding-0.6B` (same model as articles), (c) calls `reducer.transform()` to project into the same 2D space, (d) normalizes using `umap_bounds.pkl`, (e) outputs `question_coordinates_umap.json` with corrected (x, y) per question.
+- [ ] T092 RAG-based domain assignment: Write `scripts/assign_domains_rag.py` that: (a) loads article embeddings from `wikipedia.pkl` or merged embeddings, (b) for each domain, uses cosine similarity search to find the top N semantically related articles (500 for sub-domains, 1000 for general domains), (c) computes bounding rectangles from actual article+question clusters, (d) outputs updated `data/domains/index.json` with computed (overlapping) regions.
+- [ ] T093 Grid system recalculation: In T092 output, compute grid sizes such that the smallest domain region gets a 50×50 grid. Other regions are tiled proportionally based on area ratio.
+- [ ] T094 Regenerate domain bundles: Update `scripts/export_domain_data.py` to use RAG-assigned articles and UMAP-projected question coordinates. Regenerate all 19 domain bundle JSON files.
+- [ ] T095 Update minimap for overlapping domains: Remove domain label text from minimap (since regions overlap). Show only viewport rectangle and article density.
+- [ ] T096 Verify coordinate integrity: Write a validation script that confirms all question coordinates and article coordinates are in the same [0,1] normalized UMAP space. Run and confirm 100% pass.
+
+**Checkpoint**: Questions and articles in same embedding space. Domains semantically meaningful. Grid proportionally tiled. Minimap shows viewport only.
+
+---
+
+## Phase 16: Multi-Persona UX Testing (SC-014)
+
+**Purpose**: Comprehensive Playwright-based user simulation with distinct personas.
+
+- [ ] T097 Design 5+ personas with specific interaction patterns, expectations, and success criteria.
+- [ ] T098 Implement Playwright tests for each persona: page load, navigation, answering, mode switching, insights, export, share.
+- [ ] T099 Capture screenshots at key moments for each persona. Verify all UI elements render correctly.
+- [ ] T100 Run full test suite across Chromium, Firefox, WebKit. Zero failures.
+
+**Checkpoint**: All personas have a delightful, bug-free experience across all browsers.
+
+---
+
 ## Dependencies & Execution Order
 
 ### Phase Dependencies

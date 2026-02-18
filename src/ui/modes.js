@@ -59,7 +59,7 @@ export function init(container) {
       }
       .mode-btn.active {
         background: var(--color-primary);
-        color: #1a1a2e;
+        color: #ffffff;
         border-color: var(--color-primary);
         box-shadow: 0 0 12px var(--color-glow-primary);
       }
@@ -82,24 +82,27 @@ export function init(container) {
       .mode-btn--insight.active {
         border-style: solid;
         background: var(--color-secondary);
+        color: #ffffff;
         border-color: var(--color-secondary);
         box-shadow: 0 0 12px var(--color-glow-secondary);
       }
       .mode-btn:disabled:hover::after {
         content: attr(data-tooltip);
         position: absolute;
-        bottom: calc(100% + 6px);
+        bottom: calc(100% + 8px);
         left: 50%;
         transform: translateX(-50%);
-        background: var(--color-surface-raised);
+        background: var(--color-surface);
         color: var(--color-text);
-        padding: 4px 8px;
-        border-radius: 4px;
-        font-size: 0.7rem;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 0.75rem;
         white-space: nowrap;
         z-index: 100;
         pointer-events: none;
         border: 1px solid var(--color-border);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        max-width: 200px;
       }
     `;
     document.head.appendChild(style);

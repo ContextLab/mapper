@@ -118,7 +118,7 @@
             font-family: var(--font-heading);
             font-weight: 700;
             font-size: 1rem;
-            background: linear-gradient(135deg, #00693e, #267aba);
+            background: linear-gradient(135deg, #00693e, #1a8a5a, #10b981);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -200,7 +200,7 @@
             margin-bottom: 0.75rem;
             font-weight: 700;
             letter-spacing: -0.03em;
-            background: linear-gradient(135deg, #00693e, #267aba);
+            background: linear-gradient(135deg, #00693e, #1a8a5a, #10b981);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -379,6 +379,40 @@
             overflow-x: hidden;
         }
         #quiz-panel:not([hidden]) { transform: translateX(0); }
+        .quiz-toggle-btn {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            z-index: 9;
+            width: 28px;
+            height: 56px;
+            border: 1px solid var(--color-border);
+            border-right: none;
+            border-radius: 8px 0 0 8px;
+            background: var(--color-surface);
+            color: var(--color-text-muted);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            transition: all 0.2s ease, background-color 0.4s ease;
+            box-shadow: -2px 0 8px rgba(0,0,0,0.15);
+        }
+        .quiz-toggle-btn:hover {
+            color: var(--color-primary);
+            border-color: var(--color-primary);
+            box-shadow: -2px 0 12px var(--color-glow-primary);
+        }
+        .quiz-toggle-btn.panel-open {
+            right: var(--sidebar-width);
+        }
+        .quiz-toggle-btn.panel-open i {
+            transform: rotate(180deg);
+        }
+        #quiz-panel:not([hidden]) ~ .quiz-toggle-btn,
+        .quiz-toggle-btn[hidden] { display: none; }
         .resize-handle {
             position: absolute;
             left: 0; top: 0; bottom: 0;
@@ -404,13 +438,13 @@
             left: 20px;
             width: 200px;
             height: 150px;
-            background: rgba(15,23,42,0.7);
+            background: var(--color-surface);
             border: 1px solid var(--color-border);
             border-radius: 8px;
             z-index: 5;
             backdrop-filter: blur(6px);
             overflow: hidden;
-            transition: opacity 0.3s, box-shadow 0.3s;
+            transition: opacity 0.3s, box-shadow 0.3s, background-color 0.4s ease;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2);
         }
         #minimap-container[hidden] { display: none; }
@@ -500,6 +534,20 @@
                 z-index: 20;
             }
             #quiz-panel:not([hidden]) { transform: translateY(0); }
+            .quiz-toggle-btn {
+                top: auto;
+                bottom: 0;
+                right: 50%;
+                transform: translateX(50%);
+                width: 56px;
+                height: 28px;
+                border-radius: 8px 8px 0 0;
+                border: 1px solid var(--color-border);
+                border-bottom: none;
+            }
+            .quiz-toggle-btn i { transform: rotate(90deg); }
+            .quiz-toggle-btn.panel-open { bottom: 60vh; }
+            .quiz-toggle-btn.panel-open i { transform: rotate(-90deg); }
             .domain-selector { flex-grow: 1; max-width: 200px; }
             #minimap-container { display: none; }
             .resize-handle { display: none; }
@@ -567,6 +615,11 @@
             <!-- Map Visualization -->
             <section id="map-container" aria-label="Interactive Heatmap" tabindex="0"></section>
 
+            <!-- Quiz Panel Toggle -->
+            <button id="quiz-toggle" class="quiz-toggle-btn" hidden aria-label="Open quiz panel">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
             <!-- Quiz / Interaction Panel -->
             <aside id="quiz-panel" hidden aria-label="Quiz Question">
                 <!-- Content injected by app.js -->
@@ -619,6 +672,29 @@
                     github.com/ContextLab/mapper
                 </a>
             </p>
+            <h3 style="margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--color-primary);">Keyboard Shortcuts</h3>
+            <table style="width: 100%; font-size: 0.8rem; margin-bottom: 1rem; border-collapse: collapse;">
+                <tr style="border-bottom: 1px solid var(--color-border);">
+                    <td style="padding: 4px 8px; color: var(--color-text-muted);"><kbd style="background:var(--color-surface-raised);padding:2px 6px;border-radius:3px;font-size:0.75rem;">Esc</kbd></td>
+                    <td style="padding: 4px 8px;">Dismiss quiz panel or modal</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--color-border);">
+                    <td style="padding: 4px 8px; color: var(--color-text-muted);"><kbd style="background:var(--color-surface-raised);padding:2px 6px;border-radius:3px;font-size:0.75rem;">1</kbd>–<kbd style="background:var(--color-surface-raised);padding:2px 6px;border-radius:3px;font-size:0.75rem;">4</kbd></td>
+                    <td style="padding: 4px 8px;">Quick answer (A/B/C/D)</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--color-border);">
+                    <td style="padding: 4px 8px; color: var(--color-text-muted);"><kbd style="background:var(--color-surface-raised);padding:2px 6px;border-radius:3px;font-size:0.75rem;">Tab</kbd></td>
+                    <td style="padding: 4px 8px;">Cycle through interactive controls</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--color-border);">
+                    <td style="padding: 4px 8px; color: var(--color-text-muted);">Scroll / Pinch</td>
+                    <td style="padding: 4px 8px;">Zoom the map</td>
+                </tr>
+                <tr>
+                    <td style="padding: 4px 8px; color: var(--color-text-muted);">Click + Drag</td>
+                    <td style="padding: 4px 8px;">Pan the map</td>
+                </tr>
+            </table>
             <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 1rem;">
                 All computation runs in your browser. No data is sent to any server.
                 Your progress is saved locally and can be exported or reset at any time.

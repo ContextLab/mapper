@@ -52,6 +52,7 @@ export class Renderer {
     this._heatmapEstimates = [];
     this._heatmapRegion = null;
     this._answeredData = [];
+    this._showColorbar = false;
 
     this._onReanswer = null;
     this._onViewportChange = null;
@@ -110,16 +111,16 @@ export class Renderer {
     container.appendChild(this._canvas);
     this._ctx = this._canvas.getContext('2d');
 
-    // Tooltip
     this._tooltip = document.createElement('div');
     this._tooltip.className = 'map-tooltip';
     this._tooltip.style.cssText =
       'position:absolute;pointer-events:none;z-index:20;' +
-      'background:var(--color-surface-raised);color:var(--color-text);' +
-      'padding:6px 10px;border-radius:6px;font-size:0.75rem;' +
+      'background:var(--color-surface);color:var(--color-text);' +
+      'padding:8px 12px;border-radius:8px;font-size:0.78rem;' +
       'font-family:var(--font-body);border:1px solid var(--color-border);' +
-      'box-shadow:0 2px 12px rgba(0,0,0,0.3);opacity:0;transition:opacity 0.15s ease;' +
-      'white-space:normal;max-width:320px;overflow:hidden;line-height:1.4;';
+      'box-shadow:0 4px 16px rgba(0,0,0,0.35);opacity:0;transition:opacity 0.15s ease;' +
+      'white-space:normal;max-width:340px;overflow:hidden;line-height:1.5;' +
+      'border-left:3px solid var(--color-border);';
     container.style.position = 'relative';
     container.appendChild(this._tooltip);
 
@@ -138,6 +139,9 @@ export class Renderer {
     this._canvas.addEventListener('touchend', this._onTouchEnd);
     window.addEventListener('resize', this._onResize);
 
+    this._onThemeChange = () => this._render();
+    document.documentElement.addEventListener('theme-changed', this._onThemeChange);
+
     this._render();
   }
 
@@ -147,6 +151,7 @@ export class Renderer {
    */
   setPoints(points) {
     this._points = points || [];
+    if (this._points.length > 0) this._showColorbar = true;
     this._render();
   }
 
@@ -312,6 +317,9 @@ export class Renderer {
       this._tooltip = null;
     }
     window.removeEventListener('resize', this._onResize);
+    if (this._onThemeChange) {
+      document.documentElement.removeEventListener('theme-changed', this._onThemeChange);
+    }
     this._ctx = null;
     this._container = null;
   }
@@ -428,7 +436,7 @@ export class Renderer {
   }
 
   _drawColorbar(ctx, w, h, light) {
-    if (this._heatmapEstimates.length === 0) return;
+    if (!this._showColorbar) return;
 
     const barW = 12;
     const barH = 120;
@@ -439,7 +447,7 @@ export class Renderer {
     ctx.save();
     ctx.setTransform(this._dpr, 0, 0, this._dpr, 0, 0);
 
-    ctx.fillStyle = light ? 'rgba(255,255,255,0.75)' : 'rgba(15,23,42,0.7)';
+    ctx.fillStyle = light ? 'rgba(255,255,255,0.85)' : 'rgba(15,23,42,0.8)';
     ctx.beginPath();
     ctx.roundRect(x - 6, y - 20, barW + 12, barH + 36, 6);
     ctx.fill();
@@ -448,7 +456,7 @@ export class Renderer {
     const steps = 40;
     const stepH = barH / steps;
     for (let i = 0; i < steps; i++) {
-      const v = 1 - i / (steps - 1); // top=1.0, bottom=0.0
+      const v = 1 - i / (steps - 1);
       const [r, g, b] = colorFn(v);
       ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
       ctx.fillRect(x, y + i * stepH, barW, stepH + 0.5);
@@ -458,9 +466,10 @@ export class Renderer {
     ctx.lineWidth = 0.5;
     ctx.strokeRect(x, y, barW, barH);
 
-    ctx.font = '9px "Space Mono", monospace';
+    const fontFamily = getComputedStyle(document.documentElement).getPropertyValue('--font-body').trim() || 'sans-serif';
+    ctx.font = `9px ${fontFamily}`;
     ctx.textAlign = 'center';
-    ctx.fillStyle = light ? '#555' : 'rgba(255,255,255,0.6)';
+    ctx.fillStyle = light ? 'rgba(0,0,0,0.55)' : 'rgba(255,255,255,0.6)';
     ctx.fillText('100%', x + barW / 2, y - 4);
     ctx.fillText('0%', x + barW / 2, y + barH + 12);
 
@@ -579,12 +588,11 @@ export class Renderer {
       return;
     }
 
-    // Hit test for hover tooltip
     const hit = this._hitTest(mx, my);
     if (hit) {
       this._hoveredPoint = hit;
       this._canvas.style.cursor = 'pointer';
-      this._showTooltip(this._buildTooltipText(hit), e.clientX - rect.left, e.clientY - rect.top);
+      this._showTooltip(this._buildTooltipHTML(hit), e.clientX - rect.left, e.clientY - rect.top);
     } else {
       this._hoveredPoint = null;
       this._canvas.style.cursor = '';
@@ -716,19 +724,47 @@ export class Renderer {
 
   // ======== PRIVATE: Tooltip ========
 
-  _buildTooltipText(hit) {
+  _buildTooltipHTML(hit) {
     if (hit.questionId) {
-      const prefix = hit.isCorrect ? '✅' : '❌';
-      return `${prefix} ${hit.title || 'Question'}`;
+      const isCorrect = hit.isCorrect;
+      const borderColor = isCorrect ? 'var(--color-correct)' : 'var(--color-incorrect)';
+      const icon = isCorrect ? '✅' : '❌';
+      const text = hit.title || 'Question';
+      const truncated = text.length > 200 ? text.slice(0, 200) + '…' : text;
+      return { html: `<div style="font-weight:600;margin-bottom:2px;">${icon} Answered</div><div style="font-size:0.73rem;color:var(--color-text-muted);">${this._escapeHtml(truncated)}</div>`, borderColor };
     }
-    return hit.title || '';
+
+    const title = hit.title || '';
+    const excerpt = hit.excerpt || '';
+    if (excerpt) {
+      const truncExcerpt = excerpt.length > 150 ? excerpt.slice(0, 150) + '…' : excerpt;
+      return { html: `<div style="font-weight:600;margin-bottom:2px;">${this._escapeHtml(title)}</div><div style="font-size:0.73rem;color:var(--color-text-muted);">${this._escapeHtml(truncExcerpt)}</div>`, borderColor: 'var(--color-secondary)' };
+    }
+
+    return { html: `<div style="font-weight:600;">${this._escapeHtml(title)}</div>`, borderColor: 'var(--color-border)' };
   }
 
-  _showTooltip(text, x, y) {
-    if (!text || !this._tooltip) return;
-    this._tooltip.textContent = text;
-    this._tooltip.style.left = (x + 12) + 'px';
-    this._tooltip.style.top = (y - 8) + 'px';
+  _escapeHtml(str) {
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  _showTooltip(tooltipData, x, y) {
+    if (!tooltipData || !this._tooltip) return;
+    this._tooltip.innerHTML = tooltipData.html;
+    this._tooltip.style.borderLeftColor = tooltipData.borderColor;
+
+    const containerW = this._width;
+    const containerH = this._height;
+    let left = x + 14;
+    let top = y - 8;
+
+    if (left + 340 > containerW) left = x - 350;
+    if (top + 100 > containerH) top = containerH - 110;
+    if (left < 0) left = 4;
+    if (top < 0) top = 4;
+
+    this._tooltip.style.left = left + 'px';
+    this._tooltip.style.top = top + 'px';
     this._tooltip.style.opacity = '1';
   }
 

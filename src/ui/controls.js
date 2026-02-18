@@ -5,10 +5,12 @@ import { getHierarchy } from '../domain/registry.js';
 let onDomainSelectCb = null;
 let onResetCb = null;
 let onExportCb = null;
+let onImportCb = null;
 
 let container = null;
 let resetButton = null;
 let exportButton = null;
+let importButton = null;
 
 function buildOptions() {
   const hierarchy = getHierarchy();
@@ -196,6 +198,34 @@ export function init(headerElement) {
   });
   container.appendChild(exportButton);
 
+  importButton = document.createElement('button');
+  importButton.className = 'control-btn';
+  importButton.ariaLabel = 'Import saved progress';
+  importButton.innerHTML = '<i class="fa-solid fa-upload"></i>';
+  importButton.hidden = true;
+  importButton.addEventListener('click', () => {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.json,application/json';
+    input.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const data = JSON.parse(reader.result);
+          if (onImportCb) onImportCb(data);
+        } catch (err) {
+          console.error('[controls] Failed to parse import file:', err);
+          alert('Invalid file format. Please select a Knowledge Mapper export JSON file.');
+        }
+      };
+      reader.readAsText(file);
+    });
+    input.click();
+  });
+  container.appendChild(importButton);
+
   const themeToggle = document.getElementById('theme-toggle');
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
@@ -207,6 +237,10 @@ export function init(headerElement) {
       if (icon) {
         icon.className = next === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
       }
+      // Notify all canvas-based components to re-render with new theme
+      document.documentElement.dispatchEvent(
+        new CustomEvent('theme-changed', { detail: { theme: next } })
+      );
     });
   }
 }
@@ -223,10 +257,15 @@ export function onExport(callback) {
   onExportCb = callback;
 }
 
+export function onImport(callback) {
+  onImportCb = callback;
+}
+
 export function showActionButtons() {
   if (container) container.hidden = false;
   if (resetButton) resetButton.hidden = false;
   if (exportButton) exportButton.hidden = false;
+  if (importButton) importButton.hidden = false;
 }
 
 export function createLandingSelector(container, callback) {

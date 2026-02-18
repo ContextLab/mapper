@@ -478,6 +478,94 @@ domains and "All" share some questions with sub-domains).
 - Q: What level of accessibility compliance should the demo target? → A: WCAG 2.1 Level AA — keyboard navigation, screen reader labels, 4.5:1 contrast ratios, color-blind-safe heatmap palette.
 - Q: Should all domain data load upfront or lazily? → A: Lazy-load per domain. Initial payload is code + default domain only (~2–3 MB). Show progress bars with download feedback when loading domain data on slow connections.
 
+### Session 2026-02-18 (Post-Implementation Review)
+
+#### Embedding & Domain Pipeline (Critical — P0)
+
+- **FINDING**: Question coordinates are NOT in the same embedding space as
+  Wikipedia articles. Questions use PCA projection scaled to hand-drawn
+  bounding boxes (`scripts/generate_question_coords.py` lines 64–103).
+  Articles use UMAP projection from `Qwen/Qwen3-Embedding-0.6B` embeddings.
+  Domain regions are hand-drawn grid rectangles, not derived from semantic
+  clustering. Articles in domains are spatially filtered (whatever falls
+  in the rectangle), not topically relevant.
+
+- **REQUIREMENT**: Question embeddings MUST be projected through the SAME
+  UMAP reducer as articles. Use RAG (embedding similarity search against
+  the 250K article corpus) to find semantically related articles per domain
+  (top 500 for sub-areas, 1000 for broad areas; "All" uses full corpus).
+  Domain bounding rectangles MUST be computed from actual article+question
+  clusters, not hand-drawn. Domains WILL overlap. Grid system: smallest
+  region gets 50×50 grid; full space tiled proportionally.
+
+- **REQUIREMENT**: When a domain is selected, content outside the domain
+  MUST still be visible. The only change is a zoom into the domain's region
+  and constraining questions to that area. Do NOT cut off content.
+
+- **REQUIREMENT**: Since domains overlap, the minimap MUST NOT label
+  regions with category names. Instead, show a viewport rectangle indicating
+  the current position on the full map, updated on pan/zoom.
+
+#### Theme Consistency (P1)
+
+- **FR-024**: Theme toggle MUST update ALL visual elements simultaneously:
+  main canvas, minimap, colorbar, particle system, quiz panel, mode buttons.
+  No element should lag behind or require a domain switch to update.
+
+- **FR-025**: The minimap MUST use theme-aware colors (not hardcoded dark
+  mode values). Light mode: white/light background. Dark mode: navy
+  background.
+
+#### UI Polish (P1)
+
+- **FR-026**: Mode buttons ("Auto", "Easy", etc.) MUST have readable text
+  in both active and inactive states. The active state MUST NOT use dark
+  text on dark green background. Use white text on dark backgrounds.
+
+- **FR-027**: Disabled mode button tooltips MUST have a solid background,
+  border, and proper contrast. They MUST NOT overlay directly on button
+  text without a background.
+
+- **FR-028**: Quiz question text and answer options MUST be fully
+  left-justified. No first-line indentation.
+
+- **FR-029**: Map tooltips MUST show: (a) article excerpt when hovering
+  over article dots, (b) question text when hovering over question dots,
+  (c) knowledge-colored backgrounds (green for correct, red for incorrect,
+  neutral for unanswered). Style must match the main branch implementation.
+
+- **FR-030**: The quiz panel MUST have a visible toggle button to open/close
+  it. Pressing Escape dismisses the panel, but the toggle button remains
+  visible to reopen it. Panel slides in/out with animation.
+
+- **FR-031**: The colorbar MUST be visible whenever a domain is loaded (not
+  only after questions are dismissed). It MUST use theme-appropriate text
+  colors and system fonts (not "Space Mono"). Position MUST adjust when
+  the quiz panel opens/closes.
+
+- **FR-032**: The "Knowledge Mapper" title gradient (header + landing page)
+  MUST be entirely green (Dartmouth Green shades). MUST NOT fade to blue.
+
+#### New Features (P2)
+
+- **FR-033**: The About modal MUST include a keyboard shortcuts section
+  listing all available keyboard interactions.
+
+- **FR-034**: System MUST support importing a previously exported response
+  JSON file, restoring all answers and updating the knowledge map.
+
+- **FR-035**: System MUST provide social sharing buttons (LinkedIn, X/
+  Twitter, Bluesky, Instagram) that post a rendered image of the user's
+  knowledge map with their top areas of expertise.
+
+#### Comprehensive UX Testing (P3)
+
+- **SC-014**: Playwright tests MUST simulate detailed interactions with
+  at least 5 distinct user personas: casual browser, domain expert,
+  curious college student, UI/UX expert, business professional. Each
+  persona must exercise different interaction patterns and all must
+  receive a delightful experience.
+
 ## Research References
 
 The following research informs the active learning (FR-016–FR-019) and

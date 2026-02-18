@@ -87,21 +87,21 @@ export class Minimap {
     this.navigateHandler = handler;
   }
 
-  _synthwaveColor(value) {
+  _heatmapColor(value) {
     const v = Math.max(0, Math.min(1, value));
     if (v < 0.5) {
       const t = v / 0.5;
       return [
-        Math.round(61 + t * 194),
-        Math.round(21 + t * 105),
-        Math.round(96 + t * 123),
+        Math.round(15 + t * (0 - 15)),
+        Math.round(23 + t * (105 - 23)),
+        Math.round(42 + t * (62 - 42)),
       ];
     }
     const t = (v - 0.5) / 0.5;
     return [
-      Math.round(255 - t * 201),
-      Math.round(126 + t * 123),
-      Math.round(219 + t * 27),
+      Math.round(0 + t * (255 - 0)),
+      Math.round(105 + t * (160 - 105)),
+      Math.round(62 + t * (15 - 62)),
     ];
   }
 
@@ -193,7 +193,7 @@ export class Minimap {
     const h = this.height;
 
     ctx.clearRect(0, 0, w, h);
-    ctx.fillStyle = '#1a1525';
+    ctx.fillStyle = '#0f172a';
     ctx.fillRect(0, 0, w, h);
 
     this._drawHeatmap(ctx, w, h);
@@ -222,7 +222,7 @@ export class Minimap {
     ctx.globalAlpha = 0.5;
     for (const e of this.estimates) {
       if (e.state === 'unknown') continue;
-      const [r, g, b] = this._synthwaveColor(e.value);
+      const [r, g, b] = this._heatmapColor(e.value);
       const a = e.evidenceCount === 0 ? 0.25 : 0.7;
       ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
       ctx.fillRect(rx + e.gx * cellW, ry + e.gy * cellH, cellW + 0.5, cellH + 0.5);
@@ -233,7 +233,7 @@ export class Minimap {
   _drawArticles(ctx, w, h) {
     if (this.articles.length === 0) return;
 
-    ctx.fillStyle = 'rgba(180, 180, 220, 0.25)';
+    ctx.fillStyle = 'rgba(148, 163, 184, 0.2)';
     for (const a of this.articles) {
       ctx.fillRect(a.x * w, a.y * h, 1, 1);
     }
@@ -258,7 +258,7 @@ export class Minimap {
       const isAll = d.id === 'all';
 
       if (isActive) {
-        ctx.strokeStyle = '#ff7edb';
+        ctx.strokeStyle = '#00693e';
         ctx.lineWidth = 2;
       } else if (isAll) {
         ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
@@ -275,7 +275,7 @@ export class Minimap {
         ctx.beginPath();
         ctx.rect(x, y, dw, dh);
         ctx.clip();
-        ctx.fillStyle = isActive ? 'rgba(255, 126, 219, 0.8)' : 'rgba(255, 255, 255, 0.4)';
+        ctx.fillStyle = isActive ? 'rgba(0, 105, 62, 0.9)' : 'rgba(255, 255, 255, 0.4)';
         ctx.font = '9px "Space Mono", monospace';
         ctx.textAlign = 'left';
         ctx.textBaseline = 'top';
@@ -295,7 +295,7 @@ export class Minimap {
     ctx.fillStyle = 'rgba(255, 255, 255, 0.06)';
     ctx.fillRect(x, y, vw, vh);
 
-    ctx.strokeStyle = 'rgba(54, 249, 246, 0.9)';
+    ctx.strokeStyle = 'rgba(38, 122, 186, 0.9)';
     ctx.lineWidth = 1.5;
     ctx.setLineDash([]);
     ctx.strokeRect(x, y, vw, vh);

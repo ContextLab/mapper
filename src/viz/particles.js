@@ -162,9 +162,9 @@ export class ParticleSystem {
     }
 
     const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
-    const r = isDark ? 255 : 100;
-    const g = isDark ? 126 : 30;
-    const b = isDark ? 219 : 120;
+    const r = isDark ? 38 : 15;
+    const g = isDark ? 122 : 23;
+    const b = isDark ? 186 : 42;
 
     for (const level of levels) {
       if (level.particles.length === 0) continue;

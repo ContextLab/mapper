@@ -10,50 +10,49 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous" onerror="window.__katexFailed=true; console.error('KaTeX CSS failed to load'); document.getElementById('cdn-warning').hidden=false;">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous" onerror="window.__katexFailed=true; console.error('KaTeX JS failed to load'); document.getElementById('cdn-warning').hidden=false;"></script>
 
-    <!-- Monospace fonts: Space Mono (headings) + JetBrains Mono (body) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous" onerror="console.error('Font Awesome failed to load'); document.body.classList.add('fa-failed'); document.getElementById('cdn-warning').hidden=false;">
 
     <style>
         :root, [data-theme="dark"] {
-            --color-bg: #241b2f;
-            --color-surface: #262335;
-            --color-surface-raised: #2d2847;
-            --color-primary: #ff7edb;
-            --color-secondary: #36f9f6;
-            --color-tertiary: #72f1b8;
-            --color-accent: #ff7edb;
-            --color-text: #ffffff;
-            --color-text-muted: #848bb2;
-            --color-correct: #72f1b8;
-            --color-incorrect: #ff5c5c;
-            --color-border: rgba(255,126,219,0.2);
-            --color-glow-primary: rgba(255,126,219,0.4);
-            --color-glow-secondary: rgba(54,249,246,0.3);
-            --font-heading: 'Space Mono', monospace;
-            --font-body: 'JetBrains Mono', monospace;
+            --color-bg: #0f172a;
+            --color-surface: #1e293b;
+            --color-surface-raised: #334155;
+            --color-primary: #00693e;
+            --color-primary-light: #1a8a5a;
+            --color-secondary: #267aba;
+            --color-tertiary: #10b981;
+            --color-accent: #ffa00f;
+            --color-text: #f1f5f9;
+            --color-text-muted: #94a3b8;
+            --color-correct: #10b981;
+            --color-incorrect: #ef4444;
+            --color-border: rgba(51,65,85,0.6);
+            --color-glow-primary: rgba(0,105,62,0.3);
+            --color-glow-secondary: rgba(38,122,186,0.25);
+            --font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             --header-height: 56px;
             --sidebar-width: 380px;
         }
         [data-theme="light"] {
-            --color-bg: #f0e6ff;
-            --color-surface: #ffffff;
-            --color-surface-raised: #f5f0ff;
-            --color-primary: #c850c0;
-            --color-secondary: #4158d0;
-            --color-tertiary: #5eb88a;
-            --color-accent: #c850c0;
-            --color-text: #2d1b4e;
-            --color-text-muted: #7c6f9f;
-            --color-correct: #4caf50;
-            --color-incorrect: #e53935;
-            --color-border: rgba(200,80,192,0.2);
-            --color-glow-primary: rgba(200,80,192,0.15);
-            --color-glow-secondary: rgba(65,88,208,0.15);
+            --color-bg: #ffffff;
+            --color-surface: #f8fafc;
+            --color-surface-raised: #e2e8f0;
+            --color-primary: #00693e;
+            --color-primary-light: #1a8a5a;
+            --color-secondary: #267aba;
+            --color-tertiary: #10b981;
+            --color-accent: #d97706;
+            --color-text: #0f172a;
+            --color-text-muted: #64748b;
+            --color-correct: #059669;
+            --color-incorrect: #dc2626;
+            --color-border: rgba(226,232,240,0.8);
+            --color-glow-primary: rgba(0,105,62,0.15);
+            --color-glow-secondary: rgba(38,122,186,0.12);
         }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -119,10 +118,12 @@
             font-family: var(--font-heading);
             font-weight: 700;
             font-size: 1rem;
-            color: var(--color-primary);
-            text-shadow: 0 0 12px var(--color-glow-primary);
+            background: linear-gradient(135deg, #00693e, #267aba);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
             letter-spacing: -0.02em;
-            transition: color 0.4s ease, text-shadow 0.4s ease;
+            transition: opacity 0.4s ease;
         }
         .domain-selector { font-size: 0.85rem; }
 
@@ -199,8 +200,10 @@
             margin-bottom: 0.75rem;
             font-weight: 700;
             letter-spacing: -0.03em;
-            color: var(--color-primary);
-            text-shadow: 0 0 20px var(--color-glow-primary), 0 0 60px rgba(255,126,219,0.15);
+            background: linear-gradient(135deg, #00693e, #267aba);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .landing-content h2 {
             font-family: var(--font-body);
@@ -220,19 +223,17 @@
         }
         .landing-content p i {
             color: var(--color-secondary);
-            text-shadow: 0 0 8px var(--color-glow-secondary);
             width: 1.5em;
             text-align: center;
         }
         .landing-content a {
             color: var(--color-secondary);
-            text-decoration: none;
-            border-bottom: 1px dotted rgba(54,249,246,0.5);
-            transition: all 0.2s ease;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: color 0.2s ease;
         }
         .landing-content a:hover {
-            border-bottom-style: solid;
-            text-shadow: 0 0 8px var(--color-glow-secondary);
+            color: var(--color-primary-light);
         }
         .landing-domain-wrapper {
             margin-top: 2rem;
@@ -324,14 +325,14 @@
             padding: 0.75rem 1.25rem;
             border-radius: 8px;
             border-color: var(--color-primary);
-            box-shadow: 0 0 16px var(--color-glow-primary);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
             min-width: 280px;
             justify-content: center;
             max-width: none;
         }
         .custom-select--landing .custom-select-trigger:focus {
             border-color: var(--color-secondary);
-            box-shadow: 0 0 20px var(--color-glow-secondary);
+            box-shadow: 0 0 0 3px rgba(0,105,62,0.2);
         }
         .custom-select--landing .custom-select-options {
             text-align: left;
@@ -351,7 +352,6 @@
             font-family: var(--font-heading);
             font-weight: 700;
             font-size: 0.9rem;
-            text-shadow: 0 0 10px var(--color-glow-secondary);
         }
         .landing-cta i {
             font-size: 1.25rem;
@@ -404,14 +404,14 @@
             left: 20px;
             width: 200px;
             height: 150px;
-            background: rgba(38,35,53,0.7);
+            background: rgba(15,23,42,0.7);
             border: 1px solid var(--color-border);
             border-radius: 8px;
             z-index: 5;
             backdrop-filter: blur(6px);
             overflow: hidden;
             transition: opacity 0.3s, box-shadow 0.3s;
-            box-shadow: 0 0 12px var(--color-glow-primary);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2);
         }
         #minimap-container[hidden] { display: none; }
 
@@ -448,20 +448,19 @@
             width: 90%;
             max-height: 85vh;
             overflow-y: auto;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.4), 0 0 30px var(--color-glow-primary);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3);
             border: 1px solid var(--color-border);
             font-family: var(--font-body);
             transition: background-color 0.4s ease;
         }
         .modal-content a {
             color: var(--color-secondary);
-            text-decoration: none;
-            border-bottom: 1px dotted var(--color-secondary);
-            transition: all 0.2s;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: color 0.2s;
         }
         .modal-content a:hover {
-            text-shadow: 0 0 8px var(--color-glow-secondary);
-            border-bottom-style: solid;
+            color: var(--color-primary);
         }
 
         .sr-only {
@@ -586,18 +585,18 @@
         <div class="modal-content">
             <h2 id="modal-title" style="margin-bottom: 1rem; font-family: var(--font-heading); color: var(--color-primary);">About Knowledge Mapper</h2>
             <p style="line-height: 1.7; margin-bottom: 0.75rem; font-size: 0.9rem;">
-                Knowledge Mapper uses <strong style="color:var(--color-secondary)">text embedding models</strong> to
+                Knowledge Mapper uses <strong style="color:var(--color-primary-light)">text embedding models</strong> to
                 create a semantic coordinate system from 250,000 Wikipedia articles. Each
                 article is embedded into a high-dimensional vector space and projected onto a
                 2D map where related concepts cluster together &mdash; the articles serve as
                 guideposts that define the terrain of human knowledge.
             </p>
             <p style="line-height: 1.7; margin-bottom: 0.75rem; font-size: 0.9rem;">
-                As you answer questions, an <strong style="color:var(--color-secondary)">adaptive estimator</strong>
+                As you answer questions, an <strong style="color:var(--color-primary-light)">adaptive estimator</strong>
                 interpolates your knowledge across nearby concepts using radial basis functions.
                 Each answer creates a ripple of evidence: getting a question right suggests
                 you likely know related topics nearby, while a wrong answer reveals gaps. The
-                system uses <strong style="color:var(--color-secondary)">uncertainty-weighted selection</strong> to
+                system uses <strong style="color:var(--color-primary-light)">uncertainty-weighted selection</strong> to
                 pick the most informative next question, efficiently mapping your understanding
                 with as few questions as possible.
             </p>

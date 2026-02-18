@@ -2,38 +2,36 @@
 
 import { mergeForTransition, buildTransitionFrames, needs3D, cubicInOut } from './transitions.js';
 
-// Dark mode: synthwave gradient 0→deep purple, 0.5→neon pink, 1→neon cyan
-function valueToSynthwaveColor(v) {
+function valueToDarkColor(v) {
   const val = Math.max(0, Math.min(1, v));
   let r, g, b;
   if (val < 0.5) {
     const t = val / 0.5;
-    r = Math.round(61 + t * (255 - 61));
-    g = Math.round(21 + t * (126 - 21));
-    b = Math.round(96 + t * (219 - 96));
+    r = Math.round(15 + t * (0 - 15));
+    g = Math.round(23 + t * (105 - 23));
+    b = Math.round(42 + t * (62 - 42));
   } else {
     const t = (val - 0.5) / 0.5;
-    r = Math.round(255 + t * (54 - 255));
-    g = Math.round(126 + t * (249 - 126));
-    b = Math.round(219 + t * (246 - 219));
+    r = Math.round(0 + t * (255 - 0));
+    g = Math.round(105 + t * (160 - 105));
+    b = Math.round(62 + t * (15 - 62));
   }
   return [r, g, b];
 }
 
-// Light mode: 0→pale sand, 0.5→warm amber, 1→deep teal
 function valueToLightColor(v) {
   const val = Math.max(0, Math.min(1, v));
   let r, g, b;
   if (val < 0.5) {
     const t = val / 0.5;
-    r = Math.round(245 + t * (210 - 245));
-    g = Math.round(235 + t * (140 - 235));
-    b = Math.round(220 + t * (60 - 220));
+    r = Math.round(248 + t * (167 - 248));
+    g = Math.round(250 + t * (210 - 250));
+    b = Math.round(252 + t * (178 - 252));
   } else {
     const t = (val - 0.5) / 0.5;
-    r = Math.round(210 + t * (20 - 210));
-    g = Math.round(140 + t * (120 - 140));
-    b = Math.round(60 + t * (120 - 60));
+    r = Math.round(167 + t * (0 - 167));
+    g = Math.round(210 + t * (105 - 210));
+    b = Math.round(178 + t * (62 - 178));
   }
   return [r, g, b];
 }
@@ -344,7 +342,7 @@ export class Renderer {
     const light = this._isLightMode();
 
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.fillStyle = light ? '#f5f0eb' : (getComputedStyle(this._container).getPropertyValue('--color-bg').trim() || '#241b2f');
+    ctx.fillStyle = light ? '#ffffff' : (getComputedStyle(this._container).getPropertyValue('--color-bg').trim() || '#0f172a');
     ctx.fillRect(0, 0, w, h);
 
     ctx.save();
@@ -376,7 +374,7 @@ export class Renderer {
     const cellH = rh / gridSize;
 
     ctx.globalAlpha = light ? 0.45 : HEATMAP_OPACITY;
-    const colorFn = light ? valueToLightColor : valueToSynthwaveColor;
+    const colorFn = light ? valueToLightColor : valueToDarkColor;
 
     for (const e of estimates) {
       if (e.state === 'unknown') continue;
@@ -392,12 +390,12 @@ export class Renderer {
   _drawPoints(ctx, w, h, light) {
     if (this._points.length === 0) return;
 
-    const defaultColor = light ? [80, 80, 100, 80] : [180, 180, 220, 100];
+    const defaultColor = light ? [100, 116, 139, 80] : [148, 163, 184, 80];
     for (const p of this._points) {
       const px = p.x * w;
       const py = p.y * h;
       const r = (p.radius || 2) / this._zoom;
-      const isDefaultDark = p.color && p.color[0] === 180 && p.color[1] === 180;
+      const isDefaultDark = p.color && p.color[0] === 148 && p.color[1] === 163;
       const color = (light && isDefaultDark) ? defaultColor : (p.color || defaultColor);
       const alpha = (color[3] ?? 100) / 255;
 
@@ -441,12 +439,12 @@ export class Renderer {
     ctx.save();
     ctx.setTransform(this._dpr, 0, 0, this._dpr, 0, 0);
 
-    ctx.fillStyle = light ? 'rgba(255,255,255,0.75)' : 'rgba(0,0,0,0.5)';
+    ctx.fillStyle = light ? 'rgba(255,255,255,0.75)' : 'rgba(15,23,42,0.7)';
     ctx.beginPath();
     ctx.roundRect(x - 6, y - 20, barW + 12, barH + 36, 6);
     ctx.fill();
 
-    const colorFn = light ? valueToLightColor : valueToSynthwaveColor;
+    const colorFn = light ? valueToLightColor : valueToDarkColor;
     const steps = 40;
     const stepH = barH / steps;
     for (let i = 0; i < steps; i++) {

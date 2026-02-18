@@ -63,23 +63,23 @@ export function init(container) {
       }
       .quiz-option.selected.correct {
         background-color: var(--color-correct) !important;
-        color: #1a1a2e !important;
+        color: #0f172a !important;
         border-color: var(--color-correct) !important;
-        box-shadow: 0 0 12px rgba(114,241,184,0.4) !important;
+        box-shadow: 0 0 12px rgba(16,185,129,0.3) !important;
         opacity: 1 !important;
       }
       .quiz-option.selected.incorrect {
         background-color: var(--color-incorrect) !important;
         color: white !important;
         border-color: var(--color-incorrect) !important;
-        box-shadow: 0 0 12px rgba(255,92,92,0.4) !important;
+        box-shadow: 0 0 12px rgba(239,68,68,0.3) !important;
         opacity: 1 !important;
       }
       .quiz-option.correct-highlight {
         background-color: var(--color-correct) !important;
-        color: #1a1a2e !important;
+        color: #0f172a !important;
         border-color: var(--color-correct) !important;
-        box-shadow: 0 0 12px rgba(114,241,184,0.4) !important;
+        box-shadow: 0 0 12px rgba(16,185,129,0.3) !important;
         opacity: 1 !important;
       }
       .quiz-feedback {

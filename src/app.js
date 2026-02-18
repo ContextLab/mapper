@@ -146,7 +146,7 @@ function articlesToPoints(articles) {
     y: a.y,
     z: a.z || 0,
     type: 'article',
-    color: [180, 180, 220, 100],
+    color: [148, 163, 184, 80],
     radius: 2,
     title: a.title,
     url: a.url,
@@ -168,7 +168,7 @@ function responsesToAnsweredDots(responses, qIndex) {
       questionId: qid,
       title: q.question_text,
       isCorrect: r.is_correct,
-      color: r.is_correct ? [114, 241, 184, 200] : [255, 92, 92, 200],
+      color: r.is_correct ? [16, 185, 129, 200] : [239, 68, 68, 200],
     });
   }
   return dots;

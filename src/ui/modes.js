@@ -33,41 +33,57 @@ export function init(container) {
         flex-wrap: wrap;
         gap: 0.35rem;
         margin-bottom: 0.75rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid var(--color-border);
       }
       .mode-btn {
         display: inline-flex;
         align-items: center;
         gap: 0.35rem;
         padding: 0.35rem 0.6rem;
-        border: 1px solid rgba(0,0,0,0.12);
+        border: 1px solid var(--color-border);
         border-radius: 16px;
-        background: white;
+        background: var(--color-surface-raised);
         cursor: pointer;
-        font-size: 0.78rem;
-        font-family: inherit;
-        color: #555;
+        font-size: 0.75rem;
+        font-family: var(--font-body);
+        color: var(--color-text-muted);
         transition: all 0.15s ease;
         white-space: nowrap;
         position: relative;
       }
       .mode-btn:hover:not(:disabled) {
-        border-color: var(--color-primary, #3f51b5);
-        color: var(--color-primary, #3f51b5);
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+        box-shadow: 0 0 8px var(--color-glow-primary);
       }
       .mode-btn.active {
-        background: var(--color-primary, #3f51b5);
-        color: white;
-        border-color: var(--color-primary, #3f51b5);
+        background: var(--color-primary);
+        color: #1a1a2e;
+        border-color: var(--color-primary);
+        box-shadow: 0 0 12px var(--color-glow-primary);
       }
       .mode-btn:disabled {
-        opacity: 0.4;
+        opacity: 0.25;
         cursor: not-allowed;
+      }
+      .mode-btn:disabled i {
+        display: none;
       }
       .mode-btn--insight {
         border-style: dashed;
+        border-color: var(--color-secondary);
+      }
+      .mode-btn--insight:hover:not(:disabled) {
+        border-color: var(--color-secondary);
+        color: var(--color-secondary);
+        box-shadow: 0 0 8px var(--color-glow-secondary);
       }
       .mode-btn--insight.active {
         border-style: solid;
+        background: var(--color-secondary);
+        border-color: var(--color-secondary);
+        box-shadow: 0 0 12px var(--color-glow-secondary);
       }
       .mode-btn:disabled:hover::after {
         content: attr(data-tooltip);
@@ -75,14 +91,15 @@ export function init(container) {
         bottom: calc(100% + 6px);
         left: 50%;
         transform: translateX(-50%);
-        background: #333;
-        color: white;
+        background: var(--color-surface-raised);
+        color: var(--color-text);
         padding: 4px 8px;
         border-radius: 4px;
         font-size: 0.7rem;
         white-space: nowrap;
         z-index: 100;
         pointer-events: none;
+        border: 1px solid var(--color-border);
       }
     `;
     document.head.appendChild(style);

@@ -23,18 +23,18 @@ export function showDownload(loaded, total) {
       top: '8px',
       right: '10px',
       fontSize: '12px',
-      fontFamily: 'var(--font-sans, system-ui, sans-serif)',
-      color: 'var(--color-primary, #3f51b5)',
+      fontFamily: 'var(--font-body)',
+      color: 'var(--color-secondary)',
       fontWeight: '600',
       pointerEvents: 'none',
-      textShadow: '0 0 2px rgba(255,255,255,0.8)'
+      textShadow: '0 0 6px var(--color-glow-secondary)'
     });
     overlay.appendChild(downloadText);
   }
 
   overlay.style.display = 'block';
   overlay.style.opacity = '1';
-  overlay.style.backgroundColor = 'var(--color-primary, #3f51b5)';
+  overlay.style.backgroundColor = 'var(--color-primary)';
   overlay.style.transition = 'width 0.2s ease, opacity 0.3s ease';
   overlay.style.overflow = 'visible';
 
@@ -82,15 +82,16 @@ export function initConfidence(container) {
   confidenceText = document.createElement('div');
   Object.assign(confidenceText.style, {
     fontSize: '0.75rem',
+    fontFamily: 'var(--font-heading)',
     fontWeight: '500',
-    color: 'var(--color-text, #333)'
+    color: 'var(--color-text-muted)'
   });
   confidenceText.textContent = 'Domain mapped: 0%';
 
   const track = document.createElement('div');
   Object.assign(track.style, {
     height: '6px',
-    backgroundColor: 'rgba(0,0,0,0.1)',
+    backgroundColor: 'var(--color-surface-raised)',
     borderRadius: '3px',
     overflow: 'hidden'
   });
@@ -99,8 +100,9 @@ export function initConfidence(container) {
   Object.assign(confidenceFill.style, {
     height: '100%',
     width: '0%',
-    backgroundColor: '#ff4444', 
-    transition: 'width 0.3s ease, background-color 0.3s ease'
+    background: 'linear-gradient(90deg, var(--color-primary), var(--color-secondary))',
+    transition: 'width 0.3s ease',
+    boxShadow: '0 0 6px var(--color-glow-primary)'
   });
 
   track.appendChild(confidenceFill);
@@ -114,11 +116,6 @@ export function updateConfidence(coverage) {
   if (!confidenceFill || !confidenceText) return;
   
   const pct = Math.min(100, Math.max(0, coverage * 100));
-  const hue = pct * 1.2; 
-  const color = `hsl(${hue}, 80%, 45%)`;
-  
   confidenceFill.style.width = `${pct}%`;
-  confidenceFill.style.backgroundColor = color;
-  
   confidenceText.textContent = `Domain mapped: ${Math.round(pct)}%`;
 }

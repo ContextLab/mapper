@@ -7,7 +7,7 @@
 const PARTICLE_COUNT = 3000;
 const SPRING = 0.012;
 const FRICTION = 0.94;
-const REPEL_RADIUS = 100;
+const REPEL_RADIUS = 12.5;
 const REPEL_FORCE = 4;
 const PARTICLE_SIZE = 1.5;
 
@@ -19,8 +19,29 @@ export class ParticleSystem {
     this.mouse = { x: -9999, y: -9999, active: false };
     this.running = false;
     this.raf = null;
+
+    this.viewX = 0;
+    this.viewY = 0;
+    this.viewW = 1;
+    this.viewH = 1;
+
+    // Particle bounding box (computed from data)
+    this._boundsMinX = 0;
+    this._boundsMaxX = 1;
+    this._boundsMinY = 0;
+    this._boundsMaxY = 1;
+
+    this._dragging = false;
+    this._dragStartX = 0;
+    this._dragStartY = 0;
+    this._dragStartViewX = 0;
+    this._dragStartViewY = 0;
+
     this._onMouseMove = this._onMouseMove.bind(this);
     this._onMouseLeave = this._onMouseLeave.bind(this);
+    this._onMouseDown = this._onMouseDown.bind(this);
+    this._onMouseUp = this._onMouseUp.bind(this);
+    this._onWheel = this._onWheel.bind(this);
     this._onResize = this._onResize.bind(this);
     this._tick = this._tick.bind(this);
   }
@@ -33,6 +54,10 @@ export class ParticleSystem {
     window.addEventListener('resize', this._onResize);
     canvas.addEventListener('mousemove', this._onMouseMove);
     canvas.addEventListener('mouseleave', this._onMouseLeave);
+    canvas.addEventListener('mousedown', this._onMouseDown);
+    canvas.addEventListener('wheel', this._onWheel, { passive: false });
+    window.addEventListener('mouseup', this._onMouseUp);
+    canvas.style.cursor = 'grab';
 
     try {
       const url = `${basePath}data/domains/all.json`;
@@ -56,16 +81,38 @@ export class ParticleSystem {
     const w = this.canvas.width / (window.devicePixelRatio || 1);
     const h = this.canvas.height / (window.devicePixelRatio || 1);
 
-    this.particles = shuffled.map(a => {
-      const px = (a.x || Math.random()) * w;
-      const py = (a.y || Math.random()) * h;
+    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+
+    const rawParticles = shuffled.map(a => {
+      const pctX = a.x || Math.random();
+      const pctY = a.y || Math.random();
+      if (pctX < minX) minX = pctX;
+      if (pctX > maxX) maxX = pctX;
+      if (pctY < minY) minY = pctY;
+      if (pctY > maxY) maxY = pctY;
+      return { pctX, pctY };
+    });
+
+    this._boundsMinX = minX;
+    this._boundsMaxX = maxX;
+    this._boundsMinY = minY;
+    this._boundsMaxY = maxY;
+
+    this.viewX = this._boundsMinX;
+    this.viewY = this._boundsMinY;
+    this.viewW = this._boundsMaxX - this._boundsMinX || 1;
+    this.viewH = this._boundsMaxY - this._boundsMinY || 1;
+
+    this.particles = rawParticles.map(({ pctX, pctY }) => {
+      const px = ((pctX - this.viewX) / this.viewW) * w;
+      const py = ((pctY - this.viewY) / this.viewH) * h;
       return {
         x: px,
         y: py,
         homeX: px,
         homeY: py,
-        pctX: a.x || Math.random(),
-        pctY: a.y || Math.random(),
+        pctX,
+        pctY,
         vx: 0,
         vy: 0,
         alpha: 0.15 + Math.random() * 0.4,
@@ -88,14 +135,24 @@ export class ParticleSystem {
     const w = rect.width;
     const h = rect.height;
     for (const p of this.particles) {
-      p.homeX = p.pctX * w;
-      p.homeY = p.pctY * h;
+      p.homeX = ((p.pctX - this.viewX) / this.viewW) * w;
+      p.homeY = ((p.pctY - this.viewY) / this.viewH) * h;
       p.x = p.homeX + (p.x - p.homeX) * 0.3;
       p.y = p.homeY + (p.y - p.homeY) * 0.3;
     }
   }
 
   _onMouseMove(e) {
+    if (this._dragging) {
+      const rect = this.canvas.getBoundingClientRect();
+      const dx = (e.clientX - this._dragStartX) / rect.width * this.viewW;
+      const dy = (e.clientY - this._dragStartY) / rect.height * this.viewH;
+      this.viewX = this._dragStartViewX - dx;
+      this.viewY = this._dragStartViewY - dy;
+      this._clampView();
+      this._updateHomePositions();
+      return;
+    }
     const rect = this.canvas.getBoundingClientRect();
     this.mouse.x = e.clientX - rect.left;
     this.mouse.y = e.clientY - rect.top;
@@ -106,6 +163,66 @@ export class ParticleSystem {
     this.mouse.active = false;
     this.mouse.x = -9999;
     this.mouse.y = -9999;
+  }
+
+  _onMouseDown(e) {
+    this._dragging = true;
+    this._dragStartX = e.clientX;
+    this._dragStartY = e.clientY;
+    this._dragStartViewX = this.viewX;
+    this._dragStartViewY = this.viewY;
+    this.mouse.active = false;
+    this.canvas.style.cursor = 'grabbing';
+    e.preventDefault();
+  }
+
+  _onMouseUp() {
+    if (this._dragging) {
+      this._dragging = false;
+      if (this.canvas) this.canvas.style.cursor = 'grab';
+    }
+  }
+
+  _onWheel(e) {
+    e.preventDefault();
+    const rect = this.canvas.getBoundingClientRect();
+    const mx = (e.clientX - rect.left) / rect.width;
+    const my = (e.clientY - rect.top) / rect.height;
+
+    const worldX = this.viewX + mx * this.viewW;
+    const worldY = this.viewY + my * this.viewH;
+
+    const maxW = this._boundsMaxX - this._boundsMinX;
+    const maxH = this._boundsMaxY - this._boundsMinY;
+    const factor = e.deltaY > 0 ? 1.1 : 0.9;
+    const newW = Math.min(maxW, Math.max(0.05, this.viewW * factor));
+    const newH = Math.min(maxH, Math.max(0.05, this.viewH * factor));
+
+    this.viewX = worldX - mx * newW;
+    this.viewY = worldY - my * newH;
+    this.viewW = newW;
+    this.viewH = newH;
+
+    this._clampView();
+    this._updateHomePositions();
+  }
+
+  _clampView() {
+    this.viewX = Math.max(this._boundsMinX, Math.min(this._boundsMaxX - this.viewW, this.viewX));
+    this.viewY = Math.max(this._boundsMinY, Math.min(this._boundsMaxY - this.viewH, this.viewY));
+  }
+
+  _updateHomePositions() {
+    const w = this.canvas.width / (window.devicePixelRatio || 1);
+    const h = this.canvas.height / (window.devicePixelRatio || 1);
+    for (const p of this.particles) {
+      p.homeX = ((p.pctX - this.viewX) / this.viewW) * w;
+      p.homeY = ((p.pctY - this.viewY) / this.viewH) * h;
+      p.x = p.homeX;
+      p.y = p.homeY;
+      p.vx = 0;
+      p.vy = 0;
+    }
   }
 
   _tick() {
@@ -161,10 +278,9 @@ export class ParticleSystem {
       else levels[2].particles.push(p);
     }
 
-    const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
-    const r = isDark ? 38 : 0;
-    const g = isDark ? 122 : 105;
-    const b = isDark ? 186 : 62;
+    const r = 0;
+    const g = 105;
+    const b = 62;
 
     for (const level of levels) {
       if (level.particles.length === 0) continue;
@@ -187,7 +303,10 @@ export class ParticleSystem {
     if (this.canvas) {
       this.canvas.removeEventListener('mousemove', this._onMouseMove);
       this.canvas.removeEventListener('mouseleave', this._onMouseLeave);
+      this.canvas.removeEventListener('mousedown', this._onMouseDown);
+      this.canvas.removeEventListener('wheel', this._onWheel);
     }
+    window.removeEventListener('mouseup', this._onMouseUp);
     window.removeEventListener('resize', this._onResize);
     this.particles = [];
     this.canvas = null;

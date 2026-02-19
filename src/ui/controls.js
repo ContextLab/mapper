@@ -226,23 +226,6 @@ export function init(headerElement) {
   });
   container.appendChild(importButton);
 
-  const themeToggle = document.getElementById('theme-toggle');
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme') || 'dark';
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('mapper-theme', next);
-      const icon = themeToggle.querySelector('i');
-      if (icon) {
-        icon.className = next === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
-      }
-      // Notify all canvas-based components to re-render with new theme
-      document.documentElement.dispatchEvent(
-        new CustomEvent('theme-changed', { detail: { theme: next } })
-      );
-    });
-  }
 }
 
 export function onDomainSelect(callback) {

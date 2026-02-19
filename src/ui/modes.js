@@ -7,11 +7,7 @@ const QUESTION_MODES = [
   { id: 'dont-know', label: "Something I don't know", icon: 'fa-circle-question', minAnswers: 5, type: 'question' },
 ];
 
-const INSIGHT_MODES = [
-  { id: 'expertise', label: 'My areas of expertise', icon: 'fa-trophy', minAnswers: 10, type: 'insight' },
-  { id: 'weakness', label: 'My areas of weakness', icon: 'fa-arrow-trend-down', minAnswers: 10, type: 'insight' },
-  { id: 'suggested', label: 'Suggest something to learn', icon: 'fa-lightbulb', minAnswers: 10, type: 'insight' },
-];
+const INSIGHT_MODES = [];
 
 const ALL_MODES = [...QUESTION_MODES, ...INSIGHT_MODES];
 
@@ -100,7 +96,8 @@ export function init(container) {
         white-space: nowrap;
         z-index: 100;
         pointer-events: none;
-        border: 1px solid var(--color-border);
+        border: 1px solid #00693e;
+        border-left: 3px solid #00693e;
         box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         max-width: 200px;
       }

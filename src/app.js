@@ -129,11 +129,13 @@ async function boot() {
   const trophyBtn = document.getElementById('trophy-btn');
   if (trophyBtn) {
     trophyBtn.addEventListener('click', () => {
-      if (!currentDomainBundle) return;
+      if (!globalEstimator) return;
+      // Use global estimator so leaderboard reflects the full map, not just the current domain
       const ck = insights.computeConceptKnowledge(
-        $estimates.get(),
-        currentDomainRegion,
-        currentGridSize,
+        globalEstimator.predict(),
+        GLOBAL_REGION,
+        GLOBAL_GRID_SIZE,
+        { global: true },
       );
       insights.showLeaderboard(ck);
     });
@@ -142,11 +144,13 @@ async function boot() {
   const suggestBtn = document.getElementById('suggest-btn');
   if (suggestBtn) {
     suggestBtn.addEventListener('click', () => {
-      if (!currentDomainBundle) return;
+      if (!globalEstimator) return;
+      // Use global estimator so suggestions reflect the full map, not just the current domain
       const ck = insights.computeConceptKnowledge(
-        $estimates.get(),
-        currentDomainRegion,
-        currentGridSize,
+        globalEstimator.predict(),
+        GLOBAL_REGION,
+        GLOBAL_GRID_SIZE,
+        { global: true },
       );
       insights.showSuggestions(ck);
     });
@@ -470,6 +474,7 @@ function handleReset() {
   renderer.setLabels([]);
   renderer.setAnsweredQuestions([]);
   renderer.clearQuestions();
+  insights.resetGlobalConcepts();
   questionIndex = new Map();
   if (minimap) {
     minimap.setActive(null);

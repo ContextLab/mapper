@@ -100,9 +100,8 @@ export function initConfidence(container) {
   Object.assign(confidenceFill.style, {
     height: '100%',
     width: '0%',
-    background: 'linear-gradient(90deg, var(--color-primary), var(--color-secondary))',
-    transition: 'width 0.3s ease',
-    boxShadow: '0 0 6px var(--color-glow-primary)'
+    background: '#00693e',
+    transition: 'width 0.3s ease'
   });
 
   track.appendChild(confidenceFill);

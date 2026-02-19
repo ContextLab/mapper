@@ -24,7 +24,7 @@ import {
 //   d=0.20 → k≈0.21  (distant but related: faint but present)
 //   d=0.30 → k≈0.07  (unrelated domain: negligible)
 // These values satisfy SC-009: Math→Probability produces non-zero cross-domain estimates.
-const DEFAULT_LENGTH_SCALE = 0.15;
+export const DEFAULT_LENGTH_SCALE = 0.15;
 const DEFAULT_SIGNAL_VARIANCE = 1.0;
 const NOISE_VARIANCE = 0.1;
 const PRIOR_MEAN = 0.5;
@@ -33,11 +33,12 @@ export class Estimator {
   constructor() {
     this._gridSize = 0;
     this._region = null;
-    this._cells = []; // [{gx, gy, cx, cy}] — grid cell centers
-    this._observations = []; // [{x, y, value}] — raw observations
-    this._alpha = null; // Precomputed (K + σ²I)^{-1} · (y - μ)
-    this._obsPoints = []; // [{x, y}] for kernel vector computation
-    this._obsValues = null; // Float64Array of observation values
+    this._cells = [];
+    this._observations = []; // [{x, y, value, lengthScale}]
+    this._alpha = null;
+    this._obsPoints = [];
+    this._obsLengthScales = null; // Float64Array of per-observation length scales
+    this._obsValues = null;
     this._lengthScale = DEFAULT_LENGTH_SCALE;
     this._signalVariance = DEFAULT_SIGNAL_VARIANCE;
   }
@@ -75,11 +76,14 @@ export class Estimator {
 
   /**
    * Record a new observation and recompute GP posterior.
-   * correct=true → value=1, correct=false → value=0.
+   * @param {number} x - Normalized x coordinate
+   * @param {number} y - Normalized y coordinate
+   * @param {boolean} correct - Whether the answer was correct
+   * @param {number} [lengthScale] - Per-observation RBF width (defaults to DEFAULT_LENGTH_SCALE)
    */
-  observe(x, y, correct) {
+  observe(x, y, correct, lengthScale) {
     const value = correct ? 1.0 : 0.0;
-    this._observations.push({ x, y, value });
+    this._observations.push({ x, y, value, lengthScale: lengthScale || this._lengthScale });
     this._recompute();
   }
 
@@ -102,35 +106,36 @@ export class Estimator {
       }));
     }
 
-    const kernelFn = (d) => matern32(d, this._lengthScale, this._signalVariance);
+    const sv = this._signalVariance;
+    const defaultLS = this._lengthScale;
     const results = new Array(cells.length);
 
     for (let i = 0; i < cells.length; i++) {
       const cell = cells[i];
-      const testPt = { x: cell.cx, y: cell.cy };
 
-      // k* = kernel vector between test point and observations
-      const kStar = kernelVector(testPt, this._obsPoints, kernelFn);
+      // k* with per-observation length scales: k*[j] = matern32(d, sqrt(l_default * l_j))
+      const kStar = new Float64Array(n);
+      for (let j = 0; j < n; j++) {
+        const d = euclidean(cell.cx, cell.cy, this._obsPoints[j].x, this._obsPoints[j].y);
+        const lMerged = Math.sqrt(defaultLS * this._obsLengthScales[j]);
+        kStar[j] = matern32(d, lMerged, sv);
+      }
 
-      // Posterior mean: μ* = μ_prior + k*^T · α
       const meanShift = dot(kStar, this._alpha);
       const value = clamp(PRIOR_MEAN + meanShift, 0, 1);
 
-      // Posterior variance: σ²* = k** - k*^T · (K+σ²I)^{-1} · k*
-      const kSelf = this._signalVariance; // k(x*, x*) = σ²
+      const kSelf = sv;
       const kSolve = choleskySolve(this._K_noisy, kStar);
       const variance = Math.max(0, kSelf - dot(kStar, kSolve));
-      const uncertainty = clamp(Math.sqrt(variance) / Math.sqrt(this._signalVariance), 0, 1);
+      const uncertainty = clamp(Math.sqrt(variance) / Math.sqrt(sv), 0, 1);
 
-      // Count nearby observations (within 2x length-scale)
-      const evidenceRadius = this._lengthScale * 2;
+      // Count nearby observations using each observation's own length scale
       let evidenceCount = 0;
       for (let j = 0; j < n; j++) {
         const d = euclidean(cell.cx, cell.cy, this._obsPoints[j].x, this._obsPoints[j].y);
-        if (d <= evidenceRadius) evidenceCount++;
+        if (d <= this._obsLengthScales[j] * 2) evidenceCount++;
       }
 
-      // State derivation per FR-017
       let state;
       if (evidenceCount === 0) {
         state = 'unknown';
@@ -163,22 +168,28 @@ export class Estimator {
       };
     }
 
-    const kernelFn = (d) => matern32(d, this._lengthScale, this._signalVariance);
-    const testPt = { x: cell.cx, y: cell.cy };
-    const kStar = kernelVector(testPt, this._obsPoints, kernelFn);
+    const n = this._observations.length;
+    const sv = this._signalVariance;
+    const defaultLS = this._lengthScale;
+
+    const kStar = new Float64Array(n);
+    for (let j = 0; j < n; j++) {
+      const d = euclidean(cell.cx, cell.cy, this._obsPoints[j].x, this._obsPoints[j].y);
+      const lMerged = Math.sqrt(defaultLS * this._obsLengthScales[j]);
+      kStar[j] = matern32(d, lMerged, sv);
+    }
     const meanShift = dot(kStar, this._alpha);
     const value = clamp(PRIOR_MEAN + meanShift, 0, 1);
 
-    const kSelf = this._signalVariance;
+    const kSelf = sv;
     const kSolve = choleskySolve(this._K_noisy, kStar);
     const variance = Math.max(0, kSelf - dot(kStar, kSolve));
-    const uncertainty = clamp(Math.sqrt(variance) / Math.sqrt(this._signalVariance), 0, 1);
+    const uncertainty = clamp(Math.sqrt(variance) / Math.sqrt(sv), 0, 1);
 
-    const evidenceRadius = this._lengthScale * 2;
     let evidenceCount = 0;
-    for (let j = 0; j < this._observations.length; j++) {
+    for (let j = 0; j < n; j++) {
       const d = euclidean(cell.cx, cell.cy, this._obsPoints[j].x, this._obsPoints[j].y);
-      if (d <= evidenceRadius) evidenceCount++;
+      if (d <= this._obsLengthScales[j] * 2) evidenceCount++;
     }
 
     let state;
@@ -201,13 +212,13 @@ export class Estimator {
     this._alpha = null;
     this._obsPoints = [];
     this._obsValues = null;
+    this._obsLengthScales = null;
     this._K_noisy = null;
   }
 
   /**
    * Restore from persisted UserResponse[].
-   * Filters responses to those within this domain's region,
-   * then rebuilds the GP posterior.
+   * Each response may include a `lengthScale` for per-observation RBF width.
    */
   restore(responses) {
     this.reset();
@@ -215,12 +226,12 @@ export class Estimator {
     if (!this._region || !responses || responses.length === 0) return;
 
     for (const r of responses) {
-      // Use question coordinates if available, otherwise skip
       if (r.x != null && r.y != null) {
         this._observations.push({
           x: r.x,
           y: r.y,
           value: r.is_correct ? 1.0 : 0.0,
+          lengthScale: r.lengthScale || this._lengthScale,
         });
       }
     }
@@ -242,26 +253,43 @@ export class Estimator {
       this._alpha = null;
       this._obsPoints = [];
       this._obsValues = null;
+      this._obsLengthScales = null;
       this._K_noisy = null;
       return;
     }
 
     this._obsPoints = this._observations.map((o) => ({ x: o.x, y: o.y }));
     this._obsValues = new Float64Array(n);
+    this._obsLengthScales = new Float64Array(n);
     for (let i = 0; i < n; i++) {
       this._obsValues[i] = this._observations[i].value - PRIOR_MEAN;
+      this._obsLengthScales[i] = this._observations[i].lengthScale || this._lengthScale;
     }
 
-    const kernelFn = (d) => matern32(d, this._lengthScale, this._signalVariance);
-    const K = kernelMatrix(this._obsPoints, kernelFn);
+    // Build K with per-observation length scales: K[i,j] = matern32(d, sqrt(l_i * l_j))
+    const K = new Array(n);
+    for (let i = 0; i < n; i++) {
+      K[i] = new Float64Array(n);
+    }
+    const sv = this._signalVariance;
+    for (let i = 0; i < n; i++) {
+      const li = this._obsLengthScales[i];
+      for (let j = i; j < n; j++) {
+        const lj = this._obsLengthScales[j];
+        const lMerged = Math.sqrt(li * lj);
+        const d = euclidean(this._obsPoints[i].x, this._obsPoints[i].y,
+                           this._obsPoints[j].x, this._obsPoints[j].y);
+        const val = matern32(d, lMerged, sv);
+        K[i][j] = val;
+        K[j][i] = val;
+      }
+    }
 
-    // Add noise variance to diagonal: K_noisy = K + σ²_n · I
     this._K_noisy = K.map((row) => new Float64Array(row));
     for (let i = 0; i < n; i++) {
       this._K_noisy[i][i] += NOISE_VARIANCE;
     }
 
-    // α = (K + σ²_n·I)^{-1} · (y - μ)
     this._alpha = choleskySolve(this._K_noisy, this._obsValues);
   }
 

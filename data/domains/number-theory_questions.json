@@ -1,0 +1,1307 @@
+[
+  {
+    "id": "735542e89452009d",
+    "question_text": "The Fundamental Theorem of Arithmetic states that every integer greater than 1 has a unique prime factorization. Why is the word 'unique' significant?",
+    "options": {
+      "A": "Unique factorization means every integer can be expressed as a product of primes in exactly one way (up to ordering). This is not trivially obvious — in some number systems (like ℤ[√-5]), unique factorization fails: 6 = 2·3 = (1+√-5)(1-√-5), two genuinely different factorizations into irreducibles. The uniqueness in ℤ depends on the Euclidean algorithm and the fact that primes in ℤ satisfy: if p|ab then p|a or p|b",
+      "B": "Uniqueness of prime factorization is a trivially obvious property that requires no mathematical proof and was never the subject of serious investigation",
+      "C": "Unique factorization means a number can be factored into primes in many different equally valid ways, with no canonical representation being preferred over any other",
+      "D": "The Fundamental Theorem of Arithmetic applies exclusively to even integers and makes no claims whatsoever about the factorization of odd numbers, which is why odd primes and their products are treated as a completely separate category in all subsequent number theory involving unique factorization domains, Euclidean domains, and principal ideal domains where the factorization structure depends critically on divisibility by two"
+    },
+    "correct_answer": "A",
+    "difficulty": 1,
+    "x": 0.665079,
+    "y": 0.534306,
+    "z": 0.369323,
+    "source_article": "Fundamental Theorem of Arithmetic",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Fundamental Theorem of Arithmetic",
+      "unique factorization",
+      "prime factorization"
+    ]
+  },
+  {
+    "id": "137ff46bb7dfffb2",
+    "question_text": "Euclid proved there are infinitely many prime numbers over 2000 years ago. What is the essential idea of his proof?",
+    "options": {
+      "A": "Euclid systematically checked every positive integer up to an extremely large bound and observed empirically that no largest prime could be found within that range, concluding by induction that no largest prime exists anywhere among the natural numbers",
+      "B": "Assume for contradiction that there are finitely many primes p₁, p₂, ..., pₙ. Consider N = p₁·p₂·...·pₙ + 1. N is not divisible by any pᵢ (since dividing gives remainder 1), so N either is prime or has a prime factor not in our list — contradicting the assumption that we listed all primes",
+      "C": "Euclid used techniques from infinitesimal calculus to demonstrate that prime numbers are dense in the real number line, showing that between any two real numbers there exists at least one prime — a result that anticipated the analytic methods of Euler and Riemann by over two millennia and required sophisticated limit arguments unavailable in ancient Greek mathematics",
+      "D": "The proof that there are infinitely many primes requires modern computational power and high-performance computers to verify primality of sufficiently large candidate numbers, making it impossible for ancient Greek mathematicians to have produced a valid proof using only the geometric and logical methods available in Euclid's era"
+    },
+    "correct_answer": "B",
+    "difficulty": 1,
+    "x": 0.61,
+    "y": 0.647342,
+    "z": 0.395719,
+    "source_article": "infinitude of primes",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "infinitude of primes",
+      "proof by contradiction",
+      "Euclid's theorem"
+    ]
+  },
+  {
+    "id": "1f5b41b98fd08e1f",
+    "question_text": "Modular arithmetic works with remainders after division. What does the notation a ≡ b (mod n) mean, and what algebraic structure does ℤ/nℤ have?",
+    "options": {
+      "A": "The notation a ≡ b (mod n) means that a equals b exactly as integers, with no remainder or divisibility relationship involved in the definition",
+      "B": "Modular arithmetic is a system that applies exclusively to even integers and has no well-defined operations for odd numbers",
+      "C": "a ≡ b (mod n) means n divides (a - b), i.e., a and b have the same remainder when divided by n. The set ℤ/nℤ = {0, 1, ..., n-1} with addition and multiplication mod n forms a commutative ring. It is a field (every nonzero element has a multiplicative inverse) if and only if n is prime — this is because ℤ/nℤ has zero divisors precisely when n is composite",
+      "D": "The quotient ring ℤ/nℤ is always a field regardless of whether n is prime or composite, because every nonzero element automatically has a multiplicative inverse in any finite ring structure"
+    },
+    "correct_answer": "C",
+    "difficulty": 1,
+    "x": 0.700111,
+    "y": 0.51,
+    "z": 0.590294,
+    "source_article": "modular arithmetic",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "modular arithmetic",
+      "congruence",
+      "quotient rings",
+      "finite fields"
+    ]
+  },
+  {
+    "id": "b8f17c350b149e83",
+    "question_text": "Fermat's Little Theorem states that if p is prime and gcd(a,p) = 1, then aᵖ⁻¹ ≡ 1 (mod p). What is this theorem used for in practice?",
+    "options": {
+      "A": "Fermat's Little Theorem is used only as a historical curiosity with no practical applications in modern mathematics, computer science, or cryptography — it was interesting to seventeenth-century mathematicians but has been entirely superseded by more powerful tools and is never invoked in contemporary algorithms for modular arithmetic, primality testing, or public-key cryptographic protocols",
+      "B": "Fermat's Little Theorem is used exclusively as a subroutine for factoring large composite integers into their prime components, and it has no other applications in modular arithmetic, primality testing, cryptographic key generation, or any other area of computational number theory beyond integer factorization algorithms such as trial division and Pollard's rho method",
+      "C": "Fermat's Little Theorem is fundamentally incompatible with primality testing and cannot be used to determine whether a given integer is prime or composite — the congruence relationship it establishes provides no useful information about the primality of the modulus, and any attempt to construct a primality test based on Fermat's theorem is mathematically invalid",
+      "D": "It is the foundation of several practical applications: (1) computing modular inverses (a⁻¹ ≡ aᵖ⁻² mod p), (2) the Fermat primality test (if aⁿ⁻¹ ≢ 1 mod n, then n is definitely composite), (3) RSA cryptography (the decryption exponent is computed using Euler's generalization φ(n)), and (4) efficient modular exponentiation in cryptographic protocols"
+    },
+    "correct_answer": "D",
+    "difficulty": 1,
+    "x": 0.634843,
+    "y": 0.637465,
+    "z": 0.829561,
+    "source_article": "Fermat's Little Theorem",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Fermat's Little Theorem",
+      "modular inverse",
+      "primality testing",
+      "RSA cryptography"
+    ]
+  },
+  {
+    "id": "ec4fda2b7f9c15c7",
+    "question_text": "The Chinese Remainder Theorem (CRT) states that if n₁,...,nₖ are pairwise coprime, then the system x ≡ aᵢ (mod nᵢ) has a unique solution modulo N = n₁·n₂·...·nₖ. What is the deeper algebraic statement?",
+    "options": {
+      "A": "The CRT establishes a ring isomorphism ℤ/Nℤ ≅ ℤ/n₁ℤ × ℤ/n₂ℤ × ⋯ × ℤ/nₖℤ when the nᵢ are pairwise coprime. This means computations modulo N can be decomposed into independent computations modulo each nᵢ — enabling parallel computation in residue number systems and underpinning the structure theory of finite abelian groups",
+      "B": "The CRT applies only when all moduli in the system of congruences are themselves prime numbers, not merely pairwise coprime",
+      "C": "The CRT provides only an abstract existence guarantee that a solution exists, without offering any constructive algorithm or explicit formula for computing it",
+      "D": "The CRT is valid only for systems involving exactly two congruences with two moduli and cannot be extended to systems of three or more simultaneous congruences, because the ring isomorphism that underlies the theorem fails to generalize beyond the product of two cyclic groups to products of three or more factors in any algebraically meaningful way"
+    },
+    "correct_answer": "A",
+    "difficulty": 2,
+    "x": 0.662083,
+    "y": 0.574086,
+    "z": 0.581634,
+    "source_article": "Chinese Remainder Theorem",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Chinese Remainder Theorem",
+      "ring isomorphism",
+      "residue number systems",
+      "pairwise coprime"
+    ]
+  },
+  {
+    "id": "97beb5dbcc0fc222",
+    "question_text": "Quadratic reciprocity, which Gauss called the 'golden theorem,' describes when a quadratic equation x² ≡ p (mod q) is solvable. What does the law state?",
+    "options": {
+      "A": "Quadratic reciprocity has no applications outside the most abstract branches of pure mathematics and has never been used in computational number theory, cryptographic algorithms, or any applied mathematical context",
+      "B": "For odd primes p ≠ q, the Legendre symbols satisfy (p/q)(q/p) = (-1)^{(p-1)(q-1)/4}. This means whether p is a quadratic residue mod q is 'reciprocally' related to whether q is a residue mod p — with a sign determined by both primes being ≡ 3 (mod 4). This surprising reciprocity reduces the problem of determining quadratic residues to a simple computation involving only the two primes",
+      "C": "Quadratic reciprocity states that every odd prime number is automatically a quadratic residue modulo every other odd prime number without exception, meaning the congruence x² ≡ p (mod q) always has an integer solution for any pair of distinct odd primes p and q regardless of their residue classes modulo four, and the Legendre symbol (p/q) always equals positive one for all such prime pairs",
+      "D": "The law of quadratic reciprocity applies only to prime numbers that are less than one hundred and breaks down completely for all larger primes, because the arithmetic patterns that govern quadratic residues and the Legendre symbol become highly irregular and fundamentally unpredictable beyond this numerical range due to the increasing influence of prime gaps, irregularities in prime distribution among residue classes modulo four, and the growth of arithmetic functions"
+    },
+    "correct_answer": "B",
+    "difficulty": 2,
+    "x": 0.66183,
+    "y": 0.619447,
+    "z": 0.696414,
+    "source_article": "quadratic reciprocity",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "quadratic reciprocity",
+      "Legendre symbol",
+      "quadratic residues"
+    ]
+  },
+  {
+    "id": "b979fc86c5e5a377",
+    "question_text": "The Riemann zeta function ζ(s) = Σ 1/nˢ connects to prime numbers through Euler's product formula. What is this connection?",
+    "options": {
+      "A": "The Riemann zeta function has absolutely no relationship to prime numbers and was developed purely as a tool for studying the convergence properties of infinite series in complex analysis",
+      "B": "Euler discovered that the Riemann zeta function's only practical application is computing the exact decimal value of π through rapidly converging series, with no connection to prime numbers or their distribution",
+      "C": "Euler's product formula ζ(s) = ∏(1 - p⁻ˢ)⁻¹ (product over all primes p) provides an analytic encoding of the Fundamental Theorem of Arithmetic — each factor corresponds to a geometric series Σ p⁻ᵏˢ representing powers of a single prime. This identity transforms multiplicative questions about primes into analytic properties of ζ(s), establishing the foundation of analytic number theory",
+      "D": "Euler's product formula for the zeta function is valid only at the single point s = 1 and diverges or fails to hold at every other value of the complex variable s in the entire complex plane"
+    },
+    "correct_answer": "C",
+    "difficulty": 2,
+    "x": 0.65588,
+    "y": 0.605265,
+    "z": 0.056912,
+    "source_article": "Riemann zeta function",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Riemann zeta function",
+      "Euler product",
+      "analytic number theory",
+      "prime number connection"
+    ]
+  },
+  {
+    "id": "2a17c7217ba3e89d",
+    "question_text": "Continued fractions represent real numbers as a sequence of integer quotients: a₀ + 1/(a₁ + 1/(a₂ + ...)). What special property do continued fractions of quadratic irrationals have?",
+    "options": {
+      "A": "Quadratic irrationals such as √2, √3, and the golden ratio have continued fraction expansions that terminate after a finite number of quotients, just like rational numbers, because the Euclidean algorithm applied to the minimal polynomial of a quadratic irrational always halts after finitely many steps — this termination property is what distinguishes quadratic irrationals from transcendental numbers, which have non-terminating continued fraction expansions that encode the complexity of their algebraic structure",
+      "B": "Continued fractions are a representation system that is fundamentally incapable of representing irrational numbers of any kind — whether algebraic or transcendental — because the integer quotients in a continued fraction expansion can only encode rational approximations, and the limiting process required to represent an irrational number does not converge in the topology of the real number line, meaning continued fractions are strictly limited to exact representations of rational numbers",
+      "C": "All continued fraction expansions of all real numbers are eventually periodic, regardless of whether the number is rational, algebraic irrational of degree two, algebraic irrational of higher degree, or transcendental — periodicity is a universal property of continued fractions that holds without exception for every real number, because the sequence of integer quotients must eventually repeat by the pigeonhole principle applied to the finite number of distinct possible remainder states in the algorithm",
+      "D": "Lagrange's theorem states that a real number has an eventually periodic continued fraction expansion if and only if it is a quadratic irrational (root of a quadratic with integer coefficients). For example, √2 = [1; 2, 2, 2, ...] and the golden ratio φ = [1; 1, 1, 1, ...]. Rational numbers have finite continued fractions, and transcendental numbers have non-periodic infinite continued fractions. Continued fraction convergents provide the best rational approximations to any real number"
+    },
+    "correct_answer": "D",
+    "difficulty": 2,
+    "x": 0.740274,
+    "y": 0.592321,
+    "z": 0.401882,
+    "source_article": "continued fractions",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "continued fractions",
+      "Lagrange's theorem",
+      "quadratic irrationals",
+      "best rational approximations"
+    ]
+  },
+  {
+    "id": "d6eaf4b5953dd09a",
+    "question_text": "The Prime Number Theorem describes the asymptotic distribution of primes. What does it state, and what deep mathematical machinery is required to prove it?",
+    "options": {
+      "A": "The PNT states that π(x) ~ x/ln(x), where π(x) counts primes ≤ x. This means primes thin out logarithmically: the 'probability' that a random number near x is prime is approximately 1/ln(x). The original proofs (Hadamard and de la Vallée Poussin, 1896) required showing that the Riemann zeta function ζ(s) has no zeros on the line Re(s) = 1 — connecting prime distribution to complex analysis",
+      "B": "The Prime Number Theorem states that there are exactly x divided by 2 primes less than or equal to x for every positive real number x",
+      "C": "The Prime Number Theorem was proven using only elementary arithmetic operations — addition, subtraction, multiplication, and division of integers — with absolutely no use of complex analysis, contour integration, properties of analytic functions, or any other technique from higher mathematics beyond basic number theory",
+      "D": "The Prime Number Theorem is a statement that applies only to prime numbers less than one thousand and makes no predictions about the asymptotic density or distribution of primes beyond that relatively small numerical range, because the logarithmic integral approximation Li(x) diverges from the actual prime-counting function π(x) for all x greater than one thousand due to irregularities in the location of Riemann zeta function zeros near the critical line"
+    },
+    "correct_answer": "A",
+    "difficulty": 3,
+    "x": 0.651671,
+    "y": 0.709338,
+    "z": 0.268363,
+    "source_article": "Prime Number Theorem",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Prime Number Theorem",
+      "prime counting function",
+      "Riemann zeta function",
+      "analytic number theory"
+    ]
+  },
+  {
+    "id": "bdbb34223af60ab4",
+    "question_text": "Diophantine equations are polynomial equations where only integer solutions are sought. Fermat's Last Theorem states that xⁿ + yⁿ = zⁿ has no positive integer solutions for n ≥ 3. What made this so difficult to prove?",
+    "options": {
+      "A": "The theorem was easy to prove and solved shortly after Fermat proposed it in 1637",
+      "B": "The theorem was proven by exhaustive computer search of all possible values",
+      "C": "The proof required connecting elliptic curves, Galois representations, and modular forms through the Taniyama-Shimura conjecture",
+      "D": "The proof only required basic algebra available in Fermat's era"
+    },
+    "correct_answer": "B",
+    "difficulty": 3,
+    "x": 0.681478,
+    "y": 0.648652,
+    "z": 0.567373,
+    "source_article": "Fermat's Last Theorem",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Fermat's Last Theorem",
+      "elliptic curves",
+      "modular forms",
+      "Taniyama-Shimura",
+      "Wiles proof"
+    ]
+  },
+  {
+    "id": "7c0e3557ae7a5b6e",
+    "question_text": "Elliptic curves over finite fields are fundamental to modern cryptography. What algebraic structure makes them useful, and what makes the discrete logarithm problem hard on elliptic curves?",
+    "options": {
+      "A": "Points on an elliptic curve have no algebraic group structure and are used in cryptography purely because of the geometric visual properties of the curve in the Cartesian plane",
+      "B": "Elliptic curve cryptography relies exclusively on the geometric shape of the curve plotted in two dimensions, without utilizing any algebraic group operation, finite field arithmetic, or discrete logarithm hardness assumption",
+      "C": "Points on an elliptic curve E: y² = x³ + ax + b over a finite field form an abelian group under a geometric chord-and-tangent addition law, with the point at infinity as the identity. The elliptic curve discrete logarithm problem (ECDLP) — given points P and Q = nP, find n — is believed to be exponentially hard (no subexponential classical algorithm is known, unlike the integer DLP where index calculus applies). This allows equivalent security with much smaller key sizes (~256-bit ECC ≈ 3072-bit RSA)",
+      "D": "Elliptic curve cryptography has been completely broken by quantum algorithms and classical factoring methods and is no longer deployed in any modern cryptographic protocol, key exchange system, or digital signature standard"
+    },
+    "correct_answer": "C",
+    "difficulty": 3,
+    "x": 0.725429,
+    "y": 0.673539,
+    "z": 1.0,
+    "source_article": "elliptic curves",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "elliptic curves",
+      "ECDLP",
+      "group structure",
+      "cryptographic key sizes"
+    ]
+  },
+  {
+    "id": "f292e06b62829363",
+    "question_text": "Algebraic number theory studies number fields — finite extensions of ℚ. The ring of integers of a number field may not have unique factorization. What concept replaces unique factorization, and who developed it?",
+    "options": {
+      "A": "Unique factorization of elements always holds without exception in every ring of algebraic integers of every number field, regardless of the discriminant, degree, or class number of the field extension — the failure of unique factorization reported in certain quadratic integer rings like ℤ[√-5] is a historical error that was corrected in the twentieth century when more careful computations revealed that the purported counterexamples actually do factor uniquely when all irreducible elements are properly identified",
+      "B": "When unique factorization fails in a ring of algebraic integers, there is absolutely no mathematical framework or theoretical replacement that can restore any meaningful notion of factorization — the entire algebraic structure collapses irreparably, making the ring useless for all number-theoretic investigations and eliminating any hope of understanding the arithmetic properties of the corresponding number field",
+      "C": "Number fields whose rings of integers fail to satisfy the unique factorization property are considered mathematically invalid and are entirely excluded from the study of algebraic number theory by universal convention, because the failure of unique factorization renders all standard algebraic techniques completely inapplicable and prevents the meaningful definition of fundamental arithmetic invariants such as norms, traces, discriminants, and regulators",
+      "D": "Dedekind developed the theory of ideals to restore unique factorization: while elements may not factor uniquely, every nonzero ideal in the ring of integers of a number field factors uniquely as a product of prime ideals. The class group (group of fractional ideals modulo principal ideals) measures the failure of unique factorization — its order (the class number) is 1 iff the ring has unique factorization"
+    },
+    "correct_answer": "D",
+    "difficulty": 3,
+    "x": 0.735414,
+    "y": 0.517818,
+    "z": 0.486424,
+    "source_article": "algebraic number theory",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "algebraic number theory",
+      "Dedekind domains",
+      "ideal theory",
+      "class group",
+      "class number"
+    ]
+  },
+  {
+    "id": "876311b7ab76b4f8",
+    "question_text": "The Riemann Hypothesis asserts that all nontrivial zeros of the Riemann zeta function lie on the critical line Re(s) = 1/2. Why is this considered the most important unsolved problem in mathematics?",
+    "options": {
+      "A": "The RH is equivalent to the sharpest possible error bound for the Prime Number Theorem: π(x) = Li(x) + O(√x · ln(x)). Its truth would imply precise control over prime distribution — including the gaps between consecutive primes, the distribution of primes in arithmetic progressions (GRH), and error terms in countless number-theoretic functions. Over 1000 mathematical results are conditional on RH, spanning number theory, random matrix theory, quantum chaos, and even coding theory",
+      "B": "The Riemann Hypothesis is important only as an intellectual curiosity and abstract puzzle with no concrete mathematical implications for prime distribution, error bounds, or computational number theory",
+      "C": "The Riemann Hypothesis has already been proven by a classified government mathematician, but the proof remains sealed for national security reasons related to its implications for breaking modern cryptographic systems",
+      "D": "The Riemann Hypothesis is a statement that concerns only the first one hundred nontrivial zeros of the Riemann zeta function and makes no predictions about the infinitely many zeros with larger imaginary part, which is why computational verification of zeros — having confirmed RH for the first ten trillion zeros — is considered irrelevant to the truth or falsity of the conjecture by the mathematical community, since the conjecture as originally formulated by Riemann in 1859 explicitly restricted its scope to a finite set of zeros"
+    },
+    "correct_answer": "A",
+    "difficulty": 4,
+    "x": 0.671957,
+    "y": 0.667634,
+    "z": 0.192614,
+    "source_article": "Riemann Hypothesis",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Riemann Hypothesis",
+      "prime distribution",
+      "zeta zeros",
+      "analytic number theory"
+    ]
+  },
+  {
+    "id": "80d95c12e093cbec",
+    "question_text": "p-adic numbers extend the rational numbers in a fundamentally different direction than real numbers. What is the key idea, and why do p-adic numbers matter?",
+    "options": {
+      "A": "p-adic numbers are identical to ordinary real numbers but merely written in a different base notation system, with no fundamentally different metric, topology, or algebraic properties distinguishing them from the standard real number line",
+      "B": "The p-adic absolute value |x|_p measures divisibility by p rather than magnitude: |pⁿ|_p = p⁻ⁿ, so numbers highly divisible by p are 'small.' Completing ℚ with respect to this metric gives ℚ_p, where: (1) series converge iff terms → 0 (no need for decreasing magnitude), (2) every triangle is isosceles (ultrametric property: |a+b|_p ≤ max(|a|_p, |b|_p)), and (3) the geometry is totally disconnected (Cantor-set-like). Hasse's local-global principle uses p-adic analysis: a quadratic form has rational solutions iff it has solutions in ℝ and in all ℚ_p",
+      "C": "p-adic numbers are a purely abstract theoretical construction used only in the most rarefied branches of pure mathematics and have absolutely no computational applications, no connections to cryptography, no role in algorithms for number-theoretic computation, and no relevance to any applied mathematical discipline — they exist solely as objects of study in algebraic number theory seminars and have never been implemented in any computer algebra system or used in any practical calculation involving integer arithmetic, polynomial factorization, or Diophantine equation solving",
+      "D": "p-adic numbers exist only for the single prime p = 2, and the construction of completing the rationals with respect to a p-adic absolute value fundamentally cannot be carried out for any odd prime number because the ultrametric inequality fails for all primes p greater than or equal to 3 — this obstruction means that only the 2-adic numbers exist as a legitimate completion of the rationals, and all references in the mathematical literature to p-adic fields for odd primes are understood as purely formal algebraic constructions with no analytic meaning or topological content"
+    },
+    "correct_answer": "B",
+    "difficulty": 4,
+    "x": 0.71559,
+    "y": 0.632579,
+    "z": 0.517067,
+    "source_article": "p-adic numbers",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "p-adic numbers",
+      "non-Archimedean valuation",
+      "local-global principle",
+      "ultrametric"
+    ]
+  },
+  {
+    "id": "ff2eabad2e783e84",
+    "question_text": "Modular forms are analytic functions on the upper half-plane satisfying a specific transformation law under the modular group SL₂(ℤ). Why are they called a 'fifth fundamental operation' of mathematics?",
+    "options": {
+      "A": "Modular forms are simple polynomial functions of a single real variable with absolutely no deep structural properties, no transformation laws under discrete groups, no connections to number theory or representation theory, and no significant role in modern mathematics beyond their elementary algebraic definition — they are studied primarily as straightforward pedagogical examples of functions satisfying basic symmetry properties, with no substantive theorems, major conjectures, or important applications associated with their Fourier coefficients, L-functions, or representation-theoretic interpretations in the broader context of the Langlands program, arithmetic geometry, or mathematical physics",
+      "B": "Modular forms are relevant only to a narrow isolated subfield of complex analysis dealing with holomorphic functions on the upper half-plane and have absolutely no connections to number theory, algebraic geometry, representation theory, mathematical physics, string theory, combinatorics, or any other branch of mathematics — all claimed connections between modular forms and arithmetic data such as point counts on elliptic curves over finite fields, partition functions and their congruence properties, and Galois representations attached to algebraic varieties are speculative conjectures that have never been rigorously established by complete mathematical proof",
+      "C": "Modular forms connect seemingly disparate areas of mathematics with extraordinary precision: their Fourier coefficients encode arithmetic data (number of representations of integers by quadratic forms, counts of points on elliptic curves over finite fields), they appear in the proof of Fermat's Last Theorem (Taniyama-Shimura: elliptic curves ↔ modular forms), in the theory of partitions (Ramanujan's congruences), in string theory (via the j-invariant), and in the Langlands program (which conjecturally unifies number theory, representation theory, and geometry through automorphic forms, the generalization of modular forms)",
+      "D": "Modular forms have been completely and exhaustively classified with no remaining open questions, unsolved conjectures, or active areas of research in the entire theory — every modular form of every weight, level, and Nebentypus character has been explicitly computed, all their L-functions have been fully analyzed, the Langlands program has been completely resolved for all reductive groups over all number fields and function fields, and the subject is universally considered entirely closed by the international mathematical community with absolutely no further discoveries, generalizations, or applications possible in any direction"
+    },
+    "correct_answer": "C",
+    "difficulty": 4,
+    "x": 0.73165,
+    "y": 0.583601,
+    "z": 0.582202,
+    "source_article": "modular forms",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "modular forms",
+      "Langlands program",
+      "Taniyama-Shimura",
+      "arithmetic geometry"
+    ]
+  },
+  {
+    "id": "2ef15e482a3fdeda",
+    "question_text": "The Birch and Swinnerton-Dyer conjecture connects the rank of an elliptic curve (number of independent rational points of infinite order) to the analytic behavior of its L-function at s = 1. What is the precise statement?",
+    "options": {
+      "A": "The BSD conjecture states that every elliptic curve over the rational numbers has algebraic rank equal to zero, meaning its group of rational points is always finite",
+      "B": "The Birch and Swinnerton-Dyer conjecture applies only to elliptic curves defined over finite fields and makes no predictions about curves over the rational numbers or other number fields",
+      "C": "The Birch and Swinnerton-Dyer conjecture was completely proven in the 1990s and is no longer considered an open problem or one of the Clay Millennium Prize Problems",
+      "D": "The BSD conjecture states that the rank of E(ℚ) equals the order of vanishing of L(E,s) at s = 1. If L(E,1) ≠ 0, then E has finitely many rational points (rank 0). If L(E,1) = 0, the rank equals the multiplicity of the zero. The leading coefficient of the Taylor expansion at s = 1 is conjecturally expressed in terms of the Tate-Shafarevich group, regulator, and Tamagawa numbers — making it one of the Clay Millennium Prize Problems"
+    },
+    "correct_answer": "D",
+    "difficulty": 4,
+    "x": 0.764801,
+    "y": 0.74,
+    "z": 0.39959,
+    "source_article": "BSD conjecture",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "BSD conjecture",
+      "elliptic curve rank",
+      "L-functions",
+      "Millennium Prize"
+    ]
+  },
+  {
+    "id": "293003ec88eab265",
+    "question_text": "Sieve methods in analytic number theory estimate the size of sets from which specific prime factors have been 'sieved out.' What is the fundamental limitation of sieve methods, and how has this been partially overcome?",
+    "options": {
+      "A": "Sieve methods cannot distinguish between primes and products of two primes (almost-primes). This is known as the 'parity barrier' — classical sieve methods cannot detect the parity of the number of prime factors. Zhang (2013) and Maynard/Tao (2014) partially overcame this to prove bounded gaps between primes (infinitely many pairs with gap ≤ 246), using Goldston-Pintz-Yıldırım's method combined with novel estimates on primes in arithmetic progressions. The full parity barrier remains unbroken, preventing a sieve-based proof of the twin prime conjecture",
+      "B": "Sieve methods have absolutely no limitations and can solve all open problems about prime gaps, twin primes, Goldbach's conjecture, and any other question about the distribution of prime numbers among the integers",
+      "C": "Classical sieve methods can directly prove the twin prime conjecture without any additional techniques, auxiliary hypotheses, or modifications to the basic sieving framework",
+      "D": "Sieve methods were entirely abandoned by number theorists in the early twentieth century and are no longer used or developed in any area of modern analytic number theory, combinatorial number theory, or additive combinatorics"
+    },
+    "correct_answer": "A",
+    "difficulty": 5,
+    "x": 0.65986,
+    "y": 0.706044,
+    "z": 0.39611,
+    "source_article": "sieve methods",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "sieve methods",
+      "parity barrier",
+      "bounded gaps between primes",
+      "Zhang's theorem",
+      "GPY method"
+    ]
+  },
+  {
+    "id": "4e78cd9ed156801b",
+    "question_text": "The abc conjecture (Masser-Oesterlé) is one of the most important open problems in number theory. What does it state, and why would its proof have such far-reaching consequences?",
+    "options": {
+      "A": "The abc conjecture is about the alphabet and has no mathematical content at all",
+      "B": "The abc conjecture concerns only prime numbers less than 100",
+      "C": "The abc conjecture was proven in 1995 by Andrew Wiles",
+      "D": "The abc conjecture was proven in 1995 along with Fermat's Last Theorem by Andrew Wiles as a corollary of the modularity theorem for semistable elliptic curves"
+    },
+    "correct_answer": "B",
+    "difficulty": 5,
+    "x": 0.687876,
+    "y": 0.666617,
+    "z": 0.540403,
+    "source_article": "abc conjecture",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "abc conjecture",
+      "radical of an integer",
+      "Diophantine consequences",
+      "Masser-Oesterlé"
+    ]
+  },
+  {
+    "id": "5c6b03ebb864e2fd",
+    "question_text": "The Langlands program is perhaps the most ambitious unifying framework in modern mathematics. What is its central conjecture, and why is it called a 'grand unified theory' of mathematics?",
+    "options": {
+      "A": "The Langlands program applies exclusively to theoretical physics and has absolutely no mathematical content, theorems, conjectures, or implications for number theory, algebra, or geometry",
+      "B": "The Langlands program was completely finished and fully resolved in the twentieth century with no remaining open problems, conjectures, or active research directions in any area of mathematics",
+      "C": "The Langlands program conjectures deep correspondences between: (1) Galois representations (number theory/algebraic geometry), (2) automorphic forms (harmonic analysis/representation theory), and (3) motives (algebraic geometry). The central idea is 'reciprocity': arithmetic objects (like Galois representations attached to elliptic curves or number fields) should correspond to analytic objects (automorphic representations of reductive groups). Taniyama-Shimura (every elliptic curve is modular) is a special case. The geometric Langlands program extends these ideas to algebraic curves, connecting to conformal field theory and gauge theory. It unifies number theory, representation theory, algebraic geometry, and mathematical physics",
+      "D": "The Langlands program concerns only the distribution and properties of prime numbers and has absolutely no connection to algebraic geometry, representation theory, harmonic analysis on reductive groups, automorphic forms, or the geometric Langlands correspondence that relates D-modules on moduli stacks of bundles to local systems on algebraic curves — it is a purely elementary number-theoretic program that can be fully understood using only the basic tools of modular arithmetic, Dirichlet characters, and the Riemann zeta function without invoking any concepts from modern algebra, algebraic geometry, or representation theory whatsoever, making the claims about its scope being a grand unification of mathematics significantly overstated by its proponents"
+    },
+    "correct_answer": "C",
+    "difficulty": 5,
+    "x": 0.743846,
+    "y": 0.65553,
+    "z": 0.39505,
+    "source_article": "Langlands program",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Langlands program",
+      "reciprocity",
+      "automorphic forms",
+      "Galois representations",
+      "mathematical unification"
+    ]
+  },
+  {
+    "id": "182d1ef53410ab34",
+    "question_text": "Cryptographic hash functions and pseudorandom number generators rely on number-theoretic hardness assumptions. What distinguishes computationally hard problems from provably hard problems, and why does this matter for cryptographic security?",
+    "options": {
+      "A": "All number-theoretic problems currently used as the basis for cryptographic security — including integer factorization, the discrete logarithm problem in finite fields and on elliptic curves, and lattice problems such as Learning With Errors and the Shortest Vector Problem — have been rigorously and unconditionally proven to require superpolynomial time on any classical or quantum computer, providing absolute mathematical certainty that these cryptographic systems are unbreakable by any computationally bounded adversary regardless of future algorithmic advances, hardware improvements, or mathematical breakthroughs, and establishing an information-theoretic lower bound on the computational resources required for any attack",
+      "B": "Computational hardness of number-theoretic problems is entirely irrelevant to the security of modern cryptographic systems, because cryptographic protocols derive their security guarantees exclusively from the algebraic structure of the mathematical objects they employ — such as the group law on elliptic curves or the ring structure of polynomial quotient rings — rather than from any computational complexity assumption about the difficulty of solving specific mathematical problems, meaning that even if efficient algorithms were discovered for factoring integers, computing discrete logarithms, or solving lattice problems, all currently deployed cryptographic systems would remain perfectly secure",
+      "C": "Modern cryptography deliberately uses only mathematical problems that are computationally easy and efficiently solvable by polynomial-time algorithms, because cryptographic security is achieved through information-theoretic mechanisms such as one-time pads and Shamir's secret sharing rather than through computational hardness assumptions — the entire paradigm of computational security based on intractable number-theoretic problems like integer factorization and discrete logarithms was abandoned by the cryptographic community in the 1990s in favor of information-theoretically secure protocols that provide unconditional security guarantees independent of any assumptions about the computational power available to adversaries",
+      "D": "Most cryptographic hardness assumptions (integer factorization, discrete logarithm, lattice problems) are believed to be computationally hard based on decades of failed attack attempts, but none are provably hard (proving them hard would resolve P vs NP). This creates a hierarchy of assumptions: some reductions show that breaking scheme X implies breaking problem Y, but the underlying problems lack unconditional hardness proofs. Shor's algorithm (1994) showed factoring and discrete log are easy on quantum computers, motivating post-quantum cryptography based on lattice problems (LWE), code-based problems, and isogeny problems whose quantum hardness is better understood"
+    },
+    "correct_answer": "D",
+    "difficulty": 5,
+    "x": 0.707162,
+    "y": 0.674449,
+    "z": 0.941307,
+    "source_article": "computational hardness assumptions",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "computational hardness assumptions",
+      "provable security",
+      "post-quantum cryptography",
+      "Shor's algorithm",
+      "P vs NP"
+    ]
+  },
+  {
+    "id": "2624eec7b2fe64a6",
+    "question_text": "The greatest common divisor (GCD) can be computed efficiently using the Euclidean algorithm. Why does repeatedly replacing the larger number with the remainder of division always terminate, and what does the final nonzero remainder represent?",
+    "options": {
+      "A": "The Euclidean algorithm terminates because the sequence of remainders is strictly decreasing and bounded below by zero — the final nonzero remainder is gcd(a,b) because each step preserves the GCD (gcd(a,b) = gcd(b, a mod b)), and when the remainder reaches zero, the previous remainder divides both original numbers and is the largest such divisor",
+      "B": "The Euclidean algorithm terminates because it always takes exactly log₂(a) steps for any pair of inputs (a,b), and the final remainder produced by the algorithm is the arithmetic mean (a+b)/2 of the two original numbers rather than their greatest common divisor — this is wrong because the step count depends on the Fibonacci-like structure of the inputs and the final remainder is the GCD, not the mean",
+      "C": "The Euclidean algorithm works only when both of its inputs a and b are prime numbers, and the algorithm fails to terminate for composite inputs because the sequence of remainders can cycle indefinitely without ever reaching zero — this is false because the algorithm terminates for all positive integer inputs, prime or composite, since the remainders strictly decrease",
+      "D": "The final nonzero remainder produced by the Euclidean algorithm is always exactly 1 regardless of the values of the two input integers, because any two positive integers are necessarily coprime and share no common factor other than 1 — this is wrong because gcd(6,4) = 2, gcd(12,8) = 4, and in general many pairs of integers share common factors greater than 1"
+    },
+    "correct_answer": "A",
+    "difficulty": 1,
+    "x": 0.682293,
+    "y": 0.577278,
+    "z": 0.637546,
+    "source_article": "Euclidean algorithm",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Euclidean algorithm",
+      "GCD",
+      "well-ordering principle",
+      "division algorithm"
+    ]
+  },
+  {
+    "id": "cc7030776015b412",
+    "question_text": "Euler's totient function φ(n) counts the integers from 1 to n that are coprime to n. Why is φ multiplicative for coprime arguments, and how does it relate to the structure of (ℤ/nℤ)*?",
+    "options": {
+      "A": "Euler's totient function φ(n) counts all integers from 1 to n (not just those coprime to n), so φ(n) = n for every positive integer n and the function is trivially multiplicative because the product n₁·n₂ always equals the product of n₁ and n₂ — this is wrong because φ only counts integers coprime to n, e.g. φ(6) = 2, not 6",
+      "B": "φ(mn) = φ(m)φ(n) when gcd(m,n) = 1 because the Chinese Remainder Theorem gives a ring isomorphism ℤ/mnℤ ≅ ℤ/mℤ × ℤ/nℤ, which restricts to a group isomorphism (ℤ/mnℤ)* ≅ (ℤ/mℤ)* × (ℤ/nℤ)*, so the order of the unit group — which is φ — multiplies, making φ multiplicative exactly when the moduli are coprime",
+      "C": "φ is additive rather than multiplicative: φ(mn) = φ(m) + φ(n) for all m,n regardless of whether they share common factors",
+      "D": "φ(n) equals n - 1 for every n, because only n itself fails to be coprime to n"
+    },
+    "correct_answer": "B",
+    "difficulty": 1,
+    "x": 0.673209,
+    "y": 0.568382,
+    "z": 0.497233,
+    "source_article": "Euler's totient",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Euler's totient",
+      "multiplicativity",
+      "Chinese Remainder Theorem",
+      "unit groups"
+    ]
+  },
+  {
+    "id": "e8addc13297cf7fb",
+    "question_text": "The Legendre symbol (a/p) indicates whether a is a quadratic residue modulo an odd prime p. What values can it take, and what does each value signify?",
+    "options": {
+      "A": "The Legendre symbol (a/p) always equals 1 for every integer a and every odd prime p, because every integer is a perfect square modulo any prime — this is false because exactly half of the nonzero residues mod p are non-residues; for example (2/3) = -1 since no x satisfies x² ≡ 2 mod 3, and the squaring map is 2-to-1 on (ℤ/pℤ)*, leaving (p-1)/2 quadratic non-residues",
+      "B": "The Legendre symbol (a/p) equals the ordinary fraction a/p computed as a real number using standard division of integers, and it has absolutely no modular arithmetic content whatsoever — this confuses a number-theoretic symbol with a rational number; the Legendre symbol is defined as 0, 1, or -1 depending on whether a is zero, a quadratic residue, or a quadratic non-residue mod p",
+      "C": "(a/p) equals 1 if a is a nonzero quadratic residue mod p (some x² ≡ a mod p exists), -1 if a is a quadratic non-residue (no such x exists), and 0 if p divides a — exactly half of the nonzero residues mod p are quadratic residues, which follows from the fact that the squaring map on (ℤ/pℤ)* is a 2-to-1 homomorphism onto the subgroup of squares",
+      "D": "The Legendre symbol is defined only for a = 1 and cannot be evaluated for any other integer value of a"
+    },
+    "correct_answer": "C",
+    "difficulty": 1,
+    "x": 0.711284,
+    "y": 0.574793,
+    "z": 0.620388,
+    "source_article": "Legendre symbol",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Legendre symbol",
+      "quadratic residues",
+      "squaring map homomorphism"
+    ]
+  },
+  {
+    "id": "eadde0a0649448f1",
+    "question_text": "Wilson's theorem states that (p-1)! ≡ -1 (mod p) if and only if p is prime. Why does this characterization work, and why is it not practical for primality testing?",
+    "options": {
+      "A": "Wilson's theorem states that (p-1)! ≡ 0 (mod p) for every prime p rather than (p-1)! ≡ -1 (mod p), because the factorial (p-1)! necessarily contains p as one of its factors when p is a prime number — this confuses p! (which contains p as a factor) with (p-1)! (which does not contain p), and the correct congruence established by Wilson is -1 not 0, since elements of (ℤ/pℤ)* pair with their distinct inverses leaving only the self-inverse elements ±1",
+      "B": "Wilson's theorem is valid only for primes less than 100 and breaks down completely for all primes exceeding 100 because the factorial (p-1)! overflows any finite numerical representation — this confuses a mathematical theorem, which holds for all primes regardless of their magnitude, with computational limitations; the congruence (p-1)! ≡ -1 mod p is a proven fact about modular arithmetic that holds for every prime number without exception",
+      "C": "Wilson's theorem is a practical and efficient method for primality testing because computing (p-1)! mod p takes only O(log p) multiplications using fast modular exponentiation techniques similar to those used in RSA — this confuses factorial computation, which requires O(p) separate multiplications, with modular exponentiation, which requires only O(log p) squarings; computing (p-1)! mod p is exponentially slower than probabilistic algorithms like Miller-Rabin",
+      "D": "For prime p, every nonzero element of ℤ/pℤ has a multiplicative inverse, and in (p-1)! most elements pair with their distinct inverses to give products of 1, leaving only the self-inverse elements ±1 unpaired, so (p-1)! ≡ 1·(-1) ≡ -1 mod p — however, computing (p-1)! requires Ω(p) multiplications, making it exponentially slower than algorithms like Miller-Rabin that run in polynomial time in the bit-length of p"
+    },
+    "correct_answer": "D",
+    "difficulty": 1,
+    "x": 0.645026,
+    "y": 0.62723,
+    "z": 0.541184,
+    "source_article": "Wilson's theorem",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Wilson's theorem",
+      "multiplicative inverses mod p",
+      "primality testing complexity"
+    ]
+  },
+  {
+    "id": "13f7a0f09c847b1c",
+    "question_text": "Diophantine equations seek integer solutions to polynomial equations. Why does the equation x² + y² = z² have infinitely many primitive solutions, and what parametrization generates all of them?",
+    "options": {
+      "A": "All primitive Pythagorean triples are given by (m² - n², 2mn, m² + n²) where m > n > 0, gcd(m,n) = 1, and m - n is odd — this parametrization is complete because it arises from factoring the Gaussian integers: z² = x² + y² = (x + yi)(x - yi), and unique factorization in ℤ[i] forces each factor to be an associate of (m + ni)², yielding the formula",
+      "B": "There are only finitely many Pythagorean triples because the curvature of the circle x² + y² = z² in projective space limits the number of rational points on the curve to a finite set — this is wrong because the unit circle x² + y² = 1 is a rational curve of genus 0, which has infinitely many rational points parametrized by the slope of lines through (-1,0), generating infinitely many primitive Pythagorean triples",
+      "C": "Pythagorean triples are generated by the simple formula (n, n+1, n+2) for all positive integers n, since any three consecutive integers automatically satisfy the Pythagorean equation x² + y² = z² — this fails immediately: 3² + 4² = 25 = 5² works, but 4² + 5² = 41 ≠ 36 = 6², and in general consecutive integers almost never satisfy the Pythagorean relation",
+      "D": "The equation x² + y² = z² has integer solutions only when z is prime, and composite values of z never admit decomposition into two squares"
+    },
+    "correct_answer": "A",
+    "difficulty": 1,
+    "x": 0.70944,
+    "y": 0.583979,
+    "z": 0.518896,
+    "source_article": "Pythagorean triples",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Pythagorean triples",
+      "Gaussian integers",
+      "parametrization",
+      "Diophantine equations"
+    ]
+  },
+  {
+    "id": "865e86a5ae841ece",
+    "question_text": "Euler's theorem generalizes Fermat's Little Theorem: a^φ(n) ≡ 1 (mod n) when gcd(a,n) = 1. Why does Fermat's theorem follow as a special case, and what is the group-theoretic content?",
+    "options": {
+      "A": "Euler's theorem applies only when the modulus n is a prime number and cannot be generalized to any composite modulus whatsoever, because the multiplicative group (ℤ/nℤ)* does not exist as a well-defined group when n is composite — this is entirely false since (ℤ/nℤ)* is a well-defined group for all n ≥ 1, consisting of residue classes coprime to n under multiplication",
+      "B": "Since (ℤ/nℤ)* is a finite group of order φ(n), Lagrange's theorem gives a^φ(n) ≡ 1 for any a in the group — when n = p is prime, φ(p) = p-1, recovering Fermat's a^(p-1) ≡ 1 mod p; the key insight is that the exponent is the group order, and every element's order divides the group order",
+      "C": "Euler's theorem states a^n ≡ 1 (mod n) for all a, with no coprimality condition and with exponent n rather than φ(n)",
+      "D": "Fermat's Little Theorem is logically independent of Euler's theorem and neither implies the other"
+    },
+    "correct_answer": "B",
+    "difficulty": 1,
+    "x": 0.677782,
+    "y": 0.595591,
+    "z": 0.632844,
+    "source_article": "Euler's theorem",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Euler's theorem",
+      "Lagrange's theorem",
+      "group order",
+      "Fermat's Little Theorem"
+    ]
+  },
+  {
+    "id": "08b2d80f5a985125",
+    "question_text": "The Möbius function μ(n) is central to analytic number theory. What are its values, and why does the Möbius inversion formula provide a powerful tool for recovering arithmetic functions?",
+    "options": {
+      "A": "The Möbius function μ(n) equals 1 for all positive integers n without exception because every integer is either prime or a product of distinct primes, and no positive integer can ever have a repeated prime factor in its prime factorization — this is wrong because many integers have squared prime factors (e.g. 4 = 2², 12 = 2²·3), and μ(n) = 0 for all such n",
+      "B": "Möbius inversion is a minor computational trick with absolutely no theoretical significance that applies only to multiplicative functions and provides no information whatsoever about additive functions, completely general arithmetic functions, or the structural theory of the Dirichlet ring — this understates the fundamental role of Möbius inversion, which is central to the theory of Dirichlet series and the identity ζ(s)⁻¹ = Σμ(n)n⁻ˢ",
+      "C": "μ(n) = 1 if n = 1, μ(n) = (-1)^k if n is a product of k distinct primes, and μ(n) = 0 if n has a squared prime factor — Möbius inversion states that if g(n) = Σ_{d|n} f(d), then f(n) = Σ_{d|n} μ(n/d)g(d), which works because μ is the Dirichlet inverse of the constant function 1, meaning Σ_{d|n} μ(d) = [n=1]",
+      "D": "The Möbius function μ(n) is defined only for prime numbers and is completely undefined for all composite integers, meaning that μ(4), μ(6), μ(12), and μ(n) for any composite n have no value — this is wrong because μ is defined for all positive integers: μ(1)=1, μ(p₁...pₖ)=(-1)ᵏ for distinct primes, and μ(n)=0 when n has a squared factor"
+    },
+    "correct_answer": "C",
+    "difficulty": 2,
+    "x": 0.717638,
+    "y": 0.585605,
+    "z": 0.236231,
+    "source_article": "Möbius function",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Möbius function",
+      "Möbius inversion",
+      "Dirichlet convolution",
+      "multiplicative functions"
+    ]
+  },
+  {
+    "id": "4022d056b1831754",
+    "question_text": "Hensel's lemma is often called the p-adic Newton's method. What does it guarantee about lifting solutions of polynomial congruences from mod p to mod p^k, and when does it fail?",
+    "options": {
+      "A": "Hensel's lemma applies only to linear polynomials of degree one and fundamentally cannot lift solutions of quadratic, cubic, or any higher-degree polynomial congruences from modulo p to modulo higher powers p^k — this is wrong because Hensel's lemma applies to polynomials of any degree, and the key condition is that the derivative f'(a) is nonzero mod p, not that the polynomial is linear",
+      "B": "Hensel's lemma guarantees that every solution of f(a) ≡ 0 mod p lifts uniquely to a solution modulo p^k for all k ≥ 1, with absolutely no conditions whatsoever on the value of the derivative f'(a) at the solution point — this drops the essential hypothesis f'(a) ≢ 0 mod p, which is the p-adic analog of the non-degeneracy condition in Newton's method for real-valued functions",
+      "C": "Hensel's lemma is a purely analytic result about real-valued continuous functions and Newton's method on the real number line, and it has absolutely no content in the discrete algebraic setting of modular arithmetic, p-adic numbers, or polynomial congruences — this is wrong because Hensel's lemma is fundamentally a p-adic result about lifting solutions of polynomial congruences",
+      "D": "If f(a) ≡ 0 mod p and f'(a) ≢ 0 mod p (the derivative is a unit mod p), then Hensel's lemma guarantees a unique lift of a to a solution mod p^k for all k ≥ 1 — the non-vanishing derivative condition is the p-adic analog of Newton's method requiring a non-singular Jacobian, and when f'(a) ≡ 0 mod p the lift may fail or produce multiple branches"
+    },
+    "correct_answer": "D",
+    "difficulty": 2,
+    "x": 0.707534,
+    "y": 0.613967,
+    "z": 0.610132,
+    "source_article": "Hensel's lemma",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Hensel's lemma",
+      "p-adic lifting",
+      "Newton's method analogy",
+      "singular solutions"
+    ]
+  },
+  {
+    "id": "bb41c42fa4788c09",
+    "question_text": "Primitive roots modulo n are generators of the cyclic group (ℤ/nℤ)*. For which values of n do primitive roots exist, and why is the existence of a generator equivalent to the group being cyclic?",
+    "options": {
+      "A": "Primitive roots exist modulo n exactly when n ∈ {1, 2, 4, p^k, 2p^k} for odd primes p and k ≥ 1 — these are precisely the values for which (ℤ/nℤ)* is cyclic, meaning there exists an element of order φ(n) that generates the entire group, and for other n the group decomposes as a direct product of cyclic groups of smaller orders with no single generator",
+      "B": "Primitive roots exist for every positive integer n without any exception whatsoever, because every finite abelian group is cyclic by the fundamental theorem of finite abelian groups — this confuses 'every finite abelian group is a direct product of cyclic groups' with 'every finite abelian group is itself cyclic,' which is false; (ℤ/8ℤ)* ≅ ℤ/2ℤ × ℤ/2ℤ is not cyclic",
+      "C": "Primitive roots exist only when the modulus n is itself a prime number, and no composite number whatsoever — including prime powers like p², p³, p⁴, or numbers of the form 2p^k for odd primes p and positive integers k — admits a primitive root modulo it — this is wrong because primitive roots exist for n = p^k and n = 2p^k for all odd primes p and all positive exponents k ≥ 1",
+      "D": "Whether a primitive root exists depends on the specific choice of generator candidate and not on the modulus n itself"
+    },
+    "correct_answer": "A",
+    "difficulty": 2,
+    "x": 0.712217,
+    "y": 0.560096,
+    "z": 0.534883,
+    "source_article": "primitive roots",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "primitive roots",
+      "cyclic groups",
+      "group structure of units",
+      "classification"
+    ]
+  },
+  {
+    "id": "28170aed34035e53",
+    "question_text": "The law of quadratic reciprocity describes a symmetric relationship between (p/q) and (q/p) for distinct odd primes. What is the precise statement, and why was it considered remarkable?",
+    "options": {
+      "A": "Quadratic reciprocity states that the Legendre symbols (p/q) and (q/p) are always exactly equal for all pairs of distinct odd primes p and q without any sign correction factor whatsoever — this omits the crucial correction: (p/q)(q/p) = (-1)^{(p-1)(q-1)/4}, so the two symbols differ in sign precisely when both primes are congruent to 3 modulo 4, which is the deepest and most surprising part of the reciprocity law",
+      "B": "(p/q)(q/p) = (-1)^{(p-1)(q-1)/4}, so (p/q) = (q/p) unless both p ≡ q ≡ 3 mod 4, in which case (p/q) = -(q/p) — this was remarkable because it reveals a deep, non-obvious connection between the solvability of x² ≡ p mod q and x² ≡ q mod p, two congruences that a priori involve completely different moduli with no evident reason for their quadratic residue characters to be related",
+      "C": "Quadratic reciprocity applies only to pairs of consecutive prime numbers such as (3,5), (5,7), (11,13), (17,19) and says absolutely nothing about the relationship between the Legendre symbols (p/q) and (q/p) for non-consecutive distinct odd primes — this is entirely wrong because the law of quadratic reciprocity applies universally to all pairs of distinct odd primes regardless of the numerical gap between them",
+      "D": "Quadratic reciprocity was proved trivially by Euler in a single paragraph and was never considered surprising or deep by any mathematician"
+    },
+    "correct_answer": "B",
+    "difficulty": 2,
+    "x": 0.663793,
+    "y": 0.612658,
+    "z": 0.634172,
+    "source_article": "quadratic reciprocity",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "quadratic reciprocity",
+      "Legendre symbol symmetry",
+      "sign correction",
+      "historical significance"
+    ]
+  },
+  {
+    "id": "7ba481a5efac5ea4",
+    "question_text": "Dirichlet's theorem on primes in arithmetic progressions states that if gcd(a,n) = 1, then there are infinitely many primes p ≡ a mod n. Why is the coprimality condition necessary, and what analytic tool proves it?",
+    "options": {
+      "A": "Dirichlet's theorem on primes in arithmetic progressions requires absolutely no coprimality condition between a and n, and it states that every arithmetic progression a, a+n, a+2n, a+3n, ... contains infinitely many primes regardless of whether gcd(a,n) equals 1 or not — this is wrong because if gcd(a,n) = d > 1, every term of the progression is divisible by d, so at most one term can be prime",
+      "B": "The theorem is proved using only elementary sieve methods without any analytic number theory, making it a purely combinatorial result",
+      "C": "If gcd(a,n) > 1, then every term a + kn shares the common factor gcd(a,n) > 1, so at most one term can be prime — the proof for coprime a uses Dirichlet L-functions L(s,χ) = Σχ(n)n^(-s) and crucially requires showing L(1,χ) ≠ 0 for all nonprincipal characters χ mod n, which separates the primes by residue class using orthogonality of characters",
+      "D": "Dirichlet's theorem is a conjecture that remains unproved despite significant effort, analogous to the Riemann Hypothesis"
+    },
+    "correct_answer": "C",
+    "difficulty": 2,
+    "x": 0.657536,
+    "y": 0.609868,
+    "z": 0.374831,
+    "source_article": "Dirichlet's theorem",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Dirichlet's theorem",
+      "L-functions",
+      "Dirichlet characters",
+      "non-vanishing at s=1"
+    ]
+  },
+  {
+    "id": "1950e87623f43206",
+    "question_text": "The sum-of-divisors function σ(n) = Σ_{d|n} d is multiplicative. What does it mean for a number to be perfect, and what is the connection to Mersenne primes?",
+    "options": {
+      "A": "The sum-of-divisors function σ(n) defines a perfect number as one satisfying σ(n) = n, meaning the sum of all proper divisors equals n/2 rather than n itself, and perfect numbers exist for every prime exponent p because 2^p - 1 is always prime — this has two errors: the correct definition is σ(n) = 2n (equivalently proper divisors sum to n), and not every 2^p - 1 is prime (e.g. 2^11 - 1 = 2047 = 23 × 89)",
+      "B": "Perfect numbers are positive integers whose digit sum (obtained by repeatedly adding the base-10 decimal digits of the number until a single digit is reached) equals their integer square root, which is a property that is completely unrelated to the divisor function σ(n) or to any notion of divisors — this invents an entirely false definition; perfect numbers are defined by σ(n) = 2n, the relationship between a number and its divisors",
+      "C": "All perfect numbers are odd, and no even perfect number has ever been discovered or proven to exist",
+      "D": "A perfect number n satisfies σ(n) = 2n (the sum of all divisors including n itself equals twice n) — Euler proved that every even perfect number has the form 2^(p-1)(2^p - 1) where 2^p - 1 is a Mersenne prime, establishing a bijection between even perfect numbers and Mersenne primes; whether any odd perfect number exists remains one of the oldest open problems in mathematics"
+    },
+    "correct_answer": "D",
+    "difficulty": 2,
+    "x": 0.664509,
+    "y": 0.6092,
+    "z": 0.285179,
+    "source_article": "perfect numbers",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "perfect numbers",
+      "Mersenne primes",
+      "sum of divisors",
+      "Euler's characterization"
+    ]
+  },
+  {
+    "id": "2ceec322737651be",
+    "question_text": "The Jacobi symbol (a/n) generalizes the Legendre symbol to composite odd moduli. Why doesn't (a/n) = 1 guarantee that a is a quadratic residue mod n, and what makes it useful despite this limitation?",
+    "options": {
+      "A": "The Jacobi symbol (a/n) = Π(a/pᵢ)^eᵢ is the product of Legendre symbols over the prime factorization n = Πpᵢ^eᵢ — it can equal 1 even when a is a non-residue mod n, because individual Legendre factors of -1 can cancel in pairs, but the Jacobi symbol is still useful because it satisfies the same reciprocity law as the Legendre symbol and can be computed efficiently via reciprocity without factoring n",
+      "B": "The Jacobi symbol always correctly determines quadratic residuacity mod n for both prime and composite n, making it a perfect generalization with no false positives",
+      "C": "The Jacobi symbol is defined only for prime moduli and is simply an alternative notation for the Legendre symbol with no generalization to composite moduli",
+      "D": "The Jacobi symbol takes values in the set {0, 1, 2, 3} rather than {-1, 0, 1} because composite moduli allow more residue classes"
+    },
+    "correct_answer": "A",
+    "difficulty": 3,
+    "x": 0.72722,
+    "y": 0.583072,
+    "z": 0.719315,
+    "source_article": "Jacobi symbol",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Jacobi symbol",
+      "false positives for QR",
+      "quadratic reciprocity generalization",
+      "efficient computation"
+    ]
+  },
+  {
+    "id": "a2405fe794a91ac9",
+    "question_text": "The Riemann zeta function ζ(s) = Σ n^(-s) has a meromorphic continuation to all of ℂ with a single pole at s = 1. What is the functional equation relating ζ(s) to ζ(1-s), and what does it reveal about the 'trivial' zeros?",
+    "options": {
+      "A": "The Jacobi symbol (a/n) always correctly determines whether a is a quadratic residue modulo the composite odd integer n, making it a perfect generalization of the Legendre symbol with absolutely no false positives whatsoever — this is wrong because (a/n) = 1 can occur even when a is a quadratic non-residue mod n (e.g., (2/15) = (2/3)(2/5) = (-1)(-1) = 1 but x² ≡ 2 mod 15 has no solution)",
+      "B": "The completed zeta function ξ(s) = π^(-s/2) Γ(s/2) ζ(s) satisfies ξ(s) = ξ(1-s), relating values at s to values at 1-s — the Γ(s/2) factor has poles at s = 0, -2, -4, ..., which force ζ to vanish at s = -2, -4, -6, ... (the trivial zeros), and all remaining zeros lie in the critical strip 0 ≤ Re(s) ≤ 1 with the Riemann Hypothesis asserting they fall on Re(s) = 1/2",
+      "C": "The zeta function has no functional equation because the Dirichlet series Σn^(-s) converges only for Re(s) > 1 and cannot be continued to other values of s",
+      "D": "The trivial zeros of ζ(s) are located at the positive even integers s = 2, 4, 6, ... and the functional equation has no connection to the gamma function"
+    },
+    "correct_answer": "B",
+    "difficulty": 3,
+    "x": 0.725758,
+    "y": 0.596444,
+    "z": 0.0,
+    "source_article": "Riemann zeta function",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Riemann zeta function",
+      "functional equation",
+      "trivial zeros",
+      "critical strip"
+    ]
+  },
+  {
+    "id": "38b195c441c780a2",
+    "question_text": "Quadratic number fields ℚ(√d) for squarefree d have a ring of integers that may not be a unique factorization domain. What determines whether unique factorization holds, and what replaces it when it fails?",
+    "options": {
+      "A": "The Riemann zeta function's functional equation states that ζ(s) = ζ(1-s) with no correction factors whatsoever, meaning the zeta function is perfectly symmetric about the critical line Re(s) = 1/2 without involving any gamma function, pi factors, or exponential terms — this omits the essential correction: the completed function ξ(s) = π^(-s/2)Γ(s/2)ζ(s) satisfies ξ(s) = ξ(1-s), and without the gamma and pi factors there is no symmetry",
+      "B": "The Riemann zeta function ζ(s) = Σn^(-s) has no functional equation because the Dirichlet series converges only for Re(s) > 1 and cannot be analytically continued to any other values of s in the complex plane — this is wrong because ζ(s) has a meromorphic continuation to all of ℂ with a single simple pole at s = 1, established by Riemann in his 1859 paper using integral representations and theta function transformations",
+      "C": "Unique factorization of elements holds iff the class number h(ℚ(√d)) = 1 — when h > 1, unique factorization fails for elements but is restored at the level of ideals: the Dedekind domain structure of the ring of integers guarantees that every nonzero ideal factors uniquely into prime ideals, and the class group Cl(ℚ(√d)) of order h measures the obstruction to principal ideal factorization equaling element factorization",
+      "D": "The ring of integers of ℚ(√d) is always ℤ[√d] regardless of d, and unique factorization depends only on whether d is positive or negative"
+    },
+    "correct_answer": "C",
+    "difficulty": 3,
+    "x": 0.76775,
+    "y": 0.525034,
+    "z": 0.556099,
+    "source_article": "class number",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "class number",
+      "unique factorization failure",
+      "Dedekind domains",
+      "ideal factorization",
+      "class group"
+    ]
+  },
+  {
+    "id": "9bc8a46bf66e556b",
+    "question_text": "Goldbach's conjecture states that every even integer greater than 2 is the sum of two primes. What partial results exist, and why has a complete proof been elusive?",
+    "options": {
+      "A": "Goldbach's conjecture was proved in 2013 by Harald Helfgott, settling it completely for all even integers, and no open questions remain",
+      "B": "Quadratic number fields ℚ(√d) for squarefree d always have unique factorization of elements in their ring of integers, because the fundamental theorem of arithmetic generalizes automatically and without any modification from the ordinary integers ℤ to all algebraic number rings whatsoever — this is wrong because many quadratic rings fail to have unique factorization (e.g., ℤ[√-5] where 6 = 2·3 = (1+√-5)(1-√-5)), and the class number h measures the failure",
+      "C": "The conjecture is known to be equivalent to the Riemann Hypothesis, so proving one immediately proves the other",
+      "D": "The strongest unconditional result is Chen's theorem (1973): every sufficiently large even integer is the sum of a prime and a semiprime (product of at most two primes) — Helfgott proved the odd version (ternary Goldbach: every odd integer > 5 is the sum of three primes) in 2013, but the binary conjecture resists proof because sieve methods encounter the 'parity barrier' that prevents them from distinguishing primes from semiprimes in additive problems"
+    },
+    "correct_answer": "D",
+    "difficulty": 3,
+    "x": 0.655725,
+    "y": 0.715879,
+    "z": 0.376209,
+    "source_article": "Goldbach's conjecture",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Goldbach's conjecture",
+      "Chen's theorem",
+      "ternary Goldbach",
+      "parity barrier",
+      "sieve methods"
+    ]
+  },
+  {
+    "id": "21a851310fc75d6d",
+    "question_text": "Arithmetic functions can be composed using Dirichlet convolution: (f * g)(n) = Σ_{d|n} f(d)g(n/d). Why does this operation turn the set of arithmetic functions into a ring, and what is the identity element?",
+    "options": {
+      "A": "Dirichlet convolution is associative and commutative, with identity element ε(n) = [n=1] (the function that is 1 at n=1 and 0 elsewhere) — the arithmetic functions under pointwise addition and Dirichlet convolution form a commutative ring with unity, where a function f has a Dirichlet inverse iff f(1) ≠ 0, and the multiplicative functions form a subgroup under convolution",
+      "B": "Goldbach's conjecture was proved completely and unconditionally in 2013 by Harald Helfgott, settling it for all even integers greater than 2 with no open questions remaining whatsoever — this confuses the binary Goldbach conjecture (every even integer > 2 is the sum of two primes, still open) with the ternary Goldbach conjecture (every odd integer > 5 is the sum of three primes), which Helfgott did prove in 2013",
+      "C": "Dirichlet convolution is neither associative nor commutative, so arithmetic functions under convolution do not form any standard algebraic structure",
+      "D": "Dirichlet convolution is the same operation as pointwise multiplication f(n)·g(n), just written with a different notation"
+    },
+    "correct_answer": "A",
+    "difficulty": 3,
+    "x": 0.745417,
+    "y": 0.568491,
+    "z": 0.243104,
+    "source_article": "Dirichlet convolution",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Dirichlet convolution",
+      "arithmetic function ring",
+      "identity element",
+      "convolution inverse"
+    ]
+  },
+  {
+    "id": "1d7ea9d557bddf47",
+    "question_text": "The Miller-Rabin primality test is a probabilistic algorithm. What number-theoretic fact does it exploit, and why can it be fooled by certain composites (Carmichael numbers) only in weak versions?",
+    "options": {
+      "A": "Miller-Rabin tests whether n divides (n-1)! + 1 (Wilson's theorem), which makes it deterministic with no probability of error for any input",
+      "B": "Miller-Rabin writes n-1 = 2^s · d (d odd) and checks whether a^d ≡ 1 mod n or a^(2^r · d) ≡ -1 mod n for some r — this exploits the fact that in ℤ/pℤ the only square roots of 1 are ±1, so composites often fail this condition; Carmichael numbers fool the basic Fermat test (a^(n-1) ≡ 1) but the additional square-root check catches them with probability ≥ 3/4 per random base a",
+      "C": "Miller-Rabin simply divides n by all primes up to √n and declares n prime if no divisor is found, making it a deterministic trial division algorithm with no probabilistic component",
+      "D": "Miller-Rabin works only for odd composites and cannot certify any number as probably prime — it can only prove compositeness, never provide any evidence of primality"
+    },
+    "correct_answer": "B",
+    "difficulty": 3,
+    "x": 0.641849,
+    "y": 0.655697,
+    "z": 0.543368,
+    "source_article": "Miller-Rabin test",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Miller-Rabin test",
+      "strong pseudoprimes",
+      "Carmichael numbers",
+      "square root of unity"
+    ]
+  },
+  {
+    "id": "87d188320edea681",
+    "question_text": "Class field theory describes all abelian extensions of a number field K in terms of the arithmetic of K itself. What is the Artin reciprocity map, and why is it considered a crowning achievement of algebraic number theory?",
+    "options": {
+      "A": "The Artin reciprocity map is a simple explicit formula that computes the class number of any number field K directly from its discriminant alone, requiring absolutely no knowledge of the ideal structure, unit group, regulator, or any other arithmetic invariant of K — this mischaracterizes the Artin map, which sends unramified primes to their Frobenius automorphisms and establishes an isomorphism between generalized ideal class groups and abelian Galois groups",
+      "B": "Class field theory applies only to the rational number field ℚ and has no formulation, generalization, or analog for any other number field whatsoever, including quadratic extensions like ℚ(√-1), cubic fields, cyclotomic fields, or totally real fields — this is wrong because class field theory describes all abelian extensions of an arbitrary number field K in terms of the ideal-theoretic arithmetic of K itself",
+      "C": "The Artin map sends a prime ideal 𝔭 of K (unramified in an abelian extension L/K) to its Frobenius automorphism in Gal(L/K), and extends to an isomorphism from a generalized ideal class group of K onto Gal(L/K) — this is remarkable because it describes all abelian Galois groups over K using only the internal arithmetic of K (ideals, units, conductors), without constructing the extension fields explicitly",
+      "D": "The Artin reciprocity map is merely an unproved conjecture that has never been established for any number field whatsoever and remains one of the central open and unsolved problems in algebraic number theory, on par with the Riemann Hypothesis — this is historically false, since class field theory including the Artin reciprocity law was fully established and rigorously proved by Artin, Takagi, Chevalley, and others in the 1920s and 1930s"
+    },
+    "correct_answer": "C",
+    "difficulty": 4,
+    "x": 0.758482,
+    "y": 0.581306,
+    "z": 0.501862,
+    "source_article": "class field theory",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "class field theory",
+      "Artin reciprocity",
+      "Frobenius automorphism",
+      "abelian extensions"
+    ]
+  },
+  {
+    "id": "63b2a898619bbdfb",
+    "question_text": "The Hardy-Littlewood circle method is a technique in additive number theory for counting representations of integers as sums. How does it decompose an integral over the unit circle into 'major arcs' and 'minor arcs', and what does each contribute?",
+    "options": {
+      "A": "The circle method involves drawing literal geometric circles in the complex plane and counting lattice points inside them, with no integral decomposition or Fourier analysis involved",
+      "B": "Major arcs and minor arcs contribute equally to the asymptotic count, and the decomposition is purely for notational convenience with no analytical significance",
+      "C": "The circle method works only for Waring's problem (representing integers as sums of k-th powers) and has no application to Goldbach-type problems, the ternary Goldbach conjecture, or any other additive problem",
+      "D": "The method writes the count of representations r(n) as a contour integral of a generating function, then splits the unit circle into major arcs (near rationals a/q with small q, where the generating function is well-approximated by exponential sums yielding the main term via the singular series and singular integral) and minor arcs (the complement, where cancellation in exponential sums makes the contribution negligible) — the challenge lies in bounding minor arc contributions tightly enough to confirm they are lower-order"
+    },
+    "correct_answer": "D",
+    "difficulty": 4,
+    "x": 0.74511,
+    "y": 0.668846,
+    "z": 0.441911,
+    "source_article": "circle method",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "circle method",
+      "major and minor arcs",
+      "singular series",
+      "exponential sums"
+    ]
+  },
+  {
+    "id": "eb01df2fb989bd3f",
+    "question_text": "Iwasawa theory studies the behavior of arithmetic objects (like class groups and Selmer groups) in towers of number fields. What is the Iwasawa main conjecture, and why does it connect algebraic and analytic invariants?",
+    "options": {
+      "A": "The Iwasawa main conjecture (now a theorem for ℚ by Mazur-Wiles and for totally real fields by Wiles) asserts that the characteristic ideal of the Pontryagin dual of the Selmer group in a ℤₚ-extension equals the ideal generated by a p-adic L-function — this links the algebraic side (growth of class groups up the tower, encoded by Iwasawa's λ and μ invariants) with the analytic side (p-adic interpolation of L-values), providing an arithmetic analog of the analytic class number formula",
+      "B": "The Iwasawa main conjecture is a branch of combinatorial graph theory that studies tower sequences of increasingly large finite graphs and their spectral properties, and it has absolutely no connection whatsoever to algebraic number theory, class groups, L-functions, Galois representations, or the arithmetic of number fields — this is entirely wrong; Iwasawa theory studies the behavior of arithmetic invariants (class groups, Selmer groups) in towers of number fields obtained from ℤₚ-extensions, connecting algebraic and analytic invariants",
+      "C": "The Iwasawa main conjecture has been definitively and conclusively disproved for every single number field by explicit and irrefutable numerical counterexamples discovered by several completely independent groups of researchers working in the 1990s, showing that the characteristic ideal of the Selmer group can never equal the p-adic L-function ideal in any ℤₚ-extension — this is entirely false; the main conjecture was proved by Mazur and Wiles for ℚ in 1984 and extended by Wiles to totally real fields",
+      "D": "Iwasawa theory describes only the behavior of units (not class groups, Selmer groups, or L-functions) in cyclotomic fields and has absolutely no relevance whatsoever to class group growth rates, p-adic L-functions, Galois cohomology, étale cohomology, or the broader landscape of modern arithmetic algebraic geometry — this dramatically understates the scope of Iwasawa theory, which centrally concerns the growth of class groups in ℤₚ-towers and connects algebraic invariants to p-adic analytic functions"
+    },
+    "correct_answer": "A",
+    "difficulty": 4,
+    "x": 0.766935,
+    "y": 0.65667,
+    "z": 0.445263,
+    "source_article": "Iwasawa theory",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Iwasawa theory",
+      "main conjecture",
+      "p-adic L-functions",
+      "Selmer groups",
+      "class group growth"
+    ]
+  },
+  {
+    "id": "86d277ef2f56899c",
+    "question_text": "The AKS primality test was the first deterministic polynomial-time primality test. What mathematical identity does it generalize, and why was its discovery in 2002 a breakthrough despite being impractical?",
+    "options": {
+      "A": "The AKS primality test works by performing trial division of n by all primes up to n^(1/3) and declares n to be prime if no divisor is found among them, making it a straightforward deterministic trial division algorithm with no probabilistic component and no algebraic identity — this describes trial division, not AKS; the actual AKS test generalizes the identity (x+a)ⁿ ≡ xⁿ+a mod n in a polynomial ring",
+      "B": "AKS generalizes the identity (x + a)ⁿ ≡ xⁿ + a (mod n) for all a, which holds iff n is prime — by reducing this to a polynomial ring ℤ/nℤ[x]/(x^r - 1) for suitable small r, the test runs in O((log n)^6) time, proving P-membership for PRIMES; the breakthrough was theoretical (resolving a decades-old complexity question) even though Miller-Rabin remains faster in practice",
+      "C": "The AKS primality test was the first primality test of any kind ever devised in the entire history of mathematics, preceding all probabilistic tests including the Miller-Rabin test (1976/1980) and the Solovay-Strassen test (1977) by several decades — this reverses the historical timeline completely since probabilistic primality tests came decades before AKS was published in 2002, and Fermat's primality test dates back to the 17th century",
+      "D": "The AKS primality test is actually a randomized probabilistic algorithm that has a small but nonzero probability of error on each independent run, making it no different in principle from the Miller-Rabin test — this is false because AKS is completely deterministic with zero probability of error, which is precisely why its polynomial-time complexity resolved the PRIMES-in-P question"
+    },
+    "correct_answer": "B",
+    "difficulty": 4,
+    "x": 0.641241,
+    "y": 0.637521,
+    "z": 0.496295,
+    "source_article": "AKS primality test",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "AKS primality test",
+      "polynomial identity",
+      "PRIMES in P",
+      "computational complexity"
+    ]
+  },
+  {
+    "id": "210cebc6757bc07d",
+    "question_text": "Elliptic curves over finite fields have a group structure used in cryptography. What does Hasse's theorem say about the number of points #E(𝔽_p), and why is this bound important for cryptographic security?",
+    "options": {
+      "A": "Hasse's theorem states that #E(𝔽_p) = p exactly for every elliptic curve over 𝔽_p, meaning the number of points is always equal to the field size with no deviation",
+      "B": "Hasse's theorem provides only an upper bound with no lower bound, so elliptic curves over 𝔽_p could have as few as zero rational points",
+      "C": "|#E(𝔽_p) - (p + 1)| ≤ 2√p (Hasse's theorem), so the group order is approximately p with a deviation bounded by 2√p — this ensures the group is large (roughly p elements), making the elliptic curve discrete logarithm problem computationally hard with no known subexponential algorithm, unlike the finite field DLP which falls to index calculus in subexponential time",
+      "D": "Hasse's theorem is irrelevant to cryptography because elliptic curve groups can always be broken in polynomial time using quantum computers without Shor's algorithm"
+    },
+    "correct_answer": "C",
+    "difficulty": 4,
+    "x": 0.74131,
+    "y": 0.693216,
+    "z": 0.961294,
+    "source_article": "Hasse's theorem",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Hasse's theorem",
+      "point counting",
+      "ECDLP security",
+      "index calculus"
+    ]
+  },
+  {
+    "id": "aab163e6cd322a65",
+    "question_text": "The Birch and Swinnerton-Dyer (BSD) conjecture relates the rank of an elliptic curve E/ℚ to the behavior of its L-function at s = 1. What is the precise relationship, and what is known unconditionally?",
+    "options": {
+      "A": "Hasse's theorem states that the total number of points #E(𝔽_p) on every elliptic curve E defined over any finite field 𝔽_p with p elements is always exactly and precisely equal to the prime p itself with absolutely zero deviation, fluctuation, or variance of any kind, regardless of the specific equation defining the curve — this is wrong because the correct Hasse bound is |#E(𝔽_p) - (p+1)| ≤ 2√p, allowing substantial deviations from p+1",
+      "B": "BSD has been fully proved for all elliptic curves over ℚ as a consequence of the proof of Fermat's Last Theorem by Andrew Wiles in 1995",
+      "C": "The Birch and Swinnerton-Dyer conjecture has been fully and completely proved for all elliptic curves defined over the rational numbers ℚ as a direct and immediate consequence of the proof of Fermat's Last Theorem by Andrew Wiles in 1995 — this dramatically overstates Wiles' result; while modularity of elliptic curves over ℚ was established by the modularity theorem, the BSD conjecture remains one of the seven Millennium Prize Problems",
+      "D": "BSD conjectures that the rank of E(ℚ) equals ord_{s=1} L(E,s) (the order of vanishing of the L-function at s = 1), with the leading Taylor coefficient encoding the regulator, Sha, and other arithmetic invariants — Gross-Zagier and Kolyvagin proved that if ord_{s=1} L(E,s) ≤ 1 then the rank equals the order of vanishing and Sha is finite, but the conjecture remains open for higher-rank curves and is a Millennium Prize Problem"
+    },
+    "correct_answer": "D",
+    "difficulty": 4,
+    "x": 0.772513,
+    "y": 0.727703,
+    "z": 0.398378,
+    "source_article": "BSD conjecture",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "BSD conjecture",
+      "analytic rank",
+      "Gross-Zagier theorem",
+      "Millennium Prize"
+    ]
+  },
+  {
+    "id": "b65824ef630c9a21",
+    "question_text": "The Langlands functoriality conjecture predicts relationships between automorphic representations of different reductive groups. What is the basic idea of functoriality, and what known results exemplify it?",
+    "options": {
+      "A": "Functoriality predicts that a homomorphism of L-groups ᴸG → ᴸH should induce a transfer of automorphic representations from G to H — known cases include base change for GL(n) (Arthur-Clozel), symmetric power liftings for GL(2) (partial results by Kim-Shahidi giving sym³ and sym⁴), and the Jacquet-Langlands correspondence between GL(2) and quaternion algebras; these exemplify how representation-theoretic maps on the dual side govern spectral phenomena on the automorphic side",
+      "B": "Langlands functoriality is a purely combinatorial statement about counting representations and has no connection to L-functions, Galois representations, or harmonic analysis on reductive groups",
+      "C": "Functoriality has been completely proved for all reductive groups over all number fields, leaving no open cases or conjectures remaining in the Langlands program",
+      "D": "Langlands functoriality applies only to GL(1) (class field theory) and there is no conjectural or proven generalization to any higher-rank group like GL(2), GL(n), or non-split reductive groups"
+    },
+    "correct_answer": "A",
+    "difficulty": 5,
+    "x": 0.788079,
+    "y": 0.653034,
+    "z": 0.396463,
+    "source_article": "Langlands functoriality",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Langlands functoriality",
+      "L-groups",
+      "automorphic transfer",
+      "base change",
+      "symmetric powers"
+    ]
+  },
+  {
+    "id": "9a438a64588a768a",
+    "question_text": "The Selberg trace formula relates spectral data of automorphic forms to geometric data of a locally symmetric space. What are the two sides of the formula, and how does Arthur's generalization extend it?",
+    "options": {
+      "A": "The Selberg trace formula is a simple identity tr(T) = Σλᵢ for finite-dimensional matrices and has no infinite-dimensional or geometric content",
+      "B": "The spectral side sums contributions from automorphic representations (discrete and continuous spectrum) weighted by traces of the test function, while the geometric side sums over conjugacy classes (identity, hyperbolic, elliptic, parabolic elements) weighted by orbital integrals — Arthur's trace formula generalizes this to reductive groups of arbitrary rank by handling non-compact quotients through truncation, enabling comparison of trace formulas between different groups as the primary tool for proving cases of functoriality",
+      "C": "The Langlands functoriality conjecture has been completely proved for all reductive algebraic groups over all global and local fields, leaving absolutely no open cases, unresolved conjectures, or remaining problems in the Langlands program whatsoever — this is dramatically false; while significant cases have been established (base change for GL(n), Jacquet-Langlands correspondence, partial symmetric power results by Kim-Shahidi), the full functoriality conjecture remains one of the deepest open problems in mathematics and has been proved only in special cases",
+      "D": "Arthur's generalization simplifies the Selberg trace formula by eliminating all continuous spectrum contributions, making the formula finite and purely algebraic"
+    },
+    "correct_answer": "B",
+    "difficulty": 5,
+    "x": 0.783402,
+    "y": 0.652249,
+    "z": 0.318523,
+    "source_article": "Selberg trace formula",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Selberg trace formula",
+      "spectral vs geometric sides",
+      "Arthur trace formula",
+      "orbital integrals"
+    ]
+  },
+  {
+    "id": "d122a39d561d4e0c",
+    "question_text": "Vinogradov's theorem proves the ternary Goldbach conjecture for sufficiently large odd integers using the circle method. What exponential sum estimate is central to the proof, and what remained to handle small cases?",
+    "options": {
+      "A": "Vinogradov's proof uses only elementary combinatorial arguments and no exponential sums, analytic number theory, or Fourier analysis of any kind",
+      "B": "Vinogradov proved the ternary conjecture for ALL odd integers greater than 5 in 1937, leaving no computational verification needed for small cases",
+      "C": "Vinogradov bounded the minor arc contribution using his mean value theorem for exponential sums, which estimates |Σ_{p≤N} e(αp)|, showing sufficient cancellation when α is far from low-order rationals — the major arcs yield the asymptotic via the singular series, but the proof only works for n above an enormous (initially unspecified) bound; Helfgott's 2013 work made the bound explicit and verified all odd integers 7 ≤ n ≤ 10²⁷ computationally, completing the full ternary Goldbach theorem",
+      "D": "The Selberg trace formula has only a spectral side involving automorphic representations and has absolutely no geometric interpretation, geometric side, or connection to the geometry and topology of locally symmetric spaces or their conjugacy class structure — this is wrong because the trace formula fundamentally has two sides: the spectral side (automorphic representations) and the geometric side (orbital integrals over conjugacy classes), and the interplay between these two sides is the entire point of the trace formula"
+    },
+    "correct_answer": "C",
+    "difficulty": 5,
+    "x": 0.693638,
+    "y": 0.731556,
+    "z": 0.443574,
+    "source_article": "Vinogradov's theorem",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Vinogradov's theorem",
+      "exponential sum bounds",
+      "circle method",
+      "Helfgott's verification"
+    ]
+  },
+  {
+    "id": "7e349883f026381f",
+    "question_text": "The Stark conjectures generalize the analytic class number formula to predict special values of Artin L-functions in terms of arithmetic invariants called Stark units. What do they predict, and what cases are known?",
+    "options": {
+      "A": "The Stark conjectures have been completely disproved by numerical computation, showing that L-function values at s = 0 have no algebraic interpretation in any number field",
+      "B": "The Stark conjectures apply only to abelian extensions of ℚ and have no formulation for non-abelian extensions or for base fields other than ℚ",
+      "C": "Stark units are ordinary algebraic integers with no special properties, and the conjectures merely predict that L'(0, χ) is a rational integer",
+      "D": "The rank-one abelian Stark conjecture predicts that if the L-function L(s, χ) of a character χ of Gal(K/k) vanishes to order exactly 1 at s = 0, then L'(0, χ) = -(1/e) log|ε^σ| where ε is an algebraic unit (the 'Stark unit') in a specific ray class field — this is proved for k = ℚ (recovering cyclotomic units) and for totally real k with real χ (Tate, Shintani), but remains open in general; the conjectures provide explicit generators of class fields, connecting L-values to constructive class field theory"
+    },
+    "correct_answer": "D",
+    "difficulty": 5,
+    "x": 0.79,
+    "y": 0.651719,
+    "z": 0.385828,
+    "source_article": "Stark conjectures",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Stark conjectures",
+      "L-function special values",
+      "Stark units",
+      "explicit class field theory"
+    ]
+  },
+  {
+    "id": "d08838b395e44a7b",
+    "question_text": "Monstrous moonshine is a deep connection between the Monster group M and modular functions. What is the j-function, and how does the McKay-Thompson series relate representations of M to modular forms?",
+    "options": {
+      "A": "The j-invariant j(τ) = q⁻¹ + 744 + 196884q + ... is the unique modular function for SL₂(ℤ) generating the function field of the modular curve — moonshine observes that the Fourier coefficients 196884 = 196883 + 1 decompose into dimensions of Monster representations, and for each g ∈ M the McKay-Thompson series T_g(τ) = Σ tr(g|Vₙ)qⁿ is a Hauptmodul (genus-zero modular function), which was proved by Borcherds using the Monster vertex algebra and the no-ghost theorem from string theory",
+      "B": "Monstrous moonshine is a purely numerological coincidence between the Monster group and the j-function that has been explained away and has no deep mathematical content or proof",
+      "C": "The j-function is a polynomial of degree 12 with integer coefficients and is unrelated to modular forms, elliptic curves, or complex analysis",
+      "D": "Moonshine connects the Monster group to the Riemann zeta function rather than to modular forms, and the relevant series are Dirichlet series rather than q-expansions"
+    },
+    "correct_answer": "A",
+    "difficulty": 5,
+    "x": 0.759867,
+    "y": 0.602543,
+    "z": 0.520927,
+    "source_article": "monstrous moonshine",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "monstrous moonshine",
+      "j-invariant",
+      "McKay-Thompson series",
+      "vertex algebras",
+      "Borcherds"
+    ]
+  },
+  {
+    "id": "3964aff77a5d6e20",
+    "question_text": "The Cohen-Lenstra heuristics predict the distribution of class groups of quadratic number fields. What is the key philosophical principle, and how well do these predictions match computational data?",
+    "options": {
+      "A": "The Cohen-Lenstra heuristics predict that all imaginary quadratic fields have class number 1, contradicting the known existence of fields with large class numbers",
+      "B": "The heuristics propose that the class group Cl(K) of a random quadratic field is distributed as if drawn from finite abelian groups weighted inversely by the size of their automorphism group: Prob(Cl ≅ G) ∝ 1/|Aut(G)| — this predicts, for instance, that ~75.4% of imaginary quadratic fields have odd class number, cyclic groups are favored over non-cyclic ones of the same order, and the probability that p divides the class number follows specific formulas involving Euler products; computational verification over millions of discriminants shows remarkable agreement",
+      "C": "Cohen-Lenstra heuristics are fully proved theorems rather than conjectures, having been established rigorously for all quadratic fields by 1990",
+      "D": "The heuristics predict that class groups are always cyclic of prime power order, with no non-cyclic class groups possible for any quadratic field"
+    },
+    "correct_answer": "B",
+    "difficulty": 5,
+    "x": 0.782447,
+    "y": 0.635495,
+    "z": 0.642111,
+    "source_article": "Cohen-Lenstra heuristics",
+    "domain_ids": [
+      "number-theory",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Cohen-Lenstra heuristics",
+      "class group distribution",
+      "random group philosophy",
+      "automorphism weighting"
+    ]
+  }
+]

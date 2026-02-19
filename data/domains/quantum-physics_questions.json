@@ -1,0 +1,1312 @@
+[
+  {
+    "id": "39ac1406f91c79a6",
+    "question_text": "In quantum mechanics, a particle can be in a superposition of states — for example, an electron can have both spin-up and spin-down simultaneously. What happens to this superposition when a measurement is performed?",
+    "options": {
+      "A": "The superposition collapses to one definite outcome with a probability given by the squared amplitude of that state's coefficient in the superposition — this is the Born rule",
+      "B": "The measurement always returns the weighted average of all possible outcomes in the superposition, yielding a continuous spectrum of intermediate values rather than a single definite result — this average-value interpretation explains why individual quantum measurements appear random",
+      "C": "The particle remains in superposition throughout and after measurement — the measuring device fails to resolve the quantum state into a definite outcome",
+      "D": "The superposition persists unchanged — measurement has no physical effect on quantum states, and the wave function evolves unitarily at all times"
+    },
+    "correct_answer": "A",
+    "difficulty": 1,
+    "x": 0.240134,
+    "y": 0.590811,
+    "z": 0.636211,
+    "source_article": "superposition",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "superposition",
+      "measurement",
+      "Born rule",
+      "wave function collapse"
+    ]
+  },
+  {
+    "id": "e6360f4acd88672b",
+    "question_text": "Heisenberg's uncertainty principle states that certain pairs of physical properties cannot both be known to arbitrary precision simultaneously. What is the fundamental reason for this limitation?",
+    "options": {
+      "A": "Current measurement instruments are not precise enough to simultaneously determine both position and momentum, but future advances in detector technology will overcome this purely instrumental limitation — the uncertainty principle reflects a practical engineering barrier rather than a fundamental physical law, and quantum computing technology will eventually enable simultaneous high-precision measurements of conjugate variables",
+      "B": "It is a fundamental consequence of the wave nature of quantum objects — position and momentum are related by Fourier transform, so a state well-localized in position necessarily has a broad spread in momentum, and vice versa. This is not a measurement limitation but an intrinsic property of quantum states",
+      "C": "The act of measurement always disturbs the particle by transferring a random and uncontrollable amount of energy and momentum from the apparatus",
+      "D": "The uncertainty principle applies only to subatomic particles (electrons, protons, photons) and has absolutely no relevance to mesoscopic or macroscopic quantum systems such as superconducting circuits, Bose-Einstein condensates, or quantum dots — once a system contains more than approximately 100 atoms, classical determinism is restored and simultaneous position-momentum measurements become possible in principle"
+    },
+    "correct_answer": "B",
+    "difficulty": 1,
+    "x": 0.217588,
+    "y": 0.597281,
+    "z": 0.885431,
+    "source_article": "uncertainty principle",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "uncertainty principle",
+      "Fourier transform",
+      "wave-particle duality",
+      "conjugate variables"
+    ]
+  },
+  {
+    "id": "cebdc39693050bef",
+    "question_text": "Quantum tunneling allows particles to pass through energy barriers that they classically could not surmount. What makes tunneling possible?",
+    "options": {
+      "A": "Particles momentarily gain extra energy from vacuum fluctuations to overcome the barrier",
+      "B": "The barrier temporarily disappears due to thermal fluctuations in the potential",
+      "C": "In quantum mechanics, a particle's wave function does not abruptly drop to zero at a barrier — it decays exponentially inside the barrier, and if the barrier is thin enough, there is a nonzero probability amplitude on the far side, allowing the particle to appear beyond the barrier",
+      "D": "Tunneling only occurs in theoretical models and has never been observed experimentally"
+    },
+    "correct_answer": "C",
+    "difficulty": 1,
+    "x": 0.240982,
+    "y": 0.596413,
+    "z": 0.185313,
+    "source_article": "quantum tunneling",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "quantum tunneling",
+      "wave function",
+      "exponential decay",
+      "potential barrier"
+    ]
+  },
+  {
+    "id": "c59bb78142d19e25",
+    "question_text": "The double-slit experiment is often called the most fundamental demonstration of quantum mechanics. What happens when individual electrons are sent one at a time through a double slit?",
+    "options": {
+      "A": "Each electron passes through one slit or the other — never both — producing exactly two intensity bands on the detector screen corresponding to the two slits, just as a stream of classical bullets would produce two piles behind two openings in a wall. The apparent interference pattern reported in some experiments is an artifact of detector nonlinearity and insufficient statistical sampling",
+      "B": "The electrons interact with each other across time through a retrocausal quantum correlation mechanism: each electron's trajectory is influenced by the final positions of all previously detected electrons and all future electrons that will be sent through the apparatus, creating a collective self-organizing pattern that builds up into interference fringes only when enough electrons have been accumulated",
+      "C": "Each electron is literally split into two halves by the slit barrier, with one half of the electron's charge and mass passing through each slit — the two halves then recombine on the other side to produce interference, and each half carries exactly half the electron's quantum numbers until recombination occurs",
+      "D": "Each electron arrives at a single point on the detector, but after many electrons, the cumulative pattern of arrivals forms an interference pattern — as if each electron's probability amplitude passed through both slits simultaneously and interfered with itself"
+    },
+    "correct_answer": "D",
+    "difficulty": 1,
+    "x": 0.238156,
+    "y": 0.53186,
+    "z": 0.373092,
+    "source_article": "double-slit experiment",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "double-slit experiment",
+      "wave-particle duality",
+      "interference",
+      "probability amplitude"
+    ]
+  },
+  {
+    "id": "09307a4066e25b1a",
+    "question_text": "The hydrogen atom's energy levels are quantized: the electron can only occupy discrete energy states ($E_n = -13.6/n^2$ eV). What fundamental principle of quantum mechanics explains this quantization?",
+    "options": {
+      "A": "The electron's wave function must satisfy boundary conditions — specifically, it must be single-valued, continuous, and normalizable. For the Coulomb potential, only discrete energy eigenvalues satisfy these conditions, as the wave function must vanish at infinity for bound states",
+      "B": "The proton at the center of the hydrogen atom emits electromagnetic radiation only at specific discrete frequencies determined by its internal structure, and these emitted photon frequencies restrict which energy levels the electron can occupy — the electron must absorb exactly one of these proton-emitted photons to transition between levels, and since only certain photon energies are available, only certain electronic energy levels are accessible",
+      "C": "The quantization of electromagnetic radiation into discrete photons forces the electron into discrete orbital states because only integer numbers of photons can be absorbed or emitted",
+      "D": "The electron's electric charge is itself quantized into discrete units, and each unit of charge corresponds to exactly one allowed energy level in the hydrogen atom"
+    },
+    "correct_answer": "A",
+    "difficulty": 2,
+    "x": 0.341665,
+    "y": 0.599239,
+    "z": 0.685767,
+    "source_article": "energy quantization",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "energy quantization",
+      "boundary conditions",
+      "Schrödinger equation",
+      "hydrogen atom",
+      "eigenvalue problem"
+    ]
+  },
+  {
+    "id": "4c1a2c3b5e450c34",
+    "question_text": "In quantum computing, a qubit can exist in a superposition of $|0\\rangle$ and $|1\\rangle$. What advantage does this give quantum computers over classical computers for certain problems?",
+    "options": {
+      "A": "Qubits compute fundamentally faster than classical bits because they use photons as their physical substrate instead of electrons — photons travel at the speed of light through optical fibers and free-space channels, enabling computation at light speed rather than the slower electron drift velocity in semiconductor circuits. This photonic speed advantage gives quantum computers an exponential speedup over classical computers for every computational problem, regardless of algorithmic considerations",
+      "B": "Quantum parallelism — a register of $n$ qubits can simultaneously represent all $2^n$ computational basis states in superposition, and quantum gates manipulate all these states simultaneously. Combined with interference (amplifying correct answers, canceling wrong ones) and entanglement, this enables exponential speedups for specific problems like factoring and unstructured search",
+      "C": "Quantum computers can solve every computational problem exponentially faster than any classical computer, without exception",
+      "D": "Each qubit stores exactly two classical bits of information by encoding one bit in each of its two basis states $|0\\rangle$ and $|1\\rangle$, effectively doubling the memory capacity of a quantum register compared to a classical register of the same size — a register of $n$ qubits therefore stores $2n$ classical bits, providing a linear (not exponential) improvement in storage capacity that accounts for the modest speedups observed in some quantum algorithms"
+    },
+    "correct_answer": "B",
+    "difficulty": 2,
+    "x": 0.042741,
+    "y": 0.634255,
+    "z": 0.327051,
+    "source_article": "qubit",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "qubit",
+      "quantum parallelism",
+      "quantum computing",
+      "superposition",
+      "entanglement"
+    ]
+  },
+  {
+    "id": "393c453acd2de776",
+    "question_text": "The Pauli exclusion principle states that no two identical fermions can occupy the same quantum state. What profound macroscopic consequence does this principle have?",
+    "options": {
+      "A": "It explains why light travels at a constant speed in vacuum",
+      "B": "It determines the nuclear binding energy of heavy elements",
+      "C": "It is responsible for the structure of the periodic table — electrons in an atom must occupy progressively higher energy orbitals because lower ones are already filled, creating the shell structure that determines chemical properties",
+      "D": "It causes all matter to emit blackbody radiation"
+    },
+    "correct_answer": "C",
+    "difficulty": 2,
+    "x": 0.348144,
+    "y": 0.582108,
+    "z": 0.350294,
+    "source_article": "Pauli exclusion principle",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "Pauli exclusion principle",
+      "periodic table",
+      "electron configuration",
+      "fermion",
+      "atomic structure"
+    ]
+  },
+  {
+    "id": "25c701431ecf75b2",
+    "question_text": "Entangled particles exhibit correlations that cannot be explained by any local hidden variable theory. What specifically does Bell's theorem prove?",
+    "options": {
+      "A": "Entangled particles communicate instantaneously via a faster-than-light signal that propagates through a hidden channel connecting the two particles — when one particle is measured, it sends a superluminal message to its partner instructing it which outcome to produce, and this hidden signaling mechanism operates through a currently unknown medium that exists outside the framework of special relativity and standard quantum field theory",
+      "B": "Quantum mechanics is fundamentally an incomplete theory that will eventually be replaced by a deeper deterministic theory containing hidden variables — the statistical predictions and apparent nonlocality of quantum mechanics are artifacts of our ignorance of these underlying deterministic variables, and once they are discovered, all quantum phenomena including entanglement will be explained by classical physics extended with additional local parameters",
+      "C": "Entanglement is simply a form of classical correlation entirely analogous to putting one red ball and one blue ball in two boxes — the outcomes of measurements on entangled particles were predetermined at the source of entanglement and carry no quantum mystery, exactly like revealing which color ball is in each box after separating them",
+      "D": "No local hidden variable theory can reproduce all the statistical predictions of quantum mechanics — specifically, quantum correlations between entangled particles violate Bell inequalities, ruling out any theory where measurement outcomes are predetermined by local hidden variables"
+    },
+    "correct_answer": "D",
+    "difficulty": 2,
+    "x": 0.099147,
+    "y": 0.574962,
+    "z": 0.466686,
+    "source_article": "Bell's theorem",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "Bell's theorem",
+      "entanglement",
+      "local hidden variables",
+      "Bell inequality",
+      "nonlocality"
+    ]
+  },
+  {
+    "id": "98498ff82f3897d1",
+    "question_text": "A quantum harmonic oscillator has equally spaced energy levels $E_n = \\hbar\\omega(n + 1/2)$. The ground state energy $E_0 = \\hbar\\omega/2$ is nonzero. What is the physical significance of this zero-point energy?",
+    "options": {
+      "A": "It represents the minimum energy a quantum oscillator can have — the uncertainty principle prevents the particle from being perfectly at rest at the potential minimum, because that would require simultaneously definite position (at the minimum) and definite momentum (zero), violating $\\Delta x \\cdot \\Delta p \\geq \\hbar/2$",
+      "B": "Zero-point energy is a purely mathematical artifact of the quantum harmonic oscillator formalism that has no physical consequences whatsoever — it arises from the particular ordering convention chosen for creation and annihilation operators (normal ordering vs. symmetric ordering) and can be eliminated by redefining the zero of energy, proving that it has no measurable or observable effects in any physical system",
+      "C": "Zero-point energy is the electrostatic energy stored in the oscillator's electric field between its charged components",
+      "D": "Zero-point energy is the energy required to initially create and assemble the oscillator from its constituent parts"
+    },
+    "correct_answer": "A",
+    "difficulty": 3,
+    "x": 0.280762,
+    "y": 0.653024,
+    "z": 0.88171,
+    "source_article": "quantum harmonic oscillator",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "quantum harmonic oscillator",
+      "zero-point energy",
+      "uncertainty principle",
+      "ground state"
+    ]
+  },
+  {
+    "id": "0c6cd28c70c3b9e7",
+    "question_text": "Quantum decoherence explains why macroscopic objects don't exhibit quantum superposition in everyday experience. What is the mechanism of decoherence?",
+    "options": {
+      "A": "Macroscopic objects are simply too large for quantum mechanical laws to apply — there exists a fundamental size threshold (approximately the de Broglie wavelength of a dust particle) below which quantum mechanics governs behavior and above which classical Newtonian mechanics takes over. This size-dependent crossover is built into the fundamental structure of quantum theory, and the Schrödinger equation itself becomes invalid for systems larger than this critical length scale",
+      "B": "Interaction with the environment causes the quantum system's superposition states to become entangled with an enormous number of environmental degrees of freedom, effectively transferring the coherent phase information into unobservable correlations — the system's reduced density matrix becomes diagonal, making it appear as a classical statistical mixture rather than a quantum superposition",
+      "C": "Gravity automatically collapses the wave function of objects above a certain mass, through a mechanism distinct from standard quantum measurement",
+      "D": "Decoherence occurs because macroscopic objects contain too many electrons for the multi-particle Schrödinger equation to be numerically solvable — the computational complexity of tracking all the quantum correlations between the object's electrons exceeds any possible computational resource (classical or quantum), and this computational intractability means that quantum coherence is effectively lost for systems larger than about a thousand atoms, even though in principle the full quantum state still exists"
+    },
+    "correct_answer": "B",
+    "difficulty": 3,
+    "x": 0.131755,
+    "y": 0.630457,
+    "z": 0.479159,
+    "source_article": "decoherence",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "decoherence",
+      "density matrix",
+      "environment-induced superselection",
+      "quantum-classical transition"
+    ]
+  },
+  {
+    "id": "244003ad58caeaed",
+    "question_text": "Identical particles in quantum mechanics are truly indistinguishable — exchanging two electrons produces a physically identical state. What observable consequence does this indistinguishability have?",
+    "options": {
+      "A": "Identical particles always repel each other due to exchange forces",
+      "B": "The wave function of identical particles must have a definite symmetry under exchange: symmetric for bosons (integer spin) or antisymmetric for fermions (half-integer spin)",
+      "C": "Identical particles must have a definite symmetry under exchange — symmetric (bosons) or antisymmetric (fermions). This symmetry requirement leads directly to the Pauli exclusion principle for fermions and to Bose-Einstein condensation for bosons, phenomena with no classical analog",
+      "D": "Indistinguishability means identical particles cannot be measured independently"
+    },
+    "correct_answer": "C",
+    "difficulty": 3,
+    "x": 0.271767,
+    "y": 0.599999,
+    "z": 0.308959,
+    "source_article": "identical particles",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "identical particles",
+      "exchange symmetry",
+      "boson",
+      "fermion",
+      "spin-statistics theorem"
+    ]
+  },
+  {
+    "id": "428e4ac7e8c7e309",
+    "question_text": "The hydrogen atom can be solved exactly in quantum mechanics, but multi-electron atoms cannot. What makes multi-electron atoms fundamentally different from hydrogen?",
+    "options": {
+      "A": "Multi-electron atoms have a stronger net nuclear charge than hydrogen, which fundamentally changes the mathematical shape of all atomic orbitals from the hydrogen solutions — the enhanced Coulomb attraction compresses the orbitals and alters their angular momentum properties so dramatically that the hydrogen quantum numbers $n, l, m$ become meaningless, and an entirely different set of quantum numbers must be used for multi-electron systems",
+      "B": "The additional electrons in multi-electron atoms move at speeds approaching the speed of light due to the stronger nuclear attraction, making the non-relativistic Schrödinger equation fundamentally invalid for all atoms beyond hydrogen — only a fully relativistic Dirac equation treatment can describe multi-electron atoms, and this relativistic treatment completely changes the character of the solutions",
+      "C": "Multi-electron atoms require a fully relativistic quantum mechanical treatment using the Dirac equation, while hydrogen can be solved using the simpler non-relativistic Schrödinger equation — this relativistic requirement, not electron-electron interactions, is the primary reason multi-electron atoms cannot be solved exactly",
+      "D": "Electron-electron Coulomb repulsion creates a many-body interaction that cannot be separated into independent single-particle problems — each electron's behavior depends on the positions of all other electrons, making the Schrödinger equation analytically unsolvable"
+    },
+    "correct_answer": "D",
+    "difficulty": 3,
+    "x": 0.339013,
+    "y": 0.656767,
+    "z": 0.413868,
+    "source_article": "many-body problem",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "many-body problem",
+      "electron-electron interaction",
+      "Hartree-Fock",
+      "electron correlation"
+    ]
+  },
+  {
+    "id": "42274548ab73fb5b",
+    "question_text": "In the path integral formulation of quantum mechanics (Feynman), a particle's propagation amplitude is computed by summing over all possible paths between two points. How does classical mechanics emerge from this formulation?",
+    "options": {
+      "A": "In the classical limit ($\\hbar \\to 0$), the path integral is dominated by the path of stationary action (the classical trajectory) — neighboring paths contribute phases $e^{iS/\\hbar}$ that oscillate rapidly and cancel, while paths near the classical one have slowly varying phases that constructively interfere",
+      "B": "Classical mechanics emerges from the path integral formulation simply because macroscopic objects physically take only one path through space, not multiple paths — the concept of summing over all possible paths is a mathematical trick applicable only to microscopic quantum particles, and for objects above a certain mass threshold, only the single classical trajectory contributes to the path integral because heavier objects cannot explore multiple trajectories simultaneously",
+      "C": "The path integral formulation gives exactly classical results for particles of any mass — no limiting process or approximation is needed",
+      "D": "Classical mechanics emerges only when the total number of particles in a system exceeds a critical threshold of approximately one million"
+    },
+    "correct_answer": "A",
+    "difficulty": 4,
+    "x": 0.20209,
+    "y": 0.641595,
+    "z": 0.470649,
+    "source_article": "path integral",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "path integral",
+      "Feynman",
+      "principle of stationary action",
+      "classical limit",
+      "stationary phase"
+    ]
+  },
+  {
+    "id": "1ab0ab40d1dff125",
+    "question_text": "Quantum entanglement cannot be used to send information faster than light, despite the instantaneous correlations between distant measurements. What fundamental principle prevents this?",
+    "options": {
+      "A": "Entanglement is too fragile to maintain over the large physical distances required for superluminal communication — the quantum correlations between entangled particles degrade exponentially with distance due to decoherence from interaction with environmental photons, gravitational field fluctuations, and vacuum fluctuations of the electromagnetic field. If entanglement could somehow be maintained over arbitrarily long distances without decoherence, faster-than-light communication via entanglement would be physically possible",
+      "B": "The no-communication theorem — while entangled particles exhibit nonlocal correlations, the marginal probability distribution of measurements on one particle is completely independent of what measurement (if any) is performed on the other. Without classical communication to compare results, the correlations are invisible to either party alone",
+      "C": "Special relativity forbids any material particle from traveling faster than light, and entangled particles obey this speed limit like all other physical objects",
+      "D": "Entanglement only works between particles that are physically close together within a few nanometers of each other — the quantum correlations between entangled particles decrease exponentially with distance according to a quantum correlation length that depends on the particles' masses and the ambient temperature, and beyond approximately one micrometer, entanglement vanishes completely for all practical purposes"
+    },
+    "correct_answer": "B",
+    "difficulty": 4,
+    "x": 0.106415,
+    "y": 0.571071,
+    "z": 0.683953,
+    "source_article": "no-communication theorem",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "no-communication theorem",
+      "entanglement",
+      "quantum information",
+      "locality",
+      "marginal distribution"
+    ]
+  },
+  {
+    "id": "b37ad3ae98181cfa",
+    "question_text": "The quantum Zeno effect predicts that frequently measuring whether a quantum system has decayed can inhibit the decay. What is the mechanism behind this counterintuitive effect?",
+    "options": {
+      "A": "Frequent measurements physically cool the quantum system by extracting kinetic energy during each measurement interaction, reducing the system's total energy below the threshold required for the decay or transition to occur — this measurement-induced cooling mechanism is analogous to laser cooling of atoms, where repeated photon scattering events remove kinetic energy, and the Zeno effect is simply a special case of this general cooling phenomenon applied to unstable quantum states",
+      "B": "The physical measuring apparatus creates a potential energy barrier that blocks the decay products from escaping the quantum system — each time a measurement is performed, the apparatus exerts a short-range force on the system that confines the decay products to the vicinity of the parent state, and with sufficiently frequent measurements, this confinement force maintains the system in its initial undecayed state indefinitely",
+      "C": "Each measurement projects the system back onto its initial undecayed state — at very short times, the survival probability decreases quadratically ($P \\approx 1 - (t/\\tau_Z)^2$) rather than exponentially, so frequent projections onto the initial state keep resetting this quadratic onset, effectively freezing the evolution",
+      "D": "The quantum Zeno effect is a purely theoretical prediction that exists only within the mathematical formalism of quantum mechanics and has never been experimentally observed in any physical system — despite decades of increasingly sophisticated attempts to demonstrate measurement-induced suppression of quantum transitions in cold atoms, ions, photons, and superconducting circuits, no experiment has ever produced statistically significant evidence supporting the effect"
+    },
+    "correct_answer": "C",
+    "difficulty": 4,
+    "x": 0.191167,
+    "y": 0.632931,
+    "z": 0.513693,
+    "source_article": "quantum Zeno effect",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "quantum Zeno effect",
+      "measurement projection",
+      "survival probability",
+      "quantum evolution"
+    ]
+  },
+  {
+    "id": "bffeeaaf77d487be",
+    "question_text": "Quantum error correction protects quantum information from decoherence despite the no-cloning theorem (which forbids copying arbitrary quantum states). How is this possible?",
+    "options": {
+      "A": "Quantum error correction works by making many copies of the qubit and using majority voting, just like classical error correction",
+      "B": "Error correction is impossible for quantum systems — quantum computers must simply operate fast enough to finish before errors accumulate",
+      "C": "Quantum computers avoid errors by operating at absolute zero temperature, making error correction unnecessary",
+      "D": "Quantum error correction encodes a single logical qubit's information across multiple physical qubits using entanglement, so that errors on individual physical qubits can be detected and corrected through syndrome measurements that extract error information without measuring (and thus disturbing) the encoded logical state"
+    },
+    "correct_answer": "D",
+    "difficulty": 4,
+    "x": 0.030541,
+    "y": 0.614016,
+    "z": 0.531718,
+    "source_article": "quantum error correction",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "quantum error correction",
+      "no-cloning theorem",
+      "stabilizer codes",
+      "syndrome measurement",
+      "fault tolerance"
+    ]
+  },
+  {
+    "id": "1e09a2b3c5da86ea",
+    "question_text": "The Aharonov-Bohm effect demonstrates that a charged particle can be affected by electromagnetic potentials even in regions where both the electric and magnetic fields are zero. What does this reveal about the role of potentials in quantum mechanics?",
+    "options": {
+      "A": "In quantum mechanics, the electromagnetic potentials ($\\mathbf{A}$, $\\phi$) are physically fundamental — not merely mathematical conveniences as in classical electromagnetism. The phase of a charged particle's wave function couples directly to the vector potential via $\\exp(ie\\oint \\mathbf{A} \\cdot d\\mathbf{l}/\\hbar)$, producing observable interference effects even where $\\mathbf{B} = \\nabla \\times \\mathbf{A} = 0$",
+      "B": "The Aharonov-Bohm effect shows that magnetic fields can penetrate any shielding material",
+      "C": "The effect proves that electrons have a hidden magnetic moment that interacts with distant fields",
+      "D": "The Aharonov-Bohm effect is a relativistic correction that only appears at speeds close to $c$"
+    },
+    "correct_answer": "A",
+    "difficulty": 5,
+    "x": 0.29767,
+    "y": 0.590203,
+    "z": 0.173522,
+    "source_article": "Aharonov-Bohm effect",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "Aharonov-Bohm effect",
+      "gauge potential",
+      "geometric phase",
+      "electromagnetic potential",
+      "quantum phase"
+    ]
+  },
+  {
+    "id": "c1d0de8a398e405d",
+    "question_text": "Quantum key distribution (QKD) protocols like BB84 allow two parties to generate a shared secret key with security guaranteed by the laws of physics. What specific quantum principle ensures that an eavesdropper cannot intercept the key without being detected?",
+    "options": {
+      "A": "Quantum encryption uses extremely high-frequency ultraviolet or X-ray photons whose short wavelength makes them physically impossible to intercept without specialized detection equipment — the security of QKD protocols relies on the practical impossibility of building a photon detector sensitive to these extremely high-energy photons, and any eavesdropper would need technology far beyond current capabilities to intercept the key transmission, making QKD secure through technological asymmetry rather than fundamental physics",
+      "B": "The no-cloning theorem prevents an eavesdropper from copying the quantum states without disturbing them — any attempt to measure the transmitted qubits inevitably introduces detectable errors because measuring a qubit in the wrong basis randomizes it, and the legitimate parties can detect this increased error rate during public reconciliation",
+      "C": "QKD transmits ordinary classical bits through a quantum communication channel, which renders the transmitted information invisible and undetectable to eavesdroppers",
+      "D": "The cryptographic key distributed by QKD is protected by computational complexity — specifically, breaking the quantum key would require solving an NP-hard mathematical problem (the hidden subgroup problem for non-abelian groups) that is believed to be intractable on both classical and quantum computers. QKD achieves its security guarantee through the same computational hardness assumptions that underpin classical public-key cryptography, but uses quantum channels to improve transmission efficiency"
+    },
+    "correct_answer": "B",
+    "difficulty": 5,
+    "x": 0.031657,
+    "y": 0.550502,
+    "z": 0.566501,
+    "source_article": "quantum key distribution",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "quantum key distribution",
+      "BB84",
+      "no-cloning theorem",
+      "quantum cryptography",
+      "information-theoretic security"
+    ]
+  },
+  {
+    "id": "9dc51dd6f0b08219",
+    "question_text": "The density matrix formalism extends quantum mechanics to describe mixed states (statistical ensembles of pure states). What physical situations require the density matrix rather than a simple state vector $|\\psi\\rangle$?",
+    "options": {
+      "A": "Density matrices are needed only for computational convenience and contain no additional physical content beyond what is already present in pure state vectors $|\\psi\\rangle$ — every density matrix $\\rho$ can be factored into a single pure state $|\\psi\\rangle\\langle\\psi|$, and the apparent need for mixed states arises solely from choosing an unnecessarily complicated mathematical representation. Any calculation performed with a density matrix can be equivalently performed using the corresponding pure state vector",
+      "B": "Density matrices are required exclusively for relativistic quantum mechanical systems where particle creation and annihilation occur — in non-relativistic quantum mechanics, pure state vectors are always sufficient to describe every possible physical situation",
+      "C": "When a quantum system is entangled with another system that we don't have access to — the subsystem's state cannot be described by any single $|\\psi\\rangle$ but requires a reduced density matrix $\\rho = \\text{Tr}_{\\text{env}}(|\\Psi\\rangle\\langle\\Psi|)$ that captures both quantum uncertainty and classical ignorance about the system's state",
+      "D": "Density matrices are needed only for systems containing more than approximately 100 particles, where the Hilbert space dimension exceeds practical computational limits"
+    },
+    "correct_answer": "C",
+    "difficulty": 5,
+    "x": 0.163029,
+    "y": 0.725717,
+    "z": 0.603032,
+    "source_article": "density matrix",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "density matrix",
+      "mixed state",
+      "reduced density matrix",
+      "partial trace",
+      "open quantum system"
+    ]
+  },
+  {
+    "id": "f2ede594ac597759",
+    "question_text": "Topological quantum computing proposes using non-Abelian anyons — quasiparticles that exist only in two-dimensional systems — to perform fault-tolerant quantum computation. What makes topological qubits inherently more robust against local noise than conventional qubits?",
+    "options": {
+      "A": "Topological qubits achieve their error protection by operating at much lower temperatures than conventional superconducting or trapped-ion qubits — the extreme cryogenic environment (below 1 millikelvin) freezes out all thermal excitations and phonon modes that could perturb the quantum state, providing passive error protection through thermodynamic suppression of decoherence channels. The 'topological' label refers to the toroidal geometry of the cryostat in which these ultra-cold qubits are housed, not to any mathematical property of the quantum states themselves",
+      "B": "Topological qubits use physically larger particles (such as entire molecules or nanoparticles) as their information carriers instead of the single atoms, electrons, or photons used in conventional quantum computing — these larger particles have more internal degrees of freedom that can absorb perturbations without affecting the encoded quantum information, providing an error-correcting buffer analogous to the thermal mass of a large object that resists temperature changes",
+      "C": "Topological qubits are protected by an exceptionally large energy gap between the ground state and all excited states of the physical system — this gap is much larger than the energy gaps in conventional superconducting qubits, and it prevents any thermal or electromagnetic perturbation from exciting the system out of its computational basis states. The topological nature of the protection comes from the geometric shape of the potential energy landscape rather than from any braiding of quasiparticle worldlines",
+      "D": "Quantum information is encoded in the global topological properties of anyon braids (their worldline topology) rather than in local physical properties — since topology is invariant under smooth local deformations, local perturbations and noise cannot change the encoded information without creating or annihilating anyons, providing intrinsic hardware-level error protection"
+    },
+    "correct_answer": "D",
+    "difficulty": 5,
+    "x": 0.049045,
+    "y": 0.691385,
+    "z": 0.0,
+    "source_article": "topological quantum computing",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "topological quantum computing",
+      "non-Abelian anyons",
+      "topological protection",
+      "braiding",
+      "fault tolerance"
+    ]
+  },
+  {
+    "id": "7b612ef8bc14f4f2",
+    "question_text": "The Heisenberg uncertainty principle sets a fundamental limit on measurement precision. What does the position-momentum form of this principle state?",
+    "options": {
+      "A": "The product of the uncertainties in position and momentum of a particle cannot be smaller than ℏ/2 — the more precisely you know one, the less precisely you can know the other, as a fundamental property of wave-like systems",
+      "B": "Position and momentum can both be measured with completely arbitrary precision simultaneously, provided that the measuring instruments are sufficiently advanced, carefully calibrated, and engineered to minimize their disturbance to the system being observed in the laboratory",
+      "C": "The uncertainty principle applies only to photons and electromagnetic radiation, and has no relevance whatsoever to particles with nonzero rest mass such as electrons, protons, neutrons, atoms, molecules, or any other material particle in the quantum regime",
+      "D": "Uncertainty in quantum measurements arises solely from the mechanical disturbance caused by imperfect measurement instruments, and could in principle be completely eliminated by designing sufficiently non-invasive observation techniques that minimize their interaction energy with the quantum system"
+    },
+    "correct_answer": "A",
+    "difficulty": 1,
+    "x": 0.237252,
+    "y": 0.60022,
+    "z": 1.0,
+    "source_article": "Heisenberg uncertainty principle",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "Heisenberg uncertainty principle",
+      "position-momentum uncertainty",
+      "ℏ/2 bound"
+    ]
+  },
+  {
+    "id": "436ba6253df6a619",
+    "question_text": "In the double-slit experiment, individual electrons are fired one at a time at a barrier with two slits. What pattern emerges on the detection screen over time?",
+    "options": {
+      "A": "Two bright bands appear directly behind each slit, exactly as classical particles would produce, with absolutely no interference effects visible at any point on the detection screen regardless of how many individual electrons are detected over time",
+      "B": "An interference pattern of alternating bright and dark fringes, demonstrating that each electron passes through both slits simultaneously as a probability wave and interferes with itself",
+      "C": "A completely uniform distribution across the entire screen with no pattern whatsoever, because individual electrons have no wave properties and arrive at random positions",
+      "D": "A single bright spot at the center of the screen where all electrons converge, since particles always travel in straight lines toward the geometric center"
+    },
+    "correct_answer": "B",
+    "difficulty": 1,
+    "x": 0.247119,
+    "y": 0.51,
+    "z": 0.33868,
+    "source_article": "wave-particle duality",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "wave-particle duality",
+      "double-slit experiment",
+      "quantum interference",
+      "probability amplitude"
+    ]
+  },
+  {
+    "id": "2d18cdc4d516f12a",
+    "question_text": "Quantum tunneling allows particles to pass through potential energy barriers that they classically could not surmount. What determines the probability of tunneling?",
+    "options": {
+      "A": "Tunneling probability depends only on the particle's electric charge and color, with positively charged particles always tunneling significantly more efficiently than negatively charged ones regardless of the barrier's physical width or height",
+      "B": "The tunneling probability is always exactly 50% regardless of any barrier properties — quantum mechanics treats all potential energy barriers as equally and uniformly transparent to all particles regardless of mass or energy",
+      "C": "The probability decreases exponentially with the barrier's width and height and increases with lighter particle mass — the wavefunction decays exponentially inside the classically forbidden region",
+      "D": "Tunneling occurs only at absolute zero temperature and is completely impossible at any temperature above 0 Kelvin due to thermal energy destroying quantum coherence"
+    },
+    "correct_answer": "C",
+    "difficulty": 1,
+    "x": 0.251195,
+    "y": 0.591021,
+    "z": 0.091346,
+    "source_article": "quantum tunneling",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "quantum tunneling",
+      "barrier penetration",
+      "exponential decay",
+      "wavefunction"
+    ]
+  },
+  {
+    "id": "e39409e7a4e62420",
+    "question_text": "The Schrödinger equation is the fundamental equation governing non-relativistic quantum mechanics. What does its solution, the wavefunction ψ(x,t), represent physically?",
+    "options": {
+      "A": "The wavefunction directly measures the electric field strength at each individual point in space and time, functioning as a classical electromagnetic field equation that has been rewritten using quantum notation without any fundamental conceptual change from Maxwell's original equations",
+      "B": "The wavefunction is a physically meaningless mathematical tool with absolutely no connection to any observable quantities in experiments or measurements — it is merely a calculational convenience with no physical interpretation whatsoever that could be replaced by any arbitrary function",
+      "C": "The wavefunction has no time dependence of any kind — ψ is a completely static snapshot of the particle's exact position at a single moment and cannot describe any dynamical evolution, transitions between quantum states, or any time-varying processes at all",
+      "D": "The squared modulus |ψ(x,t)|² gives the probability density for finding the particle at position x at time t — the wavefunction itself is a complex-valued probability amplitude whose dynamics determine how quantum states evolve"
+    },
+    "correct_answer": "D",
+    "difficulty": 1,
+    "x": 0.301286,
+    "y": 0.613157,
+    "z": 0.636721,
+    "source_article": "wavefunction",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "wavefunction",
+      "Born rule",
+      "probability amplitude",
+      "Schrödinger equation"
+    ]
+  },
+  {
+    "id": "cb2631f7f7ce8373",
+    "question_text": "Quantum spin is an intrinsic angular momentum property of particles. What distinguishes quantum spin from classical rotation?",
+    "options": {
+      "A": "Spin is an intrinsic quantum number with no classical analogue — particles are not physically spinning, yet they possess quantized angular momentum and magnetic moments that emerge from the Dirac equation's relativistic structure",
+      "B": "Spin is identical to classical rotation — electrons are tiny spinning spheres with a definite physical radius, and the magnitude of spin angular momentum can be calculated directly from the electron's radius and its equatorial rotational velocity using standard classical mechanics formulas",
+      "C": "Spin exists only for composite particles such as protons and neutrons built from quarks, and is completely absent in all fundamental elementary particles such as electrons, quarks, muons, and neutrinos, which possess exactly zero intrinsic angular momentum",
+      "D": "Spin is a property of photons only and does not apply to particles with mass — massive particles carry angular momentum exclusively through orbital motion"
+    },
+    "correct_answer": "A",
+    "difficulty": 1,
+    "x": 0.278079,
+    "y": 0.618238,
+    "z": 0.193762,
+    "source_article": "quantum spin",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "quantum spin",
+      "intrinsic angular momentum",
+      "Dirac equation",
+      "no classical analogue"
+    ]
+  },
+  {
+    "id": "3cad31158df3a8ba",
+    "question_text": "A quantum harmonic oscillator has energy levels En = ℏω(n + 1/2). What is the physical significance of the zero-point energy E₀ = ℏω/2?",
+    "options": {
+      "A": "Zero-point energy is a purely mathematical artifact with absolutely no physical consequences of any kind that can be safely and completely set to zero without affecting any observable phenomenon, experimental measurement, or theoretical prediction",
+      "B": "Even in its lowest energy state (n=0), the oscillator retains nonzero energy because the uncertainty principle forbids simultaneous zero position displacement and zero momentum — complete rest would violate ΔxΔp ≥ ℏ/2",
+      "C": "Zero-point energy applies only to macroscopic springs and pendulums and has no relevance to atomic or molecular systems at the quantum scale",
+      "D": "The zero-point energy is negative, representing a bound state below the potential minimum, where the particle is trapped in a classically forbidden region permanently"
+    },
+    "correct_answer": "B",
+    "difficulty": 2,
+    "x": 0.28961,
+    "y": 0.660836,
+    "z": 0.816738,
+    "source_article": "quantum harmonic oscillator",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "quantum harmonic oscillator",
+      "zero-point energy",
+      "uncertainty principle",
+      "ground state"
+    ]
+  },
+  {
+    "id": "7d10c072ee0484ff",
+    "question_text": "Quantum entanglement produces correlations between measurements on separated particles. What did Bell's theorem demonstrate about these correlations?",
+    "options": {
+      "A": "Bell proved conclusively that quantum mechanics is fundamentally wrong and must eventually be replaced by a local hidden variable theory that explains all experimental results using only classical physics, local causal interactions, predetermined particle properties established at the moment of creation, and no nonlocal correlations of any kind",
+      "B": "Bell showed that quantum entanglement is merely an illusion caused by shared initial conditions established at the common source, and that no experiment can ever distinguish quantum correlations from perfectly ordinary classical correlations arising from straightforward common-cause statistical explanations",
+      "C": "No local hidden variable theory can reproduce all predictions of quantum mechanics — Bell's inequalities set limits on correlations from local realism, and experiments violating these inequalities confirm that quantum entanglement involves nonlocal correlations",
+      "D": "Bell proved mathematically that entangled particles communicate instantaneously faster than light through a real physical signal, fundamentally violating Einstein's special relativity and enabling instantaneous faster-than-light information transfer between any two arbitrary points in the universe"
+    },
+    "correct_answer": "C",
+    "difficulty": 2,
+    "x": 0.112835,
+    "y": 0.549968,
+    "z": 0.535326,
+    "source_article": "Bell's theorem",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "Bell's theorem",
+      "Bell inequalities",
+      "local hidden variables",
+      "quantum entanglement"
+    ]
+  },
+  {
+    "id": "659fc12c731aabbc",
+    "question_text": "Quantum decoherence explains why macroscopic objects don't exhibit quantum superposition in everyday life. What is the mechanism of decoherence?",
+    "options": {
+      "A": "Decoherence occurs because quantum mechanics simply ceases to apply to objects above a certain critical mass threshold — there is a sharp boundary at approximately 10⁻¹⁵ kilograms above which classical physics completely and permanently replaces all quantum behavior and no superposition of any kind can exist regardless of how well the system is isolated from its environment",
+      "B": "Decoherence is caused specifically by the Earth's gravitational field, which collapses all quantum wavefunctions within the planet's gravitational influence into definite classical states through a mechanism known as gravitational objective reduction, as proposed by Roger Penrose in his interpretation of quantum mechanics and general relativity",
+      "C": "Decoherence has been conclusively and definitively disproven by recent experiments that have successfully demonstrated that everyday macroscopic objects including baseballs and automobiles can be placed in quantum superposition just as easily and routinely as individual atoms, proving that quantum effects scale without any practical limitation to arbitrary sizes",
+      "D": "Interactions between a quantum system and its environment cause the system's quantum coherence (phase relationships between superposition components) to leak into the environment — effectively suppressing interference effects on timescales that are extraordinarily short for macroscopic objects"
+    },
+    "correct_answer": "D",
+    "difficulty": 2,
+    "x": 0.139497,
+    "y": 0.60483,
+    "z": 0.458517,
+    "source_article": "quantum decoherence",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "quantum decoherence",
+      "environment interaction",
+      "coherence loss",
+      "quantum-classical transition"
+    ]
+  },
+  {
+    "id": "af2755ec5494dfd2",
+    "question_text": "The hydrogen atom's energy levels are given by En = -13.6 eV/n². When a hydrogen atom transitions from n=3 to n=2, it emits a photon. What determines the photon's properties?",
+    "options": {
+      "A": "The photon's energy equals the difference between the two energy levels (E₃ - E₂), and its wavelength is determined by E = hc/λ — this specific transition produces the red Balmer-alpha line at 656.3 nm",
+      "B": "The photon always has exactly 13.6 electron volts of energy regardless of which pair of energy levels are involved in the transition, because all hydrogen atom transitions release the full ionization energy as a single photon every time",
+      "C": "The atom emits two photons simultaneously, each carrying half the energy difference, because quantum selection rules require pair emission for all atomic transitions",
+      "D": "No photon is emitted during any atomic transition — all energy is released purely as kinetic energy transferred to the hydrogen atom through mechanical recoil momentum, with absolutely no electromagnetic radiation produced during the process"
+    },
+    "correct_answer": "A",
+    "difficulty": 2,
+    "x": 0.39,
+    "y": 0.575706,
+    "z": 0.580571,
+    "source_article": "hydrogen spectrum",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "hydrogen spectrum",
+      "Balmer series",
+      "energy level transitions",
+      "photon emission"
+    ]
+  },
+  {
+    "id": "bf98a74048f27ec5",
+    "question_text": "The Pauli exclusion principle governs the behavior of fermions. What does it state, and what is its most important consequence for atomic structure?",
+    "options": {
+      "A": "The principle states that fermions are always attracted to each other and must preferentially occupy the same quantum state whenever possible, which is why electrons cluster together in the lowest-energy orbital of every atom",
+      "B": "No two identical fermions can occupy the same quantum state simultaneously — this forces electrons into successively higher energy levels and shells, creating the periodic table's structure and all of chemistry",
+      "C": "The exclusion principle applies only to neutrons inside nuclei and has no relevance to electrons, protons, or any other fermion outside of nuclear physics",
+      "D": "The Pauli principle states that all particles in the universe are bosons and can freely and simultaneously occupy exactly the same quantum state, which explains Bose-Einstein condensation as the universal low-temperature behavior of all matter"
+    },
+    "correct_answer": "B",
+    "difficulty": 2,
+    "x": 0.36396,
+    "y": 0.569117,
+    "z": 0.310196,
+    "source_article": "Pauli exclusion principle",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "Pauli exclusion principle",
+      "fermions",
+      "electron configuration",
+      "periodic table"
+    ]
+  },
+  {
+    "id": "cdfed18bcb36efa9",
+    "question_text": "Quantum superposition allows a quantum system to exist in multiple states simultaneously until measured. What happens to the superposition upon measurement, according to the Copenhagen interpretation?",
+    "options": {
+      "A": "The measurement reveals which state the system was secretly in all along — superposition is merely our ignorance of the pre-existing definite state, not an objective physical reality",
+      "B": "Measurement has no effect on the quantum state — the system remains in superposition before, during, and after measurement, and all experimental results are compatible with this view",
+      "C": "The wavefunction collapses to one of the eigenstates of the measured observable, with probability given by the Born rule (|⟨eigenstate|ψ⟩|²) — the superposition is genuinely destroyed and the outcome is fundamentally probabilistic",
+      "D": "The measurement splits the observer into multiple identical copies, one for each possible outcome, with all outcomes occurring simultaneously in branching parallel universes that permanently diverge and never again interact with each other — this is the Many-Worlds interpretation of quantum mechanics"
+    },
+    "correct_answer": "C",
+    "difficulty": 3,
+    "x": 0.144989,
+    "y": 0.573189,
+    "z": 0.698917,
+    "source_article": "wavefunction collapse",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "wavefunction collapse",
+      "Copenhagen interpretation",
+      "Born rule",
+      "measurement problem"
+    ]
+  },
+  {
+    "id": "c2e4135d8fce6414",
+    "question_text": "The quantum Zeno effect predicts that frequent measurements can inhibit the evolution of a quantum system. What is the physical mechanism behind this effect?",
+    "options": {
+      "A": "Frequent measurements physically cool the quantum system to absolute zero temperature by extracting thermal energy with each measurement, freezing all molecular motion and preventing any state transitions through complete thermodynamic suppression of all thermal fluctuations, kinetic energy, and dynamical processes in the system",
+      "B": "Each measurement projects the system back onto its initial quantum state — for sufficiently rapid measurements the probability of finding the system in a different state approaches zero because the transition probability grows quadratically rather than linearly with time for short intervals between measurements, as first noted by Misra and Sudarshan in their foundational 1977 paper",
+      "C": "The Zeno effect is a classical phenomenon caused by the mechanical vibrations of the measuring apparatus, which physically push the system back to its initial state through momentum transfer",
+      "D": "Each measurement projects the system back onto its initial state — for sufficiently rapid measurements, the probability of finding the system in a different state approaches zero because the transition probability grows quadratically with time (not linearly) for short intervals"
+    },
+    "correct_answer": "D",
+    "difficulty": 3,
+    "x": 0.199915,
+    "y": 0.61068,
+    "z": 0.479109,
+    "source_article": "quantum Zeno effect",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "quantum Zeno effect",
+      "frequent measurement",
+      "projection postulate",
+      "transition probability"
+    ]
+  },
+  {
+    "id": "da08300bd1c39598",
+    "question_text": "Quantum cryptography (specifically BB84) uses quantum mechanical principles to guarantee secure communication. What physical principle makes eavesdropping detectable?",
+    "options": {
+      "A": "The no-cloning theorem and the disturbance caused by measuring a quantum state in the wrong basis — an eavesdropper cannot copy unknown quantum states or intercept them without introducing detectable errors in the key exchange",
+      "B": "BB84 uses extremely strong classical encryption algorithms that are merely labeled 'quantum' for marketing purposes — no actual quantum mechanical principles are involved in the protocol",
+      "C": "Quantum cryptography relies on the computational difficulty of factoring large prime numbers, exactly like classical RSA encryption, and would be broken by a sufficiently powerful classical computer",
+      "D": "The security comes from the speed of photon transmission through fiber optics — eavesdroppers cannot intercept photons because they travel at the speed of light and are too fast to capture"
+    },
+    "correct_answer": "A",
+    "difficulty": 3,
+    "x": 0.021329,
+    "y": 0.546497,
+    "z": 0.595621,
+    "source_article": "quantum key distribution",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "quantum key distribution",
+      "BB84 protocol",
+      "no-cloning theorem",
+      "quantum eavesdropping"
+    ]
+  },
+  {
+    "id": "31b9cb40473a855e",
+    "question_text": "In quantum mechanics, operators corresponding to observables must be Hermitian. Why is Hermiticity required?",
+    "options": {
+      "A": "BB84 uses extremely strong classical encryption algorithms that are merely labeled 'quantum' for marketing purposes and commercial appeal — no actual quantum mechanical principles or phenomena are involved in the protocol's operation or security guarantee",
+      "B": "Hermitian operators guarantee real eigenvalues (measurement outcomes must be real numbers) and orthogonal eigenstates (distinct measurement outcomes are distinguishable) — both are necessary for a self-consistent measurement theory",
+      "C": "Hermitian operators are required because only Hermitian operators can be written down on paper — non-Hermitian operators are physically impossible to construct or define mathematically",
+      "D": "Hermiticity ensures that the operator commutes with every other operator in quantum mechanics, so that all observables can be measured simultaneously without any uncertainty relations"
+    },
+    "correct_answer": "B",
+    "difficulty": 3,
+    "x": 0.17769,
+    "y": 0.675128,
+    "z": 0.63506,
+    "source_article": "Hermitian operators",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "Hermitian operators",
+      "real eigenvalues",
+      "orthogonal eigenstates",
+      "observables"
+    ]
+  },
+  {
+    "id": "9a2a8f65228d992b",
+    "question_text": "Perturbation theory is a cornerstone technique for solving quantum mechanical problems. When is first-order perturbation theory valid, and what does it calculate?",
+    "options": {
+      "A": "First-order perturbation theory works only for systems that are already exactly solvable analytically and provides absolutely no approximation capability whatsoever for any quantum mechanical problem that cannot already be solved in complete closed form without any approximation methods — it is therefore redundant and unnecessary as a theoretical technique in modern quantum physics",
+      "B": "Perturbation theory is valid only at absolute zero temperature and fails completely for any finite-temperature quantum system",
+      "C": "First-order perturbation theory is valid when the perturbation Hamiltonian H' is small compared to the unperturbed H₀ — it gives energy corrections E⁽¹⁾ = ⟨n⁰|H'|n⁰⟩ (expectation value of the perturbation in the unperturbed state) and first-order state corrections as superpositions of unperturbed states",
+      "D": "Perturbation theory solves the full quantum mechanical problem exactly to all orders in a single straightforward calculation step, requiring no truncation, series approximation, or convergence analysis, and it always converges perfectly and rapidly to the exact analytical answer regardless of the perturbation Hamiltonian's strength relative to the unperturbed system"
+    },
+    "correct_answer": "C",
+    "difficulty": 3,
+    "x": 0.248017,
+    "y": 0.728167,
+    "z": 0.531438,
+    "source_article": "perturbation theory",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "perturbation theory",
+      "energy correction",
+      "small perturbation",
+      "matrix elements"
+    ]
+  },
+  {
+    "id": "203e404d1e553fd6",
+    "question_text": "Quantum field theory (QFT) extends quantum mechanics by treating particles as excitations of underlying fields. What conceptual problem does QFT solve that single-particle quantum mechanics cannot?",
+    "options": {
+      "A": "QFT solves the problem of gravity — it provides a complete, consistent, and mathematically rigorous quantum theory of all gravitational interactions that single-particle quantum mechanics fundamentally fails to describe, and this gravitational QFT has been experimentally confirmed to extraordinary precision",
+      "B": "QFT is mathematically simpler than single-particle quantum mechanics and was developed to make calculations easier rather than to address any conceptual shortcoming",
+      "C": "QFT eliminates the need for the Schrödinger equation entirely, replacing all quantum dynamics with purely classical field equations that happen to produce the same predictions",
+      "D": "QFT allows particle creation and annihilation — in relativistic processes, particles can be created from energy and destroyed into energy (E=mc²), which is incompatible with fixed-particle-number quantum mechanics where the number of particles is conserved"
+    },
+    "correct_answer": "D",
+    "difficulty": 4,
+    "x": 0.210416,
+    "y": 0.645278,
+    "z": 0.361483,
+    "source_article": "quantum field theory",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "quantum field theory",
+      "particle creation/annihilation",
+      "second quantization",
+      "relativistic QM"
+    ]
+  },
+  {
+    "id": "2beb1ecae2dc20d8",
+    "question_text": "The path integral formulation of quantum mechanics, developed by Richard Feynman, provides an alternative to the Schrödinger equation. What is its central idea?",
+    "options": {
+      "A": "The probability amplitude for a particle to travel from point A to point B is the sum over all possible paths between those points, with each path contributing a phase factor e^(iS/ℏ) where S is the classical action for that path — classical behavior emerges when nearby paths have similar actions and constructively interfere",
+      "B": "A particle follows a single classical path (the path of least action) and the path integral simply confirms Newton's laws without adding any quantum content",
+      "C": "The path integral states that particles do not move at all between measurements — they teleport instantaneously from one position to another without traversing any intermediate space, and Feynman's formulation proves that continuous particle trajectories are physically impossible in quantum mechanics, with all motion being fundamentally discontinuous quantum jumps between discrete spatial locations",
+      "D": "Feynman's formulation applies only to photons and cannot describe the behavior of electrons, atoms, or any particles with mass"
+    },
+    "correct_answer": "A",
+    "difficulty": 4,
+    "x": 0.199864,
+    "y": 0.645193,
+    "z": 0.334332,
+    "source_article": "path integral",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "path integral",
+      "Feynman formulation",
+      "sum over histories",
+      "classical limit"
+    ]
+  },
+  {
+    "id": "2bb0595df1d2d8cb",
+    "question_text": "The density matrix formalism extends quantum mechanics to handle mixed states and open quantum systems. What is the key difference between a pure state and a mixed state?",
+    "options": {
+      "A": "There is no difference — 'pure' and 'mixed' are interchangeable terms for the same quantum state, and the density matrix provides no additional information beyond the wavefunction",
+      "B": "A pure state (ρ = |ψ⟩⟨ψ|, Tr(ρ²) = 1) represents maximal quantum information about the system, while a mixed state (Tr(ρ²) < 1) represents a statistical ensemble or subsystem with incomplete information — mixed states cannot be described by a single wavefunction",
+      "C": "Pure states exist only in theory and cannot be prepared experimentally, while mixed states are the only physically realizable quantum states",
+      "D": "Pure states have zero entropy while mixed states have negative entropy — the density matrix tracks this negative entropy, which represents quantum information flowing backward in time"
+    },
+    "correct_answer": "B",
+    "difficulty": 4,
+    "x": 0.190568,
+    "y": 0.736073,
+    "z": 0.615834,
+    "source_article": "density matrix",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "density matrix",
+      "pure state",
+      "mixed state",
+      "quantum information"
+    ]
+  },
+  {
+    "id": "db1744c14238ee28",
+    "question_text": "Quantum error correction protects quantum information from decoherence and errors. What fundamental challenge makes quantum error correction harder than classical error correction?",
+    "options": {
+      "A": "Quantum error correction is actually easier than classical error correction because quantum errors are always perfectly correctable with just a single redundant qubit added to the system — the quantum version requires dramatically fewer resources and computational overhead than any comparable classical error correction scheme, making fault-tolerant quantum computing trivially achievable with minimal engineering effort and no fundamental obstacles",
+      "B": "Classical error correction is completely impossible — only quantum error correction exists as a functional method for detecting and correcting errors in stored data, and classical computers have no mechanism whatsoever for identifying, localizing, or repairing any errors in their stored binary information, making all classical data storage fundamentally unreliable and requiring constant manual verification",
+      "C": "Quantum error correction is harder because: (1) the no-cloning theorem prevents simply copying qubits for redundancy, (2) measurement destroys superposition, so errors must be detected without directly measuring the encoded quantum information, and (3) errors are continuous (not just bit-flips), requiring correction of both bit-flip and phase-flip errors",
+      "D": "Quantum error correction is entirely unnecessary because qubits never experience any errors of any kind — quantum systems are perfectly and permanently isolated from their environment by the fundamental laws of physics, decoherence does not exist in practice, and all quantum computations proceed with perfect fidelity indefinitely regardless of environmental conditions, temperature, or the number of operations performed"
+    },
+    "correct_answer": "C",
+    "difficulty": 4,
+    "x": 0.01,
+    "y": 0.641496,
+    "z": 0.449318,
+    "source_article": "quantum error correction",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "quantum error correction",
+      "no-cloning theorem",
+      "syndrome measurement",
+      "bit-flip and phase-flip"
+    ]
+  },
+  {
+    "id": "893dc9e5f4f327a8",
+    "question_text": "The WKB (Wentzel-Kramers-Brillouin) approximation is a semiclassical method for solving the Schrödinger equation. In what regime is it valid, and what physical insight does it provide?",
+    "options": {
+      "A": "WKB is an approximation that assumes all particles are classical point particles with no wave properties, completely ignoring quantum effects like tunneling and interference",
+      "B": "WKB is valid only for constant potentials where the Schrödinger equation can be solved exactly, providing no approximation power beyond what analytical methods already achieve",
+      "C": "WKB applies exclusively to relativistic quantum mechanics and has no validity in the non-relativistic Schrödinger equation framework",
+      "D": "WKB is valid when the de Broglie wavelength changes slowly compared to itself — i.e., the potential varies slowly on the scale of λ — it connects quantum wavefunctions to classical trajectories and provides semiclassical tunneling rates through barriers"
+    },
+    "correct_answer": "D",
+    "difficulty": 4,
+    "x": 0.266657,
+    "y": 0.665238,
+    "z": 0.308169,
+    "source_article": "WKB approximation",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "WKB approximation",
+      "semiclassical",
+      "slowly varying potential",
+      "tunneling rate"
+    ]
+  },
+  {
+    "id": "c2ed61b10a6b294b",
+    "question_text": "Topological quantum computing proposes using anyons — quasiparticles with exotic exchange statistics — to perform quantum computation. What advantage do topological qubits have over conventional qubits?",
+    "options": {
+      "A": "Topological qubits store information in global properties of the anyon configuration (braiding history) rather than in local physical properties, making them inherently protected against local perturbations and decoherence — errors require global rearrangement of the anyon worldlines, which is exponentially suppressed",
+      "B": "Topological qubits are exactly identical to conventional superconducting transmon qubits in every possible respect and offer absolutely no advantages in coherence time, error protection, or computational capability — the term 'topological' is purely a marketing label invented by quantum computing companies to attract venture capital funding and generate media attention without any scientific basis",
+      "C": "Topological qubits work only at room temperature while all other types of qubits require expensive cryogenic cooling to millikelvin temperatures, making topological quantum computers dramatically and incomparably cheaper to operate, maintain, and scale than any alternative quantum computing platform using superconducting, trapped-ion, or photonic architectures",
+      "D": "Topological qubits can solve NP-complete problems in constant time, while conventional quantum computers using superconducting or trapped-ion qubits cannot — they are exponentially more powerful than any other form of quantum computation, classical computation, or any theoretically conceivable computational model including quantum Turing machines"
+    },
+    "correct_answer": "A",
+    "difficulty": 5,
+    "x": 0.055055,
+    "y": 0.695431,
+    "z": 0.059513,
+    "source_article": "topological quantum computing",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "topological quantum computing",
+      "anyons",
+      "braiding",
+      "topological protection"
+    ]
+  },
+  {
+    "id": "f7107384b03ef9df",
+    "question_text": "The Aharonov-Bohm effect demonstrates a surprising aspect of electromagnetic potentials in quantum mechanics. What does this effect show?",
+    "options": {
+      "A": "The Aharonov-Bohm effect proves definitively that electromagnetic potentials are physically meaningless gauge artifacts with absolutely no observable consequences, and that only the electric and magnetic fields (E and B) have any direct physical significance whatsoever in both classical and quantum electromagnetic theory — the potentials are purely mathematical conveniences that can be completely eliminated",
+      "B": "A charged particle's quantum phase is affected by electromagnetic potentials (A, φ) even in regions where the electric and magnetic fields are zero — demonstrating that potentials have direct physical significance in quantum mechanics, not just the fields derived from them",
+      "C": "The Aharonov-Bohm effect demonstrates that electrons are completely unaffected by electromagnetic fields of any kind, whether described by potentials or by field strengths, because quantum particles with half-integer spin are fundamentally electrically neutral and do not interact with photons, electric fields, magnetic fields, or electromagnetic radiation at any energy scale",
+      "D": "The Aharonov-Bohm effect applies exclusively inside superconducting materials at temperatures below the critical temperature and has never been observed, measured, or confirmed in any other physical system, experimental configuration, material, or temperature regime — it remains a purely theoretical prediction with no direct experimental verification in ordinary conductors or semiconductors"
+    },
+    "correct_answer": "B",
+    "difficulty": 5,
+    "x": 0.278959,
+    "y": 0.586637,
+    "z": 0.181172,
+    "source_article": "Aharonov-Bohm effect",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "Aharonov-Bohm effect",
+      "electromagnetic potential",
+      "gauge invariance",
+      "quantum phase"
+    ]
+  },
+  {
+    "id": "c78803cea69f1592",
+    "question_text": "Quantum teleportation allows the transfer of a quantum state between two parties using entanglement and classical communication. Why doesn't this enable faster-than-light communication?",
+    "options": {
+      "A": "Quantum teleportation does enable faster-than-light communication — it has been demonstrated in laboratories to send messages instantaneously across arbitrary distances, violating special relativity",
+      "B": "Teleportation fails for all practical purposes because entangled states cannot be maintained over distances greater than approximately 1 meter",
+      "C": "Because Bob cannot reconstruct the teleported state without receiving Alice's classical measurement result (2 classical bits for a qubit), which must travel at or below the speed of light — without this classical information, Bob's qubit appears completely random",
+      "D": "Quantum teleportation transfers only classical information, not quantum states — the quantum aspects are irrelevant, and the protocol is equivalent to sending a classical fax"
+    },
+    "correct_answer": "C",
+    "difficulty": 5,
+    "x": 0.028341,
+    "y": 0.588479,
+    "z": 0.424628,
+    "source_article": "quantum teleportation",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "quantum teleportation",
+      "no-communication theorem",
+      "classical channel requirement",
+      "entanglement"
+    ]
+  },
+  {
+    "id": "69ffbd0ae77cecf0",
+    "question_text": "The spin-statistics theorem connects a particle's spin to its quantum statistics. What does this theorem state, and what is its deep origin?",
+    "options": {
+      "A": "Degenerate perturbation theory is actually much simpler than the non-degenerate version because degenerate quantum states are identical and completely interchangeable, so the perturbation has absolutely no effect on them whatsoever — the energy levels remain perfectly unchanged and the states do not mix, split, or shift under any perturbation regardless of its strength or symmetry properties",
+      "B": "Degeneracy prevents the use of quantum mechanics entirely and completely — when energy levels are degenerate, the Schrödinger equation has no solutions whatsoever and the system cannot be analyzed, described, modeled, or understood by any analytical method, numerical technique, or perturbative approach known to modern theoretical physics",
+      "C": "The theorem applies only in two spatial dimensions and breaks down completely in three-dimensional space, where particles of any spin can obey either statistics",
+      "D": "Half-integer spin particles (fermions) obey Fermi-Dirac statistics with antisymmetric wavefunctions, while integer spin particles (bosons) obey Bose-Einstein statistics with symmetric wavefunctions — this connection is a deep consequence of relativistic quantum field theory (Lorentz invariance, locality, and positive energy)"
+    },
+    "correct_answer": "D",
+    "difficulty": 5,
+    "x": 0.250138,
+    "y": 0.666744,
+    "z": 0.242649,
+    "source_article": "spin-statistics theorem",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "spin-statistics theorem",
+      "fermions",
+      "bosons",
+      "Lorentz invariance"
+    ]
+  },
+  {
+    "id": "f3367173cea5a8a5",
+    "question_text": "Degenerate perturbation theory differs fundamentally from non-degenerate perturbation theory. What additional complication arises when unperturbed energy levels are degenerate?",
+    "options": {
+      "A": "When unperturbed states are degenerate, the perturbation can mix them — one must first diagonalize H' within the degenerate subspace to find the correct zeroth-order states before applying perturbation theory, because the standard formula has vanishing energy denominators that produce divergences",
+      "B": "Degeneracy prevents the use of quantum mechanics entirely — when energy levels are degenerate, the Schrödinger equation has no solutions and the system cannot be analyzed by any method",
+      "C": "Degenerate levels require no special treatment — standard non-degenerate formulas work identically whether levels are degenerate or not, and the distinction is purely academic",
+      "D": "Degenerate perturbation theory is simpler than non-degenerate because degenerate states are identical and interchangeable, so the perturbation has no effect on them whatsoever"
+    },
+    "correct_answer": "A",
+    "difficulty": 5,
+    "x": 0.248675,
+    "y": 0.74,
+    "z": 0.510983,
+    "source_article": "degenerate perturbation theory",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "degenerate perturbation theory",
+      "level splitting",
+      "diagonalization",
+      "energy denominator divergence"
+    ]
+  },
+  {
+    "id": "19fcb18c07f6c14d",
+    "question_text": "The quantum Hall effect, discovered by Klaus von Klitzing in 1980, reveals quantized Hall resistance in two-dimensional electron systems under strong magnetic fields. Why is the quantization so extraordinarily precise?",
+    "options": {
+      "A": "Quantum teleportation does in fact enable faster-than-light communication — it has been repeatedly demonstrated in laboratories around the world to send complete messages instantaneously across arbitrary distances, fundamentally violating Einstein's special relativity and enabling superluminal information transfer between any two spatially separated parties",
+      "B": "The quantized Hall resistance R_H = h/(ne²) is a topological invariant — the integer n is a Chern number characterizing the topology of the electronic band structure, which is immune to continuous perturbations (disorder, impurities, geometry), ensuring metrological-grade precision from fundamental physics",
+      "C": "The quantization is approximate — Hall resistance values are only accurate to about 10% and are not useful for precision measurements or as resistance standards in metrology",
+      "D": "The quantization arises from classical electromagnetism applied to circular electron orbits and has no connection to quantum mechanics, topology, or fundamental constants"
+    },
+    "correct_answer": "B",
+    "difficulty": 5,
+    "x": 0.268193,
+    "y": 0.625342,
+    "z": 0.01112,
+    "source_article": "quantum Hall effect",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "quantum Hall effect",
+      "topological invariant",
+      "Chern number",
+      "quantized resistance"
+    ]
+  },
+  {
+    "id": "71077c26068c3f87",
+    "question_text": "What is the de Broglie wavelength, and why is it significant for understanding quantum behavior?",
+    "options": {
+      "A": "The spin-statistics theorem states that all particles in the universe obey Bose-Einstein statistics regardless of their spin quantum number, and the supposed distinction between fermions and bosons is merely a historical artifact with absolutely no theoretical basis in modern physics",
+      "B": "The de Broglie wavelength applies only to massless particles like photons and has no meaning for electrons, protons, neutrons, or any other particle with nonzero rest mass",
+      "C": "Every particle with momentum p has an associated wavelength λ = h/p — this wave-particle duality means that matter exhibits wave-like behavior (diffraction, interference) on scales comparable to its de Broglie wavelength",
+      "D": "The de Broglie wavelength is the wavelength of light emitted when an atom transitions between energy levels, named after de Broglie who discovered atomic emission spectra"
+    },
+    "correct_answer": "C",
+    "difficulty": 1,
+    "x": 0.332662,
+    "y": 0.578358,
+    "z": 0.419596,
+    "source_article": "de Broglie wavelength",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "de Broglie wavelength",
+      "wave-particle duality",
+      "matter waves"
+    ]
+  },
+  {
+    "id": "f44de33e2bc3b801",
+    "question_text": "A particle in a one-dimensional infinite square well (particle in a box) has quantized energy levels. Why can't the particle have zero kinetic energy inside the well?",
+    "options": {
+      "A": "Zero kinetic energy is forbidden by the strong nuclear force, which generates a minimum repulsive potential inside the box that prevents the particle from coming to rest",
+      "B": "The particle can have zero kinetic energy — the ground state of the infinite well has E₁ = 0, and the uncertainty principle does not apply to confined particles",
+      "C": "Zero kinetic energy would violate conservation of electric charge, because a stationary particle cannot maintain its charge in a confined geometry",
+      "D": "Zero energy would require zero momentum (p = 0), but confinement to a finite box constrains position (Δx finite), which by the uncertainty principle requires nonzero momentum uncertainty — hence nonzero minimum kinetic energy"
+    },
+    "correct_answer": "D",
+    "difficulty": 2,
+    "x": 0.34907,
+    "y": 0.649442,
+    "z": 0.535676,
+    "source_article": "infinite square well",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "infinite square well",
+      "zero-point energy",
+      "uncertainty principle",
+      "quantization"
+    ]
+  },
+  {
+    "id": "8f32ff037238e63f",
+    "question_text": "The addition of angular momenta is essential for understanding multi-electron atoms. When combining two spin-1/2 particles, what are the possible total spin states?",
+    "options": {
+      "A": "The total spin can be S = 0 (singlet, antisymmetric) or S = 1 (triplet, symmetric) — the singlet has one state (m_s = 0) and the triplet has three states (m_s = -1, 0, +1), giving four total states from two spin-1/2 particles",
+      "B": "The only possible total spin is S = 1, because angular momenta always add — subtraction of angular momenta is forbidden by quantum mechanical selection rules",
+      "C": "Combining two spin-1/2 particles always produces spin-3/2, following the classical rule that angular momenta simply multiply rather than add vectorially",
+      "D": "The total spin is always exactly S = 1/2, unchanged from the individual particles, because spin cannot be combined — each particle retains its individual spin quantum number permanently"
+    },
+    "correct_answer": "A",
+    "difficulty": 3,
+    "x": 0.334485,
+    "y": 0.644787,
+    "z": 0.287683,
+    "source_article": "angular momentum addition",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "angular momentum addition",
+      "singlet",
+      "triplet",
+      "Clebsch-Gordan"
+    ]
+  },
+  {
+    "id": "284c3f94e8006276",
+    "question_text": "The variational method in quantum mechanics provides an upper bound on the ground-state energy. What is the variational principle, and why does it always overestimate?",
+    "options": {
+      "A": "The variational method provides the exact ground-state energy for any trial wavefunction, requiring no optimization — all wavefunctions give identically correct results regardless of their functional form",
+      "B": "For any normalized trial wavefunction |ψ_trial⟩, the expectation value ⟨ψ_trial|H|ψ_trial⟩ ≥ E₀ (the true ground-state energy) — this is because |ψ_trial⟩ expanded in energy eigenstates has contributions from excited states that raise the average energy above the minimum",
+      "C": "The variational principle always underestimates the ground-state energy, providing a lower bound rather than an upper bound, making it useful for proving energy floors",
+      "D": "The variational method applies only to the hydrogen atom and cannot be used for any multi-electron system, molecule, or solid-state problem"
+    },
+    "correct_answer": "B",
+    "difficulty": 4,
+    "x": 0.230783,
+    "y": 0.671801,
+    "z": 0.76713,
+    "source_article": "variational method",
+    "domain_ids": [
+      "quantum-physics",
+      "physics"
+    ],
+    "concepts_tested": [
+      "variational method",
+      "upper bound",
+      "ground state energy",
+      "trial wavefunction"
+    ]
+  }
+]

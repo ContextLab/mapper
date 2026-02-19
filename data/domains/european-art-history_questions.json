@@ -1,0 +1,1312 @@
+[
+  {
+    "id": "b0c5fe28cd104fbb",
+    "question_text": "The Renaissance marked a fundamental shift in European art. What key conceptual change distinguished Renaissance art from the medieval art that preceded it?",
+    "options": {
+      "A": "Renaissance artists developed linear perspective (mathematically accurate spatial depth), anatomical naturalism based on direct observation and dissection, and humanist subject matter emphasizing individual experience — shifting from medieval art's symbolic, hierarchical, and spiritually-focused approach to one grounded in empirical observation of the natural world",
+      "B": "Renaissance art was characterized by an almost complete rejection of the human figure in favor of abstract geometric patterns derived from Islamic decorative traditions, which Florentine merchants encountered through Mediterranean trade routes",
+      "C": "Medieval art was significantly more technically advanced than Renaissance art because medieval painters had mastered oil paint centuries before the Renaissance, and their gold-ground panel paintings demonstrated far greater material sophistication than the fresco techniques that dominated Quattrocento workshops",
+      "D": "The Renaissance involved no genuine innovation but was simply a wholesale copying of ancient Greek marble sculpture into two-dimensional painted form, without any original contributions in perspective, composition, anatomy, or subject matter. Italian painters like Botticelli and Leonardo translated poses directly from surviving Greek statues into their canvases, using plaster casts as their primary references rather than observing living models or developing new representational techniques"
+    },
+    "correct_answer": "A",
+    "difficulty": 1,
+    "x": 0.049339,
+    "y": 0.212981,
+    "z": 0.712916,
+    "source_article": "Renaissance",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Renaissance",
+      "linear perspective",
+      "humanism",
+      "naturalism"
+    ]
+  },
+  {
+    "id": "abbe58e18ff52903",
+    "question_text": "Chiaroscuro is a technique that uses strong contrasts between light and dark. Which artist is most associated with its dramatic development, and what effect did it achieve?",
+    "options": {
+      "A": "Piet Mondrian pioneered the use of chiaroscuro in his De Stijl paintings, where the dramatic contrast between primary colors and black grid lines created a form of geometric tenebrism that translated Baroque lighting effects into purely abstract visual language, influencing all subsequent developments in non-representational painting throughout the twentieth century",
+      "B": "Caravaggio revolutionized chiaroscuro into tenebrism — placing brightly illuminated figures against deep, almost black backgrounds. This created intense psychological drama, directing the viewer's eye to key narrative moments and giving scenes a theatrical, almost cinematic quality that profoundly influenced Baroque painting across Europe (Caravaggisti)",
+      "C": "Chiaroscuro was invented in the early twentieth century by Cubist painters who needed a technique to distinguish the overlapping geometric planes in their fragmented compositions. Picasso and Braque developed the method of shading adjacent facets with alternating light and dark values to create readable spatial depth within the flattened Cubist picture plane, and the term was retroactively applied to older paintings that happened to use similar tonal contrasts",
+      "D": "Chiaroscuro refers specifically to the use of uniformly bright, evenly lit compositions with deliberately eliminated shadows, creating a flat decorative surface"
+    },
+    "correct_answer": "B",
+    "difficulty": 1,
+    "x": 0.074636,
+    "y": 0.25535,
+    "z": 0.567755,
+    "source_article": "chiaroscuro",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "chiaroscuro",
+      "tenebrism",
+      "Caravaggio",
+      "Baroque painting"
+    ]
+  },
+  {
+    "id": "06c4f7b00039ac4a",
+    "question_text": "Impressionism fundamentally challenged academic painting conventions in the late 19th century. What was the core technical and philosophical innovation?",
+    "options": {
+      "A": "Impressionists focused on achieving the highest possible level of photorealistic detail, spending months on each canvas to render every texture, reflection, and surface with trompe-l'oeil precision that rivaled photography",
+      "B": "Impressionism was primarily a literary movement centered on poets like Mallarmé and Verlaine, with no significant visual art component until much later when painters adopted the label retrospectively",
+      "C": "Impressionists painted outdoors (en plein air) to capture the transient effects of light and atmosphere at specific moments, using visible brushstrokes, pure unmixed colors placed side by side (optical mixing), and compositions capturing fleeting impressions rather than idealized, studio-finished scenes. This challenged the Academy's emphasis on historical subjects, smooth finish, and controlled studio lighting",
+      "D": "Impressionists deliberately restricted their palette to black and white paint, rejecting color entirely as a distraction from the study of pure luminosity and tonal values in natural light"
+    },
+    "correct_answer": "C",
+    "difficulty": 1,
+    "x": 0.120903,
+    "y": 0.241852,
+    "z": 0.124548,
+    "source_article": "Impressionism",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Impressionism",
+      "en plein air",
+      "optical mixing",
+      "academic painting challenge"
+    ]
+  },
+  {
+    "id": "fabfc07e016f6575",
+    "question_text": "Gothic cathedrals like Chartres and Notre-Dame represent a revolution in medieval architecture. What structural innovation made their soaring height and light-filled interiors possible?",
+    "options": {
+      "A": "Gothic cathedrals used the same thick, solid load-bearing walls employed in Roman basilicas and Romanesque churches, because the medieval builders lacked the engineering knowledge to develop thinner structural systems. The massive walls of cathedrals like Chartres and Notre-Dame were necessary to support the weight of the stone roof vaults, and the large windows visible in Gothic churches were cut directly through these thick walls rather than being enabled by any new structural innovation. Flying buttresses were purely decorative additions that carried no structural loads",
+      "B": "The great medieval cathedrals were each carved from single enormous blocks of limestone quarried from beneath the building site, using a subtractive sculptural technique in which masons hollowed out the interior space from a solid rock mass. This monolithic construction method explains why Gothic cathedrals have survived earthquakes and wars that destroyed surrounding buildings made from assembled masonry — the absence of joints and mortar between individual stones gives the monolithic structure far greater resistance to lateral forces and structural fatigue",
+      "C": "Gothic architecture relied entirely on wooden post-and-beam construction concealed behind thin stone veneers that gave the appearance of masonry. The soaring interior heights of cathedrals like Amiens and Beauvais were achieved using massive old-growth timber frames, and the stone cladding was applied purely for fire protection and aesthetic purposes rather than carrying any structural load. This is why many Gothic cathedrals suffered catastrophic collapses when their hidden wooden cores rotted or caught fire",
+      "D": "The pointed arch, ribbed vault, and flying buttress worked together as a structural system: pointed arches directed weight more vertically than round arches, ribbed vaults concentrated structural loads along specific lines, and flying buttresses transferred lateral thrust from the vault outward to external supports. This allowed walls to be opened up with enormous stained glass windows, transforming heavy Romanesque churches into luminous, skeletal stone frameworks"
+    },
+    "correct_answer": "D",
+    "difficulty": 1,
+    "x": 0.110423,
+    "y": 0.290626,
+    "z": 0.447685,
+    "source_article": "Gothic architecture",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Gothic architecture",
+      "flying buttress",
+      "ribbed vault",
+      "pointed arch"
+    ]
+  },
+  {
+    "id": "c75396e8ee83e598",
+    "question_text": "Picasso's 'Les Demoiselles d'Avignon' (1907) is considered a watershed moment in modern art. What made it so revolutionary?",
+    "options": {
+      "A": "It combined multiple viewpoints simultaneously (proto-Cubist fragmentation), abandoned single-point perspective, incorporated African and Iberian mask-like faces, and depicted the human body as angular, geometric forms. This aggressive rejection of Western pictorial conventions — representing different angles of the same figure in one image — broke with 500 years of Renaissance spatial logic and opened the path to Cubism and abstract art",
+      "B": "The painting was revolutionary primarily because it was the first artwork in European history to use oil paint on canvas, a medium that Picasso invented in his Barcelona studio",
+      "C": "The painting was immediately praised by the entire Parisian art establishment upon its first public exhibition, receiving universal acclaim from critics, dealers, and fellow artists who recognized it as the definitive masterpiece of early twentieth-century modernism",
+      "D": "The painting's sole innovation was its use of bright Impressionist color applied in the pointillist technique of Seurat, with small dots of pure complementary colors creating optical mixtures that produced an unprecedented chromatic intensity. Picasso's contribution was not compositional or formal but purely chromatic — he extended the Neo-Impressionist color system to the human figure, creating flesh tones from juxtaposed dots of orange and blue that merged in the viewer's eye to produce a shimmering, luminous skin surface unlike anything achieved by the original Impressionists"
+    },
+    "correct_answer": "A",
+    "difficulty": 2,
+    "x": 0.155358,
+    "y": 0.340713,
+    "z": 0.237334,
+    "source_article": "Les Demoiselles d'Avignon",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Les Demoiselles d'Avignon",
+      "Cubism origins",
+      "multiple viewpoints",
+      "African art influence"
+    ]
+  },
+  {
+    "id": "a3c79a924ef5c142",
+    "question_text": "The Dutch Golden Age (17th century) produced distinctive genre painting — scenes of everyday life. What social and economic conditions enabled this unique art market?",
+    "options": {
+      "A": "Dutch Golden Age art was produced exclusively for the Catholic Church, which maintained its dominant position in the Netherlands throughout the seventeenth century despite the nominal political independence of the Dutch Republic. Church commissions for altarpieces, devotional panels, and fresco cycles provided the primary income for painters like Rembrandt, Vermeer, and Hals, whose ostensibly secular genre scenes were actually coded religious allegories carefully designed to pass Protestant censorship while conveying Catholic theological doctrine to the faithful",
+      "B": "The Dutch Republic's prosperous merchant class, Protestant culture (which discouraged religious imagery), and lack of aristocratic or ecclesiastical patronage created an open art market where middle-class buyers purchased affordable genre scenes, landscapes, still lifes, and portraits. Artists like Vermeer, Steen, and de Hooch depicted domestic interiors, market scenes, and moral allegories for this bourgeois clientele — making the Netherlands the first society where art was produced primarily for the commercial market rather than for patrons",
+      "C": "Dutch Golden Age art focused exclusively on monumental history painting depicting classical mythology and biblical narratives, following the academic hierarchy of genres established by the French Académie royale. Small-scale genre scenes, still lifes, and landscapes were considered inferior and were produced only by minor provincial painters outside the major urban centers of Amsterdam, Delft, and Haarlem. The reputation of Dutch painting as focused on everyday life is a nineteenth-century myth created by French Realist critics who projected their own anti-academic values onto a tradition that was actually dominated by grand narrative compositions",
+      "D": "The Dutch art market was tightly controlled by a centralized government bureau that assigned commissions, set prices, and regulated which subjects painters were permitted to depict"
+    },
+    "correct_answer": "B",
+    "difficulty": 2,
+    "x": 0.082307,
+    "y": 0.216622,
+    "z": 0.406584,
+    "source_article": "Dutch Golden Age",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Dutch Golden Age",
+      "genre painting",
+      "art market",
+      "Protestant influence",
+      "bourgeois patronage"
+    ]
+  },
+  {
+    "id": "a46008c8bf00f6b2",
+    "question_text": "Marcel Duchamp's 'Fountain' (1917) — a porcelain urinal signed 'R. Mutt' — challenged the definition of art itself. What conceptual shift did this readymade represent?",
+    "options": {
+      "A": "Duchamp was playing a simple practical joke on the Society of Independent Artists with no serious artistic, philosophical, or institutional intent behind the submission of the urinal",
+      "B": "The readymade was valued primarily for the superior craftsmanship of the porcelain urinal itself, which Duchamp selected because of its elegant curves, fine glazing, and beautiful proportions that demonstrated industrial manufacturing as a form of high art",
+      "C": "Duchamp's readymade proposed that the artist's conceptual act of selection and recontextualization — not manual skill or aesthetic beauty — constitutes art. By placing a mass-produced object in a gallery context, he argued that the institutional framework (gallery, exhibition, art world) and the artist's intention transform any object into art. This shifted the definition of art from 'skilled making' to 'conceptual proposition,' laying the groundwork for Conceptual Art, Pop Art, and institutional critique",
+      "D": "Duchamp personally invented and manufactured the urinal in his studio as a functional plumbing fixture, and it was exhibited at the Society of Independent Artists as an industrial design achievement rather than as a conceptual artwork"
+    },
+    "correct_answer": "C",
+    "difficulty": 2,
+    "x": 0.237003,
+    "y": 0.254404,
+    "z": 0.389642,
+    "source_article": "readymade",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "readymade",
+      "Duchamp",
+      "conceptual art origins",
+      "institutional theory of art"
+    ]
+  },
+  {
+    "id": "10808c5f669120de",
+    "question_text": "Baroque art (17th century) emerged partly as a response to the Protestant Reformation. How did the Catholic Counter-Reformation specifically shape Baroque visual aesthetics?",
+    "options": {
+      "A": "The Counter-Reformation had absolutely no influence on visual art production in Catholic Europe, because the Council of Trent deliberately avoided making any pronouncements about images, sculpture, or architecture. The Baroque style emerged entirely from secular court culture and the personal aesthetic preferences of seventeenth-century monarchs like Louis XIV and Philip IV, who employed painters and architects to glorify their dynastic power rather than to advance any religious agenda. The coincidence of Baroque grandeur with Counter-Reformation Catholicism is a historical accident that later art historians mistakenly interpreted as a causal relationship",
+      "B": "Baroque art was entirely secular in its content, with no religious subject matter whatsoever. The major Baroque painters — Caravaggio, Rubens, Bernini, Artemisia Gentileschi — worked exclusively on mythological, allegorical, and portrait commissions for aristocratic patrons who had no interest in devotional imagery. The dramatic lighting and emotional intensity characteristic of Baroque style served to heighten the theatrical spectacle of court entertainments and political propaganda, not to inspire religious devotion or communicate Catholic doctrine to illiterate congregations as is commonly but erroneously claimed in survey textbooks",
+      "C": "The Counter-Reformation favored a deliberately minimalist and austere visual aesthetic designed to compete directly with the stripped-down simplicity of Protestant church interiors. Catholic reformers like Carlo Borromeo argued that excessive ornament and dramatic imagery distracted worshippers from prayer and scripture, so they mandated whitewashed walls, plain geometric forms, and undecorated altars throughout Catholic Europe. Baroque exuberance was actually a Protestant phenomenon — Lutheran and Calvinist churches developed the elaborate decorative style to compensate for the absence of sacramental ritual with overwhelming visual splendor",
+      "D": "The Council of Trent (1545-1563) decreed that art should be emotionally engaging, doctrinally clear, and accessible to the illiterate — art as propaganda fidei. This produced Baroque's defining characteristics: dramatic lighting, dynamic compositions with diagonal movement, emotional intensity, theatrical illusionism (ceiling frescoes creating the illusion of heaven opening above), and monumental scale. Artists like Bernini, Rubens, and Pozzo created overwhelming sensory experiences designed to inspire faith and awe through visceral emotional impact rather than intellectual contemplation"
+    },
+    "correct_answer": "D",
+    "difficulty": 2,
+    "x": 0.099296,
+    "y": 0.11045,
+    "z": 0.617083,
+    "source_article": "Baroque art",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Baroque art",
+      "Counter-Reformation",
+      "Council of Trent",
+      "propaganda fidei"
+    ]
+  },
+  {
+    "id": "794d6e8710b8ffe4",
+    "question_text": "The Pre-Raphaelite Brotherhood (1848) rejected what they saw as the mechanical, formulaic art taught at the Royal Academy. What specific artistic tradition did they oppose, and what did they propose instead?",
+    "options": {
+      "A": "They opposed the academic tradition derived from Raphael and the High Renaissance — specifically the idealized forms, conventional composition (dark foreground, lighter middle, blurred background), and 'sloshy' broad brushwork that had become formulaic. Instead, they advocated: painting directly from nature with intense, jewel-like color; meticulous attention to botanical and geological detail; subjects from medieval literature, religion, and mythology; and a pre-Raphaelite (before Raphael) fidelity to nature that they saw in early Italian and Flemish painting",
+      "B": "The Pre-Raphaelite Brotherhood opposed Impressionism, which they saw as the dominant and most pernicious force in contemporary art. They rejected Impressionist emphasis on fleeting optical effects and loose brushwork in favor of precise draughtsmanship and careful finish. The Pre-Raphaelites organized their brotherhood specifically as an anti-Impressionist movement, staging counter-exhibitions at the Royal Academy to demonstrate that disciplined representational painting could produce more emotionally resonant and intellectually substantial work than the casual sketches produced by Monet, Renoir, and their circle in Paris",
+      "C": "The Brotherhood rejected all religious, literary, and narrative subject matter in favor of pure geometric abstraction, anticipating the non-representational movements of the twentieth century by several decades",
+      "D": "The Pre-Raphaelites wanted to return exclusively to the artistic standards of ancient Greece, modeling their work on surviving Athenian vase paintings and Hellenistic marble sculpture"
+    },
+    "correct_answer": "A",
+    "difficulty": 3,
+    "x": 0.113457,
+    "y": 0.157338,
+    "z": 0.160566,
+    "source_article": "Pre-Raphaelite Brotherhood",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Pre-Raphaelite Brotherhood",
+      "Royal Academy critique",
+      "medievalism",
+      "naturalistic detail"
+    ]
+  },
+  {
+    "id": "4a602d69cc622012",
+    "question_text": "Abstract Expressionism (1940s-50s) was the first major American art movement to achieve international influence. What distinguished its two main tendencies, and why did it emerge in New York?",
+    "options": {
+      "A": "Abstract Expressionism was an entirely European movement with no significant American contribution, originating in Paris among Surrealist émigrés who continued their pre-war experiments with automatism and biomorphic abstraction throughout the 1940s. American painters like Pollock and de Kooning merely imitated the gestural techniques of European artists like Wols and Hartung without adding any original formal or conceptual innovations of their own. The myth of Abstract Expressionism as a distinctively American achievement was deliberately constructed by Cold War propagandists at the CIA and curators at the Museum of Modern Art, who rebranded European avant-garde painting as American to project cultural superiority over the Soviet Union in the struggle for global influence during the early Cold War period",
+      "B": "Action painting (de Kooning, Pollock) emphasized the physical act of painting — gestural, spontaneous, process-oriented mark-making. Color field painting (Rothko, Newman, Still) emphasized large areas of flat, saturated color creating meditative, sublime experiences. The movement emerged in New York because: European artists fled to America during WWII (Mondrian, Ernst, Dalí), bringing avant-garde ideas; the Surrealist emphasis on automatism influenced gestural abstraction; American postwar confidence and Cold War cultural politics (CIA-funded exhibitions as propaganda for Western 'freedom') supported the movement's global promotion",
+      "C": "Abstract Expressionism focused exclusively on realistic landscape painting, continuing the tradition of the Hudson River School and American Regionalists like Thomas Hart Benton and Grant Wood. The label 'abstract' was applied ironically by hostile critics who mocked what they considered the amateurish quality of the representational work, and the artists themselves vehemently rejected the term. Pollock's drip paintings were actually highly stylized aerial views of the western American landscape, and Rothko's color fields were intended as representations of Pacific Ocean sunsets, as both artists repeatedly stated in published interviews that have been systematically suppressed by art historians committed to the abstraction narrative",
+      "D": "The movement had only a single tendency with no internal stylistic variation, ideological disagreement, or competing approaches among its practitioners"
+    },
+    "correct_answer": "B",
+    "difficulty": 3,
+    "x": 0.19562,
+    "y": 0.25527,
+    "z": 0.375965,
+    "source_article": "Abstract Expressionism",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Abstract Expressionism",
+      "action painting",
+      "color field painting",
+      "New York School",
+      "Cold War art politics"
+    ]
+  },
+  {
+    "id": "8df9c9affa1581db",
+    "question_text": "Erwin Panofsky developed a systematic methodology for interpreting visual art. What are his three levels of analysis, and why did this approach transform art history?",
+    "options": {
+      "A": "Panofsky's analytical method was concerned exclusively with establishing the monetary value and market provenance of artworks for auction houses and collectors, not with interpreting their visual or intellectual content",
+      "B": "Panofsky's iconological method was developed specifically for analyzing twentieth-century modern and contemporary art and cannot be applied to pre-modern European painting, sculpture, or architecture because earlier works lack the conceptual complexity his framework requires",
+      "C": "Panofsky's iconological method comprises three levels: (1) Pre-iconographic description — identifying pure forms and motifs (a man holding a knife); (2) Iconographic analysis — identifying conventional meaning through cultural knowledge (the man is Abraham, the scene is the Sacrifice of Isaac); (3) Iconological interpretation — uncovering deeper cultural, intellectual, and philosophical significance (what this subject choice reveals about the patron's theology, the period's anxieties, and the 'intrinsic meaning' of the culture that produced it). This transformed art history from connoisseurship (attribution, dating) into a humanistic discipline investigating visual culture as evidence of historical mentality",
+      "D": "Panofsky proposed that artworks should be analyzed exclusively for their formal visual properties — the arrangement of line, color, shape, and composition on the picture surface — with absolutely no reference to subject matter, narrative content, historical context, or symbolic meaning. This purely formalist approach anticipated Clement Greenberg's later criticism and deliberately excluded all iconographic and cultural interpretation as irrelevant speculation"
+    },
+    "correct_answer": "C",
+    "difficulty": 3,
+    "x": 0.233388,
+    "y": 0.380898,
+    "z": 1.0,
+    "source_article": "Panofsky",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Panofsky",
+      "iconology",
+      "three levels of analysis",
+      "art historical methodology"
+    ]
+  },
+  {
+    "id": "bb77c98f9ba4733c",
+    "question_text": "Rococo art (early-mid 18th century) emerged as a reaction against the grandeur of Louis XIV's Baroque Versailles. How did Rococo differ from Baroque, and what social shift did it reflect?",
+    "options": {
+      "A": "Rococo was a more monumental and ideologically serious style than the Baroque it succeeded, employing even larger canvases, darker palettes, and more overtly propagandistic political imagery to serve the absolutist ambitions of the French monarchy under Louis XV. Where Baroque painters like Rubens used allegory to celebrate Catholic triumph, Rococo artists like Boucher and Fragonard created massive ceiling frescoes glorifying French imperial conquest and colonial expansion. The style's apparent lightness and frivolity are a misreading by later Neoclassical critics who projected their own austere values onto works that contemporaries understood as expressions of supreme state power",
+      "B": "Rococo and Baroque were fundamentally identical artistic styles that differed only in their chronological labels, with no meaningful distinctions in palette, scale, subject matter, emotional register, or social function. Art historians invented the separate term 'Rococo' in the nineteenth century to create artificial period boundaries for pedagogical convenience, but contemporary eighteenth-century artists and patrons recognized no break from the Baroque tradition. The alleged shift from religious grandeur to aristocratic intimacy reflects modern scholars' anachronistic projection of Enlightenment values onto a continuous stylistic tradition",
+      "C": "Rococo art had no connection whatsoever to the social, political, or economic transformations of eighteenth-century Europe. The shift in artistic style from Baroque grandeur to Rococo intimacy was a purely aesthetic development driven by changing fashions in color and ornament, entirely independent of the decline of absolute monarchy, the rise of the Enlightenment bourgeoisie, the influence of Madame de Pompadour's personal taste, or the transfer of cultural patronage from the Church and Crown to aristocratic private collectors who furnished their intimate hôtels particuliers with smaller-scale decorative paintings suited to domestic rather than ecclesiastical spaces",
+      "D": "Rococo replaced Baroque's monumental grandeur, religious gravity, and dark drama with intimate scale, pastel colors, asymmetrical organic ornament, playful eroticism, and themes of aristocratic leisure (fêtes galantes). This reflected the shift from Louis XIV's centralized court at Versailles to the Parisian salons and private hôtels of the Regency and Louis XV periods — from public spectacle to private pleasure. Watteau, Boucher, and Fragonard depicted a world of cultivated sensuality and aristocratic fantasy that would be swept away by Neoclassicism's moral severity and the Revolution"
+    },
+    "correct_answer": "D",
+    "difficulty": 3,
+    "x": 0.113934,
+    "y": 0.01,
+    "z": 0.370889,
+    "source_article": "Rococo",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Rococo",
+      "Baroque comparison",
+      "social context",
+      "fêtes galantes",
+      "aristocratic culture"
+    ]
+  },
+  {
+    "id": "81ef2f8351a742c2",
+    "question_text": "Walter Benjamin's essay 'The Work of Art in the Age of Mechanical Reproduction' (1936) introduced the concept of 'aura.' What is the aura, and why did Benjamin argue that photography and film destroyed it?",
+    "options": {
+      "A": "The aura is the unique presence and authenticity of an original artwork — its embeddedness in a specific time, place, and tradition (its 'here and now'). Benjamin argued that mechanical reproduction (photography, film) destroys the aura by detaching the work from its unique existence: a photograph of the Mona Lisa can be seen anywhere, eliminating the pilgrimage to the original. This loss of aura democratizes art (making it accessible to the masses) but also makes it susceptible to political manipulation — Benjamin warned that fascism aestheticizes politics while communism politicizes art",
+      "B": "The aura is a literal physical glow or luminescence that emanates from original oil paintings due to the chemical interaction between aged linseed oil binders and atmospheric oxygen, which produces a visible radiance that photographic or digital reproductions cannot capture because the chemical reaction requires the physical presence of the original aged materials",
+      "C": "Benjamin enthusiastically praised mechanical reproduction for strengthening and democratizing the aura of artworks, arguing that photography and film multiplied the authentic presence of masterpieces across space and time, allowing millions of viewers to experience the same auratic intensity that had previously been accessible only to wealthy collectors and privileged museum visitors in major European capitals. His essay is fundamentally optimistic about technology's capacity to amplify rather than diminish artistic experience, and his concept of aura describes a quality that increases with each additional reproduction because wider circulation deepens collective engagement with the work's cultural significance",
+      "D": "Benjamin's essay was concerned exclusively with the reproduction of musical recordings and had no application to visual art, photography, film, or any other visual medium"
+    },
+    "correct_answer": "A",
+    "difficulty": 4,
+    "x": 0.237526,
+    "y": 0.261342,
+    "z": 0.558992,
+    "source_article": "Walter Benjamin",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Walter Benjamin",
+      "aura",
+      "mechanical reproduction",
+      "art and politics",
+      "authenticity"
+    ]
+  },
+  {
+    "id": "f3429fe0526b2a50",
+    "question_text": "Minimalism (1960s) stripped art to its essential geometric forms. What was its theoretical relationship to Abstract Expressionism, and what philosophical position did it assert?",
+    "options": {
+      "A": "Minimalism was a direct continuation and intensification of Abstract Expressionism, pursuing the same goals of emotional self-expression through gestural mark-making but with a reduced formal vocabulary. Donald Judd's geometric boxes were intended as concentrated expressions of primal emotion comparable to Pollock's drip paintings, and Dan Flavin's fluorescent light installations created atmospheric environments designed to produce the same sublime emotional response as Rothko's color field paintings. The Minimalists themselves acknowledged their debt to Abstract Expressionism and described their work as an evolution rather than a rejection of the preceding movement's expressive ambitions and metaphysical aspirations",
+      "B": "Minimalist artists (Judd, Flavin, Andre, Morris) explicitly rejected Abstract Expressionism's emphasis on emotional self-expression, gestural evidence of the artist's hand, and metaphysical content. Instead, they asserted: 'What you see is what you see' (Frank Stella) — the artwork is a literal object in real space, not a window to emotion or illusion. Industrial materials and fabrication replaced handcraft. Judd's 'specific objects' occupy the territory between painting and sculpture, asserting physical presence without representation, narrative, or compositional hierarchy. This anti-illusionist, anti-subjective position drew on phenomenology (Merleau-Ponty) and anticipated Conceptual Art",
+      "C": "Minimalism employed lush, ornate, and elaborately decorative formal strategies to create visually sumptuous gallery installations that overwhelmed viewers with chromatic richness and material opulence. Artists like Judd and Andre selected highly polished industrial materials — mirrored stainless steel, anodized aluminum, copper sheeting — precisely for their sensuous visual beauty and capacity to transform austere gallery spaces into environments of extraordinary aesthetic pleasure. The label 'Minimalism' was applied ironically by critics who recognized that the movement's apparent simplicity of form concealed an underlying commitment to maximum visual impact through the careful orchestration of reflective surfaces, saturated color, and luxurious industrial finishes",
+      "D": "Minimalism emerged in the eighteenth century alongside the Neoclassical movement, as artists rejected the excess of Rococo in favor of austere geometric purity inspired by Greek temples"
+    },
+    "correct_answer": "B",
+    "difficulty": 4,
+    "x": 0.231175,
+    "y": 0.239289,
+    "z": 0.551783,
+    "source_article": "Minimalism",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Minimalism",
+      "anti-expressionism",
+      "specific objects",
+      "literalism",
+      "phenomenology"
+    ]
+  },
+  {
+    "id": "9b67c99624f870ed",
+    "question_text": "The Northern Renaissance (15th-16th century, particularly in Flanders) developed independently from the Italian Renaissance. What was the distinctive Northern European approach to painting, and how did it differ technically from Italian practice?",
+    "options": {
+      "A": "Northern Renaissance artists deliberately avoided all religious subject matter, producing exclusively secular works depicting merchants, domestic interiors, and landscapes. The Protestant Reformation in Northern Europe had eliminated church patronage entirely by the early fifteenth century, forcing artists like Jan van Eyck, Rogier van der Weyden, and Hans Memling to work exclusively for private secular clients who wanted portraits, genre scenes, and decorative objects. The great altarpieces attributed to Northern painters, such as the Ghent Altarpiece and the Portinari Triptych, are actually misidentified secular allegories whose religious iconography was imposed by later Catholic art historians seeking to claim the Northern tradition for the Church",
+      "B": "Northern Renaissance painting was technically inferior to Italian art in every meaningful respect — less sophisticated in spatial composition, less skilled in anatomical figure drawing, less ambitious in narrative subject matter, and less innovative in the development of new media and working techniques. Italian painters had already perfected oil painting a full century before the Flemish masters adopted the medium from traveling Italian journeymen, and the meticulous descriptive detail visible in Northern panel paintings reflects a laborious compensatory strategy by technically limited artists who lacked the ability to achieve the grand compositional unity, heroic figural idealization, and mathematically rigorous perspective construction that came naturally to their more talented Italian contemporaries",
+      "C": "Northern Renaissance artists like Jan van Eyck perfected oil painting technique to achieve unprecedented luminosity and detail. Where Italian artists prioritized idealized form, monumental composition, and mathematical perspective (drawing-based, fresco-oriented), Northern painters emphasized meticulous empirical observation — individual textures of fabric, metal, wood, and skin rendered with microscopic precision. They embedded complex theological symbolism within seemingly mundane domestic settings (disguised symbolism), as in Van Eyck's 'Arnolfini Portrait' where every object carries sacred meaning. The oil medium (vs Italian fresco/tempera) enabled slow layering, glazing, and the illusion of light penetrating translucent surfaces",
+      "D": "The Northern and Italian Renaissance employed completely identical techniques, materials, and artistic approaches with no meaningful regional differences in style, subject matter, patronage structures, or intellectual framework. Both traditions used identical media (fresco and tempera on plaster walls), identical spatial systems (Brunelleschi's single-point linear perspective), and identical subject matter (classical mythology and ancient Roman history). The apparent stylistic differences between Northern and Italian Renaissance painting are artifacts of differential conservation and restoration practices rather than genuine artistic distinctions, because Northern panels were cleaned more aggressively than Italian ones, removing original glazing layers"
+    },
+    "correct_answer": "C",
+    "difficulty": 4,
+    "x": 0.01,
+    "y": 0.277861,
+    "z": 0.708105,
+    "source_article": "Northern Renaissance",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Northern Renaissance",
+      "Jan van Eyck",
+      "oil painting technique",
+      "disguised symbolism",
+      "Italian vs Northern"
+    ]
+  },
+  {
+    "id": "acb5afd09d68a3e2",
+    "question_text": "Land Art (Earth Art) of the late 1960s-70s moved art from galleries into the natural landscape. What motivated this radical departure, and what conceptual problems did it raise?",
+    "options": {
+      "A": "Land Art was simply a form of elaborate horticultural gardening and landscape design with no serious artistic, theoretical, or institutional critique motivating its practitioners. Smithson, Heizer, and De Maria were trained as landscape architects and worked within that professional tradition",
+      "B": "Land artists had no critique of the commercial gallery system and worked comfortably within the conventional art market, selling their earthworks as transportable commodities through mainstream New York galleries just like any other sculptural medium",
+      "C": "Land Art raised absolutely no issues of preservation, documentation, or impermanence because the monumental scale and durable geological materials used in earthworks like Spiral Jetty and Double Negative ensured their permanent survival without any maintenance or conservation",
+      "D": "Artists like Smithson (Spiral Jetty), Heizer (Double Negative), and De Maria (Lightning Field) rejected the commodity status of gallery art, the white cube's artificial neutrality, and art's separation from lived experience. By creating monumental earthworks in remote locations, they challenged: art as portable commodity (you cannot buy Spiral Jetty), the gallery as mediating institution, and the boundary between art and nature. This raised paradoxes: documentation (photographs) became the primary way most people experienced the work, reintroducing the gallery and commodity system; preservation conflicts arose between artistic intent and environmental change (Smithson wanted Spiral Jetty to erode); and wealthy collectors funded works that critiqued capitalism"
+    },
+    "correct_answer": "D",
+    "difficulty": 4,
+    "x": 0.24,
+    "y": 0.266787,
+    "z": 0.427,
+    "source_article": "Land Art",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Land Art",
+      "institutional critique",
+      "Smithson",
+      "art commodification",
+      "site-specificity"
+    ]
+  },
+  {
+    "id": "8a251e465ea70be3",
+    "question_text": "Clement Greenberg's theory of 'medium specificity' profoundly shaped mid-20th century art criticism. What did he argue, and how has his framework been challenged?",
+    "options": {
+      "A": "Greenberg argued that each art form should pursue what is unique to its medium: painting's essence is flatness and the delimitation of flatness (the picture plane). Modernist painting's historical trajectory was the progressive elimination of illusionistic depth, narrative, and anything shared with other arts — from Manet's flattened space through Cubism's fracturing to Abstract Expressionism's allover composition to Post-Painterly Abstraction's pure color fields. His framework was challenged by: Minimalism (objects in real space, not flat surfaces), Pop Art (embracing mass culture Greenberg dismissed as kitsch), Postmodernism (rejecting grand narratives of artistic 'progress'), and October journal critics (Rosalind Krauss, Hal Foster) who exposed Greenberg's essentialism and teleological history",
+      "B": "Greenberg argued consistently throughout his career that art should always be representational and never abstract, defending figurative painting against what he saw as the empty formalism of non-representational art. He championed American Regionalists like Thomas Hart Benton and social realists like Ben Shahn as the greatest living painters",
+      "C": "Greenberg's theories of medium specificity, flatness, and the self-critical progression of modernist painting have never been seriously challenged by any subsequent art critic, historian, or theorist and remain the universally accepted framework for understanding modern art",
+      "D": "Greenberg was primarily a practicing painter and sculptor who developed his theoretical ideas from his own studio practice, writing criticism only as a secondary activity to supplement his income from art sales"
+    },
+    "correct_answer": "A",
+    "difficulty": 5,
+    "x": 0.230044,
+    "y": 0.256508,
+    "z": 0.627788,
+    "source_article": "Greenberg",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Greenberg",
+      "medium specificity",
+      "formalism",
+      "modernist criticism",
+      "postmodern critique"
+    ]
+  },
+  {
+    "id": "f74bbadabba27219",
+    "question_text": "The Bauhaus (1919-1933) unified art, craft, and technology. What was its founding pedagogical principle, and how did it transform design education?",
+    "options": {
+      "A": "The Bauhaus rejected all forms of handcraft, manual skill, and traditional artisanal production, teaching students exclusively through industrial machine processes and mass-production techniques from the school's founding in 1919. Gropius eliminated all studio-based workshops in favor of factory floor training, and the Vorkurs (preliminary course) focused entirely on mechanical drawing, engineering specifications, and industrial standardization. The school's famous motto was 'Art through the machine alone,' which expressed the conviction that handcraft was a retrograde feudal practice incompatible with modern civilization and that only mechanized industrial production could achieve aesthetic quality worthy of the twentieth century",
+      "B": "Walter Gropius founded the Bauhaus on the principle that there should be no barrier between fine art and functional craft — 'the ultimate aim of all creative activity is the building.' The Vorkurs (preliminary course, developed by Itten, then Moholy-Nagy and Albers) taught materials, color theory, and form through experimentation rather than academic tradition. The curriculum integrated workshops (weaving, metalwork, typography, furniture) with theoretical courses (Klee and Kandinsky taught form and color). This produced a unified design language — clean geometric forms, functional materials, and the principle that form follows function — that shaped modern architecture, graphic design, furniture, and typography globally",
+      "C": "The Bauhaus was exclusively an architecture school that offered no instruction whatsoever in painting, sculpture, graphic design, typography, photography, furniture design, textile arts, metalwork, ceramics, or theater design. Gropius founded the school with a single department of architecture and resisted all attempts to expand the curriculum into other creative disciplines. The famous Bauhaus masters — Kandinsky, Klee, Moholy-Nagy, Albers, Schlemmer — were all practicing architects rather than painters or designers, and their contributions to the school were architectural rather than artistic. The widespread belief that the Bauhaus was a multidisciplinary institution is a postwar myth created by American design schools seeking prestigious European precedents",
+      "D": "The Bauhaus introduced no pedagogical innovations and taught using the same traditional academic methods employed by nineteenth-century European art academies — life drawing from plaster casts, copying Old Master paintings, and lectures on classical architectural orders"
+    },
+    "correct_answer": "B",
+    "difficulty": 5,
+    "x": 0.216845,
+    "y": 0.204542,
+    "z": 0.527052,
+    "source_article": "Bauhaus",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Bauhaus",
+      "design education",
+      "form follows function",
+      "Vorkurs",
+      "Gropius"
+    ]
+  },
+  {
+    "id": "4972909d1f6b33e4",
+    "question_text": "The female nude has been a central subject in European art for centuries, but feminist art historians have fundamentally reframed how we understand its significance. What was the key insight of the feminist critique?",
+    "options": {
+      "A": "Feminist art historians unanimously argued that the European tradition of the female nude was always empowering and liberating for women, celebrating female beauty and bodily autonomy in ways that challenged patriarchal restrictions on female sexuality",
+      "B": "The feminist critique of the nude applied only to contemporary art produced after 1960 and had no relevance to historical European painting, because pre-modern artists lacked the concept of gendered spectatorship that the critique depends upon",
+      "C": "Laura Mulvey's concept of the 'male gaze' (1975) and John Berger's 'Ways of Seeing' (1972) argued that the European nude tradition constructed women as objects of male visual pleasure: women are depicted as passive, available, and aware of being looked at (displayed for a presumed male viewer). The Guerrilla Girls' poster 'Do women have to be naked to get into the Met Museum?' (1989) exposed the institutional dimension: women appeared as subjects in 85% of nudes but constituted <5% of artists in modern art sections. This critique reframed art historical 'masterpieces' as evidence of systemic gender power structures in visual culture",
+      "D": "Feminist art historians focused their analytical attention exclusively on three-dimensional sculptural representations of the female body and developed no critical framework applicable to two-dimensional painted nudes, because the embodied physical presence of sculpture raised fundamentally different questions about objectification, spatial relations between the viewer and the viewed body, and the phenomenology of the gendered gaze than the virtual illusionistic pictorial space of painting. This disciplinary limitation meant that the most canonical painted nudes in Western art — works by Titian, Velázquez, Ingres, Manet, and Renoir — fell entirely outside the scope of feminist art historical analysis and were never subjected to the kind of sustained critical examination that feminist scholars directed at sculptural traditions"
+    },
+    "correct_answer": "C",
+    "difficulty": 5,
+    "x": 0.184205,
+    "y": 0.295573,
+    "z": 0.709654,
+    "source_article": "feminist art history",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "feminist art history",
+      "male gaze",
+      "Mulvey",
+      "Berger",
+      "Guerrilla Girls",
+      "gender and representation"
+    ]
+  },
+  {
+    "id": "c74c4d8085a7976e",
+    "question_text": "Postmodernism in art and architecture rejected modernist principles of originality, progress, and universal truth. What specific strategies did postmodern artists employ?",
+    "options": {
+      "A": "Postmodern artists simply continued all the fundamental practices, assumptions, and values of high modernism without any meaningful philosophical departure or critical re-examination. They maintained the modernist commitment to originality, artistic genius, linear historical progress, medium specificity, and aesthetic autonomy, merely updating the formal vocabulary with new materials and digital technologies while preserving the underlying theoretical framework entirely intact. The alleged rupture between modernism and postmodernism is an invention of academic art historians and cultural theorists who needed a new periodizing label to sustain their publishing careers, justify new tenure-track positions, and fill new graduate courses in art history departments",
+      "B": "Postmodernism was an exclusively architectural movement that had no manifestation or influence in painting, sculpture, performance, photography, video, installation, or any other visual art medium. The term originated in architectural discourse with the work of Robert Venturi, Charles Jencks, and Michael Graves, and it remained confined to discussions of building design, urban planning, and decorative architectural detail. Claims that postmodernism affected visual art, literature, philosophy, or cultural theory represent an illegitimate metaphorical extension of a discipline-specific architectural concept to unrelated cultural domains",
+      "C": "Postmodern art had no identifiable strategies, techniques, recurring formal devices, or shared theoretical commitments that would allow it to be characterized as a movement or tendency. The label was applied randomly and inconsistently to any art produced after 1970 that critics found difficult to categorize within existing modernist frameworks, making it a meaningless catch-all term rather than a descriptor of any genuine artistic phenomenon. Attempts to identify characteristic postmodern strategies such as appropriation, pastiche, irony, or institutional critique are retrospective academic constructions that impose false coherence on an inherently incoherent category",
+      "D": "Postmodern strategies include: appropriation (Sherrie Levine re-photographing Walker Evans' photos, questioning originality and authorship), pastiche (mixing historical styles without hierarchy — Venturi's 'decorated shed' against Mies' 'less is more'), irony and self-referentiality (Jeff Koons elevating kitsch to high art), deconstruction of grand narratives (rejecting Greenberg's modernist teleology), identity politics (art as a platform for marginalized voices — Kruger, Holzer, Basquiat), and simulation theory (Baudrillard's argument that postmodern culture consists of copies without originals — hyperreality)"
+    },
+    "correct_answer": "D",
+    "difficulty": 5,
+    "x": 0.234747,
+    "y": 0.165282,
+    "z": 0.627817,
+    "source_article": "postmodernism",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "postmodernism",
+      "appropriation",
+      "pastiche",
+      "Baudrillard",
+      "identity politics in art"
+    ]
+  },
+  {
+    "id": "5e415b58883fee32",
+    "question_text": "The International Gothic style (c. 1375-1425) bridged late medieval and early Renaissance art across Europe. What visual characteristics define this transitional style?",
+    "options": {
+      "A": "Elegant, sinuous line, rich decorative detail, elongated figures with graceful gestures, lavish use of gold leaf, and naturalistic observation of plants and animals within still-symbolic spatial settings — blending courtly refinement with emerging realism",
+      "B": "Stark geometric abstraction using only primary colors arranged on white grounds in rigid grid patterns, directly anticipating Mondrian's De Stijl movement by five full centuries through an exclusively non-representational and mathematically precise visual vocabulary entirely devoid of any figurative content, organic form, or naturalistic observation",
+      "C": "Photographic realism achieved through extensive use of the camera obscura, producing images virtually indistinguishable from modern photographs in their precise spatial accuracy, tonal range, and rendering of atmospheric depth across every area of the composition — a technological achievement impossible in the early fifteenth century",
+      "D": "Exclusive use of industrial materials like forged steel, blown glass, and cast iron in large-scale architectural sculpture, reflecting the mass-production values and mechanized workshop practices of the early fifteenth-century European economy — an anachronistic description that confuses medieval craftsmanship with modern industrial manufacturing"
+    },
+    "correct_answer": "A",
+    "difficulty": 1,
+    "x": 0.085492,
+    "y": 0.220755,
+    "z": 0.61746,
+    "source_article": "International Gothic",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "International Gothic",
+      "courtly style",
+      "transitional period",
+      "decorative naturalism"
+    ]
+  },
+  {
+    "id": "1f0dc9f0cf2066d0",
+    "question_text": "Giotto di Bondone (c. 1267-1337) is often called the father of Western painting. What revolutionary change did Giotto introduce to European art?",
+    "options": {
+      "A": "He invented oil painting as an entirely new medium, replacing all previous artistic materials with oil-based pigments that he personally formulated, ground, and mixed in his Florence workshop — a claim that ignores the centuries-long prior development of oil techniques in Northern Europe",
+      "B": "He replaced the flat, symbolic Byzantine style with volumetric figures possessing weight, emotion, and spatial depth — creating an illusion of three-dimensional human presence on a two-dimensional surface for the first time in medieval art",
+      "C": "He pioneered abstract expressionism by eliminating all recognizable imagery from his frescoes, producing works of pure color and gesture",
+      "D": "He introduced photography to the Italian peninsula, using a primitive camera to project images directly onto wet plaster for fresco painting"
+    },
+    "correct_answer": "B",
+    "difficulty": 1,
+    "x": 0.065772,
+    "y": 0.362979,
+    "z": 0.462949,
+    "source_article": "Giotto",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Giotto",
+      "proto-Renaissance",
+      "volumetric form",
+      "spatial depth"
+    ]
+  },
+  {
+    "id": "b4c9b93a49d9d780",
+    "question_text": "The Northern Renaissance developed differently from the Italian Renaissance. What fundamental difference in artistic approach distinguished Northern European painters like Jan van Eyck from their Italian contemporaries?",
+    "options": {
+      "A": "Northern painters worked exclusively in true fresco on wet plaster walls applied to large-scale architectural surfaces, while Italian painters used only egg tempera on small wooden panels — a rigid distinction that ignores the fact that both traditions employed multiple media and that Van Eyck's great achievement was precisely the mastery of oil technique on panel",
+      "B": "Northern painters had absolutely no interest in religious subjects and painted only secular portraits and landscapes for commercial sale, while Italian artists painted exclusively religious altarpieces and devotional scenes with no secular content — a false dichotomy that ignores the rich religious imagery of Van Eyck, Van der Weyden, and Memling",
+      "C": "Northern painters emphasized meticulous surface detail, optical naturalism, and symbolic realism through oil painting technique, while Italian painters prioritized mathematical perspective, idealized anatomy, and monumental composition based on classical models",
+      "D": "There was no difference — Northern and Italian Renaissance art were stylistically identical and completely interchangeable"
+    },
+    "correct_answer": "C",
+    "difficulty": 1,
+    "x": 0.016139,
+    "y": 0.282622,
+    "z": 0.753683,
+    "source_article": "Northern vs Italian Renaissance",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Northern vs Italian Renaissance",
+      "oil painting",
+      "optical naturalism",
+      "disguised symbolism"
+    ]
+  },
+  {
+    "id": "6caa6911dd44af63",
+    "question_text": "Rococo art emerged in early 18th-century France as a reaction against the grandeur of Louis XIV's Baroque. What aesthetic qualities characterize the Rococo style?",
+    "options": {
+      "A": "Monumental scale, a dark and somber palette, severe geometric forms, and exclusively religious subjects depicting scenes of martyrdom, divine judgment, and penitential suffering — qualities that actually describe the Baroque style that Rococo specifically rejected in favor of lightness, intimacy, and sensory pleasure",
+      "B": "Industrial imagery of factories, smokestacks, railway stations, and mechanized production lines painted in the documentary style of nineteenth-century social realism — a movement that emerged more than a century after Rococo and had fundamentally different aesthetic, social, and political commitments",
+      "C": "Austere minimalism using only black and white, with absolutely no decorative elements, curved lines, ornamental detail, pastel colors, or playful subject matter of any kind — the diametric opposite of Rococo's celebrated excess of ornament, color, sensuality, and decorative exuberance",
+      "D": "Lightness, pastel colors, asymmetric ornamental curves, playful mythological and amorous subjects, and intimate scale — emphasizing pleasure, wit, and sensory delight over Baroque grandeur and religious solemnity"
+    },
+    "correct_answer": "D",
+    "difficulty": 1,
+    "x": 0.103582,
+    "y": 0.034009,
+    "z": 0.286031,
+    "source_article": "Rococo",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Rococo",
+      "Watteau",
+      "Boucher",
+      "fête galante"
+    ]
+  },
+  {
+    "id": "c67fa8cf4a0808f5",
+    "question_text": "Albrecht Altdorfer's 'The Battle of Alexander at Issus' (1529) is a landmark in European landscape painting. What makes this work historically significant?",
+    "options": {
+      "A": "It is among the earliest European paintings to treat landscape as a cosmic, dramatic protagonist rather than mere backdrop — the vast panoramic sky and terrain dwarf the human figures, anticipating the Romantic sublime by three centuries",
+      "B": "It is a miniature portrait measuring only five centimeters across, designed exclusively as a pendant worn around the neck of a Bavarian duke as a personal keepsake — containing no landscape elements, no spatial recession, no atmospheric effects, and no battle scene of any description whatsoever in its tiny circular composition",
+      "C": "It depicts a contemporary sixteenth-century battle using photographic accuracy achieved through a telescope that Altdorfer supposedly invented well before Galileo — a claim that is historically impossible and ignores the painting's actual visionary, cosmic approach to representing the ancient battle between Alexander and Darius at Issus",
+      "D": "It contains no landscape elements whatsoever — the entire composition consists of text and heraldic symbols on a plain gold background"
+    },
+    "correct_answer": "A",
+    "difficulty": 2,
+    "x": 0.10173,
+    "y": 0.49,
+    "z": 0.308138,
+    "source_article": "Altdorfer",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Altdorfer",
+      "Danube School",
+      "landscape as protagonist",
+      "cosmic panorama"
+    ]
+  },
+  {
+    "id": "5c2458979a427ef6",
+    "question_text": "The concept of 'disegno' versus 'colore' was a central debate in Italian Renaissance art theory. What did this debate concern?",
+    "options": {
+      "A": "Whether artists should use pencils or pens for their preliminary drawings and underdrawing studies, a purely technical question about drafting instruments and workshop practices that carried no aesthetic, philosophical, or theoretical implications for the final painted work",
+      "B": "Whether drawing/design (disegno — associated with Florence and Rome, championed by Vasari) or color/painterly handling (colore — associated with Venice, exemplified by Titian) was the more fundamental element of great painting",
+      "C": "Whether paintings should be displayed indoors or outdoors, with disegno referring to interior gallery art and colore to exterior mural decoration",
+      "D": "Whether art should be free or commercially sold, with disegno representing aristocratic patronage and colore representing market-based art sales"
+    },
+    "correct_answer": "B",
+    "difficulty": 2,
+    "x": 0.075034,
+    "y": 0.156515,
+    "z": 0.782648,
+    "source_article": "disegno vs colore",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "disegno vs colore",
+      "Florentine vs Venetian",
+      "Vasari",
+      "Titian"
+    ]
+  },
+  {
+    "id": "08f4bcd7894bd372",
+    "question_text": "Hieronymus Bosch's 'The Garden of Earthly Delights' (c. 1490-1510) is one of the most enigmatic works in European art. What interpretive challenge does Bosch's imagery present to art historians?",
+    "options": {
+      "A": "The work is a straightforward, literal illustration of a single specific Bible passage rendered with no additional allegorical content, no layered symbolic meaning, no fantastical creatures, and no interpretive ambiguity whatsoever — simply a direct visual transcription of scriptural text into conventional painted narrative form following established iconographic tradition without innovation",
+      "B": "Bosch painted only abstract geometric patterns with absolutely no figurative content, no recognizable creatures, no human forms, and no narrative scenes of any kind, making his triptych an exercise in pure non-representational design that defies all iconographic analysis and resists any interpretive framework whatsoever — a claim refuted by the painting's teeming figurative imagery",
+      "C": "The fantastical, densely populated imagery — hybrid creatures, surreal landscapes, and enigmatic scenes — resists singular interpretation, with scholars debating whether it represents moral warning, alchemical allegory, heretical paradise, or satirical commentary on human folly",
+      "D": "The painting was created entirely by a computer algorithm in the twenty-first century and has no connection whatsoever to any historical period, artistic tradition, theological program, or cultural context — it is a modern digital fabrication that merely simulates the visual appearance of an early Netherlandish altarpiece without any authentic historical origin or authorship"
+    },
+    "correct_answer": "C",
+    "difficulty": 2,
+    "x": 0.138956,
+    "y": 0.331071,
+    "z": 0.55772,
+    "source_article": "Bosch",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Bosch",
+      "Garden of Earthly Delights",
+      "iconographic ambiguity",
+      "interpretive debate"
+    ]
+  },
+  {
+    "id": "54d58c6cd6cb4cef",
+    "question_text": "Nicolas Poussin and Peter Paul Rubens represent two contrasting ideals in 17th-century European painting. What artistic principles did each embody?",
+    "options": {
+      "A": "Both artists had completely identical styles and shared a single workshop in Rome throughout their entire careers, producing visually indistinguishable paintings that no art historian has ever been able to tell apart — their compositions, color palettes, brushwork, and subject choices were in every respect interchangeable and equivalent",
+      "B": "Poussin worked exclusively in delicate watercolor washes on paper while Rubens worked only in charcoal drawing on vellum — neither artist ever used oil paint on canvas, and both rejected color entirely in favor of monochromatic tonal studies that emphasized pure line and value over any chromatic effects",
+      "C": "Poussin was a twentieth-century artist working in Cubist abstraction while Rubens was a medieval manuscript illuminator — they lived five centuries apart and belonged to entirely different artistic traditions, making any stylistic comparison between their fundamentally incompatible bodies of work historically meaningless and chronologically impossible",
+      "D": "Poussin represented classical restraint — rational composition, clear drawing, intellectual subject matter, and emotional control — while Rubens embodied Baroque dynamism — sensuous color, energetic movement, dramatic emotion, and monumental physical presence"
+    },
+    "correct_answer": "D",
+    "difficulty": 2,
+    "x": 0.082258,
+    "y": 0.112569,
+    "z": 0.460215,
+    "source_article": "Poussin vs Rubens",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Poussin vs Rubens",
+      "classicism vs Baroque",
+      "French Academy debate"
+    ]
+  },
+  {
+    "id": "f45548f66394159b",
+    "question_text": "The Grand Tour was a cultural phenomenon that shaped European art collecting and taste in the 18th century. What was its significance for art history?",
+    "options": {
+      "A": "Young British and Northern European aristocrats traveled to Italy (especially Rome, Florence, Venice, Naples) to study classical antiquity and Renaissance art firsthand — this stimulated neoclassicism, fueled the art market, and established the canon of 'Old Masters' that shaped European taste",
+      "B": "It was a mandatory military expedition that all European kings and princes personally undertook in order to conquer Italian cities by force and seize their finest artworks as war spoils — a process of systematic cultural plunder rather than the voluntary educational pilgrimage of wealthy young gentlemen that the Grand Tour actually represented in eighteenth-century European aristocratic culture",
+      "C": "The Grand Tour was a 20th-century bicycle race through France that had no connection to art, culture, or the visual arts",
+      "D": "It referred exclusively to guided tours of London's National Gallery, restricted to British citizens holding valid permits and lasting exactly one hour each on a prescribed route — a narrow institutional practice entirely unlike the months-long continental journey through Italy that defined the actual Grand Tour experience for generations of European travelers"
+    },
+    "correct_answer": "A",
+    "difficulty": 2,
+    "x": 0.10435,
+    "y": 0.178009,
+    "z": 0.415138,
+    "source_article": "Grand Tour",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Grand Tour",
+      "neoclassicism",
+      "art collecting",
+      "cultural tourism"
+    ]
+  },
+  {
+    "id": "32145678cdc1e168",
+    "question_text": "Eugène Delacroix's 'Liberty Leading the People' (1830) is both a political statement and an artistic manifesto. What makes it a landmark of French Romantic painting?",
+    "options": {
+      "A": "It was painted entirely in shades of gray as a deliberate protest against the use of color in art, advocating for monochrome painting as the only legitimate artistic medium and rejecting the entire tradition of chromatic expression from Titian through Rubens — a position that contradicts Delacroix's actual reputation as one of the greatest colorists in the entire history of European painting and his central role in the Romantic color revolution",
+      "B": "It combines allegorical personification (Liberty as Marianne) with gritty contemporary realism (dead bodies, smoke, modern clothing) in a dynamic pyramidal composition — fusing Romantic passion, political commitment, and painterly bravura in a way that challenged the Academy's separation of history painting from contemporary events",
+      "C": "It depicts a medieval battle with no reference to contemporary French politics, set entirely in the 12th century during the Crusades",
+      "D": "It is a small pencil sketch measuring only ten by fifteen centimeters, never intended for public display and discovered in an attic only in the twenty-first century — a private preparatory study with no political significance, no allegorical content, and no connection to the July Revolution of 1830, contradicting the monumental oil painting's actual status as one of the most famous political images in all of European art history"
+    },
+    "correct_answer": "B",
+    "difficulty": 3,
+    "x": 0.131717,
+    "y": 0.393036,
+    "z": 0.017806,
+    "source_article": "Delacroix",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Delacroix",
+      "French Romanticism",
+      "Liberty Leading the People",
+      "allegory and realism"
+    ]
+  },
+  {
+    "id": "442d57a71e09cd5c",
+    "question_text": "The Pre-Raphaelites and the French Impressionists were roughly contemporary movements (mid-to-late 19th century) that both rejected academic convention, yet they moved in opposite aesthetic directions. What was the fundamental difference?",
+    "options": {
+      "A": "There was no difference whatsoever between the two movements — both the Pre-Raphaelites and the French Impressionists used completely identical techniques, shared precisely the same artistic philosophy and critical principles, exhibited together at the same venues, and had overlapping membership rosters with interchangeable artistic goals and aesthetic commitments",
+      "B": "Pre-Raphaelites worked only in sculpture while Impressionists worked only in printmaking — neither movement produced paintings",
+      "C": "Pre-Raphaelites pursued hyper-detailed finish, sharp focus, and literary/medieval subjects with moral content, while Impressionists pursued loose brushwork, optical immediacy, and contemporary secular subjects — both rejected the Academy but in diametrically opposed directions of detail versus spontaneity",
+      "D": "Impressionists painted exclusively religious altarpieces while Pre-Raphaelites painted only industrial machinery and factory interiors"
+    },
+    "correct_answer": "C",
+    "difficulty": 3,
+    "x": 0.093992,
+    "y": 0.157207,
+    "z": 0.138211,
+    "source_article": "Pre-Raphaelites vs Impressionists",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Pre-Raphaelites vs Impressionists",
+      "detail vs spontaneity",
+      "Victorian vs French modernism"
+    ]
+  },
+  {
+    "id": "71b86560b839b54f",
+    "question_text": "Piero della Francesca's mathematical approach to painting, evident in works like 'The Flagellation of Christ' (c. 1455), influenced both art and science. What specific mathematical contribution did Piero make?",
+    "options": {
+      "A": "Piero had absolutely no interest in mathematics and never wrote a single word about geometry, proportion, perspective, or spatial construction — his paintings were created entirely through intuitive improvisation and spontaneous emotional inspiration with no underlying rational framework, mathematical calculation, or systematic approach to pictorial space, contradicting the extensive written treatises and geometric paintings that constitute his actual legacy",
+      "B": "Piero was a pure mathematician who never painted a single picture in his entire life — his reputation rests entirely on his theoretical writings about numbers, geometry, and arithmetic, with no visual art production whatsoever, a claim that ignores the great frescoes at Arezzo, the Urbino diptych, the Flagellation, and the Montefeltro Altarpiece that constitute his celebrated painted oeuvre",
+      "C": "Piero invented the calculator and used mechanical computation to determine the placement of every brushstroke in his paintings",
+      "D": "Piero wrote treatises on perspective (De Prospectiva Pingendi) and geometry (De Quinque Corporibus Regularibus) that systematized the mathematical foundations of pictorial space — his paintings demonstrate rigorous perspectival construction and geometric proportion with a precision that influenced both art theory and mathematics"
+    },
+    "correct_answer": "D",
+    "difficulty": 3,
+    "x": 0.087143,
+    "y": 0.404384,
+    "z": 0.653674,
+    "source_article": "Piero della Francesca",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Piero della Francesca",
+      "perspective treatise",
+      "mathematics in art",
+      "De Prospectiva Pingendi"
+    ]
+  },
+  {
+    "id": "3d7594828a198321",
+    "question_text": "Théodore Géricault's 'The Raft of the Medusa' (1819) scandalized the Paris Salon. Why was this painting considered so provocative?",
+    "options": {
+      "A": "It depicted a contemporary political disaster (the shipwreck caused by an incompetent royalist captain) at monumental history-painting scale, with unflinching physical horror — decomposing bodies, cannibalism, and despair — violating academic decorum by treating a current scandal with the grandeur reserved for ancient or biblical subjects",
+      "B": "It was a small watercolor of flowers that the Salon jury rejected for being too pleasant and decorative",
+      "C": "It depicted the king of France in an unflattering nude portrait, leading to Géricault's immediate arrest and imprisonment",
+      "D": "It used a new type of paint that emitted toxic fumes, forcing the evacuation of the entire Salon exhibition hall"
+    },
+    "correct_answer": "A",
+    "difficulty": 3,
+    "x": 0.118611,
+    "y": 0.391516,
+    "z": 0.071007,
+    "source_article": "Géricault",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Géricault",
+      "Raft of the Medusa",
+      "Romanticism",
+      "academic genre hierarchy"
+    ]
+  },
+  {
+    "id": "c33d70c5124a5044",
+    "question_text": "The Vienna Secession (founded 1897) sought to break from conservative academic art in Austria. What was its motto, and what did it signify?",
+    "options": {
+      "A": "Its motto was 'Art for Art's Sake,' firmly rejecting all social, political, or cultural engagement in favor of pure aesthetic formalism with absolutely no connection to daily life, civic responsibility, national identity, or the practical needs of modern Viennese society — a complete withdrawal from the public sphere into hermetic self-referential beauty",
+      "B": "'Der Zeit ihre Kunst, der Kunst ihre Freiheit' ('To every age its art, to art its freedom') — this proclaimed that art must evolve with its time rather than imitate past styles, and that artists must be free from academic constraints to create authentically modern work",
+      "C": "The Secession had no motto and no founding principles — it was a commercial gallery with no artistic philosophy",
+      "D": "'Tradition above all' — the Secession's goal was to revive ancient Greek and Roman art styles and reject all modern innovation as decadent"
+    },
+    "correct_answer": "B",
+    "difficulty": 3,
+    "x": 0.190787,
+    "y": 0.240827,
+    "z": 0.084963,
+    "source_article": "Vienna Secession",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Vienna Secession",
+      "Klimt",
+      "Jugendstil",
+      "artistic freedom"
+    ]
+  },
+  {
+    "id": "7099b69d90838e27",
+    "question_text": "Caspar David Friedrich's 'Wanderer above the Sea of Fog' (c. 1818) epitomizes German Romantic landscape painting. What compositional device makes this painting philosophically distinctive?",
+    "options": {
+      "A": "The complete absence of any human figure from the composition, presenting a pure landscape vista without human presence, scale reference, or psychological viewpoint — which directly contradicts the painting's most famous and defining feature, namely the solitary wanderer figure standing prominently in the foreground with his back to the viewer",
+      "B": "A photographic panorama created using a mechanical camera that Friedrich patented in 1815",
+      "C": "The Rückenfigur — a figure seen from behind, gazing into the landscape — inviting the viewer to share the figure's subjective experience of contemplating sublime nature, merging the inner psychological world with the outer natural world",
+      "D": "The painting contains only abstract geometric shapes with no landscape, figures, or recognizable subject matter of any kind — it is a work of pure non-representational abstraction consisting entirely of colored rectangles and circles, which contradicts the painting's actual depiction of a man overlooking a misty mountain panorama"
+    },
+    "correct_answer": "C",
+    "difficulty": 3,
+    "x": 0.143808,
+    "y": 0.374849,
+    "z": 0.321049,
+    "source_article": "Caspar David Friedrich",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Caspar David Friedrich",
+      "Rückenfigur",
+      "German Romanticism",
+      "sublime landscape"
+    ]
+  },
+  {
+    "id": "a40205f0f20b122c",
+    "question_text": "Gustave Courbet's 'The Stone Breakers' (1849) and 'A Burial at Ornans' (1849-50) launched the Realist movement in French painting. What was radical about Courbet's approach?",
+    "options": {
+      "A": "Courbet painted idealized mythological figures rendered in the refined classical manner of Raphael, following every established convention of academic history painting without any deviation, innovation, or challenge to the institutional standards of the French Academy and its Salon jury system — his work was entirely conventional and conservative in both subject and technique",
+      "B": "He was the first European artist to use photography instead of painting, displaying photographic prints in gilded frames at the Paris Salon",
+      "C": "Courbet painted exclusively in watercolor miniatures measuring no more than 10 centimeters, rejecting large-scale painting as bourgeois excess",
+      "D": "He depicted ordinary working-class and rural subjects at monumental scale traditionally reserved for history painting, insisting that contemporary everyday life was worthy of serious artistic treatment — rejecting both academic idealization and Romantic exoticism in favor of direct observation of social reality"
+    },
+    "correct_answer": "D",
+    "difficulty": 4,
+    "x": 0.112416,
+    "y": 0.356677,
+    "z": 0.0,
+    "source_article": "Courbet",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Courbet",
+      "Realism",
+      "social subject matter",
+      "genre hierarchy challenge"
+    ]
+  },
+  {
+    "id": "aae643dd13603c12",
+    "question_text": "Andrea Mantegna's 'Dead Christ' (c. 1480) demonstrates a radical approach to pictorial space. What specific technique makes this painting distinctive in the history of European art?",
+    "options": {
+      "A": "Extreme foreshortening (di sotto in sù / scorcio) — the viewer looks at Christ's body from the feet, compressing the figure dramatically along the depth axis, demonstrating Mantegna's mastery of perspectival projection and creating an intensely physical, confrontational viewing experience",
+      "B": "The painting is a perfect circle (tondo) with Christ depicted as a tiny figure in the center of a vast landscape",
+      "C": "It uses reverse perspective where objects appear progressively larger as they recede into the distance, creating a deliberately anti-naturalistic spatial effect derived from medieval Byzantine icon painting traditions — a technique that contradicts the Renaissance mastery of mathematical linear perspective that Mantegna actually demonstrated throughout his entire career",
+      "D": "The painting contains no figure at all — it is a pure abstract composition of geometric planes and color fields"
+    },
+    "correct_answer": "A",
+    "difficulty": 4,
+    "x": 0.06401,
+    "y": 0.444568,
+    "z": 0.536617,
+    "source_article": "Mantegna",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Mantegna",
+      "foreshortening",
+      "scorcio",
+      "perspectival projection"
+    ]
+  },
+  {
+    "id": "d3ced8369feb38d9",
+    "question_text": "The concept of 'paragone' (comparison) was a Renaissance debate about the relative merits of different art forms. What was the central question of the paragone?",
+    "options": {
+      "A": "Whether cooking or weaving was the superior craft, since Renaissance artists were primarily concerned with domestic arts rather than fine arts",
+      "B": "Which art form — painting, sculpture, or architecture — was the noblest and most intellectually demanding, with Leonardo arguing for painting's superiority through its ability to represent all visible phenomena including light, atmosphere, and distance on a flat surface",
+      "C": "Whether music or dance was more important at court entertainments, a debate that had no connection to visual arts whatsoever",
+      "D": "Whether left-handed or right-handed artists produced superior work, a debate settled by Leonardo's ambidexterity"
+    },
+    "correct_answer": "B",
+    "difficulty": 4,
+    "x": 0.094817,
+    "y": 0.175312,
+    "z": 0.65819,
+    "source_article": "paragone",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "paragone",
+      "Leonardo",
+      "painting vs sculpture",
+      "Renaissance art theory"
+    ]
+  },
+  {
+    "id": "c7e8fa1e7d881198",
+    "question_text": "Edvard Munch's 'The Scream' (1893) is often cited as a precursor to Expressionism. What distinguishes Expressionism's approach to visual representation from the Impressionism that preceded it?",
+    "options": {
+      "A": "Expressionism faithfully recorded the external appearance of nature under specific lighting conditions, using optical color mixing and scientifically precise broken brushwork to capture fleeting visual impressions with empirical accuracy — a description that actually defines Impressionism rather than Expressionism, which deliberately distorted rather than recorded appearances",
+      "B": "Expressionism used only black ink on white paper, rejecting all color as distracting from pure linear form and insisting that monochromatic graphic work was the only legitimate artistic medium — a claim contradicted by the vivid, often clashing colors of Kirchner, Nolde, Marc, and other Expressionist painters who made color central to their emotional program",
+      "C": "Expressionism distorted form, color, and space to externalize inner psychological and emotional states rather than recording external visual appearances — subjective feeling replaced objective observation as the primary content of the image",
+      "D": "Expressionism was identical to Impressionism in every single respect — the two terms are completely interchangeable synonyms referring to exactly the same artistic movement, the same artists, the same techniques, and the same aesthetic goals, with no distinction in theory, practice, chronology, or visual character whatsoever"
+    },
+    "correct_answer": "C",
+    "difficulty": 4,
+    "x": 0.161358,
+    "y": 0.281052,
+    "z": 0.243969,
+    "source_article": "Expressionism",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Expressionism",
+      "Munch",
+      "subjective distortion",
+      "inner emotion vs outer observation"
+    ]
+  },
+  {
+    "id": "dea1e30d3922acf8",
+    "question_text": "The 'Querelle des Anciens et des Modernes' (Quarrel of the Ancients and Moderns) in late 17th-century France had lasting implications for European art. What was the core of this debate?",
+    "options": {
+      "A": "Whether European art should be entirely replaced by Chinese art, following the Jesuit missions' introduction of Chinese painting to the French court",
+      "B": "Whether paintings should be displayed with or without frames, a purely practical curatorial question with no philosophical implications",
+      "C": "Whether artists should eat lunch before or after painting sessions, a debate about studio hygiene that consumed the French Academy for decades",
+      "D": "Whether modern French culture could equal or surpass the achievements of classical antiquity, or whether ancient Greek and Roman models represented an unsurpassable pinnacle — this debate shaped the French Academy's doctrine and influenced European aesthetics for over a century"
+    },
+    "correct_answer": "D",
+    "difficulty": 4,
+    "x": 0.113632,
+    "y": 0.090401,
+    "z": 0.36329,
+    "source_article": "Querelle",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Querelle",
+      "Ancients vs Moderns",
+      "French Academy",
+      "classical authority"
+    ]
+  },
+  {
+    "id": "b6fd21e830e92cf3",
+    "question_text": "Rogier van der Weyden's 'Descent from the Cross' (c. 1435) exemplifies a distinctive approach to expressing emotion in early Netherlandish painting. How does van der Weyden's treatment of emotion differ from Italian approaches?",
+    "options": {
+      "A": "Van der Weyden expressed emotion through exaggerated physiological responses — tears, swollen eyes, contorted features, collapsing bodies — rendered with meticulous descriptive realism, while Italian artists tended toward idealized, restrained, classically beautiful expressions of grief",
+      "B": "Van der Weyden suppressed all emotion entirely, presenting his figures as completely blank, impassive, and psychologically inert, with absolutely no facial expressions, bodily gestures, tears, or physical indicators of grief whatsoever — a description that contradicts the painting's famous emotional intensity and the collapsing, weeping figures that define its expressive character",
+      "C": "Van der Weyden never painted religious subjects of any kind and expressed emotion only through pure landscape painting without human figures, narrative content, or devotional purpose — a claim that ignores his most celebrated works, including the Descent from the Cross, the Last Judgment altarpiece at Beaune, and numerous devotional panels",
+      "D": "There was absolutely no difference between Northern and Italian artists in their expression of emotion — both traditions expressed grief, joy, suffering, and ecstasy in completely identical ways in every period and context, using the same gestures, facial types, compositional strategies, and emotional registers without any regional or cultural variation"
+    },
+    "correct_answer": "A",
+    "difficulty": 4,
+    "x": 0.05313,
+    "y": 0.320968,
+    "z": 0.580363,
+    "source_article": "Rogier van der Weyden",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Rogier van der Weyden",
+      "Netherlandish emotion",
+      "physiological realism",
+      "Italian vs Northern affect"
+    ]
+  },
+  {
+    "id": "539d54c00c12f388",
+    "question_text": "Aby Warburg's concept of 'Pathosformeln' (pathos formulas) proposed that certain emotionally charged gestural configurations recur across centuries of European art. What does this concept reveal about the transmission of artistic form?",
+    "options": {
+      "A": "That European art has absolutely no continuity whatsoever across any historical period — each successive era invented all of its visual conventions, expressive gestures, compositional strategies, figural types, and iconographic programs completely from scratch with zero inheritance from any preceding tradition, making every century's art entirely disconnected from everything that came before it in the Western pictorial tradition",
+      "B": "That expressive bodily gestures (ecstasy, mourning, triumph, terror) are transmitted through artistic tradition as archetypal visual formulas — a maenad's windblown drapery from antiquity reappears in Botticelli's nymph and Ghirlandaio's serving girl, revealing deep continuities in how Western art encodes emotional intensity through the body",
+      "C": "That all European paintings across every century, region, school, and movement depict exactly the same scene with absolutely no variation whatsoever in subject matter, composition, palette, scale, technique, or emotional tone — a claim that contradicts the enormous diversity of themes, styles, and visual strategies evident across the full sweep of Western art from antiquity through modernism and beyond",
+      "D": "That emotional expression in art is fundamentally impossible and no painting, sculpture, fresco, or drawing has ever successfully conveyed any human feeling, mood, psychological state, or spiritual condition to any viewer at any point in the entire history of European visual culture — rendering the whole tradition of expressive figural art a complete illusion without any basis in actual perceptual experience"
+    },
+    "correct_answer": "B",
+    "difficulty": 5,
+    "x": 0.171607,
+    "y": 0.284988,
+    "z": 0.658744,
+    "source_article": "Aby Warburg",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Aby Warburg",
+      "Pathosformeln",
+      "Nachleben der Antike",
+      "gestural transmission"
+    ]
+  },
+  {
+    "id": "71c84671cd4d3a75",
+    "question_text": "Erwin Panofsky's three-level iconological method transformed European art historical methodology. What are the three levels, and why was the method's introduction significant?",
+    "options": {
+      "A": "The three levels are: auction price, frame quality, and canvas size — Panofsky's method is a commercial appraisal system for determining the monetary value of paintings",
+      "B": "The three levels refer to floor levels in a museum: ground floor for sculpture, first floor for painting, second floor for decorative arts",
+      "C": "Pre-iconographic description (identifying forms and objects), iconographic analysis (identifying conventional meanings and stories), and iconological interpretation (revealing underlying cultural, philosophical, and ideological assumptions that shaped the work) — this systematic method moved art history beyond connoisseurship toward a rigorous humanistic discipline",
+      "D": "Panofsky proposed only one level of analysis — formal description — and explicitly rejected all interpretation of subject matter or cultural context as irrelevant to art history"
+    },
+    "correct_answer": "C",
+    "difficulty": 5,
+    "x": 0.205831,
+    "y": 0.382771,
+    "z": 0.969217,
+    "source_article": "Panofsky",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Panofsky",
+      "iconology",
+      "three levels of meaning",
+      "art historical methodology"
+    ]
+  },
+  {
+    "id": "fc882eda8e87913c",
+    "question_text": "The transition from Mannerism to Baroque in late 16th-century Italy involved the Council of Trent's (1545-1563) directives on religious art. How did Tridentine reform affect European painting?",
+    "options": {
+      "A": "The Council of Trent banned all religious art entirely and ordered the systematic destruction of every painting, sculpture, fresco, mosaic, and altarpiece in every church across Catholic Europe — mandating the complete elimination of visual imagery from all sacred spaces, a position that contradicts the Council's actual encouragement of emotionally powerful, doctrinally correct religious art as a counter-Reformation tool",
+      "B": "The Council of Trent had absolutely no opinions about art and issued no directives concerning religious imagery, church decoration, liturgical furnishing, or the visual representation of sacred subjects — it was exclusively concerned with administrative reforms and doctrinal clarifications about scripture and sacraments, ignoring visual culture entirely, which contradicts the extensive artistic directives in its actual decrees",
+      "C": "The Council decreed that all churches must be painted entirely white with no images, following Calvinist iconoclasm exactly",
+      "D": "The Council mandated that religious art be clear, emotionally engaging, doctrinally accurate, and accessible to the illiterate faithful — rejecting Mannerist obscurity and intellectual complexity in favor of direct emotional communication, which catalyzed the Baroque emphasis on dramatic naturalism and viewer involvement"
+    },
+    "correct_answer": "D",
+    "difficulty": 5,
+    "x": 0.086042,
+    "y": 0.227547,
+    "z": 0.700162,
+    "source_article": "Council of Trent",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Council of Trent",
+      "Counter-Reformation art",
+      "Mannerism to Baroque",
+      "Tridentine decrees"
+    ]
+  },
+  {
+    "id": "0fe4ab6efd926cc0",
+    "question_text": "Heinrich Wölfflin's 'Principles of Art History' (1915) proposed five pairs of formal categories to distinguish Renaissance from Baroque style. What methodological assumption underlies Wölfflin's system, and how has it been criticized?",
+    "options": {
+      "A": "Wölfflin's pairs (linear/painterly, plane/recession, closed/open, multiplicity/unity, clearness/unclearness) assume that style evolves through inherent formal logic independent of social, economic, or political factors — critics argue this formalism ignores context, treats stylistic change as autonomous and inevitable, and cannot account for regional variations or individual artistic choice",
+      "B": "Wölfflin proposed no categories and wrote nothing about formal analysis — his work focused exclusively on artists' biographies and personal anecdotes",
+      "C": "Wölfflin's system has been universally accepted without any criticism and remains the only valid approach to art historical analysis",
+      "D": "Wölfflin's categories apply only to music and have never been used to analyze visual art"
+    },
+    "correct_answer": "A",
+    "difficulty": 5,
+    "x": 0.158501,
+    "y": 0.172296,
+    "z": 0.827993,
+    "source_article": "Wölfflin",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Wölfflin",
+      "formal analysis",
+      "style history",
+      "autonomous stylistic development"
+    ]
+  },
+  {
+    "id": "b8f7df906f064286",
+    "question_text": "The Ghent Altarpiece (1432) by Hubert and Jan van Eyck is considered one of the most important works in European art history. What technical and aesthetic achievement does it represent?",
+    "options": {
+      "A": "It is a crude amateur work with no technical skill whatsoever, painted by untrained hobbyists using ordinary house paint applied carelessly on a bedsheet — showing absolutely no mastery of oil technique, no understanding of light, color, or spatial recession, and no theological program or iconographic sophistication of any kind, being entirely devoid of the artistic and intellectual ambition that characterizes legitimate Flemish panel painting",
+      "B": "The altarpiece demonstrates the full potential of oil painting technique — unprecedented luminosity through layered glazes, microscopic detail in textiles and jewels, atmospheric landscape recession, and a complex polyptych structure integrating multiple scenes into a coherent theological program uniting Old and New Testaments around the central Adoration of the Mystic Lamb",
+      "C": "It is a single small canvas measuring 30 centimeters across, depicting only a bowl of fruit with no religious content",
+      "D": "It was painted entirely by machine using a printing press, with no human artistic involvement in any stage of production"
+    },
+    "correct_answer": "B",
+    "difficulty": 5,
+    "x": 0.078221,
+    "y": 0.414523,
+    "z": 0.513485,
+    "source_article": "Ghent Altarpiece",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Ghent Altarpiece",
+      "Van Eyck",
+      "oil painting technique",
+      "polyptych structure"
+    ]
+  },
+  {
+    "id": "1483004a8a861786",
+    "question_text": "Raphael's 'School of Athens' (1509-1511) in the Vatican Stanze is considered a masterpiece of High Renaissance composition. What makes its spatial organization exemplary?",
+    "options": {
+      "A": "The figures are scattered randomly and haphazardly across a flat gold background with absolutely no spatial organization, mathematical perspective system, architectural setting, or compositional logic of any kind — there is no vanishing point, no recession into depth, no grouping of figures, and no relationship between the painted space and real three-dimensional space",
+      "B": "The painting depicts only a single figure in an empty room with no other people, architectural elements, or spatial complexity",
+      "C": "A grand barrel-vaulted architectural setting frames a carefully orchestrated gathering of ancient philosophers arranged in groups along converging perspective lines leading to the central figures of Plato and Aristotle — unifying complex multi-figure composition with mathematical one-point perspective",
+      "D": "The composition consists of a single horizontal line of identical figures standing at attention like soldiers in formation"
+    },
+    "correct_answer": "C",
+    "difficulty": 1,
+    "x": 0.070858,
+    "y": 0.304057,
+    "z": 0.589659,
+    "source_article": "Raphael",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Raphael",
+      "School of Athens",
+      "High Renaissance composition",
+      "one-point perspective"
+    ]
+  },
+  {
+    "id": "8f2ca762082c5e1b",
+    "question_text": "Titian's use of color in his late works (1550s-1576) influenced painting for centuries. What distinctive technique characterizes Titian's late style?",
+    "options": {
+      "A": "Meticulous, invisible brushwork creating smooth porcelain-like surfaces with no visible paint texture whatsoever",
+      "B": "Exclusive use of monochrome gray tones with no color, abandoning the Venetian chromatic tradition entirely",
+      "C": "Painting exclusively with fingers and palette knives rather than brushes, using only pure black and white paint",
+      "D": "Loose, broken brushwork with thick impasto, visible paint handling, and forms that dissolve into patches of color — subordinating drawing to an expressive painterly surface that anticipated Impressionism and modern painting by three centuries"
+    },
+    "correct_answer": "D",
+    "difficulty": 1,
+    "x": 0.064428,
+    "y": 0.281768,
+    "z": 0.450782,
+    "source_article": "Titian",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Titian",
+      "late style",
+      "Venetian color",
+      "painterly technique"
+    ]
+  },
+  {
+    "id": "e4cdcb5a8dcfe848",
+    "question_text": "Cimabue's 'Maestà' (c. 1280) and Duccio's 'Maestà' (1308-1311) represent a pivotal transition in Italian painting. What change do they signal?",
+    "options": {
+      "A": "A gradual shift from flat Byzantine hieratic style toward greater naturalism — Duccio's figures show softer modeling, more naturalistic drapery, and hints of spatial depth that begin to move beyond the strict frontal formality of earlier medieval painting",
+      "B": "A complete rejection of all religious subject matter in favor of secular portraiture and landscape painting",
+      "C": "The introduction of photography to Italian art, with both artists using camera obscura projections as the basis for their compositions",
+      "D": "A shift from three-dimensional naturalism back to flat abstraction, reversing the direction of Western art history"
+    },
+    "correct_answer": "A",
+    "difficulty": 2,
+    "x": 0.063279,
+    "y": 0.303923,
+    "z": 0.495394,
+    "source_article": "Cimabue",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Cimabue",
+      "Duccio",
+      "Byzantine to proto-Renaissance",
+      "Maestà"
+    ]
+  },
+  {
+    "id": "3643fb193ce89362",
+    "question_text": "Michael Baxandall's concept of the 'period eye' (Painting and Experience in Fifteenth-Century Italy, 1972) transformed how art historians understand Renaissance visual culture. What does 'period eye' mean?",
+    "options": {
+      "A": "That all human eyes are physically identical across all historical periods and cultures, so there is no difference in how people from different eras perceive images",
+      "B": "That each historical period has distinct visual skills and habits shaped by everyday practices (commercial arithmetic, dance, preaching, gauging barrels) that trained people to see in specific ways — these cognitive skills shaped both how artists composed and how viewers read paintings, making visual competence historically contingent rather than universal",
+      "C": "That Renaissance Italians had a genetic eye mutation giving them superior color vision, making them biologically better artists than people from other periods",
+      "D": "That Baxandall studied only the physical ophthalmology of Renaissance eye diseases and contributed nothing to art historical methodology"
+    },
+    "correct_answer": "B",
+    "difficulty": 5,
+    "x": 0.083032,
+    "y": 0.259078,
+    "z": 0.790833,
+    "source_article": "Baxandall",
+    "domain_ids": [
+      "european-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Baxandall",
+      "period eye",
+      "social history of art",
+      "visual competence"
+    ]
+  }
+]

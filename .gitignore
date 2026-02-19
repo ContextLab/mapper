@@ -209,6 +209,12 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
+# Node.js / Frontend
+node_modules/
+dist/
+.vite/
+*.local
+
 # Project-specific
 CLAUDE.md
 
@@ -247,6 +253,22 @@ checkpoints/level_*_final.json
 # Large output files (>50MB)
 wikipedia_articles_level_*.json
 level_*_concepts.json
+
+# Legacy pipeline data files (root-level, superseded by data/domains/)
+cell_distances.json
+cell_questions_level_*.json
+cell_questions.json
+level_*_concepts_checkpoint.json
+neighbor_analysis.json
+optimal_rectangle.json
+question_coordinates.json
+questions.json
+review.html
+find_domain_clusters.py
+review.html
+
+# Playwright test artifacts
+test-results/
 .DS_Store
 */.DS_Store
 */*/.DS_Store

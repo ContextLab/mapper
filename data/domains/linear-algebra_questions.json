@@ -1,0 +1,1306 @@
+[
+  {
+    "id": "75a4536b0ccd9791",
+    "question_text": "A system of linear equations can have exactly one solution, infinitely many solutions, or no solution. What determines which case occurs?",
+    "options": {
+      "A": "It depends on the rank of the coefficient matrix relative to the augmented matrix: if rank(A) = rank([A|b]) = n (number of unknowns), there is a unique solution; if rank(A) = rank([A|b]) < n, infinitely many solutions exist (parameterized by n - rank free variables); if rank(A) < rank([A|b]), the system is inconsistent (no solution)",
+      "B": "A system always has exactly one solution whenever it has the same number of equations as unknowns, because a square coefficient matrix is always invertible and Cramer's rule always applies",
+      "C": "The number of solutions depends only on the total number of equations present in the system, regardless of the number of unknowns or any relationship between the equations",
+      "D": "Systems with more unknowns than equations always have no solution because the system is underdetermined and there are not enough constraints to pin down any variable. The extra unknowns create contradictory requirements that cannot be simultaneously satisfied, which is why wide rectangular systems are always inconsistent. This is a direct consequence of the pigeonhole principle applied to linear constraints: if there are more unknowns than equations, some unknowns receive no constraint and the system becomes contradictory"
+    },
+    "correct_answer": "A",
+    "difficulty": 1,
+    "x": 0.869196,
+    "y": 0.77166,
+    "z": 0.268286,
+    "source_article": "rank",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "rank",
+      "linear systems",
+      "Rouché-Capelli theorem",
+      "consistency"
+    ]
+  },
+  {
+    "id": "11618694234d9f96",
+    "question_text": "The determinant of a square matrix has many interpretations. What is its geometric meaning?",
+    "options": {
+      "A": "The determinant of a matrix is identical to its trace (the sum of diagonal elements), because both quantities measure the overall magnitude of the linear transformation. The trace captures how much each coordinate axis is individually scaled, and the determinant is just the product of these individual scalings, making the two quantities interchangeable for any practical purpose in geometric interpretation. This equivalence holds for matrices of any size and over any field",
+      "B": "The determinant of a matrix gives the signed volume scaling factor of the linear transformation: |det(A)| measures how the transformation scales volumes (areas in 2D), and the sign indicates whether orientation is preserved (positive) or reversed (negative). det(A) = 0 means the transformation collapses space to a lower dimension",
+      "C": "The determinant counts the total number of nonzero entries in the matrix, providing a measure of the matrix's sparsity. Dense matrices with many nonzero entries have large determinants, while sparse matrices with few nonzero entries have small determinants",
+      "D": "The determinant is always a positive real number for any square matrix regardless of its entries, because the Leibniz expansion formula involves alternating signs that always cancel to produce a nonnegative result. This positivity is why the determinant can serve as a volume measure — volumes are inherently nonneg, so a quantity representing volume must be nonneg as well. Matrices with negative entries may appear to produce negative determinants, but this is always a computational error"
+    },
+    "correct_answer": "B",
+    "difficulty": 1,
+    "x": 0.868402,
+    "y": 0.95812,
+    "z": 0.306648,
+    "source_article": "determinant",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "determinant",
+      "volume scaling",
+      "orientation",
+      "linear transformation geometry"
+    ]
+  },
+  {
+    "id": "508e0d9500a80575",
+    "question_text": "Eigenvalues and eigenvectors satisfy Av = λv. What is the geometric meaning of this equation?",
+    "options": {
+      "A": "Eigenvectors are rotated by the transformation to point in a completely new direction, which is why they are useful for decomposing arbitrary rotations into simpler components",
+      "B": "Eigenvalues represent the trace of the matrix divided by its dimension, providing an average scaling factor rather than direction-specific information",
+      "C": "An eigenvector v is a direction that is preserved (not rotated) by the linear transformation A — it is merely scaled by the factor λ (the eigenvalue). If λ > 1, the eigenvector direction is stretched; if 0 < λ < 1, compressed; if λ < 0, flipped and scaled; if λ = 0, the direction is collapsed to zero",
+      "D": "Eigenvectors exist only for diagonal matrices because only diagonal entries can produce the required scaling without mixing vector components"
+    },
+    "correct_answer": "C",
+    "difficulty": 1,
+    "x": 0.938974,
+    "y": 0.99,
+    "z": 0.441641,
+    "source_article": "eigenvalues",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "eigenvalues",
+      "eigenvectors",
+      "invariant directions",
+      "linear transformation"
+    ]
+  },
+  {
+    "id": "64fa42efb4f14496",
+    "question_text": "Matrix multiplication is not commutative (AB ≠ BA in general). Why not, and what does this non-commutativity represent geometrically?",
+    "options": {
+      "A": "Matrix multiplication is actually commutative for all matrices, just like ordinary number multiplication. The order AB versus BA makes no difference to the result because the entry-by-entry computation of the product matrix depends only on dot products of rows and columns, which are symmetric operations. The common claim that matrix multiplication is non-commutative is a widespread misconception that arises from computational errors when students multiply matrices by hand and get different results due to arithmetic mistakes rather than genuine non-commutativity",
+      "B": "Non-commutativity of matrix multiplication is purely a computational artifact of the row-by-column multiplication algorithm and has no geometric or physical meaning whatsoever. If matrices were multiplied using a different algorithm — for example element-wise (Hadamard) multiplication — the operation would be commutative, showing that non-commutativity is a property of our chosen algorithm rather than an intrinsic property of linear transformations. The geometric interpretation of matrices as transformations is unrelated to how we choose to multiply them",
+      "C": "Matrix multiplication is non-commutative only for non-square rectangular matrices where the dimension mismatch prevents reversing the multiplication order, but for square matrices of any size the multiplication is always commutative. This is because square matrices form a ring under addition and multiplication, and all matrix rings over commutative base fields inherit commutativity from the scalar field. The common textbook examples showing AB ≠ BA for square matrices are always constructed using matrices over non-commutative coefficient rings like the quaternions, not over the real or complex numbers",
+      "D": "Matrices represent linear transformations, and AB means 'first apply B, then apply A.' Since composing transformations in different orders generally gives different results (rotating then reflecting differs from reflecting then rotating), matrix multiplication is non-commutative. This is fundamental: it means the order of operations matters in any system described by linear transformations (quantum mechanics, computer graphics, robotics)"
+    },
+    "correct_answer": "D",
+    "difficulty": 1,
+    "x": 0.855835,
+    "y": 0.923327,
+    "z": 0.770615,
+    "source_article": "matrix multiplication",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "matrix multiplication",
+      "non-commutativity",
+      "composition of transformations",
+      "geometric interpretation"
+    ]
+  },
+  {
+    "id": "0c7a470dc20f6b68",
+    "question_text": "The rank-nullity theorem states dim(range(T)) + dim(null(T)) = dim(domain). Why is this result fundamental?",
+    "options": {
+      "A": "It tells us that every linear map trades dimension: what is 'used up' mapping to the range is exactly what is 'lost' in the kernel. For an m×n matrix A with rank r, the solution set of Ax = 0 has dimension n - r (nullity), so the total 'budget' of input dimensions is split between output dimensions (range) and collapsed dimensions (null space). This constrains everything: underdetermined systems (n > m) must have nontrivial null spaces, and full-rank square matrices must be invertible",
+      "B": "The rank-nullity theorem applies only to square matrices and has no generalization to rectangular matrices or abstract linear transformations between spaces of different dimensions",
+      "C": "The theorem simply states that all linear maps are invertible, which is a trivial consequence of the definition of linearity and requires no deep mathematical content",
+      "D": "The rank-nullity theorem is fundamentally about eigenvalues rather than dimensions of subspaces: it states that the sum of all eigenvalues of a linear map equals the dimension of the domain, which provides a constraint on the spectral decomposition rather than on the geometric structure of the range and kernel. This eigenvalue interpretation is why the theorem appears in spectral theory textbooks rather than in introductory treatments of linear maps, and it explains why the result requires the base field to be algebraically closed — eigenvalues may fail to exist over non-closed fields, invalidating the dimension count"
+    },
+    "correct_answer": "A",
+    "difficulty": 2,
+    "x": 0.872848,
+    "y": 0.839827,
+    "z": 0.058831,
+    "source_article": "rank-nullity theorem",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "rank-nullity theorem",
+      "dimension counting",
+      "kernel",
+      "range",
+      "linear map structure"
+    ]
+  },
+  {
+    "id": "b0b0068f21e7e48e",
+    "question_text": "An orthogonal matrix Q satisfies QᵀQ = I. What geometric transformations do orthogonal matrices represent?",
+    "options": {
+      "A": "Orthogonal matrices represent arbitrary scalings and shear transformations, including non-uniform stretching along coordinate axes and volume-changing deformations. The constraint QᵀQ = I merely ensures that the transformation is invertible by requiring the inverse to equal the transpose, but it places no restriction on how distances, angles, or volumes are affected by the transformation. Any invertible matrix whose transpose happens to serve as its inverse qualifies as orthogonal regardless of its geometric properties",
+      "B": "Orthogonal matrices represent rigid transformations that preserve distances and angles — rotations (when det(Q) = +1) and reflections composed with rotations (when det(Q) = -1). Their columns form an orthonormal basis. In ℝ³, det = +1 gives proper rotations (SO(3)), and det = -1 includes improper rotations (reflections). The eigenvalues of orthogonal matrices have absolute value 1, lying on the unit circle in ℂ",
+      "C": "Orthogonal matrices always have determinant equal to zero, making them singular and non-invertible despite the superficial appearance that QᵀQ = I implies invertibility. The apparent contradiction is resolved by recognizing that QᵀQ = I holds only as an approximate numerical identity rather than an exact algebraic one, because floating-point rounding errors in the Gram-Schmidt orthogonalization process prevent exact satisfaction of the orthogonality constraint in any finite-precision computation",
+      "D": "Orthogonal matrices are always diagonal matrices with entries of ±1 on the main diagonal and zeros everywhere else, because the constraint QᵀQ = I forces all off-diagonal entries to vanish"
+    },
+    "correct_answer": "B",
+    "difficulty": 2,
+    "x": 0.891017,
+    "y": 0.982041,
+    "z": 0.35942,
+    "source_article": "orthogonal matrices",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "orthogonal matrices",
+      "isometries",
+      "rotations and reflections",
+      "SO(n)"
+    ]
+  },
+  {
+    "id": "215a809011afe31c",
+    "question_text": "The Singular Value Decomposition (SVD) factors any matrix A = UΣVᵀ. What does each component represent geometrically?",
+    "options": {
+      "A": "The SVD decomposes any matrix A into three factors U, Σ, and Vᵀ that have no individual geometric interpretation — they are purely computational intermediaries for numerical algorithms",
+      "B": "The SVD exists only for square symmetric matrices and is undefined for rectangular or non-symmetric matrices, because the factorization requires equal dimensions for all three component matrices",
+      "C": "Any linear transformation A can be decomposed as: first rotate/reflect the input (Vᵀ aligns input with the principal axes), then scale along those axes (Σ contains the singular values — the amounts of stretching along each axis), then rotate/reflect the output (U aligns the scaled result in the output space). The singular values σᵢ reveal the 'importance' of each direction, making SVD the foundation for principal component analysis, low-rank approximation, pseudoinverse computation, and data compression",
+      "D": "The SVD is mathematically equivalent to eigendecomposition for every matrix and provides no additional geometric insight, structural information, or computational advantage beyond what eigenvalues and eigenvectors already reveal"
+    },
+    "correct_answer": "C",
+    "difficulty": 2,
+    "x": 0.929784,
+    "y": 0.937247,
+    "z": 0.0,
+    "source_article": "SVD",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "SVD",
+      "geometric decomposition",
+      "singular values",
+      "low-rank approximation"
+    ]
+  },
+  {
+    "id": "109b7b416a2c03c5",
+    "question_text": "A vector space requires closure under addition and scalar multiplication. The set of all polynomials of degree exactly 2 (like 3x² + x + 1) does not form a vector space. Why not?",
+    "options": {
+      "A": "Polynomials cannot be elements of a vector space because vector spaces require their elements to be arrows in Euclidean space with both magnitude and direction. Since polynomials are algebraic expressions rather than geometric objects, they fall outside the axioms of vector space theory. The concept of a vector is fundamentally tied to physical displacement in space, and any attempt to extend it to functions or polynomials is a category error",
+      "B": "The set of polynomials of degree exactly 2 fails to be a vector space because it is infinite-dimensional, and infinite-dimensional spaces cannot satisfy the vector space axioms under the standard Zermelo-Fraenkel axioms of set theory without the axiom of choice. Since the axiom of choice is required to construct a Hamel basis for any infinite-dimensional space, the existence of such vector spaces is dependent on one's foundational set-theoretic assumptions, making the degree-2 polynomial space axiomatically problematic",
+      "C": "The set of degree-exactly-2 polynomials contains too many elements to form a legitimate vector space, because vector spaces over the real numbers must have a finite or countable number of elements. The uncountable cardinality of real-valued coefficients means there are uncountably many such polynomials, which exceeds the cardinality bound that the vector space axioms implicitly impose through the requirement that every element be expressible as a finite linear combination of basis vectors",
+      "D": "The set is not closed under addition: (3x² + x) + (-3x² + 2) = x + 2, which has degree 1, not 2 — it falls outside the set. Also, the zero polynomial (degree undefined or -∞) is not degree 2, so the set lacks the zero vector. In contrast, polynomials of degree at most 2 DO form a vector space (P₂), since closure and the zero polynomial are both included"
+    },
+    "correct_answer": "D",
+    "difficulty": 2,
+    "x": 0.81247,
+    "y": 0.840159,
+    "z": 0.609874,
+    "source_article": "vector space axioms",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "vector space axioms",
+      "closure",
+      "polynomial spaces",
+      "zero vector"
+    ]
+  },
+  {
+    "id": "9c6395d3ccc707ce",
+    "question_text": "The spectral theorem states that every real symmetric matrix can be orthogonally diagonalized: A = QDQᵀ with Q orthogonal and D diagonal. Why is symmetry essential, and what does this decomposition reveal?",
+    "options": {
+      "A": "The spectral theorem reveals that real symmetric matrices have: (1) all real eigenvalues, (2) orthogonal eigenvectors for distinct eigenvalues, and (3) a complete set of eigenvectors forming an orthonormal basis. This means the transformation acts as pure scaling along mutually perpendicular directions — no rotation or shearing. Symmetry is essential because non-symmetric matrices can have complex eigenvalues and non-orthogonal eigenvectors, and may not be diagonalizable at all",
+      "B": "The spectral theorem works for all matrices regardless of symmetry, normality, or any other structural property. Every square matrix over the real numbers can be orthogonally diagonalized with real eigenvalues, because the characteristic polynomial of a real matrix always has all real roots by the intermediate value theorem applied to its real coefficients. Non-symmetric matrices like rotation matrices appear to lack real eigenvalues only because of computational errors in the root-finding algorithms",
+      "C": "Symmetry of a real matrix guarantees that all its eigenvalues are exactly zero, because the constraint aᵢⱼ = aⱼᵢ forces the diagonal entries of the similar diagonal matrix to vanish",
+      "D": "The spectral theorem actually states that real symmetric matrices cannot be diagonalized at all, because their eigenvectors are never linearly independent"
+    },
+    "correct_answer": "A",
+    "difficulty": 3,
+    "x": 0.958317,
+    "y": 0.96765,
+    "z": 0.528651,
+    "source_article": "spectral theorem",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "spectral theorem",
+      "symmetric matrices",
+      "orthogonal diagonalization",
+      "real eigenvalues"
+    ]
+  },
+  {
+    "id": "bcfdef0edee0b504",
+    "question_text": "Linear independence is a fundamental concept: vectors v₁,...,vₖ are linearly independent if no nontrivial linear combination equals zero. What is the geometric interpretation in ℝ³?",
+    "options": {
+      "A": "Linear independence in ℝ³ means that all vectors in the set must be mutually perpendicular (orthogonal) to one another, because only perpendicular vectors provide truly independent directional information. Two vectors at a 45-degree angle share a common component and are therefore partially dependent, so the geometric criterion for independence is strict perpendicularity measured by zero dot products between every pair of vectors in the set",
+      "B": "Two vectors are linearly independent iff they are not parallel (they span a plane); three vectors are linearly independent iff they are not coplanar (they span all of ℝ³). Geometrically, each additional independent vector adds a new dimension to the span that cannot be achieved by any combination of the previous vectors",
+      "C": "Vectors are linearly independent if and only if they all have the same magnitude (length), because equal-length vectors cannot be scalar multiples of one another. This equal-magnitude criterion is the geometric equivalent of the algebraic definition and provides a quick visual test: simply check whether all vectors extend to the same distance from the origin",
+      "D": "More than three vectors in ℝ³ can be linearly independent, since the dimension of a space merely limits the number of orthogonal vectors, not independent ones"
+    },
+    "correct_answer": "B",
+    "difficulty": 3,
+    "x": 0.81,
+    "y": 0.856747,
+    "z": 0.223691,
+    "source_article": "linear independence",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "linear independence",
+      "geometric interpretation",
+      "span",
+      "dimension"
+    ]
+  },
+  {
+    "id": "eee9a5892b21e71e",
+    "question_text": "The matrix exponential e^A = I + A + A²/2! + A³/3! + ⋯ arises naturally in solving systems of linear differential equations dx/dt = Ax. Why is diagonalization so useful for computing e^A?",
+    "options": {
+      "A": "Diagonalization has no connection to computing the matrix exponential, because the power series definition I + A + A²/2! + ⋯ must be summed term by term regardless of whether A has a diagonal form",
+      "B": "The matrix exponential can only ever be computed numerically through truncation of the infinite power series, and no closed-form analytical expression exists for any matrix, including diagonal ones",
+      "C": "If A = PDP⁻¹ where D = diag(λ₁,...,λₙ), then e^A = Pe^D P⁻¹ = P·diag(e^λ₁,...,e^λₙ)·P⁻¹, because the power series respects similarity: Aⁿ = PDⁿP⁻¹, so the exponential of a diagonal matrix is simply the diagonal matrix of exponentials. This converts the difficult problem of exponentiating a full matrix into exponentiating individual scalars. The solution to dx/dt = Ax becomes x(t) = e^{At}x(0), decomposed into independent exponential growths/decays along eigenvector directions",
+      "D": "Diagonalizing a matrix before computing its exponential always produces the zero matrix, because the exponential of a diagonal matrix is zero when applied to the diagonalized form through the similarity transform"
+    },
+    "correct_answer": "C",
+    "difficulty": 3,
+    "x": 0.971274,
+    "y": 0.912439,
+    "z": 0.514467,
+    "source_article": "matrix exponential",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "matrix exponential",
+      "diagonalization",
+      "linear ODE systems",
+      "similarity transformations"
+    ]
+  },
+  {
+    "id": "907e49ecdcf2894c",
+    "question_text": "The Cayley-Hamilton theorem states every square matrix satisfies its own characteristic equation. If the characteristic polynomial of A is p(λ) = det(A - λI), then p(A) = 0 (the zero matrix). Why is this theorem both surprising and practically useful?",
+    "options": {
+      "A": "The Cayley-Hamilton theorem applies only to 2×2 matrices because the proof relies on the explicit formula for the characteristic polynomial of a 2×2 matrix, which involves exactly two eigenvalues. For 3×3 and larger matrices, the characteristic polynomial has a more complex structure that prevents the analogous matrix substitution from yielding the zero matrix. Attempts to generalize the theorem to larger matrices have produced only partial results that hold under restrictive conditions such as diagonalizability or normality",
+      "B": "The Cayley-Hamilton theorem works only for diagonal matrices because the proof depends on the fact that substituting a diagonal matrix into a polynomial of its diagonal entries trivially produces the zero matrix. For non-diagonal matrices, the off-diagonal entries interfere with the clean substitution and prevent the characteristic polynomial from evaluating to zero. This is why the theorem is considered a trivial observation about diagonal matrices rather than a deep result about general matrices",
+      "C": "The Cayley-Hamilton theorem is trivially obvious and requires no proof because the characteristic polynomial is defined as det(A - λI) = 0 when λ is an eigenvalue, so substituting the matrix A for the scalar λ directly gives det(A - AI) = det(0) = 0, which is the zero matrix. The 'theorem' is merely a restatement of the definition of eigenvalues in matrix form, and the fact that it appears in textbooks as a theorem reflects historical convention rather than any genuine mathematical content requiring demonstration",
+      "D": "It is surprising because substituting a matrix into det(A - λI) is not obviously well-defined (the determinant is a scalar polynomial, but we substitute a matrix for λ). The result means A⁻¹ (if it exists) can be expressed as a polynomial in A of degree n-1: from p(A) = Aⁿ + cₙ₋₁Aⁿ⁻¹ + ⋯ + c₀I = 0, we get A⁻¹ = -(1/c₀)(Aⁿ⁻¹ + ⋯ + c₁I). This also means every matrix polynomial of degree ≥ n can be reduced to degree n-1, and it provides a theoretical foundation for minimal polynomials"
+    },
+    "correct_answer": "D",
+    "difficulty": 3,
+    "x": 0.936329,
+    "y": 0.892835,
+    "z": 0.593114,
+    "source_article": "Cayley-Hamilton theorem",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Cayley-Hamilton theorem",
+      "characteristic polynomial",
+      "matrix inverse computation",
+      "minimal polynomial"
+    ]
+  },
+  {
+    "id": "9f811a78cc84d4ff",
+    "question_text": "A positive definite matrix A (where xᵀAx > 0 for all nonzero x) appears throughout optimization, statistics, and physics. What are the equivalent characterizations of positive definiteness, and why is it so important?",
+    "options": {
+      "A": "A real symmetric matrix A is positive definite iff ANY of these equivalent conditions hold: (1) all eigenvalues are positive, (2) all leading principal minors are positive (Sylvester's criterion), (3) A = BᵀB for some invertible B (Cholesky: A = LLᵀ), (4) xᵀAx > 0 for all x ≠ 0. It is important because: xᵀAx defines an ellipsoidal norm, guaranteeing convexity of quadratic forms (enabling optimization), ensuring covariance matrices in statistics are valid, and providing stability conditions in dynamical systems",
+      "B": "Positive definite matrices exist only in two dimensions because the quadratic form xᵀAx can be visualized as an ellipse only in the plane",
+      "C": "Positive definiteness of a matrix has no connection whatsoever to its eigenvalues, because the condition xᵀAx > 0 depends on the entries of A directly rather than on its spectral decomposition",
+      "D": "A matrix is positive definite if and only if every single entry in the matrix is a positive real number, because the quadratic form xᵀAx is a weighted sum of the entries and can only be guaranteed positive when every weight (entry) is positive. Matrices with any negative entries will produce negative values of xᵀAx for certain choices of x that weight the negative entries heavily, violating the positive definiteness condition. This entry-wise positivity criterion provides a simple visual test: just check whether all numbers in the matrix are greater than zero, which is far easier than computing eigenvalues or leading principal minors"
+    },
+    "correct_answer": "A",
+    "difficulty": 4,
+    "x": 0.947454,
+    "y": 0.864409,
+    "z": 0.554207,
+    "source_article": "positive definite matrices",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "positive definite matrices",
+      "Cholesky decomposition",
+      "Sylvester criterion",
+      "quadratic forms",
+      "optimization"
+    ]
+  },
+  {
+    "id": "6b83cce509eea61d",
+    "question_text": "The Jordan normal form generalizes diagonalization to matrices that are not diagonalizable. What does a Jordan block look like, and when does a matrix fail to be diagonalizable?",
+    "options": {
+      "A": "All matrices over any field are diagonalizable, which makes the Jordan normal form completely unnecessary as a theoretical construct. The fundamental theorem of algebra guarantees that the characteristic polynomial splits into linear factors, and each linear factor produces an independent eigenvector. Since the number of eigenvectors always equals the algebraic multiplicity of each eigenvalue, every matrix has a full basis of eigenvectors and can be diagonalized. Defective matrices appear to exist only because of numerical instability in eigenvalue algorithms, not because of any genuine algebraic obstruction to diagonalization",
+      "B": "A Jordan block Jₖ(λ) is a k×k upper triangular matrix with eigenvalue λ on the diagonal and 1's on the superdiagonal. A matrix fails to be diagonalizable when it has fewer linearly independent eigenvectors than its dimension — i.e., the geometric multiplicity (dimension of eigenspace) is less than the algebraic multiplicity (multiplicity as root of characteristic polynomial) for some eigenvalue. The Jordan form reveals the 'defect' structure: each Jordan block beyond size 1×1 represents a missing eigenvector, replaced by a generalized eigenvector",
+      "C": "Jordan blocks are matrices consisting entirely of zeros arranged in the standard block diagonal pattern, containing no eigenvalue information and having no significance for computation, theoretical analysis, or structural classification of linear operators. The 1's on the superdiagonal that some textbooks include are a notational convention with no mathematical meaning, and the block size carries no information about the geometric or algebraic multiplicity of the eigenvalue. Jordan form is taught for purely historical reasons and has been superseded by the Schur decomposition in all modern applications",
+      "D": "Jordan normal form can only be computed for symmetric matrices, because the proof of existence relies on the spectral theorem which requires the matrix to equal its own transpose"
+    },
+    "correct_answer": "B",
+    "difficulty": 4,
+    "x": 0.969348,
+    "y": 0.898554,
+    "z": 0.630638,
+    "source_article": "Jordan normal form",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Jordan normal form",
+      "defective matrices",
+      "geometric vs algebraic multiplicity",
+      "generalized eigenvectors"
+    ]
+  },
+  {
+    "id": "9419b2f95170cb12",
+    "question_text": "Inner product spaces generalize the dot product to abstract vector spaces. The Gram-Schmidt process converts any basis to an orthonormal basis. What is the key idea, and why does orthonormality matter?",
+    "options": {
+      "A": "The Gram-Schmidt process works only for vectors in ℝ² (two-dimensional Euclidean space) and cannot be generalized to ℝ³ or higher-dimensional spaces. The projection formula used in the algorithm involves division by the inner product of the basis vectors, and in dimensions greater than two these inner products can vanish for non-orthogonal vectors, causing the algorithm to fail with division-by-zero errors. Higher-dimensional orthogonalization requires entirely different algorithms such as Householder reflections or Givens rotations, which do not share Gram-Schmidt's dimensional limitation",
+      "B": "Orthonormal bases provide no computational, theoretical, or practical advantage over arbitrary bases for any linear algebra operation. The claim that orthonormal bases simplify calculations is a pedagogical myth: computing projections, solving least-squares problems, and evaluating matrix decompositions all require the same number of arithmetic operations regardless of whether the basis is orthonormal. The preference for orthonormal bases in textbooks reflects aesthetic taste rather than genuine computational benefit, because modern computer arithmetic handles non-orthogonal bases with equal efficiency and numerical stability",
+      "C": "Gram-Schmidt iteratively subtracts projections: each new vector is made orthogonal to all previous ones by removing its components along them, then normalized. Orthonormality matters because: (1) coordinates are computed by simple inner products (cᵢ = ⟨v,eᵢ⟩), not by solving systems; (2) the matrix representation of linear maps in orthonormal bases preserves inner products; (3) it enables QR factorization, which is the numerical backbone of eigenvalue algorithms (QR iteration), least-squares solutions, and stable linear system solving",
+      "D": "The Gram-Schmidt process requires the input vectors to be linearly dependent, because the projection-subtraction step needs overlapping components between vectors to produce meaningful orthogonal residuals. When applied to linearly independent vectors, the algorithm produces zero vectors at intermediate steps because independent vectors have no shared components to subtract, causing the normalization step to fail with division by zero. This is why Gram-Schmidt is used to find the rank of a set of vectors rather than to produce orthonormal bases"
+    },
+    "correct_answer": "C",
+    "difficulty": 4,
+    "x": 0.903446,
+    "y": 0.91314,
+    "z": 0.161041,
+    "source_article": "Gram-Schmidt process",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Gram-Schmidt process",
+      "orthonormal basis",
+      "QR factorization",
+      "inner product spaces"
+    ]
+  },
+  {
+    "id": "b62002698b4812a7",
+    "question_text": "Tensor products extend the concept of outer products to abstract vector spaces. If V and W are vector spaces, what is V ⊗ W, and why can't it be replaced by the Cartesian product V × W?",
+    "options": {
+      "A": "Tensor products and Cartesian products are identical constructions that produce the same mathematical object — the only difference is notational convention between the ⊗ and × symbols",
+      "B": "Tensor products can only be defined for finite-dimensional vector spaces, because the construction requires choosing a finite basis and defining the product space as formal combinations of basis-pair elements",
+      "C": "Tensor products are a construction in pure abstract algebra with no applications outside of theoretical mathematics, having no relevance to physics, engineering, computer science, or any applied discipline",
+      "D": "V ⊗ W is a new vector space whose elements are formal sums of 'pure tensors' v ⊗ w, with the bilinear property: (αv₁ + βv₂) ⊗ w = α(v₁ ⊗ w) + β(v₂ ⊗ w). Its dimension is dim(V) · dim(W), not dim(V) + dim(W) as for V × W. The Cartesian product V × W only captures 'independent pairs' and cannot represent bilinear relationships. Tensor products are essential for: quantum mechanics (composite systems live in H₁ ⊗ H₂, not H₁ × H₂ — this is why entanglement exists), multilinear algebra, and differential geometry (tensor fields on manifolds)"
+    },
+    "correct_answer": "D",
+    "difficulty": 4,
+    "x": 0.827546,
+    "y": 0.951234,
+    "z": 0.458737,
+    "source_article": "tensor products",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "tensor products",
+      "bilinearity",
+      "Cartesian product vs tensor product",
+      "quantum entanglement",
+      "multilinear algebra"
+    ]
+  },
+  {
+    "id": "f2cf40c7f1e9d884",
+    "question_text": "The Perron-Frobenius theorem describes the spectral properties of matrices with positive entries. What does it state, and where does it apply?",
+    "options": {
+      "A": "A positive matrix (all entries > 0) has a unique largest eigenvalue that is: (1) real and positive, (2) has algebraic and geometric multiplicity 1, (3) has a corresponding eigenvector with all positive components, and (4) is strictly greater in absolute value than all other eigenvalues. This theorem underpins Google's PageRank (the stationary distribution of web surfing), Markov chain convergence (guaranteeing unique steady states), population dynamics (dominant growth mode), and economic input-output models (Leontief)",
+      "B": "The Perron-Frobenius theorem applies to all square matrices regardless of the sign of their entries, because the proof relies only on the compactness of the unit sphere and the continuity of the map x → Ax/‖Ax‖",
+      "C": "The Perron-Frobenius theorem states that matrices with all positive entries always have zero as their dominant eigenvalue, because positive entries cause cancellation in the characteristic polynomial",
+      "D": "The Perron-Frobenius theorem is relevant only to 2×2 matrices with positive entries, where the dominant eigenvalue can be computed by the quadratic formula, and has no generalization to higher dimensions"
+    },
+    "correct_answer": "A",
+    "difficulty": 5,
+    "x": 0.99,
+    "y": 0.858736,
+    "z": 0.333372,
+    "source_article": "Perron-Frobenius theorem",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Perron-Frobenius theorem",
+      "dominant eigenvalue",
+      "positive matrices",
+      "PageRank",
+      "Markov chains"
+    ]
+  },
+  {
+    "id": "120a9df3f6c565d2",
+    "question_text": "The spectral theorem for normal operators generalizes from real symmetric matrices to complex matrices. What class of matrices does it cover, and what does 'normal' mean?",
+    "options": {
+      "A": "Normal matrices have no special structural properties beyond being square, and the normality condition AA* = A*A is automatically satisfied by every matrix because matrix multiplication with the conjugate transpose is always commutative. This means that every square matrix is trivially normal, and the spectral theorem for normal operators is actually a universal theorem about all square matrices without exception. The concept of normality was introduced only to provide a convenient name for this universal property, not to identify a restricted class of matrices with special behavior",
+      "B": "A matrix A is normal iff AA* = A*A (it commutes with its conjugate transpose). The spectral theorem for normal operators states that A is unitarily diagonalizable: A = UDU* with U unitary and D diagonal (complex entries). This class includes: Hermitian (A = A*), unitary (AA* = I), skew-Hermitian (A = -A*), and real symmetric, orthogonal matrices as special cases. Normality is the exact condition for having a complete orthonormal set of eigenvectors in ℂⁿ, and for the eigenvalue decomposition to be 'nice' (unitary rather than general similarity)",
+      "C": "The spectral theorem for normal operators works exclusively over the real numbers and fails completely when extended to the complex field, because complex eigenvalues cannot be ordered on the real line and the notion of orthogonal diagonalization requires a real inner product. Over ℂ, normal matrices can only be reduced to upper triangular form (Schur decomposition) rather than fully diagonalized, and the unitary matrices required for diagonalization do not exist in the complex setting. This real-only limitation is the primary reason that many applications in signal processing and quantum mechanics use real-valued matrix models",
+      "D": "Normal matrices must have all real eigenvalues, which is the defining property that distinguishes them from non-normal matrices whose eigenvalues can be complex"
+    },
+    "correct_answer": "B",
+    "difficulty": 5,
+    "x": 0.962618,
+    "y": 0.932822,
+    "z": 0.449843,
+    "source_article": "normal matrices",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "normal matrices",
+      "unitary diagonalization",
+      "spectral theorem",
+      "Hermitian matrices"
+    ]
+  },
+  {
+    "id": "b7c7872d490c24c6",
+    "question_text": "The condition number of a matrix κ(A) = ‖A‖·‖A⁻¹‖ measures sensitivity of the solution of Ax = b to perturbations. Why is this concept critical for numerical computation, and what determines whether a matrix is ill-conditioned?",
+    "options": {
+      "A": "The condition number of every invertible matrix is exactly 1, because invertibility guarantees that the solution Ax = b exists and is unique, which means the system is perfectly well-conditioned",
+      "B": "The condition number matters only for extremely large matrices (dimension 10,000 or more), where accumulated rounding errors become significant. For small and medium-sized systems, floating-point arithmetic is always exact enough to produce correct solutions regardless of the matrix structure",
+      "C": "For the 2-norm, κ(A) = σ_max/σ_min (ratio of largest to smallest singular value). A small perturbation δb in the right-hand side can cause a relative change in the solution of up to κ(A) times the relative perturbation: ‖δx‖/‖x‖ ≤ κ(A)·‖δb‖/‖b‖. Large κ (ill-conditioning) means the matrix nearly maps some direction to zero (σ_min ≈ 0), amplifying numerical errors catastrophically. This arises physically when variables are nearly collinear (multicollinearity in regression), when discretization is too coarse, or when the problem is inherently sensitive to perturbations",
+      "D": "Ill-conditioning means that the matrix has complex eigenvalues with large imaginary parts, which cause oscillatory instabilities in the solution process. Well-conditioned matrices have purely real eigenvalues, and the transition from real to complex eigenvalues marks the boundary between numerical stability and instability. The condition number measures the magnitude of the imaginary parts of the eigenvalues relative to the real parts, with κ(A) ≈ 1 indicating purely real eigenvalues and κ(A) → ∞ indicating eigenvalues with dominant imaginary components that produce uncontrollable oscillations in iterative solvers"
+    },
+    "correct_answer": "C",
+    "difficulty": 5,
+    "x": 0.949905,
+    "y": 0.8205,
+    "z": 0.135048,
+    "source_article": "condition number",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "condition number",
+      "numerical stability",
+      "singular values",
+      "ill-conditioning",
+      "perturbation analysis"
+    ]
+  },
+  {
+    "id": "bfaa678d535b0a61",
+    "question_text": "Representation theory studies how abstract algebraic structures (groups, rings, algebras) act on vector spaces via linear transformations. Why is the connection between group theory and linear algebra so powerful?",
+    "options": {
+      "A": "Representation theory has no practical applications in physics, chemistry, engineering, or computer science and exists purely as an exercise in abstract algebra. The connection between group actions and vector spaces is a mathematical curiosity without computational utility, because the representation matrices are typically as difficult to analyze as the original abstract group elements they encode. Applications claimed in quantum mechanics (angular momentum, selection rules), chemistry (molecular orbitals, spectroscopy), and signal processing (Fourier analysis) could all be developed without reference to representation theory using direct computational methods",
+      "B": "Groups and vector spaces are fundamentally unrelated mathematical structures that cannot interact in any meaningful algebraic way. Groups are defined by a single binary operation satisfying closure, associativity, identity, and inverses, while vector spaces require two operations (addition and scalar multiplication) satisfying a completely different set of axioms. The deep algebraic incompatibility between these two distinct axiomatic systems means that no group element can act naturally on a vector space, and any attempt to represent group elements as invertible matrices necessarily produces an artificial correspondence that loses the essential algebraic structure of the original group. This is why category theorists consider the functor from groups to matrix rings to be unfaithful",
+      "C": "Representation theory applies only to finite groups with a small number of elements and cannot be extended to infinite groups such as the rotation group SO(3), the Lorentz group, or Lie groups in general. The proof of complete reducibility (Maschke's theorem) requires dividing by the order of the group, which is only defined and possible for finite groups. Since most of the physically important symmetry groups — the rotation group, the Poincaré group, and the gauge groups of the Standard Model — are continuous Lie groups with uncountably many elements, representation theory provides no tools for the applications in physics and chemistry where it is most commonly invoked",
+      "D": "Representing group elements as matrices converts abstract algebraic problems into concrete linear algebra: character theory (traces of representation matrices) classifies all representations of finite groups, Schur's lemma constrains homomorphisms between irreducible representations, and Maschke's theorem guarantees complete reducibility for finite groups over ℂ. Applications span: physics (particle classification via Lie group representations, selection rules from representation theory of symmetry groups), chemistry (molecular orbital symmetry via point group representations), and machine learning (equivariant neural networks preserving symmetry)"
+    },
+    "correct_answer": "D",
+    "difficulty": 5,
+    "x": 0.887224,
+    "y": 0.918365,
+    "z": 0.333246,
+    "source_article": "representation theory",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "representation theory",
+      "group actions on vector spaces",
+      "character theory",
+      "Schur's lemma",
+      "applications"
+    ]
+  },
+  {
+    "id": "d83a0a3aa1dc7ec6",
+    "question_text": "A system of linear equations can have zero, one, or infinitely many solutions. What determines which case occurs, and why can't a system have exactly two solutions?",
+    "options": {
+      "A": "The solution set of a linear system is an affine subspace (a translate of the null space of the coefficient matrix), which is either empty, a single point, or infinite — if two distinct solutions exist, their difference is in the null space, so all affine combinations also solve the system, forcing infinitely many solutions",
+      "B": "A system of linear equations can have exactly two solutions when the coefficient matrix has rank n-1, creating a pair of mirror-image solution points that are symmetric about the origin of the coordinate system — the reflection symmetry of the solution set allows exactly two points to satisfy all equations simultaneously, which contradicts the affine subspace structure theorem",
+      "C": "The number of solutions to a linear system is always exactly equal to the number of variables minus the number of equations, so a system with more variables than equations always has a finite number of solutions equal to the difference, and a system with equal numbers of variables and equations always has exactly one solution regardless of the coefficient values",
+      "D": "Whether a system of linear equations has zero, one, or infinitely many solutions depends only on the dimensions (number of rows and columns) of the coefficient matrix and not on the actual numerical entries of the matrix, so all 3×3 systems of three equations in three unknowns behave identically with respect to their solution count regardless of what specific numbers appear"
+    },
+    "correct_answer": "A",
+    "difficulty": 1,
+    "x": 0.843787,
+    "y": 0.764744,
+    "z": 0.768292,
+    "source_article": "solution sets",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "solution sets",
+      "affine subspaces",
+      "null space",
+      "linear systems"
+    ]
+  },
+  {
+    "id": "6dc45c67979c78f2",
+    "question_text": "Matrix transposition interchanges rows and columns. What fundamental property does it satisfy with respect to products, and why is the order reversal important?",
+    "options": {
+      "A": "The transpose of a product satisfies (AB)ᵀ = AᵀBᵀ, preserving the original order of multiplication because transposition distributes over matrix multiplication in the same way that scalar multiplication distributes over addition — there is no reversal of order, and the transposition operation simply passes through the product factor by factor without any rearrangement",
+      "B": "The transpose of a product reverses the order: (AB)ᵀ = BᵀAᵀ — this reversal is necessary because the (i,j) entry of (AB)ᵀ is the (j,i) entry of AB, which involves row j of A and column i of B, matching column j of Aᵀ and row i of Bᵀ, requiring the reversed product BᵀAᵀ",
+      "C": "Transposition has no consistent relationship with matrix products and the result of transposing AB depends entirely on whether both A and B happen to be symmetric matrices",
+      "D": "The transpose of a product satisfies (AB)ᵀ = BᵀAᵀ only for square matrices and fails for all rectangular matrices because dimensional compatibility is lost"
+    },
+    "correct_answer": "B",
+    "difficulty": 1,
+    "x": 0.866354,
+    "y": 0.866107,
+    "z": 0.902231,
+    "source_article": "matrix transpose",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "matrix transpose",
+      "product reversal",
+      "index manipulation"
+    ]
+  },
+  {
+    "id": "6fc1df17d5cc1d25",
+    "question_text": "The trace of a square matrix is the sum of its diagonal entries. What algebraic property makes trace fundamentally important in linear algebra, and what is its relationship to eigenvalues?",
+    "options": {
+      "A": "The trace of a square matrix equals the product (not the sum) of the eigenvalues, which is why it determines the determinant rather than providing an independent invariant of the matrix — the trace and determinant are therefore the same function expressed in different notation, and knowing one always gives you the other directly without any additional computation",
+      "B": "The trace is defined only for symmetric matrices because non-symmetric matrices have complex diagonal entries that prevent meaningful summation",
+      "C": "The trace equals the sum of the eigenvalues (counted with algebraic multiplicity) and satisfies tr(AB) = tr(BA) for all compatible matrices — this cyclic property makes trace a similarity invariant, meaning similar matrices have the same trace, because tr(P⁻¹AP) = tr(APP⁻¹) = tr(A)",
+      "D": "The trace of a matrix depends on the particular choice of basis used to represent the underlying linear transformation, and it changes its value when a different basis is selected for the same vector space — the trace is therefore not an intrinsic property of the transformation itself but rather an artifact of the coordinate system, making it unsuitable as a similarity invariant in abstract linear algebra"
+    },
+    "correct_answer": "C",
+    "difficulty": 1,
+    "x": 0.917297,
+    "y": 0.926256,
+    "z": 0.52261,
+    "source_article": "trace",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "trace",
+      "eigenvalue sum",
+      "cyclic property",
+      "similarity invariant"
+    ]
+  },
+  {
+    "id": "969ec42cd8dc4c49",
+    "question_text": "The null space (kernel) of a matrix A consists of all vectors x such that Ax = 0. Why is the null space always a subspace, and what does its dimension tell you?",
+    "options": {
+      "A": "The null space of a matrix A is a subspace of the domain only when A is an invertible matrix, because singular matrices produce solution sets to Ax = 0 that are not closed under vector addition or scalar multiplication — the closure properties that define a subspace break down when the matrix has zero eigenvalues or a nontrivial kernel of dimension greater than zero",
+      "B": "The dimension of the null space (nullity) of a matrix always equals the rank of that same matrix, so matrices with large null spaces necessarily also have high rank — a matrix with a 5-dimensional null space operating on a 10-dimensional domain must therefore have rank 5, but this would also mean every matrix has nullity equal to rank, contradicting the rank-nullity theorem",
+      "C": "The null space of any matrix with real-valued entries contains only the zero vector, since the equation Ax = 0 can only be satisfied trivially when all entries of A are real numbers — nontrivial null spaces arise only for matrices with complex entries, because complex arithmetic allows cancellation patterns that real arithmetic cannot produce",
+      "D": "The null space is always a subspace because it is closed under addition and scalar multiplication (if Ax = 0 and Ay = 0, then A(x+y) = 0 and A(cx) = 0), and its dimension — the nullity — satisfies rank + nullity = n, measuring the degrees of freedom lost by the transformation"
+    },
+    "correct_answer": "D",
+    "difficulty": 1,
+    "x": 0.85976,
+    "y": 0.807603,
+    "z": 0.315307,
+    "source_article": "null space",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "null space",
+      "subspace closure",
+      "nullity",
+      "rank-nullity theorem"
+    ]
+  },
+  {
+    "id": "686e125c9abd7562",
+    "question_text": "Projection matrices project vectors onto subspaces. What algebraic property characterizes an orthogonal projection matrix, and why does it matter geometrically?",
+    "options": {
+      "A": "An orthogonal projection matrix P satisfies P² = P (idempotent) and Pᵀ = P (symmetric) — idempotency means projecting twice gives the same result as projecting once, and symmetry ensures the projection direction is perpendicular to the target subspace, so the error vector x - Px is orthogonal to the column space of P",
+      "B": "A projection matrix is characterized by the property P² = I (involutory), meaning that applying the projection twice returns the original vector to its starting position, which is why all projection matrices are invertible with P⁻¹ = P — this confuses projections with reflections, since the correct idempotency condition for projections is P² = P, not P² = I",
+      "C": "Orthogonal projection matrices must have all eigenvalues equal to 1/2 because the projection splits the vector exactly halfway between the subspace and its complement",
+      "D": "Projection matrices are defined only in two-dimensional vector spaces and fundamentally cannot be generalized to three-dimensional or higher-dimensional spaces because the concept of orthogonal complement requires exactly two perpendicular directions — this is entirely wrong since orthogonal projections onto subspaces of any dimension are well-defined in any inner product space of any dimension"
+    },
+    "correct_answer": "A",
+    "difficulty": 1,
+    "x": 0.873996,
+    "y": 0.872468,
+    "z": 0.78414,
+    "source_article": "orthogonal projection",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "orthogonal projection",
+      "idempotent matrices",
+      "symmetric matrices",
+      "least squares geometry"
+    ]
+  },
+  {
+    "id": "ec026a61c8d42f4c",
+    "question_text": "Similar matrices A and B satisfy B = P⁻¹AP for some invertible P. What does similarity preserve, and why does it represent a change of basis rather than a change of transformation?",
+    "options": {
+      "A": "Similar matrices always have identical entries and differ only in the labeling of their rows and columns, making similarity the same as matrix equality",
+      "B": "Similar matrices represent the same linear transformation in different bases — they share eigenvalues, trace, determinant, characteristic polynomial, and rank because these are intrinsic properties of the transformation, not artifacts of the coordinate system used to represent it",
+      "C": "Similarity between matrices preserves only the size (number of rows and columns) of the matrix but does not preserve any algebraic properties such as eigenvalues, determinant, trace, rank, or characteristic polynomial — these properties all depend on the specific numerical entries of the matrix and change when a different basis is used to represent the same linear transformation",
+      "D": "Two matrices are similar if and only if they have the same dimensions, meaning every 3×3 matrix is similar to every other 3×3 matrix"
+    },
+    "correct_answer": "B",
+    "difficulty": 1,
+    "x": 0.91011,
+    "y": 0.851397,
+    "z": 0.893756,
+    "source_article": "similar matrices",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "similar matrices",
+      "change of basis",
+      "invariants",
+      "eigenvalue preservation"
+    ]
+  },
+  {
+    "id": "4392e0d3c16515c3",
+    "question_text": "The characteristic polynomial of A is det(A - λI). Why do its roots give the eigenvalues, and what information does the algebraic multiplicity of a root provide versus the geometric multiplicity?",
+    "options": {
+      "A": "The roots of the characteristic polynomial det(A - λI) = 0 are the eigenvalues of A only in the special case when A is a real symmetric matrix, and for general non-symmetric matrices the eigenvalues must be found through completely different algebraic methods that do not involve the characteristic polynomial at all — this is false because the eigenvalues of any square matrix are always the roots of its characteristic polynomial",
+      "B": "The algebraic multiplicity and geometric multiplicity of every eigenvalue are always exactly equal for every square matrix without exception, so there is never any distinction between the two concepts in any context — this is wrong because defective matrices have eigenvalues where the geometric multiplicity (dimension of eigenspace) is strictly less than the algebraic multiplicity (root multiplicity in the characteristic polynomial)",
+      "C": "The eigenvalues are roots of det(A - λI) = 0 because Ax = λx requires (A - λI)x = 0 to have nontrivial solutions, which happens exactly when A - λI is singular — algebraic multiplicity is the root's multiplicity in the polynomial, while geometric multiplicity is the dimension of the eigenspace, and geometric ≤ algebraic always holds, with equality for diagonalizable matrices",
+      "D": "The characteristic polynomial of a matrix determines only the largest eigenvalue through its leading coefficient and provides no information about the remaining eigenvalues, which must instead be computed separately via the adjugate matrix — this is false because all eigenvalues appear as roots of the characteristic polynomial, and the leading coefficient simply reflects the degree"
+    },
+    "correct_answer": "C",
+    "difficulty": 2,
+    "x": 0.932656,
+    "y": 0.874106,
+    "z": 0.994559,
+    "source_article": "characteristic polynomial",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "characteristic polynomial",
+      "algebraic vs geometric multiplicity",
+      "diagonalizability",
+      "eigenvalue computation"
+    ]
+  },
+  {
+    "id": "444e178d7bc72e24",
+    "question_text": "An inner product on a vector space generalizes the dot product. What axioms must it satisfy, and why do these axioms ensure the Cauchy-Schwarz inequality holds?",
+    "options": {
+      "A": "An inner product on a vector space must only satisfy linearity in the first argument; conjugate symmetry, positive definiteness, and sesquilinearity are all optional convenience assumptions that can be dropped without affecting any theorems about orthogonality, projections, or the Cauchy-Schwarz inequality — this is wrong because all three axioms (linearity, conjugate symmetry, positive definiteness) are essential for the theory",
+      "B": "Inner products are defined only on the concrete Euclidean space ℝⁿ equipped with the standard dot product u·v = Σuᵢvᵢ, and the concept cannot be meaningfully extended to function spaces such as L²[a,b], complex vector spaces such as ℂⁿ, or abstract vector spaces — this is false because inner products generalize naturally to any vector space via the axioms of linearity, symmetry, and positive definiteness",
+      "C": "The Cauchy-Schwarz inequality |⟨u,v⟩| ≤ ‖u‖·‖v‖ is an additional axiom that must be separately postulated as part of the definition of an inner product because it cannot be derived as a logical consequence of the other inner product properties — this is incorrect because Cauchy-Schwarz is a theorem that follows from positive definiteness by analyzing the discriminant of ⟨u-tv, u-tv⟩ ≥ 0",
+      "D": "An inner product must be linear in one argument, conjugate-symmetric (⟨u,v⟩ = conjugate of ⟨v,u⟩), and positive-definite (⟨v,v⟩ > 0 for v ≠ 0) — these axioms suffice to prove Cauchy-Schwarz by analyzing the non-negativity of ⟨u - tv, u - tv⟩ ≥ 0 as a quadratic in t, whose non-negative discriminant yields the inequality"
+    },
+    "correct_answer": "D",
+    "difficulty": 2,
+    "x": 0.843323,
+    "y": 0.845953,
+    "z": 0.491248,
+    "source_article": "inner product axioms",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "inner product axioms",
+      "Cauchy-Schwarz inequality",
+      "positive definiteness",
+      "abstract vector spaces"
+    ]
+  },
+  {
+    "id": "c20b2ced58e8f39a",
+    "question_text": "The LU decomposition factors a matrix A = LU where L is lower triangular and U is upper triangular. When does it exist without pivoting, and why is it useful for solving multiple systems with the same coefficient matrix?",
+    "options": {
+      "A": "LU decomposition exists without pivoting when all leading principal minors of A are nonzero — once A = LU is computed (O(n³) cost), solving Ax = b reduces to two triangular solves Ly = b and Ux = y (each O(n²)), making it efficient when the same A is used with many different right-hand sides b",
+      "B": "LU decomposition always exists for every square matrix without requiring any pivoting or row interchanges, regardless of whether any diagonal entry encountered during the Gaussian elimination process becomes zero — this is false because LU without pivoting requires all leading principal minors to be nonzero, and a zero pivot necessitates row swaps (partial pivoting) to obtain a PA = LU factorization",
+      "C": "LU decomposition is always slower and less efficient than direct Gaussian elimination for every possible application because it requires computing and storing two separate triangular matrix factorizations instead of directly reducing the augmented matrix to row echelon form — this reverses the truth since LU stores the elimination in a reusable form that is faster for multiple right-hand sides",
+      "D": "The LU decomposition requires A to be symmetric positive definite, which is why Cholesky decomposition is simply another name for LU factorization"
+    },
+    "correct_answer": "A",
+    "difficulty": 2,
+    "x": 0.935751,
+    "y": 0.815188,
+    "z": 0.449965,
+    "source_article": "LU decomposition",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "LU decomposition",
+      "triangular systems",
+      "leading principal minors",
+      "computational efficiency"
+    ]
+  },
+  {
+    "id": "5f6a288694afe698",
+    "question_text": "A linear transformation T: V → W is determined by its action on a basis. Why is this true, and what constraint does linearity impose on how T maps arbitrary vectors?",
+    "options": {
+      "A": "A linear transformation is not determined by its values on a basis because it is possible for two linear maps to agree on every single basis vector and yet still differ on some non-basis vector that lies in the span of the basis — this contradicts the fundamental theorem that linearity forces T(Σcᵢvᵢ) = ΣcᵢT(vᵢ), uniquely determining T on all vectors from its basis images",
+      "B": "Since every vector v in V can be uniquely written as v = c₁v₁ + ... + cₙvₙ in the basis, linearity forces T(v) = c₁T(v₁) + ... + cₙT(vₙ) — knowing T on the basis determines T everywhere, and this extends uniquely because the basis coefficients are unique, leaving no freedom in how T maps any vector",
+      "C": "A linear transformation on a finite-dimensional space is determined by its action on a basis only when that basis happens to be orthonormal, and for non-orthonormal bases additional information beyond the images of the basis vectors is required to reconstruct the transformation — this is wrong because any basis suffices: unique basis coefficients plus linearity determine T everywhere",
+      "D": "Linearity means T preserves norms (‖T(v)‖ = ‖v‖ for all v), which is why knowing T on a basis suffices — the norm-preservation condition propagates to all vectors automatically"
+    },
+    "correct_answer": "B",
+    "difficulty": 2,
+    "x": 0.83421,
+    "y": 0.852246,
+    "z": 0.706859,
+    "source_article": "linear transformation determination",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "linear transformation determination",
+      "basis representation",
+      "uniqueness of extension"
+    ]
+  },
+  {
+    "id": "accff3be3fb09e99",
+    "question_text": "Hermitian matrices (A = A*) generalize symmetric real matrices to the complex case. Why are all eigenvalues of a Hermitian matrix real, despite the matrix potentially having complex entries?",
+    "options": {
+      "A": "Hermitian matrices can have complex eigenvalues, but they always occur in conjugate pairs so that the sum of eigenvalues appears to be real even though individual eigenvalues may be complex — this is wrong because every individual eigenvalue of a Hermitian matrix is real, not just their sum",
+      "B": "The eigenvalues are real only when the Hermitian matrix also happens to have all real entries, and complex-entry Hermitian matrices can have purely imaginary eigenvalues",
+      "C": "If Ax = λx with A = A*, then λ⟨x,x⟩ = ⟨Ax,x⟩ = ⟨x,A*x⟩ = ⟨x,Ax⟩ = conjugate(λ)⟨x,x⟩ — since ⟨x,x⟩ > 0 for eigenvectors, λ = conjugate(λ), so λ is real; this is the spectral reality that enables the spectral theorem for Hermitian operators",
+      "D": "Hermitian matrices are by definition required to have only real entries, so the question of complex eigenvalues never arises"
+    },
+    "correct_answer": "C",
+    "difficulty": 2,
+    "x": 0.954094,
+    "y": 0.903953,
+    "z": 0.95422,
+    "source_article": "Hermitian matrices",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Hermitian matrices",
+      "real eigenvalues",
+      "inner product argument",
+      "spectral theorem"
+    ]
+  },
+  {
+    "id": "37fe2cb71e63b57d",
+    "question_text": "A quadratic form Q(x) = xᵀAx maps vectors to scalars. Why can we always assume A is symmetric when studying quadratic forms, and how does the signature of A determine the form's geometry?",
+    "options": {
+      "A": "Quadratic forms xᵀAx require A to be a diagonal matrix because non-diagonal matrices cannot produce cross-terms like xᵢxⱼ in the quadratic expression — this is entirely incorrect because any square matrix A generates a quadratic form, and the symmetric part (A+Aᵀ)/2 captures all cross-terms through off-diagonal entries that pair variables xᵢ and xⱼ with appropriate coefficients",
+      "B": "The matrix A in a quadratic form must be unique — there is never more than one matrix that produces a given quadratic form, so the assumption of symmetry is a theorem rather than a convention",
+      "C": "The signature of A (the numbers of positive, negative, and zero eigenvalues of the symmetric part) is irrelevant to the quadratic form's behavior because any rotation of the coordinate system can always make all eigenvalues positive — this is wrong because Sylvester's law of inertia guarantees the signature is invariant under congruence transformations, so no change of coordinates can alter it",
+      "D": "Since xᵀAx = xᵀ((A+Aᵀ)/2)x for any A, we can replace A by its symmetric part without changing the quadratic form — the signature (numbers of positive, negative, and zero eigenvalues of the symmetric part) then classifies the form as positive definite, negative definite, or indefinite, determining the shape of its level sets"
+    },
+    "correct_answer": "D",
+    "difficulty": 2,
+    "x": 0.897904,
+    "y": 0.894539,
+    "z": 0.844585,
+    "source_article": "quadratic forms",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "quadratic forms",
+      "symmetric matrices",
+      "Sylvester's law of inertia",
+      "definiteness classification"
+    ]
+  },
+  {
+    "id": "8e4e77ebe586fe7d",
+    "question_text": "The Schur decomposition states that every square matrix is unitarily similar to an upper triangular matrix. Why is this result stronger than just knowing eigenvalues exist, and how does it relate to the spectral theorem?",
+    "options": {
+      "A": "Schur decomposition A = QTQ* (Q unitary, T upper triangular) shows every matrix is unitarily triangularizable with eigenvalues on the diagonal of T — for normal matrices (AA* = A*A), T must be diagonal, recovering the spectral theorem as a special case where the unitary similarity yields a full diagonalization rather than just triangularization",
+      "B": "The Schur decomposition is strictly weaker than eigenvalue computation because it only reveals the trace and determinant, not individual eigenvalues, of the original matrix",
+      "C": "Schur decomposition exists only for real symmetric matrices and cannot be applied to matrices with complex eigenvalues because the unitary matrices involved require all entries to be real",
+      "D": "The Schur decomposition diagonalizes every matrix, not just triangularizes it, making the Jordan normal form completely redundant in all applications of linear algebra"
+    },
+    "correct_answer": "A",
+    "difficulty": 3,
+    "x": 0.970653,
+    "y": 0.911148,
+    "z": 0.566968,
+    "source_article": "Schur decomposition",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Schur decomposition",
+      "unitary similarity",
+      "normal matrices",
+      "spectral theorem connection"
+    ]
+  },
+  {
+    "id": "47646780f2220ecb",
+    "question_text": "The Moore-Penrose pseudoinverse A⁺ generalizes the matrix inverse to non-square and singular matrices. What four conditions define it, and how does it connect to least-squares solutions?",
+    "options": {
+      "A": "The pseudoinverse exists only for full-rank matrices and is undefined when the matrix has any zero singular values, because division by zero prevents its construction via SVD",
+      "B": "The Moore-Penrose pseudoinverse A⁺ is the unique matrix satisfying: AA⁺A = A, A⁺AA⁺ = A⁺, (AA⁺)* = AA⁺, (A⁺A)* = A⁺A — it always exists and A⁺b gives the minimum-norm least-squares solution to Ax = b, minimizing ‖Ax - b‖ over all x and selecting the smallest ‖x‖ among minimizers",
+      "C": "Any matrix that satisfies the single condition AA⁺A = A qualifies as the Moore-Penrose pseudoinverse of A, and there are generally infinitely many valid pseudoinverses for any given matrix because the remaining three Penrose conditions are optional and serve no purpose in ensuring uniqueness — this is wrong because all four conditions together are needed to guarantee the pseudoinverse is unique",
+      "D": "The pseudoinverse equals (AᵀA)⁻¹Aᵀ for every matrix A, with no conditions needed for AᵀA to be invertible"
+    },
+    "correct_answer": "B",
+    "difficulty": 3,
+    "x": 0.927067,
+    "y": 0.773953,
+    "z": 0.460336,
+    "source_article": "Moore-Penrose pseudoinverse",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Moore-Penrose pseudoinverse",
+      "four Penrose conditions",
+      "minimum-norm least squares",
+      "SVD"
+    ]
+  },
+  {
+    "id": "457ef5ef90c649a8",
+    "question_text": "Kronecker (tensor) products of matrices arise in multilinear algebra and quantum computing. What is the relationship between the eigenvalues of A ⊗ B and those of A and B individually?",
+    "options": {
+      "A": "The eigenvalues of the Kronecker product A ⊗ B are the sums λᵢ + μⱼ of eigenvalues of A and B, analogous to how the matrix sum A + B has eigenvalues that are sums of the individual eigenvalues — this confuses the Kronecker product with the Kronecker sum A⊗I + I⊗B, which does have eigenvalues λᵢ + μⱼ, while A⊗B has eigenvalues λᵢμⱼ (products)",
+      "B": "The Kronecker product A ⊗ B has the same eigenvalues as A alone, because B acts only as a scaling factor that does not affect the spectral structure",
+      "C": "The eigenvalues of A ⊗ B are all pairwise products λᵢμⱼ where λᵢ are eigenvalues of A and μⱼ are eigenvalues of B — this follows because if Ax = λx and By = μy, then (A ⊗ B)(x ⊗ y) = λμ(x ⊗ y), and the eigenvectors of the Kronecker product are the tensor products of the individual eigenvectors",
+      "D": "The eigenvalues of the Kronecker product A ⊗ B cannot be determined from the eigenvalues of A and B individually because the Kronecker product introduces coupling between the two matrices that depends on the specific entries rather than just the spectra — this is false because the eigenvalues of A⊗B are exactly all pairwise products λᵢμⱼ regardless of the entries"
+    },
+    "correct_answer": "C",
+    "difficulty": 3,
+    "x": 0.906978,
+    "y": 0.930052,
+    "z": 0.778751,
+    "source_article": "Kronecker product",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Kronecker product",
+      "tensor product eigenvalues",
+      "spectral structure",
+      "quantum states"
+    ]
+  },
+  {
+    "id": "5e0db9e0064da758",
+    "question_text": "A matrix norm must satisfy certain axioms including submultiplicativity: ‖AB‖ ≤ ‖A‖·‖B‖. Why is this property essential for applications like convergence analysis of iterative methods?",
+    "options": {
+      "A": "Submultiplicativity means ‖AB‖ = ‖A‖·‖B‖ with equality always holding, which is why matrix norms are simply the products of individual norms — this makes convergence analysis trivial",
+      "B": "Submultiplicativity is only relevant for 2×2 matrices and has no implications for larger matrices or infinite-dimensional operators in functional analysis",
+      "C": "Matrix norms do not actually need to satisfy submultiplicativity (‖AB‖ ≤ ‖A‖·‖B‖) — any function from matrices to non-negative real numbers that satisfies the triangle inequality qualifies as a valid matrix norm regardless of how it interacts with matrix products, making submultiplicativity an unnecessary restriction that can be dropped without consequence",
+      "D": "Submultiplicativity gives ‖Aⁿ‖ ≤ ‖A‖ⁿ, so if ‖A‖ < 1, then Aⁿ → 0 — this is the foundation for proving convergence of iterative methods like Jacobi and Gauss-Seidel: if the iteration matrix has norm less than 1, the error contracts geometrically to zero with each iteration"
+    },
+    "correct_answer": "D",
+    "difficulty": 3,
+    "x": 0.923057,
+    "y": 0.76,
+    "z": 0.522913,
+    "source_article": "matrix norms",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "matrix norms",
+      "submultiplicativity",
+      "iterative convergence",
+      "spectral radius"
+    ]
+  },
+  {
+    "id": "768410b53091f34c",
+    "question_text": "The Rayleigh quotient R(x) = xᵀAx/xᵀx for a symmetric matrix A is a function from nonzero vectors to scalars. What is its geometric significance, and why does it achieve its extrema at eigenvectors?",
+    "options": {
+      "A": "The Rayleigh quotient measures the 'effective eigenvalue' in the direction of x — its minimum and maximum over all nonzero x equal the smallest and largest eigenvalues of A, achieved at the corresponding eigenvectors, because the quadratic form xᵀAx decomposes as Σλᵢcᵢ² in the eigenbasis, making R(x) a weighted average of eigenvalues with weights cᵢ²/‖x‖²",
+      "B": "The Rayleigh quotient R(x) = xᵀAx/xᵀx is always constant and equal to the trace of A divided by the dimension n, regardless of which nonzero vector x is chosen, because the trace averages all eigenvalues equally and the Rayleigh quotient must reflect this average — this is wrong because R(x) varies continuously from λ_min to λ_max as x changes direction, and equals a specific eigenvalue only when x is the corresponding eigenvector",
+      "C": "The Rayleigh quotient achieves its maximum at the eigenvector corresponding to the smallest eigenvalue and its minimum at the largest eigenvalue, reversing the expected order",
+      "D": "The Rayleigh quotient is only meaningful for positive definite matrices and returns undefined values when any eigenvalue of A is negative or zero"
+    },
+    "correct_answer": "A",
+    "difficulty": 3,
+    "x": 0.940386,
+    "y": 0.854513,
+    "z": 0.811141,
+    "source_article": "Rayleigh quotient",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Rayleigh quotient",
+      "min-max characterization",
+      "eigenvalue optimization",
+      "quadratic forms"
+    ]
+  },
+  {
+    "id": "9f7b1672e689b62c",
+    "question_text": "The Woodbury matrix identity gives (A + UCV)⁻¹ in terms of A⁻¹ and smaller matrix inversions. Why is this formula computationally important for low-rank updates?",
+    "options": {
+      "A": "The Woodbury identity is a theoretical curiosity with no computational advantage because it requires more matrix multiplications than directly recomputing the full inverse from scratch",
+      "B": "When U is n×k and V is k×n with k ≪ n, the Woodbury identity (A + UCV)⁻¹ = A⁻¹ - A⁻¹U(C⁻¹ + VA⁻¹U)⁻¹VA⁻¹ reduces inverting the updated n×n matrix to inverting a k×k matrix, dropping cost from O(n³) to O(k²n + k³) — this is essential for online learning, Kalman filters, and any algorithm that incrementally modifies a large matrix",
+      "C": "The Woodbury identity applies only when the rank-k update UCV has all positive entries and fails for updates with negative or complex matrix entries",
+      "D": "The Woodbury identity computes (A + UCV)⁻¹ exactly only when A is orthogonal, and for non-orthogonal A it gives only an approximation"
+    },
+    "correct_answer": "B",
+    "difficulty": 3,
+    "x": 0.938901,
+    "y": 0.794295,
+    "z": 0.302657,
+    "source_article": "Woodbury identity",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Woodbury identity",
+      "low-rank updates",
+      "Sherman-Morrison",
+      "computational efficiency"
+    ]
+  },
+  {
+    "id": "d3f8f503bf337c22",
+    "question_text": "The minimal polynomial m(λ) of a matrix A is the monic polynomial of lowest degree such that m(A) = 0. How does it relate to the characteristic polynomial, and what does it reveal about diagonalizability?",
+    "options": {
+      "A": "The minimal polynomial of a matrix always equals the characteristic polynomial because the Cayley-Hamilton theorem states that they are identical for every square matrix regardless of the eigenvalue structure — this confuses the theorem's content, since Cayley-Hamilton says the characteristic polynomial annihilates A, but the minimal polynomial can be a proper divisor with lower multiplicities",
+      "B": "The minimal polynomial of an n×n matrix has no relationship to the eigenvalues and depends only on the size of the matrix, equaling λⁿ for every n×n matrix regardless of its entries — this is completely wrong because the minimal polynomial always has the eigenvalues as its roots, and its degree can range from 1 (for scalar multiples of the identity) up to n",
+      "C": "The minimal polynomial divides the characteristic polynomial and shares the same roots (the eigenvalues), but may have lower multiplicities — A is diagonalizable if and only if its minimal polynomial has all distinct linear factors (no repeated roots), because repeated factors correspond to Jordan blocks larger than 1×1 that prevent diagonalization",
+      "D": "A matrix is diagonalizable if and only if its minimal polynomial has the highest possible degree equal to n, because maximum-degree minimal polynomials force all eigenspaces to be one-dimensional — this reverses the correct criterion, since diagonalizability requires the minimal polynomial to have only simple roots (no repeated factors), which often means lower degree"
+    },
+    "correct_answer": "C",
+    "difficulty": 4,
+    "x": 0.928052,
+    "y": 0.842313,
+    "z": 1.0,
+    "source_article": "minimal polynomial",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "minimal polynomial",
+      "Cayley-Hamilton",
+      "diagonalizability criterion",
+      "Jordan blocks"
+    ]
+  },
+  {
+    "id": "748e734989544396",
+    "question_text": "Simultaneous diagonalization of two matrices A and B means finding a single invertible P such that both P⁻¹AP and P⁻¹BP are diagonal. Under what conditions is this possible?",
+    "options": {
+      "A": "Any two diagonalizable matrices can be simultaneously diagonalized regardless of any relationship between them, because their individual eigenbases can always be merged into a common basis",
+      "B": "Simultaneous diagonalization requires A and B to have identical eigenvalues, which is a much stronger condition than commutativity",
+      "C": "Two matrices can be simultaneously diagonalized if and only if they are both symmetric, regardless of whether they commute, because the spectral theorem guarantees orthogonal eigenbases that automatically coincide",
+      "D": "Two matrices can be simultaneously diagonalized if and only if they are both diagonalizable and they commute (AB = BA) — commutativity ensures that each eigenspace of A is invariant under B, allowing B to be diagonalized within each eigenspace of A, yielding a basis of simultaneous eigenvectors"
+    },
+    "correct_answer": "D",
+    "difficulty": 4,
+    "x": 0.927871,
+    "y": 0.865523,
+    "z": 0.874107,
+    "source_article": "simultaneous diagonalization",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "simultaneous diagonalization",
+      "commuting matrices",
+      "invariant eigenspaces",
+      "common eigenbasis"
+    ]
+  },
+  {
+    "id": "09119acd3675ae80",
+    "question_text": "The Courant-Fischer minimax theorem characterizes the k-th eigenvalue of a symmetric matrix as a minimax over subspaces. Why is this variational characterization more powerful than just solving the characteristic polynomial?",
+    "options": {
+      "A": "Courant-Fischer gives λₖ = min_{dim(S)=k} max_{x∈S, x≠0} R(x) — this characterizes eigenvalues through optimization rather than polynomial root-finding, enabling perturbation bounds (like Weyl's inequality), interlacing theorems for submatrices, and analysis of eigenvalues without explicitly computing eigenvectors or the characteristic polynomial",
+      "B": "The Courant-Fischer minimax theorem is merely a restatement of the characteristic polynomial approach in different notation and provides absolutely no additional theoretical power or computational insight beyond what polynomial root-finding already offers — this dramatically understates the theorem's utility, since the variational characterization enables perturbation bounds, interlacing theorems, and eigenvalue estimates that are inaccessible to root-finding",
+      "C": "The Courant-Fischer minimax characterization applies only to the largest and smallest eigenvalues of a symmetric matrix and fundamentally cannot describe or characterize any intermediate eigenvalue such as the second-largest or median eigenvalue — this is wrong because the theorem gives λₖ for every k through optimization over k-dimensional subspaces",
+      "D": "The Courant-Fischer theorem is useful only in infinite-dimensional Hilbert spaces and provides absolutely no benefit whatsoever for finite-dimensional matrices where the characteristic polynomial can always be computed explicitly to find all eigenvalues — this is false because the variational characterization is widely used in finite dimensions for perturbation theory and eigenvalue bounds"
+    },
+    "correct_answer": "A",
+    "difficulty": 4,
+    "x": 0.964794,
+    "y": 0.814845,
+    "z": 0.83003,
+    "source_article": "Courant-Fischer theorem",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Courant-Fischer theorem",
+      "minimax eigenvalue characterization",
+      "Weyl's inequality",
+      "perturbation theory"
+    ]
+  },
+  {
+    "id": "c83a0ed6457e3684",
+    "question_text": "The Gershgorin circle theorem bounds eigenvalues of a matrix using information from its entries alone. What does it state, and why is it useful despite giving potentially loose bounds?",
+    "options": {
+      "A": "Gershgorin's theorem states that the eigenvalues of any matrix can be located exactly (not merely bounded) from the diagonal entries alone, without examining any off-diagonal entries whatsoever — this overstates the theorem, which gives inclusion regions (discs) centered at diagonal entries with radii determined by the absolute row sums of the off-diagonal entries, providing bounds rather than exact locations",
+      "B": "Every eigenvalue of A lies in at least one Gershgorin disc D(aᵢᵢ, Rᵢ) centered at the diagonal entry aᵢᵢ with radius Rᵢ = Σⱼ≠ᵢ|aᵢⱼ| — despite potentially loose bounds, this gives instant eigenvalue localization from matrix entries alone, and for diagonally dominant matrices the discs are small, yielding tight bounds that prove invertibility and stability",
+      "C": "Gershgorin circles are centered at the off-diagonal entries of the matrix rather than the diagonal entries, with radii determined by the diagonal entries themselves — this swaps the roles of diagonal and off-diagonal elements, since the correct statement is that discs are centered at diagonal entries aᵢᵢ with radii equal to the sum of absolute values of off-diagonal entries in the same row",
+      "D": "The Gershgorin circle theorem provides useful eigenvalue bounds only for real symmetric matrices and breaks down entirely for non-symmetric matrices, complex matrices, or matrices with non-real diagonal entries — this is entirely false because the theorem applies universally to all square matrices over ℝ or ℂ with absolutely no symmetry or reality restriction required"
+    },
+    "correct_answer": "B",
+    "difficulty": 4,
+    "x": 0.976359,
+    "y": 0.899346,
+    "z": 0.54767,
+    "source_article": "Gershgorin circles",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Gershgorin circles",
+      "eigenvalue localization",
+      "diagonal dominance",
+      "spectral estimation"
+    ]
+  },
+  {
+    "id": "634cb3fe6748e9fd",
+    "question_text": "The Lanczos algorithm is an iterative method for finding eigenvalues of large sparse symmetric matrices. What makes it more efficient than dense eigenvalue methods, and what numerical difficulty does it encounter?",
+    "options": {
+      "A": "The Lanczos algorithm is a direct (non-iterative) method that computes all eigenvalues of any matrix in exactly n steps regardless of matrix size, sparsity, or desired accuracy",
+      "B": "The Lanczos algorithm works only for dense matrices and provides no advantage over QR iteration when the matrix has a sparse structure with many zero entries",
+      "C": "Lanczos builds an orthonormal basis for a Krylov subspace using only matrix-vector products (exploiting sparsity), reducing a large n×n eigenvalue problem to a small tridiagonal one — however, in finite-precision arithmetic, the Lanczos vectors lose orthogonality, causing spurious duplicate eigenvalues, which must be countered by reorthogonalization strategies",
+      "D": "The Lanczos algorithm requires storing the entire n×n matrix in memory and performing full dense matrix multiplications at each step, making it suitable only for matrices small enough to fit in RAM"
+    },
+    "correct_answer": "C",
+    "difficulty": 4,
+    "x": 0.976496,
+    "y": 0.838766,
+    "z": 0.464473,
+    "source_article": "Lanczos algorithm",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Lanczos algorithm",
+      "Krylov subspaces",
+      "loss of orthogonality",
+      "sparse eigenvalue computation"
+    ]
+  },
+  {
+    "id": "e512cdc3b8d2ac0c",
+    "question_text": "The exterior (wedge) product of vectors generalizes the cross product to arbitrary dimensions. What algebraic property distinguishes it from the tensor product, and what geometric quantity does it encode?",
+    "options": {
+      "A": "The wedge product of two vectors is commutative (u ∧ v = v ∧ u) just like the standard dot product of vectors, and it produces a scalar quantity that measures the angle between the two vectors — this is doubly wrong: the wedge product is antisymmetric (u ∧ v = -v ∧ u), and it produces a bivector (an element of the exterior algebra) representing oriented area, not a scalar measuring an angle",
+      "B": "The wedge product and tensor product are the same operation with different notation, and u ∧ v = u ⊗ v for all vectors in all dimensions",
+      "C": "The wedge product is defined only in exactly three-dimensional Euclidean space and reduces to the cross product u × v in that particular setting, with absolutely no generalization possible to two-dimensional, four-dimensional, or any higher-dimensional vector spaces — this is incorrect because the exterior algebra and wedge product are defined for vector spaces of any finite dimension",
+      "D": "The wedge product is antisymmetric (u ∧ v = -(v ∧ u)), implying v ∧ v = 0, and it encodes the oriented area (or higher-dimensional volume) of the parallelotope spanned by the vectors — unlike the tensor product, the wedge product captures only the antisymmetric geometric content, which is why k-forms built from wedge products underpin integration on manifolds via Stokes' theorem"
+    },
+    "correct_answer": "D",
+    "difficulty": 4,
+    "x": 0.817084,
+    "y": 0.918023,
+    "z": 0.864635,
+    "source_article": "wedge product",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "wedge product",
+      "exterior algebra",
+      "antisymmetry",
+      "differential forms"
+    ]
+  },
+  {
+    "id": "4df665d1ef014f7a",
+    "question_text": "The Weyr canonical form is an alternative to Jordan normal form that shares the same invariant factors but arranges blocks differently. What structural advantage does it have over Jordan form in matrix algebra?",
+    "options": {
+      "A": "The Weyr form arranges nilpotent blocks as direct sums of 'Weyr blocks' where the block sizes are non-increasing — unlike Jordan form, the set of matrices commuting with a Weyr matrix has a particularly transparent structure, making it easier to analyze centralizers, and the Weyr form respects the natural column-space filtration rather than the cyclic decomposition",
+      "B": "The Weyr form diagonalizes every matrix, eliminating nilpotent parts entirely and making it strictly simpler than Jordan form for all applications",
+      "C": "The Weyr canonical form is identical to the Jordan normal form in all cases and the names are synonymous, used interchangeably in every linear algebra textbook",
+      "D": "The Weyr form exists only for matrices over finite fields and has no analog for matrices over the real or complex numbers"
+    },
+    "correct_answer": "A",
+    "difficulty": 5,
+    "x": 0.922492,
+    "y": 0.839437,
+    "z": 0.784679,
+    "source_article": "Weyr canonical form",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Weyr canonical form",
+      "Jordan form comparison",
+      "centralizer structure",
+      "nilpotent decomposition"
+    ]
+  },
+  {
+    "id": "0d7318f8ffb2c020",
+    "question_text": "The Marchenko-Pastur law describes the limiting eigenvalue distribution of sample covariance matrices when both the dimension p and sample size n grow with p/n → γ > 0. What is the support of this distribution and why does it differ from the population eigenvalue distribution?",
+    "options": {
+      "A": "In the asymptotic regime where the dimension p and sample size n both grow to infinity with p/n → γ > 0, the sample covariance eigenvalues converge individually to the population eigenvalues with no systematic bias or spreading, so the Marchenko-Pastur law simply confirms that sample eigenvalues are perfect unbiased estimators of the population eigenvalues — this is wrong because MP shows systematic eigenvalue spreading even for identity population covariance",
+      "B": "When the population covariance is the identity, the Marchenko-Pastur law gives a density supported on [(1-√γ)², (1+√γ)²] — even though every population eigenvalue equals 1, sample eigenvalues spread across this interval due to random noise in finite samples, and this spreading is systematic: the top eigenvalue inflates to (1+√γ)² and the bottom deflates, demonstrating that sample eigenvalues are biased estimators in high dimensions",
+      "C": "The Marchenko-Pastur distribution has unbounded support extending to infinity for any value of γ, meaning sample eigenvalues can be arbitrarily large with non-negligible probability",
+      "D": "The Marchenko-Pastur law applies only when p/n → 0 (low-dimensional regime) and provides no information about the high-dimensional setting where p and n are comparable"
+    },
+    "correct_answer": "B",
+    "difficulty": 5,
+    "x": 0.974129,
+    "y": 0.810983,
+    "z": 0.704579,
+    "source_article": "Marchenko-Pastur law",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Marchenko-Pastur law",
+      "random matrix theory",
+      "sample eigenvalue bias",
+      "high-dimensional statistics"
+    ]
+  },
+  {
+    "id": "b1be64aa0ada916f",
+    "question_text": "In numerical linear algebra, the QR algorithm computes eigenvalues by iteratively applying QR factorization. Why does it converge, and what role do shifts play in accelerating convergence?",
+    "options": {
+      "A": "The QR algorithm converges because each iteration exactly computes one eigenvalue and deflates the matrix by removing that eigenvalue from consideration, requiring exactly n iterations for an n×n matrix with absolutely no possibility of slow convergence or failure to converge — this oversimplifies the algorithm since convergence is actually gradual (subdiagonal entries decay at rates depending on eigenvalue ratios), not a one-eigenvalue-per-step process, and shifts are needed for practical convergence speed",
+      "B": "Shifts are purely cosmetic and do not affect the convergence rate of the QR algorithm — the unshifted version converges at the same rate for every matrix regardless of eigenvalue gaps",
+      "C": "The QR algorithm converges because each iteration A_k = Q_kR_k, A_{k+1} = R_kQ_k produces a unitarily similar matrix whose subdiagonal entries decay at rates governed by eigenvalue ratios |λᵢ₊₁/λᵢ| — shifts A_k - σI accelerate convergence by making these ratios smaller, and the Wilkinson shift (choosing σ as the eigenvalue of the trailing 2×2 block closest to a_{nn}) gives cubic convergence per iteration, making it the method of choice for dense eigenvalue computation",
+      "D": "The QR algorithm works only for symmetric matrices and must be replaced by completely different methods like inverse iteration for non-symmetric eigenvalue problems"
+    },
+    "correct_answer": "C",
+    "difficulty": 5,
+    "x": 0.986662,
+    "y": 0.845868,
+    "z": 0.392589,
+    "source_article": "QR algorithm",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "QR algorithm",
+      "shifted QR iteration",
+      "Wilkinson shift",
+      "eigenvalue convergence rates"
+    ]
+  },
+  {
+    "id": "a9f8d7326bf02b0b",
+    "question_text": "The Frobenius normal form (rational canonical form) represents a matrix over an arbitrary field using companion matrices of invariant factors. Why is it more general than Jordan normal form, and what invariants does it encode?",
+    "options": {
+      "A": "The Frobenius form is simply the Jordan form written in a different block order and encodes exactly the same information in the same way, with no additional generality",
+      "B": "The rational canonical form can only be computed for matrices over algebraically closed fields and provides no information about matrices over ℚ, finite fields, or other non-closed fields",
+      "C": "The Frobenius form always diagonalizes the matrix when the field is large enough, making it a diagonalization method rather than a canonical form for non-diagonalizable matrices",
+      "D": "The Frobenius form exists over any field (not just algebraically closed ones) because it uses invariant factors from the Smith normal form of λI - A — each invariant factor yields a companion matrix block, and the invariant factors encode the full similarity class: two matrices over any field are similar if and only if they share the same invariant factors, making Frobenius form the most general similarity canonical form"
+    },
+    "correct_answer": "D",
+    "difficulty": 5,
+    "x": 0.941113,
+    "y": 0.848268,
+    "z": 0.841104,
+    "source_article": "Frobenius normal form",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Frobenius normal form",
+      "invariant factors",
+      "Smith normal form",
+      "rational canonical form"
+    ]
+  },
+  {
+    "id": "e704ca29a4c94bc3",
+    "question_text": "Compressed sensing uses the restricted isometry property (RIP) of measurement matrices to recover sparse signals from far fewer measurements than the signal dimension. What role does linear algebra play in this, and why do random matrices satisfy RIP with high probability?",
+    "options": {
+      "A": "RIP requires that every sufficiently sparse vector's norm is approximately preserved under the measurement matrix: (1-δ)‖x‖² ≤ ‖Ax‖² ≤ (1+δ)‖x‖² for all s-sparse x — random matrices (Gaussian, Bernoulli) satisfy this because random projections approximately preserve distances with high probability via concentration inequalities, and recovery algorithms exploit the resulting injectivity on sparse vectors to solve an underdetermined system with L1 minimization",
+      "B": "Compressed sensing works by simply taking the pseudoinverse of the measurement matrix, which always recovers any signal regardless of sparsity, and RIP is an unnecessary theoretical condition with no practical relevance",
+      "C": "The restricted isometry property requires deterministic construction of the measurement matrix using specific algebraic codes, and random matrices never satisfy RIP because their behavior is too unpredictable",
+      "D": "RIP is a property of the signal being measured rather than the measurement matrix, and it states that the signal must be exactly sparse (not approximately sparse) for any recovery to succeed"
+    },
+    "correct_answer": "A",
+    "difficulty": 5,
+    "x": 0.91923,
+    "y": 0.805041,
+    "z": 0.372406,
+    "source_article": "compressed sensing",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "compressed sensing",
+      "restricted isometry property",
+      "random matrices",
+      "sparse recovery"
+    ]
+  },
+  {
+    "id": "85694b470112aa0d",
+    "question_text": "The trace norm (nuclear norm) of a matrix equals the sum of its singular values. Why has it become central in machine learning for matrix completion and low-rank optimization problems?",
+    "options": {
+      "A": "The trace norm is popular only because it is easy to compute in closed form for any matrix — it equals the Frobenius norm squared — and has no special relationship to low-rank structure or convex relaxation",
+      "B": "The nuclear norm ‖A‖* = Σσᵢ is the convex envelope of the rank function on the unit spectral-norm ball — just as L1 norm is the convex relaxation of L0 (sparsity) for vectors, the nuclear norm is the tightest convex surrogate for rank, enabling convex optimization (semidefinite programming) to find low-rank solutions in problems like matrix completion, where minimizing rank directly is NP-hard",
+      "C": "The trace norm penalizes all singular values equally and provides no preference for low-rank solutions over full-rank solutions, making it unsuitable as a rank surrogate",
+      "D": "The nuclear norm can only be applied to square symmetric positive semidefinite matrices and is undefined for rectangular matrices or matrices with negative eigenvalues"
+    },
+    "correct_answer": "B",
+    "difficulty": 5,
+    "x": 0.940699,
+    "y": 0.807761,
+    "z": 0.187619,
+    "source_article": "nuclear norm",
+    "domain_ids": [
+      "linear-algebra",
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "nuclear norm",
+      "convex relaxation of rank",
+      "matrix completion",
+      "low-rank optimization"
+    ]
+  }
+]

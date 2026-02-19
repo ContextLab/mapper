@@ -1,0 +1,33 @@
+{
+  "name": "@contextlab/mapper",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Interactive Wikipedia Knowledge Map — adaptive quiz visualization using text embeddings",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "bench": "vitest bench",
+    "test:visual": "playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ContextLab/mapper.git"
+  },
+  "license": "CC-BY-NC-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/ContextLab/mapper/issues"
+  },
+  "homepage": "https://contextlab.github.io/mapper/",
+  "dependencies": {
+    "@nanostores/persistent": "^1.3.3",
+    "deck.gl": "^9.2.7",
+    "nanostores": "^1.1.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "vite": "^7.3.1",
+    "vitest": "^4.0.18"
+  }
+}

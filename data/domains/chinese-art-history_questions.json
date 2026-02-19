@@ -1,0 +1,1305 @@
+[
+  {
+    "id": "85cc13983f852eff",
+    "question_text": "Chinese landscape painting is known as 'shan shui,' which literally translates to 'mountain-water.' What philosophical concept does this pairing primarily reflect?",
+    "options": {
+      "A": "The balance of complementary forces (yin and yang) — mountains represent yang (solid, vertical, enduring) and water represents yin (fluid, horizontal, changing), embodying the Taoist principle that nature achieves harmony through the dynamic interplay of opposites",
+      "B": "A scientific classification system developed by imperial court cartographers for cataloging the different terrain types, watershed boundaries, and geological formations found across the Chinese empire's mountainous and riverine landscapes",
+      "C": "The Buddhist concept of suffering caused by attachment to material landscapes, which painters represented through images of mountains crumbling into water as a metaphor for impermanence",
+      "D": "A Confucian hierarchical framework that places mountains above water as a metaphor for the relationship between the emperor and his subjects, with the immovable mountain symbolizing the ruler's authority and the flowing water representing the obedient populace that follows the natural course set by its sovereign"
+    },
+    "correct_answer": "A",
+    "difficulty": 1,
+    "x": 0.447036,
+    "y": 0.351961,
+    "z": 0.763407,
+    "source_article": "shan shui",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "shan shui",
+      "yin and yang",
+      "Taoist philosophy",
+      "Chinese landscape painting"
+    ]
+  },
+  {
+    "id": "72bae9f09f4cd921",
+    "question_text": "In traditional Chinese art, calligraphy and painting are considered 'sister arts.' What is the fundamental connection between them?",
+    "options": {
+      "A": "They were taught by the same guild of professional artisans who specialized in both calligraphy and painting as a unified commercial craft, with guild membership strictly required for practicing either art form professionally in the major urban centers of China from the Tang dynasty onward through the end of the imperial era",
+      "B": "They share the same tools (brush, ink, inkstone, paper — the 'Four Treasures of the Study'), the same foundational brush techniques, and the same aesthetic principle that the quality and expressiveness of the brushstroke itself — not just what it depicts — carries artistic meaning",
+      "C": "Calligraphy served only the practical function of signing and dating finished paintings, providing attribution and provenance information. There was no deeper artistic or philosophical connection between the two practices, which were taught separately and evaluated by completely different aesthetic criteria",
+      "D": "Both arts were practiced exclusively by Buddhist monks in monasteries as forms of religious devotion"
+    },
+    "correct_answer": "B",
+    "difficulty": 1,
+    "x": 0.43554,
+    "y": 0.295926,
+    "z": 0.298594,
+    "source_article": "calligraphy-painting relationship",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "calligraphy-painting relationship",
+      "Four Treasures",
+      "brushstroke aesthetics"
+    ]
+  },
+  {
+    "id": "3daef28f62f8e606",
+    "question_text": "Jade has been continuously worked in China for over 8,000 years. What distinguishes jade's cultural significance in Chinese civilization from that of gold or silver?",
+    "options": {
+      "A": "Jade was valued purely as a form of currency, functioning exactly like gold in Western economies — weighed, stamped, and exchanged for goods and services",
+      "B": "Jade had no ritual or spiritual significance in Chinese culture and was used only for decorative jewelry and personal adornment by the wealthy",
+      "C": "Jade embodied spiritual and moral values — Confucius identified it with five virtues (benevolence, righteousness, wisdom, courage, integrity), and it was believed to connect humans with the divine. Unlike gold and silver, which symbolized material wealth, jade represented inner moral perfection and spiritual purity",
+      "D": "Jade was considered far less valuable than bronze throughout Chinese history and was used primarily by commoners who could not afford metal objects"
+    },
+    "correct_answer": "C",
+    "difficulty": 1,
+    "x": 0.366521,
+    "y": 0.120095,
+    "z": 0.445113,
+    "source_article": "jade symbolism",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "jade symbolism",
+      "Confucian virtues",
+      "spiritual vs material value"
+    ]
+  },
+  {
+    "id": "2caa23240c11d766",
+    "question_text": "The Shang dynasty (c. 1600–1046 BCE) produced elaborate bronze ritual vessels. What was the primary purpose of these vessels?",
+    "options": {
+      "A": "They were ordinary everyday cooking and food storage containers used by common households across all social classes during the Shang period, with no special ritual, religious, or political significance distinguishing them from any other utilitarian pottery or metalwork of the era",
+      "B": "They were used exclusively as standardized currency units in long-distance trade with neighboring states and civilizations, with the elaborate decorative motifs serving as denomination markers and anti-counterfeiting features rather than having any symbolic or ritual meaning",
+      "C": "They were purely decorative objects displayed in public marketplaces and commercial districts to advertise the metalworking skills of bronze foundries, functioning as showroom pieces and commercial samples rather than serving any ceremonial, religious, or political purpose",
+      "D": "They were ritual objects used in ceremonies to communicate with ancestral spirits and to legitimize the political authority of the ruling elite through their possession and display"
+    },
+    "correct_answer": "D",
+    "difficulty": 1,
+    "x": 0.331904,
+    "y": 0.01,
+    "z": 0.459835,
+    "source_article": "Shang bronze vessels",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Shang bronze vessels",
+      "ritual function",
+      "ancestral worship",
+      "political authority"
+    ]
+  },
+  {
+    "id": "465876636c06844b",
+    "question_text": "Xie He's 'Six Principles of Painting' (c. 550 CE) established the theoretical foundation for Chinese art criticism. The first and most important principle is 'qiyun shengdong' (spirit resonance, or vitality). What does this principle require of a painting?",
+    "options": {
+      "A": "That it transmit a living, vital energy — the inner spirit and life force of the subject — rather than merely reproducing outward physical appearance. Without this animating quality, technical skill alone is considered insufficient",
+      "B": "That the painter use the most expensive and rarest pigments available — imported cinnabar, lapis lazuli, and gold leaf — because material lavishness demonstrated respect for the subject",
+      "C": "That it reproduce the exact optical colors of the subject as observed in natural daylight conditions, achieving photographic fidelity centuries before the invention of the camera",
+      "D": "That every painting include lengthy calligraphic inscriptions describing the scene depicted, providing verbal explanation because Xie He believed images alone were insufficient to convey meaning. The first principle thus subordinated visual art to literature, requiring painters to function primarily as illustrators of written narratives rather than as independent visual artists creating autonomous pictorial statements"
+    },
+    "correct_answer": "A",
+    "difficulty": 2,
+    "x": 0.441306,
+    "y": 0.400529,
+    "z": 0.370016,
+    "source_article": "Xie He",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Xie He",
+      "Six Principles",
+      "qiyun shengdong",
+      "spirit resonance"
+    ]
+  },
+  {
+    "id": "4aed4efffa9790bc",
+    "question_text": "Literati painting (wenren hua) emerged as a distinct tradition during the Song dynasty. How did the literati approach to painting fundamentally differ from that of professional court painters?",
+    "options": {
+      "A": "Literati painters used dramatically brighter polychrome colors and much larger silk hanging scrolls than court painters, preferring monumental scale and chromatic intensity as expressions of their scholarly refinement. Court painters, constrained by imperial protocol, were limited to subdued palette and modest formats. This color and scale distinction was the primary technical difference between the two traditions, with literati painters commanding higher prices for their larger, more colorful works",
+      "B": "Literati painters — who were scholar-officials, not professional artists — valued personal expression, spontaneity, and the cultivation of inner character over technical virtuosity. They embraced an 'amateur ideal' where painting served as a vehicle for self-expression and moral cultivation, deliberately distinguishing their work from the polished realism of professional court painters",
+      "C": "Literati painters focused exclusively on formal portraits of emperors, high officials, and distinguished scholars, following strict iconographic conventions for depicting rank, costume, and insignia. They considered landscape and flower-and-bird subjects beneath their dignity as scholar-officials, leaving those genres to professional court painters who lacked the classical education to produce proper portraiture",
+      "D": "There was no meaningful difference between literati and court painting traditions; the terms were interchangeable labels"
+    },
+    "correct_answer": "B",
+    "difficulty": 2,
+    "x": 0.325784,
+    "y": 0.439034,
+    "z": 0.235778,
+    "source_article": "literati painting",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "literati painting",
+      "wenren hua",
+      "amateur ideal",
+      "scholar-officials",
+      "personal expression"
+    ]
+  },
+  {
+    "id": "74c324612736f08f",
+    "question_text": "Chinese shan shui paintings typically do not employ the single fixed vanishing point used in Western linear perspective. What compositional approach do they use instead, and what is its purpose?",
+    "options": {
+      "A": "They use random, unsystematic placement of landscape elements with no coherent spatial logic, scattering mountains, trees, and buildings arbitrarily across the picture surface",
+      "B": "They use exclusively flat, two-dimensional compositions with no attempt whatsoever to suggest spatial depth, recession, or three-dimensional volume in the depicted landscape",
+      "C": "They employ multiple shifting viewpoints (often described as 'three distances' — high, deep, and level) that allow the viewer to journey through the landscape rather than viewing it from a single fixed position. This approach reflects the Taoist idea that nature cannot be comprehended from one vantage point and invites contemplative, meditative engagement",
+      "D": "They attempted to copy the Western single-point perspective system introduced by Jesuit missionaries but executed it poorly due to Chinese painters' lack of formal mathematical and geometric training"
+    },
+    "correct_answer": "C",
+    "difficulty": 2,
+    "x": 0.425432,
+    "y": 0.444704,
+    "z": 0.945414,
+    "source_article": "multiple perspective",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "multiple perspective",
+      "three distances",
+      "spatial composition",
+      "contemplative viewing"
+    ]
+  },
+  {
+    "id": "a3c83fb00188c30a",
+    "question_text": "Blue-and-white porcelain became a hallmark of Chinese ceramics. What technical innovation, centered at Jingdezhen during the Yuan dynasty, made the production of mature blue-and-white porcelain possible?",
+    "options": {
+      "A": "The primary innovation was the development of hand-building coiling techniques for constructing small vessels without a potter's wheel, which allowed artisans to create more intricate and asymmetric forms than wheel-thrown pottery could achieve. The distinctive blue decoration was actually a later addition that had no connection to the original ceramic innovation at Jingdezhen",
+      "B": "The replacement of traditional clay bodies with pure glass materials produced by melting silica sand at extremely high temperatures in specially designed kilns, creating a translucent vessel material that resembled carved rock crystal. The blue coloring came from metal oxide impurities in the glass rather than from any intentional decorative technique",
+      "C": "The development of woodblock printing techniques adapted for application to curved ceramic surfaces, allowing mass production of identical decorative patterns across hundreds of vessels. The blue-and-white aesthetic emerged because the available printing inks happened to fire blue under the kiln temperatures used for porcelain",
+      "D": "The use of imported cobalt pigment ('Sumali Blue' from Persia), applied under a transparent glaze on a refined porcelain body made from a two-ingredient formula (porcelain stone + kaolin clay), then fired at high temperatures to fuse the blue decoration permanently beneath the glaze"
+    },
+    "correct_answer": "D",
+    "difficulty": 2,
+    "x": 0.309333,
+    "y": 0.140563,
+    "z": 0.455073,
+    "source_article": "blue-and-white porcelain",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "blue-and-white porcelain",
+      "Jingdezhen",
+      "Yuan dynasty",
+      "cobalt pigment",
+      "Sumali Blue"
+    ]
+  },
+  {
+    "id": "4a17632fed5a0099",
+    "question_text": "The Shang dynasty's bronze casting technique differed fundamentally from the lost-wax method used in the ancient Mediterranean. What was the Chinese piece-mold technique, and what were its artistic consequences?",
+    "options": {
+      "A": "In piece-mold casting, artisans created sectional clay molds around a model, carved or stamped decoration directly into the mold surfaces, then poured molten bronze into the assembled mold-and-core assembly. Because the mold was broken to release each casting, every vessel was unique. This technique enabled exceptionally sharp, crisp surface decoration (like the taotie mask motif) with a precision difficult to achieve through lost-wax casting",
+      "B": "Piece-mold casting was technically identical to the lost-wax method used throughout the ancient Mediterranean world, but Chinese foundries substituted copper for bronze as the primary casting metal",
+      "C": "The Shang technique involved carving ritual vessels directly from solid blocks of cast bronze using specialized stone tools and metal chisels, a subtractive sculptural process rather than a casting process",
+      "D": "Chinese bronze vessels were produced by hammering and annealing thin sheets of metal over carved wooden forms, using a repoussé and chasing technique similar to ancient Near Eastern goldsmithing. The intricate taotie masks and geometric patterns were created by pressing the metal into carved depressions in the wooden forms, then detailing the raised relief from the front with fine punches and tracing tools. The piece-mold terminology actually refers to the segmented wooden forms, not to ceramic casting molds, which is why no intact ceramic molds have been found at Shang foundry sites"
+    },
+    "correct_answer": "A",
+    "difficulty": 3,
+    "x": 0.364191,
+    "y": 0.06999,
+    "z": 0.634118,
+    "source_article": "piece-mold casting",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "piece-mold casting",
+      "lost-wax comparison",
+      "Shang bronze technique",
+      "taotie"
+    ]
+  },
+  {
+    "id": "b97d3cdd6566b5b3",
+    "question_text": "During the Yuan dynasty (1271–1368), many Chinese scholar-officials refused to serve the Mongol government. How did this political circumstance transform the development of literati painting?",
+    "options": {
+      "A": "The Mongol conquest had no discernible effect on Chinese painting traditions, which continued exactly as they had during the preceding Song dynasty without any disruption, innovation, or change in patronage patterns. Scholar-officials maintained their governmental positions under the Yuan administration and continued painting as a leisure activity with the same subjects, techniques, and aesthetic values they had practiced before the conquest. The continuity of Chinese painting through the dynastic transition demonstrates the institutional resilience of the scholar-official class and the irrelevance of political change to artistic development",
+      "B": "Displaced scholars turned to painting as an act of cultural resistance and self-definition. Denied their traditional governmental roles, they channeled their erudition into art, elevating personal expression and antiquarian brushwork into a political statement. The Four Masters of the Yuan (Huang Gongwang, Wu Zhen, Ni Zan, Wang Meng) developed radically individualistic styles, favored paper over silk, and filled works with inscriptions — asserting Chinese cultural identity against Mongol rule and making literati painting the dominant tradition for centuries",
+      "C": "Yuan-dynasty scholar-officials enthusiastically served the Mongol government and became the most prominent professional court painters of the era, producing lavish polychrome portraits of Mongol rulers, detailed documentary paintings of military campaigns, and ceremonial compositions celebrating Mongol achievements. Far from resisting Mongol rule, Chinese literati embraced their new patrons and adapted their painting styles to suit Mongol aesthetic preferences for vivid color, dynamic composition, and narrative clarity, abandoning the restrained monochrome ink painting that had characterized Song literati art",
+      "D": "Painting was officially banned under Mongol rule through imperial edict, halting all artistic production"
+    },
+    "correct_answer": "B",
+    "difficulty": 3,
+    "x": 0.271238,
+    "y": 0.440877,
+    "z": 0.180803,
+    "source_article": "Yuan dynasty politics",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Yuan dynasty politics",
+      "Four Masters of Yuan",
+      "cultural resistance",
+      "literati painting evolution"
+    ]
+  },
+  {
+    "id": "93b06f6665c169e8",
+    "question_text": "In Xie He's Six Principles, the second principle — 'gufa bifang' (bone method in brush use) — connects painting to calligraphy. What does this principle reveal about how Chinese aesthetics evaluate brushwork?",
+    "options": {
+      "A": "That brushwork quality is judged purely on how thin, delicate, and gossamer-like the painted lines are, with the thinnest possible lines considered superior regardless of their expressive character",
+      "B": "That painters should carefully trace over calligraphy practice templates before beginning any painting composition, using the traced letterforms as a preliminary framework for pictorial elements",
+      "C": "That brushwork is evaluated for its 'structural strength' and 'inner vitality' — the same qualities prized in calligraphy. Each brushstroke should possess what Chinese critics call 'bone' (gu): an internal structural force that conveys the artist's character, discipline, and life energy. This principle establishes that brushwork quality is not merely technical but fundamentally expressive and revelatory of the artist's inner nature",
+      "D": "That the 'bone method' refers to anatomical accuracy when painting human figures and skeletons, requiring painters to study actual bones and skeletal structures to achieve correct proportions"
+    },
+    "correct_answer": "C",
+    "difficulty": 3,
+    "x": 0.48096,
+    "y": 0.351937,
+    "z": 0.371041,
+    "source_article": "gufa bifang",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "gufa bifang",
+      "bone method",
+      "calligraphy-painting connection",
+      "structural brushwork"
+    ]
+  },
+  {
+    "id": "b69d9f5d543c2953",
+    "question_text": "Empty space (liu bai, 'leaving white') is a distinctive feature of Chinese painting that has no direct equivalent in the Western tradition of fully-filled compositions. What function does empty space serve in Chinese painting?",
+    "options": {
+      "A": "Empty space in Chinese paintings indicates that the artist ran out of ink or time and was unable to finish the composition. These unfinished works were preserved because of the artist's fame rather than because the incompleteness was intentional. Later critics retroactively theorized aesthetic justifications for the blank areas, but contemporary documents including artists' letters and studio records consistently describe incomplete paintings as failures that the artist intended to return to but never did",
+      "B": "Empty space is universally considered a compositional flaw in Chinese painting theory, and later artists, collectors, and restorers routinely filled in blank areas with supplementary landscape elements, architectural details, or calligraphic inscriptions to 'complete' what they understood as unfinished compositions. The modern appreciation of empty space as a deliberate aesthetic choice is a twentieth-century Western misinterpretation influenced by Minimalist and Abstract Expressionist values projected backward onto Chinese art",
+      "C": "Empty space as a deliberate compositional strategy is used exclusively in calligraphy, where the blank areas between characters create rhythm and visual breathing room. In painting, by contrast, empty space is always avoided because the pictorial tradition demands that every area of the picture surface be filled with representational content — mountains, trees, water, or clouds — to create the immersive panoramic effect that defines great Chinese landscape painting",
+      "D": "Empty space is an active compositional element that can represent mist, water, sky, or infinite void. Rooted in Taoist and Chan Buddhist thought — where emptiness is not absence but potentiality — unpainted areas create breathing room that activates the viewer's imagination, establishes spatial depth through atmospheric suggestion, and generates the rhythmic contrast between presence and absence that Chinese aesthetics consider essential to compositional harmony"
+    },
+    "correct_answer": "D",
+    "difficulty": 3,
+    "x": 0.437774,
+    "y": 0.361108,
+    "z": 0.577968,
+    "source_article": "liu bai",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "liu bai",
+      "empty space",
+      "Taoist aesthetics",
+      "compositional philosophy"
+    ]
+  },
+  {
+    "id": "7b0593bce9eb9461",
+    "question_text": "Dong Qichang (1555–1636) divided Chinese painting history into 'Southern' and 'Northern' schools. What was the basis of this division, and why was it so consequential for subsequent Chinese art history?",
+    "options": {
+      "A": "Dong Qichang's division was stylistic and philosophical, not geographic. Drawing an analogy to Southern Chan (Zen) Buddhism's 'sudden enlightenment' versus Northern Chan's 'gradual cultivation,' he associated the Southern School with literati painters who valued spontaneous self-expression and intuitive brushwork, and the Northern School with professional painters who emphasized technical mastery and detailed realism. He championed the Southern School as the 'orthodox lineage,' establishing a canon that dominated Chinese art criticism for centuries and systematically elevated amateur literati painting over professional court painting",
+      "B": "The division was based strictly on the geographic regions where painters lived and worked — painters active in the warmer southern provinces below the Yangtze River belonged to the Southern School, while those working in the colder northern plains belonged to the Northern School. Dong Qichang's classification was essentially a regional art-historical survey that mapped stylistic differences onto China's north-south climatic and cultural divide",
+      "C": "Dong Qichang's classification categorized painters exclusively by their preferred medium — ink monochrome painters belonged to one school, while color painters belonged to the other",
+      "D": "The division was purely chronological, categorizing all painters active before the Tang dynasty (618–907) into the Northern School and all painters working after the Tang into the Southern School. Dong Qichang used the Tang dynasty as the dividing line because he considered it the pivotal moment when Chinese painting shifted from formal public art to private personal expression. This chronological reading aligns with the broader historical narrative of Chinese civilization's transition from an aristocratic culture centered on the court to a bureaucratic culture centered on the examination system, which Dong Qichang saw as the driving force behind changes in painting style and patronage throughout Chinese art history"
+    },
+    "correct_answer": "A",
+    "difficulty": 4,
+    "x": 0.336713,
+    "y": 0.46567,
+    "z": 0.341726,
+    "source_article": "Dong Qichang",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Dong Qichang",
+      "Southern Northern school theory",
+      "orthodox lineage",
+      "Chan Buddhism analogy"
+    ]
+  },
+  {
+    "id": "807b27ec3fb3b907",
+    "question_text": "The 'Four Gentlemen' (si junzi) — plum blossom, orchid, bamboo, and chrysanthemum — are among the most frequently painted subjects in Chinese art. Why did literati painters return to these four subjects across centuries?",
+    "options": {
+      "A": "These four plants were the only species that could successfully be cultivated in the private gardens of Chinese scholar-officials, due to the specific microclimate, humidity, and soil conditions of the Jiangnan region where most scholars lived. The restriction of available garden plants to these four particular species was an accident of geography and horticulture rather than a deliberate symbolic choice, and painters depicted them simply because they were the most familiar plants in their immediate visual environment",
+      "B": "Each plant embodied a specific Confucian virtue and seasonal association, making them vehicles for moral self-expression through painting. Plum blossom (winter resilience, perseverance), orchid (hidden virtue, refinement), bamboo (integrity, flexibility under pressure), and chrysanthemum (noble reclusion, endurance) allowed the painter to make a moral statement through subject choice while simultaneously demonstrating brush mastery — since each plant demands different stroke techniques",
+      "C": "The Four Gentlemen subjects were required topics on the imperial civil service examination's painting section, and aspiring officials were tested on their ability to render each plant according to strict formal conventions. Examiners evaluated technical accuracy, proper brush sequence, and adherence to canonical models rather than personal expression. This examination requirement, rather than any voluntary aesthetic or philosophical choice, explains why literati painters throughout Chinese history repeatedly painted these four specific subjects, producing thousands of nearly identical compositions that followed the officially prescribed models",
+      "D": "Literati painters chose these four subjects because they were the simplest and fastest subjects to paint with minimal brushstrokes"
+    },
+    "correct_answer": "B",
+    "difficulty": 4,
+    "x": 0.361727,
+    "y": 0.321723,
+    "z": 0.14507,
+    "source_article": "Four Gentlemen",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Four Gentlemen",
+      "Confucian virtue symbolism",
+      "moral self-expression",
+      "literati subject choice"
+    ]
+  },
+  {
+    "id": "089b1ffb147765ba",
+    "question_text": "Chinese painting developed two fundamentally different approaches to depicting form: gongbi ('meticulous brush') and xieyi ('writing meaning'). What conceptual distinction underlies these two approaches, and how does it connect to broader Chinese aesthetic philosophy?",
+    "options": {
+      "A": "Gongbi and xieyi are identical techniques used interchangeably by all Chinese painters regardless of period, social class, or artistic intention. The apparent visual differences between highly detailed, colored paintings and loose, monochrome ink sketches reflect different stages in the painting process rather than distinct artistic approaches — every painting begins as a loose xieyi underdrawing that is then refined into a detailed gongbi finish. Works that appear to be in the xieyi style are simply unfinished gongbi paintings that the artist abandoned before completing the refinement stage, which is why xieyi paintings are consistently valued lower than gongbi paintings in Chinese art markets",
+      "B": "Both gongbi and xieyi techniques prioritize photographic accuracy and objective fidelity to the visual appearance of the subject above all other aesthetic considerations. The two approaches differ only in scale — gongbi is used for small-format album leaves and fan paintings where fine detail is visible, while xieyi is used for large-format hanging scrolls and wall paintings where viewers stand at a distance and cannot perceive fine brushwork. The choice between techniques is therefore purely a practical decision determined by the physical size of the painting surface rather than by any aesthetic, philosophical, or social distinction between the two approaches",
+      "C": "Gongbi uses precise, controlled brushwork and rich color to capture the detailed outward appearance of subjects through careful observation. Xieyi uses spontaneous, abbreviated brushwork to 'write' the inner essence or meaning of the subject, sacrificing surface detail for expressive immediacy. This distinction mirrors the broader Chinese philosophical tension between 'xing' (form/appearance) and 'yi' (meaning/intent) — whether art should prioritize external likeness or internal truth. Literati painters championed xieyi as the higher mode, arguing that capturing spirit transcends reproducing form",
+      "D": "Gongbi refers specifically to painting on paper while xieyi refers to painting on silk, and the visual differences between the two approaches result entirely from the different absorbency, texture, and surface properties of these two support materials rather than from any deliberate difference in brush technique, aesthetic intention, or philosophical orientation. Paper absorbs ink rapidly and creates soft, blurred edges that produce the spontaneous appearance associated with xieyi, while silk holds ink on the surface and permits the precise, finely controlled linework that is characteristic of the gongbi technique"
+    },
+    "correct_answer": "C",
+    "difficulty": 4,
+    "x": 0.459676,
+    "y": 0.388442,
+    "z": 0.307958,
+    "source_article": "gongbi",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "gongbi",
+      "xieyi",
+      "form vs meaning",
+      "xing vs yi",
+      "Chinese aesthetic philosophy"
+    ]
+  },
+  {
+    "id": "527e7e966aa91f27",
+    "question_text": "The Yuan dynasty painter Ni Zan (1301–1374) is celebrated for his sparse, austere landscapes. His compositions typically feature empty expanses of water between a few bare trees in the foreground and distant mountains, rendered in dry, pale ink with minimal brushstrokes. What makes Ni Zan's radical reduction of pictorial elements artistically significant rather than merely simplistic?",
+    "options": {
+      "A": "Ni Zan's technique was considered poor and amateurish by contemporary critics who viewed his sparse compositions as evidence of inadequate training, and his reputation was only rehabilitated in the twentieth century by Western modernist critics",
+      "B": "His distinctive spare aesthetic resulted accidentally from using inexpensive, low-quality materials — thin paper, diluted ink, and worn brushes — that prevented him from achieving the dense, layered effects of his contemporaries",
+      "C": "He was directly copying Japanese ink painting traditions that had been imported to China during the Yuan dynasty through trade routes, adapting Zen-influenced Japanese minimalism to Chinese landscape subjects",
+      "D": "His extreme reduction was a deliberate aesthetic and philosophical statement: each remaining element carries maximum expressive weight, the vast empty spaces embody Chan Buddhist concepts of void-as-fullness, and the dry ink technique (kuse) conveys an emotional quality of austere detachment that Chinese critics call 'bland' (dan) — a supreme aesthetic value representing transcendence of worldly attachment. His restraint proved that expressive power can increase through elimination rather than accumulation, influencing Chinese painting theory for centuries"
+    },
+    "correct_answer": "D",
+    "difficulty": 4,
+    "x": 0.34474,
+    "y": 0.430503,
+    "z": 0.606311,
+    "source_article": "Ni Zan",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Ni Zan",
+      "aesthetic reduction",
+      "dan (blandness)",
+      "Chan Buddhist void",
+      "Yuan literati painting"
+    ]
+  },
+  {
+    "id": "645bc59764b5db2a",
+    "question_text": "Xie He's sixth principle — 'chuanyi moxie' (transmission by copying) — instructs artists to copy the works of past masters. From a Western art-historical perspective, copying might suggest mere imitation. Why does Chinese art theory consider this principle essential rather than derivative?",
+    "options": {
+      "A": "Copying in Chinese art theory serves a fundamentally different purpose than mere reproduction. Through careful copying, the student internalizes the master's brushwork rhythms, compositional logic, and spiritual approach — absorbing artistic 'DNA' at a level deeper than visual resemblance. This creates a living chain of transmission where each generation carries forward the accumulated artistic wisdom of predecessors while developing their own voice. The practice is analogous to how musicians master repertoire before composing: deep internalization of tradition is the prerequisite for meaningful innovation, not its opposite",
+      "B": "Chinese art theory actually discourages all forms of copying as a violation of the primary aesthetic value of spontaneous personal expression, and the sixth principle is frequently misinterpreted by Western scholars who project their own pedagogical traditions onto Chinese art",
+      "C": "Copying was required in Chinese art training only because Chinese painters lacked access to live models and direct observation of nature, using copies of earlier paintings as substitutes for the natural subjects they could not study firsthand",
+      "D": "The sixth principle mandates exact mechanical reproduction of earlier masterworks without any personal interpretation, deviation, or expressive variation"
+    },
+    "correct_answer": "A",
+    "difficulty": 5,
+    "x": 0.429051,
+    "y": 0.348652,
+    "z": 0.528445,
+    "source_article": "chuanyi moxie",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "chuanyi moxie",
+      "transmission by copying",
+      "tradition and innovation",
+      "artistic lineage"
+    ]
+  },
+  {
+    "id": "b3d02f648e16ad84",
+    "question_text": "The concept of 'qi' (vital energy/breath) pervades Chinese art theory, from Xie He's first principle (qiyun shengdong) through later critical writings. How does qi function as an evaluative criterion that fundamentally differs from Western formalist analysis of art?",
+    "options": {
+      "A": "Qi is identical to the Western aesthetic concept of beauty and serves exactly the same evaluative function in Chinese art criticism that beauty serves in European art theory. Both terms refer to the visual pleasure produced by harmonious proportions, balanced composition, and skillful execution of formal elements. The apparent philosophical depth attributed to qi by modern scholars is a romanticized projection of Taoist mysticism onto what was originally a straightforward term for aesthetic attractiveness. Classical Chinese art critics used qi in the same casual, evaluative way that Western critics use 'beautiful' — as a general term of approbation indicating that a work is visually pleasing without implying any metaphysical claims about vital energy, cosmic resonance, or spiritual attunement between artist and subject",
+      "B": "Qi as an evaluative criterion locates artistic quality not in objectively analyzable formal properties (composition, color harmony, proportional relationships) but in a dynamic energetic quality that flows through and between brushstrokes, connecting artist, subject, and viewer in a shared vitality. Unlike Western formalism, which can evaluate a painting through structural analysis alone, qi assessment requires the critic to perceive an irreducible, holistic life-force that either animates the work or does not — making it ultimately experiential rather than analytical. This is why Chinese critics could declare a technically flawless painting 'dead' while praising a rough sketch as possessing supreme qi",
+      "C": "Qi in Chinese art theory refers exclusively to the painter's physical breath control and respiratory technique while executing brushstrokes, with no metaphysical, evaluative, or aesthetic meaning beyond the literal physiological act of breathing. Painting manuals describe specific breathing exercises — inhaling before downward strokes, exhaling during horizontal movements — and qi assessment evaluates whether the artist maintained proper respiratory rhythm throughout the painting process. The metaphysical interpretations of qi as cosmic energy or spiritual vitality are modern misreadings that confuse the technical respiratory meaning of the term in art manuals with its broader philosophical usage in Taoist and medical texts",
+      "D": "Qi was completely abandoned as a critical concept in Chinese art theory after the Northern Song dynasty and plays no role in any later Chinese art criticism, connoisseurship, or aesthetic philosophy"
+    },
+    "correct_answer": "B",
+    "difficulty": 5,
+    "x": 0.468166,
+    "y": 0.366321,
+    "z": 0.344035,
+    "source_article": "qi in art theory",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "qi in art theory",
+      "Chinese vs Western aesthetic evaluation",
+      "formalism comparison",
+      "experiential criticism"
+    ]
+  },
+  {
+    "id": "96be32835a5a4a11",
+    "question_text": "Colophons — textual inscriptions added to Chinese paintings by the artist, collectors, and later viewers over centuries — are a unique feature of the Chinese painting tradition with no true parallel in Western art. How do colophons fundamentally alter the nature of a Chinese painting as an artwork?",
+    "options": {
+      "A": "Colophons are universally considered damage to the original painting and are systematically removed during professional conservation and restoration to return the artwork to its pristine original state",
+      "B": "Colophons serve only as records of ownership provenance, functioning like property deeds or inventory labels",
+      "C": "Colophons transform a Chinese painting from a fixed, completed object into a cumulative, dialogic artwork that grows over time. Each inscription — whether the artist's original poem, a collector's commentary, or a later viewer's response — adds interpretive layers, contextualizes the work within art-historical lineages, and records the chain of aesthetic judgment across generations. The painting becomes a physical site of ongoing intellectual conversation, where the relationship between image and text, original creation and subsequent interpretation, constitutes a compound artwork whose meaning deepens through centuries of accumulated commentary",
+      "D": "Colophons were legally required by imperial law throughout Chinese history as a system for tracking artworks for taxation, customs inspection, and inheritance purposes. Every painting that entered a private collection or crossed a provincial border was required to bear a colophon documenting its assessed monetary value, the tax paid on its acquisition, and the official seal of the local magistrate certifying the transaction. Failure to maintain proper colophon documentation was punishable by confiscation of the artwork, which is why even minor paintings accumulated extensive textual inscriptions over the centuries — each inscription represents a bureaucratic transaction rather than an aesthetic or scholarly contribution to the work"
+    },
+    "correct_answer": "C",
+    "difficulty": 5,
+    "x": 0.407334,
+    "y": 0.281614,
+    "z": 0.453909,
+    "source_article": "colophons",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "colophons",
+      "dialogic artwork",
+      "painting-text relationship",
+      "cumulative art object"
+    ]
+  },
+  {
+    "id": "9b4089ffa2ada60d",
+    "question_text": "The Southern Song painter Ma Yuan (active c. 1190–1225) and his contemporary Xia Gui developed the 'one-corner' or 'half-edge' (banbian) compositional approach, concentrating pictorial elements in one corner while leaving the rest of the painting largely empty. Later critics both celebrated and condemned this approach. What makes the art-historical debate about Ma Yuan's compositions intellectually significant?",
+    "options": {
+      "A": "The scholarly debate surrounding Ma Yuan's one-corner compositional technique is a trivial art-historical footnote concerning only the question of whether Ma Yuan used expensive imported silk or cheaper locally produced paper as his painting surface. Northern critics argued that his spare compositions were designed to conserve expensive imported silk by leaving large areas unpainted, while Southern critics maintained that he preferred cheap paper and simply chose not to fill the entire surface because the porous absorbent material could not support dense layering of ink. This material-focused debate tells us nothing interesting about Chinese aesthetics, artistic philosophy, or the cultural values attached to empty space, and it has been kept alive in art history textbooks mainly because it provides a convenient teaching example of how material constraints can influence formal artistic choices",
+      "B": "There is no significant scholarly debate about Ma Yuan's one-corner compositions; his radical asymmetric style was universally praised and immediately accepted by all major critics and connoisseurs throughout Chinese art history from the Southern Song dynasty to the present day. The claim that his compositional approach was ever controversial is a modern invention by Western art historians who projected their own culture's avant-garde narrative — in which innovative artists are initially rejected by conservative establishments and later vindicated by progressive successors — onto Chinese art history, where no such pattern of rejection and rehabilitation existed. In reality, the Chinese aesthetic tradition consistently valued bold compositional innovation as evidence of the painter's creative spirit and cultural refinement, and Ma Yuan's asymmetric one-corner format was recognized as a profoundly masterful contribution to the landscape painting tradition from the very moment it first appeared",
+      "C": "The debate concerns exclusively whether Ma Yuan possessed adequate technical drawing skill, with critics divided between those who believed his sparse compositions reflected a deliberate minimalist choice and those who argued he simply could not draw well enough to fill an entire composition with convincing landscape elements. His contemporary Xia Gui, who used a similar one-corner format but with denser, more technically accomplished brushwork, is often cited as evidence that the one-corner approach could be executed with greater competence, suggesting that Ma Yuan's version reflected limitation rather than choice. This technical competence debate dominated Chinese art criticism of the Southern Song academic style for centuries and was only resolved when modern X-ray analysis of Ma Yuan's paintings revealed sophisticated underdrawings proving his deliberate compositional planning",
+      "D": "The debate reveals a fundamental tension in Chinese aesthetics between two legitimate but opposing values. Admirers argued that Ma Yuan's radical asymmetry achieved a poetic evocation of infinite space and seasonal mood, with the empty areas functioning as philosophical statements about the relationship between presence and absence. Detractors — particularly Yuan and later literati critics influenced by Dong Qichang's orthodox lineage — condemned the style as a compositional trick by a professional court painter, lacking the scholarly depth and calligraphic brushwork of the literati tradition. This dispute exposes how Chinese art criticism is inseparable from social ideology: the same formal qualities are praised or condemned depending on the artist's social status (court professional vs. amateur scholar) and the critic's aesthetic allegiances"
+    },
+    "correct_answer": "D",
+    "difficulty": 5,
+    "x": 0.340054,
+    "y": 0.49,
+    "z": 0.53064,
+    "source_article": "Ma Yuan",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Ma Yuan",
+      "banbian composition",
+      "Southern Song academy",
+      "literati vs professional debate",
+      "social ideology in criticism"
+    ]
+  },
+  {
+    "id": "aa7cff14dc062411",
+    "question_text": "The terracotta army of Qin Shi Huang (c. 210 BCE) represents an unprecedented achievement in Chinese funerary art. What conceptual principle underlies the creation of thousands of life-sized clay soldiers for a tomb?",
+    "options": {
+      "A": "The belief that realistic substitutes could serve the deceased in the afterlife — replacing earlier Shang-dynasty practice of human sacrifice with symbolic clay figures that carried the same spiritual function of providing an eternal retinue",
+      "B": "A purely decorative choice with no spiritual significance whatsoever, meant only to impress visitors to the tomb during the emperor's living years — the figures served as entertainment spectacles for court guests rather than having any funerary, cosmological, or afterlife function in the burial complex",
+      "C": "A form of military census-taking and administrative record-keeping that documented each individual soldier's name, rank, and unit assignment for bureaucratic purposes — functioning as a personnel archive rather than as spirit objects intended to serve the deceased emperor in the afterlife",
+      "D": "A public art installation designed to be displayed prominently above ground as a monumental civic monument visible to all citizens of the empire — functioning as political propaganda rather than as sealed underground funerary figures hidden from the living world entirely within the tomb complex"
+    },
+    "correct_answer": "A",
+    "difficulty": 1,
+    "x": 0.331581,
+    "y": 0.152283,
+    "z": 0.588027,
+    "source_article": "mingqi",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "mingqi",
+      "funerary substitution",
+      "Qin dynasty",
+      "afterlife beliefs"
+    ]
+  },
+  {
+    "id": "50e70e95e2139725",
+    "question_text": "The concept of 'yipin' (untrammeled class) in Chinese painting criticism refers to works that transcend conventional grading systems. What characterizes paintings awarded this designation?",
+    "options": {
+      "A": "Technically perfect academic paintings that follow every single established rule of composition, brushwork, coloring, and spatial arrangement with flawless precision and meticulous attention to orthodox conventions",
+      "B": "Works of radical spontaneity that break established rules through eccentric brushwork and unconventional technique — achieving spiritual expression beyond the reach of mere technical mastery",
+      "C": "Forgeries and copies of famous masterworks that were so skillful they could not be distinguished from the originals",
+      "D": "Paintings made exclusively with expensive imported pigments that demonstrated the artist's great personal wealth and social status"
+    },
+    "correct_answer": "B",
+    "difficulty": 2,
+    "x": 0.35695,
+    "y": 0.416291,
+    "z": 0.274369,
+    "source_article": "yipin",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "yipin",
+      "Chinese painting criticism",
+      "spontaneity",
+      "eccentric painters"
+    ]
+  },
+  {
+    "id": "1cffd9b03bdc8d9f",
+    "question_text": "Chinese scroll paintings can be either hanging scrolls (guazhou) or handscrolls (juanzhou). What fundamental difference in viewing experience do these two formats create?",
+    "options": {
+      "A": "Hanging scrolls are designed exclusively to be read as books of continuous text with no images whatsoever, while handscrolls contain only pictorial images with no calligraphy, inscription, or textual element — a rigid separation that contradicts the actual integration of text and image",
+      "B": "Both formats are always viewed in exactly the same way — completely unrolled and displayed flat on the floor for overhead observation from a standing position, with no difference in viewing experience, physical handling, or temporal unfolding between the two formats",
+      "C": "Hanging scrolls are viewed all at once as a single composition on a wall, while handscrolls are unrolled gradually right to left, creating a sequential temporal experience analogous to reading — revealing the composition section by section",
+      "D": "Both formats were always kept sealed and never actually viewed — they functioned purely as valuable trade commodities"
+    },
+    "correct_answer": "C",
+    "difficulty": 1,
+    "x": 0.364754,
+    "y": 0.384677,
+    "z": 0.850395,
+    "source_article": "scroll formats",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "scroll formats",
+      "viewing experience",
+      "temporal narrative",
+      "Chinese painting display"
+    ]
+  },
+  {
+    "id": "31595a2a7dccfbcf",
+    "question_text": "The Song dynasty (960–1279) is considered the golden age of Chinese landscape painting. What institutional development under Emperor Huizong (r. 1100–1126) significantly shaped Song court painting?",
+    "options": {
+      "A": "He abolished all artistic activity at the imperial court and permanently banned painting as a morally corrupting and spiritually dangerous practice that distracted officials from their administrative duties — ordering the destruction of all existing paintings in the palace collection",
+      "B": "He outlawed landscape painting specifically while permitting only portraiture and still life compositions at the imperial court — imposing a rigid genre hierarchy that eliminated the very subject that would become the supreme achievement of Song dynasty painting under his direct patronage",
+      "C": "He decreed that only foreign artists from Persia, India, and Central Asia could paint at the Chinese court, permanently banning all Chinese-born painters from imperial service — a policy that contradicts his own celebrated artistic practice as one of China's most accomplished painter-emperors",
+      "D": "He established a rigorous painting academy with formal examinations testing poetic sensibility and visual imagination — elevating court painters' status and institutionalizing aesthetic standards"
+    },
+    "correct_answer": "D",
+    "difficulty": 1,
+    "x": 0.26,
+    "y": 0.402809,
+    "z": 0.614289,
+    "source_article": "Song academy",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Song academy",
+      "Huizong",
+      "court painting",
+      "painting examination"
+    ]
+  },
+  {
+    "id": "1e4ef76a08d3f009",
+    "question_text": "Guo Xi's treatise 'Linquan Gaozhi' (The Lofty Message of Forests and Streams, c. 1080) articulated three key methods for depicting distance in landscape painting. What are these 'three distances' (san yuan)?",
+    "options": {
+      "A": "High distance (looking up from base to summit), deep distance (looking from foreground past successive ridges), and level distance (looking across a horizontal expanse) — three viewpoints that together allow the painter to represent spatial complexity without single-point perspective",
+      "B": "The distances between the painter's physical body and exactly three predetermined objects that must always appear in every landscape composition regardless of the actual scenery being depicted — a rigid formula that allowed no creative variation, artistic judgment, or compositional flexibility in the arrangement of pictorial space",
+      "C": "Three precise metric measurements specified in centimeters that dictate the exact physical dimensions every landscape painting must conform to — a rigid standardization of format size that has nothing to do with the representation of spatial depth, viewpoint, or the experience of looking at actual mountain scenery",
+      "D": "The three distances between China, Korea, and Japan that define the only acceptable geographic subjects for landscape art"
+    },
+    "correct_answer": "A",
+    "difficulty": 2,
+    "x": 0.379201,
+    "y": 0.468986,
+    "z": 1.0,
+    "source_article": "Guo Xi",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Guo Xi",
+      "san yuan",
+      "three distances",
+      "Chinese spatial theory"
+    ]
+  },
+  {
+    "id": "2e26eb79aef0215b",
+    "question_text": "Chinese lacquerware has been produced for over 7,000 years. What makes lacquer (from the Toxicodendron vernicifluum tree) such a remarkable artistic medium?",
+    "options": {
+      "A": "It is purely decorative paint with no protective properties whatsoever, applied only for surface color and easily washed off with water — offering no durability, no resistance to moisture, and no capacity for the intricate carving and inlay techniques that actual lacquer enables",
+      "B": "When built up in many thin layers and cured in humid conditions, it forms an extraordinarily hard, durable, waterproof surface that can be carved, inlaid, or painted — preserving objects for millennia while allowing intricate decoration",
+      "C": "It is identical to European oil paint in every chemical and physical property, with no distinctive characteristics of its own",
+      "D": "It can only be applied in a single thick coat and produces a rough matte surface unsuitable for any decorative treatment"
+    },
+    "correct_answer": "B",
+    "difficulty": 2,
+    "x": 0.321414,
+    "y": 0.12665,
+    "z": 0.680966,
+    "source_article": "lacquerware",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "lacquerware",
+      "material properties",
+      "Chinese decorative arts",
+      "curing process"
+    ]
+  },
+  {
+    "id": "3e79084731465367",
+    "question_text": "The Chan (Zen) Buddhist painting tradition, particularly influential in the Southern Song period, developed a distinctive aesthetic. What philosophical principle drives Chan painting's visual style?",
+    "options": {
+      "A": "Chan painting favored elaborate, highly detailed, polychromatic compositions filled with dense ornamental decoration, meticulous botanical and zoological rendering, and extensive use of gold leaf and mineral pigments to demonstrate the painter's devotional piety and lavish commitment to Buddhist worship through material richness",
+      "B": "Chan painting rejected all Buddhist subjects entirely and depicted only secular scenes of commerce, trade, urban entertainment, and market transactions without any spiritual content, meditative quality, or religious imagery — functioning as documentary record-keeping rather than as visual expression of Buddhist insight and contemplative experience",
+      "C": "Sudden, spontaneous brushwork and radical abbreviation of form — embodying the Chan emphasis on direct intuitive insight (wu/satori) over gradual intellectual study, where a few ink strokes evoke the essence of a subject beyond discursive description",
+      "D": "Chan painting required mathematical precision and geometric exactness above all else, with every single brushstroke carefully measured and planned in advance using rulers, compasses, and gridded templates — leaving absolutely no room for spontaneity, improvisation, or the direct intuitive expression that actually defines the Chan painting aesthetic"
+    },
+    "correct_answer": "C",
+    "difficulty": 2,
+    "x": 0.357229,
+    "y": 0.418727,
+    "z": 0.461895,
+    "source_article": "Chan Buddhism",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Chan Buddhism",
+      "spontaneous ink painting",
+      "Muqi",
+      "intuitive insight"
+    ]
+  },
+  {
+    "id": "6cc1dc4b7883fd55",
+    "question_text": "The 'Four Wang' (Si Wang) painters of the early Qing dynasty — Wang Shimin, Wang Jian, Wang Hui, and Wang Yuanqi — represent a particular approach to landscape tradition. What artistic philosophy unified their practice?",
+    "options": {
+      "A": "Complete rejection of all earlier Chinese painting traditions, advocating that artists should paint only from direct outdoor observation with absolutely no reference to past masters, historical models, or received techniques — an anti-traditional stance that contradicts the Orthodox School's foundational commitment to studying and reinterpreting the ancients",
+      "B": "Painting only abstract geometric patterns with no representational content whatsoever, anticipating Western modernist abstraction by two full centuries through an exclusively non-figurative visual vocabulary — a claim that misrepresents the Four Wang's deeply representational landscape practice rooted in the traditions of Dong Yuan and Huang Gongwang",
+      "C": "Exclusive devotion to European oil painting technique imported to China by Jesuit missionaries during the seventeenth century, completely abandoning all traditional Chinese brush-and-ink methods, rice paper, and silk — a wholesale cultural capitulation that contradicts the Orthodox School's fierce dedication to preserving native Chinese painting traditions",
+      "D": "Systematic study and creative reinterpretation of past masters — synthesizing the styles of Song and Yuan painters through deliberate archaism that transformed historical models into personal expression"
+    },
+    "correct_answer": "D",
+    "difficulty": 3,
+    "x": 0.328941,
+    "y": 0.477438,
+    "z": 0.254932,
+    "source_article": "Four Wang",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Four Wang",
+      "Orthodox School",
+      "archaism",
+      "Qing dynasty painting"
+    ]
+  },
+  {
+    "id": "f58366ec9f833a63",
+    "question_text": "Silk has served as a painting surface in China for over 2,000 years. What distinctive visual quality does painting on silk (as opposed to paper) produce?",
+    "options": {
+      "A": "Silk's smooth, slightly lustrous surface produces finer detail and more luminous color than absorbent paper, but does not allow the expressive ink-bleeding and feathering effects that paper enables — making it better suited to detailed court painting than spontaneous literati brushwork",
+      "B": "Silk absorbs ink in a manner completely identical to paper with absolutely no difference in visual effect, texture, luminosity, or expressive possibility — the two surfaces are entirely interchangeable, making the choice between silk and paper a purely arbitrary decision with no aesthetic consequences for the final painted work",
+      "C": "Silk can only be painted with oils and is incompatible with water-based ink and mineral pigments used in Chinese painting",
+      "D": "Silk was only ever used for calligraphy and was never used as a surface for painting in any period of Chinese art history — painters exclusively used paper, while silk was reserved solely for written text, making it irrelevant to the entire tradition of Chinese pictorial art from the Han dynasty through the Qing"
+    },
+    "correct_answer": "A",
+    "difficulty": 1,
+    "x": 0.347121,
+    "y": 0.282862,
+    "z": 0.511259,
+    "source_article": "painting surfaces",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "painting surfaces",
+      "silk vs paper",
+      "material effects",
+      "court vs literati painting"
+    ]
+  },
+  {
+    "id": "2f636dc5e7d36407",
+    "question_text": "Chinese cloisonné enamelware (jingtailan) reached its peak during the Ming dynasty. What does the 'cloisonné' technique involve?",
+    "options": {
+      "A": "Carving intricate decorative designs directly into blocks of solid jade using specialized diamond-tipped cutting tools, without involving any metal components, enamel paste, soldering, or firing process — a lapidary technique entirely different from the metalwork and enamel method of cloisonné",
+      "B": "Soldering thin metal wire (usually copper or bronze) onto a metal body to create cells (cloisons) that are then filled with colored enamel paste, fired, and polished — producing vibrant, precisely bounded areas of color",
+      "C": "Painting watercolors directly onto unfired clay pots that are never placed in a kiln",
+      "D": "Weaving colored silk threads of various hues into a rigid wooden frame to create purely textile-based decorative art without any metal body, wire cloisons, enamel paste, or kiln firing — a fiber arts technique completely unrelated to the metalwork and enamel process of cloisonné production"
+    },
+    "correct_answer": "B",
+    "difficulty": 2,
+    "x": 0.312839,
+    "y": 0.123729,
+    "z": 0.589863,
+    "source_article": "cloisonné",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "cloisonné",
+      "jingtailan",
+      "enamelwork",
+      "Ming decorative arts"
+    ]
+  },
+  {
+    "id": "951cb180d0b656e1",
+    "question_text": "The Eight Eccentrics of Yangzhou (Yangzhou baguai) were a group of 18th-century painters who challenged orthodox Qing painting conventions. What made their work 'eccentric' by contemporary standards?",
+    "options": {
+      "A": "They followed every single rule of the Orthodox School perfectly and without deviation, and were considered eccentric only because they happened to live and work in Yangzhou rather than in the imperial capital of Beijing — their actual painting technique, composition, and subject matter were entirely conventional and orthodox",
+      "B": "They painted only with European oil paints imported through the Canton trade, completely abandoning Chinese materials and subjects",
+      "C": "Their bold, expressive brushwork, unconventional compositions, and preference for humble subjects (vegetables, rocks, flowers) over grand landscapes challenged the polished archaism of the dominant Orthodox School — linking them to earlier individualist traditions",
+      "D": "They exclusively painted large-scale battle scenes commissioned by the Qianlong emperor for military documentation"
+    },
+    "correct_answer": "C",
+    "difficulty": 3,
+    "x": 0.305782,
+    "y": 0.4308,
+    "z": 0.0,
+    "source_article": "Yangzhou Eccentrics",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Yangzhou Eccentrics",
+      "individualism",
+      "Orthodox vs heterodox",
+      "Qing painting"
+    ]
+  },
+  {
+    "id": "9be24d349bfabfca",
+    "question_text": "The principle of 'shi' (structural force/momentum) in Chinese painting and calligraphy theory describes a quality essential to great composition. What does 'shi' refer to?",
+    "options": {
+      "A": "The literal physical weight of the painting materials — paper, silk, ink, pigments, and mounting — measured precisely on a balance scale and recorded in grams for purposes of shipping, storage, insurance valuation, and customs documentation, with no connection to any aesthetic or compositional quality",
+      "B": "The specific calendar date and exact astronomical time when the painting was created, recorded for astrological analysis and horoscopic interpretation — used to determine whether the celestial alignment at the moment of creation was favorable or unfavorable to the painting's artistic and spiritual quality",
+      "C": "The market price of the painting at auction, determined solely by the fame of the artist",
+      "D": "The dynamic structural energy and directional momentum within a composition — the sense of forces in tension, movement, and counterbalance that gives brushwork and compositional arrangement their vitality and visual logic"
+    },
+    "correct_answer": "D",
+    "difficulty": 3,
+    "x": 0.49,
+    "y": 0.353788,
+    "z": 0.556617,
+    "source_article": "shi",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "shi",
+      "structural force",
+      "compositional dynamics",
+      "Chinese aesthetics"
+    ]
+  },
+  {
+    "id": "0ec3cab6aaf3711a",
+    "question_text": "Wu Daozi (c. 680–759) was considered the greatest figure painter of the Tang dynasty, yet almost none of his original works survive. How do we know about his style?",
+    "options": {
+      "A": "Through detailed literary descriptions, later copies, stone engravings reproducing his compositions, and his profound influence on subsequent figure painting — establishing a pattern where art-historical reputation in China is preserved through textual tradition and secondary transmission alongside (or instead of) surviving originals",
+      "B": "We know nothing about his style — he is a completely fictional figure invented by later historians with no historical evidence",
+      "C": "All of his paintings survive intact in perfect condition in the Palace Museum in Beijing, so there is no gap in the record",
+      "D": "His work is known only through photographs taken of his paintings before they were all destroyed in the 20th century"
+    },
+    "correct_answer": "A",
+    "difficulty": 3,
+    "x": 0.303529,
+    "y": 0.369651,
+    "z": 0.728105,
+    "source_article": "Wu Daozi",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Wu Daozi",
+      "textual tradition",
+      "art-historical transmission",
+      "Tang painting"
+    ]
+  },
+  {
+    "id": "08c0a0e6367f499c",
+    "question_text": "The 'Admonitions of the Instructress to Court Ladies' scroll, attributed to Gu Kaizhi (c. 344–406), is among the earliest surviving Chinese narrative paintings. What compositional principle does this scroll demonstrate?",
+    "options": {
+      "A": "Deep single-point linear perspective with a fixed vanishing point and systematic mathematical foreshortening, identical to Italian Renaissance spatial construction techniques developed by Brunelleschi and Alberti — imposing a Western spatial system anachronistically on early Chinese narrative painting",
+      "B": "Figures are arranged in discrete scenes separated by columns of text, with scale indicating moral or social importance rather than spatial distance — an arrangement where narrative meaning determines visual organization rather than optical realism",
+      "C": "The scroll contains no figures at all — it consists entirely of abstract ink patterns with no representational content",
+      "D": "All figures are depicted at identical size in a single continuous crowd scene with no divisions, text, or compositional structure"
+    },
+    "correct_answer": "B",
+    "difficulty": 4,
+    "x": 0.344244,
+    "y": 0.396632,
+    "z": 0.876332,
+    "source_article": "Gu Kaizhi",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Gu Kaizhi",
+      "early Chinese narrative painting",
+      "hierarchical scale",
+      "text-image relationship"
+    ]
+  },
+  {
+    "id": "79476ec447938412",
+    "question_text": "The Mogao Caves at Dunhuang (4th–14th centuries) contain one of the world's greatest repositories of Buddhist wall painting. What makes the Dunhuang paintings art-historically significant beyond their Buddhist content?",
+    "options": {
+      "A": "They were painted entirely by European missionaries arriving in the nineteenth century and consequently have no authentic connection to Chinese, Central Asian, Indian, or any other pre-modern artistic tradition — making them products of Western cultural imperialism rather than genuine evidence of Silk Road artistic exchange across a thousand years",
+      "B": "They contain only abstract geometric patterns with no figural imagery, no narrative content, no Buddhist iconography, and no representational scenes of any kind, rendering them entirely irrelevant to understanding the development of Chinese painting, figure composition, spatial representation, or religious visual culture",
+      "C": "They document the evolution of Chinese painting style across a thousand years and reveal Central Asian, Indian, and Persian artistic influences absorbed along the Silk Road — providing evidence of cross-cultural artistic exchange that no single-period site could offer",
+      "D": "They contain only textual manuscripts with no paintings, murals, or visual art of any kind"
+    },
+    "correct_answer": "C",
+    "difficulty": 4,
+    "x": 0.275287,
+    "y": 0.311072,
+    "z": 0.720656,
+    "source_article": "Dunhuang",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Dunhuang",
+      "Mogao Caves",
+      "Silk Road exchange",
+      "cross-cultural influence"
+    ]
+  },
+  {
+    "id": "59481f9a5aa08a9c",
+    "question_text": "The concept of 'cunfa' (texture strokes) in Chinese landscape painting refers to specific brushstroke techniques used to render the surface texture of rocks and mountains. Why is cunfa considered a critical element of landscape painting style?",
+    "options": {
+      "A": "Cunfa is purely decorative surface embellishment that has absolutely no relationship to the depiction of actual geological forms, regional landscape character, or individual painting style — all painters across every dynasty and school use completely identical texture strokes with no variation, making cunfa irrelevant to attribution, period classification, or stylistic analysis",
+      "B": "Cunfa is a term from Chinese cooking that was erroneously applied to painting by Western art historians — it has no authentic meaning in Chinese art criticism",
+      "C": "Cunfa refers to the color of the paint rather than the brushstroke technique, specifying only whether blue or green pigment is used",
+      "D": "Different cunfa (axe-cut, hemp-fiber, raindrop, cloud-head strokes and many others) each evoke distinct geological textures, and a painter's choice and handling of cunfa constitutes a primary marker of individual and period style — making texture strokes a vocabulary through which artistic identity is expressed"
+    },
+    "correct_answer": "D",
+    "difficulty": 4,
+    "x": 0.399037,
+    "y": 0.388254,
+    "z": 0.710097,
+    "source_article": "cunfa",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "cunfa",
+      "texture strokes",
+      "stylistic identity",
+      "landscape technique"
+    ]
+  },
+  {
+    "id": "b4183e30d4a42e7c",
+    "question_text": "Bada Shanren (Zhu Da, c. 1626–1705), a Ming dynasty prince who became a Chan Buddhist monk after the Manchu conquest, created some of the most emotionally powerful bird-and-flower paintings in Chinese history. What distinguishes his mature painting style?",
+    "options": {
+      "A": "Stark, minimal compositions with exaggerated forms — birds with bulging eyes glaring upward, fish with defiant expressions, and rocks balanced precariously — executed in bold ink with extreme economy, conveying his rage and grief through distorted natural forms",
+      "B": "Dense, meticulous, highly colored compositions packed with hundreds of precisely rendered flowers and birds in the academic gongbi tradition",
+      "C": "Exact photographic realism depicting birds and flowers with scientific accuracy comparable to European natural history illustration — producing botanically and zoologically precise images intended for scientific classification rather than artistic expression or emotional content",
+      "D": "He painted only portraits of Manchu emperors in a flattering court style, completely accepting the Qing dynasty's legitimacy"
+    },
+    "correct_answer": "A",
+    "difficulty": 4,
+    "x": 0.30551,
+    "y": 0.365415,
+    "z": 0.34545,
+    "source_article": "Bada Shanren",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Bada Shanren",
+      "individualist painters",
+      "political symbolism",
+      "expressive distortion"
+    ]
+  },
+  {
+    "id": "6e1b80fd7fb0c029",
+    "question_text": "The Shanghai School (Haipai) of painting emerged in the late 19th century as China's treaty ports brought new social and economic conditions. What was the Shanghai School's most significant departure from literati painting tradition?",
+    "options": {
+      "A": "Shanghai painters completely abandoned Chinese materials and painted exclusively in European oil on canvas using Western perspective and chiaroscuro",
+      "B": "They openly embraced the commercial art market, creating vivid, accessible works combining bold color, dynamic brushwork, and popular subjects for a new mercantile audience — breaking the literati ideal of painting as private, non-commercial scholarly expression",
+      "C": "They painted only traditional mountain landscapes in the exact style of the Four Wang with no innovation or departure from orthodox convention",
+      "D": "The Shanghai School was not a painting movement but a school of architecture specializing in Western-style buildings"
+    },
+    "correct_answer": "B",
+    "difficulty": 4,
+    "x": 0.296728,
+    "y": 0.407932,
+    "z": 0.201433,
+    "source_article": "Shanghai School",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Shanghai School",
+      "Haipai",
+      "commercialism",
+      "modernization"
+    ]
+  },
+  {
+    "id": "a424f302d336295a",
+    "question_text": "The Song dynasty painter Fan Kuan's 'Travelers among Mountains and Streams' (c. 1000 CE) is considered one of the supreme achievements of Chinese landscape painting. What compositional strategy makes this work so powerful?",
+    "options": {
+      "A": "The entire painting is filled with hundreds of tiny human figures arranged in dense crowd scenes with absolutely no landscape elements, no mountains, no trees, no sky, and no natural scenery of any kind, prioritizing narrative action and figural density over the natural world — the exact opposite of Fan Kuan's actual composition where a colossal mountain dominates and human travelers are nearly invisible",
+      "B": "The composition is entirely empty white paper with nothing except a single small calligraphic inscription placed in the center — containing no pictorial content, no landscape imagery, no mountain forms, and no figural elements whatsoever, making it a work of pure textual art rather than the monumental landscape painting it actually is, with its towering central peak and cascading waterfalls",
+      "C": "A massive, monumental mountain dominates the upper two-thirds of the composition, with tiny travelers visible only on close inspection at the bottom — the radical contrast in scale between the immensity of nature and the smallness of human presence embodies the Northern Song ideal of landscape as cosmic revelation",
+      "D": "It depicts a completely flat, featureless plain stretching to the horizon with absolutely no mountains, trees, rocks, waterfalls, or vertical elements of any kind — a horizontal landscape of uniform flatness that contains no dramatic elevation, no spatial contrast between near and far, and no expression of nature's grandeur or cosmic power"
+    },
+    "correct_answer": "C",
+    "difficulty": 3,
+    "x": 0.34703,
+    "y": 0.452331,
+    "z": 0.947873,
+    "source_article": "Fan Kuan",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Fan Kuan",
+      "monumental landscape",
+      "Northern Song style",
+      "human-nature relationship"
+    ]
+  },
+  {
+    "id": "c0c3bacaaaabbddd",
+    "question_text": "The 'Qingming Shanghe Tu' (Along the River During the Qingming Festival) by Zhang Zeduan (early 12th century) is a celebrated handscroll depicting life in the Northern Song capital Kaifeng. What makes this scroll unique among Chinese paintings?",
+    "options": {
+      "A": "It is a pure landscape painting with no human figures, buildings, or evidence of urban life — depicting only uninhabited wilderness",
+      "B": "It is a map with no artistic content, consisting entirely of place names and boundary lines with no pictorial imagery",
+      "C": "It depicts only a single Buddhist temple interior with one monk meditating in an empty room",
+      "D": "It is a detailed panoramic documentary of urban and suburban life — markets, bridges, boats, shops, and hundreds of individually characterized figures engaged in daily activities — providing an unparalleled visual record of Song-dynasty society, economy, and material culture"
+    },
+    "correct_answer": "D",
+    "difficulty": 2,
+    "x": 0.279693,
+    "y": 0.348236,
+    "z": 0.81505,
+    "source_article": "Qingming scroll",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Qingming scroll",
+      "Zhang Zeduan",
+      "documentary painting",
+      "Song urban life"
+    ]
+  },
+  {
+    "id": "fa78d616fc79ef1c",
+    "question_text": "Chinese garden design (particularly the scholar's garden of Suzhou) is considered an art form closely related to landscape painting. What principle connects garden design to shan shui painting?",
+    "options": {
+      "A": "Both arts create a microcosm of natural landscape through careful composition of rocks, water, plants, and spatial sequence — the garden physically realizes the shan shui painter's vision of idealized nature, using framed views, borrowed scenery, and winding paths to create the same shifting perspectives found in scroll painting",
+      "B": "Gardens have absolutely no aesthetic principles whatsoever and are purely functional agricultural spaces designed exclusively for growing vegetables, herbs, and grain crops, with no connection to art, painting, poetry, philosophy, or any form of cultural expression — they serve only practical nutritional needs and have never been conceived as artistic compositions or microcosms of the natural landscape in Chinese cultural tradition",
+      "C": "Gardens are designed using only straight lines, right angles, and strict bilateral geometric symmetry, following French formal garden principles exemplified by Versailles with absolutely no relationship to the organic, asymmetric forms of Chinese landscape painting — a claim that contradicts the Chinese garden's fundamental principle of naturalistic irregularity and its deliberate rejection of geometric formality",
+      "D": "Chinese gardens contain only a single type of plant species and have absolutely no rocks, water features, architectural elements, winding paths, moon gates, lattice windows, or spatial sequences of any kind — a barren monoculture with no compositional variety, no framed views, and no attempt to create the immersive landscape experience that actually defines the Chinese scholar's garden tradition"
+    },
+    "correct_answer": "A",
+    "difficulty": 1,
+    "x": 0.397351,
+    "y": 0.359297,
+    "z": 0.670404,
+    "source_article": "scholar's garden",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "scholar's garden",
+      "painting-garden relationship",
+      "borrowed scenery",
+      "spatial experience"
+    ]
+  },
+  {
+    "id": "b148c150f9f51c43",
+    "question_text": "The 'Three Perfections' (sanjue) ideal in Chinese literati culture describes the integration of three arts within a single artwork. What are these three arts?",
+    "options": {
+      "A": "Sculpture, architecture, and ceramic pottery — three purely three-dimensional arts that have no relationship whatsoever to painting, calligraphy, or poetry, and that belong to entirely separate craft traditions practiced by artisans rather than scholars — making them irrelevant to the literati ideal of integrated artistic cultivation",
+      "B": "Poetry, calligraphy, and painting — unified on a single scroll, where the poem's meaning, the calligraphy's visual rhythm, and the painting's imagery create an integrated aesthetic experience that no single art could achieve alone",
+      "C": "Music, dance, and theater — three performing arts that exist only in temporal performance and have absolutely no connection to the visual arts of brush and ink, no presence on the painted scroll, and no relationship to the literati's cultivation of integrated written and visual expression",
+      "D": "Metalwork, weaving, and woodcarving — three exclusively manual craft traditions practiced by specialized artisans with no overlap whatsoever with the literati arts of brush and ink, and with no presence in the scholar's studio or on the surface of a painted and inscribed scroll"
+    },
+    "correct_answer": "B",
+    "difficulty": 1,
+    "x": 0.405839,
+    "y": 0.339109,
+    "z": 0.517684,
+    "source_article": "sanjue",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "sanjue",
+      "Three Perfections",
+      "literati integration",
+      "poetry-calligraphy-painting"
+    ]
+  },
+  {
+    "id": "30ca806e61f62147",
+    "question_text": "Huang Gongwang's 'Dwelling in the Fuchun Mountains' (1347–1350) is considered the most influential Chinese landscape painting of the Yuan dynasty. Why did this work become the supreme model for later literati painters?",
+    "options": {
+      "A": "It displayed the most technically perfect and detailed rendering of trees, rocks, and water ever achieved, surpassing all previous paintings in photographic accuracy",
+      "B": "It was the largest Chinese painting ever created, measuring over 50 meters in length and requiring an entire building to display",
+      "C": "Its extended creation over three years, personal expressive brushwork, meditative pace, and transformation of landscape into a vehicle for scholarly self-cultivation embodied the literati ideal that painting expresses the painter's inner character rather than describing external appearances",
+      "D": "It depicted Western architectural subjects introduced by Marco Polo, making it the first Chinese painting to show European influence"
+    },
+    "correct_answer": "C",
+    "difficulty": 5,
+    "x": 0.295552,
+    "y": 0.489785,
+    "z": 0.702575,
+    "source_article": "Huang Gongwang",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Huang Gongwang",
+      "Fuchun Mountains",
+      "literati ideal",
+      "self-cultivation through painting"
+    ]
+  },
+  {
+    "id": "42c4a8e729529a84",
+    "question_text": "The concept of 'gu' (bone/structure) in Chinese painting and calligraphy theory refers to something deeper than mere skeletal anatomy. In the context of Xie He's second principle ('bone method using the brush'), what does 'gu' signify?",
+    "options": {
+      "A": "Only the literal depiction of human skeletal anatomy for medical illustration purposes — the term has absolutely no metaphorical, aesthetic, or philosophical meaning in Chinese art criticism, and refers exclusively to the drawing of physical bones in anatomical diagrams for physicians rather than any quality of brushwork",
+      "B": "The physical weight of the completed painting scroll measured precisely in grams, recorded exclusively for shipping logistics, insurance assessment, and customs documentation purposes — a purely commercial measurement with no artistic, aesthetic, calligraphic, or philosophical significance in Chinese art theory whatsoever",
+      "C": "The specific brand of brush and ink used by the painter, referring to the commercial manufacturer rather than any artistic quality",
+      "D": "The structural strength, inner vitality, and decisive energy of brushwork itself — the calligraphic quality of each stroke's internal architecture, which reveals the artist's character, training, and moral fiber through the brush's decisive or hesitant movement"
+    },
+    "correct_answer": "D",
+    "difficulty": 5,
+    "x": 0.48289,
+    "y": 0.348063,
+    "z": 0.349136,
+    "source_article": "gufa",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "gufa",
+      "bone method",
+      "brushwork structure",
+      "calligraphic quality in painting"
+    ]
+  },
+  {
+    "id": "6457ea92c0f34571",
+    "question_text": "The practice of 'fanggu' (imitating antiquity) in Chinese painting is often misunderstood by Western observers as mere copying. What does fanggu actually involve in the literati tradition?",
+    "options": {
+      "A": "Creative dialogue with past masters — studying their structural principles, brushwork vocabulary, and compositional logic, then reinterpreting these elements through the painter's own sensibility, so that 'imitating' an ancient master becomes a vehicle for self-expression within tradition",
+      "B": "Exact mechanical reproduction of ancient paintings using tracing paper, producing identical copies with no personal variation — the Chinese equivalent of photocopying",
+      "C": "Destroying ancient paintings and replacing them with modern works, deliberately erasing the past",
+      "D": "Painting only brand-new subjects never before depicted in Chinese art history, with no reference to any tradition"
+    },
+    "correct_answer": "A",
+    "difficulty": 5,
+    "x": 0.395464,
+    "y": 0.387909,
+    "z": 0.554422,
+    "source_article": "fanggu",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "fanggu",
+      "creative imitation",
+      "tradition and innovation",
+      "literati practice"
+    ]
+  },
+  {
+    "id": "2bfc783060b42321",
+    "question_text": "The Southern Song painting academy under Emperor Gaozong (r. 1127–1162) developed an aesthetic markedly different from Northern Song monumental landscape. What shift occurred?",
+    "options": {
+      "A": "Southern Song painters abandoned landscape painting entirely and painted only Buddhist icons and devotional images with no natural scenery, no atmospheric effects, and no landscape elements of any kind — reversing the Northern Song emphasis on landscape as the supreme pictorial genre",
+      "B": "Southern Song painters replaced monumental full-mountain compositions with intimate, asymmetric compositions featuring 'one-corner' designs — misty voids replacing solid mass, suggesting poetic mood and emotional atmosphere over topographic grandeur",
+      "C": "Southern Song painting was identical to Northern Song painting with absolutely no stylistic change after the court moved south to Hangzhou",
+      "D": "Southern Song painters used only Western oil painting techniques learned from Arab traders, abandoning ink and brush entirely"
+    },
+    "correct_answer": "B",
+    "difficulty": 3,
+    "x": 0.309425,
+    "y": 0.48268,
+    "z": 0.744532,
+    "source_article": "Southern Song aesthetic",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Southern Song aesthetic",
+      "one-corner composition",
+      "Ma-Xia school",
+      "atmospheric landscape"
+    ]
+  },
+  {
+    "id": "fd9a2ff37b0eb36f",
+    "question_text": "The philosophical concept of 'dao' (the Way) profoundly influenced Chinese art theory. How does Daoist philosophy manifest in the aesthetics of Chinese landscape painting?",
+    "options": {
+      "A": "Daoism encouraged artists to depict only man-made structures, urban environments, and evidence of human civilization while actively rejecting all natural forms and landscape imagery, since nature was considered spiritually impure, aesthetically inferior, and fundamentally opposed to the human cultural achievements that Daoist philosophy supposedly celebrated above all else — a complete inversion of Daoism's actual reverence for the natural world",
+      "B": "Daoism had no influence whatsoever on Chinese visual arts — it was exclusively a system of political governance with no aesthetic or philosophical dimensions",
+      "C": "The Daoist valuation of emptiness (xu), naturalness (ziran), and the unity of all things in the Dao manifests in landscape painting's embrace of empty space as equally meaningful as painted form, its ideal of effortless spontaneity, and its vision of humans as integral participants in nature rather than its masters",
+      "D": "Daoism required that all paintings be painted in exactly seven minutes using only red ink, following a strict set of 42 procedural rules"
+    },
+    "correct_answer": "C",
+    "difficulty": 5,
+    "x": 0.402998,
+    "y": 0.393529,
+    "z": 0.642194,
+    "source_article": "Daoism and art",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Daoism and art",
+      "xu (emptiness)",
+      "ziran (naturalness)",
+      "philosophical aesthetics"
+    ]
+  },
+  {
+    "id": "d34d1d99608bf22c",
+    "question_text": "Xu Wei (1521–1593) is often considered the most radical painter of the Ming dynasty. What distinguishes his 'splashed ink' flower-and-plant paintings from the mainstream tradition?",
+    "options": {
+      "A": "He painted with extreme precision and control, producing the most technically refined and detailed botanical illustrations in Chinese art history",
+      "B": "He was a European missionary who introduced Western botanical illustration to China, painting only with oil paints on canvas",
+      "C": "He painted only calm, serene landscapes with no emotional content and no departures from orthodox compositional conventions",
+      "D": "He used wild, uncontrolled ink washes and explosive brushwork that dissolved recognizable forms into near-abstraction — channeling his turbulent personal life (imprisonment, attempted suicide, madness) into paintings where emotional intensity takes precedence over descriptive accuracy"
+    },
+    "correct_answer": "D",
+    "difficulty": 5,
+    "x": 0.300246,
+    "y": 0.399644,
+    "z": 0.296856,
+    "source_article": "Xu Wei",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Xu Wei",
+      "splashed ink",
+      "expressive painting",
+      "Ming individualism"
+    ]
+  },
+  {
+    "id": "46ca04189099551a",
+    "question_text": "The art of Chinese seal carving (zhuanke) is considered one of the four traditional arts alongside painting, calligraphy, and poetry. What aesthetic principle connects seal carving to the other three arts?",
+    "options": {
+      "A": "The interplay of positive and negative space (red ink impression vs. white stone surface), the calligraphic quality of carved characters, and the compositional balance within the seal's small format all embody the same principles of spatial harmony, brushwork vitality, and structural integrity that govern painting and calligraphy",
+      "B": "Seal carving has no aesthetic dimension and is purely functional — it serves only as a legal stamp for authenticating documents with no artistic value",
+      "C": "Seal carving is practiced only by machines and has never involved human artistic skill or creative judgment",
+      "D": "Seals are made exclusively of wood and contain only numeric codes, not characters or artistic compositions"
+    },
+    "correct_answer": "A",
+    "difficulty": 5,
+    "x": 0.406088,
+    "y": 0.299194,
+    "z": 0.529621,
+    "source_article": "zhuanke",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "zhuanke",
+      "seal carving",
+      "four arts",
+      "positive-negative space"
+    ]
+  },
+  {
+    "id": "673ed846b0c3253e",
+    "question_text": "The Lingnan School (Lingnan hua pai) of painting, founded in early 20th-century Guangdong, represented a distinctive approach to modernizing Chinese painting. What set the Lingnan School apart from other modernizing movements?",
+    "options": {
+      "A": "They completely rejected all Chinese painting traditions and practiced only European academic realism, with no Chinese elements remaining in their work",
+      "B": "They synthesized Chinese brush-and-ink technique with Japanese nihonga methods and Western attention to light, atmosphere, and naturalistic observation — seeking to modernize Chinese painting by absorbing foreign elements while retaining the expressive brushwork and poetic sensibility of the Chinese tradition",
+      "C": "They painted only exact copies of ancient Song dynasty masterworks with no modification or modernization whatsoever",
+      "D": "They abandoned visual art entirely and became a school of musical composition specializing in Cantonese opera"
+    },
+    "correct_answer": "B",
+    "difficulty": 4,
+    "x": 0.3276,
+    "y": 0.441413,
+    "z": 0.433679,
+    "source_article": "Lingnan School",
+    "domain_ids": [
+      "chinese-art-history",
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Lingnan School",
+      "Gao Jianfu",
+      "modernization",
+      "cross-cultural synthesis"
+    ]
+  }
+]

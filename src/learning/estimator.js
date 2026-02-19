@@ -1,0 +1,308 @@
+/**
+ * Gaussian Process knowledge estimator with Matérn 3/2 kernel.
+ *
+ * Maintains a GP surrogate model over a domain's grid cells.
+ * Uses Cholesky-based exact inference, recomputed after each observation.
+ * Performance target: predict() for 1500 cells with N≤50 obs in <15ms.
+ */
+
+import {
+  matern32,
+  euclidean,
+  kernelMatrix,
+  kernelVector,
+  choleskySolve,
+  dot,
+  clamp,
+} from '../utils/math.js';
+
+// GP hyperparameters — calibrated for cross-domain prediction in [0,1] embedding space.
+// Matérn 3/2 correlation at key distances (l=0.15):
+//   d=0.05 → k≈0.82  (same sub-domain: strong prediction)
+//   d=0.10 → k≈0.56  (adjacent sub-domain: meaningful)
+//   d=0.15 → k≈0.35  (related domain: visible, non-trivial)
+//   d=0.20 → k≈0.21  (distant but related: faint but present)
+//   d=0.30 → k≈0.07  (unrelated domain: negligible)
+// These values satisfy SC-009: Math→Probability produces non-zero cross-domain estimates.
+export const DEFAULT_LENGTH_SCALE = 0.15;
+const DEFAULT_SIGNAL_VARIANCE = 1.0;
+const NOISE_VARIANCE = 0.1;
+const PRIOR_MEAN = 0.5;
+
+export class Estimator {
+  constructor() {
+    this._gridSize = 0;
+    this._region = null;
+    this._cells = [];
+    this._observations = []; // [{x, y, value, lengthScale}]
+    this._alpha = null;
+    this._obsPoints = [];
+    this._obsLengthScales = null; // Float64Array of per-observation length scales
+    this._obsValues = null;
+    this._lengthScale = DEFAULT_LENGTH_SCALE;
+    this._signalVariance = DEFAULT_SIGNAL_VARIANCE;
+  }
+
+  /**
+   * Initialize with domain grid dimensions and region.
+   * Precomputes cell center coordinates.
+   */
+  init(gridSize, region) {
+    this._gridSize = gridSize;
+    this._region = region;
+    this._observations = [];
+    this._alpha = null;
+    this._obsPoints = [];
+    this._obsValues = null;
+
+    // Precompute cell centers in normalized coordinates
+    this._cells = [];
+    const xSpan = region.x_max - region.x_min;
+    const ySpan = region.y_max - region.y_min;
+    const cellW = xSpan / gridSize;
+    const cellH = ySpan / gridSize;
+
+    for (let gy = 0; gy < gridSize; gy++) {
+      for (let gx = 0; gx < gridSize; gx++) {
+        this._cells.push({
+          gx,
+          gy,
+          cx: region.x_min + (gx + 0.5) * cellW,
+          cy: region.y_min + (gy + 0.5) * cellH,
+        });
+      }
+    }
+  }
+
+  /**
+   * Record a new observation and recompute GP posterior.
+   * @param {number} x - Normalized x coordinate
+   * @param {number} y - Normalized y coordinate
+   * @param {boolean} correct - Whether the answer was correct
+   * @param {number} [lengthScale] - Per-observation RBF width (defaults to DEFAULT_LENGTH_SCALE)
+   */
+  observe(x, y, correct, lengthScale) {
+    const value = correct ? 1.0 : 0.0;
+    this._observations.push({ x, y, value, lengthScale: lengthScale || this._lengthScale });
+    this._recompute();
+  }
+
+  /**
+   * Get estimates for all cells (or viewport subset).
+   * Returns CellEstimate[] per contracts/active-learner.md.
+   */
+  predict(viewport) {
+    const cells = viewport ? this._cellsInViewport(viewport) : this._cells;
+    const n = this._observations.length;
+
+    if (n === 0) {
+      return cells.map((c) => ({
+        gx: c.gx,
+        gy: c.gy,
+        value: PRIOR_MEAN,
+        uncertainty: 1.0,
+        evidenceCount: 0,
+        state: 'unknown',
+      }));
+    }
+
+    const sv = this._signalVariance;
+    const defaultLS = this._lengthScale;
+    const results = new Array(cells.length);
+
+    for (let i = 0; i < cells.length; i++) {
+      const cell = cells[i];
+
+      // k* with per-observation length scales: k*[j] = matern32(d, sqrt(l_default * l_j))
+      const kStar = new Float64Array(n);
+      for (let j = 0; j < n; j++) {
+        const d = euclidean(cell.cx, cell.cy, this._obsPoints[j].x, this._obsPoints[j].y);
+        const lMerged = Math.sqrt(defaultLS * this._obsLengthScales[j]);
+        kStar[j] = matern32(d, lMerged, sv);
+      }
+
+      const meanShift = dot(kStar, this._alpha);
+      const value = clamp(PRIOR_MEAN + meanShift, 0, 1);
+
+      const kSelf = sv;
+      const kSolve = choleskySolve(this._K_noisy, kStar);
+      const variance = Math.max(0, kSelf - dot(kStar, kSolve));
+      const uncertainty = clamp(Math.sqrt(variance) / Math.sqrt(sv), 0, 1);
+
+      // Count nearby observations using each observation's own length scale
+      let evidenceCount = 0;
+      for (let j = 0; j < n; j++) {
+        const d = euclidean(cell.cx, cell.cy, this._obsPoints[j].x, this._obsPoints[j].y);
+        if (d <= this._obsLengthScales[j] * 2) evidenceCount++;
+      }
+
+      let state;
+      if (evidenceCount === 0) {
+        state = 'unknown';
+      } else if (value > 0.3 && value < 0.7 && uncertainty < 0.2) {
+        state = 'uncertain';
+      } else {
+        state = 'estimated';
+      }
+
+      results[i] = { gx: cell.gx, gy: cell.gy, value, uncertainty, evidenceCount, state };
+    }
+
+    return results;
+  }
+
+  /**
+   * Get estimate for a single cell.
+   */
+  predictCell(gx, gy) {
+    const cell = this._cells.find((c) => c.gx === gx && c.gy === gy);
+    if (!cell) return null;
+
+    if (this._observations.length === 0) {
+      return {
+        gx, gy,
+        value: PRIOR_MEAN,
+        uncertainty: 1.0,
+        evidenceCount: 0,
+        state: 'unknown',
+      };
+    }
+
+    const n = this._observations.length;
+    const sv = this._signalVariance;
+    const defaultLS = this._lengthScale;
+
+    const kStar = new Float64Array(n);
+    for (let j = 0; j < n; j++) {
+      const d = euclidean(cell.cx, cell.cy, this._obsPoints[j].x, this._obsPoints[j].y);
+      const lMerged = Math.sqrt(defaultLS * this._obsLengthScales[j]);
+      kStar[j] = matern32(d, lMerged, sv);
+    }
+    const meanShift = dot(kStar, this._alpha);
+    const value = clamp(PRIOR_MEAN + meanShift, 0, 1);
+
+    const kSelf = sv;
+    const kSolve = choleskySolve(this._K_noisy, kStar);
+    const variance = Math.max(0, kSelf - dot(kStar, kSolve));
+    const uncertainty = clamp(Math.sqrt(variance) / Math.sqrt(sv), 0, 1);
+
+    let evidenceCount = 0;
+    for (let j = 0; j < n; j++) {
+      const d = euclidean(cell.cx, cell.cy, this._obsPoints[j].x, this._obsPoints[j].y);
+      if (d <= this._obsLengthScales[j] * 2) evidenceCount++;
+    }
+
+    let state;
+    if (evidenceCount === 0) {
+      state = 'unknown';
+    } else if (value > 0.3 && value < 0.7 && uncertainty < 0.2) {
+      state = 'uncertain';
+    } else {
+      state = 'estimated';
+    }
+
+    return { gx, gy, value, uncertainty, evidenceCount, state };
+  }
+
+  /**
+   * Reset all observations (FR-021).
+   */
+  reset() {
+    this._observations = [];
+    this._alpha = null;
+    this._obsPoints = [];
+    this._obsValues = null;
+    this._obsLengthScales = null;
+    this._K_noisy = null;
+  }
+
+  /**
+   * Restore from persisted UserResponse[].
+   * Each response may include a `lengthScale` for per-observation RBF width.
+   */
+  restore(responses) {
+    this.reset();
+
+    if (!this._region || !responses || responses.length === 0) return;
+
+    for (const r of responses) {
+      if (r.x != null && r.y != null) {
+        this._observations.push({
+          x: r.x,
+          y: r.y,
+          value: r.is_correct ? 1.0 : 0.0,
+          lengthScale: r.lengthScale || this._lengthScale,
+        });
+      }
+    }
+
+    if (this._observations.length > 0) {
+      this._recompute();
+    }
+  }
+
+  // ---- Private methods ----
+
+  /**
+   * Recompute the GP posterior: build K, solve for α.
+   * Called after any observation change.
+   */
+  _recompute() {
+    const n = this._observations.length;
+    if (n === 0) {
+      this._alpha = null;
+      this._obsPoints = [];
+      this._obsValues = null;
+      this._obsLengthScales = null;
+      this._K_noisy = null;
+      return;
+    }
+
+    this._obsPoints = this._observations.map((o) => ({ x: o.x, y: o.y }));
+    this._obsValues = new Float64Array(n);
+    this._obsLengthScales = new Float64Array(n);
+    for (let i = 0; i < n; i++) {
+      this._obsValues[i] = this._observations[i].value - PRIOR_MEAN;
+      this._obsLengthScales[i] = this._observations[i].lengthScale || this._lengthScale;
+    }
+
+    // Build K with per-observation length scales: K[i,j] = matern32(d, sqrt(l_i * l_j))
+    const K = new Array(n);
+    for (let i = 0; i < n; i++) {
+      K[i] = new Float64Array(n);
+    }
+    const sv = this._signalVariance;
+    for (let i = 0; i < n; i++) {
+      const li = this._obsLengthScales[i];
+      for (let j = i; j < n; j++) {
+        const lj = this._obsLengthScales[j];
+        const lMerged = Math.sqrt(li * lj);
+        const d = euclidean(this._obsPoints[i].x, this._obsPoints[i].y,
+                           this._obsPoints[j].x, this._obsPoints[j].y);
+        const val = matern32(d, lMerged, sv);
+        K[i][j] = val;
+        K[j][i] = val;
+      }
+    }
+
+    this._K_noisy = K.map((row) => new Float64Array(row));
+    for (let i = 0; i < n; i++) {
+      this._K_noisy[i][i] += NOISE_VARIANCE;
+    }
+
+    this._alpha = choleskySolve(this._K_noisy, this._obsValues);
+  }
+
+  /**
+   * Filter cells to those within a viewport region.
+   */
+  _cellsInViewport(viewport) {
+    return this._cells.filter(
+      (c) =>
+        c.cx >= viewport.x_min &&
+        c.cx <= viewport.x_max &&
+        c.cy >= viewport.y_min &&
+        c.cy <= viewport.y_max
+    );
+  }
+}

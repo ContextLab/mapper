@@ -1,0 +1,277 @@
+{
+  "schema_version": "2.0.0",
+  "domains": [
+    {
+      "id": "astrophysics",
+      "name": "Astrophysics",
+      "parent_id": "physics",
+      "level": "sub",
+      "region": {
+        "x_min": 0.042179,
+        "x_max": 0.295656,
+        "y_min": 0.413276,
+        "y_max": 0.67439
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "quantum-physics",
+      "name": "Quantum Physics",
+      "parent_id": "physics",
+      "level": "sub",
+      "region": {
+        "x_min": 0.152447,
+        "x_max": 0.261172,
+        "y_min": 0.555136,
+        "y_max": 0.633997
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "european-art-history",
+      "name": "European Art History",
+      "parent_id": "art-history",
+      "level": "sub",
+      "region": {
+        "x_min": 0.140155,
+        "x_max": 0.781793,
+        "y_min": 0.044125,
+        "y_max": 0.865014
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "chinese-art-history",
+      "name": "Chinese Art History",
+      "parent_id": "art-history",
+      "level": "sub",
+      "region": {
+        "x_min": 0.111549,
+        "x_max": 0.88989,
+        "y_min": 0.107334,
+        "y_max": 0.962787
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "molecular-cell-biology",
+      "name": "Molecular and Cell Biology",
+      "parent_id": "biology",
+      "level": "sub",
+      "region": {
+        "x_min": 0.173708,
+        "x_max": 0.309931,
+        "y_min": 0.498578,
+        "y_max": 0.642923
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "genetics",
+      "name": "Genetics",
+      "parent_id": "biology",
+      "level": "sub",
+      "region": {
+        "x_min": 0.138192,
+        "x_max": 0.339672,
+        "y_min": 0.476228,
+        "y_max": 0.893378
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "cognitive-neuroscience",
+      "name": "Cognitive Neuroscience",
+      "parent_id": "neuroscience",
+      "level": "sub",
+      "region": {
+        "x_min": 0.039702,
+        "x_max": 0.329404,
+        "y_min": 0.526472,
+        "y_max": 0.83416
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "computational-neuroscience",
+      "name": "Computational Neuroscience",
+      "parent_id": "neuroscience",
+      "level": "sub",
+      "region": {
+        "x_min": 0.081785,
+        "x_max": 0.297888,
+        "y_min": 0.524533,
+        "y_max": 0.777447
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "neurobiology",
+      "name": "Neurobiology",
+      "parent_id": "neuroscience",
+      "level": "sub",
+      "region": {
+        "x_min": 0.166089,
+        "x_max": 0.304777,
+        "y_min": 0.477173,
+        "y_max": 0.633744
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "calculus",
+      "name": "Calculus",
+      "parent_id": "mathematics",
+      "level": "sub",
+      "region": {
+        "x_min": 0.085343,
+        "x_max": 0.314505,
+        "y_min": 0.506341,
+        "y_max": 0.665836
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "linear-algebra",
+      "name": "Linear Algebra",
+      "parent_id": "mathematics",
+      "level": "sub",
+      "region": {
+        "x_min": 0.086485,
+        "x_max": 0.248639,
+        "y_min": 0.553,
+        "y_max": 0.641952
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "number-theory",
+      "name": "Number Theory",
+      "parent_id": "mathematics",
+      "level": "sub",
+      "region": {
+        "x_min": 0.032277,
+        "x_max": 0.315036,
+        "y_min": 0.274876,
+        "y_max": 0.640728
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "probability-statistics",
+      "name": "Probability and Statistics",
+      "parent_id": "mathematics",
+      "level": "sub",
+      "region": {
+        "x_min": 0.082153,
+        "x_max": 0.258528,
+        "y_min": 0.553468,
+        "y_max": 0.666675
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "physics",
+      "name": "Physics",
+      "parent_id": null,
+      "level": "general",
+      "region": {
+        "x_min": 0.042179,
+        "x_max": 0.314078,
+        "y_min": 0.413276,
+        "y_max": 0.675621
+      },
+      "grid_size": 120,
+      "question_count": 150
+    },
+    {
+      "id": "neuroscience",
+      "name": "Neuroscience",
+      "parent_id": null,
+      "level": "general",
+      "region": {
+        "x_min": 0.039702,
+        "x_max": 0.329404,
+        "y_min": 0.477173,
+        "y_max": 0.83416
+      },
+      "grid_size": 120,
+      "question_count": 199
+    },
+    {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "parent_id": null,
+      "level": "general",
+      "region": {
+        "x_min": 0.032277,
+        "x_max": 0.323704,
+        "y_min": 0.273187,
+        "y_max": 0.75034
+      },
+      "grid_size": 120,
+      "question_count": 250
+    },
+    {
+      "id": "art-history",
+      "name": "Art History",
+      "parent_id": null,
+      "level": "general",
+      "region": {
+        "x_min": 0.026624,
+        "x_max": 0.893934,
+        "y_min": 0.035289,
+        "y_max": 0.966218
+      },
+      "grid_size": 120,
+      "question_count": 150
+    },
+    {
+      "id": "biology",
+      "name": "Biology",
+      "parent_id": null,
+      "level": "general",
+      "region": {
+        "x_min": 0.09088,
+        "x_max": 0.339672,
+        "y_min": 0.437107,
+        "y_max": 0.894153
+      },
+      "grid_size": 120,
+      "question_count": 150
+    },
+    {
+      "id": "all",
+      "name": "All (General)",
+      "parent_id": null,
+      "level": "all",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 50,
+      "question_count": 949
+    }
+  ],
+  "generated": "2026-02-18T22:05:08.197967",
+  "params": {
+    "top_sub": 500,
+    "top_general": 1000,
+    "min_grid_size": 50
+  }
+}

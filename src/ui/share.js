@@ -123,10 +123,12 @@ export function showShareDialog() {
     const contentEl = modal.querySelector('.share-modal-content');
     const teaserUrl = 'https://context-lab.com/mapper';
     const teaserText = 'Check out \u{1F5FA}\uFE0F Knowledge Mapper (https://context-lab.com/mapper): an interactive tool that maps out everything you know! Answer questions and watch a personalized map of YOUR knowledge take shape in real time.';
-    const remaining = SHARE_MIN_ANSWERS - totalAnswers;
-    const progressNote = totalAnswers > 0
+    const remaining = Math.max(0, SHARE_MIN_ANSWERS - totalAnswers);
+    const progressNote = totalAnswers > 0 && remaining > 0
       ? `Answer ${remaining} more question${remaining !== 1 ? 's' : ''} to unlock your personalized share with top expertise areas!`
-      : 'Select a knowledge domain to explore, and answer a few questions to unlock a shareable personalized map featuring your top areas of expertise.';
+      : totalAnswers > 0
+        ? 'Keep answering questions to build up your expertise areas for a personalized share!'
+        : 'Select a knowledge domain to explore, and answer a few questions to unlock a shareable personalized map featuring your top areas of expertise.';
     if (contentEl) {
       contentEl.innerHTML = `
         <button type="button" class="modal-close-x close-modal" aria-label="Close" style="position:absolute;top:0.75rem;right:0.75rem;">&times;</button>

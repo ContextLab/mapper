@@ -980,7 +980,9 @@ export class Renderer {
       const q = this._questionMap.get(hit.questionId);
       const isCorrect = hit.isCorrect;
       const borderColor = isCorrect ? '#00693e' : '#9d162e';
-      const icon = isCorrect ? '✓' : '✗';
+      const icon = isCorrect
+        ? '<i class="fa-solid fa-check" style="font-size:0.85em;"></i>'
+        : '<i class="fa-solid fa-xmark" style="font-size:0.85em;"></i>';
       const text = hit.title || 'Question';
       const truncated = text.length > 160 ? text.slice(0, 160) + '…' : text;
 

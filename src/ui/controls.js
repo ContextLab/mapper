@@ -181,6 +181,7 @@ export function init(headerElement) {
   resetButton = document.createElement('button');
   resetButton.className = 'control-btn';
   resetButton.ariaLabel = 'Reset all progress';
+  resetButton.title = 'Reset all progress';
   resetButton.innerHTML = '<i class="fa-solid fa-rotate-right"></i>';
   resetButton.hidden = true;
   resetButton.addEventListener('click', () => {
@@ -191,6 +192,7 @@ export function init(headerElement) {
   exportButton = document.createElement('button');
   exportButton.className = 'control-btn';
   exportButton.ariaLabel = 'Export progress as JSON';
+  exportButton.title = 'Export progress as JSON';
   exportButton.innerHTML = '<i class="fa-solid fa-download"></i>';
   exportButton.hidden = true;
   exportButton.addEventListener('click', () => {
@@ -201,6 +203,7 @@ export function init(headerElement) {
   importButton = document.createElement('button');
   importButton.className = 'control-btn';
   importButton.ariaLabel = 'Import saved progress';
+  importButton.title = 'Import saved progress';
   importButton.innerHTML = '<i class="fa-solid fa-upload"></i>';
   importButton.hidden = true;
   importButton.addEventListener('click', () => {

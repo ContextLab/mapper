@@ -623,10 +623,17 @@
 
         @media (max-width: 480px) {
             :root { --header-height: 50px; }
-            #app-header { padding: 0 0.75rem; }
+            #app-header { padding: 0 0.5rem; }
             .logo span { display: none; }
             .logo { font-size: 0.95rem; }
-            .header-left { gap: 0.4rem; }
+            .header-left { gap: 0.3rem; flex: 1; min-width: 0; overflow: hidden; }
+            .header-right { gap: 0.25rem; flex-shrink: 0; }
+            /* Hide non-essential header buttons on mobile */
+            #trophy-btn, #suggest-btn { display: none; }
+            .control-btn { display: none !important; } /* Hide reset/export/import on mobile */
+            .btn-icon { min-width: 34px; min-height: 34px; font-size: 0.85rem; }
+            /* Make dropdown arrow easier to see on mobile */
+            .custom-select-arrow { font-size: 0.9rem; }
             #quiz-panel {
                 position: absolute;
                 top: auto; bottom: 0; left: 0; right: 0;
@@ -654,10 +661,11 @@
                 border: 1px solid var(--color-border);
                 border-bottom: none;
             }
+            /* Arrow points UP when closed (pull up to open), DOWN when open (pull down to close) */
             .quiz-toggle-btn i { transform: rotate(90deg); }
             .quiz-toggle-btn.panel-open { bottom: 60vh; right: 50%; }
-            .quiz-toggle-btn.panel-open i { transform: rotate(-90deg); }
-            .domain-selector { flex-grow: 1; max-width: 200px; }
+            .quiz-toggle-btn.panel-open i { transform: rotate(90deg); }
+            .domain-selector { flex-grow: 1; max-width: 160px; }
             #minimap-container { display: none; }
             .resize-handle { display: none; }
             button, a, .quiz-option {
@@ -686,10 +694,10 @@
                 <button id="suggest-btn" class="btn-icon" aria-label="Suggest articles to learn" title="Suggest articles to maximally boost my knowledge" disabled>
                     <i class="fa-solid fa-graduation-cap"></i>
                 </button>
-                <button id="share-btn" class="btn-icon" aria-label="Share your knowledge map">
+                <button id="share-btn" class="btn-icon" aria-label="Share your knowledge map" title="Share your knowledge map">
                     <i class="fa-solid fa-share-nodes"></i>
                 </button>
-                <button id="about-btn" class="btn-icon" aria-label="About this project">
+                <button id="about-btn" class="btn-icon" aria-label="About this project" title="About this project">
                     <i class="fa-solid fa-circle-info"></i>
                 </button>
             </div>
@@ -713,7 +721,7 @@
                     </p>
                     <p>
                         <i class="fa-solid fa-graduation-cap" style="margin-right: 8px;"></i>
-                        Read our <a href="https://psyarxiv.com/dh3q2" target="_blank" rel="noopener">research paper</a> to learn more.
+                        Click <a href="#" id="landing-info-link" style="white-space:nowrap;"><i class="fa-solid fa-circle-info" style="margin: 0 2px;"></i> info</a> in the upper right to learn more, or read our <a href="https://psyarxiv.com/dh3q2" target="_blank" rel="noopener">research paper</a>.
                     </p>
 
                     <div class="landing-domain-wrapper" id="landing-domain-wrapper">

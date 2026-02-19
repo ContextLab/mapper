@@ -267,6 +267,12 @@ review.html
 find_domain_clusters.py
 review.html
 
+# Screenshots (testing artifacts)
+*.png
+
+# oh-my-claudecode state
+.omc/
+
 # Playwright test artifacts
 test-results/
 .DS_Store

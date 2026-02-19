@@ -5,7 +5,7 @@
   "description": "Interactive Wikipedia Knowledge Map — adaptive quiz visualization using text embeddings",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp -r data dist/data",
     "preview": "vite preview",
     "test": "vitest run",
     "bench": "vitest bench",

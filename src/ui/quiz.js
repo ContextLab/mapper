@@ -22,12 +22,18 @@ export function init(container) {
       }
       .quiz-question {
         font-family: var(--font-heading);
-        font-size: 0.95rem;
+        font-size: 0.82rem;
         line-height: 1.6;
         color: var(--color-text);
         margin-bottom: 1.25rem;
         text-align: left;
         text-indent: 0;
+      }
+      .quiz-instruction {
+        font-size: 0.72rem;
+        color: var(--color-text-muted);
+        margin-bottom: 0.75rem;
+        font-style: italic;
       }
       .quiz-options {
         display: flex;
@@ -47,10 +53,10 @@ export function init(container) {
         color: var(--color-text);
         transition: all 0.2s ease;
         min-height: 44px;
-        display: flex;
-        align-items: flex-start;
+        display: block;
         width: 100%;
         touch-action: manipulation;
+        line-height: 1.5;
       }
       .quiz-option b {
         color: var(--color-primary);
@@ -114,6 +120,7 @@ export function init(container) {
     <div class="resize-handle"></div>
     <div class="quiz-content">
       <div class="quiz-question" aria-live="polite"></div>
+      <div class="quiz-instruction">Click on the correct response</div>
       <div class="quiz-options" role="group" aria-label="Answer options">
         <button class="quiz-option" data-key="A" aria-label="Option A"></button>
         <button class="quiz-option" data-key="B" aria-label="Option B"></button>
@@ -128,6 +135,7 @@ export function init(container) {
   uiElements = {
     wrapper: container.querySelector('.quiz-content'),
     question: container.querySelector('.quiz-question'),
+    instruction: container.querySelector('.quiz-instruction'),
     options: container.querySelectorAll('.quiz-option'),
     feedback: container.querySelector('.quiz-feedback'),
     meta: container.querySelector('.quiz-meta')
@@ -191,12 +199,12 @@ export function showQuestion(question) {
     announce(`Question: ${stripLatex(questionText)}`);
   }
 
-  if (uiElements.options) {
+   if (uiElements.options) {
     uiElements.options.forEach(btn => {
       const key = btn.dataset.key;
       const text = question.options ? question.options[key] : '';
       const renderedText = renderLatex(text || '');
-      btn.innerHTML = `<b>${key}.</b>&nbsp;${renderedText}`;
+      btn.innerHTML = renderedText;
       // T049: Update ARIA label with option text
       btn.setAttribute('aria-label', `Option ${key}: ${stripLatex(text || '')}`);
       btn.disabled = false;
@@ -215,9 +223,11 @@ export function showQuestion(question) {
 }
 
 function handleOptionClick(selectedKey) {
-  if (!currentQuestion || !uiElements.options) return;
-  
-  uiElements.options.forEach(btn => btn.disabled = true);
+   if (!currentQuestion || !uiElements.options) return;
+   
+   uiElements.options.forEach(btn => {
+     btn.disabled = true;
+   });
 
   const correctKey = currentQuestion.correct_answer;
   const isCorrect = selectedKey === correctKey;
@@ -263,17 +273,16 @@ export function onAnswer(callback) {
 /**
  * Replaces $...$ with KaTeX rendered HTML.
  * Heuristic: if content between $ signs contains only numbers/punctuation, treat as currency.
- * Fallback: if KaTeX is missing or fails, strips $ delimiters and shows raw text.
+ * Fallback: if KaTeX is missing or fails, shows raw text with monospace styling.
  */
 export function renderLatex(text) {
   if (!text) return '';
   
   return text.replace(/\$([^$]+)\$/g, (match, content) => {
     if (/^[0-9.,\s]+$/.test(content)) {
-      return match;
+      return content;
     }
     
-    // T047: Check global failure flag
     if (window.katex && !window.__katexFailed) {
       try {
         return window.katex.renderToString(content, {
@@ -282,11 +291,11 @@ export function renderLatex(text) {
         });
       } catch (err) {
         console.warn('KaTeX render error:', err);
-        return content; // Fallback to raw content
+        return `<code style="font-family: 'Courier New', monospace; background: var(--color-surface); padding: 0.2em 0.4em; border-radius: 3px;">${content}</code>`;
       }
     }
     
-    return content; // Fallback to raw content
+    return `<code style="font-family: 'Courier New', monospace; background: var(--color-surface); padding: 0.2em 0.4em; border-radius: 3px;">${content}</code>`;
   });
 }
 

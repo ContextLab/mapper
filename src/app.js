@@ -12,7 +12,7 @@ import {
 import * as registry from './domain/registry.js';
 import { load as loadDomain } from './domain/loader.js';
 import { indexQuestions, getAvailableQuestions } from './domain/questions.js';
-import { Estimator } from './learning/estimator.js';
+import { Estimator, DEFAULT_LENGTH_SCALE } from './learning/estimator.js';
 import { Sampler } from './learning/sampler.js';
 import { getCentrality } from './learning/curriculum.js';
 import { Renderer } from './viz/renderer.js';
@@ -22,25 +22,47 @@ import * as controls from './ui/controls.js';
 import * as quiz from './ui/quiz.js';
 import * as modes from './ui/modes.js';
 import * as insights from './ui/insights.js';
+import * as share from './ui/share.js';
 import { showDownload, hideDownload, updateConfidence, initConfidence } from './ui/progress.js';
 import { announce, setupKeyboardNav } from './utils/accessibility.js';
+
+const GLOBAL_REGION = { x_min: 0, x_max: 1, y_min: 0, y_max: 1 };
+const GLOBAL_GRID_SIZE = 50;
+
+function lengthScaleForDomain(domain) {
+  if (!domain) return DEFAULT_LENGTH_SCALE;
+  if (domain.level === 'all') return DEFAULT_LENGTH_SCALE * 2;
+  if (domain.level === 'sub') return DEFAULT_LENGTH_SCALE * 0.5;
+  return DEFAULT_LENGTH_SCALE; // general
+}
+
+function lengthScaleForDomainId(domainId) {
+  const domain = registry.getDomain(domainId);
+  return lengthScaleForDomain(domain);
+}
+
+function enrichResponsesWithLengthScale(responses) {
+  return responses.map(r => {
+    if (r.lengthScale != null) return r;
+    return { ...r, lengthScale: lengthScaleForDomainId(r.domain_id) };
+  });
+}
 
 let renderer = null;
 let minimap = null;
 let particleSystem = null;
 let estimator = null;
+let globalEstimator = null; // Always covers GLOBAL_REGION for minimap
 let sampler = null;
 let currentDomainBundle = null;
 let currentViewport = { x_min: 0, x_max: 1, y_min: 0, y_max: 1 };
+let currentDomainRegion = GLOBAL_REGION;
+let currentGridSize = GLOBAL_GRID_SIZE;
 let domainQuestionCount = 0;
 let switchGeneration = 0;
 let questionIndex = new Map();
 
 async function boot() {
-  // Restore saved theme preference
-  const savedTheme = localStorage.getItem('mapper-theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', savedTheme);
-
   const storageAvailable = isAvailable();
   if (!storageAvailable) {
     showNotice('Progress won\u2019t be saved across visits (localStorage unavailable).');
@@ -73,6 +95,9 @@ async function boot() {
   });
 
   estimator = new Estimator();
+  estimator.init(GLOBAL_GRID_SIZE, GLOBAL_REGION);
+  globalEstimator = new Estimator();
+  globalEstimator.init(GLOBAL_GRID_SIZE, GLOBAL_REGION);
   sampler = new Sampler();
 
   const headerEl = document.getElementById('app-header');
@@ -98,8 +123,55 @@ async function boot() {
 
   modes.init(quizPanel);
   modes.onModeSelect(handleModeSelect);
-  insights.init(quizPanel);
+  insights.init();
   initConfidence(quizPanel);
+
+  const trophyBtn = document.getElementById('trophy-btn');
+  if (trophyBtn) {
+    trophyBtn.addEventListener('click', () => {
+      if (!currentDomainBundle) return;
+      const ck = insights.computeConceptKnowledge(
+        $estimates.get(),
+        currentDomainRegion,
+        currentGridSize,
+      );
+      insights.showLeaderboard(ck);
+    });
+  }
+
+  const suggestBtn = document.getElementById('suggest-btn');
+  if (suggestBtn) {
+    suggestBtn.addEventListener('click', () => {
+      if (!currentDomainBundle) return;
+      const ck = insights.computeConceptKnowledge(
+        $estimates.get(),
+        currentDomainRegion,
+        currentGridSize,
+      );
+      insights.showSuggestions(ck);
+    });
+  }
+
+  share.init(headerEl, () => renderer._canvas, () => {
+    if (!currentDomainBundle) return [];
+    const ck = insights.computeConceptKnowledge(
+      $estimates.get(),
+      currentDomainRegion,
+      currentGridSize,
+    );
+    const sorted = [...ck].sort((a, b) => b.knowledge - a.knowledge);
+    return sorted.slice(0, 3).map(c => ({ label: c.concept, value: c.knowledge }));
+  }, () => $responses.get().length, () => {
+    if (!currentDomainBundle) return null;
+    const estimates = $estimates.get();
+    const grid = estimates.map(e => e.value);
+    const articles = currentDomainBundle.articles.map(a => ({ x: a.x, y: a.y }));
+    const responses = $responses.get();
+    const answeredQuestions = responses
+      .filter(r => r.x != null && r.y != null)
+      .map(r => ({ x: r.x, y: r.y, isCorrect: r.is_correct }));
+    return { estimateGrid: grid, articles, answeredQuestions };
+  });
 
   const minimapContainer = document.getElementById('minimap-container');
   if (minimapContainer) {
@@ -111,6 +183,13 @@ async function boot() {
       if (animated) renderer.transitionTo(region, 400);
       else renderer.jumpTo(region);
     });
+
+    // Load "all" domain articles for a static minimap background
+    loadDomain('all', {}).then((allBundle) => {
+      if (minimap && allBundle) {
+        minimap.setArticles(articlesToPoints(allBundle.articles));
+      }
+    }).catch(() => {}); // Non-critical, minimap will just lack article dots
   }
 
   if (import.meta.env.DEV) {
@@ -134,10 +213,18 @@ function wireSubscriptions() {
     await switchDomain(domainId);
   });
 
-  $estimates.subscribe((estimates) => {
-    if (!renderer || !currentDomainBundle) return;
-    renderer.setHeatmap(estimates, currentDomainBundle.domain.region);
-    if (minimap) minimap.setEstimates(estimates, currentDomainBundle.domain.region);
+  $estimates.subscribe(() => {
+    if (!renderer) return;
+    // Don't show heatmap until a domain has been selected (welcome screen should be clean)
+    if (!currentDomainBundle) return;
+    // Both renderer and minimap always show global estimates covering full [0,1] space
+    if (globalEstimator) {
+      const globalEstimates = globalEstimator.predict();
+      renderer.setHeatmap(globalEstimates, GLOBAL_REGION);
+      if (minimap) {
+        minimap.setEstimates(globalEstimates, GLOBAL_REGION);
+      }
+    }
   });
 
   $coverage.subscribe((coverage) => {
@@ -153,7 +240,7 @@ function articlesToPoints(articles) {
     z: a.z || 0,
     type: 'article',
     color: [148, 163, 184, 80],
-    radius: 2,
+    radius: 1.5,
     title: a.title,
     url: a.url,
     excerpt: a.excerpt || '',
@@ -175,7 +262,7 @@ function responsesToAnsweredDots(responses, qIndex) {
       questionId: qid,
       title: q.question_text,
       isCorrect: r.is_correct,
-      color: r.is_correct ? [16, 185, 129, 200] : [239, 68, 68, 200],
+      color: r.is_correct ? [0, 105, 62, 200] : [157, 22, 46, 200],
     });
   }
   return dots;
@@ -185,6 +272,9 @@ async function switchDomain(domainId) {
   const generation = ++switchGeneration;
   const landing = document.getElementById('landing');
   if (landing) landing.classList.add('hidden');
+
+  const appEl = document.getElementById('app');
+  if (appEl) appEl.dataset.screen = 'map';
 
   if (particleSystem) {
     particleSystem.destroy();
@@ -210,19 +300,29 @@ async function switchDomain(domainId) {
      currentDomainBundle = bundle;
      indexQuestions(bundle.questions);
      questionIndex = new Map(bundle.questions.map(q => [q.id, q]));
+     renderer.clearQuestions();
+     renderer.addQuestions(bundle.questions);
+     insights.setConcepts(bundle.questions, bundle.articles);
      domainQuestionCount = $responses.get().filter(r => r.domain_id === domainId).length;
      modes.updateAvailability(domainQuestionCount);
+     updateInsightButtons($responses.get().length);
 
     const domain = bundle.domain;
-    estimator.init(domain.grid_size, domain.region);
-    sampler.configure(domain.grid_size, domain.region);
+    const domainRegion = domain.region || GLOBAL_REGION;
+    const domainGrid = domain.grid_size || GLOBAL_GRID_SIZE;
+    currentDomainRegion = domainRegion;
+    currentGridSize = domainGrid;
 
-    const allResponses = $responses.get();
-    if (allResponses.length > 0) {
-      const relevantResponses = allResponses.filter(
-        (r) => r.x != null && r.y != null
-      );
+    estimator.init(domainGrid, domainRegion);
+    sampler.configure(domainGrid, domainRegion);
+
+    const allResponses = enrichResponsesWithLengthScale($responses.get());
+    const relevantResponses = allResponses.filter(
+      (r) => r.x != null && r.y != null
+    );
+    if (relevantResponses.length > 0) {
       estimator.restore(relevantResponses);
+      globalEstimator.restore(relevantResponses);
     }
 
     const estimates = estimator.predict();
@@ -232,24 +332,23 @@ async function switchDomain(domainId) {
 
     if (previousBundle) {
       const sourcePoints = articlesToPoints(previousBundle.articles);
-      const sourceRegion = previousBundle.domain.region;
-      const targetRegion = domain.region;
+      const sourceRegion = previousBundle.domain.region || GLOBAL_REGION;
+      const targetRegion = domain.region || GLOBAL_REGION;
 
-      renderer.setLabels(bundle.labels);
+      renderer.setLabels(bundle.labels, domainRegion, domainGrid);
       await renderer.transitionPoints(
         sourcePoints, targetPoints, sourceRegion, targetRegion
       );
     } else {
       renderer.setPoints(targetPoints);
-      renderer.setLabels(bundle.labels);
-      await renderer.transitionTo(domain.region);
+      renderer.setLabels(bundle.labels, domainRegion, domainGrid);
+      await renderer.transitionTo(domain.region || GLOBAL_REGION);
     }
 
     if (generation !== switchGeneration) return;
 
     if (minimap) {
       minimap.setActive(domainId);
-      minimap.setArticles(targetPoints);
       minimap.setViewport(renderer.getViewport());
     }
 
@@ -261,8 +360,7 @@ async function switchDomain(domainId) {
 
     announce(`Loaded ${domain.name}. ${bundle.questions.length} questions available.`);
 
-    const domainResponses = $responses.get().filter(r => r.domain_id === domainId);
-    renderer.setAnsweredQuestions(responsesToAnsweredDots(domainResponses, questionIndex));
+    renderer.setAnsweredQuestions(responsesToAnsweredDots($responses.get(), questionIndex));
 
     selectAndShowNextQuestion();
   } catch (err) {
@@ -300,21 +398,18 @@ function selectAndShowNextQuestion() {
   quiz.showQuestion(question);
 }
 
-function handleModeSelect(modeId, type) {
-  if (type === 'insight') {
-    insights.show(modeId, $estimates.get(), currentDomainBundle?.labels || []);
-    announce(`Showing ${modeId} insights.`);
-  } else {
-    insights.hide();
-    $questionMode.set(modeId);
-    selectAndShowNextQuestion();
-  }
+function handleModeSelect(modeId) {
+  $questionMode.set(modeId);
+  selectAndShowNextQuestion();
 }
 
 function handleAnswer(selectedKey, question) {
   if (!question || !currentDomainBundle) return;
 
   const isCorrect = selectedKey === question.correct_answer;
+
+  const questionDomainId = (question.domain_ids || []).find(id => id !== 'all') || currentDomainBundle.domain.id;
+  const ls = lengthScaleForDomainId(questionDomainId);
 
   const response = {
     question_id: question.id,
@@ -324,6 +419,7 @@ function handleAnswer(selectedKey, question) {
     timestamp: Date.now(),
     x: question.x,
     y: question.y,
+    lengthScale: ls,
   };
 
   const current = $responses.get();
@@ -331,18 +427,18 @@ function handleAnswer(selectedKey, question) {
   const isReanswer = filtered.length < current.length;
   $responses.set([...filtered, response]);
 
-  estimator.observe(question.x, question.y, isCorrect);
+  estimator.observe(question.x, question.y, isCorrect, ls);
+  globalEstimator.observe(question.x, question.y, isCorrect, ls);
   const estimates = estimator.predict();
   $estimates.set(estimates);
 
   if (!isReanswer) {
     domainQuestionCount++;
     modes.updateAvailability(domainQuestionCount);
+    updateInsightButtons($responses.get().length);
   }
 
-  const domainId = currentDomainBundle.domain.id;
-  const domainResponses = $responses.get().filter(r => r.domain_id === domainId);
-  renderer.setAnsweredQuestions(responsesToAnsweredDots(domainResponses, questionIndex));
+  renderer.setAnsweredQuestions(responsesToAnsweredDots($responses.get(), questionIndex));
 
   const feedback = isCorrect 
     ? 'Correct!' 
@@ -361,13 +457,19 @@ function handleReset() {
   resetAll();
   currentDomainBundle = null;
   domainQuestionCount = 0;
+  currentDomainRegion = GLOBAL_REGION;
+  currentGridSize = GLOBAL_GRID_SIZE;
   switchGeneration++;
   renderer.abortTransition();
   estimator.reset();
+  estimator.init(GLOBAL_GRID_SIZE, GLOBAL_REGION);
+  globalEstimator.reset();
+  globalEstimator.init(GLOBAL_GRID_SIZE, GLOBAL_REGION);
   renderer.setPoints([]);
-  renderer.setHeatmap([], { x_min: 0, x_max: 1, y_min: 0, y_max: 1 });
+  renderer.setHeatmap([], GLOBAL_REGION);
   renderer.setLabels([]);
   renderer.setAnsweredQuestions([]);
+  renderer.clearQuestions();
   questionIndex = new Map();
   if (minimap) {
     minimap.setActive(null);
@@ -375,9 +477,11 @@ function handleReset() {
   }
   toggleQuizPanel(false);
   const toggleBtn = document.getElementById('quiz-toggle');
-  if (toggleBtn) toggleBtn.hidden = true;
+  if (toggleBtn) toggleBtn.setAttribute('hidden', '');
   const landing = document.getElementById('landing');
   if (landing) landing.classList.remove('hidden');
+  const appEl = document.getElementById('app');
+  if (appEl) appEl.dataset.screen = 'welcome';
   announce('All progress has been reset.');
 }
 
@@ -421,18 +525,20 @@ function handleImport(data) {
 
   $responses.set(merged);
 
-  if (currentDomainBundle && estimator) {
-    estimator.init(currentDomainBundle.domain.grid_size, currentDomainBundle.domain.region);
-    const relevant = merged.filter(r => r.x != null && r.y != null);
+  if (estimator) {
+    const enriched = enrichResponsesWithLengthScale(merged);
+    const relevant = enriched.filter(r => r.x != null && r.y != null);
     estimator.restore(relevant);
+    if (globalEstimator) globalEstimator.restore(relevant);
     const estimates = estimator.predict();
     $estimates.set(estimates);
 
-    const domainId = currentDomainBundle.domain.id;
-    domainQuestionCount = merged.filter(r => r.domain_id === domainId).length;
-    modes.updateAvailability(domainQuestionCount);
-    const domainResponses = merged.filter(r => r.domain_id === domainId);
-    renderer.setAnsweredQuestions(responsesToAnsweredDots(domainResponses, questionIndex));
+    if (currentDomainBundle) {
+      const domainId = currentDomainBundle.domain.id;
+      domainQuestionCount = merged.filter(r => r.domain_id === domainId).length;
+      modes.updateAvailability(domainQuestionCount);
+    }
+    renderer.setAnsweredQuestions(responsesToAnsweredDots(merged, questionIndex));
   }
 
   announce(`Imported ${newResponses.length} new responses (${valid.length} total in file, ${existing.length} already existed).`);
@@ -448,9 +554,19 @@ function handleCellClick(_gx, _gy) {
 }
 
 function handleEscape() {
+  const insightsModal = document.getElementById('insights-modal');
+  if (insightsModal && !insightsModal.hidden) {
+    insightsModal.hidden = true;
+    return;
+  }
   const aboutModal = document.getElementById('about-modal');
   if (aboutModal && !aboutModal.hidden) {
     aboutModal.hidden = true;
+    return;
+  }
+  const shareModal = document.getElementById('share-modal');
+  if (shareModal && !shareModal.hidden) {
+    shareModal.hidden = true;
     return;
   }
   toggleQuizPanel(false);
@@ -461,17 +577,17 @@ function toggleQuizPanel(show) {
   const toggleBtn = document.getElementById('quiz-toggle');
   if (!quizPanel) return;
 
-  if (show === undefined) show = quizPanel.hidden;
+  if (show === undefined) show = !quizPanel.classList.contains('open');
 
   if (show) {
-    quizPanel.removeAttribute('hidden');
+    quizPanel.classList.add('open');
     if (toggleBtn) {
       toggleBtn.classList.add('panel-open');
       toggleBtn.querySelector('i').className = 'fa-solid fa-chevron-right';
       toggleBtn.setAttribute('aria-label', 'Close quiz panel');
     }
   } else {
-    quizPanel.hidden = true;
+    quizPanel.classList.remove('open');
     if (toggleBtn) {
       toggleBtn.classList.remove('panel-open');
       toggleBtn.querySelector('i').className = 'fa-solid fa-chevron-left';
@@ -480,9 +596,48 @@ function toggleQuizPanel(show) {
   }
 }
 
+function _showBanner(message, type = 'warning') {
+  const container = document.getElementById('app-main');
+  if (!container) return;
+
+  const banner = document.createElement('div');
+  banner.className = `notice-banner ${type}`;
+  banner.setAttribute('role', 'alert');
+
+  const content = document.createElement('div');
+  content.className = 'notice-banner-content';
+  content.textContent = message;
+
+  const dismissBtn = document.createElement('button');
+  dismissBtn.className = 'notice-banner-dismiss';
+  dismissBtn.setAttribute('aria-label', 'Dismiss notification');
+  dismissBtn.innerHTML = '<i class="fa fa-times"></i>';
+
+  const removeBanner = () => {
+    banner.classList.add('dismissing');
+    setTimeout(() => {
+      if (banner.parentNode) banner.parentNode.removeChild(banner);
+    }, 300);
+  };
+
+  dismissBtn.addEventListener('click', removeBanner);
+
+  banner.appendChild(content);
+  banner.appendChild(dismissBtn);
+  container.insertBefore(banner, container.firstChild);
+
+  let autoDismissTimer = setTimeout(removeBanner, 8000);
+
+  banner.addEventListener('mouseenter', () => clearTimeout(autoDismissTimer));
+  banner.addEventListener('mouseleave', () => {
+    autoDismissTimer = setTimeout(removeBanner, 8000);
+  });
+}
+
 function showNotice(message) {
   console.warn('[mapper]', message);
   announce(message);
+  _showBanner(message);
 }
 
 function showLandingError(message) {
@@ -491,6 +646,16 @@ function showLandingError(message) {
     const p = landing.querySelector('p');
     if (p) p.textContent = message;
   }
+}
+
+const INSIGHT_MIN_ANSWERS = 5;
+
+function updateInsightButtons(answerCount) {
+  const trophyBtn = document.getElementById('trophy-btn');
+  const suggestBtn = document.getElementById('suggest-btn');
+  const ready = answerCount >= INSIGHT_MIN_ANSWERS;
+  if (trophyBtn) trophyBtn.disabled = !ready;
+  if (suggestBtn) suggestBtn.disabled = !ready;
 }
 
 function setupAboutModal() {

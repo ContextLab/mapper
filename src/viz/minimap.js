@@ -19,6 +19,17 @@ export class Minimap {
     this._isDragging = false;
     this._dragOffset = null;
 
+    this._isSelecting = false;
+    this._selectionStart = null;
+    this._selectionEnd = null;
+
+    this._isResizing = false;
+    this._resizeStart = null;
+    this._resizeHandle = null;
+    this._handleResizeStart = null;
+    this._handleResizeMove = null;
+    this._handleResizeEnd = null;
+
     this._handleMouseDown = this._onMouseDown.bind(this);
     this._handleMouseMove = this._onMouseMove.bind(this);
     this._handleMouseUp = this._onMouseUp.bind(this);
@@ -39,13 +50,21 @@ export class Minimap {
 
     this._resize();
 
+    this._resizeHandle = document.createElement('div');
+    this._resizeHandle.style.cssText = 'position:absolute;bottom:0;right:0;width:14px;height:14px;cursor:nwse-resize;z-index:2;';
+    this._resizeHandle.innerHTML = '<svg width="14" height="14" viewBox="0 0 14 14"><path d="M12 2L2 12M12 6L6 12M12 10L10 12" stroke="#00693e" stroke-width="1.5" opacity="0.5"/></svg>';
+    // Only set position if not already absolute (needed for resize handle child positioning)
+    const currentPos = window.getComputedStyle(container).position;
+    if (currentPos === 'static') container.style.position = 'relative';
+    container.appendChild(this._resizeHandle);
+
+    this._handleResizeStart = this._onResizeStart.bind(this);
+    this._resizeHandle.addEventListener('mousedown', this._handleResizeStart);
+
     this.canvas.addEventListener('mousedown', this._handleMouseDown);
     this.canvas.addEventListener('click', this._handleClick);
     window.addEventListener('mousemove', this._handleMouseMove);
     window.addEventListener('mouseup', this._handleMouseUp);
-
-    this._onThemeChange = () => this.render();
-    document.documentElement.addEventListener('theme-changed', this._onThemeChange);
 
     this.render();
   }
@@ -90,41 +109,21 @@ export class Minimap {
     this.navigateHandler = handler;
   }
 
-  _isLightMode() {
-    return document.documentElement.getAttribute('data-theme') === 'light';
-  }
-
-  _heatmapColor(value, light) {
+  _heatmapColor(value) {
     const v = Math.max(0, Math.min(1, value));
-    if (light) {
-      if (v < 0.5) {
-        const t = v / 0.5;
-        return [
-          Math.round(248 + t * (167 - 248)),
-          Math.round(250 + t * (210 - 250)),
-          Math.round(252 + t * (178 - 252)),
-        ];
-      }
-      const t = (v - 0.5) / 0.5;
-      return [
-        Math.round(167 + t * (0 - 167)),
-        Math.round(210 + t * (105 - 210)),
-        Math.round(178 + t * (62 - 178)),
-      ];
-    }
     if (v < 0.5) {
       const t = v / 0.5;
       return [
-        Math.round(15 + t * (0 - 15)),
-        Math.round(23 + t * (105 - 23)),
-        Math.round(42 + t * (62 - 42)),
+        Math.round(157 + t * (245 - 157)),
+        Math.round(22 + t * (220 - 22)),
+        Math.round(46 + t * (105 - 46)),
       ];
     }
     const t = (v - 0.5) / 0.5;
     return [
-      Math.round(0 + t * (255 - 0)),
-      Math.round(105 + t * (160 - 105)),
-      Math.round(62 + t * (15 - 62)),
+      Math.round(245 + t * (0 - 245)),
+      Math.round(220 + t * (105 - 220)),
+      Math.round(105 + t * (62 - 105)),
     ];
   }
 
@@ -149,10 +148,27 @@ export class Minimap {
       this._dragOffset = { x: mx - vpCx, y: my - vpCy };
       this.canvas.style.cursor = 'grabbing';
       e.preventDefault();
+    } else {
+      this._isSelecting = true;
+      this._selectionStart = { x: mx, y: my };
+      this._selectionEnd = { x: mx, y: my };
+      this.canvas.style.cursor = 'crosshair';
+      e.preventDefault();
     }
   }
 
   _onMouseMove(e) {
+    if (this._isSelecting && this._selectionStart) {
+      const rect = this.canvas.getBoundingClientRect();
+      this._selectionEnd = {
+        x: Math.max(0, Math.min(this.width, e.clientX - rect.left)),
+        y: Math.max(0, Math.min(this.height, e.clientY - rect.top)),
+      };
+      this.render();
+      this._drawSelectionRect();
+      return;
+    }
+
     if (!this._isDragging || !this.navigateHandler || !this.currentViewport) return;
 
     const rect = this.canvas.getBoundingClientRect();
@@ -174,10 +190,33 @@ export class Minimap {
       x_max: x_min + vpW,
       y_min,
       y_max: y_min + vpH,
-    }, false); // drag = instant (not animated)
+    }, false);
   }
 
   _onMouseUp() {
+    if (this._isSelecting && this._selectionStart && this._selectionEnd && this.navigateHandler) {
+      const sx = Math.min(this._selectionStart.x, this._selectionEnd.x);
+      const sy = Math.min(this._selectionStart.y, this._selectionEnd.y);
+      const sw = Math.abs(this._selectionEnd.x - this._selectionStart.x);
+      const sh = Math.abs(this._selectionEnd.y - this._selectionStart.y);
+
+      if (sw > 5 && sh > 5) {
+        this.navigateHandler({
+          x_min: sx / this.width,
+          x_max: (sx + sw) / this.width,
+          y_min: sy / this.height,
+          y_max: (sy + sh) / this.height,
+        }, true);
+      }
+
+      this._isSelecting = false;
+      this._selectionStart = null;
+      this._selectionEnd = null;
+      this.canvas.style.cursor = 'pointer';
+      this.render();
+      return;
+    }
+
     if (this._isDragging) {
       this._isDragging = false;
       this._dragOffset = null;
@@ -185,8 +224,24 @@ export class Minimap {
     }
   }
 
+  _drawSelectionRect() {
+    if (!this._selectionStart || !this._selectionEnd || !this.ctx) return;
+    const ctx = this.ctx;
+    const sx = Math.min(this._selectionStart.x, this._selectionEnd.x);
+    const sy = Math.min(this._selectionStart.y, this._selectionEnd.y);
+    const sw = Math.abs(this._selectionEnd.x - this._selectionStart.x);
+    const sh = Math.abs(this._selectionEnd.y - this._selectionStart.y);
+    ctx.fillStyle = 'rgba(0, 105, 62, 0.15)';
+    ctx.fillRect(sx, sy, sw, sh);
+    ctx.strokeStyle = '#00693e';
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([3, 3]);
+    ctx.strokeRect(sx, sy, sw, sh);
+    ctx.setLineDash([]);
+  }
+
   _onClick(e) {
-    if (this._isDragging) return;
+    if (this._isDragging || this._isSelecting) return;
     if (!this.navigateHandler || !this.width || !this.height) return;
 
     const rect = this.canvas.getBoundingClientRect();
@@ -209,27 +264,36 @@ export class Minimap {
   }
 
   render() {
-    if (!this.ctx || !this.width || !this.height) return;
+    if (!this.ctx) return;
+    // Re-check dimensions in case container was hidden during init and is now visible
+    if (!this.width || !this.height) this._resize();
+    if (!this.width || !this.height) return;
 
     const ctx = this.ctx;
     const w = this.width;
     const h = this.height;
-    const light = this._isLightMode();
 
     ctx.clearRect(0, 0, w, h);
-    ctx.fillStyle = light ? '#f8fafc' : '#0f172a';
+    ctx.fillStyle = '#f8fafc';
     ctx.fillRect(0, 0, w, h);
 
-    this._drawHeatmap(ctx, w, h, light);
-    this._drawArticles(ctx, w, h, light);
-    this._drawDomainOutlines(ctx, w, h, light);
+    this._drawHeatmap(ctx, w, h);
+    this._drawArticles(ctx, w, h);
+    this._drawDomainOutlines(ctx, w, h);
 
     if (this.currentViewport) {
-      this._drawViewportRect(ctx, w, h, light);
+      this._drawViewportRect(ctx, w, h);
     }
+
+    // Draw minimap border
+    ctx.strokeStyle = '#00693e';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.roundRect(0.5, 0.5, w - 1, h - 1, 6);
+    ctx.stroke();
   }
 
-  _drawHeatmap(ctx, w, h, light) {
+  _drawHeatmap(ctx, w, h) {
     if (!this.estimates || this.estimates.length === 0 || !this.heatmapRegion) return;
 
     const region = this.heatmapRegion;
@@ -243,10 +307,9 @@ export class Minimap {
     const cellW = rw / gridSize;
     const cellH = rh / gridSize;
 
-    ctx.globalAlpha = light ? 0.4 : 0.5;
+    ctx.globalAlpha = 0.4;
     for (const e of this.estimates) {
-      if (e.state === 'unknown') continue;
-      const [r, g, b] = this._heatmapColor(e.value, light);
+      const [r, g, b] = this._heatmapColor(e.value);
       const a = e.evidenceCount === 0 ? 0.25 : 0.7;
       ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
       ctx.fillRect(rx + e.gx * cellW, ry + e.gy * cellH, cellW + 0.5, cellH + 0.5);
@@ -254,80 +317,91 @@ export class Minimap {
     ctx.globalAlpha = 1;
   }
 
-  _drawArticles(ctx, w, h, light) {
+  _drawArticles(ctx, w, h) {
     if (this.articles.length === 0) return;
 
-    ctx.fillStyle = light ? 'rgba(100, 116, 139, 0.25)' : 'rgba(148, 163, 184, 0.2)';
+    ctx.fillStyle = 'rgba(100, 116, 139, 0.25)';
     for (const a of this.articles) {
       ctx.fillRect(a.x * w, a.y * h, 1, 1);
     }
   }
 
-  _drawDomainOutlines(ctx, w, h, light) {
-    const sorted = [...this.domains].sort((a, b) => {
-      const areaA = a.region ? (a.region.x_max - a.region.x_min) * (a.region.y_max - a.region.y_min) : 0;
-      const areaB = b.region ? (b.region.x_max - b.region.x_min) * (b.region.y_max - b.region.y_min) : 0;
-      return areaB - areaA;
-    });
-
-    for (const d of sorted) {
-      if (!d.region) continue;
-      const { x_min, x_max, y_min, y_max } = d.region;
-      const x = x_min * w;
-      const y = y_min * h;
-      const dw = (x_max - x_min) * w;
-      const dh = (y_max - y_min) * h;
-
-      const isActive = d.id === this.activeDomainId;
-      const isAll = d.id === 'all';
-
-      if (isActive) {
-        ctx.strokeStyle = '#00693e';
-        ctx.lineWidth = 2;
-      } else if (isAll) {
-        ctx.strokeStyle = light ? 'rgba(0, 0, 0, 0.06)' : 'rgba(255, 255, 255, 0.08)';
-        ctx.lineWidth = 0.5;
-      } else {
-        ctx.strokeStyle = light ? 'rgba(0, 0, 0, 0.12)' : 'rgba(255, 255, 255, 0.15)';
-        ctx.lineWidth = 0.5;
-      }
-
-      ctx.strokeRect(x, y, dw, dh);
-
-      if (!isAll && dw > 25 && dh > 12) {
-        ctx.save();
-        ctx.beginPath();
-        ctx.rect(x, y, dw, dh);
-        ctx.clip();
-        ctx.fillStyle = isActive
-          ? 'rgba(0, 105, 62, 0.9)'
-          : (light ? 'rgba(0, 0, 0, 0.35)' : 'rgba(255, 255, 255, 0.4)');
-        ctx.font = `9px ${getComputedStyle(document.documentElement).getPropertyValue('--font-body').trim() || 'sans-serif'}`;
-        ctx.textAlign = 'left';
-        ctx.textBaseline = 'top';
-        ctx.fillText(d.name, x + 2, y + 2);
-        ctx.restore();
-      }
-    }
+  _drawDomainOutlines(ctx, w, h) {
+    // Only draw the viewport rectangle (no domain outlines) to avoid
+    // the confusing appearance of "two selected regions" in the minimap.
+    // The viewport rect is drawn separately in _drawViewportRect.
   }
 
-  _drawViewportRect(ctx, w, h, light) {
+  _drawViewportRect(ctx, w, h) {
     const { x_min, x_max, y_min, y_max } = this.currentViewport;
     const x = x_min * w;
     const y = y_min * h;
     const vw = (x_max - x_min) * w;
     const vh = (y_max - y_min) * h;
 
-    ctx.fillStyle = light ? 'rgba(0, 0, 0, 0.04)' : 'rgba(255, 255, 255, 0.06)';
+    ctx.fillStyle = 'rgba(0, 105, 62, 0.06)';
     ctx.fillRect(x, y, vw, vh);
 
-    ctx.strokeStyle = 'rgba(38, 122, 186, 0.9)';
+    ctx.strokeStyle = '#00693e';
     ctx.lineWidth = 1.5;
     ctx.setLineDash([]);
     ctx.strokeRect(x, y, vw, vh);
   }
 
+  _onResizeStart(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const rect = this.container.getBoundingClientRect();
+    this._isResizing = true;
+    this._resizeStart = {
+      mouseX: e.clientX,
+      mouseY: e.clientY,
+      width: rect.width,
+      height: rect.height,
+    };
+    this._handleResizeMove = this._onResizeMove.bind(this);
+    this._handleResizeEnd = this._onResizeEnd.bind(this);
+    window.addEventListener('mousemove', this._handleResizeMove);
+    window.addEventListener('mouseup', this._handleResizeEnd);
+  }
+
+  _onResizeMove(e) {
+    if (!this._isResizing || !this._resizeStart) return;
+    const dx = e.clientX - this._resizeStart.mouseX;
+    const rawW = this._resizeStart.width + dx;
+    const aspect = 4 / 3;
+    let newW = Math.max(120, Math.min(400, rawW));
+    let newH = Math.round(newW / aspect);
+    if (newH < 90) { newH = 90; newW = Math.round(newH * aspect); }
+    if (newH > 300) { newH = 300; newW = Math.round(newH * aspect); }
+    this.container.style.width = newW + 'px';
+    this.container.style.height = newH + 'px';
+    this._resize();
+    this.render();
+  }
+
+  _onResizeEnd() {
+    this._isResizing = false;
+    this._resizeStart = null;
+    if (this._handleResizeMove) {
+      window.removeEventListener('mousemove', this._handleResizeMove);
+      this._handleResizeMove = null;
+    }
+    if (this._handleResizeEnd) {
+      window.removeEventListener('mouseup', this._handleResizeEnd);
+      this._handleResizeEnd = null;
+    }
+  }
+
   destroy() {
+    if (this._resizeHandle) {
+      if (this._handleResizeStart) {
+        this._resizeHandle.removeEventListener('mousedown', this._handleResizeStart);
+      }
+      this._resizeHandle.remove();
+      this._resizeHandle = null;
+    }
+    this._onResizeEnd();
     if (this.canvas) {
       this.canvas.removeEventListener('mousedown', this._handleMouseDown);
       this.canvas.removeEventListener('click', this._handleClick);
@@ -336,9 +410,6 @@ export class Minimap {
     }
     window.removeEventListener('mousemove', this._handleMouseMove);
     window.removeEventListener('mouseup', this._handleMouseUp);
-    if (this._onThemeChange) {
-      document.documentElement.removeEventListener('theme-changed', this._onThemeChange);
-    }
     this.container = null;
     this.ctx = null;
     this.domains = [];

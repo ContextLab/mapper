@@ -2,42 +2,24 @@
 
 import { mergeForTransition, buildTransitionFrames, needs3D, cubicInOut } from './transitions.js';
 
-function valueToDarkColor(v) {
+function valueToColor(v) {
   const val = Math.max(0, Math.min(1, v));
   let r, g, b;
   if (val < 0.5) {
     const t = val / 0.5;
-    r = Math.round(15 + t * (0 - 15));
-    g = Math.round(23 + t * (105 - 23));
-    b = Math.round(42 + t * (62 - 42));
+    r = Math.round(157 + t * (245 - 157));
+    g = Math.round(22 + t * (220 - 22));
+    b = Math.round(46 + t * (105 - 46));
   } else {
     const t = (val - 0.5) / 0.5;
-    r = Math.round(0 + t * (255 - 0));
-    g = Math.round(105 + t * (160 - 105));
-    b = Math.round(62 + t * (15 - 62));
-  }
-  return [r, g, b];
-}
-
-function valueToLightColor(v) {
-  const val = Math.max(0, Math.min(1, v));
-  let r, g, b;
-  if (val < 0.5) {
-    const t = val / 0.5;
-    r = Math.round(248 + t * (167 - 248));
-    g = Math.round(250 + t * (210 - 250));
-    b = Math.round(252 + t * (178 - 252));
-  } else {
-    const t = (val - 0.5) / 0.5;
-    r = Math.round(167 + t * (0 - 167));
-    g = Math.round(210 + t * (105 - 210));
-    b = Math.round(178 + t * (62 - 178));
+    r = Math.round(245 + t * (0 - 245));
+    g = Math.round(220 + t * (105 - 220));
+    b = Math.round(105 + t * (62 - 105));
   }
   return [r, g, b];
 }
 
 const TRANSITION_DURATION = 600;
-const HEATMAP_OPACITY = 0.55;
 
 export class Renderer {
   constructor() {
@@ -52,7 +34,19 @@ export class Renderer {
     this._heatmapEstimates = [];
     this._heatmapRegion = null;
     this._answeredData = [];
-    this._showColorbar = false;
+    this._questions = [];
+    this._questionMap = new Map();
+    this._estimateGrid = null; // Float64Array or null, 50*50 flat grid for O(1) lookup
+    this._estimateEvidence = null; // Uint8Array, evidence counts per cell
+    this._labels = [];
+    this._labelRegion = null;
+    this._labelGridSize = 0;
+    this._labelMap = new Map();
+    this._colorbarEl = null;
+    this._cbMouseMove = null;
+    this._cbMouseUp = null;
+
+    this._resizeObserver = null;
 
     this._onReanswer = null;
     this._onViewportChange = null;
@@ -75,6 +69,11 @@ export class Renderer {
     this._isDragging = false;
     this._dragMoved = false;
     this._lastMouse = null;
+
+    this._isSelecting = false;
+    this._selectionStart = null;
+    this._selectionEnd = null;
+    this._suppressNextClick = false;
 
     // Bound handlers (for removal)
     this._onMouseMove = this._handleMouseMove.bind(this);
@@ -124,8 +123,39 @@ export class Renderer {
     container.style.position = 'relative';
     container.appendChild(this._tooltip);
 
+    // DOM colorbar (draggable)
+    this._colorbarEl = document.createElement('div');
+    this._colorbarEl.style.cssText =
+      'position:absolute;bottom:16px;right:16px;z-index:15;' +
+      'width:12px;height:120px;border-radius:6px;cursor:grab;' +
+      'background:linear-gradient(to bottom, rgb(0,105,62), rgb(245,220,105) 50%, rgb(157,22,46));' +
+      'box-shadow:0 2px 8px rgba(0,0,0,0.15);border:1px solid rgba(0,0,0,0.1);' +
+      'display:none;user-select:none;';
+    const topLabel = document.createElement('div');
+    topLabel.style.cssText = 'position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:9px;color:rgba(0,0,0,0.55);font-family:var(--font-body);white-space:nowrap;';
+    topLabel.textContent = 'High';
+    const bottomLabel = document.createElement('div');
+    bottomLabel.style.cssText = 'position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);font-size:9px;color:rgba(0,0,0,0.55);font-family:var(--font-body);white-space:nowrap;';
+    bottomLabel.textContent = 'Low';
+    const sideLabel = document.createElement('div');
+    sideLabel.style.cssText = 'position:absolute;left:-58px;top:50%;transform:translateY(-50%) rotate(-90deg);font-size:9px;color:rgba(0,0,0,0.55);font-family:var(--font-body);white-space:nowrap;transform-origin:center center;';
+    sideLabel.textContent = 'Estimated Knowledge';
+    this._colorbarEl.appendChild(topLabel);
+    this._colorbarEl.appendChild(bottomLabel);
+    this._colorbarEl.appendChild(sideLabel);
+    container.appendChild(this._colorbarEl);
+    this._initColorbarDrag();
+
     // Size canvas
     this._resize();
+
+    // ResizeObserver for flex layout changes
+    this._resizeObserver = new ResizeObserver(() => {
+      this._resize();
+      this._render();
+      this._notifyViewport();
+    });
+    this._resizeObserver.observe(this._container);
 
     // Event listeners
     this._canvas.addEventListener('mousemove', this._onMouseMove);
@@ -139,9 +169,6 @@ export class Renderer {
     this._canvas.addEventListener('touchend', this._onTouchEnd);
     window.addEventListener('resize', this._onResize);
 
-    this._onThemeChange = () => this._render();
-    document.documentElement.addEventListener('theme-changed', this._onThemeChange);
-
     this._render();
   }
 
@@ -151,7 +178,9 @@ export class Renderer {
    */
   setPoints(points) {
     this._points = points || [];
-    if (this._points.length > 0) this._showColorbar = true;
+    if (this._colorbarEl) {
+      this._colorbarEl.style.display = this._points.length > 0 ? 'block' : 'none';
+    }
     this._render();
   }
 
@@ -163,10 +192,36 @@ export class Renderer {
   setHeatmap(estimates, region) {
     this._heatmapEstimates = estimates || [];
     this._heatmapRegion = region || null;
+
+    // Determine grid size from max gx/gy in estimates
+    let n = 50;
+    for (const e of this._heatmapEstimates) {
+      if (e.gx >= n) n = e.gx + 1;
+      if (e.gy >= n) n = e.gy + 1;
+    }
+    this._heatmapGridSize = n;
+    this._estimateGrid = new Float64Array(n * n).fill(0.5);
+    this._estimateEvidence = new Uint8Array(n * n);
+    for (const e of this._heatmapEstimates) {
+      if (e.gx >= 0 && e.gx < n && e.gy >= 0 && e.gy < n) {
+        this._estimateGrid[e.gy * n + e.gx] = e.value;
+        this._estimateEvidence[e.gy * n + e.gx] = e.evidenceCount || 0;
+      }
+    }
     this._render();
   }
 
-  setLabels() {}
+  setLabels(labels, region, gridSize) {
+    this._labels = labels || [];
+    this._labelRegion = region || null;
+    this._labelGridSize = gridSize || 0;
+    // Build O(1) lookup map: "gx,gy" → label
+    this._labelMap = new Map();
+    for (const l of this._labels) {
+      this._labelMap.set(`${l.gx},${l.gy}`, l);
+    }
+    this._render();
+  }
 
   /**
    * Update answered-question dot overlay.
@@ -184,6 +239,22 @@ export class Renderer {
   onReanswer(handler) {
     this._onReanswer = handler;
   }
+
+  addQuestions(questions) {
+    for (const q of questions) {
+      if (!this._questionMap.has(q.id)) {
+        this._questionMap.set(q.id, q);
+        this._questions.push(q);
+      }
+    }
+  }
+
+  clearQuestions() {
+    this._questions = [];
+    this._questionMap = new Map();
+  }
+
+
 
   /**
    * Get current viewport in normalized [0,1] coordinates.
@@ -299,6 +370,16 @@ export class Renderer {
 
   destroy() {
     this.abortTransition();
+    if (this._resizeObserver) {
+      this._resizeObserver.disconnect();
+      this._resizeObserver = null;
+    }
+    if (this._colorbarEl) {
+      this._colorbarEl.remove();
+      this._colorbarEl = null;
+    }
+    if (this._cbMouseMove) window.removeEventListener('mousemove', this._cbMouseMove);
+    if (this._cbMouseUp) window.removeEventListener('mouseup', this._cbMouseUp);
     if (this._canvas) {
       this._canvas.removeEventListener('mousemove', this._onMouseMove);
       this._canvas.removeEventListener('mousedown', this._onMouseDown);
@@ -317,9 +398,6 @@ export class Renderer {
       this._tooltip = null;
     }
     window.removeEventListener('resize', this._onResize);
-    if (this._onThemeChange) {
-      document.documentElement.removeEventListener('theme-changed', this._onThemeChange);
-    }
     this._ctx = null;
     this._container = null;
   }
@@ -336,10 +414,6 @@ export class Renderer {
     this._canvas.height = rect.height * this._dpr;
   }
 
-  _isLightMode() {
-    return document.documentElement.getAttribute('data-theme') === 'light';
-  }
-
   _render() {
     if (!this._ctx || !this._width || !this._height) return;
 
@@ -347,64 +421,124 @@ export class Renderer {
     const dpr = this._dpr;
     const w = this._width;
     const h = this._height;
-    const light = this._isLightMode();
 
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.fillStyle = light ? '#ffffff' : (getComputedStyle(this._container).getPropertyValue('--color-bg').trim() || '#0f172a');
+    ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, w, h);
+
+    this._drawHeatmap(ctx, w, h);
 
     ctx.save();
     ctx.translate(this._panX, this._panY);
     ctx.scale(this._zoom, this._zoom);
 
-    this._drawHeatmap(ctx, w, h, light);
-    this._drawPoints(ctx, w, h, light);
-    this._drawAnsweredDots(ctx, w, h, light);
+    this._drawPoints(ctx, w, h);
+    this._drawAnsweredDots(ctx, w, h);
 
     ctx.restore();
 
-    this._drawColorbar(ctx, w, h, light);
+    if (this._isSelecting && this._selectionStart && this._selectionEnd) {
+      ctx.save();
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const sx = Math.min(this._selectionStart.x, this._selectionEnd.x);
+      const sy = Math.min(this._selectionStart.y, this._selectionEnd.y);
+      const sw = Math.abs(this._selectionEnd.x - this._selectionStart.x);
+      const sh = Math.abs(this._selectionEnd.y - this._selectionStart.y);
+      ctx.fillStyle = 'rgba(0, 105, 62, 0.1)';
+      ctx.fillRect(sx, sy, sw, sh);
+      ctx.strokeStyle = '#00693e';
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([4, 4]);
+      ctx.strokeRect(sx, sy, sw, sh);
+      ctx.setLineDash([]);
+      ctx.restore();
+    }
   }
 
-  _drawHeatmap(ctx, w, h, light) {
-    const estimates = this._heatmapEstimates;
+  _drawHeatmap(ctx, w, h) {
+    if (!this._estimateGrid || this._heatmapEstimates.length === 0) return;
+
+    const N = this._heatmapGridSize || 50;
+    const grid = this._estimateGrid;
+    const evidence = this._estimateEvidence;
     const region = this._heatmapRegion;
-    if (!estimates || estimates.length === 0 || !region) return;
+    if (!region) return;
 
-    const gridSize = Math.round(Math.sqrt(estimates.length));
-    if (gridSize === 0) return;
+    // The heatmap grid covers the domain region in world space.
+    // We draw fixed-size screen cells and look up which grid cell each maps to.
+    // Screen pixel (sx, sy) → world coord → grid cell (gx, gy).
+    //
+    // World coords: point.x * w = panX + normX * zoom * w
+    //   normX = (screenX - panX) / (zoom * w)
+    const SCREEN_CELLS = 50; // fixed number of screen cells
+    const cellW = w / SCREEN_CELLS;
+    const cellH = h / SCREEN_CELLS;
 
-    const rx = region.x_min * w;
-    const ry = region.y_min * h;
-    const rw = (region.x_max - region.x_min) * w;
-    const rh = (region.y_max - region.y_min) * h;
-    const cellW = rw / gridSize;
-    const cellH = rh / gridSize;
+    const rXMin = region.x_min;
+    const rYMin = region.y_min;
+    const rXSpan = region.x_max - region.x_min;
+    const rYSpan = region.y_max - region.y_min;
 
-    ctx.globalAlpha = light ? 0.45 : HEATMAP_OPACITY;
-    const colorFn = light ? valueToLightColor : valueToDarkColor;
+    ctx.globalAlpha = 0.45;
 
-    for (const e of estimates) {
-      if (e.state === 'unknown') continue;
-      const [r, g, b] = colorFn(e.value);
-      const a = e.evidenceCount === 0 ? 0.3 : 0.75;
-      ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
-      ctx.fillRect(rx + e.gx * cellW, ry + e.gy * cellH, cellW + 0.5, cellH + 0.5);
+    for (let sy = 0; sy < SCREEN_CELLS; sy++) {
+      for (let sx = 0; sx < SCREEN_CELLS; sx++) {
+        // Center of this screen cell → world normalized coordinate
+        const centerSX = (sx + 0.5) * cellW;
+        const centerSY = (sy + 0.5) * cellH;
+        const wx = (centerSX - this._panX) / (this._zoom * w);
+        const wy = (centerSY - this._panY) / (this._zoom * h);
+
+        // Map world coord to grid cell within domain region
+        const gx = Math.floor(((wx - rXMin) / rXSpan) * N);
+        const gy = Math.floor(((wy - rYMin) / rYSpan) * N);
+
+        if (gx < 0 || gx >= N || gy < 0 || gy >= N) {
+          // Outside domain region — draw neutral prior
+          ctx.fillStyle = 'rgba(245, 220, 105, 0.25)';
+          ctx.fillRect(sx * cellW, sy * cellH, cellW + 0.5, cellH + 0.5);
+          continue;
+        }
+
+        const idx = gy * N + gx;
+        const val = grid[idx];
+        const ev = evidence[idx];
+        const [r, g, b] = valueToColor(val);
+        const a = ev === 0 ? 0.5 : 0.75;
+        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
+        ctx.fillRect(sx * cellW, sy * cellH, cellW + 0.5, cellH + 0.5);
+      }
+    }
+
+    ctx.globalAlpha = 1;
+    // Only draw grid lines if cells are large enough to be visible
+    if (cellW > 4 && cellH > 4) {
+      ctx.strokeStyle = 'rgba(0, 0, 0, 0.06)';
+      ctx.lineWidth = 0.5;
+      ctx.beginPath();
+      for (let i = 0; i <= SCREEN_CELLS; i++) {
+        const x = i * cellW;
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, h);
+        const y = i * cellH;
+        ctx.moveTo(0, y);
+        ctx.lineTo(w, y);
+      }
+      ctx.stroke();
     }
 
     ctx.globalAlpha = 1;
   }
 
-  _drawPoints(ctx, w, h, light) {
+  _drawPoints(ctx, w, h) {
     if (this._points.length === 0) return;
 
-    const defaultColor = light ? [100, 116, 139, 80] : [148, 163, 184, 80];
+    const defaultColor = [100, 116, 139, 80];
     for (const p of this._points) {
       const px = p.x * w;
       const py = p.y * h;
       const r = (p.radius || 2) / this._zoom;
-      const isDefaultDark = p.color && p.color[0] === 148 && p.color[1] === 163;
-      const color = (light && isDefaultDark) ? defaultColor : (p.color || defaultColor);
+      const color = p.color || defaultColor;
       const alpha = (color[3] ?? 100) / 255;
 
       ctx.beginPath();
@@ -414,7 +548,8 @@ export class Renderer {
     }
   }
 
-  _drawAnsweredDots(ctx, w, h, light) {
+
+  _drawAnsweredDots(ctx, w, h) {
     if (this._answeredData.length === 0) return;
 
     for (const d of this._answeredData) {
@@ -424,7 +559,7 @@ export class Renderer {
 
       ctx.beginPath();
       ctx.arc(px, py, r + 1.5 / this._zoom, 0, Math.PI * 2);
-      ctx.fillStyle = light ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.9)';
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
       ctx.fill();
 
       ctx.beginPath();
@@ -435,45 +570,39 @@ export class Renderer {
     }
   }
 
-  _drawColorbar(ctx, w, h, light) {
-    if (!this._showColorbar) return;
+  _initColorbarDrag() {
+    let dragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
 
-    const barW = 12;
-    const barH = 120;
-    const margin = 16;
-    const x = w - barW - margin;
-    const y = h - barH - margin;
+    this._colorbarEl.addEventListener('mousedown', (e) => {
+      dragging = true;
+      offsetX = e.clientX - this._colorbarEl.offsetLeft;
+      offsetY = e.clientY - this._colorbarEl.offsetTop;
+      this._colorbarEl.style.cursor = 'grabbing';
+      e.stopPropagation();
+    });
 
-    ctx.save();
-    ctx.setTransform(this._dpr, 0, 0, this._dpr, 0, 0);
+    this._cbMouseMove = (e) => {
+      if (!dragging) return;
+      const rect = this._container.getBoundingClientRect();
+      const x = e.clientX - offsetX;
+      const y = e.clientY - offsetY;
+      this._colorbarEl.style.left = Math.max(0, Math.min(rect.width - 30, x)) + 'px';
+      this._colorbarEl.style.top = Math.max(0, Math.min(rect.height - 150, y)) + 'px';
+      this._colorbarEl.style.right = 'auto';
+      this._colorbarEl.style.bottom = 'auto';
+    };
 
-    ctx.fillStyle = light ? 'rgba(255,255,255,0.85)' : 'rgba(15,23,42,0.8)';
-    ctx.beginPath();
-    ctx.roundRect(x - 6, y - 20, barW + 12, barH + 36, 6);
-    ctx.fill();
+    this._cbMouseUp = () => {
+      if (dragging) {
+        dragging = false;
+        this._colorbarEl.style.cursor = 'grab';
+      }
+    };
 
-    const colorFn = light ? valueToLightColor : valueToDarkColor;
-    const steps = 40;
-    const stepH = barH / steps;
-    for (let i = 0; i < steps; i++) {
-      const v = 1 - i / (steps - 1);
-      const [r, g, b] = colorFn(v);
-      ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
-      ctx.fillRect(x, y + i * stepH, barW, stepH + 0.5);
-    }
-
-    ctx.strokeStyle = light ? 'rgba(0,0,0,0.15)' : 'rgba(255,255,255,0.15)';
-    ctx.lineWidth = 0.5;
-    ctx.strokeRect(x, y, barW, barH);
-
-    const fontFamily = getComputedStyle(document.documentElement).getPropertyValue('--font-body').trim() || 'sans-serif';
-    ctx.font = `9px ${fontFamily}`;
-    ctx.textAlign = 'center';
-    ctx.fillStyle = light ? 'rgba(0,0,0,0.55)' : 'rgba(255,255,255,0.6)';
-    ctx.fillText('100%', x + barW / 2, y - 4);
-    ctx.fillText('0%', x + barW / 2, y + barH + 12);
-
-    ctx.restore();
+    window.addEventListener('mousemove', this._cbMouseMove);
+    window.addEventListener('mouseup', this._cbMouseUp);
   }
 
   // ======== Pan/Zoom ========
@@ -550,6 +679,17 @@ export class Renderer {
 
   _handleMouseDown(e) {
     if (e.button !== 0) return;
+
+    if (e.shiftKey) {
+      const rect = this._canvas.getBoundingClientRect();
+      this._isSelecting = true;
+      this._selectionStart = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+      this._selectionEnd = { ...this._selectionStart };
+      this._canvas.style.cursor = 'crosshair';
+      e.preventDefault();
+      return;
+    }
+
     this._isDragging = true;
     this._dragMoved = false;
     this._lastMouse = { x: e.clientX, y: e.clientY };
@@ -557,6 +697,32 @@ export class Renderer {
   }
 
   _handleMouseUp() {
+    if (this._isSelecting && this._selectionStart && this._selectionEnd) {
+      const s = this._selectionStart;
+      const en = this._selectionEnd;
+      const dx = Math.abs(en.x - s.x);
+      const dy = Math.abs(en.y - s.y);
+
+      if (dx > 10 && dy > 10) {
+        const x1 = (Math.min(s.x, en.x) - this._panX) / (this._zoom * this._width);
+        const y1 = (Math.min(s.y, en.y) - this._panY) / (this._zoom * this._height);
+        const x2 = (Math.max(s.x, en.x) - this._panX) / (this._zoom * this._width);
+        const y2 = (Math.max(s.y, en.y) - this._panY) / (this._zoom * this._height);
+        this.transitionTo({
+          x_min: Math.max(0, x1), x_max: Math.min(1, x2),
+          y_min: Math.max(0, y1), y_max: Math.min(1, y2),
+        });
+      }
+
+      this._isSelecting = false;
+      this._selectionStart = null;
+      this._selectionEnd = null;
+      this._suppressNextClick = true;
+      this._canvas.style.cursor = '';
+      this._render();
+      return;
+    }
+
     this._isDragging = false;
     this._lastMouse = null;
     this._canvas.style.cursor = this._hoveredPoint ? 'pointer' : '';
@@ -573,6 +739,12 @@ export class Renderer {
     const rect = this._canvas.getBoundingClientRect();
     const mx = e.clientX - rect.left;
     const my = e.clientY - rect.top;
+
+    if (this._isSelecting && this._selectionStart) {
+      this._selectionEnd = { x: mx, y: my };
+      this._render();
+      return;
+    }
 
     if (this._isDragging && this._lastMouse) {
       const dx = e.clientX - this._lastMouse.x;
@@ -601,6 +773,11 @@ export class Renderer {
   }
 
   _handleClick(e) {
+    // Don't treat shift+drag selection release as a click
+    if (this._suppressNextClick) {
+      this._suppressNextClick = false;
+      return;
+    }
     // Don't treat drag-release as a click
     if (this._dragMoved) {
       this._dragMoved = false;
@@ -614,15 +791,24 @@ export class Renderer {
 
     if (!hit) return;
 
-    // Answered dot → reanswer
-    if (hit.questionId && this._onReanswer) {
-      this._onReanswer(hit.questionId);
+    if (hit.questionId) return;
+
+    if (hit.url) {
+      this._openInBackground(hit.url);
       return;
     }
 
-    // Article → open Wikipedia
-    if (hit.url) {
-      window.open(hit.url, '_blank', 'noopener');
+    if (hit.type === 'cell' && hit.label && hit.label.source_article) {
+      const url = 'https://en.wikipedia.org/wiki/' + encodeURIComponent(hit.label.source_article);
+      this._openInBackground(url);
+    }
+  }
+
+  _openInBackground(url) {
+    const w = window.open(url, '_blank', 'noopener');
+    if (w) {
+      w.blur();
+      window.focus();
     }
   }
 
@@ -641,12 +827,77 @@ export class Renderer {
       }
     }
 
-    // Check article points
     for (const p of this._points) {
       const dx = p.x - normX;
       const dy = p.y - normY;
       if (Math.sqrt(dx * dx + dy * dy) < hitRadius) {
         return p;
+      }
+    }
+
+    {
+      const N = 50;
+      const cellW = this._width / N;
+      const cellH = this._height / N;
+      const sgx = Math.floor(mx / cellW);
+      const sgy = Math.floor(my / cellH);
+
+      if (sgx >= 0 && sgx < N && sgy >= 0 && sgy < N) {
+        const centerSX = (sgx + 0.5) * cellW;
+        const centerSY = (sgy + 0.5) * cellH;
+        const wx = (centerSX - this._panX) / (this._zoom * this._width);
+        const wy = (centerSY - this._panY) / (this._zoom * this._height);
+
+        let estimateValue = 0.5;
+        if (this._estimateGrid && wx >= 0 && wx < 1 && wy >= 0 && wy < 1) {
+          const egx = Math.min(N - 1, Math.floor(wx * N));
+          const egy = Math.min(N - 1, Math.floor(wy * N));
+          estimateValue = this._estimateGrid[egy * N + egx];
+        }
+
+        // Look up pre-computed bundle label for this world coordinate
+        let bundleLabel = null;
+        if (this._labelMap && this._labelMap.size > 0 && this._labelRegion) {
+          const r = this._labelRegion;
+          const gs = this._labelGridSize || Math.round(Math.sqrt(this._labels.length));
+          if (wx >= r.x_min && wx <= r.x_max && wy >= r.y_min && wy <= r.y_max) {
+            const lgx = Math.min(gs - 1, Math.floor((wx - r.x_min) / (r.x_max - r.x_min) * gs));
+            const lgy = Math.min(gs - 1, Math.floor((wy - r.y_min) / (r.y_max - r.y_min) * gs));
+            bundleLabel = this._labelMap.get(`${lgx},${lgy}`) || null;
+          }
+        }
+
+        // Also find nearest question for concepts/source info
+        let nearestQ = null;
+        let nearestDist = Infinity;
+        for (const q of this._questions) {
+          const dx = q.x - wx;
+          const dy = q.y - wy;
+          const d2 = dx * dx + dy * dy;
+          if (d2 < nearestDist) {
+            nearestDist = d2;
+            nearestQ = q;
+          }
+        }
+
+        const label = {
+          // Use bundle label title when available, fall back to question source_article
+          title: (bundleLabel && bundleLabel.label) || null,
+          article_count: bundleLabel ? bundleLabel.article_count : 0,
+          concepts: nearestQ
+            ? (nearestQ.concepts_tested || [])
+                .map(c => c.replace(/^Concept\s+\d+:\s*/i, '').trim()).filter(Boolean)
+            : [],
+          source_article: nearestQ ? nearestQ.source_article || null : null,
+        };
+
+        return {
+          type: 'cell',
+          gx: sgx,
+          gy: sgy,
+          label,
+          estimateValue,
+        };
       }
     }
 
@@ -726,22 +977,64 @@ export class Renderer {
 
   _buildTooltipHTML(hit) {
     if (hit.questionId) {
+      const q = this._questionMap.get(hit.questionId);
       const isCorrect = hit.isCorrect;
-      const borderColor = isCorrect ? 'var(--color-correct)' : 'var(--color-incorrect)';
-      const icon = isCorrect ? '✅' : '❌';
+      const borderColor = isCorrect ? '#00693e' : '#9d162e';
+      const icon = isCorrect ? '✓' : '✗';
       const text = hit.title || 'Question';
-      const truncated = text.length > 200 ? text.slice(0, 200) + '…' : text;
-      return { html: `<div style="font-weight:600;margin-bottom:2px;">${icon} Answered</div><div style="font-size:0.73rem;color:var(--color-text-muted);">${this._escapeHtml(truncated)}</div>`, borderColor };
+      const truncated = text.length > 160 ? text.slice(0, 160) + '…' : text;
+
+      let html = `<div style="font-weight:600;margin-bottom:4px;"><span style="color:${borderColor}">${icon}</span> ${this._escapeHtml(truncated)}</div>`;
+      if (q) {
+        if (q.source_article) {
+          const wikiUrl = 'https://en.wikipedia.org/wiki/' + encodeURIComponent(q.source_article);
+          html += `<div style="font-size:0.73rem;margin-top:4px;"><b>Source:</b> <a href="${wikiUrl}" target="_blank" rel="noopener" style="color:#00693e;text-decoration:underline;">${this._escapeHtml(q.source_article)}</a></div>`;
+        }
+        if (q.concepts_tested && q.concepts_tested.length > 0) {
+          const concepts = q.concepts_tested.map(c => c.replace(/^Concept\s+\d+:\s*/i, '').trim()).filter(Boolean);
+          html += `<div style="font-size:0.73rem;color:var(--color-text-muted);margin-top:2px;"><b>Concepts:</b> ${this._escapeHtml(concepts.join(', '))}</div>`;
+        }
+      }
+      return { html, borderColor, interactive: !!q?.source_article };
+    }
+
+    if (hit.type === 'cell') {
+      const label = hit.label;
+      const level = this._knowledgeLevelLabel(hit.estimateValue);
+      const [cr, cg, cb] = valueToColor(hit.estimateValue);
+      const borderColor = `rgb(${cr},${cg},${cb})`;
+
+      let html = '';
+      // Show the grid cell's article title (from bundle labels)
+      if (label && label.title) {
+        html += `<div style="font-weight:600;margin-bottom:2px;">${this._escapeHtml(label.title)}</div>`;
+      }
+      if (label && label.concepts && label.concepts.length > 0) {
+        html += `<div style="font-size:0.73rem;color:var(--color-text-muted);margin-bottom:2px;">${this._escapeHtml(label.concepts.join(', '))}</div>`;
+      }
+      if (label && label.source_article) {
+        html += `<div style="font-size:0.73rem;margin-top:2px;">Click to open <a href="https://en.wikipedia.org/wiki/${encodeURIComponent(label.source_article)}" style="color:#00693e;text-decoration:underline;pointer-events:auto;">${this._escapeHtml(label.source_article)}</a></div>`;
+      }
+      html += `<div style="font-size:0.68rem;margin-top:3px;color:var(--color-text-muted);opacity:0.7;">Estimated knowledge: ${level}</div>`;
+      return { html, borderColor, interactive: !!(label && label.source_article) };
     }
 
     const title = hit.title || '';
     const excerpt = hit.excerpt || '';
     if (excerpt) {
       const truncExcerpt = excerpt.length > 150 ? excerpt.slice(0, 150) + '…' : excerpt;
-      return { html: `<div style="font-weight:600;margin-bottom:2px;">${this._escapeHtml(title)}</div><div style="font-size:0.73rem;color:var(--color-text-muted);">${this._escapeHtml(truncExcerpt)}</div>`, borderColor: 'var(--color-secondary)' };
+      return { html: `<div style="font-weight:600;margin-bottom:2px;">${this._escapeHtml(title)}</div><div style="font-size:0.73rem;color:var(--color-text-muted);">${this._escapeHtml(truncExcerpt)}</div>`, borderColor: '#00693e' };
     }
 
     return { html: `<div style="font-weight:600;">${this._escapeHtml(title)}</div>`, borderColor: 'var(--color-border)' };
+  }
+
+  _knowledgeLevelLabel(value) {
+    if (value < 0.15) return 'Low';
+    if (value < 0.30) return 'Medium-Low';
+    if (value < 0.70) return 'Medium';
+    if (value < 0.85) return 'Medium-High';
+    return 'High';
   }
 
   _escapeHtml(str) {
@@ -752,6 +1045,7 @@ export class Renderer {
     if (!tooltipData || !this._tooltip) return;
     this._tooltip.innerHTML = tooltipData.html;
     this._tooltip.style.borderLeftColor = tooltipData.borderColor;
+    this._tooltip.style.pointerEvents = tooltipData.interactive ? 'auto' : 'none';
 
     const containerW = this._width;
     const containerH = this._height;
@@ -769,7 +1063,10 @@ export class Renderer {
   }
 
   _hideTooltip() {
-    if (this._tooltip) this._tooltip.style.opacity = '0';
+    if (this._tooltip) {
+      this._tooltip.style.opacity = '0';
+      this._tooltip.style.pointerEvents = 'none';
+    }
   }
 
   // ======== PRIVATE: Transitions ========

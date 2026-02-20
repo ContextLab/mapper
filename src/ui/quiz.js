@@ -379,6 +379,10 @@ export function onNext(callback) {
   nextCallback = callback;
 }
 
+export function getCurrentQuestion() {
+  return currentQuestion;
+}
+
 /**
  * Replaces $...$ with KaTeX rendered HTML.
  * Heuristic: if content between $ signs contains only numbers/punctuation, treat as currency.

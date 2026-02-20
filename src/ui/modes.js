@@ -16,8 +16,10 @@ let buttons = new Map();
 let activeMode = 'auto';
 let currentAnswerCount = 0;
 let onSelectCb = null;
+let onSkipCb = null;
 let autoAdvance = false;
 let autoAdvanceToggleEl = null;
+let skipBtnEl = null;
 
 export function init(container) {
   if (!container) return;
@@ -131,6 +133,26 @@ export function init(container) {
       .auto-advance-track.on .auto-advance-thumb {
         transform: translateX(14px);
       }
+      .skip-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.35rem 0.6rem;
+        border: 1px solid #d4a017;
+        border-radius: 16px;
+        background: var(--color-surface-raised);
+        cursor: pointer;
+        font-size: 0.75rem;
+        font-family: var(--font-body);
+        color: #b8860b;
+        transition: all 0.15s ease;
+        white-space: nowrap;
+      }
+      .skip-btn:hover {
+        background: #d4a017;
+        color: #ffffff;
+        box-shadow: 0 0 8px rgba(212, 160, 23, 0.4);
+      }
     `;
     document.head.appendChild(style);
   }
@@ -158,6 +180,16 @@ export function init(container) {
     buttons.set(mode.id, btn);
     wrapper.appendChild(btn);
   }
+
+  // Skip button
+  skipBtnEl = document.createElement('button');
+  skipBtnEl.className = 'skip-btn';
+  skipBtnEl.innerHTML = '<i class="fa-solid fa-forward"></i> Skip';
+  skipBtnEl.dataset.tooltip = "Not sure of the answer? Don't guess, just press skip!";
+  skipBtnEl.addEventListener('click', () => {
+    if (onSkipCb) onSkipCb();
+  });
+  wrapper.appendChild(skipBtnEl);
 
   // Auto-advance toggle
   const toggleWrap = document.createElement('div');
@@ -204,6 +236,10 @@ export function init(container) {
 
 export function onModeSelect(callback) {
   onSelectCb = callback;
+}
+
+export function onSkip(callback) {
+  onSkipCb = callback;
 }
 
 export function updateAvailability(responseCount) {

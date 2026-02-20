@@ -1,0 +1,103 @@
+// @ts-check
+import { test, expect } from '@playwright/test';
+
+const BASE = 'http://localhost:5173';
+
+async function selectDomain(page) {
+  // Open the custom dropdown on the landing page
+  const dropdownBtn = page.locator('#landing button').filter({ hasText: 'Choose a region' });
+  await dropdownBtn.click();
+  await page.waitForTimeout(300);
+
+  // Click the first option in the dropdown
+  const option = page.locator('.custom-select-options .custom-select-option').first();
+  if (await option.isVisible()) {
+    await option.click();
+  } else {
+    // Fallback: try any visible option-like element under the landing select
+    const fallback = page.locator('#landing [role="option"], #landing .select-option').first();
+    await fallback.click();
+  }
+
+  // Wait for the map/quiz to load
+  await page.waitForSelector('.quiz-question', { timeout: 15000 });
+  await page.waitForTimeout(1000);
+}
+
+test.describe('Skip button and share image', () => {
+  test('Skip button appears and works', async ({ page }) => {
+    await page.goto(BASE);
+    await page.waitForSelector('#landing', { state: 'visible', timeout: 10000 });
+
+    await selectDomain(page);
+
+    // Verify the Skip button exists in the modes wrapper
+    const skipBtn = page.locator('.skip-btn');
+    await expect(skipBtn).toBeVisible({ timeout: 5000 });
+    await expect(skipBtn).toContainText('Skip');
+
+    // Verify the tooltip
+    const tooltip = await skipBtn.getAttribute('data-tooltip');
+    expect(tooltip).toContain("Don't guess");
+
+    // Get the question text before skipping
+    const questionBefore = await page.locator('.quiz-question').textContent();
+    expect(questionBefore.length).toBeGreaterThan(0);
+
+    // Click skip
+    await skipBtn.click();
+
+    // Should advance to next question
+    await page.waitForTimeout(500);
+    const questionAfter = await page.locator('.quiz-question').textContent();
+    expect(questionAfter.length).toBeGreaterThan(0);
+
+    console.log('Skip button test passed');
+    console.log('Question before skip:', questionBefore.slice(0, 60));
+    console.log('Question after skip:', questionAfter.slice(0, 60));
+  });
+
+  test('Skip records response with is_skipped and yellow dot', async ({ page }) => {
+    await page.goto(BASE);
+    await page.waitForSelector('#landing', { state: 'visible', timeout: 10000 });
+
+    await selectDomain(page);
+
+    // Skip a question
+    const skipBtn = page.locator('.skip-btn');
+    await skipBtn.click();
+    await page.waitForTimeout(500);
+
+    // Verify the skipped response is stored with is_skipped flag
+    const responses = await page.evaluate(() => {
+      const store = window.__mapper;
+      if (store && store.$responses) {
+        return store.$responses.get();
+      }
+      return [];
+    });
+
+    const skipped = responses.find(r => r.is_skipped === true);
+    expect(skipped).toBeTruthy();
+    expect(skipped.selected).toBeNull();
+    console.log('Skipped response found:', JSON.stringify(skipped));
+
+    // Check the answered dots include the skipped question with yellow color
+    const answeredDots = await page.evaluate(() => {
+      const store = window.__mapper;
+      if (store && store.renderer && store.renderer._answeredData) {
+        return store.renderer._answeredData;
+      }
+      return [];
+    });
+
+    const skippedDot = answeredDots.find(d => d.isSkipped === true);
+    expect(skippedDot).toBeTruthy();
+    // Verify yellow color [212, 160, 23, 200]
+    expect(skippedDot.color[0]).toBe(212);
+    expect(skippedDot.color[1]).toBe(160);
+    expect(skippedDot.color[2]).toBe(23);
+
+    console.log('Skipped dot color verified:', skippedDot.color);
+  });
+});

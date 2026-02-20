@@ -66,54 +66,70 @@ function generateShareImage(data) {
   canvas.height = H;
   const ctx = canvas.getContext('2d');
 
-  ctx.fillStyle = '#f8fafc';
+  ctx.fillStyle = '#ffffff';
   ctx.fillRect(0, 0, W, H);
 
   const { estimateGrid, articles, answeredQuestions } = data;
   const N = 50;
 
+  // Draw heatmap grid matching the full-map renderer style:
+  // bilinear interpolation at higher resolution with proper opacity
   if (estimateGrid && estimateGrid.length === N * N) {
-    ctx.globalAlpha = 0.1;
-    const cellW = W / N;
-    const cellH = H / N;
-    for (let gy = 0; gy < N; gy++) {
-      for (let gx = 0; gx < N; gx++) {
-        const val = estimateGrid[gy * N + gx];
+    const CELLS = 100;
+    const cellW = W / CELLS;
+    const cellH = H / CELLS;
+
+    function sampleGrid(gxf, gyf) {
+      const gx0 = Math.max(0, Math.min(N - 1, Math.floor(gxf)));
+      const gy0 = Math.max(0, Math.min(N - 1, Math.floor(gyf)));
+      const gx1 = Math.min(N - 1, gx0 + 1);
+      const gy1 = Math.min(N - 1, gy0 + 1);
+      const fx = gxf - gx0;
+      const fy = gyf - gy0;
+      const v00 = estimateGrid[gy0 * N + gx0];
+      const v10 = estimateGrid[gy0 * N + gx1];
+      const v01 = estimateGrid[gy1 * N + gx0];
+      const v11 = estimateGrid[gy1 * N + gx1];
+      const top = v00 + (v10 - v00) * fx;
+      const bot = v01 + (v11 - v01) * fx;
+      return top + (bot - top) * fy;
+    }
+
+    ctx.globalAlpha = 0.45;
+    for (let sy = 0; sy < CELLS; sy++) {
+      for (let sx = 0; sx < CELLS; sx++) {
+        const gxf = ((sx + 0.5) / CELLS) * N - 0.5;
+        const gyf = ((sy + 0.5) / CELLS) * N - 0.5;
+        const val = sampleGrid(gxf, gyf);
         const [r, g, b] = shareImageColor(val);
         ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
-        ctx.fillRect(gx * cellW, gy * cellH, cellW + 0.5, cellH + 0.5);
+        ctx.fillRect(sx * cellW, sy * cellH, cellW + 0.5, cellH + 0.5);
       }
     }
     ctx.globalAlpha = 1;
   }
 
+  // Draw Wikipedia articles as 1px gray dots
   if (articles && articles.length > 0) {
+    ctx.fillStyle = 'rgba(148, 163, 184, 0.35)';
     for (const a of articles) {
-      const px = a.x * W;
-      const py = a.y * H;
-      const gx = Math.floor(a.x * N);
-      const gy = Math.floor(a.y * N);
-      let val = 0.5;
-      if (estimateGrid && gx >= 0 && gx < N && gy >= 0 && gy < N) {
-        val = estimateGrid[gy * N + gx];
-      }
-      const [r, g, b] = shareImageColor(val);
-      ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
-      ctx.fillRect(px - 0.5, py - 0.5, 1, 1);
+      ctx.fillRect(a.x * W - 0.5, a.y * H - 0.5, 1, 1);
     }
   }
 
+  // Draw answered questions as slightly larger dots with outline
   if (answeredQuestions && answeredQuestions.length > 0) {
     for (const q of answeredQuestions) {
       const px = q.x * W;
       const py = q.y * H;
       ctx.beginPath();
-      ctx.arc(px, py, 4, 0, Math.PI * 2);
-      ctx.fillStyle = q.isCorrect ? '#00693e' : '#9d162e';
+      ctx.arc(px, py, 5, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
       ctx.fill();
-      ctx.strokeStyle = '#000000';
-      ctx.lineWidth = 1;
-      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(px, py, 3.5, 0, Math.PI * 2);
+      ctx.fillStyle = q.isSkipped ? '#d4a017' : q.isCorrect ? '#00693e' : '#9d162e';
+      ctx.fill();
     }
   }
 

@@ -88,6 +88,17 @@ export class Estimator {
   }
 
   /**
+   * Record a skipped question — labels knowledge at 50% with reduced spatial influence.
+   * @param {number} x - Normalized x coordinate
+   * @param {number} y - Normalized y coordinate
+   * @param {number} lengthScale - Reduced RBF width for skip observations
+   */
+  observeSkip(x, y, lengthScale) {
+    this._observations.push({ x, y, value: PRIOR_MEAN, lengthScale: lengthScale || this._lengthScale });
+    this._recompute();
+  }
+
+  /**
    * Get estimates for all cells (or viewport subset).
    * Returns CellEstimate[] per contracts/active-learner.md.
    */
@@ -240,11 +251,12 @@ export class Estimator {
 
     for (const r of responses) {
       if (r.x != null && r.y != null) {
+        const isSkipped = !!r.is_skipped;
         this._observations.push({
           x: r.x,
           y: r.y,
-          value: r.is_correct ? 1.0 : 0.0,
-          lengthScale: ls,
+          value: isSkipped ? PRIOR_MEAN : (r.is_correct ? 1.0 : 0.0),
+          lengthScale: isSkipped ? ls * 0.5 : ls,
         });
       }
     }

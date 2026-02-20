@@ -21,6 +21,8 @@ import { ParticleSystem } from './viz/particles.js';
 import * as controls from './ui/controls.js';
 import * as quiz from './ui/quiz.js';
 import * as modes from './ui/modes.js';
+
+const SKIP_LENGTH_SCALE_FACTOR = 0.5;
 import * as insights from './ui/insights.js';
 import * as share from './ui/share.js';
 import { showDownload, hideDownload, updateConfidence, initConfidence } from './ui/progress.js';
@@ -125,6 +127,7 @@ async function boot() {
 
   modes.init(quizPanel);
   modes.onModeSelect(handleModeSelect);
+  modes.onSkip(handleSkip);
   insights.init();
   initConfidence(quizPanel);
 
@@ -173,7 +176,7 @@ async function boot() {
     const responses = $responses.get();
     const answeredQuestions = responses
       .filter(r => r.x != null && r.y != null)
-      .map(r => ({ x: r.x, y: r.y, isCorrect: r.is_correct }));
+      .map(r => ({ x: r.x, y: r.y, isCorrect: r.is_correct, isSkipped: !!r.is_skipped }));
     return { estimateGrid: grid, articles, answeredQuestions };
   });
 
@@ -258,13 +261,17 @@ function responsesToAnsweredDots(responses, qIndex) {
   for (const [qid, r] of latest) {
     const q = qIndex.get(qid);
     if (!q) continue;
+    const isSkipped = !!r.is_skipped;
     dots.push({
       x: r.x,
       y: r.y,
       questionId: qid,
       title: q.question_text,
       isCorrect: r.is_correct,
-      color: r.is_correct ? [0, 105, 62, 200] : [157, 22, 46, 200],
+      isSkipped,
+      color: isSkipped ? [212, 160, 23, 200]
+           : r.is_correct ? [0, 105, 62, 200]
+           : [157, 22, 46, 200],
     });
   }
   return dots;
@@ -459,6 +466,46 @@ function handleAnswer(selectedKey, question) {
   }
 }
 
+function handleSkip() {
+  const question = quiz.getCurrentQuestion();
+  if (!question || !currentDomainBundle) return;
+
+  const activeDomainId = $activeDomain.get() || 'all';
+
+  const response = {
+    question_id: question.id,
+    domain_id: activeDomainId,
+    selected: null,
+    is_correct: false,
+    is_skipped: true,
+    timestamp: Date.now(),
+    x: question.x,
+    y: question.y,
+  };
+
+  const current = $responses.get();
+  const filtered = current.filter(r => r.question_id !== question.id);
+  const isReanswer = filtered.length < current.length;
+  $responses.set([...filtered, response]);
+
+  const skipLengthScale = UNIFORM_LENGTH_SCALE * SKIP_LENGTH_SCALE_FACTOR;
+  estimator.observeSkip(question.x, question.y, skipLengthScale);
+  globalEstimator.observeSkip(question.x, question.y, skipLengthScale);
+  const estimates = estimator.predict();
+  $estimates.set(estimates);
+
+  if (!isReanswer) {
+    domainQuestionCount++;
+    modes.updateAvailability(domainQuestionCount);
+    updateInsightButtons($responses.get().length);
+  }
+
+  renderer.setAnsweredQuestions(responsesToAnsweredDots($responses.get(), questionIndex));
+
+  announce('Skipped. Moving to next question.');
+  selectAndShowNextQuestion();
+}
+
 function handleReset() {
   if (!confirm('Are you sure? This will clear all progress.')) return;
   resetAll();
@@ -528,8 +575,15 @@ function handleImport(data) {
   }
 
   const valid = responses.filter(r =>
-    r.question_id && r.domain_id && r.selected && typeof r.is_correct === 'boolean'
-  );
+    r.question_id && r.domain_id && typeof r.is_correct === 'boolean'
+    && (r.selected || r.is_skipped || r.selected === null)
+  ).map(r => {
+    // Infer is_skipped for older exports that lack the field
+    if (!r.is_skipped && r.selected === null) {
+      return { ...r, is_skipped: true };
+    }
+    return r;
+  });
 
   if (valid.length === 0) {
     alert('No valid responses found in the imported file.');

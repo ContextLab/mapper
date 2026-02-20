@@ -28,6 +28,7 @@ export function exportResponses() {
       domain_id: r.domain_id,
       selected: r.selected,
       is_correct: r.is_correct,
+      is_skipped: r.is_skipped || false,
       timestamp: r.timestamp,
       x: r.x,
       y: r.y,

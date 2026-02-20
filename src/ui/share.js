@@ -31,6 +31,14 @@ export function init(headerElement, getCanvas, getExpertiseAreas, getAnswerCount
   if (shareBtn) {
     shareBtn.addEventListener('click', showShareDialog);
   }
+
+  // Backdrop click to close
+  const shareModal = document.getElementById('share-modal');
+  if (shareModal) {
+    shareModal.addEventListener('click', (e) => {
+      if (e.target === shareModal) shareModal.hidden = true;
+    });
+  }
 }
 
 function shareImageColor(v) {
@@ -171,6 +179,7 @@ export function showShareDialog() {
       if (closeBtn) closeBtn.addEventListener('click', () => { modal.hidden = true; });
     }
     modal.hidden = false;
+    modal.offsetHeight; // force reflow so opacity transition fires after display:none removal
     return;
   }
 
@@ -280,6 +289,7 @@ export function showShareDialog() {
   }
 
   modal.hidden = false;
+  modal.offsetHeight; // force reflow so opacity transition fires after display:none removal
 }
 
 async function handleShareAction(action, shareText, shareUrl, imageDataUrl) {

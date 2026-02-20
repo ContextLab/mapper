@@ -541,11 +541,13 @@
             border-color: var(--color-text-muted);
             background: var(--color-surface-raised);
         }
-        /* Welcome screen: hide logo text, trophy, suggest buttons */
+        /* Welcome screen: hide logo text, trophy, suggest, dropdown, and minimap */
         #app[data-screen="welcome"] .logo span { display: none; }
         #app[data-screen="welcome"] #trophy-btn { display: none; }
         #app[data-screen="welcome"] #suggest-btn { display: none; }
         #app[data-screen="welcome"] #minimap-container { display: none; }
+        #app[data-screen="welcome"] .custom-select { display: none; }
+        #app[data-screen="welcome"] .control-btn:not([aria-label="Import saved progress"]) { display: none; }
 
         .sr-only {
             position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;

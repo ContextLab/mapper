@@ -222,7 +222,7 @@ export function init(headerElement) {
     input.addEventListener('change', () => {
       const file = input.files[0];
       if (!file) {
-        document.body.removeChild(input);
+        if (input.parentNode) input.parentNode.removeChild(input);
         return;
       }
       const reader = new FileReader();
@@ -234,19 +234,19 @@ export function init(headerElement) {
           console.error('[controls] Failed to parse import file:', err);
           alert('Invalid file format. Please select a Knowledge Mapper export JSON file.');
         }
-        document.body.removeChild(input);
+        if (input.parentNode) input.parentNode.removeChild(input);
       };
       reader.onerror = () => {
         console.error('[controls] FileReader error:', reader.error);
         alert('Could not read file. Please try again.');
-        document.body.removeChild(input);
+        if (input.parentNode) input.parentNode.removeChild(input);
       };
       reader.readAsText(file);
     });
 
     // Clean up if user cancels the file dialog
     input.addEventListener('cancel', () => {
-      document.body.removeChild(input);
+      if (input.parentNode) input.parentNode.removeChild(input);
     });
 
     input.click();

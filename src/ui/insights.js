@@ -79,6 +79,7 @@ export function init() {
         flex-shrink: 0;
       }
       .insights-bar-fill-mini {
+        display: block;
         height: 100%;
         border-radius: 3px;
         transition: width 0.3s ease;
@@ -210,10 +211,10 @@ export function computeConceptKnowledge(estimates, region, gridSize, opts = {}) 
   const coords = opts.global ? globalConceptCoords : conceptCoords;
   if (coords.size === 0 || !estimates || estimates.length === 0 || !region) return [];
 
-  // Grid lookup: "gx,gy" → estimate value
+  // Grid lookup: "gx,gy" → { value, uncertainty }
   const estimateMap = new Map();
   for (const e of estimates) {
-    estimateMap.set(`${e.gx},${e.gy}`, e.value);
+    estimateMap.set(`${e.gx},${e.gy}`, { value: e.value, uncertainty: e.uncertainty ?? 1.0 });
   }
 
   const cellW = (region.x_max - region.x_min) / gridSize;
@@ -222,18 +223,35 @@ export function computeConceptKnowledge(estimates, region, gridSize, opts = {}) 
   function knowledgeAt(x, y) {
     const gx = Math.min(gridSize - 1, Math.max(0, Math.floor((x - region.x_min) / cellW)));
     const gy = Math.min(gridSize - 1, Math.max(0, Math.floor((y - region.y_min) / cellH)));
-    const val = estimateMap.get(`${gx},${gy}`) ?? 0.5;
-    return isFinite(val) ? val : 0.5; // Guard against NaN from GP instability
+    const cell = estimateMap.get(`${gx},${gy}`);
+    if (!cell) return { value: 0.5, uncertainty: 1.0 };
+    const val = isFinite(cell.value) ? cell.value : 0.5;
+    return { value: val, uncertainty: cell.uncertainty };
   }
+
+  // Uncertainty threshold: cells with uncertainty above this are considered "no data"
+  // (the GP hasn't received enough nearby evidence to meaningfully update from the prior)
+  const UNCERTAINTY_THRESHOLD = 0.85;
 
   const results = [];
   for (const [concept, pts] of coords) {
     let sum = 0;
+    let uncertaintySum = 0;
     for (const c of pts) {
-      sum += knowledgeAt(c.x, c.y);
+      const k = knowledgeAt(c.x, c.y);
+      sum += k.value;
+      uncertaintySum += k.uncertainty;
     }
     const knowledge = pts.length > 0 ? sum / pts.length : 0.5;
-    results.push({ concept, knowledge: isFinite(knowledge) ? knowledge : 0.5, count: pts.length });
+    const avgUncertainty = pts.length > 0 ? uncertaintySum / pts.length : 1.0;
+    // hasEvidence: true if the average uncertainty is low enough that the GP has
+    // meaningfully updated from the prior for this concept's grid cells
+    results.push({
+      concept,
+      knowledge: isFinite(knowledge) ? knowledge : 0.5,
+      count: pts.length,
+      hasEvidence: avgUncertainty < UNCERTAINTY_THRESHOLD,
+    });
   }
 
   return results;
@@ -269,7 +287,18 @@ export function showLeaderboard(conceptKnowledge) {
     return;
   }
 
-  const sorted = [...conceptKnowledge].sort((a, b) => b.knowledge - a.knowledge);
+  // Only show concepts with nearby evidence — raw GP extrapolation is misleading
+  const evidenced = conceptKnowledge.filter(c => c.hasEvidence !== false);
+  if (evidenced.length === 0) {
+    bodyEl.textContent = '';
+    const msg = document.createElement('div');
+    msg.className = 'insights-empty-msg';
+    msg.textContent = 'Answer more questions to discover your areas of expertise.';
+    bodyEl.appendChild(msg);
+    modalEl.hidden = false;
+    return;
+  }
+  const sorted = [...evidenced].sort((a, b) => b.knowledge - a.knowledge);
   const explainer = '<p class="insights-explainer">'
     + 'These are the concepts the system estimates you know best, based on the responses you\'ve given. '
     + 'Each concept is mapped to a region of the knowledge map; '
@@ -306,7 +335,19 @@ export function showSuggestions(conceptKnowledge) {
     return;
   }
 
-  const sorted = [...conceptKnowledge].sort((a, b) => a.knowledge - b.knowledge);
+  // Only show concepts with nearby evidence — unexplored areas are always "low" but not useful suggestions
+  const evidenced = conceptKnowledge.filter(c => c.hasEvidence !== false);
+  if (evidenced.length === 0) {
+    bodyEl.textContent = '';
+    const msg = document.createElement('div');
+    msg.className = 'insights-empty-msg';
+    msg.textContent = 'Answer more questions to get personalized learning suggestions.';
+    bodyEl.appendChild(msg);
+    modalEl.hidden = false;
+    return;
+  }
+
+  const sorted = [...evidenced].sort((a, b) => a.knowledge - b.knowledge);
 
   // Filter to concepts likely to have good Khan Academy results:
   // - At least 2 words (single words are often too generic)
@@ -348,13 +389,19 @@ function renderList(items, barColor, showLinks) {
       ? `<a href="${kaLink(item.concept)}" target="_blank" rel="noopener" title="Search Khan Academy for ${text}">${text}</a>`
       : text;
 
+    // If no nearby observations contributed to this concept's estimate, show "—"
+    const noData = item.hasEvidence === false;
+    const pctText = noData ? '—' : `${pct}%`;
+    const barWidth = noData ? 0 : pct;
+    const pctColor = noData ? 'var(--color-text-muted)' : barColor;
+
     html += `
       <li>
         <span class="insights-rank">${i + 1}.</span>
         <span class="insights-concept">${conceptContent}</span>
-        <span class="insights-pct" style="color:${barColor};">${pct}%</span>
+        <span class="insights-pct" style="color:${pctColor};">${pctText}</span>
         <span class="insights-bar-mini">
-          <span class="insights-bar-fill-mini" style="width:${pct}%;background:${barColor};"></span>
+          <span class="insights-bar-fill-mini" style="width:${barWidth}%;background:${barColor};"></span>
         </span>
       </li>`;
   }

@@ -321,7 +321,7 @@ function handleOptionClick(selectedKey) {
       uiElements.feedback.textContent = 'Correct!';
       uiElements.feedback.style.color = 'var(--color-correct)';
     } else {
-      uiElements.feedback.textContent = `Incorrect — the answer was ${correctKey}`;
+      uiElements.feedback.textContent = 'Incorrect';
       uiElements.feedback.style.color = 'var(--color-incorrect)';
     }
   }

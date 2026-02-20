@@ -1,10 +1,10 @@
 /** Question mode selector with availability gating per FR-010/FR-011. */
 
 const QUESTION_MODES = [
-  { id: 'auto', label: 'Auto (best next question)', icon: 'fa-wand-magic-sparkles', minAnswers: 0, type: 'question' },
-  { id: 'easy', label: 'Ask me an easy question', icon: 'fa-face-smile', minAnswers: 5, type: 'question' },
-  { id: 'hardest-can-answer', label: 'Hardest I can answer', icon: 'fa-fire', minAnswers: 5, type: 'question' },
-  { id: 'dont-know', label: "Something I don't know", icon: 'fa-circle-question', minAnswers: 5, type: 'question' },
+  { id: 'auto', label: 'Auto (best next question)', icon: 'fa-wand-magic-sparkles', minAnswers: 0, type: 'question', enabledTooltip: 'Pick the next question that maximizes gain in knowledge estimation accuracy' },
+  { id: 'easy', label: 'Ask me an easy question', icon: 'fa-face-smile', minAnswers: 5, type: 'question', enabledTooltip: 'Pick a question the model predicts you can answer' },
+  { id: 'hardest-can-answer', label: 'Hardest I can answer', icon: 'fa-fire', minAnswers: 5, type: 'question', enabledTooltip: 'Pick the hardest question the model thinks you can get right' },
+  { id: 'dont-know', label: "Something I don't know", icon: 'fa-circle-question', minAnswers: 5, type: 'question', enabledTooltip: 'Pick a question in a low-knowledge area' },
 ];
 
 const INSIGHT_MODES = [];
@@ -16,6 +16,8 @@ let buttons = new Map();
 let activeMode = 'auto';
 let currentAnswerCount = 0;
 let onSelectCb = null;
+let autoAdvance = false;
+let autoAdvanceToggleEl = null;
 
 export function init(container) {
   if (!container) return;
@@ -85,6 +87,50 @@ export function init(container) {
         box-shadow: 0 0 12px var(--color-glow-secondary);
       }
       /* Disabled mode button tooltips handled by global [data-tooltip] JS system */
+
+      /* Auto-advance toggle */
+      .auto-advance-wrap {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        margin-left: 0.25rem;
+      }
+      .auto-advance-label {
+        font-size: 0.68rem;
+        color: var(--color-text-muted);
+        cursor: pointer;
+        user-select: none;
+        white-space: nowrap;
+      }
+      .auto-advance-track {
+        position: relative;
+        width: 30px;
+        height: 16px;
+        background: var(--color-surface-raised);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.25s ease, border-color 0.25s ease;
+        flex-shrink: 0;
+      }
+      .auto-advance-track.on {
+        background: var(--color-primary);
+        border-color: var(--color-primary);
+      }
+      .auto-advance-thumb {
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        width: 12px;
+        height: 12px;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .auto-advance-track.on .auto-advance-thumb {
+        transform: translateX(14px);
+      }
     `;
     document.head.appendChild(style);
   }
@@ -101,16 +147,57 @@ export function init(container) {
     btn.innerHTML = `<i class="fa-solid ${mode.icon}"></i> ${mode.label}`;
     btn.dataset.mode = mode.id;
     btn.dataset.type = mode.type;
-    btn.dataset.tooltip = `Answer ${mode.minAnswers} more questions first`;
+    btn.dataset.tooltip = mode.enabledTooltip || '';
 
     if (mode.minAnswers > 0 && currentAnswerCount < mode.minAnswers) {
       btn.disabled = true;
+      btn.dataset.tooltip = `Answer ${mode.minAnswers} more questions first`;
     }
 
     btn.addEventListener('click', () => handleSelect(mode.id, mode.type));
     buttons.set(mode.id, btn);
     wrapper.appendChild(btn);
   }
+
+  // Auto-advance toggle
+  const toggleWrap = document.createElement('div');
+  toggleWrap.className = 'auto-advance-wrap';
+
+  const track = document.createElement('div');
+  track.className = 'auto-advance-track';
+  track.setAttribute('role', 'switch');
+  track.setAttribute('aria-checked', 'false');
+  track.setAttribute('aria-label', 'Auto-advance to next question');
+  track.setAttribute('tabindex', '0');
+  track.dataset.tooltip = 'Auto-advance to the next question after answering';
+
+  const thumb = document.createElement('div');
+  thumb.className = 'auto-advance-thumb';
+  track.appendChild(thumb);
+
+  const label = document.createElement('span');
+  label.className = 'auto-advance-label';
+  label.textContent = 'Auto-advance';
+
+  function toggleAutoAdvance() {
+    autoAdvance = !autoAdvance;
+    track.classList.toggle('on', autoAdvance);
+    track.setAttribute('aria-checked', String(autoAdvance));
+  }
+
+  track.addEventListener('click', toggleAutoAdvance);
+  label.addEventListener('click', toggleAutoAdvance);
+  track.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleAutoAdvance();
+    }
+  });
+
+  toggleWrap.appendChild(track);
+  toggleWrap.appendChild(label);
+  wrapper.appendChild(toggleWrap);
+  autoAdvanceToggleEl = track;
 
   container.prepend(wrapper);
 }
@@ -131,12 +218,17 @@ export function updateAvailability(responseCount) {
       btn.dataset.tooltip = `Answer ${needed} more question${needed > 1 ? 's' : ''} first`;
     } else {
       btn.disabled = false;
+      btn.dataset.tooltip = mode.enabledTooltip || '';
     }
   }
 }
 
 export function getActiveMode() {
   return activeMode;
+}
+
+export function isAutoAdvance() {
+  return autoAdvance;
 }
 
 function handleSelect(modeId, type) {

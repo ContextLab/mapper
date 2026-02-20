@@ -21,6 +21,7 @@ import { ParticleSystem } from './viz/particles.js';
 import * as controls from './ui/controls.js';
 import * as quiz from './ui/quiz.js';
 import * as modes from './ui/modes.js';
+// Re-export isAutoAdvance check used in handleAnswer auto-advance logic
 import * as insights from './ui/insights.js';
 import * as share from './ui/share.js';
 import { showDownload, hideDownload, updateConfidence, initConfidence } from './ui/progress.js';
@@ -446,13 +447,15 @@ function handleAnswer(selectedKey, question) {
 
   renderer.setAnsweredQuestions(responsesToAnsweredDots($responses.get(), questionIndex));
 
-  const feedback = isCorrect 
-    ? 'Correct!' 
-    : `Incorrect. The answer was ${question.correct_answer}.`;
+  const feedback = isCorrect ? 'Correct!' : 'Incorrect.';
   
   const coverage = Math.round($coverage.get() * 100);
   announce(`${feedback} ${coverage}% of domain mapped. ${50 - domainQuestionCount} questions remaining.`);
-  // No auto-advance — user clicks "Next" button in quiz panel
+
+  // Auto-advance after a short delay if the toggle is on
+  if (modes.isAutoAdvance()) {
+    setTimeout(() => selectAndShowNextQuestion(), 800);
+  }
 }
 
 function handleReset() {

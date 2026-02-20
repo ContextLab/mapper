@@ -34,6 +34,14 @@ export class Minimap {
     this._handleMouseMove = this._onMouseMove.bind(this);
     this._handleMouseUp = this._onMouseUp.bind(this);
     this._handleClick = this._onClick.bind(this);
+
+    // Container drag state
+    this._isContainerDragging = false;
+    this._containerDragOffset = null;
+    this._dragBar = null;
+    this._handleDragBarDown = null;
+    this._cbContainerMove = null;
+    this._cbContainerUp = null;
   }
 
   init(container, domains) {
@@ -65,6 +73,28 @@ export class Minimap {
     this.canvas.addEventListener('click', this._handleClick);
     window.addEventListener('mousemove', this._handleMouseMove);
     window.addEventListener('mouseup', this._handleMouseUp);
+
+    // Prevent ALL mouse events on the minimap from propagating to the map canvas below
+    container.addEventListener('mousedown', (e) => e.stopPropagation());
+    container.addEventListener('mousemove', (e) => e.stopPropagation());
+    container.addEventListener('mouseup', (e) => e.stopPropagation());
+    container.addEventListener('click', (e) => e.stopPropagation());
+    container.addEventListener('wheel', (e) => e.stopPropagation());
+    container.addEventListener('pointerdown', (e) => e.stopPropagation());
+
+    // Drag bar for repositioning the minimap container
+    this._dragBar = document.createElement('div');
+    this._dragBar.style.cssText =
+      'position:absolute;top:0;left:0;right:0;height:16px;cursor:grab;z-index:3;' +
+      'background:linear-gradient(to bottom, rgba(0,105,62,0.12), transparent);';
+    // Grip pill visual indicator
+    const grip = document.createElement('div');
+    grip.style.cssText =
+      'width:32px;height:4px;margin:6px auto 0;border-radius:2px;' +
+      'background:rgba(0,105,62,0.35);pointer-events:none;';
+    this._dragBar.appendChild(grip);
+    container.appendChild(this._dragBar);
+    this._initContainerDrag();
 
     this.render();
   }
@@ -348,6 +378,62 @@ export class Minimap {
     ctx.strokeRect(x, y, vw, vh);
   }
 
+  _initContainerDrag() {
+    this._handleDragBarDown = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      this._isContainerDragging = true;
+      const rect = this.container.getBoundingClientRect();
+      this._containerDragOffset = {
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      };
+      this._dragBar.style.cursor = 'grabbing';
+      // Capture pointer so we receive events even outside the element
+      if (e.pointerId !== undefined) {
+        this._dragBar.setPointerCapture(e.pointerId);
+      }
+    };
+
+    this._cbContainerMove = (e) => {
+      if (!this._isContainerDragging) return;
+      const parent = this.container.parentElement;
+      if (!parent) return;
+      const parentRect = parent.getBoundingClientRect();
+      const contW = this.container.offsetWidth;
+      const contH = this.container.offsetHeight;
+
+      let newLeft = e.clientX - parentRect.left - this._containerDragOffset.x;
+      let newTop = e.clientY - parentRect.top - this._containerDragOffset.y;
+
+      // Clamp within parent bounds
+      newLeft = Math.max(0, Math.min(parentRect.width - contW, newLeft));
+      newTop = Math.max(0, Math.min(parentRect.height - contH, newTop));
+
+      this.container.style.left = newLeft + 'px';
+      this.container.style.top = newTop + 'px';
+      // Clear bottom/right anchoring so left/top take effect
+      this.container.style.right = 'auto';
+      this.container.style.bottom = 'auto';
+    };
+
+    this._cbContainerUp = (e) => {
+      if (this._isContainerDragging) {
+        this._isContainerDragging = false;
+        this._containerDragOffset = null;
+        this._dragBar.style.cursor = 'grab';
+        if (e.pointerId !== undefined) {
+          try { this._dragBar.releasePointerCapture(e.pointerId); } catch (_) { /* already released */ }
+        }
+      }
+    };
+
+    // Use pointer events for capture support, with mouse fallback
+    this._dragBar.addEventListener('pointerdown', this._handleDragBarDown);
+    window.addEventListener('pointermove', this._cbContainerMove);
+    window.addEventListener('pointerup', this._cbContainerUp);
+  }
+
   _onResizeStart(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -394,6 +480,23 @@ export class Minimap {
   }
 
   destroy() {
+    // Clean up drag bar
+    if (this._dragBar) {
+      if (this._handleDragBarDown) {
+        this._dragBar.removeEventListener('pointerdown', this._handleDragBarDown);
+      }
+      this._dragBar.remove();
+      this._dragBar = null;
+    }
+    if (this._cbContainerMove) {
+      window.removeEventListener('pointermove', this._cbContainerMove);
+      this._cbContainerMove = null;
+    }
+    if (this._cbContainerUp) {
+      window.removeEventListener('pointerup', this._cbContainerUp);
+      this._cbContainerUp = null;
+    }
+
     if (this._resizeHandle) {
       if (this._handleResizeStart) {
         this._resizeHandle.removeEventListener('mousedown', this._handleResizeStart);

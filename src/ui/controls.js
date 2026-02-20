@@ -8,6 +8,7 @@ let onExportCb = null;
 let onImportCb = null;
 
 let container = null;
+let dropdownEl = null;
 let resetButton = null;
 let exportButton = null;
 let importButton = null;
@@ -137,6 +138,7 @@ export function init(headerElement) {
   }
   container = domainSelector;
   container.innerHTML = '';
+  container.hidden = false; // Ensure visible even on the welcome screen (import button lives here)
 
   container.style.display = 'flex';
   container.style.alignItems = 'center';
@@ -173,10 +175,11 @@ export function init(headerElement) {
     document.head.appendChild(style);
   }
 
-  const dropdown = createDropdown('Choose a domain\u2026', buildOptions(), (value) => {
+  dropdownEl = createDropdown('Choose a domain\u2026', buildOptions(), (value) => {
     if (onDomainSelectCb) onDomainSelectCb(value);
   });
-  container.appendChild(dropdown);
+  dropdownEl.hidden = true; // Hidden on welcome screen; shown by showActionButtons()
+  container.appendChild(dropdownEl);
 
   resetButton = document.createElement('button');
   resetButton.className = 'control-btn';
@@ -205,7 +208,7 @@ export function init(headerElement) {
   importButton.ariaLabel = 'Import saved progress';
   importButton.dataset.tooltip = 'Import progress';
   importButton.innerHTML = '<i class="fa-solid fa-upload"></i>';
-  importButton.hidden = true;
+  // Import is always visible — users may want to restore saved progress from the welcome screen
 
   importButton.addEventListener('click', () => {
     // Create a file input, attach to DOM (required by some browsers for
@@ -270,9 +273,24 @@ export function onImport(callback) {
 
 export function showActionButtons() {
   if (container) container.hidden = false;
+  if (dropdownEl) dropdownEl.hidden = false;
   if (resetButton) resetButton.hidden = false;
   if (exportButton) exportButton.hidden = false;
   if (importButton) importButton.hidden = false;
+}
+
+/**
+ * Programmatically update the header dropdown to show a given domain as selected.
+ * Used when the domain changes via code (e.g. import on welcome screen) rather
+ * than a user click.
+ */
+export function setSelectedDomain(domainId) {
+  if (!dropdownEl) return;
+  const option = dropdownEl.querySelector(`.custom-select-option[data-value="${domainId}"]`);
+  if (!option) return;
+  const valueSpan = dropdownEl.querySelector('.custom-select-value');
+  if (valueSpan) valueSpan.textContent = option.textContent.trim();
+  dropdownEl.dataset.value = domainId;
 }
 
 export function createLandingSelector(container, callback) {

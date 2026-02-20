@@ -228,10 +228,15 @@ export class Estimator {
    * Restore from persisted UserResponse[].
    * Each response may include a `lengthScale` for per-observation RBF width.
    */
-  restore(responses) {
+  restore(responses, uniformLengthScale) {
     this.reset();
 
     if (!this._region || !responses || responses.length === 0) return;
+
+    // Use a uniform length scale for all restored observations to ensure
+    // consistent smoothness. Any per-observation lengths from older exports
+    // are intentionally ignored.
+    const ls = uniformLengthScale || this._lengthScale;
 
     for (const r of responses) {
       if (r.x != null && r.y != null) {
@@ -239,7 +244,7 @@ export class Estimator {
           x: r.x,
           y: r.y,
           value: r.is_correct ? 1.0 : 0.0,
-          lengthScale: r.lengthScale || this._lengthScale,
+          lengthScale: ls,
         });
       }
     }

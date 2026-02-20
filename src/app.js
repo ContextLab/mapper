@@ -12,7 +12,7 @@ import {
 import * as registry from './domain/registry.js';
 import { load as loadDomain } from './domain/loader.js';
 import { indexQuestions, getAvailableQuestions } from './domain/questions.js';
-import { Estimator, DEFAULT_LENGTH_SCALE } from './learning/estimator.js';
+import { Estimator } from './learning/estimator.js';
 import { Sampler } from './learning/sampler.js';
 import { getCentrality } from './learning/curriculum.js';
 import { Renderer } from './viz/renderer.js';
@@ -29,24 +29,11 @@ import { announce, setupKeyboardNav } from './utils/accessibility.js';
 const GLOBAL_REGION = { x_min: 0, x_max: 1, y_min: 0, y_max: 1 };
 const GLOBAL_GRID_SIZE = 50;
 
-function lengthScaleForDomain(domain) {
-  if (!domain) return DEFAULT_LENGTH_SCALE;
-  if (domain.level === 'all') return DEFAULT_LENGTH_SCALE * 2;
-  if (domain.level === 'sub') return DEFAULT_LENGTH_SCALE * 0.5;
-  return DEFAULT_LENGTH_SCALE; // general
-}
-
-function lengthScaleForDomainId(domainId) {
-  const domain = registry.getDomain(domainId);
-  return lengthScaleForDomain(domain);
-}
-
-function enrichResponsesWithLengthScale(responses) {
-  return responses.map(r => {
-    if (r.lengthScale != null) return r;
-    return { ...r, lengthScale: lengthScaleForDomainId(r.domain_id) };
-  });
-}
+// Uniform length scale for all observations — no per-domain variation.
+// Previously sub-domains used 0.075 and "all" used 0.30, which created jagged,
+// inconsistent smoothness. A single scale of 0.18 produces natural gradients
+// while preserving spatial structure in the Matérn 3/2 kernel.
+const UNIFORM_LENGTH_SCALE = 0.18;
 
 let renderer = null;
 let minimap = null;
@@ -321,13 +308,31 @@ async function switchDomain(domainId) {
     estimator.init(domainGrid, domainRegion);
     sampler.configure(domainGrid, domainRegion);
 
-    const allResponses = enrichResponsesWithLengthScale($responses.get());
+    // Enrich any responses missing x/y from the freshly-loaded question index.
+    // This handles older exports that lacked coordinates.
+    let allResponses = $responses.get();
+    let enriched = 0;
+    const patched = allResponses.map(r => {
+      if (r.x != null && r.y != null) return r;
+      const q = questionIndex.get(r.question_id);
+      if (q && q.x != null && q.y != null) {
+        enriched++;
+        return { ...r, x: q.x, y: q.y };
+      }
+      return r;
+    });
+    if (enriched > 0) {
+      console.log(`[app] Enriched ${enriched} responses with x/y from question index`);
+      $responses.set(patched);
+      allResponses = patched;
+    }
+
     const relevantResponses = allResponses.filter(
       (r) => r.x != null && r.y != null
     );
     if (relevantResponses.length > 0) {
-      estimator.restore(relevantResponses);
-      globalEstimator.restore(relevantResponses);
+      estimator.restore(relevantResponses, UNIFORM_LENGTH_SCALE);
+      globalEstimator.restore(relevantResponses, UNIFORM_LENGTH_SCALE);
     }
 
     const estimates = estimator.predict();
@@ -413,9 +418,6 @@ function handleAnswer(selectedKey, question) {
 
   const isCorrect = selectedKey === question.correct_answer;
 
-  const questionDomainId = (question.domain_ids || []).find(id => id !== 'all') || currentDomainBundle.domain.id;
-  const ls = lengthScaleForDomainId(questionDomainId);
-
   const response = {
     question_id: question.id,
     domain_id: currentDomainBundle.domain.id,
@@ -424,7 +426,6 @@ function handleAnswer(selectedKey, question) {
     timestamp: Date.now(),
     x: question.x,
     y: question.y,
-    lengthScale: ls,
   };
 
   const current = $responses.get();
@@ -432,8 +433,8 @@ function handleAnswer(selectedKey, question) {
   const isReanswer = filtered.length < current.length;
   $responses.set([...filtered, response]);
 
-  estimator.observe(question.x, question.y, isCorrect, ls);
-  globalEstimator.observe(question.x, question.y, isCorrect, ls);
+  estimator.observe(question.x, question.y, isCorrect, UNIFORM_LENGTH_SCALE);
+  globalEstimator.observe(question.x, question.y, isCorrect, UNIFORM_LENGTH_SCALE);
   const estimates = estimator.predict();
   $estimates.set(estimates);
 
@@ -547,10 +548,9 @@ function handleImport(data) {
   $responses.set(merged);
 
   if (estimator) {
-    const enriched = enrichResponsesWithLengthScale(merged);
-    const relevant = enriched.filter(r => r.x != null && r.y != null);
-    estimator.restore(relevant);
-    if (globalEstimator) globalEstimator.restore(relevant);
+    const relevant = merged.filter(r => r.x != null && r.y != null);
+    estimator.restore(relevant, UNIFORM_LENGTH_SCALE);
+    if (globalEstimator) globalEstimator.restore(relevant, UNIFORM_LENGTH_SCALE);
     const estimates = estimator.predict();
     $estimates.set(estimates);
 
@@ -566,6 +566,13 @@ function handleImport(data) {
   announce(msg);
   _showBanner(msg, 'success');
   console.log('[import]', msg);
+
+  // If we're still on the welcome screen, switch to map view with "all" domain.
+  // switchDomain will re-restore the GP from $responses (now including imports).
+  if (!currentDomainBundle) {
+    controls.setSelectedDomain('all');
+    $activeDomain.set('all');
+  }
 }
 
 function handleViewportChange(viewport) {

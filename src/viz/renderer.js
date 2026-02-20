@@ -464,13 +464,9 @@ export class Renderer {
     const region = this._heatmapRegion;
     if (!region) return;
 
-    // The heatmap grid covers the domain region in world space.
-    // We draw fixed-size screen cells and look up which grid cell each maps to.
-    // Screen pixel (sx, sy) → world coord → grid cell (gx, gy).
-    //
-    // World coords: point.x * w = panX + normX * zoom * w
-    //   normX = (screenX - panX) / (zoom * w)
-    const SCREEN_CELLS = 50; // fixed number of screen cells
+    // Use more screen cells for a smoother appearance. The GP grid is N×N but
+    // we sample at higher resolution and bilinearly interpolate between cells.
+    const SCREEN_CELLS = 100;
     const cellW = w / SCREEN_CELLS;
     const cellH = h / SCREEN_CELLS;
 
@@ -478,6 +474,45 @@ export class Renderer {
     const rYMin = region.y_min;
     const rXSpan = region.x_max - region.x_min;
     const rYSpan = region.y_max - region.y_min;
+
+    // Helper: bilinear interpolation of grid values
+    function sampleGrid(gxf, gyf) {
+      const gx0 = Math.max(0, Math.min(N - 1, Math.floor(gxf)));
+      const gy0 = Math.max(0, Math.min(N - 1, Math.floor(gyf)));
+      const gx1 = Math.min(N - 1, gx0 + 1);
+      const gy1 = Math.min(N - 1, gy0 + 1);
+      const fx = gxf - gx0; // fractional x [0,1)
+      const fy = gyf - gy0; // fractional y [0,1)
+
+      const v00 = grid[gy0 * N + gx0];
+      const v10 = grid[gy0 * N + gx1];
+      const v01 = grid[gy1 * N + gx0];
+      const v11 = grid[gy1 * N + gx1];
+
+      // Bilinear blend
+      const top = v00 + (v10 - v00) * fx;
+      const bot = v01 + (v11 - v01) * fx;
+      return top + (bot - top) * fy;
+    }
+
+    // Helper: bilinear interpolation of evidence counts (for opacity)
+    function sampleEvidence(gxf, gyf) {
+      const gx0 = Math.max(0, Math.min(N - 1, Math.floor(gxf)));
+      const gy0 = Math.max(0, Math.min(N - 1, Math.floor(gyf)));
+      const gx1 = Math.min(N - 1, gx0 + 1);
+      const gy1 = Math.min(N - 1, gy0 + 1);
+      const fx = gxf - gx0;
+      const fy = gyf - gy0;
+
+      const e00 = evidence[gy0 * N + gx0];
+      const e10 = evidence[gy0 * N + gx1];
+      const e01 = evidence[gy1 * N + gx0];
+      const e11 = evidence[gy1 * N + gx1];
+
+      const top = e00 + (e10 - e00) * fx;
+      const bot = e01 + (e11 - e01) * fx;
+      return top + (bot - top) * fy;
+    }
 
     ctx.globalAlpha = 0.45;
 
@@ -489,42 +524,24 @@ export class Renderer {
         const wx = (centerSX - this._panX) / (this._zoom * w);
         const wy = (centerSY - this._panY) / (this._zoom * h);
 
-        // Map world coord to grid cell within domain region
-        const gx = Math.floor(((wx - rXMin) / rXSpan) * N);
-        const gy = Math.floor(((wy - rYMin) / rYSpan) * N);
+        // Map world coord to fractional grid position within domain region
+        const gxf = ((wx - rXMin) / rXSpan) * N - 0.5;
+        const gyf = ((wy - rYMin) / rYSpan) * N - 0.5;
 
-        if (gx < 0 || gx >= N || gy < 0 || gy >= N) {
+        if (gxf < -1 || gxf >= N || gyf < -1 || gyf >= N) {
           // Outside domain region — draw neutral prior
           ctx.fillStyle = 'rgba(245, 220, 105, 0.25)';
           ctx.fillRect(sx * cellW, sy * cellH, cellW + 0.5, cellH + 0.5);
           continue;
         }
 
-        const idx = gy * N + gx;
-        const val = grid[idx];
-        const ev = evidence[idx];
+        const val = sampleGrid(gxf, gyf);
+        const ev = sampleEvidence(gxf, gyf);
         const [r, g, b] = valueToColor(val);
-        const a = ev === 0 ? 0.5 : 0.75;
+        const a = ev < 0.5 ? 0.5 : 0.75;
         ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
         ctx.fillRect(sx * cellW, sy * cellH, cellW + 0.5, cellH + 0.5);
       }
-    }
-
-    ctx.globalAlpha = 1;
-    // Only draw grid lines if cells are large enough to be visible
-    if (cellW > 4 && cellH > 4) {
-      ctx.strokeStyle = 'rgba(0, 0, 0, 0.06)';
-      ctx.lineWidth = 0.5;
-      ctx.beginPath();
-      for (let i = 0; i <= SCREEN_CELLS; i++) {
-        const x = i * cellW;
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, h);
-        const y = i * cellH;
-        ctx.moveTo(0, y);
-        ctx.lineTo(w, y);
-      }
-      ctx.stroke();
     }
 
     ctx.globalAlpha = 1;

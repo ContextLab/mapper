@@ -206,11 +206,14 @@ export function init(headerElement) {
   importButton.title = 'Import saved progress';
   importButton.innerHTML = '<i class="fa-solid fa-upload"></i>';
   importButton.hidden = true;
+  // Keep a module-level reference to avoid GC before FileReader fires
+  let _importInput = null;
+
   importButton.addEventListener('click', () => {
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = '.json,application/json';
-    input.addEventListener('change', (e) => {
+    _importInput = document.createElement('input');
+    _importInput.type = 'file';
+    _importInput.accept = '.json,application/json';
+    _importInput.addEventListener('change', (e) => {
       const file = e.target.files[0];
       if (!file) return;
       const reader = new FileReader();
@@ -222,10 +225,16 @@ export function init(headerElement) {
           console.error('[controls] Failed to parse import file:', err);
           alert('Invalid file format. Please select a Knowledge Mapper export JSON file.');
         }
+        _importInput = null; // Release reference after successful read
+      };
+      reader.onerror = () => {
+        console.error('[controls] FileReader error:', reader.error);
+        alert('Could not read file. Please try again.');
+        _importInput = null;
       };
       reader.readAsText(file);
     });
-    input.click();
+    _importInput.click();
   });
   container.appendChild(importButton);
 

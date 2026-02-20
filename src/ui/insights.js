@@ -222,7 +222,8 @@ export function computeConceptKnowledge(estimates, region, gridSize, opts = {}) 
   function knowledgeAt(x, y) {
     const gx = Math.min(gridSize - 1, Math.max(0, Math.floor((x - region.x_min) / cellW)));
     const gy = Math.min(gridSize - 1, Math.max(0, Math.floor((y - region.y_min) / cellH)));
-    return estimateMap.get(`${gx},${gy}`) ?? 0.5;
+    const val = estimateMap.get(`${gx},${gy}`) ?? 0.5;
+    return isFinite(val) ? val : 0.5; // Guard against NaN from GP instability
   }
 
   const results = [];
@@ -231,7 +232,8 @@ export function computeConceptKnowledge(estimates, region, gridSize, opts = {}) 
     for (const c of pts) {
       sum += knowledgeAt(c.x, c.y);
     }
-    results.push({ concept, knowledge: sum / pts.length, count: pts.length });
+    const knowledge = pts.length > 0 ? sum / pts.length : 0.5;
+    results.push({ concept, knowledge: isFinite(knowledge) ? knowledge : 0.5, count: pts.length });
   }
 
   return results;

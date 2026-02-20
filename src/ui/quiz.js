@@ -3,6 +3,7 @@
 import { announce } from '../utils/accessibility.js';
 
 let answerCallback = null;
+let nextCallback = null;
 let currentQuestion = null;
 let uiElements = {};
 
@@ -110,6 +111,50 @@ export function init(container) {
       .quiz-meta a:hover {
         text-shadow: 0 0 6px var(--color-glow-secondary);
       }
+      .quiz-actions {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+        flex-wrap: wrap;
+      }
+      .quiz-next-btn {
+        padding: 0.5rem 1.25rem;
+        border-radius: 8px;
+        border: 1px solid var(--color-primary);
+        background: var(--color-primary);
+        color: #ffffff;
+        font-family: var(--font-heading);
+        font-size: 0.82rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        min-height: 36px;
+      }
+      .quiz-next-btn:hover {
+        box-shadow: 0 0 12px var(--color-glow-primary);
+        transform: translateY(-1px);
+      }
+      .quiz-learn-btn {
+        padding: 0.4rem 0.75rem;
+        border-radius: 6px;
+        border: 1px solid var(--color-border);
+        background: var(--color-surface-raised);
+        color: var(--color-text-muted);
+        font-family: var(--font-body);
+        font-size: 0.75rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        min-height: 32px;
+      }
+      .quiz-learn-btn:hover {
+        border-color: var(--color-secondary);
+        color: var(--color-secondary);
+        box-shadow: 0 0 8px var(--color-glow-secondary);
+      }
       .katex { font-size: 1.05em; }
     `;
     document.head.appendChild(style);
@@ -128,6 +173,11 @@ export function init(container) {
         <button class="quiz-option" data-key="D" aria-label="Option D"></button>
       </div>
       <div class="quiz-feedback" aria-live="assertive"></div>
+      <div class="quiz-actions" hidden>
+        <button class="quiz-next-btn" aria-label="Next question">Next <i class="fa-solid fa-arrow-right" style="margin-left:0.3rem;font-size:0.75rem"></i></button>
+        <a class="quiz-learn-btn" target="_blank" rel="noopener" data-learn="wikipedia" hidden><i class="fa-brands fa-wikipedia-w"></i> Wikipedia</a>
+        <a class="quiz-learn-btn" target="_blank" rel="noopener" data-learn="khan" hidden><i class="fa-solid fa-graduation-cap"></i> Khan Academy</a>
+      </div>
       <div class="quiz-meta"></div>
     </div>
   `;
@@ -138,6 +188,10 @@ export function init(container) {
     instruction: container.querySelector('.quiz-instruction'),
     options: container.querySelectorAll('.quiz-option'),
     feedback: container.querySelector('.quiz-feedback'),
+    actions: container.querySelector('.quiz-actions'),
+    nextBtn: container.querySelector('.quiz-next-btn'),
+    wikiBtn: container.querySelector('[data-learn="wikipedia"]'),
+    khanBtn: container.querySelector('[data-learn="khan"]'),
     meta: container.querySelector('.quiz-meta')
   };
 
@@ -145,6 +199,12 @@ export function init(container) {
   uiElements.options.forEach(btn => {
     btn.addEventListener('click', () => handleOptionClick(btn.dataset.key));
   });
+
+  if (uiElements.nextBtn) {
+    uiElements.nextBtn.addEventListener('click', () => {
+      if (nextCallback) nextCallback();
+    });
+  }
 
   document.addEventListener('keydown', handleKeyDown);
 
@@ -174,7 +234,15 @@ export function init(container) {
 
 function handleKeyDown(e) {
   if (!currentQuestion || !uiElements.options) return;
-  if (uiElements.options[0].disabled) return;
+
+  // If options are disabled (already answered), Enter/N/Space advances to next
+  if (uiElements.options[0].disabled) {
+    if (e.key === 'Enter' || e.key === 'n' || e.key === 'N' || e.key === ' ') {
+      e.preventDefault();
+      if (nextCallback) nextCallback();
+    }
+    return;
+  }
 
   const key = e.key.toUpperCase();
   if (['1', 'A'].includes(key)) handleOptionClick('A');
@@ -218,7 +286,12 @@ export function showQuestion(question) {
   }
   
   if (uiElements.meta) {
-    uiElements.meta.innerHTML = '';
+    uiElements.meta.textContent = '';
+  }
+
+  // Hide Next/Learn more buttons until answer is given
+  if (uiElements.actions) {
+    uiElements.actions.hidden = true;
   }
 }
 
@@ -256,18 +329,54 @@ function handleOptionClick(selectedKey) {
   if (uiElements.meta && currentQuestion.source_article) {
     const article = currentQuestion.source_article;
     const url = `https://en.wikipedia.org/wiki/${encodeURIComponent(article)}`;
-    uiElements.meta.innerHTML = `Source: <a href="${url}" target="_blank">${article}</a>`;
+    uiElements.meta.textContent = '';
+    const sourceLabel = document.createTextNode('Source: ');
+    const sourceLink = document.createElement('a');
+    sourceLink.href = url;
+    sourceLink.target = '_blank';
+    sourceLink.textContent = article;
+    uiElements.meta.appendChild(sourceLabel);
+    uiElements.meta.appendChild(sourceLink);
   }
 
+  // Show Next button and Learn more links instead of auto-advancing
+  if (uiElements.actions) {
+    uiElements.actions.hidden = false;
+
+    // Show Wikipedia link if we have a source article
+    if (uiElements.wikiBtn && currentQuestion.source_article) {
+      const wikiUrl = `https://en.wikipedia.org/wiki/${encodeURIComponent(currentQuestion.source_article)}`;
+      uiElements.wikiBtn.href = wikiUrl;
+      uiElements.wikiBtn.hidden = false;
+    } else if (uiElements.wikiBtn) {
+      uiElements.wikiBtn.hidden = true;
+    }
+
+    // Show Khan Academy search link based on question concepts or article
+    if (uiElements.khanBtn) {
+      const searchTerm = currentQuestion.source_article || '';
+      if (searchTerm) {
+        uiElements.khanBtn.href = `https://www.khanacademy.org/search?referer=%2F&page_search_query=${encodeURIComponent(searchTerm)}`;
+        uiElements.khanBtn.hidden = false;
+      } else {
+        uiElements.khanBtn.hidden = true;
+      }
+    }
+  }
+
+  // Fire the answer callback immediately (records the response and updates estimator)
+  // but do NOT auto-advance to next question — user clicks "Next" when ready
   if (answerCallback) {
-    setTimeout(() => {
-      answerCallback(selectedKey, currentQuestion);
-    }, 800);
+    answerCallback(selectedKey, currentQuestion);
   }
 }
 
 export function onAnswer(callback) {
   answerCallback = callback;
+}
+
+export function onNext(callback) {
+  nextCallback = callback;
 }
 
 /**

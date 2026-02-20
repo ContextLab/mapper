@@ -113,8 +113,10 @@ export function initConfidence(container) {
 
 export function updateConfidence(coverage) {
   if (!confidenceFill || !confidenceText) return;
-  
-  const pct = Math.min(100, Math.max(0, coverage * 100));
+
+  // Guard against NaN from GP numerical instability
+  const safeCoverage = isFinite(coverage) ? coverage : 0;
+  const pct = Math.min(100, Math.max(0, safeCoverage * 100));
   confidenceFill.style.width = `${pct}%`;
   confidenceText.textContent = `Domain mapped: ${Math.round(pct)}%`;
 }

@@ -115,6 +115,7 @@ async function boot() {
   const quizPanel = document.getElementById('quiz-panel');
   quiz.init(quizPanel);
   quiz.onAnswer(handleAnswer);
+  quiz.onNext(() => selectAndShowNextQuestion());
 
   renderer.onReanswer((questionId) => {
     const q = questionIndex.get(questionId);
@@ -450,10 +451,7 @@ function handleAnswer(selectedKey, question) {
   
   const coverage = Math.round($coverage.get() * 100);
   announce(`${feedback} ${coverage}% of domain mapped. ${50 - domainQuestionCount} questions remaining.`);
-
-  setTimeout(() => {
-    selectAndShowNextQuestion();
-  }, 900);
+  // No auto-advance — user clicks "Next" button in quiz panel
 }
 
 function handleReset() {
@@ -523,9 +521,26 @@ function handleImport(data) {
     return;
   }
 
+  // Enrich imported responses with x/y coordinates from questionIndex
+  // (older exports may lack these, but we need them for the GP estimator)
+  let coordsRecovered = 0;
+  const enrichedValid = valid.map(r => {
+    if (r.x != null && r.y != null) return r;
+    const q = questionIndex.get(r.question_id);
+    if (q && q.x != null && q.y != null) {
+      coordsRecovered++;
+      return { ...r, x: q.x, y: q.y };
+    }
+    return r;
+  });
+
+  if (coordsRecovered > 0) {
+    console.log(`[import] Recovered x/y coordinates for ${coordsRecovered} responses from question index`);
+  }
+
   const existing = $responses.get();
   const existingIds = new Set(existing.map(r => r.question_id));
-  const newResponses = valid.filter(r => !existingIds.has(r.question_id));
+  const newResponses = enrichedValid.filter(r => !existingIds.has(r.question_id));
   const merged = [...existing, ...newResponses];
 
   $responses.set(merged);

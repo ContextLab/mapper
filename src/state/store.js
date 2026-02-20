@@ -47,10 +47,12 @@ export const $coverage = computed($estimates, (estimates) => {
   let totalCoverage = 0;
   for (const e of estimates) {
     if (e.state === 'unknown') continue;
-    // Each cell contributes (1 - uncertainty) — well-evidenced cells contribute more
-    totalCoverage += (1 - e.uncertainty);
+    const contrib = 1 - e.uncertainty;
+    // Guard against NaN from numerical instability in GP
+    if (isFinite(contrib)) totalCoverage += contrib;
   }
-  return totalCoverage / estimates.length;
+  const result = totalCoverage / estimates.length;
+  return isFinite(result) ? result : 0;
 });
 
 /** Whether insights are available (>= 10 responses) */

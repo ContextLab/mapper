@@ -169,6 +169,7 @@ export function kernelVector(testPoint, obsPoints, kernelFn) {
  */
 export function choleskySolve(K, b) {
   const n = K.length;
+  const JITTER = 1e-6; // Numerical stability floor for Cholesky diagonal
 
   // Cholesky: K = L·L^T
   const L = new Array(n);
@@ -185,7 +186,7 @@ export function choleskySolve(K, b) {
       if (i === j) {
         // Diagonal — add jitter for numerical stability
         const diag = K[i][i] - sum;
-        L[i][j] = Math.sqrt(Math.max(diag, 1e-10));
+        L[i][j] = Math.sqrt(Math.max(diag, JITTER));
       } else {
         L[i][j] = (K[i][j] - sum) / L[j][j];
       }
@@ -212,6 +213,14 @@ export function choleskySolve(K, b) {
     x[i] = (y[i] - sum) / L[i][i];
   }
 
+  // NaN safety: if decomposition produced NaN, return zero vector
+  // (caller will get prior mean instead of garbage)
+  for (let i = 0; i < n; i++) {
+    if (!isFinite(x[i])) {
+      return new Float64Array(n); // all zeros → predictions fall back to prior
+    }
+  }
+
   return x;
 }
 
@@ -224,6 +233,7 @@ export function choleskySolve(K, b) {
  */
 export function cholesky(K) {
   const n = K.length;
+  const JITTER = 1e-6;
   const L = new Array(n);
   for (let i = 0; i < n; i++) {
     L[i] = new Float64Array(n);
@@ -237,7 +247,7 @@ export function cholesky(K) {
       }
       if (i === j) {
         const diag = K[i][i] - sum;
-        L[i][j] = Math.sqrt(Math.max(diag, 1e-10));
+        L[i][j] = Math.sqrt(Math.max(diag, JITTER));
       } else {
         L[i][j] = (K[i][j] - sum) / L[j][j];
       }

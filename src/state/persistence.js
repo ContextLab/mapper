@@ -29,6 +29,8 @@ export function exportResponses() {
       selected: r.selected,
       is_correct: r.is_correct,
       timestamp: r.timestamp,
+      x: r.x,
+      y: r.y,
     })),
   };
   return new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });

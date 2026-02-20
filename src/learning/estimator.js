@@ -145,7 +145,11 @@ export class Estimator {
         state = 'estimated';
       }
 
-      results[i] = { gx: cell.gx, gy: cell.gy, value, uncertainty, evidenceCount, state };
+      // NaN safety: if numerical instability produced bad values, use prior
+      const safeValue = isFinite(value) ? value : PRIOR_MEAN;
+      const safeUncertainty = isFinite(uncertainty) ? uncertainty : 1.0;
+
+      results[i] = { gx: cell.gx, gy: cell.gy, value: safeValue, uncertainty: safeUncertainty, evidenceCount, state };
     }
 
     return results;
@@ -201,7 +205,11 @@ export class Estimator {
       state = 'estimated';
     }
 
-    return { gx, gy, value, uncertainty, evidenceCount, state };
+    // NaN safety: if numerical instability produced bad values, use prior
+    const safeValue = isFinite(value) ? value : PRIOR_MEAN;
+    const safeUncertainty = isFinite(uncertainty) ? uncertainty : 1.0;
+
+    return { gx, gy, value: safeValue, uncertainty: safeUncertainty, evidenceCount, state };
   }
 
   /**
@@ -291,6 +299,11 @@ export class Estimator {
     }
 
     this._alpha = choleskySolve(this._K_noisy, this._obsValues);
+
+    // Safety: if Cholesky returned a zero vector (NaN fallback), log a warning
+    if (this._alpha.every(v => v === 0) && this._obsValues.some(v => v !== 0)) {
+      console.warn('[estimator] Cholesky returned fallback zero vector — predictions will use prior mean');
+    }
   }
 
   /**

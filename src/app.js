@@ -21,7 +21,6 @@ import { ParticleSystem } from './viz/particles.js';
 import * as controls from './ui/controls.js';
 import * as quiz from './ui/quiz.js';
 import * as modes from './ui/modes.js';
-// Re-export isAutoAdvance check used in handleAnswer auto-advance logic
 import * as insights from './ui/insights.js';
 import * as share from './ui/share.js';
 import { showDownload, hideDownload, updateConfidence, initConfidence } from './ui/progress.js';
@@ -31,9 +30,6 @@ const GLOBAL_REGION = { x_min: 0, x_max: 1, y_min: 0, y_max: 1 };
 const GLOBAL_GRID_SIZE = 50;
 
 // Uniform length scale for all observations — no per-domain variation.
-// Previously sub-domains used 0.075 and "all" used 0.30, which created jagged,
-// inconsistent smoothness. A single scale of 0.18 produces natural gradients
-// while preserving spatial structure in the Matérn 3/2 kernel.
 const UNIFORM_LENGTH_SCALE = 0.18;
 
 let renderer = null;
@@ -42,13 +38,15 @@ let particleSystem = null;
 let estimator = null;
 let globalEstimator = null; // Always covers GLOBAL_REGION for minimap
 let sampler = null;
-let currentDomainBundle = null;
+let allDomainBundle = null;   // Permanent "all" domain data — never replaced
+let currentDomainBundle = null; // Points to allDomainBundle once loaded
 let currentViewport = { x_min: 0, x_max: 1, y_min: 0, y_max: 1 };
 let currentDomainRegion = GLOBAL_REGION;
 let currentGridSize = GLOBAL_GRID_SIZE;
 let domainQuestionCount = 0;
 let switchGeneration = 0;
 let questionIndex = new Map();
+let mapInitialized = false; // True once articles/questions/labels are set on the renderer
 
 async function boot() {
   const storageAvailable = isAvailable();
@@ -87,6 +85,21 @@ async function boot() {
   globalEstimator = new Estimator();
   globalEstimator.init(GLOBAL_GRID_SIZE, GLOBAL_REGION);
   sampler = new Sampler();
+  sampler.configure(GLOBAL_GRID_SIZE, GLOBAL_REGION);
+
+  // Eagerly load the "all" domain — this is the permanent, full dataset.
+  // All articles, questions, and labels come from here; domain selection
+  // only pans/zooms the viewport rather than replacing data.
+  try {
+    allDomainBundle = await loadDomain('all', {});
+    indexQuestions(allDomainBundle.questions);
+    questionIndex = new Map(allDomainBundle.questions.map(q => [q.id, q]));
+    insights.setConcepts(allDomainBundle.questions, allDomainBundle.articles);
+  } catch (err) {
+    console.error('[app] Failed to pre-load "all" domain:', err);
+    showLandingError('Could not load map data. Please try refreshing.');
+    return;
+  }
 
   const headerEl = document.getElementById('app-header');
   controls.init(headerEl);
@@ -119,7 +132,6 @@ async function boot() {
   if (trophyBtn) {
     trophyBtn.addEventListener('click', () => {
       if (!globalEstimator) return;
-      // Use global estimator so leaderboard reflects the full map, not just the current domain
       const ck = insights.computeConceptKnowledge(
         globalEstimator.predict(),
         GLOBAL_REGION,
@@ -134,7 +146,6 @@ async function boot() {
   if (suggestBtn) {
     suggestBtn.addEventListener('click', () => {
       if (!globalEstimator) return;
-      // Use global estimator so suggestions reflect the full map, not just the current domain
       const ck = insights.computeConceptKnowledge(
         globalEstimator.predict(),
         GLOBAL_REGION,
@@ -177,12 +188,10 @@ async function boot() {
       else renderer.jumpTo(region);
     });
 
-    // Load "all" domain articles for a static minimap background
-    loadDomain('all', {}).then((allBundle) => {
-      if (minimap && allBundle) {
-        minimap.setArticles(articlesToPoints(allBundle.articles));
-      }
-    }).catch(() => {}); // Non-critical, minimap will just lack article dots
+    // Use the pre-loaded "all" domain for minimap background
+    if (allDomainBundle) {
+      minimap.setArticles(articlesToPoints(allDomainBundle.articles));
+    }
   }
 
   if (import.meta.env.DEV) {
@@ -261,6 +270,11 @@ function responsesToAnsweredDots(responses, qIndex) {
   return dots;
 }
 
+/**
+ * Switch to a domain — now only pans/zooms the viewport.
+ * All articles, questions, and labels remain from the "all" domain loaded at boot.
+ * The first call also initializes the map display (articles, labels, estimator restore).
+ */
 async function switchDomain(domainId) {
   const generation = ++switchGeneration;
   const landing = document.getElementById('landing');
@@ -274,11 +288,13 @@ async function switchDomain(domainId) {
     particleSystem = null;
   }
 
-  const quizPanel = document.getElementById('quiz-panel');
-  const previousBundle = currentDomainBundle;
-
   renderer.abortTransition();
 
+  if (!allDomainBundle) return;
+
+  // Look up the target domain's region for viewport navigation.
+  // Load the domain JSON (cached after first fetch) just for its region metadata.
+  let targetRegion = GLOBAL_REGION;
   try {
     const bundle = await loadDomain(domainId, {
       onProgress: ({ loaded, total }) => showDownload(loaded, total),
@@ -287,30 +303,23 @@ async function switchDomain(domainId) {
         announce(`Failed to load domain. ${err.message}`);
       },
     });
-
     if (generation !== switchGeneration) return;
+    if (bundle && bundle.domain && bundle.domain.region) {
+      targetRegion = bundle.domain.region;
+    }
+  } catch (err) {
+    if (generation === switchGeneration) {
+      console.error('[app] switchDomain region lookup failed:', err);
+    }
+  }
 
-     currentDomainBundle = bundle;
-     indexQuestions(bundle.questions);
-     questionIndex = new Map(bundle.questions.map(q => [q.id, q]));
-     renderer.clearQuestions();
-     renderer.addQuestions(bundle.questions);
-     insights.setConcepts(bundle.questions, bundle.articles);
-     domainQuestionCount = $responses.get().filter(r => r.domain_id === domainId).length;
-     modes.updateAvailability(domainQuestionCount);
-     updateInsightButtons($responses.get().length);
+  // First-time map initialization: set all articles, questions, labels, and restore GP
+  if (!mapInitialized) {
+    currentDomainBundle = allDomainBundle;
+    renderer.addQuestions(allDomainBundle.questions);
+    renderer.setLabels(allDomainBundle.labels, GLOBAL_REGION, GLOBAL_GRID_SIZE);
 
-    const domain = bundle.domain;
-    const domainRegion = domain.region || GLOBAL_REGION;
-    const domainGrid = domain.grid_size || GLOBAL_GRID_SIZE;
-    currentDomainRegion = domainRegion;
-    currentGridSize = domainGrid;
-
-    estimator.init(domainGrid, domainRegion);
-    sampler.configure(domainGrid, domainRegion);
-
-    // Enrich any responses missing x/y from the freshly-loaded question index.
-    // This handles older exports that lacked coordinates.
+    // Enrich any responses missing x/y from the question index.
     let allResponses = $responses.get();
     let enriched = 0;
     const patched = allResponses.map(r => {
@@ -328,9 +337,7 @@ async function switchDomain(domainId) {
       allResponses = patched;
     }
 
-    const relevantResponses = allResponses.filter(
-      (r) => r.x != null && r.y != null
-    );
+    const relevantResponses = allResponses.filter(r => r.x != null && r.y != null);
     if (relevantResponses.length > 0) {
       estimator.restore(relevantResponses, UNIFORM_LENGTH_SCALE);
       globalEstimator.restore(relevantResponses, UNIFORM_LENGTH_SCALE);
@@ -339,47 +346,37 @@ async function switchDomain(domainId) {
     const estimates = estimator.predict();
     $estimates.set(estimates);
 
-    const targetPoints = articlesToPoints(bundle.articles);
-
-    if (previousBundle) {
-      const sourcePoints = articlesToPoints(previousBundle.articles);
-      const sourceRegion = previousBundle.domain.region || GLOBAL_REGION;
-      const targetRegion = domain.region || GLOBAL_REGION;
-
-      renderer.setLabels(bundle.labels, domainRegion, domainGrid);
-      await renderer.transitionPoints(
-        sourcePoints, targetPoints, sourceRegion, targetRegion
-      );
-    } else {
-      renderer.setPoints(targetPoints);
-      renderer.setLabels(bundle.labels, domainRegion, domainGrid);
-      await renderer.transitionTo(domain.region || GLOBAL_REGION);
-    }
-
-    if (generation !== switchGeneration) return;
-
-    if (minimap) {
-      minimap.setActive(domainId);
-      minimap.setViewport(renderer.getViewport());
-    }
-
-    toggleQuizPanel(true);
-    const toggleBtn = document.getElementById('quiz-toggle');
-    if (toggleBtn) toggleBtn.removeAttribute('hidden');
-    hideDownload();
-    controls.showActionButtons();
-
-    announce(`Loaded ${domain.name}. ${bundle.questions.length} questions available.`);
-
+    renderer.setPoints(articlesToPoints(allDomainBundle.articles));
     renderer.setAnsweredQuestions(responsesToAnsweredDots($responses.get(), questionIndex));
 
-    selectAndShowNextQuestion();
-  } catch (err) {
-    if (generation === switchGeneration) {
-      hideDownload();
-      console.error('[app] switchDomain failed:', err);
-    }
+    mapInitialized = true;
   }
+
+  // Update domain-scoped tracking
+  domainQuestionCount = $responses.get().length;
+  modes.updateAvailability(domainQuestionCount);
+  updateInsightButtons($responses.get().length);
+
+  // Pan/zoom to the target domain's region
+  await renderer.transitionTo(targetRegion);
+
+  if (generation !== switchGeneration) return;
+
+  if (minimap) {
+    minimap.setActive(domainId);
+    minimap.setViewport(renderer.getViewport());
+  }
+
+  toggleQuizPanel(true);
+  const toggleBtn = document.getElementById('quiz-toggle');
+  if (toggleBtn) toggleBtn.removeAttribute('hidden');
+  hideDownload();
+  controls.showActionButtons();
+
+  const domainName = registry.getDomains().find(d => d.id === domainId)?.name || domainId;
+  announce(`Navigated to ${domainName}. ${allDomainBundle.questions.length} questions available.`);
+
+  selectAndShowNextQuestion();
 }
 
 function selectAndShowNextQuestion() {
@@ -389,7 +386,7 @@ function selectAndShowNextQuestion() {
   const available = getAvailableQuestions(currentDomainBundle, answeredIds);
 
   if (available.length === 0) {
-    announce('Domain fully mapped! All questions answered. Try another domain.');
+    announce('All questions answered! Great work exploring the knowledge map.');
     quiz.showQuestion(null);
     return;
   }
@@ -419,9 +416,13 @@ function handleAnswer(selectedKey, question) {
 
   const isCorrect = selectedKey === question.correct_answer;
 
+  // Tag the response with the user's currently selected domain (for tracking),
+  // not the bundle's domain id (which is always "all" now).
+  const activeDomainId = $activeDomain.get() || 'all';
+
   const response = {
     question_id: question.id,
-    domain_id: currentDomainBundle.domain.id,
+    domain_id: activeDomainId,
     selected: selectedKey,
     is_correct: isCorrect,
     timestamp: Date.now(),
@@ -448,9 +449,9 @@ function handleAnswer(selectedKey, question) {
   renderer.setAnsweredQuestions(responsesToAnsweredDots($responses.get(), questionIndex));
 
   const feedback = isCorrect ? 'Correct!' : 'Incorrect.';
-  
+
   const coverage = Math.round($coverage.get() * 100);
-  announce(`${feedback} ${coverage}% of domain mapped. ${50 - domainQuestionCount} questions remaining.`);
+  announce(`${feedback} ${coverage}% mapped.`);
 
   // Auto-advance after a short delay if the toggle is on
   if (modes.isAutoAdvance()) {
@@ -462,6 +463,7 @@ function handleReset() {
   if (!confirm('Are you sure? This will clear all progress.')) return;
   resetAll();
   currentDomainBundle = null;
+  mapInitialized = false;
   domainQuestionCount = 0;
   currentDomainRegion = GLOBAL_REGION;
   currentGridSize = GLOBAL_GRID_SIZE;
@@ -477,11 +479,19 @@ function handleReset() {
   renderer.setAnsweredQuestions([]);
   renderer.clearQuestions();
   insights.resetGlobalConcepts();
-  questionIndex = new Map();
+  // Re-set concepts from the permanent "all" bundle so insights work on next domain select
+  if (allDomainBundle) {
+    insights.setConcepts(allDomainBundle.questions, allDomainBundle.articles);
+  }
+  questionIndex = allDomainBundle
+    ? new Map(allDomainBundle.questions.map(q => [q.id, q]))
+    : new Map();
   if (minimap) {
     minimap.setActive(null);
     minimap.setEstimates([]);
   }
+  // Reset viewport to full map
+  renderer.jumpTo(GLOBAL_REGION);
   toggleQuizPanel(false);
   const toggleBtn = document.getElementById('quiz-toggle');
   if (toggleBtn) toggleBtn.setAttribute('hidden', '');
@@ -557,11 +567,8 @@ function handleImport(data) {
     const estimates = estimator.predict();
     $estimates.set(estimates);
 
-    if (currentDomainBundle) {
-      const domainId = currentDomainBundle.domain.id;
-      domainQuestionCount = merged.filter(r => r.domain_id === domainId).length;
-      modes.updateAvailability(domainQuestionCount);
-    }
+    domainQuestionCount = merged.length;
+    modes.updateAvailability(domainQuestionCount);
     renderer.setAnsweredQuestions(responsesToAnsweredDots(merged, questionIndex));
   }
 
@@ -571,7 +578,6 @@ function handleImport(data) {
   console.log('[import]', msg);
 
   // If we're still on the welcome screen, switch to map view with "all" domain.
-  // switchDomain will re-restore the GP from $responses (now including imports).
   if (!currentDomainBundle) {
     controls.setSelectedDomain('all');
     $activeDomain.set('all');
@@ -645,7 +651,10 @@ function _showBanner(message, type = 'warning') {
   const dismissBtn = document.createElement('button');
   dismissBtn.className = 'notice-banner-dismiss';
   dismissBtn.setAttribute('aria-label', 'Dismiss notification');
-  dismissBtn.innerHTML = '<i class="fa fa-times"></i>';
+
+  const iconEl = document.createElement('i');
+  iconEl.className = 'fa fa-times';
+  dismissBtn.appendChild(iconEl);
 
   const removeBanner = () => {
     banner.classList.add('dismissing');

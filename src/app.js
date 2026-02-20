@@ -500,6 +500,7 @@ function handleExport() {
 }
 
 function handleImport(data) {
+  console.log('[import] handleImport called with', data ? 'data' : 'null');
   if (!data) return;
 
   let responses = [];
@@ -561,7 +562,10 @@ function handleImport(data) {
     renderer.setAnsweredQuestions(responsesToAnsweredDots(merged, questionIndex));
   }
 
-  announce(`Imported ${newResponses.length} new responses (${valid.length} total in file, ${existing.length} already existed).`);
+  const msg = `Imported ${newResponses.length} new responses (${valid.length} total in file, ${existing.length} already existed).`;
+  announce(msg);
+  _showBanner(msg, 'success');
+  console.log('[import]', msg);
 }
 
 function handleViewportChange(viewport) {

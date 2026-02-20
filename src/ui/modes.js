@@ -53,7 +53,8 @@ export function init(container) {
         color: var(--color-primary);
         box-shadow: 0 0 8px var(--color-glow-primary);
       }
-      .mode-btn.active {
+      .mode-btn.active,
+      .mode-btn.active:hover {
         background: var(--color-primary);
         color: #ffffff;
         border-color: var(--color-primary);
@@ -75,32 +76,15 @@ export function init(container) {
         color: var(--color-secondary);
         box-shadow: 0 0 8px var(--color-glow-secondary);
       }
-      .mode-btn--insight.active {
+      .mode-btn--insight.active,
+      .mode-btn--insight.active:hover {
         border-style: solid;
         background: var(--color-secondary);
         color: #ffffff;
         border-color: var(--color-secondary);
         box-shadow: 0 0 12px var(--color-glow-secondary);
       }
-      .mode-btn:disabled:hover::after {
-        content: attr(data-tooltip);
-        position: absolute;
-        bottom: calc(100% + 8px);
-        left: 50%;
-        transform: translateX(-50%);
-        background: var(--color-surface);
-        color: var(--color-text);
-        padding: 6px 12px;
-        border-radius: 6px;
-        font-size: 0.75rem;
-        white-space: nowrap;
-        z-index: 100;
-        pointer-events: none;
-        border: 1px solid #00693e;
-        border-left: 3px solid #00693e;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        max-width: 200px;
-      }
+      /* Disabled mode button tooltips handled by global [data-tooltip] JS system */
     `;
     document.head.appendChild(style);
   }

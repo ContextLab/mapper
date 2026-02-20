@@ -181,7 +181,7 @@ export function init(headerElement) {
   resetButton = document.createElement('button');
   resetButton.className = 'control-btn';
   resetButton.ariaLabel = 'Reset all progress';
-  resetButton.title = 'Reset all progress';
+  resetButton.dataset.tooltip = 'Reset all progress';
   resetButton.innerHTML = '<i class="fa-solid fa-rotate-right"></i>';
   resetButton.hidden = true;
   resetButton.addEventListener('click', () => {
@@ -192,7 +192,7 @@ export function init(headerElement) {
   exportButton = document.createElement('button');
   exportButton.className = 'control-btn';
   exportButton.ariaLabel = 'Export progress as JSON';
-  exportButton.title = 'Export progress as JSON';
+  exportButton.dataset.tooltip = 'Export progress';
   exportButton.innerHTML = '<i class="fa-solid fa-download"></i>';
   exportButton.hidden = true;
   exportButton.addEventListener('click', () => {
@@ -203,19 +203,25 @@ export function init(headerElement) {
   importButton = document.createElement('button');
   importButton.className = 'control-btn';
   importButton.ariaLabel = 'Import saved progress';
-  importButton.title = 'Import saved progress';
+  importButton.dataset.tooltip = 'Import progress';
   importButton.innerHTML = '<i class="fa-solid fa-upload"></i>';
   importButton.hidden = true;
-  // Keep a module-level reference to avoid GC before FileReader fires
-  let _importInput = null;
 
   importButton.addEventListener('click', () => {
-    _importInput = document.createElement('input');
-    _importInput.type = 'file';
-    _importInput.accept = '.json,application/json';
-    _importInput.addEventListener('change', (e) => {
-      const file = e.target.files[0];
-      if (!file) return;
+    // Create a file input, attach to DOM (required by some browsers for
+    // the change event to fire), then remove after reading.
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.json,application/json';
+    input.style.cssText = 'position:fixed;left:-9999px;opacity:0;pointer-events:none;';
+    document.body.appendChild(input);
+
+    input.addEventListener('change', () => {
+      const file = input.files[0];
+      if (!file) {
+        document.body.removeChild(input);
+        return;
+      }
       const reader = new FileReader();
       reader.onload = () => {
         try {
@@ -225,16 +231,22 @@ export function init(headerElement) {
           console.error('[controls] Failed to parse import file:', err);
           alert('Invalid file format. Please select a Knowledge Mapper export JSON file.');
         }
-        _importInput = null; // Release reference after successful read
+        document.body.removeChild(input);
       };
       reader.onerror = () => {
         console.error('[controls] FileReader error:', reader.error);
         alert('Could not read file. Please try again.');
-        _importInput = null;
+        document.body.removeChild(input);
       };
       reader.readAsText(file);
     });
-    _importInput.click();
+
+    // Clean up if user cancels the file dialog
+    input.addEventListener('cancel', () => {
+      document.body.removeChild(input);
+    });
+
+    input.click();
   });
   container.appendChild(importButton);
 

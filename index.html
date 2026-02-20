@@ -144,6 +144,27 @@
             cursor: not-allowed;
         }
 
+        /* ── Custom tooltip (JS-positioned, appended to body) ── */
+        .ui-tooltip {
+            position: fixed;
+            pointer-events: none;
+            z-index: 99999;
+            background: var(--color-surface);
+            color: var(--color-text);
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+            line-height: 1.4;
+            white-space: nowrap;
+            border: 1px solid var(--color-border);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+            opacity: 0;
+            transition: opacity 0.15s ease;
+        }
+        .ui-tooltip.visible { opacity: 1; }
+
         #app-main {
             display: flex;
             position: relative;
@@ -634,6 +655,8 @@
             .btn-icon { min-width: 34px; min-height: 34px; font-size: 0.85rem; }
             /* Make dropdown arrow easier to see on mobile */
             .custom-select-arrow { font-size: 0.9rem; }
+            /* Hide custom tooltips on touch devices */
+            .ui-tooltip { display: none !important; }
             #quiz-panel {
                 position: absolute;
                 top: auto; bottom: 0; left: 0; right: 0;
@@ -688,16 +711,16 @@
                 <div class="domain-selector" hidden aria-label="Select knowledge domain"></div>
             </div>
             <div class="header-right">
-                <button id="trophy-btn" class="btn-icon" aria-label="My areas of expertise" title="My areas of expertise" disabled>
+                <button id="trophy-btn" class="btn-icon" aria-label="My areas of expertise" data-tooltip="My areas of expertise" disabled>
                     <i class="fa-solid fa-trophy"></i>
                 </button>
-                <button id="suggest-btn" class="btn-icon" aria-label="Suggest articles to learn" title="Suggest articles to maximally boost my knowledge" disabled>
+                <button id="suggest-btn" class="btn-icon" aria-label="Suggest articles to learn" data-tooltip="Suggested learning" disabled>
                     <i class="fa-solid fa-graduation-cap"></i>
                 </button>
-                <button id="share-btn" class="btn-icon" aria-label="Share your knowledge map" title="Share your knowledge map">
+                <button id="share-btn" class="btn-icon" aria-label="Share your knowledge map" data-tooltip="Share">
                     <i class="fa-solid fa-share-nodes"></i>
                 </button>
-                <button id="about-btn" class="btn-icon" aria-label="About this project" title="About this project">
+                <button id="about-btn" class="btn-icon" aria-label="About this project" data-tooltip="About">
                     <i class="fa-solid fa-circle-info"></i>
                 </button>
             </div>
@@ -739,7 +762,7 @@
             <section id="map-container" aria-label="Interactive Heatmap" tabindex="0"></section>
 
             <!-- Quiz Panel Toggle -->
-            <button id="quiz-toggle" class="quiz-toggle-btn" hidden aria-label="Open quiz panel" title="Press to show/hide the questions">
+            <button id="quiz-toggle" class="quiz-toggle-btn" hidden aria-label="Open quiz panel" data-tooltip="Show/hide questions">
                 <i class="fa-solid fa-chevron-left"></i>
             </button>
 
@@ -863,6 +886,70 @@
 
     <!-- Feature Detection (T066) - runs before ES modules to detect unsupported browsers -->
     <script src="feature-detection.js"></script>
+
+    <!-- Global custom tooltip system for [data-tooltip] elements -->
+    <script>
+    (function() {
+      var tip = document.createElement('div');
+      tip.className = 'ui-tooltip';
+      document.body.appendChild(tip);
+      var showTimer = null;
+      var DELAY = 200;
+
+      function show(el) {
+        var text = el.getAttribute('data-tooltip');
+        if (!text) return;
+        tip.textContent = text;
+        // Measure and position
+        tip.style.opacity = '0';
+        tip.classList.add('visible');
+        var r = el.getBoundingClientRect();
+        var tw = tip.offsetWidth;
+        var th = tip.offsetHeight;
+        // Default: centered above the element
+        var left = r.left + r.width / 2 - tw / 2;
+        var top = r.top - th - 8;
+        // If clipped at top, show below
+        if (top < 4) top = r.bottom + 8;
+        // Keep within horizontal viewport
+        if (left < 4) left = 4;
+        if (left + tw > window.innerWidth - 4) left = window.innerWidth - tw - 4;
+        tip.style.left = left + 'px';
+        tip.style.top = top + 'px';
+        tip.style.opacity = '';
+      }
+
+      function hide() {
+        clearTimeout(showTimer);
+        showTimer = null;
+        tip.classList.remove('visible');
+      }
+
+      function tooltipTarget(e) {
+        var t = e.target;
+        if (!t || !t.closest) return null;
+        return t.closest('[data-tooltip]');
+      }
+
+      document.addEventListener('pointerenter', function(e) {
+        var el = tooltipTarget(e);
+        if (!el) return;
+        clearTimeout(showTimer);
+        showTimer = setTimeout(function() { show(el); }, DELAY);
+      }, true);
+
+      document.addEventListener('pointerleave', function(e) {
+        var el = tooltipTarget(e);
+        if (!el) return;
+        hide();
+      }, true);
+
+      // Also hide on click (tooltip served its purpose)
+      document.addEventListener('pointerdown', hide, true);
+      // Hide on scroll
+      document.addEventListener('scroll', hide, true);
+    })();
+    </script>
 
     <!-- Vite Entry Point -->
     <script type="module" src="/src/app.js"></script>

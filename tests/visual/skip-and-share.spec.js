@@ -100,4 +100,39 @@ test.describe('Skip button and share image', () => {
 
     console.log('Skipped dot color verified:', skippedDot.color);
   });
+
+  test('Answer options are randomized across reloads', async ({ page }) => {
+    // Load the app and get the first question's option texts in display order
+    await page.goto(BASE);
+    await page.waitForSelector('#landing', { state: 'visible', timeout: 10000 });
+    await selectDomain(page);
+
+    const getOptionTexts = async () => {
+      return page.evaluate(() => {
+        const buttons = document.querySelectorAll('.quiz-option');
+        return Array.from(buttons).map(b => b.textContent.trim());
+      });
+    };
+
+    const firstLoad = await getOptionTexts();
+    expect(firstLoad).toHaveLength(4);
+    expect(firstLoad.every(t => t.length > 0)).toBe(true);
+
+    // Reload multiple times and collect option orderings
+    // With 4! = 24 permutations, getting the same order 5 times in a row
+    // has probability (1/24)^4 ≈ 0.0003% — essentially impossible if randomized
+    const orderings = [firstLoad.join('|||')];
+    for (let i = 0; i < 4; i++) {
+      await page.goto(BASE);
+      await page.waitForSelector('#landing', { state: 'visible', timeout: 10000 });
+      await selectDomain(page);
+      const texts = await getOptionTexts();
+      orderings.push(texts.join('|||'));
+    }
+
+    // At least 2 different orderings should appear across 5 loads
+    const unique = new Set(orderings);
+    console.log(`Randomization: ${unique.size} unique orderings out of ${orderings.length} loads`);
+    expect(unique.size).toBeGreaterThan(1);
+  });
 });

@@ -7,6 +7,31 @@ let nextCallback = null;
 let currentQuestion = null;
 let uiElements = {};
 
+// Randomization: maps display key → original key (e.g., { A: "C", B: "A", C: "D", D: "B" })
+let displayToOriginal = { A: 'A', B: 'B', C: 'C', D: 'D' };
+let originalToDisplay = { A: 'A', B: 'B', C: 'C', D: 'D' };
+
+/** Fisher-Yates shuffle (in place). */
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+/** Build random key mappings for option display. */
+function buildShuffleMaps() {
+  const keys = ['A', 'B', 'C', 'D'];
+  const shuffled = shuffle([...keys]);
+  displayToOriginal = {};
+  originalToDisplay = {};
+  keys.forEach((displayKey, i) => {
+    displayToOriginal[displayKey] = shuffled[i];
+    originalToDisplay[shuffled[i]] = displayKey;
+  });
+}
+
 export function init(container) {
 
   const styleId = 'quiz-panel-styles';
@@ -268,13 +293,16 @@ export function showQuestion(question) {
   }
 
    if (uiElements.options) {
+    // Randomize option order each time a question is displayed
+    buildShuffleMaps();
     uiElements.options.forEach(btn => {
-      const key = btn.dataset.key;
-      const text = question.options ? question.options[key] : '';
+      const displayKey = btn.dataset.key;          // A, B, C, D (button slot)
+      const originalKey = displayToOriginal[displayKey]; // which original option to show here
+      const text = question.options ? question.options[originalKey] : '';
       const renderedText = renderLatex(text || '');
       btn.innerHTML = renderedText;
       // T049: Update ARIA label with option text
-      btn.setAttribute('aria-label', `Option ${key}: ${stripLatex(text || '')}`);
+      btn.setAttribute('aria-label', `Option ${displayKey}: ${stripLatex(text || '')}`);
       btn.disabled = false;
       btn.className = 'quiz-option';
     });
@@ -295,23 +323,28 @@ export function showQuestion(question) {
   }
 }
 
-function handleOptionClick(selectedKey) {
+function handleOptionClick(selectedDisplayKey) {
    if (!currentQuestion || !uiElements.options) return;
-   
+
    uiElements.options.forEach(btn => {
      btn.disabled = true;
    });
 
-  const correctKey = currentQuestion.correct_answer;
-  const isCorrect = selectedKey === correctKey;
+  // Translate display keys back to original keys for correctness check
+  const originalSelectedKey = displayToOriginal[selectedDisplayKey];
+  const originalCorrectKey = currentQuestion.correct_answer;
+  const isCorrect = originalSelectedKey === originalCorrectKey;
+
+  // Highlight uses display keys (which button slot to color)
+  const correctDisplayKey = originalToDisplay[originalCorrectKey];
 
   uiElements.options.forEach(btn => {
     const key = btn.dataset.key;
-    if (key === selectedKey) {
+    if (key === selectedDisplayKey) {
       btn.classList.add('selected');
       btn.classList.add(isCorrect ? 'correct' : 'incorrect');
     }
-    if (key === correctKey) {
+    if (key === correctDisplayKey) {
       btn.classList.add('correct-highlight');
     }
   });
@@ -364,10 +397,10 @@ function handleOptionClick(selectedKey) {
     }
   }
 
-  // Fire the answer callback immediately (records the response and updates estimator)
-  // but do NOT auto-advance to next question — user clicks "Next" when ready
+  // Fire the answer callback with the ORIGINAL key (not the display key)
+  // so that app.js records the correct option letter regardless of shuffle
   if (answerCallback) {
-    answerCallback(selectedKey, currentQuestion);
+    answerCallback(originalSelectedKey, currentQuestion);
   }
 }
 

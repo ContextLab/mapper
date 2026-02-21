@@ -1,6 +1,17 @@
+---
+name: generate-questions
+description: "Generate high-quality multiple-choice questions for a Knowledge Mapper domain. Use when asked to generate or regenerate questions for a domain (e.g., 'generate questions for biology', 'regenerate the physics question set'). Accepts a domain name as $ARGUMENTS (e.g., /generate-questions quantum-physics). Runs a 5-step iterative pipeline: generate Q+A → review Q+A → generate distractors → review distractors → compile JSON."
+---
+
 # Skill: Generate Domain Questions
 
 Generate high-quality multiple-choice questions for the Knowledge Mapper application using an iterative multi-agent pipeline.
+
+## Arguments
+
+This skill accepts a **domain ID** as `$ARGUMENTS` (e.g., `quantum-physics`, `astrophysics`, `biology`).
+
+If no argument is provided, ask the user which domain to generate questions for.
 
 ## When to Use
 
@@ -10,7 +21,7 @@ Use this skill when asked to generate or regenerate questions for a domain (e.g.
 
 Knowledge Mapper is a GP-based knowledge estimation app. Users answer multiple-choice questions positioned on a 2D map of Wikipedia articles. Question quality directly impacts the usefulness of knowledge estimation.
 
-### Output Format (per question)
+### Working Output Format (per question during generation)
 
 ```json
 {
@@ -24,7 +35,7 @@ Knowledge Mapper is a GP-based knowledge estimation app. Users answer multiple-c
 }
 ```
 
-**Do NOT include**: `id`, `x`, `y`, `z`, `options`, or `correct_answer` slot letter. IDs and coordinates are assigned programmatically after generation. Option slot assignment (A/B/C/D) and randomization happen at display time.
+**Do NOT include during generation**: `id`, `x`, `y`, `z`, `options`, or `correct_answer` slot letter. These are assigned during Final Assembly.
 
 ### Formatting Rules
 - Questions: **50 words or fewer**
@@ -50,11 +61,11 @@ This enables resuming from working files if context runs out.
 
 ### Prerequisites
 
-The orchestrator provides each question generation with:
+The domain ID comes from `$ARGUMENTS`. The orchestrator provides each question generation with:
 - A **CONCEPT** (e.g., "photosynthesis")
 - A **WIKIPEDIA ARTICLE** (full text, fetched via WebFetch)
 - A **DIFFICULTY LEVEL** (integer 1-4)
-- A **DOMAIN ID** (e.g., "biology")
+- A **DOMAIN ID** (from `$ARGUMENTS`, e.g., "biology")
 
 ### Step 1: Generate Question + Correct Answer
 
@@ -181,7 +192,7 @@ Revise any distractors that fail checks.
 
 **Instructions to agent**:
 
-Compile the final question JSON. Do NOT include `id`, `x`, `y`, `z`, `options`, or `correct_answer` slot letter — these are assigned programmatically.
+Compile the final question JSON for the working file. Do NOT include `id`, `x`, `y`, `z`, `options`, or `correct_answer` slot letter — these are assigned during Final Assembly.
 
 **Agent output** (JSON):
 ```json
@@ -202,7 +213,7 @@ Compile the final question JSON. Do NOT include `id`, `x`, `y`, `z`, `options`, 
 
 ```
 TodoWrite([
-  { content: "Generate concepts for {domain}", status: "in_progress", activeForm: "Generating concepts" },
+  { content: "Generate concepts for $ARGUMENTS", status: "in_progress", activeForm: "Generating concepts" },
   { content: "Questions: 0/50 complete", status: "pending", activeForm: "Generating questions" },
   { content: "Assemble final domain JSON", status: "pending", activeForm: "Assembling domain JSON" },
 ])
@@ -214,7 +225,7 @@ For each question, update the master todo AND maintain per-question detail:
 
 ```
 TodoWrite([
-  { content: "Generate concepts for {domain}", status: "completed", activeForm: "Generating concepts" },
+  { content: "Generate concepts for $ARGUMENTS", status: "completed", activeForm: "Generating concepts" },
   { content: "Questions: 12/50 complete", status: "in_progress", activeForm: "Generating questions" },
   { content: "Q13 '{concept}': Step 1 generate", status: "in_progress", activeForm: "Generating Q13 question+answer" },
   { content: "Q13 '{concept}': Step 2 review Q+A", status: "pending", activeForm: "Reviewing Q13" },
@@ -227,16 +238,69 @@ TodoWrite([
 
 ## Checkpointing
 
-Write completed questions to `data/domains/.working/{domain-id}-questions.json` after EVERY question completes Step 5. This file is an array of completed question JSONs. If context runs out, the next agent reads this file to know which questions are done and resumes from where it left off.
+Write completed questions to `data/domains/.working/$ARGUMENTS-questions.json` after EVERY question completes Step 5. This file is an array of completed question JSONs. If context runs out, the next agent reads this file to know which questions are done and resumes from where it left off.
 
-## Assembly (after all 50 questions complete)
+## Final Assembly (after all 50 questions complete)
 
-After all questions are generated:
+After all questions are generated, assemble the final domain JSON file:
 
-1. Read working file: `data/domains/.working/{domain-id}-questions.json`
-2. Read existing domain file: `data/domains/{domain-id}.json` (preserve `articles` array)
-3. Assign IDs, coordinates, and option slots programmatically (handled by caller, NOT this skill)
-4. Write completed questions to working file for the caller to assemble
+### Assembly Steps
+
+1. **Read working file**: `data/domains/.working/$ARGUMENTS-questions.json`
+2. **Read existing domain file**: `data/domains/$ARGUMENTS.json` to get the existing `domain`, `labels`, and `articles` arrays
+3. **For each question**, assign:
+   - **ID**: First 16 hex characters of SHA-256 hash of `question_text`
+   - **Option slots**: Randomly assign correct answer and distractors to A/B/C/D slots:
+     - Pick a random slot (A, B, C, or D) for the correct answer
+     - Fill remaining slots with the 3 distractors in random order
+     - Record which slot letter contains the correct answer
+4. **Write final domain JSON** to `data/domains/$ARGUMENTS.json`
+
+### Final Domain JSON Structure
+
+```json
+{
+  "domain": {
+    "id": "astrophysics",
+    "name": "Astrophysics",
+    "parent_id": "physics",
+    "level": "sub",
+    "region": {
+      "x_min": 0.042179,
+      "x_max": 0.295656,
+      "y_min": 0.413276,
+      "y_max": 0.67439
+    },
+    "grid_size": 70
+  },
+  "questions": [
+    {
+      "id": "04a772bcef67e50f",
+      "question_text": "What is stellar parallax?",
+      "options": {
+        "A": "The gravitational bending of light from distant stars...",
+        "B": "The redshift observed in a star's light spectrum...",
+        "C": "The apparent shift in a nearby star's position against distant background stars...",
+        "D": "The dimming of a star's brightness as it passes behind another celestial body..."
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Stellar parallax",
+      "domain_ids": ["astrophysics"],
+      "concepts_tested": ["stellar parallax"]
+    }
+  ],
+  "labels": [...],
+  "articles": [...]
+}
+```
+
+### Assembly Notes
+
+- **x, y, z coordinates** are NOT assigned by this skill — they come from the embedding pipeline
+- **Preserve existing data**: Keep the `domain`, `labels`, and `articles` arrays from the existing domain file
+- **Replace questions**: The `questions` array is fully replaced with the newly generated questions
+- **Randomization**: Option slot assignment must be truly random to prevent position bias in answers
 
 ## Important Notes
 
@@ -244,4 +308,4 @@ After all questions are generated:
 - **One domain at a time**: The caller invokes this skill per domain and can parallelize across domains.
 - **Factual accuracy is non-negotiable**: Steps 1 and 2 MUST verify facts via the Wikipedia article and web searches. Any ambiguity must be resolved before proceeding.
 - **TodoWrite is mandatory**: Every step transition and every completed question MUST be reflected in TodoWrite.
-- **No coordinates or IDs**: This skill produces question content only. Spatial embedding and ID assignment happen in a separate post-processing step.
+- **No coordinates**: This skill produces question content only. Spatial embedding (x, y, z coordinates) happens in a separate post-processing step.

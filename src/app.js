@@ -346,8 +346,8 @@ async function switchDomain(domainId) {
 
     const relevantResponses = allResponses.filter(r => r.x != null && r.y != null);
     if (relevantResponses.length > 0) {
-      estimator.restore(relevantResponses, UNIFORM_LENGTH_SCALE);
-      globalEstimator.restore(relevantResponses, UNIFORM_LENGTH_SCALE);
+      estimator.restore(relevantResponses, UNIFORM_LENGTH_SCALE, questionIndex);
+      globalEstimator.restore(relevantResponses, UNIFORM_LENGTH_SCALE, questionIndex);
     }
 
     const estimates = estimator.predict();
@@ -442,8 +442,9 @@ function handleAnswer(selectedKey, question) {
   const isReanswer = filtered.length < current.length;
   $responses.set([...filtered, response]);
 
-  estimator.observe(question.x, question.y, isCorrect, UNIFORM_LENGTH_SCALE);
-  globalEstimator.observe(question.x, question.y, isCorrect, UNIFORM_LENGTH_SCALE);
+  const difficulty = question.difficulty;
+  estimator.observe(question.x, question.y, isCorrect, UNIFORM_LENGTH_SCALE, difficulty);
+  globalEstimator.observe(question.x, question.y, isCorrect, UNIFORM_LENGTH_SCALE, difficulty);
   const estimates = estimator.predict();
   $estimates.set(estimates);
 
@@ -489,8 +490,9 @@ function handleSkip() {
   $responses.set([...filtered, response]);
 
   const skipLengthScale = UNIFORM_LENGTH_SCALE * SKIP_LENGTH_SCALE_FACTOR;
-  estimator.observeSkip(question.x, question.y, skipLengthScale);
-  globalEstimator.observeSkip(question.x, question.y, skipLengthScale);
+  const difficulty = question.difficulty;
+  estimator.observeSkip(question.x, question.y, skipLengthScale, difficulty);
+  globalEstimator.observeSkip(question.x, question.y, skipLengthScale, difficulty);
   const estimates = estimator.predict();
   $estimates.set(estimates);
 
@@ -616,8 +618,8 @@ function handleImport(data) {
 
   if (estimator) {
     const relevant = merged.filter(r => r.x != null && r.y != null);
-    estimator.restore(relevant, UNIFORM_LENGTH_SCALE);
-    if (globalEstimator) globalEstimator.restore(relevant, UNIFORM_LENGTH_SCALE);
+    estimator.restore(relevant, UNIFORM_LENGTH_SCALE, questionIndex);
+    if (globalEstimator) globalEstimator.restore(relevant, UNIFORM_LENGTH_SCALE, questionIndex);
     const estimates = estimator.predict();
     $estimates.set(estimates);
 

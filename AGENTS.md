@@ -52,6 +52,38 @@ mapper/
 
 ## DATA FLOW
 
+### Embedding/UMAP/Bounding Box Pipeline
+
+The core pipeline for generating question coordinates and bounding boxes:
+
+```
+wikipedia.pkl (250K articles, 752MB, gitignored)
+    ↓ generate_embeddings_local_full.py
+embeddings/wikipedia_embeddings.pkl (250K × 768, google/embeddinggemma-300m)
+    ↓ generate_domain_questions.py
+data/domains/*_questions.json (50 questions per domain via GPT-5-nano)
+    ↓ embed_questions.py (SAME model: google/embeddinggemma-300m)
+embeddings/question_embeddings.pkl (~950 × 768)
+    ↓ rebuild_umap_v2.py (JOINT projection: articles + questions TOGETHER)
+embeddings/umap_article_coords.pkl + embeddings/umap_question_coords.pkl
+    ↓ flatten_coordinates.py --mu 0.75 (optimal transport flattening)
+embeddings/umap_*_coords_flat.pkl (density-balanced coordinates)
+    ↓ compute_bounding_boxes.py (hierarchical: sub-domain → domain → all)
+bounding boxes computed from question positions
+    ↓ export_domain_bundles.py
+data/domains/{domain_id}.json (questions with coords + bounding boxes)
+```
+
+**Key principle**: Articles and questions are projected TOGETHER in one UMAP batch,
+ensuring they share the exact same 2D coordinate space.
+
+**Bounding box hierarchy**:
+- Sub-domains: bbox around that area's questions only
+- Broad domains: bbox around domain's questions + all sub-domains' questions
+- "All (general)": full [0, 1] × [0, 1] view
+
+### Legacy Pipeline (reference only)
+
 ```
 wikipedia.pkl (250K articles, 752MB, gitignored)
     ↓ rebuild_umap.py

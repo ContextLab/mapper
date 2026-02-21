@@ -64,12 +64,16 @@ mapper/
 
 The `scripts/` directory contains the Python pipeline that generates the data powering the frontend. It processes 250K Wikipedia articles through:
 
-1. Embedding with `google/embeddinggemma-300m`
-2. UMAP dimensionality reduction to 2D
-3. Optimal-transport density flattening
-4. Domain region definition and RAG-based article assignment
-5. Question generation via GPT-5-nano
-6. Coordinate projection and cell label precomputation
+1. **Embed articles** using `google/embeddinggemma-300m` (768-dim vectors)
+2. **Generate questions** via GPT-5-nano (50 per domain, ~950 total)
+3. **Embed questions** using the same model as articles (for coordinate consistency)
+4. **Joint UMAP projection** — project ALL articles + questions TOGETHER in one batch to 2D
+5. **Density flattening** via approximate optimal transport (`mu=0.75`)
+6. **Compute bounding boxes** hierarchically:
+   - Sub-domains: bounding box around that area's questions
+   - Broad domains: bounding box around domain's + sub-domains' questions
+   - "All (general)": full [0, 1] view enclosing all articles + questions
+7. **Export domain bundles** with question coordinates and bounding boxes
 
 See [`scripts/README.md`](scripts/README.md) for full pipeline documentation.
 

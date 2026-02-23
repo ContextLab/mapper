@@ -1,0 +1,852 @@
+[
+  {
+    "question_text": "In painting and drawing, what does the Italian term 'chiaroscuro' refer to?",
+    "correct_answer": "The use of strong contrasts between light and dark to model three-dimensional form.",
+    "distractors": [
+      "The use of complementary color contrasts to create visual depth and emphasize focal points in a composition.",
+      "The gradual blending of tones from light to dark to eliminate visible edges and outlines.",
+      "The use of strong contrasts between warm and cool pigments to suggest atmospheric perspective."
+    ],
+    "difficulty": 1,
+    "source_article": "Chiaroscuro",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "chiaroscuro"
+    ]
+  },
+  {
+    "question_text": "Which early 20th-century art and literary movement, founded by André Breton in 1924, sought to channel the unconscious mind and resolve the contradictory states of dream and reality?",
+    "correct_answer": "Surrealism",
+    "distractors": [
+      "Dadaism",
+      "Expressionism",
+      "Futurism"
+    ],
+    "difficulty": 1,
+    "source_article": "Surrealism",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Surrealism"
+    ]
+  },
+  {
+    "question_text": "What is the Italian title of Leonardo da Vinci's Mona Lisa, a name reflecting the identity of its subject?",
+    "correct_answer": "La Gioconda",
+    "distractors": [
+      "La Primavera",
+      "La Pietà",
+      "La Velata"
+    ],
+    "difficulty": 1,
+    "source_article": "Mona Lisa",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Mona Lisa"
+    ]
+  },
+  {
+    "question_text": "Which decorative art and design movement, flourishing from about 1890 to 1910, is characterized by sinuous, organic lines inspired by natural forms such as flower stalks, vine tendrils, and insect wings?",
+    "correct_answer": "Art Nouveau",
+    "distractors": [
+      "Arts and Crafts",
+      "Art Deco",
+      "Aestheticism"
+    ],
+    "difficulty": 1,
+    "source_article": "Art Nouveau",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Art Nouveau"
+    ]
+  },
+  {
+    "question_text": "What ancient funerary sculpture collection, discovered in 1974 near Xi'an, China, consists of thousands of life-sized figures buried to protect the first emperor of China in the afterlife?",
+    "correct_answer": "The Terracotta Army, from the mausoleum of Qin Shi Huang",
+    "distractors": [
+      "The Terracotta Army, from the burial complex of Emperor Wu of Han",
+      "The jade burial suits, from the imperial tombs of the Ming Dynasty",
+      "The bronze ritual vessels, from the royal tombs at Anyang during the Shang Dynasty"
+    ],
+    "difficulty": 1,
+    "source_article": "Terracotta Army",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Terracotta Army"
+    ]
+  },
+  {
+    "question_text": "The nine central panels of Michelangelo's Sistine Chapel ceiling depict scenes from which book of the Bible?",
+    "correct_answer": "The Book of Genesis",
+    "distractors": [
+      "The Book of Exodus",
+      "The Book of Revelation",
+      "The Book of Psalms"
+    ],
+    "difficulty": 1,
+    "source_article": "Sistine Chapel ceiling",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Sistine Chapel ceiling"
+    ]
+  },
+  {
+    "question_text": "Which early 20th-century decorative arts movement, named after a 1925 Paris exposition, is characterized by bold geometric forms, rich colors, and lavish ornamentation in architecture and design?",
+    "correct_answer": "Art Deco",
+    "distractors": [
+      "Art Nouveau",
+      "Arts and Crafts",
+      "Bauhaus"
+    ],
+    "difficulty": 1,
+    "source_article": "Art Deco",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Art Deco"
+    ]
+  },
+  {
+    "question_text": "What type of decorative art is created by assembling small pieces of stone, glass, tile, or other hard materials into images or patterns on a surface?",
+    "correct_answer": "A mosaic",
+    "distractors": [
+      "A fresco",
+      "An intaglio",
+      "A bas-relief"
+    ],
+    "difficulty": 1,
+    "source_article": "Mosaic",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "mosaic"
+    ]
+  },
+  {
+    "question_text": "Which best describes Dada, the early 20th-century movement that emerged in Zurich during World War I?",
+    "correct_answer": "An anti-art movement that rejected logic and traditional aesthetics in favor of nonsense, chance, and provocation.",
+    "distractors": [
+      "A geometric abstraction movement focused on harmony, primary colors, and grid-based compositions to achieve universal visual order.",
+      "An emotionally expressive movement that used vivid color and distorted forms to convey inner psychological states and raw human feeling.",
+      "A neoclassical revival movement that sought to restore ancient Greco-Roman ideals of beauty, proportion, and moral virtue in the visual arts."
+    ],
+    "difficulty": 1,
+    "source_article": "Dada",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Dada"
+    ]
+  },
+  {
+    "question_text": "Before becoming the world's most-visited art museum, the Louvre originally served what purpose when it was built in the late 12th century under King Philip II of France?",
+    "correct_answer": "It was originally built as a fortress to defend Paris.",
+    "distractors": [
+      "It was originally built as a royal palace for the French court.",
+      "It was originally built as a cathedral for the Diocese of Paris.",
+      "It was originally built as a central marketplace for Parisian merchants."
+    ],
+    "difficulty": 1,
+    "source_article": "Louvre",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "the Louvre"
+    ]
+  },
+  {
+    "question_text": "The Venus de Milo, a famous ancient Greek marble sculpture believed to depict the goddess Aphrodite, is displayed in which major museum?",
+    "correct_answer": "The Louvre Museum in Paris, France",
+    "distractors": [
+      "The British Museum in London, England",
+      "The Metropolitan Museum of Art in New York",
+      "The Vatican Museums in Vatican City, Rome"
+    ],
+    "difficulty": 1,
+    "source_article": "Venus de Milo",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Venus de Milo"
+    ]
+  },
+  {
+    "question_text": "Which Western cultural movement, emerging in the 18th century as a reaction against Rococo excess, revived the art and ideals of Greek and Roman classical antiquity?",
+    "correct_answer": "Neoclassicism",
+    "distractors": [
+      "Romanticism",
+      "Baroque",
+      "The Aesthetic Movement"
+    ],
+    "difficulty": 1,
+    "source_article": "Neoclassicism",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Neoclassicism"
+    ]
+  },
+  {
+    "question_text": "The Great Wave off Kanagawa is the first print in which famous series by Katsushika Hokusai, notable for its revolutionary use of Prussian blue pigment?",
+    "correct_answer": "Thirty-six Views of Mount Fuji",
+    "distractors": [
+      "One Hundred Famous Views of Edo",
+      "Fifty-three Stations of the Tokaido",
+      "Sixty-nine Stations of the Kisokaido"
+    ],
+    "difficulty": 1,
+    "source_article": "The Great Wave off Kanagawa",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "The Great Wave off Kanagawa"
+    ]
+  },
+  {
+    "question_text": "According to art historian Marcia B. Hall, sfumato is one of four canonical painting modes of the Italian High Renaissance. Which mode involves shifting to a completely different hue to achieve a lighter or darker tone?",
+    "correct_answer": "Cangiante",
+    "distractors": [
+      "Verdaccio",
+      "Tenebrismo",
+      "Grisaille"
+    ],
+    "difficulty": 2,
+    "source_article": "Sfumato",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "sfumato"
+    ]
+  },
+  {
+    "question_text": "In contrapposto sculpture, what is the technical term for the weight-bearing leg on which the figure stands?",
+    "correct_answer": "The engaged leg",
+    "distractors": [
+      "The weighted leg",
+      "The planted leg",
+      "The fixed leg"
+    ],
+    "difficulty": 2,
+    "source_article": "Contrapposto",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "contrapposto"
+    ]
+  },
+  {
+    "question_text": "Benin artists cast their famous brass sculptures by melting down a specific form of bracelet-shaped trade currency acquired from Portuguese merchants. What are these ingots called?",
+    "correct_answer": "Manillas",
+    "distractors": [
+      "Cowries",
+      "Kissi pennies",
+      "Mitqals"
+    ],
+    "difficulty": 2,
+    "source_article": "Benin Bronzes",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Benin Bronzes"
+    ]
+  },
+  {
+    "question_text": "In the Mughal artistic tradition, what is the term for an album of collected miniature paintings and calligraphy specimens kept as single works rather than book illustrations?",
+    "correct_answer": "Muraqqa",
+    "distractors": [
+      "Safina",
+      "Shamsa",
+      "Hashiya"
+    ],
+    "difficulty": 2,
+    "source_article": "Mughal painting",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Mughal painting"
+    ]
+  },
+  {
+    "question_text": "Which Dutch city, home to a major Calvinist university, became the primary center for vanitas still-life painting in the 17th century?",
+    "correct_answer": "Leiden",
+    "distractors": [
+      "Haarlem",
+      "Delft",
+      "Utrecht"
+    ],
+    "difficulty": 2,
+    "source_article": "Vanitas",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "vanitas"
+    ]
+  },
+  {
+    "question_text": "What is the name of the compact, portable painting box used by plein air artists that holds supplies and palette inside, with the work surface on the inside of the lid?",
+    "correct_answer": "A pochade box",
+    "distractors": [
+      "A French easel",
+      "A Jullian box",
+      "A Gloucester box"
+    ],
+    "difficulty": 2,
+    "source_article": "En plein air",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "en plein air"
+    ]
+  },
+  {
+    "question_text": "What term describes the Renaissance variant of tempera in which drying oil is added to egg yolk to create an emulsion, as detected in paintings by Botticelli?",
+    "correct_answer": "Tempera grassa",
+    "distractors": [
+      "Tempera magra",
+      "Tempera all'uovo",
+      "Tempera mista"
+    ],
+    "difficulty": 2,
+    "source_article": "Tempera",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "tempera"
+    ]
+  },
+  {
+    "question_text": "In lost-wax casting, what is the term for the step where a worker uses heated tools to refine the wax positive, adding detail and removing mold seams before investing?",
+    "correct_answer": "Wax chasing",
+    "distractors": [
+      "Wax spruing",
+      "Wax tooling",
+      "Wax fettling"
+    ],
+    "difficulty": 2,
+    "source_article": "Lost-wax casting",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "lost-wax casting"
+    ]
+  },
+  {
+    "question_text": "Impasto requires paint thick enough to hold brushstroke texture. Why are watercolor and tempera poor substitutes for oil paint in this technique?",
+    "correct_answer": "They lack sufficient body and dry too thin to retain three-dimensional surface texture.",
+    "distractors": [
+      "Their pigments dissolve in the binder and produce flat, transparent glazes without surface relief.",
+      "They polymerize too rapidly on the palette, preventing the artist from building layered strokes.",
+      "Their binders fail to form continuous films around pigment particles, so thick passages crumble when dry."
+    ],
+    "difficulty": 2,
+    "source_article": "Impasto",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "impasto"
+    ]
+  },
+  {
+    "question_text": "In Islamic art, arabesque patterns of spiraling floral vines symbolizing nature's underlying order are also known by what technical term from the Persian artistic tradition?",
+    "correct_answer": "Islimi",
+    "distractors": [
+      "Khatai",
+      "Girih",
+      "Muqarnas"
+    ],
+    "difficulty": 2,
+    "source_article": "Arabesque",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "arabesque"
+    ]
+  },
+  {
+    "question_text": "In Romanesque sculpture, the semicircular area above a church portal's lintel and below its arch, often carved with scenes such as the Last Judgment, is called what?",
+    "correct_answer": "Tympanum",
+    "distractors": [
+      "Archivolt",
+      "Trumeau",
+      "Voussoir"
+    ],
+    "difficulty": 2,
+    "source_article": "Romanesque art",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Romanesque art"
+    ]
+  },
+  {
+    "question_text": "What quarterly publication, founded by Alfred Stieglitz in 1903 and illustrated with hand-tipped photogravures, served as the journal of the Photo-Secession movement?",
+    "correct_answer": "Camera Work",
+    "distractors": [
+      "Camera Notes",
+      "Photographic Times",
+      "Photo-Miniature"
+    ],
+    "difficulty": 2,
+    "source_article": "Pictorialism",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Pictorialism"
+    ]
+  },
+  {
+    "question_text": "What was the title of Allan Kaprow's 1959 event at the Reuben Gallery, widely considered the first Happening and a key precursor to performance and installation art?",
+    "correct_answer": "18 Happenings in 6 Parts",
+    "distractors": [
+      "Anthropometries of the Blue Epoch",
+      "The Car Crash",
+      "Theatre Piece No. 1"
+    ],
+    "difficulty": 2,
+    "source_article": "Installation art",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "installation art"
+    ]
+  },
+  {
+    "question_text": "French critic Philippe Burty coined the term 'Japonisme' in 1872. Which specific Japanese art form, featuring artists like Hokusai and Hiroshige, most directly influenced Impressionist approaches to composition and flat color?",
+    "correct_answer": "Ukiyo-e woodblock prints",
+    "distractors": [
+      "Yamato-e narrative scroll paintings",
+      "Rinpa school decorative screens",
+      "Sumi-e ink wash paintings"
+    ],
+    "difficulty": 3,
+    "source_article": "Japonisme",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Japonisme"
+    ]
+  },
+  {
+    "question_text": "In art provenance research, what specific term describes objects requiring investigation due to an unresolved gap in ownership history during the period 1933-1945?",
+    "correct_answer": "Nazi-era provenance gap",
+    "distractors": [
+      "Wartime spoliation claim",
+      "Aryanization dispossession record",
+      "Forced sale restitution case"
+    ],
+    "difficulty": 3,
+    "source_article": "Provenance",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "provenance"
+    ]
+  },
+  {
+    "question_text": "At the 1863 Salon des Refusés, Manet's 'Le Déjeuner sur l'herbe' shocked critics beyond its subject matter. What aspect of his technique most departed from academic painting conventions?",
+    "correct_answer": "Flat, sketch-like modeling that suppressed the smooth tonal gradations expected in academic painting",
+    "distractors": [
+      "Bright, unmixed pigments applied in thick impasto strokes to create visible surface texture throughout the composition",
+      "Vivid complementary color contrasts placed in systematic pointillist patterns to optically blend at viewing distance",
+      "Loose, broken brushwork dissolving solid forms into shimmering patches of reflected outdoor light and color"
+    ],
+    "difficulty": 3,
+    "source_article": "Salon des Refusés",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Salon des Refusés"
+    ]
+  },
+  {
+    "question_text": "Duchamp's 1913 'Bicycle Wheel' — a wheel mounted upside-down on a stool — is considered his first readymade. How is it classified: as a 'pure' or 'assisted' readymade?",
+    "correct_answer": "Assisted readymade, because it combines two separate manufactured objects",
+    "distractors": [
+      "Pure readymade, because it presents an unmodified manufactured object",
+      "Rectified readymade, because the wheel was physically altered before display",
+      "Pure readymade, since the stool simply serves as a pedestal"
+    ],
+    "difficulty": 3,
+    "source_article": "Readymades of Marcel Duchamp",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "readymades of Marcel Duchamp"
+    ]
+  },
+  {
+    "question_text": "The Ajanta Caves were created in two phases centuries apart. How does the representation of the Buddha differ between the earlier Satavahana-era caves and the later Vakataka-era caves?",
+    "correct_answer": "Earlier caves depict Buddha symbolically (aniconically); later caves show him in human figural form.",
+    "distractors": [
+      "Earlier caves show the Buddha in monumental seated postures; later caves depict him only through narrative relief panels.",
+      "Earlier caves feature polychrome figural murals of Buddha; later caves replace these with abstract geometric ornamentation.",
+      "Earlier caves portray Buddha in human form with Hellenistic drapery; later caves adopt purely Indian iconic conventions."
+    ],
+    "difficulty": 3,
+    "source_article": "Ajanta Caves",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Ajanta Caves"
+    ]
+  },
+  {
+    "question_text": "In Gandharan Greco-Buddhist sculpture, the Greek hero Herakles was adopted to represent which Buddhist figure, serving as the Buddha's protector and companion?",
+    "correct_answer": "Vajrapani",
+    "distractors": [
+      "Maitreya",
+      "Avalokiteshvara",
+      "Vaisravana"
+    ],
+    "difficulty": 3,
+    "source_article": "Silk Road transmission of art",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Silk Road transmission of art"
+    ]
+  },
+  {
+    "question_text": "The seventeen known Olmec colossal heads were all carved from basalt transported over 150 km from the Sierra de los Tuxtlas. What are the heads believed to represent?",
+    "correct_answer": "Portraits of individual Olmec rulers",
+    "distractors": [
+      "Champions of the ritual ballgame",
+      "Deities of the Olmec pantheon",
+      "Legendary warriors from founding myths"
+    ],
+    "difficulty": 3,
+    "source_article": "Olmec colossal heads",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Olmec colossal heads"
+    ]
+  },
+  {
+    "question_text": "Renaissance 'cabinets of curiosities' organized objects into categories like naturalia, artificialia, and scientifica. What type of modern institution did these collections directly evolve into?",
+    "correct_answer": "Museums",
+    "distractors": [
+      "Universities",
+      "Botanical gardens",
+      "Libraries"
+    ],
+    "difficulty": 3,
+    "source_article": "Cabinet of curiosities",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "cabinet of curiosities"
+    ]
+  },
+  {
+    "question_text": "Forger Han van Meegeren was arrested in 1945 for selling a supposed Vermeer to Hermann Goering. How did he prove the painting was his own forgery?",
+    "correct_answer": "He painted another 'Vermeer' under police guard, demonstrating his forging techniques.",
+    "distractors": [
+      "He revealed hidden signatures under X-ray analysis, proving his authorship.",
+      "He showed receipts for modern pigments unavailable in Vermeer's era.",
+      "He publicly recreated Vermeer's brushwork technique from memory without reference."
+    ],
+    "difficulty": 3,
+    "source_article": "Art forgery",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "art forgery"
+    ]
+  },
+  {
+    "question_text": "The 1937 Nazi 'Entartete Kunst' exhibition in Munich was staged to ridicule modern art. Approximately how many people visited it?",
+    "correct_answer": "Over 2 million visitors",
+    "distractors": [
+      "Approximately half a million visitors",
+      "Over 5 million visitors",
+      "Roughly 200 thousand visitors"
+    ],
+    "difficulty": 3,
+    "source_article": "Degenerate Art exhibition",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Degenerate Art exhibition"
+    ]
+  },
+  {
+    "question_text": "According to its origin story, kintsugi was inspired when shogun Ashikaga Yoshimasa sent a broken tea bowl to China for repair. Why was the result unsatisfactory?",
+    "correct_answer": "The bowl was returned repaired with ugly metal staples.",
+    "distractors": [
+      "The bowl was returned with crude lacquer hiding the cracks.",
+      "The Chinese craftsmen sent back only mismatched replacement pieces.",
+      "The bowl was returned smaller, with broken pieces discarded."
+    ],
+    "difficulty": 3,
+    "source_article": "Kintsugi",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "kintsugi"
+    ]
+  },
+  {
+    "question_text": "In 1863, after the Paris Salon jury rejected an unusually high number of works, what alternative exhibition did Emperor Napoleon III establish for the rejected artists?",
+    "correct_answer": "The Salon des Refusés",
+    "distractors": [
+      "The Salon des Indépendants",
+      "The Salon d'Automne",
+      "The Exposition Universelle"
+    ],
+    "difficulty": 3,
+    "source_article": "Salon (Paris)",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Salon (Paris)"
+    ]
+  },
+  {
+    "question_text": "In his contribution to the paragone, Leonardo distinguished painting from sculpture by contrasting 'fatica d'ingegno' with what term for the sculptor's allegedly inferior mode of labor?",
+    "correct_answer": "Fatica corporale (bodily exertion)",
+    "distractors": [
+      "Esercizio manuale (manual exercise)",
+      "Opera meccanica (mechanical work)",
+      "Pratica servile (servile practice)"
+    ],
+    "difficulty": 4,
+    "source_article": "Paragone",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "paragone"
+    ]
+  },
+  {
+    "question_text": "In Panofsky's three-level iconological method, the third level (intrinsic meaning) requires 'synthetic intuition' as its interpretive equipment. What did he designate as its corrective principle?",
+    "correct_answer": "History of cultural symptoms or symbols",
+    "distractors": [
+      "History of style",
+      "History of types",
+      "History of literary sources"
+    ],
+    "difficulty": 4,
+    "source_article": "Erwin Panofsky",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Erwin Panofsky"
+    ]
+  },
+  {
+    "question_text": "In his 1766 Laocoon, Lessing challenged ut pictura poesis by arguing that visual art, as an art of space, must depict a single moment. What term did he use for this ideal selected instant?",
+    "correct_answer": "The fruchtbarer Augenblick (fruitful moment)",
+    "distractors": [
+      "The prägnanter Moment (pregnant moment)",
+      "The höchster Augenblick (supreme instant)",
+      "The entscheidender Augenblick (decisive moment)"
+    ],
+    "difficulty": 4,
+    "source_article": "Ut pictura poesis",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "ut pictura poesis"
+    ]
+  },
+  {
+    "question_text": "Marcel Broodthaers's fictional Musée d'Art Moderne, Département des Aigles (1968-72) placed numbered plaques next to exhibited objects bearing what Magritte-inspired declaration to subvert museum authority?",
+    "correct_answer": "\"Ceci n'est pas un objet d'art\" (This is not an art object)",
+    "distractors": [
+      "\"Ceci n'est pas une œuvre d'art\" (This is not a work of art)",
+      "\"Ceci n'est pas une pipe\" (This is not a pipe)",
+      "\"Ceci n'est pas de la peinture\" (This is not painting)"
+    ],
+    "difficulty": 4,
+    "source_article": "Institutional Critique",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "institutional critique"
+    ]
+  },
+  {
+    "question_text": "Douglas Crimp's 1977 'Pictures' exhibition at Artists Space became a founding text of the Pictures Generation after its 1979 republication in which influential art theory journal?",
+    "correct_answer": "October",
+    "distractors": [
+      "Artforum",
+      "Representations",
+      "Critical Inquiry"
+    ],
+    "difficulty": 4,
+    "source_article": "Appropriation (art)",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "appropriation art"
+    ]
+  },
+  {
+    "question_text": "Said distinguished between two forms of Orientalism: 'manifest' Orientalism changes across eras, but what did he call the unchanging, deeply embedded core that has persisted since antiquity?",
+    "correct_answer": "Latent Orientalism",
+    "distractors": [
+      "Structural Orientalism",
+      "Epistemic Orientalism",
+      "Discursive Orientalism"
+    ],
+    "difficulty": 4,
+    "source_article": "Orientalism (book)",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "Orientalism (book)"
+    ]
+  },
+  {
+    "question_text": "Quatremère de Quincy's 1814 work 'Le Jupiter Olympien' was the first systematic study of ancient polychromy. What type of ancient Greek sculpture, combining gold and ivory, was its primary subject?",
+    "correct_answer": "Chryselephantine sculpture",
+    "distractors": [
+      "Acrolithic sculpture",
+      "Sphyrelaton sculpture",
+      "Toreutic sculpture"
+    ],
+    "difficulty": 4,
+    "source_article": "Polychrome",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "polychromy"
+    ]
+  },
+  {
+    "question_text": "John Hollander distinguished two categories of ekphrasis. What term did he use for ekphrastic descriptions of artworks that are imaginary or never existed, such as Homer's Shield of Achilles?",
+    "correct_answer": "Notional ekphrasis",
+    "distractors": [
+      "Actual ekphrasis",
+      "Dynamic ekphrasis",
+      "Attributive ekphrasis"
+    ],
+    "difficulty": 4,
+    "source_article": "Ekphrasis",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "ekphrasis"
+    ]
+  },
+  {
+    "question_text": "UNESCO established the ICPRCP in 1978 specifically to address repatriation disputes that fell outside the 1970 Convention's scope. What key legal limitation of the Convention created this gap?",
+    "correct_answer": "Its non-retroactivity — it cannot apply to objects removed before its entry into force",
+    "distractors": [
+      "Its lack of binding enforcement power — it cannot compel states to return objects already in national collections",
+      "Its exclusion of colonial-era acquisitions — it only addresses objects taken through commercial transactions",
+      "Its restriction to state parties — it cannot address claims involving nations that have not ratified the Convention"
+    ],
+    "difficulty": 4,
+    "source_article": "Repatriation (cultural property)",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "repatriation of cultural property"
+    ]
+  },
+  {
+    "question_text": "In Benjamin's essay, what does he argue mechanical reproduction emancipates the work of art from, thereby shifting its social function from cult value toward exhibition value?",
+    "correct_answer": "Its parasitical dependence on ritual",
+    "distractors": [
+      "Its rootedness in the fabric of tradition",
+      "Its aura of authenticity and uniqueness",
+      "Its subordination to the cult of originality"
+    ],
+    "difficulty": 4,
+    "source_article": "The Work of Art in the Age of Mechanical Reproduction",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "The Work of Art in the Age of Mechanical Reproduction"
+    ]
+  },
+  {
+    "question_text": "In his 1914 essay 'The Moses of Michelangelo,' Freud acknowledged Giovanni Morelli's attribution method as a precedent for psychoanalysis. What shared analytical principle did Carlo Ginzburg later identify linking Morelli, Freud, and Sherlock Holmes?",
+    "correct_answer": "The evidential paradigm (constructing complex realities from seemingly insignificant details)",
+    "distractors": [
+      "The conjectural-semiotic method (decoding sign systems embedded in cultural artifacts)",
+      "The hermeneutic circle (interpreting parts through wholes and wholes through parts)",
+      "The symptomatic reading (uncovering latent meanings beneath manifest content)"
+    ],
+    "difficulty": 4,
+    "source_article": "Connoisseur",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "connoisseurship"
+    ]
+  },
+  {
+    "question_text": "Wabi-sabi aesthetics derive from the Buddhist teaching of the three marks of existence (sanboin). What are these three marks that philosophically underpin wabi-sabi?",
+    "correct_answer": "Impermanence (mujo), suffering (ku), and emptiness or absence of self-nature (ku)",
+    "distractors": [
+      "The three poisons: greed (ton), hatred (jin), and delusion (chi)",
+      "The three jewels: the Buddha (butsu), the dharma (ho), and the sangha (so)",
+      "The three pure precepts: refrain from evil, practice good, and save all beings"
+    ],
+    "difficulty": 4,
+    "source_article": "Wabi-sabi",
+    "domain_ids": [
+      "art-history"
+    ],
+    "concepts_tested": [
+      "wabi-sabi"
+    ]
+  }
+]

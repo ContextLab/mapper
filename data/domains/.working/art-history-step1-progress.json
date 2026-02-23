@@ -1,0 +1,148 @@
+{
+  "step2_complete": [
+    {
+      "q_num": 1,
+      "concept": "chiaroscuro",
+      "difficulty": 1,
+      "source_article": "Chiaroscuro",
+      "question_text": "In painting and drawing, what does the Italian term 'chiaroscuro' refer to?",
+      "correct_answer": "The use of strong contrasts between light and dark to model three-dimensional form.",
+      "distractors": [
+        "The use of complementary color contrasts to create visual depth and emphasize focal points in a composition.",
+        "The gradual blending of tones from light to dark to eliminate visible edges and outlines.",
+        "The use of strong contrasts between warm and cool pigments to suggest atmospheric perspective."
+      ],
+      "step": "step3_complete"
+    },
+    {
+      "q_num": 2,
+      "concept": "Surrealism",
+      "difficulty": 1,
+      "source_article": "Surrealism",
+      "question_text": "Which early 20th-century art and literary movement, founded by André Breton in 1924, sought to channel the unconscious mind and resolve the contradictory states of dream and reality?",
+      "correct_answer": "Surrealism",
+      "distractors": [
+        "Dadaism",
+        "Expressionism",
+        "Futurism"
+      ],
+      "step": "step3_complete"
+    },
+    {
+      "q_num": 3,
+      "concept": "Mona Lisa",
+      "difficulty": 1,
+      "source_article": "Mona Lisa",
+      "question_text": "What is the Italian title of Leonardo da Vinci's Mona Lisa, a name reflecting the identity of its subject?",
+      "correct_answer": "La Gioconda",
+      "distractors": [
+        "La Primavera",
+        "La Pietà",
+        "La Velata"
+      ],
+      "step": "step3_complete"
+    },
+    {
+      "q_num": 4,
+      "concept": "Art Nouveau",
+      "difficulty": 1,
+      "source_article": "Art Nouveau",
+      "question_text": "Which decorative art and design movement, flourishing from about 1890 to 1910, is characterized by sinuous, organic lines inspired by natural forms such as flower stalks, vine tendrils, and insect wings?",
+      "correct_answer": "Art Nouveau",
+      "distractors": [
+        "Arts and Crafts",
+        "Art Deco",
+        "Aestheticism"
+      ],
+      "step": "step3_complete"
+    },
+    {
+      "q_num": 5,
+      "concept": "Terracotta Army",
+      "difficulty": 1,
+      "source_article": "Terracotta Army",
+      "question_text": "What ancient funerary sculpture collection, discovered in 1974 near Xi'an, China, consists of thousands of life-sized figures buried to protect the first emperor of China in the afterlife?",
+      "correct_answer": "The Terracotta Army, from the mausoleum of Qin Shi Huang",
+      "distractors": [
+        "The Terracotta Army, from the burial complex of Emperor Wu of Han",
+        "The jade burial suits, from the imperial tombs of the Ming Dynasty",
+        "The bronze ritual vessels, from the royal tombs at Anyang during the Shang Dynasty"
+      ],
+      "step": "step3_complete"
+    },
+    {
+      "q_num": 6,
+      "concept": "Sistine Chapel ceiling",
+      "difficulty": 1,
+      "source_article": "Sistine Chapel ceiling",
+      "question_text": "The nine central panels of Michelangelo's Sistine Chapel ceiling depict scenes from which book of the Bible?",
+      "correct_answer": "The Book of Genesis",
+      "step": "step2_complete"
+    }
+  ],
+  "step1_complete": [
+    {
+      "q_num": 7,
+      "concept": "Art Deco",
+      "difficulty": 1,
+      "source_article": "Art Deco",
+      "question_text": "Which early 20th-century decorative arts movement, named after a 1925 Paris exposition, is characterized by bold geometric forms, rich colors, and lavish ornamentation in architecture and design?",
+      "correct_answer": "Art Deco",
+      "step": "step1_complete"
+    },
+    {
+      "q_num": 8,
+      "concept": "mosaic",
+      "difficulty": 1,
+      "source_article": "Mosaic",
+      "question_text": "What type of decorative art is created by assembling small pieces of stone, glass, tile, or other hard materials — known as tesserae — into images or patterns on a surface?",
+      "correct_answer": "A mosaic",
+      "step": "step1_complete"
+    },
+    {
+      "q_num": 9,
+      "concept": "Dada",
+      "difficulty": 1,
+      "source_article": "Dada",
+      "question_text": "Which best describes Dada, the early 20th-century movement that emerged in Zurich during World War I?",
+      "correct_answer": "An anti-art movement that rejected logic and traditional aesthetics in favor of nonsense, chance, and provocation.",
+      "step": "step1_complete"
+    },
+    {
+      "q_num": 10,
+      "concept": "the Louvre",
+      "difficulty": 1,
+      "source_article": "Louvre",
+      "question_text": "Before becoming the world's most-visited art museum, the Louvre originally served what purpose when it was built in the late 12th century under King Philip II of France?",
+      "correct_answer": "It was originally built as a fortress to defend Paris.",
+      "step": "step1_complete"
+    },
+    {
+      "q_num": 11,
+      "concept": "Venus de Milo",
+      "difficulty": 1,
+      "source_article": "Venus de Milo",
+      "question_text": "The Venus de Milo, a famous ancient Greek marble sculpture believed to depict the goddess Aphrodite, is displayed in which major museum?",
+      "correct_answer": "The Louvre Museum in Paris, France",
+      "step": "step1_complete"
+    },
+    {
+      "q_num": 12,
+      "concept": "Neoclassicism",
+      "difficulty": 1,
+      "source_article": "Neoclassicism",
+      "question_text": "Which Western cultural movement, emerging in the 18th century as a reaction against Rococo excess, revived the art and ideals of Greek and Roman classical antiquity?",
+      "correct_answer": "Neoclassicism",
+      "step": "step1_complete"
+    },
+    {
+      "q_num": 13,
+      "concept": "The Great Wave off Kanagawa",
+      "difficulty": 1,
+      "source_article": "The Great Wave off Kanagawa",
+      "question_text": "The Great Wave off Kanagawa is the first print in which famous series by Katsushika Hokusai, notable for its revolutionary use of Prussian blue ink?",
+      "correct_answer": "Thirty-six Views of Mount Fuji",
+      "step": "step1_complete"
+    }
+  ]
+}

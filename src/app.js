@@ -8,6 +8,9 @@ import {
   $answeredIds,
   $coverage,
   $questionMode,
+  $watchedVideos,
+  $preVideoSnapshot,
+  $runningDifferenceMap,
 } from './state/store.js';
 import * as registry from './domain/registry.js';
 import { load as loadDomain } from './domain/loader.js';
@@ -25,6 +28,9 @@ import * as modes from './ui/modes.js';
 const SKIP_LENGTH_SCALE_FACTOR = 0.5;
 import * as insights from './ui/insights.js';
 import * as share from './ui/share.js';
+import * as videoModal from './ui/video-modal.js';
+import * as videoLoader from './domain/video-loader.js';
+import { computeRanking, takeSnapshot, handlePostVideoQuestion } from './learning/video-recommender.js';
 import { showDownload, hideDownload, updateConfidence, initConfidence } from './ui/progress.js';
 import { announce, setupKeyboardNav } from './utils/accessibility.js';
 
@@ -48,6 +54,7 @@ let currentGridSize = GLOBAL_GRID_SIZE;
 let domainQuestionCount = 0;
 let switchGeneration = 0;
 let questionIndex = new Map();
+let mergedVideoWindows = []; // Accumulated window coords from recent unwatched-between videos
 let mapInitialized = false; // True once articles/questions/labels are set on the renderer
 
 async function boot() {
@@ -103,6 +110,12 @@ async function boot() {
     return;
   }
 
+  // Start background video data loading (T-V051, FR-V041)
+  const allDomainIds = registry.getHierarchy().flatMap((n) =>
+    [n.id, ...(n.children || []).map((c) => c.id)]
+  );
+  videoLoader.startBackgroundLoad(allDomainIds);
+
   const headerEl = document.getElementById('app-header');
   controls.init(headerEl);
   controls.onDomainSelect((domainId) => $activeDomain.set(domainId));
@@ -149,15 +162,21 @@ async function boot() {
   if (suggestBtn) {
     suggestBtn.addEventListener('click', () => {
       if (!globalEstimator) return;
-      const ck = insights.computeConceptKnowledge(
-        globalEstimator.predict(),
-        GLOBAL_REGION,
-        GLOBAL_GRID_SIZE,
-        { global: true },
-      );
-      insights.showSuggestions(ck);
+      const domainId = $activeDomain.get();
+      const { data, promise } = videoLoader.getVideos(domainId || 'all');
+      if (data) {
+        openVideoModal(data);
+      } else {
+        // Show modal with loading state, then populate when data arrives
+        videoModal.showVideoModal([]);
+        promise.then((videos) => openVideoModal(videos));
+      }
     });
   }
+
+  // Initialize video modal and wire completion callback
+  videoModal.init();
+  videoModal.onVideoComplete(handleVideoComplete);
 
   share.init(headerEl, () => renderer._canvas, () => {
     if (!currentDomainBundle) return [];
@@ -215,6 +234,7 @@ async function boot() {
 function wireSubscriptions() {
   $activeDomain.subscribe(async (domainId) => {
     if (!domainId) return;
+    videoLoader.reprioritize(domainId);
     await switchDomain(domainId);
   });
 
@@ -448,6 +468,15 @@ function handleAnswer(selectedKey, question) {
   const estimates = estimator.predict();
   $estimates.set(estimates);
 
+  // Video recommendation: post-video diff map flow (T-V052, FR-V021)
+  if ($preVideoSnapshot.get() !== null) {
+    const globalEstimates = globalEstimator.predict();
+    const result = handlePostVideoQuestion(globalEstimates, mergedVideoWindows);
+    if (result.phaseComplete) {
+      mergedVideoWindows = [];
+    }
+  }
+
   if (!isReanswer) {
     domainQuestionCount++;
     modes.updateAvailability(domainQuestionCount);
@@ -528,6 +557,8 @@ function handleReset() {
   renderer.setAnsweredQuestions([]);
   renderer.clearQuestions();
   insights.resetGlobalConcepts();
+  videoModal.hide();
+  mergedVideoWindows = [];
   // Re-set concepts from the permanent "all" bundle so insights work on next domain select
   if (allDomainBundle) {
     insights.setConcepts(allDomainBundle.questions, allDomainBundle.articles);
@@ -650,6 +681,7 @@ function handleCellClick(_gx, _gy) {
 }
 
 function handleEscape() {
+  if (videoModal.handleEscape()) return;
   const insightsModal = document.getElementById('insights-modal');
   if (insightsModal && !insightsModal.hidden) {
     insightsModal.hidden = true;
@@ -744,6 +776,40 @@ function showLandingError(message) {
   if (landing) {
     const p = landing.querySelector('p');
     if (p) p.textContent = message;
+  }
+}
+
+// ─── Video recommendation helpers (T-V050, T-V051, T-V052) ──
+
+function openVideoModal(videos) {
+  if (!globalEstimator) return;
+  const globalEstimates = globalEstimator.predict();
+  const watchedIds = $watchedVideos.get();
+  const runningDiffMap = $runningDifferenceMap.get();
+  const domainId = $activeDomain.get();
+  const ranked = computeRanking(videos, globalEstimates, watchedIds, runningDiffMap, domainId);
+  videoModal.showVideoModal(ranked);
+}
+
+function handleVideoComplete(videoId) {
+  if (!globalEstimator) return;
+  // Take snapshot for diff map computation (FR-V020, CL-004)
+  const globalEstimates = globalEstimator.predict();
+  const snapshotTaken = takeSnapshot(globalEstimates);
+
+  // Find the completed video's windows and merge them
+  const domainId = $activeDomain.get();
+  const { data } = videoLoader.getVideos(domainId || 'all');
+  if (data) {
+    const video = data.find((v) => v.id === videoId);
+    if (video && video.windows) {
+      if (snapshotTaken) {
+        mergedVideoWindows = [...video.windows];
+      } else {
+        // Multiple videos without questions — merge windows (CL-004)
+        mergedVideoWindows = mergedVideoWindows.concat(video.windows);
+      }
+    }
   }
 }
 

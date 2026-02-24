@@ -17,6 +17,26 @@ export const $responses = persistentAtom('mapper:responses', [], {
 /** Schema version tag for migration detection */
 export const $schemaVersion = persistentAtom('mapper:schema', SCHEMA_VERSION);
 
+// === Video recommendation atoms (FR-V040, FR-V043, CL-024) ===
+
+/** Watched video IDs — persisted across sessions */
+export const $watchedVideos = persistentAtom('mapper:watchedVideos', new Set(), {
+  encode: (s) => JSON.stringify([...s]),
+  decode: (json) => new Set(JSON.parse(json)),
+});
+
+/** Pre-video GP snapshot (50×50 = 2,500 cells) — session-only */
+export const $preVideoSnapshot = atom(null);
+
+/** Questions answered since most recent video completion — session-only */
+export const $questionsAfterVideo = atom(0);
+
+/** Current difference map (50×50 grid) — session-only */
+export const $differenceMap = atom(null);
+
+/** Running EMA of weighted difference maps — session-only */
+export const $runningDifferenceMap = atom(null);
+
 // === Session atoms (in-memory only) ===
 
 /** Currently active domain ID (null = no domain selected) */

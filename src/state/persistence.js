@@ -7,6 +7,11 @@ import {
   $estimates,
   $transitionState,
   $questionMode,
+  $watchedVideos,
+  $preVideoSnapshot,
+  $questionsAfterVideo,
+  $differenceMap,
+  $runningDifferenceMap,
 } from './store.js';
 
 export function validateSchema() {
@@ -45,6 +50,12 @@ export function resetAll() {
   $estimates.set([]);
   $transitionState.set('idle');
   $questionMode.set('auto');
+  // Video recommendation state (FR-V042, CL-024)
+  $watchedVideos.set(new Set());
+  $preVideoSnapshot.set(null);
+  $questionsAfterVideo.set(0);
+  $differenceMap.set(null);
+  $runningDifferenceMap.set(null);
 }
 
 export function isAvailable() {

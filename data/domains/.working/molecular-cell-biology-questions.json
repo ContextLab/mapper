@@ -1,0 +1,852 @@
+[
+  {
+    "question_text": "What is a protein?",
+    "correct_answer": "A large biomolecule composed of one or more chains of amino acids linked by peptide bonds.",
+    "distractors": [
+      "A small organic molecule made of nucleotides arranged in a double helix stabilized by hydrogen bonds.",
+      "A complex lipid structure composed of fatty acid chains and glycerol joined by ester bonds.",
+      "A short carbohydrate polymer composed of one or more chains of monosaccharides linked by glycosidic bonds."
+    ],
+    "difficulty": 1,
+    "source_article": "Protein",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "protein"
+    ]
+  },
+  {
+    "question_text": "What is an enzyme?",
+    "correct_answer": "A biological catalyst, usually a protein, that accelerates chemical reactions without being consumed.",
+    "distractors": [
+      "A structural lipid, usually a steroid, that maintains membrane fluidity without being degraded.",
+      "A signaling nucleotide, usually cyclic AMP, that initiates cascade reactions without being transported.",
+      "A transport protein, usually a channel, that moves ions across membranes without being modified."
+    ],
+    "difficulty": 1,
+    "source_article": "Enzyme",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "enzyme"
+    ]
+  },
+  {
+    "question_text": "What is mitosis?",
+    "correct_answer": "A type of cell division in which a eukaryotic cell produces two genetically identical daughter nuclei.",
+    "distractors": [
+      "A type of cell division in which a eukaryotic cell produces four genetically diverse haploid daughter cells.",
+      "A type of nuclear fusion in which a prokaryotic cell merges two genetically distinct chromosomes into one nucleus.",
+      "A type of cell growth in which a eukaryotic cell enlarges its cytoplasm without dividing its nuclear contents."
+    ],
+    "difficulty": 1,
+    "source_article": "Mitosis",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "mitosis"
+    ]
+  },
+  {
+    "question_text": "What is a ribosome?",
+    "correct_answer": "A cellular machine composed of ribosomal RNA and proteins that translates mRNA into proteins.",
+    "distractors": [
+      "A cellular machine composed of transfer RNA and lipids that packages proteins into transport vesicles.",
+      "A nuclear structure composed of histone proteins and DNA that condenses chromatin into visible chromosomes.",
+      "A membrane complex composed of channel proteins and carbohydrates that transports ions across the cell wall."
+    ],
+    "difficulty": 1,
+    "source_article": "Ribosome",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "ribosome"
+    ]
+  },
+  {
+    "question_text": "What is ATP (adenosine triphosphate)?",
+    "correct_answer": "A nucleotide that serves as the primary energy currency of cells, releasing energy upon hydrolysis.",
+    "distractors": [
+      "A phospholipid that serves as the primary structural component of membranes, providing stability through hydrophobic interactions.",
+      "A monosaccharide that serves as the primary carbon source for cells, releasing energy upon oxidation.",
+      "A coenzyme that serves as the primary electron carrier in cells, releasing energy upon reduction."
+    ],
+    "difficulty": 1,
+    "source_article": "Adenosine triphosphate",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "ATP"
+    ]
+  },
+  {
+    "question_text": "What is the cell membrane?",
+    "correct_answer": "A selectively permeable phospholipid bilayer that forms the outer boundary of a cell.",
+    "distractors": [
+      "A rigid peptidoglycan lattice that forms the protective outer wall surrounding a prokaryotic cell.",
+      "A continuous double-stranded DNA molecule that forms the hereditary material inside a cell.",
+      "A dense network of cytoskeletal filaments that forms the internal structural framework of a cell."
+    ],
+    "difficulty": 1,
+    "source_article": "Cell membrane",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "cell membrane"
+    ]
+  },
+  {
+    "question_text": "In cell biology, what is an organelle?",
+    "correct_answer": "A specialized subunit within a cell that performs a specific function, such as the nucleus or mitochondrion.",
+    "distractors": [
+      "A dissolved ion within a cell that maintains a specific concentration, such as sodium or potassium.",
+      "A specialized receptor on the cell surface that binds a specific ligand, such as insulin or epinephrine.",
+      "A temporary metabolic intermediate within a cell that participates in a specific pathway, such as glycolysis or gluconeogenesis."
+    ],
+    "difficulty": 1,
+    "source_article": "Organelle",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "organelle"
+    ]
+  },
+  {
+    "question_text": "What is the cytoplasm of a cell?",
+    "correct_answer": "The material within a cell enclosed by the cell membrane, excluding the nucleus, containing organelles and cytosol.",
+    "distractors": [
+      "The rigid outer layer of a cell that provides structural support and protection against osmotic pressure.",
+      "The network of protein filaments inside the nucleus that anchors chromosomes during cell division.",
+      "The fluid-filled space between the inner and outer mitochondrial membranes where protons accumulate."
+    ],
+    "difficulty": 1,
+    "source_article": "Cytoplasm",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "cytoplasm"
+    ]
+  },
+  {
+    "question_text": "What is the cell nucleus?",
+    "correct_answer": "A membrane-bound organelle in eukaryotic cells that contains the cell's genetic material and controls gene expression.",
+    "distractors": [
+      "A small cytoplasmic organelle that synthesizes proteins by translating messenger RNA into polypeptide chains.",
+      "The dense core of a mitochondrion where enzymes of the citric acid cycle catalyze energy production.",
+      "A network of membrane-enclosed channels that transports lipids and proteins throughout the cell interior."
+    ],
+    "difficulty": 1,
+    "source_article": "Cell nucleus",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "cell nucleus"
+    ]
+  },
+  {
+    "question_text": "In biochemistry, what is an amino acid?",
+    "correct_answer": "An organic molecule containing both an amino group and a carboxyl group that serves as a building block of proteins.",
+    "distractors": [
+      "A long-chain hydrocarbon molecule with a carboxyl group that stores energy and forms cell membrane components.",
+      "A ring-shaped sugar molecule bonded to a phosphate group and a nitrogenous base forming nucleic acids.",
+      "A short polymer of monosaccharides linked by glycosidic bonds that provides structural support in cells."
+    ],
+    "difficulty": 1,
+    "source_article": "Amino acid",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "amino acid"
+    ]
+  },
+  {
+    "question_text": "What is a lipid?",
+    "correct_answer": "A diverse group of hydrophobic organic molecules, including fats and oils, that function in energy storage, signaling, and membrane structure.",
+    "distractors": [
+      "A large polar polymer of amino acids folded into a specific three-dimensional shape that catalyzes biochemical reactions.",
+      "A linear chain of nucleotides carrying hereditary genetic information that directs protein synthesis inside living cells.",
+      "A complex carbohydrate composed of repeating glucose units that provides structural rigidity to plant cell walls."
+    ],
+    "difficulty": 1,
+    "source_article": "Lipid",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "lipid"
+    ]
+  },
+  {
+    "question_text": "What is RNA?",
+    "correct_answer": "A single-stranded nucleic acid polymer made of ribonucleotides that plays essential roles in coding, decoding, and regulating gene expression.",
+    "distractors": [
+      "A double-stranded polymer of deoxyribonucleotides that stores an organism's complete hereditary information in the nucleus.",
+      "A globular protein complex found in the cytoplasm that catalyzes the hydrolysis of ATP to power cellular processes.",
+      "A lipid bilayer structure embedded with transport channels that selectively controls molecular passage across cell compartments."
+    ],
+    "difficulty": 1,
+    "source_article": "RNA",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "RNA"
+    ]
+  },
+  {
+    "question_text": "In cell biology, what is diffusion?",
+    "correct_answer": "The net passive movement of molecules from a region of higher concentration to a region of lower concentration.",
+    "distractors": [
+      "The active transport of ions across a membrane using energy from ATP hydrolysis against their concentration gradient.",
+      "The process by which a cell engulfs large particles by extending its membrane to form an internal vesicle.",
+      "The directed movement of an organism toward or away from a chemical stimulus in its surrounding environment."
+    ],
+    "difficulty": 1,
+    "source_article": "Diffusion",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "diffusion"
+    ]
+  },
+  {
+    "question_text": "What ribonucleoprotein complex recognizes the N-terminal signal peptide on a nascent polypeptide and targets the ribosome to the rough endoplasmic reticulum membrane?",
+    "correct_answer": "The signal recognition particle (SRP), which binds the hydrophobic signal peptide and docks with the SRP receptor on the ER.",
+    "distractors": [
+      "The Sec61 translocon complex, which forms a protein-conducting channel in the ER membrane and directly captures emerging signal peptides from ribosomes.",
+      "The signal peptidase complex, which cleaves the hydrophobic leader sequence and escorts the ribosome-nascent chain complex to the ER membrane.",
+      "The heat shock protein Hsp70 (BiP), which binds exposed signal peptides and chaperones the ribosome to the ER translocon."
+    ],
+    "difficulty": 2,
+    "source_article": "Endoplasmic reticulum",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "endoplasmic reticulum"
+    ]
+  },
+  {
+    "question_text": "In the endomembrane system, what type of coated vesicles mediate retrograde transport from the Golgi cisternae back to the endoplasmic reticulum?",
+    "correct_answer": "COPI-coated vesicles, which retrieve ER-resident proteins and recycle membrane components from the Golgi back to the ER.",
+    "distractors": [
+      "COPII-coated vesicles, which collect cargo proteins and transport membrane components from the Golgi cisternae back to the ER.",
+      "Clathrin-coated vesicles, which retrieve ER-resident proteins bearing KDEL signals and recycle them from the Golgi to the ER.",
+      "Retromer-coated vesicles, which recognize KDEL-tagged ER-resident proteins in the Golgi and return them to the endoplasmic reticulum."
+    ],
+    "difficulty": 2,
+    "source_article": "Golgi apparatus",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "Golgi apparatus"
+    ]
+  },
+  {
+    "question_text": "What chemical modification is added to soluble lysosomal hydrolases in the Golgi apparatus to direct them to lysosomes via receptor-mediated sorting?",
+    "correct_answer": "A mannose-6-phosphate (M6P) tag, recognized by M6P receptors in the trans-Golgi network for lysosomal delivery.",
+    "distractors": [
+      "An N-linked glucose residue tag, recognized by calnexin receptors in the trans-Golgi network for lysosomal targeting.",
+      "A ubiquitin moiety, recognized by ESCRT complex receptors in the trans-Golgi network directing hydrolases to lysosomes.",
+      "A farnesyl lipid anchor, recognized by sortilin receptors in the trans-Golgi network for lysosomal enzyme delivery."
+    ],
+    "difficulty": 2,
+    "source_article": "Lysosome",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "lysosome"
+    ]
+  },
+  {
+    "question_text": "What are the folds of the inner mitochondrial membrane called, and what key enzyme complex embedded in them couples the proton-motive force to ATP synthesis?",
+    "correct_answer": "Cristae; they house ATP synthase (Complex V), which uses the proton gradient to phosphorylate ADP into ATP.",
+    "distractors": [
+      "Cisternae; they house cytochrome c oxidase (Complex IV), which uses the proton gradient to phosphorylate ADP into ATP.",
+      "Cristae; they house NADH dehydrogenase (Complex I), which directly phosphorylates ADP using the proton-motive force.",
+      "Thylakoids; they house ATP synthase (Complex V), which harnesses the electrochemical gradient to convert ADP into ATP."
+    ],
+    "difficulty": 2,
+    "source_article": "Mitochondrion",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "mitochondrion"
+    ]
+  },
+  {
+    "question_text": "Which motor protein walks toward the plus end of microtubules, transporting vesicles and organelles from the cell center toward the periphery?",
+    "correct_answer": "Kinesin, a plus-end-directed motor protein that uses ATP hydrolysis to move cargo along microtubule tracks.",
+    "distractors": [
+      "Dynein, a plus-end-directed motor protein that uses ATP hydrolysis to transport vesicles along microtubule tracks peripherally.",
+      "Myosin V, a plus-end-directed motor protein that uses ATP hydrolysis to move cargo along microtubule filaments.",
+      "Kinesin-14, a minus-end-directed motor protein that uses GTP hydrolysis to transport cargo along microtubule tracks."
+    ],
+    "difficulty": 2,
+    "source_article": "Cytoskeleton",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "cytoskeleton"
+    ]
+  },
+  {
+    "question_text": "In G protein-coupled receptor (GPCR) signaling, which membrane-bound enzyme converts ATP into the second messenger cyclic AMP (cAMP)?",
+    "correct_answer": "Adenylyl cyclase, activated by the $G_s$ alpha subunit, catalyzes cyclization of ATP into cAMP.",
+    "distractors": [
+      "Phospholipase C, activated by the $G_s$ alpha subunit, catalyzes the conversion of ATP into cyclic AMP.",
+      "Guanylyl cyclase, activated by the $G_s$ alpha subunit, catalyzes cyclization of ATP into the messenger cAMP.",
+      "Phosphodiesterase, activated by the $G_s$ alpha subunit, catalyzes the synthesis of cAMP from adenosine triphosphate."
+    ],
+    "difficulty": 2,
+    "source_article": "Signal transduction",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "signal transduction"
+    ]
+  },
+  {
+    "question_text": "G protein-coupled receptors (GPCRs) are a major class of cell-surface receptors. What structural feature defines all GPCRs?",
+    "correct_answer": "Seven transmembrane alpha-helical domains spanning the plasma membrane",
+    "distractors": [
+      "A single transmembrane domain with intrinsic tyrosine kinase activity",
+      "A ligand-gated ion channel pore formed by five protein subunits",
+      "Two extracellular immunoglobulin-like domains joined by disulfide bonds"
+    ],
+    "difficulty": 2,
+    "source_article": "Receptor (biochemistry)",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "receptor (biochemistry)"
+    ]
+  },
+  {
+    "question_text": "The phospholipid bilayer forms the structural basis of cell membranes. What term describes molecules that have both hydrophilic and hydrophobic regions?",
+    "correct_answer": "Amphipathic, meaning they possess both a polar head group and nonpolar fatty acid tails",
+    "distractors": [
+      "Hydrophobic, meaning they are entirely water-repelling and insoluble in aqueous solution",
+      "Isotopic, meaning they have identical chemical properties in all orientations",
+      "Covalent, meaning they form strong electron-sharing bonds with water molecules"
+    ],
+    "difficulty": 2,
+    "source_article": "Lipid bilayer",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "phospholipid bilayer"
+    ]
+  },
+  {
+    "question_text": "The Na+/K+-ATPase is a primary active transport pump. How many sodium and potassium ions does it transport per ATP molecule hydrolyzed?",
+    "correct_answer": "It exports 3 Na+ ions and imports 2 K+ ions per ATP hydrolyzed",
+    "distractors": [
+      "It exports 2 Na+ ions and imports 3 K+ ions per ATP hydrolyzed",
+      "It exports 2 Na+ ions and imports 2 K+ ions per ATP hydrolyzed",
+      "It exports 4 Na+ ions and imports 1 K+ ion per ATP hydrolyzed"
+    ],
+    "difficulty": 2,
+    "source_article": "Active transport",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "active transport"
+    ]
+  },
+  {
+    "question_text": "Osmosis is the movement of solvent across a semipermeable membrane. What happens to an animal cell placed in a hypertonic solution?",
+    "correct_answer": "The cell shrinks as water moves out by osmosis toward the higher external solute concentration",
+    "distractors": [
+      "The cell swells and may lyse as water rushes in down its concentration gradient",
+      "The cell remains unchanged because the membrane is impermeable to water molecules",
+      "The cell actively pumps solutes outward to equalize the osmotic pressure difference"
+    ],
+    "difficulty": 2,
+    "source_article": "Osmosis",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "osmosis"
+    ]
+  },
+  {
+    "question_text": "Apoptosis proceeds through intrinsic and extrinsic pathways. In the intrinsic pathway, what molecule is released from mitochondria to activate caspase-9?",
+    "correct_answer": "Cytochrome c, which binds APAF-1 to form the apoptosome complex",
+    "distractors": [
+      "Fas ligand, which binds death receptors on the outer mitochondrial membrane",
+      "Calcium ions, which directly cleave and activate all executioner caspases",
+      "Ubiquitin chains, which tag mitochondrial proteins for proteasomal degradation"
+    ],
+    "difficulty": 2,
+    "source_article": "Apoptosis",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "apoptosis"
+    ]
+  },
+  {
+    "question_text": "Stem cells are classified by their differentiation potential. What term describes stem cells that can differentiate into any cell type of the three germ layers but not extraembryonic tissues?",
+    "correct_answer": "Pluripotent, such as embryonic stem cells derived from the inner cell mass",
+    "distractors": [
+      "Totipotent, such as the zygote which can form the entire organism and placenta",
+      "Unipotent, such as muscle satellite cells that produce only one cell type",
+      "Multipotent, such as hematopoietic stem cells restricted to blood cell lineages"
+    ],
+    "difficulty": 2,
+    "source_article": "Stem cell",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "stem cell"
+    ]
+  },
+  {
+    "question_text": "The cell cycle contains checkpoints that regulate progression. What is the restriction point in the G1 phase?",
+    "correct_answer": "The commitment point after which the cell proceeds to S phase independent of mitogen signaling",
+    "distractors": [
+      "The spindle assembly checkpoint that prevents anaphase until chromosomes are properly attached",
+      "The G2/M checkpoint that verifies complete DNA replication before mitosis begins",
+      "The point during S phase where replication origins are licensed for a second firing"
+    ],
+    "difficulty": 2,
+    "source_article": "Cell cycle",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "cell cycle"
+    ]
+  },
+  {
+    "question_text": "During DNA replication, why is synthesis on the lagging strand discontinuous while the leading strand is synthesized continuously?",
+    "correct_answer": "DNA polymerase only synthesizes in the 5' to 3' direction, so the lagging strand is built as Okazaki fragments later joined by ligase.",
+    "distractors": [
+      "Helicase unwinds both strands asymmetrically, forcing the lagging strand to pause until primase synthesizes enough RNA primers for continuous polymerization to resume.",
+      "Topoisomerase creates periodic nicks on the lagging strand template, requiring DNA polymerase to restart at each nick site and producing short fragments.",
+      "The lagging strand template has reversed polarity that blocks polymerase processivity, so ligase must degrade stalled complexes and reinitiate synthesis at new sites."
+    ],
+    "difficulty": 3,
+    "source_article": "DNA replication",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "DNA replication"
+    ]
+  },
+  {
+    "question_text": "In eukaryotic transcription, what role does TFIID play in initiating mRNA synthesis by RNA polymerase II?",
+    "correct_answer": "TFIID contains the TATA-binding protein, which recognizes and binds the promoter's TATA box, nucleating assembly of the pre-initiation complex.",
+    "distractors": [
+      "TFIID phosphorylates the C-terminal domain of RNA polymerase II, triggering promoter clearance and enabling productive elongation of the nascent transcript.",
+      "TFIID uses its helicase subunit to unwind promoter DNA, forming the transcription bubble that allows RNA polymerase II to access template bases.",
+      "TFIID recruits capping enzymes to the 5' end of nascent mRNA, ensuring transcript stability before RNA polymerase II transitions into processive elongation."
+    ],
+    "difficulty": 3,
+    "source_article": "Transcription (biology)",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "transcription (biology)"
+    ]
+  },
+  {
+    "question_text": "During translation, what happens at the ribosomal A site during the elongation phase of protein synthesis?",
+    "correct_answer": "An aminoacyl-tRNA binds the A site by matching its anticodon to the mRNA codon, then peptide bond formation transfers the growing polypeptide chain.",
+    "distractors": [
+      "A release factor enters the A site and hydrolyzes the peptidyl-tRNA ester bond, freeing the completed polypeptide through the ribosomal exit tunnel.",
+      "Elongation factor EF-G hydrolyzes GTP at the A site, directly catalyzing peptide bond formation between adjacent amino acids on the growing chain.",
+      "The signal recognition particle docks at the A site, pausing translation until the ribosome-nascent chain complex is translocated to the endoplasmic reticulum membrane."
+    ],
+    "difficulty": 3,
+    "source_article": "Translation (biology)",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "translation (biology)"
+    ]
+  },
+  {
+    "question_text": "What does Anfinsen's dogma state about the relationship between a protein's amino acid sequence and its three-dimensional structure?",
+    "correct_answer": "A small globular protein's native structure is determined solely by its amino acid sequence, folding to the lowest free energy conformation.",
+    "distractors": [
+      "A protein's three-dimensional structure requires molecular chaperones that use ATP hydrolysis to guide folding into the thermodynamically most stable native conformation.",
+      "A protein's native fold is determined by its post-translational modifications, including glycosylation and phosphorylation, which direct the polypeptide toward its functional conformation.",
+      "A protein's functional structure is determined by its quaternary interactions with other subunits, achieving the lowest free energy through obligate oligomeric assembly."
+    ],
+    "difficulty": 3,
+    "source_article": "Protein folding",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "protein folding"
+    ]
+  },
+  {
+    "question_text": "Why is the phosphofructokinase-1 (PFK-1) reaction considered the committed step of glycolysis, and how is PFK-1 allosterically regulated?",
+    "correct_answer": "PFK-1 catalyzes the first irreversible step unique to glycolysis. It is allosterically inhibited by ATP and citrate, and activated by AMP and fructose-2,6-bisphosphate.",
+    "distractors": [
+      "Hexokinase catalyzes the first irreversible phosphorylation unique to glycolysis. It is allosterically inhibited by glucose-6-phosphate and activated by inorganic phosphate and fructose-1,6-bisphosphate.",
+      "PFK-1 catalyzes the committed step of glycolysis. It is allosterically activated by ATP and citrate, and inhibited by AMP and fructose-2,6-bisphosphate.",
+      "Pyruvate kinase catalyzes the first irreversible reaction unique to glycolysis. It is allosterically inhibited by fructose-1,6-bisphosphate and activated by alanine and acetyl-CoA."
+    ],
+    "difficulty": 3,
+    "source_article": "Glycolysis",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "glycolysis"
+    ]
+  },
+  {
+    "question_text": "In one turn of the citric acid cycle, what are the energy-carrying products generated from the oxidation of a single acetyl-CoA molecule?",
+    "correct_answer": "One turn produces 3 NADH, 1 FADH2, and 1 GTP (or ATP via substrate-level phosphorylation), along with 2 CO2 released as waste.",
+    "distractors": [
+      "One turn produces 4 NADH, 2 FADH2, and 1 ATP via substrate-level phosphorylation, along with 1 CO2 released as a metabolic byproduct.",
+      "One turn produces 2 NADH, 1 NADPH, and 2 GTP via substrate-level phosphorylation, along with 1 CO2 and one molecular oxygen released.",
+      "One turn produces 2 NADH, 1 FADH2, and 2 GTP via substrate-level phosphorylation, along with 3 CO2 molecules released as oxidative waste."
+    ],
+    "difficulty": 3,
+    "source_article": "Citric acid cycle",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "citric acid cycle"
+    ]
+  },
+  {
+    "question_text": "In the mitochondrial electron transport chain, which complex accepts electrons from FADH2 but does not pump protons across the inner membrane?",
+    "correct_answer": "Complex II (succinate dehydrogenase), which transfers electrons to ubiquinone without contributing to the proton gradient.",
+    "distractors": [
+      "Complex I (NADH dehydrogenase), which accepts electrons from NADH and pumps protons across the inner mitochondrial membrane.",
+      "Complex III (cytochrome bc1), which receives electrons from ubiquinol and pumps protons via the Q cycle mechanism.",
+      "Complex IV (cytochrome c oxidase), which accepts electrons from cytochrome c and pumps protons while reducing molecular oxygen."
+    ],
+    "difficulty": 3,
+    "source_article": "Electron transport chain",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "electron transport chain"
+    ]
+  },
+  {
+    "question_text": "During clathrin-mediated endocytosis, what is the role of the GTPase dynamin in vesicle formation at the plasma membrane?",
+    "correct_answer": "Dynamin assembles into rings around the neck of clathrin-coated pits and hydrolyzes GTP to sever the vesicle from the membrane.",
+    "distractors": [
+      "Dynamin polymerizes into a cage-like lattice around the forming vesicle and provides the structural coat needed for membrane curvature and budding.",
+      "Dynamin binds cargo receptor cytoplasmic tails within the coated pit and selects specific transmembrane proteins for internalization into the vesicle.",
+      "Dynamin recruits Hsc70 chaperones to the clathrin lattice after scission, driving ATP-dependent uncoating so the vesicle can fuse with endosomes."
+    ],
+    "difficulty": 3,
+    "source_article": "Endocytosis",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "endocytosis"
+    ]
+  },
+  {
+    "question_text": "In a Western blot, why does SDS-PAGE separate proteins by molecular weight rather than by native charge or shape?",
+    "correct_answer": "SDS denatures proteins and coats them with uniform negative charge proportional to mass, so migration depends only on size.",
+    "distractors": [
+      "SDS preserves native protein folding but masks intrinsic charge differences, so proteins migrate solely according to their isoelectric point.",
+      "SDS imparts a uniform positive charge to each protein proportional to its length, so the anode repels all proteins equally by mass.",
+      "SDS disrupts tertiary structure and exposes hydrophobic residues uniformly, so proteins separate based on overall hydrophobicity rather than molecular weight."
+    ],
+    "difficulty": 3,
+    "source_article": "Western blot",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "Western blot"
+    ]
+  },
+  {
+    "question_text": "In agarose gel electrophoresis of DNA, why does ethidium bromide allow visualization of DNA bands under ultraviolet light?",
+    "correct_answer": "Ethidium bromide intercalates between DNA base pairs, and this hydrophobic environment enhances its fluorescence roughly 20-fold under UV.",
+    "distractors": [
+      "Ethidium bromide binds covalently to the sugar-phosphate backbone of DNA, and this covalent linkage emits visible light under UV.",
+      "Ethidium bromide coats the major groove of DNA, and the groove geometry shifts its absorption spectrum to emit visible fluorescence.",
+      "Ethidium bromide binds DNA in the minor groove and quenches background fluorescence, making DNA bands appear bright by contrast under UV."
+    ],
+    "difficulty": 3,
+    "source_article": "Gel electrophoresis",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "gel electrophoresis"
+    ]
+  },
+  {
+    "question_text": "Hematopoietic stem cells are classified as multipotent rather than pluripotent. What does this distinction mean for their differentiation potential?",
+    "correct_answer": "Multipotent cells can differentiate into multiple cell types within one lineage, such as blood cells, but not into tissues of unrelated origin.",
+    "distractors": [
+      "Multipotent cells can only produce one specialized cell type, such as red blood cells, and cannot generate other lineages like lymphocytes or platelets.",
+      "Multipotent cells can give rise to cell types from all three germ layers, including ectoderm, mesoderm, and endoderm, but cannot form extraembryonic tissues.",
+      "Multipotent cells can self-renew indefinitely but are restricted to maintaining their own population, lacking any capacity to differentiate into mature functional cell types."
+    ],
+    "difficulty": 3,
+    "source_article": "Cellular differentiation",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "cell differentiation"
+    ]
+  },
+  {
+    "question_text": "In Michaelis-Menten enzyme kinetics, how does a competitive inhibitor affect the apparent $K_m$ and $V_{max}$ of an enzyme?",
+    "correct_answer": "A competitive inhibitor increases the apparent $K_m$ because more substrate is needed to reach half-maximal velocity, but $V_{max}$ remains unchanged.",
+    "distractors": [
+      "A competitive inhibitor leaves the apparent $K_m$ unchanged because it binds an allosteric site, but it decreases $V_{max}$ by reducing catalytic efficiency.",
+      "A competitive inhibitor decreases both the apparent $K_m$ and $V_{max}$ equally, because it binds only the enzyme-substrate complex and stabilizes it.",
+      "A competitive inhibitor increases both the apparent $K_m$ and $V_{max}$, because substrate and inhibitor together accelerate product release at saturating concentrations."
+    ],
+    "difficulty": 3,
+    "source_article": "Enzyme kinetics",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "enzyme kinetics"
+    ]
+  },
+  {
+    "question_text": "Ubiquitin contains seven lysine residues that can each form polyubiquitin chains with distinct cellular signals. Which lysine-linked polyubiquitin chain type specifically targets substrate proteins for degradation by the 26S proteasome?",
+    "correct_answer": "Lysine 48 (K48)-linked polyubiquitin chains serve as the canonical signal for proteasomal degradation of substrate proteins.",
+    "distractors": [
+      "Lysine 63 (K63)-linked polyubiquitin chains serve as the canonical signal for proteasomal degradation of substrate proteins.",
+      "Lysine 11 (K11)-linked polyubiquitin chains serve as the primary signal directing substrates to the lysosome for degradation.",
+      "Methionine 1 (M1)-linked linear polyubiquitin chains serve as the canonical signal for proteasomal degradation of substrates."
+    ],
+    "difficulty": 4,
+    "source_article": "Ubiquitin",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "ubiquitin"
+    ]
+  },
+  {
+    "question_text": "The 20S core particle of the proteasome contains three distinct catalytic activities housed in specific beta subunits. Which beta subunit harbors the chymotrypsin-like activity that is the primary target of the cancer drug bortezomib?",
+    "correct_answer": "The beta-5 subunit harbors chymotrypsin-like activity and is the primary target of the proteasome inhibitor bortezomib.",
+    "distractors": [
+      "The beta-2 subunit harbors chymotrypsin-like activity and is the primary target of the proteasome inhibitor bortezomib.",
+      "The beta-1 subunit harbors chymotrypsin-like activity and is the primary target of the proteasome inhibitor bortezomib.",
+      "The beta-7 subunit harbors chymotrypsin-like activity and is the primary target of the proteasome inhibitor bortezomib."
+    ],
+    "difficulty": 4,
+    "source_article": "Proteasome",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "proteasome"
+    ]
+  },
+  {
+    "question_text": "The bacterial chaperonin GroEL assists protein folding by encapsulating substrates in an isolated chamber. How many identical subunits compose the GroEL complex, and how are they arranged structurally?",
+    "correct_answer": "GroEL consists of 14 identical subunits arranged as two stacked heptameric rings, each forming a central cavity for protein folding.",
+    "distractors": [
+      "GroEL consists of 12 identical subunits arranged as two stacked hexameric rings, each forming a central cavity for protein folding.",
+      "GroEL consists of 7 identical subunits arranged as a single heptameric ring with a GroES cap forming the protein folding cavity.",
+      "GroEL consists of 16 identical subunits arranged as two stacked octameric rings, each forming a central cavity for protein folding."
+    ],
+    "difficulty": 4,
+    "source_article": "Chaperone (protein)",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "chaperone (protein)"
+    ]
+  },
+  {
+    "question_text": "In chaperone-mediated autophagy, cytosolic proteins are selectively targeted for direct lysosomal translocation. What specific pentapeptide-related motif must substrate proteins contain to be recognized by the chaperone Hsc70?",
+    "correct_answer": "Substrate proteins must contain a pentapeptide motif biochemically related to the sequence KFERQ to be recognized by cytosolic Hsc70.",
+    "distractors": [
+      "Substrate proteins must contain a pentapeptide motif biochemically related to the sequence KDEL to be recognized by cytosolic Hsc70.",
+      "Substrate proteins must contain a pentapeptide motif biochemically related to the sequence LPXTG to be recognized by cytosolic Hsc70.",
+      "Substrate proteins must contain a pentapeptide motif biochemically related to the sequence CAAX to be recognized by cytosolic Hsc70."
+    ],
+    "difficulty": 4,
+    "source_article": "Autophagy",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "autophagy"
+    ]
+  },
+  {
+    "question_text": "Cyclin-dependent kinases require cyclin binding to become active. The conserved PSTAIRE helix in CDKs plays a critical role in this activation. What conformational change does cyclin binding to the PSTAIRE helix induce?",
+    "correct_answer": "The PSTAIRE helix moves inward upon cyclin binding, reorienting residues that interact with ATP phosphate groups to activate the kinase.",
+    "distractors": [
+      "The PSTAIRE helix moves outward upon cyclin binding, exposing the substrate-docking site and enabling phosphorylation of target proteins.",
+      "The PSTAIRE helix undergoes autophosphorylation upon cyclin binding, creating a phosphodegron that recruits additional regulatory subunits.",
+      "The PSTAIRE helix dimerizes upon cyclin binding, forming a coiled-coil structure that opens the catalytic cleft for substrates."
+    ],
+    "difficulty": 4,
+    "source_article": "Cyclin-dependent kinase",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "cyclin-dependent kinase"
+    ]
+  },
+  {
+    "question_text": "Tumor suppressor genes are classified functionally as gatekeepers or caretakers. Which description correctly distinguishes these two classes based on their mechanism of tumor suppression?",
+    "correct_answer": "Gatekeepers directly regulate cell division and survival through signal transduction, while caretakers maintain genome integrity through DNA repair mechanisms.",
+    "distractors": [
+      "Gatekeepers maintain genome integrity through DNA repair mechanisms, while caretakers directly regulate cell proliferation through signal transduction pathways.",
+      "Gatekeepers encode extracellular matrix proteins controlling tissue architecture, while caretakers regulate apoptotic caspase cascades within the cytoplasm.",
+      "Gatekeepers activate immune surveillance against transformed cells, while caretakers silence oncogene expression through epigenetic chromatin remodeling mechanisms."
+    ],
+    "difficulty": 4,
+    "source_article": "Tumor suppressor gene",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "tumor suppressor gene"
+    ]
+  },
+  {
+    "question_text": "In Burkitt lymphoma, the c-MYC proto-oncogene is activated by translocation to chromosome 14. What specific genomic locus on chromosome 14 does c-MYC become juxtaposed with, and what is the consequence?",
+    "correct_answer": "The immunoglobulin heavy-chain locus on chromosome 14, causing constitutive overexpression of c-MYC and uncontrolled cell proliferation.",
+    "distractors": [
+      "The T-cell receptor alpha locus on chromosome 14, leading to aberrant T-cell activation and lymphoid hyperplasia.",
+      "The BCR gene locus on chromosome 14, producing a fusion kinase protein with constitutive tyrosine kinase activity.",
+      "The immunoglobulin light-chain kappa locus on chromosome 14, resulting in secretion of abnormal antibody molecules."
+    ],
+    "difficulty": 4,
+    "source_article": "Proto-oncogene",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "proto-oncogene"
+    ]
+  },
+  {
+    "question_text": "During GPCR desensitization, what is the specific sequential mechanism by which receptor signaling is terminated following sustained agonist stimulation?",
+    "correct_answer": "GRK kinases phosphorylate the activated receptor's C-terminus, enabling beta-arrestin binding that sterically blocks G protein coupling and recruits clathrin for internalization.",
+    "distractors": [
+      "Protein kinase A phosphorylates the receptor's extracellular domain, causing conformational change that permanently prevents all ligand binding.",
+      "The G-alpha subunit hydrolyzes GTP and directly ubiquitinates the receptor, targeting it to the proteasome for degradation.",
+      "Adenylyl cyclase binds the receptor intracellular loops, displacing the G protein heterotrimer and triggering lysosomal receptor destruction."
+    ],
+    "difficulty": 4,
+    "source_article": "G protein-coupled receptor",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "G protein-coupled receptor"
+    ]
+  },
+  {
+    "question_text": "When Gq-coupled receptors activate phospholipase C, the membrane lipid PIP2 is cleaved into two second messengers. What are these messengers and their immediate downstream targets?",
+    "correct_answer": "IP3, which opens calcium channels on the endoplasmic reticulum, and DAG, which remains membrane-bound and activates protein kinase C.",
+    "distractors": [
+      "cAMP, which activates protein kinase A in the cytoplasm, and cGMP, which opens cyclic nucleotide-gated ion channels.",
+      "Arachidonic acid, which activates cyclooxygenase enzymes, and ceramide, which triggers the apoptotic caspase cascade directly.",
+      "Phosphatidic acid, which recruits RAF kinase to the membrane, and lysophospholipid, which activates nuclear hormone receptors."
+    ],
+    "difficulty": 4,
+    "source_article": "Second messenger system",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "second messenger"
+    ]
+  },
+  {
+    "question_text": "During pre-mRNA splicing, what chemical bond does the branch point adenosine form in the first transesterification reaction, and which snRNP base-pairs with the branch site to bulge out this critical nucleotide?",
+    "correct_answer": "The adenosine 2'-OH attacks the 5' splice site, forming a 2'-5' phosphodiester bond in a lariat intermediate, and U2 snRNP base-pairs at the branch site.",
+    "distractors": [
+      "The branch point guanosine's 3'-OH attacks the 3' splice site, forming a 3'-5' phosphodiester bond in a circular structure, with U1 snRNP base-pairing.",
+      "The branch point cytidine's 5'-OH attacks the 5' splice site, forming a 5'-3' phosphodiester bond in a hairpin structure, with U4 snRNP base-pairing.",
+      "The branch point uridine's 2'-OH attacks the 3' splice site, forming a 2'-3' phosphodiester bond in a stem-loop structure, with U6 snRNP base-pairing."
+    ],
+    "difficulty": 4,
+    "source_article": "RNA splicing",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "RNA splicing"
+    ]
+  },
+  {
+    "question_text": "Trimethylation of histone H3 at lysine 27 (H3K27me3) is a hallmark of gene silencing. Which enzyme complex catalyzes this modification, and what is its catalytic subunit?",
+    "correct_answer": "Polycomb Repressive Complex 2 (PRC2) catalyzes H3K27 trimethylation, with EZH2 serving as the catalytic SET-domain methyltransferase subunit.",
+    "distractors": [
+      "Polycomb Repressive Complex 1 (PRC1) catalyzes H3K27 trimethylation, with RING1B serving as the catalytic ubiquitin ligase subunit.",
+      "The SWI/SNF chromatin remodeling complex catalyzes H3K27 trimethylation, with BRG1 serving as the catalytic ATPase subunit.",
+      "The NuRD deacetylase complex catalyzes H3K27 trimethylation, with HDAC1 serving as the catalytic histone deacetylase subunit."
+    ],
+    "difficulty": 4,
+    "source_article": "Histone",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "histone"
+    ]
+  },
+  {
+    "question_text": "Tight junctions form paracellular barriers in epithelia. Which protein family constitutes the backbone of tight junction strands and determines the charge selectivity of paracellular ion channels?",
+    "correct_answer": "The claudin family of tetraspan transmembrane proteins forms tight junction strands and determines paracellular charge selectivity through their first extracellular loop.",
+    "distractors": [
+      "The occludin family of hexaspan transmembrane proteins forms tight junction strands and determines selectivity through their second extracellular loop.",
+      "The connexin family of gap junction proteins forms tight junction strands and determines selectivity through their cytoplasmic C-terminal domain.",
+      "The cadherin family of single-pass transmembrane proteins forms tight junction strands and determines selectivity through calcium-binding extracellular repeats."
+    ],
+    "difficulty": 4,
+    "source_article": "Tight junction",
+    "domain_ids": [
+      "molecular-cell-biology"
+    ],
+    "concepts_tested": [
+      "tight junction"
+    ]
+  }
+]

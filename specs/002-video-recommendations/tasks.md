@@ -25,7 +25,7 @@ run the full pipeline end-to-end once the reducer is available.
 
 ### Stage 1: Metadata Scrape
 
-- [ ] T-V001 [PIPE] Implement `scripts/scrape_khan_videos.py`: Enumerate all
+- [x] T-V001 [PIPE] Implement `scripts/scrape_khan_videos.py`: Enumerate all
   Khan Academy YouTube videos via `scrapetube` (no API key required). Use
   `scrapetube.get_channel(channel_url="https://www.youtube.com/@khanacademy")`.
   Collect: video ID, title, duration (parse "HH:MM:SS" → seconds), thumbnail
@@ -34,7 +34,7 @@ run the full pipeline end-to-end once the reducer is available.
 
 ### Stage 2: Transcript Download
 
-- [ ] T-V002 [PIPE] Implement `scripts/download_transcripts.py`: Download
+- [x] T-V002 [PIPE] Implement `scripts/download_transcripts.py`: Download
   English transcripts for all scraped videos via `youtube-transcript-api`.
   Rate-limit to 5 requests/second with exponential backoff on 429 errors.
   Checkpoint progress every 500 videos. Exclude videos with no English
@@ -44,7 +44,7 @@ run the full pipeline end-to-end once the reducer is available.
 
 ### Stage 3: Sliding Windows + Embedding
 
-- [ ] T-V003 [PIPE] Implement `scripts/embed_video_windows.py`: Split each
+- [x] T-V003 [PIPE] Implement `scripts/embed_video_windows.py`: Split each
   transcript into sliding windows (512 words, 50-word stride per CL-002).
   Embed each window using `google/embeddinggemma-300m` (768-dim). Batch
   processing with GPU (MPS/CUDA) support. Checkpoint every 100 videos.

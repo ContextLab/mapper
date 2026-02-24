@@ -49,6 +49,7 @@ After all 50 questions complete, **Final Assembly** assigns SHA-256 hash IDs, ra
 | `art-history` | general | — | 2026-02-23 |
 | `physics` | general | — | 2026-02-23 |
 | `biology` | general | — | 2026-02-23 |
+| `neuroscience` | general | — | 2026-02-23 |
 
 ### Remaining Domains (old 5-level format, need regeneration)
 
@@ -58,7 +59,7 @@ After all 50 questions complete, **Final Assembly** assigns SHA-256 hash IDs, ra
 
 | # | Domain | Old Qs | New Qs | Type | Rationale |
 |---|--------|--------|--------|------|-----------|
-| 1 | `neuroscience` | 199 (5-level) | → 50 (4-level) | general | Do before its 3 sub-domains |
+| ~~1~~ | ~~`neuroscience`~~ | ~~199 (5-level)~~ | ~~→ 50 (4-level)~~ | ~~general~~ | **DONE 2026-02-23** |
 | 2 | `mathematics` | 250 (5-level) | → 50 (4-level) | general | Do before its 4 sub-domains |
 
 **Batch 2 — Biology sub-domains** (parent already done):
@@ -68,7 +69,7 @@ After all 50 questions complete, **Final Assembly** assigns SHA-256 hash IDs, ra
 | 3 | `genetics` | 50 (5-level) → 50 (4-level) | sub | Parent already regenerated; can start anytime |
 | 4 | `molecular-cell-biology` | 50 (5-level) → 50 (4-level) | sub | Parent already regenerated; can start anytime |
 
-**Batch 3 — Neuroscience sub-domains** (after neuroscience parent is done):
+**Batch 3 — Neuroscience sub-domains** (parent done; can start anytime):
 
 | # | Domain | Old format | Type | Rationale |
 |---|--------|-----------|------|-----------|
@@ -96,7 +97,7 @@ After all 50 questions complete, **Final Assembly** assigns SHA-256 hash IDs, ra
 
 1. **Parents before children**: Since selecting a general domain also draws from its sub-domains, concepts must NOT overlap between parent and children. Doing parents first establishes the "taken" concepts so sub-domain generation can avoid them.
 
-2. **Physics and biology done**: Their sub-domains can be regenerated at any time.
+2. **Physics, biology, and neuroscience done**: Their sub-domains can be regenerated at any time.
 
 3. **Art-history subs can also start now**: Since `art-history` parent is done.
 
@@ -106,7 +107,7 @@ After all 50 questions complete, **Final Assembly** assigns SHA-256 hash IDs, ra
 
 ## Total Work Remaining
 
-- **13 domains** to regenerate (all from 5-level → 4-level format)
-- **650 questions** to generate (13 × 50)
-- **~26-39 sessions** estimated (2-3 sessions per domain)
+- **12 domains** to regenerate (all from 5-level → 4-level format)
+- **600 questions** to generate (12 × 50)
+- **~24-36 sessions** estimated (2-3 sessions per domain)
 - After regeneration, the `all.json` domain also needs rebuilding to aggregate all questions

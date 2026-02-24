@@ -68,13 +68,13 @@ After all 50 questions complete, **Final Assembly** assigns SHA-256 hash IDs, ra
 | # | Domain | Old format | Type | Rationale |
 |---|--------|-----------|------|-----------|
 | ~~3~~ | ~~`genetics`~~ | ~~50 (5-level) → 50 (4-level)~~ | ~~sub~~ | **DONE 2026-02-23** |
-| 4 | `molecular-cell-biology` | 50 (5-level) → 50 (4-level) | sub | Parent already regenerated; can start anytime |
+| ~~4~~ | ~~`molecular-cell-biology`~~ | ~~50 (5-level) → 50 (4-level)~~ | ~~sub~~ | **DONE 2026-02-23** |
 
 **Batch 3 — Neuroscience sub-domains** (parent done; can start anytime):
 
 | # | Domain | Old format | Type | Rationale |
 |---|--------|-----------|------|-----------|
-| 5 | `cognitive-neuroscience` | 50 (5-level) → 50 (4-level) | sub | Neuroscience sub-domain |
+| ~~5~~ | ~~`cognitive-neuroscience`~~ | ~~50 (5-level) → 50 (4-level)~~ | ~~sub~~ | **DONE 2026-02-24** |
 | 6 | `neurobiology` | 50 (5-level) → 50 (4-level) | sub | Neuroscience sub-domain |
 | 7 | `computational-neuroscience` | 50 (5-level) → 50 (4-level) | sub | Neuroscience sub-domain |
 

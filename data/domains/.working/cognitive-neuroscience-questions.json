@@ -1,0 +1,852 @@
+[
+  {
+    "question_text": "In cognitive neuroscience, what is perception?",
+    "correct_answer": "The organization, identification, and interpretation of sensory information to represent and understand the environment.",
+    "distractors": [
+      "The organization, identification, and interpretation of motor commands to coordinate and execute voluntary movements.",
+      "The encoding, consolidation, and retrieval of sensory information to form lasting representations in long-term memory.",
+      "The selective concentration of awareness on specific sensory information while filtering out competing environmental stimuli."
+    ],
+    "difficulty": 1,
+    "source_article": "Perception",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "perception"
+    ]
+  },
+  {
+    "question_text": "In cognitive neuroscience, what is attention?",
+    "correct_answer": "The concentration of awareness on a phenomenon while excluding other competing stimuli.",
+    "distractors": [
+      "The organization and interpretation of sensory signals to form a coherent representation of the environment.",
+      "The subjective awareness of one's own internal mental states and external surroundings.",
+      "The temporary maintenance and manipulation of information needed for ongoing cognitive tasks."
+    ],
+    "difficulty": 1,
+    "source_article": "Attention",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "attention"
+    ]
+  },
+  {
+    "question_text": "In cognitive neuroscience, what is memory?",
+    "correct_answer": "The faculty of the mind by which information is encoded, stored, and retrieved when needed.",
+    "distractors": [
+      "The faculty of the mind by which awareness is selectively directed toward relevant environmental stimuli.",
+      "The process by which the mind acquires new knowledge, skills, and behavioral responses through experience.",
+      "The faculty of the mind by which sensory signals are organized and interpreted as coherent experiences."
+    ],
+    "difficulty": 1,
+    "source_article": "Memory",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "memory"
+    ]
+  },
+  {
+    "question_text": "In cognitive neuroscience, what are emotions?",
+    "correct_answer": "Physical and mental states brought on by neurophysiological changes, associated with thoughts, feelings, and behavioral responses.",
+    "distractors": [
+      "Prolonged affective states that persist independently of neurophysiological changes, shaping general disposition rather than specific behavioral responses.",
+      "Automatic physiological reactions triggered by sensory stimuli, occurring without associated thoughts, feelings, or conscious behavioral responses.",
+      "Internal drive states arising from homeostatic imbalances, directing goal-oriented behavior toward satisfying biological needs and desires."
+    ],
+    "difficulty": 1,
+    "source_article": "Emotion",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "emotion"
+    ]
+  },
+  {
+    "question_text": "In cognitive neuroscience, what is consciousness?",
+    "correct_answer": "The awareness of internal mental states or of objects and events in one's external environment.",
+    "distractors": [
+      "The selective focusing of cognitive resources on specific stimuli while suppressing responses to competing environmental information.",
+      "The neural processing and interpretation of sensory inputs to construct representations of objects in the external environment.",
+      "The capacity for introspective reasoning about one's own personality traits, beliefs, and long-term autobiographical memories."
+    ],
+    "difficulty": 1,
+    "source_article": "Consciousness",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "consciousness"
+    ]
+  },
+  {
+    "question_text": "In cognitive neuroscience, what is learning?",
+    "correct_answer": "The process of acquiring new understanding, knowledge, behaviors, skills, values, attitudes, and preferences.",
+    "distractors": [
+      "The process of encoding, storing, and later retrieving previously acquired knowledge, behaviors, and experiences.",
+      "The genetically programmed maturation of cognitive abilities, motor skills, and behavioral capacities across the lifespan.",
+      "The involuntary formation of associations between environmental stimuli and reflexive responses through repeated paired exposure."
+    ],
+    "difficulty": 1,
+    "source_article": "Learning",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "learning"
+    ]
+  },
+  {
+    "question_text": "In cognitive neuroscience, what are executive functions?",
+    "correct_answer": "A set of cognitive processes that support goal-directed behavior by regulating thoughts and actions through cognitive control.",
+    "distractors": [
+      "A set of neural processes that support stimulus-driven behavior by transforming sensory inputs into perceptual representations through cortical integration.",
+      "A set of affective processes that support mood stability by modulating emotional arousal and hedonic responses through limbic activation.",
+      "A set of motor processes that support coordinated movement by translating intended actions into precise muscular contractions through cerebellar control."
+    ],
+    "difficulty": 1,
+    "source_article": "Executive_functions",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "executive functions"
+    ]
+  },
+  {
+    "question_text": "In cognitive science, what does the term 'intelligence' refer to?",
+    "correct_answer": "The capacity to perceive or infer information and retain it as knowledge applied to adaptive behaviors within an environment.",
+    "distractors": [
+      "The capacity to store and retrieve sensory data in short-term memory buffers without applying it to behavior or environmental adaptation.",
+      "The reflexive motor responses an organism produces when encountering novel stimuli in its immediate physical surroundings.",
+      "The emotional regulation of physiological arousal states that enables organisms to maintain homeostasis across varying environmental conditions."
+    ],
+    "difficulty": 1,
+    "source_article": "Intelligence",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "intelligence"
+    ]
+  },
+  {
+    "question_text": "What is sleep, as defined in neuroscience?",
+    "correct_answer": "A naturally recurring state of reduced mental and physical activity in which consciousness is altered and sensory responsiveness is diminished.",
+    "distractors": [
+      "A state of complete neural inactivity in which all brain regions cease firing and the cortex enters a flatline pattern.",
+      "A voluntary behavioral response to fatigue in which only peripheral nervous system activity is reduced while cortical activity increases.",
+      "A form of prolonged unconsciousness equivalent to coma in which no external stimuli can be detected or processed."
+    ],
+    "difficulty": 1,
+    "source_article": "Sleep",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "sleep"
+    ]
+  },
+  {
+    "question_text": "What is motivation in the context of psychology and neuroscience?",
+    "correct_answer": "An internal state that propels individuals to initiate, sustain, or terminate goal-directed behavior.",
+    "distractors": [
+      "An external stimulus that reflexively triggers fixed behavioral patterns without involving internal goals or cognitive processes.",
+      "A conscious deliberation process in which individuals logically evaluate all possible actions before selecting one.",
+      "A physiological arousal state produced exclusively by hormonal changes that regulate metabolic energy expenditure."
+    ],
+    "difficulty": 1,
+    "source_article": "Motivation",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "motivation"
+    ]
+  },
+  {
+    "question_text": "What is decision-making, as studied in cognitive psychology?",
+    "correct_answer": "The cognitive process of selecting a belief or course of action from among several possible alternatives.",
+    "distractors": [
+      "The automatic retrieval of previously stored memories that determines behavioral responses without evaluating any alternatives.",
+      "The emotional appraisal of environmental threats that triggers a fight-or-flight response before conscious awareness.",
+      "The perceptual process of detecting and discriminating between different sensory stimuli in the surrounding environment."
+    ],
+    "difficulty": 1,
+    "source_article": "Decision-making",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "decision-making"
+    ]
+  },
+  {
+    "question_text": "What does the term 'imagination' refer to in cognitive science?",
+    "correct_answer": "The mental representation of sensations or objects without any immediate sensory input, encompassing visual imagery and other modalities.",
+    "distractors": [
+      "The direct perception of external stimuli through the primary sensory cortices, requiring continuous input from the sense organs.",
+      "The consolidation of episodic memories during sleep that permanently encodes experienced events into long-term declarative storage.",
+      "The executive control process that inhibits irrelevant thoughts and maintains focused attention on a single external task."
+    ],
+    "difficulty": 1,
+    "source_article": "Imagination",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "imagination"
+    ]
+  },
+  {
+    "question_text": "What is psycholinguistics?",
+    "correct_answer": "The study of how language is processed, represented, acquired, and produced by the human mind and brain.",
+    "distractors": [
+      "The study of how acoustic sound waves are physically transmitted through the auditory canal to the cochlea.",
+      "The study of how grammatical rules evolved historically across different language families and geographic regions.",
+      "The study of how social power dynamics and cultural norms shape conversational turn-taking in group settings."
+    ],
+    "difficulty": 1,
+    "source_article": "Psycholinguistics",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "psycholinguistics"
+    ]
+  },
+  {
+    "question_text": "In the hippocampus, what are the neurons called that fire bursts of action potentials when an animal passes through a specific location in its environment?",
+    "correct_answer": "Place cells",
+    "distractors": [
+      "Grid cells",
+      "Mirror neurons",
+      "Pyramidal cells"
+    ],
+    "difficulty": 2,
+    "source_article": "Hippocampus",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "hippocampus"
+    ]
+  },
+  {
+    "question_text": "Which subdivision of the prefrontal cortex is most closely associated with working memory and cognitive control of behavior?",
+    "correct_answer": "The dorsolateral prefrontal cortex",
+    "distractors": [
+      "The ventromedial prefrontal cortex",
+      "The orbitofrontal cortex",
+      "The anterior cingulate cortex"
+    ],
+    "difficulty": 2,
+    "source_article": "Prefrontal_cortex",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "prefrontal cortex"
+    ]
+  },
+  {
+    "question_text": "What type of aphasia is characterized by fluent but paraphasic speech, defective auditory comprehension, and impaired repetition?",
+    "correct_answer": "Wernicke's aphasia (receptive aphasia)",
+    "distractors": [
+      "Broca's aphasia (expressive aphasia)",
+      "Conduction aphasia",
+      "Transcortical sensory aphasia"
+    ],
+    "difficulty": 2,
+    "source_article": "Aphasia",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "aphasia"
+    ]
+  },
+  {
+    "question_text": "In Baddeley's model of working memory, which component is responsible for maintaining and rehearsing auditory and verbal information?",
+    "correct_answer": "The phonological loop",
+    "distractors": [
+      "The visuospatial sketchpad",
+      "The central executive",
+      "The episodic buffer"
+    ],
+    "difficulty": 2,
+    "source_article": "Working_memory",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "working memory"
+    ]
+  },
+  {
+    "question_text": "In the classification of long-term memory, what are the two subtypes of explicit (declarative) memory?",
+    "correct_answer": "Episodic memory and semantic memory",
+    "distractors": [
+      "Procedural memory and semantic memory",
+      "Episodic memory and procedural memory",
+      "Sensory memory and procedural memory"
+    ],
+    "difficulty": 2,
+    "source_article": "Long-term_memory",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "long-term memory"
+    ]
+  },
+  {
+    "question_text": "What is the surgical procedure called in which the corpus callosum is severed, producing split-brain patients used in lateralization research?",
+    "correct_answer": "Corpus callosotomy",
+    "distractors": [
+      "Prefrontal lobotomy",
+      "Temporal lobectomy",
+      "Cerebral hemispherectomy"
+    ],
+    "difficulty": 2,
+    "source_article": "Lateralization_of_brain_function",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "lateralization of brain function"
+    ]
+  },
+  {
+    "question_text": "Which brain structure serves as a major posterior hub of the default mode network, showing consistent activity during wakeful rest and self-referential thought?",
+    "correct_answer": "The posterior cingulate cortex (PCC)",
+    "distractors": [
+      "The dorsolateral prefrontal cortex (dlPFC)",
+      "The primary visual cortex (V1)",
+      "The anterior insula cortex"
+    ],
+    "difficulty": 2,
+    "source_article": "Default_mode_network",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "default mode network"
+    ]
+  },
+  {
+    "question_text": "In ERP research, which component is a negative deflection peaking around 400 milliseconds that indexes semantic incongruity in language processing?",
+    "correct_answer": "The N400 component",
+    "distractors": [
+      "The P300 component",
+      "The N170 component",
+      "The P600 component"
+    ],
+    "difficulty": 2,
+    "source_article": "Event-related_potential",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "event-related potential"
+    ]
+  },
+  {
+    "question_text": "In the heuristics and biases literature, what is the term for the tendency to rely too heavily on the first piece of information encountered when making estimates?",
+    "correct_answer": "The anchoring effect (or anchoring bias)",
+    "distractors": [
+      "The availability heuristic (or availability bias)",
+      "The framing effect (or framing bias)",
+      "The representativeness heuristic (or base-rate neglect)"
+    ],
+    "difficulty": 2,
+    "source_article": "Cognitive_bias",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "cognitive bias"
+    ]
+  },
+  {
+    "question_text": "What is the name of the brain region in the fusiform gyrus that selectively responds to faces and is critical for face identification?",
+    "correct_answer": "The fusiform face area (FFA)",
+    "distractors": [
+      "The superior temporal sulcus (STS)",
+      "The occipital face area (OFA)",
+      "The lateral occipital complex (LOC)"
+    ],
+    "difficulty": 2,
+    "source_article": "Face_perception",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "face perception"
+    ]
+  },
+  {
+    "question_text": "Edward Tolman proposed that animals form internal representations of spatial layouts to navigate environments. What is this representation called?",
+    "correct_answer": "A cognitive map",
+    "distractors": [
+      "A stimulus-response chain",
+      "A spatial schema",
+      "A place field"
+    ],
+    "difficulty": 2,
+    "source_article": "Spatial_memory",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "spatial memory"
+    ]
+  },
+  {
+    "question_text": "In developmental psychology, what is the name of the classic task used to assess a child's ability to attribute false beliefs to another person?",
+    "correct_answer": "The Sally-Anne test (or false belief task)",
+    "distractors": [
+      "The Stroop test (or cognitive interference task)",
+      "The Wisconsin card sorting test (or set-shifting task)",
+      "The strange situation test (or attachment classification task)"
+    ],
+    "difficulty": 2,
+    "source_article": "Theory_of_mind",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "theory of mind"
+    ]
+  },
+  {
+    "question_text": "In Piaget's theory, during which stage do children first develop object permanence -- the understanding that objects continue to exist when out of sight?",
+    "correct_answer": "The sensorimotor stage (birth to approximately two years)",
+    "distractors": [
+      "The preoperational stage (approximately two to seven years)",
+      "The concrete operational stage (approximately seven to eleven years)",
+      "The formal operational stage (approximately eleven years onward)"
+    ],
+    "difficulty": 2,
+    "source_article": "Cognitive_development",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "cognitive development"
+    ]
+  },
+  {
+    "question_text": "In cognitive neuroscience, what distinguishes the firing behavior of hippocampal place cells when an animal is inside versus outside the cell's place field?",
+    "correct_answer": "Place cells shift from a low resting rate below 1 Hz to bursts exceeding 100 Hz when the animal enters the specific spatial location.",
+    "distractors": [
+      "Place cells shift from a high tonic rate above 100 Hz to suppressed firing below 1 Hz when the animal enters the specific spatial location.",
+      "Place cells maintain a constant moderate rate near 40 Hz but synchronize their phase with theta oscillations when the animal enters the specific spatial location.",
+      "Place cells shift from a low resting rate below 1 Hz to bursts exceeding 100 Hz upon encountering a novel object in the environment."
+    ],
+    "difficulty": 3,
+    "source_article": "Place_cell",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "place cell"
+    ]
+  },
+  {
+    "question_text": "In the classic Stroop task, why does naming the ink color of an incongruent color word (e.g., 'red' printed in blue) produce interference?",
+    "correct_answer": "Because reading is highly automated, the brain involuntarily processes the word's meaning, which conflicts with the required ink-color naming response.",
+    "distractors": [
+      "Because color perception is highly automated, the brain involuntarily processes the ink's hue, which conflicts with the required word-reading response.",
+      "Because attention is captured by novelty, the brain involuntarily orients to the unusual font, which conflicts with the required ink-color naming response.",
+      "Because reading is highly automated, the brain involuntarily processes the word's phonology, which conflicts with the required spatial-location naming response."
+    ],
+    "difficulty": 3,
+    "source_article": "Stroop_effect",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "Stroop effect"
+    ]
+  },
+  {
+    "question_text": "What perceptual condition must typically be met for an observer to detect a change in a visual scene, according to change blindness research?",
+    "correct_answer": "The change must produce a localizable visual transient -- a brief disruption signal -- at a specific position on the observer's retina.",
+    "distractors": [
+      "The change must exceed a minimum size threshold -- a large visual area -- at a specific position on the observer's retina.",
+      "The change must produce a sustained luminance shift -- a lasting brightness alteration -- across the entire extent of the observer's visual field.",
+      "The change must occur during a fixation interval -- a stable gaze period -- at a specific position on the observer's retina."
+    ],
+    "difficulty": 3,
+    "source_article": "Change_blindness",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "change blindness"
+    ]
+  },
+  {
+    "question_text": "According to Tulving, what are the three defining properties of episodic memory recollection that distinguish it from other memory systems?",
+    "correct_answer": "A subjective sense of time (mental time travel), a connection to the self, and autonoetic consciousness.",
+    "distractors": [
+      "A subjective sense of time (mental time travel), a connection to the self, and noetic consciousness.",
+      "A subjective sense of familiarity (deja vu recognition), a connection to the self, and autonoetic consciousness.",
+      "A subjective sense of time (mental time travel), a connection to spatial context, and autonoetic consciousness."
+    ],
+    "difficulty": 3,
+    "source_article": "Episodic_memory",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "episodic memory"
+    ]
+  },
+  {
+    "question_text": "How does Tulving's framework distinguish the organizational basis of semantic memory from that of episodic memory?",
+    "correct_answer": "Semantic memory organizes information through conceptual, meaning-based associations, whereas episodic memory relies on spatiotemporal relations linking personal experiences.",
+    "distractors": [
+      "Semantic memory organizes information through spatiotemporal relations, whereas episodic memory relies on conceptual, meaning-based associations linking personal experiences.",
+      "Semantic memory organizes information through sensory-perceptual encoding, whereas episodic memory relies on spatiotemporal relations linking personal experiences.",
+      "Semantic memory organizes information through procedural motor sequences, whereas episodic memory relies on spatiotemporal relations linking personal experiences."
+    ],
+    "difficulty": 3,
+    "source_article": "Semantic_memory",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "semantic memory"
+    ]
+  },
+  {
+    "question_text": "In Shepard and Metzler's classic 1971 mental rotation experiment, what was the key finding about the relationship between rotation angle and response time?",
+    "correct_answer": "Response time was linearly proportional to the angular difference -- the greater the rotation from the original orientation, the longer participants took to respond.",
+    "distractors": [
+      "Response time was logarithmically proportional to the angular difference -- the greater the rotation from the original orientation, the longer participants took to respond.",
+      "Response time was linearly proportional to the object complexity -- the more segments in the figure, the longer participants took to respond.",
+      "Response time remained constant regardless of angular difference -- only stimulus mirror-reversal, not rotation magnitude, affected how long participants took to respond."
+    ],
+    "difficulty": 3,
+    "source_article": "Mental_rotation",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "mental rotation"
+    ]
+  },
+  {
+    "question_text": "In the 'invisible gorilla' experiment by Simons and Chabris, participants focused on a ball-passing task failed to notice a gorilla walking through the scene. What cognitive phenomenon does this demonstrate?",
+    "correct_answer": "Inattentional blindness, the failure to perceive an unexpected but visible stimulus when attention is engaged elsewhere.",
+    "distractors": [
+      "Change blindness, the failure to detect changes in a visual scene when attention is engaged elsewhere.",
+      "Attentional blink, the failure to perceive a second target stimulus when attention is engaged elsewhere.",
+      "Selective attention, the failure to perceive an irrelevant but visible stimulus when attention is engaged elsewhere."
+    ],
+    "difficulty": 3,
+    "source_article": "Inattentional_blindness",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "inattentional blindness"
+    ]
+  },
+  {
+    "question_text": "In Baddeley's working memory model, which component temporarily maintains verbal information through a passive store and an active articulatory rehearsal process?",
+    "correct_answer": "The phonological loop, which holds speech-based information and refreshes it through subvocal repetition.",
+    "distractors": [
+      "The visuospatial sketchpad, which holds speech-based information and refreshes it through subvocal repetition.",
+      "The phonological loop, which holds episodic information and refreshes it through conscious retrieval.",
+      "The central executive, which holds speech-based information and refreshes it through subvocal repetition."
+    ],
+    "difficulty": 3,
+    "source_article": "Phonological_loop",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "phonological loop"
+    ]
+  },
+  {
+    "question_text": "During systems consolidation, memories gradually become independent of which brain structure as they are redistributed to neocortical networks over weeks to years?",
+    "correct_answer": "The hippocampus, which initially supports new declarative memories before cortical networks assume storage.",
+    "distractors": [
+      "The amygdala, which initially supports new declarative memories before cortical networks assume storage.",
+      "The hippocampus, which initially supports new procedural memories before cortical networks assume storage.",
+      "The prefrontal cortex, which initially supports new declarative memories before cortical networks assume storage."
+    ],
+    "difficulty": 3,
+    "source_article": "Memory_consolidation",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "memory consolidation"
+    ]
+  },
+  {
+    "question_text": "Some individuals show significant Alzheimer's neuropathology at autopsy yet exhibited no cognitive impairment during life. What concept explains this discrepancy between brain damage and preserved function?",
+    "correct_answer": "Cognitive reserve, the brain's capacity to maintain function despite neuropathology through compensatory neural processes.",
+    "distractors": [
+      "Brain reserve, the brain's structural volume that maintains function despite neuropathology through larger anatomical size.",
+      "Neural plasticity, the brain's capacity to maintain function despite neuropathology through forming new synaptic connections.",
+      "Cognitive reserve, the brain's capacity to prevent neuropathology through compensatory neural processes."
+    ],
+    "difficulty": 3,
+    "source_article": "Cognitive_reserve",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "cognitive reserve"
+    ]
+  },
+  {
+    "question_text": "Discovered by Kutas and Hillyard, the N400 is an event-related potential component that peaks around 400 ms after stimulus onset. What does its amplitude primarily index?",
+    "correct_answer": "The difficulty of semantic processing, with larger amplitudes for semantically unexpected or incongruent stimuli.",
+    "distractors": [
+      "The difficulty of syntactic processing, with larger amplitudes for grammatically unexpected or incongruent stimuli.",
+      "The difficulty of semantic processing, with larger amplitudes for physically unexpected or novel stimuli.",
+      "The speed of attentional orienting, with larger amplitudes for semantically unexpected or incongruent stimuli."
+    ],
+    "difficulty": 3,
+    "source_article": "N400_(neuroscience)",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "N400"
+    ]
+  },
+  {
+    "question_text": "In the Wisconsin Card Sorting Test, the sorting rule changes without warning and participants must adapt. What cognitive ability does this test primarily assess?",
+    "correct_answer": "Set-shifting and cognitive flexibility, core executive functions associated with prefrontal cortex activity.",
+    "distractors": [
+      "Working memory and information maintenance, core executive functions associated with prefrontal cortex activity.",
+      "Set-shifting and cognitive flexibility, core attentional functions associated with parietal cortex activity.",
+      "Response inhibition and impulse control, core executive functions associated with prefrontal cortex activity."
+    ],
+    "difficulty": 3,
+    "source_article": "Wisconsin_Card_Sorting_Test",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "Wisconsin card sorting test"
+    ]
+  },
+  {
+    "question_text": "How is grid cell spatial periodicity organized along the dorsoventral axis of medial entorhinal cortex?",
+    "correct_answer": "In discrete modules with distinct spatial scales, not as a continuous gradient",
+    "distractors": [
+      "As a smooth continuous gradient of increasing spatial scales from dorsal to ventral",
+      "In a single uniform spatial scale maintained throughout the entire dorsoventral extent",
+      "As randomly distributed spatial frequencies with no systematic topographic organization"
+    ],
+    "difficulty": 4,
+    "source_article": "Grid_cell",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "grid cell"
+    ]
+  },
+  {
+    "question_text": "In Dehaene and Changeux's Global Neuronal Workspace model, what distinguishes conscious from unconscious processing of a stimulus?",
+    "correct_answer": "A nonlinear ignition of sustained reverberant activity in prefrontal-parietal networks, occurring around 200-300 ms post-stimulus",
+    "distractors": [
+      "A linear increase in feedforward activation strength propagating continuously from sensory cortex to prefrontal regions",
+      "A nonlinear ignition of sustained reverberant activity restricted to primary sensory cortices, occurring around 50-100 ms post-stimulus",
+      "A gradual accumulation of inhibitory prefrontal feedback that suppresses competing sensory representations over several seconds"
+    ],
+    "difficulty": 4,
+    "source_article": "Global_workspace_theory",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "global workspace theory"
+    ]
+  },
+  {
+    "question_text": "Recent empirical studies suggest the content-specific neural correlates of consciousness are primarily localized to which brain region?",
+    "correct_answer": "A posterior cortical hot zone spanning parietal, temporal, and occipital areas, not prefrontal cortex",
+    "distractors": [
+      "A prefrontal cortical network spanning dorsolateral and ventromedial areas, not posterior sensory cortex",
+      "A subcortical hub centered on the thalamic reticular nucleus and basal ganglia output circuits",
+      "A distributed frontotemporal network anchored in Broca's and Wernicke's language areas bilaterally"
+    ],
+    "difficulty": 4,
+    "source_article": "Neural_correlates_of_consciousness",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "neural correlates of consciousness"
+    ]
+  },
+  {
+    "question_text": "What role does prediction error play in triggering memory reconsolidation upon retrieval?",
+    "correct_answer": "It is a necessary but not sufficient condition for destabilizing the reactivated memory trace",
+    "distractors": [
+      "It is both necessary and sufficient to destabilize any reactivated memory trace regardless of strength",
+      "It prevents destabilization by reinforcing the reactivated memory trace through enhanced protein synthesis",
+      "It is irrelevant to destabilization because retrieval alone automatically triggers the reconsolidation cascade"
+    ],
+    "difficulty": 4,
+    "source_article": "Memory_reconsolidation",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "memory reconsolidation"
+    ]
+  },
+  {
+    "question_text": "Why does right-hemisphere damage produce hemispatial neglect far more frequently and severely than left-hemisphere damage?",
+    "correct_answer": "The right hemisphere mediates attention to both hemifields, while the left hemisphere attends primarily to contralateral space",
+    "distractors": [
+      "The left hemisphere mediates attention to both hemifields, while the right hemisphere attends primarily to contralateral space",
+      "The right hemisphere contains all primary visual cortex, so its damage eliminates sensory input from left hemifield",
+      "Both hemispheres attend only contralaterally, but right-hemisphere lesions also damage the corpus callosum more frequently"
+    ],
+    "difficulty": 4,
+    "source_article": "Hemispatial_neglect",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "hemispatial neglect"
+    ]
+  },
+  {
+    "question_text": "In the Iowa Gambling Task, what physiological finding in healthy participants most directly supports the somatic marker hypothesis?",
+    "correct_answer": "Anticipatory skin conductance responses emerge before disadvantageous deck choices, even prior to conscious strategy awareness",
+    "distractors": [
+      "Anticipatory skin conductance responses emerge only after participants consciously identify the disadvantageous deck contingencies",
+      "Elevated baseline skin conductance throughout the entire task correlates with overall improved decision-making performance",
+      "Anticipatory skin conductance responses emerge equally before all deck choices regardless of their outcome contingencies"
+    ],
+    "difficulty": 4,
+    "source_article": "Somatic_marker_hypothesis",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "somatic marker hypothesis"
+    ]
+  },
+  {
+    "question_text": "In the classic McGurk and MacDonald (1976) demonstration, auditory /ba/ dubbed onto visual lip movements for /ga/ typically produces which perceived fusion syllable?",
+    "correct_answer": "The perceived syllable is /da/, an intermediate fusion of the auditory bilabial and visual velar places of articulation",
+    "distractors": [
+      "The perceived syllable is /ga/, reflecting complete visual capture overriding the auditory bilabial place of articulation",
+      "The perceived syllable is /ba/, as auditory input dominates visual lip movements for velar place of articulation",
+      "The perceived syllable is /bga/, a combination response preserving both auditory bilabial and visual velar places of articulation"
+    ],
+    "difficulty": 4,
+    "source_article": "McGurk_effect",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "McGurk effect"
+    ]
+  },
+  {
+    "question_text": "In the rubber hand illusion, fMRI studies show that the subjective feeling of ownership over the rubber hand is specifically associated with increased activity in which cortical region?",
+    "correct_answer": "The ventral premotor cortex, which receives integrated visuotactile signals from the parietal cortex during synchronous stroking",
+    "distractors": [
+      "The primary somatosensory cortex, which receives integrated visuotactile signals from the thalamus during synchronous stroking",
+      "The posterior parietal cortex, which generates integrated visuotactile signals independently of premotor regions during synchronous stroking",
+      "The anterior cingulate cortex, which receives integrated visuotactile signals from the insula during synchronous stroking"
+    ],
+    "difficulty": 4,
+    "source_article": "Body_transfer_illusion",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "rubber hand illusion"
+    ]
+  },
+  {
+    "question_text": "Craik and Lockhart's levels-of-processing framework directly challenged which specific assumption of the Atkinson-Shiffrin multi-store model regarding long-term memory formation?",
+    "correct_answer": "That rehearsal always strengthens long-term memory, regardless of whether processing is shallow maintenance rehearsal or deep semantic elaboration",
+    "distractors": [
+      "That short-term memory has limited capacity, regardless of whether processing is shallow maintenance rehearsal or deep semantic elaboration",
+      "That encoding specificity determines retrieval success, regardless of whether processing is shallow maintenance rehearsal or deep semantic elaboration",
+      "That sensory memory decays within seconds, regardless of whether processing is shallow maintenance rehearsal or deep semantic elaboration"
+    ],
+    "difficulty": 4,
+    "source_article": "Levels-of-processing_effect",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "levels-of-processing effect"
+    ]
+  },
+  {
+    "question_text": "According to Klein's foraging facilitator hypothesis, inhibition of return promotes efficient visual search by what specific attentional mechanism?",
+    "correct_answer": "By placing inhibitory tags at previously attended locations, biasing serial search toward novel, unexamined spatial positions",
+    "distractors": [
+      "By suppressing oculomotor reflexes at previously attended locations, biasing parallel search toward novel, unexamined spatial positions",
+      "By enhancing perceptual sensitivity at previously attended locations, biasing serial search toward familiar, re-examined spatial positions",
+      "By placing excitatory tags at previously attended locations, biasing feature-based search toward novel, unexamined object identities"
+    ],
+    "difficulty": 4,
+    "source_article": "Inhibition_of_return",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "inhibition of return"
+    ]
+  },
+  {
+    "question_text": "In Vogel and Machizawa's work, what distinguishes the contralateral delay activity of high-capacity individuals from low-capacity individuals as memory set size increases?",
+    "correct_answer": "High-capacity individuals show continued CDA amplitude increases up to about four items, while low-capacity individuals asymptote at around two items",
+    "distractors": [
+      "High-capacity individuals show continued CDA amplitude increases up to about four items, while low-capacity individuals show no measurable CDA at any set size",
+      "High-capacity individuals show earlier CDA latency onset at about four items, while low-capacity individuals asymptote at around two items",
+      "High-capacity individuals show continued CDA amplitude decreases beyond about four items, while low-capacity individuals asymptote at around two items"
+    ],
+    "difficulty": 4,
+    "source_article": "Contralateral_delay_activity",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "contralateral delay activity"
+    ]
+  },
+  {
+    "question_text": "In blindsight patients with V1 lesions, residual conscious awareness of fast-moving stimuli is attributed to which specific anatomical pathway?",
+    "correct_answer": "A direct projection from the lateral geniculate nucleus to area V5/MT that bypasses the primary visual cortex entirely",
+    "distractors": [
+      "A direct projection from the superior colliculus to area V5/MT that bypasses both the lateral geniculate nucleus and primary visual cortex",
+      "A direct projection from the lateral geniculate nucleus to area V2 that bypasses the primary visual cortex entirely",
+      "A direct projection from the pulvinar nucleus to the prefrontal cortex that bypasses the primary visual cortex entirely"
+    ],
+    "difficulty": 4,
+    "source_article": "Blindsight",
+    "domain_ids": [
+      "cognitive-neuroscience"
+    ],
+    "concepts_tested": [
+      "blindsight"
+    ]
+  }
+]

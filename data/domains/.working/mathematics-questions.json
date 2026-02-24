@@ -1,0 +1,852 @@
+[
+  {
+    "question_text": "In mathematics, what is a statement such as $2x + 3 = 7$ that asserts two expressions represent the same value?",
+    "correct_answer": "An equation, which is a statement asserting the equality of two mathematical expressions.",
+    "distractors": [
+      "An inequality, which is a statement asserting the equivalence of two mathematical expressions.",
+      "An expression, which is a statement asserting the equality of two mathematical equations.",
+      "An identity, which is a statement asserting that two algebraic terms share the same variable."
+    ],
+    "difficulty": 1,
+    "source_article": "Equation",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "equation"
+    ]
+  },
+  {
+    "question_text": "In mathematics, a rule that assigns to each element of one set exactly one element of another set is known as what?",
+    "correct_answer": "A function, which maps each input from the domain to exactly one output in the codomain.",
+    "distractors": [
+      "A relation, which maps each input from the domain to one or more outputs in the codomain.",
+      "A function, which maps each input from the range to exactly one output in the domain.",
+      "A bijection, which maps each input from the domain to exactly one output in the range."
+    ],
+    "difficulty": 1,
+    "source_article": "Function (mathematics)",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "function"
+    ]
+  },
+  {
+    "question_text": "Which branch of mathematics is concerned with properties of space such as distance, shape, size, and the relative position of figures?",
+    "correct_answer": "Geometry, one of the oldest branches of mathematics alongside arithmetic.",
+    "distractors": [
+      "Topology, one of the oldest branches of mathematics alongside arithmetic.",
+      "Geometry, one of the newest branches of mathematics alongside calculus.",
+      "Trigonometry, one of the oldest branches of mathematics alongside geometry."
+    ],
+    "difficulty": 1,
+    "source_article": "Geometry",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "geometry"
+    ]
+  },
+  {
+    "question_text": "In mathematics, a collection of distinct objects -- such as numbers, symbols, or points -- considered as a single whole is called what?",
+    "correct_answer": "A set, whose objects are called its elements or members.",
+    "distractors": [
+      "A group, whose objects are called its elements or members.",
+      "A set, whose objects are called its subsets or partitions.",
+      "A class, whose objects are called its variables or terms."
+    ],
+    "difficulty": 1,
+    "source_article": "Set (mathematics)",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "set"
+    ]
+  },
+  {
+    "question_text": "In mathematics, what term describes the property that an object remains unchanged under a set of operations or transformations?",
+    "correct_answer": "Symmetry, which is a type of invariance found in geometry and many other branches of mathematics.",
+    "distractors": [
+      "Commutativity, which is a type of invariance found in geometry and many other branches of mathematics.",
+      "Symmetry, which is a type of equivalence found in topology and many other branches of mathematics.",
+      "Isometry, which is a type of invariance found in algebra and many other branches of mathematics."
+    ],
+    "difficulty": 1,
+    "source_article": "Symmetry in mathematics",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "symmetry"
+    ]
+  },
+  {
+    "question_text": "Which mathematical constant, approximately equal to $3.14159$, represents the ratio of a circle's circumference to its diameter?",
+    "correct_answer": "The number $\\pi$ (pi), an irrational constant that appears throughout mathematics and physics.",
+    "distractors": [
+      "The number $e$ (Euler's number), an irrational constant that appears throughout mathematics and physics.",
+      "The number $\\pi$ (pi), a transcendental constant that appears only in geometry and trigonometry.",
+      "The number $\\tau$ (tau), an irrational constant that appears throughout mathematics and physics."
+    ],
+    "difficulty": 1,
+    "source_article": "Pi",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "pi"
+    ]
+  },
+  {
+    "question_text": "In mathematics, what concept, denoted by the symbol $\\infty$, refers to a quantity greater than any assignable number?",
+    "correct_answer": "Infinity, a concept referring to unbounded quantity, studied rigorously through infinite sets and transfinite numbers.",
+    "distractors": [
+      "Infinity, a concept referring to unbounded quantity, studied rigorously through cardinal numbers and limit theory.",
+      "A limit, a concept referring to unbounded quantity, studied rigorously through infinite sets and transfinite numbers.",
+      "Infinity, a concept referring to indeterminate quantity, studied rigorously through divergent series and asymptotic analysis."
+    ],
+    "difficulty": 1,
+    "source_article": "Infinity",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "infinity"
+    ]
+  },
+  {
+    "question_text": "In discrete mathematics, what is a structure consisting of vertices (dots) and edges (lines connecting them) that represents relationships between pairs of objects?",
+    "correct_answer": "A graph, which models pairwise relations between objects using a set of vertices connected by edges.",
+    "distractors": [
+      "A tree, which models hierarchical relations between objects using a set of vertices connected by edges.",
+      "A graph, which models sequential relations between objects using an ordered list of vertices connected by directed edges.",
+      "A lattice, which models pairwise relations between objects using a set of nodes connected by weighted paths."
+    ],
+    "difficulty": 1,
+    "source_article": "Graph (discrete mathematics)",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "graph"
+    ]
+  },
+  {
+    "question_text": "In mathematics and computer science, what is a finite sequence of rigorous instructions used to solve a class of problems or perform a computation?",
+    "correct_answer": "An algorithm, a step-by-step procedure that specifies how to perform calculations or process data.",
+    "distractors": [
+      "A heuristic, a step-by-step procedure that specifies how to approximate calculations or process data.",
+      "An algorithm, a recursive procedure that specifies how to decompose calculations into irreducible subproblems.",
+      "An algorithm, a nondeterministic procedure that specifies how to explore all calculations and process data simultaneously."
+    ],
+    "difficulty": 1,
+    "source_article": "Algorithm",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "algorithm"
+    ]
+  },
+  {
+    "question_text": "In mathematics and formal logic, what is a statement that has been proven to be true using a logical argument based on axioms and inference rules?",
+    "correct_answer": "A theorem, a mathematical statement whose truth has been established through a formal proof.",
+    "distractors": [
+      "An axiom, a mathematical statement whose truth has been assumed without requiring a formal proof.",
+      "A theorem, a mathematical conjecture whose plausibility has been supported through empirical evidence.",
+      "A lemma, a preliminary mathematical result whose truth is established only to assist another proof."
+    ],
+    "difficulty": 1,
+    "source_article": "Theorem",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "theorem"
+    ]
+  },
+  {
+    "question_text": "What mathematical concept expresses how many times one number contains another, often written with a colon, such as $3:2$?",
+    "correct_answer": "A ratio, which compares two quantities by showing the relative size of one to the other.",
+    "distractors": [
+      "A proportion, which equates two quantities by showing the absolute difference of one to the other.",
+      "A ratio, which compares two quantities by showing the arithmetic mean of one relative to the other.",
+      "A fraction, which divides two quantities by placing the numerator of one over the denominator of the other."
+    ],
+    "difficulty": 1,
+    "source_article": "Ratio",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "ratio"
+    ]
+  },
+  {
+    "question_text": "In geometry, what is a closed plane figure made up of three or more straight line segments connected end to end?",
+    "correct_answer": "A polygon, a flat shape bounded by a finite chain of straight line segments forming a closed loop.",
+    "distractors": [
+      "A polyhedron, a solid shape bounded by a finite collection of flat polygonal faces forming a closed surface.",
+      "A polygon, a flat shape bounded by a finite chain of straight and curved line segments forming a closed loop.",
+      "A polygon, a flat region bounded by a finite chain of straight line segments forming an open path or closed loop."
+    ],
+    "difficulty": 1,
+    "source_article": "Polygon",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "polygon"
+    ]
+  },
+  {
+    "question_text": "What do we call a number $y$ such that $y^2 = x$? For example, both $4$ and $-4$ satisfy this relationship when $x = 16$.",
+    "correct_answer": "A square root of $x$, which is any number that produces $x$ when multiplied by itself.",
+    "distractors": [
+      "A square root of $x$, which is the positive number that produces $x$ when multiplied by itself.",
+      "A square root of $x$, which is any number that produces $x$ when added to itself.",
+      "An absolute value of $x$, which is any number that produces $x$ when multiplied by itself."
+    ],
+    "difficulty": 1,
+    "source_article": "Square root",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "square root"
+    ]
+  },
+  {
+    "question_text": "In mathematical proof, what is the Latin term for a proof by contradiction, where assuming a statement true leads to an absurdity?",
+    "correct_answer": "Reductio ad absurdum",
+    "distractors": [
+      "Reductio ad infinitum",
+      "Argumentum ad impossibile",
+      "Reductio ad contradictionem"
+    ],
+    "difficulty": 2,
+    "source_article": "Mathematical proof",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "mathematical proof"
+    ]
+  },
+  {
+    "question_text": "In Euclidean geometry, which axiom states that through a point not on a given line, exactly one parallel line can be drawn, and is equivalent to Euclid's fifth postulate?",
+    "correct_answer": "Playfair's axiom",
+    "distractors": [
+      "Proclus's axiom",
+      "Legendre's parallel postulate",
+      "Legendre's axiom"
+    ],
+    "difficulty": 2,
+    "source_article": "Euclidean geometry",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Euclidean geometry"
+    ]
+  },
+  {
+    "question_text": "Which ancient Greek mathematician is usually credited with the first proof that $\\sqrt{2}$ is irrational, possibly discovering this while studying the pentagram?",
+    "correct_answer": "Hippasus of Metapontum",
+    "distractors": [
+      "Theodorus of Cyrene",
+      "Theaetetus of Athens",
+      "Philolaus of Croton"
+    ],
+    "difficulty": 2,
+    "source_article": "Irrational number",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "irrational number"
+    ]
+  },
+  {
+    "question_text": "In combinatorics, what is the name of the systematic classification that provides a unified framework for counting permutations and combinations of elements into boxes?",
+    "correct_answer": "The twelvefold way",
+    "distractors": [
+      "The sixfold partition",
+      "The combinatorial correspondence principle",
+      "The twelvefold partition theorem"
+    ],
+    "difficulty": 2,
+    "source_article": "Combinatorics",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "combinatorics"
+    ]
+  },
+  {
+    "question_text": "In the theory of complex numbers, what is the name of the geometric representation of $a + bi$ as a point in a plane, named after a French-Swiss mathematician?",
+    "correct_answer": "The Argand diagram",
+    "distractors": [
+      "The Wessel diagram",
+      "The Cauchy complex plane",
+      "The Argand-Gauss plane"
+    ],
+    "difficulty": 2,
+    "source_article": "Complex number",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "complex number"
+    ]
+  },
+  {
+    "question_text": "What name is given to the irrational constant approximately equal to 1.618, often denoted $\\varphi$, that appears in the proportions of the regular pentagon?",
+    "correct_answer": "The golden ratio",
+    "distractors": [
+      "The divine proportion constant",
+      "The golden mean",
+      "The Fibonacci ratio"
+    ],
+    "difficulty": 2,
+    "source_article": "Golden ratio",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "golden ratio"
+    ]
+  },
+  {
+    "question_text": "In permutation theory, what is the term for a permutation that has no fixed points, meaning no element remains in its original position?",
+    "correct_answer": "A derangement",
+    "distractors": [
+      "A transposition",
+      "An involution",
+      "A displacement"
+    ],
+    "difficulty": 2,
+    "source_article": "Permutation",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "permutation"
+    ]
+  },
+  {
+    "question_text": "In abstract algebra, what term describes a mapping between two groups that preserves the operation and can be inverted, so the two groups are structurally identical?",
+    "correct_answer": "An isomorphism",
+    "distractors": [
+      "A homomorphism",
+      "An endomorphism",
+      "An automorphism"
+    ],
+    "difficulty": 2,
+    "source_article": "Isomorphism",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "isomorphism"
+    ]
+  },
+  {
+    "question_text": "What is the name of the axiom system formulated for set theory whose independence from the continuum hypothesis was shown by Cohen using forcing?",
+    "correct_answer": "The Zermelo-Fraenkel axioms",
+    "distractors": [
+      "The Peano-Dedekind axioms",
+      "The Von Neumann-Bernays axioms",
+      "The Hilbert-Ackermann axioms"
+    ],
+    "difficulty": 2,
+    "source_article": "Axiom",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "axiom"
+    ]
+  },
+  {
+    "question_text": "What is the name of the topological invariant, equal to $V - E + F$, that equals 2 for any convex polyhedron and generalizes to surfaces of higher genus?",
+    "correct_answer": "The Euler characteristic",
+    "distractors": [
+      "The Betti number",
+      "The genus invariant",
+      "The Gauss curvature index"
+    ],
+    "difficulty": 2,
+    "source_article": "Topology",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "topology"
+    ]
+  },
+  {
+    "question_text": "In information theory, what is the name of the fundamental unit of information entropy, defined by Claude Shannon in his 1948 paper?",
+    "correct_answer": "A bit",
+    "distractors": [
+      "A nat",
+      "A baud",
+      "A hart"
+    ],
+    "difficulty": 2,
+    "source_article": "Binary number",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "binary number"
+    ]
+  },
+  {
+    "question_text": "Which mathematician first proved the existence of transcendental numbers in 1844 and later constructed an explicit decimal example now bearing his name?",
+    "correct_answer": "Joseph Liouville",
+    "distractors": [
+      "Charles Hermite",
+      "Georg Cantor",
+      "Ferdinand von Lindemann"
+    ],
+    "difficulty": 2,
+    "source_article": "Transcendental number",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "transcendental number"
+    ]
+  },
+  {
+    "question_text": "In logarithmic identities, what is the rule that converts $\\log_b(xy)$ into a sum of two separate logarithms called?",
+    "correct_answer": "The product rule (of logarithms)",
+    "distractors": [
+      "The quotient rule (of logarithms)",
+      "The power rule (of logarithms)",
+      "The distribution rule (of logarithms)"
+    ],
+    "difficulty": 2,
+    "source_article": "Logarithm",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "logarithm"
+    ]
+  },
+  {
+    "question_text": "Using Euler's formula, what does $e^{i\\pi/2}$ evaluate to, and what does this represent geometrically in the complex plane?",
+    "correct_answer": "It equals $i$ (the imaginary unit), representing a 90-degree counterclockwise rotation on the unit circle in the complex plane.",
+    "distractors": [
+      "It equals $-1$ (the negative real unit), representing a 180-degree counterclockwise rotation on the unit circle in the complex plane.",
+      "It equals $i$ (the imaginary unit), representing a 90-degree clockwise rotation on the unit circle in the complex plane.",
+      "It equals $\\frac{\\sqrt{2}}{2} + \\frac{\\sqrt{2}}{2}i$, representing a 45-degree counterclockwise rotation on the unit circle in the complex plane."
+    ],
+    "difficulty": 3,
+    "source_article": "Euler's formula",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Euler's formula"
+    ]
+  },
+  {
+    "question_text": "In hyperbolic geometry, a triangle's interior angles sum to 160°. Could this occur in elliptic geometry? Why or why not?",
+    "correct_answer": "No. In elliptic geometry, the sum of a triangle's interior angles is always greater than 180°, not less.",
+    "distractors": [
+      "No. In elliptic geometry, the sum of a triangle's interior angles is always exactly 180°, not less.",
+      "Yes. In elliptic geometry, the sum of a triangle's interior angles can take any value, including less than 180°.",
+      "No. In elliptic geometry, the sum of a triangle's interior angles is always less than 360° but can be less than 180°."
+    ],
+    "difficulty": 3,
+    "source_article": "Non-Euclidean geometry",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "non-Euclidean geometry"
+    ]
+  },
+  {
+    "question_text": "A consistent formal system can express basic arithmetic. According to Gödel's second incompleteness theorem, what can it NOT do regarding its own properties?",
+    "correct_answer": "It cannot prove its own consistency. Any sufficiently powerful consistent system is unable to demonstrate that it contains no contradictions.",
+    "distractors": [
+      "It cannot prove its own completeness. Any sufficiently powerful consistent system is unable to demonstrate that every true statement is provable within it.",
+      "It cannot prove its own decidability. Any sufficiently powerful consistent system is unable to show an algorithm exists for determining all its statements' truth.",
+      "It cannot enumerate its own axioms. Any sufficiently powerful consistent system is unable to produce a finite listing of assumptions from which it derives theorems."
+    ],
+    "difficulty": 3,
+    "source_article": "Gödel's incompleteness theorems",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Gödel's incompleteness theorems"
+    ]
+  },
+  {
+    "question_text": "Consider the positive integers under addition. Someone claims this forms a group. Which group axiom fails first, and why?",
+    "correct_answer": "The identity element axiom fails, because zero is not a positive integer. Without an identity element, the inverse axiom also cannot be satisfied.",
+    "distractors": [
+      "The closure axiom fails, because the sum of two positive integers is not always a positive integer. Without closure, the remaining axioms cannot be verified.",
+      "The inverse element axiom fails, because no positive integer has an additive inverse that is also positive. The identity axiom holds since one is the additive identity.",
+      "The associativity axiom fails, because addition of positive integers is not always associative when restricted to a finite subset. Without associativity, the structure is only a magma."
+    ],
+    "difficulty": 3,
+    "source_article": "Group (mathematics)",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "group theory"
+    ]
+  },
+  {
+    "question_text": "The ratio of consecutive Fibonacci numbers (e.g., 8/5, 13/8, 21/13) converges to a specific irrational value. What is it and how is it expressed?",
+    "correct_answer": "It converges to the golden ratio $\\phi = \\frac{1 + \\sqrt{5}}{2} \\approx 1.618$.",
+    "distractors": [
+      "It converges to the silver ratio $\\delta_S = \\frac{1 + \\sqrt{3}}{2} \\approx 1.366$.",
+      "It converges to the golden ratio $\\phi = \\frac{1 + \\sqrt{5}}{4} \\approx 0.809$.",
+      "It converges to the golden ratio $\\phi = \\frac{2 + \\sqrt{5}}{2} \\approx 2.118$."
+    ],
+    "difficulty": 3,
+    "source_article": "Fibonacci sequence",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Fibonacci sequence"
+    ]
+  },
+  {
+    "question_text": "Only three regular polygons can tessellate the Euclidean plane by themselves. What geometric constraint determines which ones qualify?",
+    "correct_answer": "The interior angle must divide 360° evenly, so copies meet at each vertex with no gaps. Only equilateral triangles, squares, and regular hexagons satisfy this.",
+    "distractors": [
+      "The interior angle must divide 180° evenly, so copies meet at each edge with no overlap. Only equilateral triangles, squares, and regular pentagons satisfy this.",
+      "The exterior angle must divide 360° evenly, so copies meet at each vertex with no gaps. Only equilateral triangles, squares, and regular octagons satisfy this.",
+      "The interior angle must divide 360° evenly, so copies meet at each vertex with no gaps. Only equilateral triangles, regular pentagons, and regular hexagons satisfy this."
+    ],
+    "difficulty": 3,
+    "source_article": "Tessellation",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "tessellation"
+    ]
+  },
+  {
+    "question_text": "What is the chromatic number of a cycle graph $C_n$, and how does it depend on whether $n$ is odd or even?",
+    "correct_answer": "For even $n$, the chromatic number is 2 (bipartite). For odd $n$, it is 3 because odd cycles cannot be 2-colored without adjacent vertices matching.",
+    "distractors": [
+      "For even $n$, the chromatic number is 2 (bipartite). For odd $n$, it is 4, since an odd cycle requires one extra color beyond three for non-adjacent vertex constraints.",
+      "For even $n$, the chromatic number is 3 (tripartite). For odd $n$, it is 2, since odd cycles have fewer adjacency conflicts and can always be 2-colored.",
+      "For even $n$, the chromatic number is 2 (bipartite). For odd $n$, it is also 2, since every cycle graph is bipartite regardless of parity."
+    ],
+    "difficulty": 3,
+    "source_article": "Graph coloring",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "graph coloring"
+    ]
+  },
+  {
+    "question_text": "In Boolean algebra, a student wants to simplify $A + (A \\cdot B)$. They claim the result is $A + B$. What is the correct simplified form, and which Boolean law applies?",
+    "correct_answer": "The correct result is $A$, by the Absorption Law, which states $A + (A \\cdot B) = A$.",
+    "distractors": [
+      "The correct result is $A \\cdot B$, by the Distributive Law, which states $A + (A \\cdot B) = A \\cdot B$.",
+      "The correct result is $A + B$, by the Expansion Law, which states $A + (A \\cdot B) = A + B$.",
+      "The correct result is $B$, by the Complement Law, which states $A + (A \\cdot B) = B$."
+    ],
+    "difficulty": 3,
+    "source_article": "Boolean algebra",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Boolean algebra"
+    ]
+  },
+  {
+    "question_text": "Cantor's diagonal argument proves the reals are uncountable. Briefly, how does the argument construct a number missing from any proposed complete list?",
+    "correct_answer": "It builds a new number by altering the $n$th digit of the $n$th listed number, ensuring it differs from every listed number.",
+    "distractors": [
+      "It builds a new number by copying the $n$th digit of the $n$th listed number, ensuring it matches no listed number in its full decimal expansion.",
+      "It builds a new number by swapping pairs of adjacent digits across all listed numbers, ensuring the resulting sequence differs from every listed number.",
+      "It builds a new number by selecting the largest digit from each $n$th listed number, ensuring the constructed value exceeds every listed number."
+    ],
+    "difficulty": 3,
+    "source_article": "Cantor's diagonal argument",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Cantor's diagonal argument"
+    ]
+  },
+  {
+    "question_text": "Hilbert's tenth problem asked whether an algorithm exists to decide if any Diophantine equation has integer solutions. What was the final answer, and when was it proven?",
+    "correct_answer": "No such algorithm exists. Yuri Matiyasevich completed the proof in 1970, building on work by Davis, Putnam, and Robinson.",
+    "distractors": [
+      "No such algorithm exists. Kurt Gödel completed the proof in 1970, building on work by Davis, Putnam, and Robinson.",
+      "No such algorithm exists. Yuri Matiyasevich completed the proof in 1962, building on work by Hilbert, Turing, and Church.",
+      "Such an algorithm does exist. Yuri Matiyasevich constructed it in 1970, building on work by Davis, Putnam, and Robinson."
+    ],
+    "difficulty": 3,
+    "source_article": "Hilbert's problems",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Hilbert's problems"
+    ]
+  },
+  {
+    "question_text": "In a proof by strong induction, how does the inductive hypothesis differ from that used in ordinary (weak) mathematical induction?",
+    "correct_answer": "Strong induction assumes the statement holds for all values from the base case up to $k$, not just for the single value $k$.",
+    "distractors": [
+      "Strong induction assumes the statement holds for at least two consecutive values up to $k$, not just for the single value $k$.",
+      "Strong induction assumes the statement holds for all prime values from the base case up to $k$, not just for the single value $k$.",
+      "Strong induction assumes the statement holds for all values from the base case up to $k - 1$, excluding the value $k$ itself."
+    ],
+    "difficulty": 3,
+    "source_article": "Mathematical induction",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "mathematical induction"
+    ]
+  },
+  {
+    "question_text": "Two knots have identical Alexander polynomials but are known to be inequivalent. What polynomial invariant, introduced in 1984, first resolved such cases?",
+    "correct_answer": "The Jones polynomial, which can distinguish knots that the Alexander polynomial cannot, including detecting chirality (mirror-image inequivalence).",
+    "distractors": [
+      "The Conway polynomial, which can distinguish knots that the Alexander polynomial cannot, including detecting chirality (mirror-image inequivalence).",
+      "The HOMFLY polynomial, which can distinguish knots that the Alexander polynomial cannot, including detecting chirality (mirror-image inequivalence).",
+      "The Jones polynomial, which can distinguish knots that the Alexander polynomial cannot, including detecting invertibility (orientation-reversal inequivalence)."
+    ],
+    "difficulty": 3,
+    "source_article": "Knot theory",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "knot theory"
+    ]
+  },
+  {
+    "question_text": "Kuratowski proved a version of Zorn's lemma in 1922, before Zorn's 1935 formulation. How did Kuratowski's hypothesis differ from Zorn's?",
+    "correct_answer": "Kuratowski required chains to be well-ordered, while Zorn generalized this to arbitrary chains (totally ordered subsets) having upper bounds.",
+    "distractors": [
+      "Kuratowski allowed arbitrary chains with upper bounds, while Zorn strengthened the hypothesis by requiring all chains to be well-ordered subsets.",
+      "Kuratowski required every chain to be finite, while Zorn extended the result to allow infinite totally ordered subsets having upper bounds.",
+      "Kuratowski required every chain to have a maximum element, while Zorn relaxed this to merely requiring an upper bound in the poset."
+    ],
+    "difficulty": 4,
+    "source_article": "Zorn's lemma",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Zorn's lemma"
+    ]
+  },
+  {
+    "question_text": "Cohen's 1963 independence proof showed CH is undecidable in ZFC. How does Cohen's forcing technique conceptually differ from Gödel's earlier consistency proof?",
+    "correct_answer": "Gödel constructed the inner model $L$ to prove consistency; Cohen extended models outward via forcing, adjoining new subsets of $\\omega$ to prove independence.",
+    "distractors": [
+      "Gödel proved consistency by extending a model outward to adjoin generic filters; Cohen proved independence by restricting to an inner model that omits certain subsets of $\\omega$.",
+      "Gödel proved consistency using Boolean-valued models to extend the universe; Cohen proved independence by restricting to the constructible universe $L$ and showing CH fails there.",
+      "Gödel proved consistency by constructing the constructible universe $L$ (an inner model); Cohen proved independence by using forcing to selectively remove subsets of $\\omega$ from a model."
+    ],
+    "difficulty": 4,
+    "source_article": "Continuum hypothesis",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "continuum hypothesis"
+    ]
+  },
+  {
+    "question_text": "Kempe's 1879 proof of the four color theorem was accepted for 11 years. What specific error did the mathematician who refuted it identify?",
+    "correct_answer": "Percy Heawood exposed Kempe's error in 1890: the chain-swapping argument fails when two Kempe chains interfere, making simultaneous recoloring invalid.",
+    "distractors": [
+      "Kenneth Appel exposed Kempe's error in 1890: the chain-swapping argument fails when two Kempe chains interfere, making simultaneous recoloring invalid.",
+      "Percy Heawood exposed Kempe's error in 1890: the reducibility argument fails because removing a vertex of degree five does not preserve the inductive hypothesis.",
+      "Percy Heawood exposed Kempe's error in 1890: a single Kempe chain can form a closed cycle through the vertex, making the recoloring argument circular."
+    ],
+    "difficulty": 4,
+    "source_article": "Four color theorem",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "four color theorem"
+    ]
+  },
+  {
+    "question_text": "Eilenberg and Mac Lane originally introduced category theory in 1945 not to study categories themselves, but to formalize a particular concept. What was it?",
+    "correct_answer": "Natural transformations. Mac Lane later said they invented categories to define functors, and functors to define natural transformations.",
+    "distractors": [
+      "Functors between categories. Mac Lane later said they invented categories as the domains for functors, which were the primary object of study.",
+      "Homology theory. Mac Lane later said they invented categories and functors to provide rigorous foundations for algebraic topology and homology.",
+      "Adjunctions between functors. Mac Lane later said they invented categories to define functors, and functors to define adjoint pairs."
+    ],
+    "difficulty": 4,
+    "source_article": "Category theory",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "category theory"
+    ]
+  },
+  {
+    "question_text": "In the Banach-Tarski decomposition of a solid ball, why must a separate fifth piece be introduced beyond the four orbit-based pieces?",
+    "correct_answer": "The origin is fixed by all rotations in the decomposition and cannot join any orbit-based piece, so a fifth piece handles this fixed point.",
+    "distractors": [
+      "The boundary sphere has measure-theoretic properties incompatible with the four orbit-based pieces and must be separated as a fifth piece to preserve equidecomposability.",
+      "The free group on two generators needs a fifth coset partition since four pieces only account for words starting with each generator or its inverse.",
+      "Points on the entire axis of rotation between the two generators are fixed by one rotation each, so a fifth piece collects all axial points from both generators."
+    ],
+    "difficulty": 4,
+    "source_article": "Banach–Tarski paradox",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Banach-Tarski paradox"
+    ]
+  },
+  {
+    "question_text": "The diagonal Ramsey number $R(4,4) = 18$ is known exactly. What are the current best bounds for $R(5,5)$, and why is this value significant?",
+    "correct_answer": "$43 \\leq R(5,5) \\leq 46$, making it the smallest diagonal Ramsey number whose exact value remains unknown.",
+    "distractors": [
+      "$45 \\leq R(5,5) \\leq 48$, making it the smallest diagonal Ramsey number whose exact value remains unknown.",
+      "$43 \\leq R(5,5) \\leq 46$, making it the smallest diagonal Ramsey number proven to require a computer-assisted verification.",
+      "$42 \\leq R(5,5) \\leq 48$, making it the smallest diagonal Ramsey number whose exact value remains unknown."
+    ],
+    "difficulty": 4,
+    "source_article": "Ramsey theory",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Ramsey theory"
+    ]
+  },
+  {
+    "question_text": "In Galois theory, why specifically does the Abel-Ruffini theorem fail for degree 5 but not degree 4? What algebraic property of $A_5$ is responsible?",
+    "correct_answer": "$A_5$ is the smallest non-abelian simple group — it has no proper nontrivial normal subgroups, preventing the construction of a solvable tower of field extensions.",
+    "distractors": [
+      "$A_5$ is the smallest non-abelian simple group — it has no proper nontrivial normal subgroups, preventing the construction of an abelian tower of Galois extensions.",
+      "$A_5$ is the smallest noncommutative solvable group — it has no proper nontrivial characteristic subgroups, preventing the construction of a solvable tower of field extensions.",
+      "$A_5$ is the smallest non-cyclic simple group — its center is trivial, preventing the construction of a composition series of radical field extensions."
+    ],
+    "difficulty": 4,
+    "source_article": "Galois theory",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Galois theory"
+    ]
+  },
+  {
+    "question_text": "The hairy ball theorem forbids nonvanishing continuous tangent vector fields on $S^2$. What more general result implies this, and how does its proof work?",
+    "correct_answer": "The Poincaré-Hopf theorem: the sum of indices of any vector field's zeros equals the Euler characteristic. Since $\\chi(S^2) = 2 \\neq 0$, zeros must exist.",
+    "distractors": [
+      "The Gauss-Bonnet theorem: the total geodesic curvature of any vector field's integral curves equals the Euler characteristic. Since $\\chi(S^2) = 2 \\neq 0$, zeros must exist.",
+      "The Poincaré-Hopf theorem: the product of indices of any vector field's zeros equals the Euler characteristic. Since $\\chi(S^2) = 2 \\neq 0$, zeros must exist.",
+      "The Poincaré-Hopf theorem: the sum of indices of any vector field's singularities equals the first Betti number. Since $\\beta_1(S^2) = 0 \\neq 2$, zeros must exist."
+    ],
+    "difficulty": 4,
+    "source_article": "Hairy ball theorem",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "hairy ball theorem"
+    ]
+  },
+  {
+    "question_text": "The generalized Poincaré conjecture has been resolved in every dimension $n \\geq 5$ (Smale), and for $n = 3$ (Perelman). Which case remains open and in what category?",
+    "correct_answer": "The smooth Poincaré conjecture in dimension 4 remains open: it is unknown whether every exotic homotopy 4-sphere is diffeomorphic to the standard $S^4$.",
+    "distractors": [
+      "The topological Poincaré conjecture in dimension 4 remains open: it is unknown whether every exotic homotopy 4-sphere is homeomorphic to the standard $S^4$.",
+      "The smooth Poincaré conjecture in dimension 6 remains open: it is unknown whether every exotic homotopy 6-sphere is diffeomorphic to the standard $S^6$.",
+      "The smooth Poincaré conjecture in dimension 4 remains open: it is unknown whether every compact contractible 4-manifold is diffeomorphic to the standard $D^4$."
+    ],
+    "difficulty": 4,
+    "source_article": "Poincaré conjecture",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Poincaré conjecture"
+    ]
+  },
+  {
+    "question_text": "Surreal numbers include all reals and all ordinals. In what sense do the surreal numbers fail to be a field, and what did Conway call their integer-like elements?",
+    "correct_answer": "They form a proper class, not a set, so they constitute a Field (capital F). Conway called their integer-like elements omnific integers.",
+    "distractors": [
+      "They form a proper class, not a set, so they constitute a Field (capital F). Conway called their integer-like elements surreal integers.",
+      "They form a proper class, not a group, so they constitute a Field (capital F). Conway called their integer-like elements omnific integers.",
+      "They form an ordered field, not a complete one, so they constitute a Field (capital F). Conway called their integer-like elements transfinite integers."
+    ],
+    "difficulty": 4,
+    "source_article": "Surreal number",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "surreal number"
+    ]
+  },
+  {
+    "question_text": "The Euler characteristic can be computed without triangulation using Morse theory. How does a Morse function on a closed manifold $M$ determine $\\chi(M)$?",
+    "correct_answer": "$\\chi(M)$ equals the alternating sum of the number of critical points by index: $\\sum_k (-1)^k c_k$, where $c_k$ counts index-$k$ critical points.",
+    "distractors": [
+      "$\\chi(M)$ equals the alternating sum of the number of critical values by degree: $\\sum_k (-1)^k c_k$, where $c_k$ counts degree-$k$ critical values.",
+      "$\\chi(M)$ equals the total sum of the number of critical points by index: $\\sum_k c_k$, where $c_k$ counts index-$k$ critical points.",
+      "$\\chi(M)$ equals the alternating sum of the number of saddle points by coindex: $\\sum_k (-1)^k c_k$, where $c_k$ counts coindex-$k$ saddle points."
+    ],
+    "difficulty": 4,
+    "source_article": "Euler characteristic",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Euler characteristic"
+    ]
+  },
+  {
+    "question_text": "The second-order Peano axioms are categorical — they have only one model (up to isomorphism). What happens when we weaken to first-order PA, and what theorem proves it?",
+    "correct_answer": "Tennenbaum's theorem states that in any countable nonstandard model of PA, addition and multiplication are not computable, so no such model is recursive.",
+    "distractors": [
+      "Tennenbaum's theorem states that in any countable nonstandard model of PA, addition and multiplication are not definable, so no such model is constructive.",
+      "The Löwenheim-Skolem theorem states that PA has uncountable nonstandard models where addition and multiplication are not computable, so no such model is recursive.",
+      "Tennenbaum's theorem states that in any nonstandard model of PA, the ordering and successor function are not computable, so no such model is recursive."
+    ],
+    "difficulty": 4,
+    "source_article": "Peano axioms",
+    "domain_ids": [
+      "mathematics"
+    ],
+    "concepts_tested": [
+      "Peano axioms"
+    ]
+  }
+]

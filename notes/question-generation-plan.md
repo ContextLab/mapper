@@ -50,6 +50,7 @@ After all 50 questions complete, **Final Assembly** assigns SHA-256 hash IDs, ra
 | `physics` | general | — | 2026-02-23 |
 | `biology` | general | — | 2026-02-23 |
 | `neuroscience` | general | — | 2026-02-23 |
+| `mathematics` | general | — | 2026-02-23 |
 
 ### Remaining Domains (old 5-level format, need regeneration)
 
@@ -60,7 +61,7 @@ After all 50 questions complete, **Final Assembly** assigns SHA-256 hash IDs, ra
 | # | Domain | Old Qs | New Qs | Type | Rationale |
 |---|--------|--------|--------|------|-----------|
 | ~~1~~ | ~~`neuroscience`~~ | ~~199 (5-level)~~ | ~~→ 50 (4-level)~~ | ~~general~~ | **DONE 2026-02-23** |
-| 2 | `mathematics` | 250 (5-level) | → 50 (4-level) | general | Do before its 4 sub-domains |
+| ~~2~~ | ~~`mathematics`~~ | ~~250 (5-level)~~ | ~~→ 50 (4-level)~~ | ~~general~~ | **DONE 2026-02-23** |
 
 **Batch 2 — Biology sub-domains** (parent already done):
 
@@ -107,7 +108,7 @@ After all 50 questions complete, **Final Assembly** assigns SHA-256 hash IDs, ra
 
 ## Total Work Remaining
 
-- **12 domains** to regenerate (all from 5-level → 4-level format)
-- **600 questions** to generate (12 × 50)
+- **11 domains** to regenerate (all from 5-level → 4-level format)
+- **550 questions** to generate (11 × 50)
 - **~24-36 sessions** estimated (2-3 sessions per domain)
 - After regeneration, the `all.json` domain also needs rebuilding to aggregate all questions

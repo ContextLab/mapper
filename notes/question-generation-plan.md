@@ -47,6 +47,7 @@ After all 50 questions complete, **Final Assembly** assigns SHA-256 hash IDs, ra
 | `quantum-physics` | sub | physics | 2026-02-20 |
 | `astrophysics` | sub | physics | 2026-02-20 |
 | `art-history` | general | — | 2026-02-23 |
+| `physics` | general | — | 2026-02-23 |
 
 ### Remaining Domains (old 5-level format, need regeneration)
 
@@ -56,49 +57,48 @@ After all 50 questions complete, **Final Assembly** assigns SHA-256 hash IDs, ra
 
 | # | Domain | Old Qs | New Qs | Type | Rationale |
 |---|--------|--------|--------|------|-----------|
-| 1 | `physics` | 150 (5-level) | → 50 (4-level) | general | Parent of already-done astrophysics + quantum-physics; do parent to ensure no concept overlap with children |
-| 2 | `biology` | 150 (5-level) | → 50 (4-level) | general | Do before its sub-domains (genetics, molecular-cell-biology) |
-| 3 | `neuroscience` | 199 (5-level) | → 50 (4-level) | general | Do before its 3 sub-domains |
-| 4 | `mathematics` | 250 (5-level) | → 50 (4-level) | general | Do before its 4 sub-domains |
+| 1 | `biology` | 150 (5-level) | → 50 (4-level) | general | Do before its sub-domains (genetics, molecular-cell-biology) |
+| 2 | `neuroscience` | 199 (5-level) | → 50 (4-level) | general | Do before its 3 sub-domains |
+| 3 | `mathematics` | 250 (5-level) | → 50 (4-level) | general | Do before its 4 sub-domains |
 
 **Batch 2 — Biology sub-domains** (after biology parent is done):
 
 | # | Domain | Old format | Type | Rationale |
 |---|--------|-----------|------|-----------|
-| 5 | `genetics` | 50 (5-level) → 50 (4-level) | sub | Biology sub-domain |
-| 6 | `molecular-cell-biology` | 50 (5-level) → 50 (4-level) | sub | Biology sub-domain |
+| 4 | `genetics` | 50 (5-level) → 50 (4-level) | sub | Biology sub-domain |
+| 5 | `molecular-cell-biology` | 50 (5-level) → 50 (4-level) | sub | Biology sub-domain |
 
 **Batch 3 — Neuroscience sub-domains** (after neuroscience parent is done):
 
 | # | Domain | Old format | Type | Rationale |
 |---|--------|-----------|------|-----------|
-| 7 | `cognitive-neuroscience` | 50 (5-level) → 50 (4-level) | sub | Neuroscience sub-domain |
-| 8 | `neurobiology` | 50 (5-level) → 50 (4-level) | sub | Neuroscience sub-domain |
-| 9 | `computational-neuroscience` | 50 (5-level) → 50 (4-level) | sub | Neuroscience sub-domain |
+| 6 | `cognitive-neuroscience` | 50 (5-level) → 50 (4-level) | sub | Neuroscience sub-domain |
+| 7 | `neurobiology` | 50 (5-level) → 50 (4-level) | sub | Neuroscience sub-domain |
+| 8 | `computational-neuroscience` | 50 (5-level) → 50 (4-level) | sub | Neuroscience sub-domain |
 
 **Batch 4 — Mathematics sub-domains** (after mathematics parent is done):
 
 | # | Domain | Old format | Type | Rationale |
 |---|--------|-----------|------|-----------|
-| 10 | `calculus` | 50 (5-level) → 50 (4-level) | sub | Mathematics sub-domain |
-| 11 | `linear-algebra` | 50 (5-level) → 50 (4-level) | sub | Mathematics sub-domain |
-| 12 | `number-theory` | 50 (5-level) → 50 (4-level) | sub | Mathematics sub-domain |
-| 13 | `probability-statistics` | 50 (5-level) → 50 (4-level) | sub | Mathematics sub-domain |
+| 9 | `calculus` | 50 (5-level) → 50 (4-level) | sub | Mathematics sub-domain |
+| 10 | `linear-algebra` | 50 (5-level) → 50 (4-level) | sub | Mathematics sub-domain |
+| 11 | `number-theory` | 50 (5-level) → 50 (4-level) | sub | Mathematics sub-domain |
+| 12 | `probability-statistics` | 50 (5-level) → 50 (4-level) | sub | Mathematics sub-domain |
 
 **Batch 5 — Art history sub-domains** (parent already done):
 
 | # | Domain | Old format | Type | Rationale |
 |---|--------|-----------|------|-----------|
-| 14 | `european-art-history` | 50 (5-level) → 50 (4-level) | sub | Parent already regenerated; can start anytime |
-| 15 | `chinese-art-history` | 50 (5-level) → 50 (4-level) | sub | Parent already regenerated; can start anytime |
+| 13 | `european-art-history` | 50 (5-level) → 50 (4-level) | sub | Parent already regenerated; can start anytime |
+| 14 | `chinese-art-history` | 50 (5-level) → 50 (4-level) | sub | Parent already regenerated; can start anytime |
 
 ### Why This Order?
 
 1. **Parents before children**: Since selecting a general domain also draws from its sub-domains, concepts must NOT overlap between parent and children. Doing parents first establishes the "taken" concepts so sub-domain generation can avoid them.
 
-2. **Physics first**: Its sub-domains (`astrophysics`, `quantum-physics`) are already done, so we know exactly which concepts to avoid.
+2. **Physics done**: Its sub-domains (`astrophysics`, `quantum-physics`) were already done, and now the parent `physics` is complete too.
 
-3. **Art-history subs can start now**: Since `art-history` is already done, `european-art-history` and `chinese-art-history` can be regenerated at any time.
+3. **Art-history subs and physics subs can start now**: Since `art-history` and `physics` parents are done, their sub-domains can be regenerated at any time.
 
 4. **Within each batch, sub-domains are independent**: Sub-domains under the same parent don't aggregate each other's questions, so they can be generated in any order (or in parallel across sessions).
 
@@ -106,7 +106,7 @@ After all 50 questions complete, **Final Assembly** assigns SHA-256 hash IDs, ra
 
 ## Total Work Remaining
 
-- **15 domains** to regenerate (all from 5-level → 4-level format)
-- **750 questions** to generate (15 × 50)
-- **~30-45 sessions** estimated (2-3 sessions per domain)
+- **14 domains** to regenerate (all from 5-level → 4-level format)
+- **700 questions** to generate (14 × 50)
+- **~28-42 sessions** estimated (2-3 sessions per domain)
 - After regeneration, the `all.json` domain also needs rebuilding to aggregate all questions

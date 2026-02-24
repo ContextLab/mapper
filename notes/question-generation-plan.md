@@ -76,7 +76,7 @@ After all 50 questions complete, **Final Assembly** assigns SHA-256 hash IDs, ra
 |---|--------|-----------|------|-----------|
 | ~~5~~ | ~~`cognitive-neuroscience`~~ | ~~50 (5-level) → 50 (4-level)~~ | ~~sub~~ | **DONE 2026-02-24** |
 | 6 | `neurobiology` | 50 (5-level) → 50 (4-level) | sub | Neuroscience sub-domain |
-| 7 | `computational-neuroscience` | 50 (5-level) → 50 (4-level) | sub | Neuroscience sub-domain |
+| ~~7~~ | ~~`computational-neuroscience`~~ | ~~50 (5-level) → 50 (4-level)~~ | ~~sub~~ | **DONE 2026-02-24** |
 
 **Batch 4 — Mathematics sub-domains** (after mathematics parent is done):
 

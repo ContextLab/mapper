@@ -1,0 +1,852 @@
+[
+  {
+    "question_text": "In computational neuroscience, what is computational neuroscience?",
+    "correct_answer": "A branch of neuroscience that uses mathematical models and computer simulations to understand the principles governing the nervous system.",
+    "distractors": [
+      "A branch of neuroscience that uses brain imaging and electrophysiology techniques to map the anatomical connections within the nervous system.",
+      "A branch of computer science that uses biological neurons and organic circuits to build processors that replicate nervous system functions.",
+      "A branch of neuroscience that uses surgical intervention and pharmacological manipulation to treat disorders affecting the nervous system."
+    ],
+    "difficulty": 1,
+    "source_article": "Computational_neuroscience",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "computational neuroscience"
+    ]
+  },
+  {
+    "question_text": "In computational neuroscience, what is a neural network?",
+    "correct_answer": "A group of interconnected neurons that send signals to one another, capable of performing complex tasks collectively.",
+    "distractors": [
+      "A group of independent neurons that generate signals in isolation, each performing specialized tasks without communicating with others.",
+      "A single neuron with branching dendrites that processes signals internally, capable of performing complex tasks independently.",
+      "A group of interconnected glial cells that provide structural support to neurons, maintaining homeostasis collectively."
+    ],
+    "difficulty": 1,
+    "source_article": "Neural_network",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "neural network"
+    ]
+  },
+  {
+    "question_text": "In computational neuroscience, what is neural coding?",
+    "correct_answer": "The study of the relationship between stimuli and neuronal responses, describing how action potentials encode information.",
+    "distractors": [
+      "The study of the genetic sequences within neurons that determine their morphology, describing how DNA encodes neuronal structure.",
+      "The study of the physical connections between brain regions and neural pathways, describing how axons transmit information.",
+      "The study of the biochemical processes within synapses and neurotransmitter systems, describing how vesicles release chemical signals."
+    ],
+    "difficulty": 1,
+    "source_article": "Neural_coding",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "neural coding"
+    ]
+  },
+  {
+    "question_text": "In computational neuroscience, what is an artificial neural network?",
+    "correct_answer": "A computational model inspired by biological neural networks, used in machine learning to approximate nonlinear functions.",
+    "distractors": [
+      "A biological system composed of engineered neural tissue, used in regenerative medicine to restore damaged nervous functions.",
+      "A computational model derived from symbolic logic rules, used in expert systems to perform deterministic reasoning.",
+      "A computational model inspired by biological immune systems, used in evolutionary computing to optimize stochastic functions."
+    ],
+    "difficulty": 1,
+    "source_article": "Artificial_neural_network",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "artificial neural network"
+    ]
+  },
+  {
+    "question_text": "In computational neuroscience, what are neural oscillations?",
+    "correct_answer": "Rhythmic or repetitive patterns of neural activity in the central nervous system, also known as brainwaves.",
+    "distractors": [
+      "Random or irregular bursts of neural activity in the peripheral nervous system, also known as nerve impulses.",
+      "Rhythmic or repetitive patterns of muscle contraction in the somatic nervous system, also known as tremors.",
+      "Gradual and sustained changes in neural activity in the autonomic nervous system, also known as tonic shifts."
+    ],
+    "difficulty": 1,
+    "source_article": "Neural_oscillation",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "neural oscillation"
+    ]
+  },
+  {
+    "question_text": "In computational neuroscience, what is a receptive field?",
+    "correct_answer": "A portion of sensory space that can elicit neuronal responses when stimulated.",
+    "distractors": [
+      "A portion of motor cortex that can generate voluntary movements when electrically stimulated.",
+      "A region of synaptic space that can modulate neurotransmitter release when chemically activated.",
+      "A cluster of sensory receptors that can amplify stimulus intensity when simultaneously activated."
+    ],
+    "difficulty": 1,
+    "source_article": "Receptive_field",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "receptive field"
+    ]
+  },
+  {
+    "question_text": "In computational neuroscience, what is connectionism?",
+    "correct_answer": "An approach to studying human cognition that models mental processes using artificial neural networks.",
+    "distractors": [
+      "An approach to studying human cognition that maps anatomical pathways using diffusion tensor imaging techniques.",
+      "An approach to studying human cognition that represents mental processes using symbolic logic and formal rules.",
+      "An approach to studying brain evolution that traces neural connectivity using comparative neuroanatomical methods."
+    ],
+    "difficulty": 1,
+    "source_article": "Connectionism",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "connectionism"
+    ]
+  },
+  {
+    "question_text": "What is a biological neuron model?",
+    "correct_answer": "A mathematical description of how neurons conduct electrical signals, such as action potentials and membrane potential changes.",
+    "distractors": [
+      "A physical replica of brain tissue used to test surgical procedures and neurostimulation devices in vitro.",
+      "A machine learning algorithm that mimics synaptic plasticity to classify patterns in artificial neural networks.",
+      "An imaging technique that records the spatial distribution of neurotransmitters across regions of the brain."
+    ],
+    "difficulty": 1,
+    "source_article": "Biological_neuron_model",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "biological neuron model"
+    ]
+  },
+  {
+    "question_text": "What is a neural circuit?",
+    "correct_answer": "A population of neurons interconnected by synapses that carries out a specific function when activated.",
+    "distractors": [
+      "A single neuron with multiple dendrites that integrates excitatory and inhibitory inputs at its soma.",
+      "A bundle of myelinated axons that transmits signals between the brain and the spinal cord.",
+      "A layer of glial cells that provides metabolic support and insulation to neurons in cortex."
+    ],
+    "difficulty": 1,
+    "source_article": "Neural_circuit",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "neural circuit"
+    ]
+  },
+  {
+    "question_text": "What is firing rate in neuroscience?",
+    "correct_answer": "The frequency at which a neuron generates action potentials, typically measured in spikes per second (Hz).",
+    "distractors": [
+      "The speed at which an action potential propagates along the length of a myelinated axon.",
+      "The amplitude of the voltage change during depolarization of a neuron's membrane potential in millivolts.",
+      "The total number of synaptic connections a single neuron forms with its postsynaptic target cells."
+    ],
+    "difficulty": 1,
+    "source_article": "Firing_rate",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "firing rate"
+    ]
+  },
+  {
+    "question_text": "What is information theory?",
+    "correct_answer": "The mathematical study of the quantification, storage, and communication of information, founded by Claude Shannon.",
+    "distractors": [
+      "The engineering discipline concerned with building reliable digital circuits for data transmission and signal processing.",
+      "The philosophical study of knowledge, belief, justification, and the nature of truth across disciplines.",
+      "The branch of computer science focused on designing efficient algorithms for sorting and searching databases."
+    ],
+    "difficulty": 1,
+    "source_article": "Information_theory",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "information theory"
+    ]
+  },
+  {
+    "question_text": "What is a dynamical system?",
+    "correct_answer": "A mathematical model describing how the state of a system evolves over time according to a fixed rule.",
+    "distractors": [
+      "A statistical model that characterizes the probability distribution of a system's states at equilibrium.",
+      "A classification system that groups physical phenomena into discrete categories based on their structural properties.",
+      "A control engineering framework that designs feedback loops to maintain a system at a desired setpoint."
+    ],
+    "difficulty": 1,
+    "source_article": "Dynamical_system",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "dynamical system"
+    ]
+  },
+  {
+    "question_text": "What is reinforcement learning?",
+    "correct_answer": "A machine learning paradigm where an agent learns to take actions in an environment to maximize a cumulative reward signal.",
+    "distractors": [
+      "A machine learning paradigm where a model is trained on labeled input-output pairs to minimize prediction error.",
+      "A machine learning paradigm where an algorithm discovers hidden structures and clusters in unlabeled data without feedback.",
+      "A machine learning paradigm where a model generates new data samples by learning the underlying probability distribution."
+    ],
+    "difficulty": 1,
+    "source_article": "Reinforcement_learning",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "reinforcement learning"
+    ]
+  },
+  {
+    "question_text": "In the Hodgkin-Huxley model, which three distinct ionic conductances are modeled, and what experimental preparation was used to derive the model?",
+    "correct_answer": "Voltage-gated sodium, voltage-gated potassium, and a leak conductance, derived from voltage-clamp recordings of the squid giant axon.",
+    "distractors": [
+      "Voltage-gated calcium, voltage-gated chloride, and a leak conductance, derived from voltage-clamp recordings of the squid giant axon.",
+      "Voltage-gated sodium, voltage-gated potassium, and a leak conductance, derived from patch-clamp recordings of mammalian cortical neurons.",
+      "Ligand-gated sodium, ligand-gated potassium, and a leak conductance, derived from voltage-clamp recordings of the squid giant axon."
+    ],
+    "difficulty": 2,
+    "source_article": "Hodgkin%E2%80%93Huxley_model",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "Hodgkin-Huxley model"
+    ]
+  },
+  {
+    "question_text": "What key simplification does the integrate-and-fire neuron model make compared to the Hodgkin-Huxley model?",
+    "correct_answer": "It models the membrane as a simple RC circuit that integrates input current until reaching a fixed voltage threshold, then resets.",
+    "distractors": [
+      "It models individual ion channel gating kinetics with multiple activation and inactivation variables for each conductance type.",
+      "It replaces the membrane with a series of cable compartments that propagate signals along branching dendritic trees.",
+      "It models the membrane as a simple RC circuit that oscillates continuously between depolarization and repolarization cycles."
+    ],
+    "difficulty": 2,
+    "source_article": "Biological_neuron_model",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "integrate-and-fire model"
+    ]
+  },
+  {
+    "question_text": "What is the core principle of Hebbian learning, often summarized as 'cells that fire together, wire together'?",
+    "correct_answer": "A synapse is strengthened when the presynaptic and postsynaptic neurons are simultaneously active, reinforcing correlated firing patterns.",
+    "distractors": [
+      "A synapse is weakened when the presynaptic and postsynaptic neurons are simultaneously active, reducing correlated firing patterns.",
+      "A synapse is strengthened when the presynaptic neuron fires but the postsynaptic neuron is silent, reinforcing uncorrelated patterns.",
+      "A synapse is eliminated when the presynaptic and postsynaptic neurons are simultaneously active, pruning redundant firing patterns."
+    ],
+    "difficulty": 2,
+    "source_article": "Hebbian_theory",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "Hebbian learning"
+    ]
+  },
+  {
+    "question_text": "In population coding, how is information about a stimulus represented across a group of neurons?",
+    "correct_answer": "Each neuron has a preferred stimulus; the population response vector collectively encodes the stimulus with greater accuracy than any single cell.",
+    "distractors": [
+      "A single designated neuron fires maximally for each stimulus; the remaining neurons in the population are silent during encoding.",
+      "Each neuron has a preferred stimulus; the population response vector collectively encodes the stimulus but with lower accuracy than the best single cell.",
+      "All neurons fire at identical rates regardless of the stimulus; information is encoded solely in the temporal correlations between spike trains."
+    ],
+    "difficulty": 2,
+    "source_article": "Population_coding",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "population coding"
+    ]
+  },
+  {
+    "question_text": "In the rate coding hypothesis, what aspect of neural activity carries information about stimulus intensity?",
+    "correct_answer": "The mean firing rate of a neuron over a time window, with higher stimulus intensity producing more spikes per second.",
+    "distractors": [
+      "The precise timing of individual spikes relative to an oscillatory reference signal in the local field potential.",
+      "The spatial pattern of active versus silent neurons across a cortical column at each moment in time.",
+      "The sequential order of spikes across different neurons in a circuit, independent of their overall firing rates."
+    ],
+    "difficulty": 2,
+    "source_article": "Rate_coding",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "rate coding"
+    ]
+  },
+  {
+    "question_text": "In temporal coding, what feature of spike trains carries information beyond what firing rate alone conveys?",
+    "correct_answer": "The precise timing of individual spikes, including interspike intervals and spike phases relative to ongoing oscillations.",
+    "distractors": [
+      "The total number of spikes summed over extended time windows, averaged across the entire neural population activity.",
+      "The physical amplitude of each action potential waveform, which varies with the strength of the encoded stimulus.",
+      "The spatial location of the neuron's cell body within the cortical laminar architecture of the brain."
+    ],
+    "difficulty": 2,
+    "source_article": "Temporal_coding",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "temporal coding"
+    ]
+  },
+  {
+    "question_text": "In the Bayesian brain framework, what does the term 'predictive coding' refer to?",
+    "correct_answer": "A scheme for inferring the causes of sensory input by minimizing prediction error across hierarchical levels.",
+    "distractors": [
+      "A scheme for maximizing the mutual information between sensory input and motor output across hierarchical levels.",
+      "A scheme for encoding the statistical regularities of motor commands by minimizing metabolic cost across cortical levels.",
+      "A scheme for propagating reward prediction signals through dopaminergic pathways by maximizing expected value across hierarchical levels."
+    ],
+    "difficulty": 2,
+    "source_article": "Bayesian_approaches_to_brain_function",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "Bayesian approaches to brain function"
+    ]
+  },
+  {
+    "question_text": "In attractor networks, what type of attractor is used to model central pattern generators?",
+    "correct_answer": "Cyclic attractors, which evolve the network toward a set of states in a limit cycle.",
+    "distractors": [
+      "Fixed-point attractors, which evolve the network toward a single stable state representing associative memory.",
+      "Chaotic attractors, which evolve the network through non-repeating bounded trajectories for odor recognition.",
+      "Continuous attractors, which evolve the network along a manifold of stable states encoding head direction."
+    ],
+    "difficulty": 2,
+    "source_article": "Attractor_network",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "attractor network"
+    ]
+  },
+  {
+    "question_text": "In spike train analysis, what does the interspike interval (ISI) measure?",
+    "correct_answer": "The time elapsed between two successive action potentials in a neuron's spike train.",
+    "distractors": [
+      "The peak voltage amplitude between two successive action potentials in a neuron's spike train.",
+      "The average firing rate computed across all action potentials in a neuron's spike train.",
+      "The synaptic delay between a presynaptic action potential and the postsynaptic neuron's response."
+    ],
+    "difficulty": 2,
+    "source_article": "Spike_train",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "spike train"
+    ]
+  },
+  {
+    "question_text": "In PCA, what mathematical objects are the principal components of a dataset?",
+    "correct_answer": "Eigenvectors of the data's covariance matrix, ordered by decreasing eigenvalue magnitude.",
+    "distractors": [
+      "Singular values of the data's correlation matrix, ordered by decreasing explained variance.",
+      "Eigenvectors of the data's inverse Hessian matrix, ordered by decreasing gradient magnitude.",
+      "Column vectors of the data's adjacency matrix, ordered by decreasing node centrality."
+    ],
+    "difficulty": 2,
+    "source_article": "Principal_component_analysis",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "principal component analysis"
+    ]
+  },
+  {
+    "question_text": "What is the well-known computational limitation of a single-layer perceptron, identified by Minsky and Papert?",
+    "correct_answer": "It cannot solve the XOR problem because XOR is not linearly separable in the input space.",
+    "distractors": [
+      "It cannot solve the AND problem because AND requires nonlinear activation functions in the input space.",
+      "It cannot approximate continuous functions because single layers lack sufficient representational capacity for regression.",
+      "It cannot solve multiclass classification because a single output node only supports binary decision boundaries."
+    ],
+    "difficulty": 2,
+    "source_article": "Perceptron",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "perceptron"
+    ]
+  },
+  {
+    "question_text": "In backpropagation, what mathematical rule enables efficient computation of gradients through a multilayer network?",
+    "correct_answer": "The chain rule of calculus, applied layer by layer from the output back to the input.",
+    "distractors": [
+      "The product rule of calculus, applied node by node from the input forward to the output.",
+      "Bayes' rule of probability, applied layer by layer to update weight posteriors given observed errors.",
+      "The quotient rule of calculus, applied across skip connections from the output back to the input."
+    ],
+    "difficulty": 2,
+    "source_article": "Backpropagation",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "backpropagation"
+    ]
+  },
+  {
+    "question_text": "What architecture was introduced in 1997 to address the vanishing gradient problem in recurrent neural networks?",
+    "correct_answer": "Long short-term memory (LSTM), which uses gating mechanisms to preserve information over long sequences.",
+    "distractors": [
+      "Gated recurrent units (GRU), which use reset and update gates to reduce computational cost over sequences.",
+      "Echo state networks (ESN), which use a fixed random reservoir to approximate dynamics over long sequences.",
+      "Elman networks, which use a single context layer to copy hidden activations across consecutive time steps."
+    ],
+    "difficulty": 2,
+    "source_article": "Recurrent_neural_network",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "recurrent neural network"
+    ]
+  },
+  {
+    "question_text": "In spike-timing-dependent plasticity (STDP), what happens when a presynaptic neuron consistently fires just before the postsynaptic neuron within a narrow time window?",
+    "correct_answer": "The synapse is strengthened via long-term potentiation (LTP), as the timing implies a causal relationship between pre- and postsynaptic activity.",
+    "distractors": [
+      "The synapse is weakened via long-term depression (LTD), as the timing implies a causal relationship between pre- and postsynaptic activity.",
+      "The synapse is strengthened via long-term potentiation (LTP), but only if the time window exceeds 100 milliseconds between spikes.",
+      "The synapse is eliminated via synaptic pruning, as the timing implies a redundant connection between pre- and postsynaptic activity."
+    ],
+    "difficulty": 3,
+    "source_article": "Spike-timing-dependent_plasticity",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "spike-timing-dependent plasticity"
+    ]
+  },
+  {
+    "question_text": "In a Hopfield network, how are stored memories retrieved when the network receives a partial or noisy input pattern?",
+    "correct_answer": "The network dynamics minimize an energy function, converging to a local energy minimum that corresponds to the nearest stored pattern (attractor state).",
+    "distractors": [
+      "The network dynamics maximize an energy function, converging to a global energy maximum that corresponds to the nearest stored pattern (attractor state).",
+      "The network propagates input forward through layers, converging via backpropagation of error to the nearest stored pattern (attractor state).",
+      "The network dynamics minimize an energy function, converging to a global energy minimum that corresponds to the most recently stored pattern (attractor state)."
+    ],
+    "difficulty": 3,
+    "source_article": "Hopfield_network",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "Hopfield network"
+    ]
+  },
+  {
+    "question_text": "What does the Wilson-Cowan model describe in computational neuroscience, and what key dynamical phenomena does it predict?",
+    "correct_answer": "It models the mean-field dynamics of coupled excitatory and inhibitory neural populations, predicting oscillations, multiple stable states, and hysteresis.",
+    "distractors": [
+      "It models the mean-field dynamics of coupled excitatory and inhibitory neural populations, predicting only fixed-point convergence without oscillations.",
+      "It models the single-neuron spike dynamics using Hodgkin-Huxley equations, predicting oscillations, multiple stable states, and hysteresis.",
+      "It models the mean-field dynamics of coupled excitatory neural populations only, predicting oscillations, multiple stable states, and hysteresis."
+    ],
+    "difficulty": 3,
+    "source_article": "Wilson%E2%80%93Cowan_model",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "Wilson-Cowan model"
+    ]
+  },
+  {
+    "question_text": "In the drift-diffusion model of decision-making, what do the drift rate and decision boundary parameters respectively determine?",
+    "correct_answer": "The drift rate reflects sensory evidence quality driving accumulation, while the decision boundary sets the evidence threshold needed for committing to a choice.",
+    "distractors": [
+      "The drift rate reflects motor execution speed after a decision, while the decision boundary sets the evidence threshold needed for committing to a choice.",
+      "The drift rate reflects sensory evidence quality driving accumulation, while the decision boundary sets the maximum time allowed before a response is forced.",
+      "The drift rate reflects random noise level corrupting the signal, while the decision boundary sets the evidence threshold needed for committing to a choice."
+    ],
+    "difficulty": 3,
+    "source_article": "Two-alternative_forced_choice",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "drift-diffusion model"
+    ]
+  },
+  {
+    "question_text": "What does Barlow's efficient coding hypothesis predict about how sensory neurons encode information from the natural environment?",
+    "correct_answer": "Sensory neurons should maximize information transmission by reducing redundancy, producing neural representations adapted to the statistical structure of natural stimuli.",
+    "distractors": [
+      "Sensory neurons should maximize firing rate by increasing redundancy, producing neural representations adapted to the statistical structure of natural stimuli.",
+      "Sensory neurons should maximize information transmission by reducing redundancy, producing fixed neural representations independent of the statistics of natural stimuli.",
+      "Sensory neurons should minimize information transmission to conserve energy, producing sparse neural representations adapted to the statistical structure of natural stimuli."
+    ],
+    "difficulty": 3,
+    "source_article": "Efficient_coding_hypothesis",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "efficient coding hypothesis"
+    ]
+  },
+  {
+    "question_text": "In a winner-take-all neural circuit, what mechanism allows the most strongly activated neuron to suppress all competing neurons?",
+    "correct_answer": "Lateral (mutual) inhibition between neurons suppresses weaker competitors, while recurrent self-excitation reinforces the strongest activation until only one neuron remains active.",
+    "distractors": [
+      "Lateral (mutual) excitation between neurons amplifies weaker competitors, while recurrent self-inhibition reinforces the strongest activation until only one neuron remains active.",
+      "Feedforward inhibition from a global interneuron suppresses all neurons equally, while synaptic fatigue in weaker neurons causes only one neuron to remain active.",
+      "Lateral (mutual) inhibition between neurons suppresses weaker competitors, while synaptic plasticity gradually strengthens the winning neuron's connections over many trials."
+    ],
+    "difficulty": 3,
+    "source_article": "Winner-take-all_(computing)",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "winner-take-all (computation)"
+    ]
+  },
+  {
+    "question_text": "In a cortical network operating in the 'balanced state,' what characterizes the relationship between excitatory and inhibitory synaptic currents?",
+    "correct_answer": "Excitatory and inhibitory currents are large and approximately equal in magnitude, nearly canceling so that net input fluctuations drive irregular, asynchronous spiking.",
+    "distractors": [
+      "Excitatory currents dominate over inhibitory currents by a fixed ratio, producing regular, periodic spiking driven primarily by the strong mean excitatory drive.",
+      "Inhibitory currents are negligible compared to excitation, so neurons fire at their maximum rate with highly synchronized, oscillatory population activity.",
+      "Excitatory and inhibitory currents arrive at different times and never overlap, producing long silent periods alternating with brief synchronized bursts."
+    ],
+    "difficulty": 3,
+    "source_article": "Excitatory%E2%80%93inhibitory_balance",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "excitatory-inhibitory balance"
+    ]
+  },
+  {
+    "question_text": "In computational models of reinforcement learning, what does the reward prediction error signal represent, and which neurons are thought to encode it?",
+    "correct_answer": "The difference between received reward and expected reward at a given time step, encoded by midbrain dopamine neurons in the VTA and substantia nigra.",
+    "distractors": [
+      "The sum of received reward and expected reward at a given time step, encoded by midbrain dopamine neurons in the VTA and substantia nigra.",
+      "The difference between received reward and expected reward at a given time step, encoded by cortical pyramidal neurons in the prefrontal cortex.",
+      "The absolute magnitude of received reward regardless of prior expectations, encoded by serotonergic neurons in the dorsal raphe nucleus."
+    ],
+    "difficulty": 3,
+    "source_article": "Temporal_difference_learning",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "reward prediction error"
+    ]
+  },
+  {
+    "question_text": "When mean-field theory is applied to a large neural network, what simplifying approximation does it make to analyze population dynamics?",
+    "correct_answer": "It replaces the individual synaptic inputs from all other neurons with a single average effective input, reducing the many-neuron problem to a self-consistent one-neuron description.",
+    "distractors": [
+      "It simulates every individual neuron and synapse with full biophysical detail, using the complete set of pairwise interaction terms to compute exact network dynamics.",
+      "It removes all synaptic interactions entirely, treating each neuron as completely independent with no coupling, and analyzes their individual isolated dynamics.",
+      "It replaces neural firing rates with binary on-off states and uses Boolean logic gates to compute deterministic network transitions without any stochastic averaging."
+    ],
+    "difficulty": 3,
+    "source_article": "Mean-field_theory",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "mean-field theory"
+    ]
+  },
+  {
+    "question_text": "In cable theory for passive dendrites, the length constant $\\lambda$ determines how far voltage spreads. What does the voltage equal at distance $\\lambda$ from the injection site?",
+    "correct_answer": "Approximately 37% (specifically $1/e$, or about 0.368) of the voltage at the injection site, reflecting exponential decay along the cable.",
+    "distractors": [
+      "Approximately 50% (specifically $1/2$, or about 0.500) of the voltage at the injection site, reflecting linear decay along the cable.",
+      "Approximately 63% (specifically $1 - 1/e$, or about 0.632) of the voltage at the injection site, reflecting exponential decay along the cable.",
+      "Exactly 100% of the voltage at the injection site, because passive cables transmit signals without any attenuation or loss."
+    ],
+    "difficulty": 3,
+    "source_article": "Cable_theory",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "cable theory"
+    ]
+  },
+  {
+    "question_text": "In parietal cortex neurons, a 'gain field' describes how eye position affects visual responses. What type of modulation characterizes this interaction?",
+    "correct_answer": "Multiplicative modulation: eye position scales the amplitude of the visual tuning curve without changing its shape, enabling coordinate transformations from retinotopic to head-centered frames.",
+    "distractors": [
+      "Additive modulation: eye position shifts the baseline firing rate uniformly across all visual stimuli without changing tuning curve amplitude, enabling purely feedforward sensory processing.",
+      "Subtractive modulation: eye position suppresses responses to all visual stimuli equally, narrowing the tuning curve width and eliminating coordinate transformation capabilities entirely.",
+      "Divisive modulation: eye position reduces the visual tuning curve amplitude by a constant divisor and inverts its preferred stimulus direction, disrupting spatial representations."
+    ],
+    "difficulty": 3,
+    "source_article": "Gain_field",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "gain field"
+    ]
+  },
+  {
+    "question_text": "Bayesian neural decoding estimates which stimulus caused observed spike trains. Using Bayes' rule, what quantities must be combined?",
+    "correct_answer": "The likelihood of the observed spikes given each stimulus, the prior probability of each stimulus, and a normalizing constant over all spike patterns.",
+    "distractors": [
+      "The likelihood of the observed spikes given each stimulus, the posterior probability of each stimulus, and a normalizing constant over all spike patterns.",
+      "The average firing rate of each neuron regardless of stimulus identity, the total number of recorded neurons, and the overall duration of the recording session.",
+      "The mutual information between spikes and stimuli, the entropy of the spike train distribution, and the channel capacity of each recorded neuron."
+    ],
+    "difficulty": 3,
+    "source_article": "Neural_decoding",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "neural decoding"
+    ]
+  },
+  {
+    "question_text": "In the FitzHugh-Nagumo model, what type of bifurcation gives rise to the limit cycle that produces sustained oscillations when the equilibrium on the cubic nullcline loses stability?",
+    "correct_answer": "A Hopf bifurcation, occurring when the fixed point on the cubic nullcline transitions from a stable to an unstable spiral.",
+    "distractors": [
+      "A saddle-node bifurcation, occurring when two fixed points on the cubic nullcline collide and annihilate each other simultaneously.",
+      "A homoclinic bifurcation, occurring when the stable manifold of the saddle point forms a closed loop returning to itself.",
+      "A pitchfork bifurcation, occurring when the single fixed point on the cubic nullcline splits symmetrically into three equilibria."
+    ],
+    "difficulty": 4,
+    "source_article": "FitzHugh%E2%80%93Nagumo_model",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "FitzHugh-Nagumo model"
+    ]
+  },
+  {
+    "question_text": "Under Karl Friston's free energy principle, what quantity do biological systems minimize, and how does it relate mathematically to surprisal?",
+    "correct_answer": "They minimize variational free energy, which is an upper bound on surprisal (negative log probability of sensory observations).",
+    "distractors": [
+      "They minimize prediction error magnitude, which is a lower bound on surprisal (negative log probability of sensory observations).",
+      "They minimize variational free energy, which is exactly equal to surprisal (the Shannon entropy of sensory observations).",
+      "They minimize thermodynamic free energy, which is an upper bound on surprisal (negative log likelihood of prior expectations)."
+    ],
+    "difficulty": 4,
+    "source_article": "Free_energy_principle",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "free energy principle"
+    ]
+  },
+  {
+    "question_text": "What does the neural manifold hypothesis propose about the structure of high-dimensional neural population activity during behavior?",
+    "correct_answer": "Population activity is constrained to low-dimensional manifolds whose geometry reflects the underlying computational and task-relevant structure.",
+    "distractors": [
+      "Population activity uniformly fills the high-dimensional firing-rate space whose dimensionality reflects the total number of recorded neurons.",
+      "Population activity is constrained to low-dimensional manifolds whose geometry reflects the intrinsic noise and stochastic variability of spiking.",
+      "Population activity collapses onto single fixed-point attractors whose location reflects the time-averaged mean firing rate across neurons."
+    ],
+    "difficulty": 4,
+    "source_article": "Dimensionality_reduction",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "neural manifold"
+    ]
+  },
+  {
+    "question_text": "In hierarchical predictive coding, what role do precision-weighted prediction errors play in the proposed neural mechanism of attention?",
+    "correct_answer": "Attention is implemented by increasing the gain on prediction error units, weighting reliable sensory signals more heavily in inference.",
+    "distractors": [
+      "Attention is implemented by decreasing the gain on prediction error units, suppressing unreliable sensory signals more heavily during inference.",
+      "Attention is implemented by increasing the gain on prediction units themselves, amplifying top-down prior expectations more heavily during inference.",
+      "Attention is implemented by bypassing the gain on prediction error units, routing sensory signals directly to higher cortical areas for inference."
+    ],
+    "difficulty": 4,
+    "source_article": "Predictive_coding",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "predictive coding"
+    ]
+  },
+  {
+    "question_text": "What distinguishes reservoir computing from conventional recurrent neural network training, and what property must the reservoir satisfy?",
+    "correct_answer": "Only the linear readout layer is trained; the reservoir's recurrent weights are fixed and must satisfy the echo state property.",
+    "distractors": [
+      "Only the recurrent hidden layer is trained; the reservoir's output weights are fixed and must satisfy the fading memory property.",
+      "Both the readout and recurrent layers are trained; the reservoir's input weights are fixed and must satisfy the echo state property.",
+      "Only the linear readout layer is trained; the reservoir's recurrent weights are adapted and must satisfy the Lyapunov stability property."
+    ],
+    "difficulty": 4,
+    "source_article": "Reservoir_computing",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "reservoir computing"
+    ]
+  },
+  {
+    "question_text": "What structural constraint distinguishes a restricted Boltzmann machine from a general Boltzmann machine, and how does this affect inference?",
+    "correct_answer": "RBMs eliminate intra-layer connections, forming a bipartite graph between visible and hidden units, making exact posterior inference tractable.",
+    "distractors": [
+      "RBMs eliminate inter-layer connections, forming isolated visible and hidden layers with lateral inhibition, making exact posterior inference tractable.",
+      "RBMs eliminate intra-layer connections, forming a bipartite graph between visible and hidden units, but making exact posterior inference intractable.",
+      "RBMs add symmetric intra-layer connections, forming a fully connected graph between visible and hidden units, making approximate posterior inference tractable."
+    ],
+    "difficulty": 4,
+    "source_article": "Boltzmann_machine",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "Boltzmann machine"
+    ]
+  },
+  {
+    "question_text": "In the criticality hypothesis, neuronal avalanches recorded in cortical tissue follow a power-law size distribution. What exponent and branching parameter characterize the critical state identified by Beggs and Plenz?",
+    "correct_answer": "An avalanche size exponent of $-3/2$ and a branching parameter $\\sigma \\approx 1$, indicating each spike on average triggers exactly one subsequent spike.",
+    "distractors": [
+      "An avalanche size exponent of $-1$ and a branching parameter $\\sigma \\approx 2$, indicating each spike on average triggers exactly two subsequent spikes.",
+      "An avalanche size exponent of $-5/2$ and a branching parameter $\\sigma \\approx 1$, indicating each spike on average triggers one subsequent spike with Gaussian cutoff.",
+      "An avalanche size exponent of $-3/2$ and a branching parameter $\\sigma \\ll 1$, indicating each spike on average triggers a decaying subcritical cascade."
+    ],
+    "difficulty": 4,
+    "source_article": "Self-organized_criticality",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "self-organized criticality"
+    ]
+  },
+  {
+    "question_text": "Carandini and Heeger described divisive normalization as a 'canonical neural computation.' What is the core operation, and why is it considered canonical?",
+    "correct_answer": "A neuron's input is divided by summed pool activity. It is canonical because it appears across virtually all brain areas and sensory modalities.",
+    "distractors": [
+      "A neuron's input is subtracted from summed pool activity. It is canonical because it appears across virtually all brain areas and sensory modalities.",
+      "A neuron's input is divided by summed pool activity. It is canonical because it was the first computation discovered in primary visual cortex.",
+      "A neuron's input is divided by its own recent firing history. It is canonical because it appears across virtually all brain areas and sensory modalities."
+    ],
+    "difficulty": 4,
+    "source_article": "Normalization_model",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "divisive normalization"
+    ]
+  },
+  {
+    "question_text": "In a synfire chain as proposed by Abeles, what network architecture supports stable propagation of precisely timed spike volleys, and how does activity advance through the network?",
+    "correct_answer": "A feedforward chain of convergent-divergent neuron pools, where a synchronous volley in one pool triggers a synchronous volley in the next after one synaptic delay.",
+    "distractors": [
+      "A feedforward chain of convergent-divergent neuron pools, where an asynchronous rate increase in one pool gradually elevates rates in the next over many delays.",
+      "A recurrent chain of convergent-divergent neuron pools, where a synchronous volley in one pool triggers a synchronous volley in the next after one synaptic delay.",
+      "A feedforward chain of single relay neurons, where a synchronous volley in one layer triggers a synchronous volley in the next after one synaptic delay."
+    ],
+    "difficulty": 4,
+    "source_article": "Synfire_chain",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "synfire chain"
+    ]
+  },
+  {
+    "question_text": "How does a continuous attractor network differ from a discrete attractor network, and what computational function do continuous attractors serve in the head direction system?",
+    "correct_answer": "Continuous attractors maintain a manifold of marginally stable states rather than isolated fixed points, enabling smooth path integration of head direction via a drifting bump.",
+    "distractors": [
+      "Continuous attractors maintain a manifold of marginally stable states rather than isolated fixed points, enabling winner-take-all selection of head direction via a stationary activity bump.",
+      "Continuous attractors maintain a single globally stable state rather than isolated fixed points, enabling smooth path integration of head direction via a drifting activity bump.",
+      "Continuous attractors maintain a manifold of asymptotically stable states rather than isolated fixed points, enabling smooth path integration of head direction via oscillatory population codes."
+    ],
+    "difficulty": 4,
+    "source_article": "Attractor_network",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "continuous attractor"
+    ]
+  },
+  {
+    "question_text": "In BCM theory, what is the sliding modification threshold $\\theta_M$, and how does it homeostatically regulate synaptic plasticity?",
+    "correct_answer": "$\\theta_M$ is a dynamic threshold separating LTD from LTP that increases with the neuron's time-averaged postsynaptic activity, preventing runaway potentiation or depression.",
+    "distractors": [
+      "$\\theta_M$ is a fixed threshold separating LTD from LTP that is set by the neuron's peak postsynaptic activity, preventing runaway potentiation or depression.",
+      "$\\theta_M$ is a dynamic threshold separating LTD from LTP that increases with the neuron's instantaneous presynaptic firing rate, preventing runaway potentiation or depression.",
+      "$\\theta_M$ is a dynamic threshold separating LTD from LTP that decreases with the neuron's time-averaged postsynaptic activity, amplifying potentiation during high-activity periods."
+    ],
+    "difficulty": 4,
+    "source_article": "BCM_theory",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "BCM theory"
+    ]
+  },
+  {
+    "question_text": "In balanced amplification (Murphy and Miller, 2009), how can a cortical network with stable eigenvalues still produce strong transient amplification of input patterns?",
+    "correct_answer": "The excitatory-inhibitory connectivity matrix is non-normal, meaning its eigenvectors are non-orthogonal, allowing large transient growth along specific directions before all modes eventually decay.",
+    "distractors": [
+      "The excitatory-inhibitory connectivity matrix is normal, meaning its eigenvectors are orthogonal, allowing large transient growth through near-critical eigenvalues with dynamical slowing.",
+      "The excitatory-inhibitory connectivity matrix is non-normal, meaning its eigenvalues are complex, allowing sustained oscillatory amplification along specific directions indefinitely.",
+      "The excitatory-inhibitory connectivity matrix is symmetric, meaning its eigenvectors are non-orthogonal, allowing large transient growth along specific directions before all modes eventually decay."
+    ],
+    "difficulty": 4,
+    "source_article": "Non-normal_dynamics",
+    "domain_ids": [
+      "computational-neuroscience"
+    ],
+    "concepts_tested": [
+      "balanced amplification"
+    ]
+  }
+]

@@ -1,0 +1,266 @@
+{
+  "domain": "metaphysics",
+  "parent_domain": "philosophy",
+  "total_concepts": 50,
+  "distribution": {"L1": 13, "L2": 13, "L3": 12, "L4": 12},
+  "concepts": {
+    "L1": [
+      {
+        "concept": "existence",
+        "wikipedia_article": "Existence",
+        "brief_rationale": "The most fundamental concept in metaphysics; concerns what it means for something to be or to exist."
+      },
+      {
+        "concept": "reality",
+        "wikipedia_article": "Reality",
+        "brief_rationale": "The totality of what exists; distinguishing what is real from what is merely apparent or imaginary."
+      },
+      {
+        "concept": "time",
+        "wikipedia_article": "Time",
+        "brief_rationale": "The dimension along which events occur in sequence; central to debates about change, persistence, and causation."
+      },
+      {
+        "concept": "space",
+        "wikipedia_article": "Space",
+        "brief_rationale": "The boundless three-dimensional extent in which objects have position and direction; fundamental to metaphysical accounts of the physical world."
+      },
+      {
+        "concept": "causation",
+        "wikipedia_article": "Causality",
+        "brief_rationale": "The relationship between causes and effects; one of the central structural features of reality investigated by metaphysics."
+      },
+      {
+        "concept": "mind",
+        "wikipedia_article": "Mind",
+        "brief_rationale": "The seat of consciousness, thought, and experience; focal point of debates about substance dualism and physicalism."
+      },
+      {
+        "concept": "identity",
+        "wikipedia_article": "Identity (philosophy)",
+        "brief_rationale": "What makes something the same thing over time or across possible situations; foundational to personal identity debates."
+      },
+      {
+        "concept": "change",
+        "wikipedia_article": "Change (philosophy)",
+        "brief_rationale": "The process by which things come to have properties they previously lacked; raises puzzles about persistence and continuity."
+      },
+      {
+        "concept": "free will",
+        "wikipedia_article": "Free will",
+        "brief_rationale": "The capacity to make choices unconstrained by prior causes; central to debates about determinism and moral responsibility."
+      },
+      {
+        "concept": "soul",
+        "wikipedia_article": "Soul",
+        "brief_rationale": "A non-physical essence traditionally held to constitute personal identity; historically significant in metaphysics of mind."
+      },
+      {
+        "concept": "God",
+        "wikipedia_article": "God",
+        "brief_rationale": "The concept of a supreme being whose existence, nature, and relation to the world are perennial metaphysical questions."
+      },
+      {
+        "concept": "matter",
+        "wikipedia_article": "Matter",
+        "brief_rationale": "Physical stuff that constitutes the observable world; core concept in debates about the nature of substance."
+      },
+      {
+        "concept": "number",
+        "wikipedia_article": "Number",
+        "brief_rationale": "Mathematical entities whose ontological status—abstract or concrete—is a foundational question in metaphysics of mathematics."
+      }
+    ],
+    "L2": [
+      {
+        "concept": "ontology",
+        "wikipedia_article": "Ontology",
+        "brief_rationale": "The branch of metaphysics concerned with the nature and structure of being and what kinds of things exist."
+      },
+      {
+        "concept": "determinism",
+        "wikipedia_article": "Determinism",
+        "brief_rationale": "The thesis that every event is necessitated by prior causes and the laws of nature; central to free will debates."
+      },
+      {
+        "concept": "substance",
+        "wikipedia_article": "Substance theory",
+        "brief_rationale": "The metaphysical category of independently existing things that bear properties; contrasts with bundle theory."
+      },
+      {
+        "concept": "property",
+        "wikipedia_article": "Property (philosophy)",
+        "brief_rationale": "Attributes or qualities that objects possess; their nature and ontological status is debated between realists and nominalists."
+      },
+      {
+        "concept": "modal realism",
+        "wikipedia_article": "Modal realism",
+        "brief_rationale": "David Lewis's view that all possible worlds are equally real concrete entities; a radical position in modal metaphysics."
+      },
+      {
+        "concept": "possible world",
+        "wikipedia_article": "Possible world",
+        "brief_rationale": "A complete way the world could have been; used to analyze modal claims about necessity and possibility."
+      },
+      {
+        "concept": "dualism",
+        "wikipedia_article": "Mind–body dualism",
+        "brief_rationale": "The view that mind and body are distinct kinds of substance; associated with Descartes and opposed to physicalism."
+      },
+      {
+        "concept": "physicalism",
+        "wikipedia_article": "Physicalism",
+        "brief_rationale": "The thesis that everything that exists is physical or supervenes on the physical; the dominant metaphysical framework in contemporary philosophy."
+      },
+      {
+        "concept": "abstract object",
+        "wikipedia_article": "Abstract and concrete",
+        "brief_rationale": "Objects that lack spatiotemporal location, such as numbers and propositions; their existence is contested by nominalists."
+      },
+      {
+        "concept": "essence",
+        "wikipedia_article": "Essence",
+        "brief_rationale": "The necessary features that make a thing what it is; central to debates about de re modality and natural kinds."
+      },
+      {
+        "concept": "necessity and contingency",
+        "wikipedia_article": "Contingency (philosophy)",
+        "brief_rationale": "The distinction between what must be the case and what merely happens to be the case; fundamental to modal metaphysics."
+      },
+      {
+        "concept": "supervenience",
+        "wikipedia_article": "Supervenience",
+        "brief_rationale": "A dependency relation whereby higher-level facts cannot differ without lower-level facts differing; used to articulate physicalism."
+      },
+      {
+        "concept": "nominalism",
+        "wikipedia_article": "Nominalism",
+        "brief_rationale": "The view that only particular concrete things exist and that universals or abstract objects have no independent existence."
+      }
+    ],
+    "L3": [
+      {
+        "concept": "problem of universals",
+        "wikipedia_article": "Problem of universals",
+        "brief_rationale": "The debate over whether universals—properties shared by multiple particulars—exist independently, in things, or only as names."
+      },
+      {
+        "concept": "personal identity over time",
+        "wikipedia_article": "Personal identity",
+        "brief_rationale": "The question of what constitutes the continuity of a person through time; debated in terms of psychological and physical continuity."
+      },
+      {
+        "concept": "compatibilism",
+        "wikipedia_article": "Compatibilism",
+        "brief_rationale": "The view that free will and determinism are compatible; typically analyzes free will in terms of acting on one's own reasons without compulsion."
+      },
+      {
+        "concept": "mereology",
+        "wikipedia_article": "Mereology",
+        "brief_rationale": "The formal study of part-whole relations; raises questions about composition, simples, and what constitutes a genuine object."
+      },
+      {
+        "concept": "eternalism",
+        "wikipedia_article": "Eternalism (philosophy of time)",
+        "brief_rationale": "The view that past, present, and future entities all equally exist; the 'block universe' view opposed to presentism."
+      },
+      {
+        "concept": "presentism",
+        "wikipedia_article": "Presentism (philosophy of time)",
+        "brief_rationale": "The view that only present entities exist; contrasts with eternalism and raises puzzles about cross-temporal relations."
+      },
+      {
+        "concept": "bundle theory",
+        "wikipedia_article": "Bundle theory",
+        "brief_rationale": "The view that objects are nothing more than bundles of properties, with no underlying bare particular or substrate."
+      },
+      {
+        "concept": "causal closure",
+        "wikipedia_article": "Causal closure",
+        "brief_rationale": "The principle that every physical effect has a sufficient physical cause; a key premise in arguments for physicalism over dualism."
+      },
+      {
+        "concept": "emergence",
+        "wikipedia_article": "Emergence",
+        "brief_rationale": "The arising of novel properties at higher levels of organization that cannot be straightforwardly reduced to lower-level properties."
+      },
+      {
+        "concept": "natural kinds",
+        "wikipedia_article": "Natural kind",
+        "brief_rationale": "Categories that carve nature at its joints, such as chemical elements; their metaphysical status bears on essentialism and modality."
+      },
+      {
+        "concept": "laws of nature",
+        "wikipedia_article": "Laws of nature",
+        "brief_rationale": "Regularities governing the physical world; debated between Humean regularity theorists and necessitarians about their ontological status."
+      },
+      {
+        "concept": "trope theory",
+        "wikipedia_article": "Trope theory",
+        "brief_rationale": "The view that properties are particular, non-repeatable instances (tropes) rather than universals shared across objects."
+      }
+    ],
+    "L4": [
+      {
+        "concept": "grounding relation",
+        "wikipedia_article": "Grounding (metaphysics)",
+        "brief_rationale": "A non-causal dependence relation whereby one fact holds in virtue of another; central to contemporary debates about metaphysical structure."
+      },
+      {
+        "concept": "truthmaker theory",
+        "wikipedia_article": "Truthmaker theory",
+        "brief_rationale": "The view that truths require entities in the world that make them true; raises questions about what exists to ground negative and modal truths."
+      },
+      {
+        "concept": "four-dimensionalism",
+        "wikipedia_article": "Four-dimensionalism",
+        "brief_rationale": "The view that objects persist through time by having distinct temporal parts; contrasts with endurantism about persistence."
+      },
+      {
+        "concept": "endurantism",
+        "wikipedia_article": "Endurantism",
+        "brief_rationale": "The view that objects persist through time by being wholly present at each moment; raises puzzles about change in properties."
+      },
+      {
+        "concept": "haecceitism",
+        "wikipedia_article": "Haecceity",
+        "brief_rationale": "The view that individuals have a primitive 'thisness' distinct from their qualitative properties; relevant to questions of transworld identity."
+      },
+      {
+        "concept": "ontic structural realism",
+        "wikipedia_article": "Structural realism",
+        "brief_rationale": "The view that only structural relations are fundamental and objects are derivative; a radical position in philosophy of physics."
+      },
+      {
+        "concept": "Humean supervenience",
+        "wikipedia_article": "Humean supervenience",
+        "brief_rationale": "David Lewis's thesis that all facts supervene on the spatiotemporal distribution of local intrinsic qualities; grounds his regularity theory of laws."
+      },
+      {
+        "concept": "dialetheism",
+        "wikipedia_article": "Dialetheism",
+        "brief_rationale": "The view that some contradictions are true; challenges the law of non-contradiction and has implications for metaphysics and logic."
+      },
+      {
+        "concept": "mereological nihilism",
+        "wikipedia_article": "Mereological nihilism",
+        "brief_rationale": "The view that composite objects do not exist; only simples are real, with apparent composites being mere fictions or descriptions."
+      },
+      {
+        "concept": "counterpart theory",
+        "wikipedia_article": "Counterpart theory",
+        "brief_rationale": "Lewis's account of de re modal claims in terms of counterparts in other possible worlds rather than transworld identity of individuals."
+      },
+      {
+        "concept": "causal set theory",
+        "wikipedia_article": "Causal sets",
+        "brief_rationale": "A discrete approach to quantum gravity proposing that spacetime is fundamentally a partially ordered set of causal relations between events."
+      },
+      {
+        "concept": "priority monism",
+        "wikipedia_article": "Priority monism",
+        "brief_rationale": "Jonathan Schaffer's view that the whole universe is the one fundamental entity and all proper parts exist only as derivative; contrasts with pluralism."
+      }
+    ]
+  }
+}

@@ -1,0 +1,652 @@
+[
+  {
+    "question_text": "In cognitive psychology, what is memory?",
+    "correct_answer": "The faculty of the mind by which information is encoded, stored, and retrieved when needed.",
+    "distractors": [
+      "The mental process by which sensory stimuli are organized and interpreted as meaningful experiences.",
+      "The cognitive capacity to selectively focus awareness on relevant stimuli while ignoring distractions.",
+      "The ability to generate novel ideas and mental images that are not currently present to the senses."
+    ],
+    "difficulty": 1,
+    "source_article": "Memory",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["memory"]
+  },
+  {
+    "question_text": "In cognitive psychology, what is attention?",
+    "correct_answer": "The concentration of awareness on a particular stimulus or phenomenon while excluding competing stimuli.",
+    "distractors": [
+      "The process of encoding sensory information into long-term memory for later retrieval and use.",
+      "The mental capacity to reason logically from premises and draw valid conclusions about problems.",
+      "The interpretation of raw sensory data into meaningful perceptions of objects and events."
+    ],
+    "difficulty": 1,
+    "source_article": "Attention",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["attention"]
+  },
+  {
+    "question_text": "In cognitive psychology, what is perception?",
+    "correct_answer": "The process of organizing, identifying, and interpreting sensory information to understand the environment.",
+    "distractors": [
+      "The process of selectively attending to and filtering specific sensory inputs from the environment.",
+      "The process of storing, consolidating, and retrieving previously encountered information from memory.",
+      "The process of acquiring new behaviors and knowledge through repeated experience and practice."
+    ],
+    "difficulty": 1,
+    "source_article": "Perception",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["perception"]
+  },
+  {
+    "question_text": "In cognitive psychology, what is learning?",
+    "correct_answer": "The process by which experience produces relatively lasting changes in knowledge, skills, or behavior.",
+    "distractors": [
+      "The process by which sensory input is organized and interpreted to form meaningful representations.",
+      "The process by which information is encoded and stored in memory for later retrieval use.",
+      "The process by which attention is selectively directed toward novel stimuli in the environment."
+    ],
+    "difficulty": 1,
+    "source_article": "Learning",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["learning"]
+  },
+  {
+    "question_text": "In cognitive psychology, what does the term 'intelligence' refer to?",
+    "correct_answer": "The general mental capability involving reasoning, planning, problem solving, and learning from experience.",
+    "distractors": [
+      "The specific mental capability involving perception, attention, sensory processing, and pattern recognition tasks.",
+      "The general emotional capability involving empathy, social awareness, self-regulation, and interpersonal communication.",
+      "The specific motor capability involving coordination, reaction speed, spatial navigation, and physical adaptation."
+    ],
+    "difficulty": 1,
+    "source_article": "Intelligence",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["intelligence"]
+  },
+  {
+    "question_text": "In cognitive psychology, what role does language play in cognition?",
+    "correct_answer": "Language is a symbolic communication system that enables representation, expression, and manipulation of complex thought.",
+    "distractors": [
+      "Language is an automatic perceptual process that operates independently of higher-order reasoning and thought.",
+      "Language is a purely motor skill involving articulation of sounds without connection to cognitive representation.",
+      "Language is a sensory detection system that translates physical stimuli directly into conscious experience."
+    ],
+    "difficulty": 1,
+    "source_article": "Language",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["language"]
+  },
+  {
+    "question_text": "In cognitive psychology, what is reasoning?",
+    "correct_answer": "The mental process of drawing conclusions, making inferences, or forming judgments from available premises or evidence.",
+    "distractors": [
+      "The mental process of encoding sensory information into long-term memory storage for later retrieval.",
+      "The mental process of selectively filtering relevant stimuli while suppressing irrelevant environmental distractions.",
+      "The mental process of generating novel motor plans and coordinating physical responses to stimuli."
+    ],
+    "difficulty": 1,
+    "source_article": "Reasoning",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["reasoning"]
+  },
+  {
+    "question_text": "In cognitive psychology, what is decision-making?",
+    "correct_answer": "The cognitive process of identifying and selecting a course of action from among several alternatives.",
+    "distractors": [
+      "The cognitive process of rehearsing and consolidating information for permanent storage in long-term memory.",
+      "The cognitive process of detecting and interpreting sensory signals from the surrounding physical environment.",
+      "The cognitive process of monitoring and regulating one's own emotional responses during stressful situations."
+    ],
+    "difficulty": 1,
+    "source_article": "Decision-making",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["decision-making"]
+  },
+  {
+    "question_text": "In cognitive psychology, what is problem solving?",
+    "correct_answer": "A goal-directed cognitive process of finding solutions to difficult or complex issues or questions.",
+    "distractors": [
+      "An automatic cognitive process of retrieving previously stored answers from long-term memory systems.",
+      "A passive cognitive process of absorbing environmental information without deliberate mental effort involved.",
+      "A reflexive cognitive process of generating immediate motor responses to unexpected environmental stimuli."
+    ],
+    "difficulty": 1,
+    "source_article": "Problem solving",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["problem solving"]
+  },
+  {
+    "question_text": "In cognitive psychology, what is an emotion?",
+    "correct_answer": "A complex psychological state involving subjective experience, physiological arousal, and behavioral or expressive response.",
+    "distractors": [
+      "A simple reflexive reaction involving only physiological arousal without any subjective experience or awareness.",
+      "A deliberate cognitive judgment involving rational evaluation of situations without physiological arousal or feeling.",
+      "A learned behavioral habit involving conditioned motor responses without subjective experience or physiological change."
+    ],
+    "difficulty": 1,
+    "source_article": "Emotion",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["emotion"]
+  },
+  {
+    "question_text": "In cognitive psychology, what does 'consciousness' refer to?",
+    "correct_answer": "The state of being aware of and able to think about one's own existence and surroundings.",
+    "distractors": [
+      "The state of being asleep and unable to respond to external stimuli or internal mental events.",
+      "The automatic processing of sensory information that occurs entirely outside of subjective awareness and control.",
+      "The capacity to store and retrieve large amounts of information without any subjective experiential quality."
+    ],
+    "difficulty": 1,
+    "source_article": "Consciousness",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["consciousness"]
+  },
+  {
+    "question_text": "In cognitive psychology, what is imagination?",
+    "correct_answer": "The cognitive ability to form mental images, ideas, and sensations not present to the senses.",
+    "distractors": [
+      "The cognitive ability to recall previously experienced events exactly as they originally occurred in memory.",
+      "The cognitive ability to focus sustained attention on a single stimulus for an extended time period.",
+      "The cognitive ability to detect subtle changes in sensory input across different environmental conditions."
+    ],
+    "difficulty": 1,
+    "source_article": "Imagination",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["imagination"]
+  },
+  {
+    "question_text": "In cognitive psychology, what is forgetting?",
+    "correct_answer": "The apparent loss of information already encoded and stored in memory, or failure to retrieve it.",
+    "distractors": [
+      "The deliberate suppression of unwanted memories through conscious effort and voluntary cognitive control strategies.",
+      "The inability to encode new sensory information due to limited attentional resources during initial processing.",
+      "The gradual improvement of memory accuracy over time as stored information is repeatedly consolidated during sleep."
+    ],
+    "difficulty": 1,
+    "source_article": "Forgetting",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["forgetting"]
+  },
+  {
+    "question_text": "What is working memory in cognitive psychology?",
+    "correct_answer": "A limited-capacity cognitive system that temporarily holds and manipulates information needed for complex tasks.",
+    "distractors": [
+      "A high-capacity cognitive system that permanently stores all information encountered during daily experience.",
+      "A sensory-specific cognitive system that briefly registers raw perceptual input before conscious awareness occurs.",
+      "A long-term cognitive system that automatically consolidates procedural skills through repeated practice over time."
+    ],
+    "difficulty": 2,
+    "source_article": "Working memory",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["working memory"]
+  },
+  {
+    "question_text": "What is a cognitive bias?",
+    "correct_answer": "A systematic pattern of deviation from rationality in judgment, where inferences about people and situations may be illogical.",
+    "distractors": [
+      "A random pattern of errors in perception, where sensory information is occasionally misinterpreted due to environmental noise.",
+      "A deliberate strategy for simplifying complex decisions, where individuals consciously choose to ignore certain relevant information.",
+      "A temporary lapse in attention during demanding tasks, where cognitive resources are momentarily depleted by sustained effort."
+    ],
+    "difficulty": 2,
+    "source_article": "Cognitive bias",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["cognitive bias"]
+  },
+  {
+    "question_text": "In cognitive psychology, what is a schema?",
+    "correct_answer": "An organized pattern of thought or mental framework that helps interpret information and guide cognitive processing.",
+    "distractors": [
+      "A brief sensory impression lasting only milliseconds that captures raw perceptual data before higher processing.",
+      "A specific memory trace from a single episode that preserves exact details of the original experience.",
+      "An unconscious emotional reaction to stimuli that operates independently of any organized knowledge structures."
+    ],
+    "difficulty": 2,
+    "source_article": "Schema (psychology)",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["schema"]
+  },
+  {
+    "question_text": "In cognitive psychology, what is a heuristic?",
+    "correct_answer": "A mental shortcut or rule of thumb that simplifies decisions and problem solving but may introduce bias.",
+    "distractors": [
+      "A formal logical algorithm that guarantees an optimal solution to any well-defined problem through exhaustive analysis.",
+      "A memorized factual statement retrieved from long-term storage that provides definitive answers to specific questions.",
+      "A perceptual grouping principle that organizes sensory input into coherent patterns based on proximity and similarity."
+    ],
+    "difficulty": 2,
+    "source_article": "Heuristic (psychology)",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["heuristic"]
+  },
+  {
+    "question_text": "What characterizes long-term memory in cognitive psychology?",
+    "correct_answer": "A memory system with virtually unlimited capacity that stores information over extended periods, from hours to a lifetime.",
+    "distractors": [
+      "A memory system with strictly limited capacity that stores information for only a few seconds before rapid decay.",
+      "A memory system with moderate capacity that stores information for exactly thirty minutes before automatic erasure.",
+      "A memory system with fixed capacity that stores information only during sleep and erases it upon waking."
+    ],
+    "difficulty": 2,
+    "source_article": "Long-term memory",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["long-term memory"]
+  },
+  {
+    "question_text": "What is the typical duration and capacity of short-term memory?",
+    "correct_answer": "Short-term memory holds roughly seven items for approximately 15 to 30 seconds without rehearsal.",
+    "distractors": [
+      "Short-term memory holds roughly three items for approximately 5 to 10 minutes without rehearsal.",
+      "Short-term memory holds roughly twenty items for approximately 60 to 90 seconds without rehearsal.",
+      "Short-term memory holds roughly twelve items for approximately 2 to 5 seconds without rehearsal."
+    ],
+    "difficulty": 2,
+    "source_article": "Short-term memory",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["short-term memory"]
+  },
+  {
+    "question_text": "What is cognitive development most closely associated with?",
+    "correct_answer": "The study of how thinking, reasoning, and intellectual abilities change and mature across the lifespan.",
+    "distractors": [
+      "The study of how emotional regulation and temperament change exclusively during the first year of life.",
+      "The study of how motor coordination and physical reflexes develop only during the prenatal period.",
+      "The study of how social relationships and peer interactions emerge specifically during late adolescence."
+    ],
+    "difficulty": 2,
+    "source_article": "Cognitive development",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["cognitive development"]
+  },
+  {
+    "question_text": "What is selective attention?",
+    "correct_answer": "The ability to focus cognitive resources on a particular stimulus while ignoring other perceivable information.",
+    "distractors": [
+      "The ability to divide cognitive resources equally among all stimuli present in the perceptual environment.",
+      "The ability to automatically process every stimulus in the visual field without any effort or focus.",
+      "The ability to suppress all sensory input entirely and focus exclusively on internally generated thoughts."
+    ],
+    "difficulty": 2,
+    "source_article": "Selective attention",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["selective attention"]
+  },
+  {
+    "question_text": "What is a mental model in cognitive psychology?",
+    "correct_answer": "An internal representation of a real or imaginary situation that supports reasoning, prediction, and understanding.",
+    "distractors": [
+      "An external diagram or physical object used to illustrate scientific concepts during formal classroom instruction.",
+      "A fixed behavioral script that dictates exactly how a person must respond in every social situation.",
+      "An innate perceptual template present at birth that determines how infants categorize all visual stimuli."
+    ],
+    "difficulty": 2,
+    "source_article": "Mental model",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["mental model"]
+  },
+  {
+    "question_text": "According to prototype theory, how do people categorize objects?",
+    "correct_answer": "By comparing new instances to a typical example or prototype that best represents the category.",
+    "distractors": [
+      "By checking whether new instances satisfy every necessary and sufficient defining feature of the category.",
+      "By randomly assigning new instances to whichever category was most recently encountered in experience.",
+      "By counting the total number of features an instance shares with every known member of the category."
+    ],
+    "difficulty": 2,
+    "source_article": "Prototype theory",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["prototype theory"]
+  },
+  {
+    "question_text": "What is confirmation bias?",
+    "correct_answer": "The tendency to search for, interpret, and recall information in a way that confirms one's preexisting beliefs.",
+    "distractors": [
+      "The tendency to abandon one's existing beliefs immediately upon encountering any new contradictory information.",
+      "The tendency to randomly select information sources without regard to their relevance to one's current beliefs.",
+      "The tendency to weigh all available evidence equally regardless of whether it supports or contradicts one's beliefs."
+    ],
+    "difficulty": 2,
+    "source_article": "Confirmation bias",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["confirmation bias"]
+  },
+  {
+    "question_text": "What is metacognition?",
+    "correct_answer": "Awareness and understanding of one's own thought processes, often described as thinking about thinking.",
+    "distractors": [
+      "The automatic processing of sensory information that occurs below the threshold of conscious awareness entirely.",
+      "The emotional reaction that accompanies cognitive effort during demanding problem solving or reasoning tasks.",
+      "The neural mechanism responsible for transferring information from short-term memory into long-term memory storage."
+    ],
+    "difficulty": 2,
+    "source_article": "Metacognition",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["metacognition"]
+  },
+  {
+    "question_text": "What is priming in cognitive psychology?",
+    "correct_answer": "An implicit memory effect where exposure to a stimulus influences the response to a subsequent related stimulus.",
+    "distractors": [
+      "An explicit memory technique where deliberate rehearsal strengthens the encoding of information into long-term storage.",
+      "A perceptual learning effect where repeated exposure to a stimulus reduces the sensory threshold for detecting it.",
+      "A motivational effect where receiving positive feedback increases the effort applied to subsequent unrelated tasks."
+    ],
+    "difficulty": 2,
+    "source_article": "Priming (psychology)",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["priming"]
+  },
+  {
+    "question_text": "What does dual-process theory distinguish between in cognitive processing?",
+    "correct_answer": "A fast, automatic, intuitive System 1 and a slow, deliberate, analytical System 2 mode of thinking.",
+    "distractors": [
+      "A visual processing pathway for object recognition and a separate visual pathway for spatial location detection.",
+      "A conscious explicit memory system for facts and a separate implicit memory system for motor skills.",
+      "A left-hemisphere language processing system and a separate right-hemisphere visuospatial processing system exclusively."
+    ],
+    "difficulty": 3,
+    "source_article": "Dual process theory",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["dual-process theory"]
+  },
+  {
+    "question_text": "What does the levels-of-processing effect predict about memory?",
+    "correct_answer": "Deeper semantic processing of information at encoding leads to more durable and retrievable memory traces.",
+    "distractors": [
+      "More frequent repetition of information at encoding leads to stronger memory regardless of processing depth.",
+      "Shallow phonological processing of information at encoding produces the most durable long-term memory traces.",
+      "The sensory modality used at encoding determines memory strength independently of how deeply information is processed."
+    ],
+    "difficulty": 3,
+    "source_article": "Levels-of-processing effect",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["levels-of-processing effect"]
+  },
+  {
+    "question_text": "What is the phonological loop in Baddeley's working memory model?",
+    "correct_answer": "A component that maintains and rehearses verbal and acoustic information through a subvocal rehearsal process.",
+    "distractors": [
+      "A component that maintains and manipulates visual images and spatial relationships through mental visualization processes.",
+      "A component that coordinates information flow between all subsystems and allocates attentional resources to tasks.",
+      "A component that binds together information from different modalities into coherent integrated episodic representations."
+    ],
+    "difficulty": 3,
+    "source_article": "Phonological loop",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["phonological loop"]
+  },
+  {
+    "question_text": "What function does the visuospatial sketchpad serve in Baddeley's working memory model?",
+    "correct_answer": "It temporarily stores and manipulates visual and spatial information, such as mental images and spatial layouts.",
+    "distractors": [
+      "It temporarily stores and rehearses verbal and phonological information, such as spoken words and sound patterns.",
+      "It permanently encodes visual scenes into long-term memory for later detailed recall of spatial environments.",
+      "It coordinates the exchange of information between the phonological loop and the central executive control system."
+    ],
+    "difficulty": 3,
+    "source_article": "Baddeley's model of working memory",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["visuospatial sketchpad"]
+  },
+  {
+    "question_text": "What is change blindness?",
+    "correct_answer": "The failure to detect large changes in a visual scene when the change occurs during a brief disruption.",
+    "distractors": [
+      "The inability to perceive any visual stimuli after prolonged exposure to bright light causes temporary retinal fatigue.",
+      "The tendency to perceive visual scenes as unchanging because the brain suppresses all incoming new sensory data.",
+      "The enhanced ability to detect small changes in visual scenes when attention is broadly distributed across space."
+    ],
+    "difficulty": 3,
+    "source_article": "Change blindness",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["change blindness"]
+  },
+  {
+    "question_text": "What phenomenon does inattentional blindness describe?",
+    "correct_answer": "The failure to notice an unexpected but fully visible stimulus when attention is engaged on another task.",
+    "distractors": [
+      "The failure to detect changes in a visual scene when the changes coincide with a brief visual disruption.",
+      "The gradual loss of visual sensitivity that occurs when a stimulus remains stationary on the retinal surface.",
+      "The inability to see objects in peripheral vision due to reduced density of photoreceptors outside the fovea."
+    ],
+    "difficulty": 3,
+    "source_article": "Inattentional blindness",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["inattentional blindness"]
+  },
+  {
+    "question_text": "How does spreading activation work in semantic memory?",
+    "correct_answer": "Activating one concept in a network automatically raises the activation level of related concepts nearby.",
+    "distractors": [
+      "Activating one concept causes all other concepts in the entire memory network to be equally suppressed.",
+      "Activating one concept triggers sequential retrieval of every concept stored in long-term semantic memory.",
+      "Activating one concept temporarily deactivates all directly connected concepts to prevent retrieval interference."
+    ],
+    "difficulty": 3,
+    "source_article": "Spreading activation",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["spreading activation"]
+  },
+  {
+    "question_text": "What does signal detection theory separate in perceptual tasks?",
+    "correct_answer": "It separates an observer's perceptual sensitivity from their response bias or criterion for making decisions.",
+    "distractors": [
+      "It separates an observer's reaction time from their movement execution speed during timed motor response tasks.",
+      "It separates an observer's visual acuity from their auditory sensitivity during cross-modal comparison experiments.",
+      "It separates an observer's short-term memory capacity from their long-term memory retrieval accuracy during recall."
+    ],
+    "difficulty": 3,
+    "source_article": "Detection theory",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["signal detection theory"]
+  },
+  {
+    "question_text": "What causes the Stroop effect?",
+    "correct_answer": "Interference occurs because automatic word reading conflicts with the task of naming the ink color of the word.",
+    "distractors": [
+      "Facilitation occurs because word reading and color naming always activate the same neural pathway simultaneously.",
+      "Interference occurs because naming any color is inherently slower than reading any word regardless of conflict.",
+      "Facilitation occurs because congruent color-word pairings are processed more slowly than incongruent color-word pairings."
+    ],
+    "difficulty": 3,
+    "source_article": "Stroop effect",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["Stroop effect"]
+  },
+  {
+    "question_text": "How does the availability heuristic influence probability judgments?",
+    "correct_answer": "People estimate the likelihood of events based on how easily examples come to mind from memory.",
+    "distractors": [
+      "People estimate the likelihood of events based on formal statistical calculations of base rate frequencies.",
+      "People estimate the likelihood of events based on how many sensory details are present in the stimulus.",
+      "People estimate the likelihood of events based on the alphabetical ordering of category labels in memory."
+    ],
+    "difficulty": 3,
+    "source_article": "Availability heuristic",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["availability heuristic"]
+  },
+  {
+    "question_text": "What did Shepard and Metzler's mental rotation experiments demonstrate?",
+    "correct_answer": "Response time increases linearly with the angular disparity between two objects, suggesting analog spatial representation.",
+    "distractors": [
+      "Response time remains constant regardless of angular disparity, suggesting propositional rather than analog representation.",
+      "Response time decreases linearly with angular disparity because larger rotations trigger faster processing shortcuts.",
+      "Response time increases exponentially with angular disparity, suggesting discrete categorical spatial representation strategies."
+    ],
+    "difficulty": 3,
+    "source_article": "Mental rotation",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["mental rotation"]
+  },
+  {
+    "question_text": "What is source monitoring in cognitive psychology?",
+    "correct_answer": "The cognitive process of determining the origin of memories, knowledge, or beliefs one currently holds.",
+    "distractors": [
+      "The cognitive process of strengthening memory traces through repeated retrieval practice over multiple sessions.",
+      "The cognitive process of selecting which sensory inputs to attend to and which to filter out.",
+      "The cognitive process of converting short-term memory representations into stable long-term memory traces."
+    ],
+    "difficulty": 3,
+    "source_article": "Source-monitoring error",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["source monitoring"]
+  },
+  {
+    "question_text": "What characterizes connectionist models of cognition?",
+    "correct_answer": "They model cognitive processes as emerging from patterns of activation across networks of simple interconnected processing units.",
+    "distractors": [
+      "They model cognitive processes as sequential execution of explicit symbolic rules stored in a central processing module.",
+      "They model cognitive processes as direct stimulus-response associations without any internal representational structure or layers.",
+      "They model cognitive processes as isolated modules that operate independently without any inter-module communication or connection."
+    ],
+    "difficulty": 4,
+    "source_article": "Connectionism",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["connectionist models of cognition"]
+  },
+  {
+    "question_text": "What is the central claim of embodied cognition?",
+    "correct_answer": "Cognitive processes are fundamentally shaped by the body's sensorimotor interactions with the physical environment.",
+    "distractors": [
+      "Cognitive processes operate entirely independently of bodily states and rely exclusively on abstract symbolic computation.",
+      "Cognitive processes are determined solely by neural activity in the prefrontal cortex without any bodily influence.",
+      "Cognitive processes are best understood as disembodied information processing occurring in a purely computational mind."
+    ],
+    "difficulty": 4,
+    "source_article": "Embodied cognition",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["embodied cognition"]
+  },
+  {
+    "question_text": "What does the Bayesian brain hypothesis propose about perception and cognition?",
+    "correct_answer": "The brain performs probabilistic inference by combining prior beliefs with incoming sensory evidence using Bayes' rule.",
+    "distractors": [
+      "The brain processes sensory information through fixed deterministic algorithms that do not incorporate prior experience.",
+      "The brain stores exact copies of all sensory inputs and retrieves them without any probabilistic computation involved.",
+      "The brain relies exclusively on bottom-up sensory data without integrating any top-down expectations or prior beliefs."
+    ],
+    "difficulty": 4,
+    "source_article": "Bayesian approaches to brain function",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["Bayesian brain hypothesis"]
+  },
+  {
+    "question_text": "How does predictive coding explain neural information processing?",
+    "correct_answer": "The brain generates top-down predictions and only propagates upward the prediction errors between expected and actual input.",
+    "distractors": [
+      "The brain passively receives all sensory signals and propagates them upward through the cortical hierarchy without filtering.",
+      "The brain stores complete sensory recordings and compares them to new inputs only during explicit memory retrieval tasks.",
+      "The brain transmits all raw sensory data upward and generates predictions only at the highest cortical processing level."
+    ],
+    "difficulty": 4,
+    "source_article": "Predictive coding",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["predictive coding"]
+  },
+  {
+    "question_text": "What does fuzzy-trace theory propose about memory representations?",
+    "correct_answer": "Memory encodes parallel verbatim traces preserving exact details and gist traces capturing meaning and interpretation.",
+    "distractors": [
+      "Memory encodes only one unified trace that combines surface details and meaning into a single representation.",
+      "Memory encodes only verbatim traces with exact surface details, and gist is inferred at the time of retrieval.",
+      "Memory encodes only gist-based meaning traces, and verbatim details are always lost immediately after encoding."
+    ],
+    "difficulty": 4,
+    "source_article": "Fuzzy-trace theory",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["fuzzy-trace theory"]
+  },
+  {
+    "question_text": "What three types of cognitive load does Sweller's cognitive load theory distinguish?",
+    "correct_answer": "Intrinsic load from material complexity, extraneous load from poor instruction, and germane load supporting schema construction.",
+    "distractors": [
+      "Sensory load from stimulus intensity, motor load from response execution, and emotional load from affective arousal.",
+      "Perceptual load from visual complexity, attentional load from distractor presence, and memory load from item quantity.",
+      "Encoding load from initial learning, retrieval load from memory recall, and transfer load from applying knowledge broadly."
+    ],
+    "difficulty": 4,
+    "source_article": "Cognitive load theory",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["cognitive load theory"]
+  },
+  {
+    "question_text": "What does the principle of transfer-appropriate processing state about memory?",
+    "correct_answer": "Memory performance is best when the cognitive processes used at retrieval match those used during original encoding.",
+    "distractors": [
+      "Memory performance is best when information is encoded at the deepest semantic level regardless of retrieval conditions.",
+      "Memory performance is best when retrieval occurs in a different sensory modality from the one used during encoding.",
+      "Memory performance is best when the time interval between encoding and retrieval is as short as physically possible."
+    ],
+    "difficulty": 4,
+    "source_article": "Transfer-appropriate processing",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["transfer-appropriate processing"]
+  },
+  {
+    "question_text": "What are the key components of Anderson's ACT-R cognitive architecture?",
+    "correct_answer": "Declarative memory for factual knowledge and procedural memory using production rules, with precise timing predictions for cognition.",
+    "distractors": [
+      "A single unified memory store with no distinction between declarative and procedural knowledge, using parallel distributed processing.",
+      "Sensory buffers for perceptual input and motor buffers for action output, with no central memory components involved.",
+      "Explicit reasoning modules for logical deduction and implicit modules for emotional processing, without timing predictions."
+    ],
+    "difficulty": 4,
+    "source_article": "ACT-R",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["adaptive control of thought-rational"]
+  },
+  {
+    "question_text": "What does global workspace theory propose about consciousness?",
+    "correct_answer": "Consciousness arises when information is broadcast from a central workspace to multiple specialized unconscious processing modules.",
+    "distractors": [
+      "Consciousness arises when a single specialized brain region activates independently without communicating with any other modules.",
+      "Consciousness arises from the cumulative activity of all brain regions operating in parallel without any central integration.",
+      "Consciousness arises exclusively from sensory cortex activity and does not require any form of widespread information broadcasting."
+    ],
+    "difficulty": 4,
+    "source_article": "Global workspace theory",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["global workspace theory"]
+  },
+  {
+    "question_text": "What is the misinformation effect demonstrated by Loftus's research?",
+    "correct_answer": "Exposure to misleading post-event information can alter and distort a person's memory of the original event.",
+    "distractors": [
+      "Exposure to accurate post-event information consistently strengthens and improves a person's memory of the original event.",
+      "Exposure to any post-event information has no measurable effect on the accuracy of original event memory traces.",
+      "Exposure to misleading post-event information only affects memory when the person is aware of the deception."
+    ],
+    "difficulty": 4,
+    "source_article": "Misinformation effect",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["misinformation effect"]
+  },
+  {
+    "question_text": "What does the linguistic relativity hypothesis (Sapir-Whorf hypothesis) propose?",
+    "correct_answer": "The structure of a language influences its speakers' perception, categorization, and cognition about the world.",
+    "distractors": [
+      "All human languages share identical deep structures that produce exactly the same cognitive patterns across cultures.",
+      "Language is entirely separate from thought, and no aspect of linguistic structure influences cognitive processing whatsoever.",
+      "Only the vocabulary size of a language affects cognition, while grammatical structure has no cognitive influence."
+    ],
+    "difficulty": 4,
+    "source_article": "Linguistic relativity",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["linguistic relativity"]
+  },
+  {
+    "question_text": "What does the attentional blink phenomenon reveal about temporal attention?",
+    "correct_answer": "Identifying a first target in rapid serial presentation impairs detection of a second target appearing 200-500ms later.",
+    "distractors": [
+      "Identifying a first target in rapid serial presentation enhances detection of all subsequent targets regardless of timing.",
+      "Identifying a first target in rapid serial presentation has no effect on the detection of any subsequent targets.",
+      "Identifying a first target in rapid serial presentation impairs detection only when the second target appears after 2 seconds."
+    ],
+    "difficulty": 4,
+    "source_article": "Attentional blink",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["attentional blink"]
+  }
+]

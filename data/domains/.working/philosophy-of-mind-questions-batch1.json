@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Which philosopher's 1690 Essay Concerning Human Understanding is often credited with introducing the modern concept of consciousness?",
+    "correct_answer": "John Locke, who defined consciousness as the perception of what passes in one's own mind.",
+    "distractors": [
+      "Rene Descartes, who defined consciousness as the indubitable certainty of one's own existence as a thinking substance.",
+      "David Hume, who defined consciousness as the continuous stream of impressions and ideas flowing through experience.",
+      "Immanuel Kant, who defined consciousness as the transcendental unity of apperception underlying all possible experience."
+    ],
+    "difficulty": 1,
+    "source_article": "Consciousness",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["consciousness"]
+  },
+  {
+    "question_text": "In the free will debate, what position do compatibilists hold about the relationship between free will and determinism?",
+    "correct_answer": "That free will is compatible with determinism, meaning people can act freely even if events are causally determined.",
+    "distractors": [
+      "That free will is incompatible with determinism, meaning people cannot act freely if events are causally determined.",
+      "That free will requires indeterminism, meaning people can act freely only if some events are genuinely random.",
+      "That free will is an illusion of determinism, meaning people merely feel free while events are causally determined."
+    ],
+    "difficulty": 1,
+    "source_article": "Free will",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["free will"]
+  },
+  {
+    "question_text": "Which philosopher is most associated with formulating the mind-body problem through his substance dualism in the 17th century?",
+    "correct_answer": "Rene Descartes, who proposed that mind and body are fundamentally distinct substances that causally interact.",
+    "distractors": [
+      "Baruch Spinoza, who proposed that mind and body are fundamentally identical attributes of one single substance.",
+      "Thomas Hobbes, who proposed that mind and body are fundamentally reducible to mechanical motions of matter.",
+      "Gottfried Leibniz, who proposed that mind and body are fundamentally independent substances in pre-established harmony."
+    ],
+    "difficulty": 1,
+    "source_article": "Mind\u2013body problem",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["mind-body problem"]
+  },
+  {
+    "question_text": "How did Aristotle's view of the soul differ from Plato's in ancient Greek philosophy?",
+    "correct_answer": "Aristotle saw the soul as the form of a living body inseparable from it, while Plato considered the soul incorporeal and immortal.",
+    "distractors": [
+      "Aristotle saw the soul as a divine spark imprisoned within matter, while Plato considered the soul a natural biological function.",
+      "Aristotle saw the soul as existing before birth in a realm of ideals, while Plato considered the soul arising only at conception.",
+      "Aristotle saw the soul as composed of indivisible atoms of consciousness, while Plato considered the soul a harmony of bodily elements."
+    ],
+    "difficulty": 1,
+    "source_article": "Soul",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["soul"]
+  },
+  {
+    "question_text": "According to William James's influential theory, what is the relationship between bodily changes and emotions?",
+    "correct_answer": "Bodily changes directly follow perception of an exciting event, and our feeling of those changes as they occur is the emotion.",
+    "distractors": [
+      "Emotions arise first as mental judgments about an exciting event, and the bodily changes follow later as physical expressions of feeling.",
+      "Bodily changes and emotional feelings occur simultaneously and independently from an exciting event, connected only by parallel neural pathways.",
+      "Emotions are cognitive appraisals that precede any bodily response to an exciting event, and physical changes are merely incidental aftereffects."
+    ],
+    "difficulty": 1,
+    "source_article": "Emotion",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["emotion"]
+  },
+  {
+    "question_text": "In the philosophy of perception, what does direct realism claim about our perceptual experience of objects?",
+    "correct_answer": "That we directly perceive external objects themselves, rather than mental representations or internal copies of those objects.",
+    "distractors": [
+      "That we indirectly perceive external objects through mental intermediaries, rather than having unmediated contact with those objects.",
+      "That we construct external objects entirely from sensory data, rather than encountering any mind-independent reality beyond those objects.",
+      "That we perceive only our own mental states as internal phenomena, rather than having any access to external physical objects."
+    ],
+    "difficulty": 1,
+    "source_article": "Perception",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["perception"]
+  },
+  {
+    "question_text": "What is the key distinction between declarative memory and procedural memory in philosophy and cognitive science?",
+    "correct_answer": "Declarative memory stores factual information and events, while procedural memory stores skills and knowledge of how to perform actions.",
+    "distractors": [
+      "Declarative memory stores unconscious motor habits and reflexes, while procedural memory stores explicit facts and consciously recalled personal events.",
+      "Declarative memory stores short-term sensory impressions briefly, while procedural memory stores long-term emotional associations and affective responses permanently.",
+      "Declarative memory stores inherited instinctual behavioral patterns, while procedural memory stores culturally transmitted linguistic rules and social conventions."
+    ],
+    "difficulty": 1,
+    "source_article": "Memory",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["memory"]
+  },
+  {
+    "question_text": "In philosophy of mind, what is the difference between an occurrent belief and a dispositional belief?",
+    "correct_answer": "An occurrent belief is one actively entertained in conscious thought, while a dispositional belief is held without currently being thought about.",
+    "distractors": [
+      "An occurrent belief is one inherited through biological evolution, while a dispositional belief is acquired through individual learning and social experience.",
+      "An occurrent belief is one that is true and justified, while a dispositional belief is one that is false but strongly felt.",
+      "An occurrent belief is one shared by an entire community, while a dispositional belief is one held privately by a single individual."
+    ],
+    "difficulty": 1,
+    "source_article": "Belief",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["belief"]
+  },
+  {
+    "question_text": "According to David Hume, what is the relationship between desire and reason in motivating human action?",
+    "correct_answer": "Reason alone cannot motivate action; it serves only to identify means to ends that are set by desire and passion.",
+    "distractors": [
+      "Desire alone cannot motivate action; it serves only to provide energy for goals that are set by reason and judgment.",
+      "Reason and desire jointly originate action; neither can function independently because both are required to set and pursue any goal.",
+      "Reason directly overrides desire in action; it serves to suppress passions and replace them with rationally determined moral obligations."
+    ],
+    "difficulty": 1,
+    "source_article": "Desire",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["desire"]
+  },
+  {
+    "question_text": "In philosophy, how does the narrow sense of 'thought' differ from its broad sense?",
+    "correct_answer": "Narrowly, thought refers to conscious conceptual processes like judging and reasoning; broadly, it includes all mental processes, conscious or unconscious.",
+    "distractors": [
+      "Narrowly, thought refers to unconscious automatic reflexes like breathing and blinking; broadly, it includes all behavioral responses, voluntary or involuntary.",
+      "Narrowly, thought refers to linguistic verbal communication like speaking and writing; broadly, it includes all social interactions, verbal or nonverbal.",
+      "Narrowly, thought refers to sensory perceptual experiences like seeing and hearing; broadly, it includes all neural activity, cortical or subcortical."
+    ],
+    "difficulty": 1,
+    "source_article": "Thought",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["thought"]
+  }
+]

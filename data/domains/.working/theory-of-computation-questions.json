@@ -1,0 +1,652 @@
+[
+  {
+    "question_text": "In computer science, what is an algorithm?",
+    "correct_answer": "A finite sequence of well-defined instructions for solving a problem or performing a computation.",
+    "distractors": [
+      "A physical electronic circuit that processes binary signals to execute arithmetic operations.",
+      "A graphical user interface element that allows users to interact with software applications.",
+      "A data storage format that organizes information into rows and columns within a database."
+    ],
+    "difficulty": 1,
+    "source_article": "Algorithm",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["algorithm"]
+  },
+  {
+    "question_text": "What is a Turing machine?",
+    "correct_answer": "An abstract mathematical model of computation that manipulates symbols on an infinite tape according to a set of rules.",
+    "distractors": [
+      "A physical mechanical device built by Alan Turing during World War II to decrypt enemy communications.",
+      "An early electronic computer that used vacuum tubes and punched cards to perform numerical calculations.",
+      "A programming language interpreter that translates high-level source code into machine-executable binary instructions."
+    ],
+    "difficulty": 1,
+    "source_article": "Turing machine",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["Turing machine"]
+  },
+  {
+    "question_text": "What is a programming language?",
+    "correct_answer": "A formal system of notation and rules used to write instructions that a computer can execute.",
+    "distractors": [
+      "A natural human language such as English that programmers speak while collaborating on software projects.",
+      "A hardware description specification that defines the physical layout of transistors on a microchip.",
+      "A binary encoding scheme that converts electrical signals into human-readable text on a display."
+    ],
+    "difficulty": 1,
+    "source_article": "Programming language",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["programming language"]
+  },
+  {
+    "question_text": "What is binary code?",
+    "correct_answer": "A system of representing data and instructions using only two symbols, typically 0 and 1.",
+    "distractors": [
+      "A cryptographic method that encodes messages using pairs of prime numbers for secure transmission.",
+      "A programming paradigm that organizes software into exactly two interacting modules or components.",
+      "A compression technique that reduces file sizes by removing every other bit from the data."
+    ],
+    "difficulty": 1,
+    "source_article": "Binary code",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["binary code"]
+  },
+  {
+    "question_text": "In computing, what is encryption?",
+    "correct_answer": "The process of converting information into a coded form so that only authorized parties can access it.",
+    "distractors": [
+      "The process of compressing data files to reduce their storage size on a disk or server.",
+      "The process of converting analog audio or video signals into a digital format for storage.",
+      "The process of translating source code written in one programming language into another language."
+    ],
+    "difficulty": 1,
+    "source_article": "Encryption",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["encryption"]
+  },
+  {
+    "question_text": "In programming, what is a loop?",
+    "correct_answer": "A control flow structure that repeats a block of instructions until a specified condition is met.",
+    "distractors": [
+      "A data structure that stores elements in a circular linked list with no beginning or end.",
+      "A function that calls another function exactly once and then returns the result immediately.",
+      "A debugging tool that traces the execution path of a program through each line of code."
+    ],
+    "difficulty": 1,
+    "source_article": "Control flow",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["loop"]
+  },
+  {
+    "question_text": "What is a compiler?",
+    "correct_answer": "A program that translates source code written in a high-level programming language into machine code.",
+    "distractors": [
+      "A program that executes source code instructions one line at a time without producing an output file.",
+      "A hardware component that converts electrical signals from the processor into visual display output.",
+      "A software tool that merges multiple separate code files into a single compressed archive format."
+    ],
+    "difficulty": 1,
+    "source_article": "Compiler",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["compiler"]
+  },
+  {
+    "question_text": "In computer science, what is recursion?",
+    "correct_answer": "A technique where a function solves a problem by calling itself on smaller instances of the same problem.",
+    "distractors": [
+      "A technique where a program stores intermediate results in a table to avoid redundant computations.",
+      "A technique where multiple processors execute different parts of a program at the same time.",
+      "A technique where a function passes its result directly to the next function in a pipeline."
+    ],
+    "difficulty": 1,
+    "source_article": "Recursion (computer science)",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["recursion"]
+  },
+  {
+    "question_text": "What is a sorting algorithm?",
+    "correct_answer": "An algorithm that arranges elements of a list or array into a specified order, such as numerical or alphabetical.",
+    "distractors": [
+      "An algorithm that searches through a collection of data to find a specific element matching a query.",
+      "An algorithm that compresses a sequence of data values by removing duplicate entries from the list.",
+      "An algorithm that distributes incoming network requests evenly across multiple servers for load balancing."
+    ],
+    "difficulty": 1,
+    "source_article": "Sorting algorithm",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["sorting algorithm"]
+  },
+  {
+    "question_text": "What does computational complexity study?",
+    "correct_answer": "The amount of resources, such as time and memory, required to solve computational problems as input size grows.",
+    "distractors": [
+      "The number of programming languages available to implement a given software application or system.",
+      "The physical energy consumption of computer hardware when executing programs on modern processors.",
+      "The difficulty of writing correct source code as measured by the number of bugs per line."
+    ],
+    "difficulty": 1,
+    "source_article": "Computational complexity theory",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["complexity"]
+  },
+  {
+    "question_text": "What is the halting problem?",
+    "correct_answer": "The problem of determining whether an arbitrary program will eventually stop running or continue forever.",
+    "distractors": [
+      "The problem of finding the most efficient way to shut down a running operating system safely.",
+      "The problem of detecting and recovering from hardware failures that cause a computer to crash.",
+      "The problem of determining the exact line of code where a software bug causes a program error."
+    ],
+    "difficulty": 1,
+    "source_article": "Halting problem",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["halting problem"]
+  },
+  {
+    "question_text": "What is a formal language in the theory of computation?",
+    "correct_answer": "A set of strings composed from a finite alphabet, defined by precise mathematical rules or a grammar.",
+    "distractors": [
+      "A natural human language that has been standardized with official spelling and grammar regulations.",
+      "A programming language that requires strict type declarations for every variable before use.",
+      "A spoken language used exclusively in academic and scientific publications rather than everyday conversation."
+    ],
+    "difficulty": 1,
+    "source_article": "Formal language",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["formal language"]
+  },
+  {
+    "question_text": "What is Boolean logic?",
+    "correct_answer": "A branch of algebra that deals with variables having only two possible values: true and false.",
+    "distractors": [
+      "A branch of mathematics that studies continuous functions and their rates of change over time.",
+      "A logical system that allows variables to take any integer value between negative and positive infinity.",
+      "A branch of statistics that assigns probability values ranging from zero to one to uncertain events."
+    ],
+    "difficulty": 1,
+    "source_article": "Boolean algebra",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["Boolean logic"]
+  },
+  {
+    "question_text": "What does a finite automaton consist of?",
+    "correct_answer": "A finite set of states, a transition function, a start state, and a set of accepting states.",
+    "distractors": [
+      "An infinite tape, a read-write head, a state register, and a table of transition rules.",
+      "A stack memory, a finite control unit, an input tape, and an output buffer for results.",
+      "A set of production rules, terminal symbols, nonterminal symbols, and a designated start symbol."
+    ],
+    "difficulty": 2,
+    "source_article": "Finite-state machine",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["finite automaton"]
+  },
+  {
+    "question_text": "What do regular expressions describe?",
+    "correct_answer": "Patterns that specify sets of strings, defining exactly the class of regular languages.",
+    "distractors": [
+      "Patterns that specify sets of parse trees, defining exactly the class of context-free languages.",
+      "Patterns that specify sets of computations, defining exactly the class of recursive languages.",
+      "Patterns that specify sets of Boolean formulas, defining exactly the class of satisfiable expressions."
+    ],
+    "difficulty": 2,
+    "source_article": "Regular expression",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["regular expression"]
+  },
+  {
+    "question_text": "What is a context-free grammar?",
+    "correct_answer": "A formal grammar where every production rule has a single nonterminal on its left-hand side.",
+    "distractors": [
+      "A formal grammar where production rules can have multiple nonterminals on their left-hand side.",
+      "A formal grammar where every production rule maps one terminal symbol to another terminal symbol.",
+      "A formal grammar where the left-hand side must be longer than the right-hand side of each rule."
+    ],
+    "difficulty": 2,
+    "source_article": "Context-free grammar",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["context-free grammar"]
+  },
+  {
+    "question_text": "What distinguishes a pushdown automaton from a finite automaton?",
+    "correct_answer": "A pushdown automaton has an additional stack memory that it can push to and pop from during computation.",
+    "distractors": [
+      "A pushdown automaton has an additional infinite tape that it can read from and write to bidirectionally.",
+      "A pushdown automaton has multiple read heads that scan the input tape simultaneously in parallel.",
+      "A pushdown automaton has a queue memory that allows first-in first-out access to stored symbols."
+    ],
+    "difficulty": 2,
+    "source_article": "Pushdown automaton",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["pushdown automaton"]
+  },
+  {
+    "question_text": "What does it mean for a problem to be NP-complete?",
+    "correct_answer": "It is in NP and every other problem in NP can be reduced to it in polynomial time.",
+    "distractors": [
+      "It is in P and every other problem in P can be reduced to it in logarithmic space.",
+      "It is in NP and no algorithm can solve it in any amount of time or space resources.",
+      "It is in PSPACE and every other problem in PSPACE can be reduced to it in linear time."
+    ],
+    "difficulty": 2,
+    "source_article": "NP-completeness",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["NP-completeness"]
+  },
+  {
+    "question_text": "What is the P versus NP problem?",
+    "correct_answer": "The unsolved question of whether every problem whose solution can be verified quickly can also be solved quickly.",
+    "distractors": [
+      "The unsolved question of whether every problem solvable in polynomial space can also be solved in polynomial time.",
+      "The unsolved question of whether nondeterministic Turing machines are physically realizable as hardware devices.",
+      "The unsolved question of whether exponential-time algorithms can always be improved to run in logarithmic time."
+    ],
+    "difficulty": 2,
+    "source_article": "P versus NP problem",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["P versus NP problem"]
+  },
+  {
+    "question_text": "How does a nondeterministic Turing machine differ from a deterministic one?",
+    "correct_answer": "At each step it may have multiple possible transitions and accepts if any computation path reaches an accept state.",
+    "distractors": [
+      "At each step it randomly selects one transition with uniform probability and accepts only if that path reaches an accept state.",
+      "At each step it executes all possible transitions simultaneously on separate physical processors in parallel hardware.",
+      "At each step it consults an external oracle that provides the correct transition to follow deterministically."
+    ],
+    "difficulty": 2,
+    "source_article": "Nondeterministic Turing machine",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["nondeterministic Turing machine"]
+  },
+  {
+    "question_text": "What characterizes a regular language?",
+    "correct_answer": "A language that can be recognized by a deterministic finite automaton or described by a regular expression.",
+    "distractors": [
+      "A language that can be recognized by a pushdown automaton or generated by a context-free grammar.",
+      "A language that can be recognized by a linear-bounded automaton or generated by a context-sensitive grammar.",
+      "A language that can be recognized by a Turing machine that always halts on every possible input string."
+    ],
+    "difficulty": 2,
+    "source_article": "Regular language",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["regular language"]
+  },
+  {
+    "question_text": "What does it mean for a decision problem to be decidable?",
+    "correct_answer": "There exists an algorithm (Turing machine) that always halts and correctly answers yes or no for every input.",
+    "distractors": [
+      "There exists an algorithm that answers correctly when it halts but may run forever on some inputs.",
+      "There exists a nondeterministic algorithm that answers correctly on at least half of all possible inputs.",
+      "There exists an algorithm that runs in polynomial time and correctly answers yes or no for every input."
+    ],
+    "difficulty": 2,
+    "source_article": "Decidability (logic)",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["decidability"]
+  },
+  {
+    "question_text": "What does the Chomsky hierarchy classify?",
+    "correct_answer": "Formal grammars into four nested types: regular, context-free, context-sensitive, and recursively enumerable.",
+    "distractors": [
+      "Programming languages into four nested types: imperative, functional, object-oriented, and logic-based.",
+      "Computational problems into four nested types: constant, linear, polynomial, and exponential complexity.",
+      "Automata into four nested types: combinational, sequential, parallel, and quantum computing models."
+    ],
+    "difficulty": 2,
+    "source_article": "Chomsky hierarchy",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["Chomsky hierarchy"]
+  },
+  {
+    "question_text": "What is a parse tree?",
+    "correct_answer": "A tree that represents the syntactic structure of a string according to the production rules of a grammar.",
+    "distractors": [
+      "A tree that represents the execution order of machine instructions according to a processor's scheduling algorithm.",
+      "A tree that represents the inheritance hierarchy of classes according to an object-oriented programming language.",
+      "A tree that represents the possible computation paths of a nondeterministic automaton on a given input."
+    ],
+    "difficulty": 2,
+    "source_article": "Parse tree",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["parse tree"]
+  },
+  {
+    "question_text": "What defines polynomial time in computational complexity?",
+    "correct_answer": "An algorithm runs in polynomial time if its worst-case running time is bounded by $O(n^k)$ for some constant $k$.",
+    "distractors": [
+      "An algorithm runs in polynomial time if its worst-case running time is bounded by $O(k^n)$ for some constant $k$.",
+      "An algorithm runs in polynomial time if its average-case running time is bounded by $O(n \\log n)$ for all inputs.",
+      "An algorithm runs in polynomial time if its best-case running time is bounded by $O(\\log n)$ for some constant $k$."
+    ],
+    "difficulty": 2,
+    "source_article": "Time complexity",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["polynomial time"]
+  },
+  {
+    "question_text": "What is a reduction in computational complexity?",
+    "correct_answer": "A transformation that converts instances of one problem into instances of another, preserving yes/no answers.",
+    "distractors": [
+      "A technique that simplifies an algorithm by removing redundant steps to decrease its overall running time.",
+      "A method that decomposes a large input into smaller subproblems that are each solved independently in parallel.",
+      "A process that decreases the memory usage of a program by compressing its data structures at runtime."
+    ],
+    "difficulty": 2,
+    "source_article": "Reduction (complexity)",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["reduction (complexity)"]
+  },
+  {
+    "question_text": "What does the pumping lemma for regular languages state?",
+    "correct_answer": "Every sufficiently long string in a regular language contains a substring that can be repeated any number of times while remaining in the language.",
+    "distractors": [
+      "Every sufficiently long string in a regular language can be divided into two halves that are each independently recognized by separate automata.",
+      "Every sufficiently long string in a context-free language contains a substring that can be deleted while remaining in the language.",
+      "Every sufficiently long string in a regular language can be reversed and the resulting string also belongs to the language."
+    ],
+    "difficulty": 3,
+    "source_article": "Pumping lemma for regular languages",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["pumping lemma"]
+  },
+  {
+    "question_text": "What does the Church-Turing thesis assert?",
+    "correct_answer": "Any function computable by an effective mechanical procedure can be computed by a Turing machine.",
+    "distractors": [
+      "Any function computable by a quantum computer can also be computed in polynomial time by a classical machine.",
+      "Any function computable by a nondeterministic machine requires exponential time on a deterministic machine.",
+      "Any function computable by a finite automaton can also be expressed as a context-free grammar."
+    ],
+    "difficulty": 3,
+    "source_article": "Church–Turing thesis",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["Church-Turing thesis"]
+  },
+  {
+    "question_text": "How is the diagonalization argument used in computability theory?",
+    "correct_answer": "It constructs a new object that differs from every element in a countable list, proving results like the undecidability of the halting problem.",
+    "distractors": [
+      "It constructs a polynomial-time reduction between two problems, proving that one problem is at least as hard as the other.",
+      "It constructs a finite automaton that accepts the complement of a given regular language by swapping accept and reject states.",
+      "It constructs a grammar that generates all strings over an alphabet, proving that every language is context-free."
+    ],
+    "difficulty": 3,
+    "source_article": "Cantor's diagonal argument",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["diagonalization argument"]
+  },
+  {
+    "question_text": "What does space complexity measure?",
+    "correct_answer": "The maximum amount of memory a Turing machine uses as a function of the input size during computation.",
+    "distractors": [
+      "The maximum number of computation steps a Turing machine takes as a function of the input size.",
+      "The total number of distinct states a Turing machine visits as a function of the input size.",
+      "The minimum number of tape symbols a Turing machine requires in its alphabet to recognize a language."
+    ],
+    "difficulty": 3,
+    "source_article": "Space complexity",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["space complexity"]
+  },
+  {
+    "question_text": "What does the Cook-Levin theorem prove?",
+    "correct_answer": "The Boolean satisfiability problem (SAT) is NP-complete, meaning it is as hard as any problem in NP.",
+    "distractors": [
+      "The Boolean satisfiability problem (SAT) is decidable but requires at least exponential time to solve.",
+      "The graph coloring problem is NP-complete, meaning it was the first problem shown to be computationally intractable.",
+      "The Boolean satisfiability problem (SAT) is in P, meaning it can always be solved in polynomial time."
+    ],
+    "difficulty": 3,
+    "source_article": "Cook–Levin theorem",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["Cook-Levin theorem"]
+  },
+  {
+    "question_text": "What does the Myhill-Nerode theorem characterize?",
+    "correct_answer": "A language is regular if and only if the number of equivalence classes of its right-invariant relation is finite.",
+    "distractors": [
+      "A language is context-free if and only if the number of production rules in its generating grammar is finite.",
+      "A language is decidable if and only if the number of states in a Turing machine recognizing it is finite.",
+      "A language is regular if and only if it can be generated by a context-free grammar with no recursive rules."
+    ],
+    "difficulty": 3,
+    "source_article": "Myhill–Nerode theorem",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["Myhill-Nerode theorem"]
+  },
+  {
+    "question_text": "What does it mean for a system to be Turing complete?",
+    "correct_answer": "It can simulate any Turing machine, meaning it can compute anything that is theoretically computable.",
+    "distractors": [
+      "It can solve any problem in polynomial time, meaning it is maximally efficient for all computations.",
+      "It can recognize only regular languages, meaning it has the minimal power of a finite automaton.",
+      "It can execute programs without errors, meaning it is free from halting or runtime failures."
+    ],
+    "difficulty": 3,
+    "source_article": "Turing completeness",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["Turing completeness"]
+  },
+  {
+    "question_text": "What type of automaton recognizes context-sensitive languages?",
+    "correct_answer": "A linear-bounded automaton, which is a Turing machine restricted to using tape space proportional to the input length.",
+    "distractors": [
+      "A pushdown automaton, which is a finite automaton augmented with an auxiliary stack for additional memory.",
+      "A deterministic finite automaton, which uses only a fixed finite number of states and no extra memory.",
+      "A two-stack machine, which is a finite automaton equipped with two independent last-in first-out stacks."
+    ],
+    "difficulty": 3,
+    "source_article": "Context-sensitive language",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["context-sensitive language"]
+  },
+  {
+    "question_text": "Under which of the following operations are regular languages closed?",
+    "correct_answer": "Union, intersection, complement, concatenation, and Kleene star.",
+    "distractors": [
+      "Union and concatenation only, but not intersection, complement, or Kleene star.",
+      "Union, intersection, and complement only, but not concatenation or Kleene star.",
+      "Concatenation and Kleene star only, but not union, intersection, or complement."
+    ],
+    "difficulty": 3,
+    "source_article": "Closure (mathematics)",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["closure properties of formal languages"]
+  },
+  {
+    "question_text": "What is the complexity class PSPACE?",
+    "correct_answer": "The class of decision problems solvable by a deterministic Turing machine using a polynomial amount of memory.",
+    "distractors": [
+      "The class of decision problems solvable by a deterministic Turing machine in a polynomial number of steps.",
+      "The class of decision problems solvable by a nondeterministic Turing machine using a logarithmic amount of memory.",
+      "The class of decision problems solvable by a probabilistic Turing machine with bounded two-sided error probability."
+    ],
+    "difficulty": 3,
+    "source_article": "PSPACE",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["PSPACE"]
+  },
+  {
+    "question_text": "What distinguishes a randomized algorithm from a deterministic one?",
+    "correct_answer": "A randomized algorithm uses random bits during execution, so its behavior or output may vary across runs on the same input.",
+    "distractors": [
+      "A randomized algorithm uses heuristic rules during execution, so it always produces approximate rather than exact results.",
+      "A randomized algorithm uses nondeterministic branching during execution, so it explores all computation paths simultaneously.",
+      "A randomized algorithm uses quantum superposition during execution, so it processes multiple inputs at the same physical time."
+    ],
+    "difficulty": 3,
+    "source_article": "Randomized algorithm",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["randomized algorithm"]
+  },
+  {
+    "question_text": "What is amortized analysis?",
+    "correct_answer": "A method that averages the cost of operations over a worst-case sequence, giving a per-operation cost guarantee.",
+    "distractors": [
+      "A method that measures the cost of a single worst-case operation in isolation, ignoring all other operations.",
+      "A method that averages the cost of operations over random inputs drawn from a probability distribution.",
+      "A method that computes the best-case cost of operations and uses it as a lower bound for performance."
+    ],
+    "difficulty": 3,
+    "source_article": "Amortized analysis",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["amortized analysis"]
+  },
+  {
+    "question_text": "What does Rice's theorem state about properties of Turing machines?",
+    "correct_answer": "Every non-trivial semantic property of the language recognized by a Turing machine is undecidable.",
+    "distractors": [
+      "Every non-trivial syntactic property of the transition table of a Turing machine is undecidable.",
+      "Every non-trivial semantic property of the language recognized by a Turing machine is NP-complete.",
+      "Every non-trivial property of the number of states in a Turing machine is uncomputable."
+    ],
+    "difficulty": 4,
+    "source_article": "Rice's theorem",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["Rice's theorem"]
+  },
+  {
+    "question_text": "What is an oracle machine in complexity theory?",
+    "correct_answer": "A Turing machine augmented with a black-box oracle that can answer queries about a specific decision problem in one step.",
+    "distractors": [
+      "A Turing machine augmented with a random number generator that can produce uniformly random bits in one step.",
+      "A Turing machine augmented with additional tape heads that can read multiple tape cells simultaneously in one step.",
+      "A Turing machine augmented with a parallel processor that can execute multiple independent transitions in one step."
+    ],
+    "difficulty": 4,
+    "source_article": "Oracle machine",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["oracle machine"]
+  },
+  {
+    "question_text": "What is Kolmogorov complexity of a string?",
+    "correct_answer": "The length of the shortest program that produces the string as output on a universal Turing machine.",
+    "distractors": [
+      "The number of distinct symbols that appear in the string when encoded in a fixed binary alphabet.",
+      "The length of the longest substring that does not repeat anywhere else within the original string.",
+      "The minimum number of computational steps required to verify that the string belongs to a given language."
+    ],
+    "difficulty": 4,
+    "source_article": "Kolmogorov complexity",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["Kolmogorov complexity"]
+  },
+  {
+    "question_text": "What does circuit complexity study?",
+    "correct_answer": "The minimum size or depth of Boolean circuits needed to compute a given Boolean function.",
+    "distractors": [
+      "The minimum number of Turing machine states needed to recognize a given formal language.",
+      "The minimum number of production rules needed to generate a given context-free language.",
+      "The minimum running time of randomized algorithms needed to solve a given decision problem."
+    ],
+    "difficulty": 4,
+    "source_article": "Circuit complexity",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["circuit complexity"]
+  },
+  {
+    "question_text": "What is an interactive proof system?",
+    "correct_answer": "A protocol in which a computationally unbounded prover convinces a probabilistic polynomial-time verifier that a statement is true.",
+    "distractors": [
+      "A protocol in which two deterministic polynomial-time machines exchange messages to jointly compute a function.",
+      "A protocol in which a polynomial-time prover convinces a computationally unbounded verifier that a statement is true.",
+      "A protocol in which a single deterministic machine writes a static proof that any polynomial-time verifier can check."
+    ],
+    "difficulty": 4,
+    "source_article": "Interactive proof system",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["interactive proof system"]
+  },
+  {
+    "question_text": "What property must a zero-knowledge proof satisfy beyond completeness and soundness?",
+    "correct_answer": "The verifier learns nothing beyond the truth of the statement; its view can be simulated without interacting with the prover.",
+    "distractors": [
+      "The prover learns the verifier's internal random coins so that both parties share complete knowledge after the protocol.",
+      "The verifier can extract the prover's secret witness from the transcript of the interaction in polynomial time.",
+      "The prover must send the entire witness to the verifier, who then checks it without revealing it to others."
+    ],
+    "difficulty": 4,
+    "source_article": "Zero-knowledge proof",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["zero-knowledge proof"]
+  },
+  {
+    "question_text": "What role does arithmetization play in proving IP = PSPACE?",
+    "correct_answer": "It converts Boolean formulas into multivariate polynomials over a finite field, enabling algebraic verification in the interactive proof protocol.",
+    "distractors": [
+      "It converts Turing machine transition tables into matrix multiplication problems, enabling linear algebraic verification in the proof.",
+      "It converts context-free grammars into systems of linear equations, enabling Gaussian elimination in the proof protocol.",
+      "It converts Boolean circuits into directed acyclic graphs, enabling topological sorting in the interactive proof protocol."
+    ],
+    "difficulty": 4,
+    "source_article": "IP (complexity)",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["arithmetization"]
+  },
+  {
+    "question_text": "What is the polynomial hierarchy?",
+    "correct_answer": "A hierarchy of complexity classes $\\Sigma_k^P$ and $\\Pi_k^P$ defined by alternating existential and universal quantifiers over polynomial-time predicates.",
+    "distractors": [
+      "A hierarchy of complexity classes defined by the degree of polynomials bounding the running time of deterministic algorithms.",
+      "A hierarchy of formal language classes defined by the number of nonterminal symbols in their generating grammars.",
+      "A hierarchy of complexity classes defined by the number of rounds of communication in an interactive proof system."
+    ],
+    "difficulty": 4,
+    "source_article": "Polynomial hierarchy",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["polynomial hierarchy"]
+  },
+  {
+    "question_text": "What does descriptive complexity theory study?",
+    "correct_answer": "The relationship between complexity classes and the logical languages needed to express their problems on finite structures.",
+    "distractors": [
+      "The relationship between programming language syntax and the computational power of their associated compilers.",
+      "The relationship between circuit depth and the minimum number of logic gates needed to compute Boolean functions.",
+      "The relationship between Turing machine tape alphabets and the complexity of the languages they recognize."
+    ],
+    "difficulty": 4,
+    "source_article": "Descriptive complexity theory",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["descriptive complexity"]
+  },
+  {
+    "question_text": "What does Savitch's theorem prove?",
+    "correct_answer": "Any problem solvable in $O(f(n))$ nondeterministic space can be solved in $O(f(n)^2)$ deterministic space.",
+    "distractors": [
+      "Any problem solvable in $O(f(n))$ nondeterministic time can be solved in $O(f(n)^2)$ deterministic time.",
+      "Any problem solvable in $O(f(n))$ deterministic space can be solved in $O(f(n))$ nondeterministic time.",
+      "Any problem solvable in $O(f(n))$ nondeterministic space can be solved in $O(2^{f(n)})$ deterministic space."
+    ],
+    "difficulty": 4,
+    "source_article": "Savitch's theorem",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["Savitch's theorem"]
+  },
+  {
+    "question_text": "What does the time hierarchy theorem establish?",
+    "correct_answer": "Turing machines given more time can solve strictly more problems: $\\mathrm{DTIME}(f(n)) \\subsetneq \\mathrm{DTIME}(f(n) \\cdot \\log f(n))$.",
+    "distractors": [
+      "Turing machines given more tape symbols can solve strictly more problems: larger alphabets recognize strictly more languages.",
+      "Turing machines given more states can solve strictly more problems: more states recognize strictly more languages.",
+      "Turing machines given more space can solve strictly more problems: $\\mathrm{DSPACE}(f(n)) \\subsetneq \\mathrm{DTIME}(f(n)^2)$."
+    ],
+    "difficulty": 4,
+    "source_article": "Time hierarchy theorem",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["time hierarchy theorem"]
+  },
+  {
+    "question_text": "What is the Post correspondence problem?",
+    "correct_answer": "Given two lists of strings, determine whether there is a sequence of indices such that the concatenations from both lists are equal.",
+    "distractors": [
+      "Given two Turing machines, determine whether they accept exactly the same language over a shared alphabet.",
+      "Given two context-free grammars, determine whether the intersection of their generated languages is nonempty.",
+      "Given two regular expressions, determine whether one describes a proper subset of the language of the other."
+    ],
+    "difficulty": 4,
+    "source_article": "Post correspondence problem",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["post correspondence problem"]
+  }
+]

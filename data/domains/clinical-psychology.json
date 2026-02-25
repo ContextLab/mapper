@@ -12,7 +12,958 @@
     },
     "grid_size": 70
   },
-  "questions": [],
+  "questions": [
+    {
+      "id": "edea52f828aab43c",
+      "question_text": "Major depressive disorder requires symptoms to persist for a minimum duration before a clinical diagnosis can be made. What is this minimum duration according to standard diagnostic criteria?",
+      "options": {
+        "A": "At least three days of inability to get out of bed combined with social withdrawal",
+        "B": "At least one month of continuous sadness accompanied by significant weight change",
+        "C": "At least two weeks of persistent depressed mood or loss of interest in nearly all activities",
+        "D": "At least six months of low mood with at least three episodes of crying per week"
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Major depressive disorder",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "depression"
+      ]
+    },
+    {
+      "id": "9ed5b45f2c8b0028",
+      "question_text": "Anxiety involves both psychological and physical responses to perceived threats. Which of the following best describes the core feature that distinguishes clinical anxiety from ordinary worry?",
+      "options": {
+        "A": "A complete inability to experience any positive emotions during stressful periods",
+        "B": "Occasional physical tension that resolves immediately once the stressful event ends",
+        "C": "Brief episodes of nervousness that occur only in genuinely dangerous situations",
+        "D": "Persistent and excessive worry that disrupts normal functioning even when no immediate threat is present"
+      },
+      "correct_answer": "D",
+      "difficulty": 1,
+      "source_article": "Anxiety",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "anxiety"
+      ]
+    },
+    {
+      "id": "f58f7748fe149f9e",
+      "question_text": "Psychotherapy encompasses a range of methods used by mental health professionals. What is the common element shared across all forms of psychotherapy?",
+      "options": {
+        "A": "Assignment of daily written homework exercises that the patient completes independently",
+        "B": "Direct personal contact between therapist and patient, typically through structured conversation",
+        "C": "Use of standardized diagnostic imaging such as brain scans to guide treatment decisions",
+        "D": "Prescription of medication to correct chemical imbalances underlying mental health conditions"
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Psychotherapy",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "therapy"
+      ]
+    },
+    {
+      "id": "225f600c7dd086d0",
+      "question_text": "The World Health Organization and the American Psychiatric Association each publish a major classification system for mental disorders. What are these two widely used systems?",
+      "options": {
+        "A": "The World Mental Health Survey (WMHS) and the Clinical Assessment of Functioning (CAF)",
+        "B": "The International Classification of Diseases (ICD) and the Diagnostic and Statistical Manual of Mental Disorders (DSM)",
+        "C": "The Global Burden of Disease Index (GBDI) and the Psychiatric Rating Scale Manual (PRSM)",
+        "D": "The International Behavioral Codex (IBC) and the American Neuropsychiatric Registry (ANR)"
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Mental disorder",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "mental illness"
+      ]
+    },
+    {
+      "id": "8ce380fd2daf2223",
+      "question_text": "Post-traumatic stress disorder (PTSD) is organized around distinct symptom clusters in the DSM-5. Which of the following correctly identifies the four main symptom clusters?",
+      "options": {
+        "A": "Grandiosity, impulsivity, emotional numbness, and dissociative identity shifts",
+        "B": "Intrusion symptoms, avoidance, negative changes in cognition and mood, and changes in arousal and reactivity",
+        "C": "Hallucinations, social withdrawal, loss of motor function, and chronic fatigue",
+        "D": "Obsessive thoughts, compulsive rituals, depersonalization, and appetite disturbance"
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Post-traumatic stress disorder",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "PTSD"
+      ]
+    },
+    {
+      "id": "f48099df6b0c7b94",
+      "question_text": "Phobias are among the most common anxiety disorders. What is the defining characteristic that distinguishes a phobia from normal fear?",
+      "options": {
+        "A": "A sudden fear that appears without any identifiable trigger or environmental stimulus",
+        "B": "An intense, irrational fear that is disproportionate to the actual danger posed by the object or situation",
+        "C": "A realistic assessment of danger that leads to appropriate and proportional avoidance behavior",
+        "D": "A fear response that occurs only in childhood and naturally disappears by adulthood"
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Phobia",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "phobia"
+      ]
+    },
+    {
+      "id": "aa165d13fbdbc328",
+      "question_text": "The physiological stress response involves activation of the body's major regulatory systems. Walter Cannon first described this acute stress response in 1915 using what well-known term?",
+      "options": {
+        "A": "The relaxation response, a parasympathetic mechanism that counteracts physical tension",
+        "B": "The general adaptation syndrome, a three-stage process of alarm, resistance, and exhaustion",
+        "C": "The fight-or-flight response, involving sympathetic nervous system activation to prepare the body for action",
+        "D": "The tend-and-befriend response, a social bonding reaction triggered by the release of oxytocin"
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Stress (biology)",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "stress"
+      ]
+    },
+    {
+      "id": "0c87d1c80221976c",
+      "question_text": "Psychological trauma can result in both short-term and long-term reactions. Which of the following correctly pairs common short-term and long-term responses to a traumatic event?",
+      "options": {
+        "A": "Short-term: immediate onset of hallucinations; long-term: development of intellectual disability",
+        "B": "Short-term: psychological shock and denial; long-term: flashbacks, panic attacks, and possible development of PTSD",
+        "C": "Short-term: complete emotional numbness for several years; long-term: spontaneous full recovery without treatment",
+        "D": "Short-term: permanent memory loss of the event; long-term: gradual recovery of all lost memories"
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Psychological trauma",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "trauma"
+      ]
+    },
+    {
+      "id": "53269564374cb9cc",
+      "question_text": "Addiction is now understood as a neuropsychological disorder. What is the core characteristic that defines addiction according to current clinical understanding?",
+      "options": {
+        "A": "A persistent and intense urge to use a substance or engage in a behavior despite substantial harm and negative consequences",
+        "B": "A temporary physical dependence on a substance that resolves completely once the substance is discontinued",
+        "C": "A deliberate choice to continue using a substance purely for recreational enjoyment without any compulsion",
+        "D": "A moral failing characterized by lack of willpower that affects only individuals with low intelligence"
+      },
+      "correct_answer": "A",
+      "difficulty": 1,
+      "source_article": "Addiction",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "addiction"
+      ]
+    },
+    {
+      "id": "45b15eddf96ae816",
+      "question_text": "Autism spectrum disorder (ASD) is classified as a neurodevelopmental condition. What are the two core symptom domains used to diagnose ASD in the DSM-5?",
+      "options": {
+        "A": "Persistent auditory hallucinations and visual disturbances, and severe impairment of motor coordination",
+        "B": "Chronic mood instability and emotional outbursts, and progressive loss of previously acquired language skills",
+        "C": "Differences in social communication and interaction, and restricted or repetitive patterns of behavior and interests",
+        "D": "Deficits in reading comprehension and mathematics, and an inability to form any long-term memories"
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Autism spectrum disorder",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "autism"
+      ]
+    },
+    {
+      "id": "52983161e61137b5",
+      "question_text": "Approximately what percentage of people who die by suicide are estimated to have had a mood disorder such as major depression at the time of death?",
+      "options": {
+        "A": "About 25 percent, with personality disorders accounting for a larger proportion than mood disorders.",
+        "B": "About 10 percent, with the majority attributed to substance use disorders rather than mood conditions.",
+        "C": "About 50 percent, making mood disorders the most common psychiatric conditions associated with completed suicide.",
+        "D": "About 90 percent, since virtually all individuals who die by suicide meet criteria for clinical depression."
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Suicide",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "suicide"
+      ]
+    },
+    {
+      "id": "f8b5826c6fd3ccc7",
+      "question_text": "What distinguishes a hallucination from an illusion in clinical psychology?",
+      "options": {
+        "A": "A hallucination is always visual in nature, whereas an illusion can occur in any sensory modality.",
+        "B": "A hallucination involves misinterpreting an actual stimulus, whereas an illusion arises entirely from internal brain activity with no external input.",
+        "C": "A hallucination occurs only during sleep, whereas an illusion occurs only during waking consciousness.",
+        "D": "A hallucination is a perception that occurs without any external stimulus, whereas an illusion is a distorted or misinterpreted perception of a real external stimulus."
+      },
+      "correct_answer": "D",
+      "difficulty": 1,
+      "source_article": "Hallucination",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "hallucination"
+      ]
+    },
+    {
+      "id": "e43343369a385eb2",
+      "question_text": "Morris Rosenberg's influential 1965 contribution to the study of self-esteem was the development of which widely used instrument?",
+      "options": {
+        "A": "The Coopersmith Self-Esteem Inventory, originally designed to assess self-esteem in children and adolescents.",
+        "B": "The Beck Self-Concept Inventory, a 40-item questionnaire measuring global self-worth in clinical populations.",
+        "C": "The Implicit Association Test for self-esteem, which measures unconscious attitudes toward the self using reaction times.",
+        "D": "The Rosenberg Self-Esteem Scale (RSES), which became the most widely used measure of self-esteem in the social sciences."
+      },
+      "correct_answer": "D",
+      "difficulty": 1,
+      "source_article": "Self-esteem",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "self-esteem"
+      ]
+    },
+    {
+      "id": "d81842614298f967",
+      "question_text": "Cognitive behavioral therapy (CBT) was originally developed as a treatment for which specific mental health condition before being adapted for a wide range of disorders?",
+      "options": {
+        "A": "Schizophrenia. CBT was initially created to modify delusional thinking before being repurposed for common mental health conditions.",
+        "B": "Post-traumatic stress disorder. CBT originated as a trauma-focused intervention before broadening to mood and anxiety disorders.",
+        "C": "Depression. CBT was originally designed to treat depression before its principles were extended to anxiety disorders, OCD, eating disorders, and other conditions.",
+        "D": "Generalized anxiety disorder. CBT was first developed for chronic worry before being applied to depression and other conditions."
+      },
+      "correct_answer": "C",
+      "difficulty": 2,
+      "source_article": "Cognitive behavioral therapy",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "cognitive behavioral therapy"
+      ]
+    },
+    {
+      "id": "8ca26649ddd10d26",
+      "question_text": "The Diagnostic and Statistical Manual of Mental Disorders (DSM) is published by which organization, and what is the designation of its most recent text revision?",
+      "options": {
+        "A": "The American Psychiatric Association (APA). The most recent version is the DSM-5-TR, published in March 2022.",
+        "B": "The American Psychological Association (APA). The most recent version is the DSM-VI, published in 2020.",
+        "C": "The World Health Organization (WHO). The most recent version is the DSM-5-R, published in 2019.",
+        "D": "The National Institute of Mental Health (NIMH). The most recent version is the DSM-5.1, published in 2023."
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "Diagnostic and Statistical Manual of Mental Disorders",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "DSM"
+      ]
+    },
+    {
+      "id": "e42203d051accb81",
+      "question_text": "In psychoanalytic theory, Freud divided the human personality into three structural components. What are they, and what role does the unconscious play in this model?",
+      "options": {
+        "A": "The persona, shadow, and animus. The unconscious stores archetypes inherited from collective human experience that shape personality.",
+        "B": "The instinct, reason, and conscience. The unconscious is limited to biological reflexes and plays no role in higher-order thought processes.",
+        "C": "The self, the other, and the ideal. The unconscious contains only traumatic memories that have been deliberately suppressed by conscious effort.",
+        "D": "The id, ego, and superego. The unconscious houses repressed desires, memories, and drives, particularly those of the id, which influence conscious thought and behavior."
+      },
+      "correct_answer": "D",
+      "difficulty": 2,
+      "source_article": "Psychoanalysis",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "psychoanalysis"
+      ]
+    },
+    {
+      "id": "f640e49aa11a0f23",
+      "question_text": "The symptoms of schizophrenia are commonly divided into positive and negative categories. Which of the following correctly describes this distinction?",
+      "options": {
+        "A": "Positive symptoms emerge only during acute psychotic episodes, while negative symptoms are present only during periods of remission between episodes.",
+        "B": "Positive symptoms are added experiences like hallucinations and delusions, while negative symptoms are diminished capabilities like flat affect, alogia, and avolition.",
+        "C": "Positive symptoms refer to elevated or euphoric mood states, while negative symptoms refer to persistent depressive episodes occurring between psychotic breaks.",
+        "D": "Positive symptoms are those that respond well to medication, while negative symptoms are those that are treatment-resistant regardless of the drug used."
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Schizophrenia",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "schizophrenia"
+      ]
+    },
+    {
+      "id": "7ecb8bd677e5445f",
+      "question_text": "What is the key diagnostic distinction between bipolar I disorder and bipolar II disorder?",
+      "options": {
+        "A": "Bipolar I is diagnosed exclusively in adults, while bipolar II is the designation used when onset occurs during childhood or adolescence.",
+        "B": "Bipolar I requires at least one full manic episode, possibly with psychosis, while bipolar II involves only hypomanic episodes alternating with major depressive episodes.",
+        "C": "Bipolar I features rapid cycling between mood states within a single day, while bipolar II involves mood episodes lasting months at a time.",
+        "D": "Bipolar I involves only depressive episodes with no elevated mood, while bipolar II involves alternating mania and depression."
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Bipolar disorder",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "bipolar disorder"
+      ]
+    },
+    {
+      "id": "1827692519d73bfe",
+      "question_text": "In obsessive-compulsive disorder (OCD), what is the functional relationship between obsessions and compulsions?",
+      "options": {
+        "A": "Obsessions are habitual motor tics caused by neurological dysfunction, and compulsions are the cognitive strategies used to suppress those tics.",
+        "B": "Obsessions are recurring pleasant fantasies that a person cannot stop, and compulsions are the depressive episodes triggered when those fantasies are interrupted.",
+        "C": "Obsessions are voluntary rituals performed to achieve perfection, and compulsions are the involuntary feelings of satisfaction that follow completion of those rituals.",
+        "D": "Obsessions are persistent, intrusive, unwanted thoughts that cause distress, and compulsions are repetitive behaviors performed to relieve or neutralize the anxiety produced by those obsessions."
+      },
+      "correct_answer": "D",
+      "difficulty": 2,
+      "source_article": "Obsessive–compulsive disorder",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "obsessive-compulsive disorder"
+      ]
+    },
+    {
+      "id": "3048c0fe268ab0bf",
+      "question_text": "According to Marsha Linehan's biosocial model, what process is considered the core dysfunction in borderline personality disorder (BPD)?",
+      "options": {
+        "A": "Emotion dysregulation, comprising heightened emotional sensitivity, intense labile negative affect, deficient adaptive regulation strategies, and excessive maladaptive regulation strategies.",
+        "B": "Cognitive distortion, characterized by persistent black-and-white thinking patterns that prevent accurate appraisal of social situations.",
+        "C": "Identity diffusion, defined as a complete absence of any stable self-concept resulting from early childhood neglect.",
+        "D": "Dissociative amnesia, involving frequent memory gaps for interpersonal events that cause repeated relationship failures."
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "Borderline personality disorder",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "borderline personality disorder"
+      ]
+    },
+    {
+      "id": "c388a3ad26e38847",
+      "question_text": "In the DSM-5, borderline personality disorder is grouped into which personality disorder cluster, and what behavioral theme characterizes that cluster?",
+      "options": {
+        "A": "Cluster B, characterized by dramatic, emotional, and erratic behaviors.",
+        "B": "Cluster D, characterized by cognitive rigidity, compulsive rule-following, and restricted affect.",
+        "C": "Cluster A, characterized by odd, eccentric thinking and social withdrawal.",
+        "D": "Cluster C, characterized by anxious, fearful avoidance and excessive dependence on others."
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "Borderline personality disorder",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "borderline personality disorder"
+      ]
+    },
+    {
+      "id": "2258ed4b81c318e0",
+      "question_text": "The DSM-5 identifies three presentations of ADHD. Which option correctly names all three?",
+      "options": {
+        "A": "Predominantly inattentive, predominantly hyperactive-impulsive, and combined presentation.",
+        "B": "Predominantly hyperactive, predominantly conduct-disordered, and unspecified presentation.",
+        "C": "Predominantly inattentive, predominantly oppositional, and mixed presentation.",
+        "D": "Predominantly anxious, predominantly disorganized, and combined presentation."
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "Attention deficit hyperactivity disorder",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "ADHD"
+      ]
+    },
+    {
+      "id": "4c071ce2cc2275e5",
+      "question_text": "Which type of exposure therapy involves deliberately inducing feared bodily sensations, such as a racing heart or shortness of breath, to reduce anxiety about those physical symptoms?",
+      "options": {
+        "A": "Flooding, which involves immediate prolonged contact with the most intensely feared external stimulus.",
+        "B": "Interoceptive exposure, which targets feared internal physiological sensations.",
+        "C": "Imaginal exposure, which involves vividly visualizing a feared scenario while guided by the therapist.",
+        "D": "In vivo exposure, which involves direct real-life confrontation with an external feared object or situation."
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Exposure therapy",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "exposure therapy"
+      ]
+    },
+    {
+      "id": "dff7ffeceaec1688",
+      "question_text": "In cognitive behavioral therapy, the cognitive distortion in which a person views situations in only two extreme categories with no middle ground is called what?",
+      "options": {
+        "A": "Overgeneralization, in which a single negative event is seen as a never-ending pattern of defeat.",
+        "B": "Emotional reasoning, in which a person assumes feelings accurately reflect objective reality.",
+        "C": "All-or-nothing thinking, also known as black-and-white or polarized thinking.",
+        "D": "Catastrophizing, in which a person assumes the worst possible outcome is inevitable."
+      },
+      "correct_answer": "C",
+      "difficulty": 2,
+      "source_article": "Cognitive distortion",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "cognitive distortion"
+      ]
+    },
+    {
+      "id": "95996ff11fdbed2e",
+      "question_text": "A clinical psychologist administers the MMPI-2 and the WAIS-IV to a client. What types of functioning do these two instruments primarily assess, respectively?",
+      "options": {
+        "A": "The MMPI-2 assesses neurological impairment; the WAIS-IV assesses vocational aptitude and interests.",
+        "B": "The MMPI-2 assesses developmental milestones; the WAIS-IV assesses adaptive behavioral functioning.",
+        "C": "The MMPI-2 assesses personality and psychopathology; the WAIS-IV assesses cognitive intelligence.",
+        "D": "The MMPI-2 assesses projective unconscious processes; the WAIS-IV assesses academic achievement levels."
+      },
+      "correct_answer": "C",
+      "difficulty": 2,
+      "source_article": "Psychological evaluation",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "psychological assessment"
+      ]
+    },
+    {
+      "id": "e1e8b49525882190",
+      "question_text": "Selective serotonin reuptake inhibitors (SSRIs) are the most widely prescribed class of antidepressants. What is their primary pharmacological mechanism?",
+      "options": {
+        "A": "They block postsynaptic dopamine D2 receptors, reducing dopaminergic overactivity in mesolimbic pathways.",
+        "B": "They block the reuptake of serotonin into presynaptic neurons, increasing serotonin availability in the synapse.",
+        "C": "They enhance gamma-aminobutyric acid activity by binding to GABA-A receptor sites and increasing chloride conductance.",
+        "D": "They inhibit the enzyme monoamine oxidase, preventing the breakdown of serotonin, norepinephrine, and dopamine."
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Antidepressant",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "antidepressant"
+      ]
+    },
+    {
+      "id": "59ee0a72eed47428",
+      "question_text": "Systematic desensitization, developed by Joseph Wolpe, relies on the principle of reciprocal inhibition. What does this principle state about anxiety and relaxation?",
+      "options": {
+        "A": "Anxiety habituates automatically through prolonged continuous exposure without any concurrent relaxation training.",
+        "B": "Anxiety decreases only when a client cognitively reappraises the threatening stimulus as non-dangerous through guided questioning.",
+        "C": "Anxiety is extinguished when the conditioned stimulus is repeatedly presented without the unconditioned stimulus over time.",
+        "D": "Anxiety and relaxation are mutually incompatible responses, so inducing relaxation inhibits the anxiety response."
+      },
+      "correct_answer": "D",
+      "difficulty": 3,
+      "source_article": "Systematic desensitization",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "systematic desensitization"
+      ]
+    },
+    {
+      "id": "dc613306ec6ea726",
+      "question_text": "Many DSM-5 diagnoses use a polythetic criterion set. What does a polythetic approach to diagnostic criteria mean in practice?",
+      "options": {
+        "A": "A diagnosis is assigned dimensionally on a continuous severity scale without any categorical threshold.",
+        "B": "A diagnosis requires meeting a minimum threshold from a larger list of criteria, so not every criterion must be present.",
+        "C": "A diagnosis is confirmed only through biological markers such as neuroimaging or genetic testing results.",
+        "D": "A diagnosis requires that every listed criterion be present, making the criteria both necessary and sufficient."
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Medical diagnosis",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "diagnostic criteria"
+      ]
+    },
+    {
+      "id": "344ad959380495a5",
+      "question_text": "In motivational interviewing, the acronym OARS represents the four core communication skills. What does OARS stand for?",
+      "options": {
+        "A": "Outcome setting, Active listening, Reinforcement, and Socratic dialogue.",
+        "B": "Observation, Assessment, Reframing, and Solution-focused questioning.",
+        "C": "Orientation, Agenda-setting, Rapport-building, and Structured feedback.",
+        "D": "Open-ended questions, Affirmations, Reflective listening, and Summaries."
+      },
+      "correct_answer": "D",
+      "difficulty": 3,
+      "source_article": "Motivational interviewing",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "motivational interviewing"
+      ]
+    },
+    {
+      "id": "b1e0089e7c19b2f5",
+      "question_text": "Dialectical behavior therapy, developed by Marsha Linehan, is organized around four core skill modules. Which option correctly lists all four modules?",
+      "options": {
+        "A": "Mindfulness, distress tolerance, emotion regulation, and interpersonal effectiveness.",
+        "B": "Cognitive restructuring, behavioral activation, exposure practice, and relapse prevention.",
+        "C": "Mindfulness, cognitive defusion, values clarification, and committed action.",
+        "D": "Affect identification, interpersonal analysis, schema modification, and limited reparenting."
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "Dialectical behavior therapy",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "dialectical behavior therapy"
+      ]
+    },
+    {
+      "id": "fe18ef6bce47a473",
+      "question_text": "In behavioral assessment, functional analysis identifies the variables maintaining problem behavior by examining antecedents, the behavior itself, and consequences. What is the primary purpose of identifying the 'function' of a behavior in this framework?",
+      "options": {
+        "A": "To classify the behavior into a DSM diagnostic category based on its topographical features and frequency",
+        "B": "To determine the developmental stage at which the behavior first emerged through retrospective life history analysis",
+        "C": "To determine what reinforcement the behavior produces, such as attention, escape, or sensory stimulation, in order to guide intervention design",
+        "D": "To measure the neurological substrates of the behavior using brain imaging and electrophysiological recording"
+      },
+      "correct_answer": "C",
+      "difficulty": 3,
+      "source_article": "Functional analysis (psychology)",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "functional analysis"
+      ]
+    },
+    {
+      "id": "6adfb238b0668991",
+      "question_text": "Comorbidity refers to the co-occurrence of two or more disorders in the same individual. The term was introduced by Feinstein in 1970. How does psychiatric comorbidity most commonly affect clinical treatment planning?",
+      "options": {
+        "A": "It complicates treatment by requiring clinicians to address multiple interacting conditions, often reducing the efficacy of single-disorder protocols",
+        "B": "It has no meaningful effect on treatment because each disorder is treated independently using its own standard protocol",
+        "C": "It eliminates the need for differential diagnosis because all symptoms are attributed to whichever disorder was diagnosed first",
+        "D": "It simplifies treatment because co-occurring disorders always share a single underlying cause that can be targeted directly"
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "Comorbidity",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "comorbidity"
+      ]
+    },
+    {
+      "id": "ab2401b2753df771",
+      "question_text": "Randomized controlled trials (RCTs) are considered the gold standard for establishing the efficacy of psychological treatments. What is the primary methodological advantage of random assignment in an RCT evaluating psychotherapy?",
+      "options": {
+        "A": "Randomization balances both observed and unobserved participant characteristics between groups, allowing causal attribution of outcomes to the treatment",
+        "B": "Randomization ensures that therapists are unaware of which treatment they are delivering, achieving full double-blinding of the study",
+        "C": "Randomization guarantees that all participants will respond to treatment, eliminating the problem of non-responders in outcome data",
+        "D": "Randomization controls for the passage of time by ensuring that all participants begin and end treatment on the same calendar dates"
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "Randomized controlled trial",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "randomized controlled trial"
+      ]
+    },
+    {
+      "id": "4e1f5f74701fb990",
+      "question_text": "Neuropsychological assessment evaluates cognitive functions to identify brain-behavior relationships. Which set of cognitive domains is most characteristic of a comprehensive neuropsychological test battery?",
+      "options": {
+        "A": "Reading comprehension, mathematical reasoning, written expression, oral fluency, and spelling accuracy",
+        "B": "Attention, memory, executive function, language, visuospatial ability, and processing speed",
+        "C": "Conscientiousness, agreeableness, neuroticism, openness, and extraversion as measured by self-report scales",
+        "D": "Personality traits, emotional intelligence, attachment style, defense mechanisms, and interpersonal functioning"
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Neuropsychological assessment",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "neuropsychological testing"
+      ]
+    },
+    {
+      "id": "f336df3e2ccdacff",
+      "question_text": "Harm reduction is a public health approach to substance use that differs fundamentally from abstinence-only models. What is the defining principle that distinguishes harm reduction from traditional abstinence-based treatment?",
+      "options": {
+        "A": "Harm reduction focuses exclusively on legal substances like alcohol and tobacco while excluding illicit drug use from its scope",
+        "B": "Harm reduction aims to reduce the negative consequences of substance use without requiring complete cessation as a precondition for treatment",
+        "C": "Harm reduction requires individuals to achieve full sobriety before they are eligible to receive any clinical services",
+        "D": "Harm reduction replaces all pharmacological interventions with peer support groups modeled on twelve-step programs"
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Harm reduction",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "harm reduction"
+      ]
+    },
+    {
+      "id": "92a5d1afd0e64057",
+      "question_text": "The Stanley-Brown Safety Planning Intervention is a brief, collaborative clinical tool for managing suicide risk. What distinguishes a safety plan from the older practice of using no-suicide contracts?",
+      "options": {
+        "A": "A safety plan is completed only after hospitalization discharge, whereas no-suicide contracts are used exclusively during inpatient stays",
+        "B": "A safety plan provides a prioritized list of actionable coping strategies and support contacts, whereas no-suicide contracts lack empirical support and may inhibit honest disclosure",
+        "C": "A safety plan is a legally binding document signed by both clinician and patient, whereas no-suicide contracts are informal verbal agreements",
+        "D": "A safety plan focuses solely on restricting access to lethal means, whereas no-suicide contracts address the full range of coping strategies"
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Safety planning intervention",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "safety planning"
+      ]
+    },
+    {
+      "id": "70d4c48305abca9f",
+      "question_text": "Cognitive restructuring is a core CBT technique in which clients learn to identify and modify maladaptive automatic thoughts. What is the role of Socratic questioning within the cognitive restructuring process?",
+      "options": {
+        "A": "It instructs clients to suppress negative thoughts immediately upon noticing them and replace them with pre-written positive affirmations",
+        "B": "It guides clients to critically examine the evidence for and against their automatic thoughts through a collaborative dialogue rather than direct disputation",
+        "C": "It requires the therapist to provide the client with the correct interpretation of events based on the therapist's clinical expertise",
+        "D": "It trains clients in progressive muscle relaxation so that physiological arousal is reduced before any cognitive work begins"
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Cognitive restructuring",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "cognitive restructuring"
+      ]
+    },
+    {
+      "id": "8fe924f5730b9374",
+      "question_text": "Negative reinforcement is an operant conditioning process often confused with punishment. In clinical psychology, how does negative reinforcement maintain avoidance behavior in anxiety disorders?",
+      "options": {
+        "A": "Avoidance of a feared stimulus is reinforced because it removes or prevents the aversive experience of anxiety, thereby increasing the likelihood of future avoidance",
+        "B": "Avoidance is maintained because the therapist explicitly instructs the client to stay away from anxiety-provoking situations as treatment",
+        "C": "Avoidance is maintained because encountering the feared stimulus delivers a pleasant reward that the person becomes dependent upon",
+        "D": "Avoidance is maintained because repeated exposure to the feared stimulus causes permanent neural damage that makes approach impossible"
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "Negative reinforcement",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "negative reinforcement"
+      ]
+    },
+    {
+      "id": "9bffbf9c4dbda1b5",
+      "question_text": "The transdiagnostic approach to treatment targets shared psychological processes across multiple disorder categories rather than tailoring intervention to a single diagnosis. The Unified Protocol developed by David Barlow exemplifies this approach. What three core therapeutic principles does the Unified Protocol target across emotional disorders?",
+      "options": {
+        "A": "Eliminating all negative emotions, achieving permanent cognitive control over thought content, and preventing any future emotional distress",
+        "B": "Increasing mindful awareness of emotions, increasing cognitive flexibility, and reducing emotion avoidance and emotion-driven behaviors",
+        "C": "Administering standardized diagnostic interviews, prescribing disorder-specific pharmacotherapy, and monitoring medication side effects",
+        "D": "Identifying unconscious childhood conflicts, interpreting dream symbolism, and resolving transference reactions with the therapist"
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "Transdiagnostic cognitive behavioral therapy",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "transdiagnostic approach"
+      ]
+    },
+    {
+      "id": "e03c5bc796fea4bb",
+      "question_text": "The Research Domain Criteria (RDoC) framework, launched by NIMH in 2009, reconceptualizes psychopathology research away from DSM categories. What is the fundamental methodological shift that RDoC introduces compared to traditional diagnostic classification?",
+      "options": {
+        "A": "RDoC adopts a purely psychodynamic framework that classifies mental disorders according to which unconscious conflict is identified during clinical interview",
+        "B": "RDoC replaces all existing DSM diagnoses with a new set of categorical labels based solely on genetic biomarkers identified through genome-wide association studies",
+        "C": "RDoC eliminates the use of behavioral observation entirely and relies exclusively on neuroimaging data to define all mental disorder categories",
+        "D": "RDoC organizes research around dimensional constructs spanning normal to abnormal functioning, integrating multiple units of analysis from genes to behavior"
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Research Domain Criteria",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "Research Domain Criteria"
+      ]
+    },
+    {
+      "id": "048086fc88f79420",
+      "question_text": "Mentalization-based treatment (MBT) was developed by Fonagy and Bateman primarily for borderline personality disorder. What is the central therapeutic mechanism MBT targets, and how does attachment theory inform this approach?",
+      "options": {
+        "A": "MBT targets cognitive restructuring, the ability to identify automatic thoughts through Socratic questioning, which classical conditioning disrupts, impairing flexibility and problem solving.",
+        "B": "MBT targets thought suppression, the ability to block intrusive cognitions through reappraisal, which temperamental vulnerability disrupts, impairing behavioral inhibition and impulse control.",
+        "C": "MBT targets response extinction, the ability to eliminate maladaptive behaviors through systematic exposure, which operant reinforcement disrupts, impairing stimulus discrimination and habituation.",
+        "D": "MBT targets mentalizing, the ability to interpret behavior through underlying mental states, which attachment trauma disrupts, impairing reflective functioning and emotion regulation."
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Mentalization-based treatment",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "mentalization-based treatment"
+      ]
+    },
+    {
+      "id": "9d7e575a7d5f9cac",
+      "question_text": "Prolonged exposure therapy for PTSD, developed by Edna Foa, involves two primary exposure components. What are they, and what theoretical mechanism does Foa propose to explain why the treatment works?",
+      "options": {
+        "A": "Relaxation training (reducing arousal) and narrative writing (composing a private account); reciprocal inhibition theory explains that pairing relaxation with trauma cues reduces symptoms.",
+        "B": "Cognitive restructuring (challenging trauma beliefs) and behavioral activation (scheduling activities); schema modification theory explains that correcting core beliefs about the trauma reduces symptoms.",
+        "C": "Imaginal exposure (revisiting trauma memories) and in vivo exposure (confronting avoided situations); emotional processing theory posits that modifying the pathological fear structure reduces symptoms.",
+        "D": "Interpersonal processing (group discussion of trauma) and mindfulness meditation (observing trauma memories); acceptance theory explains that reducing experiential avoidance of trauma reduces symptoms."
+      },
+      "correct_answer": "C",
+      "difficulty": 4,
+      "source_article": "Prolonged exposure therapy",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "prolonged exposure therapy"
+      ]
+    },
+    {
+      "id": "4978a50c65e2b3a3",
+      "question_text": "In psychiatric genetics, an endophenotype is an intermediate marker between genotype and clinical phenotype. Which of the following correctly describes the key criteria a biological or psychological measure must meet to qualify as an endophenotype?",
+      "options": {
+        "A": "It must be culturally universal, associated with diagnostic reliability, context-independent, co-segregating with prognosis in cohorts, and present at equal rates in affected and unaffected individuals.",
+        "B": "It must be environmentally caused, associated with treatment response, state-dependent, co-segregating with symptom severity in individuals, and absent in unaffected relatives.",
+        "C": "It must be heritable, associated with the illness, state-dependent, co-segregating with medication response in families, and present at reduced rates in unaffected relatives.",
+        "D": "It must be heritable, associated with the illness, state-independent, co-segregating with illness in families, and present at elevated rates in unaffected relatives."
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Endophenotype",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "endophenotype"
+      ]
+    },
+    {
+      "id": "b1f2f2539f6039e5",
+      "question_text": "Schema therapy, developed by Jeffrey Young, organizes early maladaptive schemas into five broad domains of unmet childhood needs. What are the four main theoretical constructs of schema therapy, and what distinguishes its approach from standard CBT?",
+      "options": {
+        "A": "Cognitive distortions, behavioral experiments, therapeutic alliance, and relapse prevention; it differs from CBT by using systematic desensitization and thought stopping for characterological patterns.",
+        "B": "Reinforcement schedules, stimulus hierarchies, extinction protocols, and generalization training; it differs from CBT by using token economies and contingency management for characterological patterns.",
+        "C": "Defense mechanisms, transference reactions, free association, and dream analysis; it differs from CBT by using psychodynamic interpretation and catharsis for characterological patterns.",
+        "D": "Early maladaptive schemas, coping styles, schema modes, and core emotional needs; it differs from CBT by using limited reparenting and imagery rescripting for characterological patterns."
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Schema therapy",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "schema therapy"
+      ]
+    },
+    {
+      "id": "bd85393969bd715f",
+      "question_text": "Acceptance and commitment therapy (ACT) uses the hexaflex model to conceptualize psychological flexibility. What are the six core processes in the hexaflex, and what foundational theory of language and cognition underlies ACT?",
+      "options": {
+        "A": "Relaxation, cognitive restructuring, behavioral activation, self-monitoring, goal setting, and relapse prevention; ACT is grounded in social learning theory of modeling and conditioning.",
+        "B": "Acceptance, cognitive defusion, present-moment contact, self-as-context, values, and committed action; ACT is grounded in relational frame theory of language and cognition.",
+        "C": "Mindfulness, exposure, response prevention, self-efficacy, values clarification, and behavioral rehearsal; ACT is grounded in information processing theory of attentional bias.",
+        "D": "Acceptance, emotional regulation, present-moment focus, self-compassion, meaning-making, and habit formation; ACT is grounded in schema theory of maladaptive beliefs."
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "Acceptance and commitment therapy",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "acceptance and commitment therapy"
+      ]
+    },
+    {
+      "id": "50c78132e76d46db",
+      "question_text": "Latent variable models are widely used in clinical psychology to validate psychopathology constructs. In structural equation modeling (SEM), what are the two main model components, and how do they relate observed indicators to unobserved constructs?",
+      "options": {
+        "A": "The measurement model links latent variables to each other in a directional hierarchy; the structural model specifies how observed indicators are summed into composite scores.",
+        "B": "The measurement model partitions error variance into random and systematic components; the structural model specifies how error components predict replication failure.",
+        "C": "The measurement model links observed indicators to latent variables via factor loadings; the structural model specifies causal or correlational paths among the latent variables.",
+        "D": "The measurement model assigns observed indicators to diagnostic categories via cutoff scores; the structural model specifies how those categories predict treatment outcomes."
+      },
+      "correct_answer": "C",
+      "difficulty": 4,
+      "source_article": "Latent variable model",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "latent variable modeling"
+      ]
+    },
+    {
+      "id": "17e76be160d91c86",
+      "question_text": "Gross's process model of emotion regulation identifies five families of regulation strategies occurring at different points in the emotion-generative process. How do cognitive reappraisal and expressive suppression differ in their temporal position and their consequences?",
+      "options": {
+        "A": "Reappraisal is concurrent, monitoring intensity during the emotional response, reducing arousal selectively; suppression is post-hoc, rewriting emotional memories afterward and reducing future reactivity.",
+        "B": "Reappraisal is response-focused, reinterpreting situations after emotions develop, reducing expression only; suppression is antecedent-focused, inhibiting arousal beforehand and reducing both experience and expression.",
+        "C": "Reappraisal is antecedent-focused, redirecting attention before emotions develop, reducing arousal only; suppression is response-focused, amplifying expression afterward and increasing both experience and engagement.",
+        "D": "Reappraisal is antecedent-focused, reinterpreting situations before emotions develop, reducing both experience and expression; suppression is response-focused, inhibiting expression afterward but failing to reduce experience."
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Emotion regulation",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "emotion regulation"
+      ]
+    },
+    {
+      "id": "35354fe2a2239226",
+      "question_text": "Polyvagal theory, proposed by Stephen Porges, describes a hierarchical autonomic nervous system with three phylogenetically distinct response circuits. What are these three circuits, and what does the concept of 'neuroception' refer to in this framework?",
+      "options": {
+        "A": "Central vagal (emotional expression), parasympathetic (rest-and-digest), and enteric (gut-brain signaling); neuroception is the sensory detection of interoceptive signals as pleasurable or painful.",
+        "B": "Ventral vagal (social engagement), sympathetic (fight-or-flight), and dorsal vagal (immobilization); neuroception is the subconscious neural process evaluating environmental cues as safe or threatening.",
+        "C": "Prefrontal cortex (executive control), amygdala (fear conditioning), and hippocampus (contextual memory); neuroception is the conscious cognitive appraisal evaluating environmental cues as relevant or irrelevant.",
+        "D": "Ventral vagal (social engagement), hypothalamic-pituitary-adrenal axis (stress response), and reticular activating system (arousal); neuroception is the learned conditioned association of stimuli with prior trauma."
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "Polyvagal theory",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "polyvagal theory"
+      ]
+    },
+    {
+      "id": "40ef85c7daa511a7",
+      "question_text": "Psychometric validation of clinical assessment instruments requires establishing multiple forms of evidence. How do classical test theory (CTT) and item response theory (IRT) differ in their fundamental approach to modeling the relationship between test scores and the construct being measured?",
+      "options": {
+        "A": "CTT models observed scores as ability times difficulty, focusing on item discrimination; IRT models total scores as a linear function of correct responses for test-level comparison.",
+        "B": "CTT models observed scores as consistent-to-total variance ratios, focusing on inter-rater agreement; IRT models item response probability as a function of administration conditions.",
+        "C": "CTT models observed scores as weighted subscale averages, focusing on criterion validity; IRT models item response probability as a function of test length and sample size.",
+        "D": "CTT models observed scores as true score plus error, focusing on test-level reliability; IRT models item response probability as a function of latent trait level."
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Psychometrics",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "psychometric validation"
+      ]
+    },
+    {
+      "id": "19e9244310ae2a93",
+      "question_text": "The network theory of psychopathology, advanced by Borsboom, reconceptualizes mental disorders as networks of causally interacting symptoms rather than expressions of latent disease entities. What are 'bridge symptoms' in this framework, and why are they clinically significant?",
+      "options": {
+        "A": "Bridge symptoms buffer one symptom cluster from another; their strengthening prevents symptom spread and protects against comorbidity development.",
+        "B": "Bridge symptoms connect different disorder-specific symptom clusters; their activation spreads across clusters, driving comorbidity between disorders.",
+        "C": "Bridge symptoms remain inactive regardless of network state; their deactivation signals full remission and prevents relapse across connected disorders.",
+        "D": "Bridge symptoms connect observable symptoms to their underlying latent cause; their identification confirms the categorical validity of diagnostic entities."
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "Network theory of mental disorders",
+      "domain_ids": [
+        "clinical-psychology"
+      ],
+      "concepts_tested": [
+        "network theory of psychopathology"
+      ]
+    }
+  ],
   "labels": [],
   "articles": []
 }

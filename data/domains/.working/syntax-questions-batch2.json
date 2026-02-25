@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "What is the primary function of a coordinating conjunction such as 'and,' 'but,' or 'or' in a sentence?",
+    "correct_answer": "It connects words, phrases, or independent clauses of equal syntactic importance.",
+    "distractors": [
+      "It introduces a dependent clause that cannot stand alone as a complete sentence.",
+      "It modifies a verb by specifying the time, manner, or degree of an action.",
+      "It replaces a noun phrase to avoid repetition within the same sentence."
+    ],
+    "difficulty": 1,
+    "source_article": "Conjunction (grammar)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["conjunction"]
+  },
+  {
+    "question_text": "In linguistic typology, what is the most common basic word order among the world's languages?",
+    "correct_answer": "Subject-Object-Verb (SOV), found in roughly 45% of languages with a preferred order.",
+    "distractors": [
+      "Subject-Verb-Object (SVO), found in roughly 60% of languages with a preferred order.",
+      "Verb-Subject-Object (VSO), found in roughly 45% of languages with a preferred order.",
+      "Verb-Object-Subject (VOS), found in roughly 35% of languages with a preferred order."
+    ],
+    "difficulty": 1,
+    "source_article": "Word order",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["word order"]
+  },
+  {
+    "question_text": "What two components must a clause contain in order to qualify as a clause in traditional grammar?",
+    "correct_answer": "A subject and a predicate, where the predicate typically contains a verb.",
+    "distractors": [
+      "A determiner and a noun, where the noun serves as the head of a phrase.",
+      "An adverb and an adjective, where the adjective modifies the main noun.",
+      "A preposition and its complement, where the complement is always a pronoun."
+    ],
+    "difficulty": 1,
+    "source_article": "Clause",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["clause"]
+  },
+  {
+    "question_text": "What do phrase structure rules describe about the organization of sentences in a language?",
+    "correct_answer": "They describe how words group hierarchically into phrases and how those phrases combine to form sentences.",
+    "distractors": [
+      "They describe how speech sounds combine into syllables and how syllable stress patterns create intonation.",
+      "They describe how individual morphemes attach to roots and how affixation changes a word's meaning.",
+      "They describe how speakers choose vocabulary items and how word frequency determines sentence length."
+    ],
+    "difficulty": 2,
+    "source_article": "Phrase structure grammar",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["phrase structure"]
+  },
+  {
+    "question_text": "In the sentence 'The tall woman in the blue coat smiled,' which words form the noun phrase functioning as the subject?",
+    "correct_answer": "'The tall woman in the blue coat,' with the noun 'woman' as head plus its determiner, adjective, and prepositional phrase modifiers.",
+    "distractors": [
+      "'Tall woman smiled,' because in a noun phrase only the adjective, the head noun, and the following main verb are essential syntactic elements.",
+      "'The blue coat,' because the subject noun phrase is always the most recently mentioned nominal group appearing closest to the sentence's verb.",
+      "'In the blue coat smiled,' because the subject noun phrase is always introduced by a preposition and must also include the sentence's main verb."
+    ],
+    "difficulty": 2,
+    "source_article": "Noun phrase",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["noun phrase"]
+  },
+  {
+    "question_text": "In the sentence 'She quickly put the books on the shelf,' which words constitute the verb phrase?",
+    "correct_answer": "'Quickly put the books on the shelf,' comprising the verb and all its dependents except the subject.",
+    "distractors": [
+      "'She quickly put,' because the verb phrase includes only the subject, adverb, and main verb.",
+      "'The books on the shelf,' because the verb phrase consists of the objects and their modifiers.",
+      "'Put the books,' because the verb phrase never includes adverbs or prepositional phrases."
+    ],
+    "difficulty": 2,
+    "source_article": "Verb phrase",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["verb phrase"]
+  },
+  {
+    "question_text": "What distinguishes a subordinate clause from an independent clause in a complex sentence?",
+    "correct_answer": "A subordinate clause cannot stand alone as a complete sentence and depends on a main clause for its meaning.",
+    "distractors": [
+      "A subordinate clause always appears at the beginning of a sentence and contains the main verb.",
+      "A subordinate clause uses only linking verbs while an independent clause uses only action verbs.",
+      "A subordinate clause must contain at least two nouns while an independent clause requires only one."
+    ],
+    "difficulty": 2,
+    "source_article": "Dependent clause",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["subordinate clause"]
+  },
+  {
+    "question_text": "In the sentence 'The book that I borrowed was fascinating,' what syntactic role does the clause 'that I borrowed' play?",
+    "correct_answer": "It is a restrictive relative clause that modifies the noun 'book' by specifying which one is meant.",
+    "distractors": [
+      "It is an adverbial clause that modifies the adjective 'fascinating' by explaining a cause.",
+      "It is a main clause that expresses the primary assertion of the entire sentence.",
+      "It is a complement clause that serves as the direct object of the verb 'was.'"
+    ],
+    "difficulty": 2,
+    "source_article": "Relative clause",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["relative clause"]
+  },
+  {
+    "question_text": "How do free morphemes differ from bound morphemes in the structure of words?",
+    "correct_answer": "Free morphemes can stand alone as independent words, while bound morphemes must attach to another morpheme.",
+    "distractors": [
+      "Free morphemes carry only grammatical meaning, while bound morphemes carry only lexical meaning.",
+      "Free morphemes occur only in spoken language, while bound morphemes occur only in written language.",
+      "Free morphemes appear only at the end of words, while bound morphemes appear only at the beginning."
+    ],
+    "difficulty": 2,
+    "source_article": "Morpheme",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["morpheme"]
+  },
+  {
+    "question_text": "What does grammatical tense indicate, and how is it most commonly expressed in inflecting languages like English?",
+    "correct_answer": "Tense locates a situation in time and is commonly expressed through verb inflection, such as the '-ed' suffix for past tense.",
+    "distractors": [
+      "Tense indicates the mood of the speaker and is commonly expressed by changing the noun's case ending in each clause.",
+      "Tense marks the number of participants in an event and is commonly expressed by adding plural suffixes to every noun.",
+      "Tense specifies the certainty of a proposition and is commonly expressed through systematic changes in adjective agreement forms."
+    ],
+    "difficulty": 2,
+    "source_article": "Grammatical tense",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["tense"]
+  }
+]

@@ -1,0 +1,172 @@
+[
+  {
+    "question_text": "In semantics, the study of meaning is primarily concerned with the relationship between linguistic expressions and what they represent. What is 'meaning' in linguistics?",
+    "correct_answer": "The information or concept that a linguistic expression conveys or represents to speakers of a language.",
+    "distractors": [
+      "The acoustic signal produced by the vocal tract when a speaker utters a word or sentence aloud.",
+      "The set of grammatical rules that determine whether a sentence is syntactically well-formed or not.",
+      "The historical process through which a word was borrowed from one language into another over time."
+    ],
+    "difficulty": 1,
+    "source_article": "Meaning (linguistics)",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "meaning"
+    ]
+  },
+  {
+    "question_text": "The words 'begin,' 'start,' and 'commence' can often be substituted for one another in sentences without changing the core meaning. What semantic relationship do they share?",
+    "correct_answer": "They are synonyms, words that have the same or very similar meanings within a language.",
+    "distractors": [
+      "They are antonyms, words that express opposite or contradictory meanings within a language.",
+      "They are homonyms, words that share identical spelling or pronunciation but have unrelated meanings.",
+      "They are hyponyms, words that each belong to a different level in a taxonomic hierarchy."
+    ],
+    "difficulty": 1,
+    "source_article": "Synonym",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "synonym"
+    ]
+  },
+  {
+    "question_text": "In semantics, word pairs like 'hot/cold' and 'dead/alive' are both types of opposites, but they differ structurally. What are the three main types of antonyms recognized in linguistics?",
+    "correct_answer": "Gradable antonyms, complementary antonyms, and relational (converse) antonyms.",
+    "distractors": [
+      "Lexical antonyms, morphological antonyms, and phonological antonyms.",
+      "Simple antonyms, compound antonyms, and derived antonyms.",
+      "Primary antonyms, secondary antonyms, and contextual antonyms."
+    ],
+    "difficulty": 1,
+    "source_article": "Opposite (semantics)",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "antonym"
+    ]
+  },
+  {
+    "question_text": "The sentence 'I saw her duck' can be understood as either seeing a bird or seeing someone lower their head quickly. What linguistic phenomenon does this illustrate?",
+    "correct_answer": "Ambiguity, where a single expression can be interpreted as having two or more distinct meanings.",
+    "distractors": [
+      "Redundancy, where a single expression conveys the same information through multiple overlapping signals.",
+      "Entailment, where the truth of one interpretation logically guarantees the truth of another.",
+      "Presupposition, where the sentence takes a background assumption for granted before asserting anything."
+    ],
+    "difficulty": 1,
+    "source_article": "Ambiguity",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "ambiguity"
+    ]
+  },
+  {
+    "question_text": "When someone says 'Time is money,' they are describing time in terms of a monetary resource without using 'like' or 'as.' What figure of speech is this?",
+    "correct_answer": "A metaphor, which describes one thing by directly stating it is another unrelated thing.",
+    "distractors": [
+      "A simile, which compares two things explicitly using the words 'like' or 'as' in the expression.",
+      "A hyperbole, which deliberately exaggerates a claim far beyond what is literally true or possible.",
+      "A metonymy, which substitutes the name of an attribute or feature for the thing itself."
+    ],
+    "difficulty": 1,
+    "source_article": "Metaphor",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "metaphor"
+    ]
+  },
+  {
+    "question_text": "The words 'slender' and 'scrawny' both denote thinness, but 'slender' suggests elegance while 'scrawny' suggests unattractiveness. What semantic property explains this difference?",
+    "correct_answer": "Connotation, the emotional or cultural associations a word carries beyond its literal dictionary definition.",
+    "distractors": [
+      "Denotation, the strict literal meaning of a word as formally defined in a standard dictionary.",
+      "Polysemy, the property of a single word having multiple related but distinct dictionary meanings.",
+      "Homophony, the property of two words sounding identical despite having completely different meanings."
+    ],
+    "difficulty": 1,
+    "source_article": "Connotation",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "connotation"
+    ]
+  },
+  {
+    "question_text": "A dictionary defines 'home' as 'a place where one lives.' This objective, literal definition, stripped of any emotional associations, is an example of what?",
+    "correct_answer": "Denotation, the literal or primary meaning of a word independent of emotional or cultural overtones.",
+    "distractors": [
+      "Connotation, the subjective feelings and cultural associations that a word evokes in a listener.",
+      "Implicature, the meaning indirectly suggested by a speaker beyond what is explicitly stated in words.",
+      "Pragmatics, the study of how context and intention shape the interpretation of spoken utterances."
+    ],
+    "difficulty": 1,
+    "source_article": "Denotation",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "denotation"
+    ]
+  },
+  {
+    "question_text": "The word 'bank' means something different in 'river bank' versus 'savings bank.' What primarily allows a listener to determine which meaning is intended?",
+    "correct_answer": "Context, the surrounding linguistic and situational information that guides interpretation of an expression.",
+    "distractors": [
+      "Etymology, the historical origin of the word that permanently fixes its single correct meaning.",
+      "Morphology, the internal structure of the word's prefixes and suffixes that signals its meaning.",
+      "Phonology, the specific pronunciation and stress pattern that distinguishes one meaning from another."
+    ],
+    "difficulty": 1,
+    "source_article": "Context (language use)",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "context"
+    ]
+  },
+  {
+    "question_text": "When someone says 'The cat is on the mat,' and means exactly that a cat is physically located on a mat, they are using language in what way?",
+    "correct_answer": "Literally, interpreting words according to their standard, non-figurative dictionary definitions.",
+    "distractors": [
+      "Figuratively, using words in a way that deviates from their standard definitions for rhetorical effect.",
+      "Ironically, stating the opposite of what is meant in order to convey humor or sarcasm.",
+      "Idiomatically, using a fixed expression whose meaning cannot be predicted from its individual words."
+    ],
+    "difficulty": 1,
+    "source_article": "Literal and figurative language",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "literal meaning"
+    ]
+  },
+  {
+    "question_text": "The word 'bark' can mean the outer covering of a tree or the sound a dog makes. These are spelled and pronounced identically but have unrelated meanings. What are such words called?",
+    "correct_answer": "Homonyms, words that share the same spelling or pronunciation but have different, unrelated meanings.",
+    "distractors": [
+      "Synonyms, words that have the same or nearly the same meaning and can replace each other.",
+      "Polysemes, a single word whose multiple meanings are historically related and share a common origin.",
+      "Antonyms, words that express opposite or contrary meanings within the same language."
+    ],
+    "difficulty": 1,
+    "source_article": "Homonym",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "homonym"
+    ]
+  }
+]

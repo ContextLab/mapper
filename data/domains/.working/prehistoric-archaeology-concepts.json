@@ -1,0 +1,266 @@
+{
+  "domain": "prehistoric-archaeology",
+  "parent_domain": "archaeology",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {
+        "concept": "Stone Age",
+        "wikipedia_article": "Stone Age",
+        "brief_rationale": "The broad prehistoric period defined by stone tool use is one of the most widely recognized terms in popular history education."
+      },
+      {
+        "concept": "cave painting",
+        "wikipedia_article": "Cave painting",
+        "brief_rationale": "Images of prehistoric art on cave walls, exemplified by Lascaux and Altamira, are among the most iconic and publicly recognized products of early human culture."
+      },
+      {
+        "concept": "Ice Age",
+        "wikipedia_article": "Ice age",
+        "brief_rationale": "The concept of glacial periods dramatically reshaping the ancient world is universally known and features prominently in popular science and media."
+      },
+      {
+        "concept": "Stonehenge",
+        "wikipedia_article": "Stonehenge",
+        "brief_rationale": "The Neolithic and Bronze Age megalithic monument in England is one of the most famous prehistoric sites in the world, recognized globally."
+      },
+      {
+        "concept": "mammoth",
+        "wikipedia_article": "Mammoth",
+        "brief_rationale": "The iconic extinct Pleistocene megafauna, hunted by early humans, is universally recognized from popular culture, museums, and children's education."
+      },
+      {
+        "concept": "dinosaur fossil",
+        "wikipedia_article": "Dinosaur",
+        "brief_rationale": "Fossilized remains of prehistoric reptiles are the most widely recognized artifacts of deep time and a common entry point for public interest in prehistoric life."
+      },
+      {
+        "concept": "Neanderthal",
+        "wikipedia_article": "Neanderthal",
+        "brief_rationale": "The extinct human relatives who coexisted with early Homo sapiens are among the most recognizable figures in the popular understanding of human prehistory."
+      },
+      {
+        "concept": "Bronze Age",
+        "wikipedia_article": "Bronze Age",
+        "brief_rationale": "The period characterized by bronze metallurgy is a standard term in any introductory world history or social studies curriculum."
+      },
+      {
+        "concept": "Iron Age",
+        "wikipedia_article": "Iron Age",
+        "brief_rationale": "The era defined by widespread iron smelting is a foundational term known to any student who has encountered a basic historical timeline."
+      },
+      {
+        "concept": "mummy",
+        "wikipedia_article": "Mummy",
+        "brief_rationale": "Preserved human remains from ancient Egypt and other cultures are among the most publicly recognized archaeological artifacts worldwide."
+      },
+      {
+        "concept": "Homo sapiens",
+        "wikipedia_article": "Homo sapiens",
+        "brief_rationale": "The scientific name for modern humans is broadly known and used in any discussion of human origins and evolution."
+      },
+      {
+        "concept": "prehistoric art",
+        "wikipedia_article": "Prehistoric art",
+        "brief_rationale": "The general category of artistic expression produced before written records is widely referenced in educational contexts and popular science."
+      },
+      {
+        "concept": "archaeology",
+        "wikipedia_article": "Archaeology",
+        "brief_rationale": "The scientific study of human history through excavation and analysis of material remains is a household term and the parent discipline of this domain."
+      }
+    ],
+    "L2": [
+      {
+        "concept": "Neolithic Revolution",
+        "wikipedia_article": "Neolithic Revolution",
+        "brief_rationale": "The transition from foraging to farming and settled village life is a key concept taught in introductory world history and anthropology courses."
+      },
+      {
+        "concept": "radiocarbon dating",
+        "wikipedia_article": "Radiocarbon dating",
+        "brief_rationale": "The standard method for dating organic material up to ~50,000 years old using carbon-14 decay is fundamental vocabulary for any student of prehistory."
+      },
+      {
+        "concept": "Homo erectus",
+        "wikipedia_article": "Homo erectus",
+        "brief_rationale": "The early human species that first left Africa and mastered the Acheulean hand axe is a staple of introductory human evolution coursework."
+      },
+      {
+        "concept": "megalith",
+        "wikipedia_article": "Megalith",
+        "brief_rationale": "Large prehistoric stone structures including dolmens, menhirs, and stone circles are standard vocabulary in Neolithic and Bronze Age archaeology courses."
+      },
+      {
+        "concept": "Paleolithic",
+        "wikipedia_article": "Paleolithic",
+        "brief_rationale": "The Old Stone Age spanning from the first tool use to roughly 10,000 BCE is a core period name in any prehistoric archaeology or anthropology curriculum."
+      },
+      {
+        "concept": "Fertile Crescent",
+        "wikipedia_article": "Fertile Crescent",
+        "brief_rationale": "The arc of productive land in southwest Asia where agriculture and early civilization first emerged is well known to students of ancient history and geography."
+      },
+      {
+        "concept": "out of Africa hypothesis",
+        "wikipedia_article": "Recent African origin of modern humans",
+        "brief_rationale": "The model that modern humans originated in Africa and dispersed globally is a foundational concept in paleoanthropology and human biology courses."
+      },
+      {
+        "concept": "hand axe",
+        "wikipedia_article": "Handaxe",
+        "brief_rationale": "The characteristic bifacial stone tool of the Lower Paleolithic is the most common artifact type discussed in introductory lithic technology and human evolution courses."
+      },
+      {
+        "concept": "hunter-gatherer",
+        "wikipedia_article": "Hunter-gatherer",
+        "brief_rationale": "The subsistence lifestyle of foraging for food rather than farming is a foundational concept in anthropology and prehistory coursework at any level."
+      },
+      {
+        "concept": "Çatalhöyük",
+        "wikipedia_article": "Çatalhöyük",
+        "brief_rationale": "The large Neolithic settlement in Anatolia is a widely cited case study of early sedentary community life in university prehistory and archaeology courses."
+      },
+      {
+        "concept": "Lascaux cave",
+        "wikipedia_article": "Lascaux",
+        "brief_rationale": "The UNESCO World Heritage cave system in France with its outstanding Upper Paleolithic paintings is one of the most studied and cited prehistoric art sites in education."
+      },
+      {
+        "concept": "Pleistocene epoch",
+        "wikipedia_article": "Pleistocene",
+        "brief_rationale": "The geological epoch spanning roughly 2.6 million to 11,700 years ago, defined by glacial cycles and the appearance of modern humans, is standard vocabulary for students of prehistoric archaeology."
+      },
+      {
+        "concept": "domestication of plants and animals",
+        "wikipedia_article": "Domestication",
+        "brief_rationale": "The controlled cultivation of crops and breeding of animals is a central topic in the study of the Neolithic transition and early agricultural societies."
+      }
+    ],
+    "L3": [
+      {
+        "concept": "stratigraphy",
+        "wikipedia_article": "Stratigraphy (archaeology)",
+        "brief_rationale": "Requires understanding how archaeologists read superimposed depositional layers to establish relative chronologies and interpret site formation processes."
+      },
+      {
+        "concept": "Acheulean industry",
+        "wikipedia_article": "Acheulean",
+        "brief_rationale": "Requires working knowledge of the Lower Paleolithic tool tradition associated with Homo erectus, characterized by symmetrical bifacial tools and spanning 1.76 million to 130,000 years ago."
+      },
+      {
+        "concept": "Aurignacian culture",
+        "wikipedia_article": "Aurignacian",
+        "brief_rationale": "Requires knowing this early Upper Paleolithic industry associated with anatomically modern humans in Europe, marked by blade tools, bone points, and early figurative art."
+      },
+      {
+        "concept": "mitochondrial Eve",
+        "wikipedia_article": "Mitochondrial Eve",
+        "brief_rationale": "Requires understanding the concept of the most recent common matrilineal ancestor of all living humans, derived from mitochondrial DNA phylogenetics, and its implications for human dispersal models."
+      },
+      {
+        "concept": "Venus figurines",
+        "wikipedia_article": "Venus figurines",
+        "brief_rationale": "Requires familiarity with the widespread Upper Paleolithic female statuettes from Europe and Siberia and the ongoing scholarly debate over their function and symbolic meaning."
+      },
+      {
+        "concept": "megalithic tomb",
+        "wikipedia_article": "Megalithic tomb",
+        "brief_rationale": "Requires understanding the range of Neolithic funerary monument types — dolmens, passage graves, gallery graves — and what they reveal about mortuary practice and social organization."
+      },
+      {
+        "concept": "Younger Dryas",
+        "wikipedia_article": "Younger Dryas",
+        "brief_rationale": "Requires knowing this rapid cold reversal event (c. 12,900–11,700 BP) and its documented effects on human populations, megafauna extinctions, and the timing of the Neolithic transition."
+      },
+      {
+        "concept": "Göbekli Tepe",
+        "wikipedia_article": "Göbekli Tepe",
+        "brief_rationale": "Requires understanding why this pre-pottery Neolithic site in southeastern Turkey — with its monumental carved pillars predating agriculture — overturned assumptions about the prerequisites for complex ritual structures."
+      },
+      {
+        "concept": "lithic reduction",
+        "wikipedia_article": "Lithic reduction",
+        "brief_rationale": "Requires practical understanding of how knapping sequences — core preparation, platform striking, retouching — are reconstructed by archaeologists to infer technological skill and cultural affiliation."
+      },
+      {
+        "concept": "Beaker culture",
+        "wikipedia_article": "Bell Beaker culture",
+        "brief_rationale": "Requires knowledge of this late Neolithic/Early Bronze Age pan-European phenomenon defined by distinctive pottery assemblages and its role in debates about migration, trade, and identity in later prehistory."
+      },
+      {
+        "concept": "megafaunal extinction",
+        "wikipedia_article": "Quaternary extinction event",
+        "brief_rationale": "Requires understanding the late Pleistocene loss of large mammals globally and the ongoing debate over the relative roles of human overhunting versus climate change as causal factors."
+      },
+      {
+        "concept": "Corded Ware culture",
+        "wikipedia_article": "Corded Ware culture",
+        "brief_rationale": "Requires knowing this late Neolithic/Chalcolithic complex across northern Europe, its association with the expansion of steppe ancestry, and its central role in debates about Indo-European origins."
+      }
+    ],
+    "L4": [
+      {
+        "concept": "Châtelperronian industry",
+        "wikipedia_article": "Châtelperronian",
+        "brief_rationale": "Requires expert knowledge of this transitional Middle-to-Upper Paleolithic industry associated with late Neanderthals in France and Spain, and the contested debate over whether it represents independent innovation or acculturation from modern humans."
+      },
+      {
+        "concept": "Denisovan admixture",
+        "wikipedia_article": "Denisovan",
+        "brief_rationale": "Requires deep understanding of ancient DNA evidence for interbreeding between anatomically modern humans and the Denisovan hominin, the geographic patterns of surviving archaic ancestry in Melanesian and Asian populations, and paleogenomic methodology."
+      },
+      {
+        "concept": "optically stimulated luminescence dating",
+        "wikipedia_article": "Luminescence dating",
+        "brief_rationale": "Requires expert-level understanding of how OSL measures the last time mineral grains were exposed to sunlight, its application to sediment dating beyond the radiocarbon limit, and sources of systematic error."
+      },
+      {
+        "concept": "chaîne opératoire",
+        "wikipedia_article": "Chaîne opératoire",
+        "brief_rationale": "Requires expert familiarity with this French analytical concept — the full operational sequence from raw material procurement to discard — used to reconstruct prehistoric technological cognition and social transmission of skills."
+      },
+      {
+        "concept": "Middle Stone Age behavioral modernity",
+        "wikipedia_article": "Behavioral modernity",
+        "brief_rationale": "Requires deep engagement with the debate over when and where cognitively modern behavior first appeared, including evidence from Blombos Cave (ochre engraving, shell beads) and competing gradualist versus punctuated models."
+      },
+      {
+        "concept": "Toba catastrophe theory",
+        "wikipedia_article": "Toba catastrophe theory",
+        "brief_rationale": "Requires expert understanding of the hypothesis that the ~74,000 BP Toba supervolcanic eruption caused a severe population bottleneck in early Homo sapiens, and the subsequent archaeological and genetic evidence that challenges or supports it."
+      },
+      {
+        "concept": "use-wear analysis",
+        "wikipedia_article": "Use-wear analysis",
+        "brief_rationale": "Requires knowledge of high-powered and low-powered microscopic techniques used to identify the function of prehistoric stone tools from edge damage, polish, and residue traces — a specialized subfield of lithic analysis."
+      },
+      {
+        "concept": "Yamnaya culture",
+        "wikipedia_article": "Yamnaya culture",
+        "brief_rationale": "Requires expert understanding of this Bronze Age Pontic steppe pastoral society and the ancient DNA evidence implicating Yamnaya-related populations as the primary vector of steppe ancestry — and likely Proto-Indo-European language — into Europe."
+      },
+      {
+        "concept": "Gravettian culture",
+        "wikipedia_article": "Gravettian",
+        "brief_rationale": "Requires detailed knowledge of this Upper Paleolithic tradition (33,000–22,000 BP) across Europe, including its Venus figurine complex, mammoth-bone dwellings, and long-distance raw material exchange networks."
+      },
+      {
+        "concept": "uranium-series dating",
+        "wikipedia_article": "Uranium-series dating",
+        "brief_rationale": "Requires expert understanding of how decay chains of uranium isotopes in speleothems and bone are used to date cave art, hominin fossils, and flowstone-sealed archaeological deposits, including its precision limits and contamination risks."
+      },
+      {
+        "concept": "zooarchaeology",
+        "wikipedia_article": "Zooarchaeology",
+        "brief_rationale": "Requires expert-level knowledge of how faunal assemblage analysis — through taphonomy, skeletal element representation, cut-mark patterning, and kill-site demographics — reconstructs prehistoric subsistence strategies and human-animal relationships."
+      },
+      {
+        "concept": "Solutrean culture",
+        "wikipedia_article": "Solutrean",
+        "brief_rationale": "Requires deep knowledge of this Upper Paleolithic industry (22,000–17,000 BP) known for its exceptionally fine pressure-flaked laurel-leaf bifaces, its restricted geographic range in Iberia and southern France, and its position in debates about transatlantic contact hypotheses."
+      }
+    ]
+  }
+}

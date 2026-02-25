@@ -1,0 +1,104 @@
+[
+  {
+    "question_text": "What is the Forbidden City in Beijing, constructed between 1406 and 1420, and what role did it serve for over 500 years?",
+    "correct_answer": "The imperial palace complex that housed 24 Ming and Qing dynasty emperors and served as China's political center.",
+    "distractors": [
+      "The imperial temple complex that housed Ming and Qing dynasty religious officials and served as China's spiritual center.",
+      "The imperial garden complex that housed 24 Ming and Qing dynasty scholars and served as China's cultural center.",
+      "The imperial military complex that housed Ming and Qing dynasty generals and served as China's defensive command center."
+    ],
+    "difficulty": 1,
+    "source_article": "Forbidden_City",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "Forbidden City"
+    ]
+  },
+  {
+    "question_text": "In Chinese art and mythology, what does the dragon traditionally symbolize, and how is it most commonly depicted?",
+    "correct_answer": "It symbolizes potent and auspicious powers, especially control over water and weather, and is depicted as snake-like with four legs.",
+    "distractors": [
+      "It symbolizes potent and destructive powers, especially control over fire and wind, and is depicted as snake-like with four legs.",
+      "It symbolizes potent and auspicious powers, especially control over water and weather, and is depicted as bird-like with four wings.",
+      "It symbolizes potent and auspicious powers, especially control over earth and harvests, and is depicted as turtle-like with four legs."
+    ],
+    "difficulty": 1,
+    "source_article": "Chinese_dragon",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "dragon (Chinese art)"
+    ]
+  },
+  {
+    "question_text": "What is woodblock printing, a technique originating in ancient China that remained the most common East Asian method of printing until the 19th century?",
+    "correct_answer": "A relief printing technique in which a carved wooden block with raised inked surfaces is pressed onto paper or textiles.",
+    "distractors": [
+      "An intaglio printing technique in which an etched wooden block with recessed inked grooves is pressed onto paper or textiles.",
+      "A relief printing technique in which a carved stone block with raised inked surfaces is pressed onto paper or textiles.",
+      "A relief stamping technique in which a carved wooden block with raised pigmented surfaces is pressed onto ceramic or silk."
+    ],
+    "difficulty": 1,
+    "source_article": "Woodblock_printing",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "woodblock printing"
+    ]
+  },
+  {
+    "question_text": "What are the ritual bronze vessels of ancient China, produced primarily during the Shang and Western Zhou dynasties, and what were they used for?",
+    "correct_answer": "Cast bronze ceremonial objects such as ding cauldrons and zhong bells, used in ritual offerings and inscribed with early Chinese writing.",
+    "distractors": [
+      "Cast bronze ceremonial objects such as ding cauldrons and zhong bells, used in military campaigns and inscribed with early Chinese maps.",
+      "Carved jade ceremonial objects such as bi discs and cong tubes, used in ritual offerings and inscribed with early Chinese writing.",
+      "Cast bronze ceremonial objects such as ding cauldrons and zhong bells, used in commercial trade and inscribed with early Chinese numerals."
+    ],
+    "difficulty": 1,
+    "source_article": "Chinese_bronze_inscriptions",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "bronze vessels (ancient China)"
+    ]
+  },
+  {
+    "question_text": "What is Buddhist sculpture in China, and how did this art form arrive and develop there from the 1st century CE onward?",
+    "correct_answer": "Devotional statues of buddhas and bodhisattvas that spread to China via the Silk Road, developing a rich Mahayana iconographic tradition.",
+    "distractors": [
+      "Devotional statues of buddhas and bodhisattvas that spread to China via maritime trade routes, developing a rich Theravada iconographic tradition.",
+      "Decorative carvings of emperors and court officials that spread to China via the Silk Road, developing a rich Mahayana iconographic tradition.",
+      "Devotional statues of buddhas and bodhisattvas that spread to China via the Silk Road, developing a rich Confucian iconographic tradition."
+    ],
+    "difficulty": 1,
+    "source_article": "Buddhist_art",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "Buddhist sculpture"
+    ]
+  },
+  {
+    "question_text": "What is shan shui, the traditional Chinese painting genre whose name literally translates as 'mountain-water,' and what medium does it employ?",
+    "correct_answer": "A style of landscape painting depicting mountains, rivers, and natural scenery, executed with brush and ink rather than conventional paints.",
+    "distractors": [
+      "A style of landscape painting depicting mountains, rivers, and natural scenery, executed with brush and mineral pigments rather than ink.",
+      "A style of portrait painting depicting scholars, monks, and noble figures, executed with brush and ink rather than conventional paints.",
+      "A style of landscape painting depicting gardens, pavilions, and architectural scenery, executed with brush and ink rather than conventional paints."
+    ],
+    "difficulty": 1,
+    "source_article": "Shan_shui",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "landscape painting (Chinese)"
+    ]
+  }
+]

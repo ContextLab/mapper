@@ -1,0 +1,266 @@
+{
+  "domain": "chinese-art-history",
+  "parent_domain": "art-history",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {
+        "concept": "Terracotta Army",
+        "wikipedia_article": "Terracotta Army",
+        "brief_rationale": "One of the most famous archaeological discoveries in the world, universally recognized by any educated person."
+      },
+      {
+        "concept": "Chinese calligraphy",
+        "wikipedia_article": "Chinese calligraphy",
+        "brief_rationale": "A defining art form of Chinese civilization, widely recognized globally as central to Chinese culture."
+      },
+      {
+        "concept": "Great Wall of China",
+        "wikipedia_article": "Great Wall of China",
+        "brief_rationale": "An iconic monument and symbol of Chinese civilization known to virtually everyone worldwide."
+      },
+      {
+        "concept": "Chinese porcelain",
+        "wikipedia_article": "Chinese ceramics",
+        "brief_rationale": "Chinese porcelain is globally recognized and synonymous with Chinese artistic achievement across many centuries."
+      },
+      {
+        "concept": "silk",
+        "wikipedia_article": "Silk",
+        "brief_rationale": "Silk as both a material and art medium is inseparably linked to Chinese civilization in popular understanding."
+      },
+      {
+        "concept": "jade",
+        "wikipedia_article": "Jade use in Mesoamerica and East Asia",
+        "brief_rationale": "Jade carving is one of the most widely recognized symbols of Chinese art and culture."
+      },
+      {
+        "concept": "ink wash painting",
+        "wikipedia_article": "Ink wash painting",
+        "brief_rationale": "The distinctive black-ink brush painting style is immediately recognizable as a hallmark of East Asian art."
+      },
+      {
+        "concept": "Forbidden City",
+        "wikipedia_article": "Forbidden City",
+        "brief_rationale": "The imperial palace complex is a world-famous architectural landmark and repository of Chinese art."
+      },
+      {
+        "concept": "dragon (Chinese art)",
+        "wikipedia_article": "Chinese dragon",
+        "brief_rationale": "The dragon is the most iconic decorative motif in Chinese art, universally recognized as a symbol of China."
+      },
+      {
+        "concept": "woodblock printing",
+        "wikipedia_article": "Woodblock printing",
+        "brief_rationale": "China's invention of woodblock printing is widely known as a pivotal cultural and artistic development."
+      },
+      {
+        "concept": "bronze vessels (ancient China)",
+        "wikipedia_article": "Chinese bronze inscriptions",
+        "brief_rationale": "Ancient Chinese ritual bronzes are among the most recognized artifacts of early Chinese civilization."
+      },
+      {
+        "concept": "Buddhist sculpture",
+        "wikipedia_article": "Buddhist art",
+        "brief_rationale": "Buddhist sculpture is widely encountered in museums worldwide and immediately associated with East Asian art."
+      },
+      {
+        "concept": "landscape painting (Chinese)",
+        "wikipedia_article": "Shan shui",
+        "brief_rationale": "Chinese landscape painting featuring mountains and water is broadly recognized as a defining genre of Chinese art."
+      }
+    ],
+    "L2": [
+      {
+        "concept": "shan shui",
+        "wikipedia_article": "Shan shui",
+        "brief_rationale": "The specific term for the Chinese mountain-and-water landscape genre, known to students of Chinese art."
+      },
+      {
+        "concept": "Four Treasures of the Study",
+        "wikipedia_article": "Four Treasures of the Study",
+        "brief_rationale": "The brush, ink, inkstone, and paper — specific cultural knowledge expected of Chinese art students."
+      },
+      {
+        "concept": "Tang dynasty art",
+        "wikipedia_article": "Tang dynasty",
+        "brief_rationale": "The Tang dynasty's cosmopolitan artistic achievements are a foundational period studied in Chinese art history."
+      },
+      {
+        "concept": "Song dynasty painting",
+        "wikipedia_article": "Song dynasty",
+        "brief_rationale": "The Song dynasty represents a peak of classical Chinese painting, especially landscape and court art."
+      },
+      {
+        "concept": "literati painting",
+        "wikipedia_article": "Literati painting",
+        "brief_rationale": "The wenrenhua tradition of scholar-amateur painting is a named style requiring art-historical knowledge."
+      },
+      {
+        "concept": "blue-and-white porcelain",
+        "wikipedia_article": "Blue and white pottery",
+        "brief_rationale": "Blue-and-white ware is a specific and important ceramic tradition associated with Yuan and Ming dynasties."
+      },
+      {
+        "concept": "Dunhuang cave paintings",
+        "wikipedia_article": "Mogao Caves",
+        "brief_rationale": "The Dunhuang murals are a major archaeological and artistic site requiring specific knowledge of Buddhist art."
+      },
+      {
+        "concept": "Gu Kaizhi",
+        "wikipedia_article": "Gu Kaizhi",
+        "brief_rationale": "One of the earliest named Chinese painters, known for the Admonitions Scroll — a key figure for art students."
+      },
+      {
+        "concept": "Wang Xizhi",
+        "wikipedia_article": "Wang Xizhi",
+        "brief_rationale": "Revered as the Sage of Calligraphy, Wang Xizhi is the most celebrated name in Chinese calligraphic history."
+      },
+      {
+        "concept": "Neolithic pottery (China)",
+        "wikipedia_article": "Yangshao culture",
+        "brief_rationale": "Yangshao painted pottery represents China's earliest artistic traditions, requiring knowledge of prehistoric culture."
+      },
+      {
+        "concept": "lacquerware",
+        "wikipedia_article": "Chinese lacquerware",
+        "brief_rationale": "Chinese lacquerware is a distinctive craft tradition requiring specific knowledge of its history and techniques."
+      },
+      {
+        "concept": "flower-and-bird painting",
+        "wikipedia_article": "Bird-and-flower painting",
+        "brief_rationale": "A major Chinese painting genre alongside landscape, requiring knowledge of traditional genre classifications."
+      },
+      {
+        "concept": "Ming dynasty ceramics",
+        "wikipedia_article": "Chinese ceramics",
+        "brief_rationale": "Ming ceramics, especially the Jingdezhen imperial wares, are a distinct and important period in ceramic history."
+      }
+    ],
+    "L3": [
+      {
+        "concept": "taotie",
+        "wikipedia_article": "Taotie",
+        "brief_rationale": "The enigmatic zoomorphic mask motif on Shang bronze vessels requires understanding of Bronze Age ritual and iconography."
+      },
+      {
+        "concept": "xieyi",
+        "wikipedia_article": "Xieyi",
+        "brief_rationale": "The 'writing ideas' expressive brushwork style contrasted with meticulous gongbi requires technical and philosophical understanding."
+      },
+      {
+        "concept": "gongbi",
+        "wikipedia_article": "Gongbi",
+        "brief_rationale": "The fine-line meticulous painting technique requires knowledge of the spectrum of Chinese brushwork traditions."
+      },
+      {
+        "concept": "Northern and Southern Song painting traditions",
+        "wikipedia_article": "Song dynasty",
+        "brief_rationale": "The distinction between monumental Northern Song landscapes and the intimate lyrical Southern Song style requires dynastic contextual knowledge."
+      },
+      {
+        "concept": "celadon",
+        "wikipedia_article": "Celadon",
+        "brief_rationale": "The jade-green glazed ceramic tradition requires understanding of Chinese kiln traditions and aesthetic ideals linking ceramics to jade."
+      },
+      {
+        "concept": "Xu Beihong",
+        "wikipedia_article": "Xu Beihong",
+        "brief_rationale": "A pivotal early 20th-century artist who synthesized Western academic realism with Chinese brush traditions, key to modern Chinese art history."
+      },
+      {
+        "concept": "Yuan dynasty literati painting",
+        "wikipedia_article": "Yuan dynasty",
+        "brief_rationale": "Yuan literati painters like Ni Zan and Wu Zhen developed specific aesthetic theories about subjective expression under Mongol rule."
+      },
+      {
+        "concept": "Jingdezhen",
+        "wikipedia_article": "Jingdezhen",
+        "brief_rationale": "China's 'porcelain capital' requires working knowledge of kiln geography, imperial patronage, and ceramic production history."
+      },
+      {
+        "concept": "Huizong (emperor-artist)",
+        "wikipedia_article": "Emperor Huizong of Song",
+        "brief_rationale": "Emperor Huizong's role as a painter and academy patron represents the unique intersection of imperial power and artistic production."
+      },
+      {
+        "concept": "Eight Eccentrics of Yangzhou",
+        "wikipedia_article": "Eight Eccentrics of Yangzhou",
+        "brief_rationale": "This group of Qing-dynasty individualist painters requires knowledge of commercial art patronage and the rejection of orthodoxy."
+      },
+      {
+        "concept": "Chan Buddhist aesthetics",
+        "wikipedia_article": "Chan Buddhism",
+        "brief_rationale": "The influence of Chan (Zen) philosophy on spontaneous brushwork and monochrome ink painting requires understanding religious-artistic links."
+      },
+      {
+        "concept": "sancai glazed ceramics",
+        "wikipedia_article": "Sancai",
+        "brief_rationale": "The three-color Tang funerary ware requires knowledge of glaze chemistry, burial practices, and Tang cosmopolitanism."
+      }
+    ],
+    "L4": [
+      {
+        "concept": "connoisseurship (ji감 tradition)",
+        "wikipedia_article": "Connoisseur",
+        "brief_rationale": "The Chinese tradition of jian (discernment) in attributing, collecting, and authenticating paintings is a specialized scholarly framework."
+      },
+      {
+        "concept": "Six Principles of Xie He",
+        "wikipedia_article": "Six principles of Chinese painting",
+        "brief_rationale": "Xie He's 5th-century critical framework (including qi yun, bone method, etc.) is a foundational but highly specialized theoretical text."
+      },
+      {
+        "concept": "qi yun (spirit resonance)",
+        "wikipedia_article": "Qi yun",
+        "brief_rationale": "The first and most important of Xie He's principles, requiring deep engagement with Chinese aesthetic philosophy and its untranslatable nuances."
+      },
+      {
+        "concept": "Dong Qichang's theory of Northern and Southern schools",
+        "wikipedia_article": "Dong Qichang",
+        "brief_rationale": "Dong Qichang's late Ming historiographic division of painting into orthodox and heterodox lineages is a foundational but contested critical framework."
+      },
+      {
+        "concept": "Admonitions Scroll",
+        "wikipedia_article": "Admonitions Scroll",
+        "brief_rationale": "The attribution controversies and pictorial strategies of this early silk painting require advanced connoisseurship and historiographic knowledge."
+      },
+      {
+        "concept": "ink-rubbing (stone inscription tradition)",
+        "wikipedia_article": "Rubbing (art)",
+        "brief_rationale": "The transmission of calligraphic models through stone engravings and ink rubbings is a specialized area of calligraphy scholarship."
+      },
+      {
+        "concept": "zhuanshu (seal script)",
+        "wikipedia_article": "Seal script",
+        "brief_rationale": "The archaic seal script's role in calligraphic revival movements (especially Qing dynasty epigraphic learning) requires deep palaeographic knowledge."
+      },
+      {
+        "concept": "baimiao (plain outline drawing)",
+        "wikipedia_article": "Baimiao",
+        "brief_rationale": "This uncolored fine-line figure painting technique carries specific art-theoretical implications about virtuosity and restraint in the scholarly tradition."
+      },
+      {
+        "concept": "Lingnan school",
+        "wikipedia_article": "Lingnan school",
+        "brief_rationale": "This Cantonese late 19th/early 20th-century reform movement synthesizing Japanese and Western influence requires specialized knowledge of regional artistic identities."
+      },
+      {
+        "concept": "Shanghai school (Haipai)",
+        "wikipedia_article": "Shanghai school",
+        "brief_rationale": "The Haipai school's commercialization of literati aesthetics for a modern urban market is a specialized topic in late Qing and Republican art history."
+      },
+      {
+        "concept": "political pop (Chinese contemporary art)",
+        "wikipedia_article": "Political pop",
+        "brief_rationale": "This post-1989 Chinese contemporary movement appropriating Maoist imagery requires deep knowledge of contemporary art theory and PRC cultural politics."
+      },
+      {
+        "concept": "ding (ritual bronze vessel)",
+        "wikipedia_article": "Ding (vessel)",
+        "brief_rationale": "The typological classification, ritual function, and inscriptions of Shang-Zhou ding vessels are specialized topics in Bronze Age Chinese archaeology and art history."
+      }
+    ]
+  }
+}

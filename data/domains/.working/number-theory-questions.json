@@ -1,0 +1,80 @@
+[
+  {
+    "question_text": "In integer division, what is the remainder when dividing a dividend $a$ by a divisor $b$?",
+    "correct_answer": "The integer $r$ left over after dividing $a$ by $b$, defined by $a = bq + r$ where $0 \\le r < b$",
+    "distractors": [
+      "The integer $q$ that counts how many times $b$ fits into $a$, defined by $a = bq$ where $q \\ge 0$",
+      "The decimal part left over after dividing $a$ by $b$, defined by $a = bq + r$ where $0 \\le r < 1$",
+      "The largest integer that divides both $a$ and $b$ with nothing left over, known as their common factor"
+    ],
+    "difficulty": 1,
+    "source_article": "Remainder",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["remainder", "integer division", "modulo operation"]
+  },
+  {
+    "question_text": "What is the greatest common divisor (GCD) of two integers?",
+    "correct_answer": "The largest positive integer that divides each of the given integers without leaving a remainder",
+    "distractors": [
+      "The smallest positive integer that is divisible by each of the given integers without leaving a remainder",
+      "The largest positive integer that can be expressed as a sum of the two given integers",
+      "The smallest positive integer that divides the product of the two given integers without a remainder"
+    ],
+    "difficulty": 1,
+    "source_article": "Greatest common divisor",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["greatest common divisor", "divisibility", "common factor"]
+  },
+  {
+    "question_text": "What is the least common multiple (LCM) of two nonzero integers $a$ and $b$?",
+    "correct_answer": "The smallest positive integer that is divisible by both $a$ and $b$",
+    "distractors": [
+      "The largest positive integer that divides both $a$ and $b$ evenly",
+      "The smallest positive integer that divides both $a$ and $b$ evenly",
+      "The largest positive integer that is divisible by both $a$ and $b$"
+    ],
+    "difficulty": 1,
+    "source_article": "Least common multiple",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["least common multiple", "divisibility", "common multiple"]
+  },
+  {
+    "question_text": "What does Euclid's theorem, a fundamental result in number theory first proven in Euclid's Elements, assert?",
+    "correct_answer": "That there are infinitely many prime numbers; the set of primes never terminates",
+    "distractors": [
+      "That every even integer greater than two can be written as the sum of two primes",
+      "That there are finitely many prime numbers; the set of primes ends at a largest prime",
+      "That every positive integer greater than one has a unique prime factorization"
+    ],
+    "difficulty": 1,
+    "source_article": "Euclid's theorem",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["Euclid's theorem", "infinity of primes", "prime numbers"]
+  },
+  {
+    "question_text": "What is the Fibonacci sequence, and what recurrence relation defines it?",
+    "correct_answer": "A sequence where each term is the sum of the two preceding terms, beginning $0, 1, 1, 2, 3, 5, 8, 13, \\ldots$",
+    "distractors": [
+      "A sequence where each term is the product of the two preceding terms, beginning $1, 1, 1, 1, 1, 1, 1, 1, \\ldots$",
+      "A sequence where each term is the sum of the three preceding terms, beginning $0, 1, 1, 2, 4, 7, 13, 24, \\ldots$",
+      "A sequence where each term is the difference of the two preceding terms, beginning $0, 1, 1, 0, 1, 1, 0, 1, \\ldots$"
+    ],
+    "difficulty": 1,
+    "source_article": "Fibonacci sequence",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["Fibonacci sequence", "recurrence relation", "Fibonacci numbers"]
+  },
+  {
+    "question_text": "In number theory, what is a perfect number? For example, $6$ is the smallest perfect number.",
+    "correct_answer": "A positive integer that equals the sum of its proper divisors; for $6$, the divisors $1 + 2 + 3 = 6$",
+    "distractors": [
+      "A positive integer that equals the product of its proper divisors; for $6$, the divisors $1 \\times 2 \\times 3 = 6$",
+      "A positive integer whose digits sum to a prime number; for $6$, the single digit $6$ is not prime",
+      "A positive integer that cannot be divided evenly by any integer other than $1$ and itself; such numbers are called prime"
+    ],
+    "difficulty": 1,
+    "source_article": "Perfect number",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["perfect number", "proper divisors", "aliquot sum"]
+  }
+]

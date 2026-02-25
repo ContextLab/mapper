@@ -1,0 +1,266 @@
+{
+  "domain": "semantics",
+  "parent_domain": "linguistics",
+  "total_concepts": 50,
+  "distribution": {"L1": 13, "L2": 13, "L3": 12, "L4": 12},
+  "concepts": {
+    "L1": [
+      {
+        "concept": "meaning",
+        "wikipedia_article": "Meaning (linguistics)",
+        "brief_rationale": "The most fundamental concept in semantics — what words and sentences express or convey."
+      },
+      {
+        "concept": "synonym",
+        "wikipedia_article": "Synonym",
+        "brief_rationale": "Words with the same or very similar meanings; a basic vocabulary relation every language learner encounters."
+      },
+      {
+        "concept": "antonym",
+        "wikipedia_article": "Opposite (semantics)",
+        "brief_rationale": "Words with opposite meanings; a foundational lexical relation taught from early language education."
+      },
+      {
+        "concept": "ambiguity",
+        "wikipedia_article": "Ambiguity",
+        "brief_rationale": "When a word or sentence has more than one possible meaning; a core everyday phenomenon in language."
+      },
+      {
+        "concept": "metaphor",
+        "wikipedia_article": "Metaphor",
+        "brief_rationale": "Figurative language describing one thing in terms of another; central to everyday meaning-making."
+      },
+      {
+        "concept": "connotation",
+        "wikipedia_article": "Connotation",
+        "brief_rationale": "The emotional or cultural associations a word carries beyond its literal definition."
+      },
+      {
+        "concept": "denotation",
+        "wikipedia_article": "Denotation",
+        "brief_rationale": "The literal, dictionary meaning of a word, contrasted with connotation."
+      },
+      {
+        "concept": "context",
+        "wikipedia_article": "Context (language use)",
+        "brief_rationale": "The surrounding linguistic and situational environment that shapes how meaning is interpreted."
+      },
+      {
+        "concept": "literal meaning",
+        "wikipedia_article": "Literal and figurative language",
+        "brief_rationale": "The straightforward, non-figurative interpretation of words or sentences."
+      },
+      {
+        "concept": "homonym",
+        "wikipedia_article": "Homonym",
+        "brief_rationale": "Words that sound or are spelled alike but have different meanings, illustrating lexical ambiguity."
+      },
+      {
+        "concept": "polysemy",
+        "wikipedia_article": "Polysemy",
+        "brief_rationale": "A single word having multiple related meanings; one of the most pervasive features of natural language."
+      },
+      {
+        "concept": "hyponymy",
+        "wikipedia_article": "Hyponymy and hypernymy",
+        "brief_rationale": "The hierarchical 'is-a' relationship between words (e.g., 'robin' is a hyponym of 'bird')."
+      },
+      {
+        "concept": "idiom",
+        "wikipedia_article": "Idiom",
+        "brief_rationale": "A fixed expression whose meaning cannot be predicted from the meanings of its parts."
+      }
+    ],
+    "L2": [
+      {
+        "concept": "pragmatics",
+        "wikipedia_article": "Pragmatics",
+        "brief_rationale": "The study of how context and speaker intention shape the interpretation of utterances beyond literal meaning."
+      },
+      {
+        "concept": "speech act",
+        "wikipedia_article": "Speech act",
+        "brief_rationale": "An utterance that performs an action (e.g., promising, requesting); introduced by Austin and Searle."
+      },
+      {
+        "concept": "reference",
+        "wikipedia_article": "Reference (linguistics)",
+        "brief_rationale": "The relation between a linguistic expression and the entity in the world it picks out."
+      },
+      {
+        "concept": "compositionality",
+        "wikipedia_article": "Principle of compositionality",
+        "brief_rationale": "The principle that the meaning of a complex expression is determined by the meanings of its parts and their combination."
+      },
+      {
+        "concept": "entailment",
+        "wikipedia_article": "Entailment (linguistics)",
+        "brief_rationale": "A semantic relation where the truth of one sentence guarantees the truth of another."
+      },
+      {
+        "concept": "presupposition",
+        "wikipedia_article": "Presupposition",
+        "brief_rationale": "Background assumptions that a sentence takes for granted, distinct from what it explicitly asserts."
+      },
+      {
+        "concept": "implicature",
+        "wikipedia_article": "Implicature",
+        "brief_rationale": "Meaning that is conveyed but not explicitly stated; a central concept in Gricean pragmatics."
+      },
+      {
+        "concept": "semantic field",
+        "wikipedia_article": "Semantic field",
+        "brief_rationale": "A set of words grouped by shared conceptual domain (e.g., kinship terms, color words)."
+      },
+      {
+        "concept": "prototype theory",
+        "wikipedia_article": "Prototype theory",
+        "brief_rationale": "The theory that categories are organized around typical exemplars rather than strict necessary and sufficient conditions."
+      },
+      {
+        "concept": "deixis",
+        "wikipedia_article": "Deixis",
+        "brief_rationale": "Words whose interpretation depends on context, including speaker, time, and place (e.g., 'here', 'now', 'I')."
+      },
+      {
+        "concept": "coreference",
+        "wikipedia_article": "Coreference",
+        "brief_rationale": "When two expressions in a discourse refer to the same entity; fundamental to discourse coherence."
+      },
+      {
+        "concept": "lexical semantics",
+        "wikipedia_article": "Lexical semantics",
+        "brief_rationale": "The subfield studying the meaning of words, their relations, and how they contribute to sentence meaning."
+      },
+      {
+        "concept": "semantic change",
+        "wikipedia_article": "Semantic change",
+        "brief_rationale": "The evolution of word meanings over time, including broadening, narrowing, and amelioration."
+      }
+    ],
+    "L3": [
+      {
+        "concept": "Grice's maxims",
+        "wikipedia_article": "Cooperative principle",
+        "brief_rationale": "The four conversational maxims (quantity, quality, relation, manner) governing cooperative communication and implicature."
+      },
+      {
+        "concept": "truth-conditional semantics",
+        "wikipedia_article": "Truth-conditional semantics",
+        "brief_rationale": "The approach that defines sentence meaning in terms of the conditions under which it would be true."
+      },
+      {
+        "concept": "model-theoretic semantics",
+        "wikipedia_article": "Formal semantics (natural language)",
+        "brief_rationale": "A framework interpreting natural language expressions relative to mathematical models of the world."
+      },
+      {
+        "concept": "thematic roles",
+        "wikipedia_article": "Thematic relation",
+        "brief_rationale": "Semantic roles such as Agent, Patient, and Theme that characterize how noun phrases relate to verbs."
+      },
+      {
+        "concept": "scalar implicature",
+        "wikipedia_article": "Scalar implicature",
+        "brief_rationale": "An implicature arising from the use of a weaker scalar term (e.g., 'some' implies 'not all')."
+      },
+      {
+        "concept": "generalized quantifier theory",
+        "wikipedia_article": "Generalized quantifier",
+        "brief_rationale": "A formal treatment of natural language quantifiers (every, some, most) as relations between sets."
+      },
+      {
+        "concept": "aspect (linguistics)",
+        "wikipedia_article": "Grammatical aspect",
+        "brief_rationale": "How verbs encode the internal temporal structure of events, including distinctions like telic/atelic and perfective/imperfective."
+      },
+      {
+        "concept": "illocutionary act",
+        "wikipedia_article": "Illocutionary act",
+        "brief_rationale": "The social action performed by an utterance (asserting, promising, ordering), as analyzed in speech act theory."
+      },
+      {
+        "concept": "frame semantics",
+        "wikipedia_article": "Frame semantics (linguistics)",
+        "brief_rationale": "Fillmore's theory that words evoke conceptual frames encoding structured background knowledge."
+      },
+      {
+        "concept": "anaphora",
+        "wikipedia_article": "Anaphora (linguistics)",
+        "brief_rationale": "The use of an expression whose interpretation depends on an antecedent already introduced in discourse."
+      },
+      {
+        "concept": "scope ambiguity",
+        "wikipedia_article": "Scope (formal semantics)",
+        "brief_rationale": "Ambiguity arising from different possible orderings of quantifiers or operators in a sentence's logical form."
+      },
+      {
+        "concept": "conceptual metaphor",
+        "wikipedia_article": "Conceptual metaphor",
+        "brief_rationale": "Lakoff and Johnson's theory that abstract concepts are systematically understood via mappings from concrete domains."
+      }
+    ],
+    "L4": [
+      {
+        "concept": "possible worlds semantics",
+        "wikipedia_article": "Possible worlds",
+        "brief_rationale": "A framework using sets of possible worlds to analyze modality, conditionals, and propositional attitudes."
+      },
+      {
+        "concept": "dynamic semantics",
+        "wikipedia_article": "Dynamic semantics",
+        "brief_rationale": "An approach treating meaning as context-change potential rather than static truth conditions, handling anaphora and discourse."
+      },
+      {
+        "concept": "type-theoretic semantics",
+        "wikipedia_article": "Montague grammar",
+        "brief_rationale": "The use of formal type theory (e.g., in Montague Grammar) to compositionally assign types to natural language expressions."
+      },
+      {
+        "concept": "discourse representation theory",
+        "wikipedia_article": "Discourse representation theory",
+        "brief_rationale": "Kamp's formal framework representing the semantic content of discourses via Discourse Representation Structures (DRSs)."
+      },
+      {
+        "concept": "event semantics",
+        "wikipedia_article": "Event semantics",
+        "brief_rationale": "Davidson's analysis treating events as first-class entities in logical form, enabling neo-Davidsonian thematic role assignment."
+      },
+      {
+        "concept": "two-dimensional semantics",
+        "wikipedia_article": "Two-dimensional semantics",
+        "brief_rationale": "A framework distinguishing character from content (or primary/secondary intension) to handle indexicals and a priori knowledge."
+      },
+      {
+        "concept": "situation semantics",
+        "wikipedia_article": "Situation semantics",
+        "brief_rationale": "Barwise and Perry's approach using partial situations rather than total possible worlds as the basic semantic objects."
+      },
+      {
+        "concept": "continuation semantics",
+        "wikipedia_article": "Continuations",
+        "brief_rationale": "The application of continuation-passing style from computer science to model scope, focus, and discourse anaphora in natural language."
+      },
+      {
+        "concept": "degree semantics",
+        "wikipedia_article": "Degree (linguistics)",
+        "brief_rationale": "A formal treatment of gradable adjectives and comparatives using scales and degrees as semantic objects."
+      },
+      {
+        "concept": "evidentiality",
+        "wikipedia_article": "Evidentiality",
+        "brief_rationale": "Grammatical encoding of the source and reliability of a speaker's evidence for an assertion; analyzed via epistemic modality."
+      },
+      {
+        "concept": "neo-Gricean pragmatics",
+        "wikipedia_article": "Neo-Gricean pragmatics",
+        "brief_rationale": "Levinson and Horn's refinements of Gricean theory, reducing the maxims and systematizing quantity and informativeness principles."
+      },
+      {
+        "concept": "lexical decomposition",
+        "wikipedia_article": "Semantic decomposition",
+        "brief_rationale": "The analysis of word meanings into primitive semantic features or components, as in Conceptual Semantics and lexical syntax."
+      }
+    ]
+  }
+}

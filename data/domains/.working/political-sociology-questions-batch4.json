@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In social movement theory, what does political opportunity structure explain about the emergence of collective action?",
+    "correct_answer": "It explains that movements emerge when external political conditions, such as elite divisions and institutional openness, create favorable prospects for success.",
+    "distractors": [
+      "It explains that movements emerge when internal organizational budgets and staffing levels reach a critical threshold of operational capacity.",
+      "It explains that movements emerge when charismatic leaders develop persuasive ideological narratives that resonate with pre-existing cultural values.",
+      "It explains that movements emerge when relative deprivation among aggrieved populations surpasses a measurable psychological tolerance for inequality."
+    ],
+    "difficulty": 3,
+    "source_article": "Political opportunity",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["political opportunity structure"]
+  },
+  {
+    "question_text": "Robert Michels formulated the 'iron law of oligarchy' in his 1911 book 'Political Parties.' What is the central claim of this thesis?",
+    "correct_answer": "All organizations, even those committed to democratic principles, inevitably come to be dominated by a small ruling elite.",
+    "distractors": [
+      "All democratic governments inevitably transition toward authoritarian single-party rule within three successive electoral cycles.",
+      "All revolutionary movements inevitably abandon their original ideological goals once they successfully achieve state power.",
+      "All bureaucratic institutions inevitably expand their regulatory scope until they absorb the functions of neighboring agencies."
+    ],
+    "difficulty": 3,
+    "source_article": "Iron law of oligarchy",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Michels' iron law of oligarchy"]
+  },
+  {
+    "question_text": "In C. Wright Mills' 1956 book 'The Power Elite,' which three institutional sectors does he argue form an interlocking dominant class in the United States?",
+    "correct_answer": "The military, corporate, and political leadership sectors.",
+    "distractors": [
+      "The academic, religious, and judicial leadership sectors.",
+      "The financial, technological, and media leadership sectors.",
+      "The agricultural, industrial, and diplomatic leadership sectors."
+    ],
+    "difficulty": 3,
+    "source_article": "The Power Elite",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Mills' power elite"]
+  },
+  {
+    "question_text": "In social movement studies, Alberto Melucci defined collective identity as an 'interactive and shared definition' among individuals. What primary function does it serve for movements?",
+    "correct_answer": "It creates a shared sense of 'we-ness' that sustains commitment, cohesion, and coordinated action among participants over time.",
+    "distractors": [
+      "It establishes a formal organizational hierarchy that allocates decision-making authority and resource distribution among participants.",
+      "It produces a legally recognized charter that grants the movement official standing to negotiate directly with state institutions.",
+      "It generates a quantifiable metric of grievance intensity that determines when participants will escalate to disruptive tactics."
+    ],
+    "difficulty": 3,
+    "source_article": "Collective identity",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["collective identity"]
+  },
+  {
+    "question_text": "Erving Goffman's 1974 book 'Frame Analysis' introduced the concept of frames as 'schemata of interpretation.' How has framing theory been applied in social movement research?",
+    "correct_answer": "It explains how movements construct interpretive frameworks that define grievances, assign blame, and motivate collective action among supporters.",
+    "distractors": [
+      "It explains how governments design legislative procedures that channel citizen demands into institutionally approved forms of political expression.",
+      "It explains how media corporations select news stories based on profitability metrics that maximize audience engagement and advertising revenue.",
+      "It explains how judicial systems establish legal precedents that incrementally redefine the constitutional boundaries of legitimate protest."
+    ],
+    "difficulty": 3,
+    "source_article": "Framing (social sciences)",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["framing theory"]
+  },
+  {
+    "question_text": "Samuel Huntington identified a 'third wave' of democratization beginning in 1974. What event is generally cited as its starting point?",
+    "correct_answer": "The Carnation Revolution in Portugal, which overthrew the authoritarian Estado Novo regime.",
+    "distractors": [
+      "The fall of the Berlin Wall in Germany, which ended the Cold War division of Europe.",
+      "The Solidarity trade union movement in Poland, which challenged communist party control.",
+      "The transition from military junta to civilian rule in Greece after the Cyprus crisis."
+    ],
+    "difficulty": 3,
+    "source_article": "Democratization",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["democratization"]
+  },
+  {
+    "question_text": "In political sociology, what are the core dimensions typically used to define and measure state capacity?",
+    "correct_answer": "The ability to collect taxes, enforce law and order, and provide public services effectively across the territory.",
+    "distractors": [
+      "The ability to win international wars, project diplomatic influence, and maintain permanent seats on multilateral treaty organizations.",
+      "The ability to control media narratives, suppress opposition parties, and centralize all economic production under state ownership.",
+      "The ability to attract foreign investment, maintain currency stability, and achieve consistent annual growth in gross domestic product."
+    ],
+    "difficulty": 3,
+    "source_article": "State capacity",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["state capacity"]
+  },
+  {
+    "question_text": "Clientelism is a pervasive form of political exchange traced back to ancient Rome. What defines the core relationship in a clientelist system?",
+    "correct_answer": "A patron in a superior position grants favors to a client in a subordinate position in exchange for political support.",
+    "distractors": [
+      "A bureaucrat in a regulatory position grants permits to a business owner in exchange for guaranteed future public employment.",
+      "A legislator in an elected position grants policy concessions to a rival party in exchange for bipartisan coalition support.",
+      "A diplomat in an ambassadorial position grants trade privileges to a foreign state in exchange for military alliance commitments."
+    ],
+    "difficulty": 3,
+    "source_article": "Clientelism",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["clientelism"]
+  },
+  {
+    "question_text": "In Bourdieu's field theory, social fields are arenas of competition over specific forms of capital. What distinguishes the political field from other social fields?",
+    "correct_answer": "Agents in the political field compete primarily for political capital, including authority, legitimacy, and the power to impose official classifications.",
+    "distractors": [
+      "Agents in the political field compete primarily for economic capital, including tax revenue, government contracts, and sovereign wealth fund returns.",
+      "Agents in the political field compete primarily for cultural capital, including academic credentials, artistic prestige, and intellectual publication records.",
+      "Agents in the political field compete primarily for social capital, including family lineage networks, aristocratic titles, and hereditary institutional memberships."
+    ],
+    "difficulty": 4,
+    "source_article": "Field theory (sociology)",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Bourdieu's political field"]
+  },
+  {
+    "question_text": "In Theda Skocpol's 1979 'States and Social Revolutions,' what two simultaneous conditions does she argue are necessary for social revolutions to occur?",
+    "correct_answer": "A breakdown of state administrative and military power combined with widespread peasant revolt against the agrarian class structure.",
+    "distractors": [
+      "A collapse of international trade networks combined with rapid industrialization that displaces the traditional urban working class.",
+      "A crisis of ideological legitimacy among intellectuals combined with the formation of a vanguard revolutionary political party.",
+      "A failure of diplomatic alliances among neighboring states combined with mass urban proletarian strikes in key industrial sectors."
+    ],
+    "difficulty": 4,
+    "source_article": "States and Social Revolutions",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Skocpol's states and social revolutions"]
+  }
+]

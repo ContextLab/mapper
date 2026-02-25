@@ -1,0 +1,121 @@
+[
+  {
+    "question_text": "In shan shui painting, compositions require three basic components: Paths, the Threshold, and the Heart. What role does the 'Heart' serve in the composition?",
+    "correct_answer": "It is the focal point to which all elements lead, defining the painting's meaning",
+    "distractors": [
+      "It is the vanishing point to which all elements lead, defining the painting's depth",
+      "It is the focal point from which all elements radiate, defining the painting's balance",
+      "It is the focal point to which all elements lead, defining the painting's color harmony"
+    ],
+    "difficulty": 2,
+    "source_article": "Shan_shui",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "shan shui"
+    ]
+  },
+  {
+    "question_text": "The Four Treasures of the Study names the essential tools of Chinese calligraphy. Which item completes this set: brush, ink, paper, and what?",
+    "correct_answer": "Inkstone, used to grind the ink stick into usable ink",
+    "distractors": [
+      "Ink seal, used to grind the ink stick into usable ink",
+      "Inkstone, used to dilute the ink stick into usable ink",
+      "Inkwell, used to grind the ink stick into usable ink"
+    ],
+    "difficulty": 2,
+    "source_article": "Four_Treasures_of_the_Study",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "Four Treasures of the Study"
+    ]
+  },
+  {
+    "question_text": "Tang dynasty painting featured many celebrated court artists. Which painter is known for his depiction of Emperor Taizong and served as a high-ranking official under the early Tang?",
+    "correct_answer": "Yan Liben, who was also a government official and architectural designer",
+    "distractors": [
+      "Zhang Xuan, who was also a government official and architectural designer",
+      "Yan Liben, who was also a military general and architectural designer",
+      "Yan Liben, who was also a government official and Buddhist sculptor"
+    ],
+    "difficulty": 2,
+    "source_article": "Tang_dynasty",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "Tang dynasty art"
+    ]
+  },
+  {
+    "question_text": "Song dynasty Emperor Huizong was both a ruler and a renowned artist who catalogued a vast imperial collection. What panoramic masterwork was painted by Zhang Zeduan during this era?",
+    "correct_answer": "Along the River During the Qingming Festival",
+    "distractors": [
+      "Along the River During the Lantern Festival",
+      "Across the River During the Qingming Festival",
+      "Along the Canal During the Qingming Festival"
+    ],
+    "difficulty": 2,
+    "source_article": "Song_dynasty",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "Song dynasty painting"
+    ]
+  },
+  {
+    "question_text": "Literati painting, or ink wash painting, emphasizes the artist's inner vision over realistic depiction. What is the Chinese term for this monochrome brush-and-ink art form?",
+    "correct_answer": "Shuǐmòhuà, literally meaning 'water-ink painting'",
+    "distractors": [
+      "Shuǐmòhuà, literally meaning 'water-brush painting'",
+      "Gōngbǐhuà, literally meaning 'water-ink painting'",
+      "Shuǐcǎihuà, literally meaning 'water-ink painting'"
+    ],
+    "difficulty": 2,
+    "source_article": "Literati_painting",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "literati painting"
+    ]
+  },
+  {
+    "question_text": "Chinese blue-and-white porcelain uses cobalt oxide as an underglaze pigment. What was the Persian-sourced cobalt called by Chinese manufacturers at Jingdezhen?",
+    "correct_answer": "Huihui qing, meaning 'Muslim blue' or 'Islamic blue'",
+    "distractors": [
+      "Huihui qing, meaning 'Persian blue' or 'Western blue'",
+      "Qinghua qing, meaning 'Muslim blue' or 'Islamic blue'",
+      "Huihui lan, meaning 'Muslim blue' or 'Islamic blue'"
+    ],
+    "difficulty": 2,
+    "source_article": "Blue_and_white_pottery",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "blue-and-white porcelain"
+    ]
+  },
+  {
+    "question_text": "In 1900, a sealed chamber at the Mogao Caves yielded a vast cache of ancient manuscripts. What is this chamber called, and who discovered it?",
+    "correct_answer": "The Library Cave, discovered by Taoist monk Wang Yuanlu",
+    "distractors": [
+      "The Scripture Cave, discovered by Taoist monk Wang Yuanlu",
+      "The Library Cave, discovered by archaeologist Aurel Stein",
+      "The Library Cave, discovered by Buddhist monk Le Zun"
+    ],
+    "difficulty": 2,
+    "source_article": "Mogao_Caves",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "Dunhuang cave paintings"
+    ]
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "According to Spelke's core knowledge theory, what are the key characteristics of the innate representational systems that infants possess, and how does this theory challenge Piaget's constructivist account?",
+    "correct_answer": "These systems are domain-specific, innate, abstract, cross-species, and lifelong; they challenge Piaget by positing infants possess structured knowledge rather than constructing it from action.",
+    "distractors": [
+      "Core knowledge systems are domain-general, learned, concrete, unique to humans, and declining after infancy; they challenge Piaget by proposing that infants rely on perceptual habits rather than constructing knowledge through action.",
+      "Core knowledge systems are domain-specific, innate, abstract, shared across species, and persisting throughout life; they challenge Piaget by proposing that infants develop knowledge through social interaction rather than solitary exploration.",
+      "Core knowledge systems are domain-specific, experience-dependent, implicit, unique to primates, and reorganized in adolescence; they challenge Piaget by proposing that infant cognition is driven by emotional attachment rather than sensorimotor activity."
+    ],
+    "difficulty": 4,
+    "source_article": "Core knowledge systems",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["core knowledge theory"]
+  },
+  {
+    "question_text": "How does Belsky's differential susceptibility hypothesis differ from the traditional diathesis-stress model in explaining the relationship between individual biology and environmental influence on development?",
+    "correct_answer": "Diathesis-stress predicts vulnerability only to negative environments; differential susceptibility predicts heightened reactivity to both adverse and supportive environments, 'for better and for worse.'",
+    "distractors": [
+      "The diathesis-stress model predicts that all individuals are equally affected by negative environments, while differential susceptibility predicts that only genetically resilient individuals benefit from supportive environments.",
+      "The diathesis-stress model predicts that susceptible individuals are reactive to both positive and negative environments, while differential susceptibility predicts they are only vulnerable to negative environments during critical periods.",
+      "The diathesis-stress model predicts that environmental effects are mediated by temperament alone, while differential susceptibility predicts that epigenetic modifications are the sole mechanism determining environmental reactivity."
+    ],
+    "difficulty": 4,
+    "source_article": "Differential susceptibility hypothesis",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["differential susceptibility hypothesis"]
+  },
+  {
+    "question_text": "What is the distinction between experience-expectant and experience-dependent neuroplasticity, and how do their developmental time courses differ?",
+    "correct_answer": "Experience-expectant plasticity requires species-typical input during sensitive periods; experience-dependent plasticity reflects unique individual experiences and operates throughout the lifespan.",
+    "distractors": [
+      "Experience-expectant plasticity involves neural circuits that respond only to novel stimuli during adolescence, while experience-dependent plasticity involves synaptic changes from species-typical input and operates only during infancy.",
+      "Experience-expectant plasticity involves neural circuits that strengthen through repeated motor practice at any age, while experience-dependent plasticity involves synaptic pruning triggered by hormonal changes during sensitive periods.",
+      "Experience-expectant plasticity involves neural circuits shaped by formal instruction during school years, while experience-dependent plasticity involves genetically programmed synaptic formation that occurs independent of environmental input."
+    ],
+    "difficulty": 4,
+    "source_article": "Neuroplasticity",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["neuroplasticity and experience-dependent development"]
+  },
+  {
+    "question_text": "In Saffran, Aslin, and Newport's landmark study on statistical learning in language acquisition, how did 8-month-old infants demonstrate sensitivity to transitional probabilities in continuous speech?",
+    "correct_answer": "After two minutes of continuous nonsense speech, infants distinguished trisyllabic 'words' from 'nonwords' with rearranged syllables, showing they extracted transitional probability regularities.",
+    "distractors": [
+      "After several days of exposure to a continuous stream of real words with pauses, infants distinguished words from silence, demonstrating extraction of acoustic boundary cues rather than statistical regularities.",
+      "After just two minutes of exposure to a continuous stream of repeating nonsense trisyllabic words, infants preferred the most frequently occurring syllable pairs, demonstrating simple frequency counting rather than transitional probability tracking.",
+      "After several hours of exposure to a continuous stream of repeating nonsense monosyllabic words, infants distinguished words based on prosodic stress patterns, demonstrating sensitivity to rhythm rather than statistical regularities."
+    ],
+    "difficulty": 4,
+    "source_article": "Statistical learning in language acquisition",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["statistical learning in language acquisition"]
+  },
+  {
+    "question_text": "What is the 'transmission gap' in research on intergenerational transmission of attachment, and why does it pose a theoretical challenge for attachment theory?",
+    "correct_answer": "Parental sensitivity only partially mediates the link between parents' AAI classifications and infants' Strange Situation classifications, leaving much intergenerational concordance unexplained.",
+    "distractors": [
+      "The transmission gap refers to the finding that genetic heritability fully accounts for the link between parents' attachment and infants' attachment, leaving no role for environmental mediation to explain intergenerational concordance.",
+      "The transmission gap refers to the finding that fathers' attachment representations have no predictive relationship with infant attachment, leaving half of the intergenerational concordance unaccounted for by theory.",
+      "The transmission gap refers to the finding that parental sensitivity fully mediates the link between parents' attachment and infants' attachment in longitudinal studies but not cross-sectional ones, leaving measurement timing unexplained."
+    ],
+    "difficulty": 4,
+    "source_article": "Attachment theory",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["intergenerational transmission of attachment"]
+  },
+  {
+    "question_text": "In niche construction theory applied to developmental psychology, how do organisms create feedback loops that influence their own developmental trajectories and those of future generations?",
+    "correct_answer": "Organisms modify their environments through behavior and culture, altering selection pressures and developmental conditions for subsequent generations via gene-culture-environment feedback loops.",
+    "distractors": [
+      "Organisms transmit acquired behavioral traits directly through epigenetic germline modifications, which permanently encode developmental experiences into DNA sequences encountered by subsequent generations, creating gene-behavior feedback loops.",
+      "Organisms select mates with complementary genetic profiles through assortative mating, which narrows the range of developmental outcomes for subsequent generations, creating purely genetic feedback loops.",
+      "Organisms passively inherit ecological conditions established by prior generations, which constrains developmental outcomes without any active modification, creating one-directional environment-to-gene transmission chains."
+    ],
+    "difficulty": 4,
+    "source_article": "Niche construction",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["niche construction and developmental plasticity"]
+  },
+  {
+    "question_text": "What does the fetal origins hypothesis (Barker hypothesis) propose about the relationship between prenatal conditions and adult health, and what mechanism is thought to underlie this programming?",
+    "correct_answer": "Adverse prenatal conditions permanently alter fetal physiological set points via epigenetic changes in gene expression, increasing adult susceptibility to chronic diseases like heart disease.",
+    "distractors": [
+      "It proposes that adverse prenatal conditions such as poor nutrition temporarily suppress fetal growth through caloric restriction, including reduced organ size, but these effects fully reverse once adequate postnatal nutrition is provided.",
+      "It proposes that adverse prenatal conditions such as poor nutrition cause direct DNA mutations in the fetus through oxidative stress, including deletions in metabolic genes, permanently encoding disease susceptibility in the genome.",
+      "It proposes that adverse prenatal conditions such as poor nutrition primarily affect maternal health rather than fetal development, including chronic maternal inflammation, which only influences the child through postnatal caregiving quality."
+    ],
+    "difficulty": 4,
+    "source_article": "Fetal origins hypothesis",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["fetal programming"]
+  },
+  {
+    "question_text": "What core principle distinguishes relational developmental systems metatheory from earlier reductionist approaches to human development, and how does it reconceptualize the nature-nurture debate?",
+    "correct_answer": "Development arises from bidirectional relations among biological, psychological, and sociocultural systems; no factor operates independently, replacing the nature-versus-nurture dichotomy.",
+    "distractors": [
+      "It holds that development arises from unidirectional genetic influences that are moderated by environmental triggers, replacing the nature-versus-nurture split with the view that nature sets boundaries and nurture fills them in.",
+      "It holds that development arises from the sequential unfolding of innate maturational programs, replacing the nature-versus-nurture split with the view that nature determines the sequence while nurture determines the pace.",
+      "It holds that development arises from independent parallel influences of biology and culture that converge at critical periods, replacing the nature-versus-nurture split with the view that both factors alternate in primacy across the lifespan."
+    ],
+    "difficulty": 4,
+    "source_article": "Developmental systems theory",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["relational developmental systems metatheory"]
+  },
+  {
+    "question_text": "In Steinberg's dual systems model of adolescent risk-taking, what neurodevelopmental imbalance explains the peak in risky behavior during mid-adolescence?",
+    "correct_answer": "The striatum-based socioemotional system matures early, heightening reward sensitivity, while prefrontal cognitive control matures later, creating peak imbalance in mid-adolescence.",
+    "distractors": [
+      "The cognitive control system including the prefrontal cortex matures early and heightens inhibitory capacity during puberty, while the socioemotional system centered on the striatum matures later, creating a temporal gap that peaks in mid-adolescence.",
+      "The socioemotional system including the amygdala matures early and heightens fear sensitivity during puberty, while the memory consolidation system centered on the hippocampus matures later, creating a temporal gap that peaks in mid-adolescence.",
+      "The socioemotional system including the striatum and the cognitive control system including the prefrontal cortex both mature simultaneously during puberty, but hormonal surges temporarily suppress prefrontal functioning during mid-adolescence."
+    ],
+    "difficulty": 4,
+    "source_article": "Dual systems model",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["dual-process theories of adolescent risk-taking"]
+  },
+  {
+    "question_text": "What does Kelemen's research on 'promiscuous teleology' reveal about children's default reasoning about natural objects, and how does this bias change with development?",
+    "correct_answer": "Children broadly attribute purpose-based functions to both artifacts and natural entities like clouds and rocks; this teleological default narrows as formal scientific education is acquired.",
+    "distractors": [
+      "Children display a narrow tendency to explain only artifacts in terms of purpose, restricting designed-function attributions to human-made objects; this teleological bias broadens as children acquire animistic thinking through cultural exposure.",
+      "Children display a broad tendency to explain both artifacts and natural entities in terms of mechanical causation, attributing physical forces even to intentional agents; this mechanistic bias narrows as children acquire folk psychology through social interaction.",
+      "Children display a broad tendency to explain both artifacts and natural entities in terms of purpose, attributing designed functions even to things like clouds and rocks; this teleological bias strengthens with age as children develop more sophisticated design reasoning."
+    ],
+    "difficulty": 4,
+    "source_article": "Teleological thinking",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["teleological reasoning in children"]
+  }
+]

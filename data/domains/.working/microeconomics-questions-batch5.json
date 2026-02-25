@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "The Myerson\u2013Satterthwaite theorem (1983) is a fundamental impossibility result in mechanism design concerning bilateral trade under asymmetric information. What does the theorem prove is impossible when the buyer's and seller's valuation ranges overlap?",
+    "correct_answer": "No mechanism can simultaneously satisfy incentive compatibility, individual rationality, weak budget balance, and ex-post Pareto efficiency.",
+    "distractors": [
+      "No mechanism can simultaneously satisfy incentive compatibility, individual rationality, strong budget balance, and ex-ante Pareto efficiency.",
+      "No mechanism can achieve any gains from trade whatsoever, because the buyer and seller will always misrepresent their valuations.",
+      "No mechanism can guarantee that the item is traded at a price between the buyer's and seller's valuations without subsidies from a third party."
+    ],
+    "difficulty": 4,
+    "source_article": "Myerson\u2013Satterthwaite theorem",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Myerson-Satterthwaite theorem", "mechanism design", "incentive compatibility", "bilateral trade"]
+  },
+  {
+    "question_text": "Auction theory identifies four classical single-item auction formats. In a Vickrey auction (sealed-bid second-price auction), what is the dominant strategy for each bidder, and why?",
+    "correct_answer": "Each bidder's dominant strategy is to bid their true valuation, because the winner pays only the second-highest bid, so overbidding risks paying more than one's value while underbidding risks losing a profitable trade.",
+    "distractors": [
+      "Each bidder's dominant strategy is to bid half their true valuation, because the winner pays their own bid and shading by half maximizes expected surplus.",
+      "Each bidder's dominant strategy is to bid slightly above their true valuation, because the winner pays the second-highest bid and a higher bid guarantees winning without affecting the price paid.",
+      "Each bidder's dominant strategy is to bid the average of their valuation and the expected second-highest valuation, because this balances the probability of winning against the expected payment."
+    ],
+    "difficulty": 4,
+    "source_article": "Auction theory",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["auction theory", "Vickrey auction", "dominant strategy", "second-price auction"]
+  },
+  {
+    "question_text": "The Vickrey\u2013Clarke\u2013Groves (VCG) mechanism is a truthful mechanism for maximizing social welfare. Under the Clarke pivot rule, how is each agent's payment calculated?",
+    "correct_answer": "Each agent pays the externality they impose: the total welfare of other agents had the agent been absent, minus the total welfare of other agents given the agent's presence.",
+    "distractors": [
+      "Each agent pays their own reported valuation for the chosen outcome, minus a rebate proportional to the total number of agents in the mechanism.",
+      "Each agent pays the average of all other agents' reported valuations, weighted by the probability that each alternative would have been chosen without the agent.",
+      "Each agent pays the difference between their own reported valuation and the second-highest reported valuation, analogous to the Vickrey auction payment rule."
+    ],
+    "difficulty": 4,
+    "source_article": "Vickrey\u2013Clarke\u2013Groves mechanism",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Vickrey-Clarke-Groves mechanism", "Clarke pivot rule", "truthful mechanism", "externality payment"]
+  },
+  {
+    "question_text": "Hotelling's law, proposed by Harold Hotelling in his 1929 paper \"Stability in Competition,\" describes spatial competition between firms. What does the principle of minimum differentiation predict for two firms choosing locations on a linear market with uniformly distributed consumers?",
+    "correct_answer": "Both firms will locate next to each other at the center of the market, each capturing half the consumers, even though the socially optimal locations would be at the first and third quartile points.",
+    "distractors": [
+      "Both firms will locate at opposite ends of the market to maximize their local monopoly power, each capturing half the consumers with minimal competition.",
+      "Both firms will locate at the first and third quartile points to minimize average consumer travel distance, which also happens to maximize their joint profits.",
+      "One firm will locate at the center and the other at an endpoint, with the central firm capturing three-quarters of the consumers."
+    ],
+    "difficulty": 4,
+    "source_article": "Hotelling's law",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Hotelling's law", "principle of minimum differentiation", "spatial competition", "location model"]
+  },
+  {
+    "question_text": "The Slutsky equation, named after Eugen Slutsky, is a fundamental identity in consumer theory. What does it decompose, and what is the sign of the substitution effect?",
+    "correct_answer": "It decomposes the total effect of a price change on Marshallian (uncompensated) demand into a substitution effect and an income effect; the substitution effect is always non-positive (negative for strict convexity).",
+    "distractors": [
+      "It decomposes the total effect of an income change on Hicksian (compensated) demand into a substitution effect and a price effect; the substitution effect is always non-negative.",
+      "It decomposes the total effect of a price change on Marshallian demand into an endowment effect and a wealth effect; the substitution effect can be positive or negative depending on the good.",
+      "It decomposes the total effect of a price change on Hicksian demand into a substitution effect and a cross-price effect; the substitution effect is always positive for normal goods."
+    ],
+    "difficulty": 4,
+    "source_article": "Slutsky equation",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Slutsky equation", "substitution effect", "income effect", "Marshallian demand", "Hicksian demand"]
+  },
+  {
+    "question_text": "The folk theorem in game theory, with early formalization by Friedman (1971), characterizes equilibrium payoffs in infinitely repeated games. What does the theorem state about the set of achievable equilibrium payoff profiles when the discount factor $\\delta$ approaches 1?",
+    "correct_answer": "Any feasible payoff profile that strictly dominates the minimax payoff profile for every player can be sustained as a subgame-perfect Nash equilibrium of the infinitely repeated game.",
+    "distractors": [
+      "Only the Nash equilibrium payoff profile of the stage game can be sustained as a subgame-perfect equilibrium, regardless of the discount factor.",
+      "Any feasible payoff profile, including those below the minimax payoff for some players, can be sustained as a Nash equilibrium provided the discount factor is sufficiently close to 1.",
+      "Only Pareto efficient payoff profiles can be sustained as subgame-perfect equilibria, because patient players always coordinate on the socially optimal outcome."
+    ],
+    "difficulty": 4,
+    "source_article": "Folk theorem (game theory)",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["folk theorem", "repeated games", "minimax payoff", "subgame-perfect equilibrium", "discount factor"]
+  },
+  {
+    "question_text": "A signaling game is a dynamic Bayesian game in which an informed sender transmits a costly signal to an uninformed receiver. What are the three main types of perfect Bayesian equilibrium that can arise in such games?",
+    "correct_answer": "Separating equilibria (different sender types choose different signals), pooling equilibria (all types choose the same signal), and semi-separating (partial pooling) equilibria (some types pool while others separate).",
+    "distractors": [
+      "Dominant-strategy equilibria (each type has a unique best signal), correlated equilibria (signals are coordinated by a mediator), and trembling-hand equilibria (types randomize due to small probability of error).",
+      "Nash equilibria (both players best-respond simultaneously), sequential equilibria (beliefs are consistent with strategies on and off the equilibrium path), and Bayesian equilibria (players maximize expected utility given prior beliefs).",
+      "Cooperative equilibria (sender and receiver jointly maximize surplus), non-cooperative equilibria (each player maximizes independently), and mixed equilibria (sender randomizes uniformly across all signals)."
+    ],
+    "difficulty": 4,
+    "source_article": "Signaling game",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["signaling game", "perfect Bayesian equilibrium", "separating equilibrium", "pooling equilibrium", "asymmetric information"]
+  },
+  {
+    "question_text": "Screening in economics is a strategy used by the uninformed party to elicit private information from the informed party. How does screening differ from signaling, and what is a canonical example from insurance markets studied by Rothschild and Stiglitz?",
+    "correct_answer": "In screening, the uninformed party (e.g., insurer) designs a menu of contracts to induce self-selection, whereas in signaling, the informed party initiates the action; Rothschild and Stiglitz showed insurers offer menus of policies with different deductible-premium combinations to separate high-risk from low-risk customers.",
+    "distractors": [
+      "In screening, the informed party reveals information through costly actions, whereas in signaling, the uninformed party sets a fixed price; Rothschild and Stiglitz showed insurers charge all customers the same premium based on average risk.",
+      "In screening, a regulator mandates information disclosure by all parties, whereas in signaling, the informed party voluntarily discloses; Rothschild and Stiglitz showed that government-mandated risk classes eliminate adverse selection.",
+      "In screening, the uninformed party randomly audits the informed party's claims, whereas in signaling, the informed party invests in reputation; Rothschild and Stiglitz showed insurers use experience rating based solely on past claims history."
+    ],
+    "difficulty": 4,
+    "source_article": "Screening (economics)",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["screening", "adverse selection", "self-selection", "Rothschild-Stiglitz model", "information asymmetry"]
+  },
+  {
+    "question_text": "Michael Spence's 1973 job-market signaling model demonstrates how education can serve as a signal of worker ability even if it does not enhance productivity. What critical assumption makes the signal credible, and what characterizes the separating equilibrium?",
+    "correct_answer": "The cost of acquiring education is negatively correlated with ability (cheaper for high-ability workers); in the separating equilibrium, high-ability workers acquire education at or above a threshold level while low-ability workers do not, and employers pay accordingly.",
+    "distractors": [
+      "The benefit of education is positively correlated with ability (more productive for high-ability workers); in the separating equilibrium, all workers acquire the same level of education but high-ability workers receive higher wages based on test scores.",
+      "The cost of acquiring education is identical for all workers but its return varies; in the separating equilibrium, employers offer a single wage and workers self-select into educated and uneducated groups based on risk preferences.",
+      "The cost of acquiring education is negatively correlated with ability; in the separating equilibrium, employers cannot distinguish workers and pay the average productivity as wages to all educated workers."
+    ],
+    "difficulty": 4,
+    "source_article": "Signalling (economics)",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Spence signaling model", "job-market signaling", "separating equilibrium", "costly signaling", "education as signal"]
+  },
+  {
+    "question_text": "General equilibrium theory, formalized in the Arrow\u2013Debreu\u2013McKenzie model of the 1950s, studies simultaneous equilibrium across all markets in an economy. What do the First and Second Fundamental Welfare Theorems state, and what mathematical tool is used to prove the existence of equilibrium?",
+    "correct_answer": "The First Welfare Theorem states that any competitive equilibrium is Pareto efficient; the Second states that any Pareto efficient allocation can be supported as a competitive equilibrium after appropriate redistribution of endowments. Existence is proved using fixed-point theorems (Brouwer or Kakutani).",
+    "distractors": [
+      "The First Welfare Theorem states that any competitive equilibrium maximizes total surplus; the Second states that every surplus-maximizing allocation is a competitive equilibrium. Existence is proved using the separating hyperplane theorem.",
+      "The First Welfare Theorem states that equilibria are unique under convex preferences; the Second states that equilibria are globally stable under gross substitutes. Existence is proved using the implicit function theorem.",
+      "The First Welfare Theorem states that any competitive equilibrium is Pareto efficient; the Second states that Pareto efficient allocations are unique. Existence is proved using the intermediate value theorem applied to excess demand."
+    ],
+    "difficulty": 4,
+    "source_article": "General equilibrium theory",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["general equilibrium", "Arrow-Debreu model", "First Welfare Theorem", "Second Welfare Theorem", "fixed-point theorem"]
+  }
+]

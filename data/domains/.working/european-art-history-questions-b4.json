@@ -1,0 +1,104 @@
+[
+  {
+    "question_text": "In Rococo art history, what French term originally described the decorative motif of pebbles, seashells, and cement used to ornament grottoes and fountains, which later gave the style its name?",
+    "correct_answer": "Rocaille",
+    "distractors": [
+      "Rinceaux",
+      "Cartouche",
+      "Arabesque"
+    ],
+    "difficulty": 2,
+    "source_article": "Rococo",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "Rococo"
+    ]
+  },
+  {
+    "question_text": "In altarpiece construction, what is the technical term for the narrow horizontal row of small narrative scenes positioned directly below the main panel?",
+    "correct_answer": "The predella",
+    "distractors": [
+      "The reredos",
+      "The pinnacle",
+      "The retable"
+    ],
+    "difficulty": 2,
+    "source_article": "Altarpiece",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "altarpiece"
+    ]
+  },
+  {
+    "question_text": "In tempera painting, what specific organic substance serves as the water-soluble binding agent in the most common classical form of the medium, known as egg tempera?",
+    "correct_answer": "Egg yolk",
+    "distractors": [
+      "Egg white",
+      "Casein milk protein",
+      "Linseed oil"
+    ],
+    "difficulty": 2,
+    "source_article": "Tempera",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "tempera"
+    ]
+  },
+  {
+    "question_text": "What was the name of the German Expressionist group founded in Dresden in 1905 by Ernst Ludwig Kirchner and three other artists, considered the founding organization of the movement?",
+    "correct_answer": "Die Brücke (The Bridge)",
+    "distractors": [
+      "Der Blaue Reiter (The Blue Rider)",
+      "Die Neue Sachlichkeit (The New Objectivity)",
+      "Der Sturm (The Storm)"
+    ],
+    "difficulty": 2,
+    "source_article": "Expressionism",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "Expressionism"
+    ]
+  },
+  {
+    "question_text": "Which German art historian and archaeologist, often called 'the father of archaeology,' wrote the influential texts that shaped the Neoclassical movement in both architecture and the visual arts?",
+    "correct_answer": "Johann Joachim Winckelmann",
+    "distractors": [
+      "Giovanni Pietro Bellori",
+      "Johann Wolfgang von Goethe",
+      "Anton Raphael Mengs"
+    ],
+    "difficulty": 2,
+    "source_article": "Neoclassicism",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "Neoclassicism"
+    ]
+  },
+  {
+    "question_text": "Which French school of painters, active in the early 1830s, pioneered the practice of en plein air painting in natural light and strongly influenced the later Impressionist movement?",
+    "correct_answer": "The Barbizon school",
+    "distractors": [
+      "The Fontainebleau school",
+      "The Pont-Aven school",
+      "The Lyon school"
+    ],
+    "difficulty": 2,
+    "source_article": "En_plein_air",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "en plein air"
+    ]
+  }
+]

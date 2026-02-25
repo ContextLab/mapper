@@ -1,0 +1,104 @@
+[
+  {
+    "question_text": "In Gu Kaizhi's painting theory, what brush technique, used in works like the Admonitions Scroll, was poetically described as 'spring silkworms spitting silk' for its thin, unmodulated line quality?",
+    "correct_answer": "A fine, even brushstroke with consistent width and no variation in pressure, called 'chuncan tuisi'",
+    "distractors": [
+      "A bold, tapering brushstroke with dramatic variation in pressure, called 'chuncan tuisi'",
+      "A fine, even brushstroke with consistent width and no variation in pressure, called 'feibai' or 'flying white'",
+      "A fine, even brushstroke with consistent width and no variation in pressure, called 'cun' texture strokes"
+    ],
+    "difficulty": 2,
+    "source_article": "Gu_Kaizhi",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "Gu Kaizhi"
+    ]
+  },
+  {
+    "question_text": "Wang Xizhi's most celebrated calligraphic work, composed in 353 CE at a gathering of poets on Mount Kuaiji, is known by what title in Chinese art history?",
+    "correct_answer": "The Lantingji Xu, or 'Preface to the Poems Composed at the Orchid Pavilion'",
+    "distractors": [
+      "The Lantingji Xu, or 'Preface to the Odes Collected at the Bamboo Grove'",
+      "The Jiucheng Gong, or 'Preface to the Poems Composed at the Orchid Pavilion'",
+      "The Lantingji Xu, or 'Inscription on the Stele Erected at the Orchid Pavilion'"
+    ],
+    "difficulty": 2,
+    "source_article": "Wang_Xizhi",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "Wang Xizhi"
+    ]
+  },
+  {
+    "question_text": "The Yangshao culture's earliest phase, dated c. 5000--4000 BCE and represented by sites in the Wei River valley of Shaanxi, is named after which key archaeological settlement?",
+    "correct_answer": "Banpo, with characteristic painted pottery featuring fish and human face motifs",
+    "distractors": [
+      "Banpo, with characteristic black burnished pottery featuring dragon and cloud motifs",
+      "Miaodigou, with characteristic painted pottery featuring fish and human face motifs",
+      "Banpo, with characteristic painted pottery featuring bird and serpent motifs"
+    ],
+    "difficulty": 2,
+    "source_article": "Yangshao_culture",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "Neolithic pottery (China)"
+    ]
+  },
+  {
+    "question_text": "In Chinese lacquerware, what is the name of the Tang dynasty decorative technique in which gold or silver sheet cut-outs were embedded between lacquer layers and then polished to reveal the metallic patterns?",
+    "correct_answer": "Pingtuo, a technique of inlaying shaped metal foil beneath lacquer layers",
+    "distractors": [
+      "Pingtuo, a technique of painting metallic pigment over the final lacquer layer",
+      "Qiangjin, a technique of inlaying shaped metal foil beneath lacquer layers",
+      "Pingtuo, a technique of engraving gold lines into carved lacquer layers"
+    ],
+    "difficulty": 2,
+    "source_article": "Chinese_lacquerware",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "lacquerware"
+    ]
+  },
+  {
+    "question_text": "In Chinese bird-and-flower painting (huaniaohua), what term describes the meticulous, outline-based painting style associated with the school of the 10th-century court painter Huang Quan?",
+    "correct_answer": "Gongbi, a fine-brush technique emphasizing detailed outlines filled with bright colors",
+    "distractors": [
+      "Xieyi, a fine-brush technique emphasizing detailed outlines filled with bright colors",
+      "Gongbi, a splashed-ink technique emphasizing spontaneous washes with muted tones",
+      "Mogu, a fine-brush technique emphasizing detailed outlines filled with bright colors"
+    ],
+    "difficulty": 2,
+    "source_article": "Bird-and-flower_painting",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "flower-and-bird painting"
+    ]
+  },
+  {
+    "question_text": "What Ming dynasty porcelain technique, perfected under the Chenghua Emperor at Jingdezhen, combined cobalt-blue underglaze outlines with overglaze enamel colors fired at a lower temperature?",
+    "correct_answer": "Doucai, meaning 'contrasted colors,' combining underglaze blue with overglaze enamels",
+    "distractors": [
+      "Doucai, meaning 'five colors,' combining underglaze red with overglaze enamels",
+      "Wucai, meaning 'contrasted colors,' combining underglaze blue with overglaze enamels",
+      "Doucai, meaning 'contrasted colors,' combining underglaze blue with inlaid cloisonne wires"
+    ],
+    "difficulty": 2,
+    "source_article": "Chinese_ceramics",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "Ming dynasty ceramics"
+    ]
+  }
+]

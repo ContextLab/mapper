@@ -1,0 +1,266 @@
+{
+  "domain": "european-art-history",
+  "parent_domain": "art-history",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {
+        "concept": "Renaissance",
+        "wikipedia_article": "Renaissance",
+        "brief_rationale": "The defining European cultural rebirth of the 14th–17th centuries is universally known and appears in virtually every general-education curriculum."
+      },
+      {
+        "concept": "Impressionism",
+        "wikipedia_article": "Impressionism",
+        "brief_rationale": "Among the most famous art movements worldwide; Monet, Renoir, and Degas are household names recognized by any educated person."
+      },
+      {
+        "concept": "Baroque",
+        "wikipedia_article": "Baroque",
+        "brief_rationale": "Widely recognized stylistic period associated with dramatic grandeur and famous works by Caravaggio and Rembrandt, covered in general surveys."
+      },
+      {
+        "concept": "Michelangelo",
+        "wikipedia_article": "Michelangelo",
+        "brief_rationale": "One of the most famous artists in Western history, universally recognizable through the Sistine Chapel and David."
+      },
+      {
+        "concept": "Leonardo da Vinci",
+        "wikipedia_article": "Leonardo da Vinci",
+        "brief_rationale": "The archetypal Renaissance genius whose name and works — the Mona Lisa, The Last Supper — are known globally."
+      },
+      {
+        "concept": "Gothic architecture",
+        "wikipedia_article": "Gothic architecture",
+        "brief_rationale": "Instantly recognizable style of medieval cathedrals with pointed arches and stained glass, familiar to any educated person."
+      },
+      {
+        "concept": "Cubism",
+        "wikipedia_article": "Cubism",
+        "brief_rationale": "Major early-20th-century movement associated with Picasso and Braque, widely recognized in popular culture and general education."
+      },
+      {
+        "concept": "Romanticism",
+        "wikipedia_article": "Romanticism",
+        "brief_rationale": "Broad cultural and artistic movement of the late 18th–19th centuries encountered in literature, music, and visual-art surveys alike."
+      },
+      {
+        "concept": "Rembrandt",
+        "wikipedia_article": "Rembrandt",
+        "brief_rationale": "Among the most celebrated painters in Western art history; his name and self-portraits are universally recognized."
+      },
+      {
+        "concept": "The Starry Night",
+        "wikipedia_article": "The Starry Night",
+        "brief_rationale": "One of the most reproduced and recognized paintings in the world, by Van Gogh; known even to those with no formal art training."
+      },
+      {
+        "concept": "Surrealism",
+        "wikipedia_article": "Surrealism",
+        "brief_rationale": "Major 20th-century movement known through Dalí's melting clocks and Magritte's imagery; widely referenced in popular culture."
+      },
+      {
+        "concept": "Parthenon",
+        "wikipedia_article": "Parthenon",
+        "brief_rationale": "The most iconic ancient Greek building, a global symbol of classical civilization known to any educated person."
+      },
+      {
+        "concept": "Colosseum",
+        "wikipedia_article": "Colosseum",
+        "brief_rationale": "The most recognized monument of ancient Roman architecture, a world-famous landmark universally known."
+      }
+    ],
+    "L2": [
+      {
+        "concept": "contrapposto",
+        "wikipedia_article": "Contrapposto",
+        "brief_rationale": "Key Classical and Renaissance sculptural pose requiring specific art-historical vocabulary; recognizable to students of art history."
+      },
+      {
+        "concept": "chiaroscuro",
+        "wikipedia_article": "Chiaroscuro",
+        "brief_rationale": "Specific technique of light-dark contrast central to Baroque and Renaissance painting; standard art-history student vocabulary."
+      },
+      {
+        "concept": "fresco",
+        "wikipedia_article": "Fresco",
+        "brief_rationale": "Specific wall-painting technique defining medieval and Renaissance mural art; requires knowledge of historical materials."
+      },
+      {
+        "concept": "triptych",
+        "wikipedia_article": "Triptych",
+        "brief_rationale": "Named altarpiece format common in medieval and Renaissance religious art; requires familiarity with devotional painting conventions."
+      },
+      {
+        "concept": "pointillism",
+        "wikipedia_article": "Pointillism",
+        "brief_rationale": "Specific Post-Impressionist technique of painting with dots, associated with Seurat; requires art-student level knowledge of 19th-century movements."
+      },
+      {
+        "concept": "Mannerism",
+        "wikipedia_article": "Mannerism",
+        "brief_rationale": "Distinct late-Renaissance style characterized by elongation and artifice; requires the ability to distinguish it from High Renaissance."
+      },
+      {
+        "concept": "Post-Impressionism",
+        "wikipedia_article": "Post-Impressionism",
+        "brief_rationale": "Period grouping Cézanne, Van Gogh, and Gauguin after Impressionism; requires awareness of stylistic evolution in late-19th-century art."
+      },
+      {
+        "concept": "Rococo",
+        "wikipedia_article": "Rococo",
+        "brief_rationale": "Elegant decorative style of 18th-century France associated with Watteau and Fragonard; requires familiarity with European court culture."
+      },
+      {
+        "concept": "altarpiece",
+        "wikipedia_article": "Altarpiece",
+        "brief_rationale": "Fundamental format of religious painting in medieval and Renaissance Europe; requires knowledge of the devotional function of art."
+      },
+      {
+        "concept": "tempera",
+        "wikipedia_article": "Tempera",
+        "brief_rationale": "Egg-based painting medium dominant before oil paint; requires technical knowledge of historical art materials."
+      },
+      {
+        "concept": "Expressionism",
+        "wikipedia_article": "Expressionism",
+        "brief_rationale": "Early 20th-century German-led movement distorting form for emotional effect; requires ability to distinguish it from contemporaneous styles."
+      },
+      {
+        "concept": "Neoclassicism",
+        "wikipedia_article": "Neoclassicism",
+        "brief_rationale": "18th–19th-century revival of Greco-Roman ideals in art and architecture; requires knowledge of the Enlightenment cultural context."
+      },
+      {
+        "concept": "en plein air",
+        "wikipedia_article": "En plein air",
+        "brief_rationale": "Practice of painting outdoors central to Impressionism; requires art-vocabulary knowledge linking technique to movement."
+      }
+    ],
+    "L3": [
+      {
+        "concept": "sfumato",
+        "wikipedia_article": "Sfumato",
+        "brief_rationale": "Leonardo's specific technique of blending tones without hard edges; requires working knowledge of Renaissance painterly technique and theory."
+      },
+      {
+        "concept": "Salon des Refusés",
+        "wikipedia_article": "Salon des Refusés",
+        "brief_rationale": "The 1863 exhibition of rejected works that helped launch modern art; requires understanding of institutional gatekeeping and the birth of Impressionism."
+      },
+      {
+        "concept": "Gesamtkunstwerk",
+        "wikipedia_article": "Gesamtkunstwerk",
+        "brief_rationale": "Wagner-derived concept of the total work of art synthesizing media; requires cross-disciplinary knowledge linking music, theater, and visual art."
+      },
+      {
+        "concept": "veduta",
+        "wikipedia_article": "Veduta",
+        "brief_rationale": "Precise topographical painting of city views, especially Venetian; requires knowledge of 18th-century Italian painting and the Grand Tour."
+      },
+      {
+        "concept": "vanitas",
+        "wikipedia_article": "Vanitas",
+        "brief_rationale": "Symbolic still-life genre meditating on mortality; requires understanding of Dutch Golden Age painting conventions and iconography."
+      },
+      {
+        "concept": "De Stijl",
+        "wikipedia_article": "De Stijl",
+        "brief_rationale": "Dutch abstract movement of Mondrian and van Doesburg reducing form to grids and primary colors; requires understanding of early-20th-century European abstraction."
+      },
+      {
+        "concept": "tenebrism",
+        "wikipedia_article": "Tenebrism",
+        "brief_rationale": "Extreme Baroque chiaroscuro associated with Caravaggio; requires ability to distinguish it from more general light-dark effects in painting."
+      },
+      {
+        "concept": "Degenerate Art exhibition",
+        "wikipedia_article": "Degenerate Art exhibition",
+        "brief_rationale": "Nazi propaganda exhibition attacking modernism in 1937; requires knowledge of the intersection of ideology, censorship, and modern European art."
+      },
+      {
+        "concept": "plein-air movement",
+        "wikipedia_article": "Barbizon school",
+        "brief_rationale": "The Barbizon school's outdoor landscape painting in mid-19th-century France prefigured Impressionism; requires contextual knowledge of French art institutions."
+      },
+      {
+        "concept": "Wiener Werkstätte",
+        "wikipedia_article": "Wiener Werkstätte",
+        "brief_rationale": "Viennese applied-arts workshop bridging Art Nouveau and modernism; requires knowledge of early 20th-century Austro-German design reform movements."
+      },
+      {
+        "concept": "Social Realism",
+        "wikipedia_article": "Social realism",
+        "brief_rationale": "Art movement depicting working-class life and social conditions; requires understanding of 19th–20th-century ideological currents in European art."
+      },
+      {
+        "concept": "foreshortening",
+        "wikipedia_article": "Foreshortening",
+        "brief_rationale": "Perspectival technique of depicting a form at an extreme angle; requires working knowledge of Renaissance spatial illusionism and figure drawing."
+      }
+    ],
+    "L4": [
+      {
+        "concept": "paragone",
+        "wikipedia_article": "Paragone",
+        "brief_rationale": "Renaissance theoretical debate on the hierarchy of painting versus sculpture, requiring deep engagement with early modern art theory and Vasari's writings."
+      },
+      {
+        "concept": "Heinrich Wölfflin's principles",
+        "wikipedia_article": "Principles of Art History",
+        "brief_rationale": "Wölfflin's formalist framework of Renaissance vs. Baroque visual categories is foundational art-historical methodology, requiring advanced historiographic knowledge."
+      },
+      {
+        "concept": "disegno vs. colorito",
+        "wikipedia_article": "Disegno and colorito",
+        "brief_rationale": "16th-century Florentine vs. Venetian theoretical debate over line vs. color as the foundation of painting; requires deep knowledge of Renaissance art theory."
+      },
+      {
+        "concept": "pentimento",
+        "wikipedia_article": "Pentimento",
+        "brief_rationale": "Traces of earlier underdrawing or compositional changes visible in aged paintings; requires knowledge of technical art history and conservation science."
+      },
+      {
+        "concept": "iconology",
+        "wikipedia_article": "Iconology",
+        "brief_rationale": "Panofsky's method of interpreting deeper symbolic meaning in images beyond iconography; requires advanced familiarity with art-historical hermeneutics."
+      },
+      {
+        "concept": "polychromy in ancient sculpture",
+        "wikipedia_article": "Polychrome",
+        "brief_rationale": "Scholarly debate over the original painted surfaces of Greek and Roman marble sculpture, challenging assumptions of 'white antiquity'; requires deep historiographic knowledge."
+      },
+      {
+        "concept": "sinopia",
+        "wikipedia_article": "Sinopia",
+        "brief_rationale": "Underdrawing in red pigment on the arriccio layer of a fresco revealed by detachment; requires specialized technical knowledge of fresco preparation."
+      },
+      {
+        "concept": "Alois Riegl's Kunstwollen",
+        "wikipedia_article": "Kunstwollen",
+        "brief_rationale": "Riegl's concept of an immanent 'will-to-form' driving stylistic change; foundational and contested in art historiography, requiring advanced theoretical grounding."
+      },
+      {
+        "concept": "ekphrasis",
+        "wikipedia_article": "Ekphrasis",
+        "brief_rationale": "Rhetorical description of a visual artwork in words, from Homer to Keats; requires knowledge of classical rhetoric, art theory, and literature's relationship to visual art."
+      },
+      {
+        "concept": "Warburg's Pathosformel",
+        "wikipedia_article": "Pathosformel",
+        "brief_rationale": "Aby Warburg's concept of recurring gestural formulas carrying emotional memory across epochs; central to iconological studies and advanced visual-culture scholarship."
+      },
+      {
+        "concept": "Grand Tour",
+        "wikipedia_article": "Grand Tour",
+        "brief_rationale": "The 17th–18th-century educational tour of Europe's classical sites shaping aristocratic taste and the art market; requires knowledge of its long-term effects on collecting and Neoclassicism."
+      },
+      {
+        "concept": "quattrocento vs. cinquecento periodization",
+        "wikipedia_article": "Italian Renaissance painting",
+        "brief_rationale": "Historiographic division of Italian Renaissance painting into 15th- and 16th-century phases with distinct stylistic traits; requires deep working knowledge of periodization debates."
+      }
+    ]
+  }
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "96fb671b819be1cd",
+    "question_text": "In Bayes' theorem, what is the term $P(A)$ called, representing one's belief about event $A$ before observing evidence $B$?",
+    "options": {
+      "A": "The prior probability, expressing the initial degree of belief in $A$ before any evidence is considered.",
+      "B": "The posterior probability, expressing the updated degree of belief in $A$ after evidence is considered.",
+      "C": "The marginal likelihood, expressing the total probability of observing evidence $B$ across all hypotheses.",
+      "D": "The conditional likelihood, expressing the probability of evidence $B$ given that $A$ is true."
+    },
+    "correct_answer": "A",
+    "difficulty": 2,
+    "source_article": "Bayes' theorem",
+    "domain_ids": [
+      "probability-statistics"
+    ],
+    "concepts_tested": [
+      "Bayes' theorem",
+      "prior probability"
+    ]
+  },
+  {
+    "id": "20d63842509efc29",
+    "question_text": "In null-hypothesis significance testing, what assumption must be true for a $p$-value to be calculated?",
+    "options": {
+      "A": "The alternative hypothesis must be assumed correct; the $p$-value is computed under that assumption.",
+      "B": "The sample size must be assumed infinite; the $p$-value is computed under that assumption.",
+      "C": "The null hypothesis must be assumed correct; the $p$-value is computed under that assumption.",
+      "D": "The effect size must be assumed nonzero; the $p$-value is computed under that assumption."
+    },
+    "correct_answer": "C",
+    "difficulty": 2,
+    "source_article": "P-value",
+    "domain_ids": [
+      "probability-statistics"
+    ],
+    "concepts_tested": [
+      "p-value",
+      "null hypothesis"
+    ]
+  },
+  {
+    "id": "a98954668a5df807",
+    "question_text": "When a confidence level is written as $1 - \\alpha$, what does the symbol $\\alpha$ represent?",
+    "options": {
+      "A": "The margin of error, representing the maximum expected difference between the estimate and true parameter.",
+      "B": "The standard error, representing the average deviation of the sample mean from the population mean.",
+      "C": "The confidence level, representing the probability that the interval does contain the true parameter.",
+      "D": "The significance level, representing the probability that the interval does not contain the true parameter."
+    },
+    "correct_answer": "D",
+    "difficulty": 2,
+    "source_article": "Confidence interval",
+    "domain_ids": [
+      "probability-statistics"
+    ],
+    "concepts_tested": [
+      "confidence interval",
+      "significance level"
+    ]
+  },
+  {
+    "id": "ecf1404d0f1e572a",
+    "question_text": "What is the name of the earliest version of the central limit theorem, which approximates the binomial distribution with a normal distribution?",
+    "options": {
+      "A": "The Berry–Esseen theorem, which shows the binomial distribution approaches normality with bounded error rates.",
+      "B": "The de Moivre–Laplace theorem, which shows the binomial distribution approaches normality as $n$ grows.",
+      "C": "The Lyapunov stability theorem, which shows the binomial distribution approaches normality under skewness bounds.",
+      "D": "The Lindeberg–Lévy theorem, which shows the binomial distribution approaches uniformity as $n$ grows."
+    },
+    "correct_answer": "B",
+    "difficulty": 2,
+    "source_article": "Central limit theorem",
+    "domain_ids": [
+      "probability-statistics"
+    ],
+    "concepts_tested": [
+      "central limit theorem",
+      "de Moivre–Laplace theorem"
+    ]
+  },
+  {
+    "id": "43fae654e6bee685",
+    "question_text": "The strong law of large numbers guarantees that the sample mean converges to the expected value in what specific sense?",
+    "options": {
+      "A": "Convergence in probability, meaning the sample mean is likely close to the expected value for large samples.",
+      "B": "Convergence in distribution, meaning the sample mean's distribution approaches the expected value's distribution.",
+      "C": "Convergence in mean square, meaning the squared difference of sample mean and expected value approaches zero.",
+      "D": "Almost sure convergence, meaning the sample mean converges to the expected value with probability one."
+    },
+    "correct_answer": "D",
+    "difficulty": 2,
+    "source_article": "Law of large numbers",
+    "domain_ids": [
+      "probability-statistics"
+    ],
+    "concepts_tested": [
+      "law of large numbers",
+      "almost sure convergence"
+    ]
+  },
+  {
+    "id": "244752719b4ccd3f",
+    "question_text": "In the context of the binomial distribution, what is a single independent success-or-failure experiment called?",
+    "options": {
+      "A": "A Poisson trial, which is an experiment with exactly two possible outcomes: occurrence or nonoccurrence.",
+      "B": "A binomial trial, which is an experiment with multiple graded outcomes ranked by degree of success.",
+      "C": "A geometric trial, which is an experiment with exactly two possible outcomes: continuation or termination.",
+      "D": "A Bernoulli trial, which is an experiment with exactly two possible outcomes: success or failure."
+    },
+    "correct_answer": "D",
+    "difficulty": 2,
+    "source_article": "Binomial distribution",
+    "domain_ids": [
+      "probability-statistics"
+    ],
+    "concepts_tested": [
+      "binomial distribution",
+      "Bernoulli trial"
+    ]
+  },
+  {
+    "id": "82324a680c2afbcb",
+    "question_text": "What distinguishing property does the parameter $\\lambda$ have in a Poisson distribution regarding its mean and variance?",
+    "options": {
+      "A": "The mean and variance are both equal to $\\lambda^2$, making them identical but dependent on the squared rate.",
+      "B": "The mean equals $\\lambda$ and the variance equals $\\lambda^2$, making the variance always larger than the mean.",
+      "C": "The mean equals $\\lambda$ and the variance equals $\\sqrt{\\lambda}$, making the variance always smaller than the mean.",
+      "D": "The mean and variance are both equal to $\\lambda$, making them identical for any Poisson-distributed variable."
+    },
+    "correct_answer": "D",
+    "difficulty": 2,
+    "source_article": "Poisson distribution",
+    "domain_ids": [
+      "probability-statistics"
+    ],
+    "concepts_tested": [
+      "Poisson distribution",
+      "rate parameter"
+    ]
+  }
+]

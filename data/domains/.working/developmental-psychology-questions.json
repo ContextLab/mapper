@@ -1,0 +1,852 @@
+[
+  {
+    "question_text": "In developmental psychology, what is child development?",
+    "correct_answer": "The biological, psychological, and emotional changes occurring in humans from birth to the end of adolescence.",
+    "distractors": [
+      "The biological, psychological, and emotional changes occurring in humans exclusively during the first year of postnatal life.",
+      "The educational and academic progress children achieve from enrollment in school to completion of secondary education.",
+      "The neurological and physiological maturation occurring in humans from conception through the first trimester of prenatal growth."
+    ],
+    "difficulty": 1,
+    "source_article": "Child development",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "child development"
+    ]
+  },
+  {
+    "question_text": "What is puberty in the context of human development?",
+    "correct_answer": "The process of physical changes through which a child's body matures into an adult body capable of sexual reproduction.",
+    "distractors": [
+      "The process of cognitive changes through which a child's mind matures into an adult mind capable of abstract reasoning.",
+      "The process of social changes through which a child's identity matures into an adult identity capable of independent functioning.",
+      "The process of emotional changes through which a child's temperament matures into an adult temperament capable of self-regulation."
+    ],
+    "difficulty": 1,
+    "source_article": "Puberty",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "puberty"
+    ]
+  },
+  {
+    "question_text": "What does the nature versus nurture debate in developmental psychology concern?",
+    "correct_answer": "The relative contributions of genetic inheritance and environmental factors to human development and behavior.",
+    "distractors": [
+      "The relative contributions of prenatal nutrition and postnatal medical care to physical growth and motor development.",
+      "The relative contributions of formal schooling and informal play to cognitive achievement and academic performance.",
+      "The relative contributions of individual temperament and parental discipline style to childhood behavioral compliance."
+    ],
+    "difficulty": 1,
+    "source_article": "Nature versus nurture",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "nature versus nurture"
+    ]
+  },
+  {
+    "question_text": "In developmental psychology, what is adolescence?",
+    "correct_answer": "The transitional stage of physical and psychological development between childhood and adulthood.",
+    "distractors": [
+      "The transitional stage of neurological and hormonal development between prenatal life and early infancy.",
+      "The transitional stage of occupational and financial development between early adulthood and middle age.",
+      "The transitional stage of cognitive and perceptual development between infancy and the preschool years."
+    ],
+    "difficulty": 1,
+    "source_article": "Adolescence",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "adolescence"
+    ]
+  },
+  {
+    "question_text": "In lifespan developmental psychology, what does aging refer to?",
+    "correct_answer": "The process of progressive biological and psychological change in an organism over time, from maturity through old age.",
+    "distractors": [
+      "The process of progressive neurological decline occurring exclusively in individuals diagnosed with neurodegenerative disease conditions.",
+      "The process of rapid physical and cognitive growth occurring in organisms during the early postnatal developmental period.",
+      "The process of gradual social withdrawal and relationship reduction that occurs solely during the final year of life."
+    ],
+    "difficulty": 1,
+    "source_article": "Ageing",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "aging"
+    ]
+  },
+  {
+    "question_text": "In developmental psychology, what is attachment?",
+    "correct_answer": "A deep and enduring emotional bond connecting one person to another across time and space.",
+    "distractors": [
+      "A brief and situational behavioral response connecting one person to another only during moments of distress.",
+      "A learned and deliberate cognitive strategy connecting one person to another through repeated verbal communication.",
+      "A shallow and transient social preference connecting one person to another based solely on physical proximity."
+    ],
+    "difficulty": 1,
+    "source_article": "Attachment theory",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "attachment"
+    ]
+  },
+  {
+    "question_text": "What does cognitive development refer to in developmental psychology?",
+    "correct_answer": "The construction of thought processes including remembering, problem-solving, and decision-making from childhood through adulthood.",
+    "distractors": [
+      "The construction of motor coordination including balance, grasping, and locomotion from prenatal development through early childhood.",
+      "The construction of emotional responses including fear, joy, and anger from infancy through the preschool period only.",
+      "The construction of social hierarchies including friendships, rivalries, and group norms from adolescence through middle adulthood."
+    ],
+    "difficulty": 1,
+    "source_article": "Cognitive development",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "cognitive development"
+    ]
+  },
+  {
+    "question_text": "What is language acquisition in the study of child development?",
+    "correct_answer": "The process by which humans acquire the capacity to perceive, produce, and use words to understand and communicate.",
+    "distractors": [
+      "The process by which humans acquire the capacity to read, write, and spell words through formal classroom instruction.",
+      "The process by which humans acquire the capacity to memorize, recite, and transcribe words during standardized testing situations.",
+      "The process by which humans acquire the capacity to translate, interpret, and convert words between two distinct foreign languages."
+    ],
+    "difficulty": 1,
+    "source_article": "Language acquisition",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "language acquisition"
+    ]
+  },
+  {
+    "question_text": "In developmental psychology, what is socialization?",
+    "correct_answer": "The lifelong process by which individuals learn and internalize the norms, values, and roles of their society.",
+    "distractors": [
+      "The brief process by which infants learn and internalize the feeding, sleeping, and crying schedules of their caregivers.",
+      "The formal process by which students learn and internalize the academic, testing, and grading standards of their school.",
+      "The selective process by which adolescents learn and internalize the fashion, music, and language trends of their peers."
+    ],
+    "difficulty": 1,
+    "source_article": "Socialization",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "socialization"
+    ]
+  },
+  {
+    "question_text": "What does temperament refer to in developmental psychology?",
+    "correct_answer": "Innate, biologically based individual differences in emotional reactivity and self-regulation observable from early infancy.",
+    "distractors": [
+      "Learned, environmentally shaped individual differences in academic motivation and school performance observable from middle childhood.",
+      "Acquired, socially constructed individual differences in moral reasoning and ethical judgment observable from late adolescence.",
+      "Transient, situationally determined individual differences in mood fluctuation and stress response observable only during adulthood."
+    ],
+    "difficulty": 1,
+    "source_article": "Temperament",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "temperament"
+    ]
+  },
+  {
+    "question_text": "What is prenatal development?",
+    "correct_answer": "The process of growth and development of an organism from fertilization to birth.",
+    "distractors": [
+      "The process of growth and development of an organism from birth to weaning.",
+      "The process of growth and development of an organism from puberty to adulthood.",
+      "The process of growth and development of an organism from infancy to toddlerhood."
+    ],
+    "difficulty": 1,
+    "source_article": "Prenatal development",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "prenatal development"
+    ]
+  },
+  {
+    "question_text": "Why is play considered important in child development?",
+    "correct_answer": "It contributes to children's physical, cognitive, social, and emotional development through voluntary, intrinsically motivated activity.",
+    "distractors": [
+      "It contributes to children's caloric expenditure, metabolic regulation, and sleep quality through structured adult-directed physical exercise.",
+      "It contributes exclusively to children's fine motor skill refinement through repetitive, adult-supervised handwriting and drawing drills.",
+      "It contributes primarily to children's academic test preparation and grade improvement through competitive, externally rewarded classroom activities."
+    ],
+    "difficulty": 1,
+    "source_article": "Play (activity)",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "play"
+    ]
+  },
+  {
+    "question_text": "What is identity development in developmental psychology?",
+    "correct_answer": "The process by which individuals form a coherent and stable sense of who they are across adolescence and adulthood.",
+    "distractors": [
+      "The process by which individuals form a temporary and shifting sense of who they are exclusively during early infancy.",
+      "The process by which individuals form a biologically predetermined sense of who they are entirely through genetic inheritance.",
+      "The process by which individuals form an externally assigned sense of who they are solely through parental labeling practices."
+    ],
+    "difficulty": 1,
+    "source_article": "Identity formation",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "identity development"
+    ]
+  },
+  {
+    "question_text": "What are the four stages in Piaget's theory of cognitive development, in order?",
+    "correct_answer": "Sensorimotor, preoperational, concrete operational, and formal operational stages spanning from birth through adolescence.",
+    "distractors": [
+      "Trust, autonomy, initiative, and industry stages spanning from infancy through the elementary school years.",
+      "Oral, anal, phallic, and genital stages spanning from birth through puberty and into early adulthood.",
+      "Preconventional, conventional, postconventional, and universal stages spanning from early childhood through late adulthood."
+    ],
+    "difficulty": 2,
+    "source_article": "Piaget's theory of cognitive development",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "Piaget's stages of cognitive development"
+    ]
+  },
+  {
+    "question_text": "Who are the two primary theorists associated with attachment theory in developmental psychology?",
+    "correct_answer": "John Bowlby, who proposed the evolutionary basis of attachment, and Mary Ainsworth, who empirically classified attachment patterns.",
+    "distractors": [
+      "Jean Piaget, who proposed the cognitive basis of attachment, and Lev Vygotsky, who empirically classified social bonding patterns.",
+      "Sigmund Freud, who proposed the psychosexual basis of attachment, and Carl Jung, who empirically classified archetypal bonding patterns.",
+      "Erik Erikson, who proposed the psychosocial basis of attachment, and Lawrence Kohlberg, who empirically classified moral bonding patterns."
+    ],
+    "difficulty": 2,
+    "source_article": "Attachment theory",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "attachment theory"
+    ]
+  },
+  {
+    "question_text": "What is a critical period in developmental psychology?",
+    "correct_answer": "A maturational time window during which specific experiences are necessary for normal development to occur irreversibly.",
+    "distractors": [
+      "A maturational time window during which cognitive abilities temporarily plateau before resuming normal growth patterns.",
+      "A maturational time window during which any type of environmental stimulation produces equivalent developmental outcomes.",
+      "A maturational time window during which biological growth accelerates regardless of environmental input or sensory experience."
+    ],
+    "difficulty": 2,
+    "source_article": "Critical period",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "critical period"
+    ]
+  },
+  {
+    "question_text": "What is Vygotsky's zone of proximal development?",
+    "correct_answer": "The distance between what a learner can do independently and what they can achieve with guidance from a skilled partner.",
+    "distractors": [
+      "The distance between what a learner can memorize independently and what they can recall with the aid of written notes.",
+      "The distance between what a learner can perceive visually and what they can detect with the assistance of corrective lenses.",
+      "The distance between what a learner currently knows factually and what they will eventually learn through unassisted biological maturation."
+    ],
+    "difficulty": 2,
+    "source_article": "Zone of proximal development",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "zone of proximal development"
+    ]
+  },
+  {
+    "question_text": "What is object permanence, and at which Piagetian stage does it develop?",
+    "correct_answer": "The understanding that objects continue to exist even when hidden; it develops during the sensorimotor stage.",
+    "distractors": [
+      "The understanding that objects change properties when hidden; it develops during the formal operational stage.",
+      "The understanding that objects can be mentally categorized by function; it develops during the preoperational stage.",
+      "The understanding that objects obey conservation of quantity; it develops during the concrete operational stage."
+    ],
+    "difficulty": 2,
+    "source_article": "Object permanence",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "object permanence"
+    ]
+  },
+  {
+    "question_text": "What characterizes a securely attached infant in Ainsworth's classification system?",
+    "correct_answer": "The infant uses the caregiver as a secure base for exploration and shows distress upon separation but is comforted upon reunion.",
+    "distractors": [
+      "The infant avoids the caregiver during exploration and shows no visible distress upon separation or interest upon reunion.",
+      "The infant clings to the caregiver and resists exploration, showing intense distress upon separation and ambivalence upon reunion.",
+      "The infant displays disorganized and contradictory behaviors toward the caregiver, freezing or showing fear upon both separation and reunion."
+    ],
+    "difficulty": 2,
+    "source_article": "Attachment in children",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "secure attachment"
+    ]
+  },
+  {
+    "question_text": "What is scaffolding in the context of developmental and educational psychology?",
+    "correct_answer": "Temporary support provided by a more knowledgeable person that is gradually withdrawn as the learner gains competence.",
+    "distractors": [
+      "Permanent instructional structures established by educational institutions that remain constant regardless of individual learner progress.",
+      "Standardized assessment tools administered by trained psychologists that measure current cognitive ability without providing any guidance.",
+      "Motivational rewards offered by classroom teachers that increase in frequency as the learner demonstrates greater independence."
+    ],
+    "difficulty": 2,
+    "source_article": "Instructional scaffolding",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "scaffolding"
+    ]
+  },
+  {
+    "question_text": "Which theorists are most closely associated with the study of moral development in children?",
+    "correct_answer": "Jean Piaget, who studied moral reasoning in children, and Lawrence Kohlberg, who proposed a six-stage model of moral development.",
+    "distractors": [
+      "John Bowlby, who studied moral reasoning in children, and Mary Ainsworth, who proposed a four-pattern model of moral development.",
+      "B.F. Skinner, who studied moral reasoning in children, and Albert Bandura, who proposed an eight-stage model of moral development.",
+      "Lev Vygotsky, who studied moral reasoning in children, and Erik Erikson, who proposed a three-level model of moral development."
+    ],
+    "difficulty": 2,
+    "source_article": "Moral development",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "moral development"
+    ]
+  },
+  {
+    "question_text": "What is theory of mind, and around what age does it typically emerge in children?",
+    "correct_answer": "The ability to attribute mental states such as beliefs and desires to others; it typically emerges around age four.",
+    "distractors": [
+      "The ability to produce grammatically correct sentences and complex vocabulary; it typically emerges around age two.",
+      "The ability to recognize one's own reflection in a mirror reliably; it typically emerges around age eighteen months.",
+      "The ability to coordinate attention with a social partner toward an object; it typically emerges around age nine months."
+    ],
+    "difficulty": 2,
+    "source_article": "Theory of mind",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "theory of mind"
+    ]
+  },
+  {
+    "question_text": "What is the central feature of Erikson's stages of psychosocial development?",
+    "correct_answer": "Each of eight lifespan stages presents a psychosocial crisis whose resolution shapes personality development and future adaptation.",
+    "distractors": [
+      "Each of four childhood stages presents a cognitive challenge whose resolution shapes intellectual capacity and academic performance.",
+      "Each of five prenatal stages presents a biological milestone whose resolution shapes organ development and physical health.",
+      "Each of six adolescent stages presents a moral dilemma whose resolution shapes ethical reasoning and social conformity."
+    ],
+    "difficulty": 2,
+    "source_article": "Erikson's stages of psychosocial development",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "Erik Erikson's stages of psychosocial development"
+    ]
+  },
+  {
+    "question_text": "What is the Strange Situation procedure in developmental psychology?",
+    "correct_answer": "A laboratory method devised by Mary Ainsworth to observe and classify infant attachment patterns through separations and reunions with caregivers.",
+    "distractors": [
+      "A laboratory method devised by Jean Piaget to observe and classify infant cognitive stages through object hiding and retrieval tasks.",
+      "A laboratory method devised by Albert Bandura to observe and classify childhood aggression patterns through exposure to adult behavioral models.",
+      "A laboratory method devised by Lawrence Kohlberg to observe and classify childhood moral reasoning through hypothetical ethical dilemma interviews."
+    ],
+    "difficulty": 2,
+    "source_article": "Strange situation",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "Strange Situation"
+    ]
+  },
+  {
+    "question_text": "What does gender development refer to in developmental psychology?",
+    "correct_answer": "The process by which children acquire gender identity, gender roles, and gender-typed behaviors through biological, cognitive, and social influences.",
+    "distractors": [
+      "The process by which children acquire sexual maturation, reproductive capacity, and secondary sex characteristics through pubertal hormonal changes.",
+      "The process by which children acquire personality traits, temperamental dispositions, and behavioral tendencies through purely genetic inheritance mechanisms.",
+      "The process by which children acquire academic preferences, career aspirations, and occupational skills through formal schooling and vocational training."
+    ],
+    "difficulty": 2,
+    "source_article": "Gender development",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "gender development"
+    ]
+  },
+  {
+    "question_text": "What is a key finding about adolescent brain development?",
+    "correct_answer": "The prefrontal cortex, responsible for decision-making and impulse control, is among the last brain regions to fully mature.",
+    "distractors": [
+      "The occipital cortex, responsible for visual processing and pattern recognition, is among the last brain regions to fully mature.",
+      "The cerebellum, responsible for motor coordination and balance maintenance, is among the last brain regions to fully mature.",
+      "The brainstem, responsible for autonomic regulation and basic survival reflexes, is among the last brain regions to fully mature."
+    ],
+    "difficulty": 2,
+    "source_article": "Adolescent brain",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "adolescent brain development"
+    ]
+  },
+  {
+    "question_text": "How is Vygotsky's zone of proximal development best applied in an educational setting?",
+    "correct_answer": "By assessing what a child can do with assistance and designing instruction that gradually transfers responsibility to the learner.",
+    "distractors": [
+      "By assessing what a child can do independently and assigning tasks that remain well within that current competence level.",
+      "By assessing what a child cannot do at all and providing entirely new content unrelated to prior knowledge or skill.",
+      "By assessing what a child has already mastered and repeatedly drilling those skills until automaticity is fully achieved."
+    ],
+    "difficulty": 3,
+    "source_article": "Zone of proximal development",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "zone of proximal development application"
+    ]
+  },
+  {
+    "question_text": "What does the false-belief task reveal about theory of mind development in young children?",
+    "correct_answer": "Children who pass understand that others can hold beliefs different from reality, indicating they represent others' mental states.",
+    "distractors": [
+      "Children who pass understand that objects change location when moved, indicating they have acquired full object permanence.",
+      "Children who pass understand that quantities remain the same despite transformations, indicating they have achieved conservation abilities.",
+      "Children who pass understand that social rules vary across contexts, indicating they have developed mature moral reasoning."
+    ],
+    "difficulty": 3,
+    "source_article": "Theory of mind",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "theory of mind development"
+    ]
+  },
+  {
+    "question_text": "In Kohlberg's model, what distinguishes conventional from postconventional moral reasoning?",
+    "correct_answer": "Conventional reasoning conforms to social norms and laws, while postconventional reasoning appeals to universal ethical principles beyond societal rules.",
+    "distractors": [
+      "Conventional reasoning focuses on avoiding physical punishment, while postconventional reasoning focuses on gaining tangible material rewards.",
+      "Conventional reasoning relies on abstract logical deduction, while postconventional reasoning relies on concrete sensory experience and observation.",
+      "Conventional reasoning emerges exclusively in adolescence, while postconventional reasoning emerges exclusively during the early childhood period."
+    ],
+    "difficulty": 3,
+    "source_article": "Lawrence Kohlberg's stages of moral development",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "Kohlberg's stages of moral development"
+    ]
+  },
+  {
+    "question_text": "What are the core components of executive function, and how do they develop across childhood?",
+    "correct_answer": "Inhibitory control, working memory, and cognitive flexibility improve gradually from preschool age, paralleling prefrontal cortex maturation.",
+    "distractors": [
+      "Visual acuity, auditory sensitivity, and tactile discrimination improve gradually from prenatal development, paralleling sensory cortex maturation.",
+      "Gross motor skill, fine motor precision, and postural balance improve gradually from early infancy, paralleling cerebellar cortex maturation.",
+      "Emotional intensity, social interest, and attachment security improve gradually from the neonatal period, paralleling limbic system maturation."
+    ],
+    "difficulty": 3,
+    "source_article": "Executive functions",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "executive function development"
+    ]
+  },
+  {
+    "question_text": "How does a sensitive period differ from a critical period in developmental psychology?",
+    "correct_answer": "A sensitive period is a time of heightened plasticity when experience has its strongest effect, but development can still occur outside it.",
+    "distractors": [
+      "A sensitive period is a time of complete neural rigidity when experience has no measurable effect on any developmental outcome.",
+      "A sensitive period is identical to a critical period, as both terms describe windows after which development permanently and completely stops.",
+      "A sensitive period occurs only in adulthood, whereas a critical period occurs only during the prenatal stage of organismal development."
+    ],
+    "difficulty": 3,
+    "source_article": "Sensitive period",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "sensitive period"
+    ]
+  },
+  {
+    "question_text": "What is social referencing, and when does it typically emerge in infant development?",
+    "correct_answer": "Infants look to caregivers' emotional expressions to guide their behavior in ambiguous situations, emerging around eight to ten months.",
+    "distractors": [
+      "Infants imitate caregivers' motor actions to learn new physical skills in familiar situations, emerging around two to three months.",
+      "Infants vocalize to caregivers' verbal prompts to practice language sounds in quiet situations, emerging around twelve to fourteen months.",
+      "Infants reach toward caregivers' outstretched hands to initiate physical contact in stressful situations, emerging around four to five months."
+    ],
+    "difficulty": 3,
+    "source_article": "Social referencing",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "social referencing"
+    ]
+  },
+  {
+    "question_text": "What does the A-not-B error reveal about infant cognitive development?",
+    "correct_answer": "Infants search at a previously correct location despite seeing the object hidden elsewhere, revealing immature memory and inhibitory control.",
+    "distractors": [
+      "Infants refuse to search for hidden objects entirely, revealing a complete absence of any understanding of object permanence.",
+      "Infants search at the correct new location every time without errors, revealing fully mature spatial reasoning and memory.",
+      "Infants lose interest in the hidden object immediately after hiding, revealing an inability to maintain sustained visual attention."
+    ],
+    "difficulty": 3,
+    "source_article": "A-not-B error",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "object permanence and A-not-B error"
+    ]
+  },
+  {
+    "question_text": "Why is joint attention considered a critical milestone in early social-cognitive development?",
+    "correct_answer": "It reflects the infant's ability to coordinate attention with another person toward a shared object, supporting language acquisition and theory of mind.",
+    "distractors": [
+      "It reflects the infant's ability to sustain focused attention on a single object alone, supporting fine motor control and visual tracking.",
+      "It reflects the infant's ability to shift attention rapidly between two unrelated objects, supporting perceptual speed and sensory processing.",
+      "It reflects the infant's ability to ignore distracting stimuli in a noisy environment, supporting selective auditory filtering and habituation."
+    ],
+    "difficulty": 3,
+    "source_article": "Joint attention",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "joint attention"
+    ]
+  },
+  {
+    "question_text": "What explains childhood amnesia in the development of autobiographical memory?",
+    "correct_answer": "Immature hippocampal circuits and limited language and self-concept in early childhood prevent encoding of lasting personal event memories.",
+    "distractors": [
+      "Fully mature hippocampal circuits and advanced language abilities in early childhood actively suppress all personally relevant event memories.",
+      "Excessive sensory stimulation and overly rapid neural pruning in early childhood erase previously well-consolidated personal event memories.",
+      "Deliberate parental discouragement of memory recall and narration in early childhood prevents children from rehearsing personal event memories."
+    ],
+    "difficulty": 3,
+    "source_article": "Autobiographical memory",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "autobiographical memory development"
+    ]
+  },
+  {
+    "question_text": "What are the five nested systems in Bronfenbrenner's ecological systems theory of development?",
+    "correct_answer": "Microsystem, mesosystem, exosystem, macrosystem, and chronosystem, representing progressively broader environmental contexts influencing development.",
+    "distractors": [
+      "Id, ego, superego, preconscious, and unconscious, representing progressively deeper intrapsychic structures influencing personality development.",
+      "Sensorimotor, preoperational, concrete operational, formal operational, and postformal, representing progressively advanced cognitive stages of development.",
+      "Oral, anal, phallic, latency, and genital, representing progressively later psychosexual phases influencing personality trait formation."
+    ],
+    "difficulty": 3,
+    "source_article": "Ecological systems theory",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "Bronfenbrenner's ecological systems theory"
+    ]
+  },
+  {
+    "question_text": "How does emotion regulation develop across infancy and early childhood?",
+    "correct_answer": "Infants rely on caregiver co-regulation, then gradually internalize self-regulation strategies as prefrontal cortex and language abilities mature.",
+    "distractors": [
+      "Infants are born with fully mature self-regulation abilities, then gradually lose these skills as social demands become more complex.",
+      "Infants develop emotion regulation exclusively through direct verbal instruction from caregivers during the second year of life only.",
+      "Infants acquire emotion regulation suddenly at age three when the amygdala completes its growth and reaches full adult size."
+    ],
+    "difficulty": 3,
+    "source_article": "Emotional self-regulation",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "emotion regulation development"
+    ]
+  },
+  {
+    "question_text": "How do peer relationships contribute to social development across childhood and adolescence?",
+    "correct_answer": "Peers provide contexts for practicing social skills, negotiating conflict, forming identity, and developing norms independent of adult supervision.",
+    "distractors": [
+      "Peers provide contexts exclusively for academic tutoring, homework completion, forming study groups, and developing test-taking strategies in school.",
+      "Peers provide contexts primarily for physical exercise, competitive sports, forming athletic teams, and developing gross motor coordination skills.",
+      "Peers provide contexts solely for emotional distress, interpersonal conflict, forming rivalries, and developing aggressive behavioral response patterns."
+    ],
+    "difficulty": 3,
+    "source_article": "Peer group",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "peer relationships and development"
+    ]
+  },
+  {
+    "question_text": "How does dynamic systems theory explain developmental change?",
+    "correct_answer": "Development emerges from the nonlinear, self-organizing interaction of multiple subsystems, without a single causal agent or predetermined endpoint.",
+    "distractors": [
+      "Development proceeds from a linear, predetermined genetic blueprint specifying each milestone, with a single causal gene driving every change.",
+      "Development results from the passive accumulation of environmental inputs, with each experience adding independently to a fixed developmental total.",
+      "Development follows a strictly hierarchical sequence of universal stages, with each stage requiring complete mastery before the next can begin."
+    ],
+    "difficulty": 4,
+    "source_article": "Dynamical systems theory",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "dynamic systems theory of development"
+    ]
+  },
+  {
+    "question_text": "How do epigenetic mechanisms influence developmental outcomes across generations?",
+    "correct_answer": "Environmental experiences alter gene expression through DNA methylation and histone modification without changing the DNA sequence, and these changes can be inherited.",
+    "distractors": [
+      "Environmental experiences alter the DNA nucleotide sequence through point mutations and chromosomal rearrangements, and these changes are always inherited.",
+      "Environmental experiences have no measurable effect on gene expression or DNA structure, and all developmental variation is caused solely by random allele combinations.",
+      "Environmental experiences alter gene expression exclusively through natural selection operating over thousands of generations, never within a single lifespan."
+    ],
+    "difficulty": 4,
+    "source_article": "Epigenetics",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "epigenetic influences on development"
+    ]
+  },
+  {
+    "question_text": "What does Spelke's core knowledge theory propose about infant cognition?",
+    "correct_answer": "Infants are born with domain-specific representational systems for objects, agents, number, and geometry that support early learning.",
+    "distractors": [
+      "Infants are born as blank slates with no innate representational systems and acquire all knowledge exclusively through postnatal experience.",
+      "Infants are born with a single domain-general learning mechanism that processes all types of information through identical computational rules.",
+      "Infants are born with fully mature adult-like knowledge systems that require no environmental input to reach complete functional capacity."
+    ],
+    "difficulty": 4,
+    "source_article": "Core knowledge systems",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "core knowledge theory"
+    ]
+  },
+  {
+    "question_text": "What does the differential susceptibility hypothesis predict about gene-environment interactions?",
+    "correct_answer": "Individuals with susceptibility markers are disproportionately affected by both adverse and supportive environments, for better and for worse.",
+    "distractors": [
+      "Individuals with susceptibility markers are disproportionately affected only by adverse environments and show no benefit from supportive ones.",
+      "Individuals with susceptibility markers are completely immune to all environmental influences due to strong genetic buffering mechanisms.",
+      "Individuals with susceptibility markers respond identically to all environments regardless of whether conditions are adverse or supportive."
+    ],
+    "difficulty": 4,
+    "source_article": "Differential susceptibility hypothesis",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "differential susceptibility hypothesis"
+    ]
+  },
+  {
+    "question_text": "What distinguishes experience-expectant from experience-dependent neural plasticity in development?",
+    "correct_answer": "Experience-expectant plasticity requires species-typical input during sensitive periods, while experience-dependent plasticity encodes unique individual experiences throughout life.",
+    "distractors": [
+      "Experience-expectant plasticity occurs only in adulthood after brain maturation, while experience-dependent plasticity occurs only during prenatal development.",
+      "Experience-expectant plasticity strengthens existing synaptic connections permanently, while experience-dependent plasticity exclusively eliminates synaptic connections through pruning.",
+      "Experience-expectant plasticity involves conscious deliberate learning efforts, while experience-dependent plasticity involves only unconscious reflexive sensory responses."
+    ],
+    "difficulty": 4,
+    "source_article": "Neuroplasticity",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "neuroplasticity and experience-dependent development"
+    ]
+  },
+  {
+    "question_text": "How does statistical learning contribute to infant language acquisition?",
+    "correct_answer": "Infants track transitional probabilities between syllables in continuous speech to discover word boundaries without explicit instruction.",
+    "distractors": [
+      "Infants memorize complete sentences from caregiver speech verbatim and then decompose them into individual words using grammatical rules.",
+      "Infants rely exclusively on prosodic stress cues in isolation and ignore all statistical regularities present in continuous speech input.",
+      "Infants use innate knowledge of their native language phonology to segment speech, requiring no exposure to distributional patterns."
+    ],
+    "difficulty": 4,
+    "source_article": "Statistical learning in language acquisition",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "statistical learning in language acquisition"
+    ]
+  },
+  {
+    "question_text": "How is attachment transmitted across generations according to research using the Adult Attachment Interview?",
+    "correct_answer": "A parent's coherent or incoherent narrative about their own attachment experiences predicts their infant's secure or insecure attachment classification.",
+    "distractors": [
+      "A parent's income level and educational attainment directly determines their infant's attachment classification through material resource availability alone.",
+      "A parent's genotype at a single attachment gene locus fully determines their infant's attachment classification through simple Mendelian inheritance.",
+      "A parent's physical resemblance to their own caregiver unconsciously determines their infant's attachment classification through visual familiarity mechanisms."
+    ],
+    "difficulty": 4,
+    "source_article": "Attachment theory",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "intergenerational transmission of attachment"
+    ]
+  },
+  {
+    "question_text": "How does the concept of niche construction apply to human developmental plasticity?",
+    "correct_answer": "Organisms actively modify their own developmental environments, creating feedback loops between genes, behavior, and culture that shape subsequent development.",
+    "distractors": [
+      "Organisms passively receive environmental inputs without any capacity to alter their surroundings, and development proceeds along a fixed genetic trajectory.",
+      "Organisms select environments that perfectly match their existing genotype, eliminating all developmental plasticity through precise genetic-environmental correspondence.",
+      "Organisms modify only the physical environment through tool use, with no feedback effects on gene expression, behavior, or cultural transmission."
+    ],
+    "difficulty": 4,
+    "source_article": "Niche construction",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "niche construction and developmental plasticity"
+    ]
+  },
+  {
+    "question_text": "What does the fetal programming hypothesis (Barker hypothesis) propose about prenatal influences?",
+    "correct_answer": "Prenatal nutritional deprivation and stress exposure permanently alter physiological set points, increasing risk for chronic disease in adulthood.",
+    "distractors": [
+      "Prenatal nutritional deprivation and stress exposure produce only temporary physiological effects that resolve completely within the first postnatal year.",
+      "Prenatal nutritional supplementation and stress reduction have no measurable effect on any physiological or behavioral outcomes after birth.",
+      "Prenatal nutritional deprivation and stress exposure exclusively affect cognitive development without altering any metabolic or cardiovascular parameters."
+    ],
+    "difficulty": 4,
+    "source_article": "Prenatal nutrition and birth weight",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "fetal programming"
+    ]
+  },
+  {
+    "question_text": "What is the central claim of relational developmental systems metatheory?",
+    "correct_answer": "Development results from bidirectional, mutually influential relations among biological, psychological, and sociocultural levels of organization across the lifespan.",
+    "distractors": [
+      "Development results from unidirectional genetic causation flowing from DNA to proteins to cells to behavior without environmental feedback.",
+      "Development results from a single dominant environmental factor such as parenting quality that overrides all biological and cultural influences.",
+      "Development results from a fixed sequence of universal stages determined entirely by chronological age regardless of individual or contextual variation."
+    ],
+    "difficulty": 4,
+    "source_article": "Developmental systems theory",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "relational developmental systems metatheory"
+    ]
+  },
+  {
+    "question_text": "How do dual-process models explain heightened risk-taking during adolescence?",
+    "correct_answer": "An early-maturing socioemotional system drives reward-seeking while a later-maturing cognitive control system cannot yet effectively regulate those impulses.",
+    "distractors": [
+      "A fully mature cognitive control system actively encourages risk-taking while a dormant socioemotional system fails to generate any fear response.",
+      "Both socioemotional and cognitive control systems mature simultaneously, but adolescents deliberately choose risk-taking to assert social independence from adults.",
+      "An early-maturing cognitive control system suppresses all caution while a later-maturing socioemotional system cannot yet generate appropriate reward motivation."
+    ],
+    "difficulty": 4,
+    "source_article": "Dual process theory",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "dual-process theories of adolescent risk-taking"
+    ]
+  },
+  {
+    "question_text": "What does research on teleological reasoning reveal about children's explanations of natural phenomena?",
+    "correct_answer": "Children preferentially explain natural objects and events in terms of purposes and functions, reflecting an intuitive bias toward design-based thinking.",
+    "distractors": [
+      "Children preferentially explain natural objects and events in terms of random chance and probability, reflecting an intuitive bias toward statistical thinking.",
+      "Children preferentially explain natural objects and events in terms of mechanical causes and physical forces, reflecting an intuitive bias toward reductionist thinking.",
+      "Children preferentially explain natural objects and events in terms of historical narratives and chronological sequences, reflecting an intuitive bias toward temporal thinking."
+    ],
+    "difficulty": 4,
+    "source_article": "Teleological thinking",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "teleological reasoning in children"
+    ]
+  }
+]

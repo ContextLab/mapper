@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Colin Cherry's 1953 research on the 'cocktail party problem' investigated how people follow one conversation while ignoring others. What cognitive process does this research primarily demonstrate?",
+    "correct_answer": "Selective attention, the ability to focus on specific stimuli while filtering out competing information",
+    "distractors": [
+      "Divided attention, the ability to process multiple conversations simultaneously without any loss",
+      "Auditory habituation, the gradual reduction of neural responses to repeated background sounds",
+      "Echoic memory, the brief sensory store that retains all auditory input for several seconds"
+    ],
+    "difficulty": 2,
+    "source_article": "Selective attention",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["selective attention"]
+  },
+  {
+    "question_text": "Kenneth Craik proposed in 1943 that the mind constructs 'small-scale models' of reality to anticipate events. What term is used for these internal representations, and what is their key structural feature?",
+    "correct_answer": "Mental models, whose structure is analogous to the structure of the situations they represent",
+    "distractors": [
+      "Cognitive schemas, whose structure is determined by the logical rules of formal reasoning systems",
+      "Perceptual templates, whose structure directly mirrors the neural firing patterns in sensory cortex",
+      "Symbolic propositions, whose structure follows the grammatical syntax of natural language sentences"
+    ],
+    "difficulty": 2,
+    "source_article": "Mental model",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["mental model"]
+  },
+  {
+    "question_text": "Eleanor Rosch's research in the 1970s challenged the classical view that category membership is defined by necessary and sufficient conditions. What does her prototype theory propose instead?",
+    "correct_answer": "Category membership is graded, judged by similarity to a most typical example called the prototype",
+    "distractors": [
+      "Category membership is binary, determined by whether an item shares any single feature with others",
+      "Category membership is innate, based on genetically predetermined neural circuits for each concept",
+      "Category membership is arbitrary, assigned randomly through cultural convention and repeated exposure"
+    ],
+    "difficulty": 2,
+    "source_article": "Prototype theory",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["prototype theory"]
+  },
+  {
+    "question_text": "Confirmation bias is one of the most widely studied cognitive biases. What specific pattern of information processing does it describe?",
+    "correct_answer": "The tendency to search for, interpret, and recall information that confirms one's prior beliefs",
+    "distractors": [
+      "The tendency to accept the first available solution to a problem without exploring alternatives",
+      "The tendency to overestimate the accuracy of one's own knowledge and predictive judgments",
+      "The tendency to attribute successful outcomes to skill and unsuccessful outcomes to chance"
+    ],
+    "difficulty": 2,
+    "source_article": "Confirmation bias",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["confirmation bias"]
+  },
+  {
+    "question_text": "John Flavell defined metacognition as knowledge about cognition and control of cognition. What two main components does metacognition encompass?",
+    "correct_answer": "Metacognitive knowledge about one's own thinking and metacognitive regulation of cognitive processes",
+    "distractors": [
+      "Episodic memory for past learning events and procedural memory for automated cognitive skills",
+      "Conscious perception of external stimuli and unconscious processing of subliminal sensory input",
+      "Fluid intelligence for novel problem solving and crystallized intelligence for stored factual knowledge"
+    ],
+    "difficulty": 2,
+    "source_article": "Metacognition",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["metacognition"]
+  },
+  {
+    "question_text": "In cognitive psychology, priming refers to the implicit memory effect in which exposure to one stimulus influences the response to a subsequent stimulus. What mechanism is thought to underlie positive priming?",
+    "correct_answer": "Spreading activation, where the first stimulus partially activates related representations in memory",
+    "distractors": [
+      "Memory consolidation, where the first stimulus strengthens synaptic connections during encoding",
+      "Selective inhibition, where the first stimulus suppresses competing unrelated memory traces",
+      "Sensory adaptation, where the first stimulus lowers the perceptual threshold for detection"
+    ],
+    "difficulty": 2,
+    "source_article": "Priming (psychology)",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["priming"]
+  },
+  {
+    "question_text": "Dual-process theory distinguishes between two modes of cognitive processing, popularized by Daniel Kahneman as System 1 and System 2. What are the defining characteristics that differentiate these two systems?",
+    "correct_answer": "System 1 is fast, automatic, and intuitive; System 2 is slow, deliberate, and analytical",
+    "distractors": [
+      "System 1 handles verbal reasoning and language; System 2 handles spatial reasoning and imagery",
+      "System 1 operates during waking consciousness; System 2 operates during sleep consolidation",
+      "System 1 processes emotional information only; System 2 processes factual information exclusively"
+    ],
+    "difficulty": 3,
+    "source_article": "Dual process theory",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["dual-process theory"]
+  },
+  {
+    "question_text": "Craik and Lockhart's 1972 levels-of-processing framework proposed that memory retention depends on the depth of encoding rather than rehearsal duration. Which type of processing produces the strongest memory traces?",
+    "correct_answer": "Deep semantic processing that engages with the meaning of information",
+    "distractors": [
+      "Phonological processing that focuses on the acoustic sound of information",
+      "Structural processing that analyzes the visual appearance of information",
+      "Temporal processing that tracks the sequential order of information"
+    ],
+    "difficulty": 3,
+    "source_article": "Levels-of-processing effect",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["levels-of-processing effect"]
+  },
+  {
+    "question_text": "In Baddeley and Hitch's 1974 working memory model, the phonological loop is responsible for processing speech-based material. What two subcomponents make up the phonological loop?",
+    "correct_answer": "The phonological store, which briefly holds sound-based information, and the articulatory rehearsal process",
+    "distractors": [
+      "The semantic buffer, which interprets word meanings, and the syntactic parser for sentence structure",
+      "The auditory cortex relay, which converts sound waves, and the lexical retrieval mechanism for words",
+      "The echoic register, which records all ambient sounds, and the categorical filter for speech recognition"
+    ],
+    "difficulty": 3,
+    "source_article": "Phonological loop",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["phonological loop"]
+  },
+  {
+    "question_text": "The visuospatial sketchpad is a component of Baddeley's working memory model that maintains non-verbal information. What specific types of information does it store, and which brain regions are primarily activated during its use?",
+    "correct_answer": "It stores spatial, visual, and kinesthetic information, activating occipital and parietal lobe regions",
+    "distractors": [
+      "It stores auditory and tactile information, activating temporal and prefrontal cortex regions primarily",
+      "It stores linguistic and numerical information, activating Broca's area and angular gyrus regions",
+      "It stores olfactory and gustatory information, activating insular cortex and hippocampal regions"
+    ],
+    "difficulty": 3,
+    "source_article": "Baddeley's model of working memory",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["visuospatial sketchpad"]
+  }
+]

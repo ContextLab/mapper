@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Major depressive disorder requires symptoms to persist for a minimum duration before a clinical diagnosis can be made. What is this minimum duration according to standard diagnostic criteria?",
+    "correct_answer": "At least two weeks of persistent depressed mood or loss of interest in nearly all activities",
+    "distractors": [
+      "At least one month of continuous sadness accompanied by significant weight change",
+      "At least six months of low mood with at least three episodes of crying per week",
+      "At least three days of inability to get out of bed combined with social withdrawal"
+    ],
+    "difficulty": 1,
+    "source_article": "Major depressive disorder",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["depression"]
+  },
+  {
+    "question_text": "Anxiety involves both psychological and physical responses to perceived threats. Which of the following best describes the core feature that distinguishes clinical anxiety from ordinary worry?",
+    "correct_answer": "Persistent and excessive worry that disrupts normal functioning even when no immediate threat is present",
+    "distractors": [
+      "Brief episodes of nervousness that occur only in genuinely dangerous situations",
+      "A complete inability to experience any positive emotions during stressful periods",
+      "Occasional physical tension that resolves immediately once the stressful event ends"
+    ],
+    "difficulty": 1,
+    "source_article": "Anxiety",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["anxiety"]
+  },
+  {
+    "question_text": "Psychotherapy encompasses a range of methods used by mental health professionals. What is the common element shared across all forms of psychotherapy?",
+    "correct_answer": "Direct personal contact between therapist and patient, typically through structured conversation",
+    "distractors": [
+      "Prescription of medication to correct chemical imbalances underlying mental health conditions",
+      "Use of standardized diagnostic imaging such as brain scans to guide treatment decisions",
+      "Assignment of daily written homework exercises that the patient completes independently"
+    ],
+    "difficulty": 1,
+    "source_article": "Psychotherapy",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["therapy"]
+  },
+  {
+    "question_text": "The World Health Organization and the American Psychiatric Association each publish a major classification system for mental disorders. What are these two widely used systems?",
+    "correct_answer": "The International Classification of Diseases (ICD) and the Diagnostic and Statistical Manual of Mental Disorders (DSM)",
+    "distractors": [
+      "The Global Burden of Disease Index (GBDI) and the Psychiatric Rating Scale Manual (PRSM)",
+      "The World Mental Health Survey (WMHS) and the Clinical Assessment of Functioning (CAF)",
+      "The International Behavioral Codex (IBC) and the American Neuropsychiatric Registry (ANR)"
+    ],
+    "difficulty": 1,
+    "source_article": "Mental disorder",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["mental illness"]
+  },
+  {
+    "question_text": "Post-traumatic stress disorder (PTSD) is organized around distinct symptom clusters in the DSM-5. Which of the following correctly identifies the four main symptom clusters?",
+    "correct_answer": "Intrusion symptoms, avoidance, negative changes in cognition and mood, and changes in arousal and reactivity",
+    "distractors": [
+      "Hallucinations, social withdrawal, loss of motor function, and chronic fatigue",
+      "Obsessive thoughts, compulsive rituals, depersonalization, and appetite disturbance",
+      "Grandiosity, impulsivity, emotional numbness, and dissociative identity shifts"
+    ],
+    "difficulty": 1,
+    "source_article": "Post-traumatic stress disorder",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["PTSD"]
+  },
+  {
+    "question_text": "Phobias are among the most common anxiety disorders. What is the defining characteristic that distinguishes a phobia from normal fear?",
+    "correct_answer": "An intense, irrational fear that is disproportionate to the actual danger posed by the object or situation",
+    "distractors": [
+      "A fear response that occurs only in childhood and naturally disappears by adulthood",
+      "A realistic assessment of danger that leads to appropriate and proportional avoidance behavior",
+      "A sudden fear that appears without any identifiable trigger or environmental stimulus"
+    ],
+    "difficulty": 1,
+    "source_article": "Phobia",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["phobia"]
+  },
+  {
+    "question_text": "The physiological stress response involves activation of the body's major regulatory systems. Walter Cannon first described this acute stress response in 1915 using what well-known term?",
+    "correct_answer": "The fight-or-flight response, involving sympathetic nervous system activation to prepare the body for action",
+    "distractors": [
+      "The general adaptation syndrome, a three-stage process of alarm, resistance, and exhaustion",
+      "The relaxation response, a parasympathetic mechanism that counteracts physical tension",
+      "The tend-and-befriend response, a social bonding reaction triggered by the release of oxytocin"
+    ],
+    "difficulty": 1,
+    "source_article": "Stress (biology)",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["stress"]
+  },
+  {
+    "question_text": "Psychological trauma can result in both short-term and long-term reactions. Which of the following correctly pairs common short-term and long-term responses to a traumatic event?",
+    "correct_answer": "Short-term: psychological shock and denial; long-term: flashbacks, panic attacks, and possible development of PTSD",
+    "distractors": [
+      "Short-term: permanent memory loss of the event; long-term: gradual recovery of all lost memories",
+      "Short-term: immediate onset of hallucinations; long-term: development of intellectual disability",
+      "Short-term: complete emotional numbness for several years; long-term: spontaneous full recovery without treatment"
+    ],
+    "difficulty": 1,
+    "source_article": "Psychological trauma",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["trauma"]
+  },
+  {
+    "question_text": "Addiction is now understood as a neuropsychological disorder. What is the core characteristic that defines addiction according to current clinical understanding?",
+    "correct_answer": "A persistent and intense urge to use a substance or engage in a behavior despite substantial harm and negative consequences",
+    "distractors": [
+      "A deliberate choice to continue using a substance purely for recreational enjoyment without any compulsion",
+      "A temporary physical dependence on a substance that resolves completely once the substance is discontinued",
+      "A moral failing characterized by lack of willpower that affects only individuals with low intelligence"
+    ],
+    "difficulty": 1,
+    "source_article": "Addiction",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["addiction"]
+  },
+  {
+    "question_text": "Autism spectrum disorder (ASD) is classified as a neurodevelopmental condition. What are the two core symptom domains used to diagnose ASD in the DSM-5?",
+    "correct_answer": "Differences in social communication and interaction, and restricted or repetitive patterns of behavior and interests",
+    "distractors": [
+      "Deficits in reading comprehension and mathematics, and an inability to form any long-term memories",
+      "Persistent auditory hallucinations and visual disturbances, and severe impairment of motor coordination",
+      "Chronic mood instability and emotional outbursts, and progressive loss of previously acquired language skills"
+    ],
+    "difficulty": 1,
+    "source_article": "Autism spectrum disorder",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["autism"]
+  }
+]

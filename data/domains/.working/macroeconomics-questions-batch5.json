@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In DSGE models used by central banks for policy analysis, the three interrelated structural equations typically represent demand, supply, and what third component?",
+    "correct_answer": "A monetary policy rule, commonly the Taylor rule, which determines the nominal interest rate based on inflation and output deviations",
+    "distractors": [
+      "A fiscal policy rule, commonly the balanced-budget multiplier, which determines government spending based on tax revenue fluctuations",
+      "A labor market equation, commonly the Beveridge curve, which determines equilibrium unemployment based on vacancy and separation rates",
+      "An exchange rate equation, commonly the interest parity condition, which determines the nominal exchange rate based on foreign reserves"
+    ],
+    "difficulty": 4,
+    "source_article": "Dynamic stochastic general equilibrium",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["dynamic stochastic general equilibrium"]
+  },
+  {
+    "question_text": "New Keynesian economics provides microeconomic foundations for price stickiness. What two key assumptions underpin the New Keynesian Phillips Curve in its canonical DSGE formulation?",
+    "correct_answer": "Monopolistic competition among firms and nominal rigidities such as sticky prices that prevent instantaneous adjustment to economic shocks",
+    "distractors": [
+      "Perfect competition among firms and real rigidities such as efficiency wages that prevent labor markets from clearing continuously",
+      "Oligopolistic market structure and flexible prices combined with adaptive expectations that cause persistent forecast errors",
+      "Autarkic production by firms and complete price flexibility combined with informational asymmetries that distort market signals"
+    ],
+    "difficulty": 4,
+    "source_article": "New Keynesian economics",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["New Keynesian economics"]
+  },
+  {
+    "question_text": "Kydland and Prescott's 1977 paper 'Rules Rather than Discretion' demonstrated the time inconsistency problem. What policy implication did their work most directly support?",
+    "correct_answer": "Delegating monetary policy to independent central banks with legislated price-stability mandates to provide credible commitment against inflationary temptation",
+    "distractors": [
+      "Granting elected officials direct control over interest rates so democratic accountability ensures policies reflect voter preferences against inflation",
+      "Eliminating central banks entirely and replacing discretionary monetary policy with automatic gold-standard convertibility to anchor expectations",
+      "Allowing central banks full discretion over both fiscal and monetary levers so coordinated stimulus can optimally respond to each recession"
+    ],
+    "difficulty": 4,
+    "source_article": "Time inconsistency",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["time inconsistency"]
+  },
+  {
+    "question_text": "The overlapping generations model was formulated by Allais (1947) and Samuelson (1958), then extended by Diamond (1965). What key feature did Diamond's extension add to Samuelson's pure-exchange framework?",
+    "correct_answer": "An aggregate neoclassical production function with capital accumulation, enabling analysis of savings, investment, and dynamic inefficiency",
+    "distractors": [
+      "A government sector with distortionary taxation and public debt, enabling analysis of Ricardian equivalence and optimal fiscal policy",
+      "A monetary authority that sets nominal interest rates using a Taylor rule, enabling analysis of inflation targeting and price stability",
+      "An open-economy trade sector with comparative advantage and tariffs, enabling analysis of exchange rate determination and capital flows"
+    ],
+    "difficulty": 4,
+    "source_article": "Overlapping generations model",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["Overlapping generations model"]
+  },
+  {
+    "question_text": "The Ramsey-Cass-Koopmans model extends the Solow growth model by replacing its exogenous savings rate assumption. How is the savings rate determined instead?",
+    "correct_answer": "Endogenously, through intertemporal optimization by a representative household that maximizes utility over an infinite horizon",
+    "distractors": [
+      "Exogenously, through a government planner that sets a fixed savings target calibrated to match historical capital-output ratios",
+      "Stochastically, through random shocks to household discount factors that generate business-cycle fluctuations in aggregate saving",
+      "Adaptively, through backward-looking rules where households gradually adjust saving toward the previous period's average income share"
+    ],
+    "difficulty": 4,
+    "source_article": "Ramsey-Cass-Koopmans model",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["Ramsey-Cass-Koopmans model"]
+  },
+  {
+    "question_text": "Paul Romer's endogenous growth theory, for which he shared the 2018 Nobel Prize, identifies a special property of ideas that drives sustained long-run growth. What is this property?",
+    "correct_answer": "Ideas are nonrival goods, meaning they can be used by many people simultaneously without being depleted, generating knowledge spillovers",
+    "distractors": [
+      "Ideas are rival goods, meaning only the original inventor can exploit them, creating monopoly rents that fund further innovation",
+      "Ideas are excludable public goods, meaning governments must ration access through licensing to prevent overuse and depletion of novelty",
+      "Ideas are depletable resources, meaning each application reduces their marginal productivity, requiring constant reinvention to sustain growth"
+    ],
+    "difficulty": 4,
+    "source_article": "Endogenous growth theory",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["endogenous growth theory"]
+  },
+  {
+    "question_text": "The Balassa-Samuelson effect, independently proposed by both economists in 1964, explains why consumer price levels are systematically higher in wealthier countries. What is the causal mechanism?",
+    "correct_answer": "Higher productivity in the traded-goods sector raises wages economy-wide, pushing up prices of nontraded goods and services where productivity gains are smaller",
+    "distractors": [
+      "Higher government spending in wealthy nations expands aggregate demand across all sectors, driving inflation uniformly in both traded and nontraded goods",
+      "Stronger patent protections in developed nations create monopoly pricing power across all industries, raising consumer prices above competitive levels",
+      "Greater financial market depth in rich countries increases money supply growth rates, generating persistent monetary inflation in all goods sectors"
+    ],
+    "difficulty": 4,
+    "source_article": "Balassa-Samuelson effect",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["Balassa-Samuelson effect"]
+  },
+  {
+    "question_text": "The impossible trinity, derived from the Mundell-Fleming framework of the early 1960s, states that a country cannot simultaneously maintain which three macroeconomic policy objectives?",
+    "correct_answer": "A fixed exchange rate, free capital mobility, and an independent monetary policy",
+    "distractors": [
+      "Low inflation, full employment, and a balanced government budget",
+      "Free trade, fixed exchange rate, and a balanced current account",
+      "Price stability, financial regulation, and unrestricted fiscal spending"
+    ],
+    "difficulty": 4,
+    "source_article": "Impossible trinity",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["impossible trinity"]
+  },
+  {
+    "question_text": "Milton Friedman's k-percent rule, proposed in his 1960 work 'A Program for Monetary Stability,' advocates what specific approach to conducting monetary policy?",
+    "correct_answer": "Expanding the money supply at a constant annual percentage rate matching real GDP growth, regardless of business cycle conditions",
+    "distractors": [
+      "Contracting the money supply during expansions and expanding it during recessions to actively smooth business cycle fluctuations",
+      "Pegging the nominal interest rate to a fixed percentage above the inflation rate to maintain a constant positive real return",
+      "Targeting a constant ratio of government debt to GDP by adjusting money creation to offset annual fiscal deficits automatically"
+    ],
+    "difficulty": 4,
+    "source_article": "Friedman's k-percent rule",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["Friedman's k-percent rule"]
+  },
+  {
+    "question_text": "In Mankiw's 1985 model, small menu costs borne by individual firms can produce large macroeconomic fluctuations. Why does the welfare loss to society exceed the private menu cost?",
+    "correct_answer": "Firms with market power internalize only their private loss from not adjusting prices, ignoring the aggregate demand externality their sticky prices impose on the economy",
+    "distractors": [
+      "Perfectly competitive firms pass all adjustment costs to consumers through higher markups, amplifying price increases far beyond the original menu cost",
+      "Central banks systematically overreact to observed price stickiness by tightening monetary policy excessively, thereby causing unnecessarily deep recessions that compound the original welfare loss",
+      "Workers negotiate wages indexed to firm-level menu costs, creating a wage-price spiral that magnifies the initial cost shock across the labor market"
+    ],
+    "difficulty": 4,
+    "source_article": "Menu cost",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["menu cost"]
+  }
+]

@@ -1,0 +1,104 @@
+[
+  {
+    "question_text": "During the Yuan dynasty, which group of four literati painters became renowned for using ink wash landscapes to express personal feeling rather than serve the Mongol court, helping define the scholar-painting tradition?",
+    "correct_answer": "The Four Masters of the Yuan: Huang Gongwang, Wu Zhen, Ni Zan, and Wang Meng",
+    "distractors": [
+      "The Four Masters of the Yuan: Zhao Mengfu, Wu Zhen, Ni Zan, and Wang Meng",
+      "The Four Masters of the Song: Huang Gongwang, Wu Zhen, Ni Zan, and Wang Meng",
+      "The Four Masters of the Yuan: Huang Gongwang, Ma Yuan, Ni Zan, and Wang Meng"
+    ],
+    "difficulty": 3,
+    "source_article": "Yuan_dynasty",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "Yuan dynasty literati painting"
+    ]
+  },
+  {
+    "question_text": "Which city in Jiangxi province, named after the reign title of Emperor Zhenzong around 1004 CE, became the largest center of Chinese porcelain production by the 14th century and is known as the \"Porcelain Capital\"?",
+    "correct_answer": "Jingdezhen, famous for Qingbai ware, blue-and-white porcelain, and famille rose",
+    "distractors": [
+      "Jingdezhen, famous for celadon ware, sancai glazed pottery, and famille rose",
+      "Longquan, famous for Qingbai ware, blue-and-white porcelain, and famille rose",
+      "Jingdezhen, famous for Qingbai ware, blue-and-white porcelain, and cloisonne enamel"
+    ],
+    "difficulty": 3,
+    "source_article": "Jingdezhen",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "Jingdezhen"
+    ]
+  },
+  {
+    "question_text": "Emperor Huizong of Song (r. 1100--1126) created a distinctive calligraphy style whose thin, angular strokes were compared to twisted gold filaments. What is this style called, and what were his primary painting subjects?",
+    "correct_answer": "\"Slender Gold\" (Shoujinti) calligraphy; his primary painting subjects were birds and flowers",
+    "distractors": [
+      "\"Slender Gold\" (Shoujinti) calligraphy; his primary painting subjects were landscapes and mountains",
+      "\"Golden Inlaid\" (Jincuodao) calligraphy; his primary painting subjects were birds and flowers",
+      "\"Slender Gold\" (Shoujinti) calligraphy; his primary painting subjects were court figures and horses"
+    ],
+    "difficulty": 3,
+    "source_article": "Emperor_Huizong_of_Song",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "Huizong (emperor-artist)"
+    ]
+  },
+  {
+    "question_text": "The Eight Eccentrics of Yangzhou were Qing dynasty painters known for rejecting orthodox styles in favor of expressive individualism. Which member, also called Zheng Banqiao, is among the most celebrated of this group?",
+    "correct_answer": "Zheng Xie, known for bold paintings of bamboo, orchids, and rocks",
+    "distractors": [
+      "Jin Nong, known for bold paintings of bamboo, orchids, and rocks",
+      "Zheng Xie, known for meticulous paintings of court ladies and gardens",
+      "Zheng Xie, known for bold paintings of horses, mountains, and rivers"
+    ],
+    "difficulty": 3,
+    "source_article": "Eight_Eccentrics_of_Yangzhou",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "Eight Eccentrics of Yangzhou"
+    ]
+  },
+  {
+    "question_text": "Chan Buddhism, derived from the Sanskrit term $\\textit{dhyana}$ meaning meditation, emphasizes direct insight into one's own Buddha-nature. By what names is this tradition known in Japan and Korea respectively?",
+    "correct_answer": "Zen in Japan and Seon in Korea, both derived from the Chinese term Chan",
+    "distractors": [
+      "Zen in Japan and Thien in Korea, both derived from the Chinese term Chan",
+      "Seon in Japan and Zen in Korea, both derived from the Chinese term Chan",
+      "Zen in Japan and Seon in Korea, both derived from the Sanskrit term Sutra"
+    ],
+    "difficulty": 3,
+    "source_article": "Chan_Buddhism",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "Chan Buddhist aesthetics"
+    ]
+  },
+  {
+    "question_text": "Sancai (\"three-color\") ceramics, most associated with the Tang dynasty, used lead-based glazes with metal oxide colorants. Which oxides produced the characteristic amber-brown and green colors in these wares?",
+    "correct_answer": "Iron oxide for amber-brown and copper oxide for green, applied over a white clay body",
+    "distractors": [
+      "Cobalt oxide for amber-brown and copper oxide for green, applied over a white clay body",
+      "Iron oxide for amber-brown and manganese oxide for green, applied over a white clay body",
+      "Iron oxide for amber-brown and copper oxide for green, applied over a red stoneware body"
+    ],
+    "difficulty": 3,
+    "source_article": "Sancai",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "sancai glazed ceramics"
+    ]
+  }
+]

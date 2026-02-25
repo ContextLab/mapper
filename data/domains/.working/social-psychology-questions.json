@@ -1,0 +1,652 @@
+[
+  {
+    "question_text": "What term describes the tendency of individuals to change their behavior or beliefs to align with group norms?",
+    "correct_answer": "Conformity, the adjustment of behavior or thinking to match a group standard.",
+    "distractors": [
+      "Compliance, the automatic internalization of authority figures' personal values and beliefs.",
+      "Reactance, the motivation to adopt opposing views when individual freedoms are threatened.",
+      "Habituation, the gradual reduction of responsiveness after prolonged exposure to group settings."
+    ],
+    "difficulty": 1,
+    "source_article": "Conformity",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["conformity"]
+  },
+  {
+    "question_text": "What is prejudice in the context of social psychology?",
+    "correct_answer": "A preconceived negative attitude toward members of a social group based on their group membership.",
+    "distractors": [
+      "A behavioral pattern of providing unequal treatment to individuals based on objective performance metrics.",
+      "A cognitive shortcut that assigns accurate average characteristics to members of large populations.",
+      "An emotional reaction that arises exclusively from direct personal conflict with specific individuals."
+    ],
+    "difficulty": 1,
+    "source_article": "Prejudice",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["prejudice"]
+  },
+  {
+    "question_text": "What does the term persuasion refer to in social psychology?",
+    "correct_answer": "The process of changing a person's attitudes, beliefs, or behaviors through communication and argument.",
+    "distractors": [
+      "The use of physical force or legal authority to compel a person to comply with demands.",
+      "The unconscious imitation of another person's gestures and speech patterns during conversation.",
+      "The gradual extinction of a conditioned response following repeated absence of reinforcement."
+    ],
+    "difficulty": 1,
+    "source_article": "Persuasion",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["persuasion"]
+  },
+  {
+    "question_text": "What is stereotyping?",
+    "correct_answer": "Applying overgeneralized beliefs about the characteristics of a social group to its individual members.",
+    "distractors": [
+      "Forming an accurate assessment of an individual's personality based on extended personal interaction.",
+      "Deliberately treating members of another group unfairly in employment or housing situations.",
+      "Experiencing emotional distress after learning that one's beliefs are inconsistent with new evidence."
+    ],
+    "difficulty": 1,
+    "source_article": "Stereotype",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["stereotyping"]
+  },
+  {
+    "question_text": "In social psychology, what is an attitude?",
+    "correct_answer": "A learned evaluation of a person, object, or idea that influences thought and behavior.",
+    "distractors": [
+      "A biologically inherited reflex that automatically triggers a fixed behavioral response to stimuli.",
+      "A temporary emotional state produced exclusively by physiological arousal and hormonal fluctuations.",
+      "A factual belief about the world that remains constant regardless of personal experience."
+    ],
+    "difficulty": 1,
+    "source_article": "Attitude (psychology)",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["attitude"]
+  },
+  {
+    "question_text": "What does aggression refer to in social psychology?",
+    "correct_answer": "Behavior intended to harm another person who is motivated to avoid that harm.",
+    "distractors": [
+      "Any competitive behavior in which individuals strive to outperform others in a shared task.",
+      "The physiological arousal response that prepares an organism to flee from perceived threats.",
+      "Assertive communication aimed at expressing one's needs without intending injury to others."
+    ],
+    "difficulty": 1,
+    "source_article": "Aggression",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["aggression"]
+  },
+  {
+    "question_text": "What is altruism?",
+    "correct_answer": "Selfless concern for the welfare of others, involving helping without expectation of personal reward.",
+    "distractors": [
+      "Strategic cooperation in which individuals help others primarily to receive equivalent future benefits.",
+      "The instinctive protective behavior parents exhibit exclusively toward their biological offspring.",
+      "Competitive generosity displayed publicly to enhance one's social status and reputation."
+    ],
+    "difficulty": 1,
+    "source_article": "Altruism",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["altruism"]
+  },
+  {
+    "question_text": "What does obedience mean in the study of social behavior?",
+    "correct_answer": "Compliance with demands or commands issued by a person perceived as a legitimate authority figure.",
+    "distractors": [
+      "The voluntary adoption of group opinions that occurs when individuals privately accept majority views.",
+      "A reflexive submission response triggered automatically by any form of social pressure or conflict.",
+      "The tendency to follow daily routines and habits without conscious deliberation or external prompting."
+    ],
+    "difficulty": 1,
+    "source_article": "Obedience (human behavior)",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["obedience"]
+  },
+  {
+    "question_text": "What is social influence?",
+    "correct_answer": "The process by which individuals' thoughts, feelings, and behaviors are affected by others' presence or actions.",
+    "distractors": [
+      "The biological mechanism through which genetic information is transmitted from parents to their offspring.",
+      "The economic forces of supply and demand that determine pricing in competitive consumer markets.",
+      "The neurological process by which sensory information is encoded into long-term memory storage."
+    ],
+    "difficulty": 1,
+    "source_article": "Social influence",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["social influence"]
+  },
+  {
+    "question_text": "What is discrimination in social psychology?",
+    "correct_answer": "Unjustified negative behavior directed toward members of a group based on their group membership alone.",
+    "distractors": [
+      "The cognitive ability to distinguish between two similar but non-identical physical stimuli accurately.",
+      "A private attitude of dislike toward another group that is never expressed through observable actions.",
+      "The legal process of evaluating job candidates using standardized and validated performance criteria."
+    ],
+    "difficulty": 1,
+    "source_article": "Discrimination",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["discrimination"]
+  },
+  {
+    "question_text": "What is empathy?",
+    "correct_answer": "The capacity to understand and share the feelings or emotional states of another person.",
+    "distractors": [
+      "The ability to accurately predict another person's future behavior based on past observations.",
+      "A tendency to project one's own unacceptable thoughts and motives onto other individuals.",
+      "The skill of persuading others to adopt a specific viewpoint through logical argumentation."
+    ],
+    "difficulty": 1,
+    "source_article": "Empathy",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["empathy"]
+  },
+  {
+    "question_text": "In social psychology, what does leadership involve?",
+    "correct_answer": "The process by which an individual guides, directs, and influences a group toward achieving goals.",
+    "distractors": [
+      "The formal authority granted exclusively by legal institutions to enforce rules and punish violations.",
+      "The ability to perform individual tasks with exceptional skill regardless of group involvement.",
+      "The tendency of the most vocal group member to dominate conversation without influencing outcomes."
+    ],
+    "difficulty": 1,
+    "source_article": "Leadership",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["leadership"]
+  },
+  {
+    "question_text": "What is cooperation in the context of group behavior?",
+    "correct_answer": "Joint action by two or more individuals working together toward a shared goal or mutual benefit.",
+    "distractors": [
+      "A competitive strategy in which individuals pursue personal gain at the direct expense of others.",
+      "Passive compliance with group demands despite privately disagreeing with the group's stated objectives.",
+      "The division of labor in which individuals work independently on separate tasks without interaction."
+    ],
+    "difficulty": 1,
+    "source_article": "Cooperation",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["cooperation"]
+  },
+  {
+    "question_text": "What psychological state does cognitive dissonance theory describe?",
+    "correct_answer": "Mental discomfort from holding two contradictory beliefs, motivating a person to reduce the inconsistency.",
+    "distractors": [
+      "A heightened state of physiological arousal that improves cognitive performance on complex reasoning tasks.",
+      "The gradual forgetting of information over time due to interference from newly acquired knowledge.",
+      "An emotional numbness that follows prolonged exposure to distressing or traumatic social situations."
+    ],
+    "difficulty": 2,
+    "source_article": "Cognitive dissonance",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["cognitive dissonance"]
+  },
+  {
+    "question_text": "What does the bystander effect predict about helping behavior?",
+    "correct_answer": "Individuals are less likely to help a victim when other people are present than when alone.",
+    "distractors": [
+      "People are more likely to assist strangers when they are in large crowds than in small groups.",
+      "Bystanders will always intervene in emergencies if they have previously received first-aid training.",
+      "Witnesses to an emergency will help faster when they believe the situation is being recorded."
+    ],
+    "difficulty": 2,
+    "source_article": "Bystander effect",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["bystander effect"]
+  },
+  {
+    "question_text": "What does social identity theory propose about intergroup behavior?",
+    "correct_answer": "People derive self-esteem from group memberships and favor their in-group to maintain a positive social identity.",
+    "distractors": [
+      "Intergroup conflict arises solely from competition over limited material resources between opposing groups.",
+      "Individuals form their personal identity independently of any social group affiliations or memberships.",
+      "People evaluate all groups equally unless they have experienced direct personal conflict with out-group members."
+    ],
+    "difficulty": 2,
+    "source_article": "Social identity theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["social identity theory"]
+  },
+  {
+    "question_text": "What is the fundamental attribution error?",
+    "correct_answer": "The tendency to overemphasize dispositional factors and underestimate situational factors when explaining others' behavior.",
+    "distractors": [
+      "The habit of attributing one's own successes to internal ability and one's failures to external circumstances.",
+      "The bias toward explaining all human behavior as the product of unconscious biological drives.",
+      "The error of assuming that a person's behavior in one situation predicts their behavior in all situations."
+    ],
+    "difficulty": 2,
+    "source_article": "Fundamental attribution error",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["fundamental attribution error"]
+  },
+  {
+    "question_text": "What is social loafing?",
+    "correct_answer": "The tendency for individuals to exert less effort when working collectively than when working alone.",
+    "distractors": [
+      "The increase in individual performance that occurs when people are observed by an attentive audience.",
+      "The phenomenon in which group members become more extreme in their initial position after discussion.",
+      "The avoidance of challenging tasks by individuals who fear negative evaluation from their peers."
+    ],
+    "difficulty": 2,
+    "source_article": "Social loafing",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["social loafing"]
+  },
+  {
+    "question_text": "What is groupthink?",
+    "correct_answer": "A pattern of faulty group decision-making where cohesion and conformity pressures suppress critical evaluation of alternatives.",
+    "distractors": [
+      "The reliable improvement in decision quality that results from pooling many diverse individual judgments.",
+      "A brainstorming technique in which group members freely generate ideas without any form of criticism.",
+      "The tendency of group leaders to make unilateral decisions without consulting other group members."
+    ],
+    "difficulty": 2,
+    "source_article": "Groupthink",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["groupthink"]
+  },
+  {
+    "question_text": "What does in-group/out-group bias refer to?",
+    "correct_answer": "The tendency to favor members of one's own group while showing prejudice against members of other groups.",
+    "distractors": [
+      "The accurate perception that one's own group possesses objectively superior skills compared to other groups.",
+      "The tendency to evaluate all individuals on their personal merits regardless of their group membership.",
+      "The psychological discomfort experienced when forced to interact with members of an unfamiliar social group."
+    ],
+    "difficulty": 2,
+    "source_article": "In-group favoritism",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["in-group/out-group bias"]
+  },
+  {
+    "question_text": "What does social facilitation describe?",
+    "correct_answer": "The tendency for people to perform better on simple or well-learned tasks in the presence of others.",
+    "distractors": [
+      "The improvement in group decision quality that results from openly debating conflicting viewpoints.",
+      "The process by which a skilled instructor guides a learner through progressively difficult task components.",
+      "The reduction in anxiety that individuals experience when they share personal problems with a group."
+    ],
+    "difficulty": 2,
+    "source_article": "Social facilitation",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["social facilitation"]
+  },
+  {
+    "question_text": "What is the self-serving bias?",
+    "correct_answer": "The tendency to attribute personal successes to internal factors and failures to external situational causes.",
+    "distractors": [
+      "The habit of interpreting ambiguous social feedback as evidence that others hold negative views of oneself.",
+      "The tendency to overestimate the degree to which other people share one's own opinions and preferences.",
+      "The bias toward remembering information that confirms one's preexisting beliefs while ignoring contradictory evidence."
+    ],
+    "difficulty": 2,
+    "source_article": "Self-serving bias",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["self-serving bias"]
+  },
+  {
+    "question_text": "What does deindividuation refer to?",
+    "correct_answer": "A loss of self-awareness and individual accountability in group settings that can increase impulsive behavior.",
+    "distractors": [
+      "The process of developing a unique personal identity by deliberately rejecting all group norms and values.",
+      "A heightened state of self-consciousness that occurs when an individual becomes the focus of group attention.",
+      "The gradual weakening of social bonds that results from extended periods of physical isolation."
+    ],
+    "difficulty": 2,
+    "source_article": "Deindividuation",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["deindividuation"]
+  },
+  {
+    "question_text": "How does the door-in-the-face technique work as a compliance strategy?",
+    "correct_answer": "A large request that is expected to be refused is followed by a smaller target request that seems reasonable.",
+    "distractors": [
+      "A small initial favor is granted first, making the person more likely to agree to a subsequent larger request.",
+      "Multiple moderate requests are presented simultaneously, allowing the person to choose the most acceptable option.",
+      "An extreme emotional appeal is delivered first, followed by a calm rational argument for the desired behavior."
+    ],
+    "difficulty": 2,
+    "source_article": "Door-in-the-face technique",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["door-in-the-face technique"]
+  },
+  {
+    "question_text": "What does the mere exposure effect predict about attitudes?",
+    "correct_answer": "Repeated exposure to a stimulus increases a person's liking for it, even without conscious recognition.",
+    "distractors": [
+      "Initial exposure to a highly novel stimulus always produces a strong negative emotional reaction first.",
+      "People develop lasting preferences only for stimuli that are paired with explicit positive reinforcement.",
+      "Frequent exposure to a disliked stimulus intensifies the negative attitude rather than reducing it."
+    ],
+    "difficulty": 2,
+    "source_article": "Mere-exposure effect",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["mere exposure effect"]
+  },
+  {
+    "question_text": "What is scapegoating in the context of intergroup relations?",
+    "correct_answer": "Blaming an innocent out-group for problems and frustrations that are actually caused by other factors.",
+    "distractors": [
+      "Identifying the actual source of a group's problems through systematic investigation and evidence gathering.",
+      "Selecting a competent leader within one's own group to take personal responsibility for group failures.",
+      "Redirecting aggression toward the specific individual who originally caused the frustration and harm."
+    ],
+    "difficulty": 2,
+    "source_article": "Scapegoating",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["scapegoating"]
+  },
+  {
+    "question_text": "In Milgram's obedience experiment, what percentage of participants delivered the maximum 450-volt shock when instructed by the experimenter?",
+    "correct_answer": "Approximately 65 percent of participants administered the maximum shock level in the original study.",
+    "distractors": [
+      "Fewer than 5 percent of participants delivered the maximum shock, confirming strong moral resistance.",
+      "Roughly 30 percent administered the maximum shock, with most stopping at moderate intensity levels.",
+      "Nearly 90 percent administered the maximum shock because participants believed the shocks were harmless."
+    ],
+    "difficulty": 3,
+    "source_article": "Milgram experiment",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["Milgram obedience experiment"]
+  },
+  {
+    "question_text": "In Asch's conformity experiments, what was the critical finding about participant responses on the line-judgment task?",
+    "correct_answer": "About 75 percent of participants conformed to the incorrect majority answer at least once across trials.",
+    "distractors": [
+      "Nearly all participants consistently gave correct answers regardless of the confederates' unanimous wrong responses.",
+      "Participants conformed only when the confederates provided logical explanations supporting their incorrect line choices.",
+      "Conformity occurred exclusively among participants who had prior personal relationships with the confederates present."
+    ],
+    "difficulty": 3,
+    "source_article": "Asch conformity experiments",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["Asch conformity experiments"]
+  },
+  {
+    "question_text": "In attribution theory, what distinguishes an internal attribution from an external attribution?",
+    "correct_answer": "Internal attributions assign behavior to personal dispositions; external attributions assign behavior to situational circumstances.",
+    "distractors": [
+      "Internal attributions explain behavior as conscious and deliberate; external attributions explain behavior as purely accidental.",
+      "Internal attributions apply only to one's own behavior; external attributions apply exclusively to others' behavior.",
+      "Internal attributions reference biological instinct; external attributions reference cultural learning and formal education."
+    ],
+    "difficulty": 3,
+    "source_article": "Attribution (psychology)",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["attribution theory"]
+  },
+  {
+    "question_text": "In the elaboration likelihood model, what distinguishes the central route from the peripheral route to persuasion?",
+    "correct_answer": "The central route involves careful evaluation of argument quality; the peripheral route relies on superficial cues.",
+    "distractors": [
+      "The central route uses emotional appeals exclusively; the peripheral route depends on logical statistical evidence.",
+      "The central route occurs only in written communication; the peripheral route applies only to spoken messages.",
+      "The central route targets attitudes formed in childhood; the peripheral route targets recently acquired beliefs."
+    ],
+    "difficulty": 3,
+    "source_article": "Elaboration likelihood model",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["elaboration likelihood model"]
+  },
+  {
+    "question_text": "According to realistic conflict theory, what is the primary cause of intergroup prejudice and hostility?",
+    "correct_answer": "Direct competition between groups over scarce and valued resources generates intergroup conflict and prejudice.",
+    "distractors": [
+      "Inherent personality differences between group leaders are the sole determinant of intergroup hostility.",
+      "Prejudice arises from cognitive categorization processes independent of any actual resource competition between groups.",
+      "Intergroup hostility is caused exclusively by historical cultural narratives transmitted through formal educational institutions."
+    ],
+    "difficulty": 3,
+    "source_article": "Realistic conflict theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["realistic conflict theory"]
+  },
+  {
+    "question_text": "How does Bem's self-perception theory explain attitude formation?",
+    "correct_answer": "People infer their own attitudes by observing their behavior, especially when internal cues are weak or ambiguous.",
+    "distractors": [
+      "People form attitudes exclusively through direct instruction from authority figures during early childhood socialization.",
+      "Attitudes are determined entirely by genetic predispositions and remain stable regardless of behavioral experience.",
+      "People adopt attitudes that minimize the psychological discomfort produced by inconsistency between conflicting cognitions."
+    ],
+    "difficulty": 3,
+    "source_article": "Self-perception theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["self-perception theory"]
+  },
+  {
+    "question_text": "According to Festinger's social comparison theory, when do people most actively compare themselves to others?",
+    "correct_answer": "When objective means of self-evaluation are unavailable, people compare their opinions and abilities to similar others.",
+    "distractors": [
+      "People compare themselves to others only when explicitly instructed to do so by an external authority.",
+      "Social comparison occurs exclusively when individuals feel highly confident about their existing self-assessments.",
+      "People compare themselves primarily to those who are vastly different in ability to gauge maximum potential."
+    ],
+    "difficulty": 3,
+    "source_article": "Social comparison theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["social comparison theory"]
+  },
+  {
+    "question_text": "What does the frustration-aggression hypothesis originally propose about the relationship between frustration and aggression?",
+    "correct_answer": "Frustration always produces some form of aggression, and aggression always presupposes the existence of frustration.",
+    "distractors": [
+      "Frustration leads to aggression only when the frustrated individual has a genetic predisposition toward violence.",
+      "Aggression occurs independently of frustration and is best explained by observational learning of violent models.",
+      "Frustration produces withdrawal and depression rather than aggression unless social rewards reinforce hostile behavior."
+    ],
+    "difficulty": 3,
+    "source_article": "Frustration–aggression hypothesis",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["frustration-aggression hypothesis"]
+  },
+  {
+    "question_text": "What mechanism does diffusion of responsibility describe in relation to the bystander effect?",
+    "correct_answer": "Each bystander feels less personal responsibility to act because they assume others present will intervene instead.",
+    "distractors": [
+      "Bystanders fail to help because they lack the physical ability to provide effective assistance in emergencies.",
+      "Responsibility increases proportionally with group size because each member is assigned a specific emergency role.",
+      "Individuals in groups help more quickly because shared responsibility reduces the personal cost of intervening."
+    ],
+    "difficulty": 3,
+    "source_article": "Diffusion of responsibility",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["diffusion of responsibility"]
+  },
+  {
+    "question_text": "According to Allport's contact hypothesis, which condition is necessary for intergroup contact to reduce prejudice?",
+    "correct_answer": "Groups must have equal status, share common goals, cooperate, and have support from authorities or institutional norms.",
+    "distractors": [
+      "Simple physical proximity between groups is sufficient to reduce prejudice regardless of the nature of interaction.",
+      "Contact reduces prejudice only when one group publicly acknowledges its historical wrongdoing toward the other group.",
+      "Prejudice decreases only when contact occurs in competitive settings that reveal each group's genuine capabilities."
+    ],
+    "difficulty": 3,
+    "source_article": "Contact hypothesis",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["contact hypothesis"]
+  },
+  {
+    "question_text": "How does the foot-in-the-door technique achieve compliance?",
+    "correct_answer": "A person who agrees to a small initial request becomes more likely to comply with a larger subsequent request.",
+    "distractors": [
+      "An unreasonably large request is made first so that a following moderate request appears more acceptable.",
+      "A time-limited offer creates urgency that pressures the individual into immediate compliance without deliberation.",
+      "Multiple people simultaneously make the same request to create social pressure on a single target individual."
+    ],
+    "difficulty": 3,
+    "source_article": "Foot-in-the-door technique",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["foot-in-the-door technique"]
+  },
+  {
+    "question_text": "What core principle does social exchange theory use to explain relationship formation and maintenance?",
+    "correct_answer": "People evaluate relationships by comparing perceived rewards against costs, staying when rewards outweigh costs.",
+    "distractors": [
+      "Relationships form exclusively through shared genetic interests that promote inclusive fitness and kin selection.",
+      "People maintain relationships based solely on emotional attachment regardless of any costs or tangible benefits.",
+      "Relationship satisfaction depends entirely on the absolute level of rewards received, independent of costs incurred."
+    ],
+    "difficulty": 3,
+    "source_article": "Social exchange theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["social exchange theory"]
+  },
+  {
+    "question_text": "In terror management theory, what psychological function does cultural worldview defense serve?",
+    "correct_answer": "Cultural worldviews buffer existential anxiety by providing meaning, order, and the promise of literal or symbolic immortality.",
+    "distractors": [
+      "Cultural worldviews function primarily to enhance economic cooperation and efficient resource distribution within societies.",
+      "Worldview defense serves to accurately represent objective reality and has no connection to mortality concerns.",
+      "Cultural worldviews exist solely to reinforce social hierarchies and justify dominance by high-status group members."
+    ],
+    "difficulty": 4,
+    "source_article": "Terror management theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["terror management theory"]
+  },
+  {
+    "question_text": "According to self-affirmation theory, how does affirming an important personal value affect responses to threatening information?",
+    "correct_answer": "Affirming a core value restores self-integrity, reducing the need for defensive processing of threatening information.",
+    "distractors": [
+      "Self-affirmation increases anxiety about the threat, motivating individuals to seek additional confirming evidence immediately.",
+      "Affirming a value makes people more likely to reject all new information regardless of its threatening nature.",
+      "Self-affirmation works by suppressing conscious awareness of the threat without altering underlying defensive motivations."
+    ],
+    "difficulty": 4,
+    "source_article": "Self-affirmation theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["self-affirmation theory"]
+  },
+  {
+    "question_text": "In construal level theory, how does increasing psychological distance affect mental representation of events?",
+    "correct_answer": "Greater psychological distance leads to more abstract, high-level construals that emphasize essential and superordinate features.",
+    "distractors": [
+      "Greater distance produces more concrete and detailed representations because distant events require careful contingency planning.",
+      "Psychological distance has no systematic effect on mental representation, affecting only emotional intensity of judgments.",
+      "Increased distance creates dual representations that are simultaneously abstract and concrete in equal proportion."
+    ],
+    "difficulty": 4,
+    "source_article": "Construal level theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["construal level theory"]
+  },
+  {
+    "question_text": "What does system justification theory predict about disadvantaged group members' attitudes toward the existing social order?",
+    "correct_answer": "Even disadvantaged group members are motivated to perceive existing social and economic arrangements as fair and legitimate.",
+    "distractors": [
+      "Disadvantaged members always reject the system as illegitimate and consistently support radical structural social change.",
+      "Low-status individuals justify the system only after receiving direct material compensation from high-status groups.",
+      "Disadvantaged groups evaluate the system accurately and show neither bias toward nor against existing arrangements."
+    ],
+    "difficulty": 4,
+    "source_article": "System justification theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["system justification theory"]
+  },
+  {
+    "question_text": "What is a major methodological criticism of the Implicit Association Test as a measure of prejudice?",
+    "correct_answer": "The IAT shows limited test-retest reliability and weak predictive validity for individual-level discriminatory behavior.",
+    "distractors": [
+      "The IAT is criticized only because it takes too long to administer and participants find the task boring.",
+      "The IAT perfectly predicts overt discriminatory behavior, making it redundant with explicit attitude measures.",
+      "Researchers object to the IAT solely because it was developed without any grounding in psychological theory."
+    ],
+    "difficulty": 4,
+    "source_article": "Implicit-association test",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["implicit association test"]
+  },
+  {
+    "question_text": "In social dominance theory, what role do legitimizing myths play in maintaining group-based hierarchies?",
+    "correct_answer": "Legitimizing myths are consensual ideologies that justify and sustain unequal resource distribution between dominant and subordinate groups.",
+    "distractors": [
+      "Legitimizing myths are fictional historical narratives that subordinate groups create to explain their disadvantaged social position.",
+      "They are objective scientific theories that accurately describe innate biological differences between social groups.",
+      "Legitimizing myths function exclusively within dominant groups and have no influence on subordinate group members' beliefs."
+    ],
+    "difficulty": 4,
+    "source_article": "Social dominance theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["social dominance theory"]
+  },
+  {
+    "question_text": "According to Bandura, which cognitive mechanism of moral disengagement redefines harmful conduct as serving a moral purpose?",
+    "correct_answer": "Moral justification reconstrues harmful behavior as personally and socially acceptable by framing it as serving worthy ends.",
+    "distractors": [
+      "Dehumanization strips victims of human qualities so perpetrators no longer view them as deserving moral consideration.",
+      "Displacement of responsibility shifts blame to authorities, reducing the perpetrator's sense of personal moral agency.",
+      "Diffusion of responsibility distributes blame across group members so no single individual feels personally accountable."
+    ],
+    "difficulty": 4,
+    "source_article": "Moral disengagement",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["moral disengagement"]
+  },
+  {
+    "question_text": "In Higgins's regulatory focus theory, how do promotion-focused and prevention-focused orientations differ in goal pursuit?",
+    "correct_answer": "Promotion focus pursues gains and ideals with eager strategies; prevention focus avoids losses and meets obligations with vigilant strategies.",
+    "distractors": [
+      "Promotion focus avoids all risks while prevention focus actively seeks high-risk opportunities for maximum reward.",
+      "Both orientations use identical strategies but differ only in the speed at which goals are pursued.",
+      "Promotion focus applies exclusively to career goals while prevention focus applies only to health-related decisions."
+    ],
+    "difficulty": 4,
+    "source_article": "Regulatory focus theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["regulatory focus theory"]
+  },
+  {
+    "question_text": "According to objectification theory, what psychological consequence results from chronic self-objectification?",
+    "correct_answer": "Habitual body surveillance leads to increased shame, anxiety, reduced flow states, and diminished awareness of internal bodily states.",
+    "distractors": [
+      "Self-objectification reliably increases self-esteem because it motivates individuals to improve their physical appearance continuously.",
+      "Chronic self-objectification produces no measurable psychological effects beyond mild temporary self-consciousness in social settings.",
+      "Self-objectification enhances cognitive performance by directing attention toward external evaluative standards of personal competence."
+    ],
+    "difficulty": 4,
+    "source_article": "Objectification theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["objectification theory"]
+  },
+  {
+    "question_text": "What opposing psychological needs does Brewer's optimal distinctiveness theory propose people balance through group identification?",
+    "correct_answer": "People balance the need for inclusion and belonging against the need for differentiation and uniqueness through group membership.",
+    "distractors": [
+      "People balance the need for material security against the need for social status through competitive resource accumulation.",
+      "Individuals balance the need for cognitive consistency against the need for novel stimulation through attitude change.",
+      "People balance the biological drive for reproduction against the cultural pressure for celibacy through partner selection."
+    ],
+    "difficulty": 4,
+    "source_article": "Optimal distinctiveness theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["optimal distinctiveness theory"]
+  },
+  {
+    "question_text": "What does research on social tuning demonstrate about how interaction goals shape implicit attitudes?",
+    "correct_answer": "People unconsciously shift their implicit attitudes to match those of an interaction partner when motivated to affiliate.",
+    "distractors": [
+      "Social tuning occurs only for explicit attitudes that individuals consciously choose to express during interactions.",
+      "Implicit attitudes are fixed traits that remain completely unaffected by social context or interaction partners.",
+      "People always shift their attitudes in the opposite direction of their interaction partner to maintain uniqueness."
+    ],
+    "difficulty": 4,
+    "source_article": "Social tuning",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["social tuning"]
+  },
+  {
+    "question_text": "In identity-based motivation theory, what happens when a behavior feels identity-incongruent?",
+    "correct_answer": "Identity-incongruent actions feel difficult and are interpreted as meaning the behavior is not for people like oneself.",
+    "distractors": [
+      "Identity-incongruent actions automatically become more appealing because they represent novel experiences worth exploring.",
+      "People always persist with identity-incongruent behaviors because difficulty signals that the activity is especially valuable.",
+      "Identity-incongruent behavior has no effect on motivation because people separate self-concept from daily behavioral choices."
+    ],
+    "difficulty": 4,
+    "source_article": "Identity-based motivation",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["identity-based motivation theory"]
+  }
+]

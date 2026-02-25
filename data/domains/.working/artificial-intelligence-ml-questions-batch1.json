@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Artificial intelligence was formally founded as an academic discipline at a conference held at which institution in 1956?",
+    "correct_answer": "Dartmouth College",
+    "distractors": [
+      "Massachusetts Institute of Technology",
+      "Stanford University",
+      "Carnegie Mellon University"
+    ],
+    "difficulty": 1,
+    "source_article": "Artificial intelligence",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["artificial intelligence"]
+  },
+  {
+    "question_text": "The term 'machine learning' was coined in 1959 by which IBM researcher, who developed a program that learned to play checkers?",
+    "correct_answer": "Arthur Samuel",
+    "distractors": [
+      "John McCarthy",
+      "Marvin Minsky",
+      "Frank Rosenblatt"
+    ],
+    "difficulty": 1,
+    "source_article": "Machine learning",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["machine learning"]
+  },
+  {
+    "question_text": "In a neural network, the output of each artificial neuron is computed by applying what type of function to the weighted sum of its inputs?",
+    "correct_answer": "A nonlinear activation function",
+    "distractors": [
+      "A linear transformation function",
+      "A stochastic sampling function",
+      "A logarithmic scaling function"
+    ],
+    "difficulty": 1,
+    "source_article": "Neural network (machine learning)",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["neural network"]
+  },
+  {
+    "question_text": "In deep learning, the adjective 'deep' refers to what characteristic of the neural network architecture?",
+    "correct_answer": "The use of multiple layers in the network",
+    "distractors": [
+      "The large size of the training dataset",
+      "The high dimensionality of input features",
+      "The extensive duration of the training process"
+    ],
+    "difficulty": 1,
+    "source_article": "Deep learning",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["deep learning"]
+  },
+  {
+    "question_text": "The word 'algorithm' derives from the Latinized name of which 9th-century Persian mathematician?",
+    "correct_answer": "Al-Khwarizmi",
+    "distractors": [
+      "Al-Kindi",
+      "Omar Khayyam",
+      "Ibn al-Haytham"
+    ],
+    "difficulty": 1,
+    "source_article": "Algorithm",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["algorithm"]
+  },
+  {
+    "question_text": "In machine learning, data is typically split into three subsets: a training set, a test set, and which third set used for tuning hyperparameters?",
+    "correct_answer": "A validation set",
+    "distractors": [
+      "A calibration set",
+      "A reference set",
+      "A holdout control set"
+    ],
+    "difficulty": 1,
+    "source_article": "Training, validation, and test data sets",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["training data"]
+  },
+  {
+    "question_text": "Supervised learning requires training data in which each example is paired with what kind of information?",
+    "correct_answer": "A known correct output label",
+    "distractors": [
+      "A reward signal from the environment",
+      "A cluster membership assignment",
+      "An unlabeled feature vector only"
+    ],
+    "difficulty": 1,
+    "source_article": "Supervised learning",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["supervised learning"]
+  },
+  {
+    "question_text": "What distinguishes unsupervised learning from supervised learning in terms of the data it uses?",
+    "correct_answer": "It learns patterns exclusively from unlabeled data",
+    "distractors": [
+      "It learns patterns from data with reward signals",
+      "It learns patterns only from synthetically generated data",
+      "It learns patterns from data with explicit output labels"
+    ],
+    "difficulty": 1,
+    "source_article": "Unsupervised learning",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["unsupervised learning"]
+  },
+  {
+    "question_text": "In machine learning, classification is the task of assigning an input to one of a set of discrete categories. What are the two main subtypes of classification?",
+    "correct_answer": "Binary classification and multiclass classification",
+    "distractors": [
+      "Linear classification and polynomial classification",
+      "Parametric classification and nonparametric classification",
+      "Deterministic classification and probabilistic classification"
+    ],
+    "difficulty": 1,
+    "source_article": "Statistical classification",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["classification"]
+  },
+  {
+    "question_text": "Regression analysis estimates the relationship between a dependent variable and one or more independent variables. What is the most common form of regression?",
+    "correct_answer": "Linear regression",
+    "distractors": [
+      "Logistic regression",
+      "Polynomial regression",
+      "Ridge regression"
+    ],
+    "difficulty": 1,
+    "source_article": "Regression analysis",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["regression"]
+  }
+]

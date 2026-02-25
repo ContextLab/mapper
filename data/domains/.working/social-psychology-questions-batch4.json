@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In Sherif's Robbers Cave experiment, which condition was necessary to reduce the intergroup hostility that had developed between the two groups of boys?",
+    "correct_answer": "Introduction of superordinate goals that required cooperative effort from both groups, such as fixing the shared water supply, was necessary to reduce hostility.",
+    "distractors": [
+      "Introduction of competitive tournaments with equal rewards for both groups, such as shared prize ceremonies, was necessary to reduce hostility.",
+      "Physical separation of the two groups into isolated cabins for an extended cooling-off period was necessary to reduce hostility.",
+      "Introduction of an authoritative camp counselor who imposed strict punishments for intergroup aggression was necessary to reduce hostility."
+    ],
+    "difficulty": 3,
+    "source_article": "Realistic conflict theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["realistic conflict theory"]
+  },
+  {
+    "question_text": "According to Bem's self-perception theory, how do people form attitudes when they have no strong prior attitude and their internal cues are ambiguous?",
+    "correct_answer": "They infer their attitudes by observing their own overt behavior and the circumstances in which it occurs, much as an outside observer would.",
+    "distractors": [
+      "They infer their attitudes by recalling the emotional arousal they experienced during the behavior, relying on physiological feedback rather than behavioral cues.",
+      "They infer their attitudes by consulting the opinions of peers and adopting the most socially acceptable position available in their group.",
+      "They infer their attitudes by engaging in systematic logical analysis of the costs and benefits associated with each possible position on the issue."
+    ],
+    "difficulty": 3,
+    "source_article": "Self-perception theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["self-perception theory"]
+  },
+  {
+    "question_text": "Festinger's social comparison theory proposes that people compare themselves to others primarily to satisfy which fundamental drive?",
+    "correct_answer": "The drive to accurately evaluate their own opinions and abilities, especially when objective, nonsocial means of evaluation are unavailable.",
+    "distractors": [
+      "The drive to enhance their self-esteem by consistently seeking out individuals who are performing worse than themselves.",
+      "The drive to conform to group norms by aligning their opinions and abilities with the most common position held by their peers.",
+      "The drive to establish dominance hierarchies by determining where they rank relative to the most successful individuals they know."
+    ],
+    "difficulty": 3,
+    "source_article": "Social comparison theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["social comparison theory"]
+  },
+  {
+    "question_text": "How was the original 1939 frustration-aggression hypothesis by Dollard and colleagues later revised by Miller?",
+    "correct_answer": "Miller softened the original claim, proposing that frustration creates a readiness for aggression but that aggression is only one of several possible responses.",
+    "distractors": [
+      "The original claim that frustration always leads to aggression was strengthened; Miller's revision stated that frustration invariably produces physical violence unless the individual is physically restrained.",
+      "The original claim that frustration always leads to aggression was replaced; Miller's revision stated that aggression is entirely learned through operant conditioning and frustration plays no causal role.",
+      "The original claim that frustration always leads to aggression was inverted; Miller's revision stated that aggression is the cause of frustration rather than its consequence."
+    ],
+    "difficulty": 3,
+    "source_article": "Frustration\u2013aggression hypothesis",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["frustration-aggression hypothesis"]
+  },
+  {
+    "question_text": "What is diffusion of responsibility, and how does it explain reduced helping behavior as group size increases?",
+    "correct_answer": "Each bystander feels less personal obligation to act because responsibility is subjectively divided among all observers present, reducing any single person's likelihood of helping.",
+    "distractors": [
+      "Each individual feels increased personal responsibility to act but becomes paralyzed by conflicting strategies, so the time to decide on the best approach delays intervention.",
+      "Each individual feels less capable of providing effective help because they assume others present are more qualified, so perceived competence rather than responsibility decreases.",
+      "Each individual feels heightened social anxiety from being observed by others, so fear of embarrassment rather than divided responsibility inhibits helping behavior."
+    ],
+    "difficulty": 3,
+    "source_article": "Diffusion of responsibility",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["diffusion of responsibility"]
+  },
+  {
+    "question_text": "According to Allport's contact hypothesis, which set of conditions must be present for intergroup contact to effectively reduce prejudice?",
+    "correct_answer": "Equal status between groups, cooperative interaction toward common goals, and support from social or institutional authorities must all be present.",
+    "distractors": [
+      "Numerical balance between groups, competitive interaction toward individual goals, and absence of institutional oversight must all be present.",
+      "Physical proximity between groups, minimal verbal interaction to avoid conflict, and leadership by a neutral mediator must all be present.",
+      "Economic interdependence between groups, hierarchical role assignment to maintain order, and media coverage of the contact events must all be present."
+    ],
+    "difficulty": 3,
+    "source_article": "Contact hypothesis",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["contact hypothesis"]
+  },
+  {
+    "question_text": "The foot-in-the-door technique achieves compliance by first securing agreement to a small request before making a larger one. Which theory best explains why this technique works?",
+    "correct_answer": "Self-perception theory: after agreeing to the small request, individuals infer they are the type of person who supports such causes and act consistently.",
+    "distractors": [
+      "Cognitive dissonance theory: after refusing the small request, individuals experience discomfort and compensate by agreeing to the larger request to reduce the dissonance.",
+      "Social exchange theory: after agreeing to the small request, individuals calculate that the larger request offers a greater reward-to-cost ratio and comply for material benefit.",
+      "Reactance theory: after being presented with the small request, individuals feel their freedom is threatened and comply with the larger request to restore their sense of autonomy."
+    ],
+    "difficulty": 3,
+    "source_article": "Foot-in-the-door technique",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["foot-in-the-door technique"]
+  },
+  {
+    "question_text": "Social exchange theory models interpersonal relationships using an economic framework. According to Homans, what fundamentally governs whether a social interaction will be repeated?",
+    "correct_answer": "Whether the rewards of the interaction outweigh its costs; people continue relationships in which they experience a net positive outcome from the exchange.",
+    "distractors": [
+      "Whether the interaction conforms to culturally prescribed norms; people continue relationships only when both parties fulfill their socially assigned roles.",
+      "Whether the interaction involves equal contributions from both parties; people continue relationships only when the exchange of resources is perfectly symmetrical.",
+      "Whether the interaction produces novel experiences; people continue relationships primarily when they provide new and stimulating activities rather than familiar rewards."
+    ],
+    "difficulty": 3,
+    "source_article": "Social exchange theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["social exchange theory"]
+  },
+  {
+    "question_text": "Terror management theory, developed by Greenberg, Solomon, and Pyszczynski, predicts that reminding individuals of their own mortality will produce which specific psychological response?",
+    "correct_answer": "Individuals bolster and defend their cultural worldview more vigorously, showing increased favoritism toward in-group members and hostility toward worldview-threatening out-group members.",
+    "distractors": [
+      "Individuals will abandon their cultural worldview in favor of a universal humanistic outlook, showing increased tolerance toward all groups regardless of shared beliefs.",
+      "Individuals will suppress all thoughts related to cultural identity and retreat into purely rational decision-making, showing decreased emotional responsiveness in social judgments.",
+      "Individuals will adopt the cultural worldview of whichever group is most dominant in their immediate environment, showing increased conformity regardless of personal values."
+    ],
+    "difficulty": 4,
+    "source_article": "Terror management theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["terror management theory"]
+  },
+  {
+    "question_text": "According to Steele's self-affirmation theory, how can affirming an important personal value in one domain reduce defensiveness when a person encounters a threat in a different domain?",
+    "correct_answer": "The self-system seeks global integrity, so affirming a valued identity in one area restores overall self-worth and reduces the need to defend against the threat.",
+    "distractors": [
+      "Because the self-system compartmentalizes each domain independently, affirming a valued identity in one area blocks awareness of the threat in the other domain through perceptual suppression.",
+      "Because the self-system responds only to the most recent evaluative information, affirming a valued identity in one area replaces the threatening information with positive content in working memory.",
+      "Because the self-system prioritizes social approval above all else, affirming a valued identity in one area signals group belonging and eliminates the social consequences of the threat."
+    ],
+    "difficulty": 4,
+    "source_article": "Self-affirmation",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["self-affirmation theory"]
+  }
+]

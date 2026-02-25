@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In the DSM-5, borderline personality disorder is grouped into which personality disorder cluster, and what behavioral theme characterizes that cluster?",
+    "correct_answer": "Cluster B, characterized by dramatic, emotional, and erratic behaviors.",
+    "distractors": [
+      "Cluster A, characterized by odd, eccentric thinking and social withdrawal.",
+      "Cluster C, characterized by anxious, fearful avoidance and excessive dependence on others.",
+      "Cluster D, characterized by cognitive rigidity, compulsive rule-following, and restricted affect."
+    ],
+    "difficulty": 2,
+    "source_article": "Borderline personality disorder",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["borderline personality disorder"]
+  },
+  {
+    "question_text": "The DSM-5 identifies three presentations of ADHD. Which option correctly names all three?",
+    "correct_answer": "Predominantly inattentive, predominantly hyperactive-impulsive, and combined presentation.",
+    "distractors": [
+      "Predominantly anxious, predominantly disorganized, and combined presentation.",
+      "Predominantly inattentive, predominantly oppositional, and mixed presentation.",
+      "Predominantly hyperactive, predominantly conduct-disordered, and unspecified presentation."
+    ],
+    "difficulty": 2,
+    "source_article": "Attention deficit hyperactivity disorder",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["ADHD"]
+  },
+  {
+    "question_text": "Which type of exposure therapy involves deliberately inducing feared bodily sensations, such as a racing heart or shortness of breath, to reduce anxiety about those physical symptoms?",
+    "correct_answer": "Interoceptive exposure, which targets feared internal physiological sensations.",
+    "distractors": [
+      "In vivo exposure, which involves direct real-life confrontation with an external feared object or situation.",
+      "Imaginal exposure, which involves vividly visualizing a feared scenario while guided by the therapist.",
+      "Flooding, which involves immediate prolonged contact with the most intensely feared external stimulus."
+    ],
+    "difficulty": 2,
+    "source_article": "Exposure therapy",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["exposure therapy"]
+  },
+  {
+    "question_text": "In cognitive behavioral therapy, the cognitive distortion in which a person views situations in only two extreme categories with no middle ground is called what?",
+    "correct_answer": "All-or-nothing thinking, also known as black-and-white or polarized thinking.",
+    "distractors": [
+      "Catastrophizing, in which a person assumes the worst possible outcome is inevitable.",
+      "Overgeneralization, in which a single negative event is seen as a never-ending pattern of defeat.",
+      "Emotional reasoning, in which a person assumes feelings accurately reflect objective reality."
+    ],
+    "difficulty": 2,
+    "source_article": "Cognitive distortion",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["cognitive distortion"]
+  },
+  {
+    "question_text": "A clinical psychologist administers the MMPI-2 and the WAIS-IV to a client. What types of functioning do these two instruments primarily assess, respectively?",
+    "correct_answer": "The MMPI-2 assesses personality and psychopathology; the WAIS-IV assesses cognitive intelligence.",
+    "distractors": [
+      "The MMPI-2 assesses neurological impairment; the WAIS-IV assesses vocational aptitude and interests.",
+      "The MMPI-2 assesses developmental milestones; the WAIS-IV assesses adaptive behavioral functioning.",
+      "The MMPI-2 assesses projective unconscious processes; the WAIS-IV assesses academic achievement levels."
+    ],
+    "difficulty": 2,
+    "source_article": "Psychological evaluation",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["psychological assessment"]
+  },
+  {
+    "question_text": "Selective serotonin reuptake inhibitors (SSRIs) are the most widely prescribed class of antidepressants. What is their primary pharmacological mechanism?",
+    "correct_answer": "They block the reuptake of serotonin into presynaptic neurons, increasing serotonin availability in the synapse.",
+    "distractors": [
+      "They inhibit the enzyme monoamine oxidase, preventing the breakdown of serotonin, norepinephrine, and dopamine.",
+      "They block postsynaptic dopamine D2 receptors, reducing dopaminergic overactivity in mesolimbic pathways.",
+      "They enhance gamma-aminobutyric acid activity by binding to GABA-A receptor sites and increasing chloride conductance."
+    ],
+    "difficulty": 2,
+    "source_article": "Antidepressant",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["antidepressant"]
+  },
+  {
+    "question_text": "Systematic desensitization, developed by Joseph Wolpe, relies on the principle of reciprocal inhibition. What does this principle state about anxiety and relaxation?",
+    "correct_answer": "Anxiety and relaxation are mutually incompatible responses, so inducing relaxation inhibits the anxiety response.",
+    "distractors": [
+      "Anxiety is extinguished when the conditioned stimulus is repeatedly presented without the unconditioned stimulus over time.",
+      "Anxiety decreases only when a client cognitively reappraises the threatening stimulus as non-dangerous through guided questioning.",
+      "Anxiety habituates automatically through prolonged continuous exposure without any concurrent relaxation training."
+    ],
+    "difficulty": 3,
+    "source_article": "Systematic desensitization",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["systematic desensitization"]
+  },
+  {
+    "question_text": "Many DSM-5 diagnoses use a polythetic criterion set. What does a polythetic approach to diagnostic criteria mean in practice?",
+    "correct_answer": "A diagnosis requires meeting a minimum threshold from a larger list of criteria, so not every criterion must be present.",
+    "distractors": [
+      "A diagnosis requires that every listed criterion be present, making the criteria both necessary and sufficient.",
+      "A diagnosis is assigned dimensionally on a continuous severity scale without any categorical threshold.",
+      "A diagnosis is confirmed only through biological markers such as neuroimaging or genetic testing results."
+    ],
+    "difficulty": 3,
+    "source_article": "Medical diagnosis",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["diagnostic criteria"]
+  },
+  {
+    "question_text": "In motivational interviewing, the acronym OARS represents the four core communication skills. What does OARS stand for?",
+    "correct_answer": "Open-ended questions, Affirmations, Reflective listening, and Summaries.",
+    "distractors": [
+      "Observation, Assessment, Reframing, and Solution-focused questioning.",
+      "Outcome setting, Active listening, Reinforcement, and Socratic dialogue.",
+      "Orientation, Agenda-setting, Rapport-building, and Structured feedback."
+    ],
+    "difficulty": 3,
+    "source_article": "Motivational interviewing",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["motivational interviewing"]
+  },
+  {
+    "question_text": "Dialectical behavior therapy, developed by Marsha Linehan, is organized around four core skill modules. Which option correctly lists all four modules?",
+    "correct_answer": "Mindfulness, distress tolerance, emotion regulation, and interpersonal effectiveness.",
+    "distractors": [
+      "Cognitive restructuring, behavioral activation, exposure practice, and relapse prevention.",
+      "Mindfulness, cognitive defusion, values clarification, and committed action.",
+      "Affect identification, interpersonal analysis, schema modification, and limited reparenting."
+    ],
+    "difficulty": 3,
+    "source_article": "Dialectical behavior therapy",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["dialectical behavior therapy"]
+  }
+]

@@ -1,0 +1,652 @@
+[
+  {
+    "question_text": "What is the primary characteristic of depression as a clinical condition?",
+    "correct_answer": "A persistent low mood and loss of interest or pleasure in activities that causes significant functional impairment.",
+    "distractors": [
+      "A sudden onset of intense fear accompanied by physical symptoms such as chest pain and shortness of breath.",
+      "A pattern of unstable interpersonal relationships and marked impulsivity beginning in early adulthood.",
+      "A chronic state of elevated energy and grandiosity alternating with periods of normal functioning."
+    ],
+    "difficulty": 1,
+    "source_article": "Depression (mood)",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["depression"]
+  },
+  {
+    "question_text": "What best describes anxiety in clinical psychology?",
+    "correct_answer": "An emotional state characterized by excessive worry, tension, and physiological arousal in response to perceived threats.",
+    "distractors": [
+      "A cognitive deficit involving persistent difficulty with attention, memory, and executive functioning across settings.",
+      "A perceptual disturbance in which individuals experience sensory phenomena without any corresponding external stimulus.",
+      "A behavioral pattern of compulsive engagement with substances or activities despite clearly harmful consequences."
+    ],
+    "difficulty": 1,
+    "source_article": "Anxiety",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["anxiety"]
+  },
+  {
+    "question_text": "What is psychotherapy?",
+    "correct_answer": "The use of psychological methods to help individuals change behavior, thoughts, or emotions and improve well-being.",
+    "distractors": [
+      "The administration of pharmacological agents targeting neurotransmitter systems to alleviate psychiatric symptoms.",
+      "The surgical alteration of brain structures to reduce symptoms of severe and treatment-resistant mental illness.",
+      "The application of electrical stimulation to specific brain regions to modulate neural circuit activity."
+    ],
+    "difficulty": 1,
+    "source_article": "Psychotherapy",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["therapy"]
+  },
+  {
+    "question_text": "What does the term mental illness refer to?",
+    "correct_answer": "A condition affecting mood, thinking, or behavior that causes significant distress or impairment in functioning.",
+    "distractors": [
+      "A neurological disease caused exclusively by structural damage to brain tissue from injury or infection.",
+      "A temporary emotional reaction to a stressful life event that resolves without any professional intervention.",
+      "A personality trait reflecting individual differences in temperament that falls within normal psychological variation."
+    ],
+    "difficulty": 1,
+    "source_article": "Mental disorder",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["mental illness"]
+  },
+  {
+    "question_text": "What is post-traumatic stress disorder (PTSD)?",
+    "correct_answer": "A disorder involving intrusive memories, hyperarousal, and avoidance behaviors following exposure to a traumatic event.",
+    "distractors": [
+      "A mood disorder characterized by alternating episodes of extreme elation and severe depressive symptoms.",
+      "A personality disorder marked by pervasive distrust and suspiciousness of others' motives and intentions.",
+      "A dissociative condition in which an individual develops two or more distinct personality states."
+    ],
+    "difficulty": 1,
+    "source_article": "Post-traumatic stress disorder",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["PTSD"]
+  },
+  {
+    "question_text": "What defines a phobia in clinical psychology?",
+    "correct_answer": "An intense, irrational fear of a specific object or situation that is disproportionate to actual danger.",
+    "distractors": [
+      "A generalized pattern of excessive worry about multiple life domains persisting for at least six months.",
+      "A recurrent intrusive thought that causes marked anxiety and prompts repetitive ritualistic behavioral responses.",
+      "A sudden episode of overwhelming panic accompanied by cardiovascular and respiratory distress symptoms."
+    ],
+    "difficulty": 1,
+    "source_article": "Phobia",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["phobia"]
+  },
+  {
+    "question_text": "What is stress as understood in clinical psychology?",
+    "correct_answer": "A physiological and psychological response to demands that challenge or exceed an individual's coping resources.",
+    "distractors": [
+      "A chronic psychiatric condition characterized by persistent hallucinations, delusions, and disorganized cognitive processes.",
+      "A learned behavioral pattern in which individuals seek external validation to maintain their self-worth.",
+      "A neurodevelopmental difference in sensory processing that affects social communication from early childhood."
+    ],
+    "difficulty": 1,
+    "source_article": "Stress (biology)",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["stress"]
+  },
+  {
+    "question_text": "What is psychological trauma?",
+    "correct_answer": "Emotional and psychological harm resulting from exposure to highly distressing or life-threatening events.",
+    "distractors": [
+      "A progressive decline in cognitive abilities caused by neurodegeneration in the frontal and temporal lobes.",
+      "A physical injury to the brain resulting from external mechanical force such as a blow.",
+      "A developmental delay in acquiring language and social skills during the first years of life."
+    ],
+    "difficulty": 1,
+    "source_article": "Psychological trauma",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["trauma"]
+  },
+  {
+    "question_text": "What best describes addiction?",
+    "correct_answer": "A chronic condition involving compulsive engagement with a substance or behavior despite harmful consequences.",
+    "distractors": [
+      "A temporary physiological dependence on a medication that resolves gradually after the substance is discontinued.",
+      "A deliberate pattern of antisocial conduct motivated by the desire for financial or social gain.",
+      "A neurological syndrome caused by vitamin deficiency that impairs memory and motor coordination permanently."
+    ],
+    "difficulty": 1,
+    "source_article": "Addiction",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["addiction"]
+  },
+  {
+    "question_text": "What characterizes autism spectrum disorder?",
+    "correct_answer": "A neurodevelopmental condition involving differences in social communication, sensory processing, and repetitive behaviors.",
+    "distractors": [
+      "A mood disorder marked by persistent irritability and severe temper outbursts disproportionate to the situation.",
+      "A learning disability specifically affecting reading accuracy, fluency, and comprehension despite adequate intelligence levels.",
+      "A conduct disorder characterized by a persistent pattern of aggression, rule-breaking, and defiance of authority."
+    ],
+    "difficulty": 1,
+    "source_article": "Autism spectrum disorder",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["autism"]
+  },
+  {
+    "question_text": "Why is suicide a central concern in clinical psychology?",
+    "correct_answer": "It is the intentional ending of one's own life, often linked to severe psychiatric distress and treatable conditions.",
+    "distractors": [
+      "It is a form of accidental self-harm that occurs primarily during episodes of substance-induced impaired judgment.",
+      "It is a culturally sanctioned ritual practiced in specific societies that does not involve psychological distress.",
+      "It is a rare event confined to individuals with psychotic disorders and has no relation to mood conditions."
+    ],
+    "difficulty": 1,
+    "source_article": "Suicide",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["suicide"]
+  },
+  {
+    "question_text": "What is a hallucination?",
+    "correct_answer": "A perceptual experience occurring without an external stimulus, such as hearing voices or seeing absent objects.",
+    "distractors": [
+      "A firmly held false belief maintained despite contradictory evidence and not shared by one's cultural group.",
+      "A sudden loss of consciousness followed by repetitive involuntary motor movements lasting several minutes.",
+      "A temporary confusion about personal identity and surroundings caused by metabolic or toxic disturbance."
+    ],
+    "difficulty": 1,
+    "source_article": "Hallucination",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["hallucination"]
+  },
+  {
+    "question_text": "What does self-esteem refer to in clinical psychology?",
+    "correct_answer": "An individual's subjective evaluation of their own worth, influencing vulnerability to depression and anxiety.",
+    "distractors": [
+      "The ability to accurately perceive and regulate one's own emotional states in social interactions.",
+      "A personality trait reflecting the degree to which a person seeks novel and stimulating experiences.",
+      "The cognitive capacity to reflect on one's own thought processes and monitor their accuracy."
+    ],
+    "difficulty": 1,
+    "source_article": "Self-esteem",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["self-esteem"]
+  },
+  {
+    "question_text": "What is cognitive behavioral therapy (CBT)?",
+    "correct_answer": "A structured, evidence-based psychotherapy targeting maladaptive thoughts and behaviors through cognitive restructuring and behavioral techniques.",
+    "distractors": [
+      "A psychodynamic treatment focused on interpreting unconscious conflicts through free association and dream analysis.",
+      "A humanistic therapy emphasizing unconditional positive regard and the client's innate capacity for self-actualization.",
+      "A biomedical intervention combining pharmacotherapy with neurostimulation to treat resistant psychiatric conditions."
+    ],
+    "difficulty": 2,
+    "source_article": "Cognitive behavioral therapy",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["cognitive behavioral therapy"]
+  },
+  {
+    "question_text": "What is the DSM in clinical psychology?",
+    "correct_answer": "The Diagnostic and Statistical Manual of Mental Disorders, a classification system providing standardized criteria for psychiatric diagnoses.",
+    "distractors": [
+      "A comprehensive neuropsychological test battery used to assess cognitive functioning across multiple domains in clinical settings.",
+      "A federal regulatory framework governing the licensing and ethical conduct of mental health professionals nationwide.",
+      "An evidence-based treatment manual specifying session-by-session protocols for delivering cognitive behavioral therapy."
+    ],
+    "difficulty": 2,
+    "source_article": "Diagnostic and Statistical Manual of Mental Disorders",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["DSM"]
+  },
+  {
+    "question_text": "What is psychoanalysis?",
+    "correct_answer": "A theory and treatment originating with Freud that emphasizes unconscious processes, early experiences, and the therapeutic relationship.",
+    "distractors": [
+      "A behavioral approach developed by Skinner that modifies maladaptive actions through systematic reinforcement contingencies.",
+      "A neuroscience-based method using brain imaging to identify neural correlates of psychiatric symptoms for diagnosis.",
+      "A humanistic framework created by Rogers centering on empathic listening and the client's self-directed growth."
+    ],
+    "difficulty": 2,
+    "source_article": "Psychoanalysis",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["psychoanalysis"]
+  },
+  {
+    "question_text": "What are the hallmark symptoms of schizophrenia?",
+    "correct_answer": "Hallucinations, delusions, disorganized thinking, and negative symptoms such as reduced emotional expression and motivation.",
+    "distractors": [
+      "Alternating episodes of mania and depression with periods of stable mood functioning between episodes.",
+      "Persistent patterns of inattention, hyperactivity, and impulsivity beginning in childhood and continuing into adulthood.",
+      "Recurrent panic attacks accompanied by persistent worry about future attacks and avoidance of triggering situations."
+    ],
+    "difficulty": 2,
+    "source_article": "Schizophrenia",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["schizophrenia"]
+  },
+  {
+    "question_text": "What distinguishes bipolar disorder from major depressive disorder?",
+    "correct_answer": "Bipolar disorder involves episodes of mania or hypomania alternating with depression, not just depressive episodes alone.",
+    "distractors": [
+      "Bipolar disorder is caused exclusively by genetic factors, whereas major depressive disorder results from environmental stress.",
+      "Bipolar disorder affects only cognitive functioning, whereas major depressive disorder primarily impairs emotional regulation.",
+      "Bipolar disorder begins exclusively in adolescence, whereas major depressive disorder can onset at any age."
+    ],
+    "difficulty": 2,
+    "source_article": "Bipolar disorder",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["bipolar disorder"]
+  },
+  {
+    "question_text": "What characterizes obsessive-compulsive disorder (OCD)?",
+    "correct_answer": "Persistent intrusive thoughts (obsessions) and repetitive behaviors (compulsions) performed to reduce the resulting anxiety.",
+    "distractors": [
+      "A pervasive pattern of grandiosity, need for admiration, and lack of empathy beginning in early adulthood.",
+      "Recurrent episodes of binge eating followed by compensatory purging behaviors to prevent weight gain.",
+      "Chronic difficulty falling or staying asleep that causes significant daytime impairment and emotional distress."
+    ],
+    "difficulty": 2,
+    "source_article": "Obsessive\u2013compulsive disorder",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["obsessive-compulsive disorder"]
+  },
+  {
+    "question_text": "What are key features of borderline personality disorder?",
+    "correct_answer": "Emotional dysregulation, unstable relationships, identity disturbance, and impulsivity that cause pervasive functional impairment.",
+    "distractors": [
+      "Persistent social withdrawal, flattened affect, and eccentric beliefs without psychotic episodes or emotional volatility.",
+      "A rigid pattern of orderliness, perfectionism, and need for control that limits flexibility and openness.",
+      "Chronic deceitfulness, lack of remorse, and repeated violation of others' rights beginning before age fifteen."
+    ],
+    "difficulty": 2,
+    "source_article": "Borderline personality disorder",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["borderline personality disorder"]
+  },
+  {
+    "question_text": "What are the core symptoms of attention deficit hyperactivity disorder (ADHD)?",
+    "correct_answer": "Inattention, hyperactivity, and impulsivity that impair functioning across multiple settings such as school and work.",
+    "distractors": [
+      "Persistent deficits in social communication and restricted repetitive patterns of behavior and sensory interests.",
+      "Recurrent episodes of marked mood instability with rapid shifts between elation, irritability, and sadness.",
+      "Chronic difficulty with reading accuracy and comprehension despite normal intelligence and adequate educational opportunities."
+    ],
+    "difficulty": 2,
+    "source_article": "Attention deficit hyperactivity disorder",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["ADHD"]
+  },
+  {
+    "question_text": "How does exposure therapy work to treat anxiety disorders?",
+    "correct_answer": "Patients systematically confront feared stimuli in a controlled manner to extinguish conditioned anxiety responses.",
+    "distractors": [
+      "Patients learn to suppress all emotional responses through intensive mindfulness meditation and breathing exercises.",
+      "Therapists prescribe anxiolytic medications while gradually increasing dosages to eliminate physiological arousal symptoms.",
+      "Patients identify and replace irrational beliefs with logical alternatives through structured Socratic dialogue."
+    ],
+    "difficulty": 2,
+    "source_article": "Exposure therapy",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["exposure therapy"]
+  },
+  {
+    "question_text": "What is a cognitive distortion?",
+    "correct_answer": "A systematic error in thinking, such as catastrophizing or all-or-nothing reasoning, that maintains psychological distress.",
+    "distractors": [
+      "A perceptual abnormality in which external stimuli are experienced as distorted in size, shape, or distance.",
+      "A memory deficit in which past events are inaccurately recalled due to neurological damage or aging.",
+      "A language processing impairment that causes difficulty comprehending or producing grammatically correct sentences."
+    ],
+    "difficulty": 2,
+    "source_article": "Cognitive distortion",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["cognitive distortion"]
+  },
+  {
+    "question_text": "What does psychological assessment involve?",
+    "correct_answer": "The systematic collection and interpretation of information about mental functioning using tests, interviews, and observation.",
+    "distractors": [
+      "The exclusive use of brain imaging technologies to identify structural abnormalities underlying psychiatric symptoms.",
+      "The informal clinical impression formed during a single unstructured conversation with the patient.",
+      "The administration of pharmacological challenge tests to determine which medication a patient will respond to."
+    ],
+    "difficulty": 2,
+    "source_article": "Psychological evaluation",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["psychological assessment"]
+  },
+  {
+    "question_text": "What class of medication are antidepressants, and what is their primary use?",
+    "correct_answer": "Medications including SSRIs, SNRIs, and tricyclics used primarily to treat depression and anxiety disorders.",
+    "distractors": [
+      "Stimulant drugs such as amphetamines and methylphenidate prescribed mainly for attention deficit hyperactivity disorder.",
+      "Antipsychotic agents including haloperidol and risperidone used primarily to manage psychotic symptoms and agitation.",
+      "Benzodiazepine sedatives such as diazepam and lorazepam used mainly for acute insomnia and seizure control."
+    ],
+    "difficulty": 2,
+    "source_article": "Antidepressant",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["antidepressant"]
+  },
+  {
+    "question_text": "What defines panic disorder as distinct from other anxiety disorders?",
+    "correct_answer": "Recurrent unexpected panic attacks combined with persistent concern about future attacks or maladaptive behavioral changes.",
+    "distractors": [
+      "Excessive anxiety specifically about social situations where the individual may be scrutinized by others.",
+      "Chronic and pervasive worry about a wide range of everyday concerns lasting at least six months.",
+      "An intense irrational fear triggered exclusively by a specific object or situation such as heights."
+    ],
+    "difficulty": 2,
+    "source_article": "Panic disorder",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["panic disorder"]
+  },
+  {
+    "question_text": "In systematic desensitization, what technique is paired with graded exposure to feared stimuli?",
+    "correct_answer": "Progressive relaxation training, which counteracts the anxiety response through reciprocal inhibition during hierarchical exposure.",
+    "distractors": [
+      "Cognitive restructuring worksheets, which challenge the irrational beliefs underlying each feared stimulus in the hierarchy.",
+      "Positive reinforcement schedules, which reward approach behavior toward feared stimuli with tangible incentives.",
+      "Psychoeducation lectures, which explain the neurobiological mechanisms of fear to reduce anticipatory anxiety."
+    ],
+    "difficulty": 3,
+    "source_article": "Systematic desensitization",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["systematic desensitization"]
+  },
+  {
+    "question_text": "How do polythetic diagnostic criteria function in the DSM classification system?",
+    "correct_answer": "They require a minimum number of symptoms from a larger set, so different patients can meet criteria with different symptom profiles.",
+    "distractors": [
+      "They mandate that every listed symptom must be present for a diagnosis, ensuring complete clinical uniformity across patients.",
+      "They allow clinicians to assign a diagnosis based solely on a single pathognomonic symptom without additional evidence.",
+      "They specify that symptoms must appear in a fixed temporal sequence for the diagnosis to be appropriately assigned."
+    ],
+    "difficulty": 3,
+    "source_article": "Medical diagnosis",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["diagnostic criteria"]
+  },
+  {
+    "question_text": "What are the four core processes of motivational interviewing?",
+    "correct_answer": "Engaging, focusing, evoking, and planning, which collaboratively strengthen a client's intrinsic motivation for change.",
+    "distractors": [
+      "Assessment, formulation, intervention, and evaluation, which structure the standard cognitive behavioral therapy protocol.",
+      "Observation, hypothesis, experimentation, and conclusion, which apply the scientific method to clinical case analysis.",
+      "Rapport, confrontation, interpretation, and termination, which define the stages of traditional psychodynamic therapy."
+    ],
+    "difficulty": 3,
+    "source_article": "Motivational interviewing",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["motivational interviewing"]
+  },
+  {
+    "question_text": "What are the four skill modules taught in dialectical behavior therapy?",
+    "correct_answer": "Mindfulness, distress tolerance, emotion regulation, and interpersonal effectiveness, balancing acceptance with change strategies.",
+    "distractors": [
+      "Cognitive restructuring, behavioral activation, exposure hierarchy, and relapse prevention, targeting depressive thought patterns.",
+      "Free association, dream analysis, transference interpretation, and working through, focusing on unconscious conflict resolution.",
+      "Psychoeducation, social skills training, vocational rehabilitation, and family therapy, addressing chronic psychotic illness."
+    ],
+    "difficulty": 3,
+    "source_article": "Dialectical behavior therapy",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["dialectical behavior therapy"]
+  },
+  {
+    "question_text": "In behavioral assessment, what does a functional analysis identify?",
+    "correct_answer": "The antecedents, behaviors, and consequences that maintain a problem behavior, revealing its underlying function.",
+    "distractors": [
+      "The unconscious defense mechanisms a client uses to protect the ego from anxiety-provoking material.",
+      "The neuroanatomical regions activated during specific cognitive tasks as revealed by functional brain imaging.",
+      "The diagnostic category that best matches a client's presenting symptoms according to DSM criteria."
+    ],
+    "difficulty": 3,
+    "source_article": "Functional analysis (psychology)",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["functional analysis"]
+  },
+  {
+    "question_text": "How does comorbidity most significantly complicate clinical treatment planning?",
+    "correct_answer": "Co-occurring disorders can interact to worsen prognosis, alter treatment response, and require integrated intervention approaches.",
+    "distractors": [
+      "Comorbid conditions always share identical neurobiological substrates, making differential diagnosis entirely unnecessary in practice.",
+      "The presence of a second disorder automatically disqualifies a patient from receiving evidence-based psychotherapy protocols.",
+      "Comorbidity is a statistical artifact of overlapping symptom criteria and has no real clinical treatment implications."
+    ],
+    "difficulty": 3,
+    "source_article": "Comorbidity",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["comorbidity"]
+  },
+  {
+    "question_text": "Why are randomized controlled trials considered the gold standard for evaluating psychotherapy efficacy?",
+    "correct_answer": "Random assignment to treatment or control conditions controls for confounding variables, allowing causal inferences about treatment effects.",
+    "distractors": [
+      "They use large convenience samples that maximize statistical power regardless of how participants are selected.",
+      "They rely on clinician judgment rather than standardized measures, capturing the full complexity of therapy.",
+      "They eliminate the need for ethical oversight because all participants receive some form of active treatment."
+    ],
+    "difficulty": 3,
+    "source_article": "Randomized controlled trial",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["randomized controlled trial"]
+  },
+  {
+    "question_text": "What do neuropsychological tests primarily assess in clinical practice?",
+    "correct_answer": "Specific cognitive functions such as memory, attention, and executive function to identify brain-behavior relationships.",
+    "distractors": [
+      "Personality traits and emotional functioning through self-report questionnaires and projective stimulus interpretation.",
+      "The structural integrity of neural pathways using diffusion tensor imaging and volumetric brain measurements.",
+      "Social functioning and adaptive behavior skills through direct observation in naturalistic community settings."
+    ],
+    "difficulty": 3,
+    "source_article": "Neuropsychological assessment",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["neuropsychological testing"]
+  },
+  {
+    "question_text": "How does a harm reduction approach differ from abstinence-only models in addiction treatment?",
+    "correct_answer": "Harm reduction aims to reduce negative consequences of substance use without requiring complete abstinence as a precondition.",
+    "distractors": [
+      "Harm reduction mandates supervised consumption sites as the sole intervention, rejecting all forms of psychotherapy.",
+      "Harm reduction requires patients to achieve full sobriety before any therapeutic services can begin.",
+      "Harm reduction focuses exclusively on legal substances and does not address illicit drug use at all."
+    ],
+    "difficulty": 3,
+    "source_article": "Harm reduction",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["harm reduction"]
+  },
+  {
+    "question_text": "How does a safety plan differ from a traditional no-harm contract in suicide prevention?",
+    "correct_answer": "A safety plan provides personalized, actionable coping strategies and resources, whereas no-harm contracts merely extract a promise not to self-harm.",
+    "distractors": [
+      "A safety plan is a legally binding document, whereas a no-harm contract is an informal verbal agreement.",
+      "A safety plan is used only after a suicide attempt, whereas no-harm contracts are used for prevention.",
+      "A safety plan focuses exclusively on medication management, whereas no-harm contracts address psychosocial factors."
+    ],
+    "difficulty": 3,
+    "source_article": "Safety planning intervention",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["safety planning"]
+  },
+  {
+    "question_text": "What role do thought records play in cognitive restructuring?",
+    "correct_answer": "They help clients systematically identify, evaluate, and modify maladaptive automatic thoughts using evidence-based Socratic questioning.",
+    "distractors": [
+      "They provide a daily mood rating log that clinicians use solely to track medication response over time.",
+      "They record the content of therapy sessions verbatim for legal documentation and insurance reimbursement purposes.",
+      "They catalog unconscious fantasies revealed during free association for later psychodynamic interpretation by the therapist."
+    ],
+    "difficulty": 3,
+    "source_article": "Cognitive restructuring",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["cognitive restructuring"]
+  },
+  {
+    "question_text": "How does negative reinforcement maintain avoidance behavior in anxiety disorders?",
+    "correct_answer": "Avoidance removes the aversive experience of anxiety, strengthening the avoidance behavior through relief from distress.",
+    "distractors": [
+      "Avoidance is punished by social consequences, which paradoxically increases the frequency of the behavior over time.",
+      "Avoidance introduces a novel positive stimulus that directly rewards the individual for not confronting feared situations.",
+      "Avoidance extinguishes the fear response by preventing any further pairing of the stimulus with aversive outcomes."
+    ],
+    "difficulty": 3,
+    "source_article": "Negative reinforcement",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["negative reinforcement"]
+  },
+  {
+    "question_text": "What is the core principle of a transdiagnostic approach to psychotherapy?",
+    "correct_answer": "It targets shared psychological processes like avoidance and emotional dysregulation across multiple disorders rather than treating each diagnosis separately.",
+    "distractors": [
+      "It assigns a unique evidence-based protocol for every DSM diagnosis to ensure maximum specificity of clinical intervention.",
+      "It relies exclusively on pharmacotherapy to address the common neurochemical imbalances underlying all psychiatric conditions.",
+      "It eliminates the diagnostic assessment phase entirely, treating all presenting symptoms with a single standardized technique."
+    ],
+    "difficulty": 4,
+    "source_article": "Transdiagnostic cognitive behavioral therapy",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["transdiagnostic approach"]
+  },
+  {
+    "question_text": "What distinguishes the NIMH Research Domain Criteria (RDoC) framework from the DSM?",
+    "correct_answer": "RDoC organizes psychopathology around dimensions of behavior and neurobiology rather than categorical diagnostic labels used by the DSM.",
+    "distractors": [
+      "RDoC provides specific clinical cutoff scores for each disorder to improve diagnostic reliability beyond what the DSM offers.",
+      "RDoC replaces all behavioral observation with genetic testing as the sole basis for classifying mental disorders.",
+      "RDoC uses the same categorical system as the DSM but adds neuroimaging requirements for each existing diagnosis."
+    ],
+    "difficulty": 4,
+    "source_article": "Research Domain Criteria",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["Research Domain Criteria"]
+  },
+  {
+    "question_text": "In mentalization-based treatment, what capacity is the primary therapeutic target?",
+    "correct_answer": "The ability to understand and interpret behavior in terms of underlying mental states in oneself and others.",
+    "distractors": [
+      "The capacity to inhibit impulsive motor responses during emotionally charged interpersonal conflict situations.",
+      "The ability to retrieve and accurately narrate autobiographical memories from early childhood experiences.",
+      "The skill of identifying and labeling discrete emotional states using a standardized clinical vocabulary."
+    ],
+    "difficulty": 4,
+    "source_article": "Mentalization-based treatment",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["mentalization-based treatment"]
+  },
+  {
+    "question_text": "What theoretical mechanism does prolonged exposure therapy rely on to reduce PTSD symptoms?",
+    "correct_answer": "Emotional processing theory, which posits that repeated activation of fear structures allows corrective information to modify pathological associations.",
+    "distractors": [
+      "Classical conditioning extinction, which assumes trauma memories are permanently erased through repeated unreinforced stimulus presentations.",
+      "Cognitive appraisal theory, which requires patients to consciously reinterpret the trauma as a positive growth experience.",
+      "Neuroplasticity-driven reconsolidation, which uses pharmacological agents to chemically destabilize and erase traumatic memory traces."
+    ],
+    "difficulty": 4,
+    "source_article": "Prolonged exposure therapy",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["prolonged exposure therapy"]
+  },
+  {
+    "question_text": "What is an endophenotype in psychiatric genetics research?",
+    "correct_answer": "A measurable biological or psychological marker intermediate between genes and clinical symptoms on the pathway to a disorder.",
+    "distractors": [
+      "A clinical symptom that appears exclusively in first-degree relatives of patients but never in the patients themselves.",
+      "A genetic mutation that directly causes a psychiatric disorder through a single-gene Mendelian inheritance pattern.",
+      "A brain imaging finding that is present only during active symptom episodes and absent during remission periods."
+    ],
+    "difficulty": 4,
+    "source_article": "Endophenotype",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["endophenotype"]
+  },
+  {
+    "question_text": "In schema therapy, what are early maladaptive schemas?",
+    "correct_answer": "Deeply held, self-defeating patterns originating from unmet childhood needs that organize perception and guide dysfunctional behavior across the lifespan.",
+    "distractors": [
+      "Transient cognitive errors that arise only during acute depressive episodes and resolve completely with symptom remission.",
+      "Conscious behavioral strategies deliberately adopted in adulthood to cope with specific workplace and relationship stressors.",
+      "Neurological reflexes hardwired at birth that determine temperament and remain entirely unchanged by life experience."
+    ],
+    "difficulty": 4,
+    "source_article": "Schema therapy",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["schema therapy"]
+  },
+  {
+    "question_text": "What are the six core processes of the ACT hexaflex model?",
+    "correct_answer": "Acceptance, defusion, present-moment awareness, self-as-context, values, and committed action, collectively promoting psychological flexibility.",
+    "distractors": [
+      "Identification, evaluation, restructuring, testing, integration, and maintenance, collectively targeting maladaptive core beliefs.",
+      "Engagement, exploration, insight, corrective experience, internalization, and termination, collectively guiding psychodynamic change.",
+      "Assessment, formulation, goal-setting, intervention, monitoring, and relapse prevention, collectively structuring behavioral treatment."
+    ],
+    "difficulty": 4,
+    "source_article": "Acceptance and commitment therapy",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["acceptance and commitment therapy"]
+  },
+  {
+    "question_text": "How are latent variable models used in clinical psychology research?",
+    "correct_answer": "They infer unobserved psychological constructs from observed indicators, testing whether disorders are better modeled as dimensional or categorical.",
+    "distractors": [
+      "They directly measure brain activity during clinical interviews to objectively confirm diagnostic categories without self-report.",
+      "They track observable behavioral frequencies in natural settings to determine treatment dosage and session scheduling.",
+      "They randomly assign patients to treatment groups to control for confounding variables in psychotherapy outcome studies."
+    ],
+    "difficulty": 4,
+    "source_article": "Latent variable model",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["latent variable modeling"]
+  },
+  {
+    "question_text": "In Gross's process model, what distinguishes antecedent-focused from response-focused emotion regulation strategies?",
+    "correct_answer": "Antecedent-focused strategies like reappraisal intervene before the emotional response is fully generated, while response-focused strategies like suppression modulate it afterward.",
+    "distractors": [
+      "Antecedent-focused strategies target only positive emotions, while response-focused strategies target only negative emotional experiences.",
+      "Antecedent-focused strategies are automatic and unconscious, while response-focused strategies always require deliberate conscious effort.",
+      "Antecedent-focused strategies involve pharmacological intervention, while response-focused strategies rely exclusively on psychotherapy techniques."
+    ],
+    "difficulty": 4,
+    "source_article": "Emotion regulation",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["emotion regulation"]
+  },
+  {
+    "question_text": "What are the three phylogenetically ordered neural circuits proposed by polyvagal theory?",
+    "correct_answer": "The ventral vagal complex supporting social engagement, the sympathetic system enabling fight-or-flight, and the dorsal vagal complex mediating immobilization.",
+    "distractors": [
+      "The prefrontal cortex governing executive function, the amygdala processing fear, and the hippocampus consolidating emotional memories.",
+      "The serotonergic system regulating mood, the dopaminergic system driving reward, and the noradrenergic system controlling arousal.",
+      "The central nervous system processing cognition, the peripheral nervous system relaying sensation, and the enteric nervous system managing digestion."
+    ],
+    "difficulty": 4,
+    "source_article": "Polyvagal theory",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["polyvagal theory"]
+  },
+  {
+    "question_text": "What must be established during psychometric validation of a clinical assessment instrument?",
+    "correct_answer": "Reliability, validity, and sound measurement properties through analyses such as confirmatory factor analysis and criterion validity testing.",
+    "distractors": [
+      "Only face validity, ensuring the instrument appears relevant to test-takers regardless of its statistical measurement properties.",
+      "Exclusively predictive validity against a single gold-standard criterion, without examining internal consistency or factor structure.",
+      "Only interrater reliability between two clinicians, without assessing construct validity or measurement invariance across groups."
+    ],
+    "difficulty": 4,
+    "source_article": "Psychometrics",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["psychometric validation"]
+  },
+  {
+    "question_text": "How does the network theory of psychopathology reconceptualize mental disorders?",
+    "correct_answer": "As networks of directly interacting symptoms that mutually activate and maintain each other, rather than as latent disease entities causing symptoms.",
+    "distractors": [
+      "As discrete biological diseases with single underlying causes that produce symptoms through a straightforward linear causal chain.",
+      "As culturally constructed labels with no empirical basis that should be entirely replaced by dimensional personality descriptions.",
+      "As purely genetic conditions determined at conception that manifest identically regardless of environmental context or life experience."
+    ],
+    "difficulty": 4,
+    "source_article": "Network theory of mental disorders",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["network theory of psychopathology"]
+  }
+]

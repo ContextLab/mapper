@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In the principal-agent problem, what is the term for the divergence between the agent's actions and the principal's best interests?",
+    "correct_answer": "Agency costs, which arise because the agent may pursue self-interested behavior due to asymmetric information and the principal's inability to fully monitor the agent's actions.",
+    "distractors": [
+      "Transaction costs, which arise because the principal must pay brokerage fees each time the agent executes a trade on the principal's behalf.",
+      "Sunk costs, which arise because the principal has already invested resources in hiring the agent and cannot recover those expenditures.",
+      "Opportunity costs, which arise because the principal forgoes alternative investments whenever the agent allocates capital to a specific project."
+    ],
+    "difficulty": 3,
+    "source_article": "Principal–agent problem",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["principal-agent problem"]
+  },
+  {
+    "question_text": "A price ceiling set below the market equilibrium price will most directly cause which of the following effects?",
+    "correct_answer": "A shortage of the good, because the quantity demanded at the ceiling price exceeds the quantity supplied.",
+    "distractors": [
+      "A surplus of the good, because producers will increase output to take advantage of the government-mandated price.",
+      "An increase in the equilibrium price, because consumers will bid up prices in anticipation of future regulation.",
+      "A decrease in demand, because consumers will perceive the price-controlled good as lower quality than unregulated alternatives."
+    ],
+    "difficulty": 3,
+    "source_article": "Price ceiling",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["price ceiling"]
+  },
+  {
+    "question_text": "Revealed preference theory, pioneered by Paul Samuelson in 1938, infers consumer preferences from which of the following?",
+    "correct_answer": "Observed purchasing behavior, on the assumption that a consumer's choices reveal their underlying preferences without requiring direct measurement of utility.",
+    "distractors": [
+      "Responses to hypothetical survey questions about willingness to pay, which allow economists to estimate utility functions directly.",
+      "Laboratory experiments in which consumers rank bundles of goods under controlled conditions without any budget constraint.",
+      "Introspective self-reports of satisfaction levels that consumers submit to government statistical agencies after each purchase."
+    ],
+    "difficulty": 3,
+    "source_article": "Revealed preference",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["revealed preference"]
+  },
+  {
+    "question_text": "A Giffen good violates the law of demand because, when its price rises, the quantity demanded increases. Which mechanism explains this paradox?",
+    "correct_answer": "The good is so strongly inferior that the income effect of the price increase (which raises demand for the cheap staple) more than offsets the substitution effect (which would reduce demand).",
+    "distractors": [
+      "The good is a luxury item whose higher price signals greater quality, causing status-conscious consumers to purchase more of it.",
+      "The good has perfectly elastic supply, so producers flood the market and consumers stockpile units in anticipation of further price increases.",
+      "The good is a complement to a normal good whose price has simultaneously decreased, causing consumers to buy more of both goods together."
+    ],
+    "difficulty": 3,
+    "source_article": "Giffen good",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Giffen good"]
+  },
+  {
+    "question_text": "Compensating variation (CV), introduced by John Hicks in 1939, measures the amount of money needed to do what after a price change?",
+    "correct_answer": "Return the consumer to their original utility level at the new prices, representing the monetary compensation required to offset the welfare impact of the price change.",
+    "distractors": [
+      "Bring the consumer to their new utility level at the old prices, representing the monetary gain the consumer would accept to forgo the price change entirely.",
+      "Equalize the marginal utilities of all goods in the consumer's basket, ensuring that the last dollar spent on each good yields identical satisfaction.",
+      "Restore the original quantities consumed before the price change, regardless of whether the consumer's utility level has increased or decreased."
+    ],
+    "difficulty": 3,
+    "source_article": "Compensating variation",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["compensating variation"]
+  },
+  {
+    "question_text": "In the Stackelberg competition model, developed by Heinrich von Stackelberg in 1934, what distinguishes it from the Cournot duopoly model?",
+    "correct_answer": "One firm (the leader) commits to a quantity first and the other firm (the follower) observes this choice before deciding its own quantity, creating a sequential rather than simultaneous game.",
+    "distractors": [
+      "Both firms set prices simultaneously rather than quantities, and the firm with the lower price captures the entire market demand.",
+      "Firms collude explicitly to maximize joint profits and then divide the resulting monopoly output equally between them.",
+      "Both firms enter the market at the same time but compete on product differentiation rather than on the quantity of a homogeneous good."
+    ],
+    "difficulty": 3,
+    "source_article": "Stackelberg competition",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Stackelberg competition"]
+  },
+  {
+    "question_text": "A natural monopoly arises in an industry primarily because of which cost characteristic?",
+    "correct_answer": "A single firm can supply the entire market at a lower long-run average cost than multiple competing firms, due to high fixed costs and large economies of scale relative to market size.",
+    "distractors": [
+      "A single firm holds an exclusive government patent that legally prevents any other firm from producing the same good for a fixed period.",
+      "A single firm controls the entire supply of a scarce natural resource that no other firm can access or synthesize artificially.",
+      "A single firm has the lowest marginal cost in the industry because it pays its workers below-market wages through monopsony power."
+    ],
+    "difficulty": 3,
+    "source_article": "Natural monopoly",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["natural monopoly"]
+  },
+  {
+    "question_text": "Arrow's impossibility theorem, proved by Kenneth Arrow in 1950, demonstrates which fundamental limitation of ranked-choice voting systems?",
+    "correct_answer": "No ranked-choice voting rule can simultaneously satisfy unrestricted domain, Pareto efficiency, independence of irrelevant alternatives, and non-dictatorship when there are three or more alternatives.",
+    "distractors": [
+      "No ranked-choice voting rule can prevent a candidate who receives fewer than 50 percent of first-place votes from winning the election.",
+      "No ranked-choice voting rule can guarantee that the winning candidate is also the most preferred by the median voter in a one-dimensional policy space.",
+      "No ranked-choice voting rule can produce a transitive social ordering when voters are allowed to express indifference between two or more candidates."
+    ],
+    "difficulty": 4,
+    "source_article": "Arrow's impossibility theorem",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Arrow's impossibility theorem"]
+  },
+  {
+    "question_text": "The 2007 Nobel Memorial Prize in Economic Sciences was awarded to Leonid Hurwicz, Eric Maskin, and Roger Myerson for foundational contributions to which field?",
+    "correct_answer": "Mechanism design theory, which studies how to construct rules or institutions that produce desirable outcomes even when the designer does not know the participants' private information.",
+    "distractors": [
+      "Behavioral economics, which studies how cognitive biases and psychological heuristics cause individuals to deviate from rational decision-making.",
+      "General equilibrium theory, which studies how prices simultaneously clear all markets in an economy with many interacting consumers and producers.",
+      "Public choice theory, which studies how self-interested behavior by politicians and bureaucrats influences government policy decisions."
+    ],
+    "difficulty": 4,
+    "source_article": "Mechanism design",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["mechanism design"]
+  },
+  {
+    "question_text": "What does the Myerson-Satterthwaite theorem establish about bilateral trade under asymmetric information?",
+    "correct_answer": "There is no mechanism that can simultaneously achieve ex-post efficiency, individual rationality, and incentive compatibility in bilateral trade when both the buyer and seller have private valuations drawn from overlapping distributions.",
+    "distractors": [
+      "There is always a posted-price mechanism that achieves full efficiency in bilateral trade as long as the buyer's valuation is drawn from a uniform distribution.",
+      "Any bilateral trade mechanism that satisfies incentive compatibility must also generate a budget surplus that can be redistributed to achieve Pareto improvements.",
+      "Bilateral trade under asymmetric information always converges to the competitive equilibrium price as the number of rounds of bargaining approaches infinity."
+    ],
+    "difficulty": 4,
+    "source_article": "Myerson–Satterthwaite theorem",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Myerson-Satterthwaite theorem"]
+  }
+]

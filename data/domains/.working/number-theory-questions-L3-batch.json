@@ -1,0 +1,80 @@
+[
+  {
+    "question_text": "The Möbius function $\\mu(n)$ is defined for all positive integers. What is $\\mu(30)$, and what property of $30$ determines this value?",
+    "correct_answer": "$\\mu(30) = -1$, because $30 = 2 \\cdot 3 \\cdot 5$ is a product of an odd number (3) of distinct primes",
+    "distractors": [
+      "$\\mu(30) = 1$, because $30 = 2 \\cdot 3 \\cdot 5$ is a product of an even number of distinct prime factors",
+      "$\\mu(30) = 0$, because $30$ is divisible by $6 = 2 \\cdot 3$ and thus contains a repeated prime factor",
+      "$\\mu(30) = -3$, because the Möbius function equals the negative of the count of distinct prime divisors"
+    ],
+    "difficulty": 3,
+    "source_article": "Möbius function",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["Möbius function", "square-free integer", "prime factorization"]
+  },
+  {
+    "question_text": "Fermat's theorem on sums of two squares characterizes which odd primes $p$ can be written as $p = x^2 + y^2$. Which congruence condition is necessary and sufficient?",
+    "correct_answer": "$p \\equiv 1 \\pmod{4}$; such primes are called Pythagorean primes, e.g. $5 = 1^2 + 2^2$ and $13 = 2^2 + 3^2$",
+    "distractors": [
+      "$p \\equiv 3 \\pmod{4}$; such primes are called Pythagorean primes, e.g. $3 = 1^2 + \\sqrt{2}^2$ and $7 = 2^2 + \\sqrt{3}^2$",
+      "$p \\equiv 1 \\pmod{3}$; such primes are called Gaussian primes, e.g. $7 = 1^2 + \\sqrt{6}^2$ and $13 = 2^2 + 3^2$",
+      "$p \\equiv 1 \\pmod{8}$; only this stronger condition guarantees a representation, e.g. $17 = 1^2 + 4^2$ and $41 = 4^2 + 5^2$"
+    ],
+    "difficulty": 3,
+    "source_article": "Fermat's theorem on sums of two squares",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["sum of two squares theorem", "Pythagorean prime", "quadratic residue"]
+  },
+  {
+    "question_text": "The Gaussian integers $\\mathbb{Z}[i]$ have exactly four units. What are they, and what property of their norm characterizes them as units?",
+    "correct_answer": "The units are $1, -1, i, -i$, each having norm $N = 1$, since a Gaussian integer is a unit iff its norm equals $1$",
+    "distractors": [
+      "The units are $1, -1, i, -i, 1+i, 1-i$, each having norm $N \\leq 2$, since units have norm at most $2$",
+      "The units are $1$ and $-1$ only, each having norm $N = 1$, since $i$ and $-i$ lack multiplicative inverses",
+      "The units are $1, -1, i, -i$, each having norm $N = 0$, since units are defined as elements with vanishing norm"
+    ],
+    "difficulty": 3,
+    "source_article": "Gaussian integer",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["Gaussian integer", "norm", "unit in a ring"]
+  },
+  {
+    "question_text": "The $p$-adic absolute value defines a metric on $\\mathbb{Q}$ that satisfies a stronger condition than the triangle inequality. What is this condition called, and what does it state?",
+    "correct_answer": "The ultrametric inequality: $|x + y|_p \\leq \\max(|x|_p,\\, |y|_p)$ for all $x, y \\in \\mathbb{Q}_p$",
+    "distractors": [
+      "The submetric inequality: $|x + y|_p \\geq \\min(|x|_p,\\, |y|_p)$ for all $x, y \\in \\mathbb{Q}_p$",
+      "The ultrametric inequality: $|x + y|_p \\leq |x|_p + |y|_p - |xy|_p$ for all $x, y \\in \\mathbb{Q}_p$",
+      "The Archimedean inequality: $|x + y|_p \\leq |x|_p \\cdot |y|_p$ for all $x, y \\in \\mathbb{Q}_p$"
+    ],
+    "difficulty": 3,
+    "source_article": "p-adic number",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["p-adic number", "ultrametric inequality", "non-Archimedean absolute value"]
+  },
+  {
+    "question_text": "A multiplicative function satisfies $f(ab) = f(a)f(b)$ when $\\gcd(a,b) = 1$. A completely multiplicative function drops the coprimality requirement. Which of these is completely multiplicative?",
+    "correct_answer": "The Liouville function $\\lambda(n) = (-1)^{\\Omega(n)}$, since $\\Omega(ab) = \\Omega(a) + \\Omega(b)$ for all positive integers",
+    "distractors": [
+      "Euler's totient $\\varphi(n)$, since $\\varphi(ab) = \\varphi(a)\\varphi(b)$ holds for all positive integers $a$ and $b$",
+      "The Möbius function $\\mu(n)$, since $\\mu(ab) = \\mu(a)\\mu(b)$ holds for all positive integers $a$ and $b$",
+      "The divisor function $\\sigma(n)$, since $\\sigma(ab) = \\sigma(a)\\sigma(b)$ holds for all positive integers $a$ and $b$"
+    ],
+    "difficulty": 3,
+    "source_article": "Multiplicative function",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["multiplicative function", "completely multiplicative function", "Liouville function"]
+  },
+  {
+    "question_text": "Bertrand's postulate guarantees a prime exists in a specific interval for every integer $n > 1$. What is this interval, and who first proved the result?",
+    "correct_answer": "There is always a prime $p$ with $n < p < 2n$; conjectured by Bertrand in 1845 and proved by Chebyshev in 1852",
+    "distractors": [
+      "There is always a prime $p$ with $n < p < 2n$; conjectured by Bertrand in 1845 and proved by Euler in 1748",
+      "There is always a prime $p$ with $n < p < n^2$; conjectured by Bertrand in 1845 and proved by Chebyshev in 1852",
+      "There is always a prime $p$ with $n < p < 3n/2$; conjectured by Bertrand in 1845 and proved by Chebyshev in 1852"
+    ],
+    "difficulty": 3,
+    "source_article": "Bertrand's postulate",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["Bertrand's postulate", "prime distribution", "Chebyshev's theorem"]
+  }
+]

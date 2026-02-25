@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In linguistics, what is a semantic field, and who introduced the concept in the 1930s?",
+    "correct_answer": "A set of related words grouped under a common conceptual domain, introduced by German linguist Jost Trier.",
+    "distractors": [
+      "A phonological system of vowel contrasts within a single dialect, introduced by Swiss linguist Saussure.",
+      "A grammatical hierarchy of clause types ordered by syntactic complexity, introduced by American linguist Bloomfield.",
+      "A collection of morphological inflection patterns shared across language families, introduced by Danish linguist Hjelmslev."
+    ],
+    "difficulty": 2,
+    "source_article": "Semantic field",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["semantic field"]
+  },
+  {
+    "question_text": "What does prototype theory, developed by Eleanor Rosch, claim about how humans organize categories?",
+    "correct_answer": "Categories are organized around central, typical exemplars rather than strict necessary and sufficient conditions.",
+    "distractors": [
+      "Categories are defined by rigid boundaries where every member shares identical essential and sufficient features.",
+      "Categories arise from statistical frequency counts of how often objects co-occur in natural environments.",
+      "Categories are innate mental structures present at birth that require no learning from sensory experience."
+    ],
+    "difficulty": 2,
+    "source_article": "Prototype theory",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["prototype theory"]
+  },
+  {
+    "question_text": "In linguistics, what is deixis?",
+    "correct_answer": "The use of words whose interpretation depends on context, such as 'I,' 'here,' and 'now.'",
+    "distractors": [
+      "The process of forming new words by combining existing morphemes into novel compound expressions.",
+      "The tendency for speech sounds to change when they occur adjacent to certain neighboring sounds.",
+      "The grammatical rule requiring subjects and verbs to agree in both number and person marking."
+    ],
+    "difficulty": 2,
+    "source_article": "Deixis",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["deixis"]
+  },
+  {
+    "question_text": "In linguistics, what is coreference?",
+    "correct_answer": "When two or more expressions in a text refer to the same entity in the world.",
+    "distractors": [
+      "When two words from different languages share a common historical ancestor and similar form.",
+      "When a single grammatical subject simultaneously governs two or more independent verb phrases.",
+      "When multiple clauses in a compound sentence are joined by a coordinating conjunction."
+    ],
+    "difficulty": 2,
+    "source_article": "Coreference",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["coreference"]
+  },
+  {
+    "question_text": "What is lexical semantics primarily concerned with studying?",
+    "correct_answer": "The meanings of individual words and the systematic meaning relationships between them.",
+    "distractors": [
+      "The rules governing how sentences are structured from phrases and clauses in grammar.",
+      "The physical articulation and acoustic properties of speech sounds across languages.",
+      "The historical origins and evolutionary development of writing systems over centuries."
+    ],
+    "difficulty": 2,
+    "source_article": "Lexical semantics",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["lexical semantics"]
+  },
+  {
+    "question_text": "What is semantic change in linguistics?",
+    "correct_answer": "The evolution of word meanings over time, including processes such as broadening, narrowing, and metaphorical extension.",
+    "distractors": [
+      "The systematic shift in vowel pronunciation across generations, as documented in the Great Vowel Shift.",
+      "The borrowing of syntactic structures from one language into another through sustained bilingual contact.",
+      "The gradual loss of inflectional morphology that transforms a synthetic language into an analytic one."
+    ],
+    "difficulty": 2,
+    "source_article": "Semantic change",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["semantic change"]
+  },
+  {
+    "question_text": "Paul Grice proposed four conversational maxims under his cooperative principle. Which of the following correctly lists all four maxims?",
+    "correct_answer": "Quantity, Quality, Relation, and Manner.",
+    "distractors": [
+      "Clarity, Brevity, Relevance, and Sincerity.",
+      "Truthfulness, Economy, Politeness, and Precision.",
+      "Informativeness, Accuracy, Coherence, and Directness."
+    ],
+    "difficulty": 3,
+    "source_article": "Cooperative principle",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["Grice's maxims"]
+  },
+  {
+    "question_text": "In truth-conditional semantics, how is the meaning of a declarative sentence defined?",
+    "correct_answer": "By the conditions under which the sentence would be true in a given state of the world.",
+    "distractors": [
+      "By the mental images and emotional associations that the sentence evokes in a typical listener.",
+      "By the set of grammatical transformations required to derive the sentence from its deep structure.",
+      "By the frequency with which the sentence appears in naturally occurring spoken and written corpora."
+    ],
+    "difficulty": 3,
+    "source_article": "Truth-conditional semantics",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["truth-conditional semantics"]
+  },
+  {
+    "question_text": "In formal semantics, what does model-theoretic interpretation involve?",
+    "correct_answer": "Evaluating natural language expressions relative to a mathematical model that maps expressions to abstract objects.",
+    "distractors": [
+      "Translating natural language sentences into programming code that a computer can directly compile and execute.",
+      "Classifying natural language utterances into discrete speech act categories based on speaker intention alone.",
+      "Measuring natural language complexity by counting the total number of syntactic transformations per sentence."
+    ],
+    "difficulty": 3,
+    "source_article": "Formal semantics (natural language)",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["model-theoretic semantics"]
+  },
+  {
+    "question_text": "In linguistics, what are thematic roles such as Agent, Patient, and Theme used to describe?",
+    "correct_answer": "The semantic relationships that noun phrases bear to the action or state expressed by a verb.",
+    "distractors": [
+      "The morphological inflections that verbs undergo to indicate tense, mood, and grammatical aspect.",
+      "The pragmatic functions that discourse markers perform to organize conversational turn-taking sequences.",
+      "The phonological processes that govern how consonant clusters are simplified in rapid speech."
+    ],
+    "difficulty": 3,
+    "source_article": "Thematic relation",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["thematic roles"]
+  }
+]

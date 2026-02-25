@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "The Compromise of 1850 replaced the Missouri Compromise's geographic line with a new principle for determining slavery's status in the Utah and New Mexico territories. What was this principle, and why did it prove so controversial?",
+    "correct_answer": "Popular sovereignty, letting territorial settlers vote on slavery's legality, which controversially abandoned the Missouri Compromise's fixed geographic line dividing slave and free territory.",
+    "distractors": [
+      "Congressional arbitration, letting territorial legislatures petition Congress for a binding slavery ruling, which controversially abandoned the Missouri Compromise's fixed geographic line dividing slave and free territory.",
+      "Popular sovereignty, letting territorial settlers vote on slavery's legality, which successfully reinforced the Missouri Compromise's fixed geographic line dividing slave and free territory.",
+      "Judicial determination, letting federal circuit courts rule on slavery's legality per territory, which controversially abandoned the Missouri Compromise's fixed geographic line dividing slave and free territory."
+    ],
+    "difficulty": 4,
+    "source_article": "Compromise of 1850",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Compromise of 1850", "popular sovereignty", "Missouri Compromise"]
+  },
+  {
+    "question_text": "The Freedmen's Bureau was officially named the Bureau of Refugees, Freedmen, and Abandoned Lands. Within which executive department was it placed in 1865, and why did this placement shape its enforcement capacity?",
+    "correct_answer": "The War Department, giving it military personnel and infrastructure for enforcement, but also linking its fate to postwar demobilization pressures that weakened its long-term capacity.",
+    "distractors": [
+      "The Treasury Department, giving it financial personnel and infrastructure for enforcement, but also linking its fate to postwar demobilization pressures that weakened its long-term capacity.",
+      "The War Department, giving it military personnel and infrastructure for enforcement, and also ensuring permanent institutional expansion that strengthened its long-term capacity.",
+      "The Interior Department, giving it land-management personnel and infrastructure for enforcement, but also linking its fate to postwar demobilization pressures that weakened its long-term capacity."
+    ],
+    "difficulty": 4,
+    "source_article": "Bureau of Refugees, Freedmen, and Abandoned Lands",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Freedmen's Bureau", "Reconstruction", "War Department"]
+  },
+  {
+    "question_text": "During the XYZ Affair of 1797-1798, French agents demanded specific financial concessions before negotiations could begin with the American envoys. What were the two main financial demands, and what popular slogan did the American public adopt in response?",
+    "correct_answer": "A $12 million loan to France and a $250,000 bribe to Talleyrand. The public rallied behind \"Millions for defense, but not one cent for tribute.\"",
+    "distractors": [
+      "A $12 million loan to France and a $250,000 bribe to Talleyrand. Americans responded with the slogan \"No entangling alliances with foreign powers.\"",
+      "A $6 million loan to France and a $500,000 bribe to Talleyrand. Americans responded with the slogan \"Millions for defense, but not one cent for tribute.\"",
+      "A $12 million loan to France and a $250,000 bribe to Talleyrand. Americans responded with the slogan \"Liberty or death in defense of American honor.\""
+    ],
+    "difficulty": 4,
+    "source_article": "XYZ Affair",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["XYZ Affair", "Quasi-War", "early American foreign policy"]
+  },
+  {
+    "question_text": "Before President Hoover signed the Smoot-Hawley Tariff Act in June 1930, over one thousand economists petitioned him to veto the bill. What was the primary economic consequence they warned about, and how severely did it materialize?",
+    "correct_answer": "Retaliatory tariffs would collapse international trade. This materialized severely: U.S. imports from Europe plunged from $1.3 billion (1929) to $390 million (1932), worsening the Depression.",
+    "distractors": [
+      "Retaliatory tariffs would collapse international trade. This materialized moderately: U.S. imports from Europe fell from $1.3 billion (1929) to $900 million (1932), briefly slowing the Depression.",
+      "Domestic overproduction would collapse consumer prices. This materialized severely: U.S. imports from Europe plunged from $1.3 billion (1929) to $390 million (1932), worsening the Depression.",
+      "Retaliatory tariffs would collapse international trade. This materialized severely: U.S. exports to Europe plunged from $1.3 billion (1929) to $390 million (1932), worsening the Depression."
+    ],
+    "difficulty": 4,
+    "source_article": "Smoot\u2013Hawley Tariff Act",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Smoot-Hawley Tariff", "Great Depression", "protectionism"]
+  },
+  {
+    "question_text": "In Muller v. Oregon (1908), the Supreme Court unanimously upheld a state law limiting women's workdays to ten hours, just three years after striking down a similar law for bakers in Lochner v. New York. How did Justice Brewer's opinion distinguish the two cases?",
+    "correct_answer": "Brewer held that biological differences between the sexes justified sex-based labor laws, declining to overrule Lochner but carving an exception for women's physical circumstances.",
+    "distractors": [
+      "Brewer held that biological differences between the sexes justified sex-based labor regulation, explicitly overruling Lochner and extending maximum-hour protections to all workers regardless of sex.",
+      "Brewer held that economic differences between laundry and bakery industries justified industry-based regulation, declining to overrule Lochner but carving out an exception for hazardous workplace conditions.",
+      "Brewer held that biological differences between the sexes justified sex-based labor regulation, declining to overrule Lochner but carving out an exception under the Fourteenth Amendment's equal protection clause."
+    ],
+    "difficulty": 4,
+    "source_article": "Muller v. Oregon",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Muller v. Oregon", "Brandeis Brief", "Lochner v. New York"]
+  },
+  {
+    "question_text": "The Platt Amendment of 1901 effectively made Cuba a U.S. protectorate after the Spanish-American War. What specific military provision persisted even after the amendment's repeal in 1934, and what policy shift led to that repeal?",
+    "correct_answer": "The U.S. naval base lease at Guantanamo Bay survived repeal. The rest was abrogated under FDR's Good Neighbor policy via the 1934 Treaty of Relations.",
+    "distractors": [
+      "The U.S. naval base lease at Guantanamo Bay survived repeal. The rest was abrogated under FDR's Dollar Diplomacy policy via the 1934 Treaty of Relations.",
+      "The U.S. right to intervene militarily in Cuba survived repeal. The rest was abrogated under FDR's Good Neighbor policy via the 1934 Treaty of Relations.",
+      "The U.S. naval base lease at Guantanamo Bay survived repeal. The rest was abrogated under Hoover's Good Neighbor policy via the 1934 Treaty of Relations."
+    ],
+    "difficulty": 4,
+    "source_article": "Platt Amendment",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Platt Amendment", "American imperialism", "Good Neighbor policy"]
+  },
+  {
+    "question_text": "In 1932, the Bonus Army of approximately 43,000 demonstrators, including 17,000 WWI veterans, marched on Washington to demand early payment of service bonus certificates. Who commanded the military force that dispersed the encampment, and what was the major political consequence?",
+    "correct_answer": "Chief of Staff Douglas MacArthur used infantry, cavalry, and tanks to rout the veterans. The violent episode devastated Hoover politically, aiding FDR's landslide victory.",
+    "distractors": [
+      "Chief of Staff Douglas MacArthur used infantry, cavalry, and tanks to rout the veterans. The violent episode devastated Roosevelt politically, though he still won a narrow victory.",
+      "General Dwight Eisenhower used infantry, cavalry, and tanks to rout the veterans. The violent episode devastated Hoover politically, aiding FDR's landslide victory.",
+      "Chief of Staff Douglas MacArthur used infantry, cavalry, and tanks to rout the veterans. The violent episode briefly boosted Hoover politically, though he still narrowly lost to FDR."
+    ],
+    "difficulty": 4,
+    "source_article": "Bonus Army",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Bonus Army", "Great Depression politics", "Hoover presidency"]
+  },
+  {
+    "question_text": "The Credit Mobilier scandal, exposed by the New York Sun during the 1872 election, involved a construction company created by Union Pacific Railroad executives. What was the core fraudulent mechanism, and what was the most severe penalty Congress imposed on its own members?",
+    "correct_answer": "Credit Mobilier billed Union Pacific grossly inflated construction costs, with executives pocketing ~$44 million. Congress censured Representatives Oakes Ames and James Brooks for their roles.",
+    "distractors": [
+      "Credit Mobilier billed Union Pacific grossly inflated construction costs, with executives pocketing ~$44 million. Congress expelled Representatives Oakes Ames and James Brooks for their roles.",
+      "Credit Mobilier issued fraudulent stock directly to the federal Treasury, with executives pocketing ~$44 million. Congress censured Representatives Oakes Ames and James Brooks for their roles.",
+      "Credit Mobilier billed Union Pacific grossly inflated construction costs, with executives pocketing ~$12 million. Congress censured Representatives Oakes Ames and James Brooks for their roles."
+    ],
+    "difficulty": 4,
+    "source_article": "Cr\u00e9dit Mobilier of America scandal",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Cr\u00e9dit Mobilier scandal", "Gilded Age corruption", "transcontinental railroad"]
+  },
+  {
+    "question_text": "The Pentagon Papers, a 47-volume classified Defense Department study leaked by Daniel Ellsberg in 1971, led to a landmark Supreme Court ruling. What did the Court decide in New York Times Co. v. United States, and by what margin?",
+    "correct_answer": "In a 6-3 ruling, the Court held that prior restraint violated the First Amendment, allowing the Times and Post to continue publishing the study.",
+    "distractors": [
+      "In a 6-3 ruling, the Court held that prior restraint was justified by national security, blocking the Times and Post from publishing the study.",
+      "In a 5-4 ruling, the Court held that prior restraint violated the First Amendment, allowing the Times and Post to continue publishing the study.",
+      "In a 6-3 ruling, the Court held that prior restraint violated the Fourth Amendment, allowing the Times and Post to continue publishing the study."
+    ],
+    "difficulty": 4,
+    "source_article": "Pentagon Papers",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Pentagon Papers", "New York Times Co. v. United States", "First Amendment"]
+  },
+  {
+    "question_text": "The War Powers Resolution of 1973 created a specific time limit on unauthorized presidential deployment of armed forces. What is the maximum duration before the president must withdraw troops absent congressional authorization, and how did this legislation become law?",
+    "correct_answer": "Sixty days, extendable to ninety for safe withdrawal. Congress passed it over Nixon's veto by two-thirds majorities in both chambers.",
+    "distractors": [
+      "Sixty days, extendable to ninety for safe withdrawal. Congress passed it after Nixon reluctantly signed it under bipartisan political pressure.",
+      "Ninety days, extendable to one hundred twenty for safe withdrawal. Congress passed it over Nixon's veto by two-thirds majorities in both chambers.",
+      "Sixty days, extendable to ninety for safe withdrawal. Congress passed it over President Ford's veto by two-thirds majorities in both chambers."
+    ],
+    "difficulty": 4,
+    "source_article": "War Powers Resolution",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["War Powers Resolution", "executive war powers", "congressional oversight"]
+  }
+]

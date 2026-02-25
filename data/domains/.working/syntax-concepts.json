@@ -1,0 +1,266 @@
+{
+  "domain": "syntax",
+  "parent_domain": "linguistics",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {
+        "concept": "grammar",
+        "wikipedia_article": "Grammar",
+        "brief_rationale": "The foundational concept of rules governing language structure; universally recognized term at the beginning of any language education."
+      },
+      {
+        "concept": "sentence",
+        "wikipedia_article": "Sentence (linguistics)",
+        "brief_rationale": "The primary unit of syntactic analysis; every language learner intuitively understands what a sentence is."
+      },
+      {
+        "concept": "noun",
+        "wikipedia_article": "Noun",
+        "brief_rationale": "One of the most basic parts of speech, taught in elementary school grammar as words denoting people, places, and things."
+      },
+      {
+        "concept": "verb",
+        "wikipedia_article": "Verb",
+        "brief_rationale": "Core part of speech denoting actions or states; essential for forming any predicate and taught at the earliest stages of grammar instruction."
+      },
+      {
+        "concept": "adjective",
+        "wikipedia_article": "Adjective",
+        "brief_rationale": "Part of speech that modifies nouns; universally taught alongside nouns and verbs in introductory grammar."
+      },
+      {
+        "concept": "adverb",
+        "wikipedia_article": "Adverb",
+        "brief_rationale": "Part of speech that modifies verbs, adjectives, or other adverbs; a standard component of basic grammar curricula."
+      },
+      {
+        "concept": "subject",
+        "wikipedia_article": "Subject (grammar)",
+        "brief_rationale": "The grammatical role indicating who or what performs the action; a foundational concept introduced in early schooling."
+      },
+      {
+        "concept": "object",
+        "wikipedia_article": "Object (grammar)",
+        "brief_rationale": "The grammatical role of an entity acted upon by the verb; taught alongside subject as a core sentence component."
+      },
+      {
+        "concept": "pronoun",
+        "wikipedia_article": "Pronoun",
+        "brief_rationale": "Words that substitute for nouns; a basic part-of-speech category familiar to all language users."
+      },
+      {
+        "concept": "preposition",
+        "wikipedia_article": "Preposition and postposition",
+        "brief_rationale": "Function words expressing spatial, temporal, or logical relations; commonly taught in early grammar as linking words."
+      },
+      {
+        "concept": "conjunction",
+        "wikipedia_article": "Conjunction (grammar)",
+        "brief_rationale": "Words that connect clauses or phrases; familiar from school grammar as words like 'and', 'but', and 'because'."
+      },
+      {
+        "concept": "word order",
+        "wikipedia_article": "Word order",
+        "brief_rationale": "The sequence of grammatical constituents in a sentence; intuitively understood by all speakers and a key surface feature of any language."
+      },
+      {
+        "concept": "clause",
+        "wikipedia_article": "Clause",
+        "brief_rationale": "A group of words containing a subject and predicate; introduced in standard grammar education as the building block of sentences."
+      }
+    ],
+    "L2": [
+      {
+        "concept": "phrase structure",
+        "wikipedia_article": "Phrase structure grammar",
+        "brief_rationale": "The hierarchical organization of words into phrases; a foundational concept for students entering formal linguistics or advanced grammar study."
+      },
+      {
+        "concept": "noun phrase",
+        "wikipedia_article": "Noun phrase",
+        "brief_rationale": "A phrase with a noun as its head; students learn to identify NPs as the basic unit of nominal syntax."
+      },
+      {
+        "concept": "verb phrase",
+        "wikipedia_article": "Verb phrase",
+        "brief_rationale": "A phrase with a verb as its head; central to understanding predicate structure in introductory linguistics courses."
+      },
+      {
+        "concept": "subordinate clause",
+        "wikipedia_article": "Subordinate clause",
+        "brief_rationale": "A dependent clause embedded within a main clause; taught in secondary school and introductory linguistics as a key clause type."
+      },
+      {
+        "concept": "relative clause",
+        "wikipedia_article": "Relative clause",
+        "brief_rationale": "A clause that modifies a noun; a commonly analyzed construction in both pedagogical and formal grammar."
+      },
+      {
+        "concept": "morpheme",
+        "wikipedia_article": "Morpheme",
+        "brief_rationale": "The smallest meaningful unit of language; introduced early in linguistics curricula at the boundary of morphology and syntax."
+      },
+      {
+        "concept": "tense",
+        "wikipedia_article": "Grammatical tense",
+        "brief_rationale": "The grammatical encoding of time reference; a fundamental inflectional category taught in early linguistics and language learning."
+      },
+      {
+        "concept": "aspect",
+        "wikipedia_article": "Grammatical aspect",
+        "brief_rationale": "The grammatical expression of how events unfold over time; closely related to tense and introduced in linguistics survey courses."
+      },
+      {
+        "concept": "agreement",
+        "wikipedia_article": "Agreement (linguistics)",
+        "brief_rationale": "The correspondence of grammatical features between constituents; studied by students analyzing inflectional morphology and sentence structure."
+      },
+      {
+        "concept": "case",
+        "wikipedia_article": "Grammatical case",
+        "brief_rationale": "The marking of noun phrases for their grammatical role; introduced when students study inflected languages or formal grammar."
+      },
+      {
+        "concept": "constituency",
+        "wikipedia_article": "Constituent (linguistics)",
+        "brief_rationale": "The grouping of words into hierarchical units; a core analytical concept introduced in introductory syntax courses."
+      },
+      {
+        "concept": "complementizer",
+        "wikipedia_article": "Complementizer",
+        "brief_rationale": "A function word that introduces a complement clause (e.g., 'that', 'whether'); introduced when students learn about embedded clauses."
+      },
+      {
+        "concept": "passive voice",
+        "wikipedia_article": "Passive voice",
+        "brief_rationale": "A grammatical construction where the syntactic subject is the patient of the verb; analyzed in student-level grammar and introductory syntax."
+      }
+    ],
+    "L3": [
+      {
+        "concept": "X-bar theory",
+        "wikipedia_article": "X-bar theory",
+        "brief_rationale": "A schema for phrase structure positing specifier, head, and complement positions; foundational to Government and Binding and subsequent generative frameworks."
+      },
+      {
+        "concept": "binding theory",
+        "wikipedia_article": "Binding (linguistics)",
+        "brief_rationale": "A subtheory governing the distribution of anaphors, pronouns, and R-expressions based on c-command and locality; central to syntactic theory courses."
+      },
+      {
+        "concept": "wh-movement",
+        "wikipedia_article": "Wh-movement",
+        "brief_rationale": "A syntactic operation moving interrogative or relative phrases to a sentence-initial position; a classic case study in transformational syntax."
+      },
+      {
+        "concept": "c-command",
+        "wikipedia_article": "C-command",
+        "brief_rationale": "A structural dominance relation between nodes in a phrase structure tree; essential for defining binding, scope, and movement constraints."
+      },
+      {
+        "concept": "theta role",
+        "wikipedia_article": "Theta role",
+        "brief_rationale": "Semantic roles (agent, patient, theme, etc.) assigned by predicates to their arguments; integral to understanding argument structure in generative syntax."
+      },
+      {
+        "concept": "head-directionality parameter",
+        "wikipedia_article": "Head direction parameter",
+        "brief_rationale": "A parameter specifying whether heads precede or follow their complements; a key typological variable within Principles and Parameters theory."
+      },
+      {
+        "concept": "VP-internal subject hypothesis",
+        "wikipedia_article": "VP-internal subject hypothesis",
+        "brief_rationale": "The proposal that subjects originate within VP and move to SpecTP; a significant revision of clause structure within Government and Binding theory."
+      },
+      {
+        "concept": "split INFL hypothesis",
+        "wikipedia_article": "Split INFL hypothesis",
+        "brief_rationale": "The analysis of inflection into separate TP and AgrP projections; a stepping-stone toward modern cartographic approaches to clause structure."
+      },
+      {
+        "concept": "pro-drop",
+        "wikipedia_article": "Pro-drop language",
+        "brief_rationale": "The property of languages allowing null subjects licensed by rich verbal morphology; a classic parametric variation studied in introductory syntactic typology."
+      },
+      {
+        "concept": "locality constraints",
+        "wikipedia_article": "Island (linguistics)",
+        "brief_rationale": "Restrictions on syntactic movement out of certain domains (islands); foundational to understanding the limits of transformational operations."
+      },
+      {
+        "concept": "control theory",
+        "wikipedia_article": "Control (linguistics)",
+        "brief_rationale": "The theory governing the interpretation of null subjects (PRO) in infinitival and gerundive complements; a core module of Government and Binding."
+      },
+      {
+        "concept": "government (syntax)",
+        "wikipedia_article": "Government (linguistics)",
+        "brief_rationale": "A structural relation in which a head licenses or requires features in an adjacent element; central to Government and Binding theory and case assignment."
+      }
+    ],
+    "L4": [
+      {
+        "concept": "Minimalist Program",
+        "wikipedia_article": "Minimalist program",
+        "brief_rationale": "Chomsky's framework reducing syntax to two operations (Merge and Move) driven by interface conditions; the dominant paradigm in contemporary generative syntax."
+      },
+      {
+        "concept": "phase theory",
+        "wikipedia_article": "Phase (syntax)",
+        "brief_rationale": "The proposal that derivations proceed cyclically through phases (vP and CP), with the Phase Impenetrability Condition restricting extraction; a core tenet of Minimalism."
+      },
+      {
+        "concept": "Agree operation",
+        "wikipedia_article": "Agree (linguistics)",
+        "brief_rationale": "The mechanism by which a probe with unvalued features seeks a matching goal within its c-command domain; replaces government-based feature checking in Minimalism."
+      },
+      {
+        "concept": "internal merge",
+        "wikipedia_article": "Internal Merge",
+        "brief_rationale": "The operation that moves a constituent already present in a syntactic object to a new position; the Minimalist reanalysis of classical transformational movement."
+      },
+      {
+        "concept": "cartography of syntactic structures",
+        "wikipedia_article": "Cartography (linguistics)",
+        "brief_rationale": "The research program mapping fine-grained functional projections in the left periphery, TP, and DP; associated with Rizzi's split-CP and related work."
+      },
+      {
+        "concept": "Kayne's antisymmetry",
+        "wikipedia_article": "Antisymmetry",
+        "brief_rationale": "The Linear Correspondence Axiom deriving universal base-generated Spec-Head-Comp order and accounting for cross-linguistic variation via movement; a foundational result in formal syntax."
+      },
+      {
+        "concept": "Distributed Morphology",
+        "wikipedia_article": "Distributed morphology",
+        "brief_rationale": "A framework in which morphological operations apply post-syntactically to syntactic terminal nodes, eliminating a separate morphological component; widely used in expert-level morphosyntax research."
+      },
+      {
+        "concept": "copy theory of movement",
+        "wikipedia_article": "Copy theory of movement",
+        "brief_rationale": "The Minimalist view that movement creates a copy at the tail of a chain, with the lower copy typically deleted at PF; replaces traces in earlier frameworks."
+      },
+      {
+        "concept": "feature inheritance",
+        "wikipedia_article": "Feature inheritance (linguistics)",
+        "brief_rationale": "The mechanism whereby C and v pass their edge features to T and V respectively, enabling Agree without the phase head itself acting as probe; a refinement within phase theory."
+      },
+      {
+        "concept": "late merger",
+        "wikipedia_article": "Late Merge",
+        "brief_rationale": "A proposal allowing adjuncts to merge into a derivation after the containing constituent has been spelled out, circumventing certain island effects; a technical tool in current Minimalist derivations."
+      },
+      {
+        "concept": "labeling algorithm",
+        "wikipedia_article": "Labeling algorithm",
+        "brief_rationale": "Chomsky's replacement for bar-level projections, determining the label of a syntactic object via feature sharing or head status; a cutting-edge topic in post-2013 Minimalism."
+      },
+      {
+        "concept": "smuggling (syntax)",
+        "wikipedia_article": "Smuggling (linguistics)",
+        "brief_rationale": "A movement strategy in which a constituent is evacuated from a larger phrase before that phrase moves, allowing what would otherwise be an island-violating extraction; an advanced analytical technique in contemporary syntax."
+      }
+    ]
+  }
+}

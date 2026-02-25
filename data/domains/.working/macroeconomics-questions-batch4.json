@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In John Taylor's 1993 rule for setting the federal funds rate, what are the coefficients on both the inflation gap and the output gap?",
+    "correct_answer": "Both coefficients are 0.5",
+    "distractors": [
+      "Both coefficients are 1.0",
+      "Inflation is 1.5 and output gap is 0.5",
+      "Both coefficients are 0.25"
+    ],
+    "difficulty": 3,
+    "source_article": "Taylor rule",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["Taylor rule"]
+  },
+  {
+    "question_text": "Milton Friedman introduced the concept of the 'natural rate of unemployment' in his 1968 presidential address to which professional organization?",
+    "correct_answer": "The American Economic Association",
+    "distractors": [
+      "The American Finance Association",
+      "The National Bureau of Economic Research",
+      "The Royal Economic Society"
+    ],
+    "difficulty": 3,
+    "source_article": "Natural rate of unemployment",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["natural rate of unemployment"]
+  },
+  {
+    "question_text": "In the crowding out effect, increased government borrowing raises interest rates through which market, thereby reducing private investment?",
+    "correct_answer": "The loanable funds market",
+    "distractors": [
+      "The foreign exchange market",
+      "The money market for bank reserves",
+      "The stock and equity market"
+    ],
+    "difficulty": 3,
+    "source_article": "Crowding out (economics)",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["crowding out"]
+  },
+  {
+    "question_text": "In the Solow-Swan growth model, what is the only factor that can sustain long-run growth in per capita output once the economy reaches its steady state?",
+    "correct_answer": "Exogenous technological progress",
+    "distractors": [
+      "Increased savings and capital accumulation",
+      "Population growth and labor force expansion",
+      "Government fiscal policy and public investment"
+    ],
+    "difficulty": 3,
+    "source_article": "Solow–Swan model",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["Solow growth model"]
+  },
+  {
+    "question_text": "In the equation of exchange MV = PQ, which American economist formalized this relationship in his 1911 book 'The Purchasing Power of Money'?",
+    "correct_answer": "Irving Fisher",
+    "distractors": [
+      "Milton Friedman",
+      "John Maynard Keynes",
+      "Alfred Marshall"
+    ],
+    "difficulty": 3,
+    "source_article": "Velocity of money",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["velocity of money"]
+  },
+  {
+    "question_text": "When a central bank sterilizes a foreign exchange intervention, what domestic open market operation does it typically conduct to offset the increase in money supply?",
+    "correct_answer": "Selling domestic government bonds to absorb liquidity",
+    "distractors": [
+      "Purchasing additional foreign currency reserves",
+      "Lowering the reserve requirement for banks",
+      "Raising the official discount lending rate"
+    ],
+    "difficulty": 3,
+    "source_article": "Sterilization (economics)",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["sterilization"]
+  },
+  {
+    "question_text": "According to the original formulation of Okun's law, approximately how much does GDP fall below potential for every 1 percentage point rise in unemployment above its natural rate?",
+    "correct_answer": "Approximately 2 percent",
+    "distractors": [
+      "Approximately 1 percent",
+      "Approximately 3.5 percent",
+      "Approximately 0.5 percent"
+    ],
+    "difficulty": 3,
+    "source_article": "Okun's law",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["Okun's law"]
+  },
+  {
+    "question_text": "The term 'Dutch disease' was coined in 1977 by The Economist to describe economic effects following the discovery of what resource in the Netherlands?",
+    "correct_answer": "Natural gas in the Groningen field",
+    "distractors": [
+      "North Sea oil reserves near Rotterdam",
+      "Coal deposits in the Limburg province",
+      "Diamond reserves in the Dutch colonies"
+    ],
+    "difficulty": 3,
+    "source_article": "Dutch disease",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["Dutch disease"]
+  },
+  {
+    "question_text": "Robert Barro's 1974 formalization of Ricardian equivalence argued that rational consumers treat government bond financing as equivalent to what?",
+    "correct_answer": "Future tax increases of equal present value",
+    "distractors": [
+      "Permanent increases in government spending",
+      "Immediate reductions in money supply growth",
+      "Direct transfers of wealth to bondholders"
+    ],
+    "difficulty": 4,
+    "source_article": "Ricardian equivalence",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["Ricardian equivalence"]
+  },
+  {
+    "question_text": "In Kydland and Prescott's 1982 real business cycle model, what type of shock is identified as the primary driver of business cycle fluctuations?",
+    "correct_answer": "Technology or productivity shocks",
+    "distractors": [
+      "Monetary policy and interest rate shocks",
+      "Aggregate demand and fiscal policy shocks",
+      "Oil price and energy supply shocks"
+    ],
+    "difficulty": 4,
+    "source_article": "Real business-cycle theory",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["real business cycle theory"]
+  }
+]

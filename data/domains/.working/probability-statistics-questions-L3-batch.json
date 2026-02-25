@@ -1,0 +1,80 @@
+[
+  {
+    "question_text": "The maximum likelihood estimator is asymptotically efficient. What does this mean in terms of a well-known lower bound, and what quantity determines the asymptotic variance of the MLE?",
+    "correct_answer": "The MLE achieves the Cram\u00e9r\u2013Rao lower bound as $n \\to \\infty$. Its asymptotic variance is the inverse of the Fisher information, $I(\\theta)^{-1}$.",
+    "distractors": [
+      "The MLE achieves the Chebyshev lower bound as $n \\to \\infty$. Its asymptotic variance is the inverse of the score function, $S(\\theta)^{-1}$.",
+      "The MLE achieves the Cram\u00e9r\u2013Rao lower bound as $n \\to \\infty$. Its asymptotic variance is the inverse of the likelihood ratio, $\\Lambda(\\theta)^{-1}$.",
+      "The MLE achieves the Cram\u00e9r\u2013Rao lower bound only for finite $n$. Its asymptotic variance is the inverse of the Hessian of the prior, $\\pi''(\\theta)^{-1}$."
+    ],
+    "difficulty": 3,
+    "source_article": "Maximum likelihood estimation",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["maximum likelihood estimation"]
+  },
+  {
+    "question_text": "A discrete-time Markov chain has the property that its future state depends only on the present state. What two conditions on the chain guarantee convergence to a unique stationary distribution $\\pi$?",
+    "correct_answer": "The chain must be irreducible (every state reachable from every other) and aperiodic (the GCD of return times to each state is 1).",
+    "distractors": [
+      "The chain must be irreducible (every state reachable from every other) and reversible (detailed balance holds for each pair of states).",
+      "The chain must be recurrent (every state is revisited infinitely often) and aperiodic (the GCD of return times to each state is 1).",
+      "The chain must be ergodic (every state has finite expected return time) and symmetric (the transition matrix equals its transpose)."
+    ],
+    "difficulty": 3,
+    "source_article": "Markov chain",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["Markov chain"]
+  },
+  {
+    "question_text": "In one-way ANOVA, the total sum of squares is partitioned as $SS_T = SS_B + SS_W$. What does the $F$-statistic compare, and what does a large $F$-value suggest about the group means?",
+    "correct_answer": "The $F$-statistic is the ratio of between-group mean square to within-group mean square. A large $F$ suggests group means differ more than expected by chance.",
+    "distractors": [
+      "The $F$-statistic is the ratio of within-group mean square to between-group mean square. A large $F$ suggests group means differ more than expected by chance.",
+      "The $F$-statistic is the ratio of between-group mean square to total mean square. A large $F$ suggests group variances differ more than expected by chance.",
+      "The $F$-statistic is the ratio of between-group sum of squares to within-group sum of squares. A large $F$ suggests the residuals are non-normally distributed."
+    ],
+    "difficulty": 3,
+    "source_article": "Analysis of variance",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["ANOVA"]
+  },
+  {
+    "question_text": "The moment-generating function of a random variable $X$ is defined as $M_X(t) = E[e^{tX}]$. How is the $n$-th moment of $X$ obtained from $M_X(t)$, and what key uniqueness property does the MGF possess?",
+    "correct_answer": "Compute $E[X^n] = M_X^{(n)}(0)$, the $n$-th derivative at $t=0$. If the MGF exists near zero, it uniquely determines the distribution.",
+    "distractors": [
+      "Compute $E[X^n] = M_X^{(n)}(1)$, the $n$-th derivative at $t=1$. If the MGF exists near zero, it uniquely determines the distribution.",
+      "Compute $E[X^n] = M_X^{(n)}(0)$, the $n$-th derivative at $t=0$. The MGF must exist for all real $t$ to determine the distribution.",
+      "Compute $E[X^n] = \\ln M_X^{(n)}(0)$, the $n$-th derivative of the log-MGF at $t=0$. If the MGF exists near zero, it uniquely determines the distribution."
+    ],
+    "difficulty": 3,
+    "source_article": "Moment-generating function",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["moment generating function"]
+  },
+  {
+    "question_text": "A statistic $T(X)$ is sufficient for parameter $\\theta$ if the data provide no additional information about $\\theta$ beyond $T$. What does the Fisher\u2013Neyman factorization theorem state about the joint density $f(x; \\theta)$?",
+    "correct_answer": "$f(x;\\theta)$ factors as $g(T(x), \\theta) \\cdot h(x)$, where $g$ depends on data only through $T$ and $h$ is free of $\\theta$.",
+    "distractors": [
+      "$f(x;\\theta)$ factors as $g(x, \\theta) \\cdot h(T(x))$, where $g$ depends on data and $\\theta$ jointly and $h$ depends only on $T$.",
+      "$f(x;\\theta)$ factors as $g(T(x), \\theta) \\cdot h(x, \\theta)$, where $g$ depends on data only through $T$ but $h$ also involves $\\theta$.",
+      "$f(x;\\theta)$ factors as $g(T(x)) \\cdot h(x, \\theta)$, where $g$ depends only on $T$ and $h$ captures all dependence on $\\theta$."
+    ],
+    "difficulty": 3,
+    "source_article": "Sufficient statistic",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["sufficient statistic"]
+  },
+  {
+    "question_text": "The bootstrap, introduced by Bradley Efron, estimates the sampling distribution of a statistic. What resampling procedure defines the nonparametric bootstrap, and what does it approximate?",
+    "correct_answer": "Draw repeated samples of size $n$ with replacement from the observed data. This approximates the sampling distribution of the statistic without assuming a parametric model.",
+    "distractors": [
+      "Draw repeated samples of size $n$ without replacement from the observed data. This approximates the sampling distribution of the statistic without assuming a parametric model.",
+      "Draw repeated samples of size $n$ with replacement from the observed data. This approximates the posterior distribution of the parameter under a noninformative prior.",
+      "Draw repeated samples of size $n/2$ with replacement from the observed data. This approximates the permutation distribution of the test statistic under the null hypothesis."
+    ],
+    "difficulty": 3,
+    "source_article": "Bootstrapping (statistics)",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["bootstrap"]
+  }
+]

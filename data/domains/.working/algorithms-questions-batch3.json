@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Why is a binary heap always stored as an array rather than using explicit pointers?",
+    "correct_answer": "Because a heap is a complete binary tree, parent-child relationships can be computed from array indices without pointers.",
+    "distractors": [
+      "Because a heap requires random access to any node in constant time, which only hash-based arrays can provide.",
+      "Because pointer-based trees cannot maintain the heap ordering property during insertion and deletion operations.",
+      "Because arrays allow the heap to store duplicate keys, which linked structures with pointers cannot support."
+    ],
+    "difficulty": 2,
+    "source_article": "Heap (data structure)",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["heap"]
+  },
+  {
+    "question_text": "Why is heapsort not a stable sorting algorithm?",
+    "correct_answer": "The heap operations can change the relative order of elements with equal keys during sift-down and extraction.",
+    "distractors": [
+      "The pivot selection during partitioning may swap equal-key elements across the partition boundary unpredictably.",
+      "The merge step combines two sorted halves without tracking the original positions of equal-key elements.",
+      "The algorithm discards the original index information when elements are first inserted into the auxiliary heap."
+    ],
+    "difficulty": 2,
+    "source_article": "Heapsort",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["heap sort"]
+  },
+  {
+    "question_text": "What is the worst-case input for insertion sort, and how many comparisons does it require?",
+    "correct_answer": "A reverse-sorted array, requiring $n(n-1)/2$ comparisons since every element must shift past all previously sorted elements.",
+    "distractors": [
+      "An array of identical elements, requiring $n \\log n$ comparisons since the algorithm must verify equality at every level.",
+      "A randomly shuffled array, requiring exactly $n^2$ comparisons since each element is compared with every other element.",
+      "An already sorted array, requiring $2n - 1$ comparisons since each element is compared with both its neighbors."
+    ],
+    "difficulty": 2,
+    "source_article": "Insertion sort",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["insertion sort"]
+  },
+  {
+    "question_text": "How does the Bellman-Ford algorithm detect negative-weight cycles in a graph?",
+    "correct_answer": "After $|V|-1$ relaxation passes over all edges, it performs one additional pass; if any distance decreases, a negative cycle exists.",
+    "distractors": [
+      "After building the shortest-path tree, it checks whether any tree edge has a negative weight and reports a cycle if so.",
+      "During each relaxation pass, it counts the number of updated vertices; if this count exceeds $|V|$, a negative cycle exists.",
+      "Before beginning relaxation, it searches for back edges using depth-first search and reports any that have negative weight."
+    ],
+    "difficulty": 2,
+    "source_article": "Bellman\u2013Ford algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["Bellman-Ford algorithm"]
+  },
+  {
+    "question_text": "What data structure does Kruskal's algorithm use to efficiently determine whether adding an edge would create a cycle?",
+    "correct_answer": "A union-find (disjoint-set) data structure, which tracks connected components and detects cycles in nearly constant time.",
+    "distractors": [
+      "A min-priority queue, which stores edges sorted by weight and removes those forming cycles in logarithmic time.",
+      "An adjacency matrix, which checks for existing paths between two vertices in constant time per lookup.",
+      "A depth-first search stack, which traces paths between endpoints and detects back edges in linear time per query."
+    ],
+    "difficulty": 2,
+    "source_article": "Kruskal's algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["Kruskal's algorithm"]
+  },
+  {
+    "question_text": "How does memoization differ from the bottom-up tabulation approach to dynamic programming?",
+    "correct_answer": "Memoization solves subproblems top-down via recursion and caches results lazily, while tabulation fills a table iteratively from base cases up.",
+    "distractors": [
+      "Memoization solves subproblems in parallel across multiple threads, while tabulation processes them sequentially on a single thread.",
+      "Memoization stores only the final optimal solution in memory, while tabulation stores every intermediate variable used during computation.",
+      "Memoization applies only to problems with non-overlapping subproblems, while tabulation requires overlapping subproblems to be efficient."
+    ],
+    "difficulty": 2,
+    "source_article": "Memoization",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["memoization"]
+  },
+  {
+    "question_text": "Why does the amortized cost of appending to a dynamic array remain $O(1)$ despite occasional $O(n)$ resizing?",
+    "correct_answer": "The array doubles in size on each resize, so the total cost of $n$ appends is at most $O(n)$, giving $O(1)$ per operation on average.",
+    "distractors": [
+      "The array increases by a fixed constant number of slots on each resize, spreading the cost equally across all future appends.",
+      "The operating system provides free memory pages during resizing, so the copy operation incurs no actual computational cost to the running program.",
+      "The array uses lazy copying that defers element transfers to idle CPU cycles, making each append appear to take constant time."
+    ],
+    "difficulty": 3,
+    "source_article": "Amortized analysis",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["amortized analysis"]
+  },
+  {
+    "question_text": "Who originally invented the data structure later named the red-black tree, and who gave it its current name?",
+    "correct_answer": "Rudolf Bayer invented it in 1972 as the symmetric binary B-tree; Guibas and Sedgewick renamed it the red-black tree in 1978.",
+    "distractors": [
+      "Donald Knuth invented it in 1968 as the colored binary tree; Tarjan and Sleator renamed it the red-black tree in 1985.",
+      "Adelson-Velsky and Landis invented it in 1962 as the height-balanced tree; Cormen and Rivest renamed it the red-black tree in 1990.",
+      "John Hopcroft invented it in 1970 as the chromatic search tree; Aho and Ullman renamed it the red-black tree in 1974."
+    ],
+    "difficulty": 3,
+    "source_article": "Red\u2013black tree",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["red-black tree"]
+  },
+  {
+    "question_text": "Why is the AVL tree considered historically significant in computer science?",
+    "correct_answer": "Invented by Adelson-Velsky and Landis in 1962, it was the first self-balancing binary search tree ever devised.",
+    "distractors": [
+      "Invented by Knuth and Morris in 1965, it was the first tree structure to support logarithmic-time string matching.",
+      "Invented by Dijkstra and Floyd in 1960, it was the first data structure to guarantee constant-time insertion and deletion.",
+      "Invented by Bayer and McCreight in 1970, it was the first tree optimized for disk-based storage and database indexing."
+    ],
+    "difficulty": 3,
+    "source_article": "AVL tree",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["AVL tree"]
+  },
+  {
+    "question_text": "What algorithm does A* search reduce to when its heuristic function $h(n)$ is set to zero for all nodes?",
+    "correct_answer": "Dijkstra's algorithm, because with $h(n) = 0$ the evaluation function $f(n)$ equals $g(n)$, the actual cost from the start.",
+    "distractors": [
+      "Breadth-first search, because with $h(n) = 0$ every edge is treated as having unit weight regardless of actual cost.",
+      "Depth-first search, because with $h(n) = 0$ the algorithm always expands the most recently discovered node first.",
+      "Bellman-Ford algorithm, because with $h(n) = 0$ the algorithm relaxes all edges repeatedly instead of using a priority queue."
+    ],
+    "difficulty": 3,
+    "source_article": "A* search algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["A* search algorithm"]
+  }
+]

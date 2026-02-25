@@ -1,0 +1,121 @@
+[
+  {
+    "question_text": "What ancient funerary sculpture collection, discovered in 1974 near Xi'an, consists of thousands of life-sized clay figures buried around 210 BCE to protect China's first emperor in the afterlife?",
+    "correct_answer": "The Terracotta Army, from the mausoleum of Qin Shi Huang",
+    "distractors": [
+      "The Terracotta Army, from the burial complex of Emperor Wu of Han",
+      "The Bronze Guardian Legion, from the mausoleum of Qin Shi Huang",
+      "The Terracotta Army, from the funerary temple of Emperor Taizong of Tang"
+    ],
+    "difficulty": 1,
+    "source_article": "Terracotta_Army",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "Terracotta Army"
+    ]
+  },
+  {
+    "question_text": "Which traditional Chinese art form involves writing characters with brush and ink as a visual art, and is considered one of the four most-sought skills of the ancient literati alongside painting, Go, and music?",
+    "correct_answer": "Chinese calligraphy, the art of writing Chinese characters with brush and ink",
+    "distractors": [
+      "Chinese calligraphy, the art of carving Chinese characters into stone and bone",
+      "Chinese seal cutting, the art of writing Chinese characters with brush and ink",
+      "Chinese calligraphy, the art of printing Chinese characters with woodblocks and ink"
+    ],
+    "difficulty": 1,
+    "source_article": "Chinese_calligraphy",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "Chinese calligraphy"
+    ]
+  },
+  {
+    "question_text": "What series of fortifications, built across China's historical northern borders by successive dynasties beginning in the 7th century BCE, is best known for the sections constructed during the Ming dynasty?",
+    "correct_answer": "The Great Wall of China, a defensive fortification against nomadic groups from the Eurasian Steppe",
+    "distractors": [
+      "The Great Wall of China, a ceremonial processional road connecting imperial capitals across the northern provinces",
+      "The Great Canal of China, a defensive fortification against nomadic groups from the Eurasian Steppe",
+      "The Great Wall of China, a defensive fortification against maritime invaders from the Korean Peninsula"
+    ],
+    "difficulty": 1,
+    "source_article": "Great_Wall_of_China",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "Great Wall of China"
+    ]
+  },
+  {
+    "question_text": "What form of Chinese art, ranging from hand-built pottery to sophisticated wares made for the imperial court and export, is considered one of the most significant contributions to global artistic traditions?",
+    "correct_answer": "Chinese porcelain and ceramics, fired clay wares including stoneware and true porcelain",
+    "distractors": [
+      "Chinese porcelain and ceramics, cast metal wares including bronze and true ironwork",
+      "Chinese lacquerware and enamels, fired clay wares including stoneware and true porcelain",
+      "Chinese porcelain and ceramics, carved stone wares including soapstone and true marble"
+    ],
+    "difficulty": 1,
+    "source_article": "Chinese_ceramics",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "Chinese porcelain"
+    ]
+  },
+  {
+    "question_text": "What natural protein fiber, composed mainly of fibroin and produced by the mulberry silkworm $\\textit{Bombyx mori}$ through sericulture, originated in ancient China and became one of its most prized trade goods?",
+    "correct_answer": "Silk, a lustrous natural fiber obtained from silkworm cocoons",
+    "distractors": [
+      "Silk, a lustrous synthetic fiber obtained from chemical processing",
+      "Linen, a lustrous natural fiber obtained from silkworm cocoons",
+      "Silk, a lustrous natural fiber obtained from spider web harvesting"
+    ],
+    "difficulty": 1,
+    "source_article": "Silk",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "silk"
+    ]
+  },
+  {
+    "question_text": "What hardstone material, mined and carved in China since the Neolithic period, served as the primary medium for Chinese sculpture and was most prized in its white 'mutton-fat' nephrite form?",
+    "correct_answer": "Jade, a gemstone symbolizing virtue and purity in Chinese culture",
+    "distractors": [
+      "Jade, a gemstone symbolizing wealth and military power in Chinese culture",
+      "Agate, a gemstone symbolizing virtue and purity in Chinese culture",
+      "Jade, a volcanic glass symbolizing virtue and purity in Chinese culture"
+    ],
+    "difficulty": 1,
+    "source_article": "Chinese_jade",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "jade"
+    ]
+  },
+  {
+    "question_text": "Which monochrome Chinese painting style, emerging during the Tang dynasty (618--907), uses washes of black ink in varying concentrations to convey the perceived 'spirit' of a subject rather than direct imitation?",
+    "correct_answer": "Ink wash painting, a brush-based technique using gradations of black ink on paper or silk",
+    "distractors": [
+      "Ink wash painting, a stamp-based technique using gradations of colored dye on paper or silk",
+      "Gongbi painting, a brush-based technique using gradations of black ink on paper or silk",
+      "Ink wash painting, a brush-based technique using gradations of black ink on wood or clay"
+    ],
+    "difficulty": 1,
+    "source_article": "Ink_wash_painting",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "ink wash painting"
+    ]
+  }
+]

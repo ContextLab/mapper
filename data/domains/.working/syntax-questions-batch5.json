@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In the Minimalist Program, how does the Agree operation establish a syntactic relationship between a functional head and a nominal expression?",
+    "correct_answer": "A probe bearing unvalued features searches its c-command domain for a goal with matching valued features.",
+    "distractors": [
+      "A head moves overtly to an adjacent projection and checks features through specifier-head configuration.",
+      "An operator binds a variable in its governing category by sharing referential indices at Logical Form.",
+      "A functional morpheme selects its complement by subcategorization frames stored in the lexical entry."
+    ],
+    "difficulty": 4,
+    "source_article": "Minimalist program",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["Agree operation"]
+  },
+  {
+    "question_text": "In Chomsky's Minimalist framework, what distinguishes Internal Merge from External Merge?",
+    "correct_answer": "Internal Merge remerges a constituent already present within the syntactic object, thereby deriving movement.",
+    "distractors": [
+      "Internal Merge combines two items drawn separately from the numeration into a single new syntactic object.",
+      "Internal Merge applies only at the PF interface to linearize terminal nodes into a pronounceable string.",
+      "Internal Merge inserts functional morphemes from the lexicon into pre-existing phrase-structure positions."
+    ],
+    "difficulty": 4,
+    "source_article": "Merge (linguistics)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["internal merge"]
+  },
+  {
+    "question_text": "What is the central goal of the cartographic approach to syntactic structures, as developed by Rizzi and Cinque?",
+    "correct_answer": "To map a fixed universal hierarchy of fine-grained functional projections across all languages.",
+    "distractors": [
+      "To reduce all phrase structure to binary Merge operations without any functional categories at all.",
+      "To derive word-order variation from a single movement parameter applied at the PF interface.",
+      "To replace hierarchical tree structures with flat dependency graphs based on semantic role assignment."
+    ],
+    "difficulty": 4,
+    "source_article": "Cartographic syntax",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["cartography of syntactic structures"]
+  },
+  {
+    "question_text": "What does Kayne's Linear Correspondence Axiom (LCA) propose about the relationship between hierarchical structure and linear word order?",
+    "correct_answer": "Asymmetric c-command maps to linear precedence, deriving a universal specifier-head-complement base order.",
+    "distractors": [
+      "Symmetric c-command determines mutual precedence, allowing both head-initial and head-final base orders freely.",
+      "Linear order is entirely determined at PF by prosodic weight, independent of hierarchical syntactic structure.",
+      "Dominance relations in phrase structure directly encode temporal sequencing of phonological spell-out operations."
+    ],
+    "difficulty": 4,
+    "source_article": "Antisymmetry",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["Kayne's antisymmetry"]
+  },
+  {
+    "question_text": "In Distributed Morphology, at what point in the grammar are phonological forms inserted into syntactic terminal nodes?",
+    "correct_answer": "After the syntactic derivation is complete, through a post-syntactic process called Vocabulary Insertion.",
+    "distractors": [
+      "Before Merge applies, when fully inflected word forms are selected from a pre-syntactic mental lexicon.",
+      "During the syntactic derivation, as each morpheme is drawn from the numeration and enters the workspace.",
+      "At Logical Form, where interpretable semantic features are paired with their corresponding sound forms."
+    ],
+    "difficulty": 4,
+    "source_article": "Distributed morphology",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["Distributed Morphology"]
+  },
+  {
+    "question_text": "How does the copy theory of movement differ from the earlier trace theory in representing syntactic displacement?",
+    "correct_answer": "Movement leaves a full copy rather than an empty trace, with the lower copy deleted at PF.",
+    "distractors": [
+      "Movement erases the original position entirely, leaving no syntactic representation in the base-generated site.",
+      "Movement inserts a resumptive pronoun at the extraction site that is co-indexed with the displaced phrase.",
+      "Movement creates a new lexical item at the landing site that is unrelated to the launching position."
+    ],
+    "difficulty": 4,
+    "source_article": "Syntactic movement",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["copy theory of movement"]
+  },
+  {
+    "question_text": "In Minimalist phase theory, what does the feature inheritance mechanism propose about the origin of agreement and tense features on T?",
+    "correct_answer": "These features originate on the phase head C and are transmitted down to T during the derivation.",
+    "distractors": [
+      "These features are base-generated on T itself and checked locally against the subject in specifier position.",
+      "These features arise from the VP-internal subject and percolate upward through successive head movement steps.",
+      "These features are inserted post-syntactically by morphological merger operating at the PF interface level."
+    ],
+    "difficulty": 4,
+    "source_article": "Minimalist program",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["feature inheritance"]
+  },
+  {
+    "question_text": "What is 'late merger' in Minimalist syntax, and what empirical pattern does it help explain?",
+    "correct_answer": "Adjuncts merge into the derivation after the host has moved, explaining why they resist reconstruction effects.",
+    "distractors": [
+      "Arguments are inserted into theta positions only at LF, explaining why they undergo obligatory scope reconstruction.",
+      "Specifiers attach to phrase structure before heads are merged, explaining consistent specifier-initial word orders.",
+      "Complementizers are added at the final stage of spell-out, explaining their fixed position at clause boundaries."
+    ],
+    "difficulty": 4,
+    "source_article": "Merge (linguistics)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["late merger"]
+  },
+  {
+    "question_text": "In Chomsky's 2013 'Problems of Projection,' how does the labeling algorithm determine the label of a syntactic object formed by merging two phrases (XP and YP)?",
+    "correct_answer": "Either one phrase moves making the remaining head visible, or both heads share a prominent feature as the label.",
+    "distractors": [
+      "The phrase with more uninterpretable features automatically projects its categorical label over the entire merged structure.",
+      "A separate morphological component assigns labels post-spell-out based on the linear adjacency of terminal nodes.",
+      "The label is always determined by external-merge order, with the first-merged element unconditionally projecting its category."
+    ],
+    "difficulty": 4,
+    "source_article": "Labeling algorithm",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["labeling algorithm"]
+  },
+  {
+    "question_text": "In Collins's analysis, what is 'smuggling' in syntax and how does it circumvent extraction restrictions?",
+    "correct_answer": "A larger phrase containing the target constituent moves past a barrier first, carrying the target to an accessible position.",
+    "distractors": [
+      "A null operator undergoes covert movement at Logical Form, bypassing island constraints invisible to PF.",
+      "A resumptive pronoun is inserted inside the island domain and later deleted to satisfy the binding conditions.",
+      "The phase head extends its edge to include the blocked constituent, exempting it from the Phase Impenetrability Condition."
+    ],
+    "difficulty": 4,
+    "source_article": "Smuggling (linguistics)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["smuggling (syntax)"]
+  }
+]

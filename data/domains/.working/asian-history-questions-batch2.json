@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Born as Temujin around 1162, which Mongol leader was proclaimed universal ruler at a kurultai on the banks of the Onon River in 1206?",
+    "correct_answer": "Genghis Khan",
+    "distractors": [
+      "Kublai Khan",
+      "Ogedei Khan",
+      "Chagatai Khan"
+    ],
+    "difficulty": 1,
+    "source_article": "Genghis Khan",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Genghis Khan"]
+  },
+  {
+    "question_text": "Which empire, founded by Babur after his victory at the First Battle of Panipat in 1526, ruled the Indian subcontinent until its dissolution by the British in 1857?",
+    "correct_answer": "The Mughal Empire",
+    "distractors": [
+      "The Maratha Empire",
+      "The Gupta Empire",
+      "The Vijayanagara Empire"
+    ],
+    "difficulty": 1,
+    "source_article": "Mughal Empire",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Mughal Empire"]
+  },
+  {
+    "question_text": "The Korean War and Vietnam War were major proxy conflicts between the United States and communist powers during which broader geopolitical struggle?",
+    "correct_answer": "The Cold War in Asia",
+    "distractors": [
+      "The Great Game in Asia",
+      "The Pacific Theater of World War II",
+      "The Scramble for Asia"
+    ],
+    "difficulty": 1,
+    "source_article": "Cold War in Asia",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Cold War in Asia"]
+  },
+  {
+    "question_text": "What 1868 political event ended over 260 years of Tokugawa shogunate rule and restored imperial authority under Emperor Mutsuhito, launching Japan's rapid modernization?",
+    "correct_answer": "The Meiji Restoration",
+    "distractors": [
+      "The Boshin War",
+      "The Satsuma Rebellion",
+      "The Taika Reform"
+    ],
+    "difficulty": 2,
+    "source_article": "Meiji Restoration",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Meiji Restoration"]
+  },
+  {
+    "question_text": "The Treaty of Nanking, which ended the First Opium War in 1842, ceded Hong Kong Island to Britain and opened five treaty ports. What were these conflicts collectively called?",
+    "correct_answer": "The Opium Wars",
+    "distractors": [
+      "The Boxer Conflicts",
+      "The Anglo-Chinese Trade Wars",
+      "The Canton Wars"
+    ],
+    "difficulty": 2,
+    "source_article": "Opium Wars",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Opium Wars"]
+  },
+  {
+    "question_text": "Gandhi's Salt March, the Quit India Movement, and decades of nonviolent civil disobedience were key campaigns in which struggle that achieved its goal on August 15, 1947?",
+    "correct_answer": "The Indian independence movement",
+    "distractors": [
+      "The Partition resistance movement",
+      "The Indian National Army campaign",
+      "The Swadeshi nationalist movement"
+    ],
+    "difficulty": 2,
+    "source_article": "Indian independence movement",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Indian independence"]
+  },
+  {
+    "question_text": "Founded by Li Yuan in 618 CE after overthrowing the Sui dynasty, which Chinese dynasty is widely regarded as a golden age of poetry, trade, and cosmopolitan culture?",
+    "correct_answer": "The Tang dynasty",
+    "distractors": [
+      "The Song dynasty",
+      "The Han dynasty",
+      "The Ming dynasty"
+    ],
+    "difficulty": 2,
+    "source_article": "Tang dynasty",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Tang dynasty"]
+  },
+  {
+    "question_text": "Which Japanese military government, established by Ieyasu in 1603 with its capital at Edo, enforced the sakoku isolation policy restricting foreign contact for over two centuries?",
+    "correct_answer": "The Tokugawa shogunate",
+    "distractors": [
+      "The Kamakura shogunate",
+      "The Ashikaga shogunate",
+      "The Kenmu Restoration government"
+    ],
+    "difficulty": 2,
+    "source_article": "Tokugawa shogunate",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Tokugawa shogunate"]
+  },
+  {
+    "question_text": "Sir Cyril Radcliffe, who had never visited Asia, was given five weeks to draw the borders that divided British India into India and Pakistan in 1947. What is this event called?",
+    "correct_answer": "The Partition of India",
+    "distractors": [
+      "The Mountbatten Accession",
+      "The Indian Independence Act",
+      "The Radcliffe Secession"
+    ],
+    "difficulty": 2,
+    "source_article": "Partition of India",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Partition of India"]
+  },
+  {
+    "question_text": "Which 1950-1953 conflict began when North Korean forces crossed the 38th parallel, involved UN and Chinese intervention, and ended with an armistice but no formal peace treaty?",
+    "correct_answer": "The Korean War",
+    "distractors": [
+      "The Vietnam War",
+      "The Chinese Civil War",
+      "The First Indochina War"
+    ],
+    "difficulty": 2,
+    "source_article": "Korean War",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Korean War"]
+  }
+]

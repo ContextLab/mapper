@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In microeconomics, what distinguishes a direct tax from an indirect tax?",
+    "correct_answer": "A direct tax is levied on a person's or organization's income or wealth and cannot be shifted to another party, while an indirect tax is levied on goods or services and can be passed on to consumers through higher prices.",
+    "distractors": [
+      "A direct tax is collected by the federal government and an indirect tax is collected by local municipalities, regardless of what is being taxed.",
+      "A direct tax applies only to corporations and an indirect tax applies only to individual consumers based on their household size.",
+      "A direct tax is paid voluntarily as a charitable contribution while an indirect tax is a mandatory fee charged for using public infrastructure."
+    ],
+    "difficulty": 1,
+    "source_article": "Tax",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["tax"]
+  },
+  {
+    "question_text": "What is the overjustification effect in the context of incentives?",
+    "correct_answer": "It occurs when providing an external reward for an activity that was already intrinsically motivated reduces the person's intrinsic motivation to perform that activity.",
+    "distractors": [
+      "It occurs when a firm offers excessively high wages that attract overqualified applicants who then perform below their potential.",
+      "It occurs when consumers purchase more of a product than they actually need because of an unusually large promotional discount.",
+      "It occurs when a government subsidy causes producers to manufacture far more output than the market can efficiently absorb."
+    ],
+    "difficulty": 1,
+    "source_article": "Incentive",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["incentive"]
+  },
+  {
+    "question_text": "Why does opportunity cost include both explicit and implicit costs?",
+    "correct_answer": "Because the true cost of a choice encompasses not only direct monetary payments (explicit costs) but also the foregone benefits of the best alternative use of owned resources such as time, labor, or capital (implicit costs).",
+    "distractors": [
+      "Because government regulations require firms to report both categories separately on their annual financial statements and tax filings.",
+      "Because explicit costs are borne by the producer and implicit costs are always borne by the consumer, so both must be summed for market analysis.",
+      "Because explicit costs arise only in the short run and implicit costs arise only in the long run, so both time horizons must be considered together."
+    ],
+    "difficulty": 1,
+    "source_article": "Opportunity cost",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["opportunity cost"]
+  },
+  {
+    "question_text": "How does total revenue change when the price of a good with elastic demand is increased?",
+    "correct_answer": "Total revenue decreases because the percentage decline in quantity demanded exceeds the percentage increase in price, so the loss from fewer units sold outweighs the gain from the higher price.",
+    "distractors": [
+      "Total revenue increases because the higher price per unit more than compensates for any reduction in the number of units sold to consumers.",
+      "Total revenue remains unchanged because elastic demand means quantity demanded adjusts proportionally to exactly offset any price change.",
+      "Total revenue becomes unpredictable because elastic demand indicates that consumer preferences are random and unrelated to price changes."
+    ],
+    "difficulty": 2,
+    "source_article": "Price elasticity of demand",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["price elasticity of demand"]
+  },
+  {
+    "question_text": "In a perfectly competitive market, why does a firm's short-run marginal cost curve above average variable cost serve as its supply curve?",
+    "correct_answer": "Because a profit-maximizing competitive firm produces where price equals marginal cost, and it will only supply output when the price covers at least its average variable cost; otherwise it shuts down.",
+    "distractors": [
+      "Because government regulations in competitive markets require every firm to set its price exactly equal to its average total cost at all output levels.",
+      "Because in perfect competition each firm's demand curve is downward-sloping, so marginal cost determines the quantity consumers are willing to purchase.",
+      "Because marginal cost always decreases with output in competitive markets, ensuring that higher prices lead to proportionally lower quantities supplied."
+    ],
+    "difficulty": 2,
+    "source_article": "Marginal cost",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["marginal cost"]
+  },
+  {
+    "question_text": "What does the law of diminishing marginal utility state?",
+    "correct_answer": "As a consumer consumes successive units of the same good, holding all else equal, the additional satisfaction gained from each additional unit decreases.",
+    "distractors": [
+      "As a consumer's total income rises, the proportion of income spent on luxury goods declines steadily relative to necessity goods.",
+      "As a firm increases all inputs proportionally, the resulting increase in total output becomes progressively larger over time.",
+      "As the price of a good decreases, the total utility a consumer derives from that good also decreases proportionally."
+    ],
+    "difficulty": 2,
+    "source_article": "Marginal utility",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["marginal utility"]
+  },
+  {
+    "question_text": "On a standard supply and demand diagram, how is consumer surplus represented?",
+    "correct_answer": "As the area below the demand curve and above the equilibrium market price, bounded by the quantity axis, representing the aggregate benefit consumers receive by paying less than their maximum willingness to pay.",
+    "distractors": [
+      "As the area above the supply curve and below the equilibrium market price, representing the aggregate benefit producers receive from market transactions.",
+      "As the rectangular area formed by multiplying the equilibrium price by the equilibrium quantity, representing total market revenue.",
+      "As the triangular area between the supply curve and the demand curve to the right of the equilibrium quantity, representing deadweight loss."
+    ],
+    "difficulty": 2,
+    "source_article": "Economic surplus",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["consumer surplus"]
+  },
+  {
+    "question_text": "What happens to producer surplus when a per-unit tax is imposed on a competitive market?",
+    "correct_answer": "Producer surplus decreases because the effective price producers receive falls below the original equilibrium price, reducing the gap between the market price received and their minimum willingness to sell.",
+    "distractors": [
+      "Producer surplus increases because the tax allows producers to raise their prices by more than the amount of the tax on each unit sold.",
+      "Producer surplus remains unchanged because producers always pass the full burden of any tax on to consumers through higher retail prices.",
+      "Producer surplus is entirely eliminated because the tax forces all producers to sell at exactly their marginal cost of production."
+    ],
+    "difficulty": 2,
+    "source_article": "Economic surplus",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["producer surplus"]
+  },
+  {
+    "question_text": "What did John Nash prove about the existence of Nash equilibria in finite games?",
+    "correct_answer": "He proved that every finite game, in which each player has a finite set of strategies, has at least one Nash equilibrium, possibly involving mixed strategies where players randomize over their available actions.",
+    "distractors": [
+      "He proved that every finite game has exactly one unique Nash equilibrium in pure strategies, ensuring a single predictable outcome for all players.",
+      "He proved that Nash equilibria exist only in cooperative games where binding agreements among all players can be externally enforced.",
+      "He proved that Nash equilibria exist only when all players have dominant strategies that make them strictly better off regardless of rivals' choices."
+    ],
+    "difficulty": 2,
+    "source_article": "Nash equilibrium",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Nash equilibrium"]
+  },
+  {
+    "question_text": "In Pigou's classification of price discrimination, what characterizes first-degree (perfect) price discrimination?",
+    "correct_answer": "The seller charges each individual consumer the maximum price that consumer is willing to pay for each unit, thereby capturing the entire consumer surplus as producer revenue.",
+    "distractors": [
+      "The seller offers different product versions at different price points and allows consumers to self-select the version that matches their budget.",
+      "The seller divides consumers into broad demographic groups such as students or seniors and charges each group a different uniform price.",
+      "The seller sets a single price for all consumers but varies the quantity included in each package to appeal to different income levels."
+    ],
+    "difficulty": 2,
+    "source_article": "Price discrimination",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["price discrimination"]
+  }
+]

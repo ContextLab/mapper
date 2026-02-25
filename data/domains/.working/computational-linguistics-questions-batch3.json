@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In TF-IDF weighting, what does the inverse document frequency (IDF) component measure about a term?",
+    "correct_answer": "How rare or informative the term is across all documents in the corpus",
+    "distractors": [
+      "How frequently the term appears within a single document",
+      "The total number of documents that contain the term",
+      "The position of the term's first occurrence in each document"
+    ],
+    "difficulty": 2,
+    "source_article": "Tf–idf",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["TF-IDF"]
+  },
+  {
+    "question_text": "In NLP preprocessing, stop words are typically removed before analysis. What kind of words are they, and why are they filtered out?",
+    "correct_answer": "Common function words like \"the\" and \"is\" that carry little semantic meaning",
+    "distractors": [
+      "Rare technical terms that appear too infrequently to be statistically useful",
+      "Misspelled words automatically detected and removed by the spell checker",
+      "Punctuation marks and special characters that interrupt token sequences"
+    ],
+    "difficulty": 2,
+    "source_article": "Stop word",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["stop words"]
+  },
+  {
+    "question_text": "What key property distinguishes stemming from lemmatization when reducing words to a base form in text preprocessing?",
+    "correct_answer": "Stemming may produce non-word stems, while lemmatization always returns valid dictionary words",
+    "distractors": [
+      "Stemming requires a part-of-speech tagger but lemmatization does not",
+      "Stemming adds prefixes to words while lemmatization removes suffixes",
+      "Stemming only works on verbs while lemmatization handles all parts of speech"
+    ],
+    "difficulty": 2,
+    "source_article": "Stemming",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["stemming"]
+  },
+  {
+    "question_text": "In dependency grammar, what grammatical element is taken as the structural root of a clause from which all other words are connected via directed links?",
+    "correct_answer": "The finite verb of the clause",
+    "distractors": [
+      "The subject noun phrase of the clause",
+      "The first word appearing in the sentence",
+      "The most frequently occurring word in the clause"
+    ],
+    "difficulty": 2,
+    "source_article": "Dependency grammar",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["dependency parsing"]
+  },
+  {
+    "question_text": "Unlike one-hot encoding, word embeddings use dense real-valued vectors. How do they represent semantic similarity between words?",
+    "correct_answer": "Words with similar meanings are mapped to nearby vectors measured by cosine similarity",
+    "distractors": [
+      "Each word is assigned a unique integer index in a fixed vocabulary table",
+      "Similar words share the same one-hot encoded binary vector representation",
+      "Words are grouped into discrete semantic clusters using k-means classification"
+    ],
+    "difficulty": 2,
+    "source_article": "Word embedding",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["word embedding"]
+  },
+  {
+    "question_text": "What does a statistical language model fundamentally assign to any given sequence of words?",
+    "correct_answer": "A probability indicating how likely that sequence is in the language",
+    "distractors": [
+      "A grammatical correctness score based on hand-written syntactic rules",
+      "A semantic category label drawn from a predefined ontology",
+      "A sentiment polarity value ranging from negative to positive"
+    ],
+    "difficulty": 2,
+    "source_article": "Language model",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["language model"]
+  },
+  {
+    "question_text": "The CYK parsing algorithm uses bottom-up dynamic programming to parse context-free grammars. What specific normal form must the grammar be in?",
+    "correct_answer": "Chomsky normal form",
+    "distractors": [
+      "Greibach normal form",
+      "Kuroda normal form",
+      "Backus-Naur form"
+    ],
+    "difficulty": 3,
+    "source_article": "CYK algorithm",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["CYK algorithm"]
+  },
+  {
+    "question_text": "What algorithm is commonly used to train a hidden Markov model's parameters, and of what general method is it a special case?",
+    "correct_answer": "The Baum-Welch algorithm, a special case of expectation-maximization",
+    "distractors": [
+      "The Viterbi algorithm, a special case of dynamic programming",
+      "The forward-backward algorithm, a special case of gradient descent",
+      "The inside-outside algorithm, a special case of belief propagation"
+    ],
+    "difficulty": 3,
+    "source_article": "Hidden Markov model",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["hidden Markov model"]
+  },
+  {
+    "question_text": "In language model evaluation, perplexity is mathematically defined as the exponentiation of what information-theoretic quantity?",
+    "correct_answer": "The entropy of the probability distribution",
+    "distractors": [
+      "The variance of the probability distribution",
+      "The mutual information between input and output",
+      "The Kullback-Leibler divergence from the uniform distribution"
+    ],
+    "difficulty": 3,
+    "source_article": "Perplexity",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["perplexity"]
+  },
+  {
+    "question_text": "The attention mechanism was introduced in 2014 by Bahdanau et al. to address limitations of which neural architecture for machine translation?",
+    "correct_answer": "Recurrent neural networks with the encoder-decoder framework",
+    "distractors": [
+      "Convolutional neural networks with fixed-size pooling layers",
+      "Feedforward neural networks with backpropagation training",
+      "Generative adversarial networks with discriminator feedback"
+    ],
+    "difficulty": 3,
+    "source_article": "Attention (machine learning)",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["attention mechanism"]
+  }
+]

@@ -1,0 +1,66 @@
+{
+  "domain": "microeconomics",
+  "parent_domain": "economics",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      "supply and demand",
+      "monopoly",
+      "price",
+      "competition",
+      "profit",
+      "market",
+      "scarcity",
+      "consumer",
+      "producer",
+      "subsidy",
+      "tax",
+      "incentive",
+      "opportunity cost"
+    ],
+    "L2": [
+      "price elasticity of demand",
+      "marginal cost",
+      "marginal utility",
+      "consumer surplus",
+      "producer surplus",
+      "Nash equilibrium",
+      "price discrimination",
+      "oligopoly",
+      "externality",
+      "public good",
+      "indifference curve",
+      "budget constraint",
+      "deadweight loss"
+    ],
+    "L3": [
+      "Pareto efficiency",
+      "Coase theorem",
+      "adverse selection",
+      "moral hazard",
+      "game theory",
+      "principal-agent problem",
+      "price ceiling",
+      "revealed preference",
+      "Giffen good",
+      "compensating variation",
+      "Stackelberg competition",
+      "natural monopoly"
+    ],
+    "L4": [
+      "Arrow's impossibility theorem",
+      "mechanism design",
+      "Myerson-Satterthwaite theorem",
+      "auction theory",
+      "Vickrey-Clarke-Groves mechanism",
+      "Hotelling's law",
+      "Slutsky equation",
+      "folk theorem",
+      "signaling game",
+      "screening",
+      "Spence's signaling model",
+      "general equilibrium"
+    ]
+  }
+}

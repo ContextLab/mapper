@@ -1,0 +1,100 @@
+[
+  {
+    "question_text": "In modular arithmetic, the notation $a \\equiv b \\pmod{m}$ means $m$ divides $a - b$. What is the integer $m$ called in this notation?",
+    "correct_answer": "The integer $m$ is called the modulus of the congruence.",
+    "distractors": [
+      "The integer $m$ is called the residue of the congruence.",
+      "The integer $m$ is called the quotient of the congruence.",
+      "The integer $m$ is called the dividend of the congruence."
+    ],
+    "difficulty": 2,
+    "source_article": "Modular arithmetic",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["modular arithmetic"],
+    "id": "ff74c044528f4b92"
+  },
+  {
+    "question_text": "Euler's totient function $\\varphi(n)$ counts the positive integers up to $n$ that are relatively prime to $n$. What are these integers collectively called?",
+    "correct_answer": "They are called the totatives of $n$.",
+    "distractors": [
+      "They are called the residuals of $n$.",
+      "They are called the coprimal units of $n$.",
+      "They are called the primitive roots of $n$."
+    ],
+    "difficulty": 2,
+    "source_article": "Euler's totient function",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["Euler's totient function"],
+    "id": "0ce401805e65396c"
+  },
+  {
+    "question_text": "When factoring a small integer by hand, one tests divisibility by successive primes $2, 3, 5, \\ldots$ up to $\\sqrt{n}$. What is this basic factorization method called?",
+    "correct_answer": "This method is called trial division.",
+    "distractors": [
+      "This method is called the quadratic sieve.",
+      "This method is called Pollard's rho algorithm.",
+      "This method is called Fermat's factorization method."
+    ],
+    "difficulty": 2,
+    "source_article": "Integer factorization",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["prime factorization"],
+    "id": "20d9e146eebb84a0"
+  },
+  {
+    "question_text": "The Fundamental Theorem of Arithmetic relies on a key lemma from Euclid's Elements: if a prime $p$ divides $ab$, then $p$ divides $a$ or $b$. What is this lemma called?",
+    "correct_answer": "It is called Euclid's lemma.",
+    "distractors": [
+      "It is called Euler's lemma.",
+      "It is called Gauss's lemma.",
+      "It is called Bezout's lemma."
+    ],
+    "difficulty": 2,
+    "source_article": "Fundamental theorem of arithmetic",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["Fundamental Theorem of Arithmetic"],
+    "id": "3463f805e892fc1e"
+  },
+  {
+    "question_text": "Fermat's little theorem states that if $p$ is prime and $\\gcd(a,p)=1$, then $a^{p-1} \\equiv 1 \\pmod{p}$. A composite number passing this test for all bases is called what?",
+    "correct_answer": "Such a composite number is called a Carmichael number.",
+    "distractors": [
+      "Such a composite number is called a Mersenne composite number.",
+      "Such a composite number is called a Wieferich pseudoprime.",
+      "Such a composite number is called a strong probable prime."
+    ],
+    "difficulty": 2,
+    "source_article": "Fermat's little theorem",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["Fermat's little theorem"],
+    "id": "4d0262cca5fc8cd1"
+  },
+  {
+    "question_text": "The Euclidean algorithm computes $\\gcd(a, b)$ and can express it as a linear combination $ax + by = \\gcd(a,b)$. What is this linear-combination identity called?",
+    "correct_answer": "It is called Bezout's identity.",
+    "distractors": [
+      "It is called Lagrange's identity.",
+      "It is called Fermat's identity.",
+      "It is called Jacobi's identity."
+    ],
+    "difficulty": 2,
+    "source_article": "Euclidean algorithm",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["Euclidean algorithm"],
+    "id": "ffd385581e1b8fa8"
+  },
+  {
+    "question_text": "The congruence relation $a \\equiv b \\pmod{m}$ partitions the integers into equivalence classes. Each class contains exactly one integer in $\\{0, 1, \\ldots, m-1\\}$. What are these classes called?",
+    "correct_answer": "They are called residue classes (or congruence classes) modulo $m$.",
+    "distractors": [
+      "They are called quotient groups (or factor groups) modulo $m$.",
+      "They are called coset partitions (or orbit classes) modulo $m$.",
+      "They are called divisor classes (or remainder groups) modulo $m$."
+    ],
+    "difficulty": 2,
+    "source_article": "Modular arithmetic",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["congruence relation"],
+    "id": "1be04bbf6eaf10f5"
+  }
+]

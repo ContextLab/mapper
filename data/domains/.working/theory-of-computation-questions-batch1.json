@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "The word 'algorithm' derives from the Latinized name of which 9th-century Persian mathematician who worked at the House of Wisdom in Baghdad?",
+    "correct_answer": "Muhammad ibn Musa al-Khwarizmi",
+    "distractors": [
+      "Omar Khayyam of Nishapur",
+      "Abu Rayhan al-Biruni",
+      "Abu Ali ibn al-Haytham"
+    ],
+    "difficulty": 1,
+    "source_article": "Algorithm",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["algorithm"]
+  },
+  {
+    "question_text": "In his 1936 paper, Alan Turing originally referred to his abstract computational model by what name before Alonzo Church coined the term 'Turing machine'?",
+    "correct_answer": "An a-machine (automatic machine)",
+    "distractors": [
+      "A c-machine (computing machine)",
+      "A d-machine (decision machine)",
+      "An o-machine (oracle machine)"
+    ],
+    "difficulty": 1,
+    "source_article": "Turing machine",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["Turing machine"]
+  },
+  {
+    "question_text": "What are the two main implementation approaches for executing programs written in a programming language, according to standard classification?",
+    "correct_answer": "Compilation and interpretation",
+    "distractors": [
+      "Simulation and emulation",
+      "Encoding and decoding",
+      "Assembly and linking"
+    ],
+    "difficulty": 1,
+    "source_article": "Programming language",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["programming language"]
+  },
+  {
+    "question_text": "The ASCII text-encoding standard originally used how many bits to encode each character, allowing representation of 128 unique values?",
+    "correct_answer": "Seven bits per character",
+    "distractors": [
+      "Eight bits per character",
+      "Six bits per character",
+      "Four bits per character"
+    ],
+    "difficulty": 1,
+    "source_article": "Binary code",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["binary code"]
+  },
+  {
+    "question_text": "In cryptography, encryption converts the original representation of information, known as plaintext, into what alternative form?",
+    "correct_answer": "Ciphertext",
+    "distractors": [
+      "Hashtext",
+      "Cleartext",
+      "Steganograph"
+    ],
+    "difficulty": 1,
+    "source_article": "Encryption",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["encryption"]
+  },
+  {
+    "question_text": "Which type of loop is classified as 'exit-controlled' because its condition is checked after the loop body executes, guaranteeing at least one iteration?",
+    "correct_answer": "A do-while loop",
+    "distractors": [
+      "A standard while loop",
+      "A for-each loop",
+      "A counted for loop"
+    ],
+    "difficulty": 1,
+    "source_article": "Control flow",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["loop"]
+  },
+  {
+    "question_text": "A compiler translates source code from a high-level programming language into what category of language to create an executable program?",
+    "correct_answer": "A low-level language such as machine code",
+    "distractors": [
+      "A markup language such as HTML",
+      "A scripting language such as JavaScript",
+      "A query language such as SQL"
+    ],
+    "difficulty": 1,
+    "source_article": "Compiler",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["compiler"]
+  },
+  {
+    "question_text": "In a recursive function, what is the term for the condition that stops the recursion by returning a value without making further recursive calls?",
+    "correct_answer": "The base case",
+    "distractors": [
+      "The recursive case",
+      "The termination flag",
+      "The stack sentinel"
+    ],
+    "difficulty": 1,
+    "source_article": "Recursion (computer science)",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["recursion"]
+  },
+  {
+    "question_text": "A sorting algorithm is called 'stable' when it preserves what property among elements that share equal sort keys?",
+    "correct_answer": "Their original relative order in the input",
+    "distractors": [
+      "Their absolute memory addresses in storage",
+      "Their total number of comparison operations",
+      "Their binary representation bit patterns"
+    ],
+    "difficulty": 1,
+    "source_article": "Sorting algorithm",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["sorting algorithm"]
+  },
+  {
+    "question_text": "The 1965 paper by Juris Hartmanis and Richard Stearns that founded computational complexity theory defined which fundamental concept for classifying problems by resource usage?",
+    "correct_answer": "Time and space complexity classes",
+    "distractors": [
+      "Approximation ratio hierarchies",
+      "Nondeterministic branching factors",
+      "Randomized oracle reduction chains"
+    ],
+    "difficulty": 1,
+    "source_article": "Computational complexity theory",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["complexity"]
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "The minimum description length (MDL) principle, introduced by Jorma Rissanen in 1978, selects models by finding the shortest description of the data. How does MDL relate to Occam's razor, and how does it differ from the Bayesian minimum message length (MML) principle introduced by Wallace and Boulton in 1968?",
+    "correct_answer": "MDL formalizes Occam's razor by treating the best model as the one permitting greatest data compression. Unlike MML, which is a Bayesian framework averaging over all possible data, MDL is rooted in information theory and evaluates models solely on observed data without requiring prior distributions.",
+    "distractors": [
+      "MDL formalizes Occam's razor by treating the best model as the one permitting greatest data compression. Unlike MML, which is a frequentist framework averaging over all possible data, MDL is rooted in information theory and evaluates models solely on observed data without requiring prior distributions.",
+      "MDL formalizes Occam's razor by treating the best model as the one with the fewest parameters regardless of fit. Unlike MML, which is a Bayesian framework averaging over all possible data, MDL is rooted in information theory and evaluates models solely on observed data without requiring prior distributions.",
+      "MDL formalizes Occam's razor by treating the best model as the one permitting greatest data compression. Unlike MML, which is a Bayesian framework averaging over all possible data, MDL is rooted in Kolmogorov complexity and requires computing the exact shortest program for observed data."
+    ],
+    "difficulty": 4,
+    "source_article": "Minimum description length",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["minimum description length", "Occam's razor", "model selection"]
+  },
+  {
+    "question_text": "The expectation-maximization (EM) algorithm iteratively estimates parameters in statistical models with latent variables. What are the two steps in each iteration, and what are two prominent NLP applications of EM that specialize it to sequential and hierarchical structures respectively?",
+    "correct_answer": "The E-step computes the expected log-likelihood using current parameter estimates, and the M-step finds parameters that maximize that expected log-likelihood. The Baum-Welch algorithm applies EM to hidden Markov models, and the inside-outside algorithm applies EM to probabilistic context-free grammars.",
+    "distractors": [
+      "The E-step computes the expected log-likelihood using current parameter estimates, and the M-step finds parameters that maximize that expected log-likelihood. The Viterbi algorithm applies EM to hidden Markov models, and the inside-outside algorithm applies EM to probabilistic context-free grammars.",
+      "The E-step computes the maximum a posteriori parameters, and the M-step finds the expected latent variable assignments given those parameters. The Baum-Welch algorithm applies EM to hidden Markov models, and the inside-outside algorithm applies EM to probabilistic context-free grammars.",
+      "The E-step computes the expected log-likelihood using current parameter estimates, and the M-step finds parameters that maximize that expected log-likelihood. The Baum-Welch algorithm applies EM to hidden Markov models, and the CYK algorithm applies EM to probabilistic context-free grammars."
+    ],
+    "difficulty": 4,
+    "source_article": "Expectation\u2013maximization algorithm",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["expectation-maximization algorithm", "Baum-Welch algorithm", "inside-outside algorithm"]
+  },
+  {
+    "question_text": "The inside-outside algorithm, introduced by James K. Baker in 1979, re-estimates production probabilities in probabilistic context-free grammars. What earlier algorithm for hidden Markov models does it generalize, and what role do the inside and outside probabilities each play in the computation?",
+    "correct_answer": "It generalizes the forward-backward algorithm for HMMs. The inside probability is the probability that a nonterminal generates a given substring, while the outside probability is the probability of the rest of the sentence being generated outside that nonterminal's span.",
+    "distractors": [
+      "It generalizes the Viterbi algorithm for HMMs. The inside probability is the probability that a nonterminal generates a given substring, while the outside probability is the probability of the rest of the sentence being generated outside that nonterminal's span.",
+      "It generalizes the forward-backward algorithm for HMMs. The inside probability is the probability of the most likely parse tree rooted at a nonterminal, while the outside probability is the probability of the rest of the sentence being generated outside that nonterminal's span.",
+      "It generalizes the forward-backward algorithm for HMMs. The inside probability is the probability that a nonterminal generates a given substring, while the outside probability is the total probability of all parse trees that do not include that nonterminal."
+    ],
+    "difficulty": 4,
+    "source_article": "Inside\u2013outside algorithm",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["inside-outside algorithm", "forward-backward algorithm", "probabilistic context-free grammar"]
+  },
+  {
+    "question_text": "Cross-lingual transfer learning leverages models trained on high-resource languages to improve NLP performance on low-resource languages. What type of shared representation enables this transfer, and how do multilingual models like mBERT achieve cross-lingual understanding without explicit parallel data during pre-training?",
+    "correct_answer": "Cross-lingual word embeddings map words from different languages into a shared vector space. Multilingual BERT achieves cross-lingual transfer by pre-training on concatenated monolingual corpora from many languages with a shared WordPiece vocabulary, causing overlapping subwords and similar contexts to align representations across languages.",
+    "distractors": [
+      "Cross-lingual word embeddings map words from different languages into a shared vector space. Multilingual BERT achieves cross-lingual transfer by pre-training exclusively on parallel sentence pairs from many languages with a shared WordPiece vocabulary, causing direct translation equivalents to align representations across languages.",
+      "Cross-lingual parse trees map syntactic structures from different languages into a shared tree space. Multilingual BERT achieves cross-lingual transfer by pre-training on concatenated monolingual corpora from many languages with a shared WordPiece vocabulary, causing overlapping subwords and similar contexts to align representations across languages.",
+      "Cross-lingual word embeddings map words from different languages into a shared vector space. Multilingual BERT achieves cross-lingual transfer by pre-training on concatenated monolingual corpora from many languages with language-specific vocabularies, causing similar sentence structures to align representations across languages."
+    ],
+    "difficulty": 4,
+    "source_article": "Transfer learning",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["cross-lingual transfer", "multilingual embeddings", "multilingual BERT"]
+  },
+  {
+    "question_text": "Tree-adjoining grammar (TAG), defined by Aravind Joshi, uses trees rather than symbols as the elementary unit of rewriting. What are the two fundamental operations in TAG, and why is TAG described as mildly context-sensitive rather than fully context-sensitive?",
+    "correct_answer": "The two operations are substitution, which replaces a frontier node with an initial tree, and adjunction, which inserts an auxiliary tree at a node whose label matches the auxiliary tree's root and foot nodes. TAG is mildly context-sensitive because it generates some but not all context-sensitive languages while remaining efficiently parsable in polynomial time.",
+    "distractors": [
+      "The two operations are substitution, which replaces a frontier node with an initial tree, and adjunction, which inserts an auxiliary tree at a node whose label matches the auxiliary tree's root and foot nodes. TAG is mildly context-sensitive because it generates exactly the same languages as context-free grammars while remaining efficiently parsable in polynomial time.",
+      "The two operations are substitution, which replaces a frontier node with an initial tree, and concatenation, which joins two initial trees at their matching labeled leaf nodes. TAG is mildly context-sensitive because it generates some context-sensitive languages but not all of them while remaining efficiently parsable in worst-case polynomial time.",
+      "The two operations are substitution, which replaces a frontier node with an initial tree, and adjunction, which inserts an auxiliary tree at a node whose label matches the auxiliary tree's root and foot nodes. TAG is mildly context-sensitive because it generates all context-sensitive languages but restricts derivation depth to remain efficiently parsable in polynomial time."
+    ],
+    "difficulty": 4,
+    "source_article": "Tree-adjoining grammar",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["tree-adjoining grammar", "substitution and adjunction", "mildly context-sensitive"]
+  },
+  {
+    "question_text": "The maximum entropy (MaxEnt) classifier is a log-linear model widely used in NLP for tasks such as text classification and sequence labeling. How does the maximum entropy principle determine the model's probability distribution, and how does the MaxEnt classifier relate to multinomial logistic regression?",
+    "correct_answer": "The maximum entropy principle selects the probability distribution with the highest entropy among all distributions that satisfy the observed feature constraints from training data. The MaxEnt classifier is mathematically equivalent to multinomial logistic regression, both using the softmax function to produce conditional class probabilities from weighted feature sums.",
+    "distractors": [
+      "The maximum entropy principle selects the probability distribution with the lowest entropy among all distributions that satisfy the observed feature constraints from training data. The MaxEnt classifier is mathematically equivalent to multinomial logistic regression, both using the softmax function to produce conditional class probabilities from weighted feature sums.",
+      "The maximum entropy principle selects the probability distribution with the highest entropy among all distributions that satisfy the observed feature constraints from training data. The MaxEnt classifier is mathematically equivalent to naive Bayes classification, both using the softmax function to produce conditional class probabilities from weighted feature sums.",
+      "The maximum entropy principle selects the probability distribution with the highest entropy among all distributions that satisfy the observed feature constraints from training data. The MaxEnt classifier is mathematically equivalent to multinomial logistic regression, both using the sigmoid function to produce joint class probabilities from weighted feature sums."
+    ],
+    "difficulty": 4,
+    "source_article": "Logistic regression",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["maximum entropy model", "log-linear model", "multinomial logistic regression"]
+  },
+  {
+    "question_text": "Linear programming relaxation has been applied to dependency parsing by relaxing integer constraints on edge selection variables to continuous values. What does this relaxation provide in the context of structured prediction for parsing, and how is the fractional solution typically converted back into a valid parse tree?",
+    "correct_answer": "The LP relaxation provides a lower bound on the optimal integer solution's objective value, enabling efficient approximate inference over the exponentially large space of possible parse trees. The fractional solution is typically rounded or decoded using methods such as projecting onto the nearest valid tree structure.",
+    "distractors": [
+      "The LP relaxation provides an upper bound on the optimal integer solution's objective value, enabling efficient approximate inference over the exponentially large space of possible parse trees. The fractional solution is typically rounded or decoded using methods such as projecting onto the nearest valid tree structure.",
+      "The LP relaxation provides a lower bound on the optimal integer solution's objective value, enabling efficient approximate inference over the exponentially large space of possible parse trees. The fractional solution is typically converted by selecting all edges with probability above a fixed threshold of 0.5.",
+      "The LP relaxation provides a lower bound on the optimal integer solution's objective value, enabling exact inference over the exponentially large space of possible parse trees. The fractional solution is typically rounded or decoded using methods such as projecting onto the nearest valid tree structure."
+    ],
+    "difficulty": 4,
+    "source_article": "LP relaxation",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["linear programming relaxation for parsing", "structured prediction", "approximate inference"]
+  },
+  {
+    "question_text": "The Earley parser, introduced by Jay Earley in his 1968 dissertation, is a top-down chart parser using dynamic programming. What three operations does the algorithm perform at each position in the input, and what are its time complexities for general, unambiguous, and deterministic context-free grammars?",
+    "correct_answer": "The three operations are prediction (expanding nonterminals by adding new items from matching rules), scanning (advancing items over matching terminal symbols), and completion (advancing items when a predicted nonterminal is fully recognized). It runs in O(n^3) for general, O(n^2) for unambiguous, and O(n) for deterministic context-free grammars.",
+    "distractors": [
+      "The three operations are prediction (expanding nonterminals by adding new items from matching rules), scanning (advancing items over matching terminal symbols), and completion (advancing items when a predicted nonterminal is fully recognized). It runs in O(n^3) for general, O(n^2) for unambiguous, and O(n log n) for deterministic context-free grammars.",
+      "The three operations are prediction (expanding nonterminals by adding new items from matching rules), shifting (advancing items over matching terminal symbols), and reduction (combining completed items into higher-level nonterminals). It runs in O(n^3) for general, O(n^2) for unambiguous, and O(n) for deterministic context-free grammars.",
+      "The three operations are prediction (expanding nonterminals by adding new items from matching rules), scanning (advancing items over matching terminal symbols), and completion (advancing items when a predicted nonterminal is fully recognized). It runs in O(n^2) for general, O(n log n) for unambiguous, and O(n) for deterministic context-free grammars."
+    ],
+    "difficulty": 4,
+    "source_article": "Earley parser",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["Earley parser", "chart parsing", "parsing complexity"]
+  },
+  {
+    "question_text": "Turkish is a highly agglutinative language where a single noun root can produce over 20,000 valid word forms through productive inflectional and derivational suffixation. What computational formalism is predominantly used for Turkish morphological analysis, and why is it particularly well-suited to agglutinative morphology?",
+    "correct_answer": "Finite-state transducers (FSTs) are predominantly used, typically implemented as two-level morphology systems. FSTs are well-suited because they can compactly encode the regular patterns of sequential suffix attachment and phonological alternation rules characteristic of agglutinative languages, enabling efficient bidirectional mapping between surface forms and morphological analyses.",
+    "distractors": [
+      "Context-free grammars (CFGs) are predominantly used, typically implemented as recursive descent parsers. CFGs are well-suited because they can compactly encode the nested patterns of sequential suffix attachment and phonological alternation rules characteristic of agglutinative languages, enabling efficient bidirectional mapping between surface forms and morphological analyses.",
+      "Finite-state transducers (FSTs) are predominantly used, typically implemented as two-level morphology systems. FSTs are well-suited because they can enumerate all possible word forms in a lookup table, storing each inflected surface form and its morphological analysis as a dictionary entry for agglutinative languages.",
+      "Finite-state transducers (FSTs) are predominantly used, typically implemented as two-level morphology systems. FSTs are well-suited because they can handle the context-sensitive rewrite rules needed for non-concatenative morphological processes characteristic of agglutinative languages, enabling efficient bidirectional mapping between surface forms and morphological analyses."
+    ],
+    "difficulty": 4,
+    "source_article": "Morphological analysis (linguistics)",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["Turkish morphological analysis", "finite-state transducers", "agglutinative morphology"]
+  },
+  {
+    "question_text": "Abstract Meaning Representation (AMR) represents sentence meaning as rooted, labeled, directed acyclic graphs. What key linguistic phenomena does AMR capture in its graph structure, and what design principle distinguishes AMR from syntactic parse trees?",
+    "correct_answer": "AMR captures predicate-argument structure, coreference, named entities, negation, and modality as labeled nodes and edges. Unlike syntactic parse trees, AMR abstracts away from surface morphological and syntactic variation so that sentences with the same meaning receive the same graph representation regardless of wording.",
+    "distractors": [
+      "AMR captures predicate-argument structure, coreference, named entities, negation, and modality as labeled nodes and edges. Unlike syntactic parse trees, AMR preserves word order and inflectional morphology so that sentences with different surface forms receive distinct graph representations reflecting their wording.",
+      "AMR captures only predicate-argument structure and named entities as labeled nodes and edges, excluding coreference and modality. Unlike syntactic parse trees, AMR abstracts away from surface morphological and syntactic variation so that sentences with the same meaning receive the same graph representation regardless of wording.",
+      "AMR captures predicate-argument structure, coreference, named entities, negation, and modality as labeled nodes and edges. Unlike syntactic parse trees, AMR assigns a unique canonical graph representation to each individual word in isolation rather than representing whole sentence meanings regardless of wording."
+    ],
+    "difficulty": 4,
+    "source_article": "Abstract Meaning Representation",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["Abstract Meaning Representation", "semantic graph", "syntax-semantics abstraction"]
+  }
+]

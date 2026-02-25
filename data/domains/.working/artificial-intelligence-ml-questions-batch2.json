@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "The word 'robot' was introduced in Karel Capek's 1920 play R.U.R. From which Czech word, meaning forced labor or serfdom, was it derived?",
+    "correct_answer": "Robota, meaning forced labor or compulsory service",
+    "distractors": [
+      "Robotnik, meaning skilled craftsman or artisan",
+      "Rabota, meaning voluntary mechanical work",
+      "Robitel, meaning autonomous thinking machine"
+    ],
+    "difficulty": 1,
+    "source_article": "Robot",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["robot"]
+  },
+  {
+    "question_text": "Natural language processing (NLP) is a subfield of computer science and AI. What two broad categories of tasks does NLP primarily encompass?",
+    "correct_answer": "Natural language understanding and natural language generation",
+    "distractors": [
+      "Natural language compilation and natural language execution",
+      "Natural language encoding and natural language transmission",
+      "Natural language indexing and natural language compression"
+    ],
+    "difficulty": 1,
+    "source_article": "Natural language processing",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["natural language processing"]
+  },
+  {
+    "question_text": "Computer vision is an interdisciplinary field that enables machines to interpret visual information. What type of high-level understanding does it extract from digital images or videos?",
+    "correct_answer": "Numerical or symbolic information used for decisions and understanding of scenes",
+    "distractors": [
+      "Acoustic or frequency information used for sound reconstruction and audio synthesis",
+      "Binary or hexadecimal information used for data compression and file storage",
+      "Temporal or sequential information used for text generation and language models"
+    ],
+    "difficulty": 1,
+    "source_article": "Computer vision",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["computer vision"]
+  },
+  {
+    "question_text": "Gradient descent is a first-order iterative optimization algorithm. In which direction does it repeatedly step to minimize a differentiable function?",
+    "correct_answer": "In the opposite direction of the gradient at the current point, the direction of steepest descent",
+    "distractors": [
+      "In the same direction as the gradient at the current point, the direction of steepest ascent",
+      "In a random direction sampled uniformly from the unit sphere at each iteration",
+      "In the direction perpendicular to the gradient at the current point, along a contour line"
+    ],
+    "difficulty": 2,
+    "source_article": "Gradient descent",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["gradient descent"]
+  },
+  {
+    "question_text": "In machine learning, overfitting occurs when a model learns training data too closely, including noise. What happens to the model's performance on unseen data as overfitting increases?",
+    "correct_answer": "Performance on unseen data becomes worse even as training performance continues to improve",
+    "distractors": [
+      "Performance on unseen data improves proportionally as training performance continues to improve",
+      "Performance on unseen data remains constant while training performance stops changing",
+      "Performance on unseen data oscillates randomly while training performance steadily decreases"
+    ],
+    "difficulty": 2,
+    "source_article": "Overfitting",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["overfitting"]
+  },
+  {
+    "question_text": "A convolutional neural network (CNN) uses a sliding window operation across input data. What does this operation compute between the kernel values and the input at each position?",
+    "correct_answer": "A dot product, producing a feature map of detected features",
+    "distractors": [
+      "A cross product, producing a vector field of spatial orientations",
+      "An arithmetic mean, producing a smoothed map of average intensities",
+      "A bitwise XOR, producing a binary mask of edge boundaries"
+    ],
+    "difficulty": 2,
+    "source_article": "Convolutional neural network",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["convolutional neural network"]
+  },
+  {
+    "question_text": "Recurrent neural networks (RNNs) differ from feedforward networks by using recurrent connections. What is fed back as additional input at each time step to capture temporal dependencies?",
+    "correct_answer": "The hidden state from the previous time step",
+    "distractors": [
+      "The raw input from the first time step",
+      "The loss gradient from the final time step",
+      "The output weights from a random time step"
+    ],
+    "difficulty": 2,
+    "source_article": "Recurrent neural network",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["recurrent neural network"]
+  },
+  {
+    "question_text": "Backpropagation efficiently computes the gradient of a loss function with respect to network weights. Which mathematical rule does it apply, iterating backward layer by layer?",
+    "correct_answer": "The chain rule of calculus",
+    "distractors": [
+      "The product rule of calculus",
+      "Bayes' rule of probability",
+      "L'Hopital's rule of limits"
+    ],
+    "difficulty": 2,
+    "source_article": "Backpropagation",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["backpropagation"]
+  },
+  {
+    "question_text": "Reinforcement learning trains an agent through interactions with an environment. What fundamental tradeoff must the agent balance between trying new actions and using known rewarding ones?",
+    "correct_answer": "The exploration versus exploitation tradeoff",
+    "distractors": [
+      "The precision versus recall tradeoff",
+      "The bias versus variance tradeoff",
+      "The compression versus fidelity tradeoff"
+    ],
+    "difficulty": 2,
+    "source_article": "Reinforcement learning",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["reinforcement learning"]
+  },
+  {
+    "question_text": "Decision tree learning builds a tree-structured predictive model through recursive partitioning. What do the leaf nodes of a classification decision tree represent?",
+    "correct_answer": "Class labels assigned to input instances",
+    "distractors": [
+      "Feature importance scores for each attribute",
+      "Splitting thresholds for continuous variables",
+      "Probability distributions over training samples"
+    ],
+    "difficulty": 2,
+    "source_article": "Decision tree learning",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["decision tree"]
+  }
+]

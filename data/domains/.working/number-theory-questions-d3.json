@@ -1,0 +1,80 @@
+[
+  {
+    "question_text": "For an odd prime $p$, there are $(p-1)/2$ quadratic residues and $(p-1)/2$ nonresidues modulo $p$ (excluding zero). What is the product of two quadratic nonresidues modulo an odd prime?",
+    "correct_answer": "A quadratic residue, because the Legendre symbol is multiplicative and $(-1)(-1) = 1$",
+    "distractors": [
+      "A quadratic nonresidue, since the set of nonresidues is closed under multiplication modulo $p$",
+      "Either a residue or nonresidue depending on whether $p \\equiv 1 \\pmod{4}$ or $p \\equiv 3 \\pmod{4}$",
+      "Always congruent to $-1 \\pmod{p}$, since nonresidues generate the unique subgroup of order two"
+    ],
+    "difficulty": 3,
+    "source_article": "Quadratic residue",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["quadratic residue", "Legendre symbol", "multiplicative function"]
+  },
+  {
+    "question_text": "Euler's criterion provides a formula for computing the Legendre symbol $\\left(\\frac{a}{p}\\right)$ where $p$ is an odd prime and $\\gcd(a,p)=1$. What is this formula?",
+    "correct_answer": "$\\left(\\frac{a}{p}\\right) \\equiv a^{(p-1)/2} \\pmod{p}$, yielding $+1$ or $-1$",
+    "distractors": [
+      "$\\left(\\frac{a}{p}\\right) \\equiv a^{(p+1)/2} \\pmod{p}$, yielding $+1$ or $-1$",
+      "$\\left(\\frac{a}{p}\\right) \\equiv a^{p-1} \\pmod{p}$, which always yields $+1$ by Fermat's theorem",
+      "$\\left(\\frac{a}{p}\\right) \\equiv a^{(p-1)/4} \\pmod{p}$, yielding a fourth root of unity"
+    ],
+    "difficulty": 3,
+    "source_article": "Legendre symbol",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["Legendre symbol", "Euler's criterion", "quadratic residue"]
+  },
+  {
+    "question_text": "The Chinese Remainder Theorem originates from a problem in the 3rd\u20135th century text Sunzi Suanjing. What system of congruences does this classical problem pose, and what is its solution?",
+    "correct_answer": "$x \\equiv 2 \\pmod{3}$, $x \\equiv 3 \\pmod{5}$, $x \\equiv 2 \\pmod{7}$, with solution $x = 23$",
+    "distractors": [
+      "$x \\equiv 1 \\pmod{3}$, $x \\equiv 2 \\pmod{5}$, $x \\equiv 3 \\pmod{7}$, with solution $x = 52$",
+      "$x \\equiv 2 \\pmod{3}$, $x \\equiv 3 \\pmod{5}$, $x \\equiv 2 \\pmod{7}$, with solution $x = 37$",
+      "$x \\equiv 1 \\pmod{2}$, $x \\equiv 2 \\pmod{3}$, $x \\equiv 3 \\pmod{5}$, with solution $x = 23$"
+    ],
+    "difficulty": 3,
+    "source_article": "Chinese remainder theorem",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["Chinese remainder theorem", "congruence relation", "modular arithmetic"]
+  },
+  {
+    "question_text": "A primitive root modulo $n$ exists if and only if $n$ belongs to a specific set of integers, as proved by Gauss. For which values of $n > 2$ do primitive roots exist?",
+    "correct_answer": "$n = 4$, $p^k$, or $2p^k$ where $p$ is an odd prime and $k \\geq 1$",
+    "distractors": [
+      "$n = p^k$ for any prime $p$ (including $p = 2$) and any $k \\geq 1$",
+      "All odd integers $n \\geq 3$, since odd moduli always have cyclic unit groups",
+      "$n = p$ or $n = 2p$ for odd primes $p$ only, excluding all higher prime powers"
+    ],
+    "difficulty": 3,
+    "source_article": "Primitive root modulo n",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["primitive root", "cyclic group", "Euler's totient function"]
+  },
+  {
+    "question_text": "Lagrange proved that the continued fraction expansion of any quadratic irrational $\\sqrt{n}$ is eventually periodic with a specific structure. What characterizes the periodic part $[a_0; \\overline{a_1, \\ldots, a_{r-1}, 2a_0}]$?",
+    "correct_answer": "The repeating block ends with $2a_0$ and the preceding terms $a_1, \\ldots, a_{r-1}$ form a palindrome",
+    "distractors": [
+      "The repeating block ends with $a_0$ and the preceding terms form a strictly increasing sequence",
+      "The repeating block has length exactly $a_0$ and all internal terms equal one",
+      "The repeating block ends with $a_0^2$ and the preceding terms form an arithmetic progression"
+    ],
+    "difficulty": 3,
+    "source_article": "Continued fraction",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["continued fraction", "periodic continued fraction", "quadratic irrational"]
+  },
+  {
+    "question_text": "Bhaskara II used the chakravala method to find the fundamental solution to $x^2 - 61y^2 = 1$. What is this remarkably large solution?",
+    "correct_answer": "$x = 1{,}766{,}319{,}049$ and $y = 226{,}153{,}980$",
+    "distractors": [
+      "$x = 1{,}523{,}864$ and $y = 195{,}025$",
+      "$x = 3{,}480{,}617$ and $y = 445{,}638$",
+      "$x = 29{,}718$ and $y = 3{,}805$"
+    ],
+    "difficulty": 3,
+    "source_article": "Pell's equation",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["Pell's equation", "continued fraction", "chakravala method"]
+  }
+]

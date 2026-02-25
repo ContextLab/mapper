@@ -1,0 +1,172 @@
+[
+  {
+    "question_text": "In transfer learning, what is the common practice when adapting a pretrained deep neural network to a new task with limited data?",
+    "correct_answer": "Fine-tuning the later layers while keeping the early and middle layers frozen, since early layers capture general features reusable across tasks.",
+    "distractors": [
+      "Retraining all layers from scratch with random initialization, since pretrained weights introduce bias from the original task's data distribution.",
+      "Removing all convolutional layers and replacing them with fully connected layers, since new tasks require fundamentally different feature extraction.",
+      "Freezing the final classification layer and retraining only the first layer, since initial layers are most task-specific and need updating."
+    ],
+    "difficulty": 2,
+    "source_article": "Transfer learning",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "transfer learning"
+    ]
+  },
+  {
+    "question_text": "In a generative adversarial network (GAN), what are the roles of the two neural networks trained simultaneously?",
+    "correct_answer": "The generator creates synthetic data samples, while the discriminator tries to distinguish generated samples from real training data.",
+    "distractors": [
+      "The encoder compresses input data into a latent space, while the decoder reconstructs the original input from the compressed representation.",
+      "The teacher network produces soft probability targets, while the student network learns to replicate those targets with fewer parameters.",
+      "The policy network selects actions in an environment, while the value network estimates expected cumulative rewards for each state."
+    ],
+    "difficulty": 2,
+    "source_article": "Generative adversarial network",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "generative adversarial network"
+    ]
+  },
+  {
+    "question_text": "What key architectural innovation did the transformer introduce that allowed it to replace recurrent neural networks for sequence modeling?",
+    "correct_answer": "The self-attention mechanism, which lets every position attend to all other positions in parallel rather than processing tokens sequentially.",
+    "distractors": [
+      "The gating mechanism, which lets the network selectively forget irrelevant information from earlier positions in the sequence.",
+      "The convolutional filter bank, which lets the network extract local n-gram patterns from fixed-size windows across the sequence.",
+      "The memory-augmented cell, which lets the network store and retrieve information from an external differentiable memory matrix."
+    ],
+    "difficulty": 2,
+    "source_article": "Transformer (deep learning architecture)",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "transformer"
+    ]
+  },
+  {
+    "question_text": "What underlying architecture do modern large language models such as GPT use, and how are they initially trained?",
+    "correct_answer": "They use the transformer architecture and are pretrained with self-supervised learning on massive text corpora to predict upcoming tokens.",
+    "distractors": [
+      "They use stacked recurrent neural networks and are pretrained with reinforcement learning on curated question-answer dialogue datasets.",
+      "They use deep convolutional networks and are pretrained with supervised classification on millions of manually labeled sentence pairs.",
+      "They use memory-augmented autoencoders and are pretrained with contrastive learning on paired examples of similar and dissimilar texts."
+    ],
+    "difficulty": 2,
+    "source_article": "Large language model",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "large language model"
+    ]
+  },
+  {
+    "question_text": "In the bias-variance tradeoff, what happens to bias and variance as model complexity increases?",
+    "correct_answer": "Bias decreases because the model can fit training data more closely, while variance increases because the model becomes more sensitive to training set fluctuations.",
+    "distractors": [
+      "Both bias and variance decrease together because more parameters allow the model to generalize better and reduce all sources of error simultaneously.",
+      "Bias increases because more parameters introduce systematic approximation errors, while variance decreases because the model averages over more learned features.",
+      "Bias remains constant regardless of complexity, while variance increases linearly with the number of parameters due to accumulated rounding errors."
+    ],
+    "difficulty": 3,
+    "source_article": "Bias–variance tradeoff",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "bias-variance tradeoff"
+    ]
+  },
+  {
+    "question_text": "How does L1 regularization (Lasso) differ from L2 regularization (Ridge) in its effect on model weights?",
+    "correct_answer": "L1 adds an absolute-value penalty that drives some weights exactly to zero, producing sparse models, while L2 shrinks all weights evenly without eliminating any.",
+    "distractors": [
+      "L1 adds a squared penalty that distributes weight values uniformly across features, while L2 uses an absolute-value penalty concentrating weights on one dominant feature.",
+      "L1 penalizes only negative weights to enforce non-negativity constraints, while L2 penalizes only large positive weights to prevent unbounded parameter growth.",
+      "L1 multiplies each weight by a fixed decay factor after every training epoch, while L2 randomly zeroes a fraction of weights during each forward pass."
+    ],
+    "difficulty": 3,
+    "source_article": "Regularization (mathematics)",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "regularization"
+    ]
+  },
+  {
+    "question_text": "In k-fold cross-validation, how is the dataset used to estimate a model's generalization performance?",
+    "correct_answer": "Data is partitioned into k folds; the model trains on k−1 folds and tests on the remaining one, rotating so every fold validates once.",
+    "distractors": [
+      "Data is partitioned into k folds; the model trains on one fold and tests on the other k−1, rotating so every fold trains once.",
+      "Data is shuffled into k folds; the model trains on all folds simultaneously and tests on a separate held-out set outside the folds.",
+      "Data is divided into k folds of increasing size; the model trains on progressively larger subsets and tests only on the final fold."
+    ],
+    "difficulty": 3,
+    "source_article": "Cross-validation (statistics)",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "cross-validation"
+    ]
+  },
+  {
+    "question_text": "What problem was batch normalization originally designed to address, and how does it operate during training?",
+    "correct_answer": "It was designed to reduce internal covariate shift by normalizing each layer's inputs to have zero mean and unit variance across the mini-batch during training.",
+    "distractors": [
+      "It was designed to prevent gradient explosion by clipping each layer's activations to a fixed range across the entire training dataset during training.",
+      "It was designed to eliminate vanishing gradients by scaling each layer's weights to have equal magnitude using the full training set statistics during training.",
+      "It was designed to reduce overfitting by randomly permuting each layer's output activations within each training sample during each forward pass."
+    ],
+    "difficulty": 3,
+    "source_article": "Batch normalization",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "batch normalization"
+    ]
+  },
+  {
+    "question_text": "In the self-attention mechanism used by transformers, how are the query, key, and value vectors used to compute attention weights?",
+    "correct_answer": "Dot products between query and key vectors are scaled, then passed through softmax to produce weights that sum each value vector into the output.",
+    "distractors": [
+      "Euclidean distances between query and key vectors are inverted, then passed through sigmoid to produce weights that gate each value vector's output contribution.",
+      "Element-wise products of query and value vectors are normalized, then passed through tanh to produce weights that scale each key vector's output contribution.",
+      "Cosine similarities between key and value vectors are thresholded, then passed through ReLU to produce weights that filter each query vector's output contribution."
+    ],
+    "difficulty": 3,
+    "source_article": "Attention (machine learning)",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "attention mechanism"
+    ]
+  },
+  {
+    "question_text": "What notable property of Word2Vec embeddings demonstrated that word vectors capture semantic relationships through vector arithmetic?",
+    "correct_answer": "Vector analogies such as king minus man plus woman yielding a vector closest to queen showed that arithmetic on embeddings encodes semantic relationships.",
+    "distractors": [
+      "Clustering word vectors by their magnitude showed that words with similar frequencies in the corpus always share identical syntactic roles in sentences.",
+      "Projecting word vectors onto two principal components showed that all synonyms occupy the exact same point in the reduced embedding space.",
+      "Computing the determinant of the word vector matrix showed that semantically related words always produce integer values while unrelated words produce irrational values."
+    ],
+    "difficulty": 3,
+    "source_article": "Word embedding",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "word embedding"
+    ]
+  }
+]

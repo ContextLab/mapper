@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In Bertrand competition between two firms selling a homogeneous product, what does the model predict about the equilibrium price?",
+    "correct_answer": "Both firms set their price equal to marginal cost, replicating the perfectly competitive outcome even with only two sellers.",
+    "distractors": [
+      "Both firms set their price equal to the monopoly price and split the market demand equally between them.",
+      "The firm with the larger market share sets the price first and the smaller firm undercuts it by a fixed percentage.",
+      "Both firms set their price above marginal cost at a level that maximizes their joint profit through tacit coordination."
+    ],
+    "difficulty": 2,
+    "source_article": "Oligopoly",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["oligopoly"]
+  },
+  {
+    "question_text": "When a negative externality is present in a market, how does the socially optimal quantity of output compare to the market equilibrium quantity?",
+    "correct_answer": "The socially optimal quantity is lower than the market equilibrium quantity because the social cost exceeds the private cost of production.",
+    "distractors": [
+      "The socially optimal quantity is higher than the market equilibrium quantity because external costs reduce consumer demand for the product.",
+      "The socially optimal quantity is equal to the market equilibrium quantity because externalities only affect the distribution of surplus, not total output.",
+      "The socially optimal quantity is zero because any production that generates a negative externality is inherently inefficient."
+    ],
+    "difficulty": 2,
+    "source_article": "Externality",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["externality"]
+  },
+  {
+    "question_text": "Why do private markets tend to underprovide public goods?",
+    "correct_answer": "Because individuals can benefit from the good without paying for it, creating a free-rider problem that undermines voluntary provision.",
+    "distractors": [
+      "Because private firms lack the technical expertise needed to produce goods that are consumed by large numbers of people.",
+      "Because public goods are always more expensive to produce than private goods, making them unprofitable at any price level.",
+      "Because government regulations prohibit private firms from producing goods that are classified as non-excludable by law."
+    ],
+    "difficulty": 2,
+    "source_article": "Public good",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["public good"]
+  },
+  {
+    "question_text": "What does the marginal rate of substitution (MRS) represent on an indifference curve?",
+    "correct_answer": "The rate at which a consumer is willing to give up one good in exchange for an additional unit of the other good while maintaining the same level of utility.",
+    "distractors": [
+      "The rate at which the market price of one good changes relative to the market price of the other good over time.",
+      "The rate at which a firm can transform one input into another while keeping total production output constant.",
+      "The rate at which total utility increases as a consumer simultaneously adds one unit of each good to their bundle."
+    ],
+    "difficulty": 2,
+    "source_article": "Indifference curve",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["indifference curve"]
+  },
+  {
+    "question_text": "What does the slope of a consumer's budget line equal in a two-good model?",
+    "correct_answer": "The negative ratio of the price of the good on the horizontal axis to the price of the good on the vertical axis (−Px/Py).",
+    "distractors": [
+      "The negative ratio of the consumer's total income to the combined prices of both goods (−M/(Px+Py)).",
+      "The negative ratio of the quantity consumed of the horizontal-axis good to the quantity consumed of the vertical-axis good.",
+      "The negative ratio of the marginal utility of the horizontal-axis good to the marginal utility of the vertical-axis good."
+    ],
+    "difficulty": 2,
+    "source_article": "Budget constraint",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["budget constraint"]
+  },
+  {
+    "question_text": "How does a monopolist create deadweight loss compared to a perfectly competitive market?",
+    "correct_answer": "By restricting output below the competitive quantity and charging a price above marginal cost, the monopolist eliminates mutually beneficial trades.",
+    "distractors": [
+      "By producing more output than the competitive quantity and selling at a price below marginal cost to drive out potential entrants.",
+      "By setting price equal to marginal cost but earning excess profits due to barriers that prevent new firms from entering the market.",
+      "By charging all consumers the same price as a competitive market but capturing the entire consumer surplus as monopoly profit."
+    ],
+    "difficulty": 2,
+    "source_article": "Deadweight loss",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["deadweight loss"]
+  },
+  {
+    "question_text": "What does the First Fundamental Theorem of Welfare Economics state?",
+    "correct_answer": "Under certain conditions, every competitive equilibrium allocation is Pareto efficient.",
+    "distractors": [
+      "Under certain conditions, every Pareto efficient allocation maximizes the sum of all individual utilities in the economy.",
+      "Under certain conditions, government redistribution of resources can always achieve a more equitable outcome than the market.",
+      "Under certain conditions, a monopolistic market will produce the same allocation of resources as a perfectly competitive market."
+    ],
+    "difficulty": 3,
+    "source_article": "Pareto efficiency",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Pareto efficiency"]
+  },
+  {
+    "question_text": "According to the Coase theorem, why does the initial assignment of property rights not affect the final allocation of resources when transaction costs are zero?",
+    "correct_answer": "Because the parties will bargain and trade the rights to whichever party values them most, reaching the same efficient outcome regardless of who held the rights initially.",
+    "distractors": [
+      "Because the government will always reassign property rights to the most productive party through mandatory arbitration proceedings.",
+      "Because all parties have identical valuations for the resource, so the initial assignment is irrelevant to the final distribution of wealth.",
+      "Because property rights have no economic value when transaction costs are zero, so neither party has an incentive to hold them."
+    ],
+    "difficulty": 3,
+    "source_article": "Coase theorem",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Coase theorem"]
+  },
+  {
+    "question_text": "In Akerlof's 'Market for Lemons' model, what mechanism can cause a used car market to collapse?",
+    "correct_answer": "Buyers cannot distinguish high-quality cars from low-quality ones, so they offer only an average price, causing sellers of high-quality cars to withdraw from the market.",
+    "distractors": [
+      "Sellers of low-quality cars exit the market because buyers can easily detect defects, leaving only overpriced high-quality cars for sale.",
+      "Government safety regulations force sellers to disclose all defects, which increases repair costs and raises the price of all used cars.",
+      "Buyers collude to offer prices below the true value of all cars, forcing both high-quality and low-quality sellers to exit simultaneously."
+    ],
+    "difficulty": 3,
+    "source_article": "Adverse selection",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["adverse selection"]
+  },
+  {
+    "question_text": "Why do insurance companies use deductibles and co-payments in their policies?",
+    "correct_answer": "To reduce moral hazard by ensuring that the insured party bears part of the cost of a loss, discouraging excessive risk-taking behavior.",
+    "distractors": [
+      "To increase adverse selection by screening out low-risk individuals who are unwilling to pay any out-of-pocket expenses.",
+      "To maximize the insurer's total revenue by collecting additional fees beyond the standard premium from every policyholder.",
+      "To comply with government regulations that require a minimum level of cost-sharing between insurers and all policyholders."
+    ],
+    "difficulty": 3,
+    "source_article": "Moral hazard",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["moral hazard"]
+  }
+]

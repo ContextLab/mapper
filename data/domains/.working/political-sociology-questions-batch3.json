@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Almond and Verba's 1963 study 'The Civic Culture' identified three ideal types of political culture. Which three types did they distinguish?",
+    "correct_answer": "Parochial, subject, and participant political cultures.",
+    "distractors": [
+      "Liberal, conservative, and communitarian political cultures.",
+      "Hierarchical, egalitarian, and individualist political cultures.",
+      "Traditional, modern, and postmodern political cultures."
+    ],
+    "difficulty": 2,
+    "source_article": "Political culture",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["political culture"]
+  },
+  {
+    "question_text": "Elite theory, developed by Mosca and Pareto, makes what central claim about the distribution of political power in all societies?",
+    "correct_answer": "Power is always concentrated in a small ruling minority.",
+    "distractors": [
+      "Power is equally shared among all citizens through elections.",
+      "Power is dispersed among many competing organized interest groups.",
+      "Power gradually shifts from rulers to the general populace."
+    ],
+    "difficulty": 2,
+    "source_article": "Elite theory",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["elite theory"]
+  },
+  {
+    "question_text": "Robert Dahl's 1961 study 'Who Governs?' examined power in New Haven, Connecticut. What conclusion central to pluralist theory did he reach?",
+    "correct_answer": "Political power was dispersed among multiple competing groups, not held by a single elite.",
+    "distractors": [
+      "Political power was monopolized by a cohesive business elite controlling all key decisions.",
+      "Political power was exercised primarily through direct democracy at neighborhood town hall meetings.",
+      "Political power was concentrated in the hands of one dominant ethnic community's leaders."
+    ],
+    "difficulty": 2,
+    "source_article": "Pluralism (political theory)",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["pluralism"]
+  },
+  {
+    "question_text": "Political scientist Juan Linz distinguished authoritarianism from totalitarianism. What feature did he identify as characteristic of authoritarian regimes but absent from totalitarian ones?",
+    "correct_answer": "Limited political pluralism, allowing some autonomous social and economic institutions.",
+    "distractors": [
+      "A single mass party guided by an all-encompassing official state ideology.",
+      "Complete state ownership of all media and educational institutions combined.",
+      "Active popular mobilization directed by a charismatic supreme political leader."
+    ],
+    "difficulty": 2,
+    "source_article": "Authoritarianism",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["authoritarianism"]
+  },
+  {
+    "question_text": "The 1942 Beveridge Report laid the foundation for the modern British welfare state by identifying five social problems. What were these 'Giant Evils'?",
+    "correct_answer": "Want, Disease, Ignorance, Squalor, and Idleness.",
+    "distractors": [
+      "Poverty, Crime, Illiteracy, Pollution, and Corruption.",
+      "Hunger, Plague, Injustice, Homelessness, and Exploitation.",
+      "Debt, Famine, Inequality, Overcrowding, and Unemployment."
+    ],
+    "difficulty": 2,
+    "source_article": "Welfare state",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["welfare state"]
+  },
+  {
+    "question_text": "In pluralist democratic theory, what is the primary political function of interest groups, also called advocacy or pressure groups?",
+    "correct_answer": "To influence public policy and government decisions without seeking elected office.",
+    "distractors": [
+      "To nominate and elect their own candidates to legislative and executive positions.",
+      "To replace political parties as the main organizers of electoral campaign activities.",
+      "To serve as judicial mediators resolving constitutional disputes between government branches."
+    ],
+    "difficulty": 2,
+    "source_article": "Advocacy group",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["interest group"]
+  },
+  {
+    "question_text": "Max Weber's tripartite classification identifies three ideal types of legitimate authority. What are they?",
+    "correct_answer": "Traditional, charismatic, and rational-legal authority.",
+    "distractors": [
+      "Coercive, remunerative, and normative authority.",
+      "Monarchical, democratic, and bureaucratic authority.",
+      "Religious, military, and constitutional authority."
+    ],
+    "difficulty": 3,
+    "source_article": "Tripartite classification of authority",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Weber's types of authority"]
+  },
+  {
+    "question_text": "In Antonio Gramsci's theory of cultural hegemony, how does the ruling class primarily maintain its dominance beyond direct coercion?",
+    "correct_answer": "Through intellectual and moral leadership via cultural institutions like schools, churches, and media.",
+    "distractors": [
+      "Through systematic electoral fraud and direct manipulation of democratic voting procedures and outcomes.",
+      "Through exclusive control of military forces and the centralized state security apparatus overall.",
+      "Through economic monopolies that directly purchase legislative votes and key judicial appointments."
+    ],
+    "difficulty": 3,
+    "source_article": "Cultural hegemony",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Gramsci's cultural hegemony"]
+  },
+  {
+    "question_text": "W.G. Runciman's 1966 formalization of relative deprivation theory distinguished two forms. What are egoistic and fraternalistic relative deprivation?",
+    "correct_answer": "Egoistic compares one's personal situation to others; fraternalistic compares one's group to other groups.",
+    "distractors": [
+      "Egoistic measures absolute material poverty levels; fraternalistic measures cultural exclusion from mainstream social institutions.",
+      "Egoistic arises from downward social mobility; fraternalistic arises from perceived threats by immigrant populations.",
+      "Egoistic reflects jealousy toward wealthy elites; fraternalistic reflects hostility between rival ethnic or racial communities."
+    ],
+    "difficulty": 3,
+    "source_article": "Relative deprivation",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["relative deprivation"]
+  },
+  {
+    "question_text": "McCarthy and Zald's resource mobilization theory challenged earlier grievance-based explanations of social movements. What factor did they argue is most crucial for movement success?",
+    "correct_answer": "Access to and control over resources such as money, labor, and organizational networks.",
+    "distractors": [
+      "The intensity of shared grievances and moral outrage felt by the disadvantaged population.",
+      "The emergence of a single charismatic leader capable of inspiring mass collective action.",
+      "The spontaneous eruption of widespread public anger following a dramatic triggering crisis event."
+    ],
+    "difficulty": 3,
+    "source_article": "Resource mobilization",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["resource mobilization theory"]
+  }
+]

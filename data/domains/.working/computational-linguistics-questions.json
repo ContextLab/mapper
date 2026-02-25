@@ -1,0 +1,852 @@
+[
+  {
+    "question_text": "What is natural language processing?",
+    "correct_answer": "A field of computer science and linguistics focused on enabling computers to understand, interpret, and generate human language.",
+    "distractors": [
+      "A field of electrical engineering focused on designing circuits that replicate human vocal cord vibrations to produce synthetic speech.",
+      "A field of cognitive psychology focused on studying how bilingual individuals process grammar rules differently from monolingual speakers.",
+      "A field of philosophy focused on analyzing the logical structure of arguments expressed in formal mathematical notation systems."
+    ],
+    "difficulty": 1,
+    "source_article": "Natural language processing",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "natural language processing"
+    ]
+  },
+  {
+    "question_text": "What is machine translation?",
+    "correct_answer": "The use of software to automatically translate text or speech from one natural language into another natural language.",
+    "distractors": [
+      "The use of software to automatically convert programming code written in one language into equivalent code in another language.",
+      "The use of hardware to automatically transcribe handwritten documents into their digital equivalents for archival storage purposes.",
+      "The use of software to automatically convert numerical data from one measurement system into equivalent values in another system."
+    ],
+    "difficulty": 1,
+    "source_article": "Machine translation",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "machine translation"
+    ]
+  },
+  {
+    "question_text": "What does a spell checker do?",
+    "correct_answer": "It detects and suggests corrections for misspelled words in a text by comparing them against a dictionary or language model.",
+    "distractors": [
+      "It detects and suggests corrections for grammatically incorrect sentences by analyzing their syntactic structure against formal grammar rules.",
+      "It detects and translates foreign language words in a text by comparing them against a multilingual database of word equivalences.",
+      "It detects and removes duplicate paragraphs in a text by comparing their content against previously encountered passages in the document."
+    ],
+    "difficulty": 1,
+    "source_article": "Spell checker",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "spell checker"
+    ]
+  },
+  {
+    "question_text": "What is a chatbot?",
+    "correct_answer": "A software application designed to simulate conversation with human users through text or voice interactions.",
+    "distractors": [
+      "A hardware device designed to record and transcribe conversations between human users during in-person meetings.",
+      "A software application designed to monitor network traffic and flag suspicious communication patterns between servers.",
+      "A software application designed to generate visual diagrams from verbal descriptions provided during user presentations."
+    ],
+    "difficulty": 1,
+    "source_article": "Chatbot",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "chatbot"
+    ]
+  },
+  {
+    "question_text": "What is speech recognition?",
+    "correct_answer": "The technology that converts spoken language into written text by identifying words and phrases in audio input.",
+    "distractors": [
+      "The technology that converts written text into spoken language by synthesizing audio waveforms from character sequences.",
+      "The technology that identifies individual speakers by analyzing unique vocal characteristics such as pitch and timbre.",
+      "The technology that converts musical performances into written notation by identifying notes and rhythms in audio input."
+    ],
+    "difficulty": 1,
+    "source_article": "Speech recognition",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "speech recognition"
+    ]
+  },
+  {
+    "question_text": "What is text-to-speech synthesis?",
+    "correct_answer": "The artificial production of human speech from written text input, converting characters and words into audible spoken output.",
+    "distractors": [
+      "The artificial production of written text from spoken audio input, converting sound waves and phonemes into readable character output.",
+      "The artificial production of musical compositions from written lyrics input, converting words and phrases into melodic audio output.",
+      "The artificial production of sign language gestures from written text input, converting characters and words into animated visual output."
+    ],
+    "difficulty": 1,
+    "source_article": "Speech synthesis",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "text-to-speech"
+    ]
+  },
+  {
+    "question_text": "How does a web search engine use language technology?",
+    "correct_answer": "It processes and matches natural language queries against indexed documents to retrieve the most relevant results for users.",
+    "distractors": [
+      "It translates all web pages into a single universal language before indexing to ensure uniform retrieval across different regions.",
+      "It generates entirely new web pages from user queries using language models to fill gaps in existing online content.",
+      "It converts spoken queries into executable code instructions that directly navigate to predetermined websites matching keyword lists."
+    ],
+    "difficulty": 1,
+    "source_article": "Web search engine",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "search engine"
+    ]
+  },
+  {
+    "question_text": "What is the autocomplete feature in text input?",
+    "correct_answer": "A function that predicts and suggests the rest of a word or phrase as the user types, based on likely completions.",
+    "distractors": [
+      "A function that automatically corrects all grammatical errors in a sentence after the user finishes typing the complete text.",
+      "A function that translates partially typed words into their equivalents in another language as the user types them.",
+      "A function that records and replays previously deleted text passages allowing the user to restore accidentally removed content."
+    ],
+    "difficulty": 1,
+    "source_article": "Autocomplete",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "autocomplete"
+    ]
+  },
+  {
+    "question_text": "What is sentiment analysis in computational linguistics?",
+    "correct_answer": "The computational task of identifying and classifying the emotional tone or opinion expressed in a piece of text.",
+    "distractors": [
+      "The computational task of identifying and classifying the grammatical structure or syntactic category expressed in a piece of text.",
+      "The computational task of identifying and translating the foreign language terms or borrowed vocabulary found in a piece of text.",
+      "The computational task of identifying and counting the unique vocabulary items or word frequency distributions in a piece of text."
+    ],
+    "difficulty": 1,
+    "source_article": "Sentiment analysis",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "sentiment analysis"
+    ]
+  },
+  {
+    "question_text": "What is the primary purpose of a spam filter for email?",
+    "correct_answer": "To automatically classify incoming email messages as either legitimate correspondence or unwanted spam using text analysis.",
+    "distractors": [
+      "To automatically encrypt incoming email messages using cryptographic algorithms that prevent unauthorized interception during network transmission.",
+      "To automatically compress incoming email messages into smaller file sizes that reduce storage requirements on the mail server.",
+      "To automatically translate incoming email messages from foreign languages into the recipient's preferred language using machine translation."
+    ],
+    "difficulty": 1,
+    "source_article": "Email filtering",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "spam filter"
+    ]
+  },
+  {
+    "question_text": "What is optical character recognition (OCR)?",
+    "correct_answer": "Technology that converts images of printed or handwritten text into machine-readable digital text that computers can process.",
+    "distractors": [
+      "Technology that converts digital text files into high-resolution printed images suitable for archival preservation in physical libraries.",
+      "Technology that converts spoken audio recordings into machine-readable digital text using acoustic models and speech analysis.",
+      "Technology that converts hand-drawn diagrams into editable vector graphics using shape recognition algorithms and pattern matching."
+    ],
+    "difficulty": 1,
+    "source_article": "Optical character recognition",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "optical character recognition"
+    ]
+  },
+  {
+    "question_text": "What is a question answering system?",
+    "correct_answer": "A system that automatically generates answers to questions posed in natural language by extracting information from text sources.",
+    "distractors": [
+      "A system that automatically generates questions from textbook chapters in natural language to help students prepare for examinations.",
+      "A system that automatically routes customer service questions to appropriate human agents based on topic classification algorithms.",
+      "A system that automatically translates questions posed in one natural language into equivalent questions in another target language."
+    ],
+    "difficulty": 1,
+    "source_article": "Question answering",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "question answering"
+    ]
+  },
+  {
+    "question_text": "What is automatic text summarization?",
+    "correct_answer": "The process of using computational methods to produce a concise version of a document while retaining its key information.",
+    "distractors": [
+      "The process of using computational methods to translate a document into multiple languages while retaining its original formatting.",
+      "The process of using computational methods to expand a short document into a longer version by adding supporting details.",
+      "The process of using computational methods to classify a document into predefined categories while retaining its original structure."
+    ],
+    "difficulty": 1,
+    "source_article": "Automatic summarization",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "text summarization"
+    ]
+  },
+  {
+    "question_text": "In NLP, what is tokenization?",
+    "correct_answer": "The process of splitting a text string into smaller units such as words, subwords, or characters for further processing.",
+    "distractors": [
+      "The process of labeling each word in a text string with its grammatical category such as noun, verb, or adjective.",
+      "The process of converting a text string into a numerical vector representation suitable for input to neural network models.",
+      "The process of removing all punctuation and special characters from a text string to produce clean alphanumeric output."
+    ],
+    "difficulty": 2,
+    "source_article": "Lexical analysis",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "tokenization"
+    ]
+  },
+  {
+    "question_text": "What is part-of-speech tagging?",
+    "correct_answer": "The process of assigning grammatical category labels such as noun, verb, or adjective to each word in a sentence.",
+    "distractors": [
+      "The process of assigning semantic role labels such as agent, patient, or instrument to each phrase in a sentence.",
+      "The process of assigning sentiment polarity labels such as positive, negative, or neutral to each clause in a sentence.",
+      "The process of assigning named entity labels such as person, location, or organization to each proper noun in a sentence."
+    ],
+    "difficulty": 2,
+    "source_article": "Part-of-speech tagging",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "part-of-speech tagging"
+    ]
+  },
+  {
+    "question_text": "What is named entity recognition (NER)?",
+    "correct_answer": "The task of identifying and classifying named entities in text into predefined categories such as person, organization, and location.",
+    "distractors": [
+      "The task of identifying and resolving pronoun references in text to determine which previously mentioned entity each pronoun denotes.",
+      "The task of identifying and classifying sentiment-bearing words in text into predefined categories such as positive, negative, and neutral.",
+      "The task of identifying and extracting key verb phrases in text to determine the primary actions described in each sentence."
+    ],
+    "difficulty": 2,
+    "source_article": "Named-entity recognition",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "named entity recognition"
+    ]
+  },
+  {
+    "question_text": "In computational linguistics, what does parsing accomplish?",
+    "correct_answer": "It analyzes a sentence's grammatical structure by determining how words combine into phrases according to a formal grammar.",
+    "distractors": [
+      "It analyzes a sentence's emotional content by determining how individual words contribute to the overall sentiment and tone.",
+      "It analyzes a sentence's factual accuracy by determining how stated claims compare against entries in a knowledge database.",
+      "It analyzes a sentence's readability level by determining how word length and sentence complexity affect comprehension difficulty."
+    ],
+    "difficulty": 2,
+    "source_article": "Parsing",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "parsing"
+    ]
+  },
+  {
+    "question_text": "In corpus linguistics, what is a corpus?",
+    "correct_answer": "A large, structured collection of texts assembled for the purpose of linguistic analysis, language model training, or evaluation.",
+    "distractors": [
+      "A single authoritative reference dictionary containing all known words in a language along with their definitions and usage examples.",
+      "A set of grammatical rules defining the syntactic structure of a language, used to validate sentences during automated parsing.",
+      "A specialized database of phonetic transcriptions capturing spoken language samples organized by dialect region and speaker demographics."
+    ],
+    "difficulty": 2,
+    "source_article": "Text corpus",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "corpus"
+    ]
+  },
+  {
+    "question_text": "What is an n-gram in language modeling?",
+    "correct_answer": "A contiguous sequence of n items from a text, used to estimate the probability of a word given its preceding context.",
+    "distractors": [
+      "A hierarchical tree structure of n syntactic levels from a sentence, used to represent the grammatical relationships between word groups.",
+      "A fixed-length vector of n numerical features from a document, used to measure the similarity between two texts in semantic space.",
+      "A collection of n distinct vocabulary items from a corpus, used to define the complete set of words a model can recognize."
+    ],
+    "difficulty": 2,
+    "source_article": "N-gram",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "n-gram"
+    ]
+  },
+  {
+    "question_text": "What is the bag-of-words model for text representation?",
+    "correct_answer": "A representation that models text as an unordered collection of words, disregarding grammar and word order but keeping word counts.",
+    "distractors": [
+      "A representation that models text as an ordered sequence of words, preserving grammar and word order along with syntactic dependencies.",
+      "A representation that models text as a hierarchical tree of phrases, capturing nested grammatical structures and compositional word meanings.",
+      "A representation that models text as a directed graph of word relationships, encoding semantic connections and co-occurrence dependency patterns."
+    ],
+    "difficulty": 2,
+    "source_article": "Bag-of-words model",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "bag of words"
+    ]
+  },
+  {
+    "question_text": "What does TF-IDF measure in information retrieval?",
+    "correct_answer": "The importance of a word to a document in a collection, combining its frequency in the document with its rarity across all documents.",
+    "distractors": [
+      "The grammatical correctness of a word in a document, combining its syntactic role in the sentence with its frequency across all documents.",
+      "The emotional valence of a word in a document, combining its sentiment score in context with its overall polarity across all documents.",
+      "The reading difficulty of a word in a document, combining its syllable count in the text with its familiarity ranking across all documents."
+    ],
+    "difficulty": 2,
+    "source_article": "Tf\u2013idf",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "TF-IDF"
+    ]
+  },
+  {
+    "question_text": "What are stop words in text processing?",
+    "correct_answer": "Very common words like 'the,' 'is,' and 'at' that are often filtered out before analysis because they carry little semantic meaning.",
+    "distractors": [
+      "Very rare words like technical jargon and neologisms that are often filtered out before analysis because they lack dictionary definitions.",
+      "Very long words like compound nouns and adjectives that are often filtered out before analysis because they exceed fixed token length limits.",
+      "Very ambiguous words like homonyms and polysemes that are often filtered out before analysis because they introduce unwanted semantic confusion."
+    ],
+    "difficulty": 2,
+    "source_article": "Stop word",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "stop words"
+    ]
+  },
+  {
+    "question_text": "What is stemming in text preprocessing?",
+    "correct_answer": "The process of reducing inflected or derived words to their base or root form by removing suffixes, such as reducing 'running' to 'run.'",
+    "distractors": [
+      "The process of expanding abbreviated words to their full dictionary form by adding characters, such as expanding 'info' to 'information.'",
+      "The process of replacing informal slang words with their formal equivalents by consulting a thesaurus, such as replacing 'gonna' with 'going to.'",
+      "The process of splitting compound words into their individual components by detecting boundaries, such as splitting 'sunflower' into 'sun' and 'flower.'"
+    ],
+    "difficulty": 2,
+    "source_article": "Stemming",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "stemming"
+    ]
+  },
+  {
+    "question_text": "What does dependency parsing produce?",
+    "correct_answer": "A tree structure showing directed grammatical relations between words in a sentence, where each word depends on exactly one head.",
+    "distractors": [
+      "A flat list showing the part-of-speech category for each word in a sentence, where each word receives exactly one grammatical label.",
+      "A table showing the co-occurrence frequency of every word pair in a sentence, where each cell records their statistical association strength.",
+      "A graph showing the semantic similarity between all words in a sentence, where each edge represents a weighted meaning overlap score."
+    ],
+    "difficulty": 2,
+    "source_article": "Dependency grammar",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "dependency parsing"
+    ]
+  },
+  {
+    "question_text": "What is a word embedding?",
+    "correct_answer": "A dense, low-dimensional vector representation of a word in continuous space, where semantically similar words are mapped to nearby points.",
+    "distractors": [
+      "A sparse, high-dimensional binary representation of a word in discrete space, where each dimension corresponds to a unique dictionary entry.",
+      "A symbolic, rule-based representation of a word in a grammar tree, where each node corresponds to a specific syntactic category label.",
+      "A frequency-based, one-dimensional scalar representation of a word in ranked space, where each value corresponds to its corpus occurrence count."
+    ],
+    "difficulty": 2,
+    "source_article": "Word embedding",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "word embedding"
+    ]
+  },
+  {
+    "question_text": "What is a language model in computational linguistics?",
+    "correct_answer": "A probability distribution over sequences of words that assigns higher likelihood to well-formed, natural-sounding text and lower to implausible text.",
+    "distractors": [
+      "A classification algorithm over individual words that assigns each token to its correct grammatical category and syntactic role in isolation.",
+      "A translation system over parallel corpora that converts source language sentences into their target language equivalents using alignment tables.",
+      "A rule-based grammar over formal language specifications that accepts syntactically valid code and rejects any text violating defined constraints."
+    ],
+    "difficulty": 2,
+    "source_article": "Language model",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "language model"
+    ]
+  },
+  {
+    "question_text": "What is the time complexity of the CYK parsing algorithm for a sentence of length n?",
+    "correct_answer": "O(n cubed times the number of grammar rules), using dynamic programming to fill a triangular parse chart bottom-up.",
+    "distractors": [
+      "O(n squared times the number of grammar rules), using greedy search to build a parse tree from left to right.",
+      "O(n times the number of grammar rules), using finite-state transduction to process each word in a single linear pass.",
+      "O(n to the fourth times the number of grammar rules), using exhaustive enumeration to evaluate all possible tree structures."
+    ],
+    "difficulty": 3,
+    "source_article": "CYK algorithm",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "CYK algorithm"
+    ]
+  },
+  {
+    "question_text": "In a hidden Markov model used for POS tagging, what is 'hidden'?",
+    "correct_answer": "The underlying sequence of states (part-of-speech tags) that is not directly observed but must be inferred from the observable word sequence.",
+    "distractors": [
+      "The emission probability distribution over words that is intentionally masked during training but revealed during the final testing evaluation phase.",
+      "The input word sequence itself that is encrypted before processing and must be decoded before the model can assign any tags.",
+      "The transition matrix between consecutive words that is randomly initialized and never updated because it remains fixed throughout model usage."
+    ],
+    "difficulty": 3,
+    "source_article": "Hidden Markov model",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "hidden Markov model"
+    ]
+  },
+  {
+    "question_text": "How is perplexity used to evaluate a language model?",
+    "correct_answer": "It measures how well the model predicts a test set; lower perplexity indicates the model assigns higher probability to the observed word sequences.",
+    "distractors": [
+      "It measures how many unique words the model can generate; lower perplexity indicates the model produces a larger and more diverse output vocabulary.",
+      "It measures how fast the model processes input text; lower perplexity indicates the model requires fewer computational steps per token during inference.",
+      "It measures how closely the model matches human grammar rules; lower perplexity indicates the model produces fewer syntactically incorrect sentence structures."
+    ],
+    "difficulty": 3,
+    "source_article": "Perplexity",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "perplexity"
+    ]
+  },
+  {
+    "question_text": "What role does the attention mechanism play in neural machine translation?",
+    "correct_answer": "It allows the decoder to focus on different parts of the source sentence at each decoding step by computing weighted context vectors.",
+    "distractors": [
+      "It allows the encoder to discard irrelevant words in the source sentence before encoding by removing low-frequency tokens from the input.",
+      "It allows the decoder to generate multiple candidate translations simultaneously at each step by spawning parallel independent output streams.",
+      "It allows the encoder to reorder words in the source sentence into target language order before decoding by sorting positional embeddings."
+    ],
+    "difficulty": 3,
+    "source_article": "Attention (machine learning)",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "attention mechanism"
+    ]
+  },
+  {
+    "question_text": "How does beam search differ from greedy decoding in sequence generation?",
+    "correct_answer": "Beam search keeps the top-k highest-scoring partial hypotheses at each time step, while greedy decoding only keeps the single best candidate.",
+    "distractors": [
+      "Beam search randomly samples from the full probability distribution at each time step, while greedy decoding deterministically selects using temperature scaling.",
+      "Beam search processes all hypotheses in parallel on separate GPUs at each time step, while greedy decoding uses a single sequential processor.",
+      "Beam search exhaustively evaluates every possible output sequence at each time step, while greedy decoding prunes candidates using a learned threshold."
+    ],
+    "difficulty": 3,
+    "source_article": "Beam search",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "beam search"
+    ]
+  },
+  {
+    "question_text": "What are the two training architectures used in word2vec?",
+    "correct_answer": "Skip-gram, which predicts surrounding context words from a target word, and CBOW, which predicts a target word from surrounding context words.",
+    "distractors": [
+      "Autoencoder, which reconstructs the input word from a compressed representation, and GAN, which discriminates real embeddings from generated fake embeddings.",
+      "Encoder-decoder, which maps words to a latent space and back, and transformer, which uses self-attention to learn positional word representations.",
+      "Recurrent, which processes words sequentially through hidden states, and convolutional, which applies sliding window filters over character-level word representations."
+    ],
+    "difficulty": 3,
+    "source_article": "Word2vec",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "word2vec"
+    ]
+  },
+  {
+    "question_text": "How does a conditional random field differ from a hidden Markov model for sequence labeling?",
+    "correct_answer": "A CRF is a discriminative model that directly models the conditional probability of labels given observations, avoiding independence assumptions made by generative HMMs.",
+    "distractors": [
+      "A CRF is a generative model that jointly models the probability of labels and observations, making stronger independence assumptions than discriminative HMMs.",
+      "A CRF is a rule-based model that assigns labels using handcrafted linguistic patterns, avoiding the statistical estimation procedures required by probabilistic HMMs.",
+      "A CRF is an unsupervised model that clusters observations into label groups without training data, avoiding the labeled corpus requirements of supervised HMMs."
+    ],
+    "difficulty": 3,
+    "source_article": "Conditional random field",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "conditional random field"
+    ]
+  },
+  {
+    "question_text": "What does semantic role labeling identify in a sentence?",
+    "correct_answer": "The predicate-argument structure, determining who did what to whom by assigning roles like agent, patient, and instrument to sentence constituents.",
+    "distractors": [
+      "The syntactic dependency structure, determining which words modify which by assigning relations like subject, object, and modifier to individual tokens.",
+      "The discourse coherence structure, determining how sentences connect by assigning relations like cause, contrast, and elaboration to adjacent clauses.",
+      "The named entity structure, determining which words are proper nouns by assigning categories like person, organization, and location to text spans."
+    ],
+    "difficulty": 3,
+    "source_article": "Semantic role labeling",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "semantic role labeling"
+    ]
+  },
+  {
+    "question_text": "What problem does coreference resolution address in text understanding?",
+    "correct_answer": "Determining which expressions in a text refer to the same real-world entity, such as linking a pronoun to its antecedent noun phrase.",
+    "distractors": [
+      "Determining which words in a text share the same dictionary definition, such as linking synonyms that appear in different sections of a document.",
+      "Determining which sentences in a text express the same proposition, such as linking paraphrases that restate an idea using different vocabulary choices.",
+      "Determining which paragraphs in a text belong to the same topic cluster, such as linking thematically related sections across a multi-chapter document."
+    ],
+    "difficulty": 3,
+    "source_article": "Coreference",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "coreference resolution"
+    ]
+  },
+  {
+    "question_text": "What is the key hypothesis underlying distributional semantics?",
+    "correct_answer": "Words that occur in similar linguistic contexts tend to have similar meanings, so meaning can be approximated from co-occurrence patterns in corpora.",
+    "distractors": [
+      "Words that share similar spelling and morphological roots tend to have similar meanings, so meaning can be derived from orthographic similarity analysis.",
+      "Words that are defined using similar dictionary entries tend to have similar meanings, so meaning can be extracted from lexicographic cross-reference chains.",
+      "Words that are acquired at similar developmental stages tend to have similar meanings, so meaning can be inferred from child language acquisition order."
+    ],
+    "difficulty": 3,
+    "source_article": "Distributional semantics",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "distributional semantics"
+    ]
+  },
+  {
+    "question_text": "What characterizes the encoder-decoder architecture used in sequence-to-sequence models?",
+    "correct_answer": "An encoder network compresses the input sequence into a fixed-length context vector, and a decoder network generates the output sequence from that representation.",
+    "distractors": [
+      "An encoder network splits the input sequence into parallel independent channels, and a decoder network merges those channels into a single output sequence.",
+      "An encoder network translates the input sequence word by word in order, and a decoder network corrects any errors introduced during the sequential translation.",
+      "An encoder network classifies the input sequence into a discrete category label, and a decoder network retrieves a prewritten template matching that category."
+    ],
+    "difficulty": 3,
+    "source_article": "Seq2seq",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "encoder-decoder architecture"
+    ]
+  },
+  {
+    "question_text": "How does byte pair encoding construct a subword vocabulary?",
+    "correct_answer": "It starts with individual characters and iteratively merges the most frequent adjacent pair of symbols until reaching a desired vocabulary size.",
+    "distractors": [
+      "It starts with complete words and iteratively splits the least frequent word into individual characters until reaching a desired vocabulary size.",
+      "It starts with individual characters and randomly combines pairs of symbols using a probabilistic model until reaching a desired vocabulary size.",
+      "It starts with linguistically defined morphemes and iteratively removes the least useful affix from the vocabulary until reaching a desired size."
+    ],
+    "difficulty": 3,
+    "source_article": "Byte pair encoding",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "byte pair encoding"
+    ]
+  },
+  {
+    "question_text": "What distinguishes combinatory categorial grammar from standard categorial grammar?",
+    "correct_answer": "It adds combinatory rules like composition and type-raising that allow flexible constituency and handle coordination and extraction without movement transformations.",
+    "distractors": [
+      "It removes all combinatory rules and relies exclusively on lexical insertion operations that handle coordination and extraction through feature unification alone.",
+      "It replaces categorical type assignments with flat phrase-structure rules that handle coordination and extraction through context-free rewriting without lexical categories.",
+      "It restricts application rules to strictly binary branching derivations that handle coordination and extraction through obligatory movement transformations and trace binding."
+    ],
+    "difficulty": 4,
+    "source_article": "Combinatory categorial grammar",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "combinatory categorial grammar"
+    ]
+  },
+  {
+    "question_text": "What is the central data structure in head-driven phrase structure grammar?",
+    "correct_answer": "Typed feature structures organized in an inheritance hierarchy, where linguistic signs unify their phonological, syntactic, and semantic information simultaneously.",
+    "distractors": [
+      "Context-free production rules organized in an ordered sequence, where linguistic derivations apply rewriting operations to nonterminal symbols from left to right.",
+      "Transformational movement rules organized in a cyclic derivation, where linguistic structures undergo successive displacement operations from deep to surface representations.",
+      "Finite-state transition tables organized in a deterministic automaton, where linguistic tokens trigger sequential state changes from initial to accepting configurations."
+    ],
+    "difficulty": 4,
+    "source_article": "Head-driven phrase structure grammar",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "head-driven phrase structure grammar"
+    ]
+  },
+  {
+    "question_text": "How is the minimum description length principle applied in grammar induction?",
+    "correct_answer": "It selects the grammar that minimizes the combined cost of encoding the grammar itself plus encoding the data given that grammar.",
+    "distractors": [
+      "It selects the grammar that maximizes the total number of production rules while minimizing the average derivation depth for observed sentences.",
+      "It selects the grammar that minimizes only the encoding cost of the observed data without considering the complexity of the grammar itself.",
+      "It selects the grammar that maximizes the likelihood of the training corpus while applying a fixed upper bound on total rule count."
+    ],
+    "difficulty": 4,
+    "source_article": "Minimum description length",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "minimum description length"
+    ]
+  },
+  {
+    "question_text": "In NLP, what does the expectation-maximization algorithm optimize when applied to unsupervised tasks?",
+    "correct_answer": "It iteratively finds maximum-likelihood parameter estimates by alternating between computing expected latent variable values and maximizing the expected log-likelihood.",
+    "distractors": [
+      "It iteratively finds minimum-entropy parameter estimates by alternating between computing observed variable values and minimizing the expected cross-entropy loss.",
+      "It directly finds maximum-likelihood parameter estimates by computing the exact posterior distribution over latent variables using closed-form Bayesian integration.",
+      "It iteratively finds maximum-margin parameter estimates by alternating between computing support vectors and maximizing the geometric separation between classes."
+    ],
+    "difficulty": 4,
+    "source_article": "Expectation\u2013maximization algorithm",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "expectation-maximization algorithm"
+    ]
+  },
+  {
+    "question_text": "What does the inside-outside algorithm compute for probabilistic context-free grammars?",
+    "correct_answer": "The inside and outside probabilities for each nonterminal spanning each substring, enabling re-estimation of PCFG rule probabilities via expectation-maximization.",
+    "distractors": [
+      "The forward and backward probabilities for each terminal symbol at each position, enabling Viterbi decoding of the most likely terminal sequence.",
+      "The left-corner and right-corner probabilities for each production rule in the grammar, enabling deterministic top-down parsing without backtracking operations.",
+      "The precision and recall probabilities for each predicted parse tree against gold annotations, enabling automatic evaluation of parser output quality."
+    ],
+    "difficulty": 4,
+    "source_article": "Inside\u2013outside algorithm",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "inside-outside algorithm"
+    ]
+  },
+  {
+    "question_text": "What is cross-lingual transfer learning in NLP?",
+    "correct_answer": "Training a model on data from one or more source languages and applying it to a target language with little or no labeled data available.",
+    "distractors": [
+      "Training a separate model for each language independently and combining their outputs through majority voting to produce multilingual consensus predictions.",
+      "Training a model exclusively on parallel bilingual corpora and restricting it to translation tasks between that specific language pair only.",
+      "Training a model on synthetic data generated by back-translation and evaluating it exclusively on machine-translated test sets from the source language."
+    ],
+    "difficulty": 4,
+    "source_article": "Transfer learning",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "cross-lingual transfer"
+    ]
+  },
+  {
+    "question_text": "What formal language class do tree-adjoining grammars generate?",
+    "correct_answer": "Mildly context-sensitive languages, which are more expressive than context-free languages but remain efficiently parsable in polynomial time.",
+    "distractors": [
+      "Strictly context-free languages, which are exactly as expressive as pushdown automata and remain efficiently parsable in polynomial time.",
+      "Fully context-sensitive languages, which are as expressive as linear-bounded automata and require exponential time for worst-case parsing.",
+      "Regular languages, which are exactly as expressive as finite-state automata and remain efficiently parsable in linear time only."
+    ],
+    "difficulty": 4,
+    "source_article": "Tree-adjoining grammar",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "tree-adjoining grammar"
+    ]
+  },
+  {
+    "question_text": "What principle underlies maximum entropy models used in NLP classification?",
+    "correct_answer": "Choose the probability distribution with the highest entropy among all distributions that satisfy the observed feature constraints from the training data.",
+    "distractors": [
+      "Choose the probability distribution with the lowest entropy among all distributions that minimize the observed feature variance from the training data.",
+      "Choose the probability distribution with the highest mutual information between all feature pairs that co-occur most frequently in the training data.",
+      "Choose the probability distribution with the smallest number of parameters among all distributions that achieve zero error on the entire training data."
+    ],
+    "difficulty": 4,
+    "source_article": "Logistic regression",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "maximum entropy model"
+    ]
+  },
+  {
+    "question_text": "How is linear programming relaxation used in dependency parsing?",
+    "correct_answer": "Integer constraints requiring exactly one head per word are relaxed to continuous values, enabling efficient LP solving to approximate the optimal dependency tree.",
+    "distractors": [
+      "Continuous edge weights are discretized to integer values using rounding heuristics, enabling brute-force enumeration of all possible valid dependency trees.",
+      "Quadratic objective functions over word pairs are linearized by dropping interaction terms, enabling greedy left-to-right attachment of each word to the nearest head.",
+      "Non-projective crossing constraints are removed entirely from the formulation, enabling standard context-free chart parsing algorithms to recover the optimal tree."
+    ],
+    "difficulty": 4,
+    "source_article": "LP relaxation",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "linear programming relaxation for parsing"
+    ]
+  },
+  {
+    "question_text": "How does the Earley parser handle ambiguous and left-recursive grammars?",
+    "correct_answer": "It uses a chart with prediction, scanning, and completion steps that systematically explore all parses without infinite loops from left recursion.",
+    "distractors": [
+      "It uses recursive descent with backtracking and memoization steps that systematically eliminate duplicate parses after detecting infinite loops from left recursion.",
+      "It uses a shift-reduce stack with conflict resolution and lookahead steps that deterministically select one parse while discarding alternatives from left recursion.",
+      "It uses a bottom-up CYK table with binarization and normalization steps that require converting the grammar to Chomsky normal form before parsing begins."
+    ],
+    "difficulty": 4,
+    "source_article": "Earley parser",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "Earley parser"
+    ]
+  },
+  {
+    "question_text": "Why is computational morphological analysis particularly challenging for agglutinative languages like Turkish?",
+    "correct_answer": "Words can contain long chains of productive suffixes creating enormous numbers of valid forms, requiring finite-state transducers to handle the combinatorial morphology.",
+    "distractors": [
+      "Words are typically monosyllabic with tonal distinctions creating ambiguous surface forms, requiring pitch-tracking acoustic models to disambiguate the morphological analysis.",
+      "Words have unpredictable root-internal vowel changes creating irregular paradigms, requiring exhaustive exception dictionaries to handle each unique morphological alternation.",
+      "Words use logographic writing systems with thousands of distinct characters, requiring optical character recognition preprocessing to identify morpheme boundaries correctly."
+    ],
+    "difficulty": 4,
+    "source_article": "Morphological analysis (linguistics)",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "Turkish morphological analysis"
+    ]
+  },
+  {
+    "question_text": "What is Abstract Meaning Representation (AMR) in computational semantics?",
+    "correct_answer": "A graph-based semantic formalism representing sentence meaning as rooted directed acyclic graphs with labeled nodes for concepts and edges for relations.",
+    "distractors": [
+      "A string-based semantic formalism representing sentence meaning as linear first-order logic expressions with quantifiers for concepts and predicates for relations.",
+      "A tree-based syntactic formalism representing sentence structure as binary-branching constituency parse trees with phrasal nodes for categories and terminals for words.",
+      "A table-based pragmatic formalism representing discourse meaning as relational database entries with columns for speech acts and rows for conversational turns."
+    ],
+    "difficulty": 4,
+    "source_article": "Abstract Meaning Representation",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "Abstract Meaning Representation"
+    ]
+  }
+]

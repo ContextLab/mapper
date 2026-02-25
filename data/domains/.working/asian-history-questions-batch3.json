@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "During the Vietnam War, North Vietnam launched a massive surprise attack on over 100 South Vietnamese cities and outposts during the lunar new year holiday in January 1968. Though a tactical defeat for the North, what was this offensive called, and why is it considered a strategic turning point?",
+    "correct_answer": "The Tet Offensive, which shocked the American public into realizing the war was far from won, eroding domestic support for continued U.S. involvement.",
+    "distractors": [
+      "The Saigon Offensive, which forced the U.S. to deploy nuclear-armed aircraft carriers to the Gulf of Tonkin for the first time.",
+      "The Tet Offensive, which resulted in the immediate signing of the Paris Peace Accords and full American withdrawal by mid-1968.",
+      "The Mekong Offensive, which destroyed the Ho Chi Minh Trail and temporarily cut North Vietnamese supply lines to the south."
+    ],
+    "difficulty": 2,
+    "source_article": "Vietnam War",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Vietnam War", "Tet Offensive", "Cold War in Asia"]
+  },
+  {
+    "question_text": "The Khmer Empire is conventionally dated from 802 CE, when a prince performed a consecration ritual on Mount Mahendraparvata (Phnom Kulen) and declared himself universal ruler. Who was this founder, and what title did he claim?",
+    "correct_answer": "Jayavarman II, who declared himself chakravartin (universal ruler), establishing the Khmer Empire's independence and the devaraja (god-king) cult.",
+    "distractors": [
+      "Suryavarman II, who declared himself chakravartin (universal ruler), establishing the Khmer Empire's independence and the devaraja (god-king) cult.",
+      "Jayavarman VII, who declared himself devaraja (god-king), establishing the Khmer Empire's independence and inaugurating Theravada Buddhism as the state religion.",
+      "Jayavarman II, who declared himself bodhisattva (enlightened ruler), establishing the Khmer Empire's independence and replacing Hinduism with Mahayana Buddhism."
+    ],
+    "difficulty": 2,
+    "source_article": "Khmer Empire",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Khmer Empire", "Jayavarman II", "devaraja"]
+  },
+  {
+    "question_text": "The Qing dynasty was the last imperial dynasty of China, ruling from 1644 to 1912. It was not founded by the ethnic Han majority but by a different people from Manchuria. Who founded the predecessor state, and what military-social system did he create that was instrumental in the Qing conquest?",
+    "correct_answer": "Nurhaci unified the Jurchen clans and founded the Later Jin dynasty, creating the Eight Banners system that organized Manchu society for war and governance.",
+    "distractors": [
+      "Hong Taiji unified the Jurchen clans and founded the Later Jin dynasty, creating the Six Ministries system that organized Manchu society for war and governance.",
+      "Nurhaci unified the Mongol clans and founded the Later Yuan dynasty, creating the Eight Banners system that organized Mongol society for war and governance.",
+      "Nurhaci unified the Jurchen clans and founded the Later Jin dynasty, creating the Green Standard Army system that organized Manchu society for war and governance."
+    ],
+    "difficulty": 2,
+    "source_article": "Qing dynasty",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Qing dynasty", "Nurhaci", "Eight Banners", "Manchu"]
+  },
+  {
+    "question_text": "Ashoka, the third ruler of the Maurya dynasty, conquered the coastal kingdom of Kalinga around 260 BCE in a devastating war that reportedly killed over 100,000 people. How did this campaign transform his rule?",
+    "correct_answer": "Horrified by the bloodshed, Ashoka embraced Buddhism and devoted his reign to propagating dhamma (righteous conduct) through rock and pillar edicts across his empire.",
+    "distractors": [
+      "Emboldened by the victory, Ashoka converted to Jainism and imposed strict vegetarianism across the empire through a series of royal proclamations.",
+      "Horrified by the bloodshed, Ashoka embraced Buddhism and immediately renounced his throne, appointing his son Mahinda as emperor in his place.",
+      "Shaken by the losses, Ashoka embraced Buddhism but continued aggressive military expansion westward into the Seleucid Empire to spread the faith."
+    ],
+    "difficulty": 2,
+    "source_article": "Ashoka",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Ashoka", "Kalinga War", "Buddhism", "dhamma"]
+  },
+  {
+    "question_text": "Angkor Wat in Cambodia is the largest religious monument in the world, constructed between 1113 and 1150 CE by King Suryavarman II of the Khmer Empire. To which deity was it originally dedicated, and what religion does the temple serve today?",
+    "correct_answer": "Originally dedicated to the Hindu god Vishnu, it was gradually converted from the late 13th century onward and remains a Theravada Buddhist temple today.",
+    "distractors": [
+      "Originally dedicated to the Hindu god Shiva, it was gradually converted from the late 13th century onward and remains a Theravada Buddhist temple today.",
+      "Originally dedicated to the Hindu god Vishnu, it was gradually converted from the late 13th century onward and remains a Mahayana Buddhist temple today.",
+      "Originally dedicated to the Hindu god Brahma, it has continuously remained a Hindu temple with Buddhist elements added only in the 19th century."
+    ],
+    "difficulty": 2,
+    "source_article": "Angkor Wat",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Angkor Wat", "Khmer Empire", "Suryavarman II", "Hinduism", "Theravada Buddhism"]
+  },
+  {
+    "question_text": "The Joseon dynasty ruled Korea for over five centuries (1392-1897) and profoundly shaped Korean culture. What was the state ideology adopted by the Joseon court, and what landmark cultural achievement was created under King Sejong in the 1440s?",
+    "correct_answer": "Neo-Confucianism was the state ideology, and King Sejong oversaw the creation of Hangul, the Korean phonetic alphabet, which was promulgated in 1446.",
+    "distractors": [
+      "Mahayana Buddhism was the state ideology, and King Sejong oversaw the creation of Hangul, the Korean phonetic alphabet, which was promulgated in 1446.",
+      "Neo-Confucianism was the state ideology, and King Sejong oversaw the creation of Hanja, the Korean adaptation of Chinese characters, which was promulgated in 1446.",
+      "Neo-Confucianism was the state ideology, and King Sejong oversaw the creation of Hangul, the Korean phonetic alphabet, which was promulgated in 1234."
+    ],
+    "difficulty": 2,
+    "source_article": "Joseon",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Joseon dynasty", "Neo-Confucianism", "Hangul", "King Sejong"]
+  },
+  {
+    "question_text": "In Chinese political thought, the Mandate of Heaven (Tianming) was first invoked by the Zhou dynasty to justify overthrowing the Shang dynasty around 1046 BCE. Unlike the European divine right of kings, what crucial corollary did the Mandate of Heaven contain?",
+    "correct_answer": "It included the right of rebellion: if a ruler became unjust, Heaven would withdraw its mandate, legitimizing his overthrow by a virtuous successor.",
+    "distractors": [
+      "It included the right of hereditary succession: only the eldest son could inherit the mandate, ensuring an unbroken bloodline legitimized each new dynasty.",
+      "It included the right of rebellion: if a ruler became unjust, the Confucian civil service could legally depose him and appoint a scholar-official as the new emperor.",
+      "It included the right of divine appointment: the emperor was considered a literal deity on earth, and natural disasters were seen as his deliberate punishments."
+    ],
+    "difficulty": 3,
+    "source_article": "Mandate of Heaven",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Mandate of Heaven", "Zhou dynasty", "dynastic legitimacy", "right of rebellion"]
+  },
+  {
+    "question_text": "China's tributary system was a network of hierarchical diplomatic relations that persisted for roughly two millennia. Foreign states sent envoys who performed the kowtow before the Chinese emperor. What did participating states receive in return for acknowledging China's superiority?",
+    "correct_answer": "They gained trading privileges, diplomatic recognition, and eligibility for Chinese military aid, while retaining virtually complete autonomy over their own internal affairs.",
+    "distractors": [
+      "They gained permanent Chinese military garrisons, mandatory Confucian education, and tax-free trade, but ceded all foreign policy decisions to the emperor.",
+      "They gained trading privileges and diplomatic recognition, but were required to adopt Chinese law, currency, and the imperial examination system.",
+      "They gained annual payments of silver and silk from the Chinese treasury, in exchange for supplying conscript soldiers to the imperial army."
+    ],
+    "difficulty": 3,
+    "source_article": "Tributary system of China",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["tributary system (China)", "Sinocentric world order", "kowtow", "Chinese diplomacy"]
+  },
+  {
+    "question_text": "The Maurya Empire, founded around 322 BCE, was the first major empire to unify most of the Indian subcontinent. Who founded it, and which famous political adviser helped him overthrow the preceding Nanda dynasty?",
+    "correct_answer": "Chandragupta Maurya founded the empire with the guidance of Chanakya (also known as Kautilya), the strategist and author of the Arthashastra.",
+    "distractors": [
+      "Ashoka Maurya founded the empire with the guidance of Chanakya (also known as Kautilya), the strategist and author of the Arthashastra.",
+      "Chandragupta Maurya founded the empire with the guidance of Megasthenes, the Greek ambassador and author of the Indica.",
+      "Chandragupta Maurya founded the empire with the guidance of Bindusara (also known as Kautilya), the strategist and author of the Arthashastra."
+    ],
+    "difficulty": 3,
+    "source_article": "Maurya Empire",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Maurya Empire", "Chandragupta Maurya", "Chanakya", "Nanda dynasty"]
+  },
+  {
+    "question_text": "The Indian Rebellion of 1857 began as a mutiny of sepoys (Indian soldiers) at Meerut on 10 May 1857 against the British East India Company. What was the immediate trigger involving new rifle cartridges, and what major political consequence did the rebellion produce?",
+    "correct_answer": "Enfield cartridges believed greased with cow and pig fat offended Hindu and Muslim sepoys. The rebellion dissolved the East India Company, imposing direct Crown rule.",
+    "distractors": [
+      "Enfield cartridges believed greased with cow and pig fat offended Hindu and Muslim sepoys. The rebellion ended all British rule, establishing an independent Indian republic.",
+      "Enfield cartridges contaminated with bone meal from sacred animals offended Hindu and Muslim sepoys. The rebellion dissolved the East India Company, imposing direct Crown rule.",
+      "Enfield cartridges believed greased with cow and pig fat offended Hindu and Muslim sepoys. The rebellion dissolved the East India Company, partitioning India along religious lines."
+    ],
+    "difficulty": 3,
+    "source_article": "Indian Rebellion of 1857",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Sepoy Mutiny", "British East India Company", "British Raj", "Indian Rebellion of 1857"]
+  }
+]

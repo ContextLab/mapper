@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "J.L. Mackie's error theory, presented in 'Ethics: Inventing Right and Wrong' (1977), makes two central claims. What is the ontological claim, and what is the name of his most famous argument supporting it?",
+    "correct_answer": "The ontological claim is that there are no objective moral values or facts. His most famous supporting argument is the argument from queerness, which holds that objective moral properties would be metaphysically and epistemologically bizarre.",
+    "distractors": [
+      "The ontological claim is that moral values exist only as mental projections. His most famous supporting argument is the argument from illusion, which holds that moral perceptions are systematically distorted by cultural conditioning.",
+      "The ontological claim is that moral facts are reducible to natural facts. His most famous supporting argument is the argument from supervenience, which holds that moral properties depend entirely on non-moral base properties.",
+      "The ontological claim is that moral truths are merely social conventions. His most famous supporting argument is the argument from disagreement alone, which holds that persistent cross-cultural moral variation disproves all moral claims."
+    ],
+    "difficulty": 3,
+    "source_article": "Error theory",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["error theory"]
+  },
+  {
+    "question_text": "In 'The Right and the Good' (1930), W.D. Ross proposed a pluralistic deontological framework based on prima facie duties. How many prima facie duties did Ross originally list, and what happens when two such duties conflict in a given situation?",
+    "correct_answer": "Ross listed seven prima facie duties (fidelity, reparation, gratitude, justice, beneficence, non-maleficence, and self-improvement). When they conflict, the weightiest duty becomes one's actual duty, determined through careful moral judgment.",
+    "distractors": [
+      "Ross listed five prima facie duties (fidelity, justice, beneficence, non-maleficence, and autonomy). When they conflict, each duty is assigned a numerical weight and the duty with the highest calculated score becomes binding.",
+      "Ross listed seven prima facie duties but arranged them in a strict lexical hierarchy. When they conflict, the duty ranked higher in the hierarchy always overrides the lower-ranked duty without exception.",
+      "Ross listed six prima facie duties (fidelity, reparation, gratitude, beneficence, non-maleficence, and justice). When they conflict, the agent must apply Kant's universalizability test to determine which duty takes precedence."
+    ],
+    "difficulty": 3,
+    "source_article": "W. D. Ross",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["prima facie duties"]
+  },
+  {
+    "question_text": "John Rawls coined the term 'reflective equilibrium' as a method of moral justification. What distinguishes 'wide' reflective equilibrium from 'narrow' reflective equilibrium, as elaborated by Norman Daniels?",
+    "correct_answer": "Wide reflective equilibrium seeks coherence among three elements: considered moral judgments, moral principles, and relevant background theories. Narrow reflective equilibrium only adjusts between particular moral judgments and general principles, without incorporating background theories.",
+    "distractors": [
+      "Wide reflective equilibrium incorporates the moral judgments of all members of society to reach democratic consensus on principles. Narrow reflective equilibrium relies solely on the individual philosopher's own intuitions without ever consulting others' views or theories.",
+      "Wide reflective equilibrium permits revision of logical axioms and epistemic norms alongside moral beliefs to achieve total coherence. Narrow reflective equilibrium holds all logical principles fixed and only adjusts substantive moral commitments within a single domain.",
+      "Wide reflective equilibrium requires testing moral principles against every possible hypothetical scenario including science fiction cases. Narrow reflective equilibrium tests principles only against actual historical cases that have occurred in documented practice and legal precedent."
+    ],
+    "difficulty": 3,
+    "source_article": "Reflective equilibrium",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["reflective equilibrium"]
+  },
+  {
+    "question_text": "The concept of 'moral luck' was introduced by Bernard Williams in 1976 and further developed by Thomas Nagel. Nagel identified four distinct kinds of moral luck. Which kind concerns the way outcomes beyond an agent's control affect moral judgments of their actions?",
+    "correct_answer": "Resultant moral luck, where the actual consequences of an action (which the agent cannot fully control) influence how we morally assess the agent, even though the agent's intention and effort were identical to another case with different outcomes.",
+    "distractors": [
+      "Circumstantial moral luck, where the particular situations an agent happens to face determine which moral challenges they encounter, thereby affecting moral judgments about their character and virtue independently of what outcomes actually occur.",
+      "Constitutive moral luck, where an agent's innate temperament and psychological dispositions shape their moral behavior in ways they did not choose, making character itself entirely a product of factors beyond voluntary control or deliberation.",
+      "Causal moral luck, where the deterministic chain of prior causes that produced the agent's decision completely undermines all attributions of moral responsibility for any action whatsoever, since no decision is truly free from prior causation."
+    ],
+    "difficulty": 3,
+    "source_article": "Moral luck",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["moral luck"]
+  },
+  {
+    "question_text": "Ethical egoism is a normative theory holding that moral agents ought to act in their own self-interest. Henry Sidgwick introduced the term in 'The Methods of Ethics' (1874). What is the key objection known as the 'universalization problem' for ethical egoism?",
+    "correct_answer": "An ethical egoist would not want egoism universalized, since it serves the egoist's self-interest for others to act altruistically toward them, yet egoism demands everyone pursue only their own interests, making the theory self-defeating.",
+    "distractors": [
+      "An ethical egoist cannot universalize egoism because rational agents in a state of nature would unanimously choose cooperative altruism over narrow self-interest, according to standard game-theoretic equilibrium analysis of repeated social interactions.",
+      "An ethical egoist cannot universalize egoism because Kant's categorical imperative demonstrates that any maxim permitting purely self-interested action produces a logical contradiction when willed as a universal law binding on all rational agents.",
+      "An ethical egoist cannot universalize egoism because empirical psychological research demonstrates that humans are fundamentally incapable of sustained purely self-interested motivation without experiencing debilitating cognitive dissonance and social alienation from their communities."
+    ],
+    "difficulty": 3,
+    "source_article": "Ethical egoism",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["egoism"]
+  },
+  {
+    "question_text": "Bioethics applies ethical reasoning to biological and medical questions. Beauchamp and Childress's 'Principles of Biomedical Ethics' (1979) established the dominant framework known as principlism. What are the four principles of this framework?",
+    "correct_answer": "The four principles are respect for autonomy (patients' right to make informed decisions), beneficence (acting in patients' best interest), non-maleficence (do no harm), and justice (fair distribution of healthcare resources).",
+    "distractors": [
+      "The four principles are informed consent (full disclosure of all known risks to the patient), therapeutic privilege (physician override when necessary), double effect (permitting foreseen but unintended harm), and proportionality (balancing expected benefits against risks).",
+      "The four principles are veracity (truthfulness in all clinical disclosure), fidelity (unwavering loyalty to the patient's stated wishes), confidentiality (strict protection of patient information), and stewardship (responsible allocation of scarce medical resources).",
+      "The four principles are sanctity of life (the inherent value of every human life), patient advocacy (the physician serving as protector), clinical equipoise (genuine uncertainty in treatment efficacy), and solidarity (communal responsibility for public health)."
+    ],
+    "difficulty": 3,
+    "source_article": "Bioethics",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["bioethics"]
+  },
+  {
+    "question_text": "Peter Singer's 'Animal Liberation' (1975) is widely regarded as the founding philosophical text of the modern animal rights movement. What key principle does Singer use to argue for moral consideration of animals, and what term did he popularize for the prejudice he opposes?",
+    "correct_answer": "Singer argues from the principle of equal consideration of interests: if a being can suffer, its interests deserve equal moral weight regardless of species. He popularized the term 'speciesism' (coined by Richard Ryder) for the prejudice of favoring one's own species.",
+    "distractors": [
+      "Singer argues from the principle of inherent worth: every sentient creature possesses an inviolable right to life that cannot be overridden by utilitarian calculations. He popularized the term 'anthropocentrism' for the bias of centering ethics on humans.",
+      "Singer argues from the principle of natural rights: animals possess the same Lockean rights to life, liberty, and property as humans. He popularized the term 'carnism' for the invisible belief system that conditions people to eat certain animals.",
+      "Singer argues from the principle of marginal cases: since some humans lack rational capacities yet deserve moral protection, all sentient beings must too. He popularized the term 'biocentrism' for the view that all living organisms have equal moral standing."
+    ],
+    "difficulty": 3,
+    "source_article": "Animal rights",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["animal ethics"]
+  },
+  {
+    "question_text": "In 'A Theory of Justice' (1971), Rawls uses the 'original position' and 'veil of ignorance' thought experiment to derive principles of distributive justice. What is the 'difference principle' that Rawls argues rational agents would choose behind the veil of ignorance?",
+    "correct_answer": "The difference principle states that social and economic inequalities are permissible only if they are to the greatest benefit of the least advantaged members of society, ensuring that any departure from equality improves the worst-off group's position.",
+    "distractors": [
+      "The difference principle states that social and economic inequalities are permissible only if they maximize the total aggregate welfare of society as a whole, ensuring the greatest possible sum of individual utilities across all members regardless of distribution.",
+      "The difference principle states that social and economic inequalities are permissible only if every individual receives a strictly equal share of all primary goods, with mandatory transfers enforced until exact material equality among all citizens is fully achieved.",
+      "The difference principle states that social and economic inequalities are permissible only if they arise exclusively from procedures that gave all participants genuinely equal opportunity at the outset, regardless of whatever resulting distribution of outcomes may follow."
+    ],
+    "difficulty": 3,
+    "source_article": "Distributive justice",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["distributive justice"]
+  },
+  {
+    "question_text": "Derek Parfit's non-identity problem, developed in 'Reasons and Persons' (1984), challenges standard harm-based ethics regarding future people. What is the core paradox, and what does Parfit's 'Time-Dependence Claim' assert about personal identity?",
+    "correct_answer": "The paradox is that a harmful policy cannot wrong future people if those particular individuals would not have existed under an alternative policy. The Time-Dependence Claim asserts that one's existence is tied to one's actual time and conditions of conception.",
+    "distractors": [
+      "The paradox is that future people cannot give consent to policies that affect them, making all intergenerational decisions morally impermissible under consent-based frameworks. The Time-Dependence Claim asserts that personal identity is necessarily preserved intact across all possible worlds and counterfactual scenarios.",
+      "The paradox is that maximizing welfare for future generations always requires entirely sacrificing the current generation's well-being and resources. The Time-Dependence Claim asserts that personal identity depends on maintaining continuous psychological connections and memory chains across all temporal stages of a life.",
+      "The paradox is that discounting future welfare at any positive rate implies that future persons matter infinitely less than present persons over long time horizons. The Time-Dependence Claim asserts that personal identity requires unbroken physical continuity of the brain and central nervous system."
+    ],
+    "difficulty": 4,
+    "source_article": "Nonidentity problem",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["non-identity problem"]
+  },
+  {
+    "question_text": "T.M. Scanlon's contractualism, developed in 'What We Owe to Each Other' (1998), offers a non-consequentialist account of morality. What is Scanlon's central formula for determining whether an action is morally wrong, and how does his 'individualist restriction' distinguish contractualism from utilitarianism?",
+    "correct_answer": "An action is wrong if it would be disallowed by any principle that no one could reasonably reject. The individualist restriction holds that justifiability depends on each individual's complaint about a principle, not on impersonal aggregates of welfare.",
+    "distractors": [
+      "An action is wrong if it violates a principle that all rational agents would unanimously endorse. The individualist restriction holds that only the single worst-off individual's objection counts, while all other individuals' complaints are disregarded.",
+      "An action is wrong if it fails to maximize the number of people whose basic needs are satisfied. The individualist restriction holds that each person's welfare must exceed an absolute minimum threshold before any aggregation is permitted.",
+      "An action is wrong if no impartial observer would endorse the principle permitting it. The individualist restriction holds that moral principles must be derived from each individual's actual expressed preferences rather than hypothetical reasoning."
+    ],
+    "difficulty": 4,
+    "source_article": "Contractualism",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["contractualism"]
+  }
+]

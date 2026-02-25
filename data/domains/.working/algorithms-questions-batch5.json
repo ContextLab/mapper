@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "The max-flow min-cut theorem is a fundamental result in network flow theory. What does it state about the relationship between maximum flow and minimum cut in a flow network?",
+    "correct_answer": "The maximum flow from source to sink equals the capacity of the minimum cut separating source and sink.",
+    "distractors": [
+      "The maximum flow from source to sink equals the sum of all edge capacities in the network.",
+      "The maximum flow from source to sink equals the weight of the shortest path from source to sink.",
+      "The maximum flow from source to sink equals the number of edge-disjoint paths from source to sink."
+    ],
+    "difficulty": 4,
+    "source_article": "Maximum flow problem",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["network flow", "max-flow min-cut theorem", "minimum cut"]
+  },
+  {
+    "question_text": "The Ford-Fulkerson method computes maximum flow by repeatedly finding augmenting paths in the residual graph. What pathological behavior can occur with irrational edge capacities, and which refinement resolves it?",
+    "correct_answer": "It may fail to terminate or converge to the maximum flow; the Edmonds-Karp refinement uses BFS to guarantee $O(VE^2)$ termination.",
+    "distractors": [
+      "It may produce negative flow values on some edges; the Edmonds-Karp refinement uses DFS to guarantee $O(VE^2)$ termination.",
+      "It may cycle through the same augmenting path indefinitely; the Dinic refinement uses BFS to guarantee $O(V^2 E)$ termination.",
+      "It may terminate prematurely at a local optimum; the Edmonds-Karp refinement uses BFS to guarantee $O(V^2 E^2)$ termination."
+    ],
+    "difficulty": 4,
+    "source_article": "Ford\u2013Fulkerson algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["Ford-Fulkerson algorithm", "augmenting path", "Edmonds-Karp algorithm", "residual graph"]
+  },
+  {
+    "question_text": "The van Emde Boas tree supports predecessor, successor, insert, and delete operations in $O(\\log \\log U)$ time, where $U$ is the universe size. What recursive structural technique achieves this bound?",
+    "correct_answer": "It partitions the universe into $\\sqrt{U}$ clusters of size $\\sqrt{U}$, recursing on a cluster or a summary structure, reducing $U$ to $\\sqrt{U}$ each level.",
+    "distractors": [
+      "It partitions the universe into $U / 2$ clusters of size $2$, recursing on each half independently, reducing $U$ by half at each level.",
+      "It partitions the universe into $\\log U$ clusters of size $U / \\log U$, recursing on the largest non-empty cluster at each level.",
+      "It partitions the universe into $\\sqrt{U}$ clusters of size $\\sqrt{U}$, recursing on both the cluster and the summary structure simultaneously at each level."
+    ],
+    "difficulty": 4,
+    "source_article": "Van Emde Boas tree",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["van Emde Boas tree", "recursive universe splitting", "predecessor query"]
+  },
+  {
+    "question_text": "A suffix automaton is the smallest partial deterministic finite automaton that accepts all suffixes of a given string. For a string of length $n \\geq 2$, what are the tight upper bounds on the number of states and transitions?",
+    "correct_answer": "At most $2n - 1$ states and at most $3n - 4$ transitions, independent of alphabet size.",
+    "distractors": [
+      "At most $n + 1$ states and at most $2n$ transitions, independent of alphabet size.",
+      "At most $2n - 1$ states and at most $2n - 2$ transitions, scaling linearly with alphabet size.",
+      "At most $n^2$ states and at most $3n - 4$ transitions, independent of alphabet size."
+    ],
+    "difficulty": 4,
+    "source_article": "Suffix automaton",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["suffix automaton", "DAWG", "state complexity", "string algorithms"]
+  },
+  {
+    "question_text": "In linear programming, the feasible region defined by a set of linear inequality constraints has a specific geometric structure. What is it, and why does the simplex method exploit this?",
+    "correct_answer": "The feasible region is a convex polytope, and the simplex method exploits this by moving along edges between vertices, where an optimal solution must exist.",
+    "distractors": [
+      "The feasible region is a convex ellipsoid, and the simplex method exploits this by cutting the ellipsoid in half at each step to converge on a solution.",
+      "The feasible region is a convex polytope, and the simplex method exploits this by searching interior points that minimize the gradient of the objective function.",
+      "The feasible region is a convex cone, and the simplex method exploits this by projecting onto the cone boundary where optimal solutions must lie."
+    ],
+    "difficulty": 4,
+    "source_article": "Linear programming",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["linear programming", "convex polytope", "simplex method", "feasible region"]
+  },
+  {
+    "question_text": "For the NP-hard minimum vertex cover problem, a classical approximation algorithm repeatedly selects an arbitrary uncovered edge and adds both endpoints to the cover. What approximation ratio does this achieve?",
+    "correct_answer": "A 2-approximation: it produces a vertex cover at most twice the size of the optimal minimum vertex cover.",
+    "distractors": [
+      "A 1.5-approximation: it produces a vertex cover at most 1.5 times the size of the optimal minimum vertex cover.",
+      "An $O(\\log n)$-approximation: it produces a vertex cover at most $O(\\log n)$ times the size of the optimal minimum vertex cover.",
+      "A 3-approximation: it produces a vertex cover at most three times the size of the optimal minimum vertex cover."
+    ],
+    "difficulty": 4,
+    "source_article": "Approximation algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["approximation algorithm", "approximation ratio", "vertex cover"]
+  },
+  {
+    "question_text": "The Cook-Levin theorem, proved independently by Stephen Cook (1971) and Leonid Levin, established the concept of NP-completeness. What does the theorem prove, and what consequence does it have for $P$ versus $NP$?",
+    "correct_answer": "It proves Boolean satisfiability (SAT) is NP-complete, implying that a polynomial-time SAT algorithm would yield $P = NP$.",
+    "distractors": [
+      "It proves the Halting Problem is NP-complete, implying that a polynomial-time algorithm for it would yield $P = NP$.",
+      "It proves Boolean satisfiability (SAT) is NP-hard but not in NP, implying that no polynomial-time algorithm can verify SAT solutions.",
+      "It proves 3-SAT is NP-complete, implying that a polynomial-time SAT algorithm would yield $P = NP$."
+    ],
+    "difficulty": 4,
+    "source_article": "NP-completeness",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["NP-completeness", "Cook-Levin theorem", "Boolean satisfiability", "P versus NP"]
+  },
+  {
+    "question_text": "A skip list, invented by William Pugh in 1989, is a probabilistic data structure that provides expected $O(\\log n)$ search, insertion, and deletion. How are the levels of each node determined?",
+    "correct_answer": "Each node's level is chosen randomly via a geometric distribution, typically by repeated coin flips with probability $p = 1/2$ for promotion.",
+    "distractors": [
+      "Each node's level is chosen deterministically from its key value modulo the maximum level, ensuring uniform distribution across levels.",
+      "Each node's level is assigned by a round-robin scheme cycling through all possible levels sequentially during insertion.",
+      "Each node's level is chosen randomly from a uniform distribution over all possible levels, giving each level equal probability."
+    ],
+    "difficulty": 4,
+    "source_article": "Skip list",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["skip list", "probabilistic data structure", "randomized level assignment"]
+  },
+  {
+    "question_text": "The Cooley-Tukey fast Fourier transform (FFT) algorithm computes the discrete Fourier transform in $O(n \\log n)$ time instead of the naive $O(n^2)$. What is the core divide-and-conquer strategy of the radix-2 variant?",
+    "correct_answer": "It splits the input into even-indexed and odd-indexed elements, recursively computes their DFTs, and combines results using twiddle factors (roots of unity).",
+    "distractors": [
+      "It splits the input into the first half and second half, recursively computes their DFTs, and combines results using twiddle factors (roots of unity).",
+      "It splits the input into even-indexed and odd-indexed elements, recursively computes their inverse DFTs, and combines results using convolution.",
+      "It splits the input into real and imaginary components, recursively computes their DFTs, and combines results using polynomial interpolation."
+    ],
+    "difficulty": 4,
+    "source_article": "Fast Fourier transform",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["fast Fourier transform", "Cooley-Tukey algorithm", "divide and conquer", "roots of unity"]
+  },
+  {
+    "question_text": "The Aho-Corasick algorithm (1975) performs multi-pattern string matching in $O(n + m + z)$ time, where $n$ is text length, $m$ is total pattern length, and $z$ is the number of matches. What additional structure beyond the trie enables this linear-time scanning?",
+    "correct_answer": "Failure links (analogous to KMP failure functions) that redirect the automaton on mismatches without backtracking in the text.",
+    "distractors": [
+      "Suffix links that connect each node to the longest proper suffix node, requiring occasional backtracking in the text.",
+      "Hash-based shortcut pointers that map character pairs to trie nodes, enabling constant-time two-character lookahead.",
+      "Output links that connect each node directly to the root, restarting the search from the beginning on every mismatch."
+    ],
+    "difficulty": 4,
+    "source_article": "Aho\u2013Corasick algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["Aho-Corasick algorithm", "failure links", "trie", "multi-pattern matching"]
+  }
+]

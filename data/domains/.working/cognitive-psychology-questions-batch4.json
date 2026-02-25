@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In change blindness research, what primary condition causes observers to fail to detect large alterations in a visual scene?",
+    "correct_answer": "A brief visual disruption such as a saccade, blink, or flicker occurs simultaneously with the change, preventing the observer from detecting it.",
+    "distractors": [
+      "A sustained period of high cognitive arousal occurs simultaneously with the change, amplifying the observer's sensitivity to peripheral stimuli.",
+      "A gradual reduction in ambient lighting occurs simultaneously with the change, allowing the observer to adapt slowly to the alteration.",
+      "A loud auditory distraction occurs simultaneously with the change, redirecting the observer's visual focus toward the source of the sound."
+    ],
+    "difficulty": 3,
+    "source_article": "Change blindness",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["change blindness"]
+  },
+  {
+    "question_text": "What did the 'invisible gorilla' experiment by Simons and Chabris demonstrate about inattentional blindness?",
+    "correct_answer": "When observers focused on counting basketball passes, about half failed to notice a person in a gorilla suit walking through the scene.",
+    "distractors": [
+      "When observers focused on counting basketball passes, nearly all detected the gorilla immediately but could not recall the correct pass count.",
+      "When observers watched the scene without a specific task, about half failed to notice a person in a gorilla suit walking through the scene.",
+      "When observers focused on counting basketball passes, about half noticed the gorilla but misidentified it as one of the original players."
+    ],
+    "difficulty": 3,
+    "source_article": "Inattentional blindness",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["inattentional blindness"]
+  },
+  {
+    "question_text": "In Collins and Loftus's spreading activation model, how does activating a single concept in semantic memory affect related concepts?",
+    "correct_answer": "Activation spreads automatically along associative links to related nodes, raising their activation level and making them easier to retrieve.",
+    "distractors": [
+      "Activation suppresses automatically along associative links to related nodes, lowering their activation level and making them harder to retrieve.",
+      "Activation remains confined to the original node without spreading, keeping related nodes at baseline level until independently accessed.",
+      "Activation spreads only through conscious effort along associative links to related nodes, requiring deliberate attention to raise their activation level."
+    ],
+    "difficulty": 3,
+    "source_article": "Spreading activation",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["spreading activation"]
+  },
+  {
+    "question_text": "In signal detection theory, what do the measures d-prime and response criterion independently capture about a perceiver's performance?",
+    "correct_answer": "D-prime measures the perceiver's sensitivity to distinguish signal from noise, while the response criterion measures the bias toward reporting a signal as present or absent.",
+    "distractors": [
+      "D-prime measures the perceiver's reaction time to distinguish signal from noise, while the response criterion measures the accuracy of reporting a signal as present or absent.",
+      "D-prime measures the perceiver's bias toward reporting a signal present, while the response criterion measures the sensitivity to distinguish signal from noise independently.",
+      "D-prime measures the perceiver's confidence in each response to signal or noise, while the response criterion measures the overall proportion of correct detections across trials."
+    ],
+    "difficulty": 3,
+    "source_article": "Detection theory",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["signal detection theory"]
+  },
+  {
+    "question_text": "Why does naming the ink color of a color word take longer when word meaning and ink color conflict, as demonstrated by the Stroop effect?",
+    "correct_answer": "Reading is a highly automated process that activates the word's meaning involuntarily, creating interference with the slower, controlled process of naming the ink color.",
+    "distractors": [
+      "Naming ink colors is a highly automated process that activates the color response involuntarily, creating interference with the slower, controlled process of reading the word.",
+      "Reading and color naming are equally automated processes that activate competing responses simultaneously, creating facilitation rather than interference between the two tasks.",
+      "Reading is a slow deliberate process that suppresses the ink-color response intentionally, creating a delay because the brain must reactivate the color naming pathway from scratch."
+    ],
+    "difficulty": 3,
+    "source_article": "Stroop effect",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["Stroop effect"]
+  },
+  {
+    "question_text": "According to Tversky and Kahneman, what cognitive mechanism underlies the availability heuristic when people estimate event probability?",
+    "correct_answer": "People estimate probability based on how easily relevant examples come to mind, so events that are more memorable or vivid are judged as more frequent.",
+    "distractors": [
+      "People estimate probability based on how logically consistent an event is with their beliefs, so events that fit existing theories are judged as more frequent.",
+      "People estimate probability based on how recently they studied statistical data about the event, so events with known base rates are judged as more frequent.",
+      "People estimate probability based on how representative an event is of its parent category, so events that match a stereotype are judged as more frequent."
+    ],
+    "difficulty": 3,
+    "source_article": "Availability heuristic",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["availability heuristic"]
+  },
+  {
+    "question_text": "In Shepard and Metzler's classic 1971 study, what key finding revealed that mental rotation operates as an analog process?",
+    "correct_answer": "Reaction time to determine whether two objects were identical increased linearly with the angular difference between them, suggesting continuous mental rotation.",
+    "distractors": [
+      "Reaction time to determine whether two objects were identical remained constant regardless of angular difference, suggesting instantaneous propositional comparison.",
+      "Reaction time to determine whether two objects were identical decreased linearly with the angular difference between them, suggesting faster processing at larger angles.",
+      "Reaction time to determine whether two objects were identical varied randomly with no relation to angular difference, suggesting discrete categorical matching."
+    ],
+    "difficulty": 3,
+    "source_article": "Mental rotation",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["mental rotation"]
+  },
+  {
+    "question_text": "What is a source-monitoring error, and how does it relate to false memory formation?",
+    "correct_answer": "It occurs when a person recalls information correctly but attributes it to the wrong source, leading to false memories about the origin of events.",
+    "distractors": [
+      "It occurs when a person completely forgets information and fabricates a new source, leading to false memories about whether events happened at all.",
+      "It occurs when a person identifies the correct source but distorts the recalled content, leading to false memories about what specific details were present.",
+      "It occurs when a person deliberately invents a plausible source for unfamiliar facts, leading to false memories about who originally communicated the information."
+    ],
+    "difficulty": 3,
+    "source_article": "Source-monitoring error",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["source monitoring"]
+  },
+  {
+    "question_text": "How do connectionist models of cognition fundamentally differ from classical symbolic models in their approach to representing and processing knowledge?",
+    "correct_answer": "Connectionist models store knowledge as distributed patterns of weighted connections among simple processing units, rather than as discrete symbolic rules manipulated by a central processor.",
+    "distractors": [
+      "Connectionist models store knowledge as explicit symbolic rules organized in sequential processing chains, rather than as distributed patterns of activation across simple processing units.",
+      "Connectionist models store knowledge as individual memory locations each holding a complete concept, rather than as overlapping weighted connections among many simple processing units.",
+      "Connectionist models store knowledge as centralized lookup tables accessed by a serial processor, rather than as emergent patterns arising from parallel interaction among simple processing units."
+    ],
+    "difficulty": 4,
+    "source_article": "Connectionism",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["connectionist models of cognition"]
+  },
+  {
+    "question_text": "What is the central claim of embodied cognition, and how does it challenge traditional computational theories of mind?",
+    "correct_answer": "Cognition is shaped by the body's sensorimotor interactions with the environment, challenging the view that thinking is purely abstract symbol manipulation.",
+    "distractors": [
+      "Cognition is determined by genetic neural architecture independent of bodily experience, challenging the view that thinking requires any environmental sensory input.",
+      "Cognition is located exclusively in peripheral sensory organs rather than the brain, challenging the view that central neural processing contributes to thinking.",
+      "Cognition is reducible to basic motor reflexes without higher-order mental representation, challenging the view that abstract reasoning plays any role in thinking."
+    ],
+    "difficulty": 4,
+    "source_article": "Embodied cognition",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["embodied cognition"]
+  }
+]

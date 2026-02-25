@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "How does polysemy differ from homonymy in the relationship between a word's multiple meanings?",
+    "correct_answer": "In polysemy the multiple meanings are historically and conceptually related, while in homonymy they are unrelated coincidences.",
+    "distractors": [
+      "In polysemy the multiple meanings belong to different grammatical categories, while in homonymy they share the same category.",
+      "In polysemy the word is always borrowed from a foreign language, while in homonymy the word is always native.",
+      "In polysemy the meanings can only be distinguished in writing, while in homonymy they differ in pronunciation."
+    ],
+    "difficulty": 1,
+    "source_article": "Polysemy",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["polysemy"]
+  },
+  {
+    "question_text": "In the sentence 'A robin is a bird,' what semantic relationship does 'robin' have to 'bird'?",
+    "correct_answer": "Robin is a hyponym of bird, meaning it names a specific subtype within the broader category.",
+    "distractors": [
+      "Robin is a synonym of bird, meaning they can always substitute for each other in any context.",
+      "Robin is an antonym of bird, meaning they express opposite ideas within the same semantic domain.",
+      "Robin is a homonym of bird, meaning they share identical spelling but have unrelated meanings."
+    ],
+    "difficulty": 1,
+    "source_article": "Hyponymy and hypernymy",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["hyponymy"]
+  },
+  {
+    "question_text": "Why does the phrase 'kick the bucket' illustrate the non-compositional nature of idioms?",
+    "correct_answer": "Its idiomatic meaning of dying cannot be derived from the literal meanings of 'kick' and 'bucket' combined.",
+    "distractors": [
+      "Its meaning changes depending on the grammatical tense in which the verb 'kick' is conjugated.",
+      "Its pronunciation shifts to an irregular stress pattern that differs from normal English prosody.",
+      "Its subject must always be animate, which is a selectional restriction unique to transitive verbs."
+    ],
+    "difficulty": 1,
+    "source_article": "Idiom",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["idiom"]
+  },
+  {
+    "question_text": "When someone asks 'Can you pass the salt?' and means it as a request, which field of linguistics best explains this interpretation?",
+    "correct_answer": "Pragmatics, which studies how context and speaker intention determine meaning beyond the literal words uttered.",
+    "distractors": [
+      "Phonology, which studies the systematic organization of speech sounds and their patterns in a language.",
+      "Morphology, which studies how meaningful units called morphemes combine to form words in a language.",
+      "Syntax, which studies the structural rules that govern how words combine into well-formed sentences."
+    ],
+    "difficulty": 2,
+    "source_article": "Pragmatics",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["pragmatics"]
+  },
+  {
+    "question_text": "According to J. L. Austin, what three levels of action are distinguished when a person produces an utterance?",
+    "correct_answer": "The locutionary act of saying something, the illocutionary act performed in saying it, and the perlocutionary effect on the audience.",
+    "distractors": [
+      "The phonetic act of producing sounds, the morphemic act of combining affixes, and the syntactic act of forming phrases.",
+      "The cognitive act of forming a thought, the neural act of motor planning, and the articulatory act of moving the tongue.",
+      "The lexical act of choosing words, the prosodic act of assigning stress, and the orthographic act of writing them down."
+    ],
+    "difficulty": 2,
+    "source_article": "Speech act",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["speech act"]
+  },
+  {
+    "question_text": "In the sentence 'Mary saw him,' what does the pronoun 'him' need in order to be interpreted by a listener?",
+    "correct_answer": "A referent, which is the specific entity in the world that the linguistic expression picks out.",
+    "distractors": [
+      "A morpheme, which is the smallest grammatical unit that carries meaning within the word structure.",
+      "A phoneme, which is the smallest contrastive sound unit that distinguishes one word from another.",
+      "A grapheme, which is the smallest written unit that represents a single speech sound in spelling."
+    ],
+    "difficulty": 2,
+    "source_article": "Reference (linguistics)",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["reference"]
+  },
+  {
+    "question_text": "Which challenge to the principle of compositionality is commonly cited in linguistics?",
+    "correct_answer": "Idioms, because their overall meaning cannot be computed from the meanings of their individual words and syntax.",
+    "distractors": [
+      "Synonyms, because words with the same meaning always produce identical sentences when freely substituted.",
+      "Phonemes, because the sounds of a language change unpredictably depending on the speaker's dialect.",
+      "Morphemes, because the smallest meaningful units always combine in perfectly regular and predictable ways."
+    ],
+    "difficulty": 2,
+    "source_article": "Principle of compositionality",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["compositionality"]
+  },
+  {
+    "question_text": "If 'John ate a pizza' is true, then 'John ate something' must also be true. What semantic relation holds between these two sentences?",
+    "correct_answer": "Entailment, because the truth of the first sentence necessarily guarantees the truth of the second.",
+    "distractors": [
+      "Presupposition, because the first sentence assumes the second as implicit background information only.",
+      "Implicature, because the second sentence is merely suggested but can be cancelled by further context.",
+      "Contradiction, because the two sentences cannot both be true in the same situation simultaneously."
+    ],
+    "difficulty": 2,
+    "source_article": "Entailment (linguistics)",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["entailment"]
+  },
+  {
+    "question_text": "What happens to a presupposition when the sentence containing it is negated, unlike an ordinary assertion?",
+    "correct_answer": "The presupposition typically survives negation and continues to be taken for granted by the speaker.",
+    "distractors": [
+      "The presupposition is automatically cancelled and no longer plays any role in the interpretation.",
+      "The presupposition reverses its truth value and asserts the exact opposite of the original claim.",
+      "The presupposition becomes an explicit assertion that the speaker must then defend with evidence."
+    ],
+    "difficulty": 2,
+    "source_article": "Presupposition",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["presupposition"]
+  },
+  {
+    "question_text": "In Grice's theory, what is the key difference between a conversational implicature and a conventional implicature?",
+    "correct_answer": "Conversational implicatures arise from context and cooperative principles, while conventional implicatures are tied to word meaning.",
+    "distractors": [
+      "Conversational implicatures occur only in written texts, while conventional implicatures occur only in spoken language.",
+      "Conversational implicatures are always logically valid inferences, while conventional implicatures are always logically invalid.",
+      "Conversational implicatures require formal training to recognize, while conventional implicatures are understood by children only."
+    ],
+    "difficulty": 2,
+    "source_article": "Implicature",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["implicature"]
+  }
+]

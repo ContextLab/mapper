@@ -12,7 +12,958 @@
     },
     "grid_size": 70
   },
-  "questions": [],
+  "questions": [
+    {
+      "id": "10297011f73cf71f",
+      "question_text": "Logic is broadly divided into two main branches based on how arguments are evaluated. What are these two branches, and how do they differ in their approach to assessing reasoning?",
+      "options": {
+        "A": "Classical logic and modern logic. Classical logic evaluates arguments solely by whether their conclusions are factually true, while modern logic evaluates arguments solely by whether their premises are accepted by a majority of experts.",
+        "B": "Theoretical logic and applied logic. Theoretical logic studies hypothetical arguments that have no real-world referents, while applied logic evaluates only arguments drawn from empirical scientific observations and experimental data.",
+        "C": "Formal logic and informal logic. Formal logic studies deductively valid inferences by examining the abstract structure of arguments independent of their content. Informal logic develops non-formal standards and criteria for analyzing and evaluating argumentation.",
+        "D": "Symbolic logic and verbal logic. Symbolic logic uses mathematical equations to calculate the probability of conclusions, while verbal logic relies exclusively on rhetorical persuasiveness to determine argument quality."
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Logic",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "logic"
+      ]
+    },
+    {
+      "id": "3d856d21f70362fb",
+      "question_text": "In logic, an argument consists of specific structural components. What are the two essential components of an argument, and what is the relationship between them?",
+      "options": {
+        "A": "An argument consists of a thesis and an antithesis. The thesis states a position, and the antithesis states the exact opposite, with the stronger rhetorical statement always winning the argument by definition.",
+        "B": "An argument consists of axioms and theorems. The axioms are universally accepted mathematical truths, and the theorems are experimental results that must be verified in a laboratory before the argument is considered complete.",
+        "C": "An argument consists of a hypothesis and an observation. The hypothesis is a speculative claim, and the observation is sensory evidence that automatically confirms or refutes the hypothesis without further reasoning.",
+        "D": "An argument consists of one or more premises and a conclusion. The premises are statements offered as reasons or evidence intended to support or prove the truth of the conclusion."
+      },
+      "correct_answer": "D",
+      "difficulty": 1,
+      "source_article": "Argument",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "argument"
+      ]
+    },
+    {
+      "id": "3367e80f542ccc39",
+      "question_text": "Deductive reasoning moves in a specific logical direction and offers a distinctive guarantee about its conclusions. What direction does deductive reasoning proceed, and what guarantee does a valid deductive argument provide?",
+      "options": {
+        "A": "Deductive reasoning proceeds from simple ideas to complex theories by combination. A valid deductive argument guarantees that the conclusion is the simplest possible explanation, following the principle of parsimony or Occam's razor.",
+        "B": "Deductive reasoning proceeds from general premises to specific conclusions (top-down). A valid deductive argument guarantees that if the premises are true, the conclusion must necessarily be true -- it is impossible for the premises to be true and the conclusion false.",
+        "C": "Deductive reasoning proceeds from effect to cause in a linear chain. A valid deductive argument guarantees that the conclusion will be confirmed by future experimental testing, though it may be revised as new data becomes available.",
+        "D": "Deductive reasoning proceeds from specific observations to general laws (bottom-up). A valid deductive argument guarantees that the conclusion is probably true based on statistical frequency and the weight of accumulated empirical evidence."
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Deductive reasoning",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "deduction"
+      ]
+    },
+    {
+      "id": "ed8cf6e8747f57f7",
+      "question_text": "Inductive reasoning differs from deductive reasoning in the direction of inference and the certainty of its conclusions. How does inductive reasoning proceed, and what level of certainty does it provide?",
+      "options": {
+        "A": "Inductive reasoning proceeds from a conclusion back to its premises in reverse order. It provides certainty equal to deduction because both forms of reasoning rely on the same formal rules of logical inference and truth preservation.",
+        "B": "Inductive reasoning proceeds from specific observations to general conclusions (bottom-up). It establishes that the conclusion is probable or likely given the evidence, but it cannot guarantee the conclusion is true -- no amount of inductive evidence provides absolute certainty.",
+        "C": "Inductive reasoning proceeds from general axioms to specific predictions (top-down). It provides absolute certainty as long as the initial axioms are accepted, because the conclusion follows necessarily from the universal starting principles.",
+        "D": "Inductive reasoning proceeds from abstract definitions to concrete instances by classification. It provides mathematical certainty because each observation that fits the pattern exponentially increases the proof value until certainty is reached at a known threshold."
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Inductive reasoning",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "induction"
+      ]
+    },
+    {
+      "id": "43dd0420b2f27d63",
+      "question_text": "A premise plays a specific role in the structure of a logical argument. What is a premise, and what is the relationship between the truth of premises and the soundness of an argument?",
+      "options": {
+        "A": "A premise is a question posed at the beginning of an argument to frame the inquiry. An argument is sound whenever its conclusion has been independently verified by experiment, regardless of the logical relationship between premises and conclusion.",
+        "B": "A premise is a proposition (a true or false declarative statement) used in an argument to support or prove the truth of the conclusion. An argument is sound if and only if it is valid and all of its premises are actually true.",
+        "C": "A premise is the final statement derived at the end of an argument after all reasoning steps are complete. An argument is sound whenever its premises are emotionally compelling, regardless of their truth value or logical structure.",
+        "D": "A premise is an unproven assumption that must be accepted on faith before any argument can begin. An argument is sound whenever it contains at least three premises, since more premises always produce stronger logical support for any conclusion."
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Premise",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "premise"
+      ]
+    },
+    {
+      "id": "287a3cecca2ade6b",
+      "question_text": "In logic, the concept of logical consequence describes a fundamental relationship within arguments. What does it mean for a conclusion to be a logical consequence of premises, according to the model-theoretic conception?",
+      "options": {
+        "A": "A conclusion is a logical consequence of the premises when the conclusion is more intuitively plausible than any alternative statement, because logical consequence is determined by the degree of psychological conviction the argument produces in rational thinkers.",
+        "B": "A conclusion is a logical consequence of the premises when no counterexample is possible: under no interpretation can the premises be true and the conclusion false. The relationship is both necessary and formal, depending on the logical structure rather than specific content.",
+        "C": "A conclusion is a logical consequence of the premises when the conclusion has been empirically verified through controlled experiments, since logical consequence ultimately depends on whether statements correspond to observable facts in the physical world.",
+        "D": "A conclusion is a logical consequence of the premises when a majority of known interpretations make both the premises and conclusion true simultaneously, even if some rare interpretations allow the premises to be true while the conclusion is false."
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Logical consequence",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "conclusion"
+      ]
+    },
+    {
+      "id": "5b9c9b161d7000ce",
+      "question_text": "A paradox is a distinctive type of logical phenomenon. What defines a paradox, and what three core features do many paradoxes share?",
+      "options": {
+        "A": "A paradox is a factual claim that has been disproven by scientific evidence but remains popular in everyday speech. The three core features are empirical falsity, historical persistence, and rhetorical appeal, which explain why disproven ideas endure in common usage.",
+        "B": "A paradox is any statement that most people find surprising or counterintuitive upon first reading. The three core features are ambiguity of language, emotional provocation, and cultural relativity, since paradoxes only appear contradictory due to differing cultural norms.",
+        "C": "A paradox is a statement that, despite apparently valid reasoning from true or apparently true premises, leads to a seemingly self-contradictory or logically unacceptable conclusion. The three core features many paradoxes share are self-reference, contradiction, and non-terminating recursion (circular reasoning or infinite regress).",
+        "D": "A paradox is a deliberately constructed trick question designed to confuse an audience. The three core features are deceptive framing, hidden premises, and equivocation on key terms, all of which are resolved once the trick is revealed."
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Paradox",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "paradox"
+      ]
+    },
+    {
+      "id": "33dbd087f7e3548c",
+      "question_text": "Fallacies are classified into two main categories. What are these two categories, and what is the key difference between them?",
+      "options": {
+        "A": "Deductive fallacies and inductive fallacies. A deductive fallacy occurs only in arguments with exactly two premises and one conclusion, while an inductive fallacy occurs only in arguments with three or more premises and multiple conclusions.",
+        "B": "Formal fallacies and informal fallacies. A formal fallacy has a flaw in its logical structure, making the argument invalid regardless of the truth of its premises. An informal fallacy may have a valid logical form but is unsound because one or more premises are false.",
+        "C": "Syntactic fallacies and semantic fallacies. A syntactic fallacy occurs when sentences are grammatically incorrect, making them impossible to evaluate, while a semantic fallacy occurs when words are used in their literal dictionary definitions rather than their intended meanings.",
+        "D": "Intentional fallacies and accidental fallacies. An intentional fallacy occurs when a speaker deliberately lies about their premises, while an accidental fallacy occurs when a speaker makes an honest factual mistake, with both categories sharing the same logical structure."
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Fallacy",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "fallacy"
+      ]
+    },
+    {
+      "id": "42757142114a25e6",
+      "question_text": "Validity is a central concept in deductive logic. What makes a deductive argument valid, and does validity require the premises to be actually true?",
+      "options": {
+        "A": "A deductive argument is valid if its logical form makes it impossible for the premises to be true and the conclusion false. Validity does not require the premises to be actually true -- it only requires that if they were true, the conclusion would necessarily follow.",
+        "B": "A deductive argument is valid if the majority of logicians agree that the conclusion is reasonable given the premises. Validity requires at least one premise to be a well-established scientific law, since logical arguments must ultimately be grounded in empirical fact.",
+        "C": "A deductive argument is valid if its conclusion has been confirmed by empirical evidence gathered through controlled observation. Validity requires all premises to be actually true, since an argument with any false premise is automatically classified as invalid.",
+        "D": "A deductive argument is valid if its conclusion is more probable than not, given standard probability calculations applied to the premises. Validity requires the premises to be actually true and the conclusion to be novel, since arguments with obvious conclusions are considered trivially invalid."
+      },
+      "correct_answer": "A",
+      "difficulty": 1,
+      "source_article": "Validity (logic)",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "validity"
+      ]
+    },
+    {
+      "id": "c07fb1f4360fa44f",
+      "question_text": "In formal logic, a contradiction has a precise definition connected to the law of noncontradiction. What is a contradiction in formal logic, and how is the law of noncontradiction expressed?",
+      "options": {
+        "A": "In formal logic, a contradiction is a proposition that is true in some possible worlds but false in others depending on context. The law of noncontradiction states that no proposition can be true in more than half of all possible worlds at any given time.",
+        "B": "In formal logic, a contradiction is any pair of propositions asserted by two different people who disagree with each other. The law of noncontradiction states that when two people hold opposing views, at least one of them must be reasoning from false premises.",
+        "C": "In formal logic, a contradiction is a proposition that is unconditionally false (a self-contradictory proposition from which falsity can be derived). The law of noncontradiction states that a proposition and its negation cannot both be true simultaneously, expressed as the tautology NOT(P AND NOT-P).",
+        "D": "In formal logic, a contradiction is any proposition whose truth value is currently unknown or undetermined by available evidence. The law of noncontradiction states that every proposition must be either proven or disproven within a finite number of logical steps."
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Contradiction",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "contradiction"
+      ]
+    },
+    {
+      "id": "a95f1e6ce7305fb8",
+      "question_text": "In classical logic, what does the negation operator do to a proposition?",
+      "options": {
+        "A": "It removes the proposition from the argument entirely, leaving the remaining premises unchanged.",
+        "B": "It doubles the logical weight of the proposition, strengthening its role as a premise in any argument.",
+        "C": "It reverses the truth value, making a true proposition false and a false proposition true.",
+        "D": "It converts a proposition into a question, transforming a declarative statement into an interrogative one."
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Negation",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "negation"
+      ]
+    },
+    {
+      "id": "ecf97448ef8b4ec3",
+      "question_text": "What is an analogy in the context of reasoning?",
+      "options": {
+        "A": "A logical contradiction in which two premises necessarily oppose each other within the same argument.",
+        "B": "A statistical method that calculates the probability of an event by sampling from a large population.",
+        "C": "A formal proof technique that derives a conclusion by systematically eliminating all alternative possibilities.",
+        "D": "A comparison between two things that highlights shared structural or relational similarities to support a conclusion."
+      },
+      "correct_answer": "D",
+      "difficulty": 1,
+      "source_article": "Analogy",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "analogy"
+      ]
+    },
+    {
+      "id": "9f51442eb2bfc23d",
+      "question_text": "In logic, what is an inference?",
+      "options": {
+        "A": "A rhetorical technique used to persuade an audience by appealing to authority rather than evidence.",
+        "B": "A statement that is assumed to be true without proof and serves as the starting point of an argument.",
+        "C": "A formal definition that assigns precise meaning to a technical term within a logical system.",
+        "D": "The process of deriving a conclusion from premises or evidence through a step of logical reasoning."
+      },
+      "correct_answer": "D",
+      "difficulty": 1,
+      "source_article": "Inference",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "inference"
+      ]
+    },
+    {
+      "id": "06d1fb3ad17b9148",
+      "question_text": "What is modus ponens, and what conclusion does it license?",
+      "options": {
+        "A": "A rule of inference stating: if P implies Q, and P is false, then Q must be false.",
+        "B": "A rule of inference stating: if P implies Q, and Q is false, then P must be false.",
+        "C": "A rule of inference stating: if P implies Q, and P is true, then Q must be true.",
+        "D": "A rule of inference stating: if P implies Q, and Q is true, then P must be true."
+      },
+      "correct_answer": "C",
+      "difficulty": 2,
+      "source_article": "Modus ponens",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "modus ponens"
+      ]
+    },
+    {
+      "id": "db39c36a366f5159",
+      "question_text": "What is modus tollens, and what conclusion does it derive from a conditional statement?",
+      "options": {
+        "A": "If P implies Q and Q is false, then P must be false; it denies the consequent to negate the antecedent.",
+        "B": "If P implies Q and P is true, then Q must be true; it affirms the antecedent to establish the consequent.",
+        "C": "If P implies Q and Q is true, then P must be true; it affirms the consequent to establish the antecedent.",
+        "D": "If P implies Q and P is false, then Q must be false; it denies the antecedent to negate the consequent."
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "Modus tollens",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "modus tollens"
+      ]
+    },
+    {
+      "id": "ad047d4b2a17f6a4",
+      "question_text": "What is a syllogism in classical logic, as originally described by Aristotle?",
+      "options": {
+        "A": "An inductive argument that generalizes from a series of observed instances to a universal law of nature.",
+        "B": "A chain of three or more linked conditional statements, each sharing a term with the next.",
+        "C": "A single conditional statement expressing a hypothetical relationship between two propositions.",
+        "D": "A deductive argument with exactly two premises and a conclusion, where the conclusion follows necessarily from the premises."
+      },
+      "correct_answer": "D",
+      "difficulty": 2,
+      "source_article": "Syllogism",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "syllogism"
+      ]
+    },
+    {
+      "id": "25a4d9f2ddff0f44",
+      "question_text": "What is a truth table in propositional logic?",
+      "options": {
+        "A": "A matrix that assigns numerical probabilities to each proposition in a set of uncertain statements.",
+        "B": "A tabular display of all possible combinations of truth values for the variables in a logical expression and its resulting value.",
+        "C": "A diagram showing the logical dependencies between premises and conclusions in a multi-step argument.",
+        "D": "A ranked list of propositions ordered from most likely true to most likely false based on empirical evidence."
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Truth table",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "truth table"
+      ]
+    },
+    {
+      "id": "e449e6d702841361",
+      "question_text": "What does propositional logic study, and what are its basic building blocks?",
+      "options": {
+        "A": "It studies the probability of events by combining prior beliefs with observed evidence using Bayes' theorem.",
+        "B": "It studies propositions and their combinations using logical connectives such as 'and,' 'or,' 'not,' and 'if-then.'",
+        "C": "It studies the meanings of words and phrases by mapping them to objects and relations in a model.",
+        "D": "It studies the internal structure of sentences by analyzing subjects, predicates, and quantifiers over individuals."
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Propositional calculus",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "propositional logic"
+      ]
+    },
+    {
+      "id": "fc4227dc3a512e58",
+      "question_text": "What distinguishes first-order predicate logic from propositional logic?",
+      "options": {
+        "A": "Predicate logic eliminates logical connectives and relies solely on set-membership relations.",
+        "B": "Predicate logic replaces truth values with numerical probabilities assigned to each proposition.",
+        "C": "Predicate logic restricts propositional logic by removing the ability to form disjunctions and conjunctions.",
+        "D": "Predicate logic extends propositional logic by adding quantifiers and predicates that express properties of and relations among individuals."
+      },
+      "correct_answer": "D",
+      "difficulty": 2,
+      "source_article": "First-order logic",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "predicate logic"
+      ]
+    },
+    {
+      "id": "4581d29daa092b17",
+      "question_text": "In first-order logic, what do the universal quantifier and the existential quantifier express?",
+      "options": {
+        "A": "The universal quantifier means 'for all' elements in the domain; the existential quantifier means 'there exists' at least one element.",
+        "B": "The universal quantifier means 'there exists' at least one element; the existential quantifier means 'for all' elements in the domain.",
+        "C": "The universal quantifier negates a predicate for every element; the existential quantifier affirms a predicate for exactly one element.",
+        "D": "The universal quantifier counts the total number of elements satisfying a predicate; the existential quantifier counts those that do not."
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "Quantifier (logic)",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "quantifier"
+      ]
+    },
+    {
+      "id": "c2ebe941446de82f",
+      "question_text": "In propositional logic, what is a tautology?",
+      "options": {
+        "A": "A formula that is true under every possible interpretation of its component terms.",
+        "B": "A formula that is false under every possible interpretation of its component terms.",
+        "C": "A formula that is true under at least one interpretation but may be false under others.",
+        "D": "A formula whose truth value cannot be determined without knowing the specific model chosen."
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "Tautology (logic)",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "tautology"
+      ]
+    },
+    {
+      "id": "e3a2f189185506b8",
+      "question_text": "What is the role of logical connectives such as conjunction, disjunction, and implication in propositional logic?",
+      "options": {
+        "A": "They combine or modify propositions to form compound statements whose truth values are determined by their components.",
+        "B": "They establish identity relations between objects, allowing substitution of equals for equals in formulas.",
+        "C": "They quantify over individuals in a domain, specifying whether a property holds for all or some members.",
+        "D": "They assign numerical values to variables so that algebraic equations can be solved systematically."
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "Logical connective",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "logical connective"
+      ]
+    },
+    {
+      "id": "87d1274ba0ac8198",
+      "question_text": "Who initiated the modern study of set theory in the 1870s, establishing the mathematical investigation of collections of objects?",
+      "options": {
+        "A": "David Hilbert and Ernst Zermelo, through their axiomatization of geometry and foundational programs.",
+        "B": "Georg Cantor, together with Richard Dedekind, initiated the modern study of set theory.",
+        "C": "Bertrand Russell and Alfred North Whitehead, through their construction of Principia Mathematica.",
+        "D": "Gottlob Frege and Giuseppe Peano, through their development of formal predicate logic and arithmetic axioms."
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Set theory",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "set theory"
+      ]
+    },
+    {
+      "id": "d50859fc72cf2f03",
+      "question_text": "In proof by contradiction (reductio ad absurdum), how is a statement established as true?",
+      "options": {
+        "A": "By verifying the statement holds in every possible case through exhaustive enumeration.",
+        "B": "By proving a base case and then showing that if it holds for n it also holds for n+1.",
+        "C": "By assuming the statement's negation and showing that this assumption leads to a logical contradiction.",
+        "D": "By constructing a direct chain of deductions from accepted axioms to the statement itself."
+      },
+      "correct_answer": "C",
+      "difficulty": 2,
+      "source_article": "Proof by contradiction",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "proof by contradiction"
+      ]
+    },
+    {
+      "id": "5be31cab88d81a77",
+      "question_text": "In logic, what distinguishes a sound argument from one that is merely valid?",
+      "options": {
+        "A": "A sound argument uses only deductive reasoning, whereas a merely valid argument may rely on inductive steps.",
+        "B": "A sound argument has been formally verified using a complete truth table for every connective it contains.",
+        "C": "A sound argument is valid and all of its premises are actually true, thereby guaranteeing a true conclusion.",
+        "D": "A sound argument contains no more than two premises, whereas a valid argument may contain any number."
+      },
+      "correct_answer": "C",
+      "difficulty": 2,
+      "source_article": "Soundness",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "soundness"
+      ]
+    },
+    {
+      "id": "f32d8524c722a33b",
+      "question_text": "What truth conditions define the logical biconditional connective (P if and only if Q)?",
+      "options": {
+        "A": "It is true whenever at least one of P or Q is true and false only when both are false.",
+        "B": "It is true when both P and Q share the same truth value and false when their truth values differ.",
+        "C": "It is true except when both P and Q are true, and false otherwise.",
+        "D": "It is true whenever P is true, regardless of the truth value of Q."
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Logical biconditional",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "biconditional"
+      ]
+    },
+    {
+      "id": "a5bddaa1f3cc9312",
+      "question_text": "What does Goedel's completeness theorem (1929) establish about first-order logic?",
+      "options": {
+        "A": "First-order logic is decidable, meaning an algorithm exists to determine the validity of any formula.",
+        "B": "No consistent formal system strong enough to encode arithmetic can prove its own consistency.",
+        "C": "Every true statement of arithmetic can be formally proved within Peano arithmetic.",
+        "D": "Every logically valid first-order formula is provable from the standard axioms and inference rules of first-order logic."
+      },
+      "correct_answer": "D",
+      "difficulty": 3,
+      "source_article": "Gödel's completeness theorem",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "completeness theorem"
+      ]
+    },
+    {
+      "id": "4c6ef0a1614bf5f3",
+      "question_text": "In modal logic, what do the box operator and the diamond operator represent?",
+      "options": {
+        "A": "The box denotes logical conjunction of propositions and the diamond denotes logical disjunction.",
+        "B": "The box denotes necessity (necessarily P) and the diamond denotes possibility (possibly P); they are dual operators.",
+        "C": "The box denotes obligation (P ought to be the case) and the diamond denotes knowledge (P is known).",
+        "D": "The box denotes universal quantification over individuals and the diamond denotes existential quantification."
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Modal logic",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "modal logic"
+      ]
+    },
+    {
+      "id": "94f949f14efee46b",
+      "question_text": "In Kripke semantics for modal logic, what two components constitute a Kripke frame?",
+      "options": {
+        "A": "A domain of individuals and a set of predicate symbols together with their interpretations.",
+        "B": "A set of propositional variables and a truth-value assignment function mapping each variable to true or false.",
+        "C": "A collection of axiom schemas and a set of inference rules for deriving modal theorems.",
+        "D": "A non-empty set W of possible worlds and a binary accessibility relation R between those worlds."
+      },
+      "correct_answer": "D",
+      "difficulty": 3,
+      "source_article": "Kripke semantics",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "Kripke semantics"
+      ]
+    },
+    {
+      "id": "683cfdb5b64b48e8",
+      "question_text": "Who developed the natural deduction proof system, and what is its central organizing principle?",
+      "options": {
+        "A": "Gerhard Gentzen developed it in the 1930s; it is organized around paired introduction and elimination rules for each logical connective.",
+        "B": "Alfred Tarski developed it in the 1920s; it is organized around semantic truth definitions for formal languages.",
+        "C": "Gottlob Frege developed it in the 1870s; it is organized around axiom schemas with modus ponens as the sole inference rule.",
+        "D": "Alan Turing developed it in the 1940s; it is organized around mechanical decision procedures for determining formula validity."
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "Natural deduction",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "natural deduction"
+      ]
+    },
+    {
+      "id": "e1bb37bd8938e06a",
+      "question_text": "Second-order logic extends first-order logic by permitting quantification over predicates and relations, not just individuals. What key consequence does this additional expressive power have for categorical characterization of mathematical structures?",
+      "options": {
+        "A": "Second-order logic can only characterize finite structures categorically, while first-order logic can characterize both finite and infinite structures up to isomorphism through the completeness theorem and compactness property.",
+        "B": "Second-order logic can categorically characterize structures only when restricted to monadic predicates, and full second-order logic with polyadic predicates collapses back to first-order expressive power by a result of Lindstrom.",
+        "C": "Second-order logic can categorically characterize structures like the natural numbers and real numbers (up to isomorphism), something first-order logic cannot do due to the Lowenheim-Skolem theorem, which forces first-order theories with infinite models to have models of every infinite cardinality.",
+        "D": "Second-order logic loses the ability to characterize any structure categorically because quantifying over predicates introduces inherent ambiguity about which sets exist, making all second-order theories have multiple non-isomorphic models."
+      },
+      "correct_answer": "C",
+      "difficulty": 3,
+      "source_article": "Second-order logic",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "second-order logic"
+      ]
+    },
+    {
+      "id": "11238f2e3c4bcec9",
+      "question_text": "Intuitionistic logic, formalized by Arend Heyting, differs fundamentally from classical logic in its treatment of certain inference rules. Which classical principle does intuitionistic logic reject, and what is the philosophical motivation for this rejection?",
+      "options": {
+        "A": "Intuitionistic logic rejects the law of excluded middle (that every proposition is either true or false) and double negation elimination. The motivation is constructivism: a proof of existence must provide an explicit witness, so non-constructive proofs by contradiction are not accepted.",
+        "B": "Intuitionistic logic rejects the law of identity (that every proposition implies itself). The motivation is anti-realism: truth values are context-dependent and a proposition's status can shift between assertibility conditions across different epistemic situations.",
+        "C": "Intuitionistic logic rejects the principle of modus ponens (from P and if-P-then-Q, infer Q). The motivation is relevance: the antecedent must share subject matter with the consequent for the inference to be valid and meaningful.",
+        "D": "Intuitionistic logic rejects the law of non-contradiction (that no proposition can be both true and false simultaneously). The motivation is dialethism: some propositions may genuinely be both true and false, especially self-referential semantic paradoxes."
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "Intuitionistic logic",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "intuitionistic logic"
+      ]
+    },
+    {
+      "id": "3ebe8fdca4e3f0f1",
+      "question_text": "Resolution is a single inference rule used in automated theorem proving that operates on clauses in conjunctive normal form. What technique, introduced by J. Alan Robinson in 1965, eliminated a major source of combinatorial explosion in earlier resolution procedures?",
+      "options": {
+        "A": "Robinson introduced syntactic unification, which instantiates variables during the proof on demand, only as far as needed. This eliminated the need to enumerate all ground instances of a formula, as required by the earlier Davis-Putnam procedure.",
+        "B": "Robinson introduced clause subsumption, which eliminates redundant clauses during the proof by checking whether any existing clause logically entails a newly derived clause, thereby pruning the entire search space exponentially at each step.",
+        "C": "Robinson introduced Skolem normalization, which replaces all existential quantifiers with universal quantifiers over expanded domains, thereby reducing first-order resolution to a purely propositional problem that can be solved in polynomial time.",
+        "D": "Robinson introduced term indexing, which organizes all terms in the clause set into a hash-table structure allowing constant-time lookup of complementary literals, thereby reducing the resolution procedure from exponential to linear time complexity."
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "Resolution (logic)",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "resolution (logic)"
+      ]
+    },
+    {
+      "id": "1faaf46329079f28",
+      "question_text": "The Lowenheim-Skolem theorem is a fundamental result in the model theory of first-order logic. It has both a downward and an upward component. What does the downward Lowenheim-Skolem theorem state, and what philosophical puzzle does it give rise to?",
+      "options": {
+        "A": "The downward theorem states that if a first-order theory has an uncountable model, it must also have models of every strictly larger cardinality. This gives rise to the continuum paradox: first-order set theory cannot settle the continuum hypothesis.",
+        "B": "The downward theorem states that if a countable first-order theory has a model of any infinite cardinality, it has a countable model. This gives rise to Skolem's paradox: set theory, which proves uncountable sets exist, itself has a countable model.",
+        "C": "The downward theorem states that every first-order theory with a model has a model whose cardinality matches the number of symbols in its language. This gives rise to the expressibility paradox: no first-order language can describe structures larger than its own alphabet.",
+        "D": "The downward theorem states that every first-order theory with a finite model also has a model of every smaller finite cardinality. This gives rise to the cardinality paradox: finite arithmetic theories cannot distinguish between different finite domain sizes."
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Löwenheim–Skolem theorem",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "Löwenheim-Skolem theorem"
+      ]
+    },
+    {
+      "id": "1bbb2a6b1c08733c",
+      "question_text": "The compactness theorem is one of the two key properties (along with the downward Lowenheim-Skolem theorem) that Lindstrom's theorem uses to characterize first-order logic. What does the compactness theorem state, and what important consequence does it have for the class of finite structures?",
+      "options": {
+        "A": "The compactness theorem states that if a first-order sentence is true in all models of a theory, then the theory can be reduced to a finite set of axioms. A consequence is that every decidable first-order theory has only finitely many non-isomorphic finite models.",
+        "B": "A set of first-order sentences has a model if and only if every finite subset has a model. Consequently, any theory with arbitrarily large finite models must have an infinite model, so the class of all finite structures is not first-order axiomatizable.",
+        "C": "The compactness theorem states that every first-order theory with an infinite model has a finitely axiomatizable conservative extension. A consequence is that every class of finite structures can be defined by a single first-order sentence with bounded quantifier depth.",
+        "D": "The compactness theorem states that any consistent first-order theory has a model whose domain is compact in the order topology. A consequence is that all first-order definable sets of natural numbers must be finite or cofinite by a topological closure argument."
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Compactness theorem",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "compactness theorem"
+      ]
+    },
+    {
+      "id": "167cecae341186f1",
+      "question_text": "The Curry-Howard correspondence establishes a deep isomorphism between proof theory and type theory. Under this correspondence, what do logical propositions correspond to, and what do proofs correspond to in the computational setting?",
+      "options": {
+        "A": "Propositions correspond to boolean expressions in a programming language, and proofs correspond to test cases that evaluate those expressions to true. Proving a proposition is equivalent to exhaustive testing, and proof simplification corresponds to reducing the number of required tests.",
+        "B": "Propositions correspond to types, and proofs correspond to programs (specifically, terms in a typed lambda calculus). Proving a proposition is equivalent to constructing a program that inhabits the corresponding type, and proof simplification corresponds to program evaluation.",
+        "C": "Propositions correspond to program inputs, and proofs correspond to output values returned by functions. Proving a proposition is equivalent to running a computation that halts, and proof simplification corresponds to compiler optimization of machine code.",
+        "D": "Propositions correspond to sets of program states, and proofs correspond to algorithms that terminate on all inputs. Proving a proposition is equivalent to demonstrating that every possible execution path reaches a halting configuration within a bounded number of steps."
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Curry–Howard correspondence",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "Curry-Howard correspondence"
+      ]
+    },
+    {
+      "id": "0a8adb74062e95c6",
+      "question_text": "Decidability in logic asks whether there exists an effective method (algorithm) to determine the truth or validity of sentences in a given logical system. Which of the following correctly describes the decidability status of propositional logic versus first-order logic?",
+      "options": {
+        "A": "Both propositional logic and first-order logic are decidable, but first-order logic requires exponentially more computation time. Church and Turing proved in 1936 that first-order validity checking is in the complexity class EXPTIME but remains algorithmically solvable.",
+        "B": "Propositional logic is decidable: there is an algorithm (such as truth tables) that can determine whether any propositional formula is a tautology. First-order logic is undecidable: Church and Turing independently proved in 1936 that no algorithm can determine the validity of arbitrary first-order sentences.",
+        "C": "Propositional logic is undecidable due to the exponential blowup of truth tables for formulas with many variables, while first-order logic is decidable through Herbrand's theorem which reduces all first-order validity questions to finite domain checks.",
+        "D": "Both propositional logic and first-order logic are undecidable, but propositional logic becomes decidable when restricted to formulas in conjunctive normal form. Church and Turing proved this restriction result as a corollary of the halting problem."
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Decidability (logic)",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "decidability"
+      ]
+    },
+    {
+      "id": "315195259437c0b3",
+      "question_text": "An axiomatic system is a set of axioms from which theorems are logically derived. Three key properties of axiomatic systems are consistency, completeness, and independence. What does it mean for an axiomatic system to be consistent, and how can consistency be demonstrated?",
+      "options": {
+        "A": "A system is consistent if it is impossible to derive both a statement and its negation from the axioms. Consistency can be demonstrated by exhibiting a model satisfying all the axioms, since a satisfiable system cannot be contradictory.",
+        "B": "An axiomatic system is consistent if none of its axioms can be derived from the remaining axioms in the set. Consistency can be demonstrated by showing that removing any single axiom causes at least one previously provable theorem to become unprovable.",
+        "C": "An axiomatic system is consistent if every statement expressible in the system can be either proved or disproved from the axioms. Consistency can be demonstrated by providing a complete truth table that assigns definite values to every sentence in the formal language.",
+        "D": "An axiomatic system is consistent if it has exactly one model up to isomorphism in which all its axioms are satisfied. Consistency can be demonstrated by proving that any two models of the system must be isomorphic through a structure-preserving mapping."
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "Axiomatic system",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "axiomatic system"
+      ]
+    },
+    {
+      "id": "53455f0a95a152c8",
+      "question_text": "Godel's second incompleteness theorem (1931) extends his first incompleteness theorem and has profound implications for Hilbert's program. What exactly does the second incompleteness theorem state, and why did it undermine Hilbert's foundational program?",
+      "options": {
+        "A": "The second incompleteness theorem states that any formal system containing arithmetic must contain at least one axiom that is both unprovable and irrefutable. This undermined Hilbert's program because Hilbert required all axioms to be self-evidently true and independently verifiable.",
+        "B": "The second incompleteness theorem states that any consistent formal system capable of expressing elementary arithmetic cannot prove its own consistency. This undermined Hilbert's program because Hilbert aimed to prove the consistency of mathematics using finitary methods formalizable within such systems.",
+        "C": "The second incompleteness theorem states that the consistency of any formal system for arithmetic can only be proved by a strictly weaker system. This undermined Hilbert's program because Hilbert required consistency proofs to come from systems of equal or greater logical strength.",
+        "D": "The second incompleteness theorem states that no formal system can be both consistent and complete for arithmetic. This undermined Hilbert's program because Hilbert aimed to construct a single system that would decide every mathematical statement as either true or false."
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "Gödel's incompleteness theorems",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "Gödel's second incompleteness theorem"
+      ]
+    },
+    {
+      "id": "a54015a26b71e8b8",
+      "question_text": "Forcing is a technique in set theory developed by Paul Cohen in 1963. What did Cohen originally use forcing to prove, and how does forcing work at a high level to construct new models of set theory?",
+      "options": {
+        "A": "Cohen used forcing to prove that every model of Zermelo-Fraenkel set theory must satisfy the generalized continuum hypothesis. Forcing works by iterating the power set operation transfinitely and showing that cardinality gaps between successive power sets must follow a fixed pattern.",
+        "B": "Cohen used forcing to prove the consistency of the continuum hypothesis and the axiom of choice with Zermelo-Fraenkel set theory. Forcing works by constructing an inner model within an existing model, restricting the sets to only those that are constructible from ordinals.",
+        "C": "Cohen used forcing to prove that Zermelo-Fraenkel set theory is consistent relative to Peano arithmetic. Forcing works by translating set-theoretic statements into arithmetic statements via Godel numbering and then applying the completeness theorem to construct satisfying models.",
+        "D": "Cohen proved the independence of the continuum hypothesis and the axiom of choice from ZFC. Forcing starts with a ground model and adjoins a 'generic' object, constructing an extended model where specific statements can be controlled."
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Forcing (mathematics)",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "forcing"
+      ]
+    },
+    {
+      "id": "5c5911e338e13c3d",
+      "question_text": "Large cardinal axioms form a linear hierarchy of consistency strength in set theory. What distinguishes a measurable cardinal from smaller large cardinals, and who first introduced this concept?",
+      "options": {
+        "A": "Paul Cohen introduced measurable cardinals in 1963. A cardinal is measurable if it equals its own cofinality and is a limit of inaccessible cardinals, forming the first step beyond weakly compact cardinals in the large cardinal hierarchy.",
+        "B": "Kurt Godel introduced measurable cardinals in 1938. A cardinal is measurable if every partition of its pairs has a homogeneous subset of the same cardinality, making it the first large cardinal defined through combinatorial properties.",
+        "C": "Ernst Zermelo introduced measurable cardinals in 1908. A cardinal is measurable if it cannot be reached from below by any combination of power set and replacement operations, establishing the first axiom independent of ZFC.",
+        "D": "Ulam introduced them in 1930. A measurable cardinal carries a non-trivial countably additive two-valued measure on all its subsets, implying a non-trivial elementary embedding."
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Large cardinal",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "large cardinal axiom"
+      ]
+    },
+    {
+      "id": "b21bbdb17690cce5",
+      "question_text": "Ordinal analysis assigns countable ordinals to formal theories as measures of proof-theoretic strength. What ordinal did Gentzen assign to Peano arithmetic, and what technique did he use to obtain this result?",
+      "options": {
+        "A": "Gentzen showed the proof-theoretic ordinal of Peano arithmetic is omega-to-the-omega. He used natural deduction normalization and transfinite induction to establish this in 1935.",
+        "B": "Gentzen showed the proof-theoretic ordinal of Peano arithmetic is the Bachmann-Howard ordinal. He used Goedel numbering and the arithmetization of syntax to establish this in 1934.",
+        "C": "Gentzen proved it is epsilon-naught, the first fixed point of ordinal exponentiation. He used cut elimination in sequent calculus (1936).",
+        "D": "Gentzen showed the proof-theoretic ordinal of Peano arithmetic is the Feferman-Schuette ordinal Gamma-naught. He used double-negation translation and realizability to establish this in 1938."
+      },
+      "correct_answer": "C",
+      "difficulty": 4,
+      "source_article": "Ordinal analysis",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "ordinal analysis"
+      ]
+    },
+    {
+      "id": "1446fadba757952a",
+      "question_text": "Reverse mathematics seeks to determine which axioms are necessary and sufficient to prove theorems of ordinary mathematics. What formal framework does it use, and what are the 'Big Five' subsystems ordered by strength?",
+      "options": {
+        "A": "It uses subsystems of first-order Peano arithmetic. The Big Five, from weakest to strongest, are EFA, PRA, I-Sigma-1, B-Sigma-1, and full PA.",
+        "B": "It uses fragments of Zermelo-Fraenkel set theory. The Big Five, from weakest to strongest, are KP, Z, ZC, ZF, and ZFC with a measurable cardinal.",
+        "C": "It uses typed lambda calculi with increasing expressiveness. The Big Five, from weakest to strongest, are System T, System F, Fw, CC, and the Calculus of Inductive Constructions.",
+        "D": "It uses subsystems of second-order arithmetic. The Big Five, from weakest to strongest, are RCA_0, WKL_0, ACA_0, ATR_0, and Pi-1-1-CA_0."
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Reverse mathematics",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "reverse mathematics"
+      ]
+    },
+    {
+      "id": "253a8e5d3191521c",
+      "question_text": "Linear logic, introduced by Jean-Yves Girard in 1987, is a substructural logic that treats hypotheses as resources. Which two structural rules of classical logic does it restrict, and what novel connectives does it introduce to recover controlled versions of these rules?",
+      "options": {
+        "A": "Linear logic restricts exchange (reordering) and contraction (duplication). It introduces the tensor product and par connectives to allow controlled reordering and duplication when explicitly marked.",
+        "B": "Linear logic restricts associativity (regrouping) and idempotence (repetition). It introduces the modal operators 'box' and 'diamond' to allow controlled regrouping and repetition when explicitly marked.",
+        "C": "Linear logic restricts weakening (discarding) and the cut rule (composition). It introduces the additive connectives 'with' and 'plus' to allow controlled discarding and composition when explicitly marked.",
+        "D": "It restricts contraction (duplication) and weakening (discarding). The exponential modalities 'of course' (!) and 'why not' (?) restore controlled use of these rules."
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Linear logic",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "linear logic"
+      ]
+    },
+    {
+      "id": "1ccef021eaafda4a",
+      "question_text": "Paraconsistent logic rejects a principle that holds in classical logic, allowing reasoning with inconsistent information without triviality. What principle does it reject, and what philosophical position associated with Graham Priest embraces true contradictions?",
+      "options": {
+        "A": "Paraconsistent logic rejects the law of excluded middle (tertium non datur), which states every proposition is either true or false. The associated position is fictionalism, which holds that logical truths are useful fictions.",
+        "B": "It rejects the principle of explosion (ex contradictione quodlibet): from a contradiction, anything follows. The associated position is dialetheism, holding some contradictions are true.",
+        "C": "Paraconsistent logic rejects the principle of bivalence, which states that every proposition has exactly one truth value. The associated position is relativism, which holds that truth depends on the formal system adopted.",
+        "D": "Paraconsistent logic rejects the law of non-contradiction, which states no proposition is both true and false simultaneously. The associated position is conventionalism, which holds that logical laws are arbitrary social agreements."
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "Paraconsistent logic",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "paraconsistent logic"
+      ]
+    },
+    {
+      "id": "65616d422bad9b4b",
+      "question_text": "Provability logic GL axiomatizes the behavior of the provability predicate in Peano arithmetic using modal logic. What modal axiom schema characterizes GL beyond the base system K, and whose 1976 arithmetical completeness theorem showed GL is the exact modal logic of provability?",
+      "options": {
+        "A": "GL is characterized by the axiom schema Box P implies Box Box P, the modal version of Goedel's diagonal lemma. Saul Kripke proved the arithmetical completeness theorem showing GL exactly captures provability in PA.",
+        "B": "GL is characterized by the axiom schema Diamond P implies Box Diamond P, the modal version of Rosser's theorem. Solomon Feferman proved the arithmetical completeness theorem showing GL exactly captures provability in PA.",
+        "C": "The axiom Box(Box P -> P) -> Box P (modal Loeb's theorem) characterizes GL. Solovay's 1976 completeness theorem proved GL exactly captures PA provability.",
+        "D": "GL is characterized by the axiom schema Box P implies P, the modal version of the reflection principle. Per Lindstroem proved the arithmetical completeness theorem showing GL exactly captures provability in PA."
+      },
+      "correct_answer": "C",
+      "difficulty": 4,
+      "source_article": "Provability logic",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "provability logic"
+      ]
+    },
+    {
+      "id": "d990fa223abb249f",
+      "question_text": "Descriptive set theory studies definable subsets of Polish spaces using hierarchies of increasing complexity. What is a Polish space, and how do the Borel and projective hierarchies differ in their construction?",
+      "options": {
+        "A": "A Polish space is a connected complete metric space of countable dimension. The Borel hierarchy is built from measurable sets by sigma-algebra operations; the projective hierarchy extends it using forcing constructions and generic filters.",
+        "B": "A Polish space is a compact Hausdorff space with a countable dense subset. The Borel hierarchy is built from closed sets by finite intersections and unions; the projective hierarchy extends it using power set operations and diagonal arguments.",
+        "C": "A Polish space is a locally compact metrizable space with countable basis. The Borel hierarchy is built from clopen sets by transfinite recursion; the projective hierarchy extends it using ultrafilter limits and Ramsey-theoretic constructions.",
+        "D": "A Polish space is separable and completely metrizable. Borel sets use countable unions and complements of open sets; projective sets extend beyond using continuous images."
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Descriptive set theory",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "descriptive set theory"
+      ]
+    },
+    {
+      "id": "24620fa94cb69af2",
+      "question_text": "Topos theory provides a categorical generalization of set theory that also serves as a framework for logic. Who developed the elementary topos concept for foundational purposes, and what kind of internal logic does every topos naturally support?",
+      "options": {
+        "A": "Saunders Mac Lane and Samuel Eilenberg developed the elementary topos concept in the early 1960s. Every topos naturally supports linear logic as its internal logic.",
+        "B": "Lawvere and Tierney developed the elementary topos in the late 1960s-early 1970s. Every topos naturally supports intuitionistic higher-order logic internally.",
+        "C": "Alexander Grothendieck and Jean Dieudonne developed the elementary topos concept in the mid-1950s. Every topos naturally supports classical first-order logic as its internal logic.",
+        "D": "Peter Johnstone and Michael Barr developed the elementary topos concept in the late 1970s. Every topos naturally supports modal S4 logic as its internal logic."
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "Topos",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "topos theory"
+      ]
+    },
+    {
+      "id": "05e126426360143e",
+      "question_text": "Herbrand's theorem is a foundational result connecting first-order provability to propositional satisfiability. What does the theorem state, and why is it significant for automated theorem proving?",
+      "options": {
+        "A": "Herbrand's theorem states that every consistent first-order theory has a model whose domain is the set of natural numbers. This ensures decidability of first-order satisfiability, forming the logical basis for SAT solvers.",
+        "B": "Herbrand's theorem states that every valid first-order formula can be derived in finitely many steps using only modus ponens and universal generalization. This guarantees termination of proof search, forming the logical basis for resolution refutation.",
+        "C": "Herbrand's theorem states that a universal first-order formula is satisfiable if and only if all its ground instances are simultaneously satisfiable in a single finite model. This limits the search space to finite models, forming the logical basis for model checking.",
+        "D": "An existential first-order formula is provable iff a finite disjunction of ground instances is a propositional tautology, reducing first-order proving to ground-instance search."
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Herbrand's theorem",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "Herbrand's theorem"
+      ]
+    },
+    {
+      "id": "bdb2b037288042bd",
+      "question_text": "Omega-consistency is a stronger condition than simple consistency that played a key role in Goedel's original incompleteness proof. How is omega-inconsistency defined, and who later showed that the assumption of omega-consistency could be weakened to simple consistency?",
+      "options": {
+        "A": "A theory is omega-inconsistent if it can derive its own consistency statement yet is unable to prove any particular numerical instance. Alonzo Church showed in 1935 that simple consistency suffices for incompleteness, using lambda-definability and the halting problem.",
+        "B": "Omega-inconsistency means proving P(n) for every n while also proving 'there exists n with not-P(n).' Rosser (1936) weakened the requirement to simple consistency.",
+        "C": "A theory is omega-inconsistent if it proves the negation of every instance of induction yet also proves the full induction schema as an axiom. Alfred Tarski showed in 1933 that simple consistency suffices for incompleteness, using an undefinability-of-truth argument.",
+        "D": "A theory is omega-inconsistent if it proves both a universal statement and the existence of a counterexample to that same statement. Gerhard Gentzen showed in 1936 that simple consistency suffices for incompleteness, using transfinite induction up to epsilon-naught."
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "Omega-consistent theory",
+      "domain_ids": [
+        "logic"
+      ],
+      "concepts_tested": [
+        "omega-consistency"
+      ]
+    }
+  ],
   "labels": [],
   "articles": []
 }

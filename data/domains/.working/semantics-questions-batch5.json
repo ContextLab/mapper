@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In Montague grammar, what formal mechanism serves as the primary 'semantic glue' for combining the meanings of constituent expressions?",
+    "correct_answer": "Function-argument application, using lambda calculus to compose typed expressions.",
+    "distractors": [
+      "Unification of feature structures, merging compatible attribute-value pairs into larger bundles.",
+      "String concatenation of logical formulas, joining predicate symbols in left-to-right order.",
+      "Set intersection over possible worlds, filtering denotations through overlapping model assignments."
+    ],
+    "difficulty": 4,
+    "source_article": "Montague grammar",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["type-theoretic semantics"]
+  },
+  {
+    "question_text": "In Discourse Representation Theory (DRT), what are the two essential components that make up a Discourse Representation Structure (DRS)?",
+    "correct_answer": "A set of discourse referents and a set of DRS conditions encoding information about them.",
+    "distractors": [
+      "A syntactic parse tree and a mapping from terminal nodes to entries in the mental lexicon.",
+      "A set of possible worlds and an accessibility relation defining epistemic alternatives between them.",
+      "A phonological form paired with a logical form derived by movement rules at the syntax interface."
+    ],
+    "difficulty": 4,
+    "source_article": "Discourse representation theory",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["discourse representation theory"]
+  },
+  {
+    "question_text": "What was Davidson's original linguistic motivation for introducing event variables into the logical form of sentences?",
+    "correct_answer": "Explaining the semantic behavior of adverbial modifiers as predicates of event arguments.",
+    "distractors": [
+      "Accounting for tense morphology by binding temporal variables to speech-time coordinates.",
+      "Resolving scope ambiguities between quantificational noun phrases in doubly quantified sentences.",
+      "Providing a compositional treatment of attitude verbs such as 'believe' and 'desire'."
+    ],
+    "difficulty": 4,
+    "source_article": "Event semantics",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["event semantics"]
+  },
+  {
+    "question_text": "In Kaplan's two-dimensional semantics, what does the 'character' of an indexical expression like 'I' formally represent?",
+    "correct_answer": "A function from contexts of utterance to contents, specifying how content depends on context.",
+    "distractors": [
+      "A rigid designator that picks out the same individual in every possible world of evaluation.",
+      "A set of truth conditions that remain constant regardless of who produces the utterance.",
+      "A pragmatic inference triggered by conversational implicature in cooperative discourse situations."
+    ],
+    "difficulty": 4,
+    "source_article": "Two-dimensional semantics",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["two-dimensional semantics"]
+  },
+  {
+    "question_text": "In Barwise and Perry's situation semantics, what three kinds of situations interact to determine the meaning of an utterance?",
+    "correct_answer": "A discourse situation, a resource or connective situation, and a described situation.",
+    "distractors": [
+      "A syntactic situation, a phonological situation, and a morphological derivation situation.",
+      "A speaker situation, a hearer situation, and a mutually shared background knowledge situation.",
+      "An actual situation, a counterfactual situation, and an epistemically possible evaluation situation."
+    ],
+    "difficulty": 4,
+    "source_article": "Situation semantics",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["situation semantics"]
+  },
+  {
+    "question_text": "How does the continuation-based approach to natural language semantics explain the special behavior of quantificational noun phrases?",
+    "correct_answer": "Quantificational NPs denote functions that manipulate their own continuations to achieve scope displacement.",
+    "distractors": [
+      "Quantificational NPs undergo covert syntactic movement at Logical Form to reach a clause-peripheral position.",
+      "Quantificational NPs are interpreted as choice functions that select arbitrary individuals from contextual domains.",
+      "Quantificational NPs are assigned generalized conjunction meanings that distribute predicates over plural entities."
+    ],
+    "difficulty": 4,
+    "source_article": "Continuations",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["continuation semantics"]
+  },
+  {
+    "question_text": "In degree semantics, how are gradable adjectives like 'tall' formally analyzed?",
+    "correct_answer": "As functions mapping individuals to degrees on an associated abstract measurement scale.",
+    "distractors": [
+      "As binary predicates that classify objects into exactly two categories based on fixed thresholds.",
+      "As modal operators that quantify over possible worlds where the property holds to some extent.",
+      "As underspecified lexical entries whose meanings are entirely determined by discourse context alone."
+    ],
+    "difficulty": 4,
+    "source_article": "Degree (linguistics)",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["degree semantics"]
+  },
+  {
+    "question_text": "What distinguishes evidentiality from epistemic modality in languages that grammatically encode both categories?",
+    "correct_answer": "Evidentiality marks the source of information, while epistemic modality marks the speaker's certainty about it.",
+    "distractors": [
+      "Evidentiality encodes obligation and permission, while epistemic modality encodes ability and volition.",
+      "Evidentiality applies only to past-tense clauses, while epistemic modality applies only to future-tense clauses.",
+      "Evidentiality is expressed through word order changes, while epistemic modality uses only intonation patterns."
+    ],
+    "difficulty": 4,
+    "source_article": "Evidentiality",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["evidentiality"]
+  },
+  {
+    "question_text": "In Horn's neo-Gricean framework, what two principles replace Grice's original set of conversational maxims?",
+    "correct_answer": "The Q-principle (make your contribution sufficient) and the R-principle (make your contribution necessary).",
+    "distractors": [
+      "The Relevance principle (be maximally relevant) and the Economy principle (minimize processing effort).",
+      "The Charity principle (interpret speakers as rational) and the Cooperation principle (assume shared goals).",
+      "The Sincerity principle (assert only what you believe) and the Clarity principle (avoid ambiguous expressions)."
+    ],
+    "difficulty": 4,
+    "source_article": "Neo-Gricean pragmatics",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["neo-Gricean pragmatics"]
+  },
+  {
+    "question_text": "What is the core claim of lexical decomposition (componential analysis) in semantics?",
+    "correct_answer": "Word meanings can be broken down into smaller primitive semantic features or components.",
+    "distractors": [
+      "Word meanings are holistic atoms that cannot be analyzed into any more basic units.",
+      "Word meanings are determined entirely by their syntactic distribution across sentence contexts.",
+      "Word meanings arise solely from statistical co-occurrence patterns in large text corpora."
+    ],
+    "difficulty": 4,
+    "source_article": "Semantic decomposition",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["lexical decomposition"]
+  }
+]

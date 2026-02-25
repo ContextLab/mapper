@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Enactivism, as introduced by Varela, Thompson, and Rosch in 'The Embodied Mind' (1991), proposes an alternative to representationalist theories of cognition. What is its central claim about the nature of cognition?",
+    "correct_answer": "Cognition is constituted through embodied action and dynamic interaction with the environment, not through internal mental representations.",
+    "distractors": [
+      "Cognition is constituted through computational symbol manipulation within neural circuits, not through sensory interaction with the environment.",
+      "Cognition is constituted through passive reception of environmental stimuli, which the brain then encodes as internal mental representations.",
+      "Cognition is constituted through social and linguistic practices shared among agents, not through individual embodied interaction with the environment."
+    ],
+    "difficulty": 4,
+    "source_article": "Enactivism",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["enactivism", "embodied cognition", "4E cognition"]
+  },
+  {
+    "question_text": "Disjunctivism in the philosophy of perception rejects the 'common factor' assumption shared by sense-datum and representationalist theories. What does it claim about the relationship between veridical perception and hallucination?",
+    "correct_answer": "Veridical perception and hallucination are fundamentally different kinds of mental states, not experiences sharing a common experiential core.",
+    "distractors": [
+      "Veridical perception and hallucination are identical kinds of mental states that differ only in their external causal origins.",
+      "Veridical perception and hallucination are both forms of indirect representation differing only in the reliability of the causal chain.",
+      "Veridical perception and hallucination share a common sensory core but differ in whether higher-order cognitive endorsement is present."
+    ],
+    "difficulty": 4,
+    "source_article": "Disjunctivism",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["disjunctivism", "naive realism", "philosophy of perception"]
+  },
+  {
+    "question_text": "Derek Parfit's psychological continuity theory of personal identity updates Locke's memory-based account. What structural feature distinguishes Parfit's criterion from Locke's original theory?",
+    "correct_answer": "Parfit requires overlapping chains of psychological connections including memory, intention, and character, rather than direct memory links alone.",
+    "distractors": [
+      "Parfit requires a single unbroken chain of conscious experiences persisting through time, rather than overlapping psychological connections.",
+      "Parfit requires physical continuity of the brain in addition to memory connections, rather than psychological connections alone.",
+      "Parfit requires that psychological connections be caused by an immaterial soul, rather than by neurological processes alone."
+    ],
+    "difficulty": 4,
+    "source_article": "Psychological continuity",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["psychological continuity theory", "personal identity", "Parfit"]
+  },
+  {
+    "question_text": "In the internalism-externalism debate about mental content, 'narrow content' was proposed as a response to Putnam's and Burge's externalist arguments. What defines narrow content?",
+    "correct_answer": "Narrow content is mental content determined solely by a subject's intrinsic physical states, remaining the same regardless of environmental differences.",
+    "distractors": [
+      "Narrow content is mental content determined jointly by intrinsic states and the immediate physical environment surrounding the subject.",
+      "Narrow content is mental content that lacks truth conditions and therefore cannot play a role in rational inference or action.",
+      "Narrow content is mental content determined by the linguistic community's conventions, remaining fixed across different physical realizers."
+    ],
+    "difficulty": 4,
+    "source_article": "Narrow content",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["narrow content", "content internalism", "semantic externalism"]
+  },
+  {
+    "question_text": "Gareth Evans introduced the notion of nonconceptual content into analytic philosophy, and Christopher Peacocke developed it further. What is the core claim about perceptual experience that motivates this notion?",
+    "correct_answer": "The fine-grained richness of perceptual experience outstrips the perceiver's conceptual capacities, so perception represents aspects of the world without requiring corresponding concepts.",
+    "distractors": [
+      "Perceptual experience is entirely conceptual but employs concepts so rapidly that the perceiver cannot introspect on them consciously.",
+      "The coarse-grained nature of perceptual experience underdetermines conceptual content, so perception requires additional inferential reasoning to represent the world.",
+      "Perceptual experience is conceptually structured but draws on innate concepts that are never explicitly learned or articulated by the perceiver."
+    ],
+    "difficulty": 4,
+    "source_article": "Nonconceptual content",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["non-conceptual content", "perceptual content", "Peacocke"]
+  },
+  {
+    "question_text": "Keith Frankish's illusionism about phenomenal consciousness is a revisionary position in philosophy of mind. What does illusionism claim, and what central explanatory challenge does it face?",
+    "correct_answer": "It claims phenomenal properties are an introspective illusion and faces the 'illusion problem' of explaining why we are disposed to judge we are phenomenally conscious.",
+    "distractors": [
+      "It claims phenomenal properties are real but epiphenomenal and faces the problem of explaining how causally inert properties evolved by natural selection.",
+      "It claims phenomenal properties reduce to representational content and faces the problem of explaining why some representations feel qualitative while others do not.",
+      "It claims phenomenal properties are socially constructed through shared linguistic practices and faces the problem of explaining cross-cultural agreement about basic qualitative sensory experiences."
+    ],
+    "difficulty": 4,
+    "source_article": "Illusionism (philosophy of mind)",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["illusionism", "phenomenal consciousness", "Frankish"]
+  },
+  {
+    "question_text": "Frege's distinction between sense (Sinn) and reference (Bedeutung) has been applied to philosophy of mind to address puzzles about mental content. What puzzle does this distinction solve regarding identity statements?",
+    "correct_answer": "It explains how 'Hesperus is Phosphorus' is informative while 'Hesperus is Hesperus' is trivial, since co-referring terms can differ in their mode of presentation.",
+    "distractors": [
+      "It explains how 'Hesperus is Phosphorus' is necessarily false while 'Hesperus is Hesperus' is necessarily true, since each name has a unique referent.",
+      "It explains how 'Hesperus is Phosphorus' is empirically unverifiable while 'Hesperus is Hesperus' is analytically true, since sense determines verification method.",
+      "It explains how 'Hesperus is Phosphorus' is a synthetic a priori truth while 'Hesperus is Hesperus' is analytic, since referents determine modal status."
+    ],
+    "difficulty": 4,
+    "source_article": "Sense and reference",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["Fregean sense and mental content", "cognitive significance", "mode of presentation"]
+  },
+  {
+    "question_text": "William Lycan's higher-order perception (HOP) theory offers a specific account of what makes a mental state conscious. How does HOP theory differ from Rosenthal's higher-order thought (HOT) theory?",
+    "correct_answer": "HOP holds that consciousness involves quasi-perceptual inner sense monitoring of first-order states, while HOT requires a conceptual thought directed at the first-order state.",
+    "distractors": [
+      "HOP holds that consciousness involves linguistic self-reports about first-order states, while HOT requires a non-conceptual sensory awareness of the first-order state.",
+      "HOP holds that consciousness involves direct acquaintance with external objects, while HOT requires an inferential judgment about the first-order state.",
+      "HOP holds that consciousness involves global broadcast of first-order states to multiple brain areas, while HOT requires a localized prefrontal representation."
+    ],
+    "difficulty": 4,
+    "source_article": "Higher-order theories of consciousness",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["higher-order perception theory", "higher-order thought theory", "Lycan"]
+  },
+  {
+    "question_text": "The predictive processing framework, developed by Karl Friston and Andy Clark, offers a unified account of perception, action, and cognition. What is the core computational mechanism it proposes?",
+    "correct_answer": "The brain generates hierarchical top-down predictions about sensory input, and perception is driven by minimizing the prediction error between expectations and actual signals.",
+    "distractors": [
+      "The brain accumulates bottom-up sensory evidence through feedforward layers, and perception is driven by maximizing the total activation of higher cortical areas.",
+      "The brain generates random hypotheses about sensory input at each level, and perception is driven by selecting the hypothesis with the highest posterior probability.",
+      "The brain stores templates of previously encountered stimuli, and perception is driven by matching incoming signals to the closest stored template."
+    ],
+    "difficulty": 4,
+    "source_article": "Predictive coding",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["predictive processing", "prediction error minimization", "hierarchical prediction"]
+  },
+  {
+    "question_text": "Ned Block's influential 1995 distinction between access consciousness and phenomenal consciousness has shaped debates about the nature of conscious experience. What is Block's 'overflow' argument?",
+    "correct_answer": "Phenomenal consciousness overflows access consciousness: we can consciously experience more than what is available for reasoning, report, and rational control of action.",
+    "distractors": [
+      "Access consciousness overflows phenomenal consciousness: we can rationally process and report on more information than we can consciously experience at once.",
+      "Phenomenal consciousness and access consciousness always co-occur: every phenomenally conscious state is simultaneously available for reasoning and verbal report.",
+      "Phenomenal consciousness overflows into unconscious processing: conscious experience generates hidden cognitive states that influence behavior without any access."
+    ],
+    "difficulty": 4,
+    "source_article": "Access consciousness",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["access consciousness vs phenomenal consciousness", "Block", "overflow hypothesis"]
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "According to the Atkinson-Shiffrin model, what are the three memory stores through which information flows sequentially?",
+    "correct_answer": "Sensory register, short-term store, and long-term store.",
+    "distractors": [
+      "Iconic memory, echoic memory, and haptic memory.",
+      "Encoding buffer, rehearsal loop, and retrieval cache.",
+      "Procedural store, episodic store, and semantic store."
+    ],
+    "difficulty": 1,
+    "source_article": "Memory",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["memory"]
+  },
+  {
+    "question_text": "Colin Cherry's 1953 dichotic listening experiments, which demonstrated people can focus on one auditory message while ignoring another, illustrated which well-known phenomenon?",
+    "correct_answer": "The cocktail party effect.",
+    "distractors": [
+      "The word superiority effect.",
+      "The McGurk effect.",
+      "The Stroop interference effect."
+    ],
+    "difficulty": 1,
+    "source_article": "Attention",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["attention"]
+  },
+  {
+    "question_text": "In perception research, what distinguishes bottom-up processing from top-down processing?",
+    "correct_answer": "Bottom-up processing builds perception from raw sensory data, while top-down processing uses prior knowledge and expectations to interpret stimuli.",
+    "distractors": [
+      "Bottom-up processing occurs only in the visual cortex, while top-down processing occurs exclusively in the prefrontal cortex.",
+      "Bottom-up processing relies on memory retrieval of stored patterns, while top-down processing analyzes novel sensory features directly.",
+      "Bottom-up processing requires conscious attention to each stimulus, while top-down processing operates only during unconscious sleep states."
+    ],
+    "difficulty": 1,
+    "source_article": "Perception",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["perception"]
+  },
+  {
+    "question_text": "Albert Bandura's Bobo doll experiment demonstrated that children could acquire new aggressive behaviors simply by watching an adult model, supporting which type of learning?",
+    "correct_answer": "Observational learning, a key component of social learning theory.",
+    "distractors": [
+      "Classical conditioning, a key component of stimulus-response theory.",
+      "Operant conditioning, a key component of reinforcement learning theory.",
+      "Latent learning, a key component of cognitive map theory."
+    ],
+    "difficulty": 1,
+    "source_article": "Learning",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["learning"]
+  },
+  {
+    "question_text": "Raymond Cattell divided general intelligence into two broad domains. What are they?",
+    "correct_answer": "Fluid intelligence, the capacity to solve novel problems, and crystallized intelligence, accumulated knowledge and skills.",
+    "distractors": [
+      "Verbal intelligence, the capacity for language comprehension, and spatial intelligence, the ability to visualize objects.",
+      "Analytical intelligence, the capacity for logical reasoning, and creative intelligence, the ability to generate ideas.",
+      "Emotional intelligence, the capacity for empathy and self-regulation, and practical intelligence, everyday problem-solving skill."
+    ],
+    "difficulty": 1,
+    "source_article": "Intelligence",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["intelligence"]
+  },
+  {
+    "question_text": "In the classic neurological model of language, which brain region is primarily associated with speech production, and which is associated with language comprehension?",
+    "correct_answer": "Broca's area in the frontal lobe for production, and Wernicke's area in the temporal lobe for comprehension.",
+    "distractors": [
+      "Wernicke's area in the frontal lobe for production, and Broca's area in the temporal lobe for comprehension.",
+      "The hippocampus in the medial temporal lobe for production, and the amygdala in the limbic system for comprehension.",
+      "The angular gyrus in the parietal lobe for production, and the superior colliculus in the midbrain for comprehension."
+    ],
+    "difficulty": 1,
+    "source_article": "Language",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["language"]
+  },
+  {
+    "question_text": "What is the key difference between deductive reasoning and inductive reasoning?",
+    "correct_answer": "Deductive reasoning draws specific conclusions guaranteed by general premises, while inductive reasoning draws general conclusions that are probable but not certain from specific observations.",
+    "distractors": [
+      "Deductive reasoning relies on emotional intuition to evaluate the strength of arguments, while inductive reasoning relies on formal mathematical calculation to verify each premise.",
+      "Deductive reasoning is used exclusively for scientific hypothesis testing in controlled settings, while inductive reasoning is used only for everyday informal conversational exchanges.",
+      "Deductive reasoning operates unconsciously and automatically without any deliberate effort, while inductive reasoning always requires slow and carefully deliberate conscious analytical processing."
+    ],
+    "difficulty": 1,
+    "source_article": "Reasoning",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["reasoning"]
+  },
+  {
+    "question_text": "Herbert Simon argued that human decision-makers have limited cognitive resources and therefore settle for adequate rather than optimal solutions. What term did he coin for this strategy?",
+    "correct_answer": "Satisficing, which combines 'satisfy' and 'suffice' to describe choosing the first acceptable option.",
+    "distractors": [
+      "Maximizing, which combines 'maximum' and 'optimizing' to describe choosing the single best option.",
+      "Anchoring, which describes fixating on the first piece of information encountered during choice.",
+      "Heuristic pruning, which describes systematically eliminating inferior options through logical analysis."
+    ],
+    "difficulty": 1,
+    "source_article": "Decision-making",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["decision-making"]
+  },
+  {
+    "question_text": "Karl Duncker's candle problem demonstrates a common obstacle to problem solving in which people fail to see alternative uses for objects beyond their typical function. What is this obstacle called?",
+    "correct_answer": "Functional fixedness.",
+    "distractors": [
+      "Confirmation bias.",
+      "Mental set rigidity.",
+      "Anchoring heuristic."
+    ],
+    "difficulty": 1,
+    "source_article": "Problem solving",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["problem solving"]
+  },
+  {
+    "question_text": "The Schachter-Singer two-factor theory proposes that emotional experience depends on which two components occurring together?",
+    "correct_answer": "Physiological arousal and cognitive appraisal of the situation that labels the arousal.",
+    "distractors": [
+      "Sensory detection of a stimulus and automatic motor response to that stimulus.",
+      "Conscious memory retrieval and unconscious priming of associated emotional concepts.",
+      "Thalamic activation of the cortex and simultaneous hypothalamic triggering of autonomic responses."
+    ],
+    "difficulty": 1,
+    "source_article": "Emotion",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["emotion"]
+  }
+]

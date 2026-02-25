@@ -1,0 +1,98 @@
+[
+  {
+    "question_number": 27,
+    "question_text": "A cladistic analysis groups organisms into clades based on shared derived characteristics (synapomorphies). If a trait is present in a distant ancestor and all its descendants, why would it be unsuitable for defining a smaller clade within that lineage?",
+    "correct_answer": "It is a symplesiomorphy (shared ancestral trait), not unique to the smaller clade, so it cannot distinguish that group from the broader ancestral lineage.",
+    "concept": "cladistics",
+    "difficulty": 3,
+    "source_article": "Cladistics"
+  },
+  {
+    "question_number": 28,
+    "question_text": "According to Hamilton's rule, an altruistic behavior evolves when $rB > C$. If a ground squirrel's alarm call has a survival cost ($C$) of 1 fitness unit and saves siblings ($r = 0.5$), what minimum benefit ($B$) to siblings is required?",
+    "correct_answer": "$B > 2$ fitness units, since $0.5 \\times B$ must exceed 1, requiring $B > \\frac{C}{r} = \\frac{1}{0.5}$.",
+    "concept": "kin selection",
+    "difficulty": 3,
+    "source_article": "Kin selection"
+  },
+  {
+    "question_number": 29,
+    "question_text": "Two species of Paramecium thrive when cultured separately, but when grown together on the same food source, one always goes extinct. What outcome does the competitive exclusion principle predict if neither species shifts its niche?",
+    "correct_answer": "The competitively superior species will drive the other to extinction, because complete competitors for the same limited resource cannot coexist indefinitely.",
+    "concept": "competitive exclusion principle",
+    "difficulty": 3,
+    "source_article": "Competitive exclusion principle"
+  },
+  {
+    "question_number": 30,
+    "question_text": "Atmospheric $N_2$ makes up 78% of the air, yet most organisms cannot use it directly. What biological process converts $N_2$ into biologically available ammonia ($NH_3$), and which type of organisms primarily perform it?",
+    "correct_answer": "Nitrogen fixation, performed by diazotrophic bacteria and archaea (e.g., Rhizobium in legume root nodules) using the enzyme nitrogenase.",
+    "concept": "nitrogen cycle",
+    "difficulty": 3,
+    "source_article": "Nitrogen cycle"
+  },
+  {
+    "question_number": 31,
+    "question_text": "A peahen consistently chooses mates with the most elaborate tail displays, even though large tails hinder escape from predators. Which two forms of sexual selection are illustrated by female mate choice versus males fighting for territory?",
+    "correct_answer": "Intersexual selection (female choice of attractive males) and intrasexual selection (competition between males for access to mates).",
+    "concept": "sexual selection",
+    "difficulty": 3,
+    "source_article": "Sexual selection"
+  },
+  {
+    "question_number": 32,
+    "question_text": "Oysters release millions of eggs with no parental care, while elephants produce one calf with years of investment. In $r/K$ selection theory, which strategy does each represent, and what type of environment favors the oyster's approach?",
+    "correct_answer": "Oysters are $r$-strategists; elephants are $K$-strategists. Unstable or unpredictable environments favor $r$-selection, where producing many cheap offspring maximizes survival odds.",
+    "concept": "r/K selection theory",
+    "difficulty": 3,
+    "source_article": "R/K selection theory"
+  },
+  {
+    "question_number": 33,
+    "question_text": "Barnacles attach to a whale's skin, gaining transportation to plankton-rich waters, while the whale is neither helped nor harmed. How does this commensalistic relationship differ from mutualism?",
+    "correct_answer": "In commensalism, only one species benefits while the other is unaffected. In mutualism, both species receive a fitness benefit from the interaction.",
+    "concept": "commensalism",
+    "difficulty": 3,
+    "source_article": "Commensalism"
+  },
+  {
+    "question_number": 34,
+    "question_text": "A bat's wing, a whale's flipper, a horse's foreleg, and a human arm all share the same underlying skeletal elements despite different functions. What does this structural similarity indicate about these species?",
+    "correct_answer": "They are homologous structures inherited from a common tetrapod ancestor, modified by natural selection for different functions through adaptive evolution.",
+    "concept": "homologous structures",
+    "difficulty": 3,
+    "source_article": "Homology (biology)"
+  },
+  {
+    "question_number": 35,
+    "question_text": "After a volcanic eruption creates new bare rock, lichens and mosses colonize first, gradually building soil. Is this primary or secondary succession, and why can't later-stage species like trees colonize immediately?",
+    "correct_answer": "Primary succession, because it begins on substrate lacking soil or organisms. Trees require soil nutrients and depth that only pioneer species can create.",
+    "concept": "ecological succession",
+    "difficulty": 3,
+    "source_article": "Ecological succession"
+  },
+  {
+    "question_number": 36,
+    "question_text": "Australia's marsupial mammals and South America's now-extinct native ungulates each evolved in isolation despite being closely related to species on other continents. What biogeographic process best explains their independent evolutionary paths?",
+    "correct_answer": "Vicariance: continental drift separated ancestral populations onto isolated landmasses, where they evolved independently without gene flow between them.",
+    "concept": "biogeography",
+    "difficulty": 3,
+    "source_article": "Biogeography"
+  },
+  {
+    "question_number": 37,
+    "question_text": "When blood glucose rises after a meal, the pancreas releases insulin, which lowers glucose levels, thereby reducing the stimulus for further insulin release. What type of endocrine feedback mechanism does this illustrate?",
+    "correct_answer": "Negative feedback: the product (lowered blood glucose) inhibits further release of the hormone (insulin), maintaining homeostasis.",
+    "concept": "endocrine system",
+    "difficulty": 3,
+    "source_article": "Endocrine system"
+  },
+  {
+    "question_number": 38,
+    "question_text": "In the logistic growth model, population growth slows as population size ($N$) approaches carrying capacity ($K$). What happens to the per capita growth rate when $N = K$, and why does the population stabilize?",
+    "correct_answer": "Per capita growth rate reaches zero because the factor $(1 - N/K)$ equals zero, so births equal deaths and the population stops growing.",
+    "concept": "carrying capacity",
+    "difficulty": 3,
+    "source_article": "Carrying capacity"
+  }
+]

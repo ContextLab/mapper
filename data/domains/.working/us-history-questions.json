@@ -1,0 +1,652 @@
+[
+  {
+    "question_text": "What is the Declaration of Independence?",
+    "correct_answer": "The 1776 document asserting the American colonies' separation from Great Britain and their right to self-governance.",
+    "distractors": [
+      "The 1781 agreement establishing the first framework of government for the newly independent American states.",
+      "The 1787 charter creating the federal system of government with executive, legislative, and judicial branches.",
+      "The 1774 petition sent by colonial delegates to King George III requesting the repeal of oppressive parliamentary acts."
+    ],
+    "difficulty": 1,
+    "source_article": "United States Declaration of Independence",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Declaration of Independence"]
+  },
+  {
+    "question_text": "What was the American Civil War?",
+    "correct_answer": "A war fought from 1861 to 1865 between the Union and the Confederacy, primarily over slavery and states' rights.",
+    "distractors": [
+      "A war fought from 1775 to 1783 between American colonists and Great Britain over independence and self-governance.",
+      "A war fought from 1846 to 1848 between the United States and Mexico over territorial disputes in the Southwest.",
+      "A war fought from 1812 to 1815 between the United States and Britain over trade restrictions and impressment."
+    ],
+    "difficulty": 1,
+    "source_article": "American Civil War",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Civil War"]
+  },
+  {
+    "question_text": "What is the Constitution of the United States?",
+    "correct_answer": "The supreme law of the United States, establishing the framework of the federal government and its powers.",
+    "distractors": [
+      "The original governing document of the United States that created a loose confederation of sovereign states.",
+      "The first ten amendments guaranteeing individual rights such as freedom of speech and religion.",
+      "A declaration of principles adopted by the Continental Congress asserting colonial independence from Britain."
+    ],
+    "difficulty": 1,
+    "source_article": "Constitution of the United States",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Constitution of the United States"]
+  },
+  {
+    "question_text": "What was the abolitionist movement in the United States?",
+    "correct_answer": "The social and political movement dedicated to ending slavery and emancipating enslaved people in America.",
+    "distractors": [
+      "The political movement seeking to restrict immigration and preserve the cultural identity of native-born citizens.",
+      "The reform campaign to ban the manufacture and sale of alcoholic beverages throughout the United States.",
+      "The organized labor movement demanding better wages, shorter hours, and safer conditions for factory workers."
+    ],
+    "difficulty": 1,
+    "source_article": "Abolitionism in the United States",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["abolition of slavery"]
+  },
+  {
+    "question_text": "What event brought the United States into World War II?",
+    "correct_answer": "The Japanese attack on Pearl Harbor on December 7, 1941, which prompted Congress to declare war.",
+    "distractors": [
+      "The German invasion of Poland on September 1, 1939, which triggered declarations of war across Europe.",
+      "The sinking of the Lusitania by a German submarine in 1915, which killed over a hundred American passengers.",
+      "The signing of the Lend-Lease Act in March 1941, which authorized military aid to Allied nations."
+    ],
+    "difficulty": 1,
+    "source_article": "United States in World War II",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["World War II (American involvement)"]
+  },
+  {
+    "question_text": "What was the Great Depression in the United States?",
+    "correct_answer": "A severe economic downturn lasting from 1929 to the late 1930s, marked by mass unemployment and bank failures.",
+    "distractors": [
+      "A brief financial panic in 1907 caused by failed speculation that led to the creation of the Federal Reserve.",
+      "An economic recession in the 1970s driven by oil price shocks and high inflation known as stagflation.",
+      "A stock market crash in 1987 that saw the Dow Jones lose over twenty percent in a single day."
+    ],
+    "difficulty": 1,
+    "source_article": "Great Depression in the United States",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Great Depression"]
+  },
+  {
+    "question_text": "What was the Civil Rights Movement in the United States?",
+    "correct_answer": "A mid-20th century struggle to end racial segregation and discrimination and secure legal equality for Black Americans.",
+    "distractors": [
+      "A late-19th century campaign by women's organizations to secure voting rights through a constitutional amendment.",
+      "An early-20th century labor movement organizing industrial workers to demand collective bargaining and fair wages.",
+      "A 1960s antiwar movement protesting American military involvement in Southeast Asia through rallies and civil disobedience."
+    ],
+    "difficulty": 1,
+    "source_article": "Civil rights movement",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Civil Rights Movement"]
+  },
+  {
+    "question_text": "What was the American Revolution?",
+    "correct_answer": "The political upheaval and war from 1765 to 1783 in which thirteen colonies won independence from Britain.",
+    "distractors": [
+      "The economic transformation from 1790 to 1840 in which the United States shifted from agrarian to industrial production.",
+      "The constitutional crisis of 1787 to 1789 in which delegates replaced the Articles of Confederation with a new government.",
+      "The territorial expansion from 1803 to 1848 in which the United States acquired lands stretching to the Pacific."
+    ],
+    "difficulty": 1,
+    "source_article": "American Revolution",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["American Revolution"]
+  },
+  {
+    "question_text": "What was the Emancipation Proclamation?",
+    "correct_answer": "An executive order issued by President Lincoln in 1863 declaring enslaved people in Confederate states to be free.",
+    "distractors": [
+      "A constitutional amendment ratified in 1865 that permanently abolished slavery throughout the entire United States.",
+      "A congressional act passed in 1862 that prohibited slavery in all existing and future federal territories.",
+      "A Supreme Court ruling in 1857 that declared enslaved people were not citizens and had no legal rights."
+    ],
+    "difficulty": 1,
+    "source_article": "Emancipation Proclamation",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Emancipation Proclamation"]
+  },
+  {
+    "question_text": "What was the Moon landing?",
+    "correct_answer": "The Apollo 11 mission in July 1969, when astronauts Neil Armstrong and Buzz Aldrin first walked on the Moon.",
+    "distractors": [
+      "The Mercury-Atlas 6 mission in February 1962, when astronaut John Glenn became the first American to orbit Earth.",
+      "The Gemini 4 mission in June 1965, when astronaut Ed White performed the first American spacewalk in orbit.",
+      "The Apollo 13 mission in April 1970, when astronauts narrowly survived a catastrophic explosion en route to the Moon."
+    ],
+    "difficulty": 1,
+    "source_article": "Apollo 11",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Moon landing"]
+  },
+  {
+    "question_text": "What were the September 11 attacks?",
+    "correct_answer": "Coordinated terrorist attacks on September 11, 2001, using hijacked airliners to strike the World Trade Center and Pentagon.",
+    "distractors": [
+      "A truck bombing at the World Trade Center on February 26, 1993, intended to topple one tower into the other.",
+      "Simultaneous bombings of US embassies in Kenya and Tanzania on August 7, 1998, carried out by al-Qaeda operatives.",
+      "A suicide attack on the USS Cole in the port of Aden, Yemen, on October 12, 2000, killing seventeen sailors."
+    ],
+    "difficulty": 1,
+    "source_article": "September 11 attacks",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["September 11 attacks"]
+  },
+  {
+    "question_text": "What was the Louisiana Purchase?",
+    "correct_answer": "The 1803 acquisition of approximately 828,000 square miles of territory from France, doubling the size of the United States.",
+    "distractors": [
+      "The 1819 treaty with Spain ceding Florida and settling the western boundary of the existing Louisiana Territory.",
+      "The 1845 annexation of the Republic of Texas, adding a vast southwestern territory to the United States.",
+      "The 1867 purchase of Alaska from Russia, acquiring a large northern territory for approximately seven million dollars."
+    ],
+    "difficulty": 1,
+    "source_article": "Louisiana Purchase",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Louisiana Purchase"]
+  },
+  {
+    "question_text": "What is the Bill of Rights?",
+    "correct_answer": "The first ten amendments to the US Constitution, ratified in 1791, guaranteeing fundamental individual rights and liberties.",
+    "distractors": [
+      "The original seven articles of the Constitution that define the structure and powers of the federal government.",
+      "The Reconstruction Amendments ratified after the Civil War that abolished slavery and guaranteed equal protection under law.",
+      "The Federalist Papers, a series of essays written to persuade states to ratify the proposed new Constitution."
+    ],
+    "difficulty": 1,
+    "source_article": "United States Bill of Rights",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Bill of Rights"]
+  },
+  {
+    "question_text": "What was the period of Reconstruction in American history?",
+    "correct_answer": "The era from 1865 to 1877 focused on reintegrating the former Confederate states and defining the rights of freed people.",
+    "distractors": [
+      "The era from 1820 to 1850 focused on balancing the admission of slave and free states to preserve the Union.",
+      "The era from 1890 to 1920 focused on reforming government corruption, regulating industry, and expanding democracy.",
+      "The era from 1933 to 1939 focused on enacting federal programs to provide economic relief and recovery from the Depression."
+    ],
+    "difficulty": 2,
+    "source_article": "Reconstruction era",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Reconstruction"]
+  },
+  {
+    "question_text": "What was the New Deal?",
+    "correct_answer": "President Franklin D. Roosevelt's series of federal programs and reforms enacted in the 1930s to combat the Great Depression.",
+    "distractors": [
+      "President Lyndon B. Johnson's legislative agenda in the 1960s to eliminate poverty and expand civil rights protections.",
+      "President Woodrow Wilson's domestic reform program in the 1910s to regulate banks, lower tariffs, and strengthen antitrust law.",
+      "President Theodore Roosevelt's progressive platform in 1912 calling for women's suffrage, labor protections, and corporate regulation."
+    ],
+    "difficulty": 2,
+    "source_article": "New Deal",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["New Deal"]
+  },
+  {
+    "question_text": "What ideology does the term 'Manifest Destiny' describe?",
+    "correct_answer": "The 19th-century belief that American settlers were destined to expand across the North American continent.",
+    "distractors": [
+      "The 18th-century doctrine that colonial governments derived their authority from the consent of the governed.",
+      "The early-20th-century policy of acquiring overseas territories to compete with European imperial powers.",
+      "The post-Civil War commitment to reconstructing Southern society and integrating formerly enslaved people into civic life."
+    ],
+    "difficulty": 2,
+    "source_article": "Manifest destiny",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Manifest Destiny"]
+  },
+  {
+    "question_text": "What defined the Progressive Era in American history?",
+    "correct_answer": "A period of widespread social and political reform from the 1890s to the 1920s targeting corruption, monopolies, and labor exploitation.",
+    "distractors": [
+      "A period of rapid industrial expansion from the 1870s to the 1890s characterized by laissez-faire economics and political patronage.",
+      "A period of cultural and artistic innovation from the 1920s to the 1930s driven by urbanization, jazz, and literary experimentation.",
+      "A period of radical social upheaval from the 1960s to the 1970s defined by antiwar protests, counterculture, and civil rights activism."
+    ],
+    "difficulty": 2,
+    "source_article": "Progressive Era",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Progressive Era"]
+  },
+  {
+    "question_text": "What was the Cold War?",
+    "correct_answer": "The geopolitical rivalry between the United States and the Soviet Union from roughly 1947 to 1991, fought through proxy wars, arms races, and ideological competition.",
+    "distractors": [
+      "The military conflict between United Nations forces and North Korean and Chinese troops from 1950 to 1953 on the Korean Peninsula.",
+      "The diplomatic standoff between the United States and Cuba in October 1962 over the deployment of Soviet nuclear missiles.",
+      "The economic and political competition between the United States and Japan from the 1970s to the 1990s over trade and technology."
+    ],
+    "difficulty": 2,
+    "source_article": "Cold War",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Cold War"]
+  },
+  {
+    "question_text": "Which key policy debate divided American public opinion during the Vietnam War?",
+    "correct_answer": "Whether continued military escalation or withdrawal best served American strategic interests and moral obligations in Southeast Asia.",
+    "distractors": [
+      "Whether the United States should pursue unilateral nuclear disarmament or maintain its strategic deterrent against the Soviet Union.",
+      "Whether the draft should be replaced with an all-volunteer military or extended to include women for the first time.",
+      "Whether foreign aid spending should be redirected to domestic anti-poverty programs or expanded to contain communism in Latin America."
+    ],
+    "difficulty": 2,
+    "source_article": "Vietnam War",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Vietnam War"]
+  },
+  {
+    "question_text": "What characterized the Gilded Age in American history?",
+    "correct_answer": "Rapid industrialization, extreme economic inequality, and widespread political corruption in the late 19th century United States.",
+    "distractors": [
+      "Widespread agricultural prosperity, rural population growth, and westward migration in the early 19th century United States.",
+      "Federal regulation of monopolies, expansion of voting rights, and investigative journalism in the early 20th century.",
+      "Economic depression, mass unemployment, and the rise of organized labor militancy during the 1890s and early 1900s."
+    ],
+    "difficulty": 2,
+    "source_article": "Gilded Age",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Gilded Age"]
+  },
+  {
+    "question_text": "What was the Great Society?",
+    "correct_answer": "President Lyndon B. Johnson's domestic legislative program in the 1960s aimed at eliminating poverty and racial injustice.",
+    "distractors": [
+      "President Franklin D. Roosevelt's series of economic relief and recovery programs enacted during the Great Depression.",
+      "President John F. Kennedy's domestic agenda emphasizing space exploration, tax reform, and civil rights legislation.",
+      "President Harry S. Truman's postwar program proposing national health insurance, expanded Social Security, and civil rights protections."
+    ],
+    "difficulty": 2,
+    "source_article": "Great Society",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Great Society"]
+  },
+  {
+    "question_text": "What was the Trail of Tears?",
+    "correct_answer": "The forced relocation of Native American nations from southeastern homelands to Indian Territory in the 1830s, causing thousands of deaths.",
+    "distractors": [
+      "The military campaign against Plains Indians from the 1860s to the 1890s, culminating in the massacre at Wounded Knee.",
+      "The series of broken treaties in the 1850s and 1860s that dispossessed Pacific Northwest tribes of their ancestral fishing grounds.",
+      "The Long Walk of the Navajo people to Bosque Redondo in 1864, ordered by the US Army under Kit Carson."
+    ],
+    "difficulty": 2,
+    "source_article": "Trail of Tears",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Trail of Tears"]
+  },
+  {
+    "question_text": "What led to President Nixon's resignation during the Watergate scandal?",
+    "correct_answer": "Revelations that Nixon authorized cover-ups of the 1972 break-in at Democratic headquarters and obstructed the subsequent investigation.",
+    "distractors": [
+      "Revelations that Nixon secretly ordered the bombing of Cambodia without congressional authorization during the Vietnam War.",
+      "Revelations that Nixon accepted illegal campaign contributions from foreign governments in exchange for trade concessions.",
+      "Revelations that Nixon directed the FBI to conduct surveillance on antiwar protesters and political opponents without warrants."
+    ],
+    "difficulty": 2,
+    "source_article": "Watergate scandal",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Watergate scandal"]
+  },
+  {
+    "question_text": "Which constitutional amendment granted women the right to vote in the United States?",
+    "correct_answer": "The Nineteenth Amendment, ratified in 1920, prohibiting the denial of voting rights on the basis of sex.",
+    "distractors": [
+      "The Fifteenth Amendment, ratified in 1870, prohibiting the denial of voting rights on the basis of race or color.",
+      "The Twenty-Sixth Amendment, ratified in 1971, lowering the national voting age from twenty-one to eighteen years.",
+      "The Seventeenth Amendment, ratified in 1913, establishing the direct election of United States senators by popular vote."
+    ],
+    "difficulty": 2,
+    "source_article": "Women's suffrage in the United States",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["women's suffrage in the United States"]
+  },
+  {
+    "question_text": "What transformation defined the Industrial Revolution in the United States?",
+    "correct_answer": "The shift from agrarian hand production to mechanized factory manufacturing, driven by innovations in steam power and interchangeable parts.",
+    "distractors": [
+      "The shift from local barter economies to a national banking system, driven by the establishment of the Federal Reserve.",
+      "The shift from rural subsistence farming to large-scale commercial agriculture, driven by the Homestead Act and railroad expansion.",
+      "The shift from skilled artisan workshops to corporate office work, driven by the rise of the telegraph and typewriter."
+    ],
+    "difficulty": 2,
+    "source_article": "Industrialization in the United States",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Industrial Revolution in the United States"]
+  },
+  {
+    "question_text": "What was the outcome of the Korean War?",
+    "correct_answer": "An armistice in 1953 that established a demilitarized zone near the 38th parallel, leaving Korea divided without a formal peace treaty.",
+    "distractors": [
+      "A decisive UN victory in 1952 that reunified the Korean Peninsula under a democratic government allied with the United States.",
+      "A negotiated peace treaty in 1954 that granted North Korea sovereignty above the 40th parallel and South Korea below it.",
+      "A Chinese-brokered ceasefire in 1951 that withdrew all foreign troops and created a neutral buffer state between the two Koreas."
+    ],
+    "difficulty": 2,
+    "source_article": "Korean War",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Korean War"]
+  },
+  {
+    "question_text": "How did the Missouri Compromise of 1820 attempt to resolve the slavery debate?",
+    "correct_answer": "It admitted Missouri as a slave state and Maine as a free state, and prohibited slavery north of the 36\u00b030\u2032 line in the Louisiana Territory.",
+    "distractors": [
+      "It admitted California as a free state and strengthened the Fugitive Slave Act, while letting Utah and New Mexico decide slavery by popular sovereignty.",
+      "It allowed settlers in Kansas and Nebraska to decide slavery by popular sovereignty, effectively repealing the geographic restriction on slavery's expansion.",
+      "It prohibited the importation of enslaved people from abroad after 1808 while allowing the domestic slave trade to continue in Southern states."
+    ],
+    "difficulty": 3,
+    "source_article": "Missouri Compromise",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Missouri Compromise"]
+  },
+  {
+    "question_text": "What was the central constitutional holding in Dred Scott v. Sandford (1857)?",
+    "correct_answer": "That Congress had no power to prohibit slavery in the territories, and that Black people could not be citizens under the Constitution.",
+    "distractors": [
+      "That the Fugitive Slave Act was constitutional and that Northern states must actively assist in returning escaped enslaved people.",
+      "That enslaved people who resided in free states automatically gained their freedom and could sue for damages in federal court.",
+      "That states could nullify federal laws they deemed unconstitutional, including tariffs and restrictions on slavery in new territories."
+    ],
+    "difficulty": 3,
+    "source_article": "Dred Scott v. Sandford",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Dred Scott v. Sandford"]
+  },
+  {
+    "question_text": "What economic grievances fueled the Populist movement of the 1890s?",
+    "correct_answer": "Deflation harming indebted farmers, exploitative railroad shipping rates, and tight credit from the gold standard's restrictive money supply.",
+    "distractors": [
+      "Inflation eroding urban wages, unregulated stock speculation on Wall Street, and high tariffs raising consumer prices on imports.",
+      "Overproduction in manufacturing, lack of international trade agreements, and excessive government spending on military modernization.",
+      "Competition from immigrant labor, deregulation of the banking industry, and the federal government's refusal to subsidize crop insurance."
+    ],
+    "difficulty": 3,
+    "source_article": "People's Party (United States)",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Populist movement"]
+  },
+  {
+    "question_text": "How did Radical Reconstruction differ from President Andrew Johnson's Reconstruction plan?",
+    "correct_answer": "Radical Republicans required Southern states to ratify the Fourteenth Amendment and guarantee Black male suffrage, while Johnson favored lenient restoration with no such conditions.",
+    "distractors": [
+      "Radical Republicans proposed compensating former slaveholders and gradually phasing in civil rights, while Johnson demanded immediate land redistribution to freedmen.",
+      "Radical Republicans sought to readmit Southern states quickly with minimal oversight, while Johnson insisted on prolonged military occupation of the former Confederacy.",
+      "Radical Republicans offered amnesty to all Confederate officials in exchange for loyalty oaths, while Johnson pursued criminal prosecution of secession leaders."
+    ],
+    "difficulty": 3,
+    "source_article": "Radical Republicans",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Radical Reconstruction"]
+  },
+  {
+    "question_text": "What strategic and ideological motivations drove American imperial expansion in the 1890s?",
+    "correct_answer": "Desire for overseas naval bases and markets, combined with Social Darwinist and civilizing-mission ideologies justifying control of foreign peoples.",
+    "distractors": [
+      "Need to settle surplus population on new farmland, combined with abolitionist ideologies seeking to end forced labor in colonial territories.",
+      "Pressure from European allies to share colonial responsibilities, combined with missionary ideologies focused exclusively on religious conversion.",
+      "Fear of domestic socialist revolution redirected outward, combined with isolationist ideologies that sought to avoid European entanglements."
+    ],
+    "difficulty": 3,
+    "source_article": "American imperialism",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["New Imperialism and American expansion (1890s)"]
+  },
+  {
+    "question_text": "How did the Second Great Awakening influence American reform movements in the early 19th century?",
+    "correct_answer": "Its emphasis on personal salvation and moral perfectionism inspired abolitionism, temperance, women's rights, and public education reform.",
+    "distractors": [
+      "Its emphasis on predestination and divine hierarchy reinforced social conservatism and discouraged organized political activism.",
+      "Its emphasis on rationalism and scientific inquiry promoted secular institutions and reduced the influence of churches on public policy.",
+      "Its emphasis on communal living and shared property inspired the creation of utopian settlements but had little effect on national politics."
+    ],
+    "difficulty": 3,
+    "source_article": "Second Great Awakening",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Second Great Awakening"]
+  },
+  {
+    "question_text": "Why was the Harlem Renaissance culturally significant beyond its literary output?",
+    "correct_answer": "It forged a new Black cultural identity that challenged racial stereotypes and laid intellectual groundwork for the later Civil Rights Movement.",
+    "distractors": [
+      "It established the first Black-owned publishing houses that dominated mainstream American literature for the next several decades.",
+      "It produced an economic boom in Harlem that eliminated poverty in the neighborhood and attracted large-scale white investment.",
+      "It unified all African American political organizations under a single platform demanding immediate federal desegregation legislation."
+    ],
+    "difficulty": 3,
+    "source_article": "Harlem Renaissance",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Harlem Renaissance"]
+  },
+  {
+    "question_text": "What mechanisms did McCarthyism use to suppress perceived communist influence in the early 1950s?",
+    "correct_answer": "Congressional hearings, loyalty oaths, blacklists, and guilt-by-association tactics that ruined careers without requiring proof of espionage.",
+    "distractors": [
+      "Military tribunals, mass deportations, sedition prosecutions, and warrantless wiretapping authorized directly by the Supreme Court.",
+      "Executive orders banning Communist Party membership, nationalizing suspected front organizations, and revoking citizenship of accused sympathizers.",
+      "Federal grand jury indictments, mandatory polygraph testing, seizure of private correspondence, and preventive detention of suspects."
+    ],
+    "difficulty": 3,
+    "source_article": "McCarthyism",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["McCarthyism"]
+  },
+  {
+    "question_text": "Why did the Kansas-Nebraska Act of 1854 destabilize the national party system?",
+    "correct_answer": "By replacing the Missouri Compromise's geographic slavery ban with popular sovereignty, it split the Democratic Party and destroyed the Whig Party, enabling the rise of the Republicans.",
+    "distractors": [
+      "By imposing a federal ban on slavery in all new territories, it united Southern Democrats and Whigs into a single secessionist party.",
+      "By admitting Kansas and Nebraska as slave states without a vote, it provoked Northern Democrats to form the Free Soil Party.",
+      "By requiring a national referendum on slavery expansion, it caused both major parties to fracture along urban and rural lines."
+    ],
+    "difficulty": 3,
+    "source_article": "Kansas\u2013Nebraska Act",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Kansas-Nebraska Act"]
+  },
+  {
+    "question_text": "How did the containment policy shape US foreign policy after World War II?",
+    "correct_answer": "It committed the US to preventing the spread of Soviet influence through military alliances, economic aid, and intervention in regional conflicts worldwide.",
+    "distractors": [
+      "It committed the US to rolling back existing communist governments through covert regime change and direct military confrontation with the Soviet Union.",
+      "It committed the US to diplomatic isolation of the Soviet Union by severing trade relations and withdrawing recognition of communist states.",
+      "It committed the US to defending only Western Europe through NATO while avoiding any military engagement in Asia, Africa, or Latin America."
+    ],
+    "difficulty": 3,
+    "source_article": "Containment",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["containment policy"]
+  },
+  {
+    "question_text": "What was the central disagreement between Federalists and Anti-Federalists during ratification of the Constitution?",
+    "correct_answer": "Federalists argued a strong central government was necessary for stability, while Anti-Federalists feared it would threaten individual liberties and state sovereignty.",
+    "distractors": [
+      "Federalists favored abolishing state governments entirely, while Anti-Federalists wanted to preserve the Articles of Confederation without any changes.",
+      "Federalists demanded a Bill of Rights be included before ratification, while Anti-Federalists argued such protections were unnecessary and dangerous.",
+      "Federalists supported establishing a constitutional monarchy, while Anti-Federalists insisted on a purely democratic system with no executive branch."
+    ],
+    "difficulty": 3,
+    "source_article": "Anti-Federalism",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Federalist vs. Anti-Federalist debate"]
+  },
+  {
+    "question_text": "How did sharecropping perpetuate economic inequality in the post-Civil War South?",
+    "correct_answer": "Freedmen rented land and paid with a share of crops, but exploitative credit terms and low crop prices trapped them in cycles of perpetual debt.",
+    "distractors": [
+      "Freedmen received small plots of confiscated land but lacked legal title, allowing former owners to reclaim the property after five years.",
+      "Freedmen earned fixed wages on former plantations but were legally barred from owning property or opening independent businesses.",
+      "Freedmen jointly owned cooperative farms but mismanagement and federal tax policies forced the dissolution of most cooperatives by 1880."
+    ],
+    "difficulty": 3,
+    "source_article": "Sharecropping",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["sharecropping"]
+  },
+  {
+    "question_text": "How did the Nullification Crisis of 1832-1833 foreshadow later secession debates?",
+    "correct_answer": "South Carolina claimed the right to nullify federal tariffs it deemed unconstitutional, establishing a states' rights precedent that Southern secessionists later invoked.",
+    "distractors": [
+      "South Carolina refused to enforce the Fugitive Slave Act, establishing a Northern abolitionist precedent that free states later invoked to resist federal law.",
+      "South Carolina petitioned Congress to abolish the national bank, establishing an economic populist precedent that Western states later invoked against monopolies.",
+      "South Carolina attempted to secede over the Missouri Compromise, establishing a territorial precedent that border states later invoked during the Kansas crisis."
+    ],
+    "difficulty": 4,
+    "source_article": "Nullification crisis",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Nullification Crisis"]
+  },
+  {
+    "question_text": "What were the long-term monetary consequences of Andrew Jackson's destruction of the Second Bank of the United States?",
+    "correct_answer": "It removed centralized credit regulation, fueling speculative lending by state banks that contributed to the Panic of 1837 and decades of monetary instability.",
+    "distractors": [
+      "It concentrated financial power in New York banks, immediately stabilizing the currency and preventing any major financial panics until the Civil War.",
+      "It forced the federal government to adopt the gold standard, which restricted money supply growth and caused steady deflation until the 1860s.",
+      "It transferred monetary authority to the Treasury Department, which successfully managed credit expansion and prevented inflation through the 1840s."
+    ],
+    "difficulty": 4,
+    "source_article": "Bank War",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Bank War"]
+  },
+  {
+    "question_text": "Why did the Fugitive Slave Act of 1850, a component of the Compromise of 1850, prove so politically incendiary?",
+    "correct_answer": "It required Northern citizens to assist in capturing escaped enslaved people, making the North complicit in slavery enforcement and radicalizing moderate antislavery opinion.",
+    "distractors": [
+      "It banned the slave trade in Washington, D.C., angering Southern slaveholders who viewed it as the first step toward complete abolition.",
+      "It admitted California as a slave state, angering Northern free-soilers who had expected the territory to enter the Union without slavery.",
+      "It granted popular sovereignty to Utah and New Mexico, angering both sides by leaving the slavery question unresolved in the Southwest."
+    ],
+    "difficulty": 4,
+    "source_article": "Compromise of 1850",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Compromise of 1850"]
+  },
+  {
+    "question_text": "What structural limitations prevented the Freedmen's Bureau from achieving lasting change during Reconstruction?",
+    "correct_answer": "It lacked permanent funding, faced President Johnson's vetoes, had insufficient staff to cover the vast South, and was dismantled by 1872 before reforms could take root.",
+    "distractors": [
+      "It was fully funded but restricted to educational programs, had no legal authority to adjudicate labor disputes, and was dissolved by the Supreme Court in 1869.",
+      "It operated only in border states, was staffed entirely by former Confederate officers, and was defunded by the Radical Republican Congress in 1870.",
+      "It received generous land grants but distributed them only to white Unionists, had abundant staff concentrated in cities, and expired by constitutional sunset clause."
+    ],
+    "difficulty": 4,
+    "source_article": "Bureau of Refugees, Freedmen, and Abandoned Lands",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Freedmen's Bureau"]
+  },
+  {
+    "question_text": "How did the XYZ Affair influence early American political development?",
+    "correct_answer": "French demands for bribes to open negotiations fueled anti-French sentiment, strengthened the Federalist Party, and led to the Alien and Sedition Acts and the Quasi-War.",
+    "distractors": [
+      "French offers of military alliance against Britain united both parties, weakened Federalist influence, and led to the Jay Treaty and expanded Atlantic trade.",
+      "French threats of invasion prompted bipartisan support for neutrality, dissolved the Federalist Party, and led to the Monroe Doctrine and hemispheric defense policy.",
+      "French seizure of American merchant ships provoked a formal declaration of war, split the Democratic-Republican Party, and led to the Naturalization Act and naval expansion."
+    ],
+    "difficulty": 4,
+    "source_article": "XYZ Affair",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["XYZ Affair"]
+  },
+  {
+    "question_text": "How did the Smoot-Hawley Tariff of 1930 worsen the Great Depression?",
+    "correct_answer": "Its steep import duties provoked retaliatory tariffs from trading partners, collapsing international trade and deepening the global economic contraction.",
+    "distractors": [
+      "Its elimination of import duties flooded domestic markets with cheap foreign goods, destroying American manufacturing and accelerating unemployment.",
+      "Its targeted tariffs on agricultural imports raised food prices for consumers while failing to help farmers already suffering from overproduction.",
+      "Its preferential rates for allied nations created trade blocs that excluded the United States from European markets and reduced export revenue."
+    ],
+    "difficulty": 4,
+    "source_article": "Smoot\u2013Hawley Tariff Act",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Smoot-Hawley Tariff"]
+  },
+  {
+    "question_text": "What was the ambivalent legacy of Muller v. Oregon (1908) for progressive reform and gender equality?",
+    "correct_answer": "It upheld protective labor laws for women using the Brandeis brief's sociological evidence, but its reasoning reinforced gender stereotypes about women's physical weakness.",
+    "distractors": [
+      "It struck down all sex-based labor regulations as unconstitutional under the Fourteenth Amendment, advancing formal equality while leaving women unprotected from exploitation.",
+      "It required equal pay for men and women in all industries, advancing wage parity while provoking a backlash that weakened other progressive labor reforms.",
+      "It extended maximum-hour laws to both sexes equally based on public health arguments, advancing worker protections while setting no precedent specific to women's rights."
+    ],
+    "difficulty": 4,
+    "source_article": "Muller v. Oregon",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Muller v. Oregon"]
+  },
+  {
+    "question_text": "How did the Platt Amendment shape US-Cuban relations after the Spanish-American War?",
+    "correct_answer": "It gave the US the right to intervene in Cuban affairs and required Cuba to lease naval bases, effectively making Cuba a US protectorate despite nominal independence.",
+    "distractors": [
+      "It granted Cuba full sovereignty with no conditions, withdrew all American troops immediately, and established a mutual non-interference treaty between the two nations.",
+      "It annexed Cuba as a US territory, imposed English as the official language, and placed the island under direct military governance for twenty years.",
+      "It established a joint US-Cuban governing council, required Cuba to abolish its military, and transferred all Cuban trade agreements to American oversight."
+    ],
+    "difficulty": 4,
+    "source_article": "Platt Amendment",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Platt Amendment"]
+  },
+  {
+    "question_text": "What political consequences did the Bonus Army episode of 1932 have for the presidential election?",
+    "correct_answer": "Hoover's use of federal troops to disperse peacefully encamped WWI veterans reinforced his image as callous and out of touch, helping Franklin Roosevelt win the 1932 election.",
+    "distractors": [
+      "Hoover's generous settlement of veterans' bonus claims boosted his approval ratings and nearly secured his reelection against Franklin Roosevelt in 1932.",
+      "Hoover's negotiation of a compromise pension plan united both parties behind his leadership and delayed the presidential election until the crisis was resolved.",
+      "Hoover's decision to let the veterans camp indefinitely projected tolerance but was seen as weak, prompting the Republican Party to replace him with a different nominee."
+    ],
+    "difficulty": 4,
+    "source_article": "Bonus Army",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Bonus Army"]
+  },
+  {
+    "question_text": "Why was the Credit Mobilier scandal emblematic of Gilded Age corruption?",
+    "correct_answer": "Insiders created a construction company to siphon profits from the federally subsidized transcontinental railroad, then bribed congressmen with discounted stock to prevent investigation.",
+    "distractors": [
+      "A private bank manipulated gold prices to profit from currency fluctuations, then donated to presidential campaigns to block regulatory legislation.",
+      "Railroad executives fixed shipping rates through secret pooling agreements, then lobbied state legislatures to block the creation of regulatory commissions.",
+      "Government officials awarded no-bid military contracts to political allies during Reconstruction, then destroyed records to conceal evidence of embezzlement."
+    ],
+    "difficulty": 4,
+    "source_article": "Cr\u00e9dit Mobilier of America scandal",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Cr\u00e9dit Mobilier scandal"]
+  },
+  {
+    "question_text": "What First Amendment precedent did New York Times Co. v. United States (1971) establish in the Pentagon Papers case?",
+    "correct_answer": "The Supreme Court ruled the government could not impose prior restraint on publication, holding that the First Amendment protects the press from pre-publication censorship absent overwhelming justification.",
+    "distractors": [
+      "The Supreme Court ruled that classified government documents are absolutely protected from disclosure, holding that national security concerns always override press freedom.",
+      "The Supreme Court ruled that journalists who publish leaked classified material can be prosecuted under the Espionage Act, limiting press protections to lawfully obtained information.",
+      "The Supreme Court ruled that the executive branch has sole authority to classify and declassify information, holding that courts cannot review such decisions on First Amendment grounds."
+    ],
+    "difficulty": 4,
+    "source_article": "Pentagon Papers",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Pentagon Papers"]
+  },
+  {
+    "question_text": "Why has the War Powers Resolution of 1973 been difficult to enforce against presidential war-making?",
+    "correct_answer": "Presidents have claimed inherent commander-in-chief authority to deploy forces without congressional approval, and Congress has rarely invoked the resolution's enforcement mechanisms.",
+    "distractors": [
+      "The Supreme Court struck down the resolution's key provisions in 1975 as an unconstitutional infringement on executive power under Article II.",
+      "Congress repealed the resolution's mandatory withdrawal clause in 1983 after finding it unworkable during the Lebanon intervention.",
+      "Presidents have consistently obtained formal declarations of war before deploying troops, making the resolution's consultation requirements technically moot."
+    ],
+    "difficulty": 4,
+    "source_article": "War Powers Resolution",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["War Powers Resolution"]
+  }
+]

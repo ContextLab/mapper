@@ -1,0 +1,80 @@
+[
+  {
+    "question_text": "In the Chinese connoisseurship tradition, what function did collector seals (jiancang yin) and colophons appended to handscroll paintings primarily serve beyond marking ownership?",
+    "correct_answer": "They established an authenticated chain of provenance and recorded critical judgments, enhancing the work's cultural pedigree across successive generations of scholars.",
+    "distractors": [
+      "They established an encrypted system of pricing and recorded market transactions, enhancing the work's monetary valuation across successive generations of dealers.",
+      "They established a decorative border of calligraphy and recorded poetic tributes, enhancing the work's aesthetic completeness across successive generations of court painters.",
+      "They established an imperial registry of taxation and recorded export permissions, enhancing the work's legal standing across successive generations of government officials."
+    ],
+    "difficulty": 4,
+    "source_article": "Connoisseur",
+    "domain_ids": ["chinese-art-history"],
+    "concepts_tested": ["connoisseurship (Chinese tradition)"]
+  },
+  {
+    "question_text": "In Xie He's Six Principles of Chinese painting, each principle is stated in only four characters. What does the sixth principle, chuanyi moxie, prescribe as essential to an artist's development?",
+    "correct_answer": "Transmission by copying models, meaning artists must study and copy works of antiquity, not only rendering from life but internalizing past masters' methods.",
+    "distractors": [
+      "Transmission by teaching students, meaning artists must instruct and mentor apprentices of nobility, not only demonstrating from memory but externalizing each master's theories.",
+      "Translation by interpreting motifs, meaning artists must adapt and alter works of foreign origin, not only borrowing from trade but incorporating rival schools' methods.",
+      "Transformation by inventing models, meaning artists must reject and surpass works of antiquity, not only departing from tradition but originating entirely new personal methods."
+    ],
+    "difficulty": 4,
+    "source_article": "Six_principles_of_Chinese_painting",
+    "domain_ids": ["chinese-art-history"],
+    "concepts_tested": ["Six Principles of Xie He"]
+  },
+  {
+    "question_text": "Xie He ranked qi yun shengdong (spirit resonance and life movement) as the first of his Six Principles. Why did he consider it categorically different from the other five principles?",
+    "correct_answer": "Without spirit resonance transmitting the artist's vital energy into the work, the remaining technical principles were irrelevant; there was no need to look further.",
+    "distractors": [
+      "Without spirit resonance reproducing the patron's dynastic authority within the work, the remaining compositional principles were redundant; there was no reason to continue further.",
+      "Without spirit resonance preserving the subject's physical likeness across the work, the remaining decorative principles were secondary; there was no cause to elaborate further.",
+      "Without spirit resonance reflecting the viewer's emotional response toward the work, the remaining calligraphic principles were superficial; there was no basis to judge further."
+    ],
+    "difficulty": 4,
+    "source_article": "Qi",
+    "domain_ids": ["chinese-art-history"],
+    "concepts_tested": ["qi yun (spirit resonance)"]
+  },
+  {
+    "question_text": "Dong Qichang's influential Southern and Northern School theory divided Chinese painting not by geography but by an analogy to Chan Buddhism. What distinguished the Southern school ideal he championed?",
+    "correct_answer": "Southern school painters used quick calligraphic strokes embodying sudden enlightenment, building individual styles by creatively transforming rather than merely imitating past masters.",
+    "distractors": [
+      "Southern school painters used precise polychrome washes embodying gradual cultivation, building collective styles by faithfully preserving rather than creatively transforming past masters.",
+      "Southern school painters used quick calligraphic strokes embodying sudden enlightenment, building imperial styles by systematically cataloguing rather than personally interpreting past masters.",
+      "Southern school painters used layered mineral pigments embodying meditative concentration, building regional styles by selectively combining rather than creatively transforming past masters."
+    ],
+    "difficulty": 4,
+    "source_article": "Dong_Qichang",
+    "domain_ids": ["chinese-art-history"],
+    "concepts_tested": ["Dong Qichang's theory"]
+  },
+  {
+    "question_text": "The Admonitions Scroll illustrates a didactic poem by Zhang Hua written in 292 CE. What specific evidence has led modern scholars to reject its traditional attribution to the Jin dynasty painter Gu Kaizhi?",
+    "correct_answer": "It is unsigned, no contemporary source links Gu Kaizhi to it, and stylistic analysis dates it to the 5th\u20138th century, well after the Jin period.",
+    "distractors": [
+      "It is unsigned, no contemporary source links Gu Kaizhi to it, and chemical analysis dates the silk to the 10th\u201312th century, after the Tang period.",
+      "It bears a Tang calligrapher's signature, several sources attribute it to Zhang Sengyou, and pigment analysis dates it to the 7th\u20139th century, after Jin times.",
+      "It is unsigned, no imperial catalogue mentions Gu Kaizhi at all, and iconographic analysis identifies Buddhist motifs from the 8th\u201310th century, after the Jin period."
+    ],
+    "difficulty": 4,
+    "source_article": "Admonitions_Scroll",
+    "domain_ids": ["chinese-art-history"],
+    "concepts_tested": ["Admonitions Scroll"]
+  },
+  {
+    "question_text": "Of the more than 100,000 surviving stone inscriptions in China, only about 30,000 have had ink rubbings made. What technique was traditionally used to produce these rubbings from carved stele?",
+    "correct_answer": "Dampened paper was pressed onto the carved stone, then ink applied with a dauber so incised characters appeared as white against a dark background.",
+    "distractors": [
+      "Dampened silk was stretched over the carved stone, then pigment brushed with a flat tool so incised characters appeared as dark against a light background.",
+      "Dried paper was laid beside the carved stone, then charcoal traced with a stylus so incised characters appeared as grey against a mottled background.",
+      "Dampened paper was pressed onto the carved stone, then wax heated with a metal stamp so incised characters appeared as raised against a smooth background."
+    ],
+    "difficulty": 4,
+    "source_article": "Rubbing_(art)",
+    "domain_ids": ["chinese-art-history"],
+    "concepts_tested": ["ink-rubbing (stone inscription)"]
+  }
+]

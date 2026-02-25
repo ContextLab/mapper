@@ -1,0 +1,172 @@
+[
+  {
+    "question_text": "What is optical character recognition (OCR)?",
+    "correct_answer": "The electronic or mechanical conversion of images of typed, handwritten, or printed text into machine-encoded text.",
+    "distractors": [
+      "The automated process of translating spoken words captured by a microphone into editable digital text documents.",
+      "The computational technique of generating realistic handwritten text images from typed digital character input.",
+      "The electronic method of converting machine-encoded text files into printed physical documents using laser technology."
+    ],
+    "difficulty": 1,
+    "source_article": "Optical character recognition",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "optical character recognition"
+    ]
+  },
+  {
+    "question_text": "What is question answering (QA) in computer science?",
+    "correct_answer": "A discipline focused on building systems that automatically answer questions posed by humans in natural language.",
+    "distractors": [
+      "A discipline focused on building systems that automatically generate exam questions from structured database records.",
+      "A discipline focused on building systems that automatically classify documents into predefined topical category labels.",
+      "A discipline focused on building systems that automatically detect grammatical errors in written natural language text."
+    ],
+    "difficulty": 1,
+    "source_article": "Question answering",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "question answering"
+    ]
+  },
+  {
+    "question_text": "What are the two general approaches to automatic text summarization?",
+    "correct_answer": "Extraction, which selects existing sentences, and abstraction, which generates new sentences conveying key information.",
+    "distractors": [
+      "Compression, which shortens individual sentences, and expansion, which adds contextual background information to summaries.",
+      "Classification, which sorts documents by topic, and regression, which ranks sentences by their predicted importance scores.",
+      "Tokenization, which splits text into word units, and clustering, which groups related paragraphs into thematic sections."
+    ],
+    "difficulty": 1,
+    "source_article": "Automatic summarization",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "text summarization"
+    ]
+  },
+  {
+    "question_text": "In natural language processing, what is tokenization?",
+    "correct_answer": "The process of splitting raw text into meaningful units such as words, subwords, or symbols called tokens.",
+    "distractors": [
+      "The process of assigning numerical weights to words based on their frequency of occurrence across document collections.",
+      "The process of replacing sensitive words in text with anonymous placeholder labels to protect user privacy.",
+      "The process of converting written text into phonetic transcriptions suitable for speech synthesis applications."
+    ],
+    "difficulty": 2,
+    "source_article": "Lexical analysis",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "tokenization"
+    ]
+  },
+  {
+    "question_text": "In part-of-speech tagging, what does a tagger assign to each word in a text?",
+    "correct_answer": "A label indicating its grammatical category, such as noun, verb, adjective, or adverb.",
+    "distractors": [
+      "A label indicating its semantic role, such as agent, patient, instrument, or beneficiary.",
+      "A label indicating its sentiment polarity, such as positive, negative, neutral, or mixed.",
+      "A label indicating its named entity type, such as person, organization, location, or date."
+    ],
+    "difficulty": 2,
+    "source_article": "Part-of-speech tagging",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "part-of-speech tagging"
+    ]
+  },
+  {
+    "question_text": "What does named entity recognition (NER) seek to do with unstructured text?",
+    "correct_answer": "Locate and classify named entities into predefined categories such as persons, organizations, and locations.",
+    "distractors": [
+      "Identify and correct misspelled words by comparing them against predefined dictionaries of standard language usage.",
+      "Detect and resolve pronoun references by linking them to their corresponding antecedent noun phrases in text.",
+      "Extract and normalize temporal expressions by converting them into standardized date and time format representations."
+    ],
+    "difficulty": 2,
+    "source_article": "Named-entity recognition",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "named entity recognition"
+    ]
+  },
+  {
+    "question_text": "In computational linguistics, what does parsing a sentence produce?",
+    "correct_answer": "A parse tree showing the syntactic structure and grammatical relations among the sentence's constituents.",
+    "distractors": [
+      "A frequency table listing the occurrence count of each unique word appearing within the analyzed sentence.",
+      "A sentiment score indicating the overall positive or negative emotional tone expressed by the sentence.",
+      "A vector embedding representing the semantic meaning of the sentence as coordinates in high-dimensional space."
+    ],
+    "difficulty": 2,
+    "source_article": "Parsing",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "parsing"
+    ]
+  },
+  {
+    "question_text": "In linguistics and NLP, what is a corpus?",
+    "correct_answer": "A large, structured collection of texts used for statistical analysis, language research, and training models.",
+    "distractors": [
+      "A specialized algorithm used for automatically generating grammatically correct sentences from semantic representations.",
+      "A standardized annotation scheme used for labeling syntactic dependencies between words in parsed sentences.",
+      "A curated dictionary of morphological rules used for reducing inflected word forms to their base lemmas."
+    ],
+    "difficulty": 2,
+    "source_article": "Text corpus",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "corpus"
+    ]
+  },
+  {
+    "question_text": "What is an n-gram in computational linguistics?",
+    "correct_answer": "A contiguous sequence of n items from a given text, used in language modeling and text analysis.",
+    "distractors": [
+      "A weighted graph of n interconnected words capturing long-range semantic dependencies across entire document collections.",
+      "A fixed-length binary encoding of n characters used to compress text for efficient storage in databases.",
+      "A ranked list of n candidate translations generated during the decoding phase of machine translation systems."
+    ],
+    "difficulty": 2,
+    "source_article": "N-gram",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "n-gram"
+    ]
+  },
+  {
+    "question_text": "What key limitation of the bag-of-words model makes it unable to distinguish between 'man bites dog' and 'dog bites man'?",
+    "correct_answer": "It discards word order, representing text as an unordered collection of words regardless of sequence.",
+    "distractors": [
+      "It discards word meaning, representing text as a collection of character counts regardless of vocabulary.",
+      "It discards word frequency, representing text as a binary set of present or absent unique terms.",
+      "It discards word morphology, representing text as a collection of root stems regardless of inflection."
+    ],
+    "difficulty": 2,
+    "source_article": "Bag-of-words model",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "bag of words"
+    ]
+  }
+]

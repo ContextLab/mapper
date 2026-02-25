@@ -1,0 +1,66 @@
+{
+  "domain": "algorithms",
+  "parent_domain": "computer-science",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {"concept": "sorting", "wikipedia_article": "Sorting algorithm", "brief_rationale": "Arranging items in order is one of the most universally recognized tasks in computing; familiar to anyone who has used a computer."},
+      {"concept": "searching", "wikipedia_article": "Search algorithm", "brief_rationale": "Finding items in a collection is a fundamental computing task; universally understood from everyday experience with computers."},
+      {"concept": "binary search", "wikipedia_article": "Binary search algorithm", "brief_rationale": "Searching a sorted list by halving the range repeatedly; widely taught as the classic example of efficient search and algorithmic thinking."},
+      {"concept": "recursion", "wikipedia_article": "Recursion (computer science)", "brief_rationale": "A function calling itself to solve smaller subproblems; one of the first algorithmic ideas taught in any programming course."},
+      {"concept": "graph", "wikipedia_article": "Graph (discrete mathematics)", "brief_rationale": "Networks of nodes and edges modeling relationships; universally recognized from social networks, maps, and introductory CS courses."},
+      {"concept": "tree", "wikipedia_article": "Tree (data structure)", "brief_rationale": "Hierarchical data structure with a root and branches; universally familiar from file systems, organization charts, and introductory CS."},
+      {"concept": "stack", "wikipedia_article": "Stack (abstract data type)", "brief_rationale": "Last-in, first-out data structure; universally taught as one of the first abstract data types in any CS curriculum."},
+      {"concept": "queue", "wikipedia_article": "Queue (abstract data type)", "brief_rationale": "First-in, first-out data structure modeled on waiting lines; universally taught alongside stacks in introductory CS courses."},
+      {"concept": "linked list", "wikipedia_article": "Linked list", "brief_rationale": "Chain of nodes each pointing to the next; universally taught as the foundational pointer-based data structure in introductory CS."},
+      {"concept": "hash table", "wikipedia_article": "Hash table", "brief_rationale": "Data structure mapping keys to values for fast lookup; widely recognized as the implementation behind dictionaries and sets in most programming languages."},
+      {"concept": "Big O notation", "wikipedia_article": "Big O notation", "brief_rationale": "Standard notation for describing algorithm time and space complexity; universally taught in any algorithms or data structures course."},
+      {"concept": "dynamic programming", "wikipedia_article": "Dynamic programming", "brief_rationale": "Solving problems by breaking them into overlapping subproblems and storing results; widely recognized as a core algorithmic paradigm."},
+      {"concept": "greedy algorithm", "wikipedia_article": "Greedy algorithm", "brief_rationale": "Making the locally optimal choice at each step; widely recognized as a fundamental algorithm design strategy taught in every CS algorithms course."}
+    ],
+    "L2": [
+      {"concept": "quicksort", "wikipedia_article": "Quicksort", "brief_rationale": "Named divide-and-conquer sorting algorithm with average O(n log n) time; specific algorithm universally studied in CS data structures courses."},
+      {"concept": "merge sort", "wikipedia_article": "Merge sort", "brief_rationale": "Named stable divide-and-conquer sorting algorithm with guaranteed O(n log n) time; specific algorithm universally covered in CS algorithms courses."},
+      {"concept": "Dijkstra's algorithm", "wikipedia_article": "Dijkstra's algorithm", "brief_rationale": "Named algorithm finding shortest paths in weighted graphs; specific foundational result taught in every graph algorithms unit."},
+      {"concept": "breadth-first search", "wikipedia_article": "Breadth-first search", "brief_rationale": "Named graph traversal exploring neighbors level by level; specific algorithm universally taught in graph algorithms alongside DFS."},
+      {"concept": "depth-first search", "wikipedia_article": "Depth-first search", "brief_rationale": "Named graph traversal exploring as far as possible before backtracking; specific algorithm universally taught alongside BFS in graph algorithms."},
+      {"concept": "binary search tree", "wikipedia_article": "Binary search tree", "brief_rationale": "Named tree structure maintaining sorted order for O(log n) lookup; specific data structure universally covered in CS data structures courses."},
+      {"concept": "heap", "wikipedia_article": "Heap (data structure)", "brief_rationale": "Named tree-based data structure satisfying the heap property; specific structure used in heap sort and priority queues, taught in all CS algorithms courses."},
+      {"concept": "heap sort", "wikipedia_article": "Heapsort", "brief_rationale": "Named comparison sort using a binary heap with O(n log n) guaranteed time; specific algorithm studied in CS courses for its in-place efficiency."},
+      {"concept": "insertion sort", "wikipedia_article": "Insertion sort", "brief_rationale": "Named O(n^2) sorting algorithm building a sorted list one item at a time; specific algorithm universally taught as an introductory sorting example."},
+      {"concept": "Bellman-Ford algorithm", "wikipedia_article": "Bellman–Ford algorithm", "brief_rationale": "Named shortest-path algorithm handling negative edge weights; specific algorithm taught alongside Dijkstra's in graph algorithms courses."},
+      {"concept": "Kruskal's algorithm", "wikipedia_article": "Kruskal's algorithm", "brief_rationale": "Named greedy algorithm for finding minimum spanning trees; specific algorithm taught in every graph algorithms unit."},
+      {"concept": "memoization", "wikipedia_article": "Memoization", "brief_rationale": "Caching results of function calls to avoid redundant computation; specific technique central to top-down dynamic programming and taught in every algorithms course."},
+      {"concept": "divide and conquer", "wikipedia_article": "Divide-and-conquer algorithm", "brief_rationale": "Paradigm splitting a problem into subproblems, solving recursively, and combining; specific named design strategy taught alongside greedy and DP in algorithms courses."}
+    ],
+    "L3": [
+      {"concept": "amortized analysis", "wikipedia_article": "Amortized analysis", "brief_rationale": "Averaging the cost of operations over a sequence to characterize data structures like dynamic arrays; requires working understanding of aggregate, accounting, and potential methods."},
+      {"concept": "red-black tree", "wikipedia_article": "Red–black tree", "brief_rationale": "Self-balancing BST maintaining balance via color properties; requires working knowledge of rotations, color invariants, and the proof of O(log n) height."},
+      {"concept": "AVL tree", "wikipedia_article": "AVL tree", "brief_rationale": "Self-balancing BST using height differences to enforce balance; requires working knowledge of rotations and how balance factors ensure O(log n) operations."},
+      {"concept": "A* search algorithm", "wikipedia_article": "A* search algorithm", "brief_rationale": "Heuristic-guided shortest-path search combining Dijkstra's with a heuristic function; requires working knowledge of admissibility, consistency, and priority-queue mechanics."},
+      {"concept": "topological sort", "wikipedia_article": "Topological sorting", "brief_rationale": "Linear ordering of a DAG's vertices respecting edge directions; requires working knowledge of DFS-based or Kahn's algorithm and its applications in dependency resolution."},
+      {"concept": "union-find", "wikipedia_article": "Disjoint-set data structure", "brief_rationale": "Data structure tracking partitions of a set with near-constant-time operations via union by rank and path compression; requires working knowledge of its analysis and applications in Kruskal's algorithm."},
+      {"concept": "Prim's algorithm", "wikipedia_article": "Prim's algorithm", "brief_rationale": "Greedy minimum spanning tree algorithm growing from a single vertex; requires working knowledge of priority-queue implementation and comparison with Kruskal's."},
+      {"concept": "longest common subsequence", "wikipedia_article": "Longest common subsequence problem", "brief_rationale": "DP problem finding the longest sequence common to two strings; requires working knowledge of the recurrence relation, table-filling approach, and backtracking."},
+      {"concept": "knapsack problem", "wikipedia_article": "Knapsack problem", "brief_rationale": "DP problem selecting items with weights and values subject to a capacity constraint; requires working knowledge of the 0/1 vs. fractional variants and the DP table construction."},
+      {"concept": "B-tree", "wikipedia_article": "B-tree", "brief_rationale": "Self-balancing tree designed for block-storage systems with high branching factor; requires working knowledge of node splitting, merging, and its use in database indexing."},
+      {"concept": "randomized algorithm", "wikipedia_article": "Randomized algorithm", "brief_rationale": "Algorithms using random choices to achieve expected efficiency or probabilistic correctness; requires working knowledge of Las Vegas vs. Monte Carlo algorithms and probabilistic analysis."},
+      {"concept": "KMP algorithm", "wikipedia_article": "Knuth–Morris–Pratt algorithm", "brief_rationale": "Linear-time string pattern matching using a failure function to avoid redundant comparisons; requires working knowledge of the prefix table construction and matching procedure."}
+    ],
+    "L4": [
+      {"concept": "Fibonacci heap", "wikipedia_article": "Fibonacci heap", "brief_rationale": "Amortized-efficient priority queue achieving O(1) decrease-key enabling optimal Dijkstra's; requires deep knowledge of lazy consolidation, potential functions, and cascading cuts."},
+      {"concept": "suffix array", "wikipedia_article": "Suffix array", "brief_rationale": "Sorted array of all suffixes of a string enabling O(m log n) pattern matching; requires deep knowledge of SA-IS or prefix-doubling construction and LCP array applications."},
+      {"concept": "network flow", "wikipedia_article": "Maximum flow problem", "brief_rationale": "Finding maximum flow from source to sink in a capacitated network; requires deep knowledge of augmenting paths, residual graphs, and the max-flow min-cut theorem."},
+      {"concept": "Ford-Fulkerson algorithm", "wikipedia_article": "Ford–Fulkerson algorithm", "brief_rationale": "Iterative augmenting-path method for computing maximum flow; requires deep knowledge of residual networks, termination conditions, and the Edmonds-Karp BFS refinement."},
+      {"concept": "van Emde Boas tree", "wikipedia_article": "Van Emde Boas tree", "brief_rationale": "Priority queue with O(log log U) operations on integer keys; requires deep knowledge of the recursive universe-splitting structure and its space-time trade-offs."},
+      {"concept": "suffix automaton", "wikipedia_article": "Suffix automaton", "brief_rationale": "Minimal DFA accepting all suffixes of a string in O(n) space; requires deep knowledge of the online construction algorithm and its applications in substring queries."},
+      {"concept": "linear programming", "wikipedia_article": "Linear programming", "brief_rationale": "Optimizing a linear objective subject to linear constraints; requires deep knowledge of the simplex method, duality theory, and interior-point algorithms."},
+      {"concept": "approximation algorithm", "wikipedia_article": "Approximation algorithm", "brief_rationale": "Efficient algorithms with provable solution quality bounds for NP-hard problems; requires deep knowledge of approximation ratios, PTAS, and inapproximability results."},
+      {"concept": "NP-completeness", "wikipedia_article": "NP-completeness", "brief_rationale": "Class of problems reducible to SAT with no known polynomial-time solution; requires deep knowledge of polynomial-time reductions, Cook-Levin theorem, and the P vs. NP question."},
+      {"concept": "skip list", "wikipedia_article": "Skip list", "brief_rationale": "Probabilistic layered linked list achieving O(log n) expected operations without tree rotations; requires deep knowledge of the randomized level assignment and its amortized analysis."},
+      {"concept": "fast Fourier transform", "wikipedia_article": "Fast Fourier transform", "brief_rationale": "O(n log n) algorithm computing the discrete Fourier transform via divide-and-conquer on roots of unity; requires deep knowledge of the Cooley-Tukey butterfly structure and polynomial multiplication applications."},
+      {"concept": "Aho-Corasick algorithm", "wikipedia_article": "Aho–Corasick algorithm", "brief_rationale": "Multi-pattern string matching using a finite automaton with failure links; requires deep knowledge of trie construction, failure function computation, and O(n + m + z) matching complexity."}
+    ]
+  }
+}

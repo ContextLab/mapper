@@ -12,7 +12,958 @@
     },
     "grid_size": 70
   },
-  "questions": [],
+  "questions": [
+    {
+      "id": "5997da37992a7a78",
+      "question_text": "In linguistics, what is grammar?",
+      "options": {
+        "A": "The system of meanings conveyed by words and sentences within a particular cultural context.",
+        "B": "The study of how speech sounds are produced, transmitted, and perceived by listeners in communication.",
+        "C": "The set of structural rules governing the composition of clauses, phrases, and words in a natural language.",
+        "D": "The collection of vocabulary items and their definitions stored in a language's mental dictionary."
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Grammar",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "grammar"
+      ]
+    },
+    {
+      "id": "bc1f1d157e7eb86a",
+      "question_text": "In traditional grammar, what is a sentence typically defined as?",
+      "options": {
+        "A": "A group of related paragraphs organized around a central theme within a written text.",
+        "B": "A minimal pair of morphemes combined to form the smallest possible independent utterance.",
+        "C": "A single meaningful unit of sound that distinguishes one word from another in speech.",
+        "D": "A set of words expressing a complete thought, typically containing a subject and a predicate."
+      },
+      "correct_answer": "D",
+      "difficulty": 1,
+      "source_article": "Sentence (linguistics)",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "sentence"
+      ]
+    },
+    {
+      "id": "98262c2f653182cd",
+      "question_text": "What is a noun in linguistics?",
+      "options": {
+        "A": "A word that connects clauses or sentences together and expresses logical relationships such as contrast or cause between them.",
+        "B": "A word that functions as the name of a person, place, thing, or concept and can head a noun phrase.",
+        "C": "A word that modifies or describes a verb, indicating manner, time, place, or degree of an action.",
+        "D": "A word that expresses an action, occurrence, or state of being and carries tense inflection in sentences."
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Noun",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "noun"
+      ]
+    },
+    {
+      "id": "64682c97c5c9a9b2",
+      "question_text": "In grammar, what does a verb convey?",
+      "options": {
+        "A": "A descriptive quality or attribute that modifies and provides more information about a nearby noun.",
+        "B": "An action, occurrence, or state of being, and it is essential for forming a clause or sentence.",
+        "C": "A spatial or temporal relationship between a noun phrase and another element within the sentence.",
+        "D": "A logical connection between two independent clauses, linking ideas of contrast, cause, or addition."
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Verb",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "verb"
+      ]
+    },
+    {
+      "id": "df06c8bfc5784e5e",
+      "question_text": "What is the primary grammatical function of an adjective?",
+      "options": {
+        "A": "To substitute for a noun phrase in order to avoid repetition and maintain cohesion in discourse.",
+        "B": "To modify a noun or noun phrase by describing, identifying, or quantifying the entity it refers to.",
+        "C": "To modify a verb or another adverb by specifying the manner, frequency, or degree of an action.",
+        "D": "To connect two independent clauses together by expressing addition, contrast, or causal relationships."
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Adjective",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "adjective"
+      ]
+    },
+    {
+      "id": "6c03b87d0e64f59d",
+      "question_text": "What does an adverb typically modify in a sentence?",
+      "options": {
+        "A": "A determiner or article, specifying whether the following noun is definite, indefinite, or generic.",
+        "B": "A verb, an adjective, or another adverb, often expressing manner, place, time, or degree.",
+        "C": "A preposition or conjunction, altering the logical relationship expressed between two sentence elements.",
+        "D": "A noun or pronoun, providing additional descriptive information about the entity being referred to."
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Adverb",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "adverb"
+      ]
+    },
+    {
+      "id": "9a307ea9176b902c",
+      "question_text": "In grammar, what is the subject of a sentence?",
+      "options": {
+        "A": "The noun or noun phrase that receives the action performed by the verb in a transitive construction.",
+        "B": "The verb or verb phrase that expresses what action is being carried out within the main clause.",
+        "C": "The noun or noun phrase that indicates who or what performs the action or is described by the predicate.",
+        "D": "The adjective or adverb phrase that provides additional descriptive information about the main verb."
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Subject (grammar)",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "subject"
+      ]
+    },
+    {
+      "id": "0fbcf65416b5bd5e",
+      "question_text": "In grammar, what is the object of a verb?",
+      "options": {
+        "A": "An adjective or adjective phrase that describes a quality attributed to the subject by a linking verb.",
+        "B": "A noun or noun phrase that receives the action of a transitive verb or is affected by it.",
+        "C": "An adverb or adverb phrase that specifies the time, place, or manner in which an action occurs.",
+        "D": "A noun or noun phrase that performs the action expressed by the verb in an active voice construction."
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Object (grammar)",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "object"
+      ]
+    },
+    {
+      "id": "3a683393476e4bd5",
+      "question_text": "What is a pronoun?",
+      "options": {
+        "A": "A word that substitutes for a noun or noun phrase, such as 'he,' 'she,' 'it,' or 'they.'",
+        "B": "A word that links a noun or pronoun to other words, expressing spatial or temporal relationships.",
+        "C": "A word that precedes a noun to indicate whether it is specific, nonspecific, or previously mentioned.",
+        "D": "A word that joins two clauses or phrases, showing relationships like addition, contrast, or cause."
+      },
+      "correct_answer": "A",
+      "difficulty": 1,
+      "source_article": "Pronoun",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "pronoun"
+      ]
+    },
+    {
+      "id": "0a9e26f31267148e",
+      "question_text": "What grammatical role do prepositions serve in a sentence?",
+      "options": {
+        "A": "They modify verbs by specifying the manner, degree, frequency, or duration of the described action.",
+        "B": "They connect independent clauses to form compound sentences by indicating addition, contrast, or consequence.",
+        "C": "They express spatial, temporal, or other relations between a noun phrase and another part of the sentence.",
+        "D": "They substitute for previously mentioned nouns to reduce repetition and improve the clarity of discourse."
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Preposition and postposition",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "preposition"
+      ]
+    },
+    {
+      "id": "aaadb32a1717e8b6",
+      "question_text": "What is the primary function of a coordinating conjunction such as 'and,' 'but,' or 'or' in a sentence?",
+      "options": {
+        "A": "It replaces a noun phrase to avoid repetition within the same sentence.",
+        "B": "It introduces a dependent clause that cannot stand alone as a complete sentence.",
+        "C": "It connects words, phrases, or independent clauses of equal syntactic importance.",
+        "D": "It modifies a verb by specifying the time, manner, or degree of an action."
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Conjunction (grammar)",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "conjunction"
+      ]
+    },
+    {
+      "id": "a9d6a12670f62626",
+      "question_text": "In linguistic typology, what is the most common basic word order among the world's languages?",
+      "options": {
+        "A": "Verb-Object-Subject (VOS), found in roughly 35% of languages with a preferred order.",
+        "B": "Verb-Subject-Object (VSO), found in roughly 45% of languages with a preferred order.",
+        "C": "Subject-Verb-Object (SVO), found in roughly 60% of languages with a preferred order.",
+        "D": "Subject-Object-Verb (SOV), found in roughly 45% of languages with a preferred order."
+      },
+      "correct_answer": "D",
+      "difficulty": 1,
+      "source_article": "Word order",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "word order"
+      ]
+    },
+    {
+      "id": "46234f1558fd3730",
+      "question_text": "What two components must a clause contain in order to qualify as a clause in traditional grammar?",
+      "options": {
+        "A": "An adverb and an adjective, where the adjective modifies the main noun.",
+        "B": "A determiner and a noun, where the noun serves as the head of a phrase.",
+        "C": "A preposition and its complement, where the complement is always a pronoun.",
+        "D": "A subject and a predicate, where the predicate typically contains a verb."
+      },
+      "correct_answer": "D",
+      "difficulty": 1,
+      "source_article": "Clause",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "clause"
+      ]
+    },
+    {
+      "id": "002a3802f7256ae0",
+      "question_text": "What do phrase structure rules describe about the organization of sentences in a language?",
+      "options": {
+        "A": "They describe how speakers choose vocabulary items and how word frequency determines sentence length.",
+        "B": "They describe how individual morphemes attach to roots and how affixation changes a word's meaning.",
+        "C": "They describe how words group hierarchically into phrases and how those phrases combine to form sentences.",
+        "D": "They describe how speech sounds combine into syllables and how syllable stress patterns create intonation."
+      },
+      "correct_answer": "C",
+      "difficulty": 2,
+      "source_article": "Phrase structure grammar",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "phrase structure"
+      ]
+    },
+    {
+      "id": "0898ce72e25fdecb",
+      "question_text": "In the sentence 'The tall woman in the blue coat smiled,' which words form the noun phrase functioning as the subject?",
+      "options": {
+        "A": "'The tall woman in the blue coat,' with the noun 'woman' as head plus its determiner, adjective, and prepositional phrase modifiers.",
+        "B": "'Tall woman smiled,' because in a noun phrase only the adjective, the head noun, and the following main verb are essential syntactic elements.",
+        "C": "'In the blue coat smiled,' because the subject noun phrase is always introduced by a preposition and must also include the sentence's main verb.",
+        "D": "'The blue coat,' because the subject noun phrase is always the most recently mentioned nominal group appearing closest to the sentence's verb."
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "Noun phrase",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "noun phrase"
+      ]
+    },
+    {
+      "id": "b94728020d4a5c09",
+      "question_text": "In the sentence 'She quickly put the books on the shelf,' which words constitute the verb phrase?",
+      "options": {
+        "A": "'She quickly put,' because the verb phrase includes only the subject, adverb, and main verb.",
+        "B": "'Put the books,' because the verb phrase never includes adverbs or prepositional phrases.",
+        "C": "'The books on the shelf,' because the verb phrase consists of the objects and their modifiers.",
+        "D": "'Quickly put the books on the shelf,' comprising the verb and all its dependents except the subject."
+      },
+      "correct_answer": "D",
+      "difficulty": 2,
+      "source_article": "Verb phrase",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "verb phrase"
+      ]
+    },
+    {
+      "id": "ad1cc917ac10f395",
+      "question_text": "What distinguishes a subordinate clause from an independent clause in a complex sentence?",
+      "options": {
+        "A": "A subordinate clause must contain at least two nouns while an independent clause requires only one.",
+        "B": "A subordinate clause cannot stand alone as a complete sentence and depends on a main clause for its meaning.",
+        "C": "A subordinate clause uses only linking verbs while an independent clause uses only action verbs.",
+        "D": "A subordinate clause always appears at the beginning of a sentence and contains the main verb."
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Dependent clause",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "subordinate clause"
+      ]
+    },
+    {
+      "id": "323e16f0d595c69a",
+      "question_text": "In the sentence 'The book that I borrowed was fascinating,' what syntactic role does the clause 'that I borrowed' play?",
+      "options": {
+        "A": "It is a main clause that expresses the primary assertion of the entire sentence.",
+        "B": "It is a restrictive relative clause that modifies the noun 'book' by specifying which one is meant.",
+        "C": "It is a complement clause that serves as the direct object of the verb 'was.'",
+        "D": "It is an adverbial clause that modifies the adjective 'fascinating' by explaining a cause."
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Relative clause",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "relative clause"
+      ]
+    },
+    {
+      "id": "076d1a65f9844464",
+      "question_text": "How do free morphemes differ from bound morphemes in the structure of words?",
+      "options": {
+        "A": "Free morphemes appear only at the end of words, while bound morphemes appear only at the beginning.",
+        "B": "Free morphemes occur only in spoken language, while bound morphemes occur only in written language.",
+        "C": "Free morphemes carry only grammatical meaning, while bound morphemes carry only lexical meaning.",
+        "D": "Free morphemes can stand alone as independent words, while bound morphemes must attach to another morpheme."
+      },
+      "correct_answer": "D",
+      "difficulty": 2,
+      "source_article": "Morpheme",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "morpheme"
+      ]
+    },
+    {
+      "id": "53601bbff7a7ad30",
+      "question_text": "What does grammatical tense indicate, and how is it most commonly expressed in inflecting languages like English?",
+      "options": {
+        "A": "Tense locates a situation in time and is commonly expressed through verb inflection, such as the '-ed' suffix for past tense.",
+        "B": "Tense indicates the mood of the speaker and is commonly expressed by changing the noun's case ending in each clause.",
+        "C": "Tense marks the number of participants in an event and is commonly expressed by adding plural suffixes to every noun.",
+        "D": "Tense specifies the certainty of a proposition and is commonly expressed through systematic changes in adjective agreement forms."
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "Grammatical tense",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "tense"
+      ]
+    },
+    {
+      "id": "dfa6c7e42947bce8",
+      "question_text": "English distinguishes 'She is running' (ongoing) from 'She ran' (completed). The grammatical category that expresses how an event unfolds over time is called what?",
+      "options": {
+        "A": "Grammatical aspect, which encodes whether an event is viewed as ongoing, completed, habitual, or otherwise internally structured.",
+        "B": "Grammatical voice, which specifies whether the subject of the verb performs or receives the action described.",
+        "C": "Grammatical tense, which locates an event at a particular point in time relative to the moment of speaking.",
+        "D": "Grammatical mood, which indicates the speaker's attitude toward the factuality or likelihood of the event described."
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "Grammatical aspect",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "aspect"
+      ]
+    },
+    {
+      "id": "162d770981a94f36",
+      "question_text": "In English, we say 'he runs' but not 'he run,' because the verb must match the subject in person and number. What is this grammatical phenomenon called?",
+      "options": {
+        "A": "Agreement, where a word changes its form to match grammatical features of another word it relates to.",
+        "B": "Conjugation, a fixed classification of verbs into groups based on shared patterns of inflectional endings.",
+        "C": "Valency, where a verb specifies how many and what kind of arguments it requires in a clause.",
+        "D": "Government, where a head word determines the grammatical case of a dependent element in its domain."
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "Agreement (linguistics)",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "agreement"
+      ]
+    },
+    {
+      "id": "f6b322348d923a29",
+      "question_text": "In Latin, the noun 'puella' changes form to 'puellam' when it functions as a direct object. What grammatical system marks noun phrases for their syntactic role?",
+      "options": {
+        "A": "Declension class, a grouping of nouns by their shared inflectional patterns independent of syntactic function.",
+        "B": "Grammatical case, a system of inflectional markings that indicate a noun phrase's function in a sentence.",
+        "C": "Grammatical number, a system of inflection that distinguishes singular, dual, or plural forms of nouns.",
+        "D": "Grammatical gender, a classification system that assigns nouns to categories such as masculine, feminine, or neuter."
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Grammatical case",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "case"
+      ]
+    },
+    {
+      "id": "d24cb0742fa8c45b",
+      "question_text": "Linguists test whether a group of words forms a syntactic unit by checking if it can be replaced by a single pronoun or moved as a whole. What is such a syntactic unit called?",
+      "options": {
+        "A": "A collocation, a sequence of words that frequently co-occur together but do not form a structural unit.",
+        "B": "A lexeme, an abstract vocabulary item that underlies a set of related inflected word forms in a language.",
+        "C": "A constituent, a word or group of words that functions as a single unit within a sentence's hierarchical structure.",
+        "D": "A morpheme, the smallest meaningful unit of language that cannot be further divided into smaller meaningful parts."
+      },
+      "correct_answer": "C",
+      "difficulty": 2,
+      "source_article": "Constituent (linguistics)",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "constituency"
+      ]
+    },
+    {
+      "id": "411af21d08ee601d",
+      "question_text": "In 'Mary believes that it is raining,' the word 'that' introduces the embedded clause and marks it as a complement. What functional category does 'that' belong to here?",
+      "options": {
+        "A": "Conjunction, a word that connects two independent clauses or phrases of equal grammatical status.",
+        "B": "Determiner, a word that introduces a noun phrase and specifies its reference or quantity.",
+        "C": "Complementizer, a functional word that turns a clause into the subject or object of a sentence.",
+        "D": "Preposition, a word that expresses a spatial, temporal, or logical relation between its complement and another element."
+      },
+      "correct_answer": "C",
+      "difficulty": 2,
+      "source_article": "Complementizer",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "complementizer"
+      ]
+    },
+    {
+      "id": "d845b74dc6403def",
+      "question_text": "In 'The ball was kicked by the player,' the grammatical subject receives rather than performs the action. What construction makes the patient the subject of the sentence?",
+      "options": {
+        "A": "The causative construction, where the subject causes another entity to carry out the action of the verb.",
+        "B": "The passive voice, where the subject is the patient or theme of the verb rather than the agent.",
+        "C": "The ergative construction, where the single argument of an intransitive verb is treated like a direct object.",
+        "D": "The middle voice, where the subject both initiates and is affected by the action of the verb."
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Passive voice",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "passive voice"
+      ]
+    },
+    {
+      "id": "5c57ad112ee2c751",
+      "question_text": "In generative syntax, a theory proposes that every phrase has three levels of projection: a head (X), an intermediate bar level (X'), and a maximal projection (XP). What is this theory called?",
+      "options": {
+        "A": "Construction grammar, which treats each grammatical pattern as a learned form-meaning pairing stored in memory.",
+        "B": "Dependency grammar, which represents syntactic structure through directed links between a head word and its dependents.",
+        "C": "Phrase structure grammar, which uses language-specific rewrite rules to generate each phrase type independently.",
+        "D": "X-bar theory, which posits that all phrases share a uniform specifier-head-complement structure across languages."
+      },
+      "correct_answer": "D",
+      "difficulty": 3,
+      "source_article": "X-bar theory",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "X-bar theory"
+      ]
+    },
+    {
+      "id": "b6f7b313fc3dbb1b",
+      "question_text": "Principle A states that an anaphor like 'himself' must be bound within its local domain, while Principle B states that a pronoun like 'him' must be free in that same domain. What theory contains these principles?",
+      "options": {
+        "A": "Theta theory, which regulates how semantic roles like agent and patient are assigned to verb arguments.",
+        "B": "Binding theory, which governs the distribution of anaphors, pronouns, and referential expressions using c-command.",
+        "C": "Case theory, which ensures every overt noun phrase receives abstract case from a suitable syntactic licensor.",
+        "D": "Control theory, which determines the interpretation of the null subject PRO in infinitival complement clauses."
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Binding (linguistics)",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "binding theory"
+      ]
+    },
+    {
+      "id": "dee941c5a38ae3cd",
+      "question_text": "In English, the question 'What did you buy?' places the interrogative word at the front, even though it is interpreted as the object of 'buy.' What syntactic operation accounts for this displacement?",
+      "options": {
+        "A": "Scrambling, the relatively free reordering of constituents driven by information structure rather than interrogative force.",
+        "B": "Topicalization, the fronting of a non-interrogative constituent to highlight it as the discourse topic of the sentence.",
+        "C": "Extraposition, the rightward displacement of a heavy or complex constituent to the end of the sentence.",
+        "D": "Wh-movement, the fronting of an interrogative or relative phrase from its canonical position to sentence-initial position."
+      },
+      "correct_answer": "D",
+      "difficulty": 3,
+      "source_article": "Wh-movement",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "wh-movement"
+      ]
+    },
+    {
+      "id": "56fdfcce2c2f8d6d",
+      "question_text": "In syntactic theory, many relationships such as binding and scope depend on a structural relation where the first branching node dominating node A also dominates node B. What is this relation called?",
+      "options": {
+        "A": "C-command, where a node's first branching ancestor also dominates another node in the syntactic tree.",
+        "B": "Dominance, where one node is a direct or indirect ancestor of another node on a downward path in the tree.",
+        "C": "Precedence, where one node appears linearly before another node when the tree is read from left to right.",
+        "D": "Government, where a head node imposes feature requirements on a node within its maximal projection domain."
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "C-command",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "c-command"
+      ]
+    },
+    {
+      "id": "e8616c78a4b80b7a",
+      "question_text": "In generative syntax, what is a theta role?",
+      "options": {
+        "A": "A syntactic position in the phrase structure tree that determines the linear order of constituents.",
+        "B": "A phonological rule that governs the stress pattern assigned to words within a sentence.",
+        "C": "A semantic role such as agent, patient, or theme assigned by a predicate to each of its arguments.",
+        "D": "A morphological feature such as tense, person, or number checked during syntactic derivation."
+      },
+      "correct_answer": "C",
+      "difficulty": 3,
+      "source_article": "Theta role",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "theta role"
+      ]
+    },
+    {
+      "id": "fb737de9bed077c7",
+      "question_text": "What does the head-directionality parameter classify in languages?",
+      "options": {
+        "A": "Whether the head of a phrase precedes its complements (head-initial) or follows them (head-final).",
+        "B": "Whether functional categories like tense and agreement are realized as prefixes or as suffixes.",
+        "C": "Whether subjects must appear before the verb or can freely occur in postverbal position.",
+        "D": "Whether a language marks grammatical relations through word order or through morphological case inflection."
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "Head direction parameter",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "head-directionality parameter"
+      ]
+    },
+    {
+      "id": "89dc6dc7d2e5abc7",
+      "question_text": "What does the VP-internal subject hypothesis propose about where subjects originate?",
+      "options": {
+        "A": "Subjects are base-generated inside the verb phrase and later move to the specifier of TP.",
+        "B": "Subjects are merged directly into the specifier of CP and remain there throughout the derivation.",
+        "C": "Subjects originate in an adjunct position outside the clause and are licensed by discourse context.",
+        "D": "Subjects are base-generated in the specifier of TP and assign their theta role from that position."
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "VP-internal subject hypothesis",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "VP-internal subject hypothesis"
+      ]
+    },
+    {
+      "id": "01647c9a2b73f8ba",
+      "question_text": "What did Pollock's split INFL hypothesis propose about the structure of the inflectional phrase?",
+      "options": {
+        "A": "It eliminated the inflectional phrase entirely and distributed its features across lexical verb projections.",
+        "B": "It split the single INFL node into separate functional projections for tense (TP) and agreement (AgrP).",
+        "C": "It replaced the inflectional phrase with a complementizer phrase that hosts both tense and agreement.",
+        "D": "It merged all inflectional features into a single head to simplify the number of functional projections."
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Split INFL hypothesis",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "split INFL hypothesis"
+      ]
+    },
+    {
+      "id": "f49304a27800f819",
+      "question_text": "What characterizes a pro-drop language?",
+      "options": {
+        "A": "It permits the verb to be dropped from a sentence whenever the predicate is inferable from discourse.",
+        "B": "It allows the subject pronoun to be omitted when it is recoverable from verbal morphology or context.",
+        "C": "It requires every finite clause to contain an overt subject even when the referent is pragmatically clear.",
+        "D": "It allows object noun phrases to be deleted freely regardless of the richness of verbal inflection."
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Pro-drop language",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "pro-drop"
+      ]
+    },
+    {
+      "id": "1297a445a4450a08",
+      "question_text": "In syntax, what are island constraints?",
+      "options": {
+        "A": "Principles that determine the linear ordering of words within a single phrase structure projection.",
+        "B": "Restrictions that block syntactic movement of constituents out of certain structural domains.",
+        "C": "Requirements that every moved constituent must leave a phonologically visible copy in its base position.",
+        "D": "Conditions that permit free extraction of any element as long as it lands in a specifier position."
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Island (linguistics)",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "locality constraints"
+      ]
+    },
+    {
+      "id": "cc609edd9fc070f2",
+      "question_text": "In Government and Binding theory, what does control theory govern?",
+      "options": {
+        "A": "The assignment of structural case to overt noun phrases by finite tense heads and transitive verbs.",
+        "B": "The interpretation of the null subject PRO in infinitival and other nonfinite complement clauses.",
+        "C": "The distribution of reflexive pronouns and their requirement to be bound within a local domain.",
+        "D": "The licensing of empty operator chains created by topicalization and focus movement operations."
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Control (linguistics)",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "control theory"
+      ]
+    },
+    {
+      "id": "95302a545b4014d5",
+      "question_text": "In Government and Binding theory, what is the syntactic relation of government?",
+      "options": {
+        "A": "A structural relation in which a head licenses properties of a dependent element it m-commands without barriers intervening.",
+        "B": "A semantic relation in which a predicate assigns a thematic role to an argument in its specifier position.",
+        "C": "A linear adjacency relation requiring that a dependent element appear immediately next to its selecting head.",
+        "D": "A discourse relation in which a topic phrase binds a pronoun located in the comment portion of the sentence."
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "Government (linguistics)",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "government (syntax)"
+      ]
+    },
+    {
+      "id": "0f3d1bb1d0fb3251",
+      "question_text": "What is the central structure-building operation in Chomsky's Minimalist Program?",
+      "options": {
+        "A": "Adjunction, which attaches modifiers to maximal projections without altering the label of the host phrase.",
+        "B": "Merge, which combines two syntactic objects to form a new set and applies recursively to its own output.",
+        "C": "Spell-Out, which transfers completed syntactic structures to the phonological and semantic interfaces simultaneously.",
+        "D": "Government, which establishes a licensing relation between a head and the elements it c-commands locally."
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "Minimalist program",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "Minimalist Program"
+      ]
+    },
+    {
+      "id": "ddfeaa14e2d7c79e",
+      "question_text": "In Minimalist syntax, what does the Phase Impenetrability Condition state?",
+      "options": {
+        "A": "Each phase head must agree with every goal in its c-command domain before the derivation can continue upward.",
+        "B": "All features within a syntactic phase must be checked before any lexical items from the numeration can be merged.",
+        "C": "Movement out of any clause boundary is universally prohibited unless the moved element carries an EPP feature.",
+        "D": "Once a phase is complete, its internal domain is transferred to the interfaces and becomes inaccessible to further syntactic operations."
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Minimalist program",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "phase theory"
+      ]
+    },
+    {
+      "id": "3f1805c62054ed9d",
+      "question_text": "In the Minimalist Program, how does the Agree operation establish a syntactic relationship between a functional head and a nominal expression?",
+      "options": {
+        "A": "An operator binds a variable in its governing category by sharing referential indices at Logical Form.",
+        "B": "A head moves overtly to an adjacent projection and checks features through specifier-head configuration.",
+        "C": "A functional morpheme selects its complement by subcategorization frames stored in the lexical entry.",
+        "D": "A probe bearing unvalued features searches its c-command domain for a goal with matching valued features."
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Minimalist program",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "Agree operation"
+      ]
+    },
+    {
+      "id": "5c6b95ebd7a2afc2",
+      "question_text": "In Chomsky's Minimalist framework, what distinguishes Internal Merge from External Merge?",
+      "options": {
+        "A": "Internal Merge applies only at the PF interface to linearize terminal nodes into a pronounceable string.",
+        "B": "Internal Merge combines two items drawn separately from the numeration into a single new syntactic object.",
+        "C": "Internal Merge remerges a constituent already present within the syntactic object, thereby deriving movement.",
+        "D": "Internal Merge inserts functional morphemes from the lexicon into pre-existing phrase-structure positions."
+      },
+      "correct_answer": "C",
+      "difficulty": 4,
+      "source_article": "Merge (linguistics)",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "internal merge"
+      ]
+    },
+    {
+      "id": "ab6229b343e02f53",
+      "question_text": "What is the central goal of the cartographic approach to syntactic structures, as developed by Rizzi and Cinque?",
+      "options": {
+        "A": "To replace hierarchical tree structures with flat dependency graphs based on semantic role assignment.",
+        "B": "To reduce all phrase structure to binary Merge operations without any functional categories at all.",
+        "C": "To derive word-order variation from a single movement parameter applied at the PF interface.",
+        "D": "To map a fixed universal hierarchy of fine-grained functional projections across all languages."
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Cartographic syntax",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "cartography of syntactic structures"
+      ]
+    },
+    {
+      "id": "dcdd978a673f0066",
+      "question_text": "What does Kayne's Linear Correspondence Axiom (LCA) propose about the relationship between hierarchical structure and linear word order?",
+      "options": {
+        "A": "Symmetric c-command determines mutual precedence, allowing both head-initial and head-final base orders freely.",
+        "B": "Dominance relations in phrase structure directly encode temporal sequencing of phonological spell-out operations.",
+        "C": "Linear order is entirely determined at PF by prosodic weight, independent of hierarchical syntactic structure.",
+        "D": "Asymmetric c-command maps to linear precedence, deriving a universal specifier-head-complement base order."
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Antisymmetry",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "Kayne's antisymmetry"
+      ]
+    },
+    {
+      "id": "e836372361455894",
+      "question_text": "In Distributed Morphology, at what point in the grammar are phonological forms inserted into syntactic terminal nodes?",
+      "options": {
+        "A": "Before Merge applies, when fully inflected word forms are selected from a pre-syntactic mental lexicon.",
+        "B": "After the syntactic derivation is complete, through a post-syntactic process called Vocabulary Insertion.",
+        "C": "At Logical Form, where interpretable semantic features are paired with their corresponding sound forms.",
+        "D": "During the syntactic derivation, as each morpheme is drawn from the numeration and enters the workspace."
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "Distributed morphology",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "Distributed Morphology"
+      ]
+    },
+    {
+      "id": "8d72a0a6d11e3c13",
+      "question_text": "How does the copy theory of movement differ from the earlier trace theory in representing syntactic displacement?",
+      "options": {
+        "A": "Movement erases the original position entirely, leaving no syntactic representation in the base-generated site.",
+        "B": "Movement creates a new lexical item at the landing site that is unrelated to the launching position.",
+        "C": "Movement leaves a full copy rather than an empty trace, with the lower copy deleted at PF.",
+        "D": "Movement inserts a resumptive pronoun at the extraction site that is co-indexed with the displaced phrase."
+      },
+      "correct_answer": "C",
+      "difficulty": 4,
+      "source_article": "Syntactic movement",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "copy theory of movement"
+      ]
+    },
+    {
+      "id": "2d239588abb046cb",
+      "question_text": "In Minimalist phase theory, what does the feature inheritance mechanism propose about the origin of agreement and tense features on T?",
+      "options": {
+        "A": "These features are inserted post-syntactically by morphological merger operating at the PF interface level.",
+        "B": "These features are base-generated on T itself and checked locally against the subject in specifier position.",
+        "C": "These features arise from the VP-internal subject and percolate upward through successive head movement steps.",
+        "D": "These features originate on the phase head C and are transmitted down to T during the derivation."
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Minimalist program",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "feature inheritance"
+      ]
+    },
+    {
+      "id": "831e5388717debed",
+      "question_text": "What is 'late merger' in Minimalist syntax, and what empirical pattern does it help explain?",
+      "options": {
+        "A": "Specifiers attach to phrase structure before heads are merged, explaining consistent specifier-initial word orders.",
+        "B": "Adjuncts merge into the derivation after the host has moved, explaining why they resist reconstruction effects.",
+        "C": "Arguments are inserted into theta positions only at LF, explaining why they undergo obligatory scope reconstruction.",
+        "D": "Complementizers are added at the final stage of spell-out, explaining their fixed position at clause boundaries."
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "Merge (linguistics)",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "late merger"
+      ]
+    },
+    {
+      "id": "787569968936b48e",
+      "question_text": "In Chomsky's 2013 'Problems of Projection,' how does the labeling algorithm determine the label of a syntactic object formed by merging two phrases (XP and YP)?",
+      "options": {
+        "A": "The phrase with more uninterpretable features automatically projects its categorical label over the entire merged structure.",
+        "B": "A separate morphological component assigns labels post-spell-out based on the linear adjacency of terminal nodes.",
+        "C": "The label is always determined by external-merge order, with the first-merged element unconditionally projecting its category.",
+        "D": "Either one phrase moves making the remaining head visible, or both heads share a prominent feature as the label."
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Labeling algorithm",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "labeling algorithm"
+      ]
+    },
+    {
+      "id": "e9b40f2177d22e3f",
+      "question_text": "In Collins's analysis, what is 'smuggling' in syntax and how does it circumvent extraction restrictions?",
+      "options": {
+        "A": "The phase head extends its edge to include the blocked constituent, exempting it from the Phase Impenetrability Condition.",
+        "B": "A larger phrase containing the target constituent moves past a barrier first, carrying the target to an accessible position.",
+        "C": "A null operator undergoes covert movement at Logical Form, bypassing island constraints invisible to PF.",
+        "D": "A resumptive pronoun is inserted inside the island domain and later deleted to satisfy the binding conditions."
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "Smuggling (linguistics)",
+      "domain_ids": [
+        "syntax"
+      ],
+      "concepts_tested": [
+        "smuggling (syntax)"
+      ]
+    }
+  ],
   "labels": [],
   "articles": []
 }

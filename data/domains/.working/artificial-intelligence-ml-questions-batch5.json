@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In a variational autoencoder, the reparameterization trick is essential for training. What problem does it solve, and how does it work?",
+    "correct_answer": "Backpropagation cannot flow through stochastic sampling nodes; the trick expresses latent samples as a deterministic function of learned parameters plus external noise.",
+    "distractors": [
+      "Backpropagation cannot flow through stochastic sampling nodes; the trick replaces sampling with the mean of the latent distribution during training.",
+      "The KL divergence term is intractable for high-dimensional latents; the trick approximates it using a Monte Carlo estimate over decoder outputs.",
+      "The decoder loss gradient vanishes for distant latent codes; the trick clips gradients to a fixed norm before updating encoder parameters."
+    ],
+    "difficulty": 4,
+    "source_article": "Variational autoencoder",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["variational autoencoder", "reparameterization trick", "ELBO", "backpropagation"]
+  },
+  {
+    "question_text": "The Expectation-Maximization algorithm finds maximum likelihood estimates when latent variables are present. What do the E-step and M-step each compute?",
+    "correct_answer": "The E-step computes the expected log-likelihood using current parameter estimates; the M-step finds parameters that maximize this expected log-likelihood.",
+    "distractors": [
+      "The E-step computes the posterior over observed variables given latent ones; the M-step finds parameters that minimize the posterior entropy.",
+      "The E-step samples latent variable values from the current model; the M-step finds parameters that maximize the marginal likelihood directly.",
+      "The E-step computes the gradient of the log-likelihood with respect to latent variables; the M-step updates latent variables by gradient ascent."
+    ],
+    "difficulty": 4,
+    "source_article": "Expectation\u2013maximization algorithm",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["expectation-maximization algorithm", "latent variables", "maximum likelihood estimation"]
+  },
+  {
+    "question_text": "Q-learning is a model-free reinforcement learning algorithm. What makes it off-policy, and what key operation distinguishes its update rule from SARSA?",
+    "correct_answer": "It learns the optimal policy independent of the behavior policy; its update takes the maximum Q-value over next-state actions instead of the action actually taken.",
+    "distractors": [
+      "It learns the optimal policy independent of the behavior policy; its update takes the average Q-value over next-state actions instead of the action actually taken.",
+      "It requires a model of the environment's transition dynamics; its update takes the maximum Q-value over next-state actions instead of the action actually taken.",
+      "It learns the optimal policy independent of the behavior policy; its update takes the Q-value of a randomly sampled next-state action instead of the one actually taken."
+    ],
+    "difficulty": 4,
+    "source_article": "Q-learning",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["Q-learning", "off-policy learning", "temporal difference learning", "Bellman optimality equation"]
+  },
+  {
+    "question_text": "Kernel methods allow linear algorithms to learn nonlinear decision boundaries. What does Mercer's theorem guarantee about a valid kernel function?",
+    "correct_answer": "A symmetric positive semi-definite kernel corresponds to an inner product in some feature space, so the kernel trick can replace explicit high-dimensional mapping.",
+    "distractors": [
+      "A symmetric positive semi-definite kernel corresponds to a distance metric in some feature space, so the kernel trick can replace explicit high-dimensional mapping.",
+      "A symmetric positive definite kernel guarantees that the resulting optimization problem is convex, so any local minimum equals the global minimum.",
+      "A continuous bounded kernel corresponds to an inner product in a finite-dimensional feature space, so computation scales linearly with the number of samples."
+    ],
+    "difficulty": 4,
+    "source_article": "Kernel method",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["kernel method", "Mercer's theorem", "kernel trick", "support vector machine"]
+  },
+  {
+    "question_text": "The information bottleneck method formalizes optimal data compression with respect to a relevant target variable. What tradeoff does its Lagrangian objective balance?",
+    "correct_answer": "It balances minimizing mutual information between the input and its compressed representation against maximizing mutual information between the representation and the target variable.",
+    "distractors": [
+      "It balances minimizing reconstruction error of the input from its compressed representation against maximizing the entropy of the target variable.",
+      "It balances minimizing the dimensionality of the compressed representation against maximizing the classification accuracy on the target variable.",
+      "It balances minimizing the KL divergence between input and compressed distributions against maximizing mutual information between the input and the target variable."
+    ],
+    "difficulty": 4,
+    "source_article": "Information bottleneck method",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["information bottleneck", "mutual information", "rate-distortion tradeoff", "data compression"]
+  },
+  {
+    "question_text": "Neural architecture search automates the design of neural network architectures. What are its three core components, and which early NAS approach used a recurrent network as a controller?",
+    "correct_answer": "The three components are search space, search strategy, and performance estimation; Zoph and Le's 2017 approach used an RNN controller trained with reinforcement learning.",
+    "distractors": [
+      "The three components are search space, search strategy, and performance estimation; Zoph and Le's 2017 approach used a convolutional controller trained with evolutionary algorithms.",
+      "The three components are hyperparameter space, gradient strategy, and cross-validation estimation; Zoph and Le's 2017 approach used an RNN controller trained with reinforcement learning.",
+      "The three components are search space, search strategy, and performance estimation; Real et al.'s 2017 approach used an RNN controller trained with reinforcement learning."
+    ],
+    "difficulty": 4,
+    "source_article": "Neural architecture search",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["neural architecture search", "search space", "reinforcement learning", "automated machine learning"]
+  },
+  {
+    "question_text": "Normalizing flows construct complex probability distributions by composing invertible transformations. Why must each transformation be invertible, and what computational cost does this impose?",
+    "correct_answer": "Invertibility enables exact likelihood computation via the change-of-variables formula, but requires computing the log-determinant of each transformation's Jacobian matrix.",
+    "distractors": [
+      "Invertibility enables exact likelihood computation via the change-of-variables formula, but requires computing the eigenvalues of each transformation's Hessian matrix.",
+      "Invertibility ensures the latent space has the same dimensionality as the data space, but requires computing the trace of each transformation's Jacobian matrix.",
+      "Invertibility enables exact posterior inference via Bayes' theorem, but requires computing the log-determinant of each transformation's Jacobian matrix."
+    ],
+    "difficulty": 4,
+    "source_article": "Flow-based generative model",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["normalizing flow", "change of variables", "Jacobian determinant", "exact likelihood"]
+  },
+  {
+    "question_text": "Proximal Policy Optimization (PPO) is a policy gradient method that improves training stability over TRPO. How does the PPO-Clip variant prevent destructively large policy updates?",
+    "correct_answer": "It clips the probability ratio between new and old policies to a narrow range around 1, preventing large destabilizing updates to the policy.",
+    "distractors": [
+      "It adds a hard KL divergence constraint between new and old policies, using second-order optimization to keep updates within a trust region.",
+      "It clips the gradient norm of the policy network to a fixed maximum value, preventing any single parameter from changing excessively per step.",
+      "It clips the advantage estimates to a narrow range around zero, preventing updates driven by high-variance or noisy reward signals."
+    ],
+    "difficulty": 4,
+    "source_article": "Proximal Policy Optimization",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["proximal policy optimization", "policy gradient", "clipping", "trust region policy optimization"]
+  },
+  {
+    "question_text": "Graph neural networks operate on graph-structured data using message passing. What fundamental expressiveness limit do standard message-passing GNNs face, as characterized by a classical graph theory test?",
+    "correct_answer": "They cannot distinguish graph structures that the 1-dimensional Weisfeiler-Leman isomorphism test also fails to distinguish, bounding their discriminative power.",
+    "distractors": [
+      "They cannot distinguish graph structures that differ only in edge weights, since message passing aggregates neighbor features without considering edge attributes.",
+      "They cannot learn representations for graphs with more than a fixed number of nodes, since the receptive field grows linearly with network depth.",
+      "They cannot distinguish graph structures that the chromatic number test also fails to distinguish, bounding their discriminative power to graph coloring equivalence."
+    ],
+    "difficulty": 4,
+    "source_article": "Graph neural network",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["graph neural network", "message passing", "Weisfeiler-Leman test", "expressiveness"]
+  },
+  {
+    "question_text": "Diffusion models generate data by learning to reverse a gradual noising process. What does the forward process do, and what does the neural network learn to predict during training?",
+    "correct_answer": "The forward process incrementally adds Gaussian noise until data becomes pure noise; the network learns to predict and remove the noise added at each step.",
+    "distractors": [
+      "The forward process incrementally removes structure until data becomes uniform; the network learns to predict the original clean data from any noise level.",
+      "The forward process incrementally adds Gaussian noise until data becomes pure noise; the network learns to predict the transition probabilities between successive noise levels.",
+      "The forward process compresses data into a low-dimensional latent code; the network learns to predict and remove the quantization error at each decoding step."
+    ],
+    "difficulty": 4,
+    "source_article": "Diffusion model",
+    "domain_ids": ["artificial-intelligence-ml"],
+    "concepts_tested": ["diffusion model", "denoising", "forward diffusion process", "score matching"]
+  }
+]

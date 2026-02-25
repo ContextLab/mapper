@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "How does Kahn's algorithm for topological sorting detect whether a directed graph contains a cycle?",
+    "correct_answer": "If the final ordering contains fewer vertices than the graph has, some vertices were never enqueued because a cycle kept their in-degrees above zero.",
+    "distractors": [
+      "If the priority queue overflows during vertex processing, the algorithm concludes that circular dependencies among nodes forced repeated vertex insertions.",
+      "If any vertex is visited more than once during breadth-first traversal, the algorithm marks it as part of a strongly connected component.",
+      "If the sum of all edge weights becomes negative after full processing, the algorithm reports that a negative-weight cycle exists in the graph."
+    ],
+    "difficulty": 3,
+    "source_article": "Topological sorting",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["topological sort"]
+  },
+  {
+    "question_text": "What amortized time complexity do union-find operations achieve when both path compression and union by rank are applied, and why is it considered practically constant?",
+    "correct_answer": "Amortized $O(\\alpha(n))$ per operation, where $\\alpha$ is the inverse Ackermann function, which is at most 4 for any physically representable value of $n$.",
+    "distractors": [
+      "Amortized $O(\\log \\log n)$ per operation, where the double logarithm grows slowly enough that it stays below 5 for all inputs up to $2^{64}$.",
+      "Amortized $O(1/n)$ per operation, because each successive operation on the same set becomes cheaper as the tree flattens toward a single root node.",
+      "Amortized $O(\\log^* n)$ per operation, where the iterated logarithm equals the number of times $n$ must be halved to reach 1."
+    ],
+    "difficulty": 3,
+    "source_article": "Disjoint-set data structure",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["union-find"]
+  },
+  {
+    "question_text": "Prim's algorithm is often attributed to Robert C. Prim (1957), but who originally discovered the algorithm and when?",
+    "correct_answer": "Czech mathematician Vojt\u011bch Jarn\u00edk originally discovered the algorithm in 1930; Edsger Dijkstra also independently rediscovered it in 1959.",
+    "distractors": [
+      "Hungarian mathematician John von Neumann originally discovered the algorithm in 1928; Alan Turing also independently rediscovered it in 1948.",
+      "German mathematician David Hilbert originally discovered the algorithm in 1925; Claude Shannon also independently rediscovered it in 1950.",
+      "Polish mathematician Kazimierz Kuratowski originally discovered the algorithm in 1935; Richard Bellman also independently rediscovered it in 1956."
+    ],
+    "difficulty": 3,
+    "source_article": "Prim's algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["Prim's algorithm"]
+  },
+  {
+    "question_text": "What classic Unix utility relies on solving the longest common subsequence problem, and what does the LCS correspond to in its output?",
+    "correct_answer": "The diff utility uses LCS to compare files; the longest common subsequence corresponds to the unchanged lines between two file versions.",
+    "distractors": [
+      "The grep utility uses LCS to search files; the longest common subsequence corresponds to the matching pattern occurrences across multiple lines.",
+      "The sort utility uses LCS to merge files; the longest common subsequence corresponds to the already-ordered runs that do not need re-sorting.",
+      "The awk utility uses LCS to parse files; the longest common subsequence corresponds to the shared field delimiters across consecutive records."
+    ],
+    "difficulty": 3,
+    "source_article": "Longest common subsequence problem",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["longest common subsequence"]
+  },
+  {
+    "question_text": "Why is the 0/1 knapsack problem classified as weakly NP-hard rather than strongly NP-hard?",
+    "correct_answer": "It has a pseudo-polynomial $O(nW)$ dynamic programming solution, polynomial in the capacity value $W$ but exponential in its bit length.",
+    "distractors": [
+      "It has a polynomial $O(n \\log n)$ greedy solution that selects items by value-to-weight ratio and always finds the optimal answer.",
+      "It has a subexponential $O(2^{\\sqrt{n}})$ branch-and-bound solution, faster than the $O(2^n)$ threshold defining strong NP-hardness.",
+      "It reduces to linear programming in polynomial time, and interior-point methods solve the resulting relaxation to find exact integer solutions."
+    ],
+    "difficulty": 3,
+    "source_article": "Knapsack problem",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["knapsack problem"]
+  },
+  {
+    "question_text": "What happens when a new key is inserted into a full node of a B-tree of order $m$?",
+    "correct_answer": "The node splits into two nodes, each with roughly half the keys, and the median key is promoted into the parent node.",
+    "distractors": [
+      "The node doubles its maximum capacity to $2m$ keys and rebalances by redistributing entries across all sibling nodes at the same level.",
+      "The tree increases its order from $m$ to $m+1$ so every node gains one additional key slot without requiring any structural changes.",
+      "The oldest key in the node is evicted to a separate overflow page on disk, making room for the new key without splitting."
+    ],
+    "difficulty": 3,
+    "source_article": "B-tree",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["B-tree"]
+  },
+  {
+    "question_text": "What distinguishes a Las Vegas randomized algorithm from a Monte Carlo randomized algorithm?",
+    "correct_answer": "Las Vegas always gives the correct result but has random runtime; Monte Carlo has bounded runtime but may produce an incorrect answer.",
+    "distractors": [
+      "Las Vegas uses uniformly distributed random numbers for decisions; Monte Carlo uses normally distributed random numbers for statistical sampling.",
+      "Las Vegas applies only to discrete optimization over finite sets; Monte Carlo applies only to continuous numerical integration over real domains.",
+      "Las Vegas guarantees polynomial worst-case running time with certainty; Monte Carlo guarantees exponential worst-case time but achieves higher accuracy."
+    ],
+    "difficulty": 3,
+    "source_article": "Randomized algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["randomized algorithm"]
+  },
+  {
+    "question_text": "How does the KMP algorithm's failure function (partial match table) enable linear-time string matching?",
+    "correct_answer": "It precomputes the longest prefix that is also a suffix at each pattern position, so mismatches shift the pattern forward without re-examining text characters.",
+    "distractors": [
+      "It precomputes hash values for every possible pattern substring, allowing mismatches to jump directly to the next position with a matching hash.",
+      "It precomputes each character's frequency within the pattern string, allowing mismatches to skip ahead by the rarest character's next occurrence distance.",
+      "It precomputes a suffix tree over the entire text during initialization, allowing mismatches to look up the next occurrence in constant time."
+    ],
+    "difficulty": 3,
+    "source_article": "Knuth\u2013Morris\u2013Pratt algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["KMP algorithm"]
+  },
+  {
+    "question_text": "Why does the Fibonacci heap achieve $O(1)$ amortized time for decrease-key, and what structural mechanism enforces the degree bound that makes this possible?",
+    "correct_answer": "Decrease-key cuts the node to a new root in $O(1)$; cascading cuts limit each non-root to losing one child, keeping degrees $O(\\log n)$.",
+    "distractors": [
+      "Decrease-key bubbles the node up through its ancestors in $O(1)$; lazy deletion caps tree height at $O(\\sqrt{n})$, keeping extract-min logarithmic.",
+      "Decrease-key rehashes the node into a new heap bucket in $O(1)$; Fibonacci hashing bounds collision chain length to expected $O(\\log n)$.",
+      "Decrease-key recolors the node and its ancestors in $O(1)$; red-black invariants bound all root-to-leaf paths to at most $2 \\log n$ nodes."
+    ],
+    "difficulty": 4,
+    "source_article": "Fibonacci heap",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["Fibonacci heap"]
+  },
+  {
+    "question_text": "Why were suffix arrays introduced as an alternative to suffix trees, and what time complexity can be achieved for their construction?",
+    "correct_answer": "Manber and Myers introduced suffix arrays in 1990 because they use three to five times less space than suffix trees. Optimal $O(n)$ construction algorithms exist.",
+    "distractors": [
+      "Knuth and Pratt introduced suffix arrays in 1977 because they support constant-time pattern matching unlike suffix trees. Optimal $O(n \\log n)$ construction algorithms exist.",
+      "Aho and Corasick introduced suffix arrays in 1985 because they handle multi-pattern search unlike suffix trees. Optimal $O(n \\log \\log n)$ construction algorithms exist.",
+      "Ukkonen and Weiner introduced suffix arrays in 1995 because they allow online construction unlike suffix trees. Optimal $O(n \\sqrt{n})$ construction algorithms exist."
+    ],
+    "difficulty": 4,
+    "source_article": "Suffix array",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["suffix array"]
+  }
+]

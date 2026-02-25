@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In the Bayesian brain hypothesis, how does the brain combine prior beliefs with incoming sensory data to form perceptions?",
+    "correct_answer": "The brain uses Bayesian inference to combine prior probability distributions with sensory likelihood signals, producing posterior estimates that optimally weight both sources of information.",
+    "distractors": [
+      "The brain uses frequency analysis to combine prior probability distributions with sensory amplitude signals, producing averaged estimates that equally weight both sources of information.",
+      "The brain uses reinforcement learning to combine prior probability distributions with sensory reward signals, producing updated estimates that preferentially weight the most recent information.",
+      "The brain uses threshold detection to combine prior probability distributions with sensory activation signals, producing binary estimates that select the stronger of both sources of information."
+    ],
+    "difficulty": 4,
+    "source_article": "Bayesian approaches to brain function",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["Bayesian brain hypothesis"]
+  },
+  {
+    "question_text": "In predictive coding, what role do prediction errors play in the cortical hierarchy, and how does this invert the traditional view of perception?",
+    "correct_answer": "Prediction errors signal mismatches between top-down expectations and sensory input; only errors propagate upward, inverting the traditional bottom-up view of perception.",
+    "distractors": [
+      "Prediction errors signal mismatches between lateral inhibition and motor output; only errors propagate downward, inverting the traditional top-down view of perception.",
+      "Prediction errors signal mismatches between stored memories and sensory input; only errors propagate laterally, inverting the traditional feedforward view of perception.",
+      "Prediction errors signal mismatches between attentional focus and response timing; only errors propagate upward, inverting the traditional reflexive view of perception."
+    ],
+    "difficulty": 4,
+    "source_article": "Predictive coding",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["predictive coding"]
+  },
+  {
+    "question_text": "In fuzzy-trace theory, how do gist and verbatim memory traces differ, and which type paradoxically increases false memories during development?",
+    "correct_answer": "Verbatim traces store exact surface details while gist traces capture overall meaning; as children develop stronger gist processing, false memories increase because meaning-based familiarity rises.",
+    "distractors": [
+      "Verbatim traces store overall meaning while gist traces capture exact surface details; as children develop stronger gist processing, false memories increase because detail-based recognition rises.",
+      "Verbatim traces store exact surface details while gist traces capture overall meaning; as children develop stronger verbatim processing, false memories increase because surface-level interference rises.",
+      "Verbatim traces store emotional associations while gist traces capture perceptual features; as children develop stronger gist processing, false memories increase because emotional confabulation rises."
+    ],
+    "difficulty": 4,
+    "source_article": "Fuzzy-trace theory",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["fuzzy-trace theory"]
+  },
+  {
+    "question_text": "Cognitive load theory distinguishes three types of load on working memory during learning. What are they and which type should instructional design minimize?",
+    "correct_answer": "Intrinsic load stems from task complexity, extraneous load from poor presentation, and germane load supports schema building; designers should minimize extraneous load.",
+    "distractors": [
+      "Intrinsic load stems from task complexity, extraneous load from poor presentation, and germane load supports schema building; designers should minimize intrinsic load.",
+      "Intrinsic load stems from learner motivation, extraneous load from environmental noise, and germane load supports rote memorization; designers should minimize germane load.",
+      "Intrinsic load stems from prior knowledge gaps, extraneous load from time constraints, and germane load supports schema building; designers should minimize all three."
+    ],
+    "difficulty": 4,
+    "source_article": "Cognitive load",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["cognitive load theory"]
+  },
+  {
+    "question_text": "How does transfer-appropriate processing extend the levels-of-processing framework, and what does it predict about the relationship between encoding and retrieval?",
+    "correct_answer": "It holds that memory depends on the match between encoding and retrieval processes, predicting shallow encoding can outperform deep encoding when retrieval demands match.",
+    "distractors": [
+      "It holds that memory depends on the total number of encoding repetitions performed, predicting frequent rehearsal always outperforms deep encoding regardless of retrieval demands.",
+      "It holds that memory depends on emotional valence during encoding and retrieval, predicting positive affect can outperform deep encoding when mood states match.",
+      "It holds that memory depends on the sensory modality used during encoding, predicting visual encoding always outperforms auditory encoding regardless of retrieval demands."
+    ],
+    "difficulty": 4,
+    "source_article": "Transfer-appropriate processing",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["transfer-appropriate processing"]
+  },
+  {
+    "question_text": "In the ACT-R cognitive architecture, how do declarative and procedural knowledge interact through the buffer system to produce goal-directed behavior?",
+    "correct_answer": "Declarative chunks are retrieved into buffers; production rules in procedural memory match against buffer contents and fire actions, coordinating modules toward the current goal.",
+    "distractors": [
+      "Declarative schemas are retrieved into registers; association rules in procedural memory match against register contents and fire actions, coordinating pathways toward the current goal.",
+      "Declarative chunks are broadcast to all modules simultaneously; production rules in procedural memory evaluate all activations in parallel and select the strongest available goal.",
+      "Declarative propositions are retrieved into buffers; reinforcement signals in procedural memory adjust buffer contents and shape actions, coordinating modules toward the highest reward."
+    ],
+    "difficulty": 4,
+    "source_article": "ACT-R",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["adaptive control of thought-rational"]
+  },
+  {
+    "question_text": "In Baars's global workspace theory, what distinguishes conscious from unconscious processing, and what role does the 'broadcast' mechanism play?",
+    "correct_answer": "Conscious processing occurs when information in the global workspace is broadcast widely to multiple specialized unconscious modules, making it available for diverse cognitive operations simultaneously.",
+    "distractors": [
+      "Conscious processing occurs when information in the global workspace is filtered narrowly to a single specialized unconscious module, making it available for focused cognitive operations exclusively.",
+      "Conscious processing occurs when information in the global workspace is stored permanently in long-term memory systems, making it available for future retrieval operations upon deliberate recall.",
+      "Conscious processing occurs when information in the global workspace is amplified by emotional arousal circuits, making it available for survival-relevant cognitive operations preferentially."
+    ],
+    "difficulty": 4,
+    "source_article": "Global workspace theory",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["global workspace theory"]
+  },
+  {
+    "question_text": "What did Loftus's research on the misinformation effect demonstrate about how post-event information alters eyewitness memory?",
+    "correct_answer": "Post-event misleading information becomes incorporated into the original memory trace, causing witnesses to recall misinformation details as if they were part of the event.",
+    "distractors": [
+      "Post-event misleading information remains stored separately from the original memory trace, allowing witnesses to distinguish misinformation details from those of the actual event.",
+      "Post-event misleading information only affects recognition but not free recall, leaving witnesses able to accurately generate their own uncontaminated descriptions of the event.",
+      "Post-event misleading information temporarily suppresses the original memory trace, but witnesses fully recover accurate details after a brief delay without lasting distortion."
+    ],
+    "difficulty": 4,
+    "source_article": "Misinformation effect",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["misinformation effect"]
+  },
+  {
+    "question_text": "What distinction does the linguistic relativity hypothesis draw between its strong and weak forms regarding the influence of language on thought?",
+    "correct_answer": "The strong form (linguistic determinism) claims language determines thought; the weak form claims language influences but does not fully determine habitual thinking patterns.",
+    "distractors": [
+      "The strong form (linguistic determinism) claims language reflects thought; the weak form claims language entirely constructs reality without any independent cognitive contribution.",
+      "The strong form (linguistic determinism) claims language shapes vocabulary only; the weak form claims language determines all higher-order reasoning processes completely.",
+      "The strong form (linguistic determinism) claims language evolved from thought; the weak form claims language and thought develop independently but occasionally converge."
+    ],
+    "difficulty": 4,
+    "source_article": "Linguistic relativity",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["linguistic relativity"]
+  },
+  {
+    "question_text": "What is the attentional blink, and what does the 'lag-1 sparing' exception reveal about the temporal dynamics of selective attention?",
+    "correct_answer": "A second target 200-500 ms after the first in a rapid stream goes undetected; lag-1 sparing shows back-to-back targets escape this deficit.",
+    "distractors": [
+      "A second target 200-500 ms after the first in a rapid stream goes undetected; lag-1 sparing shows long-delayed targets escape this deficit.",
+      "Any target within the first 200 ms of a rapid stream goes undetected; lag-1 sparing shows targets at the stream's onset escape this deficit.",
+      "A second target 500-1000 ms after the first in a rapid stream goes undetected; lag-1 sparing shows cross-modal targets escape this deficit."
+    ],
+    "difficulty": 4,
+    "source_article": "Attentional blink",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["attentional blink"]
+  }
+]

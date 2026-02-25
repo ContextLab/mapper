@@ -1,0 +1,104 @@
+[
+  {
+    "question_text": "In the Renaissance paragone debate, sculptors claimed superiority because their medium offered multiple faithful viewpoints. How did painters most effectively counter this specific argument?",
+    "correct_answer": "By depicting reflective surfaces and mirrors in paintings, showing a figure from several angles simultaneously within a single composition.",
+    "distractors": [
+      "By depicting atmospheric perspective and sfumato in paintings, showing a figure receding into depth convincingly within a single composition.",
+      "By depicting sequential narrative scenes in paintings, showing a figure at several moments in time within a single continuous composition.",
+      "By depicting foreshortened anatomy and trompe-l'oeil in paintings, showing a figure projecting outward illusionistically within a single composition."
+    ],
+    "difficulty": 4,
+    "source_article": "Paragone",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "paragone"
+    ]
+  },
+  {
+    "question_text": "Heinrich Wölfflin's 'Kunstgeschichtliche Grundbegriffe' (1915) proposed five formal polarities distinguishing Renaissance from Baroque vision. Which pair contrasts compositions that are self-contained entities pointing back to themselves with those whose energies reach beyond the frame?",
+    "correct_answer": "Closed (tectonic) form versus open (atectonic) form, where closed compositions reveal an internal structural law and open compositions override vertical-horizontal axes.",
+    "distractors": [
+      "Plane versus recession, where planar compositions order strata parallel to the picture surface and recessional compositions engage the spectator in forward-backward movement.",
+      "Multiplicity versus unity, where multiple compositions distribute weight among independent parts and unified compositions subordinate all elements to a single dominant motif.",
+      "Linear versus painterly, where linear compositions define objects through fixed contour boundaries and painterly compositions dissolve contours into systems of light and color."
+    ],
+    "difficulty": 4,
+    "source_article": "Heinrich_Wölfflin",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "Heinrich Wölfflin's principles"
+    ]
+  },
+  {
+    "question_text": "The Renaissance debate between disegno and colorito mapped onto regional schools. Beyond the Florentine-Venetian rivalry, how did this opposition resurface in the 17th-century French Academy?",
+    "correct_answer": "As the querelle du coloris between Poussinistes, who upheld drawing and classical line after Poussin, and Rubenistes, who championed color and painterly richness after Rubens.",
+    "distractors": [
+      "As the querelle du coloris between Caravaggisti, who upheld tenebrism and dramatic shadow after Caravaggio, and Rubenistes, who championed luminous glazing after Rubens.",
+      "As the querelle du coloris between Poussinistes, who upheld monochromatic grisaille and sculptural modeling after Poussin, and Watteauistes, who championed pastel tonality after Watteau.",
+      "As the querelle du coloris between Davidistes, who upheld neoclassical contour and moral severity after David, and Rubenistes, who championed painterly richness after Rubens."
+    ],
+    "difficulty": 4,
+    "source_article": "Disegno",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "disegno vs. colorito"
+    ]
+  },
+  {
+    "question_text": "Pentimenti are revisions visible in finished paintings. Why are they considered crucial evidence when attributing a work to an original master rather than a later copyist or workshop replica?",
+    "correct_answer": "Because copyists reproduce a finished composition directly, leaving few or no pentimenti, whereas original artists typically alter positions, poses, or elements during creation.",
+    "distractors": [
+      "Because copyists use cheaper pigments that remain opaque over centuries, leaving few or no pentimenti, whereas original artists used lead-based paints that become transparent.",
+      "Because copyists work from detailed preparatory cartoons that eliminate compositional changes, whereas original artists typically improvise without any preliminary drawings or studies.",
+      "Because copyists apply paint in thinner single layers that resist X-ray detection, whereas original artists typically build up thick impasto layers that reveal revisions."
+    ],
+    "difficulty": 4,
+    "source_article": "Pentimento",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "pentimento"
+    ]
+  },
+  {
+    "question_text": "Erwin Panofsky's 1932 iconological method distinguishes three interpretive levels. What does his third level -- iconological interpretation -- seek to uncover that the second level (iconographic analysis) does not?",
+    "correct_answer": "The intrinsic meaning or symbolic values revealing the underlying attitudes of a nation, period, or class through 'synthetic intuition' beyond literary-theme identification.",
+    "distractors": [
+      "The formal compositional structure revealing the underlying geometric proportions of a design through 'analytic geometry' beyond literary-theme identification.",
+      "The intrinsic meaning or narrative sequence revealing the chronological order of depicted events through 'historical reconstruction' beyond literary-theme identification.",
+      "The material provenance and dating revealing the underlying workshop practices of a region through 'technical analysis' beyond literary-theme identification."
+    ],
+    "difficulty": 4,
+    "source_article": "Iconology",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "iconology"
+    ]
+  },
+  {
+    "question_text": "Modern research has confirmed that Greek marble sculptures were originally painted in vivid colors. What historical circumstance most directly caused 18th-century neoclassical architects and theorists to idealize unadorned white marble as the classical aesthetic?",
+    "correct_answer": "All original pigment had weathered away by the 18th century, so antiquarians encountered only bare stone and equated that appearance with classical beauty.",
+    "distractors": [
+      "Roman literary sources had described sculptures as unpainted, so 18th-century scholars accepted those textual accounts as definitive classical authority.",
+      "All original pigment had been deliberately removed by Ottoman restorers, so antiquarians encountered only cleaned stone and mistook that for classical intent.",
+      "Only bronze sculptures with visible patina survived intact by the 18th century, so scholars inferred that stone works were likewise left with natural surfaces."
+    ],
+    "difficulty": 4,
+    "source_article": "Polychrome",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "polychromy in ancient sculpture"
+    ]
+  }
+]

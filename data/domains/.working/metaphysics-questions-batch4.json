@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Eternalism in the philosophy of time is often called the 'block universe' view. What does it assert about past, present, and future entities?",
+    "correct_answer": "All past, present, and future entities are equally real; none is ontologically privileged over the others.",
+    "distractors": [
+      "Only the present exists, and past and future entities have no ontological standing whatsoever.",
+      "Past and present entities exist but the future is open and ontologically indeterminate.",
+      "Time is entirely illusory and no temporal entities of any kind genuinely exist."
+    ],
+    "difficulty": 3,
+    "source_article": "Eternalism (philosophy of time)",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["eternalism"]
+  },
+  {
+    "question_text": "Presentism is the thesis that only present entities exist. How does it treat claims about past or future objects?",
+    "correct_answer": "Past entities have existed and future entities will exist, but neither exist now and so have no current ontological status.",
+    "distractors": [
+      "Past and future entities exist in diminished form as abstract objects located outside of spacetime.",
+      "Past entities remain fully real in a growing block while future entities are genuinely nonexistent.",
+      "Past and future entities exist as concrete possible worlds distinct from the actual present world."
+    ],
+    "difficulty": 3,
+    "source_article": "Philosophical presentism",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["presentism"]
+  },
+  {
+    "question_text": "According to bundle theory, what constitutes an ordinary object such as an apple?",
+    "correct_answer": "A bundle of co-present properties with no underlying substance or bare particular binding them together.",
+    "distractors": [
+      "A bare particular that possesses no intrinsic properties but serves as a substrate for attributes.",
+      "A single universal instantiated at a unique spatiotemporal location defined by physical laws.",
+      "An arrangement of mereological simples whose collective behavior gives rise to emergent qualities."
+    ],
+    "difficulty": 3,
+    "source_article": "Bundle theory",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["bundle theory"]
+  },
+  {
+    "question_text": "The principle of causal closure of the physical states that every physical effect has a sufficient physical cause. Why does this pose a problem for substance dualism?",
+    "correct_answer": "If every physical event already has a sufficient physical cause, non-physical mental substances cannot have causal power over the physical world.",
+    "distractors": [
+      "It implies that mental events are identical to physical events, eliminating the need for any separate mental substance.",
+      "It shows that mental causation violates conservation of energy, so the mind must be a form of dark energy.",
+      "It entails that free will is impossible under any metaphysical framework, rendering both dualist and physicalist accounts of agency equally untenable."
+    ],
+    "difficulty": 3,
+    "source_article": "Causal closure",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["causal closure"]
+  },
+  {
+    "question_text": "In philosophy, what distinguishes strong emergence from weak emergence?",
+    "correct_answer": "Strongly emergent properties are fundamentally irreducible to lower-level components, whereas weakly emergent properties are unexpected but in principle deducible from them.",
+    "distractors": [
+      "Strong emergence occurs only in complex biological systems while weak emergence is restricted to simple physical and chemical systems alone.",
+      "Strongly emergent properties appear gradually over very long time scales while weakly emergent properties arise suddenly and instantaneously from their components.",
+      "Strong emergence requires the presence of conscious observers in order to manifest while weak emergence occurs entirely independently of any observation."
+    ],
+    "difficulty": 3,
+    "source_article": "Emergence",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["emergence"]
+  },
+  {
+    "question_text": "In philosophy, natural kinds are categories that 'carve nature at its joints.' Which of the following best characterizes natural kinds?",
+    "correct_answer": "Groupings that reflect the actual structure of the world rather than depending on human interests or conventions.",
+    "distractors": [
+      "Arbitrary classifications that scientists impose on nature for purely pragmatic laboratory convenience.",
+      "Categories found only in biology that correspond to species defined by reproductive isolation criteria.",
+      "Mathematical sets whose membership is determined entirely by formal axiomatic definitions and proofs."
+    ],
+    "difficulty": 3,
+    "source_article": "Natural kind",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["natural kinds"]
+  },
+  {
+    "question_text": "What is the central disagreement between Humean regularity theorists and necessitarians about laws of nature?",
+    "correct_answer": "Humeans hold that laws merely describe observed regularities, while necessitarians hold that laws express genuine physical necessities that govern events.",
+    "distractors": [
+      "Humeans claim laws are a priori knowable truths while necessitarians claim they can only be discovered through empirical observation.",
+      "Humeans assert that laws apply only locally while necessitarians assert that laws hold exclusively at cosmological scales.",
+      "Humeans believe laws originate from divine decree while necessitarians believe they emerge from collective scientific agreement."
+    ],
+    "difficulty": 3,
+    "source_article": "Laws of nature",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["laws of nature"]
+  },
+  {
+    "question_text": "Trope theory holds that properties are particular instances rather than universals. How does it explain the similarity between two red objects?",
+    "correct_answer": "Each object has its own distinct red trope, and the two tropes resemble each other without being identical or sharing a universal.",
+    "distractors": [
+      "Both objects participate in a single shared universal called 'redness' that exists independently of them in an abstract Platonic realm of forms.",
+      "The similarity is merely a psychological projection by human observers and has no real basis in the objects' own intrinsic natures.",
+      "Both objects instantiate the very same structural property that is defined by their having identical sets of underlying microphysical particle arrangements."
+    ],
+    "difficulty": 3,
+    "source_article": "Trope (philosophy)",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["trope theory"]
+  },
+  {
+    "question_text": "Metaphysical grounding is a relation in which one fact holds 'in virtue of' another. How does grounding differ from causation?",
+    "correct_answer": "Grounding is a non-causal constitutive dependence relation that explains metaphysical priority, not a temporal process linking earlier events to later effects.",
+    "distractors": [
+      "Grounding is a special type of efficient causation that operates only between abstract objects rather than concrete events.",
+      "Grounding applies exclusively to necessary logical truths while causation applies exclusively to contingent empirical facts about the natural world.",
+      "Grounding is a probabilistic relation that raises the likelihood of the grounded fact whereas causation is strictly deterministic."
+    ],
+    "difficulty": 4,
+    "source_article": "Grounding (metaphysics)",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["grounding relation"]
+  },
+  {
+    "question_text": "Truthmaker theory holds that truth depends on being. According to truthmaker maximalism, what must exist for every true proposition?",
+    "correct_answer": "An entity in the world — a truthmaker — whose existence necessitates the truth of that proposition, with no truthmaker gaps allowed.",
+    "distractors": [
+      "A corresponding sentence expressed in an ideal formal language that perfectly mirrors the underlying logical structure of reality itself.",
+      "A coherent set of justified beliefs held by a rational epistemic community that collectively supports and warrants the proposition.",
+      "A possible world in which the proposition holds true, regardless of whether any actual concrete entity in reality makes it true."
+    ],
+    "difficulty": 4,
+    "source_article": "Truthmaker theory",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["truthmaker theory"]
+  }
+]

@@ -1,0 +1,104 @@
+[
+  {
+    "question_text": "The taotie motif, commonly found on Shang and Zhou dynasty ritual bronze vessels, is typically described as a bilaterally symmetrical zoomorphic mask with which distinctive anatomical feature?",
+    "correct_answer": "A pair of raised eyes and typically no lower jaw",
+    "distractors": [
+      "A pair of closed eyes and a prominently open lower jaw",
+      "A single centered eye and symmetrically flared nostrils",
+      "A pair of raised horns and typically no upper jaw"
+    ],
+    "difficulty": 3,
+    "source_article": "Taotie",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "taotie"
+    ]
+  },
+  {
+    "question_text": "In Chinese painting, xieyi (写意, literally \"writing ideas\") is a freehand brush style that prioritizes what quality over precise physical likeness of the subject?",
+    "correct_answer": "Spiritual semblance and the essential character of the subject",
+    "distractors": [
+      "Geometric abstraction and the structural outline of the subject",
+      "Decorative color harmony and the surface texture of the subject",
+      "Historical narrative accuracy and the contextual setting of the subject"
+    ],
+    "difficulty": 3,
+    "source_article": "Xieyi",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "xieyi"
+    ]
+  },
+  {
+    "question_text": "Gongbi, the meticulous realist technique in Chinese painting, reached its peak of popularity and royal patronage during which period?",
+    "correct_answer": "Between the Tang and Song dynasties, from the 7th to 13th centuries",
+    "distractors": [
+      "Between the Han and Jin dynasties, from the 3rd to 5th centuries",
+      "Between the Yuan and Ming dynasties, from the 13th to 17th centuries",
+      "Between the Sui and Tang dynasties, from the 6th to 10th centuries"
+    ],
+    "difficulty": 3,
+    "source_article": "Gongbi",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "gongbi"
+    ]
+  },
+  {
+    "question_text": "How did Southern Song landscape painting differ from Northern Song landscape painting in terms of composition and scope?",
+    "correct_answer": "Southern Song painters focused on smaller, intimate scenes with sparse backgrounds, rather than the monumental sweeping landscapes of the Northern Song",
+    "distractors": [
+      "Southern Song painters focused on larger, panoramic scenes with dense backgrounds, rather than the restrained minimalist landscapes of the Northern Song",
+      "Southern Song painters focused on idealized, mythological scenes with ornate backgrounds, rather than the naturalistic observed landscapes of the Northern Song",
+      "Southern Song painters focused on urban, architectural scenes with geometric backgrounds, rather than the mountainous wilderness landscapes of the Northern Song"
+    ],
+    "difficulty": 3,
+    "source_article": "Song_dynasty",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "Northern and Southern Song painting"
+    ]
+  },
+  {
+    "question_text": "The distinctive jade-green color of celadon glaze is produced by a specific chemical transformation during kiln firing. What is this process?",
+    "correct_answer": "Iron oxide transforms from ferric to ferrous iron ($\\text{Fe}_2\\text{O}_3 \\to \\text{FeO}$) during reduction firing",
+    "distractors": [
+      "Copper oxide transforms from cupric to cuprous oxide ($\\text{CuO} \\to \\text{Cu}_2\\text{O}$) during reduction firing",
+      "Iron oxide transforms from ferrous to ferric iron ($\\text{FeO} \\to \\text{Fe}_2\\text{O}_3$) during oxidation firing",
+      "Cobalt oxide transforms from cobaltic to cobaltous oxide ($\\text{Co}_2\\text{O}_3 \\to \\text{CoO}$) during reduction firing"
+    ],
+    "difficulty": 3,
+    "source_article": "Celadon",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "celadon"
+    ]
+  },
+  {
+    "question_text": "Xu Beihong, one of China's \"Four Great Academy Presidents,\" is best known for combining Chinese ink techniques with Western methods learned at which institution?",
+    "correct_answer": "The Ecole Nationale Superieure des Beaux-Arts in Paris, where he studied oil painting and drawing",
+    "distractors": [
+      "The Royal Academy of Arts in London, where he studied sculpture and printmaking",
+      "The Accademia di Belle Arti in Florence, where he studied fresco and watercolor",
+      "The Kunstakademie Dusseldorf in Germany, where he studied oil painting and composition"
+    ],
+    "difficulty": 3,
+    "source_article": "Xu_Beihong",
+    "domain_ids": [
+      "chinese-art-history"
+    ],
+    "concepts_tested": [
+      "Xu Beihong"
+    ]
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In linguistics, what is grammar?",
+    "correct_answer": "The set of structural rules governing the composition of clauses, phrases, and words in a natural language.",
+    "distractors": [
+      "The study of how speech sounds are produced, transmitted, and perceived by listeners in communication.",
+      "The collection of vocabulary items and their definitions stored in a language's mental dictionary.",
+      "The system of meanings conveyed by words and sentences within a particular cultural context."
+    ],
+    "difficulty": 1,
+    "source_article": "Grammar",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["grammar"]
+  },
+  {
+    "question_text": "In traditional grammar, what is a sentence typically defined as?",
+    "correct_answer": "A set of words expressing a complete thought, typically containing a subject and a predicate.",
+    "distractors": [
+      "A single meaningful unit of sound that distinguishes one word from another in speech.",
+      "A group of related paragraphs organized around a central theme within a written text.",
+      "A minimal pair of morphemes combined to form the smallest possible independent utterance."
+    ],
+    "difficulty": 1,
+    "source_article": "Sentence (linguistics)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["sentence"]
+  },
+  {
+    "question_text": "What is a noun in linguistics?",
+    "correct_answer": "A word that functions as the name of a person, place, thing, or concept and can head a noun phrase.",
+    "distractors": [
+      "A word that expresses an action, occurrence, or state of being and carries tense inflection in sentences.",
+      "A word that modifies or describes a verb, indicating manner, time, place, or degree of an action.",
+      "A word that connects clauses or sentences together and expresses logical relationships such as contrast or cause between them."
+    ],
+    "difficulty": 1,
+    "source_article": "Noun",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["noun"]
+  },
+  {
+    "question_text": "In grammar, what does a verb convey?",
+    "correct_answer": "An action, occurrence, or state of being, and it is essential for forming a clause or sentence.",
+    "distractors": [
+      "A spatial or temporal relationship between a noun phrase and another element within the sentence.",
+      "A descriptive quality or attribute that modifies and provides more information about a nearby noun.",
+      "A logical connection between two independent clauses, linking ideas of contrast, cause, or addition."
+    ],
+    "difficulty": 1,
+    "source_article": "Verb",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["verb"]
+  },
+  {
+    "question_text": "What is the primary grammatical function of an adjective?",
+    "correct_answer": "To modify a noun or noun phrase by describing, identifying, or quantifying the entity it refers to.",
+    "distractors": [
+      "To modify a verb or another adverb by specifying the manner, frequency, or degree of an action.",
+      "To connect two independent clauses together by expressing addition, contrast, or causal relationships.",
+      "To substitute for a noun phrase in order to avoid repetition and maintain cohesion in discourse."
+    ],
+    "difficulty": 1,
+    "source_article": "Adjective",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["adjective"]
+  },
+  {
+    "question_text": "What does an adverb typically modify in a sentence?",
+    "correct_answer": "A verb, an adjective, or another adverb, often expressing manner, place, time, or degree.",
+    "distractors": [
+      "A noun or pronoun, providing additional descriptive information about the entity being referred to.",
+      "A preposition or conjunction, altering the logical relationship expressed between two sentence elements.",
+      "A determiner or article, specifying whether the following noun is definite, indefinite, or generic."
+    ],
+    "difficulty": 1,
+    "source_article": "Adverb",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["adverb"]
+  },
+  {
+    "question_text": "In grammar, what is the subject of a sentence?",
+    "correct_answer": "The noun or noun phrase that indicates who or what performs the action or is described by the predicate.",
+    "distractors": [
+      "The verb or verb phrase that expresses what action is being carried out within the main clause.",
+      "The noun or noun phrase that receives the action performed by the verb in a transitive construction.",
+      "The adjective or adverb phrase that provides additional descriptive information about the main verb."
+    ],
+    "difficulty": 1,
+    "source_article": "Subject (grammar)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["subject"]
+  },
+  {
+    "question_text": "In grammar, what is the object of a verb?",
+    "correct_answer": "A noun or noun phrase that receives the action of a transitive verb or is affected by it.",
+    "distractors": [
+      "A noun or noun phrase that performs the action expressed by the verb in an active voice construction.",
+      "An adjective or adjective phrase that describes a quality attributed to the subject by a linking verb.",
+      "An adverb or adverb phrase that specifies the time, place, or manner in which an action occurs."
+    ],
+    "difficulty": 1,
+    "source_article": "Object (grammar)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["object"]
+  },
+  {
+    "question_text": "What is a pronoun?",
+    "correct_answer": "A word that substitutes for a noun or noun phrase, such as 'he,' 'she,' 'it,' or 'they.'",
+    "distractors": [
+      "A word that precedes a noun to indicate whether it is specific, nonspecific, or previously mentioned.",
+      "A word that links a noun or pronoun to other words, expressing spatial or temporal relationships.",
+      "A word that joins two clauses or phrases, showing relationships like addition, contrast, or cause."
+    ],
+    "difficulty": 1,
+    "source_article": "Pronoun",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["pronoun"]
+  },
+  {
+    "question_text": "What grammatical role do prepositions serve in a sentence?",
+    "correct_answer": "They express spatial, temporal, or other relations between a noun phrase and another part of the sentence.",
+    "distractors": [
+      "They substitute for previously mentioned nouns to reduce repetition and improve the clarity of discourse.",
+      "They modify verbs by specifying the manner, degree, frequency, or duration of the described action.",
+      "They connect independent clauses to form compound sentences by indicating addition, contrast, or consequence."
+    ],
+    "difficulty": 1,
+    "source_article": "Preposition and postposition",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["preposition"]
+  }
+]

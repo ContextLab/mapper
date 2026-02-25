@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Venus figurines are small statuettes found across Upper Paleolithic sites in Europe and parts of Asia. With which specific archaeological culture are the majority of these figurines associated, and what material evidence makes them significant for the history of technology?",
+    "correct_answer": "Most date to the Gravettian period (c. 33,000-22,000 BP). Some were clay-fired, making them among the world's oldest ceramic objects.",
+    "distractors": [
+      "Most Venus figurines date to the Magdalenian period (roughly 17,000-12,000 BP). Many were cast in native copper, making them the earliest known examples of metal sculpture.",
+      "Most Venus figurines date to the Aurignacian period (roughly 43,000-33,000 BP). Several were carved using rotary drill technology, providing the earliest evidence of mechanical tool use.",
+      "Most Venus figurines date to the Solutrean period (roughly 22,000-17,000 BP). Many were polished with abrasive sand techniques, representing the first known use of lapidary methods."
+    ],
+    "difficulty": 3,
+    "source_article": "Venus figurines",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Venus figurines"]
+  },
+  {
+    "question_text": "Megalithic tombs are Neolithic funerary monuments constructed from large stones. What are the principal architectural subtypes of megalithic tombs, and in what broad geographic region are they most densely concentrated?",
+    "correct_answer": "Dolmens, passage graves, and gallery graves are the main subtypes. They concentrate along the Atlantic seaboard of western Europe.",
+    "distractors": [
+      "The main subtypes include tholoi (beehive-shaped corbelled tombs), mastabas (flat-roofed rectangular tombs), and shaft graves. They are concentrated across the eastern Mediterranean and Aegean islands.",
+      "The main subtypes include cairns (loose stone mounds), tumuli (earthen burial mounds), and cist graves (stone-lined box burials). They are concentrated across the central European river valleys.",
+      "The main subtypes include hypogea (underground rock-cut chambers), platform mounds (elevated burial surfaces), and stone circles. They are concentrated along the North African and Levantine coasts."
+    ],
+    "difficulty": 3,
+    "source_article": "Megalithic tomb",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["megalithic tomb"]
+  },
+  {
+    "question_text": "The Younger Dryas was a rapid climate reversal near the end of the last Ice Age. What is the leading scientific hypothesis for its cause, and approximately how long did this cold interval last?",
+    "correct_answer": "Freshwater from glacial Lake Agassiz disrupted North Atlantic thermohaline circulation, causing abrupt cooling lasting approximately 1,300 years (c. 12,900-11,600 BP).",
+    "distractors": [
+      "The leading hypothesis is that a supervolcanic eruption in Iceland ejected sulfate aerosols into the stratosphere, blocking solar radiation globally. The event lasted approximately 3,500 years (c. 15,000-11,500 BP).",
+      "The leading hypothesis is that a sudden shift in the Earth's axial tilt altered ocean current patterns in the Southern Hemisphere. The event lasted approximately 500 years (c. 12,200-11,700 BP).",
+      "The leading hypothesis is that an extraterrestrial impact vaporized the Laurentide Ice Sheet, releasing methane that triggered an abrupt greenhouse-to-icehouse reversal. The event lasted approximately 4,000 years (c. 15,700-11,700 BP)."
+    ],
+    "difficulty": 3,
+    "source_article": "Younger Dryas",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Younger Dryas"]
+  },
+  {
+    "question_text": "Gobekli Tepe in southeastern Turkey contains monumental megalithic structures dating to the Pre-Pottery Neolithic period. Why did this site fundamentally challenge a long-held assumption in prehistoric archaeology, and what distinctive architectural feature characterizes its enclosures?",
+    "correct_answer": "Hunter-gatherers built monumental ritual architecture before agriculture, disproving farming as a prerequisite. Its enclosures feature massive T-shaped limestone pillars.",
+    "distractors": [
+      "It demonstrated that metallurgy existed thousands of years before the Bronze Age, overturning the assumption that copper smelting originated in the Fertile Crescent. Its enclosures feature carved basalt obelisks arranged in precise astronomical alignments.",
+      "It demonstrated that writing systems predated agriculture by several millennia, overturning the assumption that literacy required urban civilization. Its enclosures feature walls inscribed with proto-cuneiform pictographic symbols.",
+      "It demonstrated that long-distance maritime trade existed in the Pre-Pottery Neolithic, overturning the assumption that seafaring began in the Bronze Age. Its enclosures feature imported granite monoliths transported from the Mediterranean coast."
+    ],
+    "difficulty": 3,
+    "source_article": "Göbekli Tepe",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Göbekli Tepe"]
+  },
+  {
+    "question_text": "Lithic reduction is the process of manufacturing stone tools by removing flakes from a core. What two broad categories of percussion technique are used in knapping, and how do they differ in the degree of control they afford the toolmaker?",
+    "correct_answer": "Hard hammer percussion (using a hammerstone) removes large thick flakes imprecisely; soft hammer percussion (using bone, antler, or wood) produces thinner, controlled flakes.",
+    "distractors": [
+      "Direct percussion (striking the core against an anvil stone) removes curved interior flakes, while indirect percussion (heating the core before striking) causes thermal fractures that produce uniformly thin blades.",
+      "Bipolar percussion (clamping the core in a wooden vise) removes elongated prismatic blades, while freehand percussion (throwing the hammerstone at the core) produces broad conchoidal flakes suited for heavy-duty tools.",
+      "Rotary percussion (spinning the core on a lathe-like device) removes circular disc flakes, while static percussion (placing the core on a flat surface and dropping a weight) produces deep, wedge-shaped fragments."
+    ],
+    "difficulty": 3,
+    "source_article": "Lithic reduction",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["lithic reduction"]
+  },
+  {
+    "question_text": "The Bell Beaker culture was a widespread archaeological phenomenon in late Neolithic and early Bronze Age Europe. What is the defining artifact type of this culture, and what broader set of associated material practices characterized its mature phase?",
+    "correct_answer": "The bell-shaped drinking vessel with geometric/herringbone decoration. Its mature phase included copper and bronze metalwork, gold ornaments, archery, and long-distance exchange.",
+    "distractors": [
+      "The defining artifact is a flat-bottomed storage amphora with cord-impressed decoration. In its mature phase, the culture was associated with iron smelting, glass bead production, horse domestication, and fortified hilltop settlements.",
+      "The defining artifact is a round-bottomed cooking pot with incised spirals. In its mature phase, the culture was associated with tin mining, loom-woven textiles, chariot burials, and large-scale irrigation agriculture.",
+      "The defining artifact is a tall narrow-necked flask with painted animal motifs. In its mature phase, the culture was associated with salt extraction, amber jewelry, megalithic temple construction, and communal grain storage facilities."
+    ],
+    "difficulty": 3,
+    "source_article": "Bell Beaker culture",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Beaker culture"]
+  },
+  {
+    "question_text": "The late Pleistocene megafaunal extinction saw the disappearance of most large mammals worldwide. What pattern in the timing of extinctions across different continents most strongly supports the hypothesis that human arrival was a primary driver?",
+    "correct_answer": "Extinctions are not globally synchronous; they correlate with first human arrival on each continent, occurring earliest in Africa and latest in the Americas and islands.",
+    "distractors": [
+      "Extinctions occurred simultaneously on all continents at approximately 12,000 BP, coinciding precisely with the end of the Younger Dryas cold snap, supporting a unified climate-change hypothesis.",
+      "Extinctions occurred in a strict latitudinal gradient from the poles to the equator over 5,000 years, correlating with the retreat of continental ice sheets, supporting a habitat-loss hypothesis.",
+      "Extinctions occurred first on islands and last on large continents, correlating with rising sea levels that fragmented land bridges, supporting a geographic-isolation hypothesis."
+    ],
+    "difficulty": 3,
+    "source_article": "Quaternary extinction event",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["megafaunal extinction"]
+  },
+  {
+    "question_text": "The Corded Ware culture was a major late Neolithic/Chalcolithic archaeological complex in northern and central Europe (c. 2900-2350 BCE). What does ancient DNA evidence reveal about the ancestry of Corded Ware populations, and why is this finding significant for the Indo-European language debate?",
+    "correct_answer": "Roughly 75% of Corded Ware ancestry derived from Yamnaya-related steppe pastoralists, indicating massive migration and supporting the steppe hypothesis for Indo-European language origins.",
+    "distractors": [
+      "Ancient DNA shows that Corded Ware individuals were genetically identical to earlier European Mesolithic hunter-gatherers with no external admixture. This supports the continuity hypothesis that Indo-European languages evolved in situ in central Europe.",
+      "Ancient DNA shows that Corded Ware individuals derived roughly 75% of their ancestry from Anatolian Neolithic farmers who migrated northward. This supports the Anatolian hypothesis that Indo-European languages spread with the first farmers.",
+      "Ancient DNA shows that Corded Ware individuals were a hybrid population with equal contributions from Siberian, North African, and local European sources. This supports the multi-origin hypothesis that Indo-European languages emerged through trade-network convergence."
+    ],
+    "difficulty": 3,
+    "source_article": "Corded Ware culture",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Corded Ware culture"]
+  },
+  {
+    "question_text": "The Chatelperronian is a contested transitional industry between the Middle and Upper Paleolithic in France and northern Spain. With which hominin species is the Chatelperronian primarily associated, and what is the central scholarly debate surrounding its Upper Paleolithic characteristics such as bone tools and body ornaments?",
+    "correct_answer": "It is associated with late Neanderthals. The debate is whether they independently invented Upper Paleolithic traits or acquired them via acculturation from modern humans.",
+    "distractors": [
+      "The Chatelperronian is primarily associated with early Homo sapiens migrants from North Africa. The central debate is whether these populations brought the technology from sub-Saharan Africa or developed it after encountering European raw materials.",
+      "The Chatelperronian is primarily associated with Denisovan populations in western Europe. The central debate is whether Denisovans survived longer than previously thought or whether the artifacts were misattributed due to stratigraphic mixing.",
+      "The Chatelperronian is primarily associated with a hybrid Neanderthal-Denisovan population. The central debate is whether this hybrid group represents a distinct hominin species or merely a transitional gene-flow event with no cultural implications."
+    ],
+    "difficulty": 4,
+    "source_article": "Châtelperronian",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Châtelperronian industry"]
+  },
+  {
+    "question_text": "Denisovans are an extinct hominin group identified primarily through ancient DNA rather than morphological study. In which modern human populations is Denisovan genetic admixture most pronounced, and what remarkable first-generation hybrid individual demonstrated that interbreeding between archaic hominin groups also occurred?",
+    "correct_answer": "Admixture is highest (4-6%) in Melanesians, Aboriginal Australians, and Filipino Negritos. 'Denny' from Denisova Cave had a Denisovan father and Neanderthal mother.",
+    "distractors": [
+      "Denisovan admixture is highest (roughly 10-12%) in central Asian populations such as Uzbeks and Tajiks. A fossil nicknamed 'Sima,' found in Atapuerca, was a first-generation hybrid with a Denisovan father and a Homo erectus mother.",
+      "Denisovan admixture is highest (roughly 4-6%) in sub-Saharan African populations such as the San and Hadza. A fossil nicknamed 'Altai,' found in Teshik-Tash Cave, was a first-generation hybrid with a Denisovan father and an early Homo sapiens mother.",
+      "Denisovan admixture is highest (roughly 8-10%) in northern European populations such as Scandinavians and Finns. A fossil nicknamed 'Oase,' found in Peștera cu Oase, was a first-generation hybrid with a Denisovan father and a Neanderthal mother."
+    ],
+    "difficulty": 4,
+    "source_article": "Denisovan",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Denisovan admixture"]
+  }
+]

@@ -1,0 +1,266 @@
+{
+  "domain": "social-psychology",
+  "parent_domain": "psychology",
+  "total_concepts": 50,
+  "distribution": {"L1": 13, "L2": 13, "L3": 12, "L4": 12},
+  "concepts": {
+    "L1": [
+      {
+        "concept": "conformity",
+        "wikipedia_article": "Conformity",
+        "brief_rationale": "Fundamental concept describing how individuals adjust behavior to match group norms; accessible entry point to social influence."
+      },
+      {
+        "concept": "prejudice",
+        "wikipedia_article": "Prejudice",
+        "brief_rationale": "Core topic in intergroup relations covering preformed negative attitudes toward out-group members."
+      },
+      {
+        "concept": "persuasion",
+        "wikipedia_article": "Persuasion",
+        "brief_rationale": "High-level concept covering how attitudes and behavior are changed through communication."
+      },
+      {
+        "concept": "stereotyping",
+        "wikipedia_article": "Stereotype",
+        "brief_rationale": "Everyday phenomenon of overgeneralized beliefs about social groups; widely recognized term."
+      },
+      {
+        "concept": "attitude",
+        "wikipedia_article": "Attitude (psychology)",
+        "brief_rationale": "Central organizing concept of social psychology covering evaluations of objects, people, and ideas."
+      },
+      {
+        "concept": "aggression",
+        "wikipedia_article": "Aggression",
+        "brief_rationale": "Major domain covering hostile or violent behavior; broadly understood and theoretically rich."
+      },
+      {
+        "concept": "altruism",
+        "wikipedia_article": "Altruism",
+        "brief_rationale": "Prosocial behavior concept involving selfless concern for others; widely encountered in introductory psychology."
+      },
+      {
+        "concept": "obedience",
+        "wikipedia_article": "Obedience (human behavior)",
+        "brief_rationale": "Core social influence concept describing compliance with authority; foundational for understanding Milgram's work."
+      },
+      {
+        "concept": "social influence",
+        "wikipedia_article": "Social influence",
+        "brief_rationale": "Umbrella concept capturing how individuals are affected by others; essential L1 vocabulary."
+      },
+      {
+        "concept": "discrimination",
+        "wikipedia_article": "Discrimination",
+        "brief_rationale": "Behavioral counterpart to prejudice; widely recognized term in both academic and public discourse."
+      },
+      {
+        "concept": "empathy",
+        "wikipedia_article": "Empathy",
+        "brief_rationale": "Key prosocial concept describing the capacity to understand and share others' feelings."
+      },
+      {
+        "concept": "leadership",
+        "wikipedia_article": "Leadership",
+        "brief_rationale": "Group dynamics concept examining how individuals guide and influence collectives."
+      },
+      {
+        "concept": "cooperation",
+        "wikipedia_article": "Cooperation",
+        "brief_rationale": "Prosocial behavior concept describing joint effort toward shared goals; foundational for group dynamics."
+      }
+    ],
+    "L2": [
+      {
+        "concept": "cognitive dissonance",
+        "wikipedia_article": "Cognitive dissonance",
+        "brief_rationale": "Widely taught theory explaining attitude change driven by inconsistency between beliefs and behavior."
+      },
+      {
+        "concept": "bystander effect",
+        "wikipedia_article": "Bystander effect",
+        "brief_rationale": "Classic phenomenon showing reduced helping in the presence of others; standard undergraduate curriculum."
+      },
+      {
+        "concept": "social identity theory",
+        "wikipedia_article": "Social identity theory",
+        "brief_rationale": "Major framework explaining in-group favoritism and intergroup conflict via group membership and self-concept."
+      },
+      {
+        "concept": "fundamental attribution error",
+        "wikipedia_article": "Fundamental attribution error",
+        "brief_rationale": "Key concept in attribution theory describing the tendency to over-emphasize dispositional over situational explanations."
+      },
+      {
+        "concept": "social loafing",
+        "wikipedia_article": "Social loafing",
+        "brief_rationale": "Group dynamics concept describing reduced individual effort when working collectively."
+      },
+      {
+        "concept": "groupthink",
+        "wikipedia_article": "Groupthink",
+        "brief_rationale": "Influential concept describing how group cohesion can suppress dissent and lead to poor collective decisions."
+      },
+      {
+        "concept": "in-group/out-group bias",
+        "wikipedia_article": "In-group favoritism",
+        "brief_rationale": "Core intergroup relations concept describing preferential treatment of one's own group over others."
+      },
+      {
+        "concept": "social facilitation",
+        "wikipedia_article": "Social facilitation",
+        "brief_rationale": "Classic finding that the presence of others enhances performance on well-learned tasks."
+      },
+      {
+        "concept": "self-serving bias",
+        "wikipedia_article": "Self-serving bias",
+        "brief_rationale": "Attribution bias where individuals attribute successes to internal and failures to external causes."
+      },
+      {
+        "concept": "deindividuation",
+        "wikipedia_article": "Deindividuation",
+        "brief_rationale": "Phenomenon explaining reduced self-awareness and increased antisocial behavior in groups or anonymity."
+      },
+      {
+        "concept": "door-in-the-face technique",
+        "wikipedia_article": "Door-in-the-face technique",
+        "brief_rationale": "Compliance strategy involving an initially large request followed by a smaller target request."
+      },
+      {
+        "concept": "mere exposure effect",
+        "wikipedia_article": "Mere-exposure effect",
+        "brief_rationale": "Attitude formation phenomenon where repeated exposure to a stimulus increases liking."
+      },
+      {
+        "concept": "scapegoating",
+        "wikipedia_article": "Scapegoating",
+        "brief_rationale": "Intergroup aggression concept where a weaker group is blamed for problems caused by other forces."
+      }
+    ],
+    "L3": [
+      {
+        "concept": "Milgram obedience experiment",
+        "wikipedia_article": "Milgram experiment",
+        "brief_rationale": "Landmark study requiring working knowledge of methodology, findings, and ethical implications of authority-induced obedience."
+      },
+      {
+        "concept": "Asch conformity experiments",
+        "wikipedia_article": "Asch conformity experiments",
+        "brief_rationale": "Classic line-judgment paradigm demonstrating normative social influence; requires understanding of experimental design."
+      },
+      {
+        "concept": "attribution theory",
+        "wikipedia_article": "Attribution (psychology)",
+        "brief_rationale": "Framework explaining how people assign causes to events; working knowledge includes internal/external and stable/unstable dimensions."
+      },
+      {
+        "concept": "elaboration likelihood model",
+        "wikipedia_article": "Elaboration likelihood model",
+        "brief_rationale": "Dual-route persuasion model distinguishing central and peripheral processing of attitude-relevant information."
+      },
+      {
+        "concept": "realistic conflict theory",
+        "wikipedia_article": "Realistic conflict theory",
+        "brief_rationale": "Intergroup theory linking competition over scarce resources to prejudice and discrimination; rooted in Sherif's Robbers Cave study."
+      },
+      {
+        "concept": "self-perception theory",
+        "wikipedia_article": "Self-perception theory",
+        "brief_rationale": "Bem's alternative to cognitive dissonance proposing that people infer their attitudes from observing their own behavior."
+      },
+      {
+        "concept": "social comparison theory",
+        "wikipedia_article": "Social comparison theory",
+        "brief_rationale": "Festinger's theory that individuals evaluate their opinions and abilities by comparing themselves to others."
+      },
+      {
+        "concept": "frustration-aggression hypothesis",
+        "wikipedia_article": "Frustration–aggression hypothesis",
+        "brief_rationale": "Theory proposing that frustration always leads to aggression and aggression always stems from frustration."
+      },
+      {
+        "concept": "diffusion of responsibility",
+        "wikipedia_article": "Diffusion of responsibility",
+        "brief_rationale": "Mechanism underlying the bystander effect where individuals feel less personally responsible as group size increases."
+      },
+      {
+        "concept": "contact hypothesis",
+        "wikipedia_article": "Contact hypothesis",
+        "brief_rationale": "Allport's theory that intergroup contact under specific conditions reduces prejudice; requires understanding of qualifying conditions."
+      },
+      {
+        "concept": "foot-in-the-door technique",
+        "wikipedia_article": "Foot-in-the-door technique",
+        "brief_rationale": "Compliance strategy where agreement to a small request increases likelihood of agreeing to a larger one."
+      },
+      {
+        "concept": "social exchange theory",
+        "wikipedia_article": "Social exchange theory",
+        "brief_rationale": "Economic model of relationships proposing that social behavior results from cost-benefit analyses and resource exchange."
+      }
+    ],
+    "L4": [
+      {
+        "concept": "terror management theory",
+        "wikipedia_article": "Terror management theory",
+        "brief_rationale": "Expert-level theory drawing on Becker's work proposing that awareness of mortality motivates worldview defense and self-esteem striving."
+      },
+      {
+        "concept": "self-affirmation theory",
+        "wikipedia_article": "Self-affirmation theory",
+        "brief_rationale": "Steele's theory that affirming important self-values reduces dissonance and defensive responses to threatening information."
+      },
+      {
+        "concept": "construal level theory",
+        "wikipedia_article": "Construal level theory",
+        "brief_rationale": "Theory relating psychological distance (temporal, spatial, social, hypothetical) to abstract versus concrete mental representations."
+      },
+      {
+        "concept": "system justification theory",
+        "wikipedia_article": "System justification theory",
+        "brief_rationale": "Theory proposing that people are motivated to perceive existing social, economic, and political arrangements as fair and legitimate."
+      },
+      {
+        "concept": "implicit association test",
+        "wikipedia_article": "Implicit-association test",
+        "brief_rationale": "Reaction-time measure of implicit attitudes and stereotypes requiring understanding of dual-process cognition and validity debates."
+      },
+      {
+        "concept": "social dominance theory",
+        "wikipedia_article": "Social dominance theory",
+        "brief_rationale": "Framework explaining group-based hierarchy and oppression through social dominance orientation and legitimizing myths."
+      },
+      {
+        "concept": "moral disengagement",
+        "wikipedia_article": "Moral disengagement",
+        "brief_rationale": "Bandura's theory of cognitive mechanisms by which individuals selectively disengage moral self-sanctions to perpetrate harmful acts."
+      },
+      {
+        "concept": "regulatory focus theory",
+        "wikipedia_article": "Regulatory focus theory",
+        "brief_rationale": "Higgins's theory distinguishing promotion-focused (ideals/gains) from prevention-focused (oughts/losses) self-regulation systems."
+      },
+      {
+        "concept": "objectification theory",
+        "wikipedia_article": "Objectification theory",
+        "brief_rationale": "Fredrickson and Roberts's theory explaining psychological consequences of sexual objectification via self-objectification and surveillance."
+      },
+      {
+        "concept": "optimal distinctiveness theory",
+        "wikipedia_article": "Optimal distinctiveness theory",
+        "brief_rationale": "Brewer's theory that individuals balance opposing needs for inclusion and differentiation through group identification."
+      },
+      {
+        "concept": "social tuning",
+        "wikipedia_article": "Social tuning",
+        "brief_rationale": "Process by which people adopt the attitudes of interaction partners to affiliate with them, even implicitly."
+      },
+      {
+        "concept": "identity-based motivation theory",
+        "wikipedia_article": "Identity-based motivation",
+        "brief_rationale": "Oyserman's framework integrating social identity with action, proposing that identities guide behavior through readiness and interpretation."
+      }
+    ]
+  }
+}

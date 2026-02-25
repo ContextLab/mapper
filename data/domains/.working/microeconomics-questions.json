@@ -1,0 +1,652 @@
+[
+  {
+    "question_text": "In microeconomics, what does supply and demand describe?",
+    "correct_answer": "The relationship between the availability of a good and the desire to purchase it, which determines market price.",
+    "distractors": [
+      "The government's role in setting fixed prices for essential goods and services across all industries.",
+      "The total amount of currency circulating in an economy and its effect on national inflation rates.",
+      "The process by which central banks adjust interest rates to control aggregate economic output."
+    ],
+    "difficulty": 1,
+    "source_article": "Supply and demand",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["supply and demand"]
+  },
+  {
+    "question_text": "What is a monopoly in microeconomics?",
+    "correct_answer": "A market structure in which a single seller is the sole provider of a good or service with no close substitutes.",
+    "distractors": [
+      "A market structure in which two dominant firms collude to set identical prices for their competing products.",
+      "A market structure in which many sellers offer differentiated products and freely enter or exit the industry.",
+      "A market structure in which a single buyer controls the purchase of a good or service from many sellers."
+    ],
+    "difficulty": 1,
+    "source_article": "Monopoly",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["monopoly"]
+  },
+  {
+    "question_text": "In microeconomics, what is a price?",
+    "correct_answer": "The amount of money that must be paid to acquire a given good or service in a market transaction.",
+    "distractors": [
+      "The total cost a firm incurs in producing all units of output during a single production cycle.",
+      "The value assigned to a commodity by a government regulatory agency based on production expenses.",
+      "The difference between what consumers are willing to pay and what producers are willing to accept."
+    ],
+    "difficulty": 1,
+    "source_article": "Price",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["price"]
+  },
+  {
+    "question_text": "What does competition refer to in a market context?",
+    "correct_answer": "A situation in which multiple firms independently strive to attract consumers by offering better prices or products.",
+    "distractors": [
+      "A situation in which the government intervenes to guarantee that all firms earn an equal share of revenue.",
+      "A situation in which a single firm dominates the entire market and sets prices without any rival pressure.",
+      "A situation in which firms agree cooperatively to divide the market into exclusive territories for each seller."
+    ],
+    "difficulty": 1,
+    "source_article": "Competition (economics)",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["competition"]
+  },
+  {
+    "question_text": "In microeconomics, what is profit?",
+    "correct_answer": "The financial gain a firm earns when its total revenue exceeds its total costs of production.",
+    "distractors": [
+      "The total amount of money a firm receives from selling its goods before subtracting any expenses.",
+      "The additional cost incurred by a firm when it produces one more unit of output beyond current levels.",
+      "The fixed payments a firm must make regardless of how many units of output it produces."
+    ],
+    "difficulty": 1,
+    "source_article": "Profit (economics)",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["profit"]
+  },
+  {
+    "question_text": "What is a market in economics?",
+    "correct_answer": "A system or arrangement in which buyers and sellers interact to exchange goods, services, or resources.",
+    "distractors": [
+      "A government institution that regulates and controls all commercial transactions within a national economy.",
+      "A physical warehouse where manufacturers store finished products before distributing them to retail outlets.",
+      "A legal contract specifying the exact terms under which two parties agree to trade a single asset."
+    ],
+    "difficulty": 1,
+    "source_article": "Market (economics)",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["market"]
+  },
+  {
+    "question_text": "What does scarcity mean in microeconomics?",
+    "correct_answer": "The fundamental condition in which unlimited human wants exceed the limited resources available to fulfill them.",
+    "distractors": [
+      "The temporary shortage of a specific product caused by an unexpected spike in consumer demand during a crisis.",
+      "The deliberate restriction of output by a monopolist to increase the market price of its product.",
+      "The reduction in a country's total wealth that occurs when it runs a persistent trade deficit."
+    ],
+    "difficulty": 1,
+    "source_article": "Scarcity",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["scarcity"]
+  },
+  {
+    "question_text": "Who is a consumer in microeconomics?",
+    "correct_answer": "An individual or entity that purchases and uses goods or services to satisfy personal needs or wants.",
+    "distractors": [
+      "An individual or entity that manufactures raw materials and sells them to wholesalers for further processing.",
+      "An individual or entity that invests capital into firms and earns returns through dividends or interest.",
+      "An individual or entity that regulates market transactions and enforces contracts between buyers and sellers."
+    ],
+    "difficulty": 1,
+    "source_article": "Consumer",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["consumer"]
+  },
+  {
+    "question_text": "Who is a producer in economics?",
+    "correct_answer": "An individual or firm that creates goods or services and offers them for sale in a market.",
+    "distractors": [
+      "An individual or firm that exclusively distributes finished products from manufacturers to retail store locations.",
+      "An individual or firm that purchases goods or services for personal consumption rather than for resale.",
+      "An individual or firm that provides loans and financial capital to businesses in exchange for interest."
+    ],
+    "difficulty": 1,
+    "source_article": "Production (economics)",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["producer"]
+  },
+  {
+    "question_text": "What is a subsidy in microeconomics?",
+    "correct_answer": "A payment made by the government to producers or consumers to encourage the production or purchase of a good.",
+    "distractors": [
+      "A mandatory fee imposed by the government on firms that pollute the environment beyond permitted emission levels.",
+      "A tax levied on imported goods to protect domestic industries from cheaper foreign competition in markets.",
+      "A fine charged to firms that engage in anti-competitive behavior such as price fixing or market allocation."
+    ],
+    "difficulty": 1,
+    "source_article": "Subsidy",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["subsidy"]
+  },
+  {
+    "question_text": "What is a tax in the context of microeconomics?",
+    "correct_answer": "A compulsory financial charge imposed by a government on individuals or firms to fund public expenditures.",
+    "distractors": [
+      "A voluntary donation made by firms to community organizations in order to improve their public reputation.",
+      "A payment made by the government to producers that lowers the cost of supplying goods to consumers.",
+      "A fee charged by a private firm to its customers for the delivery and handling of purchased goods."
+    ],
+    "difficulty": 1,
+    "source_article": "Tax",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["tax"]
+  },
+  {
+    "question_text": "What is an incentive in microeconomics?",
+    "correct_answer": "A reward, penalty, or motivation that influences the choices and behavior of individuals or firms.",
+    "distractors": [
+      "A government regulation that mandates the exact quantity of goods each firm is permitted to produce.",
+      "A fixed cost that a firm must pay regardless of the level of output it chooses to produce.",
+      "A contractual obligation requiring a buyer to purchase a minimum quantity of goods from a single seller."
+    ],
+    "difficulty": 1,
+    "source_article": "Incentive",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["incentive"]
+  },
+  {
+    "question_text": "What is opportunity cost?",
+    "correct_answer": "The value of the best alternative foregone when a choice is made among several mutually exclusive options.",
+    "distractors": [
+      "The total monetary expense a firm incurs when it purchases all inputs needed for a single production run.",
+      "The additional revenue a firm gains by selling one more unit of output at the prevailing market price.",
+      "The difference between a product's retail price and the wholesale cost paid by the seller to acquire it."
+    ],
+    "difficulty": 1,
+    "source_article": "Opportunity cost",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["opportunity cost"]
+  },
+  {
+    "question_text": "What does price elasticity of demand measure?",
+    "correct_answer": "The percentage change in quantity demanded of a good divided by the percentage change in its price.",
+    "distractors": [
+      "The percentage change in a firm's total revenue divided by the percentage change in its advertising spending.",
+      "The percentage change in quantity supplied of a good divided by the percentage change in input costs.",
+      "The percentage change in consumer income divided by the percentage change in the overall price level."
+    ],
+    "difficulty": 2,
+    "source_article": "Price elasticity of demand",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["price elasticity of demand"]
+  },
+  {
+    "question_text": "What is marginal cost?",
+    "correct_answer": "The additional cost incurred by producing one more unit of output, calculated as the change in total cost.",
+    "distractors": [
+      "The average cost per unit obtained by dividing a firm's total cost by the total number of units produced.",
+      "The fixed overhead cost that remains constant regardless of how many units a firm decides to produce.",
+      "The total variable cost a firm pays for all labor and materials used in the entire production process."
+    ],
+    "difficulty": 2,
+    "source_article": "Marginal cost",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["marginal cost"]
+  },
+  {
+    "question_text": "What is marginal utility in consumer theory?",
+    "correct_answer": "The additional satisfaction or benefit a consumer gains from consuming one more unit of a good or service.",
+    "distractors": [
+      "The total satisfaction a consumer derives from consuming all units of a good purchased during a given period.",
+      "The reduction in production cost a firm achieves by increasing its scale of operations by one additional unit.",
+      "The extra revenue a firm receives when it raises the selling price of its product by one monetary unit."
+    ],
+    "difficulty": 2,
+    "source_article": "Marginal utility",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["marginal utility"]
+  },
+  {
+    "question_text": "What is consumer surplus?",
+    "correct_answer": "The difference between the maximum price a consumer is willing to pay and the actual market price paid.",
+    "distractors": [
+      "The difference between a firm's total revenue from sales and its total variable cost of production.",
+      "The difference between the market price of a good and the minimum price at which a producer will sell.",
+      "The difference between a consumer's total income and the total amount spent on all goods and services."
+    ],
+    "difficulty": 2,
+    "source_article": "Consumer surplus",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["consumer surplus"]
+  },
+  {
+    "question_text": "What is producer surplus?",
+    "correct_answer": "The difference between the market price a producer receives and the minimum price at which it would supply the good.",
+    "distractors": [
+      "The difference between a consumer's willingness to pay for a good and the actual price paid at market equilibrium.",
+      "The total profit a firm earns after subtracting all fixed and variable costs from its total sales revenue.",
+      "The excess quantity of goods that producers supply when the market price is set above the equilibrium level."
+    ],
+    "difficulty": 2,
+    "source_article": "Producer surplus",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["producer surplus"]
+  },
+  {
+    "question_text": "What is a Nash equilibrium in game theory?",
+    "correct_answer": "An outcome in which no player can improve their payoff by unilaterally changing their own strategy.",
+    "distractors": [
+      "An outcome in which all players cooperate fully and share the maximum total payoff equally among themselves.",
+      "An outcome in which one dominant player dictates the strategies that all other players must follow.",
+      "An outcome in which every player simultaneously changes strategy until total social welfare is maximized."
+    ],
+    "difficulty": 2,
+    "source_article": "Nash equilibrium",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Nash equilibrium"]
+  },
+  {
+    "question_text": "What is price discrimination?",
+    "correct_answer": "The practice of charging different prices to different consumers for the same good based on willingness to pay.",
+    "distractors": [
+      "The practice of setting a single uniform price for all consumers regardless of differences in production costs.",
+      "The practice of lowering prices below cost to drive competitors out of the market and gain monopoly power.",
+      "The practice of raising prices equally for all consumers in response to an increase in the cost of inputs."
+    ],
+    "difficulty": 2,
+    "source_article": "Price discrimination",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["price discrimination"]
+  },
+  {
+    "question_text": "What characterizes an oligopoly market structure?",
+    "correct_answer": "A market dominated by a small number of firms whose decisions are interdependent and strategically influenced by rivals.",
+    "distractors": [
+      "A market with a single firm that faces no competition and can set prices without considering any rival's behavior.",
+      "A market with many small firms selling identical products where no individual firm can influence the market price.",
+      "A market in which the government owns all production facilities and centrally determines output and pricing decisions."
+    ],
+    "difficulty": 2,
+    "source_article": "Oligopoly",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["oligopoly"]
+  },
+  {
+    "question_text": "What is an externality in microeconomics?",
+    "correct_answer": "A cost or benefit of a transaction that affects a third party who did not choose to be involved.",
+    "distractors": [
+      "A direct cost that a firm pays to its suppliers for raw materials used in the production process.",
+      "A benefit that a consumer receives from purchasing a good at a price below its true market value.",
+      "A fee that a government charges to firms for the right to operate within a specific industry sector."
+    ],
+    "difficulty": 2,
+    "source_article": "Externality",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["externality"]
+  },
+  {
+    "question_text": "What defines a public good in economics?",
+    "correct_answer": "A good that is non-excludable and non-rivalrous, meaning no one can be prevented from using it and one person's use does not reduce availability.",
+    "distractors": [
+      "A good that is produced and sold exclusively by government agencies and cannot be legally offered by private firms.",
+      "A good that is available only to citizens who pay taxes and whose consumption by one person reduces the amount for others.",
+      "A good that is sold at a price set below market equilibrium by the government to ensure all consumers can afford it."
+    ],
+    "difficulty": 2,
+    "source_article": "Public good (economics)",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["public good"]
+  },
+  {
+    "question_text": "What does an indifference curve represent?",
+    "correct_answer": "A curve showing all combinations of two goods that give a consumer the same level of total satisfaction.",
+    "distractors": [
+      "A curve showing all combinations of two goods that a firm can produce given its fixed resource constraints.",
+      "A curve showing how the quantity demanded of a good changes as its price rises or falls over time.",
+      "A curve showing the relationship between total cost and total output for a firm at various production levels."
+    ],
+    "difficulty": 2,
+    "source_article": "Indifference curve",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["indifference curve"]
+  },
+  {
+    "question_text": "What does a budget constraint represent in consumer theory?",
+    "correct_answer": "The set of all combinations of goods a consumer can afford given their income and the prices of goods.",
+    "distractors": [
+      "The set of all combinations of goods that yield the same level of utility for a rational consumer.",
+      "The set of all output levels a firm can achieve given its fixed capital and available labor supply.",
+      "The set of all price-quantity pairs at which the market for a particular good reaches equilibrium."
+    ],
+    "difficulty": 2,
+    "source_article": "Budget constraint",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["budget constraint"]
+  },
+  {
+    "question_text": "What is deadweight loss?",
+    "correct_answer": "The loss in total surplus that occurs when a market is not operating at its efficient equilibrium quantity.",
+    "distractors": [
+      "The profit that a monopolist earns by charging a price above the marginal cost of producing each unit.",
+      "The total tax revenue collected by the government when it imposes a per-unit tax on a traded good.",
+      "The fixed cost that a firm must pay even when it temporarily shuts down and produces zero units of output."
+    ],
+    "difficulty": 2,
+    "source_article": "Deadweight loss",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["deadweight loss"]
+  },
+  {
+    "question_text": "When is an allocation considered Pareto efficient?",
+    "correct_answer": "When no reallocation can make any individual better off without making at least one other individual worse off.",
+    "distractors": [
+      "When every individual in the economy receives an exactly equal share of all available goods and resources.",
+      "When the total output of the economy is maximized regardless of how the resulting surplus is distributed.",
+      "When the government has redistributed resources so that the poorest member of society is as well off as possible."
+    ],
+    "difficulty": 3,
+    "source_article": "Pareto efficiency",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Pareto efficiency"]
+  },
+  {
+    "question_text": "What does the Coase theorem state about externalities?",
+    "correct_answer": "If property rights are well-defined and transaction costs are zero, private bargaining will lead to an efficient outcome regardless of initial allocation.",
+    "distractors": [
+      "If the government imposes a corrective tax equal to the marginal external cost, the socially optimal output will always be achieved.",
+      "If firms are required to compensate all affected third parties, the total level of pollution will drop to zero over time.",
+      "If property rights are evenly divided among all citizens, markets will automatically eliminate every negative externality without negotiation."
+    ],
+    "difficulty": 3,
+    "source_article": "Coase theorem",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Coase theorem"]
+  },
+  {
+    "question_text": "What is adverse selection in economics?",
+    "correct_answer": "A market situation where asymmetric information causes higher-risk individuals to be more likely to participate in a transaction.",
+    "distractors": [
+      "A market situation where consumers deliberately switch to inferior goods when their income unexpectedly increases.",
+      "A market situation where firms collude secretly to raise prices above the competitive level and split the profits.",
+      "A market situation where government regulations unintentionally encourage firms to increase their production of pollutants."
+    ],
+    "difficulty": 3,
+    "source_article": "Adverse selection",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["adverse selection"]
+  },
+  {
+    "question_text": "What is moral hazard in economics?",
+    "correct_answer": "The tendency of a party to take greater risks because the costs of those risks are borne by another party.",
+    "distractors": [
+      "The tendency of consumers to purchase more of a good when its price falls due to income and substitution effects.",
+      "The tendency of firms to exit a market when profits decline below the level needed to cover variable costs.",
+      "The tendency of regulators to favor the industries they oversee due to future employment opportunities in those industries."
+    ],
+    "difficulty": 3,
+    "source_article": "Moral hazard",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["moral hazard"]
+  },
+  {
+    "question_text": "What does game theory study in microeconomics?",
+    "correct_answer": "Strategic interactions among rational decision-makers where each player's outcome depends on the actions chosen by all players.",
+    "distractors": [
+      "Statistical methods for estimating the probability distributions of market prices using historical sales transaction data.",
+      "The optimal allocation of government budgets across public programs to maximize aggregate social welfare over time.",
+      "The behavioral biases that cause individual consumers to make systematically irrational purchasing decisions in retail markets."
+    ],
+    "difficulty": 3,
+    "source_article": "Game theory",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["game theory"]
+  },
+  {
+    "question_text": "What is the principal-agent problem?",
+    "correct_answer": "A conflict of interest arising when an agent makes decisions on behalf of a principal but has different incentives.",
+    "distractors": [
+      "A coordination failure arising when two firms simultaneously attempt to enter the same market and both incur losses.",
+      "A pricing dilemma arising when a monopolist must choose between maximizing short-run profits and deterring potential entrants.",
+      "A bargaining impasse arising when a buyer and seller cannot agree on a price because of symmetric information."
+    ],
+    "difficulty": 3,
+    "source_article": "Principal–agent problem",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["principal-agent problem"]
+  },
+  {
+    "question_text": "What happens when a binding price ceiling is set below the equilibrium price?",
+    "correct_answer": "A shortage results because the quantity demanded exceeds the quantity supplied at the artificially low mandated price.",
+    "distractors": [
+      "A surplus results because producers increase output to take advantage of the higher guaranteed minimum price level.",
+      "The market reaches a new equilibrium because consumers voluntarily reduce their demand to match the available supply.",
+      "No effect occurs because rational firms will simply ignore the regulation and continue charging the equilibrium price."
+    ],
+    "difficulty": 3,
+    "source_article": "Price ceiling",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["price ceiling"]
+  },
+  {
+    "question_text": "What does the theory of revealed preference assert?",
+    "correct_answer": "A consumer's preferences can be inferred from observed purchasing choices made under varying prices and income levels.",
+    "distractors": [
+      "A consumer's preferences can only be determined by direct survey questions about their subjective satisfaction with each good.",
+      "A consumer's preferences are fixed at birth and remain completely unchanged by market prices or income fluctuations.",
+      "A consumer's preferences are fully determined by the advertising expenditures of firms competing in the relevant market."
+    ],
+    "difficulty": 3,
+    "source_article": "Revealed preference",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["revealed preference"]
+  },
+  {
+    "question_text": "What is a Giffen good?",
+    "correct_answer": "An inferior good for which quantity demanded increases when its price rises, violating the typical law of demand.",
+    "distractors": [
+      "A luxury good for which quantity demanded rises proportionally faster than income as consumers become wealthier over time.",
+      "A normal good for which quantity demanded falls when its price rises, consistent with the standard law of demand.",
+      "A substitute good for which quantity demanded increases when the price of a competing similar product also increases."
+    ],
+    "difficulty": 3,
+    "source_article": "Giffen good",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Giffen good"]
+  },
+  {
+    "question_text": "What does compensating variation measure?",
+    "correct_answer": "The amount of money a consumer would need after a price change to remain at their original utility level.",
+    "distractors": [
+      "The amount of money a consumer would pay before a price change to avoid the change from occurring entirely.",
+      "The amount of money a firm must spend to offset the increase in marginal cost caused by a new tax.",
+      "The amount of money the government collects in tax revenue when it imposes a per-unit excise tax on goods."
+    ],
+    "difficulty": 3,
+    "source_article": "Compensating variation",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["compensating variation"]
+  },
+  {
+    "question_text": "In Stackelberg competition, what distinguishes the leader firm from the follower?",
+    "correct_answer": "The leader commits to its output quantity first, and the follower then optimizes its own output given the leader's choice.",
+    "distractors": [
+      "The leader sets the market price first, and the follower must sell an identical product at exactly the same price.",
+      "The leader and follower simultaneously choose their output quantities without any knowledge of each other's decisions.",
+      "The leader has lower marginal costs than the follower, which allows it to capture the entire market demand."
+    ],
+    "difficulty": 3,
+    "source_article": "Stackelberg competition",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Stackelberg competition"]
+  },
+  {
+    "question_text": "What defines a natural monopoly?",
+    "correct_answer": "An industry where a single firm can supply the entire market at lower cost than two or more firms due to economies of scale.",
+    "distractors": [
+      "An industry where the government grants an exclusive legal right to one firm to produce and sell a specific product.",
+      "An industry where one firm controls all essential raw material inputs and can block other firms from entering production.",
+      "An industry where high consumer brand loyalty prevents any new competitor from gaining a meaningful share of the market."
+    ],
+    "difficulty": 3,
+    "source_article": "Natural monopoly",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["natural monopoly"]
+  },
+  {
+    "question_text": "What does Arrow's impossibility theorem prove?",
+    "correct_answer": "No ranked voting system can simultaneously satisfy a specific set of fairness criteria when there are three or more alternatives.",
+    "distractors": [
+      "No competitive market can achieve a Pareto efficient allocation when consumers have strictly convex preference orderings over goods.",
+      "No bargaining mechanism can guarantee that both buyer and seller will truthfully reveal their private valuations in trade.",
+      "No tax system can redistribute income without creating deadweight loss when consumers have perfectly inelastic demand for goods."
+    ],
+    "difficulty": 4,
+    "source_article": "Arrow's impossibility theorem",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Arrow's impossibility theorem"]
+  },
+  {
+    "question_text": "What is mechanism design in economics?",
+    "correct_answer": "The field that designs rules and institutions to achieve desired outcomes when participants have private information and act strategically.",
+    "distractors": [
+      "The field that studies how existing market institutions evolve naturally over time through repeated competitive interactions among firms.",
+      "The field that analyzes the mechanical engineering constraints on production technology in manufacturing and industrial processes.",
+      "The field that measures the efficiency of government bureaucracies by comparing their administrative costs to total public spending."
+    ],
+    "difficulty": 4,
+    "source_article": "Mechanism design",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["mechanism design"]
+  },
+  {
+    "question_text": "What does the Myerson-Satterthwaite theorem establish?",
+    "correct_answer": "No mechanism can guarantee efficient bilateral trade between a buyer and seller when both have private valuations, without external subsidy.",
+    "distractors": [
+      "No auction format can guarantee that the highest-valued bidder always wins the item when bidders have correlated private signals.",
+      "No competitive equilibrium can exist in a market with increasing returns to scale and free entry by new firms.",
+      "No voting rule can aggregate individual preferences into a consistent social ranking when there are more than two candidates."
+    ],
+    "difficulty": 4,
+    "source_article": "Myerson–Satterthwaite theorem",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Myerson-Satterthwaite theorem"]
+  },
+  {
+    "question_text": "What does auction theory primarily study?",
+    "correct_answer": "How different auction rules affect bidding strategies, revenue, and efficiency when buyers have private valuations for goods.",
+    "distractors": [
+      "How government regulators set reserve prices for natural resources to maximize long-term public revenue from extraction rights.",
+      "How stock exchanges match buy and sell orders using continuous double-auction mechanisms during regular trading hours.",
+      "How nonprofit organizations design fundraising campaigns to maximize charitable donations from individuals with varying income levels."
+    ],
+    "difficulty": 4,
+    "source_article": "Auction theory",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["auction theory"]
+  },
+  {
+    "question_text": "What property defines the Vickrey-Clarke-Groves (VCG) mechanism?",
+    "correct_answer": "It achieves an efficient allocation and makes truthful reporting a dominant strategy by charging each agent their externality on others.",
+    "distractors": [
+      "It maximizes total government revenue by charging each bidder the highest price they are willing to pay for the item.",
+      "It ensures that every participant receives a perfectly equal share of the total surplus generated by the allocation decision.",
+      "It guarantees budget balance by collecting payments from winners that exactly cover the subsidies paid to all losing participants."
+    ],
+    "difficulty": 4,
+    "source_article": "Vickrey–Clarke–Groves mechanism",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Vickrey-Clarke-Groves mechanism"]
+  },
+  {
+    "question_text": "What does Hotelling's law predict about firm location and product differentiation?",
+    "correct_answer": "Competing firms tend to make their products as similar as possible and cluster together to capture the median consumer.",
+    "distractors": [
+      "Competing firms tend to maximize product differentiation and locate as far apart as possible to avoid direct price competition.",
+      "Competing firms tend to set identical prices regardless of their locations because consumers always choose the nearest available seller.",
+      "Competing firms tend to exit the market sequentially until only one firm remains, creating a natural monopoly over time."
+    ],
+    "difficulty": 4,
+    "source_article": "Hotelling's law",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Hotelling's law"]
+  },
+  {
+    "question_text": "What does the Slutsky equation decompose a price change's effect into?",
+    "correct_answer": "A substitution effect at constant utility and an income effect reflecting the change in the consumer's real purchasing power.",
+    "distractors": [
+      "A supply effect reflecting changes in producer behavior and a demand effect reflecting changes in consumer willingness to pay.",
+      "A short-run effect where only variable inputs adjust and a long-run effect where all inputs can be freely adjusted.",
+      "A direct effect on the good whose price changed and a cross effect on the quantities demanded of all other goods."
+    ],
+    "difficulty": 4,
+    "source_article": "Slutsky equation",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Slutsky equation"]
+  },
+  {
+    "question_text": "What does the folk theorem in repeated games establish?",
+    "correct_answer": "Any individually rational payoff vector can be sustained as a Nash equilibrium outcome when the game is repeated infinitely with sufficiently patient players.",
+    "distractors": [
+      "The unique Nash equilibrium of any one-shot game remains the only possible outcome even when that game is repeated infinitely many times.",
+      "Cooperation is impossible in repeated games because each player's dominant strategy is to defect in every single round of play.",
+      "Only the Pareto optimal outcome can be sustained in a repeated game regardless of the discount factor used by the players."
+    ],
+    "difficulty": 4,
+    "source_article": "Folk theorem (game theory)",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["folk theorem"]
+  },
+  {
+    "question_text": "In a signaling game, what does the informed party do?",
+    "correct_answer": "Takes a costly observable action to credibly convey private information about their type to an uninformed party.",
+    "distractors": [
+      "Offers a menu of contracts designed so that each type of uninformed party self-selects the intended option.",
+      "Waits passively for the uninformed party to propose terms and then accepts or rejects the final offer.",
+      "Randomly chooses an action to prevent the uninformed party from drawing any inference about their true type."
+    ],
+    "difficulty": 4,
+    "source_article": "Signaling game",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["signaling game"]
+  },
+  {
+    "question_text": "What is screening in contract theory?",
+    "correct_answer": "A strategy where the uninformed party offers a menu of contracts to induce the informed party to reveal their private type.",
+    "distractors": [
+      "A strategy where the informed party takes a costly action to credibly signal their private type to the uninformed party.",
+      "A strategy where a regulator inspects firms at random to detect whether they are complying with environmental quality standards.",
+      "A strategy where firms eliminate unprofitable product lines by comparing the marginal cost and marginal revenue of each item."
+    ],
+    "difficulty": 4,
+    "source_article": "Screening (economics)",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["screening"]
+  },
+  {
+    "question_text": "In Spence's signaling model, why does education serve as a signal of worker ability?",
+    "correct_answer": "Because high-ability workers find education less costly to obtain, making it a credible way to separate themselves from low-ability workers.",
+    "distractors": [
+      "Because education directly increases every worker's productivity by the same amount, making firms willing to pay higher wages to graduates.",
+      "Because employers legally require a minimum education level and cannot hire workers who lack the specified formal credential.",
+      "Because low-ability workers find education equally affordable but choose not to pursue it due to a preference for leisure time."
+    ],
+    "difficulty": 4,
+    "source_article": "Signalling (economics)",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["Spence's signaling model"]
+  },
+  {
+    "question_text": "What does general equilibrium theory analyze?",
+    "correct_answer": "The simultaneous determination of prices and quantities across all interconnected markets in an economy to find a consistent equilibrium.",
+    "distractors": [
+      "The determination of price and quantity in a single isolated market while holding conditions in all other markets constant.",
+      "The dynamic adjustment process by which a disequilibrium economy converges to a steady-state growth path over many decades.",
+      "The optimal fiscal and monetary policy mix that a government should adopt to stabilize aggregate output and employment levels."
+    ],
+    "difficulty": 4,
+    "source_article": "General equilibrium theory",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["general equilibrium"]
+  }
+]

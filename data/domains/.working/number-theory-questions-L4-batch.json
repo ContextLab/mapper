@@ -1,0 +1,80 @@
+[
+  {
+    "question_text": "The ring of integers $\\mathcal{O}_K$ of a number field $K$ of degree $n$ over $\\mathbb{Q}$ is a free $\\mathbb{Z}$-module. What determines the rank of this module, and what structural consequence does this have for factorization within $\\mathcal{O}_K$?",
+    "correct_answer": "The rank equals $[K:\\mathbb{Q}]$; element factorization may fail, but $\\mathcal{O}_K$ is a Dedekind domain so ideals factor uniquely into prime ideals.",
+    "distractors": [
+      "The rank equals the class number $h_K$; element factorization may fail, but $\\mathcal{O}_K$ is a PID so ideals factor uniquely into prime ideals.",
+      "The rank equals $[K:\\mathbb{Q}]$; unique element factorization always holds because $\\mathcal{O}_K$ is a unique factorization domain for every number field.",
+      "The rank equals the discriminant $\\Delta_K$; element factorization may fail, but $\\mathcal{O}_K$ is Dedekind so ideals factor uniquely into prime ideals."
+    ],
+    "difficulty": 4,
+    "source_article": "Ring of integers",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["ring of integers"]
+  },
+  {
+    "question_text": "A Dedekind domain that is not a field admits several equivalent characterizations. Which of the following correctly states one such characterization involving localization, and what classical structure does it connect to?",
+    "correct_answer": "A Noetherian domain is Dedekind if and only if its localization at every maximal ideal is a discrete valuation ring, globalizing the DVR concept.",
+    "distractors": [
+      "A Noetherian domain is Dedekind if and only if its localization at every prime ideal is a principal ideal domain, globalizing the PID concept.",
+      "An integral domain is Dedekind if and only if its localization at every maximal ideal is a Euclidean domain, globalizing the GCD domain concept.",
+      "A Noetherian domain is Dedekind if and only if its completion at every maximal ideal is a discrete valuation ring, globalizing the DVR concept."
+    ],
+    "difficulty": 4,
+    "source_article": "Dedekind domain",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["Dedekind domain"]
+  },
+  {
+    "question_text": "An $L$-function typically begins as a Dirichlet series with an Euler product over primes, then is extended via analytic continuation. What axiomatic framework attempts to capture the essential properties shared by all $L$-functions, and what key structural feature does it require?",
+    "correct_answer": "The Selberg class axiomatizes $L$-functions by requiring an Euler product, analytic continuation to a meromorphic function, and a functional equation relating $s$ to $1-s$.",
+    "distractors": [
+      "The Langlands class axiomatizes $L$-functions by requiring an Euler product, holomorphicity on the entire complex plane, and a functional equation relating $s$ to $\\bar{s}$.",
+      "The Selberg class axiomatizes $L$-functions by requiring a Dirichlet series, holomorphicity on the critical strip, and a functional equation relating $s$ to $2-s$.",
+      "The Artin class axiomatizes $L$-functions by requiring an Euler product, analytic continuation to a meromorphic function, and a functional equation relating $s$ to $-s$."
+    ],
+    "difficulty": 4,
+    "source_article": "L-function",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["L-function"]
+  },
+  {
+    "question_text": "The Mordell--Weil theorem establishes that the group $E(\\mathbb{Q})$ of rational points on an elliptic curve $E/\\mathbb{Q}$ is finitely generated. What is the non-singularity condition on the short Weierstrass form $y^2 = x^3 + ax + b$, and what invariant classifies isomorphism classes of elliptic curves over algebraically closed fields?",
+    "correct_answer": "Non-singularity requires the discriminant condition $4a^3 + 27b^2 \\neq 0$, and the $j$-invariant $j = -1728 \\cdot \\frac{(4a)^3}{4a^3 + 27b^2}$ classifies isomorphism classes.",
+    "distractors": [
+      "Non-singularity requires the discriminant condition $a^2 - 4b \\neq 0$, and the $j$-invariant $j = -1728 \\cdot \\frac{a^3}{a^2 - 4b}$ classifies isomorphism classes.",
+      "Non-singularity requires the discriminant condition $4a^3 + 27b^2 \\neq 0$, and the conductor $N = \\prod p^{f_p}$ classifies isomorphism classes.",
+      "Non-singularity requires the discriminant condition $27a^2 + 4b^3 \\neq 0$, and the $j$-invariant $j = 1728 \\cdot \\frac{(4a)^3}{27a^2 + 4b^3}$ classifies isomorphism classes."
+    ],
+    "difficulty": 4,
+    "source_article": "Elliptic curve",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["elliptic curve"]
+  },
+  {
+    "question_text": "A modular form of weight $k$ for $\\mathrm{SL}_2(\\mathbb{Z})$ satisfies $f\\!\\left(\\frac{az+b}{cz+d}\\right) = (cz+d)^k f(z)$. What additional condition distinguishes a cusp form from a general modular form, and what consequence does this have for its Fourier expansion $f(z) = \\sum a_n q^n$ where $q = e^{2\\pi i z}$?",
+    "correct_answer": "A cusp form vanishes at every cusp, so $f(z) \\to 0$ as $\\mathrm{Im}(z) \\to \\infty$ for all $\\gamma \\in \\mathrm{SL}_2(\\mathbb{Z})$, forcing $a_0 = 0$.",
+    "distractors": [
+      "A cusp form is bounded at every cusp, so $|f(z)|$ stays finite as $\\mathrm{Im}(z) \\to \\infty$ for all $\\gamma \\in \\mathrm{SL}_2(\\mathbb{Z})$, forcing $a_0 = 0$.",
+      "A cusp form vanishes at every cusp, so $f(z) \\to 0$ as $\\mathrm{Im}(z) \\to \\infty$ for all $\\gamma \\in \\mathrm{SL}_2(\\mathbb{Z})$, forcing $a_{2n} = 0$.",
+      "A cusp form has poles at every cusp, so $f(z) \\to \\infty$ as $\\mathrm{Im}(z) \\to \\infty$ for all $\\gamma \\in \\mathrm{SL}_2(\\mathbb{Z})$, forcing $a_0 = 0$."
+    ],
+    "difficulty": 4,
+    "source_article": "Modular form",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["modular form"]
+  },
+  {
+    "question_text": "The Birch and Swinnerton-Dyer conjecture relates the rank $r$ of an elliptic curve $E/\\mathbb{Q}$ to its $L$-function $L(E,s)$. What does the strong form of the conjecture predict about the leading Taylor coefficient $\\frac{L^{(r)}(E,1)}{r!}$, and which theorem establishes the conjecture when $L(E,s)$ has a first-order zero at $s=1$?",
+    "correct_answer": "The leading coefficient equals $\\frac{\\#\\mathrm{Sha}(E) \\cdot \\Omega_E \\cdot R_E \\cdot \\prod c_p}{(\\#E_{\\mathrm{tor}})^2}$, and the Gross--Zagier theorem combined with Kolyvagin's work proves the rank-1 case.",
+    "distractors": [
+      "The leading coefficient equals $\\frac{\\#\\mathrm{Sha}(E) \\cdot \\Omega_E \\cdot R_E \\cdot \\prod c_p}{\\#E_{\\mathrm{tor}}}$, and Wiles's modularity theorem alone proves the rank-1 case.",
+      "The leading coefficient equals $\\frac{\\#\\mathrm{Sha}(E) \\cdot \\Omega_E \\cdot R_E \\cdot \\prod c_p}{(\\#E_{\\mathrm{tor}})^2}$, and the Coates--Wiles theorem alone proves the rank-1 case.",
+      "The leading coefficient equals $\\frac{R_E \\cdot \\prod c_p}{\\#\\mathrm{Sha}(E) \\cdot (\\#E_{\\mathrm{tor}})^2}$, and the Gross--Zagier theorem combined with Kolyvagin's work proves the rank-1 case."
+    ],
+    "difficulty": 4,
+    "source_article": "Birch and Swinnerton-Dyer conjecture",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["Birch and Swinnerton-Dyer conjecture"]
+  }
+]

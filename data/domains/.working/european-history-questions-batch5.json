@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "The Annales school revolutionized historiography by rejecting political narrative in favor of long-term structural analysis. What was the journal's founding year and institutional home, and who were its two co-founders?",
+    "correct_answer": "Founded in 1929 at the University of Strasbourg by Marc Bloch and Lucien Febvre, it emphasized economic, social, and geographical approaches over political narrative.",
+    "distractors": [
+      "Founded in 1919 at the Sorbonne by Fernand Braudel and Georges Duby, the journal emphasized quantitative demographic analysis over traditional diplomatic and military history.",
+      "Founded in 1935 at the Collège de France by Henri Berr and Lucien Febvre, the journal emphasized cultural anthropology and mentalité studies over traditional institutional history.",
+      "Founded in 1929 at the École Normale Supérieure by Marc Bloch and Fernand Braudel, the journal emphasized comparative civilizational studies over traditional biographical narratives."
+    ],
+    "difficulty": 4,
+    "source_article": "Annales school",
+    "domain_ids": ["european-history"],
+    "concepts_tested": ["Annales school"]
+  },
+  {
+    "question_text": "The Dolchstoßlegende became central to German right-wing politics after 1918. Who publicly lent this myth credibility through testimony before a parliamentary inquiry committee in November 1919?",
+    "correct_answer": "Field Marshal Paul von Hindenburg testified that the German army had been 'stabbed in the back,' using words actually drafted by Erich Ludendorff.",
+    "distractors": [
+      "General Erich Ludendorff testified that the German navy had been 'betrayed from within,' using words drafted by Kaiser Wilhelm II before his abdication.",
+      "Chancellor Friedrich Ebert testified that the German home front had been 'sabotaged by Marxists,' using words drafted by Field Marshal August von Mackensen.",
+      "General Hans von Seeckt testified that the German officer corps had been 'undermined by republicans,' using words drafted by Foreign Minister Walther Rathenau."
+    ],
+    "difficulty": 4,
+    "source_article": "Stab-in-the-back myth",
+    "domain_ids": ["european-history"],
+    "concepts_tested": ["Stab-in-the-back myth"]
+  },
+  {
+    "question_text": "The medieval concept of translatio imperii drew on biblical prophecy to legitimize successive empires. From which biblical text did Jerome derive the four-kingdom scheme underlying this doctrine?",
+    "correct_answer": "Jerome's commentary on the Book of Daniel interpreted Nebuchadnezzar's dream of four metals as representing Babylon, Medo-Persia, Greece, and Rome in ordained succession.",
+    "distractors": [
+      "Jerome's commentary on the Book of Revelation interpreted the four horsemen as representing Egypt, Assyria, Persia, and Rome in apocalyptic succession.",
+      "Jerome's commentary on the Book of Isaiah interpreted the four winds as representing Carthage, Macedonia, Parthia, and Rome in prophetic succession.",
+      "Jerome's commentary on the Book of Ezekiel interpreted the four living creatures as representing Babylon, Egypt, Greece, and Persia in divine succession."
+    ],
+    "difficulty": 4,
+    "source_article": "Translatio imperii",
+    "domain_ids": ["european-history"],
+    "concepts_tested": ["translatio imperii"]
+  },
+  {
+    "question_text": "During the July Crisis of 1914, Austria-Hungary delivered a deliberately unacceptable ultimatum to Serbia. On what date was it delivered, and how did Serbia respond?",
+    "correct_answer": "Delivered July 23, 1914 with a 48-hour deadline, Serbia accepted nearly all demands but rejected allowing Austrian officials to investigate on Serbian soil.",
+    "distractors": [
+      "Delivered July 28, 1914 with a 24-hour deadline, Serbia rejected all demands outright and immediately ordered full military mobilization along its northern border.",
+      "Delivered July 15, 1914 with a 72-hour deadline, Serbia accepted all demands unconditionally but Austria-Hungary declared war citing insufficient guarantees of compliance.",
+      "Delivered July 23, 1914 with a 48-hour deadline, Serbia requested mediation from Russia and France while refusing to respond directly to any demands."
+    ],
+    "difficulty": 4,
+    "source_article": "July Crisis",
+    "domain_ids": ["european-history"],
+    "concepts_tested": ["July Crisis of 1914"]
+  },
+  {
+    "question_text": "Tiberius Gracchus's land reform in 133 BC provoked unprecedented political violence in the Roman Republic. What was the core provision of his lex agraria, and how was he killed?",
+    "correct_answer": "His law capped public land at 500 iugera per citizen, redistributing excess to the landless. Senators led by Scipio Nasica bludgeoned him on the Capitoline.",
+    "distractors": [
+      "His law abolished private land ownership, collectivizing farmland under state control. Consul Scaevola ordered his arrest, and he was executed after a Senate trial.",
+      "His law taxed estates exceeding 1,000 iugera, funding grain subsidies for urban plebeians. He was poisoned at a banquet organized by the patrician faction.",
+      "His law granted citizenship to Italian allies surrendering excess public land. A hired assassin sent by Scipio Aemilianus killed him during a public assembly."
+    ],
+    "difficulty": 4,
+    "source_article": "Gracchi",
+    "domain_ids": ["european-history"],
+    "concepts_tested": ["Gracchi reforms"]
+  },
+  {
+    "question_text": "The Thermidorian Reaction ended the radical phase of the French Revolution. What governmental system replaced the Committee of Public Safety, and when did it take power?",
+    "correct_answer": "The Constitution of Year III established the Directory, a five-member executive body with a bicameral legislature, which assumed power on November 2, 1795.",
+    "distractors": [
+      "The Constitution of Year II established the Consulate, a three-member executive body with a unicameral legislature, which assumed power on August 22, 1794.",
+      "The Constitution of Year IV established the Tribunate, a seven-member executive body with a tricameral legislature, which assumed power on March 15, 1796.",
+      "The Constitution of Year III established the National Convention, a twelve-member executive council with a bicameral legislature, which assumed power on June 1, 1795."
+    ],
+    "difficulty": 4,
+    "source_article": "Thermidorian Reaction",
+    "domain_ids": ["european-history"],
+    "concepts_tested": ["Thermidorian Reaction"]
+  },
+  {
+    "question_text": "The Querelle des Anciens et des Modernes erupted publicly at the Académie française. What work ignited the controversy, who authored it, and what did it argue?",
+    "correct_answer": "Charles Perrault's 1687 poem Le Siècle de Louis le Grand declared Louis XIV's era superior to antiquity, provoking Nicolas Boileau's defense of classical supremacy.",
+    "distractors": [
+      "Nicolas Boileau's 1674 treatise L'Art poétique declared French neoclassical drama superior to Greek tragedy, provoking Charles Perrault's defense of Aristotelian conventions.",
+      "Jean Racine's 1689 essay Parallèle des Anciens declared Euripides superior to all modern playwrights, provoking Bernard de Fontenelle's defense of scientific progress.",
+      "François Fénelon's 1694 dialogue Les Aventures de Télémaque declared Homer superior to modern epic poets, provoking Pierre Corneille's defense of French innovation."
+    ],
+    "difficulty": 4,
+    "source_article": "Quarrel of the Ancients and the Moderns",
+    "domain_ids": ["european-history"],
+    "concepts_tested": ["Querelle des Anciens et des Modernes"]
+  },
+  {
+    "question_text": "The Eastern Front in World War I was far more fluid than the Western Front. What was the largest Allied offensive on this front, and what were its strategic consequences?",
+    "correct_answer": "The Brusilov Offensive (June–August 1916) inflicted over one million casualties on Austria-Hungary, crippling its military and forcing Germany to divert divisions from Verdun.",
+    "distractors": [
+      "The Kerensky Offensive (July–September 1917) inflicted over one million casualties on Germany, crippling its Eastern reserves and forcing Austria-Hungary to withdraw from the Balkans.",
+      "The Gorlice-Tarnów Offensive (May–July 1915) inflicted over one million casualties on the Ottoman Empire, crippling its Caucasus forces and forcing Bulgaria to seek an armistice.",
+      "The Lake Naroch Offensive (March–June 1916) inflicted over one million casualties on Austria-Hungary, crippling its Galician garrisons and forcing Germany to abandon the Somme campaign."
+    ],
+    "difficulty": 4,
+    "source_article": "Eastern Front (World War I)",
+    "domain_ids": ["european-history"],
+    "concepts_tested": ["Eastern Front (World War I)"]
+  },
+  {
+    "question_text": "The Sykes-Picot Agreement was a secret wartime pact that contradicted promises made to Arab allies. How was the agreement exposed, and what was the immediate diplomatic consequence?",
+    "correct_answer": "The Bolsheviks found it in Tsarist archives and published the text in Izvestia and Pravda in November 1917, embarrassing Britain and deepening Arab distrust.",
+    "distractors": [
+      "Ottoman intelligence intercepted a diplomatic cable and published the text in Istanbul newspapers in March 1917, embarrassing France and triggering Arab revolt.",
+      "American journalists uncovered it in French ministry files and published the text in the New York Times in January 1918, embarrassing both powers and prompting negotiations.",
+      "British parliamentary critics leaked it to the Manchester Guardian in September 1916, embarrassing the Foreign Office and forcing Sir Edward Grey's resignation."
+    ],
+    "difficulty": 4,
+    "source_article": "Sykes–Picot Agreement",
+    "domain_ids": ["european-history"],
+    "concepts_tested": ["Sykes-Picot Agreement"]
+  },
+  {
+    "question_text": "Henri Pirenne's thesis challenged the traditional narrative of Western civilization's origins. What did he argue caused the real break with classical antiquity, and what famous formulation summarized his argument?",
+    "correct_answer": "Pirenne argued Islamic expansion, not Germanic invasions, ended Mediterranean unity and created medieval Europe. His famous dictum: 'Without Muhammad, Charlemagne would be inconceivable.'",
+    "distractors": [
+      "Pirenne argued Byzantine bureaucratic decline, not barbarian conquest, ended Roman governance and created feudal Europe. His famous dictum: 'Without Justinian, the Carolingians would be inconceivable.'",
+      "Pirenne argued climatic deterioration, not military invasion, ended Roman agricultural systems and created medieval Europe. His famous dictum: 'Without the Little Ice Age, feudalism would be inconceivable.'",
+      "Pirenne argued the Plague of Justinian, not Germanic migrations, ended Roman demographic stability and created medieval Europe. His famous dictum: 'Without pestilence, the Dark Ages would be inconceivable.'"
+    ],
+    "difficulty": 4,
+    "source_article": "Pirenne thesis",
+    "domain_ids": ["european-history"],
+    "concepts_tested": ["Pirenne thesis"]
+  }
+]

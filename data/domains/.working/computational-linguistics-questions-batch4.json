@@ -1,0 +1,172 @@
+[
+  {
+    "question_text": "In sequence decoding, what is beam search and how does it differ from greedy search?",
+    "correct_answer": "A heuristic search algorithm that keeps the top-k most probable candidate sequences at each decoding step, rather than selecting only the single best candidate.",
+    "distractors": [
+      "An exhaustive search algorithm that evaluates every possible candidate sequence at each decoding step, guaranteeing the globally optimal output sequence is found.",
+      "A randomized search algorithm that samples candidate sequences proportionally to their probability at each decoding step, introducing controlled stochastic variation.",
+      "A pruning search algorithm that eliminates candidate sequences falling below a fixed probability threshold at each decoding step, reducing the overall search space."
+    ],
+    "difficulty": 3,
+    "source_article": "Beam search",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "beam search"
+    ]
+  },
+  {
+    "question_text": "What are the two neural network training architectures used by word2vec to learn word embeddings?",
+    "correct_answer": "Continuous bag of words (CBOW), which predicts a target word from context words, and skip-gram, which predicts context words from a target word.",
+    "distractors": [
+      "Recurrent encoder network, which predicts a target word from sequential hidden states, and convolutional decoder, which predicts context words from pooled feature maps.",
+      "Generative adversarial network, which predicts a target word from a noise vector, and variational autoencoder, which predicts context words from a latent distribution.",
+      "Long short-term memory network, which predicts a target word from gated memory cells, and temporal convolution, which predicts context words from dilated filter windows."
+    ],
+    "difficulty": 3,
+    "source_article": "Word2vec",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "word2vec"
+    ]
+  },
+  {
+    "question_text": "What primary advantage do conditional random fields have over hidden Markov models for sequence labeling tasks in NLP?",
+    "correct_answer": "CRFs are discriminative models that do not require the strict independence assumptions of generative HMMs, allowing them to incorporate arbitrary overlapping features.",
+    "distractors": [
+      "CRFs are generative models that explicitly model the joint distribution of inputs and labels, allowing them to generate new synthetic training examples.",
+      "CRFs are unsupervised models that do not require any labeled training data during parameter estimation, allowing them to leverage large unlabeled corpora.",
+      "CRFs are recurrent models that maintain persistent hidden state vectors across sequence boundaries, allowing them to capture long-range document-level dependencies."
+    ],
+    "difficulty": 3,
+    "source_article": "Conditional random field",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "conditional random field"
+    ]
+  },
+  {
+    "question_text": "What does semantic role labeling identify in a sentence, and what is an example of the roles it assigns?",
+    "correct_answer": "It identifies the predicate-argument structure, assigning roles such as agent, theme, and recipient to phrases related to the verb.",
+    "distractors": [
+      "It identifies the syntactic constituency structure, assigning labels such as noun phrase, verb phrase, and prepositional phrase to word groups.",
+      "It identifies the discourse coherence structure, assigning relations such as cause, contrast, and elaboration to clauses within the sentence.",
+      "It identifies the morphological inflection structure, assigning features such as tense, aspect, and number to individual word forms in context."
+    ],
+    "difficulty": 3,
+    "source_article": "Semantic role labeling",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "semantic role labeling"
+    ]
+  },
+  {
+    "question_text": "What is coreference resolution in natural language processing?",
+    "correct_answer": "The task of identifying when different expressions in a text, such as pronouns and noun phrases, refer to the same real-world entity.",
+    "distractors": [
+      "The task of identifying when different sentences in a text share similar syntactic parse tree structures despite using entirely different vocabulary.",
+      "The task of identifying when different paragraphs in a text convey contradictory factual claims that require manual verification and correction.",
+      "The task of identifying when different documents in a corpus address the same general topic despite originating from unrelated independent sources."
+    ],
+    "difficulty": 3,
+    "source_article": "Coreference",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "coreference resolution"
+    ]
+  },
+  {
+    "question_text": "What is the distributional hypothesis underlying distributional semantics?",
+    "correct_answer": "Words that occur in similar linguistic contexts tend to have similar meanings, so meaning can be inferred from co-occurrence patterns in corpora.",
+    "distractors": [
+      "Words that share similar phonological structures tend to have similar meanings, so meaning can be inferred from pronunciation patterns across languages.",
+      "Words that appear with similar frequency in corpora tend to have similar meanings, so meaning can be inferred from raw token counts alone.",
+      "Words that were coined during similar historical periods tend to have similar meanings, so meaning can be inferred from etymological dating records."
+    ],
+    "difficulty": 3,
+    "source_article": "Distributional semantics",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "distributional semantics"
+    ]
+  },
+  {
+    "question_text": "In the encoder-decoder (seq2seq) architecture, what are the respective roles of the encoder and decoder components?",
+    "correct_answer": "The encoder processes the input sequence into a fixed context representation, and the decoder generates the output sequence from that representation.",
+    "distractors": [
+      "The encoder compresses the input sequence into a binary hash code, and the decoder retrieves the nearest matching output sequence from a database.",
+      "The encoder classifies the input sequence into a discrete category label, and the decoder expands that label into a full output sequence template.",
+      "The encoder segments the input sequence into independent clause boundaries, and the decoder reorders those clauses into a grammatically correct output sequence."
+    ],
+    "difficulty": 3,
+    "source_article": "Seq2seq",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "encoder-decoder architecture"
+    ]
+  },
+  {
+    "question_text": "How does byte pair encoding (BPE) construct its subword vocabulary for use in language model tokenization?",
+    "correct_answer": "It starts with individual characters and iteratively merges the most frequent adjacent token pair into a new token until reaching the desired vocabulary size.",
+    "distractors": [
+      "It starts with complete words and iteratively splits the least frequent word into its component syllables until the desired vocabulary size is reached.",
+      "It starts with individual characters and iteratively removes the least frequent single character token from the vocabulary until the desired vocabulary size is reached.",
+      "It starts with complete sentences and iteratively extracts the most frequent recurring phrase as a single token until the desired vocabulary size is reached."
+    ],
+    "difficulty": 3,
+    "source_article": "Byte pair encoding",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "byte pair encoding"
+    ]
+  },
+  {
+    "question_text": "In combinatory categorial grammar (CCG), what do the forward slash and backslash notations in a syntactic category like S\\NP or NP/N indicate?",
+    "correct_answer": "They indicate functor types: a forward slash means the argument appears to the right, and a backslash means the argument appears to the left.",
+    "distractors": [
+      "They indicate movement types: a forward slash means the constituent moved rightward from its base position, and a backslash means it moved leftward.",
+      "They indicate agreement types: a forward slash means the category agrees in number with the right neighbor, and a backslash means agreement with the left.",
+      "They indicate dependency types: a forward slash means the head word governs a rightward dependent, and a backslash means it governs a leftward dependent."
+    ],
+    "difficulty": 4,
+    "source_article": "Combinatory categorial grammar",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "combinatory categorial grammar"
+    ]
+  },
+  {
+    "question_text": "What kind of grammar formalism is head-driven phrase structure grammar (HPSG), and how does it represent linguistic information?",
+    "correct_answer": "A constraint-based, highly lexicalized formalism that represents linguistic information using typed feature structures organized in attribute-value matrices and a type hierarchy.",
+    "distractors": [
+      "A transformation-based, highly derivational formalism that represents linguistic information using ordered rewrite rules organized in sequential transformation cycles.",
+      "A dependency-based, highly relational formalism that represents linguistic information using directed arc labels organized in head-dependent tree graphs and valency frames.",
+      "A stochastic-based, highly probabilistic formalism that represents linguistic information using weighted production rules organized in conditional probability tables and parse forests."
+    ],
+    "difficulty": 4,
+    "source_article": "Head-driven phrase structure grammar",
+    "domain_ids": [
+      "computational-linguistics"
+    ],
+    "concepts_tested": [
+      "head-driven phrase structure grammar"
+    ]
+  }
+]

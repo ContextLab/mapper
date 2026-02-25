@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In sociology, social inequality refers to the unequal distribution of valued resources in a society based primarily on what kind of factors?",
+    "correct_answer": "Systematic group-based factors such as class, gender, race, and ethnicity.",
+    "distractors": [
+      "Random individual differences in talent, motivation, and personal ambition.",
+      "Biological variations in intelligence, physical strength, and genetic inheritance.",
+      "Voluntary lifestyle choices regarding education, career paths, and savings habits."
+    ],
+    "difficulty": 1,
+    "source_article": "Social inequality",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["inequality"]
+  },
+  {
+    "question_text": "Under social contract theory, citizenship is described as 'a bundle of rights' that primarily includes political participation and protection. What duties typically accompany it?",
+    "correct_answer": "Allegiance to the state, taxation, and military service.",
+    "distractors": [
+      "Religious observance, charitable giving, and community volunteering.",
+      "Economic productivity, property ownership, and consumer spending.",
+      "Cultural assimilation, language proficiency, and civic education."
+    ],
+    "difficulty": 1,
+    "source_article": "Citizenship",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["citizenship"]
+  },
+  {
+    "question_text": "Max Weber identified bureaucracy as the most efficient form of organization. Which of the following is a defining feature of his ideal-type bureaucracy?",
+    "correct_answer": "Hierarchical organization with fixed rules and career advancement based on technical qualifications.",
+    "distractors": [
+      "Decentralized decision-making with flexible roles and advancement based on personal loyalty.",
+      "Collective ownership of resources with rotating leadership and consensus-based appointments.",
+      "Charismatic leadership with informal authority and promotion based on political connections."
+    ],
+    "difficulty": 1,
+    "source_article": "Bureaucracy",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["bureaucracy"]
+  },
+  {
+    "question_text": "In political sociology, the concept of hegemony describes how a dominant group maintains power primarily through which mechanism?",
+    "correct_answer": "Cultural and ideological leadership that secures the consent of subordinate groups.",
+    "distractors": [
+      "Direct military force and systematic physical coercion against all opposition movements.",
+      "Strict legal monopoly over economic production and exclusive control of trade.",
+      "Religious doctrine and theological authority imposed through established church institutions."
+    ],
+    "difficulty": 2,
+    "source_article": "Hegemony",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["hegemony"]
+  },
+  {
+    "question_text": "Civil society is commonly described as occupying a distinct sphere in modern societies. What two sectors is it typically distinguished from?",
+    "correct_answer": "The state (government) and the market (business).",
+    "distractors": [
+      "The military (armed forces) and the judiciary (courts).",
+      "The church (religion) and the academy (universities).",
+      "The media (press) and the bureaucracy (administration)."
+    ],
+    "difficulty": 2,
+    "source_article": "Civil society",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["civil society"]
+  },
+  {
+    "question_text": "Research on political socialization identifies several agents that shape individuals' political values over their lifetime. Which agent is generally considered the primary influence?",
+    "correct_answer": "The family, especially during early childhood development.",
+    "distractors": [
+      "Peer groups, especially during late adulthood and retirement.",
+      "Religious institutions, especially during middle-age conversions.",
+      "Workplace colleagues, especially during early career employment."
+    ],
+    "difficulty": 2,
+    "source_article": "Political socialization",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["political socialization"]
+  },
+  {
+    "question_text": "What characteristic distinguishes a social movement from a one-time protest event, according to sociological definitions?",
+    "correct_answer": "Sustained, organized collective effort over time toward a shared social or political goal.",
+    "distractors": [
+      "A single dramatic confrontation between citizens and police at a government building.",
+      "An individual act of civil disobedience performed by one prominent political leader.",
+      "A spontaneous gathering that disperses after a few hours without any lasting organization."
+    ],
+    "difficulty": 2,
+    "source_article": "Social movement",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["social movement"]
+  },
+  {
+    "question_text": "Max Weber classified legitimate political authority into three ideal types. Which of the following correctly lists all three?",
+    "correct_answer": "Traditional, charismatic, and rational-legal authority.",
+    "distractors": [
+      "Monarchical, democratic, and theocratic authority.",
+      "Military, economic, and ideological authority.",
+      "Hereditary, revolutionary, and bureaucratic authority."
+    ],
+    "difficulty": 2,
+    "source_article": "Legitimacy (political)",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["legitimacy"]
+  },
+  {
+    "question_text": "In his 1965 book 'The Logic of Collective Action,' Mancur Olson argued that rational individuals in large groups tend to undermine collective goals. What is this problem called?",
+    "correct_answer": "The free rider problem, where individuals benefit without contributing.",
+    "distractors": [
+      "The tragedy of the commons, where resources are depleted by overuse.",
+      "The prisoner's dilemma, where mutual defection produces the worst outcome.",
+      "The bystander effect, where individuals fail to intervene in emergencies."
+    ],
+    "difficulty": 2,
+    "source_article": "Collective action",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["collective action"]
+  },
+  {
+    "question_text": "Studies of voting behavior find that electoral participation is shaped by both individual attitudes and social factors. Which social factor is most consistently associated with higher voter turnout?",
+    "correct_answer": "Higher levels of education and socioeconomic status.",
+    "distractors": [
+      "Living in rural areas with smaller population density.",
+      "Being younger in age, particularly under twenty-five years.",
+      "Having recently immigrated from a non-democratic country."
+    ],
+    "difficulty": 2,
+    "source_article": "Voting behavior",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["voting behavior"]
+  }
+]

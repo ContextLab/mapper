@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "How is economic growth most commonly measured in macroeconomics?",
+    "correct_answer": "By the increase in real (inflation-adjusted) gross domestic product over time",
+    "distractors": [
+      "By the increase in nominal gross domestic product without adjusting for inflation",
+      "By the total value of a nation's stock market performance over time",
+      "By the change in the national unemployment rate from year to year"
+    ],
+    "difficulty": 1,
+    "source_article": "Economic growth",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["economic growth"]
+  },
+  {
+    "question_text": "In a floating exchange rate regime, what primarily determines the value of a nation's currency relative to others?",
+    "correct_answer": "Market forces of supply and demand for the currency",
+    "distractors": [
+      "A fixed peg set by the nation's central bank authority",
+      "International trade agreements negotiated between governments",
+      "The total gold reserves held by the nation's treasury"
+    ],
+    "difficulty": 1,
+    "source_article": "Exchange rate",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["exchange rate"]
+  },
+  {
+    "question_text": "What does the consumer price index (CPI) measure by tracking a weighted basket of goods and services over time?",
+    "correct_answer": "The average change over time in prices paid by urban consumers",
+    "distractors": [
+      "The average change over time in wholesale prices paid by producers",
+      "The total output of consumer goods produced in the economy",
+      "The average household income adjusted for regional cost differences"
+    ],
+    "difficulty": 1,
+    "source_article": "Consumer price index",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["consumer price index"]
+  },
+  {
+    "question_text": "What inverse relationship did economist A.W. Phillips describe in his influential 1958 paper using UK data from 1861 to 1957?",
+    "correct_answer": "An inverse relationship between unemployment and the rate of change of money wage rates",
+    "distractors": [
+      "An inverse relationship between inflation and the level of government budget deficits",
+      "An inverse relationship between interest rates and the rate of economic output growth",
+      "An inverse relationship between tax rates and the total amount of tax revenue collected"
+    ],
+    "difficulty": 2,
+    "source_article": "Phillips curve",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["Phillips curve"]
+  },
+  {
+    "question_text": "When a central bank engages in quantitative easing, what does it purchase and why?",
+    "correct_answer": "It purchases large-scale financial assets like government bonds to increase the money supply when interest rates are near zero",
+    "distractors": [
+      "It purchases foreign currencies on the open market to deliberately weaken the domestic exchange rate",
+      "It purchases shares in commercial banks to recapitalize them and prevent widespread bank failures",
+      "It purchases consumer goods directly from firms to stimulate demand when fiscal policy has failed"
+    ],
+    "difficulty": 2,
+    "source_article": "Quantitative easing",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["quantitative easing"]
+  },
+  {
+    "question_text": "What does the fiscal multiplier measure, and when does research suggest it tends to be largest?",
+    "correct_answer": "The ratio of change in national income to a change in government spending; it is largest during recessions",
+    "distractors": [
+      "The ratio of tax revenue to government debt; it is largest during periods of economic expansion",
+      "The ratio of private investment to public investment; it is largest when interest rates are high",
+      "The ratio of exports to imports in a trade balance; it is largest during currency depreciation"
+    ],
+    "difficulty": 2,
+    "source_article": "Fiscal multiplier",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["fiscal multiplier"]
+  },
+  {
+    "question_text": "Aggregate demand is expressed as AD = C + I + G + (X − M). What do the four components represent?",
+    "correct_answer": "Consumption, investment, government spending, and net exports",
+    "distractors": [
+      "Credit, income, government debt, and net imports",
+      "Consumption, inflation, gross output, and net migration",
+      "Capital, interest, government revenue, and net transfers"
+    ],
+    "difficulty": 2,
+    "source_article": "Aggregate demand",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["aggregate demand"]
+  },
+  {
+    "question_text": "Why is the long-run aggregate supply (LRAS) curve depicted as vertical in macroeconomic models?",
+    "correct_answer": "Because long-run output is determined by factors of production like labor, capital, and technology, not the price level",
+    "distractors": [
+      "Because long-run output is fixed by the central bank's inflation target and cannot change at any price level",
+      "Because firms always produce at maximum capacity regardless of costs or demand in every time period",
+      "Because government regulations prevent firms from changing output levels in response to price changes"
+    ],
+    "difficulty": 2,
+    "source_article": "Aggregate supply",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["aggregate supply"]
+  },
+  {
+    "question_text": "In money supply classifications, what distinguishes the narrow measure M1 from the broader measure M2?",
+    "correct_answer": "M1 includes only currency in circulation and demand deposits, while M2 adds savings deposits, small time deposits, and money market funds",
+    "distractors": [
+      "M1 includes all government bonds and treasury bills, while M2 adds corporate bonds and equity shares",
+      "M1 includes only physical coins and banknotes, while M2 adds foreign currency reserves held by banks",
+      "M1 includes central bank reserves and vault cash, while M2 adds interbank lending and repurchase agreements"
+    ],
+    "difficulty": 2,
+    "source_article": "Money supply",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["money supply"]
+  },
+  {
+    "question_text": "When a central bank conducts open market operations by purchasing government securities, what is the expected effect on interest rates and the money supply?",
+    "correct_answer": "The money supply increases and interest rates decrease, as bank reserves expand and more funds become available for lending",
+    "distractors": [
+      "The money supply decreases and interest rates increase, as bank reserves contract and fewer funds are available",
+      "The money supply increases but interest rates also increase, because inflation expectations rise immediately",
+      "The money supply remains unchanged and only interest rates decrease, because reserves shift between banks"
+    ],
+    "difficulty": 2,
+    "source_article": "Open market operation",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["open market operations"]
+  }
+]

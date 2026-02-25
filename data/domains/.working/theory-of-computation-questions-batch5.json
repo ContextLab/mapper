@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Kolmogorov complexity is also known as Solomonoff-Kolmogorov-Chaitin complexity, reflecting independent discovery by three researchers. What does the invariance theorem guarantee about this measure, and why is Kolmogorov complexity uncomputable?",
+    "correct_answer": "The invariance theorem guarantees that changing the universal description language alters Kolmogorov complexity by at most an additive constant. It is uncomputable because no program can compute the exact shortest description length for all strings.",
+    "distractors": [
+      "The invariance theorem guarantees that changing the universal description language alters Kolmogorov complexity by at most a multiplicative constant. It is uncomputable because no program can compute the exact shortest description length for all strings.",
+      "The invariance theorem guarantees that changing the universal description language alters Kolmogorov complexity by at most an additive constant. It is uncomputable because the shortest description length grows faster than any computable function.",
+      "The invariance theorem guarantees that all universal description languages assign identical Kolmogorov complexity values. It is uncomputable because no program can compute the exact shortest description length for all strings."
+    ],
+    "difficulty": 4,
+    "source_article": "Kolmogorov complexity",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["Kolmogorov complexity", "invariance theorem", "uncomputability"]
+  },
+  {
+    "question_text": "In circuit complexity, Boolean functions are classified by the size and depth of circuits computing them. What distinguishes a uniform circuit family from a non-uniform one, and which well-known non-uniform complexity class consists of problems solvable by polynomial-size circuits?",
+    "correct_answer": "A uniform family requires a resource-bounded Turing machine that, given n, produces the circuit for inputs of size n. The non-uniform class P/poly consists of problems solvable by polynomial-size circuit families without a uniformity requirement.",
+    "distractors": [
+      "A uniform family requires a resource-bounded Turing machine that, given n, produces the circuit for inputs of size n. The non-uniform class NC consists of problems solvable by polynomial-size circuit families without a uniformity requirement.",
+      "A uniform family requires that every circuit in the family has identical depth regardless of input size. The non-uniform class P/poly consists of problems solvable by polynomial-size circuit families without a uniformity requirement.",
+      "A uniform family requires a resource-bounded Turing machine that, given n, produces the circuit for inputs of size n. The non-uniform class P/poly consists of problems solvable by logarithmic-depth circuit families without a uniformity requirement."
+    ],
+    "difficulty": 4,
+    "source_article": "Circuit complexity",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["circuit complexity", "uniform circuits", "P/poly"]
+  },
+  {
+    "question_text": "An interactive proof system involves a computationally unbounded prover and a probabilistic polynomial-time verifier exchanging messages. Goldwasser, Micali, and Rackoff showed that private-coin protocols are equivalent to public-coin protocols. What landmark equality did Shamir prove about the complexity class IP?",
+    "correct_answer": "Shamir proved that IP equals PSPACE, meaning every problem solvable in polynomial space has an interactive proof with a probabilistic polynomial-time verifier.",
+    "distractors": [
+      "Shamir proved that IP equals NP, meaning every problem verifiable in polynomial time has an interactive proof with a probabilistic polynomial-time verifier.",
+      "Shamir proved that IP equals PSPACE, meaning every problem solvable in polynomial space has an interactive proof with a deterministic polynomial-time verifier.",
+      "Shamir proved that IP equals EXPTIME, meaning every problem solvable in exponential time has an interactive proof with a probabilistic polynomial-time verifier."
+    ],
+    "difficulty": 4,
+    "source_article": "Interactive proof system",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["interactive proof system", "IP = PSPACE", "Shamir's theorem"]
+  },
+  {
+    "question_text": "Zero-knowledge proofs, introduced by Goldwasser, Micali, and Rackoff in 1985, must satisfy three properties: completeness, soundness, and zero-knowledge. What does the zero-knowledge property specifically guarantee, and how does it differ from soundness?",
+    "correct_answer": "Zero-knowledge guarantees the verifier learns nothing beyond the statement's truth, as any interaction can be simulated without the prover. Soundness instead guarantees that no cheating prover can convince the verifier of a false statement.",
+    "distractors": [
+      "Zero-knowledge guarantees the verifier learns nothing beyond the statement's truth, as any interaction can be simulated without the prover. Soundness instead guarantees that the honest prover can always convince the verifier of a true statement.",
+      "Zero-knowledge guarantees the prover cannot learn the verifier's random coin tosses during the protocol. Soundness instead guarantees that no cheating prover can convince the verifier of a false statement.",
+      "Zero-knowledge guarantees the verifier learns nothing beyond the statement's truth, as any interaction can be simulated without the prover. Soundness instead guarantees that the protocol terminates in polynomial time for all inputs."
+    ],
+    "difficulty": 4,
+    "source_article": "Zero-knowledge proof",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["zero-knowledge proof", "Goldwasser-Micali-Rackoff", "soundness vs zero-knowledge"]
+  },
+  {
+    "question_text": "The proof that IP = PSPACE relies on arithmetization, a technique for converting Boolean formulas into polynomials over finite fields. What is the key protocol used to verify polynomial identities in this proof, and which earlier result by Lund, Fortnow, Karloff, and Nisan did Shamir build upon?",
+    "correct_answer": "The sum-check protocol, which interactively verifies the sum of a polynomial over all Boolean inputs. Shamir extended the result by Lund, Fortnow, Karloff, and Nisan that co-NP has multi-prover interactive proofs.",
+    "distractors": [
+      "The Schwartz-Zippel protocol, which interactively verifies the sum of a polynomial over all Boolean inputs. Shamir extended the result by Lund, Fortnow, Karloff, and Nisan that co-NP has multi-prover interactive proofs.",
+      "The sum-check protocol, which interactively verifies the sum of a polynomial over all Boolean inputs. Shamir extended the result by Lund, Fortnow, Karloff, and Nisan that NP has single-prover interactive proofs.",
+      "The sum-check protocol, which deterministically evaluates a polynomial at random points to check identity. Shamir extended the result by Lund, Fortnow, Karloff, and Nisan that co-NP has multi-prover interactive proofs."
+    ],
+    "difficulty": 4,
+    "source_article": "IP (complexity)",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["arithmetization", "sum-check protocol", "IP = PSPACE"]
+  },
+  {
+    "question_text": "The polynomial hierarchy generalizes NP and co-NP into an infinite hierarchy of complexity classes contained within PSPACE. In the oracle-based definition, how are the classes Sigma_k^P and Pi_k^P defined, and what does it mean for the hierarchy to collapse to level k?",
+    "correct_answer": "Sigma_{k+1}^P = NP with a Sigma_k^P oracle, and Pi_{k+1}^P = coNP with a Sigma_k^P oracle. Collapse to level k means all higher levels equal level k, so PH = Sigma_k^P.",
+    "distractors": [
+      "Sigma_{k+1}^P = NP with a Sigma_k^P oracle, and Pi_{k+1}^P = coNP with a Sigma_k^P oracle. Collapse to level k means all lower levels equal level k, so P = Sigma_k^P.",
+      "Sigma_{k+1}^P = P with a Sigma_k^P oracle, and Pi_{k+1}^P = coNP with a Sigma_k^P oracle. Collapse to level k means all higher levels equal level k, so PH = Sigma_k^P.",
+      "Sigma_{k+1}^P = NP with a Sigma_k^P oracle, and Pi_{k+1}^P = NP with a Pi_k^P oracle. Collapse to level k means all higher levels equal level k, so PH = Sigma_k^P."
+    ],
+    "difficulty": 4,
+    "source_article": "Polynomial hierarchy",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["polynomial hierarchy", "oracle machines", "PH collapse"]
+  },
+  {
+    "question_text": "Descriptive complexity theory characterizes computational complexity classes by the type of logic needed to express them. Fagin's theorem (1974) established the first such correspondence. What complexity class does existential second-order logic capture, and what does the Immerman-Vardi theorem characterize?",
+    "correct_answer": "Existential second-order logic captures exactly NP. The Immerman-Vardi theorem shows that first-order logic with a least fixed-point operator captures P on ordered structures.",
+    "distractors": [
+      "Existential second-order logic captures exactly PSPACE. The Immerman-Vardi theorem shows that first-order logic with a least fixed-point operator captures P on ordered structures.",
+      "Existential second-order logic captures exactly NP. The Immerman-Vardi theorem shows that first-order logic with a transitive closure operator captures P on ordered structures.",
+      "Existential second-order logic captures exactly NP. The Immerman-Vardi theorem shows that second-order logic with a least fixed-point operator captures P on ordered structures."
+    ],
+    "difficulty": 4,
+    "source_article": "Descriptive complexity theory",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["descriptive complexity", "Fagin's theorem", "Immerman-Vardi theorem"]
+  },
+  {
+    "question_text": "Savitch's theorem, proved by Walter Savitch in 1970, establishes a fundamental relationship between deterministic and nondeterministic space complexity. What is the precise statement, and what key algorithmic technique underlies the proof?",
+    "correct_answer": "NSPACE(f(n)) is contained in DSPACE(f(n)^2) for any f(n) >= log(n). The proof uses a recursive reachability algorithm that tests path existence by repeatedly halving the path length, using O(log^2 n) space for graph connectivity.",
+    "distractors": [
+      "NSPACE(f(n)) is contained in DSPACE(f(n) log f(n)) for any f(n) >= log(n). The proof uses a recursive reachability algorithm that tests path existence by repeatedly halving the path length, using O(log^2 n) space for graph connectivity.",
+      "NSPACE(f(n)) is contained in DSPACE(f(n)^2) for any f(n) >= log(n). The proof uses a breadth-first search algorithm that enumerates all reachable configurations, using O(n^2) space for graph connectivity.",
+      "NSPACE(f(n)) is contained in DSPACE(f(n)^2) for any f(n) >= n. The proof uses a recursive reachability algorithm that tests path existence by repeatedly halving the path length, using O(log^2 n) space for graph connectivity."
+    ],
+    "difficulty": 4,
+    "source_article": "Savitch's theorem",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["Savitch's theorem", "space complexity", "PSPACE = NPSPACE"]
+  },
+  {
+    "question_text": "The deterministic time hierarchy theorem, first proved by Hartmanis and Stearns in 1965, uses diagonalization to show that more time strictly increases computational power. What is the precise statement for time-constructible functions, and what major complexity class separation follows as a corollary?",
+    "correct_answer": "DTIME(o(f(n))) is strictly contained in DTIME(f(n) log f(n)) for any time-constructible f(n). A corollary is P != EXPTIME, since polynomial time is strictly weaker than exponential time.",
+    "distractors": [
+      "DTIME(o(f(n))) is strictly contained in DTIME(f(n)^2) for any time-constructible f(n). A corollary is P != EXPTIME, since polynomial time is strictly weaker than exponential time.",
+      "DTIME(o(f(n))) is strictly contained in DTIME(f(n) log f(n)) for any time-constructible f(n). A corollary is P != NP, since linear time is strictly weaker than polynomial time.",
+      "DTIME(o(f(n))) is strictly contained in DTIME(f(n) log f(n)) for any computable f(n). A corollary is P != EXPTIME, since polynomial time is strictly weaker than exponential time."
+    ],
+    "difficulty": 4,
+    "source_article": "Time hierarchy theorem",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["time hierarchy theorem", "Hartmanis-Stearns", "diagonalization"]
+  },
+  {
+    "question_text": "The Post correspondence problem, introduced by Emil Post in 1946, is an undecidable decision problem frequently used to prove undecidability of other problems. What does the problem ask, and why is it preferred over direct reduction from the halting problem?",
+    "correct_answer": "Given two lists of strings, determine whether a sequence of indices exists such that concatenating the corresponding strings from both lists produces the same result. It is preferred because its formulation is simpler than the halting problem, making reductions to other problems easier to construct.",
+    "distractors": [
+      "Given two lists of strings, determine whether a sequence of indices exists such that concatenating the corresponding strings from both lists produces the same result. It is preferred because it is decidable for binary alphabets, making partial reductions to other problems easier to construct.",
+      "Given two lists of strings, determine whether every sequence of indices produces matching concatenations from both lists. It is preferred because its formulation is simpler than the halting problem, making reductions to other problems easier to construct.",
+      "Given two lists of strings, determine whether a sequence of indices exists such that concatenating the corresponding strings from both lists produces the same result. It is preferred because it can be reduced to the halting problem in polynomial time, making complexity bounds easier to establish."
+    ],
+    "difficulty": 4,
+    "source_article": "Post correspondence problem",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["Post correspondence problem", "undecidability", "Emil Post"]
+  }
+]

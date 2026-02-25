@@ -1,0 +1,80 @@
+[
+  {
+    "question_text": "The Neyman-Pearson lemma constructs the most powerful test for simple $H_0$ vs simple $H_1$ at significance level $\\alpha$. When the likelihood ratio $\\Lambda(x)$ exactly equals the critical threshold $\\eta$, how is the test defined to achieve exact size $\\alpha$?",
+    "correct_answer": "A randomized test is used: at $\\Lambda(x) = \\eta$, reject with probability $\\gamma$ calibrated so the test achieves exact size $\\alpha$.",
+    "distractors": [
+      "A deterministic test is used: at $\\Lambda(x) = \\eta$, always reject, which guarantees the test achieves exact size $\\alpha$.",
+      "A randomized test is used: at $\\Lambda(x) = \\eta$, reject with probability equal to $\\alpha$ so the test achieves exact size $\\alpha$.",
+      "A truncation rule is used: at $\\Lambda(x) = \\eta$, exclude the observation and recompute the test to achieve exact size $\\alpha$."
+    ],
+    "difficulty": 4,
+    "source_article": "Neyman\u2013Pearson lemma",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["Neyman-Pearson lemma"]
+  },
+  {
+    "question_text": "Sklar's theorem guarantees that any multivariate joint distribution can be decomposed using a copula. What specific property of the Gaussian copula regarding tail dependence makes it potentially dangerous for modeling joint extreme events in finance?",
+    "correct_answer": "The Gaussian copula has zero upper and lower tail dependence for any correlation $\\rho \\in (-1,1)$, systematically underestimating the probability of simultaneous extreme events.",
+    "distractors": [
+      "The Gaussian copula has nonzero upper tail dependence but zero lower tail dependence for $\\rho \\in (-1,1)$, systematically underestimating only joint negative extreme events.",
+      "The Gaussian copula has zero upper and lower tail dependence only when $\\rho = 0$, otherwise capturing joint extremes correctly for moderate correlations.",
+      "The Gaussian copula has symmetric nonzero tail dependence proportional to $|\\rho|$ for $\\rho \\in (-1,1)$, systematically overestimating the probability of simultaneous extreme events."
+    ],
+    "difficulty": 4,
+    "source_article": "Copula (statistics)",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["copula"]
+  },
+  {
+    "question_text": "In the stick-breaking construction of a Dirichlet process $\\mathrm{DP}(H, \\alpha)$, weights $\\beta_k$ are built from i.i.d. draws $\\beta'_k \\sim \\mathrm{Beta}(1, \\alpha)$. How are the atoms $\\theta_k$ chosen, and what happens to the weight distribution as $\\alpha \\to 0$?",
+    "correct_answer": "Atoms are drawn i.i.d. from $H$. As $\\alpha \\to 0$, $\\beta_1 \\to 1$ almost surely, so all mass concentrates on a single atom.",
+    "distractors": [
+      "Atoms are drawn from the posterior predictive. As $\\alpha \\to 0$, $\\beta_1 \\to 1$ almost surely, so all mass concentrates on a single atom.",
+      "Atoms are drawn i.i.d. from $H$. As $\\alpha \\to 0$, weights become uniform across infinitely many atoms, producing a continuous distribution.",
+      "Atoms are drawn i.i.d. from $H$. As $\\alpha \\to 0$, weights decay geometrically with ratio $\\alpha$, concentrating mass on finitely many atoms."
+    ],
+    "difficulty": 4,
+    "source_article": "Dirichlet process",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["Dirichlet process"]
+  },
+  {
+    "question_text": "Donsker's theorem extends the Glivenko-Cantelli theorem by establishing a functional central limit theorem for the empirical process $\\sqrt{n}(F_n - F)$. What is the limiting stochastic process, and what distinguishes a Donsker class from a Glivenko-Cantelli class?",
+    "correct_answer": "The limit is a Brownian bridge $B(F(x))$. Donsker classes require weak convergence to a Gaussian limit, strictly stronger than uniform a.s. convergence for Glivenko-Cantelli classes.",
+    "distractors": [
+      "The limit is standard Brownian motion $W(F(x))$. Donsker classes require weak convergence to a Gaussian limit, strictly stronger than uniform a.s. convergence for Glivenko-Cantelli classes.",
+      "The limit is a Brownian bridge $B(F(x))$. Donsker classes require almost sure convergence to a Gaussian limit, equivalent to uniform a.s. convergence for Glivenko-Cantelli classes.",
+      "The limit is a Brownian bridge $B(F(x))$. Donsker classes require pointwise convergence to a Gaussian limit, strictly weaker than uniform a.s. convergence for Glivenko-Cantelli classes."
+    ],
+    "difficulty": 4,
+    "source_article": "Empirical process",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["empirical process theory"]
+  },
+  {
+    "question_text": "Fisher information $\\mathcal{I}(\\theta)$ equals the negative expected second derivative of the log-likelihood under regularity conditions. If one reparametrizes from $\\theta$ to $\\eta = g(\\theta)$ where $g$ is a smooth bijection, how does the Fisher information transform?",
+    "correct_answer": "It transforms as $\\mathcal{I}_\\eta(\\eta) = \\mathcal{I}_\\theta(\\theta) \\cdot \\left(\\frac{d\\theta}{d\\eta}\\right)^2$, so Fisher information is not reparametrization-invariant but rescales by the squared Jacobian.",
+    "distractors": [
+      "It transforms as $\\mathcal{I}_\\eta(\\eta) = \\mathcal{I}_\\theta(\\theta) \\cdot \\left|\\frac{d\\theta}{d\\eta}\\right|$, so Fisher information rescales by the absolute Jacobian determinant.",
+      "It is invariant: $\\mathcal{I}_\\eta(\\eta) = \\mathcal{I}_\\theta(\\theta)$ for any smooth bijection $g$, which is why Fisher information defines a canonical metric.",
+      "It transforms as $\\mathcal{I}_\\eta(\\eta) = \\mathcal{I}_\\theta(\\theta) \\cdot \\frac{d\\theta}{d\\eta}$, so Fisher information rescales linearly by the Jacobian."
+    ],
+    "difficulty": 4,
+    "source_article": "Fisher information",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["Fisher information"]
+  },
+  {
+    "question_text": "The Pickands-Balkema-de Haan theorem provides the theoretical basis for the peaks-over-threshold method in extreme value analysis. What distribution does it identify for exceedances above a high threshold $u$, and how does this relate to the generalized extreme value distribution?",
+    "correct_answer": "Exceedances converge to the generalized Pareto distribution (GPD), whose shape parameter $\\xi$ matches that of the corresponding GEV distribution for block maxima.",
+    "distractors": [
+      "Exceedances converge to the generalized Pareto distribution (GPD), whose shape parameter $\\xi$ equals the negative of the corresponding GEV shape parameter for block maxima.",
+      "Exceedances converge to the Gumbel distribution, whose location parameter matches the shape parameter of the corresponding GEV distribution for block maxima.",
+      "Exceedances converge to the generalized Pareto distribution (GPD), whose shape parameter $\\xi$ equals the reciprocal of the corresponding GEV shape parameter for block maxima."
+    ],
+    "difficulty": 4,
+    "source_article": "Extreme value theory",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["extreme value theory"]
+  }
+]

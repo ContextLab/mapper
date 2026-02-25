@@ -1,0 +1,80 @@
+[
+  {
+    "question_text": "In Bayesian inference, the posterior is computed as $P(H \\mid E) = \\frac{P(E \\mid H) \\cdot P(H)}{P(E)}$. What role does $P(E)$ play, and why is it often hard to compute?",
+    "correct_answer": "$P(E)$ is the marginal likelihood, a normalizing constant requiring integration of the likelihood over all hypotheses, which is often intractable.",
+    "distractors": [
+      "$P(E)$ is the prior probability of the hypothesis, requiring specification of a conjugate prior distribution, which is unavailable for complex models.",
+      "$P(E)$ is the likelihood of data given the hypothesis, requiring computation of the log-posterior gradient, which is numerically unstable.",
+      "$P(E)$ is the posterior predictive probability of future data, requiring sampling from the joint distribution of all latent variables."
+    ],
+    "difficulty": 3,
+    "source_article": "Bayesian inference",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["Bayesian inference", "marginal likelihood", "posterior probability"]
+  },
+  {
+    "question_text": "In hypothesis testing, the probability of a Type I error is $\\alpha$ and Type II error is $\\beta$. What is statistical power and how does it relate to these error rates?",
+    "correct_answer": "Power equals $1 - \\beta$, the probability of correctly rejecting a false null. Decreasing $\\alpha$ generally increases $\\beta$, so the two error rates trade off.",
+    "distractors": [
+      "Power equals $1 - \\alpha$, the probability of correctly retaining a true null. Decreasing $\\beta$ generally increases $\\alpha$, so the two error rates trade off.",
+      "Power equals $\\alpha + \\beta$, the total probability of any decision error. Decreasing $\\alpha$ also decreases $\\beta$, so both can be minimized simultaneously.",
+      "Power equals $\\alpha \\cdot \\beta$, the joint probability of both errors at once. Increasing sample size raises both $\\alpha$ and $\\beta$, reducing power."
+    ],
+    "difficulty": 3,
+    "source_article": "Type I and type II errors",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["type I and type II errors", "statistical power", "significance level"]
+  },
+  {
+    "question_text": "In logistic regression, the model is $\\log\\frac{p}{1-p} = \\beta_0 + \\beta_1 x$. How is $\\beta_1$ interpreted in terms of odds, and what function converts log-odds to probability?",
+    "correct_answer": "A one-unit increase in $x$ multiplies the odds by $e^{\\beta_1}$. The logistic function $p = \\frac{1}{1+e^{-(\\beta_0+\\beta_1 x)}}$ maps log-odds to probability.",
+    "distractors": [
+      "A one-unit increase in $x$ adds $\\beta_1$ directly to the probability. The probit function $\\Phi(\\beta_0+\\beta_1 x)$ maps the linear predictor to probability.",
+      "A one-unit increase in $x$ multiplies the probability by $\\beta_1$. The identity link $p = \\beta_0 + \\beta_1 x$ maps the linear combination to probability.",
+      "A one-unit increase in $x$ adds $e^{\\beta_1}$ to the log-odds. The softmax function $\\frac{e^{\\beta_0+\\beta_1 x}}{\\sum e^{\\beta_j}}$ maps log-odds to probability."
+    ],
+    "difficulty": 3,
+    "source_article": "Logistic regression",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["logistic regression", "odds ratio", "logistic function"]
+  },
+  {
+    "question_text": "A probability density function $f(x)$ describes a continuous random variable. Why can $f(x)$ exceed 1 at certain points, and how is the probability over an interval $[a,b]$ obtained?",
+    "correct_answer": "$f(x)$ gives probability per unit length, not probability itself, so it can exceed 1. Probability over $[a,b]$ is $\\int_a^b f(x)\\,dx$.",
+    "distractors": [
+      "$f(x)$ gives cumulative probability up to $x$, not density, so it can exceed 1. Probability over $[a,b]$ is $f(b) - f(a)$.",
+      "$f(x)$ gives conditional probability at a specific outcome, not marginal probability, so it can exceed 1. Probability over $[a,b]$ is $\\sum_{x=a}^{b} f(x)$.",
+      "$f(x)$ gives the likelihood ratio relative to a reference distribution, not probability, so it can exceed 1. Probability over $[a,b]$ is $\\frac{f(a)+f(b)}{2}$."
+    ],
+    "difficulty": 3,
+    "source_article": "Probability density function",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["probability density function", "continuous random variable", "integration"]
+  },
+  {
+    "question_text": "Covariance is defined as $\\text{Cov}(X,Y) = E[(X - \\mu_X)(Y - \\mu_Y)]$. Why is covariance alone insufficient for comparing association strength across different variable pairs?",
+    "correct_answer": "Covariance depends on the variables' units and scales. Normalizing by both standard deviations gives the correlation coefficient, unitless and bounded between $-1$ and $1$.",
+    "distractors": [
+      "Covariance only captures nonlinear relationships. Squaring it gives the coefficient of determination, unitless and bounded between $0$ and $1$.",
+      "Covariance requires normally distributed variables. Taking its logarithm gives Spearman's rank coefficient, unitless and bounded between $-1$ and $1$.",
+      "Covariance measures only strength, not direction. Taking its absolute value gives Kendall's tau, unitless and bounded between $0$ and $1$."
+    ],
+    "difficulty": 3,
+    "source_article": "Covariance",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["covariance", "correlation coefficient", "scale dependence"]
+  },
+  {
+    "question_text": "The law of total probability states $P(A) = \\sum_n P(A \\mid B_n)P(B_n)$. What condition must events $\\{B_n\\}$ satisfy, and how does this connect to Bayes' theorem?",
+    "correct_answer": "The $\\{B_n\\}$ must be mutually exclusive and collectively exhaustive (a partition). This law provides the denominator $P(A)$ in Bayes' theorem via marginalization.",
+    "distractors": [
+      "The $\\{B_n\\}$ must be independent and identically distributed with equal probability. This law provides the numerator $P(A \\mid B_n)$ in Bayes' theorem via conditioning.",
+      "The $\\{B_n\\}$ must each exceed probability $0.5$ and overlap pairwise. This law provides the prior $P(B_n)$ in Bayes' theorem via averaging.",
+      "The $\\{B_n\\}$ must be positively correlated and jointly normal. This law provides the likelihood $P(B_n \\mid A)$ in Bayes' theorem via integration."
+    ],
+    "difficulty": 3,
+    "source_article": "Law of total probability",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["law of total probability", "partition", "Bayes' theorem"]
+  }
+]

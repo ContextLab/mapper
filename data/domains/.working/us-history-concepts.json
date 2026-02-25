@@ -1,0 +1,266 @@
+{
+  "domain": "us-history",
+  "parent_domain": "world-history",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {
+        "concept": "Declaration of Independence",
+        "wikipedia_article": "United States Declaration of Independence",
+        "brief_rationale": "The founding document of the United States, universally known and central to American civic identity."
+      },
+      {
+        "concept": "Civil War",
+        "wikipedia_article": "American Civil War",
+        "brief_rationale": "The defining conflict of the 19th century United States, known to any educated person worldwide."
+      },
+      {
+        "concept": "Constitution of the United States",
+        "wikipedia_article": "Constitution of the United States",
+        "brief_rationale": "The supreme law of the United States, foundational to all civic and political education."
+      },
+      {
+        "concept": "abolition of slavery",
+        "wikipedia_article": "Abolitionism in the United States",
+        "brief_rationale": "The movement to end slavery is a central narrative of American history known at every level of education."
+      },
+      {
+        "concept": "World War II (American involvement)",
+        "wikipedia_article": "United States in World War II",
+        "brief_rationale": "American entry into WWII and its outcome are universally known historical facts."
+      },
+      {
+        "concept": "Great Depression",
+        "wikipedia_article": "Great Depression in the United States",
+        "brief_rationale": "The catastrophic economic collapse of the 1930s is one of the most widely recognized events in modern American history."
+      },
+      {
+        "concept": "Civil Rights Movement",
+        "wikipedia_article": "Civil rights movement",
+        "brief_rationale": "The mid-20th century struggle for racial equality is among the most prominent chapters of American history."
+      },
+      {
+        "concept": "American Revolution",
+        "wikipedia_article": "American Revolution",
+        "brief_rationale": "The war for independence from Britain is one of the foundational events known to virtually all Americans and students worldwide."
+      },
+      {
+        "concept": "Emancipation Proclamation",
+        "wikipedia_article": "Emancipation Proclamation",
+        "brief_rationale": "Lincoln's 1863 executive order freeing enslaved people in Confederate states is widely recognized by the general public."
+      },
+      {
+        "concept": "Moon landing",
+        "wikipedia_article": "Apollo 11",
+        "brief_rationale": "The 1969 Apollo 11 mission is one of the most celebrated technological achievements in human history."
+      },
+      {
+        "concept": "September 11 attacks",
+        "wikipedia_article": "September 11 attacks",
+        "brief_rationale": "The 2001 terrorist attacks are the defining event of early 21st century American history and internationally known."
+      },
+      {
+        "concept": "Louisiana Purchase",
+        "wikipedia_article": "Louisiana Purchase",
+        "brief_rationale": "The 1803 land acquisition that doubled the size of the United States is a staple of any introductory American history course."
+      },
+      {
+        "concept": "Bill of Rights",
+        "wikipedia_article": "United States Bill of Rights",
+        "brief_rationale": "The first ten amendments to the Constitution are foundational to American civic education and widely recognized."
+      }
+    ],
+    "L2": [
+      {
+        "concept": "Reconstruction",
+        "wikipedia_article": "Reconstruction era",
+        "brief_rationale": "The post-Civil War period of reintegration and its failures is a key topic for students of 19th century American history."
+      },
+      {
+        "concept": "New Deal",
+        "wikipedia_article": "New Deal",
+        "brief_rationale": "FDR's Depression-era legislative program is well known to students of American political history and economics."
+      },
+      {
+        "concept": "Manifest Destiny",
+        "wikipedia_article": "Manifest destiny",
+        "brief_rationale": "The 19th century ideology justifying westward expansion is standard vocabulary in American history courses."
+      },
+      {
+        "concept": "Progressive Era",
+        "wikipedia_article": "Progressive Era",
+        "brief_rationale": "The early 20th century reform movement reshaping labor, politics, and society is a core period in US history surveys."
+      },
+      {
+        "concept": "Cold War",
+        "wikipedia_article": "Cold War",
+        "brief_rationale": "The decades-long geopolitical rivalry between the US and USSR is well known to students of 20th century history."
+      },
+      {
+        "concept": "Vietnam War",
+        "wikipedia_article": "Vietnam War",
+        "brief_rationale": "The controversial conflict and its domestic impact is a required topic in any post-WWII American history course."
+      },
+      {
+        "concept": "Gilded Age",
+        "wikipedia_article": "Gilded Age",
+        "brief_rationale": "The late 19th century era of industrialization, inequality, and political corruption is a standard period for history students."
+      },
+      {
+        "concept": "Great Society",
+        "wikipedia_article": "Great Society",
+        "brief_rationale": "LBJ's ambitious domestic legislative agenda requires familiarity with 1960s American political history."
+      },
+      {
+        "concept": "Trail of Tears",
+        "wikipedia_article": "Trail of Tears",
+        "brief_rationale": "The forced relocation of Native American nations is a prominent and well-documented episode known to history students."
+      },
+      {
+        "concept": "Watergate scandal",
+        "wikipedia_article": "Watergate scandal",
+        "brief_rationale": "The Nixon-era political scandal and presidential resignation is essential knowledge for students of modern American history."
+      },
+      {
+        "concept": "women's suffrage in the United States",
+        "wikipedia_article": "Women's suffrage in the United States",
+        "brief_rationale": "The campaign for the Nineteenth Amendment is a standard topic in American political and social history."
+      },
+      {
+        "concept": "Industrial Revolution in the United States",
+        "wikipedia_article": "Industrialization in the United States",
+        "brief_rationale": "America's transformation into an industrial power in the 19th century is a foundational topic for history students."
+      },
+      {
+        "concept": "Korean War",
+        "wikipedia_article": "Korean War",
+        "brief_rationale": "The 1950–1953 conflict is a required subject in any survey of Cold War American foreign policy."
+      }
+    ],
+    "L3": [
+      {
+        "concept": "Missouri Compromise",
+        "wikipedia_article": "Missouri Compromise",
+        "brief_rationale": "Understanding this 1820 agreement requires knowing how it temporarily balanced slave and free states and why it ultimately failed to prevent sectional conflict."
+      },
+      {
+        "concept": "Dred Scott v. Sandford",
+        "wikipedia_article": "Dred Scott v. Sandford",
+        "brief_rationale": "Requires understanding why this 1857 Supreme Court ruling inflamed sectional tensions by declaring that Congress had no power to prohibit slavery in the territories."
+      },
+      {
+        "concept": "Populist movement",
+        "wikipedia_article": "People's Party (United States)",
+        "brief_rationale": "Requires understanding how agrarian discontent over railroad rates, currency policy, and credit structures produced a third-party challenge in the 1890s."
+      },
+      {
+        "concept": "Radical Reconstruction",
+        "wikipedia_article": "Radical Republicans",
+        "brief_rationale": "Requires distinguishing Congressional Reconstruction policy from Presidential Reconstruction and understanding how Radical Republicans sought to reshape the South."
+      },
+      {
+        "concept": "New Imperialism and American expansion (1890s)",
+        "wikipedia_article": "American imperialism",
+        "brief_rationale": "Requires understanding the ideological and strategic motivations behind US acquisition of overseas territories following the Spanish-American War."
+      },
+      {
+        "concept": "Second Great Awakening",
+        "wikipedia_article": "Second Great Awakening",
+        "brief_rationale": "Requires understanding how this early 19th century religious revival shaped reform movements including abolitionism, temperance, and women's rights."
+      },
+      {
+        "concept": "Harlem Renaissance",
+        "wikipedia_article": "Harlem Renaissance",
+        "brief_rationale": "Requires understanding the cultural, literary, and artistic flowering among Black Americans in 1920s New York and its broader social significance."
+      },
+      {
+        "concept": "McCarthyism",
+        "wikipedia_article": "McCarthyism",
+        "brief_rationale": "Requires understanding the mechanics of anti-communist hysteria in the early 1950s and its effects on civil liberties and political culture."
+      },
+      {
+        "concept": "Kansas-Nebraska Act",
+        "wikipedia_article": "Kansas–Nebraska Act",
+        "brief_rationale": "Requires understanding how this 1854 act repealed the Missouri Compromise's geographic slavery restriction, sparking 'Bleeding Kansas' and the collapse of the Whig Party."
+      },
+      {
+        "concept": "containment policy",
+        "wikipedia_article": "Containment",
+        "brief_rationale": "Requires understanding the Truman Doctrine's strategic logic and how the goal of limiting Soviet expansion structured US foreign policy for decades."
+      },
+      {
+        "concept": "Federalist vs. Anti-Federalist debate",
+        "wikipedia_article": "Anti-Federalism",
+        "brief_rationale": "Requires understanding the substantive disagreements over federal power, states' rights, and the need for a Bill of Rights that shaped ratification of the Constitution."
+      },
+      {
+        "concept": "sharecropping",
+        "wikipedia_article": "Sharecropping",
+        "brief_rationale": "Requires understanding how this post-Civil War labor system perpetuated economic dependency and racial inequality in the South well into the 20th century."
+      }
+    ],
+    "L4": [
+      {
+        "concept": "Nullification Crisis",
+        "wikipedia_article": "Nullification crisis",
+        "brief_rationale": "Requires expert understanding of John C. Calhoun's states' rights theory, the Tariff of Abominations, and Andrew Jackson's forceful response — a preview of secession debates."
+      },
+      {
+        "concept": "Bank War",
+        "wikipedia_article": "Bank War",
+        "brief_rationale": "Requires deep knowledge of the constitutional, economic, and political stakes of Jackson's veto of the Second Bank of the United States and its long-term monetary consequences."
+      },
+      {
+        "concept": "Compromise of 1850",
+        "wikipedia_article": "Compromise of 1850",
+        "brief_rationale": "Requires detailed understanding of the five legislative measures, the role of Henry Clay and Daniel Webster, and why the Fugitive Slave Act proved so incendiary."
+      },
+      {
+        "concept": "Freedmen's Bureau",
+        "wikipedia_article": "Bureau of Refugees, Freedmen, and Abandoned Lands",
+        "brief_rationale": "Requires expert-level understanding of what the bureau accomplished, its funding and structural limitations, and why Johnson's vetoes crippled its effectiveness."
+      },
+      {
+        "concept": "XYZ Affair",
+        "wikipedia_article": "XYZ Affair",
+        "brief_rationale": "Requires knowledge of the 1797–1798 diplomatic crisis with France, the Quasi-War, and how it shaped early American party politics and foreign policy doctrine."
+      },
+      {
+        "concept": "Smoot-Hawley Tariff",
+        "wikipedia_article": "Smoot–Hawley Tariff Act",
+        "brief_rationale": "Requires understanding how this 1930 protective tariff deepened the Depression by triggering retaliatory tariffs and collapsing international trade."
+      },
+      {
+        "concept": "Muller v. Oregon",
+        "wikipedia_article": "Muller v. Oregon",
+        "brief_rationale": "Requires knowledge of this 1908 Supreme Court case upholding sex-based labor regulations and its ambivalent legacy for both progressive reform and gender equality."
+      },
+      {
+        "concept": "Platt Amendment",
+        "wikipedia_article": "Platt Amendment",
+        "brief_rationale": "Requires understanding how this 1901 provision effectively made Cuba a US protectorate and shaped Caribbean imperialism doctrine for decades."
+      },
+      {
+        "concept": "Bonus Army",
+        "wikipedia_article": "Bonus Army",
+        "brief_rationale": "Requires detailed understanding of the 1932 march of WWI veterans on Washington, Hoover's decision to disperse them by force, and the political fallout that aided FDR's election."
+      },
+      {
+        "concept": "Crédit Mobilier scandal",
+        "wikipedia_article": "Crédit Mobilier of America scandal",
+        "brief_rationale": "Requires expert knowledge of how this Gilded Age railroad construction fraud implicated members of Congress and the Grant administration, emblematic of the era's corruption."
+      },
+      {
+        "concept": "Pentagon Papers",
+        "wikipedia_article": "Pentagon Papers",
+        "brief_rationale": "Requires understanding the contents of the leaked Defense Department study, the Nixon administration's attempts to suppress publication, and the First Amendment precedent set by New York Times Co. v. United States."
+      },
+      {
+        "concept": "War Powers Resolution",
+        "wikipedia_article": "War Powers Resolution",
+        "brief_rationale": "Requires expert-level understanding of the constitutional tensions between executive war-making authority and Congressional oversight that produced this 1973 legislation and its contested enforcement history."
+      }
+    ]
+  }
+}

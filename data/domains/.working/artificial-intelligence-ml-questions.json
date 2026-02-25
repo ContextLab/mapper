@@ -1,0 +1,852 @@
+[
+  {
+    "question_text": "In AI and machine learning, what is artificial intelligence?",
+    "correct_answer": "The field of computer science focused on creating systems capable of performing tasks that typically require human intelligence, such as reasoning and learning.",
+    "distractors": [
+      "The field of computer science focused on creating systems capable of performing tasks that typically require mechanical precision, such as manufacturing and assembly.",
+      "The field of electrical engineering focused on creating circuits capable of performing tasks that typically require human intelligence, such as reasoning and learning.",
+      "The field of computer science focused on creating systems capable of performing tasks that typically require animal instinct, such as navigation and foraging."
+    ],
+    "difficulty": 1,
+    "source_article": "Artificial_intelligence",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "artificial intelligence"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what is machine learning?",
+    "correct_answer": "A subset of artificial intelligence in which algorithms learn patterns from data to make predictions or decisions without being explicitly programmed for each task.",
+    "distractors": [
+      "A subset of artificial intelligence in which algorithms follow fixed rules written by programmers to make predictions or decisions for each specific task.",
+      "A subset of software engineering in which algorithms learn patterns from data to generate source code without being explicitly programmed for each task.",
+      "A subset of artificial intelligence in which algorithms learn patterns from data to manufacture physical components without being explicitly designed for each task."
+    ],
+    "difficulty": 1,
+    "source_article": "Machine_learning",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "machine learning"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what is a neural network?",
+    "correct_answer": "A computational model composed of layers of interconnected nodes, loosely inspired by the structure of biological neurons, that learns to map inputs to outputs.",
+    "distractors": [
+      "A computational model composed of layers of independent nodes, loosely inspired by the structure of biological neurons, that stores inputs in a relational database.",
+      "A computational model composed of layers of interconnected nodes, loosely inspired by the structure of digital circuits, that learns to map inputs to outputs.",
+      "A biological system composed of layers of interconnected neurons, directly replicated in silicon hardware, that learns to map inputs to outputs."
+    ],
+    "difficulty": 1,
+    "source_article": "Neural_network_(machine_learning)",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "neural network"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what is deep learning?",
+    "correct_answer": "A branch of machine learning that uses neural networks with many successive layers to learn hierarchical representations of data for complex tasks.",
+    "distractors": [
+      "A branch of machine learning that uses decision trees with many successive splits to learn hierarchical representations of data for complex tasks.",
+      "A branch of machine learning that uses neural networks with a single hidden layer to learn flat representations of data for complex tasks.",
+      "A branch of statistics that uses neural networks with many successive layers to learn hierarchical representations of data for simple regression tasks."
+    ],
+    "difficulty": 1,
+    "source_article": "Deep_learning",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "deep learning"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what is an algorithm?",
+    "correct_answer": "A finite sequence of well-defined instructions for solving a problem or performing a computation, executed step by step to produce an output.",
+    "distractors": [
+      "A finite sequence of well-defined instructions for designing hardware or constructing a circuit, executed step by step to produce a processor.",
+      "An infinite sequence of adaptive instructions for solving a problem or performing a computation, executed in parallel to produce an output.",
+      "A finite sequence of ambiguous guidelines for solving a problem or performing an experiment, executed step by step to produce a hypothesis."
+    ],
+    "difficulty": 1,
+    "source_article": "Algorithm",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "algorithm"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what is training data?",
+    "correct_answer": "The dataset used to fit a machine learning model by exposing it to examples from which it learns patterns and relationships.",
+    "distractors": [
+      "The dataset used to evaluate a machine learning model after deployment by measuring its performance on previously unseen examples.",
+      "The dataset used to fit a machine learning model by exposing it to randomly generated synthetic noise and placeholder values.",
+      "The dataset used to configure the hardware of a machine learning system by specifying the computational resources and memory allocation."
+    ],
+    "difficulty": 1,
+    "source_article": "Training,_validation,_and_test_data_sets",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "training data"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what is supervised learning?",
+    "correct_answer": "A machine learning paradigm where a model is trained on labeled data, learning to map inputs to known correct outputs provided during training.",
+    "distractors": [
+      "A machine learning paradigm where a model is trained on unlabeled data, learning to discover hidden structure without any correct outputs provided during training.",
+      "A machine learning paradigm where a model is trained on labeled data, learning to generate new inputs that match the known correct outputs provided during training.",
+      "A machine learning paradigm where a model is trained by an agent interacting with an environment, learning to maximize cumulative reward signals over time."
+    ],
+    "difficulty": 1,
+    "source_article": "Supervised_learning",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "supervised learning"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what is unsupervised learning?",
+    "correct_answer": "A machine learning paradigm where a model learns patterns and structure from data that has no labeled outputs or predefined categories.",
+    "distractors": [
+      "A machine learning paradigm where a model learns patterns and structure from data that has been fully labeled with correct outputs and predefined categories.",
+      "A machine learning paradigm where a model learns policies and actions from data generated by interaction with a reward-providing environment.",
+      "A machine learning paradigm where a model learns patterns and structure from data that has no input features or predefined variables."
+    ],
+    "difficulty": 1,
+    "source_article": "Unsupervised_learning",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "unsupervised learning"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what is classification?",
+    "correct_answer": "A supervised learning task where the model assigns each input to one of a finite set of discrete categories or class labels.",
+    "distractors": [
+      "A supervised learning task where the model predicts a continuous numerical value for each input from an infinite range of possible outputs.",
+      "An unsupervised learning task where the model assigns each input to one of a finite set of discrete categories without any training labels.",
+      "A supervised learning task where the model assigns each input to one of an infinite set of continuous categories or probability distributions."
+    ],
+    "difficulty": 1,
+    "source_article": "Statistical_classification",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "classification"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what is regression?",
+    "correct_answer": "A supervised learning task where the model predicts a continuous numerical output value based on one or more input features.",
+    "distractors": [
+      "A supervised learning task where the model predicts a discrete categorical output label based on one or more input features.",
+      "An unsupervised learning task where the model predicts a continuous numerical output value based on clustering of input features.",
+      "A supervised learning task where the model predicts a binary true-or-false output value based on one or more input features."
+    ],
+    "difficulty": 1,
+    "source_article": "Regression_analysis",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "regression"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what is a robot?",
+    "correct_answer": "A programmable machine capable of sensing its environment and carrying out complex sequences of actions automatically or semi-autonomously.",
+    "distractors": [
+      "A programmable machine capable of storing large datasets and performing complex sequences of statistical analyses automatically or semi-autonomously.",
+      "A fixed machine capable of sensing its environment and carrying out a single repetitive action manually under direct human control.",
+      "A programmable software agent capable of browsing the internet and carrying out complex sequences of web searches automatically or semi-autonomously."
+    ],
+    "difficulty": 1,
+    "source_article": "Robot",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "robot"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what is natural language processing?",
+    "correct_answer": "A subfield of AI focused on enabling computers to understand, interpret, and generate human language in both text and speech forms.",
+    "distractors": [
+      "A subfield of AI focused on enabling computers to understand, interpret, and generate visual imagery in both photographic and artistic forms.",
+      "A subfield of linguistics focused on enabling humans to understand, interpret, and generate computer programming languages in both compiled and scripted forms.",
+      "A subfield of AI focused on enabling computers to understand, interpret, and generate musical compositions in both audio and notation forms."
+    ],
+    "difficulty": 1,
+    "source_article": "Natural_language_processing",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "natural language processing"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what is computer vision?",
+    "correct_answer": "A subfield of AI that enables machines to extract meaningful information from images, videos, and other visual inputs for automated analysis.",
+    "distractors": [
+      "A subfield of AI that enables machines to extract meaningful information from audio signals, speech, and other acoustic inputs for automated analysis.",
+      "A subfield of graphics that enables machines to generate realistic images, videos, and other visual outputs for entertainment and simulation.",
+      "A subfield of AI that enables machines to extract meaningful information from text documents, databases, and other structured inputs for automated analysis."
+    ],
+    "difficulty": 1,
+    "source_article": "Computer_vision",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "computer vision"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what does the gradient descent algorithm do during model training?",
+    "correct_answer": "It iteratively updates model parameters by moving them in the direction opposite to the gradient of the loss function to minimize prediction error.",
+    "distractors": [
+      "It iteratively updates model parameters by moving them in the same direction as the gradient of the loss function to maximize prediction error.",
+      "It iteratively removes model parameters by eliminating those with the largest gradient of the loss function to simplify model architecture.",
+      "It iteratively updates training examples by moving them in the direction opposite to the gradient of the loss function to improve data quality."
+    ],
+    "difficulty": 2,
+    "source_article": "Gradient_descent",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "gradient descent"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what is overfitting?",
+    "correct_answer": "When a model learns the training data too closely, including noise and outliers, resulting in poor generalization performance on new unseen data.",
+    "distractors": [
+      "When a model learns the training data too loosely, ignoring important patterns, resulting in poor performance on both training and unseen data.",
+      "When a model learns the training data too closely, including noise and outliers, resulting in improved generalization performance on new unseen data.",
+      "When a model fails to converge during training, producing random predictions, resulting in poor generalization performance on new unseen data."
+    ],
+    "difficulty": 2,
+    "source_article": "Overfitting",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "overfitting"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what distinguishes a convolutional neural network from a standard feedforward network?",
+    "correct_answer": "It uses learnable convolutional filters that slide across input data to detect local spatial patterns like edges, textures, and shapes.",
+    "distractors": [
+      "It uses learnable recurrent connections that loop across input data to detect long-range temporal patterns like trends, cycles, and sequences.",
+      "It uses fixed convolutional filters that are randomly assigned to input data to detect global spatial patterns like backgrounds, scenes, and contexts.",
+      "It uses learnable convolutional filters that process the entire input at once to detect global frequency patterns like pitch, tone, and timbre."
+    ],
+    "difficulty": 2,
+    "source_article": "Convolutional_neural_network",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "convolutional neural network"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what structural feature defines a recurrent neural network?",
+    "correct_answer": "It contains cyclic connections that allow information to persist across time steps, enabling the network to maintain a hidden state over sequences.",
+    "distractors": [
+      "It contains skip connections that allow information to bypass intermediate layers, enabling the network to maintain gradient flow over depth.",
+      "It contains pooling connections that allow information to be compressed across spatial regions, enabling the network to maintain translation invariance.",
+      "It contains feedforward connections that allow information to flow in one direction only, enabling the network to maintain a fixed input-output mapping."
+    ],
+    "difficulty": 2,
+    "source_article": "Recurrent_neural_network",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "recurrent neural network"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what does the backpropagation algorithm compute?",
+    "correct_answer": "The gradients of the loss function with respect to each weight in the network by applying the chain rule of calculus backwards through layers.",
+    "distractors": [
+      "The activations of each neuron in the network by applying the chain rule of calculus forwards through each successive layer.",
+      "The gradients of the loss function with respect to each training example by applying the product rule of calculus backwards through layers.",
+      "The optimal values of each weight in the network by applying the chain rule of calculus backwards through layers in a single pass."
+    ],
+    "difficulty": 2,
+    "source_article": "Backpropagation",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "backpropagation"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, how does reinforcement learning differ from supervised learning?",
+    "correct_answer": "An agent learns by interacting with an environment and receiving reward or penalty signals, rather than learning from a fixed dataset of labeled examples.",
+    "distractors": [
+      "An agent learns by memorizing a fixed dataset of labeled examples provided by a teacher, rather than interacting with an environment to receive reward signals.",
+      "An agent learns by interacting with an environment and receiving labeled input-output pairs, rather than learning from a fixed dataset of reward signals.",
+      "An agent learns by clustering unlabeled data points into meaningful groups, rather than learning from a fixed dataset of labeled examples."
+    ],
+    "difficulty": 2,
+    "source_article": "Reinforcement_learning",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "reinforcement learning"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, how does a decision tree make predictions?",
+    "correct_answer": "It recursively partitions the input space using a series of binary splits on features, following a path from root to leaf to reach a prediction.",
+    "distractors": [
+      "It simultaneously evaluates all features using a weighted linear combination, computing a single threshold to reach a global prediction.",
+      "It recursively partitions the input space using a series of multi-way splits on samples, following a path from leaf to root to reach a prediction.",
+      "It randomly partitions the input space using a series of binary splits on features, following multiple paths simultaneously to average several predictions."
+    ],
+    "difficulty": 2,
+    "source_article": "Decision_tree_learning",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "decision tree"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what does a support vector machine seek to find?",
+    "correct_answer": "The optimal hyperplane that separates classes with the maximum margin, defined by the training examples closest to the boundary called support vectors.",
+    "distractors": [
+      "The optimal cluster centers that group data with the minimum variance, defined by the training examples farthest from each centroid called support vectors.",
+      "The optimal hyperplane that separates classes with the minimum margin, defined by the training examples farthest from the boundary called support vectors.",
+      "The optimal decision tree that separates classes with the maximum depth, defined by the training examples closest to each split node called support vectors."
+    ],
+    "difficulty": 2,
+    "source_article": "Support_vector_machine",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "support vector machine"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, how does the k-means clustering algorithm work?",
+    "correct_answer": "It partitions data into $k$ clusters by alternately assigning each point to the nearest centroid and recomputing centroids as cluster means until convergence.",
+    "distractors": [
+      "It partitions data into $k$ clusters by alternately assigning each point to the farthest centroid and recomputing centroids as cluster medians until convergence.",
+      "It partitions data into $k$ clusters by simultaneously merging the closest pair of clusters and recomputing centroids as cluster means until $k$ remain.",
+      "It partitions data into $k$ clusters by alternately assigning each point to the nearest centroid and recomputing centroids as cluster modes until convergence."
+    ],
+    "difficulty": 2,
+    "source_article": "K-means_clustering",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "k-means clustering"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what is transfer learning?",
+    "correct_answer": "A technique where a model pretrained on one task is reused or fine-tuned for a different but related task, leveraging previously learned representations.",
+    "distractors": [
+      "A technique where a model trained on one task is discarded and rebuilt from scratch for a different but related task, ignoring previously learned representations.",
+      "A technique where a model pretrained on one task is reused or fine-tuned for a completely unrelated task, leveraging randomly initialized representations.",
+      "A technique where training data from one task is directly copied and relabeled for a different but related task, leveraging previously collected samples."
+    ],
+    "difficulty": 2,
+    "source_article": "Transfer_learning",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "transfer learning"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what two components make up a generative adversarial network?",
+    "correct_answer": "A generator network that creates synthetic samples and a discriminator network that distinguishes real data from the generator's fakes, trained adversarially.",
+    "distractors": [
+      "An encoder network that compresses input data and a decoder network that reconstructs the original input from the compressed representation, trained cooperatively.",
+      "A generator network that creates synthetic samples and a classifier network that labels the generator's outputs into predefined categories, trained cooperatively.",
+      "A teacher network that creates labeled examples and a student network that distinguishes correct labels from the teacher's errors, trained adversarially."
+    ],
+    "difficulty": 2,
+    "source_article": "Generative_adversarial_network",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "generative adversarial network"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what core mechanism distinguishes the transformer architecture from recurrent models?",
+    "correct_answer": "It uses self-attention to compute relationships between all positions in a sequence simultaneously, eliminating the need for sequential recurrent processing.",
+    "distractors": [
+      "It uses convolutional filters to compute relationships between adjacent positions in a sequence simultaneously, eliminating the need for sequential recurrent processing.",
+      "It uses self-attention to compute relationships between all positions in a sequence one at a time, preserving the need for sequential recurrent processing.",
+      "It uses gated memory cells to compute relationships between all positions in a sequence simultaneously, eliminating the need for attention-based processing."
+    ],
+    "difficulty": 2,
+    "source_article": "Transformer_(deep_learning_architecture)",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "transformer"
+    ]
+  },
+  {
+    "question_text": "In AI and machine learning, what characterizes a large language model?",
+    "correct_answer": "A neural language model with billions of parameters, pretrained on massive text corpora using self-supervised objectives to generate and understand natural language.",
+    "distractors": [
+      "A neural language model with hundreds of parameters, pretrained on curated text datasets using fully supervised objectives to generate and understand natural language.",
+      "A rule-based language system with billions of handcrafted rules, assembled by linguists using expert knowledge to generate and understand natural language.",
+      "A neural language model with billions of parameters, pretrained on massive image corpora using self-supervised objectives to generate and understand visual content."
+    ],
+    "difficulty": 2,
+    "source_article": "Large_language_model",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "large language model"
+    ]
+  },
+  {
+    "question_text": "In the bias-variance tradeoff, what happens to a model's test error as its complexity increases beyond the optimal point?",
+    "correct_answer": "Bias continues to decrease but variance increases faster, causing total test error to rise as the model begins overfitting to training noise.",
+    "distractors": [
+      "Bias continues to increase but variance decreases faster, causing total test error to rise as the model begins underfitting the training data.",
+      "Both bias and variance decrease together, causing total test error to plateau as the model reaches its maximum representational capacity.",
+      "Bias continues to decrease but variance remains constant, causing total test error to decrease monotonically as the model captures finer patterns."
+    ],
+    "difficulty": 3,
+    "source_article": "Bias\u2013variance_tradeoff",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "bias-variance tradeoff"
+    ]
+  },
+  {
+    "question_text": "In machine learning, how do L1 and L2 regularization differ in their effect on learned model weights?",
+    "correct_answer": "L1 regularization encourages sparsity by driving some weights exactly to zero, while L2 regularization shrinks all weights toward zero without eliminating any.",
+    "distractors": [
+      "L1 regularization shrinks all weights uniformly toward zero without eliminating any, while L2 regularization encourages sparsity by driving some weights exactly to zero.",
+      "L1 regularization encourages sparsity by driving all weights exactly to zero, while L2 regularization increases all weights away from zero to prevent underfitting.",
+      "L1 regularization encourages large weights by penalizing small values, while L2 regularization shrinks all weights toward zero without eliminating any."
+    ],
+    "difficulty": 3,
+    "source_article": "Regularization_(mathematics)",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "regularization"
+    ]
+  },
+  {
+    "question_text": "In k-fold cross-validation, why is the model retrained $k$ times rather than splitting the data into a single fixed train-test pair?",
+    "correct_answer": "Retraining on $k$ different folds provides a more reliable estimate of generalization error by reducing the variance that arises from any single random split.",
+    "distractors": [
+      "Retraining on $k$ different folds provides a faster training procedure by distributing the computational cost across multiple smaller datasets in parallel.",
+      "Retraining on $k$ different folds guarantees zero bias in the generalization estimate by ensuring every possible split is evaluated exactly once.",
+      "Retraining on $k$ different folds increases the total amount of training data available by augmenting the original dataset with synthetically generated folds."
+    ],
+    "difficulty": 3,
+    "source_article": "Cross-validation_(statistics)",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "cross-validation"
+    ]
+  },
+  {
+    "question_text": "In deep learning, how does batch normalization behave differently during training versus inference?",
+    "correct_answer": "During training it normalizes using per-mini-batch statistics, while during inference it uses fixed running averages of mean and variance accumulated during training.",
+    "distractors": [
+      "During training it normalizes using fixed global statistics from the full dataset, while during inference it uses per-mini-batch statistics computed from test inputs.",
+      "During training it normalizes using per-mini-batch statistics, while during inference it recomputes mean and variance from scratch on each individual test example.",
+      "During training and inference it behaves identically, always normalizing using per-mini-batch statistics regardless of whether the model is being updated."
+    ],
+    "difficulty": 3,
+    "source_article": "Batch_normalization",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "batch normalization"
+    ]
+  },
+  {
+    "question_text": "In the transformer architecture, how are query, key, and value vectors used to compute self-attention scores?",
+    "correct_answer": "Each query is dot-producted with all keys, scaled by $1/\\sqrt{d_k}$, passed through softmax to obtain weights, then used to compute a weighted sum of values.",
+    "distractors": [
+      "Each query is dot-producted with all values, scaled by $1/\\sqrt{d_k}$, passed through softmax to obtain weights, then used to compute a weighted sum of keys.",
+      "Each query is subtracted from all keys, scaled by $1/\\sqrt{d_k}$, passed through sigmoid to obtain weights, then used to compute a weighted sum of values.",
+      "Each query is dot-producted with all keys, scaled by $d_k$, passed through softmax to obtain weights, then concatenated with the corresponding values."
+    ],
+    "difficulty": 3,
+    "source_article": "Attention_(machine_learning)",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "attention mechanism"
+    ]
+  },
+  {
+    "question_text": "In word embedding models like Word2Vec, what property allows vector arithmetic such as king - man + woman $\\approx$ queen?",
+    "correct_answer": "The training process encodes semantic relationships as consistent linear directions in the embedding space, so analogous word pairs share similar offset vectors.",
+    "distractors": [
+      "The training process encodes semantic relationships as random orthogonal directions in the embedding space, so analogous word pairs share similar cosine distances.",
+      "The training process encodes syntactic relationships as consistent linear directions in the embedding space, so analogous word pairs share similar absolute positions.",
+      "The training process memorizes specific word pairs as lookup entries in the embedding table, so analogous word pairs share similar hash values."
+    ],
+    "difficulty": 3,
+    "source_article": "Word_embedding",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "word embedding"
+    ]
+  },
+  {
+    "question_text": "In a Markov decision process, what does the Bellman equation express about the value of a state?",
+    "correct_answer": "It decomposes the value of a state into the immediate expected reward plus the discounted expected value of successor states under the current policy.",
+    "distractors": [
+      "It decomposes the value of a state into the cumulative past rewards plus the undiscounted expected value of predecessor states under the current policy.",
+      "It decomposes the value of a state into the immediate expected reward plus the discounted expected value of all states in the environment regardless of policy.",
+      "It decomposes the value of a state into the maximum possible reward plus the discounted minimum value of successor states across all possible policies."
+    ],
+    "difficulty": 3,
+    "source_article": "Markov_decision_process",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "Markov decision process"
+    ]
+  },
+  {
+    "question_text": "In a random forest, how does combining bagging with random feature selection at each split reduce prediction variance?",
+    "correct_answer": "Random feature subsets decorrelate individual trees, so averaging their predictions cancels out independent errors more effectively than bagging alone.",
+    "distractors": [
+      "Random feature subsets increase correlation among individual trees, so averaging their predictions reinforces consistent patterns more effectively than bagging alone.",
+      "Random feature subsets decorrelate individual trees, so selecting the single best tree's prediction eliminates errors more effectively than bagging alone.",
+      "Random feature subsets reduce the depth of individual trees, so averaging their shallower predictions avoids overfitting more effectively than bagging alone."
+    ],
+    "difficulty": 3,
+    "source_article": "Random_forest",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "random forest"
+    ]
+  },
+  {
+    "question_text": "In principal component analysis, how are the principal components determined from the data?",
+    "correct_answer": "They are the eigenvectors of the data's covariance matrix, ordered by their corresponding eigenvalues which represent the variance explained along each direction.",
+    "distractors": [
+      "They are the eigenvectors of the data's correlation matrix, ordered by their corresponding eigenvectors which represent the mean explained along each direction.",
+      "They are the singular values of the data's covariance matrix, ordered by their corresponding eigenvectors which represent the variance explained along each direction.",
+      "They are the eigenvectors of the data's distance matrix, ordered by their corresponding eigenvalues which represent the entropy explained along each direction."
+    ],
+    "difficulty": 3,
+    "source_article": "Principal_component_analysis",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "principal component analysis"
+    ]
+  },
+  {
+    "question_text": "In deep learning, why does the vanishing gradient problem make it difficult to train deep networks with sigmoid activations?",
+    "correct_answer": "The sigmoid derivative is at most 0.25, so multiplying many such small derivatives during backpropagation causes gradients to shrink exponentially with network depth.",
+    "distractors": [
+      "The sigmoid derivative is at most 1.0, so multiplying many such unit derivatives during backpropagation causes gradients to remain constant with network depth.",
+      "The sigmoid derivative is at most 0.25, so adding many such small derivatives during backpropagation causes gradients to grow linearly with network depth.",
+      "The sigmoid derivative is unbounded, so multiplying many such large derivatives during backpropagation causes gradients to explode exponentially with network depth."
+    ],
+    "difficulty": 3,
+    "source_article": "Vanishing_gradient_problem",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "vanishing gradient problem"
+    ]
+  },
+  {
+    "question_text": "In deep learning, how does dropout regularize a neural network during training?",
+    "correct_answer": "It randomly sets a fraction of neuron activations to zero on each forward pass, preventing co-adaptation and approximating an ensemble of many subnetworks.",
+    "distractors": [
+      "It randomly sets a fraction of neuron activations to zero on each forward pass, preventing co-adaptation and permanently removing those neurons from the architecture.",
+      "It randomly adds Gaussian noise to a fraction of the weights on each forward pass, preventing co-adaptation and approximating an ensemble of many subnetworks.",
+      "It deterministically sets the smallest neuron activations to zero on each forward pass, preventing co-adaptation and approximating a sparse pruned network."
+    ],
+    "difficulty": 3,
+    "source_article": "Dropout_(neural_networks)",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "dropout"
+    ]
+  },
+  {
+    "question_text": "In BERT's pretraining, what is the masked language modeling objective?",
+    "correct_answer": "Randomly masking a percentage of input tokens and training the model to predict the original tokens using bidirectional context from surrounding words.",
+    "distractors": [
+      "Randomly masking a percentage of input tokens and training the model to predict the next token using only left-to-right context from preceding words.",
+      "Randomly masking a percentage of output labels and training the model to predict the original labels using bidirectional context from surrounding words.",
+      "Sequentially masking each input token and training the model to predict the original tokens using only right-to-left context from following words."
+    ],
+    "difficulty": 3,
+    "source_article": "BERT_(language_model)",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "BERT"
+    ]
+  },
+  {
+    "question_text": "In PAC learning theory, what is the role of the VC dimension in determining sample complexity bounds?",
+    "correct_answer": "The VC dimension quantifies hypothesis class capacity; sample complexity scales as $O\\left(\\frac{d_{VC} + \\ln(1/\\delta)}{\\epsilon^2}\\right)$ to guarantee error below $\\epsilon$ with probability $1-\\delta$.",
+    "distractors": [
+      "The VC dimension quantifies hypothesis class capacity; sample complexity scales as $O\\left(\\frac{\\ln(d_{VC}) + \\delta}{\\epsilon}\\right)$ to guarantee error below $\\epsilon$ with probability $1-\\delta$.",
+      "The VC dimension quantifies training data entropy; sample complexity scales as $O\\left(\\frac{d_{VC} + \\ln(1/\\delta)}{\\epsilon^2}\\right)$ to guarantee error below $\\delta$ with probability $1-\\epsilon$.",
+      "The VC dimension quantifies hypothesis class capacity; sample complexity scales as $O\\left(\\frac{d_{VC}^2 + \\ln(1/\\delta)}{\\epsilon}\\right)$ to guarantee error below $\\epsilon$ with probability $1-\\delta$."
+    ],
+    "difficulty": 4,
+    "source_article": "Probably_approximately_correct_learning",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "PAC learning"
+    ]
+  },
+  {
+    "question_text": "What does it mean for a hypothesis class to shatter a set of points, and how does this relate to VC dimension?",
+    "correct_answer": "A hypothesis class shatters a set of $n$ points if it can realize all $2^n$ possible binary labelings; the VC dimension is the largest $n$ for which shattering is possible.",
+    "distractors": [
+      "A hypothesis class shatters a set of $n$ points if it can realize all $n$ possible binary labelings; the VC dimension is the smallest $n$ for which shattering is possible.",
+      "A hypothesis class shatters a set of $n$ points if it can realize all $2^n$ possible binary labelings; the VC dimension is the smallest $n$ for which shattering fails.",
+      "A hypothesis class shatters a set of $n$ points if it can correctly classify all $2^n$ possible training sets; the VC dimension is the largest $n$ for which generalization is guaranteed."
+    ],
+    "difficulty": 4,
+    "source_article": "VC_dimension",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "VC dimension"
+    ]
+  },
+  {
+    "question_text": "In a variational autoencoder, what role does the reparameterization trick play in enabling gradient-based training?",
+    "correct_answer": "It expresses latent samples as a deterministic function of encoder parameters plus independent noise, moving stochasticity outside the computational graph so gradients can flow through the encoder.",
+    "distractors": [
+      "It expresses latent samples as a stochastic function of decoder parameters plus independent noise, moving determinism outside the computational graph so gradients can flow through the decoder.",
+      "It expresses latent samples as a deterministic function of encoder parameters without any noise, removing stochasticity from the computational graph so gradients remain exactly zero through the encoder.",
+      "It expresses latent samples as a deterministic function of encoder parameters plus learned noise, moving stochasticity inside the computational graph so gradients can bypass the encoder."
+    ],
+    "difficulty": 4,
+    "source_article": "Variational_autoencoder",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "variational autoencoder"
+    ]
+  },
+  {
+    "question_text": "In the expectation-maximization algorithm, what quantity does the E-step compute and how does the M-step use it?",
+    "correct_answer": "The E-step computes the posterior distribution over latent variables given current parameters, forming an expected complete-data log-likelihood that the M-step then maximizes over parameters.",
+    "distractors": [
+      "The E-step computes the prior distribution over latent variables independent of current parameters, forming an expected complete-data log-likelihood that the M-step then maximizes over parameters.",
+      "The E-step computes the posterior distribution over latent variables given current parameters, forming an observed incomplete-data log-likelihood that the M-step then minimizes over parameters.",
+      "The E-step computes the marginal likelihood over observed variables given current parameters, forming an expected complete-data log-likelihood that the M-step then maximizes over latent variables."
+    ],
+    "difficulty": 4,
+    "source_article": "Expectation\u2013maximization_algorithm",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "expectation-maximization algorithm"
+    ]
+  },
+  {
+    "question_text": "In Q-learning, why is the algorithm considered off-policy, and what update rule does it use?",
+    "correct_answer": "It is off-policy because it updates Q-values toward the greedy maximum over next-state actions, $Q(s,a) \\leftarrow Q(s,a) + \\alpha[r + \\gamma \\max_{a'} Q(s',a') - Q(s,a)]$, regardless of the action actually taken.",
+    "distractors": [
+      "It is on-policy because it updates Q-values toward the action actually selected in the next state, $Q(s,a) \\leftarrow Q(s,a) + \\alpha[r + \\gamma Q(s',a') - Q(s,a)]$, following the current policy.",
+      "It is off-policy because it updates Q-values toward the greedy minimum over next-state actions, $Q(s,a) \\leftarrow Q(s,a) + \\alpha[r + \\gamma \\min_{a'} Q(s',a') - Q(s,a)]$, regardless of the action actually taken.",
+      "It is off-policy because it updates Q-values toward the average over next-state actions, $Q(s,a) \\leftarrow Q(s,a) + \\alpha[r + \\gamma \\text{avg}_{a'} Q(s',a') - Q(s,a)]$, regardless of the action actually taken."
+    ],
+    "difficulty": 4,
+    "source_article": "Q-learning",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "Q-learning"
+    ]
+  },
+  {
+    "question_text": "In kernel methods, what does Mercer's theorem guarantee about a valid kernel function?",
+    "correct_answer": "It guarantees that a continuous symmetric positive-definite kernel corresponds to an inner product in some reproducing kernel Hilbert space, justifying the implicit feature map of the kernel trick.",
+    "distractors": [
+      "It guarantees that a continuous symmetric negative-definite kernel corresponds to a distance metric in some reproducing kernel Hilbert space, justifying the implicit feature map of the kernel trick.",
+      "It guarantees that a continuous symmetric positive-definite kernel corresponds to an inner product in some finite-dimensional Euclidean space, justifying the explicit feature map of the kernel trick.",
+      "It guarantees that a continuous asymmetric positive-definite kernel corresponds to a projection in some reproducing kernel Hilbert space, justifying the implicit feature map of the kernel trick."
+    ],
+    "difficulty": 4,
+    "source_article": "Kernel_method",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "kernel method"
+    ]
+  },
+  {
+    "question_text": "In the information bottleneck framework, what does the IB Lagrangian $\\mathcal{L} = I(X;T) - \\beta I(T;Y)$ optimize?",
+    "correct_answer": "It seeks a compressed representation $T$ that minimizes mutual information with input $X$ while maximizing mutual information with target $Y$, controlled by the tradeoff parameter $\\beta$.",
+    "distractors": [
+      "It seeks a compressed representation $T$ that maximizes mutual information with input $X$ while minimizing mutual information with target $Y$, controlled by the tradeoff parameter $\\beta$.",
+      "It seeks a compressed representation $T$ that minimizes mutual information with input $X$ while maximizing the entropy of target $Y$, controlled by the tradeoff parameter $\\beta$.",
+      "It seeks a compressed representation $T$ that minimizes the entropy of input $X$ while maximizing mutual information with target $Y$, controlled by the tradeoff parameter $\\beta$."
+    ],
+    "difficulty": 4,
+    "source_article": "Information_bottleneck_method",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "information bottleneck"
+    ]
+  },
+  {
+    "question_text": "In neural architecture search, how does the DARTS method make the discrete search space differentiable?",
+    "correct_answer": "It places a softmax-weighted mixture of all candidate operations on each edge and jointly optimizes architecture weights and network parameters via gradient descent on a validation loss.",
+    "distractors": [
+      "It places a hard argmax selection of one candidate operation on each edge and jointly optimizes architecture weights and network parameters via evolutionary search on a validation loss.",
+      "It places a softmax-weighted mixture of all candidate operations on each edge and separately optimizes architecture weights via reinforcement learning and network parameters via gradient descent.",
+      "It places a uniformly-weighted average of all candidate operations on each edge and jointly optimizes architecture weights and network parameters via gradient descent on the training loss."
+    ],
+    "difficulty": 4,
+    "source_article": "Neural_architecture_search",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "neural architecture search"
+    ]
+  },
+  {
+    "question_text": "In normalizing flows, how is the exact log-likelihood of a data point computed using the change-of-variables formula?",
+    "correct_answer": "By summing the log-probability under the base distribution and the log-absolute-determinants of the Jacobians of each invertible transformation in the composed flow.",
+    "distractors": [
+      "By summing the log-probability under the target distribution and the log-absolute-traces of the Jacobians of each invertible transformation in the composed flow.",
+      "By summing the log-probability under the base distribution and the log-absolute-determinants of the Hessians of each invertible transformation in the composed flow.",
+      "By multiplying the log-probability under the base distribution with the log-absolute-determinants of the Jacobians of each non-invertible transformation in the composed flow."
+    ],
+    "difficulty": 4,
+    "source_article": "Flow-based_generative_model",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "normalizing flow"
+    ]
+  },
+  {
+    "question_text": "In proximal policy optimization, how does the clipped surrogate objective prevent destructively large policy updates?",
+    "correct_answer": "It clips the probability ratio $r_t(\\theta) = \\pi_\\theta(a|s)/\\pi_{\\theta_{old}}(a|s)$ to $[1-\\epsilon, 1+\\epsilon]$, removing the incentive for the new policy to deviate too far from the old one.",
+    "distractors": [
+      "It clips the advantage estimate $\\hat{A}_t$ to $[-\\epsilon, \\epsilon]$, removing the incentive for the new policy to assign high probability to actions with extreme advantage values.",
+      "It clips the probability ratio $r_t(\\theta) = \\pi_\\theta(a|s)/\\pi_{\\theta_{old}}(a|s)$ to $[0, \\epsilon]$, removing the incentive for the new policy to assign any probability to previously untried actions.",
+      "It clips the gradient of the policy loss to $[-\\epsilon, \\epsilon]$, removing the incentive for the optimizer to take steps larger than a fixed learning rate threshold."
+    ],
+    "difficulty": 4,
+    "source_article": "Proximal_Policy_Optimization",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "proximal policy optimization"
+    ]
+  },
+  {
+    "question_text": "In graph neural networks, what theoretical result limits their expressive power in distinguishing non-isomorphic graphs?",
+    "correct_answer": "Standard message-passing GNNs are at most as powerful as the 1-dimensional Weisfeiler-Leman isomorphism test, meaning they cannot distinguish certain non-isomorphic graphs that 1-WL also fails to distinguish.",
+    "distractors": [
+      "Standard message-passing GNNs are strictly more powerful than the 1-dimensional Weisfeiler-Leman isomorphism test, meaning they can distinguish all non-isomorphic graphs that 1-WL fails to distinguish.",
+      "Standard message-passing GNNs are at most as powerful as the 2-dimensional Weisfeiler-Leman isomorphism test, meaning they cannot distinguish certain non-isomorphic graphs that 2-WL also fails to distinguish.",
+      "Standard message-passing GNNs are at most as powerful as the 1-dimensional Weisfeiler-Leman isomorphism test, meaning they cannot distinguish any pair of non-isomorphic graphs regardless of structure."
+    ],
+    "difficulty": 4,
+    "source_article": "Graph_neural_network",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "graph neural network"
+    ]
+  },
+  {
+    "question_text": "In denoising diffusion probabilistic models, what objective is used to train the reverse denoising process?",
+    "correct_answer": "A simplified variational bound training a neural network to predict the noise $\\epsilon$ added at each diffusion step, minimizing $\\mathbb{E}[\\|\\epsilon - \\epsilon_\\theta(x_t, t)\\|^2]$ over timesteps.",
+    "distractors": [
+      "A simplified variational bound training a neural network to predict the clean data $x_0$ at each diffusion step, minimizing $\\mathbb{E}[\\|x_0 - x_\\theta(x_t, t)\\|^1]$ over timesteps.",
+      "A simplified variational bound training a neural network to predict the noise $\\epsilon$ added at each diffusion step, maximizing $\\mathbb{E}[\\|\\epsilon - \\epsilon_\\theta(x_t, t)\\|^2]$ over timesteps.",
+      "An exact maximum likelihood objective training a neural network to predict the transition probability at each diffusion step, minimizing $\\mathbb{E}[\\|p - p_\\theta(x_t, t)\\|^2]$ over timesteps."
+    ],
+    "difficulty": 4,
+    "source_article": "Diffusion_model",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "diffusion model"
+    ]
+  }
+]

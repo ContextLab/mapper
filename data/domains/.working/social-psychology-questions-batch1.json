@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "What term describes the tendency of individuals to change their behavior or beliefs to align with group norms?",
+    "correct_answer": "Conformity, the adjustment of behavior or thinking to match a group standard.",
+    "distractors": [
+      "Compliance, the automatic internalization of authority figures' personal values and beliefs.",
+      "Reactance, the motivation to adopt opposing views when individual freedoms are threatened.",
+      "Habituation, the gradual reduction of responsiveness after prolonged exposure to group settings."
+    ],
+    "difficulty": 1,
+    "source_article": "Conformity",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["conformity"]
+  },
+  {
+    "question_text": "What is prejudice in the context of social psychology?",
+    "correct_answer": "A preconceived negative attitude toward members of a social group based on their group membership.",
+    "distractors": [
+      "A behavioral pattern of providing unequal treatment to individuals based on objective performance metrics.",
+      "A cognitive shortcut that assigns accurate average characteristics to members of large populations.",
+      "An emotional reaction that arises exclusively from direct personal conflict with specific individuals."
+    ],
+    "difficulty": 1,
+    "source_article": "Prejudice",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["prejudice"]
+  },
+  {
+    "question_text": "What does the term persuasion refer to in social psychology?",
+    "correct_answer": "The process of changing a person's attitudes, beliefs, or behaviors through communication and argument.",
+    "distractors": [
+      "The use of physical force or legal authority to compel a person to comply with demands.",
+      "The unconscious imitation of another person's gestures and speech patterns during conversation.",
+      "The gradual extinction of a conditioned response following repeated absence of reinforcement."
+    ],
+    "difficulty": 1,
+    "source_article": "Persuasion",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["persuasion"]
+  },
+  {
+    "question_text": "What is stereotyping?",
+    "correct_answer": "Applying overgeneralized beliefs about the characteristics of a social group to its individual members.",
+    "distractors": [
+      "Forming an accurate assessment of an individual's personality based on extended personal interaction.",
+      "Deliberately treating members of another group unfairly in employment or housing situations.",
+      "Experiencing emotional distress after learning that one's beliefs are inconsistent with new evidence."
+    ],
+    "difficulty": 1,
+    "source_article": "Stereotype",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["stereotyping"]
+  },
+  {
+    "question_text": "In social psychology, what is an attitude?",
+    "correct_answer": "A learned evaluation of a person, object, or idea that influences thought and behavior.",
+    "distractors": [
+      "A biologically inherited reflex that automatically triggers a fixed behavioral response to stimuli.",
+      "A temporary emotional state produced exclusively by physiological arousal and hormonal fluctuations.",
+      "A factual belief about the world that remains constant regardless of personal experience."
+    ],
+    "difficulty": 1,
+    "source_article": "Attitude (psychology)",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["attitude"]
+  },
+  {
+    "question_text": "What does aggression refer to in social psychology?",
+    "correct_answer": "Behavior intended to harm another person who is motivated to avoid that harm.",
+    "distractors": [
+      "Any competitive behavior in which individuals strive to outperform others in a shared task.",
+      "The physiological arousal response that prepares an organism to flee from perceived threats.",
+      "Assertive communication aimed at expressing one's needs without intending injury to others."
+    ],
+    "difficulty": 1,
+    "source_article": "Aggression",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["aggression"]
+  },
+  {
+    "question_text": "What is altruism?",
+    "correct_answer": "Selfless concern for the welfare of others, involving helping without expectation of personal reward.",
+    "distractors": [
+      "Strategic cooperation in which individuals help others primarily to receive equivalent future benefits.",
+      "The instinctive protective behavior parents exhibit exclusively toward their biological offspring.",
+      "Competitive generosity displayed publicly to enhance one's social status and reputation."
+    ],
+    "difficulty": 1,
+    "source_article": "Altruism",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["altruism"]
+  },
+  {
+    "question_text": "What does obedience mean in the study of social behavior?",
+    "correct_answer": "Compliance with demands or commands issued by a person perceived as a legitimate authority figure.",
+    "distractors": [
+      "The voluntary adoption of group opinions that occurs when individuals privately accept majority views.",
+      "A reflexive submission response triggered automatically by any form of social pressure or conflict.",
+      "The tendency to follow daily routines and habits without conscious deliberation or external prompting."
+    ],
+    "difficulty": 1,
+    "source_article": "Obedience (human behavior)",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["obedience"]
+  },
+  {
+    "question_text": "What is social influence?",
+    "correct_answer": "The process by which individuals' thoughts, feelings, and behaviors are affected by others' presence or actions.",
+    "distractors": [
+      "The biological mechanism through which genetic information is transmitted from parents to their offspring.",
+      "The economic forces of supply and demand that determine pricing in competitive consumer markets.",
+      "The neurological process by which sensory information is encoded into long-term memory storage."
+    ],
+    "difficulty": 1,
+    "source_article": "Social influence",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["social influence"]
+  },
+  {
+    "question_text": "What is discrimination in social psychology?",
+    "correct_answer": "Unjustified negative behavior directed toward members of a group based on their group membership alone.",
+    "distractors": [
+      "The cognitive ability to distinguish between two similar but non-identical physical stimuli accurately.",
+      "A private attitude of dislike toward another group that is never expressed through observable actions.",
+      "The legal process of evaluating job candidates using standardized and validated performance criteria."
+    ],
+    "difficulty": 1,
+    "source_article": "Discrimination",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["discrimination"]
+  }
+]

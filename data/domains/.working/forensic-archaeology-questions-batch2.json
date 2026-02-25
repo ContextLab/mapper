@@ -1,0 +1,172 @@
+[
+  {
+    "question_text": "Under international law, what is a war crime?",
+    "correct_answer": "A serious violation of the laws and customs of armed conflict that gives rise to individual criminal responsibility.",
+    "distractors": [
+      "Any act of espionage carried out by military intelligence agencies during peacetime diplomatic negotiations.",
+      "A formal declaration of hostilities between two sovereign nations issued without prior diplomatic consultation.",
+      "The use of economic sanctions by an international body to penalize a country for unfair trade practices."
+    ],
+    "difficulty": 1,
+    "source_article": "War crime",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "war crime"
+    ]
+  },
+  {
+    "question_text": "In a legal proceeding, what is evidence?",
+    "correct_answer": "Material or information presented to a court to establish or disprove facts relevant to a case.",
+    "distractors": [
+      "The formal opinion issued by a judge after deliberation that determines the sentence for a convicted person.",
+      "A sworn oral statement given by a defendant before trial that serves as an automatic admission of guilt.",
+      "The set of procedural rules that governs how attorneys may question witnesses during cross-examination."
+    ],
+    "difficulty": 1,
+    "source_article": "Evidence",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "evidence"
+    ]
+  },
+  {
+    "question_text": "What is the key principle of stratigraphy in archaeology?",
+    "correct_answer": "In undisturbed deposits, older layers lie below younger layers, establishing a relative chronological sequence.",
+    "distractors": [
+      "Artifacts found at the same depth across different sites must belong to the same cultural period regardless of location.",
+      "The chemical composition of soil changes uniformly with depth, allowing absolute dating of any buried material.",
+      "All archaeological layers are deposited horizontally and maintain equal thickness across the entire extent of a site."
+    ],
+    "difficulty": 1,
+    "source_article": "Stratigraphy (archaeology)",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "stratigraphy"
+    ]
+  },
+  {
+    "question_text": "What does taphonomy study, and why is it important in forensic archaeology?",
+    "correct_answer": "It studies how organisms decay, become modified, and are preserved after death, informing interpretation of burial conditions.",
+    "distractors": [
+      "It studies the genetic relationships among living populations to reconstruct ancient migration routes across continents.",
+      "It studies the formation of mineral crystals in igneous rocks to date volcanic events near archaeological sites.",
+      "It studies the cultural symbolism of funerary objects placed in tombs to interpret past religious belief systems."
+    ],
+    "difficulty": 2,
+    "source_article": "Taphonomy",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "taphonomy"
+    ]
+  },
+  {
+    "question_text": "What is osteology, and how is it applied in forensic contexts?",
+    "correct_answer": "The scientific study of bones, used forensically to estimate age, sex, stature, and pathology from skeletal remains.",
+    "distractors": [
+      "The study of ancient written scripts, used forensically to authenticate disputed documents recovered at crime scenes.",
+      "The analysis of soil chemistry at burial sites, used to determine the type of weapon involved in a crime.",
+      "The microscopic study of soft-tissue cells, used to identify poisons and toxins in recently deceased individuals."
+    ],
+    "difficulty": 2,
+    "source_article": "Osteology",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "osteology"
+    ]
+  },
+  {
+    "question_text": "In archaeological excavation, what does the term provenience refer to?",
+    "correct_answer": "The exact three-dimensional location where an artifact or specimen was found within a site.",
+    "distractors": [
+      "The complete ownership history of an artifact from its discovery through every subsequent private collection.",
+      "The chemical fingerprint of the raw material from which an artifact was originally manufactured.",
+      "The cultural group or civilization to which an artifact is attributed based on its decorative style."
+    ],
+    "difficulty": 2,
+    "source_article": "Provenance",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "provenience"
+    ]
+  },
+  {
+    "question_text": "Why is maintaining a chain of custody essential for forensic evidence?",
+    "correct_answer": "It documents every person who handled the evidence, ensuring its integrity and admissibility in court.",
+    "distractors": [
+      "It guarantees that all laboratory analyses are completed within a legally mandated forty-eight-hour window.",
+      "It certifies that the evidence was collected using only government-approved excavation tools and containers.",
+      "It assigns a monetary value to each piece of evidence so investigators can prioritize high-worth items first."
+    ],
+    "difficulty": 2,
+    "source_article": "Chain of custody",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "chain of custody"
+    ]
+  },
+  {
+    "question_text": "What is forensic anthropology primarily concerned with?",
+    "correct_answer": "Applying physical anthropology techniques to analyze human skeletal remains in legal and criminal investigations.",
+    "distractors": [
+      "Studying living populations to document cultural practices that may be relevant to international trade law disputes.",
+      "Reconstructing ancient languages from inscriptions to provide linguistic evidence in heritage property claims.",
+      "Mapping the geographic distribution of ethnic groups to assist immigration courts with asylum applications."
+    ],
+    "difficulty": 2,
+    "source_article": "Forensic anthropology",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "forensic anthropology"
+    ]
+  },
+  {
+    "question_text": "What four key parameters does a biological profile estimate from skeletal remains?",
+    "correct_answer": "Age at death, biological sex, ancestry, and stature of the individual.",
+    "distractors": [
+      "Blood type, fingerprint pattern, eye colour, and dominant-hand preference of the individual.",
+      "Cause of death, time of burial, geographic origin of clothing, and last meal composition.",
+      "Body mass index, metabolic rate, muscular development, and cardiovascular fitness level at death."
+    ],
+    "difficulty": 2,
+    "source_article": "Forensic anthropology",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "biological profile"
+    ]
+  },
+  {
+    "question_text": "What is the purpose of an archaeological site survey?",
+    "correct_answer": "To systematically search for and record the locations of archaeological sites and surface material across a landscape.",
+    "distractors": [
+      "To excavate all subsurface deposits at a site down to bedrock before any laboratory analysis can begin.",
+      "To conduct chemical testing of every artifact in a museum collection to confirm its date of manufacture.",
+      "To interview local residents about oral traditions in order to compile a written history of the region."
+    ],
+    "difficulty": 2,
+    "source_article": "Archaeological survey",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "site survey"
+    ]
+  }
+]

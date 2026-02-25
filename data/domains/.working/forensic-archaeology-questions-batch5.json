@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In forensic archaeology, stratigraphic excavation removes burial fills layer by layer following natural depositional interfaces. What is the principal advantage of this method over arbitrary level excavation (ALE) for medico-legal grave recovery?",
+    "correct_answer": "Stratigraphic excavation preserves the contextual relationship between evidence and depositional events, providing court-admissible spatial accuracy that arbitrary level methods cannot reliably achieve.",
+    "distractors": [
+      "Stratigraphic excavation is faster to complete than arbitrary level methods, reducing the time crime scenes must remain secured by law enforcement.",
+      "Stratigraphic excavation requires less archaeological training than arbitrary level methods, enabling forensic investigators to excavate without specialist supervision.",
+      "Stratigraphic excavation uses predetermined spit depths that standardize evidence recovery across different soil types and jurisdictions."
+    ],
+    "difficulty": 4,
+    "source_article": "Excavation (archaeology)",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["sequential excavation methodology"]
+  },
+  {
+    "question_text": "The Minimum Number of Individuals (MNI) is a quantitative measure used to estimate the fewest people represented in a commingled skeletal assemblage. Who first defined this principle, and what is the basic logic underlying the calculation?",
+    "correct_answer": "T. E. White defined MNI in 1953; it counts the most frequent skeletal element by side, so three left femora yield MNI of three.",
+    "distractors": [
+      "William Bass defined MNI in 1972; the calculation totals every bone fragment recovered and divides by 206 to estimate the number of complete skeletons present.",
+      "T. E. White defined MNI in 1953; the calculation averages the counts of all long bone types present and rounds up to the nearest whole number.",
+      "Clyde Snow defined MNI in 1965; the calculation pairs left and right elements to form complete individuals and counts any unpaired elements as additional persons."
+    ],
+    "difficulty": 4,
+    "source_article": "Minimum number of individuals",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["minimum number of individuals"]
+  },
+  {
+    "question_text": "Strontium isotope geolocation uses the 87Sr/86Sr ratio in human tooth enamel to infer geographic origin. Why is enamel from the first permanent molar particularly informative, and what geological factor creates geographic variation in strontium ratios?",
+    "correct_answer": "First molar enamel mineralizes by age 3.5, locking in childhood strontium; geographic variation reflects local bedrock geology controlling the 87Sr/86Sr ratio entering food chains.",
+    "distractors": [
+      "First permanent molar enamel mineralizes by approximately age 12, locking in adolescent strontium; geographic variation arises from differences in atmospheric CO2 concentration across climatic zones.",
+      "First permanent molar enamel continuously remodels throughout life, recording cumulative strontium exposure; geographic variation arises from heterogeneity in local bedrock geology that controls the 87Sr/86Sr ratio.",
+      "First permanent molar enamel mineralizes by approximately age 3.5 years, locking in childhood strontium; geographic variation arises from differences in average annual rainfall that alter strontium solubility in soils."
+    ],
+    "difficulty": 4,
+    "source_article": "Isotope geochemistry",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["strontium isotope geolocation"]
+  },
+  {
+    "question_text": "Electrical resistivity tomography (ERT) is used in forensic searches to detect subsurface anomalies such as clandestine graves. In the classic Wenner array configuration, how are the four electrodes arranged, and what physical property does the technique measure?",
+    "correct_answer": "Four equally spaced in-line electrodes: outer two inject current, inner two measure voltage. The technique maps subsurface variations in electrical resistivity.",
+    "distractors": [
+      "Four electrodes are placed in a square pattern at equal spacing, with diagonal pairs injecting current and adjacent pairs measuring voltage; the technique maps variations in the ground's magnetic susceptibility.",
+      "Four electrodes are placed in a line at logarithmically increasing spacing, with alternating electrodes injecting current and measuring voltage; the technique maps variations in the ground's electrical resistivity.",
+      "Four electrodes are placed in a line at equal spacing, with the inner two injecting current and the outer two measuring voltage; the technique maps variations in the ground's dielectric permittivity."
+    ],
+    "difficulty": 4,
+    "source_article": "Electrical resistivity tomography",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["electrical resistivity tomography"]
+  },
+  {
+    "question_text": "Forensic geoarchaeology applies sedimentological and geomorphological methods to crime scenes. What is micromorphology in this context, and how does it help detect grave disturbance in otherwise homogeneous sediments?",
+    "correct_answer": "Micromorphology examines undisturbed soil thin sections under polarized light, revealing disrupted microstructure, mixed horizons, and redeposited material diagnostic of excavation and backfilling.",
+    "distractors": [
+      "Micromorphology is the macroscopic mapping of surface soil color changes using aerial photography; it reveals compacted surface crusts and vegetation die-off indicating that sediment has been excavated and backfilled.",
+      "Micromorphology is the chemical analysis of soil pH gradients using portable spectrometers; it reveals anomalous acidity from decomposition fluids indicating that organic material has been buried.",
+      "Micromorphology is the microscopic study of undisturbed soil thin sections under polarized light; it reveals elevated heavy-metal concentrations that indicate anthropogenic disturbance of natural soil profiles."
+    ],
+    "difficulty": 4,
+    "source_article": "Geoarchaeology",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["forensic geoarchaeology"]
+  },
+  {
+    "question_text": "Forensic anthropologists differentiate blunt force from sharp force trauma on skeletal remains. What are the characteristic bone signatures that distinguish these two trauma mechanisms?",
+    "correct_answer": "Blunt force produces depressed fractures, radiating cracks, and broad deformation; sharp force leaves linear incisions, V-shaped kerf marks, and smooth-walled defects.",
+    "distractors": [
+      "Blunt force produces linear incised grooves with smooth walls, whereas sharp force produces stellate fractures radiating from a broad point of impact.",
+      "Blunt force produces thermally discolored bone with charring at impact margins, whereas sharp force leaves concentric ring fractures with beveled inner tables.",
+      "Blunt force produces circular perforations with internally beveled edges, whereas sharp force leaves depressed comminuted fractures with hinge fragments."
+    ],
+    "difficulty": 4,
+    "source_article": "Forensic anthropology",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["blunt force vs. sharp force trauma differentiation"]
+  },
+  {
+    "question_text": "The first 'body farm' -- a human taphonomy facility for studying decomposition under controlled outdoor conditions -- was established by which researcher, at which institution, and in what year?",
+    "correct_answer": "William M. Bass founded the University of Tennessee Anthropological Research Facility in Knoxville in 1981, making it the world's first outdoor human decomposition research facility.",
+    "distractors": [
+      "Clyde Snow founded the Texas State University Forensic Anthropology Research Facility in San Marcos in 1981, making it the world's first outdoor human decomposition research facility.",
+      "William M. Bass founded the University of Tennessee Anthropological Research Facility in Knoxville in 1995, making it the world's first outdoor human decomposition research facility.",
+      "Douglas Ubelaker founded the Smithsonian Institution Taphonomy Research Facility in Washington, D.C. in 1981, making it the world's first outdoor human decomposition research facility."
+    ],
+    "difficulty": 4,
+    "source_article": "Anthropological Research Facility",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["body farm research"]
+  },
+  {
+    "question_text": "Paleodemography reconstructs age-at-death and sex distributions from skeletal populations. When applied to mass graves from armed conflicts, what forensic inference can demographic profiling of the victims provide to international tribunals?",
+    "correct_answer": "It reveals non-natural mortality patterns, such as overrepresentation of military-age males, indicating selective killing and supporting evidence of atrocity intent.",
+    "distractors": [
+      "Demographic profiling can determine the precise calendar date of each victim's death by correlating skeletal age estimates with known population census records.",
+      "Demographic profiling can establish individual perpetrator identity by matching victim age-sex profiles to military unit rosters recovered from the conflict zone.",
+      "Demographic profiling can reconstruct the victims' premortem health status and socioeconomic class, which tribunals use to calculate financial reparations for surviving families."
+    ],
+    "difficulty": 4,
+    "source_article": "Paleodemography",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["paleodemography of mass graves"]
+  },
+  {
+    "question_text": "Airborne lidar (light detection and ranging) has become a key tool for forensic landscape search. What technical capability makes lidar uniquely suited to detecting clandestine burials in forested environments?",
+    "correct_answer": "Lidar pulses penetrate canopy and return ground-surface elevation data; analysts filter out vegetation to detect subtle depressions or mounds indicating grave disturbance.",
+    "distractors": [
+      "Lidar measures thermal infrared radiation emitted by decomposing remains beneath the soil surface, allowing analysts to identify heat signatures characteristic of recent burials beneath tree cover.",
+      "Lidar captures high-resolution multispectral imagery of leaf chlorophyll changes caused by soil chemistry alterations from decomposition, identifying stressed vegetation over burial sites.",
+      "Lidar emits ground-penetrating radio waves that reflect off subsurface density changes, allowing analysts to map buried features beneath tree cover without physical excavation."
+    ],
+    "difficulty": 4,
+    "source_article": "Lidar",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["lidar terrain analysis"]
+  },
+  {
+    "question_text": "Mitochondrial DNA (mtDNA) analysis is used to establish kinship among skeletal remains from mass graves. Which two hypervariable regions of the mtDNA control region are most commonly sequenced in forensic casework, and why is mtDNA preferred over nuclear DNA for highly degraded remains?",
+    "correct_answer": "HV1 and HV2 are sequenced; mtDNA is preferred because each cell contains hundreds of copies, vastly increasing successful amplification from degraded bone.",
+    "distractors": [
+      "HV3 (hypervariable region 3) and HV4 (hypervariable region 4) are sequenced; mtDNA is preferred because its circular structure resists enzymatic degradation more effectively than linear nuclear chromosomes.",
+      "HV1 (hypervariable region 1) and HV2 (hypervariable region 2) are sequenced; mtDNA is preferred because it is paternally inherited, allowing patrilineal kinship matching unavailable from nuclear DNA.",
+      "HV1 (hypervariable region 1) and HV2 (hypervariable region 2) are sequenced; mtDNA is preferred because each mitochondrial genome is unique to the individual, providing higher discriminatory power than nuclear STR profiles."
+    ],
+    "difficulty": 4,
+    "source_article": "Mitochondrial DNA",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["mtDNA kinship analysis"]
+  }
+]

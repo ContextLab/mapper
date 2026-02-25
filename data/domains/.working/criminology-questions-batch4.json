@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Shaw and McKay's social disorganization theory identified three neighborhood characteristics that predict higher crime rates. Which of the following is one of those characteristics?",
+    "correct_answer": "Residential instability, meaning high population turnover that weakens community social bonds.",
+    "distractors": [
+      "Political polarization, meaning sharp ideological divisions that undermine local civic cooperation.",
+      "Geographic isolation, meaning physical distance from urban centers that limits law enforcement access.",
+      "Cultural homogeneity, meaning uniform social norms that suppress individual expression and autonomy."
+    ],
+    "difficulty": 3,
+    "source_article": "Social disorganization theory",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["social disorganization theory"]
+  },
+  {
+    "question_text": "According to Sutherland's differential association theory, what determines whether an individual will engage in criminal behavior?",
+    "correct_answer": "An excess of definitions favorable to law violation over definitions unfavorable to law violation.",
+    "distractors": [
+      "An excess of economic deprivation relative to legitimate employment opportunities in the community.",
+      "An excess of biological predispositions toward aggression over learned prosocial behavioral responses.",
+      "An excess of punitive social labeling experiences over positive reinforcement from authority figures."
+    ],
+    "difficulty": 3,
+    "source_article": "Differential association",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["differential association theory"]
+  },
+  {
+    "question_text": "What policy development is most widely cited by criminologists as the primary driver of mass incarceration in the United States beginning in the 1970s?",
+    "correct_answer": "The War on Drugs, which imposed harsh mandatory sentencing for drug offenses.",
+    "distractors": [
+      "The War on Poverty, which expanded federal welfare programs in disadvantaged communities.",
+      "The deinstitutionalization movement, which closed state psychiatric hospitals nationwide.",
+      "The community policing initiative, which increased neighborhood foot patrol programs."
+    ],
+    "difficulty": 3,
+    "source_article": "Mass incarceration in the United States",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["mass incarceration"]
+  },
+  {
+    "question_text": "In 2000, the United Nations Congress on the Prevention of Crime classified cybercrime into five categories. Which of the following is one of those categories?",
+    "correct_answer": "Unauthorized access to computer systems or networks.",
+    "distractors": [
+      "Unauthorized distribution of counterfeit physical currency.",
+      "Unauthorized surveillance of private residential properties.",
+      "Unauthorized manufacturing of controlled chemical substances."
+    ],
+    "difficulty": 3,
+    "source_article": "Cybercrime",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["cybercrime"]
+  },
+  {
+    "question_text": "How do hate crime laws typically function within the broader criminal justice system, as distinct from hate speech laws?",
+    "correct_answer": "They enhance penalties for conduct already criminal under other laws when bias motivation is established.",
+    "distractors": [
+      "They create entirely new criminal offenses that specifically prohibit expressions of prejudice or bigotry.",
+      "They establish civil liability for organizations whose members commit acts of discrimination or intolerance.",
+      "They mandate restorative justice proceedings between offenders and victims of bias-motivated incidents."
+    ],
+    "difficulty": 3,
+    "source_article": "Hate crime",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["hate crime"]
+  },
+  {
+    "question_text": "Cesare Lombroso, a founder of the positivist school of criminology, proposed in 'Criminal Man' (1876) that some offenders were 'born criminals.' What concept did he use to explain their criminal nature?",
+    "correct_answer": "Atavism, the idea that criminals were evolutionary throwbacks to earlier, more primitive human stages.",
+    "distractors": [
+      "Anomie, the idea that criminals suffered normlessness caused by rapid industrialization and urbanization.",
+      "Alienation, the idea that criminals were psychologically estranged from productive social relationships.",
+      "Determinism, the idea that criminals were compelled by unconscious drives identified through psychoanalysis."
+    ],
+    "difficulty": 3,
+    "source_article": "Positivist school of criminology",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["criminological positivism"]
+  },
+  {
+    "question_text": "Ronald Clarke's framework for situational crime prevention identifies five main categories of opportunity-reducing techniques. Which of the following is one of those categories?",
+    "correct_answer": "Increasing the effort the offender must make to carry out the crime.",
+    "distractors": [
+      "Increasing the social stigma attached to the offender's community identity.",
+      "Reducing the offender's biological capacity for impulsive decision-making.",
+      "Strengthening the offender's emotional bonds to conventional social institutions."
+    ],
+    "difficulty": 3,
+    "source_article": "Situational crime prevention",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["situational crime prevention"]
+  },
+  {
+    "question_text": "What is the central argument of the prison abolition movement that distinguishes it from prison reform efforts?",
+    "correct_answer": "Violence and discrimination are inherent to prisons as an institution and cannot be fixed through reforms.",
+    "distractors": [
+      "Prison populations have declined sufficiently that remaining facilities can be converted to rehabilitation centers.",
+      "Technological monitoring advances have rendered physical confinement economically inefficient but not unjust.",
+      "International human rights courts have formally ruled that all forms of incarceration violate natural law."
+    ],
+    "difficulty": 3,
+    "source_article": "Prison abolition movement",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["prison abolition"]
+  },
+  {
+    "question_text": "Routine activity theory, developed by Cohen and Felson, holds that crime occurs when three elements converge in space and time. What are those three elements?",
+    "correct_answer": "A motivated offender, a suitable target, and the absence of a capable guardian.",
+    "distractors": [
+      "A disorganized community, a weakened legal system, and the presence of economic inequality.",
+      "A learned criminal technique, a vulnerable social institution, and the failure of moral education.",
+      "A biological predisposition, an environmental stressor, and the lack of therapeutic intervention."
+    ],
+    "difficulty": 4,
+    "source_article": "Routine activity theory",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["routine activity theory"]
+  },
+  {
+    "question_text": "Peacemaking criminology, popularized by Pepinsky and Quinney in their 1991 work 'Criminology as Peacemaking,' draws its philosophical foundations primarily from which intellectual tradition?",
+    "correct_answer": "Religious and humanist traditions emphasizing nonviolence, compassion, and social justice.",
+    "distractors": [
+      "Classical utilitarian philosophy emphasizing rational calculation and deterrence-based interventions.",
+      "Positivist biological science emphasizing neurological measurement and pharmacological rehabilitation.",
+      "Neoclassical economic theory emphasizing market-based incentive structures and cost-benefit analysis."
+    ],
+    "difficulty": 4,
+    "source_article": "Peacemaking criminology",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["peacemaking criminology"]
+  }
+]

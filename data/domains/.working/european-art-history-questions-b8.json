@@ -1,0 +1,80 @@
+[
+  {
+    "question_text": "In Renaissance fresco technique, a sinopia was drawn on which specific layer of plaster, and what dual meaning did the term acquire over time?",
+    "correct_answer": "Drawn on the arriccio (rough initial plaster coat), the term came to denote both the reddish-brown hematite pigment and the preparatory underdrawing itself.",
+    "distractors": [
+      "Drawn on the intonaco (smooth finishing plaster coat), the term came to denote both the reddish-brown hematite pigment and the preparatory underdrawing itself.",
+      "Drawn on the arriccio (rough initial plaster coat), the term came to denote both the yellowish-ochreite pigment and the final painted composition itself.",
+      "Drawn on the arriccio (rough initial plaster coat), the term came to denote both the reddish-brown hematite pigment and the cartoon transfer pouncing technique itself."
+    ],
+    "difficulty": 4,
+    "source_article": "Sinopia",
+    "domain_ids": ["european-art-history"],
+    "concepts_tested": ["sinopia"]
+  },
+  {
+    "question_text": "In which 1893 work did Alois Riegl develop the concept of Kunstwollen, and what did this concept posit about the driving force behind stylistic change in art?",
+    "correct_answer": "In Stilfragen, tracing ornament across cultures; Kunstwollen posits a historically contingent \"will to art\" driving style independent of material or technical factors.",
+    "distractors": [
+      "In Stilfragen, tracing ornament across cultures; Kunstwollen posits a biologically innate \"will to art\" driving style independent of material or technical factors.",
+      "In Spätrömische Kunstindustrie, tracing ornament across cultures; Kunstwollen posits a historically contingent \"will to art\" driving style independent of material or technical factors.",
+      "In Stilfragen, tracing ornament across cultures; Kunstwollen posits a historically contingent \"will to art\" driving style independent of patronage or religious factors."
+    ],
+    "difficulty": 4,
+    "source_article": "Kunstwollen",
+    "domain_ids": ["european-art-history"],
+    "concepts_tested": ["Alois Riegl's Kunstwollen"]
+  },
+  {
+    "question_text": "What distinguishes \"notional ekphrasis\" from standard ekphrasis, and which ancient work contains the earliest canonical example of ekphrastic poetry?",
+    "correct_answer": "Notional ekphrasis describes imaginary rather than real artworks; the earliest canonical example is Homer's description of the Shield of Achilles in Iliad Book 18.",
+    "distractors": [
+      "Notional ekphrasis describes imaginary rather than real artworks; the earliest canonical example is Virgil's description of the Shield of Aeneas in Aeneid Book 8.",
+      "Notional ekphrasis describes sculptural rather than painted artworks; the earliest canonical example is Homer's description of the Shield of Achilles in Iliad Book 18.",
+      "Notional ekphrasis describes imaginary rather than real artworks; the earliest canonical example is Homer's description of the Cloak of Jason in the Argonautica."
+    ],
+    "difficulty": 4,
+    "source_article": "Ekphrasis",
+    "domain_ids": ["european-art-history"],
+    "concepts_tested": ["ekphrasis"]
+  },
+  {
+    "question_text": "Aby Warburg coined Pathosformel while studying what he called the \"Nachleben der Antike.\" What does the concept identify, and how did his 1893 dissertation on Botticelli first illustrate it?",
+    "correct_answer": "Emotionally charged visual tropes recurring across Western art; his dissertation analyzed bewegtes Beiwerk (animated accessories) like wind-blown hair in Botticelli's Birth of Venus.",
+    "distractors": [
+      "Emotionally charged visual tropes recurring across Western art; his dissertation analyzed contrapposto poses (counterbalanced stances) like the tilted hip in Botticelli's Birth of Venus.",
+      "Geometrically structured compositional tropes recurring across Western art; his dissertation analyzed bewegtes Beiwerk (animated accessories) like wind-blown hair in Botticelli's Birth of Venus.",
+      "Emotionally charged visual tropes recurring across Western art; his dissertation analyzed bewegtes Beiwerk (animated accessories) like wind-blown drapery in Mantegna's Triumph of Caesar."
+    ],
+    "difficulty": 4,
+    "source_article": "Pathosformel",
+    "domain_ids": ["european-art-history"],
+    "concepts_tested": ["Warburg's Pathosformel"]
+  },
+  {
+    "question_text": "Who first recorded the term \"Grand Tour\" in English, and what event conventionally marks the decline of this aristocratic educational tradition?",
+    "correct_answer": "Richard Lassels coined it in his 1670 Voyage of Italy; the tradition declined with the rise of large-scale rail transport in the 1840s.",
+    "distractors": [
+      "Thomas Coryat coined it in his 1611 Coryat's Crudities; the tradition declined with the rise of large-scale rail transport in the 1840s.",
+      "Richard Lassels coined it in his 1670 Voyage of Italy; the tradition declined with the outbreak of the French Revolutionary Wars in the 1790s.",
+      "Richard Lassels coined it in his 1670 Voyage of Italy; the tradition declined with the rise of large-scale steamship transport in the 1820s."
+    ],
+    "difficulty": 4,
+    "source_article": "Grand_Tour",
+    "domain_ids": ["european-art-history"],
+    "concepts_tested": ["Grand Tour"]
+  },
+  {
+    "question_text": "In the standard periodization of Italian Renaissance painting, what date ranges define the quattrocento (Early Renaissance) and the High Renaissance, and which painter bridges the transition?",
+    "correct_answer": "The Early Renaissance spans 1425\u20131495 and the High Renaissance 1495\u20131520; Raphael's early career bridges the transition, moving from Perugino's quattrocento style toward High Renaissance grandeur.",
+    "distractors": [
+      "The Early Renaissance spans 1425\u20131495 and the High Renaissance 1495\u20131520; Giorgione's early career bridges the transition, moving from Bellini's quattrocento style toward High Renaissance grandeur.",
+      "The Early Renaissance spans 1400\u20131480 and the High Renaissance 1480\u20131530; Raphael's early career bridges the transition, moving from Perugino's quattrocento style toward High Renaissance grandeur.",
+      "The Early Renaissance spans 1425\u20131495 and the High Renaissance 1495\u20131520; Raphael's early career bridges the transition, moving from Perugino's quattrocento style toward Mannerist experimentation."
+    ],
+    "difficulty": 4,
+    "source_article": "Italian_Renaissance_painting",
+    "domain_ids": ["european-art-history"],
+    "concepts_tested": ["quattrocento vs. cinquecento periodization"]
+  }
+]

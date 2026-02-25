@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In criminology, what two elements must typically be present for an act to be classified as a crime under criminal law?",
+    "correct_answer": "Actus reus (the guilty act) and mens rea (the guilty mind or criminal intent).",
+    "distractors": [
+      "Corpus delicti (the body of the crime) and mala prohibita (the statutory violation).",
+      "Habeas corpus (lawful detention) and stare decisis (the binding legal precedent).",
+      "Voir dire (the jury selection) and nolo contendere (the plea of no contest)."
+    ],
+    "difficulty": 1,
+    "source_article": "Crime",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["crime"]
+  },
+  {
+    "question_text": "Cesare Beccaria's 1764 pamphlet 'On Crimes and Punishments' articulated what foundational principle regarding criminal sanctions?",
+    "correct_answer": "Punishment should be proportional to the crime committed.",
+    "distractors": [
+      "Punishment should be maximally severe to deter future offenses.",
+      "Punishment should prioritize public shaming over physical confinement.",
+      "Punishment should be determined solely by the victim's preferences."
+    ],
+    "difficulty": 1,
+    "source_article": "Punishment",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["punishment"]
+  },
+  {
+    "question_text": "Before the 19th century, what was the primary function of prisons in the criminal justice system, rather than serving as punishment themselves?",
+    "correct_answer": "Prisons held people awaiting trial or awaiting the execution of their actual punishment.",
+    "distractors": [
+      "Prisons served as workhouses where debtors labored to repay their outstanding financial obligations.",
+      "Prisons functioned as military barracks housing soldiers who enforced local criminal law statutes.",
+      "Prisons operated as hospitals treating individuals deemed mentally unfit to stand criminal trial."
+    ],
+    "difficulty": 1,
+    "source_article": "Prison",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["prison"]
+  },
+  {
+    "question_text": "What is generally recognized as the first organized, professional police force established in Europe?",
+    "correct_answer": "The office of lieutenant general of police in Paris, established in 1667.",
+    "distractors": [
+      "The Royal Irish Constabulary in Dublin, established by Parliament in 1652.",
+      "The Bow Street Magistrates Court patrol in London, established in 1720.",
+      "The Prussian State Gendarmerie in Berlin, established by royal decree in 1691."
+    ],
+    "difficulty": 1,
+    "source_article": "Police",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["police"]
+  },
+  {
+    "question_text": "What are the two major legal traditions that most national legal systems around the world belong to?",
+    "correct_answer": "Civil law and common law traditions.",
+    "distractors": [
+      "Statutory law and constitutional law traditions.",
+      "Natural law and positive law traditions.",
+      "Religious law and customary law traditions."
+    ],
+    "difficulty": 1,
+    "source_article": "Law",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["law"]
+  },
+  {
+    "question_text": "Who first coined the term 'victimology' in 1947 to describe the scientific study of crime victims?",
+    "correct_answer": "Benjamin Mendelsohn.",
+    "distractors": [
+      "Hans von Hentig.",
+      "Edwin Sutherland.",
+      "Cesare Lombroso."
+    ],
+    "difficulty": 1,
+    "source_article": "Victimology",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["victim"]
+  },
+  {
+    "question_text": "In the United States, what constitutional amendment guarantees the right to a trial by jury in criminal cases?",
+    "correct_answer": "The Sixth Amendment to the United States Constitution.",
+    "distractors": [
+      "The Fifth Amendment to the United States Constitution.",
+      "The Seventh Amendment to the United States Constitution.",
+      "The Fourth Amendment to the United States Constitution."
+    ],
+    "difficulty": 1,
+    "source_article": "Jury",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["jury"]
+  },
+  {
+    "question_text": "Under U.S. law, what legal standard must generally be met before police can make a lawful arrest?",
+    "correct_answer": "Probable cause that a criminal offense has been committed.",
+    "distractors": [
+      "Reasonable suspicion that a criminal offense may be planned.",
+      "Clear and convincing evidence that a crime was observed directly.",
+      "Preponderance of evidence that the suspect is likely guilty."
+    ],
+    "difficulty": 1,
+    "source_article": "Arrest",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["arrest"]
+  },
+  {
+    "question_text": "In criminal law, what distinguishes first-degree murder from second-degree murder?",
+    "correct_answer": "First-degree murder requires premeditation and deliberation, while second-degree murder is intentional but unpremeditated.",
+    "distractors": [
+      "First-degree murder involves multiple victims simultaneously, while second-degree murder involves only a single victim.",
+      "First-degree murder applies only to felony suspects, while second-degree murder applies to misdemeanor defendants.",
+      "First-degree murder requires use of a deadly weapon, while second-degree murder can involve any physical means."
+    ],
+    "difficulty": 1,
+    "source_article": "Murder",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["murder"]
+  },
+  {
+    "question_text": "In criminal law, what two elements define the common-law crime of larceny?",
+    "correct_answer": "The taking (caption) and carrying away (asportation) of another person's property without consent.",
+    "distractors": [
+      "The destruction (demolition) and concealment (suppression) of another person's property during a dispute.",
+      "The fraudulent acquisition (deception) and conversion (misappropriation) of entrusted property for personal gain.",
+      "The unlawful entry (trespass) and removal (extraction) of secured property from a dwelling place."
+    ],
+    "difficulty": 1,
+    "source_article": "Theft",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["theft"]
+  }
+]

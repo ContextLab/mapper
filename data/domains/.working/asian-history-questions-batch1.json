@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "German geographer Ferdinand von Richthofen coined the term for which ancient trade network, formally established during China's Han dynasty around 130 BCE?",
+    "correct_answer": "The Silk Road",
+    "distractors": [
+      "The Spice Route",
+      "The Incense Road",
+      "The Tea Horse Road"
+    ],
+    "difficulty": 1,
+    "source_article": "Silk Road",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Silk Road"]
+  },
+  {
+    "question_text": "Which empire, founded in 1206 and covering 24 million square kilometers at its peak, was the largest contiguous land empire in history?",
+    "correct_answer": "The Mongol Empire",
+    "distractors": [
+      "The Ottoman Empire",
+      "The British Empire",
+      "The Roman Empire"
+    ],
+    "difficulty": 1,
+    "source_article": "Mongol Empire",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Mongol Empire"]
+  },
+  {
+    "question_text": "Qin Shi Huang connected earlier fortifications into a unified defensive barrier against Xiongnu nomads, creating the earliest version of which famous structure?",
+    "correct_answer": "The Great Wall of China",
+    "distractors": [
+      "The Grand Canal of China",
+      "The Terracotta Army complex",
+      "The Forbidden City walls"
+    ],
+    "difficulty": 1,
+    "source_article": "Great Wall of China",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Great Wall of China"]
+  },
+  {
+    "question_text": "What was the hereditary military class in feudal Japan whose members served as retainers to lords and followed the bushido code of honor?",
+    "correct_answer": "The samurai",
+    "distractors": [
+      "The daimyo",
+      "The ronin",
+      "The ashigaru"
+    ],
+    "difficulty": 1,
+    "source_article": "Samurai",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["samurai"]
+  },
+  {
+    "question_text": "Which Indian leader organized the 1930 Salt March, a 387-kilometer protest from Sabarmati Ashram to Dandi, as an act of civil disobedience against British rule?",
+    "correct_answer": "Mahatma Gandhi",
+    "distractors": [
+      "Jawaharlal Nehru",
+      "Subhas Chandra Bose",
+      "Bhagat Singh"
+    ],
+    "difficulty": 1,
+    "source_article": "Mahatma Gandhi",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Mahatma Gandhi"]
+  },
+  {
+    "question_text": "Mughal emperor Shah Jahan commissioned which white marble mausoleum in Agra, completed in 1653, as a memorial to his deceased wife Mumtaz Mahal?",
+    "correct_answer": "The Taj Mahal",
+    "distractors": [
+      "The Red Fort of Delhi",
+      "Humayun's Tomb in Delhi",
+      "The Badshahi Mosque of Lahore"
+    ],
+    "difficulty": 1,
+    "source_article": "Taj Mahal",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Taj Mahal"]
+  },
+  {
+    "question_text": "The B-29 bomber Enola Gay dropped the uranium bomb 'Little Boy' on August 6, 1945, in the first wartime use of a nuclear weapon against which Japanese city?",
+    "correct_answer": "Hiroshima",
+    "distractors": [
+      "Nagasaki",
+      "Tokyo",
+      "Osaka"
+    ],
+    "difficulty": 1,
+    "source_article": "Atomic bombings of Hiroshima and Nagasaki",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Hiroshima and Nagasaki atomic bombings"]
+  },
+  {
+    "question_text": "Which leader proclaimed the founding of the People's Republic of China from atop Tiananmen Gate on October 1, 1949?",
+    "correct_answer": "Mao Zedong",
+    "distractors": [
+      "Zhou Enlai",
+      "Sun Yat-sen",
+      "Chiang Kai-shek"
+    ],
+    "difficulty": 1,
+    "source_article": "Mao Zedong",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Mao Zedong"]
+  },
+  {
+    "question_text": "Born in the state of Lu around 551 BCE, which philosopher's teachings on ren, filial piety, and ritual propriety shaped East Asian civilization for millennia?",
+    "correct_answer": "Confucius",
+    "distractors": [
+      "Laozi",
+      "Mencius",
+      "Mozi"
+    ],
+    "difficulty": 1,
+    "source_article": "Confucius",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Confucius"]
+  },
+  {
+    "question_text": "Which historical figure, born as Siddhartha Gautama, attained enlightenment under a Bodhi tree at Bodh Gaya and delivered his first sermon at Sarnath's Deer Park?",
+    "correct_answer": "Gautama Buddha",
+    "distractors": [
+      "Mahavira",
+      "Ashoka the Great",
+      "Guru Nanak"
+    ],
+    "difficulty": 1,
+    "source_article": "Gautama Buddha",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Buddha"]
+  }
+]

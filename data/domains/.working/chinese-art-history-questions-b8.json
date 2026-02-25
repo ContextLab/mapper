@@ -1,0 +1,80 @@
+[
+  {
+    "question_text": "The bird-worm seal script, a decorative variant of zhuanshu featuring elaborate ornamentation on its defining strokes, was associated with which group of ancient Chinese states and what type of artifacts?",
+    "correct_answer": "The southern states of Wu, Chu, and Yue used it on ceremonial bronze weapons, including the Spear of Fuchai and the Sword of Goujian.",
+    "distractors": [
+      "The northern states of Qi, Yan, and Wei used it on ceremonial jade tablets, including the Disc of Fuchai and the Pendant of Goujian.",
+      "The western states of Qin, Ba, and Shu used it on ritual bronze vessels, including the Ding of Fuchai and the Gui of Goujian.",
+      "The central states of Han, Zhao, and Song used it on commemorative stone stele, including the Stele of Fuchai and the Pillar of Goujian."
+    ],
+    "difficulty": 4,
+    "source_article": "Seal_script",
+    "domain_ids": ["chinese-art-history"],
+    "concepts_tested": ["zhuanshu (seal script)"]
+  },
+  {
+    "question_text": "Li Gonglin, the Northern Song master of baimiao, is noted for reviving an ancient lineage of plain-line drawing. Which earlier painters' styles did he synthesize, and what scholarly contribution did he make beyond painting?",
+    "correct_answer": "He combined the styles of Gu Kaizhi and Wu Daozi, and published influential antiquarian catalogues of bronze vessels featuring line drawings, inscriptions, and functional interpretations.",
+    "distractors": [
+      "He combined the styles of Yan Liben and Zhang Xuan, and published influential botanical catalogues of medicinal herbs featuring line drawings, dosages, and regional classifications.",
+      "He combined the styles of Gu Kaizhi and Wu Daozi, and published influential imperial catalogues of landscape paintings featuring color reproductions, seals, and biographical commentaries.",
+      "He combined the styles of Fan Kuan and Dong Yuan, and published influential antiquarian catalogues of jade ornaments featuring line drawings, inscriptions, and ceremonial interpretations."
+    ],
+    "difficulty": 4,
+    "source_article": "Baimiao",
+    "domain_ids": ["chinese-art-history"],
+    "concepts_tested": ["baimiao (plain outline drawing)"]
+  },
+  {
+    "question_text": "The Lingnan School founders traveled to Japan before the 1911 revolution and absorbed Western techniques through an intermediary tradition. What was this mediating school, and what anti-Qing organization did the founders join?",
+    "correct_answer": "They learned Western perspective and color through the syncretic Nihonga school of painting, and joined the Tongmenghui, a nationalist revolutionary organization.",
+    "distractors": [
+      "They learned Western anatomy and shading through the academic Yoga school of painting, and joined the Xingzhonghui, a constitutional reform organization.",
+      "They learned Western perspective and color through the decorative Rimpa school of painting, and joined the Guangfuhui, a regional separatist organization.",
+      "They learned Western composition and modeling through the syncretic Nanga school of painting, and joined the Tongmenghui, a Pan-Asian cultural organization."
+    ],
+    "difficulty": 4,
+    "source_article": "Lingnan_school",
+    "domain_ids": ["chinese-art-history"],
+    "concepts_tested": ["Lingnan school"]
+  },
+  {
+    "question_text": "The Shanghai School marked the first major departure from three centuries of Literati painting dominance. What earlier artistic movements specifically inspired it, and why did it struggle to compete commercially?",
+    "correct_answer": "It drew from 17th-century eccentrics and 18th-century Yangzhou painters, but Western collectors' preference for the Literati tradition limited its commercial success.",
+    "distractors": [
+      "It drew from 15th-century court painters and 16th-century Suzhou masters, but Japanese collectors' preference for the Chan Buddhist tradition limited its commercial success.",
+      "It drew from 17th-century eccentrics and 18th-century Yangzhou painters, but imperial censors' restrictions on the commercial market limited its institutional support.",
+      "It drew from 14th-century Yuan loyalists and 18th-century Anhui engravers, but Western collectors' preference for the decorative export tradition limited its commercial success."
+    ],
+    "difficulty": 4,
+    "source_article": "Shanghai_school",
+    "domain_ids": ["chinese-art-history"],
+    "concepts_tested": ["Shanghai school (Haipai)"]
+  },
+  {
+    "question_text": "Wang Guangyi's Great Criticism series, which brought Political Pop to international attention in 1992, relies on a specific compositional strategy. What is this device, and how did Wang describe the underlying tension the works expose?",
+    "correct_answer": "The compositional device is juxtaposition of Cultural Revolution socialist imagery with Western consumer brand logos, exposing an enduring conflict between Western culture and socialist ideology.",
+    "distractors": [
+      "The compositional device is superimposition of Republican-era propaganda imagery over Eastern spiritual calligraphy, exposing an enduring conflict between modernization policy and Confucian ideology.",
+      "The compositional device is juxtaposition of Cultural Revolution socialist imagery with Western consumer brand logos, exposing a temporary irony between market economics and democratic ideology.",
+      "The compositional device is fragmentation of imperial court portraiture amid Western abstract expressionist brushwork, exposing an enduring conflict between aristocratic culture and populist ideology."
+    ],
+    "difficulty": 4,
+    "source_article": "Political_pop",
+    "domain_ids": ["chinese-art-history"],
+    "concepts_tested": ["political pop (Chinese contemporary art)"]
+  },
+  {
+    "question_text": "Under the Zhou dynasty's ritual system, the number of ding bronze vessels permitted in a burial indicated the deceased's rank. What was the specific numerical hierarchy, and what broader symbolism did the Nine Ding carry?",
+    "correct_answer": "Emperors received nine, feudal lords seven, ministers five, and scholar-bureaucrats three or one; the Nine Ding symbolized sovereignty over all China.",
+    "distractors": [
+      "Emperors received twelve, feudal lords nine, ministers seven, and scholar-bureaucrats five or three; the Twelve Ding symbolized dominion over all tributary states.",
+      "Emperors received nine, feudal lords seven, ministers five, and scholar-bureaucrats three or one; the Nine Ding symbolized mastery over the nine provinces' harvests.",
+      "Emperors received nine, generals seven, ministers three, and scholar-bureaucrats one; the Nine Ding symbolized authority over all military campaigns in China."
+    ],
+    "difficulty": 4,
+    "source_article": "Ding_(vessel)",
+    "domain_ids": ["chinese-art-history"],
+    "concepts_tested": ["ding (ritual bronze vessel)"]
+  }
+]

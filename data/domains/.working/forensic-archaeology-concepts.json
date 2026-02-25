@@ -1,0 +1,266 @@
+{
+  "domain": "forensic-archaeology",
+  "parent_domain": "archaeology",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {
+        "concept": "forensic science",
+        "wikipedia_article": "Forensic science",
+        "brief_rationale": "The broad discipline applying scientific methods to legal questions; universally recognized through popular media and general education as the foundation of crime investigation."
+      },
+      {
+        "concept": "excavation",
+        "wikipedia_article": "Excavation (archaeology)",
+        "brief_rationale": "The fundamental archaeological field method of systematic digging; known to any educated person as the core activity of archaeology."
+      },
+      {
+        "concept": "artifact",
+        "wikipedia_article": "Artifact (archaeology)",
+        "brief_rationale": "Any object made or modified by humans recovered from an archaeological context; universally recognized term requiring no specialized training."
+      },
+      {
+        "concept": "skeleton",
+        "wikipedia_article": "Skeleton",
+        "brief_rationale": "The bony framework of the human body; universally known and central to forensic-archaeological work involving human remains."
+      },
+      {
+        "concept": "DNA evidence",
+        "wikipedia_article": "DNA profiling",
+        "brief_rationale": "Genetic material used to identify individuals; widely known through media coverage of criminal trials and is a cornerstone concept for any newcomer to forensic science."
+      },
+      {
+        "concept": "crime scene",
+        "wikipedia_article": "Crime scene",
+        "brief_rationale": "The location where a crime occurred and evidence is collected; universally understood term foundational to all forensic disciplines."
+      },
+      {
+        "concept": "burial",
+        "wikipedia_article": "Burial",
+        "brief_rationale": "The interment of human remains; a concept encountered in everyday culture, history, and religion that is the primary subject of forensic-archaeological investigation."
+      },
+      {
+        "concept": "carbon-14 dating",
+        "wikipedia_article": "Radiocarbon dating",
+        "brief_rationale": "The most widely known scientific dating technique; recognized by any educated person as a method for determining the age of organic materials."
+      },
+      {
+        "concept": "mass grave",
+        "wikipedia_article": "Mass grave",
+        "brief_rationale": "A burial site containing multiple victims, often associated with atrocities or disasters; a concept familiar from news media and historical events."
+      },
+      {
+        "concept": "human rights",
+        "wikipedia_article": "Human rights",
+        "brief_rationale": "The ethical and legal framework underpinning international forensic investigations into war crimes and atrocities; universally recognized as a foundational concept."
+      },
+      {
+        "concept": "war crime",
+        "wikipedia_article": "War crime",
+        "brief_rationale": "Violations of international humanitarian law that forensic archaeologists frequently investigate; widely known through coverage of international tribunals and conflicts."
+      },
+      {
+        "concept": "evidence",
+        "wikipedia_article": "Evidence",
+        "brief_rationale": "Material or information used to establish facts in legal proceedings; a universally understood concept that links archaeology to the legal system."
+      },
+      {
+        "concept": "stratigraphy",
+        "wikipedia_article": "Stratigraphy (archaeology)",
+        "brief_rationale": "The principle that older layers lie beneath younger ones; a basic archaeological concept introduced in any introductory course and widely encountered in popular science."
+      }
+    ],
+    "L2": [
+      {
+        "concept": "taphonomy",
+        "wikipedia_article": "Taphonomy",
+        "brief_rationale": "The study of how organisms decay and become preserved; essential forensic-archaeology vocabulary that students encounter early in bioarchaeology and forensic osteology courses."
+      },
+      {
+        "concept": "osteology",
+        "wikipedia_article": "Osteology",
+        "brief_rationale": "The scientific study of bones; core technical vocabulary for any student of forensic archaeology or physical anthropology dealing with skeletal remains."
+      },
+      {
+        "concept": "provenience",
+        "wikipedia_article": "Provenance",
+        "brief_rationale": "The precise documented findspot of an artifact or bone within an excavation; a key field-methodology term that distinguishes student-level knowledge from lay understanding."
+      },
+      {
+        "concept": "chain of custody",
+        "wikipedia_article": "Chain of custody",
+        "brief_rationale": "The documented sequence of possession of evidence ensuring its legal admissibility; a standard forensic term that students must understand to work in medico-legal contexts."
+      },
+      {
+        "concept": "forensic anthropology",
+        "wikipedia_article": "Forensic anthropology",
+        "brief_rationale": "The application of physical anthropology to legal questions, principally skeletal analysis; the closest disciplinary neighbor of forensic archaeology and standard student vocabulary."
+      },
+      {
+        "concept": "biological profile",
+        "wikipedia_article": "Forensic anthropology",
+        "brief_rationale": "The estimation of age, sex, ancestry, and stature from skeletal remains; a foundational concept for students learning skeletal analysis in forensic contexts."
+      },
+      {
+        "concept": "site survey",
+        "wikipedia_article": "Archaeological survey",
+        "brief_rationale": "Systematic inspection of the ground surface and subsurface to locate archaeological features; a standard field method that students of forensic archaeology must master."
+      },
+      {
+        "concept": "decomposition",
+        "wikipedia_article": "Decomposition",
+        "brief_rationale": "The biological and chemical breakdown of organic tissue after death; a core concept linking taphonomy to time-of-death estimation in forensic contexts."
+      },
+      {
+        "concept": "context (archaeology)",
+        "wikipedia_article": "Archaeological context",
+        "brief_rationale": "The spatial and stratigraphic relationship of a find to its surroundings; a technical term critical for students understanding how forensic evidence is recorded."
+      },
+      {
+        "concept": "postmortem interval",
+        "wikipedia_article": "Decomposition",
+        "brief_rationale": "The elapsed time between death and discovery of remains; a key forensic concept students encounter in both medicolegal and archaeological contexts."
+      },
+      {
+        "concept": "exhumation",
+        "wikipedia_article": "Exhumation",
+        "brief_rationale": "The recovery of previously buried remains for forensic or legal purposes; a central operational term for forensic archaeologists working on human rights and criminal cases."
+      },
+      {
+        "concept": "Harris matrix",
+        "wikipedia_article": "Harris matrix",
+        "brief_rationale": "A diagrammatic tool for recording stratigraphic relationships between excavated units; standard student-level field methodology taught in all archaeology programs."
+      },
+      {
+        "concept": "entomology (forensic)",
+        "wikipedia_article": "Forensic entomology",
+        "brief_rationale": "The use of insect succession patterns to estimate postmortem interval and circumstances of death; important cross-disciplinary vocabulary for forensic archaeology students."
+      }
+    ],
+    "L3": [
+      {
+        "concept": "stable isotope analysis",
+        "wikipedia_article": "Isotope analysis",
+        "brief_rationale": "Analysis of ratios of stable isotopes in bone and teeth to reconstruct diet, geographic origin, and migration; requires working knowledge of geochemistry applied to skeletal material."
+      },
+      {
+        "concept": "ground-penetrating radar",
+        "wikipedia_article": "Ground-penetrating radar",
+        "brief_rationale": "A non-invasive geophysical technique used to detect subsurface anomalies such as clandestine graves; requires practical understanding of remote sensing in forensic fieldwork."
+      },
+      {
+        "concept": "antemortem trauma",
+        "wikipedia_article": "Bone fracture",
+        "brief_rationale": "Skeletal injuries that occurred and showed healing before death, distinguishable from perimortem and postmortem damage; requires working knowledge of bone biology and fracture classification."
+      },
+      {
+        "concept": "clandestine grave",
+        "wikipedia_article": "Clandestine grave",
+        "brief_rationale": "An illegally concealed burial site, the primary search target in criminal and human-rights investigations; requires applied knowledge of search methodology and site detection techniques."
+      },
+      {
+        "concept": "skeletal trauma analysis",
+        "wikipedia_article": "Forensic anthropology",
+        "brief_rationale": "Systematic interpretation of fractures, cut marks, and other injuries on bone to determine cause and manner of death; requires working expertise in both osteology and pathology."
+      },
+      {
+        "concept": "commingled remains",
+        "wikipedia_article": "Commingling (forensics)",
+        "brief_rationale": "Skeletal elements from multiple individuals mixed together in a single deposit; requires working knowledge of sorting, minimum number of individuals calculation, and DNA-aided reassociation."
+      },
+      {
+        "concept": "photogrammetry",
+        "wikipedia_article": "Photogrammetry",
+        "brief_rationale": "The use of overlapping photographs to generate accurate 3-D models of excavated features and remains; an increasingly standard documentation technique requiring technical competence."
+      },
+      {
+        "concept": "ante-mortem dental records",
+        "wikipedia_article": "Forensic odontology",
+        "brief_rationale": "Pre-death dental records used to establish positive identification of skeletal remains; requires working knowledge of forensic odontology and victim identification protocols."
+      },
+      {
+        "concept": "scene documentation",
+        "wikipedia_article": "Crime scene investigation",
+        "brief_rationale": "The systematic recording of a forensic scene through photography, mapping, and note-taking before and during excavation; requires applied knowledge of evidence preservation standards."
+      },
+      {
+        "concept": "luminescence dating",
+        "wikipedia_article": "Luminescence dating",
+        "brief_rationale": "Optically or thermally stimulated luminescence methods for dating sediments surrounding buried remains; requires working knowledge of geoarchaeological dating methods beyond radiocarbon."
+      },
+      {
+        "concept": "Interpol DVI protocols",
+        "wikipedia_article": "Disaster victim identification",
+        "brief_rationale": "International standards for identifying victims of mass disasters using primary and secondary identifiers; requires working knowledge of multi-agency forensic identification systems."
+      },
+      {
+        "concept": "botanical evidence",
+        "wikipedia_article": "Forensic botany",
+        "brief_rationale": "Plant material, pollen, seeds, and wood recovered from forensic scenes used to reconstruct environment and postmortem interval; requires applied botanical and taphonomic knowledge."
+      }
+    ],
+    "L4": [
+      {
+        "concept": "perimortem vs. postmortem fracture analysis",
+        "wikipedia_article": "Bone fracture",
+        "brief_rationale": "The differentiation of fractures sustained around the time of death from those produced after skeletonization, based on bone hydration and fracture morphology; requires expert-level biomechanical and taphonomic understanding."
+      },
+      {
+        "concept": "cut mark analysis",
+        "wikipedia_article": "Cut mark",
+        "brief_rationale": "Microscopic and macroscopic identification of tool-inflicted striations on bone to determine weapon type, direction of force, and dismemberment patterns; requires expert reading of bone surface modification."
+      },
+      {
+        "concept": "sequential excavation methodology",
+        "wikipedia_article": "Excavation (archaeology)",
+        "brief_rationale": "The layer-by-layer removal and recording of burial fills following stratigraphic principles in medico-legal contexts, adhering to court-admissible standards; requires deep integration of archaeological method with legal procedure."
+      },
+      {
+        "concept": "minimum number of individuals",
+        "wikipedia_article": "Minimum number of individuals",
+        "brief_rationale": "A statistical estimate of the fewest individuals that could account for all skeletal elements in a commingled assemblage; requires expert knowledge of skeletal anatomy and quantitative analytical methods."
+      },
+      {
+        "concept": "strontium isotope geolocation",
+        "wikipedia_article": "Isotope geochemistry",
+        "brief_rationale": "Matching strontium-87/86 ratios in tooth enamel to bedrock maps to pinpoint geographic origin of individuals; requires expert integration of isotope geochemistry, geology, and skeletal biology."
+      },
+      {
+        "concept": "electrical resistivity tomography",
+        "wikipedia_article": "Electrical resistivity tomography",
+        "brief_rationale": "A geophysical remote-sensing technique that maps subsurface soil resistivity variations to locate buried features and graves; requires expert knowledge of geophysical instrumentation and data interpretation."
+      },
+      {
+        "concept": "forensic geoarchaeology",
+        "wikipedia_article": "Geoarchaeology",
+        "brief_rationale": "The application of sedimentological and geomorphological analysis to forensic scenes to reconstruct depositional history and detect grave disturbance; requires deep expertise in Quaternary geology and archaeological science."
+      },
+      {
+        "concept": "blunt force vs. sharp force trauma differentiation",
+        "wikipedia_article": "Forensic anthropology",
+        "brief_rationale": "Expert-level classification of skeletal injuries by mechanism — blunt impact versus edged weapon — based on fracture pattern geometry and bone surface characteristics; requires advanced training in skeletal trauma biomechanics."
+      },
+      {
+        "concept": "body farm research",
+        "wikipedia_article": "Anthropological Research Facility",
+        "brief_rationale": "Controlled outdoor decomposition facilities used to study human taphonomy under variable environmental conditions; expert knowledge of this research tradition informs time-since-death estimation in forensic cases."
+      },
+      {
+        "concept": "paleodemography of mass graves",
+        "wikipedia_article": "Paleodemography",
+        "brief_rationale": "Statistical reconstruction of age-at-death and sex distributions within mass-grave populations to infer victim selection patterns and atrocity intent; requires deep expertise in demographic methods and conflict archaeology."
+      },
+      {
+        "concept": "lidar terrain analysis",
+        "wikipedia_article": "Lidar",
+        "brief_rationale": "Airborne or ground-based laser scanning to detect subtle surface topography indicating clandestine burial or site disturbance beneath vegetation; requires expert integration of remote sensing and forensic search methodology."
+      },
+      {
+        "concept": "mtDNA kinship analysis",
+        "wikipedia_article": "Mitochondrial DNA",
+        "brief_rationale": "Use of maternally inherited mitochondrial DNA to establish familial relationships and confirm identity of skeletal remains from mass graves; requires expert-level knowledge of population genetics and forensic DNA laboratory practice."
+      }
+    ]
+  }
+}

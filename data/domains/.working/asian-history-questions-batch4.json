@@ -1,0 +1,133 @@
+[
+  {
+    "question_text": "During China's Cultural Revolution (1966-1976), the Red Guards launched a campaign to destroy the 'Four Olds.' What were these Four Olds, and what was the stated ideological purpose of their elimination?",
+    "correct_answer": "Old customs, old culture, old habits, and old ideas, targeted to eradicate bourgeois and traditional influences hindering revolutionary communist transformation of Chinese society.",
+    "distractors": [
+      "Old treaties, old borders, old alliances, and old debts, targeted to eliminate foreign imperialist influence and establish China's complete diplomatic independence from Western powers.",
+      "Old landlords, old merchants, old clergy, and old aristocrats, targeted to physically remove the four traditional social classes obstructing collectivized agricultural production.",
+      "Old scripts, old dialects, old calendars, and old currencies, targeted to impose linguistic and economic uniformity across China's ethnically diverse provincial territories."
+    ],
+    "difficulty": 3,
+    "source_article": "Cultural Revolution",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Cultural Revolution", "Four Olds", "Red Guards"]
+  },
+  {
+    "question_text": "The 1989 Tiananmen Square protests began as student-led mourning gatherings following the death of a specific political figure on April 15. Who was this figure, and why did students regard his death as politically significant?",
+    "correct_answer": "Hu Yaobang, a reformist Communist Party general secretary whose forced resignation in 1987 made students view his death as tied to political suppression.",
+    "distractors": [
+      "Zhou Enlai, a moderate premier whose death revealed deep factional divisions, making students view his passing as engineered by radical Maoist elements within the Politburo.",
+      "Deng Xiaoping, a pragmatic reformer whose sudden illness made students view his incapacitation as a deliberate poisoning by conservative military leaders opposing economic liberalization.",
+      "Liu Shaoqi, a rehabilitated former president whose belated death announcement made students view the concealment as proof of ongoing political repression by the ruling party."
+    ],
+    "difficulty": 3,
+    "source_article": "1989 Tiananmen Square protests and massacre",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Tiananmen Square protests", "Hu Yaobang"]
+  },
+  {
+    "question_text": "The Gupta Empire (c. 319-550 CE) is often called the 'Golden Age of India.' Which Gupta-era scholar composed the Aryabhatiya, and what groundbreaking mathematical contribution is implicit in his place-value arithmetic system?",
+    "correct_answer": "Aryabhata, whose decimal place-value system used positional notation that implicitly required the concept of zero as a placeholder for powers of ten.",
+    "distractors": [
+      "Varahamihira, whose hexadecimal counting system used symbolic notation that explicitly introduced the concept of infinity as a divisor for fractional numbers.",
+      "Brahmagupta, whose binary place-value system used algebraic notation that implicitly required the concept of negative numbers as placeholders for subtracted quantities.",
+      "Bhaskara, whose duodecimal place-value system used geometric notation that implicitly required the concept of irrational numbers as placeholders for root values."
+    ],
+    "difficulty": 3,
+    "source_article": "Gupta Empire",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Gupta Empire", "Aryabhata", "decimal system"]
+  },
+  {
+    "question_text": "During Japan's Edo period (1603-1868), the Tokugawa shogunate required feudal lords (daimyo) to alternate their residence between their home domains and the capital. What was this system called, and how did it function as a mechanism of political control?",
+    "correct_answer": "Sankin-kotai, which forced daimyo to maintain expensive households in Edo and leave family members as hostages, draining their wealth and preventing rebellion.",
+    "distractors": [
+      "Kokudaka, which forced daimyo to surrender annual rice harvests to central storehouses and submit samurai rosters as collateral, limiting their military recruitment capacity.",
+      "Bakuhan, which forced daimyo to rotate governing authority among neighboring lords and exchange territorial administrators, preventing consolidation of regional military power.",
+      "Shinokosho, which forced daimyo to send eldest sons for permanent education in Edo and relinquish domain taxation rights, eliminating their financial independence entirely."
+    ],
+    "difficulty": 3,
+    "source_article": "Edo period",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Edo period", "sankin-kotai", "Tokugawa shogunate"]
+  },
+  {
+    "question_text": "The Pax Mongolica enabled unprecedented long-distance communication across Eurasia. What was the Mongol Empire's relay postal system called, and approximately how many stations and horses sustained it by the late 13th century?",
+    "correct_answer": "The yam system, which by the end of the 13th century comprised roughly 10,000 relay stations supported by around 300,000 horses across Mongol-held territory.",
+    "distractors": [
+      "The ortoo system, which by the end of the 13th century comprised roughly 25,000 relay stations supported by around 500,000 camels across Mongol-held territory.",
+      "The barid system, which by the end of the 13th century comprised roughly 5,000 relay stations supported by around 150,000 horses across Mongol-held territory.",
+      "The anda system, which by the end of the 13th century comprised roughly 10,000 relay stations supported by around 300,000 oxen across Mongol-held territory."
+    ],
+    "difficulty": 3,
+    "source_article": "Pax Mongolica",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Pax Mongolica", "yam postal system", "Mongol Empire"]
+  },
+  {
+    "question_text": "Timur (Tamerlane) founded an empire in 1370 that became renowned for cultural patronage despite its brutal conquests. What astronomical achievement did his grandson Ulugh Beg accomplish in Samarkand, and how long did it remain influential?",
+    "correct_answer": "Ulugh Beg built an observatory and compiled astronomical tables so accurate they were still used by the English royal astronomer in the 17th century.",
+    "distractors": [
+      "Ulugh Beg built a planetarium and compiled navigational charts so detailed they were still used by Portuguese maritime explorers in the 18th century.",
+      "Ulugh Beg built a library and compiled mathematical proofs so rigorous they were still referenced by French Enlightenment scholars in the 19th century.",
+      "Ulugh Beg built a sundial network and compiled calendar reforms so precise they were still adopted by Ottoman imperial astronomers in the 16th century."
+    ],
+    "difficulty": 3,
+    "source_article": "Timurid Empire",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Timurid Empire", "Ulugh Beg", "Samarkand"]
+  },
+  {
+    "question_text": "The Chinese Buddhist monk Yijing (I-Tsing) visited Srivijaya in the late 7th century and left valuable written accounts. According to his records, what role did the kingdom's capital at Palembang serve in the broader Buddhist world?",
+    "correct_answer": "A major center of Buddhist learning and Sanskrit study where over a thousand scholars gathered, serving as a preparatory stop for pilgrims traveling to India.",
+    "distractors": [
+      "A major center of Buddhist relic worship and temple construction where over a thousand artisans gathered, serving as the primary source of sacred statuary for China.",
+      "A major center of Buddhist monastic governance and ordination where over a thousand abbots gathered, serving as the administrative headquarters for all Southeast Asian monasteries.",
+      "A major center of Buddhist text translation and printing where over a thousand scribes gathered, serving as the sole repository of original Pali canon manuscripts outside India."
+
+    ],
+    "difficulty": 3,
+    "source_article": "Srivijaya",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Srivijaya", "Yijing", "Buddhist learning"]
+  },
+  {
+    "question_text": "During China's Great Leap Forward (1958-1962), Mao Zedong's campaign to rapidly industrialize included a specific grassroots initiative that catastrophically diverted agricultural labor. What was this initiative, and why did it worsen the ensuing famine?",
+    "correct_answer": "Backyard steel furnaces, where villagers melted household items and dismantled infrastructure to produce low-quality steel while crops went unplanted or unharvested.",
+    "distractors": [
+      "Commune irrigation canals, where villagers excavated massive waterways and diverted entire rivers to produce hydroelectric power while farmland was permanently flooded.",
+      "Collective brick factories, where villagers demolished traditional housing and fired clay kilns to produce building materials while arable land was stripped of topsoil.",
+      "Village textile mills, where villagers harvested cotton prematurely and operated hand looms to produce export cloth while food grain fields were converted to fiber crops."
+    ],
+    "difficulty": 3,
+    "source_article": "Great Leap Forward",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Great Leap Forward", "backyard furnaces", "famine"]
+  },
+  {
+    "question_text": "Zhu Xi's Neo-Confucian philosophy became state orthodoxy across East Asia for over six centuries. His commentaries on which specific collection of texts became the core curriculum for China's imperial civil service examinations from 1313 until 1905?",
+    "correct_answer": "The Four Books: the Analects, Mencius, Great Learning, and Doctrine of the Mean, which Zhu Xi selected and annotated as the essential Confucian canon.",
+    "distractors": [
+      "The Five Classics: the Book of Changes, Book of Songs, Book of Rites, Spring and Autumn Annals, and Book of Documents compiled during the Zhou dynasty.",
+      "The Six Arts: ritual propriety, music theory, archery technique, chariot driving, calligraphy, and mathematics, which Zhu Xi reorganized as the practical Confucian curriculum.",
+      "The Three Commentaries: Zuo Zhuan, Gongyang Zhuan, and Guliang Zhuan, which Zhu Xi synthesized into a unified historical and moral Confucian narrative."
+    ],
+    "difficulty": 4,
+    "source_article": "Neo-Confucianism",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Zhu Xi's Neo-Confucianism", "Four Books", "civil service examinations"]
+  },
+  {
+    "question_text": "Kautilya's Arthashastra outlines the saptanga theory, which defines the state as an organism composed of seven interdependent elements. What are these seven constituents, and which does Kautilya identify as the most critical?",
+    "correct_answer": "Svami (king), Amatya (ministers), Janapada (territory), Durga (fort), Kosha (treasury), Danda (army), and Mitra (allies), with the Svami as the pivotal element.",
+    "distractors": [
+      "Dharma (law), Artha (wealth), Kama (desire), Moksha (liberation), Vidya (knowledge), Shakti (power), and Sena (army), with Dharma as the pivotal element.",
+      "Raja (king), Purohita (priest), Senapati (general), Mantri (counselor), Duta (ambassador), Guptachar (spy), and Praja (subjects), with Purohita as the pivotal element.",
+      "Bhumi (land), Jala (water), Agni (fire), Vayu (air), Akasha (space), Kala (time), and Atman (spirit), with Bhumi as the pivotal element."
+    ],
+    "difficulty": 4,
+    "source_article": "Arthashastra",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Kautilya's Arthashastra", "saptanga theory", "Maurya Empire"]
+  }
+]

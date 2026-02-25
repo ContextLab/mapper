@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Second-order logic extends first-order logic by permitting quantification over predicates and relations, not just individuals. What key consequence does this additional expressive power have for categorical characterization of mathematical structures?",
+    "correct_answer": "Second-order logic can categorically characterize structures like the natural numbers and real numbers (up to isomorphism), something first-order logic cannot do due to the Lowenheim-Skolem theorem, which forces first-order theories with infinite models to have models of every infinite cardinality.",
+    "distractors": [
+      "Second-order logic can only characterize finite structures categorically, while first-order logic can characterize both finite and infinite structures up to isomorphism through the completeness theorem and compactness property.",
+      "Second-order logic loses the ability to characterize any structure categorically because quantifying over predicates introduces inherent ambiguity about which sets exist, making all second-order theories have multiple non-isomorphic models.",
+      "Second-order logic can categorically characterize structures only when restricted to monadic predicates, and full second-order logic with polyadic predicates collapses back to first-order expressive power by a result of Lindstrom."
+    ],
+    "difficulty": 3,
+    "source_article": "Second-order logic",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["second-order logic"]
+  },
+  {
+    "question_text": "Intuitionistic logic, formalized by Arend Heyting, differs fundamentally from classical logic in its treatment of certain inference rules. Which classical principle does intuitionistic logic reject, and what is the philosophical motivation for this rejection?",
+    "correct_answer": "Intuitionistic logic rejects the law of excluded middle (that every proposition is either true or false) and double negation elimination. The motivation is constructivism: a proof of existence must provide an explicit witness, so non-constructive proofs by contradiction are not accepted.",
+    "distractors": [
+      "Intuitionistic logic rejects the law of non-contradiction (that no proposition can be both true and false simultaneously). The motivation is dialethism: some propositions may genuinely be both true and false, especially self-referential semantic paradoxes.",
+      "Intuitionistic logic rejects the principle of modus ponens (from P and if-P-then-Q, infer Q). The motivation is relevance: the antecedent must share subject matter with the consequent for the inference to be valid and meaningful.",
+      "Intuitionistic logic rejects the law of identity (that every proposition implies itself). The motivation is anti-realism: truth values are context-dependent and a proposition's status can shift between assertibility conditions across different epistemic situations."
+    ],
+    "difficulty": 3,
+    "source_article": "Intuitionistic logic",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["intuitionistic logic"]
+  },
+  {
+    "question_text": "Resolution is a single inference rule used in automated theorem proving that operates on clauses in conjunctive normal form. What technique, introduced by J. Alan Robinson in 1965, eliminated a major source of combinatorial explosion in earlier resolution procedures?",
+    "correct_answer": "Robinson introduced syntactic unification, which instantiates variables during the proof on demand, only as far as needed. This eliminated the need to enumerate all ground instances of a formula, as required by the earlier Davis-Putnam procedure.",
+    "distractors": [
+      "Robinson introduced clause subsumption, which eliminates redundant clauses during the proof by checking whether any existing clause logically entails a newly derived clause, thereby pruning the entire search space exponentially at each step.",
+      "Robinson introduced Skolem normalization, which replaces all existential quantifiers with universal quantifiers over expanded domains, thereby reducing first-order resolution to a purely propositional problem that can be solved in polynomial time.",
+      "Robinson introduced term indexing, which organizes all terms in the clause set into a hash-table structure allowing constant-time lookup of complementary literals, thereby reducing the resolution procedure from exponential to linear time complexity."
+    ],
+    "difficulty": 3,
+    "source_article": "Resolution (logic)",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["resolution (logic)"]
+  },
+  {
+    "question_text": "The Lowenheim-Skolem theorem is a fundamental result in the model theory of first-order logic. It has both a downward and an upward component. What does the downward Lowenheim-Skolem theorem state, and what philosophical puzzle does it give rise to?",
+    "correct_answer": "The downward theorem states that if a countable first-order theory has a model of any infinite cardinality, it has a countable model. This gives rise to Skolem's paradox: set theory, which proves uncountable sets exist, itself has a countable model.",
+    "distractors": [
+      "The downward theorem states that every first-order theory with a finite model also has a model of every smaller finite cardinality. This gives rise to the cardinality paradox: finite arithmetic theories cannot distinguish between different finite domain sizes.",
+      "The downward theorem states that if a first-order theory has an uncountable model, it must also have models of every strictly larger cardinality. This gives rise to the continuum paradox: first-order set theory cannot settle the continuum hypothesis.",
+      "The downward theorem states that every first-order theory with a model has a model whose cardinality matches the number of symbols in its language. This gives rise to the expressibility paradox: no first-order language can describe structures larger than its own alphabet."
+    ],
+    "difficulty": 3,
+    "source_article": "Löwenheim–Skolem theorem",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["Löwenheim-Skolem theorem"]
+  },
+  {
+    "question_text": "The compactness theorem is one of the two key properties (along with the downward Lowenheim-Skolem theorem) that Lindstrom's theorem uses to characterize first-order logic. What does the compactness theorem state, and what important consequence does it have for the class of finite structures?",
+    "correct_answer": "A set of first-order sentences has a model if and only if every finite subset has a model. Consequently, any theory with arbitrarily large finite models must have an infinite model, so the class of all finite structures is not first-order axiomatizable.",
+    "distractors": [
+      "The compactness theorem states that every first-order theory with an infinite model has a finitely axiomatizable conservative extension. A consequence is that every class of finite structures can be defined by a single first-order sentence with bounded quantifier depth.",
+      "The compactness theorem states that if a first-order sentence is true in all models of a theory, then the theory can be reduced to a finite set of axioms. A consequence is that every decidable first-order theory has only finitely many non-isomorphic finite models.",
+      "The compactness theorem states that any consistent first-order theory has a model whose domain is compact in the order topology. A consequence is that all first-order definable sets of natural numbers must be finite or cofinite by a topological closure argument."
+    ],
+    "difficulty": 3,
+    "source_article": "Compactness theorem",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["compactness theorem"]
+  },
+  {
+    "question_text": "The Curry-Howard correspondence establishes a deep isomorphism between proof theory and type theory. Under this correspondence, what do logical propositions correspond to, and what do proofs correspond to in the computational setting?",
+    "correct_answer": "Propositions correspond to types, and proofs correspond to programs (specifically, terms in a typed lambda calculus). Proving a proposition is equivalent to constructing a program that inhabits the corresponding type, and proof simplification corresponds to program evaluation.",
+    "distractors": [
+      "Propositions correspond to program inputs, and proofs correspond to output values returned by functions. Proving a proposition is equivalent to running a computation that halts, and proof simplification corresponds to compiler optimization of machine code.",
+      "Propositions correspond to sets of program states, and proofs correspond to algorithms that terminate on all inputs. Proving a proposition is equivalent to demonstrating that every possible execution path reaches a halting configuration within a bounded number of steps.",
+      "Propositions correspond to boolean expressions in a programming language, and proofs correspond to test cases that evaluate those expressions to true. Proving a proposition is equivalent to exhaustive testing, and proof simplification corresponds to reducing the number of required tests."
+    ],
+    "difficulty": 3,
+    "source_article": "Curry–Howard correspondence",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["Curry-Howard correspondence"]
+  },
+  {
+    "question_text": "Decidability in logic asks whether there exists an effective method (algorithm) to determine the truth or validity of sentences in a given logical system. Which of the following correctly describes the decidability status of propositional logic versus first-order logic?",
+    "correct_answer": "Propositional logic is decidable: there is an algorithm (such as truth tables) that can determine whether any propositional formula is a tautology. First-order logic is undecidable: Church and Turing independently proved in 1936 that no algorithm can determine the validity of arbitrary first-order sentences.",
+    "distractors": [
+      "Both propositional logic and first-order logic are decidable, but first-order logic requires exponentially more computation time. Church and Turing proved in 1936 that first-order validity checking is in the complexity class EXPTIME but remains algorithmically solvable.",
+      "Propositional logic is undecidable due to the exponential blowup of truth tables for formulas with many variables, while first-order logic is decidable through Herbrand's theorem which reduces all first-order validity questions to finite domain checks.",
+      "Both propositional logic and first-order logic are undecidable, but propositional logic becomes decidable when restricted to formulas in conjunctive normal form. Church and Turing proved this restriction result as a corollary of the halting problem."
+    ],
+    "difficulty": 3,
+    "source_article": "Decidability (logic)",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["decidability"]
+  },
+  {
+    "question_text": "An axiomatic system is a set of axioms from which theorems are logically derived. Three key properties of axiomatic systems are consistency, completeness, and independence. What does it mean for an axiomatic system to be consistent, and how can consistency be demonstrated?",
+    "correct_answer": "A system is consistent if it is impossible to derive both a statement and its negation from the axioms. Consistency can be demonstrated by exhibiting a model satisfying all the axioms, since a satisfiable system cannot be contradictory.",
+    "distractors": [
+      "An axiomatic system is consistent if every statement expressible in the system can be either proved or disproved from the axioms. Consistency can be demonstrated by providing a complete truth table that assigns definite values to every sentence in the formal language.",
+      "An axiomatic system is consistent if none of its axioms can be derived from the remaining axioms in the set. Consistency can be demonstrated by showing that removing any single axiom causes at least one previously provable theorem to become unprovable.",
+      "An axiomatic system is consistent if it has exactly one model up to isomorphism in which all its axioms are satisfied. Consistency can be demonstrated by proving that any two models of the system must be isomorphic through a structure-preserving mapping."
+    ],
+    "difficulty": 3,
+    "source_article": "Axiomatic system",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["axiomatic system"]
+  },
+  {
+    "question_text": "Godel's second incompleteness theorem (1931) extends his first incompleteness theorem and has profound implications for Hilbert's program. What exactly does the second incompleteness theorem state, and why did it undermine Hilbert's foundational program?",
+    "correct_answer": "The second incompleteness theorem states that any consistent formal system capable of expressing elementary arithmetic cannot prove its own consistency. This undermined Hilbert's program because Hilbert aimed to prove the consistency of mathematics using finitary methods formalizable within such systems.",
+    "distractors": [
+      "The second incompleteness theorem states that any formal system containing arithmetic must contain at least one axiom that is both unprovable and irrefutable. This undermined Hilbert's program because Hilbert required all axioms to be self-evidently true and independently verifiable.",
+      "The second incompleteness theorem states that no formal system can be both consistent and complete for arithmetic. This undermined Hilbert's program because Hilbert aimed to construct a single system that would decide every mathematical statement as either true or false.",
+      "The second incompleteness theorem states that the consistency of any formal system for arithmetic can only be proved by a strictly weaker system. This undermined Hilbert's program because Hilbert required consistency proofs to come from systems of equal or greater logical strength."
+    ],
+    "difficulty": 4,
+    "source_article": "Gödel's incompleteness theorems",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["Gödel's second incompleteness theorem"]
+  },
+  {
+    "question_text": "Forcing is a technique in set theory developed by Paul Cohen in 1963. What did Cohen originally use forcing to prove, and how does forcing work at a high level to construct new models of set theory?",
+    "correct_answer": "Cohen proved the independence of the continuum hypothesis and the axiom of choice from ZFC. Forcing starts with a ground model and adjoins a 'generic' object, constructing an extended model where specific statements can be controlled.",
+    "distractors": [
+      "Cohen used forcing to prove the consistency of the continuum hypothesis and the axiom of choice with Zermelo-Fraenkel set theory. Forcing works by constructing an inner model within an existing model, restricting the sets to only those that are constructible from ordinals.",
+      "Cohen used forcing to prove that Zermelo-Fraenkel set theory is consistent relative to Peano arithmetic. Forcing works by translating set-theoretic statements into arithmetic statements via Godel numbering and then applying the completeness theorem to construct satisfying models.",
+      "Cohen used forcing to prove that every model of Zermelo-Fraenkel set theory must satisfy the generalized continuum hypothesis. Forcing works by iterating the power set operation transfinitely and showing that cardinality gaps between successive power sets must follow a fixed pattern."
+    ],
+    "difficulty": 4,
+    "source_article": "Forcing (mathematics)",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["forcing"]
+  }
+]

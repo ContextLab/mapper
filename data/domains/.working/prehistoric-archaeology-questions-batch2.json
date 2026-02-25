@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Where did Homo sapiens first evolve, according to the fossil record, with the oldest known specimens dating to roughly 300,000 years ago?",
+    "correct_answer": "Africa, with early fossils found at sites such as Jebel Irhoud in Morocco and Omo-Kibish in Ethiopia.",
+    "distractors": [
+      "Southeast Asia, where the earliest hominin migrations were once believed to have originated.",
+      "Europe, where Cro-Magnon remains were among the first modern human fossils discovered.",
+      "The Middle East, where large populations of early anatomically modern humans first settled."
+    ],
+    "difficulty": 1,
+    "source_article": "Homo sapiens",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Homo sapiens"]
+  },
+  {
+    "question_text": "A cross-hatched ochre drawing from Blombos Cave in South Africa, estimated at 73,000 years old, is considered the earliest known example of what broad category of human expression?",
+    "correct_answer": "Prehistoric art, the category encompassing all artistic works created before the invention of writing.",
+    "distractors": [
+      "Written language, the earliest known system of symbolic communication using abstract signs.",
+      "Architectural design, the planned construction of shelters and monumental structures.",
+      "Musical notation, the recording of sound patterns using symbolic marks on surfaces."
+    ],
+    "difficulty": 1,
+    "source_article": "Prehistoric art",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["prehistoric art"]
+  },
+  {
+    "question_text": "What term describes the entire body of physical evidence studied by archaeologists, consisting of artifacts, architecture, biofacts, sites, and cultural landscapes?",
+    "correct_answer": "The archaeological record, the material remains through which past human activity is reconstructed.",
+    "distractors": [
+      "The historical archive, the collection of written documents preserved in libraries and repositories.",
+      "The geological column, the sequence of rock strata used to reconstruct Earth's physical history.",
+      "The ethnographic record, the body of observations gathered from living cultures by anthropologists."
+    ],
+    "difficulty": 1,
+    "source_article": "Archaeology",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["archaeology"]
+  },
+  {
+    "question_text": "Which cereal grains, along with lentils and flax, were among the eight Neolithic founder crops first domesticated during the transition to agriculture in the Fertile Crescent?",
+    "correct_answer": "Emmer wheat, einkorn wheat, and barley, cultivated by early farming communities around 10,000 BCE.",
+    "distractors": [
+      "Rice and millet, which were independently domesticated in East Asia rather than the Near East.",
+      "Maize, beans, and squash, the trio of crops first cultivated in prehistoric Mesoamerica.",
+      "Sorghum and pearl millet, cereals first domesticated in sub-Saharan Africa's Sahel region."
+    ],
+    "difficulty": 2,
+    "source_article": "Neolithic Revolution",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Neolithic Revolution"]
+  },
+  {
+    "question_text": "Which American chemist developed radiocarbon dating in the late 1940s at the University of Chicago and received the 1960 Nobel Prize in Chemistry for this achievement?",
+    "correct_answer": "Willard Libby, who recognized that the decay of carbon-14 in dead organisms provides a built-in nuclear clock.",
+    "distractors": [
+      "Linus Pauling, who won the Nobel Prize in Chemistry for research on chemical bond theory.",
+      "Harold Urey, who received the Nobel Prize for his discovery of the heavy hydrogen isotope deuterium.",
+      "Glenn Seaborg, who was awarded the Nobel Prize for synthesizing transuranium elements in the laboratory."
+    ],
+    "difficulty": 2,
+    "source_article": "Radiocarbon dating",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["radiocarbon dating"]
+  },
+  {
+    "question_text": "What is the name of the remarkably complete 1.5-million-year-old Homo erectus skeleton discovered in Kenya in 1984, which revealed that this species walked and ran much like modern humans?",
+    "correct_answer": "Turkana Boy, the most complete early human skeleton ever found, unearthed near Lake Turkana.",
+    "distractors": [
+      "Lucy, the famous 3.2-million-year-old Australopithecus afarensis partial skeleton from Ethiopia.",
+      "Java Man, the first Homo erectus specimen discovered by Eugene Dubois in Indonesia in 1891.",
+      "Peking Man, the collection of Homo erectus fossils excavated at Zhoukoudian cave near Beijing."
+    ],
+    "difficulty": 2,
+    "source_article": "Homo erectus",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Homo erectus"]
+  },
+  {
+    "question_text": "What type of megalithic structure consists of a single large upright stone erected in prehistoric times, with approximately 50,000 examples found across western Europe, especially in Brittany?",
+    "correct_answer": "A menhir, or standing stone, the simplest form of megalithic monument.",
+    "distractors": [
+      "A dolmen, a chamber formed by upright stones supporting a large horizontal capstone.",
+      "A cairn, a mound constructed by stacking many smaller rocks without using massive slabs.",
+      "A trilithon, a structure of two vertical stones supporting a horizontal lintel across the top."
+    ],
+    "difficulty": 2,
+    "source_article": "Megalith",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["megalith"]
+  },
+  {
+    "question_text": "The Paleolithic is conventionally divided into three major subdivisions based on stone tool technology. What are they?",
+    "correct_answer": "Lower, Middle, and Upper Paleolithic, progressing from simple pebble tools to sophisticated blade industries.",
+    "distractors": [
+      "Early, Classic, and Terminal Paleolithic, defined primarily by changes in climate and glacial cycles.",
+      "Proto-Paleolithic, Meso-Paleolithic, and Neo-Paleolithic, based on hominin brain size increases.",
+      "Archaic, Transitional, and Modern Paleolithic, classified by the species of hominin present at sites."
+    ],
+    "difficulty": 2,
+    "source_article": "Paleolithic",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Paleolithic"]
+  },
+  {
+    "question_text": "The term 'Fertile Crescent' was coined by which scholar to describe the arc of agriculturally productive land stretching from the Levant through Mesopotamia?",
+    "correct_answer": "James Henry Breasted, the American Egyptologist who popularized the term in 1916.",
+    "distractors": [
+      "V. Gordon Childe, the Australian archaeologist who coined the phrase 'Neolithic Revolution.'",
+      "Kathleen Kenyon, the British archaeologist famous for her excavations at Jericho.",
+      "Robert Braidwood, the American archaeologist who led early fieldwork on agricultural origins in Iraq."
+    ],
+    "difficulty": 2,
+    "source_article": "Fertile Crescent",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Fertile Crescent"]
+  },
+  {
+    "question_text": "Genetic studies of mitochondrial DNA haplogroups support the Out of Africa model by showing that the greatest genetic diversity in modern humans is found on which continent?",
+    "correct_answer": "Africa, consistent with a longer period of human habitation and the origin point of all modern lineages.",
+    "distractors": [
+      "Asia, due to its vast geographic area and the large number of populations inhabiting the continent.",
+      "Europe, because of extensive gene flow from multiple archaic human species during the Pleistocene.",
+      "South America, as a result of rapid population expansion and isolation after initial colonization."
+    ],
+    "difficulty": 2,
+    "source_article": "Recent African origin of modern humans",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["out of Africa hypothesis"]
+  }
+]

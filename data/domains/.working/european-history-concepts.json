@@ -1,0 +1,266 @@
+{
+  "domain": "european-history",
+  "parent_domain": "world-history",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {
+        "concept": "French Revolution",
+        "wikipedia_article": "French Revolution",
+        "brief_rationale": "The 1789 upheaval that overthrew the French monarchy and reshaped European politics is among the most universally taught events in world history."
+      },
+      {
+        "concept": "World War I",
+        "wikipedia_article": "World War I",
+        "brief_rationale": "The 1914–1918 global conflict centered in Europe, known to every educated person and a fixture of secondary-school history curricula worldwide."
+      },
+      {
+        "concept": "World War II",
+        "wikipedia_article": "World War II",
+        "brief_rationale": "The 1939–1945 war involving all major European powers and resulting in the Holocaust and postwar world order; universally recognized."
+      },
+      {
+        "concept": "Roman Empire",
+        "wikipedia_article": "Roman Empire",
+        "brief_rationale": "The vast political entity dominating the Mediterranean world for centuries is a foundational concept in any general historical education."
+      },
+      {
+        "concept": "Black Death",
+        "wikipedia_article": "Black Death",
+        "brief_rationale": "The mid-14th-century plague that killed roughly a third of Europe's population is universally known as the defining medieval catastrophe."
+      },
+      {
+        "concept": "Renaissance",
+        "wikipedia_article": "Renaissance",
+        "brief_rationale": "The 14th–17th-century cultural and intellectual rebirth originating in Italy is universally recognized and taught in virtually every humanities curriculum."
+      },
+      {
+        "concept": "Napoleon Bonaparte",
+        "wikipedia_article": "Napoleon",
+        "brief_rationale": "The most famous European military and political leader of the modern era; his name and conquests are known to any educated person globally."
+      },
+      {
+        "concept": "Holocaust",
+        "wikipedia_article": "The Holocaust",
+        "brief_rationale": "The Nazi genocide of six million Jews and millions of others during World War II is taught universally and carries profound historical and moral importance."
+      },
+      {
+        "concept": "Cold War",
+        "wikipedia_article": "Cold War",
+        "brief_rationale": "The ideological and geopolitical standoff between the United States and Soviet Union that defined European and global politics from 1947 to 1991."
+      },
+      {
+        "concept": "ancient Greece",
+        "wikipedia_article": "Ancient Greece",
+        "brief_rationale": "The civilization recognized as the cradle of Western democracy, philosophy, and science; universally known through school curricula and popular culture."
+      },
+      {
+        "concept": "Protestant Reformation",
+        "wikipedia_article": "Reformation",
+        "brief_rationale": "The 16th-century religious revolution initiated by Martin Luther that permanently fractured Western Christianity is universally taught in world history."
+      },
+      {
+        "concept": "fall of the Berlin Wall",
+        "wikipedia_article": "Fall of the Berlin Wall",
+        "brief_rationale": "The 1989 event symbolizing the end of the Cold War and German division is one of the most iconic moments of modern European history."
+      },
+      {
+        "concept": "Crusades",
+        "wikipedia_article": "Crusades",
+        "brief_rationale": "The medieval series of religious wars between Christian Europe and the Muslim world are universally recognized and widely taught at the secondary level."
+      }
+    ],
+    "L2": [
+      {
+        "concept": "Congress of Vienna",
+        "wikipedia_article": "Congress of Vienna",
+        "brief_rationale": "The 1814–1815 diplomatic settlement that redrew European borders after Napoleon requires knowledge of 19th-century European statecraft; standard for history students."
+      },
+      {
+        "concept": "Thirty Years' War",
+        "wikipedia_article": "Thirty Years' War",
+        "brief_rationale": "The devastating 1618–1648 conflict that engulfed much of Central Europe and culminated in the Peace of Westphalia; known to students of early-modern European history."
+      },
+      {
+        "concept": "Magna Carta",
+        "wikipedia_article": "Magna Carta",
+        "brief_rationale": "The 1215 charter limiting royal power in England is a foundational text in the history of constitutional government; familiar to students of political or legal history."
+      },
+      {
+        "concept": "Age of Exploration",
+        "wikipedia_article": "Age of Discovery",
+        "brief_rationale": "The 15th–17th-century period of European maritime expansion and colonization requires student-level familiarity with early-modern European power projection."
+      },
+      {
+        "concept": "Enlightenment",
+        "wikipedia_article": "Age of Enlightenment",
+        "brief_rationale": "The 18th-century intellectual movement championing reason, science, and individual rights that underpins modern Western political thought; standard student vocabulary."
+      },
+      {
+        "concept": "Otto von Bismarck",
+        "wikipedia_article": "Otto von Bismarck",
+        "brief_rationale": "The Prussian statesman who unified Germany through 'blood and iron' in 1871; requires student-level knowledge of 19th-century European nationalism and diplomacy."
+      },
+      {
+        "concept": "Byzantine Empire",
+        "wikipedia_article": "Byzantine Empire",
+        "brief_rationale": "The eastern continuation of the Roman Empire lasting until 1453; requires familiarity with medieval European and Near Eastern history beyond the general curriculum."
+      },
+      {
+        "concept": "Treaty of Versailles",
+        "wikipedia_article": "Treaty of Versailles",
+        "brief_rationale": "The 1919 peace settlement ending World War I and imposing punishing terms on Germany; well known to history students for its role in enabling the rise of Nazism."
+      },
+      {
+        "concept": "Hundred Years' War",
+        "wikipedia_article": "Hundred Years' War",
+        "brief_rationale": "The prolonged 1337–1453 conflict between England and France featuring Joan of Arc; requires student-level knowledge of late-medieval European dynastic politics."
+      },
+      {
+        "concept": "Feudalism",
+        "wikipedia_article": "Feudalism",
+        "brief_rationale": "The hierarchical land-tenure and military-service system organizing medieval European society; standard vocabulary for students of medieval history."
+      },
+      {
+        "concept": "Russian Revolution",
+        "wikipedia_article": "Russian Revolution",
+        "brief_rationale": "The 1917 overthrow of the Tsar and subsequent Bolshevik seizure of power; requires student-level knowledge of early 20th-century European political radicalism."
+      },
+      {
+        "concept": "Peloponnesian War",
+        "wikipedia_article": "Peloponnesian War",
+        "brief_rationale": "The 431–404 BC conflict between Athens and Sparta that reshaped the Greek world; requires familiarity with ancient Greek political and military history."
+      },
+      {
+        "concept": "Colonialism",
+        "wikipedia_article": "Colonialism",
+        "brief_rationale": "European colonial expansion and its global consequences require student-level understanding of how European power shaped world history from the 15th century onward."
+      }
+    ],
+    "L3": [
+      {
+        "concept": "Peace of Westphalia",
+        "wikipedia_article": "Peace of Westphalia",
+        "brief_rationale": "The 1648 treaties ending the Thirty Years' War that established the principle of state sovereignty; requires understanding of how it shaped the modern international system."
+      },
+      {
+        "concept": "Concert of Europe",
+        "wikipedia_article": "Concert of Europe",
+        "brief_rationale": "The informal system of great-power diplomacy maintaining European stability from 1815 to 1914; requires working knowledge of 19th-century diplomatic history beyond student basics."
+      },
+      {
+        "concept": "enclosure movement",
+        "wikipedia_article": "Enclosure",
+        "brief_rationale": "The transformation of English common lands into private property that drove rural displacement and contributed to industrialization; requires contextual understanding of agrarian and economic history."
+      },
+      {
+        "concept": "Revolutions of 1848",
+        "wikipedia_article": "Revolutions of 1848",
+        "brief_rationale": "The wave of liberal and nationalist uprisings across Europe requires working knowledge of 19th-century political ideology and the tensions between liberalism, nationalism, and conservatism."
+      },
+      {
+        "concept": "Carolingian Empire",
+        "wikipedia_article": "Carolingian Empire",
+        "brief_rationale": "Charlemagne's 8th–9th-century Frankish realm that defined early medieval political and ecclesiastical organization in Western Europe; requires knowledge beyond general surveys."
+      },
+      {
+        "concept": "Dreyfus Affair",
+        "wikipedia_article": "Dreyfus affair",
+        "brief_rationale": "The late-19th-century French political scandal exposing antisemitism in the Third Republic; requires understanding of French politics, nationalism, and the role of public intellectuals."
+      },
+      {
+        "concept": "Eastern Question",
+        "wikipedia_article": "Eastern Question",
+        "brief_rationale": "The 19th-century European diplomatic crisis over the decline of the Ottoman Empire and control of its territories; requires working knowledge of great-power competition."
+      },
+      {
+        "concept": "Weimar Republic",
+        "wikipedia_article": "Weimar Republic",
+        "brief_rationale": "The German democratic government of 1919–1933 that struggled with hyperinflation, political extremism, and Depression; requires understanding of conditions enabling the Nazi rise to power."
+      },
+      {
+        "concept": "Hanseatic League",
+        "wikipedia_article": "Hanseatic League",
+        "brief_rationale": "The medieval commercial confederation of Northern European trading cities; requires working knowledge of pre-modern European economic history and urban organization."
+      },
+      {
+        "concept": "Spanish Inquisition",
+        "wikipedia_article": "Spanish Inquisition",
+        "brief_rationale": "The 1478–1834 tribunal enforcing Catholic orthodoxy in Spain through investigation and punishment; requires contextual knowledge of religious persecution, conversos, and Iberian history."
+      },
+      {
+        "concept": "Scramble for Africa",
+        "wikipedia_article": "Scramble for Africa",
+        "brief_rationale": "The rapid late-19th-century European partition of the African continent requires working knowledge of imperialism, the Berlin Conference, and European rivalries."
+      },
+      {
+        "concept": "Decembrist revolt",
+        "wikipedia_article": "Decembrist revolt",
+        "brief_rationale": "The 1825 Russian officers' uprising against autocracy; requires understanding of early Russian liberalism and the tensions between reform and reaction in 19th-century Europe."
+      }
+    ],
+    "L4": [
+      {
+        "concept": "Diocletianic reforms",
+        "wikipedia_article": "Diocletian",
+        "brief_rationale": "The late-Roman emperor Diocletian's administrative reorganization of the empire into a tetrarchy and his systematic persecution of Christians require deep knowledge of late antique Roman governance."
+      },
+      {
+        "concept": "Investiture Controversy",
+        "wikipedia_article": "Investiture Controversy",
+        "brief_rationale": "The 11th–12th-century struggle between the papacy and Holy Roman Emperor over the right to appoint bishops; requires expert understanding of medieval church-state relations and canon law."
+      },
+      {
+        "concept": "Annales school",
+        "wikipedia_article": "Annales school",
+        "brief_rationale": "The 20th-century French historiographical movement emphasizing long-term social and economic structures over political events; requires expert knowledge of historiography and methodology."
+      },
+      {
+        "concept": "Stab-in-the-back myth",
+        "wikipedia_article": "Stab-in-the-back myth",
+        "brief_rationale": "The false German nationalist narrative that the army was undefeated in World War I but betrayed by civilians and Jews; requires deep understanding of Weimar political culture and the origins of Nazism."
+      },
+      {
+        "concept": "translatio imperii",
+        "wikipedia_article": "Translatio imperii",
+        "brief_rationale": "The medieval political theology of the legitimate transfer of imperial authority from Rome to subsequent rulers; requires expert knowledge of medieval political thought and the Holy Roman Empire."
+      },
+      {
+        "concept": "July Crisis of 1914",
+        "wikipedia_article": "July Crisis",
+        "brief_rationale": "The precise sequence of diplomatic ultimatums, mobilization orders, and alliance commitments that triggered World War I in five weeks; requires deep familiarity with the historiography of the war's origins."
+      },
+      {
+        "concept": "Gracchi reforms",
+        "wikipedia_article": "Gracchi",
+        "brief_rationale": "The late-Roman Republic land-reform programs of Tiberius and Gaius Gracchus and their violent suppression require expert knowledge of Roman agrarian politics and the crisis of the Republic."
+      },
+      {
+        "concept": "Thermidorian Reaction",
+        "wikipedia_article": "Thermidorian Reaction",
+        "brief_rationale": "The post-Jacobin conservative turn of the French Revolution following Robespierre's execution in 1794; requires deep knowledge of revolutionary factionalism and periodization debates."
+      },
+      {
+        "concept": "Querelle des Anciens et des Modernes",
+        "wikipedia_article": "Quarrel of the Ancients and the Moderns",
+        "brief_rationale": "The late-17th-century French intellectual dispute over whether modern culture surpassed classical antiquity; requires expert knowledge of early modern European intellectual history and the formation of aesthetic theory."
+      },
+      {
+        "concept": "Eastern Front (World War I)",
+        "wikipedia_article": "Eastern Front (World War I)",
+        "brief_rationale": "The less-studied but decisive theater of World War I stretching from the Baltic to the Black Sea; requires expert understanding of the war's full strategic picture beyond the Western Front narrative."
+      },
+      {
+        "concept": "Sykes-Picot Agreement",
+        "wikipedia_article": "Sykes–Picot Agreement",
+        "brief_rationale": "The secret 1916 Anglo-French agreement partitioning the Middle East requires expert knowledge of wartime European imperial diplomacy and its long-term consequences for the region."
+      },
+      {
+        "concept": "Pirenne thesis",
+        "wikipedia_article": "Pirenne thesis",
+        "brief_rationale": "Henri Pirenne's argument that Islamic expansion, not Germanic invasions, ended ancient Mediterranean civilization and created the Middle Ages; requires expert engagement with historiographic debates on periodization."
+      }
+    ]
+  }
+}

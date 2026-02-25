@@ -1,0 +1,104 @@
+[
+  {
+    "question_text": "Tenebrism is often described as a more extreme form of chiaroscuro. According to art historical convention, what specifically distinguishes tenebrism from general chiaroscuro in painting technique?",
+    "correct_answer": "Darkness dominates the image with violent light-dark contrasts used solely for dramatic impact",
+    "distractors": [
+      "Light dominates the image with gentle tonal gradations used solely for naturalistic modeling",
+      "Darkness dominates the image with violent light-dark contrasts used solely for spatial depth",
+      "Shadow dominates the image with subtle light-dark contrasts used solely for atmospheric effect"
+    ],
+    "difficulty": 3,
+    "source_article": "Tenebrism",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "tenebrism"
+    ]
+  },
+  {
+    "question_text": "The 1937 Degenerate Art exhibition in Munich was staged alongside a concurrent official showcase of Nazi-approved art. How did attendance at the Degenerate Art exhibition compare to that of this parallel show?",
+    "correct_answer": "The Degenerate Art exhibition drew roughly twice the attendance of the Great German Art Exhibition",
+    "distractors": [
+      "The Degenerate Art exhibition drew roughly half the attendance of the Great German Art Exhibition",
+      "The Degenerate Art exhibition drew roughly equal attendance to the Great German Art Exhibition",
+      "The Degenerate Art exhibition drew roughly a third the attendance of the Great German Art Exhibition"
+    ],
+    "difficulty": 3,
+    "source_article": "Degenerate_Art_exhibition",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "Degenerate Art exhibition"
+    ]
+  },
+  {
+    "question_text": "The Barbizon school painters were inspired to abandon formalism and draw directly from nature after a key event at the Paris Salon of 1824. What prompted this shift in their artistic direction?",
+    "correct_answer": "The exhibition of rural landscape paintings by the English artist John Constable",
+    "distractors": [
+      "The exhibition of rural landscape paintings by the English artist J. M. W. Turner",
+      "The exhibition of classical history paintings by the French artist Jacques-Louis David",
+      "The exhibition of rural landscape paintings by the Dutch artist Jacob van Ruisdael"
+    ],
+    "difficulty": 3,
+    "source_article": "Barbizon_school",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "plein-air movement (Barbizon school)"
+    ]
+  },
+  {
+    "question_text": "The Wiener Werkstätte, founded in 1903, realized its ideal of the Gesamtkunstwerk in certain architectural commissions where every detail was consciously designed as part of the whole. Which building best exemplifies this total-artwork approach?",
+    "correct_answer": "The Stoclet Palace in Brussels, now a UNESCO World Heritage site",
+    "distractors": [
+      "The Palais Stoclet in Vienna, now a UNESCO World Heritage site",
+      "The Secession Building in Brussels, now a UNESCO World Heritage site",
+      "The Sanatorium Purkersdorf in Brussels, now a UNESCO World Heritage site"
+    ],
+    "difficulty": 3,
+    "source_article": "Wiener_Werkstätte",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "Wiener Werkstätte"
+    ]
+  },
+  {
+    "question_text": "Social Realism as an art movement is frequently confused with a related but distinct term for official state-sponsored art. What distinguishes Social Realism from Socialist Realism in terms of institutional status?",
+    "correct_answer": "Social Realism is not an official state art and allows space for subjectivity, unlike Soviet Socialist Realism",
+    "distractors": [
+      "Social Realism is an official state art that mandates optimistic themes, unlike Soviet Socialist Realism",
+      "Social Realism is not an official state art and requires strict objectivity, unlike Soviet Socialist Realism",
+      "Social Realism is not an official state art and rejects figurative representation, unlike Soviet Socialist Realism"
+    ],
+    "difficulty": 3,
+    "source_article": "Social_realism",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "Social Realism"
+    ]
+  },
+  {
+    "question_text": "Andrea Mantegna's Lamentation of Christ is considered a landmark demonstration of foreshortening. What deliberate deviation from strict linear perspective did Mantegna employ in depicting the recumbent figure?",
+    "correct_answer": "He reduced the size of Christ's feet, which would otherwise cover much of the body",
+    "distractors": [
+      "He enlarged the size of Christ's feet, which would otherwise appear too small to see",
+      "He reduced the size of Christ's head, which would otherwise dominate much of the canvas",
+      "He reduced the size of Christ's hands, which would otherwise cover much of the torso"
+    ],
+    "difficulty": 3,
+    "source_article": "Foreshortening",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "foreshortening"
+    ]
+  }
+]

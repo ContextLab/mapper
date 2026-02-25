@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "What hypothesis proposes that all modern humans descended from a population that originated in Africa?",
+    "correct_answer": "The Out of Africa hypothesis, supported by genetic and fossil evidence worldwide.",
+    "distractors": [
+      "The multiregional hypothesis, proposing parallel evolution of modern humans across several continents.",
+      "The Aquatic Ape hypothesis, suggesting human evolution was shaped by coastal adaptation.",
+      "The hybridization model, proposing modern humans arose from widespread interbreeding among archaic species."
+    ],
+    "difficulty": 2,
+    "source_article": "Recent African origin of modern humans",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["out of Africa hypothesis"]
+  },
+  {
+    "question_text": "What characteristic bifacial stone tool of the Lower Paleolithic is shaped by flaking on both sides?",
+    "correct_answer": "The hand axe, a teardrop-shaped tool associated with Homo erectus and successors.",
+    "distractors": [
+      "The Levallois core, a prepared-core technique yielding predetermined flake shapes.",
+      "The burin, a chisel-edged tool used for engraving bone and antler.",
+      "The scraper, a unifacially retouched flake used for processing hides and wood."
+    ],
+    "difficulty": 2,
+    "source_article": "Handaxe",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["hand axe"]
+  },
+  {
+    "question_text": "What term describes the subsistence strategy of peoples who rely on foraging wild foods rather than farming?",
+    "correct_answer": "Hunter-gatherer, a lifestyle based on hunting animals and collecting wild plant foods.",
+    "distractors": [
+      "Pastoralist, a lifestyle centered on herding domesticated animals across seasonal grazing lands.",
+      "Horticulturalist, a small-scale farmer who cultivates gardens without intensive plow agriculture.",
+      "Agropastoralist, a mixed strategy combining crop cultivation with livestock herding practices."
+    ],
+    "difficulty": 2,
+    "source_article": "Hunter-gatherer",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["hunter-gatherer"]
+  },
+  {
+    "question_text": "What large Neolithic settlement in Anatolia, dating to roughly 7500 BCE, lacked streets and used rooftop access?",
+    "correct_answer": "Catalhoyuk, a densely packed proto-city in south-central Turkey with roof-entry houses.",
+    "distractors": [
+      "Jericho, an early Neolithic walled settlement near the Jordan River in the Levant.",
+      "Ain Ghazal, a large Pre-Pottery Neolithic village in modern-day Amman, Jordan.",
+      "Mehrgarh, an early farming settlement on the Kachi plain of Balochistan, Pakistan."
+    ],
+    "difficulty": 2,
+    "source_article": "\u00c7atalh\u00f6y\u00fck",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["\u00c7atalh\u00f6y\u00fck"]
+  },
+  {
+    "question_text": "Which cave in southwestern France contains some of the most famous Upper Paleolithic paintings, discovered in 1940?",
+    "correct_answer": "Lascaux, renowned for its vivid depictions of horses, aurochs, and deer.",
+    "distractors": [
+      "Chauvet, discovered in 1994 and containing the oldest known figurative cave paintings.",
+      "Altamira, a Spanish cave celebrated for its polychrome ceiling of bison figures.",
+      "Font-de-Gaume, one of the last original polychrome caves still open to visitors."
+    ],
+    "difficulty": 2,
+    "source_article": "Lascaux",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Lascaux cave"]
+  },
+  {
+    "question_text": "What geological epoch, lasting from about 2.6 million to 11,700 years ago, is defined by repeated glacial cycles?",
+    "correct_answer": "The Pleistocene epoch, during which modern humans evolved and dispersed globally.",
+    "distractors": [
+      "The Holocene epoch, the current warm period following the last glacial maximum.",
+      "The Pliocene epoch, which preceded the Pleistocene and featured cooling global temperatures.",
+      "The Miocene epoch, an earlier period when great apes first diversified across continents."
+    ],
+    "difficulty": 2,
+    "source_article": "Pleistocene",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Pleistocene epoch"]
+  },
+  {
+    "question_text": "In archaeology, what method establishes relative chronology by analyzing the sequence of depositional layers at a site?",
+    "correct_answer": "Stratigraphy, based on the principle that deeper layers are generally older.",
+    "distractors": [
+      "Seriation, which orders artifacts by the frequency of stylistic attributes over time.",
+      "Typology, the classification of artifacts into types based on shared morphological features.",
+      "Provenience, the precise three-dimensional location where an artifact was found during excavation."
+    ],
+    "difficulty": 3,
+    "source_article": "Stratigraphy (archaeology)",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["stratigraphy"]
+  },
+  {
+    "question_text": "What Lower Paleolithic tool industry, named after a site in France, is characterized by large symmetrical bifacial hand axes?",
+    "correct_answer": "The Acheulean industry, spanning from about 1.76 million to roughly 100,000 years ago.",
+    "distractors": [
+      "The Oldowan industry, the earliest known stone tool tradition of simple choppers and flakes.",
+      "The Mousterian industry, a Middle Paleolithic flake-tool complex associated with Neanderthals.",
+      "The Magdalenian industry, a late Upper Paleolithic tradition known for bone and antler work."
+    ],
+    "difficulty": 3,
+    "source_article": "Acheulean",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Acheulean industry"]
+  },
+  {
+    "question_text": "What early Upper Paleolithic culture in Europe is associated with the arrival of modern humans and the first figurative art?",
+    "correct_answer": "The Aurignacian, featuring blade tools, bone points, and carved ivory figurines.",
+    "distractors": [
+      "The Gravettian, a later Upper Paleolithic tradition known for Venus figurines and net hunting.",
+      "The Solutrean, characterized by exceptionally fine pressure-flaked bifacial laurel-leaf points.",
+      "The Magdalenian, the final Upper Paleolithic culture famed for cave art and harpoons."
+    ],
+    "difficulty": 3,
+    "source_article": "Aurignacian",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Aurignacian culture"]
+  },
+  {
+    "question_text": "What concept in genetics refers to the most recent common matrilineal ancestor of all living humans?",
+    "correct_answer": "Mitochondrial Eve, inferred from mitochondrial DNA phylogenetics of modern human populations.",
+    "distractors": [
+      "Y-chromosomal Adam, the most recent common patrilineal ancestor of all living men.",
+      "Lucy, the famous Australopithecus afarensis fossil discovered in Ethiopia in 1974.",
+      "The Toba bottleneck survivor, the hypothetical last common ancestor after a supervolcanic eruption."
+    ],
+    "difficulty": 3,
+    "source_article": "Mitochondrial Eve",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["mitochondrial Eve"]
+  }
+]

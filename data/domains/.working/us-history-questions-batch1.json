@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "What is the Declaration of Independence in the context of United States history?",
+    "correct_answer": "A document adopted July 4, 1776, by the Second Continental Congress declaring the thirteen colonies independent from Great Britain.",
+    "distractors": [
+      "A document adopted July 4, 1776, by the First Continental Congress establishing a trade alliance between the thirteen colonies and Great Britain.",
+      "A document adopted October 19, 1781, by the Second Continental Congress outlining terms of peace between the thirteen colonies and the British Crown.",
+      "A document adopted July 4, 1776, by the Constitutional Convention creating a framework of self-governance for the thirteen colonies under British oversight."
+    ],
+    "difficulty": 1,
+    "source_article": "United_States_Declaration_of_Independence",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Declaration of Independence"]
+  },
+  {
+    "question_text": "What was the American Civil War?",
+    "correct_answer": "A war from 1861 to 1865 between the United States and eleven seceding Southern states that formed the Confederate States of America.",
+    "distractors": [
+      "A war from 1861 to 1865 between the United States and Great Britain over disputed territorial claims along the western frontier.",
+      "A war from 1854 to 1861 between Northern and Southern militias over tariff disputes and trade policy in the border states.",
+      "A war from 1861 to 1865 between the United States and a coalition of Native American nations resisting federal western expansion."
+    ],
+    "difficulty": 1,
+    "source_article": "American_Civil_War",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Civil War"]
+  },
+  {
+    "question_text": "What is the Constitution of the United States?",
+    "correct_answer": "The supreme law of the nation, drafted at the 1787 Constitutional Convention in Philadelphia, organizing the federal government across seven articles.",
+    "distractors": [
+      "The supreme law of the nation, drafted at the 1776 Continental Congress in Philadelphia, organizing the federal government across twelve articles.",
+      "The original governing charter of the nation, drafted at the 1787 Constitutional Convention in Philadelphia, organizing the federal government as a single legislature.",
+      "The supreme law of the nation, drafted at the 1781 Confederation Congress in New York, organizing the federal government across seven articles."
+    ],
+    "difficulty": 1,
+    "source_article": "Constitution_of_the_United_States",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Constitution of the United States"]
+  },
+  {
+    "question_text": "What was the abolitionist movement in the United States?",
+    "correct_answer": "A movement in the 18th and 19th centuries that sought to end slavery and emancipate all enslaved people in America.",
+    "distractors": [
+      "A movement in the 18th and 19th centuries that sought to end British colonial taxation and establish free trade among American states.",
+      "A movement in the 18th and 19th centuries that sought to gradually relocate enslaved people to West African colonies rather than grant freedom.",
+      "A movement in the late 19th and early 20th centuries that sought to end child labor and establish compulsory public education."
+    ],
+    "difficulty": 1,
+    "source_article": "Abolitionism_in_the_United_States",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["abolition of slavery"]
+  },
+  {
+    "question_text": "What event directly caused the United States to enter World War II?",
+    "correct_answer": "Japan's surprise attack on the U.S. naval base at Pearl Harbor, Hawaii, on December 7, 1941, prompting Congress to declare war.",
+    "distractors": [
+      "Germany's submarine attack on the USS Reuben James off Iceland on October 31, 1941, prompting Congress to declare war immediately.",
+      "Japan's invasion of the Philippine Islands on December 7, 1941, prompting Congress to declare war after a week of debate.",
+      "Germany's bombing of American merchant ships in the North Atlantic on December 7, 1941, prompting Congress to declare war."
+    ],
+    "difficulty": 1,
+    "source_article": "United_States_in_World_War_II",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["World War II (American involvement)"]
+  },
+  {
+    "question_text": "What was the Great Depression in the United States?",
+    "correct_answer": "A severe economic crisis triggered by the 1929 stock market crash, causing mass unemployment and poverty throughout the 1930s.",
+    "distractors": [
+      "A severe economic crisis triggered by the 1919 postwar recession, causing mass unemployment and currency collapse throughout the 1920s.",
+      "A severe banking crisis triggered by the 1929 stock market crash, affecting only Wall Street investors while industrial employment remained stable.",
+      "A severe agricultural crisis triggered by the 1929 Dust Bowl drought, causing mass rural displacement and crop failure throughout the 1930s."
+    ],
+    "difficulty": 1,
+    "source_article": "Great_Depression_in_the_United_States",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Great Depression"]
+  },
+  {
+    "question_text": "What was the Civil Rights Movement in the United States?",
+    "correct_answer": "A movement mainly during the 1950s and 1960s in which Black Americans fought to end racial segregation and win equal legal rights.",
+    "distractors": [
+      "A movement mainly during the 1930s and 1940s in which labor unions fought to end economic exploitation and win fair wage protections.",
+      "A movement mainly during the 1950s and 1960s in which immigrant communities fought to end restrictive quotas and win citizenship rights.",
+      "A movement mainly during the 1970s and 1980s in which Black Americans fought to end housing discrimination and win federal reparations."
+    ],
+    "difficulty": 1,
+    "source_article": "Civil_rights_movement",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Civil Rights Movement"]
+  },
+  {
+    "question_text": "What was the American Revolution?",
+    "correct_answer": "A colonial revolt from 1775 to 1783 in which thirteen British colonies won independence from Great Britain and formed the United States.",
+    "distractors": [
+      "A colonial revolt from 1775 to 1783 in which thirteen British colonies won self-governance from Great Britain while remaining in the Commonwealth.",
+      "A colonial revolt from 1765 to 1775 in which thirteen British colonies won independence from France and formed the United States.",
+      "A colonial revolt from 1775 to 1783 in which eight British colonies won independence while five others negotiated continued dominion status."
+    ],
+    "difficulty": 1,
+    "source_article": "American_Revolution",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["American Revolution"]
+  },
+  {
+    "question_text": "What was the Emancipation Proclamation?",
+    "correct_answer": "An executive order issued by President Lincoln on January 1, 1863, declaring enslaved people in Confederate states free and allowing Black military enlistment.",
+    "distractors": [
+      "An executive order issued by President Lincoln on January 1, 1863, declaring all enslaved people in every state free and granting them immediate citizenship.",
+      "A constitutional amendment proposed by President Lincoln on January 1, 1863, permanently abolishing slavery throughout the entire United States and its territories.",
+      "An executive order issued by President Andrew Johnson on January 1, 1863, declaring enslaved people in Confederate states free and redistributing land."
+    ],
+    "difficulty": 1,
+    "source_article": "Emancipation_Proclamation",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Emancipation Proclamation"]
+  },
+  {
+    "question_text": "What was the Moon landing in the context of United States history?",
+    "correct_answer": "The Apollo 11 mission on July 20, 1969, when Neil Armstrong and Buzz Aldrin became the first humans to walk on the Moon.",
+    "distractors": [
+      "The Apollo 13 mission on July 20, 1969, when Neil Armstrong and Michael Collins became the first humans to walk on the Moon.",
+      "The Apollo 11 mission on July 20, 1969, when John Glenn and Buzz Aldrin became the first humans to orbit and photograph the Moon.",
+      "The Gemini 11 mission on July 20, 1967, when Neil Armstrong and Buzz Aldrin became the first humans to walk on the Moon."
+    ],
+    "difficulty": 1,
+    "source_article": "Apollo_11",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Moon landing"]
+  }
+]

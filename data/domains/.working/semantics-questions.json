@@ -1,0 +1,852 @@
+[
+  {
+    "question_text": "In linguistics, what does the term 'meaning' refer to?",
+    "correct_answer": "The content or idea that a word, phrase, or sentence conveys to a listener or reader.",
+    "distractors": [
+      "The physical sound waves produced when a speaker articulates a word or phrase aloud.",
+      "The grammatical category assigned to a word based on its position within a sentence.",
+      "The historical origin and etymological root from which a modern word was derived."
+    ],
+    "difficulty": 1,
+    "source_article": "Meaning (linguistics)",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "meaning"
+    ]
+  },
+  {
+    "question_text": "What is a synonym?",
+    "correct_answer": "A word that has the same or nearly the same meaning as another word in the same language.",
+    "distractors": [
+      "A word that sounds identical to another word but has a completely different spelling and meaning.",
+      "A word whose meaning is the direct opposite of another word in the same language.",
+      "A word borrowed from a foreign language and adopted into everyday usage without translation."
+    ],
+    "difficulty": 1,
+    "source_article": "Synonym",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "synonym"
+    ]
+  },
+  {
+    "question_text": "What is an antonym?",
+    "correct_answer": "A word whose meaning is opposite or contrary to that of another word in the language.",
+    "distractors": [
+      "A word that has the same meaning as another word and can substitute for it in sentences.",
+      "A word that sounds the same as another but is spelled differently and has a different meaning.",
+      "A word derived from the same historical root as another word in the language."
+    ],
+    "difficulty": 1,
+    "source_article": "Opposite (semantics)",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "antonym"
+    ]
+  },
+  {
+    "question_text": "In semantics, what does 'ambiguity' mean?",
+    "correct_answer": "A situation in which a word, phrase, or sentence can be interpreted as having more than one meaning.",
+    "distractors": [
+      "A situation in which a speaker deliberately withholds information to deceive the listener about intentions.",
+      "A grammatical error that occurs when a sentence lacks a clear subject or predicate structure.",
+      "A rhetorical technique in which a speaker repeats key words for emphasis throughout a passage."
+    ],
+    "difficulty": 1,
+    "source_article": "Ambiguity",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "ambiguity"
+    ]
+  },
+  {
+    "question_text": "What is a metaphor?",
+    "correct_answer": "A figure of speech that describes one thing by stating it is something else, highlighting a shared quality.",
+    "distractors": [
+      "A grammatical construction that uses 'like' or 'as' to draw a direct comparison between two things.",
+      "A literary device that attributes human qualities and emotions to nonhuman objects or animals.",
+      "A rhetorical technique that deliberately exaggerates a claim far beyond what is literally true."
+    ],
+    "difficulty": 1,
+    "source_article": "Metaphor",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "metaphor"
+    ]
+  },
+  {
+    "question_text": "What does 'connotation' refer to in semantics?",
+    "correct_answer": "The emotional, cultural, or associative meaning a word carries beyond its strict dictionary definition.",
+    "distractors": [
+      "The precise literal definition of a word as it appears in a standard dictionary entry.",
+      "The grammatical function a word performs based on its position within the sentence structure.",
+      "The phonetic quality of a word that makes it sound pleasant or harsh to listeners."
+    ],
+    "difficulty": 1,
+    "source_article": "Connotation",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "connotation"
+    ]
+  },
+  {
+    "question_text": "What does 'denotation' refer to in semantics?",
+    "correct_answer": "The literal, primary meaning of a word as defined in the dictionary, without emotional associations.",
+    "distractors": [
+      "The subjective emotional overtones and cultural associations a word evokes beyond its literal sense.",
+      "The process by which new words are coined and added to a language over time.",
+      "The way a word's pronunciation shifts depending on the regional dialect of the speaker."
+    ],
+    "difficulty": 1,
+    "source_article": "Denotation",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "denotation"
+    ]
+  },
+  {
+    "question_text": "How does context influence meaning in language use?",
+    "correct_answer": "It provides surrounding linguistic and situational information that helps determine the intended interpretation of an expression.",
+    "distractors": [
+      "It establishes the grammatical rules that govern how morphemes must be ordered within a sentence.",
+      "It replaces the original meaning of a word with a new meaning agreed upon by all speakers.",
+      "It eliminates all possible interpretations of a sentence except the one with the fewest words."
+    ],
+    "difficulty": 1,
+    "source_article": "Context (language use)",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "context"
+    ]
+  },
+  {
+    "question_text": "What is 'literal meaning' in the study of language?",
+    "correct_answer": "The straightforward, non-figurative interpretation of words based on their standard definitions.",
+    "distractors": [
+      "The hidden symbolic interpretation that requires cultural knowledge to decode properly.",
+      "The emotional reaction a listener has when hearing a particular word or phrase.",
+      "The meaning that emerges only after translating an expression into another language."
+    ],
+    "difficulty": 1,
+    "source_article": "Literal and figurative language",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "literal meaning"
+    ]
+  },
+  {
+    "question_text": "What is a homonym?",
+    "correct_answer": "A word that shares the same spelling or pronunciation as another but has a different meaning.",
+    "distractors": [
+      "A word that means the exact opposite of another word within the same language.",
+      "A word created by combining two existing words into a single new compound term.",
+      "A word borrowed from a classical language like Latin or Greek for scientific use."
+    ],
+    "difficulty": 1,
+    "source_article": "Homonym",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "homonym"
+    ]
+  },
+  {
+    "question_text": "What is polysemy?",
+    "correct_answer": "The property of a single word having multiple related meanings that share a common origin.",
+    "distractors": [
+      "The property of two unrelated words coincidentally having identical spelling or pronunciation.",
+      "The tendency of languages to borrow words from multiple foreign languages simultaneously.",
+      "The phenomenon of a single morpheme changing meaning completely when used in different dialects."
+    ],
+    "difficulty": 1,
+    "source_article": "Polysemy",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "polysemy"
+    ]
+  },
+  {
+    "question_text": "What is hyponymy?",
+    "correct_answer": "A semantic relation in which one word's meaning is included within the broader meaning of another word.",
+    "distractors": [
+      "A semantic relation in which two words have completely opposite meanings in all contexts.",
+      "A phonological process in which one sound becomes more similar to an adjacent sound.",
+      "A syntactic pattern in which a dependent clause modifies the subject of the main clause."
+    ],
+    "difficulty": 1,
+    "source_article": "Hyponymy and hypernymy",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "hyponymy"
+    ]
+  },
+  {
+    "question_text": "What is an idiom?",
+    "correct_answer": "A fixed expression whose overall meaning cannot be predicted from the literal meanings of its individual words.",
+    "distractors": [
+      "A newly coined word or phrase that enters a language to describe a recent invention or concept.",
+      "A regional pronunciation variant that distinguishes speakers of one dialect from another.",
+      "A grammatical rule that determines the correct order of adjectives before a noun in a sentence."
+    ],
+    "difficulty": 1,
+    "source_article": "Idiom",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "idiom"
+    ]
+  },
+  {
+    "question_text": "What does pragmatics study in linguistics?",
+    "correct_answer": "How context, speaker intention, and social factors shape the interpretation of utterances beyond literal meaning.",
+    "distractors": [
+      "How the physical properties of speech sounds are produced by the vocal tract and perceived by listeners.",
+      "How morphemes combine according to fixed rules to create well-formed words in a language.",
+      "How syntactic tree structures represent the hierarchical arrangement of phrases within sentences."
+    ],
+    "difficulty": 2,
+    "source_article": "Pragmatics",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "pragmatics"
+    ]
+  },
+  {
+    "question_text": "What is a speech act, as defined by Austin and Searle?",
+    "correct_answer": "An utterance that performs an action such as promising, requesting, or asserting rather than merely describing.",
+    "distractors": [
+      "A phonological unit consisting of a single vowel sound surrounded by one or more consonant sounds.",
+      "A syntactic transformation that converts a declarative sentence into its corresponding interrogative form.",
+      "A written transcription system that represents the exact pronunciation of words across all languages."
+    ],
+    "difficulty": 2,
+    "source_article": "Speech act",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "speech act"
+    ]
+  },
+  {
+    "question_text": "In semantics, what does 'reference' describe?",
+    "correct_answer": "The relationship between a linguistic expression and the specific entity in the world it picks out.",
+    "distractors": [
+      "The relationship between a word's current pronunciation and its historical pronunciation in older forms.",
+      "The grammatical agreement between a subject and its corresponding verb in number and person.",
+      "The stylistic choice a writer makes when selecting formal or informal vocabulary for a text."
+    ],
+    "difficulty": 2,
+    "source_article": "Reference (linguistics)",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "reference"
+    ]
+  },
+  {
+    "question_text": "What does the principle of compositionality state about sentence meaning?",
+    "correct_answer": "The meaning of a complex expression is determined by the meanings of its parts and the rules combining them.",
+    "distractors": [
+      "The meaning of a sentence is entirely fixed by the speaker's intention regardless of the words chosen.",
+      "The meaning of every word is independent of other words and cannot be altered by sentence context.",
+      "The meaning of a sentence depends solely on the frequency with which its words appear in the language."
+    ],
+    "difficulty": 2,
+    "source_article": "Principle of compositionality",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "compositionality"
+    ]
+  },
+  {
+    "question_text": "What is semantic entailment?",
+    "correct_answer": "A relation where the truth of one sentence necessarily guarantees the truth of another sentence.",
+    "distractors": [
+      "A relation where two sentences share identical surface syntax but express completely different propositions.",
+      "A relation where a sentence becomes meaningless if any single word is removed from it.",
+      "A relation where the falsity of one sentence makes the other sentence ambiguous rather than false."
+    ],
+    "difficulty": 2,
+    "source_article": "Entailment (linguistics)",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "entailment"
+    ]
+  },
+  {
+    "question_text": "What is a presupposition in semantics?",
+    "correct_answer": "A background assumption that a sentence takes for granted and that persists even when the sentence is negated.",
+    "distractors": [
+      "An explicit claim that a sentence directly asserts and that is cancelled when the sentence is negated.",
+      "A logical contradiction that arises when two sentences with incompatible meanings are conjoined together.",
+      "A pragmatic inference that a listener draws only when the speaker uses unusually formal vocabulary choices."
+    ],
+    "difficulty": 2,
+    "source_article": "Presupposition",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "presupposition"
+    ]
+  },
+  {
+    "question_text": "What is an implicature in Gricean pragmatics?",
+    "correct_answer": "A meaning that a speaker conveys indirectly and a listener infers without the speaker explicitly stating it.",
+    "distractors": [
+      "A meaning that is explicitly written into the grammatical structure of a sentence by its syntactic form.",
+      "A meaning that arises only when a sentence is translated from one language into another language.",
+      "A meaning that is permanently encoded in a word's dictionary entry and cannot be cancelled contextually."
+    ],
+    "difficulty": 2,
+    "source_article": "Implicature",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "implicature"
+    ]
+  },
+  {
+    "question_text": "What is a semantic field?",
+    "correct_answer": "A group of words that are related in meaning and belong to the same general conceptual domain.",
+    "distractors": [
+      "A single word that has acquired multiple unrelated meanings through independent historical developments.",
+      "A phonological rule that governs how vowel sounds shift in certain regional dialects over time.",
+      "A syntactic construction in which a verb requires a specific number of noun phrase arguments."
+    ],
+    "difficulty": 2,
+    "source_article": "Semantic field",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "semantic field"
+    ]
+  },
+  {
+    "question_text": "What does prototype theory propose about how humans categorize concepts?",
+    "correct_answer": "Categories are organized around central typical examples rather than strict necessary and sufficient conditions.",
+    "distractors": [
+      "Categories are defined by a fixed checklist of features that every member must possess without exception.",
+      "Categories are entirely arbitrary and have no internal structure or graded membership whatsoever.",
+      "Categories exist only in written language and do not play a role in spoken communication."
+    ],
+    "difficulty": 2,
+    "source_article": "Prototype theory",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "prototype theory"
+    ]
+  },
+  {
+    "question_text": "What is deixis in linguistics?",
+    "correct_answer": "The use of words like 'here,' 'now,' and 'I' whose interpretation depends on the context of utterance.",
+    "distractors": [
+      "The use of passive voice constructions to avoid specifying the agent performing an action in a sentence.",
+      "The use of borrowed foreign words to fill lexical gaps when a native term does not exist.",
+      "The use of punctuation marks to indicate pauses and intonation patterns in written language."
+    ],
+    "difficulty": 2,
+    "source_article": "Deixis",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "deixis"
+    ]
+  },
+  {
+    "question_text": "What is coreference in discourse?",
+    "correct_answer": "A relation in which two or more linguistic expressions in a text refer to the same entity.",
+    "distractors": [
+      "A relation in which two sentences in a text express logically contradictory propositions about different entities.",
+      "A relation in which a pronoun and its antecedent must belong to different clauses in a sentence.",
+      "A relation in which every noun phrase in a text must introduce a new and unique referent."
+    ],
+    "difficulty": 2,
+    "source_article": "Coreference",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "coreference"
+    ]
+  },
+  {
+    "question_text": "What does lexical semantics study?",
+    "correct_answer": "The meanings of individual words, their internal structure, and the systematic relations among them.",
+    "distractors": [
+      "The acoustic properties of phonemes and how they vary depending on surrounding speech sounds.",
+      "The syntactic rules governing the order of constituents within clauses and sentences.",
+      "The social factors that determine which dialect a speaker uses in formal versus informal settings."
+    ],
+    "difficulty": 2,
+    "source_article": "Lexical semantics",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "lexical semantics"
+    ]
+  },
+  {
+    "question_text": "What is semantic change?",
+    "correct_answer": "The evolution of a word's meaning over time, including processes like broadening, narrowing, and amelioration.",
+    "distractors": [
+      "The abrupt replacement of one language's entire vocabulary by words borrowed from a dominant language.",
+      "The process by which a word's pronunciation shifts due to regular phonological sound changes.",
+      "The deliberate creation of new technical terms by scientists to label newly discovered phenomena."
+    ],
+    "difficulty": 2,
+    "source_article": "Semantic change",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "semantic change"
+    ]
+  },
+  {
+    "question_text": "Which of Grice's conversational maxims requires speakers to provide an appropriate amount of information?",
+    "correct_answer": "The maxim of quantity, which states speakers should be as informative as required but not more.",
+    "distractors": [
+      "The maxim of quality, which states speakers should say only what they believe to be true.",
+      "The maxim of relation, which states speakers should make their contributions relevant to the topic.",
+      "The maxim of manner, which states speakers should be clear, brief, orderly, and avoid obscurity."
+    ],
+    "difficulty": 3,
+    "source_article": "Cooperative principle",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "Grice's maxims"
+    ]
+  },
+  {
+    "question_text": "What does truth-conditional semantics define as the meaning of a sentence?",
+    "correct_answer": "The conditions under which the sentence would be true, specifying what the world must be like.",
+    "distractors": [
+      "The emotional response the sentence produces in a listener upon hearing it for the first time.",
+      "The set of syntactic transformations needed to derive the sentence from a deep structure representation.",
+      "The probability of the sentence occurring in a large corpus of naturally produced texts."
+    ],
+    "difficulty": 3,
+    "source_article": "Truth-conditional semantics",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "truth-conditional semantics"
+    ]
+  },
+  {
+    "question_text": "In model-theoretic semantics, how are natural language expressions interpreted?",
+    "correct_answer": "By mapping them to elements within a mathematical model that represents the structure of the world.",
+    "distractors": [
+      "By comparing them to a fixed universal inventory of innate concepts shared by all human languages.",
+      "By measuring the statistical frequency with which they co-occur with other words in large corpora.",
+      "By tracing their historical etymology back to the earliest attested form in proto-languages."
+    ],
+    "difficulty": 3,
+    "source_article": "Formal semantics (natural language)",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "model-theoretic semantics"
+    ]
+  },
+  {
+    "question_text": "What are thematic roles in semantic theory?",
+    "correct_answer": "Labels like Agent, Patient, and Theme that describe how noun phrases relate to the verb in a clause.",
+    "distractors": [
+      "Labels like Subject, Object, and Complement that describe the syntactic position of phrases in a tree.",
+      "Labels like Noun, Verb, and Adjective that classify words into their basic grammatical categories.",
+      "Labels like Topic, Focus, and Given that describe the information structure of a discourse segment."
+    ],
+    "difficulty": 3,
+    "source_article": "Thematic relation",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "thematic roles"
+    ]
+  },
+  {
+    "question_text": "How does a scalar implicature arise from the use of the word 'some'?",
+    "correct_answer": "A listener infers 'not all' because the speaker chose the weaker term on a scale instead of the stronger.",
+    "distractors": [
+      "A listener infers 'none' because the speaker's tone of voice signals negativity about the proposition.",
+      "A listener infers 'exactly one' because 'some' is always semantically equivalent to the numeral one.",
+      "A listener infers 'all' because politeness conventions require interpreting vague terms as maximally inclusive."
+    ],
+    "difficulty": 3,
+    "source_article": "Scalar implicature",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "scalar implicature"
+    ]
+  },
+  {
+    "question_text": "How does generalized quantifier theory analyze natural language quantifiers like 'every' and 'some'?",
+    "correct_answer": "As relations between two sets, where the quantifier specifies how the sets must overlap or be included.",
+    "distractors": [
+      "As individual constants that name specific entities within the domain of discourse directly.",
+      "As modal operators that indicate the speaker's degree of certainty about the truth of a proposition.",
+      "As syntactic markers that determine whether a noun phrase occupies the subject or object position."
+    ],
+    "difficulty": 3,
+    "source_article": "Generalized quantifier",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "generalized quantifier theory"
+    ]
+  },
+  {
+    "question_text": "In linguistics, what does grammatical aspect encode about an event?",
+    "correct_answer": "The internal temporal structure of the event, such as whether it is completed, ongoing, or habitual.",
+    "distractors": [
+      "The specific calendar time at which the event occurred, including the exact date and hour.",
+      "The number of participants involved in the event and their relative social status.",
+      "The geographic location where the event took place relative to the speaker's current position."
+    ],
+    "difficulty": 3,
+    "source_article": "Grammatical aspect",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "aspect (linguistics)"
+    ]
+  },
+  {
+    "question_text": "What is an illocutionary act in speech act theory?",
+    "correct_answer": "The social action performed by an utterance, such as asserting, promising, ordering, or apologizing.",
+    "distractors": [
+      "The physical act of producing speech sounds through movements of the tongue, lips, and vocal cords.",
+      "The unintended effect an utterance has on the listener's emotions or subsequent behavior.",
+      "The grammatical process of selecting the correct verb tense to match the time of an event."
+    ],
+    "difficulty": 3,
+    "source_article": "Illocutionary act",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "illocutionary act"
+    ]
+  },
+  {
+    "question_text": "What does Fillmore's frame semantics propose about word meaning?",
+    "correct_answer": "Words evoke structured conceptual frames that encode background knowledge needed to understand them fully.",
+    "distractors": [
+      "Words have meaning only through their contrast with other words in the same paradigmatic set.",
+      "Words acquire meaning solely from the statistical frequency of their co-occurrence with other words.",
+      "Words carry meaning that is entirely decomposable into a small finite set of universal semantic primes."
+    ],
+    "difficulty": 3,
+    "source_article": "Frame semantics (linguistics)",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "frame semantics"
+    ]
+  },
+  {
+    "question_text": "What is anaphora in discourse semantics?",
+    "correct_answer": "The use of an expression, typically a pronoun, whose interpretation depends on a previously mentioned antecedent.",
+    "distractors": [
+      "The use of a rhetorical question that the speaker does not expect the listener to answer directly.",
+      "The repetition of a word at the beginning of successive clauses purely for poetic or persuasive effect.",
+      "The deliberate omission of a verb phrase that can be recovered from the surrounding syntactic context."
+    ],
+    "difficulty": 3,
+    "source_article": "Anaphora (linguistics)",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "anaphora"
+    ]
+  },
+  {
+    "question_text": "What is scope ambiguity in formal semantics?",
+    "correct_answer": "Ambiguity that arises when quantifiers or operators in a sentence can be ordered differently in logical form.",
+    "distractors": [
+      "Ambiguity that arises when a word has two completely unrelated dictionary entries listed as homonyms.",
+      "Ambiguity that arises when a sentence can be parsed with two different syntactic tree structures.",
+      "Ambiguity that arises when a pronoun could refer to more than one previously mentioned noun phrase."
+    ],
+    "difficulty": 3,
+    "source_article": "Scope (formal semantics)",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "scope ambiguity"
+    ]
+  },
+  {
+    "question_text": "What does Lakoff and Johnson's conceptual metaphor theory claim?",
+    "correct_answer": "Abstract concepts are systematically understood through metaphorical mappings from concrete experiential domains.",
+    "distractors": [
+      "Metaphors are purely decorative language devices used only in poetry and literature, not everyday speech.",
+      "All human languages share an identical set of metaphorical expressions inherited from a common ancestor.",
+      "Children learn metaphors only through explicit instruction and never produce them spontaneously before schooling."
+    ],
+    "difficulty": 3,
+    "source_article": "Conceptual metaphor",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "conceptual metaphor"
+    ]
+  },
+  {
+    "question_text": "In possible worlds semantics, how is the meaning of a necessarily true proposition characterized?",
+    "correct_answer": "As a proposition that is true in every possible world within the set of all accessible worlds.",
+    "distractors": [
+      "As a proposition that is true only in the actual world and false in every other conceivable world.",
+      "As a proposition that speakers universally believe to be true based on shared cultural assumptions.",
+      "As a proposition derived from syntactic rules that guarantee its well-formedness in all grammars."
+    ],
+    "difficulty": 4,
+    "source_article": "Possible worlds",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "possible worlds semantics"
+    ]
+  },
+  {
+    "question_text": "How does dynamic semantics differ from classical truth-conditional semantics in treating meaning?",
+    "correct_answer": "It treats meaning as the potential to update a context or information state rather than as static truth conditions.",
+    "distractors": [
+      "It treats meaning as a fixed pairing between words and objects that never changes across different discourse contexts.",
+      "It treats meaning as entirely determined by syntactic structure with no role for pragmatic or contextual factors.",
+      "It treats meaning as a probability distribution over possible sentences that a speaker might produce next."
+    ],
+    "difficulty": 4,
+    "source_article": "Dynamic semantics",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "dynamic semantics"
+    ]
+  },
+  {
+    "question_text": "In Montague Grammar, how are natural language expressions compositionally assigned meanings?",
+    "correct_answer": "Through a type-theoretic system mapping syntactic categories to semantic types using lambda calculus and intensional logic.",
+    "distractors": [
+      "Through a statistical model that assigns meanings based on the co-occurrence frequency of words in corpora.",
+      "Through a transformational grammar that derives semantic representations by applying movement rules to deep structures.",
+      "Through an enumeration of all possible sentence meanings stored in an innate universal lexicon of concepts."
+    ],
+    "difficulty": 4,
+    "source_article": "Montague grammar",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "type-theoretic semantics"
+    ]
+  },
+  {
+    "question_text": "What is a Discourse Representation Structure (DRS) in Discourse Representation Theory?",
+    "correct_answer": "A formal structure containing discourse referents and conditions that represents the semantic content of a text.",
+    "distractors": [
+      "A syntactic tree diagram that shows the hierarchical phrase structure of each sentence in a paragraph.",
+      "A statistical language model that predicts the next word in a sequence based on preceding context.",
+      "A phonological transcription that captures the prosodic contour and stress pattern of spoken discourse."
+    ],
+    "difficulty": 4,
+    "source_article": "Discourse representation theory",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "discourse representation theory"
+    ]
+  },
+  {
+    "question_text": "In Davidson's event semantics, what role do events play in the logical form of action sentences?",
+    "correct_answer": "Events are treated as first-class entities that are existentially quantified over and modified by thematic role predicates.",
+    "distractors": [
+      "Events are treated as mere side effects of verb inflection and play no independent role in logical form.",
+      "Events are represented as ordered pairs of time intervals without any connection to participant roles.",
+      "Events are eliminated from logical form and replaced by stative propositions about persistent world properties."
+    ],
+    "difficulty": 4,
+    "source_article": "Event semantics",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "event semantics"
+    ]
+  },
+  {
+    "question_text": "What distinction does two-dimensional semantics draw to handle indexical expressions?",
+    "correct_answer": "It separates character (a function from contexts to contents) from content (a function from worlds to truth values).",
+    "distractors": [
+      "It separates phonological form from orthographic form to account for dialectal variation in indexical pronunciation.",
+      "It separates deep structure from surface structure to explain how indexicals move within syntactic transformations.",
+      "It separates speaker meaning from hearer meaning to model how misunderstandings of indexicals routinely occur."
+    ],
+    "difficulty": 4,
+    "source_article": "Two-dimensional semantics",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "two-dimensional semantics"
+    ]
+  },
+  {
+    "question_text": "How does situation semantics differ from possible worlds semantics in its basic semantic objects?",
+    "correct_answer": "It uses partial situations that represent limited parts of reality rather than total possible worlds.",
+    "distractors": [
+      "It uses complete possible worlds but restricts access to only those worlds consistent with physical laws.",
+      "It replaces all semantic objects with neural activation patterns measured in cognitive experiments.",
+      "It defines semantic objects as probability distributions over the next words a speaker will utter."
+    ],
+    "difficulty": 4,
+    "source_article": "Situation semantics",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "situation semantics"
+    ]
+  },
+  {
+    "question_text": "How has continuation-passing style from computer science been applied to natural language semantics?",
+    "correct_answer": "It models quantifier scope, focus, and discourse anaphora by passing continuations that capture evaluation contexts.",
+    "distractors": [
+      "It models phonological assimilation by passing acoustic feature bundles between adjacent segments in a word.",
+      "It models morphological inflection by passing affix lists that accumulate as words pass through derivational stages.",
+      "It models syntactic agreement by passing feature matrices between the subject and verb nodes in a parse tree."
+    ],
+    "difficulty": 4,
+    "source_article": "Continuations",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "continuation semantics"
+    ]
+  },
+  {
+    "question_text": "In degree semantics, how are gradable adjectives like 'tall' analyzed?",
+    "correct_answer": "As functions that map individuals to degrees on a scale, with a contextual threshold determining the standard.",
+    "distractors": [
+      "As binary predicates that classify individuals into exactly two groups without any gradation whatsoever.",
+      "As proper names that refer to a single fixed property shared by all objects in the universe.",
+      "As sentential operators that negate the proposition expressed by the clause they syntactically modify."
+    ],
+    "difficulty": 4,
+    "source_article": "Degree (linguistics)",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "degree semantics"
+    ]
+  },
+  {
+    "question_text": "What does evidentiality encode in the grammar of languages that mark it morphologically?",
+    "correct_answer": "The source and type of evidence the speaker has for the assertion, such as direct perception or hearsay.",
+    "distractors": [
+      "The social status of the speaker relative to the listener, such as formal versus informal register.",
+      "The temporal distance between the moment of speaking and the event being described in the utterance.",
+      "The number of participants who witnessed the event being reported by the speaker in the discourse."
+    ],
+    "difficulty": 4,
+    "source_article": "Evidentiality",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "evidentiality"
+    ]
+  },
+  {
+    "question_text": "How does neo-Gricean pragmatics refine the original Gricean framework?",
+    "correct_answer": "By reducing the maxims to fewer principles, such as Horn's Q-principle and R-principle governing informativeness.",
+    "distractors": [
+      "By abandoning all maxims entirely and replacing them with a single statistical model of word co-occurrence.",
+      "By adding twelve additional maxims that cover every possible communicative situation in complete detail.",
+      "By restricting the cooperative principle to written language only and excluding spoken conversation from analysis."
+    ],
+    "difficulty": 4,
+    "source_article": "Neo-Gricean pragmatics",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "neo-Gricean pragmatics"
+    ]
+  },
+  {
+    "question_text": "What does lexical decomposition assume about the internal structure of word meanings?",
+    "correct_answer": "Word meanings can be analyzed into smaller primitive semantic features or components like CAUSE, BECOME, and STATE.",
+    "distractors": [
+      "Word meanings are atomic and indivisible units that cannot be broken down into any smaller subcomponents.",
+      "Word meanings are entirely determined by the syntactic frames in which the word can grammatically appear.",
+      "Word meanings consist solely of phonological segments arranged according to language-specific syllable templates."
+    ],
+    "difficulty": 4,
+    "source_article": "Semantic decomposition",
+    "domain_ids": [
+      "semantics"
+    ],
+    "concepts_tested": [
+      "lexical decomposition"
+    ]
+  }
+]

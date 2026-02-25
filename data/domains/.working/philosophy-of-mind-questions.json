@@ -1,0 +1,652 @@
+[
+  {
+    "question_text": "In philosophy of mind, what is consciousness?",
+    "correct_answer": "The state of being aware of and able to think about one's own existence, sensations, thoughts, and surroundings.",
+    "distractors": [
+      "The state of being unaware of external stimuli while maintaining automatic bodily functions, reflexes, and habitual responses.",
+      "The state of processing information through neural circuits without any subjective experience, awareness, or self-reflection.",
+      "The state of responding to environmental cues through purely mechanical processes without any internal mental representation."
+    ],
+    "difficulty": 1,
+    "source_article": "Consciousness",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["consciousness"]
+  },
+  {
+    "question_text": "In philosophy of mind, what is the free will debate primarily concerned with?",
+    "correct_answer": "Whether agents have the ability to choose and act otherwise than they actually do, independent of prior determining causes.",
+    "distractors": [
+      "Whether agents have the ability to predict future events before they occur, independent of any sensory information available.",
+      "Whether agents have the ability to influence physical laws through mental effort, independent of any neurological constraints.",
+      "Whether agents have the ability to remember past decisions after they occur, independent of any external recording devices."
+    ],
+    "difficulty": 1,
+    "source_article": "Free will",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["free will"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does the mind-body problem ask?",
+    "correct_answer": "How mental states, events, and processes are related to physical states, events, and processes in the body.",
+    "distractors": [
+      "How emotional states, moods, and feelings are regulated by hormonal systems, glands, and chemical processes in the body.",
+      "How mental illnesses, disorders, and dysfunctions are treated by surgical interventions, medications, and therapies for the body.",
+      "How physical fitness, nutrition, and exercise are connected to longevity, health outcomes, and aging processes in the body."
+    ],
+    "difficulty": 1,
+    "source_article": "Mind–body problem",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["mind-body problem"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does the concept of the soul traditionally refer to?",
+    "correct_answer": "An immaterial essence or self that is distinct from the physical body and often considered immortal or transcendent.",
+    "distractors": [
+      "A material substance located in the brain that is identical to neural tissue and always considered temporary or finite.",
+      "An immaterial force or energy that is distinct from living organisms and often considered to exist only in nature.",
+      "A material organ located in the chest that is identical to the heart and often considered the center of circulation."
+    ],
+    "difficulty": 1,
+    "source_article": "Soul",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["soul"]
+  },
+  {
+    "question_text": "In philosophy of mind, what are emotions generally understood to be?",
+    "correct_answer": "Complex mental states involving subjective feelings, physiological responses, and behavioral tendencies directed toward objects or situations.",
+    "distractors": [
+      "Simple physical reflexes involving automatic muscle contractions, spinal cord signals, and involuntary movements directed toward painful stimuli.",
+      "Complex mental states involving only cognitive judgments, abstract reasoning, and logical deductions directed toward mathematical propositions.",
+      "Simple physiological reactions involving only hormonal secretions, metabolic changes, and chemical releases directed toward nutritional needs."
+    ],
+    "difficulty": 1,
+    "source_article": "Emotion",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["emotion"]
+  },
+  {
+    "question_text": "In philosophy of mind, what is perception?",
+    "correct_answer": "The process by which organisms organize and interpret sensory information to represent and understand their environment.",
+    "distractors": [
+      "The process by which organisms store and retrieve factual information to accumulate and catalog their past experiences.",
+      "The process by which organisms generate and express emotional responses to regulate and stabilize their internal states.",
+      "The process by which organisms plan and execute motor commands to manipulate and transform their physical surroundings."
+    ],
+    "difficulty": 1,
+    "source_article": "Perception",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["perception"]
+  },
+  {
+    "question_text": "In philosophy of mind, what role does memory play in debates about the mind?",
+    "correct_answer": "Memory is the mental faculty of encoding, storing, and retrieving information, central to debates about personal identity over time.",
+    "distractors": [
+      "Memory is the physical structure of synaptic connections between neurons, central to debates about brain localization over regions.",
+      "Memory is the mental faculty of imagining, creating, and projecting future scenarios, central to debates about free will over causation.",
+      "Memory is the behavioral tendency of repeating, practicing, and habituating responses, central to debates about learning over conditioning."
+    ],
+    "difficulty": 1,
+    "source_article": "Memory",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["memory"]
+  },
+  {
+    "question_text": "In philosophy of mind, what is a belief?",
+    "correct_answer": "A mental state in which a person holds a proposition or claim to be true, regardless of whether it is actually true.",
+    "distractors": [
+      "A mental state in which a person experiences a strong emotion or feeling intensely, regardless of whether it is rationally justified.",
+      "A behavioral pattern in which a person performs a habitual action or routine automatically, regardless of whether it is consciously intended.",
+      "A neural state in which a person activates a specific brain region or circuit reliably, regardless of whether it is externally stimulated."
+    ],
+    "difficulty": 1,
+    "source_article": "Belief",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["belief"]
+  },
+  {
+    "question_text": "In philosophy of mind, what is desire?",
+    "correct_answer": "A mental state that represents a goal or outcome the agent wishes to bring about or achieve through action.",
+    "distractors": [
+      "A mental state that represents a fact or truth the agent wishes to understand or comprehend through contemplation.",
+      "A physical state that represents a reflex or impulse the organism needs to discharge or release through movement.",
+      "A mental state that represents a memory or past event the agent wishes to recall or relive through reflection."
+    ],
+    "difficulty": 1,
+    "source_article": "Desire",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["desire"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does the term 'thought' broadly refer to?",
+    "correct_answer": "Mental activity involving ideas, reasoning, imagination, and judgment that can occur consciously or unconsciously in the mind.",
+    "distractors": [
+      "Neural activity involving electrical impulses, synaptic transmissions, and chemical signals that occur exclusively in the prefrontal cortex.",
+      "Physical activity involving sensory reception, stimulus detection, and reflex arcs that occur exclusively in the peripheral nervous system.",
+      "Behavioral activity involving verbal reports, written statements, and gestural expressions that occur exclusively in social communication contexts."
+    ],
+    "difficulty": 1,
+    "source_article": "Thought",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["thought"]
+  },
+  {
+    "question_text": "In philosophy of mind, why are dreams philosophically significant?",
+    "correct_answer": "Dreams raise questions about the nature of consciousness, reality, and the distinction between veridical experience and hallucination.",
+    "distractors": [
+      "Dreams raise questions about the nature of digestion, metabolism, and the distinction between nutritional intake and energy expenditure.",
+      "Dreams raise questions about the nature of evolution, adaptation, and the distinction between natural selection and genetic drift.",
+      "Dreams raise questions about the nature of language, grammar, and the distinction between syntactic structure and semantic meaning."
+    ],
+    "difficulty": 1,
+    "source_article": "Dream",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["dream"]
+  },
+  {
+    "question_text": "In philosophy of mind, what philosophical question does artificial intelligence raise?",
+    "correct_answer": "Whether machines that process information and simulate intelligent behavior can genuinely think, understand, or possess minds.",
+    "distractors": [
+      "Whether machines that generate heat and consume electrical energy can genuinely feel temperature, pressure, or possess sensations.",
+      "Whether machines that store data and execute programmed instructions can genuinely grow, reproduce, or possess biological life.",
+      "Whether machines that transmit signals and route network packets can genuinely communicate, empathize, or possess social bonds."
+    ],
+    "difficulty": 1,
+    "source_article": "Artificial intelligence",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["artificial intelligence"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does the problem of personal identity ask?",
+    "correct_answer": "What makes a person the same individual over time, and what conditions are necessary and sufficient for identity persistence.",
+    "distractors": [
+      "What makes a person different from other species entirely, and what conditions are necessary and sufficient for biological classification.",
+      "What makes a person aware of their surroundings currently, and what conditions are necessary and sufficient for sensory perception.",
+      "What makes a person morally responsible for actions generally, and what conditions are necessary and sufficient for ethical judgment."
+    ],
+    "difficulty": 1,
+    "source_article": "Personal identity",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["personal identity"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does dualism claim about the relationship between mind and body?",
+    "correct_answer": "That the mind and body are two fundamentally distinct kinds of substance or reality, neither reducible to the other.",
+    "distractors": [
+      "That the mind and body are two fundamentally identical kinds of substance or reality, each fully reducible to the other.",
+      "That the mind and body are two fundamentally distinct kinds of illusion or appearance, neither existing as a real entity.",
+      "That the mind and body are two fundamentally identical kinds of process or function, each completely explained by neuroscience alone."
+    ],
+    "difficulty": 2,
+    "source_article": "Mind–body dualism",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["dualism"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does physicalism assert?",
+    "correct_answer": "That everything that exists is ultimately physical, and all mental states and processes are identical to or dependent on physical states.",
+    "distractors": [
+      "That everything that exists is ultimately mental, and all physical states and processes are identical to or dependent on mental states.",
+      "That everything that exists is ultimately abstract, and all mental states and processes are identical to or dependent on mathematical entities.",
+      "That everything that exists is ultimately spiritual, and all physical states and processes are identical to or dependent on supernatural forces."
+    ],
+    "difficulty": 2,
+    "source_article": "Physicalism",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["physicalism"]
+  },
+  {
+    "question_text": "In philosophy of mind, what are qualia?",
+    "correct_answer": "The subjective, qualitative properties of conscious experiences, such as what it is like to see red or feel pain.",
+    "distractors": [
+      "The objective, quantitative properties of neural firing patterns, such as what frequency a neuron fires at or how fast signals travel.",
+      "The subjective, qualitative properties of unconscious reflexes, such as what it is like to blink rapidly or breathe automatically.",
+      "The objective, quantitative properties of behavioral responses, such as what reaction time a subject shows or how loudly they speak."
+    ],
+    "difficulty": 2,
+    "source_article": "Qualia",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["qualia"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does functionalism define mental states by?",
+    "correct_answer": "Their causal or functional roles, meaning the relationships between sensory inputs, behavioral outputs, and other mental states.",
+    "distractors": [
+      "Their neurochemical composition, meaning the specific neurotransmitters, receptor types, and synaptic structures involved in brain activity.",
+      "Their subjective qualitative character, meaning the intrinsic phenomenal properties, felt qualities, and raw sensory experiences involved.",
+      "Their evolutionary historical origins, meaning the adaptive pressures, genetic mutations, and natural selection processes that produced them."
+    ],
+    "difficulty": 2,
+    "source_article": "Functionalism (philosophy of mind)",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["functionalism"]
+  },
+  {
+    "question_text": "In philosophy of mind, what is intentionality?",
+    "correct_answer": "The capacity of mental states to be directed toward or about something, such as objects, states of affairs, or propositions.",
+    "distractors": [
+      "The capacity of mental states to be caused by something external, such as physical stimuli, environmental events, or brain injuries.",
+      "The capacity of mental states to be expressed through something behavioral, such as verbal reports, facial expressions, or body movements.",
+      "The capacity of mental states to be identical with something physical, such as neural firings, chemical reactions, or brain structures."
+    ],
+    "difficulty": 2,
+    "source_article": "Intentionality",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["intentionality"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does philosophical behaviourism claim about mental states?",
+    "correct_answer": "That mental state terms are equivalent to descriptions of behavioral dispositions, not references to inner private experiences.",
+    "distractors": [
+      "That mental state terms are equivalent to descriptions of neural firing patterns, not references to outer public behaviors.",
+      "That mental state terms are equivalent to descriptions of evolutionary adaptations, not references to learned behavioral conditioning.",
+      "That mental state terms are equivalent to descriptions of subjective phenomenal qualities, not references to observable physical dispositions."
+    ],
+    "difficulty": 2,
+    "source_article": "Behaviorism",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["behaviourism"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does the mind-brain identity theory claim?",
+    "correct_answer": "That types of mental states are identical to types of brain states, so pain just is a specific type of neural firing.",
+    "distractors": [
+      "That types of mental states are caused by types of brain states, so pain is merely an effect of a specific neural firing.",
+      "That types of mental states are correlated with types of brain states, so pain merely co-occurs with a specific neural firing.",
+      "That types of mental states are represented by types of brain states, so pain is symbolically encoded by a specific neural firing."
+    ],
+    "difficulty": 2,
+    "source_article": "Type physicalism",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["identity theory"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does eliminative materialism predict about folk psychological concepts?",
+    "correct_answer": "That common mental categories like beliefs and desires are fundamentally flawed and will be eliminated by mature neuroscience.",
+    "distractors": [
+      "That common mental categories like beliefs and desires are fundamentally correct and will be confirmed by mature neuroscience.",
+      "That common mental categories like beliefs and desires are fundamentally incomplete and will be supplemented by mature neuroscience.",
+      "That common mental categories like beliefs and desires are fundamentally irreducible and will be preserved alongside mature neuroscience."
+    ],
+    "difficulty": 2,
+    "source_article": "Eliminative materialism",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["eliminative materialism"]
+  },
+  {
+    "question_text": "In philosophy of mind, what is folk psychology?",
+    "correct_answer": "The everyday framework people use to explain and predict behavior by attributing mental states like beliefs, desires, and intentions.",
+    "distractors": [
+      "The scientific framework researchers use to explain and predict behavior by measuring neural states like firing rates, oscillations, and connectivity.",
+      "The clinical framework therapists use to explain and treat behavior by diagnosing mental disorders like depression, anxiety, and psychosis.",
+      "The cultural framework societies use to explain and regulate behavior by enforcing social norms like customs, taboos, and moral codes."
+    ],
+    "difficulty": 2,
+    "source_article": "Folk psychology",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["folk psychology"]
+  },
+  {
+    "question_text": "In philosophy of mind, what is the problem of mental causation?",
+    "correct_answer": "The difficulty of explaining how mental states can cause physical events if the physical world is causally closed under physical laws.",
+    "distractors": [
+      "The difficulty of explaining how physical states can cause mental events if the mental world is causally closed under psychological laws.",
+      "The difficulty of explaining how mental states can exist alongside physical events if the physical world is ontologically complete under natural laws.",
+      "The difficulty of explaining how physical states can represent mental events if the mental world is semantically closed under logical laws."
+    ],
+    "difficulty": 2,
+    "source_article": "Mental causation",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["mental causation"]
+  },
+  {
+    "question_text": "In philosophy of mind, what is a philosophical zombie?",
+    "correct_answer": "A hypothetical being physically identical to a conscious person but completely lacking any subjective conscious experience or qualia.",
+    "distractors": [
+      "A hypothetical being physically identical to a conscious person but completely lacking any voluntary motor control or bodily movement.",
+      "A hypothetical being mentally identical to a conscious person but completely lacking any physical body, brain structure, or material form.",
+      "A hypothetical being behaviorally identical to a conscious person but completely lacking any neural activity, brain function, or physical substrate."
+    ],
+    "difficulty": 2,
+    "source_article": "Philosophical zombie",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["philosophical zombie"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does phenomenal consciousness refer to?",
+    "correct_answer": "The aspect of mental life involving subjective, qualitative experience, often described as what it is like to undergo a state.",
+    "distractors": [
+      "The aspect of mental life involving objective, measurable behavior, often described as what can be observed during a cognitive state.",
+      "The aspect of mental life involving unconscious, automatic processing, often described as what operates below the threshold of awareness.",
+      "The aspect of mental life involving rational, deliberate judgment, often described as what guides logical reasoning in a reflective state."
+    ],
+    "difficulty": 2,
+    "source_article": "Phenomenal consciousness",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["phenomenal consciousness"]
+  },
+  {
+    "question_text": "In philosophy of mind, what is a propositional attitude?",
+    "correct_answer": "A mental state relating a subject to a proposition, such as believing that it will rain or desiring that peace prevails.",
+    "distractors": [
+      "A mental state relating a subject to a sensation, such as feeling that warmth is pleasant or perceiving that light is bright.",
+      "A behavioral state relating a subject to an action, such as choosing to walk outside or deciding to speak in public.",
+      "A neural state relating a subject to a brain region, such as activating the cortex during reasoning or engaging the amygdala."
+    ],
+    "difficulty": 2,
+    "source_article": "Propositional attitude",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["propositional attitude"]
+  },
+  {
+    "question_text": "In philosophy of mind, what distinction does David Chalmers draw with the hard problem of consciousness?",
+    "correct_answer": "The distinction between explaining cognitive functions and behavior (easy problems) and explaining why there is subjective experience at all.",
+    "distractors": [
+      "The distinction between explaining neural correlates and brain structure (easy problems) and explaining why there is neural plasticity at all.",
+      "The distinction between explaining sensory transduction and signal processing (easy problems) and explaining why there is motor output at all.",
+      "The distinction between explaining evolutionary origins and genetic variation (easy problems) and explaining why there is natural selection at all."
+    ],
+    "difficulty": 3,
+    "source_article": "Hard problem of consciousness",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["hard problem of consciousness"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does Searle's Chinese room argument aim to demonstrate?",
+    "correct_answer": "That a system executing a program can manipulate symbols correctly without understanding their meaning, so syntax alone is insufficient for semantics.",
+    "distractors": [
+      "That a system executing a program can understand symbols intuitively without manipulating their form, so semantics alone is insufficient for syntax.",
+      "That a system executing a program can generate novel symbols creatively without following any rules, so computation alone is insufficient for creativity.",
+      "That a system executing a program can learn symbol patterns inductively without explicit instruction, so training alone is insufficient for generalization."
+    ],
+    "difficulty": 3,
+    "source_article": "Chinese room",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["Chinese room argument"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does the concept of multiple realizability challenge?",
+    "correct_answer": "Type identity theory, by arguing that the same mental state can be realized by different physical substrates across different species or systems.",
+    "distractors": [
+      "Functionalism, by arguing that the same functional role can be performed by only one physical substrate across different species or systems.",
+      "Dualism, by arguing that the same mental substance can be realized by different immaterial souls across different species or systems.",
+      "Eliminative materialism, by arguing that the same folk psychological concept can be validated by different neuroscientific methods across laboratories."
+    ],
+    "difficulty": 3,
+    "source_article": "Multiple realizability",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["multiple realizability"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does supervenience mean in the context of the mental and the physical?",
+    "correct_answer": "That there can be no difference in mental properties without a corresponding difference in physical properties, establishing a dependence relation.",
+    "distractors": [
+      "That there can be no difference in physical properties without a corresponding difference in mental properties, establishing a reverse dependence relation.",
+      "That there can be no similarity in mental properties without a corresponding similarity in behavioral properties, establishing an equivalence relation.",
+      "That there can be no difference in mental properties without a corresponding difference in environmental properties, establishing an external dependence relation."
+    ],
+    "difficulty": 3,
+    "source_article": "Supervenience",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["supervenience"]
+  },
+  {
+    "question_text": "In philosophy of mind, how does token physicalism differ from type physicalism?",
+    "correct_answer": "Token physicalism holds that each particular mental event is identical to some physical event, without requiring that mental types map to physical types.",
+    "distractors": [
+      "Token physicalism holds that each particular mental type is identical to some physical type, without requiring that mental events map to physical events.",
+      "Token physicalism holds that each particular mental event is caused by some physical event, without requiring that mental tokens are identical to physical tokens.",
+      "Token physicalism holds that each particular physical event is identical to some mental event, without requiring that physical types map to mental types."
+    ],
+    "difficulty": 3,
+    "source_article": "Token physicalism",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["token physicalism"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does higher-order thought theory claim about what makes a mental state conscious?",
+    "correct_answer": "A mental state is conscious when it is the object of a higher-order thought, meaning the subject thinks that they are in that state.",
+    "distractors": [
+      "A mental state is conscious when it is the cause of a behavioral output, meaning the subject acts in response to that internal state.",
+      "A mental state is conscious when it is the product of a sensory input, meaning the subject receives external stimulation that triggers that state.",
+      "A mental state is conscious when it is the result of a neural oscillation, meaning the subject's brain generates synchronized activity producing that state."
+    ],
+    "difficulty": 3,
+    "source_article": "Higher-order theories of consciousness",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["higher-order thought theory"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does the extended mind thesis proposed by Clark and Chalmers argue?",
+    "correct_answer": "That cognitive processes are not confined to the brain but can extend into the environment when external resources play the right functional role.",
+    "distractors": [
+      "That cognitive processes are not confined to the individual but can extend into other minds when social resources play the right communicative role.",
+      "That cognitive processes are not confined to conscious awareness but can extend into unconscious systems when automatic resources play the right modulatory role.",
+      "That cognitive processes are not confined to biological organisms but can extend into artificial systems when computational resources play the right algorithmic role."
+    ],
+    "difficulty": 3,
+    "source_article": "Extended mind thesis",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["extended mind thesis"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does representationalism about phenomenal consciousness claim?",
+    "correct_answer": "That the phenomenal character of experience is fully determined by its representational content, so qualia reduce to what experiences represent.",
+    "distractors": [
+      "That the phenomenal character of experience is fully independent of its representational content, so qualia exist apart from what experiences represent.",
+      "That the phenomenal character of experience is fully determined by its neurological substrate, so qualia reduce to which brain areas are activated.",
+      "That the phenomenal character of experience is fully determined by its behavioral consequences, so qualia reduce to how experiences affect motor output."
+    ],
+    "difficulty": 3,
+    "source_article": "Representationalism (philosophy of mind)",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["representationalism"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does content externalism claim about the determination of mental content?",
+    "correct_answer": "That the content of mental states is partly determined by factors external to the individual, such as the physical or social environment.",
+    "distractors": [
+      "That the content of mental states is entirely determined by factors internal to the individual, such as the neural or computational architecture.",
+      "That the content of mental states is partly determined by factors inherited from ancestors, such as the genetic or evolutionary history.",
+      "That the content of mental states is entirely determined by factors expressed in behavior, such as the verbal or gestural output."
+    ],
+    "difficulty": 3,
+    "source_article": "Semantic externalism",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["content externalism"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does epiphenomenalism hold about the causal status of mental events?",
+    "correct_answer": "That mental events are caused by physical events but have no causal influence on physical events, making consciousness a causally inert byproduct.",
+    "distractors": [
+      "That mental events are caused by other mental events but have no causal influence on physical events, making consciousness a self-sustaining process.",
+      "That mental events cause physical events but are not caused by physical events, making consciousness an autonomous originating force.",
+      "That mental events are identical to physical events and have full causal influence on other events, making consciousness a fundamental physical property."
+    ],
+    "difficulty": 3,
+    "source_article": "Epiphenomenalism",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["epiphenomenalism"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does global workspace theory propose about consciousness?",
+    "correct_answer": "That conscious experience arises when information is broadcast widely across the brain via a global workspace accessible to multiple cognitive systems.",
+    "distractors": [
+      "That conscious experience arises when information is confined locally within the brain via a dedicated module accessible to only one cognitive system.",
+      "That conscious experience arises when information is stored permanently across the brain via a memory consolidation system accessible during sleep cycles.",
+      "That conscious experience arises when information is filtered selectively within the brain via an attentional bottleneck accessible to perceptual input systems."
+    ],
+    "difficulty": 3,
+    "source_article": "Global workspace theory",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["global workspace theory"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does integrated information theory identify consciousness with?",
+    "correct_answer": "The amount of integrated information (phi) generated by a system, where higher integration of information corresponds to greater consciousness.",
+    "distractors": [
+      "The amount of total neural activity generated by a system, where higher frequency of firing corresponds to greater consciousness.",
+      "The amount of global information broadcast by a system, where wider distribution of signals corresponds to greater consciousness.",
+      "The amount of recursive self-monitoring generated by a system, where more layers of higher-order representation corresponds to greater consciousness."
+    ],
+    "difficulty": 3,
+    "source_article": "Integrated information theory",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["integrated information theory"]
+  },
+  {
+    "question_text": "In philosophy of mind, what is the core claim of Davidson's anomalous monism?",
+    "correct_answer": "That all mental events are identical to physical events, but there are no strict psychophysical laws connecting mental and physical descriptions of events.",
+    "distractors": [
+      "That all mental events are distinct from physical events, but there are strict psychophysical laws connecting mental and physical descriptions of events.",
+      "That all mental events are reducible to physical events, and there are strict psychophysical laws connecting mental and physical types of events.",
+      "That all mental events are caused by physical events, but there are no causal connections whatsoever between mental descriptions and physical descriptions."
+    ],
+    "difficulty": 4,
+    "source_article": "Anomalous monism",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["anomalous monism"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does the phenomenal intentionality thesis maintain?",
+    "correct_answer": "That intentionality is grounded in or constituted by phenomenal consciousness, making subjective experience the source of mental aboutness.",
+    "distractors": [
+      "That phenomenal consciousness is grounded in or constituted by intentionality, making mental aboutness the source of subjective experience.",
+      "That intentionality is grounded in or constituted by linguistic representation, making public language the source of mental aboutness.",
+      "That phenomenal consciousness is grounded in or constituted by neural computation, making information processing the source of subjective experience."
+    ],
+    "difficulty": 4,
+    "source_article": "Phenomenal intentionality",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["phenomenal intentionality"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does enactivism claim about the nature of cognition?",
+    "correct_answer": "That cognition is constituted by embodied action and dynamic interaction with the environment, not by internal mental representations of the world.",
+    "distractors": [
+      "That cognition is constituted by internal symbolic computation and static representation of the environment, not by embodied action in the world.",
+      "That cognition is constituted by passive sensory reception and linear processing of environmental stimuli, not by dynamic interaction with the world.",
+      "That cognition is constituted by social linguistic conventions and cultural transmission of knowledge, not by individual embodied experience of the world."
+    ],
+    "difficulty": 4,
+    "source_article": "Enactivism",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["enactivism"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does disjunctivism about perception claim?",
+    "correct_answer": "That veridical perceptions and hallucinations are fundamentally different kinds of mental events, not variations of a single common experiential type.",
+    "distractors": [
+      "That veridical perceptions and hallucinations are fundamentally the same kind of mental event, merely variations of a single common experiential type.",
+      "That veridical perceptions and hallucinations are fundamentally different kinds of brain events, not involving any overlapping neural activation patterns.",
+      "That veridical perceptions and hallucinations are fundamentally the same kind of behavioral event, merely variations of a single common response type."
+    ],
+    "difficulty": 4,
+    "source_article": "Disjunctivism",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["disjunctivism"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does Parfit's psychological continuity theory hold about personal identity?",
+    "correct_answer": "That personal identity over time consists in overlapping chains of psychological connections such as memories, intentions, and personality traits.",
+    "distractors": [
+      "That personal identity over time consists in continuous physical substrate such as the same brain, body, and biological cellular material.",
+      "That personal identity over time consists in an enduring immaterial soul such as a simple, indivisible, and non-physical spiritual substance.",
+      "That personal identity over time consists in unbroken social recognition such as consistent names, legal documents, and community membership."
+    ],
+    "difficulty": 4,
+    "source_article": "Psychological continuity",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["psychological continuity theory"]
+  },
+  {
+    "question_text": "In philosophy of mind, what is narrow content?",
+    "correct_answer": "Mental content that is determined solely by a subject's internal physical states, remaining the same regardless of differences in external environment.",
+    "distractors": [
+      "Mental content that is determined solely by a subject's external social context, remaining the same regardless of differences in internal brain states.",
+      "Mental content that is determined solely by a subject's linguistic community norms, remaining the same regardless of differences in individual psychology.",
+      "Mental content that is determined solely by a subject's behavioral dispositions, remaining the same regardless of differences in neural implementation."
+    ],
+    "difficulty": 4,
+    "source_article": "Narrow content",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["narrow content"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does the thesis of non-conceptual content claim?",
+    "correct_answer": "That some perceptual states have representational content that does not require the perceiver to possess the concepts needed to describe that content.",
+    "distractors": [
+      "That some perceptual states have representational content that always requires the perceiver to possess the concepts needed to describe that content.",
+      "That some cognitive states have propositional content that does not require the thinker to possess language needed to express that content.",
+      "That some perceptual states have no representational content whatsoever and therefore do not require any conceptual framework to interpret that experience."
+    ],
+    "difficulty": 4,
+    "source_article": "Nonconceptual content",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["non-conceptual content"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does illusionism about consciousness claim?",
+    "correct_answer": "That phenomenal consciousness as commonly conceived is an introspective illusion, and we systematically misrepresent our inner states as having qualitative properties.",
+    "distractors": [
+      "That phenomenal consciousness as commonly conceived is a veridical perception, and we accurately represent our inner states as having qualitative properties.",
+      "That phenomenal consciousness as commonly conceived is a social construction, and we collectively agree our inner states seem to have qualitative properties.",
+      "That phenomenal consciousness as commonly conceived is a neural epiphenomenon, and we passively observe our inner states without misrepresenting their properties."
+    ],
+    "difficulty": 4,
+    "source_article": "Illusionism (philosophy of mind)",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["illusionism"]
+  },
+  {
+    "question_text": "In philosophy of mind, how is Frege's sense-reference distinction applied to mental content?",
+    "correct_answer": "It explains how two beliefs about the same object can differ cognitively, because they present the referent under different modes of presentation or senses.",
+    "distractors": [
+      "It explains how two beliefs about different objects can be identical cognitively, because they present different referents under the same mode of presentation.",
+      "It explains how two beliefs about the same object must agree cognitively, because they necessarily present the referent under one single mode of presentation.",
+      "It explains how two beliefs about different objects can conflict cognitively, because they present unrelated referents under incompatible modes of evaluation."
+    ],
+    "difficulty": 4,
+    "source_article": "Sense and reference",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["Fregean sense and mental content"]
+  },
+  {
+    "question_text": "In philosophy of mind, how does Lycan's higher-order perception theory differ from higher-order thought theory?",
+    "correct_answer": "Lycan holds that consciousness involves inner perception by an internal monitoring mechanism, rather than a higher-order thought or belief about one's mental state.",
+    "distractors": [
+      "Lycan holds that consciousness involves outer perception by an external sensory mechanism, rather than a higher-order thought or belief about one's mental state.",
+      "Lycan holds that consciousness involves inner thought by an internal reasoning mechanism, rather than a higher-order perception or sensation about one's mental state.",
+      "Lycan holds that consciousness involves neural oscillation by a cortical synchronization mechanism, rather than a higher-order thought or belief about one's mental state."
+    ],
+    "difficulty": 4,
+    "source_article": "Higher-order theories of consciousness",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["higher-order perception theory"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does the predictive processing framework propose about brain function?",
+    "correct_answer": "That the brain is a hierarchical prediction machine that constantly generates and updates models of its environment, minimizing prediction error signals.",
+    "distractors": [
+      "That the brain is a parallel storage device that constantly records and archives copies of its experiences, maximizing information retention capacity.",
+      "That the brain is a sequential logic processor that constantly executes and completes chains of symbolic inferences, minimizing computational step count.",
+      "That the brain is a reactive stimulus detector that constantly receives and amplifies signals from its sensory organs, maximizing perceptual sensitivity levels."
+    ],
+    "difficulty": 4,
+    "source_article": "Predictive coding",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["predictive processing"]
+  },
+  {
+    "question_text": "In philosophy of mind, what is Block's distinction between access consciousness and phenomenal consciousness?",
+    "correct_answer": "Access consciousness is information being globally available for reasoning, reporting, and action control, while phenomenal consciousness is subjective qualitative experience.",
+    "distractors": [
+      "Access consciousness is information being locally restricted to a single brain module, while phenomenal consciousness is objective quantitative neural measurement.",
+      "Access consciousness is information being permanently stored in long-term memory systems, while phenomenal consciousness is transient sensory receptor activation.",
+      "Access consciousness is information being unconsciously processed by automatic reflexes, while phenomenal consciousness is deliberately controlled voluntary attention."
+    ],
+    "difficulty": 4,
+    "source_article": "Access consciousness",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["access consciousness vs phenomenal consciousness"]
+  }
+]

@@ -1,0 +1,652 @@
+[
+  {
+    "question_text": "What broad prehistoric period is defined by the widespread use of stone tools?",
+    "correct_answer": "The Stone Age, spanning millions of years of human prehistory.",
+    "distractors": [
+      "The Bronze Age, defined by the development of metal alloy tools.",
+      "The Iron Age, characterized by the smelting and forging of iron.",
+      "The Classical Age, marked by the rise of literate urban civilizations."
+    ],
+    "difficulty": 1,
+    "source_article": "Stone Age",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Stone Age"]
+  },
+  {
+    "question_text": "What are the prehistoric images painted on the walls and ceilings of caves called?",
+    "correct_answer": "Cave paintings, such as those found at Lascaux and Altamira.",
+    "distractors": [
+      "Hieroglyphics, the formal writing system used in ancient Egypt.",
+      "Petroglyphs, images carved into open-air rock surfaces by pecking.",
+      "Frescoes, paintings applied to freshly laid wet plaster on walls."
+    ],
+    "difficulty": 1,
+    "source_article": "Cave painting",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["cave painting"]
+  },
+  {
+    "question_text": "What term describes the geological periods when massive ice sheets covered large parts of the Earth?",
+    "correct_answer": "Ice ages, or glacial periods, when global temperatures dropped significantly.",
+    "distractors": [
+      "Interglacial periods, when temperatures rose and ice sheets retreated substantially.",
+      "Volcanic winters, caused by massive eruptions blocking sunlight with ash.",
+      "Tectonic shifts, when continental plates moved causing major climate disruptions."
+    ],
+    "difficulty": 1,
+    "source_article": "Ice age",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Ice Age"]
+  },
+  {
+    "question_text": "What is the name of the famous prehistoric megalithic monument located on Salisbury Plain in England?",
+    "correct_answer": "Stonehenge, a Neolithic and Bronze Age stone circle monument.",
+    "distractors": [
+      "Carnac, a dense collection of megalithic standing stones in Brittany, France.",
+      "Avebury, a large Neolithic henge monument surrounding a village in Wiltshire.",
+      "Skara Brae, a well-preserved Neolithic stone settlement in Orkney, Scotland."
+    ],
+    "difficulty": 1,
+    "source_article": "Stonehenge",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Stonehenge"]
+  },
+  {
+    "question_text": "What large, tusked, woolly animal hunted by Ice Age humans is now extinct?",
+    "correct_answer": "The mammoth, a Pleistocene megafauna species related to modern elephants.",
+    "distractors": [
+      "The mastodon, a distinct proboscidean that browsed forests rather than grasslands.",
+      "The giant ground sloth, a massive herbivore found primarily in the Americas.",
+      "The woolly rhinoceros, a cold-adapted species with a large nasal horn."
+    ],
+    "difficulty": 1,
+    "source_article": "Mammoth",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["mammoth"]
+  },
+  {
+    "question_text": "What are the preserved mineralized remains of prehistoric reptiles that dominated the Mesozoic Era called?",
+    "correct_answer": "Dinosaur fossils, formed when bones and tissues are replaced by minerals.",
+    "distractors": [
+      "Trace fossils, which record the activity of organisms rather than body parts.",
+      "Amber inclusions, small organisms preserved inside fossilized tree resin deposits.",
+      "Coprolites, which are fossilized fecal matter from ancient animals and organisms."
+    ],
+    "difficulty": 1,
+    "source_article": "Dinosaur",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["dinosaur fossil"]
+  },
+  {
+    "question_text": "What extinct human species, known for robust build and large brains, lived alongside early Homo sapiens in Europe?",
+    "correct_answer": "Neanderthals, who occupied Europe and western Asia until roughly 40,000 years ago.",
+    "distractors": [
+      "Homo erectus, an earlier hominin species that originated in Africa around two million years ago.",
+      "Homo habilis, one of the earliest members of the genus Homo in East Africa.",
+      "Denisovans, an archaic human group known primarily from fragmentary remains in Siberia."
+    ],
+    "difficulty": 1,
+    "source_article": "Neanderthal",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Neanderthal"]
+  },
+  {
+    "question_text": "What prehistoric period is characterized by the widespread use of bronze, an alloy of copper and tin?",
+    "correct_answer": "The Bronze Age, following the Neolithic and preceding the Iron Age.",
+    "distractors": [
+      "The Copper Age, when native copper was used before alloying was developed.",
+      "The Iron Age, defined by the adoption of iron smelting technology worldwide.",
+      "The Neolithic period, characterized primarily by polished stone tools and farming."
+    ],
+    "difficulty": 1,
+    "source_article": "Bronze Age",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Bronze Age"]
+  },
+  {
+    "question_text": "What period in human prehistory is defined by the widespread adoption of iron smelting technology?",
+    "correct_answer": "The Iron Age, the final phase of the three-age system of prehistory.",
+    "distractors": [
+      "The Bronze Age, defined by the use of copper-tin alloy metallurgy.",
+      "The Chalcolithic, a transitional period featuring early copper tool production.",
+      "The Steel Age, a modern industrial era of refined iron carbon alloys."
+    ],
+    "difficulty": 1,
+    "source_article": "Iron Age",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Iron Age"]
+  },
+  {
+    "question_text": "What is the term for a naturally or artificially preserved human body found in archaeological contexts?",
+    "correct_answer": "A mummy, with preservation achieved through desiccation, chemicals, or cold environments.",
+    "distractors": [
+      "A skeleton, consisting only of the remaining mineralized hard tissue framework.",
+      "A fossil, formed by complete mineral replacement of organic tissues over millennia.",
+      "A reliquary, a container holding the venerated physical remains of a saint."
+    ],
+    "difficulty": 1,
+    "source_article": "Mummy",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["mummy"]
+  },
+  {
+    "question_text": "What is the scientific name for the species to which all modern humans belong?",
+    "correct_answer": "Homo sapiens, meaning 'wise man' in Latin nomenclature.",
+    "distractors": [
+      "Homo erectus, meaning 'upright man,' an earlier human ancestor species.",
+      "Homo habilis, meaning 'handy man,' among the earliest tool-making hominins.",
+      "Homo neanderthalensis, the extinct species closely related to modern humans."
+    ],
+    "difficulty": 1,
+    "source_article": "Homo sapiens",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Homo sapiens"]
+  },
+  {
+    "question_text": "What general term describes all forms of art produced by humans before the development of writing systems?",
+    "correct_answer": "Prehistoric art, including cave paintings, carvings, and portable figurines.",
+    "distractors": [
+      "Classical art, created during the ancient Greek and Roman civilizations.",
+      "Folk art, traditional decorative objects made by untrained community artisans.",
+      "Primitive art, a now-deprecated label for non-Western indigenous artistic traditions."
+    ],
+    "difficulty": 1,
+    "source_article": "Prehistoric art",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["prehistoric art"]
+  },
+  {
+    "question_text": "What is the scientific discipline that studies past human cultures through excavation and analysis of material remains?",
+    "correct_answer": "Archaeology, the systematic study of human history through physical evidence.",
+    "distractors": [
+      "Paleontology, the study of prehistoric life through fossilized plant and animal remains.",
+      "Anthropology, the broad comparative study of human societies, cultures, and biology.",
+      "History, the discipline that interprets the past primarily through written documents."
+    ],
+    "difficulty": 1,
+    "source_article": "Archaeology",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["archaeology"]
+  },
+  {
+    "question_text": "What major transition saw prehistoric humans shift from foraging to farming and permanent village life?",
+    "correct_answer": "The Neolithic Revolution, the widespread adoption of agriculture beginning around 10,000 BCE.",
+    "distractors": [
+      "The Industrial Revolution, the shift from agrarian economies to mechanized factory production.",
+      "The Urban Revolution, V. Gordon Childe's term for the rise of the first cities.",
+      "The Broad Spectrum Revolution, the diversification of diet before full agricultural commitment."
+    ],
+    "difficulty": 2,
+    "source_article": "Neolithic Revolution",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Neolithic Revolution"]
+  },
+  {
+    "question_text": "What dating technique measures the decay of carbon-14 in organic materials to estimate their age?",
+    "correct_answer": "Radiocarbon dating, effective for organic specimens up to roughly 50,000 years old.",
+    "distractors": [
+      "Potassium-argon dating, which measures argon gas trapped in volcanic rock minerals.",
+      "Thermoluminescence dating, which measures radiation dose accumulated in heated crystalline materials.",
+      "Dendrochronology, which counts and compares annual tree-ring growth patterns for dating."
+    ],
+    "difficulty": 2,
+    "source_article": "Radiocarbon dating",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["radiocarbon dating"]
+  },
+  {
+    "question_text": "Which early human species, first known from Java, was the first hominin to migrate out of Africa?",
+    "correct_answer": "Homo erectus, who dispersed from Africa roughly 1.8 million years ago.",
+    "distractors": [
+      "Homo habilis, who remained confined primarily to eastern and southern Africa.",
+      "Homo heidelbergensis, a later Middle Pleistocene species found in Africa and Europe.",
+      "Homo naledi, a recently discovered species from the Rising Star cave in South Africa."
+    ],
+    "difficulty": 2,
+    "source_article": "Homo erectus",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Homo erectus"]
+  },
+  {
+    "question_text": "What term refers to large prehistoric stone structures such as dolmens, menhirs, and stone circles?",
+    "correct_answer": "Megaliths, from the Greek words for 'great' and 'stone.'",
+    "distractors": [
+      "Monoliths, single upright stones that may or may not be prehistoric.",
+      "Cairns, mounds built by stacking smaller rocks without using massive slabs.",
+      "Tumuli, earthen burial mounds that may contain internal stone or wood chambers."
+    ],
+    "difficulty": 2,
+    "source_article": "Megalith",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["megalith"]
+  },
+  {
+    "question_text": "What is the name for the earliest and longest division of the Stone Age, also called the Old Stone Age?",
+    "correct_answer": "The Paleolithic, spanning from the first stone tools to roughly 10,000 BCE.",
+    "distractors": [
+      "The Mesolithic, the transitional period between the end of glaciation and farming.",
+      "The Neolithic, the later Stone Age defined by polished tools and agriculture.",
+      "The Eolithic, a discredited concept referring to supposed natural stone tool forms."
+    ],
+    "difficulty": 2,
+    "source_article": "Paleolithic",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Paleolithic"]
+  },
+  {
+    "question_text": "What crescent-shaped region in southwest Asia is considered a primary birthplace of early agriculture?",
+    "correct_answer": "The Fertile Crescent, spanning modern Iraq, Syria, Lebanon, Israel, and adjacent areas.",
+    "distractors": [
+      "The Nile Valley, where agriculture developed along a single river in northeast Africa.",
+      "The Indus Valley, site of the Harappan civilization in modern Pakistan and India.",
+      "The Yellow River Basin, an independent center of millet domestication in northern China."
+    ],
+    "difficulty": 2,
+    "source_article": "Fertile Crescent",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Fertile Crescent"]
+  },
+  {
+    "question_text": "What hypothesis proposes that all modern humans descended from a population that originated in Africa?",
+    "correct_answer": "The Out of Africa hypothesis, supported by genetic and fossil evidence worldwide.",
+    "distractors": [
+      "The multiregional hypothesis, proposing parallel evolution of modern humans across several continents.",
+      "The Aquatic Ape hypothesis, suggesting human evolution was shaped by coastal adaptation.",
+      "The hybridization model, proposing modern humans arose from widespread interbreeding among archaic species."
+    ],
+    "difficulty": 2,
+    "source_article": "Recent African origin of modern humans",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["out of Africa hypothesis"]
+  },
+  {
+    "question_text": "What characteristic bifacial stone tool of the Lower Paleolithic is shaped by flaking on both sides?",
+    "correct_answer": "The hand axe, a teardrop-shaped tool associated with Homo erectus and successors.",
+    "distractors": [
+      "The Levallois core, a prepared-core technique yielding predetermined flake shapes.",
+      "The burin, a chisel-edged tool used for engraving bone and antler.",
+      "The scraper, a unifacially retouched flake used for processing hides and wood."
+    ],
+    "difficulty": 2,
+    "source_article": "Handaxe",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["hand axe"]
+  },
+  {
+    "question_text": "What term describes the subsistence strategy of peoples who rely on foraging wild foods rather than farming?",
+    "correct_answer": "Hunter-gatherer, a lifestyle based on hunting animals and collecting wild plant foods.",
+    "distractors": [
+      "Pastoralist, a lifestyle centered on herding domesticated animals across seasonal grazing lands.",
+      "Horticulturalist, a small-scale farmer who cultivates gardens without intensive plow agriculture.",
+      "Agropastoralist, a mixed strategy combining crop cultivation with livestock herding practices."
+    ],
+    "difficulty": 2,
+    "source_article": "Hunter-gatherer",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["hunter-gatherer"]
+  },
+  {
+    "question_text": "What large Neolithic settlement in Anatolia, dating to roughly 7500 BCE, lacked streets and used rooftop access?",
+    "correct_answer": "Catalhoyuk, a densely packed proto-city in south-central Turkey with roof-entry houses.",
+    "distractors": [
+      "Jericho, an early Neolithic walled settlement near the Jordan River in the Levant.",
+      "Ain Ghazal, a large Pre-Pottery Neolithic village in modern-day Amman, Jordan.",
+      "Mehrgarh, an early farming settlement on the Kachi plain of Balochistan, Pakistan."
+    ],
+    "difficulty": 2,
+    "source_article": "Çatalhöyük",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Çatalhöyük"]
+  },
+  {
+    "question_text": "Which cave in southwestern France contains some of the most famous Upper Paleolithic paintings, discovered in 1940?",
+    "correct_answer": "Lascaux, renowned for its vivid depictions of horses, aurochs, and deer.",
+    "distractors": [
+      "Chauvet, discovered in 1994 and containing the oldest known figurative cave paintings.",
+      "Altamira, a Spanish cave celebrated for its polychrome ceiling of bison figures.",
+      "Font-de-Gaume, one of the last original polychrome caves still open to visitors."
+    ],
+    "difficulty": 2,
+    "source_article": "Lascaux",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Lascaux cave"]
+  },
+  {
+    "question_text": "What geological epoch, lasting from about 2.6 million to 11,700 years ago, is defined by repeated glacial cycles?",
+    "correct_answer": "The Pleistocene epoch, during which modern humans evolved and dispersed globally.",
+    "distractors": [
+      "The Holocene epoch, the current warm period following the last glacial maximum.",
+      "The Pliocene epoch, which preceded the Pleistocene and featured cooling global temperatures.",
+      "The Miocene epoch, an earlier period when great apes first diversified across continents."
+    ],
+    "difficulty": 2,
+    "source_article": "Pleistocene",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Pleistocene epoch"]
+  },
+  {
+    "question_text": "What process involves humans selectively breeding wild species to produce crops and livestock with desired traits?",
+    "correct_answer": "Domestication of plants and animals, transforming wild species through selective breeding pressures.",
+    "distractors": [
+      "Natural selection, the evolutionary mechanism whereby environmental pressures favor certain inherited traits.",
+      "Artificial insemination, a modern reproductive technique not available to prehistoric peoples.",
+      "Commensalism, a biological relationship where one species benefits without affecting the other."
+    ],
+    "difficulty": 2,
+    "source_article": "Domestication",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["domestication of plants and animals"]
+  },
+  {
+    "question_text": "In archaeology, what method establishes relative chronology by analyzing the sequence of depositional layers at a site?",
+    "correct_answer": "Stratigraphy, based on the principle that deeper layers are generally older.",
+    "distractors": [
+      "Seriation, which orders artifacts by the frequency of stylistic attributes over time.",
+      "Typology, the classification of artifacts into types based on shared morphological features.",
+      "Provenience, the precise three-dimensional location where an artifact was found during excavation."
+    ],
+    "difficulty": 3,
+    "source_article": "Stratigraphy (archaeology)",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["stratigraphy"]
+  },
+  {
+    "question_text": "What Lower Paleolithic tool industry, named after a site in France, is characterized by large symmetrical bifacial hand axes?",
+    "correct_answer": "The Acheulean industry, spanning from about 1.76 million to 130,000 years ago.",
+    "distractors": [
+      "The Oldowan industry, the earliest known stone tool tradition of simple choppers and flakes.",
+      "The Mousterian industry, a Middle Paleolithic flake-tool complex associated with Neanderthals.",
+      "The Magdalenian industry, a late Upper Paleolithic tradition known for bone and antler work."
+    ],
+    "difficulty": 3,
+    "source_article": "Acheulean",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Acheulean industry"]
+  },
+  {
+    "question_text": "What early Upper Paleolithic culture in Europe is associated with the arrival of modern humans and the first figurative art?",
+    "correct_answer": "The Aurignacian, featuring blade tools, bone points, and carved ivory figurines.",
+    "distractors": [
+      "The Gravettian, a later Upper Paleolithic tradition known for Venus figurines and net hunting.",
+      "The Solutrean, characterized by exceptionally fine pressure-flaked bifacial laurel-leaf points.",
+      "The Magdalenian, the final Upper Paleolithic culture famed for cave art and harpoons."
+    ],
+    "difficulty": 3,
+    "source_article": "Aurignacian",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Aurignacian culture"]
+  },
+  {
+    "question_text": "What concept in genetics refers to the most recent common matrilineal ancestor of all living humans?",
+    "correct_answer": "Mitochondrial Eve, inferred from mitochondrial DNA phylogenetics of modern human populations.",
+    "distractors": [
+      "Y-chromosomal Adam, the most recent common patrilineal ancestor of all living men.",
+      "Lucy, the famous Australopithecus afarensis fossil discovered in Ethiopia in 1974.",
+      "The Toba bottleneck survivor, the hypothetical last common ancestor after a supervolcanic eruption."
+    ],
+    "difficulty": 3,
+    "source_article": "Mitochondrial Eve",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["mitochondrial Eve"]
+  },
+  {
+    "question_text": "What are the small Upper Paleolithic female statuettes, often with exaggerated bodily features, collectively called?",
+    "correct_answer": "Venus figurines, found across Europe and Siberia dating from roughly 40,000 to 14,000 years ago.",
+    "distractors": [
+      "Cycladic figurines, the stylized marble figures from Bronze Age Aegean island cultures.",
+      "Tanagra figurines, small Hellenistic-era terracotta sculptures depicting draped women from Greece.",
+      "Sheela na gig carvings, medieval architectural sculptures depicting exaggerated female figures on churches."
+    ],
+    "difficulty": 3,
+    "source_article": "Venus figurines",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Venus figurines"]
+  },
+  {
+    "question_text": "What type of Neolithic monument, built from large stones, served as a communal burial structure?",
+    "correct_answer": "Megalithic tombs, including dolmens, passage graves, and gallery graves for collective interment.",
+    "distractors": [
+      "Round barrows, individual Bronze Age burial mounds typically covering a single inhumation or cremation.",
+      "Shaft graves, deep vertical burial pits characteristic of Mycenaean elite funerary practice.",
+      "Cist burials, small stone-lined boxes holding individual remains without monumental surface architecture."
+    ],
+    "difficulty": 3,
+    "source_article": "Megalithic tomb",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["megalithic tomb"]
+  },
+  {
+    "question_text": "What rapid climatic cooling event around 12,900 to 11,700 years ago interrupted the post-glacial warming trend?",
+    "correct_answer": "The Younger Dryas, a cold reversal that impacted human populations and megafauna worldwide.",
+    "distractors": [
+      "The 8.2-kiloyear event, a brief cold snap in the early Holocene caused by glacial meltwater.",
+      "The Medieval Cold Period, a regional cooling episode during the European Middle Ages.",
+      "The Heinrich Event 1, a massive iceberg discharge in the North Atlantic around 16,000 BP."
+    ],
+    "difficulty": 3,
+    "source_article": "Younger Dryas",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Younger Dryas"]
+  },
+  {
+    "question_text": "What pre-pottery Neolithic site in southeastern Turkey features monumental T-shaped carved pillars predating agriculture?",
+    "correct_answer": "Gobekli Tepe, challenging the assumption that farming preceded monumental ritual architecture.",
+    "distractors": [
+      "Catalhoyuk, a densely packed Neolithic settlement in central Turkey with rooftop access.",
+      "Karahan Tepe, a contemporaneous but less extensively excavated hilltop site in Sanliurfa province.",
+      "Nevali Cori, a nearby early Neolithic village also featuring carved stone pillars and sculptures."
+    ],
+    "difficulty": 3,
+    "source_article": "Göbekli Tepe",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Göbekli Tepe"]
+  },
+  {
+    "question_text": "What process of sequential stone flaking do archaeologists study to reconstruct prehistoric tool-making techniques?",
+    "correct_answer": "Lithic reduction, encompassing core preparation, platform striking, and secondary retouch stages.",
+    "distractors": [
+      "Ceramic temper analysis, studying mineral additives mixed into clay before pottery firing.",
+      "Metallographic examination, analyzing the microstructure of metal artifacts to determine forging techniques.",
+      "Petrographic thin-section analysis, identifying the mineral composition of rock and pottery materials."
+    ],
+    "difficulty": 3,
+    "source_article": "Lithic reduction",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["lithic reduction"]
+  },
+  {
+    "question_text": "What late Neolithic to early Bronze Age phenomenon across Europe is defined by a distinctive bell-shaped pottery type?",
+    "correct_answer": "The Beaker culture, associated with a pan-European package of pottery, archery, and metalwork.",
+    "distractors": [
+      "The Funnel Beaker culture, an earlier Neolithic tradition of northern Europe with funnel-necked vessels.",
+      "The Linearbandkeramik, the earliest farming culture of central Europe with band-decorated pottery.",
+      "The Urnfield culture, a late Bronze Age complex defined by cremation burials in ceramic urns."
+    ],
+    "difficulty": 3,
+    "source_article": "Bell Beaker culture",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Beaker culture"]
+  },
+  {
+    "question_text": "What term describes the widespread extinction of large-bodied mammals at the end of the Pleistocene?",
+    "correct_answer": "Megafaunal extinction, attributed to human overhunting, climate change, or both factors combined.",
+    "distractors": [
+      "The Permian-Triassic extinction, the largest mass extinction event in Earth's geological history.",
+      "The Cretaceous-Paleogene extinction, which eliminated non-avian dinosaurs sixty-six million years ago.",
+      "The Holocene biodiversity crisis, the ongoing modern loss of species driven by human activity."
+    ],
+    "difficulty": 3,
+    "source_article": "Quaternary extinction event",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["megafaunal extinction"]
+  },
+  {
+    "question_text": "What late Neolithic archaeological complex across northern Europe is associated with cord-impressed pottery and steppe ancestry?",
+    "correct_answer": "The Corded Ware culture, linked to debates about Indo-European language dispersal into Europe.",
+    "distractors": [
+      "The Globular Amphora culture, a slightly earlier Neolithic complex of central and eastern Europe.",
+      "The Pitted Ware culture, a Scandinavian hunter-gatherer tradition contemporary with early farming groups.",
+      "The Baden culture, a late Copper Age complex centered in the Carpathian Basin of eastern Europe."
+    ],
+    "difficulty": 3,
+    "source_article": "Corded Ware culture",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Corded Ware culture"]
+  },
+  {
+    "question_text": "What transitional industry between the Middle and Upper Paleolithic is controversially attributed to late Neanderthals?",
+    "correct_answer": "The Chatelperronian, found in France and Spain with blade tools and personal ornaments.",
+    "distractors": [
+      "The Uluzzian, another transitional industry in Italy debated as Neanderthal or modern human.",
+      "The Szeletian, a Central European leaf-point industry of uncertain taxonomic authorship and affiliation.",
+      "The Bohunician, an early Upper Paleolithic industry in Moravia with Levallois-like blade technology."
+    ],
+    "difficulty": 4,
+    "source_article": "Châtelperronian",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Châtelperronian industry"]
+  },
+  {
+    "question_text": "Ancient DNA reveals that which archaic hominin interbred with modern humans, leaving the highest ancestry in Melanesians?",
+    "correct_answer": "Denisovans, whose admixture contributes roughly 4-6% of the genome in some Oceanian populations.",
+    "distractors": [
+      "Neanderthals, whose admixture contributes approximately 1-2% of the genome in all non-African populations.",
+      "Homo erectus, whose potential genetic contribution remains undetectable with current paleogenomic techniques.",
+      "Homo heidelbergensis, a Middle Pleistocene species for which no nuclear DNA has been recovered."
+    ],
+    "difficulty": 4,
+    "source_article": "Denisovan",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Denisovan admixture"]
+  },
+  {
+    "question_text": "What dating method measures the last time mineral grains were exposed to sunlight, useful beyond the radiocarbon limit?",
+    "correct_answer": "Optically stimulated luminescence dating, applied to quartz and feldspar grains in sediment deposits.",
+    "distractors": [
+      "Electron spin resonance dating, which measures trapped electrons in tooth enamel and carbonates.",
+      "Thermoluminescence dating, which requires the sample to have been previously heated to high temperatures.",
+      "Cosmogenic nuclide dating, which measures isotopes produced by cosmic ray bombardment of surface rocks."
+    ],
+    "difficulty": 4,
+    "source_article": "Luminescence dating",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["optically stimulated luminescence dating"]
+  },
+  {
+    "question_text": "What French analytical concept reconstructs the entire operational sequence of artifact production from raw material to discard?",
+    "correct_answer": "Chaine operatoire, used to infer prehistoric technological cognition and skill transmission processes.",
+    "distractors": [
+      "Reduction sequence, a more narrowly defined American term for the stages of stone tool knapping.",
+      "Behavioral chain, Schiffer's framework linking human actions to their material correlates in the record.",
+      "Object biography, an interpretive approach tracing the social life history of individual artifacts."
+    ],
+    "difficulty": 4,
+    "source_article": "Chaîne opératoire",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["chaîne opératoire"]
+  },
+  {
+    "question_text": "Evidence from Blombos Cave contributes to which debate about the emergence of cognitively modern behavior in Africa?",
+    "correct_answer": "Middle Stone Age behavioral modernity, including ochre engraving and shell bead production before 70,000 BP.",
+    "distractors": [
+      "Upper Paleolithic revolution, the traditional European model placing modern cognition after 40,000 BP.",
+      "Symbolic explosion hypothesis, attributing all abstract thought to a single genetic mutation event.",
+      "Coastal migration theory, proposing that shellfish exploitation drove cognitive advances in early humans."
+    ],
+    "difficulty": 4,
+    "source_article": "Behavioral modernity",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Middle Stone Age behavioral modernity"]
+  },
+  {
+    "question_text": "What hypothesis proposes that the ~74,000 BP Toba supervolcanic eruption caused a severe bottleneck in human populations?",
+    "correct_answer": "The Toba catastrophe theory, suggesting global volcanic winter reduced Homo sapiens to small surviving groups.",
+    "distractors": [
+      "The Younger Dryas impact hypothesis, attributing the 12,900 BP cold event to a cosmic airburst.",
+      "The Black Sea deluge hypothesis, proposing catastrophic flooding of the Black Sea basin around 5600 BCE.",
+      "The Laacher See eruption theory, linking a late Pleistocene volcanic event to Federmesser culture disruption."
+    ],
+    "difficulty": 4,
+    "source_article": "Toba catastrophe theory",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Toba catastrophe theory"]
+  },
+  {
+    "question_text": "What microscopic analytical technique identifies prehistoric stone tool functions from edge damage, polish, and residue patterns?",
+    "correct_answer": "Use-wear analysis, employing low-power and high-power microscopy to determine tool contact materials.",
+    "distractors": [
+      "X-ray fluorescence spectrometry, identifying the elemental composition of stone for provenance sourcing studies.",
+      "Petrographic thin-section analysis, examining mineral structure of stone under polarized light for sourcing.",
+      "Scanning electron microscopy of fracture surfaces, characterizing raw material quality and knapping mechanics."
+    ],
+    "difficulty": 4,
+    "source_article": "Use-wear analysis",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["use-wear analysis"]
+  },
+  {
+    "question_text": "What Bronze Age pastoral culture of the Pontic-Caspian steppe is linked by ancient DNA to massive migrations into Europe?",
+    "correct_answer": "The Yamnaya culture, implicated as a primary vector of steppe ancestry and Proto-Indo-European language.",
+    "distractors": [
+      "The Afanasievo culture, a contemporary steppe-derived group that migrated eastward into the Altai region.",
+      "The Sintashta culture, a later Bronze Age group associated with early chariot technology and metallurgy.",
+      "The Catacomb culture, a successor to the Yamnaya in the Pontic steppe during the Middle Bronze Age."
+    ],
+    "difficulty": 4,
+    "source_article": "Yamnaya culture",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Yamnaya culture"]
+  },
+  {
+    "question_text": "What Upper Paleolithic tradition (c. 33,000-22,000 BP) is associated with Venus figurines and mammoth-bone dwellings?",
+    "correct_answer": "The Gravettian culture, spanning Europe with distinctive backed-point technology and elaborate burials.",
+    "distractors": [
+      "The Aurignacian culture, an earlier Upper Paleolithic tradition producing the first European figurative art.",
+      "The Epigravettian culture, a later Mediterranean continuation of Gravettian technology after the glacial maximum.",
+      "The Pavlovian culture, a regional Central European facies often subsumed within the broader Gravettian complex."
+    ],
+    "difficulty": 4,
+    "source_article": "Gravettian",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Gravettian culture"]
+  },
+  {
+    "question_text": "What radiometric dating method uses decay chains of uranium isotopes to date speleothems and cave art beyond radiocarbon range?",
+    "correct_answer": "Uranium-series dating, measuring disequilibrium between uranium-234 and thorium-230 in carbonate deposits.",
+    "distractors": [
+      "Potassium-argon dating, measuring the decay of potassium-40 to argon-40 in volcanic minerals.",
+      "Fission-track dating, counting damage trails from spontaneous fission of uranium-238 in mineral crystals.",
+      "Lead-lead dating, comparing ratios of lead isotopes produced from uranium decay in ancient rocks."
+    ],
+    "difficulty": 4,
+    "source_article": "Uranium-series dating",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["uranium-series dating"]
+  },
+  {
+    "question_text": "What subfield analyzes faunal assemblages through taphonomy, cut-mark patterns, and skeletal element representation?",
+    "correct_answer": "Zooarchaeology, reconstructing prehistoric subsistence strategies from animal bone assemblage analysis.",
+    "distractors": [
+      "Paleoethnobotany, reconstructing ancient plant use from seeds, pollen, and phytolith assemblages.",
+      "Geoarchaeology, applying earth science methods to understand site formation and landscape change processes.",
+      "Bioarchaeology, the study of human skeletal remains to reconstruct health, diet, and demography."
+    ],
+    "difficulty": 4,
+    "source_article": "Zooarchaeology",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["zooarchaeology"]
+  },
+  {
+    "question_text": "What Upper Paleolithic industry (c. 22,000-17,000 BP) is renowned for its exceptionally fine pressure-flaked laurel-leaf bifaces?",
+    "correct_answer": "The Solutrean, restricted to Iberia and southern France during the Last Glacial Maximum.",
+    "distractors": [
+      "The Gravettian, an earlier Upper Paleolithic tradition defined by backed bladelets and Venus figurines.",
+      "The Magdalenian, the succeeding tradition famed for elaborate bone and antler tool production.",
+      "The Badegoulian, a brief transitional industry between the Solutrean and Magdalenian in western Europe."
+    ],
+    "difficulty": 4,
+    "source_article": "Solutrean",
+    "domain_ids": ["prehistoric-archaeology"],
+    "concepts_tested": ["Solutrean culture"]
+  }
+]

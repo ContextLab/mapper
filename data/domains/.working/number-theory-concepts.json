@@ -1,0 +1,66 @@
+{
+  "domain": "number-theory",
+  "parent_domain": "mathematics",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      "prime number",
+      "integer",
+      "divisibility",
+      "factor",
+      "multiple",
+      "composite number",
+      "even and odd numbers",
+      "remainder",
+      "greatest common divisor",
+      "least common multiple",
+      "infinity of primes",
+      "Fibonacci sequence",
+      "perfect number"
+    ],
+    "L2": [
+      "modular arithmetic",
+      "Euler's totient function",
+      "prime factorization",
+      "Fundamental Theorem of Arithmetic",
+      "Fermat's little theorem",
+      "Euclidean algorithm",
+      "congruence relation",
+      "Mersenne prime",
+      "twin prime",
+      "amicable numbers",
+      "arithmetic function",
+      "Diophantine equation",
+      "Goldbach's conjecture"
+    ],
+    "L3": [
+      "quadratic residue",
+      "Legendre symbol",
+      "Chinese remainder theorem",
+      "primitive root",
+      "continued fraction",
+      "Pell's equation",
+      "Mobius function",
+      "sum of two squares theorem",
+      "Gaussian integer",
+      "p-adic number",
+      "multiplicative function",
+      "Bertrand's postulate"
+    ],
+    "L4": [
+      "Riemann hypothesis",
+      "prime number theorem",
+      "Dirichlet's theorem on primes in arithmetic progressions",
+      "quadratic reciprocity",
+      "algebraic number field",
+      "ideal class group",
+      "ring of integers",
+      "Dedekind domain",
+      "L-function",
+      "elliptic curve",
+      "modular form",
+      "Birch and Swinnerton-Dyer conjecture"
+    ]
+  }
+}

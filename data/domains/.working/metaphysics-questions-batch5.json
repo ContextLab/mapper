@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Four-dimensionalism claims that persisting objects extend through time just as they extend through space. According to this view, how do objects persist, and what metaphor describes their temporal extent?",
+    "correct_answer": "Objects persist by having distinct temporal parts at different times, forming 'spacetime worms' extending across four-dimensional spacetime.",
+    "distractors": [
+      "Objects persist by being wholly present at every moment of existence, forming 'spatial snapshots' recurring at each three-dimensional instant.",
+      "Objects persist by maintaining an unchanging essential core while shedding accidental properties, forming 'temporal crystals' fixed across spacetime.",
+      "Objects persist by continuously recreating themselves at each moment through divine sustenance, forming 'causal chains' linking successive entities."
+    ],
+    "difficulty": 4,
+    "source_article": "Four-dimensionalism",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["four-dimensionalism"]
+  },
+  {
+    "question_text": "Endurantism offers a rival account of persistence to four-dimensionalism. What is its central claim, and what classical problem does it face regarding change?",
+    "correct_answer": "Objects are wholly present at each moment without temporal parts. It faces the problem of temporary intrinsics: how one thing has incompatible properties across time.",
+    "distractors": [
+      "Objects consist of successive momentary stages linked by causation. It faces the problem of material constitution: how colocated objects share identical physical properties.",
+      "Objects are bundles of temporal parts unified by resemblance relations. It faces the problem of vagueness: how to determine exact boundaries of temporal careers.",
+      "Objects exist timelessly outside the causal order without genuine change. It faces the problem of interaction: how timeless entities participate in causal processes."
+    ],
+    "difficulty": 4,
+    "source_article": "Endurantism",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["endurantism"]
+  },
+  {
+    "question_text": "Haecceitism concerns whether possible worlds can differ non-qualitatively. What medieval philosopher's concept inspired the term, and what does haecceitism claim?",
+    "correct_answer": "From Duns Scotus's haecceitas ('thisness'). Haecceitism holds that worlds can differ over which individuals occupy which roles without any qualitative difference.",
+    "distractors": [
+      "From Thomas Aquinas's quidditas ('whatness'). Haecceitism holds that every individual has a unique essential property determining all qualitative characteristics across worlds.",
+      "From William of Ockham's singularitas ('singularity'). Haecceitism holds that individuals reduce to bundles of universals with no primitive individuality beyond qualities.",
+      "From Boethius's personalitas ('personhood'). Haecceitism holds that transworld identity requires sharing all intrinsic qualitative properties with no non-qualitative differences."
+    ],
+    "difficulty": 4,
+    "source_article": "Haecceity",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["haecceitism"]
+  },
+  {
+    "question_text": "Ontic structural realism reconceives fundamental reality in philosophy of physics. Who distinguished epistemic from ontic forms, and what does the ontic version claim?",
+    "correct_answer": "James Ladyman drew the distinction in 1998. Ontic structural realism claims structure is all there is: relations are fundamental, objects derivative.",
+    "distractors": [
+      "Bas van Fraassen drew the distinction in 1980. Ontic structural realism claims objects are fundamental and structures are useful mathematical descriptions.",
+      "John Worrall drew the distinction in 2003. Ontic structural realism claims objects and structures are equally fundamental co-dependent ontological categories.",
+      "Howard Stein drew the distinction in 1989. Ontic structural realism claims only observable structures are real while theoretical posits remain instrumental."
+    ],
+    "difficulty": 4,
+    "source_article": "Structural realism",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["ontic structural realism"]
+  },
+  {
+    "question_text": "David Lewis defended Humean supervenience throughout his career. What does this doctrine claim is the fundamental basis of all worldly facts?",
+    "correct_answer": "All facts supervene on a 'vast mosaic' of local intrinsic qualities at spacetime points plus spatiotemporal relations -- nothing more.",
+    "distractors": [
+      "All facts supervene on a 'grand mechanism' of necessary causal connections linking every event to prior conditions plus nomic necessitation.",
+      "All facts supervene on a 'cosmic web' of dispositional powers possessed by fundamental particles plus irreducible governing natural laws.",
+      "All facts supervene on a 'universal field' of mind-independent Platonic universals existing outside spacetime plus instantiation relations to particulars."
+    ],
+    "difficulty": 4,
+    "source_article": "Humean supervenience",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["Humean supervenience"]
+  },
+  {
+    "question_text": "Dialetheism is a heterodox position in philosophy of logic and metaphysics. Who coined the term, what does the view assert, and how does it differ from trivialism?",
+    "correct_answer": "Graham Priest and Richard Routley coined it. Some contradictions are true (dialetheia), but unlike trivialism, not all statements are true.",
+    "distractors": [
+      "Saul Kripke and Hilary Putnam coined it. No contradictions are expressible in formal logic, and unlike trivialism, truth is restricted to analytic necessities.",
+      "W.V.O. Quine and Donald Davidson coined it. Contradictions arise only from semantic ambiguity, and unlike trivialism, all contradictions are ultimately resolvable.",
+      "Alfred Tarski and Kurt Gödel coined it. Contradictions indicate formal system limits, and unlike trivialism, self-referential sentences lack truth-values entirely."
+    ],
+    "difficulty": 4,
+    "source_article": "Dialetheism",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["dialetheism"]
+  },
+  {
+    "question_text": "Mereological nihilism takes a radically sparse view of what material objects exist. What does it claim about composite objects, and how does it account for everyday experience?",
+    "correct_answer": "No composite objects exist; only mereological simples are real. Apparent composites like tables are 'simples arranged table-wise' causing table-like experiences.",
+    "distractors": [
+      "No simple objects exist; only composite wholes are real. Apparent simples like atoms are 'abstractions from unified fields' causing particle-like experiences.",
+      "No spatial relations exist; only temporally extended processes are real. Apparent objects are 'standing waves in causal flux' creating stable experiences.",
+      "No material objects of any kind exist; only immaterial mental states are real. Apparent objects are 'projections of consciousness' causing shared experiences."
+    ],
+    "difficulty": 4,
+    "source_article": "Mereological nihilism",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["mereological nihilism"]
+  },
+  {
+    "question_text": "David Lewis's counterpart theory provides an alternative semantics for modal claims. How does it analyze 'I might have been a banker,' and what relation replaces identity?",
+    "correct_answer": "A counterpart resembling me in another possible world is a banker -- I do not exist there myself. Resemblance, not identity, links counterparts across worlds.",
+    "distractors": [
+      "My identical self in another possible world chose banking instead of philosophy. Strict numerical identity, not resemblance, links individuals across all worlds.",
+      "An abstract property-set including 'banker' is consistent with my essential nature. Conceptual entailment, not resemblance, connects individuals to possible roles.",
+      "A temporal stage of me at a different time became a banker in actuality. Causal continuity, not resemblance, links successive person-stages together."
+    ],
+    "difficulty": 4,
+    "source_article": "Counterpart theory",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["counterpart theory"]
+  },
+  {
+    "question_text": "Causal set theory proposes a fundamentally discrete structure for spacetime as an approach to quantum gravity. What mathematical structure models spacetime, and what is Sorkin's slogan?",
+    "correct_answer": "Spacetime is modeled as a locally finite partially ordered set of discrete events related by causal order. Sorkin's slogan: 'Order + Number = Geometry.'",
+    "distractors": [
+      "Spacetime is modeled as a continuous differentiable manifold of point-events related by metric distance. Sorkin's slogan: 'Curvature + Matter = Gravity.'",
+      "Spacetime is modeled as a lattice of spin networks connected by holonomy transformations along edges. Sorkin's slogan: 'Loops + Nodes = Spacetime.'",
+      "Spacetime is modeled as a simplicial complex of triangulated surfaces related by conformal symmetry. Sorkin's slogan: 'Triangles + Topology = Dynamics.'"
+    ],
+    "difficulty": 4,
+    "source_article": "Causal sets",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["causal set theory"]
+  },
+  {
+    "question_text": "Jonathan Schaffer defends priority monism, a distinctive form of monism in contemporary metaphysics. What is the one fundamental entity, and what physical phenomenon motivates the view?",
+    "correct_answer": "The cosmos is the one fundamental entity; all proper parts are metaphysically derivative. Quantum entanglement motivates the view, suggesting the universe is one entangled system.",
+    "distractors": [
+      "Spacetime is the one fundamental entity; matter and energy are derivative modifications of geometry. Dark energy motivates the view, suggesting accelerating cosmic expansion.",
+      "A single universal substance is the one fundamental entity; distinct objects are mere appearances. Conservation of mass-energy motivates the view, suggesting underlying unity.",
+      "The fundamental physical field is the one fundamental entity; particles are derivative excitations. The Higgs mechanism motivates the view, suggesting unified mass generation."
+    ],
+    "difficulty": 4,
+    "source_article": "Priority monism",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["priority monism"]
+  }
+]

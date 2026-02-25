@@ -266,6 +266,440 @@
       },
       "grid_size": 50,
       "question_count": 949
+    },
+    {
+      "id": "world-history",
+      "name": "World History",
+      "parent_id": null,
+      "level": "general",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "computer-science",
+      "name": "Computer Science",
+      "parent_id": null,
+      "level": "general",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "economics",
+      "name": "Economics",
+      "parent_id": null,
+      "level": "general",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "philosophy",
+      "name": "Philosophy",
+      "parent_id": null,
+      "level": "general",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "linguistics",
+      "name": "Linguistics",
+      "parent_id": null,
+      "level": "general",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "sociology",
+      "name": "Sociology",
+      "parent_id": null,
+      "level": "general",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "psychology",
+      "name": "Psychology",
+      "parent_id": null,
+      "level": "general",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "archaeology",
+      "name": "Archaeology",
+      "parent_id": null,
+      "level": "general",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "us-history",
+      "name": "US History",
+      "parent_id": "world-history",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "european-history",
+      "name": "European History",
+      "parent_id": "world-history",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "asian-history",
+      "name": "Asian History",
+      "parent_id": "world-history",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "artificial-intelligence-ml",
+      "name": "AI and Machine Learning",
+      "parent_id": "computer-science",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "theory-of-computation",
+      "name": "Theory of Computation",
+      "parent_id": "computer-science",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "algorithms",
+      "name": "Algorithms",
+      "parent_id": "computer-science",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "microeconomics",
+      "name": "Microeconomics",
+      "parent_id": "economics",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "macroeconomics",
+      "name": "Macroeconomics",
+      "parent_id": "economics",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "ethics",
+      "name": "Ethics",
+      "parent_id": "philosophy",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "philosophy-of-mind",
+      "name": "Philosophy of Mind",
+      "parent_id": "philosophy",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "logic",
+      "name": "Logic",
+      "parent_id": "philosophy",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "metaphysics",
+      "name": "Metaphysics",
+      "parent_id": "philosophy",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "syntax",
+      "name": "Syntax",
+      "parent_id": "linguistics",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "semantics",
+      "name": "Semantics",
+      "parent_id": "linguistics",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "computational-linguistics",
+      "name": "Computational Linguistics",
+      "parent_id": "linguistics",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "political-sociology",
+      "name": "Political Sociology",
+      "parent_id": "sociology",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "criminology",
+      "name": "Criminology",
+      "parent_id": "sociology",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "cognitive-psychology",
+      "name": "Cognitive Psychology",
+      "parent_id": "psychology",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "social-psychology",
+      "name": "Social Psychology",
+      "parent_id": "psychology",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "developmental-psychology",
+      "name": "Developmental Psychology",
+      "parent_id": "psychology",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "clinical-psychology",
+      "name": "Clinical Psychology",
+      "parent_id": "psychology",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "prehistoric-archaeology",
+      "name": "Prehistoric Archaeology",
+      "parent_id": "archaeology",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
+    },
+    {
+      "id": "forensic-archaeology",
+      "name": "Forensic Archaeology",
+      "parent_id": "archaeology",
+      "level": "sub",
+      "region": {
+        "x_min": 0.0,
+        "x_max": 1.0,
+        "y_min": 0.0,
+        "y_max": 1.0
+      },
+      "grid_size": 70,
+      "question_count": 50
     }
   ],
   "generated": "2026-02-18T22:05:08.197967",

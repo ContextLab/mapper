@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Define 19 domain regions in embedding space.
+Define 50 domain regions in embedding space.
 
 Since Wikipedia articles in UMAP space don't form clean topic clusters (they're
 organized by text similarity, not academic domain), we assign domain regions as
@@ -13,21 +13,52 @@ The hierarchy:
   ├─ Physics               — general
   │  ├─ Astrophysics       — sub
   │  └─ Quantum Physics    — sub
+  ├─ Neuroscience           — general
+  │  ├─ Cognitive Neuroscience  — sub
+  │  ├─ Computational Neuroscience — sub
+  │  └─ Neurobiology        — sub
+  ├─ Mathematics            — general
+  │  ├─ Calculus             — sub
+  │  ├─ Linear Algebra       — sub
+  │  ├─ Number Theory        — sub
+  │  └─ Probability and Statistics — sub
+  ├─ Computer Science        — general
+  │  ├─ AI and Machine Learning — sub
+  │  ├─ Theory of Computation   — sub
+  │  └─ Algorithms              — sub
   ├─ Art History            — general
   │  ├─ European Art History — sub
   │  └─ Chinese Art History  — sub
   ├─ Biology                — general
   │  ├─ Molecular and Cell Biology — sub
   │  └─ Genetics            — sub
-  ├─ Neuroscience           — general
-  │  ├─ Cognitive Neuroscience  — sub
-  │  ├─ Computational Neuroscience — sub
-  │  └─ Neurobiology        — sub
-  └─ Mathematics            — general
-     ├─ Calculus             — sub
-     ├─ Linear Algebra       — sub
-     ├─ Number Theory        — sub
-     └─ Probability and Statistics — sub
+  ├─ Psychology              — general
+  │  ├─ Cognitive Psychology   — sub
+  │  ├─ Social Psychology      — sub
+  │  ├─ Developmental Psychology — sub
+  │  └─ Clinical Psychology    — sub
+  ├─ Philosophy              — general
+  │  ├─ Ethics                — sub
+  │  ├─ Philosophy of Mind    — sub
+  │  ├─ Logic                 — sub
+  │  └─ Metaphysics           — sub
+  ├─ World History           — general
+  │  ├─ US History            — sub
+  │  ├─ European History      — sub
+  │  └─ Asian History         — sub
+  ├─ Economics               — general
+  │  ├─ Microeconomics        — sub
+  │  └─ Macroeconomics        — sub
+  ├─ Linguistics             — general
+  │  ├─ Syntax                — sub
+  │  ├─ Semantics             — sub
+  │  └─ Computational Linguistics — sub
+  ├─ Sociology               — general
+  │  ├─ Political Sociology   — sub
+  │  └─ Criminology           — sub
+  └─ Archaeology             — general
+     ├─ Prehistoric Archaeology — sub
+     └─ Forensic Archaeology   — sub
 
 Usage:
     python scripts/define_domains.py
@@ -77,59 +108,101 @@ def make_region(x_min, x_max, y_min, y_max):
 
 def define_all_domains(articles):
     """
-    Define 19 domain regions by tiling the UMAP space.
+    Define 50 domain regions by tiling the UMAP space.
 
-    Layout (general domains — non-overlapping):
+    Layout (13 general domains — non-overlapping tiles):
 
-      y=1.0 +-------+-------+-------+
-            |       | Neuro |       |
-            |Physics| sci.  | Math  |
-            | 0-0.4 |0.4-0.6| 0.6-1 |
-            |       |       |       |
-      y=0.5 +-------+-------+-------+
-            |   Art History  |       |
-            |    0-0.5       | Bio   |
-            |                | 0.5-1 |
-      y=0.0 +----------------+-------+
-           x=0             x=0.5     x=1.0
+      y=1.0 +------+------+------+------+
+            |Phys  |Neuro |Math  | CS   |
+            |0-0.25|.25-.5|.5-.75|.75-1 |
+      y=0.75+------+------+------+------+
+            | Art  | Bio  |Psych |Philos|
+            |0-0.25|.25-.5|.5-.75|.75-1 |
+      y=0.5 +------+------+------+------+
+            |World Hist|Econ  |Linguist |
+            | 0-0.33   |.33-.67| .67-1  |
+      y=0.25+----------+------+---------+
+            | Sociology | Archaeology   |
+            |  0-0.5    |   0.5-1       |
+      y=0.0 +-----------+---------------+
+           x=0                         x=1.0
     """
 
     general_regions = {
-        "physics": make_region(0.0, 0.40, 0.50, 1.0),
-        "neuroscience": make_region(0.40, 0.60, 0.50, 1.0),
-        "mathematics": make_region(0.60, 1.0, 0.50, 1.0),
-        "art-history": make_region(0.0, 0.50, 0.0, 0.50),
-        "biology": make_region(0.50, 1.0, 0.0, 0.50),
+        # Row 4 (top): y=0.75-1.0
+        "physics": make_region(0.0, 0.25, 0.75, 1.0),
+        "neuroscience": make_region(0.25, 0.50, 0.75, 1.0),
+        "mathematics": make_region(0.50, 0.75, 0.75, 1.0),
+        "computer-science": make_region(0.75, 1.0, 0.75, 1.0),
+        # Row 3: y=0.5-0.75
+        "art-history": make_region(0.0, 0.25, 0.50, 0.75),
+        "biology": make_region(0.25, 0.50, 0.50, 0.75),
+        "psychology": make_region(0.50, 0.75, 0.50, 0.75),
+        "philosophy": make_region(0.75, 1.0, 0.50, 0.75),
+        # Row 2: y=0.25-0.5
+        "world-history": make_region(0.0, 0.333, 0.25, 0.50),
+        "economics": make_region(0.333, 0.667, 0.25, 0.50),
+        "linguistics": make_region(0.667, 1.0, 0.25, 0.50),
+        # Row 1 (bottom): y=0.0-0.25
+        "sociology": make_region(0.0, 0.50, 0.0, 0.25),
+        "archaeology": make_region(0.50, 1.0, 0.0, 0.25),
     }
 
     sub_regions = {
         # Physics subs (horizontal split)
-        "astrophysics": make_region(0.0, 0.40, 0.75, 1.0),
-        "quantum-physics": make_region(0.0, 0.40, 0.50, 0.75),
-        # Art History subs (vertical split)
-        "european-art-history": make_region(0.0, 0.25, 0.0, 0.50),
-        "chinese-art-history": make_region(0.25, 0.50, 0.0, 0.50),
-        # Biology subs (vertical split)
-        "molecular-cell-biology": make_region(0.50, 0.75, 0.0, 0.50),
-        "genetics": make_region(0.75, 1.0, 0.0, 0.50),
+        "astrophysics": make_region(0.0, 0.25, 0.875, 1.0),
+        "quantum-physics": make_region(0.0, 0.25, 0.75, 0.875),
         # Neuroscience subs (horizontal split into 3)
-        "cognitive-neuroscience": make_region(0.40, 0.60, 0.833, 1.0),
-        "computational-neuroscience": make_region(0.40, 0.60, 0.667, 0.833),
-        "neurobiology": make_region(0.40, 0.60, 0.50, 0.667),
+        "cognitive-neuroscience": make_region(0.25, 0.50, 0.917, 1.0),
+        "computational-neuroscience": make_region(0.25, 0.50, 0.833, 0.917),
+        "neurobiology": make_region(0.25, 0.50, 0.75, 0.833),
         # Mathematics subs (2x2 grid)
-        "calculus": make_region(0.60, 0.80, 0.75, 1.0),
-        "linear-algebra": make_region(0.80, 1.0, 0.75, 1.0),
-        "number-theory": make_region(0.60, 0.80, 0.50, 0.75),
-        "probability-statistics": make_region(0.80, 1.0, 0.50, 0.75),
+        "calculus": make_region(0.50, 0.625, 0.875, 1.0),
+        "linear-algebra": make_region(0.625, 0.75, 0.875, 1.0),
+        "number-theory": make_region(0.50, 0.625, 0.75, 0.875),
+        "probability-statistics": make_region(0.625, 0.75, 0.75, 0.875),
+        # Computer Science subs (horizontal split into 3)
+        "artificial-intelligence-ml": make_region(0.75, 1.0, 0.917, 1.0),
+        "theory-of-computation": make_region(0.75, 1.0, 0.833, 0.917),
+        "algorithms": make_region(0.75, 1.0, 0.75, 0.833),
+        # Art History subs (vertical split)
+        "european-art-history": make_region(0.0, 0.125, 0.50, 0.75),
+        "chinese-art-history": make_region(0.125, 0.25, 0.50, 0.75),
+        # Biology subs (vertical split)
+        "molecular-cell-biology": make_region(0.25, 0.375, 0.50, 0.75),
+        "genetics": make_region(0.375, 0.50, 0.50, 0.75),
+        # Psychology subs (2x2 grid)
+        "cognitive-psychology": make_region(0.50, 0.625, 0.625, 0.75),
+        "social-psychology": make_region(0.625, 0.75, 0.625, 0.75),
+        "developmental-psychology": make_region(0.50, 0.625, 0.50, 0.625),
+        "clinical-psychology": make_region(0.625, 0.75, 0.50, 0.625),
+        # Philosophy subs (2x2 grid)
+        "ethics": make_region(0.75, 0.875, 0.625, 0.75),
+        "philosophy-of-mind": make_region(0.875, 1.0, 0.625, 0.75),
+        "logic": make_region(0.75, 0.875, 0.50, 0.625),
+        "metaphysics": make_region(0.875, 1.0, 0.50, 0.625),
+        # World History subs (vertical split into 3)
+        "us-history": make_region(0.0, 0.111, 0.25, 0.50),
+        "european-history": make_region(0.111, 0.222, 0.25, 0.50),
+        "asian-history": make_region(0.222, 0.333, 0.25, 0.50),
+        # Economics subs (vertical split)
+        "microeconomics": make_region(0.333, 0.50, 0.25, 0.50),
+        "macroeconomics": make_region(0.50, 0.667, 0.25, 0.50),
+        # Linguistics subs (horizontal split into 3)
+        "syntax": make_region(0.667, 1.0, 0.417, 0.50),
+        "semantics": make_region(0.667, 1.0, 0.333, 0.417),
+        "computational-linguistics": make_region(0.667, 1.0, 0.25, 0.333),
+        # Sociology subs (vertical split)
+        "political-sociology": make_region(0.0, 0.25, 0.0, 0.25),
+        "criminology": make_region(0.25, 0.50, 0.0, 0.25),
+        # Archaeology subs (vertical split)
+        "prehistoric-archaeology": make_region(0.50, 0.75, 0.0, 0.25),
+        "forensic-archaeology": make_region(0.75, 1.0, 0.0, 0.25),
     }
 
     parent_map = {
         "astrophysics": "physics",
         "quantum-physics": "physics",
-        "european-art-history": "art-history",
-        "chinese-art-history": "art-history",
-        "molecular-cell-biology": "biology",
-        "genetics": "biology",
         "cognitive-neuroscience": "neuroscience",
         "computational-neuroscience": "neuroscience",
         "neurobiology": "neuroscience",
@@ -137,6 +210,33 @@ def define_all_domains(articles):
         "linear-algebra": "mathematics",
         "number-theory": "mathematics",
         "probability-statistics": "mathematics",
+        "artificial-intelligence-ml": "computer-science",
+        "theory-of-computation": "computer-science",
+        "algorithms": "computer-science",
+        "european-art-history": "art-history",
+        "chinese-art-history": "art-history",
+        "molecular-cell-biology": "biology",
+        "genetics": "biology",
+        "cognitive-psychology": "psychology",
+        "social-psychology": "psychology",
+        "developmental-psychology": "psychology",
+        "clinical-psychology": "psychology",
+        "ethics": "philosophy",
+        "philosophy-of-mind": "philosophy",
+        "logic": "philosophy",
+        "metaphysics": "philosophy",
+        "us-history": "world-history",
+        "european-history": "world-history",
+        "asian-history": "world-history",
+        "microeconomics": "economics",
+        "macroeconomics": "economics",
+        "syntax": "linguistics",
+        "semantics": "linguistics",
+        "computational-linguistics": "linguistics",
+        "political-sociology": "sociology",
+        "criminology": "sociology",
+        "prehistoric-archaeology": "archaeology",
+        "forensic-archaeology": "archaeology",
     }
 
     display_names = {
@@ -144,14 +244,18 @@ def define_all_domains(articles):
         "physics": "Physics",
         "neuroscience": "Neuroscience",
         "mathematics": "Mathematics",
+        "computer-science": "Computer Science",
         "art-history": "Art History",
         "biology": "Biology",
+        "psychology": "Psychology",
+        "philosophy": "Philosophy",
+        "world-history": "World History",
+        "economics": "Economics",
+        "linguistics": "Linguistics",
+        "sociology": "Sociology",
+        "archaeology": "Archaeology",
         "astrophysics": "Astrophysics",
         "quantum-physics": "Quantum Physics",
-        "european-art-history": "European Art History",
-        "chinese-art-history": "Chinese Art History",
-        "molecular-cell-biology": "Molecular and Cell Biology",
-        "genetics": "Genetics",
         "cognitive-neuroscience": "Cognitive Neuroscience",
         "computational-neuroscience": "Computational Neuroscience",
         "neurobiology": "Neurobiology",
@@ -159,6 +263,33 @@ def define_all_domains(articles):
         "linear-algebra": "Linear Algebra",
         "number-theory": "Number Theory",
         "probability-statistics": "Probability and Statistics",
+        "artificial-intelligence-ml": "AI and Machine Learning",
+        "theory-of-computation": "Theory of Computation",
+        "algorithms": "Algorithms",
+        "european-art-history": "European Art History",
+        "chinese-art-history": "Chinese Art History",
+        "molecular-cell-biology": "Molecular and Cell Biology",
+        "genetics": "Genetics",
+        "cognitive-psychology": "Cognitive Psychology",
+        "social-psychology": "Social Psychology",
+        "developmental-psychology": "Developmental Psychology",
+        "clinical-psychology": "Clinical Psychology",
+        "ethics": "Ethics",
+        "philosophy-of-mind": "Philosophy of Mind",
+        "logic": "Logic",
+        "metaphysics": "Metaphysics",
+        "us-history": "US History",
+        "european-history": "European History",
+        "asian-history": "Asian History",
+        "microeconomics": "Microeconomics",
+        "macroeconomics": "Macroeconomics",
+        "syntax": "Syntax",
+        "semantics": "Semantics",
+        "computational-linguistics": "Computational Linguistics",
+        "political-sociology": "Political Sociology",
+        "criminology": "Criminology",
+        "prehistoric-archaeology": "Prehistoric Archaeology",
+        "forensic-archaeology": "Forensic Archaeology",
     }
 
     domains = []
@@ -230,8 +361,8 @@ def validate_domains(domains, articles):
     print("=" * 60)
     errors = []
 
-    if len(domains) != 19:
-        errors.append(f"Expected 19 domains, got {len(domains)}")
+    if len(domains) != 50:
+        errors.append(f"Expected 50 domains, got {len(domains)}")
 
     ids = [d["id"] for d in domains]
     if len(ids) != len(set(ids)):
@@ -288,7 +419,7 @@ def save_index(domains):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Define 19 domain regions")
+    parser = argparse.ArgumentParser(description="Define 50 domain regions")
     parser.parse_args()
 
     print("=" * 60)

@@ -26,9 +26,9 @@ export async function init(basePath) {
   const json = await res.json();
   domains = json.domains;
 
-  if (import.meta.env.DEV && domains.length !== 19) {
+  if (import.meta.env.DEV && domains.length !== 50) {
     console.warn(
-      `[registry] Expected 19 domains, got ${domains.length}`
+      `[registry] Expected 50 domains, got ${domains.length}`
     );
   }
 

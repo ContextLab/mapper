@@ -14,8 +14,8 @@ import {
   $phase,
 } from './state/store.js';
 import * as registry from './domain/registry.js';
-import { load as loadDomain } from './domain/loader.js';
-import { indexQuestions, getAvailableQuestions } from './domain/questions.js';
+import { load as loadDomain, loadQuestionsForDomain } from './domain/loader.js';
+import { indexQuestions } from './domain/questions.js';
 import { Estimator } from './learning/estimator.js';
 import { Sampler } from './learning/sampler.js';
 import { getCentrality } from './learning/curriculum.js';
@@ -49,6 +49,7 @@ let globalEstimator = null; // Always covers GLOBAL_REGION for minimap
 let sampler = null;
 let allDomainBundle = null;   // Permanent "all" domain data — never replaced
 let currentDomainBundle = null; // Points to allDomainBundle once loaded
+let aggregatedQuestions = [];   // Questions for active domain + descendants (CL-049)
 let currentViewport = { x_min: 0, x_max: 1, y_min: 0, y_max: 1 };
 let currentDomainRegion = GLOBAL_REGION;
 let currentGridSize = GLOBAL_GRID_SIZE;
@@ -380,6 +381,21 @@ async function switchDomain(domainId) {
     mapInitialized = true;
   }
 
+  // Aggregate questions for this domain + all descendants (CL-049)
+  try {
+    aggregatedQuestions = await loadQuestionsForDomain(domainId);
+    if (generation !== switchGeneration) return;
+    for (const q of aggregatedQuestions) {
+      if (!questionIndex.has(q.id)) questionIndex.set(q.id, q);
+    }
+    indexQuestions(aggregatedQuestions);
+    insights.setConcepts(aggregatedQuestions, allDomainBundle.articles);
+    renderer.addQuestions(aggregatedQuestions);
+  } catch (err) {
+    console.error('[app] Question aggregation failed:', err);
+    aggregatedQuestions = allDomainBundle ? allDomainBundle.questions : [];
+  }
+
   // Update domain-scoped tracking
   domainQuestionCount = $responses.get().length;
   modes.updateAvailability(domainQuestionCount);
@@ -402,7 +418,7 @@ async function switchDomain(domainId) {
   controls.showActionButtons();
 
   const domainName = registry.getDomains().find(d => d.id === domainId)?.name || domainId;
-  announce(`Navigated to ${domainName}. ${allDomainBundle.questions.length} questions available.`);
+  announce(`Navigated to ${domainName}. ${aggregatedQuestions.length} questions available.`);
 
   selectAndShowNextQuestion();
 }
@@ -411,7 +427,9 @@ function selectAndShowNextQuestion() {
   if (!currentDomainBundle || !estimator || !sampler) return;
 
   const answeredIds = $answeredIds.get();
-  const available = getAvailableQuestions(currentDomainBundle, answeredIds);
+  // Use aggregated questions (own + descendants) per CL-049
+  const pool = aggregatedQuestions.length > 0 ? aggregatedQuestions : (currentDomainBundle.questions || []);
+  const available = pool.filter(q => !answeredIds.has(q.id));
 
   if (available.length === 0) {
     announce('All questions answered! Great work exploring the knowledge map.');
@@ -545,6 +563,7 @@ function handleReset() {
   currentDomainBundle = null;
   mapInitialized = false;
   domainQuestionCount = 0;
+  aggregatedQuestions = [];
   currentDomainRegion = GLOBAL_REGION;
   currentGridSize = GLOBAL_GRID_SIZE;
   switchGeneration++;

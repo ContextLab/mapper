@@ -1,6 +1,7 @@
 /** Async domain data loading with progress callbacks. */
 
 import { $domainCache } from '../state/store.js';
+import { getDescendants } from './registry.js';
 
 const PROGRESS_THROTTLE_MS = 100;
 
@@ -88,4 +89,37 @@ async function readWithProgress(body, total, onProgress) {
   }
 
   return JSON.parse(new TextDecoder().decode(merged));
+}
+
+/**
+ * Load and aggregate questions for a domain and all its descendants.
+ * Each domain contributes its own 50 questions; results are deduplicated by ID.
+ * Descendant bundles are fetched in parallel and cached for future use.
+ *
+ * @param {string} domainId
+ * @param {string} [basePath]
+ * @returns {Promise<Array>} Flat deduplicated array of question objects.
+ */
+export async function loadQuestionsForDomain(domainId, basePath) {
+  const idsToLoad = [domainId, ...getDescendants(domainId)];
+
+  // Load all bundles in parallel (cached ones resolve instantly)
+  const bundles = await Promise.all(
+    idsToLoad.map(id => load(id, {}, basePath).catch(() => null))
+  );
+
+  // Deduplicate questions by ID
+  const seen = new Set();
+  const questions = [];
+  for (const bundle of bundles) {
+    if (!bundle || !bundle.questions) continue;
+    for (const q of bundle.questions) {
+      if (!seen.has(q.id)) {
+        seen.add(q.id);
+        questions.push(q);
+      }
+    }
+  }
+
+  return questions;
 }

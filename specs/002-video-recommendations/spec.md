@@ -518,7 +518,8 @@ than at random difficulties.
 math, and UI domains. All 39 resolved. CL-016 (transcript embedding PoC)
 validated experimentally — gap = 0.111, 2x success threshold.
 Updated 2026-02-24: Added CL-040 through CL-048 for GP-IRT adaptive
-difficulty selection (Issue #23). Total: 48 clarifications, all resolved.*
+difficulty selection (Issue #23). Updated 2026-02-25: Added CL-049 for
+domain question aggregation. Total: 49 clarifications, all resolved.*
 
 ### Session 2026-02-24 (GP-IRT clarifications)
 
@@ -934,6 +935,21 @@ is used only for question selection (BALD acquisition). Videos are not
 difficulty-graded like questions, so adding difficulty-awareness to
 video recommendations would add complexity without clear benefit. TLP
 is sufficient for video ranking.**
+
+**CL-049 — Domain question aggregation is on-the-fly, not in files** [RESOLVED]
+
+**Resolution: Each domain's JSON bundle file (`data/domains/{id}.json`)
+contains only that domain's own 50 unique questions. At runtime, when a
+domain is selected, the app aggregates questions from all descendant
+domains on-the-fly: a parent domain (e.g., "physics") serves its own
+50 questions plus all questions from its child sub-domains (e.g.,
+"astrophysics", "quantum-physics"). The "all" domain serves its own 50
+interdisciplinary questions plus all questions from every parent domain
+and sub-domain. This means the effective question pool for a selected
+domain is: own questions + all descendant questions. The domain bundle
+files remain small (50 questions each) and descendant bundles are
+lazy-loaded as needed. The GP estimator, video recommendations (TLP),
+and BALD question selection all operate over the full aggregated pool.**
 
 ### Low — Document but Do Not Block
 

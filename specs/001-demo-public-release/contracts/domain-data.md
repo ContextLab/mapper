@@ -90,12 +90,14 @@
 ```
 
 **Invariants**:
-- `questions.length === 50`
+- `questions.length === 50` (per-file; the domain's own unique questions)
 - Every `question.id` appears in `domain.question_ids`
 - Every `question.x/y` falls within `domain.region`
 - Every `question.z` is a valid PCA-3 coordinate (for 3D transitions)
 - `labels` covers the full grid: `labels.length === grid_size * grid_size`
   (cells with no articles may have `label: "Unexplored"`)
+- At runtime, domains aggregate descendant questions on-the-fly (CL-049):
+  the effective question pool is own 50 + all descendant domain questions
 
 ## Progress Events
 

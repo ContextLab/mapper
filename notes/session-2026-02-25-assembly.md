@@ -66,9 +66,15 @@ Commit: 001d400
 - **"all" domain complete**: 1/1 (50 interdisciplinary questions)
 - **Total questions**: 2,550 (42 × 50 + 8 × 50 + 1 × 50)
 
+## Design Decision: On-the-Fly Question Aggregation (CL-049)
+- Each domain's JSON file contains only its own 50 unique questions
+- At runtime, the app aggregates questions from all descendant domains on-the-fly:
+  - Sub-domain (e.g., "astrophysics"): serves its own 50 questions
+  - Parent domain (e.g., "physics"): own 50 + all child sub-domain questions
+  - "all" domain: own 50 interdisciplinary + all parent + all sub-domain questions
+- This keeps files small (50 questions each) while giving rich question pools at runtime
+- Updated in: 002 spec (CL-049), 001 data-model.md, 001 domain-data contract
+
 ## Remaining Work
 - Embedding pipeline: new questions need x/y/z coordinates via
   `scripts/regenerate_question_pipeline.py` (embed → UMAP → flatten → bounding boxes → export)
-- The "all" domain currently has only its own 50 interdisciplinary questions;
-  it does NOT aggregate child-domain questions (the old version did). Decide
-  whether to also include sampled child questions in all.json.

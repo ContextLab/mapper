@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "What is the basic unit of organization within spoken language that typically consists of a vowel nucleus with optional surrounding consonants, and serves as the building block for the rhythm of speech?",
+    "correct_answer": "A syllable",
+    "distractors": [
+      "A morpheme",
+      "A phoneme",
+      "A grapheme"
+    ],
+    "difficulty": 1,
+    "source_article": "Syllable",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["syllable"]
+  },
+  {
+    "question_text": "What term describes a group of languages that are related to each other through descent from a common ancestral language, known as a proto-language?",
+    "correct_answer": "A language family",
+    "distractors": [
+      "A linguistic area (Sprachbund)",
+      "A dialect continuum",
+      "A language isolate"
+    ],
+    "difficulty": 1,
+    "source_article": "Language family",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["language family"]
+  },
+  {
+    "question_text": "What term refers to the first language that a person learns from birth or within the critical period, also called a native language or mother tongue?",
+    "correct_answer": "A first language (L1)",
+    "distractors": [
+      "A heritage language",
+      "A lingua franca",
+      "A second language (L2)"
+    ],
+    "difficulty": 1,
+    "source_article": "First language",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["mother tongue"]
+  },
+  {
+    "question_text": "In linguistics, what is the smallest unit of sound in a language that can distinguish one word from another, such as the difference between /p/ and /b/ in 'pat' versus 'bat'?",
+    "correct_answer": "A phoneme",
+    "distractors": [
+      "A morpheme",
+      "An allophone",
+      "A syllable"
+    ],
+    "difficulty": 2,
+    "source_article": "Phoneme",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["phoneme"]
+  },
+  {
+    "question_text": "Which subfield of linguistics studies the internal structure of words, including how morphemes such as prefixes, roots, and suffixes combine to form complex words?",
+    "correct_answer": "Morphology",
+    "distractors": [
+      "Syntax",
+      "Phonology",
+      "Semantics"
+    ],
+    "difficulty": 2,
+    "source_article": "Morphology (linguistics)",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["morphology"]
+  },
+  {
+    "question_text": "Which subfield of linguistics examines how language varies and changes across different social groups, regions, and cultural contexts, combining dialectology with the social sciences?",
+    "correct_answer": "Sociolinguistics",
+    "distractors": [
+      "Pragmatics",
+      "Anthropological linguistics",
+      "Psycholinguistics"
+    ],
+    "difficulty": 2,
+    "source_article": "Sociolinguistics",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["sociolinguistics"]
+  },
+  {
+    "question_text": "Which subfield of linguistics, also known as diachronic linguistics, studies how and why languages change over time, including sound shifts, grammatical changes, and language divergence?",
+    "correct_answer": "Historical linguistics",
+    "distractors": [
+      "Comparative philology",
+      "Sociolinguistics",
+      "Descriptive linguistics"
+    ],
+    "difficulty": 2,
+    "source_article": "Historical linguistics",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["historical linguistics"]
+  },
+  {
+    "question_text": "What standardized system of phonetic notation, created by the International Phonetic Association in the late 19th century, is used by linguists worldwide to transcribe the sounds of any spoken language?",
+    "correct_answer": "The International Phonetic Alphabet (IPA)",
+    "distractors": [
+      "The NATO phonetic alphabet",
+      "The X-SAMPA encoding system",
+      "The Americanist phonetic notation"
+    ],
+    "difficulty": 2,
+    "source_article": "International Phonetic Alphabet",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["International Phonetic Alphabet"]
+  },
+  {
+    "question_text": "What branch of linguistics studies the origin and historical development of words, tracing how their forms and meanings have changed over time across languages?",
+    "correct_answer": "Etymology",
+    "distractors": [
+      "Lexicography",
+      "Philology",
+      "Semantics"
+    ],
+    "difficulty": 2,
+    "source_article": "Etymology",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["etymology"]
+  },
+  {
+    "question_text": "What term describes the process by which humans, particularly children, gain the ability to perceive, produce, and use language to communicate, typically progressing from babbling to full sentences in the first few years of life?",
+    "correct_answer": "Language acquisition",
+    "distractors": [
+      "Language socialization",
+      "Linguistic competence",
+      "Language revitalization"
+    ],
+    "difficulty": 2,
+    "source_article": "Language acquisition",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["language acquisition"]
+  }
+]

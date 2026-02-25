@@ -1,0 +1,172 @@
+[
+  {
+    "question_text": "What term describes the structured system of communication, consisting of grammar and vocabulary, that humans use to convey meaning through spoken, signed, or written forms?",
+    "correct_answer": "Language",
+    "distractors": [
+      "Discourse",
+      "Semiotics",
+      "Rhetoric"
+    ],
+    "difficulty": 1,
+    "source_article": "Language",
+    "domain_ids": [
+      "linguistics"
+    ],
+    "concepts_tested": [
+      "language"
+    ]
+  },
+  {
+    "question_text": "What type of writing system uses a standard set of symbols called letters, where each letter largely corresponds to an individual speech sound (phoneme) in a spoken language?",
+    "correct_answer": "An alphabet",
+    "distractors": [
+      "A syllabary",
+      "A logography",
+      "An ideography"
+    ],
+    "difficulty": 1,
+    "source_article": "Alphabet",
+    "domain_ids": [
+      "linguistics"
+    ],
+    "concepts_tested": [
+      "alphabet"
+    ]
+  },
+  {
+    "question_text": "What class of speech sounds is produced with an open vocal tract, without any stricture, and typically forms the nucleus or center of a syllable?",
+    "correct_answer": "Vowels",
+    "distractors": [
+      "Fricatives",
+      "Consonants",
+      "Diphthongs"
+    ],
+    "difficulty": 1,
+    "source_article": "Vowel",
+    "domain_ids": [
+      "linguistics"
+    ],
+    "concepts_tested": [
+      "vowel"
+    ]
+  },
+  {
+    "question_text": "What class of speech sounds is articulated with complete or partial closure of the vocal tract, as opposed to the open configuration used for vowels?",
+    "correct_answer": "Consonants",
+    "distractors": [
+      "Semivowels",
+      "Prosodics",
+      "Phonemes"
+    ],
+    "difficulty": 1,
+    "source_article": "Consonant",
+    "domain_ids": [
+      "linguistics"
+    ],
+    "concepts_tested": [
+      "consonant"
+    ]
+  },
+  {
+    "question_text": "What term describes a variety of a language distinguished by differences in phonology, morphology, syntax, and vocabulary, spoken by a particular regional or social group?",
+    "correct_answer": "A dialect",
+    "distractors": [
+      "A register",
+      "A pidgin",
+      "An idiolect"
+    ],
+    "difficulty": 1,
+    "source_article": "Dialect",
+    "domain_ids": [
+      "linguistics"
+    ],
+    "concepts_tested": [
+      "dialect"
+    ]
+  },
+  {
+    "question_text": "In sociolinguistics, what term refers to a distinctive way of pronouncing a language that is associated with a particular country, region, social class, or ethnic group?",
+    "correct_answer": "An accent",
+    "distractors": [
+      "A dialect",
+      "A register",
+      "A sociolect"
+    ],
+    "difficulty": 1,
+    "source_article": "Accent (sociolinguistics)",
+    "domain_ids": [
+      "linguistics"
+    ],
+    "concepts_tested": [
+      "accent"
+    ]
+  },
+  {
+    "question_text": "What is the process of communicating the meaning of a source-language text by producing an equivalent text in a target language, as distinct from oral interpreting?",
+    "correct_answer": "Translation",
+    "distractors": [
+      "Interpretation",
+      "Transliteration",
+      "Localization"
+    ],
+    "difficulty": 1,
+    "source_article": "Translation",
+    "domain_ids": [
+      "linguistics"
+    ],
+    "concepts_tested": [
+      "translation"
+    ]
+  },
+  {
+    "question_text": "What type of language uses the visual-manual modality, including manual articulations and non-manual markers, and is a full natural language with its own grammar and lexicon?",
+    "correct_answer": "Sign language",
+    "distractors": [
+      "Body language",
+      "Gestural code",
+      "Pantomime"
+    ],
+    "difficulty": 1,
+    "source_article": "Sign language",
+    "domain_ids": [
+      "linguistics"
+    ],
+    "concepts_tested": [
+      "sign language"
+    ]
+  },
+  {
+    "question_text": "What is the general term for any conventional method of visually representing a language using symbols, encompassing alphabets, syllabaries, logographies, and abjads?",
+    "correct_answer": "A writing system",
+    "distractors": [
+      "An orthography",
+      "A script family",
+      "A notation system"
+    ],
+    "difficulty": 1,
+    "source_article": "Writing system",
+    "domain_ids": [
+      "linguistics"
+    ],
+    "concepts_tested": [
+      "writing system"
+    ]
+  },
+  {
+    "question_text": "What term describes the ability to use two or more languages, a condition that research suggests characterizes more than half of the world's population?",
+    "correct_answer": "Bilingualism or multilingualism",
+    "distractors": [
+      "Diglossia or code-switching",
+      "Polyglotism or hyperpolyglotism",
+      "Lingua franca competence"
+    ],
+    "difficulty": 1,
+    "source_article": "Multilingualism",
+    "domain_ids": [
+      "linguistics"
+    ],
+    "concepts_tested": [
+      "bilingualism"
+    ]
+  }
+]

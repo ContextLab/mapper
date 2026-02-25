@@ -1,0 +1,172 @@
+[
+  {
+    "question_text": "What term describes the internal state that propels individuals to engage in goal-directed behavior, often divided into intrinsic and extrinsic types?",
+    "correct_answer": "Motivation",
+    "distractors": [
+      "Cognition",
+      "Temperament",
+      "Perception"
+    ],
+    "difficulty": 1,
+    "source_article": "Motivation",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "motivation"
+    ]
+  },
+  {
+    "question_text": "Which branch of psychology examines enduring individual differences in characteristic patterns of thinking, feeling, and behaving?",
+    "correct_answer": "Personality psychology",
+    "distractors": [
+      "Developmental psychology",
+      "Social psychology",
+      "Cognitive psychology"
+    ],
+    "difficulty": 1,
+    "source_article": "Personality psychology",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "personality"
+    ]
+  },
+  {
+    "question_text": "In Pavlov's experiments, dogs learned to salivate at the sound of a bell after it was repeatedly paired with food. What is this learning process called?",
+    "correct_answer": "Classical conditioning",
+    "distractors": [
+      "Operant conditioning",
+      "Observational learning",
+      "Habituation"
+    ],
+    "difficulty": 1,
+    "source_article": "Classical conditioning",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "classical conditioning"
+    ]
+  },
+  {
+    "question_text": "Which type of learning, studied extensively by B.F. Skinner, modifies voluntary behavior through consequences such as reinforcement and punishment?",
+    "correct_answer": "Operant conditioning",
+    "distractors": [
+      "Classical conditioning",
+      "Latent learning",
+      "Insight learning"
+    ],
+    "difficulty": 1,
+    "source_article": "Operant conditioning",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "operant conditioning"
+    ]
+  },
+  {
+    "question_text": "What are the three major anatomical divisions of the human brain that together serve as the central organ of the nervous system?",
+    "correct_answer": "The cerebrum, the brainstem, and the cerebellum",
+    "distractors": [
+      "The thalamus, the hippocampus, and the amygdala",
+      "The frontal lobe, the parietal lobe, and the temporal lobe",
+      "The hypothalamus, the medulla, and the spinal cord"
+    ],
+    "difficulty": 1,
+    "source_article": "Human brain",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "the brain"
+    ]
+  },
+  {
+    "question_text": "What is the primary cell of the nervous system that transmits electrical signals called action potentials and communicates with other cells via synapses?",
+    "correct_answer": "A neuron",
+    "distractors": [
+      "A glial cell",
+      "An astrocyte",
+      "A Schwann cell"
+    ],
+    "difficulty": 1,
+    "source_article": "Neuron",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "neuron"
+    ]
+  },
+  {
+    "question_text": "What psychological process involves sensory receptors detecting physical stimuli from the environment and converting them into neural signals through transduction?",
+    "correct_answer": "Sensation",
+    "distractors": [
+      "Perception",
+      "Attention",
+      "Consciousness"
+    ],
+    "difficulty": 1,
+    "source_article": "Sensation (psychology)",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "sensation"
+    ]
+  },
+  {
+    "question_text": "What recurring biological state is characterized by reduced consciousness, decreased muscle activity, and alternating cycles of REM and NREM stages?",
+    "correct_answer": "Sleep",
+    "distractors": [
+      "Meditation",
+      "Hypnosis",
+      "Coma"
+    ],
+    "difficulty": 1,
+    "source_article": "Sleep",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "sleep"
+    ]
+  },
+  {
+    "question_text": "In operant conditioning, what occurs when a desirable stimulus is presented after a behavior, increasing the likelihood that the behavior will be repeated?",
+    "correct_answer": "Positive reinforcement",
+    "distractors": [
+      "Negative reinforcement",
+      "Positive punishment",
+      "Negative punishment"
+    ],
+    "difficulty": 1,
+    "source_article": "Reinforcement",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "positive reinforcement"
+    ]
+  },
+  {
+    "question_text": "In operant conditioning, what is the general term for any consequence that reduces the likelihood of a behavior occurring again in the future?",
+    "correct_answer": "Punishment",
+    "distractors": [
+      "Extinction",
+      "Habituation",
+      "Desensitization"
+    ],
+    "difficulty": 1,
+    "source_article": "Punishment (psychology)",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "punishment"
+    ]
+  }
+]

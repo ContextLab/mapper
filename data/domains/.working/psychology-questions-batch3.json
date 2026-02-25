@@ -1,0 +1,172 @@
+[
+  {
+    "question_text": "Which branch of psychology applies scientific knowledge and methods to assist in answering legal questions, including evaluating competency to stand trial and assessing eyewitness testimony?",
+    "correct_answer": "Forensic psychology",
+    "distractors": [
+      "Clinical psychology",
+      "Criminal psychology",
+      "Social psychology"
+    ],
+    "difficulty": 2,
+    "source_article": "Forensic psychology",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "forensic psychology"
+    ]
+  },
+  {
+    "question_text": "Which field of psychology, founded by Gustav Fechner in 1860, quantitatively investigates the relationship between physical stimuli and the sensations and perceptions they produce?",
+    "correct_answer": "Psychophysics",
+    "distractors": [
+      "Neuropsychology",
+      "Cognitive psychology",
+      "Sensory neuroscience"
+    ],
+    "difficulty": 2,
+    "source_article": "Psychophysics",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "psychophysics"
+    ]
+  },
+  {
+    "question_text": "What is the name of the approximately 24-hour biological cycle, regulated by the suprachiasmatic nucleus in the hypothalamus, that governs sleep-wake patterns and hormone release?",
+    "correct_answer": "The circadian rhythm",
+    "distractors": [
+      "The ultradian rhythm",
+      "The infradian rhythm",
+      "The diurnal cycle"
+    ],
+    "difficulty": 2,
+    "source_article": "Circadian rhythm",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "circadian rhythm"
+    ]
+  },
+  {
+    "question_text": "Albert Bandura's 1961 Bobo doll experiment demonstrated that children learn aggressive behaviors by watching others. What is this type of learning called?",
+    "correct_answer": "Observational learning",
+    "distractors": [
+      "Classical conditioning",
+      "Operant conditioning",
+      "Latent learning"
+    ],
+    "difficulty": 2,
+    "source_article": "Observational learning",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "observational learning"
+    ]
+  },
+  {
+    "question_text": "In psychological research, which type of study design investigates relationships between variables without the researcher manipulating any of them, meaning it cannot establish causation?",
+    "correct_answer": "A correlational research design",
+    "distractors": [
+      "An experimental research design",
+      "A quasi-experimental research design",
+      "A longitudinal research design"
+    ],
+    "difficulty": 2,
+    "source_article": "Research methods in psychology",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "research methods in psychology"
+    ]
+  },
+  {
+    "question_text": "Who established the first formal laboratory dedicated to psychological research in 1879 at the University of Leipzig, marking the founding of psychology as an independent experimental science?",
+    "correct_answer": "Wilhelm Wundt",
+    "distractors": [
+      "William James",
+      "Sigmund Freud",
+      "Hermann Ebbinghaus"
+    ],
+    "difficulty": 2,
+    "source_article": "History of psychology",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "history of psychology"
+    ]
+  },
+  {
+    "question_text": "In evolutionary psychology, what term refers to the set of ancestral environmental conditions, primarily during the Pleistocene era, that shaped human psychological adaptations through natural selection?",
+    "correct_answer": "The Environment of Evolutionary Adaptedness (EEA)",
+    "distractors": [
+      "The Ancestral Selection Pressure Zone (ASPZ)",
+      "The Adaptive Fitness Landscape (AFL)",
+      "The Phylogenetic Development Context (PDC)"
+    ],
+    "difficulty": 3,
+    "source_article": "Evolutionary psychology",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "evolutionary psychology"
+    ]
+  },
+  {
+    "question_text": "In psychometrics, what property indicates that a test measures the construct it is intended to measure, as demonstrated by its relationship to measures of other theoretically related constructs?",
+    "correct_answer": "Construct validity",
+    "distractors": [
+      "Internal consistency",
+      "Test-retest reliability",
+      "Content specificity"
+    ],
+    "difficulty": 3,
+    "source_article": "Psychometrics",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "psychometrics"
+    ]
+  },
+  {
+    "question_text": "Martin Seligman's PERMA model identifies five key elements of well-being. Which of the following correctly lists all five elements of this positive psychology framework?",
+    "correct_answer": "Positive emotions, Engagement, Relationships, Meaning, and Accomplishment",
+    "distractors": [
+      "Pleasure, Empathy, Resilience, Mindfulness, and Achievement",
+      "Positivity, Endurance, Reflection, Mastery, and Autonomy",
+      "Purpose, Enjoyment, Relatedness, Motivation, and Acceptance"
+    ],
+    "difficulty": 3,
+    "source_article": "Positive psychology",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "positive psychology"
+    ]
+  },
+  {
+    "question_text": "In sport psychology, which set of core techniques does Psychological Skills Training (PST) typically encompass to enhance athletic performance?",
+    "correct_answer": "Self-talk, mental imagery, goal setting, and arousal regulation",
+    "distractors": [
+      "Diet planning, sleep optimization, flexibility training, and meditation",
+      "Team communication, leadership coaching, conflict resolution, and journaling",
+      "Biofeedback therapy, hypnosis, progressive relaxation, and psychoanalysis"
+    ],
+    "difficulty": 3,
+    "source_article": "Sport psychology",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "sport psychology"
+    ]
+  }
+]

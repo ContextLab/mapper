@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "What is the primary purpose of ethnoarchaeology as a subdiscipline of archaeology?",
+    "correct_answer": "Studying living peoples' material culture to develop analogies for interpreting the archaeological record",
+    "distractors": [
+      "Excavating sites associated with contemporary indigenous communities to formally document their cultural heritage",
+      "Classifying archaeological artifacts according to the ethnic identity of their presumed ancient makers",
+      "Preserving endangered cultural traditions by systematically recording oral histories alongside material remains"
+    ],
+    "difficulty": 2,
+    "source_article": "Ethnoarchaeology",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["ethnoarchaeology"]
+  },
+  {
+    "question_text": "What distinguishes biblical archaeology from general Near Eastern archaeology as an academic field?",
+    "correct_answer": "It specifically focuses on archaeological evidence relating to narratives and settings described in the Bible",
+    "distractors": [
+      "It exclusively excavates sites located within the modern political borders of Israel and Palestine",
+      "It relies on biblical texts as primary evidence rather than on material remains from excavations",
+      "It uses theological interpretation rather than scientific methods to analyze and date discovered artifacts"
+    ],
+    "difficulty": 2,
+    "source_article": "Biblical archaeology",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["biblical archaeology"]
+  },
+  {
+    "question_text": "What type of evidence do aerial archaeologists primarily detect through aerial photography that is often invisible from ground level?",
+    "correct_answer": "Crop marks and soil marks that reveal buried features like ditches, walls, and foundations",
+    "distractors": [
+      "Chemical residues in the atmosphere indicating the presence of ancient metalworking or smelting activities",
+      "Sound wave reflections from underground chambers detected by airborne acoustic sensing instruments",
+      "Surface temperature variations caused by geothermal activity near volcanic or tectonically active archaeological sites"
+    ],
+    "difficulty": 2,
+    "source_article": "Aerial archaeology",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["aerial archaeology"]
+  },
+  {
+    "question_text": "The Elgin Marbles held in the British Museum were removed from which ancient structure, and by whose agents?",
+    "correct_answer": "From the Parthenon on the Athenian Acropolis, removed by agents of Thomas Bruce, 7th Earl of Elgin",
+    "distractors": [
+      "From the Temple of Zeus at Olympia, removed by agents of Lord Byron during the Greek War of Independence",
+      "From the Mausoleum at Halicarnassus, removed by agents of Sir Charles Newton of the British Museum",
+      "From the Library of Celsus at Ephesus, removed by agents of Sir Arthur Evans during Ottoman-era excavations"
+    ],
+    "difficulty": 2,
+    "source_article": "Elgin Marbles",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["Elgin Marbles"]
+  },
+  {
+    "question_text": "In archaeology, what does a typology classify, and what is its primary analytical purpose?",
+    "correct_answer": "It classifies artifacts by physical characteristics to establish cultural relationships and chronological sequences",
+    "distractors": [
+      "It classifies excavation sites by geographic location to determine the extent of ancient trade route networks",
+      "It classifies skeletal remains by biological traits to reconstruct ancient population movements and migrations",
+      "It classifies soil layers by their mineral composition to identify the geological formation history of a site"
+    ],
+    "difficulty": 2,
+    "source_article": "Typology (archaeology)",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["typology"]
+  },
+  {
+    "question_text": "In archaeological dating, what does the method of seriation accomplish as a relative chronological technique?",
+    "correct_answer": "It arranges assemblages or artifact types in chronological order based on changes in their frequency or style",
+    "distractors": [
+      "It determines the absolute age of organic materials by measuring the radioactive decay of carbon-14 isotopes",
+      "It assigns calendar dates to pottery by matching chemical composition signatures to documented kiln production records",
+      "It establishes site chronology by correlating sediment layers with tephra deposits from known volcanic eruptions"
+    ],
+    "difficulty": 2,
+    "source_article": "Seriation (archaeology)",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["seriation"]
+  },
+  {
+    "question_text": "What epistemological stance defines processual (New) archaeology, as championed by Lewis Binford in the 1960s?",
+    "correct_answer": "A scientific, hypothesis-testing approach seeking universal laws of human cultural behavior and adaptation",
+    "distractors": [
+      "An interpretive approach emphasizing the symbolic meanings that artifacts held for their original creators",
+      "A Marxist approach focusing on class struggle and economic exploitation as primary drivers of cultural change",
+      "A particularist approach documenting unique cultural histories without seeking cross-cultural generalization"
+    ],
+    "difficulty": 3,
+    "source_article": "Processual archaeology",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["processual archaeology"]
+  },
+  {
+    "question_text": "How does post-processual archaeology, associated with Ian Hodder, fundamentally challenge processual archaeology's epistemological claims?",
+    "correct_answer": "It argues archaeological interpretation is inherently subjective, shaped by the interpreter's social and political context",
+    "distractors": [
+      "It claims archaeological evidence is too fragmentary to support any reliable conclusions about past human societies",
+      "It asserts that only ethnographic analogy from living cultures can provide valid knowledge about the prehistoric past",
+      "It maintains that archaeological data must be analyzed through purely quantitative statistical methods without interpretation"
+    ],
+    "difficulty": 3,
+    "source_article": "Post-processual archaeology",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["post-processual archaeology"]
+  },
+  {
+    "question_text": "What distinguishes maritime archaeology from the narrower specialty of nautical archaeology in scope and subject matter?",
+    "correct_answer": "Maritime archaeology studies all human interaction with seas, lakes, and rivers, while nautical archaeology focuses on ship construction",
+    "distractors": [
+      "Maritime archaeology is limited to ancient Mediterranean shipwrecks, while nautical archaeology covers all global waterways",
+      "Maritime archaeology uses only remote sensing technology, while nautical archaeology requires physical diver-led excavation",
+      "Maritime archaeology studies coastal trade routes exclusively, while nautical archaeology examines inland riverine transportation"
+    ],
+    "difficulty": 3,
+    "source_article": "Maritime archaeology",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["maritime archaeology"]
+  },
+  {
+    "question_text": "What analytical perspective defines landscape archaeology as distinct from traditional site-based excavation approaches?",
+    "correct_answer": "It examines how past peoples shaped and interacted with entire environments rather than focusing on individual sites",
+    "distractors": [
+      "It exclusively uses satellite imagery and GIS technology rather than conducting any physical excavation of remains",
+      "It reconstructs ancient ecosystems through botanical and zoological analysis rather than studying human-made artifacts",
+      "It focuses on monumental architecture and urban planning rather than documenting domestic or rural settlement patterns"
+    ],
+    "difficulty": 3,
+    "source_article": "Landscape archaeology",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["landscape archaeology"]
+  }
+]

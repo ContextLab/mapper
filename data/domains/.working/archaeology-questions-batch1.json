@@ -1,0 +1,172 @@
+[
+  {
+    "question_text": "Which ancient Roman city near Naples was buried under volcanic ash and pumice during the eruption of Mount Vesuvius in 79 AD?",
+    "correct_answer": "Pompeii",
+    "distractors": [
+      "Carthage",
+      "Ephesus",
+      "Pergamon"
+    ],
+    "difficulty": 1,
+    "source_article": "Pompeii",
+    "domain_ids": [
+      "archaeology"
+    ],
+    "concepts_tested": [
+      "Pompeii"
+    ]
+  },
+  {
+    "question_text": "Which inscribed stele, featuring the same decree in hieroglyphic, Demotic, and Ancient Greek scripts, was the key to deciphering Egyptian hieroglyphs?",
+    "correct_answer": "The Rosetta Stone",
+    "distractors": [
+      "The Narmer Palette",
+      "The Behistun Inscription",
+      "The Moabite Stone"
+    ],
+    "difficulty": 1,
+    "source_article": "Rosetta Stone",
+    "domain_ids": [
+      "archaeology"
+    ],
+    "concepts_tested": [
+      "Rosetta Stone"
+    ]
+  },
+  {
+    "question_text": "Which pharaoh's nearly intact tomb, designated KV62, was discovered by Howard Carter in the Valley of the Kings in November 1922?",
+    "correct_answer": "Tutankhamun's tomb",
+    "distractors": [
+      "Ramesses II's tomb",
+      "Khufu's burial chamber",
+      "Hatshepsut's mortuary temple"
+    ],
+    "difficulty": 1,
+    "source_article": "KV62",
+    "domain_ids": [
+      "archaeology"
+    ],
+    "concepts_tested": [
+      "Tutankhamun's tomb"
+    ]
+  },
+  {
+    "question_text": "Which legendary Bronze Age city, located at the site of Hisarlik in present-day Turkey, was famously excavated by Heinrich Schliemann beginning in 1871?",
+    "correct_answer": "Troy",
+    "distractors": [
+      "Mycenae",
+      "Knossos",
+      "Babylon"
+    ],
+    "difficulty": 1,
+    "source_article": "Troy",
+    "domain_ids": [
+      "archaeology"
+    ],
+    "concepts_tested": [
+      "Troy"
+    ]
+  },
+  {
+    "question_text": "Which collection of ancient Jewish manuscripts, dating from the 3rd century BCE to the 1st century CE, was discovered in caves near Qumran between 1946 and 1956?",
+    "correct_answer": "The Dead Sea Scrolls",
+    "distractors": [
+      "The Nag Hammadi Library",
+      "The Cairo Geniza fragments",
+      "The Oxyrhynchus Papyri"
+    ],
+    "difficulty": 1,
+    "source_article": "Dead Sea Scrolls",
+    "domain_ids": [
+      "archaeology"
+    ],
+    "concepts_tested": [
+      "Dead Sea Scrolls"
+    ]
+  },
+  {
+    "question_text": "Which 15th-century Inca citadel, situated on a mountain ridge at 2,430 meters in southern Peru, was brought to international attention by Hiram Bingham in 1911?",
+    "correct_answer": "Machu Picchu",
+    "distractors": [
+      "Chichen Itza",
+      "Tiwanaku",
+      "Caral-Supe"
+    ],
+    "difficulty": 1,
+    "source_article": "Machu Picchu",
+    "domain_ids": [
+      "archaeology"
+    ],
+    "concepts_tested": [
+      "Machu Picchu"
+    ]
+  },
+  {
+    "question_text": "Which collection of thousands of life-size clay soldiers was buried around 210 BCE to protect China's first emperor, Qin Shi Huang, in his afterlife?",
+    "correct_answer": "The Terracotta Army",
+    "distractors": [
+      "The Sanxingdui bronzes",
+      "The Longmen Grottoes statues",
+      "The Dunhuang cave sculptures"
+    ],
+    "difficulty": 1,
+    "source_article": "Terracotta Army",
+    "domain_ids": [
+      "archaeology"
+    ],
+    "concepts_tested": [
+      "terracotta army"
+    ]
+  },
+  {
+    "question_text": "What was the formal writing system of ancient Egypt that combined ideographic, logographic, syllabic, and alphabetic elements with over 1,000 distinct characters?",
+    "correct_answer": "Egyptian hieroglyphs",
+    "distractors": [
+      "Sumerian cuneiform",
+      "Linear B script",
+      "Phoenician alphabet"
+    ],
+    "difficulty": 1,
+    "source_article": "Egyptian hieroglyphs",
+    "domain_ids": [
+      "archaeology"
+    ],
+    "concepts_tested": [
+      "hieroglyphics"
+    ]
+  },
+  {
+    "question_text": "Which elliptical amphitheatre in Rome, the largest ever built in the ancient world, was constructed under the Flavian emperors Vespasian and Titus between 72 and 80 AD?",
+    "correct_answer": "The Colosseum",
+    "distractors": [
+      "The Circus Maximus",
+      "The Pantheon",
+      "The Theatre of Marcellus"
+    ],
+    "difficulty": 1,
+    "source_article": "Colosseum",
+    "domain_ids": [
+      "archaeology"
+    ],
+    "concepts_tested": [
+      "Colosseum"
+    ]
+  },
+  {
+    "question_text": "Which temple on the Athenian Acropolis, built between 447 and 438 BCE under Pericles, was dedicated to the goddess Athena and is considered an enduring symbol of ancient Greece?",
+    "correct_answer": "The Parthenon",
+    "distractors": [
+      "The Erechtheion",
+      "The Temple of Olympian Zeus",
+      "The Temple of Hephaestus"
+    ],
+    "difficulty": 1,
+    "source_article": "Parthenon",
+    "domain_ids": [
+      "archaeology"
+    ],
+    "concepts_tested": [
+      "Parthenon"
+    ]
+  }
+]

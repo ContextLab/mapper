@@ -12,7 +12,958 @@
     },
     "grid_size": 70
   },
-  "questions": [],
+  "questions": [
+    {
+      "id": "7a88d1d55262fe8c",
+      "question_text": "What is the lifelong process through which individuals internalize the norms, values, and customs of their society, beginning in childhood with family and continuing through school and peers?",
+      "options": {
+        "A": "Indoctrination",
+        "B": "Acculturation",
+        "C": "Socialization",
+        "D": "Assimilation"
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Socialization",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "socialization"
+      ]
+    },
+    {
+      "id": "02ddd9fe96c2acc1",
+      "question_text": "In sociology, what term describes the shared beliefs, values, norms, arts, customs, and material objects that characterize a society or group, encompassing both tangible artifacts and intangible ideas?",
+      "options": {
+        "A": "Ideology",
+        "B": "Heritage",
+        "C": "Civilization",
+        "D": "Culture"
+      },
+      "correct_answer": "D",
+      "difficulty": 1,
+      "source_article": "Culture",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "culture"
+      ]
+    },
+    {
+      "id": "790adfb92b46cede",
+      "question_text": "What concept refers to a society's hierarchical ranking of people into layers based on factors such as wealth, income, education, race, and power, as introduced by Pitirim Sorokin?",
+      "options": {
+        "A": "Economic inequality",
+        "B": "Social stratification",
+        "C": "Class consciousness",
+        "D": "Social differentiation"
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Social stratification",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "social stratification"
+      ]
+    },
+    {
+      "id": "ef114585a21d4f0e",
+      "question_text": "What term describes the shared, often unwritten rules and expectations that govern acceptable behavior within a group, ranging from informal folkways to strict mores and taboos?",
+      "options": {
+        "A": "Social sanctions",
+        "B": "Social norms",
+        "C": "Social values",
+        "D": "Social customs"
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Social norm",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "social norm"
+      ]
+    },
+    {
+      "id": "8b886702d167ad1d",
+      "question_text": "Which primary social institution, defined by ties of kinship or affinity, serves as the earliest agent of socialization and provides the basic structure for child-rearing across all known cultures?",
+      "options": {
+        "A": "The peer group",
+        "B": "The family",
+        "C": "The community",
+        "D": "The household"
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Family",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "family"
+      ]
+    },
+    {
+      "id": "e05780b22b3ac2ce",
+      "question_text": "In sociology, what are the two broad categories used to classify people based on perceived physical characteristics and shared cultural heritage, both of which are widely considered social constructions rather than fixed biological realities?",
+      "options": {
+        "A": "Heritage and lineage",
+        "B": "Race and ethnicity",
+        "C": "Nationality and citizenship",
+        "D": "Caste and class"
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Race and ethnicity in the United States",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "race and ethnicity"
+      ]
+    },
+    {
+      "id": "83f4b64ed311352f",
+      "question_text": "What sociological concept refers to the socially constructed roles, behaviors, and attributes that a society considers appropriate for men and women, as distinct from biological sex?",
+      "options": {
+        "A": "Femininity",
+        "B": "Sexuality",
+        "C": "Gender",
+        "D": "Identity"
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Gender",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "gender"
+      ]
+    },
+    {
+      "id": "415ad52990518fb4",
+      "question_text": "What sociological term describes actions or behaviors that violate social norms, which can be either formal violations like crime or informal violations like breaking customs?",
+      "options": {
+        "A": "Nonconformity",
+        "B": "Deviance",
+        "C": "Transgression",
+        "D": "Delinquency"
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Deviance (sociology)",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "deviance"
+      ]
+    },
+    {
+      "id": "1639240202c91f44",
+      "question_text": "Which subfield of sociology studies the beliefs, practices, and organizational forms of religion, including Durkheim's sacred-profane distinction and Weber's analysis of Protestantism and capitalism?",
+      "options": {
+        "A": "Sociology of religion",
+        "B": "Anthropology of religion",
+        "C": "Theology of society",
+        "D": "Philosophy of religion"
+      },
+      "correct_answer": "A",
+      "difficulty": 1,
+      "source_article": "Sociology of religion",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "religion and society"
+      ]
+    },
+    {
+      "id": "9d724be4d715822e",
+      "question_text": "What are the two main statistical measures of poverty that compare income against basic survival needs and against the prevailing living standards of others in the same society?",
+      "options": {
+        "A": "Primary poverty and secondary poverty",
+        "B": "Individual poverty and systemic poverty",
+        "C": "Absolute poverty and relative poverty",
+        "D": "Structural poverty and cyclical poverty"
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Poverty",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "poverty"
+      ]
+    },
+    {
+      "id": "870aa744ef1386f8",
+      "question_text": "What subfield of sociology studies how public institutions and individual experiences shape educational outcomes, focusing primarily on modern industrial schooling systems?",
+      "options": {
+        "A": "Comparative education studies",
+        "B": "The philosophy of education",
+        "C": "The sociology of education",
+        "D": "Educational psychology"
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Sociology of education",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "education and society"
+      ]
+    },
+    {
+      "id": "170173833ffc45df",
+      "question_text": "What term describes the population shift from rural to urban areas, the decrease in rural populations, and the ways societies adapt to these changes?",
+      "options": {
+        "A": "Suburbanization",
+        "B": "Gentrification",
+        "C": "Industrialization",
+        "D": "Urbanization"
+      },
+      "correct_answer": "D",
+      "difficulty": 1,
+      "source_article": "Urbanization",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "urbanization"
+      ]
+    },
+    {
+      "id": "d0fb2cc0c679a29f",
+      "question_text": "In sociology, what concept refers to a set of expected behaviors, rights, and obligations associated with a particular social position or status?",
+      "options": {
+        "A": "A social identity",
+        "B": "A social norm",
+        "C": "A social function",
+        "D": "A social role"
+      },
+      "correct_answer": "D",
+      "difficulty": 1,
+      "source_article": "Role",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "social role"
+      ]
+    },
+    {
+      "id": "b778f94ef6601d8d",
+      "question_text": "Which concept describes enduring, humanly devised structures of rules and norms that shape social behavior, such as the family, education, religion, government, and the economy?",
+      "options": {
+        "A": "Social conventions",
+        "B": "Social movements",
+        "C": "Social institutions",
+        "D": "Social organizations"
+      },
+      "correct_answer": "C",
+      "difficulty": 2,
+      "source_article": "Social institution",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "social institution"
+      ]
+    },
+    {
+      "id": "375bb3d8cea2fc64",
+      "question_text": "What field is defined as the statistical study of human populations, examining their size, composition, and changes through the interplay of fertility, mortality, and migration?",
+      "options": {
+        "A": "Demography",
+        "B": "Epidemiology",
+        "C": "Biostatistics",
+        "D": "Human geography"
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "Demography",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "demography"
+      ]
+    },
+    {
+      "id": "70edf8140ab2143f",
+      "question_text": "What are the two main types of social mobility that distinguish movement within a single lifetime from movement across generations between parents and children?",
+      "options": {
+        "A": "Horizontal mobility and vertical mobility",
+        "B": "Absolute mobility and relative mobility",
+        "C": "Structural mobility and circulation mobility",
+        "D": "Intragenerational mobility and intergenerational mobility"
+      },
+      "correct_answer": "D",
+      "difficulty": 2,
+      "source_article": "Social mobility",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "social mobility"
+      ]
+    },
+    {
+      "id": "d2cb3f3b37756bcf",
+      "question_text": "Which major sociological perspective, rooted in the work of George Herbert Mead, focuses on how people create meaning through shared language, symbols, and face-to-face interaction?",
+      "options": {
+        "A": "Phenomenological sociology",
+        "B": "Symbolic interactionism",
+        "C": "Ethnomethodology",
+        "D": "Structural functionalism"
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Symbolic interactionism",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "symbolic interactionism"
+      ]
+    },
+    {
+      "id": "328fde6bcc771f95",
+      "question_text": "Which sociological paradigm, associated with Durkheim and Parsons, views society as a complex system whose interdependent parts work together to promote solidarity and stability?",
+      "options": {
+        "A": "Symbolic interactionism",
+        "B": "Structural functionalism",
+        "C": "Social constructionism",
+        "D": "Conflict theory"
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Structural functionalism",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "structural functionalism"
+      ]
+    },
+    {
+      "id": "11b97d02ea136ce0",
+      "question_text": "Which sociological perspective, rooted in the work of Karl Marx, argues that society is shaped by ongoing power struggles between groups competing over unequally distributed resources?",
+      "options": {
+        "A": "Social exchange theory",
+        "B": "Rational choice theory",
+        "C": "Structural functionalism",
+        "D": "Conflict theory"
+      },
+      "correct_answer": "D",
+      "difficulty": 2,
+      "source_article": "Conflict theories",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "conflict theory"
+      ]
+    },
+    {
+      "id": "7cb7f2e01a0d0701",
+      "question_text": "What are the two forms of racial segregation distinguished by whether the separation of races is mandated by law or exists through informal practices and personal choice?",
+      "options": {
+        "A": "De jure segregation and de facto segregation",
+        "B": "Institutional segregation and interpersonal segregation",
+        "C": "Structural segregation and cultural segregation",
+        "D": "Formal segregation and informal segregation"
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "Racial segregation",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "racial segregation"
+      ]
+    },
+    {
+      "id": "0eac5439694cb977",
+      "question_text": "Which sociological perspective, rooted in the work of Karl Marx, views society as an arena of inequality where groups compete for power and resources rather than cooperating for stability?",
+      "options": {
+        "A": "Conflict theory",
+        "B": "Social exchange theory",
+        "C": "Structural functionalism",
+        "D": "Symbolic interactionism"
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "Conflict theories",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "conflict theory"
+      ]
+    },
+    {
+      "id": "367319c24b0622b1",
+      "question_text": "What is the key distinction between de jure segregation and de facto segregation in the sociological study of racial inequality?",
+      "options": {
+        "A": "De jure segregation is imposed by law, while de facto segregation arises from social and economic factors without legal mandate",
+        "B": "De jure segregation is enforced by private institutions, while de facto segregation is maintained through informal cultural traditions",
+        "C": "De jure segregation applies only to housing, while de facto segregation applies to education and public spaces exclusively",
+        "D": "De jure segregation occurs in urban areas, while de facto segregation occurs in rural communities without government oversight"
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "Racial segregation",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "racial segregation"
+      ]
+    },
+    {
+      "id": "0160dc4e292b2647",
+      "question_text": "In social network analysis, what are the two fundamental components used to model the structure of social relationships?",
+      "options": {
+        "A": "Hubs, representing institutional authorities, and paths, representing communication channels",
+        "B": "Nodes, representing individual actors, and ties, representing the relationships between them",
+        "C": "Clusters, representing geographic communities, and links, representing political affiliations",
+        "D": "Groups, representing formal organizations, and bonds, representing shared economic interests"
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Social network",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "social network"
+      ]
+    },
+    {
+      "id": "c42f326159b58931",
+      "question_text": "How did sociologist Anthony Giddens define globalization in terms of its effect on social relations across distance?",
+      "options": {
+        "A": "The gradual replacement of local cultural traditions with a single dominant Western cultural framework worldwide",
+        "B": "The political unification of sovereign nations into regional governance bodies that coordinate international trade agreements",
+        "C": "The intensification of worldwide social relations linking distant localities so that local events are shaped by occurrences many miles away",
+        "D": "The standardization of national economic policies enabling corporations to operate identically across all international markets"
+      },
+      "correct_answer": "C",
+      "difficulty": 2,
+      "source_article": "Globalization",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "globalization and society"
+      ]
+    },
+    {
+      "id": "450c77b722d131b8",
+      "question_text": "In Max Weber's theory of bureaucracy, what term describes his concern that increasing rationalization traps individuals in systems based purely on efficiency and control?",
+      "options": {
+        "A": "The power elite",
+        "B": "The glass ceiling",
+        "C": "The iron cage",
+        "D": "The hidden curriculum"
+      },
+      "correct_answer": "C",
+      "difficulty": 2,
+      "source_article": "Organizational theory",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "organizational theory"
+      ]
+    },
+    {
+      "id": "ff4b2c64c772bf47",
+      "question_text": "Which sociological concept describes the process by which human conditions and behaviors not originally considered medical come to be defined, diagnosed, and treated as medical problems?",
+      "options": {
+        "A": "Hospitalization",
+        "B": "Medicalization",
+        "C": "Institutionalization",
+        "D": "Pathologization"
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Medicalization",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "medicalization"
+      ]
+    },
+    {
+      "id": "c1aaa1a93cf6a51b",
+      "question_text": "According to Emile Durkheim, what are the two defining characteristics of a social fact that distinguish it from individual psychological phenomena?",
+      "options": {
+        "A": "Social facts are inherited through biological processes and maintained by genetic predispositions",
+        "B": "Social facts are voluntary beliefs held by majorities and enforced through democratic consensus",
+        "C": "Social facts are measurable through surveys and exist only within formal institutional settings",
+        "D": "Social facts are external to the individual and exercise coercive power over individual behavior"
+      },
+      "correct_answer": "D",
+      "difficulty": 3,
+      "source_article": "Social fact",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "social fact"
+      ]
+    },
+    {
+      "id": "d714bc5bf19c94ef",
+      "question_text": "Max Weber distinguished two types of verstehen in his interpretive sociology. What are aktuelles verstehen and erklarendes verstehen?",
+      "options": {
+        "A": "Aktuelles verstehen is understanding through empathic identification, while erklarendes verstehen is understanding through experimental replication",
+        "B": "Aktuelles verstehen is direct observational understanding, while erklarendes verstehen is explanatory understanding of the motives behind actions",
+        "C": "Aktuelles verstehen is rational interpretation of economic behavior, while erklarendes verstehen is emotional interpretation of religious practices",
+        "D": "Aktuelles verstehen is statistical analysis of social trends, while erklarendes verstehen is historical comparison of cultural institutions"
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Verstehen",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "verstehen"
+      ]
+    },
+    {
+      "id": "24448af55d5ec7c0",
+      "question_text": "In Erving Goffman's dramaturgical analysis, what do the concepts of 'front stage' and 'back stage' represent in social interaction?",
+      "options": {
+        "A": "Front stage is where dominant cultural norms are publicly produced, while back stage is where subcultural resistance organizes",
+        "B": "Front stage is where formal institutional rules are enforced by authorities, while back stage is where informal exchanges occur",
+        "C": "Front stage is where public political debates and speeches occur, while back stage is where private rituals take place",
+        "D": "Front stage is where individuals perform and manage impressions for an audience, while back stage is where they drop the act"
+      },
+      "correct_answer": "D",
+      "difficulty": 3,
+      "source_article": "Dramaturgy (sociology)",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "dramaturgical analysis"
+      ]
+    },
+    {
+      "id": "8c66b7dd90a88b23",
+      "question_text": "How does Robert K. Merton's concept of anomie differ from Emile Durkheim's original formulation of the term?",
+      "options": {
+        "A": "Durkheim defined anomie as breakdown of social regulation during rapid change; Merton redefined it as the gap between cultural goals and legitimate means",
+        "B": "Durkheim applied anomie only to religious institutions in moral decline; Merton expanded it to describe widespread alienation within bureaucratic organizations",
+        "C": "Durkheim viewed anomie as a permanent and inevitable feature of capitalism; Merton argued it occurs only during periods of wartime social disruption",
+        "D": "Durkheim described anomie as individual psychological distress caused by social isolation; Merton redefined it as collective panic during sudden natural disasters"
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "Anomie",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "anomie"
+      ]
+    },
+    {
+      "id": "58d2a59d4046a052",
+      "question_text": "Which legal scholar coined the term 'intersectionality' in 1989 to describe how overlapping identities such as race and gender produce unique forms of discrimination?",
+      "options": {
+        "A": "Patricia Hill Collins",
+        "B": "Audre Lorde",
+        "C": "Kimberle Crenshaw",
+        "D": "bell hooks"
+      },
+      "correct_answer": "C",
+      "difficulty": 3,
+      "source_article": "Intersectionality",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "intersectionality"
+      ]
+    },
+    {
+      "id": "39e24ec64f5edd5c",
+      "question_text": "In Bourdieu's theory of cultural capital, what are the three forms in which cultural capital can exist?",
+      "options": {
+        "A": "Embodied, objectified, and institutionalized",
+        "B": "Inherited, acquired, and transferred",
+        "C": "Personal, communal, and national",
+        "D": "Economic, social, and symbolic"
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "Cultural capital",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "cultural capital"
+      ]
+    },
+    {
+      "id": "9681d873b0b4c332",
+      "question_text": "In the demographic transition model developed by Warren Thompson, what characterizes Stage 2 that produces the highest population growth?",
+      "options": {
+        "A": "Birth rates remain high while death rates drop sharply due to improved sanitation and food supply",
+        "B": "Both birth and death rates rise rapidly due to industrialization and urban crowding",
+        "C": "Birth rates increase dramatically while death rates remain constant due to cultural shifts",
+        "D": "Death rates stay high while birth rates surge because of government population policies"
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "Demographic transition",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "demographic transition"
+      ]
+    },
+    {
+      "id": "20da873a7e02a7ac",
+      "question_text": "Which 1966 work by Peter Berger and Thomas Luckmann introduced the concept of social constructionism into sociological theory?",
+      "options": {
+        "A": "The Presentation of Self in Everyday Life",
+        "B": "The Social Construction of Reality",
+        "C": "The Rules of Sociological Method",
+        "D": "The Structure of Social Action"
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Social constructionism",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "social constructionism"
+      ]
+    },
+    {
+      "id": "cf119f60ed463e79",
+      "question_text": "According to Robert Merton, what does the concept of 'role set' refer to in sociology?",
+      "options": {
+        "A": "The sequence of roles a person performs over the course of a lifetime",
+        "B": "The array of different roles associated with a single social status or position",
+        "C": "The collection of all social statuses an individual occupies at one time",
+        "D": "The group of people who share identical roles within an organization"
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Role set",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "role set"
+      ]
+    },
+    {
+      "id": "8db5acdae15ae770",
+      "question_text": "In DiMaggio and Powell's 1983 theory of institutional isomorphism, which type of isomorphism occurs when organizations imitate others to reduce uncertainty?",
+      "options": {
+        "A": "Structural isomorphism",
+        "B": "Mimetic isomorphism",
+        "C": "Coercive isomorphism",
+        "D": "Normative isomorphism"
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Isomorphism (sociology)",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "institutional isomorphism"
+      ]
+    },
+    {
+      "id": "adb400085e701773",
+      "question_text": "According to the World Health Organization, what are the social determinants of health?",
+      "options": {
+        "A": "The genetic and biological factors inherited from parents that predispose individuals to disease",
+        "B": "The conditions in which people are born, grow, live, work, and age that shape health outcomes",
+        "C": "The clinical treatments and medical interventions available within a healthcare system",
+        "D": "The personal lifestyle choices individuals make regarding diet, exercise, and substance use"
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Social determinants of health",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "social determinants of health"
+      ]
+    },
+    {
+      "id": "1fee1c4462df86fc",
+      "question_text": "Philip Jackson coined the term 'hidden curriculum' in his 1968 book Life in Classrooms. What does the concept describe?",
+      "options": {
+        "A": "The unwritten norms, values, and expectations students learn in school beyond the formal curriculum",
+        "B": "The politically biased content that textbook publishers intentionally embed in course materials",
+        "C": "The advanced subjects that schools deliberately withhold from lower-performing student groups",
+        "D": "The supplementary tutoring programs that wealthy families privately arrange outside of school"
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "Hidden curriculum",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "hidden curriculum"
+      ]
+    },
+    {
+      "id": "42a9a247d355889f",
+      "question_text": "In Bourdieu's practice theory, what is 'habitus' and how does it relate to structure and agency?",
+      "options": {
+        "A": "Conscious rational strategies that individuals deliberately adopt to maximize social advantages",
+        "B": "Durable, ingrained dispositions shaped by past social structures that unconsciously guide present actions",
+        "C": "Temporary emotional states triggered by specific social situations that influence short-term decisions",
+        "D": "Formal institutional rules imposed by organizations that strictly determine individual behavior"
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "Habitus (sociology)",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "habitus"
+      ]
+    },
+    {
+      "id": "924af6badab33d71",
+      "question_text": "In Durkheim's The Division of Labour in Society, what distinguishes mechanical solidarity from organic solidarity?",
+      "options": {
+        "A": "Mechanical solidarity is maintained by economic exchange, while organic solidarity is sustained by religious rituals",
+        "B": "Mechanical solidarity depends on written legal codes, while organic solidarity relies on informal customs and traditions",
+        "C": "Mechanical solidarity emerges in industrial economies, while organic solidarity characterizes agricultural communities",
+        "D": "Mechanical solidarity rests on shared beliefs and similarity, while organic solidarity arises from interdependence through specialized roles"
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Mechanical and organic solidarity",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "mechanical and organic solidarity"
+      ]
+    },
+    {
+      "id": "52d0ff0367d46ca8",
+      "question_text": "In Wallerstein's world-systems theory, what structural role do semi-peripheral nations play in the capitalist world economy?",
+      "options": {
+        "A": "They possess military alliances with core nations that shield them from peripheral economic exploitation",
+        "B": "They have recently industrialized but lack the established financial institutions found in core nations",
+        "C": "They maintain traditional subsistence economies while selectively adopting technological innovations from core nations",
+        "D": "They combine core-like and periphery-like economic activities, serving as both exploiter and exploited"
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "World-systems theory",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "world-systems theory"
+      ]
+    },
+    {
+      "id": "eb7482d667d43cbd",
+      "question_text": "In Granovetter's 1973 theory, why are weak ties argued to be more valuable than strong ties for accessing novel information and job opportunities?",
+      "options": {
+        "A": "Weak ties are maintained with less emotional cost, freeing cognitive resources for processing information",
+        "B": "Weak ties involve higher-status individuals who control privileged access to prestigious employment opportunities",
+        "C": "Weak ties bridge otherwise disconnected social clusters, providing access to non-redundant information",
+        "D": "Weak ties generate stronger reciprocal obligations that motivate contacts to share opportunities more actively"
+      },
+      "correct_answer": "C",
+      "difficulty": 4,
+      "source_article": "Mark Granovetter",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "strength of weak ties"
+      ]
+    },
+    {
+      "id": "b19a3b615c0c9138",
+      "question_text": "What does Giddens mean by the 'duality of structure' in structuration theory?",
+      "options": {
+        "A": "Social structures and individual agency operate independently but converge periodically during episodes of social change",
+        "B": "Social structures determine individual actions, which in turn reproduce those structures in unchanged form",
+        "C": "Individual agents create social structures through intentional collective decision-making and negotiation processes",
+        "D": "Social structures are simultaneously the medium and the outcome of the practices they recursively organize"
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Structuration theory",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "structuration theory"
+      ]
+    },
+    {
+      "id": "fc4457c4fd94800c",
+      "question_text": "In Foucault's concept of biopower, what distinguishes it from earlier forms of sovereign power in how the state exercises control?",
+      "options": {
+        "A": "Biopower uses democratic institutions to distribute authority across citizens rather than concentrating it in a monarch",
+        "B": "Biopower operates through religious doctrine to control moral conduct rather than relying on secular legal punishment",
+        "C": "Biopower relies on economic incentives to shape individual behavior rather than employing direct physical coercion",
+        "D": "Biopower manages life through regulation of birth, health, and mortality rather than threatening death"
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Biopower",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "biopower"
+      ]
+    },
+    {
+      "id": "6961b9725b8e43f2",
+      "question_text": "In Du Bois's 'The Souls of Black Folk' (1903), what specific psychological tension does the concept of double consciousness describe?",
+      "options": {
+        "A": "Alternating between public conformity to racial expectations and private resistance to systemic discrimination and injustice",
+        "B": "Seeing oneself through both one's own eyes and the contemptuous gaze of the dominant white society",
+        "C": "Balancing the pursuit of individual ambition against fulfilling collective responsibility toward one's marginalized racial community",
+        "D": "Choosing between preserving African cultural heritage and adopting European American educational and social values"
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "Double consciousness",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "double consciousness"
+      ]
+    },
+    {
+      "id": "35995fd42eb43edd",
+      "question_text": "What was Simmel's key methodological contribution to sociology through his 'formal sociology' approach?",
+      "options": {
+        "A": "Developing statistical methods to measure and quantify the strength of social bonds within large populations",
+        "B": "Creating experimental designs to isolate the causal mechanisms underlying observable patterns of social phenomena",
+        "C": "Abstracting recurring forms of social interaction (like conflict, exchange, domination) from their varying contents",
+        "D": "Establishing ethnographic fieldwork as the primary method for systematically studying small-scale social groups"
+      },
+      "correct_answer": "C",
+      "difficulty": 4,
+      "source_article": "Georg Simmel",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "formal sociology"
+      ]
+    },
+    {
+      "id": "9380214e3996a5f8",
+      "question_text": "In Parsons's AGIL paradigm, which functional prerequisite is fulfilled by the cultural system through the transmission of shared values and norms?",
+      "options": {
+        "A": "Adaptation, which adjusts the system's relationship to the external physical and material environment",
+        "B": "Integration, which coordinates the various components of the social system to maintain collective solidarity",
+        "C": "Goal attainment, which mobilizes and directs collective resources to achieve the system's defined objectives",
+        "D": "Latency (pattern maintenance), which preserves motivational and cultural patterns across generations"
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "AGIL paradigm",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "AGIL paradigm"
+      ]
+    },
+    {
+      "id": "1b48b4267e41b9f7",
+      "question_text": "In Garfinkel's ethnomethodology, what do 'breaching experiments' reveal about the nature of everyday social order?",
+      "options": {
+        "A": "That social order emerges from rational cost-benefit calculations made independently by self-interested individual actors",
+        "B": "That social order depends on taken-for-granted background expectations that become visible only when violated",
+        "C": "That social order is imposed by institutional power structures that systematically punish deviance from established norms",
+        "D": "That social order results from biologically evolved drives toward cooperative behavior and mutual aid among group members"
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "Ethnomethodology",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "ethnomethodology"
+      ]
+    },
+    {
+      "id": "171c51517ed7a028",
+      "question_text": "How does Coleman's conceptualization of social capital differ from Putnam's in level of analysis and mechanism?",
+      "options": {
+        "A": "Coleman argues social capital is produced by government institutions and distributed to citizens, while Putnam locates it in family inheritance",
+        "B": "Coleman treats social capital as a finite resource that depletes with use, while Putnam views it as renewable through market exchange",
+        "C": "Coleman limits social capital to economic transactions between firms, while Putnam extends it to informal neighborhood-level interactions",
+        "D": "Coleman emphasizes network closure enabling trust among individuals, while Putnam focuses on civic associations generating community-level trust"
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Social capital",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "social capital theory"
+      ]
+    },
+    {
+      "id": "298ccebafc8f255a",
+      "question_text": "According to Beck's risk society thesis, how does the distribution of risks in late modernity fundamentally differ from the distribution of wealth?",
+      "options": {
+        "A": "Risks are efficiently managed through private insurance markets that price and distribute exposure across all populations",
+        "B": "Risks like nuclear fallout or climate change cross class boundaries, unlike wealth which remains stratified by social class",
+        "C": "Risks are concentrated among wealthy industrialized nations that produce the most technological output and pollution",
+        "D": "Risks diminish proportionally as societies grow wealthier because advanced technology provides better collective protection"
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "Risk society",
+      "domain_ids": [
+        "sociology"
+      ],
+      "concepts_tested": [
+        "risk society"
+      ]
+    }
+  ],
   "labels": [],
   "articles": []
 }

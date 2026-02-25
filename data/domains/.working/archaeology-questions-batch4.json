@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Which subfield of archaeology, popularised by Michael Rix in a 1955 article in The Amateur Historian, studies the material remains of industrialisation such as factories, mills, and transport infrastructure?",
+    "correct_answer": "Industrial archaeology",
+    "distractors": [
+      "Historical archaeology",
+      "Landscape archaeology",
+      "Urban archaeology"
+    ],
+    "difficulty": 3,
+    "source_article": "Industrial archaeology",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["industrial archaeology"]
+  },
+  {
+    "question_text": "Which interdisciplinary field studies how past cultures understood and used celestial phenomena, exemplified by the winter solstice alignment at Newgrange in Ireland?",
+    "correct_answer": "Archaeoastronomy",
+    "distractors": [
+      "Ethnoastronomy",
+      "Historical astronomy",
+      "Astrogeology"
+    ],
+    "difficulty": 3,
+    "source_article": "Archaeoastronomy",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["archaeoastronomy"]
+  },
+  {
+    "question_text": "Which archaeological sub-discipline, emerging in the 1970s, reconstructs past human-environment relationships using methods from archaeobotany, zooarchaeology, and geoarchaeology?",
+    "correct_answer": "Environmental archaeology",
+    "distractors": [
+      "Landscape archaeology",
+      "Processual archaeology",
+      "Ecological anthropology"
+    ],
+    "difficulty": 3,
+    "source_article": "Environmental archaeology",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["environmental archaeology"]
+  },
+  {
+    "question_text": "What is the scientific study of fossil pollen and spores, pioneered by Swedish geologist Lennart von Post in 1916, that archaeologists use to reconstruct past vegetation and climate?",
+    "correct_answer": "Palynology",
+    "distractors": [
+      "Paleoethnobotany",
+      "Dendrochronology",
+      "Phytolith analysis"
+    ],
+    "difficulty": 3,
+    "source_article": "Palynology",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["palynology"]
+  },
+  {
+    "question_text": "What term describes state-sanctioned archaeological survey and excavation carried out in advance of construction or land development to prevent the loss of heritage?",
+    "correct_answer": "Rescue archaeology, also called salvage or preventive archaeology",
+    "distractors": [
+      "Cultural resource management, also called heritage asset planning",
+      "Experimental archaeology, also called replicative field testing",
+      "Community archaeology, also called participatory heritage fieldwork"
+    ],
+    "difficulty": 3,
+    "source_article": "Rescue archaeology",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["rescue archaeology"]
+  },
+  {
+    "question_text": "Which methodological approach uses satellite imagery, LiDAR, and multispectral sensors to detect buried archaeological features without excavation?",
+    "correct_answer": "Remote sensing in archaeology",
+    "distractors": [
+      "Geophysical survey in archaeology",
+      "Aerial photography in archaeology",
+      "Ground-penetrating radar survey"
+    ],
+    "difficulty": 3,
+    "source_article": "Remote sensing in archaeology",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["remote sensing in archaeology"]
+  },
+  {
+    "question_text": "What field uses ancient DNA extraction and analysis to study past population migrations and domestication events, earning Svante Paabo a Nobel Prize in 2022?",
+    "correct_answer": "Archaeogenetics",
+    "distractors": [
+      "Bioarchaeology",
+      "Forensic anthropology",
+      "Molecular phylogenetics"
+    ],
+    "difficulty": 3,
+    "source_article": "Archaeogenetics",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["archaeogenetics"]
+  },
+  {
+    "question_text": "What is the term for the return of cultural property, including archaeological objects and human remains, to their countries of origin or descendant communities, as mandated by the US NAGPRA law of 1990?",
+    "correct_answer": "Repatriation of cultural heritage",
+    "distractors": [
+      "Deaccessioning of museum collections",
+      "Provenance verification of antiquities",
+      "Cultural patrimony documentation process"
+    ],
+    "difficulty": 3,
+    "source_article": "Repatriation (cultural heritage)",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["repatriation of cultural heritage"]
+  },
+  {
+    "question_text": "Which theoretical perspective in archaeology, divided into evolutionary (ECA) and ideational (ICA) branches associated with scholars like Thomas Wynn and Colin Renfrew, focuses on inferring past ways of thinking from material remains?",
+    "correct_answer": "Cognitive archaeology",
+    "distractors": [
+      "Post-processual archaeology",
+      "Behavioral archaeology",
+      "Structural archaeology"
+    ],
+    "difficulty": 4,
+    "source_article": "Cognitive archaeology",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["cognitive archaeology"]
+  },
+  {
+    "question_text": "Which sub-discipline of archaeological science uses slag chemistry, metallographic analysis, and lead isotope ratios to reconstruct ancient smelting, alloying, and smithing technologies?",
+    "correct_answer": "Archaeometallurgy",
+    "distractors": [
+      "Ceramic petrography",
+      "Neutron activation analysis",
+      "Geoarchaeology"
+    ],
+    "difficulty": 4,
+    "source_article": "Archaeometallurgy",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["archaeometallurgy"]
+  }
+]

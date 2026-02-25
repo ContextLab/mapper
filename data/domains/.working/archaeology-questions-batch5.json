@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In paleoethnobotany, which recovery technique uses water to separate carbonized plant macroremains from heavier soil sediments based on differences in density?",
+    "correct_answer": "Flotation",
+    "distractors": [
+      "Dry screening",
+      "Wet sieving",
+      "Density-gradient centrifugation"
+    ],
+    "difficulty": 4,
+    "source_article": "Paleoethnobotany",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["paleoethnobotany"]
+  },
+  {
+    "question_text": "In geoarchaeology, which laboratory technique involves impregnating undisturbed soil samples with resin and examining thin sections under a polarizing microscope to interpret site formation processes?",
+    "correct_answer": "Soil micromorphology",
+    "distractors": [
+      "X-ray diffraction analysis",
+      "Loss-on-ignition testing",
+      "Particle-size distribution analysis"
+    ],
+    "difficulty": 4,
+    "source_article": "Geoarchaeology",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["geoarchaeology"]
+  },
+  {
+    "question_text": "In neutron activation analysis of archaeological ceramics, what is produced when a sample is bombarded with neutrons in a nuclear reactor, enabling elemental identification through characteristic gamma-ray signatures?",
+    "correct_answer": "Radioactive isotopes of the sample's constituent elements",
+    "distractors": [
+      "Stable electron configurations of trace minerals",
+      "Alpha particles from fission of heavy elements",
+      "Neutron-rich molecules with unique infrared spectra"
+    ],
+    "difficulty": 4,
+    "source_article": "Neutron activation analysis",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["neutron activation analysis"]
+  },
+  {
+    "question_text": "In ceramic petrography, pottery sherds are ground to approximately what thickness for thin-section analysis under a polarizing microscope to identify mineral inclusions and determine provenance?",
+    "correct_answer": "Approximately 0.03 millimetres",
+    "distractors": [
+      "Approximately 0.3 millimetres",
+      "Approximately 1.0 millimetre",
+      "Approximately 0.003 millimetres"
+    ],
+    "difficulty": 4,
+    "source_article": "Ceramic petrography",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["ceramic petrography"]
+  },
+  {
+    "question_text": "According to Martinon-Torres and Killick, what key distinction separates 'archaeological science' from 'scientific archaeology' in the application of scientific techniques to the archaeological record?",
+    "correct_answer": "Archaeological science has promoted the development of high-level theory in archaeology",
+    "distractors": [
+      "Archaeological science focuses exclusively on laboratory dating methods rather than fieldwork",
+      "Scientific archaeology rejects the use of quantitative methods in favor of qualitative analysis",
+      "Archaeological science applies only to prehistoric contexts while scientific archaeology covers all periods"
+    ],
+    "difficulty": 4,
+    "source_article": "Archaeological science",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["archaeological science"]
+  },
+  {
+    "question_text": "Single-context recording, developed by Ed Harris and Patrick Ottaway in 1976, is especially suited to which type of archaeological site due to its ability to handle deep, complex stratigraphic sequences?",
+    "correct_answer": "Urban archaeological sites with deep multi-period deposits",
+    "distractors": [
+      "Submerged coastal settlements with waterlogged preservation",
+      "Open-area Neolithic landscape sites with shallow stratigraphy",
+      "Prehistoric cave sites with undisturbed sediment layers"
+    ],
+    "difficulty": 4,
+    "source_article": "Single context recording",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["single-context recording"]
+  },
+  {
+    "question_text": "In community archaeology, what two general aspects are found in all projects regardless of their specific design, goals, or methods?",
+    "correct_answer": "Community involvement in planning and execution, and communication of results back to the community",
+    "distractors": [
+      "Government funding of all excavation costs, and mandatory publication in peer-reviewed journals",
+      "Professional archaeologists directing all fieldwork, and artifacts remaining in national museums",
+      "University-led research agendas, and training programs exclusively for graduate students"
+    ],
+    "difficulty": 4,
+    "source_article": "Community archaeology",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["community archaeology"]
+  },
+  {
+    "question_text": "In thermoluminescence dating, what physical process occurs when trapped electrons in crystalline minerals are released by controlled heating, producing a measurable light signal proportional to accumulated radiation dose?",
+    "correct_answer": "Electrons recombine with lattice ions and emit photons as they lose energy",
+    "distractors": [
+      "Electrons undergo nuclear fission and release gamma radiation",
+      "Crystal lattice structures permanently deform and emit infrared waves",
+      "Mineral atoms split into isotopes that produce fluorescent emissions"
+    ],
+    "difficulty": 4,
+    "source_article": "Thermoluminescence dating",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["thermoluminescence dating"]
+  },
+  {
+    "question_text": "Why are caesium magnetometers preferred over fluxgate gradiometers for detecting deeply buried archaeological features with low magnetization contrast?",
+    "correct_answer": "Caesium magnetometers have ultra-high sensitivity, detecting anomalies as weak as 0.1 nanotesla",
+    "distractors": [
+      "Caesium magnetometers operate at higher frequencies, penetrating deeper into bedrock layers",
+      "Caesium magnetometers use active radar pulses that image subsurface features in three dimensions",
+      "Caesium magnetometers emit stronger magnetic fields that enhance the contrast of buried features"
+    ],
+    "difficulty": 4,
+    "source_article": "Magnetic survey (archaeology)",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["magnetic survey in archaeology"]
+  },
+  {
+    "question_text": "Among the main geophysical survey techniques used in archaeology, which is the only method that provides true depth information about buried remains by recording the time and amplitude of reflected radio-frequency pulses?",
+    "correct_answer": "Ground-penetrating radar",
+    "distractors": [
+      "Electrical resistivity survey",
+      "Magnetometry survey",
+      "Electromagnetic induction survey"
+    ],
+    "difficulty": 4,
+    "source_article": "Geophysical survey (archaeology)",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["geophysical survey in archaeology"]
+  }
+]

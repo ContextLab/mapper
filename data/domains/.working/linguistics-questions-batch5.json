@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In metrical phonology, how is linguistic stress represented, unlike earlier generative models that treated it as a feature of individual segments?",
+    "correct_answer": "As a relational property between hierarchically organized constituents labeled strong or weak in tree structures",
+    "distractors": [
+      "As a numerical value assigned to each vowel segment through cyclic rule application in linear derivations",
+      "As an autosegmental tier of binary tonal features linked to individual mora units by association lines",
+      "As a fixed acoustic intensity threshold measured in decibels and assigned to each syllable nucleus"
+    ],
+    "difficulty": 4,
+    "source_article": "Metrical phonology",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["metrical phonology"]
+  },
+  {
+    "question_text": "In the prosodic hierarchy, what principle formulated by Selkirk and Nespor & Vogel prohibits a prosodic constituent from dominating units that skip a level?",
+    "correct_answer": "The Strict Layer Hypothesis",
+    "distractors": [
+      "The Prosodic Licensing Principle",
+      "The Exhaustivity Constraint",
+      "The Layered Structure Axiom"
+    ],
+    "difficulty": 4,
+    "source_article": "Prosodic unit",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["prosodic hierarchy"]
+  },
+  {
+    "question_text": "In Optimality Theory, what happens when a winning output candidate violates a lower-ranked constraint that a rival candidate satisfies?",
+    "correct_answer": "The winner is still selected because it better satisfies a higher-ranked constraint than the rival does",
+    "distractors": [
+      "The winner is disqualified and the rival candidate is automatically promoted to the optimal output",
+      "Both candidates are eliminated and the generator must produce a new set of candidate forms",
+      "The violation triggers a repair rule that modifies the winner to satisfy the lower-ranked constraint"
+    ],
+    "difficulty": 4,
+    "source_article": "Optimality theory",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["optimality theory"]
+  },
+  {
+    "question_text": "Grammaticalization involves content words becoming function words over time. Which concurrent process describes the progressive loss of a word's original lexical meaning during this change?",
+    "correct_answer": "Semantic bleaching",
+    "distractors": [
+      "Phonological erosion",
+      "Morphological leveling",
+      "Syntactic reanalysis"
+    ],
+    "difficulty": 4,
+    "source_article": "Grammaticalization",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["grammaticalization"]
+  },
+  {
+    "question_text": "In ergative-absolutive languages, which grammatical roles receive the same case marking, in contrast to nominative-accusative alignment?",
+    "correct_answer": "The intransitive subject and the transitive object both receive absolutive case",
+    "distractors": [
+      "The transitive subject and the transitive object both receive ergative case marking",
+      "The intransitive subject and the transitive subject both receive nominative case marking",
+      "The transitive object and the indirect object both receive the same dative case marking"
+    ],
+    "difficulty": 4,
+    "source_article": "Ergative\u2013absolutive language",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["ergativity"]
+  },
+  {
+    "question_text": "In phonological opacity, what type of rule interaction occurs when a later rule creates the environment for an earlier rule, but the earlier rule has already failed to apply?",
+    "correct_answer": "Counterfeeding, resulting in underapplication opacity on the surface",
+    "distractors": [
+      "Counterbleeding, resulting in overapplication opacity on the surface",
+      "Mutual bleeding, resulting in both rules being vacuously satisfied",
+      "Transparent feeding, resulting in full application of both rules"
+    ],
+    "difficulty": 4,
+    "source_article": "Phonological opacity",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["phonological opacity"]
+  },
+  {
+    "question_text": "In articulatory phonetics, the consonant [n] is classified as a voiced alveolar nasal. What does the 'alveolar' label specifically refer to?",
+    "correct_answer": "The place of articulation where the tongue tip contacts the bony ridge behind the upper teeth",
+    "distractors": [
+      "The manner of articulation involving complete airflow blockage followed by a sudden release burst",
+      "The laryngeal setting in which the vocal folds vibrate during the entire duration of the sound",
+      "The degree of oral cavity opening that determines the resonance quality of the nasal airflow"
+    ],
+    "difficulty": 4,
+    "source_article": "Articulatory phonetics",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["articulatory phonetics"]
+  },
+  {
+    "question_text": "William Wang's lexical diffusion hypothesis proposes that sound change spreads gradually across the vocabulary. How does this contrast with the Neogrammarian position?",
+    "correct_answer": "Neogrammarians claimed sound change applies uniformly to all applicable words at once, not word by word",
+    "distractors": [
+      "Neogrammarians argued sound change originates in written language and later transfers into spoken forms",
+      "Neogrammarians proposed that sound change is triggered by contact between unrelated language families",
+      "Neogrammarians held that sound change occurs only in unstressed syllables and never in stressed ones"
+    ],
+    "difficulty": 4,
+    "source_article": "Lexical diffusion",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["lexical diffusion"]
+  },
+  {
+    "question_text": "Laryngeal realism proposes that aspirating languages like English and true voice languages like French differ in their underlying laryngeal feature. What feature do aspirating languages use?",
+    "correct_answer": "[spread glottis] rather than [voice] to represent the contrast between obstruent series",
+    "distractors": [
+      "[constricted glottis] rather than [nasal] to represent the contrast between obstruent series",
+      "[stiff vocal folds] rather than [slack vocal folds] to represent voicing in all consonants",
+      "[high pitch] rather than [low pitch] to represent the tonal distinction in stop consonants"
+    ],
+    "difficulty": 4,
+    "source_article": "Laryngeal realism",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["laryngeal realism"]
+  },
+  {
+    "question_text": "In language contact studies, what term describes the linguistic influence left by a subordinate language that is eventually replaced by a dominant one in a community?",
+    "correct_answer": "Substratum influence",
+    "distractors": [
+      "Superstratum influence",
+      "Adstratum influence",
+      "Creolization influence"
+    ],
+    "difficulty": 4,
+    "source_article": "Language contact",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["language contact"]
+  }
+]

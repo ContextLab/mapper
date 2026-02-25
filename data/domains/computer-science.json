@@ -14,13 +14,13 @@
   },
   "questions": [
     {
-      "id": "07e4aa39a2dd574f",
-      "question_text": "An operating system manages computer hardware and software resources. What is generally considered the first operating system, created in 1956 for the IBM 704?",
+      "id": "9eff1b986a3cb400",
+      "question_text": "What is an operating system in the context of computing?",
       "options": {
-        "A": "CTSS, developed at MIT for the IBM 7094",
-        "B": "BESYS, developed by Bell Labs for the IBM 7090",
-        "C": "GM-NAA I/O, developed by General Motors and North American Aviation",
-        "D": "IBSYS, developed by IBM for its 7090 and 7094 mainframes"
+        "A": "A network protocol that routes data packets between computers connected to the internet",
+        "B": "A physical circuit board that coordinates electrical signals between the CPU and memory chips",
+        "C": "System software that manages computer hardware and software resources and provides common services for programs",
+        "D": "A programming language used to write applications and compile them into machine code"
       },
       "correct_answer": "C",
       "difficulty": 1,
@@ -33,13 +33,13 @@
       ]
     },
     {
-      "id": "c341b780acdc5aea",
-      "question_text": "The Internet originated from ARPANET. On October 29, 1969, the first ARPANET message was intended to be 'login,' but the system crashed. What letters were actually transmitted?",
+      "id": "f269c9f2b6351c23",
+      "question_text": "What is the Internet?",
       "options": {
-        "A": "The full word 'log' was transmitted before a buffer overflow occurred",
-        "B": "Only 'L', 'O', and 'G' were sent before a routing error stopped the transfer",
-        "C": "Only the letter 'L' was sent before the connection timed out",
-        "D": "Only 'L' and 'O' were sent before the system crashed"
+        "A": "A local wireless connection standard that links personal devices within a single home or office building",
+        "B": "A satellite broadcasting system that transmits television and radio signals to receivers located around the world",
+        "C": "A single centralized server maintained by an international organization that hosts all publicly accessible websites worldwide",
+        "D": "The global system of interconnected computer networks that uses the TCP/IP protocol suite to communicate between networks and devices"
       },
       "correct_answer": "D",
       "difficulty": 1,
@@ -52,13 +52,13 @@
       ]
     },
     {
-      "id": "c7e0b6e82c915b82",
-      "question_text": "A database is an organized collection of data managed by a DBMS. What does DBMS stand for, and what is its primary role?",
+      "id": "6283222d7da4c087",
+      "question_text": "In computing, what is a database?",
       "options": {
-        "A": "Database Monitoring and Security system; it provides real-time intrusion detection for stored data",
-        "B": "Database Management System; it manages storage, retrieval, and administration of data",
-        "C": "Digital Backup and Migration System; it automates data replication across servers",
-        "D": "Data Block Management Service; it handles physical disk allocation and defragmentation"
+        "A": "A backup power supply unit that preserves electronically stored data during unexpected electrical outages",
+        "B": "An organized collection of data stored electronically and managed through a database management system (DBMS)",
+        "C": "A type of spreadsheet application designed exclusively for calculating and displaying financial records",
+        "D": "A physical filing cabinet system used to archive printed documents and paper records in offices"
       },
       "correct_answer": "B",
       "difficulty": 1,
@@ -71,13 +71,13 @@
       ]
     },
     {
-      "id": "ef49b4e253ad01b5",
-      "question_text": "In a computer network, which topology connects every device directly to every other device, providing maximum redundancy but at the highest cabling cost?",
+      "id": "7cc9f44e45d2824d",
+      "question_text": "What best describes a computer network?",
       "options": {
-        "A": "Ring topology, where each device connects to exactly two neighbors",
-        "B": "Mesh topology (specifically full mesh topology)",
-        "C": "Star topology, where all devices connect through a central hub",
-        "D": "Bus topology, where all devices share a single backbone cable"
+        "A": "A software program that connects a computer's internal components such as the CPU and memory",
+        "B": "A group of interconnected computers that communicate and share resources using communication protocols",
+        "C": "A single computer with multiple monitors attached for displaying different applications on each screen",
+        "D": "A collection of websites organized into categories and indexed for retrieval by a search engine"
       },
       "correct_answer": "B",
       "difficulty": 1,
@@ -90,13 +90,13 @@
       ]
     },
     {
-      "id": "8ae1efcaa8533d59",
-      "question_text": "Software is broadly divided into two main categories. Which two categories are they?",
+      "id": "ecc338f2a6225832",
+      "question_text": "What does the term 'software' refer to in computing?",
       "options": {
-        "A": "Firmware (e.g., BIOS) and middleware (e.g., database connectors)",
-        "B": "System software (e.g., operating systems) and application software (e.g., word processors)",
-        "C": "Compiled software (e.g., C programs) and interpreted software (e.g., Python scripts)",
-        "D": "Open-source software (e.g., Linux) and proprietary software (e.g., Windows)"
+        "A": "The metal and plastic casing that protects the internal circuitry of a computer from damage",
+        "B": "Computer programs and associated data that provide instructions telling a computer what to do",
+        "C": "The physical electronic components inside a computer such as the processor and memory chips",
+        "D": "The electrical wiring and cable connections that link peripheral devices to the motherboard"
       },
       "correct_answer": "B",
       "difficulty": 1,
@@ -109,13 +109,13 @@
       ]
     },
     {
-      "id": "80302d1d982903a2",
-      "question_text": "A computer virus replicates by inserting its code into other programs. What was the name of the first known computer virus, created by Bob Thomas at BBN Technologies in 1971?",
+      "id": "43fcbafb521b0149",
+      "question_text": "What distinguishes a computer virus from other types of malicious software?",
       "options": {
-        "A": "Morris Worm, which exploited Unix sendmail vulnerabilities to replicate across the Internet",
-        "B": "Creeper, which spread across ARPANET displaying 'I'm the creeper, catch me if you can!'",
-        "C": "Elk Cloner, which spread via Apple II floppy disks and displayed a poem",
-        "D": "Brain, which infected IBM PC boot sectors and was created in Pakistan"
+        "A": "It spreads independently across networks without needing to attach itself to any existing programs",
+        "B": "It replicates by modifying other computer programs and inserting its own code into those programs",
+        "C": "It monitors keyboard input to secretly record passwords and send them to a remote attacker",
+        "D": "It encrypts all files on a hard drive and demands a cryptocurrency ransom payment to restore access"
       },
       "correct_answer": "B",
       "difficulty": 1,
@@ -128,13 +128,13 @@
       ]
     },
     {
-      "id": "48e5d70c34fb23be",
-      "question_text": "According to NIST Special Publication 800-145, cloud computing has five essential characteristics. Which of the following is one of those five characteristics?",
+      "id": "9c1d42f95eca2359",
+      "question_text": "What is cloud computing?",
       "options": {
-        "A": "Mandatory data encryption at rest, requiring all stored data to be encrypted by default",
-        "B": "Guaranteed uptime of 99.999%, ensuring continuous availability under all conditions",
-        "C": "On-demand self-service, allowing users to provision computing resources automatically without human interaction",
-        "D": "Automatic geographic redundancy, replicating all data across at least three continents"
+        "A": "A method of storing files exclusively on portable USB flash drives for secure offline access anywhere",
+        "B": "A weather prediction system that uses networked satellites to model atmospheric conditions and forecast storms",
+        "C": "The on-demand delivery of computing resources such as servers, storage, and applications over the internet",
+        "D": "A local area network setup where all desktop computers share a single centralized physical hard drive"
       },
       "correct_answer": "C",
       "difficulty": 1,
@@ -147,13 +147,13 @@
       ]
     },
     {
-      "id": "765cb081b6c89c48",
-      "question_text": "Computer hardware refers to the physical components of a computer. Which component is often called the 'brain' of the computer because it executes instructions and performs calculations?",
+      "id": "8ce81d6d2c4f32ff",
+      "question_text": "What does the term 'computer hardware' refer to?",
       "options": {
-        "A": "The motherboard, which connects all components together",
-        "B": "The central processing unit (CPU)",
-        "C": "The graphics processing unit (GPU), which renders visual output",
-        "D": "The random-access memory (RAM), which stores running programs"
+        "A": "The set of rules and protocols that govern how data is transmitted between devices on a network",
+        "B": "The physical components of a computer, such as the CPU, RAM, motherboard, and storage devices",
+        "C": "The graphical user interface elements like windows, icons, and menus displayed on a monitor screen",
+        "D": "The programs and applications installed on a computer that enable users to perform specific tasks"
       },
       "correct_answer": "B",
       "difficulty": 1,
@@ -166,13 +166,13 @@
       ]
     },
     {
-      "id": "7c093033fc721e85",
-      "question_text": "A file system governs how data is organized and accessed on storage media. Which file system, introduced with Windows NT in 1993, replaced FAT32 and supports a maximum file size of 16 exabytes?",
+      "id": "8e74567fc49ccfb4",
+      "question_text": "In computing, what is a file system?",
       "options": {
-        "A": "NTFS (New Technology File System)",
-        "B": "HFS+ (Hierarchical File System Plus), used by macOS before APFS",
-        "C": "ext4 (Fourth Extended File System), the default for most Linux distributions",
-        "D": "ZFS (Zettabyte File System), originally developed by Sun Microsystems"
+        "A": "A method used by an operating system to organize, store, and retrieve files on a storage device",
+        "B": "A cloud-based service that automatically backs up all user files to a remote internet server",
+        "C": "An antivirus program that scans documents for malicious code before allowing them to be opened",
+        "D": "A hardware component inside a hard drive that physically reads and writes data to the disk platters"
       },
       "correct_answer": "A",
       "difficulty": 1,
@@ -185,13 +185,13 @@
       ]
     },
     {
-      "id": "9ae75e91976d7dc1",
-      "question_text": "According to the NIST Digital Identity Guidelines, what are the two parties involved in password-based authentication called?",
+      "id": "76c5d22eef86b614",
+      "question_text": "In computer security, what is a password?",
       "options": {
-        "A": "The authenticator (who provides credentials) and the arbiter (who validates them)",
-        "B": "The supplicant (who submits the secret) and the gatekeeper (who controls entry)",
-        "C": "The claimant (who holds the password) and the verifier (who checks the identity)",
-        "D": "The principal (who requests access) and the guardian (who grants permissions)"
+        "A": "A biometric fingerprint scan stored on an encrypted chip embedded inside the computer's motherboard",
+        "B": "An encrypted file containing the user's complete browsing history and all saved website preferences",
+        "C": "A secret string of characters used to authenticate a user's identity and grant access to a system",
+        "D": "A hardware security token that generates a unique radio frequency signal to physically unlock a device"
       },
       "correct_answer": "C",
       "difficulty": 1,

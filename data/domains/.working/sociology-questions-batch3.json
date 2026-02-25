@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Which sociological perspective, rooted in the work of Karl Marx, views society as an arena of inequality where groups compete for power and resources rather than cooperating for stability?",
+    "correct_answer": "Conflict theory",
+    "distractors": [
+      "Structural functionalism",
+      "Symbolic interactionism",
+      "Social exchange theory"
+    ],
+    "difficulty": 2,
+    "source_article": "Conflict theories",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["conflict theory"]
+  },
+  {
+    "question_text": "What is the key distinction between de jure segregation and de facto segregation in the sociological study of racial inequality?",
+    "correct_answer": "De jure segregation is imposed by law, while de facto segregation arises from social and economic factors without legal mandate",
+    "distractors": [
+      "De jure segregation occurs in urban areas, while de facto segregation occurs in rural communities without government oversight",
+      "De jure segregation applies only to housing, while de facto segregation applies to education and public spaces exclusively",
+      "De jure segregation is enforced by private institutions, while de facto segregation is maintained through informal cultural traditions"
+    ],
+    "difficulty": 2,
+    "source_article": "Racial segregation",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["racial segregation"]
+  },
+  {
+    "question_text": "In social network analysis, what are the two fundamental components used to model the structure of social relationships?",
+    "correct_answer": "Nodes, representing individual actors, and ties, representing the relationships between them",
+    "distractors": [
+      "Groups, representing formal organizations, and bonds, representing shared economic interests",
+      "Clusters, representing geographic communities, and links, representing political affiliations",
+      "Hubs, representing institutional authorities, and paths, representing communication channels"
+    ],
+    "difficulty": 2,
+    "source_article": "Social network",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["social network"]
+  },
+  {
+    "question_text": "How did sociologist Anthony Giddens define globalization in terms of its effect on social relations across distance?",
+    "correct_answer": "The intensification of worldwide social relations linking distant localities so that local events are shaped by occurrences many miles away",
+    "distractors": [
+      "The standardization of national economic policies enabling corporations to operate identically across all international markets",
+      "The gradual replacement of local cultural traditions with a single dominant Western cultural framework worldwide",
+      "The political unification of sovereign nations into regional governance bodies that coordinate international trade agreements"
+    ],
+    "difficulty": 2,
+    "source_article": "Globalization",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["globalization and society"]
+  },
+  {
+    "question_text": "In Max Weber's theory of bureaucracy, what term describes his concern that increasing rationalization traps individuals in systems based purely on efficiency and control?",
+    "correct_answer": "The iron cage",
+    "distractors": [
+      "The power elite",
+      "The glass ceiling",
+      "The hidden curriculum"
+    ],
+    "difficulty": 2,
+    "source_article": "Organizational theory",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["organizational theory"]
+  },
+  {
+    "question_text": "Which sociological concept describes the process by which human conditions and behaviors not originally considered medical come to be defined, diagnosed, and treated as medical problems?",
+    "correct_answer": "Medicalization",
+    "distractors": [
+      "Pathologization",
+      "Hospitalization",
+      "Institutionalization"
+    ],
+    "difficulty": 2,
+    "source_article": "Medicalization",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["medicalization"]
+  },
+  {
+    "question_text": "According to Emile Durkheim, what are the two defining characteristics of a social fact that distinguish it from individual psychological phenomena?",
+    "correct_answer": "Social facts are external to the individual and exercise coercive power over individual behavior",
+    "distractors": [
+      "Social facts are measurable through surveys and exist only within formal institutional settings",
+      "Social facts are voluntary beliefs held by majorities and enforced through democratic consensus",
+      "Social facts are inherited through biological processes and maintained by genetic predispositions"
+    ],
+    "difficulty": 3,
+    "source_article": "Social fact",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["social fact"]
+  },
+  {
+    "question_text": "Max Weber distinguished two types of verstehen in his interpretive sociology. What are aktuelles verstehen and erklarendes verstehen?",
+    "correct_answer": "Aktuelles verstehen is direct observational understanding, while erklarendes verstehen is explanatory understanding of the motives behind actions",
+    "distractors": [
+      "Aktuelles verstehen is statistical analysis of social trends, while erklarendes verstehen is historical comparison of cultural institutions",
+      "Aktuelles verstehen is understanding through empathic identification, while erklarendes verstehen is understanding through experimental replication",
+      "Aktuelles verstehen is rational interpretation of economic behavior, while erklarendes verstehen is emotional interpretation of religious practices"
+    ],
+    "difficulty": 3,
+    "source_article": "Verstehen",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["verstehen"]
+  },
+  {
+    "question_text": "In Erving Goffman's dramaturgical analysis, what do the concepts of 'front stage' and 'back stage' represent in social interaction?",
+    "correct_answer": "Front stage is where individuals perform and manage impressions for an audience, while back stage is where they drop the act",
+    "distractors": [
+      "Front stage is where formal institutional rules are enforced by authorities, while back stage is where informal exchanges occur",
+      "Front stage is where dominant cultural norms are publicly produced, while back stage is where subcultural resistance organizes",
+      "Front stage is where public political debates and speeches occur, while back stage is where private rituals take place"
+    ],
+    "difficulty": 3,
+    "source_article": "Dramaturgy (sociology)",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["dramaturgical analysis"]
+  },
+  {
+    "question_text": "How does Robert K. Merton's concept of anomie differ from Emile Durkheim's original formulation of the term?",
+    "correct_answer": "Durkheim defined anomie as breakdown of social regulation during rapid change; Merton redefined it as the gap between cultural goals and legitimate means",
+    "distractors": [
+      "Durkheim applied anomie only to religious institutions in moral decline; Merton expanded it to describe widespread alienation within bureaucratic organizations",
+      "Durkheim viewed anomie as a permanent and inevitable feature of capitalism; Merton argued it occurs only during periods of wartime social disruption",
+      "Durkheim described anomie as individual psychological distress caused by social isolation; Merton redefined it as collective panic during sudden natural disasters"
+    ],
+    "difficulty": 3,
+    "source_article": "Anomie",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["anomie"]
+  }
+]

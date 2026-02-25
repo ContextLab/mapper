@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In twin studies, what comparison between monozygotic and dizygotic twins allows researchers to estimate the heritability of a behavioral trait?",
+    "correct_answer": "Higher concordance in monozygotic than dizygotic twins suggests genetic influence on the trait",
+    "distractors": [
+      "Equal concordance in both twin types regardless of rearing environment indicates the trait is heritable",
+      "Higher concordance in dizygotic twins than monozygotic twins suggests shared environment is primary",
+      "Lower concordance in monozygotic twins raised apart than dizygotic twins raised together confirms heritability"
+    ],
+    "difficulty": 3,
+    "source_article": "Twin study",
+    "domain_ids": ["psychology"],
+    "concepts_tested": ["behavioral genetics methodology"]
+  },
+  {
+    "question_text": "What is the fundamental difference between structural and functional neuroimaging techniques?",
+    "correct_answer": "Structural imaging reveals brain anatomy, while functional imaging measures brain activity during tasks",
+    "distractors": [
+      "Structural imaging uses magnetic fields exclusively, while functional imaging relies on radioactive tracers",
+      "Structural imaging examines individual neurons, while functional imaging examines entire brain hemispheres",
+      "Structural imaging is entirely non-invasive, while functional imaging requires surgical electrode implantation"
+    ],
+    "difficulty": 3,
+    "source_article": "Neuroimaging",
+    "domain_ids": ["psychology"],
+    "concepts_tested": ["neuroimaging"]
+  },
+  {
+    "question_text": "In cross-cultural psychology, what methodological challenge arises when using the same psychological instrument across different cultural populations?",
+    "correct_answer": "Ensuring construct equivalence — that the instrument measures the same psychological construct in each culture",
+    "distractors": [
+      "Achieving sample saturation — ensuring enough participants from each culture to reach adequate statistical power",
+      "Maintaining temporal consistency — ensuring the instrument produces stable results at different administration times",
+      "Guaranteeing language fluency — ensuring all participants read the translated instrument at native proficiency level"
+    ],
+    "difficulty": 3,
+    "source_article": "Cross-cultural psychology",
+    "domain_ids": ["psychology"],
+    "concepts_tested": ["cross-cultural psychology"]
+  },
+  {
+    "question_text": "Through what physiological mechanism does the hypothalamic-pituitary-adrenal (HPA) axis influence behavior during a stress response?",
+    "correct_answer": "The HPA axis triggers cortisol release from the adrenal glands, affecting mood, cognition, and arousal",
+    "distractors": [
+      "The HPA axis directly stimulates motor neurons in the spinal cord, producing involuntary fight-or-flight movements",
+      "The HPA axis releases dopamine from the prefrontal cortex, enhancing reward-seeking behavior under acute pressure",
+      "The HPA axis suppresses serotonin production in the brainstem, causing heightened aggression and sustained vigilance"
+    ],
+    "difficulty": 3,
+    "source_article": "Endocrine system",
+    "domain_ids": ["psychology"],
+    "concepts_tested": ["endocrine system and behavior"]
+  },
+  {
+    "question_text": "According to Deci and Ryan's self-determination theory, what three innate psychological needs must be satisfied for optimal motivation and well-being?",
+    "correct_answer": "Autonomy, competence, and relatedness",
+    "distractors": [
+      "Achievement, affiliation, and power",
+      "Safety, belonging, and self-actualization",
+      "Pleasure, engagement, and meaning"
+    ],
+    "difficulty": 3,
+    "source_article": "Self-determination theory",
+    "domain_ids": ["psychology"],
+    "concepts_tested": ["self-determination theory"]
+  },
+  {
+    "question_text": "In psychometrics, what type of reliability is assessed by correlating scores from two equivalent forms of a test administered to the same group?",
+    "correct_answer": "Parallel-forms reliability (alternate-forms reliability)",
+    "distractors": [
+      "Test-retest reliability (temporal stability)",
+      "Inter-rater reliability (scorer consistency)",
+      "Internal consistency (split-half reliability)"
+    ],
+    "difficulty": 3,
+    "source_article": "Reliability (psychometrics)",
+    "domain_ids": ["psychology"],
+    "concepts_tested": ["reliability and validity"]
+  },
+  {
+    "question_text": "What distinguishes comparative psychology from ethology in the study of animal behavior, particularly in methodology?",
+    "correct_answer": "Comparative psychology emphasizes controlled laboratory experiments, while ethology prioritizes observing natural behavior in the field",
+    "distractors": [
+      "Comparative psychology studies only primates, while ethology examines all vertebrate and invertebrate species equally",
+      "Comparative psychology focuses exclusively on learned behaviors, while ethology assumes all behavior is genetically innate",
+      "Comparative psychology uses qualitative case studies, while ethology relies on purely quantitative statistical analysis"
+    ],
+    "difficulty": 3,
+    "source_article": "Comparative psychology",
+    "domain_ids": ["psychology"],
+    "concepts_tested": ["comparative psychology"]
+  },
+  {
+    "question_text": "In resilience research, what does Ann Masten's concept of 'ordinary magic' suggest about the nature of psychological resilience?",
+    "correct_answer": "Resilience arises from common adaptive systems like supportive relationships and self-regulation, not extraordinary traits",
+    "distractors": [
+      "Resilience is a rare genetic trait appearing unpredictably in certain individuals regardless of their social environment",
+      "Resilience develops only through direct exposure to severe adversity that activates dormant psychological defense mechanisms",
+      "Resilience requires deliberate professional therapeutic intervention and cannot emerge through natural developmental processes"
+    ],
+    "difficulty": 3,
+    "source_article": "Psychological resilience",
+    "domain_ids": ["psychology"],
+    "concepts_tested": ["psychological resilience"]
+  },
+  {
+    "question_text": "In item response theory, what does the item characteristic curve (ICC) model, and what are its parameters in the two-parameter logistic model?",
+    "correct_answer": "The ICC models probability of a correct response as a function of ability, with discrimination and difficulty parameters",
+    "distractors": [
+      "The ICC models response time as a function of item complexity, parameterized by processing speed and accuracy thresholds",
+      "The ICC models score variance as a function of group membership, parameterized by mean difference and distribution overlap",
+      "The ICC models item selection frequency as a function of test anxiety, parameterized by avoidance and engagement levels"
+    ],
+    "difficulty": 4,
+    "source_article": "Item response theory",
+    "domain_ids": ["psychology"],
+    "concepts_tested": ["item response theory"]
+  },
+  {
+    "question_text": "What capability distinguishes structural equation modeling (SEM) from standard multiple regression in analyzing relationships among variables?",
+    "correct_answer": "SEM simultaneously estimates relationships among multiple latent variables while accounting for measurement error",
+    "distractors": [
+      "SEM uses nonparametric bootstrapping to eliminate all assumptions about the distribution of observed variables",
+      "SEM applies Bayesian priors to constrain parameter estimates based on the researcher's prior theoretical expectations",
+      "SEM transforms ordinal observed variables into continuous scales through automated item response theory calibration"
+    ],
+    "difficulty": 4,
+    "source_article": "Structural equation modeling",
+    "domain_ids": ["psychology"],
+    "concepts_tested": ["structural equation modeling"]
+  }
+]

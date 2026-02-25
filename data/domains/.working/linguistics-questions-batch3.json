@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In the study of lexical borrowing, what term describes a foreign expression whose meaning is translated morpheme-by-morpheme into the receiving language rather than adopting the donor language's phonetic form?",
+    "correct_answer": "A calque, also called a loan translation",
+    "distractors": [
+      "A cognate, also called a genetic inheritance",
+      "A loanblend, also called a hybrid borrowing",
+      "A neologism, also called a coined formation"
+    ],
+    "difficulty": 2,
+    "source_article": "Loanword",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["loanword"]
+  },
+  {
+    "question_text": "What is the fundamental linguistic criterion that differentiates a creole language from a pidgin?",
+    "correct_answer": "A creole has native speakers who acquired it as a first language, while a pidgin does not",
+    "distractors": [
+      "A creole has a standardized written form and orthography, while a pidgin is exclusively oral",
+      "A creole derives its vocabulary from a single source language, while a pidgin draws from several",
+      "A creole possesses complex grammatical morphology, while a pidgin has no systematic grammar"
+    ],
+    "difficulty": 2,
+    "source_article": "Creole language",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["pidgin and creole"]
+  },
+  {
+    "question_text": "In prosody, how does intonation primarily differ from lexical tone as a suprasegmental feature of speech?",
+    "correct_answer": "Intonation operates at the phrase or sentence level, while tone distinguishes meaning at the word or syllable level",
+    "distractors": [
+      "Intonation conveys meaning through variations in loudness, while tone conveys meaning through variations in pitch",
+      "Intonation is found exclusively in Indo-European languages, while tone occurs only in Sino-Tibetan languages",
+      "Intonation marks grammatical case and agreement relations, while tone signals verb tense and aspect"
+    ],
+    "difficulty": 2,
+    "source_article": "Intonation (linguistics)",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["intonation"]
+  },
+  {
+    "question_text": "What distinguishes psycholinguistics from theoretical linguistics as an academic discipline?",
+    "correct_answer": "Psycholinguistics studies the mental mechanisms underlying language acquisition, production, and comprehension",
+    "distractors": [
+      "Psycholinguistics focuses on documenting endangered languages and preserving global linguistic diversity",
+      "Psycholinguistics analyzes the formal grammatical rules governing sentence structure across languages",
+      "Psycholinguistics examines how social and cultural factors influence language variation among communities"
+    ],
+    "difficulty": 2,
+    "source_article": "Psycholinguistics",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["psycholinguistics"]
+  },
+  {
+    "question_text": "In UNESCO's Language Vitality and Endangerment framework, what endangerment level describes a language that children no longer learn as their mother tongue in the home?",
+    "correct_answer": "Definitely endangered",
+    "distractors": [
+      "Vulnerable",
+      "Severely endangered",
+      "Critically endangered"
+    ],
+    "difficulty": 2,
+    "source_article": "Endangered language",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["endangered language"]
+  },
+  {
+    "question_text": "In pragmatics, what term coined by H. Paul Grice describes the meaning a speaker conveys beyond the literal content of an utterance, inferred from conversational context and cooperative principles?",
+    "correct_answer": "Conversational implicature",
+    "distractors": [
+      "Presupposition trigger",
+      "Perlocutionary effect",
+      "Illocutionary force"
+    ],
+    "difficulty": 2,
+    "source_article": "Pragmatics",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["pragmatics"]
+  },
+  {
+    "question_text": "When two sounds in a language occur in the same phonetic environments and substituting one for the other changes word meaning, what distributional relationship do they exhibit?",
+    "correct_answer": "Contrastive distribution, indicating they are separate phonemes",
+    "distractors": [
+      "Complementary distribution, indicating they are allophones of one phoneme",
+      "Free variation, indicating they are interchangeable without meaning change",
+      "Morphophonemic alternation, indicating they are conditioned by morphological context"
+    ],
+    "difficulty": 3,
+    "source_article": "Phonology",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["phonology"]
+  },
+  {
+    "question_text": "In Mandarin Chinese, the syllable 'ma' can mean 'mother,' 'hemp,' 'horse,' or 'scold' depending on its pitch contour. What linguistic feature produces these distinctions?",
+    "correct_answer": "Lexical tone, where pitch contour distinguishes word meaning at the syllable level",
+    "distractors": [
+      "Sentence intonation, where pitch pattern indicates the speaker's attitude or intent",
+      "Contrastive stress, where syllable emphasis distinguishes word meaning at the phrase level",
+      "Vowel quality shift, where tongue position alters the vowel to change word meaning"
+    ],
+    "difficulty": 3,
+    "source_article": "Tone (linguistics)",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["tone (linguistics)"]
+  },
+  {
+    "question_text": "A phonologist finds that speakers of Language X perceive [s] and [ʃ] as the same sound. What evidence would prove these are actually distinct phonemes?",
+    "correct_answer": "A minimal pair showing that substituting [s] for [ʃ] changes word meaning",
+    "distractors": [
+      "A spectrographic analysis showing that [s] and [ʃ] have different acoustic properties",
+      "A demonstration that both [s] and [ʃ] can occur at the beginning of words",
+      "An articulatory description showing that [s] and [ʃ] use different tongue positions"
+    ],
+    "difficulty": 3,
+    "source_article": "Minimal pair",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["minimal pair"]
+  },
+  {
+    "question_text": "In English, the aspirated [pʰ] in 'pin' and unaspirated [p] in 'spin' are perceived as the same sound. What phonological relationship describes these two phones?",
+    "correct_answer": "They are allophones of the phoneme /p/ in complementary distribution",
+    "distractors": [
+      "They are free variants of the phoneme /p/ selected randomly by speakers",
+      "They are distinct phonemes that happen to share the same orthographic representation",
+      "They are coarticulated variants of the phoneme /p/ conditioned by speaker dialect"
+    ],
+    "difficulty": 3,
+    "source_article": "Allophone",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["allophone"]
+  }
+]

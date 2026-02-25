@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "What subfield of sociology studies how public institutions and individual experiences shape educational outcomes, focusing primarily on modern industrial schooling systems?",
+    "correct_answer": "The sociology of education",
+    "distractors": [
+      "The philosophy of education",
+      "Educational psychology",
+      "Comparative education studies"
+    ],
+    "difficulty": 1,
+    "source_article": "Sociology of education",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["education and society"]
+  },
+  {
+    "question_text": "What term describes the population shift from rural to urban areas, the decrease in rural populations, and the ways societies adapt to these changes?",
+    "correct_answer": "Urbanization",
+    "distractors": [
+      "Industrialization",
+      "Gentrification",
+      "Suburbanization"
+    ],
+    "difficulty": 1,
+    "source_article": "Urbanization",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["urbanization"]
+  },
+  {
+    "question_text": "In sociology, what concept refers to a set of expected behaviors, rights, and obligations associated with a particular social position or status?",
+    "correct_answer": "A social role",
+    "distractors": [
+      "A social norm",
+      "A social identity",
+      "A social function"
+    ],
+    "difficulty": 1,
+    "source_article": "Role",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["social role"]
+  },
+  {
+    "question_text": "Which concept describes enduring, humanly devised structures of rules and norms that shape social behavior, such as the family, education, religion, government, and the economy?",
+    "correct_answer": "Social institutions",
+    "distractors": [
+      "Social organizations",
+      "Social movements",
+      "Social conventions"
+    ],
+    "difficulty": 2,
+    "source_article": "Social institution",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["social institution"]
+  },
+  {
+    "question_text": "What field is defined as the statistical study of human populations, examining their size, composition, and changes through the interplay of fertility, mortality, and migration?",
+    "correct_answer": "Demography",
+    "distractors": [
+      "Epidemiology",
+      "Human geography",
+      "Biostatistics"
+    ],
+    "difficulty": 2,
+    "source_article": "Demography",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["demography"]
+  },
+  {
+    "question_text": "What are the two main types of social mobility that distinguish movement within a single lifetime from movement across generations between parents and children?",
+    "correct_answer": "Intragenerational mobility and intergenerational mobility",
+    "distractors": [
+      "Horizontal mobility and vertical mobility",
+      "Structural mobility and circulation mobility",
+      "Absolute mobility and relative mobility"
+    ],
+    "difficulty": 2,
+    "source_article": "Social mobility",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["social mobility"]
+  },
+  {
+    "question_text": "Which major sociological perspective, rooted in the work of George Herbert Mead, focuses on how people create meaning through shared language, symbols, and face-to-face interaction?",
+    "correct_answer": "Symbolic interactionism",
+    "distractors": [
+      "Structural functionalism",
+      "Ethnomethodology",
+      "Phenomenological sociology"
+    ],
+    "difficulty": 2,
+    "source_article": "Symbolic interactionism",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["symbolic interactionism"]
+  },
+  {
+    "question_text": "Which sociological paradigm, associated with Durkheim and Parsons, views society as a complex system whose interdependent parts work together to promote solidarity and stability?",
+    "correct_answer": "Structural functionalism",
+    "distractors": [
+      "Conflict theory",
+      "Symbolic interactionism",
+      "Social constructionism"
+    ],
+    "difficulty": 2,
+    "source_article": "Structural functionalism",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["structural functionalism"]
+  },
+  {
+    "question_text": "Which sociological perspective, rooted in the work of Karl Marx, argues that society is shaped by ongoing power struggles between groups competing over unequally distributed resources?",
+    "correct_answer": "Conflict theory",
+    "distractors": [
+      "Structural functionalism",
+      "Rational choice theory",
+      "Social exchange theory"
+    ],
+    "difficulty": 2,
+    "source_article": "Conflict theories",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["conflict theory"]
+  },
+  {
+    "question_text": "What are the two forms of racial segregation distinguished by whether the separation of races is mandated by law or exists through informal practices and personal choice?",
+    "correct_answer": "De jure segregation and de facto segregation",
+    "distractors": [
+      "Institutional segregation and interpersonal segregation",
+      "Structural segregation and cultural segregation",
+      "Formal segregation and informal segregation"
+    ],
+    "difficulty": 2,
+    "source_article": "Racial segregation",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["racial segregation"]
+  }
+]

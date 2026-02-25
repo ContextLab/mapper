@@ -1,0 +1,172 @@
+[
+  {
+    "question_text": "In gene-environment interaction research, which model proposes that individuals with a genetic predisposition develop a disorder only when exposed to sufficient environmental stress?",
+    "correct_answer": "The diathesis-stress model",
+    "distractors": [
+      "The differential susceptibility model",
+      "The bioecological systems model",
+      "The epigenetic accumulation model"
+    ],
+    "difficulty": 4,
+    "source_article": "Gene–environment interaction",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "gene-environment interaction"
+    ]
+  },
+  {
+    "question_text": "Robert Ader and Nicholas Cohen founded psychoneuroimmunology in 1975 by demonstrating what key phenomenon in laboratory rats using saccharin-laced water paired with Cytoxan?",
+    "correct_answer": "That immune responses could be classically conditioned",
+    "distractors": [
+      "That stress hormones directly suppress white blood cell counts",
+      "That neurotransmitter depletion triggers autoimmune responses",
+      "That learned helplessness causes chronic immune system activation"
+    ],
+    "difficulty": 4,
+    "source_article": "Psychoneuroimmunology",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "psychoneuroimmunology"
+    ]
+  },
+  {
+    "question_text": "Ecological momentary assessment (EMA) collects data through repeated real-time sampling in natural environments. What is its primary methodological advantage over traditional retrospective questionnaires?",
+    "correct_answer": "It minimizes recall bias and maximizes ecological validity",
+    "distractors": [
+      "It eliminates the need for informed consent procedures",
+      "It increases statistical power through larger sample sizes",
+      "It removes individual differences in response style bias"
+    ],
+    "difficulty": 4,
+    "source_article": "Ecological momentary assessment",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "ecological momentary assessment"
+    ]
+  },
+  {
+    "question_text": "The Weber-Fechner law states that perceived stimulus intensity increases as a logarithmic function of physical intensity. Which later psychophysical law challenged this by proposing a power function instead?",
+    "correct_answer": "Stevens' power law",
+    "distractors": [
+      "Bloch's temporal summation law",
+      "Ricco's spatial summation law",
+      "Hick's law of choice reaction time"
+    ],
+    "difficulty": 4,
+    "source_article": "Weber\u2013Fechner law",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "Weber-Fechner law"
+    ]
+  },
+  {
+    "question_text": "In meta-analysis, which statistic quantifies the percentage of variability in effect sizes across studies that is attributable to true heterogeneity rather than sampling error?",
+    "correct_answer": "The I-squared (I\u00b2) statistic",
+    "distractors": [
+      "The Q-statistic of overall homogeneity",
+      "The tau-squared between-study variance estimate",
+      "The fail-safe N for publication bias"
+    ],
+    "difficulty": 4,
+    "source_article": "Meta-analysis",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "meta-analysis in psychology"
+    ]
+  },
+  {
+    "question_text": "In signal detection theory, what measure quantifies an observer's ability to discriminate between signal and noise, independent of their response bias?",
+    "correct_answer": "d-prime (d'), the sensitivity index",
+    "distractors": [
+      "Beta, the likelihood ratio criterion",
+      "The area under the ROC curve alone",
+      "The false alarm rate at threshold"
+    ],
+    "difficulty": 4,
+    "source_article": "Detection theory",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "signal detection theory applications in psychology"
+    ]
+  },
+  {
+    "question_text": "In Bayesian statistics applied to psychology, what quantity represents the ratio of evidence for one statistical model over another, serving as an alternative to p-values?",
+    "correct_answer": "The Bayes factor",
+    "distractors": [
+      "The posterior odds ratio",
+      "The credible interval width",
+      "The prior predictive density"
+    ],
+    "difficulty": 4,
+    "source_article": "Bayesian statistics",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "Bayesian statistics in psychology"
+    ]
+  },
+  {
+    "question_text": "Long-term potentiation (LTP) in the hippocampus requires activation of which receptor that acts as a coincidence detector, being unblocked only when glutamate binding and postsynaptic depolarization occur simultaneously?",
+    "correct_answer": "The NMDA (N-methyl-D-aspartate) receptor",
+    "distractors": [
+      "The AMPA (alpha-amino-3-hydroxy-5-methyl-4-isoxazolepropionic acid) receptor",
+      "The GABA-A (gamma-aminobutyric acid type A) receptor",
+      "The metabotropic glutamate receptor subtype mGluR5"
+    ],
+    "difficulty": 4,
+    "source_article": "Long-term potentiation",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "long-term potentiation"
+    ]
+  },
+  {
+    "question_text": "Kahneman and Tversky's prospect theory, a cornerstone of behavioral economics, describes how people evaluate outcomes relative to a reference point. What key asymmetry does the theory's value function demonstrate?",
+    "correct_answer": "Losses loom larger than equivalent gains, a phenomenon called loss aversion",
+    "distractors": [
+      "Gains are evaluated more slowly than losses due to cognitive load differences",
+      "Small losses are ignored while small gains are overweighted in decisions",
+      "Repeated gains diminish in value faster than repeated losses accumulate"
+    ],
+    "difficulty": 4,
+    "source_article": "Behavioral economics",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "behavioral economics"
+    ]
+  },
+  {
+    "question_text": "The Reproducibility Project in psychology attempted to replicate 100 published studies. Approximately what percentage of the original statistically significant findings were successfully replicated?",
+    "correct_answer": "About 36 percent of the original findings replicated successfully",
+    "distractors": [
+      "About 62 percent of the original findings replicated successfully",
+      "About 75 percent of the original findings replicated successfully",
+      "About 50 percent of the original findings replicated successfully"
+    ],
+    "difficulty": 4,
+    "source_article": "Replication crisis",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "replication crisis in psychology"
+    ]
+  }
+]

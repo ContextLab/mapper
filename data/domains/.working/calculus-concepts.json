@@ -1,0 +1,66 @@
+{
+  "domain": "calculus",
+  "parent_domain": "mathematics",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {"concept": "derivative", "wikipedia_article": "Derivative", "brief_rationale": "The most iconic concept in calculus; universally taught as the instantaneous rate of change and slope of a tangent line."},
+      {"concept": "integral", "wikipedia_article": "Integral", "brief_rationale": "The other pillar of calculus; widely recognized as computing areas under curves and accumulations."},
+      {"concept": "limit", "wikipedia_article": "Limit (mathematics)", "brief_rationale": "Foundational concept underlying all of calculus; taught in every introductory calculus course as the first major topic."},
+      {"concept": "continuity", "wikipedia_article": "Continuous function", "brief_rationale": "Intuitive concept of an unbroken curve; universally recognized from introductory calculus and pre-calculus."},
+      {"concept": "differential equation", "wikipedia_article": "Differential equation", "brief_rationale": "Widely recognized as equations involving derivatives; familiar from science and engineering education."},
+      {"concept": "tangent line", "wikipedia_article": "Tangent", "brief_rationale": "Geometric interpretation of the derivative; universally taught and visualizable from basic calculus."},
+      {"concept": "area under a curve", "wikipedia_article": "Area under the curve (pharmacokinetics)", "brief_rationale": "Primary geometric motivation for integration; universally presented as the central application of definite integrals."},
+      {"concept": "slope", "wikipedia_article": "Slope", "brief_rationale": "Pre-calculus concept that generalizes to the derivative; universally known from algebra and geometry."},
+      {"concept": "inflection point", "wikipedia_article": "Inflection point", "brief_rationale": "Point where a curve changes concavity; widely taught in introductory calculus as a key concept in curve sketching."},
+      {"concept": "asymptote", "wikipedia_article": "Asymptote", "brief_rationale": "Line a curve approaches but never reaches; widely taught in pre-calculus and calculus courses."},
+      {"concept": "concavity", "wikipedia_article": "Concave function", "brief_rationale": "Whether a curve bends upward or downward; universally taught in introductory calculus for curve analysis."},
+      {"concept": "antiderivative", "wikipedia_article": "Antiderivative", "brief_rationale": "The reverse operation of differentiation; universally introduced alongside integration in first-semester calculus."},
+      {"concept": "Fundamental Theorem of Calculus", "wikipedia_article": "Fundamental theorem of calculus", "brief_rationale": "The central theorem linking differentiation and integration; taught in every introductory calculus course as its capstone result."}
+    ],
+    "L2": [
+      {"concept": "chain rule", "wikipedia_article": "Chain rule", "brief_rationale": "Specific differentiation rule for composite functions; named result universally memorized in first-semester calculus."},
+      {"concept": "product rule", "wikipedia_article": "Product rule", "brief_rationale": "Specific differentiation rule for products of functions; named result taught in every introductory calculus course."},
+      {"concept": "Riemann sum", "wikipedia_article": "Riemann sum", "brief_rationale": "Specific technique of approximating integrals with rectangles; named result central to the definition of the definite integral."},
+      {"concept": "L'Hôpital's rule", "wikipedia_article": "L'Hôpital's rule", "brief_rationale": "Named rule for evaluating indeterminate limits using derivatives; specific technique taught in first-year calculus."},
+      {"concept": "integration by parts", "wikipedia_article": "Integration by parts", "brief_rationale": "Specific integration technique derived from the product rule; named method universally taught in second-semester calculus."},
+      {"concept": "Taylor series", "wikipedia_article": "Taylor series", "brief_rationale": "Named power series expansion of a function around a point; specific result taught in second-semester calculus as a major topic."},
+      {"concept": "partial derivative", "wikipedia_article": "Partial derivative", "brief_rationale": "Derivative with respect to one variable while holding others fixed; specific technical concept from multivariable calculus."},
+      {"concept": "gradient", "wikipedia_article": "Gradient", "brief_rationale": "Vector of partial derivatives pointing in the direction of steepest ascent; specific named concept from multivariable calculus."},
+      {"concept": "implicit differentiation", "wikipedia_article": "Implicit function theorem", "brief_rationale": "Technique for differentiating relations not solved for one variable; specific method taught in first-semester calculus."},
+      {"concept": "Maclaurin series", "wikipedia_article": "Taylor series", "brief_rationale": "Taylor series centered at zero; specific named case universally presented as the standard power series examples (e^x, sin x, cos x)."},
+      {"concept": "epsilon-delta definition", "wikipedia_article": "Epsilon–delta definition of a limit", "brief_rationale": "Formal definition of a limit using epsilon and delta; specific technical definition that distinguishes rigorous calculus from intuitive approaches."},
+      {"concept": "mean value theorem", "wikipedia_article": "Mean value theorem", "brief_rationale": "Named theorem guaranteeing a point where instantaneous rate equals average rate; specific major result in differential calculus."},
+      {"concept": "integration by substitution", "wikipedia_article": "Integration by substitution", "brief_rationale": "Technique for integration using a change of variable; specific named method (also called u-substitution) universally taught in calculus."}
+    ],
+    "L3": [
+      {"concept": "divergence theorem", "wikipedia_article": "Divergence theorem", "brief_rationale": "Relates volume integral of divergence to surface flux integral; requires working knowledge of vector calculus and how it extends the FTC."},
+      {"concept": "Stokes' theorem", "wikipedia_article": "Stokes' theorem", "brief_rationale": "Relates surface integral of curl to line integral around boundary; requires working knowledge of differential forms and vector calculus."},
+      {"concept": "Green's theorem", "wikipedia_article": "Green's theorem", "brief_rationale": "Relates line integral around closed curve to double integral over enclosed region; requires working knowledge of planar vector calculus."},
+      {"concept": "Lagrange multipliers", "wikipedia_article": "Lagrange multiplier", "brief_rationale": "Technique for constrained optimization using auxiliary variables; requires working knowledge of multivariable calculus and the geometry of level curves."},
+      {"concept": "improper integral", "wikipedia_article": "Improper integral", "brief_rationale": "Integrals over unbounded domains or with singularities evaluated as limits; requires working knowledge of convergence and limit concepts."},
+      {"concept": "Taylor's theorem", "wikipedia_article": "Taylor's theorem", "brief_rationale": "Theorem bounding the error of Taylor polynomial approximations via the remainder term; requires working understanding of how series approximate functions."},
+      {"concept": "Jacobian matrix", "wikipedia_article": "Jacobian matrix and determinant", "brief_rationale": "Matrix of all partial derivatives of a vector-valued function; requires working knowledge of multivariable differentiation and change-of-variables in integration."},
+      {"concept": "convergence tests", "wikipedia_article": "Convergence tests", "brief_rationale": "Suite of tests (ratio, root, comparison, integral) for determining series convergence; requires working knowledge of infinite series behavior."},
+      {"concept": "line integral", "wikipedia_article": "Line integral", "brief_rationale": "Integration of a function along a curve in space; requires working knowledge of parameterization and vector fields."},
+      {"concept": "separable differential equation", "wikipedia_article": "Separable partial differential equation", "brief_rationale": "ODEs solvable by separating variables onto opposite sides; requires working knowledge of integration techniques and ODE solution methods."},
+      {"concept": "power series", "wikipedia_article": "Power series", "brief_rationale": "Infinite series of the form sum of a_n(x-c)^n with radius of convergence; requires working knowledge of series convergence and function representation."},
+      {"concept": "arc length", "wikipedia_article": "Arc length", "brief_rationale": "Integral formula for the length of a curve; requires working knowledge of the derivation from Pythagorean theorem and its multivariable extensions."}
+    ],
+    "L4": [
+      {"concept": "Lebesgue integral", "wikipedia_article": "Lebesgue integration", "brief_rationale": "Measure-theoretic generalization of the Riemann integral integrating over measurable sets; requires deep knowledge of real analysis and measure theory."},
+      {"concept": "Stokes' theorem (differential forms)", "wikipedia_article": "Generalized Stokes theorem", "brief_rationale": "Unification of FTC, Green's, Stokes', and divergence theorems via differential forms on manifolds; requires deep knowledge of differential geometry."},
+      {"concept": "Fréchet derivative", "wikipedia_article": "Fréchet derivative", "brief_rationale": "Generalization of the derivative to maps between Banach spaces; requires deep knowledge of functional analysis and infinite-dimensional calculus."},
+      {"concept": "calculus of variations", "wikipedia_article": "Calculus of variations", "brief_rationale": "Optimization over function spaces using functionals and the Euler-Lagrange equation; requires deep knowledge linking calculus to physics and optimization theory."},
+      {"concept": "Euler-Lagrange equation", "wikipedia_article": "Euler–Lagrange equation", "brief_rationale": "Necessary condition for extremizing a functional; requires deep knowledge of variational calculus and its applications in mechanics and geometry."},
+      {"concept": "Fourier series", "wikipedia_article": "Fourier series", "brief_rationale": "Representation of periodic functions as sums of sines and cosines; requires deep knowledge of orthogonality, convergence, and function spaces."},
+      {"concept": "Cauchy-Riemann equations", "wikipedia_article": "Cauchy–Riemann equations", "brief_rationale": "Conditions for complex differentiability defining holomorphic functions; requires deep knowledge bridging real multivariable calculus and complex analysis."},
+      {"concept": "Morse theory", "wikipedia_article": "Morse theory", "brief_rationale": "Topology of manifolds via critical points of smooth functions; requires deep knowledge connecting differential calculus to algebraic topology."},
+      {"concept": "Sard's theorem", "wikipedia_article": "Sard's theorem", "brief_rationale": "Almost all values of a smooth map are regular values; requires deep knowledge of measure theory and smooth manifold theory."},
+      {"concept": "exterior derivative", "wikipedia_article": "Exterior derivative", "brief_rationale": "Generalization of gradient, curl, and divergence to differential forms; requires deep knowledge of differential geometry and the wedge product formalism."},
+      {"concept": "Gronwall's inequality", "wikipedia_article": "Grönwall's inequality", "brief_rationale": "Integral inequality bounding solutions to differential inequalities; requires deep knowledge of ODEs and its use in proving existence, uniqueness, and stability results."},
+      {"concept": "uniform convergence", "wikipedia_article": "Uniform convergence", "brief_rationale": "Stronger form of convergence that preserves continuity and allows interchange of limits with integrals and derivatives; requires deep knowledge of real analysis foundations."}
+    ]
+  }
+}

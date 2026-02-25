@@ -1,0 +1,100 @@
+[
+  {
+    "id": "abcfc78b42bf57a5",
+    "question_text": "The eigenvalues of a square matrix $A$ are found by solving a specific polynomial equation. What is this equation called, and how is it derived?",
+    "correct_answer": "The characteristic polynomial $\\det(A - \\lambda I) = 0$, derived by requiring $A - \\lambda I$ be singular so $A\\mathbf{v} = \\lambda\\mathbf{v}$ has nonzero solutions.",
+    "distractors": [
+      "The characteristic polynomial $\\det(A + \\lambda I) = 0$, derived by requiring $A + \\lambda I$ be invertible so $A\\mathbf{v} = \\lambda\\mathbf{v}$ has unique solutions.",
+      "The minimal polynomial $\\operatorname{tr}(A - \\lambda I) = 0$, derived by setting the trace of $A - \\lambda I$ to zero so diagonals equal $\\lambda$.",
+      "The characteristic polynomial $\\det(A - \\lambda I) = 1$, derived by requiring $A - \\lambda I$ have unit determinant so $A\\mathbf{v} = \\lambda\\mathbf{v}$ preserves volume."
+    ],
+    "difficulty": 2,
+    "source_article": "Eigenvalues and eigenvectors",
+    "domain_ids": ["linear-algebra"],
+    "concepts_tested": ["eigenvalue", "characteristic polynomial", "determinant"]
+  },
+  {
+    "id": "b83cc618883908f5",
+    "question_text": "If $\\mathbf{v}$ is an eigenvector of matrix $A$ with eigenvalue $\\lambda$, what happens when $A$ is applied to $3\\mathbf{v}$?",
+    "correct_answer": "$A(3\\mathbf{v}) = 3\\lambda\\mathbf{v}$, because eigenvectors can be scaled by any nonzero scalar and remain eigenvectors with the same eigenvalue.",
+    "distractors": [
+      "$A(3\\mathbf{v}) = 3\\lambda^{2}\\mathbf{v}$, because scaling an eigenvector squares the eigenvalue while preserving the scalar multiple.",
+      "$A(3\\mathbf{v}) = (\\lambda + 3)\\mathbf{v}$, because applying $A$ to a scaled eigenvector adds the scalar to the eigenvalue.",
+      "$3\\mathbf{v}$ is not an eigenvector of $A$ because the defining equation $A\\mathbf{v} = \\lambda\\mathbf{v}$ holds only for the original vector $\\mathbf{v}$, not its multiples."
+    ],
+    "difficulty": 2,
+    "source_article": "Eigenvalues and eigenvectors",
+    "domain_ids": ["linear-algebra"],
+    "concepts_tested": ["eigenvector", "eigenvalue", "linearity"]
+  },
+  {
+    "id": "f4d6047853d1cb8a",
+    "question_text": "If $A$ and $B$ are $n \\times n$ matrices, what is $\\det(AB)$ in terms of $\\det(A)$ and $\\det(B)$?",
+    "correct_answer": "$\\det(AB) = \\det(A) \\cdot \\det(B)$. The determinant is multiplicative: the determinant of a product equals the product of the determinants.",
+    "distractors": [
+      "$\\det(AB) = \\det(A) + \\det(B)$. The determinant is additive: the determinant of a product equals the sum of the determinants.",
+      "$\\det(AB) = \\det(A) \\cdot \\det(B) + \\det(A + B)$. The determinant of a product includes a correction term from the sum of the matrices.",
+      "$\\det(AB) = \\det(B) \\cdot \\det(A)^{-1}$. The determinant of a product equals the second factor's determinant divided by the first."
+    ],
+    "difficulty": 2,
+    "source_article": "Determinant",
+    "domain_ids": ["linear-algebra"],
+    "concepts_tested": ["determinant", "matrix multiplication"]
+  },
+  {
+    "id": "b6f12d122fbbf22b",
+    "question_text": "The rank of an $m \\times n$ matrix $A$ is defined as a dimension. What exactly does it measure, and what is its upper bound?",
+    "correct_answer": "The rank is the dimension of the column space (equivalently, the maximal number of linearly independent columns). It is at most $\\min(m, n)$.",
+    "distractors": [
+      "The rank is the dimension of the null space (equivalently, the number of free variables). It is at most $\\min(m, n)$.",
+      "The rank is the dimension of the column space (equivalently, the maximal number of linearly independent columns). It is at most $m + n$.",
+      "The rank is the total number of nonzero entries in the row echelon form of $A$. It is at most $\\min(m, n)$."
+    ],
+    "difficulty": 2,
+    "source_article": "Rank (linear algebra)",
+    "domain_ids": ["linear-algebra"],
+    "concepts_tested": ["rank", "column space", "linear independence"]
+  },
+  {
+    "id": "c79bec7438b057d9",
+    "question_text": "The null space of an $m \\times n$ matrix $A$ is a subspace of $\\mathbb{R}^n$. What vectors does it contain, and what does a trivial null space imply?",
+    "correct_answer": "It contains all vectors $\\mathbf{x}$ satisfying $A\\mathbf{x} = \\mathbf{0}$. A trivial null space (only the zero vector) means the columns of $A$ are linearly independent.",
+    "distractors": [
+      "It contains all vectors $\\mathbf{x}$ satisfying $A\\mathbf{x} = \\mathbf{0}$. A trivial null space (only the zero vector) means the columns of $A$ are linearly dependent.",
+      "It contains all vectors $\\mathbf{b}$ in the range of $A$ where $A\\mathbf{x} = \\mathbf{b}$ is solvable. A trivial null space means $A$ is singular.",
+      "It contains all vectors $\\mathbf{x}$ satisfying $A^T\\mathbf{x} = \\mathbf{0}$. A trivial null space (only the zero vector) means the rows of $A$ span $\\mathbb{R}^n$."
+    ],
+    "difficulty": 2,
+    "source_article": "Kernel (linear algebra)",
+    "domain_ids": ["linear-algebra"],
+    "concepts_tested": ["null space", "linear independence", "kernel"]
+  },
+  {
+    "id": "d714f36cf5f1acae",
+    "question_text": "The column space of a matrix $A$ determines which systems $A\\mathbf{x} = \\mathbf{b}$ are solvable. What is the precise condition for solvability?",
+    "correct_answer": "$A\\mathbf{x} = \\mathbf{b}$ is solvable if and only if $\\mathbf{b}$ lies in the column space of $A$, i.e., $\\mathbf{b}$ is a combination of $A$'s columns.",
+    "distractors": [
+      "$A\\mathbf{x} = \\mathbf{b}$ is solvable if and only if $\\mathbf{b}$ lies in the null space of $A$, i.e., $A$ maps $\\mathbf{b}$ to the zero vector.",
+      "$A\\mathbf{x} = \\mathbf{b}$ is solvable if and only if $\\mathbf{b}$ is orthogonal to the column space, i.e., $\\mathbf{b}$ projects to zero on each column.",
+      "$A\\mathbf{x} = \\mathbf{b}$ is solvable if and only if $\\mathbf{b}$ lies in the row space of $A$, i.e., $\\mathbf{b}$ is a combination of $A$'s rows."
+    ],
+    "difficulty": 2,
+    "source_article": "Row and column spaces",
+    "domain_ids": ["linear-algebra"],
+    "concepts_tested": ["column space", "solvability", "linear combination"]
+  },
+  {
+    "id": "7558c4f8a1a86317",
+    "question_text": "A basis for a vector space must satisfy exactly two properties. What are they, and what invariant do all bases of a given space share?",
+    "correct_answer": "The vectors must be linearly independent and span the space. Every basis for a given space has the same number of elements, called the dimension.",
+    "distractors": [
+      "The vectors must be mutually orthogonal and span the space. Every basis for a given space has the same number of elements, called the dimension.",
+      "The vectors must be linearly independent and span the space. Different bases for a given space can have different numbers of elements.",
+      "The vectors must be linearly independent and have unit length. Every basis for a given space has the same number of elements, called the dimension."
+    ],
+    "difficulty": 2,
+    "source_article": "Basis (linear algebra)",
+    "domain_ids": ["linear-algebra"],
+    "concepts_tested": ["basis", "linear independence", "dimension", "span"]
+  }
+]

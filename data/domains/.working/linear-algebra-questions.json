@@ -1,0 +1,368 @@
+[
+  {
+    "question_text": "In linear algebra, what is a matrix?",
+    "correct_answer": "A rectangular array of numbers arranged in rows and columns, used to represent linear transformations and systems of equations.",
+    "distractors": [
+      "A circular arrangement of numbers organized by magnitude and sign, used to represent nonlinear transformations and differential equations.",
+      "A rectangular array of numbers arranged in rows and columns, used exclusively to store data with no algebraic operations defined.",
+      "A single row of numbers arranged by increasing value, used to represent polynomial equations and their roots."
+    ],
+    "difficulty": 1,
+    "source_article": "Matrix (mathematics)",
+    "domain_ids": [
+      "linear-algebra"
+    ],
+    "concepts_tested": [
+      "matrix"
+    ],
+    "id": "4c6628d2d4d428a3"
+  },
+  {
+    "question_text": "In linear algebra, what is a vector?",
+    "correct_answer": "A mathematical object with both magnitude and direction, representable as an ordered list of numbers in a vector space.",
+    "distractors": [
+      "A mathematical object with magnitude only and no direction, representable as a single number on the number line.",
+      "A mathematical object with both magnitude and direction, representable as an unordered set of numbers in a space.",
+      "A mathematical object with both magnitude and direction, representable only as a $2 \\times 2$ matrix defining rotation."
+    ],
+    "difficulty": 1,
+    "source_article": "Vector (mathematics and physics)",
+    "domain_ids": [
+      "linear-algebra"
+    ],
+    "concepts_tested": [
+      "vector"
+    ],
+    "id": "a9aa1ba72606e59e"
+  },
+  {
+    "question_text": "In linear algebra, what is a scalar?",
+    "correct_answer": "An element of the underlying field (such as a real number) that can multiply a vector to produce another vector.",
+    "distractors": [
+      "An element of the underlying field (such as a real number) that can multiply a vector to produce a matrix.",
+      "A pair of real numbers that can be added to a vector to translate it to a new position in space.",
+      "An element of any set (such as a string or boolean) that can multiply a vector to produce another vector."
+    ],
+    "difficulty": 1,
+    "source_article": "Scalar (mathematics)",
+    "domain_ids": [
+      "linear-algebra"
+    ],
+    "concepts_tested": [
+      "scalar"
+    ],
+    "id": "20760008ba8c8119"
+  },
+  {
+    "question_text": "What is a linear equation?",
+    "correct_answer": "An equation where each variable appears to the first power with no cross terms, graphing as a straight line or hyperplane.",
+    "distractors": [
+      "An equation where each variable appears to the second power with no cross terms, graphing as a parabola or paraboloid.",
+      "An equation where each variable appears to the first power with no cross terms, graphing as a curved surface.",
+      "An equation where each variable appears to the first power with no cross terms, graphing as a circle or sphere."
+    ],
+    "difficulty": 1,
+    "source_article": "Linear equation",
+    "domain_ids": [
+      "linear-algebra"
+    ],
+    "concepts_tested": [
+      "linear equation"
+    ],
+    "id": "9c7be30ad9ef90b4"
+  },
+  {
+    "question_text": "What is a system of linear equations?",
+    "correct_answer": "A collection of two or more linear equations involving the same variables, solved simultaneously for common values.",
+    "distractors": [
+      "A collection of two or more linear equations involving different variables, solved independently of one another.",
+      "A collection of two or more quadratic equations involving the same variables, solved simultaneously for common values.",
+      "A single linear equation involving two or more variables, solved by isolating each variable on one side."
+    ],
+    "difficulty": 1,
+    "source_article": "System of linear equations",
+    "domain_ids": [
+      "linear-algebra"
+    ],
+    "concepts_tested": [
+      "system of linear equations"
+    ],
+    "id": "f8d95c3edf75e696"
+  },
+  {
+    "question_text": "In linear algebra, what is matrix multiplication?",
+    "correct_answer": "An operation producing a new matrix whose entries are dot products of rows of the first and columns of the second matrix.",
+    "distractors": [
+      "An operation producing a new matrix whose entries are sums of corresponding row and column elements from two matrices.",
+      "An operation producing a new matrix whose entries are element-wise products of matching positions from two matrices.",
+      "An operation producing a new matrix whose entries are dot products of columns of the first and rows of the second matrix."
+    ],
+    "difficulty": 1,
+    "source_article": "Matrix multiplication",
+    "domain_ids": [
+      "linear-algebra"
+    ],
+    "concepts_tested": [
+      "matrix multiplication"
+    ],
+    "id": "dbb00bd971351c3f"
+  },
+  {
+    "question_text": "In linear algebra, what is the transpose of a matrix?",
+    "correct_answer": "A new matrix formed by swapping rows and columns, so entry $(i, j)$ becomes entry $(j, i)$, denoted $A^T$.",
+    "distractors": [
+      "A new matrix formed by reversing the row order, so that the first row becomes the last row, denoted $A^T$.",
+      "A new matrix formed by negating every entry, so that entry $(i, j)$ becomes $-a_{ij}$, denoted $A^T$.",
+      "A new matrix formed by swapping rows and columns, so entry $(i, j)$ becomes entry $(j, i)$, denoted $A^{-1}$."
+    ],
+    "difficulty": 1,
+    "source_article": "Transpose",
+    "domain_ids": [
+      "linear-algebra"
+    ],
+    "concepts_tested": [
+      "transpose"
+    ],
+    "id": "45477b05fe94d5f0"
+  },
+  {
+    "question_text": "For a nonnegative irreducible matrix $A$ with index of imprimitivity $h > 1$, what does the Perron-Frobenius theorem say about the eigenvalues of $A$ that have modulus equal to the spectral radius $r$?",
+    "correct_answer": "Exactly $h$ eigenvalues have modulus $r$, equally spaced on the circle $|\\lambda|=r$ as $r e^{2\\pi i k/h}$ for $k=0,\\ldots,h-1$.",
+    "distractors": [
+      "Only the Perron root $r$ has modulus $r$, but with algebraic multiplicity $h$ and a single Jordan block of size $h$.",
+      "Exactly $h$ eigenvalues have modulus $r$, all real and positive, uniformly distributed along the interval $[0, r]$.",
+      "Exactly $h-1$ eigenvalues besides $r$ share that modulus, located at the $h$-th roots of $\\det(A)$ scaled to $r$."
+    ],
+    "difficulty": 4,
+    "source_article": "Perron\u2013Frobenius theorem",
+    "domain_ids": [
+      "linear-algebra"
+    ],
+    "concepts_tested": [
+      "Perron-Frobenius theorem",
+      "spectral radius",
+      "irreducible matrix",
+      "index of imprimitivity"
+    ]
+  },
+  {
+    "question_text": "In the Schur decomposition $A = QUQ^*$, what additional structural property does $U$ have when $A$ is a normal matrix, and what does this imply about the decomposition?",
+    "correct_answer": "$U$ must be diagonal, so the Schur decomposition coincides with the spectral decomposition and the columns of $Q$ are eigenvectors.",
+    "distractors": [
+      "$U$ must be real-valued, so the Schur decomposition reduces to the real Schur form and $Q$ becomes an orthogonal matrix.",
+      "$U$ must itself be unitary, so the decomposition factors $A$ as a product of two unitary matrices with no triangular part.",
+      "$U$ must be Hermitian, so the decomposition guarantees all eigenvalues of $A$ are real and $Q$ diagonalizes $A$."
+    ],
+    "difficulty": 4,
+    "source_article": "Schur decomposition",
+    "domain_ids": [
+      "linear-algebra"
+    ],
+    "concepts_tested": [
+      "Schur decomposition",
+      "normal matrix",
+      "spectral decomposition",
+      "unitary similarity"
+    ]
+  },
+  {
+    "question_text": "For $n \\times n$ matrices $A$ and $B$, the identity $e^{A+B} = e^A e^B$ does not hold in general. What is the precise necessary and sufficient condition for this identity, and what related determinantal identity holds without restriction?",
+    "correct_answer": "$e^{A+B} = e^A e^B$ holds if and only if $A$ and $B$ commute ($AB = BA$). Without any restriction, $\\det(e^A) = e^{\\operatorname{tr}(A)}$ always holds.",
+    "distractors": [
+      "$e^{A+B} = e^A e^B$ holds if and only if $A$ and $B$ are both diagonalizable. Without any restriction, $\\det(e^A) = e^{\\det(A)}$ always holds.",
+      "$e^{A+B} = e^A e^B$ holds if and only if $A$ and $B$ share the same eigenvectors. Without any restriction, $\\det(e^A) = e^{\\|A\\|}$ always holds.",
+      "$e^{A+B} = e^A e^B$ holds if and only if $A + B$ is nilpotent. Without any restriction, $\\det(e^A) = e^{\\operatorname{tr}(A^2)/2}$ always holds."
+    ],
+    "difficulty": 4,
+    "source_article": "Matrix exponential",
+    "domain_ids": [
+      "linear-algebra"
+    ],
+    "concepts_tested": [
+      "matrix exponential",
+      "commutativity",
+      "Jacobi's formula",
+      "trace"
+    ]
+  },
+  {
+    "question_text": "For a nonsingular matrix $A$, the 2-norm condition number $\\kappa_2(A)$ quantifies sensitivity of the solution $x$ in $Ax = b$ to perturbations. How is $\\kappa_2(A)$ computed from the singular value decomposition, and what value indicates perfect conditioning?",
+    "correct_answer": "$\\kappa_2(A) = \\sigma_{\\max}/\\sigma_{\\min}$, the ratio of extreme singular values. Perfect conditioning gives $\\kappa_2 = 1$, as for unitary matrices.",
+    "distractors": [
+      "$\\kappa_2(A) = \\sigma_{\\max} \\cdot \\sigma_{\\min}$, the product of extreme singular values. Perfect conditioning gives $\\kappa_2 = 0$, as for projection matrices.",
+      "$\\kappa_2(A) = \\sigma_{\\max} - \\sigma_{\\min}$, the difference of extreme singular values. Perfect conditioning gives $\\kappa_2 = 0$, as for normal matrices.",
+      "$\\kappa_2(A) = \\sigma_{\\max}^2/\\sigma_{\\min}^2$, the squared ratio of extreme singular values. Perfect conditioning gives $\\kappa_2 = 1$, as for any positive definite matrix."
+    ],
+    "difficulty": 4,
+    "source_article": "Condition number",
+    "domain_ids": [
+      "linear-algebra"
+    ],
+    "concepts_tested": [
+      "condition number",
+      "singular value decomposition",
+      "numerical stability",
+      "ill-conditioning"
+    ]
+  },
+  {
+    "question_text": "Sylvester's law of inertia states that congruence transformations $B = SAS^T$ preserve the inertia of a real symmetric matrix $A$. Precisely what triple is invariant, and how does this differ from what similarity transformations preserve?",
+    "correct_answer": "Congruence preserves the triple $(n_+, n_-, n_0)$ counting positive, negative, and zero eigenvalues, but not the eigenvalues themselves. Similarity preserves the actual eigenvalues including multiplicities.",
+    "distractors": [
+      "Congruence preserves the triple $(\\det A, \\operatorname{tr} A, \\operatorname{rank} A)$ but not the individual eigenvalues. Similarity preserves only the trace and determinant of the matrix.",
+      "Congruence preserves the triple $(n_+, n_-, n_0)$ counting positive, negative, and zero eigenvalues along with the eigenvalues. Similarity preserves only the characteristic polynomial.",
+      "Congruence preserves the triple $(\\sigma_{\\max}, \\sigma_{\\min}, \\operatorname{rank} A)$ of extreme singular values and rank. Similarity preserves the singular values including multiplicities."
+    ],
+    "difficulty": 4,
+    "source_article": "Sylvester's law of inertia",
+    "domain_ids": [
+      "linear-algebra"
+    ],
+    "concepts_tested": [
+      "Sylvester's law of inertia",
+      "congruence transformation",
+      "matrix inertia",
+      "signature"
+    ]
+  },
+  {
+    "question_text": "The Krylov subspace $\\mathcal{K}_r(A, b) = \\operatorname{span}\\{b, Ab, A^2 b, \\ldots, A^{r-1}b\\}$ has a maximum dimension $r_0$ beyond which it stops growing. What determines $r_0$, and which iterative method exploits Krylov subspaces for nonsymmetric systems?",
+    "correct_answer": "$r_0$ is bounded by the degree of the minimal polynomial of $A$ (tight for some $b$). GMRES is the standard Krylov method for nonsymmetric systems.",
+    "distractors": [
+      "$r_0$ is bounded by the number of distinct eigenvalues of $A$ (tight for some $b$). Conjugate gradient is the standard Krylov method for nonsymmetric systems.",
+      "$r_0$ equals $\\operatorname{rank}(A)$ for every nonzero $b$, independent of the minimal polynomial. Arnoldi iteration is the standard Krylov method for nonsymmetric systems.",
+      "$r_0$ is bounded by $n - \\operatorname{nullity}(A)$, independent of $b$. Lanczos iteration is the standard Krylov method for nonsymmetric systems."
+    ],
+    "difficulty": 4,
+    "source_article": "Krylov subspace",
+    "domain_ids": [
+      "linear-algebra"
+    ],
+    "concepts_tested": [
+      "Krylov subspace",
+      "minimal polynomial",
+      "GMRES",
+      "iterative methods"
+    ]
+  },
+  {
+    "question_text": "In the singular value decomposition $M = U \\Sigma V^*$, the matrix $\\Sigma$ is diagonal with non-negative entries called singular values. How is the number of nonzero singular values related to the matrix $M$?",
+    "correct_answer": "The number of nonzero singular values equals the rank of $M$, indicating the dimension of its column space",
+    "distractors": [
+      "The number of nonzero singular values equals the trace of $M$, indicating the sum of its diagonal entries",
+      "The number of nonzero singular values equals the determinant of $M$, indicating its volume scaling factor",
+      "The number of nonzero singular values equals the nullity of $M$, indicating the dimension of its null space"
+    ],
+    "difficulty": 3,
+    "source_article": "Singular value decomposition",
+    "domain_ids": [
+      "linear-algebra"
+    ],
+    "concepts_tested": [
+      "singular value decomposition",
+      "rank",
+      "singular values"
+    ],
+    "id": "fd77762e87ab3cb3"
+  },
+  {
+    "question_text": "LU decomposition factors a matrix as $A = LU$ where $L$ is lower triangular and $U$ is upper triangular. In the standard formulation with $L$ unitriangular, what values appear on the diagonal of $L$?",
+    "correct_answer": "All diagonal entries of $L$ are equal to one, making $L$ a unit lower triangular matrix",
+    "distractors": [
+      "The diagonal entries of $L$ are the eigenvalues of $A$, arranged in decreasing order of magnitude",
+      "The diagonal entries of $L$ are the pivots from Gaussian elimination, equal to the diagonal of $U$",
+      "All diagonal entries of $L$ are equal to zero, since only the strictly lower part stores multipliers"
+    ],
+    "difficulty": 3,
+    "source_article": "LU decomposition",
+    "domain_ids": [
+      "linear-algebra"
+    ],
+    "concepts_tested": [
+      "LU decomposition",
+      "triangular matrix",
+      "Gaussian elimination"
+    ],
+    "id": "2152ae02cd75e3ed"
+  },
+  {
+    "question_text": "In the QR decomposition $A = QR$ of an invertible real square matrix, $Q$ is orthogonal and $R$ is upper triangular. Under what additional condition is this factorization unique?",
+    "correct_answer": "The factorization is unique when the diagonal entries of $R$ are all required to be positive",
+    "distractors": [
+      "The factorization is unique when the diagonal entries of $Q$ are all required to be positive",
+      "The factorization is unique when $R$ is further required to be symmetric positive definite",
+      "The factorization is unique when $Q$ is further required to have determinant equal to zero"
+    ],
+    "difficulty": 3,
+    "source_article": "QR decomposition",
+    "domain_ids": [
+      "linear-algebra"
+    ],
+    "concepts_tested": [
+      "QR decomposition",
+      "orthogonal matrix",
+      "upper triangular matrix"
+    ],
+    "id": "a05e02139c6e8e16"
+  },
+  {
+    "question_text": "The Gram-Schmidt process constructs orthogonal vectors $\\{u_1, \\ldots, u_k\\}$ from linearly independent vectors $\\{v_1, \\ldots, v_k\\}$. Each step subtracts projections onto previously computed vectors. What happens if the input vectors are linearly dependent?",
+    "correct_answer": "The process produces a zero vector at the step corresponding to the dependent vector, since its projections cancel it entirely",
+    "distractors": [
+      "The process produces a unit vector pointing in an arbitrary direction, chosen to maintain orthogonality with previous outputs",
+      "The process fails to terminate because the projection formula divides by zero at every subsequent step",
+      "The process produces a vector with infinite norm because the subtracted projections amplify rather than cancel components"
+    ],
+    "difficulty": 3,
+    "source_article": "Gram\u2013Schmidt process",
+    "domain_ids": [
+      "linear-algebra"
+    ],
+    "concepts_tested": [
+      "Gram-Schmidt process",
+      "orthogonalization",
+      "linear dependence"
+    ],
+    "id": "59dc3cb53c36a4b6"
+  },
+  {
+    "question_text": "The ordinary least squares solution minimizes $\\|Ax - b\\|^2$ for an overdetermined system. The solution satisfies a specific matrix equation derived by setting the gradient to zero. What is this equation?",
+    "correct_answer": "The normal equation $A^T A x = A^T b$, obtained by projecting $b$ onto the column space of $A$",
+    "distractors": [
+      "The eigenvalue equation $A x = \\lambda b$, obtained by decomposing $b$ into eigenvectors of $A$",
+      "The inverse equation $A^{-1} b = x$, obtained by directly inverting the coefficient matrix $A$",
+      "The singular equation $A^T b = \\Sigma x$, obtained by applying the singular value decomposition to $A$"
+    ],
+    "difficulty": 3,
+    "source_article": "Least squares",
+    "domain_ids": [
+      "linear-algebra"
+    ],
+    "concepts_tested": [
+      "least squares",
+      "normal equations",
+      "projection"
+    ],
+    "id": "243ef8aa741d8a9c"
+  },
+  {
+    "question_text": "When changing from basis $B_{\\text{old}}$ to basis $B_{\\text{new}}$, a change-of-basis matrix $P$ converts coordinates. If a linear map has matrix $A$ in the old basis, what is its matrix representation in the new basis?",
+    "correct_answer": "$P^{-1} A P$, a similarity transformation that preserves eigenvalues, trace, and determinant of $A$",
+    "distractors": [
+      "$P A P^{-1}$, a congruence transformation that preserves only the rank and nullity of $A$",
+      "$P^T A P$, an orthogonal transformation that preserves the singular values but changes the eigenvalues",
+      "$A + P$, a translation that shifts the diagonal entries of $A$ by the entries of $P$"
+    ],
+    "difficulty": 3,
+    "source_article": "Change of basis",
+    "domain_ids": [
+      "linear-algebra"
+    ],
+    "concepts_tested": [
+      "change of basis",
+      "similarity transformation",
+      "matrix representation"
+    ],
+    "id": "52353d0504849a52"
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In the sociology of religion, which thinker defined religion as 'a unified system of beliefs and practices relative to sacred things, that is to say, things set apart and forbidden'?",
+    "correct_answer": "Emile Durkheim, in The Elementary Forms of the Religious Life (1912)",
+    "distractors": [
+      "Max Weber, in The Protestant Ethic and the Spirit of Capitalism (1905)",
+      "William James, in The Varieties of Religious Experience (1902)",
+      "Rudolf Otto, in The Idea of the Holy (1917)"
+    ],
+    "difficulty": 1,
+    "source_article": "Religion",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["religion"]
+  },
+  {
+    "question_text": "In Plato's Republic, why did he argue that art should be censored or excluded from the ideal state?",
+    "correct_answer": "Because art is mimesis (imitation), a copy of the physical world already copying the eternal Forms, thus twice removed from truth",
+    "distractors": [
+      "Because art relies on mathematical ratios that distort the harmony of the soul's three parts",
+      "Because art appeals exclusively to the rational faculty, bypassing the emotional education citizens require",
+      "Because art reveals the Forms too directly, overwhelming citizens who lack philosophical training"
+    ],
+    "difficulty": 1,
+    "source_article": "Art",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["art"]
+  },
+  {
+    "question_text": "In Aristotle's Nicomachean Ethics, what does the Greek term 'eudaimonia' refer to as the highest human good?",
+    "correct_answer": "An activity of the soul in accordance with virtue, understood as human flourishing rather than mere pleasure",
+    "distractors": [
+      "The maximization of bodily pleasure and the complete absence of physical pain",
+      "Detachment from worldly desires through contemplative withdrawal from public life",
+      "Obedience to divine commands as revealed through religious ritual and prayer"
+    ],
+    "difficulty": 1,
+    "source_article": "Happiness",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["happiness"]
+  },
+  {
+    "question_text": "What is epistemology, and from which Greek roots does the term derive?",
+    "correct_answer": "The branch of philosophy studying the nature, origin, and limits of knowledge, from 'episteme' (knowledge) and 'logos' (study/reason)",
+    "distractors": [
+      "The branch of philosophy studying moral duty and right action, from 'ethos' (character) and 'logos' (study/reason)",
+      "The branch of philosophy studying the nature of being and existence, from 'epistrophe' (return) and 'logos' (study/reason)",
+      "The branch of philosophy studying the principles of valid reasoning, from 'epistaxis' (arrangement) and 'logos' (study/reason)"
+    ],
+    "difficulty": 2,
+    "source_article": "Epistemology",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["epistemology"]
+  },
+  {
+    "question_text": "Which philosopher first coined the term 'aesthetics' in 1735 to designate the science of sensory cognition as a distinct philosophical discipline?",
+    "correct_answer": "Alexander Gottlieb Baumgarten, in his thesis Meditationes philosophicae de nonnullis ad poema pertinentibus",
+    "distractors": [
+      "Immanuel Kant, in his Critique of the Power of Judgment (1790)",
+      "David Hume, in his essay Of the Standard of Taste (1757)",
+      "Georg Wilhelm Friedrich Hegel, in his Lectures on Aesthetics (1835)"
+    ],
+    "difficulty": 2,
+    "source_article": "Aesthetics",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["aesthetics"]
+  },
+  {
+    "question_text": "Karl Popper proposed falsifiability as the criterion to solve which central problem in the philosophy of science?",
+    "correct_answer": "The demarcation problem: how to distinguish genuine science from pseudoscience and non-science",
+    "distractors": [
+      "The measurement problem: how observation alters the state of the system being studied",
+      "The induction problem: how to guarantee that future observations will match past regularities",
+      "The underdetermination problem: how to choose among rival theories equally supported by evidence"
+    ],
+    "difficulty": 2,
+    "source_article": "Philosophy of science",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["philosophy of science"]
+  },
+  {
+    "question_text": "In Thomas Hobbes's Leviathan, how did he describe human life in the 'state of nature' without government?",
+    "correct_answer": "As a war of every man against every man, where life is 'solitary, poor, nasty, brutish, and short'",
+    "distractors": [
+      "As a peaceful agrarian community where natural law ensures mutual respect and shared property",
+      "As a state of noble freedom where individuals cooperate through innate moral sentiments",
+      "As a theocratic order where divine commandments enforce justice without need for a sovereign"
+    ],
+    "difficulty": 2,
+    "source_article": "Political philosophy",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["political philosophy"]
+  },
+  {
+    "question_text": "In Gottlob Frege's 1892 essay 'On Sense and Reference', what distinction did he draw to explain how identity statements can be informative?",
+    "correct_answer": "Between sense (Sinn), the mode of presentation of an object, and reference (Bedeutung), the actual object denoted",
+    "distractors": [
+      "Between syntax, the grammatical structure of a sentence, and semantics, the truth conditions it expresses",
+      "Between connotation, the emotional associations of a term, and denotation, the class of objects it names",
+      "Between use, the pragmatic context of an utterance, and mention, the quotation of a linguistic expression"
+    ],
+    "difficulty": 2,
+    "source_article": "Philosophy of language",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["philosophy of language"]
+  },
+  {
+    "question_text": "Which 19th-century Danish philosopher is widely regarded as the 'father of existentialism' for his emphasis on individual existence, subjectivity, and the leap of faith?",
+    "correct_answer": "Soren Kierkegaard, whose works include Either/Or, Fear and Trembling, and The Concept of Anxiety",
+    "distractors": [
+      "Friedrich Nietzsche, whose works include Beyond Good and Evil and Thus Spoke Zarathustra",
+      "Arthur Schopenhauer, whose works include The World as Will and Representation",
+      "Georg Wilhelm Friedrich Hegel, whose works include Phenomenology of Spirit and Science of Logic"
+    ],
+    "difficulty": 2,
+    "source_article": "Existentialism",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["existentialism"]
+  },
+  {
+    "question_text": "In the philosophy of religion, what is the ontological argument for God's existence as formulated by Anselm of Canterbury in his Proslogion?",
+    "correct_answer": "God is 'a being than which no greater can be conceived'; such a being must exist in reality, not merely in the mind",
+    "distractors": [
+      "Every contingent thing requires a cause, so there must be a necessary first cause, which is God",
+      "The intricate order and purpose found in nature can only be explained by an intelligent designer, who is God",
+      "Moral obligations require a transcendent lawgiver to ground their authority, and that lawgiver is God"
+    ],
+    "difficulty": 2,
+    "source_article": "Philosophy of religion",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["philosophy of religion"]
+  }
+]

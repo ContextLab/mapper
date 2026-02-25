@@ -1,0 +1,172 @@
+[
+  {
+    "question_text": "Which country was the first in the world to enact a national minimum wage, passing the Industrial Conciliation and Arbitration Act in 1894?",
+    "correct_answer": "New Zealand",
+    "distractors": [
+      "United Kingdom",
+      "Australia",
+      "United States"
+    ],
+    "difficulty": 1,
+    "source_article": "Minimum wage",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "minimum wage"
+    ]
+  },
+  {
+    "question_text": "During the Great Depression, approximately what peak unemployment rate did the United States reach in 1933?",
+    "correct_answer": "About 25%",
+    "distractors": [
+      "About 15%",
+      "About 35%",
+      "About 50%"
+    ],
+    "difficulty": 1,
+    "source_article": "Great Depression",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "Great Depression"
+    ]
+  },
+  {
+    "question_text": "Which French engineer published 'On the Measurement of the Utility of Public Works' in 1844, laying the groundwork for modern cost-benefit analysis?",
+    "correct_answer": "Jules Dupuit",
+    "distractors": [
+      "Alfred Marshall",
+      "Vilfredo Pareto",
+      "Léon Walras"
+    ],
+    "difficulty": 1,
+    "source_article": "Cost–benefit analysis",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "cost-benefit analysis"
+    ]
+  },
+  {
+    "question_text": "Which economist won the 2017 Nobel Prize in Economics for his contributions to behavioral economics, including the concept of 'nudge' theory?",
+    "correct_answer": "Richard Thaler",
+    "distractors": [
+      "Daniel Kahneman",
+      "Robert Shiller",
+      "Cass Sunstein"
+    ],
+    "difficulty": 2,
+    "source_article": "Behavioral economics",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "behavioral economics"
+    ]
+  },
+  {
+    "question_text": "In labor economics, what does the marginal productivity theory of wages predict about the relationship between a worker's pay and their output?",
+    "correct_answer": "Workers are paid a wage equal to their marginal product of labor",
+    "distractors": [
+      "Workers are paid based on seniority regardless of output",
+      "Workers are paid a fixed share of total firm revenue",
+      "Workers are paid the average product of all employees"
+    ],
+    "difficulty": 2,
+    "source_article": "Labour economics",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "labor economics"
+    ]
+  },
+  {
+    "question_text": "Who coined the term 'econometrics' in 1926 and co-founded the Econometric Society, later sharing the first Nobel Prize in Economics in 1969?",
+    "correct_answer": "Ragnar Frisch",
+    "distractors": [
+      "Jan Tinbergen",
+      "Trygve Haavelmo",
+      "Lawrence Klein"
+    ],
+    "difficulty": 2,
+    "source_article": "Econometrics",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "econometrics"
+    ]
+  },
+  {
+    "question_text": "In Keynesian economics, what is the 'paradox of thrift'?",
+    "correct_answer": "When everyone saves more individually, aggregate demand falls, potentially reducing total savings economy-wide",
+    "distractors": [
+      "When interest rates rise, consumers borrow more instead of less",
+      "When governments cut spending, tax revenues unexpectedly increase",
+      "When wages increase, employment rises rather than falls"
+    ],
+    "difficulty": 2,
+    "source_article": "Keynesian economics",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "Keynesian economics"
+    ]
+  },
+  {
+    "question_text": "What type of trade barrier sets a government-imposed physical limit on the quantity of a specific good that may be imported during a given period?",
+    "correct_answer": "An import quota",
+    "distractors": [
+      "A tariff",
+      "An export subsidy",
+      "A voluntary export restraint"
+    ],
+    "difficulty": 2,
+    "source_article": "Trade barrier",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "trade barrier"
+    ]
+  },
+  {
+    "question_text": "Which economist's 1964 book 'Human Capital' systematically analyzed education and training as economic investments, earning him the 1992 Nobel Prize?",
+    "correct_answer": "Gary Becker",
+    "distractors": [
+      "Theodore Schultz",
+      "Jacob Mincer",
+      "Milton Friedman"
+    ],
+    "difficulty": 2,
+    "source_article": "Human capital",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "human capital"
+    ]
+  },
+  {
+    "question_text": "The Gini coefficient is derived from the Lorenz curve. What does a Gini coefficient of 0 represent?",
+    "correct_answer": "Perfect equality, where everyone has the same income",
+    "distractors": [
+      "Perfect inequality, where one person holds all income",
+      "An economy with zero GDP growth",
+      "A population with zero tax burden"
+    ],
+    "difficulty": 2,
+    "source_article": "Gini coefficient",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "Gini coefficient"
+    ]
+  }
+]

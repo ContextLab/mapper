@@ -12,7 +12,958 @@
     },
     "grid_size": 70
   },
-  "questions": [],
+  "questions": [
+    {
+      "id": "07e4aa39a2dd574f",
+      "question_text": "An operating system manages computer hardware and software resources. What is generally considered the first operating system, created in 1956 for the IBM 704?",
+      "options": {
+        "A": "CTSS, developed at MIT for the IBM 7094",
+        "B": "BESYS, developed by Bell Labs for the IBM 7090",
+        "C": "GM-NAA I/O, developed by General Motors and North American Aviation",
+        "D": "IBSYS, developed by IBM for its 7090 and 7094 mainframes"
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Operating system",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "operating system"
+      ]
+    },
+    {
+      "id": "c341b780acdc5aea",
+      "question_text": "The Internet originated from ARPANET. On October 29, 1969, the first ARPANET message was intended to be 'login,' but the system crashed. What letters were actually transmitted?",
+      "options": {
+        "A": "The full word 'log' was transmitted before a buffer overflow occurred",
+        "B": "Only 'L', 'O', and 'G' were sent before a routing error stopped the transfer",
+        "C": "Only the letter 'L' was sent before the connection timed out",
+        "D": "Only 'L' and 'O' were sent before the system crashed"
+      },
+      "correct_answer": "D",
+      "difficulty": 1,
+      "source_article": "Internet",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "internet"
+      ]
+    },
+    {
+      "id": "c7e0b6e82c915b82",
+      "question_text": "A database is an organized collection of data managed by a DBMS. What does DBMS stand for, and what is its primary role?",
+      "options": {
+        "A": "Database Monitoring and Security system; it provides real-time intrusion detection for stored data",
+        "B": "Database Management System; it manages storage, retrieval, and administration of data",
+        "C": "Digital Backup and Migration System; it automates data replication across servers",
+        "D": "Data Block Management Service; it handles physical disk allocation and defragmentation"
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Database",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "database"
+      ]
+    },
+    {
+      "id": "ef49b4e253ad01b5",
+      "question_text": "In a computer network, which topology connects every device directly to every other device, providing maximum redundancy but at the highest cabling cost?",
+      "options": {
+        "A": "Ring topology, where each device connects to exactly two neighbors",
+        "B": "Mesh topology (specifically full mesh topology)",
+        "C": "Star topology, where all devices connect through a central hub",
+        "D": "Bus topology, where all devices share a single backbone cable"
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Computer network",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "computer network"
+      ]
+    },
+    {
+      "id": "8ae1efcaa8533d59",
+      "question_text": "Software is broadly divided into two main categories. Which two categories are they?",
+      "options": {
+        "A": "Firmware (e.g., BIOS) and middleware (e.g., database connectors)",
+        "B": "System software (e.g., operating systems) and application software (e.g., word processors)",
+        "C": "Compiled software (e.g., C programs) and interpreted software (e.g., Python scripts)",
+        "D": "Open-source software (e.g., Linux) and proprietary software (e.g., Windows)"
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Software",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "software"
+      ]
+    },
+    {
+      "id": "80302d1d982903a2",
+      "question_text": "A computer virus replicates by inserting its code into other programs. What was the name of the first known computer virus, created by Bob Thomas at BBN Technologies in 1971?",
+      "options": {
+        "A": "Morris Worm, which exploited Unix sendmail vulnerabilities to replicate across the Internet",
+        "B": "Creeper, which spread across ARPANET displaying 'I'm the creeper, catch me if you can!'",
+        "C": "Elk Cloner, which spread via Apple II floppy disks and displayed a poem",
+        "D": "Brain, which infected IBM PC boot sectors and was created in Pakistan"
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Computer virus",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "computer virus"
+      ]
+    },
+    {
+      "id": "48e5d70c34fb23be",
+      "question_text": "According to NIST Special Publication 800-145, cloud computing has five essential characteristics. Which of the following is one of those five characteristics?",
+      "options": {
+        "A": "Mandatory data encryption at rest, requiring all stored data to be encrypted by default",
+        "B": "Guaranteed uptime of 99.999%, ensuring continuous availability under all conditions",
+        "C": "On-demand self-service, allowing users to provision computing resources automatically without human interaction",
+        "D": "Automatic geographic redundancy, replicating all data across at least three continents"
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Cloud computing",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "cloud computing"
+      ]
+    },
+    {
+      "id": "765cb081b6c89c48",
+      "question_text": "Computer hardware refers to the physical components of a computer. Which component is often called the 'brain' of the computer because it executes instructions and performs calculations?",
+      "options": {
+        "A": "The motherboard, which connects all components together",
+        "B": "The central processing unit (CPU)",
+        "C": "The graphics processing unit (GPU), which renders visual output",
+        "D": "The random-access memory (RAM), which stores running programs"
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Computer hardware",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "computer hardware"
+      ]
+    },
+    {
+      "id": "7c093033fc721e85",
+      "question_text": "A file system governs how data is organized and accessed on storage media. Which file system, introduced with Windows NT in 1993, replaced FAT32 and supports a maximum file size of 16 exabytes?",
+      "options": {
+        "A": "NTFS (New Technology File System)",
+        "B": "HFS+ (Hierarchical File System Plus), used by macOS before APFS",
+        "C": "ext4 (Fourth Extended File System), the default for most Linux distributions",
+        "D": "ZFS (Zettabyte File System), originally developed by Sun Microsystems"
+      },
+      "correct_answer": "A",
+      "difficulty": 1,
+      "source_article": "File system",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "file system"
+      ]
+    },
+    {
+      "id": "9ae75e91976d7dc1",
+      "question_text": "According to the NIST Digital Identity Guidelines, what are the two parties involved in password-based authentication called?",
+      "options": {
+        "A": "The authenticator (who provides credentials) and the arbiter (who validates them)",
+        "B": "The supplicant (who submits the secret) and the gatekeeper (who controls entry)",
+        "C": "The claimant (who holds the password) and the verifier (who checks the identity)",
+        "D": "The principal (who requests access) and the guardian (who grants permissions)"
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Password",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "password"
+      ]
+    },
+    {
+      "id": "364a0aba69194ebd",
+      "question_text": "The Open Source Definition maintained by the Open Source Initiative was originally based on which set of guidelines?",
+      "options": {
+        "A": "The MIT License framework developed at Massachusetts Institute of Technology",
+        "B": "The GNU General Public License terms drafted by Richard Stallman",
+        "C": "The Debian Free Software Guidelines, written primarily by Bruce Perens",
+        "D": "The Apache Software Foundation's licensing principles"
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Open-source software",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "open-source software"
+      ]
+    },
+    {
+      "id": "548de670ca1f5730",
+      "question_text": "What was the name of the first web browser, and who created it in 1990?",
+      "options": {
+        "A": "Navigator, created by James Gosling at Sun Microsystems",
+        "B": "Nexus, created by Robert Cailliau at MIT",
+        "C": "Mosaic, created by Marc Andreessen at the University of Illinois",
+        "D": "WorldWideWeb, created by Tim Berners-Lee at CERN"
+      },
+      "correct_answer": "D",
+      "difficulty": 1,
+      "source_article": "Web browser",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "web browser"
+      ]
+    },
+    {
+      "id": "7d90a9120c9b162c",
+      "question_text": "In 1947, a team working on the Harvard Mark II computer taped an insect into their logbook, an incident that helped popularize the computing term 'bug.' What type of insect was it?",
+      "options": {
+        "A": "A fly caught in the paper tape reader mechanism",
+        "B": "A beetle found lodged inside a vacuum tube",
+        "C": "An ant discovered shorting a circuit on the main board",
+        "D": "A moth found stuck between relay contacts"
+      },
+      "correct_answer": "D",
+      "difficulty": 1,
+      "source_article": "Debugging",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "debugging"
+      ]
+    },
+    {
+      "id": "f1afeb5c95336e92",
+      "question_text": "Who proposed the relational model for databases in 1970 while working at IBM, publishing the influential paper 'A Relational Model of Data for Large Shared Data Banks'?",
+      "options": {
+        "A": "Michael Stonebraker, developer of Ingres and PostgreSQL",
+        "B": "Charles Bachman, creator of the network data model",
+        "C": "Edgar F. Codd (E. F. Codd)",
+        "D": "Donald Chamberlin, co-inventor of SQL"
+      },
+      "correct_answer": "C",
+      "difficulty": 2,
+      "source_article": "Relational database",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "relational database"
+      ]
+    },
+    {
+      "id": "d97dbc4f01157fdd",
+      "question_text": "SQL was originally developed at IBM under a different name that had to be changed due to a trademark conflict. What was that original name?",
+      "options": {
+        "A": "SEQUEL (Structured English Query Language)",
+        "B": "SQUARE (Specifying Queries Using A Relational Engine)",
+        "C": "ISAM (Indexed Sequential Access Method)",
+        "D": "QUEL (Query Language for relational databases)"
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "SQL",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "SQL"
+      ]
+    },
+    {
+      "id": "4fa279019a85b63e",
+      "question_text": "The TCP/IP model organizes Internet communication protocols into four abstraction layers. From lowest to highest, what are these layers?",
+      "options": {
+        "A": "Physical layer, Data link layer, Network layer, Session layer",
+        "B": "Access layer, Network layer, Host layer, Process layer",
+        "C": "Hardware layer, Routing layer, Connection layer, Service layer",
+        "D": "Link layer, Internet layer, Transport layer, Application layer"
+      },
+      "correct_answer": "D",
+      "difficulty": 2,
+      "source_article": "Internet protocol suite",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "TCP/IP"
+      ]
+    },
+    {
+      "id": "925fbc59b01f925c",
+      "question_text": "Linus Torvalds created Git in 2005 for Linux kernel development after losing access to which proprietary version control system?",
+      "options": {
+        "A": "ClearCase, whose IBM licensing fees became too expensive for the project",
+        "B": "BitKeeper, whose free license was revoked for Linux developers",
+        "C": "Perforce, which ended its open-source partnership with the kernel team",
+        "D": "Subversion (SVN), which could not handle the kernel's repository size"
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Version control",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "version control"
+      ]
+    },
+    {
+      "id": "8b17c58f0677880d",
+      "question_text": "Which programming language, developed in Norway during 1961-1967, is generally accepted as the first language to introduce classes, inheritance, and dynamic binding?",
+      "options": {
+        "A": "LISP, developed by John McCarthy at MIT",
+        "B": "Simula, developed by Ole-Johan Dahl and Kristen Nygaard",
+        "C": "C++, developed by Bjarne Stroustrup at Bell Labs",
+        "D": "Smalltalk, developed by Alan Kay and Dan Ingalls at Xerox PARC"
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Object-oriented programming",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "object-oriented programming"
+      ]
+    },
+    {
+      "id": "24c906a07c1c5aad",
+      "question_text": "In operating systems, what is the key distinction between a program and a process?",
+      "options": {
+        "A": "A program is compiled code while a process is interpreted code running in a virtual machine",
+        "B": "A program can use multiple CPUs while a process is limited to a single core",
+        "C": "A program runs in kernel mode while a process runs in user mode only",
+        "D": "A program is a passive set of instructions on disk; a process is an active instance being executed in memory"
+      },
+      "correct_answer": "D",
+      "difficulty": 2,
+      "source_article": "Process (computing)",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "process (computing)"
+      ]
+    },
+    {
+      "id": "4e41dbba2e2b45dc",
+      "question_text": "In virtual memory systems, what hardware component in the CPU automatically translates virtual addresses to physical addresses?",
+      "options": {
+        "A": "The memory management unit (MMU)",
+        "B": "The arithmetic logic unit (ALU)",
+        "C": "The translation lookaside buffer (TLB) controller",
+        "D": "The direct memory access (DMA) controller"
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "Virtual memory",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "virtual memory"
+      ]
+    },
+    {
+      "id": "f199059a7031c63e",
+      "question_text": "In a modern CPU's cache hierarchy, which level of cache is the smallest, fastest, and located closest to each processor core?",
+      "options": {
+        "A": "L1 cache, which is typically 16-128 KB per core and can be accessed in as little as one clock cycle",
+        "B": "The register file, which functions as a 1 MB cache layer between the ALU and main memory",
+        "C": "L2 cache, which is shared between pairs of cores and accessed in two clock cycles",
+        "D": "L3 cache, which is embedded directly in the core and uses SRAM for single-cycle access"
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "CPU cache",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "CPU cache"
+      ]
+    },
+    {
+      "id": "8ae661168026ea21",
+      "question_text": "The Diffie-Hellman key exchange, published in 1976, was the first publicly disclosed protocol enabling what cryptographic capability?",
+      "options": {
+        "A": "Establishing a shared secret between two parties over an insecure channel without prior shared secrets",
+        "B": "Digitally signing documents to verify the sender's identity using hash functions",
+        "C": "Generating one-time pads for provably unbreakable encryption of military communications",
+        "D": "Encrypting messages using a single symmetric key distributed by a trusted authority"
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "Public-key cryptography",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "public-key cryptography"
+      ]
+    },
+    {
+      "id": "cd243b2fce014462",
+      "question_text": "In software testing, what distinguishes white-box testing from black-box testing?",
+      "options": {
+        "A": "White-box testing runs only on production systems, while black-box testing runs only in development environments",
+        "B": "White-box testing examines the internal structure and source code, while black-box testing only validates functionality against specifications",
+        "C": "White-box testing focuses on performance benchmarks, while black-box testing focuses on security vulnerabilities",
+        "D": "White-box testing is performed by end users, while black-box testing is performed by developers"
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Software testing",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "software testing"
+      ]
+    },
+    {
+      "id": "3485513f5d57b92c",
+      "question_text": "REST, one of the most widely used API architectural styles, was defined by Roy Fielding in his 2000 doctoral dissertation. What does the statelessness constraint of REST require?",
+      "options": {
+        "A": "All API responses must be in stateless formats like plain text, prohibiting structured data like JSON or XML",
+        "B": "Clients must re-authenticate with a full handshake for every single API request they make",
+        "C": "Each client request must contain all information needed to process it, with no stored context on the server between requests",
+        "D": "The server must maintain a session object for each client to track authentication tokens across calls"
+      },
+      "correct_answer": "C",
+      "difficulty": 2,
+      "source_article": "API",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "API"
+      ]
+    },
+    {
+      "id": "d5b6e2b2358d48a5",
+      "question_text": "Functional programming has its theoretical roots in a formal system developed in the 1930s. What is this foundational mathematical framework?",
+      "options": {
+        "A": "Turing machines, developed by Alan Turing to model sequential imperative computation with state",
+        "B": "Boolean algebra, developed by George Boole to formalize logical reasoning in binary terms",
+        "C": "The lambda calculus, developed by Alonzo Church as a formal system for expressing computation through function abstraction",
+        "D": "Set theory, developed by Georg Cantor as a framework for defining collections and membership operations"
+      },
+      "correct_answer": "C",
+      "difficulty": 2,
+      "source_article": "Functional programming",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "functional programming"
+      ]
+    },
+    {
+      "id": "c28f1a4ca05e8676",
+      "question_text": "A stateful inspection firewall improves upon simple packet filtering by maintaining what additional information when deciding whether to allow network traffic?",
+      "options": {
+        "A": "A DNS cache mapping all domain names to IP addresses for faster routing decisions",
+        "B": "A state table tracking active connections, so it can determine whether packets belong to an established session",
+        "C": "A log of all user login credentials to verify application-level authentication per packet",
+        "D": "A complete copy of every packet's payload for deep content inspection and virus scanning"
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Firewall (computing)",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "firewall (computing)"
+      ]
+    },
+    {
+      "id": "6ca28fec1eaa53ee",
+      "question_text": "In concurrent programming, four conditions must hold simultaneously for a deadlock to occur. Which of the following is one of these four necessary conditions?",
+      "options": {
+        "A": "Livelock: two threads continually change state in response to each other without making any progress",
+        "B": "Starvation: a thread is perpetually denied access to a resource because other threads always take precedence",
+        "C": "Priority inversion: a high-priority thread is blocked indefinitely while a low-priority thread runs continuously",
+        "D": "Circular wait: a circular chain of threads exists where each thread holds a resource the next thread is waiting for"
+      },
+      "correct_answer": "D",
+      "difficulty": 3,
+      "source_article": "Concurrency (computer science)",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "concurrency (computer science)"
+      ]
+    },
+    {
+      "id": "6a1106df147af1bb",
+      "question_text": "The CAP theorem, conjectured by Eric Brewer in 2000, states that a distributed data store cannot simultaneously guarantee which three properties?",
+      "options": {
+        "A": "Concurrency, atomicity, and performance",
+        "B": "Consistency, availability, and partition tolerance",
+        "C": "Correctness, accessibility, and portability",
+        "D": "Confidentiality, authentication, and persistence"
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Distributed computing",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "distributed system"
+      ]
+    },
+    {
+      "id": "5af32ac9ec120671",
+      "question_text": "Third Normal Form (3NF), defined by Edgar F. Codd, requires that a relation in 2NF must additionally eliminate what type of dependency?",
+      "options": {
+        "A": "Partial dependencies, where a non-key attribute depends on only part of a composite primary key",
+        "B": "Multivalued dependencies, where one attribute determines a set of values for another independent attribute",
+        "C": "Join dependencies, where a table cannot be reconstructed from a decomposition into smaller tables",
+        "D": "Transitive dependencies, where a non-prime attribute depends on another non-prime attribute rather than directly on the primary key"
+      },
+      "correct_answer": "D",
+      "difficulty": 3,
+      "source_article": "Database normalization",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "database normalization"
+      ]
+    },
+    {
+      "id": "78df33d596e6c8c5",
+      "question_text": "In compiler design, the first phase of compilation reads source code character by character and groups characters into meaningful sequences called tokens. What is this phase called?",
+      "options": {
+        "A": "Lexical analysis (also known as scanning or tokenization)",
+        "B": "Syntax analysis, which builds an abstract syntax tree from the token stream",
+        "C": "Semantic analysis, which checks type compatibility and scoping rules",
+        "D": "Preprocessing, which expands macros and resolves include directives before compilation"
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "Compiler",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "compiler design"
+      ]
+    },
+    {
+      "id": "c1e8af2a16e16eeb",
+      "question_text": "In compiler design, what is the first phase of compilation that reads source code characters and groups them into meaningful units called tokens?",
+      "options": {
+        "A": "Syntax analysis",
+        "B": "Intermediate code generation",
+        "C": "Lexical analysis",
+        "D": "Semantic analysis"
+      },
+      "correct_answer": "C",
+      "difficulty": 3,
+      "source_article": "Compiler",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "compiler design"
+      ]
+    },
+    {
+      "id": "28db63e822580b92",
+      "question_text": "Which category of instruction set architecture does the x86 processor family (used by Intel and AMD) belong to?",
+      "options": {
+        "A": "Complex Instruction Set Computing (CISC)",
+        "B": "Explicitly Parallel Instruction Computing (EPIC)",
+        "C": "Very Long Instruction Word (VLIW)",
+        "D": "Reduced Instruction Set Computing (RISC)"
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "Instruction set architecture",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "instruction set architecture"
+      ]
+    },
+    {
+      "id": "2d2864f2b9e1e5d5",
+      "question_text": "Which two Linux kernel features does Docker use to provide process isolation and resource control for containers, rather than using a hypervisor?",
+      "options": {
+        "A": "Namespaces and cgroups (control groups)",
+        "B": "SELinux and AppArmor",
+        "C": "Hypervisor and virtual machine monitor",
+        "D": "Swap partitions and memory-mapped files"
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "Containerization (computing)",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "containerization"
+      ]
+    },
+    {
+      "id": "ba9fc719dbd67f16",
+      "question_text": "In the Domain Name System, which type of DNS record maps a human-readable domain name to an IPv4 address?",
+      "options": {
+        "A": "CNAME record",
+        "B": "A record",
+        "C": "NS record",
+        "D": "MX record"
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Domain Name System",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "domain name system"
+      ]
+    },
+    {
+      "id": "bd5f635754b38d39",
+      "question_text": "Which computer scientist invented garbage collection around 1959 to simplify memory management in the Lisp programming language?",
+      "options": {
+        "A": "Edsger Dijkstra",
+        "B": "John McCarthy",
+        "C": "Donald Knuth",
+        "D": "Alan Turing"
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Garbage collection (computer science)",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "garbage collection"
+      ]
+    },
+    {
+      "id": "be518750a7c41883",
+      "question_text": "Compared to TLS 1.2 which requires two round trips, how many round trips does a TLS 1.3 handshake require to establish a new secure connection?",
+      "options": {
+        "A": "Two round trips (2-RTT)",
+        "B": "One round trip (1-RTT)",
+        "C": "Zero round trips (0-RTT)",
+        "D": "Three round trips (3-RTT)"
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Transport Layer Security",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "transport layer security"
+      ]
+    },
+    {
+      "id": "36edf87b3ad8152e",
+      "question_text": "Which two Google engineers introduced the MapReduce programming model in their 2004 paper for processing large datasets on clusters?",
+      "options": {
+        "A": "Sergey Brin and Larry Page",
+        "B": "Jeffrey Dean and Sanjay Ghemawat",
+        "C": "Rob Pike and Ken Thompson",
+        "D": "Vint Cerf and Bob Kahn"
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "MapReduce",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "MapReduce"
+      ]
+    },
+    {
+      "id": "5d67f1d0cd75cd02",
+      "question_text": "The 1994 book 'Design Patterns: Elements of Reusable Object-Oriented Software' by the Gang of Four catalogued how many software design patterns?",
+      "options": {
+        "A": "23 design patterns",
+        "B": "36 design patterns",
+        "C": "12 design patterns",
+        "D": "15 design patterns"
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "Software design pattern",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "software design pattern"
+      ]
+    },
+    {
+      "id": "581aa5c2ac4ec8e4",
+      "question_text": "The CAP theorem states that a distributed data store can guarantee at most two of which three properties simultaneously?",
+      "options": {
+        "A": "Confidentiality, authentication, and persistence",
+        "B": "Consistency, availability, and partition tolerance",
+        "C": "Correctness, accessibility, and parallelism",
+        "D": "Concurrency, atomicity, and performance"
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "CAP theorem",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "CAP theorem"
+      ]
+    },
+    {
+      "id": "11cff886718dfa46",
+      "question_text": "In the Paxos consensus algorithm, what is the minimum number of nodes required to tolerate f failures while still reaching agreement?",
+      "options": {
+        "A": "f squared nodes",
+        "B": "f + 1 nodes",
+        "C": "3f + 1 nodes",
+        "D": "2f + 1 nodes"
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Paxos (computer science)",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "Paxos (computer science)"
+      ]
+    },
+    {
+      "id": "1bfcdfa33922eb9f",
+      "question_text": "In the MESI cache coherence protocol, what do the four letters M, E, S, and I stand for?",
+      "options": {
+        "A": "Mapped, Exclusive, Stale, and Invalidated",
+        "B": "Modified, Enabled, Synchronized, and Inactive",
+        "C": "Modified, Evicted, Shared, and Idle",
+        "D": "Modified, Exclusive, Shared, and Invalid"
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Cache coherence",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "cache coherence"
+      ]
+    },
+    {
+      "id": "241983c99eca6928",
+      "question_text": "Tomasulo's algorithm, first implemented in the IBM System/360 Model 91, introduced which key technique to enable full out-of-order execution by eliminating false data dependencies?",
+      "options": {
+        "A": "Loop unrolling",
+        "B": "Branch prediction",
+        "C": "Register renaming",
+        "D": "Instruction prefetching"
+      },
+      "correct_answer": "C",
+      "difficulty": 4,
+      "source_article": "Out-of-order execution",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "out-of-order execution"
+      ]
+    },
+    {
+      "id": "fa50c6df32f2568f",
+      "question_text": "Write-ahead logging (WAL) is a technique that provides which two specific ACID properties in database systems?",
+      "options": {
+        "A": "Atomicity and consistency",
+        "B": "Consistency and isolation",
+        "C": "Isolation and durability",
+        "D": "Atomicity and durability"
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Write-ahead logging",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "write-ahead logging"
+      ]
+    },
+    {
+      "id": "149cb6567a06d1bc",
+      "question_text": "Software transactional memory (STM) was first proposed as a purely software-based mechanism in 1995 by which two researchers?",
+      "options": {
+        "A": "Maurice Herlihy and J. Eliot B. Moss",
+        "B": "Butler Lampson and Howard Sturgis",
+        "C": "Leslie Lamport and Barbara Liskov",
+        "D": "Nir Shavit and Dan Touitou"
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Software transactional memory",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "software transactional memory"
+      ]
+    },
+    {
+      "id": "23f27bd8ff54450f",
+      "question_text": "The LLVM compiler infrastructure project was started in 2000 at which university, under the direction of Vikram Adve and Chris Lattner?",
+      "options": {
+        "A": "Massachusetts Institute of Technology",
+        "B": "University of Illinois at Urbana-Champaign",
+        "C": "Carnegie Mellon University",
+        "D": "Stanford University"
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "LLVM",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "LLVM"
+      ]
+    },
+    {
+      "id": "404dd2aecee934b1",
+      "question_text": "The Spectre hardware vulnerability, disclosed in January 2018, exploits which CPU performance optimization technique to leak sensitive data through cache side channels?",
+      "options": {
+        "A": "Hyper-threading",
+        "B": "Dynamic voltage and frequency scaling",
+        "C": "Speculative execution",
+        "D": "Out-of-order memory prefetching"
+      },
+      "correct_answer": "C",
+      "difficulty": 4,
+      "source_article": "Spectre (security vulnerability)",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "Spectre (vulnerability)"
+      ]
+    },
+    {
+      "id": "0915dfaae8ca64af",
+      "question_text": "According to the result by Lamport, Shostak, and Pease (1982), what is the minimum number of total nodes required to tolerate f Byzantine (arbitrarily faulty) nodes?",
+      "options": {
+        "A": "f + 2",
+        "B": "2f + 1",
+        "C": "4f + 1",
+        "D": "3f + 1"
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Byzantine fault tolerance",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "Byzantine fault tolerance"
+      ]
+    },
+    {
+      "id": "6d217c7193204ca7",
+      "question_text": "Conflict-free replicated data types (CRDTs), formally defined by Marc Shapiro et al. in 2011, guarantee which specific form of consistency across replicas without requiring coordination?",
+      "options": {
+        "A": "Linearizability",
+        "B": "Strong eventual consistency",
+        "C": "Strict serializability",
+        "D": "Sequential consistency"
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "Conflict-free replicated data type",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "conflict-free replicated data type"
+      ]
+    },
+    {
+      "id": "7486ed0323459437",
+      "question_text": "Which programming language was the first to attempt a comprehensive threading memory model, influencing later efforts in C++11 and C11?",
+      "options": {
+        "A": "C#",
+        "B": "Haskell",
+        "C": "Erlang",
+        "D": "Java"
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Memory model (programming)",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "memory consistency model"
+      ]
+    },
+    {
+      "id": "b39e096fde360adf",
+      "question_text": "In relational database query optimization, a cost-based optimizer selects an execution plan primarily by estimating what metric for each candidate plan?",
+      "options": {
+        "A": "The number of database tables referenced in the schema",
+        "B": "The runtime cost in terms of I/O operations, CPU path length, and resource usage",
+        "C": "The total number of SQL keywords parsed in the query",
+        "D": "The size of the source code implementing each plan"
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "Query optimization",
+      "domain_ids": [
+        "computer-science"
+      ],
+      "concepts_tested": [
+        "query optimization"
+      ]
+    }
+  ],
   "labels": [],
   "articles": []
 }

@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "What distinguishes settler colonialism from other forms of colonialism?",
+    "correct_answer": "Its goal of permanently replacing indigenous populations with settler societies",
+    "distractors": [
+      "Its reliance on short-term military occupation to extract resources",
+      "Its focus on converting indigenous peoples to the colonizers' religion",
+      "Its use of trade agreements rather than political domination"
+    ],
+    "difficulty": 1,
+    "source_article": "Colonialism",
+    "domain_ids": ["world-history"],
+    "concepts_tested": ["colonialism"]
+  },
+  {
+    "question_text": "Which country passed the Slavery Abolition Act of 1833, freeing over 800,000 enslaved people across its colonies?",
+    "correct_answer": "Great Britain",
+    "distractors": [
+      "France",
+      "The United States",
+      "Spain"
+    ],
+    "difficulty": 1,
+    "source_article": "Slavery",
+    "domain_ids": ["world-history"],
+    "concepts_tested": ["slavery"]
+  },
+  {
+    "question_text": "Which two opposing coalitions fought World War I from 1914 to 1918?",
+    "correct_answer": "The Allies (Entente) and the Central Powers",
+    "distractors": [
+      "NATO and the Warsaw Pact",
+      "The Axis Powers and the Allied Nations",
+      "The Triple Crown and the Eastern Alliance"
+    ],
+    "difficulty": 1,
+    "source_article": "World War I",
+    "domain_ids": ["world-history"],
+    "concepts_tested": ["World War I"]
+  },
+  {
+    "question_text": "Approximately how many people died as a result of World War II, making it the deadliest conflict in human history?",
+    "correct_answer": "Over 60 million",
+    "distractors": [
+      "Over 20 million",
+      "Over 100 million",
+      "Over 40 million"
+    ],
+    "difficulty": 1,
+    "source_article": "World War II",
+    "domain_ids": ["world-history"],
+    "concepts_tested": ["World War II"]
+  },
+  {
+    "question_text": "Around 3150 BC, which ruler is credited with unifying Upper and Lower Egypt into a single kingdom?",
+    "correct_answer": "Menes, believed to be the same person as Narmer",
+    "distractors": [
+      "Khufu, the builder of the Great Pyramid at Giza",
+      "Ramesses II, known for his military campaigns",
+      "Akhenaten, the pharaoh who introduced monotheism"
+    ],
+    "difficulty": 1,
+    "source_article": "Ancient Egypt",
+    "domain_ids": ["world-history"],
+    "concepts_tested": ["ancient Egypt"]
+  },
+  {
+    "question_text": "In what year did the Western Roman Empire collapse, traditionally marking the end of ancient Rome?",
+    "correct_answer": "476 AD, when Odoacer deposed the last emperor Romulus Augustulus",
+    "distractors": [
+      "410 AD, when the Visigoths sacked the city of Rome",
+      "1453 AD, when Constantinople fell to the Ottoman Turks",
+      "27 BC, when Octavian declared himself the first emperor"
+    ],
+    "difficulty": 1,
+    "source_article": "Roman Empire",
+    "domain_ids": ["world-history"],
+    "concepts_tested": ["Roman Empire"]
+  },
+  {
+    "question_text": "Who coined the term 'Silk Road' in 1877 to describe the ancient trade network connecting East and West?",
+    "correct_answer": "German geographer Ferdinand von Richthofen",
+    "distractors": [
+      "British explorer Marco Polo during his travels to China",
+      "Chinese diplomat Zhang Qian of the Han dynasty",
+      "French historian Fernand Braudel in his Mediterranean study"
+    ],
+    "difficulty": 1,
+    "source_article": "Silk Road",
+    "domain_ids": ["world-history"],
+    "concepts_tested": ["Silk Road"]
+  },
+  {
+    "question_text": "What event formally ended the Cold War between the United States and the Soviet Union?",
+    "correct_answer": "The dissolution of the Soviet Union on 26 December 1991",
+    "distractors": [
+      "The signing of the Helsinki Accords in 1975",
+      "The fall of the Berlin Wall in November 1989",
+      "The withdrawal of Soviet troops from Afghanistan in 1989"
+    ],
+    "difficulty": 1,
+    "source_article": "Cold War",
+    "domain_ids": ["world-history"],
+    "concepts_tested": ["Cold War"]
+  },
+  {
+    "question_text": "Which revolution, beginning in 1775, is considered the starting point of modern decolonization movements?",
+    "correct_answer": "The American Revolution against the British Empire",
+    "distractors": [
+      "The French Revolution against the Bourbon monarchy",
+      "The Haitian Revolution against French colonial rule",
+      "The Glorious Revolution in England"
+    ],
+    "difficulty": 1,
+    "source_article": "Decolonization",
+    "domain_ids": ["world-history"],
+    "concepts_tested": ["decolonization"]
+  },
+  {
+    "question_text": "Which industry was the first to adopt modern mechanized production methods during the Industrial Revolution that began in Britain around 1760?",
+    "correct_answer": "The textile industry",
+    "distractors": [
+      "The iron and steel industry",
+      "The coal mining industry",
+      "The shipbuilding industry"
+    ],
+    "difficulty": 1,
+    "source_article": "Industrial Revolution",
+    "domain_ids": ["world-history"],
+    "concepts_tested": ["Industrial Revolution"]
+  }
+]

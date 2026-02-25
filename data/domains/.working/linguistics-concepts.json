@@ -1,0 +1,66 @@
+{
+  "domain": "linguistics",
+  "parent_domain": null,
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {"concept": "language", "wikipedia_article": "Language", "brief_rationale": "The structured system of communication used by humans; universally recognized as fundamental to human society and cognition."},
+      {"concept": "alphabet", "wikipedia_article": "Alphabet", "brief_rationale": "A writing system where symbols represent individual sounds; universally familiar from everyday reading and writing."},
+      {"concept": "vowel", "wikipedia_article": "Vowel", "brief_rationale": "A speech sound produced with an open vocal tract; universally taught in elementary education across languages."},
+      {"concept": "consonant", "wikipedia_article": "Consonant", "brief_rationale": "A speech sound produced with partial or complete closure of the vocal tract; universally taught alongside vowels in elementary education."},
+      {"concept": "dialect", "wikipedia_article": "Dialect", "brief_rationale": "A regional or social variety of a language; universally recognized from everyday experience with different accents and speech patterns."},
+      {"concept": "accent", "wikipedia_article": "Accent (sociolinguistics)", "brief_rationale": "The distinctive way of pronouncing a language associated with a region or social group; universally noticed in daily interactions."},
+      {"concept": "translation", "wikipedia_article": "Translation", "brief_rationale": "The process of converting text or speech from one language to another; universally familiar from multilingual interactions and translated media."},
+      {"concept": "sign language", "wikipedia_article": "Sign language", "brief_rationale": "A visual-gestural language system used by deaf communities; widely recognized as a complete natural language system."},
+      {"concept": "writing system", "wikipedia_article": "Writing system", "brief_rationale": "A method of visually representing language through symbols; universally encountered through alphabets, syllabaries, and logographic systems."},
+      {"concept": "bilingualism", "wikipedia_article": "Multilingualism", "brief_rationale": "The ability to use two or more languages; universally familiar as a common experience in multilingual societies worldwide."},
+      {"concept": "syllable", "wikipedia_article": "Syllable", "brief_rationale": "A unit of pronunciation consisting of a vowel sound with optional surrounding consonants; universally understood from basic literacy education."},
+      {"concept": "language family", "wikipedia_article": "Language family", "brief_rationale": "A group of languages descended from a common ancestor; widely known through major families like Indo-European, Sino-Tibetan, and Afro-Asiatic."},
+      {"concept": "mother tongue", "wikipedia_article": "First language", "brief_rationale": "The first language a person learns from birth; universally understood as a fundamental aspect of personal identity."}
+    ],
+    "L2": [
+      {"concept": "phoneme", "wikipedia_article": "Phoneme", "brief_rationale": "The smallest unit of sound that distinguishes meaning in a language; a foundational concept in every introductory linguistics course."},
+      {"concept": "morphology", "wikipedia_article": "Morphology (linguistics)", "brief_rationale": "The study of the internal structure and formation of words; one of the core subfields of linguistics taught in every introductory course."},
+      {"concept": "sociolinguistics", "wikipedia_article": "Sociolinguistics", "brief_rationale": "The study of how language varies and changes in social contexts; a major subfield widely taught in undergraduate linguistics programs."},
+      {"concept": "historical linguistics", "wikipedia_article": "Historical linguistics", "brief_rationale": "The study of how languages change over time; a core subfield examining sound changes, grammaticalization, and language divergence."},
+      {"concept": "International Phonetic Alphabet", "wikipedia_article": "International Phonetic Alphabet", "brief_rationale": "A standardized system of phonetic notation representing the sounds of spoken language; learned by every linguistics undergraduate."},
+      {"concept": "etymology", "wikipedia_article": "Etymology", "brief_rationale": "The study of the origin and historical development of words; a standard topic in linguistics connecting to historical linguistics and lexicography."},
+      {"concept": "language acquisition", "wikipedia_article": "Language acquisition", "brief_rationale": "The process by which humans learn to understand and produce language; a core topic studied in undergraduate linguistics and psychology."},
+      {"concept": "loanword", "wikipedia_article": "Loanword", "brief_rationale": "A word adopted from one language into another; a standard concept in historical linguistics illustrating language contact and change."},
+      {"concept": "pidgin and creole", "wikipedia_article": "Creole language", "brief_rationale": "Simplified contact languages (pidgins) that develop into full native languages (creoles); standard topics in sociolinguistics and language contact courses."},
+      {"concept": "intonation", "wikipedia_article": "Intonation (linguistics)", "brief_rationale": "The variation of pitch in speech used to convey meaning, attitude, or grammatical structure; a core topic in phonology and prosody courses."},
+      {"concept": "psycholinguistics", "wikipedia_article": "Psycholinguistics", "brief_rationale": "The study of how the mind processes and produces language; a major interdisciplinary subfield taught in undergraduate programs."},
+      {"concept": "endangered language", "wikipedia_article": "Endangered language", "brief_rationale": "A language at risk of falling out of use as its speakers shift to other languages; a widely discussed topic in sociolinguistics and language documentation."},
+      {"concept": "pragmatics", "wikipedia_article": "Pragmatics", "brief_rationale": "The study of how context contributes to meaning beyond literal semantics; a core subfield examining implicature, speech acts, and discourse."}
+    ],
+    "L3": [
+      {"concept": "phonology", "wikipedia_article": "Phonology", "brief_rationale": "The systematic study of sound patterns and their rules in languages; requires working knowledge of distinctive features, phonological rules, and representations."},
+      {"concept": "tone (linguistics)", "wikipedia_article": "Tone (linguistics)", "brief_rationale": "The use of pitch to distinguish word meaning in tonal languages; requires working knowledge of tone systems across language families and their interaction with intonation."},
+      {"concept": "minimal pair", "wikipedia_article": "Minimal pair", "brief_rationale": "A pair of words differing by only one phonological element that changes meaning; requires working knowledge of phonemic analysis and contrastive distribution."},
+      {"concept": "allophone", "wikipedia_article": "Allophone", "brief_rationale": "A phonetic variant of a phoneme that does not change meaning; requires working knowledge of complementary distribution, free variation, and phonological analysis."},
+      {"concept": "language typology", "wikipedia_article": "Linguistic typology", "brief_rationale": "The classification of languages based on structural features like word order and morphological type; requires professional knowledge of cross-linguistic comparison methods."},
+      {"concept": "morphological typology", "wikipedia_article": "Morphological typology", "brief_rationale": "The classification of languages by how they use morphemes (isolating, agglutinative, fusional, polysynthetic); requires working knowledge of morphological analysis across language types."},
+      {"concept": "sound change", "wikipedia_article": "Sound change", "brief_rationale": "Systematic alterations in pronunciation that occur over time in a language; requires working knowledge of Grimm's Law, the Neogrammarian hypothesis, and phonological reconstruction."},
+      {"concept": "comparative method", "wikipedia_article": "Comparative method", "brief_rationale": "The technique of comparing cognate forms across related languages to reconstruct their common ancestor; requires professional knowledge of historical linguistics methodology."},
+      {"concept": "code-switching", "wikipedia_article": "Code-switching", "brief_rationale": "The practice of alternating between two or more languages in conversation; requires working knowledge of sociolinguistic theories of bilingual speech and its grammatical constraints."},
+      {"concept": "universal grammar", "wikipedia_article": "Universal grammar", "brief_rationale": "Chomsky's hypothesis that the ability to acquire language is innate and governed by biological principles; requires working knowledge of the nativist-empiricist debate and its implications."},
+      {"concept": "critical period hypothesis", "wikipedia_article": "Critical period hypothesis", "brief_rationale": "The theory that there is a biologically determined window for optimal language acquisition; requires working knowledge of Lenneberg's proposal and evidence from feral children and late learners."},
+      {"concept": "Sapir-Whorf hypothesis", "wikipedia_article": "Linguistic relativity", "brief_rationale": "The hypothesis that language structure influences thought and perception; requires working knowledge of the strong vs. weak versions and modern experimental evidence."}
+    ],
+    "L4": [
+      {"concept": "distinctive feature", "wikipedia_article": "Distinctive feature", "brief_rationale": "The minimal phonological properties (e.g., [+voice], [+nasal]) that distinguish phonemes; requires deep knowledge of Jakobson's and Chomsky-Halle's feature geometry and its role in phonological theory."},
+      {"concept": "autosegmental phonology", "wikipedia_article": "Autosegmental phonology", "brief_rationale": "Goldsmith's framework representing phonological features on separate tiers linked by association lines; requires deep knowledge of tone representation, the OCP, and multi-tiered analysis."},
+      {"concept": "metrical phonology", "wikipedia_article": "Metrical phonology", "brief_rationale": "The theory modeling stress patterns through hierarchical tree structures of strong and weak positions; requires expert knowledge of metrical feet, stress rules, and their interaction with morphology."},
+      {"concept": "prosodic hierarchy", "wikipedia_article": "Prosodic unit", "brief_rationale": "The layered organization of speech into units (mora, syllable, foot, prosodic word, phrase); requires deep knowledge of how prosodic domains condition phonological processes."},
+      {"concept": "optimality theory", "wikipedia_article": "Optimality theory", "brief_rationale": "Prince and Smolensky's framework evaluating candidate outputs against ranked violable constraints; requires expert knowledge of constraint interaction, factorial typology, and the debate with rule-based phonology."},
+      {"concept": "grammaticalization", "wikipedia_article": "Grammaticalization", "brief_rationale": "The process by which lexical items become grammatical markers over time; requires deep knowledge of unidirectionality, semantic bleaching, and its cross-linguistic patterns."},
+      {"concept": "ergativity", "wikipedia_article": "Ergative–absolutive language", "brief_rationale": "A grammatical pattern where the agent of a transitive verb is marked differently from both the intransitive subject and the patient; requires expert knowledge of split ergativity and its typological distribution."},
+      {"concept": "phonological opacity", "wikipedia_article": "Opacity (linguistics)", "brief_rationale": "Cases where the surface form of a word obscures the phonological rule that produced it; requires deep knowledge of rule ordering, counterfeeding, and counterbleeding interactions."},
+      {"concept": "articulatory phonetics", "wikipedia_article": "Articulatory phonetics", "brief_rationale": "The study of how speech sounds are produced by the movement of articulators; requires deep knowledge of vocal tract anatomy, places and manners of articulation, and instrumental measurement techniques."},
+      {"concept": "lexical diffusion", "wikipedia_article": "Lexical diffusion", "brief_rationale": "Wang's model of sound change spreading gradually through the lexicon word by word rather than applying uniformly; requires expert knowledge of its evidence, the Neogrammarian counterposition, and computational modeling approaches."},
+      {"concept": "laryngeal realism", "wikipedia_article": "Laryngeal realism", "brief_rationale": "The phonological theory that voicing contrasts are better analyzed through laryngeal features ([spread glottis] vs. [voice]) rather than a single [voice] feature; requires specialist knowledge of cross-linguistic laryngeal typology."},
+      {"concept": "language contact", "wikipedia_article": "Language contact", "brief_rationale": "The phenomenon of languages influencing each other through sustained interaction of their speakers; requires deep knowledge of substrate effects, areal features, mixed languages, and the mechanisms of structural borrowing."}
+    ]
+  }
+}

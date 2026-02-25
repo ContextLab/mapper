@@ -1,0 +1,66 @@
+{
+  "domain": "economics",
+  "parent_domain": null,
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {"concept": "economics", "wikipedia_article": "Economics", "brief_rationale": "The broad discipline studying production, distribution, and consumption of goods and services; universally recognized as a social science."},
+      {"concept": "capitalism", "wikipedia_article": "Capitalism", "brief_rationale": "Economic system based on private ownership and free markets; widely understood from everyday political and social discourse."},
+      {"concept": "socialism", "wikipedia_article": "Socialism", "brief_rationale": "Economic system emphasizing collective or state ownership; recognized globally as a major alternative to capitalism."},
+      {"concept": "international trade", "wikipedia_article": "International trade", "brief_rationale": "Exchange of goods and services across national borders; universally familiar from news about imports, exports, and tariffs."},
+      {"concept": "poverty", "wikipedia_article": "Poverty", "brief_rationale": "State of lacking sufficient material resources; universally recognized human condition central to development economics."},
+      {"concept": "wealth inequality", "wikipedia_article": "Economic inequality", "brief_rationale": "Unequal distribution of income and assets across a population; widely discussed in public policy and media."},
+      {"concept": "globalization", "wikipedia_article": "Globalization", "brief_rationale": "Increasing interconnectedness of world economies through trade, investment, and technology; universally recognized from everyday experience."},
+      {"concept": "Adam Smith", "wikipedia_article": "Adam Smith", "brief_rationale": "Author of The Wealth of Nations and founder of classical economics; recognized by general audiences as the father of modern economics."},
+      {"concept": "free trade", "wikipedia_article": "Free trade", "brief_rationale": "Policy of minimal government restrictions on international commerce; widely understood from public debate over tariffs and trade agreements."},
+      {"concept": "economic development", "wikipedia_article": "Economic development", "brief_rationale": "Process by which nations improve economic well-being and quality of life; universally discussed in the context of developing countries."},
+      {"concept": "minimum wage", "wikipedia_article": "Minimum wage", "brief_rationale": "Lowest legally mandated wage employers may pay; universally recognized from labor policy debates in virtually every country."},
+      {"concept": "Great Depression", "wikipedia_article": "Great Depression", "brief_rationale": "Severe worldwide economic downturn of the 1930s; universally known historical event that shaped modern economic policy."},
+      {"concept": "cost-benefit analysis", "wikipedia_article": "Cost–benefit analysis", "brief_rationale": "Systematic process for comparing the costs and benefits of a decision; widely used and understood across business, government, and everyday life."}
+    ],
+    "L2": [
+      {"concept": "behavioral economics", "wikipedia_article": "Behavioral economics", "brief_rationale": "Field integrating psychology with economic decision-making to explain irrational behavior; widely taught at the undergraduate level."},
+      {"concept": "labor economics", "wikipedia_article": "Labour economics", "brief_rationale": "Study of labor markets, wage determination, and employment dynamics; a core cross-cutting subfield taught in undergraduate economics programs."},
+      {"concept": "econometrics", "wikipedia_article": "Econometrics", "brief_rationale": "Application of statistical and mathematical methods to economic data; a foundational methodology course in every economics degree."},
+      {"concept": "Keynesian economics", "wikipedia_article": "Keynesian economics", "brief_rationale": "School of thought emphasizing aggregate demand and government intervention; a central framework studied in undergraduate economics."},
+      {"concept": "trade barrier", "wikipedia_article": "Trade barrier", "brief_rationale": "Government-imposed restrictions on international trade such as tariffs and quotas; standard topic in international economics courses."},
+      {"concept": "human capital", "wikipedia_article": "Human capital", "brief_rationale": "Economic value of a worker's skills and knowledge; widely taught concept connecting education, training, and economic productivity."},
+      {"concept": "Gini coefficient", "wikipedia_article": "Gini coefficient", "brief_rationale": "Statistical measure of income or wealth inequality within a population; standard metric taught in development and welfare economics courses."},
+      {"concept": "classical economics", "wikipedia_article": "Classical economics", "brief_rationale": "School of thought from Smith, Ricardo, and Mill emphasizing free markets and the labor theory of value; foundational to the history of economic thought."},
+      {"concept": "prospect theory", "wikipedia_article": "Prospect theory", "brief_rationale": "Kahneman and Tversky's model describing how people evaluate gains and losses asymmetrically; cornerstone of behavioral economics taught at the undergraduate level."},
+      {"concept": "environmental economics", "wikipedia_article": "Environmental economics", "brief_rationale": "Study of economic effects of environmental policies and natural resource use; a growing subfield taught in undergraduate programs."},
+      {"concept": "regression analysis", "wikipedia_article": "Regression analysis", "brief_rationale": "Statistical method for estimating relationships among variables; the primary empirical tool in undergraduate econometrics."},
+      {"concept": "terms of trade", "wikipedia_article": "Terms of trade", "brief_rationale": "Ratio of export prices to import prices measuring a country's trading position; standard concept in international economics courses."},
+      {"concept": "mixed economy", "wikipedia_article": "Mixed economy", "brief_rationale": "Economic system combining private enterprise with government intervention; widely taught as the most common real-world economic organization."}
+    ],
+    "L3": [
+      {"concept": "institutional economics", "wikipedia_article": "Institutional economics", "brief_rationale": "Study of how institutions such as laws, norms, and organizations shape economic behavior; requires professional-level understanding of economic systems beyond standard models."},
+      {"concept": "health economics", "wikipedia_article": "Health economics", "brief_rationale": "Application of economic methods to health care markets and policy; a specialized applied field requiring professional knowledge of both economics and health systems."},
+      {"concept": "public choice theory", "wikipedia_article": "Public choice", "brief_rationale": "Application of economic reasoning to political decision-making and government behavior; requires working knowledge of rent-seeking, voting models, and bureaucratic incentives."},
+      {"concept": "experimental economics", "wikipedia_article": "Experimental economics", "brief_rationale": "Use of controlled laboratory experiments to test economic theories; requires professional familiarity with experimental design, incentive compatibility, and replication standards."},
+      {"concept": "Heckscher-Ohlin model", "wikipedia_article": "Heckscher–Ohlin model", "brief_rationale": "Trade model predicting patterns based on countries' relative factor endowments; requires professional-level understanding of factor proportions theory and its empirical tests."},
+      {"concept": "instrumental variable", "wikipedia_article": "Instrumental variables estimation", "brief_rationale": "Econometric technique addressing endogeneity by using external instruments; requires working knowledge of two-stage least squares and identification conditions."},
+      {"concept": "Lorenz curve", "wikipedia_article": "Lorenz curve", "brief_rationale": "Graphical representation of income or wealth distribution used to derive the Gini coefficient; requires professional knowledge of distributional analysis."},
+      {"concept": "Stolper-Samuelson theorem", "wikipedia_article": "Stolper–Samuelson theorem", "brief_rationale": "Theorem linking trade liberalization to changes in factor returns; requires working knowledge of the Heckscher-Ohlin framework and its distributional implications."},
+      {"concept": "Austrian economics", "wikipedia_article": "Austrian School", "brief_rationale": "Heterodox school emphasizing spontaneous order, subjective value, and entrepreneurship; requires professional knowledge of the history of economic thought and methodological debates."},
+      {"concept": "revealed comparative advantage", "wikipedia_article": "Revealed comparative advantage", "brief_rationale": "Balassa's index measuring a country's export specialization relative to the world; requires working knowledge of trade data analysis and competitiveness measurement."},
+      {"concept": "contingent valuation", "wikipedia_article": "Contingent valuation", "brief_rationale": "Survey-based technique for valuing non-market goods like environmental amenities; requires professional familiarity with willingness-to-pay methods and their limitations."},
+      {"concept": "difference in differences", "wikipedia_article": "Difference in differences", "brief_rationale": "Quasi-experimental method comparing treatment and control groups over time; a core causal-inference technique requiring professional-level econometric knowledge."}
+    ],
+    "L4": [
+      {"concept": "general equilibrium theory", "wikipedia_article": "General equilibrium theory", "brief_rationale": "Mathematical framework proving existence and properties of economy-wide equilibrium via fixed-point theorems; requires deep knowledge of Arrow-Debreu models and welfare theorems."},
+      {"concept": "social choice theory", "wikipedia_article": "Social choice theory", "brief_rationale": "Formal study of aggregating individual preferences into collective decisions; requires expert knowledge of impossibility results, voting rules, and welfare functions."},
+      {"concept": "computable general equilibrium", "wikipedia_article": "Computable general equilibrium", "brief_rationale": "Numerical simulation models of entire economies calibrated to real data; requires specialist knowledge of calibration, SAM construction, and policy counterfactuals."},
+      {"concept": "gravity model of trade", "wikipedia_article": "Gravity model of trade", "brief_rationale": "Empirical model predicting bilateral trade flows from economic size and distance; requires expert knowledge of its theoretical micro-foundations and estimation with multilateral resistance."},
+      {"concept": "Heckman correction", "wikipedia_article": "Heckman correction", "brief_rationale": "Two-step procedure correcting sample selection bias in econometric models; requires deep knowledge of the inverse Mills ratio, maximum likelihood estimation, and identification assumptions."},
+      {"concept": "matching theory", "wikipedia_article": "Matching (economics)", "brief_rationale": "Frameworks for analyzing stable allocations in two-sided markets; requires expert knowledge of Gale-Shapley deferred acceptance, stability conditions, and market design applications."},
+      {"concept": "new institutional economics", "wikipedia_article": "New institutional economics", "brief_rationale": "Framework analyzing transaction costs, property rights, and governance structures in economic organization; requires deep knowledge of Coase, Williamson, and North's contributions."},
+      {"concept": "regression discontinuity design", "wikipedia_article": "Regression discontinuity design", "brief_rationale": "Causal inference method exploiting threshold-based treatment assignment; requires expert knowledge of bandwidth selection, local polynomial estimation, and validity checks."},
+      {"concept": "capability approach", "wikipedia_article": "Capability approach", "brief_rationale": "Sen and Nussbaum's framework evaluating development by people's freedoms and capabilities rather than income alone; requires deep knowledge of welfare economics and development theory."},
+      {"concept": "optimal taxation", "wikipedia_article": "Optimal tax", "brief_rationale": "Theory of designing tax systems to maximize social welfare subject to incentive constraints; requires expert knowledge of Mirrlees and Ramsey models, equity-efficiency tradeoffs, and sufficient statistics."},
+      {"concept": "synthetic control method", "wikipedia_article": "Synthetic control method", "brief_rationale": "Causal inference technique constructing a counterfactual from weighted comparison units; requires specialist knowledge of donor pool selection, pre-treatment fit, and inference via permutation."},
+      {"concept": "mechanism design in economics", "wikipedia_article": "Mechanism design", "brief_rationale": "Reverse game theory designing rules to achieve desired outcomes under private information; requires expert knowledge of incentive compatibility, revelation principle, and implementation theory applied to economic institutions."}
+    ]
+  }
+}

@@ -1,0 +1,172 @@
+[
+  {
+    "question_text": "In the Heckscher-Ohlin model of international trade, what primary factor determines a country's pattern of comparative advantage and export specialization?",
+    "correct_answer": "Its relative abundance of factors of production such as labor, capital, and land",
+    "distractors": [
+      "Its level of technological innovation relative to trading partners",
+      "The absolute size of its gross domestic product",
+      "The geographic distance between it and its major trading partners"
+    ],
+    "difficulty": 3,
+    "source_article": "Heckscher\u2013Ohlin model",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "Heckscher-Ohlin model"
+    ]
+  },
+  {
+    "question_text": "In econometrics, what two conditions must an instrumental variable satisfy to be considered valid for addressing endogeneity?",
+    "correct_answer": "Relevance (correlated with the endogenous variable) and exogeneity (uncorrelated with the error term)",
+    "distractors": [
+      "Normality (normally distributed) and homoscedasticity (constant variance)",
+      "Stationarity (constant mean over time) and ergodicity (time averages equal ensemble averages)",
+      "Sufficiency (captures all sample information) and completeness (identifies all parameters)"
+    ],
+    "difficulty": 3,
+    "source_article": "Instrumental variables estimation",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "instrumental variable"
+    ]
+  },
+  {
+    "question_text": "The Lorenz curve, developed by Max O. Lorenz in 1905, plots the cumulative share of income against the cumulative share of the population. What does the diagonal 45-degree line on this graph represent?",
+    "correct_answer": "Perfect equality, where every percentile of the population earns the same share of income",
+    "distractors": [
+      "The median income level across the entire population",
+      "The average tax rate applied to each income bracket",
+      "Perfect inequality, where one person holds all the income"
+    ],
+    "difficulty": 3,
+    "source_article": "Lorenz curve",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "Lorenz curve"
+    ]
+  },
+  {
+    "question_text": "The Stolper-Samuelson theorem (1941) predicts that a rise in the relative price of a good will have what effect on factor returns?",
+    "correct_answer": "It raises the real return to the factor used most intensively in that good's production and lowers the return to the other factor",
+    "distractors": [
+      "It raises real returns to all factors of production proportionally to the price increase",
+      "It lowers the real return to the factor used most intensively while raising returns to the scarce factor",
+      "It has no effect on factor returns because wages and rents adjust to maintain equilibrium"
+    ],
+    "difficulty": 3,
+    "source_article": "Stolper\u2013Samuelson theorem",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "Stolper-Samuelson theorem"
+    ]
+  },
+  {
+    "question_text": "The Austrian School of economics, founded by Carl Menger in 1871, is distinguished by its strict adherence to which methodological principle?",
+    "correct_answer": "Methodological individualism, holding that social phenomena arise from individual motivations and actions",
+    "distractors": [
+      "Methodological holism, analyzing economies as irreducible aggregate systems",
+      "Logical positivism, requiring all economic claims to be empirically falsifiable",
+      "Historical materialism, grounding economic analysis in class relations and modes of production"
+    ],
+    "difficulty": 3,
+    "source_article": "Austrian School",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "Austrian economics"
+    ]
+  },
+  {
+    "question_text": "The revealed comparative advantage (RCA) index, introduced by B\u00e9la Balassa in 1965, measures a country's export specialization. What does an RCA value greater than 1 indicate?",
+    "correct_answer": "The country has a comparative advantage in that product, exporting more than its expected world share",
+    "distractors": [
+      "The country imports more of that product than it exports",
+      "The country's production costs for that product exceed the world average",
+      "The country's tariff rate on that product is above the global median"
+    ],
+    "difficulty": 3,
+    "source_article": "Revealed comparative advantage",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "revealed comparative advantage"
+    ]
+  },
+  {
+    "question_text": "Contingent valuation is a survey-based technique used in environmental economics. What does it primarily ask respondents to estimate?",
+    "correct_answer": "Their willingness to pay for preserving or improving a non-market good such as biodiversity or clean air",
+    "distractors": [
+      "The market price they would charge to sell a natural resource on the open market",
+      "The amount of tax revenue governments should allocate to environmental regulation",
+      "The replacement cost of damaged infrastructure after a natural disaster"
+    ],
+    "difficulty": 3,
+    "source_article": "Contingent valuation",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "contingent valuation"
+    ]
+  },
+  {
+    "question_text": "The difference-in-differences (DiD) method estimates causal effects by comparing changes over time between a treatment group and a control group. What key assumption must hold for DiD estimates to be valid?",
+    "correct_answer": "The parallel trends assumption: absent treatment, both groups would have followed the same trajectory over time",
+    "distractors": [
+      "The independence assumption: treatment and control groups must be randomly assigned from the same population",
+      "The stationarity assumption: the outcome variable must have a constant mean and variance across all time periods",
+      "The homogeneity assumption: individuals within both groups must have identical observable characteristics"
+    ],
+    "difficulty": 3,
+    "source_article": "Difference in differences",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "difference in differences"
+    ]
+  },
+  {
+    "question_text": "In the Arrow-Debreu model of general equilibrium, what mathematical tool was used to prove that a competitive equilibrium exists across all markets simultaneously?",
+    "correct_answer": "The Kakutani fixed-point theorem, applied to a continuous mapping from a compact convex set into itself",
+    "distractors": [
+      "The Lagrange multiplier method, optimizing utility subject to budget constraints",
+      "The central limit theorem, showing that aggregate demand converges to a normal distribution",
+      "The minimax theorem from game theory, ensuring optimal strategies in zero-sum markets"
+    ],
+    "difficulty": 4,
+    "source_article": "General equilibrium theory",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "general equilibrium theory"
+    ]
+  },
+  {
+    "question_text": "Arrow's impossibility theorem (1951) is a foundational result in social choice theory. What does the theorem prove about voting systems with three or more alternatives?",
+    "correct_answer": "No ranked voting rule can simultaneously satisfy unrestricted domain, Pareto efficiency, independence of irrelevant alternatives, and non-dictatorship",
+    "distractors": [
+      "All majority-rule systems inevitably produce Pareto-optimal outcomes when voters are fully informed",
+      "Any ranked voting rule will always select the Condorcet winner if one exists among the alternatives",
+      "A unique social welfare function exists that maximizes aggregate utility across all possible preference orderings"
+    ],
+    "difficulty": 4,
+    "source_article": "Social choice theory",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "social choice theory"
+    ]
+  }
+]

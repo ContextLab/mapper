@@ -1,0 +1,172 @@
+[
+  {
+    "question_text": "Computable general equilibrium (CGE) models use actual economic data to simulate policy impacts across an entire economy. What type of dataset typically forms the backbone of a CGE model?",
+    "correct_answer": "A social accounting matrix (SAM), which captures all economic transaction flows in the economy for a single year",
+    "distractors": [
+      "A vector autoregression (VAR) of quarterly GDP components over a twenty-year panel",
+      "A randomized controlled trial dataset with treatment and control firms",
+      "A cross-sectional household survey measuring individual consumption preferences"
+    ],
+    "difficulty": 4,
+    "source_article": "Computable general equilibrium",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "computable general equilibrium"
+    ]
+  },
+  {
+    "question_text": "The gravity model of trade, first formalized by Jan Tinbergen in 1962, predicts bilateral trade flows between two countries. What are the two primary variables in its traditional specification?",
+    "correct_answer": "The economic sizes (GDPs) of both countries and the geographic distance between them",
+    "distractors": [
+      "The interest rate differential and the exchange rate volatility between the two countries",
+      "The population growth rates and the average tariff levels of both countries",
+      "The trade balance deficits and the foreign direct investment stocks of both countries"
+    ],
+    "difficulty": 4,
+    "source_article": "Gravity model of trade",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "gravity model of trade"
+    ]
+  },
+  {
+    "question_text": "James Heckman's two-step correction procedure, for which he shared the 2000 Nobel Prize, addresses a pervasive problem in observational data. What statistical quantity computed from the first-step probit model is inserted into the second-step regression?",
+    "correct_answer": "The inverse Mills ratio, derived from the ratio of the probability density function to the cumulative distribution function of the selection equation's error term",
+    "distractors": [
+      "The Cook's distance statistic, identifying influential outliers that distort coefficient estimates",
+      "The Durbin-Watson statistic, testing for first-order serial correlation in regression residuals",
+      "The variance inflation factor, measuring the degree of multicollinearity among regressors"
+    ],
+    "difficulty": 4,
+    "source_article": "Heckman correction",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "Heckman correction"
+    ]
+  },
+  {
+    "question_text": "Alvin Roth and Lloyd Shapley received the 2012 Nobel Prize in Economics for work on stable allocations and market design. What algorithm, originally published by Gale and Shapley in 1962, guarantees a stable matching in two-sided markets?",
+    "correct_answer": "The deferred acceptance algorithm, in which proposers make sequential offers and receivers tentatively hold their best offer",
+    "distractors": [
+      "The Vickrey-Clarke-Groves auction mechanism, which elicits truthful bids through pivotal payments",
+      "The Hungarian algorithm, which solves the linear assignment problem in polynomial time",
+      "The top trading cycles algorithm, which finds core allocations in one-sided housing markets"
+    ],
+    "difficulty": 4,
+    "source_article": "Matching (economics)",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "matching theory"
+    ]
+  },
+  {
+    "question_text": "New institutional economics (NIE), a term coined by Oliver Williamson in 1975, extends neoclassical economics by analyzing the role of institutions. Which concept, central to Ronald Coase's 1937 paper 'The Nature of the Firm,' explains why firms emerge as an alternative to market exchange?",
+    "correct_answer": "Transaction costs, the expenses of negotiating, monitoring, and enforcing contracts that make market exchange costly",
+    "distractors": [
+      "Comparative advantage, the ability of firms to produce goods at lower opportunity cost than competitors",
+      "Moral hazard, the tendency of agents to take excessive risks when shielded from consequences",
+      "Bounded rationality, the cognitive limitations that prevent agents from processing all available information"
+    ],
+    "difficulty": 4,
+    "source_article": "New institutional economics",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "new institutional economics"
+    ]
+  },
+  {
+    "question_text": "Regression discontinuity design (RDD), introduced by Thistlethwaite and Campbell in 1960, estimates causal effects by comparing observations near a threshold. What distinguishes a 'fuzzy' RDD from a 'sharp' RDD?",
+    "correct_answer": "In fuzzy RDD, treatment probability changes discontinuously at the cutoff but does not jump from zero to one, unlike deterministic sharp RDD",
+    "distractors": [
+      "In fuzzy RDD the running variable is measured with error, while in sharp RDD it is perfectly observed",
+      "In fuzzy RDD the bandwidth is chosen by cross-validation, while in sharp RDD it is predetermined",
+      "In fuzzy RDD the treatment effect varies across subgroups, while in sharp RDD it is constant"
+    ],
+    "difficulty": 4,
+    "source_article": "Regression discontinuity design",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "regression discontinuity design"
+    ]
+  },
+  {
+    "question_text": "The capability approach, developed by Amartya Sen in the 1980s, offers an alternative framework for evaluating human welfare. What does it assess instead of income or utility?",
+    "correct_answer": "People's substantive freedoms (capabilities) to achieve valued functionings such as being healthy, educated, and socially engaged",
+    "distractors": [
+      "A nation's aggregate GDP per capita adjusted for purchasing power parity across countries",
+      "The Pareto efficiency of resource allocations measured by deadweight loss in competitive markets",
+      "Individuals' revealed preferences as inferred from observed consumer spending patterns"
+    ],
+    "difficulty": 4,
+    "source_article": "Capability approach",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "capability approach"
+    ]
+  },
+  {
+    "question_text": "Optimal tax theory studies how to design taxes that maximize social welfare subject to constraints. Frank Ramsey's 1927 rule for commodity taxation states that tax rates should be set so that what condition holds across all taxed goods?",
+    "correct_answer": "Tax rates should be inversely proportional to the price elasticities of supply and demand, so less elastic goods are taxed more heavily",
+    "distractors": [
+      "Tax rates should be equal across all goods to minimize administrative costs and avoid market distortions",
+      "Tax rates should be proportional to each good's share of total consumer expenditure to maximize revenue",
+      "Tax rates should be set so that the marginal utility of consumption is equalized across all goods"
+    ],
+    "difficulty": 4,
+    "source_article": "Optimal tax",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "optimal taxation"
+    ]
+  },
+  {
+    "question_text": "The synthetic control method, developed by Alberto Abadie and coauthors, estimates causal effects of large-scale interventions. How does the method construct its counterfactual for the treated unit?",
+    "correct_answer": "As a data-driven weighted average of untreated units from a donor pool, chosen to match the treated unit's pre-intervention trajectory",
+    "distractors": [
+      "By running a randomized experiment that assigns the intervention to a randomly selected subset of similar units",
+      "By fitting a structural vector autoregression to the treated unit's time series and forecasting the post-intervention path",
+      "By selecting the single most similar untreated unit based on propensity score matching on observable covariates"
+    ],
+    "difficulty": 4,
+    "source_article": "Synthetic control method",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "synthetic control method"
+    ]
+  },
+  {
+    "question_text": "Leonid Hurwicz, Eric Maskin, and Roger Myerson shared the 2007 Nobel Prize for founding mechanism design theory. What does the revelation principle, a central result in this field, establish?",
+    "correct_answer": "That any outcome achievable by any mechanism can also be achieved by an incentive-compatible direct mechanism in which agents truthfully report their private information",
+    "distractors": [
+      "That every Nash equilibrium of a game is also a dominant-strategy equilibrium when players have complete information",
+      "That all Pareto-efficient allocations can be reached through competitive markets without any government intervention",
+      "That the socially optimal outcome is always achieved when agents can freely bargain without transaction costs"
+    ],
+    "difficulty": 4,
+    "source_article": "Mechanism design",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "mechanism design in economics"
+    ]
+  }
+]

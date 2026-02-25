@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Which school of economic thought, flourishing in Britain in the late 18th and early 19th centuries, held that market economies are largely self-regulating systems governed by natural laws of production and exchange?",
+    "correct_answer": "Classical economics, developed by Adam Smith, David Ricardo, and John Stuart Mill",
+    "distractors": [
+      "Mercantilist economics, developed by Thomas Mun and Jean-Baptiste Colbert",
+      "Keynesian economics, developed by John Maynard Keynes and his Cambridge followers",
+      "Neoclassical economics, developed by Alfred Marshall and Leon Walras"
+    ],
+    "difficulty": 2,
+    "source_article": "Classical economics",
+    "domain_ids": ["economics"],
+    "concepts_tested": ["classical economics"]
+  },
+  {
+    "question_text": "In Kahneman and Tversky's prospect theory (1979), what key feature of the value function explains why the pain of losing $100 is felt more intensely than the pleasure of gaining $100?",
+    "correct_answer": "Loss aversion, meaning the value function is steeper for losses than for gains",
+    "distractors": [
+      "Diminishing sensitivity, meaning each additional dollar of gain matters less",
+      "Probability weighting, meaning people overestimate the likelihood of rare events",
+      "The certainty effect, meaning people prefer guaranteed outcomes over probabilistic ones"
+    ],
+    "difficulty": 2,
+    "source_article": "Prospect theory",
+    "domain_ids": ["economics"],
+    "concepts_tested": ["prospect theory"]
+  },
+  {
+    "question_text": "In environmental economics, what type of tax is specifically designed to correct a negative externality, such as pollution, by making producers pay the marginal social cost of their activity?",
+    "correct_answer": "A Pigouvian tax, named after economist Arthur Pigou",
+    "distractors": [
+      "A value-added tax levied on each stage of production",
+      "A Tobin tax levied on international financial transactions",
+      "A progressive income tax scaled to the polluter's revenue"
+    ],
+    "difficulty": 2,
+    "source_article": "Environmental economics",
+    "domain_ids": ["economics"],
+    "concepts_tested": ["environmental economics"]
+  },
+  {
+    "question_text": "The term 'regression' in regression analysis was coined by Sir Francis Galton in the 1880s. What biological phenomenon was he originally describing when he introduced this concept?",
+    "correct_answer": "Regression toward the mean, where sons' heights tend to revert toward the population average rather than matching their fathers'",
+    "distractors": [
+      "Genetic mutation, where offspring develop entirely new traits not present in their parents",
+      "Natural selection, where organisms with favorable traits survive and reproduce at higher rates",
+      "Hereditary divergence, where successive generations grow progressively taller than the previous one"
+    ],
+    "difficulty": 2,
+    "source_article": "Regression analysis",
+    "domain_ids": ["economics"],
+    "concepts_tested": ["regression analysis"]
+  },
+  {
+    "question_text": "The terms of trade (TOT) is defined as the ratio of a country's export prices to its import prices. According to the Prebisch-Singer hypothesis, what long-run trend affects primary-commodity exporters?",
+    "correct_answer": "Primary commodity prices decline relative to manufactured goods prices, deteriorating their terms of trade over time",
+    "distractors": [
+      "Primary commodity prices rise faster than manufactured goods prices due to increasing scarcity of natural resources",
+      "Export and import prices converge to equality over time, eliminating all gains from trade",
+      "Manufactured goods exporters face declining terms of trade due to rising industrial competition"
+    ],
+    "difficulty": 2,
+    "source_article": "Terms of trade",
+    "domain_ids": ["economics"],
+    "concepts_tested": ["terms of trade"]
+  },
+  {
+    "question_text": "What type of economic system combines elements of both capitalism and socialism, featuring private enterprise alongside government intervention such as regulation, public services, and welfare programs?",
+    "correct_answer": "A mixed economy",
+    "distractors": [
+      "A command economy",
+      "A laissez-faire economy",
+      "A traditional economy"
+    ],
+    "difficulty": 2,
+    "source_article": "Mixed economy",
+    "domain_ids": ["economics"],
+    "concepts_tested": ["mixed economy"]
+  },
+  {
+    "question_text": "Which heterodox school of economics, founded by Thorstein Veblen, John R. Commons, and Wesley Clair Mitchell, emphasizes how laws, norms, and organizations shape economic behavior rather than assuming rational equilibrium?",
+    "correct_answer": "Institutional economics",
+    "distractors": [
+      "Austrian economics",
+      "Chicago school economics",
+      "Post-Keynesian economics"
+    ],
+    "difficulty": 3,
+    "source_article": "Institutional economics",
+    "domain_ids": ["economics"],
+    "concepts_tested": ["institutional economics"]
+  },
+  {
+    "question_text": "Kenneth Arrow's seminal 1963 paper 'Uncertainty and the Welfare Economics of Medical Care' is considered foundational to health economics. What key argument did Arrow make about healthcare markets?",
+    "correct_answer": "Healthcare markets deviate from the competitive ideal due to uncertainty and information asymmetry between providers and patients",
+    "distractors": [
+      "Healthcare markets function efficiently because patients can freely choose among competing providers",
+      "Government provision of healthcare is always more efficient than private markets due to economies of scale",
+      "Healthcare should be treated as a luxury good whose consumption rises proportionally with income"
+    ],
+    "difficulty": 3,
+    "source_article": "Health economics",
+    "domain_ids": ["economics"],
+    "concepts_tested": ["health economics"]
+  },
+  {
+    "question_text": "James Buchanan received the 1986 Nobel Prize in Economics for his work on public choice theory, developed with Gordon Tullock in their 1962 book. What is the central premise of public choice theory?",
+    "correct_answer": "Political actors, like economic agents, are motivated by self-interest, so economic tools can analyze political decision-making",
+    "distractors": [
+      "Government officials always act in the public interest because democratic elections ensure accountability",
+      "Markets fail so frequently that government intervention is almost always welfare-improving",
+      "Collective decisions reflect the preferences of the median voter without any distortion or rent-seeking"
+    ],
+    "difficulty": 3,
+    "source_article": "Public choice",
+    "domain_ids": ["economics"],
+    "concepts_tested": ["public choice theory"]
+  },
+  {
+    "question_text": "Vernon Smith shared the 2002 Nobel Prize in Economics for establishing laboratory experiments as a tool in empirical economic analysis. What did his early market experiments demonstrate about competitive equilibrium theory?",
+    "correct_answer": "Markets with even a small number of traders converge to competitive equilibrium prices predicted by theory",
+    "distractors": [
+      "Laboratory markets always produce monopoly outcomes regardless of the number of participants",
+      "Experimental subjects consistently fail to reach any stable price, disproving equilibrium theory",
+      "Only markets with perfect information and infinitely many traders can reach competitive equilibrium"
+    ],
+    "difficulty": 3,
+    "source_article": "Experimental economics",
+    "domain_ids": ["economics"],
+    "concepts_tested": ["experimental economics"]
+  }
+]

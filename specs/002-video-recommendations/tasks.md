@@ -450,9 +450,139 @@ coordinates in [0,1] space, real YouTube video IDs for player testing).
 
 ---
 
+---
+
+## Phase 8: GP-IRT Adaptive Difficulty Selection
+
+**Purpose**: Add IRT difficulty-level estimation and BALD information-theoretic
+question selection on top of the existing GP posterior. Replaces pure
+uncertainty-based question selection with difficulty-aware adaptive selection.
+
+**Input**: GitHub Issue #23, research synthesis from 5 parallel investigations.
+**Dependencies**: Extends existing `estimator.js`, `sampler.js`, `math.js`.
+No dependency on video recommendation phases (can be implemented independently).
+
+### Phase 8A: MVP — IRT Level Estimation + BALD Selection
+
+- [x] T-V080 [P] [US6] Add `normalCDF(x)` to `src/utils/math.js`: Abramowitz &
+  Stegun polynomial approximation for the standard normal CDF. Used for
+  computing level posterior probabilities. See FR-V053.
+
+- [x] T-V081 [US6] Add IRT difficulty level to `predict()` output in
+  `src/learning/estimator.js`: Add constants `IRT_THRESHOLDS = [0.125,
+  0.375, 0.625, 0.875]` and `IRT_DISCRIMINATION = 1.5`. For each cell in
+  predict() results, compute `difficultyLevel = count of thresholds where
+  value >= threshold` (0–4). Return as part of the cell estimate object.
+  See FR-V050, SC-V011.
+
+- [x] T-V082 [US6] Replace uncertainty-based scoring with BALD EIG in
+  `src/learning/sampler.js` `selectNext()`: Compute IRT-predicted P(correct)
+  for each candidate question using `sigmoid(1.5 × (4×value - 2 - b[d]))`,
+  then score with `EIG = 1.5² × P × (1-P) × (4×uncertainty)²`. Also update
+  `scoreAll()` to use the same BALD scoring. See FR-V051, SC-V012.
+  Note: When all questions have the same difficulty, BALD reduces to
+  uncertainty-based scoring (backward-compatible per CL-043).
+
+### Phase 8B: Full IRT Layer — Phase-Based Selection
+
+- [x] T-V083 [US6] Add phase detection to `src/learning/sampler.js`: Add
+  `getPhase(answeredCount, coverage)` function returning 'calibrate' (N<10),
+  'map' (10≤N<30 or coverage<0.15), or 'learn' (N≥30 and coverage≥0.15).
+  Coverage = fraction of question-occupied cells with uncertainty < 0.5.
+  See FR-V052, SC-V014.
+
+- [x] T-V084 [US6] Implement phase-based scoring in `selectNext()`: In
+  'calibrate' phase, score = `uncertainty × (1 - |difficulty - 2.5| / 2)`
+  (prefer middle difficulties in uncertain regions). In 'map' phase, use
+  BALD EIG. In 'learn' phase, score = `1 - |P_correct - 0.6|` (ZPD
+  targeting). Fall back to BALD if local uncertainty > 0.7. See FR-V052.
+
+- [x] T-V085 [P] [US6] Update `selectByMode()` in `src/learning/sampler.js`
+  to use IRT-predicted P(correct) for mode strategies. 'easy' mode: prefer
+  questions where IRT P(correct) > 0.8. 'hardest-can-answer': prefer highest
+  difficulty where IRT P(correct) > 0.5. 'dont-know': prefer questions where
+  IRT P(correct) < 0.3.
+
+- [x] T-V086 [P] [US6] Add `$phase` computed atom to `src/state/store.js`:
+  Derive phase from answered count and coverage metrics. Export for use in
+  sampler and potential UI display.
+
+### Phase 8C: Validation
+
+- [x] T-V090 [P] Test IRT difficulty level mapping (SC-V011): Create GP
+  states with known values at specific cells. Verify difficultyLevel matches
+  expected IRT thresholds exactly for boundary values (0.124→0, 0.126→1,
+  0.374→1, 0.376→2, etc.).
+
+- [x] T-V091 [P] Test BALD vs uncertainty divergence (SC-V012): Create a GP
+  state where ability varies across the grid. Compare BALD-selected questions
+  against uncertainty-selected questions. Verify BALD preferentially selects
+  questions at the learner's difficulty boundary (P near 0.5).
+
+- [x] T-V092 [P] Test BALD backward compatibility (CL-043): When all
+  candidate questions have the same difficulty, verify BALD produces the
+  same ranking as pure uncertainty scoring.
+
+- [x] T-V093 [P] Performance test (SC-V013): Time IRT + BALD computation
+  with realistic grid size (2500 cells) and question count (50 per domain).
+  Verify total overhead < 1ms.
+
+- [x] T-V094 [P] Test phase transitions (SC-V014): Simulate answering
+  sequences with varying coverage. Verify phase transitions fire at correct
+  thresholds and soft fallback works when coverage drops.
+
+**Checkpoint**: All SC-V011–SC-V014 pass. BALD scoring produces measurably
+better question selection than pure uncertainty. Phase transitions work
+correctly. Performance overhead is negligible.
+
+---
+
+## Dependencies & Execution Order (Updated)
+
+### Phase Dependencies (Updated)
+
+- **Phase 8 (GP-IRT)**: Depends on existing `estimator.js` and `sampler.js`
+  only — no dependency on Phases 1–7. Can be implemented in parallel with
+  video recommendation work. Phase 8A (MVP) is independent of Phase 8B.
+  Phase 8C tests depend on Phase 8A + 8B.
+
+### Updated Dependency Graph
+
+```
+Phase 1 (Pipeline)                    Phase 2 (State)
+  T-V001 → T-V002 → T-V003             T-V010, T-V011
+  T-V004 ← BLOCKED on reducer              ↓
+  T-V005 → T-V006                  ┌────────┴────────┐
+       ↓                           ↓                  ↓
+  T-V069 (validation)        Phase 3 (Loader)   Phase 4 (Engine)
+                              T-V020             T-V030→T-V033
+                                  ↓              T-V034→T-V038
+                                  ↓                  ↓
+                                  ↓              Phase 5 (Modal UI)
+                                  ↓              T-V040→T-V044
+                                  ↓                  ↓
+                                  └──────┬───────────┘
+                                         ↓
+                                   Phase 6 (Integration)
+                                   T-V050, T-V051, T-V052
+                                         ↓
+                                   Phase 7 (UI Tests)
+                                   T-V064→T-V068
+
+Phase 8 (GP-IRT) — INDEPENDENT TRACK
+  T-V080 ─┐
+  T-V081 ──┤→ T-V082 → T-V083 → T-V084
+  T-V085 ──┘              ↓
+  T-V086 ─────────────────┘
+                          ↓
+                   T-V090→T-V094 (validation)
+```
+
+---
+
 ## Notes
 
-- Total task count: 34 tasks across 7 phases (T-V001–T-V070, non-contiguous IDs)
+- Total task count: 49 tasks across 8 phases (T-V001–T-V094, non-contiguous IDs)
 - [P] tasks = different files, no dependencies between them
 - [Story] label maps tasks to user stories for traceability
 - The entire pipeline (Phase 1) is Python; all other phases are JavaScript
@@ -460,5 +590,7 @@ coordinates in [0,1] space, real YouTube video IDs for player testing).
 - Window coordinates are snapped to nearest grid cell for GP lookup (CL-011)
 - The existing `src/learning/estimator.js` and its Matérn 3/2 kernel are reused
   for relevance weighting — no new kernel implementation needed
+- Phase 8 (GP-IRT) is independent of the video recommendation pipeline and
+  can be implemented and tested without video data
 - Commit after each task or logical group
 - Stop at any checkpoint to validate current state

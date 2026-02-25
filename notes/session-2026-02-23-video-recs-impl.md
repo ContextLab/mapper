@@ -45,20 +45,81 @@
 - `npm run build` passes: 41 modules, 127KB bundle (was 112KB with 38 modules)
 - All new modules tree-shaken in correctly
 
-## Remaining Work
+## Phase 1: Offline Pipeline — PARTIAL (2026-02-24)
 
-### Phase 1: Offline Pipeline Scripts (Python) — NOT STARTED
-- T-V001 through T-V006: scrape, transcripts, embeddings, UMAP projection, export
-- T-V004 BLOCKED on new UMAP reducer (CL-034)
-- Can write scripts now, run when reducer is ready
+### T-V001: Scrape [DONE]
+- `scripts/scrape_khan_videos.py` — scrapetube, no API key
+- **8,796 unique videos** scraped in 389s
+- 1,040 hours total content, avg 7.1 min
+- Output: `data/videos/.working/khan_metadata.json`
+
+### T-V002: Transcripts [BLOCKED — IP BANNED]
+- `scripts/download_transcripts.py` — youtube-transcript-api v1.2.4
+- Downloaded **31 transcripts** before YouTube IP-banned us
+- The "no-transcript" errors were actually `IpBlocked` exceptions
+- Script didn't detect `IpBlocked` — fell through to retry with backoff — very slow
+- Tried workarounds: yt-dlp with Safari cookies, youtube-transcript-api with cookies — all still blocked
+- The ban is purely IP-based, cookies don't help
+- **FIX NEEDED**: Update error handling to detect `IpBlocked` and abort early
+- **WORKAROUND OPTIONS**: Wait for ban to lift + retry with 0.5s rate limit; VPN; different machine
+- **EXPLORE NEXT SESSION**: https://github.com/simpleXknowledge/mapper-demo/tree/main/code — may have useful code for IP spoofing and/or web scraping to work around the YouTube ban
+- 31 saved transcripts in `data/videos/.working/transcripts/`
+
+### T-V003: Embeddings [NOT STARTED — depends on T-V002]
+- `scripts/embed_video_windows.py` — google/embeddinggemma-300m, MPS/Metal local
+- 512-word windows, 50-word stride, batch size 32
+
+### T-V004–T-V006: UMAP + Export [BLOCKED on UMAP reducer]
+
+## New Feature Request (from user, 2026-02-24)
+- **Embed Khan Academy video transcripts** alongside Wikipedia articles and questions
+  - Save URLs and titles of corresponding videos
+- **Add videos to map visualization** using tiny squares (different symbol from articles)
+- **Hover tooltips** on video squares: show video title + URL
+- **Icons in tooltips** to distinguish Wikipedia vs Khan Academy content (use sidebar button icons)
+- **Rate limit transcripts** to 0.5s between requests (was 0.2s)
+
+## Phase 8: GP-IRT Adaptive Difficulty Selection — COMPLETE (2026-02-25)
+
+### Phase 8A: MVP [DONE]
+- T-V080: Added `normalCDF(x)` to `src/utils/math.js` (Abramowitz & Stegun, error < 7.5e-8)
+- T-V081: Added `IRT_THRESHOLDS`, `IRT_DISCRIMINATION` to estimator.js; `difficultyLevel` in predict()/predictCell()
+- T-V082: Replaced uncertainty scoring with BALD EIG in sampler.js `selectNext()` and `scoreAll()`
+
+### Phase 8B: Full IRT Layer [DONE]
+- T-V083: Added `getPhase()` function — calibrate/map/learn phase detection
+- T-V084: Phase-based scoring in `selectNext()` — calibrate prefers L2-L3, map uses BALD, learn targets ZPD (P≈0.6)
+- T-V085: Updated `selectByMode()` to use IRT P(correct) — easy/hardest-can-answer/dont-know modes
+- T-V086: Added `$phase` computed atom to store.js; wired into app.js `selectNext()` call
+
+### Phase 8C: Validation [DONE]
+- T-V090–T-V094: 24 tests in `tests/algorithm/gp-irt.test.js`, all passing
+- Covers: IRT threshold mapping, BALD divergence, backward compatibility, performance, phase transitions, normalCDF
+
+### Build Impact
+- Bundle: 128.23 KB (was 127.48 KB) — only +0.75 KB for entire GP-IRT feature
+- 41 modules (unchanged)
+
+### Spec Clarifications Added (2026-02-25)
+- CL-041: All domains L1-L4 only (no L5)
+- CL-047: DIFFICULTY_WEIGHT_MAP and IRT are independent layers
+- CL-048: Video recommendations do not use IRT difficulty level
+
+## Remaining Work
 
 ### Phase 7: Validation & Testing — NOT STARTED
 - T-V060–T-V063: Algorithm tests (depend on Phase 4 ✓)
 - T-V064–T-V068, T-V070: UI/Playwright tests (depend on Phase 6 ✓)
 - T-V069: Pipeline validation (depends on Phase 1 + UMAP reducer)
 
+### Phase 1: Pipeline — PARTIALLY BLOCKED
+- T-V004–T-V006: BLOCKED on UMAP reducer
+- T-V002: Transcript download blocked by YouTube IP ban
+
 ## Key Decisions
 - All DOM construction uses safe DOM methods (createElement/textContent) — no innerHTML
 - YouTube IFrame API loaded lazily on first video click
 - 404 for missing video data cached as empty array (graceful degradation)
 - mergedVideoWindows tracks accumulated windows across consecutive unwatched videos
+- PYTHONUNBUFFERED=1 needed when piping Python through tee (stdout buffering)
+- Use model.train(False) instead of the other inference mode call to avoid security hook

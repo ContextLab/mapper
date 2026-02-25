@@ -79,3 +79,17 @@ export const $coverage = computed($estimates, (estimates) => {
 export const $insightsAvailable = computed($responses, (responses) =>
   responses.length >= 10
 );
+
+/** Current adaptive selection phase: calibrate → map → learn (FR-V052, CL-046) */
+export const $phase = computed([$responses, $estimates], (responses, estimates) => {
+  const answeredCount = responses.length;
+  if (answeredCount < 10) return 'calibrate';
+  // Coverage = fraction of non-unknown cells with uncertainty < 0.5
+  if (estimates.length === 0) return 'map';
+  const occupied = estimates.filter((e) => e.state !== 'unknown');
+  if (occupied.length === 0) return 'map';
+  const covered = occupied.filter((e) => e.uncertainty < 0.5).length;
+  const coverage = covered / occupied.length;
+  if (answeredCount < 30 || coverage < 0.15) return 'map';
+  return 'learn';
+});

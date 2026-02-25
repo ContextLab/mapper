@@ -37,6 +37,9 @@ maintains a recency-weighted running average for adaptive recommendations.
 5. TLP formula: `(1-K) × U` — boost uncertainty (active learning strategy)
 6. Diff maps computed after 1+ question, used for ranking after 5+
 7. UMAP reducer will be retrained; pipeline blocked on this dependency
+8. GP-IRT layer: GP posterior reinterpreted as IRT ability via linear rescaling
+9. BALD acquisition replaces pure uncertainty scoring for question selection
+10. Three-phase selection: calibrate → map (BALD) → learn (ZPD targeting)
 
 **Performance Budget**: All scoring operations <15ms client-side (SC-V006)
 **Scale**: ~9,000 videos × ~150 windows each = ~1.35M total windows,
@@ -114,3 +117,62 @@ specs/002-video-recommendations/
 | scrapetube stability | LOW — relies on YouTube internal browse API | yt-dlp as fallback; browse API stable for years |
 | YouTube transcript availability | LOW — ~85-95% coverage | Exclude missing; ≥7,500 target is conservative |
 | YouTube IFrame API stability | LOW — Widely used, Google-maintained | Fallback: direct YouTube link if embed fails |
+
+## Phase 8: GP-IRT Adaptive Difficulty Selection
+
+**Input**: GitHub Issue #23, 5-stage parallel research synthesis
+**Dependencies**: Extends Phase 4 (estimator) and existing sampler
+
+### Summary
+
+Add an IRT (Item Response Theory) interpretation layer on top of the
+existing GP posterior, plus BALD-based question selection. The GP value
+in [0,1] is rescaled to an IRT ability parameter θ ∈ [-2, 2], enabling
+difficulty-level estimation at every grid cell and information-theoretic
+question selection that accounts for both spatial uncertainty and
+difficulty informativeness.
+
+### Key Design Decisions
+
+1. **Reinterpret, don't replace**: The existing GP is unchanged. The IRT
+   layer is a pure function of existing GP outputs — zero risk to core
+   estimation logic.
+2. **2PL IRT model**: `P(correct) = sigmoid(1.5 × (θ - b[d]))` with
+   fixed difficulty thresholds b = [-1.5, -0.5, 0.5, 1.5] for L1–L4.
+3. **BALD acquisition**: `EIG = a² × P(1-P) × σ²` replaces raw
+   uncertainty scoring in `sampler.selectNext()`.
+4. **Three-phase strategy**: Calibrate (N<10) → Map/BALD (10≤N<30) →
+   Learn/ZPD (N≥30). Soft fallback when coverage drops.
+5. **Minimal code change**: ~40 lines across 3 files for MVP (math.js,
+   estimator.js, sampler.js). No new data structures or state atoms.
+
+### Files Modified
+
+| File | Change | Lines |
+|------|--------|-------|
+| `src/utils/math.js` | Add `normalCDF()` | ~8 |
+| `src/learning/estimator.js` | Add `difficultyLevel` to `predict()` output; add IRT constants | ~10 |
+| `src/learning/sampler.js` | Replace uncertainty scoring with BALD EIG; add phase logic | ~25 |
+| `src/state/store.js` | Add `$phase` computed atom | ~5 |
+
+### Computational Overhead
+
+| Operation | Cost | Added by |
+|-----------|------|----------|
+| IRT level computation | O(C × D) = O(10K) ≈ 0.1ms | estimator.predict() |
+| BALD question scoring | O(Q × D) = O(3.6K) ≈ 0.05ms | sampler.selectNext() |
+| **Total overhead** | **< 1ms** | **~2% of GP cycle** |
+
+### Research Basis
+
+Synthesized from 50+ papers across 5 parallel investigations:
+- Adaptive staircase methods (QUEST+, Psi, qCSF)
+- Bayesian Knowledge Tracing (classical BKT, DKT, KTM, Deep-IRT)
+- Multidimensional IRT (GPIRT, SGP-IRT, MIRT)
+- RBF ordinal interpolation (MIK, GP ordinal regression)
+- CAT in embedding spaces (EduCAT, ALEKS, contextual bandits)
+
+All 5 stages independently converged on GP-IRT + BALD as the optimal
+architecture for this specific problem (sparse questions, 4 discrete
+levels, 2D UMAP space, browser-based real-time). See Issue #23 and
+research reports in `.omc/scientist/reports/`.

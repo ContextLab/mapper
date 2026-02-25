@@ -151,6 +151,46 @@ gain indicator, and confirm the indicators decrease from top to bottom.
 
 ---
 
+### User Story 6 — Adaptive Difficulty Selection via GP-IRT (Priority: P2)
+
+The system adaptively selects question difficulty based on the learner's
+estimated ability at each spatial location. Instead of treating all
+difficulty levels equally, it infers a "difficulty level map" from the
+existing GP posterior, and uses information-theoretic selection (BALD) to
+choose questions that are maximally informative — balancing spatial
+exploration with difficulty-appropriate probing.
+
+**Why this priority**: Without difficulty awareness, the system wastes
+questions: too-easy questions provide no information, too-hard questions
+are just guessing. Adaptive difficulty improves both assessment efficiency
+(10–12% RMSE improvement) and learning experience (ZPD targeting).
+
+**Independent Test**: Answer 10 questions, open the map, verify each cell
+shows a difficulty level estimate (L1–L4). Confirm that the system
+preferentially asks questions near the learner's difficulty boundary rather
+than at random difficulties.
+
+**Acceptance Scenarios**:
+
+1. **Given** a learner has answered ≥5 questions, **When** they examine
+   the GP estimate grid, **Then** each cell includes a `difficultyLevel`
+   (0–4) derived from the GP posterior value via IRT thresholds.
+2. **Given** the GP has estimated ability at a location, **When** a
+   question is selected at that location, **Then** the system prefers
+   difficulties where P(correct) is near 0.5 (maximally informative).
+3. **Given** fewer than 10 questions have been answered (calibration
+   phase), **When** selecting the next question, **Then** the system
+   prefers L2–L3 questions in high-uncertainty regions.
+4. **Given** more than 30 questions have been answered and coverage
+   exceeds 15% (learning phase), **When** selecting the next question,
+   **Then** the system targets the zone of proximal development (P(correct)
+   ≈ 0.55–0.70) for optimal learning.
+5. **Given** the learner switches to a new, unexplored domain region,
+   **When** coverage drops below 15%, **Then** the system drops back
+   to mapping phase (BALD acquisition) even if total answered > 30.
+
+---
+
 ### Edge Cases
 
 - What happens if the video database hasn't loaded yet when the user
@@ -274,6 +314,49 @@ gain indicator, and confirm the indicators decrease from top to bottom.
   window coordinate, falling back to a global average where the running
   map has insufficient coverage.
 
+### Functional Requirements — Adaptive Difficulty (GP-IRT)
+
+- **FR-V050**: System MUST compute a difficulty level estimate for each
+  grid cell by mapping the GP posterior value to a 4-level ordinal scale
+  via IRT thresholds. The mapping is:
+  ```
+  θ_irt(x,y) = 4 × GP_mean(x,y) - 2    // rescale [0,1] → [-2,2]
+  P(correct | θ, d) = sigmoid(a × (θ - b[d]))
+  ```
+  where `a = 1.5` (discrimination) and `b = [-1.5, -0.5, 0.5, 1.5]`
+  for L1–L4. The estimated mastery level is the highest d where
+  `GP_mean > threshold[d]`, with thresholds in [0,1] space:
+  `[0.125, 0.375, 0.625, 0.875]`. See Issue #23.
+
+- **FR-V051**: System MUST select questions using BALD (Bayesian Active
+  Learning by Disagreement) expected information gain instead of raw
+  uncertainty. The BALD score for a question q at difficulty d is:
+  ```
+  EIG(q) = a² × P_q × (1 - P_q) × σ²_irt(x_q, y_q)
+  ```
+  where `P_q = sigmoid(a × (θ_irt - b[d]))` and `σ_irt = 4 × GP_std`.
+  This naturally balances spatial uncertainty (high σ) with difficulty
+  informativeness (P near 0.5). See Issue #23.
+
+- **FR-V052**: System MUST implement three-phase question selection:
+  - **Calibrate** (N < 10): Prefer L2–L3 questions in high-uncertainty
+    regions to establish a rough ability baseline.
+  - **Map** (10 ≤ N < 30, or coverage < 15%): Full BALD acquisition to
+    refine the ability map and identify difficulty boundaries.
+  - **Learn** (N ≥ 30 and coverage ≥ 15%): ZPD targeting — select
+    questions where IRT-predicted P(correct) is near 0.55–0.70 for
+    optimal learning. Fall back to BALD if local confidence is low.
+  Phase transitions are soft: if coverage drops (e.g., new domain region),
+  the system reverts to mapping phase.
+
+- **FR-V053**: System MUST add `normalCDF()` to `src/utils/math.js`
+  using the Abramowitz & Stegun polynomial approximation. This is used
+  for computing the level posterior probability vector per cell.
+
+- **FR-V054**: The IRT and BALD computation overhead MUST be less than
+  1ms client-side, adding negligible cost to the existing ~10ms GP
+  update cycle. See Issue #23 complexity analysis.
+
 ### Functional Requirements — UI
 
 - **FR-V030**: System MUST display video recommendations in a modal
@@ -392,6 +475,23 @@ gain indicator, and confirm the indicators decrease from top to bottom.
 - **SC-V010**: Watched video state survives page refresh and browser
   restart via localStorage persistence.
 
+- **SC-V011**: Every grid cell in `predict()` output includes a
+  `difficultyLevel` (0–4) that correctly maps GP values to IRT
+  thresholds: value < 0.125 → 0, [0.125, 0.375) → 1, [0.375, 0.625) → 2,
+  [0.625, 0.875) → 3, ≥ 0.875 → 4.
+
+- **SC-V012**: BALD-based question selection produces measurably different
+  (and more informative) question orderings than pure uncertainty-based
+  selection, verified by comparing EIG scores on synthetic GP states where
+  ability varies across the grid.
+
+- **SC-V013**: The IRT + BALD computation adds less than 1ms overhead to
+  the existing GP predict/select cycle, verified by timing benchmarks.
+
+- **SC-V014**: Phase transitions fire correctly: calibrate for N < 10,
+  map for 10 ≤ N < 30, learn for N ≥ 30 with coverage ≥ 15%. Soft
+  fallback to map phase when coverage drops below 15%.
+
 ## Assumptions
 
 - The `scrapetube` library can enumerate the full Khan Academy YouTube
@@ -416,7 +516,20 @@ gain indicator, and confirm the indicators decrease from top to bottom.
 
 *Generated 2026-02-23 via spec-clarify analysis. 39 items across pipeline,
 math, and UI domains. All 39 resolved. CL-016 (transcript embedding PoC)
-validated experimentally — gap = 0.111, 2x success threshold.*
+validated experimentally — gap = 0.111, 2x success threshold.
+Updated 2026-02-24: Added CL-040 through CL-048 for GP-IRT adaptive
+difficulty selection (Issue #23). Total: 48 clarifications, all resolved.*
+
+### Session 2026-02-24 (GP-IRT clarifications)
+
+- Q: How should BALD handle L5 questions? → A: All domains are being
+  revised to L1–L4 only. Assume only 4 difficulty levels exist. No L5
+  handling needed.
+- Q: How do DIFFICULTY_WEIGHT_MAP and IRT interact? → A: Independent
+  layers — DIFFICULTY_WEIGHT_MAP modulates GP input weights, IRT
+  reinterprets GP output. No changes needed.
+- Q: Should video ranking use IRT difficultyLevel? → A: No. TLP is
+  sufficient; IRT only affects question selection, not videos.
 
 ### Session 2026-02-23 (second pass)
 
@@ -726,6 +839,102 @@ exceeds 100 MB it must be added to `.gitignore`. The video pipeline is
 blocked on this dependency. Requirements: Python 3.10+, umap-learn >=
 0.5, matching numpy version.**
 
+**CL-040 — Empirical claims in GP-IRT design are provisional** [RESOLVED]
+
+**Resolution: The research synthesis (Issue #23) analyzed the CURRENT
+question set and UMAP coordinates to derive empirical constraints (6.0%
+cell occupancy, 46.3% multi-difficulty cells, ~13/13/12/12 difficulty
+balance). These numbers are PROVISIONAL — the question set is actively
+being regenerated (new domains, new questions, new difficulty calibration),
+and the UMAP reducer will be retrained with the updated corpus. The
+architectural decisions (GP-IRT, BALD, phase-based selection) are robust
+to these numbers changing because they were chosen for theoretical
+optimality, not tuned to specific empirical values. However, once the new
+question set and UMAP coordinates are finalized, the following MUST be
+verified:
+- Cell occupancy (affects whether per-cell methods are feasible)
+- Difficulty balance per domain (affects IRT threshold spacing)
+- IRT threshold calibration (b values may need adjustment)
+- BALD vs uncertainty improvement magnitude
+All claims marked "provisional" in the synthesis report should be
+re-validated against the final dataset.**
+
+**CL-041 — All domains standardized to 4 difficulty levels** [RESOLVED]
+
+**Resolution: All domains are being revised to use only L1–L4. The IRT
+model's 4 thresholds (b = [-1.5, -0.5, 0.5, 1.5]) are sufficient. No L5
+handling is needed. The existing `DIFFICULTY_WEIGHT_MAP` in estimator.js
+(which only defines weights for levels 1–4) is already correct.**
+
+**CL-042 — IRT parameters are theoretical defaults, not calibrated** [RESOLVED]
+
+
+**Resolution: The IRT parameters (a = 1.5, b = [-1.5, -0.5, 0.5, 1.5])
+are reasonable defaults from IRT literature. They are NOT empirically
+calibrated to this specific question set. After collecting anonymized
+response data, these should be fit via maximum likelihood. The evenly
+spaced thresholds work because the current question difficulty balance
+is approximately uniform (~13/13/12/12 per domain across L1–L4). See
+Issue #23 Phase D.**
+
+**CL-043 — GP value is not a true IRT ability parameter** [RESOLVED]
+
+**Resolution: The GP posterior mean in [0,1] represents P(correct)
+averaged across observed difficulties. The IRT rescaling (4×value - 2)
+is an approximation that works when difficulty distribution is roughly
+uniform, which holds for the current data. This approximation degrades
+if a learner only answers L1 questions — their GP value would be high
+but their true ability for L4 content would be overestimated. The BALD
+acquisition function mitigates this by preferentially selecting
+informative difficulty levels to correct such imbalances.**
+
+**CL-044 — Why not per-cell staircase or BKT methods?** [RESOLVED]
+
+**Resolution: Empirical analysis of the question distribution shows only
+6.0% cell occupancy (149/2500 cells have questions) and only 46.3% of
+occupied cells have multiple difficulty levels. Per-cell staircase or BKT
+methods require multiple observations per cell per difficulty level —
+impossible with 50 questions per domain. The GP-IRT approach avoids this
+by using the GP's spatial interpolation to infer difficulty levels at
+unobserved locations. See Issue #23 data findings.**
+
+**CL-045 — BALD reduces to uncertainty-based when difficulty is uniform** [RESOLVED]
+
+**Resolution: When all candidate questions have the same difficulty level,
+BALD EIG = a² × P×(1-P) × σ². Since P is the same sigmoid transform
+for all questions, the ranking is dominated by σ² (uncertainty), which
+is identical to the current selection behavior. This means the BALD
+change is backward-compatible — it only changes behavior when questions
+of different difficulties are available at similar locations.**
+
+**CL-046 — Phase transition thresholds** [RESOLVED]
+
+**Resolution: N < 10 (calibrate), 10 ≤ N < 30 (map), N ≥ 30 (learn)
+with coverage ≥ 15%. "Coverage" = fraction of occupied cells (cells
+containing questions) where uncertainty < 0.5. The 15% coverage floor
+triggers a soft fallback to mapping mode when the learner enters an
+unexplored region. Thresholds should be tuned with real user data.**
+
+**CL-047 — DIFFICULTY_WEIGHT_MAP and IRT are independent layers** [RESOLVED]
+
+**Resolution: The existing `DIFFICULTY_WEIGHT_MAP` in `estimator.js`
+operates at the GP *input* layer — it modulates kernel weights so that
+easy-question observations carry less evidence (L1=0.25, L4=1.0). The
+new IRT layer operates at the GP *output* layer — it reinterprets the
+GP posterior mean as an IRT ability parameter to determine mastery at
+each difficulty level. These two systems are complementary and do not
+interact directly. No changes to `DIFFICULTY_WEIGHT_MAP` are needed
+for the GP-IRT integration.**
+
+**CL-048 — Video recommendations do not use IRT difficulty level** [RESOLVED]
+
+**Resolution: Video ranking uses TLP = (1-K) × U, which targets areas
+of low knowledge and high uncertainty. The IRT difficulty level output
+is used only for question selection (BALD acquisition). Videos are not
+difficulty-graded like questions, so adding difficulty-awareness to
+video recommendations would add complexity without clear benefit. TLP
+is sufficient for video ranking.**
+
 ### Low — Document but Do Not Block
 
 **CL-035 — Incremental pipeline updates** [RESOLVED]
@@ -823,6 +1032,22 @@ internal state) but only USED for ranking after 5+ questions post-video.
 If multiple videos are watched without questions between them, their
 window coordinates are merged and treated as a single concatenated video.
 
+### GP-IRT Adaptive Difficulty Layer
+
+```
+[Existing GP predict() output — value, uncertainty per cell]
+  → IRT rescaling: θ_irt = 4×value - 2, σ_irt = 4×uncertainty
+  → Difficulty level: L*(x,y) = max{d : value > threshold[d]}
+      thresholds in [0,1] space: [0.125, 0.375, 0.625, 0.875]
+  → Level posterior: P(level=d) via normalCDF on θ_irt ± σ_irt
+
+[Question selection — replaces pure uncertainty scoring]
+  → Phase detection: getPhase(answeredCount, coverage)
+  → BALD EIG: a² × P(1-P) × σ²_irt  (map phase)
+  → ZPD: 1 - |P - 0.6|              (learn phase)
+  → Calibrate: uncertainty × middleDifficultyBonus  (cold start)
+```
+
 ### Estimation Budget
 
 | Operation | Time | When |
@@ -831,10 +1056,13 @@ window coordinates are merged and treated as a single concatenated video.
 | Relevance map (2,500 cells × ~150 windows) | ~5-8ms | After 5 post-video questions |
 | EMA update (2,500 cells) | <0.01ms | After 5 post-video questions |
 | Expected gain scoring (per-domain videos) | ~1-3ms | Each suggest click |
+| IRT difficulty level computation (2,500 cells × 4 levels) | ~0.1ms | Each GP predict |
+| BALD question scoring (candidates × 4 levels) | ~0.05ms | Each selectNext |
 
 Per-domain files contain ~500-2,000 videos (not all 9,000). All operations
 well within the 15ms client-side budget. Window coords are snapped to the
-nearest 50×50 grid cell for lookup (CL-011).
+nearest 50×50 grid cell for lookup (CL-011). The IRT + BALD layers add
+<1ms total overhead (SC-V013).
 
 ## Research References
 
@@ -859,3 +1087,25 @@ nearest 50×50 grid cell for lookup (CL-011).
 
 - **YouTube IFrame Player API** — Browser-embedded video playback with
   state change detection. Used for video completion tracking (FR-V034).
+
+- **Item Response Theory (IRT) 2PL Model** — Models P(correct) as a
+  function of learner ability θ and item difficulty b via
+  `sigmoid(a × (θ - b))`. Used in FR-V050 to map GP values to difficulty
+  levels. See Duck-Mayr et al. (GPIRT, UAI 2020).
+
+- **BALD (Bayesian Active Learning by Disagreement)** — Information-
+  theoretic acquisition function that selects observations maximizing
+  mutual information between predictions and model parameters. Simplifies
+  to `a² × P(1-P) × σ²` for 2PL IRT with GP prior. Houlsby et al. 2011.
+  Used in FR-V051.
+
+- **QUEST+ (Watson 2017)** — Bayesian adaptive psychometric method for
+  discrete stimulus sets. Theoretical basis for the phase-based selection
+  strategy. The qCSF variant (Lesmes 2010) demonstrated adaptive
+  estimation of structured functions over 2D domains with as few as 25
+  trials — directly analogous to our 2D UMAP difficulty mapping.
+
+- **Zone of Proximal Development (ZPD)** — Computationally formalized as
+  regions where `0.25 < P(mastered) < 0.75` — identical to the maximum-
+  information region under IRT. Used in FR-V052 Phase 3 (learn mode)
+  targeting P(correct) ≈ 0.55–0.70.

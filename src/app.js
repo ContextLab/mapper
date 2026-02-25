@@ -11,6 +11,7 @@ import {
   $watchedVideos,
   $preVideoSnapshot,
   $runningDifferenceMap,
+  $phase,
 } from './state/store.js';
 import * as registry from './domain/registry.js';
 import { load as loadDomain } from './domain/loader.js';
@@ -420,8 +421,9 @@ function selectAndShowNextQuestion() {
 
   const estimates = $estimates.get();
   const activeMode = modes.getActiveMode();
+  const phase = $phase.get();
   const scored = activeMode === 'auto'
-    ? sampler.selectNext(available, estimates, currentViewport, answeredIds)
+    ? sampler.selectNext(available, estimates, currentViewport, answeredIds, phase)
     : sampler.selectByMode(activeMode, available, estimates, currentViewport, answeredIds);
 
   if (!scored) {

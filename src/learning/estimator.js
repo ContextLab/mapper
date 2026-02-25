@@ -33,7 +33,13 @@ const PRIOR_MEAN = 0.5;
 // Skipping indicates uncertainty, not 50% knowledge — treated as near-zero evidence.
 const SKIP_KNOWLEDGE_VALUE = 0.05;
 
-// Difficulty-based weight modulation for RBF kernel.
+// IRT constants for difficulty level estimation (FR-V050, CL-042, CL-043).
+// GP value in [0,1] maps to IRT ability θ via: θ = 4 × value - 2 (range [-2, 2]).
+// Thresholds in [0,1] space where mastery transitions between levels (L0→L1→L2→L3→L4).
+export const IRT_THRESHOLDS = [0.125, 0.375, 0.625, 0.875];
+export const IRT_DISCRIMINATION = 1.5;
+
+// Difficulty-based weight modulation for RBF kernel (CL-047: independent of IRT layer).
 // Higher difficulty questions provide stronger evidence (larger kernel influence).
 // Maps difficulty level (1-4) to a multiplier applied to the kernel weights.
 const DIFFICULTY_WEIGHT_MAP = {
@@ -146,6 +152,7 @@ export class Estimator {
         uncertainty: 1.0,
         evidenceCount: 0,
         state: 'unknown',
+        difficultyLevel: IRT_THRESHOLDS.reduce((lvl, t) => lvl + (PRIOR_MEAN >= t ? 1 : 0), 0),
       }));
     }
 
@@ -196,7 +203,10 @@ export class Estimator {
       const safeValue = isFinite(value) ? value : PRIOR_MEAN;
       const safeUncertainty = isFinite(uncertainty) ? uncertainty : 1.0;
 
-      results[i] = { gx: cell.gx, gy: cell.gy, value: safeValue, uncertainty: safeUncertainty, evidenceCount, state };
+      // IRT difficulty level: count of thresholds where GP value >= threshold (0–4)
+      const difficultyLevel = IRT_THRESHOLDS.reduce((lvl, t) => lvl + (safeValue >= t ? 1 : 0), 0);
+
+      results[i] = { gx: cell.gx, gy: cell.gy, value: safeValue, uncertainty: safeUncertainty, evidenceCount, state, difficultyLevel };
     }
 
     return results;
@@ -216,6 +226,7 @@ export class Estimator {
         uncertainty: 1.0,
         evidenceCount: 0,
         state: 'unknown',
+        difficultyLevel: IRT_THRESHOLDS.reduce((lvl, t) => lvl + (PRIOR_MEAN >= t ? 1 : 0), 0),
       };
     }
 
@@ -258,7 +269,9 @@ export class Estimator {
     const safeValue = isFinite(value) ? value : PRIOR_MEAN;
     const safeUncertainty = isFinite(uncertainty) ? uncertainty : 1.0;
 
-    return { gx, gy, value: safeValue, uncertainty: safeUncertainty, evidenceCount, state };
+    const difficultyLevel = IRT_THRESHOLDS.reduce((lvl, t) => lvl + (safeValue >= t ? 1 : 0), 0);
+
+    return { gx, gy, value: safeValue, uncertainty: safeUncertainty, evidenceCount, state, difficultyLevel };
   }
 
   /**

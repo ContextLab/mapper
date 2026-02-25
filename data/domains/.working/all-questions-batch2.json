@@ -1,0 +1,92 @@
+[
+  {
+    "question_text": "What biogeochemical process describes the continuous exchange of carbon among Earth's atmosphere, biosphere, hydrosphere, and geosphere through photosynthesis, respiration, decomposition, and combustion?",
+    "correct_answer": "The carbon cycle",
+    "distractors": ["The nitrogen cycle", "The water cycle", "The phosphorus cycle"],
+    "difficulty": 1,
+    "source_article": "Carbon cycle",
+    "domain_ids": ["all"],
+    "concepts_tested": ["carbon cycle"]
+  },
+  {
+    "question_text": "What quality-control process in academia involves having a researcher's manuscript evaluated by independent experts in the same field before it is accepted for publication in a journal?",
+    "correct_answer": "Scientific peer review",
+    "distractors": ["Editorial board approval", "Impact factor assessment", "Institutional review board screening"],
+    "difficulty": 1,
+    "source_article": "Scholarly peer review",
+    "domain_ids": ["all"],
+    "concepts_tested": ["scientific peer review"]
+  },
+  {
+    "question_text": "What fundamental physical law states that the total energy of an isolated system remains constant over time, meaning energy can be transformed or transferred but never created or destroyed?",
+    "correct_answer": "The law of conservation of energy",
+    "distractors": ["The law of conservation of momentum", "The law of conservation of mass", "The second law of thermodynamics"],
+    "difficulty": 1,
+    "source_article": "Conservation of energy",
+    "domain_ids": ["all"],
+    "concepts_tested": ["conservation of energy"]
+  },
+  {
+    "question_text": "In network science, Barabasi and Albert showed that many real-world networks contain highly connected hubs alongside many low-degree nodes. What term describes these networks whose degree distribution follows a power law?",
+    "correct_answer": "Scale-free networks",
+    "distractors": ["Small-world networks", "Random (Erdos-Renyi) networks", "Lattice-structured networks"],
+    "difficulty": 2,
+    "source_article": "Network science",
+    "domain_ids": ["all"],
+    "concepts_tested": ["network science"]
+  },
+  {
+    "question_text": "What philosophical stance, contrary to holism, interprets complex systems as the sum of their parts and seeks to explain higher-level phenomena in terms of more fundamental entities?",
+    "correct_answer": "Reductionism",
+    "distractors": ["Emergentism", "Constructivism", "Instrumentalism"],
+    "difficulty": 2,
+    "source_article": "Reductionism",
+    "domain_ids": ["all"],
+    "concepts_tested": ["reductionism"]
+  },
+  {
+    "question_text": "In dimensional analysis, what theorem states that any physically meaningful equation involving $n$ variables can be rewritten using $n - m$ dimensionless parameters, where $m$ is the number of fundamental dimensions?",
+    "correct_answer": "The Buckingham pi theorem",
+    "distractors": ["The Fourier scaling theorem", "The Rayleigh homogeneity theorem", "The Bridgman reduction theorem"],
+    "difficulty": 2,
+    "source_article": "Dimensional analysis",
+    "domain_ids": ["all"],
+    "concepts_tested": ["dimensional analysis"]
+  },
+  {
+    "question_text": "In computer simulation, checking that a model's code correctly implements the intended mathematical equations is called verification. What is the complementary process of checking that the model's outputs match real-world observations?",
+    "correct_answer": "Validation",
+    "distractors": ["Calibration", "Optimization", "Benchmarking"],
+    "difficulty": 2,
+    "source_article": "Computer simulation",
+    "domain_ids": ["all"],
+    "concepts_tested": ["simulation"]
+  },
+  {
+    "question_text": "In epidemiology, the herd immunity threshold is the minimum proportion of a population that must be immune to prevent sustained disease spread. Given basic reproduction number $R_0$, what is the formula for this threshold?",
+    "correct_answer": "$1 - \\frac{1}{R_0}$",
+    "distractors": ["$\\frac{1}{R_0}$", "$1 - R_0$", "$\\frac{R_0}{R_0 + 1}$"],
+    "difficulty": 2,
+    "source_article": "Herd immunity",
+    "domain_ids": ["all"],
+    "concepts_tested": ["herd immunity"]
+  },
+  {
+    "question_text": "Fractals have a characteristic dimension that strictly exceeds their topological dimension and is often non-integer. What is the name of this measure, used to quantify how completely a fractal fills space?",
+    "correct_answer": "The Hausdorff dimension (fractal dimension)",
+    "distractors": ["The Euclidean dimension", "The Lebesgue covering dimension", "The Minkowski embedding dimension"],
+    "difficulty": 2,
+    "source_article": "Fractal",
+    "domain_ids": ["all"],
+    "concepts_tested": ["fractal"]
+  },
+  {
+    "question_text": "Thomas Kuhn's 1962 book 'The Structure of Scientific Revolutions' introduced the idea that science alternates between periods of normal science and revolutionary upheavals. What term did Kuhn use for such a revolutionary transition?",
+    "correct_answer": "A paradigm shift",
+    "distractors": ["A scientific revolution", "A theoretical discontinuity", "An epistemic rupture"],
+    "difficulty": 2,
+    "source_article": "Paradigm",
+    "domain_ids": ["all"],
+    "concepts_tested": ["scientific paradigm"]
+  }
+]

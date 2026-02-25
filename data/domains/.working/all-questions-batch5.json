@@ -1,0 +1,172 @@
+[
+  {
+    "question_text": "In allometric scaling, Kleiber's law states that mammalian basal metabolic rate scales with body mass $M$ according to what exponent?",
+    "correct_answer": "$M^{3/4}$, a sublinear power law known as quarter-power scaling",
+    "distractors": [
+      "$M^{2/3}$, following the surface-area-to-volume ratio directly",
+      "$M^{1}$, scaling linearly and proportionally with total body mass",
+      "$M^{1/2}$, following a square-root relationship with body mass"
+    ],
+    "difficulty": 4,
+    "source_article": "Allometry",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "allometry"
+    ]
+  },
+  {
+    "question_text": "In the renormalization group framework, what physical property explains why microscopically different systems exhibit identical critical exponents near phase transitions?",
+    "correct_answer": "Universality: systems flow to the same RG fixed point, making microscopic details irrelevant",
+    "distractors": [
+      "Equipartition: thermal energy distributes equally among all microscopic degrees of freedom at criticality",
+      "Ergodicity: phase-space trajectories eventually sample all accessible microstates uniformly near transitions",
+      "Duality: every lattice model maps exactly onto a complementary model at the inverse temperature"
+    ],
+    "difficulty": 4,
+    "source_article": "Renormalization group",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "renormalization group"
+    ]
+  },
+  {
+    "question_text": "In algorithmic information theory, Chaitin's constant $\\Omega$ represents what quantity, and why is it fundamentally unknowable?",
+    "correct_answer": "The halting probability of a universal Turing machine; only finitely many of its digits are provable in any formal system",
+    "distractors": [
+      "The maximum Kolmogorov complexity of any finite string; it grows faster than any computable function can bound",
+      "The ratio of compressible to incompressible strings; it converges too slowly for any algorithm to approximate",
+      "The Shannon entropy rate of random programs; its value depends on an unresolvable choice of programming language"
+    ],
+    "difficulty": 4,
+    "source_article": "Algorithmic information theory",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "algorithmic information theory"
+    ]
+  },
+  {
+    "question_text": "According to Jaynes's maximum entropy principle, when only the mean energy $\\langle E \\rangle$ is known as a constraint, which probability distribution is uniquely selected?",
+    "correct_answer": "The Boltzmann (canonical) distribution $p_i \\propto e^{-\\beta E_i}$, recovering statistical mechanics",
+    "distractors": [
+      "The Gaussian distribution $p(E) \\propto e^{-E^2/2\\sigma^2}$, recovering the central limit theorem",
+      "The uniform (microcanonical) distribution over all states, recovering Laplace's principle of indifference",
+      "The power-law distribution $p(E) \\propto E^{-\\alpha}$, recovering self-organized criticality"
+    ],
+    "difficulty": 4,
+    "source_article": "Principle of maximum entropy",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "maximum entropy principle"
+    ]
+  },
+  {
+    "question_text": "In topological data analysis, what does persistent homology's \"stability theorem\" guarantee about persistence diagrams?",
+    "correct_answer": "Small perturbations in input data produce only small changes in the persistence diagram under the bottleneck distance",
+    "distractors": [
+      "Persistence diagrams converge to the true Betti numbers as sample size approaches infinity regardless of noise",
+      "Features with long persistence bars are guaranteed to represent genuine topological features rather than noise",
+      "Any two filtrations of the same simplicial complex produce identical persistence diagrams up to isomorphism"
+    ],
+    "difficulty": 4,
+    "source_article": "Topological data analysis",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "topological data analysis"
+    ]
+  },
+  {
+    "question_text": "Arrow's impossibility theorem applies specifically to which type of voting system, and what class of systems escapes its conclusion?",
+    "correct_answer": "It applies to ordinal (ranked) voting with three or more candidates; cardinal (rated) voting systems are not subject to it",
+    "distractors": [
+      "It applies to plurality (first-past-the-post) voting only; any system using runoff rounds or elimination avoids the impossibility",
+      "It applies to all deterministic voting systems without exception; only randomized or lottery-based mechanisms can escape it",
+      "It applies to single-winner elections exclusively; any multi-winner system using proportional representation methods avoids it"
+    ],
+    "difficulty": 4,
+    "source_article": "Arrow's impossibility theorem",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Arrow's impossibility theorem"
+    ]
+  },
+  {
+    "question_text": "In Hubbell's unified neutral theory of biodiversity, species abundances are governed by what key parameter $\\theta$, and what does it combine?",
+    "correct_answer": "The fundamental biodiversity number $\\theta = 2J\\nu$, combining metacommunity size $J$ and speciation rate $\\nu$",
+    "distractors": [
+      "The niche overlap index $\\theta = S/K$, combining total species richness $S$ and carrying capacity $K$",
+      "The competitive exclusion parameter $\\theta = r/d$, combining intrinsic growth rate $r$ and death rate $d$",
+      "The island isolation coefficient $\\theta = A/D^2$, combining island area $A$ and distance $D$ from mainland"
+    ],
+    "difficulty": 4,
+    "source_article": "Unified neutral theory of biodiversity",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "neutral theory of biodiversity"
+    ]
+  },
+  {
+    "question_text": "Goodhart's law originated in what specific policy domain, and who later generalized it into the widely-quoted formulation \"When a measure becomes a target, it ceases to be a good measure\"?",
+    "correct_answer": "UK monetary policy (Charles Goodhart, 1975); generalized by Marilyn Strathern citing Keith Hoskin",
+    "distractors": [
+      "US fiscal policy (Milton Friedman, 1968); generalized by Robert Lucas in his famous macroeconomic critique",
+      "Soviet industrial planning (Wassily Leontief, 1971); generalized by Donald Campbell in his social indicators law",
+      "British education reform (Michael Young, 1958); generalized by Peter Drucker in management-by-objectives theory"
+    ],
+    "difficulty": 4,
+    "source_article": "Goodhart's law",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Goodhart's law"
+    ]
+  },
+  {
+    "question_text": "Herbert Simon's concept of satisficing is embedded within which broader theoretical framework, and how does it formally differ from optimizing?",
+    "correct_answer": "Bounded rationality; agents select the first option meeting an aspiration threshold rather than maximizing a utility function",
+    "distractors": [
+      "Prospect theory; agents weight losses more heavily than gains and settle for loss-avoidance rather than gain-seeking",
+      "Rational expectations; agents form optimal forecasts but accept suboptimal actions due to information transaction costs",
+      "Game theory; agents choose Nash equilibrium strategies that are stable rather than individually optimal payoff-maximizing"
+    ],
+    "difficulty": 4,
+    "source_article": "Satisficing",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "satisficing"
+    ]
+  },
+  {
+    "question_text": "For maximum power transfer in a circuit with complex impedances, what specific relationship must hold between source and load impedance?",
+    "correct_answer": "The load impedance must equal the complex conjugate of the source impedance: $Z_{\\text{load}} = Z_{\\text{source}}^*$",
+    "distractors": [
+      "The load impedance must equal the source impedance exactly: $Z_{\\text{load}} = Z_{\\text{source}}$ including reactive parts",
+      "The load resistance must equal the source resistance while all reactance must be maximized for full resonance",
+      "The load impedance magnitude must equal the source impedance magnitude: $|Z_{\\text{load}}| = |Z_{\\text{source}}|$ only"
+    ],
+    "difficulty": 4,
+    "source_article": "Impedance matching",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "impedance matching"
+    ]
+  }
+]

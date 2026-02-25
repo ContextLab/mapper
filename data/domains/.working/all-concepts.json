@@ -1,0 +1,271 @@
+{
+  "domain": "all",
+  "parent_domain": null,
+  "total_concepts": 50,
+  "distribution": {
+    "L1": 13,
+    "L2": 13,
+    "L3": 12,
+    "L4": 12
+  },
+  "concepts": {
+    "L1": [
+      {
+        "concept": "scientific method",
+        "wikipedia_article": "Scientific method",
+        "brief_rationale": "The systematic approach to acquiring knowledge through observation, hypothesis, experiment, and revision; foundational to all empirical disciplines."
+      },
+      {
+        "concept": "climate change",
+        "wikipedia_article": "Climate change",
+        "brief_rationale": "Long-term shifts in global temperatures and weather patterns; a quintessentially interdisciplinary topic spanning physics, biology, economics, and policy."
+      },
+      {
+        "concept": "chaos theory",
+        "wikipedia_article": "Chaos theory",
+        "brief_rationale": "The study of deterministic systems whose behavior is highly sensitive to initial conditions; bridges mathematics, physics, biology, and meteorology."
+      },
+      {
+        "concept": "thermodynamics",
+        "wikipedia_article": "Thermodynamics",
+        "brief_rationale": "The science of energy, heat, work, and their transformations; fundamental to physics, chemistry, biology, and engineering."
+      },
+      {
+        "concept": "placebo effect",
+        "wikipedia_article": "Placebo",
+        "brief_rationale": "The measurable improvement in health from an inert treatment; spans medicine, psychology, neuroscience, and philosophy of science."
+      },
+      {
+        "concept": "correlation does not imply causation",
+        "wikipedia_article": "Correlation does not imply causation",
+        "brief_rationale": "The principle that statistical association between variables does not establish a causal relationship; essential across all empirical disciplines."
+      },
+      {
+        "concept": "feedback loop",
+        "wikipedia_article": "Feedback",
+        "brief_rationale": "A circular process where outputs of a system are routed back as inputs; fundamental to engineering, biology, economics, and climate science."
+      },
+      {
+        "concept": "genetic engineering",
+        "wikipedia_article": "Genetic engineering",
+        "brief_rationale": "Direct manipulation of an organism's DNA; spans molecular biology, agriculture, medicine, and bioethics."
+      },
+      {
+        "concept": "renewable energy",
+        "wikipedia_article": "Renewable energy",
+        "brief_rationale": "Energy from naturally replenishing sources like solar and wind; bridges physics, engineering, economics, and environmental policy."
+      },
+      {
+        "concept": "vaccination",
+        "wikipedia_article": "Vaccination",
+        "brief_rationale": "Administration of a vaccine to stimulate immunity; spans immunology, public health, epidemiology, and health policy."
+      },
+      {
+        "concept": "carbon cycle",
+        "wikipedia_article": "Carbon cycle",
+        "brief_rationale": "The biogeochemical cycle by which carbon moves through Earth's systems; bridges geology, biology, chemistry, and climate science."
+      },
+      {
+        "concept": "scientific peer review",
+        "wikipedia_article": "Scholarly peer review",
+        "brief_rationale": "The evaluation of scientific work by experts before publication; foundational to the integrity of all academic disciplines."
+      },
+      {
+        "concept": "conservation of energy",
+        "wikipedia_article": "Conservation of energy",
+        "brief_rationale": "The principle that energy cannot be created or destroyed; fundamental to physics, chemistry, biology, and engineering."
+      }
+    ],
+    "L2": [
+      {
+        "concept": "network science",
+        "wikipedia_article": "Network science",
+        "brief_rationale": "The study of complex networks in nature and society; bridges mathematics, computer science, sociology, and biology."
+      },
+      {
+        "concept": "reductionism",
+        "wikipedia_article": "Reductionism",
+        "brief_rationale": "The philosophical position that complex systems are best understood by analyzing their simpler components; spans philosophy of science, biology, and physics."
+      },
+      {
+        "concept": "dimensional analysis",
+        "wikipedia_article": "Dimensional analysis",
+        "brief_rationale": "A method for checking equations and deriving relationships using physical dimensions; used across physics, chemistry, and engineering."
+      },
+      {
+        "concept": "simulation",
+        "wikipedia_article": "Computer simulation",
+        "brief_rationale": "The use of computational models to replicate real-world processes; bridges computer science, physics, biology, economics, and climate science."
+      },
+      {
+        "concept": "herd immunity",
+        "wikipedia_article": "Herd immunity",
+        "brief_rationale": "Indirect protection from infectious disease when a population reaches sufficient immunity; bridges epidemiology, immunology, and mathematical modeling."
+      },
+      {
+        "concept": "fractal",
+        "wikipedia_article": "Fractal",
+        "brief_rationale": "A geometric shape exhibiting self-similarity at different scales; bridges mathematics, physics, biology, and computer graphics."
+      },
+      {
+        "concept": "scientific paradigm",
+        "wikipedia_article": "Paradigm",
+        "brief_rationale": "A framework of assumptions and methods accepted by a scientific community; Kuhn's concept bridges philosophy, history, and sociology of science."
+      },
+      {
+        "concept": "bioethics",
+        "wikipedia_article": "Bioethics",
+        "brief_rationale": "The study of ethical issues in biology and medicine; bridges philosophy, medicine, law, and public policy."
+      },
+      {
+        "concept": "signal-to-noise ratio",
+        "wikipedia_article": "Signal-to-noise ratio",
+        "brief_rationale": "The ratio of useful information to background noise; used across engineering, statistics, neuroscience, and information science."
+      },
+      {
+        "concept": "carrying capacity",
+        "wikipedia_article": "Carrying capacity",
+        "brief_rationale": "The maximum population an environment can sustain; bridges ecology, demography, agriculture, and sustainability science."
+      },
+      {
+        "concept": "operationalization",
+        "wikipedia_article": "Operationalization",
+        "brief_rationale": "The process of defining abstract concepts as measurable variables; essential methodology across psychology, sociology, political science, and economics."
+      },
+      {
+        "concept": "tipping point",
+        "wikipedia_article": "Tipping point (climatology)",
+        "brief_rationale": "A critical threshold where a small change triggers a large, often irreversible shift; used in climate science, ecology, sociology, and epidemiology."
+      },
+      {
+        "concept": "intellectual property",
+        "wikipedia_article": "Intellectual property",
+        "brief_rationale": "Legal rights over creations of the mind; spans law, economics, technology, art, and international trade policy."
+      }
+    ],
+    "L3": [
+      {
+        "concept": "measurement problem",
+        "wikipedia_article": "Measurement problem",
+        "brief_rationale": "The puzzle of how quantum superpositions collapse upon observation; bridges quantum physics, philosophy of science, and information theory."
+      },
+      {
+        "concept": "ergodicity",
+        "wikipedia_article": "Ergodicity",
+        "brief_rationale": "The property that a system's time-average equals its ensemble average; spans statistical mechanics, economics, and dynamical systems theory."
+      },
+      {
+        "concept": "phase transition",
+        "wikipedia_article": "Phase transition",
+        "brief_rationale": "An abrupt change in system properties at a critical threshold; bridges physics, chemistry, network science, and social dynamics."
+      },
+      {
+        "concept": "Bayesian vs frequentist statistics",
+        "wikipedia_article": "Foundations of statistics",
+        "brief_rationale": "The two main interpretations of probability underpinning statistical inference; spans mathematics, philosophy, and all empirical sciences."
+      },
+      {
+        "concept": "power law",
+        "wikipedia_article": "Power law",
+        "brief_rationale": "A mathematical relationship where one quantity varies as a power of another; found in physics, linguistics, economics, and network science."
+      },
+      {
+        "concept": "observer effect",
+        "wikipedia_article": "Observer effect (physics)",
+        "brief_rationale": "The disturbance caused to a system by the act of observation; appears in physics, psychology, sociology, and anthropology."
+      },
+      {
+        "concept": "survivorship bias",
+        "wikipedia_article": "Survivorship bias",
+        "brief_rationale": "The error of focusing on successes while overlooking failures that are no longer visible; relevant to statistics, business, history, and medicine."
+      },
+      {
+        "concept": "commons dilemma",
+        "wikipedia_article": "Tragedy of the commons",
+        "brief_rationale": "The conflict between individual self-interest and collective resource stewardship; bridges economics, ecology, political science, and philosophy."
+      },
+      {
+        "concept": "path dependence",
+        "wikipedia_article": "Path dependence",
+        "brief_rationale": "The principle that history constrains future possibilities in a system; spans economics, political science, technology studies, and evolutionary biology."
+      },
+      {
+        "concept": "precautionary principle",
+        "wikipedia_article": "Precautionary principle",
+        "brief_rationale": "The approach of taking preventive action under scientific uncertainty; bridges environmental science, public health, law, and risk management."
+      },
+      {
+        "concept": "Turing test",
+        "wikipedia_article": "Turing test",
+        "brief_rationale": "A test of machine intelligence based on conversational indistinguishability from a human; bridges computer science, philosophy of mind, and linguistics."
+      },
+      {
+        "concept": "fermentation",
+        "wikipedia_article": "Fermentation",
+        "brief_rationale": "A metabolic process converting sugars to acids, gases, or alcohol; spans biochemistry, microbiology, food science, and industrial biotechnology."
+      }
+    ],
+    "L4": [
+      {
+        "concept": "ergodicity economics",
+        "wikipedia_article": "Ergodicity economics",
+        "brief_rationale": "Ole Peters's framework applying non-ergodic dynamics to economic decision-making; challenges expected utility theory using physics and mathematics."
+      },
+      {
+        "concept": "constructor theory",
+        "wikipedia_article": "Constructor theory",
+        "brief_rationale": "David Deutsch's framework expressing fundamental physics in terms of which transformations are possible vs impossible; bridges physics, information theory, and philosophy."
+      },
+      {
+        "concept": "allometry",
+        "wikipedia_article": "Allometry",
+        "brief_rationale": "The study of how organismal traits scale with body size following power laws; bridges biology, physics, and ecology through mathematical scaling theory."
+      },
+      {
+        "concept": "renormalization group",
+        "wikipedia_article": "Renormalization group",
+        "brief_rationale": "A mathematical framework for studying how physical systems change across scales; bridges particle physics, condensed matter, and critical phenomena."
+      },
+      {
+        "concept": "algorithmic information theory",
+        "wikipedia_article": "Algorithmic information theory",
+        "brief_rationale": "The study of complexity via the shortest program that produces a given output; bridges computer science, mathematics, and philosophy of science."
+      },
+      {
+        "concept": "maximum entropy principle",
+        "wikipedia_article": "Principle of maximum entropy",
+        "brief_rationale": "Jaynes's method of selecting the least biased probability distribution consistent with known constraints; bridges statistical mechanics, information theory, and Bayesian inference."
+      },
+      {
+        "concept": "topological data analysis",
+        "wikipedia_article": "Topological data analysis",
+        "brief_rationale": "Using algebraic topology to extract shape features from complex datasets; bridges mathematics, computer science, and applications across all empirical sciences."
+      },
+      {
+        "concept": "Arrow's impossibility theorem",
+        "wikipedia_article": "Arrow's impossibility theorem",
+        "brief_rationale": "The proof that no ranked voting system can satisfy all fairness criteria simultaneously; bridges mathematics, economics, political science, and social choice theory."
+      },
+      {
+        "concept": "neutral theory of biodiversity",
+        "wikipedia_article": "Unified neutral theory of biodiversity and biogeography",
+        "brief_rationale": "Hubbell's theory that species abundance patterns arise from stochastic drift rather than niche differences; bridges ecology, statistics, and evolutionary biology."
+      },
+      {
+        "concept": "Goodhart's law",
+        "wikipedia_article": "Goodhart's law",
+        "brief_rationale": "When a measure becomes a target, it ceases to be a good measure; relevant to economics, education, management, and AI alignment."
+      },
+      {
+        "concept": "satisficing",
+        "wikipedia_article": "Satisficing",
+        "brief_rationale": "Herbert Simon's concept of accepting a 'good enough' solution rather than optimizing; bridges economics, psychology, computer science, and organizational theory."
+      },
+      {
+        "concept": "impedance matching",
+        "wikipedia_article": "Impedance matching",
+        "brief_rationale": "Optimizing energy transfer between systems by matching their impedances; originates in electrical engineering but applies to acoustics, optics, and biological signal transduction."
+      }
+    ]
+  }
+}

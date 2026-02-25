@@ -105,10 +105,16 @@
 - CL-047: DIFFICULTY_WEIGHT_MAP and IRT are independent layers
 - CL-048: Video recommendations do not use IRT difficulty level
 
+## Phase 7A: Algorithm Tests — COMPLETE (2026-02-25)
+
+- T-V060–T-V063: 22 tests in `tests/algorithm/video-recommender.test.js`, all passing
+- Covers: TLP ranking accuracy (100 randomized trials, ≥80% weak-region targeting), difference map correctness (negative preservation, snapshot blocking, relevance peaks, EMA blending), ExpectedGain vs TLP divergence (different rankings confirmed), performance (500 videos × 20 windows < 15ms for TLP/ranking/ExpectedGain, diff map < 1ms)
+- Uses deterministic PRNG (mulberry32) for reproducible randomized trials
+- Real Estimator instances used throughout (no mocks per constitution)
+
 ## Remaining Work
 
-### Phase 7: Validation & Testing — NOT STARTED
-- T-V060–T-V063: Algorithm tests (depend on Phase 4 ✓)
+### Phase 7B: UI/Playwright Tests — NOT STARTED
 - T-V064–T-V068, T-V070: UI/Playwright tests (depend on Phase 6 ✓)
 - T-V069: Pipeline validation (depends on Phase 1 + UMAP reducer)
 

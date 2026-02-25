@@ -304,21 +304,21 @@ mocks per project constitution).
 
 ### Algorithm Tests
 
-- [ ] T-V060 [P] Test TLP ranking accuracy (SC-V003): Create synthetic GP
+- [x] T-V060 [P] Test TLP ranking accuracy (SC-V003): Create synthetic GP
   estimates with a known minimum-knowledge region. Generate mock video data
   with windows in various locations. Verify top-ranked video targets the
   weakest region ≥80% of the time across 100 randomized trials.
 
-- [ ] T-V061 [P] Test difference map correctness (SC-V004): Simulate a
+- [x] T-V061 [P] Test difference map correctness (SC-V004): Simulate a
   video watch + 5 questions answered near the video's windows. Verify the
   difference map has non-zero values in ≥10% of grid cells near the
   video's window coordinates.
 
-- [ ] T-V062 [P] Test ExpectedGain vs TLP divergence (SC-V005): After
+- [x] T-V062 [P] Test ExpectedGain vs TLP divergence (SC-V005): After
   computing a difference map, verify that `computeRanking()` with
   ExpectedGain produces a different top-10 ordering than TLP-only.
 
-- [ ] T-V063 [P] Performance test (SC-V006): Time all scoring operations
+- [x] T-V063 [P] Performance test (SC-V006): Time all scoring operations
   with realistic video counts (500-2000 videos, ~150 windows each). Verify
   all operations complete in <15ms.
 

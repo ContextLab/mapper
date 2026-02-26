@@ -3,7 +3,6 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { Estimator, DEFAULT_LENGTH_SCALE } from '../../src/learning/estimator.js';
 import {
   computeTLP,
-  filterByDomain,
   applyWatchedPenalty,
   computeRanking,
   takeSnapshot,
@@ -149,11 +148,6 @@ describe('TLP ranking accuracy (SC-V003)', () => {
     expect(scored[1].score).toBeCloseTo(0.6, 5);
   });
 
-  it('filterByDomain returns all videos when domainId is null', () => {
-    const videos = [makeVideo('a', 0.1, 0.1), makeVideo('b', 0.9, 0.9)];
-    expect(filterByDomain(videos, null)).toHaveLength(2);
-  });
-
   it('computeRanking returns at most 10 videos', () => {
     const est = makeEstimator();
     const estimates = est.predict();
@@ -164,7 +158,7 @@ describe('TLP ranking accuracy (SC-V003)', () => {
       videos.push(makeVideo(`v${i}`, Math.random(), Math.random(), 3, 0.02));
     }
 
-    const ranking = computeRanking(videos, estimates, new Set(), null, null);
+    const ranking = computeRanking(videos, estimates, new Set(), null);
     expect(ranking.length).toBeLessThanOrEqual(10);
     // Should be sorted descending
     for (let i = 1; i < ranking.length; i++) {
@@ -360,10 +354,10 @@ describe('ExpectedGain vs TLP divergence (SC-V005)', () => {
     const videos = [vA, vB];
 
     // TLP ranking (no diff map)
-    const tlpRanking = computeRanking(videos, estimatesBefore, new Set(), null, null);
+    const tlpRanking = computeRanking(videos, estimatesBefore, new Set(), null);
 
     // ExpectedGain ranking (with diff map)
-    const egRanking = computeRanking(videos, estimatesBefore, new Set(), runningDiffMap, null);
+    const egRanking = computeRanking(videos, estimatesBefore, new Set(), runningDiffMap);
 
     // TLP should prefer vB (unknown region, high uncertainty)
     expect(tlpRanking[0].video.id).toBe('vB');
@@ -501,10 +495,10 @@ describe('Scoring performance (SC-V006)', () => {
     }
 
     // Warmup
-    computeRanking(videos.slice(0, 10), estimates, new Set(), null, null);
+    computeRanking(videos.slice(0, 10), estimates, new Set(), null);
 
     const start = performance.now();
-    computeRanking(videos, estimates, new Set(), null, null);
+    computeRanking(videos, estimates, new Set(), null);
     const elapsed = performance.now() - start;
 
     expect(elapsed).toBeLessThan(15);

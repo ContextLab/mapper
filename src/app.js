@@ -112,11 +112,8 @@ async function boot() {
     return;
   }
 
-  // Start background video data loading (T-V051, FR-V041)
-  const allDomainIds = registry.getHierarchy().flatMap((n) =>
-    [n.id, ...(n.children || []).map((c) => c.id)]
-  );
-  videoLoader.startBackgroundLoad(allDomainIds);
+  // Start background video catalog loading (T-V051, FR-V041)
+  videoLoader.startBackgroundLoad();
 
   const headerEl = document.getElementById('app-header');
   controls.init(headerEl);
@@ -164,12 +161,10 @@ async function boot() {
   if (suggestBtn) {
     suggestBtn.addEventListener('click', () => {
       if (!globalEstimator) return;
-      const domainId = $activeDomain.get();
-      const { data, promise } = videoLoader.getVideos(domainId || 'all');
+      const { data, promise } = videoLoader.getVideos();
       if (data) {
         openVideoModal(data);
       } else {
-        // Show modal with loading state, then populate when data arrives
         videoModal.showVideoModal([]);
         promise.then((videos) => openVideoModal(videos));
       }
@@ -236,7 +231,6 @@ async function boot() {
 function wireSubscriptions() {
   $activeDomain.subscribe(async (domainId) => {
     if (!domainId) return;
-    videoLoader.reprioritize(domainId);
     await switchDomain(domainId);
   });
 
@@ -807,8 +801,7 @@ function openVideoModal(videos) {
   const globalEstimates = globalEstimator.predict();
   const watchedIds = $watchedVideos.get();
   const runningDiffMap = $runningDifferenceMap.get();
-  const domainId = $activeDomain.get();
-  const ranked = computeRanking(videos, globalEstimates, watchedIds, runningDiffMap, domainId);
+  const ranked = computeRanking(videos, globalEstimates, watchedIds, runningDiffMap);
   videoModal.showVideoModal(ranked);
 }
 
@@ -819,8 +812,7 @@ function handleVideoComplete(videoId) {
   const snapshotTaken = takeSnapshot(globalEstimates);
 
   // Find the completed video's windows and merge them
-  const domainId = $activeDomain.get();
-  const { data } = videoLoader.getVideos(domainId || 'all');
+  const { data } = videoLoader.getVideos();
   if (data) {
     const video = data.find((v) => v.id === videoId);
     if (video && video.windows) {

@@ -12,7 +12,6 @@
 import { matern32, euclidean } from '../utils/math.js';
 import { DEFAULT_LENGTH_SCALE } from './estimator.js';
 import {
-  $watchedVideos,
   $preVideoSnapshot,
   $questionsAfterVideo,
   $differenceMap,
@@ -70,21 +69,6 @@ export function computeTLP(video, globalEstimates) {
   return sum / windows.length;
 }
 
-// ─── T-V031: Domain filtering ───────────────────────────────
-
-/**
- * Filter videos to those belonging to the active domain.
- * For "All (General)" (domainId is null/undefined), return all videos.
- *
- * @param {Array} videos - All loaded videos for the domain
- * @param {string|null} domainId - Active domain ID, or null for all
- * @returns {Array} Filtered video list
- */
-export function filterByDomain(videos, domainId) {
-  if (!domainId) return videos;
-  return videos;
-}
-
 // ─── T-V032: Watched penalty ────────────────────────────────
 
 /**
@@ -106,27 +90,25 @@ export function applyWatchedPenalty(scored, watchedIds) {
 // ─── T-V033: Full ranking pipeline ──────────────────────────
 
 /**
- * Compute full ranking: filter → score → penalize → sort → top 10.
+ * Compute full ranking: score → penalize → sort → top 10.
  *
  * Uses ExpectedGain if a running difference map exists, otherwise TLP.
  *
- * @param {Array} videos - All loaded videos for the domain
+ * @param {Array} videos - All loaded videos
  * @param {Array} globalEstimates - CellEstimate[] from globalEstimator.predict()
  * @param {Set} watchedIds - Set of watched video IDs
  * @param {Float32Array|null} runningDiffMap - Running EMA difference map (2,500 cells) or null
- * @param {string|null} domainId - Active domain ID
  * @returns {Array<{video: object, score: number}>} Top 10 ranked videos
  */
-export function computeRanking(videos, globalEstimates, watchedIds, runningDiffMap, domainId) {
-  const candidates = filterByDomain(videos, domainId);
-  if (candidates.length === 0) return [];
+export function computeRanking(videos, globalEstimates, watchedIds, runningDiffMap) {
+  if (!videos || videos.length === 0) return [];
 
   const useExpectedGain = runningDiffMap !== null;
   const scoreFn = useExpectedGain
     ? (v) => computeExpectedGain(v, globalEstimates, runningDiffMap, DEFAULT_LENGTH_SCALE)
     : (v) => computeTLP(v, globalEstimates);
 
-  const scored = candidates.map((video) => ({
+  const scored = videos.map((video) => ({
     video,
     score: scoreFn(video),
   }));

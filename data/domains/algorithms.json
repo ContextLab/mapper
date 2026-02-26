@@ -5,10 +5,10 @@
     "parent_id": "computer-science",
     "level": "sub",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.601212,
+      "x_max": 0.653115,
+      "y_min": 0.621121,
+      "y_max": 0.656572
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "sorting"
-      ]
+      ],
+      "x": 0.640386,
+      "y": 0.644844
     },
     {
       "id": "9694d1ae3c204353",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "searching"
-      ]
+      ],
+      "x": 0.640764,
+      "y": 0.647918
     },
     {
       "id": "65523ca5068e55c7",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "binary search"
-      ]
+      ],
+      "x": 0.640509,
+      "y": 0.645187
     },
     {
       "id": "b6b816d8bf0f05ae",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "recursion"
-      ]
+      ],
+      "x": 0.637376,
+      "y": 0.638402
     },
     {
       "id": "bf5604bebc02332d",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "graph"
-      ]
+      ],
+      "x": 0.644767,
+      "y": 0.647605
     },
     {
       "id": "bde746ba9bab88cf",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "tree"
-      ]
+      ],
+      "x": 0.643007,
+      "y": 0.645596
     },
     {
       "id": "d77798ce29cddf92",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "stack"
-      ]
+      ],
+      "x": 0.637872,
+      "y": 0.639541
     },
     {
       "id": "71a103eed120792b",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "queue"
-      ]
+      ],
+      "x": 0.641417,
+      "y": 0.641534
     },
     {
       "id": "0563485eb86143da",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "linked list"
-      ]
+      ],
+      "x": 0.631203,
+      "y": 0.644041
     },
     {
       "id": "8a2fc4a857c4f87f",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "hash table"
-      ]
+      ],
+      "x": 0.63674,
+      "y": 0.641623
     },
     {
       "id": "3bf2fdfb39285c10",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "Big O notation"
-      ]
+      ],
+      "x": 0.646437,
+      "y": 0.646619
     },
     {
       "id": "0f2eb656b735880b",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "dynamic programming"
-      ]
+      ],
+      "x": 0.634811,
+      "y": 0.632708
     },
     {
       "id": "86ba147a115b686c",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "greedy algorithm"
-      ]
+      ],
+      "x": 0.643131,
+      "y": 0.639778
     },
     {
       "id": "a2bf7d05e62ec6e3",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "quicksort"
-      ]
+      ],
+      "x": 0.636052,
+      "y": 0.645594
     },
     {
       "id": "75e0b6ec5a95f564",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "merge sort"
-      ]
+      ],
+      "x": 0.635187,
+      "y": 0.645718
     },
     {
       "id": "fb86db0cb7cf19c6",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "Dijkstra's algorithm"
-      ]
+      ],
+      "x": 0.638964,
+      "y": 0.644779
     },
     {
       "id": "dba2f500312c9275",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "breadth-first search"
-      ]
+      ],
+      "x": 0.643559,
+      "y": 0.641073
     },
     {
       "id": "ad3cb6122ee65ee9",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "depth-first search"
-      ]
+      ],
+      "x": 0.640707,
+      "y": 0.641592
     },
     {
       "id": "88a175225f392ed7",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "binary search tree"
-      ]
+      ],
+      "x": 0.637843,
+      "y": 0.646976
     },
     {
       "id": "6d3b716c6fcdd3e0",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "heap"
-      ]
+      ],
+      "x": 0.638734,
+      "y": 0.647192
     },
     {
       "id": "708185a710b7fdc3",
@@ -410,7 +450,9 @@
       ],
       "concepts_tested": [
         "heap"
-      ]
+      ],
+      "x": 0.638812,
+      "y": 0.647536
     },
     {
       "id": "db9252b0f274988b",
@@ -429,7 +471,9 @@
       ],
       "concepts_tested": [
         "heap sort"
-      ]
+      ],
+      "x": 0.639307,
+      "y": 0.646004
     },
     {
       "id": "e33a8dfff9291c0b",
@@ -448,7 +492,9 @@
       ],
       "concepts_tested": [
         "insertion sort"
-      ]
+      ],
+      "x": 0.640278,
+      "y": 0.647268
     },
     {
       "id": "e7f0d0706c161a52",
@@ -467,7 +513,9 @@
       ],
       "concepts_tested": [
         "Bellman-Ford algorithm"
-      ]
+      ],
+      "x": 0.641152,
+      "y": 0.64573
     },
     {
       "id": "61068a8d84a65710",
@@ -486,7 +534,9 @@
       ],
       "concepts_tested": [
         "Kruskal's algorithm"
-      ]
+      ],
+      "x": 0.640302,
+      "y": 0.645494
     },
     {
       "id": "d759817f4d7b9140",
@@ -505,7 +555,9 @@
       ],
       "concepts_tested": [
         "memoization"
-      ]
+      ],
+      "x": 0.644229,
+      "y": 0.626121
     },
     {
       "id": "6681af7cf6297bf1",
@@ -524,7 +576,9 @@
       ],
       "concepts_tested": [
         "amortized analysis"
-      ]
+      ],
+      "x": 0.639459,
+      "y": 0.648086
     },
     {
       "id": "6a95445727a7cc19",
@@ -543,7 +597,9 @@
       ],
       "concepts_tested": [
         "red-black tree"
-      ]
+      ],
+      "x": 0.635372,
+      "y": 0.644663
     },
     {
       "id": "658b3cf6d58f561d",
@@ -562,7 +618,9 @@
       ],
       "concepts_tested": [
         "AVL tree"
-      ]
+      ],
+      "x": 0.633845,
+      "y": 0.644502
     },
     {
       "id": "a155b1db8364668b",
@@ -581,7 +639,9 @@
       ],
       "concepts_tested": [
         "A* search algorithm"
-      ]
+      ],
+      "x": 0.640932,
+      "y": 0.642618
     },
     {
       "id": "ca1fb90b386814d9",
@@ -600,7 +660,9 @@
       ],
       "concepts_tested": [
         "topological sort"
-      ]
+      ],
+      "x": 0.64142,
+      "y": 0.645624
     },
     {
       "id": "4db4ae4dc45ff980",
@@ -619,7 +681,9 @@
       ],
       "concepts_tested": [
         "union-find"
-      ]
+      ],
+      "x": 0.639474,
+      "y": 0.646754
     },
     {
       "id": "e1d9223cedc54d45",
@@ -638,7 +702,9 @@
       ],
       "concepts_tested": [
         "Prim's algorithm"
-      ]
+      ],
+      "x": 0.636137,
+      "y": 0.643961
     },
     {
       "id": "0eed1cc86d559056",
@@ -657,7 +723,9 @@
       ],
       "concepts_tested": [
         "longest common subsequence"
-      ]
+      ],
+      "x": 0.606212,
+      "y": 0.63632
     },
     {
       "id": "376ff628ec55c9aa",
@@ -676,7 +744,9 @@
       ],
       "concepts_tested": [
         "knapsack problem"
-      ]
+      ],
+      "x": 0.641495,
+      "y": 0.645618
     },
     {
       "id": "4d22ce7d18b8a7de",
@@ -695,7 +765,9 @@
       ],
       "concepts_tested": [
         "B-tree"
-      ]
+      ],
+      "x": 0.637919,
+      "y": 0.646888
     },
     {
       "id": "9a3c13a2e3664acc",
@@ -714,7 +786,9 @@
       ],
       "concepts_tested": [
         "randomized algorithm"
-      ]
+      ],
+      "x": 0.644486,
+      "y": 0.634767
     },
     {
       "id": "1def55879f23714a",
@@ -733,7 +807,9 @@
       ],
       "concepts_tested": [
         "KMP algorithm"
-      ]
+      ],
+      "x": 0.636481,
+      "y": 0.645728
     },
     {
       "id": "3da6acd960d577b0",
@@ -752,7 +828,9 @@
       ],
       "concepts_tested": [
         "Fibonacci heap"
-      ]
+      ],
+      "x": 0.638887,
+      "y": 0.647318
     },
     {
       "id": "3341a5406ce0ed5c",
@@ -771,7 +849,9 @@
       ],
       "concepts_tested": [
         "suffix array"
-      ]
+      ],
+      "x": 0.637172,
+      "y": 0.646889
     },
     {
       "id": "5ec2b397032fe350",
@@ -792,7 +872,9 @@
         "network flow",
         "max-flow min-cut theorem",
         "minimum cut"
-      ]
+      ],
+      "x": 0.644695,
+      "y": 0.640045
     },
     {
       "id": "0d67bb92d9eb6af9",
@@ -814,7 +896,9 @@
         "augmenting path",
         "Edmonds-Karp algorithm",
         "residual graph"
-      ]
+      ],
+      "x": 0.64073,
+      "y": 0.644481
     },
     {
       "id": "550ad4cf5a264c05",
@@ -835,7 +919,9 @@
         "van Emde Boas tree",
         "recursive universe splitting",
         "predecessor query"
-      ]
+      ],
+      "x": 0.638317,
+      "y": 0.647052
     },
     {
       "id": "9715172a191784d1",
@@ -857,7 +943,9 @@
         "DAWG",
         "state complexity",
         "string algorithms"
-      ]
+      ],
+      "x": 0.636747,
+      "y": 0.640961
     },
     {
       "id": "74d583848a6b7538",
@@ -879,7 +967,9 @@
         "convex polytope",
         "simplex method",
         "feasible region"
-      ]
+      ],
+      "x": 0.648115,
+      "y": 0.651572
     },
     {
       "id": "23a9fa475d1a1afe",
@@ -900,7 +990,9 @@
         "approximation algorithm",
         "approximation ratio",
         "vertex cover"
-      ]
+      ],
+      "x": 0.640886,
+      "y": 0.645032
     },
     {
       "id": "2569e51960f0c47e",
@@ -922,7 +1014,9 @@
         "Cook-Levin theorem",
         "Boolean satisfiability",
         "P versus NP"
-      ]
+      ],
+      "x": 0.642245,
+      "y": 0.644249
     },
     {
       "id": "6131bbe28a873788",
@@ -943,7 +1037,9 @@
         "skip list",
         "probabilistic data structure",
         "randomized level assignment"
-      ]
+      ],
+      "x": 0.636095,
+      "y": 0.64656
     },
     {
       "id": "f55aa4b78628a93b",
@@ -965,7 +1061,9 @@
         "Cooley-Tukey algorithm",
         "divide and conquer",
         "roots of unity"
-      ]
+      ],
+      "x": 0.635823,
+      "y": 0.634645
     },
     {
       "id": "1ce8a3beae81f38a",
@@ -987,7 +1085,9 @@
         "failure links",
         "trie",
         "multi-pattern matching"
-      ]
+      ],
+      "x": 0.636776,
+      "y": 0.646567
     }
   ],
   "labels": [],

@@ -5,10 +5,10 @@
     "parent_id": "archaeology",
     "level": "sub",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.530672,
+      "x_max": 0.940205,
+      "y_min": 0.472484,
+      "y_max": 0.615109
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "forensic science"
-      ]
+      ],
+      "x": 0.642961,
+      "y": 0.600718
     },
     {
       "id": "de835a437ac47976",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "excavation"
-      ]
+      ],
+      "x": 0.646974,
+      "y": 0.582175
     },
     {
       "id": "ad76f9fc7ac30312",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "artifact"
-      ]
+      ],
+      "x": 0.648747,
+      "y": 0.581519
     },
     {
       "id": "900b3d6040f87a45",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "skeleton"
-      ]
+      ],
+      "x": 0.672465,
+      "y": 0.590588
     },
     {
       "id": "127cacf09b244b53",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "DNA evidence"
-      ]
+      ],
+      "x": 0.68835,
+      "y": 0.59904
     },
     {
       "id": "d8af8b8d4630eeb3",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "crime scene"
-      ]
+      ],
+      "x": 0.641657,
+      "y": 0.594454
     },
     {
       "id": "708e86be0b58f4ed",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "burial"
-      ]
+      ],
+      "x": 0.629393,
+      "y": 0.477484
     },
     {
       "id": "76929b2fed932655",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "carbon-14 dating"
-      ]
+      ],
+      "x": 0.661767,
+      "y": 0.592293
     },
     {
       "id": "c7c273667af0645b",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "mass grave"
-      ]
+      ],
+      "x": 0.649218,
+      "y": 0.583562
     },
     {
       "id": "eeeaa42a6ee75677",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "human rights"
-      ]
+      ],
+      "x": 0.535672,
+      "y": 0.535777
     },
     {
       "id": "0d39546c34d326a4",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "war crime"
-      ]
+      ],
+      "x": 0.549748,
+      "y": 0.530093
     },
     {
       "id": "eeea48c6430410a2",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "evidence"
-      ]
+      ],
+      "x": 0.631779,
+      "y": 0.610109
     },
     {
       "id": "b772df10ecd6d218",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "stratigraphy"
-      ]
+      ],
+      "x": 0.650098,
+      "y": 0.580946
     },
     {
       "id": "4ac498460b8d5984",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "taphonomy"
-      ]
+      ],
+      "x": 0.651253,
+      "y": 0.5866
     },
     {
       "id": "3a85fdb52d634043",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "osteology"
-      ]
+      ],
+      "x": 0.651841,
+      "y": 0.587361
     },
     {
       "id": "5fde84f80b2afe22",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "provenience"
-      ]
+      ],
+      "x": 0.647022,
+      "y": 0.581853
     },
     {
       "id": "1043df92908e8211",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "chain of custody"
-      ]
+      ],
+      "x": 0.647531,
+      "y": 0.588533
     },
     {
       "id": "50e5f18f797983f3",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "forensic anthropology"
-      ]
+      ],
+      "x": 0.650121,
+      "y": 0.588348
     },
     {
       "id": "6e77e2995c5f1a8f",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "biological profile"
-      ]
+      ],
+      "x": 0.652335,
+      "y": 0.586913
     },
     {
       "id": "f260b2e157432262",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "site survey"
-      ]
+      ],
+      "x": 0.644303,
+      "y": 0.584679
     },
     {
       "id": "0394b5ff94adc30d",
@@ -410,7 +450,9 @@
       ],
       "concepts_tested": [
         "decomposition"
-      ]
+      ],
+      "x": 0.655291,
+      "y": 0.586145
     },
     {
       "id": "6368d7c8462f836c",
@@ -429,7 +471,9 @@
       ],
       "concepts_tested": [
         "context (archaeology)"
-      ]
+      ],
+      "x": 0.647367,
+      "y": 0.582162
     },
     {
       "id": "d5b3f80261863eac",
@@ -448,7 +492,9 @@
       ],
       "concepts_tested": [
         "postmortem interval"
-      ]
+      ],
+      "x": 0.651371,
+      "y": 0.58697
     },
     {
       "id": "a4d210c722a52985",
@@ -467,7 +513,9 @@
       ],
       "concepts_tested": [
         "exhumation"
-      ]
+      ],
+      "x": 0.64756,
+      "y": 0.585999
     },
     {
       "id": "6072deb2567d0ea5",
@@ -486,7 +534,9 @@
       ],
       "concepts_tested": [
         "Harris matrix"
-      ]
+      ],
+      "x": 0.648383,
+      "y": 0.580724
     },
     {
       "id": "728b3d7f10e55c9a",
@@ -505,7 +555,9 @@
       ],
       "concepts_tested": [
         "entomology (forensic)"
-      ]
+      ],
+      "x": 0.935205,
+      "y": 0.536311
     },
     {
       "id": "7c4eef416be98430",
@@ -524,7 +576,9 @@
       ],
       "concepts_tested": [
         "stable isotope analysis"
-      ]
+      ],
+      "x": 0.653974,
+      "y": 0.585776
     },
     {
       "id": "1f2e36a2dca1f9a0",
@@ -543,7 +597,9 @@
       ],
       "concepts_tested": [
         "ground-penetrating radar"
-      ]
+      ],
+      "x": 0.651676,
+      "y": 0.58286
     },
     {
       "id": "ad2ae154941e03f8",
@@ -562,7 +618,9 @@
       ],
       "concepts_tested": [
         "antemortem trauma"
-      ]
+      ],
+      "x": 0.653521,
+      "y": 0.584044
     },
     {
       "id": "d9fc28f3fd8e9bfb",
@@ -581,7 +639,9 @@
       ],
       "concepts_tested": [
         "clandestine grave"
-      ]
+      ],
+      "x": 0.652089,
+      "y": 0.581538
     },
     {
       "id": "a3cb7292cd811238",
@@ -600,7 +660,9 @@
       ],
       "concepts_tested": [
         "skeletal trauma analysis"
-      ]
+      ],
+      "x": 0.657123,
+      "y": 0.58373
     },
     {
       "id": "1ae98b76f6bd479f",
@@ -619,7 +681,9 @@
       ],
       "concepts_tested": [
         "commingled remains"
-      ]
+      ],
+      "x": 0.65272,
+      "y": 0.585767
     },
     {
       "id": "21efc0e97cb3e041",
@@ -638,7 +702,9 @@
       ],
       "concepts_tested": [
         "photogrammetry"
-      ]
+      ],
+      "x": 0.64962,
+      "y": 0.584414
     },
     {
       "id": "3d496e44ac7678c5",
@@ -657,7 +723,9 @@
       ],
       "concepts_tested": [
         "ante-mortem dental records"
-      ]
+      ],
+      "x": 0.651704,
+      "y": 0.586048
     },
     {
       "id": "1143530aa6671c13",
@@ -676,7 +744,9 @@
       ],
       "concepts_tested": [
         "scene documentation"
-      ]
+      ],
+      "x": 0.647805,
+      "y": 0.583764
     },
     {
       "id": "493cc2f5be6c2339",
@@ -695,7 +765,9 @@
       ],
       "concepts_tested": [
         "luminescence dating"
-      ]
+      ],
+      "x": 0.655702,
+      "y": 0.585674
     },
     {
       "id": "e106a46ebd4444c1",
@@ -714,7 +786,9 @@
       ],
       "concepts_tested": [
         "Interpol DVI protocols"
-      ]
+      ],
+      "x": 0.650785,
+      "y": 0.588596
     },
     {
       "id": "162cc73c535bccc1",
@@ -733,7 +807,9 @@
       ],
       "concepts_tested": [
         "botanical evidence"
-      ]
+      ],
+      "x": 0.645664,
+      "y": 0.595474
     },
     {
       "id": "af76bf887c369f26",
@@ -752,7 +828,9 @@
       ],
       "concepts_tested": [
         "perimortem vs. postmortem fracture analysis"
-      ]
+      ],
+      "x": 0.653424,
+      "y": 0.583386
     },
     {
       "id": "40a4c96a45a16c1e",
@@ -771,7 +849,9 @@
       ],
       "concepts_tested": [
         "cut mark analysis"
-      ]
+      ],
+      "x": 0.652853,
+      "y": 0.578049
     },
     {
       "id": "42a0e27d9f395a69",
@@ -790,7 +870,9 @@
       ],
       "concepts_tested": [
         "sequential excavation methodology"
-      ]
+      ],
+      "x": 0.649772,
+      "y": 0.583002
     },
     {
       "id": "1ef4c396fadd4517",
@@ -809,7 +891,9 @@
       ],
       "concepts_tested": [
         "minimum number of individuals"
-      ]
+      ],
+      "x": 0.651364,
+      "y": 0.591115
     },
     {
       "id": "447a3b86c775ab22",
@@ -828,7 +912,9 @@
       ],
       "concepts_tested": [
         "strontium isotope geolocation"
-      ]
+      ],
+      "x": 0.662749,
+      "y": 0.582741
     },
     {
       "id": "2cee20e305510d42",
@@ -847,7 +933,9 @@
       ],
       "concepts_tested": [
         "electrical resistivity tomography"
-      ]
+      ],
+      "x": 0.651384,
+      "y": 0.583527
     },
     {
       "id": "50004a38f33d95e8",
@@ -866,7 +954,9 @@
       ],
       "concepts_tested": [
         "forensic geoarchaeology"
-      ]
+      ],
+      "x": 0.652095,
+      "y": 0.582003
     },
     {
       "id": "0ff240cb30c0fc81",
@@ -885,7 +975,9 @@
       ],
       "concepts_tested": [
         "blunt force vs. sharp force trauma differentiation"
-      ]
+      ],
+      "x": 0.653977,
+      "y": 0.581352
     },
     {
       "id": "c51c01138485643b",
@@ -904,7 +996,9 @@
       ],
       "concepts_tested": [
         "body farm research"
-      ]
+      ],
+      "x": 0.64884,
+      "y": 0.592908
     },
     {
       "id": "ad2ead7fd5268d56",
@@ -923,7 +1017,9 @@
       ],
       "concepts_tested": [
         "paleodemography of mass graves"
-      ]
+      ],
+      "x": 0.652571,
+      "y": 0.586319
     },
     {
       "id": "102519bc9850ef25",
@@ -942,7 +1038,9 @@
       ],
       "concepts_tested": [
         "lidar terrain analysis"
-      ]
+      ],
+      "x": 0.650694,
+      "y": 0.582803
     },
     {
       "id": "7cbf3f3451299e8d",
@@ -961,7 +1059,9 @@
       ],
       "concepts_tested": [
         "mtDNA kinship analysis"
-      ]
+      ],
+      "x": 0.651609,
+      "y": 0.584343
     }
   ],
   "labels": [],

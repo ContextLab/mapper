@@ -5,10 +5,10 @@
     "parent_id": null,
     "level": "general",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.580919,
+      "x_max": 0.647086,
+      "y_min": 0.617039,
+      "y_max": 0.6482
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "operating system"
-      ]
+      ],
+      "x": 0.62561,
+      "y": 0.629059
     },
     {
       "id": "f269c9f2b6351c23",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "internet"
-      ]
+      ],
+      "x": 0.618196,
+      "y": 0.623194
     },
     {
       "id": "6283222d7da4c087",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "database"
-      ]
+      ],
+      "x": 0.622044,
+      "y": 0.631788
     },
     {
       "id": "7cc9f44e45d2824d",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "computer network"
-      ]
+      ],
+      "x": 0.629739,
+      "y": 0.623871
     },
     {
       "id": "ecc338f2a6225832",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "software"
-      ]
+      ],
+      "x": 0.627583,
+      "y": 0.628172
     },
     {
       "id": "43fcbafb521b0149",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "computer virus"
-      ]
+      ],
+      "x": 0.625809,
+      "y": 0.624568
     },
     {
       "id": "9c1d42f95eca2359",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "cloud computing"
-      ]
+      ],
+      "x": 0.624929,
+      "y": 0.627515
     },
     {
       "id": "8ce81d6d2c4f32ff",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "computer hardware"
-      ]
+      ],
+      "x": 0.627434,
+      "y": 0.627122
     },
     {
       "id": "8e74567fc49ccfb4",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "file system"
-      ]
+      ],
+      "x": 0.624365,
+      "y": 0.629141
     },
     {
       "id": "76c5d22eef86b614",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "password"
-      ]
+      ],
+      "x": 0.626783,
+      "y": 0.627898
     },
     {
       "id": "364a0aba69194ebd",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "open-source software"
-      ]
+      ],
+      "x": 0.586523,
+      "y": 0.62468
     },
     {
       "id": "548de670ca1f5730",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "web browser"
-      ]
+      ],
+      "x": 0.585919,
+      "y": 0.630172
     },
     {
       "id": "7d90a9120c9b162c",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "debugging"
-      ]
+      ],
+      "x": 0.593104,
+      "y": 0.634854
     },
     {
       "id": "f1afeb5c95336e92",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "relational database"
-      ]
+      ],
+      "x": 0.632763,
+      "y": 0.63677
     },
     {
       "id": "d97dbc4f01157fdd",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "SQL"
-      ]
+      ],
+      "x": 0.598852,
+      "y": 0.62902
     },
     {
       "id": "4fa279019a85b63e",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "TCP/IP"
-      ]
+      ],
+      "x": 0.627001,
+      "y": 0.622039
     },
     {
       "id": "925fbc59b01f925c",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "version control"
-      ]
+      ],
+      "x": 0.593264,
+      "y": 0.629224
     },
     {
       "id": "8b17c58f0677880d",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "object-oriented programming"
-      ]
+      ],
+      "x": 0.609942,
+      "y": 0.640929
     },
     {
       "id": "24c906a07c1c5aad",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "process (computing)"
-      ]
+      ],
+      "x": 0.633105,
+      "y": 0.627505
     },
     {
       "id": "4e41dbba2e2b45dc",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "virtual memory"
-      ]
+      ],
+      "x": 0.626934,
+      "y": 0.628607
     },
     {
       "id": "f199059a7031c63e",
@@ -410,7 +450,9 @@
       ],
       "concepts_tested": [
         "CPU cache"
-      ]
+      ],
+      "x": 0.611282,
+      "y": 0.63792
     },
     {
       "id": "8ae661168026ea21",
@@ -429,7 +471,9 @@
       ],
       "concepts_tested": [
         "public-key cryptography"
-      ]
+      ],
+      "x": 0.603533,
+      "y": 0.625772
     },
     {
       "id": "cd243b2fce014462",
@@ -448,7 +492,9 @@
       ],
       "concepts_tested": [
         "software testing"
-      ]
+      ],
+      "x": 0.609904,
+      "y": 0.625664
     },
     {
       "id": "3485513f5d57b92c",
@@ -467,7 +513,9 @@
       ],
       "concepts_tested": [
         "API"
-      ]
+      ],
+      "x": 0.608683,
+      "y": 0.628959
     },
     {
       "id": "d5b6e2b2358d48a5",
@@ -486,7 +534,9 @@
       ],
       "concepts_tested": [
         "functional programming"
-      ]
+      ],
+      "x": 0.632544,
+      "y": 0.639161
     },
     {
       "id": "c28f1a4ca05e8676",
@@ -505,7 +555,9 @@
       ],
       "concepts_tested": [
         "firewall (computing)"
-      ]
+      ],
+      "x": 0.60047,
+      "y": 0.624352
     },
     {
       "id": "6ca28fec1eaa53ee",
@@ -524,7 +576,9 @@
       ],
       "concepts_tested": [
         "concurrency (computer science)"
-      ]
+      ],
+      "x": 0.634787,
+      "y": 0.637732
     },
     {
       "id": "6a1106df147af1bb",
@@ -543,7 +597,9 @@
       ],
       "concepts_tested": [
         "distributed system"
-      ]
+      ],
+      "x": 0.640057,
+      "y": 0.638905
     },
     {
       "id": "5af32ac9ec120671",
@@ -562,7 +618,9 @@
       ],
       "concepts_tested": [
         "database normalization"
-      ]
+      ],
+      "x": 0.631927,
+      "y": 0.637016
     },
     {
       "id": "78df33d596e6c8c5",
@@ -581,7 +639,9 @@
       ],
       "concepts_tested": [
         "compiler design"
-      ]
+      ],
+      "x": 0.638556,
+      "y": 0.626353
     },
     {
       "id": "c1e8af2a16e16eeb",
@@ -600,7 +660,9 @@
       ],
       "concepts_tested": [
         "compiler design"
-      ]
+      ],
+      "x": 0.637597,
+      "y": 0.628351
     },
     {
       "id": "28db63e822580b92",
@@ -619,7 +681,9 @@
       ],
       "concepts_tested": [
         "instruction set architecture"
-      ]
+      ],
+      "x": 0.600059,
+      "y": 0.641413
     },
     {
       "id": "2d2864f2b9e1e5d5",
@@ -638,7 +702,9 @@
       ],
       "concepts_tested": [
         "containerization"
-      ]
+      ],
+      "x": 0.619063,
+      "y": 0.633748
     },
     {
       "id": "ba9fc719dbd67f16",
@@ -657,7 +723,9 @@
       ],
       "concepts_tested": [
         "domain name system"
-      ]
+      ],
+      "x": 0.63341,
+      "y": 0.62247
     },
     {
       "id": "bd5f635754b38d39",
@@ -676,7 +744,9 @@
       ],
       "concepts_tested": [
         "garbage collection"
-      ]
+      ],
+      "x": 0.630455,
+      "y": 0.6432
     },
     {
       "id": "be518750a7c41883",
@@ -695,7 +765,9 @@
       ],
       "concepts_tested": [
         "transport layer security"
-      ]
+      ],
+      "x": 0.636786,
+      "y": 0.63828
     },
     {
       "id": "36edf87b3ad8152e",
@@ -714,7 +786,9 @@
       ],
       "concepts_tested": [
         "MapReduce"
-      ]
+      ],
+      "x": 0.631502,
+      "y": 0.636713
     },
     {
       "id": "5d67f1d0cd75cd02",
@@ -733,7 +807,9 @@
       ],
       "concepts_tested": [
         "software design pattern"
-      ]
+      ],
+      "x": 0.598176,
+      "y": 0.635298
     },
     {
       "id": "581aa5c2ac4ec8e4",
@@ -752,7 +828,9 @@
       ],
       "concepts_tested": [
         "CAP theorem"
-      ]
+      ],
+      "x": 0.642086,
+      "y": 0.637727
     },
     {
       "id": "11cff886718dfa46",
@@ -771,7 +849,9 @@
       ],
       "concepts_tested": [
         "Paxos (computer science)"
-      ]
+      ],
+      "x": 0.640679,
+      "y": 0.640655
     },
     {
       "id": "1bfcdfa33922eb9f",
@@ -790,7 +870,9 @@
       ],
       "concepts_tested": [
         "cache coherence"
-      ]
+      ],
+      "x": 0.615931,
+      "y": 0.635112
     },
     {
       "id": "241983c99eca6928",
@@ -809,7 +891,9 @@
       ],
       "concepts_tested": [
         "out-of-order execution"
-      ]
+      ],
+      "x": 0.619888,
+      "y": 0.641472
     },
     {
       "id": "fa50c6df32f2568f",
@@ -828,7 +912,9 @@
       ],
       "concepts_tested": [
         "write-ahead logging"
-      ]
+      ],
+      "x": 0.63845,
+      "y": 0.639276
     },
     {
       "id": "149cb6567a06d1bc",
@@ -847,7 +933,9 @@
       ],
       "concepts_tested": [
         "software transactional memory"
-      ]
+      ],
+      "x": 0.63814,
+      "y": 0.634755
     },
     {
       "id": "23f27bd8ff54450f",
@@ -866,7 +954,9 @@
       ],
       "concepts_tested": [
         "LLVM"
-      ]
+      ],
+      "x": 0.586276,
+      "y": 0.632215
     },
     {
       "id": "404dd2aecee934b1",
@@ -885,7 +975,9 @@
       ],
       "concepts_tested": [
         "Spectre (vulnerability)"
-      ]
+      ],
+      "x": 0.60239,
+      "y": 0.638738
     },
     {
       "id": "0915dfaae8ca64af",
@@ -904,7 +996,9 @@
       ],
       "concepts_tested": [
         "Byzantine fault tolerance"
-      ]
+      ],
+      "x": 0.638366,
+      "y": 0.63986
     },
     {
       "id": "6d217c7193204ca7",
@@ -923,7 +1017,9 @@
       ],
       "concepts_tested": [
         "conflict-free replicated data type"
-      ]
+      ],
+      "x": 0.637215,
+      "y": 0.635484
     },
     {
       "id": "7486ed0323459437",
@@ -942,7 +1038,9 @@
       ],
       "concepts_tested": [
         "memory consistency model"
-      ]
+      ],
+      "x": 0.614418,
+      "y": 0.639355
     },
     {
       "id": "b39e096fde360adf",
@@ -961,7 +1059,9 @@
       ],
       "concepts_tested": [
         "query optimization"
-      ]
+      ],
+      "x": 0.639594,
+      "y": 0.640969
     }
   ],
   "labels": [],

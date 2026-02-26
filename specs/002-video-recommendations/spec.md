@@ -238,10 +238,10 @@ than at random difficulties.
 - **FR-V005**: Pipeline MUST project each window embedding into the
   mapper's 2D space using the UMAP reducer via `reducer.transform()`,
   then normalize to [0,1] using the corresponding bounds file. **Note:**
-  The UMAP reducer and bounds will be regenerated once the updated
-  question set is finalized (in progress separately). The video pipeline
-  must run *after* the new reducer is available. The pipeline script
-  should accept reducer and bounds paths as CLI arguments.
+  The UMAP reducer is trained on articles + questions + full transcripts
+  jointly (CL-050). Sliding window embeddings are projected via
+  `transform()`, not included in training. The pipeline script should
+  accept reducer and bounds paths as CLI arguments.
 
 - **FR-V006**: Pipeline MUST produce per-domain JSON files
   (`data/videos/{domain-id}.json`) containing, for each video assigned to
@@ -499,11 +499,16 @@ than at random difficulties.
   or quota management is required.
 - ~85-95% of Khan Academy videos have auto-generated or manual transcripts.
   Videos without transcripts are excluded.
-- The UMAP reducer will be retrained once the updated question set is
-  finalized (in progress in a separate session). The video pipeline
-  depends on this new reducer. Transcript embeddings from
-  embeddinggemma-300m are validated to produce semantically meaningful
-  clusters (CL-016 PoC, gap = 0.111).
+- The UMAP reducer is trained on a JOINT corpus: Wikipedia article
+  embeddings + question embeddings + full video transcript embeddings,
+  all using `google/embeddinggemma-300m` (768-dim). This produces the
+  highest quality 2D space by incorporating all document types that will
+  appear on the map. See CL-050 for pipeline details.
+- Video sliding window embeddings are projected into the trained UMAP
+  space via `reducer.transform()`, NOT included in the training set.
+  This ensures windows map correctly without distorting the space.
+- Transcript embeddings from embeddinggemma-300m are validated to produce
+  semantically meaningful clusters (CL-016 PoC, gap = 0.111).
 - The YouTube IFrame Player API is available in all target browsers and is
   not blocked by default content security policies on GitHub Pages.
 - Khan Academy videos are freely available on YouTube and embedding them
@@ -519,7 +524,18 @@ math, and UI domains. All 39 resolved. CL-016 (transcript embedding PoC)
 validated experimentally — gap = 0.111, 2x success threshold.
 Updated 2026-02-24: Added CL-040 through CL-048 for GP-IRT adaptive
 difficulty selection (Issue #23). Updated 2026-02-25: Added CL-049 for
-domain question aggregation. Total: 49 clarifications, all resolved.*
+domain question aggregation, CL-050 for unified embedding pipeline.
+Total: 50 clarifications, all resolved.*
+
+### Session 2026-02-25 (unified embedding pipeline)
+
+- Q: Should UMAP train on articles + questions only, or include transcripts?
+  → A: Include full video transcripts in joint UMAP training for highest
+  quality 2D space. Pipeline order: (1) embed articles (existing, from
+  mapper.io), (2) embed questions (question_text + correct answer text),
+  (3) embed full transcripts (one embedding per video), (4) joint UMAP
+  fit_transform on all three, (5) save reducer + bounds, (6) project
+  sliding windows via reducer.transform(). See CL-050.
 
 ### Session 2026-02-24 (GP-IRT clarifications)
 
@@ -833,8 +849,9 @@ Log failures for manual review.**
 
 **Resolution: The UMAP reducer and bounds files from `mapper.io/data/`
 are from an outdated version of the pipeline and cannot be reused. Both
-files will be regenerated in this repository once the updated question
-set is finalized (in progress in a separate session). Expected paths:
+files will be regenerated using the unified pipeline (CL-050): joint
+UMAP `fit_transform` on articles + questions + full transcripts.
+Article embeddings are copied from `~/mapper.io/embeddings/`. Expected paths:
 `data/umap_reducer.pkl` and `data/umap_bounds.pkl`. If either file
 exceeds 100 MB it must be added to `.gitignore`. The video pipeline is
 blocked on this dependency. Requirements: Python 3.10+, umap-learn >=
@@ -950,6 +967,40 @@ domain is: own questions + all descendant questions. The domain bundle
 files remain small (50 questions each) and descendant bundles are
 lazy-loaded as needed. The GP estimator, video recommendations (TLP),
 and BALD question selection all operate over the full aggregated pool.**
+
+**CL-050 — Unified embedding pipeline: joint UMAP on articles + questions + transcripts** [RESOLVED]
+
+**Resolution: For the highest quality 2D space, the UMAP reducer is
+trained on ALL three document types jointly via `fit_transform`:
+
+1. **Article embeddings** (~250K × 768): Existing Wikipedia article
+   embeddings from `google/embeddinggemma-300m`, copied from
+   `~/mapper.io/embeddings/wikipedia_embeddings.pkl`.
+
+2. **Question embeddings** (2,500 × 768): Each question is embedded as
+   `question_text + " " + correct_answer_text` (e.g., "Which law
+   describes F=ma? Newton's laws of motion"). This gives richer semantic
+   signal than question text alone. Computed fresh using
+   `google/embeddinggemma-300m`.
+
+3. **Full transcript embeddings** (~5,000–8,000 × 768): One embedding
+   per video transcript (full document text, not sliding windows).
+   Computed using `google/embeddinggemma-300m`. Videos without English
+   transcripts or with <100 words are excluded (per CL-021, CL-022).
+
+The joint UMAP `fit_transform` ensures all three document types share
+exactly the same 2D manifold. After fitting:
+- Article coordinates are extracted and used for map visualization.
+- Question coordinates are written into domain JSON files (x, y fields).
+- Transcript coordinates are used for domain assignment.
+- Video sliding window embeddings (512w/50-stride per FR-V003) are
+  projected via `reducer.transform()` — NOT included in training.
+
+Pipeline scripts: `embed_questions_v2.py`, `embed_transcripts.py`,
+`fit_umap_joint.py`, `export_domain_bundles_v2.py`.
+
+This supersedes the previous approach where UMAP trained only on
+articles + questions (spec 001, `rebuild_umap_v2.py`).**
 
 ### Low — Document but Do Not Block
 

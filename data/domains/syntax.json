@@ -5,10 +5,10 @@
     "parent_id": "linguistics",
     "level": "sub",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.627164,
+      "x_max": 0.643548,
+      "y_min": 0.612005,
+      "y_max": 0.634088
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "grammar"
-      ]
+      ],
+      "x": 0.635359,
+      "y": 0.625722
     },
     {
       "id": "bc1f1d157e7eb86a",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "sentence"
-      ]
+      ],
+      "x": 0.636446,
+      "y": 0.624334
     },
     {
       "id": "98262c2f653182cd",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "noun"
-      ]
+      ],
+      "x": 0.636643,
+      "y": 0.6256
     },
     {
       "id": "64682c97c5c9a9b2",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "verb"
-      ]
+      ],
+      "x": 0.635839,
+      "y": 0.624186
     },
     {
       "id": "df06c8bfc5784e5e",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "adjective"
-      ]
+      ],
+      "x": 0.636411,
+      "y": 0.626158
     },
     {
       "id": "6c03b87d0e64f59d",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "adverb"
-      ]
+      ],
+      "x": 0.636197,
+      "y": 0.624358
     },
     {
       "id": "9a307ea9176b902c",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "subject"
-      ]
+      ],
+      "x": 0.637383,
+      "y": 0.625017
     },
     {
       "id": "0fbcf65416b5bd5e",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "object"
-      ]
+      ],
+      "x": 0.637103,
+      "y": 0.625045
     },
     {
       "id": "3a683393476e4bd5",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "pronoun"
-      ]
+      ],
+      "x": 0.637435,
+      "y": 0.625361
     },
     {
       "id": "0a9e26f31267148e",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "preposition"
-      ]
+      ],
+      "x": 0.635516,
+      "y": 0.624567
     },
     {
       "id": "aaadb32a1717e8b6",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "conjunction"
-      ]
+      ],
+      "x": 0.636396,
+      "y": 0.627021
     },
     {
       "id": "a9d6a12670f62626",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "word order"
-      ]
+      ],
+      "x": 0.635537,
+      "y": 0.620032
     },
     {
       "id": "46234f1558fd3730",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "clause"
-      ]
+      ],
+      "x": 0.638395,
+      "y": 0.625007
     },
     {
       "id": "002a3802f7256ae0",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "phrase structure"
-      ]
+      ],
+      "x": 0.635395,
+      "y": 0.625214
     },
     {
       "id": "0898ce72e25fdecb",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "noun phrase"
-      ]
+      ],
+      "x": 0.637698,
+      "y": 0.62592
     },
     {
       "id": "b94728020d4a5c09",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "verb phrase"
-      ]
+      ],
+      "x": 0.637402,
+      "y": 0.626096
     },
     {
       "id": "ad1cc917ac10f395",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "subordinate clause"
-      ]
+      ],
+      "x": 0.637472,
+      "y": 0.624701
     },
     {
       "id": "323e16f0d595c69a",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "relative clause"
-      ]
+      ],
+      "x": 0.637046,
+      "y": 0.627183
     },
     {
       "id": "076d1a65f9844464",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "morpheme"
-      ]
+      ],
+      "x": 0.634495,
+      "y": 0.618084
     },
     {
       "id": "53601bbff7a7ad30",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "tense"
-      ]
+      ],
+      "x": 0.634428,
+      "y": 0.619799
     },
     {
       "id": "dfa6c7e42947bce8",
@@ -410,7 +450,9 @@
       ],
       "concepts_tested": [
         "aspect"
-      ]
+      ],
+      "x": 0.635266,
+      "y": 0.621937
     },
     {
       "id": "162d770981a94f36",
@@ -429,7 +471,9 @@
       ],
       "concepts_tested": [
         "agreement"
-      ]
+      ],
+      "x": 0.63698,
+      "y": 0.623006
     },
     {
       "id": "f6b322348d923a29",
@@ -448,7 +492,9 @@
       ],
       "concepts_tested": [
         "case"
-      ]
+      ],
+      "x": 0.633467,
+      "y": 0.617005
     },
     {
       "id": "d24cb0742fa8c45b",
@@ -467,7 +513,9 @@
       ],
       "concepts_tested": [
         "constituency"
-      ]
+      ],
+      "x": 0.635076,
+      "y": 0.624357
     },
     {
       "id": "411af21d08ee601d",
@@ -486,7 +534,9 @@
       ],
       "concepts_tested": [
         "complementizer"
-      ]
+      ],
+      "x": 0.638548,
+      "y": 0.628026
     },
     {
       "id": "d845b74dc6403def",
@@ -505,7 +555,9 @@
       ],
       "concepts_tested": [
         "passive voice"
-      ]
+      ],
+      "x": 0.637699,
+      "y": 0.625631
     },
     {
       "id": "5c57ad112ee2c751",
@@ -524,7 +576,9 @@
       ],
       "concepts_tested": [
         "X-bar theory"
-      ]
+      ],
+      "x": 0.633381,
+      "y": 0.627006
     },
     {
       "id": "b6f7b313fc3dbb1b",
@@ -543,7 +597,9 @@
       ],
       "concepts_tested": [
         "binding theory"
-      ]
+      ],
+      "x": 0.63472,
+      "y": 0.625168
     },
     {
       "id": "dee941c5a38ae3cd",
@@ -562,7 +618,9 @@
       ],
       "concepts_tested": [
         "wh-movement"
-      ]
+      ],
+      "x": 0.638104,
+      "y": 0.62693
     },
     {
       "id": "56fdfcce2c2f8d6d",
@@ -581,7 +639,9 @@
       ],
       "concepts_tested": [
         "c-command"
-      ]
+      ],
+      "x": 0.635329,
+      "y": 0.626158
     },
     {
       "id": "e8616c78a4b80b7a",
@@ -600,7 +660,9 @@
       ],
       "concepts_tested": [
         "theta role"
-      ]
+      ],
+      "x": 0.636875,
+      "y": 0.627045
     },
     {
       "id": "fb737de9bed077c7",
@@ -619,7 +681,9 @@
       ],
       "concepts_tested": [
         "head-directionality parameter"
-      ]
+      ],
+      "x": 0.635353,
+      "y": 0.625544
     },
     {
       "id": "89dc6dc7d2e5abc7",
@@ -638,7 +702,9 @@
       ],
       "concepts_tested": [
         "VP-internal subject hypothesis"
-      ]
+      ],
+      "x": 0.635649,
+      "y": 0.625268
     },
     {
       "id": "01647c9a2b73f8ba",
@@ -657,7 +723,9 @@
       ],
       "concepts_tested": [
         "split INFL hypothesis"
-      ]
+      ],
+      "x": 0.636034,
+      "y": 0.625849
     },
     {
       "id": "f49304a27800f819",
@@ -676,7 +744,9 @@
       ],
       "concepts_tested": [
         "pro-drop"
-      ]
+      ],
+      "x": 0.633943,
+      "y": 0.618114
     },
     {
       "id": "1297a445a4450a08",
@@ -695,7 +765,9 @@
       ],
       "concepts_tested": [
         "locality constraints"
-      ]
+      ],
+      "x": 0.636568,
+      "y": 0.629088
     },
     {
       "id": "cc609edd9fc070f2",
@@ -714,7 +786,9 @@
       ],
       "concepts_tested": [
         "control theory"
-      ]
+      ],
+      "x": 0.637025,
+      "y": 0.62669
     },
     {
       "id": "95302a545b4014d5",
@@ -733,7 +807,9 @@
       ],
       "concepts_tested": [
         "government (syntax)"
-      ]
+      ],
+      "x": 0.634451,
+      "y": 0.625836
     },
     {
       "id": "0f3d1bb1d0fb3251",
@@ -752,7 +828,9 @@
       ],
       "concepts_tested": [
         "Minimalist Program"
-      ]
+      ],
+      "x": 0.63604,
+      "y": 0.624995
     },
     {
       "id": "ddfeaa14e2d7c79e",
@@ -771,7 +849,9 @@
       ],
       "concepts_tested": [
         "phase theory"
-      ]
+      ],
+      "x": 0.636257,
+      "y": 0.626917
     },
     {
       "id": "3f1805c62054ed9d",
@@ -790,7 +870,9 @@
       ],
       "concepts_tested": [
         "Agree operation"
-      ]
+      ],
+      "x": 0.63627,
+      "y": 0.625691
     },
     {
       "id": "5c6b95ebd7a2afc2",
@@ -809,7 +891,9 @@
       ],
       "concepts_tested": [
         "internal merge"
-      ]
+      ],
+      "x": 0.636976,
+      "y": 0.625885
     },
     {
       "id": "ab6229b343e02f53",
@@ -828,7 +912,9 @@
       ],
       "concepts_tested": [
         "cartography of syntactic structures"
-      ]
+      ],
+      "x": 0.632925,
+      "y": 0.62195
     },
     {
       "id": "dcdd978a673f0066",
@@ -847,7 +933,9 @@
       ],
       "concepts_tested": [
         "Kayne's antisymmetry"
-      ]
+      ],
+      "x": 0.635208,
+      "y": 0.62422
     },
     {
       "id": "e836372361455894",
@@ -866,7 +954,9 @@
       ],
       "concepts_tested": [
         "Distributed Morphology"
-      ]
+      ],
+      "x": 0.632164,
+      "y": 0.621219
     },
     {
       "id": "8d72a0a6d11e3c13",
@@ -885,7 +975,9 @@
       ],
       "concepts_tested": [
         "copy theory of movement"
-      ]
+      ],
+      "x": 0.638342,
+      "y": 0.626917
     },
     {
       "id": "2d239588abb046cb",
@@ -904,7 +996,9 @@
       ],
       "concepts_tested": [
         "feature inheritance"
-      ]
+      ],
+      "x": 0.63652,
+      "y": 0.626207
     },
     {
       "id": "831e5388717debed",
@@ -923,7 +1017,9 @@
       ],
       "concepts_tested": [
         "late merger"
-      ]
+      ],
+      "x": 0.63556,
+      "y": 0.624475
     },
     {
       "id": "787569968936b48e",
@@ -942,7 +1038,9 @@
       ],
       "concepts_tested": [
         "labeling algorithm"
-      ]
+      ],
+      "x": 0.635828,
+      "y": 0.626453
     },
     {
       "id": "e9b40f2177d22e3f",
@@ -961,7 +1059,9 @@
       ],
       "concepts_tested": [
         "smuggling (syntax)"
-      ]
+      ],
+      "x": 0.636645,
+      "y": 0.628455
     }
   ],
   "labels": [],

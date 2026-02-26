@@ -5,10 +5,10 @@
     "parent_id": "linguistics",
     "level": "sub",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.628548,
+      "x_max": 0.647905,
+      "y_min": 0.610172,
+      "y_max": 0.635421
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "meaning"
-      ]
+      ],
+      "x": 0.637875,
+      "y": 0.622767
     },
     {
       "id": "e2d7f50d849fea22",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "synonym"
-      ]
+      ],
+      "x": 0.63784,
+      "y": 0.623279
     },
     {
       "id": "0e9961f23fd47c89",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "antonym"
-      ]
+      ],
+      "x": 0.637613,
+      "y": 0.622414
     },
     {
       "id": "cbd9b97e04f7c4e5",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "ambiguity"
-      ]
+      ],
+      "x": 0.636788,
+      "y": 0.623799
     },
     {
       "id": "0bcff33c1657b9ae",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "metaphor"
-      ]
+      ],
+      "x": 0.635391,
+      "y": 0.619153
     },
     {
       "id": "39a10ee028b88fd9",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "connotation"
-      ]
+      ],
+      "x": 0.638154,
+      "y": 0.621405
     },
     {
       "id": "a10d04660d36f518",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "denotation"
-      ]
+      ],
+      "x": 0.636828,
+      "y": 0.620093
     },
     {
       "id": "e4a6a36665744ea9",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "context"
-      ]
+      ],
+      "x": 0.637466,
+      "y": 0.620988
     },
     {
       "id": "064ff9ab6a5e9903",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "literal meaning"
-      ]
+      ],
+      "x": 0.636651,
+      "y": 0.624088
     },
     {
       "id": "a32e4564a969b680",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "homonym"
-      ]
+      ],
+      "x": 0.636866,
+      "y": 0.622076
     },
     {
       "id": "245827effc8942a2",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "polysemy"
-      ]
+      ],
+      "x": 0.636757,
+      "y": 0.622413
     },
     {
       "id": "9e915fd8be9535d7",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "hyponymy"
-      ]
+      ],
+      "x": 0.637299,
+      "y": 0.623903
     },
     {
       "id": "bb3a427b0211b7d4",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "idiom"
-      ]
+      ],
+      "x": 0.636813,
+      "y": 0.622354
     },
     {
       "id": "842b1c5dea409e62",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "pragmatics"
-      ]
+      ],
+      "x": 0.636752,
+      "y": 0.622683
     },
     {
       "id": "e2a2b46566734f30",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "speech act"
-      ]
+      ],
+      "x": 0.633548,
+      "y": 0.617319
     },
     {
       "id": "7e2eaf9ab99356e1",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "reference"
-      ]
+      ],
+      "x": 0.637378,
+      "y": 0.624414
     },
     {
       "id": "4b05b9e070dc8d86",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "compositionality"
-      ]
+      ],
+      "x": 0.636578,
+      "y": 0.623579
     },
     {
       "id": "8bdd2d608975a91d",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "entailment"
-      ]
+      ],
+      "x": 0.63906,
+      "y": 0.627713
     },
     {
       "id": "be93cee7d84f166f",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "presupposition"
-      ]
+      ],
+      "x": 0.638614,
+      "y": 0.630421
     },
     {
       "id": "f19e6caf8b140f85",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "implicature"
-      ]
+      ],
+      "x": 0.63874,
+      "y": 0.619111
     },
     {
       "id": "89ec86654f28178e",
@@ -410,7 +450,9 @@
       ],
       "concepts_tested": [
         "semantic field"
-      ]
+      ],
+      "x": 0.636922,
+      "y": 0.624134
     },
     {
       "id": "680b33d121840f76",
@@ -429,7 +471,9 @@
       ],
       "concepts_tested": [
         "prototype theory"
-      ]
+      ],
+      "x": 0.642905,
+      "y": 0.618795
     },
     {
       "id": "adb3947425408bbf",
@@ -448,7 +492,9 @@
       ],
       "concepts_tested": [
         "deixis"
-      ]
+      ],
+      "x": 0.636971,
+      "y": 0.623199
     },
     {
       "id": "8b63aaee481ce264",
@@ -467,7 +513,9 @@
       ],
       "concepts_tested": [
         "coreference"
-      ]
+      ],
+      "x": 0.633615,
+      "y": 0.623413
     },
     {
       "id": "f980d8c936b88a6b",
@@ -486,7 +534,9 @@
       ],
       "concepts_tested": [
         "lexical semantics"
-      ]
+      ],
+      "x": 0.640022,
+      "y": 0.621967
     },
     {
       "id": "390891ca191989b4",
@@ -505,7 +555,9 @@
       ],
       "concepts_tested": [
         "semantic change"
-      ]
+      ],
+      "x": 0.638675,
+      "y": 0.623705
     },
     {
       "id": "9703640f8c03f7e0",
@@ -524,7 +576,9 @@
       ],
       "concepts_tested": [
         "Grice's maxims"
-      ]
+      ],
+      "x": 0.637358,
+      "y": 0.615172
     },
     {
       "id": "3e0c27723c5ff13e",
@@ -543,7 +597,9 @@
       ],
       "concepts_tested": [
         "truth-conditional semantics"
-      ]
+      ],
+      "x": 0.638612,
+      "y": 0.628767
     },
     {
       "id": "f8ebf7252cc94f1c",
@@ -562,7 +618,9 @@
       ],
       "concepts_tested": [
         "model-theoretic semantics"
-      ]
+      ],
+      "x": 0.638568,
+      "y": 0.625986
     },
     {
       "id": "5960a435200f496c",
@@ -581,7 +639,9 @@
       ],
       "concepts_tested": [
         "thematic roles"
-      ]
+      ],
+      "x": 0.636776,
+      "y": 0.624725
     },
     {
       "id": "af05e34f580dd32b",
@@ -600,7 +660,9 @@
       ],
       "concepts_tested": [
         "scalar implicature"
-      ]
+      ],
+      "x": 0.638719,
+      "y": 0.624648
     },
     {
       "id": "e212df858538b200",
@@ -619,7 +681,9 @@
       ],
       "concepts_tested": [
         "generalized quantifier theory"
-      ]
+      ],
+      "x": 0.638086,
+      "y": 0.629418
     },
     {
       "id": "261c7e8244729952",
@@ -638,7 +702,9 @@
       ],
       "concepts_tested": [
         "aspect (linguistics)"
-      ]
+      ],
+      "x": 0.635571,
+      "y": 0.619242
     },
     {
       "id": "b4bf61d39437d8a9",
@@ -657,7 +723,9 @@
       ],
       "concepts_tested": [
         "illocutionary act"
-      ]
+      ],
+      "x": 0.634866,
+      "y": 0.617153
     },
     {
       "id": "301e33d35dca8260",
@@ -676,7 +744,9 @@
       ],
       "concepts_tested": [
         "frame semantics"
-      ]
+      ],
+      "x": 0.63863,
+      "y": 0.62287
     },
     {
       "id": "dac63a1ddcad6556",
@@ -695,7 +765,9 @@
       ],
       "concepts_tested": [
         "anaphora"
-      ]
+      ],
+      "x": 0.633651,
+      "y": 0.621324
     },
     {
       "id": "2ee12745415823be",
@@ -714,7 +786,9 @@
       ],
       "concepts_tested": [
         "scope ambiguity"
-      ]
+      ],
+      "x": 0.638596,
+      "y": 0.628656
     },
     {
       "id": "3addd069651b622e",
@@ -733,7 +807,9 @@
       ],
       "concepts_tested": [
         "conceptual metaphor"
-      ]
+      ],
+      "x": 0.642472,
+      "y": 0.620248
     },
     {
       "id": "0729e32dfe235f26",
@@ -752,7 +828,9 @@
       ],
       "concepts_tested": [
         "possible worlds semantics"
-      ]
+      ],
+      "x": 0.638577,
+      "y": 0.62986
     },
     {
       "id": "9b118cca1710ae84",
@@ -771,7 +849,9 @@
       ],
       "concepts_tested": [
         "dynamic semantics"
-      ]
+      ],
+      "x": 0.638441,
+      "y": 0.628173
     },
     {
       "id": "92e3e15373705a42",
@@ -790,7 +870,9 @@
       ],
       "concepts_tested": [
         "type-theoretic semantics"
-      ]
+      ],
+      "x": 0.636736,
+      "y": 0.62697
     },
     {
       "id": "548b26124ba2bf59",
@@ -809,7 +891,9 @@
       ],
       "concepts_tested": [
         "discourse representation theory"
-      ]
+      ],
+      "x": 0.639982,
+      "y": 0.62691
     },
     {
       "id": "8d98dc5471c865a3",
@@ -828,7 +912,9 @@
       ],
       "concepts_tested": [
         "event semantics"
-      ]
+      ],
+      "x": 0.63694,
+      "y": 0.629264
     },
     {
       "id": "4bb995ac1331c1de",
@@ -847,7 +933,9 @@
       ],
       "concepts_tested": [
         "two-dimensional semantics"
-      ]
+      ],
+      "x": 0.638538,
+      "y": 0.625624
     },
     {
       "id": "c6368e35ea3ae769",
@@ -866,7 +954,9 @@
       ],
       "concepts_tested": [
         "situation semantics"
-      ]
+      ],
+      "x": 0.637767,
+      "y": 0.624006
     },
     {
       "id": "7628c90d3ba012c2",
@@ -885,7 +975,9 @@
       ],
       "concepts_tested": [
         "continuation semantics"
-      ]
+      ],
+      "x": 0.638439,
+      "y": 0.628288
     },
     {
       "id": "bb4594e83ab214a9",
@@ -904,7 +996,9 @@
       ],
       "concepts_tested": [
         "degree semantics"
-      ]
+      ],
+      "x": 0.63953,
+      "y": 0.624352
     },
     {
       "id": "ca05ea2282d6db9f",
@@ -923,7 +1017,9 @@
       ],
       "concepts_tested": [
         "evidentiality"
-      ]
+      ],
+      "x": 0.636175,
+      "y": 0.619809
     },
     {
       "id": "52fdcfe012cfa0bf",
@@ -942,7 +1038,9 @@
       ],
       "concepts_tested": [
         "neo-Gricean pragmatics"
-      ]
+      ],
+      "x": 0.636508,
+      "y": 0.619089
     },
     {
       "id": "2f769ec2c7298e52",
@@ -961,7 +1059,9 @@
       ],
       "concepts_tested": [
         "lexical decomposition"
-      ]
+      ],
+      "x": 0.639208,
+      "y": 0.623109
     }
   ],
   "labels": [],

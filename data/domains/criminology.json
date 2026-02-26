@@ -5,10 +5,10 @@
     "parent_id": "sociology",
     "level": "sub",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.452024,
+      "x_max": 0.645174,
+      "y_min": 0.470534,
+      "y_max": 0.623914
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "crime"
-      ]
+      ],
+      "x": 0.631353,
+      "y": 0.605199
     },
     {
       "id": "29986fc41dfc0a3a",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "punishment"
-      ]
+      ],
+      "x": 0.630576,
+      "y": 0.608679
     },
     {
       "id": "5d4d211b87ad838d",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "prison"
-      ]
+      ],
+      "x": 0.628487,
+      "y": 0.602319
     },
     {
       "id": "1d9835bac231ae57",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "police"
-      ]
+      ],
+      "x": 0.457024,
+      "y": 0.475534
     },
     {
       "id": "ee396bcbcff4054b",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "law"
-      ]
+      ],
+      "x": 0.638117,
+      "y": 0.618914
     },
     {
       "id": "61ffc46a1635b117",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "victim"
-      ]
+      ],
+      "x": 0.631914,
+      "y": 0.610776
     },
     {
       "id": "c1968aa6e1d254b0",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "jury"
-      ]
+      ],
+      "x": 0.542662,
+      "y": 0.541679
     },
     {
       "id": "642b263b66cdd31f",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "arrest"
-      ]
+      ],
+      "x": 0.629879,
+      "y": 0.594893
     },
     {
       "id": "418e8def6ea1a251",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "murder"
-      ]
+      ],
+      "x": 0.556347,
+      "y": 0.542734
     },
     {
       "id": "49cc4984dd1241b7",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "theft"
-      ]
+      ],
+      "x": 0.563811,
+      "y": 0.54772
     },
     {
       "id": "190b4c107bd7ddae",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "parole"
-      ]
+      ],
+      "x": 0.630722,
+      "y": 0.603297
     },
     {
       "id": "f893a5ce70c35993",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "probation"
-      ]
+      ],
+      "x": 0.630003,
+      "y": 0.603085
     },
     {
       "id": "bad745fa90d3690b",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "criminal justice system"
-      ]
+      ],
+      "x": 0.63523,
+      "y": 0.60932
     },
     {
       "id": "818a85cce9dc162c",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "deterrence theory"
-      ]
+      ],
+      "x": 0.630722,
+      "y": 0.605302
     },
     {
       "id": "ec2ad3c164aee738",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "recidivism"
-      ]
+      ],
+      "x": 0.633542,
+      "y": 0.607698
     },
     {
       "id": "3cd8fe3a2be54971",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "white-collar crime"
-      ]
+      ],
+      "x": 0.632224,
+      "y": 0.607558
     },
     {
       "id": "698af98e74b91467",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "restorative justice"
-      ]
+      ],
+      "x": 0.632726,
+      "y": 0.60752
     },
     {
       "id": "62bf5ed2ccd71d74",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "organized crime"
-      ]
+      ],
+      "x": 0.631251,
+      "y": 0.606416
     },
     {
       "id": "65e4d8951487244a",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "social control theory"
-      ]
+      ],
+      "x": 0.634653,
+      "y": 0.607831
     },
     {
       "id": "a370d72c38a34e40",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "criminal profiling"
-      ]
+      ],
+      "x": 0.640174,
+      "y": 0.600167
     },
     {
       "id": "7fca2b540ec84c9c",
@@ -410,7 +450,9 @@
       ],
       "concepts_tested": [
         "criminal profiling"
-      ]
+      ],
+      "x": 0.63771,
+      "y": 0.604077
     },
     {
       "id": "3d311378d96340da",
@@ -429,7 +471,9 @@
       ],
       "concepts_tested": [
         "juvenile delinquency"
-      ]
+      ],
+      "x": 0.63294,
+      "y": 0.607963
     },
     {
       "id": "1db7ad7a0797df7a",
@@ -448,7 +492,9 @@
       ],
       "concepts_tested": [
         "domestic violence"
-      ]
+      ],
+      "x": 0.632813,
+      "y": 0.608512
     },
     {
       "id": "1506fa2a2966b43d",
@@ -467,7 +513,9 @@
       ],
       "concepts_tested": [
         "drug trafficking"
-      ]
+      ],
+      "x": 0.620504,
+      "y": 0.600835
     },
     {
       "id": "ba2cf9f238ac421e",
@@ -486,7 +534,9 @@
       ],
       "concepts_tested": [
         "capital punishment"
-      ]
+      ],
+      "x": 0.514442,
+      "y": 0.519374
     },
     {
       "id": "93e144d65a39e163",
@@ -505,7 +555,9 @@
       ],
       "concepts_tested": [
         "criminological theory"
-      ]
+      ],
+      "x": 0.634369,
+      "y": 0.607989
     },
     {
       "id": "3f83af1709f221d1",
@@ -524,7 +576,9 @@
       ],
       "concepts_tested": [
         "strain theory"
-      ]
+      ],
+      "x": 0.635559,
+      "y": 0.609489
     },
     {
       "id": "1565a74ee3beab9c",
@@ -543,7 +597,9 @@
       ],
       "concepts_tested": [
         "labeling theory"
-      ]
+      ],
+      "x": 0.63595,
+      "y": 0.609374
     },
     {
       "id": "4c50a629dad6ed13",
@@ -562,7 +618,9 @@
       ],
       "concepts_tested": [
         "rational choice theory"
-      ]
+      ],
+      "x": 0.632154,
+      "y": 0.606701
     },
     {
       "id": "9ff33edbc6bc4579",
@@ -581,7 +639,9 @@
       ],
       "concepts_tested": [
         "broken windows theory"
-      ]
+      ],
+      "x": 0.632146,
+      "y": 0.607896
     },
     {
       "id": "b2e95353570a09b2",
@@ -600,7 +660,9 @@
       ],
       "concepts_tested": [
         "social disorganization theory"
-      ]
+      ],
+      "x": 0.631907,
+      "y": 0.608866
     },
     {
       "id": "50ec445ba4124e3f",
@@ -619,7 +681,9 @@
       ],
       "concepts_tested": [
         "differential association theory"
-      ]
+      ],
+      "x": 0.63534,
+      "y": 0.609007
     },
     {
       "id": "4e82f9280f63dc4d",
@@ -638,7 +702,9 @@
       ],
       "concepts_tested": [
         "mass incarceration"
-      ]
+      ],
+      "x": 0.630536,
+      "y": 0.606508
     },
     {
       "id": "e6a6f6252a5f58d6",
@@ -657,7 +723,9 @@
       ],
       "concepts_tested": [
         "cybercrime"
-      ]
+      ],
+      "x": 0.587567,
+      "y": 0.610697
     },
     {
       "id": "786a68eea349a784",
@@ -676,7 +744,9 @@
       ],
       "concepts_tested": [
         "hate crime"
-      ]
+      ],
+      "x": 0.555839,
+      "y": 0.539213
     },
     {
       "id": "c5cad070c0668a81",
@@ -695,7 +765,9 @@
       ],
       "concepts_tested": [
         "criminological positivism"
-      ]
+      ],
+      "x": 0.632233,
+      "y": 0.608656
     },
     {
       "id": "a1d904d62680673e",
@@ -714,7 +786,9 @@
       ],
       "concepts_tested": [
         "situational crime prevention"
-      ]
+      ],
+      "x": 0.63697,
+      "y": 0.608512
     },
     {
       "id": "eb1c75786ee860ea",
@@ -733,7 +807,9 @@
       ],
       "concepts_tested": [
         "prison abolition"
-      ]
+      ],
+      "x": 0.622119,
+      "y": 0.601673
     },
     {
       "id": "736a6a1bfb62879b",
@@ -752,7 +828,9 @@
       ],
       "concepts_tested": [
         "routine activity theory"
-      ]
+      ],
+      "x": 0.632073,
+      "y": 0.605954
     },
     {
       "id": "6ac480d754c3b919",
@@ -771,7 +849,9 @@
       ],
       "concepts_tested": [
         "peacemaking criminology"
-      ]
+      ],
+      "x": 0.629751,
+      "y": 0.605655
     },
     {
       "id": "3bc79b460cec37d3",
@@ -790,7 +870,9 @@
       ],
       "concepts_tested": [
         "cultural criminology"
-      ]
+      ],
+      "x": 0.630106,
+      "y": 0.606644
     },
     {
       "id": "e225b27f27fda3ed",
@@ -809,7 +891,9 @@
       ],
       "concepts_tested": [
         "left realism"
-      ]
+      ],
+      "x": 0.631188,
+      "y": 0.607529
     },
     {
       "id": "5d35615bd5cc8a68",
@@ -828,7 +912,9 @@
       ],
       "concepts_tested": [
         "general theory of crime"
-      ]
+      ],
+      "x": 0.632493,
+      "y": 0.608227
     },
     {
       "id": "1c65e7263022a508",
@@ -847,7 +933,9 @@
       ],
       "concepts_tested": [
         "life-course criminology"
-      ]
+      ],
+      "x": 0.635262,
+      "y": 0.60652
     },
     {
       "id": "681ecabb21f18d01",
@@ -866,7 +954,9 @@
       ],
       "concepts_tested": [
         "zemiology"
-      ]
+      ],
+      "x": 0.628337,
+      "y": 0.60626
     },
     {
       "id": "deb48a08cfbb1ab0",
@@ -885,7 +975,9 @@
       ],
       "concepts_tested": [
         "green criminology"
-      ]
+      ],
+      "x": 0.629254,
+      "y": 0.604788
     },
     {
       "id": "24afbb4841b2d5e4",
@@ -904,7 +996,9 @@
       ],
       "concepts_tested": [
         "developmental criminology"
-      ]
+      ],
+      "x": 0.634217,
+      "y": 0.609535
     },
     {
       "id": "40d8b8b679161a12",
@@ -923,7 +1017,9 @@
       ],
       "concepts_tested": [
         "desistance from crime"
-      ]
+      ],
+      "x": 0.634062,
+      "y": 0.608139
     },
     {
       "id": "ef66bdc5d75547c9",
@@ -942,7 +1038,9 @@
       ],
       "concepts_tested": [
         "convict criminology"
-      ]
+      ],
+      "x": 0.627249,
+      "y": 0.604336
     },
     {
       "id": "53f07cb4062df7bb",
@@ -961,7 +1059,9 @@
       ],
       "concepts_tested": [
         "policing styles (Skolnick/Wilson)"
-      ]
+      ],
+      "x": 0.63336,
+      "y": 0.609988
     }
   ],
   "labels": [],

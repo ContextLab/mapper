@@ -5,10 +5,10 @@
     "parent_id": null,
     "level": "general",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.609165,
+      "x_max": 0.660727,
+      "y_min": 0.595093,
+      "y_max": 0.626848
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "socialization"
-      ]
+      ],
+      "x": 0.634722,
+      "y": 0.609553
     },
     {
       "id": "02ddd9fe96c2acc1",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "culture"
-      ]
+      ],
+      "x": 0.633879,
+      "y": 0.611274
     },
     {
       "id": "790adfb92b46cede",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "social stratification"
-      ]
+      ],
+      "x": 0.628691,
+      "y": 0.609738
     },
     {
       "id": "ef114585a21d4f0e",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "social norm"
-      ]
+      ],
+      "x": 0.633637,
+      "y": 0.60921
     },
     {
       "id": "8b886702d167ad1d",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "family"
-      ]
+      ],
+      "x": 0.63448,
+      "y": 0.610667
     },
     {
       "id": "e05780b22b3ac2ce",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "race and ethnicity"
-      ]
+      ],
+      "x": 0.632949,
+      "y": 0.608721
     },
     {
       "id": "83f4b64ed311352f",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "gender"
-      ]
+      ],
+      "x": 0.633229,
+      "y": 0.61003
     },
     {
       "id": "415ad52990518fb4",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "deviance"
-      ]
+      ],
+      "x": 0.634705,
+      "y": 0.608725
     },
     {
       "id": "1639240202c91f44",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "religion and society"
-      ]
+      ],
+      "x": 0.63491,
+      "y": 0.60853
     },
     {
       "id": "9d724be4d715822e",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "poverty"
-      ]
+      ],
+      "x": 0.622105,
+      "y": 0.608428
     },
     {
       "id": "870aa744ef1386f8",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "education and society"
-      ]
+      ],
+      "x": 0.636526,
+      "y": 0.611539
     },
     {
       "id": "170173833ffc45df",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "urbanization"
-      ]
+      ],
+      "x": 0.645824,
+      "y": 0.609383
     },
     {
       "id": "d0fb2cc0c679a29f",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "social role"
-      ]
+      ],
+      "x": 0.633244,
+      "y": 0.608791
     },
     {
       "id": "b778f94ef6601d8d",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "social institution"
-      ]
+      ],
+      "x": 0.634073,
+      "y": 0.609084
     },
     {
       "id": "375bb3d8cea2fc64",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "demography"
-      ]
+      ],
+      "x": 0.64811,
+      "y": 0.611107
     },
     {
       "id": "70edf8140ab2143f",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "social mobility"
-      ]
+      ],
+      "x": 0.633971,
+      "y": 0.610334
     },
     {
       "id": "d2cb3f3b37756bcf",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "symbolic interactionism"
-      ]
+      ],
+      "x": 0.632119,
+      "y": 0.609276
     },
     {
       "id": "328fde6bcc771f95",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "structural functionalism"
-      ]
+      ],
+      "x": 0.632648,
+      "y": 0.610566
     },
     {
       "id": "11b97d02ea136ce0",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "conflict theory"
-      ]
+      ],
+      "x": 0.628885,
+      "y": 0.609536
     },
     {
       "id": "7cb7f2e01a0d0701",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "racial segregation"
-      ]
+      ],
+      "x": 0.632327,
+      "y": 0.61106
     },
     {
       "id": "0eac5439694cb977",
@@ -410,7 +450,9 @@
       ],
       "concepts_tested": [
         "conflict theory"
-      ]
+      ],
+      "x": 0.631224,
+      "y": 0.610408
     },
     {
       "id": "367319c24b0622b1",
@@ -429,7 +471,9 @@
       ],
       "concepts_tested": [
         "racial segregation"
-      ]
+      ],
+      "x": 0.631452,
+      "y": 0.609039
     },
     {
       "id": "0160dc4e292b2647",
@@ -448,7 +492,9 @@
       ],
       "concepts_tested": [
         "social network"
-      ]
+      ],
+      "x": 0.637784,
+      "y": 0.621848
     },
     {
       "id": "c42f326159b58931",
@@ -467,7 +513,9 @@
       ],
       "concepts_tested": [
         "globalization and society"
-      ]
+      ],
+      "x": 0.633527,
+      "y": 0.609265
     },
     {
       "id": "450c77b722d131b8",
@@ -486,7 +534,9 @@
       ],
       "concepts_tested": [
         "organizational theory"
-      ]
+      ],
+      "x": 0.631028,
+      "y": 0.612185
     },
     {
       "id": "ff4b2c64c772bf47",
@@ -505,7 +555,9 @@
       ],
       "concepts_tested": [
         "medicalization"
-      ]
+      ],
+      "x": 0.634252,
+      "y": 0.60999
     },
     {
       "id": "c1aaa1a93cf6a51b",
@@ -524,7 +576,9 @@
       ],
       "concepts_tested": [
         "social fact"
-      ]
+      ],
+      "x": 0.6317,
+      "y": 0.609052
     },
     {
       "id": "d714bc5bf19c94ef",
@@ -543,7 +597,9 @@
       ],
       "concepts_tested": [
         "verstehen"
-      ]
+      ],
+      "x": 0.633778,
+      "y": 0.609692
     },
     {
       "id": "24448af55d5ec7c0",
@@ -562,7 +618,9 @@
       ],
       "concepts_tested": [
         "dramaturgical analysis"
-      ]
+      ],
+      "x": 0.629737,
+      "y": 0.609901
     },
     {
       "id": "8c66b7dd90a88b23",
@@ -581,7 +639,9 @@
       ],
       "concepts_tested": [
         "anomie"
-      ]
+      ],
+      "x": 0.631036,
+      "y": 0.608694
     },
     {
       "id": "58d2a59d4046a052",
@@ -600,7 +660,9 @@
       ],
       "concepts_tested": [
         "intersectionality"
-      ]
+      ],
+      "x": 0.619238,
+      "y": 0.606187
     },
     {
       "id": "39e24ec64f5edd5c",
@@ -619,7 +681,9 @@
       ],
       "concepts_tested": [
         "cultural capital"
-      ]
+      ],
+      "x": 0.63301,
+      "y": 0.610217
     },
     {
       "id": "9681d873b0b4c332",
@@ -638,7 +702,9 @@
       ],
       "concepts_tested": [
         "demographic transition"
-      ]
+      ],
+      "x": 0.655727,
+      "y": 0.61351
     },
     {
       "id": "20da873a7e02a7ac",
@@ -657,7 +723,9 @@
       ],
       "concepts_tested": [
         "social constructionism"
-      ]
+      ],
+      "x": 0.631967,
+      "y": 0.612233
     },
     {
       "id": "cf119f60ed463e79",
@@ -676,7 +744,9 @@
       ],
       "concepts_tested": [
         "role set"
-      ]
+      ],
+      "x": 0.631317,
+      "y": 0.609492
     },
     {
       "id": "8db5acdae15ae770",
@@ -695,7 +765,9 @@
       ],
       "concepts_tested": [
         "institutional isomorphism"
-      ]
+      ],
+      "x": 0.634124,
+      "y": 0.611835
     },
     {
       "id": "adb400085e701773",
@@ -714,7 +786,9 @@
       ],
       "concepts_tested": [
         "social determinants of health"
-      ]
+      ],
+      "x": 0.633003,
+      "y": 0.607954
     },
     {
       "id": "1fee1c4462df86fc",
@@ -733,7 +807,9 @@
       ],
       "concepts_tested": [
         "hidden curriculum"
-      ]
+      ],
+      "x": 0.630202,
+      "y": 0.610958
     },
     {
       "id": "42a9a247d355889f",
@@ -752,7 +828,9 @@
       ],
       "concepts_tested": [
         "habitus"
-      ]
+      ],
+      "x": 0.634517,
+      "y": 0.610559
     },
     {
       "id": "924af6badab33d71",
@@ -771,7 +849,9 @@
       ],
       "concepts_tested": [
         "mechanical and organic solidarity"
-      ]
+      ],
+      "x": 0.633008,
+      "y": 0.610814
     },
     {
       "id": "52d0ff0367d46ca8",
@@ -790,7 +870,9 @@
       ],
       "concepts_tested": [
         "world-systems theory"
-      ]
+      ],
+      "x": 0.617628,
+      "y": 0.605967
     },
     {
       "id": "eb7482d667d43cbd",
@@ -809,7 +891,9 @@
       ],
       "concepts_tested": [
         "strength of weak ties"
-      ]
+      ],
+      "x": 0.63007,
+      "y": 0.612088
     },
     {
       "id": "b19a3b615c0c9138",
@@ -828,7 +912,9 @@
       ],
       "concepts_tested": [
         "structuration theory"
-      ]
+      ],
+      "x": 0.634029,
+      "y": 0.612094
     },
     {
       "id": "fc4457c4fd94800c",
@@ -847,7 +933,9 @@
       ],
       "concepts_tested": [
         "biopower"
-      ]
+      ],
+      "x": 0.629128,
+      "y": 0.605897
     },
     {
       "id": "6961b9725b8e43f2",
@@ -866,7 +954,9 @@
       ],
       "concepts_tested": [
         "double consciousness"
-      ]
+      ],
+      "x": 0.632933,
+      "y": 0.612246
     },
     {
       "id": "35995fd42eb43edd",
@@ -885,7 +975,9 @@
       ],
       "concepts_tested": [
         "formal sociology"
-      ]
+      ],
+      "x": 0.630704,
+      "y": 0.610487
     },
     {
       "id": "9380214e3996a5f8",
@@ -904,7 +996,9 @@
       ],
       "concepts_tested": [
         "AGIL paradigm"
-      ]
+      ],
+      "x": 0.634593,
+      "y": 0.609428
     },
     {
       "id": "1b48b4267e41b9f7",
@@ -923,7 +1017,9 @@
       ],
       "concepts_tested": [
         "ethnomethodology"
-      ]
+      ],
+      "x": 0.630909,
+      "y": 0.609878
     },
     {
       "id": "171c51517ed7a028",
@@ -942,7 +1038,9 @@
       ],
       "concepts_tested": [
         "social capital theory"
-      ]
+      ],
+      "x": 0.633452,
+      "y": 0.612811
     },
     {
       "id": "298ccebafc8f255a",
@@ -961,7 +1059,9 @@
       ],
       "concepts_tested": [
         "risk society"
-      ]
+      ],
+      "x": 0.614165,
+      "y": 0.600093
     }
   ],
   "labels": [],

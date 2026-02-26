@@ -5,10 +5,10 @@
     "parent_id": "philosophy",
     "level": "sub",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.633875,
+      "x_max": 0.659573,
+      "y_min": 0.604435,
+      "y_max": 0.640032
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "existence"
-      ]
+      ],
+      "x": 0.641328,
+      "y": 0.6219
     },
     {
       "id": "6bb697cd42c09866",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "reality"
-      ]
+      ],
+      "x": 0.644299,
+      "y": 0.624489
     },
     {
       "id": "c25974a448bf1de2",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "time"
-      ]
+      ],
+      "x": 0.643502,
+      "y": 0.623622
     },
     {
       "id": "6704ee76bf1e1092",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "space"
-      ]
+      ],
+      "x": 0.641839,
+      "y": 0.622176
     },
     {
       "id": "d94b76dc65d9b502",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "causation"
-      ]
+      ],
+      "x": 0.642969,
+      "y": 0.61963
     },
     {
       "id": "f423126dbd33dc4e",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "mind"
-      ]
+      ],
+      "x": 0.644426,
+      "y": 0.618618
     },
     {
       "id": "f41f69163763cfef",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "identity"
-      ]
+      ],
+      "x": 0.654573,
+      "y": 0.627523
     },
     {
       "id": "3da427d3a9b70b5c",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "change"
-      ]
+      ],
+      "x": 0.646562,
+      "y": 0.621797
     },
     {
       "id": "33045754c89ca8c9",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "free will"
-      ]
+      ],
+      "x": 0.642359,
+      "y": 0.621948
     },
     {
       "id": "3995ae791d8c4a56",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "soul"
-      ]
+      ],
+      "x": 0.640765,
+      "y": 0.609435
     },
     {
       "id": "b3c0191b4ffc4089",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "God"
-      ]
+      ],
+      "x": 0.639234,
+      "y": 0.624547
     },
     {
       "id": "e911c97b3d1ba854",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "matter"
-      ]
+      ],
+      "x": 0.651684,
+      "y": 0.621988
     },
     {
       "id": "3f114d1a286da529",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "number"
-      ]
+      ],
+      "x": 0.642374,
+      "y": 0.620994
     },
     {
       "id": "0a95425908e18e25",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "ontology"
-      ]
+      ],
+      "x": 0.64128,
+      "y": 0.621132
     },
     {
       "id": "ce122dfa9349d265",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "determinism"
-      ]
+      ],
+      "x": 0.650949,
+      "y": 0.629248
     },
     {
       "id": "2b8ea29150bbee54",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "substance"
-      ]
+      ],
+      "x": 0.641619,
+      "y": 0.622329
     },
     {
       "id": "495180f2ecf4538c",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "property"
-      ]
+      ],
+      "x": 0.642752,
+      "y": 0.620234
     },
     {
       "id": "9de6413d357dbb02",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "modal realism"
-      ]
+      ],
+      "x": 0.641481,
+      "y": 0.625976
     },
     {
       "id": "fc1d55c14bac52f8",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "possible world"
-      ]
+      ],
+      "x": 0.639908,
+      "y": 0.626567
     },
     {
       "id": "7f6b373f0b6e74a0",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "dualism"
-      ]
+      ],
+      "x": 0.642869,
+      "y": 0.6205
     },
     {
       "id": "0226958ebb4399d3",
@@ -410,7 +450,9 @@
       ],
       "concepts_tested": [
         "physicalism"
-      ]
+      ],
+      "x": 0.64262,
+      "y": 0.623003
     },
     {
       "id": "d78ed2690f05029b",
@@ -429,7 +471,9 @@
       ],
       "concepts_tested": [
         "abstract object"
-      ]
+      ],
+      "x": 0.64165,
+      "y": 0.622616
     },
     {
       "id": "4a1348bfd98bf39d",
@@ -448,7 +492,9 @@
       ],
       "concepts_tested": [
         "essence"
-      ]
+      ],
+      "x": 0.641277,
+      "y": 0.621625
     },
     {
       "id": "b555f3714155547d",
@@ -467,7 +513,9 @@
       ],
       "concepts_tested": [
         "necessity and contingency"
-      ]
+      ],
+      "x": 0.640133,
+      "y": 0.632016
     },
     {
       "id": "f6e9d92ceddc5e26",
@@ -486,7 +534,9 @@
       ],
       "concepts_tested": [
         "supervenience"
-      ]
+      ],
+      "x": 0.642699,
+      "y": 0.621061
     },
     {
       "id": "336d0f9e94fa24ce",
@@ -505,7 +555,9 @@
       ],
       "concepts_tested": [
         "nominalism"
-      ]
+      ],
+      "x": 0.642404,
+      "y": 0.622818
     },
     {
       "id": "6537ef3f432f4ef8",
@@ -524,7 +576,9 @@
       ],
       "concepts_tested": [
         "problem of universals"
-      ]
+      ],
+      "x": 0.642146,
+      "y": 0.623058
     },
     {
       "id": "367ddded2611f7b5",
@@ -543,7 +597,9 @@
       ],
       "concepts_tested": [
         "personal identity over time"
-      ]
+      ],
+      "x": 0.640046,
+      "y": 0.614083
     },
     {
       "id": "dabaaae4b5ea1fd4",
@@ -562,7 +618,9 @@
       ],
       "concepts_tested": [
         "compatibilism"
-      ]
+      ],
+      "x": 0.641163,
+      "y": 0.620779
     },
     {
       "id": "1e23a6a258898795",
@@ -581,7 +639,9 @@
       ],
       "concepts_tested": [
         "mereology"
-      ]
+      ],
+      "x": 0.640836,
+      "y": 0.620857
     },
     {
       "id": "e8f4da2b56537f0a",
@@ -600,7 +660,9 @@
       ],
       "concepts_tested": [
         "eternalism"
-      ]
+      ],
+      "x": 0.64307,
+      "y": 0.622886
     },
     {
       "id": "c30a16b33dff78c0",
@@ -619,7 +681,9 @@
       ],
       "concepts_tested": [
         "presentism"
-      ]
+      ],
+      "x": 0.646198,
+      "y": 0.624936
     },
     {
       "id": "f905c1a27fd057b4",
@@ -638,7 +702,9 @@
       ],
       "concepts_tested": [
         "bundle theory"
-      ]
+      ],
+      "x": 0.644289,
+      "y": 0.625079
     },
     {
       "id": "0480716e23283e7c",
@@ -657,7 +723,9 @@
       ],
       "concepts_tested": [
         "causal closure"
-      ]
+      ],
+      "x": 0.641545,
+      "y": 0.624236
     },
     {
       "id": "d62ab9542a5c9b22",
@@ -676,7 +744,9 @@
       ],
       "concepts_tested": [
         "emergence"
-      ]
+      ],
+      "x": 0.641029,
+      "y": 0.620897
     },
     {
       "id": "7a7c98738ae6f6ce",
@@ -695,7 +765,9 @@
       ],
       "concepts_tested": [
         "natural kinds"
-      ]
+      ],
+      "x": 0.641529,
+      "y": 0.619676
     },
     {
       "id": "15ba8be321fefde3",
@@ -714,7 +786,9 @@
       ],
       "concepts_tested": [
         "laws of nature"
-      ]
+      ],
+      "x": 0.643776,
+      "y": 0.621099
     },
     {
       "id": "0e7237df510a2f4e",
@@ -733,7 +807,9 @@
       ],
       "concepts_tested": [
         "trope theory"
-      ]
+      ],
+      "x": 0.642711,
+      "y": 0.622153
     },
     {
       "id": "6e0cd4bf0a05cd1b",
@@ -752,7 +828,9 @@
       ],
       "concepts_tested": [
         "grounding relation"
-      ]
+      ],
+      "x": 0.642305,
+      "y": 0.623688
     },
     {
       "id": "ec6df673d32fa064",
@@ -771,7 +849,9 @@
       ],
       "concepts_tested": [
         "truthmaker theory"
-      ]
+      ],
+      "x": 0.641096,
+      "y": 0.625107
     },
     {
       "id": "f8fe390dbca035cb",
@@ -790,7 +870,9 @@
       ],
       "concepts_tested": [
         "four-dimensionalism"
-      ]
+      ],
+      "x": 0.64455,
+      "y": 0.62501
     },
     {
       "id": "c6d8117198ebcc8c",
@@ -809,7 +891,9 @@
       ],
       "concepts_tested": [
         "endurantism"
-      ]
+      ],
+      "x": 0.646139,
+      "y": 0.623553
     },
     {
       "id": "a6510932f2099e2d",
@@ -828,7 +912,9 @@
       ],
       "concepts_tested": [
         "haecceitism"
-      ]
+      ],
+      "x": 0.642164,
+      "y": 0.627052
     },
     {
       "id": "028c99e9e985640d",
@@ -847,7 +933,9 @@
       ],
       "concepts_tested": [
         "ontic structural realism"
-      ]
+      ],
+      "x": 0.642143,
+      "y": 0.623149
     },
     {
       "id": "7b69ade7a38a3c17",
@@ -866,7 +954,9 @@
       ],
       "concepts_tested": [
         "Humean supervenience"
-      ]
+      ],
+      "x": 0.641571,
+      "y": 0.62396
     },
     {
       "id": "80459bb31e1c5f54",
@@ -885,7 +975,9 @@
       ],
       "concepts_tested": [
         "dialetheism"
-      ]
+      ],
+      "x": 0.638875,
+      "y": 0.630723
     },
     {
       "id": "17e2b53907c957cb",
@@ -904,7 +996,9 @@
       ],
       "concepts_tested": [
         "mereological nihilism"
-      ]
+      ],
+      "x": 0.643534,
+      "y": 0.624676
     },
     {
       "id": "96b8925d736c5074",
@@ -923,7 +1017,9 @@
       ],
       "concepts_tested": [
         "counterpart theory"
-      ]
+      ],
+      "x": 0.640164,
+      "y": 0.627278
     },
     {
       "id": "2343a0244bb0ee09",
@@ -942,7 +1038,9 @@
       ],
       "concepts_tested": [
         "causal set theory"
-      ]
+      ],
+      "x": 0.648597,
+      "y": 0.635032
     },
     {
       "id": "a6539f9c587739d1",
@@ -961,7 +1059,9 @@
       ],
       "concepts_tested": [
         "priority monism"
-      ]
+      ],
+      "x": 0.641815,
+      "y": 0.624697
     }
   ],
   "labels": [],

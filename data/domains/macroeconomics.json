@@ -5,10 +5,10 @@
     "parent_id": "economics",
     "level": "sub",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.605309,
+      "x_max": 0.627517,
+      "y_min": 0.600308,
+      "y_max": 0.62119
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "gross domestic product"
-      ]
+      ],
+      "x": 0.615123,
+      "y": 0.607574
     },
     {
       "id": "aa584dba3acde042",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "inflation"
-      ]
+      ],
+      "x": 0.614281,
+      "y": 0.609027
     },
     {
       "id": "cc0fab25600ebbe8",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "unemployment"
-      ]
+      ],
+      "x": 0.612681,
+      "y": 0.606055
     },
     {
       "id": "0fce6bbddb9949c6",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "recession"
-      ]
+      ],
+      "x": 0.615952,
+      "y": 0.605887
     },
     {
       "id": "3d70693e8ebcd5d8",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "interest rate"
-      ]
+      ],
+      "x": 0.610859,
+      "y": 0.605308
     },
     {
       "id": "1b206c2fd8abc8bd",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "central bank"
-      ]
+      ],
+      "x": 0.610337,
+      "y": 0.606268
     },
     {
       "id": "3b8e27b7176efabf",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "fiscal policy"
-      ]
+      ],
+      "x": 0.610464,
+      "y": 0.606893
     },
     {
       "id": "83feeb88bfbe3655",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "monetary policy"
-      ]
+      ],
+      "x": 0.612795,
+      "y": 0.607178
     },
     {
       "id": "0f1f366f048e4786",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "trade deficit"
-      ]
+      ],
+      "x": 0.616074,
+      "y": 0.607669
     },
     {
       "id": "66508748fc1eddea",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "national debt"
-      ]
+      ],
+      "x": 0.61535,
+      "y": 0.608243
     },
     {
       "id": "7bbe2d4f265c7c5e",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "economic growth"
-      ]
+      ],
+      "x": 0.614878,
+      "y": 0.607484
     },
     {
       "id": "449f5f6e4456e622",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "exchange rate"
-      ]
+      ],
+      "x": 0.615099,
+      "y": 0.608291
     },
     {
       "id": "69f72059cc6280c6",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "consumer price index"
-      ]
+      ],
+      "x": 0.616921,
+      "y": 0.609489
     },
     {
       "id": "43058ce19afc6821",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "Phillips curve"
-      ]
+      ],
+      "x": 0.614981,
+      "y": 0.60637
     },
     {
       "id": "95d14086f0eb3f5f",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "quantitative easing"
-      ]
+      ],
+      "x": 0.612603,
+      "y": 0.607847
     },
     {
       "id": "6ffe4f62249fa2ef",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "fiscal multiplier"
-      ]
+      ],
+      "x": 0.613747,
+      "y": 0.609163
     },
     {
       "id": "d34660f18fb24c2e",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "aggregate demand"
-      ]
+      ],
+      "x": 0.616621,
+      "y": 0.610152
     },
     {
       "id": "9950788940159ca2",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "aggregate supply"
-      ]
+      ],
+      "x": 0.614943,
+      "y": 0.608352
     },
     {
       "id": "9fde3ea6dc19351f",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "money supply"
-      ]
+      ],
+      "x": 0.616265,
+      "y": 0.608024
     },
     {
       "id": "facc9c7fc2295192",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "open market operations"
-      ]
+      ],
+      "x": 0.610309,
+      "y": 0.606646
     },
     {
       "id": "28ea21723959ceaa",
@@ -410,7 +450,9 @@
       ],
       "concepts_tested": [
         "balance of payments"
-      ]
+      ],
+      "x": 0.617251,
+      "y": 0.607875
     },
     {
       "id": "e3dea33e9fc8f12d",
@@ -429,7 +471,9 @@
       ],
       "concepts_tested": [
         "purchasing power parity"
-      ]
+      ],
+      "x": 0.615942,
+      "y": 0.60917
     },
     {
       "id": "9372e772b8049f9e",
@@ -448,7 +492,9 @@
       ],
       "concepts_tested": [
         "comparative advantage"
-      ]
+      ],
+      "x": 0.615739,
+      "y": 0.60912
     },
     {
       "id": "ade8af146be4fecf",
@@ -467,7 +513,9 @@
       ],
       "concepts_tested": [
         "business cycle"
-      ]
+      ],
+      "x": 0.621855,
+      "y": 0.607295
     },
     {
       "id": "6062f53d33406c6d",
@@ -486,7 +534,9 @@
       ],
       "concepts_tested": [
         "hyperinflation"
-      ]
+      ],
+      "x": 0.610873,
+      "y": 0.608342
     },
     {
       "id": "aaabfb91b92ca81c",
@@ -505,7 +555,9 @@
       ],
       "concepts_tested": [
         "stagflation"
-      ]
+      ],
+      "x": 0.615342,
+      "y": 0.607304
     },
     {
       "id": "4e211852fa7d06b1",
@@ -524,7 +576,9 @@
       ],
       "concepts_tested": [
         "IS-LM model"
-      ]
+      ],
+      "x": 0.615597,
+      "y": 0.607245
     },
     {
       "id": "a56720290b8b2424",
@@ -543,7 +597,9 @@
       ],
       "concepts_tested": [
         "liquidity trap"
-      ]
+      ],
+      "x": 0.614632,
+      "y": 0.607403
     },
     {
       "id": "0e1c4dfc78a18e57",
@@ -562,7 +618,9 @@
       ],
       "concepts_tested": [
         "Mundell-Fleming model"
-      ]
+      ],
+      "x": 0.616682,
+      "y": 0.609606
     },
     {
       "id": "ee28ed159f28a505",
@@ -581,7 +639,9 @@
       ],
       "concepts_tested": [
         "Taylor rule"
-      ]
+      ],
+      "x": 0.6125,
+      "y": 0.608215
     },
     {
       "id": "e6d19e22c2d8fb3b",
@@ -600,7 +660,9 @@
       ],
       "concepts_tested": [
         "natural rate of unemployment"
-      ]
+      ],
+      "x": 0.614223,
+      "y": 0.605641
     },
     {
       "id": "cf1eebccf49a55cb",
@@ -619,7 +681,9 @@
       ],
       "concepts_tested": [
         "crowding out"
-      ]
+      ],
+      "x": 0.613749,
+      "y": 0.607789
     },
     {
       "id": "5f1482b6ff697bd9",
@@ -638,7 +702,9 @@
       ],
       "concepts_tested": [
         "Solow growth model"
-      ]
+      ],
+      "x": 0.618151,
+      "y": 0.608155
     },
     {
       "id": "77d9165abf374cba",
@@ -657,7 +723,9 @@
       ],
       "concepts_tested": [
         "velocity of money"
-      ]
+      ],
+      "x": 0.616853,
+      "y": 0.608689
     },
     {
       "id": "c98db522b136f1cc",
@@ -676,7 +744,9 @@
       ],
       "concepts_tested": [
         "sterilization"
-      ]
+      ],
+      "x": 0.611139,
+      "y": 0.607428
     },
     {
       "id": "527da427b0d25fe9",
@@ -695,7 +765,9 @@
       ],
       "concepts_tested": [
         "Okun's law"
-      ]
+      ],
+      "x": 0.615056,
+      "y": 0.607776
     },
     {
       "id": "e66fdc4f5c77be9c",
@@ -714,7 +786,9 @@
       ],
       "concepts_tested": [
         "output gap"
-      ]
+      ],
+      "x": 0.613851,
+      "y": 0.607056
     },
     {
       "id": "92b59b9c295534da",
@@ -733,7 +807,9 @@
       ],
       "concepts_tested": [
         "Dutch disease"
-      ]
+      ],
+      "x": 0.617392,
+      "y": 0.608079
     },
     {
       "id": "8fccfad187258361",
@@ -752,7 +828,9 @@
       ],
       "concepts_tested": [
         "Ricardian equivalence"
-      ]
+      ],
+      "x": 0.613451,
+      "y": 0.609295
     },
     {
       "id": "5c19ca8a1af6648d",
@@ -771,7 +849,9 @@
       ],
       "concepts_tested": [
         "real business cycle theory"
-      ]
+      ],
+      "x": 0.619214,
+      "y": 0.608929
     },
     {
       "id": "7c3b4a0259fdc13d",
@@ -790,7 +870,9 @@
       ],
       "concepts_tested": [
         "dynamic stochastic general equilibrium"
-      ]
+      ],
+      "x": 0.622517,
+      "y": 0.61619
     },
     {
       "id": "89f57441c7303de0",
@@ -809,7 +891,9 @@
       ],
       "concepts_tested": [
         "New Keynesian economics"
-      ]
+      ],
+      "x": 0.615842,
+      "y": 0.60951
     },
     {
       "id": "3b1e906e1d0f4e17",
@@ -828,7 +912,9 @@
       ],
       "concepts_tested": [
         "time inconsistency"
-      ]
+      ],
+      "x": 0.614679,
+      "y": 0.607669
     },
     {
       "id": "a97eac4f539026a3",
@@ -847,7 +933,9 @@
       ],
       "concepts_tested": [
         "Overlapping generations model"
-      ]
+      ],
+      "x": 0.619163,
+      "y": 0.611996
     },
     {
       "id": "5d8051c8cfff1688",
@@ -866,7 +954,9 @@
       ],
       "concepts_tested": [
         "Ramsey-Cass-Koopmans model"
-      ]
+      ],
+      "x": 0.620624,
+      "y": 0.613808
     },
     {
       "id": "7f0a3faac54aa3c1",
@@ -885,7 +975,9 @@
       ],
       "concepts_tested": [
         "endogenous growth theory"
-      ]
+      ],
+      "x": 0.616288,
+      "y": 0.608742
     },
     {
       "id": "d5738e316894a568",
@@ -904,7 +996,9 @@
       ],
       "concepts_tested": [
         "Balassa-Samuelson effect"
-      ]
+      ],
+      "x": 0.615278,
+      "y": 0.6103
     },
     {
       "id": "b821ffdaa3923f00",
@@ -923,7 +1017,9 @@
       ],
       "concepts_tested": [
         "impossible trinity"
-      ]
+      ],
+      "x": 0.61694,
+      "y": 0.609675
     },
     {
       "id": "1ee5e2fede41b4e4",
@@ -942,7 +1038,9 @@
       ],
       "concepts_tested": [
         "Friedman's k-percent rule"
-      ]
+      ],
+      "x": 0.613061,
+      "y": 0.609107
     },
     {
       "id": "6379dbfcf7e576d3",
@@ -961,7 +1059,9 @@
       ],
       "concepts_tested": [
         "menu cost"
-      ]
+      ],
+      "x": 0.617695,
+      "y": 0.611358
     }
   ],
   "labels": [],

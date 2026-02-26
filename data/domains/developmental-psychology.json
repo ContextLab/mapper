@@ -5,10 +5,10 @@
     "parent_id": "psychology",
     "level": "sub",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.617324,
+      "x_max": 0.686176,
+      "y_min": 0.589337,
+      "y_max": 0.623791
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "child development"
-      ]
+      ],
+      "x": 0.648085,
+      "y": 0.609212
     },
     {
       "id": "4f4fd034fcab9909",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "puberty"
-      ]
+      ],
+      "x": 0.64264,
+      "y": 0.598112
     },
     {
       "id": "722b80f305953e14",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "nature versus nurture"
-      ]
+      ],
+      "x": 0.64896,
+      "y": 0.613372
     },
     {
       "id": "89f98e2890f194b9",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "adolescence"
-      ]
+      ],
+      "x": 0.645393,
+      "y": 0.605079
     },
     {
       "id": "12e96034f51f73d0",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "aging"
-      ]
+      ],
+      "x": 0.647488,
+      "y": 0.610408
     },
     {
       "id": "88200f76580b890d",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "attachment"
-      ]
+      ],
+      "x": 0.640754,
+      "y": 0.607698
     },
     {
       "id": "bcf1666e38431cb8",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "cognitive development"
-      ]
+      ],
+      "x": 0.644501,
+      "y": 0.609217
     },
     {
       "id": "030a82de1d9a7f22",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "language acquisition"
-      ]
+      ],
+      "x": 0.645007,
+      "y": 0.610199
     },
     {
       "id": "db4c6aa793c858e6",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "socialization"
-      ]
+      ],
+      "x": 0.632695,
+      "y": 0.607338
     },
     {
       "id": "7a9533ada63c3cde",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "temperament"
-      ]
+      ],
+      "x": 0.63902,
+      "y": 0.610032
     },
     {
       "id": "5746df6a42c52190",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "prenatal development"
-      ]
+      ],
+      "x": 0.681176,
+      "y": 0.594337
     },
     {
       "id": "fc30539759a0a792",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "play"
-      ]
+      ],
+      "x": 0.637471,
+      "y": 0.609681
     },
     {
       "id": "381c8939f8e2f1c9",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "identity development"
-      ]
+      ],
+      "x": 0.647654,
+      "y": 0.608768
     },
     {
       "id": "6d6d14df79e976fe",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "Piaget's stages of cognitive development"
-      ]
+      ],
+      "x": 0.64541,
+      "y": 0.610929
     },
     {
       "id": "3139781b3fd481c5",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "attachment theory"
-      ]
+      ],
+      "x": 0.639658,
+      "y": 0.607695
     },
     {
       "id": "774e7b57ba046454",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "critical period"
-      ]
+      ],
+      "x": 0.65493,
+      "y": 0.610819
     },
     {
       "id": "ad5693bdba92bc4f",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "zone of proximal development"
-      ]
+      ],
+      "x": 0.642395,
+      "y": 0.611239
     },
     {
       "id": "9f01b3af057cf65f",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "object permanence"
-      ]
+      ],
+      "x": 0.64563,
+      "y": 0.611109
     },
     {
       "id": "e321bc694325df11",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "secure attachment"
-      ]
+      ],
+      "x": 0.643458,
+      "y": 0.609948
     },
     {
       "id": "c7c906e468ffd649",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "scaffolding"
-      ]
+      ],
+      "x": 0.636353,
+      "y": 0.612402
     },
     {
       "id": "bd7686c50efe3ead",
@@ -410,7 +450,9 @@
       ],
       "concepts_tested": [
         "Strange Situation"
-      ]
+      ],
+      "x": 0.641079,
+      "y": 0.608078
     },
     {
       "id": "545d680ecc8cbc58",
@@ -429,7 +471,9 @@
       ],
       "concepts_tested": [
         "gender development"
-      ]
+      ],
+      "x": 0.644291,
+      "y": 0.609161
     },
     {
       "id": "5fa9b0d8379b8ede",
@@ -448,7 +492,9 @@
       ],
       "concepts_tested": [
         "adolescent brain development"
-      ]
+      ],
+      "x": 0.663853,
+      "y": 0.608033
     },
     {
       "id": "cb0bd63751e4499d",
@@ -467,7 +513,9 @@
       ],
       "concepts_tested": [
         "zone of proximal development application"
-      ]
+      ],
+      "x": 0.639355,
+      "y": 0.610105
     },
     {
       "id": "5fcc739d6bdafa6d",
@@ -486,7 +534,9 @@
       ],
       "concepts_tested": [
         "theory of mind development"
-      ]
+      ],
+      "x": 0.642448,
+      "y": 0.609429
     },
     {
       "id": "c62cd23297366ee5",
@@ -505,7 +555,9 @@
       ],
       "concepts_tested": [
         "Kohlberg's stages of moral development"
-      ]
+      ],
+      "x": 0.637065,
+      "y": 0.616908
     },
     {
       "id": "071b1b8ac77f1a64",
@@ -524,7 +576,9 @@
       ],
       "concepts_tested": [
         "executive function development"
-      ]
+      ],
+      "x": 0.648492,
+      "y": 0.609941
     },
     {
       "id": "0ec77f0a3096c5e6",
@@ -543,7 +597,9 @@
       ],
       "concepts_tested": [
         "sensitive period"
-      ]
+      ],
+      "x": 0.65282,
+      "y": 0.6104
     },
     {
       "id": "0d4f8df9eca01ff3",
@@ -562,7 +618,9 @@
       ],
       "concepts_tested": [
         "social referencing"
-      ]
+      ],
+      "x": 0.643166,
+      "y": 0.608561
     },
     {
       "id": "b25249a80d20dc9e",
@@ -581,7 +639,9 @@
       ],
       "concepts_tested": [
         "object permanence and A-not-B error"
-      ]
+      ],
+      "x": 0.645791,
+      "y": 0.612
     },
     {
       "id": "657d4cf173cf8962",
@@ -600,7 +660,9 @@
       ],
       "concepts_tested": [
         "sensitive period"
-      ]
+      ],
+      "x": 0.65237,
+      "y": 0.61085
     },
     {
       "id": "43b46d19c9c46bf6",
@@ -619,7 +681,9 @@
       ],
       "concepts_tested": [
         "social referencing"
-      ]
+      ],
+      "x": 0.645076,
+      "y": 0.610464
     },
     {
       "id": "05731896072bb795",
@@ -638,7 +702,9 @@
       ],
       "concepts_tested": [
         "object permanence and A-not-B error"
-      ]
+      ],
+      "x": 0.644647,
+      "y": 0.610672
     },
     {
       "id": "63f9644eccf8a906",
@@ -657,7 +723,9 @@
       ],
       "concepts_tested": [
         "joint attention"
-      ]
+      ],
+      "x": 0.646995,
+      "y": 0.610626
     },
     {
       "id": "a93c55f1f824aa44",
@@ -676,7 +744,9 @@
       ],
       "concepts_tested": [
         "autobiographical memory development"
-      ]
+      ],
+      "x": 0.644557,
+      "y": 0.60749
     },
     {
       "id": "6fa6e05643feff30",
@@ -695,7 +765,9 @@
       ],
       "concepts_tested": [
         "Bronfenbrenner's ecological systems theory"
-      ]
+      ],
+      "x": 0.6475,
+      "y": 0.610765
     },
     {
       "id": "b1a127a0b3b94c17",
@@ -714,7 +786,9 @@
       ],
       "concepts_tested": [
         "emotion regulation development"
-      ]
+      ],
+      "x": 0.648082,
+      "y": 0.610543
     },
     {
       "id": "616dd524f8a2b1eb",
@@ -733,7 +807,9 @@
       ],
       "concepts_tested": [
         "peer relationships and development"
-      ]
+      ],
+      "x": 0.622324,
+      "y": 0.599962
     },
     {
       "id": "76678997a78c9de3",
@@ -752,7 +828,9 @@
       ],
       "concepts_tested": [
         "dynamic systems theory of development"
-      ]
+      ],
+      "x": 0.646869,
+      "y": 0.613656
     },
     {
       "id": "7f147a659da3bb68",
@@ -771,7 +849,9 @@
       ],
       "concepts_tested": [
         "epigenetic influences on development"
-      ]
+      ],
+      "x": 0.653613,
+      "y": 0.609151
     },
     {
       "id": "a449d22ac8ab57da",
@@ -790,7 +870,9 @@
       ],
       "concepts_tested": [
         "core knowledge theory"
-      ]
+      ],
+      "x": 0.645217,
+      "y": 0.618791
     },
     {
       "id": "aefb79b6e767b261",
@@ -809,7 +891,9 @@
       ],
       "concepts_tested": [
         "differential susceptibility hypothesis"
-      ]
+      ],
+      "x": 0.648641,
+      "y": 0.609792
     },
     {
       "id": "4edbdafa1b3ccde3",
@@ -828,7 +912,9 @@
       ],
       "concepts_tested": [
         "neuroplasticity and experience-dependent development"
-      ]
+      ],
+      "x": 0.657118,
+      "y": 0.610991
     },
     {
       "id": "2d9904ff2c64ac6f",
@@ -847,7 +933,9 @@
       ],
       "concepts_tested": [
         "statistical learning in language acquisition"
-      ]
+      ],
+      "x": 0.641305,
+      "y": 0.611171
     },
     {
       "id": "8e95dabd28dfd586",
@@ -866,7 +954,9 @@
       ],
       "concepts_tested": [
         "intergenerational transmission of attachment"
-      ]
+      ],
+      "x": 0.643859,
+      "y": 0.610673
     },
     {
       "id": "aa04a2c5772c487f",
@@ -885,7 +975,9 @@
       ],
       "concepts_tested": [
         "niche construction and developmental plasticity"
-      ]
+      ],
+      "x": 0.661589,
+      "y": 0.608456
     },
     {
       "id": "21a02b3d857a6c82",
@@ -904,7 +996,9 @@
       ],
       "concepts_tested": [
         "fetal programming"
-      ]
+      ],
+      "x": 0.650444,
+      "y": 0.609041
     },
     {
       "id": "980e6ab062eff6bc",
@@ -923,7 +1017,9 @@
       ],
       "concepts_tested": [
         "relational developmental systems metatheory"
-      ]
+      ],
+      "x": 0.647097,
+      "y": 0.614105
     },
     {
       "id": "15b588d0f4fe2fef",
@@ -942,7 +1038,9 @@
       ],
       "concepts_tested": [
         "dual-process theories of adolescent risk-taking"
-      ]
+      ],
+      "x": 0.653472,
+      "y": 0.610103
     },
     {
       "id": "d031cf770b5bdcf1",
@@ -961,7 +1059,9 @@
       ],
       "concepts_tested": [
         "teleological reasoning in children"
-      ]
+      ],
+      "x": 0.645853,
+      "y": 0.6139
     }
   ],
   "labels": [],

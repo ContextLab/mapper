@@ -5,10 +5,10 @@
     "parent_id": null,
     "level": "general",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.551063,
+      "x_max": 0.666871,
+      "y_min": 0.367773,
+      "y_max": 0.604992
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "Pompeii"
-      ]
+      ],
+      "x": 0.641198,
+      "y": 0.472455
     },
     {
       "id": "b9a766911cbf18e0",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "Rosetta Stone"
-      ]
+      ],
+      "x": 0.633445,
+      "y": 0.483321
     },
     {
       "id": "612d52010855b18d",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "Tutankhamun's tomb"
-      ]
+      ],
+      "x": 0.630892,
+      "y": 0.475783
     },
     {
       "id": "c8d9f810776fb0ba",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "Troy"
-      ]
+      ],
+      "x": 0.656889,
+      "y": 0.455418
     },
     {
       "id": "53eb4fd11447fe73",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "Dead Sea Scrolls"
-      ]
+      ],
+      "x": 0.617297,
+      "y": 0.474835
     },
     {
       "id": "e6e8f6a3a5346318",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "Machu Picchu"
-      ]
+      ],
+      "x": 0.633869,
+      "y": 0.372773
     },
     {
       "id": "fd163097d9bd353e",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "terracotta army"
-      ]
+      ],
+      "x": 0.62415,
+      "y": 0.473566
     },
     {
       "id": "9c6f26b941a94b15",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "hieroglyphics"
-      ]
+      ],
+      "x": 0.633701,
+      "y": 0.490158
     },
     {
       "id": "39d74dc2c12df7e1",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "Colosseum"
-      ]
+      ],
+      "x": 0.644525,
+      "y": 0.472018
     },
     {
       "id": "68213580cda5f13f",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "Parthenon"
-      ]
+      ],
+      "x": 0.653091,
+      "y": 0.470267
     },
     {
       "id": "871fb58c63e01a1f",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "Great Wall of China"
-      ]
+      ],
+      "x": 0.612362,
+      "y": 0.466205
     },
     {
       "id": "47acef51f4029463",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "Angkor Wat"
-      ]
+      ],
+      "x": 0.595254,
+      "y": 0.427345
     },
     {
       "id": "bd01c7620c15974e",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "ancient pottery"
-      ]
+      ],
+      "x": 0.648897,
+      "y": 0.579139
     },
     {
       "id": "2f65c354ad145da6",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "classical archaeology"
-      ]
+      ],
+      "x": 0.64705,
+      "y": 0.581454
     },
     {
       "id": "bc54c70eb308b18d",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "historical archaeology"
-      ]
+      ],
+      "x": 0.646845,
+      "y": 0.583092
     },
     {
       "id": "d6f498715768654f",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "underwater archaeology"
-      ]
+      ],
+      "x": 0.643905,
+      "y": 0.582062
     },
     {
       "id": "bb4eea2296fa08b4",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "dendrochronology"
-      ]
+      ],
+      "x": 0.651083,
+      "y": 0.579297
     },
     {
       "id": "9c3e4303429011f4",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "cultural resource management"
-      ]
+      ],
+      "x": 0.556063,
+      "y": 0.538705
     },
     {
       "id": "377d8733b1e3411d",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "Antikythera mechanism"
-      ]
+      ],
+      "x": 0.64272,
+      "y": 0.577664
     },
     {
       "id": "239322f46142fe79",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "experimental archaeology"
-      ]
+      ],
+      "x": 0.647479,
+      "y": 0.58596
     },
     {
       "id": "57601eadbd9bd6a0",
@@ -410,7 +450,9 @@
       ],
       "concepts_tested": [
         "ethnoarchaeology"
-      ]
+      ],
+      "x": 0.645911,
+      "y": 0.588024
     },
     {
       "id": "358894fec1497973",
@@ -429,7 +471,9 @@
       ],
       "concepts_tested": [
         "biblical archaeology"
-      ]
+      ],
+      "x": 0.646058,
+      "y": 0.587081
     },
     {
       "id": "d3ff30041285baca",
@@ -448,7 +492,9 @@
       ],
       "concepts_tested": [
         "aerial archaeology"
-      ]
+      ],
+      "x": 0.649668,
+      "y": 0.581016
     },
     {
       "id": "24e0ced465668d08",
@@ -467,7 +513,9 @@
       ],
       "concepts_tested": [
         "Elgin Marbles"
-      ]
+      ],
+      "x": 0.649809,
+      "y": 0.471258
     },
     {
       "id": "f061720a8aab9bc6",
@@ -486,7 +534,9 @@
       ],
       "concepts_tested": [
         "typology"
-      ]
+      ],
+      "x": 0.649688,
+      "y": 0.584763
     },
     {
       "id": "f027d587e98d6b1b",
@@ -505,7 +555,9 @@
       ],
       "concepts_tested": [
         "seriation"
-      ]
+      ],
+      "x": 0.650234,
+      "y": 0.58197
     },
     {
       "id": "0cefd02408fc5dbb",
@@ -524,7 +576,9 @@
       ],
       "concepts_tested": [
         "processual archaeology"
-      ]
+      ],
+      "x": 0.64726,
+      "y": 0.58726
     },
     {
       "id": "2951188d06419f96",
@@ -543,7 +597,9 @@
       ],
       "concepts_tested": [
         "post-processual archaeology"
-      ]
+      ],
+      "x": 0.644816,
+      "y": 0.594247
     },
     {
       "id": "b9e7e3c9633a21f3",
@@ -562,7 +618,9 @@
       ],
       "concepts_tested": [
         "maritime archaeology"
-      ]
+      ],
+      "x": 0.645565,
+      "y": 0.581555
     },
     {
       "id": "5fc2d1b09821c1ce",
@@ -581,7 +639,9 @@
       ],
       "concepts_tested": [
         "landscape archaeology"
-      ]
+      ],
+      "x": 0.647546,
+      "y": 0.584814
     },
     {
       "id": "c055bc1f1742f4b1",
@@ -600,7 +660,9 @@
       ],
       "concepts_tested": [
         "industrial archaeology"
-      ]
+      ],
+      "x": 0.648074,
+      "y": 0.583772
     },
     {
       "id": "b328aff4752cc478",
@@ -619,7 +681,9 @@
       ],
       "concepts_tested": [
         "archaeoastronomy"
-      ]
+      ],
+      "x": 0.647906,
+      "y": 0.584513
     },
     {
       "id": "e73acc2fb774a7d7",
@@ -638,7 +702,9 @@
       ],
       "concepts_tested": [
         "environmental archaeology"
-      ]
+      ],
+      "x": 0.647885,
+      "y": 0.583028
     },
     {
       "id": "d999a472c9525ab1",
@@ -657,7 +723,9 @@
       ],
       "concepts_tested": [
         "palynology"
-      ]
+      ],
+      "x": 0.650831,
+      "y": 0.582612
     },
     {
       "id": "f3cdc5053a84853a",
@@ -676,7 +744,9 @@
       ],
       "concepts_tested": [
         "rescue archaeology"
-      ]
+      ],
+      "x": 0.643315,
+      "y": 0.582722
     },
     {
       "id": "b4bef886ebe48a7d",
@@ -695,7 +765,9 @@
       ],
       "concepts_tested": [
         "remote sensing in archaeology"
-      ]
+      ],
+      "x": 0.652273,
+      "y": 0.584552
     },
     {
       "id": "19bea6067de163e4",
@@ -714,7 +786,9 @@
       ],
       "concepts_tested": [
         "archaeogenetics"
-      ]
+      ],
+      "x": 0.649368,
+      "y": 0.586618
     },
     {
       "id": "b57f2065620481c2",
@@ -733,7 +807,9 @@
       ],
       "concepts_tested": [
         "repatriation of cultural heritage"
-      ]
+      ],
+      "x": 0.635787,
+      "y": 0.575922
     },
     {
       "id": "cd64a8ecabe9f7bb",
@@ -752,7 +828,9 @@
       ],
       "concepts_tested": [
         "cognitive archaeology"
-      ]
+      ],
+      "x": 0.647299,
+      "y": 0.58499
     },
     {
       "id": "42a65b025425934d",
@@ -771,7 +849,9 @@
       ],
       "concepts_tested": [
         "archaeometallurgy"
-      ]
+      ],
+      "x": 0.651017,
+      "y": 0.584207
     },
     {
       "id": "0d18f3d0607cf62d",
@@ -790,7 +870,9 @@
       ],
       "concepts_tested": [
         "paleoethnobotany"
-      ]
+      ],
+      "x": 0.651865,
+      "y": 0.583994
     },
     {
       "id": "7796a57bd735cd3a",
@@ -809,7 +891,9 @@
       ],
       "concepts_tested": [
         "geoarchaeology"
-      ]
+      ],
+      "x": 0.65019,
+      "y": 0.580518
     },
     {
       "id": "3f3fb1e16fdf80e7",
@@ -828,7 +912,9 @@
       ],
       "concepts_tested": [
         "neutron activation analysis"
-      ]
+      ],
+      "x": 0.656253,
+      "y": 0.587777
     },
     {
       "id": "95cd90d4583f679f",
@@ -847,7 +933,9 @@
       ],
       "concepts_tested": [
         "ceramic petrography"
-      ]
+      ],
+      "x": 0.651787,
+      "y": 0.579346
     },
     {
       "id": "729f13b48d8e1788",
@@ -866,7 +954,9 @@
       ],
       "concepts_tested": [
         "archaeological science"
-      ]
+      ],
+      "x": 0.646112,
+      "y": 0.583526
     },
     {
       "id": "443c5289befd37ec",
@@ -885,7 +975,9 @@
       ],
       "concepts_tested": [
         "single-context recording"
-      ]
+      ],
+      "x": 0.649584,
+      "y": 0.581586
     },
     {
       "id": "b579e2036706c2be",
@@ -904,7 +996,9 @@
       ],
       "concepts_tested": [
         "community archaeology"
-      ]
+      ],
+      "x": 0.646547,
+      "y": 0.584354
     },
     {
       "id": "0a327a59052172a0",
@@ -923,7 +1017,9 @@
       ],
       "concepts_tested": [
         "thermoluminescence dating"
-      ]
+      ],
+      "x": 0.661871,
+      "y": 0.599992
     },
     {
       "id": "8f1829e201ca643b",
@@ -942,7 +1038,9 @@
       ],
       "concepts_tested": [
         "magnetic survey in archaeology"
-      ]
+      ],
+      "x": 0.652237,
+      "y": 0.584208
     },
     {
       "id": "a34b4820b4505e2b",
@@ -961,7 +1059,9 @@
       ],
       "concepts_tested": [
         "geophysical survey in archaeology"
-      ]
+      ],
+      "x": 0.651471,
+      "y": 0.584085
     }
   ],
   "labels": [],

@@ -5,10 +5,10 @@
     "parent_id": "philosophy",
     "level": "sub",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.631648,
+      "x_max": 0.658073,
+      "y_min": 0.62146,
+      "y_max": 0.656472
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "logic"
-      ]
+      ],
+      "x": 0.637117,
+      "y": 0.631755
     },
     {
       "id": "3d856d21f70362fb",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "argument"
-      ]
+      ],
+      "x": 0.638041,
+      "y": 0.631895
     },
     {
       "id": "3367e80f542ccc39",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "deduction"
-      ]
+      ],
+      "x": 0.639347,
+      "y": 0.631267
     },
     {
       "id": "ed8cf6e8747f57f7",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "induction"
-      ]
+      ],
+      "x": 0.639296,
+      "y": 0.629363
     },
     {
       "id": "43dd0420b2f27d63",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "premise"
-      ]
+      ],
+      "x": 0.638386,
+      "y": 0.631894
     },
     {
       "id": "287a3cecca2ade6b",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "conclusion"
-      ]
+      ],
+      "x": 0.638573,
+      "y": 0.631115
     },
     {
       "id": "5b9c9b161d7000ce",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "paradox"
-      ]
+      ],
+      "x": 0.63836,
+      "y": 0.632307
     },
     {
       "id": "33dbd087f7e3548c",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "fallacy"
-      ]
+      ],
+      "x": 0.637449,
+      "y": 0.629044
     },
     {
       "id": "42757142114a25e6",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "validity"
-      ]
+      ],
+      "x": 0.639177,
+      "y": 0.631334
     },
     {
       "id": "c07fb1f4360fa44f",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "contradiction"
-      ]
+      ],
+      "x": 0.638379,
+      "y": 0.633361
     },
     {
       "id": "a95f1e6ce7305fb8",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "negation"
-      ]
+      ],
+      "x": 0.638696,
+      "y": 0.632751
     },
     {
       "id": "ecf97448ef8b4ec3",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "analogy"
-      ]
+      ],
+      "x": 0.639861,
+      "y": 0.62646
     },
     {
       "id": "9f51442eb2bfc23d",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "inference"
-      ]
+      ],
+      "x": 0.639478,
+      "y": 0.629514
     },
     {
       "id": "06d1fb3ad17b9148",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "modus ponens"
-      ]
+      ],
+      "x": 0.638836,
+      "y": 0.63309
     },
     {
       "id": "db39c36a366f5159",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "modus tollens"
-      ]
+      ],
+      "x": 0.638684,
+      "y": 0.632833
     },
     {
       "id": "ad047d4b2a17f6a4",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "syllogism"
-      ]
+      ],
+      "x": 0.637424,
+      "y": 0.632443
     },
     {
       "id": "25a4d9f2ddff0f44",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "truth table"
-      ]
+      ],
+      "x": 0.636648,
+      "y": 0.630521
     },
     {
       "id": "e449e6d702841361",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "propositional logic"
-      ]
+      ],
+      "x": 0.637923,
+      "y": 0.632827
     },
     {
       "id": "fc4227dc3a512e58",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "predicate logic"
-      ]
+      ],
+      "x": 0.639309,
+      "y": 0.638013
     },
     {
       "id": "4581d29daa092b17",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "quantifier"
-      ]
+      ],
+      "x": 0.639267,
+      "y": 0.635009
     },
     {
       "id": "c2ebe941446de82f",
@@ -410,7 +450,9 @@
       ],
       "concepts_tested": [
         "tautology"
-      ]
+      ],
+      "x": 0.639253,
+      "y": 0.632021
     },
     {
       "id": "e3a2f189185506b8",
@@ -429,7 +471,9 @@
       ],
       "concepts_tested": [
         "logical connective"
-      ]
+      ],
+      "x": 0.638176,
+      "y": 0.631736
     },
     {
       "id": "87d1274ba0ac8198",
@@ -448,7 +492,9 @@
       ],
       "concepts_tested": [
         "set theory"
-      ]
+      ],
+      "x": 0.642387,
+      "y": 0.640435
     },
     {
       "id": "d50859fc72cf2f03",
@@ -467,7 +513,9 @@
       ],
       "concepts_tested": [
         "proof by contradiction"
-      ]
+      ],
+      "x": 0.638975,
+      "y": 0.633192
     },
     {
       "id": "5be31cab88d81a77",
@@ -486,7 +534,9 @@
       ],
       "concepts_tested": [
         "soundness"
-      ]
+      ],
+      "x": 0.639421,
+      "y": 0.632783
     },
     {
       "id": "f32d8524c722a33b",
@@ -505,7 +555,9 @@
       ],
       "concepts_tested": [
         "biconditional"
-      ]
+      ],
+      "x": 0.638298,
+      "y": 0.632283
     },
     {
       "id": "a5bddaa1f3cc9312",
@@ -524,7 +576,9 @@
       ],
       "concepts_tested": [
         "completeness theorem"
-      ]
+      ],
+      "x": 0.639619,
+      "y": 0.642656
     },
     {
       "id": "4c6ef0a1614bf5f3",
@@ -543,7 +597,9 @@
       ],
       "concepts_tested": [
         "modal logic"
-      ]
+      ],
+      "x": 0.638595,
+      "y": 0.632507
     },
     {
       "id": "94f949f14efee46b",
@@ -562,7 +618,9 @@
       ],
       "concepts_tested": [
         "Kripke semantics"
-      ]
+      ],
+      "x": 0.638554,
+      "y": 0.627846
     },
     {
       "id": "683cfdb5b64b48e8",
@@ -581,7 +639,9 @@
       ],
       "concepts_tested": [
         "natural deduction"
-      ]
+      ],
+      "x": 0.637268,
+      "y": 0.641898
     },
     {
       "id": "e1bb37bd8938e06a",
@@ -600,7 +660,9 @@
       ],
       "concepts_tested": [
         "second-order logic"
-      ]
+      ],
+      "x": 0.641734,
+      "y": 0.642833
     },
     {
       "id": "11238f2e3c4bcec9",
@@ -619,7 +681,9 @@
       ],
       "concepts_tested": [
         "intuitionistic logic"
-      ]
+      ],
+      "x": 0.638023,
+      "y": 0.637317
     },
     {
       "id": "3ebe8fdca4e3f0f1",
@@ -638,7 +702,9 @@
       ],
       "concepts_tested": [
         "resolution (logic)"
-      ]
+      ],
+      "x": 0.638145,
+      "y": 0.642525
     },
     {
       "id": "1faaf46329079f28",
@@ -657,7 +723,9 @@
       ],
       "concepts_tested": [
         "Löwenheim-Skolem theorem"
-      ]
+      ],
+      "x": 0.64238,
+      "y": 0.642525
     },
     {
       "id": "1bbb2a6b1c08733c",
@@ -676,7 +744,9 @@
       ],
       "concepts_tested": [
         "compactness theorem"
-      ]
+      ],
+      "x": 0.64158,
+      "y": 0.643894
     },
     {
       "id": "167cecae341186f1",
@@ -695,7 +765,9 @@
       ],
       "concepts_tested": [
         "Curry-Howard correspondence"
-      ]
+      ],
+      "x": 0.637612,
+      "y": 0.641176
     },
     {
       "id": "0a8adb74062e95c6",
@@ -714,7 +786,9 @@
       ],
       "concepts_tested": [
         "decidability"
-      ]
+      ],
+      "x": 0.640092,
+      "y": 0.637805
     },
     {
       "id": "315195259437c0b3",
@@ -733,7 +807,9 @@
       ],
       "concepts_tested": [
         "axiomatic system"
-      ]
+      ],
+      "x": 0.640443,
+      "y": 0.642413
     },
     {
       "id": "53455f0a95a152c8",
@@ -752,7 +828,9 @@
       ],
       "concepts_tested": [
         "Gödel's second incompleteness theorem"
-      ]
+      ],
+      "x": 0.639721,
+      "y": 0.643496
     },
     {
       "id": "a54015a26b71e8b8",
@@ -771,7 +849,9 @@
       ],
       "concepts_tested": [
         "forcing"
-      ]
+      ],
+      "x": 0.642526,
+      "y": 0.646039
     },
     {
       "id": "5c5911e338e13c3d",
@@ -790,7 +870,9 @@
       ],
       "concepts_tested": [
         "large cardinal axiom"
-      ]
+      ],
+      "x": 0.646585,
+      "y": 0.647526
     },
     {
       "id": "b21bbdb17690cce5",
@@ -809,7 +891,9 @@
       ],
       "concepts_tested": [
         "ordinal analysis"
-      ]
+      ],
+      "x": 0.640233,
+      "y": 0.643887
     },
     {
       "id": "1446fadba757952a",
@@ -828,7 +912,9 @@
       ],
       "concepts_tested": [
         "reverse mathematics"
-      ]
+      ],
+      "x": 0.640768,
+      "y": 0.644958
     },
     {
       "id": "253a8e5d3191521c",
@@ -847,7 +933,9 @@
       ],
       "concepts_tested": [
         "linear logic"
-      ]
+      ],
+      "x": 0.638978,
+      "y": 0.639952
     },
     {
       "id": "1ccef021eaafda4a",
@@ -866,7 +954,9 @@
       ],
       "concepts_tested": [
         "paraconsistent logic"
-      ]
+      ],
+      "x": 0.640078,
+      "y": 0.635996
     },
     {
       "id": "65616d422bad9b4b",
@@ -885,7 +975,9 @@
       ],
       "concepts_tested": [
         "provability logic"
-      ]
+      ],
+      "x": 0.637786,
+      "y": 0.642933
     },
     {
       "id": "d990fa223abb249f",
@@ -904,7 +996,9 @@
       ],
       "concepts_tested": [
         "descriptive set theory"
-      ]
+      ],
+      "x": 0.653073,
+      "y": 0.651472
     },
     {
       "id": "24620fa94cb69af2",
@@ -923,7 +1017,9 @@
       ],
       "concepts_tested": [
         "topos theory"
-      ]
+      ],
+      "x": 0.646338,
+      "y": 0.646269
     },
     {
       "id": "05e126426360143e",
@@ -942,7 +1038,9 @@
       ],
       "concepts_tested": [
         "Herbrand's theorem"
-      ]
+      ],
+      "x": 0.638531,
+      "y": 0.641263
     },
     {
       "id": "bdb2b037288042bd",
@@ -961,7 +1059,9 @@
       ],
       "concepts_tested": [
         "omega-consistency"
-      ]
+      ],
+      "x": 0.641995,
+      "y": 0.644121
     }
   ],
   "labels": [],

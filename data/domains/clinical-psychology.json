@@ -5,10 +5,10 @@
     "parent_id": "psychology",
     "level": "sub",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.625832,
+      "x_max": 0.71672,
+      "y_min": 0.567826,
+      "y_max": 0.62743
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "depression"
-      ]
+      ],
+      "x": 0.641411,
+      "y": 0.60288
     },
     {
       "id": "9ed5b45f2c8b0028",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "anxiety"
-      ]
+      ],
+      "x": 0.644345,
+      "y": 0.605776
     },
     {
       "id": "f58f7748fe149f9e",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "therapy"
-      ]
+      ],
+      "x": 0.636977,
+      "y": 0.603169
     },
     {
       "id": "225f600c7dd086d0",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "mental illness"
-      ]
+      ],
+      "x": 0.638297,
+      "y": 0.610902
     },
     {
       "id": "8ce380fd2daf2223",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "PTSD"
-      ]
+      ],
+      "x": 0.642214,
+      "y": 0.607354
     },
     {
       "id": "f48099df6b0c7b94",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "phobia"
-      ]
+      ],
+      "x": 0.646092,
+      "y": 0.601603
     },
     {
       "id": "aa165d13fbdbc328",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "stress"
-      ]
+      ],
+      "x": 0.659472,
+      "y": 0.605403
     },
     {
       "id": "0c87d1c80221976c",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "trauma"
-      ]
+      ],
+      "x": 0.643346,
+      "y": 0.606644
     },
     {
       "id": "53269564374cb9cc",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "addiction"
-      ]
+      ],
+      "x": 0.648724,
+      "y": 0.602248
     },
     {
       "id": "45b15eddf96ae816",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "autism"
-      ]
+      ],
+      "x": 0.640092,
+      "y": 0.608122
     },
     {
       "id": "52983161e61137b5",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "suicide"
-      ]
+      ],
+      "x": 0.640493,
+      "y": 0.600135
     },
     {
       "id": "f8b5826c6fd3ccc7",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "hallucination"
-      ]
+      ],
+      "x": 0.644968,
+      "y": 0.611091
     },
     {
       "id": "e43343369a385eb2",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "self-esteem"
-      ]
+      ],
+      "x": 0.633476,
+      "y": 0.609224
     },
     {
       "id": "d81842614298f967",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "cognitive behavioral therapy"
-      ]
+      ],
+      "x": 0.635401,
+      "y": 0.605038
     },
     {
       "id": "8ca26649ddd10d26",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "DSM"
-      ]
+      ],
+      "x": 0.634964,
+      "y": 0.607431
     },
     {
       "id": "e42203d051accb81",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "psychoanalysis"
-      ]
+      ],
+      "x": 0.638574,
+      "y": 0.607634
     },
     {
       "id": "f640e49aa11a0f23",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "schizophrenia"
-      ]
+      ],
+      "x": 0.644241,
+      "y": 0.606669
     },
     {
       "id": "7ecb8bd677e5445f",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "bipolar disorder"
-      ]
+      ],
+      "x": 0.638253,
+      "y": 0.603422
     },
     {
       "id": "1827692519d73bfe",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "obsessive-compulsive disorder"
-      ]
+      ],
+      "x": 0.647524,
+      "y": 0.606201
     },
     {
       "id": "3048c0fe268ab0bf",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "borderline personality disorder"
-      ]
+      ],
+      "x": 0.641946,
+      "y": 0.606456
     },
     {
       "id": "c388a3ad26e38847",
@@ -410,7 +450,9 @@
       ],
       "concepts_tested": [
         "borderline personality disorder"
-      ]
+      ],
+      "x": 0.642437,
+      "y": 0.607436
     },
     {
       "id": "2258ed4b81c318e0",
@@ -429,7 +471,9 @@
       ],
       "concepts_tested": [
         "ADHD"
-      ]
+      ],
+      "x": 0.640712,
+      "y": 0.608175
     },
     {
       "id": "4c071ce2cc2275e5",
@@ -448,7 +492,9 @@
       ],
       "concepts_tested": [
         "exposure therapy"
-      ]
+      ],
+      "x": 0.64393,
+      "y": 0.605921
     },
     {
       "id": "dff7ffeceaec1688",
@@ -467,7 +513,9 @@
       ],
       "concepts_tested": [
         "cognitive distortion"
-      ]
+      ],
+      "x": 0.637525,
+      "y": 0.610251
     },
     {
       "id": "95996ff11fdbed2e",
@@ -486,7 +534,9 @@
       ],
       "concepts_tested": [
         "psychological assessment"
-      ]
+      ],
+      "x": 0.640306,
+      "y": 0.610322
     },
     {
       "id": "e1e8b49525882190",
@@ -505,7 +555,9 @@
       ],
       "concepts_tested": [
         "antidepressant"
-      ]
+      ],
+      "x": 0.71172,
+      "y": 0.572826
     },
     {
       "id": "59ee0a72eed47428",
@@ -524,7 +576,9 @@
       ],
       "concepts_tested": [
         "systematic desensitization"
-      ]
+      ],
+      "x": 0.64635,
+      "y": 0.607999
     },
     {
       "id": "dc613306ec6ea726",
@@ -543,7 +597,9 @@
       ],
       "concepts_tested": [
         "diagnostic criteria"
-      ]
+      ],
+      "x": 0.642503,
+      "y": 0.606111
     },
     {
       "id": "344ad959380495a5",
@@ -562,7 +618,9 @@
       ],
       "concepts_tested": [
         "motivational interviewing"
-      ]
+      ],
+      "x": 0.640448,
+      "y": 0.612709
     },
     {
       "id": "b1e0089e7c19b2f5",
@@ -581,7 +639,9 @@
       ],
       "concepts_tested": [
         "dialectical behavior therapy"
-      ]
+      ],
+      "x": 0.641391,
+      "y": 0.611359
     },
     {
       "id": "fe18ef6bce47a473",
@@ -600,7 +660,9 @@
       ],
       "concepts_tested": [
         "functional analysis"
-      ]
+      ],
+      "x": 0.638832,
+      "y": 0.607267
     },
     {
       "id": "6adfb238b0668991",
@@ -619,7 +681,9 @@
       ],
       "concepts_tested": [
         "comorbidity"
-      ]
+      ],
+      "x": 0.638956,
+      "y": 0.607491
     },
     {
       "id": "ab2401b2753df771",
@@ -638,7 +702,9 @@
       ],
       "concepts_tested": [
         "randomized controlled trial"
-      ]
+      ],
+      "x": 0.643109,
+      "y": 0.617969
     },
     {
       "id": "4e1f5f74701fb990",
@@ -657,7 +723,9 @@
       ],
       "concepts_tested": [
         "neuropsychological testing"
-      ]
+      ],
+      "x": 0.643923,
+      "y": 0.609251
     },
     {
       "id": "f336df3e2ccdacff",
@@ -676,7 +744,9 @@
       ],
       "concepts_tested": [
         "harm reduction"
-      ]
+      ],
+      "x": 0.63289,
+      "y": 0.599028
     },
     {
       "id": "92a5d1afd0e64057",
@@ -695,7 +765,9 @@
       ],
       "concepts_tested": [
         "safety planning"
-      ]
+      ],
+      "x": 0.630832,
+      "y": 0.598896
     },
     {
       "id": "70d4c48305abca9f",
@@ -714,7 +786,9 @@
       ],
       "concepts_tested": [
         "cognitive restructuring"
-      ]
+      ],
+      "x": 0.637784,
+      "y": 0.607924
     },
     {
       "id": "8fe924f5730b9374",
@@ -733,7 +807,9 @@
       ],
       "concepts_tested": [
         "negative reinforcement"
-      ]
+      ],
+      "x": 0.643516,
+      "y": 0.607431
     },
     {
       "id": "9bffbf9c4dbda1b5",
@@ -752,7 +828,9 @@
       ],
       "concepts_tested": [
         "transdiagnostic approach"
-      ]
+      ],
+      "x": 0.63918,
+      "y": 0.607291
     },
     {
       "id": "e03c5bc796fea4bb",
@@ -771,7 +849,9 @@
       ],
       "concepts_tested": [
         "Research Domain Criteria"
-      ]
+      ],
+      "x": 0.639167,
+      "y": 0.608
     },
     {
       "id": "048086fc88f79420",
@@ -790,7 +870,9 @@
       ],
       "concepts_tested": [
         "mentalization-based treatment"
-      ]
+      ],
+      "x": 0.638261,
+      "y": 0.605952
     },
     {
       "id": "9d7e575a7d5f9cac",
@@ -809,7 +891,9 @@
       ],
       "concepts_tested": [
         "prolonged exposure therapy"
-      ]
+      ],
+      "x": 0.640794,
+      "y": 0.607044
     },
     {
       "id": "4978a50c65e2b3a3",
@@ -828,7 +912,9 @@
       ],
       "concepts_tested": [
         "endophenotype"
-      ]
+      ],
+      "x": 0.665718,
+      "y": 0.609177
     },
     {
       "id": "b1f2f2539f6039e5",
@@ -847,7 +933,9 @@
       ],
       "concepts_tested": [
         "schema therapy"
-      ]
+      ],
+      "x": 0.637364,
+      "y": 0.605691
     },
     {
       "id": "bd85393969bd715f",
@@ -866,7 +954,9 @@
       ],
       "concepts_tested": [
         "acceptance and commitment therapy"
-      ]
+      ],
+      "x": 0.638441,
+      "y": 0.60716
     },
     {
       "id": "50c78132e76d46db",
@@ -885,7 +975,9 @@
       ],
       "concepts_tested": [
         "latent variable modeling"
-      ]
+      ],
+      "x": 0.643561,
+      "y": 0.62243
     },
     {
       "id": "17e76be160d91c86",
@@ -904,7 +996,9 @@
       ],
       "concepts_tested": [
         "emotion regulation"
-      ]
+      ],
+      "x": 0.644778,
+      "y": 0.611352
     },
     {
       "id": "35354fe2a2239226",
@@ -923,7 +1017,9 @@
       ],
       "concepts_tested": [
         "polyvagal theory"
-      ]
+      ],
+      "x": 0.661735,
+      "y": 0.59995
     },
     {
       "id": "40ef85c7daa511a7",
@@ -942,7 +1038,9 @@
       ],
       "concepts_tested": [
         "psychometric validation"
-      ]
+      ],
+      "x": 0.643074,
+      "y": 0.616964
     },
     {
       "id": "19e9244310ae2a93",
@@ -961,7 +1059,9 @@
       ],
       "concepts_tested": [
         "network theory of psychopathology"
-      ]
+      ],
+      "x": 0.642613,
+      "y": 0.608413
     }
   ],
   "labels": [],

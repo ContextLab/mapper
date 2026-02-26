@@ -5,10 +5,10 @@
     "parent_id": null,
     "level": "general",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.621555,
+      "x_max": 0.650749,
+      "y_min": 0.591129,
+      "y_max": 0.639743
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "language"
-      ]
+      ],
+      "x": 0.63583,
+      "y": 0.61732
     },
     {
       "id": "cc84cf17e2658736",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "alphabet"
-      ]
+      ],
+      "x": 0.632954,
+      "y": 0.612799
     },
     {
       "id": "f54fb2e910bb1d16",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "vowel"
-      ]
+      ],
+      "x": 0.636447,
+      "y": 0.609893
     },
     {
       "id": "b3c7ea8c1ee0d4eb",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "consonant"
-      ]
+      ],
+      "x": 0.63589,
+      "y": 0.609436
     },
     {
       "id": "ff343d2db1f4789b",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "dialect"
-      ]
+      ],
+      "x": 0.636,
+      "y": 0.614528
     },
     {
       "id": "683bdc9aee73ad41",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "accent"
-      ]
+      ],
+      "x": 0.633591,
+      "y": 0.612502
     },
     {
       "id": "d5d34e94da18f645",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "translation"
-      ]
+      ],
+      "x": 0.63729,
+      "y": 0.618051
     },
     {
       "id": "72cf233e324afc87",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "sign language"
-      ]
+      ],
+      "x": 0.632095,
+      "y": 0.616224
     },
     {
       "id": "12c7611f6561e5e0",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "writing system"
-      ]
+      ],
+      "x": 0.631722,
+      "y": 0.613465
     },
     {
       "id": "e32ed37bbbe3a494",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "bilingualism"
-      ]
+      ],
+      "x": 0.638463,
+      "y": 0.614649
     },
     {
       "id": "1026c3045c16237f",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "syllable"
-      ]
+      ],
+      "x": 0.635201,
+      "y": 0.616295
     },
     {
       "id": "94a711d8b3e62dce",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "language family"
-      ]
+      ],
+      "x": 0.635348,
+      "y": 0.614312
     },
     {
       "id": "e445827895a44499",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "mother tongue"
-      ]
+      ],
+      "x": 0.639575,
+      "y": 0.615207
     },
     {
       "id": "ae2e197a7bb5d676",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "phoneme"
-      ]
+      ],
+      "x": 0.634851,
+      "y": 0.612366
     },
     {
       "id": "04c1251278318f4d",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "morphology"
-      ]
+      ],
+      "x": 0.636234,
+      "y": 0.619
     },
     {
       "id": "e96f22de8fba4420",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "sociolinguistics"
-      ]
+      ],
+      "x": 0.638507,
+      "y": 0.615271
     },
     {
       "id": "59369512230e0449",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "historical linguistics"
-      ]
+      ],
+      "x": 0.638592,
+      "y": 0.615014
     },
     {
       "id": "c8c2b0518b97e230",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "International Phonetic Alphabet"
-      ]
+      ],
+      "x": 0.630144,
+      "y": 0.607088
     },
     {
       "id": "486330e3d2929250",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "etymology"
-      ]
+      ],
+      "x": 0.638921,
+      "y": 0.614734
     },
     {
       "id": "3a10da4c3f4708d4",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "language acquisition"
-      ]
+      ],
+      "x": 0.640258,
+      "y": 0.615123
     },
     {
       "id": "7a07238f9c16c446",
@@ -410,7 +450,9 @@
       ],
       "concepts_tested": [
         "loanword"
-      ]
+      ],
+      "x": 0.634543,
+      "y": 0.615948
     },
     {
       "id": "b2e7e5993323e166",
@@ -429,7 +471,9 @@
       ],
       "concepts_tested": [
         "pidgin and creole"
-      ]
+      ],
+      "x": 0.636742,
+      "y": 0.613735
     },
     {
       "id": "b40e734cb593add6",
@@ -448,7 +492,9 @@
       ],
       "concepts_tested": [
         "intonation"
-      ]
+      ],
+      "x": 0.635499,
+      "y": 0.614434
     },
     {
       "id": "c2d9339f3fdd576a",
@@ -467,7 +513,9 @@
       ],
       "concepts_tested": [
         "psycholinguistics"
-      ]
+      ],
+      "x": 0.639027,
+      "y": 0.614971
     },
     {
       "id": "53f6ddf406be7513",
@@ -486,7 +534,9 @@
       ],
       "concepts_tested": [
         "endangered language"
-      ]
+      ],
+      "x": 0.638176,
+      "y": 0.617666
     },
     {
       "id": "bd35bd293b849b7a",
@@ -505,7 +555,9 @@
       ],
       "concepts_tested": [
         "pragmatics"
-      ]
+      ],
+      "x": 0.635359,
+      "y": 0.617667
     },
     {
       "id": "0b8f04d8954356d7",
@@ -524,7 +576,9 @@
       ],
       "concepts_tested": [
         "phonology"
-      ]
+      ],
+      "x": 0.636896,
+      "y": 0.615626
     },
     {
       "id": "fc4f82ffca955df5",
@@ -543,7 +597,9 @@
       ],
       "concepts_tested": [
         "tone (linguistics)"
-      ]
+      ],
+      "x": 0.635705,
+      "y": 0.614179
     },
     {
       "id": "a14dbb8b3480a94a",
@@ -562,7 +618,9 @@
       ],
       "concepts_tested": [
         "minimal pair"
-      ]
+      ],
+      "x": 0.636204,
+      "y": 0.614015
     },
     {
       "id": "bfb2b2c9e652dd8c",
@@ -581,7 +639,9 @@
       ],
       "concepts_tested": [
         "allophone"
-      ]
+      ],
+      "x": 0.632421,
+      "y": 0.605536
     },
     {
       "id": "aaa175eedc93611a",
@@ -600,7 +660,9 @@
       ],
       "concepts_tested": [
         "language typology"
-      ]
+      ],
+      "x": 0.633197,
+      "y": 0.619253
     },
     {
       "id": "581e210a2f521923",
@@ -619,7 +681,9 @@
       ],
       "concepts_tested": [
         "morphological typology"
-      ]
+      ],
+      "x": 0.634807,
+      "y": 0.621006
     },
     {
       "id": "598db636c6e54fbe",
@@ -638,7 +702,9 @@
       ],
       "concepts_tested": [
         "sound change"
-      ]
+      ],
+      "x": 0.626555,
+      "y": 0.597936
     },
     {
       "id": "8e1c0be80d626a49",
@@ -657,7 +723,9 @@
       ],
       "concepts_tested": [
         "comparative method"
-      ]
+      ],
+      "x": 0.637245,
+      "y": 0.612973
     },
     {
       "id": "35888b1d35f84e8c",
@@ -676,7 +744,9 @@
       ],
       "concepts_tested": [
         "code-switching"
-      ]
+      ],
+      "x": 0.636678,
+      "y": 0.615263
     },
     {
       "id": "3dffa8b7425c8552",
@@ -695,7 +765,9 @@
       ],
       "concepts_tested": [
         "universal grammar"
-      ]
+      ],
+      "x": 0.641123,
+      "y": 0.618823
     },
     {
       "id": "da7879415edf7201",
@@ -714,7 +786,9 @@
       ],
       "concepts_tested": [
         "critical period hypothesis"
-      ]
+      ],
+      "x": 0.645749,
+      "y": 0.611151
     },
     {
       "id": "b92d405903ae1b48",
@@ -733,7 +807,9 @@
       ],
       "concepts_tested": [
         "Sapir-Whorf hypothesis"
-      ]
+      ],
+      "x": 0.634396,
+      "y": 0.614871
     },
     {
       "id": "ed0d92392112caa8",
@@ -752,7 +828,9 @@
       ],
       "concepts_tested": [
         "distinctive feature"
-      ]
+      ],
+      "x": 0.630951,
+      "y": 0.60449
     },
     {
       "id": "eccfc391f50aa3a6",
@@ -771,7 +849,9 @@
       ],
       "concepts_tested": [
         "autosegmental phonology"
-      ]
+      ],
+      "x": 0.636312,
+      "y": 0.623811
     },
     {
       "id": "5ec92c2a6f1cc70b",
@@ -790,7 +870,9 @@
       ],
       "concepts_tested": [
         "metrical phonology"
-      ]
+      ],
+      "x": 0.63647,
+      "y": 0.62198
     },
     {
       "id": "bf656c1101af905a",
@@ -809,7 +891,9 @@
       ],
       "concepts_tested": [
         "prosodic hierarchy"
-      ]
+      ],
+      "x": 0.634673,
+      "y": 0.621694
     },
     {
       "id": "074506766b668262",
@@ -828,7 +912,9 @@
       ],
       "concepts_tested": [
         "optimality theory"
-      ]
+      ],
+      "x": 0.641488,
+      "y": 0.634743
     },
     {
       "id": "ad35603014ae84ba",
@@ -847,7 +933,9 @@
       ],
       "concepts_tested": [
         "grammaticalization"
-      ]
+      ],
+      "x": 0.638932,
+      "y": 0.618545
     },
     {
       "id": "f3b809efbd4fb335",
@@ -866,7 +954,9 @@
       ],
       "concepts_tested": [
         "ergativity"
-      ]
+      ],
+      "x": 0.63156,
+      "y": 0.616329
     },
     {
       "id": "8be4158cbbb03ecd",
@@ -885,7 +975,9 @@
       ],
       "concepts_tested": [
         "phonological opacity"
-      ]
+      ],
+      "x": 0.638514,
+      "y": 0.615321
     },
     {
       "id": "08d4065d44ff1c77",
@@ -904,7 +996,9 @@
       ],
       "concepts_tested": [
         "articulatory phonetics"
-      ]
+      ],
+      "x": 0.631148,
+      "y": 0.596129
     },
     {
       "id": "8faf95803b9a27a6",
@@ -923,7 +1017,9 @@
       ],
       "concepts_tested": [
         "lexical diffusion"
-      ]
+      ],
+      "x": 0.635564,
+      "y": 0.613156
     },
     {
       "id": "768e2634f7fe134b",
@@ -942,7 +1038,9 @@
       ],
       "concepts_tested": [
         "laryngeal realism"
-      ]
+      ],
+      "x": 0.630045,
+      "y": 0.602653
     },
     {
       "id": "50cd2919d36f2fdb",
@@ -961,7 +1059,9 @@
       ],
       "concepts_tested": [
         "language contact"
-      ]
+      ],
+      "x": 0.638265,
+      "y": 0.614857
     }
   ],
   "labels": [],

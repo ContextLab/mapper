@@ -5,10 +5,10 @@
     "parent_id": "world-history",
     "level": "sub",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.464926,
+      "x_max": 0.658078,
+      "y_min": 0.350072,
+      "y_max": 0.652243
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "Silk Road"
-      ]
+      ],
+      "x": 0.610765,
+      "y": 0.478222
     },
     {
       "id": "37f1ffacc8e1551b",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "Mongol Empire"
-      ]
+      ],
+      "x": 0.570298,
+      "y": 0.431229
     },
     {
       "id": "c60898b64aca7278",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "Great Wall of China"
-      ]
+      ],
+      "x": 0.620353,
+      "y": 0.471845
     },
     {
       "id": "cc2188915221d169",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "samurai"
-      ]
+      ],
+      "x": 0.627268,
+      "y": 0.472323
     },
     {
       "id": "07f45ee11956d4c6",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "Mahatma Gandhi"
-      ]
+      ],
+      "x": 0.515169,
+      "y": 0.495379
     },
     {
       "id": "288a534823e80089",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "Taj Mahal"
-      ]
+      ],
+      "x": 0.584744,
+      "y": 0.355072
     },
     {
       "id": "0249eb5d8ffc431c",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "Hiroshima and Nagasaki atomic bombings"
-      ]
+      ],
+      "x": 0.547244,
+      "y": 0.55571
     },
     {
       "id": "634e081389d12e16",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "Mao Zedong"
-      ]
+      ],
+      "x": 0.578806,
+      "y": 0.490259
     },
     {
       "id": "c67bda16bb397039",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "Confucius"
-      ]
+      ],
+      "x": 0.611886,
+      "y": 0.471637
     },
     {
       "id": "a974f4b2b3b2b672",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "Buddha"
-      ]
+      ],
+      "x": 0.610998,
+      "y": 0.403782
     },
     {
       "id": "b3c0ef5cf53637fe",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "Genghis Khan"
-      ]
+      ],
+      "x": 0.567786,
+      "y": 0.431874
     },
     {
       "id": "f4d9ed548c5f64ce",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "Mughal Empire"
-      ]
+      ],
+      "x": 0.5654,
+      "y": 0.428709
     },
     {
       "id": "6d600ca58198f653",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "Cold War in Asia"
-      ]
+      ],
+      "x": 0.521509,
+      "y": 0.515154
     },
     {
       "id": "4a6f4a4e9f54e8af",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "Meiji Restoration"
-      ]
+      ],
+      "x": 0.580904,
+      "y": 0.484954
     },
     {
       "id": "5002a2cafbc6de9f",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "Opium Wars"
-      ]
+      ],
+      "x": 0.576679,
+      "y": 0.48521
     },
     {
       "id": "351e98b468af94b2",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "Indian independence"
-      ]
+      ],
+      "x": 0.519428,
+      "y": 0.502287
     },
     {
       "id": "034992b9c5cf9939",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "Tang dynasty"
-      ]
+      ],
+      "x": 0.611158,
+      "y": 0.46544
     },
     {
       "id": "b1a7fe028c6679c9",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "Tokugawa shogunate"
-      ]
+      ],
+      "x": 0.626251,
+      "y": 0.459884
     },
     {
       "id": "e30f6b21a66ad6d6",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "Partition of India"
-      ]
+      ],
+      "x": 0.523172,
+      "y": 0.487213
     },
     {
       "id": "84f5acdc6c3583f3",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "Korean War"
-      ]
+      ],
+      "x": 0.565566,
+      "y": 0.501851
     },
     {
       "id": "96f4c3f29e942837",
@@ -412,7 +452,9 @@
         "Vietnam War",
         "Tet Offensive",
         "Cold War in Asia"
-      ]
+      ],
+      "x": 0.570006,
+      "y": 0.484234
     },
     {
       "id": "356956a1d57efd12",
@@ -433,7 +475,9 @@
         "Khmer Empire",
         "Jayavarman II",
         "devaraja"
-      ]
+      ],
+      "x": 0.595272,
+      "y": 0.429823
     },
     {
       "id": "e188520d7c9af43a",
@@ -455,7 +499,9 @@
         "Nurhaci",
         "Eight Banners",
         "Manchu"
-      ]
+      ],
+      "x": 0.598532,
+      "y": 0.472451
     },
     {
       "id": "10cc1cf9f18c6507",
@@ -477,7 +523,9 @@
         "Kalinga War",
         "Buddhism",
         "dhamma"
-      ]
+      ],
+      "x": 0.617421,
+      "y": 0.408194
     },
     {
       "id": "d1c05827ff597fb3",
@@ -500,7 +548,9 @@
         "Suryavarman II",
         "Hinduism",
         "Theravada Buddhism"
-      ]
+      ],
+      "x": 0.597748,
+      "y": 0.42404
     },
     {
       "id": "814eebf295445762",
@@ -522,7 +572,9 @@
         "Neo-Confucianism",
         "Hangul",
         "King Sejong"
-      ]
+      ],
+      "x": 0.599321,
+      "y": 0.477326
     },
     {
       "id": "3eb0b24e00fb879c",
@@ -544,7 +596,9 @@
         "Zhou dynasty",
         "dynastic legitimacy",
         "right of rebellion"
-      ]
+      ],
+      "x": 0.607748,
+      "y": 0.469393
     },
     {
       "id": "95a85d90168b9078",
@@ -566,7 +620,9 @@
         "Sinocentric world order",
         "kowtow",
         "Chinese diplomacy"
-      ]
+      ],
+      "x": 0.588862,
+      "y": 0.489557
     },
     {
       "id": "93b0780f52a6daf5",
@@ -588,7 +644,9 @@
         "Chandragupta Maurya",
         "Chanakya",
         "Nanda dynasty"
-      ]
+      ],
+      "x": 0.600835,
+      "y": 0.421788
     },
     {
       "id": "2868ed85ad1f2e8e",
@@ -610,7 +668,9 @@
         "British East India Company",
         "British Raj",
         "Indian Rebellion of 1857"
-      ]
+      ],
+      "x": 0.469926,
+      "y": 0.480504
     },
     {
       "id": "bcc8c5f7b9cef2db",
@@ -631,7 +691,9 @@
         "Cultural Revolution",
         "Four Olds",
         "Red Guards"
-      ]
+      ],
+      "x": 0.57698,
+      "y": 0.489042
     },
     {
       "id": "9d7382a0b4896793",
@@ -651,7 +713,9 @@
       "concepts_tested": [
         "Tiananmen Square protests",
         "Hu Yaobang"
-      ]
+      ],
+      "x": 0.571762,
+      "y": 0.502152
     },
     {
       "id": "e5ddd6d0a191fccd",
@@ -672,7 +736,9 @@
         "Gupta Empire",
         "Aryabhata",
         "decimal system"
-      ]
+      ],
+      "x": 0.653078,
+      "y": 0.647243
     },
     {
       "id": "cf3d97c2b094270c",
@@ -693,7 +759,9 @@
         "Edo period",
         "sankin-kotai",
         "Tokugawa shogunate"
-      ]
+      ],
+      "x": 0.627975,
+      "y": 0.459218
     },
     {
       "id": "56b7917ae736b699",
@@ -714,7 +782,9 @@
         "Pax Mongolica",
         "yam postal system",
         "Mongol Empire"
-      ]
+      ],
+      "x": 0.569761,
+      "y": 0.433963
     },
     {
       "id": "0ff224c7eb68f1d6",
@@ -735,7 +805,9 @@
         "Timurid Empire",
         "Ulugh Beg",
         "Samarkand"
-      ]
+      ],
+      "x": 0.537898,
+      "y": 0.435349
     },
     {
       "id": "b9e03cd40c937ac9",
@@ -756,7 +828,9 @@
         "Srivijaya",
         "Yijing",
         "Buddhist learning"
-      ]
+      ],
+      "x": 0.599052,
+      "y": 0.421332
     },
     {
       "id": "7c8529e09292bb34",
@@ -777,7 +851,9 @@
         "Great Leap Forward",
         "backyard furnaces",
         "famine"
-      ]
+      ],
+      "x": 0.575761,
+      "y": 0.492064
     },
     {
       "id": "f84a4b09c2873bd8",
@@ -798,7 +874,9 @@
         "Zhu Xi's Neo-Confucianism",
         "Four Books",
         "civil service examinations"
-      ]
+      ],
+      "x": 0.610682,
+      "y": 0.469797
     },
     {
       "id": "8921f60ff47ab410",
@@ -819,7 +897,9 @@
         "Kautilya's Arthashastra",
         "saptanga theory",
         "Maurya Empire"
-      ]
+      ],
+      "x": 0.610471,
+      "y": 0.391671
     },
     {
       "id": "4c7f64b24650b151",
@@ -840,7 +920,9 @@
         "White Lotus Society",
         "Red Turban Rebellion",
         "Yuan dynasty fall"
-      ]
+      ],
+      "x": 0.610633,
+      "y": 0.464319
     },
     {
       "id": "7ab66ce6e222dc8b",
@@ -861,7 +943,9 @@
         "Ryukyuan Kingdom",
         "dual subordination",
         "Satsuma domain trade"
-      ]
+      ],
+      "x": 0.60077,
+      "y": 0.476266
     },
     {
       "id": "518e4f2ee9ed5ca2",
@@ -882,7 +966,9 @@
         "Mughal mansabdari system",
         "zat and sawar ranks",
         "Akbar's administrative reforms"
-      ]
+      ],
+      "x": 0.551199,
+      "y": 0.426273
     },
     {
       "id": "749cbaccc4e08d7f",
@@ -903,7 +989,9 @@
         "Sirhak movement",
         "Yu Hyeongwon",
         "Joseon Neo-Confucianism critique"
-      ]
+      ],
+      "x": 0.595754,
+      "y": 0.482703
     },
     {
       "id": "1444c2186c406ba1",
@@ -924,7 +1012,9 @@
         "Qing Eight Banners system",
         "Nurhaci",
         "Manchu-Mongol-Han integration"
-      ]
+      ],
+      "x": 0.595824,
+      "y": 0.470936
     },
     {
       "id": "166afec9284efa39",
@@ -945,7 +1035,9 @@
         "Ashoka's dhamma",
         "Maurya imperial governance",
         "religious pluralism"
-      ]
+      ],
+      "x": 0.616476,
+      "y": 0.408642
     },
     {
       "id": "549301b5bd3bf1ff",
@@ -966,7 +1058,9 @@
         "Indianization of Southeast Asia",
         "Hindu-Buddhist syncretism",
         "maritime cultural transmission"
-      ]
+      ],
+      "x": 0.58539,
+      "y": 0.432849
     },
     {
       "id": "aa51098a1a2ec6d9",
@@ -987,7 +1081,9 @@
         "Warring States period (China)",
         "Hundred Schools of Thought",
         "Legalism and Qin unification"
-      ]
+      ],
+      "x": 0.611154,
+      "y": 0.471831
     },
     {
       "id": "cac37950eea3194b",
@@ -1008,7 +1104,9 @@
         "Rashidun Caliphate's expansion into Central Asia",
         "Battle of al-Qadisiyyah",
         "Sassanid Empire collapse"
-      ]
+      ],
+      "x": 0.543137,
+      "y": 0.445364
     },
     {
       "id": "a569efa40109ff01",
@@ -1029,7 +1127,9 @@
         "Bandung Conference",
         "Dasa Sila Bandung",
         "Non-Aligned Movement origins"
-      ]
+      ],
+      "x": 0.530174,
+      "y": 0.509395
     }
   ],
   "labels": [],

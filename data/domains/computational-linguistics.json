@@ -5,10 +5,10 @@
     "parent_id": "linguistics",
     "level": "sub",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.619481,
+      "x_max": 0.652126,
+      "y_min": 0.612341,
+      "y_max": 0.648389
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "natural language processing"
-      ]
+      ],
+      "x": 0.633244,
+      "y": 0.637477
     },
     {
       "id": "d2c693b7b67d6296",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "machine translation"
-      ]
+      ],
+      "x": 0.632381,
+      "y": 0.631426
     },
     {
       "id": "5602d0caa10008af",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "spell checker"
-      ]
+      ],
+      "x": 0.638226,
+      "y": 0.625032
     },
     {
       "id": "3267bb19c33e5e7b",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "chatbot"
-      ]
+      ],
+      "x": 0.624481,
+      "y": 0.641295
     },
     {
       "id": "1eebbce82660c016",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "speech recognition"
-      ]
+      ],
+      "x": 0.637194,
+      "y": 0.624459
     },
     {
       "id": "f465312bc72596bd",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "text-to-speech"
-      ]
+      ],
+      "x": 0.639526,
+      "y": 0.627283
     },
     {
       "id": "cd7c1191e6fd5083",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "search engine"
-      ]
+      ],
+      "x": 0.631809,
+      "y": 0.634444
     },
     {
       "id": "480ba4f26a61290d",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "autocomplete"
-      ]
+      ],
+      "x": 0.635833,
+      "y": 0.643389
     },
     {
       "id": "5a0167b32a5092c7",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "sentiment analysis"
-      ]
+      ],
+      "x": 0.634052,
+      "y": 0.623075
     },
     {
       "id": "52365a44ffa8d3f6",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "spam filter"
-      ]
+      ],
+      "x": 0.645074,
+      "y": 0.627599
     },
     {
       "id": "e6019cd25667d8cc",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "optical character recognition"
-      ]
+      ],
+      "x": 0.632381,
+      "y": 0.617341
     },
     {
       "id": "136ac93eb3fddcba",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "question answering"
-      ]
+      ],
+      "x": 0.634931,
+      "y": 0.627566
     },
     {
       "id": "050da0c1ff85b9a7",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "text summarization"
-      ]
+      ],
+      "x": 0.638816,
+      "y": 0.627675
     },
     {
       "id": "222a848b58a2fea3",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "tokenization"
-      ]
+      ],
+      "x": 0.638729,
+      "y": 0.627951
     },
     {
       "id": "a3e46857d27a764b",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "part-of-speech tagging"
-      ]
+      ],
+      "x": 0.635918,
+      "y": 0.62651
     },
     {
       "id": "9bdcc6da5e858810",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "named entity recognition"
-      ]
+      ],
+      "x": 0.63638,
+      "y": 0.627713
     },
     {
       "id": "17f01c7d0d59c64c",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "parsing"
-      ]
+      ],
+      "x": 0.633213,
+      "y": 0.630697
     },
     {
       "id": "b267412d553338bf",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "corpus"
-      ]
+      ],
+      "x": 0.634187,
+      "y": 0.630204
     },
     {
       "id": "dce0d5e5c715f415",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "n-gram"
-      ]
+      ],
+      "x": 0.637476,
+      "y": 0.629338
     },
     {
       "id": "79d64d818c92b372",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "bag of words"
-      ]
+      ],
+      "x": 0.640108,
+      "y": 0.628887
     },
     {
       "id": "cba9bad8752716a4",
@@ -410,7 +450,9 @@
       ],
       "concepts_tested": [
         "TF-IDF"
-      ]
+      ],
+      "x": 0.64697,
+      "y": 0.62953
     },
     {
       "id": "a58216ed577ddd41",
@@ -429,7 +471,9 @@
       ],
       "concepts_tested": [
         "stop words"
-      ]
+      ],
+      "x": 0.638614,
+      "y": 0.626704
     },
     {
       "id": "4f4c215d1da84cca",
@@ -448,7 +492,9 @@
       ],
       "concepts_tested": [
         "stemming"
-      ]
+      ],
+      "x": 0.638982,
+      "y": 0.62267
     },
     {
       "id": "db85a2964d0cb8f8",
@@ -467,7 +513,9 @@
       ],
       "concepts_tested": [
         "dependency parsing"
-      ]
+      ],
+      "x": 0.635684,
+      "y": 0.626576
     },
     {
       "id": "13d56ce01615707a",
@@ -486,7 +534,9 @@
       ],
       "concepts_tested": [
         "word embedding"
-      ]
+      ],
+      "x": 0.641348,
+      "y": 0.627961
     },
     {
       "id": "35b7a7640e3361be",
@@ -505,7 +555,9 @@
       ],
       "concepts_tested": [
         "language model"
-      ]
+      ],
+      "x": 0.640225,
+      "y": 0.62552
     },
     {
       "id": "f294877ec193c29b",
@@ -524,7 +576,9 @@
       ],
       "concepts_tested": [
         "CYK algorithm"
-      ]
+      ],
+      "x": 0.632848,
+      "y": 0.633034
     },
     {
       "id": "8bf78e8d875fd650",
@@ -543,7 +597,9 @@
       ],
       "concepts_tested": [
         "hidden Markov model"
-      ]
+      ],
+      "x": 0.644876,
+      "y": 0.631058
     },
     {
       "id": "dd9c4fcbf4b3be6c",
@@ -562,7 +618,9 @@
       ],
       "concepts_tested": [
         "perplexity"
-      ]
+      ],
+      "x": 0.644345,
+      "y": 0.631385
     },
     {
       "id": "92ef99fabdf88c04",
@@ -581,7 +639,9 @@
       ],
       "concepts_tested": [
         "attention mechanism"
-      ]
+      ],
+      "x": 0.642798,
+      "y": 0.6309
     },
     {
       "id": "4355ba41966eb08c",
@@ -600,7 +660,9 @@
       ],
       "concepts_tested": [
         "beam search"
-      ]
+      ],
+      "x": 0.645042,
+      "y": 0.634312
     },
     {
       "id": "8ae7685f1220af00",
@@ -619,7 +681,9 @@
       ],
       "concepts_tested": [
         "word2vec"
-      ]
+      ],
+      "x": 0.642648,
+      "y": 0.629853
     },
     {
       "id": "fafaa7877353e303",
@@ -638,7 +702,9 @@
       ],
       "concepts_tested": [
         "conditional random field"
-      ]
+      ],
+      "x": 0.64033,
+      "y": 0.62998
     },
     {
       "id": "7aaa4ef42d8ddeb3",
@@ -657,7 +723,9 @@
       ],
       "concepts_tested": [
         "semantic role labeling"
-      ]
+      ],
+      "x": 0.636409,
+      "y": 0.626067
     },
     {
       "id": "8706183ad2f0f202",
@@ -676,7 +744,9 @@
       ],
       "concepts_tested": [
         "coreference resolution"
-      ]
+      ],
+      "x": 0.634671,
+      "y": 0.624402
     },
     {
       "id": "8ee216439205048a",
@@ -695,7 +765,9 @@
       ],
       "concepts_tested": [
         "distributional semantics"
-      ]
+      ],
+      "x": 0.639261,
+      "y": 0.622781
     },
     {
       "id": "c5d2065c4e03f7f2",
@@ -714,7 +786,9 @@
       ],
       "concepts_tested": [
         "encoder-decoder architecture"
-      ]
+      ],
+      "x": 0.647126,
+      "y": 0.628807
     },
     {
       "id": "203cd78a79cadb3a",
@@ -733,7 +807,9 @@
       ],
       "concepts_tested": [
         "byte pair encoding"
-      ]
+      ],
+      "x": 0.640479,
+      "y": 0.628339
     },
     {
       "id": "e37bc70df9d36639",
@@ -752,7 +828,9 @@
       ],
       "concepts_tested": [
         "combinatory categorial grammar"
-      ]
+      ],
+      "x": 0.635025,
+      "y": 0.625125
     },
     {
       "id": "e33206f03759022d",
@@ -771,7 +849,9 @@
       ],
       "concepts_tested": [
         "head-driven phrase structure grammar"
-      ]
+      ],
+      "x": 0.63337,
+      "y": 0.628197
     },
     {
       "id": "9456cf7a9d8d1f33",
@@ -792,7 +872,9 @@
         "minimum description length",
         "Occam's razor",
         "model selection"
-      ]
+      ],
+      "x": 0.642324,
+      "y": 0.63372
     },
     {
       "id": "9e22d0a3d7db1b9a",
@@ -813,7 +895,9 @@
         "expectation-maximization algorithm",
         "Baum-Welch algorithm",
         "inside-outside algorithm"
-      ]
+      ],
+      "x": 0.643497,
+      "y": 0.631388
     },
     {
       "id": "9df9c05feeaa44eb",
@@ -834,7 +918,9 @@
         "inside-outside algorithm",
         "forward-backward algorithm",
         "probabilistic context-free grammar"
-      ]
+      ],
+      "x": 0.638711,
+      "y": 0.634197
     },
     {
       "id": "02e8b97f1385a451",
@@ -855,7 +941,9 @@
         "cross-lingual transfer",
         "multilingual embeddings",
         "multilingual BERT"
-      ]
+      ],
+      "x": 0.638535,
+      "y": 0.627713
     },
     {
       "id": "d483cdb6edcadf4c",
@@ -876,7 +964,9 @@
         "tree-adjoining grammar",
         "substitution and adjunction",
         "mildly context-sensitive"
-      ]
+      ],
+      "x": 0.630423,
+      "y": 0.634737
     },
     {
       "id": "60746d9d0e72dfdb",
@@ -897,7 +987,9 @@
         "maximum entropy model",
         "log-linear model",
         "multinomial logistic regression"
-      ]
+      ],
+      "x": 0.644251,
+      "y": 0.630835
     },
     {
       "id": "1735ec093d699ff8",
@@ -918,7 +1010,9 @@
         "linear programming relaxation for parsing",
         "structured prediction",
         "approximate inference"
-      ]
+      ],
+      "x": 0.630155,
+      "y": 0.635084
     },
     {
       "id": "e4c32b653c68dcb6",
@@ -939,7 +1033,9 @@
         "Earley parser",
         "chart parsing",
         "parsing complexity"
-      ]
+      ],
+      "x": 0.630356,
+      "y": 0.634606
     },
     {
       "id": "914707d00b4e6115",
@@ -960,7 +1056,9 @@
         "Turkish morphological analysis",
         "finite-state transducers",
         "agglutinative morphology"
-      ]
+      ],
+      "x": 0.632875,
+      "y": 0.62344
     },
     {
       "id": "2b7fdccd69a59211",
@@ -981,7 +1079,9 @@
         "Abstract Meaning Representation",
         "semantic graph",
         "syntax-semantics abstraction"
-      ]
+      ],
+      "x": 0.631487,
+      "y": 0.6302
     }
   ],
   "labels": [],

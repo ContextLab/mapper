@@ -5,10 +5,10 @@
     "parent_id": "psychology",
     "level": "sub",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.62367,
+      "x_max": 0.668114,
+      "y_min": 0.60139,
+      "y_max": 0.632317
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "memory"
-      ]
+      ],
+      "x": 0.652059,
+      "y": 0.612291
     },
     {
       "id": "a2dd95d95ac5818e",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "attention"
-      ]
+      ],
+      "x": 0.643577,
+      "y": 0.611618
     },
     {
       "id": "6a19cd87e7eb4f1c",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "perception"
-      ]
+      ],
+      "x": 0.647286,
+      "y": 0.618136
     },
     {
       "id": "7b36a4212b45d4bc",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "learning"
-      ]
+      ],
+      "x": 0.640016,
+      "y": 0.613181
     },
     {
       "id": "e4a97378cd68a309",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "intelligence"
-      ]
+      ],
+      "x": 0.639094,
+      "y": 0.610763
     },
     {
       "id": "eb9a091cf1f41586",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "language"
-      ]
+      ],
+      "x": 0.663114,
+      "y": 0.607825
     },
     {
       "id": "83d8a83829447937",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "reasoning"
-      ]
+      ],
+      "x": 0.638784,
+      "y": 0.627317
     },
     {
       "id": "32230274701758ca",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "decision-making"
-      ]
+      ],
+      "x": 0.632218,
+      "y": 0.61546
     },
     {
       "id": "373c11354c7ff8a7",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "problem solving"
-      ]
+      ],
+      "x": 0.638779,
+      "y": 0.619258
     },
     {
       "id": "30767b9a28a3d7f7",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "emotion"
-      ]
+      ],
+      "x": 0.643371,
+      "y": 0.614443
     },
     {
       "id": "9fd3963cc3e221b5",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "consciousness"
-      ]
+      ],
+      "x": 0.643873,
+      "y": 0.621675
     },
     {
       "id": "00d42f5c2eacaef2",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "imagination"
-      ]
+      ],
+      "x": 0.648646,
+      "y": 0.607887
     },
     {
       "id": "5bab9a57b2aae9e9",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "forgetting"
-      ]
+      ],
+      "x": 0.646132,
+      "y": 0.610812
     },
     {
       "id": "c057615d7116b408",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "working memory"
-      ]
+      ],
+      "x": 0.65341,
+      "y": 0.612965
     },
     {
       "id": "14fb8ef2ffbdf7dc",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "cognitive bias"
-      ]
+      ],
+      "x": 0.642671,
+      "y": 0.61737
     },
     {
       "id": "8a9393fbc8af18f7",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "schema"
-      ]
+      ],
+      "x": 0.646626,
+      "y": 0.612471
     },
     {
       "id": "ee3cf30f330c1537",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "heuristic"
-      ]
+      ],
+      "x": 0.639398,
+      "y": 0.616945
     },
     {
       "id": "9decdfc336d04a2a",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "long-term memory"
-      ]
+      ],
+      "x": 0.649051,
+      "y": 0.616638
     },
     {
       "id": "7c4f34f5a321ccc0",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "short-term memory"
-      ]
+      ],
+      "x": 0.647969,
+      "y": 0.617637
     },
     {
       "id": "458dc4da4409f4a4",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "cognitive development"
-      ]
+      ],
+      "x": 0.645369,
+      "y": 0.610439
     },
     {
       "id": "f4b1f8a1ef10ec2d",
@@ -410,7 +450,9 @@
       ],
       "concepts_tested": [
         "selective attention"
-      ]
+      ],
+      "x": 0.645178,
+      "y": 0.612861
     },
     {
       "id": "69ed973a86b81939",
@@ -429,7 +471,9 @@
       ],
       "concepts_tested": [
         "mental model"
-      ]
+      ],
+      "x": 0.647185,
+      "y": 0.618582
     },
     {
       "id": "cda134e9fbbdb961",
@@ -448,7 +492,9 @@
       ],
       "concepts_tested": [
         "prototype theory"
-      ]
+      ],
+      "x": 0.643564,
+      "y": 0.625405
     },
     {
       "id": "471d33001257f2ca",
@@ -467,7 +513,9 @@
       ],
       "concepts_tested": [
         "confirmation bias"
-      ]
+      ],
+      "x": 0.640348,
+      "y": 0.61364
     },
     {
       "id": "375ab1b187af46fd",
@@ -486,7 +534,9 @@
       ],
       "concepts_tested": [
         "metacognition"
-      ]
+      ],
+      "x": 0.637169,
+      "y": 0.610377
     },
     {
       "id": "21d8b9a1b18b721b",
@@ -505,7 +555,9 @@
       ],
       "concepts_tested": [
         "priming"
-      ]
+      ],
+      "x": 0.64512,
+      "y": 0.61375
     },
     {
       "id": "08ca058f0475baa5",
@@ -524,7 +576,9 @@
       ],
       "concepts_tested": [
         "dual-process theory"
-      ]
+      ],
+      "x": 0.647406,
+      "y": 0.615294
     },
     {
       "id": "bf01f549e746cb4b",
@@ -543,7 +597,9 @@
       ],
       "concepts_tested": [
         "levels-of-processing effect"
-      ]
+      ],
+      "x": 0.648842,
+      "y": 0.616972
     },
     {
       "id": "57442f80a83a8213",
@@ -562,7 +618,9 @@
       ],
       "concepts_tested": [
         "phonological loop"
-      ]
+      ],
+      "x": 0.653378,
+      "y": 0.612384
     },
     {
       "id": "d94db9ec3a9a95ba",
@@ -581,7 +639,9 @@
       ],
       "concepts_tested": [
         "visuospatial sketchpad"
-      ]
+      ],
+      "x": 0.654609,
+      "y": 0.612437
     },
     {
       "id": "375a7ebf282a04d7",
@@ -600,7 +660,9 @@
       ],
       "concepts_tested": [
         "change blindness"
-      ]
+      ],
+      "x": 0.650491,
+      "y": 0.610133
     },
     {
       "id": "39d92981c74e37e2",
@@ -619,7 +681,9 @@
       ],
       "concepts_tested": [
         "inattentional blindness"
-      ]
+      ],
+      "x": 0.646259,
+      "y": 0.613054
     },
     {
       "id": "a8d30628606b5e70",
@@ -638,7 +702,9 @@
       ],
       "concepts_tested": [
         "spreading activation"
-      ]
+      ],
+      "x": 0.648411,
+      "y": 0.616116
     },
     {
       "id": "40c9b48132dc276f",
@@ -657,7 +723,9 @@
       ],
       "concepts_tested": [
         "signal detection theory"
-      ]
+      ],
+      "x": 0.644712,
+      "y": 0.618913
     },
     {
       "id": "861b88295bf349d3",
@@ -676,7 +744,9 @@
       ],
       "concepts_tested": [
         "Stroop effect"
-      ]
+      ],
+      "x": 0.646297,
+      "y": 0.613671
     },
     {
       "id": "ed885e46e00d00dd",
@@ -695,7 +765,9 @@
       ],
       "concepts_tested": [
         "availability heuristic"
-      ]
+      ],
+      "x": 0.641162,
+      "y": 0.6156
     },
     {
       "id": "38133b2c43bbe7eb",
@@ -714,7 +786,9 @@
       ],
       "concepts_tested": [
         "mental rotation"
-      ]
+      ],
+      "x": 0.650796,
+      "y": 0.61343
     },
     {
       "id": "5693d4e299fc2c1f",
@@ -733,7 +807,9 @@
       ],
       "concepts_tested": [
         "source monitoring"
-      ]
+      ],
+      "x": 0.644994,
+      "y": 0.612689
     },
     {
       "id": "7fdf37f18cec75d0",
@@ -752,7 +828,9 @@
       ],
       "concepts_tested": [
         "connectionist models of cognition"
-      ]
+      ],
+      "x": 0.649223,
+      "y": 0.617703
     },
     {
       "id": "83954528ceb61f2d",
@@ -771,7 +849,9 @@
       ],
       "concepts_tested": [
         "embodied cognition"
-      ]
+      ],
+      "x": 0.64452,
+      "y": 0.61921
     },
     {
       "id": "0d13455ef653ac13",
@@ -790,7 +870,9 @@
       ],
       "concepts_tested": [
         "Bayesian brain hypothesis"
-      ]
+      ],
+      "x": 0.650008,
+      "y": 0.622482
     },
     {
       "id": "5c3398b0bbce345c",
@@ -809,7 +891,9 @@
       ],
       "concepts_tested": [
         "predictive coding"
-      ]
+      ],
+      "x": 0.652681,
+      "y": 0.617637
     },
     {
       "id": "fdf88834835dbbce",
@@ -828,7 +912,9 @@
       ],
       "concepts_tested": [
         "fuzzy-trace theory"
-      ]
+      ],
+      "x": 0.643911,
+      "y": 0.615745
     },
     {
       "id": "87d57d18c2d354c7",
@@ -847,7 +933,9 @@
       ],
       "concepts_tested": [
         "cognitive load theory"
-      ]
+      ],
+      "x": 0.638673,
+      "y": 0.611162
     },
     {
       "id": "b95fbcdfe1dfdae5",
@@ -866,7 +954,9 @@
       ],
       "concepts_tested": [
         "transfer-appropriate processing"
-      ]
+      ],
+      "x": 0.649794,
+      "y": 0.615924
     },
     {
       "id": "ea5f4dfed7f7dfcb",
@@ -885,7 +975,9 @@
       ],
       "concepts_tested": [
         "adaptive control of thought-rational"
-      ]
+      ],
+      "x": 0.647362,
+      "y": 0.615151
     },
     {
       "id": "d28789b59844638a",
@@ -904,7 +996,9 @@
       ],
       "concepts_tested": [
         "global workspace theory"
-      ]
+      ],
+      "x": 0.649118,
+      "y": 0.617261
     },
     {
       "id": "80cc872cba4d8a7a",
@@ -923,7 +1017,9 @@
       ],
       "concepts_tested": [
         "misinformation effect"
-      ]
+      ],
+      "x": 0.644202,
+      "y": 0.613007
     },
     {
       "id": "4d170deeae57b907",
@@ -942,7 +1038,9 @@
       ],
       "concepts_tested": [
         "linguistic relativity"
-      ]
+      ],
+      "x": 0.637242,
+      "y": 0.618721
     },
     {
       "id": "728bf5dd100bf230",
@@ -961,7 +1059,9 @@
       ],
       "concepts_tested": [
         "attentional blink"
-      ]
+      ],
+      "x": 0.653358,
+      "y": 0.611924
     }
   ],
   "labels": [
@@ -1187,7 +1287,9 @@
       "title": "Prototype theory"
     },
     {
-      "title": "Confirmation bias"
+      "title": "Confirmation bias",
+      "x": 0.62867,
+      "y": 0.60639
     },
     {
       "title": "Metacognition"

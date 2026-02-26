@@ -5,10 +5,10 @@
     "parent_id": "computer-science",
     "level": "sub",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.508002,
+      "x_max": 0.665108,
+      "y_min": 0.461562,
+      "y_max": 0.705055
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "artificial intelligence"
-      ]
+      ],
+      "x": 0.571665,
+      "y": 0.623371
     },
     {
       "id": "6d7d99d5a9dd0c83",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "machine learning"
-      ]
+      ],
+      "x": 0.62907,
+      "y": 0.637275
     },
     {
       "id": "472e3b153bcc1d53",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "neural network"
-      ]
+      ],
+      "x": 0.657775,
+      "y": 0.621475
     },
     {
       "id": "c651a94650f3131f",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "deep learning"
-      ]
+      ],
+      "x": 0.648115,
+      "y": 0.629694
     },
     {
       "id": "5691a2bd831492d6",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "algorithm"
-      ]
+      ],
+      "x": 0.532642,
+      "y": 0.466562
     },
     {
       "id": "ede15d7227444161",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "training data"
-      ]
+      ],
+      "x": 0.647619,
+      "y": 0.629536
     },
     {
       "id": "20ba126bce1690bd",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "supervised learning"
-      ]
+      ],
+      "x": 0.645618,
+      "y": 0.627571
     },
     {
       "id": "2c649110c47d22f8",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "unsupervised learning"
-      ]
+      ],
+      "x": 0.645396,
+      "y": 0.628352
     },
     {
       "id": "9ffd3967c418364c",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "classification"
-      ]
+      ],
+      "x": 0.643597,
+      "y": 0.62565
     },
     {
       "id": "2ebf77a319d990c3",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "regression"
-      ]
+      ],
+      "x": 0.65896,
+      "y": 0.633783
     },
     {
       "id": "6bdb0981013dc4c0",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "robot"
-      ]
+      ],
+      "x": 0.513002,
+      "y": 0.700055
     },
     {
       "id": "43a0037ff7669234",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "natural language processing"
-      ]
+      ],
+      "x": 0.634849,
+      "y": 0.625589
     },
     {
       "id": "b09f9b5553bcdd11",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "computer vision"
-      ]
+      ],
+      "x": 0.642949,
+      "y": 0.620504
     },
     {
       "id": "814dec2fe8ea5a02",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "gradient descent"
-      ]
+      ],
+      "x": 0.656426,
+      "y": 0.641241
     },
     {
       "id": "0c3d4d3d7bec919e",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "overfitting"
-      ]
+      ],
+      "x": 0.646892,
+      "y": 0.628092
     },
     {
       "id": "d17330ed50ba1a20",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "convolutional neural network"
-      ]
+      ],
+      "x": 0.655686,
+      "y": 0.631387
     },
     {
       "id": "887026eeae32e120",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "recurrent neural network"
-      ]
+      ],
+      "x": 0.649825,
+      "y": 0.627123
     },
     {
       "id": "4b41d37e50f19684",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "backpropagation"
-      ]
+      ],
+      "x": 0.65228,
+      "y": 0.635345
     },
     {
       "id": "4ee2da7f7f61db96",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "reinforcement learning"
-      ]
+      ],
+      "x": 0.643779,
+      "y": 0.621858
     },
     {
       "id": "ce4ef91a1d2d7d10",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "decision tree"
-      ]
+      ],
+      "x": 0.644316,
+      "y": 0.630941
     },
     {
       "id": "5ce78a8caa2165cb",
@@ -410,7 +450,9 @@
       ],
       "concepts_tested": [
         "transfer learning"
-      ]
+      ],
+      "x": 0.647832,
+      "y": 0.630184
     },
     {
       "id": "c25e7dd407abe938",
@@ -429,7 +471,9 @@
       ],
       "concepts_tested": [
         "generative adversarial network"
-      ]
+      ],
+      "x": 0.648269,
+      "y": 0.627059
     },
     {
       "id": "12a70cf0c1ea1929",
@@ -448,7 +492,9 @@
       ],
       "concepts_tested": [
         "transformer"
-      ]
+      ],
+      "x": 0.643547,
+      "y": 0.629288
     },
     {
       "id": "c27ffcb4e6efb5cc",
@@ -467,7 +513,9 @@
       ],
       "concepts_tested": [
         "large language model"
-      ]
+      ],
+      "x": 0.642009,
+      "y": 0.62921
     },
     {
       "id": "c3e7f1600a2cb656",
@@ -486,7 +534,9 @@
       ],
       "concepts_tested": [
         "bias-variance tradeoff"
-      ]
+      ],
+      "x": 0.650501,
+      "y": 0.630758
     },
     {
       "id": "a82e1211de2e2989",
@@ -505,7 +555,9 @@
       ],
       "concepts_tested": [
         "regularization"
-      ]
+      ],
+      "x": 0.651639,
+      "y": 0.637024
     },
     {
       "id": "c5ce8815bceefef7",
@@ -524,7 +576,9 @@
       ],
       "concepts_tested": [
         "cross-validation"
-      ]
+      ],
+      "x": 0.650102,
+      "y": 0.632597
     },
     {
       "id": "510e459f46edc4f8",
@@ -543,7 +597,9 @@
       ],
       "concepts_tested": [
         "batch normalization"
-      ]
+      ],
+      "x": 0.651592,
+      "y": 0.629738
     },
     {
       "id": "03e463ea3be3f7d0",
@@ -562,7 +618,9 @@
       ],
       "concepts_tested": [
         "attention mechanism"
-      ]
+      ],
+      "x": 0.646134,
+      "y": 0.629759
     },
     {
       "id": "ecc4d02f194efbe7",
@@ -581,7 +639,9 @@
       ],
       "concepts_tested": [
         "word embedding"
-      ]
+      ],
+      "x": 0.640263,
+      "y": 0.626297
     },
     {
       "id": "f82e4941109e8416",
@@ -600,7 +660,9 @@
       ],
       "concepts_tested": [
         "attention mechanism"
-      ]
+      ],
+      "x": 0.646006,
+      "y": 0.628623
     },
     {
       "id": "eb891d5b3d7ac730",
@@ -619,7 +681,9 @@
       ],
       "concepts_tested": [
         "word embedding"
-      ]
+      ],
+      "x": 0.641726,
+      "y": 0.627081
     },
     {
       "id": "603caceee7ec130b",
@@ -638,7 +702,9 @@
       ],
       "concepts_tested": [
         "Markov decision process"
-      ]
+      ],
+      "x": 0.644129,
+      "y": 0.621899
     },
     {
       "id": "7b45b6efb5eb7d15",
@@ -657,7 +723,9 @@
       ],
       "concepts_tested": [
         "random forest"
-      ]
+      ],
+      "x": 0.650928,
+      "y": 0.63372
     },
     {
       "id": "d23f3dc8f950dc9c",
@@ -676,7 +744,9 @@
       ],
       "concepts_tested": [
         "principal component analysis"
-      ]
+      ],
+      "x": 0.660108,
+      "y": 0.645501
     },
     {
       "id": "a10bf2eab26a2deb",
@@ -695,7 +765,9 @@
       ],
       "concepts_tested": [
         "vanishing gradient problem"
-      ]
+      ],
+      "x": 0.651384,
+      "y": 0.62927
     },
     {
       "id": "925ba426faa0aabf",
@@ -714,7 +786,9 @@
       ],
       "concepts_tested": [
         "dropout"
-      ]
+      ],
+      "x": 0.65126,
+      "y": 0.626983
     },
     {
       "id": "ec6b7f158d35fd90",
@@ -733,7 +807,9 @@
       ],
       "concepts_tested": [
         "BERT"
-      ]
+      ],
+      "x": 0.640288,
+      "y": 0.629259
     },
     {
       "id": "883137d4c58793e1",
@@ -752,7 +828,9 @@
       ],
       "concepts_tested": [
         "PAC learning"
-      ]
+      ],
+      "x": 0.651269,
+      "y": 0.63433
     },
     {
       "id": "c513b84c0af4a97f",
@@ -771,7 +849,9 @@
       ],
       "concepts_tested": [
         "VC dimension"
-      ]
+      ],
+      "x": 0.656315,
+      "y": 0.641735
     },
     {
       "id": "9d65ff225c664a2e",
@@ -793,7 +873,9 @@
         "reparameterization trick",
         "ELBO",
         "backpropagation"
-      ]
+      ],
+      "x": 0.648975,
+      "y": 0.630197
     },
     {
       "id": "020e3c65a93cc41f",
@@ -814,7 +896,9 @@
         "expectation-maximization algorithm",
         "latent variables",
         "maximum likelihood estimation"
-      ]
+      ],
+      "x": 0.64982,
+      "y": 0.632733
     },
     {
       "id": "7990fd55d27af9cc",
@@ -836,7 +920,9 @@
         "off-policy learning",
         "temporal difference learning",
         "Bellman optimality equation"
-      ]
+      ],
+      "x": 0.646507,
+      "y": 0.624363
     },
     {
       "id": "c044e326e0e2d444",
@@ -858,7 +944,9 @@
         "Mercer's theorem",
         "kernel trick",
         "support vector machine"
-      ]
+      ],
+      "x": 0.655181,
+      "y": 0.642799
     },
     {
       "id": "f700b5217c44075b",
@@ -880,7 +968,9 @@
         "mutual information",
         "rate-distortion tradeoff",
         "data compression"
-      ]
+      ],
+      "x": 0.643351,
+      "y": 0.633199
     },
     {
       "id": "7a55c996a6b92fb8",
@@ -902,7 +992,9 @@
         "search space",
         "reinforcement learning",
         "automated machine learning"
-      ]
+      ],
+      "x": 0.648593,
+      "y": 0.625365
     },
     {
       "id": "f3b7bc0634d8e6b7",
@@ -924,7 +1016,9 @@
         "change of variables",
         "Jacobian determinant",
         "exact likelihood"
-      ]
+      ],
+      "x": 0.655961,
+      "y": 0.642586
     },
     {
       "id": "93468e44467385bf",
@@ -946,7 +1040,9 @@
         "policy gradient",
         "clipping",
         "trust region policy optimization"
-      ]
+      ],
+      "x": 0.647254,
+      "y": 0.631907
     },
     {
       "id": "cffd6ebd47c64da3",
@@ -968,7 +1064,9 @@
         "message passing",
         "Weisfeiler-Leman test",
         "expressiveness"
-      ]
+      ],
+      "x": 0.648106,
+      "y": 0.634638
     },
     {
       "id": "1cbc1cbf17079a1b",
@@ -990,7 +1088,9 @@
         "denoising",
         "forward diffusion process",
         "score matching"
-      ]
+      ],
+      "x": 0.649196,
+      "y": 0.626632
     }
   ],
   "labels": [],

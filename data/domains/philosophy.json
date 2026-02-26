@@ -5,10 +5,10 @@
     "parent_id": null,
     "level": "general",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.408706,
+      "x_max": 0.65037,
+      "y_min": 0.600951,
+      "y_max": 0.635036
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "philosophy"
-      ]
+      ],
+      "x": 0.63602,
+      "y": 0.611392
     },
     {
       "id": "2e4dd7b1a65b08c5",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "knowledge"
-      ]
+      ],
+      "x": 0.64099,
+      "y": 0.613032
     },
     {
       "id": "454fdf3a2fe73c8a",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "truth"
-      ]
+      ],
+      "x": 0.642531,
+      "y": 0.626706
     },
     {
       "id": "949f4d89c35dabbf",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "reason"
-      ]
+      ],
+      "x": 0.638754,
+      "y": 0.613562
     },
     {
       "id": "f0035d2d971f4002",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "beauty"
-      ]
+      ],
+      "x": 0.636898,
+      "y": 0.617777
     },
     {
       "id": "23c7bed650b1d640",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "wisdom"
-      ]
+      ],
+      "x": 0.637855,
+      "y": 0.611972
     },
     {
       "id": "ab386903486388d6",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "meaning of life"
-      ]
+      ],
+      "x": 0.641482,
+      "y": 0.621077
     },
     {
       "id": "0de5f1cfff64f925",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "freedom"
-      ]
+      ],
+      "x": 0.628061,
+      "y": 0.605951
     },
     {
       "id": "a596877de2990295",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "language"
-      ]
+      ],
+      "x": 0.638408,
+      "y": 0.624445
     },
     {
       "id": "ea359b1d8d50c854",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "science"
-      ]
+      ],
+      "x": 0.637625,
+      "y": 0.613084
     },
     {
       "id": "8ed18f2ee0e86452",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "religion"
-      ]
+      ],
+      "x": 0.631941,
+      "y": 0.608842
     },
     {
       "id": "f430088bf113153b",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "art"
-      ]
+      ],
+      "x": 0.641406,
+      "y": 0.610066
     },
     {
       "id": "6db72b21d1ea0456",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "happiness"
-      ]
+      ],
+      "x": 0.638133,
+      "y": 0.613038
     },
     {
       "id": "931d0d9371633a5e",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "epistemology"
-      ]
+      ],
+      "x": 0.638521,
+      "y": 0.615425
     },
     {
       "id": "12e29e66396e7c87",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "aesthetics"
-      ]
+      ],
+      "x": 0.626987,
+      "y": 0.609246
     },
     {
       "id": "3c7dbb1765461001",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "philosophy of science"
-      ]
+      ],
+      "x": 0.640828,
+      "y": 0.624727
     },
     {
       "id": "2556b0e959b1aa76",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "political philosophy"
-      ]
+      ],
+      "x": 0.633249,
+      "y": 0.611792
     },
     {
       "id": "3a22d1edb290dde1",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "philosophy of language"
-      ]
+      ],
+      "x": 0.640909,
+      "y": 0.621539
     },
     {
       "id": "3866d9e2ecdeb21b",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "existentialism"
-      ]
+      ],
+      "x": 0.413706,
+      "y": 0.624658
     },
     {
       "id": "9ef4d92d19f544f3",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "philosophy of religion"
-      ]
+      ],
+      "x": 0.639413,
+      "y": 0.622376
     },
     {
       "id": "8ab33007b9fa6418",
@@ -410,7 +450,9 @@
       ],
       "concepts_tested": [
         "empiricism"
-      ]
+      ],
+      "x": 0.64179,
+      "y": 0.619756
     },
     {
       "id": "944c6d5a678b2cdf",
@@ -429,7 +471,9 @@
       ],
       "concepts_tested": [
         "rationalism"
-      ]
+      ],
+      "x": 0.640582,
+      "y": 0.6221
     },
     {
       "id": "e4a70df51af151c3",
@@ -448,7 +492,9 @@
       ],
       "concepts_tested": [
         "skepticism"
-      ]
+      ],
+      "x": 0.637782,
+      "y": 0.614916
     },
     {
       "id": "6ba8c99679235147",
@@ -467,7 +513,9 @@
       ],
       "concepts_tested": [
         "phenomenology"
-      ]
+      ],
+      "x": 0.638689,
+      "y": 0.616468
     },
     {
       "id": "1dbc0f5479592f2c",
@@ -486,7 +534,9 @@
       ],
       "concepts_tested": [
         "pragmatism"
-      ]
+      ],
+      "x": 0.638028,
+      "y": 0.621964
     },
     {
       "id": "9d0e038592d7843e",
@@ -505,7 +555,9 @@
       ],
       "concepts_tested": [
         "Socratic method"
-      ]
+      ],
+      "x": 0.640269,
+      "y": 0.609121
     },
     {
       "id": "a0243f824ac47791",
@@ -524,7 +576,9 @@
       ],
       "concepts_tested": [
         "philosophy of history"
-      ]
+      ],
+      "x": 0.625975,
+      "y": 0.610205
     },
     {
       "id": "8da2332cbee568ae",
@@ -543,7 +597,9 @@
       ],
       "concepts_tested": [
         "hermeneutics"
-      ]
+      ],
+      "x": 0.642529,
+      "y": 0.610753
     },
     {
       "id": "4ca353e8e02928ec",
@@ -562,7 +618,9 @@
       ],
       "concepts_tested": [
         "falsifiability"
-      ]
+      ],
+      "x": 0.637492,
+      "y": 0.630036
     },
     {
       "id": "f8c32b80375b2662",
@@ -581,7 +639,9 @@
       ],
       "concepts_tested": [
         "paradigm shift"
-      ]
+      ],
+      "x": 0.632287,
+      "y": 0.611199
     },
     {
       "id": "6d6b672d2e165867",
@@ -600,7 +660,9 @@
       ],
       "concepts_tested": [
         "speech act theory"
-      ]
+      ],
+      "x": 0.634805,
+      "y": 0.617364
     },
     {
       "id": "40c31c0846fda2a3",
@@ -619,7 +681,9 @@
       ],
       "concepts_tested": [
         "Gettier problem"
-      ]
+      ],
+      "x": 0.639009,
+      "y": 0.623856
     },
     {
       "id": "08b8419839dfd5f9",
@@ -638,7 +702,9 @@
       ],
       "concepts_tested": [
         "problem of evil"
-      ]
+      ],
+      "x": 0.639749,
+      "y": 0.622506
     },
     {
       "id": "0f1e936553433680",
@@ -657,7 +723,9 @@
       ],
       "concepts_tested": [
         "epistemological foundationalism"
-      ]
+      ],
+      "x": 0.639437,
+      "y": 0.623739
     },
     {
       "id": "464fd5b621217db6",
@@ -676,7 +744,9 @@
       ],
       "concepts_tested": [
         "original position"
-      ]
+      ],
+      "x": 0.634972,
+      "y": 0.61586
     },
     {
       "id": "d2da59a840fe3136",
@@ -695,7 +765,9 @@
       ],
       "concepts_tested": [
         "deconstruction"
-      ]
+      ],
+      "x": 0.637884,
+      "y": 0.621485
     },
     {
       "id": "5ff993508d245b16",
@@ -714,7 +786,9 @@
       ],
       "concepts_tested": [
         "the sublime"
-      ]
+      ],
+      "x": 0.636109,
+      "y": 0.618183
     },
     {
       "id": "129b973c020dd548",
@@ -733,7 +807,9 @@
       ],
       "concepts_tested": [
         "reliabilism"
-      ]
+      ],
+      "x": 0.642461,
+      "y": 0.624599
     },
     {
       "id": "2ae0e1a5f0acf430",
@@ -752,7 +828,9 @@
       ],
       "concepts_tested": [
         "underdetermination of theory by evidence"
-      ]
+      ],
+      "x": 0.64537,
+      "y": 0.625243
     },
     {
       "id": "e393f3c8318be0c9",
@@ -771,7 +849,9 @@
       ],
       "concepts_tested": [
         "rigid designator"
-      ]
+      ],
+      "x": 0.642434,
+      "y": 0.624909
     },
     {
       "id": "9ca9a4dc6760c228",
@@ -790,7 +870,9 @@
       ],
       "concepts_tested": [
         "Quinean ontological commitment"
-      ]
+      ],
+      "x": 0.642911,
+      "y": 0.624271
     },
     {
       "id": "677219593317b266",
@@ -809,7 +891,9 @@
       ],
       "concepts_tested": [
         "epistemic injustice"
-      ]
+      ],
+      "x": 0.635684,
+      "y": 0.614859
     },
     {
       "id": "7e9ad1125e4e4d89",
@@ -828,7 +912,9 @@
       ],
       "concepts_tested": [
         "deflationary theory of truth"
-      ]
+      ],
+      "x": 0.641416,
+      "y": 0.626487
     },
     {
       "id": "d81093ab40e804b1",
@@ -847,7 +933,9 @@
       ],
       "concepts_tested": [
         "Gadamerian fusion of horizons"
-      ]
+      ],
+      "x": 0.639478,
+      "y": 0.616015
     },
     {
       "id": "6980ca472036065e",
@@ -866,7 +954,9 @@
       ],
       "concepts_tested": [
         "Rawlsian public reason"
-      ]
+      ],
+      "x": 0.635573,
+      "y": 0.61573
     },
     {
       "id": "dee288ebc687c808",
@@ -885,7 +975,9 @@
       ],
       "concepts_tested": [
         "Bayesian epistemology"
-      ]
+      ],
+      "x": 0.639996,
+      "y": 0.623683
     },
     {
       "id": "2eedd11a8f09a379",
@@ -904,7 +996,9 @@
       ],
       "concepts_tested": [
         "scientific realism vs anti-realism"
-      ]
+      ],
+      "x": 0.640645,
+      "y": 0.62251
     },
     {
       "id": "2cfc090640d6bee9",
@@ -923,7 +1017,9 @@
       ],
       "concepts_tested": [
         "Husserlian intentional analysis"
-      ]
+      ],
+      "x": 0.640261,
+      "y": 0.617452
     },
     {
       "id": "5279758d46af5fa3",
@@ -942,7 +1038,9 @@
       ],
       "concepts_tested": [
         "contextualism in epistemology"
-      ]
+      ],
+      "x": 0.640162,
+      "y": 0.626317
     },
     {
       "id": "2cf368cfdfbf4fd3",
@@ -961,7 +1059,9 @@
       ],
       "concepts_tested": [
         "Habermasian communicative rationality"
-      ]
+      ],
+      "x": 0.642342,
+      "y": 0.627821
     }
   ],
   "labels": [],

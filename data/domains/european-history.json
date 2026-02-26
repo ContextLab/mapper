@@ -5,10 +5,10 @@
     "parent_id": "world-history",
     "level": "sub",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.368168,
+      "x_max": 0.669123,
+      "y_min": 0.448758,
+      "y_max": 0.609371
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "French Revolution"
-      ]
+      ],
+      "x": 0.460087,
+      "y": 0.518864
     },
     {
       "id": "9d35e5e0d055a819",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "World War I"
-      ]
+      ],
+      "x": 0.480038,
+      "y": 0.50348
     },
     {
       "id": "967f6923d9580684",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "World War II"
-      ]
+      ],
+      "x": 0.482379,
+      "y": 0.502389
     },
     {
       "id": "a036648fe738a6cc",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "Roman Empire"
-      ]
+      ],
+      "x": 0.650671,
+      "y": 0.474617
     },
     {
       "id": "6258c819462d96e5",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "Black Death"
-      ]
+      ],
+      "x": 0.537816,
+      "y": 0.50933
     },
     {
       "id": "8836576830faf34d",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "Renaissance"
-      ]
+      ],
+      "x": 0.629392,
+      "y": 0.592493
     },
     {
       "id": "8ff68a8c71709c2c",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "Napoleon Bonaparte"
-      ]
+      ],
+      "x": 0.42251,
+      "y": 0.530317
     },
     {
       "id": "33361324535a7f12",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "Holocaust"
-      ]
+      ],
+      "x": 0.462289,
+      "y": 0.512631
     },
     {
       "id": "032670ca9fac6f05",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "Cold War"
-      ]
+      ],
+      "x": 0.519993,
+      "y": 0.518982
     },
     {
       "id": "2dce1e1559a993ec",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "ancient Greece"
-      ]
+      ],
+      "x": 0.653018,
+      "y": 0.478938
     },
     {
       "id": "204fe07682c8a17e",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "Protestant Reformation"
-      ]
+      ],
+      "x": 0.441897,
+      "y": 0.496156
     },
     {
       "id": "623dd8151160678e",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "fall of the Berlin Wall"
-      ]
+      ],
+      "x": 0.446804,
+      "y": 0.453758
     },
     {
       "id": "ca0774ec3efe9594",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "Crusades"
-      ]
+      ],
+      "x": 0.414948,
+      "y": 0.498477
     },
     {
       "id": "1ebffe481c73807e",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "Congress of Vienna"
-      ]
+      ],
+      "x": 0.509275,
+      "y": 0.513026
     },
     {
       "id": "a98a7d9a68d9db74",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "Thirty Years' War"
-      ]
+      ],
+      "x": 0.469008,
+      "y": 0.504241
     },
     {
       "id": "5898627af1f7d4a7",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "Magna Carta"
-      ]
+      ],
+      "x": 0.396532,
+      "y": 0.524043
     },
     {
       "id": "470cdd12eeb01948",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "Age of Exploration"
-      ]
+      ],
+      "x": 0.472365,
+      "y": 0.483421
     },
     {
       "id": "23726f8107e4231d",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "Enlightenment"
-      ]
+      ],
+      "x": 0.632177,
+      "y": 0.599629
     },
     {
       "id": "9a531d897f80e4f0",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "Otto von Bismarck"
-      ]
+      ],
+      "x": 0.504652,
+      "y": 0.516502
     },
     {
       "id": "987641a5f6131b61",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "Byzantine Empire"
-      ]
+      ],
+      "x": 0.420608,
+      "y": 0.487109
     },
     {
       "id": "443b2b45454a09fe",
@@ -410,7 +450,9 @@
       ],
       "concepts_tested": [
         "Treaty of Versailles"
-      ]
+      ],
+      "x": 0.497937,
+      "y": 0.515033
     },
     {
       "id": "636039babaf7ce0e",
@@ -429,7 +471,9 @@
       ],
       "concepts_tested": [
         "Hundred Years' War"
-      ]
+      ],
+      "x": 0.402879,
+      "y": 0.510014
     },
     {
       "id": "8c76284dae09ff06",
@@ -448,7 +492,9 @@
       ],
       "concepts_tested": [
         "Feudalism"
-      ]
+      ],
+      "x": 0.416846,
+      "y": 0.512043
     },
     {
       "id": "923179a66b5914aa",
@@ -467,7 +513,9 @@
       ],
       "concepts_tested": [
         "Russian Revolution"
-      ]
+      ],
+      "x": 0.467328,
+      "y": 0.494971
     },
     {
       "id": "c919f8bc06fce458",
@@ -486,7 +534,9 @@
       ],
       "concepts_tested": [
         "Peloponnesian War"
-      ]
+      ],
+      "x": 0.660778,
+      "y": 0.465546
     },
     {
       "id": "975ec3986cb3c056",
@@ -505,7 +555,9 @@
       ],
       "concepts_tested": [
         "Colonialism"
-      ]
+      ],
+      "x": 0.507337,
+      "y": 0.515447
     },
     {
       "id": "2a73adbecb53b2c7",
@@ -524,7 +576,9 @@
       ],
       "concepts_tested": [
         "Peace of Westphalia"
-      ]
+      ],
+      "x": 0.414943,
+      "y": 0.500404
     },
     {
       "id": "a8f5782da4158013",
@@ -543,7 +597,9 @@
       ],
       "concepts_tested": [
         "Concert of Europe"
-      ]
+      ],
+      "x": 0.508021,
+      "y": 0.509794
     },
     {
       "id": "73d94698a25d7c25",
@@ -562,7 +618,9 @@
       ],
       "concepts_tested": [
         "enclosure movement"
-      ]
+      ],
+      "x": 0.51517,
+      "y": 0.503778
     },
     {
       "id": "0a8d206a5c344a7f",
@@ -581,7 +639,9 @@
       ],
       "concepts_tested": [
         "Revolutions of 1848"
-      ]
+      ],
+      "x": 0.4399,
+      "y": 0.520092
     },
     {
       "id": "185d633cf3677a22",
@@ -601,7 +661,9 @@
       "concepts_tested": [
         "Carolingian Empire",
         "Treaty of Verdun"
-      ]
+      ],
+      "x": 0.405011,
+      "y": 0.498
     },
     {
       "id": "14f7f4d36681cf5b",
@@ -620,7 +682,9 @@
       ],
       "concepts_tested": [
         "Dreyfus Affair"
-      ]
+      ],
+      "x": 0.458837,
+      "y": 0.533676
     },
     {
       "id": "09cb0907ac0851c6",
@@ -639,7 +703,9 @@
       ],
       "concepts_tested": [
         "Eastern Question"
-      ]
+      ],
+      "x": 0.508584,
+      "y": 0.469647
     },
     {
       "id": "ca51d542befb4b8e",
@@ -658,7 +724,9 @@
       ],
       "concepts_tested": [
         "Weimar Republic"
-      ]
+      ],
+      "x": 0.526499,
+      "y": 0.539116
     },
     {
       "id": "b659be9bbfe5ba80",
@@ -678,7 +746,9 @@
       "concepts_tested": [
         "Hanseatic League",
         "Kontor"
-      ]
+      ],
+      "x": 0.406129,
+      "y": 0.500126
     },
     {
       "id": "35906824b5a25751",
@@ -698,7 +768,9 @@
       "concepts_tested": [
         "Spanish Inquisition",
         "conversos"
-      ]
+      ],
+      "x": 0.493538,
+      "y": 0.498026
     },
     {
       "id": "e8c044dfeaf85acc",
@@ -718,7 +790,9 @@
       "concepts_tested": [
         "Scramble for Africa",
         "Berlin Conference"
-      ]
+      ],
+      "x": 0.507189,
+      "y": 0.515227
     },
     {
       "id": "a7bc18bb4cb30452",
@@ -737,7 +811,9 @@
       ],
       "concepts_tested": [
         "Decembrist revolt"
-      ]
+      ],
+      "x": 0.423496,
+      "y": 0.511409
     },
     {
       "id": "4c6e120d53d71360",
@@ -757,7 +833,9 @@
       "concepts_tested": [
         "Diocletianic reforms",
         "Edict on Maximum Prices"
-      ]
+      ],
+      "x": 0.657869,
+      "y": 0.474028
     },
     {
       "id": "6c9087b380384ecd",
@@ -777,7 +855,9 @@
       "concepts_tested": [
         "Investiture Controversy",
         "Walk to Canossa"
-      ]
+      ],
+      "x": 0.40129,
+      "y": 0.493467
     },
     {
       "id": "2a1bfda81c855343",
@@ -796,7 +876,9 @@
       ],
       "concepts_tested": [
         "Annales school"
-      ]
+      ],
+      "x": 0.534332,
+      "y": 0.592614
     },
     {
       "id": "4f86af711564852f",
@@ -815,7 +897,9 @@
       ],
       "concepts_tested": [
         "Stab-in-the-back myth"
-      ]
+      ],
+      "x": 0.454952,
+      "y": 0.527345
     },
     {
       "id": "9e81638d72b45869",
@@ -834,7 +918,9 @@
       ],
       "concepts_tested": [
         "translatio imperii"
-      ]
+      ],
+      "x": 0.531086,
+      "y": 0.533096
     },
     {
       "id": "8f0a49f58909258c",
@@ -853,7 +939,9 @@
       ],
       "concepts_tested": [
         "July Crisis of 1914"
-      ]
+      ],
+      "x": 0.373168,
+      "y": 0.48413
     },
     {
       "id": "4f444486edf17ede",
@@ -872,7 +960,9 @@
       ],
       "concepts_tested": [
         "Gracchi reforms"
-      ]
+      ],
+      "x": 0.664123,
+      "y": 0.476237
     },
     {
       "id": "e3cf430c07a52cf3",
@@ -891,7 +981,9 @@
       ],
       "concepts_tested": [
         "Thermidorian Reaction"
-      ]
+      ],
+      "x": 0.453149,
+      "y": 0.522822
     },
     {
       "id": "e8157c1a09c8b24a",
@@ -910,7 +1002,9 @@
       ],
       "concepts_tested": [
         "Querelle des Anciens et des Modernes"
-      ]
+      ],
+      "x": 0.431963,
+      "y": 0.604371
     },
     {
       "id": "98c05a37247b7afd",
@@ -929,7 +1023,9 @@
       ],
       "concepts_tested": [
         "Eastern Front (World War I)"
-      ]
+      ],
+      "x": 0.46534,
+      "y": 0.490887
     },
     {
       "id": "20486543d94185eb",
@@ -948,7 +1044,9 @@
       ],
       "concepts_tested": [
         "Sykes-Picot Agreement"
-      ]
+      ],
+      "x": 0.498316,
+      "y": 0.500228
     },
     {
       "id": "30e392a64f71e924",
@@ -967,7 +1065,9 @@
       ],
       "concepts_tested": [
         "Pirenne thesis"
-      ]
+      ],
+      "x": 0.412688,
+      "y": 0.496131
     }
   ],
   "labels": [],

@@ -5,10 +5,10 @@
     "parent_id": "philosophy",
     "level": "sub",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.620321,
+      "x_max": 0.645369,
+      "y_min": 0.601769,
+      "y_max": 0.626395
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "morality"
-      ]
+      ],
+      "x": 0.634742,
+      "y": 0.613949
     },
     {
       "id": "66d1c2082f63c1d4",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "justice"
-      ]
+      ],
+      "x": 0.634441,
+      "y": 0.611593
     },
     {
       "id": "1ddbf893ab1e7a3a",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "human rights"
-      ]
+      ],
+      "x": 0.632918,
+      "y": 0.611629
     },
     {
       "id": "d521da700d1229f9",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "honesty"
-      ]
+      ],
+      "x": 0.636742,
+      "y": 0.614757
     },
     {
       "id": "98361b0135a9d23d",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "compassion"
-      ]
+      ],
+      "x": 0.636072,
+      "y": 0.613695
     },
     {
       "id": "a9d8ff3fb48984e4",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "fairness"
-      ]
+      ],
+      "x": 0.634868,
+      "y": 0.613394
     },
     {
       "id": "79952d16a11a3649",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "good and evil"
-      ]
+      ],
+      "x": 0.63671,
+      "y": 0.616419
     },
     {
       "id": "7f90df11e74fd07c",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "conscience"
-      ]
+      ],
+      "x": 0.63639,
+      "y": 0.615931
     },
     {
       "id": "6a47783b82d51fd3",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "virtue"
-      ]
+      ],
+      "x": 0.637002,
+      "y": 0.614564
     },
     {
       "id": "7bf6fb8763cb2bb7",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "rights"
-      ]
+      ],
+      "x": 0.627559,
+      "y": 0.607286
     },
     {
       "id": "5e05ad1c5959f524",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "duty"
-      ]
+      ],
+      "x": 0.635433,
+      "y": 0.614789
     },
     {
       "id": "4df7293648d459f4",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "harm"
-      ]
+      ],
+      "x": 0.636823,
+      "y": 0.616912
     },
     {
       "id": "63027ddff8cc5f82",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "equality"
-      ]
+      ],
+      "x": 0.636497,
+      "y": 0.614692
     },
     {
       "id": "1862fd6545f2d141",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "utilitarianism"
-      ]
+      ],
+      "x": 0.634936,
+      "y": 0.616021
     },
     {
       "id": "5f660d666f7a4c7c",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "categorical imperative"
-      ]
+      ],
+      "x": 0.635267,
+      "y": 0.614799
     },
     {
       "id": "968f3b356434e460",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "virtue ethics"
-      ]
+      ],
+      "x": 0.634731,
+      "y": 0.615759
     },
     {
       "id": "0400da8dca6949ba",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "deontological ethics"
-      ]
+      ],
+      "x": 0.637277,
+      "y": 0.617675
     },
     {
       "id": "4930bec4b19aa534",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "consequentialism"
-      ]
+      ],
+      "x": 0.636002,
+      "y": 0.616934
     },
     {
       "id": "6809bb9fbb69292b",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "social contract"
-      ]
+      ],
+      "x": 0.625321,
+      "y": 0.606769
     },
     {
       "id": "2b89695e59e8736f",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "trolley problem"
-      ]
+      ],
+      "x": 0.637338,
+      "y": 0.616349
     },
     {
       "id": "4b8bcf0192c2d376",
@@ -410,7 +450,9 @@
       ],
       "concepts_tested": [
         "moral relativism"
-      ]
+      ],
+      "x": 0.638645,
+      "y": 0.61915
     },
     {
       "id": "3ec7ef75bb8d5f47",
@@ -429,7 +471,9 @@
       ],
       "concepts_tested": [
         "natural law"
-      ]
+      ],
+      "x": 0.637983,
+      "y": 0.61735
     },
     {
       "id": "b6c64ec4605bde06",
@@ -448,7 +492,9 @@
       ],
       "concepts_tested": [
         "hedonism"
-      ]
+      ],
+      "x": 0.636295,
+      "y": 0.616302
     },
     {
       "id": "88c3ea588b93de70",
@@ -467,7 +513,9 @@
       ],
       "concepts_tested": [
         "moral realism"
-      ]
+      ],
+      "x": 0.639361,
+      "y": 0.619727
     },
     {
       "id": "7c0c4824ae80be1c",
@@ -486,7 +534,9 @@
       ],
       "concepts_tested": [
         "applied ethics"
-      ]
+      ],
+      "x": 0.634393,
+      "y": 0.613655
     },
     {
       "id": "278469c7d82a9401",
@@ -505,7 +555,9 @@
       ],
       "concepts_tested": [
         "golden rule"
-      ]
+      ],
+      "x": 0.635107,
+      "y": 0.615395
     },
     {
       "id": "754c7dbdf5887a4a",
@@ -524,7 +576,9 @@
       ],
       "concepts_tested": [
         "moral universalism"
-      ]
+      ],
+      "x": 0.63466,
+      "y": 0.617965
     },
     {
       "id": "a4b596b61ca7ecf9",
@@ -543,7 +597,9 @@
       ],
       "concepts_tested": [
         "act utilitarianism vs rule utilitarianism"
-      ]
+      ],
+      "x": 0.636056,
+      "y": 0.61633
     },
     {
       "id": "eab38a5bdeda52ed",
@@ -562,7 +618,9 @@
       ],
       "concepts_tested": [
         "doctrine of double effect"
-      ]
+      ],
+      "x": 0.63811,
+      "y": 0.616388
     },
     {
       "id": "0fd712adea4410e9",
@@ -581,7 +639,9 @@
       ],
       "concepts_tested": [
         "moral intuitionism"
-      ]
+      ],
+      "x": 0.63918,
+      "y": 0.62072
     },
     {
       "id": "0f157271cf0ae63a",
@@ -600,7 +660,9 @@
       ],
       "concepts_tested": [
         "error theory"
-      ]
+      ],
+      "x": 0.64014,
+      "y": 0.621395
     },
     {
       "id": "f6b8f2c8a95fb73a",
@@ -619,7 +681,9 @@
       ],
       "concepts_tested": [
         "prima facie duties"
-      ]
+      ],
+      "x": 0.635363,
+      "y": 0.618545
     },
     {
       "id": "d2955d446ff2a0e3",
@@ -638,7 +702,9 @@
       ],
       "concepts_tested": [
         "reflective equilibrium"
-      ]
+      ],
+      "x": 0.637013,
+      "y": 0.614226
     },
     {
       "id": "094ed868fa0a131a",
@@ -657,7 +723,9 @@
       ],
       "concepts_tested": [
         "moral luck"
-      ]
+      ],
+      "x": 0.637513,
+      "y": 0.617928
     },
     {
       "id": "91e3853df4341b0d",
@@ -676,7 +744,9 @@
       ],
       "concepts_tested": [
         "egoism"
-      ]
+      ],
+      "x": 0.634411,
+      "y": 0.616094
     },
     {
       "id": "664e7a753da49e12",
@@ -695,7 +765,9 @@
       ],
       "concepts_tested": [
         "bioethics"
-      ]
+      ],
+      "x": 0.632799,
+      "y": 0.609013
     },
     {
       "id": "0c9bedce3b79c01a",
@@ -714,7 +786,9 @@
       ],
       "concepts_tested": [
         "animal ethics"
-      ]
+      ],
+      "x": 0.639033,
+      "y": 0.61317
     },
     {
       "id": "4635972ceff5545c",
@@ -733,7 +807,9 @@
       ],
       "concepts_tested": [
         "distributive justice"
-      ]
+      ],
+      "x": 0.633448,
+      "y": 0.610357
     },
     {
       "id": "e39d74832dd67d17",
@@ -752,7 +828,9 @@
       ],
       "concepts_tested": [
         "non-identity problem"
-      ]
+      ],
+      "x": 0.638394,
+      "y": 0.618056
     },
     {
       "id": "7e8677db7846eb71",
@@ -771,7 +849,9 @@
       ],
       "concepts_tested": [
         "contractualism"
-      ]
+      ],
+      "x": 0.63814,
+      "y": 0.616609
     },
     {
       "id": "240e2539bad2ac6c",
@@ -790,7 +870,9 @@
       ],
       "concepts_tested": [
         "expressivist metaethics"
-      ]
+      ],
+      "x": 0.640369,
+      "y": 0.620256
     },
     {
       "id": "d8cb661bf044c85b",
@@ -809,7 +891,9 @@
       ],
       "concepts_tested": [
         "moral particularism"
-      ]
+      ],
+      "x": 0.636443,
+      "y": 0.619245
     },
     {
       "id": "79f16d7de7d6d0a6",
@@ -828,7 +912,9 @@
       ],
       "concepts_tested": [
         "effective altruism"
-      ]
+      ],
+      "x": 0.636231,
+      "y": 0.615353
     },
     {
       "id": "14c86ea272485e28",
@@ -847,7 +933,9 @@
       ],
       "concepts_tested": [
         "repugnant conclusion"
-      ]
+      ],
+      "x": 0.633331,
+      "y": 0.615412
     },
     {
       "id": "c3c2cd9a21d488e3",
@@ -866,7 +954,9 @@
       ],
       "concepts_tested": [
         "Frankfurt cases"
-      ]
+      ],
+      "x": 0.63762,
+      "y": 0.620238
     },
     {
       "id": "c74ecf74f0d47a7e",
@@ -885,7 +975,9 @@
       ],
       "concepts_tested": [
         "moral functionalism"
-      ]
+      ],
+      "x": 0.63787,
+      "y": 0.617885
     },
     {
       "id": "ca650927b5424187",
@@ -904,7 +996,9 @@
       ],
       "concepts_tested": [
         "Kantian constructivism"
-      ]
+      ],
+      "x": 0.637012,
+      "y": 0.618405
     },
     {
       "id": "3da864df6ba56afc",
@@ -923,7 +1017,9 @@
       ],
       "concepts_tested": [
         "adaptive preferences"
-      ]
+      ],
+      "x": 0.629982,
+      "y": 0.611533
     },
     {
       "id": "62173d89b788be4c",
@@ -942,7 +1038,9 @@
       ],
       "concepts_tested": [
         "just war theory"
-      ]
+      ],
+      "x": 0.63188,
+      "y": 0.610027
     },
     {
       "id": "fe69c17b2d87108c",
@@ -961,7 +1059,9 @@
       ],
       "concepts_tested": [
         "moral encroachment"
-      ]
+      ],
+      "x": 0.638302,
+      "y": 0.62034
     }
   ],
   "labels": [],

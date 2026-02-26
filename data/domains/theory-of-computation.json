@@ -5,10 +5,10 @@
     "parent_id": "computer-science",
     "level": "sub",
     "region": {
-      "x_min": 0.0,
-      "x_max": 1.0,
-      "y_min": 0.0,
-      "y_max": 1.0
+      "x_min": 0.528645,
+      "x_max": 0.657016,
+      "y_min": 0.462627,
+      "y_max": 0.654929
     },
     "grid_size": 70
   },
@@ -30,7 +30,9 @@
       ],
       "concepts_tested": [
         "algorithm"
-      ]
+      ],
+      "x": 0.533645,
+      "y": 0.467627
     },
     {
       "id": "f6a11e066f66cd7d",
@@ -49,7 +51,9 @@
       ],
       "concepts_tested": [
         "Turing machine"
-      ]
+      ],
+      "x": 0.630093,
+      "y": 0.63812
     },
     {
       "id": "e22e61c7d9d2139d",
@@ -68,7 +72,9 @@
       ],
       "concepts_tested": [
         "programming language"
-      ]
+      ],
+      "x": 0.636461,
+      "y": 0.62524
     },
     {
       "id": "90ccdfdfa867c77c",
@@ -87,7 +93,9 @@
       ],
       "concepts_tested": [
         "binary code"
-      ]
+      ],
+      "x": 0.612551,
+      "y": 0.613898
     },
     {
       "id": "c20c98735949502b",
@@ -106,7 +114,9 @@
       ],
       "concepts_tested": [
         "encryption"
-      ]
+      ],
+      "x": 0.637065,
+      "y": 0.616692
     },
     {
       "id": "a49ddffa91bb7691",
@@ -125,7 +135,9 @@
       ],
       "concepts_tested": [
         "loop"
-      ]
+      ],
+      "x": 0.637672,
+      "y": 0.634656
     },
     {
       "id": "31784b4059f639c0",
@@ -144,7 +156,9 @@
       ],
       "concepts_tested": [
         "compiler"
-      ]
+      ],
+      "x": 0.6374,
+      "y": 0.626397
     },
     {
       "id": "0a980cb6d00b5703",
@@ -163,7 +177,9 @@
       ],
       "concepts_tested": [
         "recursion"
-      ]
+      ],
+      "x": 0.641526,
+      "y": 0.637476
     },
     {
       "id": "3daf7db6045fb612",
@@ -182,7 +198,9 @@
       ],
       "concepts_tested": [
         "sorting algorithm"
-      ]
+      ],
+      "x": 0.6438,
+      "y": 0.641407
     },
     {
       "id": "d22fb31069d354e7",
@@ -201,7 +219,9 @@
       ],
       "concepts_tested": [
         "complexity"
-      ]
+      ],
+      "x": 0.639627,
+      "y": 0.638485
     },
     {
       "id": "bf165cefe5a87de0",
@@ -220,7 +240,9 @@
       ],
       "concepts_tested": [
         "halting problem"
-      ]
+      ],
+      "x": 0.633533,
+      "y": 0.640829
     },
     {
       "id": "87e93a4a409be7d4",
@@ -239,7 +261,9 @@
       ],
       "concepts_tested": [
         "formal language"
-      ]
+      ],
+      "x": 0.637679,
+      "y": 0.630503
     },
     {
       "id": "dade287126af30be",
@@ -258,7 +282,9 @@
       ],
       "concepts_tested": [
         "Boolean logic"
-      ]
+      ],
+      "x": 0.633236,
+      "y": 0.63681
     },
     {
       "id": "3ebe78deb3a9a1af",
@@ -277,7 +303,9 @@
       ],
       "concepts_tested": [
         "finite automaton"
-      ]
+      ],
+      "x": 0.639492,
+      "y": 0.635962
     },
     {
       "id": "31ced92950b96e35",
@@ -296,7 +324,9 @@
       ],
       "concepts_tested": [
         "regular expression"
-      ]
+      ],
+      "x": 0.638225,
+      "y": 0.637789
     },
     {
       "id": "3716bb5c1a61d289",
@@ -315,7 +345,9 @@
       ],
       "concepts_tested": [
         "context-free grammar"
-      ]
+      ],
+      "x": 0.634563,
+      "y": 0.634479
     },
     {
       "id": "2762d89939e977c5",
@@ -334,7 +366,9 @@
       ],
       "concepts_tested": [
         "pushdown automaton"
-      ]
+      ],
+      "x": 0.637628,
+      "y": 0.637855
     },
     {
       "id": "167e7cc2f2d30dd8",
@@ -353,7 +387,9 @@
       ],
       "concepts_tested": [
         "NP-completeness"
-      ]
+      ],
+      "x": 0.641012,
+      "y": 0.642598
     },
     {
       "id": "56d23c98e4ceb286",
@@ -372,7 +408,9 @@
       ],
       "concepts_tested": [
         "P versus NP problem"
-      ]
+      ],
+      "x": 0.642845,
+      "y": 0.64486
     },
     {
       "id": "aea653c1b95ab3b3",
@@ -391,7 +429,9 @@
       ],
       "concepts_tested": [
         "nondeterministic Turing machine"
-      ]
+      ],
+      "x": 0.642777,
+      "y": 0.637246
     },
     {
       "id": "5bbc1a75efc91afd",
@@ -410,7 +450,9 @@
       ],
       "concepts_tested": [
         "decidability"
-      ]
+      ],
+      "x": 0.643645,
+      "y": 0.635622
     },
     {
       "id": "decdde922ec8aee8",
@@ -429,7 +471,9 @@
       ],
       "concepts_tested": [
         "Chomsky hierarchy"
-      ]
+      ],
+      "x": 0.635983,
+      "y": 0.638097
     },
     {
       "id": "a0837c68989cfdb5",
@@ -448,7 +492,9 @@
       ],
       "concepts_tested": [
         "parse tree"
-      ]
+      ],
+      "x": 0.632703,
+      "y": 0.63184
     },
     {
       "id": "d4d1872501efc3df",
@@ -467,7 +513,9 @@
       ],
       "concepts_tested": [
         "polynomial time"
-      ]
+      ],
+      "x": 0.641376,
+      "y": 0.644777
     },
     {
       "id": "5a208c9a071e9e77",
@@ -486,7 +534,9 @@
       ],
       "concepts_tested": [
         "reduction (complexity)"
-      ]
+      ],
+      "x": 0.643548,
+      "y": 0.638587
     },
     {
       "id": "abcaf2a2d01dae29",
@@ -505,7 +555,9 @@
       ],
       "concepts_tested": [
         "pumping lemma"
-      ]
+      ],
+      "x": 0.640985,
+      "y": 0.640011
     },
     {
       "id": "4d3d24fb15f965ec",
@@ -524,7 +576,9 @@
       ],
       "concepts_tested": [
         "Church-Turing thesis"
-      ]
+      ],
+      "x": 0.637324,
+      "y": 0.640529
     },
     {
       "id": "1930d14d795dfa8a",
@@ -543,7 +597,9 @@
       ],
       "concepts_tested": [
         "diagonalization argument"
-      ]
+      ],
+      "x": 0.646039,
+      "y": 0.649929
     },
     {
       "id": "763f24c7754bbf5b",
@@ -562,7 +618,9 @@
       ],
       "concepts_tested": [
         "space complexity"
-      ]
+      ],
+      "x": 0.642295,
+      "y": 0.643935
     },
     {
       "id": "2c27323f785de954",
@@ -581,7 +639,9 @@
       ],
       "concepts_tested": [
         "Cook-Levin theorem"
-      ]
+      ],
+      "x": 0.642629,
+      "y": 0.640615
     },
     {
       "id": "5d6052a960a5a615",
@@ -600,7 +660,9 @@
       ],
       "concepts_tested": [
         "Cook-Levin theorem"
-      ]
+      ],
+      "x": 0.641679,
+      "y": 0.643574
     },
     {
       "id": "5c9fc2acfbc16a09",
@@ -619,7 +681,9 @@
       ],
       "concepts_tested": [
         "Myhill-Nerode theorem"
-      ]
+      ],
+      "x": 0.641393,
+      "y": 0.63707
     },
     {
       "id": "9c7f33ec5a64f3c6",
@@ -638,7 +702,9 @@
       ],
       "concepts_tested": [
         "Turing completeness"
-      ]
+      ],
+      "x": 0.640771,
+      "y": 0.638067
     },
     {
       "id": "23ea21ea07f35197",
@@ -657,7 +723,9 @@
       ],
       "concepts_tested": [
         "context-sensitive language"
-      ]
+      ],
+      "x": 0.636649,
+      "y": 0.635709
     },
     {
       "id": "91746668d058fb27",
@@ -676,7 +744,9 @@
       ],
       "concepts_tested": [
         "closure properties of formal languages"
-      ]
+      ],
+      "x": 0.636602,
+      "y": 0.635732
     },
     {
       "id": "78135323cb564829",
@@ -695,7 +765,9 @@
       ],
       "concepts_tested": [
         "PSPACE"
-      ]
+      ],
+      "x": 0.641562,
+      "y": 0.643375
     },
     {
       "id": "0024fc84676dd08a",
@@ -714,7 +786,9 @@
       ],
       "concepts_tested": [
         "randomized algorithm"
-      ]
+      ],
+      "x": 0.641908,
+      "y": 0.640428
     },
     {
       "id": "d12af99030ef4b58",
@@ -733,7 +807,9 @@
       ],
       "concepts_tested": [
         "amortized analysis"
-      ]
+      ],
+      "x": 0.640234,
+      "y": 0.647778
     },
     {
       "id": "1cc852d8f3656e66",
@@ -752,7 +828,9 @@
       ],
       "concepts_tested": [
         "Rice's theorem"
-      ]
+      ],
+      "x": 0.637109,
+      "y": 0.637584
     },
     {
       "id": "1ff33ad32713306b",
@@ -771,7 +849,9 @@
       ],
       "concepts_tested": [
         "oracle machine"
-      ]
+      ],
+      "x": 0.641335,
+      "y": 0.643018
     },
     {
       "id": "31f4b4ba33a433e4",
@@ -792,7 +872,9 @@
         "Kolmogorov complexity",
         "invariance theorem",
         "uncomputability"
-      ]
+      ],
+      "x": 0.652016,
+      "y": 0.643335
     },
     {
       "id": "2e994b29f73dba0c",
@@ -813,7 +895,9 @@
         "circuit complexity",
         "uniform circuits",
         "P/poly"
-      ]
+      ],
+      "x": 0.643001,
+      "y": 0.644402
     },
     {
       "id": "e46e81c2e9f696a5",
@@ -834,7 +918,9 @@
         "interactive proof system",
         "IP = PSPACE",
         "Shamir's theorem"
-      ]
+      ],
+      "x": 0.643021,
+      "y": 0.643866
     },
     {
       "id": "697aa14eee2704c6",
@@ -855,7 +941,9 @@
         "zero-knowledge proof",
         "Goldwasser-Micali-Rackoff",
         "soundness vs zero-knowledge"
-      ]
+      ],
+      "x": 0.64132,
+      "y": 0.64431
     },
     {
       "id": "6608321f4571a43c",
@@ -876,7 +964,9 @@
         "arithmetization",
         "sum-check protocol",
         "IP = PSPACE"
-      ]
+      ],
+      "x": 0.642195,
+      "y": 0.644916
     },
     {
       "id": "1a930d02ce18e133",
@@ -897,7 +987,9 @@
         "polynomial hierarchy",
         "oracle machines",
         "PH collapse"
-      ]
+      ],
+      "x": 0.64349,
+      "y": 0.645933
     },
     {
       "id": "5291e29d8ef292bb",
@@ -918,7 +1010,9 @@
         "descriptive complexity",
         "Fagin's theorem",
         "Immerman-Vardi theorem"
-      ]
+      ],
+      "x": 0.641762,
+      "y": 0.644823
     },
     {
       "id": "773e7ca17380f2e3",
@@ -939,7 +1033,9 @@
         "Savitch's theorem",
         "space complexity",
         "PSPACE = NPSPACE"
-      ]
+      ],
+      "x": 0.641389,
+      "y": 0.644262
     },
     {
       "id": "c1f086995844722d",
@@ -960,7 +1056,9 @@
         "time hierarchy theorem",
         "Hartmanis-Stearns",
         "diagonalization"
-      ]
+      ],
+      "x": 0.641064,
+      "y": 0.646108
     },
     {
       "id": "2b09ba2f2a716c56",
@@ -981,7 +1079,9 @@
         "Post correspondence problem",
         "undecidability",
         "Emil Post"
-      ]
+      ],
+      "x": 0.642022,
+      "y": 0.640886
     }
   ],
   "labels": [],

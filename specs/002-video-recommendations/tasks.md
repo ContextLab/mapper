@@ -324,34 +324,34 @@ mocks per project constitution).
 
 ### UI & Integration Tests (Playwright)
 
-- [ ] T-V064 Test video completion detection (SC-V008): Playwright test
+- [x] T-V064 Test video completion detection (SC-V008): Playwright test
   that opens the video modal, plays a short video to completion, and
   verifies the watched checkmark appears. Test across Chromium, Firefox,
   WebKit.
 
-- [ ] T-V065 [P] Visual regression — modal viewports (SC-V009): Playwright
+- [x] T-V065 [P] Visual regression — modal viewports (SC-V009): Playwright
   screenshots of video modal on desktop (1024px+), tablet (768px), and
   mobile (320px). Verify no visual overflow or broken layouts.
 
-- [ ] T-V066 [P] Test localStorage persistence (SC-V010): Playwright test
+- [x] T-V066 [P] Test localStorage persistence (SC-V010): Playwright test
   that watches a video, refreshes the page, reopens suggestions, and
   confirms the watched indicator persists.
 
-- [ ] T-V067 [P] Test recommendation load time (SC-V002): Playwright test
+- [x] T-V067 [P] Test recommendation load time (SC-V002): Playwright test
   measuring time from suggest-button click to video list rendered. Verify
   <2 seconds (with background-loaded data).
 
-- [ ] T-V068 Test player load time (SC-V007): Playwright test measuring
+- [x] T-V068 Test player load time (SC-V007): Playwright test measuring
   time from video click to playback start. Verify <3 seconds.
 
-- [ ] T-V070 [P] Test embed-blocked fallback: Playwright test that
+- [x] T-V070 [P] Test embed-blocked fallback: Playwright test that
   simulates a blocked YouTube embed (e.g., via route interception to
   block `youtube-nocookie.com`) and verifies the video title renders as
   a direct YouTube link that opens in a new tab. See edge case in spec.
 
 ### Pipeline Validation (after UMAP reducer is available)
 
-- [ ] T-V069 Pipeline validation (SC-V001): Run full pipeline. Verify output
+- [x] T-V069 Pipeline validation (SC-V001): Run full pipeline. Verify output
   covers ≥7,500 videos with valid 2D window coordinates. Verify per-domain
   file integrity: no duplicate IDs, all coordinates in [0, 1], ≥20% window
   threshold enforced.

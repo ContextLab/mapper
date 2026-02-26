@@ -5,4 +5,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
   },
+  test: {
+    exclude: ['tests/visual/**', 'node_modules/**'],
+  },
 });

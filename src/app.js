@@ -114,6 +114,11 @@ async function boot() {
 
   // Start background video catalog loading (T-V051, FR-V041)
   videoLoader.startBackgroundLoad();
+  videoLoader.getVideos().promise.then((videos) => {
+    if (renderer && videos.length > 0) {
+      renderer.setVideos(videosToMarkers(videos));
+    }
+  });
 
   const headerEl = document.getElementById('app-header');
   controls.init(headerEl);
@@ -266,6 +271,24 @@ function articlesToPoints(articles) {
     url: a.url,
     excerpt: a.excerpt || '',
   }));
+}
+
+function videosToMarkers(videos) {
+  const markers = [];
+  for (const v of videos) {
+    if (!v.windows) continue;
+    for (const [x, y] of v.windows) {
+      markers.push({
+        x,
+        y,
+        videoId: v.id,
+        title: v.title,
+        thumbnailUrl: v.thumbnail_url,
+        durationS: v.duration_s,
+      });
+    }
+  }
+  return markers;
 }
 
 function responsesToAnsweredDots(responses, qIndex) {

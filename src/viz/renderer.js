@@ -34,6 +34,7 @@ export class Renderer {
     this._heatmapEstimates = [];
     this._heatmapRegion = null;
     this._answeredData = [];
+    this._videoMarkers = [];
     this._questions = [];
     this._questionMap = new Map();
     this._estimateGrid = null; // Float64Array or null, 50*50 flat grid for O(1) lookup
@@ -229,6 +230,16 @@ export class Renderer {
    */
   setAnsweredQuestions(data) {
     this._answeredData = data || [];
+    this._render();
+  }
+
+  /**
+   * Update video markers on the map.
+   * Each marker: { x, y, videoId, title, thumbnailUrl, durationS }
+   * @param {Array<object>} markers
+   */
+  setVideos(markers) {
+    this._videoMarkers = markers || [];
     this._render();
   }
 
@@ -433,6 +444,7 @@ export class Renderer {
     ctx.scale(this._zoom, this._zoom);
 
     this._drawPoints(ctx, w, h);
+    this._drawVideos(ctx, w, h);
     this._drawAnsweredDots(ctx, w, h);
 
     ctx.restore();
@@ -584,6 +596,22 @@ export class Renderer {
       const c = d.color || [200, 200, 200, 200];
       ctx.fillStyle = `rgba(${c[0]}, ${c[1]}, ${c[2]}, ${(c[3] ?? 200) / 255})`;
       ctx.fill();
+    }
+  }
+
+  _drawVideos(ctx, w, h) {
+    if (this._videoMarkers.length === 0) return;
+
+    const size = 2.5 / this._zoom;
+    const half = size / 2;
+
+    for (const v of this._videoMarkers) {
+      const px = v.x * w;
+      const py = v.y * h;
+
+      // Draw tiny square — Khan Academy blue
+      ctx.fillStyle = 'rgba(20, 101, 166, 0.5)';
+      ctx.fillRect(px - half, py - half, size, size);
     }
   }
 
@@ -844,6 +872,15 @@ export class Renderer {
       }
     }
 
+    // Check video markers (above articles)
+    for (const v of this._videoMarkers) {
+      const dx = v.x - normX;
+      const dy = v.y - normY;
+      if (Math.sqrt(dx * dx + dy * dy) < hitRadius) {
+        return { ...v, type: 'video' };
+      }
+    }
+
     for (const p of this._points) {
       const dx = p.x - normX;
       const dy = p.y - normY;
@@ -1018,6 +1055,18 @@ export class Renderer {
         }
       }
       return { html, borderColor, interactive: !!q?.source_article };
+    }
+
+    if (hit.type === 'video') {
+      const ytUrl = `https://www.youtube.com/watch?v=${hit.videoId}`;
+      const mins = Math.floor((hit.durationS || 0) / 60);
+      const secs = (hit.durationS || 0) % 60;
+      const duration = mins > 0 ? `${mins}:${String(secs).padStart(2, '0')}` : `${secs}s`;
+      const borderColor = '#1465a6';
+      const icon = '<i class="fa-brands fa-youtube" style="color:#c4302b;font-size:0.85em;"></i>';
+      let html = `<div style="font-weight:600;margin-bottom:4px;">${icon} ${this._escapeHtml(hit.title || 'Video')}</div>`;
+      html += `<div style="font-size:0.73rem;color:var(--color-text-muted);">${duration} &middot; <a href="${ytUrl}" target="_blank" rel="noopener" style="color:#1465a6;text-decoration:underline;">Watch on YouTube</a></div>`;
+      return { html, borderColor, interactive: true };
     }
 
     if (hit.type === 'cell') {

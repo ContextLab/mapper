@@ -75,9 +75,17 @@ Test categories:
 8. **42 embedding tests** all pass (articles:7, questions:14, transcripts:12, cross-consistency:6, +UMAP tests pending)
 9. **Transcript pipeline** on tensor02 still running (~33% of 8,796 transcripts)
 
-### In Progress
-- **UMAP fitting** running in background (254K points, ~45% through 200 epochs)
-- Once UMAP completes: run export script, then verify with UMAP tests
+### IMPORTANT: Current UMAP is PROVISIONAL
+- Tensor02 transcript pipeline is only ~33% complete (~1,864 of ~8,796 transcripts)
+- Current UMAP was fit on 250K articles + 2.5K questions + 1,864 transcripts
+- **Final UMAP must be re-fit once ALL transcripts are available from tensor02**
+- Re-fit pipeline: sync remaining transcripts → embed_transcripts.py → fit_umap_joint.py → export_coords_to_domains.py
+- Sliding-window embeddings (embed_video_windows.py) are UMAP-independent and can proceed now
+- UMAP projection (project_video_coords.py) must wait for final UMAP reducer
+
+### Completed
+- UMAP fitting completed (254K points, 197.1s) — but PROVISIONAL until all transcripts available
+- All coordinates exported to 50 domain JSON files — will need re-export after final UMAP
 
 ### Key Files
 - `.venv/` — Python 3.12 with torch, sentence-transformers, umap-learn
@@ -100,6 +108,30 @@ transcripts (1.8K×768)┘                                         ├── art
 ```
 
 Video sliding windows will later use `reducer.transform()` on the trained reducer.
+
+## Sliding-Window Embedding Pipeline (Session 3)
+
+### Completed
+1. **embed_video_windows.py** — rewritten to use SentenceTransformer (consistency with pipeline)
+   - 512-word windows, 50-word stride (FR-V003, CL-002)
+   - MPS acceleration, batch processing, resume support
+   - Dry run: 1,864 videos, 27,494 windows, avg 15/video
+2. **project_video_coords.py** — UMAP transform + normalization script
+   - Batch transform, CL-038 clipping, per-video JSON output
+   - BLOCKED on final UMAP (tensor02 transcripts incomplete)
+3. **test_sliding_window_pipeline.py** — 16 tests for window creation logic + transcript coverage
+   - TestCreateWindows: 12 tests (constants, edge cases, formula, real transcripts)
+   - TestTranscriptCoverage: 4 tests (counts, window coverage)
+   - TestSlidingWindowEmbeddings: 8 tests (output validation, post-run)
+   - TestVideoCoordinates: 6 tests (coordinate output validation, post-UMAP)
+4. **Embedding run started** — processing 1,864 videos on MPS
+
+### Pipeline Status
+- embed_video_windows.py: RUNNING (Task #13)
+- project_video_coords.py: BLOCKED on final UMAP (Task #14)
+- All 56 embedding pipeline tests pass
+- All 68 JS algorithm tests pass
+- All 16 sliding-window logic tests pass
 
 ## Remaining Work
 

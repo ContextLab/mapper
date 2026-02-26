@@ -302,5 +302,9 @@ backups/embeddings.zip
 backups/large_checkpoints/level_0_final.json
 backups/large_checkpoints/level_1_after_download.json
 
+# Video pipeline working files (large binary data)
+data/videos/.working/embeddings/
+data/videos/.working/coordinates/
+
 # Python virtual environments
 .venv/

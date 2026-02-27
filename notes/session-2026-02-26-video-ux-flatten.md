@@ -89,6 +89,40 @@ Implemented the video markers/click/screenshot plan and re-ran density flattenin
 #### Tensor01
 - SSH to `tensor01.dartmouth.edu` (10.232.6.16) times out — user says IP address changed but DNS not updated yet
 
+#### UX Improvements (2026-02-27 continued)
+- **modes.js**: Auto-advance enabled by default (`autoAdvance = true`, toggle starts `on`)
+- **modes.js**: Non-auto modes (easy/hardest/dont-know) revert to auto after one answer via `revertToAutoIfNeeded()`
+- **modes.js**: Skip button text changed to "Don't know (skip)" using DOM construction (not innerHTML)
+- **share.js**: Added rotated "Estimated Knowledge" label next to colorbar
+- **share.js**: Extra newline before URL in share text (`\n\n\n`)
+- **particles.js**: Zoom-dependent repel radius: `r = REPEL_RADIUS * (1 + zoomLevel)`
+
+#### Bounding Box Fix
+- After mu=0.85 flattening, all domains had bounding boxes ≈[0,1] (full map)
+- Root cause: articles spread uniformly by flattening, but questions retain spatial locality
+- **apply_flattened_coords.py**: Rewrote `compute_bounding_box()` to use question-only 5th-95th percentile with min_span=0.15 and margin=0.05
+- Results: STEM sub-domains ~0.25×0.25, parent domains expanded via children union
+- Updated all 50 domain regions in index.json
+
+#### Loading Modal & Instant Domain Switching
+- **index.html**: Added centered loading modal (spinner + progress bar + percentage) with site theme
+- **progress.js**: Rewrote `showDownload`/`hideDownload` to use modal instead of thin progress bar
+- **app.js**: Removed loading indicator from domain switches — bundles pre-loaded in background at boot
+- **app.js**: Domain viewport now reads from registry (index.json) not stale bundle `domain.region`
+
+#### Particle Dead Zone Fix
+- **index.html**: `.landing-domain-wrapper` had `pointer-events: auto`, blocking a 521×47px band around dropdown
+- Fix: removed `.landing-domain-wrapper` from pointer-events rule — only `.custom-select` gets auto
+- **particles.js**: Reduced `REPEL_RADIUS` from 20 to 10 (~20px effective at default zoom)
+
+## Next Steps: Full Pipeline Refresh
+1. **Tensor02 transcripts**: Wait for remaining ~425 videos to finish processing
+2. **Sync transcripts**: Pull completed transcripts from tensor02
+3. **Embed new content**: Run embedding pipeline on new transcripts
+4. **Re-fit UMAP**: Joint UMAP on articles + questions + transcripts with new data
+5. **Re-flatten**: Run density flattening (mu=0.85) on updated coordinates
+6. **Update demo**: Apply flattened coords to all domain JSONs + catalog, recompute bounding boxes
+
 ## Notes
 - Bounding boxes expanded significantly after flattening (e.g. astrophysics x=[0.042, 0.296] to x=[0.005, 0.988])
 - cognitive-psychology.json has title-only articles (no x,y) — handled gracefully

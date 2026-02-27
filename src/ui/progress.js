@@ -3,68 +3,39 @@
 let confidenceWrapper = null;
 let confidenceFill = null;
 let confidenceText = null;
-let downloadText = null;
 let hideTimeout = null;
 
 export function showDownload(loaded, total) {
-  const overlay = document.getElementById('progress-overlay');
-  if (!overlay) return;
+  const modal = document.getElementById('loading-modal');
+  const text = document.getElementById('loading-modal-text');
+  const fill = document.getElementById('loading-modal-fill');
+  if (!modal) return;
 
   if (hideTimeout) {
     clearTimeout(hideTimeout);
     hideTimeout = null;
   }
 
-  // Ensure text element exists
-  if (!downloadText) {
-    downloadText = document.createElement('div');
-    Object.assign(downloadText.style, {
-      position: 'absolute',
-      top: '8px',
-      right: '10px',
-      fontSize: '12px',
-      fontFamily: 'var(--font-body)',
-      color: 'var(--color-secondary)',
-      fontWeight: '600',
-      pointerEvents: 'none',
-      textShadow: '0 0 6px var(--color-glow-secondary)'
-    });
-    overlay.appendChild(downloadText);
-  }
-
-  overlay.style.display = 'block';
-  overlay.style.opacity = '1';
-  overlay.style.backgroundColor = 'var(--color-primary)';
-  overlay.style.transition = 'width 0.2s ease, opacity 0.3s ease';
-  overlay.style.overflow = 'visible';
+  modal.removeAttribute('hidden');
 
   let percent = 0;
   if (total && total > 0) {
     percent = Math.min(100, Math.max(0, (loaded / total) * 100));
-    overlay.style.width = `${percent}%`;
-    downloadText.textContent = `Loading… ${Math.round(percent)}%`;
+    if (text) text.textContent = `Loading… ${Math.round(percent)}%`;
+    if (fill) fill.style.width = `${percent}%`;
   } else {
-    overlay.style.width = '100%';
-    downloadText.textContent = 'Loading…';
+    if (text) text.textContent = 'Loading…';
+    if (fill) fill.style.width = '0%';
   }
-  
-  downloadText.style.display = 'block';
 }
 
 export function hideDownload() {
-  const overlay = document.getElementById('progress-overlay');
-  if (!overlay) return;
+  const modal = document.getElementById('loading-modal');
+  if (!modal) return;
 
-  overlay.style.opacity = '0';
-  
-  if (downloadText) {
-    downloadText.style.display = 'none';
-  }
-
-  hideTimeout = setTimeout(() => {
-    overlay.style.width = '0%';
-    hideTimeout = null;
-  }, 300);
+  modal.setAttribute('hidden', '');
+  const fill = document.getElementById('loading-modal-fill');
+  if (fill) fill.style.width = '0%';
 }
 
 export function initConfidence(container) {

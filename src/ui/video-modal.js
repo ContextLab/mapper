@@ -116,6 +116,74 @@ export function onVideoComplete(callback) {
   onVideoCompleteCb = callback;
 }
 
+/**
+ * Open the modal directly in player view for a single video (from map click).
+ * No list view, no gain indicator — just a "Back to map" header + player.
+ *
+ * @param {{ id: string, title: string, duration_s?: number, thumbnail_url?: string }} video
+ */
+export function playVideo(video) {
+  if (!modalEl) init();
+
+  currentVideos = [];
+  currentView = 'player';
+  listContainerEl.hidden = true;
+  playerContainerEl.hidden = false;
+  playerContainerEl.textContent = '';
+  modalEl.hidden = false;
+
+  // Header with close button (no gain indicator)
+  const header = document.createElement('div');
+  header.className = 'video-player-header';
+
+  const backBtn = document.createElement('button');
+  backBtn.className = 'video-back-btn';
+  backBtn.type = 'button';
+  const backIcon = document.createElement('i');
+  backIcon.className = 'fa-solid fa-arrow-left';
+  backBtn.appendChild(backIcon);
+  backBtn.appendChild(document.createTextNode(' Back to map'));
+  backBtn.addEventListener('click', hide);
+
+  header.appendChild(backBtn);
+  playerContainerEl.appendChild(header);
+
+  // Video title
+  const titleDiv = document.createElement('div');
+  titleDiv.className = 'video-player-title';
+  titleDiv.textContent = video.title || 'Video';
+  playerContainerEl.appendChild(titleDiv);
+
+  // Player frame container
+  const frameDiv = document.createElement('div');
+  frameDiv.id = 'video-player-frame';
+  frameDiv.className = 'video-player-frame';
+  playerContainerEl.appendChild(frameDiv);
+
+  // Speed controls
+  const speedDiv = document.createElement('div');
+  speedDiv.className = 'video-speed-controls';
+
+  for (const s of SPEED_OPTIONS) {
+    const btn = document.createElement('button');
+    btn.className = 'speed-btn' + (s === 1 ? ' active' : '');
+    btn.dataset.speed = String(s);
+    btn.textContent = `${s}\u00D7`;
+    btn.addEventListener('click', () => {
+      if (ytPlayer && ytPlayer.setPlaybackRate) {
+        ytPlayer.setPlaybackRate(s);
+        speedDiv.querySelectorAll('.speed-btn').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+    });
+    speedDiv.appendChild(btn);
+  }
+
+  playerContainerEl.appendChild(speedDiv);
+
+  loadYouTubePlayer(video.id, 'video-player-frame');
+}
+
 // ─── List View (T-V040, T-V041) ────────────────────────────
 
 function showListView() {

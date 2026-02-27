@@ -32,7 +32,7 @@ import * as share from './ui/share.js';
 import * as videoModal from './ui/video-modal.js';
 import * as videoLoader from './domain/video-loader.js';
 import { computeRanking, takeSnapshot, handlePostVideoQuestion } from './learning/video-recommender.js';
-import { showDownload, hideDownload, updateConfidence, initConfidence } from './ui/progress.js';
+import { updateConfidence, initConfidence } from './ui/progress.js';
 import { announce, setupKeyboardNav } from './utils/accessibility.js';
 
 const GLOBAL_REGION = { x_min: 0, x_max: 1, y_min: 0, y_max: 1 };
@@ -113,12 +113,21 @@ async function boot() {
   }
 
   // Start background video catalog loading (T-V051, FR-V041)
+  // Videos are set on the renderer only after map initialization (in switchDomain)
+  // so they don't appear as static gray squares on the welcome screen.
+  // The particle system handles welcome-screen display (green, dodge, zoom).
   videoLoader.startBackgroundLoad();
   videoLoader.getVideos().promise.then((videos) => {
-    if (renderer && videos.length > 0) {
+    if (renderer && videos.length > 0 && mapInitialized) {
       renderer.setVideos(videosToMarkers(videos));
     }
   });
+
+  // Pre-load all domain bundles in the background so domain switches are instant.
+  const allDomainIds = registry.getDomains().map(d => d.id).filter(id => id !== 'all');
+  for (const id of allDomainIds) {
+    loadDomain(id, {}).catch(() => {});  // silent — will retry on demand
+  }
 
   const headerEl = document.getElementById('app-header');
   controls.init(headerEl);
@@ -140,6 +149,15 @@ async function boot() {
   renderer.onReanswer((questionId) => {
     const q = questionIndex.get(questionId);
     if (q) quiz.showQuestion(q);
+  });
+
+  renderer.onVideoClick((hit) => {
+    videoModal.playVideo({
+      id: hit.videoId,
+      title: hit.title,
+      duration_s: hit.durationS,
+      thumbnail_url: hit.thumbnailUrl,
+    });
   });
 
   modes.init(quizPanel);
@@ -198,7 +216,17 @@ async function boot() {
     const answeredQuestions = responses
       .filter(r => r.x != null && r.y != null)
       .map(r => ({ x: r.x, y: r.y, isCorrect: r.is_correct, isSkipped: !!r.is_skipped }));
-    return { estimateGrid: grid, articles, answeredQuestions };
+    const { data: videoData } = videoLoader.getVideos();
+    const videos = [];
+    if (videoData) {
+      for (const v of videoData) {
+        if (!v.windows) continue;
+        for (const [x, y] of v.windows) {
+          videos.push({ x, y });
+        }
+      }
+    }
+    return { estimateGrid: grid, articles, answeredQuestions, videos };
   });
 
   const minimapContainer = document.getElementById('minimap-container');
@@ -338,24 +366,22 @@ async function switchDomain(domainId) {
 
   if (!allDomainBundle) return;
 
-  // Look up the target domain's region for viewport navigation.
-  // Load the domain JSON (cached after first fetch) just for its region metadata.
+  // Look up the target domain's region from the registry (index.json)
+  // — the single source of truth for bounding boxes.
   let targetRegion = GLOBAL_REGION;
+  const registryEntry = registry.getDomain(domainId);
+  if (registryEntry && registryEntry.region) {
+    targetRegion = registryEntry.region;
+  }
+
+  // Ensure the domain bundle is loaded/cached (for questions & labels).
+  // Bundles are pre-loaded in the background after boot, so this is usually instant.
   try {
-    const bundle = await loadDomain(domainId, {
-      onProgress: ({ loaded, total }) => showDownload(loaded, total),
-      onError: (err) => {
-        console.error('[app] Domain load failed:', err);
-        announce(`Failed to load domain. ${err.message}`);
-      },
-    });
+    await loadDomain(domainId, {});
     if (generation !== switchGeneration) return;
-    if (bundle && bundle.domain && bundle.domain.region) {
-      targetRegion = bundle.domain.region;
-    }
   } catch (err) {
     if (generation === switchGeneration) {
-      console.error('[app] switchDomain region lookup failed:', err);
+      console.error('[app] switchDomain load failed:', err);
     }
   }
 
@@ -396,6 +422,12 @@ async function switchDomain(domainId) {
     renderer.setAnsweredQuestions(responsesToAnsweredDots($responses.get(), questionIndex));
 
     mapInitialized = true;
+
+    // Set video markers now that the map is initialized
+    const { data: earlyVideos } = videoLoader.getVideos();
+    if (earlyVideos && earlyVideos.length > 0) {
+      renderer.setVideos(videosToMarkers(earlyVideos));
+    }
   }
 
   // Aggregate questions for this domain + all descendants (CL-049)
@@ -431,7 +463,6 @@ async function switchDomain(domainId) {
   toggleQuizPanel(true);
   const toggleBtn = document.getElementById('quiz-toggle');
   if (toggleBtn) toggleBtn.removeAttribute('hidden');
-  hideDownload();
   controls.showActionButtons();
 
   const domainName = registry.getDomains().find(d => d.id === domainId)?.name || domainId;
@@ -526,6 +557,9 @@ function handleAnswer(selectedKey, question) {
 
   const coverage = Math.round($coverage.get() * 100);
   announce(`${feedback} ${coverage}% mapped.`);
+
+  // Revert non-auto modes (easy/hardest/dont-know) back to auto after one answer
+  modes.revertToAutoIfNeeded();
 
   // Auto-advance after a short delay if the toggle is on
   if (modes.isAutoAdvance()) {

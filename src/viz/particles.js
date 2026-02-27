@@ -4,10 +4,10 @@
  * and mouse-repulsion physics.
  */
 
-const PARTICLE_COUNT = 3000;
+const PARTICLE_COUNT = 2500;
 const SPRING = 0.012;
 const FRICTION = 0.94;
-const REPEL_RADIUS = 12.5;
+const REPEL_RADIUS = 10;
 const REPEL_FORCE = 4;
 const PARTICLE_SIZE = 1.5;
 
@@ -65,7 +65,23 @@ export class ParticleSystem {
       if (!res.ok) throw new Error(`Failed to fetch: ${res.status}`);
       const bundle = await res.json();
       const articles = bundle.articles || [];
-      this._initParticles(articles);
+
+      // Also load video catalog and merge window coordinates as particles
+      let videoPoints = [];
+      try {
+        const vRes = await fetch(`${basePath}data/videos/catalog.json`);
+        if (vRes.ok) {
+          const videos = await vRes.json();
+          for (const v of videos) {
+            if (!v.windows) continue;
+            for (const [x, y] of v.windows) {
+              videoPoints.push({ x, y });
+            }
+          }
+        }
+      } catch { /* video catalog optional */ }
+
+      this._initParticles(articles, videoPoints);
       this.running = true;
       this.raf = requestAnimationFrame(this._tick);
     } catch (err) {
@@ -73,10 +89,23 @@ export class ParticleSystem {
     }
   }
 
-  _initParticles(articles) {
-    const shuffled = articles.length > PARTICLE_COUNT
-      ? articles.sort(() => Math.random() - 0.5).slice(0, PARTICLE_COUNT)
-      : [...articles];
+  _initParticles(articles, videoPoints = []) {
+    // Subsample with balanced representation: articles get at least 70% of slots
+    const articlePts = articles.map(a => ({ x: a.x || Math.random(), y: a.y || Math.random() }));
+    const videoPts = videoPoints.map(v => ({ x: v.x, y: v.y }));
+
+    let shuffled;
+    const total = articlePts.length + videoPts.length;
+    if (total <= PARTICLE_COUNT) {
+      shuffled = [...articlePts, ...videoPts];
+    } else {
+      // Articles get 70% of budget, videos 30% (prevents video-dominated clustering)
+      const artBudget = Math.min(articlePts.length, Math.floor(PARTICLE_COUNT * 0.7));
+      const vidBudget = Math.min(videoPts.length, PARTICLE_COUNT - artBudget);
+      const artSample = articlePts.sort(() => Math.random() - 0.5).slice(0, artBudget);
+      const vidSample = videoPts.sort(() => Math.random() - 0.5).slice(0, vidBudget);
+      shuffled = [...artSample, ...vidSample].sort(() => Math.random() - 0.5);
+    }
 
     const w = this.canvas.width / (window.devicePixelRatio || 1);
     const h = this.canvas.height / (window.devicePixelRatio || 1);
@@ -84,8 +113,8 @@ export class ParticleSystem {
     let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
 
     const rawParticles = shuffled.map(a => {
-      const pctX = a.x || Math.random();
-      const pctY = a.y || Math.random();
+      const pctX = a.x;
+      const pctY = a.y;
       if (pctX < minX) minX = pctX;
       if (pctX > maxX) maxX = pctX;
       if (pctY < minY) minY = pctY;
@@ -235,21 +264,56 @@ export class ParticleSystem {
   _update() {
     const mx = this.mouse.x;
     const my = this.mouse.y;
-    const rSq = REPEL_RADIUS * REPEL_RADIUS;
+
+    // Scale repel radius with zoom: larger when zoomed out (dense clusters),
+    // smaller when zoomed in (particles are spread out)
+    const fullW = this._boundsMaxX - this._boundsMinX || 1;
+    const zoomLevel = this.viewW / fullW; // 1.0 = default, <1 = zoomed in
+    const r = REPEL_RADIUS * (1 + zoomLevel); // 20px at default, ~13px at 3x zoom
+    const rSq = r * r;
 
     for (const p of this.particles) {
-      p.vx += (p.homeX - p.x) * SPRING;
-      p.vy += (p.homeY - p.y) * SPRING;
+      // Compute effective home: shift away from cursor so spring cooperates with repulsion
+      let hx = p.homeX;
+      let hy = p.homeY;
+
+      if (this.mouse.active) {
+        const hdx = hx - mx;
+        const hdy = hy - my;
+        const hDistSq = hdx * hdx + hdy * hdy;
+        if (hDistSq < rSq) {
+          const hDist = Math.sqrt(hDistSq);
+          if (hDist < 0.5) {
+            const angle = p._repelAngle || (p._repelAngle = Math.random() * Math.PI * 2);
+            hx = mx + Math.cos(angle) * r;
+            hy = my + Math.sin(angle) * r;
+          } else {
+            hx = mx + (hdx / hDist) * r;
+            hy = my + (hdy / hDist) * r;
+          }
+        }
+      } else {
+        p._repelAngle = 0;
+      }
+
+      p.vx += (hx - p.x) * SPRING;
+      p.vy += (hy - p.y) * SPRING;
 
       if (this.mouse.active) {
         const dx = p.x - mx;
         const dy = p.y - my;
         const distSq = dx * dx + dy * dy;
-        if (distSq < rSq && distSq > 1) {
+        if (distSq < rSq) {
           const dist = Math.sqrt(distSq);
-          const force = (1 - dist / REPEL_RADIUS) * REPEL_FORCE;
-          p.vx += (dx / dist) * force;
-          p.vy += (dy / dist) * force;
+          if (dist < 0.5) {
+            const angle = p._repelAngle || Math.random() * Math.PI * 2;
+            p.vx += Math.cos(angle) * REPEL_FORCE;
+            p.vy += Math.sin(angle) * REPEL_FORCE;
+          } else {
+            const force = (1 - dist / r) * REPEL_FORCE;
+            p.vx += (dx / dist) * force;
+            p.vy += (dy / dist) * force;
+          }
         }
       }
 

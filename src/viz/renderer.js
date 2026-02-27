@@ -35,6 +35,8 @@ export class Renderer {
     this._heatmapRegion = null;
     this._answeredData = [];
     this._videoMarkers = [];
+    this._videoTrajectories = new Map(); // videoId → [{x, y}] in temporal order
+    this._hoveredVideoId = null;
     this._questions = [];
     this._questionMap = new Map();
     this._estimateGrid = null; // Float64Array or null, 50*50 flat grid for O(1) lookup
@@ -50,6 +52,7 @@ export class Renderer {
     this._resizeObserver = null;
 
     this._onReanswer = null;
+    this._onVideoClick = null;
     this._onViewportChange = null;
     this._onCellClick = null;
 
@@ -240,6 +243,14 @@ export class Renderer {
    */
   setVideos(markers) {
     this._videoMarkers = markers || [];
+    // Build trajectory lookup: videoId → [{x, y}] in temporal order
+    this._videoTrajectories = new Map();
+    for (const m of this._videoMarkers) {
+      if (!this._videoTrajectories.has(m.videoId)) {
+        this._videoTrajectories.set(m.videoId, []);
+      }
+      this._videoTrajectories.get(m.videoId).push({ x: m.x, y: m.y });
+    }
     this._render();
   }
 
@@ -249,6 +260,10 @@ export class Renderer {
    */
   onReanswer(handler) {
     this._onReanswer = handler;
+  }
+
+  onVideoClick(handler) {
+    this._onVideoClick = handler;
   }
 
   addQuestions(questions) {
@@ -445,6 +460,7 @@ export class Renderer {
 
     this._drawPoints(ctx, w, h);
     this._drawVideos(ctx, w, h);
+    this._drawVideoTrajectory(ctx, w, h);
     this._drawAnsweredDots(ctx, w, h);
 
     ctx.restore();
@@ -602,17 +618,73 @@ export class Renderer {
   _drawVideos(ctx, w, h) {
     if (this._videoMarkers.length === 0) return;
 
-    const size = 2.5 / this._zoom;
+    const size = 2.0 / this._zoom;
     const half = size / 2;
 
+    ctx.fillStyle = `rgba(148, 163, 184, ${5 / 255})`;
     for (const v of this._videoMarkers) {
       const px = v.x * w;
       const py = v.y * h;
-
-      // Draw tiny square — Khan Academy blue
-      ctx.fillStyle = 'rgba(20, 101, 166, 0.5)';
       ctx.fillRect(px - half, py - half, size, size);
     }
+  }
+
+  _drawVideoTrajectory(ctx, w, h) {
+    if (!this._hoveredVideoId) return;
+    const pts = this._videoTrajectories.get(this._hoveredVideoId);
+    if (!pts || pts.length < 2) return;
+
+    // Convert to pixel coords
+    const px = pts.map(p => ({ x: p.x * w, y: p.y * h }));
+
+    // Draw the spline path
+    ctx.save();
+    ctx.lineWidth = 1.5 / this._zoom;
+    ctx.strokeStyle = 'rgba(148, 163, 184, 0.6)';
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+
+    ctx.beginPath();
+    if (px.length === 2) {
+      // Just a straight line for 2 points
+      ctx.moveTo(px[0].x, px[0].y);
+      ctx.lineTo(px[1].x, px[1].y);
+    } else {
+      // Catmull-Rom spline through all points
+      ctx.moveTo(px[0].x, px[0].y);
+      for (let i = 0; i < px.length - 1; i++) {
+        const p0 = px[Math.max(i - 1, 0)];
+        const p1 = px[i];
+        const p2 = px[i + 1];
+        const p3 = px[Math.min(i + 2, px.length - 1)];
+        // Catmull-Rom to cubic bezier conversion (alpha=0.5)
+        const cp1x = p1.x + (p2.x - p0.x) / 6;
+        const cp1y = p1.y + (p2.y - p0.y) / 6;
+        const cp2x = p2.x - (p3.x - p1.x) / 6;
+        const cp2y = p2.y - (p3.y - p1.y) / 6;
+        ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, p2.x, p2.y);
+      }
+    }
+    ctx.stroke();
+
+    // Draw window dots along the path
+    const dotR = 2.0 / this._zoom;
+    for (let i = 0; i < px.length; i++) {
+      const alpha = 0.3 + 0.5 * (i / (px.length - 1)); // fade in along trajectory
+      ctx.beginPath();
+      ctx.arc(px[i].x, px[i].y, dotR, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(148, 163, 184, ${alpha})`;
+      ctx.fill();
+    }
+
+    // Highlight start with a small ring
+    ctx.beginPath();
+    ctx.arc(px[0].x, px[0].y, 3.5 / this._zoom, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(148, 163, 184, 0.8)';
+    ctx.lineWidth = 1.0 / this._zoom;
+    ctx.stroke();
+
+    ctx.restore();
   }
 
   _initColorbarDrag() {
@@ -806,14 +878,21 @@ export class Renderer {
     }
 
     const hit = this._hitTest(mx, my);
+    const prevHoveredVideoId = this._hoveredVideoId;
     if (hit) {
       this._hoveredPoint = hit;
+      this._hoveredVideoId = hit.type === 'video' ? hit.videoId : null;
       this._canvas.style.cursor = 'pointer';
       this._showTooltip(this._buildTooltipHTML(hit), e.clientX - rect.left, e.clientY - rect.top);
     } else {
       this._hoveredPoint = null;
+      this._hoveredVideoId = null;
       this._canvas.style.cursor = '';
       this._hideTooltip();
+    }
+    // Re-render when trajectory visibility changes
+    if (this._hoveredVideoId !== prevHoveredVideoId) {
+      this._render();
     }
   }
 
@@ -837,6 +916,11 @@ export class Renderer {
     if (!hit) return;
 
     if (hit.questionId) return;
+
+    if (hit.type === 'video') {
+      if (this._onVideoClick) this._onVideoClick(hit);
+      return;
+    }
 
     if (hit.url) {
       this._openInBackground(hit.url);
@@ -877,7 +961,14 @@ export class Renderer {
       const dx = v.x - normX;
       const dy = v.y - normY;
       if (Math.sqrt(dx * dx + dy * dy) < hitRadius) {
-        return { ...v, type: 'video' };
+        let estimateValue = 0.5;
+        if (this._estimateGrid && v.x >= 0 && v.x < 1 && v.y >= 0 && v.y < 1) {
+          const N = 50;
+          const egx = Math.min(N - 1, Math.floor(v.x * N));
+          const egy = Math.min(N - 1, Math.floor(v.y * N));
+          estimateValue = this._estimateGrid[egy * N + egx];
+        }
+        return { ...v, type: 'video', estimateValue };
       }
     }
 
@@ -1058,14 +1149,20 @@ export class Renderer {
     }
 
     if (hit.type === 'video') {
-      const ytUrl = `https://www.youtube.com/watch?v=${hit.videoId}`;
       const mins = Math.floor((hit.durationS || 0) / 60);
       const secs = (hit.durationS || 0) % 60;
       const duration = mins > 0 ? `${mins}:${String(secs).padStart(2, '0')}` : `${secs}s`;
-      const borderColor = '#1465a6';
+      const level = this._knowledgeLevelLabel(hit.estimateValue ?? 0.5);
+      const [cr, cg, cb] = valueToColor(hit.estimateValue ?? 0.5);
+      const borderColor = `rgb(${cr},${cg},${cb})`;
       const icon = '<i class="fa-brands fa-youtube" style="color:#c4302b;font-size:0.85em;"></i>';
       let html = `<div style="font-weight:600;margin-bottom:4px;">${icon} ${this._escapeHtml(hit.title || 'Video')}</div>`;
-      html += `<div style="font-size:0.73rem;color:var(--color-text-muted);">${duration} &middot; <a href="${ytUrl}" target="_blank" rel="noopener" style="color:#1465a6;text-decoration:underline;">Watch on YouTube</a></div>`;
+      html += `<div style="font-size:0.73rem;color:var(--color-text-muted);">${duration} &middot; Click to play</div>`;
+      const trajectory = this._videoTrajectories.get(hit.videoId);
+      if (trajectory && trajectory.length > 1) {
+        html += `<div style="font-size:0.68rem;margin-top:3px;color:var(--color-text-muted);opacity:0.7;">${trajectory.length} segments &middot; trajectory shown</div>`;
+      }
+      html += `<div style="font-size:0.68rem;margin-top:3px;color:var(--color-text-muted);opacity:0.7;">Estimated knowledge: ${level}</div>`;
       return { html, borderColor, interactive: true };
     }
 

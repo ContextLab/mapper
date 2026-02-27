@@ -126,8 +126,8 @@ def compute_density_stats(coords: np.ndarray, grid_size: int = 50) -> dict:
     """Compute density statistics on a grid."""
     # Clip to [0, 1] for binning
     clipped = np.clip(coords, 0, 1 - 1e-10)
-    cell_x = (clipped[:, 0] * grid_size).astype(int)
-    cell_y = (clipped[:, 1] * grid_size).astype(int)
+    cell_x = np.clip((clipped[:, 0] * grid_size).astype(int), 0, grid_size - 1)
+    cell_y = np.clip((clipped[:, 1] * grid_size).astype(int), 0, grid_size - 1)
 
     grid = np.zeros((grid_size, grid_size), dtype=int)
     for cx, cy in zip(cell_x, cell_y):

@@ -256,11 +256,28 @@
         .landing-content a:hover {
             color: var(--color-primary-light);
         }
-        .landing-domain-wrapper {
+        .landing-start-btn {
             margin-top: 2rem;
-            margin-bottom: 0.5rem;
-            display: flex;
-            justify-content: center;
+            padding: 0.85rem 2.5rem;
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            background: var(--color-primary);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+            box-shadow: 0 4px 12px rgba(0, 105, 62, 0.3);
+        }
+        .landing-start-btn:hover {
+            background: var(--color-primary-light);
+            box-shadow: 0 6px 20px rgba(0, 105, 62, 0.4);
+            transform: translateY(-1px);
+        }
+        .landing-start-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(0, 105, 62, 0.3);
         }
         .custom-select {
             position: relative;
@@ -293,9 +310,6 @@
             font-size: 0.65rem;
             color: var(--color-text-muted);
             transition: transform 0.2s;
-        }
-        .custom-select--landing .custom-select-arrow {
-            font-size: 1.1rem;
         }
         .custom-select.open .custom-select-arrow {
             transform: rotate(180deg);
@@ -343,47 +357,6 @@
         .custom-select-option--child:hover,
         .custom-select-option--child.focused {
             color: var(--color-primary);
-        }
-        .custom-select--landing .custom-select-trigger {
-            font-size: 1rem;
-            padding: 0.75rem 1.25rem;
-            border-radius: 8px;
-            border-color: var(--color-primary);
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            min-width: 280px;
-            justify-content: center;
-            max-width: none;
-        }
-        .custom-select--landing .custom-select-trigger:focus {
-            border-color: var(--color-secondary);
-            box-shadow: 0 0 0 3px rgba(0,105,62,0.2);
-        }
-        .custom-select--landing .custom-select-options {
-            text-align: left;
-        }
-        .custom-select--landing .custom-select-option {
-            font-size: 0.95rem;
-            padding: 0.6rem 1rem;
-        }
-
-        .landing-cta {
-            margin-top: 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--color-primary);
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-        .landing-cta i {
-            font-size: 1.25rem;
-            animation: bounce 2s infinite;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
         }
 
         #quiz-panel {
@@ -801,14 +774,7 @@
                         Click <a href="#" id="landing-info-link" style="white-space:nowrap;"><i class="fa-solid fa-circle-info" style="margin: 0 2px;"></i> info</a> in the upper right to learn more, or read our <a href="https://psyarxiv.com/dh3q2" target="_blank" rel="noopener">research paper</a>.
                     </p>
 
-                    <div class="landing-domain-wrapper" id="landing-domain-wrapper">
-                        <!-- Populated by controls.js -->
-                    </div>
-
-                    <div class="landing-cta">
-                        <i class="fa-solid fa-arrow-up"></i>
-                        <span>Which region of your knowledge map should we explore first?</span>
-                    </div>
+                    <button id="landing-start-btn" class="landing-start-btn">Map my knowledge!</button>
                 </div>
             </section>
 

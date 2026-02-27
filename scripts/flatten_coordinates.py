@@ -710,10 +710,10 @@ def main():
         else project_root / "embeddings"
     )
 
-    article_path = emb_dir / "umap_article_coords.pkl"
-    question_path = emb_dir / "umap_question_coords.pkl"
-    output_article_path = emb_dir / "umap_article_coords_flat.pkl"
-    output_question_path = emb_dir / "umap_question_coords_flat.pkl"
+    article_path = emb_dir / "article_coords.pkl"
+    question_path = emb_dir / "question_coords.pkl"
+    output_article_path = emb_dir / "article_coords_flat.pkl"
+    output_question_path = emb_dir / "question_coords_flat.pkl"
 
     # Load coordinates
     print("Loading coordinates...")
@@ -771,8 +771,7 @@ def main():
     flat_article_data = {
         "coords": flat_articles,
         "coords_original": article_coords,
-        "titles": article_data["titles"],
-        "num_articles": article_data["num_articles"],
+        "n_points": len(flat_articles),
         "timestamp": datetime.now().isoformat(),
         "flatten_params": info,
     }
@@ -786,8 +785,7 @@ def main():
     flat_question_data = {
         "coords": flat_questions,
         "coords_original": question_coords,
-        "question_ids": question_data["question_ids"],
-        "num_questions": question_data["num_questions"],
+        "n_points": len(flat_questions),
         "timestamp": datetime.now().isoformat(),
         "flatten_params": info,
     }

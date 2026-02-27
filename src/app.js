@@ -136,9 +136,9 @@ async function boot() {
   controls.onExport(handleExport);
   controls.onImport(handleImport);
 
-  const landingWrapper = document.getElementById('landing-domain-wrapper');
-  if (landingWrapper) {
-    controls.createLandingSelector(landingWrapper, (domainId) => $activeDomain.set(domainId));
+  const landingStartBtn = document.getElementById('landing-start-btn');
+  if (landingStartBtn) {
+    landingStartBtn.addEventListener('click', () => $activeDomain.set('all'));
   }
 
   const quizPanel = document.getElementById('quiz-panel');
@@ -624,6 +624,7 @@ function handleReset() {
   globalEstimator.reset();
   globalEstimator.init(GLOBAL_GRID_SIZE, GLOBAL_REGION);
   renderer.setPoints([]);
+  renderer.setVideos([]);
   renderer.setHeatmap([], GLOBAL_REGION);
   renderer.setLabels([]);
   renderer.setAnsweredQuestions([]);

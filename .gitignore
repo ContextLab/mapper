@@ -229,7 +229,9 @@ embeddings/umap_bounds.pkl
 embeddings/question_embeddings_2500.pkl
 embeddings/transcript_embeddings.pkl
 embeddings/article_coords.pkl
+embeddings/article_coords_flat.pkl
 embeddings/question_coords.pkl
+embeddings/question_coords_flat.pkl
 embeddings/transcript_coords.pkl
 embeddings/article_registry.pkl
 *.credentials
@@ -303,6 +305,7 @@ backups/large_checkpoints/level_1_after_download.json
 
 # Video pipeline working files
 data/videos/.working/coordinates/
+data/videos/.working/embeddings/
 data/videos/.working/audio_cache/
 data/videos/transcripts_raw/
 data/videos/transcripts/

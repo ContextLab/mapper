@@ -123,8 +123,8 @@ def main():
 
     # --- Load flattened pickles ---
     print("Loading flattened coordinate pickles...")
-    art_pkl = load_pickle("article_coords.pkl")
-    q_pkl = load_pickle("question_coords.pkl")
+    art_pkl = load_pickle("article_coords_flat.pkl")
+    q_pkl = load_pickle("question_coords_flat.pkl")
 
     art_orig = art_pkl["coords_original"]
     art_flat = art_pkl["coords"]
@@ -134,27 +134,17 @@ def main():
     print(f"  Articles:    {art_orig.shape[0]:,} original → {art_flat.shape[0]:,} flattened")
     print(f"  Questions:   {q_orig.shape[0]:,} original → {q_flat.shape[0]:,} flattened")
 
-    trans_remap = None
+    t_orig_coords = None
     try:
         t_pkl = load_pickle("transcript_coords.pkl")
-        t_orig = t_pkl["coords_original"]
-        t_flat = t_pkl["coords"]
-        print(f"  Transcripts: {t_orig.shape[0]:,} original → {t_flat.shape[0]:,} flattened")
-        trans_remap = build_remap(t_orig, t_flat)
+        t_orig_coords = t_pkl["coords"]
+        print(f"  Transcripts: {t_orig_coords.shape[0]:,} (will remap via article displacement field)")
     except FileNotFoundError:
         print("  No transcript coords found — skipping video catalog")
 
     # --- Build remap functions ---
     print("\nBuilding KD-trees...")
-    # Merge article + transcript originals for article remap (they were flattened together)
-    if trans_remap is not None:
-        merged_orig = np.vstack([art_orig, t_pkl["coords_original"]])
-        merged_flat = np.vstack([art_flat, t_pkl["coords"]])
-    else:
-        merged_orig = art_orig
-        merged_flat = art_flat
-
-    art_remap = build_remap(merged_orig, merged_flat)
+    art_remap = build_remap(art_orig, art_flat)
     q_remap = build_remap(q_orig, q_flat)
     print("  Done")
 
@@ -193,7 +183,7 @@ def main():
     print(f"  Total questions updated: {total_q_updated:,} (missed: {total_q_missed})")
 
     # --- Update video catalog ---
-    if trans_remap is not None and VIDEO_CATALOG.exists():
+    if t_orig_coords is not None and VIDEO_CATALOG.exists():
         print("\nUpdating video catalog...")
         with open(VIDEO_CATALOG) as f:
             catalog = json.load(f)
@@ -205,7 +195,7 @@ def main():
                 continue
             new_windows = []
             for win in video["windows"]:
-                nx, ny = trans_remap(win[0], win[1])
+                nx, ny = art_remap(win[0], win[1])
                 if nx is not None:
                     new_windows.append([round(nx, 6), round(ny, 6)])
                     vid_updated += 1

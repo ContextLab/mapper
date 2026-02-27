@@ -1,174 +1,226 @@
 # PROJECT KNOWLEDGE BASE
 
-**Generated:** 2026-02-16 13:54 UTC
-**Commit:** d3cc534
-**Branch:** main
+**Updated:** 2026-02-27
+**Branch:** generate-astrophysics-questions (main development branch)
 
 ## OVERVIEW
 
-Wikipedia Knowledge Map: distributed GPU pipeline that generates semantic embeddings for 250K Wikipedia articles, projects them to 2D via UMAP, enriches cells with LLM-generated labels/questions across 5 difficulty levels, and serves an interactive adaptive quiz visualization. Stack: Python (sentence-transformers, UMAP, OpenAI Batch API, TensorFlow 2.19) + vanilla HTML/JS frontend.
+Knowledge Mapper: interactive adaptive quiz that maps conceptual knowledge across 250K Wikipedia articles and 5,000+ Khan Academy video transcripts. Users answer domain-specific questions while a Bayesian estimator interpolates knowledge across a 2D UMAP projection, rendering a real-time heatmap. Videos are recommended based on knowledge gaps. Stack: Vite + vanilla JS (frontend), Python 3.11+ (data pipeline), SentenceTransformer embeddings, UMAP projection, density flattening via optimal transport.
+
+**Live demo:** https://contextlab.github.io/mapper/
 
 ## STRUCTURE
 
 ```
 mapper/
-├── index.html                  # 3591-line monolithic visualization (KaTeX, adaptive quiz UI)
-├── adaptive_sampler_multilevel.js  # RBF-based adaptive testing algorithm (MultiLevelAdaptiveSampler)
-├── run_full_pipeline.sh        # Shell orchestrator: L4→L3→L2 simplification + merge
-├── scripts/                    # Core pipeline (see scripts/AGENTS.md)
-│   ├── run_full_pipeline.py    # Python orchestrator: 9-step pipeline with idempotency
-│   ├── generate_level_n.py     # Hierarchical article expansion (1272 lines, most complex)
-│   ├── utils/                  # Shared API/embedding/Wikipedia utilities (see scripts/utils/AGENTS.md)
-│   ├── tests/                  # Module tests + benchmarks (pytest)
-│   └── diagnostics/            # Pipeline verification scripts
-├── tests/                      # Root-level integration tests (embedding dims, UMAP, model loading)
-├── notes/                      # 63 session notes, implementation plans, troubleshooting guides
-├── data/benchmarks/            # Batch size benchmark results
-├── embeddings/                 # Generated .pkl embedding files (gitignored, multi-GB)
-├── backups/                    # Data backups
-└── logos/                      # Logo assets
+├── index.html              # HTML shell: layout, modals, styles (Vite entry point)
+├── src/                    # Modular ES6+ application source
+│   ├── app.js              # Entry point: init, routing, domain switching, event wiring
+│   ├── domain/             # Domain data loading and registry
+│   │   ├── registry.js     # Domain index + bounding box lookups
+│   │   ├── loader.js       # Domain bundle fetching + caching
+│   │   ├── questions.js    # Question management + coordinate lookups
+│   │   └── video-loader.js # Video catalog loading + window extraction
+│   ├── learning/           # Adaptive quiz + knowledge estimation
+│   │   ├── estimator.js    # RBF-based Bayesian knowledge estimator
+│   │   ├── sampler.js      # Adaptive question selection (info-gain maximization)
+│   │   ├── curriculum.js   # Domain progression + difficulty management
+│   │   └── video-recommender.js  # Knowledge-gap-based video recommendations
+│   ├── state/              # Application state + persistence
+│   │   ├── store.js        # Central state management
+│   │   └── persistence.js  # localStorage save/load (versioned schema)
+│   ├── ui/                 # UI components
+│   │   ├── controls.js     # Domain dropdown, zoom controls, header
+│   │   ├── quiz.js         # Question display + answer handling
+│   │   ├── modes.js        # Quiz modes (auto-advance, easy, hardest, don't-know)
+│   │   ├── insights.js     # Knowledge insights panel (strengths/weaknesses)
+│   │   ├── share.js        # Screenshot generation + social sharing
+│   │   ├── video-modal.js  # YouTube player modal + video list
+│   │   └── progress.js     # Loading modal (centered spinner + progress bar)
+│   ├── utils/              # Shared utilities
+│   │   ├── math.js         # RBF kernel, distance calculations
+│   │   ├── accessibility.js # ARIA, keyboard navigation
+│   │   └── feature-detection.js  # WebGL/canvas capability checks
+│   └── viz/                # Canvas rendering
+│       ├── renderer.js     # Main heatmap renderer (articles, videos, trajectories)
+│       ├── minimap.js      # Corner minimap with viewport indicator
+│       ├── particles.js    # Welcome screen particle physics system
+│       └── transitions.js  # Domain switch animations
+├── data/
+│   ├── domains/            # 50 domain JSON bundles + index.json
+│   │   ├── index.json      # Domain registry (ids, regions, bounding boxes)
+│   │   ├── all.json        # Combined bundle (all articles)
+│   │   └── {domain}.json   # Per-domain: articles[], questions[], labels
+│   └── videos/
+│       ├── catalog.json    # 5,044 videos with window coordinates [{x,y}]
+│       └── .working/       # Pipeline working directory
+│           ├── transcripts/    # 5,400+ Whisper transcripts (.txt)
+│           └── embeddings/     # Per-video sliding-window embeddings (.npy)
+├── scripts/                # Python data pipeline (see below)
+├── embeddings/             # Generated .pkl files (gitignored, multi-GB)
+├── tests/
+│   ├── algorithm/          # Vitest unit tests (estimator, sampler, recommender)
+│   └── visual/             # Playwright E2E tests (quiz flow, video recs, sharing)
+├── notes/                  # Session logs and implementation plans
+├── public/                 # Static assets (logos, favicons)
+└── .credentials/           # API keys + cluster passwords (gitignored)
 ```
+
+## KEY DATA
+
+| Metric | Value |
+|--------|-------|
+| Wikipedia articles | ~250,000 (48,259 with coordinates across domains) |
+| Knowledge domains | 50 (flat hierarchy in index.json) |
+| Quiz questions | 2,450 (50 per domain, GPT-5-nano generated) |
+| Khan Academy videos | 5,044 in catalog |
+| Video transcript windows | 77,408 (512-word sliding windows, 50-word stride) |
+| Transcripts on disk | 5,400+ (.txt files from Whisper) |
+| Embedding model | google/embeddinggemma-300m (768-dim) |
+| UMAP params | n_neighbors=15, min_dist=0.1 |
+| Density flattening | mu=0.85 (optimal transport) |
 
 ## WHERE TO LOOK
 
 | Task | Location | Notes |
 |------|----------|-------|
-| Run full pipeline | `scripts/run_full_pipeline.py` | Idempotent; use `--force` flags to rerun steps |
-| Simplify questions by level | `scripts/simplify_questions.py --level N` | Levels 2-4 need simplification |
-| Shell pipeline (simplify+merge) | `run_full_pipeline.sh` | Only runs simplification + merge, not full generation |
-| Generate new difficulty level | `scripts/generate_level_n.py --level N` | LLM-based article suggestion + embedding + questions |
-| Heatmap labels (GPT-5-nano) | `scripts/generate_heatmap_labels_gpt5.py` | Uses OpenAI Batch API |
-| Heatmap labels (LM Studio) | `scripts/generate_heatmap_labels.py` | Local LLM alternative |
-| UMAP rebuild | `scripts/rebuild_umap.py` | 30-60 min for 250K articles |
-| Merge levels into final JSON | `scripts/merge_multi_level_data.py` | Deduplicates articles, merges questions by cell |
-| OpenAI API integration | `scripts/utils/api_utils.py` | Key in `.credentials/openai.key` |
-| Batch API helpers | `scripts/utils/openai_batch.py` | `batch_with_cache()` for cached LLM calls |
-| Wikipedia download | `scripts/utils/wikipedia_utils.py` | `download_articles_batch()` |
-| Distributed GPU embeddings | `scripts/utils/sync_and_merge_embeddings.py` | SSH/SFTP via paramiko to tensor01/tensor02 |
-| Frontend visualization | `index.html` | Served via `python -m http.server 8000` |
-| Adaptive sampling logic | `adaptive_sampler_multilevel.js` | `MultiLevelAdaptiveSampler` class |
-| Debug pipeline issues | `scripts/diagnostics/diagnose_pipeline.py` | General pipeline diagnostics |
-| Verify labels | `scripts/diagnostics/verify_cell_labels.py` | Label quality checks |
+| **Frontend** | | |
+| App entry point | `src/app.js` | Init, domain switching, event wiring |
+| Heatmap rendering | `src/viz/renderer.js` | Canvas 2D, articles, videos, trajectories |
+| Welcome particles | `src/viz/particles.js` | Spring physics + mouse repulsion |
+| Quiz UI | `src/ui/quiz.js` + `src/ui/modes.js` | Question display, auto-advance modes |
+| Video recommendations | `src/learning/video-recommender.js` | Gap-based scoring + ranking |
+| Video player modal | `src/ui/video-modal.js` | YouTube embed, watched tracking |
+| Knowledge estimator | `src/learning/estimator.js` | RBF Bayesian interpolation |
+| Screenshot/sharing | `src/ui/share.js` | Canvas export with grid, colorbar |
+| Domain registry | `src/domain/registry.js` | Bounding boxes from index.json |
+| Loading modal | `src/ui/progress.js` | Centered modal with spinner |
+| **Pipeline** | | |
+| Embed articles | `scripts/generate_embeddings_local_full.py` | 250K articles → 768-dim |
+| Generate questions | `scripts/generate_domain_questions.py` | GPT-5-nano, 50/domain |
+| Embed questions | `scripts/embed_questions_v2.py` | Same model as articles |
+| Embed transcripts (full) | `scripts/embed_transcripts.py` | One embedding per video |
+| Embed transcripts (windows) | `scripts/embed_video_windows.py` | Sliding windows per video |
+| Joint UMAP | `scripts/fit_umap_joint.py` | Articles + questions + transcripts |
+| Density flattening | `scripts/flatten_coordinates.py` | Optimal transport, mu param |
+| Apply flattened coords | `scripts/apply_flattened_coords.py` | Updates all domain JSONs + catalog |
+| Export domain bundles | `scripts/export_domain_bundles.py` | JSON bundles for frontend |
+| Export video catalog | `scripts/export_video_catalog.py` | Windows + metadata → catalog.json |
+| Scrape Khan videos | `scripts/scrape_khan_videos.py` | YouTube Data API |
+| Download transcripts | `scripts/download_transcripts_whisper.py` | Whisper on GPU cluster |
+| **Tests** | | |
+| Unit tests (vitest) | `tests/algorithm/` | Estimator, sampler, recommender |
+| E2E tests (Playwright) | `tests/visual/` | Quiz flow, video recs, sharing |
+| Run unit tests | `npx vitest run` | 75 tests |
+| Run E2E tests | `npx playwright test` | 8 spec files |
 
 ## DATA FLOW
 
-### Embedding/UMAP/Bounding Box Pipeline
-
-The core pipeline for generating question coordinates and bounding boxes:
+### Current Pipeline (2026-02-27)
 
 ```
-wikipedia.pkl (250K articles, 752MB, gitignored)
+wikipedia.pkl (250K articles, gitignored)
     ↓ generate_embeddings_local_full.py
-embeddings/wikipedia_embeddings.pkl (250K × 768, google/embeddinggemma-300m)
-    ↓ generate_domain_questions.py
-data/domains/*_questions.json (50 questions per domain via GPT-5-nano)
-    ↓ embed_questions.py (SAME model: google/embeddinggemma-300m)
-embeddings/question_embeddings.pkl (~950 × 768)
-    ↓ rebuild_umap_v2.py (JOINT projection: articles + questions TOGETHER)
-embeddings/umap_article_coords.pkl + embeddings/umap_question_coords.pkl
-    ↓ flatten_coordinates.py --mu 0.75 (optimal transport flattening)
-embeddings/umap_*_coords_flat.pkl (density-balanced coordinates)
-    ↓ compute_bounding_boxes.py (hierarchical: sub-domain → domain → all)
-bounding boxes computed from question positions
-    ↓ export_domain_bundles.py
-data/domains/{domain_id}.json (questions with coords + bounding boxes)
+embeddings/wikipedia_embeddings.pkl (250K × 768)
+    ↓ generate_domain_questions.py (GPT-5-nano)
+data/domains/.working/*-questions-batch*.json (50 per domain)
+    ↓ embed_questions_v2.py
+embeddings/question_embeddings_2500.pkl (2500 × 768)
+
+data/videos/.working/transcripts/*.txt (5,400+ Whisper transcripts)
+    ↓ embed_transcripts.py (full-document embeddings)
+embeddings/transcript_embeddings.pkl (N × 768, one per video)
+    ↓ embed_video_windows.py (sliding-window embeddings)
+data/videos/.working/embeddings/*.npy (per-video, [N_windows, 768])
+
+    ↓ fit_umap_joint.py (articles + questions + transcripts TOGETHER)
+embeddings/umap_reducer.pkl + article_coords.pkl + question_coords.pkl + transcript_coords.pkl
+    ↓ flatten_coordinates.py --mu 0.85 (optimal transport)
+embeddings/*_coords.pkl (density-balanced [0,1] coordinates)
+    ↓ apply_flattened_coords.py
+data/domains/{domain}.json (articles + questions with flattened coords)
+data/domains/index.json (bounding boxes from question 5th-95th percentile)
+    ↓ project_video_coords.py + export_video_catalog.py
+data/videos/catalog.json (5,044 videos × window coordinates)
 ```
 
-**Key principle**: Articles and questions are projected TOGETHER in one UMAP batch,
-ensuring they share the exact same 2D coordinate space.
+**Key principles:**
+- Articles, questions, and transcripts are projected TOGETHER in one UMAP
+- Bounding boxes use question-only 5th-95th percentile (min_span=0.15, margin=0.05)
+- Density flattening uses approximate optimal transport (Hungarian assignment on subsample)
+- Video windows are projected through trained UMAP reducer via `transform()`
 
-**Bounding box hierarchy**:
-- Sub-domains: bbox around that area's questions only
-- Broad domains: bbox around domain's questions + all sub-domains' questions
-- "All (general)": full [0, 1] × [0, 1] view
-
-### Legacy Pipeline (reference only)
+### Video Recommendation Flow
 
 ```
-wikipedia.pkl (250K articles, 752MB, gitignored)
-    ↓ rebuild_umap.py
-umap_coords.pkl + umap_reducer.pkl + umap_bounds.pkl
-    ↓ find_optimal_coverage_rectangle.py
-optimal_rectangle.json
-    ↓ export_wikipedia_articles.py
-wikipedia_articles_level_0.json
-    ↓ generate_heatmap_labels_gpt5.py (OpenAI Batch)
-heatmap_cell_labels.json (1,521 labels)
-    ↓ generate_level_n.py --level 0 (concepts + questions)
-level_0_concepts.json + cell_questions_level_0.json
-    ↓ generate_level_n.py --level 1..4 (broader articles + questions)
-cell_questions_level_{1..4}.json + wikipedia_articles_level_{1..4}.json
-    ↓ simplify_questions.py --level {2,3,4}
-cell_questions_level_{2,3,4}_simplified.json
-    ↓ merge_multi_level_data.py
-wikipedia_articles.json + cell_questions.json → consumed by index.html
+User answers question → estimator updates knowledge map
+    → video-recommender computes difference map (estimated - ground truth)
+    → scores each video's windows against knowledge gaps
+    → ranks videos by expected learning gain
+    → presents top recommendations in modal
+    → user watches video → marks watched → map updates
 ```
 
 ## CONVENTIONS
 
-- **Credentials**: `.credentials/` directory (gitignored). `openai.key` for API, `tensor01.txt`/`tensor02.txt` for clusters.
-- **API key validation**: Must start with `sk-` (enforced in `api_utils.py`).
-- **macOS env vars**: Scripts set `TOKENIZERS_PARALLELISM=false`, `OMP_NUM_THREADS=1`, `MKL_NUM_THREADS=1` to prevent Metal threading issues.
-- **TensorFlow pinned**: `tensorflow==2.19.0` — 2.20 has macOS mutex blocking bug.
-- **Imports**: Scripts in `scripts/` use `sys.path.append(str(Path(__file__).parent.parent))` to import from `scripts.utils.*`.
-- **LLM model**: Pipeline uses `gpt-5-nano` via OpenAI Batch API (cost: ~$0.50/level).
-- **Embedding model**: `Qwen/Qwen3-Embedding-0.6B` (distributed) or `google/embeddinggemma-300m` (local).
-- **JSON data in root**: Pipeline outputs (`cell_questions*.json`, `wikipedia_articles.json`, etc.) live in project root, not `data/`.
-- **Two pipeline scripts**: `run_full_pipeline.sh` (shell, simplification only) vs `scripts/run_full_pipeline.py` (Python, full 9-step pipeline). Use the Python one.
-- **Idempotency**: Python pipeline checks for existing outputs and skips steps. Use `--force` to rerun.
+- **Build system**: Vite (dev: `npm run dev`, build: `npm run build`)
+- **Dev server**: http://localhost:5173/mapper/
+- **No framework**: Vanilla JS with ES6 modules, no React/Vue/etc.
+- **Credentials**: `.credentials/` directory (gitignored). `openai.key`, `tensor02.credentials`
+- **macOS env vars**: Scripts set `TOKENIZERS_PARALLELISM=false`, `OMP_NUM_THREADS=1`, `MKL_NUM_THREADS=1`
+- **Python venv**: Use `.venv/bin/python3` (not system python) for numpy 2.x compatibility
+- **Embedding model**: `google/embeddinggemma-300m` everywhere (768-dim, SentenceTransformer)
+- **LLM model**: `gpt-5-nano` via OpenAI Batch API for question generation
+- **localStorage**: Browser-side persistence, versioned schema. No server-side storage.
+- **Domain bundles**: Background pre-loaded at boot for instant switching (no loading modal per switch)
+- **Domain viewport**: Read from `registry.getDomain(id).region` (index.json), not from bundle
 
-## ANTI-PATTERNS (THIS PROJECT)
+## ANTI-PATTERNS
 
-- **Never commit `.pkl` files** — multi-GB embedding/UMAP files are gitignored. `remove_large_files_from_history.sh` exists to clean mistakes.
-- **Never commit `.credentials/`** — API keys, cluster passwords.
-- **Never use TensorFlow >= 2.20** — macOS mutex blocking error.
-- **Never mock in tests** — project policy requires real API calls, real models, real I/O (see CLAUDE.md instructions).
-- **Never use `generate_heatmap_labels.py` in production** — use `generate_heatmap_labels_gpt5.py` (Batch API) instead.
-- **Never run `build_wikipedia_knowledge_map.py`** — legacy (nvidia/nemotron). Use `build_wikipedia_knowledge_map_v2.py` or the pipeline.
+- **Never commit `.pkl` files** — multi-GB embedding/UMAP files are gitignored
+- **Never commit `.credentials/`** — API keys, cluster passwords
+- **Never mock in tests** — project policy requires real calls, real models, real I/O
+- **Never use system python** — always `.venv/bin/python3` for pipeline scripts
+- **Never read bounding boxes from bundle** — use registry (index.json) as source of truth
+- **Never show loading modal on domain switch** — bundles pre-loaded in background
 
 ## COMMANDS
 
 ```bash
-# Full pipeline (idempotent, skips completed steps)
-python scripts/run_full_pipeline.py
+# Development
+npm run dev                 # Vite dev server on :5173
+npm run build               # Production build to dist/
+npm run preview             # Preview production build
 
-# Force rerun everything
-python scripts/run_full_pipeline.py --force
+# Tests
+npx vitest run              # Unit tests (75 tests)
+npx playwright test         # E2E tests (8 specs)
 
-# Simplification-only pipeline
-./run_full_pipeline.sh
+# Pipeline (use .venv/bin/python3)
+.venv/bin/python3 scripts/embed_transcripts.py          # Full-doc transcript embeddings
+.venv/bin/python3 scripts/embed_video_windows.py        # Sliding-window embeddings
+.venv/bin/python3 scripts/fit_umap_joint.py             # Joint UMAP fitting
+.venv/bin/python3 scripts/flatten_coordinates.py --mu 0.85  # Density flattening
+.venv/bin/python3 scripts/apply_flattened_coords.py     # Apply to all domain JSONs
+.venv/bin/python3 scripts/export_video_catalog.py       # Rebuild video catalog
 
-# Single level generation
-python scripts/generate_level_n.py --level 2
-
-# Simplify specific level
-python scripts/simplify_questions.py --level 4
-
-# Serve visualization
-python -m http.server 8000
-
-# Run tests
-pytest tests/ scripts/tests/
-
-# Distributed GPU (requires .credentials/)
-scripts/launch_distributed.sh
-python scripts/utils/sync_and_merge_embeddings.py
+# GPU cluster (tensor02)
+sshpass -p 'PASSWORD' ssh f002d6b@tensor02.dartmouth.edu "command"
+RSYNC_RSH="sshpass -p 'PASSWORD' ssh -o StrictHostKeyChecking=no" rsync -avz ...
 ```
+
+## GPU CLUSTER
+
+- **tensor02.dartmouth.edu**: 8x NVIDIA RTX A6000 (49GB VRAM each)
+- Transcripts generated via Whisper on tensor02, synced to local via rsync
+- Credentials in `.credentials/tensor02.credentials` (JSON format)
+- Transcript path on tensor02: `~/khan-transcripts/data/videos/.working/transcripts/`
 
 ## NOTES
 
-- `index.html` is a 3591-line monolith — all CSS, JS, and HTML inline. No build system.
-- `adaptive_sampler_multilevel.js` is the only extracted JS module. Contains RBF uncertainty estimation math.
-- Questions use **LaTeX notation** (`$x^2$`, `$\frac{1}{2}$`) rendered by KaTeX in the frontend.
-- LaTeX `$` signs require careful handling to distinguish from currency `$` — see commits d3cc534, 7018ca3, 3ab088c.
-- No CI/CD — all testing is manual. No GitHub Actions, no Makefile.
-- `notes/` contains 63 implementation logs — useful for understanding decisions but not code reference.
-- Cluster config: 2 clusters (tensor01, tensor02) x 8 GPUs = 16 workers. Uses `screen` sessions + `paramiko` SSH.
-- License: CC BY-NC-SA 4.0 (non-commercial).
-
-## Active Technologies
-- JavaScript ES2020+ (frontend), Python 3.11+ (pipeline) (001-demo-public-release)
-- localStorage (browser-side, versioned schema per FR-007 clarification). No server-side storage. (001-demo-public-release)
-
-## Recent Changes
-- 001-demo-public-release: Added JavaScript ES2020+ (frontend), Python 3.11+ (pipeline)
+- Questions use LaTeX notation (`$x^2$`) rendered by KaTeX in the frontend
+- Welcome screen has canvas particle system with spring-return + mouse-repulsion physics
+- `pointer-events: none` on `.landing-content` with selective `auto` on interactive children
+- Video markers render as subtle dots (alpha ~2%), with Catmull-Rom trajectory on hover
+- Screenshots include grid lines, colorbar legend, article + video dots
+- License: CC BY-NC-SA 4.0 (non-commercial)

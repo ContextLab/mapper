@@ -1,26 +1,29 @@
 # Knowledge Mapper
 
-An interactive visualization that maps your conceptual knowledge across 250,000 Wikipedia articles. Answer questions to watch a real-time heatmap of your strengths and gaps emerge.
+An interactive visualization that maps your conceptual knowledge across 250,000 Wikipedia articles and 5,000+ Khan Academy videos. Answer questions to watch a real-time heatmap of your strengths and gaps emerge, then get personalized video recommendations to fill knowledge gaps.
 
 **[Try the live demo](https://contextlab.github.io/mapper/)** | **[Read the paper](https://psyarxiv.com/dh3q2)**
 
 ## How It Works
 
-1. **Choose a domain** (e.g., Physics, Neuroscience, Mathematics) from the landing page
-2. **Answer adaptive questions** — each one tests conceptual understanding, terminology, and reasoning
-3. **Watch the map update** — correct answers turn nearby regions green; wrong answers reveal red gaps
-4. **Explore freely** — zoom, pan, and click on articles to see Wikipedia content
+1. **Choose a domain** (e.g., Physics, Neuroscience, Computer Science) from the landing page
+2. **Answer adaptive questions** -- each one tests conceptual understanding, terminology, and reasoning
+3. **Watch the map update** -- correct answers turn nearby regions green; wrong answers reveal red gaps
+4. **Get video recommendations** -- Khan Academy videos are suggested based on your weakest areas
+5. **Explore freely** -- zoom, pan, hover video trajectories, and click articles for Wikipedia content
 
-Under the hood, text embedding models place every article into a high-dimensional vector space, then project it onto a 2D map where related concepts cluster together. As you answer questions, a Bayesian estimator interpolates your knowledge across the map using radial basis functions — so demonstrating expertise in one area provides evidence about related topics nearby.
+Under the hood, text embedding models place every article, question, and video transcript into a shared high-dimensional vector space, then project them onto a 2D map where related concepts cluster together. Density flattening via optimal transport ensures even spatial coverage. As you answer questions, a Bayesian estimator interpolates your knowledge across the map using radial basis functions.
 
 ## Features
 
-- **19 knowledge domains** with hierarchical sub-domains (e.g., Physics → Astrophysics, Quantum Physics)
-- **~950 adaptive quiz questions** generated from Wikipedia source articles
+- **50 knowledge domains** including Physics, Biology, Mathematics, Computer Science, Philosophy, and more
+- **2,450 adaptive quiz questions** generated via GPT-5-nano from Wikipedia source articles
+- **5,000+ Khan Academy videos** with knowledge-gap-based recommendations
 - **Real-time heatmap** powered by radial basis function interpolation
-- **Knowledge insights** — see your strongest/weakest concepts and get learning suggestions
-- **Social sharing** — export your knowledge map as an image or share a link
-- **Fully client-side** — no data leaves your browser; progress saved to localStorage
+- **Video trajectories** -- hover a video dot to see its topic path across the map
+- **Knowledge insights** -- see your strongest/weakest concepts and learning suggestions
+- **Social sharing** -- export your knowledge map as an image with grid lines and colorbar
+- **Fully client-side** -- no data leaves your browser; progress saved to localStorage
 
 ## Quick Start
 
@@ -44,38 +47,43 @@ npm run preview # preview the production build locally
 
 ```
 mapper/
-├── index.html          ← HTML entry point (layout, styles, modals)
-├── src/                ← Application source code (see src/README.md)
-│   ├── app.js          ← Entry point: init, routing, event wiring
-│   ├── domain/         ← Domain data loading and registry
-│   ├── learning/       ← Adaptive quiz engine (Bayesian estimation)
-│   ├── state/          ← Application state and persistence
-│   ├── ui/             ← UI components (controls, quiz, insights, share)
-│   ├── utils/          ← Math, accessibility, feature detection
-│   └── viz/            ← Canvas rendering (heatmap, minimap, particles)
-├── data/               ← Pre-computed domain bundles (JSON)
-│   └── domains/        ← Per-domain question + article + label bundles
-├── scripts/            ← Data pipeline scripts (see scripts/README.md)
-├── public/             ← Static assets copied to dist/
-└── tests/              ← Visual regression tests
+├── index.html          # HTML entry point (layout, styles, modals)
+├── src/                # Application source code
+│   ├── app.js          # Entry point: init, routing, event wiring
+│   ├── domain/         # Domain data loading and registry
+│   ├── learning/       # Adaptive quiz engine + video recommender
+│   ├── state/          # Application state and persistence
+│   ├── ui/             # UI components (controls, quiz, insights, share, video modal)
+│   ├── utils/          # Math, accessibility, feature detection
+│   └── viz/            # Canvas rendering (heatmap, minimap, particles)
+├── data/               # Pre-computed data bundles
+│   ├── domains/        # 50 per-domain JSON bundles + index.json
+│   └── videos/         # Video catalog + transcripts + embeddings
+├── scripts/            # Python data pipeline
+├── tests/              # Unit tests (vitest) + E2E tests (Playwright)
+└── public/             # Static assets
 ```
 
 ## Data Pipeline
 
-The `scripts/` directory contains the Python pipeline that generates the data powering the frontend. It processes 250K Wikipedia articles through:
+The `scripts/` directory contains the Python pipeline that generates the data powering the frontend:
 
 1. **Embed articles** using `google/embeddinggemma-300m` (768-dim vectors)
-2. **Generate questions** via GPT-5-nano (50 per domain, ~950 total)
-3. **Embed questions** using the same model as articles (for coordinate consistency)
-4. **Joint UMAP projection** — project ALL articles + questions TOGETHER in one batch to 2D
-5. **Density flattening** via approximate optimal transport (`mu=0.75`)
-6. **Compute bounding boxes** hierarchically:
-   - Sub-domains: bounding box around that area's questions
-   - Broad domains: bounding box around domain's + sub-domains' questions
-   - "All (general)": full [0, 1] view enclosing all articles + questions
-7. **Export domain bundles** with question coordinates and bounding boxes
+2. **Generate questions** via GPT-5-nano (50 per domain, 2,450 total)
+3. **Embed questions** using the same model (for coordinate consistency)
+4. **Transcribe videos** via Whisper on GPU cluster (5,400+ Khan Academy transcripts)
+5. **Embed transcripts** -- both full-document and sliding-window (512 words, 50-word stride)
+6. **Joint UMAP projection** -- project articles + questions + transcripts TOGETHER to 2D
+7. **Density flattening** via approximate optimal transport (`mu=0.85`)
+8. **Apply coordinates** to all domain bundles and video catalog
+9. **Compute bounding boxes** from question positions (5th-95th percentile)
 
-See [`scripts/README.md`](scripts/README.md) for full pipeline documentation.
+## Testing
+
+```bash
+npx vitest run        # 75 unit tests (estimator, sampler, recommender)
+npx playwright test   # 8 E2E test specs (quiz flow, video recs, sharing)
+```
 
 ## Citation
 
@@ -90,7 +98,7 @@ See [`scripts/README.md`](scripts/README.md) for full pipeline documentation.
 
 ## License
 
-[CC BY-NC-SA 4.0](LICENSE) — Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+[CC BY-NC-SA 4.0](LICENSE) -- Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
 
 ## Contributing
 

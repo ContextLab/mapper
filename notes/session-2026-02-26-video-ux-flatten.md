@@ -115,16 +115,34 @@ Implemented the video markers/click/screenshot plan and re-ran density flattenin
 - Fix: removed `.landing-domain-wrapper` from pointer-events rule — only `.custom-select` gets auto
 - **particles.js**: Reduced `REPEL_RADIUS` from 20 to 10 (~20px effective at default zoom)
 
-## Next Steps: Full Pipeline Refresh
-1. **Tensor02 transcripts**: Wait for remaining ~425 videos to finish processing
-2. **Sync transcripts**: Pull completed transcripts from tensor02
-3. **Embed new content**: Run embedding pipeline on new transcripts
-4. **Re-fit UMAP**: Joint UMAP on articles + questions + transcripts with new data
-5. **Re-flatten**: Run density flattening (mu=0.85) on updated coordinates
-6. **Update demo**: Apply flattened coords to all domain JSONs + catalog, recompute bounding boxes
+### Continued Session (2026-02-27 afternoon)
+
+#### Full Pipeline Refresh — In Progress
+1. **Tensor02 transcripts**: COMPLETE — 8,796/8,796 videos processed, 5,384 transcripts on disk
+2. **Sync transcripts**: COMPLETE — rsync'd 5,407 transcripts (44MB) from tensor02 to local
+   - Path on tensor02: `~/khan-transcripts/data/videos/.working/transcripts/`
+   - Used `RSYNC_RSH` env var for sshpass compatibility with rsync
+3. **Embed new content**: IN PROGRESS — 363 new transcripts need sliding-window embeddings
+   - Running `embed_video_windows.py` on MPS (batch_size=32)
+   - Also need to re-run `embed_transcripts.py` for full-document embeddings (UMAP input)
+4. **Re-fit UMAP**: PENDING — `fit_umap_joint.py` (articles + questions + transcripts)
+5. **Re-flatten**: PENDING — `flatten_coordinates.py --mu 0.85`
+6. **Update demo**: PENDING — `apply_flattened_coords.py`
+
+#### Documentation Updates
+- **AGENTS.md**: Complete rewrite — old monolithic architecture replaced with current Vite/ES6 modular structure, video pipeline, density flattening, all current stats
+- **README.md**: Updated features (50 domains, 2,450 questions, 5,000+ videos), pipeline description, project structure
+- **Transcripts**: Committed 5,407 transcript .txt files to git (44MB)
+
+#### Key Pipeline Insight
+Two separate embedding steps needed for videos:
+1. `embed_transcripts.py` → `transcript_embeddings.pkl` (one 768-dim embedding per video, for UMAP fitting)
+2. `embed_video_windows.py` → per-video `.npy` files (sliding windows, for map positions after UMAP transform)
 
 ## Notes
 - Bounding boxes expanded significantly after flattening (e.g. astrophysics x=[0.042, 0.296] to x=[0.005, 0.988])
 - cognitive-psychology.json has title-only articles (no x,y) — handled gracefully
 - The flattening adapter script is at `/tmp/run_flatten.py` (not in repo)
 - Must use `.venv/bin/python3` (not system python) for coordinate file compatibility with numpy 2.x
+- Tensor02 credentials: `.credentials/tensor02.credentials` (JSON format)
+- rsync with sshpass requires `RSYNC_RSH` env var, not inline `sshpass` before `rsync`

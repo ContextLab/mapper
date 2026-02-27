@@ -1,0 +1,122 @@
+[
+  {
+    "question_text": "For a function $\\mathbf{f}: \\mathbb{R}^n \\to \\mathbb{R}^m$, the Jacobian matrix has dimensions $m \\times n$. When this matrix is square, what role does its determinant play in multivariable calculus?",
+    "correct_answer": "The Jacobian determinant serves as the scaling factor when performing changes of variables in multiple integrals",
+    "distractors": [
+      "The Jacobian determinant gives the radius of convergence for the Taylor expansion of the vector-valued function",
+      "The Jacobian determinant equals the divergence of the vector field, measuring the net outward flux per unit volume",
+      "The Jacobian determinant provides the eigenvalues of the Hessian matrix used in classifying critical points"
+    ],
+    "difficulty": 3,
+    "source_article": "Jacobian matrix and determinant",
+    "domain_ids": [
+      "calculus"
+    ],
+    "concepts_tested": [
+      "Jacobian matrix",
+      "Jacobian determinant",
+      "change of variables"
+    ],
+    "id": "d83256dd5951eb89"
+  },
+  {
+    "question_text": "In the ratio test for series convergence, you compute $L = \\lim_{n \\to \\infty} \\left| \\frac{a_{n+1}}{a_n} \\right|$. What conclusion follows when $L = 1$?",
+    "correct_answer": "The ratio test is inconclusive; the series may converge or diverge, so another test must be applied",
+    "distractors": [
+      "The series converges conditionally; it sums to a finite value but does not converge absolutely",
+      "The series converges absolutely; the limit equaling one guarantees the partial sums are bounded",
+      "The series diverges to infinity; the terms do not decrease fast enough for summation"
+    ],
+    "difficulty": 3,
+    "source_article": "Convergence tests",
+    "domain_ids": [
+      "calculus"
+    ],
+    "concepts_tested": [
+      "convergence tests",
+      "ratio test",
+      "series convergence"
+    ],
+    "id": "e6ee33182b2b8c38"
+  },
+  {
+    "question_text": "The line integral of a vector field $\\mathbf{F}$ along curve $C$ is $\\int_C \\mathbf{F} \\cdot d\\mathbf{r}$. Under what condition is this integral path independent?",
+    "correct_answer": "When $\\mathbf{F}$ is conservative, meaning $\\mathbf{F} = \\nabla G$ for some scalar potential function $G$",
+    "distractors": [
+      "When $\\mathbf{F}$ is divergence-free, meaning $\\nabla \\cdot \\mathbf{F} = 0$ throughout the domain of integration",
+      "When $\\mathbf{F}$ has constant magnitude, meaning $|\\mathbf{F}|$ is the same at every point on the curve",
+      "When $\\mathbf{F}$ is orthogonal to the curve, meaning $\\mathbf{F} \\cdot \\mathbf{r}'(t) = 0$ everywhere along $C$"
+    ],
+    "difficulty": 3,
+    "source_article": "Line integral",
+    "domain_ids": [
+      "calculus"
+    ],
+    "concepts_tested": [
+      "line integral",
+      "conservative vector field",
+      "path independence"
+    ],
+    "id": "4b40bcd06540ad20"
+  },
+  {
+    "question_text": "A first-order ODE $\\frac{dy}{dx} = f(x, y)$ is called separable under a specific structural condition. What is that condition, and how is it solved?",
+    "correct_answer": "The right side factors as $g(x)h(y)$; rewrite as $\\frac{1}{h(y)}\\,dy = g(x)\\,dx$ and integrate both sides",
+    "distractors": [
+      "The right side is linear in $y$; multiply by integrating factor $e^{\\int p(x)\\,dx}$ and integrate both sides",
+      "The right side is an exact differential; verify $\\partial M/\\partial y = \\partial N/\\partial x$ and integrate",
+      "The right side depends on $y/x$ only; substitute $v = y/x$ to reduce to a single-variable equation"
+    ],
+    "difficulty": 3,
+    "source_article": "Separation of variables",
+    "domain_ids": [
+      "calculus"
+    ],
+    "concepts_tested": [
+      "separable differential equation",
+      "separation of variables",
+      "ODE solution methods"
+    ],
+    "id": "35f3996922c295b1"
+  },
+  {
+    "question_text": "A power series $\\sum_{n=0}^{\\infty} a_n(x - c)^n$ converges in an interval centered at $c$. How is the radius of convergence $R$ typically determined?",
+    "correct_answer": "By the ratio test: $R = \\lim_{n \\to \\infty} \\left| \\frac{a_n}{a_{n+1}} \\right|$, with absolute convergence for $|x - c| < R$",
+    "distractors": [
+      "By the derivative test: $R = \\lim_{n \\to \\infty} \\left| \\frac{a_n'}{a_n} \\right|$, with conditional convergence for $|x - c| < R$",
+      "By the integral test: $R = \\int_0^{\\infty} |a_n|\\,dn$, with uniform convergence for $|x - c| < R$",
+      "By the comparison test: $R = \\sup\\{|a_n|^n\\}$, with pointwise convergence for $|x - c| < R$"
+    ],
+    "difficulty": 3,
+    "source_article": "Power series",
+    "domain_ids": [
+      "calculus"
+    ],
+    "concepts_tested": [
+      "power series",
+      "radius of convergence",
+      "ratio test"
+    ],
+    "id": "a85701af929f0cdf"
+  },
+  {
+    "question_text": "The arc length of a curve $y = f(x)$ from $x = a$ to $x = b$ is given by a definite integral. What is the integrand in this formula?",
+    "correct_answer": "$\\sqrt{1 + \\left(\\frac{dy}{dx}\\right)^2}$, derived from the Pythagorean theorem applied to infinitesimal chord segments",
+    "distractors": [
+      "$\\sqrt{1 - \\left(\\frac{dy}{dx}\\right)^2}$, derived from the trigonometric identity applied to infinitesimal chord segments",
+      "$\\left|1 + \\frac{dy}{dx}\\right|$, derived from the triangle inequality applied to infinitesimal chord segments",
+      "$1 + \\frac{1}{2}\\left(\\frac{dy}{dx}\\right)^2$, derived from the binomial approximation applied to infinitesimal chord segments"
+    ],
+    "difficulty": 3,
+    "source_article": "Arc length",
+    "domain_ids": [
+      "calculus"
+    ],
+    "concepts_tested": [
+      "arc length",
+      "integral formula",
+      "Pythagorean theorem in calculus"
+    ],
+    "id": "86a23c78816c3323"
+  }
+]

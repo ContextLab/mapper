@@ -1,0 +1,852 @@
+[
+  {
+    "question_text": "What is stellar parallax?",
+    "correct_answer": "The apparent shift in a nearby star's position against distant background stars, caused by Earth's changing position in its orbit around the Sun.",
+    "distractors": [
+      "The redshift observed in a star's light spectrum caused by its motion away from Earth, used to measure stellar velocities.",
+      "The dimming of a star's brightness as it passes behind another celestial body, used to detect exoplanets.",
+      "The gravitational bending of light from distant stars as it passes near massive objects like the Sun."
+    ],
+    "difficulty": 1,
+    "source_article": "Stellar parallax",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "stellar parallax"
+    ]
+  },
+  {
+    "question_text": "What term describes an interstellar cloud composed primarily of hydrogen, helium, and cosmic dust that often serves as a \"stellar nursery\" where new stars form?",
+    "correct_answer": "Nebula",
+    "distractors": [
+      "Quasar",
+      "Pulsar",
+      "Galaxy"
+    ],
+    "difficulty": 1,
+    "source_article": "Nebula",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "nebula"
+    ]
+  },
+  {
+    "question_text": "In the Hertzsprung-Russell diagram, what is the main sequence?",
+    "correct_answer": "A diagonal band of stars that are fusing hydrogen into helium in their cores.",
+    "distractors": [
+      "A diagonal band of stars that have exhausted their hydrogen and are cooling down.",
+      "A diagonal band of stars that are contracting under gravity before nuclear fusion begins.",
+      "A diagonal band of stars that are fusing helium into heavier elements in their cores."
+    ],
+    "difficulty": 1,
+    "source_article": "Main sequence",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "main sequence"
+    ]
+  },
+  {
+    "question_text": "What is a red giant?",
+    "correct_answer": "A large, luminous star in a late evolutionary stage with an expanded, cooler outer atmosphere that appears reddish.",
+    "distractors": [
+      "A small, dense stellar remnant that forms after a supernova explosion and emits intense X-ray radiation.",
+      "A young, hot star still forming from a collapsing gas cloud that glows red from surrounding dust.",
+      "A massive star with extremely high surface temperature that appears red due to its rapid rotation speed."
+    ],
+    "difficulty": 1,
+    "source_article": "Red giant",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "red giant"
+    ]
+  },
+  {
+    "question_text": "What is a white dwarf?",
+    "correct_answer": "A dense stellar remnant, about Earth-sized but with mass comparable to the Sun, supported by electron degeneracy pressure.",
+    "distractors": [
+      "A small, cool star in the early stages of stellar formation, slowly accumulating mass from surrounding gas clouds.",
+      "A type of neutron star formed when massive stars collapse, composed primarily of densely packed neutrons.",
+      "A faint red star that burns hydrogen slowly, lasting trillions of years due to its low mass."
+    ],
+    "difficulty": 1,
+    "source_article": "White dwarf",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "white dwarf"
+    ]
+  },
+  {
+    "question_text": "What type of astronomical object is a neutron star?",
+    "correct_answer": "The collapsed core of a massive star after a supernova explosion, composed primarily of neutrons.",
+    "distractors": [
+      "A star that has exhausted its hydrogen fuel and expanded into a cool, luminous giant phase.",
+      "A small, dense stellar remnant supported by electron degeneracy pressure, formed from low-mass stars.",
+      "A region of spacetime where gravity is so strong that nothing, including light, can escape."
+    ],
+    "difficulty": 1,
+    "source_article": "Neutron star",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "neutron star"
+    ]
+  },
+  {
+    "question_text": "What is a black hole?",
+    "correct_answer": "A region of space where gravity is so strong that nothing, including light, can escape.",
+    "distractors": [
+      "A collapsed star that emits intense radiation and pulls nearby matter into orbit.",
+      "A dense region of space created when matter is compressed by a supernova explosion.",
+      "A type of dark star with extremely low temperatures that absorbs all surrounding energy."
+    ],
+    "difficulty": 1,
+    "source_article": "Black hole",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "black hole"
+    ]
+  },
+  {
+    "question_text": "What does the term \"Big Bang\" refer to in cosmology?",
+    "correct_answer": "The emergence and rapid expansion of the universe from an initial state of extremely high temperature and density approximately 13.8 billion years ago.",
+    "distractors": [
+      "The collision of two supermassive black holes that created the Milky Way galaxy from an initial state of extreme gravitational compression approximately 13.8 billion years ago.",
+      "A theoretical explosion that occurred at the center of the universe, sending matter outward in all directions from a fixed point in space.",
+      "The sudden formation of all galaxies and stars simultaneously from a primordial cloud of gas that collapsed under gravity approximately 10 billion years ago."
+    ],
+    "difficulty": 1,
+    "source_article": "Big Bang",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "Big Bang"
+    ]
+  },
+  {
+    "question_text": "What is dark matter?",
+    "correct_answer": "A hypothetical form of matter that does not interact with light and is detected only through its gravitational effects.",
+    "distractors": [
+      "A type of energy responsible for the accelerating expansion of the universe, which cannot be directly observed.",
+      "Empty regions of space between galaxies where no stars, gas, or other visible matter exists.",
+      "Ordinary matter that appears dark because it does not emit its own light, such as black holes and brown dwarfs."
+    ],
+    "difficulty": 1,
+    "source_article": "Dark matter",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "dark matter"
+    ]
+  },
+  {
+    "question_text": "What is dark energy?",
+    "correct_answer": "A form of energy that drives the accelerating expansion of the universe",
+    "distractors": [
+      "A form of matter that holds galaxies together through gravitational attraction",
+      "A type of radiation emitted by black holes in deep space",
+      "The residual energy left over from the Big Bang explosion"
+    ],
+    "difficulty": 1,
+    "source_article": "Dark energy",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "dark energy"
+    ]
+  },
+  {
+    "question_text": "What is the cosmic microwave background?",
+    "correct_answer": "Electromagnetic radiation that fills the universe, left over from the Big Bang approximately 13.8 billion years ago.",
+    "distractors": [
+      "A type of X-ray radiation emitted by black holes at the centers of galaxies throughout the universe.",
+      "Radio waves produced by the collision of galaxies that permeate intergalactic space.",
+      "Infrared radiation emitted by dark matter particles as they decay throughout the observable universe."
+    ],
+    "difficulty": 1,
+    "source_article": "Cosmic microwave background",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "cosmic microwave background"
+    ]
+  },
+  {
+    "question_text": "What is a supernova?",
+    "correct_answer": "A powerful explosion that occurs at the end of a massive star's life",
+    "distractors": [
+      "A dense remnant core left behind after a star exhausts its nuclear fuel",
+      "A cloud of gas and dust where new stars are actively forming",
+      "A brief burst of light when material falls onto a white dwarf's surface"
+    ],
+    "difficulty": 1,
+    "source_article": "Supernova",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "supernova"
+    ]
+  },
+  {
+    "question_text": "What is a galaxy?",
+    "correct_answer": "A massive system of stars, gas, dust, and dark matter bound together by gravity",
+    "distractors": [
+      "A single massive star surrounded by orbiting planets and asteroid belts",
+      "A cloud of gas and dust where new stars are actively forming",
+      "A dense cluster of ancient stars orbiting the center of the Milky Way"
+    ],
+    "difficulty": 1,
+    "source_article": "Galaxy",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "galaxy"
+    ]
+  },
+  {
+    "question_text": "On the Hertzsprung-Russell diagram, which region contains pulsating variable stars such as Cepheids and RR Lyrae variables that periodically expand and contract?",
+    "correct_answer": "The instability strip",
+    "distractors": [
+      "The main sequence",
+      "The giant branch",
+      "The horizontal branch"
+    ],
+    "difficulty": 2,
+    "source_article": "Hertzsprung\u2013Russell diagram",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "Hertzsprung-Russell diagram"
+    ]
+  },
+  {
+    "question_text": "What is the approximate numerical value of the Chandrasekhar limit, the maximum mass for a stable white dwarf star?",
+    "correct_answer": "Approximately 1.44 solar masses ($1.44 M_\\odot$)",
+    "distractors": [
+      "Approximately 2.5 solar masses ($2.5 M_\\odot$)",
+      "Approximately 0.8 solar masses ($0.8 M_\\odot$)",
+      "Approximately 3.2 solar masses ($3.2 M_\\odot$)"
+    ],
+    "difficulty": 2,
+    "source_article": "Chandrasekhar limit",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "Chandrasekhar limit"
+    ]
+  },
+  {
+    "question_text": "In Hubble's law ($v = H_0 d$), what are the standard units used to express the Hubble constant $H_0$?",
+    "correct_answer": "Kilometers per second per megaparsec (km/s/Mpc)",
+    "distractors": [
+      "Meters per second per kiloparsec (m/s/kpc)",
+      "Parsecs per million years (pc/Myr)",
+      "Kilometers per second squared (km/s\u00b2)"
+    ],
+    "difficulty": 2,
+    "source_article": "Hubble's law",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "Hubble's law"
+    ]
+  },
+  {
+    "question_text": "In the cosmic distance ladder, Type Ia supernovae serve as \"standard candles\" because white dwarfs explode at a consistent mass. What is the name of this critical mass threshold?",
+    "correct_answer": "The Chandrasekhar limit, approximately 1.4 solar masses",
+    "distractors": [
+      "The Eddington limit, approximately 1.4 solar masses",
+      "The Schwarzschild limit, approximately 1.4 solar masses",
+      "The Tolman-Oppenheimer-Volkoff limit, approximately 1.4 solar masses"
+    ],
+    "difficulty": 2,
+    "source_article": "Cosmic distance ladder",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "cosmic distance ladder"
+    ]
+  },
+  {
+    "question_text": "What is the name of the physical mechanism that explains the pulsation of Cepheid variable stars, involving the cycling of gas opacity in the star's outer layers?",
+    "correct_answer": "The kappa mechanism (also called the Eddington valve)",
+    "distractors": [
+      "The gamma process (also called the Schwarzschild cycle)",
+      "The delta mechanism (also called the Hertzsprung valve)",
+      "The lambda oscillation (also called the Shapley resonance)"
+    ],
+    "difficulty": 2,
+    "source_article": "Cepheid variable",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "Cepheid variable"
+    ]
+  },
+  {
+    "question_text": "What spectral feature, observed near maximum light, is characteristic of Type Ia supernovae and indicates nuclear fusion of pre-explosion matter into intermediate-mass elements?",
+    "correct_answer": "A prominent silicon (Si II) absorption line",
+    "distractors": [
+      "A strong hydrogen (H-alpha) emission line",
+      "A broad helium (He I) absorption line",
+      "A prominent carbon (C II) emission line"
+    ],
+    "difficulty": 2,
+    "source_article": "Type Ia supernova",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "Type Ia supernova"
+    ]
+  },
+  {
+    "question_text": "In gravitational lensing, what specific visual phenomenon occurs when a light source, massive lensing object, and observer are perfectly aligned along a straight line?",
+    "correct_answer": "An Einstein ring, where the source appears as a ring around the lensing object.",
+    "distractors": [
+      "An Einstein cross, where the source splits into four distinct images around the lens.",
+      "A caustic arc, where the source appears as a curved streak behind the lens.",
+      "A microlensing flare, where the source temporarily brightens due to the lensing effect."
+    ],
+    "difficulty": 2,
+    "source_article": "Gravitational lens",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "gravitational lensing"
+    ]
+  },
+  {
+    "question_text": "What is the formula for the Schwarzschild radius, which defines the event horizon of a non-rotating black hole?",
+    "correct_answer": "$r_s = \\frac{2GM}{c^2}$, where $G$ is the gravitational constant, $M$ is mass, and $c$ is the speed of light.",
+    "distractors": [
+      "$r_s = \\frac{GM}{c^2}$, where $G$ is the gravitational constant, $M$ is mass, and $c$ is the speed of light.",
+      "$r_s = \\frac{2GM}{c}$, where $G$ is the gravitational constant, $M$ is mass, and $c$ is the speed of light.",
+      "$r_s = \\frac{GM^2}{c^2}$, where $G$ is the gravitational constant, $M$ is mass, and $c$ is the speed of light."
+    ],
+    "difficulty": 2,
+    "source_article": "Schwarzschild radius",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "Schwarzschild radius"
+    ]
+  },
+  {
+    "question_text": "At the Eddington luminosity limit, what two forces are in equilibrium?",
+    "correct_answer": "Outward radiation pressure and inward gravitational force",
+    "distractors": [
+      "Outward thermal pressure and inward magnetic force",
+      "Outward centrifugal force and inward gravitational force",
+      "Outward electron degeneracy pressure and inward gravitational force"
+    ],
+    "difficulty": 2,
+    "source_article": "Eddington luminosity",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "Eddington luminosity"
+    ]
+  },
+  {
+    "question_text": "In the Sun, approximately what percentage of helium-4 produced via the proton-proton chain comes from the pp I branch, where two helium-3 nuclei fuse?",
+    "correct_answer": "About 83% of helium-4 comes from the pp I branch.",
+    "distractors": [
+      "About 50% of helium-4 comes from the pp I branch.",
+      "About 17% of helium-4 comes from the pp II branch.",
+      "About 99% of helium-4 comes from the pp III branch."
+    ],
+    "difficulty": 2,
+    "source_article": "Proton\u2013proton chain",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "proton-proton chain"
+    ]
+  },
+  {
+    "question_text": "In cosmological redshift, what does a redshift value of $z = 1$ indicate about the observed light's wavelength compared to when it was emitted?",
+    "correct_answer": "The wavelength has doubled, stretched by the expansion of the universe since emission.",
+    "distractors": [
+      "The wavelength has been reduced by half due to gravitational compression effects.",
+      "The wavelength has increased by exactly one nanometer from its original value.",
+      "The wavelength remains unchanged but the frequency has doubled during transmission."
+    ],
+    "difficulty": 2,
+    "source_article": "Redshift",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "redshift"
+    ]
+  },
+  {
+    "question_text": "In the lighthouse model of pulsar emission, what geometric relationship between two axes causes the characteristic pulsed appearance of radiation as observed from Earth?",
+    "correct_answer": "The magnetic axis is misaligned with the rotational axis",
+    "distractors": [
+      "The magnetic axis is perpendicular to the orbital plane",
+      "The rotation axis precesses around the magnetic field direction",
+      "The magnetic axis aligns perfectly with the rotational axis"
+    ],
+    "difficulty": 2,
+    "source_article": "Pulsar",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "pulsar"
+    ]
+  },
+  {
+    "question_text": "In the Shakura-Sunyaev model of accretion disks, what does the dimensionless $\\alpha$ parameter represent?",
+    "correct_answer": "The efficiency of turbulent viscosity in transporting angular momentum",
+    "distractors": [
+      "The ratio of disk thickness to radius at a given location",
+      "The rate of mass accretion onto the central compact object",
+      "The magnetic field strength driving magnetorotational instability"
+    ],
+    "difficulty": 2,
+    "source_article": "Accretion disk",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "accretion disk"
+    ]
+  },
+  {
+    "question_text": "Why does stellar fusion in massive stars naturally halt at iron, rather than continuing to produce heavier elements?",
+    "correct_answer": "Iron has the highest binding energy per nucleon, so fusing heavier elements absorbs energy rather than releasing it.",
+    "distractors": [
+      "Iron atoms are too small to undergo further fusion reactions, preventing the creation of larger atomic nuclei.",
+      "The extreme temperatures required to fuse iron would instantly destroy the star's core structure.",
+      "Iron's electron configuration creates a repulsive barrier that blocks all subsequent nuclear fusion reactions."
+    ],
+    "difficulty": 3,
+    "source_article": "Stellar nucleosynthesis",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "stellar nucleosynthesis"
+    ]
+  },
+  {
+    "question_text": "The cosmic microwave background shows nearly uniform temperature across regions of space that could never have been in causal contact before recombination. How does cosmic inflation resolve this apparent paradox?",
+    "correct_answer": "Inflation stretched initially connected regions apart faster than light, so they had already reached thermal equilibrium before being separated beyond causal contact.",
+    "distractors": [
+      "Inflation slowed the speed of light in the early universe, allowing distant regions enough time to exchange thermal radiation and reach equilibrium.",
+      "Inflation created identical quantum fluctuations everywhere simultaneously throughout the universe, producing uniform temperature without requiring any causal contact between regions.",
+      "Inflation heated all regions to the same temperature through the release of vacuum energy as the inflaton field decayed uniformly."
+    ],
+    "difficulty": 3,
+    "source_article": "Inflation (cosmology)",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "cosmic inflation"
+    ]
+  },
+  {
+    "question_text": "A molecular cloud has a mass equal to its Jeans mass. If the cloud's temperature decreases while its density remains constant, what will happen to the cloud's stability?",
+    "correct_answer": "The Jeans mass decreases, so the cloud now exceeds it and becomes gravitationally unstable, initiating collapse.",
+    "distractors": [
+      "The Jeans mass increases, so the cloud remains stable and thermal pressure continues to support it against collapse.",
+      "The cloud fragments immediately into smaller pieces because lower temperature increases the Jeans length significantly.",
+      "The cloud expands because reduced thermal motion allows radiation pressure to dominate over gravitational attraction."
+    ],
+    "difficulty": 3,
+    "source_article": "Jeans instability",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "Jeans instability"
+    ]
+  },
+  {
+    "question_text": "Why do baryon acoustic oscillations produce a characteristic scale of approximately 150 Mpc in the distribution of galaxies today?",
+    "correct_answer": "Sound waves in the photon-baryon plasma traveled a fixed distance before recombination froze their propagation, creating a preferred clustering scale.",
+    "distractors": [
+      "Gravitational collapse of dark matter halos established a preferred scale determined by the Jeans mass at matter-radiation equality.",
+      "Cosmic inflation stretched quantum fluctuations to a characteristic wavelength that later seeded the observed galaxy clustering pattern.",
+      "Dark energy began accelerating expansion at a specific epoch, imprinting a preferred distance scale in the matter distribution."
+    ],
+    "difficulty": 3,
+    "source_article": "Baryon acoustic oscillations",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "baryon acoustic oscillations"
+    ]
+  },
+  {
+    "question_text": "During the first gravitational wave detection (GW150914), the signal frequency increased from 35 Hz to 250 Hz over a fraction of a second. What physical process explains this frequency increase?",
+    "correct_answer": "As the black holes spiraled closer together, their orbital frequency increased, producing gravitational waves at progressively higher frequencies until merger.",
+    "distractors": [
+      "The gravitational waves were Doppler-shifted to higher frequencies as the merged black hole moved rapidly toward Earth after formation.",
+      "LIGO's detectors amplified weak low-frequency signals into stronger high-frequency outputs through resonant enhancement in the interferometer arms.",
+      "Energy released during the merger excited surrounding spacetime into higher vibrational modes, similar to harmonics in a musical instrument."
+    ],
+    "difficulty": 3,
+    "source_article": "Gravitational wave",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "gravitational waves"
+    ]
+  },
+  {
+    "question_text": "In a gravitationally bound system in virial equilibrium, if the total gravitational potential energy is $U$, what is the total mechanical energy of the system?",
+    "correct_answer": "The total mechanical energy is $U/2$, which is negative since $U < 0$ for bound systems.",
+    "distractors": [
+      "The total mechanical energy is $-U$, equal in magnitude but opposite in sign to the potential energy.",
+      "The total mechanical energy is $2U$, twice the gravitational potential energy of the system.",
+      "The total mechanical energy is zero because kinetic and potential energies exactly cancel."
+    ],
+    "difficulty": 3,
+    "source_article": "Virial theorem",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "virial theorem"
+    ]
+  },
+  {
+    "question_text": "In a main-sequence star, if the rate of nuclear fusion temporarily decreases, what immediate physical response maintains hydrostatic equilibrium?",
+    "correct_answer": "The star contracts, increasing core temperature and pressure until fusion rates rise to restore balance.",
+    "distractors": [
+      "The star expands, cooling the core and reducing pressure until fusion stabilizes at a lower rate.",
+      "The star immediately begins shedding outer layers to reduce gravitational pressure on the core.",
+      "The star's radiation pressure increases independently to compensate for the reduced thermal energy output."
+    ],
+    "difficulty": 3,
+    "source_article": "Hydrostatic equilibrium",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "hydrostatic equilibrium"
+    ]
+  },
+  {
+    "question_text": "During Big Bang nucleosynthesis, the neutron-to-proton ratio froze out at approximately 1/7. How does this ratio explain the observed helium-4 mass fraction of about 25% in the universe?",
+    "correct_answer": "Nearly all neutrons were incorporated into helium-4, so with 1 neutron per 7 protons, 2 neutrons combine with 2 protons to yield ~25% helium by mass.",
+    "distractors": [
+      "The 1/7 ratio reflects the temperature at which nuclear reactions ceased, but helium abundance is independently determined by the universe's initial baryon density.",
+      "Helium-4 production was limited by the short half-life of free neutrons, so only 25% of available neutrons survived long enough to fuse.",
+      "The ratio indicates that protons preferentially fused into helium-3 first, which later decayed into helium-4, resulting in the 25% abundance."
+    ],
+    "difficulty": 3,
+    "source_article": "Big Bang nucleosynthesis",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "Big Bang nucleosynthesis"
+    ]
+  },
+  {
+    "question_text": "Unlike thermal pressure in main-sequence stars, electron degeneracy pressure in white dwarfs does not decrease as the star cools. What fundamental quantum principle explains why this pressure depends only on electron density rather than temperature?",
+    "correct_answer": "The Pauli exclusion principle forces electrons into higher energy states regardless of temperature, maintaining pressure through quantum effects.",
+    "distractors": [
+      "The Heisenberg uncertainty principle limits how precisely electron positions can be known, creating an effective outward pressure.",
+      "Conservation of angular momentum causes electrons to orbit faster as the star contracts, generating centrifugal pressure.",
+      "Coulomb repulsion between negatively charged electrons creates an electrostatic pressure that resists gravitational compression."
+    ],
+    "difficulty": 3,
+    "source_article": "Electron degeneracy pressure",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "electron degeneracy pressure"
+    ]
+  },
+  {
+    "question_text": "According to the Friedmann equations, the density parameter $\\Omega$ compares actual energy density to critical density. If observations determine that $\\Omega > 1$, what does this imply about the spatial geometry of the universe and the curvature parameter $k$?",
+    "correct_answer": "The universe has positive spatial curvature ($k > 0$) and closed, spherical geometry.",
+    "distractors": [
+      "The universe has zero spatial curvature ($k = 0$) and flat, Euclidean geometry.",
+      "The universe has negative spatial curvature ($k < 0$) and open, hyperbolic geometry.",
+      "The universe has infinite spatial curvature ($k = \\infty$) and singular, non-Euclidean geometry."
+    ],
+    "difficulty": 3,
+    "source_article": "Friedmann equations",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "Friedmann equations"
+    ]
+  },
+  {
+    "question_text": "Why must neutron captures in the r-process occur faster than beta decay for the synthesis of the heaviest elements like uranium and thorium?",
+    "correct_answer": "Rapid captures allow nuclei to reach extreme neutron-rich states before decaying, accessing heavy elements unreachable by slow neutron capture.",
+    "distractors": [
+      "Fast captures generate more energy, heating the environment enough to fuse protons directly into heavy element nuclei.",
+      "Rapid neutron absorption prevents the nucleus from becoming unstable, allowing steady accumulation without radioactive decay.",
+      "Quick captures avoid photodisintegration by keeping nuclei in excited states that resist gamma-ray destruction."
+    ],
+    "difficulty": 3,
+    "source_article": "R-process",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "r-process nucleosynthesis"
+    ]
+  },
+  {
+    "question_text": "Observations of distant quasars show a characteristic 'Gunn-Peterson trough' \u2014 complete absorption of light at certain wavelengths \u2014 when looking back to redshifts beyond $z \\approx 6$. What physical property of the early universe does this absorption signature directly reveal?",
+    "correct_answer": "The presence of neutral hydrogen in the intergalactic medium, which absorbs Lyman-alpha photons from background sources.",
+    "distractors": [
+      "Dense concentrations of dark matter halos blocking electromagnetic radiation along the line of sight to distant objects.",
+      "Ionized plasma in the intergalactic medium scattering photons through inverse Compton interactions with free electrons.",
+      "Dust grains formed by the first generation of supernovae obscuring ultraviolet emission from early cosmic sources."
+    ],
+    "difficulty": 3,
+    "source_article": "Reionization",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "reionization"
+    ]
+  },
+  {
+    "question_text": "In the TOV equation for neutron star structure, pressure appears on both sides: supporting against collapse and contributing to spacetime curvature. How does this general relativistic effect influence the maximum stable mass compared to a Newtonian calculation?",
+    "correct_answer": "It lowers the maximum mass because pressure itself generates additional gravitational attraction in general relativity.",
+    "distractors": [
+      "It raises the maximum mass because relativistic pressure provides stronger support against gravitational collapse.",
+      "It has no effect because pressure and gravity decouple in the strong-field limit of general relativity.",
+      "It raises the maximum mass by reducing the effective gravitational constant at high densities."
+    ],
+    "difficulty": 4,
+    "source_article": "Tolman\u2013Oppenheimer\u2013Volkoff limit",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "Tolman-Oppenheimer-Volkoff limit"
+    ]
+  },
+  {
+    "question_text": "The thermal Sunyaev-Zeldovich effect produces a CMB intensity decrement below 217 GHz and an increment above it. What physical process determines this specific crossover frequency where no net intensity change occurs?",
+    "correct_answer": "The crossover occurs where the energy boost from inverse Compton scattering exactly compensates for photon redistribution in the CMB blackbody spectrum.",
+    "distractors": [
+      "The crossover frequency corresponds to the peak of the CMB blackbody spectrum at the current cosmic temperature of 2.725 K.",
+      "The frequency marks where electron thermal energy equals photon energy, causing resonant scattering to dominate over Thomson scattering.",
+      "It is the frequency at which relativistic corrections to the electron velocity distribution become significant in the intracluster medium."
+    ],
+    "difficulty": 4,
+    "source_article": "Sunyaev\u2013Zeldovich effect",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "Sunyaev-Zeldovich effect"
+    ]
+  },
+  {
+    "question_text": "In the ordinary Sachs-Wolfe effect, the CMB temperature fluctuation is $\\Delta T/T = -\\frac{1}{3}\\Phi$. What physical process causes the factor of 1/3 rather than unity?",
+    "correct_answer": "Partial cancellation between intrinsic temperature excess in overdense regions and gravitational redshift of escaping photons.",
+    "distractors": [
+      "Relativistic corrections to Newtonian gravity reduce the effective potential strength to one-third at recombination scales.",
+      "The photon-baryon fluid oscillation amplitude is damped by a factor of 3 due to radiation pressure.",
+      "Time dilation at the last scattering surface reduces observed frequency shifts by the Lorentz factor cubed."
+    ],
+    "difficulty": 4,
+    "source_article": "Sachs\u2013Wolfe effect",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "Sachs-Wolfe effect"
+    ]
+  },
+  {
+    "question_text": "The baryonic Tully-Fisher relation shows $M_b \\propto V^4$ with remarkably small scatter. In Modified Newtonian Dynamics (MOND), this exact power-law exponent of 4 emerges directly from what theoretical feature?",
+    "correct_answer": "The modified gravitational force law that applies below a characteristic acceleration scale $a_0$.",
+    "distractors": [
+      "The universal ratio of dark matter to baryonic matter in galactic halos.",
+      "The constant surface brightness of spiral galaxy disks at all masses.",
+      "Conservation of angular momentum during hierarchical galaxy formation."
+    ],
+    "difficulty": 4,
+    "source_article": "Tully\u2013Fisher relation",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "Tully-Fisher relation"
+    ]
+  },
+  {
+    "question_text": "What observational evidence from GW170817 definitively confirmed the long-hypothesized connection between short-duration gamma-ray bursts and their theorized progenitor mechanism?",
+    "correct_answer": "The coincident detection of gravitational waves from a neutron star merger with a short GRB occurring 1.7 seconds later.",
+    "distractors": [
+      "The detection of a kilonova afterglow showing r-process nucleosynthesis products from a massive star collapse.",
+      "X-ray observations revealing a collapsar jet breaking through the stellar envelope of the progenitor star.",
+      "Radio imaging of relativistic jet afterglow from a Type Ic supernova associated with the burst."
+    ],
+    "difficulty": 4,
+    "source_article": "Gamma-ray burst",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "gamma-ray burst"
+    ]
+  },
+  {
+    "question_text": "Why can rapidly spinning supermassive black holes tidally disrupt stars at higher masses than non-spinning black holes of equivalent mass?",
+    "correct_answer": "Rapidly spinning black holes have smaller event horizons, allowing tidal disruption to occur outside the horizon at higher black hole masses.",
+    "distractors": [
+      "Spinning black holes generate stronger gravitational waves that enhance tidal forces on approaching stars.",
+      "Frame dragging from the spin transfers angular momentum to the star, weakening its self-gravity.",
+      "The ergosphere of spinning black holes amplifies tidal forces through relativistic energy extraction."
+    ],
+    "difficulty": 4,
+    "source_article": "Tidal disruption event",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "tidal disruption event"
+    ]
+  },
+  {
+    "question_text": "In the unified AGN model, why do Seyfert 1 and Seyfert 2 galaxies exhibit fundamentally different emission line spectra despite having intrinsically identical central engines?",
+    "correct_answer": "The dusty torus orientation relative to our line of sight either reveals or obscures the broad-line region.",
+    "distractors": [
+      "Seyfert 2 galaxies have lower-mass black holes that cannot ionize gas to produce broad emission lines.",
+      "The accretion rate differs, causing Seyfert 1 nuclei to produce higher velocity gas clouds near the core.",
+      "Seyfert 2 galaxies lack a narrow-line region, limiting emission to lower-velocity gas further from the nucleus."
+    ],
+    "difficulty": 4,
+    "source_article": "Active galactic nucleus",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "active galactic nucleus"
+    ]
+  },
+  {
+    "question_text": "Why does a kilonova's 'red' component persist longer than its 'blue' component, despite both being powered by the same r-process radioactive decay?",
+    "correct_answer": "The lanthanide-rich red ejecta has much higher opacity, trapping radiation longer and causing slower photon diffusion.",
+    "distractors": [
+      "The red component contains more radioactive isotopes, providing sustained energy release over a longer period.",
+      "Red photons have lower energy and take longer to thermalize within the expanding ejecta material.",
+      "The red ejecta is ejected at lower velocities, keeping it denser and more luminous for longer."
+    ],
+    "difficulty": 4,
+    "source_article": "Kilonova",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "kilonova"
+    ]
+  },
+  {
+    "question_text": "The Gunn-Peterson trough appears in quasar spectra at $z > 6$ but not at $z \\approx 5$. Given that even a neutral hydrogen fraction of $10^{-3}$ produces complete Lyman-alpha absorption, what does this transition reveal about the intergalactic medium?",
+    "correct_answer": "Reionization of the IGM was essentially complete by $z \\approx 6$, reducing neutral hydrogen below detectable thresholds.",
+    "distractors": [
+      "Quasars at lower redshifts emit insufficient UV radiation to excite the Lyman-alpha transition in hydrogen.",
+      "The IGM density decreases with cosmic expansion, dropping below the threshold for detectable absorption.",
+      "Gravitational lensing by dark matter halos disperses the absorption signal at intermediate redshifts."
+    ],
+    "difficulty": 4,
+    "source_article": "Gunn\u2013Peterson trough",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "Gunn-Peterson trough"
+    ]
+  },
+  {
+    "question_text": "In GW150914, LIGO detected two black holes of approximately 29 and 36 solar masses merging into a 62 solar mass remnant. What happened to the missing 3 solar masses during this merger?",
+    "correct_answer": "It was converted into gravitational wave energy radiated away during the merger.",
+    "distractors": [
+      "It was absorbed by the surrounding accretion disk during the inspiral phase.",
+      "It formed a relativistic jet ejected perpendicular to the orbital plane.",
+      "It remained as potential energy stored in the final black hole's spin."
+    ],
+    "difficulty": 4,
+    "source_article": "LIGO",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "LIGO"
+    ]
+  },
+  {
+    "question_text": "Nickel-62 has the highest binding energy per nucleon, yet iron-56 is far more abundant in the universe. What nucleosynthesis pathway explains this paradox?",
+    "correct_answer": "Supernovae preferentially synthesize nickel-56, which radioactively decays through cobalt-56 to stable iron-56.",
+    "distractors": [
+      "Nickel-62 is unstable and rapidly fissions into iron-56 during stellar core collapse.",
+      "Iron-56 forms directly from silicon-28 fusion while nickel-62 requires neutron capture.",
+      "The s-process bypasses nickel isotopes entirely, channeling nucleosynthesis toward iron-56."
+    ],
+    "difficulty": 4,
+    "source_article": "Iron peak",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "iron peak"
+    ]
+  },
+  {
+    "question_text": "The Stefan-Boltzmann constant $\\sigma$ can be expressed as $\\sigma = \\frac{2\\pi^5 k^4}{15 c^2 h^3}$. What physical process does integrating Planck's spectral radiance over all wavelengths accomplish to yield this result?",
+    "correct_answer": "It sums the energy contributions from all wavelengths of black body radiation to give total power emitted per unit area.",
+    "distractors": [
+      "It calculates the peak wavelength where a black body emits maximum radiation intensity at a given temperature.",
+      "It determines the photon number density in thermal equilibrium by counting quantum states available at each frequency.",
+      "It averages the radiation pressure exerted by photons on the walls of a cavity at thermal equilibrium."
+    ],
+    "difficulty": 4,
+    "source_article": "Stefan\u2013Boltzmann law",
+    "domain_ids": [
+      "astrophysics"
+    ],
+    "concepts_tested": [
+      "Stefan-Boltzmann law"
+    ]
+  }
+]

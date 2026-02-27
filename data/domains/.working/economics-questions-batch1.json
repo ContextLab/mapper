@@ -1,0 +1,172 @@
+[
+  {
+    "question_text": "What are the two main branches of economics that study individual markets and economy-wide aggregates, respectively?",
+    "correct_answer": "Microeconomics and macroeconomics",
+    "distractors": [
+      "Positive economics and normative economics",
+      "Classical economics and behavioral economics",
+      "Applied economics and theoretical economics"
+    ],
+    "difficulty": 1,
+    "source_article": "Economics",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "economics"
+    ]
+  },
+  {
+    "question_text": "Which economic system is based on private ownership of the means of production, competitive markets, wage labor, and the profit motive?",
+    "correct_answer": "Capitalism",
+    "distractors": [
+      "Socialism",
+      "Mercantilism",
+      "Feudalism"
+    ],
+    "difficulty": 1,
+    "source_article": "Capitalism",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "capitalism"
+    ]
+  },
+  {
+    "question_text": "Which economic and political philosophy is characterised by social ownership of the means of production, as opposed to private ownership?",
+    "correct_answer": "Socialism",
+    "distractors": [
+      "Capitalism",
+      "Libertarianism",
+      "Neoliberalism"
+    ],
+    "difficulty": 1,
+    "source_article": "Socialism",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "socialism"
+    ]
+  },
+  {
+    "question_text": "Which international organization, established in 1995, serves as the main body regulating the rules of trade between nations and facilitating multilateral trade agreements?",
+    "correct_answer": "The World Trade Organization (WTO)",
+    "distractors": [
+      "The International Monetary Fund (IMF)",
+      "The World Bank",
+      "The United Nations Conference on Trade and Development (UNCTAD)"
+    ],
+    "difficulty": 1,
+    "source_article": "International trade",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "international trade"
+    ]
+  },
+  {
+    "question_text": "What are the two main statistical measures of poverty that compare income against basic needs and against the living standards of others in the same society?",
+    "correct_answer": "Absolute poverty and relative poverty",
+    "distractors": [
+      "Structural poverty and cyclical poverty",
+      "Urban poverty and rural poverty",
+      "Primary poverty and secondary poverty"
+    ],
+    "difficulty": 1,
+    "source_article": "Poverty",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "poverty"
+    ]
+  },
+  {
+    "question_text": "Which widely used statistical measure, developed by Italian statistician Corrado Gini in 1912, quantifies income or wealth inequality on a scale from 0 (perfect equality) to 1 (perfect inequality)?",
+    "correct_answer": "The Gini coefficient",
+    "distractors": [
+      "The Lorenz curve",
+      "The Human Development Index",
+      "The Palma ratio"
+    ],
+    "difficulty": 1,
+    "source_article": "Economic inequality",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "wealth inequality"
+    ]
+  },
+  {
+    "question_text": "What term describes the process of increasing interdependence and integration among the economies, markets, societies, and cultures of different countries worldwide?",
+    "correct_answer": "Globalization",
+    "distractors": [
+      "Industrialization",
+      "Liberalization",
+      "Urbanization"
+    ],
+    "difficulty": 1,
+    "source_article": "Globalization",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "globalization"
+    ]
+  },
+  {
+    "question_text": "Which Scottish economist and philosopher, often called the 'father of economics,' published An Inquiry into the Nature and Causes of the Wealth of Nations in 1776?",
+    "correct_answer": "Adam Smith",
+    "distractors": [
+      "David Ricardo",
+      "John Stuart Mill",
+      "Thomas Malthus"
+    ],
+    "difficulty": 1,
+    "source_article": "Adam Smith",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "Adam Smith"
+    ]
+  },
+  {
+    "question_text": "What trade policy, the opposite of protectionism, does not restrict imports or exports through tariffs, quotas, or subsidies?",
+    "correct_answer": "Free trade",
+    "distractors": [
+      "Fair trade",
+      "Managed trade",
+      "Autarky"
+    ],
+    "difficulty": 1,
+    "source_article": "Free trade",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "free trade"
+    ]
+  },
+  {
+    "question_text": "According to economist Amartya Sen, how does economic development differ from economic growth?",
+    "correct_answer": "Economic development improves well-being and quality of life, while economic growth is only an increase in GDP",
+    "distractors": [
+      "Economic development focuses on industrial output, while economic growth measures population increase",
+      "Economic development applies only to wealthy nations, while economic growth applies to all nations",
+      "Economic development measures trade surpluses, while economic growth measures government spending"
+    ],
+    "difficulty": 1,
+    "source_article": "Economic development",
+    "domain_ids": [
+      "economics"
+    ],
+    "concepts_tested": [
+      "economic development"
+    ]
+  }
+]

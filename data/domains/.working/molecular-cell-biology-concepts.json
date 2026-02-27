@@ -1,0 +1,66 @@
+{
+  "domain": "molecular-cell-biology",
+  "parent_domain": "biology",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      "protein",
+      "enzyme",
+      "mitosis",
+      "ribosome",
+      "ATP",
+      "cell membrane",
+      "organelle",
+      "cytoplasm",
+      "cell nucleus",
+      "amino acid",
+      "lipid",
+      "RNA",
+      "diffusion"
+    ],
+    "L2": [
+      "endoplasmic reticulum",
+      "Golgi apparatus",
+      "lysosome",
+      "mitochondrion",
+      "cytoskeleton",
+      "signal transduction",
+      "receptor (biochemistry)",
+      "phospholipid bilayer",
+      "active transport",
+      "osmosis",
+      "apoptosis",
+      "stem cell",
+      "cell cycle"
+    ],
+    "L3": [
+      "DNA replication",
+      "transcription (biology)",
+      "translation (biology)",
+      "protein folding",
+      "glycolysis",
+      "citric acid cycle",
+      "electron transport chain",
+      "endocytosis",
+      "Western blot",
+      "gel electrophoresis",
+      "cell differentiation",
+      "enzyme kinetics"
+    ],
+    "L4": [
+      "ubiquitin",
+      "proteasome",
+      "chaperone (protein)",
+      "autophagy",
+      "cyclin-dependent kinase",
+      "tumor suppressor gene",
+      "proto-oncogene",
+      "G protein-coupled receptor",
+      "second messenger",
+      "RNA splicing",
+      "histone",
+      "tight junction"
+    ]
+  }
+}

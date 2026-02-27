@@ -1,0 +1,122 @@
+[
+  {
+    "question_text": "In Lebesgue integration, the integral of a non-negative measurable function is constructed by approximating it from below using simple functions. What distinguishes this construction from the Riemann approach?",
+    "correct_answer": "The Lebesgue approach partitions the range of the function into horizontal slabs and measures the preimage sets, rather than partitioning the domain into subintervals",
+    "distractors": [
+      "The Lebesgue approach partitions the domain of the function into horizontal slabs and measures the image sets, rather than partitioning the range into subintervals",
+      "The Lebesgue approach partitions the range of the function into vertical slabs and sums the interval lengths, rather than partitioning the domain into measurable sets",
+      "The Lebesgue approach partitions the domain into nested open covers and computes their outer measure, rather than partitioning the range into Borel sets"
+    ],
+    "difficulty": 4,
+    "source_article": "Lebesgue integration",
+    "domain_ids": [
+      "calculus"
+    ],
+    "concepts_tested": [
+      "Lebesgue integral",
+      "measure theory",
+      "simple functions",
+      "Riemann vs Lebesgue construction"
+    ]
+  },
+  {
+    "question_text": "The generalized Stokes' theorem states $\\int_{\\partial \\Omega} \\omega = \\int_{\\Omega} d\\omega$. What must $\\omega$ and $\\Omega$ represent for this formulation to be valid?",
+    "correct_answer": "$\\omega$ is a smooth $(k{-}1)$-form and $\\Omega$ is a compact oriented $k$-dimensional manifold with boundary $\\partial\\Omega$",
+    "distractors": [
+      "$\\omega$ is a smooth $k$-form and $\\Omega$ is a compact oriented $(k{-}1)$-dimensional manifold with boundary $\\partial\\Omega$",
+      "$\\omega$ is a smooth $(k{-}1)$-form and $\\Omega$ is any open $k$-dimensional manifold without requiring orientation on $\\partial\\Omega$",
+      "$\\omega$ is a closed $(k{+}1)$-form and $\\Omega$ is a compact oriented $k$-dimensional manifold with boundary $\\partial\\Omega$"
+    ],
+    "difficulty": 4,
+    "source_article": "Generalized Stokes theorem",
+    "domain_ids": [
+      "calculus"
+    ],
+    "concepts_tested": [
+      "generalized Stokes' theorem",
+      "differential forms",
+      "exterior derivative",
+      "oriented manifolds"
+    ]
+  },
+  {
+    "question_text": "A map $f: U \\subseteq V \\to W$ between normed spaces is Fr\u00e9chet differentiable at $x$ if there exists a bounded linear operator $A$ satisfying a specific limit condition. What is that condition?",
+    "correct_answer": "$\\lim_{\\|h\\| \\to 0} \\frac{\\|f(x+h) - f(x) - A(h)\\|}{\\|h\\|} = 0$, requiring the remainder to vanish faster than $\\|h\\|$",
+    "distractors": [
+      "$\\lim_{\\|h\\| \\to 0} \\frac{\\|f(x+h) - f(x) - A(h)\\|}{\\|h\\|^2} = 0$, requiring the remainder to vanish faster than $\\|h\\|^2$",
+      "$\\lim_{\\|h\\| \\to 0} \\frac{\\|f(x+h) - f(x) - A(h)\\|}{\\|h\\|} = 0$, requiring the remainder to vanish faster than $\\|h\\|^2$",
+      "$\\lim_{t \\to 0} \\frac{\\|f(x+th) - f(x)\\|}{t} = \\|A(h)\\|$, requiring convergence for each direction $h$ independently"
+    ],
+    "difficulty": 4,
+    "source_article": "Fr\u00e9chet derivative",
+    "domain_ids": [
+      "calculus"
+    ],
+    "concepts_tested": [
+      "Fr\u00e9chet derivative",
+      "bounded linear operator",
+      "Banach spaces",
+      "G\u00e2teaux vs Fr\u00e9chet"
+    ]
+  },
+  {
+    "question_text": "In the calculus of variations, a functional $J[y] = \\int_a^b L(x,y,y')\\,dx$ maps functions to reals. What does setting the first variation $\\delta J = 0$ yield?",
+    "correct_answer": "Setting $\\delta J = 0$ for all admissible perturbations yields the Euler\u2013Lagrange equation as a necessary condition for an extremum of $J$",
+    "distractors": [
+      "Setting $\\delta J = 0$ for all admissible perturbations yields the Euler\u2013Lagrange equation as a sufficient condition for an extremum of $J$",
+      "Setting $\\delta J = 0$ for all admissible perturbations yields the Hamilton\u2013Jacobi equation as a necessary condition for an extremum of $J$",
+      "Setting $\\delta J = 0$ for one specific perturbation yields the Euler\u2013Lagrange equation as a necessary condition for a minimum of $J$"
+    ],
+    "difficulty": 4,
+    "source_article": "Calculus of variations",
+    "domain_ids": [
+      "calculus"
+    ],
+    "concepts_tested": [
+      "calculus of variations",
+      "first variation",
+      "Euler-Lagrange equation",
+      "necessary conditions for extrema"
+    ]
+  },
+  {
+    "question_text": "The Euler\u2013Lagrange equation $\\frac{\\partial L}{\\partial y} - \\frac{d}{dx}\\frac{\\partial L}{\\partial y'} = 0$ arises in the calculus of variations. What type of equation is it, and what do its solutions represent?",
+    "correct_answer": "A second-order ODE whose solutions are stationary points of the action functional, analogous to where $dJ = 0$ in finite-dimensional optimization",
+    "distractors": [
+      "A first-order ODE whose solutions are stationary points of the action functional, analogous to where $dJ = 0$ in finite-dimensional optimization",
+      "A second-order ODE whose solutions are global minima of the action functional, analogous to where $d^2J > 0$ in finite-dimensional optimization",
+      "A second-order PDE whose solutions are stationary points of the Lagrangian function, analogous to where $dL = 0$ in finite-dimensional optimization"
+    ],
+    "difficulty": 4,
+    "source_article": "Euler\u2013Lagrange equation",
+    "domain_ids": [
+      "calculus"
+    ],
+    "concepts_tested": [
+      "Euler-Lagrange equation",
+      "stationary points of functionals",
+      "second-order ODE",
+      "calculus of variations"
+    ]
+  },
+  {
+    "question_text": "At a jump discontinuity of $f$, a Fourier series $\\sum c_n e^{i2\\pi nx/P}$ exhibits specific convergence behavior. What value does it converge to, and what artifact appears in partial sums?",
+    "correct_answer": "It converges to $\\frac{1}{2}[f(x^-) + f(x^+)]$, and partial sums exhibit the Gibbs phenomenon with approximately 9% overshoot that persists",
+    "distractors": [
+      "It converges to $\\frac{1}{2}[f(x^-) + f(x^+)]$, and partial sums exhibit Runge's phenomenon with approximately 9% overshoot that persists",
+      "It converges to the left-hand limit $f(x^-)$ only, and partial sums exhibit the Gibbs phenomenon with approximately 9% overshoot that persists",
+      "It converges to $\\frac{1}{2}[f(x^-) + f(x^+)]$, and partial sums exhibit the Gibbs phenomenon with approximately 18% overshoot that vanishes"
+    ],
+    "difficulty": 4,
+    "source_article": "Fourier series",
+    "domain_ids": [
+      "calculus"
+    ],
+    "concepts_tested": [
+      "Fourier series",
+      "convergence at discontinuities",
+      "Gibbs phenomenon",
+      "Dirichlet conditions"
+    ]
+  }
+]

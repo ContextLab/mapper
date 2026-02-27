@@ -1,0 +1,136 @@
+[
+  {
+    "id": "d5a2031822b235a1",
+    "question_text": "In probability and statistics, what is probability?",
+    "options": {
+      "A": "A numerical measure of how far a data point lies from the mean, expressed as a value between $-1$ and $1$.",
+      "B": "A numerical measure of the frequency of an event in a dataset, expressed as a count of occurrences rather than a ratio.",
+      "C": "A numerical measure of the central tendency of a dataset, calculated by summing all values and dividing by the total count.",
+      "D": "A numerical measure of the likelihood that an event will occur, expressed as a value between $0$ (impossible) and $1$ (certain)."
+    },
+    "correct_answer": "D",
+    "difficulty": 1,
+    "source_article": "Probability",
+    "domain_ids": [
+      "probability-statistics"
+    ],
+    "concepts_tested": [
+      "probability"
+    ]
+  },
+  {
+    "id": "2773b5da0eaefec1",
+    "question_text": "In statistics, what is the mean of a dataset?",
+    "options": {
+      "A": "A quantity representing the center of a collection of numbers, calculated by sorting the values and selecting the middle one.",
+      "B": "A quantity representing the center of a collection of numbers, calculated by selecting the value that appears most frequently.",
+      "C": "A quantity representing the center of a collection of numbers, calculated by summing all values and dividing by the count.",
+      "D": "A quantity representing the spread of a collection of numbers, calculated by finding the difference between the maximum and minimum."
+    },
+    "correct_answer": "C",
+    "difficulty": 1,
+    "source_article": "Mean",
+    "domain_ids": [
+      "probability-statistics"
+    ],
+    "concepts_tested": [
+      "mean",
+      "arithmetic mean"
+    ]
+  },
+  {
+    "id": "e3e3121543457f4f",
+    "question_text": "In statistics, what is the median of a dataset?",
+    "options": {
+      "A": "The average value obtained by summing all observations and dividing by the total number of data points.",
+      "B": "The middle value between the maximum and minimum of a dataset, calculated as their arithmetic average.",
+      "C": "The most frequently occurring value in a dataset, representing the peak of the distribution.",
+      "D": "The middle value that separates the higher half from the lower half when the data are arranged in order."
+    },
+    "correct_answer": "D",
+    "difficulty": 1,
+    "source_article": "Median",
+    "domain_ids": [
+      "probability-statistics"
+    ],
+    "concepts_tested": [
+      "median"
+    ]
+  },
+  {
+    "id": "c176b6d2b71f3bd1",
+    "question_text": "In statistics, what is the mode of a dataset?",
+    "options": {
+      "A": "The value that appears least often in a set of data values; every dataset has exactly one unique mode.",
+      "B": "The value located at the exact center of a sorted dataset; it splits the data into two equal halves.",
+      "C": "The value that appears most often in a set of data values; a dataset may have one mode, multiple modes, or no mode.",
+      "D": "The value obtained by summing all data points and dividing by the count; it represents the arithmetic average."
+    },
+    "correct_answer": "C",
+    "difficulty": 1,
+    "source_article": "Mode (statistics)",
+    "domain_ids": [
+      "probability-statistics"
+    ],
+    "concepts_tested": [
+      "mode"
+    ]
+  },
+  {
+    "id": "6a07167cabe3f38e",
+    "question_text": "In statistics, what does variance measure about a dataset?",
+    "options": {
+      "A": "The expected value of the absolute deviation from the median, measuring how far a set of numbers are spread from the center.",
+      "B": "The expected value of the squared deviation from the mode, measuring how far a set of numbers cluster around the peak.",
+      "C": "The expected value of the linear deviation from the mean, measuring the direction in which numbers tend to spread.",
+      "D": "The expected value of the squared deviation from the mean, measuring how far a set of numbers are spread out from their average."
+    },
+    "correct_answer": "D",
+    "difficulty": 1,
+    "source_article": "Variance",
+    "domain_ids": [
+      "probability-statistics"
+    ],
+    "concepts_tested": [
+      "variance"
+    ]
+  },
+  {
+    "id": "3538af0525ebd3f5",
+    "question_text": "In statistics, what is the standard deviation?",
+    "options": {
+      "A": "A measure of the amount of variation in a dataset, equal to the square of the variance, denoted by $\\sigma^2$.",
+      "B": "A measure of the amount of skewness in a dataset, equal to the cube root of the variance, denoted by $\\gamma$.",
+      "C": "A measure of the central tendency in a dataset, equal to the square root of the mean, denoted by $\\mu$.",
+      "D": "A measure of the amount of variation in a dataset, equal to the square root of the variance, denoted by $\\sigma$."
+    },
+    "correct_answer": "D",
+    "difficulty": 1,
+    "source_article": "Standard deviation",
+    "domain_ids": [
+      "probability-statistics"
+    ],
+    "concepts_tested": [
+      "standard deviation"
+    ]
+  },
+  {
+    "id": "8191f3c3025021b7",
+    "question_text": "In statistics, what is a histogram?",
+    "options": {
+      "A": "A visual representation of the proportion of categories in a dataset using colored slices of a circular diagram.",
+      "B": "A visual representation of the relationship between two variables using scattered points plotted on a coordinate plane.",
+      "C": "A visual representation of the distribution of quantitative data using adjacent bars whose heights show the frequency of values in each bin.",
+      "D": "A visual representation of trends in data over time using connected line segments plotted on a coordinate plane."
+    },
+    "correct_answer": "C",
+    "difficulty": 1,
+    "source_article": "Histogram",
+    "domain_ids": [
+      "probability-statistics"
+    ],
+    "concepts_tested": [
+      "histogram"
+    ]
+  }
+]

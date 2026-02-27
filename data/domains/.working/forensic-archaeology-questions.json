@@ -1,0 +1,852 @@
+[
+  {
+    "question_text": "What is forensic science?",
+    "correct_answer": "The application of scientific methods and techniques to matters of law and criminal investigation.",
+    "distractors": [
+      "The philosophical study of moral principles governing human conduct in research and medical settings.",
+      "The systematic classification of living organisms based on shared evolutionary ancestry and morphology.",
+      "The engineering discipline concerned with designing structures that withstand natural disasters and seismic activity."
+    ],
+    "difficulty": 1,
+    "source_article": "Forensic science",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "forensic science"
+    ]
+  },
+  {
+    "question_text": "In archaeology, what is an excavation?",
+    "correct_answer": "The systematic process of digging and recording material from an archaeological site layer by layer.",
+    "distractors": [
+      "The chemical treatment of recovered artifacts to prevent further deterioration and preserve surface details.",
+      "The classification and cataloguing of museum collections according to their cultural origin and age.",
+      "The comparative analysis of written historical records to establish a chronological framework for events."
+    ],
+    "difficulty": 1,
+    "source_article": "Excavation (archaeology)",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "excavation"
+    ]
+  },
+  {
+    "question_text": "What is an artifact in archaeology?",
+    "correct_answer": "Any object made or modified by humans that is recovered from an archaeological context.",
+    "distractors": [
+      "A natural geological formation that resembles a human-made object but formed through erosion processes.",
+      "A written document found in an archive that describes past events and cultural practices.",
+      "A biological specimen preserved in sediment that provides evidence of ancient environmental conditions."
+    ],
+    "difficulty": 1,
+    "source_article": "Artifact (archaeology)",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "artifact"
+    ]
+  },
+  {
+    "question_text": "What is the skeleton in the context of human anatomy?",
+    "correct_answer": "The internal bony framework that supports and protects the organs and tissues of the body.",
+    "distractors": [
+      "The network of muscles and tendons that enables voluntary movement and maintains posture throughout life.",
+      "The system of blood vessels and lymphatic channels that transports nutrients to every cell.",
+      "The outer layer of connective tissue and skin that shields internal structures from environmental damage."
+    ],
+    "difficulty": 1,
+    "source_article": "Skeleton",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "skeleton"
+    ]
+  },
+  {
+    "question_text": "What is DNA profiling used for in forensic investigations?",
+    "correct_answer": "Identifying individuals by analyzing unique patterns in their genetic material to link them to evidence.",
+    "distractors": [
+      "Determining the geological age of rock formations by measuring radioactive decay of embedded mineral crystals.",
+      "Classifying soil samples by their chemical composition to map regional agricultural productivity over time.",
+      "Cataloguing plant species at a scene by sequencing chloroplast genomes to reconstruct local vegetation history."
+    ],
+    "difficulty": 1,
+    "source_article": "DNA profiling",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "DNA evidence"
+    ]
+  },
+  {
+    "question_text": "What is a crime scene?",
+    "correct_answer": "The location where a criminal act occurred and from which physical evidence may be collected.",
+    "distractors": [
+      "A courtroom facility where judges review testimony and legal arguments before rendering a formal verdict.",
+      "A laboratory environment where forensic scientists conduct chemical and biological analyses on submitted samples.",
+      "An administrative office where law enforcement personnel file reports and coordinate ongoing criminal investigations."
+    ],
+    "difficulty": 1,
+    "source_article": "Crime scene",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "crime scene"
+    ]
+  },
+  {
+    "question_text": "What does the term burial refer to?",
+    "correct_answer": "The deliberate placement of human remains into the ground or another receptacle after death.",
+    "distractors": [
+      "The ritual burning of a deceased person's body on a funeral pyre in open air.",
+      "The process of embalming and chemically preserving soft tissue for long-term display in a museum.",
+      "The scattering of cremated ashes across a body of water as a memorial ceremony."
+    ],
+    "difficulty": 1,
+    "source_article": "Burial",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "burial"
+    ]
+  },
+  {
+    "question_text": "What does carbon-14 dating measure?",
+    "correct_answer": "The age of organic materials by measuring the decay of the radioactive isotope carbon-14 within them.",
+    "distractors": [
+      "The mineral composition of ceramic pottery by detecting trace elements embedded during the original firing process.",
+      "The geographic origin of stone tools by comparing their crystalline structure with known quarry source samples.",
+      "The temperature at which ancient metals were smelted by analyzing residual oxidation layers on the surface."
+    ],
+    "difficulty": 1,
+    "source_article": "Radiocarbon dating",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "carbon-14 dating"
+    ]
+  },
+  {
+    "question_text": "What is a mass grave?",
+    "correct_answer": "A burial site containing the remains of multiple individuals, often victims of conflict or disaster.",
+    "distractors": [
+      "A single elaborate tomb built for a high-ranking political leader or religious figure of importance.",
+      "A surface scatter of disarticulated animal bones left behind after a large-scale hunting event.",
+      "An above-ground ossuary where skeletal remains are stored after exhumation from individual cemetery plots."
+    ],
+    "difficulty": 1,
+    "source_article": "Mass grave",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "mass grave"
+    ]
+  },
+  {
+    "question_text": "What are human rights?",
+    "correct_answer": "Fundamental rights and freedoms to which every person is entitled regardless of nationality or status.",
+    "distractors": [
+      "Specific privileges granted exclusively to citizens of a country through its national constitution and legislation.",
+      "Legal protections that apply only to individuals accused of committing crimes within a court of law.",
+      "Economic benefits distributed by governments to taxpayers based on their annual income and employment status."
+    ],
+    "difficulty": 1,
+    "source_article": "Human rights",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "human rights"
+    ]
+  },
+  {
+    "question_text": "What constitutes a war crime under international law?",
+    "correct_answer": "A serious violation of the laws and customs of war that causes unnecessary suffering to combatants or civilians.",
+    "distractors": [
+      "Any military engagement conducted without a formal declaration of war approved by the aggressor nation's legislature.",
+      "The use of economic sanctions by one state against another to compel changes in domestic trade policy.",
+      "A diplomatic protest filed by a neutral country objecting to the territorial expansion of a neighboring state."
+    ],
+    "difficulty": 1,
+    "source_article": "War crime",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "war crime"
+    ]
+  },
+  {
+    "question_text": "In legal proceedings, what is evidence?",
+    "correct_answer": "Material or information presented in court to establish or disprove facts relevant to a case.",
+    "distractors": [
+      "A formal written opinion issued by a judge summarizing the legal reasoning behind a court ruling.",
+      "The oral testimony of an expert witness who interprets scientific findings for a jury during trial.",
+      "A procedural motion filed by an attorney requesting the dismissal of charges before trial begins."
+    ],
+    "difficulty": 1,
+    "source_article": "Evidence",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "evidence"
+    ]
+  },
+  {
+    "question_text": "What is stratigraphy in archaeology?",
+    "correct_answer": "The study of layered deposits at a site, where deeper layers are generally older than those above.",
+    "distractors": [
+      "The classification of artifacts by material type and manufacturing technique to determine cultural affiliation.",
+      "The mapping of surface features using aerial photography to identify potential archaeological sites from above.",
+      "The chemical analysis of sediment samples to reconstruct past climatic conditions at a given location."
+    ],
+    "difficulty": 1,
+    "source_article": "Stratigraphy (archaeology)",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "stratigraphy"
+    ]
+  },
+  {
+    "question_text": "What does taphonomy study in forensic contexts?",
+    "correct_answer": "The processes affecting an organism after death, including decay, transport, and burial of remains.",
+    "distractors": [
+      "The genetic variation within living populations used to trace ancestry and migration across geographic regions.",
+      "The development of stone tool technologies across different prehistoric cultural periods and traditions worldwide.",
+      "The chemical bonding properties of minerals found in sedimentary rock formations surrounding archaeological deposits."
+    ],
+    "difficulty": 2,
+    "source_article": "Taphonomy",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "taphonomy"
+    ]
+  },
+  {
+    "question_text": "What is osteology?",
+    "correct_answer": "The scientific study of bones, including their structure, function, and role in identifying skeletal remains.",
+    "distractors": [
+      "The analysis of ancient pottery styles and manufacturing techniques to establish trade networks between settlements.",
+      "The study of fossilized plant remains to reconstruct past environments and vegetation patterns in landscapes.",
+      "The examination of insect life cycles to determine seasonal timing and environmental conditions at death scenes."
+    ],
+    "difficulty": 2,
+    "source_article": "Osteology",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "osteology"
+    ]
+  },
+  {
+    "question_text": "What does provenience record in archaeological fieldwork?",
+    "correct_answer": "The exact three-dimensional location where an artifact or specimen was found within an excavation.",
+    "distractors": [
+      "The chemical composition of a recovered object determined through laboratory spectroscopic analysis after excavation.",
+      "The cultural significance assigned to an artifact based on comparison with similar items in museum collections.",
+      "The estimated market value of an antiquity as appraised by a certified dealer for insurance purposes."
+    ],
+    "difficulty": 2,
+    "source_article": "Provenance",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "provenience"
+    ]
+  },
+  {
+    "question_text": "What is the chain of custody in forensic work?",
+    "correct_answer": "The documented chronological record of who handled evidence from collection through presentation in court.",
+    "distractors": [
+      "The hierarchical ranking of forensic laboratory personnel that determines who authorizes release of final reports.",
+      "The sequential order in which different forensic disciplines analyze a single piece of physical evidence.",
+      "The administrative process by which law enforcement agencies transfer jurisdiction of a case between districts."
+    ],
+    "difficulty": 2,
+    "source_article": "Chain of custody",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "chain of custody"
+    ]
+  },
+  {
+    "question_text": "What does forensic anthropology primarily involve?",
+    "correct_answer": "Applying physical anthropology methods to analyze skeletal remains for legal identification and cause of death.",
+    "distractors": [
+      "Studying contemporary cultural practices of indigenous communities to document intangible heritage before it disappears.",
+      "Reconstructing ancient architectural structures from surviving foundations and comparing them with historical building plans.",
+      "Translating inscriptions found on archaeological monuments to understand political events recorded by ancient scribes."
+    ],
+    "difficulty": 2,
+    "source_article": "Forensic anthropology",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "forensic anthropology"
+    ]
+  },
+  {
+    "question_text": "What does a biological profile estimate from skeletal remains?",
+    "correct_answer": "The age, sex, ancestry, and stature of a deceased individual based on analysis of their bones.",
+    "distractors": [
+      "The specific disease that caused death by culturing microbial pathogens extracted from preserved soft tissue samples.",
+      "The individual's occupation and socioeconomic status inferred from historical census records linked to burial location.",
+      "The blood type and metabolic rate of the deceased using chemical residues found in surrounding burial soil."
+    ],
+    "difficulty": 2,
+    "source_article": "Forensic anthropology",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "biological profile"
+    ]
+  },
+  {
+    "question_text": "What is the purpose of a site survey in archaeology?",
+    "correct_answer": "Systematically inspecting an area to locate, record, and assess archaeological features before excavation begins.",
+    "distractors": [
+      "Chemically treating excavated artifacts in a laboratory to stabilize their condition for long-term museum storage.",
+      "Interviewing local residents about oral traditions to compile a narrative history of the surrounding region.",
+      "Publishing preliminary excavation results in a peer-reviewed journal to secure additional research funding grants."
+    ],
+    "difficulty": 2,
+    "source_article": "Archaeological survey",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "site survey"
+    ]
+  },
+  {
+    "question_text": "What is decomposition in a forensic context?",
+    "correct_answer": "The biological and chemical breakdown of organic tissues after death through autolysis and microbial activity.",
+    "distractors": [
+      "The mechanical fragmentation of bones caused by repeated freezing and thawing cycles in periglacial environments.",
+      "The deliberate dismemberment of a body by a perpetrator to conceal identity and hinder forensic analysis.",
+      "The gradual erosion of surface soil exposing buried remains through wind and water action over decades."
+    ],
+    "difficulty": 2,
+    "source_article": "Decomposition",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "decomposition"
+    ]
+  },
+  {
+    "question_text": "What is archaeological context?",
+    "correct_answer": "The spatial, temporal, and stratigraphic relationships of a find to surrounding deposits and other materials.",
+    "distractors": [
+      "The written historical background compiled from archival documents that explains why a site was originally occupied.",
+      "The museum catalogue number assigned to an artifact once it has been accessioned into a permanent collection.",
+      "The funding agency guidelines that dictate how excavated materials must be stored after fieldwork is completed."
+    ],
+    "difficulty": 2,
+    "source_article": "Archaeological context",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "context (archaeology)"
+    ]
+  },
+  {
+    "question_text": "What is the postmortem interval?",
+    "correct_answer": "The period of time that has elapsed between an individual's death and the discovery of their remains.",
+    "distractors": [
+      "The duration of time a patient survives in hospital after sustaining critical injuries before being pronounced dead.",
+      "The legally mandated waiting period before an autopsy may be performed on a body following formal identification.",
+      "The interval between collection of forensic evidence at a scene and its formal submission to a laboratory."
+    ],
+    "difficulty": 2,
+    "source_article": "Decomposition",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "postmortem interval"
+    ]
+  },
+  {
+    "question_text": "What is an exhumation?",
+    "correct_answer": "The lawful removal of previously buried human remains from a grave for forensic or legal examination.",
+    "distractors": [
+      "The initial placement of a deceased person into a coffin before transport to the cemetery for interment.",
+      "The ritual cleansing ceremony performed on skeletal remains before they are reburied at a sacred location.",
+      "The laboratory process of extracting DNA samples from bone fragments recovered during an archaeological excavation season."
+    ],
+    "difficulty": 2,
+    "source_article": "Exhumation",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "exhumation"
+    ]
+  },
+  {
+    "question_text": "What is a Harris matrix used for in archaeology?",
+    "correct_answer": "Diagrammatically representing the stratigraphic relationships between excavated layers, interfaces, and features at a site.",
+    "distractors": [
+      "Calculating the statistical probability that two skeletal elements belong to the same individual in commingled assemblages.",
+      "Converting geographic coordinates of findspots into a standardized grid reference system for regional site databases.",
+      "Measuring the hardness and mineral density of excavated bone fragments to assess their degree of fossilization."
+    ],
+    "difficulty": 2,
+    "source_article": "Harris matrix",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "Harris matrix"
+    ]
+  },
+  {
+    "question_text": "How does forensic entomology assist investigations?",
+    "correct_answer": "By studying insect colonization and succession on remains to estimate the postmortem interval and scene conditions.",
+    "distractors": [
+      "By analyzing plant root intrusion patterns into burial fills to determine how long a grave has existed.",
+      "By identifying animal gnaw marks on bones to establish which scavenger species disturbed the original burial.",
+      "By culturing bacteria from decomposed tissue to determine the specific pathogen that caused the victim's death."
+    ],
+    "difficulty": 2,
+    "source_article": "Forensic entomology",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "entomology (forensic)"
+    ]
+  },
+  {
+    "question_text": "What can stable isotope analysis of bone reveal about a deceased individual?",
+    "correct_answer": "Information about their diet, geographic origin, and migration patterns derived from isotopic ratios in skeletal tissue.",
+    "distractors": [
+      "The exact calendar date of death established by measuring residual electrical charge stored in bone mineral crystals.",
+      "The individual's blood type and genetic ancestry determined through spectroscopic scanning of compact cortical bone tissue.",
+      "The precise cause of death identified by detecting pharmaceutical compounds absorbed into trabecular bone during life."
+    ],
+    "difficulty": 3,
+    "source_article": "Isotope analysis",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "stable isotope analysis"
+    ]
+  },
+  {
+    "question_text": "How does ground-penetrating radar aid forensic investigations?",
+    "correct_answer": "It sends electromagnetic pulses into the ground and detects subsurface anomalies such as disturbed soil or graves.",
+    "distractors": [
+      "It measures surface temperature differences using infrared sensors to locate areas where decomposition gases are venting.",
+      "It records ambient sound vibrations transmitted through bedrock to triangulate the depth of hollow underground cavities.",
+      "It projects laser beams across a landscape to create elevation models revealing subtle changes in plant growth."
+    ],
+    "difficulty": 3,
+    "source_article": "Ground-penetrating radar",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "ground-penetrating radar"
+    ]
+  },
+  {
+    "question_text": "What characterizes antemortem trauma on skeletal remains?",
+    "correct_answer": "Injuries that occurred before death and show evidence of bone healing or remodeling around the fracture site.",
+    "distractors": [
+      "Damage inflicted at the moment of death that displays sharp fracture margins with no cellular repair response.",
+      "Breaks produced by soil pressure long after burial that exhibit dry bone splintering and uniform surface color.",
+      "Intentional cultural modifications such as cranial shaping performed during infancy that alter normal skeletal morphology."
+    ],
+    "difficulty": 3,
+    "source_article": "Bone fracture",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "antemortem trauma"
+    ]
+  },
+  {
+    "question_text": "What defines a clandestine grave in forensic archaeology?",
+    "correct_answer": "A concealed, illegally created burial intended to hide a body and avoid detection by authorities.",
+    "distractors": [
+      "A formally registered cemetery plot that has been abandoned due to administrative neglect over many decades.",
+      "An ancient tomb deliberately sealed by its original builders to protect grave goods from future looting.",
+      "A temporary field morgue established by emergency responders to hold victims during a mass casualty incident."
+    ],
+    "difficulty": 3,
+    "source_article": "Clandestine grave",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "clandestine grave"
+    ]
+  },
+  {
+    "question_text": "What does skeletal trauma analysis determine in forensic cases?",
+    "correct_answer": "The type, mechanism, and timing of injuries recorded on bone to help establish cause and manner of death.",
+    "distractors": [
+      "The nutritional deficiencies experienced during childhood by measuring cortical bone thickness and Harris line frequency in long bones.",
+      "The individual's habitual physical activities inferred from patterns of muscular attachment site remodeling on the skeleton.",
+      "The ambient temperature at the time of burial calculated from oxygen isotope ratios preserved in dental enamel."
+    ],
+    "difficulty": 3,
+    "source_article": "Forensic anthropology",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "skeletal trauma analysis"
+    ]
+  },
+  {
+    "question_text": "What are commingled remains in forensic contexts?",
+    "correct_answer": "Skeletal elements from two or more individuals mixed together in a single deposit requiring careful sorting.",
+    "distractors": [
+      "Complete articulated skeletons found in individual graves arranged in a consistent orientation within a formal cemetery.",
+      "Cremated bone fragments reduced to calcined pieces that cannot be visually distinguished fromiteiteiteiteiteiteiteiteiteiteite surroundingite sediment.",
+      "Mummified soft tissues preserved by desiccation in arid environments that retain identifiable anatomical structures intact."
+    ],
+    "difficulty": 3,
+    "source_article": "Commingling (forensics)",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "commingled remains"
+    ]
+  },
+  {
+    "question_text": "How is photogrammetry used in forensic archaeology?",
+    "correct_answer": "Overlapping photographs are processed to create accurate three-dimensional digital models of excavated scenes and remains.",
+    "distractors": [
+      "Single high-resolution aerial photographs are printed at large scale to serve as base maps for excavation planning.",
+      "Infrared camera imagery is used to detect temperature variations on the soil surface indicating buried decomposition.",
+      "Satellite images captured at different seasons are compared to identify vegetation changes caused by subsurface disturbance."
+    ],
+    "difficulty": 3,
+    "source_article": "Photogrammetry",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "photogrammetry"
+    ]
+  },
+  {
+    "question_text": "How are ante-mortem dental records used in forensic identification?",
+    "correct_answer": "They are compared with the dentition of unidentified remains to establish a positive identification of the deceased.",
+    "distractors": [
+      "They are analyzed to estimate the individual's chronological age at death based on tooth eruption sequence patterns.",
+      "They are used to reconstruct facial soft tissue appearance for public appeals to identify unknown missing persons.",
+      "They are submitted to a DNA laboratory to extract genetic material from pulp cavities of documented teeth."
+    ],
+    "difficulty": 3,
+    "source_article": "Forensic odontology",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "ante-mortem dental records"
+    ]
+  },
+  {
+    "question_text": "Why is thorough scene documentation essential in forensic archaeology?",
+    "correct_answer": "It creates a permanent record through photography, mapping, and notes that preserves evidence relationships for court proceedings.",
+    "distractors": [
+      "It satisfies the administrative requirement of filing incident reports with local planning authorities before excavation may begin.",
+      "It allows insurance companies to assess property damage claims resulting from the discovery of human remains on land.",
+      "It generates publicity materials that forensic teams distribute to media outlets to solicit tips from the public."
+    ],
+    "difficulty": 3,
+    "source_article": "Crime scene investigation",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "scene documentation"
+    ]
+  },
+  {
+    "question_text": "What does luminescence dating measure in forensic geoarchaeology?",
+    "correct_answer": "The time since mineral grains in sediment were last exposed to light or heat, dating burial contexts.",
+    "distractors": [
+      "The concentration of heavy metals deposited in soil layers by industrial pollution over the past two centuries.",
+      "The magnetic polarity of iron-bearing minerals in strata to correlate layers with known geomagnetic reversal events.",
+      "The percentage of calcium carbonate cement binding sediment particles, indicating groundwater saturation levels over time."
+    ],
+    "difficulty": 3,
+    "source_article": "Luminescence dating",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "luminescence dating"
+    ]
+  },
+  {
+    "question_text": "What are Interpol DVI protocols designed to accomplish?",
+    "correct_answer": "Standardize the identification of disaster victims internationally using primary and secondary identifiers across agencies.",
+    "distractors": [
+      "Regulate the export of archaeological artifacts across national borders to prevent illicit trafficking of cultural property.",
+      "Coordinate military intelligence sharing between allied nations during armed conflicts and peacekeeping operations worldwide.",
+      "Establish sentencing guidelines for individuals convicted of crimes against humanity by international criminal tribunals."
+    ],
+    "difficulty": 3,
+    "source_article": "Disaster victim identification",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "Interpol DVI protocols"
+    ]
+  },
+  {
+    "question_text": "How can botanical evidence contribute to forensic investigations?",
+    "correct_answer": "Plant material, pollen, and seeds found at scenes help reconstruct the environment and estimate the postmortem interval.",
+    "distractors": [
+      "Tree ring sequences from structural timbers provide precise construction dates for buildings associated with criminal activity.",
+      "Genetic analysis of crop species identifies agricultural fraud by comparing harvested grain with licensed seed varieties.",
+      "Chemical residues extracted from medicinal herbs found in a suspect's possession confirm the synthesis of controlled substances."
+    ],
+    "difficulty": 3,
+    "source_article": "Forensic botany",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "botanical evidence"
+    ]
+  },
+  {
+    "question_text": "How are perimortem fractures distinguished from postmortem fractures on bone?",
+    "correct_answer": "Perimortem fractures show plastic deformation and sharp margins in hydrated bone, while postmortem breaks display dry, jagged edges.",
+    "distractors": [
+      "Perimortem fractures always exhibit extensive callus formation around the break, while postmortem fractures show no healing whatsoever.",
+      "Perimortem fractures are identified solely by their location on weight-bearing bones, while postmortem fractures appear only on ribs.",
+      "Perimortem fractures fluoresce under ultraviolet light due to fresh collagen exposure, while postmortem fractures remain completely dark."
+    ],
+    "difficulty": 4,
+    "source_article": "Bone fracture",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "perimortem vs. postmortem fracture analysis"
+    ]
+  },
+  {
+    "question_text": "What features are examined during cut mark analysis on bone?",
+    "correct_answer": "Striation pattern, cross-section profile, and kerf floor morphology to identify the class of tool that produced the mark.",
+    "distractors": [
+      "Surface discoloration, chemical residue composition, and fluorescence response to determine the age of the bone itself.",
+      "Trabecular density, cortical thickness, and periosteal texture to estimate the individual's age and nutritional status.",
+      "Fracture angle, fragment scatter radius, and bone mineral density to calculate the velocity of a ballistic projectile."
+    ],
+    "difficulty": 4,
+    "source_article": "Cut mark",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "cut mark analysis"
+    ]
+  },
+  {
+    "question_text": "What distinguishes sequential excavation methodology in forensic archaeology from conventional digging?",
+    "correct_answer": "It removes burial fills layer by layer following stratigraphic principles while maintaining court-admissible evidence standards throughout.",
+    "distractors": [
+      "It uses heavy machinery to rapidly clear overburden before hand excavation begins at the level of anticipated remains.",
+      "It excavates in arbitrary horizontal spits of uniform depth regardless of visible soil changes or depositional boundaries.",
+      "It prioritizes speed of recovery over contextual recording to ensure remains reach the mortuary as quickly as possible."
+    ],
+    "difficulty": 4,
+    "source_article": "Excavation (archaeology)",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "sequential excavation methodology"
+    ]
+  },
+  {
+    "question_text": "How is the minimum number of individuals (MNI) calculated from commingled skeletal assemblages?",
+    "correct_answer": "By counting the most frequently occurring non-repeatable skeletal element, adjusted for side, size, and age compatibility.",
+    "distractors": [
+      "By dividing the total weight of all recovered bone fragments by the average skeletal mass of one adult individual.",
+      "By multiplying the number of distinct burial features identified at the site by the average family unit size.",
+      "By summing every identifiable bone fragment regardless of element type and dividing by the standard bone count of 206."
+    ],
+    "difficulty": 4,
+    "source_article": "Minimum number of individuals",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "minimum number of individuals"
+    ]
+  },
+  {
+    "question_text": "How does strontium isotope analysis determine an individual's geographic origin?",
+    "correct_answer": "By comparing strontium-87/86 ratios in tooth enamel with regional bedrock geology maps to identify where the person lived during childhood.",
+    "distractors": [
+      "By measuring total strontium concentration in femoral cortical bone and matching it to dietary intake records from specific countries.",
+      "By detecting strontium fluorescence in cremated bone fragments and linking the emission spectrum to known volcanic ash deposits.",
+      "By extracting strontium salts from hair follicles preserved in burial soil and comparing them with ocean water isotope values."
+    ],
+    "difficulty": 4,
+    "source_article": "Isotope geochemistry",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "strontium isotope geolocation"
+    ]
+  },
+  {
+    "question_text": "What does electrical resistivity tomography detect when searching for clandestine graves?",
+    "correct_answer": "Variations in subsurface soil resistivity caused by disturbed ground, decomposition fluids, or voids associated with burials.",
+    "distractors": [
+      "Fluctuations in the local magnetic field produced by ferrous metal objects such as weapons buried alongside the victim.",
+      "Changes in surface air temperature measured by thermal imaging cameras mounted on low-altitude drone platforms overhead.",
+      "Shifts in ambient radioactivity levels caused by the natural decay of potassium-40 in backfilled clay sediments."
+    ],
+    "difficulty": 4,
+    "source_article": "Electrical resistivity tomography",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "electrical resistivity tomography"
+    ]
+  },
+  {
+    "question_text": "What does forensic geoarchaeology contribute to burial investigations?",
+    "correct_answer": "Sedimentological and geomorphological analysis of grave fills to reconstruct depositional history and detect soil disturbance events.",
+    "distractors": [
+      "Chemical fingerprinting of groundwater samples to trace the movement of dissolved pollutants through an aquifer beneath the site.",
+      "Paleoclimatic reconstruction using deep ocean sediment cores to establish global temperature trends during the Holocene epoch.",
+      "Petrographic thin-section analysis of building stones to identify the quarry source of masonry used in nearby structures."
+    ],
+    "difficulty": 4,
+    "source_article": "Geoarchaeology",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "forensic geoarchaeology"
+    ]
+  },
+  {
+    "question_text": "How are blunt force and sharp force trauma differentiated on skeletal remains?",
+    "correct_answer": "Blunt force produces radiating fracture lines and depressed areas, while sharp force leaves clean incised marks with defined kerf walls.",
+    "distractors": [
+      "Blunt force always results in complete transverse fractures of long bones, while sharp force only affects flat cranial bones.",
+      "Blunt force is identified by greenish staining around impact points, while sharp force is marked by thermal discoloration.",
+      "Blunt force exclusively damages cortical bone surfaces, while sharp force penetrates only cancellous trabecular bone tissue."
+    ],
+    "difficulty": 4,
+    "source_article": "Forensic anthropology",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "blunt force vs. sharp force trauma differentiation"
+    ]
+  },
+  {
+    "question_text": "What is the primary purpose of body farm research facilities?",
+    "correct_answer": "Studying human decomposition under controlled outdoor conditions to improve estimation of postmortem interval in forensic cases.",
+    "distractors": [
+      "Training cadaver dogs to locate buried narcotics by exposing them to a range of synthetic chemical odor signatures.",
+      "Testing the durability of commercial burial caskets and embalming products under various environmental weathering conditions over time.",
+      "Cultivating forensically relevant insect colonies in laboratory settings to provide reference specimens for taxonomic identification work."
+    ],
+    "difficulty": 4,
+    "source_article": "Anthropological Research Facility",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "body farm research"
+    ]
+  },
+  {
+    "question_text": "What does paleodemographic analysis of mass graves aim to reveal?",
+    "correct_answer": "Age-at-death and sex distributions of victims to identify selection patterns and infer the intent behind an atrocity.",
+    "distractors": [
+      "The total population size of the surrounding region at the time of the conflict using census-based extrapolation models.",
+      "The genetic diversity of the buried population to determine whether victims shared a common recent biological ancestor.",
+      "The socioeconomic status of each individual through analysis of grave goods and clothing quality preserved with remains."
+    ],
+    "difficulty": 4,
+    "source_article": "Paleodemography",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "paleodemography of mass graves"
+    ]
+  },
+  {
+    "question_text": "How is lidar used to detect potential clandestine burial sites?",
+    "correct_answer": "Airborne laser scanning penetrates vegetation canopy to reveal subtle ground surface depressions or mounding indicative of grave disturbance.",
+    "distractors": [
+      "Ground-based sonar devices emit low-frequency sound waves that bounce off buried remains and create audible echo signatures.",
+      "Satellite-mounted spectrometers measure chlorophyll absorption bands to detect stressed vegetation caused by elevated soil nitrogen levels.",
+      "Handheld magnetometers map anomalies in the earth's magnetic field produced by decomposition byproducts diffusing through surrounding soil."
+    ],
+    "difficulty": 4,
+    "source_article": "Lidar",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "lidar terrain analysis"
+    ]
+  },
+  {
+    "question_text": "Why is mitochondrial DNA (mtDNA) used for kinship analysis of skeletal remains from mass graves?",
+    "correct_answer": "It is maternally inherited, present in many copies per cell, and survives degradation better than nuclear DNA in ancient bone.",
+    "distractors": [
+      "It contains the complete genetic code of an individual, allowing full genomic reconstruction from even heavily fragmented samples.",
+      "It mutates at a constant rate across all populations, providing an absolute molecular clock for dating skeletal remains.",
+      "It is paternally inherited and found exclusively in tooth enamel, making it the only DNA source in edentulous individuals."
+    ],
+    "difficulty": 4,
+    "source_article": "Mitochondrial DNA",
+    "domain_ids": [
+      "forensic-archaeology"
+    ],
+    "concepts_tested": [
+      "mtDNA kinship analysis"
+    ]
+  }
+]

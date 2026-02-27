@@ -1,0 +1,652 @@
+[
+  {
+    "question_text": "What is logic primarily concerned with?",
+    "correct_answer": "The study of valid reasoning and the principles that distinguish correct from incorrect inferences.",
+    "distractors": [
+      "The empirical investigation of how human brains process sensory information and form beliefs.",
+      "The systematic cataloguing of moral principles that govern ethical behavior across cultures.",
+      "The historical analysis of philosophical movements and their influence on political institutions."
+    ],
+    "difficulty": 1,
+    "source_article": "Logic",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["logic"]
+  },
+  {
+    "question_text": "In logic, what is an argument?",
+    "correct_answer": "A set of statements (premises) offered in support of another statement (the conclusion).",
+    "distractors": [
+      "A verbal dispute between two parties who hold opposing viewpoints on a controversial topic.",
+      "A mathematical equation relating multiple variables to produce a single numerical result.",
+      "A rhetorical device used to persuade an audience by appealing to their emotions."
+    ],
+    "difficulty": 1,
+    "source_article": "Argument",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["argument"]
+  },
+  {
+    "question_text": "What characterizes deductive reasoning?",
+    "correct_answer": "If the premises are true, the conclusion must necessarily be true; the conclusion is guaranteed.",
+    "distractors": [
+      "The conclusion extends beyond the premises and is only probably true given the evidence.",
+      "It relies on analogies between similar cases to suggest a likely but uncertain outcome.",
+      "It generalizes from repeated observations to form a broad hypothesis about all similar cases."
+    ],
+    "difficulty": 1,
+    "source_article": "Deductive reasoning",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["deduction"]
+  },
+  {
+    "question_text": "What is inductive reasoning?",
+    "correct_answer": "Reasoning from specific observations to a general conclusion that is probable but not certain.",
+    "distractors": [
+      "Reasoning from general principles to a specific conclusion that follows with absolute certainty.",
+      "Reasoning that identifies a logical contradiction within a set of premises to refute them.",
+      "Reasoning that proceeds by eliminating all possibilities until only one candidate remains."
+    ],
+    "difficulty": 1,
+    "source_article": "Inductive reasoning",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["induction"]
+  },
+  {
+    "question_text": "In an argument, what role does a premise play?",
+    "correct_answer": "It is a statement assumed or accepted as true that provides support for the conclusion.",
+    "distractors": [
+      "It is the final statement that the argument attempts to establish through its reasoning.",
+      "It is a rhetorical question inserted to make the audience reconsider their assumptions.",
+      "It is a counterexample introduced to weaken an opposing argument's credibility."
+    ],
+    "difficulty": 1,
+    "source_article": "Premise",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["premise"]
+  },
+  {
+    "question_text": "In logic, what is a conclusion?",
+    "correct_answer": "The statement that an argument claims follows from its premises.",
+    "distractors": [
+      "The first statement in a logical sequence that establishes context.",
+      "A hidden assumption that the argument depends on but never states.",
+      "The negation of the hypothesis that an argument seeks to refute."
+    ],
+    "difficulty": 1,
+    "source_article": "Logical consequence",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["conclusion"]
+  },
+  {
+    "question_text": "What is a paradox?",
+    "correct_answer": "A statement or situation that seems self-contradictory yet may reveal an underlying truth.",
+    "distractors": [
+      "A logical argument that proceeds from false premises to reach a deliberately misleading conclusion.",
+      "A mathematical proof technique that assumes the opposite of what one wants to prove.",
+      "A rhetorical strategy that uses exaggeration to emphasize a point in persuasive writing."
+    ],
+    "difficulty": 1,
+    "source_article": "Paradox",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["paradox"]
+  },
+  {
+    "question_text": "What is a logical fallacy?",
+    "correct_answer": "An error in reasoning that renders an argument logically invalid or significantly weakened.",
+    "distractors": [
+      "A true statement that is intentionally omitted from an argument to simplify the presentation.",
+      "A valid deductive pattern that guarantees the truth of the conclusion from true premises.",
+      "A mathematical identity that holds universally regardless of the values substituted into it."
+    ],
+    "difficulty": 1,
+    "source_article": "Fallacy",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["fallacy"]
+  },
+  {
+    "question_text": "When is a deductive argument said to be valid?",
+    "correct_answer": "When the truth of the premises guarantees the truth of the conclusion by logical form.",
+    "distractors": [
+      "When all of its premises are empirically verified through repeated experimental observation.",
+      "When the conclusion is widely accepted by experts in the relevant field of study.",
+      "When the argument persuades the audience regardless of the truth of its premises."
+    ],
+    "difficulty": 1,
+    "source_article": "Validity (logic)",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["validity"]
+  },
+  {
+    "question_text": "In logic, what is a contradiction?",
+    "correct_answer": "A proposition or pair of propositions that cannot both be true simultaneously.",
+    "distractors": [
+      "A statement that is true under every possible assignment of truth values.",
+      "An argument whose conclusion follows necessarily from its given premises.",
+      "A hypothesis that has been neither confirmed nor refuted by available evidence."
+    ],
+    "difficulty": 1,
+    "source_article": "Contradiction",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["contradiction"]
+  },
+  {
+    "question_text": "What does the logical operation of negation do?",
+    "correct_answer": "It reverses the truth value of a proposition, turning true to false and false to true.",
+    "distractors": [
+      "It combines two propositions so the result is true only when both components are true.",
+      "It connects two propositions so the result is true when at least one component is true.",
+      "It asserts that one proposition logically implies another without specifying their truth values."
+    ],
+    "difficulty": 1,
+    "source_article": "Negation",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["negation"]
+  },
+  {
+    "question_text": "What is reasoning by analogy?",
+    "correct_answer": "Inferring that because two things share certain properties, they likely share additional ones.",
+    "distractors": [
+      "Deriving a specific conclusion from a general principle using a valid deductive argument form.",
+      "Assuming that a statistical trend observed in a sample will continue indefinitely into the future.",
+      "Rejecting a hypothesis by demonstrating that it leads to an internal logical contradiction."
+    ],
+    "difficulty": 1,
+    "source_article": "Analogy",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["analogy"]
+  },
+  {
+    "question_text": "What is an inference?",
+    "correct_answer": "The process of drawing a conclusion from premises or evidence using logical reasoning.",
+    "distractors": [
+      "A formal definition that stipulates the exact meaning of a technical term in logic.",
+      "A hypothesis proposed before any evidence has been gathered or examined by the reasoner.",
+      "An emotional appeal used to persuade an audience without relying on factual support."
+    ],
+    "difficulty": 1,
+    "source_article": "Inference",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["inference"]
+  },
+  {
+    "question_text": "What does the inference rule modus ponens state?",
+    "correct_answer": "From \"if $P$ then $Q$\" and $P$, one may validly conclude $Q$.",
+    "distractors": [
+      "From \"if $P$ then $Q$\" and not $Q$, one may validly conclude not $P$.",
+      "From \"if $P$ then $Q$\" and $Q$, one may validly conclude $P$.",
+      "From \"if $P$ then $Q$\" and not $P$, one may validly conclude not $Q$."
+    ],
+    "difficulty": 2,
+    "source_article": "Modus ponens",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["modus ponens"]
+  },
+  {
+    "question_text": "What does the inference rule modus tollens state?",
+    "correct_answer": "From \"if $P$ then $Q$\" and not $Q$, one may validly conclude not $P$.",
+    "distractors": [
+      "From \"if $P$ then $Q$\" and $P$, one may validly conclude $Q$.",
+      "From \"if $P$ then $Q$\" and $Q$, one may validly conclude $P$.",
+      "From \"if $P$ then $Q$\" and not $P$, one may validly conclude not $Q$."
+    ],
+    "difficulty": 2,
+    "source_article": "Modus tollens",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["modus tollens"]
+  },
+  {
+    "question_text": "What is a syllogism in classical logic?",
+    "correct_answer": "A deductive argument with exactly two premises and a conclusion, linked by a shared middle term.",
+    "distractors": [
+      "An inductive argument that generalizes from a large sample of observations to a universal law.",
+      "A logical equivalence showing that two compound propositions have identical truth tables.",
+      "A formal proof technique that assumes the negation of the desired result and derives absurdity."
+    ],
+    "difficulty": 2,
+    "source_article": "Syllogism",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["syllogism"]
+  },
+  {
+    "question_text": "What is a truth table used for in propositional logic?",
+    "correct_answer": "It displays all possible truth-value combinations for a formula to determine its logical properties.",
+    "distractors": [
+      "It lists the axioms needed to derive a particular theorem within a formal proof system.",
+      "It maps each predicate symbol to its intended interpretation in a specific mathematical structure.",
+      "It enumerates all valid syllogistic forms recognized in traditional Aristotelian logic."
+    ],
+    "difficulty": 2,
+    "source_article": "Truth table",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["truth table"]
+  },
+  {
+    "question_text": "What does propositional logic study?",
+    "correct_answer": "The logical relationships among propositions formed using connectives like 'and,' 'or,' 'not,' and 'if-then.'",
+    "distractors": [
+      "The internal structure of propositions, including subjects, predicates, and quantifiers over individuals.",
+      "The modal properties of propositions such as necessity, possibility, and contingency across possible worlds.",
+      "The probabilistic relationships among uncertain propositions using Bayesian updating and prior distributions."
+    ],
+    "difficulty": 2,
+    "source_article": "Propositional calculus",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["propositional logic"]
+  },
+  {
+    "question_text": "How does predicate logic extend propositional logic?",
+    "correct_answer": "It introduces quantifiers ($\\forall$, $\\exists$) and predicates to analyze the internal structure of propositions.",
+    "distractors": [
+      "It adds modal operators for necessity and possibility to evaluate propositions across possible worlds.",
+      "It replaces truth values with probability distributions to handle uncertain and vague statements.",
+      "It incorporates temporal operators to reason about propositions that change truth value over time."
+    ],
+    "difficulty": 2,
+    "source_article": "First-order logic",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["predicate logic"]
+  },
+  {
+    "question_text": "In logic, what are the two standard quantifiers?",
+    "correct_answer": "The universal quantifier ($\\forall$, 'for all') and the existential quantifier ($\\exists$, 'there exists').",
+    "distractors": [
+      "The necessity operator ($\\Box$) and the possibility operator ($\\Diamond$) used in modal logic.",
+      "The conjunction operator ($\\wedge$) and the disjunction operator ($\\vee$) used in propositional logic.",
+      "The membership relation ($\\in$) and the subset relation ($\\subseteq$) used in set theory."
+    ],
+    "difficulty": 2,
+    "source_article": "Quantifier (logic)",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["quantifier"]
+  },
+  {
+    "question_text": "What is a tautology in propositional logic?",
+    "correct_answer": "A formula that is true under every possible assignment of truth values to its propositional variables.",
+    "distractors": [
+      "A formula that is false under every possible assignment of truth values to its propositional variables.",
+      "A formula whose truth value depends on the specific interpretation assigned to its variables.",
+      "A formula that is true only when all of its component propositional variables are true."
+    ],
+    "difficulty": 2,
+    "source_article": "Tautology (logic)",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["tautology"]
+  },
+  {
+    "question_text": "What is a logical connective?",
+    "correct_answer": "An operator such as conjunction, disjunction, negation, or implication that combines propositions into compound statements.",
+    "distractors": [
+      "A quantifier symbol that binds individual variables within the scope of a predicate expression.",
+      "A metalogical property certifying that every theorem of a formal system is semantically valid.",
+      "A syntactic rule specifying the order in which symbols may appear in a well-formed formula."
+    ],
+    "difficulty": 2,
+    "source_article": "Logical connective",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["logical connective"]
+  },
+  {
+    "question_text": "What is set theory fundamentally about?",
+    "correct_answer": "The study of collections of objects called sets, their properties, and operations like union and intersection.",
+    "distractors": [
+      "The study of continuous functions and their limits within the framework of real analysis.",
+      "The study of algebraic structures such as groups, rings, and fields and their homomorphisms.",
+      "The study of algorithms and their computational complexity measured by time and space resources."
+    ],
+    "difficulty": 2,
+    "source_article": "Set theory",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["set theory"]
+  },
+  {
+    "question_text": "How does proof by contradiction work?",
+    "correct_answer": "One assumes the negation of the desired conclusion and derives a contradiction, thereby establishing the conclusion.",
+    "distractors": [
+      "One verifies the conclusion for a base case and then shows it holds for every successive case.",
+      "One constructs an explicit example satisfying all required properties to demonstrate existence directly.",
+      "One partitions the problem into exhaustive cases and proves the conclusion separately for each one."
+    ],
+    "difficulty": 2,
+    "source_article": "Proof by contradiction",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["proof by contradiction"]
+  },
+  {
+    "question_text": "When is a deductive argument considered sound?",
+    "correct_answer": "When it is both valid (the conclusion follows from the premises) and all its premises are true.",
+    "distractors": [
+      "When its conclusion is supported by a large body of empirical evidence gathered through experimentation.",
+      "When it is accepted by a majority of experts as the most plausible explanation available.",
+      "When its logical form matches one of the recognized valid syllogistic figures of Aristotelian logic."
+    ],
+    "difficulty": 2,
+    "source_article": "Soundness",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["soundness"]
+  },
+  {
+    "question_text": "What does the biconditional connective ($P \\leftrightarrow Q$) assert?",
+    "correct_answer": "$P$ and $Q$ have the same truth value: both true or both false (\"if and only if\").",
+    "distractors": [
+      "$P$ is true and $Q$ is false, making the two propositions logically independent of each other.",
+      "$P$ implies $Q$ but $Q$ does not imply $P$, establishing a one-directional dependency.",
+      "At least one of $P$ or $Q$ is true, but their individual truth values remain undetermined."
+    ],
+    "difficulty": 2,
+    "source_article": "Logical biconditional",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["biconditional"]
+  },
+  {
+    "question_text": "What does Godel's completeness theorem for first-order logic establish?",
+    "correct_answer": "Every logically valid first-order formula is provable within a standard proof system for first-order logic.",
+    "distractors": [
+      "Every consistent first-order theory is decidable by an effective mechanical procedure.",
+      "Every true arithmetic sentence is provable within Peano arithmetic if the system is consistent.",
+      "Every first-order theory with an infinite model has models of every infinite cardinality."
+    ],
+    "difficulty": 3,
+    "source_article": "Gödel's completeness theorem",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["completeness theorem"]
+  },
+  {
+    "question_text": "What does modal logic add to classical propositional or predicate logic?",
+    "correct_answer": "Operators for necessity ($\\Box$) and possibility ($\\Diamond$) to reason about what must or could be true.",
+    "distractors": [
+      "Quantifiers ranging over sets of individuals to express properties of collections rather than single objects.",
+      "Truth-value gaps and a third truth value to handle statements that are neither true nor false.",
+      "Probability functions on propositions to calculate the likelihood of conclusions from uncertain premises."
+    ],
+    "difficulty": 3,
+    "source_article": "Modal logic",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["modal logic"]
+  },
+  {
+    "question_text": "In Kripke semantics, how is the truth of $\\Box P$ (necessarily $P$) evaluated?",
+    "correct_answer": "$\\Box P$ is true at a world $w$ if and only if $P$ is true at every world accessible from $w$.",
+    "distractors": [
+      "$\\Box P$ is true at a world $w$ if and only if $P$ is true at $w$ and at least one other world.",
+      "$\\Box P$ is true at a world $w$ if and only if $P$ is true at the actual world regardless of $w$.",
+      "$\\Box P$ is true at a world $w$ if and only if there exists some world accessible from $w$ where $P$ holds."
+    ],
+    "difficulty": 3,
+    "source_article": "Kripke semantics",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["Kripke semantics"]
+  },
+  {
+    "question_text": "In natural deduction, what are the two main kinds of rules for each logical connective?",
+    "correct_answer": "Introduction rules, which allow you to derive a connective, and elimination rules, which allow you to use it.",
+    "distractors": [
+      "Axiom rules, which state tautologies outright, and substitution rules, which replace variables with formulas.",
+      "Weakening rules, which add unused hypotheses, and contraction rules, which merge duplicate hypotheses.",
+      "Structural rules, which rearrange the proof context, and cut rules, which splice two proofs together."
+    ],
+    "difficulty": 3,
+    "source_article": "Natural deduction",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["natural deduction"]
+  },
+  {
+    "question_text": "How does second-order logic differ from first-order logic?",
+    "correct_answer": "It allows quantification over predicates and relations, not just over individual elements of the domain.",
+    "distractors": [
+      "It restricts quantification to finite domains, whereas first-order logic permits infinite domains.",
+      "It replaces classical truth values with intuitionistic ones, rejecting the law of excluded middle.",
+      "It introduces modal operators for necessity and possibility absent from first-order logic."
+    ],
+    "difficulty": 3,
+    "source_article": "Second-order logic",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["second-order logic"]
+  },
+  {
+    "question_text": "What distinguishes intuitionistic logic from classical logic?",
+    "correct_answer": "It rejects the law of excluded middle, requiring constructive proof of existence rather than proof by contradiction.",
+    "distractors": [
+      "It introduces a third truth value for propositions that are neither provably true nor provably false.",
+      "It permits contradictions without trivializing the entire system, unlike classical logic which is explosive.",
+      "It adds modal operators for necessity and possibility to the standard classical connectives."
+    ],
+    "difficulty": 3,
+    "source_article": "Intuitionistic logic",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["intuitionistic logic"]
+  },
+  {
+    "question_text": "In automated theorem proving, what does the resolution rule operate on?",
+    "correct_answer": "Pairs of clauses containing complementary literals; it produces a new clause (the resolvent) by eliminating them.",
+    "distractors": [
+      "Individual formulas in disjunctive normal form; it simplifies them by removing redundant disjuncts.",
+      "Sequents with multiple conclusions; it splits the proof into sub-proofs for each conclusion separately.",
+      "Equational identities between terms; it rewrites one side using oriented rewrite rules until convergence."
+    ],
+    "difficulty": 3,
+    "source_article": "Resolution (logic)",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["resolution (logic)"]
+  },
+  {
+    "question_text": "What does the Lowenheim-Skolem theorem state about first-order theories?",
+    "correct_answer": "If a first-order theory has an infinite model, it has models of every infinite cardinality.",
+    "distractors": [
+      "If a first-order theory is consistent, there is an algorithm to decide the truth of its sentences.",
+      "If every finite subset of a first-order theory has a model, the entire theory has a model.",
+      "If a first-order theory is complete, it has exactly one model up to isomorphism."
+    ],
+    "difficulty": 3,
+    "source_article": "Löwenheim–Skolem theorem",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["Löwenheim-Skolem theorem"]
+  },
+  {
+    "question_text": "What does the compactness theorem for first-order logic state?",
+    "correct_answer": "A set of first-order sentences has a model if and only if every finite subset of it has a model.",
+    "distractors": [
+      "A first-order sentence is provable if and only if it is true in all models of the theory.",
+      "A first-order theory that has an infinite model must necessarily also have models of every other infinite cardinality.",
+      "A consistent first-order theory can always be extended to a maximally complete and consistent theory over the same language."
+    ],
+    "difficulty": 3,
+    "source_article": "Compactness theorem",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["compactness theorem"]
+  },
+  {
+    "question_text": "What does the Curry-Howard correspondence establish?",
+    "correct_answer": "A deep isomorphism between proofs in logic and programs in typed lambda calculus (propositions as types, proofs as programs).",
+    "distractors": [
+      "An equivalence between Turing machines and lambda calculus showing they compute the same class of functions.",
+      "A systematic translation between modal logic formulas and first-order logic formulas that preserves satisfiability in both directions.",
+      "A bijection between the models of a first-order theory and the ultrafilters on its Lindenbaum algebra."
+    ],
+    "difficulty": 3,
+    "source_article": "Curry–Howard correspondence",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["Curry-Howard correspondence"]
+  },
+  {
+    "question_text": "What does it mean for a logical theory to be decidable?",
+    "correct_answer": "There exists an algorithm that can determine, for any sentence in the theory, whether it is a theorem or not.",
+    "distractors": [
+      "The theory has exactly one model up to isomorphism, so there is no ambiguity in its interpretation.",
+      "Every sentence expressible in the language of the theory or its negation is provable, making the theory complete.",
+      "The theory is consistent and no finite extension of it can increase its proof-theoretic strength."
+    ],
+    "difficulty": 3,
+    "source_article": "Decidability (logic)",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["decidability"]
+  },
+  {
+    "question_text": "What role do axioms play in an axiomatic system?",
+    "correct_answer": "They are statements accepted without proof from which all theorems of the system are derived using inference rules.",
+    "distractors": [
+      "They are conjectures that have been empirically verified but not yet formally proved within the system.",
+      "They are definitions that assign precise meanings to primitive terms but carry no truth value.",
+      "They are meta-theorems about the system that describe its completeness and consistency properties."
+    ],
+    "difficulty": 3,
+    "source_article": "Axiomatic system",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["axiomatic system"]
+  },
+  {
+    "question_text": "What does Godel's second incompleteness theorem assert?",
+    "correct_answer": "No sufficiently strong consistent formal system can prove its own consistency using methods formalizable within it.",
+    "distractors": [
+      "Every consistent formal system is complete, meaning every sentence or its negation is provable within it.",
+      "Every sufficiently strong formal system is decidable if it includes full second-order quantification.",
+      "No formal system extending Peano arithmetic can prove any true universal arithmetic statement."
+    ],
+    "difficulty": 4,
+    "source_article": "Gödel's incompleteness theorems",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["Gödel's second incompleteness theorem"]
+  },
+  {
+    "question_text": "What is forcing in set theory used to accomplish?",
+    "correct_answer": "Constructing new models of set theory to prove the independence of statements like the continuum hypothesis from ZFC.",
+    "distractors": [
+      "Defining a well-ordering on any set to verify the well-ordering principle within ZFC directly.",
+      "Enumerating all countable models of ZFC to show that the axiom of choice is provable.",
+      "Collapsing large cardinals to smaller ones by iterated ultrapowers in order to refute strong determinacy hypotheses."
+    ],
+    "difficulty": 4,
+    "source_article": "Forcing (mathematics)",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["forcing"]
+  },
+  {
+    "question_text": "What is a large cardinal axiom in set theory?",
+    "correct_answer": "An axiom asserting the existence of a cardinal number so large that its existence cannot be proved in ZFC alone.",
+    "distractors": [
+      "An axiom stating that every set can be well-ordered, equivalent to the axiom of choice.",
+      "An axiom defining the cardinality of the continuum as exactly the second infinite cardinal $\\aleph_1$.",
+      "An axiom requiring that all definable sets of reals satisfy the regularity properties of Borel sets."
+    ],
+    "difficulty": 4,
+    "source_article": "Large cardinal",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["large cardinal axiom"]
+  },
+  {
+    "question_text": "What does ordinal analysis measure about a formal system?",
+    "correct_answer": "Its proof-theoretic strength, expressed as the smallest ordinal not provably well-ordered by the system.",
+    "distractors": [
+      "Its model-theoretic complexity, measured by the number of non-isomorphic countable models it admits.",
+      "Its computational efficiency, quantified by the time complexity of its decision procedure.",
+      "Its descriptive set-theoretic rank, determined by the Borel complexity of its definable sets."
+    ],
+    "difficulty": 4,
+    "source_article": "Ordinal analysis",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["ordinal analysis"]
+  },
+  {
+    "question_text": "What is the central question of reverse mathematics?",
+    "correct_answer": "Which set-existence axioms are exactly necessary and sufficient to prove a given theorem of ordinary mathematics?",
+    "distractors": [
+      "Which large cardinal axioms are required to settle every statement independent of ZFC set theory?",
+      "Which computational complexity class captures the difficulty of deciding a given mathematical theory?",
+      "Which ordinal notation system best measures the proof-theoretic strength of all known formal systems?"
+    ],
+    "difficulty": 4,
+    "source_article": "Reverse mathematics",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["reverse mathematics"]
+  },
+  {
+    "question_text": "What distinguishes linear logic from classical logic?",
+    "correct_answer": "Hypotheses are treated as consumable resources that must be used exactly once unless explicitly marked as reusable.",
+    "distractors": [
+      "The law of excluded middle is rejected, requiring all existence proofs to be constructive.",
+      "Contradictions are tolerated without making every proposition in the system provable, thereby avoiding the problem of logical explosion.",
+      "Quantification extends to predicates and relations rather than being restricted to individuals."
+    ],
+    "difficulty": 4,
+    "source_article": "Linear logic",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["linear logic"]
+  },
+  {
+    "question_text": "What defines a paraconsistent logic?",
+    "correct_answer": "A logic in which contradictions do not entail everything; the principle of explosion ($A \\wedge \\neg A \\vdash B$) fails.",
+    "distractors": [
+      "A logic that rejects the law of excluded middle and requires constructive witnesses for existential claims.",
+      "A logic that tracks the number of times each hypothesis is used, treating them as linear resources.",
+      "A logic that extends classical propositional and predicate logic with modal operators for necessity and possibility across worlds."
+    ],
+    "difficulty": 4,
+    "source_article": "Paraconsistent logic",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["paraconsistent logic"]
+  },
+  {
+    "question_text": "What does provability logic (GL) axiomatize?",
+    "correct_answer": "The behavior of the formal provability predicate in Peano arithmetic, governed by Lob's theorem as its key axiom.",
+    "distractors": [
+      "The semantics of necessity and possibility in standard Kripke frames with reflexive accessibility relations.",
+      "The proof-theoretic ordinals assigned to each subsystem of second-order arithmetic as studied in reverse mathematics.",
+      "The algebraic properties of the Boolean-valued models that are employed in Cohen's set-theoretic forcing technique for independence proofs."
+    ],
+    "difficulty": 4,
+    "source_article": "Provability logic",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["provability logic"]
+  },
+  {
+    "question_text": "What does descriptive set theory primarily study?",
+    "correct_answer": "The structure and complexity of definable subsets of Polish spaces, organized into the Borel and projective hierarchies.",
+    "distractors": [
+      "The cardinalities of arbitrary sets and the independence of the continuum hypothesis from ZFC.",
+      "The constructive content of mathematical proofs and their correspondence with functional programs.",
+      "The combinatorial properties of infinite cardinal numbers and their relationship to large cardinal axioms."
+    ],
+    "difficulty": 4,
+    "source_article": "Descriptive set theory",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["descriptive set theory"]
+  },
+  {
+    "question_text": "What is a topos in the context of categorical logic?",
+    "correct_answer": "A category that generalizes the category of sets, providing an internal logic that is typically intuitionistic.",
+    "distractors": [
+      "A functor between two categories that preserves all limits and colimits up to natural isomorphism.",
+      "A monoidal category whose tensor product models the multiplicative connectives of linear logic.",
+      "A large cardinal embedding from the set-theoretic universe into an inner model."
+    ],
+    "difficulty": 4,
+    "source_article": "Topos",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["topos theory"]
+  },
+  {
+    "question_text": "What does Herbrand's theorem relate in first-order logic?",
+    "correct_answer": "The provability of a first-order formula to the propositional unsatisfiability of a finite set of its Herbrand instances.",
+    "distractors": [
+      "The consistency of a first-order theory to the existence of a countable model via the completeness theorem.",
+      "The decidability of a first-order theory to the existence of a finite axiomatization of that theory.",
+      "The compactness of first-order logic to the existence of non-standard models of Peano arithmetic."
+    ],
+    "difficulty": 4,
+    "source_article": "Herbrand's theorem",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["Herbrand's theorem"]
+  },
+  {
+    "question_text": "What is $\\omega$-consistency, and how does it relate to Godel's first incompleteness theorem?",
+    "correct_answer": "A theory never proves $\\exists x\\, \\neg\\phi(x)$ while proving each $\\phi(\\bar{n})$; Godel's original incompleteness proof required this stronger consistency condition.",
+    "distractors": [
+      "A theory is $\\omega$-consistent if it has a unique model of cardinality $\\omega$; Godel used this to construct his incompleteness sentence directly.",
+      "A theory is $\\omega$-consistent if every $\\Pi^0_1$ sentence it proves is true; Godel required this to ensure the completeness of arithmetic.",
+      "A theory is $\\omega$-consistent if its proof-theoretic ordinal equals $\\omega$; Godel used this to bound the strength of Peano arithmetic."
+    ],
+    "difficulty": 4,
+    "source_article": "Ω-consistent theory",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["omega-consistency"]
+  }
+]

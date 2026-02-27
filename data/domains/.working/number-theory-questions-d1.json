@@ -1,0 +1,93 @@
+[
+  {
+    "question_text": "In number theory, what is a prime number?",
+    "correct_answer": "A natural number greater than $1$ that has no positive divisors other than $1$ and itself.",
+    "distractors": [
+      "Any natural number that can be divided evenly by at least one number other than $1$ and itself.",
+      "A natural number greater than $0$ whose only divisor is itself, excluding $1$ as a divisor entirely.",
+      "Any positive integer, including $1$, that cannot be expressed as a product of two other positive integers."
+    ],
+    "difficulty": 1,
+    "source_article": "Prime number",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["prime number", "natural number", "divisibility"]
+  },
+  {
+    "question_text": "What is an integer, and which standard symbol denotes the set of all integers?",
+    "correct_answer": "An integer is any whole number (positive, negative, or zero). The set of all integers is denoted $\\mathbb{Z}$.",
+    "distractors": [
+      "An integer is any positive whole number greater than zero. The set of all integers is denoted $\\mathbb{N}$.",
+      "An integer is any number that can be written as a fraction. The set of all integers is denoted $\\mathbb{Q}$.",
+      "An integer is any real number including decimals and fractions. The set of all integers is denoted $\\mathbb{R}$."
+    ],
+    "difficulty": 1,
+    "source_article": "Integer",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["integer", "number sets", "mathematical notation"]
+  },
+  {
+    "question_text": "In number theory, what does it mean to say that an integer $a$ is divisible by an integer $b$?",
+    "correct_answer": "It means $b$ divides $a$ with no remainder, i.e., there exists an integer $k$ such that $a = bk$.",
+    "distractors": [
+      "It means $a$ divided by $b$ always produces a remainder of exactly $1$, never zero or any other value.",
+      "It means $a$ and $b$ share no common factors other than $1$, making them coprime to each other.",
+      "It means $a$ is strictly larger than $b$ and both numbers must be positive prime numbers by definition."
+    ],
+    "difficulty": 1,
+    "source_article": "Divisor",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["divisibility", "division", "remainder"]
+  },
+  {
+    "question_text": "What is a factor (or divisor) of a positive integer $n$?",
+    "correct_answer": "A factor of $n$ is a positive integer that divides $n$ exactly, leaving no remainder.",
+    "distractors": [
+      "A factor of $n$ is any integer larger than $n$ that $n$ can divide into evenly.",
+      "A factor of $n$ is the remainder obtained when $n$ is divided by another positive integer.",
+      "A factor of $n$ is a positive integer that, when added to $n$, yields a prime number."
+    ],
+    "difficulty": 1,
+    "source_article": "Divisor",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["factor", "divisor", "divisibility"]
+  },
+  {
+    "question_text": "In mathematics, what is a multiple of an integer $a$?",
+    "correct_answer": "A multiple of $a$ is any integer that can be expressed as $a \\times n$ for some integer $n$.",
+    "distractors": [
+      "A multiple of $a$ is any integer that divides $a$ evenly, producing zero as the remainder.",
+      "A multiple of $a$ is the unique integer obtained by dividing $a$ by each of its prime factors.",
+      "A multiple of $a$ is any integer smaller than $a$ that shares at least one common factor with $a$."
+    ],
+    "difficulty": 1,
+    "source_article": "Multiple (mathematics)",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["multiple", "multiplication", "integer"]
+  },
+  {
+    "question_text": "What is a composite number, and how does it differ from a prime number?",
+    "correct_answer": "A composite number is a positive integer greater than $1$ that has at least one divisor other than $1$ and itself.",
+    "distractors": [
+      "A composite number is any positive integer including $1$ that cannot be divided evenly by any other number.",
+      "A composite number is a positive integer that has exactly two distinct divisors: $1$ and the number itself.",
+      "A composite number is any negative integer that can be written as a product of two positive prime numbers."
+    ],
+    "difficulty": 1,
+    "source_article": "Composite number",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["composite number", "prime number", "divisor"]
+  },
+  {
+    "question_text": "How are even and odd numbers defined, and is $0$ considered even or odd?",
+    "correct_answer": "An even number is an integer divisible by $2$; an odd number is not. Zero is even because $0 = 2 \\times 0$.",
+    "distractors": [
+      "An even number is any integer divisible by $3$; an odd number is not. Zero is odd because it is not positive.",
+      "An even number is any positive integer divisible by $2$; zero is neither even nor odd by standard convention.",
+      "An even number must be a positive multiple of $2$; an odd number is any negative integer. Zero is undefined."
+    ],
+    "difficulty": 1,
+    "source_article": "Parity (mathematics)",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["even number", "odd number", "parity", "zero"]
+  }
+]

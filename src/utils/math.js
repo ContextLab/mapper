@@ -79,6 +79,30 @@ export function clamp(x, min, max) {
   return Math.max(min, Math.min(max, x));
 }
 
+/**
+ * Standard normal CDF via Abramowitz & Stegun formula 26.2.17.
+ * Maximum absolute error < 7.5e-8.
+ *
+ * @param {number} x
+ * @returns {number} Φ(x) in [0, 1]
+ */
+export function normalCDF(x) {
+  const p = 0.2316419;
+  const b1 = 0.319381530;
+  const b2 = -0.356563782;
+  const b3 = 1.781477937;
+  const b4 = -1.821255978;
+  const b5 = 1.330274429;
+
+  const absX = Math.abs(x);
+  const t = 1 / (1 + p * absX);
+  const pdf = Math.exp(-0.5 * absX * absX) / 2.5066282746310002; // √(2π)
+  const poly = t * (b1 + t * (b2 + t * (b3 + t * (b4 + t * b5))));
+  const cdf = 1 - pdf * poly;
+
+  return x < 0 ? 1 - cdf : cdf;
+}
+
 // ============================================================
 // Matrix utilities for Gaussian Process
 // ============================================================

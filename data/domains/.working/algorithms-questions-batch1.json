@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "According to the decision tree model, what is the asymptotic lower bound on the number of comparisons any comparison-based sorting algorithm must make in the worst case?",
+    "correct_answer": "$\\Omega(n \\log n)$ comparisons",
+    "distractors": [
+      "$\\Omega(n)$ comparisons",
+      "$\\Omega(n^2)$ comparisons",
+      "$\\Omega(n \\sqrt{n})$ comparisons"
+    ],
+    "difficulty": 1,
+    "source_article": "Sorting algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["sorting"]
+  },
+  {
+    "question_text": "In the worst case, how many elements must a linear search examine to find a target value in an unsorted list of $n$ elements?",
+    "correct_answer": "All $n$ elements in the list",
+    "distractors": [
+      "At most $\\log_2 n$ elements in the list",
+      "At most $\\sqrt{n}$ elements in the list",
+      "At most $n/2$ elements in the list"
+    ],
+    "difficulty": 1,
+    "source_article": "Search algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["searching"]
+  },
+  {
+    "question_text": "What is the maximum number of comparisons binary search requires to find or rule out a target in a sorted array of $n$ elements?",
+    "correct_answer": "$\\lfloor \\log_2 n \\rfloor + 1$ comparisons",
+    "distractors": [
+      "$\\lceil \\log_2 n \\rceil - 1$ comparisons",
+      "$n / 2$ comparisons",
+      "$2 \\log_2 n$ comparisons"
+    ],
+    "difficulty": 1,
+    "source_article": "Binary search algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["binary search"]
+  },
+  {
+    "question_text": "In recursion, what compiler optimization allows a function whose very last action is a recursive call to reuse the current stack frame instead of allocating a new one?",
+    "correct_answer": "Tail-call elimination",
+    "distractors": [
+      "Loop unrolling",
+      "Inline expansion",
+      "Constant folding"
+    ],
+    "difficulty": 1,
+    "source_article": "Recursion (computer science)",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["recursion"]
+  },
+  {
+    "question_text": "In graph theory, the degree sum formula (handshaking lemma) states that the sum of the degrees of all vertices in an undirected graph equals what value?",
+    "correct_answer": "Twice the number of edges",
+    "distractors": [
+      "The number of edges plus the number of vertices",
+      "The square of the number of edges",
+      "Three times the number of vertices"
+    ],
+    "difficulty": 1,
+    "source_article": "Graph (discrete mathematics)",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["graph"]
+  },
+  {
+    "question_text": "A tree with $n$ vertices is a connected acyclic graph. How many edges does such a tree always have?",
+    "correct_answer": "Exactly $n - 1$ edges",
+    "distractors": [
+      "Exactly $n$ edges",
+      "Exactly $n + 1$ edges",
+      "Exactly $2n - 2$ edges"
+    ],
+    "difficulty": 1,
+    "source_article": "Tree (data structure)",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["tree"]
+  },
+  {
+    "question_text": "Edsger Dijkstra's shunting-yard algorithm converts infix expressions to postfix notation. Which data structure does the algorithm rely on to hold operators during parsing?",
+    "correct_answer": "A stack",
+    "distractors": [
+      "A queue",
+      "A priority queue",
+      "A hash table"
+    ],
+    "difficulty": 1,
+    "source_article": "Stack (abstract data type)",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["stack"]
+  },
+  {
+    "question_text": "Breadth-first search (BFS) explores a graph level by level, visiting all neighbors of a node before moving deeper. Which data structure does BFS use to track the next node to visit?",
+    "correct_answer": "A queue",
+    "distractors": [
+      "A stack",
+      "A binary search tree",
+      "A hash set"
+    ],
+    "difficulty": 1,
+    "source_article": "Queue (abstract data type)",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["queue"]
+  },
+  {
+    "question_text": "Linked lists were originally developed in 1955-1956 as the primary data structure for the Information Processing Language (IPL). Who created them?",
+    "correct_answer": "Allen Newell, Cliff Shaw, and Herbert A. Simon",
+    "distractors": [
+      "John von Neumann, Alan Turing, and Claude Shannon",
+      "Donald Knuth, Edsger Dijkstra, and Tony Hoare",
+      "John McCarthy, Marvin Minsky, and John Backus"
+    ],
+    "difficulty": 1,
+    "source_article": "Linked list",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["linked list"]
+  },
+  {
+    "question_text": "When multiple keys map to the same index in a hash table, the collision can be resolved by storing all colliding entries in a linked list at that index. What is this technique called?",
+    "correct_answer": "Separate chaining",
+    "distractors": [
+      "Linear probing",
+      "Double hashing",
+      "Cuckoo hashing"
+    ],
+    "difficulty": 1,
+    "source_article": "Hash table",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["hash table"]
+  }
+]

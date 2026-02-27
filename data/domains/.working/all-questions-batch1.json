@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "What is the scientific method?",
+    "correct_answer": "An empirical approach to acquiring knowledge through systematic observation, hypothesis formation, experimentation, and revision of conclusions based on evidence.",
+    "distractors": [
+      "A philosophical tradition of acquiring knowledge through logical deduction, thought experiments, and rational argumentation independent of observational evidence.",
+      "A mathematical technique for acquiring knowledge through formal proof construction, axiomatic reasoning, and derivation of theorems from established postulates.",
+      "An institutional process for acquiring knowledge through expert consensus, committee review, and majority agreement among credentialed authorities in a field."
+    ],
+    "difficulty": 1,
+    "source_article": "Scientific method",
+    "domain_ids": ["all"],
+    "concepts_tested": ["scientific method"]
+  },
+  {
+    "question_text": "What does the term 'climate change' refer to?",
+    "correct_answer": "Long-term shifts in global temperatures and weather patterns, currently driven primarily by human activities such as burning fossil fuels.",
+    "distractors": [
+      "Short-term fluctuations in local weather conditions and seasonal temperatures, caused primarily by natural ocean current cycles.",
+      "Periodic reversals in Earth's magnetic field orientation and atmospheric composition, triggered by shifts in the planet's orbital mechanics.",
+      "Gradual changes in regional soil composition and vegetation density, resulting mainly from natural geological erosion processes over centuries."
+    ],
+    "difficulty": 1,
+    "source_article": "Climate change",
+    "domain_ids": ["all"],
+    "concepts_tested": ["climate change"]
+  },
+  {
+    "question_text": "What is chaos theory?",
+    "correct_answer": "The study of deterministic systems that are highly sensitive to initial conditions, where small differences can produce vastly different outcomes over time.",
+    "distractors": [
+      "The study of fundamentally random systems that lack any underlying order, where outcomes are entirely unpredictable because no governing laws exist.",
+      "The study of social systems that are highly sensitive to political conditions, where minor policy differences can produce vastly different cultural outcomes.",
+      "The study of quantum systems that are highly sensitive to observer interference, where measurement inherently changes the particle's position and momentum simultaneously."
+    ],
+    "difficulty": 1,
+    "source_article": "Chaos theory",
+    "domain_ids": ["all"],
+    "concepts_tested": ["chaos theory"]
+  },
+  {
+    "question_text": "What is thermodynamics?",
+    "correct_answer": "A branch of physics dealing with heat, work, temperature, and their relation to energy, entropy, and the physical properties of matter.",
+    "distractors": [
+      "A branch of chemistry dealing with color, light, wavelength, and their relation to electron orbitals and the visible properties of compounds.",
+      "A branch of physics dealing with motion, velocity, acceleration, and their relation to force, mass, and the gravitational properties of objects.",
+      "A branch of biology dealing with growth, metabolism, respiration, and their relation to cellular structure and the chemical properties of enzymes."
+    ],
+    "difficulty": 1,
+    "source_article": "Thermodynamics",
+    "domain_ids": ["all"],
+    "concepts_tested": ["thermodynamics"]
+  },
+  {
+    "question_text": "What is the placebo effect?",
+    "correct_answer": "A measurable improvement in a patient's condition after receiving an inert treatment, driven by the patient's belief that the treatment is real.",
+    "distractors": [
+      "A measurable worsening in a patient's condition after receiving an active treatment, driven by the patient's anxiety about potential side effects.",
+      "A measurable improvement in a patient's condition after receiving a proven treatment, driven by the medication's direct biochemical action on disease.",
+      "A measurable fluctuation in a patient's condition after receiving no treatment at all, driven by the natural cyclical progression of the disease."
+    ],
+    "difficulty": 1,
+    "source_article": "Placebo",
+    "domain_ids": ["all"],
+    "concepts_tested": ["placebo effect"]
+  },
+  {
+    "question_text": "What does the phrase 'correlation does not imply causation' mean?",
+    "correct_answer": "An observed statistical association between two variables does not by itself prove that one variable directly causes changes in the other.",
+    "distractors": [
+      "An observed statistical association between two variables always indicates that a hidden third variable is the true cause of both observed trends.",
+      "An observed statistical association between two variables proves that the variables are completely independent and have no meaningful relationship whatsoever.",
+      "An observed statistical association between two variables confirms that the relationship is bidirectional, with each variable equally causing the other."
+    ],
+    "difficulty": 1,
+    "source_article": "Correlation does not imply causation",
+    "domain_ids": ["all"],
+    "concepts_tested": ["correlation does not imply causation"]
+  },
+  {
+    "question_text": "What is a feedback loop?",
+    "correct_answer": "A process in which a system's outputs are routed back as inputs, forming a cause-and-effect loop that influences the system's own behavior.",
+    "distractors": [
+      "A linear process in which a system's outputs are transmitted to an external receiver, forming a one-way chain of information that terminates at its destination.",
+      "A random process in which a system's outputs are discarded after measurement, forming no causal chain because each cycle operates independently from previous ones.",
+      "A parallel process in which a system's outputs are distributed among separate subsystems, forming independent chains of operation that never interact with each other."
+    ],
+    "difficulty": 1,
+    "source_article": "Feedback",
+    "domain_ids": ["all"],
+    "concepts_tested": ["feedback loop"]
+  },
+  {
+    "question_text": "What is genetic engineering?",
+    "correct_answer": "The direct modification and manipulation of an organism's genes using biotechnology, including transferring genes within or across species to produce modified organisms.",
+    "distractors": [
+      "The indirect modification and observation of an organism's traits using selective breeding, including crossing individuals within the same species to enhance desired characteristics.",
+      "The direct classification and cataloging of an organism's genes using computational databases, including sequencing genomes within or across species to record genetic information.",
+      "The indirect modification and simulation of an organism's genes using computer models, including predicting mutations within or across species to forecast evolutionary changes."
+    ],
+    "difficulty": 1,
+    "source_article": "Genetic engineering",
+    "domain_ids": ["all"],
+    "concepts_tested": ["genetic engineering"]
+  },
+  {
+    "question_text": "What is renewable energy?",
+    "correct_answer": "Energy derived from natural resources that are replenished on a human timescale, such as sunlight, wind, and flowing water.",
+    "distractors": [
+      "Energy derived from geological reserves that are replenished on a million-year timescale, such as petroleum, coal, and natural gas deposits.",
+      "Energy derived from artificial sources that are manufactured in industrial facilities, such as synthetic fuels, hydrogen cells, and nuclear reactor rods.",
+      "Energy derived from chemical processes that are sustained by continuous laboratory input, such as battery acids, refined ethanol, and processed biomass pellets."
+    ],
+    "difficulty": 1,
+    "source_article": "Renewable energy",
+    "domain_ids": ["all"],
+    "concepts_tested": ["renewable energy"]
+  },
+  {
+    "question_text": "What is vaccination?",
+    "correct_answer": "The administration of a vaccine to stimulate the immune system to develop protection against a specific infectious disease.",
+    "distractors": [
+      "The administration of an antibiotic to eliminate active bacterial infections by directly destroying pathogenic microorganisms inside a patient's body.",
+      "The administration of a painkiller to suppress the nervous system's transmission of discomfort signals from an injury site to the brain.",
+      "The administration of a vitamin supplement to strengthen the skeletal system by increasing mineral absorption and bone density over extended periods."
+    ],
+    "difficulty": 1,
+    "source_article": "Vaccination",
+    "domain_ids": ["all"],
+    "concepts_tested": ["vaccination"]
+  }
+]

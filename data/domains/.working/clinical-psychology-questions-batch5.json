@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Mentalization-based treatment (MBT) was developed by Fonagy and Bateman primarily for borderline personality disorder. What is the central therapeutic mechanism MBT targets, and how does attachment theory inform this approach?",
+    "correct_answer": "MBT targets mentalizing, the ability to interpret behavior through underlying mental states, which attachment trauma disrupts, impairing reflective functioning and emotion regulation.",
+    "distractors": [
+      "MBT targets thought suppression, the ability to block intrusive cognitions through reappraisal, which temperamental vulnerability disrupts, impairing behavioral inhibition and impulse control.",
+      "MBT targets cognitive restructuring, the ability to identify automatic thoughts through Socratic questioning, which classical conditioning disrupts, impairing flexibility and problem solving.",
+      "MBT targets response extinction, the ability to eliminate maladaptive behaviors through systematic exposure, which operant reinforcement disrupts, impairing stimulus discrimination and habituation."
+    ],
+    "difficulty": 4,
+    "source_article": "Mentalization-based treatment",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["mentalization-based treatment"]
+  },
+  {
+    "question_text": "Prolonged exposure therapy for PTSD, developed by Edna Foa, involves two primary exposure components. What are they, and what theoretical mechanism does Foa propose to explain why the treatment works?",
+    "correct_answer": "Imaginal exposure (revisiting trauma memories) and in vivo exposure (confronting avoided situations); emotional processing theory posits that modifying the pathological fear structure reduces symptoms.",
+    "distractors": [
+      "Cognitive restructuring (challenging trauma beliefs) and behavioral activation (scheduling activities); schema modification theory explains that correcting core beliefs about the trauma reduces symptoms.",
+      "Relaxation training (reducing arousal) and narrative writing (composing a private account); reciprocal inhibition theory explains that pairing relaxation with trauma cues reduces symptoms.",
+      "Interpersonal processing (group discussion of trauma) and mindfulness meditation (observing trauma memories); acceptance theory explains that reducing experiential avoidance of trauma reduces symptoms."
+    ],
+    "difficulty": 4,
+    "source_article": "Prolonged exposure therapy",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["prolonged exposure therapy"]
+  },
+  {
+    "question_text": "In psychiatric genetics, an endophenotype is an intermediate marker between genotype and clinical phenotype. Which of the following correctly describes the key criteria a biological or psychological measure must meet to qualify as an endophenotype?",
+    "correct_answer": "It must be heritable, associated with the illness, state-independent, co-segregating with illness in families, and present at elevated rates in unaffected relatives.",
+    "distractors": [
+      "It must be environmentally caused, associated with treatment response, state-dependent, co-segregating with symptom severity in individuals, and absent in unaffected relatives.",
+      "It must be heritable, associated with the illness, state-dependent, co-segregating with medication response in families, and present at reduced rates in unaffected relatives.",
+      "It must be culturally universal, associated with diagnostic reliability, context-independent, co-segregating with prognosis in cohorts, and present at equal rates in affected and unaffected individuals."
+    ],
+    "difficulty": 4,
+    "source_article": "Endophenotype",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["endophenotype"]
+  },
+  {
+    "question_text": "Schema therapy, developed by Jeffrey Young, organizes early maladaptive schemas into five broad domains of unmet childhood needs. What are the four main theoretical constructs of schema therapy, and what distinguishes its approach from standard CBT?",
+    "correct_answer": "Early maladaptive schemas, coping styles, schema modes, and core emotional needs; it differs from CBT by using limited reparenting and imagery rescripting for characterological patterns.",
+    "distractors": [
+      "Cognitive distortions, behavioral experiments, therapeutic alliance, and relapse prevention; it differs from CBT by using systematic desensitization and thought stopping for characterological patterns.",
+      "Defense mechanisms, transference reactions, free association, and dream analysis; it differs from CBT by using psychodynamic interpretation and catharsis for characterological patterns.",
+      "Reinforcement schedules, stimulus hierarchies, extinction protocols, and generalization training; it differs from CBT by using token economies and contingency management for characterological patterns."
+    ],
+    "difficulty": 4,
+    "source_article": "Schema therapy",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["schema therapy"]
+  },
+  {
+    "question_text": "Acceptance and commitment therapy (ACT) uses the hexaflex model to conceptualize psychological flexibility. What are the six core processes in the hexaflex, and what foundational theory of language and cognition underlies ACT?",
+    "correct_answer": "Acceptance, cognitive defusion, present-moment contact, self-as-context, values, and committed action; ACT is grounded in relational frame theory of language and cognition.",
+    "distractors": [
+      "Relaxation, cognitive restructuring, behavioral activation, self-monitoring, goal setting, and relapse prevention; ACT is grounded in social learning theory of modeling and conditioning.",
+      "Acceptance, emotional regulation, present-moment focus, self-compassion, meaning-making, and habit formation; ACT is grounded in schema theory of maladaptive beliefs.",
+      "Mindfulness, exposure, response prevention, self-efficacy, values clarification, and behavioral rehearsal; ACT is grounded in information processing theory of attentional bias."
+    ],
+    "difficulty": 4,
+    "source_article": "Acceptance and commitment therapy",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["acceptance and commitment therapy"]
+  },
+  {
+    "question_text": "Latent variable models are widely used in clinical psychology to validate psychopathology constructs. In structural equation modeling (SEM), what are the two main model components, and how do they relate observed indicators to unobserved constructs?",
+    "correct_answer": "The measurement model links observed indicators to latent variables via factor loadings; the structural model specifies causal or correlational paths among the latent variables.",
+    "distractors": [
+      "The measurement model links latent variables to each other in a directional hierarchy; the structural model specifies how observed indicators are summed into composite scores.",
+      "The measurement model assigns observed indicators to diagnostic categories via cutoff scores; the structural model specifies how those categories predict treatment outcomes.",
+      "The measurement model partitions error variance into random and systematic components; the structural model specifies how error components predict replication failure."
+    ],
+    "difficulty": 4,
+    "source_article": "Latent variable model",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["latent variable modeling"]
+  },
+  {
+    "question_text": "Gross's process model of emotion regulation identifies five families of regulation strategies occurring at different points in the emotion-generative process. How do cognitive reappraisal and expressive suppression differ in their temporal position and their consequences?",
+    "correct_answer": "Reappraisal is antecedent-focused, reinterpreting situations before emotions develop, reducing both experience and expression; suppression is response-focused, inhibiting expression afterward but failing to reduce experience.",
+    "distractors": [
+      "Reappraisal is response-focused, reinterpreting situations after emotions develop, reducing expression only; suppression is antecedent-focused, inhibiting arousal beforehand and reducing both experience and expression.",
+      "Reappraisal is antecedent-focused, redirecting attention before emotions develop, reducing arousal only; suppression is response-focused, amplifying expression afterward and increasing both experience and engagement.",
+      "Reappraisal is concurrent, monitoring intensity during the emotional response, reducing arousal selectively; suppression is post-hoc, rewriting emotional memories afterward and reducing future reactivity."
+    ],
+    "difficulty": 4,
+    "source_article": "Emotion regulation",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["emotion regulation"]
+  },
+  {
+    "question_text": "Polyvagal theory, proposed by Stephen Porges, describes a hierarchical autonomic nervous system with three phylogenetically distinct response circuits. What are these three circuits, and what does the concept of 'neuroception' refer to in this framework?",
+    "correct_answer": "Ventral vagal (social engagement), sympathetic (fight-or-flight), and dorsal vagal (immobilization); neuroception is the subconscious neural process evaluating environmental cues as safe or threatening.",
+    "distractors": [
+      "Prefrontal cortex (executive control), amygdala (fear conditioning), and hippocampus (contextual memory); neuroception is the conscious cognitive appraisal evaluating environmental cues as relevant or irrelevant.",
+      "Central vagal (emotional expression), parasympathetic (rest-and-digest), and enteric (gut-brain signaling); neuroception is the sensory detection of interoceptive signals as pleasurable or painful.",
+      "Ventral vagal (social engagement), hypothalamic-pituitary-adrenal axis (stress response), and reticular activating system (arousal); neuroception is the learned conditioned association of stimuli with prior trauma."
+    ],
+    "difficulty": 4,
+    "source_article": "Polyvagal theory",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["polyvagal theory"]
+  },
+  {
+    "question_text": "Psychometric validation of clinical assessment instruments requires establishing multiple forms of evidence. How do classical test theory (CTT) and item response theory (IRT) differ in their fundamental approach to modeling the relationship between test scores and the construct being measured?",
+    "correct_answer": "CTT models observed scores as true score plus error, focusing on test-level reliability; IRT models item response probability as a function of latent trait level.",
+    "distractors": [
+      "CTT models observed scores as ability times difficulty, focusing on item discrimination; IRT models total scores as a linear function of correct responses for test-level comparison.",
+      "CTT models observed scores as consistent-to-total variance ratios, focusing on inter-rater agreement; IRT models item response probability as a function of administration conditions.",
+      "CTT models observed scores as weighted subscale averages, focusing on criterion validity; IRT models item response probability as a function of test length and sample size."
+    ],
+    "difficulty": 4,
+    "source_article": "Psychometrics",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["psychometric validation"]
+  },
+  {
+    "question_text": "The network theory of psychopathology, advanced by Borsboom, reconceptualizes mental disorders as networks of causally interacting symptoms rather than expressions of latent disease entities. What are 'bridge symptoms' in this framework, and why are they clinically significant?",
+    "correct_answer": "Bridge symptoms connect different disorder-specific symptom clusters; their activation spreads across clusters, driving comorbidity between disorders.",
+    "distractors": [
+      "Bridge symptoms remain inactive regardless of network state; their deactivation signals full remission and prevents relapse across connected disorders.",
+      "Bridge symptoms connect observable symptoms to their underlying latent cause; their identification confirms the categorical validity of diagnostic entities.",
+      "Bridge symptoms buffer one symptom cluster from another; their strengthening prevents symptom spread and protects against comorbidity development."
+    ],
+    "difficulty": 4,
+    "source_article": "Network theory of mental disorders",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["network theory of psychopathology"]
+  }
+]

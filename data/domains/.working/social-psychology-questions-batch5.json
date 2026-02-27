@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In construal level theory, how does increasing psychological distance (temporal, spatial, social, or hypothetical) systematically affect the way people mentally represent events?",
+    "correct_answer": "Greater distance produces abstract, high-level construals emphasizing central features, while proximity produces concrete, low-level construals emphasizing contextual details.",
+    "distractors": [
+      "Greater distance produces concrete, low-level construals emphasizing peripheral details, while proximity produces abstract, high-level construals emphasizing schematic features.",
+      "Greater distance produces emotionally vivid construals emphasizing affective reactions, while proximity produces neutral, analytical construals emphasizing objective details.",
+      "Greater distance produces equally abstract and concrete construals in parallel, while proximity exclusively produces sensory-based construals emphasizing perceptual details."
+    ],
+    "difficulty": 4,
+    "source_article": "Construal level theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["construal level theory"]
+  },
+  {
+    "question_text": "According to system justification theory, why do members of disadvantaged groups sometimes support social arrangements that harm their own interests?",
+    "correct_answer": "Epistemic, existential, and relational needs drive people to perceive the status quo as fair, producing out-group favoritism even among disadvantaged members.",
+    "distractors": [
+      "Cognitive overload prevents accurate perception of inequality, causing disadvantaged members to accept the status quo due to limited mental resources.",
+      "Strong in-group identification leads disadvantaged members to view their group as superior, supporting hierarchies they expect to eventually reverse.",
+      "Media-driven classical conditioning trains disadvantaged members to associate their position with personal merit through learned helplessness."
+    ],
+    "difficulty": 4,
+    "source_article": "System justification theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["system justification theory"]
+  },
+  {
+    "question_text": "What does the Implicit Association Test (IAT) measure, and what is the primary methodological basis for inferring implicit associations?",
+    "correct_answer": "It measures automatic concept-attribute association strength via response latencies: faster sorting when concept and attribute share a key indicates stronger association.",
+    "distractors": [
+      "It measures deliberate concept-attribute association strength via self-reported preferences: higher agreement when concept and attribute are paired indicates stronger association.",
+      "It measures automatic concept-attribute association strength via error rates: more mistakes when concept and attribute share a key indicates stronger association.",
+      "It measures automatic concept-attribute association strength via physiological arousal: higher skin conductance when concept and attribute are paired indicates stronger association."
+    ],
+    "difficulty": 4,
+    "source_article": "Implicit-association test",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["implicit association test"]
+  },
+  {
+    "question_text": "In social dominance theory, what three primary mechanisms maintain group-based social hierarchies, and what role do legitimizing myths play?",
+    "correct_answer": "Institutional discrimination, aggregated individual discrimination, and behavioral asymmetry maintain hierarchies; legitimizing myths are shared ideologies morally justifying inequality.",
+    "distractors": [
+      "Authoritarian leadership, resource scarcity, and genetic inheritance maintain hierarchies; legitimizing myths are minority conspiracy theories emotionally justifying rebellion.",
+      "Social comparison, cognitive dissonance, and conformity pressure maintain hierarchies; legitimizing myths are verified scientific claims rationally justifying specialization.",
+      "Intergroup competition, social loafing, and deindividuation maintain hierarchies; legitimizing myths are temporary political slogans situationally justifying allocation."
+    ],
+    "difficulty": 4,
+    "source_article": "Social dominance theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["social dominance theory"]
+  },
+  {
+    "question_text": "According to Bandura's theory of moral disengagement, what are the primary cognitive mechanisms by which individuals commit harmful acts while preserving a positive self-image?",
+    "correct_answer": "Moral justification, euphemistic labeling, advantageous comparison, diffusion of responsibility, minimizing harm, and victim dehumanization selectively deactivate moral self-sanctions.",
+    "distractors": [
+      "Guilt repression, blame projection, impulse sublimation, and unconscious denial permanently eliminate moral self-sanctions through psychodynamic defense mechanisms.",
+      "Cost-benefit analysis, empathy suppression, deliberate desensitization, and conscious standard rejection systematically override moral self-sanctions through rational calculation.",
+      "Groupthink conformity, authority obedience, downward comparison, and situational attribution transfer moral self-sanctions entirely to the social context."
+    ],
+    "difficulty": 4,
+    "source_article": "Moral disengagement",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["moral disengagement"]
+  },
+  {
+    "question_text": "How does Higgins's regulatory focus theory distinguish between the two self-regulatory systems, and what strategic orientations does each system produce?",
+    "correct_answer": "Promotion focus pursues ideals and gains through eager strategies; prevention focus fulfills duties and avoids losses through vigilant strategies.",
+    "distractors": [
+      "Promotion focus fulfills duties and avoids losses through vigilant strategies; prevention focus pursues ideals and gains through eager strategies.",
+      "Promotion focus pursues competitive dominance through assertive strategies; prevention focus maintains group harmony through deferential strategies.",
+      "Promotion focus seeks immediate gratification through impulsive strategies; prevention focus delays gratification through deliberate planning strategies."
+    ],
+    "difficulty": 4,
+    "source_article": "Regulatory focus theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["regulatory focus theory"]
+  },
+  {
+    "question_text": "According to Fredrickson and Roberts's objectification theory, through what psychological pathway does sexual objectification lead to negative mental health outcomes in women?",
+    "correct_answer": "Women internalize an observer's perspective (self-objectification), causing habitual body monitoring that increases shame and anxiety while reducing flow and bodily awareness.",
+    "distractors": [
+      "Women reject all external appearance evaluations (self-isolation), causing social withdrawal that increases loneliness and anger while reducing trust and communication.",
+      "Women overidentify with intellectual achievements (self-intellectualization), causing cognitive rumination that increases perfectionism and burnout while reducing emotional awareness.",
+      "Women adopt competitive strategies against other women (self-promotion), causing interpersonal rivalry that increases hostility and jealousy while reducing empathy."
+    ],
+    "difficulty": 4,
+    "source_article": "Objectification theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["objectification theory"]
+  },
+  {
+    "question_text": "What opposing psychological needs does Brewer's optimal distinctiveness theory propose, and how do individuals resolve the tension between them?",
+    "correct_answer": "People balance needs for inclusion against needs for differentiation by identifying with groups that are inclusive enough for belonging yet exclusive enough for uniqueness.",
+    "distractors": [
+      "People balance needs for dominance against needs for submission by identifying with groups that are powerful enough for control yet structured enough for order.",
+      "People balance needs for consistency against needs for novelty by identifying with groups that are predictable enough for stability yet varied enough for stimulation.",
+      "People balance needs for security against needs for resources by identifying with groups that are stable enough for safety yet wealthy enough for opportunity."
+    ],
+    "difficulty": 4,
+    "source_article": "Optimal distinctiveness theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["optimal distinctiveness theory"]
+  },
+  {
+    "question_text": "What is social tuning, and under what motivational conditions is it most likely to occur?",
+    "correct_answer": "Social tuning is adopting another person's attitudes, even implicitly, to affiliate with them; it is strongest when affiliative motivation is high.",
+    "distractors": [
+      "Social tuning is deliberately rejecting another person's attitudes to assert independence; it is strongest when competitive motivation is high.",
+      "Social tuning is consciously evaluating another person's attitudes before selective acceptance; it is strongest when accuracy motivation is high.",
+      "Social tuning is mimicking another person's nonverbal behavior to build rapport; it is strongest when self-monitoring motivation is high."
+    ],
+    "difficulty": 4,
+    "source_article": "Social tuning",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["social tuning"]
+  },
+  {
+    "question_text": "What are the three core predictions of Oyserman's identity-based motivation theory regarding when and how identities guide behavior?",
+    "correct_answer": "Identities are dynamically constructed in context, trigger action-readiness only when situationally relevant, and shape whether difficulty signals importance or impossibility.",
+    "distractors": [
+      "Identities are fixed childhood traits, consistently guide action regardless of context, and cause difficulty to uniformly signal low personal ability.",
+      "Identities are rationally chosen through deliberation, guide action only after extended reflection, and cause difficulty to always signal external barriers.",
+      "Identities are biologically determined, trigger action-readiness only during physiological arousal, and shape whether difficulty signals excitement or threat."
+    ],
+    "difficulty": 4,
+    "source_article": "Identity based motivation",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["identity-based motivation theory"]
+  }
+]

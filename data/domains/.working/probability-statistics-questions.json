@@ -1,0 +1,121 @@
+[
+  {
+    "question_text": "Student's t-test compares sample means when the population standard deviation is unknown. What distribution does the test statistic follow under the null hypothesis, and why is this distribution used instead of the standard normal?",
+    "correct_answer": "The test statistic follows a Student's $t$-distribution with $n-1$ degrees of freedom, because estimating $\\sigma$ from the sample introduces additional variability beyond the normal distribution",
+    "distractors": [
+      "The test statistic follows a $\\chi^2$ distribution with $n-1$ degrees of freedom, because the squared deviations from the sample mean are summed to estimate variability",
+      "The test statistic follows a standard normal $N(0,1)$ distribution regardless of sample size, because the Central Limit Theorem guarantees normality of the sample mean",
+      "The test statistic follows an $F$-distribution with $(1, n-1)$ degrees of freedom, because the test is constructed as a ratio of two independent variance estimates"
+    ],
+    "difficulty": 2,
+    "source_article": "Student's t-test",
+    "domain_ids": [
+      "probability-statistics"
+    ],
+    "concepts_tested": [
+      "t-test",
+      "Student's t-distribution",
+      "degrees of freedom",
+      "hypothesis testing"
+    ]
+  },
+  {
+    "question_text": "Pearson's chi-squared test evaluates whether observed categorical frequencies differ significantly from expected frequencies. What is the form of its test statistic?",
+    "correct_answer": "$\\chi^2 = \\sum_i \\frac{(O_i - E_i)^2}{E_i}$, where $O_i$ are observed counts and $E_i$ are expected counts under the null hypothesis",
+    "distractors": [
+      "$\\chi^2 = \\sum_i \\frac{(O_i - E_i)}{E_i}$, where $O_i$ are observed counts and $E_i$ are expected counts, summing the signed deviations",
+      "$\\chi^2 = \\sum_i \\frac{(O_i - E_i)^2}{O_i}$, where $O_i$ are observed counts and $E_i$ are expected counts, dividing by the observed rather than expected frequencies",
+      "$\\chi^2 = \\sum_i (O_i - E_i)^2$, where the squared differences between observed and expected counts are summed without any normalizing denominator"
+    ],
+    "difficulty": 2,
+    "source_article": "Chi-squared test",
+    "domain_ids": [
+      "probability-statistics"
+    ],
+    "concepts_tested": [
+      "chi-squared test",
+      "goodness of fit",
+      "test statistic",
+      "categorical data analysis"
+    ]
+  },
+  {
+    "question_text": "In simple linear regression, the model $Y = \\beta_0 + \\beta_1 X + \\varepsilon$ is fit to data using ordinary least squares (OLS). What quantity does OLS minimize to estimate the parameters?",
+    "correct_answer": "OLS minimizes the sum of squared residuals $\\sum_{i=1}^{n}(y_i - \\hat{y}_i)^2$, the total squared vertical distance between observed and predicted values",
+    "distractors": [
+      "OLS minimizes the sum of absolute residuals $\\sum_{i=1}^{n}|y_i - \\hat{y}_i|$, the total absolute vertical distance between observed and predicted values",
+      "OLS minimizes the sum of squared horizontal distances between each data point and the regression line, measured parallel to the $x$-axis",
+      "OLS minimizes the maximum residual $\\max_i |y_i - \\hat{y}_i|$, ensuring that no single observation has an excessively large prediction error"
+    ],
+    "difficulty": 2,
+    "source_article": "Linear regression",
+    "domain_ids": [
+      "probability-statistics"
+    ],
+    "concepts_tested": [
+      "linear regression",
+      "ordinary least squares",
+      "residuals",
+      "parameter estimation"
+    ]
+  },
+  {
+    "question_text": "The expected value of a discrete random variable $X$ quantifies its long-run average. Which formula correctly defines $E[X]$ for a discrete distribution with probability mass function $P(X = x_i)$?",
+    "correct_answer": "$E[X] = \\sum_i x_i \\, P(X = x_i)$, the sum of each possible value weighted by its probability",
+    "distractors": [
+      "$E[X] = \\sum_i P(X = x_i) / n$, the average of the probability values divided by the number of possible outcomes",
+      "$E[X] = \\prod_i x_i \\, P(X = x_i)$, the product of each possible value weighted by its probability",
+      "$E[X] = \\sum_i x_i / P(X = x_i)$, each possible value divided by its probability, then summed over all outcomes"
+    ],
+    "difficulty": 2,
+    "source_article": "Expected value",
+    "domain_ids": [
+      "probability-statistics"
+    ],
+    "concepts_tested": [
+      "expected value",
+      "probability mass function",
+      "discrete random variable",
+      "weighted average"
+    ]
+  },
+  {
+    "question_text": "Conditional probability measures how the likelihood of event $A$ changes when event $B$ is known to have occurred. What is the standard definition of $P(A \\mid B)$?",
+    "correct_answer": "$P(A \\mid B) = \\frac{P(A \\cap B)}{P(B)}$, the probability of both events occurring divided by the probability of the conditioning event, where $P(B) > 0$",
+    "distractors": [
+      "$P(A \\mid B) = \\frac{P(A \\cup B)}{P(B)}$, the probability of either event occurring divided by the probability of the conditioning event, where $P(B) > 0$",
+      "$P(A \\mid B) = P(A) \\cdot P(B)$, the product of the two individual event probabilities, which holds for all pairs of events",
+      "$P(A \\mid B) = \\frac{P(B)}{P(A \\cap B)}$, the probability of the conditioning event divided by the probability of both events occurring simultaneously"
+    ],
+    "difficulty": 2,
+    "source_article": "Conditional probability",
+    "domain_ids": [
+      "probability-statistics"
+    ],
+    "concepts_tested": [
+      "conditional probability",
+      "joint probability",
+      "sample space reduction"
+    ]
+  },
+  {
+    "question_text": "In frequentist hypothesis testing, the null hypothesis $H_0$ serves as the default claim tested against an alternative. What does a Type I error represent in this framework?",
+    "correct_answer": "A Type I error is rejecting $H_0$ when it is actually true (a false positive), and its probability is bounded by the significance level $\\alpha$",
+    "distractors": [
+      "A Type I error is failing to reject $H_0$ when it is actually false (a false negative), and its probability is denoted by $\\beta$",
+      "A Type I error is rejecting $H_0$ when it is actually false (a true positive), and its probability equals the statistical power $1 - \\beta$",
+      "A Type I error is failing to reject $H_0$ when it is actually true (a correct decision), and its probability equals $1 - \\alpha$"
+    ],
+    "difficulty": 2,
+    "source_article": "Null hypothesis",
+    "domain_ids": [
+      "probability-statistics"
+    ],
+    "concepts_tested": [
+      "null hypothesis",
+      "Type I error",
+      "significance level",
+      "hypothesis testing"
+    ]
+  }
+]

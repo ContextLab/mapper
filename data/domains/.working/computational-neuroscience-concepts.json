@@ -1,0 +1,66 @@
+{
+  "domain": "computational-neuroscience",
+  "parent_domain": "neuroscience",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      "computational neuroscience",
+      "neural network",
+      "neural coding",
+      "artificial neural network",
+      "neural oscillation",
+      "receptive field",
+      "connectionism",
+      "biological neuron model",
+      "neural circuit",
+      "firing rate",
+      "information theory",
+      "dynamical system",
+      "reinforcement learning"
+    ],
+    "L2": [
+      "Hodgkin-Huxley model",
+      "integrate-and-fire model",
+      "Hebbian learning",
+      "population coding",
+      "rate coding",
+      "temporal coding",
+      "Bayesian approaches to brain function",
+      "attractor network",
+      "spike train",
+      "principal component analysis",
+      "perceptron",
+      "backpropagation",
+      "recurrent neural network"
+    ],
+    "L3": [
+      "spike-timing-dependent plasticity",
+      "Hopfield network",
+      "Wilson-Cowan model",
+      "drift-diffusion model",
+      "efficient coding hypothesis",
+      "winner-take-all (computation)",
+      "excitatory-inhibitory balance",
+      "reward prediction error",
+      "mean-field theory",
+      "cable theory",
+      "gain field",
+      "neural decoding"
+    ],
+    "L4": [
+      "FitzHugh-Nagumo model",
+      "free energy principle",
+      "neural manifold",
+      "predictive coding",
+      "reservoir computing",
+      "Boltzmann machine",
+      "self-organized criticality",
+      "divisive normalization",
+      "synfire chain",
+      "continuous attractor",
+      "BCM theory",
+      "balanced amplification"
+    ]
+  }
+}

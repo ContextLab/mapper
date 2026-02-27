@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In vertebrate taphonomy, what are the five general stages used to describe the decomposition of a body after death?",
+    "correct_answer": "Fresh, bloat, active decay, advanced decay, and dry/remains.",
+    "distractors": [
+      "Autolysis, putrefaction, liquefaction, disintegration, and skeletonization.",
+      "Fresh, discoloration, gaseous distension, saponification, and mummification.",
+      "Pallor, livor, algor, rigor, and decomposition."
+    ],
+    "difficulty": 2,
+    "source_article": "Decomposition",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["decomposition"]
+  },
+  {
+    "question_text": "In archaeological field methodology, what does a 'context' refer to when recording excavated deposits?",
+    "correct_answer": "A single, well-defined stratigraphic unit relating to one depositional event, used as the primary unit of recording and analysis.",
+    "distractors": [
+      "The chemical composition of sediment samples collected from each excavation quadrant for laboratory dating.",
+      "The geographic coordinates of an excavation trench relative to a national survey grid datum point.",
+      "The catalogue entry linking an artifact to its museum accession number and storage location."
+    ],
+    "difficulty": 2,
+    "source_article": "Single context recording",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["context (archaeology)"]
+  },
+  {
+    "question_text": "What is the postmortem interval (PMI), and why is its estimation important in forensic investigations?",
+    "correct_answer": "The PMI is the time elapsed since death; estimating it helps establish when a crime occurred and narrow suspect timelines.",
+    "distractors": [
+      "The PMI is the duration between injury and medical treatment; it determines whether negligence contributed to death.",
+      "The PMI is the interval between body discovery and autopsy; it ensures chain-of-custody compliance for evidence.",
+      "The PMI is the period between burial and exhumation; it determines whether remains are eligible for reburial."
+    ],
+    "difficulty": 2,
+    "source_article": "Post-mortem interval",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["postmortem interval"]
+  },
+  {
+    "question_text": "In forensic archaeology, what legal prerequisite must typically be satisfied before an exhumation of a formally buried body can proceed?",
+    "correct_answer": "A court order or equivalent legal authority must be granted before the remains can be disinterred.",
+    "distractors": [
+      "The landowner must provide a signed waiver releasing liability for any property damage during excavation.",
+      "A licensed funeral director must certify that the original burial met statutory depth and coffin requirements.",
+      "The local health department must confirm that no communicable disease risk exists at the burial site."
+    ],
+    "difficulty": 2,
+    "source_article": "Exhumation",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["exhumation"]
+  },
+  {
+    "question_text": "Who developed the Harris matrix, and what is its primary purpose in archaeological excavation?",
+    "correct_answer": "Edward Harris developed it in 1973 to diagram the temporal succession and stratigraphic relationships of excavated contexts.",
+    "distractors": [
+      "Mortimer Wheeler developed it in 1954 to calculate the volume of soil removed from each excavation square.",
+      "Kathleen Kenyon developed it in 1961 to classify pottery typologies by their depositional frequency at a site.",
+      "Philip Barker developed it in 1968 to map the spatial distribution of small finds across an open-area excavation."
+    ],
+    "difficulty": 2,
+    "source_article": "Harris matrix",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["Harris matrix"]
+  },
+  {
+    "question_text": "Which insect family is typically the first to colonize a corpse, often arriving within minutes of death, and is therefore most important for estimating the postmortem interval?",
+    "correct_answer": "Calliphoridae (blow flies), which lay eggs in wounds and body openings shortly after death.",
+    "distractors": [
+      "Silphidae (carrion beetles), which burrow beneath the body to consume desiccated soft tissue.",
+      "Formicidae (ants), which remove small tissue fragments and transport them to underground colonies.",
+      "Dermestidae (skin beetles), which feed exclusively on dried skin and hair during the final decay stage."
+    ],
+    "difficulty": 2,
+    "source_article": "Forensic entomology",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["entomology (forensic)"]
+  },
+  {
+    "question_text": "In forensic stable isotope analysis, which pair of isotopic systems is used to reconstruct an individual's diet versus their geographic origin from skeletal remains?",
+    "correct_answer": "Carbon and nitrogen isotopes reconstruct diet, while strontium and oxygen isotopes indicate geographic origin.",
+    "distractors": [
+      "Hydrogen and sulfur isotopes reconstruct diet, while lead and calcium isotopes indicate geographic origin.",
+      "Potassium and phosphorus isotopes reconstruct diet, while iron and zinc isotopes indicate geographic origin.",
+      "Silicon and magnesium isotopes reconstruct diet, while barium and fluorine isotopes indicate geographic origin."
+    ],
+    "difficulty": 3,
+    "source_article": "Isotope analysis",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["stable isotope analysis"]
+  },
+  {
+    "question_text": "What physical principle does ground-penetrating radar (GPR) exploit to detect subsurface features such as clandestine graves?",
+    "correct_answer": "GPR emits electromagnetic radar pulses that reflect off subsurface boundaries where soil properties differ, revealing buried anomalies.",
+    "distractors": [
+      "GPR measures variations in the Earth's gravitational field caused by density differences between grave fill and undisturbed soil.",
+      "GPR detects acoustic vibrations transmitted through the ground that change frequency when encountering buried voids.",
+      "GPR records fluctuations in ambient magnetic fields produced by ferrous objects and decomposition byproducts in the soil."
+    ],
+    "difficulty": 3,
+    "source_article": "Ground-penetrating radar",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["ground-penetrating radar"]
+  },
+  {
+    "question_text": "How do forensic anthropologists distinguish an antemortem bone fracture from a perimortem or postmortem fracture when examining skeletal remains?",
+    "correct_answer": "Antemortem fractures show evidence of biological healing such as callus formation, remodeling, or periosteal reaction around the break.",
+    "distractors": [
+      "Antemortem fractures display sharp, clean edges with no discoloration, indicating the bone was fresh and hydrated at the time of injury.",
+      "Antemortem fractures are identified by their location on weight-bearing bones, since only living individuals sustain stress fractures.",
+      "Antemortem fractures exhibit uniform darkening from soil staining that penetrates evenly through both sides of the fracture surface."
+    ],
+    "difficulty": 3,
+    "source_article": "Bone fracture",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["antemortem trauma"]
+  },
+  {
+    "question_text": "What physical characteristics typically distinguish a clandestine grave from a formal burial, and what visual surface indicators might suggest its presence?",
+    "correct_answer": "Clandestine graves are shallow, hastily dug, and irregularly shaped; surface indicators include disturbed soil and unusually lush vegetation from decomposition nutrients.",
+    "distractors": [
+      "Clandestine graves are deeper than two meters with compacted fill; surface indicators include circular depressions and cracked bedrock.",
+      "Clandestine graves follow a standard rectangular outline with squared corners; surface indicators include scattered grave goods and stone markers.",
+      "Clandestine graves contain lime-covered remains in sealed containers; surface indicators include bleached soil patches and absence of insect activity."
+    ],
+    "difficulty": 3,
+    "source_article": "Clandestine grave",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["clandestine grave"]
+  }
+]

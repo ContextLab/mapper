@@ -1,0 +1,80 @@
+[
+  {
+    "question_text": "In probability and statistics, what is a normal distribution?",
+    "correct_answer": "A continuous probability distribution with a symmetric bell-shaped curve, defined by its mean $\\mu$ and standard deviation $\\sigma$.",
+    "distractors": [
+      "A discrete probability distribution with a symmetric bell-shaped curve, defined by its mode $\\mu$ and range $\\sigma$.",
+      "A continuous probability distribution with an asymmetric right-skewed curve, defined by its median $\\mu$ and variance $\\sigma$.",
+      "A continuous probability distribution with a symmetric bell-shaped curve, defined by its variance $\\mu$ and kurtosis $\\sigma$."
+    ],
+    "difficulty": 1,
+    "source_article": "Normal distribution",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["normal distribution", "Gaussian distribution", "bell curve"]
+  },
+  {
+    "question_text": "In probability and statistics, what is a random variable?",
+    "correct_answer": "A mathematical function that assigns numerical values to each possible outcome in a sample space of a random process.",
+    "distractors": [
+      "A mathematical function that assigns categorical labels to each possible outcome in a sample space of a random process.",
+      "A mathematical function that assigns numerical values to each observed frequency in a data table of a random process.",
+      "A mathematical constant that assigns numerical values to each possible outcome in a sample space of a deterministic process."
+    ],
+    "difficulty": 1,
+    "source_article": "Random variable",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["random variable"]
+  },
+  {
+    "question_text": "In statistics, what is a sample?",
+    "correct_answer": "A subset of individuals selected from a statistical population, used to estimate characteristics of the whole population.",
+    "distractors": [
+      "A subset of individuals selected from a statistical population, used to definitively determine all parameters of the population.",
+      "The complete set of all individuals in a statistical population, used to estimate characteristics of a smaller group.",
+      "A subset of variables selected from a statistical dataset, used to estimate the dimensionality of the whole population."
+    ],
+    "difficulty": 1,
+    "source_article": "Sampling (statistics)",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["sample", "sampling", "population"]
+  },
+  {
+    "question_text": "In statistics, what is correlation?",
+    "correct_answer": "A statistical measure of the degree to which two variables are linearly related, ranging from $-1$ to $+1$.",
+    "distractors": [
+      "A statistical measure of the degree to which two variables are causally related, ranging from $-1$ to $+1$.",
+      "A statistical measure of the degree to which two variables are linearly related, ranging from $0$ to $+1$.",
+      "A statistical measure of the degree to which one variable predicts a nonlinear trend, ranging from $-1$ to $+1$."
+    ],
+    "difficulty": 1,
+    "source_article": "Correlation",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["correlation", "linear relationship"]
+  },
+  {
+    "question_text": "In statistics, what is an outlier?",
+    "correct_answer": "A data point that differs significantly from other observations in a dataset and can distort statistical analyses.",
+    "distractors": [
+      "A data point that falls exactly at the mean of other observations in a dataset and can stabilize statistical analyses.",
+      "A data point that differs significantly from other observations in a dataset and always indicates measurement error.",
+      "A data point that differs marginally from neighboring observations in a dataset and can distort visual presentations."
+    ],
+    "difficulty": 1,
+    "source_article": "Outlier",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["outlier"]
+  },
+  {
+    "question_text": "In statistics, what is hypothesis testing?",
+    "correct_answer": "A method of statistical inference used to decide whether data provide sufficient evidence to reject a particular hypothesis.",
+    "distractors": [
+      "A method of statistical inference used to decide whether data provide sufficient evidence to accept a particular hypothesis.",
+      "A method of data visualization used to decide whether data provide sufficient evidence to reject a particular hypothesis.",
+      "A method of statistical inference used to decide whether a sample provides exact proof to confirm a particular hypothesis."
+    ],
+    "difficulty": 1,
+    "source_article": "Statistical hypothesis test",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["hypothesis testing", "statistical significance", "null hypothesis"]
+  }
+]

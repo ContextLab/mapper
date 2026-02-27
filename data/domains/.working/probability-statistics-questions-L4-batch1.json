@@ -1,0 +1,80 @@
+[
+  {
+    "question_text": "The Cramér-Rao bound gives the minimum variance for unbiased estimators. Under what condition does an unbiased estimator achieve equality in the bound, and what is the score function's form?",
+    "correct_answer": "Equality holds when the score $\\frac{\\partial \\log f}{\\partial \\theta}$ is linear in $\\hat{\\theta}(x)$, which occurs precisely for exponential family distributions.",
+    "distractors": [
+      "Equality holds when the score $\\frac{\\partial \\log f}{\\partial \\theta}$ is quadratic in $\\hat{\\theta}(x)$, which occurs precisely for exponential family distributions.",
+      "Equality holds when the score $\\frac{\\partial \\log f}{\\partial \\theta}$ is linear in $\\hat{\\theta}(x)$, which occurs for any distribution with finite variance.",
+      "Equality holds when the Hessian $\\frac{\\partial^2 \\log f}{\\partial \\theta^2}$ is linear in $\\hat{\\theta}(x)$, which occurs precisely for exponential family distributions."
+    ],
+    "difficulty": 4,
+    "source_article": "Cramér–Rao bound",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["Cramér-Rao bound"]
+  },
+  {
+    "question_text": "Kolmogorov's third axiom requires $\\sigma$-additivity rather than mere finite additivity for disjoint events. What structural requirement does this impose on the event space, and what key property does it enable?",
+    "correct_answer": "The event space must be a $\\sigma$-algebra, enabling continuity of the probability measure: $P(\\lim_n A_n) = \\lim_n P(A_n)$ for monotone event sequences.",
+    "distractors": [
+      "The event space must be a $\\sigma$-algebra, enabling absolute continuity of the probability measure: $P(A) = 0$ whenever the Lebesgue measure $\\mu(A) = 0$.",
+      "The event space must be an algebra closed under finite unions, enabling continuity of the probability measure: $P(\\lim_n A_n) = \\lim_n P(A_n)$ for monotone sequences.",
+      "The event space must be a $\\sigma$-algebra, enabling uniform convergence of the probability measure: $\\sup_A |P_n(A) - P(A)| \\to 0$ for monotone sequences."
+    ],
+    "difficulty": 4,
+    "source_article": "Probability axioms",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["Kolmogorov axioms"]
+  },
+  {
+    "question_text": "The optional stopping theorem states $E[X_\\tau] = E[X_0]$ for a martingale stopped at $\\tau$. Which sufficient condition on the stopping time ensures this holds, and why?",
+    "correct_answer": "It suffices that $\\tau \\leq N$ a.s. for some constant $N$; no further integrability condition beyond the martingale property is then needed.",
+    "distractors": [
+      "It suffices that $E[\\tau] < \\infty$; finite expected stopping time alone always guarantees the result without further integrability conditions.",
+      "It suffices that $\\tau \\leq N$ a.s. for some constant $N$, and additionally the increments $|X_{n+1} - X_n|$ must be uniformly bounded.",
+      "It suffices that $P(\\tau < \\infty) = 1$; almost sure finiteness alone guarantees the result without any further integrability conditions."
+    ],
+    "difficulty": 4,
+    "source_article": "Martingale (probability theory)",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["martingale"]
+  },
+  {
+    "question_text": "In the exponential family canonical form $f(x|\\theta) = h(x)\\exp[\\eta(\\theta)\\cdot T(x) - A(\\theta)]$, the log-partition function $A(\\theta)$ encodes key information. What do its first and second derivatives with respect to natural parameters yield?",
+    "correct_answer": "The first derivative $\\nabla_\\eta A$ gives $E[T(x)]$, and the Hessian $\\nabla^2_\\eta A$ gives the covariance matrix $\\mathrm{Cov}[T(x)]$ of the sufficient statistic.",
+    "distractors": [
+      "The first derivative $\\nabla_\\eta A$ gives the mode of $T(x)$, and the Hessian $\\nabla^2_\\eta A$ gives the covariance matrix $\\mathrm{Cov}[T(x)]$ of the sufficient statistic.",
+      "The first derivative $\\nabla_\\eta A$ gives $E[T(x)]$, and the Hessian $\\nabla^2_\\eta A$ gives the Fisher information $I(\\theta)$ directly in the original parameterization.",
+      "The first derivative $\\nabla_\\eta A$ gives $E[x]$ directly, and the Hessian $\\nabla^2_\\eta A$ gives $\\mathrm{Var}[x]$ rather than the sufficient statistic's covariance."
+    ],
+    "difficulty": 4,
+    "source_article": "Exponential family",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["exponential family"]
+  },
+  {
+    "question_text": "A Gaussian process is fully specified by its mean and covariance functions. What distinguishes Gaussian processes from general stochastic processes regarding wide-sense versus strict-sense stationarity?",
+    "correct_answer": "For Gaussian processes the two notions are equivalent, because all finite-dimensional distributions are fully determined by the first two moments.",
+    "distractors": [
+      "For Gaussian processes strict-sense stationarity implies wide-sense but not conversely, exactly as for general stochastic processes with finite moments.",
+      "For Gaussian processes the two notions are equivalent only when the mean function is identically zero and the covariance kernel is translation-invariant.",
+      "For Gaussian processes wide-sense stationarity implies strict-sense only in the special case of zero mean and unit variance at every index."
+    ],
+    "difficulty": 4,
+    "source_article": "Gaussian process",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["Gaussian process"]
+  },
+  {
+    "question_text": "The Rao-Blackwell theorem improves an estimator by conditioning on a sufficient statistic $T(X)$. What is the MSE decomposition, and what additional condition on $T(X)$ guarantees the result is UMVUE?",
+    "correct_answer": "MSE decomposes as $E[(\\delta_1-\\theta)^2] = E[(\\delta-\\theta)^2] - E[\\mathrm{Var}(\\delta|T)]$. If $T$ is also complete, Lehmann-Scheffé guarantees UMVUE.",
+    "distractors": [
+      "MSE decomposes as $E[(\\delta_1-\\theta)^2] = E[(\\delta-\\theta)^2] - \\mathrm{Var}(E[\\delta|T])$. If $T$ is also complete, Lehmann-Scheffé guarantees UMVUE.",
+      "MSE decomposes as $E[(\\delta_1-\\theta)^2] = E[(\\delta-\\theta)^2] - E[\\mathrm{Var}(\\delta|T)]$. If $T$ is minimal sufficient, Lehmann-Scheffé guarantees UMVUE.",
+      "MSE decomposes as $E[(\\delta_1-\\theta)^2] = E[(\\delta-\\theta)^2] - E[\\mathrm{Var}(\\delta|T)]$. If $T$ is also ancillary, Lehmann-Scheffé guarantees UMVUE."
+    ],
+    "difficulty": 4,
+    "source_article": "Rao–Blackwell theorem",
+    "domain_ids": ["probability-statistics"],
+    "concepts_tested": ["Rao-Blackwell theorem"]
+  }
+]

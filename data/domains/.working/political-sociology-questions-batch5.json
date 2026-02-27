@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Charles Tilly's 1985 essay argued that European state formation was driven by a self-reinforcing cycle of organized violence and fiscal extraction. To what criminal enterprise did Tilly explicitly compare state-making?",
+    "correct_answer": "A protection racket, in which rulers offered security from threats they themselves helped create, in exchange for revenue extraction from the population",
+    "distractors": [
+      "A counterfeiting ring, in which rulers manufactured fiat currency to finance armies while debasing the coinage held by their subjects",
+      "A smuggling syndicate, in which rulers monopolized cross-border trade routes and taxed merchants for guaranteed safe passage of goods",
+      "A feudal extortion scheme, in which the Church collected tithes on behalf of secular lords who then redistributed revenue to military vassals"
+    ],
+    "difficulty": 4,
+    "source_article": "War makes the state",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Tilly's war-making and state-making"]
+  },
+  {
+    "question_text": "Nicos Poulantzas argued that the capitalist state possesses 'relative autonomy.' What did he mean by this concept, and how did it differ from Ralph Miliband's instrumentalist position?",
+    "correct_answer": "The state is structurally autonomous from individual capitalists yet still serves overall capitalist class interests, rather than being a direct tool of ruling-class personnel",
+    "distractors": [
+      "The state is fully independent of all class interests and acts as a neutral arbiter among competing social groups, rather than favoring any single class",
+      "The state is entirely captured by the working class through democratic elections and welfare legislation, rather than serving bourgeois economic interests",
+      "The state alternates between serving capitalist and proletarian interests depending on which party holds power, rather than maintaining any structural bias"
+    ],
+    "difficulty": 4,
+    "source_article": "Nicos Poulantzas",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Poulantzas's relative autonomy of the state"]
+  },
+  {
+    "question_text": "Esping-Andersen's 1990 typology in 'The Three Worlds of Welfare Capitalism' classifies welfare states into three regime types. What key metric did he use to differentiate among them?",
+    "correct_answer": "Decommodification, measuring the degree to which citizens can maintain a livelihood independent of market participation through state-provided social benefits",
+    "distractors": [
+      "Gross domestic product per capita, measuring the overall economic output available for redistribution through government taxation and social spending",
+      "Electoral turnout rates, measuring the degree of democratic participation that legitimizes welfare policy decisions across different political systems",
+      "Military expenditure as a share of government budgets, measuring how much states prioritize defense spending relative to social welfare provision"
+    ],
+    "difficulty": 4,
+    "source_article": "The Three Worlds of Welfare Capitalism",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Esping-Andersen's welfare state regimes"]
+  },
+  {
+    "question_text": "Michael Mann's IEMP model in 'The Sources of Social Power' identifies four overlapping networks of power. What are these four sources, and how does his treatment of military power differ from Weber's?",
+    "correct_answer": "Ideological, economic, military, and political power; Mann treats military power as analytically distinct from political power, unlike Weber who subsumes it under the state",
+    "distractors": [
+      "Legal, economic, military, and cultural power; Mann treats military power as a subset of legal authority, unlike Weber who views it as an independent force",
+      "Religious, financial, coercive, and bureaucratic power; Mann treats military power as identical to bureaucratic administration, unlike Weber who separates them",
+      "Technological, economic, diplomatic, and territorial power; Mann treats military power as derivative of technological innovation, unlike Weber who grounds it in charisma"
+    ],
+    "difficulty": 4,
+    "source_article": "The Sources of Social Power",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Mann's sources of social power"]
+  },
+  {
+    "question_text": "Seymour Martin Lipset's 'Political Man' (1960) advanced an influential thesis linking socioeconomic conditions to regime type. What is the core claim of the Lipset hypothesis?",
+    "correct_answer": "The more economically developed a nation is, the greater the likelihood it will sustain stable democratic governance",
+    "distractors": [
+      "The more ethnically homogeneous a nation is, the greater the likelihood it will sustain stable democratic governance",
+      "The more geographically isolated a nation is, the greater the likelihood it will sustain stable democratic governance",
+      "The more religiously pluralistic a nation is, the greater the likelihood it will sustain stable democratic governance"
+    ],
+    "difficulty": 4,
+    "source_article": "Political Man",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Lipset's political man"]
+  },
+  {
+    "question_text": "Habermas described a historically specific communicative arena that emerged in eighteenth-century Europe between the state and private life. What defining practice characterized this 'bourgeois public sphere'?",
+    "correct_answer": "Rational-critical debate among private citizens who came together as a public to discuss matters of common concern and hold state authority accountable",
+    "distractors": [
+      "Electoral campaigning among political parties who competed for parliamentary seats to pass legislation reflecting the commercial interests of the bourgeoisie",
+      "Religious disputation among Protestant and Catholic clergy who debated doctrinal questions in order to influence royal succession and church-state relations",
+      "Mercantile negotiation among guild representatives who bargained collectively with monarchs to secure trade monopolies and lower tariff barriers for exports"
+    ],
+    "difficulty": 4,
+    "source_article": "Public sphere",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Habermas's public sphere"]
+  },
+  {
+    "question_text": "Doug McAdam's political process model identifies three factors necessary for the emergence of social movements. Beyond expanding political opportunities and strong indigenous organizations, what is the third factor?",
+    "correct_answer": "Cognitive liberation, the collective shift in consciousness whereby an aggrieved group comes to see its situation as both unjust and changeable through collective action",
+    "distractors": [
+      "Resource accumulation, the systematic acquisition of financial assets and material infrastructure needed to sustain prolonged protest campaigns against the state",
+      "Elite defection, the withdrawal of support by ruling-class factions from the existing regime, creating a crisis of legitimacy that invites popular mobilization",
+      "Media amplification, the widespread broadcasting of grievances through mass communication channels that generates sympathetic public opinion favoring the movement"
+    ],
+    "difficulty": 4,
+    "source_article": "Political process theory",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["McAdam's political process model"]
+  },
+  {
+    "question_text": "Neo-corporatism is an institutional arrangement found in many postwar European democracies. What is the defining structural feature that distinguishes neo-corporatism from pluralist interest-group politics?",
+    "correct_answer": "The state formally incorporates peak associations of labor and business into tripartite policy-making, granting them representational monopolies in exchange for cooperation",
+    "distractors": [
+      "The state eliminates all organized interest groups and replaces them with a single centralized planning bureau that determines wages and prices by administrative decree",
+      "The state allows unlimited formation of competing lobby groups that independently pressure legislators through campaign donations without any formal coordination mechanism",
+      "The state delegates all economic regulation to autonomous regional governments that negotiate bilateral trade agreements with each other without central coordination"
+    ],
+    "difficulty": 4,
+    "source_article": "Corporatism",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["neo-corporatism"]
+  },
+  {
+    "question_text": "Omi and Winant's racial formation theory, first published in 1986, conceptualizes race not as a fixed biological category but as something continuously constructed. What is the core process their theory describes?",
+    "correct_answer": "A sociohistorical process by which racial categories are created, transformed, and destroyed through the interplay of social, economic, and political forces",
+    "distractors": [
+      "A psychobiological process by which genetic differences between populations produce innate cognitive and behavioral traits that determine social stratification outcomes",
+      "A purely economic process by which labor market competition between immigrant and native-born workers generates ethnic antagonism and occupational segregation patterns",
+      "A juridical process by which constitutional amendments and Supreme Court rulings definitively establish permanent racial classifications enforced through federal legislation"
+    ],
+    "difficulty": 4,
+    "source_article": "Racial formation theory",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["racial formation theory"]
+  },
+  {
+    "question_text": "John Gaventa's 'power cube' extends Steven Lukes's three-dimensional view of power into an analytical framework. What three axes does the power cube use to map how power operates?",
+    "correct_answer": "Forms of power (visible, hidden, invisible), levels (local, national, global), and spaces (closed, invited, claimed or created)",
+    "distractors": [
+      "Types of authority (traditional, charismatic, rational-legal), branches (executive, legislative, judicial), and sectors (public, private, nonprofit)",
+      "Sources of capital (economic, cultural, social), fields (political, academic, media), and strategies (coercion, persuasion, negotiation)",
+      "Modes of governance (hierarchy, market, network), scales (municipal, regional, continental), and actors (state, corporation, civil society)"
+    ],
+    "difficulty": 4,
+    "source_article": "Power (social and political)",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Gaventa's power cube"]
+  }
+]

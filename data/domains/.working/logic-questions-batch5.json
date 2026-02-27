@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Large cardinal axioms form a linear hierarchy of consistency strength in set theory. What distinguishes a measurable cardinal from smaller large cardinals, and who first introduced this concept?",
+    "correct_answer": "Ulam introduced them in 1930. A measurable cardinal carries a non-trivial countably additive two-valued measure on all its subsets, implying a non-trivial elementary embedding.",
+    "distractors": [
+      "Kurt Godel introduced measurable cardinals in 1938. A cardinal is measurable if every partition of its pairs has a homogeneous subset of the same cardinality, making it the first large cardinal defined through combinatorial properties.",
+      "Paul Cohen introduced measurable cardinals in 1963. A cardinal is measurable if it equals its own cofinality and is a limit of inaccessible cardinals, forming the first step beyond weakly compact cardinals in the large cardinal hierarchy.",
+      "Ernst Zermelo introduced measurable cardinals in 1908. A cardinal is measurable if it cannot be reached from below by any combination of power set and replacement operations, establishing the first axiom independent of ZFC."
+    ],
+    "difficulty": 4,
+    "source_article": "Large cardinal",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["large cardinal axiom"]
+  },
+  {
+    "question_text": "Ordinal analysis assigns countable ordinals to formal theories as measures of proof-theoretic strength. What ordinal did Gentzen assign to Peano arithmetic, and what technique did he use to obtain this result?",
+    "correct_answer": "Gentzen proved it is epsilon-naught, the first fixed point of ordinal exponentiation. He used cut elimination in sequent calculus (1936).",
+    "distractors": [
+      "Gentzen showed the proof-theoretic ordinal of Peano arithmetic is the Bachmann-Howard ordinal. He used Goedel numbering and the arithmetization of syntax to establish this in 1934.",
+      "Gentzen showed the proof-theoretic ordinal of Peano arithmetic is omega-to-the-omega. He used natural deduction normalization and transfinite induction to establish this in 1935.",
+      "Gentzen showed the proof-theoretic ordinal of Peano arithmetic is the Feferman-Schuette ordinal Gamma-naught. He used double-negation translation and realizability to establish this in 1938."
+    ],
+    "difficulty": 4,
+    "source_article": "Ordinal analysis",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["ordinal analysis"]
+  },
+  {
+    "question_text": "Reverse mathematics seeks to determine which axioms are necessary and sufficient to prove theorems of ordinary mathematics. What formal framework does it use, and what are the 'Big Five' subsystems ordered by strength?",
+    "correct_answer": "It uses subsystems of second-order arithmetic. The Big Five, from weakest to strongest, are RCA_0, WKL_0, ACA_0, ATR_0, and Pi-1-1-CA_0.",
+    "distractors": [
+      "It uses fragments of Zermelo-Fraenkel set theory. The Big Five, from weakest to strongest, are KP, Z, ZC, ZF, and ZFC with a measurable cardinal.",
+      "It uses typed lambda calculi with increasing expressiveness. The Big Five, from weakest to strongest, are System T, System F, Fw, CC, and the Calculus of Inductive Constructions.",
+      "It uses subsystems of first-order Peano arithmetic. The Big Five, from weakest to strongest, are EFA, PRA, I-Sigma-1, B-Sigma-1, and full PA."
+    ],
+    "difficulty": 4,
+    "source_article": "Reverse mathematics",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["reverse mathematics"]
+  },
+  {
+    "question_text": "Linear logic, introduced by Jean-Yves Girard in 1987, is a substructural logic that treats hypotheses as resources. Which two structural rules of classical logic does it restrict, and what novel connectives does it introduce to recover controlled versions of these rules?",
+    "correct_answer": "It restricts contraction (duplication) and weakening (discarding). The exponential modalities 'of course' (!) and 'why not' (?) restore controlled use of these rules.",
+    "distractors": [
+      "Linear logic restricts exchange (reordering) and contraction (duplication). It introduces the tensor product and par connectives to allow controlled reordering and duplication when explicitly marked.",
+      "Linear logic restricts weakening (discarding) and the cut rule (composition). It introduces the additive connectives 'with' and 'plus' to allow controlled discarding and composition when explicitly marked.",
+      "Linear logic restricts associativity (regrouping) and idempotence (repetition). It introduces the modal operators 'box' and 'diamond' to allow controlled regrouping and repetition when explicitly marked."
+    ],
+    "difficulty": 4,
+    "source_article": "Linear logic",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["linear logic"]
+  },
+  {
+    "question_text": "Paraconsistent logic rejects a principle that holds in classical logic, allowing reasoning with inconsistent information without triviality. What principle does it reject, and what philosophical position associated with Graham Priest embraces true contradictions?",
+    "correct_answer": "It rejects the principle of explosion (ex contradictione quodlibet): from a contradiction, anything follows. The associated position is dialetheism, holding some contradictions are true.",
+    "distractors": [
+      "Paraconsistent logic rejects the law of excluded middle (tertium non datur), which states every proposition is either true or false. The associated position is fictionalism, which holds that logical truths are useful fictions.",
+      "Paraconsistent logic rejects the law of non-contradiction, which states no proposition is both true and false simultaneously. The associated position is conventionalism, which holds that logical laws are arbitrary social agreements.",
+      "Paraconsistent logic rejects the principle of bivalence, which states that every proposition has exactly one truth value. The associated position is relativism, which holds that truth depends on the formal system adopted."
+    ],
+    "difficulty": 4,
+    "source_article": "Paraconsistent logic",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["paraconsistent logic"]
+  },
+  {
+    "question_text": "Provability logic GL axiomatizes the behavior of the provability predicate in Peano arithmetic using modal logic. What modal axiom schema characterizes GL beyond the base system K, and whose 1976 arithmetical completeness theorem showed GL is the exact modal logic of provability?",
+    "correct_answer": "The axiom Box(Box P -> P) -> Box P (modal Loeb's theorem) characterizes GL. Solovay's 1976 completeness theorem proved GL exactly captures PA provability.",
+    "distractors": [
+      "GL is characterized by the axiom schema Box P implies Box Box P, the modal version of Goedel's diagonal lemma. Saul Kripke proved the arithmetical completeness theorem showing GL exactly captures provability in PA.",
+      "GL is characterized by the axiom schema Box P implies P, the modal version of the reflection principle. Per Lindstroem proved the arithmetical completeness theorem showing GL exactly captures provability in PA.",
+      "GL is characterized by the axiom schema Diamond P implies Box Diamond P, the modal version of Rosser's theorem. Solomon Feferman proved the arithmetical completeness theorem showing GL exactly captures provability in PA."
+    ],
+    "difficulty": 4,
+    "source_article": "Provability logic",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["provability logic"]
+  },
+  {
+    "question_text": "Descriptive set theory studies definable subsets of Polish spaces using hierarchies of increasing complexity. What is a Polish space, and how do the Borel and projective hierarchies differ in their construction?",
+    "correct_answer": "A Polish space is separable and completely metrizable. Borel sets use countable unions and complements of open sets; projective sets extend beyond using continuous images.",
+    "distractors": [
+      "A Polish space is a compact Hausdorff space with a countable dense subset. The Borel hierarchy is built from closed sets by finite intersections and unions; the projective hierarchy extends it using power set operations and diagonal arguments.",
+      "A Polish space is a locally compact metrizable space with countable basis. The Borel hierarchy is built from clopen sets by transfinite recursion; the projective hierarchy extends it using ultrafilter limits and Ramsey-theoretic constructions.",
+      "A Polish space is a connected complete metric space of countable dimension. The Borel hierarchy is built from measurable sets by sigma-algebra operations; the projective hierarchy extends it using forcing constructions and generic filters."
+    ],
+    "difficulty": 4,
+    "source_article": "Descriptive set theory",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["descriptive set theory"]
+  },
+  {
+    "question_text": "Topos theory provides a categorical generalization of set theory that also serves as a framework for logic. Who developed the elementary topos concept for foundational purposes, and what kind of internal logic does every topos naturally support?",
+    "correct_answer": "Lawvere and Tierney developed the elementary topos in the late 1960s-early 1970s. Every topos naturally supports intuitionistic higher-order logic internally.",
+    "distractors": [
+      "Alexander Grothendieck and Jean Dieudonne developed the elementary topos concept in the mid-1950s. Every topos naturally supports classical first-order logic as its internal logic.",
+      "Saunders Mac Lane and Samuel Eilenberg developed the elementary topos concept in the early 1960s. Every topos naturally supports linear logic as its internal logic.",
+      "Peter Johnstone and Michael Barr developed the elementary topos concept in the late 1970s. Every topos naturally supports modal S4 logic as its internal logic."
+    ],
+    "difficulty": 4,
+    "source_article": "Topos",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["topos theory"]
+  },
+  {
+    "question_text": "Herbrand's theorem is a foundational result connecting first-order provability to propositional satisfiability. What does the theorem state, and why is it significant for automated theorem proving?",
+    "correct_answer": "An existential first-order formula is provable iff a finite disjunction of ground instances is a propositional tautology, reducing first-order proving to ground-instance search.",
+    "distractors": [
+      "Herbrand's theorem states that every consistent first-order theory has a model whose domain is the set of natural numbers. This ensures decidability of first-order satisfiability, forming the logical basis for SAT solvers.",
+      "Herbrand's theorem states that every valid first-order formula can be derived in finitely many steps using only modus ponens and universal generalization. This guarantees termination of proof search, forming the logical basis for resolution refutation.",
+      "Herbrand's theorem states that a universal first-order formula is satisfiable if and only if all its ground instances are simultaneously satisfiable in a single finite model. This limits the search space to finite models, forming the logical basis for model checking."
+    ],
+    "difficulty": 4,
+    "source_article": "Herbrand's theorem",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["Herbrand's theorem"]
+  },
+  {
+    "question_text": "Omega-consistency is a stronger condition than simple consistency that played a key role in Goedel's original incompleteness proof. How is omega-inconsistency defined, and who later showed that the assumption of omega-consistency could be weakened to simple consistency?",
+    "correct_answer": "Omega-inconsistency means proving P(n) for every n while also proving 'there exists n with not-P(n).' Rosser (1936) weakened the requirement to simple consistency.",
+    "distractors": [
+      "A theory is omega-inconsistent if it proves the negation of every instance of induction yet also proves the full induction schema as an axiom. Alfred Tarski showed in 1933 that simple consistency suffices for incompleteness, using an undefinability-of-truth argument.",
+      "A theory is omega-inconsistent if it proves both a universal statement and the existence of a counterexample to that same statement. Gerhard Gentzen showed in 1936 that simple consistency suffices for incompleteness, using transfinite induction up to epsilon-naught.",
+      "A theory is omega-inconsistent if it can derive its own consistency statement yet is unable to prove any particular numerical instance. Alonzo Church showed in 1935 that simple consistency suffices for incompleteness, using lambda-definability and the halting problem."
+    ],
+    "difficulty": 4,
+    "source_article": "Omega-consistent theory",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["omega-consistency"]
+  }
+]

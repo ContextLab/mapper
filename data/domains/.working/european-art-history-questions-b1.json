@@ -1,0 +1,93 @@
+[
+  {
+    "question_text": "What was the Renaissance, which began in 14th-century Italy and spread throughout Europe over the following centuries?",
+    "correct_answer": "A cultural movement characterized by the revival of classical antiquity and the transition from the Middle Ages to modernity.",
+    "distractors": [
+      "A religious reform movement characterized by the rejection of classical antiquity and the transition from Catholicism to Protestantism.",
+      "A political revolution characterized by the revival of feudal governance and the transition from republics to absolute monarchies.",
+      "A scientific movement characterized by the rejection of ancient philosophy and the transition from observational to purely experimental methods."
+    ],
+    "difficulty": 1,
+    "source_article": "Renaissance",
+    "domain_ids": ["european-art-history"],
+    "concepts_tested": ["Renaissance"]
+  },
+  {
+    "question_text": "What is Impressionism, the art movement that originated with a group of Paris-based artists during the 1870s and 1880s?",
+    "correct_answer": "A 19th-century movement characterized by visible brushstrokes, emphasis on light in its changing qualities, and ordinary subject matter.",
+    "distractors": [
+      "A 19th-century movement characterized by invisible brushstrokes, emphasis on fixed studio lighting, and mythological subject matter.",
+      "An 18th-century movement characterized by visible brushstrokes, emphasis on idealized color harmonies, and aristocratic subject matter.",
+      "A 19th-century movement characterized by precise linework, emphasis on shadow in its static qualities, and historical subject matter."
+    ],
+    "difficulty": 1,
+    "source_article": "Impressionism",
+    "domain_ids": ["european-art-history"],
+    "concepts_tested": ["Impressionism"]
+  },
+  {
+    "question_text": "What is the Baroque, the Western artistic style that began in early 17th-century Rome and spread rapidly across Europe?",
+    "correct_answer": "A style spanning architecture, music, painting, and sculpture that used contrast, grandeur, and exuberant detail to achieve a sense of awe.",
+    "distractors": [
+      "A style spanning architecture, music, painting, and sculpture that used restraint, simplicity, and minimal detail to achieve a sense of calm.",
+      "A style limited to architecture and sculpture that used contrast, grandeur, and exuberant detail to achieve a sense of nostalgia.",
+      "A style spanning architecture, music, painting, and sculpture that used symmetry, balance, and classical proportion to achieve a sense of harmony."
+    ],
+    "difficulty": 1,
+    "source_article": "Baroque",
+    "domain_ids": ["european-art-history"],
+    "concepts_tested": ["Baroque"]
+  },
+  {
+    "question_text": "Who was Michelangelo (1475\u20131564), the Italian artist whose contemporaries called him 'Il Divino' ('the divine one')?",
+    "correct_answer": "A High Renaissance sculptor, painter, architect, and poet, best known for the Sistine Chapel ceiling and the statue of David.",
+    "distractors": [
+      "A High Renaissance sculptor, painter, architect, and poet, best known for the Mona Lisa and the statue of Venus de Milo.",
+      "A Northern Renaissance sculptor, painter, architect, and poet, best known for the Sistine Chapel ceiling and the Ghent Altarpiece.",
+      "A High Renaissance sculptor, goldsmith, architect, and playwright, best known for the Brancacci Chapel ceiling and the statue of David."
+    ],
+    "difficulty": 1,
+    "source_article": "Michelangelo",
+    "domain_ids": ["european-art-history"],
+    "concepts_tested": ["Michelangelo"]
+  },
+  {
+    "question_text": "Who was Leonardo da Vinci (1452\u20131519), widely regarded as a genius who epitomized the Renaissance humanist ideal?",
+    "correct_answer": "An Italian polymath and painter of the High Renaissance, creator of the Mona Lisa and The Last Supper.",
+    "distractors": [
+      "An Italian polymath and sculptor of the High Renaissance, creator of the Pietà and The Last Supper.",
+      "A Flemish polymath and painter of the Northern Renaissance, creator of the Mona Lisa and The Arnolfini Portrait.",
+      "An Italian polymath and painter of the Early Renaissance, creator of the Birth of Venus and The Last Supper."
+    ],
+    "difficulty": 1,
+    "source_article": "Leonardo_da_Vinci",
+    "domain_ids": ["european-art-history"],
+    "concepts_tested": ["Leonardo da Vinci"]
+  },
+  {
+    "question_text": "What is Gothic architecture, the style that evolved from Romanesque architecture and originated in 12th-century northern France?",
+    "correct_answer": "A medieval architectural style defined by pointed arches, ribbed vaults, flying buttresses, and large stained glass windows.",
+    "distractors": [
+      "A medieval architectural style defined by rounded arches, barrel vaults, thick load-bearing walls, and small clerestory windows.",
+      "A medieval architectural style defined by pointed arches, ribbed vaults, flying buttresses, and large bronze relief panels.",
+      "A post-medieval architectural style defined by pointed arches, flat ceilings, freestanding columns, and large stained glass windows."
+    ],
+    "difficulty": 1,
+    "source_article": "Gothic_architecture",
+    "domain_ids": ["european-art-history"],
+    "concepts_tested": ["Gothic architecture"]
+  },
+  {
+    "question_text": "What is Cubism, the avant-garde art movement that began in Paris and has been called the most influential art movement of the 20th century?",
+    "correct_answer": "An early-20th-century movement pioneered by Picasso and Braque in which subjects are depicted from multiple perspectives in abstract, geometric form.",
+    "distractors": [
+      "An early-20th-century movement pioneered by Matisse and Derain in which subjects are depicted in vivid, non-naturalistic color from a single perspective.",
+      "An early-20th-century movement pioneered by Picasso and Braque in which subjects are depicted from a single vanishing point in realistic, geometric form.",
+      "A late-19th-century movement pioneered by Monet and Renoir in which subjects are depicted from multiple perspectives in soft, impressionistic form."
+    ],
+    "difficulty": 1,
+    "source_article": "Cubism",
+    "domain_ids": ["european-art-history"],
+    "concepts_tested": ["Cubism"]
+  }
+]

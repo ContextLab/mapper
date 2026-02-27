@@ -1,0 +1,80 @@
+[
+  {
+    "question_text": "The Riemann hypothesis asserts that all nontrivial zeros of $\\zeta(s)$ lie on the critical line $\\operatorname{Re}(s) = \\tfrac{1}{2}$. What is the precise relationship between the location of these zeros and the error term in the prime number theorem?",
+    "correct_answer": "If all nontrivial zeros satisfy $\\operatorname{Re}(\\rho) = \\tfrac{1}{2}$, then $\\pi(x) = \\operatorname{Li}(x) + O(\\sqrt{x}\\log x)$, the best possible error bound.",
+    "distractors": [
+      "If all nontrivial zeros satisfy $\\operatorname{Re}(\\rho) = \\tfrac{1}{2}$, then $\\pi(x) = \\operatorname{Li}(x) + O(\\log x)$, eliminating the error entirely for large $x$.",
+      "The zeros of $\\zeta(s)$ on the critical line imply $\\pi(x) = x/\\log x$ exactly for all sufficiently large $x$, with no error term needed.",
+      "If all nontrivial zeros satisfy $\\operatorname{Re}(\\rho) = \\tfrac{1}{2}$, then $\\pi(x) = \\operatorname{Li}(x) + O(x^{3/4}\\log x)$, a weaker bound than currently known."
+    ],
+    "difficulty": 4,
+    "source_article": "Riemann hypothesis",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["Riemann hypothesis", "prime-counting function", "critical line", "explicit formula", "error term in PNT"]
+  },
+  {
+    "question_text": "The prime number theorem is equivalent to a statement about the Chebyshev function $\\psi(x) = \\sum_{n \\le x} \\Lambda(n)$. What critical property of $\\zeta(s)$ did Hadamard and de la Vallée Poussin establish as the main step in proving PNT in 1896?",
+    "correct_answer": "They proved $\\zeta(s) \\neq 0$ for all $s = 1 + it$ with $t > 0$, establishing a zero-free region on $\\operatorname{Re}(s) = 1$.",
+    "distractors": [
+      "They proved $\\zeta(s)$ has infinitely many zeros on $\\operatorname{Re}(s) = \\tfrac{1}{2}$, confirming Riemann's 1859 conjecture about the critical line.",
+      "They derived the functional equation $\\zeta(s) = 2^s \\pi^{s-1} \\sin(\\pi s/2)\\,\\Gamma(1-s)\\,\\zeta(1-s)$ using novel contour integration methods in the complex plane.",
+      "They proved $\\zeta(s)$ has only finitely many nontrivial zeros inside the critical strip $0 < \\operatorname{Re}(s) < 1$, each having finite multiplicity."
+    ],
+    "difficulty": 4,
+    "source_article": "Prime number theorem",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["prime number theorem", "Chebyshev psi function", "Riemann zeta function", "zero-free region", "analytic proof"]
+  },
+  {
+    "question_text": "Dirichlet's theorem states there are infinitely many primes $p \\equiv a \\pmod{d}$ when $\\gcd(a,d)=1$. What is the key analytic step in Dirichlet's 1837 proof that goes beyond Euler's method for all primes?",
+    "correct_answer": "Showing that $L(1, \\chi) \\neq 0$ for every nontrivial Dirichlet character $\\chi \\pmod{d}$, using Dirichlet $L$-series $L(s,\\chi) = \\sum \\chi(n) n^{-s}$.",
+    "distractors": [
+      "Constructing an explicit infinite sequence of primes in the progression by iterating $a_{n+1} = d \\cdot a_n + a$ and verifying each term is prime.",
+      "Proving that the Riemann zeta function $\\zeta(s)$ has a simple pole at $s = 1$ and applying the residue theorem to each arithmetic progression separately.",
+      "Applying the sieve of Eratosthenes with weights from Euler's totient function $\\varphi(d)$ to isolate primes in each residue class."
+    ],
+    "difficulty": 4,
+    "source_article": "Dirichlet's theorem on primes in arithmetic progressions",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["Dirichlet L-functions", "Dirichlet characters", "L(1,chi) nonvanishing", "primes in arithmetic progressions"]
+  },
+  {
+    "question_text": "The law of quadratic reciprocity relates the Legendre symbols $\\left(\\frac{p}{q}\\right)$ and $\\left(\\frac{q}{p}\\right)$ for distinct odd primes $p, q$. How many proofs did Gauss publish, and what major generalization subsumes quadratic reciprocity as a special case?",
+    "correct_answer": "Gauss published six proofs (two more found posthumously). Artin reciprocity in class field theory generalizes it to all abelian extensions of $\\mathbb{Q}$.",
+    "distractors": [
+      "Gauss published two proofs in Disquisitiones Arithmeticae. The Langlands correspondence for $\\mathrm{GL}(1)$ over finite fields generalizes it completely.",
+      "Gauss published four proofs during his lifetime. The Taniyama-Shimura conjecture for elliptic curves provides the complete generalization.",
+      "Gauss published eight proofs in total. The Birch and Swinnerton-Dyer conjecture for abelian varieties over $\\mathbb{Q}$ subsumes it as a special case."
+    ],
+    "difficulty": 4,
+    "source_article": "Quadratic reciprocity",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["quadratic reciprocity", "Legendre symbol", "Gauss", "Artin reciprocity", "class field theory"]
+  },
+  {
+    "question_text": "The ring of integers $\\mathcal{O}_K$ of an algebraic number field $K$ is a Dedekind domain. What three defining properties characterize a Dedekind domain, and what factorization theorem holds in such rings?",
+    "correct_answer": "A Dedekind domain is an integrally closed, Noetherian integral domain of Krull dimension one. Every nonzero proper ideal factors uniquely into prime ideals.",
+    "distractors": [
+      "A Dedekind domain is a principal ideal domain that is also a Euclidean domain of Krull dimension two. Every element factors uniquely into prime elements.",
+      "A Dedekind domain is a local, Noetherian integral domain of Krull dimension zero. Every ideal is generated by at most two elements.",
+      "A Dedekind domain is an integrally closed, Artinian ring of Krull dimension one. Every nonzero ideal factors uniquely into maximal ideals."
+    ],
+    "difficulty": 4,
+    "source_article": "Algebraic number field",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["Dedekind domain", "ring of integers", "unique factorization of ideals", "Krull dimension", "Noetherian ring"]
+  },
+  {
+    "question_text": "The ideal class group $\\operatorname{Cl}(K) = J_K / P_K$ measures failure of unique factorization in $\\mathcal{O}_K$. For imaginary quadratic fields $\\mathbb{Q}(\\sqrt{d})$ with $d < 0$, exactly how many values of $d$ give class number $1$?",
+    "correct_answer": "Exactly nine values: $d = -1, -2, -3, -7, -11, -19, -43, -67, -163$. This was conjectured by Gauss and proven by Heegner and Stark.",
+    "distractors": [
+      "Exactly seven values: $d = -1, -2, -3, -7, -11, -19, -43$. This was proven by Minkowski using his lattice-point bound on ideal norms.",
+      "Infinitely many values of $d < 0$ give class number $1$, as proven by the Cohen-Lenstra heuristics for imaginary quadratic fields.",
+      "Exactly twelve values including $d = -1, -2, -3, -7, -11, -19, -43, -67, -163, -223, -307, -499$, proven by Baker's theorem."
+    ],
+    "difficulty": 4,
+    "source_article": "Ideal class group",
+    "domain_ids": ["number-theory"],
+    "concepts_tested": ["ideal class group", "class number", "imaginary quadratic fields", "Heegner numbers", "Stark-Heegner theorem"]
+  }
+]

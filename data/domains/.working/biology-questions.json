@@ -1,0 +1,652 @@
+[
+  {
+    "question_text": "What biological process converts light energy into chemical energy in plants, algae, and cyanobacteria, releasing oxygen as a byproduct?",
+    "correct_answer": "Photosynthesis, the process by which photosynthetic organisms use light to synthesize carbohydrates from carbon dioxide and water.",
+    "distractors": [
+      "Chemosynthesis, the process by which chemotrophic organisms use light to synthesize carbohydrates from carbon dioxide and water.",
+      "Photosynthesis, the process by which photosynthetic organisms use light to break down carbohydrates into carbon dioxide and water.",
+      "Cellular respiration, the process by which photosynthetic organisms use light to synthesize proteins from nitrogen and water."
+    ],
+    "difficulty": 1,
+    "source_article": "Photosynthesis",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["photosynthesis"]
+  },
+  {
+    "question_text": "What evolutionary mechanism, first described by Darwin and Wallace, causes organisms with favorable traits to survive and reproduce at higher rates than others?",
+    "correct_answer": "Natural selection, the differential survival and reproduction of individuals due to differences in their relative fitness.",
+    "distractors": [
+      "Natural selection, the random survival and reproduction of individuals independent of differences in their relative fitness.",
+      "Genetic drift, the differential survival and reproduction of individuals due to differences in their relative fitness.",
+      "Natural selection, the differential survival and reproduction of populations due to differences in their acquired characteristics."
+    ],
+    "difficulty": 1,
+    "source_article": "Natural selection",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["natural selection"]
+  },
+  {
+    "question_text": "What term describes a system formed by living organisms interacting with each other and their physical environment, linked through nutrient cycles and energy flows?",
+    "correct_answer": "An ecosystem, a system of biotic and abiotic components connected through nutrient cycles and energy flows.",
+    "distractors": [
+      "A biome, a system of biotic and abiotic components connected through nutrient cycles and energy flows.",
+      "An ecosystem, a system of exclusively biotic components connected through nutrient cycles and energy flows.",
+      "A community, a system of biotic and abiotic components connected through reproductive cycles and genetic flows."
+    ],
+    "difficulty": 1,
+    "source_article": "Ecosystem",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["ecosystem"]
+  },
+  {
+    "question_text": "What is the basic structural and functional unit of all living organisms, first discovered by Robert Hooke in 1665?",
+    "correct_answer": "The cell, consisting of a semipermeable membrane enclosing cytoplasm that contains genetic material.",
+    "distractors": [
+      "The organelle, consisting of a semipermeable membrane enclosing cytoplasm that contains genetic material.",
+      "The cell, consisting of an impermeable membrane enclosing cytoplasm that contains genetic material.",
+      "The tissue, consisting of a semipermeable membrane enclosing cytoplasm that contains genetic material."
+    ],
+    "difficulty": 1,
+    "source_article": "Cell (biology)",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["cell"]
+  },
+  {
+    "question_text": "What polymer, composed of two polynucleotide chains forming a double helix, carries the genetic instructions for development and functioning of all known organisms?",
+    "correct_answer": "DNA (deoxyribonucleic acid), a nucleic acid that encodes genetic information using four nucleobases: adenine, thymine, guanine, and cytosine.",
+    "distractors": [
+      "RNA (ribonucleic acid), a nucleic acid that encodes genetic information using four nucleobases: adenine, uracil, guanine, and cytosine.",
+      "DNA (deoxyribonucleic acid), a nucleic acid that encodes genetic information using four nucleobases: adenine, thymine, uracil, and cytosine.",
+      "DNA (deoxyribonucleic acid), a protein polymer that encodes genetic information using four nucleobases: adenine, thymine, guanine, and cytosine."
+    ],
+    "difficulty": 1,
+    "source_article": "DNA",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["DNA"]
+  },
+  {
+    "question_text": "What is the term for the change in heritable characteristics of biological populations over successive generations, driven by processes like natural selection and genetic drift?",
+    "correct_answer": "Evolution, the process by which populations change over generations through variation, inheritance, and differential fitness.",
+    "distractors": [
+      "Evolution, the process by which individuals change within their lifetimes through variation, inheritance, and differential fitness.",
+      "Speciation, the process by which populations change over generations through variation, inheritance, and differential fitness.",
+      "Evolution, the process by which populations change over generations through mutation, inheritance, and acquired characteristics."
+    ],
+    "difficulty": 1,
+    "source_article": "Evolution",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["evolution"]
+  },
+  {
+    "question_text": "What submicroscopic infectious agent can only replicate inside the living cells of a host organism and is the most numerous type of biological entity on Earth?",
+    "correct_answer": "A virus, an infectious particle consisting of genetic material (DNA or RNA) enclosed in a protein coat called a capsid.",
+    "distractors": [
+      "A bacterium, an infectious particle consisting of genetic material (DNA or RNA) enclosed in a protein coat called a capsid.",
+      "A virus, an infectious particle consisting of genetic material (DNA or RNA) enclosed in a lipid layer called a cell wall.",
+      "A prion, an infectious particle consisting of genetic material (DNA or RNA) enclosed in a protein coat called a capsid."
+    ],
+    "difficulty": 1,
+    "source_article": "Virus",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["virus"]
+  },
+  {
+    "question_text": "What term describes the irreversible loss of a biological lineage, such as the end-Cretaceous event that eliminated non-avian dinosaurs approximately 66 million years ago?",
+    "correct_answer": "Extinction, the permanent termination of a taxon when no surviving members remain, ending its evolutionary lineage.",
+    "distractors": [
+      "Extirpation, the permanent termination of a taxon when no surviving members remain, ending its evolutionary lineage.",
+      "Extinction, the permanent termination of a taxon when no surviving members remain, redirecting its evolutionary lineage into descendant species.",
+      "Endangerment, the permanent termination of a taxon when no surviving members remain, ending its evolutionary lineage."
+    ],
+    "difficulty": 1,
+    "source_article": "Extinction",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["extinction"]
+  },
+  {
+    "question_text": "What ecological interaction involves one organism capturing, killing, and consuming another for energy, serving as a major selective pressure shaping both participants' evolution?",
+    "correct_answer": "Predation, a trophic interaction and major driver of natural selection, distinct from parasitism, herbivory, and scavenging.",
+    "distractors": [
+      "Parasitism, a trophic interaction and major driver of natural selection, distinct from predation, herbivory, and scavenging.",
+      "Predation, a symbiotic interaction and major driver of genetic drift, distinct from parasitism, herbivory, and scavenging.",
+      "Commensalism, a trophic interaction and major driver of natural selection, distinct from parasitism, herbivory, and scavenging."
+    ],
+    "difficulty": 1,
+    "source_article": "Predation",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["predation"]
+  },
+  {
+    "question_text": "What branch of biology, founded by Carl Linnaeus, involves the scientific naming, defining, and classifying of organisms into hierarchical groups based on shared characteristics?",
+    "correct_answer": "Taxonomy, the science of classifying organisms into ranked groups such as domain, kingdom, phylum, class, order, family, genus, and species.",
+    "distractors": [
+      "Taxonomy, the science of classifying organisms into ranked groups such as clade, lineage, strain, morph, variety, form, ecotype, and population.",
+      "Systematics, the science of classifying organisms into ranked groups such as domain, kingdom, phylum, class, order, family, genus, and species.",
+      "Taxonomy, the science of classifying organisms into ranked groups such as biome, ecosystem, community, population, organism, organ, tissue, and cell."
+    ],
+    "difficulty": 1,
+    "source_article": "Taxonomy (biology)",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["taxonomy"]
+  },
+  {
+    "question_text": "What term describes an inherited trait shaped by natural selection that increases an organism's fitness in a particular environment, such as the peppered moth's coloration?",
+    "correct_answer": "Adaptation, a heritable phenotypic trait with a functional role shaped by natural selection, improving survival or reproduction.",
+    "distractors": [
+      "Adaptation, a heritable phenotypic trait with a functional role shaped by environmental conditioning, improving survival or reproduction.",
+      "Mutation, a heritable phenotypic trait with a functional role shaped by natural selection, improving survival or reproduction.",
+      "Adaptation, a heritable genotypic trait with a structural role shaped by genetic drift, improving survival or reproduction."
+    ],
+    "difficulty": 1,
+    "source_article": "Adaptation",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["adaptation"]
+  },
+  {
+    "question_text": "What term describes the set of life-sustaining chemical reactions in living organisms, including converting food into energy, building macromolecules, and excreting waste?",
+    "correct_answer": "Metabolism, the enzyme-catalyzed chemical reactions that allow organisms to grow, reproduce, maintain structures, and respond to their environment.",
+    "distractors": [
+      "Homeostasis, the enzyme-catalyzed chemical reactions that allow organisms to grow, reproduce, maintain structures, and respond to their environment.",
+      "Metabolism, the spontaneous chemical reactions that allow organisms to grow, reproduce, maintain structures, and respond to their environment.",
+      "Catabolism, the enzyme-catalyzed chemical reactions that allow organisms to grow, reproduce, maintain structures, and respond to their environment."
+    ],
+    "difficulty": 1,
+    "source_article": "Metabolism",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["metabolism"]
+  },
+  {
+    "question_text": "What network of biological systems protects organisms from disease by detecting and responding to pathogens such as viruses and bacteria, distinguishing them from healthy tissue?",
+    "correct_answer": "The immune system, comprising innate immunity (preconfigured responses) and adaptive immunity (tailored, learned responses).",
+    "distractors": [
+      "The immune system, comprising innate immunity (preconfigured responses) and passive immunity (inherited maternal responses).",
+      "The lymphatic system, comprising innate immunity (preconfigured responses) and adaptive immunity (tailored, learned responses).",
+      "The immune system, comprising innate immunity (preconfigured responses) and humoral immunity (tailored, learned responses)."
+    ],
+    "difficulty": 1,
+    "source_article": "Immune system",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["immune system"]
+  },
+  {
+    "question_text": "In symbiosis, what term describes a relationship where one organism lives inside the tissues of another, such as Symbiodinium algae residing within coral cells?",
+    "correct_answer": "Endosymbiosis",
+    "distractors": [
+      "Ectosymbiosis",
+      "Intracellular parasitism",
+      "Endoparasitism"
+    ],
+    "difficulty": 2,
+    "source_article": "Symbiosis",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["symbiosis", "endosymbiosis"]
+  },
+  {
+    "question_text": "In evolutionary biology, what is the cladistic term for similar features that evolved independently in unrelated lineages, such as wings in birds and bats?",
+    "correct_answer": "Homoplasy",
+    "distractors": [
+      "Homology",
+      "Synapomorphy",
+      "Convergent plesiomorphy"
+    ],
+    "difficulty": 2,
+    "source_article": "Convergent evolution",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["convergent evolution", "homoplasy"]
+  },
+  {
+    "question_text": "In binomial nomenclature, the first part of a species name identifies the genus. What is the second part, which distinguishes the species within that genus, called?",
+    "correct_answer": "The specific epithet",
+    "distractors": [
+      "The generic epithet",
+      "The subspecific designation",
+      "The taxonomic identifier"
+    ],
+    "difficulty": 2,
+    "source_article": "Binomial nomenclature",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["binomial nomenclature"]
+  },
+  {
+    "question_text": "Which ecologist introduced the concept of a keystone species in 1969, describing species with disproportionately large effects on their ecosystem relative to their abundance?",
+    "correct_answer": "Robert T. Paine",
+    "distractors": [
+      "Eugene P. Odum",
+      "Charles S. Elton",
+      "G. Evelyn Hutchinson"
+    ],
+    "difficulty": 2,
+    "source_article": "Keystone species",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["keystone species"]
+  },
+  {
+    "question_text": "In endotherms, what specialized tissue generates heat through uncoupled oxidative metabolism, helping maintain body temperature in cold conditions?",
+    "correct_answer": "Brown adipose tissue",
+    "distractors": [
+      "White adipose tissue",
+      "Skeletal muscle fibers",
+      "Hepatic thermogenic tissue"
+    ],
+    "difficulty": 2,
+    "source_article": "Endotherm",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["endothermy"]
+  },
+  {
+    "question_text": "During an action potential, what is the transient negative shift in membrane potential below the resting level called, occurring because voltage-gated potassium channels are slow to close?",
+    "correct_answer": "Afterhyperpolarization",
+    "distractors": [
+      "Depolarization overshoot",
+      "Refractory repolarization",
+      "Hyperpolarization rebound"
+    ],
+    "difficulty": 2,
+    "source_article": "Action potential",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["action potential"]
+  },
+  {
+    "question_text": "Who first introduced the terms genotype and phenotype in 1909, clarifying the difference between an organism's hereditary material and its observable characteristics?",
+    "correct_answer": "Wilhelm Johannsen",
+    "distractors": [
+      "William Bateson",
+      "Hugo de Vries",
+      "Carl Correns"
+    ],
+    "difficulty": 2,
+    "source_article": "Phenotype",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["phenotype"]
+  },
+  {
+    "question_text": "Within a chloroplast, what is the name of the cycle that uses chemical energy from light reactions to synthesize sugars from carbon dioxide?",
+    "correct_answer": "The Calvin cycle",
+    "distractors": [
+      "The Krebs cycle",
+      "The Hatch-Slack cycle",
+      "The pentose phosphate pathway"
+    ],
+    "difficulty": 2,
+    "source_article": "Chloroplast",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["chloroplast", "Calvin cycle"]
+  },
+  {
+    "question_text": "Angiosperms are distinguished from gymnosperms partly by a reproductive process in which two sperm cells fertilize different cells in the ovule. What is this process called?",
+    "correct_answer": "Double fertilization",
+    "distractors": [
+      "Pseudogamy",
+      "Syngamy",
+      "Polyspermic fertilization"
+    ],
+    "difficulty": 2,
+    "source_article": "Flowering plant",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["angiosperm", "double fertilization"]
+  },
+  {
+    "question_text": "Invertebrates lack a vertebral column. Approximately what percentage of all described animal species are invertebrates?",
+    "correct_answer": "About 97%",
+    "distractors": [
+      "About 75%",
+      "About 85%",
+      "About 60%"
+    ],
+    "difficulty": 2,
+    "source_article": "Invertebrate",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["invertebrate"]
+  },
+  {
+    "question_text": "Among pathogen types, what term refers to misfolded protein agents that cause disease, distinct from viruses, bacteria, and fungi?",
+    "correct_answer": "Prions",
+    "distractors": [
+      "Viroids",
+      "Mycoplasmas",
+      "Plasmids"
+    ],
+    "difficulty": 2,
+    "source_article": "Pathogen",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["pathogen", "prions"]
+  },
+  {
+    "question_text": "In trophic ecology, organisms at level 1 are primary producers and level 2 are primary consumers. What specific term is used for organisms at trophic level 3?",
+    "correct_answer": "Secondary consumers",
+    "distractors": [
+      "Tertiary consumers",
+      "Apex predators",
+      "Detritivores"
+    ],
+    "difficulty": 2,
+    "source_article": "Trophic level",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["trophic level"]
+  },
+  {
+    "question_text": "Circadian rhythms are endogenous but adjusted by external cues. What German-derived term refers to these environmental time signals, such as light and temperature?",
+    "correct_answer": "Zeitgebers (literally \"time givers\")",
+    "distractors": [
+      "Eigenperioden (literally \"own periods\")",
+      "Taktgeber (literally \"pace givers\")",
+      "Zeitnehmer (literally \"time takers\")"
+    ],
+    "difficulty": 2,
+    "source_article": "Circadian rhythm",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["circadian rhythm"]
+  },
+  {
+    "question_text": "A cladistic analysis groups organisms into clades based on shared derived characteristics (synapomorphies). If a trait is present in a distant ancestor and all its descendants, why would it be unsuitable for defining a smaller clade within that lineage?",
+    "correct_answer": "It is a symplesiomorphy (shared ancestral trait), not unique to the smaller clade, so it cannot distinguish that group from the broader ancestral lineage.",
+    "distractors": [
+      "It is a synapomorphy (shared derived trait), not unique to the smaller clade, so it cannot distinguish that group from other independently evolved lineages.",
+      "It is a homoplasy (convergently evolved trait), not inherited from the common ancestor, so it cannot reliably define any clade within that lineage.",
+      "It is an autapomorphy (uniquely derived trait), found only in the ancestor itself, so it cannot be shared among members of the smaller clade."
+    ],
+    "difficulty": 3,
+    "source_article": "Cladistics",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["cladistics", "symplesiomorphy"]
+  },
+  {
+    "question_text": "Hamilton's rule ($rB > C$) predicts when altruistic behavior evolves. A Belding's ground squirrel gives alarm calls that reduce its own survival. Why might this behavior evolve toward siblings ($r = 0.5$) but not toward unrelated individuals ($r = 0$)?",
+    "correct_answer": "Siblings ($r = 0.5$) provide indirect fitness gains that can exceed the cost. When $r = 0$, no relatedness exists to offset the altruist's cost.",
+    "distractors": [
+      "Siblings ($r = 0.5$) provide direct fitness gains that can exceed the benefit. When $r = 0$, no relatedness exists to offset the recipient's cost.",
+      "Siblings ($r = 0.5$) provide indirect fitness gains that can exceed the benefit. When $r = 0$, kin recognition mechanisms prevent the altruist from responding.",
+      "Siblings ($r = 0.5$) share enough alleles to guarantee reciprocal altruism in return. When $r = 0$, no reciprocal behavior exists to offset the altruist's cost."
+    ],
+    "difficulty": 3,
+    "source_article": "Kin selection",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["kin selection", "Hamilton's rule"]
+  },
+  {
+    "question_text": "Two closely related warbler species occupy the same forest but feed at different heights in the canopy. According to the competitive exclusion principle, what would likely happen if both species were forced to forage at identical heights on identical prey?",
+    "correct_answer": "One species would outcompete and eliminate the other, since two species competing for identical resources in the same niche cannot coexist indefinitely.",
+    "distractors": [
+      "Both species would coexist through character displacement, since two species competing for identical resources in the same niche will diverge morphologically over time.",
+      "One species would outcompete and eliminate the other, since two species competing for identical resources undergo obligate mutualistic partitioning to coexist indefinitely.",
+      "Both species would undergo niche compression and stably coexist at reduced densities, since two species competing for identical resources reach a shared equilibrium."
+    ],
+    "difficulty": 3,
+    "source_article": "Competitive exclusion principle",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["competitive exclusion principle"]
+  },
+  {
+    "question_text": "Atmospheric $N_2$ makes up 78% of the air, yet most organisms cannot use it directly. What biological process converts $N_2$ into biologically available ammonia ($NH_3$), and which type of organisms primarily perform it?",
+    "correct_answer": "Nitrogen fixation, performed by diazotrophic bacteria and archaea (e.g., Rhizobium in legume root nodules) using the enzyme nitrogenase.",
+    "distractors": [
+      "Nitrification, performed by diazotrophic bacteria and archaea (e.g., Nitrosomonas in legume root nodules) using the enzyme nitrogenase.",
+      "Nitrogen fixation, performed by mycorrhizal fungi and cyanobacteria (e.g., Rhizobium in legume root nodules) using the enzyme nitrate reductase.",
+      "Denitrification, performed by diazotrophic bacteria and archaea (e.g., Rhizobium in legume root nodules) using the enzyme nitrogenase."
+    ],
+    "difficulty": 3,
+    "source_article": "Nitrogen cycle",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["nitrogen cycle", "nitrogen fixation"]
+  },
+  {
+    "question_text": "A peahen consistently chooses mates with the most elaborate tail displays, even though large tails hinder escape from predators. Which two forms of sexual selection are illustrated by female mate choice versus males fighting for territory?",
+    "correct_answer": "Intersexual selection (female choice of attractive males) and intrasexual selection (competition between males for access to mates).",
+    "distractors": [
+      "Intrasexual selection (female choice of attractive males) and intersexual selection (competition between males for access to mates).",
+      "Intersexual selection (female choice of attractive males) and stabilizing selection (competition between males for access to mates).",
+      "Disruptive selection (female choice of attractive males) and intrasexual selection (competition between males for access to mates)."
+    ],
+    "difficulty": 3,
+    "source_article": "Sexual selection",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["sexual selection", "intersexual selection", "intrasexual selection"]
+  },
+  {
+    "question_text": "Oysters release millions of eggs with no parental care, while elephants produce one calf with years of investment. In $r/K$ selection theory, which strategy does each represent, and what type of environment favors the oyster's approach?",
+    "correct_answer": "Oysters are $r$-strategists; elephants are $K$-strategists. Unstable or unpredictable environments favor $r$-selection, where producing many cheap offspring maximizes survival odds.",
+    "distractors": [
+      "Oysters are $K$-strategists; elephants are $r$-strategists. Unstable or unpredictable environments favor $r$-selection, where producing many cheap offspring maximizes survival odds.",
+      "Oysters are $r$-strategists; elephants are $K$-strategists. Stable or predictable environments favor $r$-selection, where producing many cheap offspring maximizes survival odds.",
+      "Oysters are $r$-strategists; elephants are $K$-strategists. Unstable or unpredictable environments favor $K$-selection, where producing many cheap offspring maximizes survival odds."
+    ],
+    "difficulty": 3,
+    "source_article": "R/K selection theory",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["r/K selection theory"]
+  },
+  {
+    "question_text": "Cattle egrets follow grazing cattle, eating insects disturbed by the cattle's movement. The cattle appear unaffected. If a study found that egrets also remove ticks from cattle, how would this change the ecological classification of their relationship?",
+    "correct_answer": "It would shift from commensalism (one species benefits, other unaffected) to mutualism (both benefit), since tick removal provides a fitness advantage to cattle.",
+    "distractors": [
+      "It would shift from commensalism (one species benefits, other unaffected) to parasitism (both affected), since tick removal disrupts the cattle's natural immune response.",
+      "It would remain commensalism (one species benefits, other unaffected) regardless, since tick removal provides no measurable fitness advantage to cattle.",
+      "It would shift from mutualism (both species benefit equally) to commensalism (one benefits), since tick removal reduces the egret's foraging efficiency on insects."
+    ],
+    "difficulty": 3,
+    "source_article": "Commensalism",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["commensalism", "mutualism"]
+  },
+  {
+    "question_text": "A bat's wing and a butterfly's wing both enable flight, while a bat's wing and a whale's flipper share the same bone arrangement. Which pair represents homologous structures, and what key criterion distinguishes homology from analogy?",
+    "correct_answer": "Bat wing and whale flipper are homologous (shared ancestry, same bones). Homology requires common descent, while analogy (bat and butterfly wings) reflects independent convergent evolution.",
+    "distractors": [
+      "Bat wing and butterfly wing are homologous (shared ancestry, same structure). Homology requires common descent, while analogy (bat and whale flipper) reflects independent convergent evolution.",
+      "Bat wing and whale flipper are homologous (shared ancestry, same bones). Homology requires convergent evolution, while analogy (bat and butterfly wings) reflects independent common descent.",
+      "Bat wing and whale flipper are analogous (similar function, same bones). Analogy requires common descent, while homology (bat and butterfly wings) reflects independent convergent evolution."
+    ],
+    "difficulty": 3,
+    "source_article": "Homology (biology)",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["homologous structures", "analogy"]
+  },
+  {
+    "question_text": "After a volcanic eruption creates new bare rock, lichens and mosses colonize first, gradually building soil. Is this primary or secondary succession, and why can't later-stage species like trees colonize immediately?",
+    "correct_answer": "Primary succession, because it begins on substrate lacking soil or organisms. Trees require soil nutrients and depth that only pioneer species can create.",
+    "distractors": [
+      "Secondary succession, because it begins on substrate lacking soil or organisms. Trees require soil nutrients and depth that only pioneer species can create.",
+      "Primary succession, because it begins on substrate retaining soil and seed banks. Trees require canopy gaps and light availability that only pioneer species can create.",
+      "Primary succession, because it begins on substrate lacking soil or organisms. Trees require soil nutrients and depth but can colonize without pioneer species if rainfall is sufficient."
+    ],
+    "difficulty": 3,
+    "source_article": "Ecological succession",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["ecological succession", "primary succession"]
+  },
+  {
+    "question_text": "Australia's marsupial mammals and South America's now-extinct native ungulates each evolved in isolation despite being closely related to species on other continents. What biogeographic process best explains their independent evolutionary paths?",
+    "correct_answer": "Vicariance: continental drift separated ancestral populations onto isolated landmasses, where they evolved independently without gene flow between them.",
+    "distractors": [
+      "Dispersal: continental drift separated ancestral populations onto isolated landmasses, where they evolved independently without gene flow between them.",
+      "Vicariance: oceanic currents carried ancestral populations to isolated landmasses, where they evolved convergently with gene flow between them.",
+      "Adaptive radiation: continental drift separated ancestral populations onto isolated landmasses, where they evolved convergently through parallel gene flow."
+    ],
+    "difficulty": 3,
+    "source_article": "Biogeography",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["biogeography", "vicariance"]
+  },
+  {
+    "question_text": "After a meal, rising blood glucose triggers insulin release from pancreatic beta cells. Meanwhile, falling glucose between meals triggers glucagon from alpha cells. How do insulin and glucagon function as an antagonistic hormone pair to maintain glucose homeostasis?",
+    "correct_answer": "Insulin lowers blood glucose by promoting cellular uptake and glycogen storage, while glucagon raises it by stimulating glycogen breakdown, creating a dual negative feedback system.",
+    "distractors": [
+      "Insulin lowers blood glucose by promoting cellular uptake and glycogen storage, while glucagon raises it by stimulating glycogen synthesis, creating a dual positive feedback system.",
+      "Insulin raises blood glucose by promoting glycogen breakdown and gluconeogenesis, while glucagon lowers it by stimulating cellular uptake, creating a dual negative feedback system.",
+      "Insulin lowers blood glucose by promoting cellular uptake and glycogen storage, while glucagon raises it by stimulating glycogen breakdown, creating a single negative feedback loop."
+    ],
+    "difficulty": 3,
+    "source_article": "Endocrine system",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["endocrine system", "insulin", "glucagon"]
+  },
+  {
+    "question_text": "In the logistic growth model, the term $(1 - N/K)$ modifies the exponential growth rate. When a population overshoots its carrying capacity ($N > K$), what does this term predict will happen to the population size, and why?",
+    "correct_answer": "The term $(1 - N/K)$ becomes negative, making the growth rate negative. The population declines because resource demand exceeds supply until $N$ returns to $K$.",
+    "distractors": [
+      "The term $(1 - N/K)$ becomes zero, making the growth rate zero. The population stabilizes because resource demand matches supply and $N$ remains above $K$.",
+      "The term $(1 - N/K)$ becomes negative, making the growth rate negative. The population declines because density-dependent facilitation buffers the decline, stabilizing $N$ permanently above $K$.",
+      "The term $(1 - N/K)$ becomes negative, making the growth rate negative. The population declines because intraspecific competition ceases until $N$ drops below $K$."
+    ],
+    "difficulty": 3,
+    "source_article": "Carrying capacity",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["carrying capacity", "logistic growth"]
+  },
+  {
+    "question_text": "In haplodiploid species like Hymenoptera, Hamilton's rule helps explain eusociality because full sisters share a coefficient of relatedness ($r$) of what value, exceeding their relatedness to their own offspring?",
+    "correct_answer": "$r = 0.75$, since sisters share their father's entire haploid genome plus half their mother's diploid genome.",
+    "distractors": [
+      "$r = 0.50$, since sisters share their father's entire haploid genome plus half their mother's diploid genome.",
+      "$r = 0.75$, since sisters share half their father's diploid genome plus their mother's entire haploid genome.",
+      "$r = 0.25$, since sisters share only half their father's haploid genome plus one quarter of their mother's diploid genome."
+    ],
+    "difficulty": 4,
+    "source_article": "Kin selection",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["Hamilton's rule", "haplodiploidy"]
+  },
+  {
+    "question_text": "Eldredge and Gould's punctuated equilibrium drew heavily on which earlier speciation model to explain why morphological change concentrates in geologically brief branching events rather than gradual transformation within lineages?",
+    "correct_answer": "Ernst Mayr's model of allopatric speciation in small peripheral isolates, where selection and drift drive rapid divergence.",
+    "distractors": [
+      "Theodosius Dobzhansky's model of sympatric speciation through chromosomal rearrangements, where reproductive isolation arises within continuous populations.",
+      "Ernst Mayr's model of parapatric speciation along environmental clines, where disruptive selection drives rapid divergence at hybrid zones.",
+      "Sewall Wright's shifting balance theory in subdivided populations, where interdemic selection spreads adaptive peak shifts across the species range."
+    ],
+    "difficulty": 4,
+    "source_article": "Punctuated equilibrium",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["punctuated equilibrium", "allopatric speciation"]
+  },
+  {
+    "question_text": "The evo-devo concept of deep homology was dramatically demonstrated when the mouse $Pax6$ gene was expressed in Drosophila and produced what surprising result?",
+    "correct_answer": "Functional ectopic eyes formed on Drosophila legs, wings, and antennae, showing eye-development gene conservation across 500 million years.",
+    "distractors": [
+      "Functional ectopic limbs formed on Drosophila heads and thorax, showing appendage-patterning gene conservation across 500 million years.",
+      "Functional ectopic eyes formed on Drosophila legs, wings, and antennae, showing eye-development gene conservation across 200 million years of insect-mammal divergence.",
+      "Functional ectopic compound eyes formed only in Drosophila imaginal wing discs, showing retinal-determination gene conservation within arthropod lineages."
+    ],
+    "difficulty": 4,
+    "source_article": "Evolutionary developmental biology",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["evolutionary developmental biology", "deep homology", "Pax6"]
+  },
+  {
+    "question_text": "Van Valen's 1973 Red Queen hypothesis was originally proposed to explain which surprising empirical pattern he observed in the fossil record, rather than the evolution of sexual reproduction?",
+    "correct_answer": "The law of constant extinction: within any taxonomic group, the probability of extinction remains roughly constant regardless of how long the lineage has existed.",
+    "distractors": [
+      "The law of declining origination: within any taxonomic group, the rate of speciation decreases logarithmically as a function of clade age and species richness.",
+      "The law of constant diversification: within any taxonomic group, the net rate of species accumulation remains roughly constant regardless of environmental perturbation.",
+      "The law of correlated extinction: within any taxonomic group, the probability of extinction increases proportionally with how long the lineage has existed."
+    ],
+    "difficulty": 4,
+    "source_article": "Red Queen hypothesis",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["Red Queen hypothesis", "Van Valen's law"]
+  },
+  {
+    "question_text": "In MacArthur and Wilson's equilibrium theory, what determines the equilibrial species number on an island, and how did Simberloff and Wilson experimentally test this using mangrove islands?",
+    "correct_answer": "The intersection of declining immigration and rising extinction rate curves. They fumigated Florida Keys mangrove islands and monitored arthropod recolonization to equilibrium.",
+    "distractors": [
+      "The intersection of rising immigration and declining extinction rate curves. They fumigated Florida Keys mangrove islands and monitored arthropod recolonization to equilibrium.",
+      "The intersection of declining immigration and rising extinction rate curves. They introduced novel arthropod species to depopulated Hawaiian atolls and tracked community assembly to equilibrium.",
+      "The product of constant immigration and constant extinction rate values. They fumigated Florida Keys mangrove islands and measured vegetation recovery rates to equilibrium."
+    ],
+    "difficulty": 4,
+    "source_article": "Insular biogeography",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["island biogeography", "equilibrium theory"]
+  },
+  {
+    "question_text": "In Batesian mimicry systems, palatable mimics resemble toxic models. Empirically, what happens to mimic survival rates when the mimic-to-model ratio exceeds roughly 1:1, and what specific predator behavioral mechanism drives this?",
+    "correct_answer": "Survival drops sharply because predators' ratio of rewarding to punishing experiences shifts, extinguishing their learned avoidance of the warning pattern.",
+    "distractors": [
+      "Survival drops sharply because predators' innate recognition of the warning pattern weakens through habituation, reducing their instinctive avoidance of the aposematic signal.",
+      "Survival drops sharply because predators' ratio of rewarding to punishing experiences shifts, strengthening their generalized neophobia toward all unfamiliar prey patterns.",
+      "Survival remains relatively stable because predators' ratio of rewarding to punishing experiences maintains their learned avoidance, but mimic body condition declines through competition."
+    ],
+    "difficulty": 4,
+    "source_article": "Batesian mimicry",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["Batesian mimicry", "frequency dependence"]
+  },
+  {
+    "question_text": "In phylogenetic inference, long-branch attraction is a systematic artifact where rapidly evolving lineages are erroneously grouped together. Which tree-building method is most susceptible to this problem, and why?",
+    "correct_answer": "Maximum parsimony, because it ignores branch lengths and cannot model unequal substitution rates, causing convergent changes to mimic shared ancestry.",
+    "distractors": [
+      "Maximum likelihood, because it ignores branch lengths and cannot model unequal substitution rates, causing convergent changes to mimic shared ancestry.",
+      "Maximum parsimony, because it overestimates branch lengths and overcorrects for multiple substitutions, causing ancestral polymorphisms to mimic convergent evolution.",
+      "Neighbor-joining distance methods, because they ignore branch lengths and cannot model unequal substitution rates, causing convergent changes to mimic shared ancestry."
+    ],
+    "difficulty": 4,
+    "source_article": "Phylogenetics",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["phylogenetics", "long-branch attraction"]
+  },
+  {
+    "question_text": "Ernst Mayr distinguished two subtypes of allopatric speciation. How does peripatric speciation differ from vicariance in terms of population sizes and the role of genetic drift?",
+    "correct_answer": "Peripatric speciation involves a small peripheral isolate where genetic drift and founder effects accelerate divergence, whereas vicariance splits two comparably large populations.",
+    "distractors": [
+      "Peripatric speciation involves a small peripheral isolate where natural selection alone accelerates divergence along ecological gradients, whereas vicariance splits two comparably large populations.",
+      "Peripatric speciation involves two comparably large populations separated by a geographic barrier, whereas vicariance splits a small peripheral isolate where genetic drift accelerates divergence.",
+      "Peripatric speciation involves a small peripheral isolate where genetic drift and founder effects accelerate divergence, whereas vicariance splits two populations of markedly unequal size."
+    ],
+    "difficulty": 4,
+    "source_article": "Allopatric speciation",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["allopatric speciation", "peripatric speciation"]
+  },
+  {
+    "question_text": "Hutchinson's 1957 niche concept formalized the niche as an $n$-dimensional hypervolume. What is the key distinction between the fundamental and realized niche in his framework?",
+    "correct_answer": "The fundamental niche is the full hypervolume permitted by a species' tolerances; the realized niche is the smaller subset actually occupied after interspecific competition.",
+    "distractors": [
+      "The fundamental niche is the full hypervolume permitted by a species' tolerances; the realized niche is the smaller subset actually occupied after accounting for predation and mutualism only.",
+      "The fundamental niche is the hypervolume a species actually occupies in nature; the realized niche is the larger potential range permitted by physiological tolerances alone.",
+      "The fundamental niche is the full hypervolume permitted by a species' tolerances; the realized niche is the larger volume expanded through facilitative interspecific interactions."
+    ],
+    "difficulty": 4,
+    "source_article": "Ecological niche",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["ecological niche", "Hutchinsonian niche"]
+  },
+  {
+    "question_text": "Bergmann's rule was originally formulated in 1847 at which biological level -- and how does this differ from how most modern studies apply it?",
+    "correct_answer": "Bergmann described it interspecifically (larger species within a genus in colder regions); modern studies mostly apply it intraspecifically (size variation within one species).",
+    "distractors": [
+      "Bergmann described it intraspecifically (larger individuals within a species in colder regions); modern studies mostly apply it interspecifically (size variation among species in a genus).",
+      "Bergmann described it interspecifically (larger species within a genus in colder regions); modern studies mostly apply it at the community level (mean body size across assemblages).",
+      "Bergmann described it at the population level (larger populations in colder climates); modern studies mostly apply it intraspecifically (size variation within one species)."
+    ],
+    "difficulty": 4,
+    "source_article": "Bergmann's rule",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["Bergmann's rule"]
+  },
+  {
+    "question_text": "Thompson's geographic mosaic theory of coevolution proposes three key components that shape how interacting species evolve across landscapes. What are coevolutionary hotspots and coldspots?",
+    "correct_answer": "Hotspots are geographic areas where reciprocal selection between species is strong; coldspots are areas where only one species exerts selection or neither does.",
+    "distractors": [
+      "Hotspots are geographic areas where genetic drift overwhelms reciprocal selection between species; coldspots are areas where strong reciprocal selection maintains coevolutionary stasis.",
+      "Hotspots are geographic areas where only one species exerts strong directional selection; coldspots are areas where reciprocal selection between both species is diffuse.",
+      "Hotspots are geographic areas where gene flow homogenizes coevolved traits across populations; coldspots are areas where isolation permits local reciprocal adaptation."
+    ],
+    "difficulty": 4,
+    "source_article": "Coevolution",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["coevolution", "geographic mosaic theory"]
+  },
+  {
+    "question_text": "The Wallace Line runs between Bali and Lombok, separated by only 35 km. What geological feature explains why these nearby islands harbor dramatically different faunas despite their proximity?",
+    "correct_answer": "A deep-water strait between the Sunda and Sahul continental shelves that persisted even during Pleistocene glacial sea-level drops, preventing terrestrial dispersal.",
+    "distractors": [
+      "A shallow continental shelf connection between the Sunda and Sahul plates that was repeatedly exposed during Pleistocene glacial sea-level drops, creating a temporary land bridge filtering dispersal.",
+      "A deep-water strait between the Indo-Australian and Pacific tectonic plates that persisted even during Pleistocene glacial sea-level drops, preventing aerial dispersal of volant species.",
+      "A chain of active volcanic seamounts between the Sunda and Sahul continental shelves that created hostile thermal barriers even during Pleistocene glacial sea-level drops, preventing terrestrial dispersal."
+    ],
+    "difficulty": 4,
+    "source_article": "Wallace Line",
+    "domain_ids": ["biology"],
+    "concepts_tested": ["Wallace Line", "biogeography"]
+  }
+]

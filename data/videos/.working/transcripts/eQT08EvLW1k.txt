@@ -1,0 +1,56 @@
+- [Instructor] All right. The goal of this video is
+try to find the solution set to this inequality right over here. And like always pause this
+video, have a go at it before we do this together. All right, what I wanna do is
+rewrite this algebraically. So I just have a zero on the other side. And then I'm gonna be able
+to test the expression that I have on the other side. That's not the zero side to think about what intervals is it greater than zero. And to figure that out, I'll think about where do we have
+non-removable discontinuities, and where is that numerator
+going to be equal to zero. And those might be places of sign changes. So let's get to it. There's gonna be a little
+bit of algebra here. So let me bring all of this business over to the left hand side so I could rewrite it as
+X squared plus 3X minus 10 over X plus three, and then minus X squared minus four over X plus two. Now let me, actually before, and this is all going to be of course, greater than or equal to zero. And lemme see if I can actually
+simplify this a little bit before I do a lot of the hairy algebra. This expression right
+over here is X plus two times X minus two. And so we might say, hey, we have an X plus
+two in the numerator, we have an X plus two in the denominator. I can cancel those things out, but we have to be careful because this is going to be, this implies that we have removable discontinuity at X equals negative two. So that's a restriction on our domain. So now we have to add that. So X cannot equal negative two. And so let me rewrite what
+we have going on here. We have x squared plus 3X minus 10 over X plus three. And I'm going to, so I could
+just write minus X minus two. I could just write it that way, is greater than or equal to zero, and have our restriction to our domain. But I am just for the sake of not using up all my screen real estate, I'm going to go forward one more step and have a common denominator. I could rewrite X minus two as X minus two times X plus three over X plus three. All of that is greater
+than or equal to zero with the restriction that X cannot be equal to negative two. Why did I do that just now? Well, I want to add all of this together and turn it into just one
+big rational expression. And so I can rewrite all of this as, let me make a big line here. So my denominator is now X plus three. My numerator is X
+squared plus 3X minus 10. And let me actually rewrite all of this in a new color right over here. And I could write, this is going to be, I'll just do this over here. X times X is X squared, X times three is plus 3X minus 2X, and then negative two
+times three is minus six. And then, so this is going
+to be 3X minus 2X is 1X, so that is all X. And then we are subtracting that. So this is going to be negative X squared, and then we have plus X,
+but we're subtracting it. So minus X, and then we're subtracting a negative six. And so then we have plus six there. And so that gets us to, if we were to simplify
+this whole numerator, we are making progress, oh, let's not forget this
+needs to be greater than or equal to zero, and X cannot be, put a comma here, and X cannot be equal to negative two. So we have an X squared minus
+X squared, those cancel out. And so I'm left with 3X
+minus X, which is 2X. And I have negative 10 plus
+six, which is minus four. All of that over X plus
+three, X plus three, this is simplifying nicely, is greater than or equal to zero for X does not equal negative two. And I'm actually gonna factor this top even a little bit more
+because I wanna figure out when the numerator is equal to zero. So let me just do that over here. So we get two times X minus two over X plus three, is greater than or equal to zero, for all Xs, except for X
+does not equal negative two. And of course, it also
+has a discontinuity here at X equals negative three. And that's going to be
+an interesting point. What we wanna think about
+is what are all the points where we might have a sign change? And those are going to
+be where the numerator is equal to zero or where we have a
+non-removable discontinuity, which X equals negative three is. So the points of interest are X equals two X equals two, and X equals negative three. X equals two, makes the numerator zero. X equals negative three makes the denominator equal to zero. Now what we wanna do is test the intervals to the left in between and to
+the right of these numbers. Let me start with X is
+less than negative three. So let's imagine X equals negative four. Let's plug that in into this
+expression right over here, we would get two times negative four, times negative four minus
+two is negative six. All of that over negative four plus three, which is negative one. So this is going to be negative 12 divided by negative
+one equals positive 12. What we really care about is the sign. This is positive. This is positive, so it
+is greater than zero. So this interval X is
+less than negative three, does satisfy our conditions. Now, we can't get to X
+equals negative three, even though this is greater than or equals because at X equals negative three, our denominator becomes zero. This becomes undefined. X equals negative three
+is not part of our domain. Now let's try the interval
+in between these two numbers. Maybe I'll do that in a salmon color. So let's think about
+between negative three and positive two. An easy number to try is zero. If we did that, we would
+have two times negative two, zero minus two, over zero plus three. So this is gonna be a negative. This is negative four over
+three, which is negative. Really all we care about is a sign. So that interval does not
+satisfy our conditions. So now let's think about
+X being greater than two. We could try say X equals three. And over here, let me be clear, we tried, this was X equals zero that I tried here. But when we try X equals three, we get two times three minus two, which is one, over three
+plus three over six, which is indeed positive. So that satisfies it. So what's our solution set? X can be less than negative three, and then X can also be
+greater than or equal to two. Because at two, the
+numerator is equal to zero. It's in our domain, and we're saying greater
+than or equal to zero. So we can also say X is greater than or equal to two. Now we can write this in, sometimes people would
+call it set notation. We could go from negative
+infinity to negative three. We're not including the negative three 'cause it's not in our domain and union. So we're combining these sets. This is all the solution set. We can start, or we can
+start at two and include two. So we put our brackets here, all the way to positive
+infinity, and we are done.

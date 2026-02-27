@@ -1,0 +1,652 @@
+[
+  {
+    "question_text": "What is morality primarily concerned with?",
+    "correct_answer": "The principles and standards that distinguish right conduct from wrong conduct in human behavior.",
+    "distractors": [
+      "The scientific study of human cognitive development and decision-making processes across the lifespan.",
+      "The legal codes that governments enact to regulate commercial transactions between private citizens.",
+      "The aesthetic judgments that determine whether works of art achieve beauty or formal excellence."
+    ],
+    "difficulty": 1,
+    "source_article": "Morality",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["morality"]
+  },
+  {
+    "question_text": "What does the concept of justice fundamentally concern?",
+    "correct_answer": "The fair and equitable treatment of individuals, ensuring that people receive what they are due.",
+    "distractors": [
+      "The enforcement of religious commandments through institutional authority and community oversight structures.",
+      "The maximization of economic productivity by distributing resources to the most efficient producers.",
+      "The preservation of traditional customs and social hierarchies inherited from previous generations."
+    ],
+    "difficulty": 1,
+    "source_article": "Justice",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["justice"]
+  },
+  {
+    "question_text": "What are human rights?",
+    "correct_answer": "Universal moral entitlements held by all persons regardless of nationality, sex, ethnicity, or other status.",
+    "distractors": [
+      "Privileges granted exclusively to citizens by their national government in exchange for civic duties.",
+      "Cultural norms that vary by society and apply only to members of a particular community.",
+      "Legal protections available only to individuals who have reached the recognized age of majority."
+    ],
+    "difficulty": 1,
+    "source_article": "Human rights",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["human rights"]
+  },
+  {
+    "question_text": "What does the virtue of honesty require of a person?",
+    "correct_answer": "Truthfulness, sincerity, and the avoidance of lying, deception, or deliberate misrepresentation of facts.",
+    "distractors": [
+      "Strict obedience to all established laws and regulations regardless of their moral justification.",
+      "Selfless dedication to helping others even at significant personal cost or sacrifice.",
+      "Consistent loyalty to one's family, friends, and community above all competing obligations."
+    ],
+    "difficulty": 1,
+    "source_article": "Honesty",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["honesty"]
+  },
+  {
+    "question_text": "What is compassion in the context of ethics?",
+    "correct_answer": "A moral sentiment involving empathetic concern for the suffering of others and motivation to help.",
+    "distractors": [
+      "An intellectual capacity for understanding complex philosophical arguments about the nature of morality.",
+      "A legal obligation to provide financial assistance to individuals below the poverty threshold.",
+      "A social convention requiring polite behavior and adherence to established norms of etiquette."
+    ],
+    "difficulty": 1,
+    "source_article": "Compassion",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["compassion"]
+  },
+  {
+    "question_text": "What does the ethical concept of fairness involve?",
+    "correct_answer": "Impartial and equitable treatment that avoids favoritism, bias, or arbitrary discrimination among persons.",
+    "distractors": [
+      "Distributing all resources in perfectly equal portions regardless of individual need or contribution.",
+      "Ensuring that every individual achieves the same outcomes in all areas of life.",
+      "Granting special advantages to historically powerful groups to preserve social order and stability."
+    ],
+    "difficulty": 1,
+    "source_article": "Fairness",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["fairness"]
+  },
+  {
+    "question_text": "How are good and evil generally understood in ethical discourse?",
+    "correct_answer": "As the most fundamental moral categories representing what is morally praiseworthy versus morally condemnable.",
+    "distractors": [
+      "As purely religious concepts with no application outside of theological or scriptural interpretation.",
+      "As scientific classifications describing behaviors that increase or decrease an organism's reproductive fitness.",
+      "As political labels assigned by ruling authorities to enforce compliance with state ideology."
+    ],
+    "difficulty": 1,
+    "source_article": "Good and evil",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["good and evil"]
+  },
+  {
+    "question_text": "What role does conscience play in moral life?",
+    "correct_answer": "It serves as an inner moral sense that guides individuals in distinguishing right from wrong.",
+    "distractors": [
+      "It functions as an external legal authority that enforces compliance with societal regulations.",
+      "It acts as a biological instinct that drives organisms to maximize their reproductive success.",
+      "It operates as a cultural artifact that reflects only the customs of one's immediate community."
+    ],
+    "difficulty": 1,
+    "source_article": "Conscience",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["conscience"]
+  },
+  {
+    "question_text": "What is a virtue in ethical theory?",
+    "correct_answer": "A morally excellent character trait or disposition, such as courage, temperance, or generosity.",
+    "distractors": [
+      "A specific action that produces the greatest net happiness for the largest number of people.",
+      "A legally enforceable obligation that citizens owe to their government under contract law.",
+      "A natural talent or innate ability that enables superior performance in competitive endeavors."
+    ],
+    "difficulty": 1,
+    "source_article": "Virtue",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["virtue"]
+  },
+  {
+    "question_text": "In moral and political philosophy, what are rights?",
+    "correct_answer": "Justified claims or entitlements that constrain how others may treat an individual.",
+    "distractors": [
+      "Voluntary agreements between parties that can be freely renegotiated at any time.",
+      "Social customs that vary entirely by culture and carry no binding moral force.",
+      "Rewards distributed by governments to citizens who demonstrate exemplary civic participation."
+    ],
+    "difficulty": 1,
+    "source_article": "Rights",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["rights"]
+  },
+  {
+    "question_text": "What does the concept of duty refer to in ethics?",
+    "correct_answer": "A moral obligation that a person is bound to fulfill, independent of personal desire or inclination.",
+    "distractors": [
+      "A voluntary charitable act performed solely out of emotional sympathy for those in need.",
+      "A recommendation that individuals may follow or ignore based on their personal preferences.",
+      "A culturally specific ritual practice that has no binding force outside its originating society."
+    ],
+    "difficulty": 1,
+    "source_article": "Duty",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["duty"]
+  },
+  {
+    "question_text": "Why is the concept of harm central to most ethical theories?",
+    "correct_answer": "Because causing unjustified harm to others is widely recognized as the baseline of moral wrongness.",
+    "distractors": [
+      "Because harm is a purely legal concept defined exclusively by governmental statutes and court rulings.",
+      "Because all ethical theories agree that only physical harm counts as morally relevant damage.",
+      "Because harm is considered morally neutral and becomes wrong only when prohibited by religious doctrine."
+    ],
+    "difficulty": 1,
+    "source_article": "Harm",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["harm"]
+  },
+  {
+    "question_text": "What does equality before the law mean as an ethical principle?",
+    "correct_answer": "That all persons should be treated the same under shared legal and moral rules without discrimination.",
+    "distractors": [
+      "That every individual should receive identical resources regardless of need, merit, or circumstance.",
+      "That governments must ensure all citizens achieve the same level of wealth and social status.",
+      "That legal protections apply only to citizens and may be withheld from non-citizens at discretion."
+    ],
+    "difficulty": 1,
+    "source_article": "Equality before the law",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["equality"]
+  },
+  {
+    "question_text": "What does utilitarianism hold about the morality of an action?",
+    "correct_answer": "That an action is morally right if and only if it maximizes overall well-being or utility.",
+    "distractors": [
+      "That an action is right when it conforms to duties derivable from universal moral laws.",
+      "That an action is right when it expresses a virtuous character trait of the agent.",
+      "That an action is right when it accords with the terms of a hypothetical social contract."
+    ],
+    "difficulty": 2,
+    "source_article": "Utilitarianism",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["utilitarianism"]
+  },
+  {
+    "question_text": "What is Kant's categorical imperative?",
+    "correct_answer": "The principle that one should act only according to maxims one could rationally will as universal laws.",
+    "distractors": [
+      "The principle that one should always act to produce the greatest happiness for the greatest number.",
+      "The principle that one should obey the commands of legitimate political authority without exception.",
+      "The principle that one should cultivate virtuous character traits modeled on the practically wise person."
+    ],
+    "difficulty": 2,
+    "source_article": "Categorical imperative",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["categorical imperative"]
+  },
+  {
+    "question_text": "What distinguishes virtue ethics from other major ethical theories?",
+    "correct_answer": "It focuses on the moral character and virtues of the agent rather than on rules or consequences.",
+    "distractors": [
+      "It requires strict adherence to universal duties derived from pure practical reason alone.",
+      "It evaluates actions solely by whether they maximize aggregate happiness across all affected parties.",
+      "It grounds moral obligations in agreements reached under fair bargaining conditions among rational agents."
+    ],
+    "difficulty": 2,
+    "source_article": "Virtue ethics",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["virtue ethics"]
+  },
+  {
+    "question_text": "What is the central claim of deontological ethics?",
+    "correct_answer": "That the morality of an action depends on its conformity to moral rules or duties, not its outcomes.",
+    "distractors": [
+      "That the morality of an action is determined entirely by whether it produces the best consequences.",
+      "That the morality of an action is settled by whether a virtuous person would perform it.",
+      "That the morality of an action depends on whether it was endorsed by community consensus."
+    ],
+    "difficulty": 2,
+    "source_article": "Deontology",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["deontological ethics"]
+  },
+  {
+    "question_text": "What defines consequentialism as an ethical theory?",
+    "correct_answer": "The view that the rightness or wrongness of an action is determined solely by its consequences.",
+    "distractors": [
+      "The view that actions are right when they conform to categorical duties binding on all rational agents.",
+      "The view that actions are right when they express virtuous dispositions cultivated through moral education.",
+      "The view that actions are right when they are sanctioned by an authoritative legal or religious code."
+    ],
+    "difficulty": 2,
+    "source_article": "Consequentialism",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["consequentialism"]
+  },
+  {
+    "question_text": "What is the social contract theory in ethics and political philosophy?",
+    "correct_answer": "The idea that moral and political obligations arise from an agreement among individuals to form society.",
+    "distractors": [
+      "The idea that moral obligations are discovered through contemplation of the natural order of the cosmos.",
+      "The idea that political authority derives from divine right granted to rulers by a supreme being.",
+      "The idea that ethical principles emerge solely from evolutionary pressures on cooperative behavior in groups."
+    ],
+    "difficulty": 2,
+    "source_article": "Social contract",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["social contract"]
+  },
+  {
+    "question_text": "What moral intuitions does the trolley problem test?",
+    "correct_answer": "Whether it is permissible to actively cause harm to one person to prevent greater harm to others.",
+    "distractors": [
+      "Whether individuals have a duty to obey traffic laws even when no one is at risk of injury.",
+      "Whether economic cost-benefit analysis should replace moral reasoning in public policy decisions.",
+      "Whether bystanders are legally liable for failing to intervene in emergency situations they witness."
+    ],
+    "difficulty": 2,
+    "source_article": "Trolley problem",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["trolley problem"]
+  },
+  {
+    "question_text": "What does moral relativism assert?",
+    "correct_answer": "That moral judgments are not universally valid but are relative to cultural or individual standards.",
+    "distractors": [
+      "That objective moral truths exist and are binding on all rational beings regardless of culture.",
+      "That moral claims are meaningless statements with no cognitive content or truth value whatsoever.",
+      "That moral principles are discovered through scientific investigation of human biology and psychology."
+    ],
+    "difficulty": 2,
+    "source_article": "Moral relativism",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["moral relativism"]
+  },
+  {
+    "question_text": "What does the natural law tradition in ethics maintain?",
+    "correct_answer": "That moral principles are grounded in nature or reason and can be discovered through rational inquiry.",
+    "distractors": [
+      "That moral rules are entirely conventional and established solely by legislative acts of government.",
+      "That moral truths are determined by the survival advantages they confer on biological populations.",
+      "That moral standards change constantly and cannot be known with any reliability across different eras."
+    ],
+    "difficulty": 2,
+    "source_article": "Natural law",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["natural law"]
+  },
+  {
+    "question_text": "What does ethical hedonism claim about the nature of the good?",
+    "correct_answer": "That pleasure or happiness is the only thing that is intrinsically good and pain the only intrinsic evil.",
+    "distractors": [
+      "That knowledge and intellectual achievement are the sole intrinsic goods worth pursuing in a human life.",
+      "That moral virtue and excellent character are the only things that possess genuine intrinsic value.",
+      "That the fulfillment of duty and obedience to moral law constitute the highest form of goodness."
+    ],
+    "difficulty": 2,
+    "source_article": "Hedonism",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["hedonism"]
+  },
+  {
+    "question_text": "What does moral realism hold about moral facts?",
+    "correct_answer": "That objective moral facts exist independently of what any individual or culture believes about them.",
+    "distractors": [
+      "That moral statements merely express the speaker's emotional attitudes and have no objective truth value.",
+      "That moral claims are always relative to the norms of the society in which they are made.",
+      "That moral judgments are projections of subjective preferences onto a value-neutral natural world."
+    ],
+    "difficulty": 2,
+    "source_article": "Moral realism",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["moral realism"]
+  },
+  {
+    "question_text": "What is applied ethics?",
+    "correct_answer": "The branch of ethics that applies moral theories and principles to specific practical issues and professions.",
+    "distractors": [
+      "The branch of philosophy that investigates the meaning and logical status of moral language itself.",
+      "The branch of psychology that studies how individuals develop moral reasoning abilities over their lifespan.",
+      "The branch of law that determines which penalties are appropriate for violations of criminal statutes."
+    ],
+    "difficulty": 2,
+    "source_article": "Applied ethics",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["applied ethics"]
+  },
+  {
+    "question_text": "What ethical principle does the Golden Rule express?",
+    "correct_answer": "That one should treat others as one would wish to be treated oneself, a principle of reciprocity.",
+    "distractors": [
+      "That one should always maximize the total amount of pleasure produced by one's actions for everyone.",
+      "That one should act only on rules that could consistently be willed as universal moral laws.",
+      "That one should prioritize the interests of the most vulnerable members of society above all others."
+    ],
+    "difficulty": 2,
+    "source_article": "Golden Rule",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["golden rule"]
+  },
+  {
+    "question_text": "What position does moral universalism defend?",
+    "correct_answer": "That certain moral principles apply to all people at all times, regardless of culture or context.",
+    "distractors": [
+      "That moral standards are valid only within the specific cultural traditions that produced them.",
+      "That moral truths exist but can never be reliably known by finite human cognitive faculties.",
+      "That moral claims express emotional attitudes and therefore cannot be true or false in any sense."
+    ],
+    "difficulty": 3,
+    "source_article": "Moral universalism",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["moral universalism"]
+  },
+  {
+    "question_text": "How does rule utilitarianism differ from act utilitarianism?",
+    "correct_answer": "Rule utilitarianism evaluates moral rules by their general consequences, not each individual act separately.",
+    "distractors": [
+      "Rule utilitarianism rejects the relevance of consequences entirely and focuses on the agent's intentions.",
+      "Rule utilitarianism applies only to governmental legislation and has no bearing on personal moral choices.",
+      "Rule utilitarianism holds that only the actor's own happiness matters when assessing the rightness of rules."
+    ],
+    "difficulty": 3,
+    "source_article": "Rule utilitarianism",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["act utilitarianism vs rule utilitarianism"]
+  },
+  {
+    "question_text": "What does the doctrine of double effect permit?",
+    "correct_answer": "An action causing foreseeable harm as a side effect when the harm is not intended and a good end is pursued.",
+    "distractors": [
+      "An action causing deliberate harm to an innocent person whenever doing so prevents slightly greater total suffering.",
+      "An action violating a moral rule provided the agent sincerely regrets the violation after performing it.",
+      "An action benefiting the agent at others' expense as long as the benefit significantly outweighs the cost."
+    ],
+    "difficulty": 3,
+    "source_article": "Principle of double effect",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["doctrine of double effect"]
+  },
+  {
+    "question_text": "What does moral intuitionism claim about basic moral knowledge?",
+    "correct_answer": "That fundamental moral truths are self-evident and can be known through direct rational intuition.",
+    "distractors": [
+      "That all moral knowledge is derived from empirical observation of human behavior across cultures.",
+      "That moral truths are constructed through democratic deliberation and collective agreement among citizens.",
+      "That moral principles are deduced from a single foundational axiom through strict logical reasoning."
+    ],
+    "difficulty": 3,
+    "source_article": "Moral intuitionism",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["moral intuitionism"]
+  },
+  {
+    "question_text": "What is J.L. Mackie's moral error theory?",
+    "correct_answer": "The view that moral statements claim to state objective facts but are systematically false because no such facts exist.",
+    "distractors": [
+      "The view that moral statements are neither true nor false because they express emotions rather than propositions.",
+      "The view that moral statements are true when they correspond to the natural properties of actions described.",
+      "The view that moral statements are true relative to cultural frameworks and false outside those frameworks."
+    ],
+    "difficulty": 3,
+    "source_article": "Error theory",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["error theory"]
+  },
+  {
+    "question_text": "What are W.D. Ross's prima facie duties?",
+    "correct_answer": "Moral duties that are binding unless overridden by a stronger competing duty in a particular situation.",
+    "distractors": [
+      "Moral duties that hold absolutely and can never be overridden by any competing moral consideration.",
+      "Moral duties that apply only to public officials acting in their professional governmental capacity.",
+      "Moral duties that are merely aspirational ideals with no real binding force on individual conduct."
+    ],
+    "difficulty": 3,
+    "source_article": "Prima facie",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["prima facie duties"]
+  },
+  {
+    "question_text": "What is the method of reflective equilibrium in ethics?",
+    "correct_answer": "A process of adjusting moral principles and particular judgments until they reach mutual coherence and consistency.",
+    "distractors": [
+      "A technique for measuring the neurological correlates of moral reasoning through brain imaging experiments.",
+      "A statistical method for aggregating the moral opinions of a population into a single consensus view.",
+      "A meditative practice for clearing cognitive biases before making important ethical decisions under uncertainty."
+    ],
+    "difficulty": 3,
+    "source_article": "Reflective equilibrium",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["reflective equilibrium"]
+  },
+  {
+    "question_text": "What challenge does the concept of moral luck pose to ethics?",
+    "correct_answer": "It shows that factors beyond an agent's control influence moral judgments about their responsibility and character.",
+    "distractors": [
+      "It demonstrates that moral rules are internally contradictory and therefore cannot guide rational decision-making.",
+      "It proves that all moral judgments reduce to aesthetic preferences with no objective rational basis.",
+      "It reveals that moral responsibility requires determinism, contradicting the common assumption of free will."
+    ],
+    "difficulty": 3,
+    "source_article": "Moral luck",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["moral luck"]
+  },
+  {
+    "question_text": "What does ethical egoism claim about how one ought to act?",
+    "correct_answer": "That each person ought to act in their own rational self-interest as a matter of moral obligation.",
+    "distractors": [
+      "That each person inevitably does act in their own self-interest as a psychological matter of fact.",
+      "That each person ought to act solely for the benefit of others with no regard for themselves.",
+      "That each person ought to maximize the total welfare of society regardless of personal cost."
+    ],
+    "difficulty": 3,
+    "source_article": "Ethical egoism",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["egoism"]
+  },
+  {
+    "question_text": "What is the primary focus of bioethics as a field?",
+    "correct_answer": "Applying ethical reasoning to issues in biology and medicine such as consent, end-of-life care, and genetics.",
+    "distractors": [
+      "Studying the evolutionary origins of moral behavior in primates and other social animal species.",
+      "Developing mathematical models to predict the long-term ecological consequences of human population growth.",
+      "Analyzing the philosophical foundations of scientific methodology across all natural science disciplines."
+    ],
+    "difficulty": 3,
+    "source_article": "Bioethics",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["bioethics"]
+  },
+  {
+    "question_text": "What central question does the animal ethics debate address?",
+    "correct_answer": "What moral consideration, if any, is owed to non-human animals and on what philosophical grounds.",
+    "distractors": [
+      "Whether domesticated animals can be legally classified as property under all existing civil law systems.",
+      "Whether endangered species should be preserved primarily for their economic value to human industries.",
+      "Whether veterinary medicine should prioritize treatment of companion animals over livestock health management."
+    ],
+    "difficulty": 3,
+    "source_article": "Animal rights",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["animal ethics"]
+  },
+  {
+    "question_text": "What is distributive justice concerned with?",
+    "correct_answer": "The fair allocation of benefits and burdens among members of a society according to justified principles.",
+    "distractors": [
+      "The procedures used by courts to ensure that criminal defendants receive a fair and impartial trial.",
+      "The mechanisms by which markets determine prices for goods and services through supply and demand.",
+      "The diplomatic protocols that govern the resolution of trade disputes between sovereign nation states."
+    ],
+    "difficulty": 3,
+    "source_article": "Distributive justice",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["distributive justice"]
+  },
+  {
+    "question_text": "What is Derek Parfit's non-identity problem?",
+    "correct_answer": "The puzzle that a policy harming future people seems wrong even though those people would not exist under alternative policies.",
+    "distractors": [
+      "The puzzle that personal identity over time is an illusion, making moral responsibility for past actions incoherent.",
+      "The puzzle that identical twins can develop different moral characters despite sharing all genetic material.",
+      "The puzzle that anonymous charitable giving undermines the moral value of generosity by removing recognition."
+    ],
+    "difficulty": 4,
+    "source_article": "Non-identity problem",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["non-identity problem"]
+  },
+  {
+    "question_text": "According to T.M. Scanlon's contractualism, when is an action morally wrong?",
+    "correct_answer": "When it is disallowed by principles that no one could reasonably reject as a basis for general agreement.",
+    "distractors": [
+      "When it fails to maximize the total sum of happiness across all sentient beings affected by the action.",
+      "When it violates a categorical duty that can be derived from the universalizability test of pure reason.",
+      "When it would not be chosen behind a veil of ignorance in Rawls's original position thought experiment."
+    ],
+    "difficulty": 4,
+    "source_article": "Contractualism",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["contractualism"]
+  },
+  {
+    "question_text": "What do expressivist theories in metaethics claim about moral statements?",
+    "correct_answer": "That moral statements express non-cognitive attitudes such as approval or disapproval rather than stating facts.",
+    "distractors": [
+      "That moral statements describe natural properties of actions that can be verified through empirical investigation.",
+      "That moral statements are true when they correspond to mind-independent moral facts in an objective realm.",
+      "That moral statements are commands issued by a legitimate authority and derive their force from obedience."
+    ],
+    "difficulty": 4,
+    "source_article": "Expressivism (metaethics)",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["expressivist metaethics"]
+  },
+  {
+    "question_text": "What does Jonathan Dancy's moral particularism reject?",
+    "correct_answer": "The existence of exceptionless moral principles, holding that a feature's moral relevance can vary across situations.",
+    "distractors": [
+      "The existence of moral intuitions, holding that all moral knowledge must be derived from empirical science.",
+      "The existence of moral agents, holding that only collective institutions can bear genuine moral responsibility.",
+      "The existence of moral disagreement, holding that apparent disputes reflect only linguistic misunderstandings."
+    ],
+    "difficulty": 4,
+    "source_article": "Moral particularism",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["moral particularism"]
+  },
+  {
+    "question_text": "What is the core commitment of the effective altruism movement?",
+    "correct_answer": "Using rigorous evidence and careful reasoning to determine how to do the most good with available resources.",
+    "distractors": [
+      "Donating exclusively to local community organizations to maximize the visible impact of charitable giving.",
+      "Prioritizing emotional connection with aid recipients over quantitative measures of intervention effectiveness.",
+      "Advocating for governmental foreign aid increases while opposing private charitable donations as insufficient."
+    ],
+    "difficulty": 4,
+    "source_article": "Effective altruism",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["effective altruism"]
+  },
+  {
+    "question_text": "What does Parfit's repugnant conclusion demonstrate about total utilitarianism?",
+    "correct_answer": "That it implies a vast population with lives barely worth living is better than a smaller very happy population.",
+    "distractors": [
+      "That it implies moral agents should sacrifice their own happiness completely to maximize the welfare of others.",
+      "That it implies average well-being should be maximized even if this means reducing the total population to one.",
+      "That it implies no obligation to future generations because they do not yet exist as moral subjects."
+    ],
+    "difficulty": 4,
+    "source_article": "Mere addition paradox",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["repugnant conclusion"]
+  },
+  {
+    "question_text": "What do Frankfurt cases attempt to show about moral responsibility?",
+    "correct_answer": "That moral responsibility does not require the ability to have done otherwise than one actually did.",
+    "distractors": [
+      "That moral responsibility requires libertarian free will incompatible with any form of causal determinism.",
+      "That moral responsibility can be attributed only to groups and institutions, never to individual agents.",
+      "That moral responsibility applies exclusively to the consequences of actions, not to intentions or motives."
+    ],
+    "difficulty": 4,
+    "source_article": "Frankfurt cases",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["Frankfurt cases"]
+  },
+  {
+    "question_text": "What does Cornell realism (moral functionalism) hold about moral properties?",
+    "correct_answer": "That moral properties are natural, causally efficacious properties discoverable through empirical and theoretical inquiry.",
+    "distractors": [
+      "That moral properties are non-natural simple qualities grasped by a special faculty of rational moral intuition.",
+      "That moral properties are social constructions created through communal linguistic practices and cultural norms.",
+      "That moral properties are fictional entities posited by ordinary moral discourse but not existing in reality."
+    ],
+    "difficulty": 4,
+    "source_article": "Cornell realism",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["moral functionalism"]
+  },
+  {
+    "question_text": "What is Kantian constructivism as articulated by Rawls?",
+    "correct_answer": "The view that moral principles are constructed through an idealized procedure of practical reason, not discovered as pre-existing facts.",
+    "distractors": [
+      "The view that moral principles are innate ideas implanted in the rational mind prior to all experience.",
+      "The view that moral principles are empirical generalizations derived from observing successful human societies over time.",
+      "The view that moral principles are divine commands revealed through sacred texts and prophetic authority alone."
+    ],
+    "difficulty": 4,
+    "source_article": "Kantian constructivism",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["Kantian constructivism"]
+  },
+  {
+    "question_text": "Why do adaptive preferences pose a problem for preference-satisfaction accounts of welfare?",
+    "correct_answer": "Because oppressed persons may unconsciously lower their expectations, making satisfied preferences an unreliable measure of well-being.",
+    "distractors": [
+      "Because individuals frequently change their preferences over time, making any single measurement of satisfaction meaningless.",
+      "Because preferences are always rational and therefore satisfaction of any preference automatically constitutes genuine welfare.",
+      "Because cultural diversity means that no common set of preferences can serve as a baseline across societies."
+    ],
+    "difficulty": 4,
+    "source_article": "Adaptive preferences",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["adaptive preferences"]
+  },
+  {
+    "question_text": "What are the two main components of just war theory?",
+    "correct_answer": "Jus ad bellum, governing the right to go to war, and jus in bello, governing conduct within war.",
+    "distractors": [
+      "Jus naturale, deriving war rights from natural law, and jus positivum, deriving them from enacted legislation.",
+      "Jus gentium, applying only between nations, and jus civile, applying only within a single nation state.",
+      "Jus cogens, establishing absolute prohibitions, and jus dispositivum, establishing optional war guidelines."
+    ],
+    "difficulty": 4,
+    "source_article": "Just war theory",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["just war theory"]
+  },
+  {
+    "question_text": "What does the thesis of moral encroachment claim about epistemic standards?",
+    "correct_answer": "That moral factors such as stakes and potential bias can raise the evidential standards required for justified belief.",
+    "distractors": [
+      "That epistemic standards are entirely independent of moral considerations and should never be influenced by them.",
+      "That moral obligations automatically override any epistemic duties when the two types of norms come into conflict.",
+      "That evidential standards decrease when the moral stakes are high because urgency justifies accepting weaker evidence."
+    ],
+    "difficulty": 4,
+    "source_article": "Epistemic injustice",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["moral encroachment"]
+  }
+]

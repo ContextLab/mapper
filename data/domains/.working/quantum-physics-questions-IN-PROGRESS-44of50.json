@@ -1,0 +1,759 @@
+[
+  {
+    "question_text": "Which concept in quantum mechanics describes the phenomenon where electrons and photons can behave as localized particles in some experiments and as extended waves in others, depending on how they are observed?",
+    "correct_answer": "Wave-particle duality",
+    "distractors": [
+      "Quantum superposition",
+      "Heisenberg uncertainty principle",
+      "Quantum entanglement"
+    ],
+    "difficulty": 1,
+    "source_article": "Wave–particle duality",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "wave-particle duality"
+    ]
+  },
+  {
+    "question_text": "In quantum mechanics, which principle describes a system existing in multiple states simultaneously, with each state having an associated probability, until a measurement causes it to assume a single definite state?",
+    "correct_answer": "Quantum superposition",
+    "distractors": [
+      "Heisenberg uncertainty principle",
+      "Quantum decoherence",
+      "Quantum entanglement"
+    ],
+    "difficulty": 1,
+    "source_article": "Quantum superposition",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "quantum superposition"
+    ]
+  },
+  {
+    "question_text": "Which phenomenon describes a quantum system where the state of each particle cannot be described independently, such that measuring one particle instantaneously determines properties of another regardless of separation distance?",
+    "correct_answer": "Quantum entanglement",
+    "distractors": [
+      "Quantum superposition",
+      "Wave function collapse",
+      "Quantum tunneling"
+    ],
+    "difficulty": 1,
+    "source_article": "Quantum entanglement",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "quantum entanglement"
+    ]
+  },
+  {
+    "question_text": "Which statement best describes the Heisenberg uncertainty principle?",
+    "correct_answer": "A fundamental limit on simultaneously knowing certain pairs of properties, like position and momentum, of a quantum particle.",
+    "distractors": [
+      "A fundamental limit on measuring any single property of a quantum particle with arbitrary precision, regardless of what else is measured.",
+      "A practical limitation arising from measurement apparatus that disturbs quantum systems, which could theoretically be overcome with better technology.",
+      "A statistical uncertainty that emerges only when measuring large ensembles of particles, not applicable to individual quantum systems."
+    ],
+    "difficulty": 1,
+    "source_article": "Uncertainty principle",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "Heisenberg uncertainty principle"
+    ]
+  },
+  {
+    "question_text": "In quantum mechanics, what type of mathematical equation is the Schrödinger equation, and what does it fundamentally describe?",
+    "correct_answer": "A partial differential wave equation that governs how the wave function of a quantum system evolves over time.",
+    "distractors": [
+      "A linear algebraic matrix equation that determines the spin orientations and magnetic quantum numbers of electrons in atomic orbitals.",
+      "An ordinary differential equation describing the classical trajectory of particles through a potential energy landscape over time.",
+      "A stochastic probability equation that calculates the likelihood of finding a particle at specific positions during measurement."
+    ],
+    "difficulty": 1,
+    "source_article": "Schrödinger equation",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "Schrödinger equation"
+    ]
+  },
+  {
+    "question_text": "In quantum mechanics, what term describes the phenomenon where a particle passes through an energy barrier it classically lacks sufficient energy to overcome, due to its wave-like properties?",
+    "correct_answer": "Quantum tunneling",
+    "distractors": [
+      "Wave function collapse",
+      "Quantum superposition",
+      "Zero-point energy"
+    ],
+    "difficulty": 1,
+    "source_article": "Quantum tunnelling",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "quantum tunneling"
+    ]
+  },
+  {
+    "question_text": "When ultraviolet light shines on a metal surface and causes electrons to be ejected, but increasing the light's brightness without changing its frequency does not increase the electrons' kinetic energy, this phenomenon is called:",
+    "correct_answer": "The photoelectric effect",
+    "distractors": [
+      "The Compton scattering effect",
+      "Thermionic emission",
+      "Field electron emission"
+    ],
+    "difficulty": 1,
+    "source_article": "Photoelectric effect",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "photoelectric effect"
+    ]
+  },
+  {
+    "question_text": "What fundamental principle of quantum mechanics does the double-slit experiment demonstrate, where the act of measurement fundamentally changes the outcome of the experiment?",
+    "correct_answer": "Wave-particle duality, the principle that matter exhibits both wave and particle properties depending on observation.",
+    "distractors": [
+      "Quantum entanglement, where particles remain mysteriously connected across vast distances.",
+      "Heisenberg uncertainty, where measuring one property inherently disturbs another property.",
+      "Quantum tunneling, the principle that particles can pass through barriers they classically could not."
+    ],
+    "difficulty": 1,
+    "source_article": "Double-slit experiment",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "double-slit experiment"
+    ]
+  },
+  {
+    "question_text": "In quantum mechanics, what mathematical object describes the complete quantum state of a system and is typically denoted by the Greek letter $\\psi$?",
+    "correct_answer": "A wave function — a complex-valued function whose squared modulus gives probability density.",
+    "distractors": [
+      "A Hamiltonian operator — a Hermitian matrix whose eigenvalues give allowed energy levels.",
+      "A density matrix — a statistical operator whose diagonal elements give classical probability distributions.",
+      "A propagator function — a Green's function whose Fourier transform gives momentum space amplitudes."
+    ],
+    "difficulty": 1,
+    "source_article": "Wave function",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "wavefunction"
+    ]
+  },
+  {
+    "question_text": "In quantum computing, what is the name for the basic unit of quantum information—a two-state system that can exist in superposition of both states simultaneously?",
+    "correct_answer": "A qubit (quantum bit)",
+    "distractors": [
+      "A quantum gate",
+      "A Bloch sphere",
+      "A quantum register"
+    ],
+    "difficulty": 1,
+    "source_article": "Qubit",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "qubit"
+    ]
+  },
+  {
+    "question_text": "In quantum mechanics, what type of physical property is spin?",
+    "correct_answer": "An intrinsic form of angular momentum carried by elementary particles, with no classical analog.",
+    "distractors": [
+      "A form of orbital angular momentum arising from the particle's motion around a nucleus.",
+      "An extrinsic property of particles that emerges from their rotation about their own central axis.",
+      "A magnetic dipole moment induced by external electromagnetic fields acting on charged elementary particles."
+    ],
+    "difficulty": 1,
+    "source_article": "Spin (physics)",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "quantum spin"
+    ]
+  },
+  {
+    "question_text": "A physicist describes thermal radiation with a continuous spectrum whose intensity distribution depends only on the emitter's temperature. The emitting object is an ideal absorber in thermal equilibrium. What is this type of radiation called?",
+    "correct_answer": "Blackbody radiation",
+    "distractors": [
+      "Bremsstrahlung radiation",
+      "Synchrotron radiation",
+      "Characteristic radiation"
+    ],
+    "difficulty": 1,
+    "source_article": "Black-body radiation",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "blackbody radiation"
+    ]
+  },
+  {
+    "question_text": "In quantum physics, what does it mean for energy to be 'quantized'?",
+    "correct_answer": "Energy can only exist in discrete, specific amounts rather than any continuous value.",
+    "distractors": [
+      "Energy can only exist in wave form rather than as particles or discrete packets.",
+      "Energy must always flow continuously between systems rather than in discrete amounts.",
+      "Energy can exist in any arbitrary value but must be measured in specific units."
+    ],
+    "difficulty": 1,
+    "source_article": "Quantization (physics)",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "energy quantization"
+    ]
+  },
+  {
+    "question_text": "According to the Pauli exclusion principle, when two identical fermions occupy the same quantum system, their combined wavefunction must be what type of function?",
+    "correct_answer": "Antisymmetric (changes sign under particle exchange)",
+    "distractors": [
+      "Symmetric (unchanged under particle exchange)",
+      "Normalized (integrates to unity under particle exchange)",
+      "Commutative (order-independent under particle exchange)"
+    ],
+    "difficulty": 2,
+    "source_article": "Pauli exclusion principle",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "Pauli exclusion principle"
+    ]
+  },
+  {
+    "question_text": "In the de Broglie relation $\\lambda = h/p$, what physical constant does $h$ represent?",
+    "correct_answer": "Planck's constant (approximately $6.626 \\times 10^{-34}$ J\\u00b7s)",
+    "distractors": [
+      "Boltzmann's constant (approximately $1.381 \\times 10^{-23}$ J/K)",
+      "Reduced Planck's constant $\\hbar$ (approximately $1.055 \\times 10^{-34}$ J\\u00b7s)",
+      "Coulomb's constant (approximately $8.988 \\times 10^{9}$ N\\u00b7m\\u00b2/C\\u00b2)"
+    ],
+    "difficulty": 2,
+    "source_article": "Matter wave",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "de Broglie wavelength"
+    ]
+  },
+  {
+    "question_text": "In quantum mechanics, the probability density of finding a particle at position $x$ is given by what mathematical expression involving the wave function $\\psi$?",
+    "correct_answer": "$|\\psi(x)|^2$, the squared modulus of the wave function.",
+    "distractors": [
+      "$\\psi(x)$, the real-valued amplitude of the wave function.",
+      "$\\psi^*(x)$, the complex conjugate of the wave function.",
+      "$\\nabla\\psi(x)$, the spatial gradient of the wave function."
+    ],
+    "difficulty": 2,
+    "source_article": "Born rule",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "Born rule"
+    ]
+  },
+  {
+    "question_text": "In quantum mechanics, what is the name of the postulate stating that upon measurement, a quantum system instantaneously transitions into an eigenstate of the measured observable?",
+    "correct_answer": "The projection postulate (also called the collapse postulate or von Neumann projection)",
+    "distractors": [
+      "The correspondence principle (also called the Bohr limit or classical reduction)",
+      "The superposition axiom (also called the linearity postulate or Hilbert expansion)",
+      "The decoherence theorem (also called the Zurek postulate or environment selection)"
+    ],
+    "difficulty": 2,
+    "source_article": "Wave function collapse",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "wavefunction collapse"
+    ]
+  },
+  {
+    "question_text": "In Compton scattering, what is the name given to the quantity $\\frac{h}{m_e c}$, which sets the scale of the photon's wavelength shift?",
+    "correct_answer": "The Compton wavelength of the electron",
+    "distractors": [
+      "The de Broglie wavelength of the electron",
+      "The Bohr radius of the electron",
+      "The classical electron radius"
+    ],
+    "difficulty": 2,
+    "source_article": "Compton scattering",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "Compton scattering"
+    ]
+  },
+  {
+    "question_text": "In the Stern-Gerlach experiment, what type of magnetic field was required to deflect the silver atoms into discrete spots on the detector?",
+    "correct_answer": "An inhomogeneous (non-uniform) magnetic field with a spatial gradient.",
+    "distractors": [
+      "A homogeneous (uniform) magnetic field with constant magnitude everywhere.",
+      "A rotating magnetic field with circular polarization.",
+      "An oscillating magnetic field with sinusoidal time dependence."
+    ],
+    "difficulty": 2,
+    "source_article": "Stern–Gerlach experiment",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "Stern-Gerlach experiment"
+    ]
+  },
+  {
+    "question_text": "On the Bloch sphere, what term describes the positions of two mutually orthogonal qubit states?",
+    "correct_answer": "Antipodal points (diametrically opposite points on the sphere).",
+    "distractors": [
+      "Adjacent points (neighboring points on the same meridian).",
+      "Conjugate points (symmetrically reflected across the equator).",
+      "Tangent points (perpendicular projections on the sphere's surface)."
+    ],
+    "difficulty": 2,
+    "source_article": "Bloch sphere",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "Bloch sphere"
+    ]
+  },
+  {
+    "question_text": "In the density matrix formalism, the diagonal elements are called 'populations.' What is the standard term for the off-diagonal elements of a density matrix?",
+    "correct_answer": "Coherences",
+    "distractors": [
+      "Transitions",
+      "Degeneracies",
+      "Expectation values"
+    ],
+    "difficulty": 2,
+    "source_article": "Density matrix",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "density matrix"
+    ]
+  },
+  {
+    "question_text": "In the theory of identical particles, what is the name of the determinant used to construct an antisymmetric many-body wavefunction for a system of identical fermions?",
+    "correct_answer": "Slater determinant",
+    "distractors": [
+      "Vandermonde determinant",
+      "Gram determinant",
+      "Wronskian determinant"
+    ],
+    "difficulty": 2,
+    "source_article": "Identical particles",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "identical particles"
+    ]
+  },
+  {
+    "question_text": "In quantum decoherence theory, Wojciech Zurek coined the term 'einselection.' What is this an abbreviation for?",
+    "correct_answer": "Environment-induced superselection.",
+    "distractors": [
+      "Eigenstate-induced superselection",
+      "Environment-induced supersymmetry",
+      "Entanglement-induced superselection"
+    ],
+    "difficulty": 2,
+    "source_article": "Quantum decoherence",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "quantum decoherence"
+    ]
+  },
+  {
+    "question_text": "In the context of Bell's theorem, what is the name for the upper bound of $2\\sqrt{2}$ on the maximum quantum mechanical violation of the CHSH inequality?",
+    "correct_answer": "Tsirelson's bound",
+    "distractors": [
+      "Popescu's bound",
+      "Clauser's limit",
+      "Holevo's bound"
+    ],
+    "difficulty": 2,
+    "source_article": "Bell's theorem",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "Bell's theorem"
+    ]
+  },
+  {
+    "question_text": "In the 1935 EPR paper, the authors explicitly described their criterion of reality as providing not the only way, but at least one way of recognizing what concept central to the paper's argument?",
+    "correct_answer": "An element of physical reality.",
+    "distractors": [
+      "A hidden variable",
+      "A complete quantum state",
+      "A physical observable quantity"
+    ],
+    "difficulty": 2,
+    "source_article": "Einstein–Podolsky–Rosen paradox",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "EPR paradox"
+    ]
+  },
+  {
+    "question_text": "In the context of the Dirac equation, what is the name for the quantity $\\bar{\\psi} = \\psi^\\dagger \\gamma^0$, formed by multiplying the Hermitian conjugate of a Dirac spinor by the zeroth gamma matrix?",
+    "correct_answer": "The Dirac adjoint.",
+    "distractors": [
+      "The Hermitian adjoint.",
+      "The Dirac dual.",
+      "The charge conjugate."
+    ],
+    "difficulty": 2,
+    "source_article": "Dirac equation",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "Dirac equation"
+    ]
+  },
+  {
+    "question_text": "Using the Rydberg formula for hydrogen, what is the ratio of the series limit (shortest wavelength) of the Lyman series to the series limit of the Balmer series?",
+    "correct_answer": "$1/4$, since the limits are $1/R_H$ and $4/R_H$ respectively.",
+    "distractors": [
+      "$1/2$, since the limits are $1/R_H$ and $2/R_H$ respectively.",
+      "$4$, since the limits are $4/R_H$ and $1/R_H$ respectively.",
+      "$1/16$, since the limits are $1/R_H$ and $16/R_H$ respectively."
+    ],
+    "difficulty": 3,
+    "source_article": "Hydrogen spectral series",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "hydrogen spectrum"
+    ]
+  },
+  {
+    "question_text": "A quantum harmonic oscillator has angular frequency $\\omega$. What is the energy of the second excited state ($n = 2$), and by what factor does it exceed the zero-point energy?",
+    "correct_answer": "$E_2 = \\frac{5}{2}\\hbar\\omega$, which is 5 times the zero-point energy.",
+    "distractors": [
+      "$E_2 = 2\\hbar\\omega$, which is 4 times the zero-point energy.",
+      "$E_2 = \\frac{5}{2}\\hbar\\omega$, which is $\\frac{5}{2}$ times the zero-point energy.",
+      "$E_2 = 3\\hbar\\omega$, which is 6 times the zero-point energy."
+    ],
+    "difficulty": 3,
+    "source_article": "Quantum harmonic oscillator",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "quantum harmonic oscillator"
+    ]
+  },
+  {
+    "question_text": "A particle is in the ground state of an infinite square well of width $L$. If the well width is doubled to $2L$, by what factor does the ground state energy change?",
+    "correct_answer": "It decreases by a factor of 4, since $E_1 \\propto 1/L^2$.",
+    "distractors": [
+      "It decreases by a factor of 2, since $E_1 \\propto 1/L$.",
+      "It decreases by a factor of 8, since $E_1 \\propto 1/L^3$.",
+      "It remains the same, since $E_1$ depends only on $n$, not $L$."
+    ],
+    "difficulty": 3,
+    "source_article": "Particle in a box",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "infinite square well"
+    ]
+  },
+  {
+    "question_text": "In non-degenerate perturbation theory, the second-order energy correction $E_n^{(2)}$ involves a sum over states. Why is $E_0^{(2)}$ for the ground state always negative (or zero)?",
+    "correct_answer": "Each numerator $|\\langle m|H'|0\\rangle|^2$ is non-negative, and each denominator $E_0^{(0)} - E_m^{(0)}$ is negative since the ground state has the lowest energy.",
+    "distractors": [
+      "Each numerator $|\\langle m|H'|0\\rangle|^2$ is non-negative, and each denominator $E_m^{(0)} - E_0^{(0)}$ is negative since the ground state energy lies below all other states.",
+      "Each numerator $\\langle m|H'|0\\rangle^2$ can be negative, and each denominator $E_0^{(0)} - E_m^{(0)}$ is negative, so the ratio of two negative quantities is always negative.",
+      "Each numerator $|\\langle m|H'|0\\rangle|^2$ is non-negative, and each denominator $E_0^{(0)} - E_m^{(0)}$ is positive since the ground state has the lowest energy."
+    ],
+    "difficulty": 3,
+    "source_article": "Perturbation theory (quantum mechanics)",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "perturbation theory"
+    ]
+  },
+  {
+    "question_text": "A variational calculation for helium's ground state with a trial wavefunction yields $E_{\\text{trial}} = -77.5$ eV, while $E_0 = -78.975$ eV. What does the variational principle guarantee about $E_{\\text{trial}}$?",
+    "correct_answer": "The variational principle guarantees $\\langle H \\rangle \\geq E_0$, so any trial wavefunction's energy is an upper bound to the true ground-state energy.",
+    "distractors": [
+      "The variational principle guarantees $\\langle H \\rangle \\geq E_0$, so the trial wavefunction's energy equals the true ground-state energy in the limit of large atomic number.",
+      "The variational principle guarantees $\\langle H \\rangle \\geq E_0$, so any trial wavefunction's energy converges exactly to the true ground-state energy as parameters increase.",
+      "The variational principle guarantees $\\langle H \\rangle \\geq E_0$, so the trial wavefunction's energy is an upper bound only when the trial state is orthogonal to excited states."
+    ],
+    "difficulty": 3,
+    "source_article": "Variational method (quantum mechanics)",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "variational method"
+    ]
+  },
+  {
+    "question_text": "Applying the WKB quantization condition $\\int_{x_1}^{x_2} p(x)\\,dx = (n+\\tfrac{1}{2})\\pi\\hbar$ to $V(x)=\\tfrac{1}{2}m\\omega^2 x^2$, what energy spectrum results, and why is this case remarkable?",
+    "correct_answer": "$E_n = (n+\\tfrac{1}{2})\\hbar\\omega$; remarkable because WKB, normally an approximation, yields the exact quantum result for the harmonic oscillator.",
+    "distractors": [
+      "$E_n = n\\,\\hbar\\omega$; remarkable because WKB, normally an approximation, yields the exact quantum result for the harmonic oscillator.",
+      "$E_n = (n+\\tfrac{1}{2})\\hbar\\omega$; remarkable because WKB gives the exact result for any power-law potential, not just the harmonic oscillator.",
+      "$E_n = (n+\\tfrac{1}{2})\\hbar\\omega$; remarkable because for the harmonic oscillator, the WKB result is only approximate but converges to exact energies at large $n$."
+    ],
+    "difficulty": 3,
+    "source_article": "WKB approximation",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "WKB approximation"
+    ]
+  },
+  {
+    "question_text": "Helium-4 (2 protons, 2 neutrons, 2 electrons) becomes a superfluid at 2.17 K via Bose-Einstein condensation, but helium-3 does not condense this way. Using the spin-statistics theorem, why?",
+    "correct_answer": "Helium-4 has an even number of fermions (6), making it a composite boson. Helium-3 has 5 (odd), making it a fermion, which cannot undergo BEC.",
+    "distractors": [
+      "Helium-4 has an even number of fermions (6), making it a composite boson. Helium-3 has 5 (odd), making it a fermion, requiring Cooper pairing to condense at 2.17 K.",
+      "Helium-4 has zero net nuclear spin, making it a composite boson. Helium-3 has nonzero nuclear spin, so Pauli exclusion prevents it from forming any condensate.",
+      "Helium-4 has even mass number (4), giving it integer spin regardless of electron count. Helium-3 has odd mass number (3), giving half-integer spin, preventing BEC."
+    ],
+    "difficulty": 3,
+    "source_article": "Spin–statistics theorem",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "spin-statistics theorem"
+    ]
+  },
+  {
+    "question_text": "In quantum teleportation, Alice's Bell-state measurement yields 2 classical bits sent to Bob. What does Bob do with these bits to recover the teleported state?",
+    "correct_answer": "Bob applies one of four unitary corrections ($I$, $X$, $Z$, or $XZ$) to his qubit, selected by the two classical bits.",
+    "distractors": [
+      "Bob applies one of four unitary corrections ($I$, $X$, $Z$, or $XZ$) to Alice's qubit, selected by the two classical bits.",
+      "Bob measures his qubit in one of four bases ($I$, $X$, $Z$, or $XZ$), chosen by the two classical bits, to extract the teleported state.",
+      "Bob applies one of two unitary corrections ($I$ or $Z$) to his qubit, selected by only the first of the two classical bits."
+    ],
+    "difficulty": 3,
+    "source_article": "Quantum teleportation",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "quantum teleportation"
+    ]
+  },
+  {
+    "question_text": "In the BB84 protocol, an eavesdropper performs a full intercept-resend attack, randomly choosing between the rectilinear and diagonal bases. What quantum bit error rate (QBER) does this introduce in the sifted key?",
+    "correct_answer": "25% QBER. Eve chooses the wrong basis half the time, causing 50% bit errors in those cases ($\\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}$).",
+    "distractors": [
+      "50% QBER. Eve chooses the wrong basis half the time, causing 100% bit errors in those cases ($\\frac{1}{2} \\times 1 = \\frac{1}{2}$).",
+      "12.5% QBER. Eve chooses the wrong basis one-quarter of the time, causing 50% bit errors in those cases ($\\frac{1}{4} \\times \\frac{1}{2} = \\frac{1}{8}$).",
+      "33% QBER. Eve chooses the wrong basis two-thirds of the time, causing 50% bit errors in those cases ($\\frac{2}{3} \\times \\frac{1}{2} = \\frac{1}{3}$)."
+    ],
+    "difficulty": 3,
+    "source_article": "Quantum key distribution",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "quantum key distribution"
+    ]
+  },
+  {
+    "question_text": "In quantum error correction, what critical property must syndrome measurements satisfy to preserve the encoded quantum information?",
+    "correct_answer": "They must reveal which error occurred without revealing the logical qubit state.",
+    "distractors": [
+      "They must reveal both the error type and the logical qubit state to enable correction.",
+      "They must project the system into a known logical state before correcting any errors.",
+      "They must commute with all possible errors without needing to identify which error occurred."
+    ],
+    "difficulty": 3,
+    "source_article": "Quantum error correction",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "quantum error correction"
+    ]
+  },
+  {
+    "question_text": "In a magnetic Aharonov-Bohm experiment, an electron beam splits around a solenoid and recombines. If the enclosed magnetic flux is increased from zero to exactly one flux quantum $\\Phi_0 = h/e$, what happens to the interference pattern?",
+    "correct_answer": "The pattern shifts by one full fringe and returns to its original form, since $\\Delta\\varphi = e\\Phi_0/\\hbar = 2\\pi$.",
+    "distractors": [
+      "The pattern shifts by half a fringe, producing a contrast inversion, since $\\Delta\\varphi = e\\Phi_0/\\hbar = \\pi$.",
+      "The pattern is completely destroyed and cannot be recovered, because the enclosed flux breaks the coherence of the electron beam.",
+      "The pattern shifts by one full fringe but with reduced visibility, since the vector potential introduces irreversible decoherence at $\\Phi_0 = h/e$."
+    ],
+    "difficulty": 3,
+    "source_article": "Aharonov–Bohm effect",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "Aharonov-Bohm effect"
+    ]
+  },
+  {
+    "question_text": "In the quantum Zeno effect, if a system's short-time survival probability is $P(\\delta t) \\approx 1 - (\\delta t)^2/\\tau_Z^2$, what is the survival probability after $N$ measurements equally spaced over total time $T$?",
+    "correct_answer": "$\\left(1 - T^2/(N^2 \\tau_Z^2)\\right)^N \\to 1$ as $N \\to \\infty$, freezing the state.",
+    "distractors": [
+      "$\\left(1 - T^2/(N \\tau_Z^2)\\right)^N \\to 0$ as $N \\to \\infty$, decaying the state exponentially.",
+      "$\\left(1 - T^2/(N^2 \\tau_Z^2)\\right)^{N^2} \\to e^{-T^2/\\tau_Z^2}$ as $N \\to \\infty$, giving exponential decay.",
+      "$\\left(1 - T/(N \\tau_Z)\\right)^N \\to e^{-T/\\tau_Z}$ as $N \\to \\infty$, recovering Fermi's golden rule decay."
+    ],
+    "difficulty": 3,
+    "source_article": "Quantum Zeno effect",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "quantum Zeno effect"
+    ]
+  },
+  {
+    "question_text": "In Feynman's path integral formulation, the propagator sums $e^{iS[x(t)]/\\hbar}$ over all paths. In the classical limit $\\hbar \\to 0$, which paths dominate the sum, and what principle does this recover?",
+    "correct_answer": "Paths near the classical trajectory where $\\delta S = 0$ dominate, recovering Hamilton's principle of stationary action.",
+    "distractors": [
+      "Paths with maximum action $S$ dominate, recovering the principle of least time from Fermat's optics.",
+      "All paths contribute equally in the limit, recovering the equipartition theorem of statistical mechanics.",
+      "Paths with minimum kinetic energy dominate, recovering the virial theorem of classical mechanics."
+    ],
+    "difficulty": 4,
+    "source_article": "Path integral formulation",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "path integral formulation",
+      "classical limit"
+    ]
+  },
+  {
+    "question_text": "In quantum field theory, the one-loop $\\beta$-function coefficient for non-Abelian $SU(N_c)$ gauge theory with $N_f$ massless fermion flavours is given by $11N_c$. How does adding fermion flavours affect asymptotic freedom, and at what critical $N_f$ is it lost?",
+    "correct_answer": "Each flavour contributes $-\\frac{2}{3}N_f$ to the coefficient; asymptotic freedom is lost when $N_f > \\frac{33}{2}$ for $SU(3)$.",
+    "distractors": [
+      "Each flavour contributes $-\\frac{2}{3}N_f$ to the coefficient; asymptotic freedom is lost when $N_f > \\frac{11}{2}$ for $SU(3)$.",
+      "Each flavour contributes $+\\frac{2}{3}N_f$ to the coefficient; asymptotic freedom is lost when $N_f > \\frac{33}{2}$ for $SU(3)$.",
+      "Each flavour contributes $-\\frac{4}{3}N_f$ to the coefficient; asymptotic freedom is lost when $N_f > \\frac{33}{4}$ for $SU(3)$."
+    ],
+    "difficulty": 4,
+    "source_article": "Quantum field theory",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "quantum field theory",
+      "asymptotic freedom",
+      "beta function"
+    ]
+  },
+  {
+    "question_text": "In QCD, what is the maximum number of quark flavours $N_f$ that preserves asymptotic freedom for gauge group $SU(3)$, and what physical consequence follows if $N_f$ exceeds this bound?",
+    "correct_answer": "$N_f \\leq 16$; exceeding this makes the coupling grow at high energies, destroying asymptotic freedom and preventing perturbative UV analysis.",
+    "distractors": [
+      "$N_f \\leq 6$; exceeding this causes confinement to break down at low energies, allowing free quarks to propagate asymptotically.",
+      "$N_f \\leq 10$; exceeding this triggers spontaneous chiral symmetry restoration, eliminating the constituent quark mass generation mechanism.",
+      "$N_f \\leq 33$; exceeding this reverses the sign of the beta function, causing infrared slavery instead of asymptotic freedom."
+    ],
+    "difficulty": 4,
+    "source_article": "Quantum chromodynamics",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "quantum chromodynamics",
+      "asymptotic freedom"
+    ]
+  },
+  {
+    "question_text": "In quantum electrodynamics, the electron's anomalous magnetic moment $a_e = (g-2)/2$ was first calculated by Schwinger. What is Schwinger's leading-order QED result for $a_e$?",
+    "correct_answer": "$a_e = \\frac{\\alpha}{2\\pi}$, where $\\alpha$ is the fine-structure constant, arising from the one-loop vertex correction.",
+    "distractors": [
+      "$a_e = \\frac{\\alpha}{\\pi}$, where $\\alpha$ is the fine-structure constant, arising from the one-loop vertex correction.",
+      "$a_e = \\frac{\\alpha^2}{2\\pi}$, where $\\alpha$ is the fine-structure constant, arising from the two-loop vertex correction.",
+      "$a_e = \\frac{\\alpha}{4\\pi}$, where $\\alpha$ is the fine-structure constant, arising from the one-loop self-energy diagram."
+    ],
+    "difficulty": 4,
+    "source_article": "Quantum electrodynamics",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "quantum electrodynamics",
+      "anomalous magnetic moment"
+    ]
+  },
+  {
+    "question_text": "In the integer quantum Hall effect, disorder paradoxically enables quantized plateaus. In a perfectly clean 2D electron system, how would the Hall conductance $\\sigma_{xy}$ behave as filling factor $\\nu$ increases through integers?",
+    "correct_answer": "Sharp jumps at each integer $\\nu$ with no finite-width plateaus, since no localized states exist to pin the Fermi level between Landau levels.",
+    "distractors": [
+      "Continuous linear increase with $\\nu$ showing no features at integers, since Landau level degeneracy prevents any structure in the density of states.",
+      "Broad plateaus at each integer $\\nu$ with gradual transitions, as electron-electron interactions alone create energy gaps that stabilize quantized conductance values.",
+      "Oscillatory behavior around classical value $\\sigma_{xy} = \\nu e^2/h$ with peaks at half-integers, where Landau level crossings enhance scattering between edge states."
+    ],
+    "difficulty": 4,
+    "source_article": "Quantum Hall effect",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "quantum Hall effect",
+      "Landau levels",
+      "disorder"
+    ]
+  },
+  {
+    "question_text": "In topological quantum computing, braiding Ising anyons generates only Clifford gates, insufficient for universality. In the $SU(2)_k$ Chern-Simons framework, Ising anyons correspond to $k=2$. What is the minimum $k$ value yielding a computationally universal anyon model by braiding alone?",
+    "correct_answer": "$k = 3$, corresponding to the Fibonacci anyon model, whose braiding representations are dense in $SU(2)$.",
+    "distractors": [
+      "$k = 4$, corresponding to the $\\mathbb{Z}_4$ parafermion model, which produces a computationally universal gate set.",
+      "$k = 2$ with Ising anyons, whose braiding combined with ancilla preparation yields universal quantum computation.",
+      "$k = 5$, corresponding to the $SU(2)_5$ model, the minimal level with non-abelian anyons dense in $SU(2)$."
+    ],
+    "difficulty": 4,
+    "source_article": "Topological quantum computer",
+    "domain_ids": [
+      "quantum-physics"
+    ],
+    "concepts_tested": [
+      "topological quantum computing",
+      "anyons",
+      "Chern-Simons theory"
+    ]
+  }
+]

@@ -1,0 +1,266 @@
+{
+  "domain": "developmental-psychology",
+  "parent_domain": "psychology",
+  "total_concepts": 50,
+  "distribution": {"L1": 13, "L2": 13, "L3": 12, "L4": 12},
+  "concepts": {
+    "L1": [
+      {
+        "concept": "child development",
+        "wikipedia_article": "Child development",
+        "brief_rationale": "Foundational umbrella term covering physical, cognitive, and social growth from birth through adolescence; essential starting point for any student of developmental psychology."
+      },
+      {
+        "concept": "puberty",
+        "wikipedia_article": "Puberty",
+        "brief_rationale": "The biological transition to sexual maturity marking the onset of adolescence; widely recognized and central to understanding adolescent development."
+      },
+      {
+        "concept": "nature versus nurture",
+        "wikipedia_article": "Nature versus nurture",
+        "brief_rationale": "The debate over relative contributions of genetics and environment to development; a defining framing question of the entire field."
+      },
+      {
+        "concept": "adolescence",
+        "wikipedia_article": "Adolescence",
+        "brief_rationale": "The developmental stage between childhood and adulthood involving rapid physical, cognitive, and social change; a core life-span concept."
+      },
+      {
+        "concept": "aging",
+        "wikipedia_article": "Ageing",
+        "brief_rationale": "The process of biological and psychological change across adulthood and into old age; essential for lifespan developmental perspectives."
+      },
+      {
+        "concept": "attachment",
+        "wikipedia_article": "Attachment theory",
+        "brief_rationale": "The emotional bond between infant and caregiver; one of the most recognizable concepts in developmental psychology at any level of training."
+      },
+      {
+        "concept": "cognitive development",
+        "wikipedia_article": "Cognitive development",
+        "brief_rationale": "The growth of thinking, reasoning, and problem-solving across the lifespan; a core domain within developmental psychology."
+      },
+      {
+        "concept": "language acquisition",
+        "wikipedia_article": "Language acquisition",
+        "brief_rationale": "How children learn to understand and produce language; a high-profile topic connecting developmental psychology to linguistics and neuroscience."
+      },
+      {
+        "concept": "socialization",
+        "wikipedia_article": "Socialization",
+        "brief_rationale": "The process by which individuals learn norms, values, and roles from their social environment; a foundational concept in social and developmental psychology."
+      },
+      {
+        "concept": "temperament",
+        "wikipedia_article": "Temperament",
+        "brief_rationale": "Innate, biologically-based individual differences in reactivity and self-regulation observable from infancy; commonly discussed in popular and academic contexts."
+      },
+      {
+        "concept": "prenatal development",
+        "wikipedia_article": "Prenatal development",
+        "brief_rationale": "Physical and neurological growth from conception to birth; a universally taught starting point for lifespan development courses."
+      },
+      {
+        "concept": "play",
+        "wikipedia_article": "Play (activity)",
+        "brief_rationale": "Spontaneous activity central to children's physical, social, and cognitive development; recognized across cultures as a hallmark of childhood."
+      },
+      {
+        "concept": "identity development",
+        "wikipedia_article": "Identity formation",
+        "brief_rationale": "The process of forming a coherent sense of self across adolescence and young adulthood; a widely discussed topic in developmental and personality psychology."
+      }
+    ],
+    "L2": [
+      {
+        "concept": "Piaget's stages of cognitive development",
+        "wikipedia_article": "Piaget's theory of cognitive development",
+        "brief_rationale": "The canonical four-stage model (sensorimotor, preoperational, concrete operational, formal operational) taught in virtually every introductory developmental psychology course."
+      },
+      {
+        "concept": "attachment theory",
+        "wikipedia_article": "Attachment theory",
+        "brief_rationale": "Bowlby and Ainsworth's framework explaining how early caregiver bonds shape emotional and social development; a cornerstone theory students are expected to know."
+      },
+      {
+        "concept": "critical period",
+        "wikipedia_article": "Critical period",
+        "brief_rationale": "A time-limited window during which specific experiences are necessary for normal development; widely used to explain language acquisition and sensory development."
+      },
+      {
+        "concept": "zone of proximal development",
+        "wikipedia_article": "Zone of proximal development",
+        "brief_rationale": "Vygotsky's concept of the gap between what a learner can do alone and with guidance; standard vocabulary for students of developmental and educational psychology."
+      },
+      {
+        "concept": "object permanence",
+        "wikipedia_article": "Object permanence",
+        "brief_rationale": "The understanding that objects continue to exist when out of sight; a key milestone in Piaget's sensorimotor stage known to most psychology students."
+      },
+      {
+        "concept": "secure attachment",
+        "wikipedia_article": "Attachment in children",
+        "brief_rationale": "The attachment pattern characterized by confidence in caregiver availability; a fundamental classification from Ainsworth's Strange Situation procedure."
+      },
+      {
+        "concept": "scaffolding",
+        "wikipedia_article": "Instructional scaffolding",
+        "brief_rationale": "Temporary support provided by a more skilled partner to help a learner accomplish tasks beyond current independent ability; a core Vygotskian concept in education and development."
+      },
+      {
+        "concept": "moral development",
+        "wikipedia_article": "Moral development",
+        "brief_rationale": "The process by which children develop ethical reasoning and behavior; associated with Piaget, Kohlberg, and Gilligan and taught at the student level."
+      },
+      {
+        "concept": "theory of mind",
+        "wikipedia_article": "Theory of mind",
+        "brief_rationale": "The ability to attribute mental states to oneself and others; a landmark cognitive milestone typically emerging around age 4 and central to developmental psychology curricula."
+      },
+      {
+        "concept": "Erik Erikson's stages of psychosocial development",
+        "wikipedia_article": "Erikson's stages of psychosocial development",
+        "brief_rationale": "An eight-stage lifespan model linking psychosocial crises to development from infancy through old age; a standard framework for students studying personality and lifespan psychology."
+      },
+      {
+        "concept": "Strange Situation",
+        "wikipedia_article": "Strange situation",
+        "brief_rationale": "Ainsworth's laboratory procedure for classifying infant attachment patterns; a foundational experimental paradigm that all developmental psychology students learn."
+      },
+      {
+        "concept": "gender development",
+        "wikipedia_article": "Gender development",
+        "brief_rationale": "How children acquire gender identity, roles, and schemas; a prominent topic in developmental psychology spanning biological, cognitive, and social explanations."
+      },
+      {
+        "concept": "adolescent brain development",
+        "wikipedia_article": "Adolescent brain",
+        "brief_rationale": "Structural and functional brain changes during adolescence including prefrontal cortex maturation and heightened reward sensitivity; increasingly central to student-level understanding of adolescence."
+      }
+    ],
+    "L3": [
+      {
+        "concept": "zone of proximal development application",
+        "wikipedia_article": "Zone of proximal development",
+        "brief_rationale": "Applying Vygotsky's ZPD requires understanding how to assess the developmental gap and design scaffolded instruction — a practical working-knowledge skill beyond mere definition."
+      },
+      {
+        "concept": "theory of mind development",
+        "wikipedia_article": "Theory of mind",
+        "brief_rationale": "Understanding the trajectory of ToM acquisition — including false-belief tasks, autism-related deficits, and cross-cultural variation — reflects working knowledge beyond the basic concept."
+      },
+      {
+        "concept": "Kohlberg's stages of moral development",
+        "wikipedia_article": "Lawrence Kohlberg's stages of moral development",
+        "brief_rationale": "Detailed knowledge of pre-conventional, conventional, and post-conventional reasoning stages and their empirical bases requires going beyond the student-level label."
+      },
+      {
+        "concept": "executive function development",
+        "wikipedia_article": "Executive functions",
+        "brief_rationale": "Understanding the developmental trajectory of inhibition, working memory, and cognitive flexibility — and their neural substrates — requires applied knowledge of prefrontal development."
+      },
+      {
+        "concept": "sensitive period",
+        "wikipedia_article": "Sensitive period",
+        "brief_rationale": "Distinguishing sensitive periods from critical periods and understanding their role in language, emotion regulation, and sensory development reflects nuanced working knowledge."
+      },
+      {
+        "concept": "social referencing",
+        "wikipedia_article": "Social referencing",
+        "brief_rationale": "Infants' use of caregiver emotional signals to guide their own behavior in ambiguous situations; requires understanding of early social cognition and emotional development."
+      },
+      {
+        "concept": "object permanence and A-not-B error",
+        "wikipedia_article": "A-not-B error",
+        "brief_rationale": "The A-not-B error reveals the interaction between motor planning, memory, and developing knowledge systems in infancy; applying this requires working knowledge beyond basic Piagetian stages."
+      },
+      {
+        "concept": "joint attention",
+        "wikipedia_article": "Joint attention",
+        "brief_rationale": "The coordinated attention of two individuals to the same object or event; a key early social-cognitive milestone that bridges language acquisition, theory of mind, and autism research."
+      },
+      {
+        "concept": "autobiographical memory development",
+        "wikipedia_article": "Autobiographical memory",
+        "brief_rationale": "How children construct a coherent personal narrative across time, including childhood amnesia and the role of language; requires working knowledge of memory systems and self-development."
+      },
+      {
+        "concept": "Bronfenbrenner's ecological systems theory",
+        "wikipedia_article": "Ecological systems theory",
+        "brief_rationale": "A multi-level framework (microsystem through chronosystem) for understanding how nested environmental contexts shape development; applying it requires integrative working knowledge."
+      },
+      {
+        "concept": "emotion regulation development",
+        "wikipedia_article": "Emotional self-regulation",
+        "brief_rationale": "Understanding how infants and children acquire strategies to modulate emotional states, and the role of caregivers and prefrontal maturation, requires working knowledge of affective development."
+      },
+      {
+        "concept": "peer relationships and development",
+        "wikipedia_article": "Peer group",
+        "brief_rationale": "The role of peer interactions in socializing norms, self-concept, and cognitive skills across childhood and adolescence; applying this requires integrating social learning and attachment frameworks."
+      }
+    ],
+    "L4": [
+      {
+        "concept": "dynamic systems theory of development",
+        "wikipedia_article": "Dynamical systems theory",
+        "brief_rationale": "A framework treating development as emergent from the nonlinear interaction of multiple subsystems over time; requires expert understanding of complex systems and their application to developmental phenomena."
+      },
+      {
+        "concept": "epigenetic influences on development",
+        "wikipedia_article": "Epigenetics",
+        "brief_rationale": "Mechanisms by which gene expression is modified by experience and environment (e.g., methylation, histone modification) and how these changes shape developmental trajectories across generations."
+      },
+      {
+        "concept": "core knowledge theory",
+        "wikipedia_article": "Core knowledge systems",
+        "brief_rationale": "Spelke's proposal that infants are born with domain-specific systems for representing objects, agents, numbers, and geometry; requires deep engagement with nativist-empiricist debates and infant cognition research."
+      },
+      {
+        "concept": "differential susceptibility hypothesis",
+        "wikipedia_article": "Differential susceptibility hypothesis",
+        "brief_rationale": "Belsky's proposal that certain individuals are more reactive to both adverse and supportive environments due to biological sensitivity; an expert-level refinement of gene-environment interaction models."
+      },
+      {
+        "concept": "neuroplasticity and experience-dependent development",
+        "wikipedia_article": "Neuroplasticity",
+        "brief_rationale": "Distinguishing experience-expectant from experience-dependent plasticity and understanding how neural circuits are shaped by environmental input during development requires integration of neuroscience and developmental theory."
+      },
+      {
+        "concept": "statistical learning in language acquisition",
+        "wikipedia_article": "Statistical learning in language acquisition",
+        "brief_rationale": "The mechanism by which infants extract distributional regularities from linguistic input to bootstrap phoneme and word boundaries; requires expert knowledge of computational and developmental psycholinguistics."
+      },
+      {
+        "concept": "intergenerational transmission of attachment",
+        "wikipedia_article": "Attachment theory",
+        "brief_rationale": "The process by which a parent's own attachment representation — assessed via the Adult Attachment Interview — predicts their infant's attachment classification; requires expert-level knowledge of attachment measurement and transmission mechanisms."
+      },
+      {
+        "concept": "niche construction and developmental plasticity",
+        "wikipedia_article": "Niche construction",
+        "brief_rationale": "The process by which organisms modify their own developmental environments, creating feedback loops between genes, behavior, and culture; an advanced theoretical framework drawing on evolutionary developmental psychology."
+      },
+      {
+        "concept": "fetal programming",
+        "wikipedia_article": "Prenatal nutrition and birth weight",
+        "brief_rationale": "The Barker hypothesis and related evidence that prenatal nutritional and stress exposures permanently alter physiological and behavioral set points — reflecting expert knowledge at the intersection of obstetrics, epidemiology, and developmental psychology."
+      },
+      {
+        "concept": "relational developmental systems metatheory",
+        "wikipedia_article": "Developmental systems theory",
+        "brief_rationale": "A contemporary metatheoretical framework emphasizing bidirectional, multilevel relations among biological, psychological, and social systems across the lifespan; associated with Lerner and representing the current leading edge of lifespan theory."
+      },
+      {
+        "concept": "dual-process theories of adolescent risk-taking",
+        "wikipedia_article": "Dual process theory",
+        "brief_rationale": "Models (e.g., Steinberg's imbalance model) positing that adolescent risk-taking reflects an early-maturing socioemotional system outpacing a later-maturing cognitive control system; requires expert synthesis of neuroscience and behavioral development."
+      },
+      {
+        "concept": "teleological reasoning in children",
+        "wikipedia_article": "Teleological thinking",
+        "brief_rationale": "Children's tendency to interpret natural phenomena and artifacts in terms of goals and purposes (Keleman's research); an expert-level topic at the intersection of cognitive development, intuitive biology, and the origins of religious cognition."
+      }
+    ]
+  }
+}

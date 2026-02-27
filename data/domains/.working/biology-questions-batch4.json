@@ -1,0 +1,98 @@
+[
+  {
+    "question_number": 39,
+    "question_text": "In haplodiploid species like Hymenoptera, Hamilton's rule helps explain eusociality because full sisters share a coefficient of relatedness ($r$) of what value, exceeding their relatedness to their own offspring?",
+    "correct_answer": "$r = 0.75$, since sisters share their father's entire haploid genome plus half their mother's diploid genome.",
+    "concept": "Hamilton's rule",
+    "difficulty": 4,
+    "source_article": "Kin selection"
+  },
+  {
+    "question_number": 40,
+    "question_text": "Eldredge and Gould's punctuated equilibrium drew heavily on which earlier speciation model to explain why morphological change concentrates in geologically brief branching events rather than gradual transformation within lineages?",
+    "correct_answer": "Ernst Mayr's model of allopatric speciation in small peripheral isolates, where selection and drift drive rapid divergence.",
+    "concept": "punctuated equilibrium",
+    "difficulty": 4,
+    "source_article": "Punctuated equilibrium"
+  },
+  {
+    "question_number": 41,
+    "question_text": "The evo-devo concept of deep homology was dramatically demonstrated when the mouse $Pax6$ gene was expressed in Drosophila and produced what surprising result?",
+    "correct_answer": "Functional ectopic eyes formed on Drosophila legs, wings, and antennae, showing eye-development gene conservation across 500 million years.",
+    "concept": "evolutionary developmental biology",
+    "difficulty": 4,
+    "source_article": "Evolutionary developmental biology"
+  },
+  {
+    "question_number": 42,
+    "question_text": "Van Valen's 1973 Red Queen hypothesis was originally proposed to explain which surprising empirical pattern he observed in the fossil record, rather than the evolution of sexual reproduction?",
+    "correct_answer": "The law of constant extinction: within any taxonomic group, the probability of extinction remains roughly constant regardless of how long the lineage has existed.",
+    "concept": "Red Queen hypothesis",
+    "difficulty": 4,
+    "source_article": "Red Queen hypothesis"
+  },
+  {
+    "question_number": 43,
+    "question_text": "In MacArthur and Wilson's equilibrium theory, what determines the equilibrial species number on an island, and how did Simberloff and Wilson experimentally test this using mangrove islands?",
+    "correct_answer": "The intersection of declining immigration and rising extinction rate curves. They fumigated Florida Keys mangrove islands and monitored arthropod recolonization to equilibrium.",
+    "concept": "island biogeography",
+    "difficulty": 4,
+    "source_article": "Insular biogeography"
+  },
+  {
+    "question_number": 44,
+    "question_text": "Batesian mimicry is maintained by negative frequency-dependent selection. What happens to the survival advantage of mimics as their abundance increases relative to the toxic model species?",
+    "correct_answer": "The protective benefit decreases because predators encounter more palatable mimics, learn the phenotype is often edible, and begin attacking it.",
+    "concept": "Batesian mimicry",
+    "difficulty": 4,
+    "source_article": "Batesian mimicry"
+  },
+  {
+    "question_number": 45,
+    "question_text": "In phylogenetic inference, long-branch attraction is a systematic artifact where rapidly evolving lineages are erroneously grouped together. Which tree-building method is most susceptible to this problem, and why?",
+    "correct_answer": "Maximum parsimony, because it ignores branch lengths and cannot model unequal substitution rates, causing convergent changes to mimic shared ancestry.",
+    "concept": "phylogenetics",
+    "difficulty": 4,
+    "source_article": "Phylogenetics"
+  },
+  {
+    "question_number": 46,
+    "question_text": "Ernst Mayr distinguished two subtypes of allopatric speciation. How does peripatric speciation differ from vicariance in terms of population sizes and the role of genetic drift?",
+    "correct_answer": "Peripatric speciation involves a small peripheral isolate where genetic drift and founder effects accelerate divergence, whereas vicariance splits two comparably large populations.",
+    "concept": "allopatric speciation",
+    "difficulty": 4,
+    "source_article": "Allopatric speciation"
+  },
+  {
+    "question_number": 47,
+    "question_text": "Hutchinson's 1957 niche concept formalized the niche as an $n$-dimensional hypervolume. What is the key distinction between the fundamental and realized niche in his framework?",
+    "correct_answer": "The fundamental niche is the full hypervolume permitted by a species' tolerances; the realized niche is the smaller subset actually occupied after interspecific competition.",
+    "concept": "ecological niche",
+    "difficulty": 4,
+    "source_article": "Ecological niche"
+  },
+  {
+    "question_number": 48,
+    "question_text": "Bergmann's rule was originally formulated in 1847 at which biological level -- and how does this differ from how most modern studies apply it?",
+    "correct_answer": "Bergmann described it interspecifically (larger species within a genus in colder regions); modern studies mostly apply it intraspecifically (size variation within one species).",
+    "concept": "Bergmann's rule",
+    "difficulty": 4,
+    "source_article": "Bergmann's rule"
+  },
+  {
+    "question_number": 49,
+    "question_text": "Thompson's geographic mosaic theory of coevolution proposes three key components that shape how interacting species evolve across landscapes. What are coevolutionary hotspots and coldspots?",
+    "correct_answer": "Hotspots are geographic areas where reciprocal selection between species is strong; coldspots are areas where only one species exerts selection or neither does.",
+    "concept": "coevolution",
+    "difficulty": 4,
+    "source_article": "Coevolution"
+  },
+  {
+    "question_number": 50,
+    "question_text": "The Wallace Line runs between Bali and Lombok, separated by only 35 km. What geological feature explains why these nearby islands harbor dramatically different faunas despite their proximity?",
+    "correct_answer": "A deep-water strait between the Sunda and Sahul continental shelves that persisted even during Pleistocene glacial sea-level drops, preventing terrestrial dispersal.",
+    "concept": "Wallace Line",
+    "difficulty": 4,
+    "source_article": "Wallace Line"
+  }
+]

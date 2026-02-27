@@ -1,0 +1,66 @@
+{
+  "domain": "computational-linguistics",
+  "parent_domain": "linguistics",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {"concept": "natural language processing", "wikipedia_article": "Natural language processing", "brief_rationale": "The field of enabling computers to understand and generate human language; universally recognized by anyone who has heard of Siri, Alexa, or ChatGPT."},
+      {"concept": "machine translation", "wikipedia_article": "Machine translation", "brief_rationale": "Automated translation between languages (e.g., Google Translate); widely known and used by the general public."},
+      {"concept": "spell checker", "wikipedia_article": "Spell checker", "brief_rationale": "Software that detects and corrects spelling errors; a familiar everyday tool built on computational linguistics."},
+      {"concept": "chatbot", "wikipedia_article": "Chatbot", "brief_rationale": "Conversational software agent that interacts in natural language; ubiquitous in customer service and widely known to the public."},
+      {"concept": "speech recognition", "wikipedia_article": "Speech recognition", "brief_rationale": "Technology that converts spoken language to text; familiar through voice assistants and dictation tools."},
+      {"concept": "text-to-speech", "wikipedia_article": "Speech synthesis", "brief_rationale": "Converting written text into spoken audio; widely encountered in navigation apps, accessibility tools, and voice assistants."},
+      {"concept": "search engine", "wikipedia_article": "Web search engine", "brief_rationale": "System that retrieves documents matching a query; the most widely used application of information retrieval and language technology."},
+      {"concept": "autocomplete", "wikipedia_article": "Autocomplete", "brief_rationale": "Predictive text feature that suggests word completions; encountered daily in smartphones, search bars, and email clients."},
+      {"concept": "sentiment analysis", "wikipedia_article": "Sentiment analysis", "brief_rationale": "Determining the emotional tone of text (positive, negative, neutral); widely discussed in the context of social media and product reviews."},
+      {"concept": "spam filter", "wikipedia_article": "Email filtering", "brief_rationale": "Automatic classification of email as spam or legitimate; a familiar application of text classification seen by every email user."},
+      {"concept": "optical character recognition", "wikipedia_article": "Optical character recognition", "brief_rationale": "Recognizing printed text in images; encountered in document scanning and translation apps by everyday users."},
+      {"concept": "question answering", "wikipedia_article": "Question answering", "brief_rationale": "Systems that automatically answer questions posed in natural language; famously demonstrated by IBM Watson and modern AI assistants."},
+      {"concept": "text summarization", "wikipedia_article": "Automatic summarization", "brief_rationale": "Automatically producing a shorter version of a document; increasingly familiar through news apps and AI writing tools."}
+    ],
+    "L2": [
+      {"concept": "tokenization", "wikipedia_article": "Lexical analysis", "brief_rationale": "Splitting text into words or subword units; the first and most fundamental preprocessing step in any NLP pipeline, taught in all introductory courses."},
+      {"concept": "part-of-speech tagging", "wikipedia_article": "Part-of-speech tagging", "brief_rationale": "Labeling each word with its grammatical category (noun, verb, etc.); a standard introductory NLP task and key to downstream processing."},
+      {"concept": "named entity recognition", "wikipedia_article": "Named-entity recognition", "brief_rationale": "Identifying and classifying proper names (people, places, organizations) in text; standard vocabulary for any NLP student or practitioner."},
+      {"concept": "parsing", "wikipedia_article": "Parsing", "brief_rationale": "Analyzing the grammatical structure of a sentence; a core NLP task that linguistics students encounter in both theoretical and computational contexts."},
+      {"concept": "corpus", "wikipedia_article": "Text corpus", "brief_rationale": "A large structured collection of texts used for training and evaluation; fundamental concept in computational and corpus linguistics."},
+      {"concept": "n-gram", "wikipedia_article": "N-gram", "brief_rationale": "Contiguous sequence of n items from text; the basis of classical language modeling, learned early in any NLP or corpus linguistics course."},
+      {"concept": "bag of words", "wikipedia_article": "Bag-of-words model", "brief_rationale": "Representing text as an unordered multiset of words; one of the most widely taught baseline text representation methods."},
+      {"concept": "TF-IDF", "wikipedia_article": "Tf–idf", "brief_rationale": "Term frequency–inverse document frequency weighting for information retrieval; standard vocabulary in any information retrieval or text mining course."},
+      {"concept": "stop words", "wikipedia_article": "Stop word", "brief_rationale": "Common words (the, is, at) typically filtered out before text analysis; a routine concept encountered in every introductory NLP or IR course."},
+      {"concept": "stemming", "wikipedia_article": "Stemming", "brief_rationale": "Reducing words to their base or root form; a standard preprocessing technique known to all students of text processing and information retrieval."},
+      {"concept": "dependency parsing", "wikipedia_article": "Dependency grammar", "brief_rationale": "Analyzing grammatical relations between words as directed arcs; a widely used syntactic representation system known to linguistics students."},
+      {"concept": "word embedding", "wikipedia_article": "Word embedding", "brief_rationale": "Dense vector representations of words capturing semantic similarity; now standard vocabulary for any student of modern NLP."},
+      {"concept": "language model", "wikipedia_article": "Language model", "brief_rationale": "A probability distribution over sequences of words; fundamental concept underlying all modern NLP systems."}
+    ],
+    "L3": [
+      {"concept": "CYK algorithm", "wikipedia_article": "CYK algorithm", "brief_rationale": "Cocke-Younger-Kasami dynamic programming algorithm for parsing context-free grammars in O(n³); requires working knowledge of formal grammars and chart parsing."},
+      {"concept": "hidden Markov model", "wikipedia_article": "Hidden Markov model", "brief_rationale": "Statistical model with unobserved states generating observable outputs; foundational to sequence labeling tasks like POS tagging and speech recognition."},
+      {"concept": "perplexity", "wikipedia_article": "Perplexity", "brief_rationale": "Information-theoretic measure of how well a language model predicts a test corpus; requires working knowledge of entropy and probability-based evaluation."},
+      {"concept": "attention mechanism", "wikipedia_article": "Attention (machine learning)", "brief_rationale": "Mechanism allowing models to weight different input positions when producing output; requires working knowledge of neural sequence-to-sequence models."},
+      {"concept": "beam search", "wikipedia_article": "Beam search", "brief_rationale": "Heuristic search algorithm that keeps the top-k candidates at each decoding step; requires working knowledge of greedy decoding and sequence generation tradeoffs."},
+      {"concept": "word2vec", "wikipedia_article": "Word2vec", "brief_rationale": "Neural model learning word embeddings from skip-gram or CBOW objectives; requires working knowledge of distributional semantics and neural training procedures."},
+      {"concept": "conditional random field", "wikipedia_article": "Conditional random field", "brief_rationale": "Discriminative probabilistic model for sequence labeling; requires working knowledge of structured prediction and the difference from generative HMMs."},
+      {"concept": "semantic role labeling", "wikipedia_article": "Semantic role labeling", "brief_rationale": "Identifying who did what to whom in a sentence using predicate-argument structure; requires working knowledge of frame semantics and PropBank annotation."},
+      {"concept": "coreference resolution", "wikipedia_article": "Coreference", "brief_rationale": "Identifying when different expressions in a text refer to the same entity; requires working knowledge of discourse structure and mention detection."},
+      {"concept": "distributional semantics", "wikipedia_article": "Distributional semantics", "brief_rationale": "Representing word meaning through co-occurrence statistics in large corpora; requires working knowledge of the distributional hypothesis and vector space models."},
+      {"concept": "encoder-decoder architecture", "wikipedia_article": "Seq2seq", "brief_rationale": "Neural architecture mapping input sequences to output sequences via a bottleneck representation; requires working knowledge of RNNs and its application to translation and summarization."},
+      {"concept": "byte pair encoding", "wikipedia_article": "Byte pair encoding", "brief_rationale": "Subword tokenization algorithm that iteratively merges frequent character pairs; requires working knowledge of vocabulary construction and out-of-vocabulary word handling."}
+    ],
+    "L4": [
+      {"concept": "combinatory categorial grammar", "wikipedia_article": "Combinatory categorial grammar", "brief_rationale": "Lexicalized grammar formalism assigning categories with combinatory rules; requires deep knowledge of type-theoretic grammar formalisms and their parsing properties."},
+      {"concept": "head-driven phrase structure grammar", "wikipedia_article": "Head-driven phrase structure grammar", "brief_rationale": "Constraint-based grammar formalism using feature structures and typed hierarchy; requires deep knowledge of unification-based parsing and sign-based grammatical theory."},
+      {"concept": "minimum description length", "wikipedia_article": "Minimum description length", "brief_rationale": "Model selection principle from information theory used in grammar induction; requires deep knowledge of Kolmogorov complexity and its application to linguistic structure learning."},
+      {"concept": "expectation-maximization algorithm", "wikipedia_article": "Expectation–maximization algorithm", "brief_rationale": "Iterative algorithm for maximum-likelihood estimation with latent variables; requires deep knowledge of probabilistic models and its use in unsupervised NLP tasks like grammar induction."},
+      {"concept": "inside-outside algorithm", "wikipedia_article": "Inside–outside algorithm", "brief_rationale": "Dynamic programming algorithm for training probabilistic context-free grammars; requires deep knowledge of PCFG inference and the relationship to the EM algorithm over parse forests."},
+      {"concept": "cross-lingual transfer", "wikipedia_article": "Transfer learning", "brief_rationale": "Applying a model trained on one language to another with limited target-language data; requires deep knowledge of multilingual representations, zero-shot learning, and language universals."},
+      {"concept": "tree-adjoining grammar", "wikipedia_article": "Tree-adjoining grammar", "brief_rationale": "Mildly context-sensitive formalism using elementary trees and adjunction; requires deep knowledge of formal language theory and the parsing complexity of extended CFLs."},
+      {"concept": "maximum entropy model", "wikipedia_article": "Logistic regression", "brief_rationale": "Log-linear model that maximizes entropy subject to feature constraints; requires deep knowledge of feature engineering, regularization, and its use as a principled NLP classifier."},
+      {"concept": "linear programming relaxation for parsing", "wikipedia_article": "LP relaxation", "brief_rationale": "Relaxing integer constraints in dependency parsing to a linear program for approximate inference; requires deep knowledge of structured prediction and combinatorial optimization."},
+      {"concept": "Earley parser", "wikipedia_article": "Earley parser", "brief_rationale": "Top-down chart parser that handles all context-free grammars in O(n³); requires deep knowledge of chart parsing, dotted rules, and the contrast with bottom-up CYK."},
+      {"concept": "Turkish morphological analysis", "wikipedia_article": "Morphological analysis (linguistics)", "brief_rationale": "Computational analysis of agglutinative morphology with highly productive suffixation; requires deep knowledge of finite-state transducers and the challenges of morphologically rich languages for NLP."},
+      {"concept": "Abstract Meaning Representation", "wikipedia_article": "Abstract Meaning Representation", "brief_rationale": "Graph-based semantic formalism representing sentence meaning as rooted DAGs; requires deep knowledge of predicate-argument structure, coreference, and AMR parsing algorithms."}
+    ]
+  }
+}

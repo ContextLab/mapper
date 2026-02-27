@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "According to Quine's criterion of ontological commitment, what determines the entities a theory is committed to?",
+    "correct_answer": "A theory is committed to those entities that must serve as values of its bound variables for the theory's statements to be true.",
+    "distractors": [
+      "A theory is committed to whatever entities its predicates and names directly refer to in natural language.",
+      "A theory is committed only to entities that can be directly observed through empirical investigation.",
+      "A theory is committed to entities that are intuitively accepted by the community of language users."
+    ],
+    "difficulty": 4,
+    "source_article": "Ontological commitment",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["Quinean ontological commitment"]
+  },
+  {
+    "question_text": "In Miranda Fricker's framework, what distinguishes hermeneutical injustice from testimonial injustice?",
+    "correct_answer": "Hermeneutical injustice is a gap in collective interpretive resources preventing self-understanding, while testimonial injustice is a prejudice-driven credibility deficit.",
+    "distractors": [
+      "Hermeneutical injustice occurs when texts are deliberately misinterpreted, while testimonial injustice involves false witness in legal proceedings.",
+      "Hermeneutical injustice is limited to academic contexts of interpretation, while testimonial injustice occurs exclusively in courtroom settings.",
+      "Hermeneutical injustice involves deliberate suppression of evidence, while testimonial injustice concerns only spoken communication."
+    ],
+    "difficulty": 4,
+    "source_article": "Epistemic injustice",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["epistemic injustice"]
+  },
+  {
+    "question_text": "What central claim unites deflationary theories of truth, such as Ramsey's redundancy theory and Horwich's minimalism?",
+    "correct_answer": "The predicate 'is true' does not attribute a substantive property to a statement but serves merely a logical or expressive function.",
+    "distractors": [
+      "Truth is a correspondence relation between propositions and mind-independent states of affairs in the external world.",
+      "Truth is constituted by the coherence of a belief within a maximally consistent system of beliefs.",
+      "Truth is whatever is validated by the consensus of an ideal community of scientific inquirers over time."
+    ],
+    "difficulty": 4,
+    "source_article": "Deflationary theory of truth",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["deflationary theory of truth"]
+  },
+  {
+    "question_text": "In Gadamer's philosophical hermeneutics, what does the 'fusion of horizons' (Horizontverschmelzung) describe?",
+    "correct_answer": "The process by which the interpreter's historical horizon and the text's horizon merge to form a new, shared context of understanding.",
+    "distractors": [
+      "The moment when a reader fully adopts the original author's perspective and abandons their own cultural assumptions.",
+      "The elimination of all historical prejudice so that a text can be understood in a purely objective manner.",
+      "The discovery of a single universal horizon of meaning that transcends all particular cultural and historical contexts."
+    ],
+    "difficulty": 4,
+    "source_article": "Fusion of horizons",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["Gadamerian fusion of horizons"]
+  },
+  {
+    "question_text": "What does Rawls's concept of public reason require of citizens when justifying fundamental political decisions?",
+    "correct_answer": "Citizens must appeal only to political values and principles that all reasonable citizens can be expected to endorse, regardless of their comprehensive doctrines.",
+    "distractors": [
+      "Citizens must base political arguments exclusively on empirical scientific findings accepted by the scholarly community.",
+      "Citizens must defer to majority opinion as expressed through democratic voting without further justification.",
+      "Citizens must ground political decisions in the comprehensive religious or philosophical doctrine most widely held in their society."
+    ],
+    "difficulty": 4,
+    "source_article": "Public reason",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["Rawlsian public reason"]
+  },
+  {
+    "question_text": "In Bayesian epistemology, what does the Dutch Book argument demonstrate about rational degrees of belief?",
+    "correct_answer": "An agent whose degrees of belief violate probability axioms can be offered bets guaranteeing a net loss, proving such beliefs irrational.",
+    "distractors": [
+      "An agent who follows probability theory will always maximize expected financial returns in real-world betting markets.",
+      "An agent must assign equal prior probabilities to all hypotheses before receiving any evidence to avoid irrationality.",
+      "An agent who updates beliefs by conditionalization will inevitably converge on the single objectively correct hypothesis."
+    ],
+    "difficulty": 4,
+    "source_article": "Bayesian epistemology",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["Bayesian epistemology"]
+  },
+  {
+    "question_text": "How does van Fraassen's constructive empiricism respond to the no-miracles argument for scientific realism?",
+    "correct_answer": "A theory can be empirically adequate and thus scientifically successful without being true, so success does not require realism.",
+    "distractors": [
+      "Scientific theories are literally true descriptions of unobservable reality and their success confirms this truth directly.",
+      "The history of science shows that all past theories were true, so current theories must also be true by induction.",
+      "Miracles are logically impossible, so the success of science needs no philosophical explanation whatsoever."
+    ],
+    "difficulty": 4,
+    "source_article": "Scientific realism",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["scientific realism vs anti-realism"]
+  },
+  {
+    "question_text": "In Husserl's phenomenology, what is the distinction between noesis and noema?",
+    "correct_answer": "Noesis is the mental act-process (perceiving, judging, remembering), while noema is the intended object or ideal content toward which that act is directed.",
+    "distractors": [
+      "Noesis is the external physical object perceived, while noema is the subjective emotional reaction to that object.",
+      "Noesis refers to innate a priori categories of understanding, while noema refers to raw unstructured sensory data.",
+      "Noesis is the linguistic expression of a thought, while noema is the grammatical structure of the sentence used."
+    ],
+    "difficulty": 4,
+    "source_article": "Noesis and noema",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["Husserlian intentional analysis"]
+  },
+  {
+    "question_text": "What is the central thesis of epistemological contextualism as defended by DeRose and Lewis?",
+    "correct_answer": "The truth conditions of knowledge attributions vary with the conversational context of the attributor, so 'knows' is context-sensitive.",
+    "distractors": [
+      "Knowledge is determined solely by the psychological states of the individual knower regardless of any external context.",
+      "All knowledge claims are equally valid across every context because epistemic standards are universal and invariant.",
+      "Knowledge requires certainty in every possible context, making genuine knowledge effectively unattainable."
+    ],
+    "difficulty": 4,
+    "source_article": "Epistemological contextualism",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["contextualism in epistemology"]
+  },
+  {
+    "question_text": "In Habermas's theory of communicative rationality, what role do validity claims play in discourse?",
+    "correct_answer": "Speakers necessarily raise validity claims to truth, normative rightness, and sincerity that must be redeemable through reasons in argumentative discourse.",
+    "distractors": [
+      "Validity claims are formal logical axioms that constrain the syntax of permissible sentences in scientific theories.",
+      "Validity claims are subjective preferences expressed by individuals that require no justification or intersubjective recognition.",
+      "Validity claims are empirical hypotheses about observable phenomena that can only be tested through controlled experiments."
+    ],
+    "difficulty": 4,
+    "source_article": "Communicative rationality",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["Habermasian communicative rationality"]
+  }
+]

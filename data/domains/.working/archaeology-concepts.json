@@ -1,0 +1,266 @@
+{
+  "domain": "archaeology",
+  "parent_domain": null,
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {
+        "concept": "Pompeii",
+        "wikipedia_article": "Pompeii",
+        "brief_rationale": "The ancient Roman city buried by the eruption of Vesuvius in 79 AD is one of the most famous archaeological sites in the world, universally recognized by the general public."
+      },
+      {
+        "concept": "Rosetta Stone",
+        "wikipedia_article": "Rosetta Stone",
+        "brief_rationale": "The inscribed stele that enabled the decipherment of Egyptian hieroglyphs is among the most iconic archaeological discoveries, universally known as a symbol of translation and understanding."
+      },
+      {
+        "concept": "Tutankhamun's tomb",
+        "wikipedia_article": "KV62",
+        "brief_rationale": "Howard Carter's 1922 discovery of the nearly intact tomb of the pharaoh Tutankhamun is arguably the most famous archaeological excavation in history, known to virtually everyone."
+      },
+      {
+        "concept": "Troy",
+        "wikipedia_article": "Troy",
+        "brief_rationale": "The legendary Bronze Age city excavated by Heinrich Schliemann is universally known through Homer's epics and popular culture, and its discovery helped establish archaeology as a discipline."
+      },
+      {
+        "concept": "Dead Sea Scrolls",
+        "wikipedia_article": "Dead Sea Scrolls",
+        "brief_rationale": "The ancient Jewish manuscripts discovered near Qumran between 1946 and 1956 are among the most publicly recognized textual finds in all of archaeology."
+      },
+      {
+        "concept": "Machu Picchu",
+        "wikipedia_article": "Machu Picchu",
+        "brief_rationale": "The 15th-century Inca citadel in Peru, brought to international attention by Hiram Bingham in 1911, is one of the most visited and recognized archaeological sites worldwide."
+      },
+      {
+        "concept": "terracotta army",
+        "wikipedia_article": "Terracotta Army",
+        "brief_rationale": "The thousands of life-size clay soldiers buried with China's first emperor are among the most spectacular and widely known archaeological discoveries of the 20th century."
+      },
+      {
+        "concept": "hieroglyphics",
+        "wikipedia_article": "Egyptian hieroglyphs",
+        "brief_rationale": "The ancient Egyptian writing system is universally recognized and represents one of the most iconic intersections of archaeology and epigraphy in public consciousness."
+      },
+      {
+        "concept": "Colosseum",
+        "wikipedia_article": "Colosseum",
+        "brief_rationale": "The massive Roman amphitheatre is one of the most recognized ancient monuments in the world, familiar to anyone with a basic knowledge of Roman civilization."
+      },
+      {
+        "concept": "Parthenon",
+        "wikipedia_article": "Parthenon",
+        "brief_rationale": "The iconic temple on the Athenian Acropolis is one of the most recognizable ancient structures globally and a cornerstone of classical archaeology."
+      },
+      {
+        "concept": "Great Wall of China",
+        "wikipedia_article": "Great Wall of China",
+        "brief_rationale": "The massive fortification system built over centuries is universally recognized and represents one of the most monumental archaeological landscapes on Earth."
+      },
+      {
+        "concept": "Angkor Wat",
+        "wikipedia_article": "Angkor Wat",
+        "brief_rationale": "The vast Khmer temple complex in Cambodia is the world's largest religious monument and one of the most visited archaeological sites, universally known from travel and media."
+      },
+      {
+        "concept": "ancient pottery",
+        "wikipedia_article": "Pottery",
+        "brief_rationale": "Ceramic vessels are the most commonly recovered archaeological artifact class worldwide; the general concept of finding old pottery at archaeological sites is universally understood."
+      }
+    ],
+    "L2": [
+      {
+        "concept": "classical archaeology",
+        "wikipedia_article": "Classical archaeology",
+        "brief_rationale": "The archaeological study of ancient Greece and Rome is one of the oldest and most established branches of the discipline, familiar to any undergraduate in history or archaeology."
+      },
+      {
+        "concept": "historical archaeology",
+        "wikipedia_article": "Historical archaeology",
+        "brief_rationale": "The study of societies with written records through their material remains is a major subfield of archaeology that students encounter early in their training."
+      },
+      {
+        "concept": "underwater archaeology",
+        "wikipedia_article": "Underwater archaeology",
+        "brief_rationale": "The practice of archaeology beneath water surfaces, encompassing shipwrecks and submerged settlements, is a well-known subfield introduced in any survey archaeology course."
+      },
+      {
+        "concept": "dendrochronology",
+        "wikipedia_article": "Dendrochronology",
+        "brief_rationale": "Tree-ring dating is a widely taught absolute dating method that provides calendar-year precision; standard vocabulary in any introductory archaeology or geochronology course."
+      },
+      {
+        "concept": "cultural resource management",
+        "wikipedia_article": "Cultural resource management",
+        "brief_rationale": "The professional practice of managing and protecting archaeological heritage within planning and development is the largest employer of archaeologists and is introduced in any careers-in-archaeology module."
+      },
+      {
+        "concept": "Antikythera mechanism",
+        "wikipedia_article": "Antikythera mechanism",
+        "brief_rationale": "The ancient Greek analogue computer recovered from a shipwreck is one of the most celebrated archaeological objects, widely discussed in popular science and introductory classical archaeology courses."
+      },
+      {
+        "concept": "experimental archaeology",
+        "wikipedia_article": "Experimental archaeology",
+        "brief_rationale": "The replication and testing of ancient technologies and structures to evaluate archaeological hypotheses is a well-known methodological approach taught in undergraduate archaeology programmes."
+      },
+      {
+        "concept": "ethnoarchaeology",
+        "wikipedia_article": "Ethnoarchaeology",
+        "brief_rationale": "The ethnographic study of living societies to generate analogies for interpreting the archaeological record is a standard methodological concept in archaeological theory courses."
+      },
+      {
+        "concept": "biblical archaeology",
+        "wikipedia_article": "Biblical archaeology",
+        "brief_rationale": "The archaeological investigation of sites and cultures related to the Bible is a widely known subfield with significant public interest and a dedicated popular journal."
+      },
+      {
+        "concept": "aerial archaeology",
+        "wikipedia_article": "Aerial archaeology",
+        "brief_rationale": "The use of aerial photography and remote sensing to discover and record archaeological sites from above is a well-established method introduced in archaeological survey courses."
+      },
+      {
+        "concept": "Elgin Marbles",
+        "wikipedia_article": "Elgin Marbles",
+        "brief_rationale": "The Parthenon sculptures held in the British Museum are at the centre of the most famous cultural heritage repatriation debate, widely discussed in archaeology ethics courses."
+      },
+      {
+        "concept": "typology",
+        "wikipedia_article": "Typology (archaeology)",
+        "brief_rationale": "The classification of artifacts into types based on shared physical characteristics is a foundational analytical method taught in any introductory archaeology course."
+      },
+      {
+        "concept": "seriation",
+        "wikipedia_article": "Seriation (archaeology)",
+        "brief_rationale": "The relative dating method that arranges artifact assemblages into chronological order based on stylistic change is a standard technique introduced in archaeological methods courses."
+      }
+    ],
+    "L3": [
+      {
+        "concept": "processual archaeology",
+        "wikipedia_article": "Processual archaeology",
+        "brief_rationale": "Requires understanding the New Archaeology movement of the 1960s, its positivist epistemology, systems theory approach, and Lewis Binford's foundational role in reorienting the discipline."
+      },
+      {
+        "concept": "post-processual archaeology",
+        "wikipedia_article": "Post-processual archaeology",
+        "brief_rationale": "Requires understanding the 1980s critique of processualism led by Ian Hodder and others, emphasizing subjectivity, agency, and the interpretive dimensions of archaeological practice."
+      },
+      {
+        "concept": "maritime archaeology",
+        "wikipedia_article": "Maritime archaeology",
+        "brief_rationale": "Requires working knowledge of how this subfield studies human interaction with the sea through vessels, port infrastructure, cargoes, and submerged landscapes, distinct from general underwater work."
+      },
+      {
+        "concept": "landscape archaeology",
+        "wikipedia_article": "Landscape archaeology",
+        "brief_rationale": "Requires working knowledge of how archaeologists study the relationships between material culture, human modification of terrain, and the natural environment at a regional scale."
+      },
+      {
+        "concept": "industrial archaeology",
+        "wikipedia_article": "Industrial archaeology",
+        "brief_rationale": "Requires working knowledge of how this subfield studies the material remains of industrialisation — factories, mills, transport infrastructure — and its origins in 1950s Britain."
+      },
+      {
+        "concept": "archaeoastronomy",
+        "wikipedia_article": "Archaeoastronomy",
+        "brief_rationale": "Requires understanding how astronomical alignments of ancient monuments and landscapes are identified and interpreted, integrating archaeology, astronomy, and anthropology."
+      },
+      {
+        "concept": "environmental archaeology",
+        "wikipedia_article": "Environmental archaeology",
+        "brief_rationale": "Requires working knowledge of how archaeobotany, palynology, and faunal analysis are combined to reconstruct past environments and human ecological relationships."
+      },
+      {
+        "concept": "palynology",
+        "wikipedia_article": "Palynology",
+        "brief_rationale": "Requires understanding how fossil pollen and spore analysis from archaeological sediments reconstructs past vegetation, climate, and land-use patterns over millennia."
+      },
+      {
+        "concept": "rescue archaeology",
+        "wikipedia_article": "Rescue archaeology",
+        "brief_rationale": "Requires working knowledge of salvage excavation procedures triggered by development threats, the legal frameworks that mandate them, and their relationship to CRM practice."
+      },
+      {
+        "concept": "remote sensing in archaeology",
+        "wikipedia_article": "Remote sensing in archaeology",
+        "brief_rationale": "Requires working knowledge of satellite imagery, multispectral analysis, and airborne sensor technologies used to detect buried archaeological features at landscape scales."
+      },
+      {
+        "concept": "archaeogenetics",
+        "wikipedia_article": "Archaeogenetics",
+        "brief_rationale": "Requires working knowledge of how ancient DNA extraction and analysis illuminates population migrations, admixture events, and domestication processes in the archaeological record."
+      },
+      {
+        "concept": "repatriation of cultural heritage",
+        "wikipedia_article": "Repatriation (cultural heritage)",
+        "brief_rationale": "Requires understanding the ethical, legal, and political frameworks governing the return of archaeological objects and human remains to descendant communities and countries of origin."
+      }
+    ],
+    "L4": [
+      {
+        "concept": "cognitive archaeology",
+        "wikipedia_article": "Cognitive archaeology",
+        "brief_rationale": "Requires deep understanding of both the evolutionary cognitive archaeology tradition (Wynn, Renfrew) and the ideational school (Hodder, Huffman), including how material culture is used to infer ancient cognition, symbolic thought, and cosmological systems."
+      },
+      {
+        "concept": "archaeometallurgy",
+        "wikipedia_article": "Archaeometallurgy",
+        "brief_rationale": "Requires expert knowledge of how metallographic analysis, slag chemistry, and provenance studies reconstruct ancient smelting, alloying, and smithing technologies from the Chalcolithic onward."
+      },
+      {
+        "concept": "paleoethnobotany",
+        "wikipedia_article": "Paleoethnobotany",
+        "brief_rationale": "Requires expert knowledge of macrobotanical and microbotanical recovery techniques — flotation, phytolith analysis, starch grain identification — and their use in reconstructing ancient diets, agriculture, and land management."
+      },
+      {
+        "concept": "geoarchaeology",
+        "wikipedia_article": "Geoarchaeology",
+        "brief_rationale": "Requires deep expertise in applying sedimentology, geomorphology, pedology, and micromorphology to interpret site formation processes, paleoenvironments, and depositional histories at archaeological sites."
+      },
+      {
+        "concept": "neutron activation analysis",
+        "wikipedia_article": "Neutron activation analysis",
+        "brief_rationale": "Requires expert understanding of how irradiating archaeological materials with neutrons produces characteristic gamma-ray signatures used for elemental provenance studies of ceramics, obsidian, and metals."
+      },
+      {
+        "concept": "ceramic petrography",
+        "wikipedia_article": "Ceramic petrography",
+        "brief_rationale": "Requires expert knowledge of polarised-light microscopy on thin-sectioned pottery to identify mineral inclusions, reconstruct clay paste recipes, and trace ceramic provenance and exchange networks."
+      },
+      {
+        "concept": "archaeological science",
+        "wikipedia_article": "Archaeological science",
+        "brief_rationale": "Requires deep understanding of the full range of scientific techniques applied to the archaeological record — from dating methods and geochemical sourcing to biomolecular analysis — and how they integrate with humanistic interpretation."
+      },
+      {
+        "concept": "single-context recording",
+        "wikipedia_article": "Single context recording",
+        "brief_rationale": "Requires expert knowledge of the stratigraphic excavation and recording system developed by Harris and the Museum of London, including context sheets, section drawings, and their integration into the Harris matrix."
+      },
+      {
+        "concept": "community archaeology",
+        "wikipedia_article": "Community archaeology",
+        "brief_rationale": "Requires deep understanding of participatory research frameworks in which professional archaeologists collaborate with local, indigenous, and descendant communities in project design, excavation, and interpretation."
+      },
+      {
+        "concept": "thermoluminescence dating",
+        "wikipedia_article": "Thermoluminescence dating",
+        "brief_rationale": "Requires expert understanding of how accumulated radiation dose in crystalline minerals is measured by controlled heating to determine the date of last firing or light exposure, including dose-rate estimation and sources of systematic error."
+      },
+      {
+        "concept": "magnetic survey in archaeology",
+        "wikipedia_article": "Magnetic survey (archaeology)",
+        "brief_rationale": "Requires expert knowledge of how fluxgate and caesium magnetometers detect spatial variation in the Earth's magnetic field caused by kilns, pits, ditches, and other subsurface archaeological features, including data processing and interpretation."
+      },
+      {
+        "concept": "geophysical survey in archaeology",
+        "wikipedia_article": "Geophysical survey (archaeology)",
+        "brief_rationale": "Requires expert-level integration of multiple prospection techniques — magnetometry, resistivity, electromagnetic induction, and GPR — to characterise buried archaeological remains non-invasively before excavation."
+      }
+    ]
+  }
+}

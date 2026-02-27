@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In speech act theory, what is an 'illocutionary act' as distinguished by J. L. Austin in 'How to Do Things with Words'?",
+    "correct_answer": "The action a speaker performs in saying something, such as asserting, promising, or commanding.",
+    "distractors": [
+      "The physical production of sounds and words that constitute a meaningful linguistic expression.",
+      "The further psychological or behavioral effect an utterance has on the listener, such as persuading or frightening.",
+      "The grammatical analysis of sentence structure that determines whether an utterance is syntactically well-formed."
+    ],
+    "difficulty": 3,
+    "source_article": "Speech act",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["speech act theory"]
+  },
+  {
+    "question_text": "What did Edmund Gettier demonstrate in his 1963 paper 'Is Justified True Belief Knowledge?'?",
+    "correct_answer": "That justified true belief is insufficient for knowledge, because a person can have a justified true belief that is only accidentally true.",
+    "distractors": [
+      "That knowledge requires no justification at all and is simply equivalent to having a true belief about a proposition.",
+      "That all empirical beliefs are ultimately unjustified because sensory experience is inherently unreliable.",
+      "That the coherence of a belief with other beliefs is the sole criterion needed for that belief to count as knowledge."
+    ],
+    "difficulty": 3,
+    "source_article": "Gettier problem",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["Gettier problem"]
+  },
+  {
+    "question_text": "What is the 'logical problem of evil' in philosophy of religion?",
+    "correct_answer": "The argument that the existence of evil is logically incompatible with an omnipotent, omniscient, and omnibenevolent God.",
+    "distractors": [
+      "The claim that evil is merely an illusion created by limited human perception of an ultimately good universe.",
+      "The argument that the existence of natural disasters proves the universe was not created by any intelligent being.",
+      "The thesis that moral evil can be eliminated entirely through rational education and scientific progress."
+    ],
+    "difficulty": 3,
+    "source_article": "Problem of evil",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["problem of evil"]
+  },
+  {
+    "question_text": "What does epistemological foundationalism claim about the structure of justified belief?",
+    "correct_answer": "That all justified beliefs ultimately rest on basic beliefs that are self-justifying and do not require support from other beliefs.",
+    "distractors": [
+      "That beliefs are justified by their mutual coherence within a web, with no privileged foundational beliefs needed.",
+      "That justification proceeds through an infinite chain of reasons, each supported by a further reason without end.",
+      "That no beliefs can ever be fully justified because all evidence is subject to radical Cartesian doubt."
+    ],
+    "difficulty": 3,
+    "source_article": "Foundationalism",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["epistemological foundationalism"]
+  },
+  {
+    "question_text": "In Rawls's 'A Theory of Justice,' what is the function of the 'veil of ignorance' in the original position?",
+    "correct_answer": "It deprives participants of knowledge about their personal characteristics so they choose principles of justice impartially.",
+    "distractors": [
+      "It ensures that only the most intellectually gifted members of society are permitted to deliberate about justice.",
+      "It requires participants to maximize total societal wealth regardless of how it is distributed among individuals.",
+      "It prevents participants from considering any empirical facts about economics, psychology, or human nature."
+    ],
+    "difficulty": 3,
+    "source_article": "Original position",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["original position"]
+  },
+  {
+    "question_text": "What is 'differance' (differance) in Jacques Derrida's philosophy of deconstruction?",
+    "correct_answer": "A neologism combining 'to differ' and 'to defer,' indicating that meaning is always relational and perpetually postponed.",
+    "distractors": [
+      "A formal logical operator that negates binary propositions within a deductive system of symbolic reasoning.",
+      "A psychological mechanism by which the unconscious mind represses traumatic memories from conscious awareness.",
+      "A rhetorical technique of stating the opposite of what one means in order to achieve an ironic literary effect."
+    ],
+    "difficulty": 3,
+    "source_article": "Deconstruction",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["deconstruction"]
+  },
+  {
+    "question_text": "How did Kant distinguish the 'mathematical sublime' from the 'dynamical sublime' in his aesthetic theory?",
+    "correct_answer": "The mathematical sublime involves vastness that exceeds our capacity to measure, while the dynamical sublime involves overwhelming natural power.",
+    "distractors": [
+      "The mathematical sublime concerns numerical precision in art, while the dynamical sublime concerns physical motion depicted in sculpture.",
+      "The mathematical sublime applies only to geometric patterns, while the dynamical sublime applies only to musical compositions.",
+      "The mathematical sublime is an objective property of natural objects, while the dynamical sublime is purely a social convention."
+    ],
+    "difficulty": 3,
+    "source_article": "Sublime (philosophy)",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["the sublime"]
+  },
+  {
+    "question_text": "What is the central thesis of process reliabilism as developed by Alvin Goldman?",
+    "correct_answer": "A belief is justified if and only if it is produced by a cognitive process that reliably yields true beliefs.",
+    "distractors": [
+      "A belief is justified only if the believer can consciously articulate the logical reasons that support it.",
+      "A belief is justified when it coheres with the majority of other beliefs held by the epistemic community.",
+      "A belief is justified whenever it is endorsed by a recognized authority in the relevant field of inquiry."
+    ],
+    "difficulty": 3,
+    "source_article": "Reliabilism",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["reliabilism"]
+  },
+  {
+    "question_text": "What does the Duhem-Quine thesis assert about the relationship between scientific hypotheses and empirical evidence?",
+    "correct_answer": "That no single hypothesis can be conclusively falsified in isolation because testing always relies on auxiliary assumptions.",
+    "distractors": [
+      "That every scientific hypothesis can be definitively confirmed by a single crucial experiment under controlled conditions.",
+      "That empirical evidence always uniquely determines exactly one correct scientific theory with no possible alternatives.",
+      "That scientific hypotheses are purely mathematical constructs that bear no meaningful connection to observable phenomena."
+    ],
+    "difficulty": 4,
+    "source_article": "Underdetermination",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["underdetermination of theory by evidence"]
+  },
+  {
+    "question_text": "What does Saul Kripke mean by a 'rigid designator' in his work 'Naming and Necessity'?",
+    "correct_answer": "A term that refers to the same object in every possible world in which that object exists.",
+    "distractors": [
+      "A definite description that picks out an object solely by listing its contingent properties in the actual world.",
+      "A logical variable that can be freely substituted for any constant within a formal system of predicate calculus.",
+      "A linguistic expression whose meaning changes depending on the conversational context in which it is uttered."
+    ],
+    "difficulty": 4,
+    "source_article": "Rigid designator",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["rigid designator"]
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "An operating system manages computer hardware and software resources. What is generally considered the first operating system, created in 1956 for the IBM 704?",
+    "correct_answer": "GM-NAA I/O, developed by General Motors and North American Aviation",
+    "distractors": [
+      "BESYS, developed by Bell Labs for the IBM 7090",
+      "IBSYS, developed by IBM for its 7090 and 7094 mainframes",
+      "CTSS, developed at MIT for the IBM 7094"
+    ],
+    "difficulty": 1,
+    "source_article": "Operating system",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["operating system"]
+  },
+  {
+    "question_text": "The Internet originated from ARPANET. On October 29, 1969, the first ARPANET message was intended to be 'login,' but the system crashed. What letters were actually transmitted?",
+    "correct_answer": "Only 'L' and 'O' were sent before the system crashed",
+    "distractors": [
+      "Only the letter 'L' was sent before the connection timed out",
+      "The full word 'log' was transmitted before a buffer overflow occurred",
+      "Only 'L', 'O', and 'G' were sent before a routing error stopped the transfer"
+    ],
+    "difficulty": 1,
+    "source_article": "Internet",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["internet"]
+  },
+  {
+    "question_text": "A database is an organized collection of data managed by a DBMS. What does DBMS stand for, and what is its primary role?",
+    "correct_answer": "Database Management System; it manages storage, retrieval, and administration of data",
+    "distractors": [
+      "Data Block Management Service; it handles physical disk allocation and defragmentation",
+      "Digital Backup and Migration System; it automates data replication across servers",
+      "Database Monitoring and Security system; it provides real-time intrusion detection for stored data"
+    ],
+    "difficulty": 1,
+    "source_article": "Database",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["database"]
+  },
+  {
+    "question_text": "In a computer network, which topology connects every device directly to every other device, providing maximum redundancy but at the highest cabling cost?",
+    "correct_answer": "Mesh topology (specifically full mesh topology)",
+    "distractors": [
+      "Star topology, where all devices connect through a central hub",
+      "Ring topology, where each device connects to exactly two neighbors",
+      "Bus topology, where all devices share a single backbone cable"
+    ],
+    "difficulty": 1,
+    "source_article": "Computer network",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["computer network"]
+  },
+  {
+    "question_text": "Software is broadly divided into two main categories. Which two categories are they?",
+    "correct_answer": "System software (e.g., operating systems) and application software (e.g., word processors)",
+    "distractors": [
+      "Compiled software (e.g., C programs) and interpreted software (e.g., Python scripts)",
+      "Open-source software (e.g., Linux) and proprietary software (e.g., Windows)",
+      "Firmware (e.g., BIOS) and middleware (e.g., database connectors)"
+    ],
+    "difficulty": 1,
+    "source_article": "Software",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["software"]
+  },
+  {
+    "question_text": "A computer virus replicates by inserting its code into other programs. What was the name of the first known computer virus, created by Bob Thomas at BBN Technologies in 1971?",
+    "correct_answer": "Creeper, which spread across ARPANET displaying 'I'm the creeper, catch me if you can!'",
+    "distractors": [
+      "Brain, which infected IBM PC boot sectors and was created in Pakistan",
+      "Elk Cloner, which spread via Apple II floppy disks and displayed a poem",
+      "Morris Worm, which exploited Unix sendmail vulnerabilities to replicate across the Internet"
+    ],
+    "difficulty": 1,
+    "source_article": "Computer virus",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["computer virus"]
+  },
+  {
+    "question_text": "According to NIST Special Publication 800-145, cloud computing has five essential characteristics. Which of the following is one of those five characteristics?",
+    "correct_answer": "On-demand self-service, allowing users to provision computing resources automatically without human interaction",
+    "distractors": [
+      "Guaranteed uptime of 99.999%, ensuring continuous availability under all conditions",
+      "Mandatory data encryption at rest, requiring all stored data to be encrypted by default",
+      "Automatic geographic redundancy, replicating all data across at least three continents"
+    ],
+    "difficulty": 1,
+    "source_article": "Cloud computing",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["cloud computing"]
+  },
+  {
+    "question_text": "Computer hardware refers to the physical components of a computer. Which component is often called the 'brain' of the computer because it executes instructions and performs calculations?",
+    "correct_answer": "The central processing unit (CPU)",
+    "distractors": [
+      "The random-access memory (RAM), which stores running programs",
+      "The motherboard, which connects all components together",
+      "The graphics processing unit (GPU), which renders visual output"
+    ],
+    "difficulty": 1,
+    "source_article": "Computer hardware",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["computer hardware"]
+  },
+  {
+    "question_text": "A file system governs how data is organized and accessed on storage media. Which file system, introduced with Windows NT in 1993, replaced FAT32 and supports a maximum file size of 16 exabytes?",
+    "correct_answer": "NTFS (New Technology File System)",
+    "distractors": [
+      "ext4 (Fourth Extended File System), the default for most Linux distributions",
+      "HFS+ (Hierarchical File System Plus), used by macOS before APFS",
+      "ZFS (Zettabyte File System), originally developed by Sun Microsystems"
+    ],
+    "difficulty": 1,
+    "source_article": "File system",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["file system"]
+  },
+  {
+    "question_text": "According to the NIST Digital Identity Guidelines, what are the two parties involved in password-based authentication called?",
+    "correct_answer": "The claimant (who holds the password) and the verifier (who checks the identity)",
+    "distractors": [
+      "The principal (who requests access) and the guardian (who grants permissions)",
+      "The authenticator (who provides credentials) and the arbiter (who validates them)",
+      "The supplicant (who submits the secret) and the gatekeeper (who controls entry)"
+    ],
+    "difficulty": 1,
+    "source_article": "Password",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["password"]
+  }
+]

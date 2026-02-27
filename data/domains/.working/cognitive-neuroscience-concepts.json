@@ -1,0 +1,66 @@
+{
+  "domain": "cognitive-neuroscience",
+  "parent_domain": "neuroscience",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      "perception",
+      "attention",
+      "memory",
+      "emotion",
+      "consciousness",
+      "learning",
+      "executive functions",
+      "intelligence",
+      "sleep",
+      "motivation",
+      "decision-making",
+      "imagination",
+      "psycholinguistics"
+    ],
+    "L2": [
+      "hippocampus",
+      "prefrontal cortex",
+      "aphasia",
+      "working memory",
+      "long-term memory",
+      "lateralization of brain function",
+      "default mode network",
+      "event-related potential",
+      "cognitive bias",
+      "face perception",
+      "spatial memory",
+      "theory of mind",
+      "cognitive development"
+    ],
+    "L3": [
+      "place cell",
+      "Stroop effect",
+      "change blindness",
+      "episodic memory",
+      "semantic memory",
+      "mental rotation",
+      "inattentional blindness",
+      "phonological loop",
+      "memory consolidation",
+      "cognitive reserve",
+      "N400",
+      "Wisconsin card sorting test"
+    ],
+    "L4": [
+      "grid cell",
+      "global workspace theory",
+      "neural correlates of consciousness",
+      "memory reconsolidation",
+      "hemispatial neglect",
+      "somatic marker hypothesis",
+      "McGurk effect",
+      "rubber hand illusion",
+      "levels-of-processing effect",
+      "inhibition of return",
+      "contralateral delay activity",
+      "blindsight"
+    ]
+  }
+}

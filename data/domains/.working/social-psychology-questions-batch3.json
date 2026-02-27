@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "According to Robert Zajonc's drive theory of social facilitation, how does the presence of others affect task performance?",
+    "correct_answer": "It enhances performance on simple or well-learned tasks but impairs performance on complex or novel tasks.",
+    "distractors": [
+      "It uniformly improves performance on all types of tasks by increasing overall cognitive arousal.",
+      "It impairs performance on simple tasks because attentional resources are diverted to monitoring the audience.",
+      "It has no measurable effect on individual performance and only influences group-level productivity."
+    ],
+    "difficulty": 2,
+    "source_article": "Social facilitation",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["social facilitation"]
+  },
+  {
+    "question_text": "What is the self-serving bias in attribution?",
+    "correct_answer": "The tendency to attribute one's successes to internal factors and one's failures to external factors.",
+    "distractors": [
+      "The tendency to attribute both successes and failures of others to their stable personality traits.",
+      "The tendency to attribute one's successes to luck and one's failures to lack of personal ability.",
+      "The tendency to recall information that confirms one's pre-existing beliefs while ignoring contradictory evidence."
+    ],
+    "difficulty": 2,
+    "source_article": "Self-serving bias",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["self-serving bias"]
+  },
+  {
+    "question_text": "What does deindividuation describe in social psychology?",
+    "correct_answer": "A loss of individual self-awareness and personal responsibility that occurs in group settings or conditions of anonymity.",
+    "distractors": [
+      "A deliberate strategy of suppressing personal opinions to maintain harmony within a cohesive group.",
+      "A process by which group members assign specialized roles to each individual to increase efficiency.",
+      "A reduction in effort that individuals exert when their contributions to a group task cannot be identified."
+    ],
+    "difficulty": 2,
+    "source_article": "Deindividuation",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["deindividuation"]
+  },
+  {
+    "question_text": "How does the door-in-the-face technique operate as a compliance strategy?",
+    "correct_answer": "A large request expected to be refused is made first, followed by a smaller target request that appears more reasonable by comparison.",
+    "distractors": [
+      "A small initial request is made first to gain agreement, then a much larger follow-up request is introduced.",
+      "Two equally sized requests are presented simultaneously so the target feels obligated to accept at least one.",
+      "A single moderate request is repeated several times until the target agrees out of social pressure."
+    ],
+    "difficulty": 2,
+    "source_article": "Door-in-the-face technique",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["door-in-the-face technique"]
+  },
+  {
+    "question_text": "What is the mere exposure effect as studied by Robert Zajonc?",
+    "correct_answer": "The phenomenon whereby repeated exposure to a stimulus increases a person's liking for it, even without conscious recognition.",
+    "distractors": [
+      "The phenomenon whereby initial positive attitudes toward a stimulus strengthen only when paired with explicit rewards.",
+      "The tendency for novel stimuli to be rated more favorably than familiar ones due to curiosity-driven arousal.",
+      "The finding that a single vivid exposure to a stimulus produces stronger preferences than multiple brief exposures."
+    ],
+    "difficulty": 2,
+    "source_article": "Mere-exposure effect",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["mere exposure effect"]
+  },
+  {
+    "question_text": "In social psychology, what role does the ego defense mechanism of displacement play in scapegoating?",
+    "correct_answer": "Feelings of frustration and aggression are redirected from their actual source onto a less powerful, often innocent, target group.",
+    "distractors": [
+      "Feelings of guilt are suppressed entirely so that the individual no longer consciously experiences any negative emotion.",
+      "Positive qualities of the in-group are projected onto the out-group to create a false sense of intergroup equality.",
+      "Competitive motivations are sublimated into cooperative behaviors directed toward the weaker group."
+    ],
+    "difficulty": 2,
+    "source_article": "Scapegoating",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["scapegoating"]
+  },
+  {
+    "question_text": "In Milgram's original obedience experiment at Yale University, what percentage of participants administered the maximum 450-volt shock when instructed by the experimenter?",
+    "correct_answer": "Approximately 65 percent of participants delivered the maximum shock, obeying the authority figure's commands to the end.",
+    "distractors": [
+      "Approximately 30 percent delivered the maximum shock, with the majority refusing once the learner protested.",
+      "Approximately 90 percent delivered the maximum shock, with almost no participants showing any hesitation.",
+      "Approximately 10 percent delivered the maximum shock, confirming that most people resist clearly harmful orders."
+    ],
+    "difficulty": 3,
+    "source_article": "Milgram experiment",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["Milgram obedience experiment"]
+  },
+  {
+    "question_text": "In Asch's conformity experiments, approximately what fraction of participants conformed with an obviously incorrect majority judgment on at least one critical trial?",
+    "correct_answer": "About 75 percent conformed at least once, though only about one-third of all critical-trial responses were conforming.",
+    "distractors": [
+      "About 95 percent conformed at least once, indicating near-universal susceptibility to majority influence.",
+      "About 25 percent conformed at least once, showing that the vast majority consistently trusted their own perception.",
+      "About 50 percent conformed at least once, and the rate remained constant regardless of the number of confederates."
+    ],
+    "difficulty": 3,
+    "source_article": "Asch conformity experiments",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["Asch conformity experiments"]
+  },
+  {
+    "question_text": "In Harold Kelley's covariation model of attribution, which three types of information do people use to determine whether behavior is caused by internal or external factors?",
+    "correct_answer": "Consensus, distinctiveness, and consistency information about the actor, the entity, and the situation over time.",
+    "distractors": [
+      "Valence, arousal, and dominance information about the emotional state accompanying the observed behavior.",
+      "Primacy, recency, and salience information about the order and vividness of behavioral observations.",
+      "Ability, effort, and luck information about the resources available to the actor at the time of the behavior."
+    ],
+    "difficulty": 3,
+    "source_article": "Attribution (psychology)",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["attribution theory"]
+  },
+  {
+    "question_text": "In Petty and Cacioppo's elaboration likelihood model, what determines whether persuasion occurs through the central route or the peripheral route?",
+    "correct_answer": "The individual's motivation and ability to engage in effortful cognitive processing of the message arguments.",
+    "distractors": [
+      "The emotional valence of the message, with positive messages processed centrally and negative messages peripherally.",
+      "The physical medium of communication, with written messages processed centrally and spoken messages peripherally.",
+      "The number of arguments presented, with fewer arguments triggering central processing and more triggering peripheral processing."
+    ],
+    "difficulty": 3,
+    "source_article": "Elaboration likelihood model",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["elaboration likelihood model"]
+  }
+]

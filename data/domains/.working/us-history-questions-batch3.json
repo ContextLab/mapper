@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Which two landmark programs were created by the Social Security Amendments of 1965 as part of Lyndon B. Johnson's Great Society?",
+    "correct_answer": "Medicare, providing health insurance for those aged 65 and over, and Medicaid, funding medical costs for low-income individuals.",
+    "distractors": [
+      "Social Security Disability Insurance for injured workers and Supplemental Security Income funding living costs for low-income elderly.",
+      "Head Start, providing early childhood education for low-income families, and VISTA, sending volunteers to impoverished communities.",
+      "Food Stamps, providing nutritional assistance for low-income households, and Job Corps, offering vocational training for unemployed youth."
+    ],
+    "difficulty": 2,
+    "source_article": "Great Society",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Great Society"]
+  },
+  {
+    "question_text": "What federal law, signed by President Andrew Jackson in 1830, authorized the forced relocation of Native Americans known as the Trail of Tears?",
+    "correct_answer": "The Indian Removal Act, which authorized the president to negotiate removal treaties with Native American tribes east of the Mississippi.",
+    "distractors": [
+      "The Dawes Act, which authorized the president to survey and allot tribal lands to individual Native American households.",
+      "The Indian Appropriations Act, which authorized the president to establish reservations and confine tribes to designated federal territories.",
+      "The Indian Trade and Intercourse Act, which authorized the president to regulate commerce and restrict settlement on tribal lands."
+    ],
+    "difficulty": 2,
+    "source_article": "Trail of Tears",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Trail of Tears"]
+  },
+  {
+    "question_text": "What was the 'Saturday Night Massacre' during the Watergate scandal?",
+    "correct_answer": "Nixon's firing of special prosecutor Archibald Cox in October 1973, prompting the resignations of Attorney General Richardson and Deputy Attorney General Ruckelshaus.",
+    "distractors": [
+      "Nixon's ordering the CIA to halt the FBI's Watergate investigation in October 1973, prompting the resignations of FBI Director Gray and Deputy Director Felt.",
+      "Nixon's dismissal of White House counsel John Dean in October 1973, prompting the resignations of Chief of Staff Haldeman and domestic advisor Ehrlichman.",
+      "Nixon's firing of Senate Watergate committee chairman Sam Ervin in October 1973, prompting the resignations of Vice President Agnew and Solicitor General Bork."
+    ],
+    "difficulty": 2,
+    "source_article": "Watergate scandal",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Watergate scandal"]
+  },
+  {
+    "question_text": "Which amendment to the U.S. Constitution granted women the right to vote, and when was it ratified?",
+    "correct_answer": "The Nineteenth Amendment, ratified on August 18, 1920.",
+    "distractors": [
+      "The Eighteenth Amendment, ratified on January 16, 1919.",
+      "The Twentieth Amendment, ratified on January 23, 1933.",
+      "The Seventeenth Amendment, ratified on April 8, 1913."
+    ],
+    "difficulty": 2,
+    "source_article": "Women's suffrage in the United States",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["women's suffrage in the United States"]
+  },
+  {
+    "question_text": "What role did Samuel Slater play in launching the Industrial Revolution in the United States?",
+    "correct_answer": "He brought British textile manufacturing knowledge to America and built the first successful water-powered cotton spinning mill in Pawtucket, Rhode Island, in 1793.",
+    "distractors": [
+      "He invented the cotton gin in Georgia and built the first successful steam-powered cotton processing plant in Savannah, Georgia, in 1793.",
+      "He imported British iron smelting techniques to America and built the first successful coal-fired blast furnace in Pittsburgh, Pennsylvania, in 1793.",
+      "He adapted British railroad engineering for America and built the first successful steam-powered locomotive line in Baltimore, Maryland, in 1793."
+    ],
+    "difficulty": 2,
+    "source_article": "Industrialization in the United States",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Industrial Revolution in the United States"]
+  },
+  {
+    "question_text": "How did the Korean War begin, and what was the outcome when it ended in 1953?",
+    "correct_answer": "North Korea invaded South Korea across the 38th parallel in June 1950; a 1953 armistice left Korea divided near the same line.",
+    "distractors": [
+      "South Korea attacked North Korea across the 39th parallel in June 1950; a 1953 peace treaty unified Korea under a single democratic government.",
+      "North Korea invaded South Korea across the 37th parallel in August 1950; a 1953 ceasefire ceded the northern provinces permanently to China.",
+      "China invaded South Korea across the Yalu River in June 1950; a 1953 armistice created an independent buffer state between the two Koreas."
+    ],
+    "difficulty": 2,
+    "source_article": "Korean War",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Korean War"]
+  },
+  {
+    "question_text": "What were the key provisions of the Missouri Compromise of 1820, and what later legislation effectively repealed it?",
+    "correct_answer": "It admitted Missouri as slave and Maine as free, banned slavery above 36 30 in the Louisiana Purchase; the 1854 Kansas-Nebraska Act repealed it.",
+    "distractors": [
+      "It admitted Missouri as free and Kentucky as slave, banned slavery above 40 degrees in Oregon Territory; the 1850 Compromise repealed it.",
+      "It admitted Missouri as slave and Vermont as free, banned slavery above 38 degrees in all western territories; the 1850 Fugitive Slave Act repealed it.",
+      "It admitted Missouri as slave and Ohio as free, banned slavery above 35 degrees in the Northwest Territory; the 1846 Wilmot Proviso repealed it."
+    ],
+    "difficulty": 3,
+    "source_article": "Missouri Compromise",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Missouri Compromise"]
+  },
+  {
+    "question_text": "In Dred Scott v. Sandford (1857), what did Chief Justice Roger B. Taney's majority opinion rule regarding African Americans and the Missouri Compromise?",
+    "correct_answer": "That African Americans were not citizens and could not sue in federal court, and that the Missouri Compromise violated slaveholders' Fifth Amendment property rights.",
+    "distractors": [
+      "That African Americans were citizens but lacked voting rights, and that the Missouri Compromise violated states' reserved powers under the Tenth Amendment.",
+      "That African Americans were not citizens but could petition state courts, and that the Missouri Compromise violated the First Amendment right to free assembly.",
+      "That African Americans held limited citizenship with restricted legal standing, and that the Missouri Compromise exceeded Congress's authority under the Commerce Clause."
+    ],
+    "difficulty": 3,
+    "source_article": "Dred Scott v. Sandford",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Dred Scott v. Sandford"]
+  },
+  {
+    "question_text": "What was the Omaha Platform of 1892, and what happened to the Populist Party after the 1896 presidential election?",
+    "correct_answer": "The People's Party platform demanding free silver coinage, railroad regulation, and a graduated income tax; the party collapsed after endorsing Bryan's Democrats in 1896.",
+    "distractors": [
+      "The People's Party platform demanding protective tariffs, national banking reform, and land grants for settlers; the party collapsed after endorsing McKinley's Republicans in 1896.",
+      "The People's Party platform demanding gold standard restoration, trust regulation, and an eight-hour workday; the party collapsed after endorsing Weaver's Greenback ticket in 1896.",
+      "The People's Party platform demanding currency inflation, Senate abolition, and public ownership of utilities; the party collapsed after endorsing Debs's Socialist ticket in 1896."
+    ],
+    "difficulty": 3,
+    "source_article": "People's Party (United States)",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Populist movement"]
+  },
+  {
+    "question_text": "What did the Reconstruction Acts of 1867, passed by the Radical Republicans over President Johnson's veto, impose on the former Confederate states?",
+    "correct_answer": "They divided the South into five military districts under army generals, requiring states to ratify the Fourteenth Amendment and enfranchise Black men before readmission.",
+    "distractors": [
+      "They divided the South into three civilian zones under federal judges, requiring states to ratify the Thirteenth Amendment and abolish debt peonage before readmission.",
+      "They divided the South into seven territories under appointed governors, requiring states to ratify the Fifteenth Amendment and redistribute plantation land before readmission.",
+      "They divided the South into ten probationary counties under Treasury agents, requiring states to ratify the Twelfth Amendment and integrate public schools before readmission."
+    ],
+    "difficulty": 3,
+    "source_article": "Radical Republicans",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Radical Reconstruction"]
+  }
+]

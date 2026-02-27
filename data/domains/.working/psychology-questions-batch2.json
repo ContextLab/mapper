@@ -1,0 +1,172 @@
+[
+  {
+    "question_text": "Which ethical principle requires psychologists to fully inform research participants about the nature, risks, and benefits of a study before they agree to take part?",
+    "correct_answer": "Informed consent",
+    "distractors": [
+      "Institutional review",
+      "Participant debriefing",
+      "Confidentiality assurance"
+    ],
+    "difficulty": 1,
+    "source_article": "Ethics in psychology",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "ethics in psychology"
+    ]
+  },
+  {
+    "question_text": "What is the definition of psychology as a scientific discipline?",
+    "correct_answer": "The scientific study of the mind and behavior",
+    "distractors": [
+      "The philosophical analysis of consciousness and free will",
+      "The medical treatment of mental disorders and illnesses",
+      "The systematic study of social institutions and culture"
+    ],
+    "difficulty": 1,
+    "source_article": "Psychology",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "nature of psychology"
+    ]
+  },
+  {
+    "question_text": "What field of research uses genetic methods such as twin and adoption studies to investigate how hereditary and environmental factors influence individual differences in behavior?",
+    "correct_answer": "Behavioural genetics",
+    "distractors": [
+      "Evolutionary psychology",
+      "Developmental neuroscience",
+      "Cognitive neuropsychology"
+    ],
+    "difficulty": 1,
+    "source_article": "Behavioural genetics",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "heredity and behavior"
+    ]
+  },
+  {
+    "question_text": "In Maslow's hierarchy of needs, which level must be satisfied first before an individual can pursue safety, belonging, esteem, and self-actualization?",
+    "correct_answer": "Physiological needs such as food, water, and sleep",
+    "distractors": [
+      "Safety needs such as shelter, employment, and health",
+      "Esteem needs such as recognition, status, and respect",
+      "Belonging needs such as friendship, family, and intimacy"
+    ],
+    "difficulty": 2,
+    "source_article": "Maslow's hierarchy of needs",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "Maslow's hierarchy of needs"
+    ]
+  },
+  {
+    "question_text": "In the Big Five personality model (OCEAN), which trait describes a person's tendency toward depression, irritability, and proneness to anxiety?",
+    "correct_answer": "Neuroticism",
+    "distractors": [
+      "Agreeableness",
+      "Conscientiousness",
+      "Openness"
+    ],
+    "difficulty": 2,
+    "source_article": "Big Five personality traits",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "Big Five personality traits"
+    ]
+  },
+  {
+    "question_text": "What are the chemical signaling molecules called that are released from synaptic vesicles into the synaptic cleft to transmit signals between neurons?",
+    "correct_answer": "Neurotransmitters",
+    "distractors": [
+      "Neuromodulators",
+      "Neurohormones",
+      "Neuropeptides"
+    ],
+    "difficulty": 2,
+    "source_article": "Neurotransmitter",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "neurotransmitter"
+    ]
+  },
+  {
+    "question_text": "Which subfield of psychology, also known as biological psychology or psychobiology, focuses on the biological and neural substrates underlying behavior and mental processes?",
+    "correct_answer": "Behavioral neuroscience, also called biopsychology",
+    "distractors": [
+      "Cognitive neuroscience, also called mind science",
+      "Clinical neuropsychology, also called brain pathology",
+      "Computational neuroscience, also called neural modeling"
+    ],
+    "difficulty": 2,
+    "source_article": "Behavioral neuroscience",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "biopsychology"
+    ]
+  },
+  {
+    "question_text": "Which applied branch of psychology focuses on studying human behavior in the workplace, including employee selection, training, performance evaluation, and organizational development?",
+    "correct_answer": "Industrial-organizational psychology",
+    "distractors": [
+      "Occupational health psychology",
+      "Human factors engineering psychology",
+      "Management and leadership psychology"
+    ],
+    "difficulty": 2,
+    "source_article": "Industrial and organizational psychology",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "industrial-organizational psychology"
+    ]
+  },
+  {
+    "question_text": "Which subfield of psychology examines how biological, psychological, and social factors influence health, illness, and health-related behaviors using the biopsychosocial model?",
+    "correct_answer": "Health psychology",
+    "distractors": [
+      "Clinical psychology",
+      "Behavioral medicine",
+      "Psychiatric epidemiology"
+    ],
+    "difficulty": 2,
+    "source_article": "Health psychology",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "health psychology"
+    ]
+  },
+  {
+    "question_text": "Which branch of psychology studies how people learn in educational settings and aims to improve teaching effectiveness through the application of psychological research?",
+    "correct_answer": "Educational psychology",
+    "distractors": [
+      "Instructional design theory",
+      "Developmental psychology",
+      "School counseling psychology"
+    ],
+    "difficulty": 2,
+    "source_article": "Educational psychology",
+    "domain_ids": [
+      "psychology"
+    ],
+    "concepts_tested": [
+      "educational psychology"
+    ]
+  }
+]

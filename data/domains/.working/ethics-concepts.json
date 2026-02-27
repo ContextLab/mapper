@@ -1,0 +1,266 @@
+{
+  "domain": "ethics",
+  "parent_domain": "philosophy",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {
+        "concept": "morality",
+        "wikipedia_article": "Morality",
+        "brief_rationale": "The most fundamental concept in ethics, universally recognized as the distinction between right and wrong conduct."
+      },
+      {
+        "concept": "justice",
+        "wikipedia_article": "Justice",
+        "brief_rationale": "A core social and ethical value concerning fairness, equity, and rightful treatment, familiar to all cultures."
+      },
+      {
+        "concept": "human rights",
+        "wikipedia_article": "Human rights",
+        "brief_rationale": "Universally recognized entitlements of all persons, foundational to contemporary moral and political discourse."
+      },
+      {
+        "concept": "honesty",
+        "wikipedia_article": "Honesty",
+        "brief_rationale": "A basic moral virtue universally understood as truthfulness and avoidance of deception."
+      },
+      {
+        "concept": "compassion",
+        "wikipedia_article": "Compassion",
+        "brief_rationale": "Widely recognized moral sentiment involving empathy and concern for the suffering of others."
+      },
+      {
+        "concept": "fairness",
+        "wikipedia_article": "Fairness",
+        "brief_rationale": "An intuitive moral concept involving equal and impartial treatment, understood by all age groups and cultures."
+      },
+      {
+        "concept": "good and evil",
+        "wikipedia_article": "Good and evil",
+        "brief_rationale": "The most basic moral polarity, universally present across religious, cultural, and philosophical traditions."
+      },
+      {
+        "concept": "conscience",
+        "wikipedia_article": "Conscience",
+        "brief_rationale": "The inner moral sense familiar to everyday discourse, guiding individuals in distinguishing right from wrong."
+      },
+      {
+        "concept": "virtue",
+        "wikipedia_article": "Virtue",
+        "brief_rationale": "A universally recognized moral quality of excellence in character, central to common moral language."
+      },
+      {
+        "concept": "rights",
+        "wikipedia_article": "Rights",
+        "brief_rationale": "Widely understood entitlements that constrain how individuals may be treated, foundational to moral and legal reasoning."
+      },
+      {
+        "concept": "duty",
+        "wikipedia_article": "Duty",
+        "brief_rationale": "A common moral concept referring to obligations one is bound to fulfill, recognized in everyday and professional contexts."
+      },
+      {
+        "concept": "harm",
+        "wikipedia_article": "Harm",
+        "brief_rationale": "The intuitive moral baseline — causing harm is broadly recognized as wrong — underpinning most ethical systems."
+      },
+      {
+        "concept": "equality",
+        "wikipedia_article": "Equality before the law",
+        "brief_rationale": "A foundational value in ethics and political philosophy, universally understood as treating persons the same under shared rules."
+      }
+    ],
+    "L2": [
+      {
+        "concept": "utilitarianism",
+        "wikipedia_article": "Utilitarianism",
+        "brief_rationale": "The most widely taught consequentialist theory, holding that the right action maximizes overall well-being or utility."
+      },
+      {
+        "concept": "categorical imperative",
+        "wikipedia_article": "Categorical imperative",
+        "brief_rationale": "Kant's supreme principle of morality — act only on maxims you could will to be universal laws — central to deontological ethics."
+      },
+      {
+        "concept": "virtue ethics",
+        "wikipedia_article": "Virtue ethics",
+        "brief_rationale": "An Aristotelian approach focusing on character and human flourishing rather than rules or consequences, taught in introductory ethics courses."
+      },
+      {
+        "concept": "deontological ethics",
+        "wikipedia_article": "Deontology",
+        "brief_rationale": "The family of theories holding that the morality of an action depends on its conformity to rules or duties, not outcomes."
+      },
+      {
+        "concept": "consequentialism",
+        "wikipedia_article": "Consequentialism",
+        "brief_rationale": "The view that the rightness of an action is determined solely by its consequences, encompassing utilitarianism and related theories."
+      },
+      {
+        "concept": "social contract",
+        "wikipedia_article": "Social contract",
+        "brief_rationale": "The foundational political-ethical idea that moral and political obligations derive from agreement among individuals, associated with Hobbes, Locke, and Rousseau."
+      },
+      {
+        "concept": "trolley problem",
+        "wikipedia_article": "Trolley problem",
+        "brief_rationale": "The canonical ethical thought experiment used to probe intuitions about the permissibility of causing harm to prevent greater harm."
+      },
+      {
+        "concept": "moral relativism",
+        "wikipedia_article": "Moral relativism",
+        "brief_rationale": "The view that moral judgments are relative to cultural or individual standards rather than universal, a standard topic in introductory ethics."
+      },
+      {
+        "concept": "natural law",
+        "wikipedia_article": "Natural law",
+        "brief_rationale": "The long-standing tradition holding that morality is grounded in nature or reason and discoverable through rational inquiry."
+      },
+      {
+        "concept": "hedonism",
+        "wikipedia_article": "Hedonism",
+        "brief_rationale": "The view that pleasure is the highest good and proper aim of action, foundational to utilitarian and Epicurean thought."
+      },
+      {
+        "concept": "moral realism",
+        "wikipedia_article": "Moral realism",
+        "brief_rationale": "The metaethical position that objective moral facts exist independently of minds or cultures, a core topic in metaethics courses."
+      },
+      {
+        "concept": "applied ethics",
+        "wikipedia_article": "Applied ethics",
+        "brief_rationale": "The branch of ethics that applies moral principles to specific practical domains such as medicine, law, and business."
+      },
+      {
+        "concept": "golden rule",
+        "wikipedia_article": "Golden Rule",
+        "brief_rationale": "The principle of treating others as one wishes to be treated, present across virtually all ethical and religious traditions and familiar to philosophy students as a bridge to formal reciprocity arguments."
+      }
+    ],
+    "L3": [
+      {
+        "concept": "moral universalism",
+        "wikipedia_article": "Moral universalism",
+        "brief_rationale": "The position that certain moral truths apply to all persons at all times, standing in direct contrast to moral relativism and requiring substantive engagement with metaethics."
+      },
+      {
+        "concept": "act utilitarianism vs rule utilitarianism",
+        "wikipedia_article": "Rule utilitarianism",
+        "brief_rationale": "The distinction between evaluating individual acts by their consequences versus evaluating rules whose general adoption maximizes utility — a key internal debate within consequentialism."
+      },
+      {
+        "concept": "doctrine of double effect",
+        "wikipedia_article": "Principle of double effect",
+        "brief_rationale": "The principle that an action causing harm as a side effect of achieving a good outcome may be permissible under specified conditions, central to medical ethics and just war theory."
+      },
+      {
+        "concept": "moral intuitionism",
+        "wikipedia_article": "Moral intuitionism",
+        "brief_rationale": "The metaethical view that basic moral truths are self-evident and known through direct intuition, associated with G.E. Moore and W.D. Ross."
+      },
+      {
+        "concept": "error theory",
+        "wikipedia_article": "Error theory",
+        "brief_rationale": "J.L. Mackie's metaethical view that moral claims purport to state objective facts but systematically fail to do so, making all positive moral assertions false."
+      },
+      {
+        "concept": "prima facie duties",
+        "wikipedia_article": "Prima facie",
+        "brief_rationale": "W.D. Ross's pluralistic deontological framework distinguishing duties that hold unless overridden by stronger competing duties, requiring understanding of how moral obligations conflict."
+      },
+      {
+        "concept": "reflective equilibrium",
+        "wikipedia_article": "Reflective equilibrium",
+        "brief_rationale": "Rawls's method of moral justification that seeks coherence between particular moral judgments and general principles through iterative revision."
+      },
+      {
+        "concept": "moral luck",
+        "wikipedia_article": "Moral luck",
+        "brief_rationale": "The problem that factors outside an agent's control affect moral judgments of their responsibility, challenging the Kantian idea that only will determines moral worth."
+      },
+      {
+        "concept": "egoism",
+        "wikipedia_article": "Ethical egoism",
+        "brief_rationale": "The normative view that agents ought to act in their own self-interest, requiring careful distinction from psychological egoism and from altruism."
+      },
+      {
+        "concept": "bioethics",
+        "wikipedia_article": "Bioethics",
+        "brief_rationale": "The application of ethical reasoning to biological and medical questions — including consent, end-of-life decisions, and genetic manipulation — requiring working knowledge of both science and ethics."
+      },
+      {
+        "concept": "animal ethics",
+        "wikipedia_article": "Animal rights",
+        "brief_rationale": "The question of what moral consideration is owed to non-human animals, engaging utilitarian, deontological, and relational frameworks and requiring substantive analysis."
+      },
+      {
+        "concept": "distributive justice",
+        "wikipedia_article": "Distributive justice",
+        "brief_rationale": "Theories governing the fair allocation of benefits and burdens in society, encompassing Rawlsian egalitarianism, libertarianism, and sufficiency views."
+      }
+    ],
+    "L4": [
+      {
+        "concept": "non-identity problem",
+        "wikipedia_article": "Non-identity problem",
+        "brief_rationale": "Derek Parfit's puzzle about how policies harming future persons can be wrong when those persons would not have existed under alternative policies, challenging standard harm-based ethics."
+      },
+      {
+        "concept": "contractualism",
+        "wikipedia_article": "Contractualism",
+        "brief_rationale": "T.M. Scanlon's theory that an action is wrong if its performance is disallowed by principles no one could reasonably reject, a sophisticated alternative to Rawlsian contractarianism and consequentialism."
+      },
+      {
+        "concept": "expressivist metaethics",
+        "wikipedia_article": "Expressivism (metaethics)",
+        "brief_rationale": "The family of metaethical views (including Blackburn's quasi-realism and Gibbard's norm-expressivism) holding that moral statements express attitudes rather than describe facts."
+      },
+      {
+        "concept": "moral particularism",
+        "wikipedia_article": "Moral particularism",
+        "brief_rationale": "Jonathan Dancy's view that the moral relevance of any feature of a situation is not fixed across cases, rejecting the existence of exceptionless moral principles."
+      },
+      {
+        "concept": "effective altruism",
+        "wikipedia_article": "Effective altruism",
+        "brief_rationale": "The research-backed movement applying rigorous evidence and reasoning to determine how to do the most good, engaging deep questions in population ethics and global priority-setting."
+      },
+      {
+        "concept": "repugnant conclusion",
+        "wikipedia_article": "Mere addition paradox",
+        "brief_rationale": "Parfit's result that classical total utilitarianism implies it would be better to have a vast population with lives barely worth living than a smaller population of very happy people, driving population ethics research."
+      },
+      {
+        "concept": "Frankfurt cases",
+        "wikipedia_article": "Frankfurt cases",
+        "brief_rationale": "Harry Frankfurt's thought experiments designed to show that moral responsibility does not require the ability to do otherwise, challenging the principle of alternate possibilities."
+      },
+      {
+        "concept": "moral functionalism",
+        "wikipedia_article": "Cornell realism",
+        "brief_rationale": "The metaethical realist position associated with Richard Boyd and Nicholas Sturgeon holding that moral properties are natural, causally efficacious properties, grounding moral epistemology in a causal-historical account."
+      },
+      {
+        "concept": "Kantian constructivism",
+        "wikipedia_article": "Kantian constructivism",
+        "brief_rationale": "Rawls's metaethical view that moral principles are constructed through an idealized procedure of practical reason rather than discovered as pre-existing facts, articulated in his 1980 Dewey Lectures."
+      },
+      {
+        "concept": "adaptive preferences",
+        "wikipedia_article": "Adaptive preferences",
+        "brief_rationale": "The problem, central to Sen and Nussbaum's capabilities approach, that oppressed persons may adjust their preferences to unjust circumstances, undermining preference-satisfaction as a welfare metric."
+      },
+      {
+        "concept": "just war theory",
+        "wikipedia_article": "Just war theory",
+        "brief_rationale": "The systematic framework for evaluating the moral permissibility of going to war (jus ad bellum) and conduct within war (jus in bello), requiring expert-level engagement with international law and political philosophy."
+      },
+      {
+        "concept": "moral encroachment",
+        "wikipedia_article": "Epistemic injustice",
+        "brief_rationale": "The view that moral factors — including stakes and bias — can raise the epistemic standards required for knowledge or justified belief, intersecting philosophy of race, feminist epistemology, and normative epistemology."
+      }
+    ]
+  }
+}

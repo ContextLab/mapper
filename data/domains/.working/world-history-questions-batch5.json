@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In Kenneth Pomeranz's 'The Great Divergence,' what two factors does he identify as critical for explaining why Britain industrialized ahead of China's Yangtze Delta after 1800?",
+    "correct_answer": "Access to coal deposits and New World colonial resources",
+    "distractors": [
+      "Superior scientific institutions and Protestant work ethic",
+      "Maritime military dominance and banking innovations",
+      "Democratic governance and patent law protections"
+    ],
+    "difficulty": 4,
+    "source_article": "Great Divergence",
+    "domain_ids": ["world-history"],
+    "concepts_tested": ["Great Divergence"]
+  },
+  {
+    "question_text": "The Annales school of historiography was founded in 1929 at the University of Strasbourg by Marc Bloch and Lucien Febvre. What was the original name of their journal?",
+    "correct_answer": "Annales d'histoire économique et sociale",
+    "distractors": [
+      "Revue historique de la France moderne",
+      "Cahiers d'histoire et de civilisation",
+      "Annales de géographie et d'économie politique"
+    ],
+    "difficulty": 4,
+    "source_article": "Annales school",
+    "domain_ids": ["world-history"],
+    "concepts_tested": ["Annales school"]
+  },
+  {
+    "question_text": "Ranajit Guha's Subaltern Studies collective, which published its first volume in 1982, borrowed the concept of the 'subaltern' from which Italian Marxist theorist's Prison Notebooks?",
+    "correct_answer": "Antonio Gramsci",
+    "distractors": [
+      "Benedetto Croce",
+      "Palmiro Togliatti",
+      "Norberto Bobbio"
+    ],
+    "difficulty": 4,
+    "source_article": "Subaltern Studies",
+    "domain_ids": ["world-history"],
+    "concepts_tested": ["subaltern studies"]
+  },
+  {
+    "question_text": "The Asante Empire was unified under Osei Tutu I around 1701 through a sacred symbol said to have been conjured from the sky by priest Okomfo Anokye. What was this unifying object?",
+    "correct_answer": "The Golden Stool (Sika 'dwa), believed to embody the soul of the Asante nation",
+    "distractors": [
+      "The Ivory Crown of Kumasi, symbolizing royal lineage",
+      "The Iron Sword of Denkyira, representing military conquest",
+      "The Sacred Drum of Obuasi, signifying ancestral authority"
+    ],
+    "difficulty": 4,
+    "source_article": "Ashanti Empire",
+    "domain_ids": ["world-history"],
+    "concepts_tested": ["Asante Empire"]
+  },
+  {
+    "question_text": "Jayavarman VII, considered the greatest Khmer king, built the walled city of Angkor Thom after expelling which foreign invaders who had sacked Angkor in 1177?",
+    "correct_answer": "The Chams, from the kingdom of Champa",
+    "distractors": [
+      "The Siamese, from the Ayutthaya Kingdom",
+      "The Dai Viet forces from northern Vietnam",
+      "The Srivijayan navy from Sumatra"
+    ],
+    "difficulty": 4,
+    "source_article": "Khmer Empire",
+    "domain_ids": ["world-history"],
+    "concepts_tested": ["Khmer Empire"]
+  },
+  {
+    "question_text": "Great Zimbabwe, the largest stone structure in precolonial Southern Africa, derived much of its wealth from controlling trade routes connecting inland goldfields to which coastal trading network?",
+    "correct_answer": "The Indian Ocean trade via Swahili coast ports such as Sofala",
+    "distractors": [
+      "The trans-Saharan caravan routes through Timbuktu",
+      "The Atlantic coastal trade managed by Portuguese merchants",
+      "The Red Sea trade network through Ethiopian port cities"
+    ],
+    "difficulty": 4,
+    "source_article": "Great Zimbabwe",
+    "domain_ids": ["world-history"],
+    "concepts_tested": ["Great Zimbabwe"]
+  },
+  {
+    "question_text": "Andre Gunder Frank's dependency theory argues that peripheral nations experience their greatest economic development under which historical condition?",
+    "correct_answer": "When their ties to core metropolitan countries are weakest",
+    "distractors": [
+      "When they receive the highest levels of foreign direct investment",
+      "When they adopt free-trade agreements with developed nations",
+      "When international commodity prices reach their peak"
+    ],
+    "difficulty": 4,
+    "source_article": "Dependency theory",
+    "domain_ids": ["world-history"],
+    "concepts_tested": ["dependency theory"]
+  },
+  {
+    "question_text": "Fernand Braudel's concept of the longue durée divides historical time into three levels. Which level describes slow-changing structures like climate, geography, and demography over centuries or millennia?",
+    "correct_answer": "The longue durée (long-term structural time)",
+    "distractors": [
+      "The conjoncture (medium-term cyclical trends)",
+      "The histoire événementielle (short-term event history)",
+      "The mentalité collective (generational mindset shifts)"
+    ],
+    "difficulty": 4,
+    "source_article": "Longue durée",
+    "domain_ids": ["world-history"],
+    "concepts_tested": ["Longue durée"]
+  },
+  {
+    "question_text": "The Treaty of Tordesillas (1494) divided newly discovered lands between Spain and Portugal along a meridian drawn 370 leagues west of which island group?",
+    "correct_answer": "The Cape Verde Islands",
+    "distractors": [
+      "The Canary Islands",
+      "The Azores",
+      "The Madeira Islands"
+    ],
+    "difficulty": 4,
+    "source_article": "Treaty of Tordesillas",
+    "domain_ids": ["world-history"],
+    "concepts_tested": ["Treaty of Tordesillas"]
+  },
+  {
+    "question_text": "The Benin Bronzes, thousands of metal plaques and sculptures looted from the Kingdom of Benin in 1897, were seized during a British punitive expedition against which city in present-day Nigeria?",
+    "correct_answer": "Benin City, capital of the Kingdom of Benin",
+    "distractors": [
+      "Lagos, the main port of the Yoruba kingdoms",
+      "Calabar, headquarters of the Niger Coast Protectorate",
+      "Ife, the sacred city of the Yoruba civilization"
+    ],
+    "difficulty": 4,
+    "source_article": "Benin Bronzes",
+    "domain_ids": ["world-history"],
+    "concepts_tested": ["Benin Bronzes"]
+  }
+]

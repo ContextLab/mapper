@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "The word 'philosophy' derives from two Ancient Greek words. What does it literally translate to?",
+    "correct_answer": "Love of wisdom, from 'philos' (love) and 'sophia' (wisdom).",
+    "distractors": [
+      "Study of nature, from 'physis' (nature) and 'logos' (study).",
+      "Pursuit of truth, from 'philein' (to pursue) and 'sophia' (truth).",
+      "Knowledge of self, from 'philo' (knowledge) and 'sophon' (self)."
+    ],
+    "difficulty": 1,
+    "source_article": "Philosophy",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["philosophy"]
+  },
+  {
+    "question_text": "In Plato's dialogue Theaetetus, what is the third and final proposed definition of knowledge?",
+    "correct_answer": "True belief with an account (logos).",
+    "distractors": [
+      "Perception of sensory impressions verified by reason.",
+      "Innate ideas recalled through dialectical questioning.",
+      "Justified opinion confirmed by empirical observation."
+    ],
+    "difficulty": 1,
+    "source_article": "Knowledge",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["knowledge"]
+  },
+  {
+    "question_text": "Which theory of truth, often traced back to Aristotle's Metaphysics, holds that a statement is true when it corresponds to facts in reality?",
+    "correct_answer": "The correspondence theory of truth.",
+    "distractors": [
+      "The coherence theory of truth.",
+      "The pragmatic theory of truth.",
+      "The deflationary theory of truth."
+    ],
+    "difficulty": 1,
+    "source_article": "Truth",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["truth"]
+  },
+  {
+    "question_text": "Aristotle famously defined human beings as 'rational animals.' What faculty did he identify as uniquely distinguishing humans from other living things?",
+    "correct_answer": "The faculty of reason (logos), the capacity for rational thought and deliberation.",
+    "distractors": [
+      "The faculty of sensation, the ability to perceive the external world through the senses.",
+      "The faculty of imagination, the power to form mental images beyond direct experience.",
+      "The faculty of desire, the drive to pursue pleasure and avoid pain."
+    ],
+    "difficulty": 1,
+    "source_article": "Reason",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["reason"]
+  },
+  {
+    "question_text": "In the Critique of Judgment, Immanuel Kant characterizes the experience of beauty as a form of pleasure with what distinctive quality?",
+    "correct_answer": "It is disinterested, meaning it is free from personal desire or practical interest.",
+    "distractors": [
+      "It is purely intellectual, arising only from rational analysis of an object's structure.",
+      "It is instinctive, triggered automatically by biological survival mechanisms.",
+      "It is culturally determined, varying entirely based on social norms and conventions."
+    ],
+    "difficulty": 1,
+    "source_article": "Beauty",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["beauty"]
+  },
+  {
+    "question_text": "Aristotle distinguished between two types of wisdom. What term did he use for practical wisdom, the virtue concerned with good judgment in particular situations?",
+    "correct_answer": "Phronesis, the intellectual virtue guiding practical action and moral decision-making.",
+    "distractors": [
+      "Sophia, the contemplative knowledge of universal and eternal truths.",
+      "Techne, the skilled craftsmanship involved in producing material objects.",
+      "Episteme, the demonstrative scientific knowledge derived from first principles."
+    ],
+    "difficulty": 1,
+    "source_article": "Wisdom",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["wisdom"]
+  },
+  {
+    "question_text": "In The Myth of Sisyphus, Albert Camus argues that the central philosophical problem raised by life's absurdity is which of the following?",
+    "correct_answer": "Whether life is worth living, framed as the question of suicide.",
+    "distractors": [
+      "Whether objective moral values can exist in an indifferent universe.",
+      "Whether human beings possess genuine free will or are determined.",
+      "Whether God's existence can be proved through rational argument."
+    ],
+    "difficulty": 1,
+    "source_article": "Meaning of life",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["meaning of life"]
+  },
+  {
+    "question_text": "In his 1958 lecture 'Two Concepts of Liberty,' Isaiah Berlin distinguished between two forms of freedom. What are they?",
+    "correct_answer": "Negative liberty (freedom from interference) and positive liberty (freedom to self-govern).",
+    "distractors": [
+      "Natural liberty (innate rights) and civil liberty (rights granted by the state).",
+      "Moral liberty (freedom from vice) and political liberty (freedom from tyranny).",
+      "Absolute liberty (unlimited freedom) and relative liberty (freedom within social constraints)."
+    ],
+    "difficulty": 1,
+    "source_article": "Freedom",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["freedom"]
+  },
+  {
+    "question_text": "In his later work Philosophical Investigations, Ludwig Wittgenstein introduced which concept to argue that the meaning of words arises from their use in context?",
+    "correct_answer": "Language games, showing that meaning depends on rules governing use in specific contexts.",
+    "distractors": [
+      "Picture theory, claiming that sentences are logical pictures mirroring the structure of reality.",
+      "Speech acts, proposing that all utterances perform social actions like promising or commanding.",
+      "Deep structure, positing that an innate universal grammar underlies all human languages."
+    ],
+    "difficulty": 1,
+    "source_article": "Language",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["language"]
+  },
+  {
+    "question_text": "The word 'science' derives from the Latin 'scientia.' What does 'scientia' mean?",
+    "correct_answer": "Knowledge, from the Latin verb 'scire' meaning 'to know.'",
+    "distractors": [
+      "Observation, from the Latin verb 'spectare' meaning 'to watch.'",
+      "Experiment, from the Latin verb 'experiri' meaning 'to try.'",
+      "Measurement, from the Latin verb 'metiri' meaning 'to measure.'"
+    ],
+    "difficulty": 1,
+    "source_article": "Science",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["science"]
+  }
+]

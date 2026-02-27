@@ -141,6 +141,7 @@ celerybeat.pid
 .env
 .envrc
 .venv
+.venv-*/
 env/
 venv/
 ENV/
@@ -218,9 +219,21 @@ dist/
 # Project-specific
 CLAUDE.md
 
-# UMAP model files
+# UMAP model files (too large for git)
 umap_reducer.pkl
 umap_bounds.pkl
+embeddings/umap_reducer.pkl
+embeddings/umap_bounds.pkl
+
+# Large embedding pkl files (too large for git)
+embeddings/question_embeddings_2500.pkl
+embeddings/transcript_embeddings.pkl
+embeddings/article_coords.pkl
+embeddings/article_coords_flat.pkl
+embeddings/question_coords.pkl
+embeddings/question_coords_flat.pkl
+embeddings/transcript_coords.pkl
+embeddings/article_registry.pkl
 *.credentials
 .credentials/
 
@@ -286,7 +299,16 @@ checkpoints.zip
 wikipedia_articles_level_0.json.zip
 level_0_concepts.json.zip
 data.zip
-.gitignore
 backups/embeddings.zip
 backups/large_checkpoints/level_0_final.json
 backups/large_checkpoints/level_1_after_download.json
+
+# Video pipeline working files
+data/videos/.working/coordinates/
+data/videos/.working/embeddings/
+data/videos/.working/audio_cache/
+data/videos/transcripts_raw/
+data/videos/transcripts/
+
+# Python virtual environments
+.venv/

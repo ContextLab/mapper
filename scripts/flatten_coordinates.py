@@ -126,8 +126,8 @@ def compute_density_stats(coords: np.ndarray, grid_size: int = 50) -> dict:
     """Compute density statistics on a grid."""
     # Clip to [0, 1] for binning
     clipped = np.clip(coords, 0, 1 - 1e-10)
-    cell_x = (clipped[:, 0] * grid_size).astype(int)
-    cell_y = (clipped[:, 1] * grid_size).astype(int)
+    cell_x = np.clip((clipped[:, 0] * grid_size).astype(int), 0, grid_size - 1)
+    cell_y = np.clip((clipped[:, 1] * grid_size).astype(int), 0, grid_size - 1)
 
     grid = np.zeros((grid_size, grid_size), dtype=int)
     for cx, cy in zip(cell_x, cell_y):
@@ -710,10 +710,10 @@ def main():
         else project_root / "embeddings"
     )
 
-    article_path = emb_dir / "umap_article_coords.pkl"
-    question_path = emb_dir / "umap_question_coords.pkl"
-    output_article_path = emb_dir / "umap_article_coords_flat.pkl"
-    output_question_path = emb_dir / "umap_question_coords_flat.pkl"
+    article_path = emb_dir / "article_coords.pkl"
+    question_path = emb_dir / "question_coords.pkl"
+    output_article_path = emb_dir / "article_coords_flat.pkl"
+    output_question_path = emb_dir / "question_coords_flat.pkl"
 
     # Load coordinates
     print("Loading coordinates...")
@@ -771,8 +771,7 @@ def main():
     flat_article_data = {
         "coords": flat_articles,
         "coords_original": article_coords,
-        "titles": article_data["titles"],
-        "num_articles": article_data["num_articles"],
+        "n_points": len(flat_articles),
         "timestamp": datetime.now().isoformat(),
         "flatten_params": info,
     }
@@ -786,8 +785,7 @@ def main():
     flat_question_data = {
         "coords": flat_questions,
         "coords_original": question_coords,
-        "question_ids": question_data["question_ids"],
-        "num_questions": question_data["num_questions"],
+        "n_points": len(flat_questions),
         "timestamp": datetime.now().isoformat(),
         "flatten_params": info,
     }

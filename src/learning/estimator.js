@@ -29,15 +29,36 @@ const DEFAULT_SIGNAL_VARIANCE = 1.0;
 const NOISE_VARIANCE = 0.1;
 const PRIOR_MEAN = 0.5;
 
+// Skip observations use a much lower knowledge value than the prior mean.
+// Skipping indicates uncertainty, not 50% knowledge — treated as near-zero evidence.
+const SKIP_KNOWLEDGE_VALUE = 0.05;
+
+// IRT constants for difficulty level estimation (FR-V050, CL-042, CL-043).
+// GP value in [0,1] maps to IRT ability θ via: θ = 4 × value - 2 (range [-2, 2]).
+// Thresholds in [0,1] space where mastery transitions between levels (L0→L1→L2→L3→L4).
+export const IRT_THRESHOLDS = [0.125, 0.375, 0.625, 0.875];
+export const IRT_DISCRIMINATION = 1.5;
+
+// Difficulty-based weight modulation for RBF kernel (CL-047: independent of IRT layer).
+// Higher difficulty questions provide stronger evidence (larger kernel influence).
+// Maps difficulty level (1-4) to a multiplier applied to the kernel weights.
+const DIFFICULTY_WEIGHT_MAP = {
+  1: 0.25,  // Easy questions: weak evidence
+  2: 0.5,   // Medium questions: moderate evidence
+  3: 0.75,  // Hard questions: strong evidence
+  4: 1.0,   // Expert questions: full evidence weight
+};
+
 export class Estimator {
   constructor() {
     this._gridSize = 0;
     this._region = null;
     this._cells = [];
-    this._observations = []; // [{x, y, value, lengthScale}]
+    this._observations = []; // [{x, y, value, lengthScale, difficultyWeight}]
     this._alpha = null;
     this._obsPoints = [];
     this._obsLengthScales = null; // Float64Array of per-observation length scales
+    this._obsDifficultyWeights = null; // Float64Array of per-observation difficulty weights
     this._obsValues = null;
     this._lengthScale = DEFAULT_LENGTH_SCALE;
     this._signalVariance = DEFAULT_SIGNAL_VARIANCE;
@@ -80,21 +101,38 @@ export class Estimator {
    * @param {number} y - Normalized y coordinate
    * @param {boolean} correct - Whether the answer was correct
    * @param {number} [lengthScale] - Per-observation RBF width (defaults to DEFAULT_LENGTH_SCALE)
+   * @param {number} [difficulty] - Question difficulty (1-4) for weight modulation
    */
-  observe(x, y, correct, lengthScale) {
+  observe(x, y, correct, lengthScale, difficulty) {
     const value = correct ? 1.0 : 0.0;
-    this._observations.push({ x, y, value, lengthScale: lengthScale || this._lengthScale });
+    const difficultyWeight = DIFFICULTY_WEIGHT_MAP[difficulty] || DIFFICULTY_WEIGHT_MAP[3]; // default to difficulty 3
+    this._observations.push({
+      x,
+      y,
+      value,
+      lengthScale: lengthScale || this._lengthScale,
+      difficultyWeight,
+    });
     this._recompute();
   }
 
   /**
-   * Record a skipped question — labels knowledge at 50% with reduced spatial influence.
+   * Record a skipped question — labels knowledge at 5% (near-zero) with reduced spatial influence.
+   * Skipping indicates the user doesn't know the answer, so it's treated as weak negative evidence.
    * @param {number} x - Normalized x coordinate
    * @param {number} y - Normalized y coordinate
    * @param {number} lengthScale - Reduced RBF width for skip observations
+   * @param {number} [difficulty] - Question difficulty (1-4) for weight modulation
    */
-  observeSkip(x, y, lengthScale) {
-    this._observations.push({ x, y, value: PRIOR_MEAN, lengthScale: lengthScale || this._lengthScale });
+  observeSkip(x, y, lengthScale, difficulty) {
+    const difficultyWeight = DIFFICULTY_WEIGHT_MAP[difficulty] || DIFFICULTY_WEIGHT_MAP[3]; // default to difficulty 3
+    this._observations.push({
+      x,
+      y,
+      value: SKIP_KNOWLEDGE_VALUE,
+      lengthScale: lengthScale || this._lengthScale,
+      difficultyWeight,
+    });
     this._recompute();
   }
 
@@ -114,6 +152,7 @@ export class Estimator {
         uncertainty: 1.0,
         evidenceCount: 0,
         state: 'unknown',
+        difficultyLevel: IRT_THRESHOLDS.reduce((lvl, t) => lvl + (PRIOR_MEAN >= t ? 1 : 0), 0),
       }));
     }
 
@@ -124,12 +163,16 @@ export class Estimator {
     for (let i = 0; i < cells.length; i++) {
       const cell = cells[i];
 
-      // k* with per-observation length scales: k*[j] = matern32(d, sqrt(l_default * l_j))
+      // k* with per-observation length scales and difficulty weights:
+      // k*[j] = matern32(d, sqrt(l_default * l_j)) * w_j
+      // Test points use the observation's difficulty weight directly (not sqrt)
+      // since test points don't have their own difficulty.
       const kStar = new Float64Array(n);
       for (let j = 0; j < n; j++) {
         const d = euclidean(cell.cx, cell.cy, this._obsPoints[j].x, this._obsPoints[j].y);
         const lMerged = Math.sqrt(defaultLS * this._obsLengthScales[j]);
-        kStar[j] = matern32(d, lMerged, sv);
+        const wj = this._obsDifficultyWeights ? this._obsDifficultyWeights[j] : 1.0;
+        kStar[j] = matern32(d, lMerged, sv) * wj;
       }
 
       const meanShift = dot(kStar, this._alpha);
@@ -160,7 +203,10 @@ export class Estimator {
       const safeValue = isFinite(value) ? value : PRIOR_MEAN;
       const safeUncertainty = isFinite(uncertainty) ? uncertainty : 1.0;
 
-      results[i] = { gx: cell.gx, gy: cell.gy, value: safeValue, uncertainty: safeUncertainty, evidenceCount, state };
+      // IRT difficulty level: count of thresholds where GP value >= threshold (0–4)
+      const difficultyLevel = IRT_THRESHOLDS.reduce((lvl, t) => lvl + (safeValue >= t ? 1 : 0), 0);
+
+      results[i] = { gx: cell.gx, gy: cell.gy, value: safeValue, uncertainty: safeUncertainty, evidenceCount, state, difficultyLevel };
     }
 
     return results;
@@ -180,6 +226,7 @@ export class Estimator {
         uncertainty: 1.0,
         evidenceCount: 0,
         state: 'unknown',
+        difficultyLevel: IRT_THRESHOLDS.reduce((lvl, t) => lvl + (PRIOR_MEAN >= t ? 1 : 0), 0),
       };
     }
 
@@ -187,11 +234,13 @@ export class Estimator {
     const sv = this._signalVariance;
     const defaultLS = this._lengthScale;
 
+    // k* with per-observation length scales and difficulty weights
     const kStar = new Float64Array(n);
     for (let j = 0; j < n; j++) {
       const d = euclidean(cell.cx, cell.cy, this._obsPoints[j].x, this._obsPoints[j].y);
       const lMerged = Math.sqrt(defaultLS * this._obsLengthScales[j]);
-      kStar[j] = matern32(d, lMerged, sv);
+      const wj = this._obsDifficultyWeights ? this._obsDifficultyWeights[j] : 1.0;
+      kStar[j] = matern32(d, lMerged, sv) * wj;
     }
     const meanShift = dot(kStar, this._alpha);
     const value = clamp(PRIOR_MEAN + meanShift, 0, 1);
@@ -220,7 +269,9 @@ export class Estimator {
     const safeValue = isFinite(value) ? value : PRIOR_MEAN;
     const safeUncertainty = isFinite(uncertainty) ? uncertainty : 1.0;
 
-    return { gx, gy, value: safeValue, uncertainty: safeUncertainty, evidenceCount, state };
+    const difficultyLevel = IRT_THRESHOLDS.reduce((lvl, t) => lvl + (safeValue >= t ? 1 : 0), 0);
+
+    return { gx, gy, value: safeValue, uncertainty: safeUncertainty, evidenceCount, state, difficultyLevel };
   }
 
   /**
@@ -232,14 +283,18 @@ export class Estimator {
     this._obsPoints = [];
     this._obsValues = null;
     this._obsLengthScales = null;
+    this._obsDifficultyWeights = null;
     this._K_noisy = null;
   }
 
   /**
    * Restore from persisted UserResponse[].
    * Each response may include a `lengthScale` for per-observation RBF width.
+   * @param {Array} responses - Array of UserResponse objects
+   * @param {number} uniformLengthScale - Uniform length scale for all observations
+   * @param {Map} [questionIndex] - Optional map of question_id -> question for difficulty lookup
    */
-  restore(responses, uniformLengthScale) {
+  restore(responses, uniformLengthScale, questionIndex) {
     this.reset();
 
     if (!this._region || !responses || responses.length === 0) return;
@@ -252,11 +307,16 @@ export class Estimator {
     for (const r of responses) {
       if (r.x != null && r.y != null) {
         const isSkipped = !!r.is_skipped;
+        // Look up difficulty from question index if available
+        const question = questionIndex?.get(r.question_id);
+        const difficulty = question?.difficulty;
+        const difficultyWeight = DIFFICULTY_WEIGHT_MAP[difficulty] || DIFFICULTY_WEIGHT_MAP[3];
         this._observations.push({
           x: r.x,
           y: r.y,
-          value: isSkipped ? PRIOR_MEAN : (r.is_correct ? 1.0 : 0.0),
+          value: isSkipped ? SKIP_KNOWLEDGE_VALUE : (r.is_correct ? 1.0 : 0.0),
           lengthScale: isSkipped ? ls * 0.5 : ls,
+          difficultyWeight,
         });
       }
     }
@@ -271,6 +331,11 @@ export class Estimator {
   /**
    * Recompute the GP posterior: build K, solve for α.
    * Called after any observation change.
+   *
+   * Difficulty-based weight modulation: Each observation's kernel contribution is
+   * scaled by its difficulty weight. Higher difficulty questions (weight closer to 1.0)
+   * have more influence on the GP posterior, while lower difficulty questions
+   * (weight closer to 0.25) have reduced influence.
    */
   _recompute() {
     const n = this._observations.length;
@@ -279,6 +344,7 @@ export class Estimator {
       this._obsPoints = [];
       this._obsValues = null;
       this._obsLengthScales = null;
+      this._obsDifficultyWeights = null;
       this._K_noisy = null;
       return;
     }
@@ -286,12 +352,16 @@ export class Estimator {
     this._obsPoints = this._observations.map((o) => ({ x: o.x, y: o.y }));
     this._obsValues = new Float64Array(n);
     this._obsLengthScales = new Float64Array(n);
+    this._obsDifficultyWeights = new Float64Array(n);
     for (let i = 0; i < n; i++) {
       this._obsValues[i] = this._observations[i].value - PRIOR_MEAN;
       this._obsLengthScales[i] = this._observations[i].lengthScale || this._lengthScale;
+      this._obsDifficultyWeights[i] = this._observations[i].difficultyWeight || DIFFICULTY_WEIGHT_MAP[3];
     }
 
-    // Build K with per-observation length scales: K[i,j] = matern32(d, sqrt(l_i * l_j))
+    // Build K with per-observation length scales and difficulty weights:
+    // K[i,j] = matern32(d, sqrt(l_i * l_j)) * sqrt(w_i * w_j)
+    // The sqrt of product form ensures symmetric weighting between observations.
     const K = new Array(n);
     for (let i = 0; i < n; i++) {
       K[i] = new Float64Array(n);
@@ -299,12 +369,15 @@ export class Estimator {
     const sv = this._signalVariance;
     for (let i = 0; i < n; i++) {
       const li = this._obsLengthScales[i];
+      const wi = this._obsDifficultyWeights[i];
       for (let j = i; j < n; j++) {
         const lj = this._obsLengthScales[j];
+        const wj = this._obsDifficultyWeights[j];
         const lMerged = Math.sqrt(li * lj);
+        const wMerged = Math.sqrt(wi * wj); // Symmetric difficulty weight
         const d = euclidean(this._obsPoints[i].x, this._obsPoints[i].y,
                            this._obsPoints[j].x, this._obsPoints[j].y);
-        const val = matern32(d, lMerged, sv);
+        const val = matern32(d, lMerged, sv) * wMerged;
         K[i][j] = val;
         K[j][i] = val;
       }

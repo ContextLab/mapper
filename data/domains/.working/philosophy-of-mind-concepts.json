@@ -1,0 +1,266 @@
+{
+  "domain": "philosophy-of-mind",
+  "parent_domain": "philosophy",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {
+        "concept": "consciousness",
+        "wikipedia_article": "Consciousness",
+        "brief_rationale": "The most fundamental topic in philosophy of mind; universally recognized even by non-specialists."
+      },
+      {
+        "concept": "free will",
+        "wikipedia_article": "Free will",
+        "brief_rationale": "Central philosophical problem familiar to the general public through everyday moral and legal discourse."
+      },
+      {
+        "concept": "mind-body problem",
+        "wikipedia_article": "Mind–body problem",
+        "brief_rationale": "The defining problem of the field; its name alone conveys the core tension between mental and physical."
+      },
+      {
+        "concept": "soul",
+        "wikipedia_article": "Soul",
+        "brief_rationale": "Pre-theoretic concept shared across cultures and religions; universally known as referring to a non-physical self."
+      },
+      {
+        "concept": "emotion",
+        "wikipedia_article": "Emotion",
+        "brief_rationale": "Everyday mental phenomenon studied philosophically; its nature and role in rationality are widely debated."
+      },
+      {
+        "concept": "perception",
+        "wikipedia_article": "Perception",
+        "brief_rationale": "Basic mental process everyone experiences; raises foundational questions about how the mind represents the world."
+      },
+      {
+        "concept": "memory",
+        "wikipedia_article": "Memory",
+        "brief_rationale": "Core mental faculty central to personal identity debates; universally understood at the lay level."
+      },
+      {
+        "concept": "belief",
+        "wikipedia_article": "Belief",
+        "brief_rationale": "Foundational propositional attitude in folk psychology; discussed in everyday and philosophical contexts alike."
+      },
+      {
+        "concept": "desire",
+        "wikipedia_article": "Desire",
+        "brief_rationale": "Basic motivational mental state; essential to action theory and folk psychological explanation."
+      },
+      {
+        "concept": "thought",
+        "wikipedia_article": "Thought",
+        "brief_rationale": "The generic term for mental cognition; universally understood and philosophically foundational."
+      },
+      {
+        "concept": "dream",
+        "wikipedia_article": "Dream",
+        "brief_rationale": "Widely experienced altered conscious state that raises questions about reality, hallucination, and the mind."
+      },
+      {
+        "concept": "artificial intelligence",
+        "wikipedia_article": "Artificial intelligence",
+        "brief_rationale": "Publicly prominent topic whose philosophical dimension (can machines think?) is broadly recognized."
+      },
+      {
+        "concept": "personal identity",
+        "wikipedia_article": "Personal identity",
+        "brief_rationale": "Questions about what makes a person the same over time are intuitive and culturally pervasive."
+      }
+    ],
+    "L2": [
+      {
+        "concept": "dualism",
+        "wikipedia_article": "Mind–body dualism",
+        "brief_rationale": "The view that mind and body are distinct substances; the first philosophical position students encounter in this field."
+      },
+      {
+        "concept": "physicalism",
+        "wikipedia_article": "Physicalism",
+        "brief_rationale": "The dominant modern view that mental states are ultimately physical; a standard term in undergraduate philosophy."
+      },
+      {
+        "concept": "qualia",
+        "wikipedia_article": "Qualia",
+        "brief_rationale": "The subjective, felt qualities of experience; introduced early in any philosophy of mind course."
+      },
+      {
+        "concept": "functionalism",
+        "wikipedia_article": "Functionalism (philosophy of mind)",
+        "brief_rationale": "Influential theory that mental states are defined by their causal roles; core undergraduate content."
+      },
+      {
+        "concept": "intentionality",
+        "wikipedia_article": "Intentionality",
+        "brief_rationale": "The about-ness or directedness of mental states; a key concept taught in introductory courses."
+      },
+      {
+        "concept": "behaviourism",
+        "wikipedia_article": "Behaviorism",
+        "brief_rationale": "The philosophical and psychological view that mental states reduce to behavioral dispositions; historically foundational."
+      },
+      {
+        "concept": "identity theory",
+        "wikipedia_article": "Type physicalism",
+        "brief_rationale": "The mind-brain identity theory identifying mental state types with brain state types; standard L2 content."
+      },
+      {
+        "concept": "eliminative materialism",
+        "wikipedia_article": "Eliminative materialism",
+        "brief_rationale": "The radical view that folk psychological categories will be eliminated by mature neuroscience; widely taught."
+      },
+      {
+        "concept": "folk psychology",
+        "wikipedia_article": "Folk psychology",
+        "brief_rationale": "The everyday framework of beliefs, desires, and intentions used to explain behavior; central to philosophy of mind debates."
+      },
+      {
+        "concept": "mental causation",
+        "wikipedia_article": "Mental causation",
+        "brief_rationale": "The problem of how mental states cause physical events; a key puzzle for any non-eliminativist position."
+      },
+      {
+        "concept": "philosophical zombie",
+        "wikipedia_article": "Philosophical zombie",
+        "brief_rationale": "A thought experiment arguing that physical duplicates without consciousness are conceivable; widely discussed."
+      },
+      {
+        "concept": "phenomenal consciousness",
+        "wikipedia_article": "Phenomenal consciousness",
+        "brief_rationale": "What it is like to have an experience; the central target of debates about qualia and the hard problem."
+      },
+      {
+        "concept": "propositional attitude",
+        "wikipedia_article": "Propositional attitude",
+        "brief_rationale": "The logical form of mental states like belief and desire; introduced in introductory philosophy of language and mind."
+      }
+    ],
+    "L3": [
+      {
+        "concept": "hard problem of consciousness",
+        "wikipedia_article": "Hard problem of consciousness",
+        "brief_rationale": "Chalmers's distinction between explaining cognitive functions and explaining subjective experience; requires working familiarity with debates."
+      },
+      {
+        "concept": "Chinese room argument",
+        "wikipedia_article": "Chinese room",
+        "brief_rationale": "Searle's argument that syntactic symbol manipulation cannot yield genuine understanding; students must grasp its mechanics to evaluate it."
+      },
+      {
+        "concept": "multiple realizability",
+        "wikipedia_article": "Multiple realizability",
+        "brief_rationale": "The claim that the same mental state can be realized by different physical substrates; key objection to type identity theory."
+      },
+      {
+        "concept": "supervenience",
+        "wikipedia_article": "Supervenience",
+        "brief_rationale": "The dependency relation where mental properties cannot vary without physical variation; requires careful understanding to apply correctly."
+      },
+      {
+        "concept": "token physicalism",
+        "wikipedia_article": "Token physicalism",
+        "brief_rationale": "The view that each mental event token is identical to some physical event token; a more nuanced position than type identity theory."
+      },
+      {
+        "concept": "higher-order thought theory",
+        "wikipedia_article": "Higher-order theories of consciousness",
+        "brief_rationale": "The view that consciousness requires a mental state to be represented by a higher-order mental state; requires knowledge of the debate landscape."
+      },
+      {
+        "concept": "extended mind thesis",
+        "wikipedia_article": "Extended mind thesis",
+        "brief_rationale": "Clark and Chalmers's argument that cognitive processes can extend into the environment; working knowledge requires understanding the parity principle."
+      },
+      {
+        "concept": "representationalism",
+        "wikipedia_article": "Representationalism (philosophy of mind)",
+        "brief_rationale": "The view that phenomenal properties reduce to representational content; a substantive theoretical commitment requiring field knowledge."
+      },
+      {
+        "concept": "content externalism",
+        "wikipedia_article": "Semantic externalism",
+        "brief_rationale": "Putnam and Burge's view that mental content is partly determined by environment; requires understanding twin-earth thought experiments."
+      },
+      {
+        "concept": "epiphenomenalism",
+        "wikipedia_article": "Epiphenomenalism",
+        "brief_rationale": "The view that mental events are causally inert byproducts of physical processes; students must understand why it is problematic."
+      },
+      {
+        "concept": "global workspace theory",
+        "wikipedia_article": "Global workspace theory",
+        "brief_rationale": "Baars's cognitive architecture in which conscious contents are broadcast globally to many brain systems; bridges philosophy and cognitive science."
+      },
+      {
+        "concept": "integrated information theory",
+        "wikipedia_article": "Integrated information theory",
+        "brief_rationale": "Tononi's mathematical framework identifying consciousness with integrated information (phi); requires working knowledge to distinguish from competitors."
+      }
+    ],
+    "L4": [
+      {
+        "concept": "anomalous monism",
+        "wikipedia_article": "Anomalous monism",
+        "brief_rationale": "Davidson's position that mental events are physical but mental descriptions cannot be reduced to physical laws; expert-level metaphysics of mind."
+      },
+      {
+        "concept": "phenomenal intentionality",
+        "wikipedia_article": "Phenomenal intentionality",
+        "brief_rationale": "The thesis that intentionality is grounded in or identical to phenomenal consciousness; a technical debate among specialists."
+      },
+      {
+        "concept": "enactivism",
+        "wikipedia_article": "Enactivism",
+        "brief_rationale": "Varela, Thompson, and Rosch's view that cognition is constituted through embodied action rather than internal representation; requires deep familiarity with 4E cognition debates."
+      },
+      {
+        "concept": "disjunctivism",
+        "wikipedia_article": "Disjunctivism",
+        "brief_rationale": "The view that veridical perception and hallucination are fundamentally different in nature rather than sharing a common factor; a specialist debate in philosophy of perception."
+      },
+      {
+        "concept": "psychological continuity theory",
+        "wikipedia_article": "Psychological continuity",
+        "brief_rationale": "Parfit's neo-Lockean account of personal identity via overlapping chains of psychological connections; requires detailed engagement with thought experiments."
+      },
+      {
+        "concept": "narrow content",
+        "wikipedia_article": "Narrow content",
+        "brief_rationale": "Mental content determined solely by internal physical states, independent of environment; a technical response to content externalism."
+      },
+      {
+        "concept": "non-conceptual content",
+        "wikipedia_article": "Nonconceptual content",
+        "brief_rationale": "The claim that perceptual states have representational content that does not require possession of concepts; a nuanced debate in epistemology and philosophy of mind."
+      },
+      {
+        "concept": "illusionism",
+        "wikipedia_article": "Illusionism (philosophy of mind)",
+        "brief_rationale": "Frankish's view that phenomenal consciousness as commonly conceived is an introspective illusion; a recent and technically demanding revisionary position."
+      },
+      {
+        "concept": "Fregean sense and mental content",
+        "wikipedia_article": "Sense and reference",
+        "brief_rationale": "Application of Frege's sense/reference distinction to mental representation and the problem of cognitive significance; requires expertise in philosophy of language and mind."
+      },
+      {
+        "concept": "higher-order perception theory",
+        "wikipedia_article": "Higher-order theories of consciousness",
+        "brief_rationale": "Lycan's variant holding that consciousness is inner perception by a dedicated monitoring system; distinguished from higher-order thought theories at expert level."
+      },
+      {
+        "concept": "predictive processing",
+        "wikipedia_article": "Predictive coding",
+        "brief_rationale": "Clark and Friston's framework in which the brain is a hierarchical prediction machine; requires deep knowledge to understand its implications for consciousness and action."
+      },
+      {
+        "concept": "access consciousness vs phenomenal consciousness",
+        "wikipedia_article": "Access consciousness",
+        "brief_rationale": "Block's distinction between information being globally available for reasoning/report versus there being something it is like; a precise technical distinction essential to advanced debates."
+      }
+    ]
+  }
+}

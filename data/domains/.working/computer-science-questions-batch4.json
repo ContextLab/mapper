@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In compiler design, what is the first phase of compilation that reads source code characters and groups them into meaningful units called tokens?",
+    "correct_answer": "Lexical analysis",
+    "distractors": [
+      "Syntax analysis",
+      "Semantic analysis",
+      "Intermediate code generation"
+    ],
+    "difficulty": 3,
+    "source_article": "Compiler",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["compiler design"]
+  },
+  {
+    "question_text": "Which category of instruction set architecture does the x86 processor family (used by Intel and AMD) belong to?",
+    "correct_answer": "Complex Instruction Set Computing (CISC)",
+    "distractors": [
+      "Reduced Instruction Set Computing (RISC)",
+      "Very Long Instruction Word (VLIW)",
+      "Explicitly Parallel Instruction Computing (EPIC)"
+    ],
+    "difficulty": 3,
+    "source_article": "Instruction set architecture",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["instruction set architecture"]
+  },
+  {
+    "question_text": "Which two Linux kernel features does Docker use to provide process isolation and resource control for containers, rather than using a hypervisor?",
+    "correct_answer": "Namespaces and cgroups (control groups)",
+    "distractors": [
+      "SELinux and AppArmor",
+      "Hypervisor and virtual machine monitor",
+      "Swap partitions and memory-mapped files"
+    ],
+    "difficulty": 3,
+    "source_article": "Containerization (computing)",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["containerization"]
+  },
+  {
+    "question_text": "In the Domain Name System, which type of DNS record maps a human-readable domain name to an IPv4 address?",
+    "correct_answer": "A record",
+    "distractors": [
+      "MX record",
+      "CNAME record",
+      "NS record"
+    ],
+    "difficulty": 3,
+    "source_article": "Domain Name System",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["domain name system"]
+  },
+  {
+    "question_text": "Which computer scientist invented garbage collection around 1959 to simplify memory management in the Lisp programming language?",
+    "correct_answer": "John McCarthy",
+    "distractors": [
+      "Donald Knuth",
+      "Edsger Dijkstra",
+      "Alan Turing"
+    ],
+    "difficulty": 3,
+    "source_article": "Garbage collection (computer science)",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["garbage collection"]
+  },
+  {
+    "question_text": "Compared to TLS 1.2 which requires two round trips, how many round trips does a TLS 1.3 handshake require to establish a new secure connection?",
+    "correct_answer": "One round trip (1-RTT)",
+    "distractors": [
+      "Zero round trips (0-RTT)",
+      "Three round trips (3-RTT)",
+      "Two round trips (2-RTT)"
+    ],
+    "difficulty": 3,
+    "source_article": "Transport Layer Security",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["transport layer security"]
+  },
+  {
+    "question_text": "Which two Google engineers introduced the MapReduce programming model in their 2004 paper for processing large datasets on clusters?",
+    "correct_answer": "Jeffrey Dean and Sanjay Ghemawat",
+    "distractors": [
+      "Sergey Brin and Larry Page",
+      "Rob Pike and Ken Thompson",
+      "Vint Cerf and Bob Kahn"
+    ],
+    "difficulty": 3,
+    "source_article": "MapReduce",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["MapReduce"]
+  },
+  {
+    "question_text": "The 1994 book 'Design Patterns: Elements of Reusable Object-Oriented Software' by the Gang of Four catalogued how many software design patterns?",
+    "correct_answer": "23 design patterns",
+    "distractors": [
+      "12 design patterns",
+      "36 design patterns",
+      "15 design patterns"
+    ],
+    "difficulty": 3,
+    "source_article": "Software design pattern",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["software design pattern"]
+  },
+  {
+    "question_text": "The CAP theorem states that a distributed data store can guarantee at most two of which three properties simultaneously?",
+    "correct_answer": "Consistency, availability, and partition tolerance",
+    "distractors": [
+      "Confidentiality, authentication, and persistence",
+      "Concurrency, atomicity, and performance",
+      "Correctness, accessibility, and parallelism"
+    ],
+    "difficulty": 4,
+    "source_article": "CAP theorem",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["CAP theorem"]
+  },
+  {
+    "question_text": "In the Paxos consensus algorithm, what is the minimum number of nodes required to tolerate f failures while still reaching agreement?",
+    "correct_answer": "2f + 1 nodes",
+    "distractors": [
+      "f + 1 nodes",
+      "3f + 1 nodes",
+      "f squared nodes"
+    ],
+    "difficulty": 4,
+    "source_article": "Paxos (computer science)",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["Paxos (computer science)"]
+  }
+]

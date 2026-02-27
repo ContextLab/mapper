@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Which Chinese dynasty built the best-known and most extensively preserved sections of the Great Wall of China, spanning over 8,850 km?",
+    "correct_answer": "The Ming dynasty (1368–1644)",
+    "distractors": [
+      "The Qin dynasty (221–206 BC)",
+      "The Han dynasty (206 BC–220 AD)",
+      "The Tang dynasty (618–907 AD)"
+    ],
+    "difficulty": 1,
+    "source_article": "Great Wall of China",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["Great Wall of China"]
+  },
+  {
+    "question_text": "Which Khmer king commissioned the construction of Angkor Wat between approximately 1113 and 1150 CE, originally dedicating it to the Hindu god Vishnu?",
+    "correct_answer": "Suryavarman II",
+    "distractors": [
+      "Jayavarman VII",
+      "Indravarman I",
+      "Yasovarman I"
+    ],
+    "difficulty": 1,
+    "source_article": "Angkor Wat",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["Angkor Wat"]
+  },
+  {
+    "question_text": "Why is pottery considered one of the most important artifact types in archaeology, particularly for studying ancient and prehistoric periods?",
+    "correct_answer": "It is the most commonly recovered artifact class and its style changes help establish chronologies",
+    "distractors": [
+      "It is the only artifact type that survives burial and can be radiocarbon dated directly",
+      "It contains written inscriptions that reveal the languages spoken by ancient peoples",
+      "It preserves organic residues that always allow precise identification of ancient diets"
+    ],
+    "difficulty": 1,
+    "source_article": "Pottery",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["ancient pottery"]
+  },
+  {
+    "question_text": "What is the primary geographic and cultural focus of classical archaeology as an academic discipline?",
+    "correct_answer": "The Mediterranean civilizations of ancient Greece and ancient Rome",
+    "distractors": [
+      "The ancient civilizations of Mesopotamia and the Fertile Crescent",
+      "The Bronze Age and Iron Age cultures of northern Europe",
+      "The dynastic civilizations of ancient Egypt and Nubia"
+    ],
+    "difficulty": 2,
+    "source_article": "Classical archaeology",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["classical archaeology"]
+  },
+  {
+    "question_text": "What distinguishes historical archaeology from prehistoric archaeology in terms of the evidence it uses alongside material remains?",
+    "correct_answer": "Historical archaeology studies societies for which written records and oral traditions exist to contextualize finds",
+    "distractors": [
+      "Historical archaeology relies exclusively on scientific dating methods rather than stratigraphic analysis",
+      "Historical archaeology focuses only on monumental architecture rather than portable artifacts",
+      "Historical archaeology studies societies that existed before the invention of writing systems"
+    ],
+    "difficulty": 2,
+    "source_article": "Historical archaeology",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["historical archaeology"]
+  },
+  {
+    "question_text": "What types of submerged cultural heritage sites does underwater archaeology investigate beyond shipwrecks?",
+    "correct_answer": "Submerged habitation sites, port structures, anchorages, and landscapes inundated by rising sea levels",
+    "distractors": [
+      "Only naval battlefield sites and military fortifications found beneath freshwater lakes",
+      "Exclusively deep-ocean volcanic formations that preserved ancient organic materials",
+      "Solely underwater cave systems containing Paleolithic rock art and fossil deposits"
+    ],
+    "difficulty": 2,
+    "source_article": "Underwater archaeology",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["underwater archaeology"]
+  },
+  {
+    "question_text": "What scientific dating technique, pioneered by A.E. Douglass in the early 20th century, assigns exact calendar years to archaeological wood samples by matching ring-width patterns?",
+    "correct_answer": "Dendrochronology, or tree-ring dating",
+    "distractors": [
+      "Radiocarbon dating, or carbon-14 analysis",
+      "Thermoluminescence dating, or TL dating",
+      "Varve chronology, or glacial sediment counting"
+    ],
+    "difficulty": 2,
+    "source_article": "Dendrochronology",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["dendrochronology"]
+  },
+  {
+    "question_text": "Which United States federal law, enacted in 1966, established the legal framework requiring federal agencies to consider the effects of their projects on historic properties?",
+    "correct_answer": "The National Historic Preservation Act (NHPA)",
+    "distractors": [
+      "The Archaeological Resources Protection Act (ARPA)",
+      "The Antiquities Act of 1906",
+      "The Native American Graves Protection and Repatriation Act (NAGPRA)"
+    ],
+    "difficulty": 2,
+    "source_article": "Cultural resource management",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["cultural resource management"]
+  },
+  {
+    "question_text": "The Antikythera mechanism, recovered from a shipwreck near a Greek island in 1901, is considered the oldest known example of what type of device?",
+    "correct_answer": "An analogue computer, used to predict astronomical positions and eclipses",
+    "distractors": [
+      "A mechanical clock, used to track the hours of the day with gear-driven hands",
+      "A navigational compass, used to determine magnetic north for maritime travel",
+      "A seismographic instrument, used to detect and record distant earthquake vibrations"
+    ],
+    "difficulty": 2,
+    "source_article": "Antikythera mechanism",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["Antikythera mechanism"]
+  },
+  {
+    "question_text": "What is the primary methodological goal of experimental archaeology when researchers replicate ancient artifacts or reconstruct ancient structures?",
+    "correct_answer": "To generate and test archaeological hypotheses about the feasibility of past technologies and practices",
+    "distractors": [
+      "To create museum reproductions that can replace fragile originals in public display cases",
+      "To establish the precise market value of ancient artifacts for international auction houses",
+      "To train art conservators in modern restoration techniques for damaged archaeological objects"
+    ],
+    "difficulty": 2,
+    "source_article": "Experimental archaeology",
+    "domain_ids": ["archaeology"],
+    "concepts_tested": ["experimental archaeology"]
+  }
+]

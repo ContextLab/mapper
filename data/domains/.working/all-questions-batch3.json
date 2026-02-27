@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In biomedical ethics, the principlist framework identifies four core principles: autonomy, beneficence, justice, and which fourth principle meaning 'do no harm'?",
+    "correct_answer": "Non-maleficence, the obligation to avoid causing harm to patients",
+    "distractors": [
+      "Veracity, the obligation to always tell patients the truth",
+      "Fidelity, the obligation to honor commitments made to patients",
+      "Paternalism, the obligation to override patient choices for their benefit"
+    ],
+    "difficulty": 2,
+    "source_article": "Bioethics",
+    "domain_ids": ["all"],
+    "concepts_tested": ["bioethics"]
+  },
+  {
+    "question_text": "Signal-to-noise ratio (SNR) compares desired signal level to background noise. In what logarithmic unit is SNR most commonly expressed?",
+    "correct_answer": "Decibels (dB), using a logarithmic scale of the ratio of signal power to noise power",
+    "distractors": [
+      "Nepers (Np), using a natural logarithmic scale of voltage amplitude ratios",
+      "Bels (B), using a base-10 scale of the ratio of signal frequency to noise frequency",
+      "Hertz (Hz), using a linear scale of the difference between signal and noise frequencies"
+    ],
+    "difficulty": 2,
+    "source_article": "Signal-to-noise ratio",
+    "domain_ids": ["all"],
+    "concepts_tested": ["signal-to-noise ratio"]
+  },
+  {
+    "question_text": "In ecology, carrying capacity is the maximum population size an environment can sustain indefinitely. What letter conventionally represents carrying capacity in the logistic growth model?",
+    "correct_answer": "$K$, appearing in the logistic equation where population growth slows as it approaches this limit",
+    "distractors": [
+      "$N$, appearing in the logistic equation where population growth accelerates beyond this limit",
+      "$r$, appearing in the logistic equation as the upper bound on sustainable population size",
+      "$C$, appearing in the logistic equation where resource depletion defines the growth ceiling"
+    ],
+    "difficulty": 2,
+    "source_article": "Carrying capacity",
+    "domain_ids": ["all"],
+    "concepts_tested": ["carrying capacity"]
+  },
+  {
+    "question_text": "In research methodology, what is the term for the process of defining how to measure a concept that is not directly observable, such as measuring 'health' via body mass index?",
+    "correct_answer": "Operationalization, which converts abstract or fuzzy concepts into measurable, empirically observable indicators",
+    "distractors": [
+      "Conceptualization, which converts empirical observations into abstract theoretical frameworks for analysis",
+      "Triangulation, which combines multiple measurement methods to define a single observable variable",
+      "Falsification, which converts theoretical predictions into directly testable empirical propositions"
+    ],
+    "difficulty": 2,
+    "source_article": "Operationalization",
+    "domain_ids": ["all"],
+    "concepts_tested": ["operationalization"]
+  },
+  {
+    "question_text": "In climate science, a tipping point is a critical threshold that, when crossed, leads to large and often irreversible changes. Which of these is a recognized tipping element in the climate system?",
+    "correct_answer": "The Atlantic Meridional Overturning Circulation (AMOC), whose collapse could drastically alter global climate patterns",
+    "distractors": [
+      "The Pacific Decadal Oscillation (PDO), whose reversal could permanently halt all monsoon systems",
+      "The Antarctic Circumpolar Current (ACC), whose acceleration could irreversibly freeze the Southern Hemisphere",
+      "The Intertropical Convergence Zone (ITCZ), whose northward shift could permanently desertify all tropics"
+    ],
+    "difficulty": 2,
+    "source_article": "Tipping points in the climate system",
+    "domain_ids": ["all"],
+    "concepts_tested": ["tipping point"]
+  },
+  {
+    "question_text": "Intellectual property (IP) law protects intangible creations of the human intellect. Which of the following lists the four best-known types of intellectual property?",
+    "correct_answer": "Patents, copyrights, trademarks, and trade secrets",
+    "distractors": [
+      "Patents, copyrights, trademarks, and licensing agreements",
+      "Patents, copyrights, domain names, and trade secrets",
+      "Patents, franchises, trademarks, and trade secrets"
+    ],
+    "difficulty": 2,
+    "source_article": "Intellectual property",
+    "domain_ids": ["all"],
+    "concepts_tested": ["intellectual property"]
+  },
+  {
+    "question_text": "The measurement problem in quantum mechanics arises because the Schrodinger equation evolves the wave function deterministically as a superposition, yet measurements yield only one definite result. What does this tension concern?",
+    "correct_answer": "How and why a quantum superposition of many possible states reduces to a single observed outcome upon measurement",
+    "distractors": [
+      "How and why a quantum particle's position is always precisely determined before any measurement apparatus interacts",
+      "How and why the Schrodinger equation produces random outputs that never correspond to observable physical quantities",
+      "How and why classical objects fail to exhibit superposition even though they obey the same deterministic equations"
+    ],
+    "difficulty": 3,
+    "source_article": "Measurement problem",
+    "domain_ids": ["all"],
+    "concepts_tested": ["measurement problem"]
+  },
+  {
+    "question_text": "Ergodicity, originating from Boltzmann's work in statistical physics, describes systems where time averages equal ensemble averages. What does this property imply about a system's trajectory through its state space?",
+    "correct_answer": "A single trajectory, observed long enough, will eventually visit all accessible regions of the state space in representative proportion",
+    "distractors": [
+      "A single trajectory will converge to one fixed equilibrium point and remain there permanently after sufficient time",
+      "A single trajectory will periodically revisit its exact starting conditions at regular and predictable time intervals",
+      "A single trajectory will systematically avoid certain regions of state space due to energy conservation constraints"
+    ],
+    "difficulty": 3,
+    "source_article": "Ergodicity",
+    "domain_ids": ["all"],
+    "concepts_tested": ["ergodicity"]
+  },
+  {
+    "question_text": "Under the Ehrenfest classification, phase transitions are categorized by the lowest derivative of the free energy that is discontinuous at the transition. How are first-order and second-order transitions distinguished?",
+    "correct_answer": "First-order transitions have a discontinuous first derivative of free energy (e.g., density jump); second-order have a discontinuous second derivative but continuous first",
+    "distractors": [
+      "First-order transitions occur only at absolute zero temperature; second-order transitions occur at any temperature above the critical point of the system",
+      "First-order transitions release no latent heat and change continuously; second-order transitions release latent heat and show abrupt density changes",
+      "First-order transitions are unique to magnetic systems near the Curie point; second-order transitions are unique to liquid-gas boiling transitions"
+    ],
+    "difficulty": 3,
+    "source_article": "Phase transition",
+    "domain_ids": ["all"],
+    "concepts_tested": ["phase transition"]
+  },
+  {
+    "question_text": "A key distinction between Bayesian and frequentist statistics involves how probability is interpreted. What does a Bayesian assign probability to that a frequentist does not?",
+    "correct_answer": "Hypotheses or parameters themselves, treating probability as a degree of belief updated via Bayes' theorem with prior information",
+    "distractors": [
+      "Sample sizes and data collection methods, treating probability as a property of experimental design rather than outcomes",
+      "Only repeatable events in long-run frequency, treating probability as undefined for any single unique occurrence",
+      "Confidence interval boundaries, treating probability as the chance that a specific interval contains the true value"
+    ],
+    "difficulty": 3,
+    "source_article": "Foundations of statistics",
+    "domain_ids": ["all"],
+    "concepts_tested": ["Bayesian vs frequentist statistics"]
+  }
+]

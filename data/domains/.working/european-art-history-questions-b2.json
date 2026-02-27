@@ -1,0 +1,104 @@
+[
+  {
+    "question_text": "Which late 18th-century European artistic and intellectual movement emphasized subjectivity, imagination, and reverence for nature as a reaction against Enlightenment rationalism and industrialization?",
+    "correct_answer": "Romanticism",
+    "distractors": [
+      "Neoclassicism",
+      "Impressionism",
+      "Expressionism"
+    ],
+    "difficulty": 1,
+    "source_article": "Romanticism",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "Romanticism"
+    ]
+  },
+  {
+    "question_text": "Which Dutch Golden Age painter and printmaker, born in Leiden in 1606, is renowned for masterworks such as *The Night Watch* and numerous self-portraits?",
+    "correct_answer": "Rembrandt Harmenszoon van Rijn",
+    "distractors": [
+      "Johannes Vermeer van Delft",
+      "Peter Paul Rubens of Antwerp",
+      "Frans Hals van Haarlem"
+    ],
+    "difficulty": 1,
+    "source_article": "Rembrandt",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "Rembrandt"
+    ]
+  },
+  {
+    "question_text": "Which 1889 oil-on-canvas painting by Vincent van Gogh depicts a swirling night sky over a village, painted from his asylum room at Saint-R\u00e9my-de-Provence?",
+    "correct_answer": "*The Starry Night*, now in the Museum of Modern Art in New York City",
+    "distractors": [
+      "*Starry Night Over the Rh\u00f4ne*, now in the Mus\u00e9e d'Orsay in Paris",
+      "*Caf\u00e9 Terrace at Night*, now in the Kr\u00f6ller-M\u00fcller Museum in Otterlo",
+      "*The Starry Night*, now in the Van Gogh Museum in Amsterdam"
+    ],
+    "difficulty": 1,
+    "source_article": "The_Starry_Night",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "The Starry Night"
+    ]
+  },
+  {
+    "question_text": "Which early 20th-century cultural movement, led by Andr\u00e9 Breton, sought to express the unconscious mind through illogical and dreamlike imagery?",
+    "correct_answer": "Surrealism",
+    "distractors": [
+      "Dadaism",
+      "Expressionism",
+      "Abstractionism"
+    ],
+    "difficulty": 1,
+    "source_article": "Surrealism",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "Surrealism"
+    ]
+  },
+  {
+    "question_text": "What is the name of the ancient Greek temple on the Athenian Acropolis, built between 447 and 432 BC, dedicated to the goddess Athena?",
+    "correct_answer": "The Parthenon",
+    "distractors": [
+      "The Erechtheion",
+      "The Temple of Olympian Zeus",
+      "The Pantheon"
+    ],
+    "difficulty": 1,
+    "source_article": "Parthenon",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "Parthenon"
+    ]
+  },
+  {
+    "question_text": "What is the name of the elliptical amphitheatre in Rome, completed in AD 80 under Emperor Titus, also known as the Flavian Amphitheatre?",
+    "correct_answer": "The Colosseum",
+    "distractors": [
+      "The Circus Maximus",
+      "The Pantheon",
+      "The Forum of Trajan"
+    ],
+    "difficulty": 1,
+    "source_article": "Colosseum",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "Colosseum"
+    ]
+  }
+]

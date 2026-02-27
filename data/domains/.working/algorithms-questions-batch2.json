@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Big O notation was first introduced in 1894 by the German mathematician Paul Bachmann. The letter O stands for the German word 'Ordnung.' What does 'Ordnung' mean in this context?",
+    "correct_answer": "The order of approximation",
+    "distractors": [
+      "The origin of computation",
+      "The output of the function",
+      "The optimization of growth"
+    ],
+    "difficulty": 1,
+    "source_article": "Big O notation",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["Big O notation"]
+  },
+  {
+    "question_text": "Richard Bellman coined the term 'dynamic programming' in the 1950s while working at which United States research organization?",
+    "correct_answer": "The RAND Corporation",
+    "distractors": [
+      "Bell Laboratories",
+      "MIT Lincoln Laboratory",
+      "Los Alamos National Laboratory"
+    ],
+    "difficulty": 1,
+    "source_article": "Dynamic programming",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["dynamic programming"]
+  },
+  {
+    "question_text": "A greedy algorithm builds a solution by making the locally optimal choice at each step without reconsidering past decisions. Which two properties must a problem exhibit for a greedy approach to yield an optimal solution?",
+    "correct_answer": "Greedy choice property and optimal substructure",
+    "distractors": [
+      "Overlapping subproblems and optimal substructure",
+      "Greedy choice property and overlapping subproblems",
+      "Divide-and-conquer property and memoization"
+    ],
+    "difficulty": 1,
+    "source_article": "Greedy algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["greedy algorithm"]
+  },
+  {
+    "question_text": "Tony Hoare developed quicksort in 1959 while working on machine translation at Moscow State University. What is quicksort's worst-case time complexity?",
+    "correct_answer": "$O(n^2)$, occurring when the pivot selection consistently produces the most unbalanced partitions",
+    "distractors": [
+      "$O(n \\log n)$, occurring when the pivot always lands near the median element",
+      "$O(n)$, occurring when the input array is already sorted in ascending order",
+      "$O(n^2 \\log n)$, occurring when duplicate elements dominate the input array"
+    ],
+    "difficulty": 2,
+    "source_article": "Quicksort",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["quicksort"]
+  },
+  {
+    "question_text": "Merge sort, invented by John von Neumann in 1945, guarantees $O(n \\log n)$ time in all cases. What property makes it preferable for sorting linked lists and records with satellite data?",
+    "correct_answer": "It is a stable sort, preserving the relative order of equal elements",
+    "distractors": [
+      "It is an in-place sort, requiring only $O(1)$ additional memory",
+      "It is an adaptive sort, running in $O(n)$ time on nearly sorted input",
+      "It is a comparison-free sort, using hashing instead of element comparisons"
+    ],
+    "difficulty": 2,
+    "source_article": "Merge sort",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["merge sort"]
+  },
+  {
+    "question_text": "Dijkstra's algorithm, conceived in 1956, solves the single-source shortest path problem for graphs with non-negative edge weights. Why does it fail on graphs containing negative edge weights?",
+    "correct_answer": "It greedily finalizes vertex distances, so a later negative edge can invalidate an already-committed shortest path",
+    "distractors": [
+      "Its priority queue cannot store negative values, so negative-weight edges cause a runtime overflow error",
+      "It requires all edges to form a directed acyclic graph, and negative weights create forbidden cycles",
+      "It only counts the number of edges on each path, so negative weights have no meaningful interpretation"
+    ],
+    "difficulty": 2,
+    "source_article": "Dijkstra's algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["Dijkstra's algorithm"]
+  },
+  {
+    "question_text": "Breadth-first search (BFS) explores a graph level by level, visiting all neighbors at distance $k$ before those at distance $k+1$. What useful property does this guarantee for unweighted graphs?",
+    "correct_answer": "It finds the shortest path from the source to every reachable vertex",
+    "distractors": [
+      "It detects all strongly connected components in a single pass",
+      "It produces a valid topological ordering of the vertices",
+      "It identifies the minimum spanning tree of the graph"
+    ],
+    "difficulty": 2,
+    "source_article": "Breadth-first search",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["breadth-first search"]
+  },
+  {
+    "question_text": "Depth-first search (DFS) explores a graph by going as deep as possible along each branch before backtracking. Which data structure does DFS use to track the exploration frontier?",
+    "correct_answer": "A stack, either explicitly or implicitly via the call stack through recursion",
+    "distractors": [
+      "A queue, processing vertices in the order they were first discovered",
+      "A priority queue, selecting the vertex with the smallest edge weight",
+      "A hash table, mapping each vertex to its current traversal depth"
+    ],
+    "difficulty": 2,
+    "source_article": "Depth-first search",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["depth-first search"]
+  },
+  {
+    "question_text": "A binary search tree (BST) maintains the invariant that every node's key is greater than all keys in its left subtree and less than all keys in its right subtree. When does a BST's search operation degrade to $O(n)$?",
+    "correct_answer": "When the tree becomes skewed (degenerate), effectively forming a linked list",
+    "distractors": [
+      "When the tree is perfectly balanced with equal-height subtrees at every node",
+      "When all inserted keys are distinct and randomly distributed",
+      "When the tree contains exactly $2^k - 1$ nodes for some integer $k$"
+    ],
+    "difficulty": 2,
+    "source_article": "Binary search tree",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["binary search tree"]
+  },
+  {
+    "question_text": "A binary heap is a complete binary tree satisfying the heap property and is commonly implemented using an array. What is the time complexity of accessing the minimum element in a min-heap?",
+    "correct_answer": "$O(1)$, because the minimum is always stored at the root of the heap",
+    "distractors": [
+      "$O(\\log n)$, because a sift-down operation is required to locate it",
+      "$O(n)$, because a linear scan of the leaf nodes is needed",
+      "$O(n \\log n)$, because the heap must be fully sorted first"
+    ],
+    "difficulty": 2,
+    "source_article": "Heap (data structure)",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["heap"]
+  }
+]

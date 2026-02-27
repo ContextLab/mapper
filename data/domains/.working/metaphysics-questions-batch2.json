@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Which philosopher formulated the ontological argument for God's existence in 1078, defining God as 'a being than which no greater can be conceived'?",
+    "correct_answer": "Anselm of Canterbury, in his work Proslogion",
+    "distractors": [
+      "Thomas Aquinas, in his work Summa Theologica",
+      "Augustine of Hippo, in his work City of God",
+      "René Descartes, in his work Meditations on First Philosophy"
+    ],
+    "difficulty": 1,
+    "source_article": "God",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["God"]
+  },
+  {
+    "question_text": "In classical physics and chemistry, what two fundamental characteristics define matter?",
+    "correct_answer": "Having mass and occupying space by having volume",
+    "distractors": [
+      "Emitting radiation and generating gravitational wave distortions",
+      "Possessing electrical charge and producing magnetic field interactions",
+      "Exhibiting wave-particle duality and quantum spin angular momentum"
+    ],
+    "difficulty": 1,
+    "source_article": "Matter",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["matter"]
+  },
+  {
+    "question_text": "In the philosophy of mathematics, what position holds that numbers exist as mind-independent abstract entities in a realm separate from the physical world?",
+    "correct_answer": "Platonism, which asserts numbers are real abstract objects existing independently of human thought",
+    "distractors": [
+      "Formalism, which asserts numbers are syntactic symbols manipulated by explicit formal rules",
+      "Nominalism, which asserts numbers are convenient labels for patterns among concrete particulars",
+      "Intuitionism, which asserts numbers are mental constructions produced by finite cognitive processes"
+    ],
+    "difficulty": 1,
+    "source_article": "Number",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["number"]
+  },
+  {
+    "question_text": "What does ontology, as a branch of metaphysics, primarily investigate?",
+    "correct_answer": "The nature of being, what kinds of entities exist, and their fundamental categories",
+    "distractors": [
+      "The limits of human knowledge, justified belief, and rational epistemic standards",
+      "The principles of valid deductive inference and formal logical system construction",
+      "The origins of moral value, ethical obligation, and normative behavioral standards"
+    ],
+    "difficulty": 2,
+    "source_article": "Ontology",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["ontology"]
+  },
+  {
+    "question_text": "What is the concept of Laplace's demon meant to illustrate about determinism?",
+    "correct_answer": "That an intellect knowing all positions and velocities of every particle could perfectly predict the entire future",
+    "distractors": [
+      "That an observer measuring any quantum state inevitably disturbs it and introduces fundamental uncertainty",
+      "That a sufficiently powerful computer simulating the universe would require infinite energy to operate",
+      "That a being outside of time could freely choose to intervene in any causal sequence at will"
+    ],
+    "difficulty": 2,
+    "source_article": "Determinism",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["determinism"]
+  },
+  {
+    "question_text": "In Aristotle's metaphysics, what is a 'primary substance'?",
+    "correct_answer": "An individual concrete entity, such as a particular horse, that exists independently and cannot be predicated of anything else",
+    "distractors": [
+      "A universal form, such as the species horse, that exists independently and can be predicated of many individual things",
+      "An abstract mathematical object, such as a geometric shape, that exists independently and structures the physical world",
+      "A fundamental physical element, such as earth or water, that exists independently and composes all material bodies"
+    ],
+    "difficulty": 2,
+    "source_article": "Substance theory",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["substance"]
+  },
+  {
+    "question_text": "What are the three main philosophical positions regarding the ontological status of properties?",
+    "correct_answer": "Realism, nominalism, and conceptualism",
+    "distractors": [
+      "Empiricism, rationalism, and pragmatism",
+      "Monism, dualism, and pluralism",
+      "Idealism, materialism, and phenomenalism"
+    ],
+    "difficulty": 2,
+    "source_article": "Property (philosophy)",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["property"]
+  },
+  {
+    "question_text": "What distinguishes David Lewis's modal realism from other philosophical accounts of possible worlds?",
+    "correct_answer": "Lewis held that all possible worlds are concrete, spatiotemporally real entities of the same kind as our actual world",
+    "distractors": [
+      "Lewis held that all possible worlds are abstract, mathematical constructions existing only within formal logical systems",
+      "Lewis held that all possible worlds are mental, subjective representations existing only within conscious human minds",
+      "Lewis held that all possible worlds are linguistic, fictional descriptions existing only within coherent narrative frameworks"
+    ],
+    "difficulty": 2,
+    "source_article": "Modal realism",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["modal realism"]
+  },
+  {
+    "question_text": "Which philosopher introduced the concept of possible worlds to argue that God actualized 'the best of all possible worlds'?",
+    "correct_answer": "Gottfried Wilhelm Leibniz, in his 1710 work Theodicy",
+    "distractors": [
+      "Baruch Spinoza, in his 1677 work Ethics Demonstrated in Geometric Order",
+      "Immanuel Kant, in his 1781 work Critique of Pure Reason",
+      "René Descartes, in his 1641 work Meditations on First Philosophy"
+    ],
+    "difficulty": 2,
+    "source_article": "Possible world",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["possible world"]
+  },
+  {
+    "question_text": "In Cartesian substance dualism, what are the two fundamentally distinct kinds of substance, and what is each defined by?",
+    "correct_answer": "Mind, defined by thinking (res cogitans), and body, defined by spatial extension (res extensa)",
+    "distractors": [
+      "Form, defined by rational structure (res formalis), and matter, defined by sensory quality (res sensibilis)",
+      "Soul, defined by divine origin (res divina), and flesh, defined by biological function (res corporalis)",
+      "Spirit, defined by moral agency (res moralis), and nature, defined by causal necessity (res naturalis)"
+    ],
+    "difficulty": 2,
+    "source_article": "Mind–body dualism",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["dualism"]
+  }
+]

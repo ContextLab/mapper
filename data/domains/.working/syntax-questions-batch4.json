@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In generative syntax, what is a theta role?",
+    "correct_answer": "A semantic role such as agent, patient, or theme assigned by a predicate to each of its arguments.",
+    "distractors": [
+      "A syntactic position in the phrase structure tree that determines the linear order of constituents.",
+      "A morphological feature such as tense, person, or number checked during syntactic derivation.",
+      "A phonological rule that governs the stress pattern assigned to words within a sentence."
+    ],
+    "difficulty": 3,
+    "source_article": "Theta role",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["theta role"]
+  },
+  {
+    "question_text": "What does the head-directionality parameter classify in languages?",
+    "correct_answer": "Whether the head of a phrase precedes its complements (head-initial) or follows them (head-final).",
+    "distractors": [
+      "Whether a language marks grammatical relations through word order or through morphological case inflection.",
+      "Whether subjects must appear before the verb or can freely occur in postverbal position.",
+      "Whether functional categories like tense and agreement are realized as prefixes or as suffixes."
+    ],
+    "difficulty": 3,
+    "source_article": "Head direction parameter",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["head-directionality parameter"]
+  },
+  {
+    "question_text": "What does the VP-internal subject hypothesis propose about where subjects originate?",
+    "correct_answer": "Subjects are base-generated inside the verb phrase and later move to the specifier of TP.",
+    "distractors": [
+      "Subjects are merged directly into the specifier of CP and remain there throughout the derivation.",
+      "Subjects originate in an adjunct position outside the clause and are licensed by discourse context.",
+      "Subjects are base-generated in the specifier of TP and assign their theta role from that position."
+    ],
+    "difficulty": 3,
+    "source_article": "VP-internal subject hypothesis",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["VP-internal subject hypothesis"]
+  },
+  {
+    "question_text": "What did Pollock's split INFL hypothesis propose about the structure of the inflectional phrase?",
+    "correct_answer": "It split the single INFL node into separate functional projections for tense (TP) and agreement (AgrP).",
+    "distractors": [
+      "It merged all inflectional features into a single head to simplify the number of functional projections.",
+      "It eliminated the inflectional phrase entirely and distributed its features across lexical verb projections.",
+      "It replaced the inflectional phrase with a complementizer phrase that hosts both tense and agreement."
+    ],
+    "difficulty": 3,
+    "source_article": "Split INFL hypothesis",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["split INFL hypothesis"]
+  },
+  {
+    "question_text": "What characterizes a pro-drop language?",
+    "correct_answer": "It allows the subject pronoun to be omitted when it is recoverable from verbal morphology or context.",
+    "distractors": [
+      "It requires every finite clause to contain an overt subject even when the referent is pragmatically clear.",
+      "It permits the verb to be dropped from a sentence whenever the predicate is inferable from discourse.",
+      "It allows object noun phrases to be deleted freely regardless of the richness of verbal inflection."
+    ],
+    "difficulty": 3,
+    "source_article": "Pro-drop language",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["pro-drop"]
+  },
+  {
+    "question_text": "In syntax, what are island constraints?",
+    "correct_answer": "Restrictions that block syntactic movement of constituents out of certain structural domains.",
+    "distractors": [
+      "Requirements that every moved constituent must leave a phonologically visible copy in its base position.",
+      "Conditions that permit free extraction of any element as long as it lands in a specifier position.",
+      "Principles that determine the linear ordering of words within a single phrase structure projection."
+    ],
+    "difficulty": 3,
+    "source_article": "Island (linguistics)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["locality constraints"]
+  },
+  {
+    "question_text": "In Government and Binding theory, what does control theory govern?",
+    "correct_answer": "The interpretation of the null subject PRO in infinitival and other nonfinite complement clauses.",
+    "distractors": [
+      "The assignment of structural case to overt noun phrases by finite tense heads and transitive verbs.",
+      "The distribution of reflexive pronouns and their requirement to be bound within a local domain.",
+      "The licensing of empty operator chains created by topicalization and focus movement operations."
+    ],
+    "difficulty": 3,
+    "source_article": "Control (linguistics)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["control theory"]
+  },
+  {
+    "question_text": "In Government and Binding theory, what is the syntactic relation of government?",
+    "correct_answer": "A structural relation in which a head licenses properties of a dependent element it m-commands without barriers intervening.",
+    "distractors": [
+      "A linear adjacency relation requiring that a dependent element appear immediately next to its selecting head.",
+      "A semantic relation in which a predicate assigns a thematic role to an argument in its specifier position.",
+      "A discourse relation in which a topic phrase binds a pronoun located in the comment portion of the sentence."
+    ],
+    "difficulty": 3,
+    "source_article": "Government (linguistics)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["government (syntax)"]
+  },
+  {
+    "question_text": "What is the central structure-building operation in Chomsky's Minimalist Program?",
+    "correct_answer": "Merge, which combines two syntactic objects to form a new set and applies recursively to its own output.",
+    "distractors": [
+      "Adjunction, which attaches modifiers to maximal projections without altering the label of the host phrase.",
+      "Government, which establishes a licensing relation between a head and the elements it c-commands locally.",
+      "Spell-Out, which transfers completed syntactic structures to the phonological and semantic interfaces simultaneously."
+    ],
+    "difficulty": 4,
+    "source_article": "Minimalist program",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["Minimalist Program"]
+  },
+  {
+    "question_text": "In Minimalist syntax, what does the Phase Impenetrability Condition state?",
+    "correct_answer": "Once a phase is complete, its internal domain is transferred to the interfaces and becomes inaccessible to further syntactic operations.",
+    "distractors": [
+      "All features within a syntactic phase must be checked before any lexical items from the numeration can be merged.",
+      "Movement out of any clause boundary is universally prohibited unless the moved element carries an EPP feature.",
+      "Each phase head must agree with every goal in its c-command domain before the derivation can continue upward."
+    ],
+    "difficulty": 4,
+    "source_article": "Minimalist program",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["phase theory"]
+  }
+]

@@ -8,10 +8,14 @@ import {
   $answeredIds,
   $coverage,
   $questionMode,
+  $watchedVideos,
+  $preVideoSnapshot,
+  $runningDifferenceMap,
+  $phase,
 } from './state/store.js';
 import * as registry from './domain/registry.js';
-import { load as loadDomain } from './domain/loader.js';
-import { indexQuestions, getAvailableQuestions } from './domain/questions.js';
+import { load as loadDomain, loadQuestionsForDomain } from './domain/loader.js';
+import { indexQuestions } from './domain/questions.js';
 import { Estimator } from './learning/estimator.js';
 import { Sampler } from './learning/sampler.js';
 import { getCentrality } from './learning/curriculum.js';
@@ -25,7 +29,10 @@ import * as modes from './ui/modes.js';
 const SKIP_LENGTH_SCALE_FACTOR = 0.5;
 import * as insights from './ui/insights.js';
 import * as share from './ui/share.js';
-import { showDownload, hideDownload, updateConfidence, initConfidence } from './ui/progress.js';
+import * as videoModal from './ui/video-modal.js';
+import * as videoLoader from './domain/video-loader.js';
+import { computeRanking, takeSnapshot, handlePostVideoQuestion } from './learning/video-recommender.js';
+import { updateConfidence, initConfidence } from './ui/progress.js';
 import { announce, setupKeyboardNav } from './utils/accessibility.js';
 
 const GLOBAL_REGION = { x_min: 0, x_max: 1, y_min: 0, y_max: 1 };
@@ -42,12 +49,14 @@ let globalEstimator = null; // Always covers GLOBAL_REGION for minimap
 let sampler = null;
 let allDomainBundle = null;   // Permanent "all" domain data — never replaced
 let currentDomainBundle = null; // Points to allDomainBundle once loaded
+let aggregatedQuestions = [];   // Questions for active domain + descendants (CL-049)
 let currentViewport = { x_min: 0, x_max: 1, y_min: 0, y_max: 1 };
 let currentDomainRegion = GLOBAL_REGION;
 let currentGridSize = GLOBAL_GRID_SIZE;
 let domainQuestionCount = 0;
 let switchGeneration = 0;
 let questionIndex = new Map();
+let mergedVideoWindows = []; // Accumulated window coords from recent unwatched-between videos
 let mapInitialized = false; // True once articles/questions/labels are set on the renderer
 
 async function boot() {
@@ -103,6 +112,23 @@ async function boot() {
     return;
   }
 
+  // Start background video catalog loading (T-V051, FR-V041)
+  // Videos are set on the renderer only after map initialization (in switchDomain)
+  // so they don't appear as static gray squares on the welcome screen.
+  // The particle system handles welcome-screen display (green, dodge, zoom).
+  videoLoader.startBackgroundLoad();
+  videoLoader.getVideos().promise.then((videos) => {
+    if (renderer && videos.length > 0 && mapInitialized) {
+      renderer.setVideos(videosToMarkers(videos));
+    }
+  });
+
+  // Pre-load all domain bundles in the background so domain switches are instant.
+  const allDomainIds = registry.getDomains().map(d => d.id).filter(id => id !== 'all');
+  for (const id of allDomainIds) {
+    loadDomain(id, {}).catch(() => {});  // silent — will retry on demand
+  }
+
   const headerEl = document.getElementById('app-header');
   controls.init(headerEl);
   controls.onDomainSelect((domainId) => $activeDomain.set(domainId));
@@ -110,9 +136,9 @@ async function boot() {
   controls.onExport(handleExport);
   controls.onImport(handleImport);
 
-  const landingWrapper = document.getElementById('landing-domain-wrapper');
-  if (landingWrapper) {
-    controls.createLandingSelector(landingWrapper, (domainId) => $activeDomain.set(domainId));
+  const landingStartBtn = document.getElementById('landing-start-btn');
+  if (landingStartBtn) {
+    landingStartBtn.addEventListener('click', () => $activeDomain.set('all'));
   }
 
   const quizPanel = document.getElementById('quiz-panel');
@@ -123,6 +149,15 @@ async function boot() {
   renderer.onReanswer((questionId) => {
     const q = questionIndex.get(questionId);
     if (q) quiz.showQuestion(q);
+  });
+
+  renderer.onVideoClick((hit) => {
+    videoModal.playVideo({
+      id: hit.videoId,
+      title: hit.title,
+      duration_s: hit.durationS,
+      thumbnail_url: hit.thumbnailUrl,
+    });
   });
 
   modes.init(quizPanel);
@@ -149,15 +184,19 @@ async function boot() {
   if (suggestBtn) {
     suggestBtn.addEventListener('click', () => {
       if (!globalEstimator) return;
-      const ck = insights.computeConceptKnowledge(
-        globalEstimator.predict(),
-        GLOBAL_REGION,
-        GLOBAL_GRID_SIZE,
-        { global: true },
-      );
-      insights.showSuggestions(ck);
+      const { data, promise } = videoLoader.getVideos();
+      if (data) {
+        openVideoModal(data);
+      } else {
+        videoModal.showVideoModal([]);
+        promise.then((videos) => openVideoModal(videos));
+      }
     });
   }
+
+  // Initialize video modal and wire completion callback
+  videoModal.init();
+  videoModal.onVideoComplete(handleVideoComplete);
 
   share.init(headerEl, () => renderer._canvas, () => {
     if (!currentDomainBundle) return [];
@@ -177,7 +216,17 @@ async function boot() {
     const answeredQuestions = responses
       .filter(r => r.x != null && r.y != null)
       .map(r => ({ x: r.x, y: r.y, isCorrect: r.is_correct, isSkipped: !!r.is_skipped }));
-    return { estimateGrid: grid, articles, answeredQuestions };
+    const { data: videoData } = videoLoader.getVideos();
+    const videos = [];
+    if (videoData) {
+      for (const v of videoData) {
+        if (!v.windows) continue;
+        for (const [x, y] of v.windows) {
+          videos.push({ x, y });
+        }
+      }
+    }
+    return { estimateGrid: grid, articles, answeredQuestions, videos };
   });
 
   const minimapContainer = document.getElementById('minimap-container');
@@ -252,6 +301,24 @@ function articlesToPoints(articles) {
   }));
 }
 
+function videosToMarkers(videos) {
+  const markers = [];
+  for (const v of videos) {
+    if (!v.windows) continue;
+    for (const [x, y] of v.windows) {
+      markers.push({
+        x,
+        y,
+        videoId: v.id,
+        title: v.title,
+        thumbnailUrl: v.thumbnail_url,
+        durationS: v.duration_s,
+      });
+    }
+  }
+  return markers;
+}
+
 function responsesToAnsweredDots(responses, qIndex) {
   const latest = new Map();
   for (const r of responses) {
@@ -299,24 +366,22 @@ async function switchDomain(domainId) {
 
   if (!allDomainBundle) return;
 
-  // Look up the target domain's region for viewport navigation.
-  // Load the domain JSON (cached after first fetch) just for its region metadata.
+  // Look up the target domain's region from the registry (index.json)
+  // — the single source of truth for bounding boxes.
   let targetRegion = GLOBAL_REGION;
+  const registryEntry = registry.getDomain(domainId);
+  if (registryEntry && registryEntry.region) {
+    targetRegion = registryEntry.region;
+  }
+
+  // Ensure the domain bundle is loaded/cached (for questions & labels).
+  // Bundles are pre-loaded in the background after boot, so this is usually instant.
   try {
-    const bundle = await loadDomain(domainId, {
-      onProgress: ({ loaded, total }) => showDownload(loaded, total),
-      onError: (err) => {
-        console.error('[app] Domain load failed:', err);
-        announce(`Failed to load domain. ${err.message}`);
-      },
-    });
+    await loadDomain(domainId, {});
     if (generation !== switchGeneration) return;
-    if (bundle && bundle.domain && bundle.domain.region) {
-      targetRegion = bundle.domain.region;
-    }
   } catch (err) {
     if (generation === switchGeneration) {
-      console.error('[app] switchDomain region lookup failed:', err);
+      console.error('[app] switchDomain load failed:', err);
     }
   }
 
@@ -346,8 +411,8 @@ async function switchDomain(domainId) {
 
     const relevantResponses = allResponses.filter(r => r.x != null && r.y != null);
     if (relevantResponses.length > 0) {
-      estimator.restore(relevantResponses, UNIFORM_LENGTH_SCALE);
-      globalEstimator.restore(relevantResponses, UNIFORM_LENGTH_SCALE);
+      estimator.restore(relevantResponses, UNIFORM_LENGTH_SCALE, questionIndex);
+      globalEstimator.restore(relevantResponses, UNIFORM_LENGTH_SCALE, questionIndex);
     }
 
     const estimates = estimator.predict();
@@ -357,6 +422,27 @@ async function switchDomain(domainId) {
     renderer.setAnsweredQuestions(responsesToAnsweredDots($responses.get(), questionIndex));
 
     mapInitialized = true;
+
+    // Set video markers now that the map is initialized
+    const { data: earlyVideos } = videoLoader.getVideos();
+    if (earlyVideos && earlyVideos.length > 0) {
+      renderer.setVideos(videosToMarkers(earlyVideos));
+    }
+  }
+
+  // Aggregate questions for this domain + all descendants (CL-049)
+  try {
+    aggregatedQuestions = await loadQuestionsForDomain(domainId);
+    if (generation !== switchGeneration) return;
+    for (const q of aggregatedQuestions) {
+      if (!questionIndex.has(q.id)) questionIndex.set(q.id, q);
+    }
+    indexQuestions(aggregatedQuestions);
+    insights.setConcepts(aggregatedQuestions, allDomainBundle.articles);
+    renderer.addQuestions(aggregatedQuestions);
+  } catch (err) {
+    console.error('[app] Question aggregation failed:', err);
+    aggregatedQuestions = allDomainBundle ? allDomainBundle.questions : [];
   }
 
   // Update domain-scoped tracking
@@ -377,11 +463,10 @@ async function switchDomain(domainId) {
   toggleQuizPanel(true);
   const toggleBtn = document.getElementById('quiz-toggle');
   if (toggleBtn) toggleBtn.removeAttribute('hidden');
-  hideDownload();
   controls.showActionButtons();
 
   const domainName = registry.getDomains().find(d => d.id === domainId)?.name || domainId;
-  announce(`Navigated to ${domainName}. ${allDomainBundle.questions.length} questions available.`);
+  announce(`Navigated to ${domainName}. ${aggregatedQuestions.length} questions available.`);
 
   selectAndShowNextQuestion();
 }
@@ -390,7 +475,9 @@ function selectAndShowNextQuestion() {
   if (!currentDomainBundle || !estimator || !sampler) return;
 
   const answeredIds = $answeredIds.get();
-  const available = getAvailableQuestions(currentDomainBundle, answeredIds);
+  // Use aggregated questions (own + descendants) per CL-049
+  const pool = aggregatedQuestions.length > 0 ? aggregatedQuestions : (currentDomainBundle.questions || []);
+  const available = pool.filter(q => !answeredIds.has(q.id));
 
   if (available.length === 0) {
     announce('All questions answered! Great work exploring the knowledge map.');
@@ -400,8 +487,9 @@ function selectAndShowNextQuestion() {
 
   const estimates = $estimates.get();
   const activeMode = modes.getActiveMode();
+  const phase = $phase.get();
   const scored = activeMode === 'auto'
-    ? sampler.selectNext(available, estimates, currentViewport, answeredIds)
+    ? sampler.selectNext(available, estimates, currentViewport, answeredIds, phase)
     : sampler.selectByMode(activeMode, available, estimates, currentViewport, answeredIds);
 
   if (!scored) {
@@ -442,10 +530,20 @@ function handleAnswer(selectedKey, question) {
   const isReanswer = filtered.length < current.length;
   $responses.set([...filtered, response]);
 
-  estimator.observe(question.x, question.y, isCorrect, UNIFORM_LENGTH_SCALE);
-  globalEstimator.observe(question.x, question.y, isCorrect, UNIFORM_LENGTH_SCALE);
+  const difficulty = question.difficulty;
+  estimator.observe(question.x, question.y, isCorrect, UNIFORM_LENGTH_SCALE, difficulty);
+  globalEstimator.observe(question.x, question.y, isCorrect, UNIFORM_LENGTH_SCALE, difficulty);
   const estimates = estimator.predict();
   $estimates.set(estimates);
+
+  // Video recommendation: post-video diff map flow (T-V052, FR-V021)
+  if ($preVideoSnapshot.get() !== null) {
+    const globalEstimates = globalEstimator.predict();
+    const result = handlePostVideoQuestion(globalEstimates, mergedVideoWindows);
+    if (result.phaseComplete) {
+      mergedVideoWindows = [];
+    }
+  }
 
   if (!isReanswer) {
     domainQuestionCount++;
@@ -459,6 +557,9 @@ function handleAnswer(selectedKey, question) {
 
   const coverage = Math.round($coverage.get() * 100);
   announce(`${feedback} ${coverage}% mapped.`);
+
+  // Revert non-auto modes (easy/hardest/dont-know) back to auto after one answer
+  modes.revertToAutoIfNeeded();
 
   // Auto-advance after a short delay if the toggle is on
   if (modes.isAutoAdvance()) {
@@ -489,8 +590,9 @@ function handleSkip() {
   $responses.set([...filtered, response]);
 
   const skipLengthScale = UNIFORM_LENGTH_SCALE * SKIP_LENGTH_SCALE_FACTOR;
-  estimator.observeSkip(question.x, question.y, skipLengthScale);
-  globalEstimator.observeSkip(question.x, question.y, skipLengthScale);
+  const difficulty = question.difficulty;
+  estimator.observeSkip(question.x, question.y, skipLengthScale, difficulty);
+  globalEstimator.observeSkip(question.x, question.y, skipLengthScale, difficulty);
   const estimates = estimator.predict();
   $estimates.set(estimates);
 
@@ -512,6 +614,7 @@ function handleReset() {
   currentDomainBundle = null;
   mapInitialized = false;
   domainQuestionCount = 0;
+  aggregatedQuestions = [];
   currentDomainRegion = GLOBAL_REGION;
   currentGridSize = GLOBAL_GRID_SIZE;
   switchGeneration++;
@@ -521,11 +624,14 @@ function handleReset() {
   globalEstimator.reset();
   globalEstimator.init(GLOBAL_GRID_SIZE, GLOBAL_REGION);
   renderer.setPoints([]);
+  renderer.setVideos([]);
   renderer.setHeatmap([], GLOBAL_REGION);
   renderer.setLabels([]);
   renderer.setAnsweredQuestions([]);
   renderer.clearQuestions();
   insights.resetGlobalConcepts();
+  videoModal.hide();
+  mergedVideoWindows = [];
   // Re-set concepts from the permanent "all" bundle so insights work on next domain select
   if (allDomainBundle) {
     insights.setConcepts(allDomainBundle.questions, allDomainBundle.articles);
@@ -616,8 +722,8 @@ function handleImport(data) {
 
   if (estimator) {
     const relevant = merged.filter(r => r.x != null && r.y != null);
-    estimator.restore(relevant, UNIFORM_LENGTH_SCALE);
-    if (globalEstimator) globalEstimator.restore(relevant, UNIFORM_LENGTH_SCALE);
+    estimator.restore(relevant, UNIFORM_LENGTH_SCALE, questionIndex);
+    if (globalEstimator) globalEstimator.restore(relevant, UNIFORM_LENGTH_SCALE, questionIndex);
     const estimates = estimator.predict();
     $estimates.set(estimates);
 
@@ -648,6 +754,7 @@ function handleCellClick(_gx, _gy) {
 }
 
 function handleEscape() {
+  if (videoModal.handleEscape()) return;
   const insightsModal = document.getElementById('insights-modal');
   if (insightsModal && !insightsModal.hidden) {
     insightsModal.hidden = true;
@@ -742,6 +849,38 @@ function showLandingError(message) {
   if (landing) {
     const p = landing.querySelector('p');
     if (p) p.textContent = message;
+  }
+}
+
+// ─── Video recommendation helpers (T-V050, T-V051, T-V052) ──
+
+function openVideoModal(videos) {
+  if (!globalEstimator) return;
+  const globalEstimates = globalEstimator.predict();
+  const watchedIds = $watchedVideos.get();
+  const runningDiffMap = $runningDifferenceMap.get();
+  const ranked = computeRanking(videos, globalEstimates, watchedIds, runningDiffMap);
+  videoModal.showVideoModal(ranked);
+}
+
+function handleVideoComplete(videoId) {
+  if (!globalEstimator) return;
+  // Take snapshot for diff map computation (FR-V020, CL-004)
+  const globalEstimates = globalEstimator.predict();
+  const snapshotTaken = takeSnapshot(globalEstimates);
+
+  // Find the completed video's windows and merge them
+  const { data } = videoLoader.getVideos();
+  if (data) {
+    const video = data.find((v) => v.id === videoId);
+    if (video && video.windows) {
+      if (snapshotTaken) {
+        mergedVideoWindows = [...video.windows];
+      } else {
+        // Multiple videos without questions — merge windows (CL-004)
+        mergedVideoWindows = mergedVideoWindows.concat(video.windows);
+      }
+    }
   }
 }
 

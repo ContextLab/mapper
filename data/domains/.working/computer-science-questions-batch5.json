@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In the MESI cache coherence protocol, what do the four letters M, E, S, and I stand for?",
+    "correct_answer": "Modified, Exclusive, Shared, and Invalid",
+    "distractors": [
+      "Modified, Enabled, Synchronized, and Inactive",
+      "Mapped, Exclusive, Stale, and Invalidated",
+      "Modified, Evicted, Shared, and Idle"
+    ],
+    "difficulty": 4,
+    "source_article": "Cache coherence",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["cache coherence"]
+  },
+  {
+    "question_text": "Tomasulo's algorithm, first implemented in the IBM System/360 Model 91, introduced which key technique to enable full out-of-order execution by eliminating false data dependencies?",
+    "correct_answer": "Register renaming",
+    "distractors": [
+      "Branch prediction",
+      "Loop unrolling",
+      "Instruction prefetching"
+    ],
+    "difficulty": 4,
+    "source_article": "Out-of-order execution",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["out-of-order execution"]
+  },
+  {
+    "question_text": "Write-ahead logging (WAL) is a technique that provides which two specific ACID properties in database systems?",
+    "correct_answer": "Atomicity and durability",
+    "distractors": [
+      "Consistency and isolation",
+      "Isolation and durability",
+      "Atomicity and consistency"
+    ],
+    "difficulty": 4,
+    "source_article": "Write-ahead logging",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["write-ahead logging"]
+  },
+  {
+    "question_text": "Software transactional memory (STM) was first proposed as a purely software-based mechanism in 1995 by which two researchers?",
+    "correct_answer": "Nir Shavit and Dan Touitou",
+    "distractors": [
+      "Maurice Herlihy and J. Eliot B. Moss",
+      "Leslie Lamport and Barbara Liskov",
+      "Butler Lampson and Howard Sturgis"
+    ],
+    "difficulty": 4,
+    "source_article": "Software transactional memory",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["software transactional memory"]
+  },
+  {
+    "question_text": "The LLVM compiler infrastructure project was started in 2000 at which university, under the direction of Vikram Adve and Chris Lattner?",
+    "correct_answer": "University of Illinois at Urbana-Champaign",
+    "distractors": [
+      "Massachusetts Institute of Technology",
+      "Stanford University",
+      "Carnegie Mellon University"
+    ],
+    "difficulty": 4,
+    "source_article": "LLVM",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["LLVM"]
+  },
+  {
+    "question_text": "The Spectre hardware vulnerability, disclosed in January 2018, exploits which CPU performance optimization technique to leak sensitive data through cache side channels?",
+    "correct_answer": "Speculative execution",
+    "distractors": [
+      "Hyper-threading",
+      "Out-of-order memory prefetching",
+      "Dynamic voltage and frequency scaling"
+    ],
+    "difficulty": 4,
+    "source_article": "Spectre (security vulnerability)",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["Spectre (vulnerability)"]
+  },
+  {
+    "question_text": "According to the result by Lamport, Shostak, and Pease (1982), what is the minimum number of total nodes required to tolerate f Byzantine (arbitrarily faulty) nodes?",
+    "correct_answer": "3f + 1",
+    "distractors": [
+      "2f + 1",
+      "4f + 1",
+      "f + 2"
+    ],
+    "difficulty": 4,
+    "source_article": "Byzantine fault tolerance",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["Byzantine fault tolerance"]
+  },
+  {
+    "question_text": "Conflict-free replicated data types (CRDTs), formally defined by Marc Shapiro et al. in 2011, guarantee which specific form of consistency across replicas without requiring coordination?",
+    "correct_answer": "Strong eventual consistency",
+    "distractors": [
+      "Strict serializability",
+      "Linearizability",
+      "Sequential consistency"
+    ],
+    "difficulty": 4,
+    "source_article": "Conflict-free replicated data type",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["conflict-free replicated data type"]
+  },
+  {
+    "question_text": "Which programming language was the first to attempt a comprehensive threading memory model, influencing later efforts in C++11 and C11?",
+    "correct_answer": "Java",
+    "distractors": [
+      "C#",
+      "Haskell",
+      "Erlang"
+    ],
+    "difficulty": 4,
+    "source_article": "Memory model (programming)",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["memory consistency model"]
+  },
+  {
+    "question_text": "In relational database query optimization, a cost-based optimizer selects an execution plan primarily by estimating what metric for each candidate plan?",
+    "correct_answer": "The runtime cost in terms of I/O operations, CPU path length, and resource usage",
+    "distractors": [
+      "The total number of SQL keywords parsed in the query",
+      "The size of the source code implementing each plan",
+      "The number of database tables referenced in the schema"
+    ],
+    "difficulty": 4,
+    "source_article": "Query optimization",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["query optimization"]
+  }
+]

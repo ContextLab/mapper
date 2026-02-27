@@ -1,0 +1,652 @@
+[
+  {
+    "question_text": "What form of government is characterized by rule of the people, where citizens participate in decision-making through voting and representation?",
+    "correct_answer": "Democracy, a system in which governing power derives from the people through free elections and equal political participation.",
+    "distractors": [
+      "Technocracy, a system in which governing power derives from scientific experts through merit-based selection and specialized knowledge.",
+      "Theocracy, a system in which governing power derives from religious authority through divine mandate and clerical leadership.",
+      "Oligarchy, a system in which governing power derives from a small wealthy group through concentrated economic and political influence."
+    ],
+    "difficulty": 1,
+    "source_article": "Democracy",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["democracy"]
+  },
+  {
+    "question_text": "In political sociology, what does the concept of power refer to?",
+    "correct_answer": "The ability of individuals or groups to realize their will and influence the actions of others, even against resistance.",
+    "distractors": [
+      "The formal legal authority granted exclusively to elected officials to enact legislation within constitutional boundaries.",
+      "The total economic resources controlled by a nation's government to distribute among its citizens equitably.",
+      "The military capacity of a state to defend its territorial borders and project force against external threats."
+    ],
+    "difficulty": 1,
+    "source_article": "Power (social and political)",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["power"]
+  },
+  {
+    "question_text": "What is social class in the context of political sociology?",
+    "correct_answer": "A hierarchical grouping of people based on economic position, wealth, occupation, and access to resources and opportunities.",
+    "distractors": [
+      "A voluntary association of individuals who share identical political ideologies and collectively advocate for specific legislative reforms.",
+      "A legally defined category of citizenship that determines which government benefits and voting rights a person receives.",
+      "A cultural grouping based primarily on shared ethnic heritage, language, and religious traditions within a national boundary."
+    ],
+    "difficulty": 1,
+    "source_article": "Social class",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["social class"]
+  },
+  {
+    "question_text": "What is a revolution in political sociology?",
+    "correct_answer": "A fundamental and relatively sudden transformation of a society's political structure and system of governance.",
+    "distractors": [
+      "A gradual and incremental reform process conducted through established legislative channels over several decades.",
+      "A temporary suspension of civil liberties imposed by military authorities during a declared national emergency.",
+      "A periodic transfer of executive power between rival political parties following regularly scheduled democratic elections."
+    ],
+    "difficulty": 1,
+    "source_article": "Revolution",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["revolution"]
+  },
+  {
+    "question_text": "In political sociology, what does the term 'state' refer to?",
+    "correct_answer": "A political entity with a centralized government that exercises sovereign authority over a defined territory and population.",
+    "distractors": [
+      "Any voluntary civic organization that mobilizes citizens to participate in community service and local charitable activities.",
+      "A private corporation that provides essential public services such as utilities, transportation, and telecommunications infrastructure.",
+      "An international treaty organization that coordinates diplomatic relations and trade agreements between neighboring countries."
+    ],
+    "difficulty": 1,
+    "source_article": "State (polity)",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["state"]
+  },
+  {
+    "question_text": "What is an ideology in political sociology?",
+    "correct_answer": "A coherent system of ideas, beliefs, and values that shapes how people understand politics and guides collective action.",
+    "distractors": [
+      "A statistical method used by political scientists to measure and predict voter turnout in national and regional elections.",
+      "A formal written constitution that establishes the legal framework and institutional structure of a sovereign nation-state.",
+      "A psychological trait reflecting an individual's personal temperament and emotional disposition toward authority figures."
+    ],
+    "difficulty": 1,
+    "source_article": "Ideology",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["ideology"]
+  },
+  {
+    "question_text": "What is nationalism?",
+    "correct_answer": "A political ideology centered on promoting the interests, culture, and identity of a particular nation or national group.",
+    "distractors": [
+      "An economic policy focused on eliminating all tariffs and trade barriers to establish unrestricted global free markets.",
+      "A philosophical movement advocating universal human rights that transcend all national, cultural, and ethnic boundaries entirely.",
+      "A diplomatic strategy emphasizing permanent military alliances between geographically neighboring states for mutual collective defense."
+    ],
+    "difficulty": 1,
+    "source_article": "Nationalism",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["nationalism"]
+  },
+  {
+    "question_text": "What is the primary function of an election in a democratic political system?",
+    "correct_answer": "A formal process through which citizens vote to choose representatives or decide on public policy questions.",
+    "distractors": [
+      "A judicial procedure through which courts review and overturn legislation that violates constitutional provisions or principles.",
+      "An administrative mechanism through which government agencies allocate budgetary resources among competing departmental priorities.",
+      "A diplomatic protocol through which national leaders negotiate binding international treaties and mutual defense agreements."
+    ],
+    "difficulty": 1,
+    "source_article": "Election",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["election"]
+  },
+  {
+    "question_text": "What is a political party?",
+    "correct_answer": "An organized group of people who share similar political goals and seek to influence government by winning elections.",
+    "distractors": [
+      "A government regulatory agency responsible for overseeing fair business practices and enforcing consumer protection laws nationwide.",
+      "A nonprofit charitable foundation that provides humanitarian aid and disaster relief to communities across multiple countries.",
+      "A temporary legislative committee formed to investigate specific government scandals and recommend disciplinary actions against officials."
+    ],
+    "difficulty": 1,
+    "source_article": "Political party",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["political party"]
+  },
+  {
+    "question_text": "What is a protest in the context of political sociology?",
+    "correct_answer": "A public expression of collective dissent or objection, typically aimed at influencing political decisions or social conditions.",
+    "distractors": [
+      "A formal legal petition submitted to a court requesting judicial review of a specific government regulation or statute.",
+      "A private negotiation between corporate executives and labor union leaders over workplace compensation and benefit packages.",
+      "An official diplomatic communique issued by a foreign embassy expressing disagreement with a host country's trade policies."
+    ],
+    "difficulty": 1,
+    "source_article": "Protest",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["protest"]
+  },
+  {
+    "question_text": "What does social inequality refer to in political sociology?",
+    "correct_answer": "The unequal distribution of resources, opportunities, and privileges among different groups or individuals within a society.",
+    "distractors": [
+      "The natural variation in physical abilities and intellectual aptitudes that exists among individuals due to genetic differences.",
+      "The deliberate government policy of assigning different tax rates to corporations based on their annual revenue levels.",
+      "The diplomatic imbalance that arises when smaller nations negotiate trade agreements with larger and more powerful countries."
+    ],
+    "difficulty": 1,
+    "source_article": "Social inequality",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["inequality"]
+  },
+  {
+    "question_text": "What does citizenship refer to in political sociology?",
+    "correct_answer": "The legal status of membership in a political community that confers specific rights, duties, and privileges on individuals.",
+    "distractors": [
+      "The informal social bonds that develop among neighbors living in the same residential area through shared daily interactions.",
+      "The economic classification system that determines an individual's income tax bracket and eligibility for government subsidies.",
+      "The cultural identity formed through participation in religious institutions, ethnic organizations, and local community volunteer groups."
+    ],
+    "difficulty": 1,
+    "source_article": "Citizenship",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["citizenship"]
+  },
+  {
+    "question_text": "What is a bureaucracy?",
+    "correct_answer": "A formal organizational system characterized by hierarchical authority, specialized roles, standardized rules, and impersonal procedures for administration.",
+    "distractors": [
+      "An informal network of political allies who exchange personal favors and patronage to maintain their influence over policy.",
+      "A decentralized cooperative enterprise where all members share equal decision-making power and rotate leadership responsibilities regularly.",
+      "A temporary advisory council appointed by elected officials to provide expert recommendations on a single legislative issue."
+    ],
+    "difficulty": 1,
+    "source_article": "Bureaucracy",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["bureaucracy"]
+  },
+  {
+    "question_text": "In political sociology, what does hegemony describe?",
+    "correct_answer": "The dominance of one group over others achieved primarily through cultural and ideological leadership rather than coercion alone.",
+    "distractors": [
+      "The formal legal supremacy of a written constitution over all other sources of law within a democratic nation-state.",
+      "The military occupation of a weaker country's territory by a stronger nation for purposes of resource extraction.",
+      "The economic monopoly held by a single corporation that controls the entire supply chain of an essential commodity."
+    ],
+    "difficulty": 2,
+    "source_article": "Hegemony",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["hegemony"]
+  },
+  {
+    "question_text": "What is civil society?",
+    "correct_answer": "The sphere of voluntary associations, organizations, and institutions that operate independently of both the state and the market.",
+    "distractors": [
+      "The collection of all government agencies and departments responsible for enforcing laws and delivering public services to citizens.",
+      "The formal diplomatic community composed of ambassadors, consulates, and international treaty organizations operating between sovereign nations.",
+      "The network of private corporations and financial institutions that drive economic production and distribute goods within a country."
+    ],
+    "difficulty": 2,
+    "source_article": "Civil society",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["civil society"]
+  },
+  {
+    "question_text": "What is political socialization?",
+    "correct_answer": "The process by which individuals acquire their political attitudes, values, beliefs, and behaviors through agents like family, school, and media.",
+    "distractors": [
+      "The formal procedure through which immigrants fulfill legal requirements to obtain full citizenship rights in their adopted country.",
+      "The campaign strategy through which political candidates develop their public image and messaging to appeal to undecided voters.",
+      "The legislative process through which elected representatives negotiate compromises to pass bipartisan bills through a divided congress."
+    ],
+    "difficulty": 2,
+    "source_article": "Political socialization",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["political socialization"]
+  },
+  {
+    "question_text": "What defines a social movement in political sociology?",
+    "correct_answer": "An organized, sustained collective effort by a group of people to promote or resist social or political change.",
+    "distractors": [
+      "A spontaneous and brief public gathering triggered by a single event that disperses once immediate grievances are addressed.",
+      "A formal political party campaign organized to win a specific election and secure governmental power for its candidates.",
+      "An academic research program conducted by university scholars to study and document patterns of public opinion over time."
+    ],
+    "difficulty": 2,
+    "source_article": "Social movement",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["social movement"]
+  },
+  {
+    "question_text": "In political sociology, what does legitimacy refer to?",
+    "correct_answer": "The widespread belief that a political authority or institution has the right to govern and that its rule is justified.",
+    "distractors": [
+      "The constitutional requirement that all government expenditures be formally approved by a majority vote of the elected legislature.",
+      "The legal principle that only laws passed through proper procedural channels can be enforced by courts and police.",
+      "The diplomatic recognition granted by foreign nations confirming that a new government represents its country in international affairs."
+    ],
+    "difficulty": 2,
+    "source_article": "Legitimacy (political)",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["legitimacy"]
+  },
+  {
+    "question_text": "What is the collective action problem in political sociology?",
+    "correct_answer": "The challenge of coordinating group behavior toward shared goals when individuals may benefit from others' efforts without contributing.",
+    "distractors": [
+      "The difficulty governments face when attempting to collect sufficient tax revenue from citizens to fund large public infrastructure projects.",
+      "The organizational challenge of recruiting enough qualified candidates to fill all elected positions in a representative democratic government.",
+      "The logistical problem of distributing emergency humanitarian aid equitably among all affected communities following a natural disaster."
+    ],
+    "difficulty": 2,
+    "source_article": "Collective action",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["collective action"]
+  },
+  {
+    "question_text": "What does the study of voting behavior primarily examine?",
+    "correct_answer": "The patterns, motivations, and social factors that influence how and why individuals cast their votes in elections.",
+    "distractors": [
+      "The constitutional provisions and statutory regulations that establish voter eligibility requirements and polling place operating procedures.",
+      "The technological systems and security protocols used to count ballots and verify election results in modern democracies.",
+      "The historical evolution of suffrage rights and the legal battles that expanded the franchise to previously excluded groups."
+    ],
+    "difficulty": 2,
+    "source_article": "Voting behavior",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["voting behavior"]
+  },
+  {
+    "question_text": "What is political culture?",
+    "correct_answer": "The shared values, beliefs, attitudes, and norms within a society that shape its members' orientations toward political life.",
+    "distractors": [
+      "The official body of statutory laws and constitutional amendments that formally define a nation's governmental structure and procedures.",
+      "The set of campaign strategies and media techniques that political parties use to win elections and mobilize supporters.",
+      "The academic discipline that studies the historical development of governmental institutions and international diplomatic relations over time."
+    ],
+    "difficulty": 2,
+    "source_article": "Political culture",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["political culture"]
+  },
+  {
+    "question_text": "What does elite theory argue about the distribution of power in society?",
+    "correct_answer": "That political power is concentrated in the hands of a small, privileged minority who make key decisions for society.",
+    "distractors": [
+      "That political power is distributed equally among all citizens who participate actively in democratic elections and civic life.",
+      "That political power rotates naturally between competing interest groups as each gains and loses influence over legislative cycles.",
+      "That political power resides primarily in formal constitutional structures and is exercised impersonally through established legal procedures."
+    ],
+    "difficulty": 2,
+    "source_article": "Elite theory",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["elite theory"]
+  },
+  {
+    "question_text": "What does pluralism argue about the nature of political power?",
+    "correct_answer": "That power is dispersed among multiple competing interest groups, and no single group consistently dominates political decision-making.",
+    "distractors": [
+      "That power is permanently held by a unified ruling class whose members share common economic interests and social backgrounds.",
+      "That power is concentrated in the executive branch of government and delegated downward through a rigid bureaucratic hierarchy.",
+      "That power is determined solely by military strength and that armed forces ultimately control all major political outcomes."
+    ],
+    "difficulty": 2,
+    "source_article": "Pluralism (political theory)",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["pluralism"]
+  },
+  {
+    "question_text": "What characterizes an authoritarian political system?",
+    "correct_answer": "Strong centralized power with limited political freedoms, restricted civil liberties, and constrained or absent democratic participation by citizens.",
+    "distractors": [
+      "Complete governmental ownership of all economic enterprises combined with centralized planning of production and distribution of goods.",
+      "A decentralized federation of autonomous regional governments that share limited powers with a weak central coordinating authority.",
+      "A purely ceremonial head of state alongside a powerful elected legislature that exercises all governmental authority without constraint."
+    ],
+    "difficulty": 2,
+    "source_article": "Authoritarianism",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["authoritarianism"]
+  },
+  {
+    "question_text": "What is a welfare state?",
+    "correct_answer": "A system of government in which the state assumes primary responsibility for providing social protections like healthcare, education, and pensions.",
+    "distractors": [
+      "A system of government in which all productive property is collectively owned and economic decisions are made by central planners.",
+      "A system of government in which private charitable organizations are solely responsible for assisting citizens experiencing poverty or illness.",
+      "A system of government in which military spending constitutes the largest budget category and defense policy drives all domestic priorities."
+    ],
+    "difficulty": 2,
+    "source_article": "Welfare state",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["welfare state"]
+  },
+  {
+    "question_text": "What is an interest group in political sociology?",
+    "correct_answer": "An organized association that seeks to influence public policy and political decisions on behalf of its members' shared concerns.",
+    "distractors": [
+      "A formal political party that nominates candidates for elected office and competes in general elections to control the government.",
+      "A government regulatory commission appointed by the executive branch to oversee specific industries and enforce compliance with federal law.",
+      "An academic research institute that conducts nonpartisan public opinion polls and publishes reports on current social policy issues."
+    ],
+    "difficulty": 2,
+    "source_article": "Advocacy group",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["interest group"]
+  },
+  {
+    "question_text": "What are Weber's three types of legitimate authority?",
+    "correct_answer": "Traditional authority based on custom, charismatic authority based on a leader's personal qualities, and rational-legal authority based on formal rules.",
+    "distractors": [
+      "Executive authority held by presidents, legislative authority held by parliaments, and judicial authority held by independent constitutional courts.",
+      "Economic authority derived from wealth, military authority derived from armed force, and religious authority derived from spiritual doctrine.",
+      "Local authority exercised by municipal governments, national authority exercised by central states, and international authority exercised by treaty organizations."
+    ],
+    "difficulty": 3,
+    "source_article": "Three types of authority",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Weber's types of authority"]
+  },
+  {
+    "question_text": "What is Gramsci's concept of cultural hegemony?",
+    "correct_answer": "The idea that a dominant class maintains power by making its worldview appear natural and commonsensical through cultural institutions and ideology.",
+    "distractors": [
+      "The theory that a ruling party maintains power by monopolizing military force and systematically suppressing all political opposition through censorship.",
+      "The argument that democratic governments maintain legitimacy by delivering consistent economic growth and rising living standards to all citizens.",
+      "The claim that powerful nations maintain global influence primarily through technological innovation and scientific advancement rather than military strength."
+    ],
+    "difficulty": 3,
+    "source_article": "Cultural hegemony",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Gramsci's cultural hegemony"]
+  },
+  {
+    "question_text": "What does the concept of relative deprivation explain in political sociology?",
+    "correct_answer": "That feelings of disadvantage arise from comparing one's situation to a reference group, potentially fueling grievances and collective mobilization.",
+    "distractors": [
+      "That absolute poverty levels determine the likelihood of political unrest, with the poorest populations always being the most rebellious.",
+      "That objective economic indicators like GDP per capita are the sole predictors of a society's overall political stability and cohesion.",
+      "That social inequality is natural and inevitable because individual talent and effort vary across populations in every known society."
+    ],
+    "difficulty": 3,
+    "source_article": "Relative deprivation",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["relative deprivation"]
+  },
+  {
+    "question_text": "What does resource mobilization theory emphasize about social movements?",
+    "correct_answer": "That movements succeed by strategically acquiring and deploying resources such as money, organization, networks, and media access.",
+    "distractors": [
+      "That movements emerge spontaneously whenever widespread public grievances reach a critical threshold of intensity and emotional urgency.",
+      "That movements are driven primarily by charismatic individual leaders whose personal qualities inspire followers to take collective action.",
+      "That movements arise only when government repression declines enough to create a permissive environment for open political dissent."
+    ],
+    "difficulty": 3,
+    "source_article": "Resource mobilization",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["resource mobilization theory"]
+  },
+  {
+    "question_text": "What does the concept of political opportunity structure refer to?",
+    "correct_answer": "The external environmental factors, such as institutional openness and elite alignments, that shape the prospects for successful collective action.",
+    "distractors": [
+      "The internal organizational resources, such as funding levels and membership size, that determine whether a social movement can sustain itself.",
+      "The formal constitutional provisions, such as separation of powers and federalism, that define how legislative authority is distributed institutionally.",
+      "The individual psychological motivations, such as personal grievances and moral convictions, that drive people to join protest movements."
+    ],
+    "difficulty": 3,
+    "source_article": "Political opportunity",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["political opportunity structure"]
+  },
+  {
+    "question_text": "What does Michels' iron law of oligarchy claim about organizations?",
+    "correct_answer": "That all complex organizations, even those committed to democratic principles, inevitably develop oligarchic tendencies and concentrate power in leaders.",
+    "distractors": [
+      "That organizations become more democratic over time as members gain experience, education, and confidence in self-governance and collective decision-making.",
+      "That only organizations with formal constitutions and transparent bylaws can successfully prevent corruption and maintain internal accountability mechanisms.",
+      "That government bureaucracies are inherently more efficient than private enterprises because centralized authority reduces coordination costs and eliminates redundancy."
+    ],
+    "difficulty": 3,
+    "source_article": "Iron law of oligarchy",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Michels' iron law of oligarchy"]
+  },
+  {
+    "question_text": "What is C. Wright Mills' power elite thesis?",
+    "correct_answer": "That American society is dominated by an interlocking elite of military, corporate, and political leaders who make key national decisions.",
+    "distractors": [
+      "That American democracy functions well because power is dispersed among many competing interest groups that balance each other's influence.",
+      "That American political outcomes are determined primarily by public opinion as expressed through free elections and legislative representation.",
+      "That American governance is controlled by a permanent professional bureaucracy whose technical expertise overrides the authority of elected officials."
+    ],
+    "difficulty": 3,
+    "source_article": "The Power Elite",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Mills' power elite"]
+  },
+  {
+    "question_text": "What role does collective identity play in social movements?",
+    "correct_answer": "It provides a shared sense of belonging and 'we-ness' that motivates participation, sustains commitment, and defines group boundaries.",
+    "distractors": [
+      "It serves as a formal membership roster that organizations use to track dues payments, coordinate logistics, and schedule events.",
+      "It functions as a legal framework that grants movements official recognition and protects their activities under constitutional free assembly rights.",
+      "It operates as a branding strategy that helps movements attract media coverage and distinguish themselves from competing political organizations."
+    ],
+    "difficulty": 3,
+    "source_article": "Collective identity",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["collective identity"]
+  },
+  {
+    "question_text": "In social movement studies, what does framing theory explain?",
+    "correct_answer": "How movements construct interpretive frameworks that define problems, attribute blame, and propose solutions to mobilize supporters for action.",
+    "distractors": [
+      "How governments design constitutional structures that distribute power among legislative, executive, and judicial branches to prevent tyranny.",
+      "How media corporations select which news stories to cover and determine the amount of airtime allocated to political campaigns.",
+      "How researchers design survey questionnaires that measure public opinion accurately and minimize response bias in political polling."
+    ],
+    "difficulty": 3,
+    "source_article": "Framing (social sciences)",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["framing theory"]
+  },
+  {
+    "question_text": "What does the concept of democratization refer to in comparative political sociology?",
+    "correct_answer": "The process by which political regimes transition from authoritarian forms of governance toward more democratic institutions and practices.",
+    "distractors": [
+      "The process by which developed nations impose liberal economic policies on developing countries through international financial institutions and aid conditions.",
+      "The process by which bureaucratic agencies expand their regulatory authority over private industries and individual citizens' daily economic activities.",
+      "The process by which multinational corporations establish standardized labor practices and uniform environmental regulations across all their global operations."
+    ],
+    "difficulty": 3,
+    "source_article": "Democratization",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["democratization"]
+  },
+  {
+    "question_text": "What does state capacity refer to in political sociology?",
+    "correct_answer": "The ability of a state to effectively implement policies, collect taxes, maintain order, and provide public goods to its population.",
+    "distractors": [
+      "The total geographic area and natural resource endowment that a sovereign nation controls within its internationally recognized territorial borders.",
+      "The maximum number of military personnel and weapons systems that a country can deploy during a full-scale national defense mobilization.",
+      "The constitutional authority granted to the executive branch to issue emergency decrees and suspend normal legislative procedures during crises."
+    ],
+    "difficulty": 3,
+    "source_article": "State capacity",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["state capacity"]
+  },
+  {
+    "question_text": "What is clientelism in political sociology?",
+    "correct_answer": "A political relationship in which patrons provide material goods or favors to clients in exchange for political support and loyalty.",
+    "distractors": [
+      "A regulatory framework in which government agencies establish formal licensing requirements that businesses must satisfy to operate legally in markets.",
+      "A diplomatic arrangement in which powerful nations provide military protection to smaller allies in exchange for strategic basing rights.",
+      "An economic system in which consumers choose freely among competing firms whose pricing is determined by supply and demand forces."
+    ],
+    "difficulty": 3,
+    "source_article": "Clientelism",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["clientelism"]
+  },
+  {
+    "question_text": "How does Bourdieu's concept of the political field analyze political life?",
+    "correct_answer": "As a semi-autonomous arena where agents compete for positions using various forms of capital including social, cultural, and symbolic resources.",
+    "distractors": [
+      "As a rational marketplace where voters choose candidates whose policy platforms most closely match their individual economic self-interest preferences.",
+      "As a hierarchical bureaucratic structure where career civil servants implement policies according to fixed procedural rules and chain-of-command protocols.",
+      "As a moral community where citizens deliberate collectively to reach consensus on shared values and then elect leaders who embody them."
+    ],
+    "difficulty": 4,
+    "source_article": "Field theory (sociology)",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Bourdieu's political field"]
+  },
+  {
+    "question_text": "What is the central argument of Skocpol's 'States and Social Revolutions'?",
+    "correct_answer": "That social revolutions result from structural crises of the state combined with agrarian class conflicts, not from ideological movements or popular discontent alone.",
+    "distractors": [
+      "That social revolutions are caused primarily by visionary revolutionary leaders who mobilize mass support through compelling ideological narratives and charismatic rhetoric.",
+      "That social revolutions occur when capitalist economies enter severe depression, causing widespread unemployment that drives desperate workers to overthrow existing governments.",
+      "That social revolutions happen only in societies that have experienced prolonged foreign military occupation which destroys existing institutional structures and cultural norms."
+    ],
+    "difficulty": 4,
+    "source_article": "States and Social Revolutions",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Skocpol's states and social revolutions"]
+  },
+  {
+    "question_text": "What is Tilly's thesis about war-making and state-making?",
+    "correct_answer": "That European states developed through reciprocal processes of organized violence and revenue extraction, making war and building states mutually reinforcing activities.",
+    "distractors": [
+      "That European states developed primarily through peaceful commercial expansion and the voluntary consolidation of autonomous trading cities into unified national markets.",
+      "That European states developed because Enlightenment philosophers persuaded monarchs to adopt rational-legal constitutions that replaced feudal governance with democratic institutions.",
+      "That European states developed as religious institutions gradually transferred their administrative authority and territorial control to secular monarchies during the Reformation."
+    ],
+    "difficulty": 4,
+    "source_article": "War makes the state",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Tilly's war-making and state-making"]
+  },
+  {
+    "question_text": "What does Poulantzas mean by the 'relative autonomy of the state'?",
+    "correct_answer": "That the capitalist state operates with some independence from individual capitalists while still functioning to reproduce overall capitalist class relations and interests.",
+    "distractors": [
+      "That democratic states are entirely independent from economic pressures because elected officials answer only to voters and constitutional legal constraints.",
+      "That authoritarian states achieve complete autonomy from all social classes by monopolizing military force and suppressing independent civic organizations and media.",
+      "That federal states grant regional governments total sovereignty over domestic policy while the central government handles only foreign affairs and national defense."
+    ],
+    "difficulty": 4,
+    "source_article": "Nicos Poulantzas",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Poulantzas's relative autonomy of the state"]
+  },
+  {
+    "question_text": "What are the three welfare state regimes identified by Esping-Andersen?",
+    "correct_answer": "Liberal regimes with means-tested assistance, social-democratic regimes with universal benefits, and conservative regimes with status-preserving, contribution-based social insurance.",
+    "distractors": [
+      "Capitalist regimes with private market provision, socialist regimes with complete state ownership, and mixed regimes combining market mechanisms with selective government intervention.",
+      "Presidential regimes with executive-controlled welfare programs, parliamentary regimes with legislatively-managed social policy, and monarchical regimes with crown-administered charitable institutions.",
+      "Agrarian regimes providing land redistribution programs, industrial regimes providing factory worker protections, and post-industrial regimes providing knowledge economy retraining subsidies."
+    ],
+    "difficulty": 4,
+    "source_article": "The Three Worlds of Welfare Capitalism",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Esping-Andersen's welfare state regimes"]
+  },
+  {
+    "question_text": "What are the four sources of social power in Michael Mann's framework?",
+    "correct_answer": "Ideological, economic, military, and political power, which operate as overlapping networks that cannot be reduced to a single determinant.",
+    "distractors": [
+      "Legislative, executive, judicial, and administrative power, which operate as formally separated branches within constitutional democratic governance structures.",
+      "Coercive, remunerative, normative, and informational power, which operate as hierarchical tools available exclusively to centralized state bureaucratic organizations.",
+      "Technological, demographic, geographic, and cultural power, which operate as fixed structural determinants that permanently shape a society's developmental trajectory."
+    ],
+    "difficulty": 4,
+    "source_article": "The Sources of Social Power",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Mann's sources of social power"]
+  },
+  {
+    "question_text": "What is the central thesis of Lipset's 'Political Man'?",
+    "correct_answer": "That economic development and higher living standards create conditions favorable to stable democracy, while also exploring working-class authoritarianism as a political tendency.",
+    "distractors": [
+      "That political participation is determined entirely by individual personality traits such as extroversion, agreeableness, and openness to new experiences and ideas.",
+      "That democratic stability depends exclusively on having a strong written constitution with robust separation of powers and independent judicial review mechanisms.",
+      "That revolutionary movements succeed only when charismatic leaders personally inspire mass followings by articulating compelling visions of a radically transformed social order."
+    ],
+    "difficulty": 4,
+    "source_article": "Political Man",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Lipset's political man"]
+  },
+  {
+    "question_text": "What is Habermas's concept of the public sphere?",
+    "correct_answer": "A communicative space between state and private life where citizens engage in rational-critical debate to form public opinion and hold power accountable.",
+    "distractors": [
+      "The formal legislative chamber where elected representatives debate proposed laws and vote on policy according to established parliamentary rules of procedure.",
+      "The mass media industry including television networks, newspapers, and social media platforms that broadcast information to large national and global audiences.",
+      "The set of public parks, libraries, and community centers that local governments maintain as physical spaces for recreational and educational civic activities."
+    ],
+    "difficulty": 4,
+    "source_article": "Public sphere",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Habermas's public sphere"]
+  },
+  {
+    "question_text": "What three factors does McAdam's political process model identify as necessary for social movement emergence?",
+    "correct_answer": "Expanding political opportunities, sufficient organizational strength within the aggrieved population, and cognitive liberation that reframes conditions as unjust and changeable.",
+    "distractors": [
+      "Widespread economic recession, collapse of the ruling party's electoral support base, and intervention by sympathetic foreign governments providing financial assistance.",
+      "Charismatic leadership from a single visionary figure, access to advanced communications technology, and explicit endorsement from mainstream religious institutional authorities.",
+      "Unanimous public opinion supporting radical change, formal legal authorization for protest activities, and guaranteed immunity from government prosecution for all participants."
+    ],
+    "difficulty": 4,
+    "source_article": "Political process theory",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["McAdam's political process model"]
+  },
+  {
+    "question_text": "What defines neo-corporatism as a mode of interest intermediation?",
+    "correct_answer": "A system where the state formally incorporates peak associations of business and labor into centralized policy-making through structured negotiation and bargaining.",
+    "distractors": [
+      "A system where individual citizens directly vote on all major policy questions through frequent national referendums and electronic plebiscites without intermediary organizations.",
+      "A system where competing interest groups independently lobby legislators and contribute to political campaigns to influence policy outcomes in an uncoordinated marketplace.",
+      "A system where multinational corporations unilaterally set regulatory standards for their industries and governments passively accept those standards as binding domestic law."
+    ],
+    "difficulty": 4,
+    "source_article": "Corporatism",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["neo-corporatism"]
+  },
+  {
+    "question_text": "What does Omi and Winant's racial formation theory argue about race?",
+    "correct_answer": "That race is a sociohistorical process in which racial categories are continually created, inhabited, transformed, and contested through political struggle and social conflict.",
+    "distractors": [
+      "That race is a fixed biological category determined by genetic inheritance which produces measurable and permanent differences in cognitive ability across populations.",
+      "That race is an outdated concept with no contemporary relevance because modern societies have achieved legal equality and eliminated all forms of discrimination.",
+      "That race is purely an economic phenomenon created by capitalism to divide the working class, which will disappear automatically once class exploitation is abolished."
+    ],
+    "difficulty": 4,
+    "source_article": "Racial formation theory",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["racial formation theory"]
+  },
+  {
+    "question_text": "What does Gaventa's power framework analyze beyond visible decision-making?",
+    "correct_answer": "It maps three dimensions of power: visible decision-making, hidden agenda-setting that excludes issues, and invisible power that shapes preferences and beliefs.",
+    "distractors": [
+      "It maps three branches of government: the legislature that writes laws, the executive that enforces them, and the judiciary that interprets them.",
+      "It maps three economic sectors: the primary sector extracting raw materials, the secondary sector manufacturing goods, and the tertiary sector providing services.",
+      "It maps three levels of social structure: micro-level individual interactions, meso-level organizational dynamics, and macro-level institutional and cultural systems."
+    ],
+    "difficulty": 4,
+    "source_article": "Power (social and political)",
+    "domain_ids": ["political-sociology"],
+    "concepts_tested": ["Gaventa's power cube"]
+  }
+]

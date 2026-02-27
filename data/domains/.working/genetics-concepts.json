@@ -1,0 +1,66 @@
+{
+  "domain": "genetics",
+  "parent_domain": "biology",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      "gene",
+      "chromosome",
+      "allele",
+      "genotype",
+      "heredity",
+      "mutation",
+      "dominance (genetics)",
+      "genome",
+      "genetic code",
+      "genetic variation",
+      "hybrid (biology)",
+      "meiosis",
+      "homozygosity"
+    ],
+    "L2": [
+      "Mendelian inheritance",
+      "Punnett square",
+      "codominance",
+      "epistasis",
+      "polyploidy",
+      "chromosomal crossover",
+      "sex-linked inheritance",
+      "genetic drift",
+      "Hardy-Weinberg principle",
+      "transposon",
+      "plasmid",
+      "karyotype",
+      "linkage disequilibrium"
+    ],
+    "L3": [
+      "polymerase chain reaction",
+      "CRISPR gene editing",
+      "epigenetics",
+      "gene expression",
+      "recombinant DNA",
+      "genetic linkage",
+      "quantitative trait locus",
+      "inbreeding depression",
+      "heterozygote advantage",
+      "genomic imprinting",
+      "mitochondrial DNA",
+      "single-nucleotide polymorphism"
+    ],
+    "L4": [
+      "Hox genes",
+      "gene regulatory network",
+      "population bottleneck",
+      "founder effect",
+      "coalescent theory",
+      "molecular clock",
+      "synteny",
+      "horizontal gene transfer",
+      "RNA interference",
+      "chromatin remodeling",
+      "telomere",
+      "genetic anticipation"
+    ]
+  }
+}

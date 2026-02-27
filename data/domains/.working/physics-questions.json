@@ -1,0 +1,455 @@
+[
+  {
+    "question_text": "Which three laws, formulated in the 17th century, collectively explain inertia, $F = ma$, and action-reaction pairs?",
+    "correct_answer": "Newton's laws of motion",
+    "distractors": ["Kepler's laws of planetary motion", "Newton's law of universal gravitation", "Galileo's laws of motion"],
+    "difficulty": 1,
+    "source_article": "Newton's laws of motion",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Newton's laws of motion"]
+  },
+  {
+    "question_text": "What fundamental law guarantees that the total energy of an isolated system remains constant, though it may change between kinetic, potential, and thermal forms?",
+    "correct_answer": "The law of conservation of energy",
+    "distractors": ["The law of conservation of momentum", "The law of conservation of mass", "The law of thermodynamic equilibrium"],
+    "difficulty": 1,
+    "source_article": "Conservation of energy",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["conservation of energy"]
+  },
+  {
+    "question_text": "Radio waves, microwaves, infrared, visible light, ultraviolet, X-rays, and gamma rays are all regions of what continuous physical phenomenon?",
+    "correct_answer": "The electromagnetic spectrum",
+    "distractors": ["The blackbody radiation spectrum", "The electromagnetic field", "The photoelectric spectrum"],
+    "difficulty": 1,
+    "source_article": "Electromagnetic spectrum",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["electromagnetic spectrum"]
+  },
+  {
+    "question_text": "What universal physical constant, denoted $c$, is defined as exactly $299{,}792{,}458$ meters per second in vacuum and serves as the ultimate speed limit in the universe?",
+    "correct_answer": "The speed of light",
+    "distractors": ["The speed of sound", "The Planck velocity constant", "The vacuum permittivity constant"],
+    "difficulty": 1,
+    "source_article": "Speed of light",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["speed of light"]
+  },
+  {
+    "question_text": "What contact force, subdivided into static and kinetic types, opposes the relative motion between two solid surfaces and converts kinetic energy into heat?",
+    "correct_answer": "Friction",
+    "distractors": ["Traction", "Viscosity", "Drag"],
+    "difficulty": 1,
+    "source_article": "Friction",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["friction"]
+  },
+  {
+    "question_text": "What principle states that any object immersed in a fluid experiences an upward buoyant force equal to the weight of the fluid displaced by the object?",
+    "correct_answer": "Archimedes' principle",
+    "distractors": ["Pascal's principle", "Bernoulli's principle", "Torricelli's theorem"],
+    "difficulty": 1,
+    "source_article": "Archimedes' principle",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Archimedes' principle"]
+  },
+  {
+    "question_text": "What optical phenomenon occurs when a wave changes direction as it passes from one medium to another due to a change in its speed, described quantitatively by Snell's law?",
+    "correct_answer": "Refraction",
+    "distractors": ["Diffraction", "Dispersion", "Polarization"],
+    "difficulty": 1,
+    "source_article": "Refraction",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["refraction"]
+  },
+  {
+    "question_text": "In thermodynamics, what quantity measures the number of possible microscopic configurations of a system consistent with its macroscopic state, and is commonly associated with disorder?",
+    "correct_answer": "Entropy",
+    "distractors": ["Enthalpy", "Gibbs energy", "Fugacity"],
+    "difficulty": 1,
+    "source_article": "Entropy",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["entropy"]
+  },
+  {
+    "question_text": "Measured in amperes, what physical quantity is defined as the rate at which charge flows through a cross-section of a conductor?",
+    "correct_answer": "Electric current",
+    "distractors": ["Electric potential", "Electric flux", "Electromotive force"],
+    "difficulty": 1,
+    "source_article": "Electric current",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["electric current"]
+  },
+  {
+    "question_text": "What fundamental force of nature, historically observed in lodestones, produces fields that can attract iron and align compass needles?",
+    "correct_answer": "Magnetism",
+    "distractors": ["Ferromagnetism", "Diamagnetism", "Electrostatics"],
+    "difficulty": 1,
+    "source_article": "Magnetism",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["magnetism"]
+  },
+  {
+    "question_text": "What is the process by which an unstable atomic nucleus loses energy by emitting radiation such as alpha particles, beta particles, or gamma rays?",
+    "correct_answer": "Radioactive decay",
+    "distractors": ["Nuclear fission", "Particle annihilation", "Nuclear transmutation"],
+    "difficulty": 1,
+    "source_article": "Radioactive decay",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["radioactive decay"]
+  },
+  {
+    "question_text": "Which 1905 theory introduced time dilation and length contraction by postulating that the laws of physics are identical in all inertial reference frames?",
+    "correct_answer": "Special relativity",
+    "distractors": ["General relativity", "Lorentz ether theory", "Galilean relativity"],
+    "difficulty": 1,
+    "source_article": "Special relativity",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["special relativity"]
+  },
+  {
+    "question_text": "What type of mechanical wave, typically perceived by humans between $20$ Hz and $20{,}000$ Hz, cannot propagate through a vacuum?",
+    "correct_answer": "Sound",
+    "distractors": ["Ultrasound", "Infrasound", "Seismic waves"],
+    "difficulty": 1,
+    "source_article": "Sound",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["sound"]
+  },
+
+  {
+    "question_text": "The parallel axis theorem, used to find a body's moment of inertia about any axis given its moment about a parallel axis through the center of mass, is also known by what other name?",
+    "correct_answer": "The Huygens–Steiner theorem",
+    "distractors": ["The König–Steiner theorem", "The Euler–Bernoulli theorem", "The Jacobi–Steiner theorem"],
+    "difficulty": 2,
+    "source_article": "Moment of inertia",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["moment of inertia"]
+  },
+  {
+    "question_text": "In the Doppler effect, what is the specific term for the shift toward shorter wavelengths observed when a light source moves toward the observer?",
+    "correct_answer": "Blueshift",
+    "distractors": ["Redshift", "Chromatic drift", "Rayleigh scattering"],
+    "difficulty": 2,
+    "source_article": "Doppler effect",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Doppler effect"]
+  },
+  {
+    "question_text": "Which of Maxwell's four equations states that the divergence of the magnetic field is zero, implying that magnetic monopoles do not exist?",
+    "correct_answer": "Gauss's law for magnetism",
+    "distractors": ["Gauss's law for electricity", "Faraday's law of induction", "Ampère's circuital law"],
+    "difficulty": 2,
+    "source_article": "Maxwell's equations",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Maxwell's equations"]
+  },
+  {
+    "question_text": "The microscopic form of Ohm's law relates current density $J$ to electric field $E$ via $J = \\sigma E$. What is the quantity $\\sigma$ called?",
+    "correct_answer": "Electrical conductivity",
+    "distractors": ["Electrical resistivity", "Electrical permittivity", "Electrical susceptibility"],
+    "difficulty": 2,
+    "source_article": "Ohm's law",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Ohm's law"]
+  },
+  {
+    "question_text": "What is the term for the electrically insulating material placed between a capacitor's conductive plates that increases capacitance by its ability to be polarized?",
+    "correct_answer": "A dielectric",
+    "distractors": ["A ferroelectric", "An electrolyte", "A piezoelectric"],
+    "difficulty": 2,
+    "source_article": "Capacitor",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["capacitor"]
+  },
+  {
+    "question_text": "When light passes from a higher to a lower refractive index medium, beyond a certain angle all light is reflected back. What is this maximum angle of incidence that still permits refraction called?",
+    "correct_answer": "The critical angle",
+    "distractors": ["The Brewster angle", "The angle of deviation", "The acceptance angle"],
+    "difficulty": 2,
+    "source_article": "Snell's law",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Snell's law"]
+  },
+  {
+    "question_text": "Two of the four stages in a Carnot cycle involve heat transfer at constant temperature. What is the specific thermodynamic term for these constant-temperature processes?",
+    "correct_answer": "Isothermal processes",
+    "distractors": ["Adiabatic processes", "Isobaric processes", "Isochoric processes"],
+    "difficulty": 2,
+    "source_article": "Carnot cycle",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Carnot cycle"]
+  },
+  {
+    "question_text": "In Faraday's law of induction, $\\mathcal{E} = -\\frac{d\\Phi_B}{dt}$, the quantity $\\Phi_B$ is the magnetic flux. What is its SI unit, named after a German physicist?",
+    "correct_answer": "The weber (Wb)",
+    "distractors": ["The tesla (T)", "The henry (H)", "The gauss (G)"],
+    "difficulty": 2,
+    "source_article": "Faraday's law of induction",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Faraday's law of induction"]
+  },
+  {
+    "question_text": "The magnetic component of the Lorentz force is perpendicular to both the velocity and the magnetic field. What mathematical operation between $\\mathbf{v}$ and $\\mathbf{B}$ produces this perpendicular result?",
+    "correct_answer": "The cross product (or vector product)",
+    "distractors": ["The dot product (or scalar product)", "The tensor product (or outer product)", "The gradient operation (or del operator)"],
+    "difficulty": 2,
+    "source_article": "Lorentz force",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Lorentz force"]
+  },
+  {
+    "question_text": "Bohr and Wheeler's 1939 theory explained nuclear fission using a classical model of the nucleus that accounts for surface tension and Coulomb repulsion. What is this theoretical framework called?",
+    "correct_answer": "The liquid drop model",
+    "distractors": ["The nuclear shell model", "The collective motion model", "The compound nucleus model"],
+    "difficulty": 2,
+    "source_article": "Nuclear fission",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["nuclear fission"]
+  },
+  {
+    "question_text": "In the Standard Model, which spin-1 gauge bosons mediate the weak nuclear force, responsible for processes like radioactive beta decay?",
+    "correct_answer": "The $W^+$, $W^-$, and $Z$ bosons",
+    "distractors": ["The gluons and photon bosons", "The $W^+$, $W^-$, and Higgs bosons", "The $Z$, photon, and gluon bosons"],
+    "difficulty": 2,
+    "source_article": "Standard Model",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Standard Model"]
+  },
+  {
+    "question_text": "The Higgs boson was confirmed by the ATLAS and CMS experiments at CERN. What are its spin and parity quantum numbers ($J^P$), making it unique among known elementary particles?",
+    "correct_answer": "$0^+$ (spin-0, positive parity)",
+    "distractors": ["$0^-$ (spin-0, negative parity)", "$1^-$ (spin-1, negative parity)", "$1^+$ (spin-1, positive parity)"],
+    "difficulty": 2,
+    "source_article": "Higgs boson",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Higgs boson"]
+  },
+  {
+    "question_text": "What foundational principle of general relativity states that an observer cannot locally distinguish between gravitational acceleration and the acceleration of a reference frame?",
+    "correct_answer": "The equivalence principle",
+    "distractors": ["The correspondence principle", "The covariance principle", "The Mach principle"],
+    "difficulty": 2,
+    "source_article": "General relativity",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["general relativity"]
+  },
+
+  {
+    "question_text": "In Lagrangian mechanics, the Lagrangian $L$ is defined as $L = T - V$. If you add a constant to the potential energy $V$, what happens to the equations of motion derived from the Euler-Lagrange equations?",
+    "correct_answer": "They remain unchanged, because the Euler-Lagrange equations involve only derivatives of $L$, and a constant vanishes upon differentiation.",
+    "distractors": ["They shift by a constant offset, because the Euler-Lagrange equations involve second derivatives of $L$, and a constant modifies the first-order terms.", "They acquire an additional constraint term, because adding a constant to $V$ changes the canonical momenta derived from the Lagrangian.", "They remain valid only if the constant is small compared to $T$, since the Euler-Lagrange equations require $L$ to be bounded for convergence."],
+    "difficulty": 3,
+    "source_article": "Lagrangian mechanics",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Lagrangian mechanics"]
+  },
+  {
+    "question_text": "Noether's theorem links continuous symmetries to conservation laws. If a system's Lagrangian is unchanged by rotations about a particular axis, what physical quantity does the theorem guarantee is conserved?",
+    "correct_answer": "The component of angular momentum along that axis of rotational symmetry.",
+    "distractors": ["The total angular momentum of the system about its center of mass.", "The component of linear momentum along that axis of rotational symmetry.", "The rotational kinetic energy associated with motion about that axis of symmetry."],
+    "difficulty": 3,
+    "source_article": "Noether's theorem",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Noether's theorem"]
+  },
+  {
+    "question_text": "The Maxwell-Boltzmann speed distribution yields three characteristic speeds: most probable ($v_p$), mean ($\\bar{v}$), and root-mean-square ($v_{\\text{rms}}$). Rank these from smallest to largest for an ideal gas at a given temperature.",
+    "correct_answer": "$v_p < \\bar{v} < v_{\\text{rms}}$",
+    "distractors": ["$\\bar{v} < v_p < v_{\\text{rms}}$", "$v_p < v_{\\text{rms}} < \\bar{v}$", "$v_{\\text{rms}} < \\bar{v} < v_p$"],
+    "difficulty": 3,
+    "source_article": "Maxwell–Boltzmann distribution",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Maxwell-Boltzmann distribution"]
+  },
+  {
+    "question_text": "The Navier-Stokes equations arise from applying Newton's second law to fluid motion. Besides the pressure gradient and external body forces, what additional type of internal force appears in these equations?",
+    "correct_answer": "Viscous (diffusive) shear forces, arising from internal friction between fluid layers moving at different velocities.",
+    "distractors": ["Turbulent Reynolds stress forces, arising from momentum transfer between adjacent fluid parcels moving at different velocities.", "Elastic restoring forces, arising from the compressibility of the fluid resisting volumetric deformation at different velocities.", "Convective inertial forces, arising from nonlinear momentum advection between fluid elements moving at different velocities."],
+    "difficulty": 3,
+    "source_article": "Navier–Stokes equations",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Navier-Stokes equations"]
+  },
+  {
+    "question_text": "The Reynolds number $Re$ represents the ratio of inertial to viscous forces in a fluid flow. For flow through a straight circular pipe, below approximately what value of $Re$ is the flow expected to remain laminar?",
+    "correct_answer": "Approximately $Re < 2300$.",
+    "distractors": ["Approximately $Re < 4000$.", "Approximately $Re < 1000$.", "Approximately $Re < 500$."],
+    "difficulty": 3,
+    "source_article": "Reynolds number",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Reynolds number"]
+  },
+  {
+    "question_text": "Total internal reflection occurs when light hits a boundary at an angle exceeding the critical angle. Using Snell's law with $n_1 > n_2$, what is the formula for the critical angle $\\theta_c$?",
+    "correct_answer": "$\\theta_c = \\arcsin(n_2 / n_1)$",
+    "distractors": ["$\\theta_c = \\arcsin(1 - n_2 / n_1)$", "$\\theta_c = \\arccos(n_2 / n_1)$", "$\\theta_c = \\arctan(n_2 / n_1)$"],
+    "difficulty": 3,
+    "source_article": "Total internal reflection",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["total internal reflection"]
+  },
+  {
+    "question_text": "A charged particle travels through water, whose refractive index is about 1.33. What minimum condition on the particle's speed $v$ must be met for Cherenkov radiation to occur?",
+    "correct_answer": "The particle's speed must exceed $c/n$, the phase velocity of light in water, so $v > c/1.33 \\approx 0.75c$.",
+    "distractors": ["The particle's speed must exceed $c/n^2$, the group velocity of light in water, so $v > c/1.77 \\approx 0.56c$.", "The particle's speed must exceed $c \\sqrt{1 - 1/n^2}$, the critical velocity in the medium, so $v > c \\sqrt{1 - 1/1.77} \\approx 0.66c$.", "The particle's speed must exceed $c(1 - 1/n)$, the threshold velocity for radiation in water, so $v > c(1 - 1/1.33) \\approx 0.25c$."],
+    "difficulty": 3,
+    "source_article": "Cherenkov radiation",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Cherenkov radiation"]
+  },
+  {
+    "question_text": "An X-ray tube produces both bremsstrahlung and characteristic X-rays. Which of these two contributions is responsible for the continuous part of the X-ray spectrum, and why is that spectrum continuous rather than discrete?",
+    "correct_answer": "Bremsstrahlung produces the continuous spectrum because the decelerating electrons can lose any fraction of their kinetic energy in a single interaction with a nucleus.",
+    "distractors": ["Characteristic X-rays produce the continuous spectrum because the electron transitions span a continuous range of inner-shell energy levels in the target atoms.", "Bremsstrahlung produces the continuous spectrum because the accelerating electrons emit radiation at their continuous range of orbital frequencies within the target lattice.", "Characteristic X-rays produce the continuous spectrum because multiple overlapping emission lines from different shell transitions blend into a continuous energy distribution."],
+    "difficulty": 3,
+    "source_article": "Bremsstrahlung",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Bremsstrahlung"]
+  },
+  {
+    "question_text": "A projectile is fired due north in the Northern Hemisphere. Ignoring air resistance, in which direction does the Coriolis force deflect the projectile, and why does this deflection vanish at the equator?",
+    "correct_answer": "It deflects to the right (eastward). At the equator the local vertical component of Earth's angular velocity is zero, so the horizontal Coriolis force vanishes.",
+    "distractors": ["It deflects to the left (westward). At the equator the local horizontal component of Earth's angular velocity is zero, so the horizontal Coriolis force vanishes.", "It deflects to the right (eastward). At the equator the local vertical component of Earth's angular velocity is maximum, so the horizontal Coriolis force reverses direction.", "It deflects upward (radially outward). At the equator the local vertical component of Earth's angular velocity is zero, so the vertical Coriolis force vanishes."],
+    "difficulty": 3,
+    "source_article": "Coriolis force",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Coriolis force"]
+  },
+  {
+    "question_text": "Rayleigh scattering explains why the sky appears blue. Given that this scattering intensity depends on wavelength as $1/\\lambda^4$, approximately how many times more strongly is violet light ($\\lambda \\approx 400$ nm) scattered than red light ($\\lambda \\approx 700$ nm)?",
+    "correct_answer": "About $(700/400)^4 \\approx 9.4$ times more strongly.",
+    "distractors": ["About $(700/400)^2 \\approx 3.1$ times more strongly.", "About $(700/400)^3 \\approx 5.4$ times more strongly.", "About $(700/400)^6 \\approx 28.7$ times more strongly."],
+    "difficulty": 3,
+    "source_article": "Rayleigh scattering",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Rayleigh scattering"]
+  },
+  {
+    "question_text": "A strong neodymium magnet is dropped through a vertical copper tube. It falls far slower than a nonmagnetic object would. Using Lenz's law, explain the physical mechanism that brakes the magnet.",
+    "correct_answer": "The falling magnet's changing flux induces eddy currents in the copper whose magnetic fields oppose the magnet's motion, creating a braking force.",
+    "distractors": ["The falling magnet's changing flux induces eddy currents in the copper whose electric fields oppose the magnet's flux, creating an electrostatic repulsion force.", "The falling magnet's static field magnetizes the copper tube, inducing a persistent dipole whose like pole faces the magnet, creating a repulsive braking force.", "The falling magnet's changing flux induces surface currents in the copper whose thermal dissipation extracts kinetic energy directly, creating a resistive drag force."],
+    "difficulty": 3,
+    "source_article": "Lenz's law",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Lenz's law"]
+  },
+  {
+    "question_text": "An aircraft flying at Mach 0.95 at cruising altitude may still generate localized supersonic flow over its wings. What is this mixed-flow regime called, and what Mach range does it typically span?",
+    "correct_answer": "The transonic regime, typically spanning roughly Mach 0.8 to 1.2, where both subsonic and supersonic flow regions coexist.",
+    "distractors": ["The hypersonic regime, typically spanning roughly Mach 0.8 to 1.2, where compressible and incompressible flow regions coexist.", "The transonic regime, typically spanning roughly Mach 1.0 to 2.0, where both subsonic and supersonic flow regions coexist.", "The supersonic transition regime, typically spanning roughly Mach 0.6 to 1.0, where both attached and detached shock regions coexist."],
+    "difficulty": 3,
+    "source_article": "Mach number",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Mach number"]
+  },
+
+  {
+    "question_text": "Darboux's theorem guarantees that symplectic manifolds have no local invariants, unlike Riemannian manifolds which possess curvature. What does this imply about any two symplectic manifolds of the same dimension?",
+    "correct_answer": "They are locally symplectomorphic, meaning they are indistinguishable in any local neighborhood.",
+    "distractors": ["They are locally diffeomorphic, meaning they share identical smooth structure in any local neighborhood.", "They are globally symplectomorphic, meaning they are indistinguishable as manifolds everywhere.", "They are locally isometric, meaning they have identical metric structure in any local neighborhood."],
+    "difficulty": 4,
+    "source_article": "Hamiltonian mechanics",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Hamiltonian mechanics"]
+  },
+  {
+    "question_text": "Liouville's theorem states that phase-space volume is conserved under Hamiltonian evolution. However, a phase-space region's shape can change dramatically. What practical consequence does this have for the distribution over long times?",
+    "correct_answer": "The region undergoes filamentation, stretching into thin tendrils that spread across phase space while preserving total volume.",
+    "distractors": ["The region undergoes thermalization, diffusing uniformly across phase space while preserving total volume.", "The region undergoes compactification, collapsing into dense clusters that concentrate in phase space while preserving total volume.", "The region undergoes ergodic mixing, uniformly filling the entire accessible phase space while preserving total volume."],
+    "difficulty": 4,
+    "source_article": "Liouville's theorem (Hamiltonian)",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Liouville's theorem"]
+  },
+  {
+    "question_text": "The Poynting vector, derived in 1884, describes electromagnetic energy flux. However, a general energy flux vector for mechanical media was introduced a decade earlier. Who formulated it, and in what year?",
+    "correct_answer": "Nikolay Umov in 1874, for energy flux in liquid and elastic media.",
+    "distractors": ["Oliver Heaviside in 1876, for energy flux in dielectric and conducting media.", "Nikolay Umov in 1878, for energy flux in electromagnetic and thermal media.", "Gustav Kirchhoff in 1874, for energy flux in liquid and elastic media."],
+    "difficulty": 4,
+    "source_article": "Poynting vector",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Poynting vector"]
+  },
+  {
+    "question_text": "In 1967, Andrei Sakharov proposed three necessary conditions for baryogenesis. Besides baryon number violation and departure from thermal equilibrium, what is the third condition, and why is it essential?",
+    "correct_answer": "C-symmetry and CP-symmetry violation, required so that matter and antimatter are produced at different rates.",
+    "distractors": ["C-symmetry and CP-symmetry violation, required so that baryons and leptons are produced at different rates.", "C-symmetry and CPT-symmetry violation, required so that matter and antimatter are produced at different rates.", "P-symmetry and CP-symmetry violation, required so that matter and antimatter decay at different rates."],
+    "difficulty": 4,
+    "source_article": "CP violation",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["CP violation"]
+  },
+  {
+    "question_text": "Einstein's 1924 prediction of Bose-Einstein condensation extended a paper on photon statistics by another physicist. Who wrote that paper, and what key conceptual innovation about identical particles did it introduce?",
+    "correct_answer": "Satyendra Nath Bose, who treated photons as truly indistinguishable particles, deriving Planck's law without classical physics.",
+    "distractors": ["Satyendra Nath Bose, who treated photons as distinguishable classical particles, deriving Planck's law without quantum mechanics.", "Paul Dirac, who treated photons as truly indistinguishable particles, deriving Planck's law without classical physics.", "Satyendra Nath Bose, who treated photons as truly indistinguishable particles, deriving Wien's law without classical physics."],
+    "difficulty": 4,
+    "source_article": "Bose–Einstein condensate",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Bose-Einstein condensate"]
+  },
+  {
+    "question_text": "When Feynman introduced his diagrams at the 1948 Pocono Conference, the audience largely failed to understand them. Who was the physicist who first published a paper using Feynman diagrams, even before Feynman himself?",
+    "correct_answer": "Freeman Dyson, in his February 1949 paper 'The Radiation Theories of Tomonaga, Schwinger, and Feynman.'",
+    "distractors": ["Freeman Dyson, in his October 1949 paper 'The S-Matrix in Quantum Electrodynamics.'", "Julian Schwinger, in his February 1949 paper 'The Radiation Theories of Tomonaga, Schwinger, and Feynman.'", "Freeman Dyson, in his February 1950 paper 'The Radiation Theories of Tomonaga, Schwinger, and Feynman.'"],
+    "difficulty": 4,
+    "source_article": "Feynman diagram",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Feynman diagram"]
+  },
+  {
+    "question_text": "The equipartition theorem's prediction for the molar heat capacity of solids, $C = 3R$, matches the Dulong-Petit law at high temperatures. Which physicist first resolved its failure at low temperatures by applying quantized energy levels to lattice vibrations?",
+    "correct_answer": "Albert Einstein, in his 1907 model of a solid as independent quantum harmonic oscillators",
+    "distractors": ["Peter Debye, in his 1907 model of a solid as independent quantum harmonic oscillators", "Albert Einstein, in his 1912 model of a solid as coupled classical harmonic oscillators", "Max Planck, in his 1907 model of a solid as independent quantum harmonic oscillators"],
+    "difficulty": 4,
+    "source_article": "Equipartition theorem",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["equipartition theorem"]
+  },
+  {
+    "question_text": "In the overdamped limit of the Langevin equation, the inertial term $m\\ddot{x}$ is neglected. What is the corresponding Fokker-Planck equation for the probability distribution of particle positions called in this regime?",
+    "correct_answer": "The Smoluchowski equation",
+    "distractors": ["The Kramers equation", "The Kolmogorov forward equation", "The Langevin-Planck equation"],
+    "difficulty": 4,
+    "source_article": "Langevin equation",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Langevin equation"]
+  },
+  {
+    "question_text": "Larmor's theorem states that for electrons in a central potential, the effect of a weak uniform magnetic field $\\mathbf{B}$ is equivalent to what transformation applied to the entire system?",
+    "correct_answer": "A uniform rotation about the field direction at the Larmor frequency $\\omega_L = eB/2m_e c$",
+    "distractors": ["A uniform precession about the field direction at the cyclotron frequency $\\omega_c = eB/m_e c$", "A uniform rotation about the field direction at the Larmor frequency $\\omega_L = eB/m_e c$", "A uniform translation along the field direction at the Larmor frequency $\\omega_L = eB/2m_e c$"],
+    "difficulty": 4,
+    "source_article": "Larmor precession",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Larmor precession"]
+  },
+  {
+    "question_text": "Landauer's principle sets a minimum energy cost of $k_B T \\ln 2$ per bit erased. According to Charles Bennett's 1973 result, why does logically reversible computation escape this bound?",
+    "correct_answer": "Logically reversible operations need not erase information, so they can in principle be performed with no minimum energy dissipation",
+    "distractors": ["Logically reversible operations need not erase information, so they can in principle be performed with exactly $k_B T \\ln 2$ energy dissipation", "Logically reversible operations preserve entropy, so they can in principle be performed below the Landauer bound at low temperatures", "Logically reversible operations need not copy information, so they can in principle be performed with no minimum energy dissipation"],
+    "difficulty": 4,
+    "source_article": "Landauer's principle",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Landauer's principle"]
+  },
+  {
+    "question_text": "Hermann Weyl's original 1918 gauge theory proposed local scale (length) invariance to unify gravity and electromagnetism, but it failed. How was the concept salvaged for quantum mechanics by 1929?",
+    "correct_answer": "Weyl, Fock, and London replaced the real scale factor with a complex phase factor, yielding $U(1)$ gauge symmetry",
+    "distractors": ["Weyl, Fock, and London replaced the real scale factor with a complex phase factor, yielding $SU(2)$ gauge symmetry", "Weyl, Fock, and London replaced the real scale factor with a complex rotation matrix, yielding $SO(3)$ gauge symmetry", "Dirac, Fock, and London replaced the real scale factor with a complex phase factor, yielding $U(1)$ gauge symmetry"],
+    "difficulty": 4,
+    "source_article": "Gauge theory",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["gauge theory"]
+  },
+  {
+    "question_text": "Onsager derived the reciprocal relations $L_{ij} = L_{ji}$ for transport coefficients in his 1931 papers. What fundamental microscopic assumption underlies this symmetry of the cross-coefficients?",
+    "correct_answer": "Microscopic reversibility: the time-reversal invariance of the underlying microscopic dynamics",
+    "distractors": ["Detailed balance: the equal transition rates between all pairs of accessible microstates", "Microscopic ergodicity: the assumption that the system visits all accessible microstates over time", "Microscopic reversibility: the spatial-inversion invariance of the underlying microscopic dynamics"],
+    "difficulty": 4,
+    "source_article": "Onsager reciprocal relations",
+    "domain_ids": ["physics"],
+    "concepts_tested": ["Onsager reciprocal relations"]
+  }
+]

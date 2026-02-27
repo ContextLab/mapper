@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In psychology, what are the two broad types of empathy typically distinguished by researchers studying how people relate to others' emotions?",
+    "correct_answer": "Affective empathy (sharing others' feelings) and cognitive empathy (understanding others' perspectives).",
+    "distractors": [
+      "Reactive empathy (automatic emotional mirroring) and constructive empathy (deliberate emotional regulation).",
+      "Primary empathy (innate emotional resonance) and secondary empathy (learned social responsiveness).",
+      "Somatic empathy (bodily sensation sharing) and narrative empathy (story-based emotional understanding)."
+    ],
+    "difficulty": 1,
+    "source_article": "Empathy",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["empathy"]
+  },
+  {
+    "question_text": "In Kurt Lewin's classic 1939 study of leadership styles, which three styles of leadership did he identify in groups of children?",
+    "correct_answer": "Autocratic, democratic, and laissez-faire leadership styles.",
+    "distractors": [
+      "Directive, participative, and delegative leadership styles.",
+      "Authoritarian, egalitarian, and permissive leadership styles.",
+      "Transactional, transformational, and servant leadership styles."
+    ],
+    "difficulty": 1,
+    "source_article": "Leadership",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["leadership"]
+  },
+  {
+    "question_text": "In social psychology, cooperation is defined as the tendency to maximize outcomes for self and others. What concept is it most directly contrasted with?",
+    "correct_answer": "Competition, which is the tendency to maximize one's relative advantage over others.",
+    "distractors": [
+      "Altruism, which is the tendency to maximize outcomes for others while ignoring one's own needs.",
+      "Conformity, which is the tendency to align one's behavior with the majority group opinion.",
+      "Compliance, which is the tendency to agree with requests made by authority figures."
+    ],
+    "difficulty": 1,
+    "source_article": "Cooperation",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["cooperation"]
+  },
+  {
+    "question_text": "Leon Festinger's theory of cognitive dissonance proposes that when a person holds two contradictory beliefs simultaneously, what psychological state results?",
+    "correct_answer": "Mental discomfort or stress that motivates the person to reduce the inconsistency.",
+    "distractors": [
+      "Learned helplessness that leads the person to accept both beliefs without attempting resolution.",
+      "Emotional numbing that causes the person to disengage from both beliefs entirely.",
+      "Cognitive overload that forces the person to rely on heuristic rather than systematic processing."
+    ],
+    "difficulty": 2,
+    "source_article": "Cognitive dissonance",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["cognitive dissonance"]
+  },
+  {
+    "question_text": "The bystander effect was first demonstrated in laboratory experiments by which two social psychologists, whose research was prompted by the 1964 murder of Kitty Genovese?",
+    "correct_answer": "John M. Darley and Bibb Latane, who published their findings in 1968.",
+    "distractors": [
+      "Stanley Milgram and Philip Zimbardo, who published their findings in 1966.",
+      "Solomon Asch and Leon Festinger, who published their findings in 1967.",
+      "Muzafer Sherif and Carl Hovland, who published their findings in 1965."
+    ],
+    "difficulty": 2,
+    "source_article": "Bystander effect",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["bystander effect"]
+  },
+  {
+    "question_text": "According to Tajfel and Turner's social identity theory, what three cognitive processes explain how individuals relate to their in-groups and out-groups?",
+    "correct_answer": "Social categorization, social identification, and social comparison.",
+    "distractors": [
+      "Social perception, social attribution, and social evaluation.",
+      "Group assimilation, group differentiation, and group polarization.",
+      "Self-categorization, self-verification, and self-enhancement."
+    ],
+    "difficulty": 2,
+    "source_article": "Social identity theory",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["social identity theory"]
+  },
+  {
+    "question_text": "In the classic 1967 Jones and Harris experiment on the fundamental attribution error, what did participants do even when told that essay writers were assigned their positions on Castro?",
+    "correct_answer": "They still rated pro-Castro essay writers as holding more favorable attitudes toward Castro.",
+    "distractors": [
+      "They rated all essay writers as equally neutral regardless of the position argued in their essays.",
+      "They rated the anti-Castro essay writers as more politically knowledgeable than the pro-Castro writers.",
+      "They discounted all essays as unreliable and refused to make attitude judgments about the writers."
+    ],
+    "difficulty": 2,
+    "source_article": "Fundamental attribution error",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["fundamental attribution error"]
+  },
+  {
+    "question_text": "Social loafing research originated with Max Ringelmann's rope-pulling experiments. What did Ringelmann find about individual effort when people worked in groups?",
+    "correct_answer": "Individual members exerted less effort pulling the rope in groups than when pulling alone.",
+    "distractors": [
+      "Individual members pulled with greater force in groups due to competitive arousal from co-actors.",
+      "Individual members maintained identical effort levels regardless of whether they pulled alone or in groups.",
+      "Individual members alternated between high and low effort depending on their position in the group."
+    ],
+    "difficulty": 2,
+    "source_article": "Social loafing",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["social loafing"]
+  },
+  {
+    "question_text": "Irving Janis's research on groupthink identified it as a phenomenon in which group desire for harmony leads to what kind of outcome?",
+    "correct_answer": "Irrational or dysfunctional decision-making due to suppression of dissent and critical thinking.",
+    "distractors": [
+      "Heightened interpersonal conflict as dominant members impose their preferences on the minority.",
+      "Rapid group dissolution because members become frustrated with the lack of individual autonomy.",
+      "Excessive risk aversion as members defer all decisions to the formal leader of the group."
+    ],
+    "difficulty": 2,
+    "source_article": "Groupthink",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["groupthink"]
+  },
+  {
+    "question_text": "In-group favoritism is a consistent cross-cultural bias in which people preferentially treat members of their own group. Which two major theories are used to explain this phenomenon?",
+    "correct_answer": "Realistic conflict theory and social identity theory.",
+    "distractors": [
+      "Cognitive dissonance theory and self-perception theory.",
+      "Social exchange theory and equity theory.",
+      "Terror management theory and system justification theory."
+    ],
+    "difficulty": 2,
+    "source_article": "In-group favoritism",
+    "domain_ids": ["social-psychology"],
+    "concepts_tested": ["in-group/out-group bias"]
+  }
+]

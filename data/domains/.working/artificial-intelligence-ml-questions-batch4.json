@@ -1,0 +1,172 @@
+[
+  {
+    "question_text": "In the attention mechanism used by transformers, what three vectors are computed from each input element to determine how much focus one position gives to another?",
+    "correct_answer": "Query, key, and value vectors, where the dot product of queries and keys produces attention weights used to compute a weighted sum of values.",
+    "distractors": [
+      "Input, hidden, and output vectors, where the dot product of inputs and outputs produces attention weights used to compute a weighted sum of hidden states.",
+      "Query, key, and value vectors, where the element-wise product of queries and values produces activation weights used to compute a weighted sum of keys.",
+      "Encoder, decoder, and context vectors, where the dot product of encoders and decoders produces attention weights used to compute a weighted sum of contexts."
+    ],
+    "difficulty": 3,
+    "source_article": "Attention_(machine_learning)",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "attention mechanism"
+    ]
+  },
+  {
+    "question_text": "How do word embedding models like Word2Vec and GloVe represent words, and what geometric property encodes semantic similarity between words?",
+    "correct_answer": "They represent words as dense, low-dimensional vectors where semantically similar words are mapped to nearby points in the vector space.",
+    "distractors": [
+      "They represent words as sparse, high-dimensional one-hot vectors where semantically similar words are mapped to nearby points in the vector space.",
+      "They represent words as dense, low-dimensional vectors where semantically similar words are mapped to orthogonal directions in the vector space.",
+      "They represent words as dense, low-dimensional vectors where semantically similar words are mapped to distant points in the vector space."
+    ],
+    "difficulty": 3,
+    "source_article": "Word_embedding",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "word embedding"
+    ]
+  },
+  {
+    "question_text": "A Markov decision process is defined by a tuple of five components. Which components formalize the sequential decision-making problem that underpins reinforcement learning?",
+    "correct_answer": "A set of states, a set of actions, transition probabilities, a reward function, and a discount factor governing future reward weighting.",
+    "distractors": [
+      "A set of states, a set of actions, transition probabilities, a loss function, and a learning rate governing parameter update magnitude.",
+      "A set of inputs, a set of outputs, conditional probabilities, a reward function, and a discount factor governing future reward weighting.",
+      "A set of states, a set of actions, prior probabilities, a reward function, and a momentum term governing convergence speed."
+    ],
+    "difficulty": 3,
+    "source_article": "Markov_decision_process",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "Markov decision process"
+    ]
+  },
+  {
+    "question_text": "How does a random forest improve upon a single decision tree, and what additional source of randomness does it introduce beyond bootstrap sampling?",
+    "correct_answer": "It trains many decision trees on bootstrap samples and randomly selects a subset of features at each split, reducing variance through ensemble averaging.",
+    "distractors": [
+      "It trains many decision trees on bootstrap samples and randomly selects a subset of training examples at each split, reducing bias through ensemble averaging.",
+      "It trains many decision trees on the full dataset and randomly selects a subset of features at each split, reducing variance through boosting.",
+      "It trains many decision trees on bootstrap samples and randomly selects a subset of features at each split, reducing bias through sequential correction."
+    ],
+    "difficulty": 3,
+    "source_article": "Random_forest",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "random forest"
+    ]
+  },
+  {
+    "question_text": "In principal component analysis, what mathematical operation on the data's covariance matrix identifies the directions of maximum variance used for dimensionality reduction?",
+    "correct_answer": "Eigendecomposition of the covariance matrix, where eigenvectors define the principal component directions and eigenvalues indicate the variance explained by each.",
+    "distractors": [
+      "Eigendecomposition of the correlation matrix, where eigenvectors define the principal component directions and eigenvalues indicate the mean explained by each.",
+      "Matrix inversion of the covariance matrix, where column vectors define the principal component directions and diagonal entries indicate the variance explained by each.",
+      "Eigendecomposition of the covariance matrix, where eigenvalues define the principal component directions and eigenvectors indicate the variance explained by each."
+    ],
+    "difficulty": 3,
+    "source_article": "Principal_component_analysis",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "principal component analysis"
+    ]
+  },
+  {
+    "question_text": "What causes the vanishing gradient problem in deep neural networks, and which widely adopted activation function was introduced to mitigate it?",
+    "correct_answer": "Saturating activation functions like sigmoid cause gradients to shrink exponentially during backpropagation; ReLU mitigates this by maintaining a gradient of one for positive inputs.",
+    "distractors": [
+      "Saturating activation functions like sigmoid cause gradients to grow exponentially during backpropagation; ReLU mitigates this by clamping gradients to a maximum of one for all inputs.",
+      "Non-saturating activation functions like ReLU cause gradients to shrink exponentially during backpropagation; sigmoid mitigates this by maintaining a gradient of one for positive inputs.",
+      "Saturating activation functions like sigmoid cause gradients to shrink exponentially during backpropagation; softmax mitigates this by normalizing gradients across all neurons in each layer."
+    ],
+    "difficulty": 3,
+    "source_article": "Vanishing_gradient_problem",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "vanishing gradient problem"
+    ]
+  },
+  {
+    "question_text": "How does dropout regularize a neural network during training, and what happens to the dropout mechanism at inference time?",
+    "correct_answer": "During training, dropout randomly sets a fraction of neuron activations to zero to prevent co-adaptation; at inference time, dropout is disabled and all neurons are active.",
+    "distractors": [
+      "During training, dropout randomly sets a fraction of neuron activations to zero to prevent co-adaptation; at inference time, dropout rate is doubled to improve robustness.",
+      "During training, dropout permanently removes a fraction of neurons from the network to reduce complexity; at inference time, the pruned architecture is used directly.",
+      "During training, dropout randomly sets a fraction of neuron activations to zero to accelerate convergence; at inference time, dropout is disabled and weights are randomly reinitialized."
+    ],
+    "difficulty": 3,
+    "source_article": "Dilution_(neural_networks)",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "dropout"
+    ]
+  },
+  {
+    "question_text": "What two pre-training objectives does BERT use to learn bidirectional language representations from unlabeled text?",
+    "correct_answer": "Masked language modeling, which predicts randomly masked tokens from context, and next sentence prediction, which determines whether two sentences are consecutive.",
+    "distractors": [
+      "Causal language modeling, which predicts the next token from left context only, and next sentence prediction, which determines whether two sentences are consecutive.",
+      "Masked language modeling, which predicts randomly masked tokens from context, and sentence similarity scoring, which estimates the semantic overlap between two sentences.",
+      "Masked language modeling, which predicts randomly masked tokens from context, and text classification, which assigns a categorical label to each input sentence."
+    ],
+    "difficulty": 3,
+    "source_article": "BERT_(language_model)",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "BERT"
+    ]
+  },
+  {
+    "question_text": "In the PAC learning framework proposed by Leslie Valiant, what does it mean for a concept class to be 'probably approximately correctly' learnable?",
+    "correct_answer": "A learning algorithm can, with high probability, produce a hypothesis with low generalization error after observing a polynomial number of training samples.",
+    "distractors": [
+      "A learning algorithm can, with certainty, produce a hypothesis with zero generalization error after observing an exponential number of training samples.",
+      "A learning algorithm can, with high probability, produce a hypothesis with low training error after observing a polynomial number of validation samples.",
+      "A learning algorithm can, with high probability, produce a hypothesis with low generalization error after observing a logarithmic number of training samples."
+    ],
+    "difficulty": 4,
+    "source_article": "Probably_approximately_correct_learning",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "PAC learning"
+    ]
+  },
+  {
+    "question_text": "What does the VC dimension of a hypothesis class measure, and how does it relate to the class's ability to generalize from training data?",
+    "correct_answer": "It measures the size of the largest set of points the class can shatter; a finite VC dimension guarantees uniform convergence and bounds generalization error.",
+    "distractors": [
+      "It measures the number of parameters in the hypothesis class; a finite VC dimension guarantees uniform convergence and bounds generalization error.",
+      "It measures the size of the largest set of points the class can shatter; a finite VC dimension guarantees convergence of training error to zero.",
+      "It measures the size of the largest set of points the class can shatter; an infinite VC dimension guarantees uniform convergence and bounds generalization error."
+    ],
+    "difficulty": 4,
+    "source_article": "Vapnik%E2%80%93Chervonenkis_dimension",
+    "domain_ids": [
+      "artificial-intelligence-ml"
+    ],
+    "concepts_tested": [
+      "VC dimension"
+    ]
+  }
+]

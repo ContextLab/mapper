@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In Wallerstein's world-systems theory, what structural role do semi-peripheral nations play in the capitalist world economy?",
+    "correct_answer": "They combine core-like and periphery-like economic activities, serving as both exploiter and exploited",
+    "distractors": [
+      "They have recently industrialized but lack the established financial institutions found in core nations",
+      "They possess military alliances with core nations that shield them from peripheral economic exploitation",
+      "They maintain traditional subsistence economies while selectively adopting technological innovations from core nations"
+    ],
+    "difficulty": 4,
+    "source_article": "World-systems theory",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["world-systems theory"]
+  },
+  {
+    "question_text": "In Granovetter's 1973 theory, why are weak ties argued to be more valuable than strong ties for accessing novel information and job opportunities?",
+    "correct_answer": "Weak ties bridge otherwise disconnected social clusters, providing access to non-redundant information",
+    "distractors": [
+      "Weak ties involve higher-status individuals who control privileged access to prestigious employment opportunities",
+      "Weak ties are maintained with less emotional cost, freeing cognitive resources for processing information",
+      "Weak ties generate stronger reciprocal obligations that motivate contacts to share opportunities more actively"
+    ],
+    "difficulty": 4,
+    "source_article": "Mark Granovetter",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["strength of weak ties"]
+  },
+  {
+    "question_text": "What does Giddens mean by the 'duality of structure' in structuration theory?",
+    "correct_answer": "Social structures are simultaneously the medium and the outcome of the practices they recursively organize",
+    "distractors": [
+      "Social structures determine individual actions, which in turn reproduce those structures in unchanged form",
+      "Individual agents create social structures through intentional collective decision-making and negotiation processes",
+      "Social structures and individual agency operate independently but converge periodically during episodes of social change"
+    ],
+    "difficulty": 4,
+    "source_article": "Structuration theory",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["structuration theory"]
+  },
+  {
+    "question_text": "In Foucault's concept of biopower, what distinguishes it from earlier forms of sovereign power in how the state exercises control?",
+    "correct_answer": "Biopower manages life through regulation of birth, health, and mortality rather than threatening death",
+    "distractors": [
+      "Biopower uses democratic institutions to distribute authority across citizens rather than concentrating it in a monarch",
+      "Biopower relies on economic incentives to shape individual behavior rather than employing direct physical coercion",
+      "Biopower operates through religious doctrine to control moral conduct rather than relying on secular legal punishment"
+    ],
+    "difficulty": 4,
+    "source_article": "Biopower",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["biopower"]
+  },
+  {
+    "question_text": "In Du Bois's 'The Souls of Black Folk' (1903), what specific psychological tension does the concept of double consciousness describe?",
+    "correct_answer": "Seeing oneself through both one's own eyes and the contemptuous gaze of the dominant white society",
+    "distractors": [
+      "Alternating between public conformity to racial expectations and private resistance to systemic discrimination and injustice",
+      "Choosing between preserving African cultural heritage and adopting European American educational and social values",
+      "Balancing the pursuit of individual ambition against fulfilling collective responsibility toward one's marginalized racial community"
+    ],
+    "difficulty": 4,
+    "source_article": "Double consciousness",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["double consciousness"]
+  },
+  {
+    "question_text": "What was Simmel's key methodological contribution to sociology through his 'formal sociology' approach?",
+    "correct_answer": "Abstracting recurring forms of social interaction (like conflict, exchange, domination) from their varying contents",
+    "distractors": [
+      "Developing statistical methods to measure and quantify the strength of social bonds within large populations",
+      "Establishing ethnographic fieldwork as the primary method for systematically studying small-scale social groups",
+      "Creating experimental designs to isolate the causal mechanisms underlying observable patterns of social phenomena"
+    ],
+    "difficulty": 4,
+    "source_article": "Georg Simmel",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["formal sociology"]
+  },
+  {
+    "question_text": "In Parsons's AGIL paradigm, which functional prerequisite is fulfilled by the cultural system through the transmission of shared values and norms?",
+    "correct_answer": "Latency (pattern maintenance), which preserves motivational and cultural patterns across generations",
+    "distractors": [
+      "Integration, which coordinates the various components of the social system to maintain collective solidarity",
+      "Goal attainment, which mobilizes and directs collective resources to achieve the system's defined objectives",
+      "Adaptation, which adjusts the system's relationship to the external physical and material environment"
+    ],
+    "difficulty": 4,
+    "source_article": "AGIL paradigm",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["AGIL paradigm"]
+  },
+  {
+    "question_text": "In Garfinkel's ethnomethodology, what do 'breaching experiments' reveal about the nature of everyday social order?",
+    "correct_answer": "That social order depends on taken-for-granted background expectations that become visible only when violated",
+    "distractors": [
+      "That social order is imposed by institutional power structures that systematically punish deviance from established norms",
+      "That social order emerges from rational cost-benefit calculations made independently by self-interested individual actors",
+      "That social order results from biologically evolved drives toward cooperative behavior and mutual aid among group members"
+    ],
+    "difficulty": 4,
+    "source_article": "Ethnomethodology",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["ethnomethodology"]
+  },
+  {
+    "question_text": "How does Coleman's conceptualization of social capital differ from Putnam's in level of analysis and mechanism?",
+    "correct_answer": "Coleman emphasizes network closure enabling trust among individuals, while Putnam focuses on civic associations generating community-level trust",
+    "distractors": [
+      "Coleman argues social capital is produced by government institutions and distributed to citizens, while Putnam locates it in family inheritance",
+      "Coleman treats social capital as a finite resource that depletes with use, while Putnam views it as renewable through market exchange",
+      "Coleman limits social capital to economic transactions between firms, while Putnam extends it to informal neighborhood-level interactions"
+    ],
+    "difficulty": 4,
+    "source_article": "Social capital",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["social capital theory"]
+  },
+  {
+    "question_text": "According to Beck's risk society thesis, how does the distribution of risks in late modernity fundamentally differ from the distribution of wealth?",
+    "correct_answer": "Risks like nuclear fallout or climate change cross class boundaries, unlike wealth which remains stratified by social class",
+    "distractors": [
+      "Risks are concentrated among wealthy industrialized nations that produce the most technological output and pollution",
+      "Risks diminish proportionally as societies grow wealthier because advanced technology provides better collective protection",
+      "Risks are efficiently managed through private insurance markets that price and distribute exposure across all populations"
+    ],
+    "difficulty": 4,
+    "source_article": "Risk society",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["risk society"]
+  }
+]

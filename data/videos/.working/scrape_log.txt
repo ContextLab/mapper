@@ -1,0 +1,29 @@
+Scraping videos from https://www.youtube.com/@khanacademy...
+This may take 10-30 minutes for ~9,000 videos.
+
+  ... 500 videos scraped (21s elapsed)
+  ... 1000 videos scraped (42s elapsed)
+  ... 1500 videos scraped (61s elapsed)
+  ... 2000 videos scraped (83s elapsed)
+  ... 2500 videos scraped (105s elapsed)
+  ... 3000 videos scraped (125s elapsed)
+  ... 3500 videos scraped (146s elapsed)
+  ... 4000 videos scraped (168s elapsed)
+  ... 4500 videos scraped (190s elapsed)
+  ... 5000 videos scraped (212s elapsed)
+  ... 5500 videos scraped (234s elapsed)
+  ... 6000 videos scraped (257s elapsed)
+  ... 6500 videos scraped (281s elapsed)
+  ... 7000 videos scraped (304s elapsed)
+  ... 7500 videos scraped (328s elapsed)
+  ... 8000 videos scraped (353s elapsed)
+  ... 8500 videos scraped (375s elapsed)
+
+Done: 8796 unique videos in 389s
+Saved to data/videos/.working/khan_metadata.json
+
+Stats:
+  Total videos: 8796
+  With duration: 8796
+  Total content: 1040 hours
+  Avg duration: 426s (7.1min)

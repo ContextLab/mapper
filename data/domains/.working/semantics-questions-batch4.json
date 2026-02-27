@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In pragmatics, what does a scalar implicature arise from when a speaker uses a weaker term on a scale?",
+    "correct_answer": "The hearer infers the speaker chose not to use a stronger term, implying the stronger statement does not hold.",
+    "distractors": [
+      "The hearer assumes the speaker lacks vocabulary knowledge, so the weaker term is taken as a literal synonym.",
+      "The hearer concludes the speaker is being deliberately vague to avoid committing to any specific proposition.",
+      "The hearer interprets the weaker term as an emphatic understatement that actually strengthens the assertion made."
+    ],
+    "difficulty": 3,
+    "source_article": "Scalar implicature",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["scalar implicature"]
+  },
+  {
+    "question_text": "In formal semantics, what does a generalized quantifier denote?",
+    "correct_answer": "A set of sets, providing a compositional semantics for quantified noun phrases like 'every boy' or 'most students'.",
+    "distractors": [
+      "A single truth value assigned to atomic propositions within first-order predicate logic formulas.",
+      "A function mapping individual variables to specific objects in the domain of discourse only.",
+      "A binary relation between two individual constants that determines their relative ordering in a model."
+    ],
+    "difficulty": 3,
+    "source_article": "Generalized quantifier",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["generalized quantifier theory"]
+  },
+  {
+    "question_text": "In linguistics, what is the key distinction between perfective and imperfective grammatical aspect?",
+    "correct_answer": "Perfective views an event as a bounded whole, while imperfective presents it as ongoing, habitual, or incomplete.",
+    "distractors": [
+      "Perfective marks events occurring in the past, while imperfective exclusively marks events in the future tense.",
+      "Perfective indicates actions performed by a single agent, while imperfective signals actions done by multiple agents.",
+      "Perfective applies only to transitive verbs with direct objects, while imperfective applies to intransitive verbs only."
+    ],
+    "difficulty": 3,
+    "source_article": "Grammatical aspect",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["aspect (linguistics)"]
+  },
+  {
+    "question_text": "In speech act theory, what distinguishes an illocutionary act from a locutionary act?",
+    "correct_answer": "The illocutionary act is the social action performed in saying something, such as promising or requesting, beyond merely producing a meaningful utterance.",
+    "distractors": [
+      "The illocutionary act is the physical production of speech sounds, while the locutionary act is the intended meaning.",
+      "The illocutionary act describes the effect on the hearer's behavior, while the locutionary act describes grammatical form.",
+      "The illocutionary act refers to the literal dictionary meaning of words, while the locutionary act refers to implied meaning."
+    ],
+    "difficulty": 3,
+    "source_article": "Illocutionary act",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["illocutionary act"]
+  },
+  {
+    "question_text": "According to Charles Fillmore's frame semantics, how does understanding word meaning depend on background knowledge?",
+    "correct_answer": "Words evoke conceptual frames encoding structured background knowledge; one cannot understand a word without accessing its entire frame.",
+    "distractors": [
+      "Words have fixed dictionary definitions independent of context, and background knowledge only affects pragmatic inference.",
+      "Words derive meaning solely from their syntactic position in the sentence, with no reliance on encyclopedic knowledge.",
+      "Words acquire meaning through statistical co-occurrence patterns in corpora, not through any structured conceptual representation."
+    ],
+    "difficulty": 3,
+    "source_article": "Frame semantics (linguistics)",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["frame semantics"]
+  },
+  {
+    "question_text": "In linguistics, what is anaphora, and what is the relationship between an anaphor and its antecedent?",
+    "correct_answer": "Anaphora is when an expression, such as a pronoun, refers back to a previously introduced expression called its antecedent.",
+    "distractors": [
+      "Anaphora is when a word changes its meaning depending on the speaker's emotional state during the conversation.",
+      "Anaphora is when two adjacent sentences express contradictory propositions that must be resolved by the listener.",
+      "Anaphora is when a noun phrase introduces an entirely new referent that has no prior mention in the discourse."
+    ],
+    "difficulty": 3,
+    "source_article": "Anaphora (linguistics)",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["anaphora"]
+  },
+  {
+    "question_text": "What causes scope ambiguity in sentences containing multiple quantifiers, such as 'Every student read a book'?",
+    "correct_answer": "Different possible orderings of quantifier scope yield distinct interpretations of which quantifier has wider semantic scope.",
+    "distractors": [
+      "Lexical ambiguity in the individual words creates multiple unrelated dictionary meanings for the entire sentence.",
+      "Phonological stress patterns on different syllables shift the syntactic parse tree of the sentence completely.",
+      "Pragmatic context always resolves the sentence to a single reading, so no genuine ambiguity actually arises."
+    ],
+    "difficulty": 3,
+    "source_article": "Scope (formal semantics)",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["scope ambiguity"]
+  },
+  {
+    "question_text": "In Lakoff and Johnson's conceptual metaphor theory, what is the relationship between source and target domains?",
+    "correct_answer": "Abstract target domains are systematically understood through mappings from concrete, experiential source domains.",
+    "distractors": [
+      "Source domains are always abstract ideas that help explain concrete target domains in everyday language use.",
+      "Source and target domains are randomly paired by individual speakers with no systematic cross-linguistic patterns.",
+      "Target domains provide literal definitions that replace figurative language found in the corresponding source domains."
+    ],
+    "difficulty": 3,
+    "source_article": "Conceptual metaphor",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["conceptual metaphor"]
+  },
+  {
+    "question_text": "In possible worlds semantics, how is the meaning of a sentence involving necessity (e.g., 'necessarily P') evaluated?",
+    "correct_answer": "P is necessarily true if and only if P is true in every possible world accessible from the actual world.",
+    "distractors": [
+      "P is necessarily true if it was asserted by a reliable speaker in at least one previous discourse context.",
+      "P is necessarily true if it can be derived from syntactic rules without consulting any semantic interpretation.",
+      "P is necessarily true if the majority of language users in a community agree that P sounds grammatically correct."
+    ],
+    "difficulty": 4,
+    "source_article": "Possible world",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["possible worlds semantics"]
+  },
+  {
+    "question_text": "How does dynamic semantics differ from traditional truth-conditional semantics in its treatment of sentence meaning?",
+    "correct_answer": "Dynamic semantics treats meaning as context-change potential, updating an information state, rather than as static truth conditions.",
+    "distractors": [
+      "Dynamic semantics assigns fixed truth values to sentences in isolation without considering any surrounding discourse context.",
+      "Dynamic semantics eliminates formal logic entirely, relying only on speaker intuitions about grammaticality judgments.",
+      "Dynamic semantics focuses solely on phonological and morphological rules, ignoring compositional semantic interpretation altogether."
+    ],
+    "difficulty": 4,
+    "source_article": "Dynamic semantics",
+    "domain_ids": ["semantics"],
+    "concepts_tested": ["dynamic semantics"]
+  }
+]

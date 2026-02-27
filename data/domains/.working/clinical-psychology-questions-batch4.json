@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In behavioral assessment, functional analysis identifies the variables maintaining problem behavior by examining antecedents, the behavior itself, and consequences. What is the primary purpose of identifying the 'function' of a behavior in this framework?",
+    "correct_answer": "To determine what reinforcement the behavior produces, such as attention, escape, or sensory stimulation, in order to guide intervention design",
+    "distractors": [
+      "To classify the behavior into a DSM diagnostic category based on its topographical features and frequency",
+      "To measure the neurological substrates of the behavior using brain imaging and electrophysiological recording",
+      "To determine the developmental stage at which the behavior first emerged through retrospective life history analysis"
+    ],
+    "difficulty": 3,
+    "source_article": "Functional analysis (psychology)",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["functional analysis"]
+  },
+  {
+    "question_text": "Comorbidity refers to the co-occurrence of two or more disorders in the same individual. The term was introduced by Feinstein in 1970. How does psychiatric comorbidity most commonly affect clinical treatment planning?",
+    "correct_answer": "It complicates treatment by requiring clinicians to address multiple interacting conditions, often reducing the efficacy of single-disorder protocols",
+    "distractors": [
+      "It simplifies treatment because co-occurring disorders always share a single underlying cause that can be targeted directly",
+      "It eliminates the need for differential diagnosis because all symptoms are attributed to whichever disorder was diagnosed first",
+      "It has no meaningful effect on treatment because each disorder is treated independently using its own standard protocol"
+    ],
+    "difficulty": 3,
+    "source_article": "Comorbidity",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["comorbidity"]
+  },
+  {
+    "question_text": "Randomized controlled trials (RCTs) are considered the gold standard for establishing the efficacy of psychological treatments. What is the primary methodological advantage of random assignment in an RCT evaluating psychotherapy?",
+    "correct_answer": "Randomization balances both observed and unobserved participant characteristics between groups, allowing causal attribution of outcomes to the treatment",
+    "distractors": [
+      "Randomization ensures that therapists are unaware of which treatment they are delivering, achieving full double-blinding of the study",
+      "Randomization guarantees that all participants will respond to treatment, eliminating the problem of non-responders in outcome data",
+      "Randomization controls for the passage of time by ensuring that all participants begin and end treatment on the same calendar dates"
+    ],
+    "difficulty": 3,
+    "source_article": "Randomized controlled trial",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["randomized controlled trial"]
+  },
+  {
+    "question_text": "Neuropsychological assessment evaluates cognitive functions to identify brain-behavior relationships. Which set of cognitive domains is most characteristic of a comprehensive neuropsychological test battery?",
+    "correct_answer": "Attention, memory, executive function, language, visuospatial ability, and processing speed",
+    "distractors": [
+      "Personality traits, emotional intelligence, attachment style, defense mechanisms, and interpersonal functioning",
+      "Reading comprehension, mathematical reasoning, written expression, oral fluency, and spelling accuracy",
+      "Conscientiousness, agreeableness, neuroticism, openness, and extraversion as measured by self-report scales"
+    ],
+    "difficulty": 3,
+    "source_article": "Neuropsychological assessment",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["neuropsychological testing"]
+  },
+  {
+    "question_text": "Harm reduction is a public health approach to substance use that differs fundamentally from abstinence-only models. What is the defining principle that distinguishes harm reduction from traditional abstinence-based treatment?",
+    "correct_answer": "Harm reduction aims to reduce the negative consequences of substance use without requiring complete cessation as a precondition for treatment",
+    "distractors": [
+      "Harm reduction requires individuals to achieve full sobriety before they are eligible to receive any clinical services",
+      "Harm reduction focuses exclusively on legal substances like alcohol and tobacco while excluding illicit drug use from its scope",
+      "Harm reduction replaces all pharmacological interventions with peer support groups modeled on twelve-step programs"
+    ],
+    "difficulty": 3,
+    "source_article": "Harm reduction",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["harm reduction"]
+  },
+  {
+    "question_text": "The Stanley-Brown Safety Planning Intervention is a brief, collaborative clinical tool for managing suicide risk. What distinguishes a safety plan from the older practice of using no-suicide contracts?",
+    "correct_answer": "A safety plan provides a prioritized list of actionable coping strategies and support contacts, whereas no-suicide contracts lack empirical support and may inhibit honest disclosure",
+    "distractors": [
+      "A safety plan is a legally binding document signed by both clinician and patient, whereas no-suicide contracts are informal verbal agreements",
+      "A safety plan focuses solely on restricting access to lethal means, whereas no-suicide contracts address the full range of coping strategies",
+      "A safety plan is completed only after hospitalization discharge, whereas no-suicide contracts are used exclusively during inpatient stays"
+    ],
+    "difficulty": 3,
+    "source_article": "Safety planning intervention",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["safety planning"]
+  },
+  {
+    "question_text": "Cognitive restructuring is a core CBT technique in which clients learn to identify and modify maladaptive automatic thoughts. What is the role of Socratic questioning within the cognitive restructuring process?",
+    "correct_answer": "It guides clients to critically examine the evidence for and against their automatic thoughts through a collaborative dialogue rather than direct disputation",
+    "distractors": [
+      "It instructs clients to suppress negative thoughts immediately upon noticing them and replace them with pre-written positive affirmations",
+      "It requires the therapist to provide the client with the correct interpretation of events based on the therapist's clinical expertise",
+      "It trains clients in progressive muscle relaxation so that physiological arousal is reduced before any cognitive work begins"
+    ],
+    "difficulty": 3,
+    "source_article": "Cognitive restructuring",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["cognitive restructuring"]
+  },
+  {
+    "question_text": "Negative reinforcement is an operant conditioning process often confused with punishment. In clinical psychology, how does negative reinforcement maintain avoidance behavior in anxiety disorders?",
+    "correct_answer": "Avoidance of a feared stimulus is reinforced because it removes or prevents the aversive experience of anxiety, thereby increasing the likelihood of future avoidance",
+    "distractors": [
+      "Avoidance is maintained because encountering the feared stimulus delivers a pleasant reward that the person becomes dependent upon",
+      "Avoidance is maintained because the therapist explicitly instructs the client to stay away from anxiety-provoking situations as treatment",
+      "Avoidance is maintained because repeated exposure to the feared stimulus causes permanent neural damage that makes approach impossible"
+    ],
+    "difficulty": 3,
+    "source_article": "Negative reinforcement",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["negative reinforcement"]
+  },
+  {
+    "question_text": "The transdiagnostic approach to treatment targets shared psychological processes across multiple disorder categories rather than tailoring intervention to a single diagnosis. The Unified Protocol developed by David Barlow exemplifies this approach. What three core therapeutic principles does the Unified Protocol target across emotional disorders?",
+    "correct_answer": "Increasing mindful awareness of emotions, increasing cognitive flexibility, and reducing emotion avoidance and emotion-driven behaviors",
+    "distractors": [
+      "Eliminating all negative emotions, achieving permanent cognitive control over thought content, and preventing any future emotional distress",
+      "Identifying unconscious childhood conflicts, interpreting dream symbolism, and resolving transference reactions with the therapist",
+      "Administering standardized diagnostic interviews, prescribing disorder-specific pharmacotherapy, and monitoring medication side effects"
+    ],
+    "difficulty": 4,
+    "source_article": "Transdiagnostic cognitive behavioral therapy",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["transdiagnostic approach"]
+  },
+  {
+    "question_text": "The Research Domain Criteria (RDoC) framework, launched by NIMH in 2009, reconceptualizes psychopathology research away from DSM categories. What is the fundamental methodological shift that RDoC introduces compared to traditional diagnostic classification?",
+    "correct_answer": "RDoC organizes research around dimensional constructs spanning normal to abnormal functioning, integrating multiple units of analysis from genes to behavior",
+    "distractors": [
+      "RDoC replaces all existing DSM diagnoses with a new set of categorical labels based solely on genetic biomarkers identified through genome-wide association studies",
+      "RDoC eliminates the use of behavioral observation entirely and relies exclusively on neuroimaging data to define all mental disorder categories",
+      "RDoC adopts a purely psychodynamic framework that classifies mental disorders according to which unconscious conflict is identified during clinical interview"
+    ],
+    "difficulty": 4,
+    "source_article": "Research Domain Criteria",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["Research Domain Criteria"]
+  }
+]

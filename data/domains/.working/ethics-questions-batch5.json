@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Expressivist metaethics faces the Frege-Geach problem when moral terms appear in logically complex sentences. What is the core challenge this embedding problem poses for expressivism?",
+    "correct_answer": "Moral sentences embedded in conditionals or disjunctions seem to retain their meaning, but expressivism cannot easily explain this since unasserted moral clauses express no attitude.",
+    "distractors": [
+      "Moral sentences embedded in universal generalizations seem to lose their normative force, and expressivism cannot explain why speakers still treat them as action-guiding prescriptions.",
+      "Moral sentences combined with empirical premises appear to generate new factual claims, and expressivism cannot account for how attitudes produce truth-evaluable descriptive conclusions.",
+      "Moral sentences nested inside propositional-attitude reports seem to acquire representational content, and expressivism cannot reconcile this with its denial of moral belief states."
+    ],
+    "difficulty": 4,
+    "source_article": "Expressivism",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["expressivist metaethics"]
+  },
+  {
+    "question_text": "Jonathan Dancy's moral particularism is grounded in a distinctive thesis about practical reasons. What is this thesis, and what does it imply about the status of moral principles?",
+    "correct_answer": "His holism of reasons holds that a feature counting as a reason in one case need not be a reason elsewhere, ruling out exceptionless principles.",
+    "distractors": [
+      "His atomism of reasons holds that each moral feature carries fixed valence across all contexts, so moral principles are universally valid but epistemically inaccessible.",
+      "His pluralism of reasons holds that competing prima facie duties always conflict, so moral principles exist but can never be ranked in stable order.",
+      "His contextualism of reasons holds that reasons shift in strength but never polarity across situations, so moral principles are defeasible yet structurally necessary."
+    ],
+    "difficulty": 4,
+    "source_article": "Moral particularism",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["moral particularism"]
+  },
+  {
+    "question_text": "Effective altruism uses a three-factor framework to prioritize causes. Which three criteria does this framework employ, and what philosophical tradition most directly inspires the movement's emphasis on maximizing total good?",
+    "correct_answer": "The framework evaluates causes by importance, tractability, and neglectedness. The movement draws most directly on utilitarian and consequentialist thinking about impartially maximizing well-being.",
+    "distractors": [
+      "The framework evaluates causes by urgency, reversibility, and public salience. The movement draws most directly on Kantian deontological thinking about universalizable duties of beneficence.",
+      "The framework evaluates causes by severity, political feasibility, and donor preference alignment. The movement draws most directly on virtue-ethical thinking about cultivating charitable character.",
+      "The framework evaluates causes by immediacy, cost-efficiency, and media visibility. The movement draws most directly on contractualist thinking about principles no one could reasonably reject."
+    ],
+    "difficulty": 4,
+    "source_article": "Effective altruism",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["effective altruism"]
+  },
+  {
+    "question_text": "Derek Parfit's repugnant conclusion, presented in 'Reasons and Persons' (1984), challenges total utilitarianism in population ethics. What does this conclusion state about the comparison between populations A and Z?",
+    "correct_answer": "For any population A with very high well-being, total utilitarianism implies a vastly larger population Z with lives barely worth living would be better.",
+    "distractors": [
+      "For any population A with moderate well-being, total utilitarianism implies a smaller population Z whose members enjoy perfect happiness would be morally inferior.",
+      "For any population A with equal well-being, total utilitarianism implies a same-sized population Z with unequal welfare distribution would be preferable overall.",
+      "For any population A with declining well-being, total utilitarianism implies an equally sized population Z with uniformly minimal suffering would be worse."
+    ],
+    "difficulty": 4,
+    "source_article": "Mere addition paradox",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["repugnant conclusion"]
+  },
+  {
+    "question_text": "Harry Frankfurt's 1969 thought experiments use a counterfactual intervener to challenge a widely held principle about moral responsibility. What principle do Frankfurt cases target, and how does the intervener figure in the argument?",
+    "correct_answer": "They target the principle of alternate possibilities, that responsibility requires ability to do otherwise. The intervener never acts because the agent freely chooses unaided.",
+    "distractors": [
+      "They target the principle of sufficient reason, that every action needs a rational cause. The intervener secretly supplies motives that replace the agent's conscious deliberation.",
+      "They target the principle of causal determinism, that every event is necessitated by prior causes. The intervener retroactively rewrites the causal chain making the choice predetermined.",
+      "They target the principle of moral luck, that responsibility depends on factors beyond one's control. The intervener randomly reassigns outcomes so consequences no longer track intentions."
+    ],
+    "difficulty": 4,
+    "source_article": "Frankfurt cases",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["Frankfurt cases"]
+  },
+  {
+    "question_text": "Cornell realism, associated with Richard Boyd and Nicholas Sturgeon, defends a naturalistic form of moral realism. How does this view characterize moral properties, and what analogy from the philosophy of science does Boyd invoke?",
+    "correct_answer": "Moral properties are natural, irreducible, causally efficacious properties. Boyd uses the analogy of homeostatic property clusters in natural kinds like water or biological species.",
+    "distractors": [
+      "Moral properties are supernatural, non-physical, and causally inert properties. Boyd uses the analogy of theoretical posits in discarded scientific paradigms like phlogiston or caloric fluid.",
+      "Moral properties are socially constructed, culturally variable, and convention-dependent properties. Boyd uses the analogy of nominal kinds in taxonomy like constellations or national borders.",
+      "Moral properties are subjective, mind-dependent, and dispositional properties. Boyd uses the analogy of secondary qualities in perception like colors or tastes experienced by observers."
+    ],
+    "difficulty": 4,
+    "source_article": "Cornell realism",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["moral functionalism"]
+  },
+  {
+    "question_text": "John Rawls introduced Kantian constructivism in his 1980 Dewey Lectures. What distinguishes this metaethical position from moral realism regarding the ontological status of moral principles?",
+    "correct_answer": "Moral principles are not discovered as pre-existing facts but constructed through an idealized procedure of practical reason grounded in rational agency.",
+    "distractors": [
+      "Moral principles are empirically observed regularities in human behavior, derived through inductive generalization from cross-cultural anthropological data about cooperation.",
+      "Moral principles are self-evident axioms directly intuited by rational minds, apprehended through a faculty analogous to mathematical perception of necessary truths.",
+      "Moral principles are divine commands transmitted through sacred revelation, justified by the supreme authority of a perfectly rational and benevolent legislator."
+    ],
+    "difficulty": 4,
+    "source_article": "Kantian constructivism",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["Kantian constructivism"]
+  },
+  {
+    "question_text": "The problem of adaptive preferences, central to the capabilities approach of Sen and Nussbaum, challenges a specific welfare metric. What metric does it undermine, and why do adapted preferences pose a problem for it?",
+    "correct_answer": "It undermines preference-satisfaction as a measure of well-being because oppressed persons may unconsciously adjust desires to unjust circumstances, making their reported satisfaction misleading.",
+    "distractors": [
+      "It undermines objective-list accounts of well-being because privileged persons may consciously inflate their reported needs to include luxury items, making their stated requirements unreliable.",
+      "It undermines hedonic-tone measurement of well-being because neurologically atypical persons may experience pleasure differently from the norm, making their subjective reports incomparable.",
+      "It undermines revealed-preference theory of well-being because economically rational persons may strategically misrepresent choices in market settings, making their purchasing behavior deceptive."
+    ],
+    "difficulty": 4,
+    "source_article": "Adaptive preferences",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["adaptive preferences"]
+  },
+  {
+    "question_text": "Just war theory divides its moral criteria into two main categories governing different aspects of armed conflict. What are these categories, and what additional third category has been proposed by contemporary theorists?",
+    "correct_answer": "Jus ad bellum governs the right to wage war; jus in bello governs wartime conduct. A proposed third, jus post bellum, addresses post-war reconstruction.",
+    "distractors": [
+      "Jus ante bellum governs pre-war diplomatic obligations; jus circa bellum governs proportionality during hostilities. The proposed third is jus inter bellum, on armistice negotiations.",
+      "Jus pro bellum governs justification for military mobilization; jus contra bellum governs conscientious objection rights. The proposed third is jus ultra bellum, on permanent occupation.",
+      "Jus ex bellum governs conditions for legitimate surrender; jus sub bellum governs treatment of occupied territories. The proposed third is jus de bellum, on war reparations."
+    ],
+    "difficulty": 4,
+    "source_article": "Just war theory",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["just war theory"]
+  },
+  {
+    "question_text": "Moral encroachment intersects epistemology and ethics by claiming that moral factors can alter epistemic standards. How does this view connect to Miranda Fricker's concept of epistemic injustice introduced in her 2007 book?",
+    "correct_answer": "Prejudice raises epistemic stakes, producing what Fricker calls testimonial injustice: a speaker receives less credibility than deserved because identity-based bias deflates their perceived trustworthiness.",
+    "distractors": [
+      "Compassion lowers epistemic stakes, producing what Fricker calls hermeneutical privilege: a speaker receives more credibility than warranted because sympathy-based bias inflates their perceived trustworthiness.",
+      "Ignorance eliminates epistemic stakes, producing what Fricker calls distributive injustice: no speaker receives any credibility at all because apathy-based neglect erases their perceived trustworthiness.",
+      "Authority fixes epistemic stakes, producing what Fricker calls structural injustice: only credentialed speakers receive credibility because expertise-based gatekeeping monopolizes perceived trustworthiness entirely."
+    ],
+    "difficulty": 4,
+    "source_article": "Epistemic injustice",
+    "domain_ids": ["ethics"],
+    "concepts_tested": ["moral encroachment"]
+  }
+]

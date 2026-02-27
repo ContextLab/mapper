@@ -26,9 +26,9 @@ export async function init(basePath) {
   const json = await res.json();
   domains = json.domains;
 
-  if (import.meta.env.DEV && domains.length !== 19) {
+  if (import.meta.env.DEV && domains.length !== 50) {
     console.warn(
-      `[registry] Expected 19 domains, got ${domains.length}`
+      `[registry] Expected 50 domains, got ${domains.length}`
     );
   }
 
@@ -76,6 +76,34 @@ export function getDomain(id) {
 export function getChildren(parentId) {
   assertInitialized();
   return childrenMap.get(parentId) || [];
+}
+
+/**
+ * Returns flat array of all descendant domain IDs for a given domain.
+ * - "all" domain: returns every other domain ID
+ * - General parent (e.g., "physics"): returns its child sub-domain IDs
+ * - Leaf sub-domain (e.g., "astrophysics"): returns empty array
+ * @param {string} domainId - Domain id.
+ * @returns {string[]} Descendant domain IDs (does not include domainId itself).
+ */
+export function getDescendants(domainId) {
+  assertInitialized();
+
+  // "all" domain encompasses every other domain
+  if (domainId === 'all') {
+    return domains.filter(d => d.id !== 'all').map(d => d.id);
+  }
+
+  // Recursive traversal of childrenMap
+  const result = [];
+  const stack = [...(childrenMap.get(domainId) || [])];
+  while (stack.length > 0) {
+    const child = stack.pop();
+    result.push(child.id);
+    const grandchildren = childrenMap.get(child.id) || [];
+    for (const gc of grandchildren) stack.push(gc);
+  }
+  return result;
 }
 
 /**

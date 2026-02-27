@@ -1,0 +1,93 @@
+[
+  {
+    "question_text": "In neurobiology, what is a synapse?",
+    "correct_answer": "A structure that permits a neuron to pass an electrical or chemical signal to another neuron or to a target effector cell.",
+    "distractors": [
+      "A structure that permits a neuron to pass an electrical or chemical signal from its dendrites back to its own cell body.",
+      "A membrane channel that permits a neuron to pass nutrients and metabolic waste to another neuron or to a target effector cell.",
+      "A structure that permits a glial cell to pass an electrical or chemical signal to another neuron or to a target effector cell."
+    ],
+    "difficulty": 1,
+    "source_article": "Synapse",
+    "domain_ids": ["neurobiology"],
+    "concepts_tested": ["synapse"]
+  },
+  {
+    "question_text": "In neurobiology, what is a dendrite?",
+    "correct_answer": "A branched extension of a nerve cell that receives electrochemical signals from other neurons and conducts them toward the cell body.",
+    "distractors": [
+      "A branched extension of a nerve cell that transmits electrochemical signals to other neurons and conducts them away from the cell body.",
+      "A branched extension of a glial cell that receives electrochemical signals from other neurons and conducts them toward the axon terminal.",
+      "An unbranched extension of a nerve cell that receives electrochemical signals from other neurons and conducts them toward the synaptic cleft."
+    ],
+    "difficulty": 1,
+    "source_article": "Dendrite",
+    "domain_ids": ["neurobiology"],
+    "concepts_tested": ["dendrite"]
+  },
+  {
+    "question_text": "In neurobiology, what is an axon?",
+    "correct_answer": "A long, slender projection of a neuron that conducts electrical impulses called action potentials away from the cell body.",
+    "distractors": [
+      "A long, slender projection of a neuron that receives electrical impulses called action potentials directed toward the cell body.",
+      "A short, branched projection of a neuron that conducts electrical impulses called action potentials away from the cell body.",
+      "A long, slender projection of a neuron that conducts chemical signals called graded potentials away from the cell body."
+    ],
+    "difficulty": 1,
+    "source_article": "Axon",
+    "domain_ids": ["neurobiology"],
+    "concepts_tested": ["axon"]
+  },
+  {
+    "question_text": "What is myelin, and what is its primary function in the nervous system?",
+    "correct_answer": "A lipid-rich substance that wraps around axons to insulate them and increase the speed at which electrical impulses travel.",
+    "distractors": [
+      "A protein-rich substance that wraps around dendrites to insulate them and increase the speed at which electrical impulses travel.",
+      "A lipid-rich substance that wraps around axons to nourish them and increase the strength at which electrical impulses travel.",
+      "A lipid-rich substance that fills the synaptic cleft to insulate it and increase the speed at which neurotransmitters diffuse."
+    ],
+    "difficulty": 1,
+    "source_article": "Myelin",
+    "domain_ids": ["neurobiology"],
+    "concepts_tested": ["myelin"]
+  },
+  {
+    "question_text": "In neurophysiology, what is an action potential?",
+    "correct_answer": "A rapid, transient reversal of voltage across a neuron's membrane, driven by the sequential opening of sodium and then potassium ion channels.",
+    "distractors": [
+      "A slow, sustained reversal of voltage across a neuron's membrane, driven by the sequential opening of sodium and then potassium ion channels.",
+      "A rapid, transient reversal of voltage across a neuron's membrane, driven by the continuous opening of calcium and then chloride ion channels.",
+      "A rapid, transient increase in voltage across a glial cell's membrane, driven by the sequential opening of sodium and then potassium ion channels."
+    ],
+    "difficulty": 1,
+    "source_article": "Action potential",
+    "domain_ids": ["neurobiology"],
+    "concepts_tested": ["action potential"]
+  },
+  {
+    "question_text": "In cell biology, what is an ion channel?",
+    "correct_answer": "A pore-forming membrane protein that selectively allows specific ions to pass through the cell membrane, shaping electrical signals.",
+    "distractors": [
+      "A pore-forming membrane protein that actively pumps specific ions against their gradient through the cell membrane, shaping electrical signals.",
+      "A cytoplasmic receptor protein that selectively allows specific ions to pass through the nuclear membrane, shaping gene expression.",
+      "A pore-forming membrane lipid that nonselectively allows all ions to pass through the cell membrane, shaping electrical signals."
+    ],
+    "difficulty": 1,
+    "source_article": "Ion channel",
+    "domain_ids": ["neurobiology"],
+    "concepts_tested": ["ion channel"]
+  },
+  {
+    "question_text": "What is dopamine, and what major role does it play in the brain?",
+    "correct_answer": "A catecholamine neurotransmitter that signals motivational salience, playing a major role in reward-motivated behavior and motor control.",
+    "distractors": [
+      "An indolamine neurotransmitter that signals motivational salience, playing a major role in sleep-wake regulation and motor control.",
+      "A catecholamine neurotransmitter that signals pain intensity, playing a major role in nociceptive processing and motor control.",
+      "A catecholamine hormone that signals motivational salience, playing a major role in reward-motivated behavior and skeletal growth."
+    ],
+    "difficulty": 1,
+    "source_article": "Dopamine",
+    "domain_ids": ["neurobiology"],
+    "concepts_tested": ["dopamine"]
+  }
+]

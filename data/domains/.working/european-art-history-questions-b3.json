@@ -1,0 +1,121 @@
+[
+  {
+    "question_text": "In sculpture, contrapposto involves the figure standing with weight on one foot. What is the term for the weight-bearing leg in this pose?",
+    "correct_answer": "The engaged leg",
+    "distractors": [
+      "The anchored leg",
+      "The dominant leg",
+      "The grounded leg"
+    ],
+    "difficulty": 2,
+    "source_article": "Contrapposto",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "contrapposto"
+    ]
+  },
+  {
+    "question_text": "Chiaroscuro is one of the four canonical painting modes of the Italian Renaissance. Which of the following correctly names the other three modes?",
+    "correct_answer": "Cangiante, sfumato, and unione",
+    "distractors": [
+      "Cangiante, sfumato, and tenebrism",
+      "Grisaille, sfumato, and unione",
+      "Cangiante, impasto, and unione"
+    ],
+    "difficulty": 2,
+    "source_article": "Chiaroscuro",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "chiaroscuro"
+    ]
+  },
+  {
+    "question_text": "In buon fresco painting, the artist works on a fresh layer of fine plaster applied each day. What is the Italian term for this individual day's working area?",
+    "correct_answer": "Giornata, meaning 'day's work'",
+    "distractors": [
+      "Intonaco, meaning 'day's work'",
+      "Giornata, meaning 'fresh layer'",
+      "Sinopia, meaning 'day's work'"
+    ],
+    "difficulty": 2,
+    "source_article": "Fresco",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "fresco"
+    ]
+  },
+  {
+    "question_text": "A triptych is a work of art divided into three sections or panels. What broader category of multi-panel artworks does a triptych belong to?",
+    "correct_answer": "A polyptych, the term for all multi-panel works",
+    "distractors": [
+      "A diptych, the term for all multi-panel works",
+      "A polyptych, the term for all hinged altar works",
+      "A pentaptych, the term for all multi-panel works"
+    ],
+    "difficulty": 2,
+    "source_article": "Triptych",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "triptych"
+    ]
+  },
+  {
+    "question_text": "Pointillism uses small dots of color to form images. What is the name of the more technical variant of this method that is primarily concerned with color theory?",
+    "correct_answer": "Divisionism",
+    "distractors": [
+      "Cloisonnism",
+      "Luminism",
+      "Chromaticism"
+    ],
+    "difficulty": 2,
+    "source_article": "Pointillism",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "pointillism"
+    ]
+  },
+  {
+    "question_text": "The word 'Mannerism' derives from an Italian term used by Giorgio Vasari in his writings on art. What is this Italian source word and its meaning?",
+    "correct_answer": "Maniera, meaning 'style' or 'manner'",
+    "distractors": [
+      "Maniera, meaning 'technique' or 'craft'",
+      "Mano, meaning 'style' or 'manner'",
+      "Maniera, meaning 'elegance' or 'grace'"
+    ],
+    "difficulty": 2,
+    "source_article": "Mannerism",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "Mannerism"
+    ]
+  },
+  {
+    "question_text": "The term 'Post-Impressionism' was first used by a British art critic to describe the development of French art since Manet. Who coined this term?",
+    "correct_answer": "Roger Fry, who organized the 1910 exhibition 'Manet and the Post-Impressionists'",
+    "distractors": [
+      "Roger Fry, who organized the 1910 exhibition 'Beyond Impressionism and Its Successors'",
+      "Frank Rutter, who organized the 1910 exhibition 'Manet and the Post-Impressionists'",
+      "Roger Fry, who organized the 1906 exhibition 'Manet and the Post-Impressionists'"
+    ],
+    "difficulty": 2,
+    "source_article": "Post-Impressionism",
+    "domain_ids": [
+      "european-art-history"
+    ],
+    "concepts_tested": [
+      "Post-Impressionism"
+    ]
+  }
+]

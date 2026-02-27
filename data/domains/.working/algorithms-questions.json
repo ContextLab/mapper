@@ -1,0 +1,652 @@
+[
+  {
+    "question_text": "What is sorting in the context of algorithms?",
+    "correct_answer": "The process of arranging elements of a collection into a specified order, such as numerical or alphabetical.",
+    "distractors": [
+      "The process of dividing a dataset into equal-sized partitions for parallel processing across multiple machines.",
+      "The process of removing duplicate elements from a collection while preserving the original insertion order.",
+      "The process of converting data from one format to another for compatibility between different systems."
+    ],
+    "difficulty": 1,
+    "source_article": "Sorting algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["sorting"]
+  },
+  {
+    "question_text": "What is a search algorithm?",
+    "correct_answer": "A procedure for locating a specific item or value within a data structure or collection.",
+    "distractors": [
+      "A procedure for compressing data structures to minimize the memory footprint of stored elements.",
+      "A procedure for sorting elements into a specified order before performing subsequent operations.",
+      "A procedure for distributing computational tasks across multiple processors in a parallel system."
+    ],
+    "difficulty": 1,
+    "source_article": "Search algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["searching"]
+  },
+  {
+    "question_text": "What is binary search?",
+    "correct_answer": "An algorithm that finds a target value in a sorted array by repeatedly halving the search interval.",
+    "distractors": [
+      "An algorithm that finds a target value in any array by checking every element from beginning to end.",
+      "An algorithm that finds a target value by dividing the array into three equal segments each iteration.",
+      "An algorithm that finds a target value by randomly sampling elements until a match is discovered."
+    ],
+    "difficulty": 1,
+    "source_article": "Binary search algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["binary search"]
+  },
+  {
+    "question_text": "What is recursion in computer science?",
+    "correct_answer": "A technique where a function calls itself to solve smaller instances of the same problem.",
+    "distractors": [
+      "A technique where a function repeatedly iterates through a loop until a counter reaches zero.",
+      "A technique where multiple functions call each other in a fixed round-robin scheduling pattern.",
+      "A technique where a function delegates its computation to a separate thread running in parallel."
+    ],
+    "difficulty": 1,
+    "source_article": "Recursion (computer science)",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["recursion"]
+  },
+  {
+    "question_text": "In algorithms, what is a graph?",
+    "correct_answer": "A data structure consisting of a set of vertices connected by edges representing pairwise relationships.",
+    "distractors": [
+      "A data structure consisting of a sorted sequence of values stored in contiguous memory for fast access.",
+      "A data structure consisting of a hierarchical arrangement of nodes with exactly one root element.",
+      "A data structure consisting of key-value pairs organized in a hash table for constant-time lookups."
+    ],
+    "difficulty": 1,
+    "source_article": "Graph (discrete mathematics)",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["graph"]
+  },
+  {
+    "question_text": "What is a tree data structure?",
+    "correct_answer": "A hierarchical structure with a root node and child nodes, where each node has at most one parent.",
+    "distractors": [
+      "A linear structure with a head node and tail node, where each node points to the next in sequence.",
+      "A flat structure with equal-priority nodes, where every node is directly connected to all other nodes.",
+      "A circular structure with no root node, where nodes form a ring and each points to its neighbor."
+    ],
+    "difficulty": 1,
+    "source_article": "Tree (data structure)",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["tree"]
+  },
+  {
+    "question_text": "What is a stack data structure?",
+    "correct_answer": "A collection that follows last-in, first-out (LIFO) order, supporting push and pop operations.",
+    "distractors": [
+      "A collection that follows first-in, first-out (FIFO) order, supporting enqueue and dequeue operations.",
+      "A collection that follows random-access order, supporting insert and delete operations at any position.",
+      "A collection that follows priority-based order, supporting insert and extract-minimum operations efficiently."
+    ],
+    "difficulty": 1,
+    "source_article": "Stack (abstract data type)",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["stack"]
+  },
+  {
+    "question_text": "What is a queue data structure?",
+    "correct_answer": "A collection that follows first-in, first-out (FIFO) order, where elements are added at the rear and removed from the front.",
+    "distractors": [
+      "A collection that follows last-in, first-out (LIFO) order, where elements are added and removed from the same end.",
+      "A collection that follows priority-based order, where the element with the highest priority is always removed first.",
+      "A collection that follows random-access order, where any element can be inserted or removed at arbitrary positions."
+    ],
+    "difficulty": 1,
+    "source_article": "Queue (abstract data type)",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["queue"]
+  },
+  {
+    "question_text": "What is a linked list?",
+    "correct_answer": "A linear data structure where each element is a node containing data and a pointer to the next node.",
+    "distractors": [
+      "A linear data structure where each element is stored in a contiguous memory block indexed by position.",
+      "A linear data structure where each element is a key-value pair stored in a hash-based lookup table.",
+      "A linear data structure where each element is a record stored in a sorted binary tree for fast search."
+    ],
+    "difficulty": 1,
+    "source_article": "Linked list",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["linked list"]
+  },
+  {
+    "question_text": "What is a hash table?",
+    "correct_answer": "A data structure that maps keys to values using a hash function for average-case constant-time lookups.",
+    "distractors": [
+      "A data structure that maps keys to values using a balanced tree for guaranteed logarithmic-time lookups.",
+      "A data structure that maps keys to values using a sorted array for binary-search-based lookups.",
+      "A data structure that maps keys to values using a linked list for sequential-scan-based lookups."
+    ],
+    "difficulty": 1,
+    "source_article": "Hash table",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["hash table"]
+  },
+  {
+    "question_text": "What does Big O notation describe?",
+    "correct_answer": "An upper bound on the growth rate of an algorithm's time or space requirements as input size increases.",
+    "distractors": [
+      "The exact number of CPU instructions an algorithm executes for a specific input of a given size.",
+      "A lower bound on the minimum resources any algorithm requires to solve a particular computational problem.",
+      "The average-case running time of an algorithm measured in seconds across all possible input distributions."
+    ],
+    "difficulty": 1,
+    "source_article": "Big O notation",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["Big O notation"]
+  },
+  {
+    "question_text": "What is dynamic programming?",
+    "correct_answer": "An algorithmic technique that solves problems by breaking them into overlapping subproblems and storing their solutions.",
+    "distractors": [
+      "An algorithmic technique that solves problems by making the locally optimal choice at each decision step.",
+      "An algorithmic technique that solves problems by randomly sampling the solution space until convergence is reached.",
+      "An algorithmic technique that solves problems by dividing them into independent subproblems and combining their results."
+    ],
+    "difficulty": 1,
+    "source_article": "Dynamic programming",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["dynamic programming"]
+  },
+  {
+    "question_text": "What is a greedy algorithm?",
+    "correct_answer": "An algorithm that makes the locally optimal choice at each step, hoping to find a global optimum.",
+    "distractors": [
+      "An algorithm that exhaustively evaluates every possible solution before selecting the one with minimum cost.",
+      "An algorithm that stores solutions to overlapping subproblems in a table to avoid redundant computation.",
+      "An algorithm that randomly explores the solution space and accepts improvements until no progress is made."
+    ],
+    "difficulty": 1,
+    "source_article": "Greedy algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["greedy algorithm"]
+  },
+  {
+    "question_text": "What is quicksort's partitioning strategy?",
+    "correct_answer": "It selects a pivot element and rearranges the array so smaller elements precede and larger elements follow the pivot.",
+    "distractors": [
+      "It divides the array into two equal halves, recursively sorts each half, and then merges the sorted halves together.",
+      "It repeatedly finds the minimum element from the unsorted portion and swaps it into the next sorted position.",
+      "It builds a binary heap from the array and repeatedly extracts the maximum element to produce sorted output."
+    ],
+    "difficulty": 2,
+    "source_article": "Quicksort",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["quicksort"]
+  },
+  {
+    "question_text": "What guarantees merge sort's $O(n \\log n)$ worst-case time complexity?",
+    "correct_answer": "It always divides the array into two equal halves and merges sorted subarrays in linear time.",
+    "distractors": [
+      "It always selects the median as pivot and partitions elements around it in linear time.",
+      "It always builds a balanced heap from the input and extracts elements in sorted order.",
+      "It always distributes elements into buckets of equal size and sorts each bucket independently."
+    ],
+    "difficulty": 2,
+    "source_article": "Merge sort",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["merge sort"]
+  },
+  {
+    "question_text": "What data structure does Dijkstra's algorithm use to efficiently select the next vertex to process?",
+    "correct_answer": "A priority queue (often implemented as a min-heap) to extract the vertex with the smallest tentative distance.",
+    "distractors": [
+      "A stack (often implemented as a linked list) to extract the vertex most recently added to the frontier.",
+      "A standard FIFO queue to extract the vertex that has been waiting longest in the processing frontier.",
+      "A hash table (often implemented with chaining) to extract the vertex with the largest edge weight."
+    ],
+    "difficulty": 2,
+    "source_article": "Dijkstra's algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["Dijkstra's algorithm"]
+  },
+  {
+    "question_text": "How does breadth-first search (BFS) traverse a graph?",
+    "correct_answer": "It explores all neighbors of the current vertex before moving to vertices at the next depth level, using a queue.",
+    "distractors": [
+      "It explores as far as possible along each branch before backtracking to the previous vertex, using a stack.",
+      "It explores vertices in order of their edge weights, always visiting the lowest-cost neighbor first using a heap.",
+      "It explores vertices in random order, selecting the next unvisited vertex uniformly at random from all neighbors."
+    ],
+    "difficulty": 2,
+    "source_article": "Breadth-first search",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["breadth-first search"]
+  },
+  {
+    "question_text": "How does depth-first search (DFS) traverse a graph?",
+    "correct_answer": "It explores as far as possible along each branch before backtracking, typically implemented with a stack or recursion.",
+    "distractors": [
+      "It explores all neighbors at the current depth before moving to the next level, typically implemented with a queue.",
+      "It explores the neighbor with the smallest edge weight first, typically implemented with a min-priority queue.",
+      "It explores vertices in the order they were inserted into the graph, typically implemented with a sorted list."
+    ],
+    "difficulty": 2,
+    "source_article": "Depth-first search",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["depth-first search"]
+  },
+  {
+    "question_text": "What property must a binary search tree maintain for all nodes?",
+    "correct_answer": "Every node's left subtree contains only values less than the node, and the right subtree only values greater.",
+    "distractors": [
+      "Every node's left child must be a leaf and the right child must have exactly two children at all times.",
+      "Every node's left subtree must have the same height as its right subtree to ensure perfect balance.",
+      "Every node's left subtree contains only odd-valued keys and the right subtree only even-valued keys."
+    ],
+    "difficulty": 2,
+    "source_article": "Binary search tree",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["binary search tree"]
+  },
+  {
+    "question_text": "What property defines a max-heap?",
+    "correct_answer": "Each parent node's key is greater than or equal to the keys of its children throughout the tree.",
+    "distractors": [
+      "Each parent node's key is equal to the sum of the keys of its left and right children.",
+      "Each parent node's key is less than or equal to the keys of its children throughout the tree.",
+      "Each parent node's key is exactly one greater than the maximum key among all its descendants."
+    ],
+    "difficulty": 2,
+    "source_article": "Heap (data structure)",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["heap"]
+  },
+  {
+    "question_text": "Why is heap sort guaranteed to run in $O(n \\log n)$ time?",
+    "correct_answer": "Building the heap takes $O(n)$ time and each of the $n$ extract-max operations takes $O(\\log n)$ time.",
+    "distractors": [
+      "Partitioning around the pivot takes $O(n)$ time and recursion depth is always exactly $\\log n$ levels.",
+      "Merging two sorted halves takes $O(n)$ time and the array is always split into equal halves $\\log n$ times.",
+      "Inserting each element into a balanced BST takes $O(\\log n)$ time and in-order traversal takes $O(n)$ time."
+    ],
+    "difficulty": 2,
+    "source_article": "Heapsort",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["heap sort"]
+  },
+  {
+    "question_text": "When does insertion sort perform most efficiently?",
+    "correct_answer": "On nearly sorted or small input arrays, where it runs in nearly $O(n)$ time due to few required shifts.",
+    "distractors": [
+      "On large randomly shuffled arrays, where it runs in $O(n \\log n)$ time due to efficient partitioning steps.",
+      "On arrays containing many duplicate keys, where it runs in $O(n)$ time by skipping equal comparisons.",
+      "On reverse-sorted input arrays, where it runs in $O(n \\log n)$ time due to optimal pivot selection."
+    ],
+    "difficulty": 2,
+    "source_article": "Insertion sort",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["insertion sort"]
+  },
+  {
+    "question_text": "What advantage does the Bellman-Ford algorithm have over Dijkstra's algorithm?",
+    "correct_answer": "It correctly computes shortest paths in graphs with negative edge weights, which Dijkstra's algorithm cannot handle.",
+    "distractors": [
+      "It correctly computes shortest paths in unweighted graphs using fewer operations than Dijkstra's algorithm requires.",
+      "It correctly computes shortest paths in graphs with only positive weights in $O(n)$ time rather than $O(n \\log n)$.",
+      "It correctly computes shortest paths in undirected graphs without requiring a priority queue data structure."
+    ],
+    "difficulty": 2,
+    "source_article": "Bellman\u2013Ford algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["Bellman-Ford algorithm"]
+  },
+  {
+    "question_text": "How does Kruskal's algorithm build a minimum spanning tree?",
+    "correct_answer": "It sorts all edges by weight and adds them in order, skipping any edge that would create a cycle.",
+    "distractors": [
+      "It starts from a single vertex and repeatedly adds the cheapest edge connecting the tree to an outside vertex.",
+      "It performs a breadth-first search from every vertex and merges the resulting spanning trees by edge weight.",
+      "It removes the heaviest edge from the graph repeatedly until exactly $n - 1$ edges remain forming a tree."
+    ],
+    "difficulty": 2,
+    "source_article": "Kruskal's algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["Kruskal's algorithm"]
+  },
+  {
+    "question_text": "What is memoization in the context of dynamic programming?",
+    "correct_answer": "Caching the results of expensive function calls so that repeated calls with the same arguments return stored results.",
+    "distractors": [
+      "Precomputing all possible function outputs into a lookup table before any function call is ever made.",
+      "Distributing function calls across multiple processors so that each subproblem is solved in parallel.",
+      "Compressing the input data before processing so that function calls operate on smaller representations."
+    ],
+    "difficulty": 2,
+    "source_article": "Memoization",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["memoization"]
+  },
+  {
+    "question_text": "What characterizes the divide-and-conquer algorithm design paradigm?",
+    "correct_answer": "It splits a problem into smaller independent subproblems, solves each recursively, and combines their solutions.",
+    "distractors": [
+      "It splits a problem into overlapping subproblems, stores each solution in a table, and looks them up as needed.",
+      "It splits a problem into sequential stages, makes the locally optimal choice at each stage, and never backtracks.",
+      "It splits a problem into random subsets, solves one subset heuristically, and discards the remaining subsets."
+    ],
+    "difficulty": 2,
+    "source_article": "Divide-and-conquer algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["divide and conquer"]
+  },
+  {
+    "question_text": "In amortized analysis, what does the potential method assign to each state of a data structure?",
+    "correct_answer": "A potential function value representing stored credit that can pay for future expensive operations.",
+    "distractors": [
+      "A probability distribution value representing the likelihood of each operation type occurring next.",
+      "A memory allocation value representing the exact number of bytes consumed by the data structure.",
+      "A worst-case time value representing the maximum number of steps any single operation can take."
+    ],
+    "difficulty": 3,
+    "source_article": "Amortized analysis",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["amortized analysis"]
+  },
+  {
+    "question_text": "What invariant must every path from root to a leaf satisfy in a red-black tree?",
+    "correct_answer": "Every such path must contain the same number of black nodes, known as the black-height property.",
+    "distractors": [
+      "Every such path must contain the same total number of nodes, known as the perfect balance property.",
+      "Every such path must alternate between red and black nodes, known as the strict alternation property.",
+      "Every such path must contain more red nodes than black nodes, known as the red dominance property."
+    ],
+    "difficulty": 3,
+    "source_article": "Red\u2013black tree",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["red-black tree"]
+  },
+  {
+    "question_text": "What balance condition does an AVL tree enforce at every node?",
+    "correct_answer": "The heights of the left and right subtrees of any node differ by at most one.",
+    "distractors": [
+      "The number of nodes in the left and right subtrees of any node differ by at most one.",
+      "The heights of the left and right subtrees of any node must be exactly equal.",
+      "The depth of every leaf node in the tree must be within two of every other leaf."
+    ],
+    "difficulty": 3,
+    "source_article": "AVL tree",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["AVL tree"]
+  },
+  {
+    "question_text": "What condition must a heuristic satisfy for A* search to guarantee finding the optimal shortest path?",
+    "correct_answer": "The heuristic must be admissible, meaning it never overestimates the true cost to the goal.",
+    "distractors": [
+      "The heuristic must be maximal, meaning it always overestimates the true cost to the goal.",
+      "The heuristic must be uniform, meaning it assigns the same estimated cost to every node in the graph.",
+      "The heuristic must be monotonic, meaning it assigns strictly increasing values along every possible path."
+    ],
+    "difficulty": 3,
+    "source_article": "A* search algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["A* search algorithm"]
+  },
+  {
+    "question_text": "On what type of graph is topological sorting defined?",
+    "correct_answer": "A directed acyclic graph (DAG), producing a linear ordering where each vertex precedes its successors.",
+    "distractors": [
+      "A weighted undirected graph, producing a linear ordering where vertices are sorted by total edge weight.",
+      "A complete bipartite graph, producing a linear ordering that alternates between the two vertex partitions.",
+      "A strongly connected directed graph, producing a linear ordering based on each vertex's in-degree count."
+    ],
+    "difficulty": 3,
+    "source_article": "Topological sorting",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["topological sort"]
+  },
+  {
+    "question_text": "What two optimizations give the union-find data structure nearly constant amortized time per operation?",
+    "correct_answer": "Union by rank (or size) and path compression, which together yield an amortized cost of $O(\\alpha(n))$.",
+    "distractors": [
+      "Weight balancing and lazy deletion, which together yield an amortized cost of $O(\\log \\log n)$ per operation.",
+      "Hash chaining and dynamic resizing, which together yield an amortized cost of $O(1)$ per operation on average.",
+      "Level linking and fractional cascading, which together yield an amortized cost of $O(\\log n)$ per operation."
+    ],
+    "difficulty": 3,
+    "source_article": "Disjoint-set data structure",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["union-find"]
+  },
+  {
+    "question_text": "How does Prim's algorithm grow a minimum spanning tree?",
+    "correct_answer": "Starting from one vertex, it repeatedly adds the cheapest edge connecting the current tree to an outside vertex.",
+    "distractors": [
+      "Starting from all vertices, it repeatedly removes the most expensive edge until no cycles remain in the graph.",
+      "Starting from the lightest edge, it repeatedly adds the next lightest edge that does not create a cycle.",
+      "Starting from one vertex, it repeatedly adds the nearest unvisited vertex regardless of connecting edge weight."
+    ],
+    "difficulty": 3,
+    "source_article": "Prim's algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["Prim's algorithm"]
+  },
+  {
+    "question_text": "What is the time complexity of the standard dynamic programming solution for the longest common subsequence of two strings of lengths $m$ and $n$?",
+    "correct_answer": "$O(mn)$, using a two-dimensional table where each cell depends on previously computed neighboring cells.",
+    "distractors": [
+      "$O(m + n)$, using a single linear scan that compares characters from both strings simultaneously.",
+      "$O(n \\log m)$, using binary search on one string for each character of the other string.",
+      "$O(2^{m+n})$, using brute-force enumeration of all possible subsequences of both strings."
+    ],
+    "difficulty": 3,
+    "source_article": "Longest common subsequence problem",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["longest common subsequence"]
+  },
+  {
+    "question_text": "What distinguishes the 0/1 knapsack problem from the fractional knapsack problem?",
+    "correct_answer": "In 0/1 knapsack, each item must be taken entirely or left behind; fractional knapsack allows taking partial items.",
+    "distractors": [
+      "In 0/1 knapsack, items have only integer weights; fractional knapsack allows items with continuous real-valued weights.",
+      "In 0/1 knapsack, the capacity constraint is strict; fractional knapsack allows exceeding the capacity by a fixed fraction.",
+      "In 0/1 knapsack, each item can be selected multiple times; fractional knapsack limits each item to a single selection."
+    ],
+    "difficulty": 3,
+    "source_article": "Knapsack problem",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["knapsack problem"]
+  },
+  {
+    "question_text": "Why are B-trees preferred over binary search trees for database indexing on disk?",
+    "correct_answer": "Their high branching factor minimizes the number of disk reads by storing many keys per node.",
+    "distractors": [
+      "Their low branching factor maximizes cache locality by storing only two keys per internal node.",
+      "Their self-balancing rotations are simpler than those of red-black trees, reducing implementation overhead.",
+      "Their leaf nodes store data in sorted linked lists, allowing sequential scans without any disk seeks."
+    ],
+    "difficulty": 3,
+    "source_article": "B-tree",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["B-tree"]
+  },
+  {
+    "question_text": "What distinguishes a Las Vegas algorithm from a Monte Carlo algorithm?",
+    "correct_answer": "A Las Vegas algorithm always produces the correct result but has randomized running time; Monte Carlo may produce incorrect results.",
+    "distractors": [
+      "A Las Vegas algorithm always runs in polynomial time but may produce incorrect results; Monte Carlo always produces correct results.",
+      "A Las Vegas algorithm uses deterministic choices internally while Monte Carlo uses random number generators throughout.",
+      "A Las Vegas algorithm requires exponential space for its random bits while Monte Carlo operates in logarithmic space."
+    ],
+    "difficulty": 3,
+    "source_article": "Randomized algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["randomized algorithm"]
+  },
+  {
+    "question_text": "What does the failure function (partial match table) in the KMP algorithm represent?",
+    "correct_answer": "For each position in the pattern, the length of the longest proper prefix that is also a suffix of the pattern so far.",
+    "distractors": [
+      "For each position in the pattern, the number of character comparisons needed before a mismatch can occur in the text.",
+      "For each position in the text, the index of the next character in the pattern that should be compared after a match.",
+      "For each position in the pattern, the total count of distinct characters appearing in the pattern up to that point."
+    ],
+    "difficulty": 3,
+    "source_article": "Knuth\u2013Morris\u2013Pratt algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["KMP algorithm"]
+  },
+  {
+    "question_text": "What amortized time complexity does a Fibonacci heap achieve for the decrease-key operation?",
+    "correct_answer": "$O(1)$ amortized time, which improves Dijkstra's algorithm to $O(V \\log V + E)$ on sparse graphs.",
+    "distractors": [
+      "$O(\\log n)$ amortized time, which matches the performance of a standard binary heap on all graph types.",
+      "$O(\\log \\log n)$ amortized time, which improves Dijkstra's algorithm to $O(V \\log \\log V + E)$ on sparse graphs.",
+      "$O(\\sqrt{n})$ amortized time, which improves Dijkstra's algorithm to $O(V \\sqrt{V} + E)$ on dense graphs."
+    ],
+    "difficulty": 4,
+    "source_article": "Fibonacci heap",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["Fibonacci heap"]
+  },
+  {
+    "question_text": "How does the SA-IS algorithm construct a suffix array?",
+    "correct_answer": "It classifies suffixes as S-type or L-type, identifies LMS suffixes, and recursively sorts them to achieve $O(n)$ time.",
+    "distractors": [
+      "It computes the longest common prefix for every pair of suffixes and sorts them by LCP values in $O(n \\log n)$ time.",
+      "It builds a suffix tree first using Ukkonen's algorithm and reads off the suffix array via DFS in $O(n \\log n)$ time.",
+      "It uses radix sort on the first $k$ characters of each suffix, doubling $k$ each round, achieving $O(n \\log^2 n)$ time."
+    ],
+    "difficulty": 4,
+    "source_article": "Suffix array",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["suffix array"]
+  },
+  {
+    "question_text": "What does the max-flow min-cut theorem state?",
+    "correct_answer": "The maximum flow from source to sink in a network equals the minimum capacity of any cut separating source from sink.",
+    "distractors": [
+      "The maximum flow from source to sink in a network equals the sum of all edge capacities on the shortest path.",
+      "The maximum flow from source to sink in a network equals the maximum capacity of any single edge in the network.",
+      "The maximum flow from source to sink in a network equals the minimum edge capacity along the widest path available."
+    ],
+    "difficulty": 4,
+    "source_article": "Maximum flow problem",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["network flow"]
+  },
+  {
+    "question_text": "Why might the basic Ford-Fulkerson algorithm fail to terminate on networks with irrational edge capacities?",
+    "correct_answer": "Augmenting paths may yield infinitely decreasing flow increments that converge to a value less than the true maximum flow.",
+    "distractors": [
+      "Augmenting paths may create negative cycles in the residual graph that prevent the algorithm from making forward progress.",
+      "Augmenting paths may repeatedly cancel each other out, causing the total flow to oscillate without settling on any value.",
+      "Augmenting paths may overflow numerical precision limits, causing rounding errors that corrupt the residual graph structure."
+    ],
+    "difficulty": 4,
+    "source_article": "Ford\u2013Fulkerson algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["Ford-Fulkerson algorithm"]
+  },
+  {
+    "question_text": "How does a van Emde Boas tree achieve $O(\\log \\log U)$ time for operations on integer keys in the universe $\\{0, \\ldots, U-1\\}$?",
+    "correct_answer": "It recursively partitions the universe into $\\sqrt{U}$ clusters of size $\\sqrt{U}$, reducing the problem size quadratically at each level.",
+    "distractors": [
+      "It uses a hash table with $\\sqrt{U}$ buckets and binary search within each bucket, reducing lookup time logarithmically per bucket.",
+      "It builds a balanced binary search tree over the $U$ possible keys and prunes empty subtrees to reduce the effective height.",
+      "It maintains a sorted doubly linked list with $\\log U$ skip pointers per node, allowing binary-search-like traversal of keys."
+    ],
+    "difficulty": 4,
+    "source_article": "Van Emde Boas tree",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["van Emde Boas tree"]
+  },
+  {
+    "question_text": "What key property makes a suffix automaton space-efficient while accepting all suffixes of a string?",
+    "correct_answer": "It is the minimal directed acyclic word graph (DAWG) with at most $2n - 1$ states and $3n - 4$ transitions for a string of length $n$.",
+    "distractors": [
+      "It is a nondeterministic finite automaton with at most $n$ states that uses epsilon transitions to accept all suffix start positions.",
+      "It is a compressed trie storing only branching nodes, requiring at most $n \\log n$ states and $n \\log n$ transitions total.",
+      "It is a deterministic pushdown automaton with at most $n + 1$ states that uses a stack to track suffix nesting depth."
+    ],
+    "difficulty": 4,
+    "source_article": "Suffix automaton",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["suffix automaton"]
+  },
+  {
+    "question_text": "What does the strong duality theorem guarantee in linear programming?",
+    "correct_answer": "If the primal problem has an optimal solution, the dual also has an optimal solution and both objective values are equal.",
+    "distractors": [
+      "If the primal problem is infeasible, the dual problem must also be infeasible, and neither has a bounded solution.",
+      "If the primal problem has an integer optimal solution, the dual must have an integer optimal solution with half the value.",
+      "If the primal problem has multiple optimal solutions, the dual problem has a unique optimal solution at a vertex."
+    ],
+    "difficulty": 4,
+    "source_article": "Linear programming",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["linear programming"]
+  },
+  {
+    "question_text": "What does it mean for an approximation algorithm to have an approximation ratio of $\\rho$?",
+    "correct_answer": "For every input, the algorithm's solution cost is within a factor of $\\rho$ of the optimal solution cost.",
+    "distractors": [
+      "For every input, the algorithm runs in time $O(n^\\rho)$ where $n$ is the input size and $\\rho$ is a fixed constant.",
+      "For every input, the algorithm finds the optimal solution with probability at least $1/\\rho$ over its random choices.",
+      "For every input, the algorithm uses at most $\\rho$ times the memory required to store the optimal solution."
+    ],
+    "difficulty": 4,
+    "source_article": "Approximation algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["approximation algorithm"]
+  },
+  {
+    "question_text": "What does the Cook-Levin theorem establish about the Boolean satisfiability problem (SAT)?",
+    "correct_answer": "SAT is NP-complete: it is in NP and every problem in NP can be reduced to SAT in polynomial time.",
+    "distractors": [
+      "SAT is undecidable: no Turing machine can determine whether an arbitrary Boolean formula is satisfiable.",
+      "SAT is in P: there exists a deterministic polynomial-time algorithm that solves every SAT instance optimally.",
+      "SAT is coNP-complete: verifying that a formula is unsatisfiable can be done in polynomial time with a certificate."
+    ],
+    "difficulty": 4,
+    "source_article": "NP-completeness",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["NP-completeness"]
+  },
+  {
+    "question_text": "How does a skip list achieve $O(\\log n)$ expected search time?",
+    "correct_answer": "Each element is promoted to higher levels with probability $1/2$, creating a hierarchy of linked lists that enables binary-search-like traversal.",
+    "distractors": [
+      "Each element is stored in a self-balancing binary tree overlay, with rotations triggered whenever the tree height exceeds $\\log n$.",
+      "Each element is assigned a hash value determining its level, creating uniform distribution of elements across exactly $\\log n$ layers.",
+      "Each element is sorted into a bucket based on its key range, with each bucket containing at most $\\log n$ elements for fast scanning."
+    ],
+    "difficulty": 4,
+    "source_article": "Skip list",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["skip list"]
+  },
+  {
+    "question_text": "What enables the fast Fourier transform (FFT) to compute the discrete Fourier transform in $O(n \\log n)$ time?",
+    "correct_answer": "The Cooley-Tukey algorithm recursively splits the transform into two half-size transforms using properties of roots of unity.",
+    "distractors": [
+      "The Strassen algorithm recursively splits the transform into seven smaller matrix multiplications using algebraic identities.",
+      "The Karatsuba algorithm recursively splits the transform into three half-size polynomial multiplications using coefficient grouping.",
+      "The Gauss elimination algorithm reduces the transform to a triangular system solvable by back-substitution in linear time."
+    ],
+    "difficulty": 4,
+    "source_article": "Fast Fourier transform",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["fast Fourier transform"]
+  },
+  {
+    "question_text": "How does the Aho-Corasick algorithm achieve efficient multi-pattern string matching?",
+    "correct_answer": "It builds a trie of all patterns with failure links and output links, then scans the text once in $O(n + m + z)$ time.",
+    "distractors": [
+      "It builds a suffix array of the text with LCP information, then binary-searches for each pattern in $O(m \\log n + z)$ time.",
+      "It builds a hash table mapping all pattern substrings of fixed length, then scans using Rabin-Karp in $O(nm + z)$ time.",
+      "It builds a separate KMP failure function for each pattern, then scans the text once per pattern in $O(kn + z)$ time."
+    ],
+    "difficulty": 4,
+    "source_article": "Aho\u2013Corasick algorithm",
+    "domain_ids": ["algorithms"],
+    "concepts_tested": ["Aho-Corasick algorithm"]
+  }
+]

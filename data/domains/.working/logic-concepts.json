@@ -1,0 +1,66 @@
+{
+  "domain": "logic",
+  "parent_domain": "philosophy",
+  "total_concepts": 50,
+  "distribution": {"L1": 13, "L2": 13, "L3": 12, "L4": 12},
+  "concepts": {
+    "L1": [
+      {"concept": "logic", "wikipedia_article": "Logic", "brief_rationale": "The broadest term for the study of valid reasoning; universally recognized as a field of inquiry."},
+      {"concept": "argument", "wikipedia_article": "Argument", "brief_rationale": "A set of premises offered in support of a conclusion; foundational vocabulary used in everyday speech and basic philosophy courses."},
+      {"concept": "deduction", "wikipedia_article": "Deductive reasoning", "brief_rationale": "Reasoning from general principles to specific conclusions; widely taught from secondary school onward."},
+      {"concept": "induction", "wikipedia_article": "Inductive reasoning", "brief_rationale": "Reasoning from specific observations to general conclusions; universally familiar as the basis of empirical thinking."},
+      {"concept": "premise", "wikipedia_article": "Premise", "brief_rationale": "A statement offered as support for a conclusion; basic vocabulary of any introductory logic or philosophy course."},
+      {"concept": "conclusion", "wikipedia_article": "Logical consequence", "brief_rationale": "The statement that an argument seeks to establish; universally understood in the context of reasoning."},
+      {"concept": "paradox", "wikipedia_article": "Paradox", "brief_rationale": "A seemingly self-contradictory statement that may nonetheless be true; widely recognized through famous examples like the liar paradox."},
+      {"concept": "fallacy", "wikipedia_article": "Fallacy", "brief_rationale": "An error in reasoning that undermines the logical validity of an argument; widely taught in critical thinking and introductory logic."},
+      {"concept": "validity", "wikipedia_article": "Validity (logic)", "brief_rationale": "The property of an argument whose conclusion follows necessarily from its premises; core vocabulary of introductory logic."},
+      {"concept": "contradiction", "wikipedia_article": "Contradiction", "brief_rationale": "A statement that is necessarily false or a pair of statements that cannot both be true; universally understood."},
+      {"concept": "negation", "wikipedia_article": "Negation", "brief_rationale": "The logical operation that reverses the truth value of a statement; encountered in everyday language and basic mathematics."},
+      {"concept": "analogy", "wikipedia_article": "Analogy", "brief_rationale": "A comparison between two things to highlight a shared structure; universally recognized as a reasoning tool."},
+      {"concept": "inference", "wikipedia_article": "Inference", "brief_rationale": "The process of deriving conclusions from premises or evidence; basic vocabulary of reasoning familiar to all educated people."}
+    ],
+    "L2": [
+      {"concept": "modus ponens", "wikipedia_article": "Modus ponens", "brief_rationale": "The inference rule affirming the antecedent (if P then Q; P; therefore Q); standard vocabulary for students who have taken introductory logic."},
+      {"concept": "modus tollens", "wikipedia_article": "Modus tollens", "brief_rationale": "The inference rule denying the consequent (if P then Q; not Q; therefore not P); standard introductory logic content alongside modus ponens."},
+      {"concept": "syllogism", "wikipedia_article": "Syllogism", "brief_rationale": "A form of deductive reasoning with two premises and a conclusion, classically studied since Aristotle; known to students of logic or classical philosophy."},
+      {"concept": "truth table", "wikipedia_article": "Truth table", "brief_rationale": "A tabular representation of all possible truth-value combinations for logical connectives; standard tool in introductory logic courses."},
+      {"concept": "propositional logic", "wikipedia_article": "Propositional calculus", "brief_rationale": "The branch of logic dealing with propositions and their connectives (and, or, not, if-then); covered in every introductory logic course."},
+      {"concept": "predicate logic", "wikipedia_article": "First-order logic", "brief_rationale": "Logic extended with quantifiers and predicates over individuals; standard second step in undergraduate logic education."},
+      {"concept": "quantifier", "wikipedia_article": "Quantifier (logic)", "brief_rationale": "The logical symbols for 'for all' and 'there exists'; introduced in standard undergraduate logic courses."},
+      {"concept": "tautology", "wikipedia_article": "Tautology (logic)", "brief_rationale": "A formula that is true under every possible interpretation; standard vocabulary in propositional logic courses."},
+      {"concept": "logical connective", "wikipedia_article": "Logical connective", "brief_rationale": "Operators such as conjunction, disjunction, and implication that combine propositions; fundamental to any logic curriculum."},
+      {"concept": "set theory", "wikipedia_article": "Set theory", "brief_rationale": "The study of collections of objects forming the foundation of mathematics; known to students who have taken discrete math or foundations courses."},
+      {"concept": "proof by contradiction", "wikipedia_article": "Proof by contradiction", "brief_rationale": "A method of proving a statement by assuming its negation and deriving a contradiction; standard technique taught in undergraduate mathematics and logic."},
+      {"concept": "soundness", "wikipedia_article": "Soundness", "brief_rationale": "The property of a valid argument with all true premises; paired with validity as core vocabulary in introductory logic."},
+      {"concept": "biconditional", "wikipedia_article": "Logical biconditional", "brief_rationale": "The 'if and only if' connective expressing mutual implication; standard vocabulary in propositional logic courses."}
+    ],
+    "L3": [
+      {"concept": "completeness theorem", "wikipedia_article": "Gödel's completeness theorem", "brief_rationale": "Gödel's result that every logically valid first-order formula is provable; understanding its implications requires working knowledge of model theory and proof theory."},
+      {"concept": "modal logic", "wikipedia_article": "Modal logic", "brief_rationale": "The logic of necessity and possibility using operators like box and diamond; requires working knowledge of Kripke semantics and accessibility relations."},
+      {"concept": "Kripke semantics", "wikipedia_article": "Kripke semantics", "brief_rationale": "Possible-worlds semantics for modal and intuitionistic logics; requires working knowledge of relational frame structures and truth conditions."},
+      {"concept": "natural deduction", "wikipedia_article": "Natural deduction", "brief_rationale": "A proof system using introduction and elimination rules for each connective; requires working knowledge of formal proof construction."},
+      {"concept": "second-order logic", "wikipedia_article": "Second-order logic", "brief_rationale": "Logic permitting quantification over predicates and relations; understanding its expressive power versus first-order logic requires substantial logical training."},
+      {"concept": "intuitionistic logic", "wikipedia_article": "Intuitionistic logic", "brief_rationale": "A constructive logic rejecting the law of excluded middle; requires working knowledge of constructivism and its philosophical motivations."},
+      {"concept": "resolution (logic)", "wikipedia_article": "Resolution (logic)", "brief_rationale": "An inference rule for automated theorem proving used in logic programming; requires working knowledge of clause normal form and unification."},
+      {"concept": "Löwenheim-Skolem theorem", "wikipedia_article": "Löwenheim–Skolem theorem", "brief_rationale": "The result that any satisfiable first-order theory has models of all infinite cardinalities; requires working knowledge of model theory."},
+      {"concept": "compactness theorem", "wikipedia_article": "Compactness theorem", "brief_rationale": "If every finite subset of a set of first-order sentences has a model, the whole set does; requires working knowledge of model theory and its applications."},
+      {"concept": "Curry-Howard correspondence", "wikipedia_article": "Curry–Howard correspondence", "brief_rationale": "The isomorphism between proofs and programs, types and propositions; requires working knowledge of type theory and proof theory."},
+      {"concept": "decidability", "wikipedia_article": "Decidability (logic)", "brief_rationale": "Whether there exists an algorithm to determine truth of all sentences in a theory; requires working knowledge of computability theory and its connections to logic."},
+      {"concept": "axiomatic system", "wikipedia_article": "Axiomatic system", "brief_rationale": "A set of axioms from which theorems are derived; understanding consistency, independence, and completeness requires working knowledge of formal logic."}
+    ],
+    "L4": [
+      {"concept": "Gödel's second incompleteness theorem", "wikipedia_article": "Gödel's incompleteness theorems", "brief_rationale": "The result that a sufficiently strong consistent system cannot prove its own consistency; understanding its proof via Gödel numbering and the provability predicate requires expert-level knowledge."},
+      {"concept": "forcing", "wikipedia_article": "Forcing (mathematics)", "brief_rationale": "Cohen's technique for constructing set-theoretic models to prove independence results; requires expert knowledge of set theory, Boolean-valued models, and generic filters."},
+      {"concept": "large cardinal axiom", "wikipedia_article": "Large cardinal", "brief_rationale": "Axioms asserting the existence of cardinals with strong combinatorial or reflection properties beyond ZFC; requires deep expertise in set theory and consistency strength hierarchies."},
+      {"concept": "ordinal analysis", "wikipedia_article": "Ordinal analysis", "brief_rationale": "Measuring the proof-theoretic strength of formal systems by assigning ordinals; requires deep expertise in proof theory, ordinal notation systems, and cut-elimination."},
+      {"concept": "reverse mathematics", "wikipedia_article": "Reverse mathematics", "brief_rationale": "Determining which set-existence axioms are necessary and sufficient to prove theorems of ordinary mathematics; requires expert knowledge of subsystems of second-order arithmetic."},
+      {"concept": "linear logic", "wikipedia_article": "Linear logic", "brief_rationale": "Girard's resource-sensitive logic tracking the use of hypotheses; requires deep knowledge of proof nets, cut-elimination, and connections to concurrency theory."},
+      {"concept": "paraconsistent logic", "wikipedia_article": "Paraconsistent logic", "brief_rationale": "A logic that tolerates contradictions without explosion; requires expert knowledge of relevance logic, dialethism, and non-classical consequence relations."},
+      {"concept": "provability logic", "wikipedia_article": "Provability logic", "brief_rationale": "Modal logic GL axiomatizing the behavior of the formal provability predicate in Peano arithmetic; requires expert knowledge of modal logic and Löb's theorem."},
+      {"concept": "descriptive set theory", "wikipedia_article": "Descriptive set theory", "brief_rationale": "The study of definable subsets of Polish spaces and their complexity via the Borel and projective hierarchies; requires deep expertise in set theory and topology."},
+      {"concept": "topos theory", "wikipedia_article": "Topos", "brief_rationale": "Categorical generalization of set theory providing models of constructive mathematics; requires deep expertise in category theory and categorical logic."},
+      {"concept": "Herbrand's theorem", "wikipedia_article": "Herbrand's theorem", "brief_rationale": "A foundational result reducing first-order provability to propositional satisfiability via Herbrand universes; requires expert knowledge of proof theory and automated reasoning."},
+      {"concept": "omega-consistency", "wikipedia_article": "Ω-consistent theory", "brief_rationale": "A stronger consistency condition than simple consistency used in Gödel's original incompleteness argument; requires expert-level understanding of arithmetic and the syntactic form of Gödel sentences."}
+    ]
+  }
+}

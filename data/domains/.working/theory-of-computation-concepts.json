@@ -1,0 +1,66 @@
+{
+  "domain": "theory-of-computation",
+  "parent_domain": "computer-science",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {"concept": "algorithm", "wikipedia_article": "Algorithm", "difficulty": 1, "brief_rationale": "Step-by-step procedure for solving a problem; universally recognized in everyday and digital contexts."},
+      {"concept": "Turing machine", "wikipedia_article": "Turing machine", "difficulty": 1, "brief_rationale": "The iconic abstract model of computation; widely known even outside computer science."},
+      {"concept": "programming language", "wikipedia_article": "Programming language", "difficulty": 1, "brief_rationale": "Formal notation for instructing computers; universally familiar to anyone who has heard of software."},
+      {"concept": "binary code", "wikipedia_article": "Binary code", "difficulty": 1, "brief_rationale": "Representation of data using 0s and 1s; culturally ubiquitous symbol of computing."},
+      {"concept": "encryption", "wikipedia_article": "Encryption", "difficulty": 1, "brief_rationale": "Encoding information so only authorized parties can read it; widely known through everyday digital security."},
+      {"concept": "loop", "wikipedia_article": "Control flow", "difficulty": 1, "brief_rationale": "Repetition of instructions in a program; familiar to anyone who has written or seen basic code."},
+      {"concept": "compiler", "wikipedia_article": "Compiler", "difficulty": 1, "brief_rationale": "Program that translates source code into machine code; broadly known among anyone who has programmed."},
+      {"concept": "recursion", "wikipedia_article": "Recursion (computer science)", "difficulty": 1, "brief_rationale": "A function calling itself; widely taught as a foundational programming concept."},
+      {"concept": "sorting algorithm", "wikipedia_article": "Sorting algorithm", "difficulty": 1, "brief_rationale": "Algorithms that arrange elements in order; a canonical introductory CS topic universally recognized."},
+      {"concept": "complexity", "wikipedia_article": "Computational complexity theory", "difficulty": 1, "brief_rationale": "The study of how hard problems are to solve computationally; widely discussed in popular science."},
+      {"concept": "halting problem", "wikipedia_article": "Halting problem", "difficulty": 1, "brief_rationale": "Whether a program will stop running; famous undecidability result known well beyond specialist audiences."},
+      {"concept": "formal language", "wikipedia_article": "Formal language", "difficulty": 1, "brief_rationale": "A set of strings defined by precise rules; introductory concept in CS theory courses."},
+      {"concept": "Boolean logic", "wikipedia_article": "Boolean algebra", "difficulty": 1, "brief_rationale": "True/false reasoning underlying all digital computation; universally taught in introductory computing and math."}
+    ],
+    "L2": [
+      {"concept": "finite automaton", "wikipedia_article": "Finite-state machine", "difficulty": 2, "brief_rationale": "Abstract machine with a finite number of states; standard vocabulary for CS students studying automata theory."},
+      {"concept": "regular expression", "wikipedia_article": "Regular expression", "difficulty": 2, "brief_rationale": "Pattern notation for regular languages; familiar to CS students through practical use in text processing."},
+      {"concept": "context-free grammar", "wikipedia_article": "Context-free grammar", "difficulty": 2, "brief_rationale": "Formal grammar used for programming language syntax; standard topic in any undergraduate automata course."},
+      {"concept": "pushdown automaton", "wikipedia_article": "Pushdown automaton", "difficulty": 2, "brief_rationale": "Automaton extended with a stack to recognize context-free languages; covered in standard CS theory curricula."},
+      {"concept": "NP-completeness", "wikipedia_article": "NP-completeness", "difficulty": 2, "brief_rationale": "Class of problems at least as hard as all NP problems; central concept known to all CS graduates."},
+      {"concept": "P versus NP problem", "wikipedia_article": "P versus NP problem", "difficulty": 2, "brief_rationale": "The most famous open problem in computer science; recognized vocabulary for CS students and practitioners."},
+      {"concept": "nondeterministic Turing machine", "wikipedia_article": "Nondeterministic Turing machine", "difficulty": 2, "brief_rationale": "Theoretical model that can explore multiple computation paths simultaneously; key to defining NP."},
+      {"concept": "regular language", "wikipedia_article": "Regular language", "difficulty": 2, "brief_rationale": "Languages recognized by finite automata; foundational class in the Chomsky hierarchy for CS students."},
+      {"concept": "decidability", "wikipedia_article": "Decidability (logic)", "difficulty": 2, "brief_rationale": "Whether a problem can be solved by an algorithm that always halts; core concept in computability theory."},
+      {"concept": "Chomsky hierarchy", "wikipedia_article": "Chomsky hierarchy", "difficulty": 2, "brief_rationale": "Classification of formal grammars into four types; standard framework taught in all automata theory courses."},
+      {"concept": "parse tree", "wikipedia_article": "Parse tree", "difficulty": 2, "brief_rationale": "Tree representation of syntactic structure derived from a grammar; known to all students of compilers and formal languages."},
+      {"concept": "polynomial time", "wikipedia_article": "Time complexity", "difficulty": 2, "brief_rationale": "Algorithms whose running time is bounded by a polynomial; central to the definition of efficient computation in complexity theory."},
+      {"concept": "reduction (complexity)", "wikipedia_article": "Reduction (complexity)", "difficulty": 2, "brief_rationale": "Transforming one problem into another to compare hardness; fundamental technique for NP-completeness proofs."}
+    ],
+    "L3": [
+      {"concept": "pumping lemma", "wikipedia_article": "Pumping lemma for regular languages", "difficulty": 3, "brief_rationale": "Necessary condition for regular languages used to prove non-regularity; requires working knowledge of formal language theory."},
+      {"concept": "Church-Turing thesis", "wikipedia_article": "Church–Turing thesis", "difficulty": 3, "brief_rationale": "The claim that all effectively computable functions are Turing-computable; requires understanding of computability models and their equivalence."},
+      {"concept": "diagonalization argument", "wikipedia_article": "Cantor's diagonal argument", "difficulty": 3, "brief_rationale": "Proof technique used to show undecidability and uncountability; requires working knowledge of self-reference and enumeration arguments."},
+      {"concept": "space complexity", "wikipedia_article": "Space complexity", "difficulty": 3, "brief_rationale": "Memory required by an algorithm as a function of input size; requires working knowledge of complexity classes like PSPACE and L."},
+      {"concept": "Cook-Levin theorem", "wikipedia_article": "Cook–Levin theorem", "difficulty": 3, "brief_rationale": "Proof that Boolean satisfiability is NP-complete; requires working knowledge of reductions and Turing machine encodings."},
+      {"concept": "Myhill-Nerode theorem", "wikipedia_article": "Myhill–Nerode theorem", "difficulty": 3, "brief_rationale": "Characterizes regular languages via equivalence classes of strings; requires working knowledge of automata minimization and congruence relations."},
+      {"concept": "Turing completeness", "wikipedia_article": "Turing completeness", "difficulty": 3, "brief_rationale": "Property of systems that can simulate any Turing machine; requires working knowledge of computability and simulation arguments."},
+      {"concept": "context-sensitive language", "wikipedia_article": "Context-sensitive language", "difficulty": 3, "brief_rationale": "Languages recognized by linear-bounded automata, between CFLs and recursively enumerable languages; requires understanding the full Chomsky hierarchy."},
+      {"concept": "closure properties of formal languages", "wikipedia_article": "Closure (mathematics)", "difficulty": 3, "brief_rationale": "Operations under which language classes are closed (union, concatenation, complement); requires working knowledge of automata constructions."},
+      {"concept": "PSPACE", "wikipedia_article": "PSPACE", "difficulty": 3, "brief_rationale": "Complexity class of problems solvable in polynomial space; requires working knowledge of space-bounded computation and Savitch's theorem."},
+      {"concept": "randomized algorithm", "wikipedia_article": "Randomized algorithm", "difficulty": 3, "brief_rationale": "Algorithms using random choices; requires working knowledge of probability and complexity classes like BPP and RP."},
+      {"concept": "amortized analysis", "wikipedia_article": "Amortized analysis", "difficulty": 3, "brief_rationale": "Technique averaging cost over a sequence of operations; requires working knowledge of potential functions and aggregate methods."}
+    ],
+    "L4": [
+      {"concept": "Rice's theorem", "wikipedia_article": "Rice's theorem", "difficulty": 4, "brief_rationale": "All non-trivial semantic properties of programs are undecidable; requires deep knowledge of reducibility and the theory of computation."},
+      {"concept": "oracle machine", "wikipedia_article": "Oracle machine", "difficulty": 4, "brief_rationale": "Turing machine with access to a black-box oracle for an arbitrary problem; requires deep knowledge of relativized complexity and the limits of diagonalization."},
+      {"concept": "Kolmogorov complexity", "wikipedia_article": "Kolmogorov complexity", "difficulty": 4, "brief_rationale": "Shortest description length of a string; requires deep knowledge of information theory, computability, and the incompressibility method."},
+      {"concept": "circuit complexity", "wikipedia_article": "Circuit complexity", "difficulty": 4, "brief_rationale": "Study of Boolean circuits as computational models; requires deep knowledge of complexity lower bounds and the relationship between circuits and Turing machines."},
+      {"concept": "interactive proof system", "wikipedia_article": "Interactive proof system", "difficulty": 4, "brief_rationale": "Protocols between a prover and verifier; requires deep knowledge of IP = PSPACE, zero-knowledge proofs, and probabilistic complexity."},
+      {"concept": "zero-knowledge proof", "wikipedia_article": "Zero-knowledge proof", "difficulty": 4, "brief_rationale": "Proving knowledge of a secret without revealing it; requires deep knowledge of cryptographic protocols and probabilistic interactive proofs."},
+      {"concept": "arithmetization", "wikipedia_article": "IP (complexity)", "difficulty": 4, "brief_rationale": "Technique converting Boolean formulas to polynomials to prove IP = PSPACE; requires deep knowledge of algebraic methods in complexity theory."},
+      {"concept": "polynomial hierarchy", "wikipedia_article": "Polynomial hierarchy", "difficulty": 4, "brief_rationale": "Generalization of P and NP using alternating quantifiers; requires deep knowledge of oracle machines and the structure of complexity classes."},
+      {"concept": "descriptive complexity", "wikipedia_article": "Descriptive complexity theory", "difficulty": 4, "brief_rationale": "Characterizing complexity classes by the logical languages needed to express them; requires deep knowledge of finite model theory and Fagin's theorem."},
+      {"concept": "Savitch's theorem", "wikipedia_article": "Savitch's theorem", "difficulty": 4, "brief_rationale": "NPSPACE = PSPACE; requires deep knowledge of space-bounded computation and the reachability method."},
+      {"concept": "time hierarchy theorem", "wikipedia_article": "Time hierarchy theorem", "difficulty": 4, "brief_rationale": "More time allows solving strictly more problems; requires deep knowledge of diagonalization and the gap between complexity classes."},
+      {"concept": "post correspondence problem", "wikipedia_article": "Post correspondence problem", "difficulty": 4, "brief_rationale": "Undecidable problem about matching string tiles; requires deep knowledge of undecidability proofs and reductions from the halting problem."}
+    ]
+  }
+}

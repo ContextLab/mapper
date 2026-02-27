@@ -1,0 +1,266 @@
+{
+  "domain": "cognitive-psychology",
+  "parent_domain": "psychology",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {
+        "concept": "memory",
+        "wikipedia_article": "Memory",
+        "brief_rationale": "Foundational concept covering how information is encoded, stored, and retrieved; universally recognized by any student of psychology."
+      },
+      {
+        "concept": "attention",
+        "wikipedia_article": "Attention",
+        "brief_rationale": "Core cognitive resource that selects which information receives further processing; everyday term with deep scientific content."
+      },
+      {
+        "concept": "perception",
+        "wikipedia_article": "Perception",
+        "brief_rationale": "The process by which sensory input is interpreted as meaningful experience; foundational to understanding how humans interact with the world."
+      },
+      {
+        "concept": "learning",
+        "wikipedia_article": "Learning",
+        "brief_rationale": "Broad, familiar concept describing how experience changes knowledge, skills, and behavior over time."
+      },
+      {
+        "concept": "intelligence",
+        "wikipedia_article": "Intelligence",
+        "brief_rationale": "High-profile topic covering general cognitive ability; widely discussed in popular science and everyday life."
+      },
+      {
+        "concept": "language",
+        "wikipedia_article": "Language",
+        "brief_rationale": "Central human capacity for symbolic communication; a major domain of cognitive psychology research."
+      },
+      {
+        "concept": "reasoning",
+        "wikipedia_article": "Reasoning",
+        "brief_rationale": "The mental process of drawing conclusions from premises or evidence; core to logic, problem-solving, and decision-making."
+      },
+      {
+        "concept": "decision-making",
+        "wikipedia_article": "Decision-making",
+        "brief_rationale": "The process of selecting among alternatives; fundamental to cognitive psychology and behavioral economics."
+      },
+      {
+        "concept": "problem solving",
+        "wikipedia_article": "Problem solving",
+        "brief_rationale": "Goal-directed cognitive activity central to everyday function and a classical topic in cognitive psychology."
+      },
+      {
+        "concept": "emotion",
+        "wikipedia_article": "Emotion",
+        "brief_rationale": "Affective states that interact closely with cognition; recognized by every student as a basic psychological concept."
+      },
+      {
+        "concept": "consciousness",
+        "wikipedia_article": "Consciousness",
+        "brief_rationale": "Awareness of internal and external experience; a perennial high-level topic bridging philosophy and cognitive science."
+      },
+      {
+        "concept": "imagination",
+        "wikipedia_article": "Imagination",
+        "brief_rationale": "The ability to form mental images and ideas not present to the senses; familiar concept with significant research literature."
+      },
+      {
+        "concept": "forgetting",
+        "wikipedia_article": "Forgetting",
+        "brief_rationale": "The loss or failure to retrieve stored information; universally experienced and a central memory research topic."
+      }
+    ],
+    "L2": [
+      {
+        "concept": "working memory",
+        "wikipedia_article": "Working memory",
+        "brief_rationale": "The limited-capacity system for temporarily holding and manipulating information; a key term in undergraduate cognitive psychology."
+      },
+      {
+        "concept": "cognitive bias",
+        "wikipedia_article": "Cognitive bias",
+        "brief_rationale": "Systematic errors in judgment and reasoning; widely discussed in introductory courses and popular science."
+      },
+      {
+        "concept": "schema",
+        "wikipedia_article": "Schema (psychology)",
+        "brief_rationale": "Organized mental frameworks that shape how new information is interpreted and remembered."
+      },
+      {
+        "concept": "heuristic",
+        "wikipedia_article": "Heuristic (psychology)",
+        "brief_rationale": "Mental shortcuts that simplify decision-making; introduced to students through Kahneman and Tversky's work."
+      },
+      {
+        "concept": "long-term memory",
+        "wikipedia_article": "Long-term memory",
+        "brief_rationale": "The system storing information over extended periods; a standard distinction in memory models taught at the student level."
+      },
+      {
+        "concept": "short-term memory",
+        "wikipedia_article": "Short-term memory",
+        "brief_rationale": "Temporary storage of small amounts of information; historically foundational in the modal model of memory."
+      },
+      {
+        "concept": "cognitive development",
+        "wikipedia_article": "Cognitive development",
+        "brief_rationale": "How thinking, reasoning, and knowledge change across the lifespan; associated with Piaget and introduced in most psychology courses."
+      },
+      {
+        "concept": "selective attention",
+        "wikipedia_article": "Selective attention",
+        "brief_rationale": "The ability to focus on a specific stimulus while ignoring others; a concrete, student-level attention concept."
+      },
+      {
+        "concept": "mental model",
+        "wikipedia_article": "Mental model",
+        "brief_rationale": "Internal representations of real or hypothetical situations used for reasoning and prediction."
+      },
+      {
+        "concept": "prototype theory",
+        "wikipedia_article": "Prototype theory",
+        "brief_rationale": "The idea that category membership is judged by similarity to a typical example; a standard concept in cognitive semantics and psychology."
+      },
+      {
+        "concept": "confirmation bias",
+        "wikipedia_article": "Confirmation bias",
+        "brief_rationale": "The tendency to search for and favor information that confirms existing beliefs; one of the most discussed cognitive biases."
+      },
+      {
+        "concept": "metacognition",
+        "wikipedia_article": "Metacognition",
+        "brief_rationale": "Thinking about one's own thought processes; a key term in educational and cognitive psychology."
+      },
+      {
+        "concept": "priming",
+        "wikipedia_article": "Priming (psychology)",
+        "brief_rationale": "The influence of prior exposure to a stimulus on responses to a later stimulus; a widely taught implicit memory phenomenon."
+      }
+    ],
+    "L3": [
+      {
+        "concept": "dual-process theory",
+        "wikipedia_article": "Dual process theory",
+        "brief_rationale": "The distinction between fast, automatic System 1 and slow, deliberate System 2 thinking; requires understanding the mechanics of each system."
+      },
+      {
+        "concept": "levels-of-processing effect",
+        "wikipedia_article": "Levels-of-processing effect",
+        "brief_rationale": "Craik and Lockhart's finding that deeper semantic encoding produces better memory retention than shallow processing."
+      },
+      {
+        "concept": "phonological loop",
+        "wikipedia_article": "Phonological loop",
+        "brief_rationale": "The component of Baddeley's working memory model that rehearses verbal and phonological information."
+      },
+      {
+        "concept": "visuospatial sketchpad",
+        "wikipedia_article": "Baddeley's model of working memory",
+        "brief_rationale": "The working memory subsystem that maintains and manipulates visual and spatial information."
+      },
+      {
+        "concept": "change blindness",
+        "wikipedia_article": "Change blindness",
+        "brief_rationale": "The failure to detect changes in a visual scene when they occur during a saccade or visual disruption; demonstrates limits of attention."
+      },
+      {
+        "concept": "inattentional blindness",
+        "wikipedia_article": "Inattentional blindness",
+        "brief_rationale": "Failure to notice an unexpected stimulus in plain sight when attention is directed elsewhere; famously demonstrated by the gorilla experiment."
+      },
+      {
+        "concept": "spreading activation",
+        "wikipedia_article": "Spreading activation",
+        "brief_rationale": "A model of semantic memory in which activating one concept automatically raises the activation of related concepts in a network."
+      },
+      {
+        "concept": "signal detection theory",
+        "wikipedia_article": "Detection theory",
+        "brief_rationale": "A framework separating perceptual sensitivity from response bias in detection tasks; fundamental to perception research."
+      },
+      {
+        "concept": "Stroop effect",
+        "wikipedia_article": "Stroop effect",
+        "brief_rationale": "Interference when the color of a word conflicts with its semantic content; a benchmark demonstration of automatic processing."
+      },
+      {
+        "concept": "availability heuristic",
+        "wikipedia_article": "Availability heuristic",
+        "brief_rationale": "Judging the likelihood of events by how easily examples come to mind; requires understanding how memory retrieval fluency biases probability estimates."
+      },
+      {
+        "concept": "mental rotation",
+        "wikipedia_article": "Mental rotation",
+        "brief_rationale": "The ability to rotate mental representations of objects; studied through reaction-time paradigms and revealing of spatial cognition."
+      },
+      {
+        "concept": "source monitoring",
+        "wikipedia_article": "Source-monitoring error",
+        "brief_rationale": "The cognitive process of attributing remembered information to its original source; errors here underlie many false memory phenomena."
+      }
+    ],
+    "L4": [
+      {
+        "concept": "connectionist models of cognition",
+        "wikipedia_article": "Connectionism",
+        "brief_rationale": "Parallel distributed processing frameworks that model cognition as emergent from weighted connections among simple processing units."
+      },
+      {
+        "concept": "embodied cognition",
+        "wikipedia_article": "Embodied cognition",
+        "brief_rationale": "The thesis that cognitive processes are deeply shaped by the body and its sensorimotor interactions with the environment."
+      },
+      {
+        "concept": "Bayesian brain hypothesis",
+        "wikipedia_article": "Bayesian approaches to brain function",
+        "brief_rationale": "The proposal that the brain performs probabilistic inference by combining prior beliefs with sensory evidence in a Bayesian framework."
+      },
+      {
+        "concept": "predictive coding",
+        "wikipedia_article": "Predictive coding",
+        "brief_rationale": "A hierarchical brain model in which top-down predictions are continuously compared to bottom-up sensory signals, with only prediction errors propagated upward."
+      },
+      {
+        "concept": "fuzzy-trace theory",
+        "wikipedia_article": "Fuzzy-trace theory",
+        "brief_rationale": "Brainerd and Reyna's dual-memory framework distinguishing verbatim traces from gist representations, explaining developmental and false memory phenomena."
+      },
+      {
+        "concept": "cognitive load theory",
+        "wikipedia_article": "Cognitive load theory",
+        "brief_rationale": "Sweller's instructional framework positing that learning is constrained by intrinsic, extraneous, and germane demands on working memory capacity."
+      },
+      {
+        "concept": "transfer-appropriate processing",
+        "wikipedia_article": "Transfer-appropriate processing",
+        "brief_rationale": "Memory retrieval is best when encoding processes match retrieval processes, extending levels-of-processing theory with context-specificity."
+      },
+      {
+        "concept": "adaptive control of thought-rational",
+        "wikipedia_article": "ACT-R",
+        "brief_rationale": "Anderson's unified cognitive architecture specifying declarative and procedural memory modules with precise timing predictions for human performance."
+      },
+      {
+        "concept": "global workspace theory",
+        "wikipedia_article": "Global workspace theory",
+        "brief_rationale": "Baars' theory that consciousness arises when information is broadcast from a central workspace to multiple specialized brain modules."
+      },
+      {
+        "concept": "misinformation effect",
+        "wikipedia_article": "Misinformation effect",
+        "brief_rationale": "Loftus's finding that post-event misleading information becomes integrated into the original memory trace, distorting recollection."
+      },
+      {
+        "concept": "linguistic relativity",
+        "wikipedia_article": "Linguistic relativity",
+        "brief_rationale": "The Sapir-Whorf hypothesis that the structure of a language influences its speakers' perception and categorization of reality."
+      },
+      {
+        "concept": "attentional blink",
+        "wikipedia_article": "Attentional blink",
+        "brief_rationale": "A temporal deficit in detecting a second target appearing 200–500 ms after a first target in a rapid serial visual presentation stream, revealing capacity limits of selective attention."
+      }
+    ]
+  }
+}

@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Child development encompasses biological, psychological, and emotional changes from birth through adolescence. What three broad domains are most commonly used to organize developmental milestones in children?",
+    "correct_answer": "Physical or motor development, cognitive development, and social-emotional development",
+    "distractors": [
+      "Linguistic development, mathematical development, and artistic development",
+      "Sensory development, moral development, and spiritual development",
+      "Neurological development, reproductive development, and vocational development"
+    ],
+    "difficulty": 1,
+    "source_article": "Child development",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["child development"]
+  },
+  {
+    "question_text": "Puberty is the biological process through which a child's body matures into an adult body capable of sexual reproduction. On average, how does the typical age of onset differ between females and males?",
+    "correct_answer": "Females generally begin puberty about two years earlier than males",
+    "distractors": [
+      "Males generally begin puberty about two years earlier than females",
+      "Females and males typically begin puberty at the same age but progress at different rates",
+      "Males begin puberty about four years earlier, which is why they tend to be taller"
+    ],
+    "difficulty": 1,
+    "source_article": "Puberty",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["puberty"]
+  },
+  {
+    "question_text": "The nature versus nurture debate concerns the relative contributions of genetics and environment to human development. Which research method has been most influential in estimating these relative contributions?",
+    "correct_answer": "Twin studies comparing identical and fraternal twins to estimate the degree to which variation in traits is explained by genetics versus environment",
+    "distractors": [
+      "Longitudinal case studies following a single individual from birth through adulthood to track behavioral changes",
+      "Cross-cultural surveys comparing child-rearing practices across different nations and ethnic groups",
+      "Laboratory experiments that expose children to controlled stimuli and measure brain activation patterns"
+    ],
+    "difficulty": 1,
+    "source_article": "Nature versus nurture",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["nature versus nurture"]
+  },
+  {
+    "question_text": "Adolescence is a transitional stage of physical and psychological development between childhood and adulthood. What age range does the World Health Organization officially designate for this developmental period?",
+    "correct_answer": "Ages 10 to 19",
+    "distractors": [
+      "Ages 13 to 18",
+      "Ages 12 to 21",
+      "Ages 8 to 15"
+    ],
+    "difficulty": 1,
+    "source_article": "Adolescence",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["adolescence"]
+  },
+  {
+    "question_text": "Aging encompasses physical, psychological, and social changes that accumulate across adulthood. Which pattern best describes the typical trajectory of cognitive abilities during normal aging?",
+    "correct_answer": "Processing speed and reaction time decline, while accumulated general knowledge and vocabulary tend to remain stable or increase",
+    "distractors": [
+      "All cognitive abilities decline uniformly and at the same rate beginning around age 30",
+      "Memory and reasoning improve steadily throughout the lifespan with no measurable decline",
+      "Verbal abilities decline sharply after age 50, while spatial reasoning remains intact into old age"
+    ],
+    "difficulty": 1,
+    "source_article": "Ageing",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["aging"]
+  },
+  {
+    "question_text": "Attachment theory, originally developed by psychiatrist John Bowlby, describes the emotional bond formed between infants and their caregivers. What did Bowlby propose as the primary evolutionary function of this bond?",
+    "correct_answer": "Ensuring the survival of the vulnerable infant by maintaining proximity to a protective caregiver",
+    "distractors": [
+      "Teaching infants the social norms and language conventions of their cultural group",
+      "Stimulating rapid brain growth by providing the infant with complex sensory experiences",
+      "Establishing dominance hierarchies within the family unit to reduce sibling conflict"
+    ],
+    "difficulty": 1,
+    "source_article": "Attachment theory",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["attachment"]
+  },
+  {
+    "question_text": "Cognitive development refers to the growth of thinking, reasoning, and problem-solving abilities across the lifespan. According to Jean Piaget, what drives cognitive development forward through its stages?",
+    "correct_answer": "The interplay of biological maturation and environmental experience, through processes of assimilation and accommodation",
+    "distractors": [
+      "Direct instruction from adults who systematically teach children increasingly abstract concepts",
+      "Genetically predetermined neural growth that unfolds on a fixed timetable regardless of experience",
+      "Reinforcement and punishment from caregivers that shape children's thinking through operant conditioning"
+    ],
+    "difficulty": 1,
+    "source_article": "Cognitive development",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["cognitive development"]
+  },
+  {
+    "question_text": "Language acquisition is the process by which humans gain the ability to perceive, understand, and produce language. At approximately what age do children typically experience a notable surge in word production?",
+    "correct_answer": "Between 15 and 18 months of age, coinciding with growth of the cerebral cortex",
+    "distractors": [
+      "Between 6 and 8 months of age, coinciding with the onset of babbling and phoneme differentiation",
+      "Between 3 and 4 years of age, coinciding with the start of formal preschool education",
+      "Between 24 and 30 months of age, coinciding with the completion of myelination in Broca's area"
+    ],
+    "difficulty": 1,
+    "source_article": "Language acquisition",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["language acquisition"]
+  },
+  {
+    "question_text": "Socialization is the process through which individuals internalize the norms, customs, values, and ideologies of their society. What is the key distinction between primary socialization and secondary socialization?",
+    "correct_answer": "Primary socialization occurs within the family during early childhood, while secondary socialization takes place in institutions such as schools, peer groups, and workplaces",
+    "distractors": [
+      "Primary socialization involves learning a first language, while secondary socialization involves learning a second language",
+      "Primary socialization is driven by biological instincts, while secondary socialization is driven by conscious rational choice",
+      "Primary socialization shapes physical development, while secondary socialization shapes only intellectual abilities"
+    ],
+    "difficulty": 1,
+    "source_article": "Socialization",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["socialization"]
+  },
+  {
+    "question_text": "Alexander Thomas and Stella Chess conducted the New York Longitudinal Study beginning in the 1950s to investigate infant temperament. What three broad temperament categories did they identify among infants?",
+    "correct_answer": "Easy, difficult, and slow-to-warm-up",
+    "distractors": [
+      "Secure, anxious, and avoidant",
+      "Active, passive, and reactive",
+      "Introverted, extroverted, and ambiverted"
+    ],
+    "difficulty": 1,
+    "source_article": "Temperament",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["temperament"]
+  }
+]

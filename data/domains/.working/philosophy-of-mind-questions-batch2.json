@@ -1,0 +1,172 @@
+[
+  {
+    "question_text": "What common mental phenomenon occurs during sleep and has been described by philosophers as evidence that the brain alone is sufficient to generate consciousness, without external sensory input?",
+    "correct_answer": "Dreaming",
+    "distractors": [
+      "Sleepwalking",
+      "Hypnosis",
+      "Meditation"
+    ],
+    "difficulty": 1,
+    "source_article": "Dream",
+    "domain_ids": [
+      "philosophy-of-mind"
+    ],
+    "concepts_tested": [
+      "dream"
+    ]
+  },
+  {
+    "question_text": "In his 1950 paper 'Computing Machinery and Intelligence,' Alan Turing proposed a test to address what fundamental philosophical question about machines?",
+    "correct_answer": "Whether machines can think",
+    "distractors": [
+      "Whether machines can feel emotions",
+      "Whether computers have free will",
+      "Whether robots possess moral agency"
+    ],
+    "difficulty": 1,
+    "source_article": "Artificial intelligence",
+    "domain_ids": [
+      "philosophy-of-mind"
+    ],
+    "concepts_tested": [
+      "artificial intelligence"
+    ]
+  },
+  {
+    "question_text": "What philosophical problem asks what makes a person at one time the same individual as a person at another time, addressing the conditions for persistence through change?",
+    "correct_answer": "The problem of personal identity",
+    "distractors": [
+      "The problem of other minds",
+      "The problem of mental causation",
+      "The problem of bodily continuity"
+    ],
+    "difficulty": 1,
+    "source_article": "Personal identity",
+    "domain_ids": [
+      "philosophy-of-mind"
+    ],
+    "concepts_tested": [
+      "personal identity"
+    ]
+  },
+  {
+    "question_text": "Rene Descartes argued that mind and body are fundamentally distinct substances, with the mind being a nonphysical 'thinking thing' (res cogitans). What is this philosophical position called?",
+    "correct_answer": "Substance dualism",
+    "distractors": [
+      "Reductive physicalism",
+      "Property monism",
+      "Neutral monism"
+    ],
+    "difficulty": 2,
+    "source_article": "Mind\u2013body dualism",
+    "domain_ids": [
+      "philosophy-of-mind"
+    ],
+    "concepts_tested": [
+      "dualism"
+    ]
+  },
+  {
+    "question_text": "What philosophical position, dominant among contemporary philosophers of mind, holds that everything that exists is ultimately physical and that mental states supervene on physical states?",
+    "correct_answer": "Physicalism",
+    "distractors": [
+      "Functionalism",
+      "Epiphenomenalism",
+      "Neutral monism"
+    ],
+    "difficulty": 2,
+    "source_article": "Physicalism",
+    "domain_ids": [
+      "philosophy-of-mind"
+    ],
+    "concepts_tested": [
+      "physicalism"
+    ]
+  },
+  {
+    "question_text": "In philosophy of mind, what term refers to the subjective, felt qualities of conscious experience, such as the redness of red or the specific taste of wine?",
+    "correct_answer": "Qualia",
+    "distractors": [
+      "Percepts",
+      "Sensa",
+      "Noumena"
+    ],
+    "difficulty": 2,
+    "source_article": "Qualia",
+    "domain_ids": [
+      "philosophy-of-mind"
+    ],
+    "concepts_tested": [
+      "qualia"
+    ]
+  },
+  {
+    "question_text": "Which theory in philosophy of mind defines mental states not by their internal composition but by their causal relations to sensory inputs, behavioral outputs, and other mental states?",
+    "correct_answer": "Functionalism",
+    "distractors": [
+      "Behaviorism",
+      "Type physicalism",
+      "Property dualism"
+    ],
+    "difficulty": 2,
+    "source_article": "Functionalism (philosophy of mind)",
+    "domain_ids": [
+      "philosophy-of-mind"
+    ],
+    "concepts_tested": [
+      "functionalism"
+    ]
+  },
+  {
+    "question_text": "Franz Brentano proposed that all mental phenomena are distinguished from physical phenomena by their 'directedness' toward an object. What is this property of mental states called?",
+    "correct_answer": "Intentionality",
+    "distractors": [
+      "Reflexivity",
+      "Phenomenality",
+      "Representationality"
+    ],
+    "difficulty": 2,
+    "source_article": "Intentionality",
+    "domain_ids": [
+      "philosophy-of-mind"
+    ],
+    "concepts_tested": [
+      "intentionality"
+    ]
+  },
+  {
+    "question_text": "What philosophical approach to mind holds that mental states are nothing more than behavioral dispositions, so that being in pain simply means being disposed to wince, moan, or seek relief?",
+    "correct_answer": "Philosophical behaviourism",
+    "distractors": [
+      "Eliminative materialism",
+      "Psychological functionalism",
+      "Analytical phenomenology"
+    ],
+    "difficulty": 2,
+    "source_article": "Behaviorism",
+    "domain_ids": [
+      "philosophy-of-mind"
+    ],
+    "concepts_tested": [
+      "behaviourism"
+    ]
+  },
+  {
+    "question_text": "What theory in philosophy of mind asserts that types of mental states, such as pain, are strictly identical to types of brain states, such as C-fiber firings?",
+    "correct_answer": "Type identity theory",
+    "distractors": [
+      "Token physicalism theory",
+      "Functional state theory",
+      "Neural correlate theory"
+    ],
+    "difficulty": 2,
+    "source_article": "Type physicalism",
+    "domain_ids": [
+      "philosophy-of-mind"
+    ],
+    "concepts_tested": [
+      "identity theory"
+    ]
+  }
+]

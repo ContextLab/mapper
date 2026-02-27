@@ -1,0 +1,172 @@
+[
+  {
+    "question_text": "A power law relationship $f(x) = ax^{-k}$ has a distinctive mathematical property: rescaling the input $x$ by a constant factor $c$ only rescales the output proportionally. What is this property called?",
+    "correct_answer": "Scale invariance, because $f(cx) = c^{-k}f(x)$, meaning the function's form is preserved under rescaling",
+    "distractors": [
+      "Self-similarity, because $f(cx) = f(x) + c$, meaning the function shifts uniformly under rescaling",
+      "Translational symmetry, because $f(x+c) = c^{-k}f(x)$, meaning the function is preserved under translation",
+      "Conformal invariance, because $f(cx) = f(x)/c$, meaning the function inverts proportionally under rescaling"
+    ],
+    "difficulty": 3,
+    "source_article": "Power law",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "power law"
+    ]
+  },
+  {
+    "question_text": "In physics, the observer effect refers to the disturbance of a system caused by the act of observation. How does this differ from the Heisenberg uncertainty principle?",
+    "correct_answer": "The observer effect is measurement physically disturbing a system; the uncertainty principle is a fundamental limit on knowing conjugate properties simultaneously",
+    "distractors": [
+      "The observer effect applies only to quantum systems; the uncertainty principle applies equally to both classical and quantum measurements",
+      "The observer effect concerns random experimental errors; the uncertainty principle limits the precision of any single variable in isolation",
+      "The observer effect requires conscious observation to collapse wavefunctions; the uncertainty principle operates entirely independently of measurement"
+    ],
+    "difficulty": 3,
+    "source_article": "Observer effect (physics)",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "observer effect"
+    ]
+  },
+  {
+    "question_text": "During WWII, Abraham Wald analyzed bullet-hole patterns on returning bombers and made a counterintuitive recommendation about where to add armor. What was his reasoning?",
+    "correct_answer": "Reinforce areas with no bullet holes, because planes hit there did not survive to return -- the visible damage marked survivable zones",
+    "distractors": [
+      "Reinforce the most heavily damaged areas, because those locations clearly received the greatest concentration of enemy fire",
+      "Distribute armor evenly across the fuselage, because bullet damage showed no statistically significant clustering in any region",
+      "Reinforce only areas near the fuel tanks, because engine and wing hits were consistently survivable for returning aircraft"
+    ],
+    "difficulty": 3,
+    "source_article": "Survivorship bias",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "survivorship bias"
+    ]
+  },
+  {
+    "question_text": "Garrett Hardin's 1968 essay described the tragedy of the commons. How did Elinor Ostrom's Nobel Prize-winning research challenge his conclusion that only privatization or government control could prevent overuse of shared resources?",
+    "correct_answer": "Ostrom showed that communities can self-govern shared resources through local rules and collective agreements, without requiring external authority or privatization",
+    "distractors": [
+      "Ostrom proved that shared resources are never actually overused when population density remains below a critical threshold level",
+      "Ostrom demonstrated that privatization always outperforms communal management but only when property rights are enforced by international bodies",
+      "Ostrom showed that government regulation is the only reliable solution but argued Hardin underestimated how efficiently bureaucracies can allocate resources"
+    ],
+    "difficulty": 3,
+    "source_article": "Tragedy of the commons",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "commons dilemma"
+    ]
+  },
+  {
+    "question_text": "Path dependence explains how early decisions constrain future outcomes. The QWERTY keyboard and VHS videotape format are classic examples. What mechanism primarily drives path-dependent lock-in?",
+    "correct_answer": "Increasing returns and positive feedback effects, where early adoption advantages compound over time, making switching to alternatives progressively more costly",
+    "distractors": [
+      "Diminishing returns and negative feedback effects, where early adoption disadvantages gradually reduce, making the original choice seem optimal over time",
+      "Rational optimization by all market participants, who independently evaluate all options and converge on the objectively superior technology",
+      "Government regulation and patent enforcement, where legal mandates prevent alternative technologies from entering the competitive marketplace"
+    ],
+    "difficulty": 3,
+    "source_article": "Path dependence",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "path dependence"
+    ]
+  },
+  {
+    "question_text": "The precautionary principle is invoked in policy decisions involving scientific uncertainty. Its modern formulation originated from which country's environmental law tradition, and what German term was it translated from?",
+    "correct_answer": "It originated from Germany's Vorsorgeprinzip, developed in the 1970s in response to concerns about forest degradation and sea pollution",
+    "distractors": [
+      "It originated from Sweden's Forsiktighetsprincipen, developed in the 1960s in response to concerns about acid rain and mercury contamination",
+      "It originated from Britain's Prudential Doctrine, developed in the 1980s in response to concerns about BSE and industrial waste disposal",
+      "It originated from France's Principe de Prevoyance, developed in the 1950s in response to concerns about nuclear testing and atmospheric fallout"
+    ],
+    "difficulty": 3,
+    "source_article": "Precautionary principle",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "precautionary principle"
+    ]
+  },
+  {
+    "question_text": "Alan Turing's 1950 paper \"Computing Machinery and Intelligence\" proposed a test for machine intelligence based on a party game. What was the structure of this original \"imitation game\"?",
+    "correct_answer": "An interrogator questions a human and a machine via text, and the machine passes if the interrogator cannot reliably distinguish which is which",
+    "distractors": [
+      "A machine attempts to solve increasingly difficult mathematical proofs, and passes if it matches the speed of a trained human mathematician",
+      "An interrogator observes a machine and a human performing physical tasks, and the machine passes if its movements are indistinguishable",
+      "A panel of experts poses open-ended philosophical questions, and the machine passes if a majority rate its answers as demonstrating consciousness"
+    ],
+    "difficulty": 3,
+    "source_article": "Turing test",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "Turing test"
+    ]
+  },
+  {
+    "question_text": "Fermentation is a metabolic process distinct from both aerobic and anaerobic respiration. What specifically distinguishes fermentation from anaerobic respiration at the biochemical level?",
+    "correct_answer": "In fermentation, organic molecules serve as both electron donor and acceptor; anaerobic respiration instead uses an inorganic terminal electron acceptor",
+    "distractors": [
+      "In fermentation, ATP comes exclusively from oxidative phosphorylation; anaerobic respiration relies solely on substrate-level phosphorylation instead",
+      "In fermentation, oxygen is present but unused as electron acceptor; anaerobic respiration occurs only in complete absence of oxygen",
+      "In fermentation, inorganic molecules serve as electron donor; anaerobic respiration exclusively uses organic molecules like glucose as donors"
+    ],
+    "difficulty": 3,
+    "source_article": "Fermentation",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "fermentation"
+    ]
+  },
+  {
+    "question_text": "Ergodicity economics, developed by Ole Peters, challenges a foundational assumption in classical economics. What implicit assumption does it identify, and what distinction does it draw to correct economic models?",
+    "correct_answer": "Classical economics implicitly assumes ergodicity by treating ensemble averages (expected values) as equivalent to time averages, but for non-ergodic processes like wealth growth, these diverge",
+    "distractors": [
+      "Classical economics implicitly assumes non-ergodicity by treating time averages as irrelevant to individual decisions, but for ergodic processes these must converge",
+      "Classical economics implicitly assumes stationarity by treating all economic processes as time-invariant, but ergodicity economics shows that variance increases without bound",
+      "Classical economics implicitly assumes risk neutrality by ignoring higher-order statistical moments, but ergodicity economics replaces this with a focus on median outcomes"
+    ],
+    "difficulty": 4,
+    "source_article": "Ergodicity economics",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "ergodicity economics"
+    ]
+  },
+  {
+    "question_text": "Constructor theory, developed by David Deutsch and Chiara Marletto at Oxford, proposes a new foundation for physics. Instead of describing what happens given initial conditions and laws of motion, what does it use as its fundamental statements?",
+    "correct_answer": "It expresses laws as statements about which physical transformations (tasks) are possible versus impossible, making counterfactual claims fundamental to physics",
+    "distractors": [
+      "It expresses laws as probability distributions over all conceivable outcomes, making stochastic predictions fundamental to physics",
+      "It expresses laws as symmetry groups acting on state spaces, making invariance under transformation fundamental to physics",
+      "It expresses laws as optimization principles selecting the most efficient path, making variational calculus fundamental to physics"
+    ],
+    "difficulty": 4,
+    "source_article": "Constructor theory",
+    "domain_ids": [
+      "all"
+    ],
+    "concepts_tested": [
+      "constructor theory"
+    ]
+  }
+]

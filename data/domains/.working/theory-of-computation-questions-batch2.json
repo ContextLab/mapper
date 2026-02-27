@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Alan Turing's 1936 proof that no algorithm can determine whether an arbitrary program will halt uses which fundamental proof technique involving self-reference?",
+    "correct_answer": "Diagonalization (proof by contradiction via self-reference)",
+    "distractors": [
+      "Mathematical induction over program length",
+      "Pumping lemma for recursive languages",
+      "Reduction to the Post correspondence problem"
+    ],
+    "difficulty": 1,
+    "source_article": "Halting problem",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["halting problem"]
+  },
+  {
+    "question_text": "In formal language theory, a formal language is defined as a set of strings whose symbols are drawn from what mathematical object?",
+    "correct_answer": "A finite set called an alphabet",
+    "distractors": [
+      "An infinite sequence called a stream",
+      "An ordered ring called a codomain",
+      "A recursive structure called a grammar"
+    ],
+    "difficulty": 1,
+    "source_article": "Formal language",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["formal language"]
+  },
+  {
+    "question_text": "George Boole's 1854 work 'An Investigation of the Laws of Thought' laid the foundation for Boolean algebra. What are its three fundamental logical operations?",
+    "correct_answer": "AND, OR, and NOT",
+    "distractors": [
+      "XOR, NAND, and NOR",
+      "IF, THEN, and ELSE",
+      "ADD, SHIFT, and COMPARE"
+    ],
+    "difficulty": 1,
+    "source_article": "Boolean algebra",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["Boolean logic"]
+  },
+  {
+    "question_text": "A deterministic finite automaton (DFA) and a nondeterministic finite automaton (NFA) recognize exactly the same class of languages. What is that class called?",
+    "correct_answer": "Regular languages",
+    "distractors": [
+      "Context-free languages",
+      "Context-sensitive languages",
+      "Recursively enumerable languages"
+    ],
+    "difficulty": 2,
+    "source_article": "Finite-state machine",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["finite automaton"]
+  },
+  {
+    "question_text": "Stephen Kleene's 1956 paper in 'Automata Studies' proved that regular expressions and finite automata describe the same class of languages. What is this equivalence result called?",
+    "correct_answer": "Kleene's theorem",
+    "distractors": [
+      "Myhill-Nerode theorem",
+      "Chomsky's normal form theorem",
+      "Rice's equivalence theorem"
+    ],
+    "difficulty": 2,
+    "source_article": "Regular expression",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["regular expression"]
+  },
+  {
+    "question_text": "Context-free grammars, classified as Type 2 in the Chomsky hierarchy, restrict production rules so that only what appears on the left-hand side of each rule?",
+    "correct_answer": "A single nonterminal symbol",
+    "distractors": [
+      "A pair of terminal symbols",
+      "A string of mixed terminals and nonterminals",
+      "The designated start symbol only"
+    ],
+    "difficulty": 2,
+    "source_article": "Context-free grammar",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["context-free grammar"]
+  },
+  {
+    "question_text": "A pushdown automaton extends a finite automaton with what additional data structure, enabling it to recognize context-free languages?",
+    "correct_answer": "A stack (last-in, first-out memory)",
+    "distractors": [
+      "A queue (first-in, first-out buffer)",
+      "A second read-only input tape",
+      "A random-access memory register"
+    ],
+    "difficulty": 2,
+    "source_article": "Pushdown automaton",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["pushdown automaton"]
+  },
+  {
+    "question_text": "The Cook-Levin theorem (1971) established which specific decision problem as the first proven NP-complete problem?",
+    "correct_answer": "The Boolean satisfiability problem (SAT)",
+    "distractors": [
+      "The travelling salesman problem (TSP)",
+      "The graph coloring problem (GCP)",
+      "The integer linear programming problem (ILP)"
+    ],
+    "difficulty": 2,
+    "source_article": "NP-completeness",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["NP-completeness"]
+  },
+  {
+    "question_text": "The P versus NP problem, one of the seven Clay Millennium Prize Problems worth $1 million, asks whether every problem whose solution can be verified in polynomial time can also be what?",
+    "correct_answer": "Solved in polynomial time",
+    "distractors": [
+      "Verified in logarithmic time",
+      "Solved in exponential time only",
+      "Reduced to a halting problem instance"
+    ],
+    "difficulty": 2,
+    "source_article": "P versus NP problem",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["P versus NP problem"]
+  },
+  {
+    "question_text": "A nondeterministic Turing machine differs from a deterministic one because its transition function allows multiple possible actions, creating a branching what?",
+    "correct_answer": "Computation tree of parallel paths",
+    "distractors": [
+      "Finite state register of memory cells",
+      "Linear sequence of deterministic steps",
+      "Recursive stack of subroutine calls"
+    ],
+    "difficulty": 2,
+    "source_article": "Nondeterministic Turing machine",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["nondeterministic Turing machine"]
+  }
+]

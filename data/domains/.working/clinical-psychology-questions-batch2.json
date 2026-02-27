@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Approximately what percentage of people who die by suicide are estimated to have had a mood disorder such as major depression at the time of death?",
+    "correct_answer": "About 50 percent, making mood disorders the most common psychiatric conditions associated with completed suicide.",
+    "distractors": [
+      "About 10 percent, with the majority attributed to substance use disorders rather than mood conditions.",
+      "About 90 percent, since virtually all individuals who die by suicide meet criteria for clinical depression.",
+      "About 25 percent, with personality disorders accounting for a larger proportion than mood disorders."
+    ],
+    "difficulty": 1,
+    "source_article": "Suicide",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["suicide"]
+  },
+  {
+    "question_text": "What distinguishes a hallucination from an illusion in clinical psychology?",
+    "correct_answer": "A hallucination is a perception that occurs without any external stimulus, whereas an illusion is a distorted or misinterpreted perception of a real external stimulus.",
+    "distractors": [
+      "A hallucination occurs only during sleep, whereas an illusion occurs only during waking consciousness.",
+      "A hallucination involves misinterpreting an actual stimulus, whereas an illusion arises entirely from internal brain activity with no external input.",
+      "A hallucination is always visual in nature, whereas an illusion can occur in any sensory modality."
+    ],
+    "difficulty": 1,
+    "source_article": "Hallucination",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["hallucination"]
+  },
+  {
+    "question_text": "Morris Rosenberg's influential 1965 contribution to the study of self-esteem was the development of which widely used instrument?",
+    "correct_answer": "The Rosenberg Self-Esteem Scale (RSES), which became the most widely used measure of self-esteem in the social sciences.",
+    "distractors": [
+      "The Beck Self-Concept Inventory, a 40-item questionnaire measuring global self-worth in clinical populations.",
+      "The Coopersmith Self-Esteem Inventory, originally designed to assess self-esteem in children and adolescents.",
+      "The Implicit Association Test for self-esteem, which measures unconscious attitudes toward the self using reaction times."
+    ],
+    "difficulty": 1,
+    "source_article": "Self-esteem",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["self-esteem"]
+  },
+  {
+    "question_text": "Cognitive behavioral therapy (CBT) was originally developed as a treatment for which specific mental health condition before being adapted for a wide range of disorders?",
+    "correct_answer": "Depression. CBT was originally designed to treat depression before its principles were extended to anxiety disorders, OCD, eating disorders, and other conditions.",
+    "distractors": [
+      "Generalized anxiety disorder. CBT was first developed for chronic worry before being applied to depression and other conditions.",
+      "Post-traumatic stress disorder. CBT originated as a trauma-focused intervention before broadening to mood and anxiety disorders.",
+      "Schizophrenia. CBT was initially created to modify delusional thinking before being repurposed for common mental health conditions."
+    ],
+    "difficulty": 2,
+    "source_article": "Cognitive behavioral therapy",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["cognitive behavioral therapy"]
+  },
+  {
+    "question_text": "The Diagnostic and Statistical Manual of Mental Disorders (DSM) is published by which organization, and what is the designation of its most recent text revision?",
+    "correct_answer": "The American Psychiatric Association (APA). The most recent version is the DSM-5-TR, published in March 2022.",
+    "distractors": [
+      "The American Psychological Association (APA). The most recent version is the DSM-VI, published in 2020.",
+      "The National Institute of Mental Health (NIMH). The most recent version is the DSM-5.1, published in 2023.",
+      "The World Health Organization (WHO). The most recent version is the DSM-5-R, published in 2019."
+    ],
+    "difficulty": 2,
+    "source_article": "Diagnostic and Statistical Manual of Mental Disorders",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["DSM"]
+  },
+  {
+    "question_text": "In psychoanalytic theory, Freud divided the human personality into three structural components. What are they, and what role does the unconscious play in this model?",
+    "correct_answer": "The id, ego, and superego. The unconscious houses repressed desires, memories, and drives, particularly those of the id, which influence conscious thought and behavior.",
+    "distractors": [
+      "The persona, shadow, and animus. The unconscious stores archetypes inherited from collective human experience that shape personality.",
+      "The self, the other, and the ideal. The unconscious contains only traumatic memories that have been deliberately suppressed by conscious effort.",
+      "The instinct, reason, and conscience. The unconscious is limited to biological reflexes and plays no role in higher-order thought processes."
+    ],
+    "difficulty": 2,
+    "source_article": "Psychoanalysis",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["psychoanalysis"]
+  },
+  {
+    "question_text": "The symptoms of schizophrenia are commonly divided into positive and negative categories. Which of the following correctly describes this distinction?",
+    "correct_answer": "Positive symptoms are added experiences like hallucinations and delusions, while negative symptoms are diminished capabilities like flat affect, alogia, and avolition.",
+    "distractors": [
+      "Positive symptoms are those that respond well to medication, while negative symptoms are those that are treatment-resistant regardless of the drug used.",
+      "Positive symptoms refer to elevated or euphoric mood states, while negative symptoms refer to persistent depressive episodes occurring between psychotic breaks.",
+      "Positive symptoms emerge only during acute psychotic episodes, while negative symptoms are present only during periods of remission between episodes."
+    ],
+    "difficulty": 2,
+    "source_article": "Schizophrenia",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["schizophrenia"]
+  },
+  {
+    "question_text": "What is the key diagnostic distinction between bipolar I disorder and bipolar II disorder?",
+    "correct_answer": "Bipolar I requires at least one full manic episode, possibly with psychosis, while bipolar II involves only hypomanic episodes alternating with major depressive episodes.",
+    "distractors": [
+      "Bipolar I involves only depressive episodes with no elevated mood, while bipolar II involves alternating mania and depression.",
+      "Bipolar I is diagnosed exclusively in adults, while bipolar II is the designation used when onset occurs during childhood or adolescence.",
+      "Bipolar I features rapid cycling between mood states within a single day, while bipolar II involves mood episodes lasting months at a time."
+    ],
+    "difficulty": 2,
+    "source_article": "Bipolar disorder",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["bipolar disorder"]
+  },
+  {
+    "question_text": "In obsessive-compulsive disorder (OCD), what is the functional relationship between obsessions and compulsions?",
+    "correct_answer": "Obsessions are persistent, intrusive, unwanted thoughts that cause distress, and compulsions are repetitive behaviors performed to relieve or neutralize the anxiety produced by those obsessions.",
+    "distractors": [
+      "Obsessions are voluntary rituals performed to achieve perfection, and compulsions are the involuntary feelings of satisfaction that follow completion of those rituals.",
+      "Obsessions are recurring pleasant fantasies that a person cannot stop, and compulsions are the depressive episodes triggered when those fantasies are interrupted.",
+      "Obsessions are habitual motor tics caused by neurological dysfunction, and compulsions are the cognitive strategies used to suppress those tics."
+    ],
+    "difficulty": 2,
+    "source_article": "Obsessive\u2013compulsive disorder",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["obsessive-compulsive disorder"]
+  },
+  {
+    "question_text": "According to Marsha Linehan's biosocial model, what process is considered the core dysfunction in borderline personality disorder (BPD)?",
+    "correct_answer": "Emotion dysregulation, comprising heightened emotional sensitivity, intense labile negative affect, deficient adaptive regulation strategies, and excessive maladaptive regulation strategies.",
+    "distractors": [
+      "Cognitive distortion, characterized by persistent black-and-white thinking patterns that prevent accurate appraisal of social situations.",
+      "Identity diffusion, defined as a complete absence of any stable self-concept resulting from early childhood neglect.",
+      "Dissociative amnesia, involving frequent memory gaps for interpersonal events that cause repeated relationship failures."
+    ],
+    "difficulty": 2,
+    "source_article": "Borderline personality disorder",
+    "domain_ids": ["clinical-psychology"],
+    "concepts_tested": ["borderline personality disorder"]
+  }
+]

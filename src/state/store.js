@@ -17,6 +17,26 @@ export const $responses = persistentAtom('mapper:responses', [], {
 /** Schema version tag for migration detection */
 export const $schemaVersion = persistentAtom('mapper:schema', SCHEMA_VERSION);
 
+// === Video recommendation atoms (FR-V040, FR-V043, CL-024) ===
+
+/** Watched video IDs — persisted across sessions */
+export const $watchedVideos = persistentAtom('mapper:watchedVideos', new Set(), {
+  encode: (s) => JSON.stringify([...s]),
+  decode: (json) => new Set(JSON.parse(json)),
+});
+
+/** Pre-video GP snapshot (50×50 = 2,500 cells) — session-only */
+export const $preVideoSnapshot = atom(null);
+
+/** Questions answered since most recent video completion — session-only */
+export const $questionsAfterVideo = atom(0);
+
+/** Current difference map (50×50 grid) — session-only */
+export const $differenceMap = atom(null);
+
+/** Running EMA of weighted difference maps — session-only */
+export const $runningDifferenceMap = atom(null);
+
 // === Session atoms (in-memory only) ===
 
 /** Currently active domain ID (null = no domain selected) */
@@ -59,3 +79,17 @@ export const $coverage = computed($estimates, (estimates) => {
 export const $insightsAvailable = computed($responses, (responses) =>
   responses.length >= 10
 );
+
+/** Current adaptive selection phase: calibrate → map → learn (FR-V052, CL-046) */
+export const $phase = computed([$responses, $estimates], (responses, estimates) => {
+  const answeredCount = responses.length;
+  if (answeredCount < 10) return 'calibrate';
+  // Coverage = fraction of non-unknown cells with uncertainty < 0.5
+  if (estimates.length === 0) return 'map';
+  const occupied = estimates.filter((e) => e.state !== 'unknown');
+  if (occupied.length === 0) return 'map';
+  const covered = occupied.filter((e) => e.uncertainty < 0.5).length;
+  const coverage = covered / occupied.length;
+  if (answeredCount < 30 || coverage < 0.15) return 'map';
+  return 'learn';
+});

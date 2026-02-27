@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Mary Ainsworth's Strange Situation procedure observes infants aged 9-30 months across eight episodes involving separations from and reunions with caregivers. What behavioral pattern defines a securely attached infant in this procedure?",
+    "correct_answer": "The infant uses the caregiver as a secure base for exploration, shows distress upon separation, and displays positive greeting upon reunion",
+    "distractors": [
+      "The infant shows no preference between the caregiver and the stranger, exploring equally regardless of who is present in the room",
+      "The infant clings to the caregiver continuously throughout all episodes and refuses to explore the environment at any point",
+      "The infant displays contradictory behaviors such as approaching the caregiver while simultaneously turning away and freezing"
+    ],
+    "difficulty": 2,
+    "source_article": "Strange situation",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["Strange Situation"]
+  },
+  {
+    "question_text": "Research on gender development shows that children begin to acquire a rudimentary sense of gender identity between 27 and 30 months of age. According to cognitive developmental theory, what concept must children achieve for full gender socialization to occur?",
+    "correct_answer": "Gender constancy, the understanding that gender is stable over time and consistent across situations",
+    "distractors": [
+      "Gender fluidity, the realization that gender can change spontaneously depending on social context and clothing",
+      "Gender salience, the ability to detect gender-related cues in the environment before age one",
+      "Gender imprinting, the one-time bonding to a same-sex parent that permanently fixes gender role preferences"
+    ],
+    "difficulty": 2,
+    "source_article": "Gender development",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["gender development"]
+  },
+  {
+    "question_text": "The adolescent brain undergoes significant structural changes including myelination and synaptic pruning. Which brain region is among the last to fully mature, typically not completing development until approximately age 25?",
+    "correct_answer": "The prefrontal cortex, which is responsible for planning, decision-making, and impulse control",
+    "distractors": [
+      "The occipital lobe, which processes visual information and completes maturation during early puberty",
+      "The hippocampus, which consolidates long-term memory and reaches full size by middle childhood",
+      "The cerebellum, which coordinates motor movements and finishes developing before the onset of adolescence"
+    ],
+    "difficulty": 2,
+    "source_article": "Adolescent brain",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["adolescent brain development"]
+  },
+  {
+    "question_text": "Vygotsky's zone of proximal development (ZPD) describes the gap between what a learner can do independently and what they can achieve with guidance. Wood, Bruner, and Ross (1976) introduced a related instructional concept that Vygotsky himself never used. What is this concept?",
+    "correct_answer": "Scaffolding, the temporary support provided by a more skilled partner that is gradually withdrawn as competence increases",
+    "distractors": [
+      "Modeling, the permanent demonstration of expert behavior that learners observe but are never expected to replicate independently",
+      "Successive approximation, the behavioral shaping technique that reinforces closer and closer approximations to a target response",
+      "Guided discovery, the Piagetian method in which children are left to explore materials alone until they construct new knowledge"
+    ],
+    "difficulty": 3,
+    "source_article": "Zone of proximal development",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["zone of proximal development application"]
+  },
+  {
+    "question_text": "The Sally-Anne test is a classic false-belief task used to assess theory of mind. Sally places a marble in her basket and leaves; Anne moves the marble to her box. When asked where Sally will look for her marble, at what age do most children reliably pass this task?",
+    "correct_answer": "Around age 4 to 5, when children can represent that Sally holds a belief different from reality",
+    "distractors": [
+      "Around age 2, when children first demonstrate symbolic play and can use objects to represent other objects",
+      "Around age 7 to 8, when children enter Piaget's concrete operational stage and master conservation tasks",
+      "Around age 10 to 11, when children develop formal operational thinking and can reason about hypotheticals"
+    ],
+    "difficulty": 3,
+    "source_article": "Theory of mind",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["theory of mind development"]
+  },
+  {
+    "question_text": "Kohlberg's model organizes moral development into three levels, each containing two stages. At the postconventional level, what distinguishes moral reasoning from the conventional level?",
+    "correct_answer": "Individuals reason according to self-chosen ethical principles such as justice and human rights, which may override societal rules",
+    "distractors": [
+      "Individuals base moral judgments on whether actions will result in direct punishment or tangible reward for themselves",
+      "Individuals conform to rules primarily to gain social approval and maintain relationships with authority figures",
+      "Individuals defer to legal statutes as the final arbiter of morality and believe laws should never be disobeyed"
+    ],
+    "difficulty": 3,
+    "source_article": "Lawrence Kohlberg's stages of moral development",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["Kohlberg's stages of moral development"]
+  },
+  {
+    "question_text": "Executive function encompasses three core components that develop at different rates across childhood and adolescence. Which component follows a relatively linear developmental trajectory from preschool into young adulthood, rather than showing rapid early improvement?",
+    "correct_answer": "Working memory, which increases gradually and steadily from the preschool years through early adulthood",
+    "distractors": [
+      "Inhibitory control, which reaches adult-level performance during the preschool years and remains stable thereafter",
+      "Cognitive flexibility, which emerges fully formed at school entry and shows no further improvement after age seven",
+      "Attentional control, which appears only in adolescence once prefrontal myelination is substantially complete"
+    ],
+    "difficulty": 3,
+    "source_article": "Executive functions",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["executive function development"]
+  },
+  {
+    "question_text": "Developmental psychology distinguishes sensitive periods from critical periods. How does a sensitive period differ from a critical period in terms of the consequences of missing the optimal developmental window?",
+    "correct_answer": "In a sensitive period, learning is optimal but still possible outside the window; in a critical period, the capacity is permanently lost if the window is missed",
+    "distractors": [
+      "Sensitive periods apply only to motor skills while critical periods apply exclusively to cognitive and linguistic abilities",
+      "Sensitive periods occur prenatally whereas critical periods are restricted to the postnatal first year of life",
+      "Sensitive periods are determined entirely by genetic maturation while critical periods are triggered solely by environmental input"
+    ],
+    "difficulty": 3,
+    "source_article": "Sensitive period",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["sensitive period"]
+  },
+  {
+    "question_text": "Social referencing is an infant behavior that typically emerges between 8 and 10 months of age. What specific behavioral sequence defines social referencing when an infant encounters an ambiguous stimulus?",
+    "correct_answer": "The infant looks to the caregiver's face, reads their emotional expression, and then adjusts approach or avoidance behavior accordingly",
+    "distractors": [
+      "The infant cries to summon the caregiver, waits for physical contact, and then resumes exploration only when held",
+      "The infant imitates the caregiver's motor actions toward the object, reproducing the exact gestures observed moments earlier",
+      "The infant points to the ambiguous object to direct the caregiver's attention and then waits for a verbal label"
+    ],
+    "difficulty": 3,
+    "source_article": "Social referencing",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["social referencing"]
+  },
+  {
+    "question_text": "In the A-not-B task, after repeatedly finding a hidden toy at location A, infants aged 8-12 months continue reaching to A even after watching the toy being moved to location B. Piaget attributed this perseverative error to incomplete object permanence, but what alternative explanation has subsequent research proposed?",
+    "correct_answer": "Immature prefrontal cortex function limits the infant's ability to inhibit a previously rewarded motor response",
+    "distractors": [
+      "Infants lack depth perception at this age and cannot visually distinguish between the two hiding locations",
+      "The error reflects a preference for familiar spatial locations driven by the hippocampal place-cell system",
+      "Infants understand the object's new location but deliberately choose A to maintain social interaction with the experimenter"
+    ],
+    "difficulty": 3,
+    "source_article": "A-not-B error",
+    "domain_ids": ["developmental-psychology"],
+    "concepts_tested": ["object permanence and A-not-B error"]
+  }
+]

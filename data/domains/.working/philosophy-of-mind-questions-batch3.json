@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Type physicalism, also known as the mind-brain identity theory, identifies types of mental states with types of brain states. Who developed this theory as a direct reaction to the failure of which earlier approach?",
+    "correct_answer": "J.J.C. Smart and Ullin Place developed it as a reaction to behaviourism",
+    "distractors": [
+      "Hilary Putnam and Jerry Fodor developed it as a reaction to dualism",
+      "Paul Churchland and Daniel Dennett developed it as a reaction to functionalism",
+      "Donald Davidson and Jaegwon Kim developed it as a reaction to epiphenomenalism"
+    ],
+    "difficulty": 2,
+    "source_article": "Type physicalism",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["identity theory"]
+  },
+  {
+    "question_text": "Eliminative materialism claims that common-sense mental state categories such as beliefs and desires do not actually exist. Which two philosophers have been most influential in advancing this radical position?",
+    "correct_answer": "Paul Churchland and Patricia Churchland",
+    "distractors": [
+      "Daniel Dennett and Hilary Putnam",
+      "Jerry Fodor and Ned Block",
+      "David Chalmers and Frank Jackson"
+    ],
+    "difficulty": 2,
+    "source_article": "Eliminative materialism",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["eliminative materialism"]
+  },
+  {
+    "question_text": "In philosophy of mind, what does the term 'folk psychology' refer to, and what are the two main mental state concepts it employs to explain human behaviour?",
+    "correct_answer": "The ordinary, intuitive framework people use to explain behaviour through beliefs and desires",
+    "distractors": [
+      "The scientific study of cultural traditions through observations and hypotheses",
+      "The clinical framework therapists use to treat patients through drives and complexes",
+      "The evolutionary account of cognition explained through instincts and reflexes"
+    ],
+    "difficulty": 2,
+    "source_article": "Folk psychology",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["folk psychology"]
+  },
+  {
+    "question_text": "The problem of mental causation asks how mental states can cause physical events. Which sub-problem, concerning whether mental causes are preempted by sufficient physical causes, has attracted the most philosophical attention?",
+    "correct_answer": "The causal exclusion problem",
+    "distractors": [
+      "The interaction problem",
+      "The overdetermination problem",
+      "The explanatory gap problem"
+    ],
+    "difficulty": 2,
+    "source_article": "Problem of mental causation",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["mental causation"]
+  },
+  {
+    "question_text": "A philosophical zombie (p-zombie) is physically identical to a normal human but lacks one crucial feature. What does a p-zombie lack, and against which broad philosophical position is the thought experiment directed?",
+    "correct_answer": "It lacks conscious experience and is used as an argument against physicalism",
+    "distractors": [
+      "It lacks rational thought and is used as an argument against functionalism",
+      "It lacks free will and is used as an argument against compatibilism",
+      "It lacks linguistic ability and is used as an argument against behaviourism"
+    ],
+    "difficulty": 2,
+    "source_article": "Philosophical zombie",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["philosophical zombie"]
+  },
+  {
+    "question_text": "Ned Block drew an influential distinction between two kinds of consciousness. What does phenomenal consciousness refer to, as contrasted with access consciousness?",
+    "correct_answer": "The subjective, qualitative character of experience — what it is like to be in a mental state",
+    "distractors": [
+      "The ability to verbally report on and rationally reason about one's own internal mental states",
+      "The capacity to deliberately monitor, regulate, and adjust one's own ongoing cognitive processes",
+      "The set of neural correlates of consciousness that can be detected through modern brain imaging"
+    ],
+    "difficulty": 2,
+    "source_article": "Phenomenal consciousness",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["phenomenal consciousness"]
+  },
+  {
+    "question_text": "David Chalmers first articulated the 'hard problem of consciousness' in 1994. What distinguishes the hard problem from the so-called 'easy problems' of consciousness?",
+    "correct_answer": "Easy problems explain cognitive functions and behaviour; the hard problem asks why physical processes produce subjective experience",
+    "distractors": [
+      "Easy problems address brain anatomy; the hard problem asks how neurons generate electrical signals",
+      "Easy problems study unconscious processing; the hard problem asks why sleep is necessary for survival",
+      "Easy problems describe sensory pathways; the hard problem asks how the brain stores long-term memories"
+    ],
+    "difficulty": 3,
+    "source_article": "Hard problem of consciousness",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["hard problem of consciousness"]
+  },
+  {
+    "question_text": "In John Searle's 1980 Chinese room thought experiment, a person follows English instructions to manipulate Chinese symbols without understanding Chinese. What philosophical conclusion does Searle draw from this scenario?",
+    "correct_answer": "That syntactic symbol manipulation alone is insufficient for genuine semantic understanding or mind",
+    "distractors": [
+      "That only biological neural networks are capable of producing any form of intelligent output",
+      "That language translation requires at least two fluent speakers to achieve successful communication",
+      "That computers can achieve real understanding provided they are given sufficiently detailed programming"
+    ],
+    "difficulty": 3,
+    "source_article": "Chinese room",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["Chinese room argument"]
+  },
+  {
+    "question_text": "Hilary Putnam argued in the 1960s that the same mental state can be realised by different physical substrates, using examples such as humans, aliens, and robots all feeling pain. What is this thesis called, and which theory does it primarily challenge?",
+    "correct_answer": "Multiple realizability; it challenges type identity theory, which equates mental types with specific brain state types",
+    "distractors": [
+      "Functionalism; it challenges eliminative materialism, which denies the existence of mental states entirely",
+      "Anomalous monism; it challenges property dualism, which posits non-physical mental properties alongside physical ones",
+      "Neutral monism; it challenges substance dualism, which separates mind and body into distinct substances"
+    ],
+    "difficulty": 3,
+    "source_article": "Multiple realizability",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["multiple realizability"]
+  },
+  {
+    "question_text": "Donald Davidson introduced the concept of supervenience to philosophy of mind in his 1970 essay 'Mental Events'. How is the supervenience of the mental on the physical typically formulated?",
+    "correct_answer": "There cannot be a mental difference between two entities without a corresponding physical difference",
+    "distractors": [
+      "Every mental property is numerically identical to exactly one specific physical property",
+      "Mental states are causally inert byproducts that always accompany physical processes",
+      "Physical laws can be directly translated into psychological laws without any residue"
+    ],
+    "difficulty": 3,
+    "source_article": "Supervenience",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["supervenience"]
+  }
+]

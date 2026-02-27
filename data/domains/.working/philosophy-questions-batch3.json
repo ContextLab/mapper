@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Which philosophical concept, associated with John Locke, holds that the mind at birth is a 'tabula rasa' shaped entirely by sensory experience?",
+    "correct_answer": "Empiricism, the view that true knowledge comes only or primarily from sensory experience and empirical evidence.",
+    "distractors": [
+      "Rationalism, the view that knowledge is innate and accessed through pure reason without sensory input.",
+      "Idealism, the doctrine that reality is fundamentally mental and material objects are mind-dependent.",
+      "Nativism, the theory that complex behavioral traits are genetically hardwired at birth."
+    ],
+    "difficulty": 2,
+    "source_article": "Empiricism",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["empiricism"]
+  },
+  {
+    "question_text": "What distinguishes rationalism from empiricism in epistemology?",
+    "correct_answer": "Rationalism holds that reason, rather than sensory experience, is the chief source and test of knowledge.",
+    "distractors": [
+      "Rationalism claims that all knowledge is uncertain and advocates permanent suspension of judgment.",
+      "Rationalism asserts that knowledge comes exclusively from religious faith and spiritual revelation.",
+      "Rationalism maintains that knowledge is socially constructed through language and cultural practices."
+    ],
+    "difficulty": 2,
+    "source_article": "Rationalism",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["rationalism"]
+  },
+  {
+    "question_text": "What is the goal of Pyrrhonian skepticism, the ancient Greek school founded on the teachings of Pyrrho of Elis?",
+    "correct_answer": "Ataraxia, a state of mental tranquility achieved through the suspension of judgment on all beliefs.",
+    "distractors": [
+      "Eudaimonia, a flourishing life achieved through the practice of moral and intellectual virtues.",
+      "Apatheia, the complete elimination of all emotions through Stoic rational discipline.",
+      "Episteme, the attainment of absolute certain knowledge through rigorous logical demonstration."
+    ],
+    "difficulty": 2,
+    "source_article": "Philosophical skepticism",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["skepticism"]
+  },
+  {
+    "question_text": "In Husserl's phenomenology, what does the technique of 'epoché' (or bracketing) require the philosopher to do?",
+    "correct_answer": "Suspend all assumptions about the objective existence of the external world during analysis.",
+    "distractors": [
+      "Deduce universal truths from self-evident axioms using formal logical notation.",
+      "Empirically observe physical phenomena under controlled experimental laboratory conditions.",
+      "Reconstruct an author's original biographical intentions when interpreting a written text."
+    ],
+    "difficulty": 2,
+    "source_article": "Phenomenology (philosophy)",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["phenomenology"]
+  },
+  {
+    "question_text": "Who articulated the pragmatic maxim in the 1878 essay 'How to Make Our Ideas Clear,' founding the philosophical tradition of pragmatism?",
+    "correct_answer": "Charles Sanders Peirce, who argued that a concept's meaning lies in its practical consequences.",
+    "distractors": [
+      "William James, who proposed that truth is whatever proves useful in practical human affairs.",
+      "John Dewey, who developed the theory of inquiry as a process of experimental problem-solving.",
+      "Richard Rorty, who rejected the idea that language mirrors an objective external reality."
+    ],
+    "difficulty": 2,
+    "source_article": "Pragmatism",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["pragmatism"]
+  },
+  {
+    "question_text": "What is the 'elenchus,' the central technique of the Socratic method as depicted in Plato's dialogues?",
+    "correct_answer": "A process of cross-examination using questions to expose contradictions in an interlocutor's beliefs.",
+    "distractors": [
+      "A formal syllogistic proof that deduces conclusions from two premises using Aristotelian logic.",
+      "A meditative practice of introspection designed to achieve direct knowledge of Plato's Forms.",
+      "A rhetorical technique of persuading audiences through emotional appeals and vivid storytelling."
+    ],
+    "difficulty": 2,
+    "source_article": "Socratic method",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["Socratic method"]
+  },
+  {
+    "question_text": "Which French Enlightenment philosopher coined the term 'philosophy of history' to promote critical thinking about the past?",
+    "correct_answer": "Voltaire, who distinguished critical historical analysis from the mere repetition of stories.",
+    "distractors": [
+      "Jean-Jacques Rousseau, who argued that civilization corrupts the natural goodness of humanity.",
+      "Denis Diderot, who edited the Encyclopédie to systematize all branches of human knowledge.",
+      "Montesquieu, who analyzed the separation of governmental powers in The Spirit of the Laws."
+    ],
+    "difficulty": 3,
+    "source_article": "Philosophy of history",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["philosophy of history"]
+  },
+  {
+    "question_text": "Hermeneutics originated as a method for interpreting which type of texts before expanding into a general philosophical discipline?",
+    "correct_answer": "Biblical and sacred scriptures, through the practice of scriptural exegesis.",
+    "distractors": [
+      "Ancient Greek mathematical proofs, through the analysis of geometric demonstration methods.",
+      "Roman legal codes, through the systematic classification of civil and criminal statutes.",
+      "Aristotelian scientific treatises, through the empirical verification of natural observations."
+    ],
+    "difficulty": 3,
+    "source_article": "Hermeneutics",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["hermeneutics"]
+  },
+  {
+    "question_text": "Karl Popper introduced falsifiability in his 1934 book 'The Logic of Scientific Discovery' as a solution to which central problem in philosophy of science?",
+    "correct_answer": "The demarcation problem: distinguishing genuine scientific theories from non-scientific ones.",
+    "distractors": [
+      "The mind-body problem: explaining how mental states relate to physical brain processes.",
+      "The problem of universals: determining whether abstract properties exist independently of particulars.",
+      "The is-ought problem: deriving normative moral conclusions from purely descriptive factual premises."
+    ],
+    "difficulty": 3,
+    "source_article": "Falsifiability",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["falsifiability"]
+  },
+  {
+    "question_text": "In Thomas Kuhn's 'The Structure of Scientific Revolutions' (1962), what does a paradigm shift describe?",
+    "correct_answer": "A fundamental change in the basic concepts and practices of a scientific discipline during a scientific revolution.",
+    "distractors": [
+      "A gradual accumulation of experimental data that steadily refines an existing well-confirmed theory.",
+      "A formal logical proof that one scientific framework is mathematically equivalent to another.",
+      "A consensus agreement among scientists to adopt standardized measurement units and laboratory protocols."
+    ],
+    "difficulty": 3,
+    "source_article": "Paradigm shift",
+    "domain_ids": ["philosophy"],
+    "concepts_tested": ["paradigm shift"]
+  }
+]

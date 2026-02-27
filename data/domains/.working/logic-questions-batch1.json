@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Logic is broadly divided into two main branches based on how arguments are evaluated. What are these two branches, and how do they differ in their approach to assessing reasoning?",
+    "correct_answer": "Formal logic and informal logic. Formal logic studies deductively valid inferences by examining the abstract structure of arguments independent of their content. Informal logic develops non-formal standards and criteria for analyzing and evaluating argumentation.",
+    "distractors": [
+      "Theoretical logic and applied logic. Theoretical logic studies hypothetical arguments that have no real-world referents, while applied logic evaluates only arguments drawn from empirical scientific observations and experimental data.",
+      "Symbolic logic and verbal logic. Symbolic logic uses mathematical equations to calculate the probability of conclusions, while verbal logic relies exclusively on rhetorical persuasiveness to determine argument quality.",
+      "Classical logic and modern logic. Classical logic evaluates arguments solely by whether their conclusions are factually true, while modern logic evaluates arguments solely by whether their premises are accepted by a majority of experts."
+    ],
+    "difficulty": 1,
+    "source_article": "Logic",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["logic"]
+  },
+  {
+    "question_text": "In logic, an argument consists of specific structural components. What are the two essential components of an argument, and what is the relationship between them?",
+    "correct_answer": "An argument consists of one or more premises and a conclusion. The premises are statements offered as reasons or evidence intended to support or prove the truth of the conclusion.",
+    "distractors": [
+      "An argument consists of a hypothesis and an observation. The hypothesis is a speculative claim, and the observation is sensory evidence that automatically confirms or refutes the hypothesis without further reasoning.",
+      "An argument consists of a thesis and an antithesis. The thesis states a position, and the antithesis states the exact opposite, with the stronger rhetorical statement always winning the argument by definition.",
+      "An argument consists of axioms and theorems. The axioms are universally accepted mathematical truths, and the theorems are experimental results that must be verified in a laboratory before the argument is considered complete."
+    ],
+    "difficulty": 1,
+    "source_article": "Argument",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["argument"]
+  },
+  {
+    "question_text": "Deductive reasoning moves in a specific logical direction and offers a distinctive guarantee about its conclusions. What direction does deductive reasoning proceed, and what guarantee does a valid deductive argument provide?",
+    "correct_answer": "Deductive reasoning proceeds from general premises to specific conclusions (top-down). A valid deductive argument guarantees that if the premises are true, the conclusion must necessarily be true -- it is impossible for the premises to be true and the conclusion false.",
+    "distractors": [
+      "Deductive reasoning proceeds from specific observations to general laws (bottom-up). A valid deductive argument guarantees that the conclusion is probably true based on statistical frequency and the weight of accumulated empirical evidence.",
+      "Deductive reasoning proceeds from effect to cause in a linear chain. A valid deductive argument guarantees that the conclusion will be confirmed by future experimental testing, though it may be revised as new data becomes available.",
+      "Deductive reasoning proceeds from simple ideas to complex theories by combination. A valid deductive argument guarantees that the conclusion is the simplest possible explanation, following the principle of parsimony or Occam's razor."
+    ],
+    "difficulty": 1,
+    "source_article": "Deductive reasoning",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["deduction"]
+  },
+  {
+    "question_text": "Inductive reasoning differs from deductive reasoning in the direction of inference and the certainty of its conclusions. How does inductive reasoning proceed, and what level of certainty does it provide?",
+    "correct_answer": "Inductive reasoning proceeds from specific observations to general conclusions (bottom-up). It establishes that the conclusion is probable or likely given the evidence, but it cannot guarantee the conclusion is true -- no amount of inductive evidence provides absolute certainty.",
+    "distractors": [
+      "Inductive reasoning proceeds from general axioms to specific predictions (top-down). It provides absolute certainty as long as the initial axioms are accepted, because the conclusion follows necessarily from the universal starting principles.",
+      "Inductive reasoning proceeds from a conclusion back to its premises in reverse order. It provides certainty equal to deduction because both forms of reasoning rely on the same formal rules of logical inference and truth preservation.",
+      "Inductive reasoning proceeds from abstract definitions to concrete instances by classification. It provides mathematical certainty because each observation that fits the pattern exponentially increases the proof value until certainty is reached at a known threshold."
+    ],
+    "difficulty": 1,
+    "source_article": "Inductive reasoning",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["induction"]
+  },
+  {
+    "question_text": "A premise plays a specific role in the structure of a logical argument. What is a premise, and what is the relationship between the truth of premises and the soundness of an argument?",
+    "correct_answer": "A premise is a proposition (a true or false declarative statement) used in an argument to support or prove the truth of the conclusion. An argument is sound if and only if it is valid and all of its premises are actually true.",
+    "distractors": [
+      "A premise is the final statement derived at the end of an argument after all reasoning steps are complete. An argument is sound whenever its premises are emotionally compelling, regardless of their truth value or logical structure.",
+      "A premise is an unproven assumption that must be accepted on faith before any argument can begin. An argument is sound whenever it contains at least three premises, since more premises always produce stronger logical support for any conclusion.",
+      "A premise is a question posed at the beginning of an argument to frame the inquiry. An argument is sound whenever its conclusion has been independently verified by experiment, regardless of the logical relationship between premises and conclusion."
+    ],
+    "difficulty": 1,
+    "source_article": "Premise",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["premise"]
+  },
+  {
+    "question_text": "In logic, the concept of logical consequence describes a fundamental relationship within arguments. What does it mean for a conclusion to be a logical consequence of premises, according to the model-theoretic conception?",
+    "correct_answer": "A conclusion is a logical consequence of the premises when no counterexample is possible: under no interpretation can the premises be true and the conclusion false. The relationship is both necessary and formal, depending on the logical structure rather than specific content.",
+    "distractors": [
+      "A conclusion is a logical consequence of the premises when a majority of known interpretations make both the premises and conclusion true simultaneously, even if some rare interpretations allow the premises to be true while the conclusion is false.",
+      "A conclusion is a logical consequence of the premises when the conclusion has been empirically verified through controlled experiments, since logical consequence ultimately depends on whether statements correspond to observable facts in the physical world.",
+      "A conclusion is a logical consequence of the premises when the conclusion is more intuitively plausible than any alternative statement, because logical consequence is determined by the degree of psychological conviction the argument produces in rational thinkers."
+    ],
+    "difficulty": 1,
+    "source_article": "Logical consequence",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["conclusion"]
+  },
+  {
+    "question_text": "A paradox is a distinctive type of logical phenomenon. What defines a paradox, and what three core features do many paradoxes share?",
+    "correct_answer": "A paradox is a statement that, despite apparently valid reasoning from true or apparently true premises, leads to a seemingly self-contradictory or logically unacceptable conclusion. The three core features many paradoxes share are self-reference, contradiction, and non-terminating recursion (circular reasoning or infinite regress).",
+    "distractors": [
+      "A paradox is any statement that most people find surprising or counterintuitive upon first reading. The three core features are ambiguity of language, emotional provocation, and cultural relativity, since paradoxes only appear contradictory due to differing cultural norms.",
+      "A paradox is a factual claim that has been disproven by scientific evidence but remains popular in everyday speech. The three core features are empirical falsity, historical persistence, and rhetorical appeal, which explain why disproven ideas endure in common usage.",
+      "A paradox is a deliberately constructed trick question designed to confuse an audience. The three core features are deceptive framing, hidden premises, and equivocation on key terms, all of which are resolved once the trick is revealed."
+    ],
+    "difficulty": 1,
+    "source_article": "Paradox",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["paradox"]
+  },
+  {
+    "question_text": "Fallacies are classified into two main categories. What are these two categories, and what is the key difference between them?",
+    "correct_answer": "Formal fallacies and informal fallacies. A formal fallacy has a flaw in its logical structure, making the argument invalid regardless of the truth of its premises. An informal fallacy may have a valid logical form but is unsound because one or more premises are false.",
+    "distractors": [
+      "Intentional fallacies and accidental fallacies. An intentional fallacy occurs when a speaker deliberately lies about their premises, while an accidental fallacy occurs when a speaker makes an honest factual mistake, with both categories sharing the same logical structure.",
+      "Deductive fallacies and inductive fallacies. A deductive fallacy occurs only in arguments with exactly two premises and one conclusion, while an inductive fallacy occurs only in arguments with three or more premises and multiple conclusions.",
+      "Syntactic fallacies and semantic fallacies. A syntactic fallacy occurs when sentences are grammatically incorrect, making them impossible to evaluate, while a semantic fallacy occurs when words are used in their literal dictionary definitions rather than their intended meanings."
+    ],
+    "difficulty": 1,
+    "source_article": "Fallacy",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["fallacy"]
+  },
+  {
+    "question_text": "Validity is a central concept in deductive logic. What makes a deductive argument valid, and does validity require the premises to be actually true?",
+    "correct_answer": "A deductive argument is valid if its logical form makes it impossible for the premises to be true and the conclusion false. Validity does not require the premises to be actually true -- it only requires that if they were true, the conclusion would necessarily follow.",
+    "distractors": [
+      "A deductive argument is valid if its conclusion has been confirmed by empirical evidence gathered through controlled observation. Validity requires all premises to be actually true, since an argument with any false premise is automatically classified as invalid.",
+      "A deductive argument is valid if the majority of logicians agree that the conclusion is reasonable given the premises. Validity requires at least one premise to be a well-established scientific law, since logical arguments must ultimately be grounded in empirical fact.",
+      "A deductive argument is valid if its conclusion is more probable than not, given standard probability calculations applied to the premises. Validity requires the premises to be actually true and the conclusion to be novel, since arguments with obvious conclusions are considered trivially invalid."
+    ],
+    "difficulty": 1,
+    "source_article": "Validity (logic)",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["validity"]
+  },
+  {
+    "question_text": "In formal logic, a contradiction has a precise definition connected to the law of noncontradiction. What is a contradiction in formal logic, and how is the law of noncontradiction expressed?",
+    "correct_answer": "In formal logic, a contradiction is a proposition that is unconditionally false (a self-contradictory proposition from which falsity can be derived). The law of noncontradiction states that a proposition and its negation cannot both be true simultaneously, expressed as the tautology NOT(P AND NOT-P).",
+    "distractors": [
+      "In formal logic, a contradiction is any proposition whose truth value is currently unknown or undetermined by available evidence. The law of noncontradiction states that every proposition must be either proven or disproven within a finite number of logical steps.",
+      "In formal logic, a contradiction is a proposition that is true in some possible worlds but false in others depending on context. The law of noncontradiction states that no proposition can be true in more than half of all possible worlds at any given time.",
+      "In formal logic, a contradiction is any pair of propositions asserted by two different people who disagree with each other. The law of noncontradiction states that when two people hold opposing views, at least one of them must be reasoning from false premises."
+    ],
+    "difficulty": 1,
+    "source_article": "Contradiction",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["contradiction"]
+  }
+]

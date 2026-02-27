@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Cultural criminology examines how cultural dynamics, media representations, and meaning-making shape crime and deviance. Which scholars are most closely associated with founding this perspective in the mid-1990s?",
+    "correct_answer": "Jeff Ferrell, Keith Hayward, and Jock Young developed cultural criminology, drawing on ethnographic methods and cultural studies.",
+    "distractors": [
+      "Robert Sampson, John Laub, and Travis Hirschi developed cultural criminology, drawing on longitudinal data and social control theory.",
+      "Jock Young, John Lea, and Roger Matthews developed cultural criminology, drawing on victimization surveys and left realist theory.",
+      "Jack Katz, David Garland, and Stanley Cohen developed cultural criminology, drawing on psychoanalytic methods and moral panic theory."
+    ],
+    "difficulty": 4,
+    "source_article": "Cultural criminology",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["cultural criminology"]
+  },
+  {
+    "question_text": "Left realism emerged in 1980s British criminology as a corrective to both right realism and left idealism. What analytical framework did Jock Young introduce to model the interactions among offender, victim, state, and public?",
+    "correct_answer": "The 'square of crime,' which positions offenders and victims as actors and the state and civil society as reactors.",
+    "distractors": [
+      "The 'triangle of crime,' which positions offenders, victims, and the state as three interdependent vertices.",
+      "The 'circle of crime,' which positions offenders and victims at the center with state and media as outer influences.",
+      "The 'pyramid of crime,' which positions the state at the apex with offenders, victims, and public at the base."
+    ],
+    "difficulty": 4,
+    "source_article": "Left realism",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["left realism"]
+  },
+  {
+    "question_text": "Gottfredson and Hirschi's 'A General Theory of Crime' (1990) identifies a single factor as the primary cause of all criminal behavior. What is this factor, and when do they argue it becomes established?",
+    "correct_answer": "Low self-control, which they argue is established by age ten through ineffective parenting and remains stable across the life course.",
+    "distractors": [
+      "High impulsivity, which they argue is established by age five through genetic inheritance and remains stable across the life course.",
+      "Low self-control, which they argue is established by age eighteen through peer influence and remains stable across the life course.",
+      "Weak social bonds, which they argue are established by age ten through ineffective parenting and remain stable across the life course."
+    ],
+    "difficulty": 4,
+    "source_article": "Self-control theory of crime",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["general theory of crime"]
+  },
+  {
+    "question_text": "Life-course criminology distinguishes between different offending trajectories. In Terrie Moffitt's influential 1993 dual taxonomy, what are the two types of antisocial offenders she identifies?",
+    "correct_answer": "Adolescence-limited offenders, who desist in young adulthood, and life-course-persistent offenders, whose behavior originates in neurodevelopmental processes.",
+    "distractors": [
+      "Early-onset offenders, who desist after first arrest, and chronic offenders, whose behavior originates in socioeconomic deprivation.",
+      "Situational offenders, who desist after environmental change, and pathological offenders, whose behavior originates in genetic predisposition.",
+      "Opportunistic offenders, who desist when targets harden, and habitual offenders, whose behavior originates in differential association with peers."
+    ],
+    "difficulty": 4,
+    "source_article": "Developmental theory of crime",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["life-course criminology"]
+  },
+  {
+    "question_text": "Zemiology is a critical discipline that originated as a challenge to conventional criminology. From which Greek word does 'zemiology' derive its name, and what does it advocate studying instead of legally defined crime?",
+    "correct_answer": "From the Greek word 'zemia' meaning harm; it advocates studying social harms including structural, institutional, and economic harms beyond criminal law.",
+    "distractors": [
+      "From the Greek word 'zomos' meaning justice; it advocates studying failures of justice including wrongful convictions beyond criminal law.",
+      "From the Greek word 'zemia' meaning harm; it advocates studying psychological trauma including individual victimization beyond criminal law.",
+      "From the Greek word 'zoon' meaning life; it advocates studying threats to human survival including environmental degradation beyond criminal law."
+    ],
+    "difficulty": 4,
+    "source_article": "Zemiology",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["zemiology"]
+  },
+  {
+    "question_text": "Green criminology, first proposed by Michael Lynch in 1990, extends criminological analysis beyond conventional offenses. What was its original theoretical foundation, and what broader harms does it examine?",
+    "correct_answer": "It was originally proposed as an extension of radical criminology and political economy, examining harms and crimes against the environment, wildlife, and biodiversity.",
+    "distractors": [
+      "It was originally proposed as an extension of routine activity theory and rational choice, examining harms and crimes against the environment, wildlife, and biodiversity.",
+      "It was originally proposed as an extension of radical criminology and political economy, examining harms and crimes against corporate shareholders, consumers, and regulators.",
+      "It was originally proposed as an extension of labeling theory and social constructionism, examining harms and crimes against the environment, wildlife, and biodiversity."
+    ],
+    "difficulty": 4,
+    "source_article": "Green criminology",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["green criminology"]
+  },
+  {
+    "question_text": "Developmental criminology identifies early risk factors and pathways leading to criminal careers. Which pioneering longitudinal study, begun in the 1940s, provided foundational data later reanalyzed by Sampson and Laub?",
+    "correct_answer": "The Gluecks' study of 500 delinquent boys and 500 non-delinquent controls, which Sampson and Laub extended by tracing participants into their 70s.",
+    "distractors": [
+      "The Cambridge Study in Delinquent Development of 411 London males, which Sampson and Laub extended by tracing participants into their 70s.",
+      "The Gluecks' study of 500 delinquent boys and 500 non-delinquent controls, which Sampson and Laub extended by tracing participants into their 40s.",
+      "The Philadelphia Birth Cohort study of 10,000 males, which Sampson and Laub extended by tracing participants into their 70s."
+    ],
+    "difficulty": 4,
+    "source_article": "Developmental theory of crime",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["developmental criminology"]
+  },
+  {
+    "question_text": "Desistance research examines why offenders stop committing crimes. According to Sampson and Laub's age-graded theory of informal social control, what key 'turning points' in adulthood promote desistance?",
+    "correct_answer": "Cohesive marriage, stable employment, and military service, which strengthen informal social bonds and provide structure that reduces offending.",
+    "distractors": [
+      "Religious conversion, residential relocation, and educational attainment, which strengthen informal social bonds and provide structure that reduces offending.",
+      "Cohesive marriage, stable employment, and military service, which strengthen formal legal controls and provide surveillance that reduces offending.",
+      "Incarceration, intensive probation, and mandatory treatment, which strengthen informal social bonds and provide structure that reduces offending."
+    ],
+    "difficulty": 4,
+    "source_article": "Desistance",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["desistance from crime"]
+  },
+  {
+    "question_text": "Convict criminology is a critical school that challenges mainstream criminological knowledge. Who co-founded this movement in 1997, and what distinguishes its scholars from traditional criminologists?",
+    "correct_answer": "Stephen C. Richards and Jeffrey Ian Ross co-founded it; its scholars include formerly incarcerated academics who draw on lived prison experience.",
+    "distractors": [
+      "John Irwin and Frank Tannenbaum co-founded it; its scholars include formerly incarcerated academics who draw on lived prison experience.",
+      "Stephen C. Richards and Jeffrey Ian Ross co-founded it; its scholars include active corrections officers who draw on professional institutional experience.",
+      "Stephen C. Richards and Jeffrey Ian Ross co-founded it; its scholars include defense attorneys who draw on courtroom advocacy experience."
+    ],
+    "difficulty": 4,
+    "source_article": "Convict criminology",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["convict criminology"]
+  },
+  {
+    "question_text": "James Q. Wilson's 'Varieties of Police Behavior' (1968) identified three distinctive organizational styles of policing shaped by local political culture. What are these three styles?",
+    "correct_answer": "The watchman style (order maintenance through discretion), the legalistic style (strict law enforcement), and the service style (community-oriented helping).",
+    "distractors": [
+      "The patrol style (visible deterrence through presence), the detective style (investigation-focused enforcement), and the community style (neighborhood-oriented helping).",
+      "The reactive style (responding only to reported crimes), the proactive style (aggressive enforcement), and the administrative style (procedure-oriented management).",
+      "The authoritarian style (order maintenance through force), the bureaucratic style (strict procedural compliance), and the democratic style (citizen-oriented policing)."
+    ],
+    "difficulty": 4,
+    "source_article": "Varieties of Police Behavior",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["policing styles (Skolnick/Wilson)"]
+  }
+]

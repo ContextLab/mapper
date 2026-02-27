@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In linguistic typology, which basic word order is the most common among the world's languages, found in languages such as Japanese, Turkish, and Korean?",
+    "correct_answer": "Subject-Object-Verb (SOV)",
+    "distractors": [
+      "Subject-Verb-Object (SVO)",
+      "Verb-Subject-Object (VSO)",
+      "Verb-Object-Subject (VOS)"
+    ],
+    "difficulty": 3,
+    "source_article": "Linguistic typology",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["language typology"]
+  },
+  {
+    "question_text": "In morphological typology, which type of language constructs words by stringing together clearly separable morphemes, each carrying a single grammatical meaning, as seen in Turkish and Swahili?",
+    "correct_answer": "Agglutinative languages",
+    "distractors": [
+      "Fusional languages",
+      "Isolating languages",
+      "Polysynthetic languages"
+    ],
+    "difficulty": 3,
+    "source_article": "Morphological typology",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["morphological typology"]
+  },
+  {
+    "question_text": "Which systematic sound change, first noted by Rasmus Rask and formalized by Jacob Grimm, describes the shift of Proto-Indo-European voiceless stops to voiceless fricatives in Proto-Germanic?",
+    "correct_answer": "Grimm's Law, also called the First Germanic Consonant Shift",
+    "distractors": [
+      "Verner's Law, also called the Second Germanic Consonant Shift",
+      "The Great Vowel Shift of Middle English pronunciation",
+      "Grassmann's Law, also called the Indo-European Aspiration Dissimilation"
+    ],
+    "difficulty": 3,
+    "source_article": "Sound change",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["sound change"]
+  },
+  {
+    "question_text": "In historical linguistics, what is the primary goal of the comparative method when applied to cognate forms across related languages?",
+    "correct_answer": "To reconstruct the features of their common ancestor, known as the proto-language",
+    "distractors": [
+      "To classify languages by their morphological type, such as isolating or fusional",
+      "To determine which modern language most closely resembles the original ancestor",
+      "To identify universal grammatical rules shared by all human languages"
+    ],
+    "difficulty": 3,
+    "source_article": "Comparative method",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["comparative method"]
+  },
+  {
+    "question_text": "In sociolinguistics, what distinguishes intrasentential code-switching from intersentential code-switching among bilingual speakers?",
+    "correct_answer": "Intrasentential switching occurs within a single sentence, while intersentential switching occurs at sentence boundaries",
+    "distractors": [
+      "Intrasentential switching uses formal registers only, while intersentential switching uses informal registers",
+      "Intrasentential switching involves borrowing single words, while intersentential switching involves translating idioms",
+      "Intrasentential switching occurs only in writing, while intersentential switching occurs only in speech"
+    ],
+    "difficulty": 3,
+    "source_article": "Code-switching",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["code-switching"]
+  },
+  {
+    "question_text": "Which argument does Noam Chomsky use to support his theory of Universal Grammar, claiming that children acquire language despite insufficient input from their environment?",
+    "correct_answer": "The poverty of the stimulus argument",
+    "distractors": [
+      "The critical period hypothesis argument",
+      "The linguistic relativity argument",
+      "The comparative reconstruction argument"
+    ],
+    "difficulty": 3,
+    "source_article": "Universal grammar",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["universal grammar"]
+  },
+  {
+    "question_text": "The critical period hypothesis, popularized by Eric Lenneberg in 1967, proposes that native-like language acquisition must occur before what developmental milestone?",
+    "correct_answer": "The onset of puberty, when brain lateralization becomes fixed",
+    "distractors": [
+      "The age of three, when babbling transitions to first words",
+      "The age of twenty-five, when prefrontal cortex development completes",
+      "The first year of life, when auditory processing pathways form"
+    ],
+    "difficulty": 3,
+    "source_article": "Critical period hypothesis",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["critical period hypothesis"]
+  },
+  {
+    "question_text": "The Sapir-Whorf hypothesis exists in two forms. What does the strong version (linguistic determinism) claim, in contrast to the weak version (linguistic relativity)?",
+    "correct_answer": "That language fully determines thought and perception, rather than merely influencing them",
+    "distractors": [
+      "That all languages share a universal deep structure, rather than differing only at the surface",
+      "That children acquire language innately, rather than learning it from environmental input",
+      "That writing systems shape cognition more than spoken language, rather than equally"
+    ],
+    "difficulty": 3,
+    "source_article": "Linguistic relativity",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["Sapir-Whorf hypothesis"]
+  },
+  {
+    "question_text": "In distinctive feature theory, Chomsky and Halle's 1968 work 'The Sound Pattern of English' formalized features as binary values. What does the feature [+voice] specifically indicate about a speech sound?",
+    "correct_answer": "That vibration of the vocal folds occurs during articulation of the segment",
+    "distractors": [
+      "That the velum is lowered allowing airflow through the nasal cavity",
+      "That the tongue body is raised toward the palate during production",
+      "That the airstream is released with a burst of aspiration after closure"
+    ],
+    "difficulty": 4,
+    "source_article": "Distinctive feature",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["distinctive feature"]
+  },
+  {
+    "question_text": "In Goldsmith's autosegmental phonology framework, what formal constraint prevents association lines linking tonal and segmental tiers from crossing each other?",
+    "correct_answer": "The no-crossing condition, a well-formedness constraint on multi-tiered representations",
+    "distractors": [
+      "The obligatory contour principle, which bans adjacent identical autosegments",
+      "The strict layer hypothesis, which requires proper prosodic nesting",
+      "The sonority sequencing principle, which governs syllable-internal segment order"
+    ],
+    "difficulty": 4,
+    "source_article": "Autosegmental phonology",
+    "domain_ids": ["linguistics"],
+    "concepts_tested": ["autosegmental phonology"]
+  }
+]

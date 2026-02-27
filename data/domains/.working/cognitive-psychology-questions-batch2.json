@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Philosopher David Chalmers coined the term 'hard problem of consciousness' to describe which unresolved question?",
+    "correct_answer": "Why and how physical brain processes give rise to subjective qualitative experience, or qualia.",
+    "distractors": [
+      "How neurons transmit electrical signals across synapses to coordinate voluntary motor responses.",
+      "Why certain brain regions become active during sleep and produce vivid dream imagery nightly.",
+      "How sensory organs convert physical energy into neural impulses that travel to the brain."
+    ],
+    "difficulty": 1,
+    "source_article": "Consciousness",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["consciousness"]
+  },
+  {
+    "question_text": "What is aphantasia, a condition related to imagination and mental imagery?",
+    "correct_answer": "The inability to voluntarily create visual mental images, first described by Francis Galton in 1880.",
+    "distractors": [
+      "The inability to voluntarily recall auditory memories, first described by Hermann Ebbinghaus in 1885.",
+      "The inability to voluntarily control attentional focus, first described by William James in 1890.",
+      "The inability to voluntarily suppress intrusive thoughts, first described by Sigmund Freud in 1895."
+    ],
+    "difficulty": 1,
+    "source_article": "Imagination",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["imagination"]
+  },
+  {
+    "question_text": "Hermann Ebbinghaus pioneered the scientific study of forgetting using nonsense syllables. What did his research reveal about the rate of memory loss?",
+    "correct_answer": "Memory loss is most rapid shortly after learning and then levels off, forming the forgetting curve.",
+    "distractors": [
+      "Memory loss occurs at a constant steady rate over time and never levels off, forming a linear decline.",
+      "Memory loss is slowest immediately after learning and then accelerates sharply, forming an exponential increase.",
+      "Memory loss does not begin until several weeks after learning and then drops suddenly, forming a step function."
+    ],
+    "difficulty": 1,
+    "source_article": "Forgetting",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["forgetting"]
+  },
+  {
+    "question_text": "In 2000, Baddeley added a fourth component to his working memory model. What is this component and what does it do?",
+    "correct_answer": "The episodic buffer, which integrates information from the phonological loop, visuospatial sketchpad, and long-term memory.",
+    "distractors": [
+      "The sensory register, which captures raw perceptual input from all modalities before attentional filtering occurs.",
+      "The semantic encoder, which translates verbal information into meaningful conceptual representations for permanent memory storage.",
+      "The motor planner, which coordinates physical response sequences based on instructions from the central executive system."
+    ],
+    "difficulty": 2,
+    "source_article": "Working memory",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["working memory"]
+  },
+  {
+    "question_text": "Amos Tversky and Daniel Kahneman introduced the concept of cognitive biases in 1972. Which three heuristics did they originally propose as sources of systematic bias?",
+    "correct_answer": "Representativeness, availability, and anchoring and adjustment.",
+    "distractors": [
+      "Confirmation, hindsight, and fundamental attribution error.",
+      "Priming, framing, and the sunk cost fallacy.",
+      "Simulation, recognition, and the affect heuristic."
+    ],
+    "difficulty": 2,
+    "source_article": "Cognitive bias",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["cognitive bias"]
+  },
+  {
+    "question_text": "Frederic Bartlett's 'War of the Ghosts' experiment demonstrated how schemas influence memory. What key finding did his study reveal?",
+    "correct_answer": "Participants distorted unfamiliar story details to fit their own cultural schemas when recalling the narrative.",
+    "distractors": [
+      "Participants recalled unfamiliar story details with perfect accuracy regardless of their cultural background or expectations.",
+      "Participants remembered only the emotional tone of the story and forgot all specific narrative details completely.",
+      "Participants invented entirely new stories unrelated to the original when asked to recall the narrative later."
+    ],
+    "difficulty": 2,
+    "source_article": "Schema (psychology)",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["schema"]
+  },
+  {
+    "question_text": "In Tversky and Kahneman's research, what does the representativeness heuristic lead people to do when making probability judgments?",
+    "correct_answer": "Judge likelihood based on how closely something resembles a typical case, often ignoring base rate information.",
+    "distractors": [
+      "Judge likelihood based on how quickly relevant examples come to mind, often ignoring sample size information.",
+      "Judge likelihood based on the first numerical value encountered, often ignoring subsequently presented statistical data.",
+      "Judge likelihood based on their current emotional state, often ignoring objectively calculated probability distributions entirely."
+    ],
+    "difficulty": 2,
+    "source_article": "Heuristic (psychology)",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["heuristic"]
+  },
+  {
+    "question_text": "Endel Tulving proposed that long-term declarative memory can be divided into which two subtypes?",
+    "correct_answer": "Episodic memory for personal experiences and semantic memory for general factual knowledge.",
+    "distractors": [
+      "Procedural memory for motor skills and implicit memory for unconsciously acquired behavioral responses.",
+      "Sensory memory for brief perceptual traces and iconic memory for short-lived visual representations.",
+      "Prospective memory for future intentions and retrospective memory for previously completed past actions."
+    ],
+    "difficulty": 2,
+    "source_article": "Long-term memory",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["long-term memory"]
+  },
+  {
+    "question_text": "George Miller's 1956 paper 'The Magical Number Seven, Plus or Minus Two' argued that short-term memory capacity is limited not by bits of information but by what unit?",
+    "correct_answer": "Chunks, which are meaningful units of information grouped together based on prior knowledge.",
+    "distractors": [
+      "Neurons, which are individual brain cells that each store one discrete item of sensory information.",
+      "Schemas, which are abstract mental frameworks that organize all incoming perceptual stimuli automatically.",
+      "Traces, which are individual biochemical imprints left by each sensory stimulus encountered during encoding."
+    ],
+    "difficulty": 2,
+    "source_article": "Short-term memory",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["short-term memory"]
+  },
+  {
+    "question_text": "In Piaget's theory of cognitive development, at which stage do children first acquire object permanence, the understanding that objects continue to exist when out of sight?",
+    "correct_answer": "The sensorimotor stage, which spans from birth to approximately two years of age.",
+    "distractors": [
+      "The preoperational stage, which spans from approximately two years to seven years of age.",
+      "The concrete operational stage, which spans from approximately seven years to eleven years of age.",
+      "The formal operational stage, which spans from approximately twelve years of age through adulthood."
+    ],
+    "difficulty": 2,
+    "source_article": "Cognitive development",
+    "domain_ids": ["cognitive-psychology"],
+    "concepts_tested": ["cognitive development"]
+  }
+]

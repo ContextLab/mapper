@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Which legal scholar coined the term 'intersectionality' in 1989 to describe how overlapping identities such as race and gender produce unique forms of discrimination?",
+    "correct_answer": "Kimberle Crenshaw",
+    "distractors": [
+      "Patricia Hill Collins",
+      "bell hooks",
+      "Audre Lorde"
+    ],
+    "difficulty": 3,
+    "source_article": "Intersectionality",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["intersectionality"]
+  },
+  {
+    "question_text": "In Bourdieu's theory of cultural capital, what are the three forms in which cultural capital can exist?",
+    "correct_answer": "Embodied, objectified, and institutionalized",
+    "distractors": [
+      "Economic, social, and symbolic",
+      "Personal, communal, and national",
+      "Inherited, acquired, and transferred"
+    ],
+    "difficulty": 3,
+    "source_article": "Cultural capital",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["cultural capital"]
+  },
+  {
+    "question_text": "In the demographic transition model developed by Warren Thompson, what characterizes Stage 2 that produces the highest population growth?",
+    "correct_answer": "Birth rates remain high while death rates drop sharply due to improved sanitation and food supply",
+    "distractors": [
+      "Both birth and death rates rise rapidly due to industrialization and urban crowding",
+      "Birth rates increase dramatically while death rates remain constant due to cultural shifts",
+      "Death rates stay high while birth rates surge because of government population policies"
+    ],
+    "difficulty": 3,
+    "source_article": "Demographic transition",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["demographic transition"]
+  },
+  {
+    "question_text": "Which 1966 work by Peter Berger and Thomas Luckmann introduced the concept of social constructionism into sociological theory?",
+    "correct_answer": "The Social Construction of Reality",
+    "distractors": [
+      "The Structure of Social Action",
+      "The Presentation of Self in Everyday Life",
+      "The Rules of Sociological Method"
+    ],
+    "difficulty": 3,
+    "source_article": "Social constructionism",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["social constructionism"]
+  },
+  {
+    "question_text": "According to Robert Merton, what does the concept of 'role set' refer to in sociology?",
+    "correct_answer": "The array of different roles associated with a single social status or position",
+    "distractors": [
+      "The collection of all social statuses an individual occupies at one time",
+      "The sequence of roles a person performs over the course of a lifetime",
+      "The group of people who share identical roles within an organization"
+    ],
+    "difficulty": 3,
+    "source_article": "Role set",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["role set"]
+  },
+  {
+    "question_text": "In DiMaggio and Powell's 1983 theory of institutional isomorphism, which type of isomorphism occurs when organizations imitate others to reduce uncertainty?",
+    "correct_answer": "Mimetic isomorphism",
+    "distractors": [
+      "Coercive isomorphism",
+      "Normative isomorphism",
+      "Structural isomorphism"
+    ],
+    "difficulty": 3,
+    "source_article": "Isomorphism (sociology)",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["institutional isomorphism"]
+  },
+  {
+    "question_text": "According to the World Health Organization, what are the social determinants of health?",
+    "correct_answer": "The conditions in which people are born, grow, live, work, and age that shape health outcomes",
+    "distractors": [
+      "The genetic and biological factors inherited from parents that predispose individuals to disease",
+      "The clinical treatments and medical interventions available within a healthcare system",
+      "The personal lifestyle choices individuals make regarding diet, exercise, and substance use"
+    ],
+    "difficulty": 3,
+    "source_article": "Social determinants of health",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["social determinants of health"]
+  },
+  {
+    "question_text": "Philip Jackson coined the term 'hidden curriculum' in his 1968 book Life in Classrooms. What does the concept describe?",
+    "correct_answer": "The unwritten norms, values, and expectations students learn in school beyond the formal curriculum",
+    "distractors": [
+      "The advanced subjects that schools deliberately withhold from lower-performing student groups",
+      "The politically biased content that textbook publishers intentionally embed in course materials",
+      "The supplementary tutoring programs that wealthy families privately arrange outside of school"
+    ],
+    "difficulty": 3,
+    "source_article": "Hidden curriculum",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["hidden curriculum"]
+  },
+  {
+    "question_text": "In Bourdieu's practice theory, what is 'habitus' and how does it relate to structure and agency?",
+    "correct_answer": "Durable, ingrained dispositions shaped by past social structures that unconsciously guide present actions",
+    "distractors": [
+      "Conscious rational strategies that individuals deliberately adopt to maximize social advantages",
+      "Formal institutional rules imposed by organizations that strictly determine individual behavior",
+      "Temporary emotional states triggered by specific social situations that influence short-term decisions"
+    ],
+    "difficulty": 4,
+    "source_article": "Habitus (sociology)",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["habitus"]
+  },
+  {
+    "question_text": "In Durkheim's The Division of Labour in Society, what distinguishes mechanical solidarity from organic solidarity?",
+    "correct_answer": "Mechanical solidarity rests on shared beliefs and similarity, while organic solidarity arises from interdependence through specialized roles",
+    "distractors": [
+      "Mechanical solidarity depends on written legal codes, while organic solidarity relies on informal customs and traditions",
+      "Mechanical solidarity emerges in industrial economies, while organic solidarity characterizes agricultural communities",
+      "Mechanical solidarity is maintained by economic exchange, while organic solidarity is sustained by religious rituals"
+    ],
+    "difficulty": 4,
+    "source_article": "Mechanical and organic solidarity",
+    "domain_ids": ["sociology"],
+    "concepts_tested": ["mechanical and organic solidarity"]
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "The Open Source Definition maintained by the Open Source Initiative was originally based on which set of guidelines?",
+    "correct_answer": "The Debian Free Software Guidelines, written primarily by Bruce Perens",
+    "distractors": [
+      "The GNU General Public License terms drafted by Richard Stallman",
+      "The Apache Software Foundation's licensing principles",
+      "The MIT License framework developed at Massachusetts Institute of Technology"
+    ],
+    "difficulty": 1,
+    "source_article": "Open-source software",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["open-source software"]
+  },
+  {
+    "question_text": "What was the name of the first web browser, and who created it in 1990?",
+    "correct_answer": "WorldWideWeb, created by Tim Berners-Lee at CERN",
+    "distractors": [
+      "Mosaic, created by Marc Andreessen at the University of Illinois",
+      "Nexus, created by Robert Cailliau at MIT",
+      "Navigator, created by James Gosling at Sun Microsystems"
+    ],
+    "difficulty": 1,
+    "source_article": "Web browser",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["web browser"]
+  },
+  {
+    "question_text": "In 1947, a team working on the Harvard Mark II computer taped an insect into their logbook, an incident that helped popularize the computing term 'bug.' What type of insect was it?",
+    "correct_answer": "A moth found stuck between relay contacts",
+    "distractors": [
+      "A beetle found lodged inside a vacuum tube",
+      "A fly caught in the paper tape reader mechanism",
+      "An ant discovered shorting a circuit on the main board"
+    ],
+    "difficulty": 1,
+    "source_article": "Debugging",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["debugging"]
+  },
+  {
+    "question_text": "Who proposed the relational model for databases in 1970 while working at IBM, publishing the influential paper 'A Relational Model of Data for Large Shared Data Banks'?",
+    "correct_answer": "Edgar F. Codd (E. F. Codd)",
+    "distractors": [
+      "Donald Chamberlin, co-inventor of SQL",
+      "Charles Bachman, creator of the network data model",
+      "Michael Stonebraker, developer of Ingres and PostgreSQL"
+    ],
+    "difficulty": 2,
+    "source_article": "Relational database",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["relational database"]
+  },
+  {
+    "question_text": "SQL was originally developed at IBM under a different name that had to be changed due to a trademark conflict. What was that original name?",
+    "correct_answer": "SEQUEL (Structured English Query Language)",
+    "distractors": [
+      "SQUARE (Specifying Queries Using A Relational Engine)",
+      "QUEL (Query Language for relational databases)",
+      "ISAM (Indexed Sequential Access Method)"
+    ],
+    "difficulty": 2,
+    "source_article": "SQL",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["SQL"]
+  },
+  {
+    "question_text": "The TCP/IP model organizes Internet communication protocols into four abstraction layers. From lowest to highest, what are these layers?",
+    "correct_answer": "Link layer, Internet layer, Transport layer, Application layer",
+    "distractors": [
+      "Physical layer, Data link layer, Network layer, Session layer",
+      "Hardware layer, Routing layer, Connection layer, Service layer",
+      "Access layer, Network layer, Host layer, Process layer"
+    ],
+    "difficulty": 2,
+    "source_article": "Internet protocol suite",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["TCP/IP"]
+  },
+  {
+    "question_text": "Linus Torvalds created Git in 2005 for Linux kernel development after losing access to which proprietary version control system?",
+    "correct_answer": "BitKeeper, whose free license was revoked for Linux developers",
+    "distractors": [
+      "Subversion (SVN), which could not handle the kernel's repository size",
+      "Perforce, which ended its open-source partnership with the kernel team",
+      "ClearCase, whose IBM licensing fees became too expensive for the project"
+    ],
+    "difficulty": 2,
+    "source_article": "Version control",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["version control"]
+  },
+  {
+    "question_text": "Which programming language, developed in Norway during 1961-1967, is generally accepted as the first language to introduce classes, inheritance, and dynamic binding?",
+    "correct_answer": "Simula, developed by Ole-Johan Dahl and Kristen Nygaard",
+    "distractors": [
+      "Smalltalk, developed by Alan Kay and Dan Ingalls at Xerox PARC",
+      "LISP, developed by John McCarthy at MIT",
+      "C++, developed by Bjarne Stroustrup at Bell Labs"
+    ],
+    "difficulty": 2,
+    "source_article": "Object-oriented programming",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["object-oriented programming"]
+  },
+  {
+    "question_text": "In operating systems, what is the key distinction between a program and a process?",
+    "correct_answer": "A program is a passive set of instructions on disk; a process is an active instance being executed in memory",
+    "distractors": [
+      "A program runs in kernel mode while a process runs in user mode only",
+      "A program can use multiple CPUs while a process is limited to a single core",
+      "A program is compiled code while a process is interpreted code running in a virtual machine"
+    ],
+    "difficulty": 2,
+    "source_article": "Process (computing)",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["process (computing)"]
+  },
+  {
+    "question_text": "In virtual memory systems, what hardware component in the CPU automatically translates virtual addresses to physical addresses?",
+    "correct_answer": "The memory management unit (MMU)",
+    "distractors": [
+      "The arithmetic logic unit (ALU)",
+      "The translation lookaside buffer (TLB) controller",
+      "The direct memory access (DMA) controller"
+    ],
+    "difficulty": 2,
+    "source_article": "Virtual memory",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["virtual memory"]
+  }
+]

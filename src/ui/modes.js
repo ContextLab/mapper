@@ -17,7 +17,7 @@ let activeMode = 'auto';
 let currentAnswerCount = 0;
 let onSelectCb = null;
 let onSkipCb = null;
-let autoAdvance = false;
+let autoAdvance = true;
 let autoAdvanceToggleEl = null;
 let skipBtnEl = null;
 
@@ -184,7 +184,11 @@ export function init(container) {
   // Skip button
   skipBtnEl = document.createElement('button');
   skipBtnEl.className = 'skip-btn';
-  skipBtnEl.innerHTML = '<i class="fa-solid fa-forward"></i> Skip';
+  skipBtnEl.textContent = '';
+  const skipIcon = document.createElement('i');
+  skipIcon.className = 'fa-solid fa-forward';
+  skipBtnEl.appendChild(skipIcon);
+  skipBtnEl.appendChild(document.createTextNode(" Don't know (skip)"));
   skipBtnEl.dataset.tooltip = "Not sure of the answer? Don't guess, just press skip!";
   skipBtnEl.addEventListener('click', () => {
     if (onSkipCb) onSkipCb();
@@ -196,9 +200,9 @@ export function init(container) {
   toggleWrap.className = 'auto-advance-wrap';
 
   const track = document.createElement('div');
-  track.className = 'auto-advance-track';
+  track.className = 'auto-advance-track on';
   track.setAttribute('role', 'switch');
-  track.setAttribute('aria-checked', 'false');
+  track.setAttribute('aria-checked', 'true');
   track.setAttribute('aria-label', 'Auto-advance to next question');
   track.setAttribute('tabindex', '0');
   track.dataset.tooltip = 'Auto-advance to the next question after answering';
@@ -277,4 +281,17 @@ function handleSelect(modeId, type) {
   }
 
   if (onSelectCb) onSelectCb(modeId, type || 'question');
+}
+
+/**
+ * Revert to auto mode after a single question in a non-auto mode.
+ * Called by app.js after an answer is submitted.
+ */
+export function revertToAutoIfNeeded() {
+  if (activeMode !== 'auto') {
+    activeMode = 'auto';
+    for (const [id, btn] of buttons) {
+      btn.classList.toggle('active', id === 'auto');
+    }
+  }
 }

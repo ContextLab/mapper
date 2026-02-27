@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "How does token physicalism differ from type physicalism regarding the relationship between mental and physical events?",
+    "correct_answer": "Token physicalism holds that each particular mental event is identical to some physical event, but denies a systematic type-to-type mapping between mental and physical kinds.",
+    "distractors": [
+      "Token physicalism holds that each particular mental event is caused by some physical event, but affirms a systematic type-to-type mapping between mental and physical kinds.",
+      "Token physicalism holds that each particular mental event is independent of any physical event, but accepts a systematic type-to-type correlation between mental and physical kinds.",
+      "Token physicalism holds that each particular mental event is reducible to one specific physical event type, and affirms a strict type-to-type law between mental and physical kinds."
+    ],
+    "difficulty": 3,
+    "source_article": "Token physicalism",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["token physicalism"]
+  },
+  {
+    "question_text": "According to higher-order thought theory, what condition must be met for a mental state to be conscious?",
+    "correct_answer": "The mental state must be the object of a higher-order thought, meaning the subject must have a thought that represents that first-order mental state.",
+    "distractors": [
+      "The mental state must be the cause of a behavioral response, meaning the subject must produce an action that expresses that first-order mental state.",
+      "The mental state must be the product of a sensory stimulus, meaning the subject must receive an input that directly generates that first-order mental state.",
+      "The mental state must be the result of a deliberate intention, meaning the subject must form a plan that consciously initiates that first-order mental state."
+    ],
+    "difficulty": 3,
+    "source_article": "Higher-order theories of consciousness",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["higher-order thought theory"]
+  },
+  {
+    "question_text": "In the Otto and Inga thought experiment by Clark and Chalmers, what does Otto's notebook illustrate about cognition?",
+    "correct_answer": "That external objects like a notebook can function as part of a cognitive process, extending the mind beyond the brain and body into the environment.",
+    "distractors": [
+      "That external objects like a notebook can replace biological memory entirely, eliminating the need for any neural processing in the brain and body.",
+      "That external objects like a notebook can record information passively, but never participate as genuine components of cognition in the brain and body.",
+      "That external objects like a notebook can simulate conscious experience artificially, creating a second mind independent of the brain and body altogether."
+    ],
+    "difficulty": 3,
+    "source_article": "Extended mind thesis",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["extended mind thesis"]
+  },
+  {
+    "question_text": "What does strong representationalism claim about the relationship between phenomenal character and intentional content?",
+    "correct_answer": "Strong representationalism claims that phenomenal character reduces to or is identical with intentional content, so all phenomenal differences are representational differences.",
+    "distractors": [
+      "Strong representationalism claims that phenomenal character is independent of and unrelated to intentional content, so phenomenal differences never correlate with representational ones.",
+      "Strong representationalism claims that phenomenal character merely causes or produces intentional content, so all representational differences originate from phenomenal differences.",
+      "Strong representationalism claims that phenomenal character supervenes on but never reduces to intentional content, so some phenomenal differences lack any representational basis."
+    ],
+    "difficulty": 3,
+    "source_article": "Representationalism",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["representationalism"]
+  },
+  {
+    "question_text": "What did Hilary Putnam's Twin Earth thought experiment aim to demonstrate about mental content?",
+    "correct_answer": "That the meaning and content of mental states are partly determined by external environmental factors, not solely by the internal physical states of the thinker.",
+    "distractors": [
+      "That the meaning and content of mental states are entirely determined by internal neurological structures, not influenced by the external physical environment of the thinker.",
+      "That the meaning and content of mental states are wholly determined by social and linguistic conventions, not by any causal connection to the world of the thinker.",
+      "That the meaning and content of mental states are fully determined by behavioral dispositions and responses, not by any subjective inner experience of the thinker."
+    ],
+    "difficulty": 3,
+    "source_article": "Semantic externalism",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["content externalism"]
+  },
+  {
+    "question_text": "What position does epiphenomenalism take on the causal relationship between mental and physical events?",
+    "correct_answer": "Epiphenomenalism holds that physical events cause mental events, but mental events are causally inert byproducts that have no causal influence on physical events.",
+    "distractors": [
+      "Epiphenomenalism holds that mental events cause physical events, but physical events are causally inert byproducts that have no causal influence on mental events.",
+      "Epiphenomenalism holds that mental and physical events cause each other reciprocally, with both types exerting equal and symmetric causal influence on one another.",
+      "Epiphenomenalism holds that neither mental nor physical events cause the other, with both types arising independently from a shared underlying neutral substance."
+    ],
+    "difficulty": 3,
+    "source_article": "Epiphenomenalism",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["epiphenomenalism"]
+  },
+  {
+    "question_text": "In Baars's global workspace theory, what mechanism explains how information becomes conscious?",
+    "correct_answer": "Information becomes conscious when it is selected and broadcast widely across multiple specialized brain modules via a global workspace, making it available for diverse processing.",
+    "distractors": [
+      "Information becomes conscious when it is filtered and restricted to a single specialized brain module via a local workspace, making it available for focused processing.",
+      "Information becomes conscious when it is stored and consolidated in long-term memory circuits via a hippocampal workspace, making it available for future retrieval.",
+      "Information becomes conscious when it is generated and projected from prefrontal cortex alone via a top-down workspace, making it available for executive processing."
+    ],
+    "difficulty": 3,
+    "source_article": "Global workspace theory",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["global workspace theory"]
+  },
+  {
+    "question_text": "In Tononi's integrated information theory, what does the quantity phi measure and why is it significant for consciousness?",
+    "correct_answer": "Phi measures the amount of integrated information generated by a system, and the theory identifies this quantity with the level of consciousness a system possesses.",
+    "distractors": [
+      "Phi measures the speed of neural signal transmission across a system, and the theory identifies this quantity with the complexity of behavior a system produces.",
+      "Phi measures the total number of synaptic connections within a system, and the theory identifies this quantity with the computational power a system demonstrates.",
+      "Phi measures the degree of random neural activity throughout a system, and the theory identifies this quantity with the adaptability of responses a system exhibits."
+    ],
+    "difficulty": 3,
+    "source_article": "Integrated information theory",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["integrated information theory"]
+  },
+  {
+    "question_text": "Davidson's anomalous monism combines three principles. Which combination accurately characterizes the position?",
+    "correct_answer": "Mental events are identical to physical events, all causation falls under strict laws, but there are no strict psychophysical laws connecting mental and physical descriptions.",
+    "distractors": [
+      "Mental events are distinct from physical events, all causation falls under strict laws, and there are strict psychophysical laws connecting mental and physical descriptions.",
+      "Mental events are identical to physical events, causation does not require strict laws, and there are strict psychophysical laws connecting mental and physical descriptions.",
+      "Mental events are distinct from physical events, causation does not require strict laws, but there are no strict psychophysical laws connecting mental and physical descriptions."
+    ],
+    "difficulty": 4,
+    "source_article": "Anomalous monism",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["anomalous monism"]
+  },
+  {
+    "question_text": "What is the central claim of the phenomenal intentionality thesis, and how does it contrast with standard naturalist approaches to intentionality?",
+    "correct_answer": "It claims that intentionality is grounded in or constituted by phenomenal consciousness, contrasting with naturalist views that reduce intentionality to causal or informational relations.",
+    "distractors": [
+      "It claims that intentionality is eliminated by or incompatible with phenomenal consciousness, contrasting with naturalist views that ground intentionality in subjective experiential qualities.",
+      "It claims that intentionality is independent of and unrelated to phenomenal consciousness, contrasting with naturalist views that deny any connection between intentionality and physical relations.",
+      "It claims that intentionality is produced by or derived from linguistic conventions, contrasting with naturalist views that reduce intentionality to evolutionary or adaptive functions alone."
+    ],
+    "difficulty": 4,
+    "source_article": "Phenomenal intentionality",
+    "domain_ids": ["philosophy-of-mind"],
+    "concepts_tested": ["phenomenal intentionality"]
+  }
+]

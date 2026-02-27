@@ -1,0 +1,66 @@
+{
+  "domain": "philosophy",
+  "parent_domain": null,
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {"concept": "philosophy", "wikipedia_article": "Philosophy", "brief_rationale": "The broadest term for the discipline itself; universally recognized as the love of wisdom and the systematic study of fundamental questions."},
+      {"concept": "knowledge", "wikipedia_article": "Knowledge", "brief_rationale": "The most fundamental epistemological concept; universally understood as justified true belief or acquaintance with facts."},
+      {"concept": "truth", "wikipedia_article": "Truth", "brief_rationale": "A concept central to all branches of philosophy; universally recognized as correspondence between statements and reality."},
+      {"concept": "reason", "wikipedia_article": "Reason", "brief_rationale": "The capacity for rational thought that defines philosophical inquiry itself; universally familiar from everyday discourse."},
+      {"concept": "beauty", "wikipedia_article": "Beauty", "brief_rationale": "The central concept of aesthetics; universally recognized as an attribute of things that provides pleasure or satisfaction to the senses or mind."},
+      {"concept": "wisdom", "wikipedia_article": "Wisdom", "brief_rationale": "The quality that philosophy literally pursues (philo-sophia); universally understood as deep understanding and good judgment."},
+      {"concept": "meaning of life", "wikipedia_article": "Meaning of life", "brief_rationale": "The most widely recognized philosophical question; familiar to virtually everyone regardless of educational background."},
+      {"concept": "freedom", "wikipedia_article": "Freedom", "brief_rationale": "A concept central to political philosophy and existentialism; universally understood as the absence of constraint or the capacity for self-determination."},
+      {"concept": "language", "wikipedia_article": "Language", "brief_rationale": "The medium of thought and communication whose nature is examined across philosophy of language, hermeneutics, and phenomenology; universally familiar."},
+      {"concept": "science", "wikipedia_article": "Science", "brief_rationale": "The systematic enterprise whose methods, assumptions, and limits are examined by philosophy of science; universally recognized."},
+      {"concept": "religion", "wikipedia_article": "Religion", "brief_rationale": "The domain of belief in the divine and sacred, whose claims are examined by philosophy of religion; universally familiar across cultures."},
+      {"concept": "art", "wikipedia_article": "Art", "brief_rationale": "Human creative expression whose nature, value, and definition are central questions of aesthetics; universally recognized."},
+      {"concept": "happiness", "wikipedia_article": "Happiness", "brief_rationale": "A universal human aspiration examined philosophically from Aristotle's eudaimonia to modern well-being research; understood by all."}
+    ],
+    "L2": [
+      {"concept": "epistemology", "wikipedia_article": "Epistemology", "brief_rationale": "The branch of philosophy studying knowledge, justification, and belief; one of the first sub-fields encountered by philosophy students."},
+      {"concept": "aesthetics", "wikipedia_article": "Aesthetics", "brief_rationale": "The branch of philosophy dealing with the nature of beauty, art, and taste; standard content in introductory philosophy courses."},
+      {"concept": "philosophy of science", "wikipedia_article": "Philosophy of science", "brief_rationale": "The examination of scientific methods, assumptions, and implications; a well-known sub-field taught in undergraduate programs."},
+      {"concept": "political philosophy", "wikipedia_article": "Political philosophy", "brief_rationale": "The philosophical study of government, justice, rights, liberty, and law; widely taught and historically central to the discipline."},
+      {"concept": "philosophy of language", "wikipedia_article": "Philosophy of language", "brief_rationale": "The study of meaning, reference, and the relationship between language and reality; a core analytic philosophy sub-field taught in undergraduate curricula."},
+      {"concept": "existentialism", "wikipedia_article": "Existentialism", "brief_rationale": "The philosophical movement emphasizing individual existence, freedom, and choice; widely recognized through Sartre, Camus, and Kierkegaard."},
+      {"concept": "philosophy of religion", "wikipedia_article": "Philosophy of religion", "brief_rationale": "The rational examination of religious concepts including God's existence, the problem of evil, and faith; a standard undergraduate offering."},
+      {"concept": "empiricism", "wikipedia_article": "Empiricism", "brief_rationale": "The epistemological view that knowledge derives from sensory experience; associated with Locke, Berkeley, and Hume, taught in every history of philosophy course."},
+      {"concept": "rationalism", "wikipedia_article": "Rationalism", "brief_rationale": "The epistemological view that knowledge can be gained through reason alone; associated with Descartes, Spinoza, and Leibniz, a standard introductory topic."},
+      {"concept": "skepticism", "wikipedia_article": "Philosophical skepticism", "brief_rationale": "The philosophical position questioning the possibility of certain knowledge; from ancient Pyrrhonism to Descartes's method of doubt, a foundational topic."},
+      {"concept": "phenomenology", "wikipedia_article": "Phenomenology (philosophy)", "brief_rationale": "Husserl's method of studying structures of experience and consciousness from the first-person perspective; a major tradition in continental philosophy."},
+      {"concept": "pragmatism", "wikipedia_article": "Pragmatism", "brief_rationale": "The American philosophical tradition linking meaning and truth to practical consequences; associated with Peirce, James, and Dewey."},
+      {"concept": "Socratic method", "wikipedia_article": "Socratic method", "brief_rationale": "The dialectical method of inquiry through systematic questioning attributed to Socrates; widely known as a foundational philosophical technique."}
+    ],
+    "L3": [
+      {"concept": "philosophy of history", "wikipedia_article": "Philosophy of history", "brief_rationale": "The study of the nature, direction, and meaning of historical processes; requires familiarity with Hegel, Marx, and analytic philosophy of historiography."},
+      {"concept": "hermeneutics", "wikipedia_article": "Hermeneutics", "brief_rationale": "The theory of interpretation originating in biblical exegesis, developed by Schleiermacher, Dilthey, Gadamer, and Ricoeur into a general philosophical method."},
+      {"concept": "falsifiability", "wikipedia_article": "Falsifiability", "brief_rationale": "Popper's criterion that scientific theories must be capable of being shown false; a central concept in philosophy of science requiring understanding of demarcation."},
+      {"concept": "paradigm shift", "wikipedia_article": "Paradigm shift", "brief_rationale": "Kuhn's concept that scientific revolutions involve wholesale replacement of theoretical frameworks rather than incremental progress; requires knowledge of The Structure of Scientific Revolutions."},
+      {"concept": "speech act theory", "wikipedia_article": "Speech act", "brief_rationale": "Austin and Searle's framework analyzing how utterances perform actions (promising, commanding, asserting); requires working knowledge of locutionary, illocutionary, and perlocutionary acts."},
+      {"concept": "Gettier problem", "wikipedia_article": "Gettier problem", "brief_rationale": "The demonstration that justified true belief is insufficient for knowledge; a pivotal challenge in epistemology requiring familiarity with the classical analysis of knowledge."},
+      {"concept": "problem of evil", "wikipedia_article": "Problem of evil", "brief_rationale": "The argument that the existence of suffering is incompatible with an omnipotent, omniscient, benevolent God; requires engagement with theodicies and logical vs. evidential formulations."},
+      {"concept": "epistemological foundationalism", "wikipedia_article": "Foundationalism", "brief_rationale": "The view that knowledge rests on basic, self-justifying beliefs; requires understanding of the regress problem and its alternatives (coherentism, infinitism)."},
+      {"concept": "original position", "wikipedia_article": "Original position", "brief_rationale": "Rawls's thought experiment in which rational agents behind a veil of ignorance choose principles of justice; requires working familiarity with A Theory of Justice."},
+      {"concept": "deconstruction", "wikipedia_article": "Deconstruction", "brief_rationale": "Derrida's strategy of reading texts to expose internal contradictions and assumptions about meaning; requires working knowledge of post-structuralist philosophy."},
+      {"concept": "the sublime", "wikipedia_article": "Sublime (philosophy)", "brief_rationale": "The aesthetic experience of awe and overwhelm before vast or powerful phenomena; requires understanding of Burke's and Kant's differing treatments."},
+      {"concept": "reliabilism", "wikipedia_article": "Reliabilism", "brief_rationale": "The epistemological view that a belief is justified if produced by a reliable cognitive process; requires understanding of externalist vs. internalist justification debates."}
+    ],
+    "L4": [
+      {"concept": "underdetermination of theory by evidence", "wikipedia_article": "Underdetermination", "brief_rationale": "The thesis that empirical evidence alone cannot determine which scientific theory is correct; requires deep engagement with Quine and Duhem on holism and theory choice."},
+      {"concept": "rigid designator", "wikipedia_article": "Rigid designator", "brief_rationale": "Kripke's concept that proper names refer to the same object in all possible worlds; requires expert-level knowledge of Naming and Necessity and its anti-descriptivist arguments."},
+      {"concept": "Quinean ontological commitment", "wikipedia_article": "Ontological commitment", "brief_rationale": "Quine's criterion that one is committed to the entities over which one's best theory quantifies; requires expert familiarity with 'On What There Is' and the indispensability argument."},
+      {"concept": "epistemic injustice", "wikipedia_article": "Epistemic injustice", "brief_rationale": "Fricker's framework analyzing how prejudice can wrong someone specifically in their capacity as a knower; requires deep knowledge of testimonial and hermeneutical injustice."},
+      {"concept": "deflationary theory of truth", "wikipedia_article": "Deflationary theory of truth", "brief_rationale": "The family of views holding that 'is true' adds no substantive property to a proposition and serves merely a logical or expressive function; requires expert-level engagement with Tarski, Quine, and Horwich."},
+      {"concept": "Gadamerian fusion of horizons", "wikipedia_article": "Fusion of horizons", "brief_rationale": "Gadamer's concept that understanding arises when the interpreter's and text's historical horizons merge; requires deep knowledge of Truth and Method and philosophical hermeneutics."},
+      {"concept": "Rawlsian public reason", "wikipedia_article": "Public reason", "brief_rationale": "Rawls's requirement that political justification in a liberal democracy appeal only to reasons acceptable to all reasonable citizens; requires expert engagement with Political Liberalism."},
+      {"concept": "Bayesian epistemology", "wikipedia_article": "Bayesian epistemology", "brief_rationale": "The formal framework modeling rational belief updating via Bayes' theorem; requires deep knowledge of probability calculus, Dutch book arguments, and conditionalization."},
+      {"concept": "scientific realism vs anti-realism", "wikipedia_article": "Scientific realism", "brief_rationale": "The debate over whether scientific theories describe mind-independent reality or are merely empirically adequate instruments; requires expert engagement with the no-miracles argument and pessimistic meta-induction."},
+      {"concept": "Husserlian intentional analysis", "wikipedia_article": "Noesis and noema", "brief_rationale": "Husserl's technical distinction between the act of consciousness (noesis) and its intended object (noema); requires deep expertise in Ideas I and the phenomenological reduction."},
+      {"concept": "contextualism in epistemology", "wikipedia_article": "Epistemological contextualism", "brief_rationale": "The view that knowledge attributions are sensitive to the conversational context of the attributor; requires expert familiarity with DeRose, Lewis, and the debate over skeptical scenarios."},
+      {"concept": "Habermasian communicative rationality", "wikipedia_article": "Communicative rationality", "brief_rationale": "Habermas's theory that rationality is grounded in the norms implicit in communicative action oriented toward mutual understanding; requires deep knowledge of The Theory of Communicative Action and discourse ethics."}
+    ]
+  }
+}

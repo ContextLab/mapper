@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "The White Lotus movement began as a 12th-century Buddhist devotional school founded by monk Mao Ziyuan, but later inspired armed uprisings. How did the Yuan dynasty's policies transform the White Lotus from a religious movement into a revolutionary network, and what was its most consequential dynastic impact?",
+    "correct_answer": "The Yuan ban drove it underground into a syncretic millenarian network. Its Red Turban affiliates helped Zhu Yuanzhang overthrow the Yuan and found the Ming.",
+    "distractors": [
+      "The Yuan elevated it to state religion, provoking Confucian armed rebellion. Its Yellow Turban affiliates helped Kublai Khan consolidate Mongol control and found the Yuan.",
+      "The Yuan exiled its leaders to Tibet, merging them with Vajrayana orders. Its Blue Turban affiliates helped Hong Taiji overthrow the Ming and found the Qing.",
+      "The Yuan incorporated it into the examination system, radicalizing Daoist rivals. Its Green Turban affiliates helped Li Zicheng overthrow the Yuan and establish the Shun."
+    ],
+    "difficulty": 4,
+    "source_article": "White Lotus",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["White Lotus Society", "Red Turban Rebellion", "Yuan dynasty fall"]
+  },
+  {
+    "question_text": "Following the 1609 Satsuma invasion, the Ryukyu Kingdom maintained simultaneous tributary relations with both China and Japan for over 250 years. Why did the Satsuma domain deliberately conceal its control over Ryukyu from the Chinese court rather than openly annexing the kingdom?",
+    "correct_answer": "Japan lacked formal diplomatic ties with China, so maintaining Ryukyu's apparent independence let Satsuma access profitable Chinese trade through Ryukyu's tributary privileges.",
+    "distractors": [
+      "Japan had signed a non-aggression pact with China, so maintaining Ryukyu's neutrality let Satsuma avoid triggering mutual defense clauses that would provoke Korean intervention.",
+      "Japan had adopted Christianity under Portuguese influence, so maintaining Ryukyu's Buddhist identity let Satsuma create a religious buffer preventing Chinese persecution of Japanese merchants.",
+      "Japan had lost its southern fleet in the Imjin War, so maintaining Ryukyu's military presence let Satsuma use it as a defensive base against Ming naval incursions."
+    ],
+    "difficulty": 4,
+    "source_article": "Ryukyu Kingdom",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Ryukyuan Kingdom", "dual subordination", "Satsuma domain trade"]
+  },
+  {
+    "question_text": "Emperor Akbar introduced the dual-rank mansabdari system in 1595-96, assigning each Mughal official both a 'zat' and 'sawar' number. What did each rank component signify, and why was the separation of these two numbers a strategically important innovation for centralized imperial governance?",
+    "correct_answer": "Zat indicated personal rank and salary; sawar specified cavalry obligations. This let the emperor independently adjust status and military duty, preventing dangerous power accumulation.",
+    "distractors": [
+      "Zat indicated religious affiliation and precedence; sawar specified infantry obligations. This let the emperor independently regulate sectarian representation and provincial garrison strength.",
+      "Zat indicated territorial jurisdiction and tax authority; sawar specified elephant supply. This let the emperor independently control administrative boundaries and siege warfare capacity.",
+      "Zat indicated hereditary service years and pension rights; sawar specified artillery production. This let the emperor independently manage aristocratic lineage claims and weapons manufacturing."
+    ],
+    "difficulty": 4,
+    "source_article": "Mansabdar",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Mughal mansabdari system", "zat and sawar ranks", "Akbar's administrative reforms"]
+  },
+  {
+    "question_text": "The Silhak (Practical Learning) movement emerged among disaffected Joseon-era Korean scholars between the 17th and 19th centuries. What specific intellectual deficiency in Neo-Confucian orthodoxy prompted the movement, and what concrete reform did early Silhak scholar Yu Hyeongwon (1622-1673) propose?",
+    "correct_answer": "They criticized Neo-Confucianism's abstract metaphysical speculation as disconnected from social realities. Yu Hyeongwon proposed a public land system with state-held title allocated to farmers.",
+    "distractors": [
+      "They criticized Neo-Confucianism's excessive military spending as destabilizing frontier defenses. Yu Hyeongwon proposed a merchant guild system with trader-held monopolies setting commodity prices.",
+      "They criticized Neo-Confucianism's rejection of Buddhist monasticism as undermining spiritual foundations. Yu Hyeongwon proposed a temple endowment system with abbots administering provincial education.",
+      "They criticized Neo-Confucianism's rigid adherence to Chinese literary forms as suppressing creativity. Yu Hyeongwon proposed a vernacular publishing system replacing classical Chinese official documents."
+    ],
+    "difficulty": 4,
+    "source_article": "Silhak",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Sirhak movement", "Yu Hyeongwon", "Joseon Neo-Confucianism critique"]
+  },
+  {
+    "question_text": "Nurhaci created the initial four banners in 1601 using yellow, white, red, and blue flags, then doubled them to eight in 1615 by adding bordered variants. Beyond military organization, what broader social functions did the banner system assume, and how was it later expanded to incorporate non-Manchu populations?",
+    "correct_answer": "Banners managed salaries, land, welfare, and justice. Eight Mongol Banners were added in 1635 and eight Han Chinese Banners in 1642, creating tripartite organization.",
+    "distractors": [
+      "Banners managed diplomacy, religion, examinations, and trade. Eight Tibetan Banners were added in 1635 and eight Korean Banners in 1642, creating quadripartite organization.",
+      "Banners managed currency, canals, taxation, and appeals. Mongol companies were absorbed into existing Manchu Banners in 1640, maintaining the original octagonal organization.",
+      "Banners managed ritual, patronage, astronomy, and surveillance. Eight Uyghur Banners were added in 1638 and eight Vietnamese Banners in 1645, creating pentagonal organization."
+    ],
+    "difficulty": 4,
+    "source_article": "Eight Banners",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Qing Eight Banners system", "Nurhaci", "Manchu-Mongol-Han integration"]
+  },
+  {
+    "question_text": "Ashoka's dhamma, propagated through rock and pillar edicts across the Maurya Empire, is often distinguished from Buddhist dharma by scholars. What universal ethical principles did Ashoka's dhamma emphasize, and what evidence suggests it was designed as an inclusive imperial moral code rather than sectarian Buddhist doctrine?",
+    "correct_answer": "Dhamma promoted nonviolence, religious tolerance, truthfulness, compassion, and respect for elders. Ashoka's edicts addressed Hindus, Jains, Ajivikas, and Buddhists equally, avoiding specifically Buddhist theological concepts.",
+    "distractors": [
+      "Dhamma promoted monastic ordination, meditation retreats, scriptural memorization, and vegetarian dietary laws. Ashoka's edicts addressed only Buddhist sangha members, systematically requiring conversion from Brahmanical and Jain traditions.",
+      "Dhamma promoted military disarmament, tributary abolition, caste elimination, and democratic assemblies. Ashoka's edicts addressed only frontier provinces, systematically dismantling Vedic ritual practices in newly conquered Kalinga territory.",
+      "Dhamma promoted Sanskrit standardization, temple construction, pilgrimage subsidies, and priestly tax exemptions. Ashoka's edicts addressed only Brahmin communities, systematically elevating Hindu ritual practice over heterodox philosophical schools."
+    ],
+    "difficulty": 4,
+    "source_article": "Dhamma (Ashoka)",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Ashoka's dhamma", "Maurya imperial governance", "religious pluralism"]
+  },
+  {
+    "question_text": "The Indianization of Southeast Asia (c. 290 BCE-15th century) produced Hindu-Buddhist kingdoms across the region. What was the primary mechanism of Indian cultural transmission to Southeast Asia, and how did the receiving societies characteristically adapt Indian religious and political models?",
+    "correct_answer": "Transmission occurred through maritime trade and voluntary elite adoption. Local rulers fused Hindu-Buddhist ideas with indigenous beliefs, creating syncretic traditions rather than Indian replicas.",
+    "distractors": [
+      "Transmission occurred through Mauryan military conquest and forced resettlement. Local populations replaced indigenous beliefs with orthodox Brahmanical Hinduism, creating faithful replicas of Indian originals.",
+      "Transmission occurred through Ashokan missionary dispatches and monastic colonization. Local monks eradicated animist traditions with Theravada orthodoxy, creating uniform Buddhist institutions across the region.",
+      "Transmission occurred through Gupta-era marriage alliances and dynastic succession. Local royals adopted Shaivite Hindu practices exclusively, creating rigid caste hierarchies identical to Indian originals."
+    ],
+    "difficulty": 4,
+    "source_article": "Indianization",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Indianization of Southeast Asia", "Hindu-Buddhist syncretism", "maritime cultural transmission"]
+  },
+  {
+    "question_text": "The Warring States period (c. 475-221 BCE) produced China's foundational philosophical traditions, collectively known as the Hundred Schools of Thought. What structural condition of this era specifically enabled such exceptional intellectual diversity, and which philosophy ultimately provided the ideological basis for Qin's unification of China?",
+    "correct_answer": "Rival states recruited itinerant scholars offering competing governance strategies, creating an intellectual marketplace. Legalism, via Shang Yang's Qin reforms, provided the centralizing ideology for unification.",
+    "distractors": [
+      "A unified Zhou academy standardized philosophical curricula across vassal states, creating a mandated system. Mohism, via Mozi's Chu reforms, provided the pacifist ideology for unification.",
+      "Wealthy merchant families funded independent philosophical schools beyond state patronage, creating a commercial market. Daoism, via Laozi's Wei reforms, provided the naturalistic ideology for unification.",
+      "Indian Buddhist monasteries established translation centers across northern China, creating a theological system. Confucianism, via Mencius's Qi reforms, provided the benevolent ideology for unification."
+    ],
+    "difficulty": 4,
+    "source_article": "Warring States period",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Warring States period (China)", "Hundred Schools of Thought", "Legalism and Qin unification"]
+  },
+  {
+    "question_text": "The Rashidun Caliphate's conquest of Sassanid Persia (633-651 CE) permanently transformed Central Asia's civilizational landscape. What pre-existing weakness of the Sassanid Empire facilitated the rapid Arab-Muslim conquest, and which 636 CE battle proved the decisive turning point that broke Sassanid military resistance?",
+    "correct_answer": "The Sassanids were exhausted by the Byzantine-Sassanid War (602-628) and destabilized by succession crises. The Battle of al-Qadisiyyah (636) shattered their defenses, opening Ctesiphon.",
+    "distractors": [
+      "The Sassanids were exhausted by the Gupta-Sassanid War (580-610) and destabilized by Zoroastrian schisms. The Battle of Talas River (636) shattered their defenses, opening Persepolis.",
+      "The Sassanids were exhausted by the Hunnic-Sassanid War (590-625) and destabilized by Manichaean revolts. The Siege of Isfahan (636) shattered their defenses, opening Susa.",
+      "The Sassanids were exhausted by the Kushan-Sassanid War (570-600) and destabilized by Armenian rebellions. The Battle of Nihavand (636) shattered their defenses, opening Balkh."
+    ],
+    "difficulty": 4,
+    "source_article": "Muslim conquests of Persia",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Rashidun Caliphate's expansion into Central Asia", "Battle of al-Qadisiyyah", "Sassanid Empire collapse"]
+  },
+  {
+    "question_text": "The 1955 Bandung Conference, hosted by Indonesian President Sukarno, gathered 29 Asian and African nations representing over half the world's population. What ten-point declaration did the conference adopt, and how did its principles specifically prefigure the formal establishment of the Non-Aligned Movement six years later?",
+    "correct_answer": "The Dasa Sila Bandung affirmed sovereignty, non-aggression, non-interference, and equality while rejecting Cold War bloc alignment, laying the ideological groundwork for the 1961 Non-Aligned Movement.",
+    "distractors": [
+      "The Jakarta Accords established collective defense, trade preferences, and intelligence sharing while endorsing Soviet alignment, laying the security groundwork for the 1961 Warsaw Pact expansion.",
+      "The Sukarno Doctrine mandated enterprise nationalization, import substitution, and currency unification while endorsing autarky, laying the financial groundwork for the 1961 Asian Development Bank.",
+      "The Afro-Asian Compact created a permanent UN voting bloc, peacekeeping force, and nuclear program while endorsing consolidation, laying the administrative groundwork for the 1961 African Union."
+    ],
+    "difficulty": 4,
+    "source_article": "Bandung Conference",
+    "domain_ids": ["asian-history"],
+    "concepts_tested": ["Bandung Conference", "Dasa Sila Bandung", "Non-Aligned Movement origins"]
+  }
+]

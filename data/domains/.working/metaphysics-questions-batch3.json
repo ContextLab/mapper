@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In philosophy, physicalism is the thesis that everything that exists is what?",
+    "correct_answer": "Physical, or entirely dependent on and determined by physical entities and properties",
+    "distractors": [
+      "Mental, originating from consciousness and irreducible to any material substrate whatsoever",
+      "Logical, consisting of abstract formal relations that ground all observable natural phenomena",
+      "Linguistic, constituted by the symbolic structures of language that shape perceived reality"
+    ],
+    "difficulty": 2,
+    "source_article": "Physicalism",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["physicalism"]
+  },
+  {
+    "question_text": "What distinguishes abstract objects from concrete objects in metaphysics?",
+    "correct_answer": "Abstract objects lack spatiotemporal location and causal powers, unlike concrete objects",
+    "distractors": [
+      "Abstract objects are perceptible through the senses while concrete objects require inference",
+      "Abstract objects exist only in the future whereas concrete objects exist in the present",
+      "Abstract objects are created by physical processes while concrete objects arise from thought"
+    ],
+    "difficulty": 2,
+    "source_article": "Abstract and concrete",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["abstract object"]
+  },
+  {
+    "question_text": "In Aristotelian metaphysics, what does the essence of a thing refer to?",
+    "correct_answer": "The set of necessary properties that make a thing what it fundamentally is",
+    "distractors": [
+      "The accidental qualities a thing acquires through interaction with its environment",
+      "The material substrate from which a thing is physically composed at any moment",
+      "The sensory impressions a thing produces in the minds of its various observers"
+    ],
+    "difficulty": 2,
+    "source_article": "Essence",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["essence"]
+  },
+  {
+    "question_text": "In modal logic, what makes a proposition contingent rather than necessary?",
+    "correct_answer": "It is true in some possible worlds but false in others, depending on how things happen to be",
+    "distractors": [
+      "It is true in every possible world and could not have been false under any circumstances",
+      "It is false in every possible world and its negation holds as a matter of logical law",
+      "It is neither true nor false in any possible world because it lacks determinate meaning"
+    ],
+    "difficulty": 2,
+    "source_article": "Contingency (philosophy)",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["necessity and contingency"]
+  },
+  {
+    "question_text": "What does supervenience mean in philosophy of mind?",
+    "correct_answer": "Mental properties cannot differ without a corresponding difference in underlying physical properties",
+    "distractors": [
+      "Physical properties are entirely caused by and reducible to prior mental states and intentions",
+      "Mental and physical properties vary completely independently with no systematic correlation at all",
+      "Higher-level mental properties replace and eliminate the lower-level physical properties they describe"
+    ],
+    "difficulty": 2,
+    "source_article": "Supervenience",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["supervenience"]
+  },
+  {
+    "question_text": "What is the core claim of nominalism in metaphysics?",
+    "correct_answer": "Only particular concrete things exist; universals and abstract objects are merely names or labels",
+    "distractors": [
+      "Universal forms exist independently of particular things in a separate realm of abstract being",
+      "Both universals and particulars exist equally as fundamental constituents of mind-independent reality",
+      "Abstract mathematical objects are the only true existents and physical particulars are derivative"
+    ],
+    "difficulty": 2,
+    "source_article": "Nominalism",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["nominalism"]
+  },
+  {
+    "question_text": "The problem of universals asks whether properties shared by multiple objects, such as redness, exist independently of those objects. What are the two main realist answers?",
+    "correct_answer": "Platonic realism, where universals exist independently of particulars, and Aristotelian realism, where universals exist only within particulars",
+    "distractors": [
+      "Cartesian realism, where universals exist in the mind, and Kantian realism, where universals structure possible experience",
+      "Empirical realism, where universals are discovered by observation, and rational realism, where universals are deduced a priori",
+      "Constructive realism, where universals are social agreements, and eliminative realism, where universals are reducible to physics"
+    ],
+    "difficulty": 3,
+    "source_article": "Problem of universals",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["problem of universals"]
+  },
+  {
+    "question_text": "According to the psychological continuity theory of personal identity, what makes a person at one time the same person at a later time?",
+    "correct_answer": "Overlapping chains of psychological connections such as memories, beliefs, and personality traits",
+    "distractors": [
+      "Continuous possession of an immaterial soul that remains numerically identical through all bodily changes",
+      "Unbroken physical continuity of the same biological organism from birth through natural death",
+      "Ongoing social recognition by others who consistently identify and treat the individual as the same person"
+    ],
+    "difficulty": 3,
+    "source_article": "Personal identity",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["personal identity over time"]
+  },
+  {
+    "question_text": "Compatibilism holds that free will and determinism are mutually compatible. How do compatibilists typically define a free action?",
+    "correct_answer": "An action performed according to the agent's own desires and motivations without external coercion or constraint",
+    "distractors": [
+      "An action that is completely uncaused, arising from a spontaneous quantum event in the agent's neural processes",
+      "An action chosen from among genuinely open alternative possibilities that are not fixed by prior causal history",
+      "An action whose outcome the agent could not have predicted because of inherent randomness in the causal chain"
+    ],
+    "difficulty": 3,
+    "source_article": "Compatibilism",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["compatibilism"]
+  },
+  {
+    "question_text": "What is mereology the formal study of in philosophy?",
+    "correct_answer": "Part-whole relations and how parts compose or constitute larger wholes",
+    "distractors": [
+      "Cause-effect relations and how prior events necessitate subsequent outcomes",
+      "Set-membership relations and how individual elements belong to abstract classes",
+      "Mind-body relations and how mental states interact with physical processes"
+    ],
+    "difficulty": 3,
+    "source_article": "Mereology",
+    "domain_ids": ["metaphysics"],
+    "concepts_tested": ["mereology"]
+  }
+]

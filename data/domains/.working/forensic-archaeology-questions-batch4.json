@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In forensic anthropology, skeletal trauma is typically classified into four categories based on the mechanism of injury. Which of the following is one of those four categories?",
+    "correct_answer": "Sharp force trauma, caused by a tool with a narrow or edged surface cutting into bone.",
+    "distractors": [
+      "Hydraulic force trauma, caused by sudden fluid pressure compressing skeletal elements internally.",
+      "Torsional force trauma, caused by sustained rotational stress fracturing long bone diaphyses.",
+      "Chemical force trauma, caused by corrosive substances dissolving cortical bone surfaces."
+    ],
+    "difficulty": 3,
+    "source_article": "Forensic anthropology",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["skeletal trauma analysis"]
+  },
+  {
+    "question_text": "When forensic anthropologists encounter commingled skeletal remains from multiple individuals mixed in a single deposit, what is the standard first step in resolving the assemblage?",
+    "correct_answer": "Sorting elements by skeletal part, side, size, age, and sex to separate individuals.",
+    "distractors": [
+      "Submitting every fragment for DNA analysis before any physical sorting is attempted.",
+      "Reconstructing each cranium first since skulls provide the most reliable individual count.",
+      "Weighing all skeletal elements collectively to estimate total body mass of victims."
+    ],
+    "difficulty": 3,
+    "source_article": "Commingling (forensics)",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["commingled remains"]
+  },
+  {
+    "question_text": "In forensic archaeology, photogrammetry is increasingly used for scene and remains documentation. What does the technique produce from overlapping digital photographs?",
+    "correct_answer": "Spatially accurate three-dimensional models of excavated features, graves, and artifacts.",
+    "distractors": [
+      "Subsurface geophysical maps showing soil density variations beneath the photographed area.",
+      "Chemical composition profiles identifying trace elements present on bone surfaces.",
+      "Thermal gradient images revealing decomposition activity below the ground surface."
+    ],
+    "difficulty": 3,
+    "source_article": "Photogrammetry",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["photogrammetry"]
+  },
+  {
+    "question_text": "Forensic odontology uses ante-mortem dental records to identify unknown skeletal remains. Why are teeth considered one of the most reliable means of positive identification?",
+    "correct_answer": "Teeth survive decomposition and extreme temperatures, and each person's dental features are unique.",
+    "distractors": [
+      "Teeth contain mitochondrial DNA in higher concentrations than any other skeletal tissue.",
+      "Teeth grow continuously throughout life, recording annual growth lines like tree rings.",
+      "Teeth change color predictably after death, allowing accurate estimation of postmortem interval."
+    ],
+    "difficulty": 3,
+    "source_article": "Forensic odontology",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["ante-mortem dental records"]
+  },
+  {
+    "question_text": "Systematic scene documentation in forensic archaeology must be completed before and during excavation. What is the primary reason this documentation is so critical?",
+    "correct_answer": "Excavation is destructive and unrepeatable, so the spatial context of evidence must be permanently recorded.",
+    "distractors": [
+      "Excavation equipment may contaminate the scene, so photographs prove that damage was pre-existing.",
+      "Local authorities require photographic permits before any ground disturbance can legally proceed.",
+      "Weather conditions may change soil color, so baseline images are needed for geochemical comparison."
+    ],
+    "difficulty": 3,
+    "source_article": "Crime scene investigation",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["scene documentation"]
+  },
+  {
+    "question_text": "Luminescence dating can be applied to sediments surrounding buried remains. What physical property of mineral grains such as quartz does this method measure?",
+    "correct_answer": "Energy released from electrons trapped in crystal lattice defects by background ionizing radiation over time.",
+    "distractors": [
+      "Ratio of radioactive carbon-14 to stable carbon-12 isotopes incorporated into the mineral structure.",
+      "Magnetic polarity orientation of iron-bearing minerals aligned with Earth's geomagnetic field.",
+      "Rate of surface hydration layers forming on freshly fractured mineral grain surfaces."
+    ],
+    "difficulty": 3,
+    "source_article": "Luminescence dating",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["luminescence dating"]
+  },
+  {
+    "question_text": "Interpol's Disaster Victim Identification (DVI) Guide recognizes three primary identifiers for establishing positive identification. Which set correctly lists all three?",
+    "correct_answer": "Friction ridge analysis (fingerprints), comparative dental analysis, and DNA profiling.",
+    "distractors": [
+      "Facial recognition software, skeletal radiograph superimposition, and blood-type serology.",
+      "Personal belongings inventory, medical implant serial numbers, and visual recognition by relatives.",
+      "Cranial morphometric measurement, stable isotope geolocation, and clothing fiber analysis."
+    ],
+    "difficulty": 3,
+    "source_article": "Disaster victim identification",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["Interpol DVI protocols"]
+  },
+  {
+    "question_text": "Forensic botany applies plant evidence to criminal investigations. Which of the following is an established forensic application of botanical evidence?",
+    "correct_answer": "Linking a suspect to a crime scene by identifying plant fragments transferred to clothing or vehicles.",
+    "distractors": [
+      "Determining the blood type of a victim by analyzing chlorophyll absorption in nearby vegetation.",
+      "Calculating the exact time of death by measuring photosynthesis rates of surrounding plants.",
+      "Identifying the murder weapon by matching soil bacteria cultures to specific metal alloys."
+    ],
+    "difficulty": 3,
+    "source_article": "Forensic botany",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["botanical evidence"]
+  },
+  {
+    "question_text": "Distinguishing perimortem from postmortem bone fractures is a key challenge in forensic anthropology. What characteristic of the bone at the time of fracture is most critical to this distinction?",
+    "correct_answer": "Whether the bone retained its organic collagen content (wet bone) or had dried out (dry bone), producing different fracture morphologies.",
+    "distractors": [
+      "Whether the bone was exposed to ultraviolet sunlight, which causes distinctive fluorescence patterns along fracture margins.",
+      "Whether the bone was submerged in water, which deposits mineral crusts that seal perimortem fracture surfaces.",
+      "Whether the bone was colonized by insects, whose boring patterns overprint and obscure original fracture outlines."
+    ],
+    "difficulty": 4,
+    "source_article": "Bone fracture",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["perimortem vs. postmortem fracture analysis"]
+  },
+  {
+    "question_text": "In forensic cut mark analysis, microscopic examination of tool-inflicted striations on bone can yield investigatively significant information. What cross-sectional profile is most characteristic of a cut mark produced by a sharp-edged weapon?",
+    "correct_answer": "A V-shaped groove with internal micro-striations reflecting the blade edge and direction of the stroke.",
+    "distractors": [
+      "A U-shaped trough with smooth polished walls indicating high-velocity rotational tool contact.",
+      "A W-shaped double groove with lateral crushing consistent with serrated blunt instrument impact.",
+      "A rectangular channel with uniform depth indicating repeated perpendicular percussion by a flat tool."
+    ],
+    "difficulty": 4,
+    "source_article": "Cut mark",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["cut mark analysis"]
+  }
+]

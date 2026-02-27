@@ -1,0 +1,80 @@
+[
+  {
+    "question_text": "In multivariable calculus, the gradient $\\nabla f$ of a scalar-valued function $f$ is a vector field. What geometric property does $\\nabla f$ at a point $p$ indicate?",
+    "correct_answer": "The direction and rate of fastest increase of $f$ at $p$, with its magnitude equal to the greatest directional derivative.",
+    "distractors": [
+      "The direction and rate of fastest decrease of $f$ at $p$, with its magnitude equal to the smallest directional derivative.",
+      "The direction perpendicular to the level curve of $f$ at $p$, with its magnitude equal to the average directional derivative.",
+      "The direction of zero change of $f$ at $p$, with its magnitude equal to the second-order directional derivative."
+    ],
+    "difficulty": 2,
+    "source_article": "Gradient",
+    "domain_ids": ["calculus"],
+    "concepts_tested": ["gradient", "directional derivative", "steepest ascent"]
+  },
+  {
+    "question_text": "When differentiating the implicit equation $F(x, y) = 0$, where $y$ is implicitly a function of $x$, what is the correct expression for $\\frac{dy}{dx}$?",
+    "correct_answer": "$\\frac{dy}{dx} = -\\frac{\\partial F / \\partial x}{\\partial F / \\partial y}$, obtained by applying the chain rule and solving for $\\frac{dy}{dx}$.",
+    "distractors": [
+      "$\\frac{dy}{dx} = -\\frac{\\partial F / \\partial y}{\\partial F / \\partial x}$, obtained by applying the chain rule and solving for $\\frac{dy}{dx}$.",
+      "$\\frac{dy}{dx} = +\\frac{\\partial F / \\partial x}{\\partial F / \\partial y}$, obtained by applying the product rule and solving for $\\frac{dy}{dx}$.",
+      "$\\frac{dy}{dx} = -\\frac{\\partial^2 F / \\partial x^2}{\\partial F / \\partial y}$, obtained by applying the chain rule and solving for $\\frac{dy}{dx}$."
+    ],
+    "difficulty": 2,
+    "source_article": "Implicit function theorem",
+    "domain_ids": ["calculus"],
+    "concepts_tested": ["implicit differentiation", "chain rule", "partial derivatives"]
+  },
+  {
+    "question_text": "A Maclaurin series is a special case of a Taylor series. What distinguishes it, and what is the Maclaurin series for $e^x$?",
+    "correct_answer": "A Taylor series centered at $a = 0$. The Maclaurin series for $e^x$ is $\\sum_{n=0}^{\\infty} \\frac{x^n}{n!}$.",
+    "distractors": [
+      "A Taylor series centered at $a = 1$. The Maclaurin series for $e^x$ is $\\sum_{n=0}^{\\infty} \\frac{x^n}{n!}$.",
+      "A Taylor series centered at $a = 0$. The Maclaurin series for $e^x$ is $\\sum_{n=1}^{\\infty} \\frac{x^n}{(n+1)!}$.",
+      "A Taylor series centered at $a = 0$. The Maclaurin series for $e^x$ is $\\sum_{n=0}^{\\infty} \\frac{x^{2n}}{(2n)!}$."
+    ],
+    "difficulty": 2,
+    "source_article": "Taylor series",
+    "domain_ids": ["calculus"],
+    "concepts_tested": ["Maclaurin series", "Taylor series", "power series expansion"]
+  },
+  {
+    "question_text": "The $\\epsilon$-$\\delta$ definition formalizes the limit $\\lim_{x \\to a} f(x) = L$. Which statement correctly captures this definition, as formalized by Weierstrass?",
+    "correct_answer": "For every $\\epsilon > 0$, there exists $\\delta > 0$ such that $0 < |x - a| < \\delta$ implies $|f(x) - L| < \\epsilon$.",
+    "distractors": [
+      "For every $\\delta > 0$, there exists $\\epsilon > 0$ such that $0 < |x - a| < \\delta$ implies $|f(x) - L| < \\epsilon$.",
+      "For every $\\epsilon > 0$, there exists $\\delta > 0$ such that $0 < |x - a| < \\epsilon$ implies $|f(x) - L| < \\delta$.",
+      "For every $\\epsilon > 0$, there exists $\\delta > 0$ such that $|x - a| \\leq \\delta$ implies $|f(x) - L| \\leq \\epsilon$."
+    ],
+    "difficulty": 2,
+    "source_article": "Limit of a function",
+    "domain_ids": ["calculus"],
+    "concepts_tested": ["epsilon-delta definition", "limit", "rigorous analysis"]
+  },
+  {
+    "question_text": "The mean value theorem (Lagrange's theorem) guarantees a specific relationship between average and instantaneous rates of change. What does it state for $f$ continuous on $[a,b]$ and differentiable on $(a,b)$?",
+    "correct_answer": "There exists some $c \\in (a,b)$ such that $f'(c) = \\frac{f(b) - f(a)}{b - a}$.",
+    "distractors": [
+      "There exists some $c \\in [a,b]$ such that $f'(c) = \\frac{f(b) + f(a)}{b - a}$.",
+      "There exists some $c \\in (a,b)$ such that $f''(c) = \\frac{f(b) - f(a)}{b - a}$.",
+      "There exists some $c \\in (a,b)$ such that $f'(c) = \\frac{f(b) - f(a)}{(b - a)^2}$."
+    ],
+    "difficulty": 2,
+    "source_article": "Mean value theorem",
+    "domain_ids": ["calculus"],
+    "concepts_tested": ["mean value theorem", "differentiability", "Lagrange's theorem"]
+  },
+  {
+    "question_text": "Integration by substitution (u-substitution) is the integration counterpart of which differentiation rule, and how does it transform a definite integral $\\int_a^b f(g(x))\\,g'(x)\\,dx$?",
+    "correct_answer": "The chain rule. It transforms the integral to $\\int_{g(a)}^{g(b)} f(u)\\,du$, substituting $u = g(x)$ and changing the limits accordingly.",
+    "distractors": [
+      "The product rule. It transforms the integral to $\\int_{g(a)}^{g(b)} f(u)\\,du$, substituting $u = g(x)$ and changing the limits accordingly.",
+      "The chain rule. It transforms the integral to $\\int_a^b f(u)\\,du$, substituting $u = g(x)$ while keeping the original limits unchanged.",
+      "The chain rule. It transforms the integral to $\\int_{g(b)}^{g(a)} f(u)\\,du$, substituting $u = g'(x)$ and reversing the limits accordingly."
+    ],
+    "difficulty": 2,
+    "source_article": "Integration by substitution",
+    "domain_ids": ["calculus"],
+    "concepts_tested": ["integration by substitution", "u-substitution", "chain rule"]
+  }
+]

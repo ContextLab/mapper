@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In propositional logic, what is a tautology?",
+    "correct_answer": "A formula that is true under every possible interpretation of its component terms.",
+    "distractors": [
+      "A formula that is true under at least one interpretation but may be false under others.",
+      "A formula whose truth value cannot be determined without knowing the specific model chosen.",
+      "A formula that is false under every possible interpretation of its component terms."
+    ],
+    "difficulty": 2,
+    "source_article": "Tautology (logic)",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["tautology"]
+  },
+  {
+    "question_text": "What is the role of logical connectives such as conjunction, disjunction, and implication in propositional logic?",
+    "correct_answer": "They combine or modify propositions to form compound statements whose truth values are determined by their components.",
+    "distractors": [
+      "They assign numerical values to variables so that algebraic equations can be solved systematically.",
+      "They quantify over individuals in a domain, specifying whether a property holds for all or some members.",
+      "They establish identity relations between objects, allowing substitution of equals for equals in formulas."
+    ],
+    "difficulty": 2,
+    "source_article": "Logical connective",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["logical connective"]
+  },
+  {
+    "question_text": "Who initiated the modern study of set theory in the 1870s, establishing the mathematical investigation of collections of objects?",
+    "correct_answer": "Georg Cantor, together with Richard Dedekind, initiated the modern study of set theory.",
+    "distractors": [
+      "Gottlob Frege and Giuseppe Peano, through their development of formal predicate logic and arithmetic axioms.",
+      "Bertrand Russell and Alfred North Whitehead, through their construction of Principia Mathematica.",
+      "David Hilbert and Ernst Zermelo, through their axiomatization of geometry and foundational programs."
+    ],
+    "difficulty": 2,
+    "source_article": "Set theory",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["set theory"]
+  },
+  {
+    "question_text": "In proof by contradiction (reductio ad absurdum), how is a statement established as true?",
+    "correct_answer": "By assuming the statement's negation and showing that this assumption leads to a logical contradiction.",
+    "distractors": [
+      "By constructing a direct chain of deductions from accepted axioms to the statement itself.",
+      "By verifying the statement holds in every possible case through exhaustive enumeration.",
+      "By proving a base case and then showing that if it holds for n it also holds for n+1."
+    ],
+    "difficulty": 2,
+    "source_article": "Proof by contradiction",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["proof by contradiction"]
+  },
+  {
+    "question_text": "In logic, what distinguishes a sound argument from one that is merely valid?",
+    "correct_answer": "A sound argument is valid and all of its premises are actually true, thereby guaranteeing a true conclusion.",
+    "distractors": [
+      "A sound argument uses only deductive reasoning, whereas a merely valid argument may rely on inductive steps.",
+      "A sound argument has been formally verified using a complete truth table for every connective it contains.",
+      "A sound argument contains no more than two premises, whereas a valid argument may contain any number."
+    ],
+    "difficulty": 2,
+    "source_article": "Soundness",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["soundness"]
+  },
+  {
+    "question_text": "What truth conditions define the logical biconditional connective (P if and only if Q)?",
+    "correct_answer": "It is true when both P and Q share the same truth value and false when their truth values differ.",
+    "distractors": [
+      "It is true whenever P is true, regardless of the truth value of Q.",
+      "It is true whenever at least one of P or Q is true and false only when both are false.",
+      "It is true except when both P and Q are true, and false otherwise."
+    ],
+    "difficulty": 2,
+    "source_article": "Logical biconditional",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["biconditional"]
+  },
+  {
+    "question_text": "What does Goedel's completeness theorem (1929) establish about first-order logic?",
+    "correct_answer": "Every logically valid first-order formula is provable from the standard axioms and inference rules of first-order logic.",
+    "distractors": [
+      "Every true statement of arithmetic can be formally proved within Peano arithmetic.",
+      "No consistent formal system strong enough to encode arithmetic can prove its own consistency.",
+      "First-order logic is decidable, meaning an algorithm exists to determine the validity of any formula."
+    ],
+    "difficulty": 3,
+    "source_article": "Gödel's completeness theorem",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["completeness theorem"]
+  },
+  {
+    "question_text": "In modal logic, what do the box operator and the diamond operator represent?",
+    "correct_answer": "The box denotes necessity (necessarily P) and the diamond denotes possibility (possibly P); they are dual operators.",
+    "distractors": [
+      "The box denotes universal quantification over individuals and the diamond denotes existential quantification.",
+      "The box denotes logical conjunction of propositions and the diamond denotes logical disjunction.",
+      "The box denotes obligation (P ought to be the case) and the diamond denotes knowledge (P is known)."
+    ],
+    "difficulty": 3,
+    "source_article": "Modal logic",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["modal logic"]
+  },
+  {
+    "question_text": "In Kripke semantics for modal logic, what two components constitute a Kripke frame?",
+    "correct_answer": "A non-empty set W of possible worlds and a binary accessibility relation R between those worlds.",
+    "distractors": [
+      "A set of propositional variables and a truth-value assignment function mapping each variable to true or false.",
+      "A domain of individuals and a set of predicate symbols together with their interpretations.",
+      "A collection of axiom schemas and a set of inference rules for deriving modal theorems."
+    ],
+    "difficulty": 3,
+    "source_article": "Kripke semantics",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["Kripke semantics"]
+  },
+  {
+    "question_text": "Who developed the natural deduction proof system, and what is its central organizing principle?",
+    "correct_answer": "Gerhard Gentzen developed it in the 1930s; it is organized around paired introduction and elimination rules for each logical connective.",
+    "distractors": [
+      "Alfred Tarski developed it in the 1920s; it is organized around semantic truth definitions for formal languages.",
+      "Gottlob Frege developed it in the 1870s; it is organized around axiom schemas with modus ponens as the sole inference rule.",
+      "Alan Turing developed it in the 1940s; it is organized around mechanical decision procedures for determining formula validity."
+    ],
+    "difficulty": 3,
+    "source_article": "Natural deduction",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["natural deduction"]
+  }
+]

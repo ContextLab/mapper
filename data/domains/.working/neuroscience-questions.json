@@ -1,0 +1,652 @@
+[
+  {
+    "question_text": "What type of cell in the nervous system transmits information via electrical signals called action potentials and communicates with other cells at synapses?",
+    "correct_answer": "A neuron, the primary excitable cell of the nervous system.",
+    "distractors": [
+      "A glial cell, the primary supportive cell of the nervous system.",
+      "A neuron, the primary inhibitory cell of the peripheral nervous system.",
+      "An astrocyte, the primary excitable cell of the nervous system."
+    ],
+    "difficulty": 1,
+    "source_article": "Neuron",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["neuron"]
+  },
+  {
+    "question_text": "In neuroanatomy, what is the cerebral cortex?",
+    "correct_answer": "The outer layer of gray matter covering the cerebrum, organized into six layers involved in perception, thought, and consciousness.",
+    "distractors": [
+      "The inner layer of white matter beneath the cerebrum, organized into six layers involved in perception, thought, and consciousness.",
+      "The outer layer of gray matter covering the cerebrum, organized into six layers primarily involved in motor coordination and reflexive behavior.",
+      "The outer layer of gray matter covering the cerebrum, organized into three layers involved in autonomic regulation and homeostasis."
+    ],
+    "difficulty": 1,
+    "source_article": "Cerebral cortex",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["cerebral cortex"]
+  },
+  {
+    "question_text": "In the central nervous system, what is the spinal cord?",
+    "correct_answer": "A long tubular structure of nervous tissue extending from the brainstem through the vertebral canal, relaying signals between brain and body.",
+    "distractors": [
+      "A long tubular structure of nervous tissue extending from the cerebellum through the vertebral canal, relaying signals between brain and body.",
+      "A long tubular structure of connective tissue extending from the brainstem through the spinal canal, relaying signals between peripheral organs.",
+      "A short segmented structure of nervous tissue extending from the brainstem through the vertebral canal, generating motor commands independently of the brain."
+    ],
+    "difficulty": 1,
+    "source_article": "Spinal cord",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["spinal cord"]
+  },
+  {
+    "question_text": "What neurological disorder is characterized by a tendency for recurrent, unprovoked seizures caused by abnormal electrical activity in the brain?",
+    "correct_answer": "Epilepsy, a group of neurological disorders defined by recurrent seizures.",
+    "distractors": [
+      "Encephalitis, a group of neurological disorders defined by recurrent seizures.",
+      "Epilepsy, a single neurological condition defined by recurrent muscle spasms.",
+      "Eclampsia, a group of neurological disorders defined by recurrent seizures."
+    ],
+    "difficulty": 1,
+    "source_article": "Epilepsy",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["epilepsy"]
+  },
+  {
+    "question_text": "In neuroanatomy, what is the cerebellum?",
+    "correct_answer": "A hindbrain structure at the back of the skull containing most of the brain's neurons, critical for motor coordination and balance.",
+    "distractors": [
+      "A midbrain structure at the base of the skull containing most of the brain's neurons, critical for sensory processing and memory.",
+      "A hindbrain structure at the back of the skull containing a small fraction of the brain's neurons, critical for motor coordination and balance.",
+      "A forebrain structure at the back of the skull containing most of the brain's neurons, critical for language production and cognition."
+    ],
+    "difficulty": 1,
+    "source_article": "Cerebellum",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["cerebellum"]
+  },
+  {
+    "question_text": "In neurophysiology, what is a reflex arc?",
+    "correct_answer": "The neural pathway (receptor, sensory neuron, integration center, motor neuron, effector) that mediates rapid involuntary responses to stimuli.",
+    "distractors": [
+      "The neural pathway (receptor, sensory neuron, integration center, motor neuron, effector) that mediates learned autonomic responses to stimuli.",
+      "The hormonal pathway (receptor, sensory neuron, integration center, motor neuron, effector) that mediates slow endocrine responses to stimuli.",
+      "The neural pathway (receptor, interneuron, motor cortex, sensory neuron, effector) that mediates rapid involuntary responses to stimuli."
+    ],
+    "difficulty": 1,
+    "source_article": "Reflex arc",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["reflex arc"]
+  },
+  {
+    "question_text": "In neuroscience, what is a neurotransmitter?",
+    "correct_answer": "A chemical messenger released from a presynaptic terminal into the synaptic cleft, where it binds to receptors on a target cell.",
+    "distractors": [
+      "A chemical messenger released from a postsynaptic terminal into the synaptic cleft, where it binds to receptors on a target cell.",
+      "A chemical messenger released from a presynaptic terminal into the extracellular fluid, where it binds to intracellular receptors within a target cell.",
+      "A neuropeptide hormone released from a presynaptic terminal into the bloodstream, where it binds to receptors on a distant target organ."
+    ],
+    "difficulty": 1,
+    "source_article": "Neurotransmitter",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["neurotransmitter"]
+  },
+  {
+    "question_text": "What medical emergency occurs when blood flow to part of the brain is interrupted, either by a blockage (ischemic) or by bleeding (hemorrhagic), causing brain cell death?",
+    "correct_answer": "A stroke, caused by disrupted blood supply to the brain.",
+    "distractors": [
+      "A migraine, caused by disrupted blood supply to the brain.",
+      "A transient ischemic attack, caused by disrupted blood supply to the brain.",
+      "An aneurysm, caused by disrupted blood supply to the brain."
+    ],
+    "difficulty": 1,
+    "source_article": "Stroke",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["stroke"]
+  },
+  {
+    "question_text": "What neurodegenerative movement disorder is caused by the loss of dopamine-producing neurons in the substantia nigra, leading to tremor, rigidity, and bradykinesia?",
+    "correct_answer": "Parkinson's disease, a progressive disorder of the central nervous system.",
+    "distractors": [
+      "Huntington's disease, a progressive disorder of the central nervous system.",
+      "Parkinson's disease, a progressive disorder of the peripheral nervous system.",
+      "Parkinson's disease, a progressive disorder of the autonomic nervous system."
+    ],
+    "difficulty": 1,
+    "source_article": "Parkinson's disease",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["Parkinson's disease"]
+  },
+  {
+    "question_text": "What autoimmune demyelinating disease of the central nervous system occurs when the immune system attacks the protective myelin sheath surrounding nerve cell axons?",
+    "correct_answer": "Multiple sclerosis (MS), which damages myelin and disrupts nerve signal transmission.",
+    "distractors": [
+      "Guillain-Barre syndrome (GBS), which damages myelin and disrupts nerve signal transmission.",
+      "Multiple sclerosis (MS), which damages axons and disrupts neurotransmitter synthesis.",
+      "Multiple sclerosis (MS), which damages myelin and disrupts neuronal cell division."
+    ],
+    "difficulty": 1,
+    "source_article": "Multiple sclerosis",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["multiple sclerosis"]
+  },
+  {
+    "question_text": "What monoamine neurotransmitter helps regulate mood, sleep, and appetite, with approximately 90% of the body's supply produced in the gastrointestinal tract?",
+    "correct_answer": "Serotonin, also known as 5-hydroxytryptamine (5-HT), involved in mood regulation and many bodily functions.",
+    "distractors": [
+      "Dopamine, also known as 3,4-dihydroxyphenethylamine, involved in mood regulation and many bodily functions.",
+      "Serotonin, also known as 5-hydroxytryptamine (5-HT), a peptide hormone regulating mood and digestive functions.",
+      "Norepinephrine, also known as 5-hydroxytryptamine (5-HT), involved in mood regulation and many bodily functions."
+    ],
+    "difficulty": 1,
+    "source_article": "Serotonin",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["serotonin"]
+  },
+  {
+    "question_text": "In clinical neuroscience, what is electroencephalography (EEG)?",
+    "correct_answer": "A non-invasive technique that records the brain's electrical activity via scalp electrodes, first performed on a human by Hans Berger in 1924.",
+    "distractors": [
+      "An invasive technique that records the brain's electrical activity via implanted electrodes, first performed on a human by Hans Berger in 1924.",
+      "A non-invasive technique that records the brain's electrical activity via scalp electrodes, first developed to diagnose traumatic brain injuries in 1924.",
+      "A non-invasive technique that records the brain's electrical activity via scalp electrodes, first performed on a human by Santiago Ramon y Cajal in 1906."
+    ],
+    "difficulty": 1,
+    "source_article": "Electroencephalography",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["electroencephalography"]
+  },
+  {
+    "question_text": "In neurotechnology, what is a brain-computer interface (BCI)?",
+    "correct_answer": "A system that establishes a direct communication pathway between neural activity and an external device, bypassing normal neuromuscular output.",
+    "distractors": [
+      "A system that establishes an indirect communication pathway between neural activity and an external device, requiring normal neuromuscular output.",
+      "A system that establishes a direct communication pathway between neural activity and an external device, amplifying normal neuromuscular output.",
+      "A system that establishes a direct communication pathway between neural activity and an implanted prosthesis, augmenting normal neuromuscular output."
+    ],
+    "difficulty": 1,
+    "source_article": "Brain\u2013computer interface",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["brain-computer interface"]
+  },
+  {
+    "question_text": "Which subcortical brain structure acts as a relay station, routing nearly all sensory information (except smell) to the appropriate regions of the cerebral cortex for processing?",
+    "correct_answer": "The thalamus",
+    "distractors": [
+      "The hypothalamus",
+      "The claustrum",
+      "The pulvinar"
+    ],
+    "difficulty": 2,
+    "source_article": "Thalamus",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["thalamus"]
+  },
+  {
+    "question_text": "In the basal ganglia, what is the collective name for the structure formed by the caudate nucleus and the putamen, which serves as the primary input region receiving signals from the cerebral cortex?",
+    "correct_answer": "The striatum",
+    "distractors": [
+      "The pallidum",
+      "The lentiform nucleus",
+      "The claustrum"
+    ],
+    "difficulty": 2,
+    "source_article": "Basal ganglia",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["basal ganglia"]
+  },
+  {
+    "question_text": "Which small structure in the medial temporal lobe plays a primary role in processing emotions, particularly fear conditioning, and in forming emotional memories?",
+    "correct_answer": "The amygdala",
+    "distractors": [
+      "The hippocampus",
+      "The insular cortex",
+      "The cingulate gyrus"
+    ],
+    "difficulty": 2,
+    "source_article": "Amygdala",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["amygdala"]
+  },
+  {
+    "question_text": "Which small diencephalic region maintains homeostasis by regulating body temperature, hunger, thirst, and sleep, and controls the endocrine system through its connection to the pituitary gland?",
+    "correct_answer": "The hypothalamus",
+    "distractors": [
+      "The thalamus",
+      "The epithalamus",
+      "The subthalamus"
+    ],
+    "difficulty": 2,
+    "source_article": "Hypothalamus",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["hypothalamus"]
+  },
+  {
+    "question_text": "What is the name of the largest white matter structure in the human brain, consisting of approximately 200 to 300 million axonal projections that connect the left and right cerebral hemispheres?",
+    "correct_answer": "The corpus callosum",
+    "distractors": [
+      "The anterior commissure",
+      "The corona radiata",
+      "The internal capsule"
+    ],
+    "difficulty": 2,
+    "source_article": "Corpus callosum",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["corpus callosum"]
+  },
+  {
+    "question_text": "Which region in the posterior inferior frontal gyrus of the left hemisphere, encompassing Brodmann areas 44 and 45, is associated with speech production? Damage to it causes nonfluent (expressive) aphasia.",
+    "correct_answer": "Broca's area",
+    "distractors": [
+      "Wernicke's area",
+      "Geschwind's territory",
+      "Exner's area"
+    ],
+    "difficulty": 2,
+    "source_article": "Broca's area",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["Broca's area"]
+  },
+  {
+    "question_text": "What are the non-neuronal cells in the nervous system called that provide structural support, form myelin, and maintain homeostasis? In the CNS, they include astrocytes, oligodendrocytes, and microglia.",
+    "correct_answer": "Glial cells (neuroglia)",
+    "distractors": [
+      "Stromal cells (pericytes)",
+      "Satellite cells (amphicytes)",
+      "Ependymal cells (ependymocytes)"
+    ],
+    "difficulty": 2,
+    "source_article": "Neuroglia",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["glial cell"]
+  },
+  {
+    "question_text": "What are the three protective membranes surrounding the brain and spinal cord called? From outermost to innermost, they are the dura mater, arachnoid mater, and pia mater.",
+    "correct_answer": "The meninges",
+    "distractors": [
+      "The ependyma",
+      "The falces",
+      "The periosteum"
+    ],
+    "difficulty": 2,
+    "source_article": "Meninges",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["meninges"]
+  },
+  {
+    "question_text": "Which functional neuroimaging technique uses a radiotracer such as $^{18}$F-fluorodeoxyglucose and detects pairs of gamma rays produced by matter-antimatter annihilation events in body tissue?",
+    "correct_answer": "Positron emission tomography (PET)",
+    "distractors": [
+      "Single-photon emission computed tomography (SPECT)",
+      "Functional magnetic resonance imaging (fMRI)",
+      "Diffusion tensor imaging (DTI)"
+    ],
+    "difficulty": 2,
+    "source_article": "Positron emission tomography",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["positron emission tomography"]
+  },
+  {
+    "question_text": "Which autosomal dominant neurodegenerative disorder is caused by an expanded CAG trinucleotide repeat in the HTT gene on chromosome 4, leading to progressive motor, cognitive, and psychiatric decline?",
+    "correct_answer": "Huntington's disease",
+    "distractors": [
+      "Friedreich's ataxia",
+      "Machado-Joseph disease",
+      "Kennedy's disease"
+    ],
+    "difficulty": 2,
+    "source_article": "Huntington's disease",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["Huntington's disease"]
+  },
+  {
+    "question_text": "Which autoimmune neuromuscular disorder is caused by antibodies targeting acetylcholine receptors at the neuromuscular junction, leading to fluctuating skeletal muscle weakness that worsens with activity?",
+    "correct_answer": "Myasthenia gravis",
+    "distractors": [
+      "Lambert-Eaton syndrome",
+      "Guillain-Barr\u00e9 syndrome",
+      "Isaac syndrome"
+    ],
+    "difficulty": 2,
+    "source_article": "Myasthenia gravis",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["myasthenia gravis"]
+  },
+  {
+    "question_text": "Which Spanish neuroscientist, often called the father of modern neuroscience, shared the 1906 Nobel Prize in Physiology or Medicine with Camillo Golgi for establishing that neurons are discrete cells rather than a continuous network?",
+    "correct_answer": "Santiago Ram\u00f3n y Cajal",
+    "distractors": [
+      "Heinrich Wilhelm von Waldeyer",
+      "Charles Scott Sherrington",
+      "Jan Evangelista Purkyn\u011b"
+    ],
+    "difficulty": 2,
+    "source_article": "Santiago Ram\u00f3n y Cajal",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["Santiago Ram\u00f3n y Cajal"]
+  },
+  {
+    "question_text": "In clinical neuroanatomy, what term describes an area of skin whose sensory innervation is supplied by a single spinal nerve dorsal root? Herpes zoster (shingles) rashes characteristically follow this pattern.",
+    "correct_answer": "A dermatome",
+    "distractors": [
+      "A myotome",
+      "A sclerotome",
+      "A neurotome"
+    ],
+    "difficulty": 2,
+    "source_article": "Dermatome (anatomy)",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["dermatome"]
+  },
+  {
+    "question_text": "A neurosurgeon identifies a cortical region with large Betz cells in layer V and a nearly absent layer IV. Which Brodmann area is this, and where is it located?",
+    "correct_answer": "Brodmann area 4, the primary motor cortex, located in the precentral gyrus.",
+    "distractors": [
+      "Brodmann area 3, the primary somatosensory cortex, located in the postcentral gyrus.",
+      "Brodmann area 6, the premotor cortex, located in the superior frontal gyrus.",
+      "Brodmann area 17, the primary visual cortex, located in the calcarine sulcus."
+    ],
+    "difficulty": 3,
+    "source_article": "Brodmann area",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["Brodmann areas"]
+  },
+  {
+    "question_text": "In diffusion tensor imaging, a brain region shows fractional anisotropy near 0. What does this indicate about local tissue microstructure, and where might such a value typically be found?",
+    "correct_answer": "Water diffuses equally in all directions (isotropic), indicating no organized fiber tracts -- typical of cerebrospinal fluid in the ventricles.",
+    "distractors": [
+      "Water diffuses preferentially along one axis (anisotropic), indicating densely packed parallel fiber tracts -- typical of major white matter pathways like the corpus callosum.",
+      "Water diffuses with moderate directional preference (anisotropic), indicating crossing fiber tracts -- typical of white matter intersection zones in the corona radiata.",
+      "Water diffuses equally in all directions (isotropic), indicating tissue necrosis -- typical of acute infarct cores in the basal ganglia."
+    ],
+    "difficulty": 3,
+    "source_article": "Diffusion MRI",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["diffusion tensor imaging"]
+  },
+  {
+    "question_text": "BOLD fMRI detects neural activity indirectly through changes in blood oxygenation. Why does the MR signal increase in active brain regions, given that activity consumes oxygen?",
+    "correct_answer": "Blood flow increases disproportionately to oxygen consumption, reducing paramagnetic deoxyhemoglobin concentration and increasing the T2* signal.",
+    "distractors": [
+      "Oxygen consumption increases disproportionately to blood flow, increasing paramagnetic deoxyhemoglobin concentration and amplifying the T2* signal.",
+      "Blood flow increases proportionally to oxygen consumption, reducing diamagnetic oxyhemoglobin concentration and increasing the T1 signal.",
+      "Blood volume increases disproportionately to oxygen consumption, increasing paramagnetic oxyhemoglobin concentration and enhancing the T2* signal."
+    ],
+    "difficulty": 3,
+    "source_article": "Blood-oxygen-level-dependent imaging",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["blood-oxygen-level-dependent contrast"]
+  },
+  {
+    "question_text": "A woman discovers her pregnancy at 6 weeks gestation. Why is it too late to begin folic acid supplementation for neural tube defect prevention, and what are the two most common NTDs?",
+    "correct_answer": "The neural tube closes by week 4, before most women know they are pregnant. The two most common NTDs are spina bifida and anencephaly.",
+    "distractors": [
+      "The neural tube closes by week 3, before implantation is fully complete. The two most common NTDs are spina bifida and holoprosencephaly.",
+      "The neural tube closes by week 4, before most women know they are pregnant. The two most common NTDs are anencephaly and encephalocele.",
+      "The neural crest migrates by week 4, before most women know they are pregnant. The two most common NTDs are spina bifida and microcephaly."
+    ],
+    "difficulty": 3,
+    "source_article": "Neural tube defect",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["neural tube defect"]
+  },
+  {
+    "question_text": "A chronic alcohol user presents with confabulation and severe anterograde amnesia following an acute episode of confusion and ataxia. What vitamin deficiency underlies this progression, and which brain structure shows characteristic atrophy?",
+    "correct_answer": "Thiamine (vitamin B1) deficiency causes Wernicke-Korsakoff syndrome, with characteristic atrophy of the mammillary bodies.",
+    "distractors": [
+      "Pyridoxine (vitamin B6) deficiency causes Wernicke-Korsakoff syndrome, with characteristic atrophy of the mammillary bodies.",
+      "Thiamine (vitamin B1) deficiency causes Wernicke-Korsakoff syndrome, with characteristic atrophy of the hippocampal formation.",
+      "Cobalamin (vitamin B12) deficiency causes Wernicke-Korsakoff syndrome, with characteristic atrophy of the dorsomedial thalamus."
+    ],
+    "difficulty": 3,
+    "source_article": "Wernicke\u2013Korsakoff syndrome",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["Wernicke-Korsakoff syndrome"]
+  },
+  {
+    "question_text": "The substantia nigra pars compacta appears dark on gross examination due to neuromelanin. What is the metabolic origin of this pigment, and what disease results from degeneration of these neurons?",
+    "correct_answer": "Neuromelanin is a byproduct of dopamine synthesis. Degeneration of these dopaminergic neurons causes Parkinson's disease.",
+    "distractors": [
+      "Neuromelanin is a byproduct of norepinephrine synthesis. Degeneration of these noradrenergic neurons causes Parkinson's disease.",
+      "Neuromelanin is a byproduct of dopamine synthesis. Degeneration of these dopaminergic neurons causes Huntington's disease.",
+      "Neuromelanin is a byproduct of serotonin metabolism. Degeneration of these serotonergic neurons causes Parkinson's disease."
+    ],
+    "difficulty": 3,
+    "source_article": "Substantia nigra",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["substantia nigra"]
+  },
+  {
+    "question_text": "In Penfield's cortical homunculus, the somatosensory representation of the foot lies on the medial surface of the hemisphere. Which arterial territory supplies this region, and why do strokes there spare the hand?",
+    "correct_answer": "The anterior cerebral artery supplies the medial cortex (foot area), while the middle cerebral artery supplies the lateral cortex (hand/face area).",
+    "distractors": [
+      "The middle cerebral artery supplies the medial cortex (foot area), while the posterior cerebral artery supplies the lateral cortex (hand/face area).",
+      "The anterior cerebral artery supplies the medial cortex (foot area), while the posterior cerebral artery supplies the lateral cortex (hand/face area).",
+      "The posterior cerebral artery supplies the medial cortex (foot area), while the anterior cerebral artery supplies the lateral cortex (hand/face area)."
+    ],
+    "difficulty": 3,
+    "source_article": "Somatotopic arrangement",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["somatotopic organization"]
+  },
+  {
+    "question_text": "During carotid sinus massage, stimulation of cranial nerve X dramatically slows heart rate. What neurotransmitter mediates this effect at the sinoatrial node, and through which type of receptor does it act?",
+    "correct_answer": "Acetylcholine released by vagal postganglionic fibers acts on muscarinic (M2) receptors at the sinoatrial node to reduce heart rate.",
+    "distractors": [
+      "Norepinephrine released by vagal postganglionic fibers acts on adrenergic (beta-1) receptors at the sinoatrial node to reduce heart rate.",
+      "Acetylcholine released by vagal preganglionic fibers acts on nicotinic (N2) receptors at the sinoatrial node to reduce heart rate.",
+      "Acetylcholine released by vagal postganglionic fibers acts on muscarinic (M3) receptors at the atrioventricular node to reduce heart rate."
+    ],
+    "difficulty": 3,
+    "source_article": "Cranial nerves",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["cranial nerves"]
+  },
+  {
+    "question_text": "Benzodiazepines and SSRIs both treat anxiety but act on different neurotransmitter systems. Which receptor does each drug class target, and do they act as direct agonists?",
+    "correct_answer": "Benzodiazepines are positive allosteric modulators of GABA$_A$ receptors. SSRIs block serotonin reuptake transporters. Neither acts as a direct receptor agonist.",
+    "distractors": [
+      "Benzodiazepines are direct agonists of GABA$_A$ receptors. SSRIs block serotonin reuptake transporters. Only SSRIs act as indirect receptor modulators.",
+      "Benzodiazepines are positive allosteric modulators of GABA$_B$ receptors. SSRIs block serotonin reuptake transporters. Only benzodiazepines act as a direct receptor agonist.",
+      "Benzodiazepines are positive allosteric modulators of GABA$_A$ receptors. SSRIs are partial agonists at serotonin receptors. Neither acts as a full receptor agonist."
+    ],
+    "difficulty": 3,
+    "source_article": "Neuropharmacology",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["neuropharmacology"]
+  },
+  {
+    "question_text": "In split-brain patients, an object flashed to the left visual field cannot be verbally named but can be identified by the left hand. Which hemisphere receives left visual field input, and why can't the patient name it?",
+    "correct_answer": "The right hemisphere receives left visual field input but lacks language centers. Without the corpus callosum, information cannot reach the left hemisphere for speech.",
+    "distractors": [
+      "The left hemisphere receives left visual field input but lacks spatial processing centers. Without the corpus callosum, information cannot reach the right hemisphere for naming.",
+      "The right hemisphere receives left visual field input but lacks language centers. Without the anterior commissure, information cannot reach the left hemisphere for speech.",
+      "The right hemisphere receives left visual field input but lacks language centers. Without the corpus callosum, information cannot reach the left hemisphere for semantic processing."
+    ],
+    "difficulty": 3,
+    "source_article": "Split-brain",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["split-brain research"]
+  },
+  {
+    "question_text": "Stereotactic surgery uses a three-dimensional coordinate system to reach deep brain targets through a small skull opening. What provides the spatial reference -- the frame or the imaging -- and why are both needed?",
+    "correct_answer": "Imaging (CT/MRI) localizes the target; the stereotactic frame provides a fixed external reference to translate image coordinates into precise surgical instrument positioning.",
+    "distractors": [
+      "The stereotactic frame localizes the target; imaging (CT/MRI) provides a fixed external reference to translate frame coordinates into precise surgical instrument positioning.",
+      "Imaging (CT/MRI) localizes the target; the stereotactic frame provides a fixed external reference to translate surface anatomy into precise surgical instrument positioning.",
+      "Imaging (CT/MRI) localizes the target; the stereotactic frame provides a fixed external reference to translate anatomical landmarks into approximate surgical instrument positioning."
+    ],
+    "difficulty": 3,
+    "source_article": "Stereotactic surgery",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["stereotactic surgery"]
+  },
+  {
+    "question_text": "Deep brain stimulation for Parkinson's disease commonly targets the subthalamic nucleus, while essential tremor is treated by stimulating a different structure. What is that target?",
+    "correct_answer": "The ventral intermediate nucleus (VIM) of the thalamus, a relay between the cerebellum and motor cortex in the tremor circuit.",
+    "distractors": [
+      "The ventral anterior nucleus (VA) of the thalamus, a relay between the basal ganglia and motor cortex in the tremor circuit.",
+      "The ventral posterolateral nucleus (VPL) of the thalamus, a relay between the spinal cord and somatosensory cortex in the tremor circuit.",
+      "The centromedian nucleus (CM) of the thalamus, a relay between the cerebellum and premotor cortex in the tremor circuit."
+    ],
+    "difficulty": 3,
+    "source_article": "Deep brain stimulation",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["deep brain stimulation"]
+  },
+  {
+    "question_text": "The Papez circuit includes a white matter tract historically named after the French anatomist Vicq d'Azyr. Which structure does this tract connect, and what is its modern anatomical name?",
+    "correct_answer": "The mammillothalamic tract connects the mammillary bodies to the anterior thalamic nuclei.",
+    "distractors": [
+      "The mammillothalamic tract connects the mammillary bodies to the mediodorsal thalamic nuclei.",
+      "The mammillotegmental tract connects the mammillary bodies to the midbrain tegmental nuclei.",
+      "The mammillothalamic tract connects the mammillary bodies to the ventral anterior thalamic nuclei."
+    ],
+    "difficulty": 4,
+    "source_article": "Papez circuit",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["Papez circuit"]
+  },
+  {
+    "question_text": "The area postrema lacks a blood-brain barrier and is enriched in aquaporin-4. In which autoimmune disorder is the area postrema characteristically the initial site of attack, presenting with intractable nausea and vomiting?",
+    "correct_answer": "Neuromyelitis optica spectrum disorder (NMOSD), mediated by anti-aquaporin-4 (AQP4-IgG) antibodies.",
+    "distractors": [
+      "Multiple sclerosis (MS), mediated by anti-myelin oligodendrocyte glycoprotein (MOG-IgG) antibodies.",
+      "Neuromyelitis optica spectrum disorder (NMOSD), mediated by anti-N-methyl-D-aspartate receptor (NMDAR-IgG) antibodies.",
+      "Autoimmune encephalitis (AE), mediated by anti-aquaporin-4 (AQP4-IgG) antibodies."
+    ],
+    "difficulty": 4,
+    "source_article": "Area postrema",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["area postrema"]
+  },
+  {
+    "question_text": "Moruzzi and Magoun's 1949 ascending reticular activating system has two main branches. The cholinergic branch arises from which paired brainstem nuclei that project densely to thalamic relay nuclei?",
+    "correct_answer": "The pedunculopontine (PPT) and laterodorsal tegmental (LDT) nuclei.",
+    "distractors": [
+      "The locus coeruleus (LC) and dorsal raphe nucleus (DRN) nuclei.",
+      "The pedunculopontine (PPT) and parabrachial nucleus (PBN) nuclei.",
+      "The medial vestibular (MVN) and laterodorsal tegmental (LDT) nuclei."
+    ],
+    "difficulty": 4,
+    "source_article": "Reticular activating system",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["reticular activating system"]
+  },
+  {
+    "question_text": "In Brown-Sequard syndrome, contralateral loss of pain and temperature begins a few segments below the lesion rather than at the lesion level. Which anatomical feature of the spinothalamic tract explains this?",
+    "correct_answer": "Second-order spinothalamic axons ascend 1-3 segments in Lissauer's tract before decussating through the anterior white commissure.",
+    "distractors": [
+      "Second-order spinothalamic axons ascend 1-3 segments in the dorsal columns before decussating through the anterior white commissure.",
+      "Second-order spinothalamic axons ascend 1-3 segments in Lissauer's tract before decussating through the posterior white commissure.",
+      "First-order spinothalamic axons ascend 1-3 segments in Lissauer's tract before synapsing in the substantia gelatinosa."
+    ],
+    "difficulty": 4,
+    "source_article": "Brown-S\u00e9quard syndrome",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["Brown-S\u00e9quard syndrome"]
+  },
+  {
+    "question_text": "Kluver-Bucy syndrome results from bilateral medial temporal lobe destruction. Which two core symptoms are attributed specifically to ventral temporal lobe damage rather than amygdala lesions?",
+    "correct_answer": "Visual agnosia (psychic blindness) and hypermetamorphosis (compulsive visual exploration).",
+    "distractors": [
+      "Hyperorality (oral exploration) and hypersexuality (indiscriminate sexual behavior).",
+      "Visual agnosia (psychic blindness) and placidity (emotional flattening).",
+      "Hypermetamorphosis (compulsive visual exploration) and hyperorality (oral tendencies)."
+    ],
+    "difficulty": 4,
+    "source_article": "Kl\u00fcver\u2013Bucy syndrome",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["Kl\u00fcver-Bucy syndrome"]
+  },
+  {
+    "question_text": "When Penfield electrically stimulated the temporal cortex of conscious epilepsy patients, only about 8% of temporal stimulations produced vivid experiential phenomena. What term did Penfield use for this temporal region?",
+    "correct_answer": "The 'interpretive cortex.'",
+    "distractors": [
+      "The 'associative cortex.'",
+      "The 'perceptual cortex.'",
+      "The 'mnemonic cortex.'"
+    ],
+    "difficulty": 4,
+    "source_article": "Wilder Penfield",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["Penfield's cortical mapping"]
+  },
+  {
+    "question_text": "MEG using SQUIDs selectively detects activity from neurons in cortical sulci but not gyral crowns. What geometric property of the underlying current dipoles explains this bias?",
+    "correct_answer": "MEG detects only tangentially oriented dipoles; radial dipoles on gyral surfaces produce negligible external magnetic fields.",
+    "distractors": [
+      "MEG detects only obliquely oriented dipoles; radial dipoles on gyral surfaces produce negligible external magnetic fields.",
+      "MEG detects only tangentially oriented dipoles; radial dipoles on gyral surfaces are canceled by symmetric return currents.",
+      "MEG detects only perpendicularly oriented dipoles; parallel dipoles on gyral surfaces produce negligible external magnetic fields."
+    ],
+    "difficulty": 4,
+    "source_article": "Magnetoencephalography",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["magnetoencephalography"]
+  },
+  {
+    "question_text": "In voxel-based morphometry, smoothed gray matter maps undergo voxel-wise statistics corrected for multiple comparisons. Which mathematical framework provides this correction by modeling the smoothed data as a continuous random field?",
+    "correct_answer": "Gaussian random field theory, which controls family-wise error rate based on the smoothness (resels) of the data.",
+    "distractors": [
+      "Markov random field theory, which controls family-wise error rate based on the smoothness (resels) of the data.",
+      "Gaussian random field theory, which controls false discovery rate based on the smoothness (resels) of the data.",
+      "Bayesian random field theory, which controls family-wise error rate based on the spatial autocorrelation of the data."
+    ],
+    "difficulty": 4,
+    "source_article": "Voxel-based morphometry",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["voxel-based morphometry"]
+  },
+  {
+    "question_text": "The term 'connectome' was independently coined in 2005 by Olaf Sporns and Patric Hagmann. Which organism had its complete neuronal wiring diagram first mapped, and approximately how many neurons does it contain?",
+    "correct_answer": "The nematode Caenorhabditis elegans, with 302 neurons and approximately 5,000 chemical synapses.",
+    "distractors": [
+      "The nematode Caenorhabditis elegans, with 302 neurons and approximately 7,600 electrical gap junctions.",
+      "The fruit fly Drosophila melanogaster, with 302 neurons and approximately 5,000 chemical synapses.",
+      "The nematode Caenorhabditis elegans, with 959 neurons and approximately 5,000 chemical synapses."
+    ],
+    "difficulty": 4,
+    "source_article": "Connectome",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["connectome"]
+  },
+  {
+    "question_text": "Encephalitis lethargica, described by von Economo in 1917, caused postencephalitic parkinsonism years later. Unlike idiopathic Parkinson's disease, what distinctive neuropathological finding characterizes PEP?",
+    "correct_answer": "Neurofibrillary tangles composed of hyperphosphorylated tau protein in surviving substantia nigra neurons, classifying PEP as a tauopathy.",
+    "distractors": [
+      "Lewy bodies composed of aggregated alpha-synuclein protein in surviving substantia nigra neurons, classifying PEP as a synucleinopathy.",
+      "Neurofibrillary tangles composed of hyperphosphorylated tau protein in surviving locus coeruleus neurons, classifying PEP as a tauopathy.",
+      "Amyloid plaques composed of hyperphosphorylated tau protein in surviving substantia nigra neurons, classifying PEP as a tauopathy."
+    ],
+    "difficulty": 4,
+    "source_article": "Encephalitis lethargica",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["encephalitis lethargica"]
+  },
+  {
+    "question_text": "In parenchymal neurocysticercosis, the vesicular stage cyst shows a pathognomonic imaging finding that definitively distinguishes it from other ring-enhancing lesions. What is this finding?",
+    "correct_answer": "An eccentric scolex (larval head) visible as a mural nodule within the cyst, producing the 'hole-with-dot' sign.",
+    "distractors": [
+      "A central calcified granuloma (larval remnant) visible as a dense nodule within the cyst, producing the 'target sign.'",
+      "An eccentric scolex (larval head) visible as a mural nodule within the cyst, producing the 'ring-and-crescent' sign.",
+      "A peripheral rim of protoscolices (larval heads) visible as mural nodules within the cyst, producing the 'cluster sign.'"
+    ],
+    "difficulty": 4,
+    "source_article": "Neurocysticercosis",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["neurocysticercosis"]
+  },
+  {
+    "question_text": "In cortical laminar necrosis following hypoxic-ischemic injury, which cortical layer is most selectively vulnerable, and what characteristic delayed MRI finding appears on T1-weighted sequences?",
+    "correct_answer": "Layer III (outer pyramidal layer) is most vulnerable; cortical ribbon-like T1 hyperintensity appears after approximately two weeks.",
+    "distractors": [
+      "Layer V (internal pyramidal layer) is most vulnerable; cortical ribbon-like T1 hyperintensity appears after approximately two weeks.",
+      "Layer III (outer pyramidal layer) is most vulnerable; cortical ribbon-like T1 hypointensity appears after approximately two weeks.",
+      "Layer IV (internal granular layer) is most vulnerable; cortical ribbon-like T1 hyperintensity appears after approximately two weeks."
+    ],
+    "difficulty": 4,
+    "source_article": "Laminar necrosis",
+    "domain_ids": ["neuroscience"],
+    "concepts_tested": ["laminar necrosis"]
+  }
+]

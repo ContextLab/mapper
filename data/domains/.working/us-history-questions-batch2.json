@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "How many hijackers carried out the September 11, 2001, terrorist attacks against the United States?",
+    "correct_answer": "Nineteen hijackers affiliated with al-Qaeda seized four commercial airliners.",
+    "distractors": [
+      "Fifteen hijackers affiliated with al-Qaeda seized three commercial airliners.",
+      "Twenty-one hijackers affiliated with Hezbollah seized four commercial airliners.",
+      "Twelve hijackers affiliated with al-Qaeda seized two commercial airliners."
+    ],
+    "difficulty": 1,
+    "source_article": "September 11 attacks",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["September 11 attacks"]
+  },
+  {
+    "question_text": "Which president authorized the Louisiana Purchase, and from which country was the territory acquired?",
+    "correct_answer": "President Thomas Jefferson acquired the territory from France for approximately fifteen million dollars in 1803.",
+    "distractors": [
+      "President James Madison acquired the territory from Spain for approximately fifteen million dollars in 1803.",
+      "President Thomas Jefferson acquired the territory from Britain for approximately ten million dollars in 1801.",
+      "President John Adams acquired the territory from France for approximately twenty million dollars in 1800."
+    ],
+    "difficulty": 1,
+    "source_article": "Louisiana Purchase",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Louisiana Purchase"]
+  },
+  {
+    "question_text": "Who introduced the amendments that became the Bill of Rights, and when were they ratified?",
+    "correct_answer": "James Madison introduced them in Congress in 1789, and ten of the twelve proposed amendments were ratified by December 1791.",
+    "distractors": [
+      "Alexander Hamilton introduced them in Congress in 1788, and all twelve proposed amendments were ratified by December 1790.",
+      "Thomas Jefferson introduced them in Congress in 1790, and ten of the fifteen proposed amendments were ratified by December 1792.",
+      "George Washington introduced them in Congress in 1789, and eight of the twelve proposed amendments were ratified by December 1791."
+    ],
+    "difficulty": 1,
+    "source_article": "United States Bill of Rights",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Bill of Rights"]
+  },
+  {
+    "question_text": "What informal political agreement ended the Reconstruction era in 1877?",
+    "correct_answer": "The Compromise of 1877, in which Democrats accepted Rutherford B. Hayes as president in exchange for the withdrawal of federal troops from the South.",
+    "distractors": [
+      "The Compromise of 1877, in which Republicans accepted Samuel Tilden as president in exchange for continued federal oversight of Southern elections.",
+      "The Bargain of 1876, in which Democrats accepted Ulysses Grant for a third term in exchange for amnesty for former Confederate leaders.",
+      "The Wormley Agreement of 1878, in which Republicans ceded control of Congress to Democrats in exchange for ratification of the Fifteenth Amendment."
+    ],
+    "difficulty": 2,
+    "source_article": "Reconstruction era",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Reconstruction"]
+  },
+  {
+    "question_text": "Which New Deal program established a federal corporation to provide flood control, electricity, and economic development to a major river basin?",
+    "correct_answer": "The Tennessee Valley Authority, created in 1933, brought infrastructure, cheap electricity, and jobs to one of the nation's poorest regions.",
+    "distractors": [
+      "The Civilian Conservation Corps, created in 1933, built dams and power stations along the Mississippi River to provide rural electrification.",
+      "The Works Progress Administration, created in 1935, constructed hydroelectric plants across the Columbia River basin to stimulate regional growth.",
+      "The Rural Electrification Administration, created in 1935, built a network of federal dams along the Ohio River to supply power to Appalachian communities."
+    ],
+    "difficulty": 2,
+    "source_article": "New Deal",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["New Deal"]
+  },
+  {
+    "question_text": "Who coined the phrase 'manifest destiny,' and in what context was it first used?",
+    "correct_answer": "Journalist John L. O'Sullivan coined it in 1845 in the United States Magazine and Democratic Review, arguing for the annexation of Texas.",
+    "distractors": [
+      "Senator Henry Clay coined it in 1844 in a congressional speech arguing for the annexation of Oregon Country.",
+      "President James K. Polk coined it in 1846 in his inaugural address arguing for war with Mexico.",
+      "Editor Horace Greeley coined it in 1843 in the New York Tribune arguing for settlement of the Great Plains."
+    ],
+    "difficulty": 2,
+    "source_article": "Manifest destiny",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Manifest Destiny"]
+  },
+  {
+    "question_text": "Which four constitutional amendments were ratified during the Progressive Era, and what did they collectively accomplish?",
+    "correct_answer": "The 16th through 19th Amendments established a federal income tax, direct election of senators, prohibition, and women's suffrage.",
+    "distractors": [
+      "The 13th through 16th Amendments abolished slavery, guaranteed equal protection, granted Black male suffrage, and established a federal income tax.",
+      "The 16th through 19th Amendments established a federal income tax, abolished poll taxes, imposed prohibition, and lowered the voting age.",
+      "The 17th through 20th Amendments established direct election of senators, women's suffrage, prohibition, and a new presidential inauguration date."
+    ],
+    "difficulty": 2,
+    "source_article": "Progressive Era",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Progressive Era"]
+  },
+  {
+    "question_text": "What military alliance did the United States help establish in 1949 to counter Soviet expansion in Europe?",
+    "correct_answer": "The North Atlantic Treaty Organization, whose founding treaty declared that an attack on one member would be considered an attack on all.",
+    "distractors": [
+      "The Southeast Asia Treaty Organization, whose founding treaty pledged collective defense of democratic nations in the Pacific region.",
+      "The Central Treaty Organization, whose founding treaty committed Western and Middle Eastern nations to mutual defense against communist aggression.",
+      "The Western European Union, whose founding treaty bound European nations to joint military action without requiring American participation."
+    ],
+    "difficulty": 2,
+    "source_article": "Cold War",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Cold War"]
+  },
+  {
+    "question_text": "What congressional resolution gave President Johnson broad authority to escalate American military involvement in Vietnam?",
+    "correct_answer": "The Gulf of Tonkin Resolution, passed in August 1964 after reported attacks on US destroyers off the coast of North Vietnam.",
+    "distractors": [
+      "The Southeast Asia Resolution, passed in March 1965 after the bombing of a US military base at Pleiku in South Vietnam.",
+      "The Indochina Security Resolution, passed in June 1964 after North Vietnamese forces crossed the demilitarized zone into South Vietnam.",
+      "The Pacific Defense Resolution, passed in January 1965 after a Viet Cong attack on the American embassy in Saigon."
+    ],
+    "difficulty": 2,
+    "source_article": "Vietnam War",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Vietnam War"]
+  },
+  {
+    "question_text": "From which literary work did the Gilded Age get its name?",
+    "correct_answer": "Mark Twain and Charles Dudley Warner's 1873 satirical novel The Gilded Age: A Tale of Today, which mocked post-Civil War greed and corruption.",
+    "distractors": [
+      "Mark Twain's 1884 novel Adventures of Huckleberry Finn, which critiqued Southern hypocrisy and racial injustice in antebellum America.",
+      "Upton Sinclair's 1906 novel The Jungle, which exposed unsanitary conditions in the meatpacking industry and political corruption in Chicago.",
+      "Henry Adams's 1880 novel Democracy: An American Novel, which satirized Washington political culture and the influence of money in government."
+    ],
+    "difficulty": 2,
+    "source_article": "Gilded Age",
+    "domain_ids": ["us-history"],
+    "concepts_tested": ["Gilded Age"]
+  }
+]

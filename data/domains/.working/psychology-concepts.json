@@ -1,0 +1,266 @@
+{
+  "domain": "psychology",
+  "parent_domain": null,
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {
+        "concept": "motivation",
+        "wikipedia_article": "Motivation",
+        "brief_rationale": "The internal and external forces that initiate, direct, and sustain goal-oriented behavior; a universally recognized concept spanning nearly every branch of psychology."
+      },
+      {
+        "concept": "personality",
+        "wikipedia_article": "Personality psychology",
+        "brief_rationale": "The study of enduring individual differences in patterns of thinking, feeling, and behaving; one of the most widely known and discussed areas of psychology."
+      },
+      {
+        "concept": "classical conditioning",
+        "wikipedia_article": "Classical conditioning",
+        "brief_rationale": "Pavlov's foundational learning process in which a neutral stimulus acquires the ability to elicit a response through association; universally taught in introductory psychology."
+      },
+      {
+        "concept": "operant conditioning",
+        "wikipedia_article": "Operant conditioning",
+        "brief_rationale": "Skinner's framework describing how behavior is shaped by reinforcement and punishment; a cornerstone of behaviorism known to all psychology students."
+      },
+      {
+        "concept": "the brain",
+        "wikipedia_article": "Human brain",
+        "brief_rationale": "The organ underlying all psychological processes; understanding basic brain structure is essential introductory knowledge for every area of psychology."
+      },
+      {
+        "concept": "neuron",
+        "wikipedia_article": "Neuron",
+        "brief_rationale": "The fundamental cell of the nervous system that transmits electrical and chemical signals; the building block connecting biology to behavior in psychology."
+      },
+      {
+        "concept": "sensation",
+        "wikipedia_article": "Sensation (psychology)",
+        "brief_rationale": "The process by which sensory receptors detect physical energy from the environment; a universally taught introductory topic distinct from the cognitive processing of perception."
+      },
+      {
+        "concept": "sleep",
+        "wikipedia_article": "Sleep",
+        "brief_rationale": "A recurring state of reduced consciousness essential for physical and psychological functioning; universally experienced and a major topic in biological psychology."
+      },
+      {
+        "concept": "positive reinforcement",
+        "wikipedia_article": "Reinforcement",
+        "brief_rationale": "Increasing the likelihood of a behavior by presenting a desirable stimulus after it occurs; a fundamental operant conditioning concept recognized in everyday life."
+      },
+      {
+        "concept": "punishment",
+        "wikipedia_article": "Punishment (psychology)",
+        "brief_rationale": "The application of an aversive consequence or removal of a pleasant stimulus to decrease behavior; a core behaviorist concept understood in everyday parenting and education."
+      },
+      {
+        "concept": "ethics in psychology",
+        "wikipedia_article": "Ethics in psychology",
+        "brief_rationale": "The moral principles guiding psychological research and practice, including informed consent and confidentiality; a universally taught framework for all psychology students."
+      },
+      {
+        "concept": "nature of psychology",
+        "wikipedia_article": "Psychology",
+        "brief_rationale": "The scientific study of mind and behavior as a discipline; understanding what psychology is and its scope is the most basic introductory knowledge."
+      },
+      {
+        "concept": "heredity and behavior",
+        "wikipedia_article": "Behavioural genetics",
+        "brief_rationale": "The study of how genetic inheritance influences psychological traits and behavior; a foundational concept bridging biology and psychology that every student encounters."
+      }
+    ],
+    "L2": [
+      {
+        "concept": "Maslow's hierarchy of needs",
+        "wikipedia_article": "Maslow's hierarchy of needs",
+        "brief_rationale": "A motivational theory arranging human needs from physiological to self-actualization; one of the most recognized frameworks in psychology, taught in every introductory course."
+      },
+      {
+        "concept": "Big Five personality traits",
+        "wikipedia_article": "Big Five personality traits",
+        "brief_rationale": "The dominant trait model organizing personality into openness, conscientiousness, extraversion, agreeableness, and neuroticism; the standard framework in personality psychology research."
+      },
+      {
+        "concept": "neurotransmitter",
+        "wikipedia_article": "Neurotransmitter",
+        "brief_rationale": "Chemical messengers such as dopamine, serotonin, and norepinephrine that transmit signals between neurons; essential student-level biological psychology vocabulary."
+      },
+      {
+        "concept": "biopsychology",
+        "wikipedia_article": "Behavioral neuroscience",
+        "brief_rationale": "The subfield examining the biological bases of behavior and mental processes through neuroscience methods; a named branch of psychology students encounter in core curricula."
+      },
+      {
+        "concept": "industrial-organizational psychology",
+        "wikipedia_article": "Industrial and organizational psychology",
+        "brief_rationale": "The application of psychological principles to workplace behavior, including selection, performance, and organizational development; a major applied subfield known to all psychology students."
+      },
+      {
+        "concept": "health psychology",
+        "wikipedia_article": "Health psychology",
+        "brief_rationale": "The study of psychological factors influencing health, illness, and health-care behavior; a named applied subfield addressing stress, coping, and behavioral medicine."
+      },
+      {
+        "concept": "educational psychology",
+        "wikipedia_article": "Educational psychology",
+        "brief_rationale": "The study of how people learn in educational settings and how teaching effectiveness can be optimized; a major applied subfield connecting psychology to pedagogy."
+      },
+      {
+        "concept": "forensic psychology",
+        "wikipedia_article": "Forensic psychology",
+        "brief_rationale": "The application of psychological knowledge to legal and criminal justice contexts including criminal profiling, competency evaluation, and eyewitness testimony; a widely recognized applied subfield."
+      },
+      {
+        "concept": "psychophysics",
+        "wikipedia_article": "Psychophysics",
+        "brief_rationale": "The study of the relationship between physical stimuli and their subjective perception, founded by Fechner and Weber; a named methodology underlying sensation and perception research."
+      },
+      {
+        "concept": "circadian rhythm",
+        "wikipedia_article": "Circadian rhythm",
+        "brief_rationale": "The approximately 24-hour biological cycle regulating sleep-wake patterns, hormone release, and body temperature; a key concept in biological and health psychology."
+      },
+      {
+        "concept": "observational learning",
+        "wikipedia_article": "Observational learning",
+        "brief_rationale": "Bandura's concept of learning by watching others, including the Bobo doll experiment; a student-level concept bridging behavioral and social cognitive perspectives."
+      },
+      {
+        "concept": "research methods in psychology",
+        "wikipedia_article": "Research methods in psychology",
+        "brief_rationale": "The systematic procedures used to collect and analyze psychological data, including experiments, surveys, and correlational designs; essential methodological literacy for all psychology students."
+      },
+      {
+        "concept": "history of psychology",
+        "wikipedia_article": "History of psychology",
+        "brief_rationale": "The development of psychology from philosophical roots through structuralism, functionalism, behaviorism, and modern approaches; contextual knowledge expected of all psychology students."
+      }
+    ],
+    "L3": [
+      {
+        "concept": "evolutionary psychology",
+        "wikipedia_article": "Evolutionary psychology",
+        "brief_rationale": "The application of evolutionary principles such as natural selection and adaptation to explain psychological traits and behaviors; requires working knowledge of both evolutionary biology and psychological theory."
+      },
+      {
+        "concept": "psychometrics",
+        "wikipedia_article": "Psychometrics",
+        "brief_rationale": "The science of measuring psychological constructs including intelligence, personality, and attitudes through test construction, reliability, and validity analysis; requires working knowledge of measurement theory and statistical foundations."
+      },
+      {
+        "concept": "positive psychology",
+        "wikipedia_article": "Positive psychology",
+        "brief_rationale": "The scientific study of human flourishing, strengths, and well-being initiated by Seligman; requires working knowledge of constructs like flow, grit, and character strengths and their empirical evidence base."
+      },
+      {
+        "concept": "sport psychology",
+        "wikipedia_article": "Sport psychology",
+        "brief_rationale": "The application of psychological principles to athletic performance, including mental imagery, arousal regulation, and team dynamics; requires working knowledge of applied psychological interventions in competitive contexts."
+      },
+      {
+        "concept": "behavioral genetics methodology",
+        "wikipedia_article": "Twin study",
+        "brief_rationale": "Research designs such as twin studies, adoption studies, and heritability estimates used to disentangle genetic and environmental contributions to behavior; requires working knowledge of quantitative genetic methods."
+      },
+      {
+        "concept": "neuroimaging",
+        "wikipedia_article": "Neuroimaging",
+        "brief_rationale": "Techniques such as fMRI, PET, and EEG used to study the structure and function of the living brain; requires working knowledge of each method's resolution, limitations, and appropriate applications in psychological research."
+      },
+      {
+        "concept": "cross-cultural psychology",
+        "wikipedia_article": "Cross-cultural psychology",
+        "brief_rationale": "The study of how cultural context influences psychological processes and behavior, including debates about universality versus cultural specificity; requires working knowledge of etic vs. emic approaches and cultural dimensions."
+      },
+      {
+        "concept": "endocrine system and behavior",
+        "wikipedia_article": "Endocrine system",
+        "brief_rationale": "The network of hormone-secreting glands that regulates mood, stress response, growth, and reproduction; requires working knowledge of how hormones like cortisol, oxytocin, and testosterone influence psychological functioning."
+      },
+      {
+        "concept": "self-determination theory",
+        "wikipedia_article": "Self-determination theory",
+        "brief_rationale": "Deci and Ryan's framework positing that autonomy, competence, and relatedness are innate psychological needs whose satisfaction drives intrinsic motivation and well-being; requires working knowledge of the mini-theories and their empirical support."
+      },
+      {
+        "concept": "reliability and validity",
+        "wikipedia_article": "Reliability (psychometrics)",
+        "brief_rationale": "The twin pillars of measurement quality in psychological science, encompassing test-retest reliability, internal consistency, construct validity, and criterion validity; requires working knowledge of how each is assessed and interpreted."
+      },
+      {
+        "concept": "comparative psychology",
+        "wikipedia_article": "Comparative psychology",
+        "brief_rationale": "The study of animal behavior to understand psychological principles across species, including cognition, learning, and social behavior; requires working knowledge of experimental paradigms and evolutionary comparisons."
+      },
+      {
+        "concept": "psychological resilience",
+        "wikipedia_article": "Psychological resilience",
+        "brief_rationale": "The capacity to recover from adversity and adapt positively despite significant stress or trauma; requires working knowledge of protective factors, risk models, and the distinction from simple absence of psychopathology."
+      }
+    ],
+    "L4": [
+      {
+        "concept": "item response theory",
+        "wikipedia_article": "Item response theory",
+        "brief_rationale": "A family of mathematical models relating latent traits to the probability of endorsing test items, including the Rasch model and 2PL/3PL models; requires deep knowledge of item characteristic curves, information functions, and differential item functioning."
+      },
+      {
+        "concept": "structural equation modeling",
+        "wikipedia_article": "Structural equation modeling",
+        "brief_rationale": "A multivariate statistical framework combining factor analysis and path analysis to test complex theoretical models with latent variables; requires deep knowledge of model specification, identification, fit indices, and modification."
+      },
+      {
+        "concept": "gene-environment interaction",
+        "wikipedia_article": "Gene–environment interaction",
+        "brief_rationale": "The phenomenon in which genetic factors moderate the effect of environmental exposures on psychological outcomes, and vice versa; requires deep knowledge of molecular genetics methodology, diathesis-stress models, and the replication crisis in candidate gene studies."
+      },
+      {
+        "concept": "psychoneuroimmunology",
+        "wikipedia_article": "Psychoneuroimmunology",
+        "brief_rationale": "The study of interactions among psychological processes, the nervous system, and the immune system; requires deep knowledge of cytokine pathways, stress-immune relationships, and their implications for health psychology."
+      },
+      {
+        "concept": "ecological momentary assessment",
+        "wikipedia_article": "Ecological momentary assessment",
+        "brief_rationale": "A methodology involving repeated real-time sampling of behaviors and experiences in naturalistic settings using digital devices; requires deep knowledge of sampling protocols, compliance analysis, multilevel modeling of intensive longitudinal data, and advantages over retrospective self-report."
+      },
+      {
+        "concept": "Weber-Fechner law",
+        "wikipedia_article": "Weber–Fechner law",
+        "brief_rationale": "The foundational psychophysical law relating the magnitude of a physical stimulus to its perceived intensity through logarithmic and difference-threshold relationships; requires deep knowledge of just-noticeable differences, Stevens' power law as an alternative, and their applications in sensory science."
+      },
+      {
+        "concept": "meta-analysis in psychology",
+        "wikipedia_article": "Meta-analysis",
+        "brief_rationale": "A quantitative method for synthesizing effect sizes across multiple studies to estimate the overall magnitude of a psychological phenomenon; requires deep knowledge of fixed vs. random effects models, heterogeneity statistics, publication bias correction, and forest plot interpretation."
+      },
+      {
+        "concept": "signal detection theory applications in psychology",
+        "wikipedia_article": "Detection theory",
+        "brief_rationale": "The application of SDT beyond basic perception to clinical diagnosis, eyewitness identification, and medical decision-making, separating sensitivity from response bias; requires deep knowledge of d-prime, ROC curves, and criterion placement in diverse psychological contexts."
+      },
+      {
+        "concept": "Bayesian statistics in psychology",
+        "wikipedia_article": "Bayesian statistics",
+        "brief_rationale": "The application of Bayesian inference to psychological research as an alternative to null-hypothesis significance testing, using prior distributions and Bayes factors; requires deep knowledge of prior specification, model comparison, and the philosophical contrast with frequentist methods."
+      },
+      {
+        "concept": "long-term potentiation",
+        "wikipedia_article": "Long-term potentiation",
+        "brief_rationale": "The persistent strengthening of synaptic connections following high-frequency stimulation, considered a cellular mechanism of learning and memory; requires deep knowledge of NMDA receptor involvement, early vs. late phases, and its role in Hebbian plasticity."
+      },
+      {
+        "concept": "behavioral economics",
+        "wikipedia_article": "Behavioral economics",
+        "brief_rationale": "An interdisciplinary field applying psychological insights about bounded rationality, prospect theory, and choice architecture to economic decision-making; requires deep knowledge of Kahneman and Tversky's framework, nudge theory, and how laboratory findings translate to policy."
+      },
+      {
+        "concept": "replication crisis in psychology",
+        "wikipedia_article": "Replication crisis",
+        "brief_rationale": "The widespread failure to reproduce key findings in psychological research, driven by p-hacking, publication bias, and underpowered studies; requires deep knowledge of the Open Science Framework, pre-registration, and statistical reforms reshaping modern psychological methodology."
+      }
+    ]
+  }
+}

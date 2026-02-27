@@ -1,0 +1,172 @@
+[
+  {
+    "question_text": "How do sensitive periods differ from critical periods in developmental psychology?",
+    "correct_answer": "Sensitive periods are optimal windows when experience has the strongest effect but learning can still occur outside them, whereas critical periods are strict and irreversible.",
+    "distractors": [
+      "Sensitive periods occur only prenatally while critical periods occur only postnatally, making the two concepts non-overlapping in developmental timing.",
+      "Sensitive periods apply exclusively to motor development while critical periods apply exclusively to language acquisition, reflecting their distinct domains.",
+      "Sensitive periods are shorter and more precisely bounded than critical periods, which extend across multiple years of childhood development."
+    ],
+    "difficulty": 3,
+    "source_article": "Sensitive period",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "sensitive period"
+    ]
+  },
+  {
+    "question_text": "In a classic visual cliff experiment by Sorce and colleagues, what did infants do when their mothers displayed a fearful facial expression on the deep side?",
+    "correct_answer": "Most infants refused to cross the deep side, using their mother's fearful expression as a social referencing cue to avoid the apparent drop.",
+    "distractors": [
+      "Most infants crossed the deep side faster than usual, interpreting their mother's fearful expression as an urgent signal to reach her quickly.",
+      "Most infants showed no change in crossing behavior, indicating that facial expressions do not influence locomotor decisions at this age.",
+      "Most infants began crying but continued crawling across the deep side, demonstrating that emotional contagion overrides perceptual caution."
+    ],
+    "difficulty": 3,
+    "source_article": "Social referencing",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "social referencing"
+    ]
+  },
+  {
+    "question_text": "In the A-not-B error, what do infants younger than about 10 months typically do after watching an object being hidden at a new location B?",
+    "correct_answer": "They perseveratively search at the original location A where the object was previously found, even though they watched it being hidden at location B.",
+    "distractors": [
+      "They search randomly at neither location A nor location B, indicating a complete absence of spatial memory for hidden objects at this age.",
+      "They search correctly at location B on the first trial but revert to location A only after repeated hiding sequences at the new location.",
+      "They refuse to search at all and instead look to their caregiver for guidance, demonstrating social referencing rather than independent search behavior."
+    ],
+    "difficulty": 3,
+    "source_article": "A-not-B error",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "object permanence and A-not-B error"
+    ]
+  },
+  {
+    "question_text": "Why is joint attention considered a critical early social-cognitive milestone in developmental psychology?",
+    "correct_answer": "It serves as a precursor to both language development and theory of mind by enabling shared focus between infant and caregiver on objects and events.",
+    "distractors": [
+      "It marks the earliest appearance of self-recognition, enabling infants to distinguish their own mirror image from that of other children.",
+      "It represents the infant's first use of executive function, enabling inhibition of prepotent responses during structured problem-solving tasks.",
+      "It signals the onset of autobiographical memory, enabling infants to encode and later retrieve personally experienced events."
+    ],
+    "difficulty": 3,
+    "source_article": "Joint attention",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "joint attention"
+    ]
+  },
+  {
+    "question_text": "What is childhood amnesia, and at approximately what age do most adults' earliest autobiographical memories begin?",
+    "correct_answer": "Childhood amnesia is adults' inability to retrieve episodic memories from early life; earliest autobiographical memories typically date from approximately age three to three-and-a-half.",
+    "distractors": [
+      "Childhood amnesia is the inability of adults to retrieve semantic knowledge learned before school entry; most adults' earliest factual memories date from approximately age six to seven years.",
+      "Childhood amnesia is the inability of adults to retrieve procedural memories from infancy; most adults' earliest skill-based memories date from approximately age one to one-and-a-half years.",
+      "Childhood amnesia is the inability of adults to retrieve implicit memories formed during toddlerhood; most adults' earliest unconscious memory traces date from approximately age five to six years."
+    ],
+    "difficulty": 3,
+    "source_article": "Autobiographical memory",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "autobiographical memory development"
+    ]
+  },
+  {
+    "question_text": "In Bronfenbrenner's ecological systems theory, which system encompasses connections and interactions between two or more microsystems in a child's life?",
+    "correct_answer": "The mesosystem, which captures the relationships and processes occurring between two or more settings containing the developing person, such as between home and school.",
+    "distractors": [
+      "The exosystem, which captures the relationships and processes occurring within settings the child never directly enters, such as a parent's workplace.",
+      "The macrosystem, which captures the overarching cultural beliefs, values, and ideologies that influence all other environmental systems surrounding the child.",
+      "The chronosystem, which captures the pattern of environmental events and life transitions occurring across the child's developmental timeline."
+    ],
+    "difficulty": 3,
+    "source_article": "Ecological systems theory",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "Bronfenbrenner's ecological systems theory"
+    ]
+  },
+  {
+    "question_text": "How does the development of emotion regulation shift from infancy to middle childhood?",
+    "correct_answer": "Infants rely almost exclusively on caregivers for extrinsic regulation, whereas by middle childhood children increasingly use intrinsic strategies and understand display rules for emotional expression.",
+    "distractors": [
+      "Infants rely primarily on self-soothing through intrinsic regulation, whereas by middle childhood, children shift toward relying on teachers and peers for extrinsic emotional support.",
+      "Infants show no measurable emotion regulation capacity until approximately age two, whereas by middle childhood, children regulate emotion exclusively through cognitive reappraisal strategies.",
+      "Infants regulate emotion through reflexive motor discharge, whereas by middle childhood, children suppress all emotional expression in favor of rational decision-making processes."
+    ],
+    "difficulty": 3,
+    "source_article": "Emotional self-regulation",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "emotion regulation development"
+    ]
+  },
+  {
+    "question_text": "According to developmental research, how do peer groups serve a unique socializing function that differs from that of families and schools?",
+    "correct_answer": "Peer groups let children form relationships and explore interests outside direct adult supervision, providing context for learning social norms, cooperation, and conflict resolution among equals.",
+    "distractors": [
+      "Peer groups provide children with formal academic instruction that supplements classroom learning, offering structured tutoring that families and schools cannot replicate.",
+      "Peer groups expose children exclusively to adult-approved cultural values, reinforcing the same moral standards taught by parents and teachers in a different setting.",
+      "Peer groups function primarily as therapeutic support systems, offering professionally guided emotional processing that families and schools are not equipped to provide."
+    ],
+    "difficulty": 3,
+    "source_article": "Peer group",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "peer relationships and development"
+    ]
+  },
+  {
+    "question_text": "In dynamic systems theory as applied to development by Esther Thelen, how are new behavioral patterns such as infant walking understood to emerge?",
+    "correct_answer": "They emerge through self-organization and nonlinear interaction of multiple subsystems including muscle strength, body weight, posture, and motivation, not from a single maturational blueprint.",
+    "distractors": [
+      "They emerge through the sequential activation of genetically predetermined motor programs stored in the spinal cord, triggered at fixed maturational ages independent of environmental input.",
+      "They emerge through the child's conscious imitation of adult movement patterns, driven primarily by observational learning and reinforced by caregiver praise and modeling.",
+      "They emerge through the gradual myelination of a single dedicated motor cortex pathway, with each milestone appearing when the corresponding neural tract reaches a critical threshold of conductance."
+    ],
+    "difficulty": 4,
+    "source_article": "Dynamical systems theory",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "dynamic systems theory of development"
+    ]
+  },
+  {
+    "question_text": "In Meaney's landmark studies on epigenetic influences in development, what effect did high levels of maternal licking and grooming have on rat offspring?",
+    "correct_answer": "It decreased DNA methylation at the glucocorticoid receptor gene promoter in the hippocampus, increasing receptor expression and reducing stress reactivity in offspring.",
+    "distractors": [
+      "High maternal licking and grooming increased DNA methylation at the serotonin transporter gene in the amygdala, leading to decreased serotonin reuptake and elevated anxiety-like behavior in offspring.",
+      "High maternal licking and grooming deleted nucleotide sequences from the dopamine receptor gene in the prefrontal cortex, leading to permanent structural changes in reward circuitry in offspring.",
+      "High maternal licking and grooming doubled the number of oxytocin receptor genes through gene duplication in the hypothalamus, leading to enhanced pair-bonding behavior in offspring."
+    ],
+    "difficulty": 4,
+    "source_article": "Epigenetics",
+    "domain_ids": [
+      "developmental-psychology"
+    ],
+    "concepts_tested": [
+      "epigenetic influences on development"
+    ]
+  }
+]

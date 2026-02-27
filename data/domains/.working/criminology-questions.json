@@ -1,0 +1,652 @@
+[
+  {
+    "question_text": "What is crime in the context of criminology?",
+    "correct_answer": "An act that violates criminal law and is punishable by the state.",
+    "distractors": [
+      "Any behavior that deviates from social norms regardless of legal status.",
+      "A civil wrong committed against another individual requiring financial compensation.",
+      "An action judged immoral by religious authorities within a given community."
+    ],
+    "difficulty": 1,
+    "source_article": "Crime",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["crime"]
+  },
+  {
+    "question_text": "What is punishment in the criminal justice context?",
+    "correct_answer": "A penalty imposed by legal authority on a person convicted of a criminal offense.",
+    "distractors": [
+      "A voluntary restitution payment made by an offender directly to the victim's family.",
+      "A social stigma applied informally by community members after antisocial behavior occurs.",
+      "A therapeutic intervention mandated by mental health professionals for at-risk individuals."
+    ],
+    "difficulty": 1,
+    "source_article": "Punishment",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["punishment"]
+  },
+  {
+    "question_text": "What is a prison?",
+    "correct_answer": "A secure facility where individuals are confined as punishment for committing crimes.",
+    "distractors": [
+      "A community center where offenders complete court-ordered educational programs and counseling.",
+      "A government office where law enforcement officers coordinate investigations of criminal activity.",
+      "A temporary holding area where suspects await their initial court appearance after arrest."
+    ],
+    "difficulty": 1,
+    "source_article": "Prison",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["prison"]
+  },
+  {
+    "question_text": "What is the primary role of the police in society?",
+    "correct_answer": "To maintain public order, enforce criminal laws, and prevent and investigate crimes.",
+    "distractors": [
+      "To prosecute offenders, present evidence in court, and secure guilty verdicts at trial.",
+      "To determine criminal sentences, supervise incarceration, and manage correctional facilities directly.",
+      "To draft criminal legislation, define new offense categories, and set sentencing guidelines."
+    ],
+    "difficulty": 1,
+    "source_article": "Police",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["police"]
+  },
+  {
+    "question_text": "In criminology, what is law?",
+    "correct_answer": "A system of rules created and enforced by governmental institutions to regulate behavior.",
+    "distractors": [
+      "An informal set of customs passed down through generations to maintain family honor.",
+      "A collection of moral teachings established by religious leaders for spiritual guidance.",
+      "A voluntary code of professional ethics adopted by private industry trade associations."
+    ],
+    "difficulty": 1,
+    "source_article": "Law",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["law"]
+  },
+  {
+    "question_text": "What does the field of victimology primarily study?",
+    "correct_answer": "The experiences, characteristics, and rights of people who have been harmed by crime.",
+    "distractors": [
+      "The psychological motivations and behavioral patterns that drive individuals to commit offenses.",
+      "The administrative procedures courts follow when prosecuting and sentencing criminal defendants.",
+      "The organizational structures of law enforcement agencies that investigate violent incidents."
+    ],
+    "difficulty": 1,
+    "source_article": "Victimology",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["victim"]
+  },
+  {
+    "question_text": "What is a jury in a criminal trial?",
+    "correct_answer": "A group of citizens selected to hear evidence and render a verdict of guilt or innocence.",
+    "distractors": [
+      "A panel of legal experts appointed by the judge to advise on sentencing recommendations.",
+      "A team of prosecutors and defense attorneys who negotiate plea bargains before trial begins.",
+      "A committee of corrections officials who decide whether a convicted offender qualifies for release."
+    ],
+    "difficulty": 1,
+    "source_article": "Jury",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["jury"]
+  },
+  {
+    "question_text": "What does it mean to arrest someone?",
+    "correct_answer": "To seize and detain a person by legal authority on suspicion of criminal activity.",
+    "distractors": [
+      "To formally charge a suspect with a crime by filing documents in a court of law.",
+      "To sentence an offender to a period of incarceration following conviction at criminal trial.",
+      "To release a prisoner from custody on the condition that they report to a supervisor."
+    ],
+    "difficulty": 1,
+    "source_article": "Arrest",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["arrest"]
+  },
+  {
+    "question_text": "How is murder generally defined in criminal law?",
+    "correct_answer": "The unlawful killing of another person with malice aforethought or criminal intent.",
+    "distractors": [
+      "Any act of physical violence that results in bodily harm requiring emergency medical treatment.",
+      "The accidental death of a person caused by another's negligent but non-criminal behavior.",
+      "A lawful use of lethal force by a government agent during an officially sanctioned operation."
+    ],
+    "difficulty": 1,
+    "source_article": "Murder",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["murder"]
+  },
+  {
+    "question_text": "What is theft?",
+    "correct_answer": "The unlawful taking of another person's property without their consent and with intent to deprive.",
+    "distractors": [
+      "The intentional destruction of someone's property through arson, vandalism, or other damaging acts.",
+      "The use of deception or false pretenses to obtain a contract or business agreement.",
+      "The unauthorized entry into a building with the intent to commit a felony inside."
+    ],
+    "difficulty": 1,
+    "source_article": "Theft",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["theft"]
+  },
+  {
+    "question_text": "What is parole in the criminal justice system?",
+    "correct_answer": "The supervised early release of a prisoner who agrees to meet specific behavioral conditions.",
+    "distractors": [
+      "A court-imposed sentence served in the community instead of in a correctional facility.",
+      "A formal legal process in which a convicted person appeals their sentence to a higher court.",
+      "A pretrial agreement between the prosecution and defense to reduce the severity of charges."
+    ],
+    "difficulty": 1,
+    "source_article": "Parole",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["parole"]
+  },
+  {
+    "question_text": "What is probation?",
+    "correct_answer": "A court-ordered period of community supervision imposed instead of or after incarceration.",
+    "distractors": [
+      "A conditional early release from prison granted by a parole board after partial sentence completion.",
+      "A mandatory minimum sentence that restricts judicial discretion in serious felony cases.",
+      "A formal warning issued by police that is recorded but carries no criminal penalty."
+    ],
+    "difficulty": 1,
+    "source_article": "Probation",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["probation"]
+  },
+  {
+    "question_text": "What are the three main components of the criminal justice system?",
+    "correct_answer": "Law enforcement (police), the courts, and corrections (prisons and community supervision).",
+    "distractors": [
+      "Legislation, executive enforcement, and judicial review as defined by constitutional separation of powers.",
+      "Victim advocacy organizations, offender rehabilitation centers, and community mediation services.",
+      "Criminal profiling units, forensic science laboratories, and federal intelligence gathering agencies."
+    ],
+    "difficulty": 1,
+    "source_article": "Criminal justice",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["criminal justice system"]
+  },
+  {
+    "question_text": "According to deterrence theory, what three qualities of punishment are most important for preventing crime?",
+    "correct_answer": "Certainty, swiftness, and severity of punishment deter potential offenders from committing crimes.",
+    "distractors": [
+      "Rehabilitation, restitution, and community reintegration reduce future offending through personal transformation.",
+      "Incapacitation, surveillance, and mandatory sentencing physically prevent criminals from accessing victims.",
+      "Moral education, religious instruction, and family counseling address the root causes of deviant behavior."
+    ],
+    "difficulty": 2,
+    "source_article": "Deterrence (penology)",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["deterrence theory"]
+  },
+  {
+    "question_text": "What does the term recidivism refer to in criminology?",
+    "correct_answer": "The tendency of a convicted offender to reoffend and return to criminal behavior after release.",
+    "distractors": [
+      "The process by which formerly incarcerated individuals successfully reintegrate into their communities.",
+      "The escalation of criminal charges from misdemeanor to felony upon repeated court appearances.",
+      "The gradual reduction of a prison sentence through good behavior and participation in programs."
+    ],
+    "difficulty": 2,
+    "source_article": "Recidivism",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["recidivism"]
+  },
+  {
+    "question_text": "What distinguishes white-collar crime from conventional street crime?",
+    "correct_answer": "White-collar crime is financially motivated, nonviolent, and committed by individuals in professional positions.",
+    "distractors": [
+      "White-collar crime involves physical violence against persons and is committed by unemployed offenders.",
+      "White-collar crime is prosecuted exclusively in civil courts and never results in prison sentences.",
+      "White-collar crime refers only to government corruption and does not include corporate fraud schemes."
+    ],
+    "difficulty": 2,
+    "source_article": "White-collar crime",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["white-collar crime"]
+  },
+  {
+    "question_text": "What is restorative justice?",
+    "correct_answer": "An approach that focuses on repairing harm done to victims and communities rather than solely punishing offenders.",
+    "distractors": [
+      "A sentencing philosophy that emphasizes incapacitation by removing dangerous criminals from society permanently.",
+      "A legal doctrine requiring judges to impose identical sentences for identical crimes regardless of circumstances.",
+      "A law enforcement strategy that increases police patrols in high-crime neighborhoods to deter offending."
+    ],
+    "difficulty": 2,
+    "source_article": "Restorative justice",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["restorative justice"]
+  },
+  {
+    "question_text": "What is organized crime?",
+    "correct_answer": "Systematic criminal activity carried out by structured groups that operate across regions for profit.",
+    "distractors": [
+      "Spontaneous acts of violence committed by loosely connected individuals during civil unrest events.",
+      "Criminal behavior that occurs exclusively within corporate boardrooms and financial trading institutions.",
+      "Petty offenses committed repeatedly by a single individual without any coordination or planning."
+    ],
+    "difficulty": 2,
+    "source_article": "Organized crime",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["organized crime"]
+  },
+  {
+    "question_text": "What does social control theory argue about the causes of crime?",
+    "correct_answer": "Crime occurs when an individual's bonds to conventional society are weak or broken.",
+    "distractors": [
+      "Crime results from individuals learning criminal values through association with deviant peers.",
+      "Crime is caused by a mismatch between culturally approved goals and available legitimate means.",
+      "Crime arises primarily from biological predispositions inherited through an offender's genetic makeup."
+    ],
+    "difficulty": 2,
+    "source_article": "Social control theory",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["social control theory"]
+  },
+  {
+    "question_text": "What is criminal profiling?",
+    "correct_answer": "An investigative technique that infers likely offender characteristics from crime scene evidence and behavior patterns.",
+    "distractors": [
+      "A forensic laboratory procedure that matches physical evidence such as fingerprints and DNA to suspects.",
+      "A sentencing method in which judges assess offender risk using standardized psychological assessment instruments.",
+      "A policing strategy that deploys officers to neighborhoods based on historical crime rate statistics."
+    ],
+    "difficulty": 2,
+    "source_article": "Criminal profiling",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["criminal profiling"]
+  },
+  {
+    "question_text": "What defines juvenile delinquency?",
+    "correct_answer": "Criminal or antisocial behavior committed by minors who are below the legal age of adulthood.",
+    "distractors": [
+      "Violent crimes committed by adults who were previously convicted of offenses as young children.",
+      "Minor traffic violations and petty infractions that do not result in a formal criminal record.",
+      "Gang-related criminal activity carried out exclusively by organized groups of young adult males."
+    ],
+    "difficulty": 2,
+    "source_article": "Juvenile delinquency",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["juvenile delinquency"]
+  },
+  {
+    "question_text": "What is domestic violence?",
+    "correct_answer": "A pattern of abusive behavior within intimate or family relationships used to gain power and control.",
+    "distractors": [
+      "Random acts of violence committed by strangers against residents within a particular neighborhood.",
+      "Physical altercations between rival criminal organizations that occur inside residential buildings.",
+      "Property crimes such as burglary and vandalism that specifically target private homes and apartments."
+    ],
+    "difficulty": 2,
+    "source_article": "Domestic violence",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["domestic violence"]
+  },
+  {
+    "question_text": "What is drug trafficking?",
+    "correct_answer": "The illegal production, transportation, and sale of controlled substances on a commercial scale.",
+    "distractors": [
+      "The personal possession and private use of small quantities of illegal drugs by individuals.",
+      "The legal manufacture of pharmaceutical products that are later diverted through prescription fraud.",
+      "The clinical distribution of approved medications by licensed pharmacists to registered patients."
+    ],
+    "difficulty": 2,
+    "source_article": "Drug trafficking",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["drug trafficking"]
+  },
+  {
+    "question_text": "What is capital punishment?",
+    "correct_answer": "The legally authorized execution of a person as punishment for a serious criminal offense.",
+    "distractors": [
+      "The imposition of a life sentence without the possibility of parole for repeat violent offenders.",
+      "The permanent revocation of citizenship rights following conviction for treason or espionage charges.",
+      "The confiscation of all personal assets and financial holdings as a penalty for economic crimes."
+    ],
+    "difficulty": 2,
+    "source_article": "Capital punishment",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["capital punishment"]
+  },
+  {
+    "question_text": "What is criminology as an academic discipline?",
+    "correct_answer": "The scientific study of crime, its causes, societal responses, and methods of prevention.",
+    "distractors": [
+      "The practical training of law enforcement officers in investigative techniques and arrest procedures.",
+      "The branch of philosophy concerned with defining moral principles that underlie legal systems.",
+      "The forensic science of collecting and analyzing physical evidence found at crime scenes."
+    ],
+    "difficulty": 2,
+    "source_article": "Criminology",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["criminological theory"]
+  },
+  {
+    "question_text": "What is the purpose of victimization surveys like the National Crime Victimization Survey?",
+    "correct_answer": "To measure crime by asking individuals directly about offenses they experienced, including those unreported to police.",
+    "distractors": [
+      "To compile official arrest records from law enforcement agencies into a national crime statistics database.",
+      "To assess public opinion about the fairness of criminal sentencing and correctional facility conditions.",
+      "To track convicted offenders after release and determine whether they commit additional criminal offenses."
+    ],
+    "difficulty": 2,
+    "source_article": "National Crime Victimization Survey",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["victimization survey"]
+  },
+  {
+    "question_text": "According to Merton's strain theory, what structural condition leads to higher crime rates?",
+    "correct_answer": "A gap between culturally valued goals like wealth and the legitimate means available to achieve them.",
+    "distractors": [
+      "The weakening of informal social bonds between individuals and their families, schools, and communities.",
+      "The rational calculation by offenders that the benefits of crime outweigh the risks of punishment.",
+      "The biological inheritance of aggressive temperaments passed from criminal parents to their offspring."
+    ],
+    "difficulty": 3,
+    "source_article": "Strain theory (sociology)",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["strain theory"]
+  },
+  {
+    "question_text": "What is the central claim of labeling theory in criminology?",
+    "correct_answer": "Being officially labeled as a criminal can reinforce deviant identity and promote further criminal behavior.",
+    "distractors": [
+      "Criminal behavior is determined by inherited biological traits that can be identified through genetic testing.",
+      "Offenders rationally choose crime after weighing the expected benefits against the probable costs of punishment.",
+      "Neighborhoods with visible signs of disorder naturally attract higher levels of serious criminal activity."
+    ],
+    "difficulty": 3,
+    "source_article": "Labeling theory",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["labeling theory"]
+  },
+  {
+    "question_text": "How does rational choice theory explain criminal behavior?",
+    "correct_answer": "Offenders make calculated decisions to commit crimes by weighing the expected benefits against potential costs.",
+    "distractors": [
+      "Criminal behavior results from unconscious psychological drives that the offender cannot voluntarily control.",
+      "Offenders are pushed into crime by structural inequalities that block access to legitimate economic opportunities.",
+      "Criminal conduct is learned through prolonged intimate contact with peers who hold pro-criminal attitudes."
+    ],
+    "difficulty": 3,
+    "source_article": "Rational choice theory (criminology)",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["rational choice theory"]
+  },
+  {
+    "question_text": "What does the broken windows theory propose about the relationship between disorder and crime?",
+    "correct_answer": "Visible signs of disorder and neglect in a neighborhood signal tolerance and encourage escalating criminal activity.",
+    "distractors": [
+      "Property damage to buildings directly causes psychological trauma that leads residents to commit violent offenses.",
+      "Neighborhoods with older housing stock have higher crime rates due to inferior physical security features.",
+      "Broken infrastructure reduces municipal tax revenue, which in turn decreases funding for local police departments."
+    ],
+    "difficulty": 3,
+    "source_article": "Broken windows theory",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["broken windows theory"]
+  },
+  {
+    "question_text": "According to social disorganization theory, what neighborhood characteristics are most associated with high crime rates?",
+    "correct_answer": "Poverty, high residential turnover, and ethnic heterogeneity weaken community institutions and informal social controls.",
+    "distractors": [
+      "High population density, warm climate conditions, and proximity to major highways increase criminal opportunity.",
+      "Low property values, strict local policing policies, and limited access to public transportation services.",
+      "The presence of large retail centers, entertainment districts, and tourist attractions in commercial zones."
+    ],
+    "difficulty": 3,
+    "source_article": "Social disorganization theory",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["social disorganization theory"]
+  },
+  {
+    "question_text": "What is Sutherland's differential association theory?",
+    "correct_answer": "Criminal behavior is learned through intimate personal interaction with others who hold favorable attitudes toward crime.",
+    "distractors": [
+      "Individuals with certain genetic profiles are differentially predisposed to criminal behavior from early childhood.",
+      "Crime rates vary because neighborhoods differ in the strength of their institutional controls over residents.",
+      "Offenders choose between criminal and legitimate activities based on the expected utility of each option."
+    ],
+    "difficulty": 3,
+    "source_article": "Differential association",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["differential association theory"]
+  },
+  {
+    "question_text": "What does the term mass incarceration refer to in the United States?",
+    "correct_answer": "The dramatic increase in imprisonment rates since the 1970s, disproportionately affecting minority and low-income communities.",
+    "distractors": [
+      "The temporary detention of large groups of undocumented immigrants at federal border processing facilities.",
+      "The historical practice of confining people with mental illness in large state-run psychiatric institutions.",
+      "The mandatory evacuation and relocation of civilian populations during wartime into government-run internment camps."
+    ],
+    "difficulty": 3,
+    "source_article": "Mass incarceration in the United States",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["mass incarceration"]
+  },
+  {
+    "question_text": "What distinguishes cybercrime from traditional forms of criminal activity?",
+    "correct_answer": "Cybercrime is committed using computers, networks, or digital technology as the primary instrument or target.",
+    "distractors": [
+      "Cybercrime is exclusively prosecuted under international law rather than domestic criminal statutes.",
+      "Cybercrime involves only financial fraud and does not include offenses against persons or property.",
+      "Cybercrime is defined as any crime reported through online platforms rather than to local police."
+    ],
+    "difficulty": 3,
+    "source_article": "Cybercrime",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["cybercrime"]
+  },
+  {
+    "question_text": "How are hate crimes distinguished from other criminal offenses?",
+    "correct_answer": "Hate crimes are motivated by prejudice against the victim's race, religion, ethnicity, sexual orientation, or similar identity.",
+    "distractors": [
+      "Hate crimes are defined by the severity of physical injury inflicted and always involve violent assault.",
+      "Hate crimes occur exclusively between members of different political parties during election campaign periods.",
+      "Hate crimes are offenses committed spontaneously without premeditation during emotionally charged public confrontations."
+    ],
+    "difficulty": 3,
+    "source_article": "Hate crime",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["hate crime"]
+  },
+  {
+    "question_text": "What characterizes criminological positivism as a school of thought?",
+    "correct_answer": "It applies scientific methods to identify biological, psychological, or social factors that cause criminal behavior.",
+    "distractors": [
+      "It argues that criminal law should be interpreted strictly according to its written text without judicial discretion.",
+      "It claims that crime is best understood as a rational choice made freely by morally responsible individuals.",
+      "It focuses on reforming legal codes to ensure punishments are proportional to the harm caused by offenses."
+    ],
+    "difficulty": 3,
+    "source_article": "Positivist school of criminology",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["criminological positivism"]
+  },
+  {
+    "question_text": "What is the main strategy behind situational crime prevention?",
+    "correct_answer": "Reducing crime opportunities by modifying the immediate environment, such as through target hardening and surveillance.",
+    "distractors": [
+      "Addressing root causes of crime through long-term investment in education, employment, and mental health services.",
+      "Imposing harsher criminal sentences to increase the perceived cost of offending for potential criminals.",
+      "Deploying more police officers into disadvantaged neighborhoods to build community trust and gather intelligence."
+    ],
+    "difficulty": 3,
+    "source_article": "Situational crime prevention",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["situational crime prevention"]
+  },
+  {
+    "question_text": "What does the prison abolition movement advocate?",
+    "correct_answer": "Eliminating prisons entirely and replacing incarceration with community-based alternatives focused on accountability and healing.",
+    "distractors": [
+      "Reforming existing prison conditions by improving healthcare, education, and vocational training for inmates.",
+      "Privatizing all correctional facilities to reduce government spending and increase operational efficiency and oversight.",
+      "Expanding the use of solitary confinement as a more effective deterrent against repeat criminal offending."
+    ],
+    "difficulty": 3,
+    "source_article": "Prison abolition movement",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["prison abolition"]
+  },
+  {
+    "question_text": "What three elements must converge for crime to occur according to routine activity theory?",
+    "correct_answer": "A motivated offender, a suitable target, and the absence of a capable guardian must converge in time and space.",
+    "distractors": [
+      "Economic deprivation, peer pressure, and substance abuse must combine within a socially disorganized neighborhood.",
+      "A permissive legal system, weak community norms, and widespread availability of weapons create criminal opportunity.",
+      "Biological predisposition, psychological disorder, and early childhood trauma must interact to produce criminal conduct."
+    ],
+    "difficulty": 4,
+    "source_article": "Routine activity theory",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["routine activity theory"]
+  },
+  {
+    "question_text": "What perspective does peacemaking criminology bring to the study of crime and justice?",
+    "correct_answer": "It frames crime as a form of suffering and advocates nonviolence, social justice, and inclusion as responses.",
+    "distractors": [
+      "It applies military strategy and counterinsurgency principles to design more effective urban policing operations.",
+      "It emphasizes strict law enforcement, mandatory sentencing, and zero-tolerance policies to maintain public order.",
+      "It uses economic modeling to calculate the optimal level of punishment that minimizes total social cost."
+    ],
+    "difficulty": 4,
+    "source_article": "Peacemaking criminology",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["peacemaking criminology"]
+  },
+  {
+    "question_text": "What is the focus of cultural criminology?",
+    "correct_answer": "How cultural dynamics, media representations, and meaning-making processes shape experiences of crime and deviance.",
+    "distractors": [
+      "How ethnic minority cultural values conflict with dominant legal norms producing higher arrest rates.",
+      "How national cultural traditions determine which behaviors are codified as criminal offenses in statutory law.",
+      "How ancient religious moral codes continue to influence modern criminal sentencing practices across societies."
+    ],
+    "difficulty": 4,
+    "source_article": "Cultural criminology",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["cultural criminology"]
+  },
+  {
+    "question_text": "What distinguishes left realism from other critical criminological perspectives?",
+    "correct_answer": "It takes street crime seriously as a real problem for working-class communities while analyzing its structural causes.",
+    "distractors": [
+      "It argues that all crime statistics are fabricated by the state to justify expanding police powers.",
+      "It focuses exclusively on white-collar and corporate crime while dismissing street crime as statistically insignificant.",
+      "It advocates eliminating all criminal law and replacing state justice with private dispute resolution mechanisms."
+    ],
+    "difficulty": 4,
+    "source_article": "Left realism",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["left realism"]
+  },
+  {
+    "question_text": "What is the central proposition of Gottfredson and Hirschi's general theory of crime?",
+    "correct_answer": "Low self-control, established in early childhood, is the primary individual-level predictor of criminal behavior across all contexts.",
+    "distractors": [
+      "Differential access to legitimate economic opportunities determines whether individuals engage in criminal behavior or conformity.",
+      "The strength of an offender's attachment to deviant peer networks is the single best predictor of persistent offending.",
+      "Genetic heritability of aggressive temperament accounts for the majority of variation in criminal behavior across populations."
+    ],
+    "difficulty": 4,
+    "source_article": "A General Theory of Crime",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["general theory of crime"]
+  },
+  {
+    "question_text": "What does life-course criminology study?",
+    "correct_answer": "How criminal behavior develops, persists, and desists across different stages of an individual's lifespan.",
+    "distractors": [
+      "How sentencing length affects an offender's likelihood of committing new crimes after prison release.",
+      "How crime rates in a neighborhood change over decades as the population ages and turns over.",
+      "How forensic investigators reconstruct the sequence of events that occurred during a single criminal incident."
+    ],
+    "difficulty": 4,
+    "source_article": "Life-course criminology",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["life-course criminology"]
+  },
+  {
+    "question_text": "What does zemiology argue should replace the concept of crime as the focus of scholarly inquiry?",
+    "correct_answer": "The broader concept of social harm, which includes harms not defined as criminal by the state.",
+    "distractors": [
+      "The concept of moral deviance, which encompasses all behavior violating religious or ethical community norms.",
+      "The notion of risk management, which focuses on predicting and preventing future dangerous individual behavior.",
+      "The idea of social disorder, which measures visible signs of community decay like vandalism and littering."
+    ],
+    "difficulty": 4,
+    "source_article": "Zemiology",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["zemiology"]
+  },
+  {
+    "question_text": "What is the focus of green criminology?",
+    "correct_answer": "Environmental harms, ecological destruction, and species justice, including corporate and state environmental crimes beyond conventional law.",
+    "distractors": [
+      "The design of sustainable prison facilities that minimize their carbon footprint and environmental impact.",
+      "Criminal activity occurring in rural and agricultural areas as opposed to urban centers and cities.",
+      "The use of environmentally friendly forensic techniques that avoid contaminating crime scenes with toxic chemicals."
+    ],
+    "difficulty": 4,
+    "source_article": "Green criminology",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["green criminology"]
+  },
+  {
+    "question_text": "What is the primary aim of developmental criminology?",
+    "correct_answer": "To identify early risk factors and developmental pathways that lead to the onset and persistence of criminal careers.",
+    "distractors": [
+      "To trace the historical evolution of criminal law systems from ancient civilizations to modern democratic states.",
+      "To design rehabilitation programs that accelerate cognitive development in incarcerated adult offenders during imprisonment.",
+      "To study how developing nations build criminal justice institutions during periods of rapid economic industrialization."
+    ],
+    "difficulty": 4,
+    "source_article": "Developmental criminology",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["developmental criminology"]
+  },
+  {
+    "question_text": "What is desistance from crime?",
+    "correct_answer": "The process by which individuals who have offended gradually cease criminal behavior and maintain a law-abiding life.",
+    "distractors": [
+      "The legal procedure through which a court formally dismisses all charges against a criminal defendant.",
+      "The policy of diverting first-time offenders away from prosecution into community service or treatment programs.",
+      "The statistical decline in overall crime rates observed in many Western nations since the early 1990s."
+    ],
+    "difficulty": 4,
+    "source_article": "Desistance",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["desistance from crime"]
+  },
+  {
+    "question_text": "What distinguishes convict criminology from mainstream criminological research?",
+    "correct_answer": "It is led by formerly incarcerated scholars who use their insider experience to challenge conventional criminological knowledge.",
+    "distractors": [
+      "It relies exclusively on quantitative analysis of large government datasets rather than qualitative interview methods.",
+      "It studies only the behavior of currently incarcerated individuals within the controlled environment of prisons.",
+      "It is funded directly by correctional agencies and designed to evaluate the effectiveness of existing prison programs."
+    ],
+    "difficulty": 4,
+    "source_article": "Convict criminology",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["convict criminology"]
+  },
+  {
+    "question_text": "In Wilson's typology from Varieties of Police Behavior, what are the three main policing styles?",
+    "correct_answer": "Watchman style emphasizing order maintenance, legalistic style emphasizing law enforcement, and service style emphasizing community assistance.",
+    "distractors": [
+      "Preventive patrol emphasizing visibility, rapid response emphasizing speed, and community policing emphasizing partnerships.",
+      "Authoritarian style emphasizing control, democratic style emphasizing consent, and laissez-faire style emphasizing minimal intervention.",
+      "Proactive style emphasizing intelligence-led operations, reactive style emphasizing incident response, and hybrid style combining both."
+    ],
+    "difficulty": 4,
+    "source_article": "Varieties of Police Behavior",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["policing styles (Skolnick/Wilson)"]
+  }
+]

@@ -1,0 +1,852 @@
+[
+  {
+    "question_text": "In genetics, what is a gene?",
+    "correct_answer": "A sequence of nucleotides in DNA that serves as a basic unit of heredity.",
+    "distractors": [
+      "A protein molecule that catalyzes chemical reactions within living cells.",
+      "A specialized cell structure that packages and transports molecules throughout the organism.",
+      "A lipid-based membrane component that controls which substances enter and exit cells."
+    ],
+    "difficulty": 1,
+    "source_article": "Gene",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "gene"
+    ]
+  },
+  {
+    "question_text": "What is a chromosome?",
+    "correct_answer": "A package of DNA and histone proteins containing part or all of an organism's genetic material.",
+    "distractors": [
+      "A single strand of messenger RNA that carries genetic instructions from the nucleus to the ribosome.",
+      "A protein complex that repairs damaged segments of DNA during cell division.",
+      "A membrane-enclosed compartment within the nucleus where ribosomal subunits are assembled."
+    ],
+    "difficulty": 1,
+    "source_article": "Chromosome",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "chromosome"
+    ]
+  },
+  {
+    "question_text": "In genetics, what is an allele?",
+    "correct_answer": "A variant form of a gene found at a particular locus on a chromosome.",
+    "distractors": [
+      "A segment of non-coding DNA that regulates the expression of neighboring genes.",
+      "A pair of homologous chromosomes that align during cell division.",
+      "A repeated sequence of nucleotides that caps the ends of chromosomes."
+    ],
+    "difficulty": 1,
+    "source_article": "Allele",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "allele"
+    ]
+  },
+  {
+    "question_text": "What does the term genotype refer to in genetics?",
+    "correct_answer": "An organism's complete set of genetic material, or the specific alleles it carries at a given locus.",
+    "distractors": [
+      "The observable physical and behavioral characteristics of an organism that result from the interaction of its genes and environment.",
+      "The process by which a cell copies all of its DNA molecules in preparation for division.",
+      "The collection of all proteins expressed by a cell at a particular time."
+    ],
+    "difficulty": 1,
+    "source_article": "Genotype",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "genotype"
+    ]
+  },
+  {
+    "question_text": "What is heredity?",
+    "correct_answer": "The biological process by which genetic traits are passed from parents to their offspring.",
+    "distractors": [
+      "The gradual change in a species' traits over many generations due to environmental pressures.",
+      "The spontaneous alteration of an organism's DNA sequence during cell replication.",
+      "The process by which organisms with favorable traits survive and reproduce more successfully."
+    ],
+    "difficulty": 1,
+    "source_article": "Heredity",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "heredity"
+    ]
+  },
+  {
+    "question_text": "In genetics, what is a mutation?",
+    "correct_answer": "An alteration in the nucleic acid sequence of an organism's genome.",
+    "distractors": [
+      "The exchange of genetic material between homologous chromosomes during meiosis.",
+      "The movement of a protein along a strand of messenger RNA during translation.",
+      "The natural variation in gene frequency that occurs between isolated populations."
+    ],
+    "difficulty": 1,
+    "source_article": "Mutation",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "mutation"
+    ]
+  },
+  {
+    "question_text": "In genetics, what does dominance describe?",
+    "correct_answer": "The phenomenon where one allele masks or overrides the effect of a different allele of the same gene.",
+    "distractors": [
+      "The tendency of genes located close together on the same chromosome to be inherited as a unit.",
+      "The process by which both alleles at a locus contribute equally to the organism's phenotype.",
+      "The preferential expression of a gene inherited from one parent over the copy from the other parent."
+    ],
+    "difficulty": 1,
+    "source_article": "Dominance (genetics)",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "dominance (genetics)"
+    ]
+  },
+  {
+    "question_text": "In genetics, what term refers to the complete set of genetic information contained within an organism, including all of its DNA sequences, genes, and non-coding regions?",
+    "correct_answer": "Genome",
+    "distractors": [
+      "Proteome",
+      "Transcriptome",
+      "Exome"
+    ],
+    "difficulty": 1,
+    "source_article": "Genome",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "genome"
+    ]
+  },
+  {
+    "question_text": "What term describes the set of rules by which nucleotide triplets called codons are translated into amino acids during protein synthesis?",
+    "correct_answer": "The genetic code",
+    "distractors": [
+      "The codon framework",
+      "The translation cipher",
+      "The nucleotide code"
+    ],
+    "difficulty": 1,
+    "source_article": "Genetic code",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "genetic code"
+    ]
+  },
+  {
+    "question_text": "What term describes the differences in DNA sequences among individuals within a species, arising from sources such as mutation and genetic recombination?",
+    "correct_answer": "Genetic variation",
+    "distractors": [
+      "Genetic polymorphism",
+      "Genetic divergence",
+      "Allelic variation"
+    ],
+    "difficulty": 1,
+    "source_article": "Genetic variation",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "genetic variation"
+    ]
+  },
+  {
+    "question_text": "In biology, what is the offspring called when it results from sexual reproduction between parents of two different species, subspecies, or varieties?",
+    "correct_answer": "A hybrid",
+    "distractors": [
+      "A chimera",
+      "A polyploid",
+      "A backcross"
+    ],
+    "difficulty": 1,
+    "source_article": "Hybrid (biology)",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "hybrid (biology)"
+    ]
+  },
+  {
+    "question_text": "What type of cell division involves two successive rounds of division, producing four haploid daughter cells that function as gametes in sexually reproducing organisms?",
+    "correct_answer": "Meiosis",
+    "distractors": [
+      "Mitosis",
+      "Binary fission",
+      "Amitosis"
+    ],
+    "difficulty": 1,
+    "source_article": "Meiosis",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "meiosis"
+    ]
+  },
+  {
+    "question_text": "In genetics, what term describes a diploid organism's condition when it carries two identical alleles for a particular gene at the same locus on homologous chromosomes?",
+    "correct_answer": "Homozygosity (or homozygous)",
+    "distractors": [
+      "Heterozygosity (or heterozygous)",
+      "Hemizygosity (or hemizygous)",
+      "Codominance (or codominant)"
+    ],
+    "difficulty": 1,
+    "source_article": "Zygosity",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "homozygosity"
+    ]
+  },
+  {
+    "question_text": "Mendel's Law of Segregation states that the two alleles of a gene separate during gamete formation. What is the alternative name for this law that emphasizes each gamete receiving only one allele?",
+    "correct_answer": "The law of purity of gametes",
+    "distractors": [
+      "The law of independent assortment of gametes",
+      "The law of gametic segregation purity",
+      "The law of allelic exclusion of gametes"
+    ],
+    "difficulty": 2,
+    "source_article": "Mendelian inheritance",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "Mendelian inheritance"
+    ]
+  },
+  {
+    "question_text": "The diagram used to predict genotype ratios from a genetic cross was devised in 1905 by a British geneticist who also co-discovered gene linkage with William Bateson. Who created this diagram?",
+    "correct_answer": "Reginald Punnett",
+    "distractors": [
+      "William Bateson",
+      "Archibald Garrod",
+      "Thomas Hunt Morgan"
+    ],
+    "difficulty": 2,
+    "source_article": "Punnett square",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "Punnett square"
+    ]
+  },
+  {
+    "question_text": "In the ABO blood group system, the $I^A$ and $I^B$ alleles each produce distinct surface antigens on red blood cells. A person with genotype $I^A I^B$ expresses both A and B antigens simultaneously. What is this inheritance pattern called?",
+    "correct_answer": "Codominance",
+    "distractors": [
+      "Incomplete dominance",
+      "Overdominance",
+      "Pleiotropic co-expression"
+    ],
+    "difficulty": 2,
+    "source_article": "Codominance",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "codominance"
+    ]
+  },
+  {
+    "question_text": "In Labrador Retrievers, the $ee$ genotype at one locus prevents melanin deposition regardless of the genotype at the coat-color locus, producing yellow fur. What is the term for the gene whose phenotypic expression is masked in this interaction?",
+    "correct_answer": "Hypostatic gene",
+    "distractors": [
+      "Epistatic gene",
+      "Pleiotropic gene",
+      "Modifier gene"
+    ],
+    "difficulty": 2,
+    "source_article": "Epistasis",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "epistasis"
+    ]
+  },
+  {
+    "question_text": "Common bread wheat ($Triticum\\ aestivum$) contains three ancestral subgenomes designated A, B, and D, with a total of 42 chromosomes. What specific ploidy level classification does this represent?",
+    "correct_answer": "Hexaploid ($2n = 6x = 42$)",
+    "distractors": [
+      "Allohexaploid ($2n = 3x = 42$)",
+      "Tetraploid ($2n = 4x = 42$)",
+      "Hexaploid ($2n = 6x = 36$)"
+    ],
+    "difficulty": 2,
+    "source_article": "Polyploidy",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "polyploidy"
+    ]
+  },
+  {
+    "question_text": "During prophase I of meiosis, homologous chromosomes exchange segments of DNA. The X-shaped structures visible at the points where non-sister chromatids remain connected after this exchange are called what?",
+    "correct_answer": "Chiasmata (singular: chiasma)",
+    "distractors": [
+      "Synaptonemal complexes (singular: synaptonemal complex)",
+      "Bivalent junctions (singular: bivalent junction)",
+      "Recombination nodules (singular: recombination nodule)"
+    ],
+    "difficulty": 2,
+    "source_article": "Chromosomal crossover",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "chromosomal crossover"
+    ]
+  },
+  {
+    "question_text": "In sex-linked inheritance, what term describes a male who has only one copy of an X-linked recessive allele and expresses the trait, since he lacks a second X chromosome?",
+    "correct_answer": "Hemizygous",
+    "distractors": [
+      "Homozygous",
+      "Heterozygous",
+      "Hemiploid"
+    ],
+    "difficulty": 2,
+    "source_article": "Sex linkage",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "sex-linked inheritance"
+    ]
+  },
+  {
+    "question_text": "In population genetics, what specific term describes the dramatic reduction in genetic variation that occurs when a population's size is severely reduced by a catastrophic event?",
+    "correct_answer": "Population bottleneck (or bottleneck effect)",
+    "distractors": [
+      "Founder effect (or founder event)",
+      "Genetic drift bottleneck (or drift effect)",
+      "Population sweep (or selective sweep effect)"
+    ],
+    "difficulty": 2,
+    "source_article": "Genetic drift",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "genetic drift"
+    ]
+  },
+  {
+    "question_text": "In the Hardy-Weinberg equation $p^2 + 2pq + q^2 = 1$, what does the term $2pq$ specifically represent?",
+    "correct_answer": "The expected frequency of heterozygotes in the population",
+    "distractors": [
+      "The expected frequency of homozygous dominant individuals in the population",
+      "The expected frequency of carriers of recessive alleles in the population",
+      "The expected proportion of homozygous recessive genotypes in the population"
+    ],
+    "difficulty": 2,
+    "source_article": "Hardy-Weinberg principle",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "Hardy-Weinberg principle"
+    ]
+  },
+  {
+    "question_text": "Barbara McClintock discovered transposable elements in maize. What are Class I transposable elements called, which move via an RNA intermediate using reverse transcriptase?",
+    "correct_answer": "Retrotransposons",
+    "distractors": [
+      "DNA transposons",
+      "Helitrons",
+      "Insertional elements"
+    ],
+    "difficulty": 2,
+    "source_article": "Transposable element",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "transposon"
+    ]
+  },
+  {
+    "question_text": "Plasmids are classified by function into several types. What name is given to plasmids that contain tra genes, encode sex pili, and enable bacterial conjugation?",
+    "correct_answer": "Fertility plasmids (F-plasmids)",
+    "distractors": [
+      "Resistance plasmids (R-plasmids)",
+      "Conjugative plasmids (Col-plasmids)",
+      "Virulence plasmids (V-plasmids)"
+    ],
+    "difficulty": 2,
+    "source_article": "Plasmid",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "plasmid"
+    ]
+  },
+  {
+    "question_text": "In karyotyping, what is the most common chromosome banding technique, which uses trypsin digestion followed by Giemsa stain to produce characteristic light and dark bands?",
+    "correct_answer": "G-banding",
+    "distractors": [
+      "Q-banding",
+      "R-banding",
+      "C-banding"
+    ],
+    "difficulty": 2,
+    "source_article": "Karyotype",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "karyotype"
+    ]
+  },
+  {
+    "question_text": "In population genetics, linkage disequilibrium between two loci is quantified by the coefficient $D$. What normalized measure, introduced by Hill and Robertson, equals $D^2$ divided by the product of allele frequency variances at both loci?",
+    "correct_answer": "$r^2$ (the squared correlation of allele frequencies)",
+    "distractors": [
+      "$D'$ (the normalized linkage disequilibrium coefficient)",
+      "$F_{ST}$ (the fixation index of allele frequencies)",
+      "$\\chi^2$ (the chi-squared test of allele association)"
+    ],
+    "difficulty": 2,
+    "source_article": "Linkage disequilibrium",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "linkage disequilibrium"
+    ]
+  },
+  {
+    "question_text": "In PCR, why is Taq polymerase used instead of typical DNA polymerases?",
+    "correct_answer": "Taq polymerase is heat-stable, surviving the high-temperature denaturation step (~95 degrees C) without losing function.",
+    "distractors": [
+      "Taq polymerase synthesizes DNA in both the 5' to 3' and 3' to 5' directions simultaneously, doubling replication speed.",
+      "Taq polymerase has built-in proofreading ability that prevents errors during amplification cycles.",
+      "Taq polymerase does not require primers to initiate DNA synthesis, simplifying the reaction setup."
+    ],
+    "difficulty": 3,
+    "source_article": "Polymerase chain reaction",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "polymerase chain reaction"
+    ]
+  },
+  {
+    "question_text": "In CRISPR-Cas9 gene editing, what is the role of the guide RNA (gRNA)?",
+    "correct_answer": "The gRNA directs the Cas9 nuclease to a specific complementary DNA sequence in the genome where it creates a cut.",
+    "distractors": [
+      "The gRNA serves as a template for inserting new genetic material at the double-strand break site.",
+      "The gRNA encodes the Cas9 protein and is translated into the nuclease inside the target cell.",
+      "The gRNA repairs the double-strand break through non-homologous end joining after Cas9 cuts the DNA."
+    ],
+    "difficulty": 3,
+    "source_article": "CRISPR gene editing",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "CRISPR gene editing"
+    ]
+  },
+  {
+    "question_text": "How do epigenetic modifications alter an organism's traits without changing its DNA sequence?",
+    "correct_answer": "They regulate gene expression through mechanisms like DNA methylation and histone modification, which persist through cell division.",
+    "distractors": [
+      "They rearrange the physical order of genes along chromosomes, creating new linkage groups without altering nucleotide sequences.",
+      "They modify the ribosomal machinery so that existing mRNA transcripts are translated into different protein variants.",
+      "They alter the rate of DNA replication in specific tissues, causing cells to accumulate different numbers of gene copies."
+    ],
+    "difficulty": 3,
+    "source_article": "Epigenetics",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "epigenetics"
+    ]
+  },
+  {
+    "question_text": "In eukaryotic gene expression, what happens to pre-mRNA before it leaves the nucleus to be translated?",
+    "correct_answer": "It undergoes 5' capping, 3' polyadenylation, and splicing to remove introns, producing mature mRNA.",
+    "distractors": [
+      "It is reverse-transcribed into cDNA, which is then re-transcribed into a stable mRNA form for export.",
+      "It is cleaved into individual codon triplets that are separately transported to ribosomes for assembly.",
+      "It is replicated by RNA polymerase III to produce multiple identical copies before nuclear export."
+    ],
+    "difficulty": 3,
+    "source_article": "Gene expression",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "gene expression"
+    ]
+  },
+  {
+    "question_text": "In recombinant DNA technology, what enzyme is used to join DNA fragments from different sources into a single molecule?",
+    "correct_answer": "DNA ligase, which catalyzes the formation of phosphodiester bonds between DNA fragments.",
+    "distractors": [
+      "DNA helicase, which unwinds and reconnects double-stranded DNA at complementary sticky-end junctions.",
+      "Reverse transcriptase, which synthesizes a continuous DNA strand from separate RNA-primed fragments.",
+      "Topoisomerase, which relaxes supercoiled DNA to allow foreign fragments to integrate into the vector."
+    ],
+    "difficulty": 3,
+    "source_article": "Recombinant DNA",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "recombinant DNA"
+    ]
+  },
+  {
+    "question_text": "What unit is used to measure genetic linkage distance, and what does a value of 1 in that unit represent?",
+    "correct_answer": "The centimorgan (cM); 1 cM means two markers are separated by recombination in 1% of meioses.",
+    "distractors": [
+      "The morgan (M); 1 M means two genes are physically separated by one million base pairs on a chromosome.",
+      "The linkage unit (LU); 1 LU means two alleles co-segregate in all offspring of a single-generation cross.",
+      "The crossover index (CI); 1 CI means one obligate chiasma forms between two loci during every meiotic division."
+    ],
+    "difficulty": 3,
+    "source_article": "Genetic linkage",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "genetic linkage"
+    ]
+  },
+  {
+    "question_text": "In QTL mapping, researchers identify genomic regions linked to continuous phenotypic variation by correlating the trait with which type of genetic marker?",
+    "correct_answer": "Molecular markers such as SNPs or AFLPs that co-segregate with the quantitative trait in a population.",
+    "distractors": [
+      "Molecular markers such as SNPs or AFLPs that show linkage disequilibrium with the qualitative trait in a population.",
+      "Cytogenetic markers such as chromosome banding patterns that co-segregate with the quantitative trait in a population.",
+      "Molecular markers such as SNPs or AFLPs that segregate independently from the quantitative trait in a population."
+    ],
+    "difficulty": 3,
+    "source_article": "Quantitative trait locus",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "quantitative trait locus"
+    ]
+  },
+  {
+    "question_text": "Inbreeding depression reduces biological fitness primarily through which genetic mechanism at the allele level?",
+    "correct_answer": "Increased homozygosity exposes deleterious recessive alleles that are normally masked in heterozygous individuals.",
+    "distractors": [
+      "Increased homozygosity exposes deleterious dominant alleles that are normally masked in heterozygous individuals.",
+      "Increased heterozygosity exposes deleterious recessive alleles that are normally masked in homozygous individuals.",
+      "Increased homozygosity disrupts overdominant allele interactions that are normally maintained in heterozygous individuals."
+    ],
+    "difficulty": 3,
+    "source_article": "Inbreeding depression",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "inbreeding depression"
+    ]
+  },
+  {
+    "question_text": "The sickle-cell allele persists at high frequency in malaria-endemic regions because carriers (heterozygotes) resist malaria while unaffected by sickle-cell disease. What is the formal genetics term for this single-locus phenomenon?",
+    "correct_answer": "Overdominance, where the heterozygote has higher fitness than either homozygote.",
+    "distractors": [
+      "Underdominance, where the heterozygote has higher fitness than either homozygote.",
+      "Frequency-dependent selection, where the heterozygote has higher fitness than either homozygote.",
+      "Overdominance, where the homozygote has higher fitness than the heterozygote."
+    ],
+    "difficulty": 3,
+    "source_article": "Heterozygote advantage",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "heterozygote advantage"
+    ]
+  },
+  {
+    "question_text": "In genomic imprinting, the $IGF2$ gene in mammals is expressed only from the allele inherited from one parent. Which parent's allele is expressed, and what epigenetic modification silences the other?",
+    "correct_answer": "The paternal allele is expressed; the maternal allele is silenced by DNA methylation.",
+    "distractors": [
+      "The maternal allele is expressed; the paternal allele is silenced by DNA methylation.",
+      "The paternal allele is expressed; the maternal allele is silenced by histone acetylation.",
+      "The paternal allele is expressed; the maternal allele is silenced by RNA interference."
+    ],
+    "difficulty": 3,
+    "source_article": "Genomic imprinting",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "genomic imprinting"
+    ]
+  },
+  {
+    "question_text": "Human mitochondrial DNA encodes 37 genes, including 13 protein-coding genes. What cellular process do all 13 of these proteins participate in?",
+    "correct_answer": "Oxidative phosphorylation (the OXPHOS system for ATP production).",
+    "distractors": [
+      "The citric acid cycle (the TCA system for substrate-level phosphorylation).",
+      "Oxidative phosphorylation and glycolysis (the combined system for ATP production).",
+      "Mitochondrial transcription and translation (the gene expression system for ATP production)."
+    ],
+    "difficulty": 3,
+    "source_article": "Mitochondrial DNA",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "mitochondrial DNA"
+    ]
+  },
+  {
+    "question_text": "SNPs in protein-coding regions that change the amino acid sequence are called nonsynonymous. What are coding SNPs that do NOT alter the amino acid sequence called, and why is this possible?",
+    "correct_answer": "Synonymous SNPs, possible because of degeneracy (redundancy) of the genetic code.",
+    "distractors": [
+      "Nonsense SNPs, possible because of degeneracy (redundancy) of the genetic code.",
+      "Synonymous SNPs, possible because of wobble base pairing in the anticodon loop.",
+      "Silent SNPs, possible because of the universality (conservation) of the genetic code."
+    ],
+    "difficulty": 3,
+    "source_article": "Single-nucleotide polymorphism",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "single-nucleotide polymorphism"
+    ]
+  },
+  {
+    "question_text": "Hox genes display spatial colinearity in most bilaterian animals. Remarkably, a chicken Hox protein can largely substitute for the equivalent Drosophila Hox protein despite over 550 million years of divergence. What does this functional interchangeability specifically demonstrate about Hox protein evolution?",
+    "correct_answer": "The homeodomain DNA-binding specificity and downstream gene targets have been so highly conserved that orthologous Hox proteins remain functionally equivalent across phyla.",
+    "distractors": [
+      "The homeodomain DNA-binding specificity has been conserved but downstream gene targets have diverged, meaning orthologous Hox proteins activate analogous rather than homologous pathways across phyla.",
+      "The homeodomain protein-protein interaction surfaces and cofactor recruitment domains have been so highly conserved that orthologous Hox proteins remain functionally equivalent across phyla.",
+      "The homeodomain DNA-binding specificity has been conserved due to convergent evolution under similar developmental constraints, rather than shared ancestry of regulatory targets across phyla."
+    ],
+    "difficulty": 4,
+    "source_article": "Hox gene",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "Hox genes"
+    ]
+  },
+  {
+    "question_text": "In gene regulatory networks, morphogen gradients provide positional information to cells during development. What specific cellular mechanism allows a single morphogen diffusing from a source to activate different target genes at different distances, thereby producing distinct cell fates?",
+    "correct_answer": "Concentration-dependent threshold responses: different target genes have promoters/enhancers with different binding affinities, activating only above specific morphogen concentration thresholds.",
+    "distractors": [
+      "Receptor desensitization kinetics: cells at different distances internalize morphogen receptors at different rates, activating distinct intracellular signaling cascades that specify separate gene programs.",
+      "Temporal integration of morphogen exposure: different target genes require different durations of sustained signaling, so cells closer to the source activate more targets.",
+      "Lateral inhibition through cell-cell contact signaling: cells receiving high morphogen concentrations send inhibitory signals to neighbors, restricting target gene activation to defined domains."
+    ],
+    "difficulty": 4,
+    "source_article": "Gene regulatory network",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "gene regulatory network"
+    ]
+  },
+  {
+    "question_text": "The Neolithic Y-chromosome bottleneck (~5000 BCE) dramatically reduced Y-chromosome diversity across Africa, Europe, and Asia to an effective male-to-female breeding ratio of approximately 1:17. What is the leading hypothesis for this bottleneck's cause, given that census population sizes were actually growing?",
+    "correct_answer": "A drastic decrease in the proportion of males achieving reproductive success in Neolithic agropastoralist cultures, not an actual reduction in male population numbers.",
+    "distractors": [
+      "A drastic increase in male mortality rates due to intergroup warfare among competing Neolithic agropastoralist patrilineal clans, causing an actual reduction in male population numbers.",
+      "A drastic decrease in Y-chromosome diversity caused by selective sweeps on Y-linked genes advantageous in agropastoralist cultures, not changes in male reproductive success.",
+      "A drastic decrease in the proportion of males surviving to adulthood due to zoonotic disease exposure in early Neolithic agropastoralist settlements, reducing the effective male population size."
+    ],
+    "difficulty": 4,
+    "source_article": "Population bottleneck",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "population bottleneck"
+    ]
+  },
+  {
+    "question_text": "The founder effect was first fully outlined by Ernst Mayr in 1942. Among the Old Order Amish of Lancaster County, Pennsylvania, a specific autosomal recessive condition occurs at dramatically elevated frequency due to a founder effect. What is this condition?",
+    "correct_answer": "Ellis-van Creveld syndrome, a form of short-limbed dwarfism with polydactyly, traced to a small number of 18th-century founders.",
+    "distractors": [
+      "Maple syrup urine disease, a branched-chain amino acid metabolism disorder with neurological impairment, traced to a small number of 18th-century founders.",
+      "Ellis-van Creveld syndrome, a form of short-limbed dwarfism with congenital heart defects, traced to a single heterozygous carrier among the 17th-century founders.",
+      "Cartilage-hair hypoplasia, a form of short-limbed dwarfism with immunodeficiency, traced to a small number of 18th-century founders."
+    ],
+    "difficulty": 4,
+    "source_article": "Founder effect",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "founder effect"
+    ]
+  },
+  {
+    "question_text": "In coalescent theory, developed primarily by John Kingman in the 1980s, the expected time for two alleles sampled from a diploid population to coalesce to their most recent common ancestor is $2N_e$ generations. For mitochondrial DNA, this expected coalescence time is substantially shorter. Why?",
+    "correct_answer": "Mitochondrial DNA is maternally inherited and effectively haploid, so its effective population size is $N_e/2$ (one-quarter of autosomal), yielding faster coalescence.",
+    "distractors": [
+      "Mitochondrial DNA is maternally inherited and effectively haploid, so its effective population size is $N_e/4$ (one-eighth of autosomal), yielding faster coalescence.",
+      "Mitochondrial DNA is maternally inherited and effectively haploid, so its effective population size is $N_e$ (one-half of autosomal), yielding moderately faster coalescence.",
+      "Mitochondrial DNA has a substantially higher mutation rate than nuclear DNA, so lineages accumulate substitutions faster and appear to coalesce more rapidly regardless of population size."
+    ],
+    "difficulty": 4,
+    "source_article": "Coalescent theory",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "coalescent theory"
+    ]
+  },
+  {
+    "question_text": "The molecular clock hypothesis originated from Zuckerkandl and Pauling's 1962 observation about hemoglobin. Kimura's neutral theory later provided a theoretical basis by showing that the rate of neutral substitution in a population equals what quantity, regardless of population size?",
+    "correct_answer": "The neutral mutation rate per individual per generation ($\\mu$), because each new neutral mutation fixes with probability $1/N$ and $N\\mu$ arise each generation.",
+    "distractors": [
+      "The neutral mutation rate per locus per generation ($\\mu$), because each new neutral mutation fixes with probability $1/2N$ and $2N\\mu$ arise each generation.",
+      "The effective population size times the neutral mutation rate ($N\\mu$), because larger populations generate proportionally more neutral mutations that each fix with probability $1/N$.",
+      "The reciprocal of the coalescence time ($1/2N_e$), because neutral substitutions accumulate at a rate determined by genetic drift intensity rather than by the per-individual mutation rate."
+    ],
+    "difficulty": 4,
+    "source_article": "Molecular clock",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "molecular clock"
+    ]
+  },
+  {
+    "question_text": "In comparative genomics, synteny refers to conserved blocks of gene order between species. The X chromosome is notably almost completely syntenic between humans and mice. What Greek roots give 'synteny' its literal meaning?",
+    "correct_answer": "'syn' (together/along with) and 'tainia' (ribbon/band), literally meaning 'on the same ribbon'",
+    "distractors": [
+      "'syn' (together/along with) and 'teinein' (to stretch), literally meaning 'stretched together in alignment'",
+      "'syn' (together/along with) and 'tenon' (sinew/thread), literally meaning 'on the same thread'",
+      "'sys' (with/unified) and 'tainia' (ribbon/band), literally meaning 'unified into one ribbon'"
+    ],
+    "difficulty": 4,
+    "source_article": "Synteny",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "synteny"
+    ]
+  },
+  {
+    "question_text": "Horizontal gene transfer spreads antibiotic resistance among bacteria. Besides transformation and transduction, what is the third major mechanism of HGT in prokaryotes, and what cellular structure does it require?",
+    "correct_answer": "Conjugation, which requires a pilus to establish direct cell-to-cell contact for DNA transfer",
+    "distractors": [
+      "Conjugation, which requires a flagellum to establish direct cell-to-cell contact for DNA transfer",
+      "Conjugation, which requires a type III secretion system to establish direct cell-to-cell contact for DNA transfer",
+      "Transposition, which requires a pilus to establish direct cell-to-cell contact for DNA transfer"
+    ],
+    "difficulty": 4,
+    "source_article": "Horizontal gene transfer",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "horizontal gene transfer"
+    ]
+  },
+  {
+    "question_text": "In the RNA interference pathway, long double-stranded RNA is first cleaved into ~21-23 nucleotide siRNA fragments. What enzyme performs this initial cleavage, and into which effector complex is the guide strand then loaded?",
+    "correct_answer": "Dicer cleaves the dsRNA; the guide strand is loaded into RISC (RNA-induced silencing complex)",
+    "distractors": [
+      "Drosha cleaves the dsRNA; the guide strand is loaded into RISC (RNA-induced silencing complex)",
+      "Dicer cleaves the dsRNA; the guide strand is loaded into RITS (RNA-induced transcriptional silencing complex)",
+      "Dicer cleaves the dsRNA; the guide strand is loaded into the Argonaute-independent RDRC (RNA-directed RNA polymerase complex)"
+    ],
+    "difficulty": 4,
+    "source_article": "RNA interference",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "RNA interference"
+    ]
+  },
+  {
+    "question_text": "Chromatin remodeling controls gene access through two major mechanisms. One involves ATP-dependent complexes that reposition nucleosomes. What is the other major class, and how does histone acetylation specifically affect chromatin structure?",
+    "correct_answer": "Covalent histone-modifying complexes. Acetylation relaxes chromatin condensation, exposing DNA for transcription factor binding.",
+    "distractors": [
+      "Covalent histone-modifying complexes. Acetylation compacts chromatin condensation, preventing transcription factor binding to DNA.",
+      "Non-covalent histone-chaperone complexes. Acetylation relaxes chromatin condensation, exposing DNA for transcription factor binding.",
+      "Covalent histone-modifying complexes. Acetylation recruits methyl-CpG binding proteins, exposing DNA for transcription factor binding."
+    ],
+    "difficulty": 4,
+    "source_article": "Chromatin remodeling",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "chromatin remodeling"
+    ]
+  },
+  {
+    "question_text": "Telomeres protect chromosome ends from degradation. In vertebrates, telomeres consist of a specific hexanucleotide repeat. What is this repeat sequence, and what is the name of the protein complex that coordinates T-loop formation at telomere ends?",
+    "correct_answer": "The repeat sequence is TTAGGG. The shelterin complex coordinates T-loop formation.",
+    "distractors": [
+      "The repeat sequence is TTAGGG. The cohesin complex coordinates T-loop formation.",
+      "The repeat sequence is TTAGGC. The shelterin complex coordinates T-loop formation.",
+      "The repeat sequence is TTAGGG. The condensin complex coordinates T-loop formation."
+    ],
+    "difficulty": 4,
+    "source_article": "Telomere",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "telomere"
+    ]
+  },
+  {
+    "question_text": "Genetic anticipation causes earlier onset and increased severity across generations. In myotonic dystrophy, what specific type of mutation drives this phenomenon, and approximately how many CTG repeats in the $DMPK$ 3' UTR mark the threshold for disease manifestation?",
+    "correct_answer": "Trinucleotide repeat expansion (dynamic mutation). Approximately 50 or more CTG repeats cause mild symptoms; over 100 causes earlier-onset disease.",
+    "distractors": [
+      "Trinucleotide repeat expansion (dynamic mutation). Approximately 35 or more CTG repeats cause mild symptoms; over 70 causes earlier-onset disease.",
+      "Dinucleotide repeat expansion (dynamic mutation). Approximately 50 or more CTG repeats cause mild symptoms; over 100 causes earlier-onset disease.",
+      "Trinucleotide repeat expansion (dynamic mutation). Approximately 50 or more CTG repeats cause mild symptoms; over 200 causes earlier-onset disease."
+    ],
+    "difficulty": 4,
+    "source_article": "Anticipation (genetics)",
+    "domain_ids": [
+      "genetics"
+    ],
+    "concepts_tested": [
+      "genetic anticipation"
+    ]
+  }
+]

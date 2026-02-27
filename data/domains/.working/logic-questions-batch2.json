@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In classical logic, what does the negation operator do to a proposition?",
+    "correct_answer": "It reverses the truth value, making a true proposition false and a false proposition true.",
+    "distractors": [
+      "It doubles the logical weight of the proposition, strengthening its role as a premise in any argument.",
+      "It converts a proposition into a question, transforming a declarative statement into an interrogative one.",
+      "It removes the proposition from the argument entirely, leaving the remaining premises unchanged."
+    ],
+    "difficulty": 1,
+    "source_article": "Negation",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["negation"]
+  },
+  {
+    "question_text": "What is an analogy in the context of reasoning?",
+    "correct_answer": "A comparison between two things that highlights shared structural or relational similarities to support a conclusion.",
+    "distractors": [
+      "A formal proof technique that derives a conclusion by systematically eliminating all alternative possibilities.",
+      "A statistical method that calculates the probability of an event by sampling from a large population.",
+      "A logical contradiction in which two premises necessarily oppose each other within the same argument."
+    ],
+    "difficulty": 1,
+    "source_article": "Analogy",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["analogy"]
+  },
+  {
+    "question_text": "In logic, what is an inference?",
+    "correct_answer": "The process of deriving a conclusion from premises or evidence through a step of logical reasoning.",
+    "distractors": [
+      "A statement that is assumed to be true without proof and serves as the starting point of an argument.",
+      "A rhetorical technique used to persuade an audience by appealing to authority rather than evidence.",
+      "A formal definition that assigns precise meaning to a technical term within a logical system."
+    ],
+    "difficulty": 1,
+    "source_article": "Inference",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["inference"]
+  },
+  {
+    "question_text": "What is modus ponens, and what conclusion does it license?",
+    "correct_answer": "A rule of inference stating: if P implies Q, and P is true, then Q must be true.",
+    "distractors": [
+      "A rule of inference stating: if P implies Q, and Q is true, then P must be true.",
+      "A rule of inference stating: if P implies Q, and Q is false, then P must be false.",
+      "A rule of inference stating: if P implies Q, and P is false, then Q must be false."
+    ],
+    "difficulty": 2,
+    "source_article": "Modus ponens",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["modus ponens"]
+  },
+  {
+    "question_text": "What is modus tollens, and what conclusion does it derive from a conditional statement?",
+    "correct_answer": "If P implies Q and Q is false, then P must be false; it denies the consequent to negate the antecedent.",
+    "distractors": [
+      "If P implies Q and P is true, then Q must be true; it affirms the antecedent to establish the consequent.",
+      "If P implies Q and P is false, then Q must be false; it denies the antecedent to negate the consequent.",
+      "If P implies Q and Q is true, then P must be true; it affirms the consequent to establish the antecedent."
+    ],
+    "difficulty": 2,
+    "source_article": "Modus tollens",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["modus tollens"]
+  },
+  {
+    "question_text": "What is a syllogism in classical logic, as originally described by Aristotle?",
+    "correct_answer": "A deductive argument with exactly two premises and a conclusion, where the conclusion follows necessarily from the premises.",
+    "distractors": [
+      "An inductive argument that generalizes from a series of observed instances to a universal law of nature.",
+      "A single conditional statement expressing a hypothetical relationship between two propositions.",
+      "A chain of three or more linked conditional statements, each sharing a term with the next."
+    ],
+    "difficulty": 2,
+    "source_article": "Syllogism",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["syllogism"]
+  },
+  {
+    "question_text": "What is a truth table in propositional logic?",
+    "correct_answer": "A tabular display of all possible combinations of truth values for the variables in a logical expression and its resulting value.",
+    "distractors": [
+      "A ranked list of propositions ordered from most likely true to most likely false based on empirical evidence.",
+      "A diagram showing the logical dependencies between premises and conclusions in a multi-step argument.",
+      "A matrix that assigns numerical probabilities to each proposition in a set of uncertain statements."
+    ],
+    "difficulty": 2,
+    "source_article": "Truth table",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["truth table"]
+  },
+  {
+    "question_text": "What does propositional logic study, and what are its basic building blocks?",
+    "correct_answer": "It studies propositions and their combinations using logical connectives such as 'and,' 'or,' 'not,' and 'if-then.'",
+    "distractors": [
+      "It studies the internal structure of sentences by analyzing subjects, predicates, and quantifiers over individuals.",
+      "It studies the probability of events by combining prior beliefs with observed evidence using Bayes' theorem.",
+      "It studies the meanings of words and phrases by mapping them to objects and relations in a model."
+    ],
+    "difficulty": 2,
+    "source_article": "Propositional calculus",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["propositional logic"]
+  },
+  {
+    "question_text": "What distinguishes first-order predicate logic from propositional logic?",
+    "correct_answer": "Predicate logic extends propositional logic by adding quantifiers and predicates that express properties of and relations among individuals.",
+    "distractors": [
+      "Predicate logic restricts propositional logic by removing the ability to form disjunctions and conjunctions.",
+      "Predicate logic replaces truth values with numerical probabilities assigned to each proposition.",
+      "Predicate logic eliminates logical connectives and relies solely on set-membership relations."
+    ],
+    "difficulty": 2,
+    "source_article": "First-order logic",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["predicate logic"]
+  },
+  {
+    "question_text": "In first-order logic, what do the universal quantifier and the existential quantifier express?",
+    "correct_answer": "The universal quantifier means 'for all' elements in the domain; the existential quantifier means 'there exists' at least one element.",
+    "distractors": [
+      "The universal quantifier means 'there exists' at least one element; the existential quantifier means 'for all' elements in the domain.",
+      "The universal quantifier negates a predicate for every element; the existential quantifier affirms a predicate for exactly one element.",
+      "The universal quantifier counts the total number of elements satisfying a predicate; the existential quantifier counts those that do not."
+    ],
+    "difficulty": 2,
+    "source_article": "Quantifier (logic)",
+    "domain_ids": ["logic"],
+    "concepts_tested": ["quantifier"]
+  }
+]

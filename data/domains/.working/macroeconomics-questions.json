@@ -1,0 +1,652 @@
+[
+  {
+    "question_text": "What is gross domestic product (GDP)?",
+    "correct_answer": "The total monetary value of all finished goods and services produced within a country's borders in a specific time period.",
+    "distractors": [
+      "The total value of goods and services exported by a country minus the value of its imports over a fiscal year.",
+      "The sum of all individual incomes earned by citizens of a country regardless of where they reside in the world.",
+      "The aggregate market capitalization of all publicly traded companies headquartered within a nation's borders at year end."
+    ],
+    "difficulty": 1,
+    "source_article": "Gross domestic product",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["gross domestic product"]
+  },
+  {
+    "question_text": "In macroeconomics, what is inflation?",
+    "correct_answer": "A general increase in the prices of goods and services in an economy over a period of time.",
+    "distractors": [
+      "A sustained decrease in the overall price level of goods and services across the economy over time.",
+      "A temporary spike in the prices of imported commodities caused by disruptions in global supply chains.",
+      "A rise in the value of a country's currency relative to other currencies on the foreign exchange market."
+    ],
+    "difficulty": 1,
+    "source_article": "Inflation",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["inflation"]
+  },
+  {
+    "question_text": "What does the term unemployment refer to in macroeconomics?",
+    "correct_answer": "The state in which people who are able and willing to work cannot find paid employment.",
+    "distractors": [
+      "The condition in which workers voluntarily leave their jobs to pursue higher education or retraining programs.",
+      "The situation where employed individuals work fewer hours than they desire due to economic slowdowns.",
+      "The percentage of the total population that has permanently exited the labor force due to retirement."
+    ],
+    "difficulty": 1,
+    "source_article": "Unemployment",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["unemployment"]
+  },
+  {
+    "question_text": "What is a recession?",
+    "correct_answer": "A significant, widespread, and prolonged decline in economic activity, often identified as two consecutive quarters of GDP decline.",
+    "distractors": [
+      "A brief period of slower economic growth that does not result in any measurable decline in total output.",
+      "A sharp increase in government spending designed to stimulate the economy during periods of high unemployment.",
+      "A sustained period of rising inflation combined with stagnant wages across all sectors of the economy."
+    ],
+    "difficulty": 1,
+    "source_article": "Recession",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["recession"]
+  },
+  {
+    "question_text": "What is an interest rate in economics?",
+    "correct_answer": "The percentage charged by a lender to a borrower for the use of money, or the return earned on savings and deposits.",
+    "distractors": [
+      "The fixed fee that commercial banks charge the government for managing the national debt and treasury bond auctions.",
+      "The ratio of a country's total debt to its gross domestic product expressed as an annual percentage figure.",
+      "The rate at which the central bank prints new currency to replace old bills and coins in circulation."
+    ],
+    "difficulty": 1,
+    "source_article": "Interest rate",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["interest rate"]
+  },
+  {
+    "question_text": "What is a central bank?",
+    "correct_answer": "A public institution that manages a country's currency, money supply, and interest rates, and oversees the commercial banking system.",
+    "distractors": [
+      "A private financial institution that accepts deposits from individuals and businesses and provides personal and commercial loans.",
+      "An international organization that provides emergency loans to developing nations facing severe balance of payments crises.",
+      "A government ministry responsible for setting tax rates, collecting revenue, and preparing the annual national budget."
+    ],
+    "difficulty": 1,
+    "source_article": "Central bank",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["central bank"]
+  },
+  {
+    "question_text": "What is fiscal policy?",
+    "correct_answer": "Government decisions about taxation and spending used to influence a country's economic conditions.",
+    "distractors": [
+      "Central bank decisions about interest rates and money supply used to control inflation and stabilize currency.",
+      "International trade agreements between nations designed to reduce tariffs and promote the free movement of goods.",
+      "Corporate strategies for managing debt levels and equity financing to maximize shareholder value over time."
+    ],
+    "difficulty": 1,
+    "source_article": "Fiscal policy",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["fiscal policy"]
+  },
+  {
+    "question_text": "What is monetary policy?",
+    "correct_answer": "Actions by a central bank to control the money supply and interest rates to achieve macroeconomic objectives.",
+    "distractors": [
+      "Legislative decisions by a government to adjust tax rates and public spending to stimulate or cool the economy.",
+      "Regulations imposed on commercial banks requiring them to hold a minimum percentage of deposits as reserves.",
+      "Bilateral agreements between countries to fix their exchange rates and coordinate fiscal spending programs jointly."
+    ],
+    "difficulty": 1,
+    "source_article": "Monetary policy",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["monetary policy"]
+  },
+  {
+    "question_text": "What is a trade deficit?",
+    "correct_answer": "A situation in which a country's imports of goods and services exceed its exports over a given period.",
+    "distractors": [
+      "A condition in which a country's government spends more money than it collects in tax revenue during a fiscal year.",
+      "A scenario where a nation's total foreign debt exceeds the value of all assets held abroad by its citizens.",
+      "A situation where a country produces more goods domestically than its consumers and businesses can purchase."
+    ],
+    "difficulty": 1,
+    "source_article": "Balance of trade",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["trade deficit"]
+  },
+  {
+    "question_text": "What is national debt?",
+    "correct_answer": "The total amount of money that a country's government has borrowed and not yet repaid.",
+    "distractors": [
+      "The combined private debt held by all households and corporations within a country's borders.",
+      "The annual difference between a government's total spending and its total tax revenue collected.",
+      "The total value of foreign currency reserves held by a nation's central bank at any time."
+    ],
+    "difficulty": 1,
+    "source_article": "Government debt",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["national debt"]
+  },
+  {
+    "question_text": "What does economic growth refer to in macroeconomics?",
+    "correct_answer": "An increase in the production of goods and services in an economy over time, typically measured by the rise in real GDP.",
+    "distractors": [
+      "A rise in a country's stock market indices that reflects increased investor confidence in corporate profitability over time.",
+      "An expansion of the labor force caused by immigration and population growth without any change in productivity levels.",
+      "A decrease in the unemployment rate resulting from seasonal hiring patterns rather than structural changes in the economy."
+    ],
+    "difficulty": 1,
+    "source_article": "Economic growth",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["economic growth"]
+  },
+  {
+    "question_text": "What is an exchange rate?",
+    "correct_answer": "The price of one country's currency expressed in terms of another country's currency.",
+    "distractors": [
+      "The interest rate that commercial banks charge each other for overnight loans of reserve funds.",
+      "The rate at which a central bank converts government bonds into cash through open market operations.",
+      "The percentage fee charged by foreign exchange brokers for facilitating international currency transactions."
+    ],
+    "difficulty": 1,
+    "source_article": "Exchange rate",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["exchange rate"]
+  },
+  {
+    "question_text": "What is the consumer price index (CPI)?",
+    "correct_answer": "A measure that tracks the average change in prices paid by consumers for a representative basket of goods and services.",
+    "distractors": [
+      "An index that measures changes in the prices received by domestic producers for their output at the wholesale level.",
+      "A statistic that calculates the total value of all consumer spending in the economy during a given quarter.",
+      "A survey-based indicator that gauges consumer confidence and willingness to make major household purchases in the near future."
+    ],
+    "difficulty": 1,
+    "source_article": "Consumer price index",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["consumer price index"]
+  },
+  {
+    "question_text": "What relationship does the Phillips curve describe?",
+    "correct_answer": "An inverse relationship between the rate of unemployment and the rate of inflation in an economy.",
+    "distractors": [
+      "A positive relationship between government spending increases and proportional rises in national output.",
+      "An inverse relationship between interest rates set by the central bank and the level of business investment.",
+      "A positive relationship between growth in the money supply and the velocity of money in circulation."
+    ],
+    "difficulty": 2,
+    "source_article": "Phillips curve",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["Phillips curve"]
+  },
+  {
+    "question_text": "What is quantitative easing (QE)?",
+    "correct_answer": "A monetary policy in which a central bank purchases government bonds or other financial assets to inject money into the economy.",
+    "distractors": [
+      "A fiscal policy in which the government reduces tax rates across all income brackets to stimulate consumer spending quickly.",
+      "A regulatory policy in which central banks lower reserve requirements so commercial banks can issue more loans to businesses.",
+      "A trade policy in which a government eliminates tariffs and import quotas to increase the supply of foreign goods domestically."
+    ],
+    "difficulty": 2,
+    "source_article": "Quantitative easing",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["quantitative easing"]
+  },
+  {
+    "question_text": "What does the fiscal multiplier measure?",
+    "correct_answer": "The ratio of the change in national income to the initial change in government spending that caused it.",
+    "distractors": [
+      "The ratio of total government debt to gross domestic product used to assess fiscal sustainability over time.",
+      "The rate at which tax revenue increases when the economy grows by one additional percentage point annually.",
+      "The proportion of each additional dollar of income that households choose to save rather than spend."
+    ],
+    "difficulty": 2,
+    "source_article": "Fiscal multiplier",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["fiscal multiplier"]
+  },
+  {
+    "question_text": "What does aggregate demand represent?",
+    "correct_answer": "The total demand for all finished goods and services produced in an economy at a given price level and time period.",
+    "distractors": [
+      "The total supply of raw materials and intermediate goods available to producers across all industries in an economy.",
+      "The maximum quantity of goods and services that all firms in an economy can produce at full employment capacity.",
+      "The combined value of all government contracts awarded to private sector firms during a single fiscal year period."
+    ],
+    "difficulty": 2,
+    "source_article": "Aggregate demand",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["aggregate demand"]
+  },
+  {
+    "question_text": "What does aggregate supply represent?",
+    "correct_answer": "The total quantity of goods and services that firms in an economy are willing to produce and sell at a given price level.",
+    "distractors": [
+      "The total quantity of goods and services that consumers and the government plan to purchase at every possible price level.",
+      "The maximum amount of raw materials and labor inputs available to all industries within a country's economic borders.",
+      "The total value of inventories held by all businesses in the economy at the end of a given accounting period."
+    ],
+    "difficulty": 2,
+    "source_article": "Aggregate supply",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["aggregate supply"]
+  },
+  {
+    "question_text": "In macroeconomics, what is the money supply?",
+    "correct_answer": "The total amount of money available in an economy at a particular point in time, including currency and deposits.",
+    "distractors": [
+      "The total value of gold and foreign currency reserves held by the central bank to back the national currency.",
+      "The annual flow of new currency printed by the central bank and distributed to commercial banking institutions.",
+      "The total amount of credit extended by all commercial banks to businesses and households during a fiscal year."
+    ],
+    "difficulty": 2,
+    "source_article": "Money supply",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["money supply"]
+  },
+  {
+    "question_text": "What are open market operations?",
+    "correct_answer": "The buying and selling of government securities by a central bank to control the money supply and interest rates.",
+    "distractors": [
+      "The issuance of new government bonds by the treasury department to finance budget deficits and public infrastructure projects.",
+      "The trading of foreign currencies by commercial banks on the open market to hedge against exchange rate fluctuations.",
+      "The public auction of newly issued corporate stocks and bonds on regulated exchanges to raise capital for businesses."
+    ],
+    "difficulty": 2,
+    "source_article": "Open market operation",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["open market operations"]
+  },
+  {
+    "question_text": "What does the balance of payments record?",
+    "correct_answer": "All economic transactions between residents of a country and the rest of the world over a given period.",
+    "distractors": [
+      "The difference between a government's total expenditures and total revenues collected from taxation over a fiscal year.",
+      "The net change in a country's foreign currency reserves held by its central bank during a calendar quarter.",
+      "All financial transactions conducted between the central bank and domestic commercial banks during a given month."
+    ],
+    "difficulty": 2,
+    "source_article": "Balance of payments",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["balance of payments"]
+  },
+  {
+    "question_text": "What does purchasing power parity (PPP) theory state?",
+    "correct_answer": "Exchange rates between currencies should adjust so that an identical basket of goods costs the same in each country.",
+    "distractors": [
+      "Interest rates across countries should converge over time as capital flows freely between open international financial markets.",
+      "Countries with higher inflation rates will always experience proportionally faster economic growth than low-inflation nations.",
+      "Trade deficits between two countries will self-correct as the deficit country's wages fall relative to the surplus country."
+    ],
+    "difficulty": 2,
+    "source_article": "Purchasing power parity",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["purchasing power parity"]
+  },
+  {
+    "question_text": "What does the principle of comparative advantage state?",
+    "correct_answer": "A country benefits from trade by specializing in producing goods for which it has the lowest opportunity cost.",
+    "distractors": [
+      "A country should only export goods it can produce more cheaply in absolute terms than any other trading partner.",
+      "A country gains from trade only when it has a technological advantage over its partners in all goods produced.",
+      "A country maximizes welfare by producing all goods domestically to avoid dependence on volatile foreign supply chains."
+    ],
+    "difficulty": 2,
+    "source_article": "Comparative advantage",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["comparative advantage"]
+  },
+  {
+    "question_text": "What are the four phases of the business cycle?",
+    "correct_answer": "Expansion, peak, contraction, and trough, representing recurring fluctuations in overall economic activity.",
+    "distractors": [
+      "Inflation, deflation, stagflation, and reflation, representing alternating periods of price level changes.",
+      "Growth, stagnation, recession, and depression, representing progressively worsening declines in national output.",
+      "Boom, bubble, crash, and recovery, representing the lifecycle of speculative asset price movements."
+    ],
+    "difficulty": 2,
+    "source_article": "Business cycle",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["business cycle"]
+  },
+  {
+    "question_text": "What characterizes hyperinflation?",
+    "correct_answer": "An extremely high and typically accelerating rate of inflation, often exceeding 50% per month, that rapidly erodes purchasing power.",
+    "distractors": [
+      "A moderate but persistent rate of inflation between 5% and 10% per year that gradually reduces real wage growth.",
+      "A sudden one-time price spike caused by a supply shock such as an oil embargo or natural disaster event.",
+      "A prolonged period of stable inflation around 2% per year that central banks consider consistent with healthy growth."
+    ],
+    "difficulty": 2,
+    "source_article": "Hyperinflation",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["hyperinflation"]
+  },
+  {
+    "question_text": "What is stagflation?",
+    "correct_answer": "A condition in which an economy experiences stagnant growth, high unemployment, and high inflation simultaneously.",
+    "distractors": [
+      "A condition in which rapid economic growth is accompanied by very low inflation and decreasing unemployment rates.",
+      "A period of economic expansion during which government revenue grows fast enough to eliminate the budget deficit.",
+      "A situation where falling prices and rising output occur together due to rapid technological progress across industries."
+    ],
+    "difficulty": 2,
+    "source_article": "Stagflation",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["stagflation"]
+  },
+  {
+    "question_text": "In the IS-LM model, what do the IS and LM curves represent at their intersection?",
+    "correct_answer": "Simultaneous equilibrium in the goods market (IS) and the money market (LM) at a specific interest rate and output level.",
+    "distractors": [
+      "Simultaneous equilibrium in the labor market (IS) and the foreign exchange market (LM) at a specific wage and exchange rate.",
+      "The tradeoff between investment spending (IS) and liquidity management (LM) faced by commercial banks in setting loan rates.",
+      "The balance between import spending (IS) and lending to government (LM) that determines a country's current account position."
+    ],
+    "difficulty": 3,
+    "source_article": "IS-LM model",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["IS-LM model"]
+  },
+  {
+    "question_text": "What is a liquidity trap?",
+    "correct_answer": "A situation where interest rates are near zero and monetary policy becomes ineffective because people hoard cash instead of spending or investing.",
+    "distractors": [
+      "A situation where banks have excess reserves but refuse to lend because of high regulatory capital requirements imposed by the central bank.",
+      "A condition where the government cannot issue new debt because bond markets demand interest rates higher than the economy can sustain.",
+      "A scenario where foreign investors rapidly withdraw capital from an economy causing a sudden collapse in the domestic currency value."
+    ],
+    "difficulty": 3,
+    "source_article": "Liquidity trap",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["liquidity trap"]
+  },
+  {
+    "question_text": "What does the Mundell-Fleming model analyze?",
+    "correct_answer": "The interaction of fiscal and monetary policy in an open economy under different exchange rate regimes.",
+    "distractors": [
+      "The long-run relationship between money supply growth and inflation in a closed economy with no trade.",
+      "The optimal allocation of government spending between defense and social programs in developing economies.",
+      "The dynamic adjustment of wages and prices following a supply shock in a small open economy."
+    ],
+    "difficulty": 3,
+    "source_article": "Mundell-Fleming model",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["Mundell-Fleming model"]
+  },
+  {
+    "question_text": "What does the Taylor rule prescribe?",
+    "correct_answer": "A formula for setting the central bank's interest rate based on deviations of inflation from target and output from potential.",
+    "distractors": [
+      "A rule requiring the central bank to increase the money supply at a fixed percentage rate each year regardless of conditions.",
+      "A guideline for governments to balance their budgets over the business cycle by saving during booms and spending during recessions.",
+      "A formula linking the optimal exchange rate to the ratio of domestic and foreign price levels adjusted for productivity."
+    ],
+    "difficulty": 3,
+    "source_article": "Taylor rule",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["Taylor rule"]
+  },
+  {
+    "question_text": "What is the natural rate of unemployment?",
+    "correct_answer": "The unemployment rate that exists when the economy is at full employment, consisting of frictional and structural unemployment only.",
+    "distractors": [
+      "The lowest possible unemployment rate an economy can achieve regardless of inflationary pressures or labor market conditions.",
+      "The unemployment rate that prevails during a recession when cyclical job losses are at their maximum across the economy.",
+      "The percentage of the workforce that is permanently unemployable due to a mismatch between their skills and available positions."
+    ],
+    "difficulty": 3,
+    "source_article": "Natural rate of unemployment",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["natural rate of unemployment"]
+  },
+  {
+    "question_text": "In macroeconomics, what is crowding out?",
+    "correct_answer": "The reduction in private investment that occurs when increased government borrowing drives up interest rates.",
+    "distractors": [
+      "The decline in exports that occurs when a country's currency appreciates due to large capital inflows from abroad.",
+      "The decrease in consumer spending caused by higher taxes imposed to finance expanded government welfare programs.",
+      "The loss of domestic jobs that results when foreign firms enter the market and capture market share from local producers."
+    ],
+    "difficulty": 3,
+    "source_article": "Crowding out (economics)",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["crowding out"]
+  },
+  {
+    "question_text": "In the Solow growth model, what drives long-run economic growth?",
+    "correct_answer": "Technological progress, since capital accumulation alone leads to diminishing returns and a steady state without sustained growth.",
+    "distractors": [
+      "Increases in the savings rate, since higher investment directly produces permanently faster growth in per capita output.",
+      "Population growth, since a larger labor force always generates proportionally higher total and per capita income levels.",
+      "Government fiscal stimulus, since sustained deficit spending raises aggregate demand enough to drive long-run output expansion."
+    ],
+    "difficulty": 3,
+    "source_article": "Solow-Swan model",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["Solow growth model"]
+  },
+  {
+    "question_text": "What does the velocity of money measure?",
+    "correct_answer": "The rate at which money changes hands in an economy, calculated as nominal GDP divided by the money supply.",
+    "distractors": [
+      "The speed at which the central bank can inject new currency into circulation through open market bond purchase operations.",
+      "The average time it takes for a commercial bank to process and settle interbank transfers of reserve funds.",
+      "The rate at which inflation erodes the purchasing power of a fixed amount of currency held over a year."
+    ],
+    "difficulty": 3,
+    "source_article": "Velocity of money",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["velocity of money"]
+  },
+  {
+    "question_text": "In the context of central banking, what is sterilization?",
+    "correct_answer": "An offsetting open market operation by a central bank to neutralize the effect of foreign exchange intervention on the domestic money supply.",
+    "distractors": [
+      "The process by which a central bank permanently removes damaged or counterfeit currency from circulation and replaces it with new notes.",
+      "A policy requiring commercial banks to write off non-performing loans and remove them from their balance sheets entirely each quarter.",
+      "The gradual phasing out of quantitative easing by reducing the pace of central bank asset purchases over several consecutive months."
+    ],
+    "difficulty": 3,
+    "source_article": "Sterilization (economics)",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["sterilization"]
+  },
+  {
+    "question_text": "What does Okun's law describe?",
+    "correct_answer": "An empirical relationship stating that for every 1% increase in unemployment above the natural rate, GDP falls by roughly 2%.",
+    "distractors": [
+      "A theoretical principle stating that for every 1% increase in the money supply, the inflation rate rises by exactly 1%.",
+      "An empirical finding that a 1% increase in government spending leads to a 1.5% increase in national income on average.",
+      "A statistical relationship showing that a 1% rise in interest rates reduces business investment spending by approximately 3%."
+    ],
+    "difficulty": 3,
+    "source_article": "Okun's law",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["Okun's law"]
+  },
+  {
+    "question_text": "What is the output gap?",
+    "correct_answer": "The difference between an economy's actual GDP and its potential GDP, indicating underuse or overuse of productive capacity.",
+    "distractors": [
+      "The difference between a country's total exports and total imports of goods and services over a given fiscal year.",
+      "The gap between the nominal interest rate and the real interest rate after adjusting for the current inflation rate.",
+      "The shortfall between government tax revenue collected and total government expenditures during a budget deficit period."
+    ],
+    "difficulty": 3,
+    "source_article": "Output gap",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["output gap"]
+  },
+  {
+    "question_text": "What is Dutch disease?",
+    "correct_answer": "When a natural resource boom causes currency appreciation that makes a country's other exports less competitive, harming its manufacturing sector.",
+    "distractors": [
+      "When excessive government regulation of the financial sector causes banks to restrict lending and triggers a prolonged economic downturn.",
+      "When a country's central bank maintains artificially low interest rates for too long, creating unsustainable asset price bubbles.",
+      "When rapid population aging reduces the labor force and slows economic growth despite high levels of capital investment."
+    ],
+    "difficulty": 3,
+    "source_article": "Dutch disease",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["Dutch disease"]
+  },
+  {
+    "question_text": "What does Ricardian equivalence propose?",
+    "correct_answer": "That government deficit spending will not stimulate demand because rational consumers save more in anticipation of future tax increases to repay the debt.",
+    "distractors": [
+      "That trade between two countries is mutually beneficial as long as each specializes in the good for which it has a comparative advantage.",
+      "That increasing the money supply will always lead to proportional increases in the price level with no effect on real output.",
+      "That government spending multipliers are always greater than one because each dollar spent generates additional rounds of consumer spending."
+    ],
+    "difficulty": 4,
+    "source_article": "Ricardian equivalence",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["Ricardian equivalence"]
+  },
+  {
+    "question_text": "What is the central claim of real business cycle (RBC) theory?",
+    "correct_answer": "That business cycle fluctuations are largely driven by real shocks to technology and productivity, not by monetary or demand-side factors.",
+    "distractors": [
+      "That business cycles are primarily caused by changes in the money supply and can be eliminated through proper central bank policy.",
+      "That recessions result from coordination failures among firms and workers and can be resolved through government fiscal intervention.",
+      "That cyclical fluctuations arise from irrational investor behavior and speculative bubbles in financial and real estate markets."
+    ],
+    "difficulty": 4,
+    "source_article": "Real business-cycle theory",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["real business cycle theory"]
+  },
+  {
+    "question_text": "What is a dynamic stochastic general equilibrium (DSGE) model?",
+    "correct_answer": "A macroeconomic model that uses microfounded equations with random shocks to analyze how the entire economy evolves over time.",
+    "distractors": [
+      "A statistical model that uses past correlations between macroeconomic variables to forecast short-term changes in GDP growth.",
+      "A computational model that simulates interactions among millions of individual heterogeneous agents without any equilibrium assumptions.",
+      "A reduced-form econometric model that estimates the causal impact of policy changes using natural experiments and instrumental variables."
+    ],
+    "difficulty": 4,
+    "source_article": "Dynamic stochastic general equilibrium",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["dynamic stochastic general equilibrium"]
+  },
+  {
+    "question_text": "What distinguishes New Keynesian economics from classical macroeconomics?",
+    "correct_answer": "It incorporates sticky prices and wages into microfounded models, explaining why monetary policy can have real short-run effects on output.",
+    "distractors": [
+      "It assumes perfectly flexible prices and rational expectations, concluding that monetary policy is always neutral in both short and long run.",
+      "It rejects the use of mathematical models entirely and relies on historical case studies to analyze macroeconomic policy effectiveness.",
+      "It argues that fiscal policy is the only effective stabilization tool because changes in the money supply never affect real variables."
+    ],
+    "difficulty": 4,
+    "source_article": "New Keynesian economics",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["New Keynesian economics"]
+  },
+  {
+    "question_text": "What is the time inconsistency problem in monetary policy?",
+    "correct_answer": "The incentive for policymakers to deviate from a previously announced low-inflation policy to achieve short-run output gains, undermining credibility.",
+    "distractors": [
+      "The difficulty central banks face in timing interest rate changes correctly because economic data is published with significant lags.",
+      "The conflict between short-term fiscal stimulus needs and long-term debt sustainability goals faced by government budget planners.",
+      "The problem that monetary policy transmission mechanisms operate with long and variable lags making precise economic stabilization impossible."
+    ],
+    "difficulty": 4,
+    "source_article": "Time inconsistency",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["time inconsistency"]
+  },
+  {
+    "question_text": "What does the overlapping generations (OLG) model analyze?",
+    "correct_answer": "An economy where agents of different ages coexist and interact, allowing analysis of intergenerational transfers, debt, and social security.",
+    "distractors": [
+      "An economy populated by a single representative agent who lives infinitely and makes consumption and savings decisions each period.",
+      "A static model of labor markets where firms and workers bargain over wages with no consideration of future economic conditions.",
+      "A model of international trade where countries are grouped by generation of industrialization to explain persistent income differences."
+    ],
+    "difficulty": 4,
+    "source_article": "Overlapping generations model",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["Overlapping generations model"]
+  },
+  {
+    "question_text": "What does the Ramsey-Cass-Koopmans model determine?",
+    "correct_answer": "The optimal savings rate by having households maximize utility over an infinite horizon, yielding a consumption path governed by the Euler equation.",
+    "distractors": [
+      "The equilibrium unemployment rate by modeling the matching process between job seekers and firms with vacancies in labor markets.",
+      "The optimal tariff rate by having governments maximize national welfare subject to foreign retaliation in a two-country trade model.",
+      "The steady-state inflation rate by having the central bank minimize a loss function over output and price stability objectives."
+    ],
+    "difficulty": 4,
+    "source_article": "Ramsey-Cass-Koopmans model",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["Ramsey-Cass-Koopmans model"]
+  },
+  {
+    "question_text": "What distinguishes endogenous growth theory from the Solow model?",
+    "correct_answer": "It models technological progress as arising from within the economy through innovation and human capital investment, rather than treating it as exogenous.",
+    "distractors": [
+      "It assumes that population growth is the primary driver of long-run economic expansion rather than capital accumulation or technology.",
+      "It predicts that all countries will converge to the same per capita income level regardless of their initial conditions or policies.",
+      "It treats the savings rate as fixed by household preferences and excludes any role for government policy in affecting growth."
+    ],
+    "difficulty": 4,
+    "source_article": "Endogenous growth theory",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["endogenous growth theory"]
+  },
+  {
+    "question_text": "What does the Balassa-Samuelson effect explain?",
+    "correct_answer": "Why countries with higher productivity growth in tradable goods tend to have higher price levels, causing real exchange rate appreciation.",
+    "distractors": [
+      "Why countries with large trade surpluses tend to experience rapid money supply growth that eventually leads to higher domestic inflation.",
+      "Why developing countries with low wages consistently attract more foreign direct investment than high-wage developed nations do.",
+      "Why nations with abundant natural resources tend to grow more slowly than resource-poor nations that invest heavily in manufacturing."
+    ],
+    "difficulty": 4,
+    "source_article": "Balassa-Samuelson effect",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["Balassa-Samuelson effect"]
+  },
+  {
+    "question_text": "What is the impossible trinity (trilemma) in international macroeconomics?",
+    "correct_answer": "A country cannot simultaneously maintain a fixed exchange rate, free capital movement, and an independent monetary policy; it must forgo one.",
+    "distractors": [
+      "A country cannot simultaneously achieve zero inflation, full employment, and a balanced government budget; it must sacrifice one goal.",
+      "A central bank cannot simultaneously target the money supply, the interest rate, and the exchange rate without creating internal contradictions.",
+      "An economy cannot simultaneously have free trade, complete financial deregulation, and a progressive tax system without generating instability."
+    ],
+    "difficulty": 4,
+    "source_article": "Impossible trinity",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["impossible trinity"]
+  },
+  {
+    "question_text": "What does Friedman's k-percent rule propose?",
+    "correct_answer": "That the central bank should increase the money supply at a fixed annual percentage rate, regardless of current economic conditions.",
+    "distractors": [
+      "That the government should limit its annual budget deficit to k percent of GDP to maintain long-run fiscal sustainability.",
+      "That interest rates should be raised by k percentage points for every one percent that inflation exceeds the central bank's target.",
+      "That tax rates should automatically adjust by k percent in response to changes in the unemployment rate over the business cycle."
+    ],
+    "difficulty": 4,
+    "source_article": "Friedman's k-percent rule",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["Friedman's k-percent rule"]
+  },
+  {
+    "question_text": "In New Keynesian economics, what are menu costs?",
+    "correct_answer": "The costs firms incur when changing their prices, such as reprinting catalogs, which contribute to nominal price stickiness in the economy.",
+    "distractors": [
+      "The administrative costs governments bear when adjusting tax rates, which delay the implementation of fiscal policy changes significantly.",
+      "The transaction fees that banks charge customers when converting between different currencies during international trade operations.",
+      "The opportunity costs workers face when searching for new jobs, which increase frictional unemployment during economic downturns."
+    ],
+    "difficulty": 4,
+    "source_article": "Menu cost",
+    "domain_ids": ["macroeconomics"],
+    "concepts_tested": ["menu cost"]
+  }
+]

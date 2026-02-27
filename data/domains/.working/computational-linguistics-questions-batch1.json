@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Which 1950 paper, proposing a test of machine intelligence, is considered a foundational milestone for natural language processing?",
+    "correct_answer": "Alan Turing's 'Computing Machinery and Intelligence,' which proposed the Turing test",
+    "distractors": [
+      "Claude Shannon's 'A Mathematical Theory of Communication,' which proposed information entropy",
+      "Noam Chomsky's 'Syntactic Structures,' which proposed transformational generative grammar",
+      "John McCarthy's 'Programs with Common Sense,' which proposed the Advice Taker system"
+    ],
+    "difficulty": 1,
+    "source_article": "Natural language processing",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["natural language processing"]
+  },
+  {
+    "question_text": "What was the first public demonstration of a machine translation system, held in January 1954 at IBM headquarters in New York?",
+    "correct_answer": "The Georgetown-IBM experiment, which translated Russian sentences into English",
+    "distractors": [
+      "The Bell Labs experiment, which translated French sentences into German",
+      "The MIT Lincoln experiment, which translated Japanese sentences into English",
+      "The RAND Corporation experiment, which translated Chinese sentences into English"
+    ],
+    "difficulty": 1,
+    "source_article": "Machine translation",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["machine translation"]
+  },
+  {
+    "question_text": "How does a basic spell checker identify misspelled words in a document?",
+    "correct_answer": "By comparing each word against a stored dictionary of correctly spelled words",
+    "distractors": [
+      "By analyzing the grammatical structure of each sentence for syntactic errors",
+      "By sending each word to an online server for real-time verification",
+      "By comparing each word against the other words in the same document"
+    ],
+    "difficulty": 1,
+    "source_article": "Spell checker",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["spell checker"]
+  },
+  {
+    "question_text": "ELIZA, created in 1966 by Joseph Weizenbaum at MIT, is historically significant in computational linguistics for what reason?",
+    "correct_answer": "It was one of the first chatbots, simulating a Rogerian psychotherapist using pattern matching",
+    "distractors": [
+      "It was the first program to accurately translate between English and Russian using rule-based methods",
+      "It was the first speech recognition system capable of understanding continuous human speech",
+      "It was the first system to generate grammatically correct English text from structured data"
+    ],
+    "difficulty": 1,
+    "source_article": "Chatbot",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["chatbot"]
+  },
+  {
+    "question_text": "Speech recognition technology is a subfield of computational linguistics primarily concerned with which conversion task?",
+    "correct_answer": "Translating spoken language into text or other machine-readable formats",
+    "distractors": [
+      "Converting written text into audible spoken language output",
+      "Identifying which individual person is speaking from a voice sample",
+      "Translating speech in one language directly into speech in another language"
+    ],
+    "difficulty": 1,
+    "source_article": "Speech recognition",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["speech recognition"]
+  },
+  {
+    "question_text": "A text-to-speech system typically has two main components. What does the front-end component do?",
+    "correct_answer": "It normalizes raw text and assigns phonetic transcriptions to each word",
+    "distractors": [
+      "It generates audio waveforms from acoustic parameters and applies voice filtering",
+      "It selects the most natural-sounding voice from a database of recorded speakers",
+      "It adjusts the volume and playback speed based on the listener's preferences"
+    ],
+    "difficulty": 1,
+    "source_article": "Speech synthesis",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["text-to-speech"]
+  },
+  {
+    "question_text": "Which innovation, introduced by Google in 1998, revolutionized web search engines by using hyperlink structure to rank pages?",
+    "correct_answer": "The PageRank algorithm, which assessed page importance from link structure",
+    "distractors": [
+      "The TF-IDF algorithm, which weighted terms by their frequency across documents",
+      "The Boolean retrieval model, which matched pages using logical keyword operators",
+      "The latent semantic indexing method, which grouped pages by topic similarity"
+    ],
+    "difficulty": 1,
+    "source_article": "Web search engine",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["search engine"]
+  },
+  {
+    "question_text": "Autocomplete technology was originally invented in the 1950s to solve an input efficiency problem in which writing system?",
+    "correct_answer": "The Chinese writing system, due to its thousands of logographic characters",
+    "distractors": [
+      "The Japanese writing system, due to its three different alphabetic scripts",
+      "The Arabic writing system, due to its context-dependent letter shapes",
+      "The Korean writing system, due to its complex syllable block compositions"
+    ],
+    "difficulty": 1,
+    "source_article": "Autocomplete",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["autocomplete"]
+  },
+  {
+    "question_text": "Sentiment analysis, also known as opinion mining, primarily aims to identify what kind of information from text?",
+    "correct_answer": "Affective states and subjective opinions such as positive, negative, or neutral attitudes",
+    "distractors": [
+      "Factual claims and objective statements such as dates, locations, or numerical figures",
+      "Named entities and relationships such as people, organizations, or geographic places",
+      "Syntactic structures and grammatical patterns such as verb tenses or clause types"
+    ],
+    "difficulty": 1,
+    "source_article": "Sentiment analysis",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["sentiment analysis"]
+  },
+  {
+    "question_text": "Naive Bayes spam filtering, a widely used email spam detection technique, classifies messages based on what principle?",
+    "correct_answer": "The probability that particular words appear in spam versus legitimate email",
+    "distractors": [
+      "The total number of recipients listed in the email header fields",
+      "The geographic origin of the sending mail server's IP address",
+      "The time of day the email was sent relative to the recipient's timezone"
+    ],
+    "difficulty": 1,
+    "source_article": "Email filtering",
+    "domain_ids": ["computational-linguistics"],
+    "concepts_tested": ["spam filter"]
+  }
+]

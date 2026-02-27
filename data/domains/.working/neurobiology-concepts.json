@@ -1,0 +1,66 @@
+{
+  "domain": "neurobiology",
+  "parent_domain": "neuroscience",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      "synapse",
+      "dendrite",
+      "axon",
+      "myelin",
+      "action potential",
+      "ion channel",
+      "dopamine",
+      "neurogenesis",
+      "blood-brain barrier",
+      "autonomic nervous system",
+      "sensory neuron",
+      "motor neuron",
+      "nerve"
+    ],
+    "L2": [
+      "long-term potentiation",
+      "NMDA receptor",
+      "gamma-aminobutyric acid",
+      "oligodendrocyte",
+      "astrocyte",
+      "microglia",
+      "sodium-potassium pump",
+      "nodes of Ranvier",
+      "neuromuscular junction",
+      "Schwann cell",
+      "synaptic vesicle",
+      "growth cone",
+      "central pattern generator"
+    ],
+    "L3": [
+      "saltatory conduction",
+      "SNARE complex",
+      "endocannabinoid system",
+      "neurotrophin",
+      "Wallerian degeneration",
+      "patch clamp",
+      "optogenetics",
+      "axon guidance",
+      "critical period",
+      "synaptic pruning",
+      "excitotoxicity",
+      "neural crest"
+    ],
+    "L4": [
+      "quantal neurotransmitter release",
+      "channelopathy",
+      "adult neurogenesis",
+      "perineuronal net",
+      "tripartite synapse",
+      "Dale's principle",
+      "enteric nervous system",
+      "proprioception",
+      "glial scar",
+      "prion",
+      "cortical column",
+      "calcium signaling"
+    ]
+  }
+}

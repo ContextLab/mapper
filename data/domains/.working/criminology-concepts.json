@@ -1,0 +1,266 @@
+{
+  "domain": "criminology",
+  "parent_domain": "sociology",
+  "total_concepts": 50,
+  "distribution": {"L1": 13, "L2": 13, "L3": 12, "L4": 12},
+  "concepts": {
+    "L1": [
+      {
+        "concept": "crime",
+        "wikipedia_article": "Crime",
+        "brief_rationale": "The foundational concept of the field — any act prohibited by law and subject to punishment."
+      },
+      {
+        "concept": "punishment",
+        "wikipedia_article": "Punishment",
+        "brief_rationale": "Core concept in criminal justice; the societal response to crime through sanctions."
+      },
+      {
+        "concept": "prison",
+        "wikipedia_article": "Prison",
+        "brief_rationale": "The most recognizable institution of incarceration; central to public understanding of criminal justice."
+      },
+      {
+        "concept": "police",
+        "wikipedia_article": "Police",
+        "brief_rationale": "Primary law enforcement agency; the most visible face of the criminal justice system."
+      },
+      {
+        "concept": "law",
+        "wikipedia_article": "Law",
+        "brief_rationale": "The formal system of rules that defines criminal behavior and structures societal responses."
+      },
+      {
+        "concept": "victim",
+        "wikipedia_article": "Victimology",
+        "brief_rationale": "A foundational role in criminology; understanding who is harmed by crime is essential to the field."
+      },
+      {
+        "concept": "jury",
+        "wikipedia_article": "Jury",
+        "brief_rationale": "A central institution of the criminal trial process familiar to general audiences."
+      },
+      {
+        "concept": "arrest",
+        "wikipedia_article": "Arrest",
+        "brief_rationale": "The initial formal step in the criminal justice process; widely understood by the public."
+      },
+      {
+        "concept": "murder",
+        "wikipedia_article": "Murder",
+        "brief_rationale": "The most serious violent crime; a primary subject of criminological study."
+      },
+      {
+        "concept": "theft",
+        "wikipedia_article": "Theft",
+        "brief_rationale": "One of the most common property crimes; a staple category in crime statistics."
+      },
+      {
+        "concept": "parole",
+        "wikipedia_article": "Parole",
+        "brief_rationale": "Well-known mechanism for conditional early release from prison; part of basic criminal justice literacy."
+      },
+      {
+        "concept": "probation",
+        "wikipedia_article": "Probation",
+        "brief_rationale": "A common alternative to incarceration; widely encountered in public discourse about sentencing."
+      },
+      {
+        "concept": "criminal justice system",
+        "wikipedia_article": "Criminal justice",
+        "brief_rationale": "The overarching institutional framework — police, courts, corrections — that criminology studies."
+      }
+    ],
+    "L2": [
+      {
+        "concept": "deterrence theory",
+        "wikipedia_article": "Deterrence (penology)",
+        "brief_rationale": "A foundational theory that crime can be prevented by making punishment certain, swift, and severe."
+      },
+      {
+        "concept": "recidivism",
+        "wikipedia_article": "Recidivism",
+        "brief_rationale": "The tendency of convicted offenders to reoffend; a key metric for evaluating correctional effectiveness."
+      },
+      {
+        "concept": "white-collar crime",
+        "wikipedia_article": "White-collar crime",
+        "brief_rationale": "Financially motivated nonviolent crime by professionals; a major category distinct from street crime."
+      },
+      {
+        "concept": "restorative justice",
+        "wikipedia_article": "Restorative justice",
+        "brief_rationale": "An approach focusing on repairing harm to victims and communities rather than punishing offenders."
+      },
+      {
+        "concept": "organized crime",
+        "wikipedia_article": "Organized crime",
+        "brief_rationale": "Systematic criminal activity by structured groups; a major area of criminological and policy concern."
+      },
+      {
+        "concept": "social control theory",
+        "wikipedia_article": "Social control theory",
+        "brief_rationale": "Explains conformity and deviance through bonds to conventional society rather than causes of crime."
+      },
+      {
+        "concept": "criminal profiling",
+        "wikipedia_article": "Criminal profiling",
+        "brief_rationale": "The investigative technique of inferring offender characteristics from crime scene evidence."
+      },
+      {
+        "concept": "juvenile delinquency",
+        "wikipedia_article": "Juvenile delinquency",
+        "brief_rationale": "Criminal behavior by minors; a distinct subfield with its own courts, institutions, and theories."
+      },
+      {
+        "concept": "domestic violence",
+        "wikipedia_article": "Domestic violence",
+        "brief_rationale": "Abuse within intimate or family relationships; a major focus of victimology and criminal justice reform."
+      },
+      {
+        "concept": "drug trafficking",
+        "wikipedia_article": "Drug trafficking",
+        "brief_rationale": "The illegal trade of controlled substances; central to discussions of organized crime and enforcement policy."
+      },
+      {
+        "concept": "capital punishment",
+        "wikipedia_article": "Capital punishment",
+        "brief_rationale": "The most extreme criminal sanction; a key debate in penology around deterrence, justice, and human rights."
+      },
+      {
+        "concept": "criminological theory",
+        "wikipedia_article": "Criminology",
+        "brief_rationale": "The systematic study of crime causes, patterns, and responses; the theoretical backbone of the discipline."
+      },
+      {
+        "concept": "victimization survey",
+        "wikipedia_article": "National Crime Victimization Survey",
+        "brief_rationale": "A major data collection method that captures crimes not reported to police, revealing the 'dark figure of crime.'"
+      }
+    ],
+    "L3": [
+      {
+        "concept": "strain theory",
+        "wikipedia_article": "Strain theory (sociology)",
+        "brief_rationale": "Merton's theory that crime results when society promotes goals (e.g., wealth) but blocks legitimate means to achieve them."
+      },
+      {
+        "concept": "labeling theory",
+        "wikipedia_article": "Labeling theory",
+        "brief_rationale": "The idea that being labeled 'criminal' by society can push individuals toward further criminal behavior."
+      },
+      {
+        "concept": "rational choice theory",
+        "wikipedia_article": "Rational choice theory (criminology)",
+        "brief_rationale": "The view that offenders weigh costs and benefits before committing crimes; underpins situational crime prevention."
+      },
+      {
+        "concept": "broken windows theory",
+        "wikipedia_article": "Broken windows theory",
+        "brief_rationale": "The thesis that visible disorder signals tolerance of crime, leading to escalating criminal activity in a neighborhood."
+      },
+      {
+        "concept": "social disorganization theory",
+        "wikipedia_article": "Social disorganization theory",
+        "brief_rationale": "Links high crime rates to neighborhood-level factors such as poverty, residential instability, and weak institutions."
+      },
+      {
+        "concept": "differential association theory",
+        "wikipedia_article": "Differential association",
+        "brief_rationale": "Sutherland's theory that criminal behavior is learned through intimate social interaction with deviant peers."
+      },
+      {
+        "concept": "mass incarceration",
+        "wikipedia_article": "Mass incarceration in the United States",
+        "brief_rationale": "The dramatic rise in U.S. imprisonment rates since the 1970s; a central topic in penology and social justice."
+      },
+      {
+        "concept": "cybercrime",
+        "wikipedia_article": "Cybercrime",
+        "brief_rationale": "Crimes committed via computers or networks; a rapidly growing field requiring new criminological frameworks."
+      },
+      {
+        "concept": "hate crime",
+        "wikipedia_article": "Hate crime",
+        "brief_rationale": "Offenses motivated by bias against group identity; an important category for understanding crime motivation."
+      },
+      {
+        "concept": "criminological positivism",
+        "wikipedia_article": "Positivist school of criminology",
+        "brief_rationale": "The 19th-century approach using scientific methods to identify biological, psychological, or social causes of crime."
+      },
+      {
+        "concept": "situational crime prevention",
+        "wikipedia_article": "Situational crime prevention",
+        "brief_rationale": "Reduces crime opportunity through environmental design and target hardening rather than addressing root causes."
+      },
+      {
+        "concept": "prison abolition",
+        "wikipedia_article": "Prison abolition movement",
+        "brief_rationale": "A radical penological position advocating elimination of incarceration and replacement with community-based responses."
+      }
+    ],
+    "L4": [
+      {
+        "concept": "routine activity theory",
+        "wikipedia_article": "Routine activity theory",
+        "brief_rationale": "Cohen and Felson's framework that crime occurs when a motivated offender, suitable target, and absent guardian converge."
+      },
+      {
+        "concept": "peacemaking criminology",
+        "wikipedia_article": "Peacemaking criminology",
+        "brief_rationale": "A critical perspective arguing that crime and justice must be understood through non-violence, social justice, and inclusion."
+      },
+      {
+        "concept": "cultural criminology",
+        "wikipedia_article": "Cultural criminology",
+        "brief_rationale": "Examines how cultural dynamics, media, and meaning-making shape crime, deviance, and criminal justice."
+      },
+      {
+        "concept": "left realism",
+        "wikipedia_article": "Left realism",
+        "brief_rationale": "A criminological perspective taking street crime seriously while situating it within structural inequality and power."
+      },
+      {
+        "concept": "general theory of crime",
+        "wikipedia_article": "A General Theory of Crime",
+        "brief_rationale": "Gottfredson and Hirschi's self-control theory positing that low self-control is the primary predictor of all criminal behavior."
+      },
+      {
+        "concept": "life-course criminology",
+        "wikipedia_article": "Life-course criminology",
+        "brief_rationale": "Studies how criminal trajectories develop across the lifespan, including onset, persistence, and desistance from offending."
+      },
+      {
+        "concept": "zemiology",
+        "wikipedia_article": "Zemiology",
+        "brief_rationale": "A radical approach that shifts focus from legally defined crime to broader social harms, challenging the state's power to define crime."
+      },
+      {
+        "concept": "green criminology",
+        "wikipedia_article": "Green criminology",
+        "brief_rationale": "Extends criminological analysis to environmental harm, species justice, and corporate ecological crimes beyond conventional law."
+      },
+      {
+        "concept": "developmental criminology",
+        "wikipedia_article": "Developmental criminology",
+        "brief_rationale": "Identifies early risk factors and developmental pathways that lead to criminal careers, informing early-intervention policy."
+      },
+      {
+        "concept": "desistance from crime",
+        "wikipedia_article": "Desistance",
+        "brief_rationale": "The process by which offenders stop committing crimes; central to understanding rehabilitation and reintegration."
+      },
+      {
+        "concept": "convict criminology",
+        "wikipedia_article": "Convict criminology",
+        "brief_rationale": "A critical school led by formerly incarcerated academics challenging mainstream criminological knowledge from insider experience."
+      },
+      {
+        "concept": "policing styles (Skolnick/Wilson)",
+        "wikipedia_article": "Varieties of Police Behavior",
+        "brief_rationale": "Wilson's typology of watchman, legalistic, and service policing styles; a foundational framework in police studies."
+      }
+    ]
+  }
+}

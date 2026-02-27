@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "In a modern CPU's cache hierarchy, which level of cache is the smallest, fastest, and located closest to each processor core?",
+    "correct_answer": "L1 cache, which is typically 16-128 KB per core and can be accessed in as little as one clock cycle",
+    "distractors": [
+      "L2 cache, which is shared between pairs of cores and accessed in two clock cycles",
+      "L3 cache, which is embedded directly in the core and uses SRAM for single-cycle access",
+      "The register file, which functions as a 1 MB cache layer between the ALU and main memory"
+    ],
+    "difficulty": 2,
+    "source_article": "CPU cache",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["CPU cache"]
+  },
+  {
+    "question_text": "The Diffie-Hellman key exchange, published in 1976, was the first publicly disclosed protocol enabling what cryptographic capability?",
+    "correct_answer": "Establishing a shared secret between two parties over an insecure channel without prior shared secrets",
+    "distractors": [
+      "Encrypting messages using a single symmetric key distributed by a trusted authority",
+      "Generating one-time pads for provably unbreakable encryption of military communications",
+      "Digitally signing documents to verify the sender's identity using hash functions"
+    ],
+    "difficulty": 2,
+    "source_article": "Public-key cryptography",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["public-key cryptography"]
+  },
+  {
+    "question_text": "In software testing, what distinguishes white-box testing from black-box testing?",
+    "correct_answer": "White-box testing examines the internal structure and source code, while black-box testing only validates functionality against specifications",
+    "distractors": [
+      "White-box testing is performed by end users, while black-box testing is performed by developers",
+      "White-box testing focuses on performance benchmarks, while black-box testing focuses on security vulnerabilities",
+      "White-box testing runs only on production systems, while black-box testing runs only in development environments"
+    ],
+    "difficulty": 2,
+    "source_article": "Software testing",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["software testing"]
+  },
+  {
+    "question_text": "REST, one of the most widely used API architectural styles, was defined by Roy Fielding in his 2000 doctoral dissertation. What does the statelessness constraint of REST require?",
+    "correct_answer": "Each client request must contain all information needed to process it, with no stored context on the server between requests",
+    "distractors": [
+      "The server must maintain a session object for each client to track authentication tokens across calls",
+      "All API responses must be in stateless formats like plain text, prohibiting structured data like JSON or XML",
+      "Clients must re-authenticate with a full handshake for every single API request they make"
+    ],
+    "difficulty": 2,
+    "source_article": "API",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["API"]
+  },
+  {
+    "question_text": "Functional programming has its theoretical roots in a formal system developed in the 1930s. What is this foundational mathematical framework?",
+    "correct_answer": "The lambda calculus, developed by Alonzo Church as a formal system for expressing computation through function abstraction",
+    "distractors": [
+      "Turing machines, developed by Alan Turing to model sequential imperative computation with state",
+      "Boolean algebra, developed by George Boole to formalize logical reasoning in binary terms",
+      "Set theory, developed by Georg Cantor as a framework for defining collections and membership operations"
+    ],
+    "difficulty": 2,
+    "source_article": "Functional programming",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["functional programming"]
+  },
+  {
+    "question_text": "A stateful inspection firewall improves upon simple packet filtering by maintaining what additional information when deciding whether to allow network traffic?",
+    "correct_answer": "A state table tracking active connections, so it can determine whether packets belong to an established session",
+    "distractors": [
+      "A complete copy of every packet's payload for deep content inspection and virus scanning",
+      "A DNS cache mapping all domain names to IP addresses for faster routing decisions",
+      "A log of all user login credentials to verify application-level authentication per packet"
+    ],
+    "difficulty": 2,
+    "source_article": "Firewall (computing)",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["firewall (computing)"]
+  },
+  {
+    "question_text": "In concurrent programming, four conditions must hold simultaneously for a deadlock to occur. Which of the following is one of these four necessary conditions?",
+    "correct_answer": "Circular wait: a circular chain of threads exists where each thread holds a resource the next thread is waiting for",
+    "distractors": [
+      "Priority inversion: a high-priority thread is blocked indefinitely while a low-priority thread runs continuously",
+      "Starvation: a thread is perpetually denied access to a resource because other threads always take precedence",
+      "Livelock: two threads continually change state in response to each other without making any progress"
+    ],
+    "difficulty": 3,
+    "source_article": "Concurrency (computer science)",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["concurrency (computer science)"]
+  },
+  {
+    "question_text": "The CAP theorem, conjectured by Eric Brewer in 2000, states that a distributed data store cannot simultaneously guarantee which three properties?",
+    "correct_answer": "Consistency, availability, and partition tolerance",
+    "distractors": [
+      "Confidentiality, authentication, and persistence",
+      "Concurrency, atomicity, and performance",
+      "Correctness, accessibility, and portability"
+    ],
+    "difficulty": 3,
+    "source_article": "Distributed computing",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["distributed system"]
+  },
+  {
+    "question_text": "Third Normal Form (3NF), defined by Edgar F. Codd, requires that a relation in 2NF must additionally eliminate what type of dependency?",
+    "correct_answer": "Transitive dependencies, where a non-prime attribute depends on another non-prime attribute rather than directly on the primary key",
+    "distractors": [
+      "Multivalued dependencies, where one attribute determines a set of values for another independent attribute",
+      "Partial dependencies, where a non-key attribute depends on only part of a composite primary key",
+      "Join dependencies, where a table cannot be reconstructed from a decomposition into smaller tables"
+    ],
+    "difficulty": 3,
+    "source_article": "Database normalization",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["database normalization"]
+  },
+  {
+    "question_text": "In compiler design, the first phase of compilation reads source code character by character and groups characters into meaningful sequences called tokens. What is this phase called?",
+    "correct_answer": "Lexical analysis (also known as scanning or tokenization)",
+    "distractors": [
+      "Syntax analysis, which builds an abstract syntax tree from the token stream",
+      "Semantic analysis, which checks type compatibility and scoping rules",
+      "Preprocessing, which expands macros and resolves include directives before compilation"
+    ],
+    "difficulty": 3,
+    "source_article": "Compiler",
+    "domain_ids": ["computer-science"],
+    "concepts_tested": ["compiler design"]
+  }
+]

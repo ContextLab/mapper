@@ -1,0 +1,66 @@
+{
+  "domain": "macroeconomics",
+  "parent_domain": "economics",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      "gross domestic product",
+      "inflation",
+      "unemployment",
+      "recession",
+      "interest rate",
+      "central bank",
+      "fiscal policy",
+      "monetary policy",
+      "trade deficit",
+      "national debt",
+      "economic growth",
+      "exchange rate",
+      "consumer price index"
+    ],
+    "L2": [
+      "Phillips curve",
+      "quantitative easing",
+      "fiscal multiplier",
+      "aggregate demand",
+      "aggregate supply",
+      "money supply",
+      "open market operations",
+      "balance of payments",
+      "purchasing power parity",
+      "comparative advantage",
+      "business cycle",
+      "hyperinflation",
+      "stagflation"
+    ],
+    "L3": [
+      "IS-LM model",
+      "liquidity trap",
+      "Mundell-Fleming model",
+      "Taylor rule",
+      "natural rate of unemployment",
+      "crowding out",
+      "Solow growth model",
+      "velocity of money",
+      "sterilization",
+      "Okun's law",
+      "output gap",
+      "Dutch disease"
+    ],
+    "L4": [
+      "Ricardian equivalence",
+      "real business cycle theory",
+      "dynamic stochastic general equilibrium",
+      "New Keynesian economics",
+      "time inconsistency",
+      "Overlapping generations model",
+      "Ramsey-Cass-Koopmans model",
+      "endogenous growth theory",
+      "Balassa-Samuelson effect",
+      "impossible trinity",
+      "Friedman's k-percent rule",
+      "menu cost"
+    ]
+  }
+}

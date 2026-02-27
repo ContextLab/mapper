@@ -1,0 +1,66 @@
+{
+  "domain": "linear-algebra",
+  "parent_domain": "mathematics",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {"concept": "matrix", "wikipedia_article": "Matrix (mathematics)", "brief_rationale": "Rectangular array of numbers; the most foundational object in linear algebra, introduced in every first course."},
+      {"concept": "vector", "wikipedia_article": "Vector (mathematics and physics)", "brief_rationale": "Quantity with magnitude and direction; universally recognized as the other core object of linear algebra."},
+      {"concept": "scalar", "wikipedia_article": "Scalar (mathematics)", "brief_rationale": "A single number used to scale vectors; foundational concept introduced in the first lecture of any linear algebra course."},
+      {"concept": "linear equation", "wikipedia_article": "Linear equation", "brief_rationale": "Equation whose graph is a straight line; the motivating object of the entire subject, familiar from pre-algebra."},
+      {"concept": "system of linear equations", "wikipedia_article": "System of linear equations", "brief_rationale": "Set of linear equations to be solved simultaneously; the central computational problem that linear algebra is built to solve."},
+      {"concept": "matrix multiplication", "wikipedia_article": "Matrix multiplication", "brief_rationale": "Rule for combining two matrices into a third; universally taught as the key operation on matrices."},
+      {"concept": "transpose", "wikipedia_article": "Transpose", "brief_rationale": "Matrix formed by flipping rows and columns; simple but pervasive operation introduced in every introductory course."},
+      {"concept": "identity matrix", "wikipedia_article": "Identity matrix", "brief_rationale": "Square matrix with ones on the diagonal and zeros elsewhere; the multiplicative identity for matrices, universally recognized."},
+      {"concept": "inverse matrix", "wikipedia_article": "Invertible matrix", "brief_rationale": "Matrix that undoes another matrix under multiplication; directly analogous to the reciprocal of a number, taught in every first course."},
+      {"concept": "dot product", "wikipedia_article": "Dot product", "brief_rationale": "Sum of products of corresponding vector entries; universally introduced as the basic way to multiply two vectors."},
+      {"concept": "vector space", "wikipedia_article": "Vector space", "brief_rationale": "Abstract set of vectors closed under addition and scalar multiplication; the central object that linear algebra studies."},
+      {"concept": "linear transformation", "wikipedia_article": "Linear map", "brief_rationale": "Function between vector spaces preserving addition and scalar multiplication; the central type of function in linear algebra."},
+      {"concept": "Gaussian elimination", "wikipedia_article": "Gaussian elimination", "brief_rationale": "Row-reduction algorithm for solving linear systems; the primary computational method taught in every introductory course."}
+    ],
+    "L2": [
+      {"concept": "eigenvalue", "wikipedia_article": "Eigenvalues and eigenvectors", "brief_rationale": "Scalar by which an eigenvector is stretched under a linear transformation; named concept central to second-semester linear algebra and widely applied."},
+      {"concept": "eigenvector", "wikipedia_article": "Eigenvalues and eigenvectors", "brief_rationale": "Nonzero vector unchanged in direction by a linear transformation; named concept paired with eigenvalue, essential for diagonalization."},
+      {"concept": "determinant", "wikipedia_article": "Determinant", "brief_rationale": "Scalar summarizing invertibility and signed volume scaling of a matrix; named result universally computed in introductory linear algebra."},
+      {"concept": "rank", "wikipedia_article": "Rank (linear algebra)", "brief_rationale": "Dimension of the column space of a matrix; specific technical term measuring how much information a matrix carries."},
+      {"concept": "null space", "wikipedia_article": "Kernel (linear algebra)", "brief_rationale": "Set of vectors mapped to zero by a linear transformation; specific named subspace paired with rank via the rank-nullity theorem."},
+      {"concept": "column space", "wikipedia_article": "Column space", "brief_rationale": "Span of the columns of a matrix; specific named subspace capturing the range of a linear map."},
+      {"concept": "basis", "wikipedia_article": "Basis (linear algebra)", "brief_rationale": "Minimal spanning set of linearly independent vectors; specific technical concept defining coordinates in a vector space."},
+      {"concept": "span", "wikipedia_article": "Linear span", "brief_rationale": "Set of all linear combinations of a given set of vectors; specific technical term taught as the first step toward understanding subspaces."},
+      {"concept": "linear independence", "wikipedia_article": "Linear independence", "brief_rationale": "Property of a set of vectors where none can be written as a combination of the others; specific concept gating understanding of basis and dimension."},
+      {"concept": "orthogonality", "wikipedia_article": "Orthogonality", "brief_rationale": "Perpendicularity of vectors as measured by zero dot product; specific named property central to projections and decompositions."},
+      {"concept": "trace", "wikipedia_article": "Trace (linear algebra)", "brief_rationale": "Sum of diagonal entries of a square matrix; specific named invariant equal to the sum of eigenvalues, taught alongside the determinant."},
+      {"concept": "diagonalization", "wikipedia_article": "Diagonalizable matrix", "brief_rationale": "Decomposing a matrix as PDP^{-1} with D diagonal; specific named process central to eigenvalue applications."},
+      {"concept": "Cramer's rule", "wikipedia_article": "Cramer's rule", "brief_rationale": "Named formula expressing the solution of a linear system via determinants; specific classical result taught in introductory courses."}
+    ],
+    "L3": [
+      {"concept": "singular value decomposition", "wikipedia_article": "Singular value decomposition", "brief_rationale": "Factorization of any matrix as U\u03a3V^T; requires working knowledge of orthogonal matrices, eigenvalues, and how it generalizes diagonalization."},
+      {"concept": "LU decomposition", "wikipedia_article": "LU decomposition", "brief_rationale": "Factoring a matrix into lower and upper triangular factors; requires working knowledge of Gaussian elimination and how it enables efficient numerical solving."},
+      {"concept": "QR decomposition", "wikipedia_article": "QR decomposition", "brief_rationale": "Factoring a matrix into an orthogonal Q and upper triangular R; requires working knowledge of Gram-Schmidt and its role in least-squares and eigenvalue algorithms."},
+      {"concept": "Gram-Schmidt process", "wikipedia_article": "Gram–Schmidt process", "brief_rationale": "Algorithm for orthogonalizing a set of vectors; requires working knowledge of projections and inner products to apply and understand."},
+      {"concept": "least squares", "wikipedia_article": "Least squares", "brief_rationale": "Method for finding the best approximate solution to an overdetermined system; requires working knowledge of projections onto subspaces and the normal equations."},
+      {"concept": "change of basis", "wikipedia_article": "Change of basis", "brief_rationale": "Expressing coordinates relative to a different basis via a transition matrix; requires working understanding of how representations of vectors and linear maps transform."},
+      {"concept": "rank-nullity theorem", "wikipedia_article": "Rank–nullity theorem", "brief_rationale": "States that rank plus nullity equals the number of columns; requires working knowledge of null space, column space, and dimension to apply and interpret."},
+      {"concept": "inner product space", "wikipedia_article": "Inner product space", "brief_rationale": "Vector space equipped with an inner product generalizing the dot product; requires working knowledge of how the inner product defines angle, length, and orthogonality."},
+      {"concept": "orthogonal complement", "wikipedia_article": "Orthogonal complement", "brief_rationale": "Subspace of all vectors perpendicular to a given subspace; requires working knowledge of inner products and the four fundamental subspaces."},
+      {"concept": "spectral theorem", "wikipedia_article": "Spectral theorem", "brief_rationale": "Guarantees orthogonal diagonalizability of symmetric (or normal) matrices; requires working knowledge of eigenvalues, orthogonality, and why symmetry is special."},
+      {"concept": "positive definite matrix", "wikipedia_article": "Definite matrix", "brief_rationale": "Symmetric matrix with all positive eigenvalues; requires working knowledge of quadratic forms and how positive definiteness is tested and applied."},
+      {"concept": "matrix norm", "wikipedia_article": "Matrix norm", "brief_rationale": "Measure of the size of a matrix consistent with vector norms; requires working knowledge of norms, operator norms, and the Frobenius norm and their properties."}
+    ],
+    "L4": [
+      {"concept": "Jordan normal form", "wikipedia_article": "Jordan normal form", "brief_rationale": "Canonical form for matrices over algebraically closed fields when full diagonalization fails; requires deep knowledge of generalized eigenvectors and invariant factor theory."},
+      {"concept": "tensor product", "wikipedia_article": "Tensor product", "brief_rationale": "Universal construction combining two vector spaces into a larger one; requires deep knowledge of multilinear algebra and its relationship to matrix outer products and quantum mechanics."},
+      {"concept": "exterior algebra", "wikipedia_article": "Exterior algebra", "brief_rationale": "Algebra built from antisymmetric multilinear forms generalizing the cross product and determinant; requires deep knowledge of multilinear algebra and differential forms."},
+      {"concept": "pseudoinverse", "wikipedia_article": "Moore–Penrose inverse", "brief_rationale": "Generalization of matrix inverse to non-square and singular matrices via SVD; requires deep knowledge of SVD, projections, and how it provides optimal least-squares solutions."},
+      {"concept": "Cayley-Hamilton theorem", "wikipedia_article": "Cayley–Hamilton theorem", "brief_rationale": "Every matrix satisfies its own characteristic polynomial; requires deep knowledge of the characteristic polynomial, minimal polynomial, and their relationship."},
+      {"concept": "Smith normal form", "wikipedia_article": "Smith normal form", "brief_rationale": "Canonical diagonal form for matrices over principal ideal domains via integer row/column operations; requires deep knowledge bridging linear algebra and abstract algebra."},
+      {"concept": "Perron-Frobenius theorem", "wikipedia_article": "Perron–Frobenius theorem", "brief_rationale": "Guarantees a unique dominant real eigenvalue for positive matrices; requires deep knowledge of spectral theory, irreducibility, and applications to Markov chains and PageRank."},
+      {"concept": "Schur decomposition", "wikipedia_article": "Schur decomposition", "brief_rationale": "Any square matrix is unitarily similar to an upper triangular matrix; requires deep knowledge of unitary matrices, complex eigenvalues, and how it underlies numerical eigenvalue algorithms."},
+      {"concept": "matrix exponential", "wikipedia_article": "Matrix exponential", "brief_rationale": "Generalization of the scalar exponential to matrices via power series; requires deep knowledge of Jordan form, diagonalization, and its role in solving linear ODEs."},
+      {"concept": "condition number", "wikipedia_article": "Condition number", "brief_rationale": "Ratio of largest to smallest singular value measuring sensitivity of a linear system to perturbations; requires deep knowledge of SVD, numerical stability, and floating-point error analysis."},
+      {"concept": "Sylvester's law of inertia", "wikipedia_article": "Sylvester's law of inertia", "brief_rationale": "The number of positive, negative, and zero eigenvalues of a quadratic form is invariant under congruence transformation; requires deep knowledge of quadratic forms and their canonical classification."},
+      {"concept": "Krylov subspace", "wikipedia_article": "Krylov subspace", "brief_rationale": "Subspace spanned by successive applications of a matrix to a vector, underlying GMRES and Lanczos algorithms; requires deep knowledge of iterative methods and large-scale numerical linear algebra."}
+    ]
+  }
+}

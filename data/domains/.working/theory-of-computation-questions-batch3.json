@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "What does it mean for a decision problem to be decidable?",
+    "correct_answer": "An effective method exists that always derives the correct yes-or-no answer.",
+    "distractors": [
+      "An effective method exists that sometimes derives a correct yes-or-no answer.",
+      "An efficient polynomial-time algorithm exists that derives the correct answer.",
+      "A nondeterministic machine exists that halts on at least one computation path."
+    ],
+    "difficulty": 2,
+    "source_article": "Decidability (logic)",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["decidability"]
+  },
+  {
+    "question_text": "In the Chomsky hierarchy, which type of automaton recognizes context-free languages?",
+    "correct_answer": "Nondeterministic pushdown automaton.",
+    "distractors": [
+      "Deterministic finite automaton.",
+      "Linear-bounded nondeterministic Turing machine.",
+      "Nondeterministic Turing machine with unlimited tape."
+    ],
+    "difficulty": 2,
+    "source_article": "Chomsky hierarchy",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["Chomsky hierarchy"]
+  },
+  {
+    "question_text": "What is a parse tree in formal language theory?",
+    "correct_answer": "An ordered, rooted tree representing a string's syntactic structure according to a context-free grammar.",
+    "distractors": [
+      "A directed acyclic graph representing semantic dependencies between tokens in a regular grammar.",
+      "An unordered tree representing the runtime execution trace of a deterministic pushdown automaton.",
+      "A binary tree mapping each input symbol to its corresponding output in a finite-state transducer."
+    ],
+    "difficulty": 2,
+    "source_article": "Parse tree",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["parse tree"]
+  },
+  {
+    "question_text": "What characterizes an algorithm that runs in polynomial time?",
+    "correct_answer": "Its running time is bounded by O(n^k) for some constant k, where n is the input size.",
+    "distractors": [
+      "Its running time is bounded by O(k^n) for some constant k, where n is the input size.",
+      "Its running time is bounded by O(n log n) regardless of the input size.",
+      "Its running time is bounded by O(n!) for some constant factorial of the input size."
+    ],
+    "difficulty": 2,
+    "source_article": "Time complexity",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["polynomial time"]
+  },
+  {
+    "question_text": "In complexity theory, what does it mean to reduce problem A to problem B?",
+    "correct_answer": "Transform instances of A into instances of B so that solving B efficiently also solves A.",
+    "distractors": [
+      "Transform instances of B into instances of A so that solving A efficiently also solves B.",
+      "Prove that problems A and B have identical worst-case running times on all inputs.",
+      "Decompose problem A into smaller independent subproblems that are each equivalent to B."
+    ],
+    "difficulty": 2,
+    "source_article": "Reduction (complexity)",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["reduction (complexity)"]
+  },
+  {
+    "question_text": "What does the pumping lemma for regular languages state?",
+    "correct_answer": "Every sufficiently long string in a regular language has a middle section that can be repeated any number of times.",
+    "distractors": [
+      "Every sufficiently long string in a context-free language has a middle section that can be repeated any number of times.",
+      "Every string in a regular language can be split into two halves that are each independently regular.",
+      "Every sufficiently long string in a regular language has a prefix that can be deleted to produce a shorter valid string."
+    ],
+    "difficulty": 3,
+    "source_article": "Pumping lemma for regular languages",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["pumping lemma"]
+  },
+  {
+    "question_text": "What does the Church-Turing thesis assert?",
+    "correct_answer": "A function on natural numbers is effectively calculable if and only if it is computable by a Turing machine.",
+    "distractors": [
+      "A function on natural numbers is effectively calculable if and only if it runs in polynomial time.",
+      "A function on natural numbers is computable by a Turing machine if and only if it is expressible in first-order logic.",
+      "A function on natural numbers is decidable if and only if it can be verified by a nondeterministic Turing machine."
+    ],
+    "difficulty": 3,
+    "source_article": "Church\u2013Turing thesis",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["Church-Turing thesis"]
+  },
+  {
+    "question_text": "What did Cantor's 1891 diagonal argument originally prove?",
+    "correct_answer": "There exist infinite sets that cannot be put into one-to-one correspondence with the natural numbers.",
+    "distractors": [
+      "There exist finite sets that cannot be enumerated by any algorithmic procedure.",
+      "There exist infinite sets that can always be put into one-to-one correspondence with the rationals.",
+      "There exist countably infinite sets whose power sets have the same cardinality."
+    ],
+    "difficulty": 3,
+    "source_article": "Cantor's diagonal argument",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["diagonalization argument"]
+  },
+  {
+    "question_text": "According to Savitch's theorem, what is the relationship between PSPACE and NPSPACE?",
+    "correct_answer": "They are equal: PSPACE equals NPSPACE.",
+    "distractors": [
+      "NPSPACE strictly contains PSPACE.",
+      "PSPACE strictly contains NPSPACE.",
+      "They are incomparable and neither contains the other."
+    ],
+    "difficulty": 3,
+    "source_article": "Space complexity",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["space complexity"]
+  },
+  {
+    "question_text": "What does the Cook-Levin theorem establish?",
+    "correct_answer": "The Boolean satisfiability problem is NP-complete.",
+    "distractors": [
+      "The Boolean satisfiability problem is in P.",
+      "The graph isomorphism problem is NP-complete.",
+      "The halting problem is reducible to Boolean satisfiability in polynomial time."
+    ],
+    "difficulty": 3,
+    "source_article": "Cook\u2013Levin theorem",
+    "domain_ids": ["theory-of-computation"],
+    "concepts_tested": ["Cook-Levin theorem"]
+  }
+]

@@ -1,0 +1,852 @@
+[
+  {
+    "question_text": "What was the Silk Road?",
+    "correct_answer": "An ancient network of trade routes connecting East Asia to the Mediterranean world.",
+    "distractors": [
+      "A medieval European pilgrimage path connecting Rome to Constantinople.",
+      "A series of maritime shipping lanes used exclusively by Chinese merchant fleets.",
+      "A diplomatic alliance system linking Central Asian kingdoms to the Ottoman Empire."
+    ],
+    "difficulty": 1,
+    "source_article": "Silk Road",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Silk Road"
+    ]
+  },
+  {
+    "question_text": "What was the Mongol Empire?",
+    "correct_answer": "The largest contiguous land empire in history, founded by Genghis Khan in the 13th century.",
+    "distractors": [
+      "A maritime trading confederation that controlled the Indian Ocean from the 10th to 14th centuries.",
+      "A loose alliance of Central Asian city-states that resisted Chinese expansion during the Tang dynasty.",
+      "A Persian-led military coalition that conquered the Middle East and North Africa in the 12th century."
+    ],
+    "difficulty": 1,
+    "source_article": "Mongol Empire",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Mongol Empire"
+    ]
+  },
+  {
+    "question_text": "What is the Great Wall of China?",
+    "correct_answer": "A series of fortifications built across northern China to protect against nomadic invasions.",
+    "distractors": [
+      "A single continuous stone wall built during the Qin dynasty to mark China's southern border.",
+      "An ancient irrigation system spanning central China that enabled large-scale rice cultivation.",
+      "A network of underground tunnels constructed to transport goods between major Chinese cities."
+    ],
+    "difficulty": 1,
+    "source_article": "Great Wall of China",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Great Wall of China"
+    ]
+  },
+  {
+    "question_text": "Who were the samurai in Japanese history?",
+    "correct_answer": "The warrior class of feudal Japan who served as military nobility and officers.",
+    "distractors": [
+      "Buddhist monks trained in martial arts who defended Japanese temples from foreign invaders.",
+      "Merchant traders who controlled Japan's economy during the Heian period.",
+      "Imperial court officials who administered civil law throughout medieval Japan."
+    ],
+    "difficulty": 1,
+    "source_article": "Samurai",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "samurai"
+    ]
+  },
+  {
+    "question_text": "What is Mahatma Gandhi best known for in Indian history?",
+    "correct_answer": "Leading India's nonviolent independence movement against British colonial rule.",
+    "distractors": [
+      "Founding the Indian National Army to fight the British through armed resistance.",
+      "Establishing India's first democratic constitution after the fall of the Mughal Empire.",
+      "Negotiating the peaceful unification of India and Pakistan following World War II."
+    ],
+    "difficulty": 1,
+    "source_article": "Mahatma Gandhi",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Mahatma Gandhi"
+    ]
+  },
+  {
+    "question_text": "What is the Taj Mahal?",
+    "correct_answer": "A white marble mausoleum built by Mughal emperor Shah Jahan for his wife Mumtaz Mahal.",
+    "distractors": [
+      "A Hindu temple complex constructed during the Gupta Empire as a center of religious scholarship.",
+      "A fortified palace built by the British East India Company as its administrative headquarters.",
+      "A Buddhist monastery erected by Emperor Ashoka to commemorate his conversion to Buddhism."
+    ],
+    "difficulty": 1,
+    "source_article": "Taj Mahal",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Taj Mahal"
+    ]
+  },
+  {
+    "question_text": "What happened at Hiroshima and Nagasaki in August 1945?",
+    "correct_answer": "The United States dropped atomic bombs on these two Japanese cities, ending World War II.",
+    "distractors": [
+      "Japan launched its final major naval offensive against Allied forces in the Pacific theater.",
+      "Allied forces conducted massive conventional firebombing raids that destroyed both Japanese cities.",
+      "The Soviet Union invaded these two Japanese port cities as part of its Pacific campaign."
+    ],
+    "difficulty": 1,
+    "source_article": "Atomic bombings of Hiroshima and Nagasaki",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Hiroshima and Nagasaki atomic bombings"
+    ]
+  },
+  {
+    "question_text": "Who was Mao Zedong?",
+    "correct_answer": "The founding leader of the People's Republic of China who led the Communist revolution.",
+    "distractors": [
+      "The last emperor of China's Qing dynasty who abdicated during the Republican revolution.",
+      "The Nationalist general who unified China before fleeing to Taiwan after the civil war.",
+      "The reformist premier who opened China to foreign trade and modernized its economy in the 1980s."
+    ],
+    "difficulty": 1,
+    "source_article": "Mao Zedong",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Mao Zedong"
+    ]
+  },
+  {
+    "question_text": "Who was Confucius?",
+    "correct_answer": "An ancient Chinese philosopher whose teachings on ethics and governance shaped East Asian civilization.",
+    "distractors": [
+      "A Chinese military strategist who wrote influential treatises on warfare and political conquest.",
+      "The founder of Daoism who advocated living in harmony with the natural world.",
+      "A Buddhist monk who brought religious texts from India to China during the Han dynasty."
+    ],
+    "difficulty": 1,
+    "source_article": "Confucius",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Confucius"
+    ]
+  },
+  {
+    "question_text": "Who was the Buddha?",
+    "correct_answer": "Siddhartha Gautama, an ancient Indian spiritual teacher who founded Buddhism.",
+    "distractors": [
+      "An early Hindu philosopher who codified the Vedic scriptures into a unified religious system.",
+      "A Mauryan emperor who made Buddhism the official state religion across South Asia.",
+      "A Tibetan monk who established the first Buddhist monasteries in East Asia."
+    ],
+    "difficulty": 1,
+    "source_article": "Gautama Buddha",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Buddha"
+    ]
+  },
+  {
+    "question_text": "Who was Genghis Khan?",
+    "correct_answer": "The founder and first Great Khan of the Mongol Empire who united the Mongol tribes.",
+    "distractors": [
+      "A Turkish warlord who established the Ottoman Empire across the Middle East and Central Asia.",
+      "The Chinese emperor who built the Great Wall and unified China under the Qin dynasty.",
+      "A Persian military commander who conquered India and established the Mughal dynasty."
+    ],
+    "difficulty": 1,
+    "source_article": "Genghis Khan",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Genghis Khan"
+    ]
+  },
+  {
+    "question_text": "What was the Mughal Empire?",
+    "correct_answer": "An Islamic empire that ruled much of the Indian subcontinent from the 16th to 19th centuries.",
+    "distractors": [
+      "A Persian dynasty that controlled Central Asia and the Middle East during the medieval period.",
+      "A Hindu kingdom based in southern India that resisted Muslim expansion for several centuries.",
+      "A Mongol successor state that dominated Southeast Asia from the 14th to 17th centuries."
+    ],
+    "difficulty": 1,
+    "source_article": "Mughal Empire",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Mughal Empire"
+    ]
+  },
+  {
+    "question_text": "How did the Cold War affect Asia?",
+    "correct_answer": "It produced major conflicts including the Korean War, Vietnam War, and Chinese Communist Revolution.",
+    "distractors": [
+      "It led to the peaceful reunification of Korea and Vietnam under democratic governments.",
+      "It primarily affected only Japan through the continued American military occupation until 1991.",
+      "It caused the collapse of the British Empire in India but had limited impact elsewhere in Asia."
+    ],
+    "difficulty": 1,
+    "source_article": "Cold War in Asia",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Cold War in Asia"
+    ]
+  },
+  {
+    "question_text": "What was the Meiji Restoration of 1868?",
+    "correct_answer": "The political revolution that restored imperial rule to Japan and launched rapid modernization and industrialization.",
+    "distractors": [
+      "A military coup that established the Tokugawa shogunate and imposed two centuries of isolationist policy.",
+      "A cultural movement that rejected Western influence and sought to revive traditional Japanese arts and religion.",
+      "A diplomatic agreement between Japan and China that opened both countries to unrestricted European trade."
+    ],
+    "difficulty": 2,
+    "source_article": "Meiji Restoration",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Meiji Restoration"
+    ]
+  },
+  {
+    "question_text": "What were the Opium Wars between Britain and China primarily about?",
+    "correct_answer": "British efforts to force open Chinese markets to trade, particularly the opium trade from British India.",
+    "distractors": [
+      "Chinese attempts to colonize British trading posts in Southeast Asia and the Indian subcontinent.",
+      "Territorial disputes over the control of Hong Kong and Taiwan before European colonization began.",
+      "Religious conflicts arising from British missionaries attempting to convert the Chinese population to Christianity."
+    ],
+    "difficulty": 2,
+    "source_article": "Opium Wars",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Opium Wars"
+    ]
+  },
+  {
+    "question_text": "What specific event marked the end of British colonial rule in India in 1947?",
+    "correct_answer": "The Indian Independence Act, which created the two sovereign dominions of India and Pakistan.",
+    "distractors": [
+      "The signing of the Anglo-Indian Treaty, which granted India self-governance while retaining British military bases.",
+      "A national referendum in which Indian citizens voted overwhelmingly to establish a republic.",
+      "The military defeat of British forces by the Indian National Army during the Quit India uprising."
+    ],
+    "difficulty": 2,
+    "source_article": "Indian independence movement",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Indian independence"
+    ]
+  },
+  {
+    "question_text": "What was the Tang dynasty known for in Chinese history?",
+    "correct_answer": "A golden age of Chinese culture, poetry, and cosmopolitan openness spanning from 618 to 907 CE.",
+    "distractors": [
+      "The period of strict isolationism and Confucian orthodoxy that lasted from 960 to 1279 CE.",
+      "The era of Mongol rule over China characterized by heavy taxation and ethnic discrimination.",
+      "A brief militaristic dynasty that unified China through conquest but collapsed after only fifteen years."
+    ],
+    "difficulty": 2,
+    "source_article": "Tang dynasty",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Tang dynasty"
+    ]
+  },
+  {
+    "question_text": "What was the Tokugawa shogunate's policy of sakoku?",
+    "correct_answer": "A policy of national isolation that severely restricted foreign trade and banned most foreigners from Japan.",
+    "distractors": [
+      "A system of mandatory military service requiring all Japanese men to train as samurai warriors.",
+      "An economic reform program that redistributed agricultural land from feudal lords to peasant farmers.",
+      "A diplomatic strategy of forming alliances with European powers to counter Chinese regional influence."
+    ],
+    "difficulty": 2,
+    "source_article": "Tokugawa shogunate",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Tokugawa shogunate"
+    ]
+  },
+  {
+    "question_text": "What were the major consequences of the 1947 Partition of India?",
+    "correct_answer": "Mass displacement of over 10 million people and widespread communal violence between Hindus, Muslims, and Sikhs.",
+    "distractors": [
+      "A peaceful population exchange supervised by the United Nations with minimal loss of life.",
+      "The establishment of three separate nations: India, Pakistan, and an independent Kashmir state.",
+      "An economic boom in both India and Pakistan driven by newly independent industrial development."
+    ],
+    "difficulty": 2,
+    "source_article": "Partition of India",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Partition of India"
+    ]
+  },
+  {
+    "question_text": "What was the outcome of the Korean War (1950-1953)?",
+    "correct_answer": "An armistice that left Korea divided near the 38th parallel, with no formal peace treaty signed.",
+    "distractors": [
+      "A decisive United Nations victory that reunified Korea under a democratic government in Seoul.",
+      "A Chinese-brokered peace treaty that created a neutral demilitarized zone governed by the United Nations.",
+      "The complete withdrawal of all foreign forces and establishment of Korean self-determination through elections."
+    ],
+    "difficulty": 2,
+    "source_article": "Korean War",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Korean War"
+    ]
+  },
+  {
+    "question_text": "What event triggered direct large-scale American military involvement in the Vietnam War?",
+    "correct_answer": "The Gulf of Tonkin incident in 1964, which led Congress to authorize military action in Vietnam.",
+    "distractors": [
+      "The fall of Saigon in 1962, which prompted an emergency deployment of American ground forces.",
+      "The assassination of South Vietnam's president in 1960, which destabilized the American-backed government.",
+      "A formal request from the United Nations Security Council in 1965 for American peacekeeping troops."
+    ],
+    "difficulty": 2,
+    "source_article": "Vietnam War",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Vietnam War"
+    ]
+  },
+  {
+    "question_text": "What civilization built the temple complex at Angkor Wat?",
+    "correct_answer": "The Khmer Empire, which ruled much of Southeast Asia from the 9th to 15th centuries.",
+    "distractors": [
+      "The Srivijaya Empire, a maritime power based in Sumatra that dominated island Southeast Asia.",
+      "The Dai Viet kingdom, a Vietnamese dynasty that controlled Indochina before European colonization.",
+      "The Majapahit Empire, a Javanese Hindu state that briefly controlled the Malay Archipelago."
+    ],
+    "difficulty": 2,
+    "source_article": "Khmer Empire",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Khmer Empire"
+    ]
+  },
+  {
+    "question_text": "What caused the fall of China's Qing dynasty in 1912?",
+    "correct_answer": "The Xinhai Revolution, a republican uprising that overthrew the last imperial dynasty of China.",
+    "distractors": [
+      "A Mongol invasion from the north that captured Beijing and forced the emperor to abdicate.",
+      "The Taiping Rebellion, a massive civil war that permanently destroyed the dynasty's military power.",
+      "A British-led coalition that conquered China following its defeat in the third Opium War."
+    ],
+    "difficulty": 2,
+    "source_article": "Qing dynasty",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Qing dynasty"
+    ]
+  },
+  {
+    "question_text": "What did Emperor Ashoka do after the Kalinga War?",
+    "correct_answer": "He converted to Buddhism and promoted nonviolence, dharma, and religious tolerance throughout his empire.",
+    "distractors": [
+      "He expanded the Maurya Empire westward by conquering Persia and establishing trade with Greece.",
+      "He abdicated the throne and became a wandering monk, leaving the empire to his military generals.",
+      "He imposed Hinduism as the state religion and persecuted Buddhist and Jain communities."
+    ],
+    "difficulty": 2,
+    "source_article": "Ashoka",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Ashoka"
+    ]
+  },
+  {
+    "question_text": "Angkor Wat was originally constructed as a temple dedicated to which deity?",
+    "correct_answer": "The Hindu god Vishnu, before being gradually converted to a Buddhist temple.",
+    "distractors": [
+      "The Hindu god Shiva, and it remained a Shaivite pilgrimage site throughout its history.",
+      "The Buddha himself, as the Khmer Empire was Buddhist from its founding period.",
+      "The Hindu god Brahma, reflecting the Khmer emphasis on creation mythology and cosmology."
+    ],
+    "difficulty": 2,
+    "source_article": "Angkor Wat",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Angkor Wat"
+    ]
+  },
+  {
+    "question_text": "What writing system was created during Korea's Joseon dynasty?",
+    "correct_answer": "Hangul, the Korean alphabet promulgated by King Sejong the Great in 1443.",
+    "distractors": [
+      "Hanja, a simplified version of Chinese characters adapted for Korean pronunciation.",
+      "Katakana, a syllabary borrowed from Japan and modified for Korean linguistic use.",
+      "Gugyeol, a phonetic script developed by Buddhist monks for translating Chinese texts."
+    ],
+    "difficulty": 2,
+    "source_article": "Joseon",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Joseon dynasty"
+    ]
+  },
+  {
+    "question_text": "How did the Mandate of Heaven concept function in Chinese political history?",
+    "correct_answer": "It justified dynastic overthrow by claiming heaven withdrew legitimacy from unjust rulers, enabling new dynasties to claim power.",
+    "distractors": [
+      "It established a permanent hereditary monarchy where divine authority passed exclusively through the eldest male heir.",
+      "It required emperors to receive formal approval from Confucian scholars before ascending to the throne.",
+      "It mandated that rulers perform annual religious rituals to renew their divine right to govern."
+    ],
+    "difficulty": 3,
+    "source_article": "Mandate of Heaven",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Mandate of Heaven"
+    ]
+  },
+  {
+    "question_text": "How did China's tributary system function as a form of international relations?",
+    "correct_answer": "Foreign states offered symbolic tribute to the Chinese emperor and received trade privileges and diplomatic recognition in return.",
+    "distractors": [
+      "Neighboring kingdoms paid annual monetary taxes to China in exchange for military protection from invasion.",
+      "China sent administrators to govern tributary states directly as provinces of the Chinese empire.",
+      "Foreign rulers were required to adopt Chinese law and Confucian governance to receive economic aid."
+    ],
+    "difficulty": 3,
+    "source_article": "Tributary system of China",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "tributary system (China)"
+    ]
+  },
+  {
+    "question_text": "How did the Maurya Empire under Chandragupta unify the Indian subcontinent?",
+    "correct_answer": "Through military conquest of the Nanda dynasty and annexation of Hellenistic territories, aided by Chanakya's political strategy.",
+    "distractors": [
+      "Through a series of peaceful diplomatic marriages with regional rulers that gradually consolidated political authority.",
+      "By forming an alliance with Alexander the Great's successors who ceded their Indian territories voluntarily.",
+      "Through a popular religious movement that united Hindu kingdoms under a single Buddhist theocratic government."
+    ],
+    "difficulty": 3,
+    "source_article": "Maurya Empire",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Maurya Empire"
+    ]
+  },
+  {
+    "question_text": "Why did the 1857 Sepoy Mutiny lead to the end of East India Company rule?",
+    "correct_answer": "The rebellion's scale revealed the Company's inability to govern India, prompting the British Crown to assume direct control.",
+    "distractors": [
+      "The mutiny succeeded in expelling all British forces from India, requiring the Crown to negotiate re-entry.",
+      "The East India Company voluntarily dissolved itself after suffering massive financial losses during the uprising.",
+      "International pressure from France and Russia forced Britain to restructure its colonial administration in India."
+    ],
+    "difficulty": 3,
+    "source_article": "Indian Rebellion of 1857",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Sepoy Mutiny"
+    ]
+  },
+  {
+    "question_text": "What was the role of the Red Guards during China's Cultural Revolution?",
+    "correct_answer": "Student paramilitary groups mobilized by Mao to attack perceived class enemies, destroy cultural artifacts, and purge political rivals.",
+    "distractors": [
+      "Professional soldiers assigned to protect historical sites and traditional Chinese cultural institutions from destruction.",
+      "Communist Party officials who implemented gradual economic reforms in rural agricultural communes.",
+      "Foreign-trained revolutionaries who organized industrial workers to seize control of state-owned factories."
+    ],
+    "difficulty": 3,
+    "source_article": "Cultural Revolution",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Cultural Revolution"
+    ]
+  },
+  {
+    "question_text": "What political demands did the 1989 Tiananmen Square protesters make?",
+    "correct_answer": "They demanded democratic reforms, freedom of the press, government accountability, and an end to official corruption.",
+    "distractors": [
+      "They called for the restoration of the imperial monarchy and rejection of communist ideology entirely.",
+      "They sought immediate reunification with Taiwan and the removal of all foreign diplomatic missions.",
+      "They demanded the privatization of all state industries and full adoption of a capitalist economy."
+    ],
+    "difficulty": 3,
+    "source_article": "1989 Tiananmen Square protests and massacre",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Tiananmen Square protests"
+    ]
+  },
+  {
+    "question_text": "What major intellectual achievements occurred during the Gupta Empire?",
+    "correct_answer": "The development of the decimal numeral system, advances in astronomy, and major works of Sanskrit literature and drama.",
+    "distractors": [
+      "The invention of gunpowder, the magnetic compass, and woodblock printing techniques later adopted by China.",
+      "The creation of the first written legal code and establishment of representative democratic assemblies.",
+      "The development of iron smelting technology and construction of the first planned urban cities in India."
+    ],
+    "difficulty": 3,
+    "source_article": "Gupta Empire",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Gupta Empire"
+    ]
+  },
+  {
+    "question_text": "How did Japan's sakoku policy during the Edo period affect its economic development?",
+    "correct_answer": "Despite isolation, Japan developed a sophisticated domestic economy with urbanization, proto-industry, and a thriving merchant class.",
+    "distractors": [
+      "Japan's economy stagnated completely for two centuries, leaving it far behind all neighboring Asian states.",
+      "Isolation forced Japan to become entirely self-sufficient in agriculture, eliminating all forms of commerce and trade.",
+      "The policy had minimal economic impact because Japan secretly maintained extensive trade with European powers."
+    ],
+    "difficulty": 3,
+    "source_article": "Edo period",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Edo period"
+    ]
+  },
+  {
+    "question_text": "How did the Pax Mongolica facilitate transcontinental exchange?",
+    "correct_answer": "Mongol enforcement of safe passage along trade routes enabled unprecedented movement of goods, ideas, and people across Eurasia.",
+    "distractors": [
+      "The Mongols built a network of paved roads connecting China to Europe, replacing the old Silk Road entirely.",
+      "Mongol rulers established a single currency accepted throughout Eurasia, eliminating barriers to international trade.",
+      "The Mongols forcibly relocated populations across their empire, spreading technologies through compulsory migration programs."
+    ],
+    "difficulty": 3,
+    "source_article": "Pax Mongolica",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Pax Mongolica"
+    ]
+  },
+  {
+    "question_text": "What was Timur's legacy in Central Asian history?",
+    "correct_answer": "He created a vast empire through brutal conquest but fostered a cultural renaissance in Samarkand that influenced Islamic art and architecture.",
+    "distractors": [
+      "He established a peaceful confederation of Central Asian states based on religious tolerance and free trade.",
+      "He permanently destroyed the Silk Road trade network by systematically razing every major Central Asian city.",
+      "He converted Central Asia from Islam to Buddhism, creating a unique religious synthesis that persisted for centuries."
+    ],
+    "difficulty": 3,
+    "source_article": "Timurid Empire",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Timurid Empire"
+    ]
+  },
+  {
+    "question_text": "What role did maritime trade play in the Srivijaya Empire's power?",
+    "correct_answer": "Srivijaya controlled the Strait of Malacca, taxing maritime trade between China and India to fund its thalassocratic state.",
+    "distractors": [
+      "Srivijaya derived its power from vast agricultural plantations rather than trade, as sea routes were too dangerous.",
+      "Srivijaya used its naval fleet primarily for military conquest of inland territories rather than trade control.",
+      "Srivijaya acted as a neutral intermediary that facilitated trade without taxing or controlling shipping routes."
+    ],
+    "difficulty": 3,
+    "source_article": "Srivijaya",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Srivijaya"
+    ]
+  },
+  {
+    "question_text": "What caused the Great Leap Forward to result in widespread famine?",
+    "correct_answer": "Forced agricultural collectivization, falsified production reports, and diversion of labor to backyard steel production caused crop failures affecting millions.",
+    "distractors": [
+      "A severe multi-year drought combined with flooding destroyed harvests across China's major agricultural regions.",
+      "International trade embargoes imposed by Western nations cut off China's access to food imports entirely.",
+      "Deliberate government policies redirected food supplies to urban areas, intentionally starving the rural population."
+    ],
+    "difficulty": 3,
+    "source_article": "Great Leap Forward",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Great Leap Forward"
+    ]
+  },
+  {
+    "question_text": "How did Zhu Xi's Neo-Confucianism differ from earlier Confucian thought?",
+    "correct_answer": "Zhu Xi integrated metaphysical concepts of li (principle) and qi (vital force) into Confucian ethics, creating a systematic philosophical framework.",
+    "distractors": [
+      "Zhu Xi rejected the importance of ritual propriety and instead emphasized spontaneous emotional expression as moral cultivation.",
+      "Zhu Xi incorporated Buddhist monasticism into Confucianism, requiring scholars to live in communal religious institutions.",
+      "Zhu Xi eliminated the concept of filial piety and replaced it with loyalty to the state as the highest virtue."
+    ],
+    "difficulty": 4,
+    "source_article": "Neo-Confucianism",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Zhu Xi's Neo-Confucianism"
+    ]
+  },
+  {
+    "question_text": "What does Kautilya's Arthashastra prescribe regarding the role of the state?",
+    "correct_answer": "It advocates a strong centralized state using espionage, diplomacy, and economic regulation to maintain power and social order.",
+    "distractors": [
+      "It promotes a decentralized federation of autonomous kingdoms governed by dharmic religious principles alone.",
+      "It argues that the state should minimize intervention and allow natural market forces to regulate society.",
+      "It prescribes a theocratic government led by Brahmin priests with the king serving only ceremonial functions."
+    ],
+    "difficulty": 4,
+    "source_article": "Arthashastra",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Kautilya's Arthashastra"
+    ]
+  },
+  {
+    "question_text": "What role did the White Lotus Society play in Chinese dynastic transitions?",
+    "correct_answer": "It inspired millenarian rebellions against ruling dynasties, most notably contributing to the overthrow of the Mongol Yuan dynasty.",
+    "distractors": [
+      "It served as a Confucian scholarly network that peacefully advised emperors during periods of dynastic succession.",
+      "It functioned as an imperial intelligence service that suppressed rebellions to preserve dynastic stability.",
+      "It operated as a merchant guild that financed new dynasties in exchange for exclusive trading privileges."
+    ],
+    "difficulty": 4,
+    "source_article": "White Lotus",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "White Lotus Society"
+    ]
+  },
+  {
+    "question_text": "How did the Ryukyu Kingdom maintain its independence between China and Japan?",
+    "correct_answer": "It served as a tributary state to both China and Japan, profiting as a trade intermediary while maintaining de facto autonomy.",
+    "distractors": [
+      "It allied exclusively with China and used Chinese military support to resist all Japanese territorial claims.",
+      "It maintained a powerful navy that deterred both Chinese and Japanese attempts at annexation or interference.",
+      "It adopted strict isolationism, refusing diplomatic contact with both China and Japan for several centuries."
+    ],
+    "difficulty": 4,
+    "source_article": "Ryukyu Kingdom",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Ryukyuan Kingdom"
+    ]
+  },
+  {
+    "question_text": "How did the Mughal mansabdari system organize imperial administration?",
+    "correct_answer": "It assigned numerical ranks (zat and sawar) to officials determining their pay, status, and military obligations to the emperor.",
+    "distractors": [
+      "It divided the empire into hereditary provinces governed by autonomous local rulers who paid annual tribute.",
+      "It established a merit-based civil service examination system modeled on the Chinese imperial bureaucracy.",
+      "It organized administration through religious councils where Hindu and Muslim leaders jointly governed each region."
+    ],
+    "difficulty": 4,
+    "source_article": "Mansabdar",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Mughal mansabdari system"
+    ]
+  },
+  {
+    "question_text": "What did the Korean Sirhak movement advocate?",
+    "correct_answer": "Practical reforms in agriculture, commerce, and technology, challenging Neo-Confucian orthodoxy's emphasis on abstract philosophical speculation.",
+    "distractors": [
+      "A return to strict Neo-Confucian scholarship and rejection of all Western scientific and technological knowledge.",
+      "The overthrow of the Joseon monarchy and establishment of a Chinese-style meritocratic republic.",
+      "Military modernization through the adoption of Japanese samurai traditions and European naval technology."
+    ],
+    "difficulty": 4,
+    "source_article": "Silhak",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Sirhak movement"
+    ]
+  },
+  {
+    "question_text": "How did the Qing Eight Banners system structure Manchu governance?",
+    "correct_answer": "It organized Manchu, Mongol, and Han populations into military-administrative units that defined social identity, hereditary service, and land allocation.",
+    "distractors": [
+      "It divided China into eight equal provinces, each governed by a banner-holding prince with autonomous authority.",
+      "It created eight specialized government ministries based on the Chinese model of civil bureaucratic administration.",
+      "It established eight rotating military garrisons that patrolled the empire's borders on a seasonal schedule."
+    ],
+    "difficulty": 4,
+    "source_article": "Eight Banners",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Qing Eight Banners system"
+    ]
+  },
+  {
+    "question_text": "How did Ashoka's concept of dhamma differ from Buddhist doctrine?",
+    "correct_answer": "Ashoka's dhamma was a broader ethical framework emphasizing tolerance, nonviolence, and welfare for all subjects regardless of religious affiliation.",
+    "distractors": [
+      "Ashoka's dhamma was identical to Buddhist doctrine and simply represented the official state adoption of Buddhism.",
+      "Ashoka's dhamma rejected Buddhist principles entirely and was based on Vedic Hindu religious traditions.",
+      "Ashoka's dhamma focused exclusively on monastic discipline and had no application to secular governance or society."
+    ],
+    "difficulty": 4,
+    "source_article": "Dhamma (Ashoka)",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Ashoka's dhamma"
+    ]
+  },
+  {
+    "question_text": "What mechanisms drove the Indianization of Southeast Asia?",
+    "correct_answer": "Trade networks, Brahmin advisors to local rulers, and voluntary adoption of Sanskrit, Hindu-Buddhist religion, and Indian political models by local elites.",
+    "distractors": [
+      "Military conquest by Indian empires that established colonial provinces throughout mainland and island Southeast Asia.",
+      "Mass migration of Indian farming communities who displaced indigenous populations and imposed Indian cultural practices.",
+      "Buddhist missionaries who converted entire Southeast Asian populations, replacing all indigenous religious and cultural traditions."
+    ],
+    "difficulty": 4,
+    "source_article": "Indianization",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Indianization of Southeast Asia"
+    ]
+  },
+  {
+    "question_text": "What was the significance of the Hundred Schools of Thought during the Warring States period?",
+    "correct_answer": "Political fragmentation allowed competing philosophical schools including Confucianism, Legalism, and Daoism to develop China's foundational intellectual traditions.",
+    "distractors": [
+      "A single imperial academy produced all major Chinese philosophies under the patronage of the Zhou dynasty court.",
+      "Foreign philosophers from India and Persia introduced new ideas that replaced China's indigenous intellectual traditions.",
+      "The Hundred Schools were religious sects rather than philosophical movements, focused on ritual practice not political theory."
+    ],
+    "difficulty": 4,
+    "source_article": "Warring States period",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Warring States period (China)"
+    ]
+  },
+  {
+    "question_text": "How did the early Islamic conquests transform Central Asia's religious landscape?",
+    "correct_answer": "Arab armies displaced Zoroastrianism and Buddhism as dominant religions, gradually establishing Islam through conquest, conversion, and integration with local cultures.",
+    "distractors": [
+      "Islam spread peacefully through merchant networks without any military conquest or political coercion in the region.",
+      "Central Asia resisted Islamization entirely and maintained its Zoroastrian and Buddhist traditions until the modern era.",
+      "The Rashidun Caliphate imposed Islam immediately and completely, eliminating all traces of prior religious practice within decades."
+    ],
+    "difficulty": 4,
+    "source_article": "Muslim conquests of Persia",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Rashidun Caliphate's expansion into Central Asia"
+    ]
+  },
+  {
+    "question_text": "What was the historical significance of the 1955 Bandung Conference?",
+    "correct_answer": "It united 29 Asian and African nations to promote postcolonial solidarity, oppose imperialism, and lay the groundwork for the Non-Aligned Movement.",
+    "distractors": [
+      "It established a military alliance of Asian nations modeled on NATO to counter Soviet expansion in the region.",
+      "It created a free-trade zone among Southeast Asian nations that became the precursor to ASEAN.",
+      "It was a failed peace conference that attempted to resolve the Korean and Vietnam conflicts simultaneously."
+    ],
+    "difficulty": 4,
+    "source_article": "Bandung Conference",
+    "domain_ids": [
+      "asian-history"
+    ],
+    "concepts_tested": [
+      "Bandung Conference"
+    ]
+  }
+]

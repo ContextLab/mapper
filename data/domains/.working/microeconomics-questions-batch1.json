@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "According to the law of demand, what happens to quantity demanded when price rises, all else equal?",
+    "correct_answer": "Quantity demanded decreases, reflecting an inverse relationship between price and quantity demanded.",
+    "distractors": [
+      "Quantity demanded increases, reflecting a direct relationship between price and quantity demanded.",
+      "Quantity demanded remains unchanged because consumer preferences are fixed regardless of price.",
+      "Quantity supplied decreases, causing the market to reach a new equilibrium at a higher output level."
+    ],
+    "difficulty": 1,
+    "source_article": "Law of demand",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["supply and demand"]
+  },
+  {
+    "question_text": "How does a profit-maximizing monopolist determine its output level?",
+    "correct_answer": "It produces the quantity where marginal revenue equals marginal cost.",
+    "distractors": [
+      "It produces the quantity where price equals marginal cost.",
+      "It produces the quantity where average revenue equals average total cost.",
+      "It produces the quantity where total revenue is maximized regardless of costs."
+    ],
+    "difficulty": 1,
+    "source_article": "Monopoly price",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["monopoly"]
+  },
+  {
+    "question_text": "In a market economy, what role do price signals play?",
+    "correct_answer": "They convey information to consumers and producers that guides resource allocation decisions.",
+    "distractors": [
+      "They set legally binding limits on the quantities that firms are permitted to produce.",
+      "They eliminate competition among sellers by ensuring all firms charge identical amounts.",
+      "They replace the need for supply and demand by centrally directing all production decisions."
+    ],
+    "difficulty": 1,
+    "source_article": "Price signal",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["price"]
+  },
+  {
+    "question_text": "In a perfectly competitive market, why is each firm considered a price taker?",
+    "correct_answer": "Because no individual firm can influence the market price, so each must accept the prevailing price.",
+    "distractors": [
+      "Because the government sets a fixed price that all firms in the industry are required to charge.",
+      "Because each firm produces a unique differentiated product and sets its own price above marginal cost.",
+      "Because a single dominant firm dictates the price and all smaller firms must follow its lead."
+    ],
+    "difficulty": 1,
+    "source_article": "Perfect competition",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["competition"]
+  },
+  {
+    "question_text": "How does economic profit differ from accounting profit?",
+    "correct_answer": "Economic profit subtracts both explicit costs and implicit opportunity costs from total revenue.",
+    "distractors": [
+      "Economic profit subtracts only explicit cash expenses such as wages, rent, and materials from revenue.",
+      "Economic profit includes government subsidies and tax credits as additional sources of firm revenue.",
+      "Economic profit adds depreciation allowances back to revenue to reflect the true value of assets."
+    ],
+    "difficulty": 1,
+    "source_article": "Profit (economics)",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["profit"]
+  },
+  {
+    "question_text": "In economics, what is market failure?",
+    "correct_answer": "A situation in which the free market allocation of goods and services is not Pareto efficient.",
+    "distractors": [
+      "A situation in which too many firms compete, driving all prices below the cost of production.",
+      "A situation in which government regulation prevents any voluntary trade from taking place.",
+      "A situation in which consumers collectively refuse to purchase goods at any offered price."
+    ],
+    "difficulty": 1,
+    "source_article": "Market failure",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["market"]
+  },
+  {
+    "question_text": "How did Lionel Robbins define economics in his influential 1932 essay?",
+    "correct_answer": "The science which studies human behavior as a relationship between ends and scarce means which have alternative uses.",
+    "distractors": [
+      "The science which studies the accumulation and distribution of national wealth among social classes.",
+      "The science which studies the laws governing monetary policy, banking, and financial institutions.",
+      "The science which studies the behavior of stock markets, commodity exchanges, and trade balances."
+    ],
+    "difficulty": 1,
+    "source_article": "Scarcity",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["scarcity"]
+  },
+  {
+    "question_text": "What does the law of diminishing marginal utility state about consumption?",
+    "correct_answer": "Each additional unit of a good consumed provides less extra satisfaction than the previous unit.",
+    "distractors": [
+      "Each additional unit of a good consumed provides more extra satisfaction than the previous unit.",
+      "Total satisfaction decreases immediately after the very first unit of a good is consumed.",
+      "Satisfaction per unit remains perfectly constant no matter how many units are consumed."
+    ],
+    "difficulty": 1,
+    "source_article": "Marginal utility",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["consumer"]
+  },
+  {
+    "question_text": "What does the law of diminishing returns state about production?",
+    "correct_answer": "Adding more of one input while holding others constant eventually yields smaller increases in output.",
+    "distractors": [
+      "Increasing all inputs proportionally always results in a doubling of total output produced.",
+      "Output always increases at an accelerating rate as additional units of any input are employed.",
+      "Reducing any single input always causes total output to fall by the same proportional amount."
+    ],
+    "difficulty": 1,
+    "source_article": "Diminishing returns",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["producer"]
+  },
+  {
+    "question_text": "What is a common effect of a production subsidy on market equilibrium?",
+    "correct_answer": "It increases supply beyond the equilibrium quantity and lowers the market price for consumers.",
+    "distractors": [
+      "It decreases supply below the equilibrium quantity and raises the market price for consumers.",
+      "It only shifts the demand curve without changing the supply curve or the equilibrium quantity.",
+      "It eliminates all deadweight loss by perfectly aligning private and social costs of production."
+    ],
+    "difficulty": 1,
+    "source_article": "Subsidy",
+    "domain_ids": ["microeconomics"],
+    "concepts_tested": ["subsidy"]
+  }
+]

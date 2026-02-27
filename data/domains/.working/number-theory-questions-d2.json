@@ -1,0 +1,122 @@
+[
+  {
+    "question_text": "A Mersenne prime has the form $M_p = 2^p - 1$ where $p$ is prime. What is the deep connection between Mersenne primes and perfect numbers?",
+    "correct_answer": "Euler proved that every even perfect number has the form $2^{p-1}(2^p - 1)$ where $2^p - 1$ is a Mersenne prime, establishing a one-to-one correspondence",
+    "distractors": [
+      "Every Mersenne prime is itself a perfect number because the sum of all its proper divisors, computed via the divisor function, equals $2^p - 1$",
+      "Mersenne primes generate odd perfect numbers through the formula $3^{p-1}(2^p - 1)$, which resolved the long-standing odd perfect number problem",
+      "The product of any two distinct Mersenne primes is always a perfect number, a result established by applying the Lucas-Lehmer primality test"
+    ],
+    "difficulty": 2,
+    "source_article": "Mersenne prime",
+    "domain_ids": [
+      "number-theory"
+    ],
+    "concepts_tested": [
+      "Mersenne prime",
+      "perfect number",
+      "Euler's theorem on perfect numbers"
+    ],
+    "id": "92824be5969810d9"
+  },
+  {
+    "question_text": "Twin primes are pairs of primes differing by 2, such as $(11, 13)$ and $(17, 19)$. What does Brun's theorem tell us about the set of all twin primes?",
+    "correct_answer": "The sum of the reciprocals of all twin primes converges to a finite value called Brun's constant, approximately 1.9",
+    "distractors": [
+      "The sum of the reciprocals of all twin primes diverges to infinity, proving that twin primes are as abundant as ordinary primes",
+      "Every sufficiently large even number can be written as the difference of two twin primes, analogous to Goldbach's conjecture",
+      "The product of each twin prime pair is always divisible by 6, which Brun used to prove the twin prime conjecture"
+    ],
+    "difficulty": 2,
+    "source_article": "Twin prime",
+    "domain_ids": [
+      "number-theory"
+    ],
+    "concepts_tested": [
+      "twin prime",
+      "Brun's theorem",
+      "Brun's constant"
+    ],
+    "id": "0491f67fa5d3cd19"
+  },
+  {
+    "question_text": "The pair $(220, 284)$ is the smallest example of amicable numbers. What defining property makes two integers $m$ and $n$ an amicable pair?",
+    "correct_answer": "The sum of the proper divisors of $m$ equals $n$, and the sum of the proper divisors of $n$ equals $m$",
+    "distractors": [
+      "Both $m$ and $n$ share the same set of prime factors, and their prime factorizations use identical exponents in different order",
+      "The greatest common divisor of $m$ and $n$ equals 1, while their least common multiple is a perfect number",
+      "The integers $m$ and $n$ are both expressible as sums of two squares, and $m + n$ is always prime"
+    ],
+    "difficulty": 2,
+    "source_article": "Amicable numbers",
+    "domain_ids": [
+      "number-theory"
+    ],
+    "concepts_tested": [
+      "amicable numbers",
+      "proper divisors",
+      "divisor sum function"
+    ],
+    "id": "47beb4a3e6be8d14"
+  },
+  {
+    "question_text": "An arithmetic function maps positive integers to complex numbers. What distinguishes a multiplicative arithmetic function from a general one?",
+    "correct_answer": "A multiplicative function satisfies $f(mn) = f(m)f(n)$ whenever $\\gcd(m, n) = 1$, meaning it preserves products of coprime arguments",
+    "distractors": [
+      "A multiplicative function satisfies $f(m + n) = f(m) + f(n)$ for all positive integers, meaning it is additive over integer sums",
+      "A multiplicative function is defined only on prime powers and extended to composites via the Chinese remainder theorem",
+      "A multiplicative function must take only integer values and satisfy $f(mn) = f(m)f(n)$ for all integers without restriction"
+    ],
+    "difficulty": 2,
+    "source_article": "Arithmetic function",
+    "domain_ids": [
+      "number-theory"
+    ],
+    "concepts_tested": [
+      "arithmetic function",
+      "multiplicative function",
+      "coprime integers"
+    ],
+    "id": "86ae69134832eb4e"
+  },
+  {
+    "question_text": "Diophantine equations require solutions in integers. In 1970, Matiyasevich completed the proof resolving Hilbert's tenth problem. What was the conclusion?",
+    "correct_answer": "No general algorithm exists to decide whether an arbitrary Diophantine equation has integer solutions; the problem is undecidable",
+    "distractors": [
+      "A universal algorithm was found that solves any Diophantine equation in polynomial time using the Euclidean algorithm recursively",
+      "Diophantine equations always have integer solutions provided the degree of the polynomial is at most four",
+      "Every Diophantine equation can be reduced to a linear equation via modular arithmetic, making all such equations solvable"
+    ],
+    "difficulty": 2,
+    "source_article": "Diophantine equation",
+    "domain_ids": [
+      "number-theory"
+    ],
+    "concepts_tested": [
+      "Diophantine equation",
+      "Hilbert's tenth problem",
+      "undecidability"
+    ],
+    "id": "8d6282273aca536d"
+  },
+  {
+    "question_text": "Goldbach's conjecture, proposed in 1742, remains one of the oldest unsolved problems in number theory. What does the strong (binary) form of the conjecture state?",
+    "correct_answer": "Every even integer greater than 2 can be expressed as the sum of two prime numbers",
+    "distractors": [
+      "Every odd integer greater than 5 can be expressed as the sum of three prime numbers",
+      "Every positive integer can be written as the sum of at most four perfect squares",
+      "Every sufficiently large integer is either prime or the sum of two perfect squares"
+    ],
+    "difficulty": 2,
+    "source_article": "Goldbach's conjecture",
+    "domain_ids": [
+      "number-theory"
+    ],
+    "concepts_tested": [
+      "Goldbach's conjecture",
+      "prime numbers",
+      "additive number theory"
+    ],
+    "id": "f468854314b9fec1"
+  }
+]

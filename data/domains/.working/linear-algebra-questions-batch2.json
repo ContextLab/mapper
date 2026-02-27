@@ -1,0 +1,80 @@
+[
+  {
+    "question_text": "In the Jordan normal form of a matrix, what determines the number of Jordan blocks associated with a given eigenvalue $\\lambda_i$?",
+    "correct_answer": "The geometric multiplicity of $\\lambda_i$, which equals $\\dim \\ker(A - \\lambda_i I)$, the dimension of the eigenspace",
+    "distractors": [
+      "The algebraic multiplicity of $\\lambda_i$, which equals the exponent of $(\\lambda - \\lambda_i)$ in the characteristic polynomial",
+      "The index of nilpotency of $(A - \\lambda_i I)$, which equals the size of the largest Jordan block for $\\lambda_i$",
+      "The rank deficiency of $(A - \\lambda_i I)^2$, which equals the total number of generalized eigenvectors for $\\lambda_i$"
+    ],
+    "difficulty": 4,
+    "source_article": "Jordan normal form",
+    "domain_ids": ["linear-algebra"],
+    "concepts_tested": ["Jordan normal form", "geometric multiplicity", "eigenspace", "Jordan blocks"]
+  },
+  {
+    "question_text": "If $V$ has dimension $m$ and $W$ has dimension $n$, what is $\\dim(V \\otimes W)$, and what forms a basis for the tensor product space?",
+    "correct_answer": "The dimension is $mn$, with basis $\\{v_i \\otimes w_j\\}$ formed by all pairwise tensor products of basis elements from $V$ and $W$",
+    "distractors": [
+      "The dimension is $m + n$, with basis $\\{v_i \\oplus w_j\\}$ formed by direct sums of basis elements from $V$ and $W$",
+      "The dimension is $\\binom{m+n}{2}$, with basis formed by symmetric tensor products of basis elements from $V$ and $W$",
+      "The dimension is $\\min(m, n)$, with basis $\\{v_i \\otimes w_i\\}$ formed by matched-index tensor products of basis elements"
+    ],
+    "difficulty": 4,
+    "source_article": "Tensor product",
+    "domain_ids": ["linear-algebra"],
+    "concepts_tested": ["tensor product", "dimension formula", "tensor basis", "bilinear maps"]
+  },
+  {
+    "question_text": "In the exterior algebra $\\Lambda(V)$ of an $n$-dimensional vector space $V$, what is $\\dim(\\Lambda^k(V))$, and why does $\\Lambda^k(V) = 0$ for $k > n$?",
+    "correct_answer": "$\\dim(\\Lambda^k(V)) = \\binom{n}{k}$ because the antisymmetry $v \\wedge v = 0$ forces any wedge product of $k > n$ vectors to vanish",
+    "distractors": [
+      "$\\dim(\\Lambda^k(V)) = n^k$ because each factor in the wedge product independently ranges over all $n$ basis vectors",
+      "$\\dim(\\Lambda^k(V)) = \\binom{n+k-1}{k}$ because the wedge product allows symmetric repetitions, so combinations with replacement of $k$ vectors from $n$ are counted",
+      "$\\dim(\\Lambda^k(V)) = k!\\binom{n}{k}$ because each $k$-blade has $k!$ distinct ordered arrangements, and ordering is not quotiented out in the exterior algebra"
+    ],
+    "difficulty": 4,
+    "source_article": "Exterior algebra",
+    "domain_ids": ["linear-algebra"],
+    "concepts_tested": ["exterior algebra", "wedge product", "alternating property", "k-vectors", "binomial dimension"]
+  },
+  {
+    "question_text": "Which of the four Moore-Penrose conditions ensures that the pseudoinverse $A^+$ is unique rather than merely a generalized inverse?",
+    "correct_answer": "The Hermiticity conditions $(AA^+)^* = AA^+$ and $(A^+A)^* = A^+A$, which force $AA^+$ and $A^+A$ to be orthogonal projections",
+    "distractors": [
+      "The idempotency conditions $AA^+A = A$ and $A^+AA^+ = A^+$, which force $AA^+$ and $A^+A$ to be projection operators",
+      "The commutativity condition $AA^+ = A^+A$ together with the reflexive condition $A^+AA^+ = A^+$ ensuring symmetry of the solution",
+      "The norm-minimality condition $\\|A^+\\| = \\min$ together with the range condition $\\text{ran}(A^+) = \\text{ran}(A^*)$ ensuring optimality"
+    ],
+    "difficulty": 4,
+    "source_article": "Moore–Penrose inverse",
+    "domain_ids": ["linear-algebra"],
+    "concepts_tested": ["Moore-Penrose pseudoinverse", "Penrose conditions", "orthogonal projection", "Hermitian matrices", "uniqueness"]
+  },
+  {
+    "question_text": "The Cayley-Hamilton theorem states $p_A(A) = 0$. How does this enable expressing $A^{-1}$ as a polynomial in $A$ for invertible $A$?",
+    "correct_answer": "Rearranging $A^n + c_{n-1}A^{n-1} + \\cdots + c_0 I = 0$ and dividing by $A$ yields $A^{-1}$ as a degree $n{-}1$ polynomial in $A$",
+    "distractors": [
+      "Substituting $A^{-1}$ for $\\lambda$ in the characteristic polynomial $p_A(\\lambda)$ directly gives $p_A(A^{-1}) = 0$, so $A^{-1}$ is a root of $p_A$",
+      "Factoring $p_A(A) = (A - \\lambda_1 I)\\cdots(A - \\lambda_n I) = 0$ and inverting each factor yields a product formula for $A^{-1}$",
+      "Applying $p_A(A) = 0$ to each eigenvector in the eigenbasis and inverting each corresponding eigenvalue independently yields $A^{-1}$ in diagonalized polynomial form"
+    ],
+    "difficulty": 4,
+    "source_article": "Cayley–Hamilton theorem",
+    "domain_ids": ["linear-algebra"],
+    "concepts_tested": ["Cayley-Hamilton theorem", "characteristic polynomial", "matrix inverse", "matrix polynomial"]
+  },
+  {
+    "question_text": "In the Smith normal form $SAT = \\text{diag}(\\alpha_1, \\ldots, \\alpha_r, 0, \\ldots)$ over a PID, how are the invariant factors $\\alpha_i$ related to the minors of $A$?",
+    "correct_answer": "$\\alpha_i = d_i(A)/d_{i-1}(A)$, where $d_i(A)$ is the GCD of all $i \\times i$ minors of $A$ and $d_0(A) = 1$",
+    "distractors": [
+      "$\\alpha_i = d_i(A) \\cdot d_{i-1}(A)$, where $d_i(A)$ is the LCM of all $i \\times i$ minors of $A$ and $d_0(A) = 1$",
+      "$\\alpha_i = d_i(A) - d_{i-1}(A)$, where $d_i(A)$ is the sum of all $i \\times i$ minors of $A$ and $d_0(A) = 0$",
+      "$\\alpha_i = \\gcd(d_i(A), d_{i+1}(A))$, where $d_i(A)$ is the determinant of the leading $i \\times i$ submatrix of $A$"
+    ],
+    "difficulty": 4,
+    "source_article": "Smith normal form",
+    "domain_ids": ["linear-algebra"],
+    "concepts_tested": ["Smith normal form", "invariant factors", "determinantal divisors", "principal ideal domain", "minors"]
+  }
+]

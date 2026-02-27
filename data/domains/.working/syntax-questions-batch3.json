@@ -1,0 +1,172 @@
+[
+  {
+    "question_text": "English distinguishes 'She is running' (ongoing) from 'She ran' (completed). The grammatical category that expresses how an event unfolds over time is called what?",
+    "correct_answer": "Grammatical aspect, which encodes whether an event is viewed as ongoing, completed, habitual, or otherwise internally structured.",
+    "distractors": [
+      "Grammatical tense, which locates an event at a particular point in time relative to the moment of speaking.",
+      "Grammatical mood, which indicates the speaker's attitude toward the factuality or likelihood of the event described.",
+      "Grammatical voice, which specifies whether the subject of the verb performs or receives the action described."
+    ],
+    "difficulty": 2,
+    "source_article": "Grammatical aspect",
+    "domain_ids": [
+      "syntax"
+    ],
+    "concepts_tested": [
+      "aspect"
+    ]
+  },
+  {
+    "question_text": "In English, we say 'he runs' but not 'he run,' because the verb must match the subject in person and number. What is this grammatical phenomenon called?",
+    "correct_answer": "Agreement, where a word changes its form to match grammatical features of another word it relates to.",
+    "distractors": [
+      "Government, where a head word determines the grammatical case of a dependent element in its domain.",
+      "Valency, where a verb specifies how many and what kind of arguments it requires in a clause.",
+      "Conjugation, a fixed classification of verbs into groups based on shared patterns of inflectional endings."
+    ],
+    "difficulty": 2,
+    "source_article": "Agreement (linguistics)",
+    "domain_ids": [
+      "syntax"
+    ],
+    "concepts_tested": [
+      "agreement"
+    ]
+  },
+  {
+    "question_text": "In Latin, the noun 'puella' changes form to 'puellam' when it functions as a direct object. What grammatical system marks noun phrases for their syntactic role?",
+    "correct_answer": "Grammatical case, a system of inflectional markings that indicate a noun phrase's function in a sentence.",
+    "distractors": [
+      "Grammatical gender, a classification system that assigns nouns to categories such as masculine, feminine, or neuter.",
+      "Grammatical number, a system of inflection that distinguishes singular, dual, or plural forms of nouns.",
+      "Declension class, a grouping of nouns by their shared inflectional patterns independent of syntactic function."
+    ],
+    "difficulty": 2,
+    "source_article": "Grammatical case",
+    "domain_ids": [
+      "syntax"
+    ],
+    "concepts_tested": [
+      "case"
+    ]
+  },
+  {
+    "question_text": "Linguists test whether a group of words forms a syntactic unit by checking if it can be replaced by a single pronoun or moved as a whole. What is such a syntactic unit called?",
+    "correct_answer": "A constituent, a word or group of words that functions as a single unit within a sentence's hierarchical structure.",
+    "distractors": [
+      "A morpheme, the smallest meaningful unit of language that cannot be further divided into smaller meaningful parts.",
+      "A collocation, a sequence of words that frequently co-occur together but do not form a structural unit.",
+      "A lexeme, an abstract vocabulary item that underlies a set of related inflected word forms in a language."
+    ],
+    "difficulty": 2,
+    "source_article": "Constituent (linguistics)",
+    "domain_ids": [
+      "syntax"
+    ],
+    "concepts_tested": [
+      "constituency"
+    ]
+  },
+  {
+    "question_text": "In 'Mary believes that it is raining,' the word 'that' introduces the embedded clause and marks it as a complement. What functional category does 'that' belong to here?",
+    "correct_answer": "Complementizer, a functional word that turns a clause into the subject or object of a sentence.",
+    "distractors": [
+      "Conjunction, a word that connects two independent clauses or phrases of equal grammatical status.",
+      "Determiner, a word that introduces a noun phrase and specifies its reference or quantity.",
+      "Preposition, a word that expresses a spatial, temporal, or logical relation between its complement and another element."
+    ],
+    "difficulty": 2,
+    "source_article": "Complementizer",
+    "domain_ids": [
+      "syntax"
+    ],
+    "concepts_tested": [
+      "complementizer"
+    ]
+  },
+  {
+    "question_text": "In 'The ball was kicked by the player,' the grammatical subject receives rather than performs the action. What construction makes the patient the subject of the sentence?",
+    "correct_answer": "The passive voice, where the subject is the patient or theme of the verb rather than the agent.",
+    "distractors": [
+      "The middle voice, where the subject both initiates and is affected by the action of the verb.",
+      "The causative construction, where the subject causes another entity to carry out the action of the verb.",
+      "The ergative construction, where the single argument of an intransitive verb is treated like a direct object."
+    ],
+    "difficulty": 2,
+    "source_article": "Passive voice",
+    "domain_ids": [
+      "syntax"
+    ],
+    "concepts_tested": [
+      "passive voice"
+    ]
+  },
+  {
+    "question_text": "In generative syntax, a theory proposes that every phrase has three levels of projection: a head (X), an intermediate bar level (X'), and a maximal projection (XP). What is this theory called?",
+    "correct_answer": "X-bar theory, which posits that all phrases share a uniform specifier-head-complement structure across languages.",
+    "distractors": [
+      "Phrase structure grammar, which uses language-specific rewrite rules to generate each phrase type independently.",
+      "Dependency grammar, which represents syntactic structure through directed links between a head word and its dependents.",
+      "Construction grammar, which treats each grammatical pattern as a learned form-meaning pairing stored in memory."
+    ],
+    "difficulty": 3,
+    "source_article": "X-bar theory",
+    "domain_ids": [
+      "syntax"
+    ],
+    "concepts_tested": [
+      "X-bar theory"
+    ]
+  },
+  {
+    "question_text": "Principle A states that an anaphor like 'himself' must be bound within its local domain, while Principle B states that a pronoun like 'him' must be free in that same domain. What theory contains these principles?",
+    "correct_answer": "Binding theory, which governs the distribution of anaphors, pronouns, and referential expressions using c-command.",
+    "distractors": [
+      "Control theory, which determines the interpretation of the null subject PRO in infinitival complement clauses.",
+      "Theta theory, which regulates how semantic roles like agent and patient are assigned to verb arguments.",
+      "Case theory, which ensures every overt noun phrase receives abstract case from a suitable syntactic licensor."
+    ],
+    "difficulty": 3,
+    "source_article": "Binding (linguistics)",
+    "domain_ids": [
+      "syntax"
+    ],
+    "concepts_tested": [
+      "binding theory"
+    ]
+  },
+  {
+    "question_text": "In English, the question 'What did you buy?' places the interrogative word at the front, even though it is interpreted as the object of 'buy.' What syntactic operation accounts for this displacement?",
+    "correct_answer": "Wh-movement, the fronting of an interrogative or relative phrase from its canonical position to sentence-initial position.",
+    "distractors": [
+      "Topicalization, the fronting of a non-interrogative constituent to highlight it as the discourse topic of the sentence.",
+      "Scrambling, the relatively free reordering of constituents driven by information structure rather than interrogative force.",
+      "Extraposition, the rightward displacement of a heavy or complex constituent to the end of the sentence."
+    ],
+    "difficulty": 3,
+    "source_article": "Wh-movement",
+    "domain_ids": [
+      "syntax"
+    ],
+    "concepts_tested": [
+      "wh-movement"
+    ]
+  },
+  {
+    "question_text": "In syntactic theory, many relationships such as binding and scope depend on a structural relation where the first branching node dominating node A also dominates node B. What is this relation called?",
+    "correct_answer": "C-command, where a node's first branching ancestor also dominates another node in the syntactic tree.",
+    "distractors": [
+      "Dominance, where one node is a direct or indirect ancestor of another node on a downward path in the tree.",
+      "Precedence, where one node appears linearly before another node when the tree is read from left to right.",
+      "Government, where a head node imposes feature requirements on a node within its maximal projection domain."
+    ],
+    "difficulty": 3,
+    "source_article": "C-command",
+    "domain_ids": [
+      "syntax"
+    ],
+    "concepts_tested": [
+      "c-command"
+    ]
+  }
+]

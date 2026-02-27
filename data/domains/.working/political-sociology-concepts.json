@@ -1,0 +1,266 @@
+{
+  "domain": "political-sociology",
+  "parent_domain": "sociology",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {
+        "concept": "democracy",
+        "wikipedia_article": "Democracy",
+        "brief_rationale": "The foundational concept of popular self-governance; entry-level political vocabulary known to virtually all students."
+      },
+      {
+        "concept": "power",
+        "wikipedia_article": "Power (social and political)",
+        "brief_rationale": "The central organizing concept of political sociology, referring to the ability of actors to realize their will over others."
+      },
+      {
+        "concept": "social class",
+        "wikipedia_article": "Social class",
+        "brief_rationale": "A basic unit of stratification analysis linking economic position to political outcomes and group identities."
+      },
+      {
+        "concept": "revolution",
+        "wikipedia_article": "Revolution",
+        "brief_rationale": "A high-level term for the fundamental, rapid transformation of political order, familiar from world-history curricula."
+      },
+      {
+        "concept": "state",
+        "wikipedia_article": "State (polity)",
+        "brief_rationale": "The primary institutional actor in political sociology; students encounter it in civics and introductory social science."
+      },
+      {
+        "concept": "ideology",
+        "wikipedia_article": "Ideology",
+        "brief_rationale": "A widely used term for coherent systems of political belief that shape collective action and institutional design."
+      },
+      {
+        "concept": "nationalism",
+        "wikipedia_article": "Nationalism",
+        "brief_rationale": "One of the most pervasive political forces of the modern era; covered extensively in high-school history and civics."
+      },
+      {
+        "concept": "election",
+        "wikipedia_article": "Election",
+        "brief_rationale": "The principal formal mechanism through which citizens express political preferences in representative systems."
+      },
+      {
+        "concept": "political party",
+        "wikipedia_article": "Political party",
+        "brief_rationale": "Core organizational unit of competitive politics; familiar to any student who has followed contemporary affairs."
+      },
+      {
+        "concept": "protest",
+        "wikipedia_article": "Protest",
+        "brief_rationale": "The most visible form of contentious collective action; widely covered in media and introductory social science courses."
+      },
+      {
+        "concept": "inequality",
+        "wikipedia_article": "Social inequality",
+        "brief_rationale": "The unequal distribution of resources and opportunities; a gateway concept linking sociology and political analysis."
+      },
+      {
+        "concept": "citizenship",
+        "wikipedia_article": "Citizenship",
+        "brief_rationale": "The legal and normative status that defines membership in a political community and associated rights and obligations."
+      },
+      {
+        "concept": "bureaucracy",
+        "wikipedia_article": "Bureaucracy",
+        "brief_rationale": "The organizational form of modern states and large institutions; introduced in introductory sociology and political science."
+      }
+    ],
+    "L2": [
+      {
+        "concept": "hegemony",
+        "wikipedia_article": "Hegemony",
+        "brief_rationale": "Refers to the dominance of one group over others through cultural and ideological leadership rather than coercion alone; key undergraduate term."
+      },
+      {
+        "concept": "civil society",
+        "wikipedia_article": "Civil society",
+        "brief_rationale": "The sphere of voluntary associations and organizations distinct from the state and market; central to democratic theory and social movement studies."
+      },
+      {
+        "concept": "political socialization",
+        "wikipedia_article": "Political socialization",
+        "brief_rationale": "The process by which individuals acquire political attitudes, values, and behaviors through family, education, media, and peers."
+      },
+      {
+        "concept": "social movement",
+        "wikipedia_article": "Social movement",
+        "brief_rationale": "Collective, organized efforts by groups to promote or resist social and political change; a core topic in undergraduate political sociology."
+      },
+      {
+        "concept": "legitimacy",
+        "wikipedia_article": "Legitimacy (political)",
+        "brief_rationale": "The perceived rightfulness of a political order or authority; distinguishes stable governance from mere coercion."
+      },
+      {
+        "concept": "collective action",
+        "wikipedia_article": "Collective action",
+        "brief_rationale": "Coordinated group behavior aimed at shared goals; central to understanding both social movements and political organization."
+      },
+      {
+        "concept": "voting behavior",
+        "wikipedia_article": "Voting behavior",
+        "brief_rationale": "The study of why and how individuals vote; links micro-level attitudes to macro-level political outcomes."
+      },
+      {
+        "concept": "political culture",
+        "wikipedia_article": "Political culture",
+        "brief_rationale": "Shared values, beliefs, and norms that shape a society's political life; bridges cultural sociology and political analysis."
+      },
+      {
+        "concept": "elite theory",
+        "wikipedia_article": "Elite theory",
+        "brief_rationale": "The argument that power is concentrated in a small ruling class rather than distributed among the populace; a standard theoretical position in the field."
+      },
+      {
+        "concept": "pluralism",
+        "wikipedia_article": "Pluralism (political theory)",
+        "brief_rationale": "The view that power is dispersed among competing interest groups; a major alternative to elite and class theories in political sociology."
+      },
+      {
+        "concept": "authoritarianism",
+        "wikipedia_article": "Authoritarianism",
+        "brief_rationale": "A form of government characterized by strong central power and limited political freedoms; commonly contrasted with democracy in undergraduate courses."
+      },
+      {
+        "concept": "welfare state",
+        "wikipedia_article": "Welfare state",
+        "brief_rationale": "A governmental system providing citizens with social protections; central to debates about the relationship between capitalism and democracy."
+      },
+      {
+        "concept": "interest group",
+        "wikipedia_article": "Advocacy group",
+        "brief_rationale": "Organizations that seek to influence political decisions on behalf of particular constituencies; a key actor in pluralist models of democracy."
+      }
+    ],
+    "L3": [
+      {
+        "concept": "Weber's types of authority",
+        "wikipedia_article": "Three types of authority",
+        "brief_rationale": "Weber's tripartite classification of legitimate domination — traditional, charismatic, and rational-legal — is foundational for understanding how political orders sustain themselves."
+      },
+      {
+        "concept": "Gramsci's cultural hegemony",
+        "wikipedia_article": "Cultural hegemony",
+        "brief_rationale": "Gramsci's elaboration of how dominant classes maintain power through ideological and cultural leadership rather than force alone; indispensable for critical political sociology."
+      },
+      {
+        "concept": "relative deprivation",
+        "wikipedia_article": "Relative deprivation",
+        "brief_rationale": "The perception of disadvantage relative to a reference group; a leading micro-level explanation of grievance-based mobilization and collective unrest."
+      },
+      {
+        "concept": "resource mobilization theory",
+        "wikipedia_article": "Resource mobilization",
+        "brief_rationale": "A theoretical framework explaining social movements in terms of the strategic acquisition and deployment of resources such as money, networks, and media access."
+      },
+      {
+        "concept": "political opportunity structure",
+        "wikipedia_article": "Political opportunity",
+        "brief_rationale": "The set of environmental factors — openness of institutions, elite alignments, presence of allies — that shape the prospects for successful collective action."
+      },
+      {
+        "concept": "Michels' iron law of oligarchy",
+        "wikipedia_article": "Iron law of oligarchy",
+        "brief_rationale": "Robert Michels' argument that all organizations, including democratic ones, inevitably develop oligarchic leadership structures."
+      },
+      {
+        "concept": "Mills' power elite",
+        "wikipedia_article": "The Power Elite",
+        "brief_rationale": "C. Wright Mills' thesis that American society is dominated by an interlocking elite of military, corporate, and political leaders; a landmark in elite-power analysis."
+      },
+      {
+        "concept": "collective identity",
+        "wikipedia_article": "Collective identity",
+        "brief_rationale": "The shared sense of 'we-ness' that binds movement participants together; a key cultural and constructivist contribution to social movement theory."
+      },
+      {
+        "concept": "framing theory",
+        "wikipedia_article": "Framing (social sciences)",
+        "brief_rationale": "The process by which social movements and political actors construct interpretive frames to mobilize supporters and define grievances and goals."
+      },
+      {
+        "concept": "democratization",
+        "wikipedia_article": "Democratization",
+        "brief_rationale": "The process by which regimes transition toward more democratic forms of governance; central to comparative politics and macrosociology."
+      },
+      {
+        "concept": "state capacity",
+        "wikipedia_article": "State capacity",
+        "brief_rationale": "The ability of a state to implement policies, extract resources, and maintain order; a key variable in explanations of political development and regime stability."
+      },
+      {
+        "concept": "clientelism",
+        "wikipedia_article": "Clientelism",
+        "brief_rationale": "The exchange of goods or services for political support between patrons and clients; a pervasive mechanism structuring political behavior especially in developing democracies."
+      }
+    ],
+    "L4": [
+      {
+        "concept": "Bourdieu's political field",
+        "wikipedia_article": "Field theory (sociology)",
+        "brief_rationale": "Bourdieu's application of field theory to politics, analyzing how agents compete for position using various forms of capital within a semi-autonomous political space."
+      },
+      {
+        "concept": "Skocpol's states and social revolutions",
+        "wikipedia_article": "States and Social Revolutions",
+        "brief_rationale": "Theda Skocpol's structural comparative analysis of the French, Russian, and Chinese revolutions, centering state breakdown and agrarian class conflict rather than ideology."
+      },
+      {
+        "concept": "Tilly's war-making and state-making",
+        "wikipedia_article": "War makes the state",
+        "brief_rationale": "Charles Tilly's argument that European states developed primarily through the reciprocal dynamics of organized violence and revenue extraction; a foundational thesis in historical political sociology."
+      },
+      {
+        "concept": "Poulantzas's relative autonomy of the state",
+        "wikipedia_article": "Nicos Poulantzas",
+        "brief_rationale": "Poulantzas's structuralist Marxist argument that the capitalist state maintains a degree of autonomy from individual capitalists while still serving overall class interests."
+      },
+      {
+        "concept": "Esping-Andersen's welfare state regimes",
+        "wikipedia_article": "The Three Worlds of Welfare Capitalism",
+        "brief_rationale": "Esping-Andersen's typology of liberal, social-democratic, and conservative welfare regimes based on degrees of decommodification; a canonical contribution to comparative political sociology."
+      },
+      {
+        "concept": "Mann's sources of social power",
+        "wikipedia_article": "The Sources of Social Power",
+        "brief_rationale": "Michael Mann's framework analyzing power through four overlapping networks — ideological, economic, military, and political — offering a non-reductionist account of historical change."
+      },
+      {
+        "concept": "Lipset's political man",
+        "wikipedia_article": "Political Man",
+        "brief_rationale": "Seymour Martin Lipset's classic analysis linking economic development, social structure, and the conditions for stable democracy, including his thesis on working-class authoritarianism."
+      },
+      {
+        "concept": "Habermas's public sphere",
+        "wikipedia_article": "Public sphere",
+        "brief_rationale": "Habermas's concept of a communicative space between state and private life where rational-critical debate can legitimize democratic norms; central to political sociology of media and democracy."
+      },
+      {
+        "concept": "McAdam's political process model",
+        "wikipedia_article": "Political process theory",
+        "brief_rationale": "Doug McAdam's synthesis integrating political opportunity structures, organizational strength, and cognitive liberation as necessary conditions for successful social movements."
+      },
+      {
+        "concept": "neo-corporatism",
+        "wikipedia_article": "Corporatism",
+        "brief_rationale": "An arrangement in which the state formally incorporates organized peak associations of business and labor into policy-making; central to comparative political economy of advanced democracies."
+      },
+      {
+        "concept": "racial formation theory",
+        "wikipedia_article": "Racial formation theory",
+        "brief_rationale": "Omi and Winant's framework understanding race as a sociohistorical process through which racial categories are created, transformed, and contested through political and social conflict."
+      },
+      {
+        "concept": "Gaventa's power cube",
+        "wikipedia_article": "Power (social and political)",
+        "brief_rationale": "John Gaventa's three-dimensional extension of Lukes's power framework, mapping visible, hidden, and invisible forms of power across local, national, and global spaces."
+      }
+    ]
+  }
+}

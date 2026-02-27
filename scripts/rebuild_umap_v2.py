@@ -1,26 +1,29 @@
 #!/usr/bin/env python3
 """
-Rebuild UMAP projections from article embeddings and transform question
-embeddings into the same 2D space.
+Rebuild UMAP projections by projecting articles AND questions TOGETHER.
 
-This ensures articles and questions share the same coordinate system.
+CRITICAL: Articles and questions are projected in ONE batch to ensure they
+share exactly the same 2D coordinate space. This is essential for:
+  - Questions appearing at semantically correct positions among articles
+  - Bounding box calculations based on question positions
+  - Consistent coordinate system across the entire visualization
 
 Steps:
   1. Load article embeddings (250K × 768, google/embeddinggemma-300m)
-  2. Fit UMAP on article embeddings only
-  3. Load question embeddings (949 × 768, same model)
-  4. Transform question embeddings through fitted UMAP
+  2. Load question embeddings (~950 × 768, same model)
+  3. Concatenate into single matrix and fit_transform UMAP on ALL points
+  4. Split back into article and question coordinates
   5. Normalize everything to [0, 1]
   6. Save reducer, coordinates, bounds
 
 Input:
   - embeddings/wikipedia_embeddings.pkl (250K articles)
-  - embeddings/question_embeddings_949.pkl (949 questions)
+  - embeddings/question_embeddings_949.pkl (~950 questions)
 
 Output:
   - embeddings/umap_reducer.pkl — trained UMAP model
   - embeddings/umap_article_coords.pkl — (250K, 2) normalized article coords
-  - embeddings/umap_question_coords.pkl — (949, 2) normalized question coords
+  - embeddings/umap_question_coords.pkl — (~950, 2) normalized question coords
   - embeddings/umap_bounds.pkl — coordinate bounds for normalization
 
 Usage:
@@ -46,7 +49,7 @@ EMBEDDINGS_DIR = PROJECT_ROOT / "embeddings"
 
 def main():
     print("=" * 70)
-    print("UMAP REBUILD (Articles + Questions)")
+    print("UMAP REBUILD (Articles + Questions JOINT PROJECTION)")
     print("=" * 70)
     print(f"Started: {datetime.now()}")
     print()
@@ -58,21 +61,62 @@ def main():
 
     article_embeddings = wiki_data["embeddings"]
     article_model = wiki_data.get("model", "unknown")
+    n_articles = len(article_embeddings)
     print(f"  Articles: {article_embeddings.shape} (model: {article_model})")
 
     nan_mask = np.isnan(article_embeddings).any(axis=1)
     nan_count = int(nan_mask.sum())
     if nan_count > 0:
         print(
-            f"  ⚠ {nan_count:,} rows have NaN ({nan_count / len(article_embeddings) * 100:.1f}%)"
+            f"  Warning: {nan_count:,} rows have NaN ({nan_count / len(article_embeddings) * 100:.1f}%)"
         )
         print(f"  Replacing NaN rows with zero vectors for UMAP stability")
         article_embeddings = article_embeddings.copy()
         article_embeddings[nan_mask] = 0.0
 
-    # ── Step 2: Fit UMAP on articles ──
-    print("\nStep 2: Fitting UMAP on article embeddings...")
-    print("  This will take 30-60 minutes for 250K articles...")
+    # ── Step 2: Load question embeddings ──
+    print("\nStep 2: Loading question embeddings...")
+
+    # Try multiple possible question embedding file names
+    question_file_candidates = [
+        "question_embeddings_949.pkl",
+        "question_embeddings.pkl",
+    ]
+    q_data = None
+    for fname in question_file_candidates:
+        fpath = EMBEDDINGS_DIR / fname
+        if fpath.exists():
+            with open(fpath, "rb") as f:
+                q_data = pickle.load(f)
+            print(f"  Loaded from: {fname}")
+            break
+
+    if q_data is None:
+        print(f"  ERROR: No question embeddings found. Tried: {question_file_candidates}")
+        print(f"  Run embed_questions.py first.")
+        sys.exit(1)
+
+    question_embeddings = q_data["embeddings"]
+    question_ids = q_data["question_ids"]
+    question_model = q_data.get("model", "unknown")
+    n_questions = len(question_embeddings)
+    print(f"  Questions: {question_embeddings.shape} (model: {question_model})")
+
+    # Verify same model
+    if article_model != "unknown" and question_model != "unknown":
+        assert article_model == question_model, (
+            f"Model mismatch! Articles: {article_model}, Questions: {question_model}"
+        )
+        print(f"  Model match confirmed: {article_model}")
+
+    # ── Step 3: JOINT UMAP projection (articles + questions TOGETHER) ──
+    print("\nStep 3: Joint UMAP projection (articles + questions TOGETHER)...")
+    print(f"  Concatenating {n_articles:,} articles + {n_questions:,} questions = {n_articles + n_questions:,} total points")
+    print("  This will take 30-60 minutes...")
+
+    # Concatenate embeddings: articles first, then questions
+    combined_embeddings = np.vstack([article_embeddings, question_embeddings])
+    print(f"  Combined embeddings shape: {combined_embeddings.shape}")
 
     import umap
 
@@ -83,57 +127,41 @@ def main():
         "metric": "cosine",
         "random_state": 42,
     }
-    print(f"  Params: {umap_params}")
+    print(f"  UMAP params: {umap_params}")
 
     umap_start = time.time()
     reducer = umap.UMAP(**umap_params)
-    article_coords_raw = reducer.fit_transform(article_embeddings)
+    combined_coords_raw = reducer.fit_transform(combined_embeddings)
     umap_time = time.time() - umap_start
 
     print(f"  UMAP complete in {umap_time / 60:.1f} min")
-    print(f"  Article coords shape: {article_coords_raw.shape}")
+    print(f"  Combined coords shape: {combined_coords_raw.shape}")
+
+    # Split back into articles and questions
+    article_coords_raw = combined_coords_raw[:n_articles]
+    question_coords_raw = combined_coords_raw[n_articles:]
+
+    print(f"\nStep 4: Splitting coordinates...")
+    print(f"  Article coords: {article_coords_raw.shape}")
     print(
-        f"  Raw range: x=[{article_coords_raw[:, 0].min():.2f}, {article_coords_raw[:, 0].max():.2f}] "
+        f"    Raw range: x=[{article_coords_raw[:, 0].min():.2f}, {article_coords_raw[:, 0].max():.2f}] "
         f"y=[{article_coords_raw[:, 1].min():.2f}, {article_coords_raw[:, 1].max():.2f}]"
     )
-
-    # ── Step 3: Load question embeddings ──
-    print("\nStep 3: Loading question embeddings...")
-    with open(EMBEDDINGS_DIR / "question_embeddings_949.pkl", "rb") as f:
-        q_data = pickle.load(f)
-
-    question_embeddings = q_data["embeddings"]
-    question_ids = q_data["question_ids"]
-    question_model = q_data.get("model", "unknown")
-    print(f"  Questions: {question_embeddings.shape} (model: {question_model})")
-
-    # Verify same model
-    assert article_model == question_model, (
-        f"Model mismatch! Articles: {article_model}, Questions: {question_model}"
-    )
-    print(f"  ✓ Same model: {article_model}")
-
-    # ── Step 4: Transform questions through UMAP ──
-    print("\nStep 4: Transforming question embeddings through UMAP...")
-    transform_start = time.time()
-    question_coords_raw = reducer.transform(question_embeddings)
-    transform_time = time.time() - transform_start
-
-    print(f"  Transform complete in {transform_time:.1f}s")
-    print(f"  Question coords shape: {question_coords_raw.shape}")
+    print(f"  Question coords: {question_coords_raw.shape}")
     print(
-        f"  Raw range: x=[{question_coords_raw[:, 0].min():.2f}, {question_coords_raw[:, 0].max():.2f}] "
+        f"    Raw range: x=[{question_coords_raw[:, 0].min():.2f}, {question_coords_raw[:, 0].max():.2f}] "
         f"y=[{question_coords_raw[:, 1].min():.2f}, {question_coords_raw[:, 1].max():.2f}]"
     )
 
     # ── Step 5: Normalize to [0, 1] ──
     print("\nStep 5: Normalizing coordinates to [0, 1]...")
 
-    # Use article bounds for normalization (articles define the space)
-    x_min = article_coords_raw[:, 0].min()
-    x_max = article_coords_raw[:, 0].max()
-    y_min = article_coords_raw[:, 1].min()
-    y_max = article_coords_raw[:, 1].max()
+    # Use combined bounds for normalization (both articles AND questions define the space)
+    all_coords_raw = np.vstack([article_coords_raw, question_coords_raw])
+    x_min = all_coords_raw[:, 0].min()
+    x_max = all_coords_raw[:, 0].max()
+    y_min = all_coords_raw[:, 1].min()
+    y_max = all_coords_raw[:, 1].max()
     x_range = x_max - x_min
     y_range = y_max - y_min
 
@@ -238,10 +266,11 @@ def main():
 
     # ── Summary ──
     print(f"\n{'=' * 70}")
-    print("✓ UMAP REBUILD COMPLETE")
+    print("UMAP JOINT PROJECTION COMPLETE")
     print(f"{'=' * 70}")
-    print(f"  Articles: {article_coords.shape[0]:,} points in [0,1]²")
-    print(f"  Questions: {question_coords.shape[0]:,} points in [0,1]²")
+    print(f"  Articles: {article_coords.shape[0]:,} points in [0,1]^2")
+    print(f"  Questions: {question_coords.shape[0]:,} points in [0,1]^2")
+    print(f"  Total projected together: {article_coords.shape[0] + question_coords.shape[0]:,}")
     print(f"  Model: {article_model}")
     print(f"  UMAP time: {umap_time / 60:.1f} min")
     print(
@@ -250,7 +279,10 @@ def main():
     )
     print(f"  Finished: {datetime.now()}")
     print()
-    print("Next: Run scripts/assign_domains_rag.py to assign articles to domains")
+    print("Next steps:")
+    print("  1. Run scripts/flatten_coordinates.py --mu 0.75")
+    print("  2. Run scripts/compute_bounding_boxes.py")
+    print("  3. Run scripts/export_domain_bundles.py")
 
 
 if __name__ == "__main__":

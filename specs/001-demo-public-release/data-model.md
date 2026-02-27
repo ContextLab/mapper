@@ -33,11 +33,13 @@ of their parent. "All" has `parent_id: null` and `level: "all"`.
 **Lifecycle**: Static — defined at build time, immutable at runtime.
 
 **Validation rules**:
-- `question_ids.length === 50` for every domain
+- `question_ids.length === 50` for every domain (per-file; own questions only)
 - Sub-domain regions MUST be spatially contained within parent region
 - "All" region spans the full embedding space (0–1 on both axes)
-- Every `question_id` in a general domain MUST reference either a child
-  sub-domain question or a unique general question
+- At runtime, domains aggregate questions from all descendants on-the-fly:
+  a parent domain serves its own 50 questions plus all child sub-domain
+  questions; "all" serves its own 50 interdisciplinary questions plus
+  every parent and sub-domain's questions (see CL-049)
 
 **Hierarchy** (from spec):
 

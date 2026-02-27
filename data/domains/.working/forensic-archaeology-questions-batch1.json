@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "Which broad discipline applies scientific principles such as chemistry, biology, and physics to support legal proceedings and criminal investigations?",
+    "correct_answer": "Forensic science, which uses scientific methods to collect, preserve, and analyze evidence for courts.",
+    "distractors": [
+      "Jurisprudence, which studies the philosophical foundations and theoretical principles underlying legal systems worldwide.",
+      "Criminology, which examines the social and psychological causes of criminal behavior in human populations.",
+      "Epidemiology, which investigates the distribution and determinants of disease outbreaks across communities."
+    ],
+    "difficulty": 1,
+    "source_article": "Forensic science",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["forensic science"]
+  },
+  {
+    "question_text": "Why is archaeological excavation often described as a destructive science?",
+    "correct_answer": "Because the same area of ground cannot be excavated twice, so the original context is destroyed during the process.",
+    "distractors": [
+      "Because chemical reagents used during artifact conservation permanently alter the molecular composition of recovered materials.",
+      "Because heavy earthmoving machinery compacts surrounding soil layers, making adjacent areas unsuitable for future investigation.",
+      "Because exposure to sunlight during fieldwork causes irreversible photochemical degradation of all organic remains at the site."
+    ],
+    "difficulty": 1,
+    "source_article": "Excavation (archaeology)",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["excavation"]
+  },
+  {
+    "question_text": "In archaeology, how is an artifact distinguished from an ecofact?",
+    "correct_answer": "An artifact is made or shaped by humans, while an ecofact is a natural object like a seed or animal bone with no human modification.",
+    "distractors": [
+      "An artifact is found above ground level, while an ecofact is always recovered from deeply buried stratigraphic layers.",
+      "An artifact dates to the historical period, while an ecofact belongs exclusively to prehistoric geological formations.",
+      "An artifact is composed of inorganic minerals, while an ecofact consists entirely of synthetic or manufactured materials."
+    ],
+    "difficulty": 1,
+    "source_article": "Artifact (archaeology)",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["artifact"]
+  },
+  {
+    "question_text": "Approximately how many bones does the adult human skeleton contain, and how is it subdivided?",
+    "correct_answer": "About 206 bones, divided into the axial skeleton of 80 bones and the appendicular skeleton of 126 bones.",
+    "distractors": [
+      "About 350 bones, divided into the cranial skeleton of 150 bones and the postcranial skeleton of 200 bones.",
+      "About 120 bones, divided into the upper body skeleton of 60 bones and the lower body skeleton of 60 bones.",
+      "About 300 bones, divided into the cortical skeleton of 180 bones and the trabecular skeleton of 120 bones."
+    ],
+    "difficulty": 1,
+    "source_article": "Skeleton",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["skeleton"]
+  },
+  {
+    "question_text": "Who developed DNA profiling in 1984, and what was the first notable criminal justice outcome of this technique?",
+    "correct_answer": "Sir Alec Jeffreys at the University of Leicester; in 1986 it exonerated Richard Buckland, the first person cleared by DNA evidence.",
+    "distractors": [
+      "James Watson at Cambridge University; in 1990 it convicted the first serial offender through national database matching.",
+      "Kary Mullis at the University of California; in 1988 it identified remains from a mass disaster for the first time.",
+      "Francis Crick at King's College London; in 1985 it established paternity in the first internationally recognized custody dispute."
+    ],
+    "difficulty": 1,
+    "source_article": "DNA profiling",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["DNA evidence"]
+  },
+  {
+    "question_text": "What is a crime scene, and why must it be secured immediately upon discovery?",
+    "correct_answer": "A location associated with a committed crime; it must be secured to prevent contamination and maintain the integrity of physical evidence.",
+    "distractors": [
+      "A government forensic laboratory; it must be locked to prevent unauthorized staff from accessing restricted analytical instruments.",
+      "A courtroom where a trial takes place; it must be cleared to ensure jurors are not influenced by external media reports.",
+      "A police records office; it must be secured to protect confidential witness statements from unauthorized public disclosure."
+    ],
+    "difficulty": 1,
+    "source_article": "Crime scene",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["crime scene"]
+  },
+  {
+    "question_text": "What is the earliest archaeological evidence for deliberate human burial, and approximately when does it date to?",
+    "correct_answer": "Neanderthal graves dating back approximately 130,000 years, making burial among the earliest documented human cultural activities.",
+    "distractors": [
+      "Egyptian mummification chambers dating back approximately 10,000 years, marking the start of all mortuary ritual practices.",
+      "Roman catacombs dating back approximately 50,000 years, representing the first underground disposal of the deceased worldwide.",
+      "Mesopotamian cremation pits dating back approximately 500,000 years, establishing fire-based mortuary practice as the oldest tradition."
+    ],
+    "difficulty": 1,
+    "source_article": "Burial",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["burial"]
+  },
+  {
+    "question_text": "What is the half-life of carbon-14, and what does this value determine about the technique's effective range?",
+    "correct_answer": "About 5,730 years; this limits radiocarbon dating to organic materials up to roughly 60,000 years old.",
+    "distractors": [
+      "About 1,200 years; this restricts the technique to artifacts from the medieval period or later historical epochs.",
+      "About 50,000 years; this enables the method to date geological formations spanning hundreds of millions of years.",
+      "About 100 years; this confines the technique to modern forensic cases occurring within the last century only."
+    ],
+    "difficulty": 1,
+    "source_article": "Radiocarbon dating",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["carbon-14 dating"]
+  },
+  {
+    "question_text": "According to the Bournemouth Protocol, what defines a mass grave in forensic and legal contexts?",
+    "correct_answer": "A site containing more than one buried, submerged, or surface-scattered human remains where circumstances warrant investigation into the lawfulness of death or disposal.",
+    "distractors": [
+      "Any cemetery plot holding a single individual whose identity was never formally recorded by municipal civil registration authorities.",
+      "A purpose-built government mortuary facility designed to store unclaimed bodies pending identification by next of kin.",
+      "An ancient communal ossuary where bones were voluntarily deposited by families as part of accepted religious tradition."
+    ],
+    "difficulty": 1,
+    "source_article": "Mass grave",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["mass grave"]
+  },
+  {
+    "question_text": "When was the Universal Declaration of Human Rights adopted, and what body proclaimed it?",
+    "correct_answer": "On 10 December 1948 by the United Nations General Assembly, establishing fundamental rights to be universally protected.",
+    "distractors": [
+      "On 4 July 1776 by the Continental Congress, codifying individual liberties for citizens of newly independent states.",
+      "On 14 July 1789 by the French National Assembly, enshrining civil protections following the storming of the Bastille.",
+      "On 24 October 1945 by the International Court of Justice, mandating humanitarian law for all signatory nations."
+    ],
+    "difficulty": 1,
+    "source_article": "Human rights",
+    "domain_ids": ["forensic-archaeology"],
+    "concepts_tested": ["human rights"]
+  }
+]

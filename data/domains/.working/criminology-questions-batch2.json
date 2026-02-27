@@ -1,0 +1,132 @@
+[
+  {
+    "question_text": "What is parole in the criminal justice system?",
+    "correct_answer": "The supervised conditional release of a prisoner before the completion of their sentence.",
+    "distractors": [
+      "A court-ordered period of community supervision imposed instead of a prison sentence.",
+      "The formal legal process by which a convicted person appeals their criminal conviction.",
+      "A permanent release granted to inmates who demonstrate complete rehabilitation while imprisoned."
+    ],
+    "difficulty": 1,
+    "source_article": "Parole",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["parole"]
+  },
+  {
+    "question_text": "What is probation in criminal law?",
+    "correct_answer": "A court-ordered period of supervision served in the community instead of incarceration.",
+    "distractors": [
+      "The early conditional release of a prisoner who has served part of their sentence.",
+      "A mandatory review hearing that determines whether an inmate qualifies for early release.",
+      "A formal warning issued by police to first-time offenders in lieu of an arrest."
+    ],
+    "difficulty": 1,
+    "source_article": "Probation",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["probation"]
+  },
+  {
+    "question_text": "What are the three main components of the criminal justice system?",
+    "correct_answer": "Law enforcement, the courts, and corrections.",
+    "distractors": [
+      "Legislation, prosecution, and community rehabilitation services.",
+      "Criminal law, civil law, and administrative regulatory agencies.",
+      "Police academies, forensic laboratories, and parole boards."
+    ],
+    "difficulty": 1,
+    "source_article": "Criminal justice",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["criminal justice system"]
+  },
+  {
+    "question_text": "Deterrence theory in penology argues that crime can be prevented primarily through what mechanism?",
+    "correct_answer": "The threat of punishment that is certain, swift, and sufficiently severe.",
+    "distractors": [
+      "Comprehensive social welfare programs that address root causes of poverty and inequality.",
+      "Moral education campaigns designed to instill ethical values during early childhood development.",
+      "Intensive psychological counseling that rehabilitates offenders after their first criminal conviction."
+    ],
+    "difficulty": 2,
+    "source_article": "Deterrence (penology)",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["deterrence theory"]
+  },
+  {
+    "question_text": "What does the term recidivism refer to in criminology?",
+    "correct_answer": "A person's relapse into criminal behavior after receiving sanctions or intervention for a previous crime.",
+    "distractors": [
+      "The gradual process by which offenders permanently stop committing crimes and reintegrate into society.",
+      "An increase in the overall crime rate within a community due to weakened social institutions.",
+      "The transfer of criminal techniques between generations of offenders within the same family network."
+    ],
+    "difficulty": 2,
+    "source_article": "Recidivism",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["recidivism"]
+  },
+  {
+    "question_text": "Edwin Sutherland first defined white-collar crime in 1939 as a crime committed by whom?",
+    "correct_answer": "A person of respectability and high social status in the course of their occupation.",
+    "distractors": [
+      "A professional hacker using advanced technology to infiltrate corporate computer networks remotely.",
+      "An organized criminal group operating covertly within legitimate business structures for illegal profit.",
+      "A government official who abuses public authority to suppress political opposition and civil liberties."
+    ],
+    "difficulty": 2,
+    "source_article": "White-collar crime",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["white-collar crime"]
+  },
+  {
+    "question_text": "What is the primary goal of restorative justice as an approach to criminal justice?",
+    "correct_answer": "To repair the harm caused by crime through dialogue between victims, offenders, and the community.",
+    "distractors": [
+      "To impose the harshest possible sentence on offenders to deter future criminal behavior effectively.",
+      "To permanently remove dangerous offenders from society through extended mandatory incarceration periods.",
+      "To establish offender guilt through adversarial court proceedings and formal rules of criminal evidence."
+    ],
+    "difficulty": 2,
+    "source_article": "Restorative justice",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["restorative justice"]
+  },
+  {
+    "question_text": "Which of the following best describes organized crime?",
+    "correct_answer": "Planned criminal activity carried out by structured groups seeking profit through illegal enterprises.",
+    "distractors": [
+      "Spontaneous acts of violence committed by loosely connected individuals during periods of civil unrest.",
+      "Financial fraud committed independently by corporate executives exploiting their positions of trust.",
+      "Politically motivated terrorism orchestrated by ideological movements seeking to overthrow governments."
+    ],
+    "difficulty": 2,
+    "source_article": "Organized crime",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["organized crime"]
+  },
+  {
+    "question_text": "In Travis Hirschi's social control theory, what are the four bonds that prevent individuals from committing crime?",
+    "correct_answer": "Attachment, commitment, involvement, and belief.",
+    "distractors": [
+      "Fear, obedience, conformity, and punishment.",
+      "Education, employment, religion, and family.",
+      "Deterrence, rehabilitation, incapacitation, and retribution."
+    ],
+    "difficulty": 2,
+    "source_article": "Social control theory",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["social control theory"]
+  },
+  {
+    "question_text": "Criminal profiling is an investigative strategy used by law enforcement primarily to do what?",
+    "correct_answer": "Identify likely suspects by inferring offender characteristics from crime scene evidence.",
+    "distractors": [
+      "Gather physical forensic evidence such as fingerprints and DNA samples from crime scenes.",
+      "Conduct undercover surveillance operations to document criminal activity in real time.",
+      "Interview witnesses and victims to construct a detailed chronological timeline of events."
+    ],
+    "difficulty": 2,
+    "source_article": "Offender profiling",
+    "domain_ids": ["criminology"],
+    "concepts_tested": ["criminal profiling"]
+  }
+]

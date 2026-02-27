@@ -1,0 +1,266 @@
+{
+  "domain": "asian-history",
+  "parent_domain": "world-history",
+  "total_concepts": 50,
+  "distribution": { "L1": 13, "L2": 13, "L3": 12, "L4": 12 },
+  "concepts": {
+    "L1": [
+      {
+        "concept": "Silk Road",
+        "wikipedia_article": "Silk Road",
+        "brief_rationale": "The ancient trade network connecting Asia to the Mediterranean is universally known as a symbol of cross-cultural exchange."
+      },
+      {
+        "concept": "Mongol Empire",
+        "wikipedia_article": "Mongol Empire",
+        "brief_rationale": "The largest contiguous land empire in history, founded by Genghis Khan, is widely recognized by any educated person."
+      },
+      {
+        "concept": "Great Wall of China",
+        "wikipedia_article": "Great Wall of China",
+        "brief_rationale": "One of the most famous structures in human history, universally associated with Chinese imperial civilization."
+      },
+      {
+        "concept": "samurai",
+        "wikipedia_article": "Samurai",
+        "brief_rationale": "Japanese warrior class widely known through popular culture and film, universally recognizable as a symbol of feudal Japan."
+      },
+      {
+        "concept": "Mahatma Gandhi",
+        "wikipedia_article": "Mahatma Gandhi",
+        "brief_rationale": "The leader of India's independence movement is one of the most globally recognized historical figures of the 20th century."
+      },
+      {
+        "concept": "Taj Mahal",
+        "wikipedia_article": "Taj Mahal",
+        "brief_rationale": "One of the most recognized buildings in the world, built by the Mughal emperor Shah Jahan, a universal symbol of Indian civilization."
+      },
+      {
+        "concept": "Hiroshima and Nagasaki atomic bombings",
+        "wikipedia_article": "Atomic bombings of Hiroshima and Nagasaki",
+        "brief_rationale": "The 1945 nuclear attacks on Japan are among the most widely known events of the Second World War."
+      },
+      {
+        "concept": "Mao Zedong",
+        "wikipedia_article": "Mao Zedong",
+        "brief_rationale": "Founding leader of the People's Republic of China, one of the most consequential and widely recognized political figures of the 20th century."
+      },
+      {
+        "concept": "Confucius",
+        "wikipedia_article": "Confucius",
+        "brief_rationale": "The Chinese philosopher whose teachings shaped East Asian civilization is one of the most widely known figures in world history."
+      },
+      {
+        "concept": "Buddha",
+        "wikipedia_article": "Gautama Buddha",
+        "brief_rationale": "The founder of Buddhism is universally recognized, and the spread of Buddhism across Asia is a defining theme of Asian history."
+      },
+      {
+        "concept": "Genghis Khan",
+        "wikipedia_article": "Genghis Khan",
+        "brief_rationale": "The founder and first Great Khan of the Mongol Empire is one of the most recognizable conquerors in world history."
+      },
+      {
+        "concept": "Mughal Empire",
+        "wikipedia_article": "Mughal Empire",
+        "brief_rationale": "The vast Islamic empire that dominated South Asia for three centuries is widely known and associated with architectural and cultural achievements."
+      },
+      {
+        "concept": "Cold War in Asia",
+        "wikipedia_article": "Cold War in Asia",
+        "brief_rationale": "The Korean War, Vietnam War, and Chinese Revolution as Cold War flashpoints are broadly covered in general history education."
+      }
+    ],
+    "L2": [
+      {
+        "concept": "Meiji Restoration",
+        "wikipedia_article": "Meiji Restoration",
+        "brief_rationale": "Japan's 1868 modernization revolution is a foundational event for students of Japanese or modern Asian history."
+      },
+      {
+        "concept": "Opium Wars",
+        "wikipedia_article": "Opium Wars",
+        "brief_rationale": "The 19th-century conflicts between Britain and Qing China that opened China to foreign trade are a core topic in Asian history surveys."
+      },
+      {
+        "concept": "Indian independence",
+        "wikipedia_article": "Indian independence movement",
+        "brief_rationale": "The long campaign that ended British colonial rule in 1947 is essential knowledge for students of South Asian or decolonization history."
+      },
+      {
+        "concept": "Tang dynasty",
+        "wikipedia_article": "Tang dynasty",
+        "brief_rationale": "The Tang is widely regarded as a golden age of Chinese civilization and is a named period expected of students of Chinese history."
+      },
+      {
+        "concept": "Tokugawa shogunate",
+        "wikipedia_article": "Tokugawa shogunate",
+        "brief_rationale": "The Edo-period military government that unified and isolated Japan for over two centuries is fundamental to Japanese history students."
+      },
+      {
+        "concept": "Partition of India",
+        "wikipedia_article": "Partition of India",
+        "brief_rationale": "The 1947 division of British India into India and Pakistan, with mass displacement and violence, is a pivotal modern South Asian event."
+      },
+      {
+        "concept": "Korean War",
+        "wikipedia_article": "Korean War",
+        "brief_rationale": "The 1950–1953 conflict that divided Korea is a major Cold War event studied in both Asian and world history courses."
+      },
+      {
+        "concept": "Vietnam War",
+        "wikipedia_article": "Vietnam War",
+        "brief_rationale": "The prolonged conflict in Southeast Asia is a central event of 20th-century history, extensively covered in high school and university curricula."
+      },
+      {
+        "concept": "Khmer Empire",
+        "wikipedia_article": "Khmer Empire",
+        "brief_rationale": "The powerful Southeast Asian empire centered at Angkor Wat is a named civilization expected of students of Southeast Asian history."
+      },
+      {
+        "concept": "Qing dynasty",
+        "wikipedia_article": "Qing dynasty",
+        "brief_rationale": "The last imperial dynasty of China, whose decline and fall shaped modern Chinese history, is a foundational period in Chinese history studies."
+      },
+      {
+        "concept": "Ashoka",
+        "wikipedia_article": "Ashoka",
+        "brief_rationale": "The Mauryan emperor who converted to Buddhism and spread it across Asia is a key figure in South Asian and Buddhist history."
+      },
+      {
+        "concept": "Angkor Wat",
+        "wikipedia_article": "Angkor Wat",
+        "brief_rationale": "The iconic Khmer temple complex, the largest religious monument in the world, is widely known but requires specific historical context."
+      },
+      {
+        "concept": "Joseon dynasty",
+        "wikipedia_article": "Joseon",
+        "brief_rationale": "The long-lasting Korean dynastic state (1392–1897) that shaped Korean language, culture, and Confucian social structures is fundamental to Korean history."
+      }
+    ],
+    "L3": [
+      {
+        "concept": "Mandate of Heaven",
+        "wikipedia_article": "Mandate of Heaven",
+        "brief_rationale": "The Chinese political doctrine justifying dynastic authority requires understanding of how legitimacy, rebellion, and dynastic cycles were theorized in imperial China."
+      },
+      {
+        "concept": "tributary system (China)",
+        "wikipedia_article": "Tributary system of China",
+        "brief_rationale": "China's system of hierarchical diplomatic relations with neighboring states requires working knowledge of how the Sinocentric world order functioned in practice."
+      },
+      {
+        "concept": "Maurya Empire",
+        "wikipedia_article": "Maurya Empire",
+        "brief_rationale": "The first pan-Indian empire requires understanding of how it unified the subcontinent and served as the context for Ashoka's Buddhist conversion and governance."
+      },
+      {
+        "concept": "Sepoy Mutiny",
+        "wikipedia_article": "Indian Rebellion of 1857",
+        "brief_rationale": "The 1857 uprising against the British East India Company requires understanding of colonial grievances, its suppression, and why it marks the transition to direct Crown rule."
+      },
+      {
+        "concept": "Cultural Revolution",
+        "wikipedia_article": "Cultural Revolution",
+        "brief_rationale": "Mao's 1966–1976 campaign requires understanding the specific political dynamics, destruction of cultural heritage, and the persecution of intellectuals it entailed."
+      },
+      {
+        "concept": "Tiananmen Square protests",
+        "wikipedia_article": "1989 Tiananmen Square protests and massacre",
+        "brief_rationale": "The 1989 pro-democracy movement and its violent suppression requires understanding of the political context of post-Mao reform and CCP consolidation of power."
+      },
+      {
+        "concept": "Gupta Empire",
+        "wikipedia_article": "Gupta Empire",
+        "brief_rationale": "Often called the golden age of India, the Gupta period requires understanding of its achievements in mathematics, astronomy, literature, and Hindu philosophy."
+      },
+      {
+        "concept": "Edo period",
+        "wikipedia_article": "Edo period",
+        "brief_rationale": "Japan's era of enforced isolation under Tokugawa rule requires understanding of sakoku policy, economic development, and the cultural foundations of modern Japan."
+      },
+      {
+        "concept": "Pax Mongolica",
+        "wikipedia_article": "Pax Mongolica",
+        "brief_rationale": "The period of relative stability across the Mongol Empire enabling long-distance trade and cultural exchange requires understanding of how the empire functioned after Genghis Khan."
+      },
+      {
+        "concept": "Timurid Empire",
+        "wikipedia_article": "Timurid Empire",
+        "brief_rationale": "Tamerlane's empire and its culturally rich successor states require working knowledge of Central Asian history and the legacy of Mongol successor polities."
+      },
+      {
+        "concept": "Srivijaya",
+        "wikipedia_article": "Srivijaya",
+        "brief_rationale": "The maritime Buddhist empire of Southeast Asia requires understanding of the role of trade, religion, and sea routes in the political organization of island Southeast Asia."
+      },
+      {
+        "concept": "Great Leap Forward",
+        "wikipedia_article": "Great Leap Forward",
+        "brief_rationale": "Mao's catastrophic industrialization campaign (1958–1962) requires understanding of the scale of famine, ideological causes, and its place in PRC history."
+      }
+    ],
+    "L4": [
+      {
+        "concept": "Zhu Xi's Neo-Confucianism",
+        "wikipedia_article": "Neo-Confucianism",
+        "brief_rationale": "Zhu Xi's synthesis of Confucian ethics and metaphysics, which became state orthodoxy in China, Korea, and Japan, requires deep engagement with East Asian philosophical history."
+      },
+      {
+        "concept": "Kautilya's Arthashastra",
+        "wikipedia_article": "Arthashastra",
+        "brief_rationale": "This ancient Indian treatise on statecraft and economic policy attributed to Chanakya requires expert knowledge of classical South Asian political thought."
+      },
+      {
+        "concept": "White Lotus Society",
+        "wikipedia_article": "White Lotus",
+        "brief_rationale": "The millenarian Buddhist secret society and its role in repeated Chinese dynastic rebellions requires deep knowledge of popular religion and political resistance in imperial China."
+      },
+      {
+        "concept": "Ryukyuan Kingdom",
+        "wikipedia_article": "Ryukyu Kingdom",
+        "brief_rationale": "The maritime trading kingdom of the Ryukyu Islands and its complex tributary relations with both China and Japan requires specialist knowledge of East Asian regional history."
+      },
+      {
+        "concept": "Mughal mansabdari system",
+        "wikipedia_article": "Mansabdar",
+        "brief_rationale": "The Mughal administrative-military ranking system requires expert knowledge of how the empire organized governance, resource allocation, and nobility."
+      },
+      {
+        "concept": "Sirhak movement",
+        "wikipedia_article": "Silhak",
+        "brief_rationale": "The Korean practical learning movement of the 17th–19th centuries requires expert knowledge of how Korean scholars engaged critically with Confucian orthodoxy and internal reform."
+      },
+      {
+        "concept": "Qing Eight Banners system",
+        "wikipedia_article": "Eight Banners",
+        "brief_rationale": "The Manchu military-social organization that underpinned Qing conquest and rule requires deep understanding of how ethnic and military identity shaped dynastic governance."
+      },
+      {
+        "concept": "Ashoka's dhamma",
+        "wikipedia_article": "Dhamma (Ashoka)",
+        "brief_rationale": "Ashoka's specific concept of dhamma as imperial moral governance, distinct from Buddhist doctrine per se, requires scholarly engagement with the edicts and their interpretation."
+      },
+      {
+        "concept": "Indianization of Southeast Asia",
+        "wikipedia_article": "Indianization",
+        "brief_rationale": "The process by which Indian cultural, religious, and political forms spread across Southeast Asia requires deep understanding of how these transfers worked and what was adapted or rejected."
+      },
+      {
+        "concept": "Warring States period (China)",
+        "wikipedia_article": "Warring States period",
+        "brief_rationale": "The era of competing Chinese states that produced the Hundred Schools of Thought requires expert knowledge of how political fragmentation generated China's foundational philosophical traditions."
+      },
+      {
+        "concept": "Rashidun Caliphate's expansion into Central Asia",
+        "wikipedia_article": "Muslim conquests of Persia",
+        "brief_rationale": "The early Islamic conquest of Persia and subsequent spread into Central Asia requires deep understanding of how Arab-Islamic expansion transformed existing Zoroastrian and Buddhist civilizations."
+      },
+      {
+        "concept": "Bandung Conference",
+        "wikipedia_article": "Bandung Conference",
+        "brief_rationale": "The 1955 gathering of Asian and African nations that shaped the Non-Aligned Movement requires expert-level understanding of postcolonial geopolitics and Third World solidarity ideology."
+      }
+    ]
+  }
+}

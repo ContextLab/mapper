@@ -109,11 +109,41 @@ function generateShareImage(data) {
     ctx.globalAlpha = 1;
   }
 
-  // Draw Wikipedia articles as 1px gray dots
+  // Draw 50×50 grid lines for spatial reference
+  {
+    const N = 50;
+    ctx.strokeStyle = 'rgba(0, 0, 0, 0.08)';
+    ctx.lineWidth = 0.5;
+    for (let i = 1; i < N; i++) {
+      const x = (i / N) * W;
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, H);
+      ctx.stroke();
+    }
+    for (let i = 1; i < N; i++) {
+      const y = (i / N) * H;
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(W, y);
+      ctx.stroke();
+    }
+  }
+
+  // Draw Wikipedia articles as small gray dots (brighter)
   if (articles && articles.length > 0) {
-    ctx.fillStyle = 'rgba(148, 163, 184, 0.35)';
+    ctx.fillStyle = 'rgba(148, 163, 184, 0.55)';
     for (const a of articles) {
-      ctx.fillRect(a.x * W - 0.5, a.y * H - 0.5, 1, 1);
+      ctx.fillRect(a.x * W - 0.75, a.y * H - 0.75, 1.5, 1.5);
+    }
+  }
+
+  // Draw video markers as subtle small squares
+  const { videos } = data;
+  if (videos && videos.length > 0) {
+    ctx.fillStyle = 'rgba(148, 163, 184, 0.02)';
+    for (const v of videos) {
+      ctx.fillRect(v.x * W - 0.5, v.y * H - 0.5, 1, 1);
     }
   }
 
@@ -133,6 +163,47 @@ function generateShareImage(data) {
     }
   }
 
+  // Draw vertical colorbar legend (bottom-right corner)
+  {
+    const barW = 12;
+    const barH = 120;
+    const barX = W - barW - 20;
+    const barY = H - barH - 30;
+    const grad = ctx.createLinearGradient(barX, barY, barX, barY + barH);
+    // Top = high knowledge (green), bottom = low knowledge (red)
+    const [rH, gH, bH] = shareImageColor(1.0);
+    const [rM, gM, bM] = shareImageColor(0.5);
+    const [rL, gL, bL] = shareImageColor(0.0);
+    grad.addColorStop(0, `rgb(${rH},${gH},${bH})`);
+    grad.addColorStop(0.5, `rgb(${rM},${gM},${bM})`);
+    grad.addColorStop(1, `rgb(${rL},${gL},${bL})`);
+
+    ctx.fillStyle = grad;
+    ctx.fillRect(barX, barY, barW, barH);
+
+    // Border
+    ctx.strokeStyle = 'rgba(0, 0, 0, 0.2)';
+    ctx.lineWidth = 0.5;
+    ctx.strokeRect(barX, barY, barW, barH);
+
+    // Labels
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.6)';
+    ctx.font = '9px sans-serif';
+    ctx.textAlign = 'right';
+    ctx.fillText('High', barX - 4, barY + 8);
+    ctx.fillText('Low', barX - 4, barY + barH - 2);
+
+    // Title label
+    ctx.save();
+    ctx.translate(barX - 6, barY + barH / 2);
+    ctx.rotate(-Math.PI / 2);
+    ctx.textAlign = 'center';
+    ctx.font = '8px sans-serif';
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+    ctx.fillText('Estimated Knowledge', 0, -8);
+    ctx.restore();
+  }
+
   return canvas.toDataURL('image/png');
 }
 
@@ -146,7 +217,7 @@ export function showShareDialog() {
   if (totalAnswers < SHARE_MIN_ANSWERS || !expertiseAreas || expertiseAreas.length === 0) {
     const contentEl = modal.querySelector('.share-modal-content');
     const teaserUrl = 'https://context-lab.com/mapper';
-    const teaserText = 'Check out \u{1F5FA}\uFE0F Knowledge Mapper (https://context-lab.com/mapper): an interactive tool that maps out everything you know! Answer questions and watch a personalized map of YOUR knowledge take shape in real time.';
+    const teaserText = 'Check out \u{1F5FA}\uFE0F Knowledge Mapper: an interactive tool that maps out everything you know! Answer questions and watch a personalized map of YOUR knowledge take shape in real time.\n\nhttps://context-lab.com/mapper';
     const remaining = Math.max(0, SHARE_MIN_ANSWERS - totalAnswers);
     const progressNote = totalAnswers > 0 && remaining > 0
       ? `Answer ${remaining} more question${remaining !== 1 ? 's' : ''} to unlock your personalized share with top expertise areas!`
@@ -223,7 +294,7 @@ export function showShareDialog() {
   }
 
   // Compose share text
-  const shareText = `I mapped my knowledge with \u{1F5FA}\uFE0F Knowledge Mapper! My top areas: ${top3} https://context-lab.com/mapper`;
+  const shareText = `I mapped my knowledge with \u{1F5FA}\uFE0F Knowledge Mapper! My top areas: ${top3}\n\n\nhttps://context-lab.com/mapper`;
   const shareUrl = 'https://context-lab.com/mapper';
 
   // Populate modal

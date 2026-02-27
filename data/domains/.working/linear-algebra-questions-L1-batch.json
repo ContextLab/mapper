@@ -1,0 +1,80 @@
+[
+  {
+    "question_text": "In linear algebra, what is the identity matrix $I_n$?",
+    "correct_answer": "A square matrix with ones on the main diagonal and zeros elsewhere, analogous to multiplying by the number $1$",
+    "distractors": [
+      "A square matrix with zeros on the main diagonal and ones elsewhere, analogous to multiplying by the number $0$",
+      "A rectangular matrix with ones in every entry, used to preserve the dimensions of any matrix it multiplies",
+      "A square matrix with ones on the anti-diagonal and zeros elsewhere, analogous to reversing the order of entries"
+    ],
+    "difficulty": 1,
+    "source_article": "Identity matrix",
+    "domain_ids": ["linear-algebra"],
+    "concepts_tested": ["identity matrix", "diagonal entries", "multiplicative identity"]
+  },
+  {
+    "question_text": "What is the inverse of a matrix $A$, and what property defines it?",
+    "correct_answer": "A matrix $A^{-1}$ such that $AA^{-1} = A^{-1}A = I$; it exists only when $A$ is square with nonzero determinant",
+    "distractors": [
+      "A matrix $A^{-1}$ such that $A + A^{-1} = I$; it exists for any matrix including non-square rectangular matrices",
+      "A matrix $A^{-1}$ such that $AA^{-1} = A^{-1}A = 0$; it exists only when $A$ is square with zero determinant",
+      "A matrix $A^{-1}$ such that $AA^{-1} = A^{-1}A = A$; it exists only when $A$ is symmetric with positive entries"
+    ],
+    "difficulty": 1,
+    "source_article": "Invertible matrix",
+    "domain_ids": ["linear-algebra"],
+    "concepts_tested": ["inverse matrix", "invertibility", "determinant"]
+  },
+  {
+    "question_text": "What is the dot product of two vectors, and what type of quantity does it produce?",
+    "correct_answer": "An operation on two equal-length vectors that returns a single scalar by summing the products of corresponding entries",
+    "distractors": [
+      "An operation on two equal-length vectors that returns a new vector by multiplying the corresponding entries element-wise",
+      "An operation on two vectors of any length that returns a single scalar by summing all entries from both vectors",
+      "An operation on two equal-length vectors that returns a matrix by computing the outer product of their entries"
+    ],
+    "difficulty": 1,
+    "source_article": "Dot product",
+    "domain_ids": ["linear-algebra"],
+    "concepts_tested": ["dot product", "scalar product", "inner product"]
+  },
+  {
+    "question_text": "What is a vector space in linear algebra?",
+    "correct_answer": "A set of elements called vectors that can be added together and scaled by scalars, satisfying specific axioms",
+    "distractors": [
+      "A set of elements called vectors that can be multiplied together and divided by scalars, satisfying specific axioms",
+      "A set of elements called matrices that can be added together and scaled by scalars, without any required axioms",
+      "A set of elements called vectors that can only be scaled by integers, satisfying specific convergence conditions"
+    ],
+    "difficulty": 1,
+    "source_article": "Vector space",
+    "domain_ids": ["linear-algebra"],
+    "concepts_tested": ["vector space", "vector addition", "scalar multiplication", "vector axioms"]
+  },
+  {
+    "question_text": "What is a linear transformation between two vector spaces?",
+    "correct_answer": "A function that preserves vector addition and scalar multiplication, mapping vectors from one space to another",
+    "distractors": [
+      "A function that preserves vector magnitude and orientation, mapping vectors from one space to another",
+      "A function that preserves vector addition but reverses scalar multiplication, mapping vectors between two spaces",
+      "A function that reverses vector addition and scalar multiplication, mapping vectors from one space to another"
+    ],
+    "difficulty": 1,
+    "source_article": "Linear map",
+    "domain_ids": ["linear-algebra"],
+    "concepts_tested": ["linear transformation", "additivity", "homogeneity"]
+  },
+  {
+    "question_text": "What is Gaussian elimination, and what is its primary purpose in linear algebra?",
+    "correct_answer": "An algorithm using elementary row operations on a matrix to solve systems of linear equations by reducing to row echelon form",
+    "distractors": [
+      "An algorithm using elementary column operations on a matrix to find eigenvalues of linear systems by reducing to diagonal form",
+      "An algorithm using elementary row operations on a matrix to compute eigenvalues of systems by reducing to Jordan normal form",
+      "An algorithm using matrix multiplication operations on a matrix to solve systems of linear equations by reducing to symmetric form"
+    ],
+    "difficulty": 1,
+    "source_article": "Gaussian elimination",
+    "domain_ids": ["linear-algebra"],
+    "concepts_tested": ["Gaussian elimination", "row reduction", "row echelon form", "systems of linear equations"]
+  }
+]

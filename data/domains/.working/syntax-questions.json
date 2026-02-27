@@ -1,0 +1,652 @@
+[
+  {
+    "question_text": "In linguistics, what is grammar?",
+    "correct_answer": "The set of structural rules that governs the composition of words, phrases, and sentences in a language.",
+    "distractors": [
+      "The study of how speech sounds are produced and perceived by listeners across different dialects.",
+      "The collection of vocabulary items and their definitions catalogued in a language's dictionary.",
+      "The historical record of how a language's writing system evolved from pictographic to alphabetic forms."
+    ],
+    "difficulty": 1,
+    "source_article": "Grammar",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["grammar"]
+  },
+  {
+    "question_text": "In linguistics, what is a sentence?",
+    "correct_answer": "A grammatical unit consisting of one or more words that expresses a complete thought or proposition.",
+    "distractors": [
+      "A single morpheme that carries independent meaning and can function on its own in discourse.",
+      "A sequence of phonemes organized according to the sound rules of a particular language.",
+      "A written paragraph containing multiple related ideas connected by transitional expressions."
+    ],
+    "difficulty": 1,
+    "source_article": "Sentence (linguistics)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["sentence"]
+  },
+  {
+    "question_text": "What is a noun?",
+    "correct_answer": "A part of speech that denotes a person, place, thing, or idea and can serve as a sentence's subject or object.",
+    "distractors": [
+      "A part of speech that expresses an action, occurrence, or state of being within a clause.",
+      "A part of speech that modifies or describes a verb, an adjective, or another word of its kind.",
+      "A part of speech that connects phrases or clauses together to form compound sentences."
+    ],
+    "difficulty": 1,
+    "source_article": "Noun",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["noun"]
+  },
+  {
+    "question_text": "What is a verb?",
+    "correct_answer": "A part of speech that expresses an action, occurrence, or state of being and forms the core of the predicate.",
+    "distractors": [
+      "A part of speech that names a person, place, thing, or abstract idea in a sentence.",
+      "A part of speech that describes or modifies a noun by specifying its qualities or attributes.",
+      "A part of speech that links a noun to other words by indicating spatial or temporal relations."
+    ],
+    "difficulty": 1,
+    "source_article": "Verb",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["verb"]
+  },
+  {
+    "question_text": "What is an adjective?",
+    "correct_answer": "A part of speech that modifies a noun or pronoun by describing its qualities, quantities, or states.",
+    "distractors": [
+      "A part of speech that modifies a verb or another modifier by indicating manner, time, or degree.",
+      "A part of speech that substitutes for a noun phrase to avoid repetition in discourse.",
+      "A part of speech that expresses an action performed by the subject of a sentence."
+    ],
+    "difficulty": 1,
+    "source_article": "Adjective",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["adjective"]
+  },
+  {
+    "question_text": "What is an adverb?",
+    "correct_answer": "A part of speech that modifies a verb, adjective, or another adverb, often indicating manner, time, or degree.",
+    "distractors": [
+      "A part of speech that modifies a noun or pronoun by specifying qualities such as size or color.",
+      "A part of speech that connects two independent clauses to form a compound or complex sentence.",
+      "A part of speech that names a person, place, thing, or idea and functions as a subject."
+    ],
+    "difficulty": 1,
+    "source_article": "Adverb",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["adverb"]
+  },
+  {
+    "question_text": "In grammar, what is the subject of a sentence?",
+    "correct_answer": "The noun phrase that denotes the entity performing the action or being described by the predicate.",
+    "distractors": [
+      "The verb phrase that specifies what action is being carried out within the clause.",
+      "The noun phrase that receives the action expressed by the main verb of the clause.",
+      "The prepositional phrase that provides additional context about time, place, or manner."
+    ],
+    "difficulty": 1,
+    "source_article": "Subject (grammar)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["subject"]
+  },
+  {
+    "question_text": "In grammar, what is the object of a sentence?",
+    "correct_answer": "The noun phrase that receives the action of the verb or is affected by the predicate.",
+    "distractors": [
+      "The noun phrase that performs the action described by the verb in a clause.",
+      "The verb phrase that conveys the main action or state of being in a sentence.",
+      "The adverbial phrase that modifies the verb by expressing manner, place, or time."
+    ],
+    "difficulty": 1,
+    "source_article": "Object (grammar)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["object"]
+  },
+  {
+    "question_text": "What is a pronoun?",
+    "correct_answer": "A word that substitutes for a noun or noun phrase to avoid repetition, such as 'he', 'she', or 'they'.",
+    "distractors": [
+      "A word that modifies a verb by specifying the manner, frequency, or degree of an action.",
+      "A word that connects two clauses or phrases together, such as 'and', 'but', or 'because'.",
+      "A word that expresses a relation between a noun and other parts of the sentence."
+    ],
+    "difficulty": 1,
+    "source_article": "Pronoun",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["pronoun"]
+  },
+  {
+    "question_text": "What is a preposition?",
+    "correct_answer": "A function word that expresses a spatial, temporal, or logical relation between its complement and another element.",
+    "distractors": [
+      "A content word that names an action or state and serves as the core of a verbal predicate.",
+      "A function word that substitutes for a noun phrase and agrees in person and number with its antecedent.",
+      "A content word that modifies a noun by indicating a property such as color, size, or shape."
+    ],
+    "difficulty": 1,
+    "source_article": "Preposition and postposition",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["preposition"]
+  },
+  {
+    "question_text": "What is a conjunction in grammar?",
+    "correct_answer": "A word that connects words, phrases, or clauses, such as 'and', 'but', or 'because'.",
+    "distractors": [
+      "A word that replaces a noun or noun phrase to prevent redundancy within a sentence.",
+      "A word that modifies a verb by indicating the manner or time in which an action occurs.",
+      "A word that shows the relationship between a noun and other elements in a sentence."
+    ],
+    "difficulty": 1,
+    "source_article": "Conjunction (grammar)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["conjunction"]
+  },
+  {
+    "question_text": "What does 'word order' refer to in linguistics?",
+    "correct_answer": "The arrangement of words and constituents in a sentence, such as subject-verb-object order in English.",
+    "distractors": [
+      "The system of inflectional endings that mark grammatical relationships between words in a sentence.",
+      "The set of phonological rules that determine how individual sounds are sequenced within words.",
+      "The process by which new words are created through compounding, derivation, and borrowing."
+    ],
+    "difficulty": 1,
+    "source_article": "Word order",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["word order"]
+  },
+  {
+    "question_text": "What is a clause in grammar?",
+    "correct_answer": "A syntactic unit that contains a subject and a predicate, forming either a complete sentence or part of one.",
+    "distractors": [
+      "A single word that carries meaning and belongs to a specific grammatical category like noun or verb.",
+      "A group of words that functions as a unit but lacks either a subject or a predicate.",
+      "A minimal unit of sound that distinguishes one word from another in a given language."
+    ],
+    "difficulty": 1,
+    "source_article": "Clause",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["clause"]
+  },
+  {
+    "question_text": "What does 'phrase structure' describe in syntax?",
+    "correct_answer": "The hierarchical organization of words into nested phrases governed by grammatical rules.",
+    "distractors": [
+      "The linear sequence in which morphemes are attached to a root to form complex words.",
+      "The prosodic pattern of stressed and unstressed syllables within a spoken sentence.",
+      "The inventory of phonemes and their permissible combinations within a given language."
+    ],
+    "difficulty": 2,
+    "source_article": "Phrase structure grammar",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["phrase structure"]
+  },
+  {
+    "question_text": "What is a noun phrase?",
+    "correct_answer": "A syntactic constituent with a noun as its head, optionally accompanied by determiners, modifiers, and complements.",
+    "distractors": [
+      "A syntactic constituent with a verb as its head that includes the predicate and its associated arguments.",
+      "A syntactic constituent headed by a preposition that expresses a locative or temporal relationship.",
+      "A syntactic constituent headed by a complementizer that introduces an embedded subordinate clause."
+    ],
+    "difficulty": 2,
+    "source_article": "Noun phrase",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["noun phrase"]
+  },
+  {
+    "question_text": "What is a verb phrase?",
+    "correct_answer": "A syntactic constituent with a verb as its head that includes the verb and its complements and modifiers.",
+    "distractors": [
+      "A syntactic constituent with a noun as its head that includes determiners and adjectival modifiers.",
+      "A syntactic constituent headed by an auxiliary that only encodes tense and agreement features.",
+      "A syntactic constituent consisting solely of an adverb and the adjective it modifies."
+    ],
+    "difficulty": 2,
+    "source_article": "Verb phrase",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["verb phrase"]
+  },
+  {
+    "question_text": "What is a subordinate clause?",
+    "correct_answer": "A dependent clause that cannot stand alone as a sentence and is embedded within a main clause.",
+    "distractors": [
+      "An independent clause that expresses a complete thought and can function as a full sentence.",
+      "A coordinated clause linked to another clause by a conjunction like 'and' or 'but'.",
+      "A parenthetical clause inserted into a sentence for emphasis but syntactically optional."
+    ],
+    "difficulty": 2,
+    "source_article": "Subordinate clause",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["subordinate clause"]
+  },
+  {
+    "question_text": "What is a relative clause?",
+    "correct_answer": "A type of subordinate clause that modifies a noun, typically introduced by a relative pronoun such as 'who' or 'which'.",
+    "distractors": [
+      "A type of main clause that asks a question and requires inversion of the subject and auxiliary verb.",
+      "A type of subordinate clause that expresses the purpose or reason for the action in the main clause.",
+      "A type of coordinate clause that presents an alternative to the proposition in the preceding clause."
+    ],
+    "difficulty": 2,
+    "source_article": "Relative clause",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["relative clause"]
+  },
+  {
+    "question_text": "What is a morpheme?",
+    "correct_answer": "The smallest meaningful unit in a language, which may be a word or a part of a word like a prefix or suffix.",
+    "distractors": [
+      "The smallest unit of sound that can distinguish meaning between two words in a given language.",
+      "The largest unit of syntactic structure that contains a subject and a complete predicate.",
+      "The basic unit of written language that corresponds to a single letter or character."
+    ],
+    "difficulty": 2,
+    "source_article": "Morpheme",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["morpheme"]
+  },
+  {
+    "question_text": "What is grammatical tense?",
+    "correct_answer": "A grammatical category that locates a situation in time, distinguishing past, present, and future reference.",
+    "distractors": [
+      "A grammatical category that indicates whether the subject is singular, dual, or plural in number.",
+      "A grammatical category that marks whether the action is completed, ongoing, or habitual in nature.",
+      "A grammatical category that specifies the role of a noun phrase as agent, patient, or instrument."
+    ],
+    "difficulty": 2,
+    "source_article": "Grammatical tense",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["tense"]
+  },
+  {
+    "question_text": "What is grammatical aspect?",
+    "correct_answer": "A grammatical category expressing how an event extends over time, such as whether it is completed or ongoing.",
+    "distractors": [
+      "A grammatical category that locates an event at a specific point in past, present, or future time.",
+      "A grammatical category that indicates the speaker's attitude toward the truth of a proposition.",
+      "A grammatical category that marks the syntactic role of a noun phrase within a clause."
+    ],
+    "difficulty": 2,
+    "source_article": "Grammatical aspect",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["aspect"]
+  },
+  {
+    "question_text": "What is grammatical agreement?",
+    "correct_answer": "The correspondence of grammatical features such as person, number, or gender between related words in a sentence.",
+    "distractors": [
+      "The process by which a verb assigns a thematic role like agent or patient to its noun phrase arguments.",
+      "The phenomenon in which a pronoun takes on the reference of a previously mentioned noun phrase.",
+      "The rule requiring that the main verb of every clause must be marked for tense and aspect."
+    ],
+    "difficulty": 2,
+    "source_article": "Agreement (linguistics)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["agreement"]
+  },
+  {
+    "question_text": "What is grammatical case?",
+    "correct_answer": "A system of morphological marking on nouns or pronouns that indicates their grammatical role in a clause.",
+    "distractors": [
+      "A system of verb inflection that encodes the time reference and aspect of an event.",
+      "A system of word order rules that determines the linear position of constituents in a sentence.",
+      "A system of prosodic features that signals question versus statement intonation in speech."
+    ],
+    "difficulty": 2,
+    "source_article": "Grammatical case",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["case"]
+  },
+  {
+    "question_text": "What does 'constituency' refer to in syntax?",
+    "correct_answer": "The grouping of words into hierarchical syntactic units called constituents that function as single blocks.",
+    "distractors": [
+      "The linear ordering of morphemes within a single word from root to outermost affix.",
+      "The assignment of thematic roles such as agent and patient to arguments of a predicate.",
+      "The phonological process by which adjacent sounds influence each other within an utterance."
+    ],
+    "difficulty": 2,
+    "source_article": "Constituent (linguistics)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["constituency"]
+  },
+  {
+    "question_text": "What is a complementizer?",
+    "correct_answer": "A function word such as 'that' or 'whether' that introduces a complement clause and marks its type.",
+    "distractors": [
+      "A content word that serves as the main predicate of a clause and assigns roles to its arguments.",
+      "A function word such as 'the' or 'a' that specifies the definiteness of a noun phrase.",
+      "A bound morpheme attached to a verb stem that indicates tense, aspect, or agreement features."
+    ],
+    "difficulty": 2,
+    "source_article": "Complementizer",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["complementizer"]
+  },
+  {
+    "question_text": "What is the passive voice?",
+    "correct_answer": "A grammatical construction in which the patient or theme of the verb is promoted to subject position.",
+    "distractors": [
+      "A grammatical construction in which the agent performs the action directly on the object.",
+      "A grammatical construction in which the verb is omitted and understood from surrounding context.",
+      "A grammatical construction in which an auxiliary verb carries tense while the main verb is bare."
+    ],
+    "difficulty": 2,
+    "source_article": "Passive voice",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["passive voice"]
+  },
+  {
+    "question_text": "In generative syntax, what does X-bar theory propose?",
+    "correct_answer": "That every phrase has a uniform structure consisting of a head, an optional specifier, and an optional complement.",
+    "distractors": [
+      "That every phrase is generated by a finite-state automaton that reads words sequentially from left to right.",
+      "That every phrase is headed by a functional category such as tense, complementizer, or determiner only.",
+      "That every phrase must contain both a subject and a predicate to qualify as a valid syntactic unit."
+    ],
+    "difficulty": 3,
+    "source_article": "X-bar theory",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["X-bar theory"]
+  },
+  {
+    "question_text": "What does binding theory in syntax regulate?",
+    "correct_answer": "The distribution of anaphors, pronouns, and referential expressions based on their structural relationships within a clause.",
+    "distractors": [
+      "The assignment of nominative and accusative case to noun phrases depending on their position in the tree.",
+      "The movement of wh-phrases from their base position to the specifier of the complementizer phrase.",
+      "The selection of complements by lexical heads based on categorical and semantic compatibility requirements."
+    ],
+    "difficulty": 3,
+    "source_article": "Binding (linguistics)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["binding theory"]
+  },
+  {
+    "question_text": "What is wh-movement in syntax?",
+    "correct_answer": "A transformational operation that displaces an interrogative or relative phrase to a clause-initial position, leaving a trace or copy.",
+    "distractors": [
+      "A phonological process that reduces unstressed function words to clitics attached to adjacent content words.",
+      "A morphological operation that converts a declarative verb form into its corresponding interrogative inflection.",
+      "A semantic mechanism that assigns scope to quantified noun phrases relative to other operators in the clause."
+    ],
+    "difficulty": 3,
+    "source_article": "Wh-movement",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["wh-movement"]
+  },
+  {
+    "question_text": "What is c-command in syntactic theory?",
+    "correct_answer": "A structural relation where node A c-commands node B if A's sister either is B or contains B within the tree.",
+    "distractors": [
+      "A structural relation where node A dominates node B if every path from the root passes through A.",
+      "A structural relation where node A precedes node B if A appears to the left of B in linear order.",
+      "A structural relation where node A governs node B if A is the closest head that assigns features to B."
+    ],
+    "difficulty": 3,
+    "source_article": "C-command",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["c-command"]
+  },
+  {
+    "question_text": "What is a theta role in generative grammar?",
+    "correct_answer": "A semantic role such as agent, patient, or theme that a predicate assigns to each of its arguments.",
+    "distractors": [
+      "A syntactic position such as specifier, head, or complement that a word occupies within a phrase.",
+      "A morphological feature such as person, number, or gender that must be checked in the course of a derivation.",
+      "A phonological tone pattern assigned to syllables to distinguish lexical meaning in tonal languages."
+    ],
+    "difficulty": 3,
+    "source_article": "Theta role",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["theta role"]
+  },
+  {
+    "question_text": "What does the head-directionality parameter determine?",
+    "correct_answer": "Whether the head of a phrase precedes its complement (head-initial) or follows it (head-final) in a given language.",
+    "distractors": [
+      "Whether a language uses prefixes or suffixes to mark grammatical categories such as tense and agreement.",
+      "Whether the subject of a clause appears before or after the verb in canonical declarative sentences.",
+      "Whether a language allows null pronouns in subject position based on the richness of verbal morphology."
+    ],
+    "difficulty": 3,
+    "source_article": "Head direction parameter",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["head-directionality parameter"]
+  },
+  {
+    "question_text": "What does the VP-internal subject hypothesis propose?",
+    "correct_answer": "That the subject originates inside the verb phrase and moves to the specifier of TP for case and EPP reasons.",
+    "distractors": [
+      "That the subject is base-generated in the specifier of TP and never occupies a position within the verb phrase.",
+      "That the subject is merged directly in the specifier of CP to satisfy the complementizer's edge feature.",
+      "That the subject remains in its theta position within VP and receives nominative case in situ without movement."
+    ],
+    "difficulty": 3,
+    "source_article": "VP-internal subject hypothesis",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["VP-internal subject hypothesis"]
+  },
+  {
+    "question_text": "What does the split INFL hypothesis propose?",
+    "correct_answer": "That the single inflection node INFL is decomposed into separate functional projections for tense (TP) and agreement (AgrP).",
+    "distractors": [
+      "That the complementizer phrase is split into multiple projections hosting topic, focus, and force features.",
+      "That the verb phrase is divided into an inner VP for theme arguments and an outer vP for agents.",
+      "That the determiner phrase contains separate projections for number, gender, and definiteness features."
+    ],
+    "difficulty": 3,
+    "source_article": "Split INFL hypothesis",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["split INFL hypothesis"]
+  },
+  {
+    "question_text": "What characterizes a pro-drop language?",
+    "correct_answer": "It allows the omission of pronominal subjects because rich verbal agreement morphology identifies the subject's features.",
+    "distractors": [
+      "It requires an overt expletive pronoun in subject position even when the sentence has no thematic subject.",
+      "It permits dropping of object pronouns but requires overt subject pronouns in all finite clauses.",
+      "It lacks grammatical agreement entirely and relies on rigid word order to identify grammatical relations."
+    ],
+    "difficulty": 3,
+    "source_article": "Pro-drop language",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["pro-drop"]
+  },
+  {
+    "question_text": "What are locality constraints (islands) in syntax?",
+    "correct_answer": "Restrictions that prevent syntactic movement from crossing certain structural boundaries, such as complex NPs or adjunct clauses.",
+    "distractors": [
+      "Requirements that force all agreement features to be checked within the same minimal clause domain.",
+      "Conditions ensuring that every thematic role assigned by a predicate is realized by an overt argument.",
+      "Principles that require phonological words to be prosodically integrated within a single intonational phrase."
+    ],
+    "difficulty": 3,
+    "source_article": "Island (linguistics)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["locality constraints"]
+  },
+  {
+    "question_text": "What does control theory in syntax explain?",
+    "correct_answer": "How the null subject PRO in non-finite clauses is interpreted as coreferent with an argument in the matrix clause.",
+    "distractors": [
+      "How overt pronouns in finite clauses are assigned referential indices through the binding principles.",
+      "How reflexive anaphors must find a local antecedent that c-commands them within their governing category.",
+      "How wh-phrases receive their scope interpretation when they remain in situ rather than undergoing movement."
+    ],
+    "difficulty": 3,
+    "source_article": "Control (linguistics)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["control theory"]
+  },
+  {
+    "question_text": "What is government in Government and Binding theory?",
+    "correct_answer": "A structural relation in which a head locally c-commands a phrase and determines its case assignment and licensing.",
+    "distractors": [
+      "A linear relation in which adjacent words share morphological features through phonological cliticization processes.",
+      "A semantic relation in which a predicate selects the thematic role grid of its complement clause.",
+      "A pragmatic relation in which discourse context determines the reference of pronouns and definite descriptions."
+    ],
+    "difficulty": 3,
+    "source_article": "Government (linguistics)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["government (syntax)"]
+  },
+  {
+    "question_text": "What are the core operations of the Minimalist Program?",
+    "correct_answer": "Merge, which combines two syntactic objects into a new one, and Move (Internal Merge), which displaces an element already in the structure.",
+    "distractors": [
+      "Government, which licenses empty categories, and Binding, which constrains the distribution of anaphors and pronouns in clauses.",
+      "Spell-Out, which sends syntactic structure to phonology, and Interpretation, which assigns thematic roles to all noun phrases.",
+      "Adjunction, which attaches modifiers to maximal projections, and Substitution, which fills specifier positions with arguments."
+    ],
+    "difficulty": 4,
+    "source_article": "Minimalist program",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["Minimalist Program"]
+  },
+  {
+    "question_text": "What does the Phase Impenetrability Condition in phase theory state?",
+    "correct_answer": "That once a phase (vP or CP) is completed, only elements at its edge remain accessible for further syntactic operations.",
+    "distractors": [
+      "That all features within a single clause must be checked before the derivation proceeds to the next higher phase.",
+      "That movement across more than one phase boundary is impossible regardless of the position of the moving element.",
+      "That the specifier and complement of every phase head are simultaneously transferred to both PF and LF interfaces."
+    ],
+    "difficulty": 4,
+    "source_article": "Phase (syntax)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["phase theory"]
+  },
+  {
+    "question_text": "How does the Agree operation work in Minimalist syntax?",
+    "correct_answer": "A probe bearing unvalued features searches its c-command domain for a goal with matching valued features to establish a checking relation.",
+    "distractors": [
+      "A head assigns case to the nearest noun phrase in its government domain by sharing its categorial features directly.",
+      "A functional projection attracts the closest phrase bearing an EPP feature to move into its specifier position.",
+      "A lexical item selects its complement based on subcategorization frames stored in the mental lexicon."
+    ],
+    "difficulty": 4,
+    "source_article": "Agree (linguistics)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["Agree operation"]
+  },
+  {
+    "question_text": "What is Internal Merge in the Minimalist Program?",
+    "correct_answer": "An operation that takes an element already contained within a syntactic object and merges it to a new position, yielding displacement.",
+    "distractors": [
+      "An operation that combines two entirely independent syntactic objects drawn from the numeration for the first time.",
+      "An operation that deletes uninterpretable features from a terminal node after they have been successfully valued.",
+      "An operation that copies the phonological matrix of a head and attaches it to an adjacent functional projection."
+    ],
+    "difficulty": 4,
+    "source_article": "Internal Merge",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["internal merge"]
+  },
+  {
+    "question_text": "What does the cartography of syntactic structures research program investigate?",
+    "correct_answer": "The fine-grained hierarchy of functional projections in domains such as the left periphery (CP), the inflectional layer (TP), and the nominal domain (DP).",
+    "distractors": [
+      "The universal base order of lexical categories and the parametric variation in head-complement directionality across language families.",
+      "The mapping between syntactic tree structures and their corresponding prosodic phrasing at the phonological form interface.",
+      "The constraints on long-distance binding of reflexive anaphors and the locality conditions governing pronominal reference."
+    ],
+    "difficulty": 4,
+    "source_article": "Cartography (linguistics)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["cartography of syntactic structures"]
+  },
+  {
+    "question_text": "What does Kayne's Linear Correspondence Axiom (antisymmetry) propose?",
+    "correct_answer": "That asymmetric c-command maps to linear precedence, deriving a universal Specifier-Head-Complement base order for all languages.",
+    "distractors": [
+      "That symmetric c-command between two nodes requires them to be coindexed, establishing an obligatory binding relation.",
+      "That linear adjacency between a head and its complement is necessary and sufficient for government and case assignment.",
+      "That all movement operations must target the nearest available landing site in order to satisfy strict cyclicity."
+    ],
+    "difficulty": 4,
+    "source_article": "Antisymmetry",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["Kayne's antisymmetry"]
+  },
+  {
+    "question_text": "What is the central claim of Distributed Morphology?",
+    "correct_answer": "That morphological structure is built by the syntax, and vocabulary insertion occurs post-syntactically at the PF branch of the grammar.",
+    "distractors": [
+      "That morphological rules apply in a separate pre-syntactic lexical component before items enter the syntactic derivation.",
+      "That all inflectional morphology is generated within the lexicon and syntax manipulates only fully inflected words.",
+      "That morphological and syntactic processes operate in parallel modules that communicate only at the LF interface."
+    ],
+    "difficulty": 4,
+    "source_article": "Distributed morphology",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["Distributed Morphology"]
+  },
+  {
+    "question_text": "What does the copy theory of movement claim?",
+    "correct_answer": "That movement leaves a full copy of the moved element at the extraction site, with the lower copy typically deleted at PF.",
+    "distractors": [
+      "That movement leaves an empty category called a trace that is coindexed with the moved element in its landing site.",
+      "That movement does not exist and apparent displacement effects result from base-generation of elements in multiple positions.",
+      "That movement involves literal physical relocation of a node in the tree, leaving no residue in the original position."
+    ],
+    "difficulty": 4,
+    "source_article": "Copy theory of movement",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["copy theory of movement"]
+  },
+  {
+    "question_text": "What is feature inheritance in phase theory?",
+    "correct_answer": "The mechanism by which phase heads C and v transmit their uninterpretable features to T and V, enabling those heads to act as probes.",
+    "distractors": [
+      "The mechanism by which lexical items inherit thematic grids from their root morphemes during vocabulary insertion at PF.",
+      "The mechanism by which a moved phrase carries along its full feature bundle including case and phi-features to the landing site.",
+      "The mechanism by which agreement features percolate upward from the head of a phrase to its maximal projection label."
+    ],
+    "difficulty": 4,
+    "source_article": "Feature inheritance (linguistics)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["feature inheritance"]
+  },
+  {
+    "question_text": "What is late merger in Minimalist syntax?",
+    "correct_answer": "A derivational strategy in which an adjunct merges into a phrase after that phrase has already undergone movement, avoiding island violations.",
+    "distractors": [
+      "A derivational strategy in which a complement is inserted into a head's projection before the specifier is merged in.",
+      "A representational constraint requiring that all adjuncts be interpreted at LF in the highest position they could occupy.",
+      "A phonological rule that delays the linearization of clitics until after all syntactic operations in the phase are complete."
+    ],
+    "difficulty": 4,
+    "source_article": "Late Merge",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["late merger"]
+  },
+  {
+    "question_text": "What does Chomsky's labeling algorithm determine?",
+    "correct_answer": "The label of a syntactic object formed by Merge, identified either by the head of the pair or by shared features when two phrases merge.",
+    "distractors": [
+      "The linear order of terminal nodes at PF by applying the Linear Correspondence Axiom to asymmetric c-command relations.",
+      "The assignment of thematic roles to arguments based on their hierarchical position within the verb phrase shell.",
+      "The selection of which copy in a movement chain is pronounced at PF and which copies are deleted."
+    ],
+    "difficulty": 4,
+    "source_article": "Labeling algorithm",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["labeling algorithm"]
+  },
+  {
+    "question_text": "What is smuggling in syntactic analysis?",
+    "correct_answer": "A movement strategy where a constituent is first moved out of a larger phrase, and then that larger phrase moves, circumventing island constraints.",
+    "distractors": [
+      "A deletion strategy where a redundant copy of a moved phrase is eliminated at PF to satisfy linearization requirements.",
+      "A feature-checking strategy where an element agrees with multiple probes simultaneously across different phase boundaries.",
+      "A base-generation strategy where an element is merged directly into a non-thematic position without undergoing movement."
+    ],
+    "difficulty": 4,
+    "source_article": "Smuggling (linguistics)",
+    "domain_ids": ["syntax"],
+    "concepts_tested": ["smuggling (syntax)"]
+  }
+]

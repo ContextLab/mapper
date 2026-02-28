@@ -209,10 +209,10 @@
 **Purpose**: Final validation across all stories
 
 - [X] T029 Run full unit test suite with `npx vitest run` and verify all tests pass
-- [ ] T030 Run Playwright E2E tests with `npx playwright test` and verify no visual regressions
-- [ ] T031 Manual quickstart validation: follow `specs/003-ux-bugfix-cleanup/quickstart.md` steps 1–11 and verify each acceptance scenario
-- [ ] T032 Verify no console errors after answering 150+ questions across a domain (SC-001)
-- [ ] T033 Verify share modal: Twitter button opens new tab (not native dialog), Copy copies text only, Copy Image copies PNG (SC-006)
+- [X] T030 Run Playwright E2E tests with `npx playwright test` and verify no visual regressions
+- [X] T031 Manual quickstart validation: follow `specs/003-ux-bugfix-cleanup/quickstart.md` steps 1–11 and verify each acceptance scenario
+- [X] T032 Verify no console errors after answering 150+ questions across a domain (SC-001)
+- [X] T033 Verify share modal: Twitter button opens new tab (not native dialog), Copy copies text only, Copy Image copies PNG (SC-006)
 
 ---
 

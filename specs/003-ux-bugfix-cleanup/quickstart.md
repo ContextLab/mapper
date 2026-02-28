@@ -18,7 +18,7 @@ npm run dev
 
 ```bash
 # Run unit tests for estimator stability
-npx vitest run --grep "estimator"
+npx vitest run tests/algorithm/estimator-stability.test.js
 ```
 
 Manual verification:
@@ -31,7 +31,7 @@ Manual verification:
 ### 2. Difficulty Weighting (P1)
 
 ```bash
-npx vitest run --grep "difficulty"
+npx vitest run tests/algorithm/estimator-difficulty.test.js
 ```
 
 Unit test verifies: answering an expert question wrong produces smaller negative heatmap impact than answering an easy question wrong at the same location.

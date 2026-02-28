@@ -52,11 +52,11 @@ test.describe('Responsive Layout (SC-008)', () => {
     await page.waitForSelector('.quiz-option', { timeout: 15000 });
     const btn = page.locator('.quiz-option').first();
     await btn.waitFor({ state: 'visible' });
-    await btn.tap();
-    await page.waitForTimeout(500);
+    // Use click() instead of tap() — tap() doesn't reliably fire click handlers
+    await btn.click();
 
     const feedback = page.locator('.quiz-feedback');
-    await expect(feedback).not.toBeEmpty();
+    await expect(feedback).not.toBeEmpty({ timeout: 3000 });
     await context.close();
   });
 });

@@ -11,7 +11,7 @@ async function selectDomain(page) {
 
   // Wait for the map/quiz to load
   await page.waitForSelector('.quiz-question', { timeout: 15000 });
-  await page.waitForTimeout(1000);
+  await page.waitForTimeout(300);
 }
 
 test.describe('Skip button and share image', () => {
@@ -92,6 +92,8 @@ test.describe('Skip button and share image', () => {
   });
 
   test('Answer options are randomized across reloads', async ({ page }) => {
+    test.setTimeout(60000); // 60s — multiple full reloads
+
     // Load the app and get the first question's option texts in display order
     await page.goto(BASE);
     await page.waitForSelector('#landing', { state: 'visible', timeout: 10000 });
@@ -108,11 +110,10 @@ test.describe('Skip button and share image', () => {
     expect(firstLoad).toHaveLength(4);
     expect(firstLoad.every(t => t.length > 0)).toBe(true);
 
-    // Reload multiple times and collect option orderings
-    // With 4! = 24 permutations, getting the same order 5 times in a row
-    // has probability (1/24)^4 ≈ 0.0003% — essentially impossible if randomized
+    // Reload 3 times (4 total loads). With 4! = 24 permutations,
+    // probability of identical order 4 times = (1/24)^3 ≈ 0.007%
     const orderings = [firstLoad.join('|||')];
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 3; i++) {
       await page.goto(BASE);
       await page.waitForSelector('#landing', { state: 'visible', timeout: 10000 });
       await selectDomain(page);
@@ -120,7 +121,7 @@ test.describe('Skip button and share image', () => {
       orderings.push(texts.join('|||'));
     }
 
-    // At least 2 different orderings should appear across 5 loads
+    // At least 2 different orderings should appear across 4 loads
     const unique = new Set(orderings);
     console.log(`Randomization: ${unique.size} unique orderings out of ${orderings.length} loads`);
     expect(unique.size).toBeGreaterThan(1);

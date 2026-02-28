@@ -5,12 +5,16 @@ const LOAD_TIMEOUT = 15000;
 
 async function selectDomain(page, domainName) {
   const value = domainName.toLowerCase().replace(/\s+/g, '-');
-  const landingTrigger = page.locator('#landing-domain-wrapper .custom-select-trigger');
-  const headerTrigger = page.locator('.domain-selector .custom-select-trigger');
-  const trigger = (await landingTrigger.isVisible()) ? landingTrigger : headerTrigger;
+  // If on landing page, click start button to enter the map first
+  const startBtn = page.locator('#landing-start-btn');
+  if (await startBtn.isVisible().catch(() => false)) {
+    await page.waitForSelector('#landing-start-btn[data-ready]', { timeout: LOAD_TIMEOUT });
+    await startBtn.click();
+    await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
+  }
+  const trigger = page.locator('.domain-selector .custom-select-trigger');
   await trigger.click();
-  const parent = (await landingTrigger.isVisible()) ? page.locator('#landing-domain-wrapper') : page.locator('.domain-selector');
-  await parent.locator(`.custom-select-option[data-value="${value}"]`).click();
+  await page.locator(`.domain-selector .custom-select-option[data-value="${value}"]`).click();
 }
 
 test.describe('Domain Transitions (US2)', () => {
@@ -20,7 +24,6 @@ test.describe('Domain Transitions (US2)', () => {
   });
 
   test('transition completes within 1 second (SC-003)', async ({ page }) => {
-    await page.waitForSelector('#landing-domain-wrapper .custom-select-trigger', { timeout: LOAD_TIMEOUT });
     await selectDomain(page, 'physics');
     await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
     await page.waitForTimeout(1000);
@@ -34,8 +37,6 @@ test.describe('Domain Transitions (US2)', () => {
   });
 
   test('domain switch loads new questions without page reload (SC-012)', async ({ page }) => {
-    await page.waitForSelector('#landing-domain-wrapper .custom-select-trigger', { timeout: LOAD_TIMEOUT });
-
     await selectDomain(page, 'physics');
     await page.waitForSelector('.quiz-question', { timeout: LOAD_TIMEOUT });
     const firstQuestion = await page.locator('.quiz-question').textContent();
@@ -49,7 +50,6 @@ test.describe('Domain Transitions (US2)', () => {
   });
 
   test('captures screenshot of domain transition result', async ({ page }) => {
-    await page.waitForSelector('#landing-domain-wrapper .custom-select-trigger', { timeout: LOAD_TIMEOUT });
     await selectDomain(page, 'physics');
     await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
     await page.waitForTimeout(500);

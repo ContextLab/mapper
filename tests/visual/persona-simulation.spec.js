@@ -105,20 +105,19 @@ function makePrng(seed) {
 // ─── Helpers ─────────────────────────────────────────────────
 
 async function selectDomain(page, domainName) {
-  // Try landing page first, then header
-  const landingTrigger = page.locator('#landing-domain-wrapper .custom-select-trigger');
-  const headerTrigger = page.locator('.domain-selector .custom-select-trigger');
-  const trigger = (await landingTrigger.isVisible().catch(() => false))
-    ? landingTrigger
-    : headerTrigger;
+  // If on landing page, click start button to enter the map first
+  const startBtn = page.locator('#landing-start-btn');
+  if (await startBtn.isVisible().catch(() => false)) {
+    await page.waitForSelector('#landing-start-btn[data-ready]', { timeout: LOAD_TIMEOUT });
+    await startBtn.click();
+    await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
+  }
+
+  // Use header domain selector — find option by visible text
+  const trigger = page.locator('.domain-selector .custom-select-trigger');
   await trigger.click();
 
-  const parent = (await landingTrigger.isVisible().catch(() => false))
-    ? page.locator('#landing-domain-wrapper')
-    : page.locator('.domain-selector');
-
-  // Find option by visible text (more reliable than data-value)
-  const options = parent.locator('.custom-select-option');
+  const options = page.locator('.domain-selector .custom-select-option');
   const count = await options.count();
   for (let i = 0; i < count; i++) {
     const text = await options.nth(i).textContent();
@@ -248,8 +247,6 @@ for (const persona of PERSONAS) {
       // Navigate to app
       await page.goto('/');
       await page.waitForSelector('#landing', { timeout: LOAD_TIMEOUT });
-      await page.waitForSelector('#landing-domain-wrapper .custom-select-trigger', { timeout: LOAD_TIMEOUT });
-
       // Select domain
       await selectDomain(page, persona.domain);
       await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });

@@ -381,55 +381,23 @@ export function showShareDialog() {
 
 async function handleShareAction(action, shareText, shareUrl, imageDataUrl) {
   if (action === 'linkedin') {
-    if (navigator.canShare && imageDataUrl) {
-      try {
-        const blob = await (await fetch(imageDataUrl)).blob();
-        const file = new File([blob], 'knowledge-map.png', { type: 'image/png' });
-        if (navigator.canShare({ files: [file] })) {
-          await navigator.share({ text: shareText, url: shareUrl, files: [file] });
-          return;
-        }
-      } catch (e) {
-        // fallback to URL sharing
-      }
-    }
     try { await navigator.clipboard.writeText(shareText); } catch { /* ok */ }
     const btn = document.querySelector('[data-action="linkedin"]');
     if (btn) {
-      const orig = btn.innerHTML;
-      btn.innerHTML = '<i class="fa-solid fa-check"></i> Text copied — paste into your post!';
-      setTimeout(() => { btn.innerHTML = orig; }, 4000);
+      const orig = btn.textContent;
+      btn.textContent = '';
+      const icon = document.createElement('i');
+      icon.className = 'fa-solid fa-check';
+      btn.appendChild(icon);
+      btn.appendChild(document.createTextNode(' Text copied \u2014 paste into your post!'));
+      setTimeout(() => { btn.textContent = orig; }, 4000);
     }
     const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
     openInBackground(linkedinUrl);
   } else if (action === 'twitter') {
-    if (navigator.canShare && imageDataUrl) {
-      try {
-        const blob = await (await fetch(imageDataUrl)).blob();
-        const file = new File([blob], 'knowledge-map.png', { type: 'image/png' });
-        if (navigator.canShare({ files: [file] })) {
-          await navigator.share({ text: shareText, url: shareUrl, files: [file] });
-          return;
-        }
-      } catch (e) {
-        // fallback to URL sharing
-      }
-    }
     const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
     openInBackground(twitterUrl);
   } else if (action === 'bluesky') {
-    if (navigator.canShare && imageDataUrl) {
-      try {
-        const blob = await (await fetch(imageDataUrl)).blob();
-        const file = new File([blob], 'knowledge-map.png', { type: 'image/png' });
-        if (navigator.canShare({ files: [file] })) {
-          await navigator.share({ text: shareText, url: shareUrl, files: [file] });
-          return;
-        }
-      } catch (e) {
-        // fallback to URL sharing
-      }
-    }
     const blueskyUrl = `https://bsky.app/intent/compose?text=${encodeURIComponent(shareText)}`;
     openInBackground(blueskyUrl);
   } else if (action === 'copy') {
@@ -445,14 +413,6 @@ async function handleShareAction(action, shareText, shareUrl, imageDataUrl) {
     }).catch(err => {
       console.error('[share] Failed to copy:', err);
     });
-    if (imageDataUrl) {
-      try {
-        const blob = await (await fetch(imageDataUrl)).blob();
-        await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
-      } catch (e) {
-        // text copy already succeeded
-      }
-    }
   } else if (action === 'copy-image') {
     if (imageDataUrl) {
       try {

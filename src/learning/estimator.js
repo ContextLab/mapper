@@ -40,13 +40,19 @@ export const IRT_THRESHOLDS = [0.125, 0.375, 0.625, 0.875];
 export const IRT_DISCRIMINATION = 1.5;
 
 // Difficulty-based weight modulation for RBF kernel (CL-047: independent of IRT layer).
-// Higher difficulty questions provide stronger evidence (larger kernel influence).
-// Maps difficulty level (1-4) to a multiplier applied to the kernel weights.
-const DIFFICULTY_WEIGHT_MAP = {
-  1: 0.25,  // Easy questions: weak evidence
-  2: 0.5,   // Medium questions: moderate evidence
-  3: 0.75,  // Hard questions: strong evidence
-  4: 1.0,   // Expert questions: full evidence weight
+// Two maps: correct answers reward harder questions more, incorrect/skip answers
+// penalize easier questions more (getting a hard question wrong is expected).
+const CORRECT_WEIGHT_MAP = {
+  1: 0.25,  // Easy correct: weak positive evidence (expected)
+  2: 0.5,   // Medium correct: moderate positive evidence
+  3: 0.75,  // Hard correct: strong positive evidence
+  4: 1.0,   // Expert correct: full positive evidence weight
+};
+const INCORRECT_WEIGHT_MAP = {
+  1: 1.0,   // Easy wrong: full negative evidence (should know this)
+  2: 0.75,  // Medium wrong: strong negative evidence
+  3: 0.5,   // Hard wrong: moderate negative evidence
+  4: 0.25,  // Expert wrong: weak negative evidence (expected to miss)
 };
 
 export class Estimator {
@@ -105,7 +111,8 @@ export class Estimator {
    */
   observe(x, y, correct, lengthScale, difficulty) {
     const value = correct ? 1.0 : 0.0;
-    const difficultyWeight = DIFFICULTY_WEIGHT_MAP[difficulty] || DIFFICULTY_WEIGHT_MAP[3]; // default to difficulty 3
+    const weightMap = correct ? CORRECT_WEIGHT_MAP : INCORRECT_WEIGHT_MAP;
+    const difficultyWeight = weightMap[difficulty] || weightMap[3];
     this._observations.push({
       x,
       y,
@@ -125,7 +132,7 @@ export class Estimator {
    * @param {number} [difficulty] - Question difficulty (1-4) for weight modulation
    */
   observeSkip(x, y, lengthScale, difficulty) {
-    const difficultyWeight = DIFFICULTY_WEIGHT_MAP[difficulty] || DIFFICULTY_WEIGHT_MAP[3]; // default to difficulty 3
+    const difficultyWeight = INCORRECT_WEIGHT_MAP[difficulty] || INCORRECT_WEIGHT_MAP[3];
     this._observations.push({
       x,
       y,
@@ -307,15 +314,18 @@ export class Estimator {
     for (const r of responses) {
       if (r.x != null && r.y != null) {
         const isSkipped = !!r.is_skipped;
+        const isCorrect = !!r.is_correct;
         // Look up difficulty from question index if available
         const question = questionIndex?.get(r.question_id);
         const difficulty = question?.difficulty;
-        const difficultyWeight = DIFFICULTY_WEIGHT_MAP[difficulty] || DIFFICULTY_WEIGHT_MAP[3];
+        // Correct answers use CORRECT_WEIGHT_MAP; incorrect/skip use INCORRECT_WEIGHT_MAP
+        const weightMap = (!isSkipped && isCorrect) ? CORRECT_WEIGHT_MAP : INCORRECT_WEIGHT_MAP;
+        const difficultyWeight = weightMap[difficulty] || weightMap[3];
         this._observations.push({
           x: r.x,
           y: r.y,
-          value: isSkipped ? SKIP_KNOWLEDGE_VALUE : (r.is_correct ? 1.0 : 0.0),
-          lengthScale: isSkipped ? ls * 0.5 : ls,
+          value: isSkipped ? SKIP_KNOWLEDGE_VALUE : (isCorrect ? 1.0 : 0.0),
+          lengthScale: ls, // Full length scale for all observations (no skip reduction)
           difficultyWeight,
         });
       }
@@ -356,7 +366,7 @@ export class Estimator {
     for (let i = 0; i < n; i++) {
       this._obsValues[i] = this._observations[i].value - PRIOR_MEAN;
       this._obsLengthScales[i] = this._observations[i].lengthScale || this._lengthScale;
-      this._obsDifficultyWeights[i] = this._observations[i].difficultyWeight || DIFFICULTY_WEIGHT_MAP[3];
+      this._obsDifficultyWeights[i] = this._observations[i].difficultyWeight || CORRECT_WEIGHT_MAP[3];
     }
 
     // Build K with per-observation length scales and difficulty weights:

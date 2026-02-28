@@ -146,8 +146,10 @@ export class Minimap {
   _isInsideViewport(mx, my) {
     if (!this.currentViewport) return false;
     const { x_min, x_max, y_min, y_max } = this.currentViewport;
-    return (mx / this.width) >= x_min && (mx / this.width) <= x_max &&
-           (my / this.height) >= y_min && (my / this.height) <= y_max;
+    // 3px padding makes the viewport rectangle easier to grab
+    const pad = 3 / Math.max(1, this.width);
+    return (mx / this.width) >= (x_min - pad) && (mx / this.width) <= (x_max + pad) &&
+           (my / this.height) >= (y_min - pad) && (my / this.height) <= (y_max + pad);
   }
 
   _handleCanvasPointerDown(e) {

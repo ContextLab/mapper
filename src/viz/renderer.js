@@ -37,6 +37,7 @@ export class Renderer {
     this._videoMarkers = [];
     this._videoTrajectories = new Map(); // videoId → [{x, y}] in temporal order
     this._hoveredVideoId = null;
+    this._showVideoMarkers = false;
     this._questions = [];
     this._questionMap = new Map();
     this._estimateGrid = null; // Float64Array or null, 50*50 flat grid for O(1) lookup
@@ -264,6 +265,17 @@ export class Renderer {
 
   onVideoClick(handler) {
     this._onVideoClick = handler;
+  }
+
+  setShowVideoMarkers(visible) {
+    this._showVideoMarkers = !!visible;
+    this._render();
+  }
+
+  setHoveredVideoId(videoId) {
+    if (this._hoveredVideoId === videoId) return;
+    this._hoveredVideoId = videoId || null;
+    this._render();
   }
 
   addQuestions(questions) {
@@ -617,15 +629,30 @@ export class Renderer {
 
   _drawVideos(ctx, w, h) {
     if (this._videoMarkers.length === 0) return;
+    if (!this._showVideoMarkers && !this._hoveredVideoId) return;
 
     const size = 2.0 / this._zoom;
     const half = size / 2;
 
-    ctx.fillStyle = `rgba(148, 163, 184, ${5 / 255})`;
-    for (const v of this._videoMarkers) {
-      const px = v.x * w;
-      const py = v.y * h;
-      ctx.fillRect(px - half, py - half, size, size);
+    if (this._showVideoMarkers) {
+      // Draw all markers with moderate visibility
+      ctx.fillStyle = 'rgba(148, 163, 184, 0.3)';
+      for (const v of this._videoMarkers) {
+        const px = v.x * w;
+        const py = v.y * h;
+        ctx.fillRect(px - half, py - half, size, size);
+      }
+    }
+
+    // Highlight hovered video's markers
+    if (this._hoveredVideoId) {
+      ctx.fillStyle = 'rgba(99, 179, 237, 0.7)';
+      for (const v of this._videoMarkers) {
+        if (v.videoId !== this._hoveredVideoId) continue;
+        const px = v.x * w;
+        const py = v.y * h;
+        ctx.fillRect(px - half, py - half, size * 1.5, size * 1.5);
+      }
     }
   }
 
@@ -767,7 +794,15 @@ export class Renderer {
   // ======== PRIVATE: Event handlers ========
 
   _handleResize() {
+    const oldW = this._width;
+    const oldH = this._height;
     this._resize();
+    // Scale pan proportionally so all layers stay aligned after resize
+    if (oldW > 0 && oldH > 0) {
+      this._panX *= this._width / oldW;
+      this._panY *= this._height / oldH;
+      this._clampPanZoom();
+    }
     this._render();
   }
 
@@ -811,6 +846,7 @@ export class Renderer {
     this._dragMoved = false;
     this._lastMouse = { x: e.clientX, y: e.clientY };
     this._canvas.style.cursor = 'grabbing';
+    this._hideTooltip();
   }
 
   _handleMouseUp() {
@@ -876,6 +912,9 @@ export class Renderer {
       this._notifyViewport();
       return;
     }
+
+    // Skip tooltip while dragging — tooltip was already dismissed on mousedown
+    if (this._isDragging) return;
 
     const hit = this._hitTest(mx, my);
     const prevHoveredVideoId = this._hoveredVideoId;
@@ -1213,7 +1252,7 @@ export class Renderer {
     if (!tooltipData || !this._tooltip) return;
     this._tooltip.innerHTML = tooltipData.html;
     this._tooltip.style.borderLeftColor = tooltipData.borderColor;
-    this._tooltip.style.pointerEvents = tooltipData.interactive ? 'auto' : 'none';
+    this._tooltip.style.pointerEvents = 'none';
 
     const containerW = this._width;
     const containerH = this._height;

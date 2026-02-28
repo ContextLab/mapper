@@ -39,11 +39,15 @@ test.describe('Responsive Layout (SC-008)', () => {
     });
     const page = await context.newPage();
     await page.goto('/');
-    await page.waitForSelector('#landing-domain-wrapper .custom-select-trigger', { timeout: 15000 });
+    // Click start button to enter the map, then select physics from header
+    const startBtn = page.locator('#landing-start-btn');
+    await page.waitForSelector('#landing-start-btn[data-ready]', { timeout: 15000 });
+    await startBtn.tap();
+    await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: 15000 });
 
-    const trigger = page.locator('#landing-domain-wrapper .custom-select-trigger');
+    const trigger = page.locator('.domain-selector .custom-select-trigger');
     await trigger.tap();
-    await page.locator('#landing-domain-wrapper .custom-select-option[data-value="physics"]').tap();
+    await page.locator('.domain-selector .custom-select-option[data-value="physics"]').tap();
 
     await page.waitForSelector('.quiz-option', { timeout: 15000 });
     const btn = page.locator('.quiz-option').first();

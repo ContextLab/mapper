@@ -260,6 +260,9 @@ export function init(container) {
 function handleKeyDown(e) {
   if (!currentQuestion || !uiElements.options) return;
 
+  // Let the browser handle modifier-key combos (Cmd+C, Ctrl+A, etc.)
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+
   // If options are disabled (already answered), Enter/N/Space advances to next
   if (uiElements.options[0].disabled) {
     if (e.key === 'Enter' || e.key === 'n' || e.key === 'N' || e.key === ' ') {
@@ -370,7 +373,7 @@ function handleOptionClick(selectedDisplayKey) {
     const sourceLink = document.createElement('a');
     sourceLink.href = url;
     sourceLink.target = '_blank';
-    sourceLink.textContent = article;
+    sourceLink.textContent = article.replace(/_/g, ' ');
     uiElements.meta.appendChild(sourceLabel);
     uiElements.meta.appendChild(sourceLink);
   }
@@ -407,6 +410,66 @@ function handleOptionClick(selectedDisplayKey) {
   // so that app.js records the correct option letter regardless of shuffle
   if (answerCallback) {
     answerCallback(originalSelectedKey, currentQuestion);
+  }
+}
+
+export function showSkipFeedback(question) {
+  if (!question || !uiElements.options) return;
+
+  // Disable all options (no answer was selected)
+  uiElements.options.forEach(btn => {
+    btn.disabled = true;
+  });
+
+  // Highlight the correct answer
+  const correctDisplayKey = originalToDisplay[question.correct_answer];
+  uiElements.options.forEach(btn => {
+    if (btn.dataset.key === correctDisplayKey) {
+      btn.classList.add('correct-highlight');
+    }
+  });
+
+  if (uiElements.feedback) {
+    uiElements.feedback.textContent = 'Skipped — here\u2019s the answer:';
+    uiElements.feedback.style.color = 'var(--color-text-muted)';
+  }
+
+  if (uiElements.instruction) uiElements.instruction.hidden = true;
+
+  // Show Next button and learning resource links (same as wrong-answer flow)
+  if (uiElements.actions) {
+    uiElements.actions.hidden = false;
+
+    if (uiElements.wikiBtn && question.source_article) {
+      const wikiUrl = `https://en.wikipedia.org/wiki/${encodeURIComponent(question.source_article)}`;
+      uiElements.wikiBtn.href = wikiUrl;
+      uiElements.wikiBtn.hidden = false;
+    } else if (uiElements.wikiBtn) {
+      uiElements.wikiBtn.hidden = true;
+    }
+
+    if (uiElements.khanBtn) {
+      const searchTerm = question.source_article || '';
+      if (searchTerm) {
+        uiElements.khanBtn.href = `https://www.khanacademy.org/search?referer=%2F&page_search_query=${encodeURIComponent(searchTerm)}`;
+        uiElements.khanBtn.hidden = false;
+      } else {
+        uiElements.khanBtn.hidden = true;
+      }
+    }
+  }
+
+  if (uiElements.meta && question.source_article) {
+    const article = question.source_article;
+    const url = `https://en.wikipedia.org/wiki/${encodeURIComponent(article)}`;
+    uiElements.meta.textContent = '';
+    const sourceLabel = document.createTextNode('Source: ');
+    const sourceLink = document.createElement('a');
+    sourceLink.href = url;
+    sourceLink.target = '_blank';
+    sourceLink.textContent = article.replace(/_/g, ' ');
+    uiElements.meta.appendChild(sourceLabel);
+    uiElements.meta.appendChild(sourceLink);
   }
 }
 

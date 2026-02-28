@@ -233,9 +233,10 @@ describe('Difference map correctness (SC-V004)', () => {
     }
 
     // Now answer incorrectly — knowledge should decrease
-    est.observe(0.5, 0.5, false, undefined, 3);
-    est.observe(0.5, 0.5, false, undefined, 3);
-    est.observe(0.5, 0.5, false, undefined, 3);
+    // Use difficulty=1 (easy) for maximum negative evidence with inverted weight map
+    est.observe(0.5, 0.5, false, undefined, 1);
+    est.observe(0.5, 0.5, false, undefined, 1);
+    est.observe(0.5, 0.5, false, undefined, 1);
 
     const afterEstimates = est.predict();
     const diffMap = computeDifferenceMap(snapshot, afterEstimates);

@@ -262,6 +262,10 @@ async function boot() {
       if (animated) renderer.transitionTo(region, 400);
       else renderer.jumpTo(region);
     });
+    minimap.onPan((cx, cy, animated) => {
+      if (!renderer) return;
+      renderer.panToCenter(cx, cy, animated);
+    });
 
     // Use the pre-loaded "all" domain for minimap background
     if (allDomainBundle) {
@@ -320,7 +324,7 @@ function articlesToPoints(articles) {
     y: a.y,
     z: a.z || 0,
     type: 'article',
-    color: [148, 163, 184, 80],
+    color: [0, 0, 0, 30],
     radius: 1.5,
     title: a.title,
     url: a.url,

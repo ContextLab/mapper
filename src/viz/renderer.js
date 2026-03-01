@@ -372,6 +372,54 @@ export class Renderer {
   }
 
   /**
+   * Pan so normalized (cx, cy) is at screen center, preserving current zoom.
+   * @param {number} cx - normalized x [0,1]
+   * @param {number} cy - normalized y [0,1]
+   * @param {boolean} [animate=false]
+   */
+  panToCenter(cx, cy, animate = false) {
+    this.abortTransition();
+    const w = this._width;
+    const h = this._height;
+    let panX = w / 2 - cx * this._zoom * w;
+    let panY = h / 2 - cy * this._zoom * h;
+    const contentW = this._zoom * w;
+    const contentH = this._zoom * h;
+    panX = Math.max(w - contentW, Math.min(0, panX));
+    panY = Math.max(h - contentH, Math.min(0, panY));
+
+    if (animate) {
+      const startPanX = this._panX;
+      const startPanY = this._panY;
+      const startTime = performance.now();
+      const duration = 300;
+      const anim = (now) => {
+        const t = Math.min(1, (now - startTime) / duration);
+        const e = cubicInOut(t);
+        this._panX = startPanX + (panX - startPanX) * e;
+        this._panY = startPanY + (panY - startPanY) * e;
+        this._render();
+        if (t < 1) {
+          this._animFrame = requestAnimationFrame(anim);
+        } else {
+          this._panX = panX;
+          this._panY = panY;
+          this._clampPanZoom();
+          this._render();
+          this._notifyViewport();
+        }
+      };
+      this._animFrame = requestAnimationFrame(anim);
+    } else {
+      this._panX = panX;
+      this._panY = panY;
+      this._clampPanZoom();
+      this._render();
+      this._notifyViewport();
+    }
+  }
+
+  /**
    * Abort any in-progress transition.
    */
   abortTransition() {
@@ -590,16 +638,19 @@ export class Renderer {
   _drawPoints(ctx, w, h) {
     if (this._points.length === 0) return;
 
-    const defaultColor = [100, 116, 139, 80];
+    const defaultColor = [0, 0, 0, 30];
+    const hoveredId = this._hoveredPoint?.id;
     for (const p of this._points) {
       const px = p.x * w;
       const py = p.y * h;
       const r = (p.radius || 2) / this._zoom;
       const color = p.color || defaultColor;
-      const alpha = (color[3] ?? 100) / 255;
+      const isHovered = hoveredId && p.id === hoveredId;
+      const alpha = isHovered ? 0.8 : (color[3] ?? 30) / 255;
+      const radius = isHovered ? r * 1.5 : r;
 
       ctx.beginPath();
-      ctx.arc(px, py, r, 0, Math.PI * 2);
+      ctx.arc(px, py, radius, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${alpha})`;
       ctx.fill();
     }
@@ -635,8 +686,8 @@ export class Renderer {
     const half = size / 2;
 
     if (this._showVideoMarkers) {
-      // Draw all markers with moderate visibility
-      ctx.fillStyle = 'rgba(148, 163, 184, 0.3)';
+      // Draw all markers subtly
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.10)';
       for (const v of this._videoMarkers) {
         const px = v.x * w;
         const py = v.y * h;
@@ -646,7 +697,7 @@ export class Renderer {
 
     // Highlight hovered video's markers
     if (this._hoveredVideoId) {
-      ctx.fillStyle = 'rgba(99, 179, 237, 0.7)';
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
       for (const v of this._videoMarkers) {
         if (v.videoId !== this._hoveredVideoId) continue;
         const px = v.x * w;
@@ -667,7 +718,7 @@ export class Renderer {
     // Draw the spline path
     ctx.save();
     ctx.lineWidth = 1.5 / this._zoom;
-    ctx.strokeStyle = 'rgba(148, 163, 184, 0.6)';
+    ctx.strokeStyle = 'rgba(0, 0, 0, 0.7)';
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';
 
@@ -697,17 +748,17 @@ export class Renderer {
     // Draw window dots along the path
     const dotR = 2.0 / this._zoom;
     for (let i = 0; i < px.length; i++) {
-      const alpha = 0.3 + 0.5 * (i / (px.length - 1)); // fade in along trajectory
+      const alpha = 0.5 + 0.4 * (i / (px.length - 1)); // fade in along trajectory
       ctx.beginPath();
       ctx.arc(px[i].x, px[i].y, dotR, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(148, 163, 184, ${alpha})`;
+      ctx.fillStyle = `rgba(0, 0, 0, ${alpha})`;
       ctx.fill();
     }
 
     // Highlight start with a small ring
     ctx.beginPath();
     ctx.arc(px[0].x, px[0].y, 3.5 / this._zoom, 0, Math.PI * 2);
-    ctx.strokeStyle = 'rgba(148, 163, 184, 0.8)';
+    ctx.strokeStyle = 'rgba(0, 0, 0, 0.9)';
     ctx.lineWidth = 1.0 / this._zoom;
     ctx.stroke();
 
@@ -918,6 +969,7 @@ export class Renderer {
 
     const hit = this._hitTest(mx, my);
     const prevHoveredVideoId = this._hoveredVideoId;
+    const prevHoveredPoint = this._hoveredPoint;
     if (hit) {
       this._hoveredPoint = hit;
       this._hoveredVideoId = hit.type === 'video' ? hit.videoId : null;
@@ -929,8 +981,8 @@ export class Renderer {
       this._canvas.style.cursor = '';
       this._hideTooltip();
     }
-    // Re-render when trajectory visibility changes
-    if (this._hoveredVideoId !== prevHoveredVideoId) {
+    // Re-render when hover state changes (trajectory visibility or article highlight)
+    if (this._hoveredVideoId !== prevHoveredVideoId || this._hoveredPoint !== prevHoveredPoint) {
       this._render();
     }
   }

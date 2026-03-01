@@ -130,9 +130,9 @@ function generateShareImage(data) {
     }
   }
 
-  // Draw Wikipedia articles as small gray dots (brighter)
+  // Draw Wikipedia articles as small black dots
   if (articles && articles.length > 0) {
-    ctx.fillStyle = 'rgba(148, 163, 184, 0.55)';
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.12)';
     for (const a of articles) {
       ctx.fillRect(a.x * W - 0.75, a.y * H - 0.75, 1.5, 1.5);
     }
@@ -141,7 +141,7 @@ function generateShareImage(data) {
   // Draw video markers as subtle small squares
   const { videos } = data;
   if (videos && videos.length > 0) {
-    ctx.fillStyle = 'rgba(148, 163, 184, 0.02)';
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.02)';
     for (const v of videos) {
       ctx.fillRect(v.x * W - 0.5, v.y * H - 0.5, 1, 1);
     }

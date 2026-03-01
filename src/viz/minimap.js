@@ -13,6 +13,7 @@ export class Minimap {
     this.currentViewport = null;
     this.clickHandler = null;
     this.navigateHandler = null;
+    this.panHandler = null;
     this.width = 0;
     this.height = 0;
     this.estimates = null;
@@ -22,6 +23,7 @@ export class Minimap {
     // Viewport-rect drag inside the minimap canvas
     this._isDragging = false;
     this._dragOffset = null;
+    this._didDrag = false;  // suppress click after drag
 
     // Selection rectangle inside the minimap canvas
     this._isSelecting = false;
@@ -140,6 +142,7 @@ export class Minimap {
   setArticles(articles) { this.articles = articles || []; this.render(); }
   onClick(handler) { this.clickHandler = handler; }
   onNavigate(handler) { this.navigateHandler = handler; }
+  onPan(handler) { this.panHandler = handler; }
 
   // ======== Canvas pointer events (viewport drag + selection + click) ========
 
@@ -160,6 +163,8 @@ export class Minimap {
     const rect = this.canvas.getBoundingClientRect();
     const mx = e.clientX - rect.left;
     const my = e.clientY - rect.top;
+
+    this._didDrag = false;
 
     if (this._isInsideViewport(mx, my) && this.currentViewport) {
       this._isDragging = true;
@@ -191,17 +196,18 @@ export class Minimap {
       return;
     }
 
-    if (!this._isDragging || !this.navigateHandler || !this.currentViewport) return;
+    if (!this._isDragging || !this.panHandler || !this.currentViewport) return;
 
     const vp = this.currentViewport;
     const vpW = vp.x_max - vp.x_min;
     const vpH = vp.y_max - vp.y_min;
     const cx = (mx - this._dragOffset.x) / this.width;
     const cy = (my - this._dragOffset.y) / this.height;
-    const x_min = Math.max(0, Math.min(1 - vpW, cx - vpW / 2));
-    const y_min = Math.max(0, Math.min(1 - vpH, cy - vpH / 2));
+    // Clamp center so viewport stays in bounds
+    const clampedCx = Math.max(vpW / 2, Math.min(1 - vpW / 2, cx));
+    const clampedCy = Math.max(vpH / 2, Math.min(1 - vpH / 2, cy));
 
-    this.navigateHandler({ x_min, x_max: x_min + vpW, y_min, y_max: y_min + vpH }, false);
+    this.panHandler(clampedCx, clampedCy, false);
   }
 
   _handleCanvasPointerUp(e) {
@@ -218,6 +224,7 @@ export class Minimap {
           x_min: sx / this.width, x_max: (sx + sw) / this.width,
           y_min: sy / this.height, y_max: (sy + sh) / this.height,
         }, true);
+        this._didDrag = true;  // suppress click after selection
       }
       this._isSelecting = false;
       this._selectionStart = null;
@@ -229,6 +236,7 @@ export class Minimap {
 
     if (this._isDragging) {
       this._isDragging = false;
+      this._didDrag = true;  // suppress the click event that fires right after pointerup
       this._dragOffset = null;
       this.canvas.style.cursor = 'pointer';
     }
@@ -236,19 +244,20 @@ export class Minimap {
 
   _handleCanvasClick(e) {
     if (this._isDragging || this._isSelecting) return;
-    if (!this.navigateHandler || !this.width || !this.height) return;
+    if (this._didDrag) { this._didDrag = false; return; }
+    if (!this.panHandler || !this.width || !this.height) return;
+
+    // If fully zoomed out (viewport covers nearly everything), do nothing
+    const vp = this.currentViewport || { x_min: 0, x_max: 1, y_min: 0, y_max: 1 };
+    const vpW = vp.x_max - vp.x_min;
+    const vpH = vp.y_max - vp.y_min;
+    if (vpW >= 0.95 && vpH >= 0.95) return;
 
     const rect = this.canvas.getBoundingClientRect();
     const nx = (e.clientX - rect.left) / this.width;
     const ny = (e.clientY - rect.top) / this.height;
 
-    const vp = this.currentViewport || { x_min: 0, x_max: 1, y_min: 0, y_max: 1 };
-    const vpW = vp.x_max - vp.x_min;
-    const vpH = vp.y_max - vp.y_min;
-    const x_min = Math.max(0, Math.min(1 - vpW, nx - vpW / 2));
-    const y_min = Math.max(0, Math.min(1 - vpH, ny - vpH / 2));
-
-    this.navigateHandler({ x_min, x_max: x_min + vpW, y_min, y_max: y_min + vpH }, true);
+    this.panHandler(nx, ny, true);
   }
 
   // ======== Resize handle ========
@@ -429,7 +438,7 @@ export class Minimap {
 
   _drawArticles(ctx, w, h) {
     if (this.articles.length === 0) return;
-    ctx.fillStyle = 'rgba(100, 116, 139, 0.25)';
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
     for (const a of this.articles) {
       ctx.fillRect(a.x * w, a.y * h, 1, 1);
     }

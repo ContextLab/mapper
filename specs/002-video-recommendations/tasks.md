@@ -51,9 +51,9 @@ run the full pipeline end-to-end once the reducer is available.
   Output: `data/videos/.working/embeddings/{video_id}.npy` (one file per
   video, shape [N_windows, 768]). See FR-V003, FR-V004, CL-002.
 
-### Stage 4: UMAP Projection ← BLOCKED on new reducer
+### Stage 4: UMAP Projection
 
-- [ ] T-V004 [PIPE] Implement `scripts/project_video_coords.py`: Load UMAP
+- [x] T-V004 [PIPE] Implement `scripts/project_video_coords.py`: Load UMAP
   reducer and bounds from paths provided as CLI arguments (default:
   `data/umap_reducer.pkl`, `data/umap_bounds.pkl`). Call
   `reducer.transform()` on all window embeddings. Normalize to [0,1] using
@@ -64,19 +64,16 @@ run the full pipeline end-to-end once the reducer is available.
 
 ### Stage 5: Per-Domain Export
 
-- [ ] T-V005 [PIPE] Implement `scripts/export_video_bundles.py`: Assign each
-  video to domains where ≥20% of its windows fall inside the domain bounding
-  box (from `data/domains/index.json`). Produce per-domain files
-  `data/videos/{domain-id}.json` containing for each video: `id` (YouTube
-  video ID), `title`, `duration_s`, `thumbnail_url`
-  (`https://i.ytimg.com/vi/{id}/mqdefault.jpg`), `windows` (array of [x, y]
-  coordinate pairs). Also produce `data/videos/index.json` manifest with
-  domain → video count and file size. Enforce no duplicate video IDs.
-  See FR-V006, CL-008, CL-009, CL-010, CL-025, CL-026, CL-036, CL-037.
+- [x] T-V005 [PIPE] Implement `scripts/export_video_catalog.py`: Redesigned
+  as single flat catalog (no per-domain split needed — TLP scoring is spatial,
+  not domain-based). Merges coordinate files with Khan metadata into
+  `data/videos/catalog.json`. Each entry: `id`, `title`, `duration_s`,
+  `thumbnail_url`, `windows` (array of [x, y] pairs). Enforces no duplicate
+  IDs. See FR-V006, CL-008, CL-009, CL-025, CL-026.
 
 ### Stage 6: Pipeline Runner
 
-- [ ] T-V006 [PIPE] Implement `scripts/run_video_pipeline.sh`: Shell script
+- [x] T-V006 [PIPE] Implement `scripts/run_video_pipeline.sh`: Shell script
   that runs T-V001 through T-V005 in sequence with error checking between
   stages. Accept `--reducer` and `--bounds` CLI arguments passed through to
   T-V004. Log total runtime and per-stage statistics.

@@ -310,5 +310,15 @@ data/videos/.working/audio_cache/
 data/videos/transcripts_raw/
 data/videos/transcripts/
 
+# Session notes (working artifacts)
+notes/
+
+# Test data
+test-import.json
+
+# Speckit tooling
+.specify/
+.claude/commands/
+
 # Python virtual environments
 .venv/

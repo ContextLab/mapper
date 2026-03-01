@@ -6,7 +6,7 @@ An interactive visualization that maps your conceptual knowledge across 250,000 
 
 ## How It Works
 
-1. **Choose a domain** (e.g., Physics, Neuroscience, Computer Science) from the landing page
+1. **Choose a domain** (e.g., Physics, Neuroscience, Computer Science) from the dropdown on the map screen
 2. **Answer adaptive questions** -- each one tests conceptual understanding, terminology, and reasoning
 3. **Watch the map update** -- correct answers turn nearby regions green; wrong answers reveal red gaps
 4. **Get video recommendations** -- Khan Academy videos are suggested based on your weakest areas
@@ -24,7 +24,7 @@ Under the hood, text embedding models place every article, question, and video t
 - **Video trajectories** -- hover a video dot to see its topic path across the map; click to play
 - **Knowledge insights** -- see your strongest/weakest concepts and learning suggestions
 - **Social sharing** -- export your knowledge map as an image with grid lines and colorbar
-- **Keyboard shortcuts** -- press A/B/C/D to answer, with modifier-key awareness to avoid conflicts
+- **Keyboard navigation** -- full keyboard accessibility for quiz answers and map controls
 - **Fully client-side** -- no data leaves your browser; progress saved to localStorage
 
 ## Quick Start

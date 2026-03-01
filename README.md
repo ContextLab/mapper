@@ -1,6 +1,6 @@
 # Knowledge Mapper
 
-An interactive visualization that maps your conceptual knowledge across 250,000 Wikipedia articles and 5,000+ Khan Academy videos. Answer questions to watch a real-time heatmap of your strengths and gaps emerge, then get personalized video recommendations to fill knowledge gaps.
+An interactive visualization that maps your conceptual knowledge across 250,000 Wikipedia articles and 5,400+ Khan Academy videos. Answer questions to watch a real-time heatmap of your strengths and gaps emerge, then get personalized video recommendations to fill knowledge gaps.
 
 **[Try the live demo](https://contextlab.github.io/mapper/)** | **[Read the paper](https://osf.io/preprints/psyarxiv/dh3q2)**
 
@@ -12,7 +12,7 @@ An interactive visualization that maps your conceptual knowledge across 250,000 
 4. **Get video recommendations** -- Khan Academy videos are suggested based on your weakest areas
 5. **Explore freely** -- zoom, pan, hover video trajectories, and click articles for Wikipedia content
 
-Under the hood, text embedding models place every article, question, and video transcript into a shared high-dimensional vector space, then project them onto a 2D map where related concepts cluster together. Density flattening via optimal transport ensures even spatial coverage. As you answer questions, a Bayesian estimator interpolates your knowledge across the map using radial basis functions.
+Text embedding models place every article, question, and video transcript into a shared 768-dimensional vector space, then project them onto a 2D map via UMAP where related concepts cluster together. Density flattening via optimal transport ensures even spatial coverage. As you answer questions, a Gaussian Process with a Matern 3/2 kernel interpolates your knowledge across the map.
 
 ## Features
 
@@ -23,7 +23,7 @@ Under the hood, text embedding models place every article, question, and video t
 - **Video discovery panel** -- left sidebar with toggleable video visibility, scrollable list, and map trajectory highlighting
 - **Video trajectories** -- hover a video dot to see its topic path across the map; click to play
 - **Knowledge insights** -- see your strongest/weakest concepts and learning suggestions
-- **Social sharing** -- export your knowledge map as an image with grid lines and colorbar
+- **Social sharing** -- export your knowledge map as a PNG with grid lines and colorbar
 - **Keyboard navigation** -- full keyboard accessibility for quiz answers and map controls
 - **Fully client-side** -- no data leaves your browser; progress saved to localStorage
 
@@ -49,20 +49,20 @@ npm run preview # preview the production build locally
 
 ```
 mapper/
-├── index.html          # HTML entry point (layout, styles, modals)
-├── src/                # Application source code
+├── index.html          # Single-page app shell (layout, styles, modals)
+├── src/                # Application source (vanilla JS, ES modules)
 │   ├── app.js          # Entry point: init, routing, event wiring
 │   ├── domain/         # Domain data loading and registry
-│   ├── learning/       # Adaptive quiz engine + video recommender
-│   ├── state/          # Application state and persistence
+│   ├── learning/       # GP estimator, adaptive sampler, video recommender
+│   ├── state/          # Reactive state (nanostores) and localStorage persistence
 │   ├── ui/             # UI components (controls, quiz, insights, share, video panel/modal)
 │   ├── utils/          # Math, accessibility, feature detection
-│   └── viz/            # Canvas rendering (heatmap, minimap, particles)
+│   └── viz/            # Canvas 2D rendering (heatmap, minimap, particles)
 ├── data/               # Pre-computed data bundles
-│   ├── domains/        # 50 per-domain JSON bundles + index.json
-│   └── videos/         # Video catalog + transcripts + embeddings
-├── scripts/            # Python data pipeline
-├── tests/              # Unit tests (vitest) + E2E tests (Playwright)
+│   ├── domains/        # 50 per-domain JSON bundles + index.json registry
+│   └── videos/         # Video catalog with spatial coordinates (catalog.json)
+├── scripts/            # Python data pipeline (30 scripts)
+├── tests/              # Unit tests (Vitest) + E2E tests (Playwright)
 └── public/             # Static assets
 ```
 
@@ -71,11 +71,11 @@ mapper/
 The `scripts/` directory contains the Python pipeline that generates the data powering the frontend:
 
 1. **Embed articles** using `google/embeddinggemma-300m` (768-dim vectors)
-2. **Generate questions** via Claude Opus 4.6 (50 per domain, 2,450 total)
-3. **Embed questions** using the same model (for coordinate consistency)
+2. **Generate questions** via Claude Opus 4.6 (50 per domain, 2,500 total)
+3. **Embed questions** using the same model for coordinate consistency
 4. **Transcribe videos** via Whisper on GPU cluster (5,400+ Khan Academy transcripts)
-5. **Embed transcripts** -- both full-document and sliding-window (512 words, 50-word stride)
-6. **Joint UMAP projection** -- project articles + questions + transcripts TOGETHER to 2D
+5. **Embed transcripts** -- sliding-window embeddings (512 words, 50-word stride)
+6. **Joint UMAP projection** -- project articles + questions + transcripts together to 2D
 7. **Density flattening** via approximate optimal transport (`mu=0.85`)
 8. **Apply coordinates** to all domain bundles and video catalog
 9. **Compute bounding boxes** from question positions (5th-95th percentile)
@@ -84,7 +84,7 @@ The `scripts/` directory contains the Python pipeline that generates the data po
 
 ```bash
 npx vitest run        # 82 unit tests (estimator, sampler, recommender, stability)
-npx playwright test   # 9 E2E test specs (quiz flow, video recs, sharing, edge cases)
+npx playwright test   # 9 E2E specs across 5 browser projects (Chromium, Firefox, WebKit, mobile)
 ```
 
 ## Citation
@@ -94,7 +94,7 @@ npx playwright test   # 9 E2E test specs (quiz flow, video recs, sharing, edge c
   title={Text embedding models yield detailed conceptual knowledge maps derived from short multiple-choice quizzes},
   author={Fitzpatrick, Paxton C. and Heusser, Andrew C. and Manning, Jeremy R.},
   year={2025},
-  url={https://psyarxiv.com/dh3q2}
+  url={https://osf.io/preprints/psyarxiv/dh3q2}
 }
 ```
 

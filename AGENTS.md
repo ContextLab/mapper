@@ -72,7 +72,7 @@ mapper/
 |--------|-------|
 | Wikipedia articles | ~250,000 (48,259 with coordinates across domains) |
 | Knowledge domains | 50 (flat hierarchy in index.json) |
-| Quiz questions | 2,450 (50 per domain, GPT-5-nano generated) |
+| Quiz questions | 2,450 (50 per domain, Claude Opus 4.6 generated) |
 | Khan Academy videos | 5,044 in catalog |
 | Video transcript windows | 77,408 (512-word sliding windows, 50-word stride) |
 | Transcripts on disk | 5,400+ (.txt files from Whisper) |
@@ -97,7 +97,7 @@ mapper/
 | Loading modal | `src/ui/progress.js` | Centered modal with spinner |
 | **Pipeline** | | |
 | Embed articles | `scripts/generate_embeddings_local_full.py` | 250K articles → 768-dim |
-| Generate questions | `scripts/generate_domain_questions.py` | GPT-5-nano, 50/domain |
+| Generate questions | `scripts/generate_domain_questions.py` | Claude Opus 4.6, 50/domain |
 | Embed questions | `scripts/embed_questions_v2.py` | Same model as articles |
 | Embed transcripts (full) | `scripts/embed_transcripts.py` | One embedding per video |
 | Embed transcripts (windows) | `scripts/embed_video_windows.py` | Sliding windows per video |
@@ -122,7 +122,7 @@ mapper/
 wikipedia.pkl (250K articles, gitignored)
     ↓ generate_embeddings_local_full.py
 embeddings/wikipedia_embeddings.pkl (250K × 768)
-    ↓ generate_domain_questions.py (GPT-5-nano)
+    ↓ generate_domain_questions.py (Claude Opus 4.6)
 data/domains/.working/*-questions-batch*.json (50 per domain)
     ↓ embed_questions_v2.py
 embeddings/question_embeddings_2500.pkl (2500 × 768)
@@ -170,7 +170,7 @@ User answers question → estimator updates knowledge map
 - **macOS env vars**: Scripts set `TOKENIZERS_PARALLELISM=false`, `OMP_NUM_THREADS=1`, `MKL_NUM_THREADS=1`
 - **Python venv**: Use `.venv/bin/python3` (not system python) for numpy 2.x compatibility
 - **Embedding model**: `google/embeddinggemma-300m` everywhere (768-dim, SentenceTransformer)
-- **LLM model**: `gpt-5-nano` via OpenAI Batch API for question generation
+- **LLM model**: `Claude Opus 4.6` via Anthropic API for question generation
 - **localStorage**: Browser-side persistence, versioned schema. No server-side storage.
 - **Domain bundles**: Background pre-loaded at boot for instant switching (no loading modal per switch)
 - **Domain viewport**: Read from `registry.getDomain(id).region` (index.json), not from bundle

@@ -28,7 +28,7 @@ wikipedia.pkl (250K articles)
        │                                    (250K × 768, google/embeddinggemma-300m)
        ▼
 [2] generate_domain_questions.py       →  data/domains/*_questions.json
-       │                                    (50 questions per domain via GPT-5-nano)
+       │                                    (50 questions per domain via Claude Opus 4.6)
        ▼
 [3] embed_questions.py                 →  embeddings/question_embeddings.pkl
        │                                    (same model as articles for consistency)
@@ -63,7 +63,7 @@ Embeds all 250K Wikipedia articles using `google/embeddinggemma-300m`.
 ```bash
 python scripts/generate_domain_questions.py
 ```
-Generates 50 quiz questions per domain using GPT-5-nano.
+Generates 50 quiz questions per domain using Claude Opus 4.6.
 
 ### Step 3: Embed Questions
 ```bash
@@ -162,7 +162,7 @@ python scripts/regenerate_question_pipeline.py
 
 | Script | Description |
 |--------|-------------|
-| `generate_domain_questions.py` | Generate 50 quiz questions per domain using GPT-5-nano. Each question gets difficulty level, concepts tested, and a source Wikipedia article reference. |
+| `generate_domain_questions.py` | Generate 50 quiz questions per domain using Claude Opus 4.6. Each question gets difficulty level, concepts tested, and a source Wikipedia article reference. |
 | `validate_article_existence.py` | Validate that all `source_article` references in generated questions correspond to real Wikipedia articles via the Wikipedia REST API. Use `--fix` to remove questions with invalid articles. |
 
 ### Export & Postprocessing

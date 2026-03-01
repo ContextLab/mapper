@@ -2,7 +2,7 @@
 
 An interactive visualization that maps your conceptual knowledge across 250,000 Wikipedia articles and 5,000+ Khan Academy videos. Answer questions to watch a real-time heatmap of your strengths and gaps emerge, then get personalized video recommendations to fill knowledge gaps.
 
-**[Try the live demo](https://contextlab.github.io/mapper/)** | **[Read the paper](https://psyarxiv.com/dh3q2)**
+**[Try the live demo](https://contextlab.github.io/mapper/)** | **[Read the paper](https://osf.io/preprints/psyarxiv/dh3q2)**
 
 ## How It Works
 
@@ -17,12 +17,14 @@ Under the hood, text embedding models place every article, question, and video t
 ## Features
 
 - **50 knowledge domains** including Physics, Biology, Mathematics, Computer Science, Philosophy, and more
-- **2,450 adaptive quiz questions** generated via GPT-5-nano from Wikipedia source articles
-- **5,000+ Khan Academy videos** with knowledge-gap-based recommendations
-- **Real-time heatmap** powered by radial basis function interpolation
-- **Video trajectories** -- hover a video dot to see its topic path across the map
+- **2,500 adaptive quiz questions** generated via Claude Opus 4.6 from Wikipedia source articles
+- **5,400+ Khan Academy videos** with knowledge-gap-based recommendations
+- **Real-time heatmap** powered by Gaussian Process interpolation with Matern 3/2 kernel
+- **Video discovery panel** -- left sidebar with toggleable video visibility, scrollable list, and map trajectory highlighting
+- **Video trajectories** -- hover a video dot to see its topic path across the map; click to play
 - **Knowledge insights** -- see your strongest/weakest concepts and learning suggestions
 - **Social sharing** -- export your knowledge map as an image with grid lines and colorbar
+- **Keyboard shortcuts** -- press A/B/C/D to answer, with modifier-key awareness to avoid conflicts
 - **Fully client-side** -- no data leaves your browser; progress saved to localStorage
 
 ## Quick Start
@@ -53,7 +55,7 @@ mapper/
 │   ├── domain/         # Domain data loading and registry
 │   ├── learning/       # Adaptive quiz engine + video recommender
 │   ├── state/          # Application state and persistence
-│   ├── ui/             # UI components (controls, quiz, insights, share, video modal)
+│   ├── ui/             # UI components (controls, quiz, insights, share, video panel/modal)
 │   ├── utils/          # Math, accessibility, feature detection
 │   └── viz/            # Canvas rendering (heatmap, minimap, particles)
 ├── data/               # Pre-computed data bundles
@@ -69,7 +71,7 @@ mapper/
 The `scripts/` directory contains the Python pipeline that generates the data powering the frontend:
 
 1. **Embed articles** using `google/embeddinggemma-300m` (768-dim vectors)
-2. **Generate questions** via GPT-5-nano (50 per domain, 2,450 total)
+2. **Generate questions** via Claude Opus 4.6 (50 per domain, 2,450 total)
 3. **Embed questions** using the same model (for coordinate consistency)
 4. **Transcribe videos** via Whisper on GPU cluster (5,400+ Khan Academy transcripts)
 5. **Embed transcripts** -- both full-document and sliding-window (512 words, 50-word stride)
@@ -81,16 +83,16 @@ The `scripts/` directory contains the Python pipeline that generates the data po
 ## Testing
 
 ```bash
-npx vitest run        # 75 unit tests (estimator, sampler, recommender)
-npx playwright test   # 8 E2E test specs (quiz flow, video recs, sharing)
+npx vitest run        # 82 unit tests (estimator, sampler, recommender, stability)
+npx playwright test   # 9 E2E test specs (quiz flow, video recs, sharing, edge cases)
 ```
 
 ## Citation
 
 ```bibtex
-@article{manning2025mapper,
-  title={Text embedding models yield high-resolution insights into conceptual knowledge},
-  author={Manning, Jeremy R},
+@article{fitzpatrick2025mapper,
+  title={Text embedding models yield detailed conceptual knowledge maps derived from short multiple-choice quizzes},
+  author={Fitzpatrick, Paxton C. and Heusser, Andrew C. and Manning, Jeremy R.},
   year={2025},
   url={https://psyarxiv.com/dh3q2}
 }

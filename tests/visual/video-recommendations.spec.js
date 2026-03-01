@@ -38,14 +38,16 @@ const MOCK_CATALOG = [
 
 async function selectDomain(page, domainName) {
   const value = domainName.toLowerCase().replace(/\s+/g, '-');
-  const landingTrigger = page.locator('#landing-domain-wrapper .custom-select-trigger');
-  const headerTrigger = page.locator('.domain-selector .custom-select-trigger');
-  const trigger = (await landingTrigger.isVisible()) ? landingTrigger : headerTrigger;
+  // If on landing page, click start button to enter the map first
+  const startBtn = page.locator('#landing-start-btn');
+  if (await startBtn.isVisible().catch(() => false)) {
+    await page.waitForSelector('#landing-start-btn[data-ready]', { timeout: LOAD_TIMEOUT });
+    await startBtn.click();
+    await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
+  }
+  const trigger = page.locator('.domain-selector .custom-select-trigger');
   await trigger.click();
-  const parent = (await landingTrigger.isVisible())
-    ? page.locator('#landing-domain-wrapper')
-    : page.locator('.domain-selector');
-  await parent.locator(`.custom-select-option[data-value="${value}"]`).click();
+  await page.locator(`.domain-selector .custom-select-option[data-value="${value}"]`).click();
 }
 
 /** Intercept catalog.json to serve mock data. */
@@ -130,7 +132,6 @@ test.describe('Video Modal Visual Regression (T-V065)', () => {
     await mockYouTubeApi(page);
     await page.goto('/');
     await page.waitForSelector('#landing', { timeout: LOAD_TIMEOUT });
-    await page.waitForSelector('#landing-domain-wrapper .custom-select-trigger', { timeout: LOAD_TIMEOUT });
     await selectDomain(page, 'physics');
     await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
   });
@@ -193,7 +194,6 @@ test.describe('Recommendation Load Time (T-V067)', () => {
     await mockYouTubeApi(page);
     await page.goto('/');
     await page.waitForSelector('#landing', { timeout: LOAD_TIMEOUT });
-    await page.waitForSelector('#landing-domain-wrapper .custom-select-trigger', { timeout: LOAD_TIMEOUT });
     await selectDomain(page, 'physics');
     await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
 
@@ -228,7 +228,6 @@ test.describe('Video Completion Detection (T-V064)', () => {
     await mockYouTubeApi(page);
     await page.goto('/');
     await page.waitForSelector('#landing', { timeout: LOAD_TIMEOUT });
-    await page.waitForSelector('#landing-domain-wrapper .custom-select-trigger', { timeout: LOAD_TIMEOUT });
     await selectDomain(page, 'physics');
     await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
   });
@@ -284,7 +283,6 @@ test.describe('Player Load Time (T-V068)', () => {
     await mockYouTubeApi(page);
     await page.goto('/');
     await page.waitForSelector('#landing', { timeout: LOAD_TIMEOUT });
-    await page.waitForSelector('#landing-domain-wrapper .custom-select-trigger', { timeout: LOAD_TIMEOUT });
     await selectDomain(page, 'physics');
     await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
     await openVideoModal(page);
@@ -312,7 +310,6 @@ test.describe('localStorage Persistence (T-V066)', () => {
     await mockYouTubeApi(page);
     await page.goto('/');
     await page.waitForSelector('#landing', { timeout: LOAD_TIMEOUT });
-    await page.waitForSelector('#landing-domain-wrapper .custom-select-trigger', { timeout: LOAD_TIMEOUT });
     await selectDomain(page, 'physics');
     await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
     await openVideoModal(page);
@@ -368,7 +365,6 @@ test.describe('Embed-Blocked Fallback (T-V070)', () => {
 
     await page.goto('/');
     await page.waitForSelector('#landing', { timeout: LOAD_TIMEOUT });
-    await page.waitForSelector('#landing-domain-wrapper .custom-select-trigger', { timeout: LOAD_TIMEOUT });
     await selectDomain(page, 'physics');
     await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
     await openVideoModal(page);

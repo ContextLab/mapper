@@ -1,11 +1,11 @@
 [
   {
-    "question_text": "An operating system manages computer hardware and software resources. What is generally considered the first operating system, created in 1956 for the IBM 704?",
-    "correct_answer": "GM-NAA I/O, developed by General Motors and North American Aviation",
+    "question_text": "What is an operating system in the context of computing?",
+    "correct_answer": "System software that manages computer hardware and software resources and provides common services for programs",
     "distractors": [
-      "BESYS, developed by Bell Labs for the IBM 7090",
-      "IBSYS, developed by IBM for its 7090 and 7094 mainframes",
-      "CTSS, developed at MIT for the IBM 7094"
+      "A physical circuit board that coordinates electrical signals between the CPU and memory chips",
+      "A programming language used to write applications and compile them into machine code",
+      "A network protocol that routes data packets between computers connected to the internet"
     ],
     "difficulty": 1,
     "source_article": "Operating system",
@@ -13,12 +13,12 @@
     "concepts_tested": ["operating system"]
   },
   {
-    "question_text": "The Internet originated from ARPANET. On October 29, 1969, the first ARPANET message was intended to be 'login,' but the system crashed. What letters were actually transmitted?",
-    "correct_answer": "Only 'L' and 'O' were sent before the system crashed",
+    "question_text": "What is the Internet?",
+    "correct_answer": "The global system of interconnected computer networks that uses the TCP/IP protocol suite to communicate between networks and devices",
     "distractors": [
-      "Only the letter 'L' was sent before the connection timed out",
-      "The full word 'log' was transmitted before a buffer overflow occurred",
-      "Only 'L', 'O', and 'G' were sent before a routing error stopped the transfer"
+      "A single centralized server maintained by an international organization that hosts all publicly accessible websites worldwide",
+      "A local wireless connection standard that links personal devices within a single home or office building",
+      "A satellite broadcasting system that transmits television and radio signals to receivers located around the world"
     ],
     "difficulty": 1,
     "source_article": "Internet",
@@ -26,12 +26,12 @@
     "concepts_tested": ["internet"]
   },
   {
-    "question_text": "A database is an organized collection of data managed by a DBMS. What does DBMS stand for, and what is its primary role?",
-    "correct_answer": "Database Management System; it manages storage, retrieval, and administration of data",
+    "question_text": "In computing, what is a database?",
+    "correct_answer": "An organized collection of data stored electronically and managed through a database management system (DBMS)",
     "distractors": [
-      "Data Block Management Service; it handles physical disk allocation and defragmentation",
-      "Digital Backup and Migration System; it automates data replication across servers",
-      "Database Monitoring and Security system; it provides real-time intrusion detection for stored data"
+      "A physical filing cabinet system used to archive printed documents and paper records in offices",
+      "A type of spreadsheet application designed exclusively for calculating and displaying financial records",
+      "A backup power supply unit that preserves electronically stored data during unexpected electrical outages"
     ],
     "difficulty": 1,
     "source_article": "Database",
@@ -39,12 +39,12 @@
     "concepts_tested": ["database"]
   },
   {
-    "question_text": "In a computer network, which topology connects every device directly to every other device, providing maximum redundancy but at the highest cabling cost?",
-    "correct_answer": "Mesh topology (specifically full mesh topology)",
+    "question_text": "What best describes a computer network?",
+    "correct_answer": "A group of interconnected computers that communicate and share resources using communication protocols",
     "distractors": [
-      "Star topology, where all devices connect through a central hub",
-      "Ring topology, where each device connects to exactly two neighbors",
-      "Bus topology, where all devices share a single backbone cable"
+      "A single computer with multiple monitors attached for displaying different applications on each screen",
+      "A software program that connects a computer's internal components such as the CPU and memory",
+      "A collection of websites organized into categories and indexed for retrieval by a search engine"
     ],
     "difficulty": 1,
     "source_article": "Computer network",
@@ -52,12 +52,12 @@
     "concepts_tested": ["computer network"]
   },
   {
-    "question_text": "Software is broadly divided into two main categories. Which two categories are they?",
-    "correct_answer": "System software (e.g., operating systems) and application software (e.g., word processors)",
+    "question_text": "What does the term 'software' refer to in computing?",
+    "correct_answer": "Computer programs and associated data that provide instructions telling a computer what to do",
     "distractors": [
-      "Compiled software (e.g., C programs) and interpreted software (e.g., Python scripts)",
-      "Open-source software (e.g., Linux) and proprietary software (e.g., Windows)",
-      "Firmware (e.g., BIOS) and middleware (e.g., database connectors)"
+      "The physical electronic components inside a computer such as the processor and memory chips",
+      "The electrical wiring and cable connections that link peripheral devices to the motherboard",
+      "The metal and plastic casing that protects the internal circuitry of a computer from damage"
     ],
     "difficulty": 1,
     "source_article": "Software",
@@ -65,12 +65,12 @@
     "concepts_tested": ["software"]
   },
   {
-    "question_text": "A computer virus replicates by inserting its code into other programs. What was the name of the first known computer virus, created by Bob Thomas at BBN Technologies in 1971?",
-    "correct_answer": "Creeper, which spread across ARPANET displaying 'I'm the creeper, catch me if you can!'",
+    "question_text": "What distinguishes a computer virus from other types of malicious software?",
+    "correct_answer": "It replicates by modifying other computer programs and inserting its own code into those programs",
     "distractors": [
-      "Brain, which infected IBM PC boot sectors and was created in Pakistan",
-      "Elk Cloner, which spread via Apple II floppy disks and displayed a poem",
-      "Morris Worm, which exploited Unix sendmail vulnerabilities to replicate across the Internet"
+      "It encrypts all files on a hard drive and demands a cryptocurrency ransom payment to restore access",
+      "It monitors keyboard input to secretly record passwords and send them to a remote attacker",
+      "It spreads independently across networks without needing to attach itself to any existing programs"
     ],
     "difficulty": 1,
     "source_article": "Computer virus",
@@ -78,12 +78,12 @@
     "concepts_tested": ["computer virus"]
   },
   {
-    "question_text": "According to NIST Special Publication 800-145, cloud computing has five essential characteristics. Which of the following is one of those five characteristics?",
-    "correct_answer": "On-demand self-service, allowing users to provision computing resources automatically without human interaction",
+    "question_text": "What is cloud computing?",
+    "correct_answer": "The on-demand delivery of computing resources such as servers, storage, and applications over the internet",
     "distractors": [
-      "Guaranteed uptime of 99.999%, ensuring continuous availability under all conditions",
-      "Mandatory data encryption at rest, requiring all stored data to be encrypted by default",
-      "Automatic geographic redundancy, replicating all data across at least three continents"
+      "A weather prediction system that uses networked satellites to model atmospheric conditions and forecast storms",
+      "A method of storing files exclusively on portable USB flash drives for secure offline access anywhere",
+      "A local area network setup where all desktop computers share a single centralized physical hard drive"
     ],
     "difficulty": 1,
     "source_article": "Cloud computing",
@@ -91,12 +91,12 @@
     "concepts_tested": ["cloud computing"]
   },
   {
-    "question_text": "Computer hardware refers to the physical components of a computer. Which component is often called the 'brain' of the computer because it executes instructions and performs calculations?",
-    "correct_answer": "The central processing unit (CPU)",
+    "question_text": "What does the term 'computer hardware' refer to?",
+    "correct_answer": "The physical components of a computer, such as the CPU, RAM, motherboard, and storage devices",
     "distractors": [
-      "The random-access memory (RAM), which stores running programs",
-      "The motherboard, which connects all components together",
-      "The graphics processing unit (GPU), which renders visual output"
+      "The programs and applications installed on a computer that enable users to perform specific tasks",
+      "The set of rules and protocols that govern how data is transmitted between devices on a network",
+      "The graphical user interface elements like windows, icons, and menus displayed on a monitor screen"
     ],
     "difficulty": 1,
     "source_article": "Computer hardware",
@@ -104,12 +104,12 @@
     "concepts_tested": ["computer hardware"]
   },
   {
-    "question_text": "A file system governs how data is organized and accessed on storage media. Which file system, introduced with Windows NT in 1993, replaced FAT32 and supports a maximum file size of 16 exabytes?",
-    "correct_answer": "NTFS (New Technology File System)",
+    "question_text": "In computing, what is a file system?",
+    "correct_answer": "A method used by an operating system to organize, store, and retrieve files on a storage device",
     "distractors": [
-      "ext4 (Fourth Extended File System), the default for most Linux distributions",
-      "HFS+ (Hierarchical File System Plus), used by macOS before APFS",
-      "ZFS (Zettabyte File System), originally developed by Sun Microsystems"
+      "An antivirus program that scans documents for malicious code before allowing them to be opened",
+      "A cloud-based service that automatically backs up all user files to a remote internet server",
+      "A hardware component inside a hard drive that physically reads and writes data to the disk platters"
     ],
     "difficulty": 1,
     "source_article": "File system",
@@ -117,12 +117,12 @@
     "concepts_tested": ["file system"]
   },
   {
-    "question_text": "According to the NIST Digital Identity Guidelines, what are the two parties involved in password-based authentication called?",
-    "correct_answer": "The claimant (who holds the password) and the verifier (who checks the identity)",
+    "question_text": "In computer security, what is a password?",
+    "correct_answer": "A secret string of characters used to authenticate a user's identity and grant access to a system",
     "distractors": [
-      "The principal (who requests access) and the guardian (who grants permissions)",
-      "The authenticator (who provides credentials) and the arbiter (who validates them)",
-      "The supplicant (who submits the secret) and the gatekeeper (who controls entry)"
+      "A hardware security token that generates a unique radio frequency signal to physically unlock a device",
+      "A biometric fingerprint scan stored on an encrypted chip embedded inside the computer's motherboard",
+      "An encrypted file containing the user's complete browsing history and all saved website preferences"
     ],
     "difficulty": 1,
     "source_article": "Password",

@@ -11,10 +11,11 @@ src/
 │   ├── loader.js       ← Fetch and cache domain JSON bundles
 │   ├── questions.js    ← Question pool management per domain
 │   └── registry.js     ← Domain hierarchy lookups and metadata
-├── learning/           ← Adaptive quiz engine
+├── learning/           ← Adaptive quiz engine + video recommendations
 │   ├── curriculum.js   ← Difficulty progression and topic sequencing
-│   ├── estimator.js    ← Bayesian knowledge estimation (per-concept)
-│   └── sampler.js      ← Weighted question selection based on knowledge gaps
+│   ├── estimator.js    ← Gaussian Process knowledge estimation (Matern 3/2 kernel)
+│   ├── sampler.js      ← Weighted question selection based on knowledge gaps
+│   └── video-recommender.js ← TLP-scored video recommendations targeting weakest regions
 ├── state/              ← Application state
 │   ├── persistence.js  ← LocalStorage save/restore of quiz progress
 │   └── store.js        ← Centralized state (scores, current domain, mode)
@@ -24,7 +25,9 @@ src/
 │   ├── modes.js        ← Explore/Quiz mode toggling
 │   ├── progress.js     ← Score display, progress indicators
 │   ├── quiz.js         ← Question display, answer handling, feedback
-│   └── share.js        ← Social sharing modal (Twitter, copy link, etc.)
+│   ├── share.js        ← Social sharing modal (Twitter, copy link, etc.)
+│   ├── video-modal.js  ← Embedded YouTube player modal for video playback
+│   └── video-panel.js  ← Left sidebar: video list, trajectory toggle, map highlighting
 ├── utils/              ← Shared utilities
 │   ├── accessibility.js ← ARIA labels, keyboard navigation, screen reader support
 │   ├── feature-detection.js ← Browser capability checks (WebGL, touch, etc.)
@@ -40,7 +43,7 @@ src/
 
 - **Domains** are rectangular regions in a 2D UMAP embedding space. Each domain has articles, quiz questions, and grid cell labels. Domain bundles are loaded on demand from `data/domains/{id}.json`.
 
-- **Knowledge estimation** uses a Bayesian model that tracks per-concept mastery. Answering questions updates concept posteriors, which drive the heatmap coloring (red = weak, green = strong).
+- **Knowledge estimation** uses a Gaussian Process with a Matern 3/2 kernel that interpolates knowledge across the 2D map. Answering questions places radial basis function observations (weighted by difficulty), which drive the heatmap coloring (red = weak, green = strong).
 
 - **The renderer** draws everything on a single `<canvas>`: a colored heatmap grid, article dots, question markers, labels, and the minimap. Zoom/pan is handled via affine transforms.
 

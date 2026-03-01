@@ -15,21 +15,31 @@ test.describe('Accessibility (FR-023)', () => {
   });
 
   test('Escape key closes about modal', async ({ page }) => {
-    await page.locator('#about-btn').click();
-    await page.waitForSelector('#about-modal:not([hidden])', { timeout: 3000 });
+    // Wait for boot() to complete — keyboard nav is wired inside boot()
+    await page.waitForSelector('#landing-start-btn[data-ready]', { timeout: 15000 });
+
+    const aboutBtn = page.locator('#about-btn');
+    await aboutBtn.waitFor({ state: 'visible', timeout: 5000 });
+    await aboutBtn.click();
+    await page.waitForSelector('#about-modal:not([hidden])', { timeout: 5000 });
     await page.keyboard.press('Escape');
-    await expect(page.locator('#about-modal')).toBeHidden();
+    await expect(page.locator('#about-modal')).toBeHidden({ timeout: 3000 });
   });
 
-  test('skip-to-content link appears on focus', async ({ page }) => {
+  test('skip-to-content link appears on focus', async ({ page, browserName }) => {
+    // WebKit/Safari doesn't tab to non-form elements by default
+    test.skip(browserName === 'webkit', 'WebKit Tab focus behavior differs from Chromium/Firefox');
+
     await page.keyboard.press('Tab');
     const skipLink = page.locator('.skip-link');
     await expect(skipLink).toBeFocused();
   });
 
   test('about button is keyboard accessible', async ({ page }) => {
-    await page.locator('#about-btn').focus();
+    const aboutBtn = page.locator('#about-btn');
+    await aboutBtn.waitFor({ state: 'visible', timeout: 5000 });
+    await aboutBtn.focus();
     await page.keyboard.press('Enter');
-    await expect(page.locator('#about-modal')).not.toBeHidden();
+    await expect(page.locator('#about-modal')).not.toBeHidden({ timeout: 3000 });
   });
 });

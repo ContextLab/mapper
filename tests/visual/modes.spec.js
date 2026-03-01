@@ -5,19 +5,22 @@ const LOAD_TIMEOUT = 15000;
 
 async function selectDomain(page, domainName) {
   const value = domainName.toLowerCase().replace(/\s+/g, '-');
-  const landingTrigger = page.locator('#landing-domain-wrapper .custom-select-trigger');
-  const headerTrigger = page.locator('.domain-selector .custom-select-trigger');
-  const trigger = (await landingTrigger.isVisible()) ? landingTrigger : headerTrigger;
+  // If on landing page, click start button to enter the map first
+  const startBtn = page.locator('#landing-start-btn');
+  if (await startBtn.isVisible().catch(() => false)) {
+    await page.waitForSelector('#landing-start-btn[data-ready]', { timeout: LOAD_TIMEOUT });
+    await startBtn.click();
+    await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
+  }
+  const trigger = page.locator('.domain-selector .custom-select-trigger');
   await trigger.click();
-  const parent = (await landingTrigger.isVisible()) ? page.locator('#landing-domain-wrapper') : page.locator('.domain-selector');
-  await parent.locator(`.custom-select-option[data-value="${value}"]`).click();
+  await page.locator(`.domain-selector .custom-select-option[data-value="${value}"]`).click();
 }
 
 test.describe('Question Modes (US3)', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
     await page.waitForSelector('#landing', { timeout: LOAD_TIMEOUT });
-    await page.waitForSelector('#landing-domain-wrapper .custom-select-trigger', { timeout: LOAD_TIMEOUT });
     await selectDomain(page, 'physics');
     await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
   });
@@ -26,10 +29,10 @@ test.describe('Question Modes (US3)', () => {
     const wrapper = page.locator('.modes-wrapper');
     await expect(wrapper).toBeVisible();
 
-    // Should have all 7 mode buttons (4 question + 3 insight)
+    // Should have all 4 question mode buttons (insight modes are currently empty)
     const modeButtons = wrapper.locator('.mode-btn');
     const count = await modeButtons.count();
-    expect(count).toBe(7);
+    expect(count).toBe(4);
 
     // Auto mode should be active by default
     const autoBtn = wrapper.locator('.mode-btn.active');
@@ -43,8 +46,8 @@ test.describe('Question Modes (US3)', () => {
     const disabledBtns = page.locator('.mode-btn:disabled');
     const disabledCount = await disabledBtns.count();
 
-    // At least the insight modes (minAnswers: 10) should be disabled initially
-    expect(disabledCount).toBeGreaterThanOrEqual(3);
+    // 3 modes require minAnswers > 0 (easy, hardest-can-answer, dont-know)
+    expect(disabledCount).toBe(3);
 
     // Each disabled button should have a data-tooltip attribute
     for (let i = 0; i < disabledCount; i++) {
@@ -55,15 +58,11 @@ test.describe('Question Modes (US3)', () => {
     }
   });
 
-  test('insight mode buttons have dashed border style', async ({ page }) => {
+  test('insight mode buttons have dashed border style (when present)', async ({ page }) => {
     const insightBtns = page.locator('.mode-btn--insight');
     const count = await insightBtns.count();
-    expect(count).toBe(3); // expertise, weakness, suggested
-
-    // Verify each has the dashed border class
-    for (let i = 0; i < count; i++) {
-      await expect(insightBtns.nth(i)).toHaveClass(/mode-btn--insight/);
-    }
+    // INSIGHT_MODES is currently empty — verify no insight buttons rendered
+    expect(count).toBe(0);
   });
 
   test('captures screenshot of mode selector', async ({ page }) => {

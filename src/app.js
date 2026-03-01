@@ -26,11 +26,11 @@ import * as controls from './ui/controls.js';
 import * as quiz from './ui/quiz.js';
 import * as modes from './ui/modes.js';
 
-const SKIP_LENGTH_SCALE_FACTOR = 0.5;
 import * as insights from './ui/insights.js';
 import * as share from './ui/share.js';
 import * as videoModal from './ui/video-modal.js';
 import * as videoLoader from './domain/video-loader.js';
+import * as videoPanel from './ui/video-panel.js';
 import { computeRanking, takeSnapshot, handlePostVideoQuestion } from './learning/video-recommender.js';
 import { updateConfidence, initConfidence } from './ui/progress.js';
 import { announce, setupKeyboardNav } from './utils/accessibility.js';
@@ -121,6 +121,9 @@ async function boot() {
     if (renderer && videos.length > 0 && mapInitialized) {
       renderer.setVideos(videosToMarkers(videos));
     }
+    if (videos && videos.length > 0) {
+      videoPanel.setVideos(videosToMarkers(videos));
+    }
   });
 
   // Pre-load all domain bundles in the background so domain switches are instant.
@@ -139,6 +142,7 @@ async function boot() {
   const landingStartBtn = document.getElementById('landing-start-btn');
   if (landingStartBtn) {
     landingStartBtn.addEventListener('click', () => $activeDomain.set('all'));
+    landingStartBtn.dataset.ready = 'true';
   }
 
   const quizPanel = document.getElementById('quiz-panel');
@@ -159,6 +163,25 @@ async function boot() {
       thumbnail_url: hit.thumbnailUrl,
     });
   });
+
+  // Video discovery panel (left sidebar)
+  const videoPanelEl = document.getElementById('video-panel');
+  if (videoPanelEl) {
+    videoPanel.init(videoPanelEl, {
+      onVideoSelect: (video) => videoModal.playVideo(video),
+      onVideoHover: (videoId) => {
+        if (renderer) renderer.setHoveredVideoId(videoId);
+      },
+      onToggleMarkers: (visible) => {
+        if (renderer) renderer.setShowVideoMarkers(visible);
+      },
+    });
+  }
+
+  const videoToggle = document.getElementById('video-toggle');
+  if (videoToggle) {
+    videoToggle.addEventListener('click', () => toggleVideoPanel());
+  }
 
   modes.init(quizPanel);
   modes.onModeSelect(handleModeSelect);
@@ -239,6 +262,10 @@ async function boot() {
       if (animated) renderer.transitionTo(region, 400);
       else renderer.jumpTo(region);
     });
+    minimap.onPan((cx, cy, animated) => {
+      if (!renderer) return;
+      renderer.panToCenter(cx, cy, animated);
+    });
 
     // Use the pre-loaded "all" domain for minimap background
     if (allDomainBundle) {
@@ -284,6 +311,10 @@ function wireSubscriptions() {
   $coverage.subscribe((coverage) => {
     updateConfidence(coverage);
   });
+
+  $watchedVideos.subscribe((watched) => {
+    videoPanel.setWatchedVideos(watched);
+  });
 }
 
 function articlesToPoints(articles) {
@@ -293,7 +324,7 @@ function articlesToPoints(articles) {
     y: a.y,
     z: a.z || 0,
     type: 'article',
-    color: [148, 163, 184, 80],
+    color: [0, 0, 0, 30],
     radius: 1.5,
     title: a.title,
     url: a.url,
@@ -427,6 +458,7 @@ async function switchDomain(domainId) {
     const { data: earlyVideos } = videoLoader.getVideos();
     if (earlyVideos && earlyVideos.length > 0) {
       renderer.setVideos(videosToMarkers(earlyVideos));
+      videoPanel.setVideos(videosToMarkers(earlyVideos));
     }
   }
 
@@ -444,6 +476,10 @@ async function switchDomain(domainId) {
     console.error('[app] Question aggregation failed:', err);
     aggregatedQuestions = allDomainBundle ? allDomainBundle.questions : [];
   }
+
+  // Re-apply answered dots now that questionIndex is fully populated
+  // (fixes import-from-landing-page showing only the first dot)
+  renderer.setAnsweredQuestions(responsesToAnsweredDots($responses.get(), questionIndex));
 
   // Update domain-scoped tracking
   domainQuestionCount = $responses.get().length;
@@ -463,6 +499,8 @@ async function switchDomain(domainId) {
   toggleQuizPanel(true);
   const toggleBtn = document.getElementById('quiz-toggle');
   if (toggleBtn) toggleBtn.removeAttribute('hidden');
+  const videoToggleBtn = document.getElementById('video-toggle');
+  if (videoToggleBtn) videoToggleBtn.removeAttribute('hidden');
   controls.showActionButtons();
 
   const domainName = registry.getDomains().find(d => d.id === domainId)?.name || domainId;
@@ -520,6 +558,7 @@ function handleAnswer(selectedKey, question) {
     domain_id: activeDomainId,
     selected: selectedKey,
     is_correct: isCorrect,
+    difficulty: question.difficulty,
     timestamp: Date.now(),
     x: question.x,
     y: question.y,
@@ -579,6 +618,7 @@ function handleSkip() {
     selected: null,
     is_correct: false,
     is_skipped: true,
+    difficulty: question.difficulty,
     timestamp: Date.now(),
     x: question.x,
     y: question.y,
@@ -589,10 +629,9 @@ function handleSkip() {
   const isReanswer = filtered.length < current.length;
   $responses.set([...filtered, response]);
 
-  const skipLengthScale = UNIFORM_LENGTH_SCALE * SKIP_LENGTH_SCALE_FACTOR;
   const difficulty = question.difficulty;
-  estimator.observeSkip(question.x, question.y, skipLengthScale, difficulty);
-  globalEstimator.observeSkip(question.x, question.y, skipLengthScale, difficulty);
+  estimator.observeSkip(question.x, question.y, UNIFORM_LENGTH_SCALE, difficulty);
+  globalEstimator.observeSkip(question.x, question.y, UNIFORM_LENGTH_SCALE, difficulty);
   const estimates = estimator.predict();
   $estimates.set(estimates);
 
@@ -604,8 +643,17 @@ function handleSkip() {
 
   renderer.setAnsweredQuestions(responsesToAnsweredDots($responses.get(), questionIndex));
 
-  announce('Skipped. Moving to next question.');
-  selectAndShowNextQuestion();
+  // Show feedback with correct answer highlighted (like wrong-answer flow)
+  quiz.showSkipFeedback(question);
+  announce('Skipped. The correct answer is highlighted.');
+
+  // Revert non-auto modes back to auto after skip
+  modes.revertToAutoIfNeeded();
+
+  // Auto-advance after delay if toggle is on; otherwise user clicks "Next"
+  if (modes.isAutoAdvance()) {
+    setTimeout(() => selectAndShowNextQuestion(), 800);
+  }
 }
 
 function handleReset() {
@@ -646,8 +694,11 @@ function handleReset() {
   // Reset viewport to full map
   renderer.jumpTo(GLOBAL_REGION);
   toggleQuizPanel(false);
+  toggleVideoPanel(false);
   const toggleBtn = document.getElementById('quiz-toggle');
   if (toggleBtn) toggleBtn.setAttribute('hidden', '');
+  const videoToggleBtn = document.getElementById('video-toggle');
+  if (videoToggleBtn) videoToggleBtn.setAttribute('hidden', '');
   const landing = document.getElementById('landing');
   if (landing) landing.classList.remove('hidden');
   const appEl = document.getElementById('app');
@@ -747,6 +798,7 @@ function handleImport(data) {
 function handleViewportChange(viewport) {
   currentViewport = viewport;
   if (minimap) minimap.setViewport(viewport);
+  videoPanel.updateViewport(viewport);
 }
 
 function handleCellClick(_gx, _gy) {
@@ -793,6 +845,30 @@ function toggleQuizPanel(show) {
       toggleBtn.classList.remove('panel-open');
       toggleBtn.querySelector('i').className = 'fa-solid fa-chevron-left';
       toggleBtn.setAttribute('aria-label', 'Open quiz panel');
+    }
+  }
+}
+
+function toggleVideoPanel(show) {
+  const panel = document.getElementById('video-panel');
+  const toggleBtn = document.getElementById('video-toggle');
+  if (!panel) return;
+
+  if (show === undefined) show = !panel.classList.contains('open');
+
+  if (show) {
+    panel.classList.add('open');
+    if (toggleBtn) {
+      toggleBtn.classList.add('panel-open');
+      toggleBtn.querySelector('i').className = 'fa-solid fa-chevron-left';
+      toggleBtn.setAttribute('aria-label', 'Close video panel');
+    }
+  } else {
+    panel.classList.remove('open');
+    if (toggleBtn) {
+      toggleBtn.classList.remove('panel-open');
+      toggleBtn.querySelector('i').className = 'fa-solid fa-chevron-right';
+      toggleBtn.setAttribute('aria-label', 'Open video panel');
     }
   }
 }

@@ -193,59 +193,81 @@ export function kernelVector(testPoint, obsPoints, kernelFn) {
  */
 export function choleskySolve(K, b) {
   const n = K.length;
-  const JITTER = 1e-6; // Numerical stability floor for Cholesky diagonal
+  const MAX_RETRIES = 3;
 
-  // Cholesky: K = L·L^T
-  const L = new Array(n);
-  for (let i = 0; i < n; i++) {
-    L[i] = new Float64Array(n);
-  }
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    // Adaptive jitter: scales with matrix size to maintain stability for large N
+    const jitter = 1e-6 * Math.max(1, n / 10) * Math.pow(10, attempt);
 
-  for (let i = 0; i < n; i++) {
-    for (let j = 0; j <= i; j++) {
+    // Cholesky: K = L·L^T
+    const L = new Array(n);
+    for (let i = 0; i < n; i++) {
+      L[i] = new Float64Array(n);
+    }
+
+    let negativeDiag = false;
+    for (let i = 0; i < n; i++) {
+      for (let j = 0; j <= i; j++) {
+        let sum = 0;
+        for (let k = 0; k < j; k++) {
+          sum += L[i][k] * L[j][k];
+        }
+        if (i === j) {
+          const diag = K[i][i] - sum + jitter;
+          if (diag <= 0) {
+            negativeDiag = true;
+            break;
+          }
+          L[i][j] = Math.sqrt(diag);
+        } else {
+          L[i][j] = (K[i][j] - sum) / L[j][j];
+        }
+      }
+      if (negativeDiag) break;
+    }
+
+    // Retry with larger jitter on negative diagonal
+    if (negativeDiag) {
+      if (attempt < MAX_RETRIES) {
+        console.warn(`[choleskySolve] Negative diagonal at attempt ${attempt + 1}, retrying with 10× jitter`);
+        continue;
+      }
+      console.warn('[choleskySolve] All retries exhausted — returning zero vector (prior mean fallback)');
+      return new Float64Array(n);
+    }
+
+    // Forward substitution: L·y = b
+    const y = new Float64Array(n);
+    for (let i = 0; i < n; i++) {
       let sum = 0;
-      for (let k = 0; k < j; k++) {
-        sum += L[i][k] * L[j][k];
+      for (let k = 0; k < i; k++) {
+        sum += L[i][k] * y[k];
       }
-      if (i === j) {
-        // Diagonal — add jitter for numerical stability
-        const diag = K[i][i] - sum;
-        L[i][j] = Math.sqrt(Math.max(diag, JITTER));
-      } else {
-        L[i][j] = (K[i][j] - sum) / L[j][j];
+      y[i] = (b[i] - sum) / L[i][i];
+    }
+
+    // Back substitution: L^T·x = y
+    const x = new Float64Array(n);
+    for (let i = n - 1; i >= 0; i--) {
+      let sum = 0;
+      for (let k = i + 1; k < n; k++) {
+        sum += L[k][i] * x[k];
+      }
+      x[i] = (y[i] - sum) / L[i][i];
+    }
+
+    // NaN safety: if decomposition produced NaN, return zero vector
+    for (let i = 0; i < n; i++) {
+      if (!isFinite(x[i])) {
+        console.warn('[choleskySolve] NaN in solution — returning zero vector (prior mean fallback)');
+        return new Float64Array(n);
       }
     }
+
+    return x;
   }
 
-  // Forward substitution: L·y = b
-  const y = new Float64Array(n);
-  for (let i = 0; i < n; i++) {
-    let sum = 0;
-    for (let k = 0; k < i; k++) {
-      sum += L[i][k] * y[k];
-    }
-    y[i] = (b[i] - sum) / L[i][i];
-  }
-
-  // Back substitution: L^T·x = y
-  const x = new Float64Array(n);
-  for (let i = n - 1; i >= 0; i--) {
-    let sum = 0;
-    for (let k = i + 1; k < n; k++) {
-      sum += L[k][i] * x[k];
-    }
-    x[i] = (y[i] - sum) / L[i][i];
-  }
-
-  // NaN safety: if decomposition produced NaN, return zero vector
-  // (caller will get prior mean instead of garbage)
-  for (let i = 0; i < n; i++) {
-    if (!isFinite(x[i])) {
-      return new Float64Array(n); // all zeros → predictions fall back to prior
-    }
-  }
-
-  return x;
+  return new Float64Array(n);
 }
 
 /**
@@ -257,26 +279,57 @@ export function choleskySolve(K, b) {
  */
 export function cholesky(K) {
   const n = K.length;
-  const JITTER = 1e-6;
-  const L = new Array(n);
-  for (let i = 0; i < n; i++) {
-    L[i] = new Float64Array(n);
-  }
+  const MAX_RETRIES = 3;
 
-  for (let i = 0; i < n; i++) {
-    for (let j = 0; j <= i; j++) {
-      let sum = 0;
-      for (let k = 0; k < j; k++) {
-        sum += L[i][k] * L[j][k];
-      }
-      if (i === j) {
-        const diag = K[i][i] - sum;
-        L[i][j] = Math.sqrt(Math.max(diag, JITTER));
-      } else {
-        L[i][j] = (K[i][j] - sum) / L[j][j];
-      }
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    const jitter = 1e-6 * Math.max(1, n / 10) * Math.pow(10, attempt);
+    const L = new Array(n);
+    for (let i = 0; i < n; i++) {
+      L[i] = new Float64Array(n);
     }
+
+    let negativeDiag = false;
+    for (let i = 0; i < n; i++) {
+      for (let j = 0; j <= i; j++) {
+        let sum = 0;
+        for (let k = 0; k < j; k++) {
+          sum += L[i][k] * L[j][k];
+        }
+        if (i === j) {
+          const diag = K[i][i] - sum + jitter;
+          if (diag <= 0) {
+            negativeDiag = true;
+            break;
+          }
+          L[i][j] = Math.sqrt(diag);
+        } else {
+          L[i][j] = (K[i][j] - sum) / L[j][j];
+        }
+      }
+      if (negativeDiag) break;
+    }
+
+    if (negativeDiag) {
+      if (attempt < MAX_RETRIES) {
+        console.warn(`[cholesky] Negative diagonal at attempt ${attempt + 1}, retrying with 10× jitter`);
+        continue;
+      }
+      console.warn('[cholesky] All retries exhausted — returning identity-like L');
+      const Lfallback = new Array(n);
+      for (let i = 0; i < n; i++) {
+        Lfallback[i] = new Float64Array(n);
+        Lfallback[i][i] = 1;
+      }
+      return Lfallback;
+    }
+
+    return L;
   }
 
-  return L;
+  const Lfallback = new Array(n);
+  for (let i = 0; i < n; i++) {
+    Lfallback[i] = new Float64Array(n);
+    Lfallback[i][i] = 1;
+  }
+  return Lfallback;
 }

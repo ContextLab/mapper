@@ -40,13 +40,19 @@ export const IRT_THRESHOLDS = [0.125, 0.375, 0.625, 0.875];
 export const IRT_DISCRIMINATION = 1.5;
 
 // Difficulty-based weight modulation for RBF kernel (CL-047: independent of IRT layer).
-// Higher difficulty questions provide stronger evidence (larger kernel influence).
-// Maps difficulty level (1-4) to a multiplier applied to the kernel weights.
-const DIFFICULTY_WEIGHT_MAP = {
-  1: 0.25,  // Easy questions: weak evidence
-  2: 0.5,   // Medium questions: moderate evidence
-  3: 0.75,  // Hard questions: strong evidence
-  4: 1.0,   // Expert questions: full evidence weight
+// Two maps: correct answers reward harder questions more, incorrect/skip answers
+// penalize easier questions more (getting a hard question wrong is expected).
+const CORRECT_WEIGHT_MAP = {
+  1: 0.25,  // Easy correct: weak positive evidence (expected)
+  2: 0.5,   // Medium correct: moderate positive evidence
+  3: 0.75,  // Hard correct: strong positive evidence
+  4: 1.0,   // Expert correct: full positive evidence weight
+};
+const INCORRECT_WEIGHT_MAP = {
+  1: 1.0,   // Easy wrong: full negative evidence (should know this)
+  2: 0.75,  // Medium wrong: strong negative evidence
+  3: 0.5,   // Hard wrong: moderate negative evidence
+  4: 0.25,  // Expert wrong: weak negative evidence (expected to miss)
 };
 
 export class Estimator {
@@ -58,7 +64,6 @@ export class Estimator {
     this._alpha = null;
     this._obsPoints = [];
     this._obsLengthScales = null; // Float64Array of per-observation length scales
-    this._obsDifficultyWeights = null; // Float64Array of per-observation difficulty weights
     this._obsValues = null;
     this._lengthScale = DEFAULT_LENGTH_SCALE;
     this._signalVariance = DEFAULT_SIGNAL_VARIANCE;
@@ -105,7 +110,12 @@ export class Estimator {
    */
   observe(x, y, correct, lengthScale, difficulty) {
     const value = correct ? 1.0 : 0.0;
-    const difficultyWeight = DIFFICULTY_WEIGHT_MAP[difficulty] || DIFFICULTY_WEIGHT_MAP[3]; // default to difficulty 3
+    // When difficulty is known, modulate weight; when unknown, use full weight (no bias)
+    let difficultyWeight = 1.0;
+    if (difficulty != null) {
+      const weightMap = correct ? CORRECT_WEIGHT_MAP : INCORRECT_WEIGHT_MAP;
+      difficultyWeight = weightMap[difficulty] ?? 1.0;
+    }
     this._observations.push({
       x,
       y,
@@ -125,7 +135,11 @@ export class Estimator {
    * @param {number} [difficulty] - Question difficulty (1-4) for weight modulation
    */
   observeSkip(x, y, lengthScale, difficulty) {
-    const difficultyWeight = DIFFICULTY_WEIGHT_MAP[difficulty] || DIFFICULTY_WEIGHT_MAP[3]; // default to difficulty 3
+    // When difficulty is known, modulate weight; when unknown, use full weight
+    let difficultyWeight = 1.0;
+    if (difficulty != null) {
+      difficultyWeight = INCORRECT_WEIGHT_MAP[difficulty] ?? 1.0;
+    }
     this._observations.push({
       x,
       y,
@@ -163,16 +177,12 @@ export class Estimator {
     for (let i = 0; i < cells.length; i++) {
       const cell = cells[i];
 
-      // k* with per-observation length scales and difficulty weights:
-      // k*[j] = matern32(d, sqrt(l_default * l_j)) * w_j
-      // Test points use the observation's difficulty weight directly (not sqrt)
-      // since test points don't have their own difficulty.
+      // k* with per-observation length scales (no difficulty weights — those are in obsValues)
       const kStar = new Float64Array(n);
       for (let j = 0; j < n; j++) {
         const d = euclidean(cell.cx, cell.cy, this._obsPoints[j].x, this._obsPoints[j].y);
         const lMerged = Math.sqrt(defaultLS * this._obsLengthScales[j]);
-        const wj = this._obsDifficultyWeights ? this._obsDifficultyWeights[j] : 1.0;
-        kStar[j] = matern32(d, lMerged, sv) * wj;
+        kStar[j] = matern32(d, lMerged, sv);
       }
 
       const meanShift = dot(kStar, this._alpha);
@@ -234,13 +244,12 @@ export class Estimator {
     const sv = this._signalVariance;
     const defaultLS = this._lengthScale;
 
-    // k* with per-observation length scales and difficulty weights
+    // k* with per-observation length scales (no difficulty weights — those are in obsValues)
     const kStar = new Float64Array(n);
     for (let j = 0; j < n; j++) {
       const d = euclidean(cell.cx, cell.cy, this._obsPoints[j].x, this._obsPoints[j].y);
       const lMerged = Math.sqrt(defaultLS * this._obsLengthScales[j]);
-      const wj = this._obsDifficultyWeights ? this._obsDifficultyWeights[j] : 1.0;
-      kStar[j] = matern32(d, lMerged, sv) * wj;
+      kStar[j] = matern32(d, lMerged, sv);
     }
     const meanShift = dot(kStar, this._alpha);
     const value = clamp(PRIOR_MEAN + meanShift, 0, 1);
@@ -283,7 +292,6 @@ export class Estimator {
     this._obsPoints = [];
     this._obsValues = null;
     this._obsLengthScales = null;
-    this._obsDifficultyWeights = null;
     this._K_noisy = null;
   }
 
@@ -307,15 +315,21 @@ export class Estimator {
     for (const r of responses) {
       if (r.x != null && r.y != null) {
         const isSkipped = !!r.is_skipped;
-        // Look up difficulty from question index if available
+        const isCorrect = !!r.is_correct;
+        // Look up difficulty from question index, falling back to the response's own field
         const question = questionIndex?.get(r.question_id);
-        const difficulty = question?.difficulty;
-        const difficultyWeight = DIFFICULTY_WEIGHT_MAP[difficulty] || DIFFICULTY_WEIGHT_MAP[3];
+        const difficulty = question?.difficulty ?? r.difficulty;
+        // When difficulty is known, modulate weight; when unknown, use full weight (no bias)
+        let difficultyWeight = 1.0;
+        if (difficulty != null) {
+          const weightMap = (!isSkipped && isCorrect) ? CORRECT_WEIGHT_MAP : INCORRECT_WEIGHT_MAP;
+          difficultyWeight = weightMap[difficulty] ?? 1.0;
+        }
         this._observations.push({
           x: r.x,
           y: r.y,
-          value: isSkipped ? SKIP_KNOWLEDGE_VALUE : (r.is_correct ? 1.0 : 0.0),
-          lengthScale: isSkipped ? ls * 0.5 : ls,
+          value: isSkipped ? SKIP_KNOWLEDGE_VALUE : (isCorrect ? 1.0 : 0.0),
+          lengthScale: ls, // Full length scale for all observations (no skip reduction)
           difficultyWeight,
         });
       }
@@ -344,7 +358,6 @@ export class Estimator {
       this._obsPoints = [];
       this._obsValues = null;
       this._obsLengthScales = null;
-      this._obsDifficultyWeights = null;
       this._K_noisy = null;
       return;
     }
@@ -352,16 +365,16 @@ export class Estimator {
     this._obsPoints = this._observations.map((o) => ({ x: o.x, y: o.y }));
     this._obsValues = new Float64Array(n);
     this._obsLengthScales = new Float64Array(n);
-    this._obsDifficultyWeights = new Float64Array(n);
     for (let i = 0; i < n; i++) {
-      this._obsValues[i] = this._observations[i].value - PRIOR_MEAN;
+      // Apply difficulty weight to observation value, not kernel.
+      // This correctly scales evidence strength without distorting the GP kernel.
+      const w = this._observations[i].difficultyWeight || 1.0;
+      this._obsValues[i] = (this._observations[i].value - PRIOR_MEAN) * w;
       this._obsLengthScales[i] = this._observations[i].lengthScale || this._lengthScale;
-      this._obsDifficultyWeights[i] = this._observations[i].difficultyWeight || DIFFICULTY_WEIGHT_MAP[3];
     }
 
-    // Build K with per-observation length scales and difficulty weights:
-    // K[i,j] = matern32(d, sqrt(l_i * l_j)) * sqrt(w_i * w_j)
-    // The sqrt of product form ensures symmetric weighting between observations.
+    // Build K with per-observation length scales only (no difficulty weights).
+    // Difficulty is encoded in obsValues, keeping the kernel positive-definite.
     const K = new Array(n);
     for (let i = 0; i < n; i++) {
       K[i] = new Float64Array(n);
@@ -369,15 +382,12 @@ export class Estimator {
     const sv = this._signalVariance;
     for (let i = 0; i < n; i++) {
       const li = this._obsLengthScales[i];
-      const wi = this._obsDifficultyWeights[i];
       for (let j = i; j < n; j++) {
         const lj = this._obsLengthScales[j];
-        const wj = this._obsDifficultyWeights[j];
         const lMerged = Math.sqrt(li * lj);
-        const wMerged = Math.sqrt(wi * wj); // Symmetric difficulty weight
         const d = euclidean(this._obsPoints[i].x, this._obsPoints[i].y,
                            this._obsPoints[j].x, this._obsPoints[j].y);
-        const val = matern32(d, lMerged, sv) * wMerged;
+        const val = matern32(d, lMerged, sv);
         K[i][j] = val;
         K[j][i] = val;
       }

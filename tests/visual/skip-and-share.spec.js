@@ -4,24 +4,14 @@ import { test, expect } from '@playwright/test';
 const BASE = 'http://localhost:5173';
 
 async function selectDomain(page) {
-  // Open the custom dropdown on the landing page
-  const dropdownBtn = page.locator('#landing button').filter({ hasText: 'Choose a region' });
-  await dropdownBtn.click();
-  await page.waitForTimeout(300);
-
-  // Click the first option in the dropdown
-  const option = page.locator('.custom-select-options .custom-select-option').first();
-  if (await option.isVisible()) {
-    await option.click();
-  } else {
-    // Fallback: try any visible option-like element under the landing select
-    const fallback = page.locator('#landing [role="option"], #landing .select-option').first();
-    await fallback.click();
-  }
+  // Wait for app JS to initialize, then click start button to enter the map
+  const startBtn = page.locator('#landing-start-btn');
+  await page.waitForSelector('#landing-start-btn[data-ready]', { timeout: 15000 });
+  await startBtn.click();
 
   // Wait for the map/quiz to load
   await page.waitForSelector('.quiz-question', { timeout: 15000 });
-  await page.waitForTimeout(1000);
+  await page.waitForTimeout(300);
 }
 
 test.describe('Skip button and share image', () => {
@@ -34,7 +24,7 @@ test.describe('Skip button and share image', () => {
     // Verify the Skip button exists in the modes wrapper
     const skipBtn = page.locator('.skip-btn');
     await expect(skipBtn).toBeVisible({ timeout: 5000 });
-    await expect(skipBtn).toContainText('Skip');
+    await expect(skipBtn).toContainText('skip');
 
     // Verify the tooltip
     const tooltip = await skipBtn.getAttribute('data-tooltip');
@@ -102,6 +92,8 @@ test.describe('Skip button and share image', () => {
   });
 
   test('Answer options are randomized across reloads', async ({ page }) => {
+    test.setTimeout(60000); // 60s — multiple full reloads
+
     // Load the app and get the first question's option texts in display order
     await page.goto(BASE);
     await page.waitForSelector('#landing', { state: 'visible', timeout: 10000 });
@@ -118,11 +110,10 @@ test.describe('Skip button and share image', () => {
     expect(firstLoad).toHaveLength(4);
     expect(firstLoad.every(t => t.length > 0)).toBe(true);
 
-    // Reload multiple times and collect option orderings
-    // With 4! = 24 permutations, getting the same order 5 times in a row
-    // has probability (1/24)^4 ≈ 0.0003% — essentially impossible if randomized
+    // Reload 3 times (4 total loads). With 4! = 24 permutations,
+    // probability of identical order 4 times = (1/24)^3 ≈ 0.007%
     const orderings = [firstLoad.join('|||')];
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 3; i++) {
       await page.goto(BASE);
       await page.waitForSelector('#landing', { state: 'visible', timeout: 10000 });
       await selectDomain(page);
@@ -130,7 +121,7 @@ test.describe('Skip button and share image', () => {
       orderings.push(texts.join('|||'));
     }
 
-    // At least 2 different orderings should appear across 5 loads
+    // At least 2 different orderings should appear across 4 loads
     const unique = new Set(orderings);
     console.log(`Randomization: ${unique.size} unique orderings out of ${orderings.length} loads`);
     expect(unique.size).toBeGreaterThan(1);

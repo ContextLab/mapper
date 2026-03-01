@@ -104,7 +104,7 @@
     "concepts_tested": ["NP-completeness"]
   },
   {
-    "question_text": "The P versus NP problem, one of the seven Clay Millennium Prize Problems worth $1 million, asks whether every problem whose solution can be verified in polynomial time can also be what?",
+    "question_text": "The P versus NP problem, one of the seven Clay Millennium Prize Problems worth \\$1 million, asks whether every problem whose solution can be verified in polynomial time can also be what?",
     "correct_answer": "Solved in polynomial time",
     "distractors": [
       "Verified in logarithmic time",

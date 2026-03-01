@@ -89,14 +89,21 @@ npx playwright test   # 9 E2E specs across 5 browser projects (Chromium, Firefox
 
 ## Citation
 
+If you use this software, please cite our paper:
+
+> Fitzpatrick, P. C., Heusser, A. C., & Manning, J. R. (2026). Text embedding models yield detailed conceptual knowledge maps derived from short multiple-choice quizzes. *PsyArXiv*. https://doi.org/10.31234/osf.io/dh3q2
+
 ```bibtex
-@article{fitzpatrick2025mapper,
+@article{fitzpatrick2026mapper,
   title={Text embedding models yield detailed conceptual knowledge maps derived from short multiple-choice quizzes},
   author={Fitzpatrick, Paxton C. and Heusser, Andrew C. and Manning, Jeremy R.},
-  year={2025},
+  year={2026},
+  doi={10.31234/osf.io/dh3q2},
   url={https://osf.io/preprints/psyarxiv/dh3q2}
 }
 ```
+
+See also [`CITATION.cff`](CITATION.cff) for machine-readable citation metadata.
 
 ## License
 

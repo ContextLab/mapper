@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "Knowledge Mapper"
+type: software
+license: CC-BY-NC-SA-4.0
+repository-code: "https://github.com/ContextLab/mapper"
+url: "https://contextlab.github.io/mapper/"
+preferred-citation:
+  type: article
+  title: "Text embedding models yield detailed conceptual knowledge maps derived from short multiple-choice quizzes"
+  authors:
+    - family-names: "Fitzpatrick"
+      given-names: "Paxton C."
+    - family-names: "Heusser"
+      given-names: "Andrew C."
+    - family-names: "Manning"
+      given-names: "Jeremy R."
+  year: 2026
+  url: "https://osf.io/preprints/psyarxiv/dh3q2"
+  doi: "10.31234/osf.io/dh3q2"

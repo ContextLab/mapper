@@ -316,6 +316,9 @@ notes/
 # Test data
 test-import.json
 
+# POC / scratch scripts
+scripts/poc_*
+
 # Speckit tooling
 .specify/
 .claude/commands/

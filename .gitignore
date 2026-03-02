@@ -325,3 +325,8 @@ scripts/poc_*
 
 # Python virtual environments
 .venv/
+
+# Persona testing framework (generated output)
+tests/visual/.working/
+tests/visual/reports/
+tests/visual/screenshots/personas/

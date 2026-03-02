@@ -1,0 +1,64 @@
+{
+  "description": "Expected outcomes for reporter personas (P01-P03). Used by AI evaluation agents to compare reality against expectations.",
+  "personas": {
+    "P01": {
+      "name": "Alex the Tech Reporter",
+      "expectations": {
+        "mapAfter5Questions": "Partial heatmap visible in physics region. Green spots where correct answers cluster. Red/yellow elsewhere.",
+        "mapAfter7Questions": "Slightly more defined physics region. Map should look visually impressive even with limited data.",
+        "minimumEngagement": 4,
+        "expectedSentiment": "positive",
+        "maximumIssueSeverity": "minor",
+        "visualImpact": "Map must look polished enough for a tech article screenshot. Smooth gradients, no visual artifacts.",
+        "firstImpressionCriteria": [
+          "Map renders without delay after answering",
+          "Color gradients are smooth, not pixelated",
+          "Quiz panel is clean and readable",
+          "No loading spinners or blank states visible"
+        ]
+      }
+    },
+    "P02": {
+      "name": "Maya the Mobile Journalist",
+      "expectations": {
+        "mapAfter4Questions": "Small but visible heatmap on mobile viewport. Biology region shows some color.",
+        "minimumEngagement": 3,
+        "expectedSentiment": "positive",
+        "maximumIssueSeverity": "minor",
+        "mobileSpecific": {
+          "touchTargetMinHeight": 44,
+          "noHorizontalScroll": true,
+          "noTextClipping": true,
+          "readableOnSmallScreen": true
+        },
+        "firstImpressionCriteria": [
+          "Quiz options are large enough to tap",
+          "Map is visible on 390px width",
+          "No overlapping elements",
+          "Text is readable without zooming"
+        ]
+      }
+    },
+    "P03": {
+      "name": "Raj the Conference Demo",
+      "expectations": {
+        "mapAfter5Questions": "Broad map with mixed colors across domains. CS region shows green tones.",
+        "mapAfter11Questions": "Well-developed map showing clear differentiation. CS/physics regions cool, other areas warm.",
+        "minimumEngagement": 4,
+        "expectedSentiment": "positive",
+        "maximumIssueSeverity": "minor",
+        "demoQuality": {
+          "wowFactor": "Map forming in real-time should visually impress an audience",
+          "noBugsInFrontOfAudience": true,
+          "smoothTransitions": true
+        },
+        "firstImpressionCriteria": [
+          "Large-screen layout looks professional",
+          "Map fills available space well at 1920px",
+          "Domain switching is smooth",
+          "No visual glitches during answer sequence"
+        ]
+      }
+    }
+  }
+}

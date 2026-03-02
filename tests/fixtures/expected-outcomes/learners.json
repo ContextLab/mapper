@@ -1,0 +1,82 @@
+{
+  "description": "Expected outcomes for learner personas (P08-P11). AI agents evaluate engagement arc, aha moments, and question diversity.",
+  "personas": {
+    "P08": {
+      "name": "Jordan the Curious Undergrad",
+      "expectations": {
+        "expertDomains": [],
+        "expectedAccuracy": { "_default": 0.50 },
+        "mapExpectation": "Mixed yellow/green/red across all domains. No single dominant color. Map should show genuine variation — not uniformly medium.",
+        "minimumDomainMappedPct": 10,
+        "maximumQuestionQualityFlags": 0.10,
+        "acceptableIssues": "minor or cosmetic only",
+        "learnerSpecific": {
+          "minimumAhaMoments": 1,
+          "maximumConsecutiveSameTopic": 5,
+          "questionDiversityTarget": 0.70,
+          "expectedEngagementArc": "curiosity → mixed success → insight → continued engagement",
+          "noSustainedBoredom": true
+        }
+      }
+    },
+    "P09": {
+      "name": "Priya the Split-Knowledge Student",
+      "expectations": {
+        "expertDomains": ["computer-science"],
+        "expectedAccuracy": { "computer-science": 0.80, "biology": 0.30, "_default": 0.50 },
+        "mapExpectation": "Clear green in CS regions, red in biology regions. Visible split between strong and weak areas. Map should tell a story of uneven knowledge.",
+        "minimumDomainMappedPct": 15,
+        "maximumQuestionQualityFlags": 0.10,
+        "acceptableIssues": "minor or cosmetic only",
+        "learnerSpecific": {
+          "minimumAhaMoments": 1,
+          "maximumConsecutiveSameTopic": 5,
+          "questionDiversityTarget": 0.70,
+          "expectedEngagementArc": "confidence in CS → struggle in bio → self-discovery about gaps",
+          "noSustainedBoredom": true
+        }
+      }
+    },
+    "P10": {
+      "name": "Sam the Video Explorer",
+      "expectations": {
+        "expertDomains": [],
+        "expectedAccuracy": { "neuroscience": 0.55, "_default": 0.45 },
+        "mapExpectation": "Moderate yellow/green in neuroscience. Red elsewhere. After video watch, slight green improvement near video topic region.",
+        "minimumDomainMappedPct": 10,
+        "maximumQuestionQualityFlags": 0.10,
+        "acceptableIssues": "minor or cosmetic only",
+        "learnerSpecific": {
+          "minimumAhaMoments": 1,
+          "maximumConsecutiveSameTopic": 5,
+          "questionDiversityTarget": 0.70,
+          "expectedEngagementArc": "curiosity → video discovery → enriched learning",
+          "noSustainedBoredom": true
+        },
+        "mobileSpecific": {
+          "touchTargetMinHeight": 44,
+          "mapVisibleOnMobile": true,
+          "noOverlappingElements": true
+        }
+      }
+    },
+    "P11": {
+      "name": "Alex the Tired Night-Owl",
+      "expectations": {
+        "expertDomains": [],
+        "expectedAccuracy": { "mathematics": 0.40, "_default": 0.35 },
+        "mapExpectation": "Predominantly red/yellow across mathematics. Scattered correct answers show small green pockets. Map should still look coherent despite low accuracy.",
+        "minimumDomainMappedPct": 8,
+        "maximumQuestionQualityFlags": 0.15,
+        "acceptableIssues": "minor or cosmetic only",
+        "learnerSpecific": {
+          "minimumAhaMoments": 0,
+          "maximumConsecutiveSameTopic": 5,
+          "questionDiversityTarget": 0.60,
+          "expectedEngagementArc": "tired start → gradual engagement or gradual disengagement",
+          "noSustainedBoredom": true
+        }
+      }
+    }
+  }
+}

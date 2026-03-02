@@ -123,6 +123,21 @@ async function readWithProgress(body, total, onProgress) {
  * @returns {Promise<Array>} Flat deduplicated array of question objects.
  */
 export async function loadQuestionsForDomain(domainId, basePath) {
+  // Fast path: if the root domain bundle is already cached, extract questions
+  // from it directly (+ any cached descendants). Avoids blocking on 50+ in-flight
+  // fetches when called for 'all' right after boot.
+  const cached = $domainCache.get().get(domainId);
+  if (cached) {
+    const descendantIds = getDescendants(domainId);
+    const bundles = [cached];
+    for (const id of descendantIds) {
+      const cb = $domainCache.get().get(id);
+      if (cb) bundles.push(cb);
+      // Skip uncached descendants — they'll be available on future calls
+    }
+    return _deduplicateQuestions(bundles);
+  }
+
   const idsToLoad = [domainId, ...getDescendants(domainId)];
 
   // Load all bundles in parallel (cached ones resolve instantly,
@@ -131,7 +146,10 @@ export async function loadQuestionsForDomain(domainId, basePath) {
     idsToLoad.map(id => load(id, {}, basePath).catch(() => null))
   );
 
-  // Deduplicate questions by ID
+  return _deduplicateQuestions(bundles);
+}
+
+function _deduplicateQuestions(bundles) {
   const seen = new Set();
   const questions = [];
   for (const bundle of bundles) {
@@ -143,6 +161,5 @@ export async function loadQuestionsForDomain(domainId, basePath) {
       }
     }
   }
-
   return questions;
 }

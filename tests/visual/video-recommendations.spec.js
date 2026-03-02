@@ -105,19 +105,36 @@ async function mockYouTubeApi(page) {
  *  The button is gated behind INSIGHT_MIN_ANSWERS (5) but globalEstimator
  *  is initialized at app boot, so the handler works with prior probabilities. */
 async function openVideoModal(page) {
+  // Force-show and force-enable the suggest button (hidden on mobile viewports
+  // via CSS, and normally gated behind INSIGHT_MIN_ANSWERS).
+  // Also override innerWidth so the click handler opens the modal (not the
+  // video panel sidebar which triggers at <=480px).
+  await page.evaluate(() => {
+    const btn = document.getElementById('suggest-btn');
+    if (btn) {
+      btn.style.setProperty('display', 'inline-flex', 'important');
+      btn.disabled = false;
+    }
+    // Temporarily report desktop width so click handler opens modal
+    Object.defineProperty(window, '__realInnerWidth', { value: window.innerWidth, writable: true });
+    Object.defineProperty(window, 'innerWidth', { value: 1024, configurable: true });
+  });
+
   const suggestBtn = page.locator('#suggest-btn');
   await suggestBtn.waitFor({ state: 'visible', timeout: LOAD_TIMEOUT });
 
   // Wait for the video catalog to be fetched (route-intercepted)
   await page.waitForTimeout(1000);
 
-  // Force-enable (normally requires 5+ quiz answers)
+  await suggestBtn.click();
+
+  // Restore real innerWidth
   await page.evaluate(() => {
-    const btn = document.getElementById('suggest-btn');
-    if (btn) btn.disabled = false;
+    if (window.__realInnerWidth !== undefined) {
+      Object.defineProperty(window, 'innerWidth', { value: window.__realInnerWidth, configurable: true });
+    }
   });
 
-  await suggestBtn.click();
   await page.waitForSelector('#video-modal:not([hidden])', { timeout: 5000 });
 
   // Wait for the video list or empty message to render
@@ -197,17 +214,22 @@ test.describe('Recommendation Load Time (T-V067)', () => {
     await selectDomain(page, 'physics');
     await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
 
+    // Force-show and force-enable suggest button, override innerWidth
+    // so click handler opens modal (not video panel sidebar at <=480px)
+    await page.evaluate(() => {
+      const btn = document.getElementById('suggest-btn');
+      if (btn) {
+        btn.style.setProperty('display', 'inline-flex', 'important');
+        btn.disabled = false;
+      }
+      Object.defineProperty(window, 'innerWidth', { value: 1024, configurable: true });
+    });
+
     const suggestBtn = page.locator('#suggest-btn');
     await suggestBtn.waitFor({ state: 'visible', timeout: LOAD_TIMEOUT });
 
     // Wait for catalog fetch to complete
     await page.waitForTimeout(1000);
-
-    // Force-enable (normally requires 5+ quiz answers)
-    await page.evaluate(() => {
-      const btn = document.getElementById('suggest-btn');
-      if (btn) btn.disabled = false;
-    });
 
     const start = Date.now();
     await suggestBtn.click();

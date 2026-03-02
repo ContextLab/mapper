@@ -39,11 +39,15 @@ test.describe('Domain Transitions (US2)', () => {
   test('domain switch loads new questions without page reload (SC-012)', async ({ page }) => {
     await selectDomain(page, 'physics');
     await page.waitForSelector('.quiz-question', { timeout: LOAD_TIMEOUT });
+    // Wait for physics question to stabilize (transition + question selection)
+    await page.waitForTimeout(3000);
     const firstQuestion = await page.locator('.quiz-question').textContent();
 
     await selectDomain(page, 'biology');
-    await page.waitForTimeout(2000);
-    const secondQuestion = await page.locator('.quiz-question').textContent();
+    // Wait for the question text to actually change rather than a fixed timeout
+    const quizEl = page.locator('.quiz-question');
+    await expect(quizEl).not.toHaveText(firstQuestion, { timeout: 10000 });
+    const secondQuestion = await quizEl.textContent();
 
     expect(secondQuestion).not.toEqual(firstQuestion);
     await expect(page.locator('#landing')).toHaveClass(/hidden/);

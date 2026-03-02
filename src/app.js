@@ -21,7 +21,7 @@ import { Sampler } from './learning/sampler.js';
 import { getCentrality } from './learning/curriculum.js';
 import { Renderer } from './viz/renderer.js';
 import { Minimap } from './viz/minimap.js';
-import { ParticleSystem } from './viz/particles.js';
+import { ParticleSystem, subsampleParticlePoints } from './viz/particles.js';
 import * as controls from './ui/controls.js';
 import * as quiz from './ui/quiz.js';
 import * as modes from './ui/modes.js';
@@ -81,7 +81,7 @@ async function boot() {
   const particleCanvas = document.getElementById('particle-canvas');
   if (particleCanvas) {
     particleSystem = new ParticleSystem();
-    particleSystem.init(particleCanvas, import.meta.env.BASE_URL || '/');
+    // Particle data is set later via initWithPoints() after allDomainBundle loads
   }
 
   renderer = new Renderer();
@@ -106,6 +106,13 @@ async function boot() {
     indexQuestions(allDomainBundle.questions);
     questionIndex = new Map(allDomainBundle.questions.map(q => [q.id, q]));
     insights.setConcepts(allDomainBundle.questions, allDomainBundle.articles);
+
+    // Initialize particles immediately from already-loaded articles (no extra fetch).
+    // Articles alone provide 50K+ points, far exceeding the 2500 particle budget.
+    if (particleSystem && particleCanvas) {
+      const points = subsampleParticlePoints(allDomainBundle.articles);
+      particleSystem.initWithPoints(particleCanvas, points);
+    }
   } catch (err) {
     console.error('[app] Failed to pre-load "all" domain:', err);
     showLandingError('Could not load map data. Please try refreshing.');
@@ -115,7 +122,6 @@ async function boot() {
   // Start background video catalog loading (T-V051, FR-V041)
   // Videos are set on the renderer only after map initialization (in switchDomain)
   // so they don't appear as static gray squares on the welcome screen.
-  // The particle system handles welcome-screen display (green, dodge, zoom).
   videoLoader.startBackgroundLoad();
   videoLoader.getVideos().promise.then((videos) => {
     if (renderer && videos.length > 0 && mapInitialized) {
@@ -708,6 +714,15 @@ function handleReset() {
   if (landing) landing.classList.remove('hidden');
   const appEl = document.getElementById('app');
   if (appEl) appEl.dataset.screen = 'welcome';
+
+  // Re-create particle system for the welcome screen
+  const pCanvas = document.getElementById('particle-canvas');
+  if (pCanvas && allDomainBundle) {
+    particleSystem = new ParticleSystem();
+    const points = subsampleParticlePoints(allDomainBundle.articles);
+    particleSystem.initWithPoints(pCanvas, points);
+  }
+
   announce('All progress has been reset.');
 }
 

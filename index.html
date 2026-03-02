@@ -672,13 +672,16 @@
         @media (max-width: 480px) {
             :root { --header-height: 50px; }
             #app-header { padding: 0 0.5rem; }
+            /* Hide logo on map screen to free header space for dropdown + buttons */
+            #app[data-screen="map"] .logo { display: none; }
             .logo span { display: none; }
             .logo { font-size: 0.95rem; }
-            .header-left { gap: 0.3rem; flex: 1; min-width: 0; overflow: hidden; }
+            .header-left { gap: 0.3rem; flex: 1; min-width: 0; }
             .header-right { gap: 0.25rem; flex-shrink: 0; }
-            /* Hide non-essential header buttons on mobile (suggest-btn stays visible for video recs) */
+            /* Hide non-essential header buttons on mobile */
             #trophy-btn { display: none; }
-            .control-btn { display: none !important; } /* Hide reset/export/import on mobile */
+            #suggest-btn { display: none; } /* Videos accessible via video panel toggle */
+            .control-btn[aria-label="Reset all progress"] { display: none !important; }
             .btn-icon { min-width: 34px; min-height: 34px; font-size: 0.85rem; }
             /* Make dropdown arrow easier to see on mobile */
             .custom-select-arrow { font-size: 0.9rem; }
@@ -729,11 +732,14 @@
                 color: #fff;
                 box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
             }
-            /* Arrow points UP when closed (pull up to open) */
+            /* Arrow points UP when closed (pull up to open): chevron-left rotated 90° CW = ^ */
             .quiz-toggle-btn i { transform: rotate(90deg); }
+            /* Override JS icon swap: force chevron-right to also point up when closed */
+            .quiz-toggle-btn:not(.panel-open) i.fa-chevron-right { transform: rotate(-90deg); }
             /* Arrow points DOWN when open (pull down to close) */
             .quiz-toggle-btn.panel-open { bottom: 60vh; right: 50%; background: var(--color-surface); color: var(--color-text-muted); }
-            .quiz-toggle-btn.panel-open i { transform: rotate(-90deg); }
+            .quiz-toggle-btn.panel-open i.fa-chevron-right { transform: rotate(90deg); }
+            .quiz-toggle-btn.panel-open i.fa-chevron-left { transform: rotate(-90deg); }
 
             /* ── Video panel: bottom sheet on mobile (not hidden) ── */
             #video-panel {

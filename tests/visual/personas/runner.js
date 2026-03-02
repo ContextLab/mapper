@@ -50,16 +50,25 @@ export async function selectDomain(page, domainName) {
   const trigger = page.locator('.domain-selector .custom-select-trigger');
   await trigger.click();
 
+  // Prefer data-value attribute match (domain ID) — most reliable
+  const byValue = page.locator(`.domain-selector .custom-select-option[data-value="${domainName}"]`);
+  if (await byValue.count() > 0) {
+    await byValue.click();
+    return;
+  }
+
+  // Fallback: text matching for display names like "All (General)"
   const options = page.locator('.domain-selector .custom-select-option');
   const count = await options.count();
+  const target = domainName.toLowerCase();
   for (let i = 0; i < count; i++) {
-    const text = await options.nth(i).textContent();
-    if (text.trim().toLowerCase().includes(domainName.toLowerCase())) {
+    const text = (await options.nth(i).textContent()).trim().toLowerCase();
+    if (text.includes(target)) {
       await options.nth(i).click();
       return;
     }
   }
-  // Fallback: click first option
+  // Last resort: click first option
   await options.first().click();
 }
 
@@ -264,7 +273,7 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
 
   // Determine total questions
   const numQuestions = persona.numQuestions === 'ALL'
-    ? 999 // Pedants answer until questions run out
+    ? Infinity // Pedants answer until questions run out
     : persona.numQuestions;
 
   // Navigate to app
@@ -276,7 +285,51 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
   await selectDomain(page, initialDomain);
   await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
   await page.waitForSelector('.quiz-question', { timeout: 5000 });
-  await page.waitForTimeout(500);
+
+  // Wait for domain bundles to fully load (the app announces "N questions available"
+  // via the #live-region when switchDomain completes with aggregated questions).
+  // For pedant mode, we need the full pool — wait for the count to stabilize.
+  if (persona.numQuestions === 'ALL') {
+    // For "all" domain: pre-warm cache by cycling through every parent domain.
+    // Each selection triggers loadQuestionsForDomain which fetches descendants.
+    if (persona.domain === 'all') {
+      const parentDomains = [
+        'physics', 'biology', 'neuroscience', 'mathematics', 'computer-science',
+        'art-history', 'economics', 'philosophy', 'linguistics', 'sociology',
+        'psychology', 'archaeology', 'world-history',
+      ];
+      for (const parentId of parentDomains) {
+        const opt = page.locator(`.domain-selector .custom-select-option[data-value="${parentId}"]`);
+        const triggerEl = page.locator('.domain-selector .custom-select-trigger');
+        await triggerEl.click();
+        if (await opt.count() > 0) {
+          await opt.click();
+          await page.waitForTimeout(1500); // Let descendants load
+        }
+      }
+      // Now switch back to "all" — all descendants should be cached
+      await selectDomain(page, 'All (General)');
+      await page.waitForSelector('.quiz-question', { timeout: 5000 });
+      await page.waitForTimeout(3000); // Let aggregation settle
+    } else {
+      await page.waitForTimeout(3000); // Allow async descendant bundles to load
+      // Re-trigger domain load to pick up newly cached descendants
+      // Use data-value attribute for exact domain ID match (avoids "biology" matching "neurobiology")
+      const trigger = page.locator('.domain-selector .custom-select-trigger');
+      await trigger.click();
+      const domainValue = persona.domain;
+      const exactOption = page.locator(`.domain-selector .custom-select-option[data-value="${domainValue}"]`);
+      if (await exactOption.count() > 0) {
+        await exactOption.click();
+      } else {
+        await selectDomain(page, initialDomain);
+      }
+      await page.waitForSelector('.quiz-question', { timeout: 5000 });
+      await page.waitForTimeout(2000);
+    }
+  } else {
+    await page.waitForTimeout(500);
+  }
 
   // Track state
   const allResults = [];

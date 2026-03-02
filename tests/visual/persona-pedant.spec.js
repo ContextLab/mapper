@@ -35,19 +35,40 @@ for (const persona of pedants) {
 
       await page.setViewportSize({ width: persona.device.width, height: persona.device.height });
 
-      // Pedants answer ALL questions — this can take a long time
-      // Calculate expected question count for timeout
+      // Pedants answer ALL questions in domain + descendants — can take a long time.
+      // The app aggregates questions from the root domain plus all child sub-domains.
+      // E.g., physics (50) + astrophysics (50) + quantum-physics (50) = 150 total.
+      // For 'all', every domain is a descendant.
+      const DOMAIN_HIERARCHY = {
+        physics: ['physics', 'astrophysics', 'quantum-physics'],
+        biology: ['biology', 'genetics', 'molecular-cell-biology'],
+        neuroscience: ['neuroscience', 'cognitive-neuroscience', 'computational-neuroscience', 'neurobiology'],
+        mathematics: ['mathematics', 'calculus', 'linear-algebra', 'number-theory', 'probability-statistics'],
+        'computer-science': ['computer-science', 'artificial-intelligence-ml', 'theory-of-computation', 'algorithms'],
+        'art-history': ['art-history', 'european-art-history', 'chinese-art-history'],
+        economics: ['economics', 'microeconomics', 'macroeconomics'],
+        philosophy: ['philosophy', 'ethics', 'philosophy-of-mind', 'logic', 'metaphysics'],
+        linguistics: ['linguistics', 'syntax', 'semantics', 'computational-linguistics'],
+        sociology: ['sociology', 'political-sociology', 'criminology'],
+        psychology: ['psychology', 'cognitive-psychology', 'social-psychology', 'developmental-psychology', 'clinical-psychology'],
+        archaeology: ['archaeology', 'prehistoric-archaeology', 'forensic-archaeology'],
+        'world-history': ['world-history', 'us-history', 'european-history', 'asian-history'],
+      };
+
       let expectedQuestions;
       if (persona.domain === 'all') {
         expectedQuestions = getAllDomainIds().reduce(
           (sum, id) => sum + getQuestionsForDomain(id).length, 0
         );
       } else {
-        expectedQuestions = getQuestionsForDomain(persona.domain).length;
+        const hierarchy = DOMAIN_HIERARCHY[persona.domain] || [persona.domain];
+        expectedQuestions = hierarchy.reduce(
+          (sum, id) => sum + getQuestionsForDomain(id).length, 0
+        );
       }
 
-      // 5 seconds per question + 60 second buffer
-      const timeoutMs = Math.max(300_000, expectedQuestions * 5000 + 60_000);
+      // 16 seconds per question (screenshot + answer + advance + overhead) + 5 min buffer for page load, domain re-trigger, cache warm-up, final screenshot.
+      const timeoutMs = Math.max(600_000, expectedQuestions * 16_000 + 300_000);
       test.setTimeout(timeoutMs);
 
       cleanWorkingFiles(persona.id);

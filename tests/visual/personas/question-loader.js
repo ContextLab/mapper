@@ -83,8 +83,23 @@ export function getTotalQuestionCount(domainFilter) {
 }
 
 /**
+ * Strip LaTeX markup to plain text for fuzzy matching.
+ * KaTeX renders $Re$ to DOM textContent like "ReReRe" — this normalizes
+ * the DB source text similarly by removing LaTeX delimiters and commands.
+ */
+function stripLatex(text) {
+  return text
+    .replace(/\$([^$]*)\$/g, '$1')         // $x$ → x
+    .replace(/\\[a-zA-Z]+\{([^}]*)\}/g, '$1') // \frac{a}{b} → a}b (rough)
+    .replace(/\\[a-zA-Z]+/g, '')            // \lambda → ''
+    .replace(/[\\{}^_]/g, '')               // remove remaining markup chars
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/**
  * Look up a question by matching displayed text against the database.
- * Tries exact prefix match first, then fuzzy fallback.
+ * Tries exact prefix match first, then fuzzy fallback with LaTeX normalization.
  *
  * @param {Map<string, object>} questionDb - The loaded question database
  * @param {string} displayedText - Text from the DOM .quiz-question element
@@ -110,5 +125,24 @@ export function lookupQuestion(questionDb, displayedText) {
       bestMatch = q;
     }
   }
-  return bestScore > 20 ? bestMatch : null;
+  if (bestScore > 20) return bestMatch;
+
+  // LaTeX-normalized fallback: strip LaTeX from DB keys and compare
+  const normDisplay = stripLatex(displayedText).substring(0, 80).toLowerCase();
+  bestMatch = null;
+  bestScore = 0;
+  for (const [dbKey, q] of questionDb) {
+    const normDb = stripLatex(dbKey).substring(0, 80).toLowerCase();
+    const len = Math.min(normDb.length, normDisplay.length);
+    let score = 0;
+    for (let i = 0; i < len; i++) {
+      if (normDb[i] === normDisplay[i]) score++;
+      else break;
+    }
+    if (score > bestScore) {
+      bestScore = score;
+      bestMatch = q;
+    }
+  }
+  return bestScore > 15 ? bestMatch : null;
 }

@@ -1,12 +1,16 @@
-/** Async domain data loading with progress callbacks. */
+/** Async domain data loading with progress callbacks and request deduplication. */
 
 import { $domainCache } from '../state/store.js';
 import { getDescendants } from './registry.js';
 
 const PROGRESS_THROTTLE_MS = 100;
 
+/** In-flight request deduplication — prevents duplicate fetches for the same domain. */
+const inflight = new Map();
+
 /**
  * Load a domain bundle, with caching and streaming progress.
+ * Concurrent calls for the same domainId share a single fetch request.
  * @param {string} domainId
  * @param {{ onProgress?, onComplete?, onError? }} [callbacks={}]
  * @param {string} [basePath] - Defaults to import.meta.env.BASE_URL || '/mapper/'
@@ -24,36 +28,54 @@ export async function load(domainId, callbacks = {}, basePath) {
     return cached;
   }
 
+  // Deduplicate: if a fetch is already in-flight for this domain, await it
+  if (inflight.has(domainId)) {
+    const bundle = await inflight.get(domainId);
+    onProgress?.({ loaded: 1, total: 1, percent: 100 });
+    onComplete?.(bundle);
+    return bundle;
+  }
+
+  const promise = _fetchAndCache(domainId, base, onProgress);
+  inflight.set(domainId, promise);
+
   try {
-    const url = `${base}data/domains/${domainId}.json`;
-    const res = await fetch(url);
-    if (!res.ok) {
-      throw new Error(`Failed to fetch domain ${domainId}: ${res.status} ${res.statusText}`);
-    }
-
-    let bundle;
-    const contentLength = res.headers.get('Content-Length');
-    const total = contentLength ? parseInt(contentLength, 10) : 0;
-
-    if (total > 0 && res.body) {
-      bundle = await readWithProgress(res.body, total, onProgress);
-    } else {
-      onProgress?.({ loaded: 0, total: 0, percent: 0 });
-      bundle = await res.json();
-      onProgress?.({ loaded: 1, total: 1, percent: 100 });
-    }
-
-    // Cache the result
-    const next = new Map($domainCache.get());
-    next.set(domainId, bundle);
-    $domainCache.set(next);
-
+    const bundle = await promise;
     onComplete?.(bundle);
     return bundle;
   } catch (err) {
     onError?.(err);
     throw err;
+  } finally {
+    inflight.delete(domainId);
   }
+}
+
+async function _fetchAndCache(domainId, base, onProgress) {
+  const url = `${base}data/domains/${domainId}.json`;
+  const res = await fetch(url);
+  if (!res.ok) {
+    throw new Error(`Failed to fetch domain ${domainId}: ${res.status} ${res.statusText}`);
+  }
+
+  let bundle;
+  const contentLength = res.headers.get('Content-Length');
+  const total = contentLength ? parseInt(contentLength, 10) : 0;
+
+  if (total > 0 && res.body) {
+    bundle = await readWithProgress(res.body, total, onProgress);
+  } else {
+    onProgress?.({ loaded: 0, total: 0, percent: 0 });
+    bundle = await res.json();
+    onProgress?.({ loaded: 1, total: 1, percent: 100 });
+  }
+
+  // Cache the result
+  const next = new Map($domainCache.get());
+  next.set(domainId, bundle);
+  $domainCache.set(next);
+
+  return bundle;
 }
 
 /** @param {ReadableStream} body */
@@ -103,7 +125,8 @@ async function readWithProgress(body, total, onProgress) {
 export async function loadQuestionsForDomain(domainId, basePath) {
   const idsToLoad = [domainId, ...getDescendants(domainId)];
 
-  // Load all bundles in parallel (cached ones resolve instantly)
+  // Load all bundles in parallel (cached ones resolve instantly,
+  // in-flight ones share the existing fetch via dedup)
   const bundles = await Promise.all(
     idsToLoad.map(id => load(id, {}, basePath).catch(() => null))
   );

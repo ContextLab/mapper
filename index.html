@@ -684,6 +684,11 @@
             .custom-select-arrow { font-size: 0.9rem; }
             /* Hide custom tooltips on touch devices */
             .ui-tooltip { display: none !important; }
+
+            /* ── Quiz panel: collapse mode buttons to free space for questions ── */
+            .modes-wrapper { display: none !important; }
+
+            /* ── Quiz panel: bottom sheet ── */
             #quiz-panel {
                 position: absolute;
                 top: auto; bottom: 0; left: 0; right: 0;
@@ -694,12 +699,22 @@
                 z-index: 20;
                 transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 flex-shrink: 0;
+                display: flex;
+                flex-direction: column;
             }
             #quiz-panel.open {
                 width: 100% !important; height: 60vh;
                 padding: 1rem 1.25rem;
-                overflow-y: auto;
+                overflow: hidden; /* Panel itself doesn't scroll; .quiz-content does */
             }
+            #quiz-panel.open .quiz-content {
+                flex: 1;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                min-height: 0; /* Allow flex child to shrink below content size */
+            }
+
+            /* ── Quiz toggle: centered bottom tab ── */
             .quiz-toggle-btn {
                 top: auto;
                 bottom: 0;
@@ -710,12 +725,52 @@
                 border-radius: 8px 8px 0 0;
                 border: 1px solid var(--color-border);
                 border-bottom: none;
+                background: var(--color-primary);
+                color: #fff;
+                box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
             }
-            /* Arrow points UP when closed (pull up to open), DOWN when open (pull down to close) */
+            /* Arrow points UP when closed (pull up to open) */
             .quiz-toggle-btn i { transform: rotate(90deg); }
-            .quiz-toggle-btn.panel-open { bottom: 60vh; right: 50%; }
-            .quiz-toggle-btn.panel-open i { transform: rotate(90deg); }
+            /* Arrow points DOWN when open (pull down to close) */
+            .quiz-toggle-btn.panel-open { bottom: 60vh; right: 50%; background: var(--color-surface); color: var(--color-text-muted); }
+            .quiz-toggle-btn.panel-open i { transform: rotate(-90deg); }
+
+            /* ── Video panel: bottom sheet on mobile (not hidden) ── */
+            #video-panel {
+                display: flex !important; /* Override video-panel.js display:none */
+                position: absolute;
+                top: auto; bottom: 0; left: 0; right: 0;
+                width: 100% !important; height: 0;
+                min-width: 0;
+                transform: none;
+                border-radius: 16px 16px 0 0;
+                box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+                z-index: 21; /* Above quiz panel */
+                transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                flex-direction: column;
+                overflow: hidden;
+            }
+            #video-panel.open {
+                width: 100% !important; height: 55vh;
+                padding: 1rem 1.25rem;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .video-toggle-btn { display: none !important; } /* Hide side tab; use header button instead */
+
+            /* ── Domain dropdown: use fixed positioning so it's not clipped by overflow:hidden ── */
             .domain-selector { flex-grow: 1; max-width: 160px; }
+            .custom-select-options {
+                position: fixed !important;
+                top: var(--header-height) !important;
+                bottom: auto !important;
+                left: 0 !important;
+                right: 0 !important;
+                max-height: 50vh;
+                min-width: unset;
+                border-radius: 0 0 12px 12px;
+            }
+
             #minimap-container { display: none; }
             .resize-handle { display: none; }
             button, a, .quiz-option {

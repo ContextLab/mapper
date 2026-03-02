@@ -207,6 +207,11 @@ async function boot() {
   if (suggestBtn) {
     suggestBtn.addEventListener('click', () => {
       if (!globalEstimator) return;
+      // On mobile (<=480px), toggle the video discovery panel instead of the modal
+      if (window.innerWidth <= 480) {
+        toggleVideoPanel();
+        return;
+      }
       const { data, promise } = videoLoader.getVideos();
       if (data) {
         openVideoModal(data);
@@ -833,6 +838,13 @@ function toggleQuizPanel(show) {
   if (show === undefined) show = !quizPanel.classList.contains('open');
 
   if (show) {
+    // On mobile, close the video panel to avoid overlapping bottom sheets
+    if (window.innerWidth <= 480) {
+      const videoEl = document.getElementById('video-panel');
+      if (videoEl && videoEl.classList.contains('open')) {
+        toggleVideoPanel(false);
+      }
+    }
     quizPanel.classList.add('open');
     if (toggleBtn) {
       toggleBtn.classList.add('panel-open');
@@ -857,6 +869,10 @@ function toggleVideoPanel(show) {
   if (show === undefined) show = !panel.classList.contains('open');
 
   if (show) {
+    // On mobile, close the quiz panel to avoid overlapping bottom sheets
+    if (window.innerWidth <= 480) {
+      toggleQuizPanel(false);
+    }
     panel.classList.add('open');
     if (toggleBtn) {
       toggleBtn.classList.add('panel-open');

@@ -398,7 +398,7 @@ const PANEL_CSS = `
     #video-panel.open { width: 50%; }
   }
   @media (max-width: 480px) {
-    #video-panel { display: none; }
+    /* Mobile: video panel is a bottom sheet, controlled by index.html styles */
     .video-toggle-btn { display: none; }
   }
 `;

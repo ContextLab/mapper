@@ -25,7 +25,11 @@ test.describe('Question Modes (US3)', () => {
     await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
   });
 
-  test('mode menu renders with all expected buttons', async ({ page }) => {
+  test('mode menu renders with all expected buttons', async ({ page }, testInfo) => {
+    // Mode buttons are hidden on mobile viewports (<=480px) to save space
+    const isMobile = testInfo.project.name.startsWith('mobile');
+    test.skip(isMobile, 'Mode buttons hidden on mobile viewports');
+
     const wrapper = page.locator('.modes-wrapper');
     await expect(wrapper).toBeVisible();
 

@@ -15,7 +15,10 @@ async function selectDomain(page) {
 }
 
 test.describe('Skip button and share image', () => {
-  test('Skip button appears and works', async ({ page }) => {
+  test('Skip button appears and works', async ({ page }, testInfo) => {
+    // Skip button is inside .modes-wrapper, hidden on mobile (<=480px)
+    test.skip(testInfo.project.name.startsWith('mobile'), 'Skip button hidden on mobile viewports');
+
     await page.goto(BASE);
     await page.waitForSelector('#landing', { state: 'visible', timeout: 10000 });
 
@@ -47,7 +50,10 @@ test.describe('Skip button and share image', () => {
     console.log('Question after skip:', questionAfter.slice(0, 60));
   });
 
-  test('Skip records response with is_skipped and yellow dot', async ({ page }) => {
+  test('Skip records response with is_skipped and yellow dot', async ({ page }, testInfo) => {
+    // Skip button is inside .modes-wrapper, hidden on mobile (<=480px)
+    test.skip(testInfo.project.name.startsWith('mobile'), 'Skip button hidden on mobile viewports');
+
     await page.goto(BASE);
     await page.waitForSelector('#landing', { state: 'visible', timeout: 10000 });
 

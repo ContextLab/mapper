@@ -91,9 +91,10 @@ export const PERSONAS = [
     weakDomains: [],
     personality: `You are Raj Patel, demonstrating this tool at an academic conference. You're showing it on a large monitor to an audience. You need broad coverage across domains to show the map lighting up in different areas. You answer confidently on topics you know, honestly skip what you don't. The "wow factor" of seeing a knowledge map form in real-time is what you're after. Any visual glitch would be embarrassing in front of 50 people.`,
     getAccuracy(domainId) {
-      if (CS_DOMAINS.has(domainId)) return 0.80;
-      if (PHYSICS_DOMAINS.has(domainId)) return 0.60;
-      return 0.35;
+      if (CS_DOMAINS.has(domainId)) return 0.85;
+      if (PHYSICS_DOMAINS.has(domainId)) return 0.70;
+      if (BIO_DOMAINS.has(domainId)) return 0.50;
+      return 0.55;
     },
   },
 

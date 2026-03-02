@@ -226,16 +226,13 @@ test.describe('Persona: Zoe the Import/Exporter', () => {
     // Capture pre-export screenshot
     await page.screenshot({ path: `tests/visual/.working/personas/P15-pre-export.png` });
 
-    // Click share/export button to open modal
-    const exportBtn = page.locator('#export-btn, [data-action="export"], button:has-text("Export")').first();
+    // Click export button (aria-label="Export progress as JSON")
+    const exportBtn = page.locator('button[aria-label="Export progress as JSON"]').first();
     if (await exportBtn.isVisible({ timeout: 3000 }).catch(() => false)) {
-      await exportBtn.click();
-      await page.waitForTimeout(500);
-
-      // Download the exported JSON
+      // Export triggers a download
       const [download] = await Promise.all([
         page.waitForEvent('download', { timeout: 5000 }).catch(() => null),
-        page.locator('a[download], button:has-text("Download")').first().click().catch(() => {}),
+        exportBtn.click(),
       ]);
 
       if (download) {
@@ -246,10 +243,15 @@ test.describe('Persona: Zoe the Import/Exporter', () => {
         await page.goto('/mapper/');
         await page.waitForSelector('#landing-start-btn', { timeout: 10000 });
 
-        // Import the file
-        const importInput = page.locator('input[type="file"]').first();
-        if (await importInput.count() > 0) {
-          await importInput.setInputFiles(exportPath);
+        // Click import button — it creates a transient file input
+        const importBtn = page.locator('button[aria-label="Import saved progress"]').first();
+        if (await importBtn.isVisible({ timeout: 3000 }).catch(() => false)) {
+          // Set up file chooser listener before clicking import
+          const [fileChooser] = await Promise.all([
+            page.waitForEvent('filechooser', { timeout: 5000 }),
+            importBtn.click(),
+          ]);
+          await fileChooser.setFiles(exportPath);
           await page.waitForTimeout(2000);
 
           // Capture post-import screenshot
@@ -375,23 +377,25 @@ test.describe('Persona: Felix the Sharer', () => {
     expect(session.totalQuestions).toBeGreaterThanOrEqual(25);
 
     // Open share modal
-    const shareBtn = page.locator('#share-btn, [data-action="share"], button:has-text("Share")').first();
+    const shareBtn = page.locator('#share-btn').first();
     if (await shareBtn.isVisible({ timeout: 3000 }).catch(() => false)) {
       await shareBtn.click();
-      await page.waitForTimeout(1000);
+      await page.waitForSelector('#share-modal', { state: 'visible', timeout: 5000 });
+      await page.waitForTimeout(500);
 
       // Capture share modal screenshot
       await page.screenshot({ path: `tests/visual/.working/personas/P18-share-modal.png` });
 
-      // Verify social share buttons exist
-      const socialButtons = page.locator('.share-modal a[href], .share-modal button, [data-share]');
+      // Verify social share buttons exist (actual DOM uses button.share-action-btn[data-action])
+      const socialButtons = page.locator('button.share-action-btn');
       const buttonCount = await socialButtons.count();
+      expect(buttonCount, 'Share modal should have social buttons').toBeGreaterThan(0);
 
-      // Verify copy text button exists
-      const copyTextBtn = page.locator('button:has-text("Copy"), [data-action="copy-text"]').first();
-      const hasCopyText = await copyTextBtn.isVisible({ timeout: 2000 }).catch(() => false);
+      // Verify specific buttons
+      const hasLinkedIn = await page.locator('[data-action="linkedin"]').isVisible().catch(() => false);
+      const hasCopyImage = await page.locator('[data-action="copy-image"]').isVisible().catch(() => false);
 
-      console.log(`  Share modal: ${buttonCount} buttons found, copy-text visible: ${hasCopyText}`);
+      console.log(`  Share modal: ${buttonCount} action buttons, LinkedIn: ${hasLinkedIn}, Copy Image: ${hasCopyImage}`);
     }
 
     // Verify no console errors
@@ -515,6 +519,9 @@ test.describe('Cross-Browser Comparison', () => {
 
     expect(session.totalQuestions).toBeGreaterThanOrEqual(7);
 
+    // Wait for map to stabilize before cross-browser screenshot
+    await page.waitForTimeout(1500);
+
     // Save browser-specific screenshot for cross-browser comparison
     await page.screenshot({
       path: `tests/visual/.working/personas/P01-cross-${browserName}.png`,
@@ -543,16 +550,16 @@ test.describe('Persona: Sam the Video Explorer — Video Discovery', () => {
 
     expect(session.totalQuestions).toBeGreaterThanOrEqual(35);
 
-    // Open video panel
-    const videoToggle = page.locator('#video-toggle, [data-action="toggle-videos"], .video-panel-toggle').first();
+    // Open video panel (actual DOM uses #video-toggle button)
+    const videoToggle = page.locator('#video-toggle').first();
     const toggleVisible = await videoToggle.isVisible({ timeout: 3000 }).catch(() => false);
 
     if (toggleVisible) {
       await videoToggle.click();
-      await page.waitForTimeout(1500);
+      await page.waitForTimeout(2000); // Allow panel to populate
 
-      // Check for video list items
-      const videoItems = page.locator('.video-item, .video-card, [data-video-id]');
+      // Check for video list items (actual DOM uses .video-panel-item)
+      const videoItems = page.locator('.video-panel-item');
       const videoCount = await videoItems.count();
 
       // Capture video panel screenshot

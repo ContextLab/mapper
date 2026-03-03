@@ -13,6 +13,24 @@ import { lookupQuestion } from './question-loader.js';
 
 const LOAD_TIMEOUT = 15000;
 
+/** Strip LaTeX markup and normalize Unicode for fuzzy text comparison. */
+function stripLatex(text) {
+  return text
+    .replace(/\$([^$]*)\$/g, '$1')
+    .replace(/\\[a-zA-Z]+\{([^}]*)\}/g, '$1')
+    .replace(/\\[a-zA-Z]+/g, '')
+    .replace(/[\\{}^_]/g, '')
+    .replace(/\u2212/g, '-')   // Unicode minus → hyphen
+    .replace(/\u2013/g, '-')   // en-dash → hyphen
+    .replace(/\u2014/g, '-')   // em-dash → hyphen
+    .replace(/\u00d7/g, 'x')   // × → x
+    .replace(/\u2248/g, '~')   // ≈ → ~
+    .replace(/\u2264/g, '<=')  // ≤ → <=
+    .replace(/\u2265/g, '>=')  // ≥ → >=
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 // ─── Seeded PRNG ─────────────────────────────────────────────
 /**
  * Linear congruential generator for deterministic answer sequences.
@@ -122,40 +140,95 @@ export async function answerQuestion(page, persona, questionDb, rand) {
   const pCorrect = persona.getAccuracy(domainId);
   const shouldBeCorrect = rand() < pCorrect;
 
-  // Find correct and wrong button indices
+  // Build complete DOM button index → DB key mapping BEFORE clicking.
+  // The app shuffles option display order, so DOM position ≠ DB key.
+  // Score each button against each option by common-prefix length,
+  // then greedily assign best matches (handles near-identical options).
   const optionBtns = page.locator('.quiz-option');
   const btnCount = await optionBtns.count();
-  const correctAnswerText = question.options[question.correct_answer];
+  const btnToDbKey = {};
+  const dbKeyUsed = new Set();
 
-  let correctBtnIndex = -1;
-  let wrongBtnIndex = -1;
-
+  // Read all button texts once
+  const btnTexts = [];
   for (let i = 0; i < btnCount; i++) {
-    const btnText = await optionBtns.nth(i).textContent();
-    if (btnText.trim() === correctAnswerText.trim() ||
-        btnText.includes(correctAnswerText.substring(0, 40))) {
-      correctBtnIndex = i;
-    } else if (wrongBtnIndex === -1) {
-      wrongBtnIndex = i;
+    btnTexts.push((await optionBtns.nth(i).textContent()).trim());
+  }
+
+  // Score every (button, option) pair by common-prefix length.
+  // Two passes: raw text first, then LaTeX-normalized for disambiguation.
+  const scores = [];
+  const optEntries = Object.entries(question.options);
+  for (let i = 0; i < btnCount; i++) {
+    for (const [key, rawText] of optEntries) {
+      const dbText = rawText.trim();
+      const domText = btnTexts[i];
+      // Raw comparison: char-by-char longest common prefix
+      const len = Math.min(domText.length, dbText.length);
+      let rawScore = 0;
+      for (let c = 0; c < len; c++) {
+        if (domText[c] === dbText[c]) rawScore++;
+        else break;
+      }
+      // LaTeX-normalized comparison for disambiguation
+      const normDom = stripLatex(domText);
+      const normDb = stripLatex(dbText);
+      const normLen = Math.min(normDom.length, normDb.length);
+      let normScore = 0;
+      for (let c = 0; c < normLen; c++) {
+        if (normDom[c] === normDb[c]) normScore++;
+        else break;
+      }
+      // Use whichever score is higher (normalized helps with LaTeX options)
+      scores.push({ btnIdx: i, key, score: Math.max(rawScore, normScore) });
     }
   }
 
-  if (correctBtnIndex === -1) {
-    correctBtnIndex = 0;
-    wrongBtnIndex = 1;
+  // Greedily assign best scores (highest first)
+  scores.sort((a, b) => b.score - a.score);
+  const btnUsed = new Set();
+  for (const { btnIdx, key, score } of scores) {
+    if (btnUsed.has(btnIdx) || dbKeyUsed.has(key)) continue;
+    if (score >= 10) { // require reasonable match
+      btnToDbKey[btnIdx] = key;
+      btnUsed.add(btnIdx);
+      dbKeyUsed.add(key);
+    }
   }
 
-  const targetIndex = shouldBeCorrect ? correctBtnIndex : (wrongBtnIndex >= 0 ? wrongBtnIndex : 0);
+  // Assign remaining by elimination
+  const allKeys = Object.keys(question.options);
+  for (let i = 0; i < btnCount; i++) {
+    if (btnToDbKey[i]) continue;
+    const remaining = allKeys.filter(k => !dbKeyUsed.has(k));
+    if (remaining.length > 0) {
+      btnToDbKey[i] = remaining[0];
+      dbKeyUsed.add(remaining[0]);
+    }
+  }
+
+  // Find correct and wrong button indices using the mapping
+  const correctBtnIndex = Object.entries(btnToDbKey)
+    .find(([_, key]) => key === question.correct_answer)?.[0] ?? 0;
+  const wrongBtnIndex = Object.entries(btnToDbKey)
+    .find(([idx, key]) => key !== question.correct_answer && idx !== String(correctBtnIndex))?.[0] ?? (correctBtnIndex === 0 ? 1 : 0);
+
+  const targetIndex = shouldBeCorrect ? Number(correctBtnIndex) : Number(wrongBtnIndex);
   await optionBtns.nth(targetIndex).click();
 
-  // Determine which letter was selected
-  const letters = ['A', 'B', 'C', 'D'];
-  const selectedAnswer = letters[targetIndex] || '?';
+  const selectedAnswer = btnToDbKey[targetIndex] || '?';
+
+  // Read actual correctness from DOM feedback (the app adds .correct or
+  // .incorrect class to the clicked button after answering).
+  await page.waitForTimeout(100); // Let DOM update after click
+  const wasCorrect = await optionBtns.nth(targetIndex).evaluate(
+    el => el.classList.contains('correct')
+  );
 
   return {
     questionId: question.id,
     questionText: question.question_text.substring(0, 200),
-    correct: shouldBeCorrect,
+    correct: wasCorrect,
     selectedAnswer,
     correctAnswer: question.correct_answer,
     options: question.options,

@@ -430,6 +430,9 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
   });
 
   // Answer questions
+  let prevQuestionText = null;
+  let sameQuestionCount = 0;
+
   for (let i = 0; i < numQuestions; i++) {
     // Domain hopping: switch domain at specified intervals
     if (domainSequence && questionsPerDomain && i > 0 && i % questionsPerDomain === 0) {
@@ -439,12 +442,37 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
       await selectDomain(page, displayDomain);
       await page.waitForSelector('.quiz-question', { timeout: 5000 });
       await page.waitForTimeout(500);
+      prevQuestionText = null; // Reset after domain switch
     }
 
     try {
+      // Read question text before answering to detect repetition
+      const currentText = await getDisplayedQuestion(page);
+
+      // Detect when the app has run out of questions: same question text
+      // appears after advancing (the quiz element stays visible showing
+      // the last answered question when no new questions are available).
+      if (currentText === prevQuestionText) {
+        sameQuestionCount++;
+        if (sameQuestionCount >= 2) {
+          // Same question 2+ times in a row — app has no more questions
+          break;
+        }
+      } else {
+        sameQuestionCount = 0;
+      }
+
+      // Also check if all option buttons are disabled (already answered)
+      const enabledBtns = await page.locator('.quiz-option:not([disabled])').count();
+      if (enabledBtns === 0) {
+        // No clickable options — question already answered, no new question served
+        break;
+      }
+
       const result = await answerQuestion(page, persona, questionDb, rand);
       allResults.push(result);
       currentBatch.push(result);
+      prevQuestionText = currentText;
 
       // Optional delay for speed-test personas
       if (answerDelayMs > 0) {

@@ -216,7 +216,7 @@ export async function answerQuestion(page, persona, questionDb, rand) {
   const targetIndex = shouldBeCorrect ? Number(correctBtnIndex) : Number(wrongBtnIndex);
   await optionBtns.nth(targetIndex).click();
 
-  const selectedAnswer = btnToDbKey[targetIndex] || '?';
+  let selectedAnswer = btnToDbKey[targetIndex] || '?';
 
   // Read actual correctness from DOM feedback (the app adds .correct or
   // .incorrect class to the clicked button after answering).
@@ -224,6 +224,16 @@ export async function answerQuestion(page, persona, questionDb, rand) {
   const wasCorrect = await optionBtns.nth(targetIndex).evaluate(
     el => el.classList.contains('correct')
   );
+
+  // Reconcile selectedAnswer with DOM truth: if the DOM says correct,
+  // selectedAnswer must be the correct key (fixes LaTeX mapping errors).
+  if (wasCorrect) {
+    selectedAnswer = question.correct_answer;
+  } else if (shouldBeCorrect && selectedAnswer === question.correct_answer) {
+    // We intended correct but got it wrong — mapping error.
+    // Mark as unknown since we can't determine the actual key clicked.
+    selectedAnswer = '?';
+  }
 
   return {
     questionId: question.id,

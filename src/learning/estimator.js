@@ -9,9 +9,8 @@
 import {
   matern32,
   euclidean,
-  kernelMatrix,
-  kernelVector,
-  choleskySolve,
+  choleskyDecompose,
+  choleskySolveFromL,
   dot,
   clamp,
 } from '../utils/math.js';
@@ -65,6 +64,7 @@ export class Estimator {
     this._obsPoints = [];
     this._obsLengthScales = null; // Float64Array of per-observation length scales
     this._obsValues = null;
+    this._L = null; // Cached Cholesky factor (lower triangular)
     this._lengthScale = DEFAULT_LENGTH_SCALE;
     this._signalVariance = DEFAULT_SIGNAL_VARIANCE;
   }
@@ -116,14 +116,19 @@ export class Estimator {
       const weightMap = correct ? CORRECT_WEIGHT_MAP : INCORRECT_WEIGHT_MAP;
       difficultyWeight = weightMap[difficulty] ?? 1.0;
     }
-    this._observations.push({
+    const obs = {
       x,
       y,
       value,
       lengthScale: lengthScale || this._lengthScale,
       difficultyWeight,
-    });
-    this._recompute();
+    };
+    this._observations.push(obs);
+    if (this._L) {
+      this._incrementalUpdate(obs);
+    } else {
+      this._recompute();
+    }
   }
 
   /**
@@ -140,14 +145,19 @@ export class Estimator {
     if (difficulty != null) {
       difficultyWeight = INCORRECT_WEIGHT_MAP[difficulty] ?? 1.0;
     }
-    this._observations.push({
+    const obs = {
       x,
       y,
       value: SKIP_KNOWLEDGE_VALUE,
       lengthScale: lengthScale || this._lengthScale,
       difficultyWeight,
-    });
-    this._recompute();
+    };
+    this._observations.push(obs);
+    if (this._L) {
+      this._incrementalUpdate(obs);
+    } else {
+      this._recompute();
+    }
   }
 
   /**
@@ -158,16 +168,18 @@ export class Estimator {
     const cells = viewport ? this._cellsInViewport(viewport) : this._cells;
     const n = this._observations.length;
 
-    if (n === 0) {
-      return cells.map((c) => ({
-        gx: c.gx,
-        gy: c.gy,
-        value: PRIOR_MEAN,
-        uncertainty: 1.0,
-        evidenceCount: 0,
-        state: 'unknown',
-        difficultyLevel: IRT_THRESHOLDS.reduce((lvl, t) => lvl + (PRIOR_MEAN >= t ? 1 : 0), 0),
-      }));
+    const priorResult = (c) => ({
+      gx: c.gx,
+      gy: c.gy,
+      value: PRIOR_MEAN,
+      uncertainty: 1.0,
+      evidenceCount: 0,
+      state: 'unknown',
+      difficultyLevel: IRT_THRESHOLDS.reduce((lvl, t) => lvl + (PRIOR_MEAN >= t ? 1 : 0), 0),
+    });
+
+    if (n === 0 || !this._L) {
+      return cells.map(priorResult);
     }
 
     const sv = this._signalVariance;
@@ -189,7 +201,7 @@ export class Estimator {
       const value = clamp(PRIOR_MEAN + meanShift, 0, 1);
 
       const kSelf = sv;
-      const kSolve = choleskySolve(this._K_noisy, kStar);
+      const kSolve = choleskySolveFromL(this._L, kStar);
       const variance = Math.max(0, kSelf - dot(kStar, kSolve));
       const uncertainty = clamp(Math.sqrt(variance) / Math.sqrt(sv), 0, 1);
 
@@ -229,7 +241,7 @@ export class Estimator {
     const cell = this._cells.find((c) => c.gx === gx && c.gy === gy);
     if (!cell) return null;
 
-    if (this._observations.length === 0) {
+    if (this._observations.length === 0 || !this._L) {
       return {
         gx, gy,
         value: PRIOR_MEAN,
@@ -255,7 +267,7 @@ export class Estimator {
     const value = clamp(PRIOR_MEAN + meanShift, 0, 1);
 
     const kSelf = sv;
-    const kSolve = choleskySolve(this._K_noisy, kStar);
+    const kSolve = choleskySolveFromL(this._L, kStar);
     const variance = Math.max(0, kSelf - dot(kStar, kSolve));
     const uncertainty = clamp(Math.sqrt(variance) / Math.sqrt(sv), 0, 1);
 
@@ -292,7 +304,7 @@ export class Estimator {
     this._obsPoints = [];
     this._obsValues = null;
     this._obsLengthScales = null;
-    this._K_noisy = null;
+    this._L = null;
   }
 
   /**
@@ -358,7 +370,7 @@ export class Estimator {
       this._obsPoints = [];
       this._obsValues = null;
       this._obsLengthScales = null;
-      this._K_noisy = null;
+      this._L = null;
       return;
     }
 
@@ -373,11 +385,11 @@ export class Estimator {
       this._obsLengthScales[i] = this._observations[i].lengthScale || this._lengthScale;
     }
 
-    // Build K with per-observation length scales only (no difficulty weights).
+    // Build K_noisy with per-observation length scales only (no difficulty weights).
     // Difficulty is encoded in obsValues, keeping the kernel positive-definite.
-    const K = new Array(n);
+    const K_noisy = new Array(n);
     for (let i = 0; i < n; i++) {
-      K[i] = new Float64Array(n);
+      K_noisy[i] = new Float64Array(n);
     }
     const sv = this._signalVariance;
     for (let i = 0; i < n; i++) {
@@ -388,22 +400,98 @@ export class Estimator {
         const d = euclidean(this._obsPoints[i].x, this._obsPoints[i].y,
                            this._obsPoints[j].x, this._obsPoints[j].y);
         const val = matern32(d, lMerged, sv);
-        K[i][j] = val;
-        K[j][i] = val;
+        K_noisy[i][j] = val;
+        K_noisy[j][i] = val;
       }
     }
-
-    this._K_noisy = K.map((row) => new Float64Array(row));
     for (let i = 0; i < n; i++) {
-      this._K_noisy[i][i] += NOISE_VARIANCE;
+      K_noisy[i][i] += NOISE_VARIANCE;
     }
 
-    this._alpha = choleskySolve(this._K_noisy, this._obsValues);
+    // Cholesky decompose and cache L for reuse in predict()
+    this._L = choleskyDecompose(K_noisy);
+
+    if (this._L) {
+      this._alpha = choleskySolveFromL(this._L, this._obsValues);
+    } else {
+      this._alpha = new Float64Array(n);
+      console.warn('[estimator] Cholesky decomposition failed — predictions will use prior mean');
+    }
 
     // Safety: if Cholesky returned a zero vector (NaN fallback), log a warning
     if (this._alpha.every(v => v === 0) && this._obsValues.some(v => v !== 0)) {
       console.warn('[estimator] Cholesky returned fallback zero vector — predictions will use prior mean');
     }
+  }
+
+  /**
+   * Incrementally extend the Cholesky factor L when a single new observation is added.
+   * Bordered Cholesky: compute one new row of L in O(n²) instead of full O(n³) recompute.
+   * Falls back to full _recompute() if the diagonal becomes non-positive.
+   */
+  _incrementalUpdate(obs) {
+    const n = this._observations.length;
+    const prevN = n - 1;
+
+    // Extend obsPoints
+    this._obsPoints.push({ x: obs.x, y: obs.y });
+
+    // Extend obsValues
+    const newObsValues = new Float64Array(n);
+    newObsValues.set(this._obsValues);
+    const w = obs.difficultyWeight || 1.0;
+    newObsValues[prevN] = (obs.value - PRIOR_MEAN) * w;
+    this._obsValues = newObsValues;
+
+    // Extend obsLengthScales
+    const newObsLS = new Float64Array(n);
+    newObsLS.set(this._obsLengthScales);
+    newObsLS[prevN] = obs.lengthScale || this._lengthScale;
+    this._obsLengthScales = newObsLS;
+
+    // Compute new kernel entries between new obs and all existing obs
+    const sv = this._signalVariance;
+    const lNew = this._obsLengthScales[prevN];
+
+    // Bordered Cholesky: compute new row of L
+    const newRow = new Float64Array(n);
+
+    for (let j = 0; j < prevN; j++) {
+      const lj = this._obsLengthScales[j];
+      const lMerged = Math.sqrt(lNew * lj);
+      const d = euclidean(obs.x, obs.y, this._obsPoints[j].x, this._obsPoints[j].y);
+      const kij = matern32(d, lMerged, sv);
+
+      let sum = 0;
+      for (let m = 0; m < j; m++) {
+        sum += newRow[m] * this._L[j][m];
+      }
+      newRow[j] = (kij - sum) / this._L[j][j];
+    }
+
+    // Diagonal: k_self + noise - sum of squared new row entries
+    // Use same fixed jitter as choleskyDecompose for consistency
+    const JITTER = 1e-6;
+    const kSelf = sv + NOISE_VARIANCE;
+    let sumSq = 0;
+    for (let m = 0; m < prevN; m++) {
+      sumSq += newRow[m] * newRow[m];
+    }
+    const diagVal = kSelf - sumSq + JITTER;
+
+    if (diagVal <= 0) {
+      // Numerical issue — fall back to full recompute
+      console.warn('[estimator] Incremental Cholesky: negative diagonal, falling back to full recompute');
+      this._recompute();
+      return;
+    }
+    newRow[prevN] = Math.sqrt(diagVal);
+
+    // Extend L with the new row
+    this._L.push(newRow);
+
+    // Recompute α using the extended L
+    this._alpha = choleskySolveFromL(this._L, this._obsValues);
   }
 
   /**

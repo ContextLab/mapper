@@ -342,8 +342,8 @@ Task: "Add pedant verification prompts in tests/visual/personas/evaluator-prompt
 
 **Purpose**: Fix known bugs discovered by users and persona testing
 
-- [ ] T049 [P] [Issue #26] Profile GP estimator at 100+ observations, move expensive computation to async. Ensure answer feedback appears within 100ms. Files: `src/learning/estimator.js`, `src/app.js`
-- [ ] T050 [P] [Issue #28] Debug import flow — fix rendering so all imported question markers display on map. Files: `src/ui/quiz.js`, `src/app.js`, `src/viz/renderer.js`
+- [X] T049 [P] [Issue #26] Profile GP estimator at 100+ observations, move expensive computation to async. Ensure answer feedback appears within 100ms. Files: `src/learning/estimator.js`, `src/app.js`
+- [X] T050 [P] [Issue #28] Debug import flow — fix rendering so all imported question markers display on map. Files: `src/ui/quiz.js`, `src/app.js`, `src/viz/renderer.js`
 - [X] T051 [P] [Issue #29] Remove Auto sampling button, rename remaining to indicate one-shot behavior, add domain indicator to question bar. Files: `src/ui/quiz.js`, `frontend/index.html`
 - [X] T052 [P] [Issue #30] Investigate `.resize-handle` element — fix to resize correct panel or remove entirely. Files: `frontend/index.html`, CSS, related JS
 
@@ -355,8 +355,8 @@ Task: "Add pedant verification prompts in tests/visual/personas/evaluator-prompt
 
 **Purpose**: Commit, verify, close issues
 
-- [ ] T053 Run all Playwright tests to verify no regressions after all changes
-- [ ] T054 Run unit tests to verify no regressions
+- [X] T053 Run all Playwright tests to verify no regressions after all changes
+- [X] T054 Run unit tests to verify no regressions
 - [X] T055 Commit and push all changes to `004-persona-user-testing` branch
 - [X] T056 Close GitHub issue #32 (question quality addressed by audit)
 - [X] T057 Post update comments on issues #26, #27, #28, #29, #30 with status and evidence

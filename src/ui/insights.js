@@ -1,15 +1,18 @@
 /**
- * Concept-based knowledge insights — leaderboard (trophy) and suggestions (graduation cap).
+ * Knowledge insights — domain-level leaderboard (trophy) and concept-level suggestions (graduation cap).
  *
- * Two concept pools:
- *   - conceptCoords: current domain only (rebuilt on each domain switch)
- *   - globalConceptCoords: accumulated across all loaded domains (never reset except on full reset)
+ * Two layers:
+ *   - Domain rankings: aggregate GP predictions at question coordinates per domain/sub-domain
+ *   - Concept suggestions: fine-grained concept → coordinate mapping for learning recommendations
  *
- * The trophy/cap buttons use globalConceptCoords + globalEstimator so that they
- * reflect knowledge across the *full* map, not just the currently rendered view.
+ * The trophy button uses domain-level rankings across the full map.
+ * The share modal uses domain-level top-3 for the expertise summary.
  */
 
 let modalEl = null;
+
+// Domain-level: domainId → { name, level, parentId, coords: [{x, y}] }
+let domainCoords = new Map();
 
 // Precomputed: concept name → array of { x, y } from source articles
 let conceptCoords = new Map();
@@ -198,6 +201,101 @@ export function resetGlobalConcepts() {
 }
 
 /**
+ * Store domain metadata (bounding boxes) from the domain index.
+ * Call once after registry.init() completes.
+ *
+ * @param {Array} domainIndex - Array of domain objects from index.json
+ */
+export function setDomains(domainIndex) {
+  domainCoords = new Map();
+  if (!domainIndex) return;
+
+  for (const d of domainIndex) {
+    if (d.level === 'all') continue;
+    if (!d.region) continue;
+    domainCoords.set(d.id, {
+      name: d.name,
+      level: d.level,
+      parentId: d.parent_id,
+      region: d.region,
+    });
+  }
+}
+
+/** Clear domain coordinates (call on full reset). */
+export function resetDomains() {
+  domainCoords = new Map();
+}
+
+/**
+ * Compute knowledge per domain by averaging GP grid cells that fall within
+ * each domain's bounding box. Only cells with low uncertainty count.
+ *
+ * @param {Array} estimates - CellEstimate[] from estimator.predict()
+ * @param {object} region - Global region { x_min, x_max, y_min, y_max }
+ * @param {number} gridSize - Global grid dimension
+ * @returns {Array<{ domainId, name, level, parentId, knowledge, count, evidencedCount, hasEvidence }>}
+ */
+export function computeDomainKnowledge(estimates, region, gridSize) {
+  if (domainCoords.size === 0 || !estimates || estimates.length === 0 || !region) return [];
+
+  // Build grid lookup: "gx,gy" → estimate
+  const estimateMap = new Map();
+  for (const e of estimates) {
+    estimateMap.set(`${e.gx},${e.gy}`, e);
+  }
+
+  const cellW = (region.x_max - region.x_min) / gridSize;
+  const cellH = (region.y_max - region.y_min) / gridSize;
+
+  const UNCERTAINTY_THRESHOLD = 0.85;
+  const MIN_EVIDENCE = 2;
+  const results = [];
+
+  for (const [domId, data] of domainCoords) {
+    const dr = data.region;
+    // Find grid cells that overlap this domain's bounding box
+    const gxMin = Math.max(0, Math.floor((dr.x_min - region.x_min) / cellW));
+    const gxMax = Math.min(gridSize - 1, Math.floor((dr.x_max - region.x_min) / cellW));
+    const gyMin = Math.max(0, Math.floor((dr.y_min - region.y_min) / cellH));
+    const gyMax = Math.min(gridSize - 1, Math.floor((dr.y_max - region.y_min) / cellH));
+
+    let evidencedSum = 0;
+    let evidencedCount = 0;
+    let totalCells = 0;
+
+    for (let gx = gxMin; gx <= gxMax; gx++) {
+      for (let gy = gyMin; gy <= gyMax; gy++) {
+        totalCells++;
+        const cell = estimateMap.get(`${gx},${gy}`);
+        if (!cell) continue;
+        const u = cell.uncertainty ?? 1.0;
+        if (u < UNCERTAINTY_THRESHOLD) {
+          evidencedSum += isFinite(cell.value) ? cell.value : 0.5;
+          evidencedCount++;
+        }
+      }
+    }
+
+    const hasEvidence = evidencedCount >= MIN_EVIDENCE;
+    const knowledge = hasEvidence ? evidencedSum / evidencedCount : 0.5;
+
+    results.push({
+      domainId: domId,
+      name: data.name,
+      level: data.level,
+      parentId: data.parentId,
+      knowledge: isFinite(knowledge) ? knowledge : 0.5,
+      count: totalCells,
+      evidencedCount,
+      hasEvidence,
+    });
+  }
+
+  return results;
+}
+
+/**
  * Compute knowledge per concept using precomputed coordinates and current estimates.
  *
  * @param {Array} estimates - CellEstimate[] from estimator.predict()
@@ -261,9 +359,10 @@ export function computeConceptKnowledge(estimates, region, gridSize, opts = {}) 
 const CAVEAT_HTML = `<p class="insights-caveat"><strong>Note:</strong> These estimates assume responses reflect genuine effort. Randomly clicking through questions without thinking will generate estimates that aren't useful or meaningful.</p>`;
 
 /**
- * Show leaderboard modal — top 10 best-known concepts.
+ * Show leaderboard modal — domains ranked by estimated knowledge.
+ * @param {Array} domainKnowledge - From computeDomainKnowledge()
  */
-export function showLeaderboard(conceptKnowledge) {
+export function showLeaderboard(domainKnowledge) {
   if (!modalEl) return;
 
   const titleEl = document.getElementById('insights-modal-title');
@@ -277,34 +376,45 @@ export function showLeaderboard(conceptKnowledge) {
   titleEl.appendChild(icon);
   titleEl.appendChild(document.createTextNode(' My Areas of Expertise'));
 
-  if (!conceptKnowledge || conceptKnowledge.length === 0) {
+  const emptyMsg = 'Answer more questions to discover your areas of expertise.';
+  if (!domainKnowledge || domainKnowledge.length === 0) {
     bodyEl.textContent = '';
     const msg = document.createElement('div');
     msg.className = 'insights-empty-msg';
-    msg.textContent = 'Answer more questions to discover your areas of expertise.';
+    msg.textContent = emptyMsg;
     bodyEl.appendChild(msg);
     modalEl.hidden = false;
     return;
   }
 
-  // Only show concepts with nearby evidence — raw GP extrapolation is misleading
-  const evidenced = conceptKnowledge.filter(c => c.hasEvidence !== false);
+  // Only show domains with nearby evidence
+  const evidenced = domainKnowledge.filter(c => c.hasEvidence !== false);
   if (evidenced.length === 0) {
     bodyEl.textContent = '';
     const msg = document.createElement('div');
     msg.className = 'insights-empty-msg';
-    msg.textContent = 'Answer more questions to discover your areas of expertise.';
+    msg.textContent = emptyMsg;
     bodyEl.appendChild(msg);
     modalEl.hidden = false;
     return;
   }
   const sorted = [...evidenced].sort((a, b) => b.knowledge - a.knowledge);
-  const explainer = '<p class="insights-explainer">'
-    + 'These are the concepts the system estimates you know best, based on the responses you\'ve given. '
-    + 'Each concept is mapped to a region of the knowledge map; '
-    + 'your answers to nearby questions determine the estimated knowledge level.'
-    + '</p>';
-  bodyEl.innerHTML = explainer + renderList(sorted.slice(0, 10), 'var(--color-correct)', false) + CAVEAT_HTML;
+
+  // Build the body using safe DOM methods
+  bodyEl.textContent = '';
+  const explainer = document.createElement('p');
+  explainer.className = 'insights-explainer';
+  explainer.textContent = 'Your knowledge estimated per domain, ranked highest first. '
+    + 'Each score averages the GP prediction at every question coordinate in that domain.';
+  bodyEl.appendChild(explainer);
+  bodyEl.appendChild(buildDomainList(sorted));
+  const caveat = document.createElement('p');
+  caveat.className = 'insights-caveat';
+  const strong = document.createElement('strong');
+  strong.textContent = 'Note:';
+  caveat.appendChild(strong);
+  caveat.appendChild(document.createTextNode(' These estimates assume responses reflect genuine effort. Randomly clicking through questions without thinking will generate estimates that aren\'t useful or meaningful.'));
+  bodyEl.appendChild(caveat);
   modalEl.hidden = false;
 }
 
@@ -379,6 +489,57 @@ export function hide() {
 
 // ======== Private helpers ========
 
+/** Build a DOM list of domain rankings. */
+function buildDomainList(items) {
+  const ul = document.createElement('ul');
+  ul.className = 'insights-modal-list';
+  const barColor = 'var(--color-correct)';
+
+  for (let i = 0; i < items.length; i++) {
+    const item = items[i];
+    const pct = Math.round(item.knowledge * 100);
+    const noData = item.hasEvidence === false;
+
+    const li = document.createElement('li');
+
+    const rank = document.createElement('span');
+    rank.className = 'insights-rank';
+    rank.textContent = `${i + 1}.`;
+
+    const nameSpan = document.createElement('span');
+    nameSpan.className = 'insights-concept';
+    // Indent sub-domains under their parent
+    const label = item.level === 'sub' ? item.name : item.name;
+    nameSpan.textContent = label;
+    if (item.level === 'sub') {
+      nameSpan.style.paddingLeft = '0.75rem';
+      nameSpan.style.fontSize = '0.8rem';
+    }
+
+    const pctSpan = document.createElement('span');
+    pctSpan.className = 'insights-pct';
+    pctSpan.textContent = noData ? '—' : `${pct}%`;
+    pctSpan.style.color = noData ? 'var(--color-text-muted)' : barColor;
+
+    const barOuter = document.createElement('span');
+    barOuter.className = 'insights-bar-mini';
+    const barFill = document.createElement('span');
+    barFill.className = 'insights-bar-fill-mini';
+    barFill.style.width = `${noData ? 0 : pct}%`;
+    barFill.style.background = barColor;
+    barOuter.appendChild(barFill);
+
+    li.appendChild(rank);
+    li.appendChild(nameSpan);
+    li.appendChild(pctSpan);
+    li.appendChild(barOuter);
+    ul.appendChild(li);
+  }
+
+  return ul;
+}
+
+/** Build an HTML string list of concept rankings. */
 function renderList(items, barColor, showLinks) {
   let html = '<ul class="insights-modal-list">';
   for (let i = 0; i < items.length; i++) {
@@ -389,7 +550,6 @@ function renderList(items, barColor, showLinks) {
       ? `<a href="${kaLink(item.concept)}" target="_blank" rel="noopener" title="Search Khan Academy for ${text}">${text}</a>`
       : text;
 
-    // If no nearby observations contributed to this concept's estimate, show "—"
     const noData = item.hasEvidence === false;
     const pctText = noData ? '—' : `${pct}%`;
     const barWidth = noData ? 0 : pct;

@@ -51,8 +51,6 @@ let allDomainBundle = null;   // Permanent "all" domain data — never replaced
 let currentDomainBundle = null; // Points to allDomainBundle once loaded
 let aggregatedQuestions = [];   // Questions for active domain + descendants (CL-049)
 let currentViewport = { x_min: 0, x_max: 1, y_min: 0, y_max: 1 };
-let currentDomainRegion = GLOBAL_REGION;
-let currentGridSize = GLOBAL_GRID_SIZE;
 let domainQuestionCount = 0;
 let switchGeneration = 0;
 let questionIndex = new Map();
@@ -106,6 +104,7 @@ async function boot() {
     indexQuestions(allDomainBundle.questions);
     questionIndex = new Map(allDomainBundle.questions.map(q => [q.id, q]));
     insights.setConcepts(allDomainBundle.questions, allDomainBundle.articles);
+    insights.setDomains(registry.getDomains());
 
     // Initialize particles immediately from already-loaded articles (no extra fetch).
     // Articles alone provide 50K+ points, far exceeding the 2500 particle budget.
@@ -199,13 +198,12 @@ async function boot() {
   if (trophyBtn) {
     trophyBtn.addEventListener('click', () => {
       if (!globalEstimator) return;
-      const ck = insights.computeConceptKnowledge(
+      const dk = insights.computeDomainKnowledge(
         globalEstimator.predict(),
         GLOBAL_REGION,
         GLOBAL_GRID_SIZE,
-        { global: true },
       );
-      insights.showLeaderboard(ck);
+      insights.showLeaderboard(dk);
     });
   }
 
@@ -234,13 +232,14 @@ async function boot() {
 
   share.init(headerEl, () => renderer._canvas, () => {
     if (!currentDomainBundle) return [];
-    const ck = insights.computeConceptKnowledge(
-      $estimates.get(),
-      currentDomainRegion,
-      currentGridSize,
+    const dk = insights.computeDomainKnowledge(
+      globalEstimator.predict(),
+      GLOBAL_REGION,
+      GLOBAL_GRID_SIZE,
     );
-    const sorted = [...ck].sort((a, b) => b.knowledge - a.knowledge);
-    return sorted.slice(0, 3).map(c => ({ label: c.concept, value: c.knowledge }));
+    const evidenced = dk.filter(d => d.hasEvidence !== false);
+    const sorted = [...evidenced].sort((a, b) => b.knowledge - a.knowledge);
+    return sorted.slice(0, 3).map(d => ({ label: d.name, value: d.knowledge }));
   }, () => $responses.get().length, () => {
     if (!currentDomainBundle) return null;
     const estimates = $estimates.get();
@@ -686,8 +685,6 @@ function handleReset() {
   mapInitialized = false;
   domainQuestionCount = 0;
   aggregatedQuestions = [];
-  currentDomainRegion = GLOBAL_REGION;
-  currentGridSize = GLOBAL_GRID_SIZE;
   switchGeneration++;
   renderer.abortTransition();
   estimator.reset();
@@ -701,11 +698,13 @@ function handleReset() {
   renderer.setAnsweredQuestions([]);
   renderer.clearQuestions();
   insights.resetGlobalConcepts();
+  insights.resetDomains();
   videoModal.hide();
   mergedVideoWindows = [];
-  // Re-set concepts from the permanent "all" bundle so insights work on next domain select
+  // Re-set concepts and domains from the permanent "all" bundle so insights work on next domain select
   if (allDomainBundle) {
     insights.setConcepts(allDomainBundle.questions, allDomainBundle.articles);
+    insights.setDomains(registry.getDomains());
   }
   questionIndex = allDomainBundle
     ? new Map(allDomainBundle.questions.map(q => [q.id, q]))

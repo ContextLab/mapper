@@ -5,10 +5,10 @@
     "parent_id": "economics",
     "level": "sub",
     "region": {
-      "x_min": 0.576816,
-      "x_max": 0.674688,
-      "y_min": 0.574496,
-      "y_max": 0.656302
+      "x_min": 0.389889,
+      "x_max": 0.697206,
+      "y_min": 0.154035,
+      "y_max": 0.874162
     },
     "grid_size": 70
   },
@@ -31,8 +31,8 @@
       "concepts_tested": [
         "supply and demand"
       ],
-      "x": 0.816879,
-      "y": 0.709798
+      "x": 0.679626,
+      "y": 0.834344
     },
     {
       "id": "99e1a2c85d878bb9",
@@ -52,8 +52,8 @@
       "concepts_tested": [
         "monopoly"
       ],
-      "x": 0.788467,
-      "y": 0.697906
+      "x": 0.674521,
+      "y": 0.828424
     },
     {
       "id": "60e56c7ae4dc0fd1",
@@ -73,8 +73,8 @@
       "concepts_tested": [
         "price"
       ],
-      "x": 0.777023,
-      "y": 0.692306
+      "x": 0.667436,
+      "y": 0.814792
     },
     {
       "id": "fa8e20af23c40e51",
@@ -94,8 +94,8 @@
       "concepts_tested": [
         "competition"
       ],
-      "x": 0.792161,
-      "y": 0.699694
+      "x": 0.668436,
+      "y": 0.81558
     },
     {
       "id": "d9c8882dfab24acf",
@@ -107,7 +107,9 @@
         "D": "Government subsidies"
       },
       "correct_answer": "A",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.671659,
+      "y": 0.816067
     },
     {
       "id": "a13529154342a854",
@@ -127,8 +129,8 @@
       "concepts_tested": [
         "market"
       ],
-      "x": 0.770772,
-      "y": 0.686231
+      "x": 0.661069,
+      "y": 0.803886
     },
     {
       "id": "7a61974d0620e154",
@@ -140,7 +142,9 @@
         "D": "Excess supply over demand"
       },
       "correct_answer": "C",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.670543,
+      "y": 0.819722
     },
     {
       "id": "88599e2b82a81318",
@@ -160,8 +164,8 @@
       "concepts_tested": [
         "consumer"
       ],
-      "x": 0.791859,
-      "y": 0.69736
+      "x": 0.682266,
+      "y": 0.8386
     },
     {
       "id": "9ca3dfbcb809ee86",
@@ -181,8 +185,8 @@
       "concepts_tested": [
         "producer"
       ],
-      "x": 0.791298,
-      "y": 0.698519
+      "x": 0.675445,
+      "y": 0.829117
     },
     {
       "id": "9c7384f26ebf40e4",
@@ -202,8 +206,8 @@
       "concepts_tested": [
         "subsidy"
       ],
-      "x": 0.799234,
-      "y": 0.702799
+      "x": 0.677644,
+      "y": 0.832153
     },
     {
       "id": "212737b38583a047",
@@ -215,7 +219,9 @@
         "D": "Direct taxes are firm-only"
       },
       "correct_answer": "C",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.670997,
+      "y": 0.81226
     },
     {
       "id": "895d2ce53387ef43",
@@ -235,8 +241,8 @@
       "concepts_tested": [
         "incentive"
       ],
-      "x": 0.822602,
-      "y": 0.733687
+      "x": 0.660862,
+      "y": 0.806563
     },
     {
       "id": "591bfb1f6269f1e1",
@@ -256,8 +262,8 @@
       "concepts_tested": [
         "opportunity cost"
       ],
-      "x": 0.776923,
-      "y": 0.689929
+      "x": 0.673366,
+      "y": 0.812056
     },
     {
       "id": "ff144ce3ef17079a",
@@ -277,8 +283,8 @@
       "concepts_tested": [
         "price elasticity of demand"
       ],
-      "x": 0.808581,
-      "y": 0.704799
+      "x": 0.692206,
+      "y": 0.869162
     },
     {
       "id": "66d1e8a5d0068aa1",
@@ -298,8 +304,8 @@
       "concepts_tested": [
         "marginal cost"
       ],
-      "x": 0.799829,
-      "y": 0.703799
+      "x": 0.679362,
+      "y": 0.835455
     },
     {
       "id": "0041c317d1d53e99",
@@ -319,8 +325,8 @@
       "concepts_tested": [
         "marginal utility"
       ],
-      "x": 0.799042,
-      "y": 0.699943
+      "x": 0.683121,
+      "y": 0.84001
     },
     {
       "id": "e41500faf78fe0f6",
@@ -340,8 +346,8 @@
       "concepts_tested": [
         "consumer surplus"
       ],
-      "x": 0.808422,
-      "y": 0.706889
+      "x": 0.669604,
+      "y": 0.819539
     },
     {
       "id": "6f8625d6a9d14688",
@@ -361,8 +367,8 @@
       "concepts_tested": [
         "producer surplus"
       ],
-      "x": 0.811038,
-      "y": 0.70851
+      "x": 0.679629,
+      "y": 0.835845
     },
     {
       "id": "e5f211abd0ea65d3",
@@ -382,8 +388,8 @@
       "concepts_tested": [
         "Nash equilibrium"
       ],
-      "x": 0.729686,
-      "y": 0.687262
+      "x": 0.681531,
+      "y": 0.844411
     },
     {
       "id": "5a180f2b1b86e528",
@@ -403,8 +409,8 @@
       "concepts_tested": [
         "price discrimination"
       ],
-      "x": 0.793355,
-      "y": 0.700784
+      "x": 0.680929,
+      "y": 0.837361
     },
     {
       "id": "7af1d4015e5fdc98",
@@ -424,8 +430,8 @@
       "concepts_tested": [
         "oligopoly"
       ],
-      "x": 0.788204,
-      "y": 0.69711
+      "x": 0.675884,
+      "y": 0.829977
     },
     {
       "id": "5626855a29fe0bb0",
@@ -445,8 +451,8 @@
       "concepts_tested": [
         "externality"
       ],
-      "x": 0.819746,
-      "y": 0.713122
+      "x": 0.664549,
+      "y": 0.810301
     },
     {
       "id": "677c7fc0123f70a4",
@@ -466,8 +472,8 @@
       "concepts_tested": [
         "public good"
       ],
-      "x": 0.780644,
-      "y": 0.694292
+      "x": 0.665715,
+      "y": 0.811552
     },
     {
       "id": "13df028e8e814cd9",
@@ -487,8 +493,8 @@
       "concepts_tested": [
         "indifference curve"
       ],
-      "x": 0.798578,
-      "y": 0.700902
+      "x": 0.673183,
+      "y": 0.826699
     },
     {
       "id": "fb02d35045e71301",
@@ -508,8 +514,8 @@
       "concepts_tested": [
         "budget constraint"
       ],
-      "x": 0.807014,
-      "y": 0.70866
+      "x": 0.669817,
+      "y": 0.822252
     },
     {
       "id": "2bb01d6bd36a26d6",
@@ -529,8 +535,8 @@
       "concepts_tested": [
         "deadweight loss"
       ],
-      "x": 0.792264,
-      "y": 0.700446
+      "x": 0.675038,
+      "y": 0.828158
     },
     {
       "id": "15de7e3c6adf090d",
@@ -550,8 +556,8 @@
       "concepts_tested": [
         "Pareto efficiency"
       ],
-      "x": 0.732225,
-      "y": 0.673866
+      "x": 0.676073,
+      "y": 0.830129
     },
     {
       "id": "31a2324b37fb1062",
@@ -571,8 +577,8 @@
       "concepts_tested": [
         "Coase theorem"
       ],
-      "x": 0.752147,
-      "y": 0.682708
+      "x": 0.682283,
+      "y": 0.838724
     },
     {
       "id": "c0557e01f5878d42",
@@ -592,8 +598,8 @@
       "concepts_tested": [
         "adverse selection"
       ],
-      "x": 0.825334,
-      "y": 0.715802
+      "x": 0.666749,
+      "y": 0.813855
     },
     {
       "id": "3462342d176e5c9b",
@@ -613,8 +619,8 @@
       "concepts_tested": [
         "moral hazard"
       ],
-      "x": 0.696594,
-      "y": 0.633285
+      "x": 0.673732,
+      "y": 0.82739
     },
     {
       "id": "fd38eefd3abf7cf1",
@@ -634,8 +640,8 @@
       "concepts_tested": [
         "principal-agent problem"
       ],
-      "x": 0.767603,
-      "y": 0.691445
+      "x": 0.670681,
+      "y": 0.814282
     },
     {
       "id": "4dc12f2074dbcc47",
@@ -647,7 +653,9 @@
         "D": "Excess demand"
       },
       "correct_answer": "D",
-      "difficulty": 3
+      "difficulty": 3,
+      "x": 0.668603,
+      "y": 0.812804
     },
     {
       "id": "9b56aaec9167e8ad",
@@ -667,8 +675,8 @@
       "concepts_tested": [
         "revealed preference"
       ],
-      "x": 0.76595,
-      "y": 0.692129
+      "x": 0.662448,
+      "y": 0.809175
     },
     {
       "id": "3d1a07015e807add",
@@ -688,8 +696,8 @@
       "concepts_tested": [
         "Giffen good"
       ],
-      "x": 0.820767,
-      "y": 0.712539
+      "x": 0.67704,
+      "y": 0.832352
     },
     {
       "id": "b76aeff2e8da7136",
@@ -709,8 +717,8 @@
       "concepts_tested": [
         "compensating variation"
       ],
-      "x": 0.773521,
-      "y": 0.69296
+      "x": 0.674773,
+      "y": 0.829267
     },
     {
       "id": "af6f2e40ea3f4b3f",
@@ -730,8 +738,8 @@
       "concepts_tested": [
         "Stackelberg competition"
       ],
-      "x": 0.79559,
-      "y": 0.701465
+      "x": 0.662449,
+      "y": 0.806838
     },
     {
       "id": "cff9d1a9096c3421",
@@ -751,8 +759,8 @@
       "concepts_tested": [
         "natural monopoly"
       ],
-      "x": 0.783365,
-      "y": 0.695693
+      "x": 0.665413,
+      "y": 0.811091
     },
     {
       "id": "cdad5a92b64e00a8",
@@ -772,8 +780,8 @@
       "concepts_tested": [
         "Arrow's impossibility theorem"
       ],
-      "x": 0.706796,
-      "y": 0.661207
+      "x": 0.67128,
+      "y": 0.825168
     },
     {
       "id": "2ddc04a3a653fbd9",
@@ -793,8 +801,8 @@
       "concepts_tested": [
         "mechanism design"
       ],
-      "x": 0.73791,
-      "y": 0.691605
+      "x": 0.660953,
+      "y": 0.805856
     },
     {
       "id": "296b083843f9941c",
@@ -814,8 +822,8 @@
       "concepts_tested": [
         "Myerson-Satterthwaite theorem"
       ],
-      "x": 0.748927,
-      "y": 0.683025
+      "x": 0.675197,
+      "y": 0.829528
     },
     {
       "id": "cf703c86524ab5fb",
@@ -838,8 +846,8 @@
         "incentive compatibility",
         "bilateral trade"
       ],
-      "x": 0.746922,
-      "y": 0.680002
+      "x": 0.676132,
+      "y": 0.831323
     },
     {
       "id": "e0ad1c9bccad1f15",
@@ -862,8 +870,8 @@
         "dominant strategy",
         "second-price auction"
       ],
-      "x": 0.769514,
-      "y": 0.691227
+      "x": 0.672554,
+      "y": 0.826398
     },
     {
       "id": "4e247e3537a6e51e",
@@ -886,8 +894,8 @@
         "truthful mechanism",
         "externality payment"
       ],
-      "x": 0.781634,
-      "y": 0.694667
+      "x": 0.669851,
+      "y": 0.823505
     },
     {
       "id": "4f1ce468a1e74452",
@@ -910,8 +918,8 @@
         "spatial competition",
         "location model"
       ],
-      "x": 0.797592,
-      "y": 0.704173
+      "x": 0.671135,
+      "y": 0.824157
     },
     {
       "id": "a8e20c2c2e9627aa",
@@ -935,8 +943,8 @@
         "Marshallian demand",
         "Hicksian demand"
       ],
-      "x": 0.801275,
-      "y": 0.703336
+      "x": 0.394889,
+      "y": 0.159035
     },
     {
       "id": "031493cdecb6b9e8",
@@ -960,8 +968,8 @@
         "subgame-perfect equilibrium",
         "discount factor"
       ],
-      "x": 0.745956,
-      "y": 0.694071
+      "x": 0.685342,
+      "y": 0.853464
     },
     {
       "id": "891e917bfd892d4e",
@@ -985,8 +993,8 @@
         "pooling equilibrium",
         "asymmetric information"
       ],
-      "x": 0.741601,
-      "y": 0.692886
+      "x": 0.673223,
+      "y": 0.827662
     },
     {
       "id": "5678a6055e7f7e47",
@@ -1010,8 +1018,8 @@
         "Rothschild-Stiglitz model",
         "information asymmetry"
       ],
-      "x": 0.763717,
-      "y": 0.683982
+      "x": 0.659654,
+      "y": 0.801838
     },
     {
       "id": "fb360543cddf5f16",
@@ -1035,8 +1043,8 @@
         "costly signaling",
         "education as signal"
       ],
-      "x": 0.792091,
-      "y": 0.699833
+      "x": 0.662695,
+      "y": 0.812412
     },
     {
       "id": "fe49fc52d0d02803",
@@ -1060,8 +1068,8 @@
         "Second Welfare Theorem",
         "fixed-point theorem"
       ],
-      "x": 0.741447,
-      "y": 0.676505
+      "x": 0.674858,
+      "y": 0.830857
     }
   ],
   "labels": [],

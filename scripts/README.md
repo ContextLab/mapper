@@ -33,9 +33,9 @@ wikipedia.pkl (250K articles)
 [3] embed_questions.py                 →  embeddings/question_embeddings.pkl
        │                                    (same model as articles for consistency)
        ▼
-[4] rebuild_umap_v2.py                 →  UMAP 2D coordinates
-       │                                    (project articles + questions TOGETHER
-       │                                     in ONE batch for shared coordinate space)
+[4] build_umap.py                 →  UMAP 2D coordinates
+       │                                    (project articles + questions + transcripts
+       │                                     + windows in ONE batch for shared space)
        ▼
 [5] flatten_coordinates.py --mu 0.75  →  density-balanced coordinates
        │                                    (approximate optimal transport flattening)
@@ -74,12 +74,12 @@ This ensures questions can be projected into the same coordinate space.
 
 ### Step 4: Joint UMAP Projection
 ```bash
-python scripts/rebuild_umap_v2.py
+python scripts/build_umap.py
 ```
-**CRITICAL**: Projects ALL articles AND questions TOGETHER in a single UMAP batch.
-This ensures articles and questions share exactly the same 2D coordinate space.
-- Input: article embeddings (250K × 768) + question embeddings (~950 × 768)
-- Output: normalized [0, 1] coordinates for both articles and questions
+**CRITICAL**: Projects ALL content types TOGETHER in a single UMAP batch.
+This ensures articles, questions, transcripts, and video windows share exactly the same 2D coordinate space.
+- Input: article embeddings (250K × 768) + question embeddings (2,500 × 768) + transcript embeddings (~4,386 academic × 768) + window embeddings (~63K academic × 768)
+- Output: normalized [0, 1] coordinates for all four types
 
 ### Step 5: Density Flattening
 ```bash
@@ -115,7 +115,7 @@ If you've regenerated questions and need to update coordinates:
 python scripts/embed_questions.py
 
 # Re-run joint UMAP projection (articles + questions together)
-python scripts/rebuild_umap_v2.py
+python scripts/build_umap.py
 
 # Apply density flattening
 python scripts/flatten_coordinates.py --mu 0.75
@@ -140,7 +140,7 @@ python scripts/regenerate_question_pipeline.py
 |--------|-------------|
 | `generate_embeddings_local_full.py` | Embed all 250K Wikipedia articles using `google/embeddinggemma-300m` on Apple Silicon MPS. Checkpoints every 5000 articles. Output: `embeddings/wikipedia_embeddings.pkl` (250000 x 768). |
 | `embed_questions.py` | Embed all quiz questions using `google/embeddinggemma-300m` (same model as articles). Output: `embeddings/question_embeddings.pkl`. |
-| `rebuild_umap_v2.py` | **Joint projection**: Fit UMAP on articles AND questions together in ONE batch, ensuring shared coordinate space. Normalizes all coordinates to [0, 1]. |
+| `build_umap.py` | **Joint projection**: Fit UMAP on articles + questions + video transcripts + video windows together in ONE batch, ensuring shared coordinate space. Filters to academic-only videos via audit. Normalizes all coordinates to [0, 1]. |
 | `flatten_coordinates.py` | Redistribute UMAP coordinates via approximate optimal transport (Hungarian assignment + k-NN interpolation) to reduce density imbalance. Default `mu=0.75`. Applies same displacement to articles AND questions. |
 | `compute_pca_z.py` | Extract the 3rd principal component from embeddings, normalize to [0, 1], and save as z-coordinates for 3D domain transitions. |
 | `embed_article_chunks.py` | Chunk all 250K articles into ~500-token pieces and embed each chunk. Used for RAG-based domain assignment. |

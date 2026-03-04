@@ -5,10 +5,10 @@
     "parent_id": "linguistics",
     "level": "sub",
     "region": {
-      "x_min": 0.619481,
-      "x_max": 0.652126,
-      "y_min": 0.612341,
-      "y_max": 0.648389
+      "x_min": 0.650858,
+      "x_max": 0.687625,
+      "y_min": 0.796816,
+      "y_max": 0.849849
     },
     "grid_size": 70
   },
@@ -31,8 +31,8 @@
       "concepts_tested": [
         "natural language processing"
       ],
-      "x": 0.747891,
-      "y": 0.728606
+      "x": 0.663027,
+      "y": 0.811467
     },
     {
       "id": "5bc9294a5c3336c0",
@@ -52,8 +52,8 @@
       "concepts_tested": [
         "machine translation"
       ],
-      "x": 0.752816,
-      "y": 0.729967
+      "x": 0.655858,
+      "y": 0.801816
     },
     {
       "id": "bdd5db640a99ba99",
@@ -65,7 +65,9 @@
         "D": "Online databases"
       },
       "correct_answer": "C",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.665745,
+      "y": 0.816344
     },
     {
       "id": "cd5beb3c8ec00e3a",
@@ -77,7 +79,9 @@
         "D": "A conversational program"
       },
       "correct_answer": "D",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.664939,
+      "y": 0.816551
     },
     {
       "id": "558e10b3122fdbf9",
@@ -97,8 +101,8 @@
       "concepts_tested": [
         "speech recognition"
       ],
-      "x": 0.8485,
-      "y": 0.78078
+      "x": 0.660825,
+      "y": 0.811623
     },
     {
       "id": "84358fdb3d6f38a0",
@@ -110,7 +114,9 @@
         "D": "Frequency filters"
       },
       "correct_answer": "B",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.66093,
+      "y": 0.809658
     },
     {
       "id": "b5a6b31df79137b8",
@@ -130,8 +136,8 @@
       "concepts_tested": [
         "search engine"
       ],
-      "x": 0.782916,
-      "y": 0.747842
+      "x": 0.661531,
+      "y": 0.813564
     },
     {
       "id": "cc6e1a3215da0448",
@@ -143,7 +149,9 @@
         "D": "Likely next words"
       },
       "correct_answer": "D",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.659434,
+      "y": 0.806963
     },
     {
       "id": "9fb8850543d21d3d",
@@ -155,7 +163,9 @@
         "D": "Grammatical errors"
       },
       "correct_answer": "A",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.665069,
+      "y": 0.813379
     },
     {
       "id": "2eed9c17eef9a01d",
@@ -175,8 +185,8 @@
       "concepts_tested": [
         "spam filter"
       ],
-      "x": 0.7564,
-      "y": 0.714642
+      "x": 0.660757,
+      "y": 0.809013
     },
     {
       "id": "a67b23a0c1b4d3b4",
@@ -188,7 +198,9 @@
         "D": "Speech to text"
       },
       "correct_answer": "C",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.660581,
+      "y": 0.807424
     },
     {
       "id": "bf223ebab9c0441c",
@@ -200,7 +212,9 @@
         "D": "A direct answer"
       },
       "correct_answer": "D",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.664371,
+      "y": 0.814355
     },
     {
       "id": "fd436cd93746961c",
@@ -212,7 +226,9 @@
         "D": "Compression and expansion"
       },
       "correct_answer": "A",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.667396,
+      "y": 0.818542
     },
     {
       "id": "8b0c72b3879a9bed",
@@ -232,8 +248,8 @@
       "concepts_tested": [
         "tokenization"
       ],
-      "x": 0.764037,
-      "y": 0.730573
+      "x": 0.662822,
+      "y": 0.811505
     },
     {
       "id": "5092ca1cf3d4394a",
@@ -253,8 +269,8 @@
       "concepts_tested": [
         "part-of-speech tagging"
       ],
-      "x": 0.749057,
-      "y": 0.736668
+      "x": 0.662759,
+      "y": 0.806214
     },
     {
       "id": "63d0adf21667aabd",
@@ -274,8 +290,8 @@
       "concepts_tested": [
         "named entity recognition"
       ],
-      "x": 0.764863,
-      "y": 0.73562
+      "x": 0.662613,
+      "y": 0.806682
     },
     {
       "id": "04393e9903e71380",
@@ -295,8 +311,8 @@
       "concepts_tested": [
         "parsing"
       ],
-      "x": 0.746733,
-      "y": 0.73365
+      "x": 0.672072,
+      "y": 0.824762
     },
     {
       "id": "262b4bad0dd7593e",
@@ -316,8 +332,8 @@
       "concepts_tested": [
         "corpus"
       ],
-      "x": 0.7648,
-      "y": 0.735281
+      "x": 0.669901,
+      "y": 0.823655
     },
     {
       "id": "070487ba5ce3a7b1",
@@ -337,8 +353,8 @@
       "concepts_tested": [
         "n-gram"
       ],
-      "x": 0.744449,
-      "y": 0.720807
+      "x": 0.661261,
+      "y": 0.809382
     },
     {
       "id": "7f861bbb0bb95d76",
@@ -358,8 +374,8 @@
       "concepts_tested": [
         "bag of words"
       ],
-      "x": 0.744374,
-      "y": 0.714688
+      "x": 0.66505,
+      "y": 0.815346
     },
     {
       "id": "11f80ad912bea1ae",
@@ -379,8 +395,8 @@
       "concepts_tested": [
         "TF-IDF"
       ],
-      "x": 0.749687,
-      "y": 0.714871
+      "x": 0.667639,
+      "y": 0.820817
     },
     {
       "id": "1695bb65e2766b10",
@@ -400,8 +416,8 @@
       "concepts_tested": [
         "stop words"
       ],
-      "x": 0.767538,
-      "y": 0.733075
+      "x": 0.665766,
+      "y": 0.816233
     },
     {
       "id": "e0526a2368f5088c",
@@ -421,8 +437,8 @@
       "concepts_tested": [
         "stemming"
       ],
-      "x": 0.774427,
-      "y": 0.734006
+      "x": 0.66451,
+      "y": 0.814598
     },
     {
       "id": "9bdcefff7b130a13",
@@ -442,8 +458,8 @@
       "concepts_tested": [
         "dependency parsing"
       ],
-      "x": 0.75064,
-      "y": 0.739374
+      "x": 0.670094,
+      "y": 0.819729
     },
     {
       "id": "a172bd0bb5702111",
@@ -463,8 +479,8 @@
       "concepts_tested": [
         "word embedding"
       ],
-      "x": 0.748027,
-      "y": 0.716438
+      "x": 0.660223,
+      "y": 0.809522
     },
     {
       "id": "38b69410e2063793",
@@ -484,8 +500,8 @@
       "concepts_tested": [
         "language model"
       ],
-      "x": 0.760746,
-      "y": 0.726612
+      "x": 0.665188,
+      "y": 0.817083
     },
     {
       "id": "f294877ec193c29b",
@@ -505,8 +521,8 @@
       "concepts_tested": [
         "CYK algorithm"
       ],
-      "x": 0.747796,
-      "y": 0.734122
+      "x": 0.677288,
+      "y": 0.833778
     },
     {
       "id": "e09f3dff855c1cc8",
@@ -526,8 +542,8 @@
       "concepts_tested": [
         "hidden Markov model"
       ],
-      "x": 0.761679,
-      "y": 0.723906
+      "x": 0.677642,
+      "y": 0.840514
     },
     {
       "id": "541d4c58aca9402e",
@@ -547,8 +563,8 @@
       "concepts_tested": [
         "perplexity"
       ],
-      "x": 0.795901,
-      "y": 0.750796
+      "x": 0.668411,
+      "y": 0.823499
     },
     {
       "id": "434cea52d47d7a37",
@@ -568,8 +584,8 @@
       "concepts_tested": [
         "attention mechanism"
       ],
-      "x": 0.743905,
-      "y": 0.712668
+      "x": 0.666531,
+      "y": 0.822555
     },
     {
       "id": "07ae9b93fb141c70",
@@ -589,8 +605,8 @@
       "concepts_tested": [
         "beam search"
       ],
-      "x": 0.789619,
-      "y": 0.74717
+      "x": 0.662089,
+      "y": 0.811044
     },
     {
       "id": "7e3513693de946a7",
@@ -610,8 +626,8 @@
       "concepts_tested": [
         "word2vec"
       ],
-      "x": 0.747385,
-      "y": 0.714968
+      "x": 0.665316,
+      "y": 0.818208
     },
     {
       "id": "fe5145bc1edec5ec",
@@ -631,8 +647,8 @@
       "concepts_tested": [
         "conditional random field"
       ],
-      "x": 0.749649,
-      "y": 0.718766
+      "x": 0.670035,
+      "y": 0.825112
     },
     {
       "id": "c8665c6d710e106a",
@@ -652,8 +668,8 @@
       "concepts_tested": [
         "semantic role labeling"
       ],
-      "x": 0.759538,
-      "y": 0.738336
+      "x": 0.66399,
+      "y": 0.807393
     },
     {
       "id": "25de47f19f2de08f",
@@ -673,8 +689,8 @@
       "concepts_tested": [
         "coreference resolution"
       ],
-      "x": 0.767071,
-      "y": 0.740672
+      "x": 0.663439,
+      "y": 0.807968
     },
     {
       "id": "909a39e840e95c79",
@@ -694,8 +710,8 @@
       "concepts_tested": [
         "distributional semantics"
       ],
-      "x": 0.770308,
-      "y": 0.731404
+      "x": 0.663582,
+      "y": 0.812232
     },
     {
       "id": "1e53813bf349c646",
@@ -707,7 +723,9 @@
         "D": "A binary hash"
       },
       "correct_answer": "A",
-      "difficulty": 3
+      "difficulty": 3,
+      "x": 0.656627,
+      "y": 0.803184
     },
     {
       "id": "0c16382ece525f62",
@@ -727,8 +745,8 @@
       "concepts_tested": [
         "byte pair encoding"
       ],
-      "x": 0.755632,
-      "y": 0.722014
+      "x": 0.664983,
+      "y": 0.815695
     },
     {
       "id": "4c88e0b0923150e9",
@@ -740,7 +758,9 @@
         "D": "Dependency direction"
       },
       "correct_answer": "C",
-      "difficulty": 4
+      "difficulty": 4,
+      "x": 0.666535,
+      "y": 0.814114
     },
     {
       "id": "1a06ada4432e2e06",
@@ -760,8 +780,8 @@
       "concepts_tested": [
         "head-driven phrase structure grammar"
       ],
-      "x": 0.750321,
-      "y": 0.732954
+      "x": 0.673039,
+      "y": 0.825539
     },
     {
       "id": "e11a6043afa260fe",
@@ -783,8 +803,8 @@
         "Occam's razor",
         "model selection"
       ],
-      "x": 0.775825,
-      "y": 0.74125
+      "x": 0.673114,
+      "y": 0.831279
     },
     {
       "id": "761f6c35b58305c0",
@@ -806,8 +826,8 @@
         "Baum-Welch algorithm",
         "inside-outside algorithm"
       ],
-      "x": 0.762242,
-      "y": 0.727245
+      "x": 0.675781,
+      "y": 0.835004
     },
     {
       "id": "77390c6ae6c9dfa4",
@@ -829,8 +849,8 @@
         "forward-backward algorithm",
         "probabilistic context-free grammar"
       ],
-      "x": 0.738812,
-      "y": 0.719592
+      "x": 0.672007,
+      "y": 0.829217
     },
     {
       "id": "03935ed01904f6ef",
@@ -852,8 +872,8 @@
         "multilingual embeddings",
         "multilingual BERT"
       ],
-      "x": 0.764958,
-      "y": 0.72878
+      "x": 0.664485,
+      "y": 0.81504
     },
     {
       "id": "16f4e3a85aaede1a",
@@ -865,7 +885,9 @@
         "D": "Concatenation and deletion"
       },
       "correct_answer": "A",
-      "difficulty": 4
+      "difficulty": 4,
+      "x": 0.67701,
+      "y": 0.837917
     },
     {
       "id": "8dd2ca6227cfe610",
@@ -887,8 +909,8 @@
         "log-linear model",
         "multinomial logistic regression"
       ],
-      "x": 0.774494,
-      "y": 0.733493
+      "x": 0.676597,
+      "y": 0.838058
     },
     {
       "id": "9668809fc999001a",
@@ -910,8 +932,8 @@
         "structured prediction",
         "approximate inference"
       ],
-      "x": 0.748382,
-      "y": 0.73427
+      "x": 0.680757,
+      "y": 0.843164
     },
     {
       "id": "29b1339a03d1c989",
@@ -933,8 +955,8 @@
         "chart parsing",
         "parsing complexity"
       ],
-      "x": 0.764579,
-      "y": 0.745437
+      "x": 0.682625,
+      "y": 0.844849
     },
     {
       "id": "cff528f3ea9971fd",
@@ -956,8 +978,8 @@
         "finite-state transducers",
         "agglutinative morphology"
       ],
-      "x": 0.772572,
-      "y": 0.747326
+      "x": 0.676334,
+      "y": 0.83157
     },
     {
       "id": "2e75996b636e945e",
@@ -979,8 +1001,8 @@
         "semantic graph",
         "syntax-semantics abstraction"
       ],
-      "x": 0.748467,
-      "y": 0.732527
+      "x": 0.674922,
+      "y": 0.829919
     }
   ],
   "labels": [],

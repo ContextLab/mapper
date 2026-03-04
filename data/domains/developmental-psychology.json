@@ -5,10 +5,10 @@
     "parent_id": "psychology",
     "level": "sub",
     "region": {
-      "x_min": 0.617324,
-      "x_max": 0.686176,
-      "y_min": 0.589337,
-      "y_max": 0.623791
+      "x_min": 0.564338,
+      "x_max": 0.687218,
+      "y_min": 0.487908,
+      "y_max": 0.862323
     },
     "grid_size": 70
   },
@@ -31,8 +31,8 @@
       "concepts_tested": [
         "child development"
       ],
-      "x": 0.841578,
-      "y": 0.741117
+      "x": 0.661176,
+      "y": 0.808412
     },
     {
       "id": "2ccd85af7571a1ea",
@@ -52,8 +52,8 @@
       "concepts_tested": [
         "puberty"
       ],
-      "x": 0.805313,
-      "y": 0.712047
+      "x": 0.655977,
+      "y": 0.802849
     },
     {
       "id": "b8e73129a2896d84",
@@ -73,8 +73,8 @@
       "concepts_tested": [
         "nature versus nurture"
       ],
-      "x": 0.801973,
-      "y": 0.719195
+      "x": 0.660314,
+      "y": 0.808515
     },
     {
       "id": "89f98e2890f194b9",
@@ -94,8 +94,8 @@
       "concepts_tested": [
         "adolescence"
       ],
-      "x": 0.835346,
-      "y": 0.734721
+      "x": 0.569338,
+      "y": 0.492908
     },
     {
       "id": "8a94374c7e136ce1",
@@ -115,8 +115,8 @@
       "concepts_tested": [
         "aging"
       ],
-      "x": 0.826686,
-      "y": 0.733971
+      "x": 0.665514,
+      "y": 0.823429
     },
     {
       "id": "af78d8d02dedf293",
@@ -136,8 +136,8 @@
       "concepts_tested": [
         "attachment"
       ],
-      "x": 0.812741,
-      "y": 0.727349
+      "x": 0.660648,
+      "y": 0.808335
     },
     {
       "id": "f52c26c7cc295b4d",
@@ -157,8 +157,8 @@
       "concepts_tested": [
         "cognitive development"
       ],
-      "x": 0.819994,
-      "y": 0.731141
+      "x": 0.66053,
+      "y": 0.808782
     },
     {
       "id": "d5f644c0cfd5b326",
@@ -178,8 +178,8 @@
       "concepts_tested": [
         "language acquisition"
       ],
-      "x": 0.814657,
-      "y": 0.733694
+      "x": 0.65728,
+      "y": 0.806153
     },
     {
       "id": "0eacd6804aea0c9f",
@@ -191,7 +191,9 @@
         "D": "Instinct vs. rational choice"
       },
       "correct_answer": "A",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.658771,
+      "y": 0.802414
     },
     {
       "id": "7a9533ada63c3cde",
@@ -211,8 +213,8 @@
       "concepts_tested": [
         "temperament"
       ],
-      "x": 0.804781,
-      "y": 0.724686
+      "x": 0.659604,
+      "y": 0.803453
     },
     {
       "id": "59fd8a768124309a",
@@ -232,8 +234,8 @@
       "concepts_tested": [
         "prenatal development"
       ],
-      "x": 0.819233,
-      "y": 0.669352
+      "x": 0.661974,
+      "y": 0.815011
     },
     {
       "id": "ac45efdd526b3662",
@@ -253,8 +255,8 @@
       "concepts_tested": [
         "play"
       ],
-      "x": 0.798838,
-      "y": 0.719926
+      "x": 0.666369,
+      "y": 0.816086
     },
     {
       "id": "f9c4b85c05cf912f",
@@ -266,7 +268,9 @@
         "D": "Industry vs. inferiority"
       },
       "correct_answer": "A",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.660909,
+      "y": 0.807026
     },
     {
       "id": "7e744926c84184aa",
@@ -286,8 +290,8 @@
       "concepts_tested": [
         "Piaget's stages of cognitive development"
       ],
-      "x": 0.808522,
-      "y": 0.726447
+      "x": 0.660864,
+      "y": 0.8092
     },
     {
       "id": "b0672c75535f1f71",
@@ -307,8 +311,8 @@
       "concepts_tested": [
         "attachment theory"
       ],
-      "x": 0.800549,
-      "y": 0.72096
+      "x": 0.6608,
+      "y": 0.807737
     },
     {
       "id": "fd1dcf1c39b33699",
@@ -328,8 +332,8 @@
       "concepts_tested": [
         "critical period"
       ],
-      "x": 0.803705,
-      "y": 0.714781
+      "x": 0.660585,
+      "y": 0.808731
     },
     {
       "id": "2474605f617aec64",
@@ -341,7 +345,9 @@
         "D": "Mental age gap"
       },
       "correct_answer": "A",
-      "difficulty": 2
+      "difficulty": 2,
+      "x": 0.660246,
+      "y": 0.805757
     },
     {
       "id": "72ad4d9945c37431",
@@ -361,8 +367,8 @@
       "concepts_tested": [
         "object permanence"
       ],
-      "x": 0.813628,
-      "y": 0.726116
+      "x": 0.660581,
+      "y": 0.808024
     },
     {
       "id": "4ae958273582373a",
@@ -382,8 +388,8 @@
       "concepts_tested": [
         "secure attachment"
       ],
-      "x": 0.826969,
-      "y": 0.735533
+      "x": 0.660475,
+      "y": 0.807866
     },
     {
       "id": "b91c9a062858a8aa",
@@ -403,8 +409,8 @@
       "concepts_tested": [
         "scaffolding"
       ],
-      "x": 0.803465,
-      "y": 0.725908
+      "x": 0.659297,
+      "y": 0.803556
     },
     {
       "id": "543d83159b2a5ebd",
@@ -424,8 +430,8 @@
       "concepts_tested": [
         "Strange Situation"
       ],
-      "x": 0.825379,
-      "y": 0.734126
+      "x": 0.661199,
+      "y": 0.808881
     },
     {
       "id": "74879294ee6d32e7",
@@ -445,8 +451,8 @@
       "concepts_tested": [
         "gender development"
       ],
-      "x": 0.8136,
-      "y": 0.729137
+      "x": 0.660768,
+      "y": 0.808492
     },
     {
       "id": "5e78eb14e98beaaf",
@@ -466,8 +472,8 @@
       "concepts_tested": [
         "adolescent brain development"
       ],
-      "x": 0.865881,
-      "y": 0.741278
+      "x": 0.667176,
+      "y": 0.834376
     },
     {
       "id": "3c306bff943d68bf",
@@ -487,8 +493,8 @@
       "concepts_tested": [
         "zone of proximal development application"
       ],
-      "x": 0.801803,
-      "y": 0.72317
+      "x": 0.649514,
+      "y": 0.784573
     },
     {
       "id": "5690b86f608b3615",
@@ -508,8 +514,8 @@
       "concepts_tested": [
         "theory of mind development"
       ],
-      "x": 0.809952,
-      "y": 0.727886
+      "x": 0.659127,
+      "y": 0.807171
     },
     {
       "id": "adecc570df258082",
@@ -529,8 +535,8 @@
       "concepts_tested": [
         "Kohlberg's stages of moral development"
       ],
-      "x": 0.797975,
-      "y": 0.726018
+      "x": 0.654837,
+      "y": 0.791971
     },
     {
       "id": "649c0cf3d2c03300",
@@ -550,8 +556,8 @@
       "concepts_tested": [
         "executive function development"
       ],
-      "x": 0.812516,
-      "y": 0.724588
+      "x": 0.664475,
+      "y": 0.821127
     },
     {
       "id": "d06a9e0fef73564d",
@@ -571,8 +577,8 @@
       "concepts_tested": [
         "sensitive period"
       ],
-      "x": 0.813587,
-      "y": 0.724402
+      "x": 0.660033,
+      "y": 0.808121
     },
     {
       "id": "e80f75f92a4396e2",
@@ -592,8 +598,8 @@
       "concepts_tested": [
         "social referencing"
       ],
-      "x": 0.812241,
-      "y": 0.728012
+      "x": 0.657008,
+      "y": 0.798782
     },
     {
       "id": "aa1349b404ac9423",
@@ -613,8 +619,8 @@
       "concepts_tested": [
         "object permanence and A-not-B error"
       ],
-      "x": 0.799407,
-      "y": 0.720013
+      "x": 0.660546,
+      "y": 0.808564
     },
     {
       "id": "1bf8ad5accac931f",
@@ -634,8 +640,8 @@
       "concepts_tested": [
         "sensitive period"
       ],
-      "x": 0.794638,
-      "y": 0.714221
+      "x": 0.659768,
+      "y": 0.810859
     },
     {
       "id": "7d67ed40efeb0ea1",
@@ -655,8 +661,8 @@
       "concepts_tested": [
         "social referencing"
       ],
-      "x": 0.82595,
-      "y": 0.733917
+      "x": 0.661128,
+      "y": 0.810454
     },
     {
       "id": "bd761002a6db7a5e",
@@ -676,8 +682,8 @@
       "concepts_tested": [
         "object permanence and A-not-B error"
       ],
-      "x": 0.81044,
-      "y": 0.728311
+      "x": 0.660657,
+      "y": 0.807099
     },
     {
       "id": "6199abfbe6b8e4c7",
@@ -697,8 +703,8 @@
       "concepts_tested": [
         "joint attention"
       ],
-      "x": 0.802914,
-      "y": 0.721506
+      "x": 0.660042,
+      "y": 0.808345
     },
     {
       "id": "2043ffef859181a3",
@@ -718,8 +724,8 @@
       "concepts_tested": [
         "autobiographical memory development"
       ],
-      "x": 0.838958,
-      "y": 0.73877
+      "x": 0.659512,
+      "y": 0.808721
     },
     {
       "id": "6de1a8054e3ee1ea",
@@ -739,8 +745,8 @@
       "concepts_tested": [
         "Bronfenbrenner's ecological systems theory"
       ],
-      "x": 0.853731,
-      "y": 0.748131
+      "x": 0.660053,
+      "y": 0.805357
     },
     {
       "id": "c08036cdde940871",
@@ -760,8 +766,8 @@
       "concepts_tested": [
         "emotion regulation development"
       ],
-      "x": 0.803922,
-      "y": 0.720573
+      "x": 0.657136,
+      "y": 0.80519
     },
     {
       "id": "7197d04cbdb6fce2",
@@ -781,8 +787,8 @@
       "concepts_tested": [
         "peer relationships and development"
       ],
-      "x": 0.705198,
-      "y": 0.66352
+      "x": 0.659927,
+      "y": 0.804663
     },
     {
       "id": "f5652c7a8cfe6817",
@@ -802,8 +808,8 @@
       "concepts_tested": [
         "dynamic systems theory of development"
       ],
-      "x": 0.817842,
-      "y": 0.729232
+      "x": 0.661194,
+      "y": 0.806859
     },
     {
       "id": "3a65d4eb8fea97ef",
@@ -823,8 +829,8 @@
       "concepts_tested": [
         "epigenetic influences on development"
       ],
-      "x": 0.799071,
-      "y": 0.707996
+      "x": 0.676491,
+      "y": 0.848671
     },
     {
       "id": "e143e7c6819dd181",
@@ -844,8 +850,8 @@
       "concepts_tested": [
         "core knowledge theory"
       ],
-      "x": 0.799802,
-      "y": 0.726037
+      "x": 0.660772,
+      "y": 0.810274
     },
     {
       "id": "596a41ffeff89381",
@@ -865,8 +871,8 @@
       "concepts_tested": [
         "differential susceptibility hypothesis"
       ],
-      "x": 0.833144,
-      "y": 0.730674
+      "x": 0.660608,
+      "y": 0.807398
     },
     {
       "id": "4d668df4107253b0",
@@ -886,8 +892,8 @@
       "concepts_tested": [
         "neuroplasticity and experience-dependent development"
       ],
-      "x": 0.812493,
-      "y": 0.716842
+      "x": 0.682218,
+      "y": 0.857323
     },
     {
       "id": "bacb282910c23eb3",
@@ -907,8 +913,8 @@
       "concepts_tested": [
         "statistical learning in language acquisition"
       ],
-      "x": 0.818171,
-      "y": 0.735751
+      "x": 0.660607,
+      "y": 0.807686
     },
     {
       "id": "2ae203d071505418",
@@ -928,8 +934,8 @@
       "concepts_tested": [
         "intergenerational transmission of attachment"
       ],
-      "x": 0.811071,
-      "y": 0.728524
+      "x": 0.659779,
+      "y": 0.807607
     },
     {
       "id": "3b9fd45ff0484683",
@@ -949,8 +955,8 @@
       "concepts_tested": [
         "niche construction and developmental plasticity"
       ],
-      "x": 0.856525,
-      "y": 0.73004
+      "x": 0.661092,
+      "y": 0.8098
     },
     {
       "id": "8903c3e01f4e6dc1",
@@ -970,8 +976,8 @@
       "concepts_tested": [
         "fetal programming"
       ],
-      "x": 0.809943,
-      "y": 0.713393
+      "x": 0.661674,
+      "y": 0.808419
     },
     {
       "id": "e68382020dd0a848",
@@ -991,8 +997,8 @@
       "concepts_tested": [
         "relational developmental systems metatheory"
       ],
-      "x": 0.807067,
-      "y": 0.726363
+      "x": 0.643081,
+      "y": 0.773071
     },
     {
       "id": "2278f8c0676cb912",
@@ -1012,8 +1018,8 @@
       "concepts_tested": [
         "dual-process theories of adolescent risk-taking"
       ],
-      "x": 0.799406,
-      "y": 0.714017
+      "x": 0.669564,
+      "y": 0.832981
     },
     {
       "id": "00b1d38e39c7962d",
@@ -1033,8 +1039,8 @@
       "concepts_tested": [
         "teleological reasoning in children"
       ],
-      "x": 0.792272,
-      "y": 0.718164
+      "x": 0.663784,
+      "y": 0.80947
     }
   ],
   "labels": [],

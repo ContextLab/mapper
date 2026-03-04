@@ -5,10 +5,10 @@
     "parent_id": null,
     "level": "general",
     "region": {
-      "x_min": 0.62885,
-      "x_max": 0.685427,
-      "y_min": 0.597972,
-      "y_max": 0.640372
+      "x_min": 0.651695,
+      "x_max": 0.687345,
+      "y_min": 0.79388,
+      "y_max": 0.861351
     },
     "grid_size": 70
   },
@@ -31,8 +31,8 @@
       "concepts_tested": [
         "motivation"
       ],
-      "x": 0.811998,
-      "y": 0.728777
+      "x": 0.659669,
+      "y": 0.804296
     },
     {
       "id": "57e15da7429fec02",
@@ -52,8 +52,8 @@
       "concepts_tested": [
         "personality"
       ],
-      "x": 0.810363,
-      "y": 0.728015
+      "x": 0.660422,
+      "y": 0.806377
     },
     {
       "id": "97e8502b62f168c9",
@@ -73,8 +73,8 @@
       "concepts_tested": [
         "classical conditioning"
       ],
-      "x": 0.809692,
-      "y": 0.729196
+      "x": 0.660365,
+      "y": 0.808961
     },
     {
       "id": "3d9f56f275c6c888",
@@ -94,8 +94,8 @@
       "concepts_tested": [
         "operant conditioning"
       ],
-      "x": 0.81792,
-      "y": 0.735388
+      "x": 0.660877,
+      "y": 0.808585
     },
     {
       "id": "276248a848911a11",
@@ -107,7 +107,9 @@
         "D": "Hypothalamus, medulla, pons"
       },
       "correct_answer": "A",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.666345,
+      "y": 0.827661
     },
     {
       "id": "109711100b9f88bb",
@@ -127,8 +129,8 @@
       "concepts_tested": [
         "neuron"
       ],
-      "x": 0.82271,
-      "y": 0.704478
+      "x": 0.670586,
+      "y": 0.84089
     },
     {
       "id": "2fc714fed786c30c",
@@ -148,8 +150,8 @@
       "concepts_tested": [
         "sensation"
       ],
-      "x": 0.798675,
-      "y": 0.720184
+      "x": 0.668597,
+      "y": 0.829924
     },
     {
       "id": "41dbb3f7d8e0bbad",
@@ -169,8 +171,8 @@
       "concepts_tested": [
         "sleep"
       ],
-      "x": 0.861073,
-      "y": 0.733098
+      "x": 0.673036,
+      "y": 0.838759
     },
     {
       "id": "727e6895c65e80c9",
@@ -190,8 +192,8 @@
       "concepts_tested": [
         "positive reinforcement"
       ],
-      "x": 0.811418,
-      "y": 0.728234
+      "x": 0.660715,
+      "y": 0.808687
     },
     {
       "id": "6edc9c90390b4f31",
@@ -211,8 +213,8 @@
       "concepts_tested": [
         "punishment"
       ],
-      "x": 0.811266,
-      "y": 0.727938
+      "x": 0.660894,
+      "y": 0.807986
     },
     {
       "id": "b973c6f10dd33744",
@@ -232,8 +234,8 @@
       "concepts_tested": [
         "ethics in psychology"
       ],
-      "x": 0.815191,
-      "y": 0.733852
+      "x": 0.66193,
+      "y": 0.806382
     },
     {
       "id": "432cb8e60eff61f9",
@@ -253,8 +255,8 @@
       "concepts_tested": [
         "nature of psychology"
       ],
-      "x": 0.809468,
-      "y": 0.728848
+      "x": 0.660234,
+      "y": 0.805901
     },
     {
       "id": "fb8ba7fc5f3cefb7",
@@ -274,8 +276,8 @@
       "concepts_tested": [
         "heredity and behavior"
       ],
-      "x": 0.808767,
-      "y": 0.723422
+      "x": 0.660568,
+      "y": 0.80729
     },
     {
       "id": "636e49b0579b32f2",
@@ -295,8 +297,8 @@
       "concepts_tested": [
         "Maslow's hierarchy of needs"
       ],
-      "x": 0.796686,
-      "y": 0.718165
+      "x": 0.659567,
+      "y": 0.803288
     },
     {
       "id": "09cf3d7c07357b9a",
@@ -316,8 +318,8 @@
       "concepts_tested": [
         "Big Five personality traits"
       ],
-      "x": 0.804961,
-      "y": 0.721213
+      "x": 0.659905,
+      "y": 0.807877
     },
     {
       "id": "7554843c3750429e",
@@ -337,8 +339,8 @@
       "concepts_tested": [
         "neurotransmitter"
       ],
-      "x": 0.816658,
-      "y": 0.694188
+      "x": 0.670282,
+      "y": 0.838856
     },
     {
       "id": "5ebe77706e20d6ad",
@@ -358,8 +360,8 @@
       "concepts_tested": [
         "biopsychology"
       ],
-      "x": 0.809404,
-      "y": 0.728086
+      "x": 0.661595,
+      "y": 0.809956
     },
     {
       "id": "437f55ee136219e1",
@@ -379,8 +381,8 @@
       "concepts_tested": [
         "industrial-organizational psychology"
       ],
-      "x": 0.813048,
-      "y": 0.730863
+      "x": 0.661393,
+      "y": 0.808418
     },
     {
       "id": "7cd1a9bf87ca7545",
@@ -400,8 +402,8 @@
       "concepts_tested": [
         "health psychology"
       ],
-      "x": 0.811807,
-      "y": 0.728049
+      "x": 0.660586,
+      "y": 0.807398
     },
     {
       "id": "90be5821ecba2933",
@@ -421,8 +423,8 @@
       "concepts_tested": [
         "educational psychology"
       ],
-      "x": 0.808627,
-      "y": 0.726748
+      "x": 0.660557,
+      "y": 0.807103
     },
     {
       "id": "b053c0b14c7b26cd",
@@ -442,8 +444,8 @@
       "concepts_tested": [
         "forensic psychology"
       ],
-      "x": 0.861663,
-      "y": 0.751596
+      "x": 0.656695,
+      "y": 0.804154
     },
     {
       "id": "3f920defc4926c47",
@@ -463,8 +465,8 @@
       "concepts_tested": [
         "psychophysics"
       ],
-      "x": 0.804354,
-      "y": 0.72759
+      "x": 0.657568,
+      "y": 0.805716
     },
     {
       "id": "62486d2fbd9b18bd",
@@ -484,8 +486,8 @@
       "concepts_tested": [
         "circadian rhythm"
       ],
-      "x": 0.823169,
-      "y": 0.705559
+      "x": 0.668909,
+      "y": 0.830408
     },
     {
       "id": "71cb0bc222318daa",
@@ -505,8 +507,8 @@
       "concepts_tested": [
         "observational learning"
       ],
-      "x": 0.810775,
-      "y": 0.728342
+      "x": 0.660968,
+      "y": 0.808195
     },
     {
       "id": "0181e2487e013cb3",
@@ -526,8 +528,8 @@
       "concepts_tested": [
         "research methods in psychology"
       ],
-      "x": 0.801233,
-      "y": 0.726781
+      "x": 0.669496,
+      "y": 0.821442
     },
     {
       "id": "417a67c567271257",
@@ -547,8 +549,8 @@
       "concepts_tested": [
         "history of psychology"
       ],
-      "x": 0.804143,
-      "y": 0.728504
+      "x": 0.660561,
+      "y": 0.808494
     },
     {
       "id": "7c86c31e5f717911",
@@ -568,8 +570,8 @@
       "concepts_tested": [
         "evolutionary psychology"
       ],
-      "x": 0.824497,
-      "y": 0.701683
+      "x": 0.664745,
+      "y": 0.814317
     },
     {
       "id": "c38be93cb835f35f",
@@ -589,8 +591,8 @@
       "concepts_tested": [
         "psychometrics"
       ],
-      "x": 0.801889,
-      "y": 0.727812
+      "x": 0.656895,
+      "y": 0.803508
     },
     {
       "id": "495205c1cd480df1",
@@ -610,8 +612,8 @@
       "concepts_tested": [
         "positive psychology"
       ],
-      "x": 0.809332,
-      "y": 0.72481
+      "x": 0.65706,
+      "y": 0.79888
     },
     {
       "id": "aaa29b6029f0ebea",
@@ -631,8 +633,8 @@
       "concepts_tested": [
         "sport psychology"
       ],
-      "x": 0.811073,
-      "y": 0.727449
+      "x": 0.659036,
+      "y": 0.80793
     },
     {
       "id": "eb93bc4ea9730a40",
@@ -652,8 +654,8 @@
       "concepts_tested": [
         "behavioral genetics methodology"
       ],
-      "x": 0.815695,
-      "y": 0.721199
+      "x": 0.67102,
+      "y": 0.835084
     },
     {
       "id": "3355247d61cb1d0b",
@@ -673,8 +675,8 @@
       "concepts_tested": [
         "neuroimaging"
       ],
-      "x": 0.863641,
-      "y": 0.739035
+      "x": 0.681823,
+      "y": 0.856351
     },
     {
       "id": "8435a4943f703362",
@@ -694,8 +696,8 @@
       "concepts_tested": [
         "cross-cultural psychology"
       ],
-      "x": 0.808467,
-      "y": 0.730604
+      "x": 0.662316,
+      "y": 0.810644
     },
     {
       "id": "8d8896f0fa0c1008",
@@ -715,8 +717,8 @@
       "concepts_tested": [
         "endocrine system and behavior"
       ],
-      "x": 0.844671,
-      "y": 0.724403
+      "x": 0.678822,
+      "y": 0.851005
     },
     {
       "id": "14745cef9b87f9bc",
@@ -736,8 +738,8 @@
       "concepts_tested": [
         "self-determination theory"
       ],
-      "x": 0.786934,
-      "y": 0.713483
+      "x": 0.658659,
+      "y": 0.802197
     },
     {
       "id": "e6d88d88f82b285b",
@@ -757,8 +759,8 @@
       "concepts_tested": [
         "reliability and validity"
       ],
-      "x": 0.810434,
-      "y": 0.732092
+      "x": 0.664739,
+      "y": 0.811521
     },
     {
       "id": "ab887ba5bb7f468b",
@@ -778,8 +780,8 @@
       "concepts_tested": [
         "comparative psychology"
       ],
-      "x": 0.814896,
-      "y": 0.728074
+      "x": 0.660191,
+      "y": 0.805851
     },
     {
       "id": "002dbb828c7b60a1",
@@ -799,8 +801,8 @@
       "concepts_tested": [
         "psychological resilience"
       ],
-      "x": 0.795689,
-      "y": 0.717853
+      "x": 0.657662,
+      "y": 0.8001
     },
     {
       "id": "d4e6d5ff481a3433",
@@ -820,8 +822,8 @@
       "concepts_tested": [
         "item response theory"
       ],
-      "x": 0.779166,
-      "y": 0.716355
+      "x": 0.666934,
+      "y": 0.818646
     },
     {
       "id": "ed7c4348487be06e",
@@ -841,8 +843,8 @@
       "concepts_tested": [
         "structural equation modeling"
       ],
-      "x": 0.79471,
-      "y": 0.734471
+      "x": 0.675297,
+      "y": 0.831851
     },
     {
       "id": "e6cf3cd121151246",
@@ -862,8 +864,8 @@
       "concepts_tested": [
         "gene-environment interaction"
       ],
-      "x": 0.829934,
-      "y": 0.723158
+      "x": 0.660376,
+      "y": 0.806239
     },
     {
       "id": "64c655ec7e2ba204",
@@ -883,8 +885,8 @@
       "concepts_tested": [
         "psychoneuroimmunology"
       ],
-      "x": 0.770807,
-      "y": 0.713844
+      "x": 0.668653,
+      "y": 0.829811
     },
     {
       "id": "66e49591c2494b68",
@@ -904,8 +906,8 @@
       "concepts_tested": [
         "ecological momentary assessment"
       ],
-      "x": 0.836757,
-      "y": 0.731635
+      "x": 0.661023,
+      "y": 0.809661
     },
     {
       "id": "0feb97be8a262ffd",
@@ -925,8 +927,8 @@
       "concepts_tested": [
         "Weber-Fechner law"
       ],
-      "x": 0.825666,
-      "y": 0.744598
+      "x": 0.66083,
+      "y": 0.811981
     },
     {
       "id": "b1132e36d975777b",
@@ -946,8 +948,8 @@
       "concepts_tested": [
         "meta-analysis in psychology"
       ],
-      "x": 0.80669,
-      "y": 0.777324
+      "x": 0.682345,
+      "y": 0.846165
     },
     {
       "id": "de20554f1c053be6",
@@ -967,8 +969,8 @@
       "concepts_tested": [
         "signal detection theory applications in psychology"
       ],
-      "x": 0.816225,
-      "y": 0.744123
+      "x": 0.679822,
+      "y": 0.846541
     },
     {
       "id": "9f8446171ee988c0",
@@ -988,8 +990,8 @@
       "concepts_tested": [
         "Bayesian statistics in psychology"
       ],
-      "x": 0.852301,
-      "y": 0.771616
+      "x": 0.679638,
+      "y": 0.842183
     },
     {
       "id": "a4d6487272b0f7c4",
@@ -1009,8 +1011,8 @@
       "concepts_tested": [
         "long-term potentiation"
       ],
-      "x": 0.829417,
-      "y": 0.709129
+      "x": 0.677999,
+      "y": 0.851056
     },
     {
       "id": "a3a9383a80ecddb1",
@@ -1030,8 +1032,8 @@
       "concepts_tested": [
         "behavioral economics"
       ],
-      "x": 0.715842,
-      "y": 0.667894
+      "x": 0.659782,
+      "y": 0.803805
     },
     {
       "id": "846aed3403d3dffc",
@@ -1051,8 +1053,8 @@
       "concepts_tested": [
         "replication crisis in psychology"
       ],
-      "x": 0.776465,
-      "y": 0.713065
+      "x": 0.659966,
+      "y": 0.808481
     }
   ],
   "labels": [],

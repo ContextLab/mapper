@@ -62,10 +62,12 @@ def load_question_coord_map():
     with open(qe_path, "rb") as f:
         qe_data = pickle.load(f)
 
-    # Load question coordinates
-    qc_path = EMBEDDINGS_DIR / "question_coords.pkl"
+    # Load question coordinates (prefer flattened, fall back to UMAP raw)
+    qc_path = EMBEDDINGS_DIR / "question_coords_flat.pkl"
+    if not qc_path.exists():
+        qc_path = EMBEDDINGS_DIR / "umap_question_coords.pkl"
     with open(qc_path, "rb") as f:
-        qc_data = pickle.load(f)
+        qc_data = pickle.load(f)  # trusted local pipeline data
 
     coords = qc_data["coords"]
     question_ids = qe_data["question_ids"]
@@ -87,10 +89,12 @@ def load_article_coord_map():
     with open(ae_path, "rb") as f:
         ae_data = pickle.load(f)
 
-    # Load article coordinates
-    ac_path = EMBEDDINGS_DIR / "article_coords.pkl"
+    # Load article coordinates (prefer flattened, fall back to UMAP raw)
+    ac_path = EMBEDDINGS_DIR / "article_coords_flat.pkl"
+    if not ac_path.exists():
+        ac_path = EMBEDDINGS_DIR / "umap_article_coords.pkl"
     with open(ac_path, "rb") as f:
-        ac_data = pickle.load(f)
+        ac_data = pickle.load(f)  # trusted local pipeline data
 
     coords = ac_data["coords"]
     titles = ae_data["titles"]

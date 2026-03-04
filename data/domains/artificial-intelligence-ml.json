@@ -5,10 +5,10 @@
     "parent_id": "computer-science",
     "level": "sub",
     "region": {
-      "x_min": 0.508002,
-      "x_max": 0.665108,
-      "y_min": 0.461562,
-      "y_max": 0.705055
+      "x_min": 0.643433,
+      "x_max": 0.699226,
+      "y_min": 0.783884,
+      "y_max": 0.876363
     },
     "grid_size": 70
   },
@@ -31,8 +31,8 @@
       "concepts_tested": [
         "artificial intelligence"
       ],
-      "x": 0.618632,
-      "y": 0.663685
+      "x": 0.662623,
+      "y": 0.811196
     },
     {
       "id": "f94a9ebf04916d83",
@@ -52,8 +52,8 @@
       "concepts_tested": [
         "machine learning"
       ],
-      "x": 0.787207,
-      "y": 0.762855
+      "x": 0.665289,
+      "y": 0.815656
     },
     {
       "id": "1defba0ccf1b0512",
@@ -73,8 +73,8 @@
       "concepts_tested": [
         "neural network"
       ],
-      "x": 0.839279,
-      "y": 0.748883
+      "x": 0.673431,
+      "y": 0.839838
     },
     {
       "id": "0f60f2f21904fa0d",
@@ -86,7 +86,9 @@
         "D": "Multiple layers"
       },
       "correct_answer": "D",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.666882,
+      "y": 0.822986
     },
     {
       "id": "6bf0ce6e458d8c76",
@@ -106,8 +108,8 @@
       "concepts_tested": [
         "algorithm"
       ],
-      "x": 0.789164,
-      "y": 0.820271
+      "x": 0.672518,
+      "y": 0.829586
     },
     {
       "id": "21bafe03b5d9ae77",
@@ -127,8 +129,8 @@
       "concepts_tested": [
         "training data"
       ],
-      "x": 0.760139,
-      "y": 0.719487
+      "x": 0.653939,
+      "y": 0.799061
     },
     {
       "id": "52e9c02f84eb4691",
@@ -148,8 +150,8 @@
       "concepts_tested": [
         "supervised learning"
       ],
-      "x": 0.749667,
-      "y": 0.71183
+      "x": 0.665276,
+      "y": 0.817903
     },
     {
       "id": "91f362b5ef9ecc4f",
@@ -169,8 +171,8 @@
       "concepts_tested": [
         "unsupervised learning"
       ],
-      "x": 0.755054,
-      "y": 0.714616
+      "x": 0.661143,
+      "y": 0.80926
     },
     {
       "id": "750dd7e884b66888",
@@ -182,7 +184,9 @@
         "D": "Deterministic and probabilistic"
       },
       "correct_answer": "A",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.663065,
+      "y": 0.812833
     },
     {
       "id": "922b71d818ca4575",
@@ -202,8 +206,8 @@
       "concepts_tested": [
         "regression"
       ],
-      "x": 0.837527,
-      "y": 0.79065
+      "x": 0.673489,
+      "y": 0.831316
     },
     {
       "id": "b1732aded4bb82b9",
@@ -223,8 +227,8 @@
       "concepts_tested": [
         "robot"
       ],
-      "x": 0.696099,
-      "y": 0.828907
+      "x": 0.676268,
+      "y": 0.831322
     },
     {
       "id": "4991f5c302b0ab31",
@@ -244,8 +248,8 @@
       "concepts_tested": [
         "natural language processing"
       ],
-      "x": 0.811788,
-      "y": 0.760741
+      "x": 0.665899,
+      "y": 0.816564
     },
     {
       "id": "86420ea3b7adb6ca",
@@ -265,8 +269,8 @@
       "concepts_tested": [
         "computer vision"
       ],
-      "x": 0.778637,
-      "y": 0.724366
+      "x": 0.658754,
+      "y": 0.806381
     },
     {
       "id": "395c5683079c710b",
@@ -286,8 +290,8 @@
       "concepts_tested": [
         "gradient descent"
       ],
-      "x": 0.740811,
-      "y": 0.712938
+      "x": 0.680185,
+      "y": 0.843282
     },
     {
       "id": "e0340246bab678a8",
@@ -307,8 +311,8 @@
       "concepts_tested": [
         "overfitting"
       ],
-      "x": 0.781338,
-      "y": 0.732053
+      "x": 0.667353,
+      "y": 0.822232
     },
     {
       "id": "2186a9c72a6fcb7b",
@@ -328,8 +332,8 @@
       "concepts_tested": [
         "convolutional neural network"
       ],
-      "x": 0.795387,
-      "y": 0.739008
+      "x": 0.681829,
+      "y": 0.849786
     },
     {
       "id": "71d6a7207ef66271",
@@ -349,8 +353,8 @@
       "concepts_tested": [
         "recurrent neural network"
       ],
-      "x": 0.824638,
-      "y": 0.754544
+      "x": 0.668456,
+      "y": 0.826213
     },
     {
       "id": "94b56d0852137468",
@@ -370,8 +374,8 @@
       "concepts_tested": [
         "backpropagation"
       ],
-      "x": 0.749855,
-      "y": 0.711741
+      "x": 0.684158,
+      "y": 0.852662
     },
     {
       "id": "2ffa721972e9cff8",
@@ -391,8 +395,8 @@
       "concepts_tested": [
         "reinforcement learning"
       ],
-      "x": 0.777256,
-      "y": 0.719818
+      "x": 0.662504,
+      "y": 0.810103
     },
     {
       "id": "d008367ed05b4a76",
@@ -412,8 +416,8 @@
       "concepts_tested": [
         "decision tree"
       ],
-      "x": 0.71125,
-      "y": 0.688752
+      "x": 0.660986,
+      "y": 0.809071
     },
     {
       "id": "b8706759850a9505",
@@ -433,8 +437,8 @@
       "concepts_tested": [
         "transfer learning"
       ],
-      "x": 0.766133,
-      "y": 0.720202
+      "x": 0.67079,
+      "y": 0.830234
     },
     {
       "id": "be8c0dc25fc4bb14",
@@ -454,8 +458,8 @@
       "concepts_tested": [
         "generative adversarial network"
       ],
-      "x": 0.82328,
-      "y": 0.75201
+      "x": 0.667607,
+      "y": 0.822872
     },
     {
       "id": "3b52b55a904fb905",
@@ -475,8 +479,8 @@
       "concepts_tested": [
         "transformer"
       ],
-      "x": 0.737992,
-      "y": 0.709012
+      "x": 0.660202,
+      "y": 0.810221
     },
     {
       "id": "3d9d2e6c9e88b1af",
@@ -496,8 +500,8 @@
       "concepts_tested": [
         "large language model"
       ],
-      "x": 0.747173,
-      "y": 0.714862
+      "x": 0.665588,
+      "y": 0.817738
     },
     {
       "id": "2ac9e4060aefbabd",
@@ -517,8 +521,8 @@
       "concepts_tested": [
         "bias-variance tradeoff"
       ],
-      "x": 0.77866,
-      "y": 0.737292
+      "x": 0.674881,
+      "y": 0.837919
     },
     {
       "id": "ea4e1091ee9dc645",
@@ -538,8 +542,8 @@
       "concepts_tested": [
         "regularization"
       ],
-      "x": 0.740213,
-      "y": 0.714811
+      "x": 0.669127,
+      "y": 0.823807
     },
     {
       "id": "5b04621e2929f900",
@@ -559,8 +563,8 @@
       "concepts_tested": [
         "cross-validation"
       ],
-      "x": 0.77225,
-      "y": 0.730601
+      "x": 0.670136,
+      "y": 0.827001
     },
     {
       "id": "06a8dd3dfd5e14a6",
@@ -580,8 +584,8 @@
       "concepts_tested": [
         "batch normalization"
       ],
-      "x": 0.848272,
-      "y": 0.769372
+      "x": 0.672237,
+      "y": 0.83101
     },
     {
       "id": "f7c8218af7597eef",
@@ -601,8 +605,8 @@
       "concepts_tested": [
         "attention mechanism"
       ],
-      "x": 0.762799,
-      "y": 0.724704
+      "x": 0.673368,
+      "y": 0.832022
     },
     {
       "id": "32a785455819ad6f",
@@ -622,8 +626,8 @@
       "concepts_tested": [
         "word embedding"
       ],
-      "x": 0.752216,
-      "y": 0.718846
+      "x": 0.661273,
+      "y": 0.809853
     },
     {
       "id": "780e99ab0e464290",
@@ -643,8 +647,8 @@
       "concepts_tested": [
         "attention mechanism"
       ],
-      "x": 0.76948,
-      "y": 0.728287
+      "x": 0.664586,
+      "y": 0.817638
     },
     {
       "id": "e69ac7b404ef2ed2",
@@ -664,8 +668,8 @@
       "concepts_tested": [
         "word embedding"
       ],
-      "x": 0.761694,
-      "y": 0.721468
+      "x": 0.659558,
+      "y": 0.807181
     },
     {
       "id": "13ccb67b7bba8689",
@@ -685,8 +689,8 @@
       "concepts_tested": [
         "Markov decision process"
       ],
-      "x": 0.804185,
-      "y": 0.740355
+      "x": 0.661512,
+      "y": 0.807102
     },
     {
       "id": "9c770e74cdb5d9e6",
@@ -706,8 +710,8 @@
       "concepts_tested": [
         "random forest"
       ],
-      "x": 0.755005,
-      "y": 0.725733
+      "x": 0.667562,
+      "y": 0.82175
     },
     {
       "id": "1121072a840c1888",
@@ -727,8 +731,8 @@
       "concepts_tested": [
         "principal component analysis"
       ],
-      "x": 0.841251,
-      "y": 0.794754
+      "x": 0.694226,
+      "y": 0.871363
     },
     {
       "id": "8cff620f34d8105e",
@@ -748,8 +752,8 @@
       "concepts_tested": [
         "vanishing gradient problem"
       ],
-      "x": 0.811673,
-      "y": 0.74947
+      "x": 0.673351,
+      "y": 0.835972
     },
     {
       "id": "aaf9400df1ff8805",
@@ -769,8 +773,8 @@
       "concepts_tested": [
         "dropout"
       ],
-      "x": 0.824314,
-      "y": 0.755677
+      "x": 0.666281,
+      "y": 0.821594
     },
     {
       "id": "5f61b8030f022388",
@@ -790,8 +794,8 @@
       "concepts_tested": [
         "BERT"
       ],
-      "x": 0.75126,
-      "y": 0.72073
+      "x": 0.66091,
+      "y": 0.809546
     },
     {
       "id": "af2d99900e701cd6",
@@ -811,8 +815,8 @@
       "concepts_tested": [
         "PAC learning"
       ],
-      "x": 0.80912,
-      "y": 0.74841
+      "x": 0.679023,
+      "y": 0.843801
     },
     {
       "id": "41776c98807c802b",
@@ -824,7 +828,9 @@
         "D": "Maximum shatterable points"
       },
       "correct_answer": "D",
-      "difficulty": 4
+      "difficulty": 4,
+      "x": 0.68929,
+      "y": 0.860192
     },
     {
       "id": "9ed26d99fe6975ad",
@@ -847,8 +853,8 @@
         "ELBO",
         "backpropagation"
       ],
-      "x": 0.781512,
-      "y": 0.734025
+      "x": 0.676993,
+      "y": 0.840753
     },
     {
       "id": "73cb940c1fe60a02",
@@ -860,7 +866,9 @@
         "D": "Latent variable samples"
       },
       "correct_answer": "B",
-      "difficulty": 4
+      "difficulty": 4,
+      "x": 0.677341,
+      "y": 0.839369
     },
     {
       "id": "7fd71687c06d6a69",
@@ -883,8 +891,8 @@
         "temporal difference learning",
         "Bellman optimality equation"
       ],
-      "x": 0.800305,
-      "y": 0.736113
+      "x": 0.66988,
+      "y": 0.82464
     },
     {
       "id": "5b682149e4ab5b7a",
@@ -907,8 +915,8 @@
         "kernel trick",
         "support vector machine"
       ],
-      "x": 0.78558,
-      "y": 0.748047
+      "x": 0.68827,
+      "y": 0.862018
     },
     {
       "id": "32d99c2b7addeee3",
@@ -931,8 +939,8 @@
         "rate-distortion tradeoff",
         "data compression"
       ],
-      "x": 0.763194,
-      "y": 0.72737
+      "x": 0.67141,
+      "y": 0.830679
     },
     {
       "id": "012f0b03a02269c2",
@@ -955,8 +963,8 @@
         "reinforcement learning",
         "automated machine learning"
       ],
-      "x": 0.82922,
-      "y": 0.754686
+      "x": 0.648433,
+      "y": 0.788884
     },
     {
       "id": "c3a64d51448b6e42",
@@ -979,8 +987,8 @@
         "Jacobian determinant",
         "exact likelihood"
       ],
-      "x": 0.790413,
-      "y": 0.751145
+      "x": 0.687757,
+      "y": 0.85796
     },
     {
       "id": "cdc4bb8aa5f7582c",
@@ -1003,8 +1011,8 @@
         "clipping",
         "trust region policy optimization"
       ],
-      "x": 0.773321,
-      "y": 0.731612
+      "x": 0.678046,
+      "y": 0.839768
     },
     {
       "id": "665fbce9c9617017",
@@ -1027,8 +1035,8 @@
         "Weisfeiler-Leman test",
         "expressiveness"
       ],
-      "x": 0.78054,
-      "y": 0.733586
+      "x": 0.659332,
+      "y": 0.80745
     },
     {
       "id": "8f9c6ca55df0a44c",
@@ -1051,8 +1059,8 @@
         "forward diffusion process",
         "score matching"
       ],
-      "x": 0.858759,
-      "y": 0.774183
+      "x": 0.651218,
+      "y": 0.794194
     }
   ],
   "labels": [],

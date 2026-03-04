@@ -1,10 +1,9 @@
 /** Question mode selector with availability gating per FR-010/FR-011. */
 
 const QUESTION_MODES = [
-  { id: 'auto', label: 'Auto (best next question)', icon: 'fa-wand-magic-sparkles', minAnswers: 0, type: 'question', enabledTooltip: 'Pick the next question that maximizes gain in knowledge estimation accuracy' },
-  { id: 'easy', label: 'Ask me an easy question', icon: 'fa-face-smile', minAnswers: 5, type: 'question', enabledTooltip: 'Pick a question the model predicts you can answer' },
-  { id: 'hardest-can-answer', label: 'Hardest I can answer', icon: 'fa-fire', minAnswers: 5, type: 'question', enabledTooltip: 'Pick the hardest question the model thinks you can get right' },
-  { id: 'dont-know', label: "Something I don't know", icon: 'fa-circle-question', minAnswers: 5, type: 'question', enabledTooltip: 'Pick a question in a low-knowledge area' },
+  { id: 'easy', label: 'Give me an easy one', icon: 'fa-face-smile', minAnswers: 5, type: 'question', enabledTooltip: 'Next question will be one the model predicts you can answer' },
+  { id: 'hardest-can-answer', label: 'Challenge me', icon: 'fa-fire', minAnswers: 5, type: 'question', enabledTooltip: 'Next question will be the hardest the model thinks you can get right' },
+  { id: 'dont-know', label: "Test my weak spots", icon: 'fa-circle-question', minAnswers: 5, type: 'question', enabledTooltip: 'Next question will be from a low-knowledge area' },
 ];
 
 const INSIGHT_MODES = [];
@@ -63,6 +62,18 @@ export function init(container) {
         color: #ffffff;
         border-color: var(--color-primary);
         box-shadow: 0 0 12px var(--color-glow-primary);
+      }
+      .mode-btn--fired {
+        background: var(--color-primary);
+        color: #ffffff;
+        border-color: var(--color-primary);
+        box-shadow: 0 0 12px var(--color-glow-primary);
+        animation: mode-pulse 0.4s ease;
+      }
+      @keyframes mode-pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
       }
       .mode-btn:disabled {
         opacity: 0.25;
@@ -278,6 +289,13 @@ function handleSelect(modeId, type) {
 
   for (const [id, btn] of buttons) {
     btn.classList.toggle('active', id === modeId);
+  }
+
+  // Brief flash feedback — button pulses then reverts after next question
+  const btn = buttons.get(modeId);
+  if (btn) {
+    btn.classList.add('mode-btn--fired');
+    setTimeout(() => btn.classList.remove('mode-btn--fired'), 1200);
   }
 
   if (onSelectCb) onSelectCb(modeId, type || 'question');

@@ -5,10 +5,10 @@
     "parent_id": "psychology",
     "level": "sub",
     "region": {
-      "x_min": 0.625705,
-      "x_max": 0.65008,
-      "y_min": 0.599592,
-      "y_max": 0.620707
+      "x_min": 0.648363,
+      "x_max": 0.672854,
+      "y_min": 0.786746,
+      "y_max": 0.822692
     },
     "grid_size": 70
   },
@@ -31,8 +31,8 @@
       "concepts_tested": [
         "conformity"
       ],
-      "x": 0.780263,
-      "y": 0.7102
+      "x": 0.667854,
+      "y": 0.817692
     },
     {
       "id": "f3c1a05151097bc7",
@@ -52,8 +52,8 @@
       "concepts_tested": [
         "prejudice"
       ],
-      "x": 0.773876,
-      "y": 0.705806
+      "x": 0.659919,
+      "y": 0.805109
     },
     {
       "id": "ff553a93d4cf79c9",
@@ -73,8 +73,8 @@
       "concepts_tested": [
         "persuasion"
       ],
-      "x": 0.807285,
-      "y": 0.727385
+      "x": 0.659739,
+      "y": 0.804654
     },
     {
       "id": "96b71afe8002c994",
@@ -94,8 +94,8 @@
       "concepts_tested": [
         "stereotyping"
       ],
-      "x": 0.752791,
-      "y": 0.693134
+      "x": 0.660783,
+      "y": 0.808342
     },
     {
       "id": "5fe84d6815f7c4a6",
@@ -115,8 +115,8 @@
       "concepts_tested": [
         "attitude"
       ],
-      "x": 0.787586,
-      "y": 0.714744
+      "x": 0.660502,
+      "y": 0.806839
     },
     {
       "id": "e2db3f656a148804",
@@ -136,8 +136,8 @@
       "concepts_tested": [
         "aggression"
       ],
-      "x": 0.779967,
-      "y": 0.709585
+      "x": 0.659689,
+      "y": 0.804287
     },
     {
       "id": "2f0fad0a0f4d0e29",
@@ -157,8 +157,8 @@
       "concepts_tested": [
         "altruism"
       ],
-      "x": 0.806268,
-      "y": 0.728042
+      "x": 0.659404,
+      "y": 0.799343
     },
     {
       "id": "50ecbcb032c7077a",
@@ -178,8 +178,8 @@
       "concepts_tested": [
         "obedience"
       ],
-      "x": 0.774426,
-      "y": 0.706349
+      "x": 0.659502,
+      "y": 0.803713
     },
     {
       "id": "3b4c24719ca94276",
@@ -199,8 +199,8 @@
       "concepts_tested": [
         "social influence"
       ],
-      "x": 0.757234,
-      "y": 0.695348
+      "x": 0.659475,
+      "y": 0.803991
     },
     {
       "id": "3e98a9a94b91bb00",
@@ -220,8 +220,8 @@
       "concepts_tested": [
         "discrimination"
       ],
-      "x": 0.756157,
-      "y": 0.694899
+      "x": 0.659691,
+      "y": 0.80453
     },
     {
       "id": "18e146bc8d7ab5cb",
@@ -241,8 +241,8 @@
       "concepts_tested": [
         "empathy"
       ],
-      "x": 0.816143,
-      "y": 0.733188
+      "x": 0.65441,
+      "y": 0.793698
     },
     {
       "id": "93b516fe1c62a101",
@@ -262,8 +262,8 @@
       "concepts_tested": [
         "leadership"
       ],
-      "x": 0.777381,
-      "y": 0.709461
+      "x": 0.660579,
+      "y": 0.807106
     },
     {
       "id": "39681eeeafa09a86",
@@ -283,8 +283,8 @@
       "concepts_tested": [
         "cooperation"
       ],
-      "x": 0.737648,
-      "y": 0.683405
+      "x": 0.653363,
+      "y": 0.791746
     },
     {
       "id": "cfe76c3c0eb12460",
@@ -304,8 +304,8 @@
       "concepts_tested": [
         "cognitive dissonance"
       ],
-      "x": 0.804041,
-      "y": 0.724674
+      "x": 0.659922,
+      "y": 0.805122
     },
     {
       "id": "6adbdb69911ebb95",
@@ -325,8 +325,8 @@
       "concepts_tested": [
         "bystander effect"
       ],
-      "x": 0.810636,
-      "y": 0.731324
+      "x": 0.660596,
+      "y": 0.807658
     },
     {
       "id": "dab22780e8958fd4",
@@ -346,8 +346,8 @@
       "concepts_tested": [
         "social identity theory"
       ],
-      "x": 0.722135,
-      "y": 0.674764
+      "x": 0.659896,
+      "y": 0.803343
     },
     {
       "id": "bbe1aabb046eb65e",
@@ -367,8 +367,8 @@
       "concepts_tested": [
         "fundamental attribution error"
       ],
-      "x": 0.812643,
-      "y": 0.729766
+      "x": 0.662584,
+      "y": 0.810191
     },
     {
       "id": "cd290f24a4151589",
@@ -388,8 +388,8 @@
       "concepts_tested": [
         "social loafing"
       ],
-      "x": 0.790843,
-      "y": 0.71557
+      "x": 0.660796,
+      "y": 0.806746
     },
     {
       "id": "da7be19505fa27b0",
@@ -409,8 +409,8 @@
       "concepts_tested": [
         "groupthink"
       ],
-      "x": 0.743023,
-      "y": 0.687788
+      "x": 0.660489,
+      "y": 0.806789
     },
     {
       "id": "f660febba800bc11",
@@ -430,8 +430,8 @@
       "concepts_tested": [
         "in-group/out-group bias"
       ],
-      "x": 0.731476,
-      "y": 0.679672
+      "x": 0.667647,
+      "y": 0.815753
     },
     {
       "id": "f7e0348a57346b44",
@@ -451,8 +451,8 @@
       "concepts_tested": [
         "social facilitation"
       ],
-      "x": 0.81096,
-      "y": 0.725789
+      "x": 0.659473,
+      "y": 0.807329
     },
     {
       "id": "67728e36301a5ac0",
@@ -472,8 +472,8 @@
       "concepts_tested": [
         "self-serving bias"
       ],
-      "x": 0.79697,
-      "y": 0.720655
+      "x": 0.663045,
+      "y": 0.811128
     },
     {
       "id": "6c7886cbb41fea28",
@@ -493,8 +493,8 @@
       "concepts_tested": [
         "deindividuation"
       ],
-      "x": 0.753648,
-      "y": 0.69346
+      "x": 0.663175,
+      "y": 0.811435
     },
     {
       "id": "c52dae50fd6cc5c3",
@@ -514,8 +514,8 @@
       "concepts_tested": [
         "door-in-the-face technique"
       ],
-      "x": 0.816711,
-      "y": 0.734398
+      "x": 0.660262,
+      "y": 0.805624
     },
     {
       "id": "98027e375657c76b",
@@ -535,8 +535,8 @@
       "concepts_tested": [
         "mere exposure effect"
       ],
-      "x": 0.823271,
-      "y": 0.733805
+      "x": 0.65935,
+      "y": 0.80752
     },
     {
       "id": "1b1e1530f348fa84",
@@ -556,8 +556,8 @@
       "concepts_tested": [
         "scapegoating"
       ],
-      "x": 0.789078,
-      "y": 0.711123
+      "x": 0.660616,
+      "y": 0.805879
     },
     {
       "id": "291924087044ff94",
@@ -577,8 +577,8 @@
       "concepts_tested": [
         "Milgram obedience experiment"
       ],
-      "x": 0.80721,
-      "y": 0.727651
+      "x": 0.662254,
+      "y": 0.809055
     },
     {
       "id": "9ba1edae38ec8719",
@@ -598,8 +598,8 @@
       "concepts_tested": [
         "Asch conformity experiments"
       ],
-      "x": 0.804596,
-      "y": 0.725939
+      "x": 0.660725,
+      "y": 0.809316
     },
     {
       "id": "76d59d162e9082cb",
@@ -619,8 +619,8 @@
       "concepts_tested": [
         "attribution theory"
       ],
-      "x": 0.81056,
-      "y": 0.730298
+      "x": 0.659326,
+      "y": 0.803649
     },
     {
       "id": "7b9f952e95c403f7",
@@ -640,8 +640,8 @@
       "concepts_tested": [
         "elaboration likelihood model"
       ],
-      "x": 0.818331,
-      "y": 0.736614
+      "x": 0.661763,
+      "y": 0.80885
     },
     {
       "id": "543ea57d56927eef",
@@ -661,8 +661,8 @@
       "concepts_tested": [
         "realistic conflict theory"
       ],
-      "x": 0.723261,
-      "y": 0.674207
+      "x": 0.660791,
+      "y": 0.807509
     },
     {
       "id": "7a7f63b11ea9d351",
@@ -682,8 +682,8 @@
       "concepts_tested": [
         "self-perception theory"
       ],
-      "x": 0.792188,
-      "y": 0.717879
+      "x": 0.660277,
+      "y": 0.805814
     },
     {
       "id": "ece79a5d9dba836e",
@@ -703,8 +703,8 @@
       "concepts_tested": [
         "social comparison theory"
       ],
-      "x": 0.754455,
-      "y": 0.694134
+      "x": 0.655779,
+      "y": 0.796363
     },
     {
       "id": "636c1327d1de5377",
@@ -724,8 +724,8 @@
       "concepts_tested": [
         "frustration-aggression hypothesis"
       ],
-      "x": 0.807526,
-      "y": 0.727298
+      "x": 0.660986,
+      "y": 0.80745
     },
     {
       "id": "028b6495cb1feef3",
@@ -745,8 +745,8 @@
       "concepts_tested": [
         "diffusion of responsibility"
       ],
-      "x": 0.7774,
-      "y": 0.706231
+      "x": 0.660801,
+      "y": 0.811492
     },
     {
       "id": "f9c5e07cd39dacfd",
@@ -766,8 +766,8 @@
       "concepts_tested": [
         "contact hypothesis"
       ],
-      "x": 0.72268,
-      "y": 0.675027
+      "x": 0.654733,
+      "y": 0.793529
     },
     {
       "id": "44123116b5d1527c",
@@ -787,8 +787,8 @@
       "concepts_tested": [
         "foot-in-the-door technique"
       ],
-      "x": 0.78673,
-      "y": 0.71374
+      "x": 0.660892,
+      "y": 0.807672
     },
     {
       "id": "e7d0b103767af83a",
@@ -808,8 +808,8 @@
       "concepts_tested": [
         "social exchange theory"
       ],
-      "x": 0.770085,
-      "y": 0.699042
+      "x": 0.663176,
+      "y": 0.807552
     },
     {
       "id": "1371b1d0787bbd0d",
@@ -829,8 +829,8 @@
       "concepts_tested": [
         "terror management theory"
       ],
-      "x": 0.712678,
-      "y": 0.666471
+      "x": 0.660496,
+      "y": 0.806698
     },
     {
       "id": "e6e8cb77b76e5523",
@@ -850,8 +850,8 @@
       "concepts_tested": [
         "self-affirmation theory"
       ],
-      "x": 0.720629,
-      "y": 0.671824
+      "x": 0.663972,
+      "y": 0.812402
     },
     {
       "id": "9b77f856052aeb96",
@@ -871,8 +871,8 @@
       "concepts_tested": [
         "construal level theory"
       ],
-      "x": 0.758866,
-      "y": 0.705075
+      "x": 0.661861,
+      "y": 0.809757
     },
     {
       "id": "353b6e60e2e2cc1a",
@@ -892,8 +892,8 @@
       "concepts_tested": [
         "system justification theory"
       ],
-      "x": 0.721629,
-      "y": 0.673825
+      "x": 0.658054,
+      "y": 0.800233
     },
     {
       "id": "220164cdd2613a48",
@@ -913,8 +913,8 @@
       "concepts_tested": [
         "implicit association test"
       ],
-      "x": 0.80827,
-      "y": 0.729851
+      "x": 0.662604,
+      "y": 0.80887
     },
     {
       "id": "293dfff9f864ff8b",
@@ -934,8 +934,8 @@
       "concepts_tested": [
         "social dominance theory"
       ],
-      "x": 0.708186,
-      "y": 0.665086
+      "x": 0.660296,
+      "y": 0.803223
     },
     {
       "id": "eba7673c809f7dff",
@@ -955,8 +955,8 @@
       "concepts_tested": [
         "moral disengagement"
       ],
-      "x": 0.759268,
-      "y": 0.696139
+      "x": 0.664224,
+      "y": 0.809527
     },
     {
       "id": "c378241c433eebe8",
@@ -976,8 +976,8 @@
       "concepts_tested": [
         "regulatory focus theory"
       ],
-      "x": 0.811064,
-      "y": 0.73138
+      "x": 0.659076,
+      "y": 0.802561
     },
     {
       "id": "83ab85f931e82e24",
@@ -997,8 +997,8 @@
       "concepts_tested": [
         "objectification theory"
       ],
-      "x": 0.780207,
-      "y": 0.704733
+      "x": 0.65825,
+      "y": 0.801324
     },
     {
       "id": "bf2aecbff44faed8",
@@ -1018,8 +1018,8 @@
       "concepts_tested": [
         "optimal distinctiveness theory"
       ],
-      "x": 0.780251,
-      "y": 0.710159
+      "x": 0.65829,
+      "y": 0.801184
     },
     {
       "id": "e8f579425315d52f",
@@ -1039,8 +1039,8 @@
       "concepts_tested": [
         "social tuning"
       ],
-      "x": 0.787195,
-      "y": 0.714488
+      "x": 0.665804,
+      "y": 0.813632
     },
     {
       "id": "a88df50556909a77",
@@ -1060,8 +1060,8 @@
       "concepts_tested": [
         "identity-based motivation theory"
       ],
-      "x": 0.745366,
-      "y": 0.68809
+      "x": 0.66035,
+      "y": 0.806274
     }
   ],
   "labels": [],

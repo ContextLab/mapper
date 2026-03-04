@@ -233,7 +233,15 @@ embeddings/article_coords_flat.pkl
 embeddings/question_coords.pkl
 embeddings/question_coords_flat.pkl
 embeddings/transcript_coords.pkl
+embeddings/transcript_coords_flat.pkl
+embeddings/window_coords_flat.pkl
+embeddings/umap_article_coords.pkl
+embeddings/umap_question_coords.pkl
+embeddings/umap_transcript_coords.pkl
+embeddings/umap_window_coords.pkl
 embeddings/article_registry.pkl
+embeddings/domain_bounding_boxes.json
+embeddings/video_audit_results.json
 *.credentials
 .credentials/
 

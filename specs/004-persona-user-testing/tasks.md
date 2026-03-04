@@ -311,6 +311,58 @@ Task: "Add pedant verification prompts in tests/visual/personas/evaluator-prompt
 
 ---
 
+## Phase 14: Question Audit Integration (Issue #32)
+
+**Purpose**: Integrate audited/rewritten questions into the pipeline
+
+- [X] T040 Audit all 2,500 questions across 50 domains using expanded audit skill (P1a, P1b, P2, P3a-P3d + adversarial test)
+- [X] T041 Run integration script to apply 2,400+ rewrites to `data/domains/*.json` with new IDs (SHA-256), balanced answer keys, preserved x/y coordinates
+- [ ] T042 Re-compute question embeddings using `scripts/embed_questions_v2.py` with updated question text
+
+**Checkpoint**: All domain JSON files updated with audited questions, embeddings re-computed
+
+---
+
+## Phase 15: Video Audit (Issue #27, CRITICAL — blocks UMAP)
+
+**Purpose**: Remove non-academic videos before UMAP re-computation
+
+- [ ] T043 Audit all 5,407 videos — classify each as academic lecture vs non-academic content. Produce classification JSON at `embeddings/video_audit_results.json`
+- [ ] T044 Remove non-academic video embeddings and update video data files
+- [ ] T045 Re-fit UMAP jointly on articles + questions + transcripts + windows using `scripts/build_umap.py`
+- [ ] T046 Re-flatten coordinates using `scripts/flatten_coordinates.py --mu 0.75`
+- [ ] T047 Re-compute bounding boxes using `scripts/compute_bounding_boxes.py`
+- [ ] T048 Re-export domain bundles using `scripts/export_domain_bundles.py` to update `data/domains/*.json` with new x/y coordinates
+
+**Checkpoint**: Map contains only academic videos. All coordinates updated. Domain JSONs reflect new layout.
+
+---
+
+## Phase 16: Bug Fixes (Issues #26, #28, #29, #30)
+
+**Purpose**: Fix known bugs discovered by users and persona testing
+
+- [ ] T049 [P] [Issue #26] Profile GP estimator at 100+ observations, move expensive computation to async. Ensure answer feedback appears within 100ms. Files: `src/learning/estimator.js`, `src/app.js`
+- [ ] T050 [P] [Issue #28] Debug import flow — fix rendering so all imported question markers display on map. Files: `src/ui/quiz.js`, `src/app.js`, `src/viz/renderer.js`
+- [ ] T051 [P] [Issue #29] Remove Auto sampling button, rename remaining to indicate one-shot behavior, add domain indicator to question bar. Files: `src/ui/quiz.js`, `frontend/index.html`
+- [ ] T052 [P] [Issue #30] Investigate `.resize-handle` element — fix to resize correct panel or remove entirely. Files: `frontend/index.html`, CSS, related JS
+
+**Checkpoint**: All 4 bugs verified fixed via re-running relevant persona tests
+
+---
+
+## Phase 17: Final Verification and Delivery
+
+**Purpose**: Commit, verify, close issues
+
+- [ ] T053 Run all Playwright tests to verify no regressions after all changes
+- [ ] T054 Run unit tests to verify no regressions
+- [ ] T055 Commit and push all changes to `004-persona-user-testing` branch
+- [ ] T056 Close GitHub issue #32 (question quality addressed by audit)
+- [ ] T057 Post update comments on issues #26, #27, #28, #29, #30 with status and evidence
+
+---
+
 ## Notes
 
 - [P] tasks = different files, no dependencies

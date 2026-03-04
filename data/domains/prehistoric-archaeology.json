@@ -5,10 +5,10 @@
     "parent_id": "archaeology",
     "level": "sub",
     "region": {
-      "x_min": 0.393575,
-      "x_max": 0.845959,
-      "y_min": 0.398027,
-      "y_max": 0.61019
+      "x_min": 0.541577,
+      "x_max": 0.671716,
+      "y_min": 0.264281,
+      "y_max": 0.82365
     },
     "grid_size": 70
   },
@@ -31,8 +31,8 @@
       "concepts_tested": [
         "Stone Age"
       ],
-      "x": 0.7469,
-      "y": 0.412556
+      "x": 0.658756,
+      "y": 0.80402
     },
     {
       "id": "9abbab04b37b9364",
@@ -52,8 +52,8 @@
       "concepts_tested": [
         "cave painting"
       ],
-      "x": 0.795746,
-      "y": 0.371341
+      "x": 0.658293,
+      "y": 0.80317
     },
     {
       "id": "ef307f8bd5d4c20c",
@@ -73,8 +73,8 @@
       "concepts_tested": [
         "Ice Age"
       ],
-      "x": 0.748652,
-      "y": 0.425912
+      "x": 0.662713,
+      "y": 0.809169
     },
     {
       "id": "2ed69ea2d6fc8f85",
@@ -94,8 +94,8 @@
       "concepts_tested": [
         "Stonehenge"
       ],
-      "x": 0.793278,
-      "y": 0.336882
+      "x": 0.658666,
+      "y": 0.802822
     },
     {
       "id": "1623d0103fd7ce58",
@@ -115,8 +115,8 @@
       "concepts_tested": [
         "mammoth"
       ],
-      "x": 0.82994,
-      "y": 0.550407
+      "x": 0.660037,
+      "y": 0.804879
     },
     {
       "id": "8b2de988687d8a27",
@@ -136,8 +136,8 @@
       "concepts_tested": [
         "dinosaur fossil"
       ],
-      "x": 0.841656,
-      "y": 0.547188
+      "x": 0.546577,
+      "y": 0.269281
     },
     {
       "id": "f80ddd8913d4d05b",
@@ -157,8 +157,8 @@
       "concepts_tested": [
         "Neanderthal"
       ],
-      "x": 0.750885,
-      "y": 0.413084
+      "x": 0.658351,
+      "y": 0.803262
     },
     {
       "id": "50662d49af0a9d82",
@@ -178,8 +178,8 @@
       "concepts_tested": [
         "Bronze Age"
       ],
-      "x": 0.747489,
-      "y": 0.408224
+      "x": 0.659278,
+      "y": 0.804862
     },
     {
       "id": "983c2bf8761f9f73",
@@ -199,8 +199,8 @@
       "concepts_tested": [
         "Iron Age"
       ],
-      "x": 0.730315,
-      "y": 0.418258
+      "x": 0.661241,
+      "y": 0.808632
     },
     {
       "id": "df004c5c479b1be0",
@@ -220,8 +220,8 @@
       "concepts_tested": [
         "mummy"
       ],
-      "x": 0.732431,
-      "y": 0.610778
+      "x": 0.664795,
+      "y": 0.814298
     },
     {
       "id": "c9491f5d5c8ee411",
@@ -241,8 +241,8 @@
       "concepts_tested": [
         "Homo sapiens"
       ],
-      "x": 0.734679,
-      "y": 0.414174
+      "x": 0.661196,
+      "y": 0.811488
     },
     {
       "id": "9cea30f512e64024",
@@ -262,8 +262,8 @@
       "concepts_tested": [
         "prehistoric art"
       ],
-      "x": 0.772824,
-      "y": 0.387012
+      "x": 0.657793,
+      "y": 0.802453
     },
     {
       "id": "d7330d7557111f1d",
@@ -283,8 +283,8 @@
       "concepts_tested": [
         "archaeology"
       ],
-      "x": 0.820287,
-      "y": 0.681332
+      "x": 0.662344,
+      "y": 0.809923
     },
     {
       "id": "5bb6f6bcb70eb5ae",
@@ -304,8 +304,8 @@
       "concepts_tested": [
         "Neolithic Revolution"
       ],
-      "x": 0.735526,
-      "y": 0.430011
+      "x": 0.65761,
+      "y": 0.80143
     },
     {
       "id": "0618341e5e6442e7",
@@ -325,8 +325,8 @@
       "concepts_tested": [
         "radiocarbon dating"
       ],
-      "x": 0.590131,
-      "y": 0.669879
+      "x": 0.660411,
+      "y": 0.811898
     },
     {
       "id": "d55243ba1aecdcf4",
@@ -346,8 +346,8 @@
       "concepts_tested": [
         "Homo erectus"
       ],
-      "x": 0.738505,
-      "y": 0.408346
+      "x": 0.660626,
+      "y": 0.80859
     },
     {
       "id": "e201239f68eb097b",
@@ -367,8 +367,8 @@
       "concepts_tested": [
         "megalith"
       ],
-      "x": 0.785389,
-      "y": 0.347962
+      "x": 0.660031,
+      "y": 0.804829
     },
     {
       "id": "d336148854df5d33",
@@ -380,7 +380,9 @@
         "D": "Archaic, Transitional, Modern"
       },
       "correct_answer": "B",
-      "difficulty": 2
+      "difficulty": 2,
+      "x": 0.660864,
+      "y": 0.809751
     },
     {
       "id": "63738e6500c59b28",
@@ -400,8 +402,8 @@
       "concepts_tested": [
         "Fertile Crescent"
       ],
-      "x": 0.594148,
-      "y": 0.427783
+      "x": 0.65875,
+      "y": 0.803013
     },
     {
       "id": "b7f6dbede7e8d2ec",
@@ -421,8 +423,8 @@
       "concepts_tested": [
         "out of Africa hypothesis"
       ],
-      "x": 0.755519,
-      "y": 0.411556
+      "x": 0.66186,
+      "y": 0.813798
     },
     {
       "id": "013cdc008d5e8602",
@@ -442,8 +444,8 @@
       "concepts_tested": [
         "out of Africa hypothesis"
       ],
-      "x": 0.749797,
-      "y": 0.415825
+      "x": 0.661632,
+      "y": 0.814824
     },
     {
       "id": "6d520d3719cbae35",
@@ -463,8 +465,8 @@
       "concepts_tested": [
         "hand axe"
       ],
-      "x": 0.737227,
-      "y": 0.413773
+      "x": 0.658289,
+      "y": 0.803386
     },
     {
       "id": "fe6465bd57d1e726",
@@ -484,8 +486,8 @@
       "concepts_tested": [
         "hunter-gatherer"
       ],
-      "x": 0.834443,
-      "y": 0.711004
+      "x": 0.662692,
+      "y": 0.810071
     },
     {
       "id": "7d3509776e7e9fb5",
@@ -505,8 +507,8 @@
       "concepts_tested": [
         "Çatalhöyük"
       ],
-      "x": 0.752144,
-      "y": 0.40486
+      "x": 0.657231,
+      "y": 0.800954
     },
     {
       "id": "0d6c44aa59e3e6bd",
@@ -526,8 +528,8 @@
       "concepts_tested": [
         "Lascaux cave"
       ],
-      "x": 0.812806,
-      "y": 0.358273
+      "x": 0.657864,
+      "y": 0.8025
     },
     {
       "id": "431d555b449ad4b6",
@@ -547,8 +549,8 @@
       "concepts_tested": [
         "Pleistocene epoch"
       ],
-      "x": 0.751538,
-      "y": 0.416561
+      "x": 0.661349,
+      "y": 0.80834
     },
     {
       "id": "3cf1d42e87cafeba",
@@ -568,8 +570,8 @@
       "concepts_tested": [
         "stratigraphy"
       ],
-      "x": 0.822777,
-      "y": 0.676356
+      "x": 0.662773,
+      "y": 0.812926
     },
     {
       "id": "f3bf5edadcd25123",
@@ -589,8 +591,8 @@
       "concepts_tested": [
         "Acheulean industry"
       ],
-      "x": 0.748099,
-      "y": 0.405417
+      "x": 0.658197,
+      "y": 0.803019
     },
     {
       "id": "9914f651b22d4564",
@@ -610,8 +612,8 @@
       "concepts_tested": [
         "Aurignacian culture"
       ],
-      "x": 0.775547,
-      "y": 0.385338
+      "x": 0.658838,
+      "y": 0.803854
     },
     {
       "id": "07ac34f86f805885",
@@ -631,8 +633,8 @@
       "concepts_tested": [
         "mitochondrial Eve"
       ],
-      "x": 0.747581,
-      "y": 0.420825
+      "x": 0.661585,
+      "y": 0.814836
     },
     {
       "id": "208ca778e891c170",
@@ -652,8 +654,8 @@
       "concepts_tested": [
         "Venus figurines"
       ],
-      "x": 0.781983,
-      "y": 0.379882
+      "x": 0.657893,
+      "y": 0.802654
     },
     {
       "id": "88547a60d7ffd7f7",
@@ -665,7 +667,9 @@
         "D": "Dolmens and passages"
       },
       "correct_answer": "D",
-      "difficulty": 3
+      "difficulty": 3,
+      "x": 0.659476,
+      "y": 0.805129
     },
     {
       "id": "767787a70a60af1a",
@@ -685,8 +689,8 @@
       "concepts_tested": [
         "Younger Dryas"
       ],
-      "x": 0.762293,
-      "y": 0.407383
+      "x": 0.662383,
+      "y": 0.813097
     },
     {
       "id": "ff9eb2c4d5c348b0",
@@ -706,8 +710,8 @@
       "concepts_tested": [
         "Göbekli Tepe"
       ],
-      "x": 0.756487,
-      "y": 0.401576
+      "x": 0.66552,
+      "y": 0.814897
     },
     {
       "id": "0e3db61f60b5b835",
@@ -727,8 +731,8 @@
       "concepts_tested": [
         "lithic reduction"
       ],
-      "x": 0.758521,
-      "y": 0.623555
+      "x": 0.66217,
+      "y": 0.811315
     },
     {
       "id": "bf0056755b0c9e1b",
@@ -748,8 +752,8 @@
       "concepts_tested": [
         "Beaker culture"
       ],
-      "x": 0.819433,
-      "y": 0.348894
+      "x": 0.659221,
+      "y": 0.804739
     },
     {
       "id": "804179a26bfb5918",
@@ -769,8 +773,8 @@
       "concepts_tested": [
         "megafaunal extinction"
       ],
-      "x": 0.754131,
-      "y": 0.413968
+      "x": 0.663261,
+      "y": 0.813383
     },
     {
       "id": "fc754ed608529614",
@@ -790,8 +794,8 @@
       "concepts_tested": [
         "Corded Ware culture"
       ],
-      "x": 0.773465,
-      "y": 0.386675
+      "x": 0.66205,
+      "y": 0.813677
     },
     {
       "id": "04d17eead77ab402",
@@ -811,8 +815,8 @@
       "concepts_tested": [
         "Châtelperronian industry"
       ],
-      "x": 0.774658,
-      "y": 0.38577
+      "x": 0.658105,
+      "y": 0.803055
     },
     {
       "id": "40f10a8d6bd4b53d",
@@ -832,8 +836,8 @@
       "concepts_tested": [
         "Denisovan admixture"
       ],
-      "x": 0.742595,
-      "y": 0.415754
+      "x": 0.629549,
+      "y": 0.685269
     },
     {
       "id": "6239facfefe1ea7a",
@@ -853,8 +857,8 @@
       "concepts_tested": [
         "optically stimulated luminescence dating"
       ],
-      "x": 0.763164,
-      "y": 0.643547
+      "x": 0.662711,
+      "y": 0.81865
     },
     {
       "id": "e8004314a0a5d034",
@@ -874,8 +878,8 @@
       "concepts_tested": [
         "chaîne opératoire"
       ],
-      "x": 0.808437,
-      "y": 0.714191
+      "x": 0.658464,
+      "y": 0.800921
     },
     {
       "id": "05d170ec4df7dd71",
@@ -895,8 +899,8 @@
       "concepts_tested": [
         "Middle Stone Age behavioral modernity"
       ],
-      "x": 0.771163,
-      "y": 0.387948
+      "x": 0.658483,
+      "y": 0.803696
     },
     {
       "id": "76384efa296dfbfa",
@@ -916,8 +920,8 @@
       "concepts_tested": [
         "Toba catastrophe theory"
       ],
-      "x": 0.764227,
-      "y": 0.306359
+      "x": 0.666716,
+      "y": 0.653842
     },
     {
       "id": "4cf79c3deb658232",
@@ -937,8 +941,8 @@
       "concepts_tested": [
         "use-wear analysis"
       ],
-      "x": 0.790562,
-      "y": 0.642688
+      "x": 0.660233,
+      "y": 0.810359
     },
     {
       "id": "8d4c0885f0c48214",
@@ -958,8 +962,8 @@
       "concepts_tested": [
         "Yamnaya culture"
       ],
-      "x": 0.78402,
-      "y": 0.375631
+      "x": 0.66274,
+      "y": 0.811052
     },
     {
       "id": "ab82f0bfb12daa4e",
@@ -979,8 +983,8 @@
       "concepts_tested": [
         "Gravettian culture"
       ],
-      "x": 0.784433,
-      "y": 0.37932
+      "x": 0.658652,
+      "y": 0.803774
     },
     {
       "id": "758153cf1add585b",
@@ -1000,8 +1004,8 @@
       "concepts_tested": [
         "uranium-series dating"
       ],
-      "x": 0.812989,
-      "y": 0.360355
+      "x": 0.658335,
+      "y": 0.804422
     },
     {
       "id": "1a08b0f2e2e9c1b2",
@@ -1021,8 +1025,8 @@
       "concepts_tested": [
         "zooarchaeology"
       ],
-      "x": 0.787073,
-      "y": 0.661375
+      "x": 0.662502,
+      "y": 0.812543
     },
     {
       "id": "78968201f7289373",
@@ -1042,8 +1046,8 @@
       "concepts_tested": [
         "Solutrean culture"
       ],
-      "x": 0.781101,
-      "y": 0.381658
+      "x": 0.658718,
+      "y": 0.804047
     }
   ],
   "labels": [],

@@ -5,10 +5,10 @@
     "parent_id": null,
     "level": "general",
     "region": {
-      "x_min": 0.53418,
-      "x_max": 0.670222,
-      "y_min": 0.52898,
-      "y_max": 0.641118
+      "x_min": 0.638457,
+      "x_max": 0.689053,
+      "y_min": 0.768564,
+      "y_max": 0.854318
     },
     "grid_size": 70
   },
@@ -23,7 +23,9 @@
         "D": "Fiscal and monetary"
       },
       "correct_answer": "A",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.664028,
+      "y": 0.809323
     },
     {
       "id": "5e491fd6a9e0e666",
@@ -43,8 +45,8 @@
       "concepts_tested": [
         "capitalism"
       ],
-      "x": 0.723252,
-      "y": 0.669433
+      "x": 0.658732,
+      "y": 0.799376
     },
     {
       "id": "d4337606b227d180",
@@ -64,8 +66,8 @@
       "concepts_tested": [
         "socialism"
       ],
-      "x": 0.718028,
-      "y": 0.66838
+      "x": 0.663933,
+      "y": 0.808572
     },
     {
       "id": "8d4c02bceac50b58",
@@ -85,8 +87,8 @@
       "concepts_tested": [
         "international trade"
       ],
-      "x": 0.585932,
-      "y": 0.500429
+      "x": 0.657929,
+      "y": 0.798203
     },
     {
       "id": "d33db614695c99d4",
@@ -98,7 +100,9 @@
         "D": "Urban and rural"
       },
       "correct_answer": "A",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.664309,
+      "y": 0.811487
     },
     {
       "id": "c99e7157f4ed3bd9",
@@ -118,8 +122,8 @@
       "concepts_tested": [
         "wealth inequality"
       ],
-      "x": 0.770238,
-      "y": 0.685607
+      "x": 0.661835,
+      "y": 0.810666
     },
     {
       "id": "2657365a685aa56c",
@@ -139,8 +143,8 @@
       "concepts_tested": [
         "globalization"
       ],
-      "x": 0.767487,
-      "y": 0.695892
+      "x": 0.665626,
+      "y": 0.812312
     },
     {
       "id": "f7e74698e97d6df0",
@@ -160,8 +164,8 @@
       "concepts_tested": [
         "Adam Smith"
       ],
-      "x": 0.728254,
-      "y": 0.678716
+      "x": 0.649595,
+      "y": 0.78475
     },
     {
       "id": "ce0c852e8b700642",
@@ -181,8 +185,8 @@
       "concepts_tested": [
         "free trade"
       ],
-      "x": 0.773168,
-      "y": 0.688347
+      "x": 0.657449,
+      "y": 0.79709
     },
     {
       "id": "bf0bf6ec5f7bc16e",
@@ -202,8 +206,8 @@
       "concepts_tested": [
         "economic development"
       ],
-      "x": 0.75579,
-      "y": 0.677393
+      "x": 0.664901,
+      "y": 0.810693
     },
     {
       "id": "6f954fb01820a491",
@@ -215,7 +219,9 @@
         "D": "Wage floor"
       },
       "correct_answer": "C",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.666239,
+      "y": 0.814959
     },
     {
       "id": "647caa8301b3f119",
@@ -235,8 +241,8 @@
       "concepts_tested": [
         "Great Depression"
       ],
-      "x": 0.723635,
-      "y": 0.393927
+      "x": 0.662363,
+      "y": 0.804978
     },
     {
       "id": "dfdfdf8e133cf7b8",
@@ -256,8 +262,8 @@
       "concepts_tested": [
         "cost-benefit analysis"
       ],
-      "x": 0.790394,
-      "y": 0.738289
+      "x": 0.679784,
+      "y": 0.835498
     },
     {
       "id": "7b08636ab21985f2",
@@ -277,8 +283,8 @@
       "concepts_tested": [
         "behavioral economics"
       ],
-      "x": 0.73375,
-      "y": 0.688539
+      "x": 0.660594,
+      "y": 0.807058
     },
     {
       "id": "8ad54013466783e0",
@@ -298,8 +304,8 @@
       "concepts_tested": [
         "labor economics"
       ],
-      "x": 0.802607,
-      "y": 0.704859
+      "x": 0.669893,
+      "y": 0.82039
     },
     {
       "id": "b523e9caabd40cb3",
@@ -319,8 +325,8 @@
       "concepts_tested": [
         "econometrics"
       ],
-      "x": 0.739718,
-      "y": 0.689735
+      "x": 0.662968,
+      "y": 0.808463
     },
     {
       "id": "e4ccd36dff014e4c",
@@ -340,8 +346,8 @@
       "concepts_tested": [
         "Keynesian economics"
       ],
-      "x": 0.782041,
-      "y": 0.692991
+      "x": 0.675257,
+      "y": 0.827401
     },
     {
       "id": "5167ac827aca94db",
@@ -361,8 +367,8 @@
       "concepts_tested": [
         "trade barrier"
       ],
-      "x": 0.779769,
-      "y": 0.691737
+      "x": 0.654046,
+      "y": 0.791425
     },
     {
       "id": "f8dcadac7cac8a10",
@@ -382,8 +388,8 @@
       "concepts_tested": [
         "human capital"
       ],
-      "x": 0.741001,
-      "y": 0.694586
+      "x": 0.65566,
+      "y": 0.795953
     },
     {
       "id": "a9a9a78e558b29a4",
@@ -395,7 +401,9 @@
         "D": "Perfect equality"
       },
       "correct_answer": "D",
-      "difficulty": 2
+      "difficulty": 2,
+      "x": 0.679812,
+      "y": 0.84327
     },
     {
       "id": "92f484006d34a56e",
@@ -415,8 +423,8 @@
       "concepts_tested": [
         "classical economics"
       ],
-      "x": 0.665358,
-      "y": 0.636547
+      "x": 0.659925,
+      "y": 0.801767
     },
     {
       "id": "8d22bc4fa7e9ea5a",
@@ -436,8 +444,8 @@
       "concepts_tested": [
         "prospect theory"
       ],
-      "x": 0.803035,
-      "y": 0.725316
+      "x": 0.667001,
+      "y": 0.815841
     },
     {
       "id": "ba47741136734c7f",
@@ -457,8 +465,8 @@
       "concepts_tested": [
         "environmental economics"
       ],
-      "x": 0.76099,
-      "y": 0.679405
+      "x": 0.667108,
+      "y": 0.815911
     },
     {
       "id": "2727401d14272469",
@@ -478,8 +486,8 @@
       "concepts_tested": [
         "regression analysis"
       ],
-      "x": 0.815588,
-      "y": 0.728247
+      "x": 0.661146,
+      "y": 0.810112
     },
     {
       "id": "fd717fd529215ed3",
@@ -499,8 +507,8 @@
       "concepts_tested": [
         "terms of trade"
       ],
-      "x": 0.775791,
-      "y": 0.688197
+      "x": 0.657029,
+      "y": 0.796535
     },
     {
       "id": "3ca68776bcaa52ff",
@@ -520,8 +528,8 @@
       "concepts_tested": [
         "mixed economy"
       ],
-      "x": 0.752814,
-      "y": 0.682866
+      "x": 0.643457,
+      "y": 0.773564
     },
     {
       "id": "eae9301f86df25e0",
@@ -541,8 +549,8 @@
       "concepts_tested": [
         "institutional economics"
       ],
-      "x": 0.717031,
-      "y": 0.666839
+      "x": 0.657087,
+      "y": 0.79543
     },
     {
       "id": "09c2f684ec8eb6d0",
@@ -562,8 +570,8 @@
       "concepts_tested": [
         "health economics"
       ],
-      "x": 0.722571,
-      "y": 0.668413
+      "x": 0.671446,
+      "y": 0.821192
     },
     {
       "id": "0cd1d8b3aeef9918",
@@ -583,8 +591,8 @@
       "concepts_tested": [
         "public choice theory"
       ],
-      "x": 0.743332,
-      "y": 0.694448
+      "x": 0.655375,
+      "y": 0.793628
     },
     {
       "id": "2d2f4abe1d0c1303",
@@ -604,8 +612,8 @@
       "concepts_tested": [
         "experimental economics"
       ],
-      "x": 0.749605,
-      "y": 0.696823
+      "x": 0.669763,
+      "y": 0.82137
     },
     {
       "id": "8dd011b8832db68b",
@@ -625,8 +633,8 @@
       "concepts_tested": [
         "Heckscher-Ohlin model"
       ],
-      "x": 0.769643,
-      "y": 0.687447
+      "x": 0.658983,
+      "y": 0.801072
     },
     {
       "id": "ad347cc91271bf9f",
@@ -646,8 +654,8 @@
       "concepts_tested": [
         "instrumental variable"
       ],
-      "x": 0.801126,
-      "y": 0.728568
+      "x": 0.672177,
+      "y": 0.830581
     },
     {
       "id": "9457e488628324c9",
@@ -659,7 +667,9 @@
         "D": "Low taxation"
       },
       "correct_answer": "A",
-      "difficulty": 3
+      "difficulty": 3,
+      "x": 0.674394,
+      "y": 0.834051
     },
     {
       "id": "430465b3641c39c2",
@@ -679,8 +689,8 @@
       "concepts_tested": [
         "Stolper-Samuelson theorem"
       ],
-      "x": 0.785069,
-      "y": 0.696442
+      "x": 0.673891,
+      "y": 0.82768
     },
     {
       "id": "e9a1fe84c161b788",
@@ -700,8 +710,8 @@
       "concepts_tested": [
         "Austrian economics"
       ],
-      "x": 0.748333,
-      "y": 0.692652
+      "x": 0.649853,
+      "y": 0.785169
     },
     {
       "id": "62d9ae17871f63d7",
@@ -713,7 +723,9 @@
         "D": "Export specialization"
       },
       "correct_answer": "D",
-      "difficulty": 3
+      "difficulty": 3,
+      "x": 0.661671,
+      "y": 0.803455
     },
     {
       "id": "69e860f31afb0795",
@@ -725,7 +737,9 @@
         "D": "Tax allocation"
       },
       "correct_answer": "A",
-      "difficulty": 3
+      "difficulty": 3,
+      "x": 0.669908,
+      "y": 0.822666
     },
     {
       "id": "f4eccfcd69e4d975",
@@ -745,8 +759,8 @@
       "concepts_tested": [
         "difference in differences"
       ],
-      "x": 0.726978,
-      "y": 0.707926
+      "x": 0.675847,
+      "y": 0.837338
     },
     {
       "id": "d6229dd170a8e6b2",
@@ -766,8 +780,8 @@
       "concepts_tested": [
         "general equilibrium theory"
       ],
-      "x": 0.749927,
-      "y": 0.683548
+      "x": 0.6721,
+      "y": 0.825367
     },
     {
       "id": "50734ed030b21dc7",
@@ -787,8 +801,8 @@
       "concepts_tested": [
         "social choice theory"
       ],
-      "x": 0.713986,
-      "y": 0.665357
+      "x": 0.671095,
+      "y": 0.825164
     },
     {
       "id": "caf8265ed7660f58",
@@ -808,8 +822,8 @@
       "concepts_tested": [
         "computable general equilibrium"
       ],
-      "x": 0.733104,
-      "y": 0.672397
+      "x": 0.666568,
+      "y": 0.818695
     },
     {
       "id": "60488b3c11ce148c",
@@ -829,8 +843,8 @@
       "concepts_tested": [
         "gravity model of trade"
       ],
-      "x": 0.768535,
-      "y": 0.687443
+      "x": 0.6592,
+      "y": 0.802192
     },
     {
       "id": "b355e39e5db062f7",
@@ -850,8 +864,8 @@
       "concepts_tested": [
         "Heckman correction"
       ],
-      "x": 0.731506,
-      "y": 0.704678
+      "x": 0.671221,
+      "y": 0.827391
     },
     {
       "id": "39653b7735d7036b",
@@ -871,8 +885,8 @@
       "concepts_tested": [
         "matching theory"
       ],
-      "x": 0.73898,
-      "y": 0.689798
+      "x": 0.684053,
+      "y": 0.849318
     },
     {
       "id": "5329c59c83fc1074",
@@ -892,8 +906,8 @@
       "concepts_tested": [
         "new institutional economics"
       ],
-      "x": 0.766947,
-      "y": 0.687529
+      "x": 0.673006,
+      "y": 0.823695
     },
     {
       "id": "688bb19463ad794c",
@@ -913,8 +927,8 @@
       "concepts_tested": [
         "regression discontinuity design"
       ],
-      "x": 0.730269,
-      "y": 0.712146
+      "x": 0.660963,
+      "y": 0.807202
     },
     {
       "id": "34b85501d5c88301",
@@ -934,8 +948,8 @@
       "concepts_tested": [
         "capability approach"
       ],
-      "x": 0.725603,
-      "y": 0.676174
+      "x": 0.647664,
+      "y": 0.780569
     },
     {
       "id": "1fe1b3b33b334584",
@@ -955,8 +969,8 @@
       "concepts_tested": [
         "optimal taxation"
       ],
-      "x": 0.848745,
-      "y": 0.729489
+      "x": 0.681366,
+      "y": 0.842799
     },
     {
       "id": "0d28f05c5e9224b2",
@@ -976,8 +990,8 @@
       "concepts_tested": [
         "synthetic control method"
       ],
-      "x": 0.727129,
-      "y": 0.708051
+      "x": 0.665948,
+      "y": 0.817379
     },
     {
       "id": "524d2a6b058cd5a6",
@@ -989,7 +1003,9 @@
         "D": "Dominant strategies exist"
       },
       "correct_answer": "B",
-      "difficulty": 4
+      "difficulty": 4,
+      "x": 0.665215,
+      "y": 0.813013
     }
   ],
   "labels": [],

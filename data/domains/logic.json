@@ -5,10 +5,10 @@
     "parent_id": "philosophy",
     "level": "sub",
     "region": {
-      "x_min": 0.631648,
-      "x_max": 0.658073,
-      "y_min": 0.62146,
-      "y_max": 0.656472
+      "x_min": 0.658621,
+      "x_max": 0.689869,
+      "y_min": 0.803519,
+      "y_max": 0.854467
     },
     "grid_size": 70
   },
@@ -23,7 +23,9 @@
         "D": "Theoretical and applied"
       },
       "correct_answer": "A",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.677698,
+      "y": 0.83186
     },
     {
       "id": "139e1d0eb38fd901",
@@ -35,7 +37,9 @@
         "D": "Hypothesis and observation"
       },
       "correct_answer": "B",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.67142,
+      "y": 0.821814
     },
     {
       "id": "4ca99576da91005e",
@@ -55,8 +59,8 @@
       "concepts_tested": [
         "deduction"
       ],
-      "x": 0.749198,
-      "y": 0.719569
+      "x": 0.665331,
+      "y": 0.812419
     },
     {
       "id": "9f98843f1f3f2036",
@@ -76,8 +80,8 @@
       "concepts_tested": [
         "induction"
       ],
-      "x": 0.748494,
-      "y": 0.716135
+      "x": 0.669503,
+      "y": 0.8179
     },
     {
       "id": "6013e9accf6b85d7",
@@ -97,8 +101,8 @@
       "concepts_tested": [
         "premise"
       ],
-      "x": 0.72143,
-      "y": 0.708564
+      "x": 0.679057,
+      "y": 0.834274
     },
     {
       "id": "81322e6e4a9a1557",
@@ -118,8 +122,8 @@
       "concepts_tested": [
         "conclusion"
       ],
-      "x": 0.743386,
-      "y": 0.718217
+      "x": 0.680825,
+      "y": 0.837525
     },
     {
       "id": "fc53784e87c2b883",
@@ -139,8 +143,8 @@
       "concepts_tested": [
         "paradox"
       ],
-      "x": 0.737898,
-      "y": 0.716757
+      "x": 0.679765,
+      "y": 0.83605
     },
     {
       "id": "43b6b17add5f2b6c",
@@ -152,7 +156,9 @@
         "D": "Formal and informal"
       },
       "correct_answer": "D",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.663621,
+      "y": 0.808519
     },
     {
       "id": "c2221c1fb2334c9d",
@@ -172,8 +178,8 @@
       "concepts_tested": [
         "validity"
       ],
-      "x": 0.756601,
-      "y": 0.725786
+      "x": 0.677257,
+      "y": 0.82887
     },
     {
       "id": "13f10f1bc91a90f1",
@@ -185,7 +191,9 @@
         "D": "Undetermined truth value"
       },
       "correct_answer": "B",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.679548,
+      "y": 0.83571
     },
     {
       "id": "a95f1e6ce7305fb8",
@@ -197,7 +205,9 @@
         "D": "Removes from argument"
       },
       "correct_answer": "C",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.681416,
+      "y": 0.838322
     },
     {
       "id": "04f674621a013a26",
@@ -209,7 +219,9 @@
         "D": "Structural comparison"
       },
       "correct_answer": "D",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.665369,
+      "y": 0.812944
     },
     {
       "id": "9f51442eb2bfc23d",
@@ -221,7 +233,9 @@
         "D": "Appeal to authority"
       },
       "correct_answer": "A",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.673518,
+      "y": 0.827607
     },
     {
       "id": "89a214f23e6e891b",
@@ -241,8 +255,8 @@
       "concepts_tested": [
         "modus ponens"
       ],
-      "x": 0.736488,
-      "y": 0.716021
+      "x": 0.680897,
+      "y": 0.83762
     },
     {
       "id": "bbed4603a0c24839",
@@ -262,8 +276,8 @@
       "concepts_tested": [
         "modus tollens"
       ],
-      "x": 0.737948,
-      "y": 0.717209
+      "x": 0.679384,
+      "y": 0.832684
     },
     {
       "id": "f71acd1c9c6e9c93",
@@ -283,8 +297,8 @@
       "concepts_tested": [
         "syllogism"
       ],
-      "x": 0.747674,
-      "y": 0.721299
+      "x": 0.678529,
+      "y": 0.833596
     },
     {
       "id": "ab301287a7e32231",
@@ -304,8 +318,8 @@
       "concepts_tested": [
         "truth table"
       ],
-      "x": 0.732006,
-      "y": 0.71433
+      "x": 0.680237,
+      "y": 0.838701
     },
     {
       "id": "07fa4c1f0f2ad310",
@@ -325,8 +339,8 @@
       "concepts_tested": [
         "propositional logic"
       ],
-      "x": 0.718753,
-      "y": 0.706337
+      "x": 0.682669,
+      "y": 0.839861
     },
     {
       "id": "a81e6cceebfdf4da",
@@ -338,7 +352,9 @@
         "D": "Numerical truth values"
       },
       "correct_answer": "C",
-      "difficulty": 2
+      "difficulty": 2,
+      "x": 0.679119,
+      "y": 0.836021
     },
     {
       "id": "2493a48258a1ad78",
@@ -358,8 +374,8 @@
       "concepts_tested": [
         "quantifier"
       ],
-      "x": 0.754296,
-      "y": 0.732611
+      "x": 0.679646,
+      "y": 0.83712
     },
     {
       "id": "c8e72ce9bdf85d5d",
@@ -379,8 +395,8 @@
       "concepts_tested": [
         "tautology"
       ],
-      "x": 0.733542,
-      "y": 0.713634
+      "x": 0.677344,
+      "y": 0.835387
     },
     {
       "id": "46981d933fc338d3",
@@ -400,8 +416,8 @@
       "concepts_tested": [
         "logical connective"
       ],
-      "x": 0.735851,
-      "y": 0.723727
+      "x": 0.68068,
+      "y": 0.836974
     },
     {
       "id": "a1feb6fbc00e7905",
@@ -413,7 +429,9 @@
         "D": "Arithmetic sequences"
       },
       "correct_answer": "C",
-      "difficulty": 2
+      "difficulty": 2,
+      "x": 0.677869,
+      "y": 0.834075
     },
     {
       "id": "f38bd3c3232594da",
@@ -433,8 +451,8 @@
       "concepts_tested": [
         "proof by contradiction"
       ],
-      "x": 0.736816,
-      "y": 0.715821
+      "x": 0.680044,
+      "y": 0.83714
     },
     {
       "id": "b3f6d04a2903f750",
@@ -454,8 +472,8 @@
       "concepts_tested": [
         "soundness"
       ],
-      "x": 0.750784,
-      "y": 0.722744
+      "x": 0.666693,
+      "y": 0.813122
     },
     {
       "id": "641f778d53d88092",
@@ -475,8 +493,8 @@
       "concepts_tested": [
         "biconditional"
       ],
-      "x": 0.736189,
-      "y": 0.716587
+      "x": 0.678322,
+      "y": 0.83413
     },
     {
       "id": "5d160708b1737f2f",
@@ -488,7 +506,9 @@
         "D": "Validity is decidable"
       },
       "correct_answer": "C",
-      "difficulty": 3
+      "difficulty": 3,
+      "x": 0.68123,
+      "y": 0.839998
     },
     {
       "id": "629478e18bfc30b8",
@@ -508,8 +528,8 @@
       "concepts_tested": [
         "modal logic"
       ],
-      "x": 0.735251,
-      "y": 0.717941
+      "x": 0.680577,
+      "y": 0.837115
     },
     {
       "id": "587c1fe5c295786c",
@@ -529,8 +549,8 @@
       "concepts_tested": [
         "Kripke semantics"
       ],
-      "x": 0.761242,
-      "y": 0.727803
+      "x": 0.66614,
+      "y": 0.813892
     },
     {
       "id": "01b86b0b5be7f7c8",
@@ -542,7 +562,9 @@
         "D": "Decision procedures"
       },
       "correct_answer": "B",
-      "difficulty": 3
+      "difficulty": 3,
+      "x": 0.674973,
+      "y": 0.826938
     },
     {
       "id": "c7bf5621965f159b",
@@ -562,8 +584,8 @@
       "concepts_tested": [
         "second-order logic"
       ],
-      "x": 0.79708,
-      "y": 0.765328
+      "x": 0.681205,
+      "y": 0.840415
     },
     {
       "id": "8ff5321fbd0f3acb",
@@ -583,8 +605,8 @@
       "concepts_tested": [
         "intuitionistic logic"
       ],
-      "x": 0.725661,
-      "y": 0.709828
+      "x": 0.665095,
+      "y": 0.811527
     },
     {
       "id": "1092ba268fa78787",
@@ -604,8 +626,8 @@
       "concepts_tested": [
         "resolution (logic)"
       ],
-      "x": 0.803434,
-      "y": 0.771869
+      "x": 0.679185,
+      "y": 0.83881
     },
     {
       "id": "8f2f7318039ed5ab",
@@ -625,8 +647,8 @@
       "concepts_tested": [
         "Löwenheim-Skolem theorem"
       ],
-      "x": 0.78253,
-      "y": 0.753018
+      "x": 0.678942,
+      "y": 0.835245
     },
     {
       "id": "f7056a97e044f11e",
@@ -638,7 +660,9 @@
         "D": "Compact domain required"
       },
       "correct_answer": "C",
-      "difficulty": 3
+      "difficulty": 3,
+      "x": 0.684869,
+      "y": 0.849467
     },
     {
       "id": "dd5f8eed876669ec",
@@ -658,8 +682,8 @@
       "concepts_tested": [
         "Curry-Howard correspondence"
       ],
-      "x": 0.780672,
-      "y": 0.755346
+      "x": 0.681907,
+      "y": 0.84082
     },
     {
       "id": "0a8104dad2a8fd41",
@@ -679,8 +703,8 @@
       "concepts_tested": [
         "decidability"
       ],
-      "x": 0.764932,
-      "y": 0.738558
+      "x": 0.679291,
+      "y": 0.835636
     },
     {
       "id": "58a112e19fdd2744",
@@ -692,7 +716,9 @@
         "D": "All axioms independent"
       },
       "correct_answer": "B",
-      "difficulty": 3
+      "difficulty": 3,
+      "x": 0.681209,
+      "y": 0.836888
     },
     {
       "id": "b00ff214ff45f277",
@@ -712,8 +738,8 @@
       "concepts_tested": [
         "Gödel's second incompleteness theorem"
       ],
-      "x": 0.790992,
-      "y": 0.762222
+      "x": 0.680323,
+      "y": 0.839341
     },
     {
       "id": "bdf9d347938aa7b0",
@@ -733,8 +759,8 @@
       "concepts_tested": [
         "forcing"
       ],
-      "x": 0.743694,
-      "y": 0.727381
+      "x": 0.678502,
+      "y": 0.836845
     },
     {
       "id": "dde8285d6e102557",
@@ -754,8 +780,8 @@
       "concepts_tested": [
         "large cardinal axiom"
       ],
-      "x": 0.713632,
-      "y": 0.707085
+      "x": 0.677181,
+      "y": 0.837246
     },
     {
       "id": "704d83121b42d3ce",
@@ -767,7 +793,9 @@
         "D": "Feferman-Schuette ordinal"
       },
       "correct_answer": "B",
-      "difficulty": 4
+      "difficulty": 4,
+      "x": 0.681954,
+      "y": 0.843731
     },
     {
       "id": "e3c2c98727fcc28c",
@@ -787,8 +815,8 @@
       "concepts_tested": [
         "reverse mathematics"
       ],
-      "x": 0.785676,
-      "y": 0.75927
+      "x": 0.683816,
+      "y": 0.844374
     },
     {
       "id": "e33bbd6ec835b595",
@@ -808,8 +836,8 @@
       "concepts_tested": [
         "linear logic"
       ],
-      "x": 0.746317,
-      "y": 0.726552
+      "x": 0.67087,
+      "y": 0.819208
     },
     {
       "id": "412aa86fe0d4da82",
@@ -829,8 +857,8 @@
       "concepts_tested": [
         "paraconsistent logic"
       ],
-      "x": 0.737215,
-      "y": 0.715643
+      "x": 0.665536,
+      "y": 0.813485
     },
     {
       "id": "07b6f48b39bde9f6",
@@ -850,8 +878,8 @@
       "concepts_tested": [
         "provability logic"
       ],
-      "x": 0.789174,
-      "y": 0.759908
+      "x": 0.680191,
+      "y": 0.835586
     },
     {
       "id": "197eb15e2be94d69",
@@ -871,8 +899,8 @@
       "concepts_tested": [
         "descriptive set theory"
       ],
-      "x": 0.794195,
-      "y": 0.760086
+      "x": 0.683578,
+      "y": 0.847394
     },
     {
       "id": "f8ccc44164254bb5",
@@ -892,8 +920,8 @@
       "concepts_tested": [
         "topos theory"
       ],
-      "x": 0.750764,
-      "y": 0.728573
+      "x": 0.680472,
+      "y": 0.834943
     },
     {
       "id": "f46f4886b921f3fd",
@@ -905,7 +933,9 @@
         "D": "Natural number models"
       },
       "correct_answer": "A",
-      "difficulty": 4
+      "difficulty": 4,
+      "x": 0.680473,
+      "y": 0.839969
     },
     {
       "id": "514a19efc6124f7d",
@@ -925,8 +955,8 @@
       "concepts_tested": [
         "omega-consistency"
       ],
-      "x": 0.786767,
-      "y": 0.759319
+      "x": 0.680682,
+      "y": 0.840424
     }
   ],
   "labels": [],

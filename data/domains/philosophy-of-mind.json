@@ -5,10 +5,10 @@
     "parent_id": "philosophy",
     "level": "sub",
     "region": {
-      "x_min": 0.626702,
-      "x_max": 0.659345,
-      "y_min": 0.606196,
-      "y_max": 0.642286
+      "x_min": 0.646344,
+      "x_max": 0.687661,
+      "y_min": 0.78167,
+      "y_max": 0.845044
     },
     "grid_size": 70
   },
@@ -31,8 +31,8 @@
       "concepts_tested": [
         "consciousness"
       ],
-      "x": 0.796106,
-      "y": 0.734949
+      "x": 0.656642,
+      "y": 0.796256
     },
     {
       "id": "38f0e1bf317390a6",
@@ -44,7 +44,9 @@
         "D": "Entirely illusory"
       },
       "correct_answer": "B",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.672413,
+      "y": 0.819897
     },
     {
       "id": "313e2b0b75f530c0",
@@ -64,8 +66,8 @@
       "concepts_tested": [
         "mind-body problem"
       ],
-      "x": 0.770641,
-      "y": 0.714957
+      "x": 0.657589,
+      "y": 0.796396
     },
     {
       "id": "bc9c6e60947beda5",
@@ -85,8 +87,8 @@
       "concepts_tested": [
         "soul"
       ],
-      "x": 0.813485,
-      "y": 0.725885
+      "x": 0.660662,
+      "y": 0.801417
     },
     {
       "id": "8527ddccc3c67fe3",
@@ -106,8 +108,8 @@
       "concepts_tested": [
         "emotion"
       ],
-      "x": 0.81303,
-      "y": 0.732005
+      "x": 0.660869,
+      "y": 0.810328
     },
     {
       "id": "300f5b9525fd3cb1",
@@ -127,8 +129,8 @@
       "concepts_tested": [
         "perception"
       ],
-      "x": 0.776646,
-      "y": 0.722583
+      "x": 0.661201,
+      "y": 0.809818
     },
     {
       "id": "dda18824e92c52de",
@@ -148,8 +150,8 @@
       "concepts_tested": [
         "memory"
       ],
-      "x": 0.746113,
-      "y": 0.695852
+      "x": 0.658838,
+      "y": 0.808616
     },
     {
       "id": "04422a06547781a7",
@@ -169,8 +171,8 @@
       "concepts_tested": [
         "belief"
       ],
-      "x": 0.746854,
-      "y": 0.69612
+      "x": 0.654504,
+      "y": 0.793165
     },
     {
       "id": "a5ed4823b3971e39",
@@ -190,8 +192,8 @@
       "concepts_tested": [
         "desire"
       ],
-      "x": 0.774847,
-      "y": 0.713922
+      "x": 0.651344,
+      "y": 0.78667
     },
     {
       "id": "dc6f32217fcc1067",
@@ -211,8 +213,8 @@
       "concepts_tested": [
         "thought"
       ],
-      "x": 0.778425,
-      "y": 0.720906
+      "x": 0.652239,
+      "y": 0.789068
     },
     {
       "id": "28af9b341d49a876",
@@ -232,8 +234,8 @@
       "concepts_tested": [
         "dream"
       ],
-      "x": 0.793551,
-      "y": 0.720068
+      "x": 0.660719,
+      "y": 0.801102
     },
     {
       "id": "12068a381aca0d21",
@@ -253,8 +255,8 @@
       "concepts_tested": [
         "artificial intelligence"
       ],
-      "x": 0.748276,
-      "y": 0.734442
+      "x": 0.673874,
+      "y": 0.825105
     },
     {
       "id": "341f95acb3b272c1",
@@ -274,8 +276,8 @@
       "concepts_tested": [
         "personal identity"
       ],
-      "x": 0.763091,
-      "y": 0.70967
+      "x": 0.653375,
+      "y": 0.791488
     },
     {
       "id": "36776398591f8322",
@@ -295,8 +297,8 @@
       "concepts_tested": [
         "dualism"
       ],
-      "x": 0.780242,
-      "y": 0.723207
+      "x": 0.669997,
+      "y": 0.814802
     },
     {
       "id": "9687da3ca26e5c3e",
@@ -316,8 +318,8 @@
       "concepts_tested": [
         "physicalism"
       ],
-      "x": 0.779036,
-      "y": 0.721238
+      "x": 0.664906,
+      "y": 0.809751
     },
     {
       "id": "ff6db5ab533f8c40",
@@ -337,8 +339,8 @@
       "concepts_tested": [
         "qualia"
       ],
-      "x": 0.781472,
-      "y": 0.722995
+      "x": 0.667251,
+      "y": 0.812957
     },
     {
       "id": "100745ab7bb06732",
@@ -358,8 +360,8 @@
       "concepts_tested": [
         "functionalism"
       ],
-      "x": 0.765949,
-      "y": 0.710806
+      "x": 0.68082,
+      "y": 0.836879
     },
     {
       "id": "efab0dd72fc7120c",
@@ -379,8 +381,8 @@
       "concepts_tested": [
         "intentionality"
       ],
-      "x": 0.758944,
-      "y": 0.706337
+      "x": 0.661521,
+      "y": 0.803392
     },
     {
       "id": "0bf79220713aa7aa",
@@ -400,8 +402,8 @@
       "concepts_tested": [
         "behaviourism"
       ],
-      "x": 0.767097,
-      "y": 0.712012
+      "x": 0.661011,
+      "y": 0.803296
     },
     {
       "id": "0410225b92b92716",
@@ -421,8 +423,8 @@
       "concepts_tested": [
         "identity theory"
       ],
-      "x": 0.756437,
-      "y": 0.704421
+      "x": 0.666478,
+      "y": 0.813416
     },
     {
       "id": "49a4b6f154433953",
@@ -442,8 +444,8 @@
       "concepts_tested": [
         "identity theory"
       ],
-      "x": 0.775669,
-      "y": 0.714716
+      "x": 0.664808,
+      "y": 0.80945
     },
     {
       "id": "9bbb5739d6139599",
@@ -463,8 +465,8 @@
       "concepts_tested": [
         "eliminative materialism"
       ],
-      "x": 0.775086,
-      "y": 0.718307
+      "x": 0.655761,
+      "y": 0.793353
     },
     {
       "id": "db96bec2088ff1d5",
@@ -484,8 +486,8 @@
       "concepts_tested": [
         "folk psychology"
       ],
-      "x": 0.770332,
-      "y": 0.710103
+      "x": 0.659372,
+      "y": 0.803642
     },
     {
       "id": "5c26a0f4c8446ad2",
@@ -505,8 +507,8 @@
       "concepts_tested": [
         "mental causation"
       ],
-      "x": 0.782909,
-      "y": 0.728162
+      "x": 0.672701,
+      "y": 0.82328
     },
     {
       "id": "b8e91abee85041ed",
@@ -526,8 +528,8 @@
       "concepts_tested": [
         "philosophical zombie"
       ],
-      "x": 0.79296,
-      "y": 0.733773
+      "x": 0.664787,
+      "y": 0.809483
     },
     {
       "id": "808c9296263cca52",
@@ -547,8 +549,8 @@
       "concepts_tested": [
         "phenomenal consciousness"
       ],
-      "x": 0.756573,
-      "y": 0.703995
+      "x": 0.662068,
+      "y": 0.806132
     },
     {
       "id": "da82a433c7520046",
@@ -568,8 +570,8 @@
       "concepts_tested": [
         "hard problem of consciousness"
       ],
-      "x": 0.778373,
-      "y": 0.720817
+      "x": 0.664803,
+      "y": 0.811044
     },
     {
       "id": "2257bd3633d319f0",
@@ -589,8 +591,8 @@
       "concepts_tested": [
         "Chinese room argument"
       ],
-      "x": 0.786744,
-      "y": 0.733633
+      "x": 0.682661,
+      "y": 0.839513
     },
     {
       "id": "64e17bcfb4a47fc3",
@@ -610,8 +612,8 @@
       "concepts_tested": [
         "multiple realizability"
       ],
-      "x": 0.749468,
-      "y": 0.700216
+      "x": 0.672879,
+      "y": 0.822058
     },
     {
       "id": "9f185aa156a7d75a",
@@ -631,8 +633,8 @@
       "concepts_tested": [
         "supervenience"
       ],
-      "x": 0.781331,
-      "y": 0.725653
+      "x": 0.667063,
+      "y": 0.81384
     },
     {
       "id": "c8133f5ba4581958",
@@ -652,8 +654,8 @@
       "concepts_tested": [
         "token physicalism"
       ],
-      "x": 0.770477,
-      "y": 0.717108
+      "x": 0.666469,
+      "y": 0.812458
     },
     {
       "id": "066f7420a6d616cc",
@@ -673,8 +675,8 @@
       "concepts_tested": [
         "higher-order thought theory"
       ],
-      "x": 0.786236,
-      "y": 0.719623
+      "x": 0.667999,
+      "y": 0.817038
     },
     {
       "id": "5a8016ebd9abb859",
@@ -694,8 +696,8 @@
       "concepts_tested": [
         "extended mind thesis"
       ],
-      "x": 0.79372,
-      "y": 0.721698
+      "x": 0.663383,
+      "y": 0.809537
     },
     {
       "id": "6ae25fdf57afde07",
@@ -715,8 +717,8 @@
       "concepts_tested": [
         "representationalism"
       ],
-      "x": 0.771356,
-      "y": 0.71809
+      "x": 0.666804,
+      "y": 0.813076
     },
     {
       "id": "c3fe9e1d571b84de",
@@ -736,8 +738,8 @@
       "concepts_tested": [
         "content externalism"
       ],
-      "x": 0.770036,
-      "y": 0.709776
+      "x": 0.666753,
+      "y": 0.81281
     },
     {
       "id": "2231779dc266f9e6",
@@ -757,8 +759,8 @@
       "concepts_tested": [
         "epiphenomenalism"
       ],
-      "x": 0.769354,
-      "y": 0.716291
+      "x": 0.669707,
+      "y": 0.817009
     },
     {
       "id": "f64330bd137c3368",
@@ -778,8 +780,8 @@
       "concepts_tested": [
         "global workspace theory"
       ],
-      "x": 0.797797,
-      "y": 0.717378
+      "x": 0.660147,
+      "y": 0.808073
     },
     {
       "id": "8f75da2e5509f223",
@@ -799,8 +801,8 @@
       "concepts_tested": [
         "integrated information theory"
       ],
-      "x": 0.841158,
-      "y": 0.76431
+      "x": 0.675334,
+      "y": 0.83957
     },
     {
       "id": "91863ac68a849ba8",
@@ -820,8 +822,8 @@
       "concepts_tested": [
         "anomalous monism"
       ],
-      "x": 0.780916,
-      "y": 0.72497
+      "x": 0.672084,
+      "y": 0.819793
     },
     {
       "id": "75982114d5001f92",
@@ -841,8 +843,8 @@
       "concepts_tested": [
         "phenomenal intentionality"
       ],
-      "x": 0.776224,
-      "y": 0.722171
+      "x": 0.674282,
+      "y": 0.823746
     },
     {
       "id": "30b8785bdc0dfe9b",
@@ -864,8 +866,8 @@
         "embodied cognition",
         "4E cognition"
       ],
-      "x": 0.753619,
-      "y": 0.701618
+      "x": 0.665055,
+      "y": 0.812545
     },
     {
       "id": "a049ee2fa116417d",
@@ -887,8 +889,8 @@
         "naive realism",
         "philosophy of perception"
       ],
-      "x": 0.759545,
-      "y": 0.707057
+      "x": 0.66517,
+      "y": 0.810133
     },
     {
       "id": "40893fd8d2269dfa",
@@ -910,8 +912,8 @@
         "personal identity",
         "Parfit"
       ],
-      "x": 0.766872,
-      "y": 0.707499
+      "x": 0.662957,
+      "y": 0.809092
     },
     {
       "id": "7c384ef020e34f23",
@@ -933,8 +935,8 @@
         "content internalism",
         "semantic externalism"
       ],
-      "x": 0.775866,
-      "y": 0.716125
+      "x": 0.667902,
+      "y": 0.814844
     },
     {
       "id": "50b90ecaee420c51",
@@ -956,8 +958,8 @@
         "perceptual content",
         "Peacocke"
       ],
-      "x": 0.777867,
-      "y": 0.720487
+      "x": 0.66505,
+      "y": 0.810292
     },
     {
       "id": "6948864ea567ad95",
@@ -979,8 +981,8 @@
         "phenomenal consciousness",
         "Frankish"
       ],
-      "x": 0.784786,
-      "y": 0.725745
+      "x": 0.670796,
+      "y": 0.819261
     },
     {
       "id": "255d124681703898",
@@ -1002,8 +1004,8 @@
         "cognitive significance",
         "mode of presentation"
       ],
-      "x": 0.792743,
-      "y": 0.737561
+      "x": 0.672562,
+      "y": 0.828816
     },
     {
       "id": "80d812f8f89227f5",
@@ -1025,8 +1027,8 @@
         "higher-order thought theory",
         "Lycan"
       ],
-      "x": 0.7443,
-      "y": 0.694211
+      "x": 0.665326,
+      "y": 0.81277
     },
     {
       "id": "aef81409c34bff7f",
@@ -1048,8 +1050,8 @@
         "prediction error minimization",
         "hierarchical prediction"
       ],
-      "x": 0.814509,
-      "y": 0.734398
+      "x": 0.673823,
+      "y": 0.840044
     },
     {
       "id": "c13ae499631be49b",
@@ -1071,8 +1073,8 @@
         "Block",
         "overflow hypothesis"
       ],
-      "x": 0.731771,
-      "y": 0.688093
+      "x": 0.668623,
+      "y": 0.814207
     }
   ],
   "labels": [],

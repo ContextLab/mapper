@@ -5,10 +5,10 @@
     "parent_id": null,
     "level": "general",
     "region": {
-      "x_min": 0.580919,
-      "x_max": 0.647086,
-      "y_min": 0.617039,
-      "y_max": 0.6482
+      "x_min": 0.651629,
+      "x_max": 0.746808,
+      "y_min": 0.400219,
+      "y_max": 0.871958
     },
     "grid_size": 70
   },
@@ -23,7 +23,9 @@
         "D": "A programming language"
       },
       "correct_answer": "A",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.665983,
+      "y": 0.817127
     },
     {
       "id": "f269c9f2b6351c23",
@@ -35,7 +37,9 @@
         "D": "A local wireless standard"
       },
       "correct_answer": "B",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.656629,
+      "y": 0.803653
     },
     {
       "id": "e0d7029ab49e4244",
@@ -47,7 +51,9 @@
         "D": "A backup power supply"
       },
       "correct_answer": "C",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.666326,
+      "y": 0.818221
     },
     {
       "id": "7cc9f44e45d2824d",
@@ -67,8 +73,8 @@
       "concepts_tested": [
         "computer network"
       ],
-      "x": 0.731446,
-      "y": 0.698719
+      "x": 0.656926,
+      "y": 0.804818
     },
     {
       "id": "4e3742d0d6eb7e89",
@@ -80,7 +86,9 @@
         "D": "Protective casing"
       },
       "correct_answer": "A",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.660333,
+      "y": 0.808118
     },
     {
       "id": "af24d119a0c43f5a",
@@ -100,8 +108,8 @@
       "concepts_tested": [
         "computer virus"
       ],
-      "x": 0.744036,
-      "y": 0.716427
+      "x": 0.66176,
+      "y": 0.810227
     },
     {
       "id": "9c1d42f95eca2359",
@@ -113,7 +121,9 @@
         "D": "Weather prediction system"
       },
       "correct_answer": "C",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.657863,
+      "y": 0.804762
     },
     {
       "id": "f76f5d97151a70bf",
@@ -125,7 +135,9 @@
         "D": "Physical components"
       },
       "correct_answer": "D",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.664058,
+      "y": 0.814412
     },
     {
       "id": "de7a72b33cf8dc8d",
@@ -137,7 +149,9 @@
         "D": "Cloud backup service"
       },
       "correct_answer": "A",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.66814,
+      "y": 0.821457
     },
     {
       "id": "76c5d22eef86b614",
@@ -149,7 +163,9 @@
         "D": "Hardware security token"
       },
       "correct_answer": "B",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.662423,
+      "y": 0.810906
     },
     {
       "id": "47ae7fffb013e108",
@@ -161,7 +177,9 @@
         "D": "Cloud-hosted applications"
       },
       "correct_answer": "C",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.667775,
+      "y": 0.820149
     },
     {
       "id": "759e90f8c5c5dec1",
@@ -173,7 +191,9 @@
         "D": "Display web pages"
       },
       "correct_answer": "D",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.658008,
+      "y": 0.800569
     },
     {
       "id": "211ca65ec1920dd8",
@@ -185,7 +205,9 @@
         "D": "Testing performance"
       },
       "correct_answer": "A",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.676366,
+      "y": 0.831404
     },
     {
       "id": "1f4f200d000f23b7",
@@ -205,8 +227,8 @@
       "concepts_tested": [
         "relational database"
       ],
-      "x": 0.735328,
-      "y": 0.715831
+      "x": 0.676745,
+      "y": 0.83672
     },
     {
       "id": "8dda7129adb159f1",
@@ -226,8 +248,8 @@
       "concepts_tested": [
         "SQL"
       ],
-      "x": 0.774882,
-      "y": 0.770412
+      "x": 0.669585,
+      "y": 0.823331
     },
     {
       "id": "ddd59f5f3e15eddd",
@@ -247,8 +269,8 @@
       "concepts_tested": [
         "TCP/IP"
       ],
-      "x": 0.702308,
-      "y": 0.677643
+      "x": 0.672508,
+      "y": 0.837514
     },
     {
       "id": "b6cefe4cf3e308b1",
@@ -268,8 +290,8 @@
       "concepts_tested": [
         "version control"
       ],
-      "x": 0.666817,
-      "y": 0.69335
+      "x": 0.681249,
+      "y": 0.844311
     },
     {
       "id": "95164dba268ac6af",
@@ -289,8 +311,8 @@
       "concepts_tested": [
         "object-oriented programming"
       ],
-      "x": 0.671936,
-      "y": 0.697205
+      "x": 0.669141,
+      "y": 0.822527
     },
     {
       "id": "6fbac1f65ade8b16",
@@ -310,8 +332,8 @@
       "concepts_tested": [
         "process (computing)"
       ],
-      "x": 0.776276,
-      "y": 0.729145
+      "x": 0.6749,
+      "y": 0.833388
     },
     {
       "id": "eb1db5c5978bbf18",
@@ -331,8 +353,8 @@
       "concepts_tested": [
         "virtual memory"
       ],
-      "x": 0.783455,
-      "y": 0.74828
+      "x": 0.680541,
+      "y": 0.843845
     },
     {
       "id": "1dba972f6aa1f758",
@@ -352,8 +374,8 @@
       "concepts_tested": [
         "CPU cache"
       ],
-      "x": 0.787555,
-      "y": 0.780976
+      "x": 0.681995,
+      "y": 0.846772
     },
     {
       "id": "9efbe1fbbe576216",
@@ -373,8 +395,8 @@
       "concepts_tested": [
         "public-key cryptography"
       ],
-      "x": 0.779385,
-      "y": 0.762557
+      "x": 0.677102,
+      "y": 0.836334
     },
     {
       "id": "2170d23750c600e1",
@@ -386,7 +408,9 @@
         "D": "Security certificates"
       },
       "correct_answer": "C",
-      "difficulty": 2
+      "difficulty": 2,
+      "x": 0.669236,
+      "y": 0.823554
     },
     {
       "id": "e398e4aa770de029",
@@ -398,7 +422,9 @@
         "D": "All needed context included"
       },
       "correct_answer": "D",
-      "difficulty": 2
+      "difficulty": 2,
+      "x": 0.677107,
+      "y": 0.837505
     },
     {
       "id": "37fb30361cdd219b",
@@ -418,8 +444,8 @@
       "concepts_tested": [
         "functional programming"
       ],
-      "x": 0.762536,
-      "y": 0.74013
+      "x": 0.673913,
+      "y": 0.830478
     },
     {
       "id": "b3530608666a55d3",
@@ -439,8 +465,8 @@
       "concepts_tested": [
         "firewall (computing)"
       ],
-      "x": 0.81345,
-      "y": 0.785619
+      "x": 0.669691,
+      "y": 0.824618
     },
     {
       "id": "d9b6d0b3949fbad9",
@@ -460,8 +486,8 @@
       "concepts_tested": [
         "concurrency (computer science)"
       ],
-      "x": 0.71383,
-      "y": 0.705372
+      "x": 0.678898,
+      "y": 0.840683
     },
     {
       "id": "d793f1508e3f72ae",
@@ -481,8 +507,8 @@
       "concepts_tested": [
         "distributed system"
       ],
-      "x": 0.762411,
-      "y": 0.737919
+      "x": 0.681976,
+      "y": 0.845851
     },
     {
       "id": "2732fef58747b6b2",
@@ -502,8 +528,8 @@
       "concepts_tested": [
         "database normalization"
       ],
-      "x": 0.743103,
-      "y": 0.732997
+      "x": 0.676258,
+      "y": 0.83462
     },
     {
       "id": "7fd51e5c4d87936f",
@@ -523,8 +549,8 @@
       "concepts_tested": [
         "compiler design"
       ],
-      "x": 0.767654,
-      "y": 0.73174
+      "x": 0.668859,
+      "y": 0.821071
     },
     {
       "id": "d06872a0c98b27a8",
@@ -544,8 +570,8 @@
       "concepts_tested": [
         "compiler design"
       ],
-      "x": 0.767441,
-      "y": 0.732131
+      "x": 0.68068,
+      "y": 0.839606
     },
     {
       "id": "4a38ff28edf50a1e",
@@ -565,8 +591,8 @@
       "concepts_tested": [
         "instruction set architecture"
       ],
-      "x": 0.714132,
-      "y": 0.732299
+      "x": 0.677511,
+      "y": 0.83678
     },
     {
       "id": "d6477145756a4ad7",
@@ -586,8 +612,8 @@
       "concepts_tested": [
         "containerization"
       ],
-      "x": 0.822489,
-      "y": 0.785584
+      "x": 0.673566,
+      "y": 0.831316
     },
     {
       "id": "ba9fc719dbd67f16",
@@ -607,8 +633,8 @@
       "concepts_tested": [
         "domain name system"
       ],
-      "x": 0.7324,
-      "y": 0.697738
+      "x": 0.662758,
+      "y": 0.816675
     },
     {
       "id": "2f3b3a5369b57d32",
@@ -628,8 +654,8 @@
       "concepts_tested": [
         "garbage collection"
       ],
-      "x": 0.705868,
-      "y": 0.711503
+      "x": 0.683086,
+      "y": 0.846515
     },
     {
       "id": "4b9c1542011ebcb5",
@@ -649,8 +675,8 @@
       "concepts_tested": [
         "transport layer security"
       ],
-      "x": 0.756041,
-      "y": 0.731854
+      "x": 0.679839,
+      "y": 0.845968
     },
     {
       "id": "8de6fd806bfd92a8",
@@ -670,8 +696,8 @@
       "concepts_tested": [
         "MapReduce"
       ],
-      "x": 0.751329,
-      "y": 0.733129
+      "x": 0.674996,
+      "y": 0.834239
     },
     {
       "id": "e79e96e8e3edc5fe",
@@ -691,8 +717,8 @@
       "concepts_tested": [
         "software design pattern"
       ],
-      "x": 0.695829,
-      "y": 0.714602
+      "x": 0.663502,
+      "y": 0.810904
     },
     {
       "id": "187332b01a33f3dd",
@@ -712,8 +738,8 @@
       "concepts_tested": [
         "CAP theorem"
       ],
-      "x": 0.779752,
-      "y": 0.749609
+      "x": 0.680476,
+      "y": 0.84309
     },
     {
       "id": "727ccc2755373ea0",
@@ -733,8 +759,8 @@
       "concepts_tested": [
         "Paxos (computer science)"
       ],
-      "x": 0.777505,
-      "y": 0.747708
+      "x": 0.68758,
+      "y": 0.857558
     },
     {
       "id": "775c8f41cbf70ed6",
@@ -754,8 +780,8 @@
       "concepts_tested": [
         "cache coherence"
       ],
-      "x": 0.779564,
-      "y": 0.767054
+      "x": 0.675527,
+      "y": 0.836259
     },
     {
       "id": "241983c99eca6928",
@@ -775,8 +801,8 @@
       "concepts_tested": [
         "out-of-order execution"
       ],
-      "x": 0.737049,
-      "y": 0.743286
+      "x": 0.741808,
+      "y": 0.405219
     },
     {
       "id": "fa50c6df32f2568f",
@@ -796,8 +822,8 @@
       "concepts_tested": [
         "write-ahead logging"
       ],
-      "x": 0.738986,
-      "y": 0.723519
+      "x": 0.684837,
+      "y": 0.851
     },
     {
       "id": "1b13387954de84ff",
@@ -817,8 +843,8 @@
       "concepts_tested": [
         "software transactional memory"
       ],
-      "x": 0.735609,
-      "y": 0.719765
+      "x": 0.681885,
+      "y": 0.846471
     },
     {
       "id": "86a8f626562cec55",
@@ -838,8 +864,8 @@
       "concepts_tested": [
         "LLVM"
       ],
-      "x": 0.684358,
-      "y": 0.713694
+      "x": 0.67619,
+      "y": 0.835054
     },
     {
       "id": "f703f165fe24f647",
@@ -859,8 +885,8 @@
       "concepts_tested": [
         "Spectre (vulnerability)"
       ],
-      "x": 0.72958,
-      "y": 0.745598
+      "x": 0.686284,
+      "y": 0.855266
     },
     {
       "id": "0915dfaae8ca64af",
@@ -880,8 +906,8 @@
       "concepts_tested": [
         "Byzantine fault tolerance"
       ],
-      "x": 0.772189,
-      "y": 0.74214
+      "x": 0.68836,
+      "y": 0.859492
     },
     {
       "id": "9e7bf1d73fc659c5",
@@ -901,8 +927,8 @@
       "concepts_tested": [
         "conflict-free replicated data type"
       ],
-      "x": 0.701484,
-      "y": 0.694871
+      "x": 0.677884,
+      "y": 0.839778
     },
     {
       "id": "d322a3e519119f1f",
@@ -922,8 +948,8 @@
       "concepts_tested": [
         "memory consistency model"
       ],
-      "x": 0.720439,
-      "y": 0.73202
+      "x": 0.692023,
+      "y": 0.866958
     },
     {
       "id": "2ea68efefc1428a1",
@@ -943,8 +969,8 @@
       "concepts_tested": [
         "query optimization"
       ],
-      "x": 0.760935,
-      "y": 0.73365
+      "x": 0.676535,
+      "y": 0.835279
     }
   ],
   "labels": [],

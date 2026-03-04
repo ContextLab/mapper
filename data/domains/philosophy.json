@@ -5,10 +5,10 @@
     "parent_id": null,
     "level": "general",
     "region": {
-      "x_min": 0.408706,
-      "x_max": 0.65037,
-      "y_min": 0.600951,
-      "y_max": 0.635036
+      "x_min": 0.639176,
+      "x_max": 0.895403,
+      "y_min": 0.741811,
+      "y_max": 0.848105
     },
     "grid_size": 70
   },
@@ -23,7 +23,9 @@
         "D": "Knowledge of self"
       },
       "correct_answer": "A",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.659565,
+      "y": 0.800707
     },
     {
       "id": "27cd64593103d204",
@@ -35,7 +37,9 @@
         "D": "Innate recollection"
       },
       "correct_answer": "B",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.670278,
+      "y": 0.817136
     },
     {
       "id": "f5111ee4fe06a5b7",
@@ -55,8 +59,8 @@
       "concepts_tested": [
         "truth"
       ],
-      "x": 0.751652,
-      "y": 0.710774
+      "x": 0.673902,
+      "y": 0.828494
     },
     {
       "id": "a393f557a6a0159c",
@@ -76,8 +80,8 @@
       "concepts_tested": [
         "reason"
       ],
-      "x": 0.827309,
-      "y": 0.743535
+      "x": 0.660724,
+      "y": 0.801912
     },
     {
       "id": "97016456902ab899",
@@ -97,8 +101,8 @@
       "concepts_tested": [
         "beauty"
       ],
-      "x": 0.76811,
-      "y": 0.713318
+      "x": 0.657494,
+      "y": 0.797247
     },
     {
       "id": "e8d139155957de28",
@@ -118,8 +122,8 @@
       "concepts_tested": [
         "wisdom"
       ],
-      "x": 0.803896,
-      "y": 0.730529
+      "x": 0.66942,
+      "y": 0.81676
     },
     {
       "id": "8a30cedc5b8db7ae",
@@ -139,8 +143,8 @@
       "concepts_tested": [
         "meaning of life"
       ],
-      "x": 0.781498,
-      "y": 0.722894
+      "x": 0.666613,
+      "y": 0.813876
     },
     {
       "id": "3c01457bf95d2f9e",
@@ -160,8 +164,8 @@
       "concepts_tested": [
         "freedom"
       ],
-      "x": 0.74801,
-      "y": 0.691594
+      "x": 0.644176,
+      "y": 0.774482
     },
     {
       "id": "f49972029fd99c7c",
@@ -181,8 +185,8 @@
       "concepts_tested": [
         "language"
       ],
-      "x": 0.788751,
-      "y": 0.738953
+      "x": 0.666264,
+      "y": 0.814471
     },
     {
       "id": "d0131ec89f8df5dc",
@@ -194,7 +198,9 @@
         "D": "Observation"
       },
       "correct_answer": "B",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.658807,
+      "y": 0.802138
     },
     {
       "id": "b62026cde66c81da",
@@ -214,8 +220,8 @@
       "concepts_tested": [
         "religion"
       ],
-      "x": 0.719016,
-      "y": 0.672814
+      "x": 0.658743,
+      "y": 0.801456
     },
     {
       "id": "695661ebd0a2b117",
@@ -235,8 +241,8 @@
       "concepts_tested": [
         "art"
       ],
-      "x": 0.82334,
-      "y": 0.730216
+      "x": 0.661927,
+      "y": 0.803947
     },
     {
       "id": "8e84f765e25dc556",
@@ -248,7 +254,9 @@
         "D": "Bodily pleasure"
       },
       "correct_answer": "A",
-      "difficulty": 1
+      "difficulty": 1,
+      "x": 0.664721,
+      "y": 0.8071
     },
     {
       "id": "855f8fb02f4b9e9a",
@@ -268,8 +276,8 @@
       "concepts_tested": [
         "epistemology"
       ],
-      "x": 0.774477,
-      "y": 0.716341
+      "x": 0.664259,
+      "y": 0.807439
     },
     {
       "id": "dd2ca14cbe52ea3b",
@@ -289,8 +297,8 @@
       "concepts_tested": [
         "aesthetics"
       ],
-      "x": 0.730433,
-      "y": 0.688021
+      "x": 0.662894,
+      "y": 0.807467
     },
     {
       "id": "ac2d693665ec037d",
@@ -310,8 +318,8 @@
       "concepts_tested": [
         "philosophy of science"
       ],
-      "x": 0.781314,
-      "y": 0.726163
+      "x": 0.680321,
+      "y": 0.836611
     },
     {
       "id": "ffb5ed96d1ddee1c",
@@ -331,8 +339,8 @@
       "concepts_tested": [
         "political philosophy"
       ],
-      "x": 0.737842,
-      "y": 0.692047
+      "x": 0.890403,
+      "y": 0.746811
     },
     {
       "id": "97e3e4f20298a5d8",
@@ -352,8 +360,8 @@
       "concepts_tested": [
         "philosophy of language"
       ],
-      "x": 0.790316,
-      "y": 0.735141
+      "x": 0.65899,
+      "y": 0.80072
     },
     {
       "id": "d10e81694dd257d8",
@@ -373,8 +381,8 @@
       "concepts_tested": [
         "existentialism"
       ],
-      "x": 0.477489,
-      "y": 0.650528
+      "x": 0.658839,
+      "y": 0.799369
     },
     {
       "id": "aa70b048f673beda",
@@ -386,7 +394,9 @@
         "D": "Greatest conceivable being"
       },
       "correct_answer": "D",
-      "difficulty": 2
+      "difficulty": 2,
+      "x": 0.662734,
+      "y": 0.805085
     },
     {
       "id": "4ae69ee46c69c43e",
@@ -406,8 +416,8 @@
       "concepts_tested": [
         "empiricism"
       ],
-      "x": 0.771093,
-      "y": 0.715771
+      "x": 0.661396,
+      "y": 0.804608
     },
     {
       "id": "988339abfde8ed3a",
@@ -427,8 +437,8 @@
       "concepts_tested": [
         "rationalism"
       ],
-      "x": 0.780658,
-      "y": 0.724513
+      "x": 0.665027,
+      "y": 0.806862
     },
     {
       "id": "68d8453673079b58",
@@ -440,7 +450,9 @@
         "D": "Episteme"
       },
       "correct_answer": "C",
-      "difficulty": 2
+      "difficulty": 2,
+      "x": 0.668335,
+      "y": 0.81458
     },
     {
       "id": "65b6aa0b16ee1262",
@@ -452,7 +464,9 @@
         "D": "Suspending existence claims"
       },
       "correct_answer": "D",
-      "difficulty": 2
+      "difficulty": 2,
+      "x": 0.660892,
+      "y": 0.804241
     },
     {
       "id": "9b5bd60f7ed9296b",
@@ -472,8 +486,8 @@
       "concepts_tested": [
         "pragmatism"
       ],
-      "x": 0.791874,
-      "y": 0.733841
+      "x": 0.668524,
+      "y": 0.81746
     },
     {
       "id": "ef142def24a9cba6",
@@ -485,7 +499,9 @@
         "D": "Syllogistic proof"
       },
       "correct_answer": "B",
-      "difficulty": 2
+      "difficulty": 2,
+      "x": 0.659449,
+      "y": 0.80263
     },
     {
       "id": "b50803a9fd1d8d9c",
@@ -505,8 +521,8 @@
       "concepts_tested": [
         "philosophy of history"
       ],
-      "x": 0.722816,
-      "y": 0.682602
+      "x": 0.667028,
+      "y": 0.813172
     },
     {
       "id": "0caa8d3e6b715eb2",
@@ -526,8 +542,8 @@
       "concepts_tested": [
         "hermeneutics"
       ],
-      "x": 0.788698,
-      "y": 0.720697
+      "x": 0.664176,
+      "y": 0.81084
     },
     {
       "id": "93115c6c9e37aa98",
@@ -547,8 +563,8 @@
       "concepts_tested": [
         "falsifiability"
       ],
-      "x": 0.779539,
-      "y": 0.73656
+      "x": 0.680662,
+      "y": 0.837299
     },
     {
       "id": "62da4c3ecfe86716",
@@ -560,7 +576,9 @@
         "D": "Gradual data accumulation"
       },
       "correct_answer": "B",
-      "difficulty": 3
+      "difficulty": 3,
+      "x": 0.665166,
+      "y": 0.811424
     },
     {
       "id": "34fca013dea612b0",
@@ -572,7 +590,9 @@
         "D": "Affecting the listener"
       },
       "correct_answer": "C",
-      "difficulty": 3
+      "difficulty": 3,
+      "x": 0.65506,
+      "y": 0.794343
     },
     {
       "id": "80a951b6bf05906e",
@@ -592,8 +612,8 @@
       "concepts_tested": [
         "Gettier problem"
       ],
-      "x": 0.792039,
-      "y": 0.735586
+      "x": 0.685263,
+      "y": 0.843105
     },
     {
       "id": "e50f7446f65c0bf6",
@@ -605,7 +625,9 @@
         "D": "Evil is eliminable"
       },
       "correct_answer": "A",
-      "difficulty": 3
+      "difficulty": 3,
+      "x": 0.672383,
+      "y": 0.82223
     },
     {
       "id": "0f1e936553433680",
@@ -625,8 +647,8 @@
       "concepts_tested": [
         "epistemological foundationalism"
       ],
-      "x": 0.783044,
-      "y": 0.731036
+      "x": 0.674169,
+      "y": 0.824795
     },
     {
       "id": "0feb97bb54421d11",
@@ -638,7 +660,9 @@
         "D": "Wealth maximization"
       },
       "correct_answer": "C",
-      "difficulty": 3
+      "difficulty": 3,
+      "x": 0.657935,
+      "y": 0.797614
     },
     {
       "id": "c534132472cd92d8",
@@ -650,7 +674,9 @@
         "D": "Perpetual deferral"
       },
       "correct_answer": "D",
-      "difficulty": 3
+      "difficulty": 3,
+      "x": 0.659308,
+      "y": 0.801223
     },
     {
       "id": "20c07695455b94ed",
@@ -670,8 +696,8 @@
       "concepts_tested": [
         "the sublime"
       ],
-      "x": 0.731696,
-      "y": 0.688457
+      "x": 0.65903,
+      "y": 0.800026
     },
     {
       "id": "fa5c5133f4f88dcd",
@@ -691,8 +717,8 @@
       "concepts_tested": [
         "reliabilism"
       ],
-      "x": 0.786475,
-      "y": 0.728861
+      "x": 0.683552,
+      "y": 0.840639
     },
     {
       "id": "190c4b9b192abf34",
@@ -704,7 +730,9 @@
         "D": "Crucial tests confirm"
       },
       "correct_answer": "C",
-      "difficulty": 4
+      "difficulty": 4,
+      "x": 0.674511,
+      "y": 0.829655
     },
     {
       "id": "b40d8180ad90a51c",
@@ -716,7 +744,9 @@
         "D": "Cross-world referent"
       },
       "correct_answer": "D",
-      "difficulty": 4
+      "difficulty": 4,
+      "x": 0.659243,
+      "y": 0.800453
     },
     {
       "id": "4542a310a6ce7b8a",
@@ -736,8 +766,8 @@
       "concepts_tested": [
         "Quinean ontological commitment"
       ],
-      "x": 0.767764,
-      "y": 0.722262
+      "x": 0.664954,
+      "y": 0.810021
     },
     {
       "id": "a1272b02f72463f3",
@@ -757,8 +787,8 @@
       "concepts_tested": [
         "epistemic injustice"
       ],
-      "x": 0.758758,
-      "y": 0.71469
+      "x": 0.650873,
+      "y": 0.787134
     },
     {
       "id": "48b255644858ce00",
@@ -778,8 +808,8 @@
       "concepts_tested": [
         "deflationary theory of truth"
       ],
-      "x": 0.760216,
-      "y": 0.724088
+      "x": 0.673556,
+      "y": 0.82435
     },
     {
       "id": "de6b017786d28a9b",
@@ -791,7 +821,9 @@
         "D": "Merging interpretive contexts"
       },
       "correct_answer": "D",
-      "difficulty": 4
+      "difficulty": 4,
+      "x": 0.663149,
+      "y": 0.809438
     },
     {
       "id": "dac0ba1b1e8ec635",
@@ -811,8 +843,8 @@
       "concepts_tested": [
         "Rawlsian public reason"
       ],
-      "x": 0.756795,
-      "y": 0.704002
+      "x": 0.647405,
+      "y": 0.780158
     },
     {
       "id": "cd9bb7db6c421ebc",
@@ -824,7 +856,9 @@
         "D": "Equal priors required"
       },
       "correct_answer": "B",
-      "difficulty": 4
+      "difficulty": 4,
+      "x": 0.679498,
+      "y": 0.833438
     },
     {
       "id": "272eeb465a660243",
@@ -844,8 +878,8 @@
       "concepts_tested": [
         "scientific realism vs anti-realism"
       ],
-      "x": 0.782415,
-      "y": 0.728082
+      "x": 0.679597,
+      "y": 0.832973
     },
     {
       "id": "2cfc090640d6bee9",
@@ -857,7 +891,9 @@
         "D": "Act versus content"
       },
       "correct_answer": "D",
-      "difficulty": 4
+      "difficulty": 4,
+      "x": 0.662054,
+      "y": 0.806257
     },
     {
       "id": "07bde7ded8a735fc",
@@ -869,7 +905,9 @@
         "D": "Psychological states decide"
       },
       "correct_answer": "A",
-      "difficulty": 4
+      "difficulty": 4,
+      "x": 0.65749,
+      "y": 0.799325
     },
     {
       "id": "f2b4e69281c8857b",
@@ -889,8 +927,8 @@
       "concepts_tested": [
         "Habermasian communicative rationality"
       ],
-      "x": 0.779844,
-      "y": 0.731133
+      "x": 0.664638,
+      "y": 0.809194
     }
   ],
   "labels": [],

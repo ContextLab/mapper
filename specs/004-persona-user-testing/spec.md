@@ -407,6 +407,94 @@ The pedant personas are the most rigorous evaluation tier. They are driven by Op
 - **SC-019**: Pedant personas (P19, P20, P21) complete a full audit of every question in their assigned domains. All corrections to question answers are backed by cited web sources — zero hallucinated corrections make it into the question bank.
 - **SC-020**: After pedant-driven corrections are applied, a re-run of the pedant simulation flags no more than 2% of questions as having incorrect marked answers (down from the pre-fix baseline).
 
+## GitHub Issue Remediation
+
+The following open issues were identified during the persona testing phase and must be addressed before final delivery. Issue #32 (question quality) is being addressed separately by the question audit pipeline.
+
+### Issue #27 — Non-Academic Video Content (Priority: P1, CRITICAL)
+
+**Problem**: The map includes embeddings for 5,407 lecture videos scraped from Khan Academy's YouTube channel. Many are not actual educational lectures — they include interviews with Sal Khan, platform talks, zoom meeting recordings, and other non-academic content.
+
+**Impact on Pipeline**: Videos, articles, and questions are projected jointly via UMAP. Non-academic videos pollute the embedding space, distorting all coordinates. This MUST be resolved before any UMAP re-computation.
+
+**Owner Comment**: "Need to do a careful audit, video by video, and remove any non-academic content. Then we need to re-fit the UMAP model, re-flatten, and update all JSON files."
+
+**Required Work**:
+1. Audit all 5,407 videos — classify each as academic lecture vs. non-academic content
+2. Remove non-academic video embeddings from `embeddings/transcript_embeddings.pkl`
+3. Re-fit UMAP jointly (articles + questions + cleaned videos)
+4. Re-flatten coordinates using optimal transport
+5. Re-export all domain JSON files with updated x/y coordinates
+6. Update `data/videos.json` (or equivalent) to exclude removed videos
+
+**Acceptance Criteria**: No non-academic videos appear on the map. Video count decreases from 5,407 to only verified academic lectures. All coordinates updated consistently.
+
+### Issue #26 — Performance Degradation at 100+ Questions (Priority: P2)
+
+**Problem**: After ~100 questions answered (~40% of "all" domain mapped), the page becomes unresponsive for ~3 seconds after each answer. This blocks UI updates (answer coloring, auto-advance) and degrades the experience.
+
+**Owner Comment**: "Visual feedback after user interactions should be instantaneous. Computations should happen asynchronously wherever possible. For long computations, instantly display a progress bar or loading animation."
+
+**Required Work**:
+1. Profile the GP estimator to identify the bottleneck (likely kernel matrix computation scaling O(n^3))
+2. Move expensive computations (estimator update, heatmap recomputation) to async/requestAnimationFrame
+3. Ensure answer feedback (red/green coloring, auto-advance) is never blocked by computation
+4. Consider observation pruning or incremental updates beyond 100 observations
+5. Add progress indicator for long computations if async approach still takes >500ms
+
+**Acceptance Criteria**: Answer feedback appears within 100ms regardless of question count. P12 (marathoner, 125 questions) completes without perceivable lag. No Cholesky errors at high question counts.
+
+### Issue #29 — Sampling Strategy UI Clarification (Priority: P2)
+
+**Problem**: The sampling strategy buttons ("Auto", "Easy", "Hardest I can answer", "Something I don't know") reset after one question, confusing users who expect persistent mode selection.
+
+**Owner Comment**: This is INTENDED behavior — "Auto" is the only persistent strategy; others are one-shot buttons. But the UI doesn't communicate this.
+
+**Required Work**:
+1. Remove the "Auto" button (sampling is ALWAYS auto)
+2. Rename remaining buttons to indicate they are one-shot (e.g., "Next: ask me an easy one")
+3. Add visual indication of current sampling domain (text in question bar showing active domain)
+4. Update tooltips to explain one-shot behavior
+5. Document sampling behavior in the info modal
+
+**Acceptance Criteria**: Users understand that "easy/hard/unknown" buttons affect only the next question. No more reports of "strategy resets."
+
+### Issue #30 — Resize Handle Bug (Priority: P3)
+
+**Problem**: A thin green resize-handle bar appears at the left edge of the map. Dragging it changes the question panel's width on the RIGHT side (incorrect panel). The resize is a single trigger (not proportional to drag distance) and cannot be undone without page reload.
+
+**Required Work**:
+1. Investigate the `.resize-handle` element and its event listeners
+2. Either fix the resize-handle to resize the correct panel (left sidebar), OR remove it if no left-panel resize is needed
+3. Ensure resize is proportional and reversible (drag both directions)
+
+**Acceptance Criteria**: Resize handle either works correctly (resizes the intended panel proportionally) or is removed entirely. No orphaned UI elements.
+
+### Issue #28 — Import Not Displaying All Questions (Priority: P2)
+
+**Problem**: When importing a saved session (127 questions), only 12 are displayed on the map. Knowledge values appear correct (heatmap reflects all answers), but individual question markers are mostly missing. This occurs regardless of import method (landing page or map page).
+
+**Note**: This is partially covered by persona P15 (import/export tester) and FR-020, but the underlying bug needs investigation and fix.
+
+**Required Work**:
+1. Debug why imported questions are not rendered as answered-question markers
+2. Check if the issue is in the import flow (data loading) or rendering pipeline (marker display)
+3. Verify that all imported observations are registered with the estimator
+4. Fix the rendering to show all imported question markers
+5. Verify with P15 persona re-run
+
+**Acceptance Criteria**: Importing a 127-question session displays all 127 question markers on the map. SC-006 (P15 import fidelity) passes.
+
+### Issue #31 — Research Paper Links (Priority: P4, Deferred)
+
+**Problem**: Landing page and info modal link to the PsyArXiv preprint, which is a few revisions behind the published version.
+
+**Owner Comment**: "Already on the list — needs to be updated after the DOI goes live."
+
+**Required Work**: Update URLs when the published DOI becomes available. No work needed now.
+
+**Acceptance Criteria**: Links point to the published version once DOI is live.
+
 ## Assumptions
 
 - The application is running locally at `http://localhost:5173` (or the configured Vite dev server URL) during testing.
@@ -424,5 +512,5 @@ The pedant personas are the most rigorous evaluation tier. They are driven by Op
 - Adding new question domains or generating new questions.
 - Backend/server infrastructure changes — the application is static/client-side.
 - Accessibility compliance auditing (WCAG) — though basic usability on mobile is in scope.
-- Performance benchmarking (load times, memory usage) — though obvious performance regressions should be flagged.
+- Performance benchmarking (load times, memory usage) — though Issue #26 (performance at 100+ questions) is in scope as a known bug requiring async computation fix.
 - Internationalization or localization.

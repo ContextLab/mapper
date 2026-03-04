@@ -138,12 +138,12 @@ function generateShareImage(data) {
     }
   }
 
-  // Draw video markers as subtle small squares
+  // Draw video markers as small squares (distinct from round article dots)
   const { videos } = data;
   if (videos && videos.length > 0) {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.02)';
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
     for (const v of videos) {
-      ctx.fillRect(v.x * W - 0.5, v.y * H - 0.5, 1, 1);
+      ctx.fillRect(v.x * W - 0.75, v.y * H - 0.75, 1.5, 1.5);
     }
   }
 

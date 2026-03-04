@@ -96,6 +96,25 @@ async function boot() {
   sampler = new Sampler();
   sampler.configure(GLOBAL_GRID_SIZE, GLOBAL_REGION);
 
+  // Attach the landing button BEFORE the data load so it's responsive immediately.
+  // If clicked before data loads, we store the intent and act on it once data arrives.
+  let earlyStartRequested = false;
+  const landingStartBtn = document.getElementById('landing-start-btn');
+  if (landingStartBtn) {
+    landingStartBtn.addEventListener('click', () => {
+      if (allDomainBundle) {
+        // Data already loaded — transition immediately
+        $activeDomain.set('all');
+      } else {
+        // Data still loading — record intent, show loading feedback
+        earlyStartRequested = true;
+        landingStartBtn.textContent = 'Loading…';
+        landingStartBtn.disabled = true;
+      }
+    });
+    landingStartBtn.dataset.ready = 'true';
+  }
+
   // Eagerly load the "all" domain — this is the permanent, full dataset.
   // All articles, questions, and labels come from here; domain selection
   // only pans/zooms the viewport rather than replacing data.
@@ -106,9 +125,9 @@ async function boot() {
     insights.setConcepts(allDomainBundle.questions, allDomainBundle.articles);
     insights.setDomains(registry.getDomains());
 
-    // Initialize particles immediately from already-loaded articles (no extra fetch).
-    // Articles alone provide 50K+ points, far exceeding the 2500 particle budget.
-    if (particleSystem && particleCanvas) {
+    // Initialize particles in the background — don't block the transition.
+    // If user already clicked start, skip particles entirely (they'd be destroyed anyway).
+    if (particleSystem && particleCanvas && !earlyStartRequested) {
       const points = subsampleParticlePoints(allDomainBundle.articles);
       particleSystem.initWithPoints(particleCanvas, points);
     }
@@ -116,6 +135,11 @@ async function boot() {
     console.error('[app] Failed to pre-load "all" domain:', err);
     showLandingError('Could not load map data. Please try refreshing.');
     return;
+  }
+
+  // If user clicked "Map my Knowledge" while data was loading, transition now.
+  if (earlyStartRequested) {
+    $activeDomain.set('all');
   }
 
   // Start background video catalog loading (T-V051, FR-V041)
@@ -143,12 +167,6 @@ async function boot() {
   controls.onReset(handleReset);
   controls.onExport(handleExport);
   controls.onImport(handleImport);
-
-  const landingStartBtn = document.getElementById('landing-start-btn');
-  if (landingStartBtn) {
-    landingStartBtn.addEventListener('click', () => $activeDomain.set('all'));
-    landingStartBtn.dataset.ready = 'true';
-  }
 
   const quizPanel = document.getElementById('quiz-panel');
   quiz.init(quizPanel);

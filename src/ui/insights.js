@@ -214,7 +214,7 @@ export function setDomains(domainIndex) {
     if (d.level === 'all') continue;
     if (!d.region) continue;
     domainCoords.set(d.id, {
-      name: d.name,
+      name: (d.name || '').trim(),
       level: d.level,
       parentId: d.parent_id,
       region: d.region,
@@ -399,15 +399,16 @@ export function showLeaderboard(domainKnowledge) {
     return;
   }
   const sorted = [...evidenced].sort((a, b) => b.knowledge - a.knowledge);
+  const top10 = sorted.slice(0, 10);
 
   // Build the body using safe DOM methods
   bodyEl.textContent = '';
   const explainer = document.createElement('p');
   explainer.className = 'insights-explainer';
-  explainer.textContent = 'Your knowledge estimated per domain, ranked highest first. '
+  explainer.textContent = 'Your top areas of expertise, ranked highest first. '
     + 'Each score averages the GP prediction at every question coordinate in that domain.';
   bodyEl.appendChild(explainer);
-  bodyEl.appendChild(buildDomainList(sorted));
+  bodyEl.appendChild(buildDomainList(top10));
   const caveat = document.createElement('p');
   caveat.className = 'insights-caveat';
   const strong = document.createElement('strong');
@@ -508,8 +509,7 @@ function buildDomainList(items) {
 
     const nameSpan = document.createElement('span');
     nameSpan.className = 'insights-concept';
-    // Indent sub-domains under their parent
-    const label = item.level === 'sub' ? item.name : item.name;
+    const label = (item.name || '').trim();
     nameSpan.textContent = label;
     if (item.level === 'sub') {
       nameSpan.style.paddingLeft = '0.75rem';

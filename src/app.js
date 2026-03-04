@@ -369,13 +369,14 @@ function responsesToAnsweredDots(responses, qIndex) {
   const dots = [];
   for (const [qid, r] of latest) {
     const q = qIndex.get(qid);
-    if (!q) continue;
+    // Show dot if we have coordinates — even if question isn't in index yet (e.g. during import)
+    if (!q && (r.x == null || r.y == null)) continue;
     const isSkipped = !!r.is_skipped;
     dots.push({
       x: r.x,
       y: r.y,
       questionId: qid,
-      title: q.question_text,
+      title: q ? q.question_text : 'Imported question',
       isCorrect: r.is_correct,
       isSkipped,
       color: isSkipped ? [212, 160, 23, 200]
@@ -580,33 +581,17 @@ function handleAnswer(selectedKey, question) {
   const isReanswer = filtered.length < current.length;
   $responses.set([...filtered, response]);
 
-  const difficulty = question.difficulty;
-  estimator.observe(question.x, question.y, isCorrect, UNIFORM_LENGTH_SCALE, difficulty);
-  globalEstimator.observe(question.x, question.y, isCorrect, UNIFORM_LENGTH_SCALE, difficulty);
-  const estimates = estimator.predict();
-  $estimates.set(estimates);
-
-  // Video recommendation: post-video diff map flow (T-V052, FR-V021)
-  if ($preVideoSnapshot.get() !== null) {
-    const globalEstimates = globalEstimator.predict();
-    const result = handlePostVideoQuestion(globalEstimates, mergedVideoWindows);
-    if (result.phaseComplete) {
-      mergedVideoWindows = [];
-    }
-  }
-
   if (!isReanswer) {
     domainQuestionCount++;
     modes.updateAvailability(domainQuestionCount);
     updateInsightButtons($responses.get().length);
   }
 
+  // Show answer dot and feedback immediately (before expensive GP computation)
   renderer.setAnsweredQuestions(responsesToAnsweredDots($responses.get(), questionIndex));
 
   const feedback = isCorrect ? 'Correct!' : 'Incorrect.';
-
-  const coverage = Math.round($coverage.get() * 100);
-  announce(`${feedback} ${coverage}% mapped.`);
+  announce(`${feedback}`);
 
   // Revert non-auto modes (easy/hardest/dont-know) back to auto after one answer
   modes.revertToAutoIfNeeded();
@@ -615,6 +600,28 @@ function handleAnswer(selectedKey, question) {
   if (modes.isAutoAdvance()) {
     setTimeout(() => selectAndShowNextQuestion(), 800);
   }
+
+  // Defer expensive GP computation so UI stays responsive (Issue #26)
+  const difficulty = question.difficulty;
+  const qx = question.x, qy = question.y;
+  setTimeout(() => {
+    estimator.observe(qx, qy, isCorrect, UNIFORM_LENGTH_SCALE, difficulty);
+    globalEstimator.observe(qx, qy, isCorrect, UNIFORM_LENGTH_SCALE, difficulty);
+    const estimates = estimator.predict();
+    $estimates.set(estimates);
+
+    const coverage = Math.round($coverage.get() * 100);
+    announce(`${coverage}% mapped.`);
+
+    // Video recommendation: post-video diff map flow (T-V052, FR-V021)
+    if ($preVideoSnapshot.get() !== null) {
+      const globalEstimates = globalEstimator.predict();
+      const result = handlePostVideoQuestion(globalEstimates, mergedVideoWindows);
+      if (result.phaseComplete) {
+        mergedVideoWindows = [];
+      }
+    }
+  }, 0);
 }
 
 function handleSkip() {
@@ -640,18 +647,13 @@ function handleSkip() {
   const isReanswer = filtered.length < current.length;
   $responses.set([...filtered, response]);
 
-  const difficulty = question.difficulty;
-  estimator.observeSkip(question.x, question.y, UNIFORM_LENGTH_SCALE, difficulty);
-  globalEstimator.observeSkip(question.x, question.y, UNIFORM_LENGTH_SCALE, difficulty);
-  const estimates = estimator.predict();
-  $estimates.set(estimates);
-
   if (!isReanswer) {
     domainQuestionCount++;
     modes.updateAvailability(domainQuestionCount);
     updateInsightButtons($responses.get().length);
   }
 
+  // Show answer dot and feedback immediately (before expensive GP computation)
   renderer.setAnsweredQuestions(responsesToAnsweredDots($responses.get(), questionIndex));
 
   // Show feedback with correct answer highlighted (like wrong-answer flow)
@@ -665,6 +667,16 @@ function handleSkip() {
   if (modes.isAutoAdvance()) {
     setTimeout(() => selectAndShowNextQuestion(), 800);
   }
+
+  // Defer expensive GP computation so UI stays responsive (Issue #26)
+  const difficulty = question.difficulty;
+  const qx = question.x, qy = question.y;
+  setTimeout(() => {
+    estimator.observeSkip(qx, qy, UNIFORM_LENGTH_SCALE, difficulty);
+    globalEstimator.observeSkip(qx, qy, UNIFORM_LENGTH_SCALE, difficulty);
+    const estimates = estimator.predict();
+    $estimates.set(estimates);
+  }, 0);
 }
 
 function handleReset() {

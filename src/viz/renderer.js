@@ -1,6 +1,7 @@
 /** Canvas 2D renderer for point cloud, heatmap overlay, and answered-question dots. */
 
 import { mergeForTransition, buildTransitionFrames, needs3D, cubicInOut } from './transitions.js';
+import { renderLatex } from '../ui/quiz.js';
 
 function valueToColor(v) {
   const val = Math.max(0, Math.min(1, v));
@@ -1224,8 +1225,9 @@ export class Renderer {
         : '<i class="fa-solid fa-xmark" style="font-size:0.85em;"></i>';
       const text = hit.title || 'Question';
       const truncated = text.length > 160 ? text.slice(0, 160) + '…' : text;
+      const rendered = renderLatex(truncated) || this._escapeHtml(truncated);
 
-      let html = `<div style="font-weight:600;margin-bottom:4px;"><span style="color:${borderColor}">${icon}</span> ${this._escapeHtml(truncated)}</div>`;
+      let html = `<div style="font-weight:600;margin-bottom:4px;"><span style="color:${borderColor}">${icon}</span> ${rendered}</div>`;
       if (q) {
         if (q.source_article) {
           const wikiUrl = 'https://en.wikipedia.org/wiki/' + encodeURIComponent(q.source_article);
@@ -1247,7 +1249,8 @@ export class Renderer {
       const [cr, cg, cb] = valueToColor(hit.estimateValue ?? 0.5);
       const borderColor = `rgb(${cr},${cg},${cb})`;
       const icon = '<i class="fa-brands fa-youtube" style="color:#c4302b;font-size:0.85em;"></i>';
-      let html = `<div style="font-weight:600;margin-bottom:4px;">${icon} ${this._escapeHtml(hit.title || 'Video')}</div>`;
+      const videoTitle = (hit.title || 'Video').split('|')[0].trim();
+      let html = `<div style="font-weight:600;margin-bottom:4px;">${icon} ${this._escapeHtml(videoTitle)}</div>`;
       html += `<div style="font-size:0.73rem;color:var(--color-text-muted);">${duration} &middot; Click to play</div>`;
       const trajectory = this._videoTrajectories.get(hit.videoId);
       if (trajectory && trajectory.length > 1) {

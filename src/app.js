@@ -51,8 +51,6 @@ let allDomainBundle = null;   // Permanent "all" domain data — never replaced
 let currentDomainBundle = null; // Points to allDomainBundle once loaded
 let aggregatedQuestions = [];   // Questions for active domain + descendants (CL-049)
 let currentViewport = { x_min: 0, x_max: 1, y_min: 0, y_max: 1 };
-let currentDomainRegion = GLOBAL_REGION;
-let currentGridSize = GLOBAL_GRID_SIZE;
 let domainQuestionCount = 0;
 let switchGeneration = 0;
 let questionIndex = new Map();
@@ -98,6 +96,25 @@ async function boot() {
   sampler = new Sampler();
   sampler.configure(GLOBAL_GRID_SIZE, GLOBAL_REGION);
 
+  // Attach the landing button BEFORE the data load so it's responsive immediately.
+  // If clicked before data loads, we store the intent and act on it once data arrives.
+  let earlyStartRequested = false;
+  const landingStartBtn = document.getElementById('landing-start-btn');
+  if (landingStartBtn) {
+    landingStartBtn.addEventListener('click', () => {
+      if (allDomainBundle) {
+        // Data already loaded — transition immediately
+        $activeDomain.set('all');
+      } else {
+        // Data still loading — record intent, show loading feedback
+        earlyStartRequested = true;
+        landingStartBtn.textContent = 'Loading…';
+        landingStartBtn.disabled = true;
+      }
+    });
+    landingStartBtn.dataset.ready = 'true';
+  }
+
   // Eagerly load the "all" domain — this is the permanent, full dataset.
   // All articles, questions, and labels come from here; domain selection
   // only pans/zooms the viewport rather than replacing data.
@@ -106,10 +123,11 @@ async function boot() {
     indexQuestions(allDomainBundle.questions);
     questionIndex = new Map(allDomainBundle.questions.map(q => [q.id, q]));
     insights.setConcepts(allDomainBundle.questions, allDomainBundle.articles);
+    insights.setDomains(registry.getDomains());
 
-    // Initialize particles immediately from already-loaded articles (no extra fetch).
-    // Articles alone provide 50K+ points, far exceeding the 2500 particle budget.
-    if (particleSystem && particleCanvas) {
+    // Initialize particles in the background — don't block the transition.
+    // If user already clicked start, skip particles entirely (they'd be destroyed anyway).
+    if (particleSystem && particleCanvas && !earlyStartRequested) {
       const points = subsampleParticlePoints(allDomainBundle.articles);
       particleSystem.initWithPoints(particleCanvas, points);
     }
@@ -117,6 +135,11 @@ async function boot() {
     console.error('[app] Failed to pre-load "all" domain:', err);
     showLandingError('Could not load map data. Please try refreshing.');
     return;
+  }
+
+  // If user clicked "Map my Knowledge" while data was loading, transition now.
+  if (earlyStartRequested) {
+    $activeDomain.set('all');
   }
 
   // Start background video catalog loading (T-V051, FR-V041)
@@ -129,6 +152,7 @@ async function boot() {
     }
     if (videos && videos.length > 0) {
       videoPanel.setVideos(videosToMarkers(videos));
+      if (minimap) minimap.setVideos(videosToLastPoints(videos));
     }
   });
 
@@ -144,12 +168,6 @@ async function boot() {
   controls.onReset(handleReset);
   controls.onExport(handleExport);
   controls.onImport(handleImport);
-
-  const landingStartBtn = document.getElementById('landing-start-btn');
-  if (landingStartBtn) {
-    landingStartBtn.addEventListener('click', () => $activeDomain.set('all'));
-    landingStartBtn.dataset.ready = 'true';
-  }
 
   const quizPanel = document.getElementById('quiz-panel');
   quiz.init(quizPanel);
@@ -178,9 +196,6 @@ async function boot() {
       onVideoHover: (videoId) => {
         if (renderer) renderer.setHoveredVideoId(videoId);
       },
-      onToggleMarkers: (visible) => {
-        if (renderer) renderer.setShowVideoMarkers(visible);
-      },
     });
   }
 
@@ -199,13 +214,12 @@ async function boot() {
   if (trophyBtn) {
     trophyBtn.addEventListener('click', () => {
       if (!globalEstimator) return;
-      const ck = insights.computeConceptKnowledge(
+      const dk = insights.computeDomainKnowledge(
         globalEstimator.predict(),
         GLOBAL_REGION,
         GLOBAL_GRID_SIZE,
-        { global: true },
       );
-      insights.showLeaderboard(ck);
+      insights.showLeaderboard(dk);
     });
   }
 
@@ -234,13 +248,14 @@ async function boot() {
 
   share.init(headerEl, () => renderer._canvas, () => {
     if (!currentDomainBundle) return [];
-    const ck = insights.computeConceptKnowledge(
-      $estimates.get(),
-      currentDomainRegion,
-      currentGridSize,
+    const dk = insights.computeDomainKnowledge(
+      globalEstimator.predict(),
+      GLOBAL_REGION,
+      GLOBAL_GRID_SIZE,
     );
-    const sorted = [...ck].sort((a, b) => b.knowledge - a.knowledge);
-    return sorted.slice(0, 3).map(c => ({ label: c.concept, value: c.knowledge }));
+    const evidenced = dk.filter(d => d.hasEvidence !== false);
+    const sorted = [...evidenced].sort((a, b) => b.knowledge - a.knowledge);
+    return sorted.slice(0, 3).map(d => ({ label: d.name, value: d.knowledge }));
   }, () => $responses.get().length, () => {
     if (!currentDomainBundle) return null;
     const estimates = $estimates.get();
@@ -254,10 +269,10 @@ async function boot() {
     const videos = [];
     if (videoData) {
       for (const v of videoData) {
-        if (!v.windows) continue;
-        for (const [x, y] of v.windows) {
-          videos.push({ x, y });
-        }
+        if (!v.windows || v.windows.length === 0) continue;
+        // Only include complete-transcript embedding (last point)
+        const last = v.windows[v.windows.length - 1];
+        videos.push({ x: last[0], y: last[1] });
       }
     }
     return { estimateGrid: grid, articles, answeredQuestions, videos };
@@ -343,6 +358,16 @@ function articlesToPoints(articles) {
   }));
 }
 
+function videosToLastPoints(videos) {
+  const points = [];
+  for (const v of videos) {
+    if (!v.windows || v.windows.length === 0) continue;
+    const last = v.windows[v.windows.length - 1];
+    points.push({ x: last[0], y: last[1] });
+  }
+  return points;
+}
+
 function videosToMarkers(videos) {
   const markers = [];
   for (const v of videos) {
@@ -369,13 +394,14 @@ function responsesToAnsweredDots(responses, qIndex) {
   const dots = [];
   for (const [qid, r] of latest) {
     const q = qIndex.get(qid);
-    if (!q) continue;
+    // Show dot if we have coordinates — even if question isn't in index yet (e.g. during import)
+    if (!q && (r.x == null || r.y == null)) continue;
     const isSkipped = !!r.is_skipped;
     dots.push({
       x: r.x,
       y: r.y,
       questionId: qid,
-      title: q.question_text,
+      title: q ? q.question_text : 'Imported question',
       isCorrect: r.is_correct,
       isSkipped,
       color: isSkipped ? [212, 160, 23, 200]
@@ -470,6 +496,7 @@ async function switchDomain(domainId) {
     if (earlyVideos && earlyVideos.length > 0) {
       renderer.setVideos(videosToMarkers(earlyVideos));
       videoPanel.setVideos(videosToMarkers(earlyVideos));
+      if (minimap) minimap.setVideos(videosToLastPoints(earlyVideos));
     }
   }
 
@@ -580,33 +607,17 @@ function handleAnswer(selectedKey, question) {
   const isReanswer = filtered.length < current.length;
   $responses.set([...filtered, response]);
 
-  const difficulty = question.difficulty;
-  estimator.observe(question.x, question.y, isCorrect, UNIFORM_LENGTH_SCALE, difficulty);
-  globalEstimator.observe(question.x, question.y, isCorrect, UNIFORM_LENGTH_SCALE, difficulty);
-  const estimates = estimator.predict();
-  $estimates.set(estimates);
-
-  // Video recommendation: post-video diff map flow (T-V052, FR-V021)
-  if ($preVideoSnapshot.get() !== null) {
-    const globalEstimates = globalEstimator.predict();
-    const result = handlePostVideoQuestion(globalEstimates, mergedVideoWindows);
-    if (result.phaseComplete) {
-      mergedVideoWindows = [];
-    }
-  }
-
   if (!isReanswer) {
     domainQuestionCount++;
     modes.updateAvailability(domainQuestionCount);
     updateInsightButtons($responses.get().length);
   }
 
+  // Show answer dot and feedback immediately (before expensive GP computation)
   renderer.setAnsweredQuestions(responsesToAnsweredDots($responses.get(), questionIndex));
 
   const feedback = isCorrect ? 'Correct!' : 'Incorrect.';
-
-  const coverage = Math.round($coverage.get() * 100);
-  announce(`${feedback} ${coverage}% mapped.`);
+  announce(`${feedback}`);
 
   // Revert non-auto modes (easy/hardest/dont-know) back to auto after one answer
   modes.revertToAutoIfNeeded();
@@ -615,6 +626,28 @@ function handleAnswer(selectedKey, question) {
   if (modes.isAutoAdvance()) {
     setTimeout(() => selectAndShowNextQuestion(), 800);
   }
+
+  // Defer expensive GP computation so UI stays responsive (Issue #26)
+  const difficulty = question.difficulty;
+  const qx = question.x, qy = question.y;
+  setTimeout(() => {
+    estimator.observe(qx, qy, isCorrect, UNIFORM_LENGTH_SCALE, difficulty);
+    globalEstimator.observe(qx, qy, isCorrect, UNIFORM_LENGTH_SCALE, difficulty);
+    const estimates = estimator.predict();
+    $estimates.set(estimates);
+
+    const coverage = Math.round($coverage.get() * 100);
+    announce(`${coverage}% mapped.`);
+
+    // Video recommendation: post-video diff map flow (T-V052, FR-V021)
+    if ($preVideoSnapshot.get() !== null) {
+      const globalEstimates = globalEstimator.predict();
+      const result = handlePostVideoQuestion(globalEstimates, mergedVideoWindows);
+      if (result.phaseComplete) {
+        mergedVideoWindows = [];
+      }
+    }
+  }, 0);
 }
 
 function handleSkip() {
@@ -640,18 +673,13 @@ function handleSkip() {
   const isReanswer = filtered.length < current.length;
   $responses.set([...filtered, response]);
 
-  const difficulty = question.difficulty;
-  estimator.observeSkip(question.x, question.y, UNIFORM_LENGTH_SCALE, difficulty);
-  globalEstimator.observeSkip(question.x, question.y, UNIFORM_LENGTH_SCALE, difficulty);
-  const estimates = estimator.predict();
-  $estimates.set(estimates);
-
   if (!isReanswer) {
     domainQuestionCount++;
     modes.updateAvailability(domainQuestionCount);
     updateInsightButtons($responses.get().length);
   }
 
+  // Show answer dot and feedback immediately (before expensive GP computation)
   renderer.setAnsweredQuestions(responsesToAnsweredDots($responses.get(), questionIndex));
 
   // Show feedback with correct answer highlighted (like wrong-answer flow)
@@ -665,6 +693,16 @@ function handleSkip() {
   if (modes.isAutoAdvance()) {
     setTimeout(() => selectAndShowNextQuestion(), 800);
   }
+
+  // Defer expensive GP computation so UI stays responsive (Issue #26)
+  const difficulty = question.difficulty;
+  const qx = question.x, qy = question.y;
+  setTimeout(() => {
+    estimator.observeSkip(qx, qy, UNIFORM_LENGTH_SCALE, difficulty);
+    globalEstimator.observeSkip(qx, qy, UNIFORM_LENGTH_SCALE, difficulty);
+    const estimates = estimator.predict();
+    $estimates.set(estimates);
+  }, 0);
 }
 
 function handleReset() {
@@ -674,8 +712,6 @@ function handleReset() {
   mapInitialized = false;
   domainQuestionCount = 0;
   aggregatedQuestions = [];
-  currentDomainRegion = GLOBAL_REGION;
-  currentGridSize = GLOBAL_GRID_SIZE;
   switchGeneration++;
   renderer.abortTransition();
   estimator.reset();
@@ -689,11 +725,13 @@ function handleReset() {
   renderer.setAnsweredQuestions([]);
   renderer.clearQuestions();
   insights.resetGlobalConcepts();
+  insights.resetDomains();
   videoModal.hide();
   mergedVideoWindows = [];
-  // Re-set concepts from the permanent "all" bundle so insights work on next domain select
+  // Re-set concepts and domains from the permanent "all" bundle so insights work on next domain select
   if (allDomainBundle) {
     insights.setConcepts(allDomainBundle.questions, allDomainBundle.articles);
+    insights.setDomains(registry.getDomains());
   }
   questionIndex = allDomainBundle
     ? new Map(allDomainBundle.questions.map(q => [q.id, q]))

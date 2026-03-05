@@ -1,0 +1,62 @@
+{
+  "description": "Expected outcomes for power user personas (P12-P14). AI agents evaluate estimator stability, domain switching, and rapid input handling.",
+  "personas": {
+    "P12": {
+      "name": "The Marathoner",
+      "expectations": {
+        "expertDomains": ["physics"],
+        "expectedAccuracy": { "physics": 0.75, "_default": 0.60 },
+        "mapExpectation": "Well-developed green in physics region after 125 questions. Smooth gradient transitions. No blank spots or visual artifacts from high observation count.",
+        "minimumDomainMappedPct": 40,
+        "maximumQuestionQualityFlags": 0.10,
+        "acceptableIssues": "minor or cosmetic only",
+        "powerUserSpecific": {
+          "maxDomainMappedJump": 15,
+          "noCholeskyErrors": true,
+          "noNaNValues": true,
+          "noInfinityValues": true,
+          "estimatorStableAt100Plus": true,
+          "smoothProgression": "domain-mapped % should increase steadily, never drop",
+          "criticalRange": "115-125 questions — watch for matrix conditioning issues"
+        }
+      }
+    },
+    "P13": {
+      "name": "The Domain Hopper",
+      "expectations": {
+        "expertDomains": ["computer-science", "physics"],
+        "expectedAccuracy": { "computer-science": 0.70, "physics": 0.65, "biology": 0.40, "_default": 0.50 },
+        "mapExpectation": "Multiple green regions across switched domains. No state leakage between domains — switching should produce clean map transitions.",
+        "minimumDomainMappedPct": 15,
+        "maximumQuestionQualityFlags": 0.10,
+        "acceptableIssues": "minor or cosmetic only",
+        "powerUserSpecific": {
+          "noStateLeakage": true,
+          "cleanDomainSwitching": true,
+          "domainSwitchInterval": 15,
+          "noConsoleErrorsOnSwitch": true,
+          "mapUpdatesAfterSwitch": "Map should reflect new domain immediately, no stale renders"
+        }
+      }
+    },
+    "P14": {
+      "name": "The Speed Clicker",
+      "expectations": {
+        "expertDomains": [],
+        "expectedAccuracy": { "biology": 0.50, "_default": 0.45 },
+        "mapExpectation": "Moderate coverage of biology despite rapid input. Map should handle fast updates without visual glitches or lag accumulation.",
+        "minimumDomainMappedPct": 15,
+        "maximumQuestionQualityFlags": 0.10,
+        "acceptableIssues": "minor or cosmetic only",
+        "powerUserSpecific": {
+          "answerDelayMs": "100-200ms between answers",
+          "noRaceConditions": true,
+          "noDroppedAnswers": true,
+          "noVisualGlitches": true,
+          "stableUnderRapidInput": true,
+          "noAnswerQueueOverflow": "All 50 answers should register correctly"
+        }
+      }
+    }
+  }
+}

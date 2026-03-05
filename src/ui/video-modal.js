@@ -151,7 +151,7 @@ export function playVideo(video) {
   // Video title
   const titleDiv = document.createElement('div');
   titleDiv.className = 'video-player-title';
-  titleDiv.textContent = video.title || 'Video';
+  titleDiv.textContent = (video.title || 'Video').split('|')[0].trim();
   playerContainerEl.appendChild(titleDiv);
 
   // Player frame container
@@ -251,8 +251,9 @@ function showListView() {
     // Title
     const titleSpan = document.createElement('span');
     titleSpan.className = 'video-title';
-    titleSpan.textContent = video.title;
-    titleSpan.title = video.title;
+    const displayTitle = (video.title || '').split('|')[0].trim();
+    titleSpan.textContent = displayTitle;
+    titleSpan.title = displayTitle;
     li.appendChild(titleSpan);
 
     // Gain indicator
@@ -341,7 +342,7 @@ function showPlayerView(video, score) {
   // Video title
   const titleDiv = document.createElement('div');
   titleDiv.className = 'video-player-title';
-  titleDiv.textContent = video.title;
+  titleDiv.textContent = (video.title || '').split('|')[0].trim();
   playerContainerEl.appendChild(titleDiv);
 
   // Player frame container

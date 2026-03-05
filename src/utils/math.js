@@ -333,3 +333,92 @@ export function cholesky(K) {
   }
   return Lfallback;
 }
+
+/**
+ * Cholesky decomposition returning null on failure (instead of identity fallback).
+ * Used by the GP estimator to detect decomposition failures and handle gracefully.
+ *
+ * @param {Float64Array[]} K - NxN SPD matrix
+ * @param {number} [fixedJitter=1e-6] - Fixed jitter for numerical stability
+ * @returns {Float64Array[]|null} Lower triangular L, or null if decomposition fails
+ */
+export function choleskyDecompose(K, fixedJitter = 1e-6) {
+  const n = K.length;
+  const MAX_RETRIES = 3;
+
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    const jitter = fixedJitter * Math.pow(10, attempt);
+    const L = new Array(n);
+    for (let i = 0; i < n; i++) {
+      L[i] = new Float64Array(n);
+    }
+
+    let negativeDiag = false;
+    for (let i = 0; i < n; i++) {
+      for (let j = 0; j <= i; j++) {
+        let sum = 0;
+        for (let k = 0; k < j; k++) {
+          sum += L[i][k] * L[j][k];
+        }
+        if (i === j) {
+          const diag = K[i][i] - sum + jitter;
+          if (diag <= 0) {
+            negativeDiag = true;
+            break;
+          }
+          L[i][j] = Math.sqrt(diag);
+        } else {
+          L[i][j] = (K[i][j] - sum) / L[j][j];
+        }
+      }
+      if (negativeDiag) break;
+    }
+
+    if (negativeDiag) {
+      if (attempt < MAX_RETRIES) continue;
+      return null;
+    }
+    return L;
+  }
+  return null;
+}
+
+/**
+ * Solve K·x = b given pre-computed Cholesky factor L (where K = L·L^T).
+ * Forward substitution L·y = b, then backward substitution L^T·x = y.
+ *
+ * @param {Float64Array[]} L - Lower triangular Cholesky factor
+ * @param {Float64Array} b - Right-hand side vector
+ * @returns {Float64Array} Solution vector x (zero vector on NaN)
+ */
+export function choleskySolveFromL(L, b) {
+  const n = L.length;
+
+  // Forward substitution: L·y = b
+  const y = new Float64Array(n);
+  for (let i = 0; i < n; i++) {
+    let sum = 0;
+    for (let k = 0; k < i; k++) {
+      sum += L[i][k] * y[k];
+    }
+    y[i] = (b[i] - sum) / L[i][i];
+  }
+
+  // Backward substitution: L^T·x = y
+  const x = new Float64Array(n);
+  for (let i = n - 1; i >= 0; i--) {
+    let sum = 0;
+    for (let k = i + 1; k < n; k++) {
+      sum += L[k][i] * x[k];
+    }
+    x[i] = (y[i] - sum) / L[i][i];
+  }
+
+  // NaN safety
+  for (let i = 0; i < n; i++) {
+    if (!isFinite(x[i])) {
+      return new Float64Array(n);
+    }
+  }
+  return x;
+}

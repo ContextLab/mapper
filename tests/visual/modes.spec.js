@@ -33,16 +33,14 @@ test.describe('Question Modes (US3)', () => {
     const wrapper = page.locator('.modes-wrapper');
     await expect(wrapper).toBeVisible();
 
-    // Should have all 4 question mode buttons (insight modes are currently empty)
+    // Should have 3 one-shot question mode buttons (auto is the implicit default, no button)
     const modeButtons = wrapper.locator('.mode-btn');
     const count = await modeButtons.count();
-    expect(count).toBe(4);
+    expect(count).toBe(3);
 
-    // Auto mode should be active by default
-    const autoBtn = wrapper.locator('.mode-btn.active');
-    await expect(autoBtn).toHaveCount(1);
-    const activeText = await autoBtn.textContent();
-    expect(activeText).toContain('Auto');
+    // No button should be active by default (auto mode is implicit)
+    const activeBtn = wrapper.locator('.mode-btn.active');
+    await expect(activeBtn).toHaveCount(0);
   });
 
   test('disabled modes show tooltip on hover', async ({ page }) => {

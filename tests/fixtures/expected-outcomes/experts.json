@@ -1,0 +1,57 @@
+{
+  "description": "Expected outcomes for expert personas (P04-P07). AI agents compare map accuracy to known expertise profiles.",
+  "personas": {
+    "P04": {
+      "name": "Dr. Chen the Neuroscientist",
+      "expectations": {
+        "expertDomains": ["neuroscience", "neurobiology", "cognitive-neuroscience"],
+        "expectedAccuracy": { "neuroscience": 0.92, "biology": 0.70, "physics": 0.35 },
+        "mapExpectation": "Clear green region in neuroscience cluster. Red/yellow in physics/math regions. Visible differentiation between strong and weak areas.",
+        "minimumDomainMappedPct": 15,
+        "maximumQuestionQualityFlags": 0.10,
+        "acceptableIssues": "minor or cosmetic only",
+        "expertAssessment": "Questions in neuroscience should test genuine understanding, not trivia. Expert should recognize topics from their field."
+      }
+    },
+    "P05": {
+      "name": "Prof. Garcia the Physicist",
+      "expectations": {
+        "expertDomains": ["physics", "astrophysics", "quantum-physics", "mathematics"],
+        "expectedAccuracy": { "physics": 0.95, "mathematics": 0.90, "biology": 0.20 },
+        "mapExpectation": "Strong green in physics/astrophysics/quantum-physics regions. Math region also green. Biology region strongly red. Sharp contrast between expertise areas.",
+        "minimumDomainMappedPct": 20,
+        "maximumQuestionQualityFlags": 0.10,
+        "acceptableIssues": "minor or cosmetic only",
+        "expertAssessment": "Physics questions should test conceptual understanding. Distractor quality matters most here — a physicist should find all four options plausible at first glance."
+      }
+    },
+    "P06": {
+      "name": "Dr. Okafor the Biologist",
+      "expectations": {
+        "expertDomains": ["biology", "genetics", "molecular-cell-biology"],
+        "expectedAccuracy": { "biology": 0.88, "neuroscience": 0.65, "physics": 0.25 },
+        "mapExpectation": "Green in biology/genetics region. Red in physics. Mobile viewport should still show clear differentiation.",
+        "minimumDomainMappedPct": 15,
+        "maximumQuestionQualityFlags": 0.10,
+        "acceptableIssues": "minor or cosmetic only",
+        "mobileSpecific": {
+          "touchTargetMinHeight": 44,
+          "mapVisibleOnMobile": true,
+          "noOverlappingElements": true
+        }
+      }
+    },
+    "P07": {
+      "name": "Prof. Kim the Generalist",
+      "expectations": {
+        "expertDomains": ["neuroscience", "psychology", "biology"],
+        "expectedAccuracy": { "neuroscience": 0.75, "biology": 0.70, "physics": 0.40, "_default": 0.60 },
+        "mapExpectation": "Moderate green in neuroscience/biology. Yellow/red in physics. Overall more mixed than single-domain experts. Map should show meaningful cross-domain variation.",
+        "minimumDomainMappedPct": 25,
+        "maximumQuestionQualityFlags": 0.10,
+        "acceptableIssues": "minor or cosmetic only",
+        "expertAssessment": "The 'all' domain map should have semantically meaningful spatial layout — related topics should be near each other."
+      }
+    }
+  }
+}

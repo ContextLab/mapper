@@ -11,7 +11,7 @@ This script reads flattened question coordinates and domain assignments,
 then computes appropriate bounding boxes for each domain level.
 
 Input:
-  - embeddings/umap_question_coords_flat.pkl (flattened question coordinates)
+  - embeddings/question_coords_flat.pkl (flattened question coordinates)
   - data/domains/index.json (domain hierarchy)
   - data/domains/{domain_id}.json (questions with domain_ids)
 
@@ -41,7 +41,7 @@ DOMAINS_DIR = PROJECT_ROOT / "data" / "domains"
 def load_question_coordinates():
     """Load flattened question coordinates and IDs."""
     # Try flattened coords first, fall back to non-flattened
-    flat_path = EMBEDDINGS_DIR / "umap_question_coords_flat.pkl"
+    flat_path = EMBEDDINGS_DIR / "question_coords_flat.pkl"
     regular_path = EMBEDDINGS_DIR / "umap_question_coords.pkl"
 
     if flat_path.exists():
@@ -56,7 +56,7 @@ def load_question_coordinates():
         print("ERROR: No question coordinates found.")
         print(f"  Tried: {flat_path}")
         print(f"  Tried: {regular_path}")
-        print("  Run rebuild_umap_v2.py and flatten_coordinates.py first.")
+        print("  Run build_umap.py and flatten_coordinates.py first.")
         sys.exit(1)
 
     coords = data["coords"]

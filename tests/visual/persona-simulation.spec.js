@@ -1,5 +1,12 @@
 /**
- * Persona Simulation — Playwright end-to-end test.
+ * Persona Simulation — Playwright end-to-end test (LEGACY).
+ *
+ * NOTE: This file is superseded by the AI-driven persona framework in:
+ *   - persona-agents.spec.js (reporters, experts, learners, power users, edge cases)
+ *   - persona-pedant.spec.js (pedant content audit with web verification)
+ * Those files use runner.js + evaluator-prompts.js for structured evaluation.
+ *
+ * This file is kept as a fast mechanical smoke test (no AI evaluation).
  *
  * Simulates 4 learner personas interacting with the REAL app:
  * - Selects a domain, answers 20 questions based on persona expertise

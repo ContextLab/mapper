@@ -121,14 +121,14 @@ def main():
     # Step 2: Joint UMAP projection
     if not args.skip_umap:
         if args.dry_run:
-            print("Would run: rebuild_umap_v2.py")
+            print("Would run: build_umap.py")
         else:
-            if not run_script("rebuild_umap_v2.py", description="Step 2/5: Joint UMAP projection"):
-                print("\nPipeline aborted due to error in rebuild_umap_v2.py")
+            if not run_script("build_umap.py", description="Step 2/5: Joint UMAP projection"):
+                print("\nPipeline aborted due to error in build_umap.py")
                 sys.exit(1)
             steps_run += 1
     else:
-        print("Skipping Step 2: rebuild_umap_v2.py (--skip-umap)")
+        print("Skipping Step 2: build_umap.py (--skip-umap)")
         steps_skipped += 1
 
     # Step 3: Density flattening

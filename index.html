@@ -360,6 +360,7 @@
         }
 
         #quiz-panel {
+            position: relative;
             width: 0;
             min-width: 0;
             background: var(--color-surface);
@@ -706,8 +707,8 @@
                 flex-direction: column;
             }
             #quiz-panel.open {
-                width: 100% !important; height: 60vh;
-                padding: 1rem 1.25rem;
+                width: 100% !important; height: 50vh;
+                padding: 0.75rem 1rem;
                 overflow: hidden; /* Panel itself doesn't scroll; .quiz-content does */
             }
             #quiz-panel.open .quiz-content {
@@ -716,6 +717,9 @@
                 -webkit-overflow-scrolling: touch;
                 min-height: 0; /* Allow flex child to shrink below content size */
             }
+            /* Compact quiz text on mobile */
+            #quiz-panel .quiz-question { font-size: 0.9rem; line-height: 1.35; }
+            #quiz-panel .quiz-option { padding: 0.5rem 0.75rem; font-size: 0.85rem; min-height: 40px; }
 
             /* ── Quiz toggle: centered bottom tab ── */
             .quiz-toggle-btn {

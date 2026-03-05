@@ -1,0 +1,560 @@
+/**
+ * Playwright runner engine for persona testing framework.
+ *
+ * Automates browser interactions: domain selection, question answering,
+ * checkpoint capture (screenshot + DOM state + console errors).
+ *
+ * Reuses proven patterns from persona-simulation.spec.js but structured
+ * as reusable exports for the AI evaluation pipeline.
+ */
+import { writeFileSync, mkdirSync, existsSync, readdirSync, unlinkSync } from 'node:fs';
+import { resolve, join } from 'node:path';
+import { lookupQuestion } from './question-loader.js';
+
+const LOAD_TIMEOUT = 15000;
+
+/** Strip LaTeX markup and normalize Unicode for fuzzy text comparison. */
+function stripLatex(text) {
+  return text
+    .replace(/\$([^$]*)\$/g, '$1')
+    .replace(/\\[a-zA-Z]+\{([^}]*)\}/g, '$1')
+    .replace(/\\[a-zA-Z]+/g, '')
+    .replace(/[\\{}^_]/g, '')
+    .replace(/\u2212/g, '-')   // Unicode minus → hyphen
+    .replace(/\u2013/g, '-')   // en-dash → hyphen
+    .replace(/\u2014/g, '-')   // em-dash → hyphen
+    .replace(/\u00d7/g, 'x')   // × → x
+    .replace(/\u2248/g, '~')   // ≈ → ~
+    .replace(/\u2264/g, '<=')  // ≤ → <=
+    .replace(/\u2265/g, '>=')  // ≥ → >=
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+// ─── Seeded PRNG ─────────────────────────────────────────────
+/**
+ * Linear congruential generator for deterministic answer sequences.
+ * Same implementation as persona-simulation.spec.js.
+ *
+ * @param {number} seed - Integer seed
+ * @returns {function(): number} Returns values in [0, 1)
+ */
+export function makePrng(seed) {
+  let s = seed;
+  return function () {
+    s = (s * 1103515245 + 12345) & 0x7fffffff;
+    return s / 0x7fffffff;
+  };
+}
+
+// ─── Domain selection ────────────────────────────────────────
+
+/**
+ * Navigate from landing page into the app and select a domain.
+ *
+ * @param {import('@playwright/test').Page} page
+ * @param {string} domainName - Domain display name (e.g., "physics", "All (General)")
+ */
+export async function selectDomain(page, domainName) {
+  // If on landing page, click start button first
+  const startBtn = page.locator('#landing-start-btn');
+  if (await startBtn.isVisible().catch(() => false)) {
+    await page.waitForSelector('#landing-start-btn[data-ready]', { timeout: LOAD_TIMEOUT });
+    await startBtn.click();
+    await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
+  }
+
+  // Use header domain selector
+  const trigger = page.locator('.domain-selector .custom-select-trigger');
+  await trigger.click();
+
+  // Prefer data-value attribute match (domain ID) — most reliable
+  const byValue = page.locator(`.domain-selector .custom-select-option[data-value="${domainName}"]`);
+  if (await byValue.count() > 0) {
+    await byValue.click();
+    return;
+  }
+
+  // Fallback: text matching for display names like "All (General)"
+  const options = page.locator('.domain-selector .custom-select-option');
+  const count = await options.count();
+  const target = domainName.toLowerCase();
+  for (let i = 0; i < count; i++) {
+    const text = (await options.nth(i).textContent()).trim().toLowerCase();
+    if (text.includes(target)) {
+      await options.nth(i).click();
+      return;
+    }
+  }
+  // Last resort: click first option
+  await options.first().click();
+}
+
+// ─── Question interaction ────────────────────────────────────
+
+/**
+ * Read the currently displayed question text from the DOM.
+ *
+ * @param {import('@playwright/test').Page} page
+ * @returns {Promise<string>}
+ */
+export async function getDisplayedQuestion(page) {
+  const el = page.locator('.quiz-question');
+  await el.waitFor({ state: 'visible', timeout: 5000 });
+  return (await el.textContent()).trim();
+}
+
+/**
+ * Answer the currently displayed question using persona's accuracy profile.
+ *
+ * @param {import('@playwright/test').Page} page
+ * @param {object} persona - Persona definition with getAccuracy(domainId)
+ * @param {Map<string, object>} questionDb - Loaded question database
+ * @param {function(): number} rand - Seeded PRNG function
+ * @returns {Promise<object>} Answer result with question data
+ */
+export async function answerQuestion(page, persona, questionDb, rand) {
+  const displayedText = await getDisplayedQuestion(page);
+  const question = lookupQuestion(questionDb, displayedText);
+
+  if (!question) {
+    // Can't find in DB — answer randomly
+    const firstBtn = page.locator('.quiz-option:not([disabled])').first();
+    await firstBtn.click();
+    return {
+      questionId: 'unknown',
+      questionText: displayedText.substring(0, 200),
+      correct: false,
+      selectedAnswer: '?',
+      correctAnswer: '?',
+      options: {},
+      domain: 'unknown',
+      difficulty: 2,
+      x: 0.5,
+      y: 0.5,
+      matched: false,
+    };
+  }
+
+  const domainId = question.domain_ids?.[0] || 'unknown';
+  const pCorrect = persona.getAccuracy(domainId);
+  const shouldBeCorrect = rand() < pCorrect;
+
+  // Build complete DOM button index → DB key mapping BEFORE clicking.
+  // The app shuffles option display order, so DOM position ≠ DB key.
+  // Score each button against each option by common-prefix length,
+  // then greedily assign best matches (handles near-identical options).
+  const optionBtns = page.locator('.quiz-option');
+  const btnCount = await optionBtns.count();
+  const btnToDbKey = {};
+  const dbKeyUsed = new Set();
+
+  // Read all button texts once
+  const btnTexts = [];
+  for (let i = 0; i < btnCount; i++) {
+    btnTexts.push((await optionBtns.nth(i).textContent()).trim());
+  }
+
+  // Score every (button, option) pair by common-prefix length.
+  // Two passes: raw text first, then LaTeX-normalized for disambiguation.
+  const scores = [];
+  const optEntries = Object.entries(question.options);
+  for (let i = 0; i < btnCount; i++) {
+    for (const [key, rawText] of optEntries) {
+      const dbText = rawText.trim();
+      const domText = btnTexts[i];
+      // Raw comparison: char-by-char longest common prefix
+      const len = Math.min(domText.length, dbText.length);
+      let rawScore = 0;
+      for (let c = 0; c < len; c++) {
+        if (domText[c] === dbText[c]) rawScore++;
+        else break;
+      }
+      // LaTeX-normalized comparison for disambiguation
+      const normDom = stripLatex(domText);
+      const normDb = stripLatex(dbText);
+      const normLen = Math.min(normDom.length, normDb.length);
+      let normScore = 0;
+      for (let c = 0; c < normLen; c++) {
+        if (normDom[c] === normDb[c]) normScore++;
+        else break;
+      }
+      // Use whichever score is higher (normalized helps with LaTeX options)
+      scores.push({ btnIdx: i, key, score: Math.max(rawScore, normScore) });
+    }
+  }
+
+  // Greedily assign best scores (highest first)
+  scores.sort((a, b) => b.score - a.score);
+  const btnUsed = new Set();
+  for (const { btnIdx, key, score } of scores) {
+    if (btnUsed.has(btnIdx) || dbKeyUsed.has(key)) continue;
+    if (score >= 10) { // require reasonable match
+      btnToDbKey[btnIdx] = key;
+      btnUsed.add(btnIdx);
+      dbKeyUsed.add(key);
+    }
+  }
+
+  // Assign remaining by elimination
+  const allKeys = Object.keys(question.options);
+  for (let i = 0; i < btnCount; i++) {
+    if (btnToDbKey[i]) continue;
+    const remaining = allKeys.filter(k => !dbKeyUsed.has(k));
+    if (remaining.length > 0) {
+      btnToDbKey[i] = remaining[0];
+      dbKeyUsed.add(remaining[0]);
+    }
+  }
+
+  // Find correct and wrong button indices using the mapping
+  const correctBtnIndex = Object.entries(btnToDbKey)
+    .find(([_, key]) => key === question.correct_answer)?.[0] ?? 0;
+  const wrongBtnIndex = Object.entries(btnToDbKey)
+    .find(([idx, key]) => key !== question.correct_answer && idx !== String(correctBtnIndex))?.[0] ?? (correctBtnIndex === 0 ? 1 : 0);
+
+  const targetIndex = shouldBeCorrect ? Number(correctBtnIndex) : Number(wrongBtnIndex);
+  await optionBtns.nth(targetIndex).click();
+
+  let selectedAnswer = btnToDbKey[targetIndex] || '?';
+
+  // Read actual correctness from DOM feedback (the app adds .correct or
+  // .incorrect class to the clicked button after answering).
+  await page.waitForTimeout(100); // Let DOM update after click
+  const wasCorrect = await optionBtns.nth(targetIndex).evaluate(
+    el => el.classList.contains('correct')
+  );
+
+  // Reconcile selectedAnswer with DOM truth: if the DOM says correct,
+  // selectedAnswer must be the correct key (fixes LaTeX mapping errors).
+  if (wasCorrect) {
+    selectedAnswer = question.correct_answer;
+  } else if (shouldBeCorrect && selectedAnswer === question.correct_answer) {
+    // We intended correct but got it wrong — mapping error.
+    // Mark as unknown since we can't determine the actual key clicked.
+    selectedAnswer = '?';
+  }
+
+  return {
+    questionId: question.id,
+    questionText: question.question_text.substring(0, 200),
+    correct: wasCorrect,
+    selectedAnswer,
+    correctAnswer: question.correct_answer,
+    options: question.options,
+    domain: domainId,
+    difficulty: question.difficulty || 2,
+    x: question.x,
+    y: question.y,
+    sourceArticle: question.source_article || '',
+    matched: true,
+  };
+}
+
+/**
+ * Advance to the next question (press 'n' key).
+ *
+ * @param {import('@playwright/test').Page} page
+ */
+export async function advanceToNext(page) {
+  await page.waitForTimeout(300);
+  await page.keyboard.press('n');
+  await page.waitForTimeout(500);
+}
+
+// ─── Checkpoint capture ──────────────────────────────────────
+
+/**
+ * Capture a checkpoint: screenshot + DOM state + console errors.
+ *
+ * @param {import('@playwright/test').Page} page
+ * @param {object} persona - Persona definition
+ * @param {number} checkpointNum - Checkpoint sequential index (1-based)
+ * @param {object[]} questionBatch - Questions answered since last checkpoint
+ * @param {string[]} consoleErrors - Console errors since last checkpoint
+ * @param {number} totalAnswered - Total questions answered so far
+ * @returns {Promise<object>} Checkpoint data object
+ */
+export async function captureCheckpoint(page, persona, checkpointNum, questionBatch, consoleErrors, totalAnswered) {
+  const workingDir = resolve('tests/visual/.working/personas');
+  const screenshotDir = resolve('tests/visual/screenshots/personas');
+  mkdirSync(workingDir, { recursive: true });
+  mkdirSync(screenshotDir, { recursive: true });
+
+  const screenshotPath = join(screenshotDir, `${persona.id}-checkpoint-${checkpointNum}.png`);
+
+  // Take screenshot
+  await page.waitForTimeout(500); // Let canvas settle
+  await page.screenshot({ path: screenshotPath, fullPage: true });
+
+  // Read domain-mapped percentage from UI if available
+  let domainMappedPct = 0;
+  try {
+    domainMappedPct = await page.evaluate(() => {
+      const el = document.querySelector('.domain-mapped-pct, .progress-pct');
+      if (el) {
+        const match = el.textContent.match(/(\d+)/);
+        return match ? parseInt(match[1], 10) : 0;
+      }
+      return 0;
+    });
+  } catch { /* ignore */ }
+
+  const checkpoint = {
+    personaId: persona.id,
+    checkpointNumber: checkpointNum,
+    questionsAnswered: totalAnswered,
+    questionsInBatch: questionBatch.map(q => ({
+      questionId: q.questionId,
+      questionText: q.questionText,
+      options: q.options,
+      correctAnswer: q.correctAnswer,
+      selectedAnswer: q.selectedAnswer,
+      wasCorrect: q.correct,
+      difficulty: q.difficulty,
+      domainId: q.domain,
+      sourceArticle: q.sourceArticle || '',
+    })),
+    screenshotPath,
+    consoleErrors: [...consoleErrors],
+    domainMappedPct,
+    timestamp: Date.now(),
+  };
+
+  // Write checkpoint JSON
+  const checkpointPath = join(workingDir, `${persona.id}-checkpoint-${checkpointNum}.json`);
+  writeFileSync(checkpointPath, JSON.stringify(checkpoint, null, 2));
+
+  return checkpoint;
+}
+
+// ─── Full session runner ─────────────────────────────────────
+
+/**
+ * Run a complete persona simulation session.
+ *
+ * Navigates to the app, selects domain, answers questions per persona
+ * profile, captures checkpoints at the specified interval, and returns
+ * all checkpoint data for AI evaluation.
+ *
+ * @param {import('@playwright/test').Page} page
+ * @param {object} persona - Persona definition from definitions.js
+ * @param {Map<string, object>} questionDb - Loaded question database
+ * @param {object} [options] - Additional options
+ * @param {number} [options.seed] - PRNG seed (defaults to persona index hash)
+ * @param {string[]} [options.domainSequence] - For domain-hopper personas
+ * @param {number} [options.questionsPerDomain] - Questions before switching domain
+ * @param {number} [options.answerDelayMs] - Delay between answers (for speed tests)
+ * @returns {Promise<object>} Session results with all checkpoints
+ */
+export async function runPersonaSession(page, persona, questionDb, options = {}) {
+  const seed = options.seed ?? (persona.id.charCodeAt(1) * 1000 + persona.id.charCodeAt(2));
+  const rand = makePrng(seed);
+  const domainSequence = options.domainSequence || persona.domainSequence;
+  const questionsPerDomain = options.questionsPerDomain || persona.questionsPerDomain;
+  const answerDelayMs = options.answerDelayMs ?? 0;
+
+  // Determine total questions
+  const numQuestions = persona.numQuestions === 'ALL'
+    ? Infinity // Pedants answer until questions run out
+    : persona.numQuestions;
+
+  // Navigate to app
+  await page.goto('/');
+  await page.waitForSelector('#landing', { timeout: LOAD_TIMEOUT });
+
+  // Select initial domain
+  const initialDomain = persona.domain === 'all' ? 'All (General)' : persona.domain;
+  await selectDomain(page, initialDomain);
+  await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
+  await page.waitForSelector('.quiz-question', { timeout: 5000 });
+
+  // Wait for domain bundles to fully load (the app announces "N questions available"
+  // via the #live-region when switchDomain completes with aggregated questions).
+  // For pedant mode, we need the full pool — wait for the count to stabilize.
+  if (persona.numQuestions === 'ALL') {
+    // For "all" domain: pre-warm cache by cycling through every parent domain.
+    // Each selection triggers loadQuestionsForDomain which fetches descendants.
+    if (persona.domain === 'all') {
+      const parentDomains = [
+        'physics', 'biology', 'neuroscience', 'mathematics', 'computer-science',
+        'art-history', 'economics', 'philosophy', 'linguistics', 'sociology',
+        'psychology', 'archaeology', 'world-history',
+      ];
+      for (const parentId of parentDomains) {
+        const opt = page.locator(`.domain-selector .custom-select-option[data-value="${parentId}"]`);
+        const triggerEl = page.locator('.domain-selector .custom-select-trigger');
+        await triggerEl.click();
+        if (await opt.count() > 0) {
+          await opt.click();
+          await page.waitForTimeout(1500); // Let descendants load
+        }
+      }
+      // Now switch back to "all" — all descendants should be cached
+      await selectDomain(page, 'All (General)');
+      await page.waitForSelector('.quiz-question', { timeout: 5000 });
+      await page.waitForTimeout(3000); // Let aggregation settle
+    } else {
+      await page.waitForTimeout(3000); // Allow async descendant bundles to load
+      // Re-trigger domain load to pick up newly cached descendants
+      // Use data-value attribute for exact domain ID match (avoids "biology" matching "neurobiology")
+      const trigger = page.locator('.domain-selector .custom-select-trigger');
+      await trigger.click();
+      const domainValue = persona.domain;
+      const exactOption = page.locator(`.domain-selector .custom-select-option[data-value="${domainValue}"]`);
+      if (await exactOption.count() > 0) {
+        await exactOption.click();
+      } else {
+        await selectDomain(page, initialDomain);
+      }
+      await page.waitForSelector('.quiz-question', { timeout: 5000 });
+      await page.waitForTimeout(2000);
+    }
+  } else {
+    await page.waitForTimeout(500);
+  }
+
+  // Track state
+  const allResults = [];
+  let currentBatch = [];
+  const consoleErrors = [];
+  let checkpointNum = 0;
+  const checkpoints = [];
+  let currentDomainIndex = 0;
+
+  // Capture console errors
+  page.on('console', msg => {
+    if (msg.type() === 'error') {
+      consoleErrors.push(msg.text());
+    }
+  });
+
+  // Answer questions
+  let prevQuestionText = null;
+  let sameQuestionCount = 0;
+
+  for (let i = 0; i < numQuestions; i++) {
+    // Domain hopping: switch domain at specified intervals
+    if (domainSequence && questionsPerDomain && i > 0 && i % questionsPerDomain === 0) {
+      currentDomainIndex = (currentDomainIndex + 1) % domainSequence.length;
+      const nextDomain = domainSequence[currentDomainIndex];
+      const displayDomain = nextDomain === 'all' ? 'All (General)' : nextDomain;
+      await selectDomain(page, displayDomain);
+      await page.waitForSelector('.quiz-question', { timeout: 5000 });
+      await page.waitForTimeout(500);
+      prevQuestionText = null; // Reset after domain switch
+    }
+
+    try {
+      // Read question text before answering to detect repetition
+      const currentText = await getDisplayedQuestion(page);
+
+      // Detect when the app has run out of questions: same question text
+      // appears after advancing (the quiz element stays visible showing
+      // the last answered question when no new questions are available).
+      if (currentText === prevQuestionText) {
+        sameQuestionCount++;
+        if (sameQuestionCount >= 2) {
+          // Same question 2+ times in a row — app has no more questions
+          break;
+        }
+      } else {
+        sameQuestionCount = 0;
+      }
+
+      // Also check if all option buttons are disabled (already answered)
+      const enabledBtns = await page.locator('.quiz-option:not([disabled])').count();
+      if (enabledBtns === 0) {
+        // No clickable options — question already answered, no new question served
+        break;
+      }
+
+      const result = await answerQuestion(page, persona, questionDb, rand);
+      allResults.push(result);
+      currentBatch.push(result);
+      prevQuestionText = currentText;
+
+      // Optional delay for speed-test personas
+      if (answerDelayMs > 0) {
+        await page.waitForTimeout(answerDelayMs);
+      }
+
+      await advanceToNext(page);
+
+      // Capture checkpoint at intervals
+      if (currentBatch.length >= persona.checkpointInterval) {
+        checkpointNum++;
+        const checkpoint = await captureCheckpoint(
+          page, persona, checkpointNum, currentBatch,
+          consoleErrors.splice(0), // drain captured errors
+          allResults.length
+        );
+        checkpoints.push(checkpoint);
+        currentBatch = [];
+      }
+    } catch (err) {
+      // Check if we've run out of questions (pedant mode)
+      if (persona.numQuestions === 'ALL') {
+        break; // Expected: no more questions to answer
+      }
+      throw err; // Unexpected error
+    }
+  }
+
+  // Capture final checkpoint for any remaining questions
+  if (currentBatch.length > 0) {
+    checkpointNum++;
+    const checkpoint = await captureCheckpoint(
+      page, persona, checkpointNum, currentBatch,
+      consoleErrors.splice(0),
+      allResults.length
+    );
+    checkpoints.push(checkpoint);
+  }
+
+  // Take final screenshot
+  const finalScreenshotPath = resolve(`tests/visual/screenshots/personas/${persona.id}-final.png`);
+  await page.screenshot({ path: finalScreenshotPath, fullPage: true });
+
+  return {
+    personaId: persona.id,
+    personaName: persona.name,
+    totalQuestions: allResults.length,
+    correctCount: allResults.filter(r => r.correct).length,
+    checkpoints,
+    allResults,
+    finalScreenshotPath,
+    startTime: checkpoints[0]?.timestamp || Date.now(),
+    endTime: Date.now(),
+  };
+}
+
+// ─── Cleanup utility ─────────────────────────────────────────
+
+/**
+ * Remove stale working files for a persona before a fresh simulation.
+ *
+ * @param {string} personaId - e.g., "P01"
+ */
+export function cleanWorkingFiles(personaId) {
+  const workingDir = resolve('tests/visual/.working/personas');
+  if (!existsSync(workingDir)) return;
+
+  const files = readdirSync(workingDir);
+  for (const file of files) {
+    if (file.startsWith(`${personaId}-`)) {
+      unlinkSync(join(workingDir, file));
+    }
+  }
+
+  // Also clean screenshots
+  const screenshotDir = resolve('tests/visual/screenshots/personas');
+  if (!existsSync(screenshotDir)) return;
+
+  const screenshots = readdirSync(screenshotDir);
+  for (const file of screenshots) {
+    if (file.startsWith(`${personaId}-`)) {
+      unlinkSync(join(screenshotDir, file));
+    }
+  }
+}

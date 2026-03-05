@@ -14,7 +14,22 @@ Algorithm:
   5. Interpolate displacement field to all N points via k-NN weighted average
   6. Apply with mixing parameter mu ∈ [0,1]
   7. Re-normalize to [0,1] with margin
-  8. Apply same displacement field to question coordinates
+  8. Apply same displacement field to questions, transcripts, and windows
+
+Input:
+  - embeddings/umap_article_coords.pkl
+  - embeddings/umap_question_coords.pkl
+  - embeddings/umap_transcript_coords.pkl
+  - embeddings/umap_window_coords.pkl
+
+Output:
+  - embeddings/article_coords_flat.pkl
+  - embeddings/question_coords_flat.pkl
+  - embeddings/transcript_coords_flat.pkl
+  - embeddings/window_coords_flat.pkl
+
+Note: pickle is used intentionally for numpy array serialization. All .pkl
+files are generated locally by our own pipeline scripts.
 
 Usage:
   python scripts/flatten_coordinates.py --mu 0.75
@@ -270,29 +285,58 @@ def check_semantic_coherence(
 
 
 # ---------------------------------------------------------------------------
+# k-NN displacement interpolation (shared by both methods)
+# ---------------------------------------------------------------------------
+
+
+def interpolate_displacement(
+    tree: cKDTree,
+    displacements: np.ndarray,
+    coords: np.ndarray,
+    mu: float,
+    knn_k: int,
+    label: str,
+) -> np.ndarray:
+    """Apply k-NN weighted displacement interpolation to secondary coords."""
+    if len(coords) == 0:
+        return coords.copy()
+
+    dists, idx = tree.query(coords, k=knn_k)
+    weights = 1.0 / (dists + 1e-10)
+    weights /= weights.sum(axis=1, keepdims=True)
+    interp_disp = (weights[:, :, None] * displacements[idx]).sum(axis=1)
+    flat = coords + mu * interp_disp
+    print(
+        f"  {label} displacement: mean={np.mean(np.linalg.norm(mu * interp_disp, axis=1)):.4f}"
+    )
+    return flat
+
+
+# ---------------------------------------------------------------------------
 # Patch-based flattening (per-cluster Hungarian)
 # ---------------------------------------------------------------------------
 
 
 def flatten_coordinates_patched(
     article_coords: np.ndarray,
-    question_coords: np.ndarray,
+    secondary_coords: dict[str, np.ndarray],
     mu: float = 0.75,
     n_clusters: int = 100,
     max_cluster_size: int = 2000,
     knn_k: int = 8,
     margin: float = 0.02,
     seed: int = 42,
-) -> tuple[np.ndarray, np.ndarray, dict]:
+) -> tuple[np.ndarray, dict[str, np.ndarray], dict]:
     """
     Patch-based optimal transport: K-means clustering + per-cluster Hungarian.
 
     Unlike the subsample method, this gives EVERY article point its own unique
-    uniform target via exact Hungarian assignment within clusters. Questions
-    use k-NN interpolation from article displacement vectors.
+    uniform target via exact Hungarian assignment within clusters. Secondary
+    coordinate sets (questions, transcripts, windows) use k-NN interpolation
+    from article displacement vectors.
 
     Auto-increases K if any cluster exceeds max_cluster_size to keep
-    per-cluster Hungarian tractable (O(n³) is expensive above ~2000 points).
+    per-cluster Hungarian tractable (O(n^3) is expensive above ~2000 points).
     """
     from sklearn.cluster import MiniBatchKMeans
     from scipy.stats.qmc import Halton
@@ -304,14 +348,14 @@ def flatten_coordinates_patched(
     print(f"PATCH-BASED COORDINATE FLATTENING")
     print(f"{'=' * 70}")
     print(f"  Articles:   {N:,}")
-    print(f"  Questions:  {len(question_coords):,}")
+    for name, coords in secondary_coords.items():
+        print(f"  {name.capitalize():10s}: {len(coords):,}")
     print(f"  mu:         {mu}")
     print(f"  Clusters:   {K} (max size: {max_cluster_size})")
     print(f"  k-NN:       {knn_k}")
     print()
 
     # ---- Step 1: K-means cluster original points ----
-    # Auto-increase K until no cluster exceeds max_cluster_size
     print("Step 1/6: K-means clustering originals...")
     t0 = time.time()
     while True:
@@ -346,7 +390,6 @@ def flatten_coordinates_patched(
     print(f"  Done in {time.time() - t0:.1f}s")
 
     # ---- Step 3: Assign targets to clusters (capacitated) ----
-    # Each cluster must receive exactly cluster_sizes[k] target points
     print(f"\nStep 3/6: Capacitated target assignment to {K} clusters...")
     t0 = time.time()
     target_dists = cdist(targets, centers)
@@ -422,7 +465,7 @@ def flatten_coordinates_patched(
             elapsed = time.time() - t0
             print(
                 f"  {progress + 1}/{K} clusters done "
-                f"(largest so far: {n_k}×{n_k}, {elapsed:.1f}s elapsed)"
+                f"(largest so far: {n_k}x{n_k}, {elapsed:.1f}s elapsed)"
             )
 
     mean_disp = np.mean(np.linalg.norm(displacements, axis=1))
@@ -430,27 +473,26 @@ def flatten_coordinates_patched(
     print(f"  Total cost: {total_cost:.2f}")
     print(f"  Displacement: mean={mean_disp:.4f}, max={max_disp:.4f}")
 
-    # ---- Step 5: Apply mu mixing + question interpolation ----
+    # ---- Step 5: Apply mu mixing + secondary interpolation ----
     print(f"\nStep 5/6: Applying mu={mu} mixing...")
     flat_articles = article_coords + mu * displacements
-
-    tree = cKDTree(article_coords)
-    dists, idx = tree.query(question_coords, k=knn_k)
-    weights = 1.0 / (dists + 1e-10)
-    weights /= weights.sum(axis=1, keepdims=True)
-    q_disp = (weights[:, :, None] * displacements[idx]).sum(axis=1)
-    flat_questions = question_coords + mu * q_disp
-
     print(
         f"  Article displacement: mean={np.mean(np.linalg.norm(mu * displacements, axis=1)):.4f}"
     )
-    print(
-        f"  Question displacement: mean={np.mean(np.linalg.norm(mu * q_disp, axis=1)):.4f}"
-    )
+
+    tree = cKDTree(article_coords)
+    flat_secondary = {}
+    for name, coords in secondary_coords.items():
+        flat_secondary[name] = interpolate_displacement(
+            tree, displacements, coords, mu, knn_k, name.capitalize()
+        )
 
     # ---- Step 6: Re-normalize to [0, 1] ----
     print(f"\nStep 6/6: Re-normalizing to [0, 1]...")
-    all_flat = np.vstack([flat_articles, flat_questions])
+    all_parts = [flat_articles] + [
+        c for c in flat_secondary.values() if len(c) > 0
+    ]
+    all_flat = np.vstack(all_parts)
     xmin, ymin = all_flat.min(axis=0)
     xmax, ymax = all_flat.max(axis=0)
 
@@ -462,16 +504,20 @@ def flatten_coordinates_patched(
         return normed
 
     flat_articles = normalize(flat_articles)
-    flat_questions = normalize(flat_questions)
+    for name in flat_secondary:
+        if len(flat_secondary[name]) > 0:
+            flat_secondary[name] = normalize(flat_secondary[name])
 
     print(
         f"  Articles range: x=[{flat_articles[:, 0].min():.4f}, {flat_articles[:, 0].max():.4f}], "
         f"y=[{flat_articles[:, 1].min():.4f}, {flat_articles[:, 1].max():.4f}]"
     )
-    print(
-        f"  Questions range: x=[{flat_questions[:, 0].min():.4f}, {flat_questions[:, 0].max():.4f}], "
-        f"y=[{flat_questions[:, 1].min():.4f}, {flat_questions[:, 1].max():.4f}]"
-    )
+    for name, coords in flat_secondary.items():
+        if len(coords) > 0:
+            print(
+                f"  {name.capitalize()} range: x=[{coords[:, 0].min():.4f}, {coords[:, 0].max():.4f}], "
+                f"y=[{coords[:, 1].min():.4f}, {coords[:, 1].max():.4f}]"
+            )
 
     info = {
         "mu": mu,
@@ -486,7 +532,7 @@ def flatten_coordinates_patched(
         "cluster_size_range": (int(cluster_sizes.min()), int(cluster_sizes.max())),
     }
 
-    return flat_articles, flat_questions, info
+    return flat_articles, flat_secondary, info
 
 
 # ---------------------------------------------------------------------------
@@ -496,20 +542,22 @@ def flatten_coordinates_patched(
 
 def flatten_coordinates(
     article_coords: np.ndarray,
-    question_coords: np.ndarray,
+    secondary_coords: dict[str, np.ndarray],
     mu: float = 0.75,
     subsample_m: int = 5000,
     knn_k: int = 8,
     margin: float = 0.02,
     seed: int = 42,
-) -> tuple[np.ndarray, np.ndarray, dict]:
+) -> tuple[np.ndarray, dict[str, np.ndarray], dict]:
     """
     Flatten coordinate density via approximate optimal transport.
 
     Parameters
     ----------
     article_coords : (N, 2) array in [0, 1]
-    question_coords : (Q, 2) array in [0, 1]
+    secondary_coords : dict mapping name -> (M, 2) array
+        Secondary coordinate sets (questions, transcripts, windows) that
+        receive k-NN interpolated displacement from articles.
     mu : mixing parameter, 0=original, 1=fully flattened
     subsample_m : number of representative points for Hungarian
     knn_k : number of neighbors for displacement interpolation
@@ -519,17 +567,18 @@ def flatten_coordinates(
     Returns
     -------
     flat_articles : (N, 2) flattened article coordinates
-    flat_questions : (Q, 2) flattened question coordinates
+    flat_secondary : dict mapping name -> (M, 2) flattened coordinates
     info : dict with diagnostic information
     """
     n_articles = len(article_coords)
-    n_questions = len(question_coords)
+    total_secondary = sum(len(c) for c in secondary_coords.values())
 
     print(f"\n{'=' * 70}")
     print(f"COORDINATE FLATTENING via Approximate Optimal Transport")
     print(f"{'=' * 70}")
     print(f"  Articles:   {n_articles:,}")
-    print(f"  Questions:  {n_questions:,}")
+    for name, coords in secondary_coords.items():
+        print(f"  {name.capitalize():10s}: {len(coords):,}")
     print(f"  mu:         {mu}")
     print(f"  Subsample:  {subsample_m:,}")
     print(f"  k-NN:       {knn_k}")
@@ -580,37 +629,26 @@ def flatten_coordinates(
 
     # ---- Step 5: Interpolate displacements to all points ----
     print(
-        f"\nStep 5/6: Interpolating displacements to {n_articles + n_questions:,} points..."
+        f"\nStep 5/6: Interpolating displacements to {n_articles + total_secondary:,} points..."
     )
 
-    def interpolate_displacements(coords: np.ndarray, label: str) -> np.ndarray:
-        """Apply k-NN weighted displacement interpolation."""
-        dists, idx = tree.query(coords, k=knn_k)
-
-        # Inverse-distance weighting
-        weights = 1.0 / (dists + 1e-10)
-        weights /= weights.sum(axis=1, keepdims=True)
-
-        # Weighted average of displacements
-        # displacements[idx] has shape (N, k, 2), weights has shape (N, k)
-        interp_disp = (weights[:, :, None] * displacements[idx]).sum(axis=1)
-
-        # Apply with mu mixing
-        flat = coords + mu * interp_disp
-        print(
-            f"  {label}: displacement mean={np.mean(np.linalg.norm(mu * interp_disp, axis=1)):.4f}"
+    flat_articles = interpolate_displacement(
+        tree, displacements, article_coords, mu, knn_k, "Articles"
+    )
+    flat_secondary = {}
+    for name, coords in secondary_coords.items():
+        flat_secondary[name] = interpolate_displacement(
+            tree, displacements, coords, mu, knn_k, name.capitalize()
         )
-        return flat
-
-    flat_articles = interpolate_displacements(article_coords, "Articles")
-    flat_questions = interpolate_displacements(question_coords, "Questions")
     print(f"  Done in {time.time() - t0:.1f}s")
 
     # ---- Step 6: Re-normalize to [0, 1] with margin ----
     print(f"\nStep 6/6: Re-normalizing to [0, 1]...")
 
-    # Use article coords to define the normalization (questions follow same transform)
-    all_flat = np.vstack([flat_articles, flat_questions])
+    all_parts = [flat_articles] + [
+        c for c in flat_secondary.values() if len(c) > 0
+    ]
+    all_flat = np.vstack(all_parts)
     xmin, ymin = all_flat.min(axis=0)
     xmax, ymax = all_flat.max(axis=0)
 
@@ -623,16 +661,20 @@ def flatten_coordinates(
         return normed
 
     flat_articles = normalize(flat_articles)
-    flat_questions = normalize(flat_questions)
+    for name in flat_secondary:
+        if len(flat_secondary[name]) > 0:
+            flat_secondary[name] = normalize(flat_secondary[name])
 
     print(
         f"  Articles range: x=[{flat_articles[:, 0].min():.4f}, {flat_articles[:, 0].max():.4f}], "
         f"y=[{flat_articles[:, 1].min():.4f}, {flat_articles[:, 1].max():.4f}]"
     )
-    print(
-        f"  Questions range: x=[{flat_questions[:, 0].min():.4f}, {flat_questions[:, 0].max():.4f}], "
-        f"y=[{flat_questions[:, 1].min():.4f}, {flat_questions[:, 1].max():.4f}]"
-    )
+    for name, coords in flat_secondary.items():
+        if len(coords) > 0:
+            print(
+                f"  {name.capitalize()} range: x=[{coords[:, 0].min():.4f}, {coords[:, 0].max():.4f}], "
+                f"y=[{coords[:, 1].min():.4f}, {coords[:, 1].max():.4f}]"
+            )
 
     info = {
         "mu": mu,
@@ -650,7 +692,7 @@ def flatten_coordinates(
         },
     }
 
-    return flat_articles, flat_questions, info
+    return flat_articles, flat_secondary, info
 
 
 # ---------------------------------------------------------------------------
@@ -710,22 +752,38 @@ def main():
         else project_root / "embeddings"
     )
 
-    article_path = emb_dir / "article_coords.pkl"
-    question_path = emb_dir / "question_coords.pkl"
+    # Input paths (from build_umap.py)
+    article_path = emb_dir / "umap_article_coords.pkl"
+    question_path = emb_dir / "umap_question_coords.pkl"
+    transcript_path = emb_dir / "umap_transcript_coords.pkl"
+    window_path = emb_dir / "umap_window_coords.pkl"
+
+    # Output paths
     output_article_path = emb_dir / "article_coords_flat.pkl"
     output_question_path = emb_dir / "question_coords_flat.pkl"
+    output_transcript_path = emb_dir / "transcript_coords_flat.pkl"
+    output_window_path = emb_dir / "window_coords_flat.pkl"
 
     # Load coordinates
     print("Loading coordinates...")
     with open(article_path, "rb") as f:
-        article_data = pickle.load(f)
+        article_data = pickle.load(f)  # trusted local pipeline data
     with open(question_path, "rb") as f:
-        question_data = pickle.load(f)
+        question_data = pickle.load(f)  # trusted local pipeline data
+    with open(transcript_path, "rb") as f:
+        transcript_data = pickle.load(f)  # trusted local pipeline data
+    with open(window_path, "rb") as f:
+        window_data = pickle.load(f)  # trusted local pipeline data
 
     article_coords = article_data["coords"]
     question_coords = question_data["coords"]
-    print(f"  Articles: {article_coords.shape}")
-    print(f"  Questions: {question_coords.shape}")
+    transcript_coords = transcript_data["coords"]
+    window_coords = window_data["coords"]
+
+    print(f"  Articles:    {article_coords.shape}")
+    print(f"  Questions:   {question_coords.shape}")
+    print(f"  Transcripts: {transcript_coords.shape}")
+    print(f"  Windows:     {window_coords.shape}")
 
     # Density stats (before)
     print("\nComputing density statistics (BEFORE)...")
@@ -743,16 +801,27 @@ def main():
         print("\n--stats-only mode, exiting.")
         return
 
+    # Build secondary coords dict
+    secondary = {
+        "questions": question_coords,
+        "transcripts": transcript_coords,
+        "windows": window_coords,
+    }
+
     # Flatten
-    flat_articles, flat_questions, info = flatten_coordinates(
+    flat_articles, flat_secondary, info = flatten_coordinates(
         article_coords=article_coords,
-        question_coords=question_coords,
+        secondary_coords=secondary,
         mu=args.mu,
         subsample_m=args.subsample,
         knn_k=args.knn,
         margin=args.margin,
         seed=args.seed,
     )
+
+    flat_questions = flat_secondary["questions"]
+    flat_transcripts = flat_secondary["transcripts"]
+    flat_windows = flat_secondary["windows"]
 
     # Density stats (after)
     print("\nComputing density statistics (AFTER)...")
@@ -766,8 +835,10 @@ def main():
     info["density_before"] = stats_before
     info["density_after"] = stats_after
 
-    # Save flattened article coordinates
+    # Save flattened coordinates
     print(f"\nSaving flattened coordinates...")
+
+    # Articles
     flat_article_data = {
         "coords": flat_articles,
         "coords_original": article_coords,
@@ -776,27 +847,75 @@ def main():
         "flatten_params": info,
     }
     with open(output_article_path, "wb") as f:
-        pickle.dump(flat_article_data, f)
+        pickle.dump(flat_article_data, f)  # trusted local pipeline data
     print(
         f"  Saved: {output_article_path} ({output_article_path.stat().st_size / 1e6:.1f} MB)"
     )
 
-    # Save flattened question coordinates
+    # Questions
     flat_question_data = {
         "coords": flat_questions,
         "coords_original": question_coords,
+        "question_ids": question_data.get("question_ids", []),
         "n_points": len(flat_questions),
         "timestamp": datetime.now().isoformat(),
         "flatten_params": info,
     }
     with open(output_question_path, "wb") as f:
-        pickle.dump(flat_question_data, f)
+        pickle.dump(flat_question_data, f)  # trusted local pipeline data
     print(
         f"  Saved: {output_question_path} ({output_question_path.stat().st_size / 1e6:.1f} MB)"
     )
 
+    # Transcripts
+    flat_transcript_data = {
+        "coords": flat_transcripts,
+        "coords_original": transcript_coords,
+        "video_ids": transcript_data.get("video_ids", []),
+        "n_points": len(flat_transcripts),
+        "timestamp": datetime.now().isoformat(),
+        "flatten_params": info,
+    }
+    with open(output_transcript_path, "wb") as f:
+        pickle.dump(flat_transcript_data, f)  # trusted local pipeline data
+    print(
+        f"  Saved: {output_transcript_path} ({output_transcript_path.stat().st_size / 1e6:.1f} MB)"
+    )
+
+    # Windows
+    flat_window_data = {
+        "coords": flat_windows,
+        "coords_original": window_coords,
+        "video_ids": window_data.get("video_ids", []),
+        "window_indices": window_data.get("window_indices", []),
+        "window_offsets": window_data.get("window_offsets", {}),
+        "n_points": len(flat_windows),
+        "timestamp": datetime.now().isoformat(),
+        "flatten_params": info,
+    }
+    with open(output_window_path, "wb") as f:
+        pickle.dump(flat_window_data, f)  # trusted local pipeline data
+    print(
+        f"  Saved: {output_window_path} ({output_window_path.stat().st_size / 1e6:.1f} MB)"
+    )
+
     print(f"\nDone! Flattened coordinates saved with mu={args.mu}")
-    print(f"  To adjust: python scripts/flatten_coordinates.py --mu <value>")
+
+    # Auto-export to domain JSON files
+    # This ensures domain JSONs and index.json bounding boxes stay in sync
+    # with the flattened coordinates. Previously this was a manual step that
+    # was easy to forget (see: 2026-03-04 session where we had to do it by hand).
+    print("\n" + "-" * 70)
+    print("Auto-exporting flattened coordinates to domain JSON files...")
+    print("-" * 70)
+    try:
+        sys.path.insert(0, str(Path(__file__).parent))
+        from export_coords_to_domains import run_export
+        run_export()
+        print("\nPipeline complete! Domain JSONs and index.json are up to date.")
+    except Exception as e:
+        print(f"\nWARNING: Auto-export failed: {e}")
+        print("  Run manually: python scripts/export_coords_to_domains.py")
 
 
 if __name__ == "__main__":

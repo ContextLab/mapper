@@ -1,1 +1,1062 @@
-{"domain":{"id":"psychology","name":"Psychology","parent_id":null,"level":"general","region":{"x_min":0.62885,"x_max":0.685427,"y_min":0.597972,"y_max":0.640372},"grid_size":70},"questions":[{"id":"fb8958ba7bb06337","question_text":"What term describes the internal state that propels individuals to engage in goal-directed behavior, often divided into intrinsic and extrinsic types?","options":{"A":"Perception","B":"Cognition","C":"Motivation","D":"Temperament"},"correct_answer":"C","difficulty":1,"source_article":"Motivation","domain_ids":["psychology"],"concepts_tested":["motivation"],"x":0.811998,"y":0.728777},{"id":"0fd8b6faf491502c","question_text":"Which branch of psychology examines enduring individual differences in characteristic patterns of thinking, feeling, and behaving?","options":{"A":"Social psychology","B":"Cognitive psychology","C":"Developmental psychology","D":"Personality psychology"},"correct_answer":"D","difficulty":1,"source_article":"Personality psychology","domain_ids":["psychology"],"concepts_tested":["personality"],"x":0.810363,"y":0.728015},{"id":"445dc26ca4b643d3","question_text":"In Pavlov's experiments, dogs learned to salivate at the sound of a bell after it was repeatedly paired with food. What is this learning process called?","options":{"A":"Habituation","B":"Classical conditioning","C":"Observational learning","D":"Operant conditioning"},"correct_answer":"B","difficulty":1,"source_article":"Classical conditioning","domain_ids":["psychology"],"concepts_tested":["classical conditioning"],"x":0.809692,"y":0.729196},{"id":"d1f236a27fee5cd9","question_text":"Which type of learning, studied extensively by B.F. Skinner, modifies voluntary behavior through consequences such as reinforcement and punishment?","options":{"A":"Latent learning","B":"Operant conditioning","C":"Classical conditioning","D":"Insight learning"},"correct_answer":"B","difficulty":1,"source_article":"Operant conditioning","domain_ids":["psychology"],"concepts_tested":["operant conditioning"],"x":0.81792,"y":0.735388},{"id":"f8e8ce9fb9a03e6d","question_text":"What are the three major anatomical divisions of the human brain that together serve as the central organ of the nervous system?","options":{"A":"The hypothalamus, the medulla, and the spinal cord","B":"The cerebrum, the brainstem, and the cerebellum","C":"The thalamus, the hippocampus, and the amygdala","D":"The frontal lobe, the parietal lobe, and the temporal lobe"},"correct_answer":"B","difficulty":1,"source_article":"Human brain","domain_ids":["psychology"],"concepts_tested":["the brain"],"x":0.854302,"y":0.726766},{"id":"ae1a359eab4a902b","question_text":"What is the primary cell of the nervous system that transmits electrical signals called action potentials and communicates with other cells via synapses?","options":{"A":"A Schwann cell","B":"A neuron","C":"An astrocyte","D":"A glial cell"},"correct_answer":"B","difficulty":1,"source_article":"Neuron","domain_ids":["psychology"],"concepts_tested":["neuron"],"x":0.82271,"y":0.704478},{"id":"4c9439a30f432962","question_text":"What psychological process involves sensory receptors detecting physical stimuli from the environment and converting them into neural signals through transduction?","options":{"A":"Attention","B":"Perception","C":"Sensation","D":"Consciousness"},"correct_answer":"C","difficulty":1,"source_article":"Sensation (psychology)","domain_ids":["psychology"],"concepts_tested":["sensation"],"x":0.798675,"y":0.720184},{"id":"9534561a08cf38b0","question_text":"What recurring biological state is characterized by reduced consciousness, decreased muscle activity, and alternating cycles of REM and NREM stages?","options":{"A":"Hypnosis","B":"Sleep","C":"Coma","D":"Meditation"},"correct_answer":"B","difficulty":1,"source_article":"Sleep","domain_ids":["psychology"],"concepts_tested":["sleep"],"x":0.861073,"y":0.733098},{"id":"348b83ce7b818931","question_text":"In operant conditioning, what occurs when a desirable stimulus is presented after a behavior, increasing the likelihood that the behavior will be repeated?","options":{"A":"Positive reinforcement","B":"Positive punishment","C":"Negative reinforcement","D":"Negative punishment"},"correct_answer":"A","difficulty":1,"source_article":"Reinforcement","domain_ids":["psychology"],"concepts_tested":["positive reinforcement"],"x":0.811418,"y":0.728234},{"id":"123bcf3785a684c7","question_text":"In operant conditioning, what is the general term for any consequence that reduces the likelihood of a behavior occurring again in the future?","options":{"A":"Habituation","B":"Desensitization","C":"Punishment","D":"Extinction"},"correct_answer":"C","difficulty":1,"source_article":"Punishment (psychology)","domain_ids":["psychology"],"concepts_tested":["punishment"],"x":0.811266,"y":0.727938},{"id":"ebad9d290195cae8","question_text":"Which ethical principle requires psychologists to fully inform research participants about the nature, risks, and benefits of a study before they agree to take part?","options":{"A":"Confidentiality assurance","B":"Institutional review","C":"Informed consent","D":"Participant debriefing"},"correct_answer":"C","difficulty":1,"source_article":"Ethics in psychology","domain_ids":["psychology"],"concepts_tested":["ethics in psychology"],"x":0.815191,"y":0.733852},{"id":"7b171eadda27e695","question_text":"What is the definition of psychology as a scientific discipline?","options":{"A":"The systematic study of social institutions and culture","B":"The medical treatment of mental disorders and illnesses","C":"The philosophical analysis of consciousness and free will","D":"The scientific study of the mind and behavior"},"correct_answer":"D","difficulty":1,"source_article":"Psychology","domain_ids":["psychology"],"concepts_tested":["nature of psychology"],"x":0.809468,"y":0.728848},{"id":"4d6605ed593ebcb3","question_text":"What field of research uses genetic methods such as twin and adoption studies to investigate how hereditary and environmental factors influence individual differences in behavior?","options":{"A":"Developmental neuroscience","B":"Evolutionary psychology","C":"Cognitive neuropsychology","D":"Behavioural genetics"},"correct_answer":"D","difficulty":1,"source_article":"Behavioural genetics","domain_ids":["psychology"],"concepts_tested":["heredity and behavior"],"x":0.808767,"y":0.723422},{"id":"f212b43bf78d6530","question_text":"In Maslow's hierarchy of needs, which level must be satisfied first before an individual can pursue safety, belonging, esteem, and self-actualization?","options":{"A":"Belonging needs such as friendship, family, and intimacy","B":"Esteem needs such as recognition, status, and respect","C":"Physiological needs such as food, water, and sleep","D":"Safety needs such as shelter, employment, and health"},"correct_answer":"C","difficulty":2,"source_article":"Maslow's hierarchy of needs","domain_ids":["psychology"],"concepts_tested":["Maslow's hierarchy of needs"],"x":0.796686,"y":0.718165},{"id":"a2e6ee7ad536d935","question_text":"In the Big Five personality model (OCEAN), which trait describes a person's tendency toward depression, irritability, and proneness to anxiety?","options":{"A":"Neuroticism","B":"Agreeableness","C":"Openness","D":"Conscientiousness"},"correct_answer":"A","difficulty":2,"source_article":"Big Five personality traits","domain_ids":["psychology"],"concepts_tested":["Big Five personality traits"],"x":0.804961,"y":0.721213},{"id":"28cd3175d8e93150","question_text":"What are the chemical signaling molecules called that are released from synaptic vesicles into the synaptic cleft to transmit signals between neurons?","options":{"A":"Neuromodulators","B":"Neuropeptides","C":"Neurohormones","D":"Neurotransmitters"},"correct_answer":"D","difficulty":2,"source_article":"Neurotransmitter","domain_ids":["psychology"],"concepts_tested":["neurotransmitter"],"x":0.816658,"y":0.694188},{"id":"32c4886f3055d2ab","question_text":"Which subfield of psychology, also known as biological psychology or psychobiology, focuses on the biological and neural substrates underlying behavior and mental processes?","options":{"A":"Computational neuroscience, also called neural modeling","B":"Behavioral neuroscience, also called biopsychology","C":"Clinical neuropsychology, also called brain pathology","D":"Cognitive neuroscience, also called mind science"},"correct_answer":"B","difficulty":2,"source_article":"Behavioral neuroscience","domain_ids":["psychology"],"concepts_tested":["biopsychology"],"x":0.809404,"y":0.728086},{"id":"37d26d8d9514f390","question_text":"Which applied branch of psychology focuses on studying human behavior in the workplace, including employee selection, training, performance evaluation, and organizational development?","options":{"A":"Human factors engineering psychology","B":"Industrial-organizational psychology","C":"Management and leadership psychology","D":"Occupational health psychology"},"correct_answer":"B","difficulty":2,"source_article":"Industrial and organizational psychology","domain_ids":["psychology"],"concepts_tested":["industrial-organizational psychology"],"x":0.813048,"y":0.730863},{"id":"b2e7546076c893fe","question_text":"Which subfield of psychology examines how biological, psychological, and social factors influence health, illness, and health-related behaviors using the biopsychosocial model?","options":{"A":"Psychiatric epidemiology","B":"Behavioral medicine","C":"Clinical psychology","D":"Health psychology"},"correct_answer":"D","difficulty":2,"source_article":"Health psychology","domain_ids":["psychology"],"concepts_tested":["health psychology"],"x":0.811807,"y":0.728049},{"id":"7c3d2f50739e77a0","question_text":"Which branch of psychology studies how people learn in educational settings and aims to improve teaching effectiveness through the application of psychological research?","options":{"A":"Educational psychology","B":"Instructional design theory","C":"Developmental psychology","D":"School counseling psychology"},"correct_answer":"A","difficulty":2,"source_article":"Educational psychology","domain_ids":["psychology"],"concepts_tested":["educational psychology"],"x":0.808627,"y":0.726748},{"id":"a138f25f0bac06ab","question_text":"Which branch of psychology applies scientific knowledge and methods to assist in answering legal questions, including evaluating competency to stand trial and assessing eyewitness testimony?","options":{"A":"Forensic psychology","B":"Social psychology","C":"Clinical psychology","D":"Criminal psychology"},"correct_answer":"A","difficulty":2,"source_article":"Forensic psychology","domain_ids":["psychology"],"concepts_tested":["forensic psychology"],"x":0.861663,"y":0.751596},{"id":"1b06c1732ee8a6f2","question_text":"Which field of psychology, founded by Gustav Fechner in 1860, quantitatively investigates the relationship between physical stimuli and the sensations and perceptions they produce?","options":{"A":"Psychophysics","B":"Sensory neuroscience","C":"Cognitive psychology","D":"Neuropsychology"},"correct_answer":"A","difficulty":2,"source_article":"Psychophysics","domain_ids":["psychology"],"concepts_tested":["psychophysics"],"x":0.804354,"y":0.72759},{"id":"da0f8e1eb13d16d8","question_text":"What is the name of the approximately 24-hour biological cycle, regulated by the suprachiasmatic nucleus in the hypothalamus, that governs sleep-wake patterns and hormone release?","options":{"A":"The diurnal cycle","B":"The circadian rhythm","C":"The infradian rhythm","D":"The ultradian rhythm"},"correct_answer":"B","difficulty":2,"source_article":"Circadian rhythm","domain_ids":["psychology"],"concepts_tested":["circadian rhythm"],"x":0.823169,"y":0.705559},{"id":"ea41458887407ed9","question_text":"Albert Bandura's 1961 Bobo doll experiment demonstrated that children learn aggressive behaviors by watching others. What is this type of learning called?","options":{"A":"Operant conditioning","B":"Latent learning","C":"Observational learning","D":"Classical conditioning"},"correct_answer":"C","difficulty":2,"source_article":"Observational learning","domain_ids":["psychology"],"concepts_tested":["observational learning"],"x":0.810775,"y":0.728342},{"id":"c26d56504af87874","question_text":"In psychological research, which type of study design investigates relationships between variables without the researcher manipulating any of them, meaning it cannot establish causation?","options":{"A":"An experimental research design","B":"A quasi-experimental research design","C":"A correlational research design","D":"A longitudinal research design"},"correct_answer":"C","difficulty":2,"source_article":"Research methods in psychology","domain_ids":["psychology"],"concepts_tested":["research methods in psychology"],"x":0.801233,"y":0.726781},{"id":"0647f6c15248c5bd","question_text":"Who established the first formal laboratory dedicated to psychological research in 1879 at the University of Leipzig, marking the founding of psychology as an independent experimental science?","options":{"A":"Sigmund Freud","B":"Wilhelm Wundt","C":"Hermann Ebbinghaus","D":"William James"},"correct_answer":"B","difficulty":2,"source_article":"History of psychology","domain_ids":["psychology"],"concepts_tested":["history of psychology"],"x":0.804143,"y":0.728504},{"id":"07ac368c5ea58907","question_text":"In evolutionary psychology, what term refers to the set of ancestral environmental conditions, primarily during the Pleistocene era, that shaped human psychological adaptations through natural selection?","options":{"A":"The Phylogenetic Development Context (PDC)","B":"The Adaptive Fitness Landscape (AFL)","C":"The Ancestral Selection Pressure Zone (ASPZ)","D":"The Environment of Evolutionary Adaptedness (EEA)"},"correct_answer":"D","difficulty":3,"source_article":"Evolutionary psychology","domain_ids":["psychology"],"concepts_tested":["evolutionary psychology"],"x":0.824497,"y":0.701683},{"id":"fe7cb0b9bec16f76","question_text":"In psychometrics, what property indicates that a test measures the construct it is intended to measure, as demonstrated by its relationship to measures of other theoretically related constructs?","options":{"A":"Test-retest reliability","B":"Construct validity","C":"Content specificity","D":"Internal consistency"},"correct_answer":"B","difficulty":3,"source_article":"Psychometrics","domain_ids":["psychology"],"concepts_tested":["psychometrics"],"x":0.801889,"y":0.727812},{"id":"a7324c0a8fa509ca","question_text":"Martin Seligman's PERMA model identifies five key elements of well-being. Which of the following correctly lists all five elements of this positive psychology framework?","options":{"A":"Positivity, Endurance, Reflection, Mastery, and Autonomy","B":"Pleasure, Empathy, Resilience, Mindfulness, and Achievement","C":"Purpose, Enjoyment, Relatedness, Motivation, and Acceptance","D":"Positive emotions, Engagement, Relationships, Meaning, and Accomplishment"},"correct_answer":"D","difficulty":3,"source_article":"Positive psychology","domain_ids":["psychology"],"concepts_tested":["positive psychology"],"x":0.809332,"y":0.72481},{"id":"66ef80cb25e9c01b","question_text":"In sport psychology, which set of core techniques does Psychological Skills Training (PST) typically encompass to enhance athletic performance?","options":{"A":"Self-talk, mental imagery, goal setting, and arousal regulation","B":"Diet planning, sleep optimization, flexibility training, and meditation","C":"Team communication, leadership coaching, conflict resolution, and journaling","D":"Biofeedback therapy, hypnosis, progressive relaxation, and psychoanalysis"},"correct_answer":"A","difficulty":3,"source_article":"Sport psychology","domain_ids":["psychology"],"concepts_tested":["sport psychology"],"x":0.811073,"y":0.727449},{"id":"23c9da9f63c738bd","question_text":"In twin studies, what comparison between monozygotic and dizygotic twins allows researchers to estimate the heritability of a behavioral trait?","options":{"A":"Equal concordance in both twin types regardless of rearing environment indicates the trait is heritable","B":"Lower concordance in monozygotic twins raised apart than dizygotic twins raised together confirms heritability","C":"Higher concordance in monozygotic than dizygotic twins suggests genetic influence on the trait","D":"Higher concordance in dizygotic twins than monozygotic twins suggests shared environment is primary"},"correct_answer":"C","difficulty":3,"source_article":"Twin study","domain_ids":["psychology"],"concepts_tested":["behavioral genetics methodology"],"x":0.815695,"y":0.721199},{"id":"6acc3356739843c8","question_text":"What is the fundamental difference between structural and functional neuroimaging techniques?","options":{"A":"Structural imaging reveals brain anatomy, while functional imaging measures brain activity during tasks","B":"Structural imaging is entirely non-invasive, while functional imaging requires surgical electrode implantation","C":"Structural imaging examines individual neurons, while functional imaging examines entire brain hemispheres","D":"Structural imaging uses magnetic fields exclusively, while functional imaging relies on radioactive tracers"},"correct_answer":"A","difficulty":3,"source_article":"Neuroimaging","domain_ids":["psychology"],"concepts_tested":["neuroimaging"],"x":0.863641,"y":0.739035},{"id":"eb5b1311d52efc84","question_text":"In cross-cultural psychology, what methodological challenge arises when using the same psychological instrument across different cultural populations?","options":{"A":"Ensuring construct equivalence \u2014 that the instrument measures the same psychological construct in each culture","B":"Achieving sample saturation \u2014 ensuring enough participants from each culture to reach adequate statistical power","C":"Maintaining temporal consistency \u2014 ensuring the instrument produces stable results at different administration times","D":"Guaranteeing language fluency \u2014 ensuring all participants read the translated instrument at native proficiency level"},"correct_answer":"A","difficulty":3,"source_article":"Cross-cultural psychology","domain_ids":["psychology"],"concepts_tested":["cross-cultural psychology"],"x":0.808467,"y":0.730604},{"id":"cf8775961c000d8e","question_text":"Through what physiological mechanism does the hypothalamic-pituitary-adrenal (HPA) axis influence behavior during a stress response?","options":{"A":"The HPA axis releases dopamine from the prefrontal cortex, enhancing reward-seeking behavior under acute pressure","B":"The HPA axis triggers cortisol release from the adrenal glands, affecting mood, cognition, and arousal","C":"The HPA axis suppresses serotonin production in the brainstem, causing heightened aggression and sustained vigilance","D":"The HPA axis directly stimulates motor neurons in the spinal cord, producing involuntary fight-or-flight movements"},"correct_answer":"B","difficulty":3,"source_article":"Endocrine system","domain_ids":["psychology"],"concepts_tested":["endocrine system and behavior"],"x":0.844671,"y":0.724403},{"id":"74a03a85681b61c5","question_text":"According to Deci and Ryan's self-determination theory, what three innate psychological needs must be satisfied for optimal motivation and well-being?","options":{"A":"Safety, belonging, and self-actualization","B":"Autonomy, competence, and relatedness","C":"Achievement, affiliation, and power","D":"Pleasure, engagement, and meaning"},"correct_answer":"B","difficulty":3,"source_article":"Self-determination theory","domain_ids":["psychology"],"concepts_tested":["self-determination theory"],"x":0.786934,"y":0.713483},{"id":"a97bc92963b2653f","question_text":"In psychometrics, what type of reliability is assessed by correlating scores from two equivalent forms of a test administered to the same group?","options":{"A":"Internal consistency (split-half reliability)","B":"Parallel-forms reliability (alternate-forms reliability)","C":"Test-retest reliability (temporal stability)","D":"Inter-rater reliability (scorer consistency)"},"correct_answer":"B","difficulty":3,"source_article":"Reliability (psychometrics)","domain_ids":["psychology"],"concepts_tested":["reliability and validity"],"x":0.810434,"y":0.732092},{"id":"5ae085cd5cf93e9c","question_text":"What distinguishes comparative psychology from ethology in the study of animal behavior, particularly in methodology?","options":{"A":"Comparative psychology studies only primates, while ethology examines all vertebrate and invertebrate species equally","B":"Comparative psychology emphasizes controlled laboratory experiments, while ethology prioritizes observing natural behavior in the field","C":"Comparative psychology focuses exclusively on learned behaviors, while ethology assumes all behavior is genetically innate","D":"Comparative psychology uses qualitative case studies, while ethology relies on purely quantitative statistical analysis"},"correct_answer":"B","difficulty":3,"source_article":"Comparative psychology","domain_ids":["psychology"],"concepts_tested":["comparative psychology"],"x":0.814896,"y":0.728074},{"id":"60e9c6b009e767b6","question_text":"In resilience research, what does Ann Masten's concept of 'ordinary magic' suggest about the nature of psychological resilience?","options":{"A":"Resilience arises from common adaptive systems like supportive relationships and self-regulation, not extraordinary traits","B":"Resilience develops only through direct exposure to severe adversity that activates dormant psychological defense mechanisms","C":"Resilience is a rare genetic trait appearing unpredictably in certain individuals regardless of their social environment","D":"Resilience requires deliberate professional therapeutic intervention and cannot emerge through natural developmental processes"},"correct_answer":"A","difficulty":3,"source_article":"Psychological resilience","domain_ids":["psychology"],"concepts_tested":["psychological resilience"],"x":0.795689,"y":0.717853},{"id":"e0035f63c314452d","question_text":"In item response theory, what does the item characteristic curve (ICC) model, and what are its parameters in the two-parameter logistic model?","options":{"A":"The ICC models response time as a function of item complexity, parameterized by processing speed and accuracy thresholds","B":"The ICC models probability of a correct response as a function of ability, with discrimination and difficulty parameters","C":"The ICC models item selection frequency as a function of test anxiety, parameterized by avoidance and engagement levels","D":"The ICC models score variance as a function of group membership, parameterized by mean difference and distribution overlap"},"correct_answer":"B","difficulty":4,"source_article":"Item response theory","domain_ids":["psychology"],"concepts_tested":["item response theory"],"x":0.779166,"y":0.716355},{"id":"7a4260597b0101c4","question_text":"What capability distinguishes structural equation modeling (SEM) from standard multiple regression in analyzing relationships among variables?","options":{"A":"SEM transforms ordinal observed variables into continuous scales through automated item response theory calibration","B":"SEM uses nonparametric bootstrapping to eliminate all assumptions about the distribution of observed variables","C":"SEM applies Bayesian priors to constrain parameter estimates based on the researcher's prior theoretical expectations","D":"SEM simultaneously estimates relationships among multiple latent variables while accounting for measurement error"},"correct_answer":"D","difficulty":4,"source_article":"Structural equation modeling","domain_ids":["psychology"],"concepts_tested":["structural equation modeling"],"x":0.79471,"y":0.734471},{"id":"33f2b977a4d71dd4","question_text":"In gene-environment interaction research, which model proposes that individuals with a genetic predisposition develop a disorder only when exposed to sufficient environmental stress?","options":{"A":"The bioecological systems model","B":"The differential susceptibility model","C":"The epigenetic accumulation model","D":"The diathesis-stress model"},"correct_answer":"D","difficulty":4,"source_article":"Gene\u2013environment interaction","domain_ids":["psychology"],"concepts_tested":["gene-environment interaction"],"x":0.829934,"y":0.723158},{"id":"aa958f8db2bf426d","question_text":"Robert Ader and Nicholas Cohen founded psychoneuroimmunology in 1975 by demonstrating what key phenomenon in laboratory rats using saccharin-laced water paired with Cytoxan?","options":{"A":"That neurotransmitter depletion triggers autoimmune responses","B":"That stress hormones directly suppress white blood cell counts","C":"That immune responses could be classically conditioned","D":"That learned helplessness causes chronic immune system activation"},"correct_answer":"C","difficulty":4,"source_article":"Psychoneuroimmunology","domain_ids":["psychology"],"concepts_tested":["psychoneuroimmunology"],"x":0.770807,"y":0.713844},{"id":"481793782042ed5c","question_text":"Ecological momentary assessment (EMA) collects data through repeated real-time sampling in natural environments. What is its primary methodological advantage over traditional retrospective questionnaires?","options":{"A":"It removes individual differences in response style bias","B":"It eliminates the need for informed consent procedures","C":"It increases statistical power through larger sample sizes","D":"It minimizes recall bias and maximizes ecological validity"},"correct_answer":"D","difficulty":4,"source_article":"Ecological momentary assessment","domain_ids":["psychology"],"concepts_tested":["ecological momentary assessment"],"x":0.836757,"y":0.731635},{"id":"7f6803f4ddeb1d4c","question_text":"The Weber-Fechner law states that perceived stimulus intensity increases as a logarithmic function of physical intensity. Which later psychophysical law challenged this by proposing a power function instead?","options":{"A":"Bloch's temporal summation law","B":"Hick's law of choice reaction time","C":"Ricco's spatial summation law","D":"Stevens' power law"},"correct_answer":"D","difficulty":4,"source_article":"Weber\u2013Fechner law","domain_ids":["psychology"],"concepts_tested":["Weber-Fechner law"],"x":0.825666,"y":0.744598},{"id":"c59aece74cf0ba34","question_text":"In meta-analysis, which statistic quantifies the percentage of variability in effect sizes across studies that is attributable to true heterogeneity rather than sampling error?","options":{"A":"The Q-statistic of overall homogeneity","B":"The I-squared (I\u00b2) statistic","C":"The fail-safe N for publication bias","D":"The tau-squared between-study variance estimate"},"correct_answer":"B","difficulty":4,"source_article":"Meta-analysis","domain_ids":["psychology"],"concepts_tested":["meta-analysis in psychology"],"x":0.80669,"y":0.777324},{"id":"3feb5ba1671d5561","question_text":"In signal detection theory, what measure quantifies an observer's ability to discriminate between signal and noise, independent of their response bias?","options":{"A":"Beta, the likelihood ratio criterion","B":"The false alarm rate at threshold","C":"d-prime (d'), the sensitivity index","D":"The area under the ROC curve alone"},"correct_answer":"C","difficulty":4,"source_article":"Detection theory","domain_ids":["psychology"],"concepts_tested":["signal detection theory applications in psychology"],"x":0.816225,"y":0.744123},{"id":"3dc0d8385bcfdbc2","question_text":"In Bayesian statistics applied to psychology, what quantity represents the ratio of evidence for one statistical model over another, serving as an alternative to p-values?","options":{"A":"The prior predictive density","B":"The posterior odds ratio","C":"The credible interval width","D":"The Bayes factor"},"correct_answer":"D","difficulty":4,"source_article":"Bayesian statistics","domain_ids":["psychology"],"concepts_tested":["Bayesian statistics in psychology"],"x":0.852301,"y":0.771616},{"id":"c4eea9e5e04cc17e","question_text":"Long-term potentiation (LTP) in the hippocampus requires activation of which receptor that acts as a coincidence detector, being unblocked only when glutamate binding and postsynaptic depolarization occur simultaneously?","options":{"A":"The GABA-A (gamma-aminobutyric acid type A) receptor","B":"The NMDA (N-methyl-D-aspartate) receptor","C":"The AMPA (alpha-amino-3-hydroxy-5-methyl-4-isoxazolepropionic acid) receptor","D":"The metabotropic glutamate receptor subtype mGluR5"},"correct_answer":"B","difficulty":4,"source_article":"Long-term potentiation","domain_ids":["psychology"],"concepts_tested":["long-term potentiation"],"x":0.829417,"y":0.709129},{"id":"17b8da8e4559dac2","question_text":"Kahneman and Tversky's prospect theory, a cornerstone of behavioral economics, describes how people evaluate outcomes relative to a reference point. What key asymmetry does the theory's value function demonstrate?","options":{"A":"Gains are evaluated more slowly than losses due to cognitive load differences","B":"Small losses are ignored while small gains are overweighted in decisions","C":"Repeated gains diminish in value faster than repeated losses accumulate","D":"Losses loom larger than equivalent gains, a phenomenon called loss aversion"},"correct_answer":"D","difficulty":4,"source_article":"Behavioral economics","domain_ids":["psychology"],"concepts_tested":["behavioral economics"],"x":0.715842,"y":0.667894},{"id":"f131d3880ce90268","question_text":"The Reproducibility Project in psychology attempted to replicate 100 published studies. Approximately what percentage of the original statistically significant findings were successfully replicated?","options":{"A":"About 50 percent of the original findings replicated successfully","B":"About 36 percent of the original findings replicated successfully","C":"About 62 percent of the original findings replicated successfully","D":"About 75 percent of the original findings replicated successfully"},"correct_answer":"B","difficulty":4,"source_article":"Replication crisis","domain_ids":["psychology"],"concepts_tested":["replication crisis in psychology"],"x":0.776465,"y":0.713065}],"labels":[],"articles":[]}
+{
+  "domain": {
+    "id": "psychology",
+    "name": "Psychology",
+    "parent_id": null,
+    "level": "general",
+    "region": {
+      "x_min": 0.362437,
+      "x_max": 0.84092,
+      "y_min": 0.087404,
+      "y_max": 0.786642
+    },
+    "grid_size": 70
+  },
+  "questions": [
+    {
+      "id": "5ada5f0ea0fa135b",
+      "question_text": "What psychological concept describes the drive that energizes goal-directed behavior?",
+      "options": {
+        "A": "Motivation",
+        "B": "Perception",
+        "C": "Temperament",
+        "D": "Cognition"
+      },
+      "correct_answer": "A",
+      "difficulty": 1,
+      "source_article": "Motivation",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "motivation"
+      ],
+      "x": 0.520944,
+      "y": 0.44088
+    },
+    {
+      "id": "57e15da7429fec02",
+      "question_text": "Which branch of psychology studies enduring patterns of thinking, feeling, and behaving?",
+      "options": {
+        "A": "Social psychology",
+        "B": "Personality psychology",
+        "C": "Cognitive psychology",
+        "D": "Developmental psychology"
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Personality psychology",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "personality"
+      ],
+      "x": 0.434514,
+      "y": 0.258542
+    },
+    {
+      "id": "97e8502b62f168c9",
+      "question_text": "What type of learning occurs when a neutral stimulus becomes associated with an automatic response?",
+      "options": {
+        "A": "Operant conditioning",
+        "B": "Habituation",
+        "C": "Classical conditioning",
+        "D": "Observational learning"
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Classical conditioning",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "classical conditioning"
+      ],
+      "x": 0.624966,
+      "y": 0.340147
+    },
+    {
+      "id": "3d9f56f275c6c888",
+      "question_text": "Which type of learning modifies voluntary behavior through rewards and punishments?",
+      "options": {
+        "A": "Classical conditioning",
+        "B": "Insight learning",
+        "C": "Latent learning",
+        "D": "Operant conditioning"
+      },
+      "correct_answer": "D",
+      "difficulty": 1,
+      "source_article": "Operant conditioning",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "operant conditioning"
+      ],
+      "x": 0.618883,
+      "y": 0.34776
+    },
+    {
+      "id": "276248a848911a11",
+      "question_text": "What are the three major anatomical divisions of the human brain?",
+      "options": {
+        "A": "Cerebrum, brainstem, cerebellum",
+        "B": "Thalamus, hippocampus, amygdala",
+        "C": "Cortex, striatum, midbrain",
+        "D": "Hypothalamus, medulla, pons"
+      },
+      "correct_answer": "A",
+      "difficulty": 1,
+      "x": 0.672646,
+      "y": 0.179427
+    },
+    {
+      "id": "109711100b9f88bb",
+      "question_text": "What is the primary cell type in the nervous system that transmits electrical signals?",
+      "options": {
+        "A": "Astrocyte",
+        "B": "Neuron",
+        "C": "Schwann cell",
+        "D": "Glial cell"
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Neuron",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "neuron"
+      ],
+      "x": 0.761313,
+      "y": 0.106264
+    },
+    {
+      "id": "2fc714fed786c30c",
+      "question_text": "What process involves detecting physical stimuli and converting them into neural signals?",
+      "options": {
+        "A": "Attention",
+        "B": "Perception",
+        "C": "Sensation",
+        "D": "Consciousness"
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Sensation (psychology)",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "sensation"
+      ],
+      "x": 0.731027,
+      "y": 0.251114
+    },
+    {
+      "id": "41dbb3f7d8e0bbad",
+      "question_text": "Which recurring biological state features alternating REM and NREM cycles?",
+      "options": {
+        "A": "Meditation",
+        "B": "Hypnosis",
+        "C": "Coma",
+        "D": "Sleep"
+      },
+      "correct_answer": "D",
+      "difficulty": 1,
+      "source_article": "Sleep",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "sleep"
+      ],
+      "x": 0.720937,
+      "y": 0.177214
+    },
+    {
+      "id": "727e6895c65e80c9",
+      "question_text": "A dog receives a treat each time it sits on command and sits more often. What operant process is at work?",
+      "options": {
+        "A": "Positive reinforcement",
+        "B": "Positive punishment",
+        "C": "Negative reinforcement",
+        "D": "Negative punishment"
+      },
+      "correct_answer": "A",
+      "difficulty": 1,
+      "source_article": "Reinforcement",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "positive reinforcement"
+      ],
+      "x": 0.626087,
+      "y": 0.344376
+    },
+    {
+      "id": "6edc9c90390b4f31",
+      "question_text": "A child stops drawing on walls after losing screen time. Which operant concept explains this?",
+      "options": {
+        "A": "Extinction",
+        "B": "Punishment",
+        "C": "Desensitization",
+        "D": "Habituation"
+      },
+      "correct_answer": "B",
+      "difficulty": 1,
+      "source_article": "Punishment (psychology)",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "punishment"
+      ],
+      "x": 0.614669,
+      "y": 0.343253
+    },
+    {
+      "id": "b973c6f10dd33744",
+      "question_text": "Which ethical principle requires researchers to explain risks to participants before they agree to join a study?",
+      "options": {
+        "A": "Confidentiality assurance",
+        "B": "Institutional review",
+        "C": "Informed consent",
+        "D": "Participant debriefing"
+      },
+      "correct_answer": "C",
+      "difficulty": 1,
+      "source_article": "Ethics in psychology",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "ethics in psychology"
+      ],
+      "x": 0.454071,
+      "y": 0.633047
+    },
+    {
+      "id": "432cb8e60eff61f9",
+      "question_text": "What discipline scientifically studies the mind and behavior?",
+      "options": {
+        "A": "Sociology",
+        "B": "Psychiatry",
+        "C": "Philosophy",
+        "D": "Psychology"
+      },
+      "correct_answer": "D",
+      "difficulty": 1,
+      "source_article": "Psychology",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "nature of psychology"
+      ],
+      "x": 0.435909,
+      "y": 0.278226
+    },
+    {
+      "id": "fb8ba7fc5f3cefb7",
+      "question_text": "What field studies how heredity and environment shape individual differences in behavior?",
+      "options": {
+        "A": "Behavioural genetics",
+        "B": "Evolutionary psychology",
+        "C": "Developmental neuroscience",
+        "D": "Cognitive neuropsychology"
+      },
+      "correct_answer": "A",
+      "difficulty": 1,
+      "source_article": "Behavioural genetics",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "heredity and behavior"
+      ],
+      "x": 0.425967,
+      "y": 0.263537
+    },
+    {
+      "id": "636e49b0579b32f2",
+      "question_text": "In Maslow's hierarchy, which needs must be met before safety, belonging, or esteem needs?",
+      "options": {
+        "A": "Aesthetic needs",
+        "B": "Physiological needs",
+        "C": "Cognitive needs",
+        "D": "Transcendence needs"
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Maslow's hierarchy of needs",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "Maslow's hierarchy of needs"
+      ],
+      "x": 0.51006,
+      "y": 0.494035
+    },
+    {
+      "id": "09cf3d7c07357b9a",
+      "question_text": "In the Big Five model, which trait best predicts vulnerability to stress-related disorders?",
+      "options": {
+        "A": "Openness",
+        "B": "Agreeableness",
+        "C": "Neuroticism",
+        "D": "Conscientiousness"
+      },
+      "correct_answer": "C",
+      "difficulty": 2,
+      "source_article": "Big Five personality traits",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "Big Five personality traits"
+      ],
+      "x": 0.510168,
+      "y": 0.267616
+    },
+    {
+      "id": "7554843c3750429e",
+      "question_text": "Which molecules carry signals across the synaptic cleft between neurons?",
+      "options": {
+        "A": "Hormones",
+        "B": "Enzymes",
+        "C": "Cytokines",
+        "D": "Neurotransmitters"
+      },
+      "correct_answer": "D",
+      "difficulty": 2,
+      "source_article": "Neurotransmitter",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "neurotransmitter"
+      ],
+      "x": 0.763663,
+      "y": 0.092404
+    },
+    {
+      "id": "5ebe77706e20d6ad",
+      "question_text": "Which psychology subfield examines how brain and biology underlie behavior?",
+      "options": {
+        "A": "Behavioral neuroscience",
+        "B": "Cognitive neuroscience",
+        "C": "Clinical neuropsychology",
+        "D": "Computational neuroscience"
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "Behavioral neuroscience",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "biopsychology"
+      ],
+      "x": 0.431235,
+      "y": 0.256162
+    },
+    {
+      "id": "437f55ee136219e1",
+      "question_text": "Which branch of psychology applies research to employee selection, training, and workplace performance?",
+      "options": {
+        "A": "Occupational health psychology",
+        "B": "Industrial-organizational psychology",
+        "C": "Human factors psychology",
+        "D": "Management psychology"
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Industrial and organizational psychology",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "industrial-organizational psychology"
+      ],
+      "x": 0.420181,
+      "y": 0.270863
+    },
+    {
+      "id": "7cd1a9bf87ca7545",
+      "question_text": "Which subfield uses the biopsychosocial model to study how psychological factors influence illness?",
+      "options": {
+        "A": "Clinical psychology",
+        "B": "Psychiatric epidemiology",
+        "C": "Health psychology",
+        "D": "Behavioral medicine"
+      },
+      "correct_answer": "C",
+      "difficulty": 2,
+      "source_article": "Health psychology",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "health psychology"
+      ],
+      "x": 0.419715,
+      "y": 0.255375
+    },
+    {
+      "id": "90be5821ecba2933",
+      "question_text": "Which branch of psychology researches how instructional methods affect student learning?",
+      "options": {
+        "A": "Developmental psychology",
+        "B": "School counseling",
+        "C": "Instructional design",
+        "D": "Educational psychology"
+      },
+      "correct_answer": "D",
+      "difficulty": 2,
+      "source_article": "Educational psychology",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "educational psychology"
+      ],
+      "x": 0.423577,
+      "y": 0.260987
+    },
+    {
+      "id": "b053c0b14c7b26cd",
+      "question_text": "Which psychology branch assists courts with competency evaluations and eyewitness reliability?",
+      "options": {
+        "A": "Forensic psychology",
+        "B": "Social psychology",
+        "C": "Criminal psychology",
+        "D": "Clinical psychology"
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "Forensic psychology",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "forensic psychology"
+      ],
+      "x": 0.392436,
+      "y": 0.264157
+    },
+    {
+      "id": "3f920defc4926c47",
+      "question_text": "Which field quantifies the relationship between physical stimulus intensity and perceived sensation?",
+      "options": {
+        "A": "Neuropsychology",
+        "B": "Psychophysics",
+        "C": "Cognitive psychology",
+        "D": "Sensory neuroscience"
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "Psychophysics",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "psychophysics"
+      ],
+      "x": 0.727718,
+      "y": 0.285339
+    },
+    {
+      "id": "62486d2fbd9b18bd",
+      "question_text": "What approximately 24-hour biological cycle governs sleep-wake patterns in humans?",
+      "options": {
+        "A": "Ultradian rhythm",
+        "B": "Infradian rhythm",
+        "C": "Circadian rhythm",
+        "D": "Diurnal cycle"
+      },
+      "correct_answer": "C",
+      "difficulty": 2,
+      "source_article": "Circadian rhythm",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "circadian rhythm"
+      ],
+      "x": 0.699079,
+      "y": 0.186799
+    },
+    {
+      "id": "71cb0bc222318daa",
+      "question_text": "A child copies an aggressive act after seeing an adult perform it. Which learning type explains this?",
+      "options": {
+        "A": "Classical conditioning",
+        "B": "Latent learning",
+        "C": "Operant conditioning",
+        "D": "Observational learning"
+      },
+      "correct_answer": "D",
+      "difficulty": 2,
+      "source_article": "Observational learning",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "observational learning"
+      ],
+      "x": 0.61078,
+      "y": 0.35075
+    },
+    {
+      "id": "0181e2487e013cb3",
+      "question_text": "Which research design measures relationships between variables without manipulating them?",
+      "options": {
+        "A": "Correlational",
+        "B": "Longitudinal",
+        "C": "Quasi-experimental",
+        "D": "Experimental"
+      },
+      "correct_answer": "A",
+      "difficulty": 2,
+      "source_article": "Research methods in psychology",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "research methods in psychology"
+      ],
+      "x": 0.600306,
+      "y": 0.706861
+    },
+    {
+      "id": "417a67c567271257",
+      "question_text": "Which psychologist's 1879 laboratory marked psychology's founding as an experimental science?",
+      "options": {
+        "A": "William James",
+        "B": "Wilhelm Wundt",
+        "C": "Hermann Ebbinghaus",
+        "D": "Sigmund Freud"
+      },
+      "correct_answer": "B",
+      "difficulty": 2,
+      "source_article": "History of psychology",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "history of psychology"
+      ],
+      "x": 0.468933,
+      "y": 0.296409
+    },
+    {
+      "id": "7c86c31e5f717911",
+      "question_text": "Evolutionary psychologists argue that human cognition was shaped by Pleistocene conditions. What is this ancestral baseline called?",
+      "options": {
+        "A": "Adaptive landscape",
+        "B": "Selection gradient",
+        "C": "Evolutionary adaptedness",
+        "D": "Fitness valley"
+      },
+      "correct_answer": "C",
+      "difficulty": 3,
+      "source_article": "Evolutionary psychology",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "evolutionary psychology"
+      ],
+      "x": 0.367437,
+      "y": 0.183808
+    },
+    {
+      "id": "c38be93cb835f35f",
+      "question_text": "A depression scale correlates with clinician ratings but not with a math test. Which psychometric property does this pattern support?",
+      "options": {
+        "A": "Internal consistency",
+        "B": "Content specificity",
+        "C": "Test-retest reliability",
+        "D": "Construct validity"
+      },
+      "correct_answer": "D",
+      "difficulty": 3,
+      "source_article": "Psychometrics",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "psychometrics"
+      ],
+      "x": 0.597175,
+      "y": 0.342783
+    },
+    {
+      "id": "495205c1cd480df1",
+      "question_text": "According to Seligman's PERMA model, which element involves losing oneself in an absorbing activity?",
+      "options": {
+        "A": "Engagement",
+        "B": "Accomplishment",
+        "C": "Meaning",
+        "D": "Positive emotion"
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "Positive psychology",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "positive psychology"
+      ],
+      "x": 0.51053,
+      "y": 0.447803
+    },
+    {
+      "id": "aaa29b6029f0ebea",
+      "question_text": "Which Psychological Skills Training technique involves athletes rehearsing performance in their mind?",
+      "options": {
+        "A": "Arousal regulation",
+        "B": "Mental imagery",
+        "C": "Goal setting",
+        "D": "Self-talk"
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Sport psychology",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "sport psychology"
+      ],
+      "x": 0.678635,
+      "y": 0.299623
+    },
+    {
+      "id": "eb93bc4ea9730a40",
+      "question_text": "In twin studies, what concordance pattern suggests a trait has genetic influence?",
+      "options": {
+        "A": "Higher dizygotic",
+        "B": "Equal concordance",
+        "C": "Higher monozygotic",
+        "D": "Lower overall"
+      },
+      "correct_answer": "C",
+      "difficulty": 3,
+      "source_article": "Twin study",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "behavioral genetics methodology"
+      ],
+      "x": 0.449068,
+      "y": 0.13779
+    },
+    {
+      "id": "3355247d61cb1d0b",
+      "question_text": "What does functional neuroimaging measure that structural neuroimaging does not?",
+      "options": {
+        "A": "Tissue density",
+        "B": "Lesion location",
+        "C": "Skull thickness",
+        "D": "Brain activity"
+      },
+      "correct_answer": "D",
+      "difficulty": 3,
+      "source_article": "Neuroimaging",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "neuroimaging"
+      ],
+      "x": 0.83592,
+      "y": 0.154847
+    },
+    {
+      "id": "8435a4943f703362",
+      "question_text": "When using the same psychological test across cultures, what must researchers verify about the measured construct?",
+      "options": {
+        "A": "Construct equivalence",
+        "B": "Temporal stability",
+        "C": "Sample saturation",
+        "D": "Language fluency"
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "Cross-cultural psychology",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "cross-cultural psychology"
+      ],
+      "x": 0.57658,
+      "y": 0.401786
+    },
+    {
+      "id": "8d8896f0fa0c1008",
+      "question_text": "Through the HPA axis, which hormone is released during stress to affect mood and cognition?",
+      "options": {
+        "A": "Dopamine",
+        "B": "Cortisol",
+        "C": "Serotonin",
+        "D": "Oxytocin"
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Endocrine system",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "endocrine system and behavior"
+      ],
+      "x": 0.699644,
+      "y": 0.129426
+    },
+    {
+      "id": "14745cef9b87f9bc",
+      "question_text": "According to self-determination theory, which need is fulfilled by feeling effective at challenging tasks?",
+      "options": {
+        "A": "Relatedness",
+        "B": "Autonomy",
+        "C": "Competence",
+        "D": "Security"
+      },
+      "correct_answer": "C",
+      "difficulty": 3,
+      "source_article": "Self-determination theory",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "self-determination theory"
+      ],
+      "x": 0.515424,
+      "y": 0.459195
+    },
+    {
+      "id": "e6d88d88f82b285b",
+      "question_text": "A researcher gives two equivalent versions of a test to the same group. Which reliability type is being assessed?",
+      "options": {
+        "A": "Inter-rater",
+        "B": "Test-retest",
+        "C": "Internal consistency",
+        "D": "Parallel-forms"
+      },
+      "correct_answer": "D",
+      "difficulty": 3,
+      "source_article": "Reliability (psychometrics)",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "reliability and validity"
+      ],
+      "x": 0.587723,
+      "y": 0.418948
+    },
+    {
+      "id": "ab887ba5bb7f468b",
+      "question_text": "How does comparative psychology primarily differ from ethology in studying animal behavior?",
+      "options": {
+        "A": "Laboratory vs. field",
+        "B": "Primates vs. insects",
+        "C": "Learned vs. innate",
+        "D": "Qualitative vs. quantitative"
+      },
+      "correct_answer": "A",
+      "difficulty": 3,
+      "source_article": "Comparative psychology",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "comparative psychology"
+      ],
+      "x": 0.430857,
+      "y": 0.294853
+    },
+    {
+      "id": "002dbb828c7b60a1",
+      "question_text": "Ann Masten's 'ordinary magic' concept suggests resilience arises primarily from what source?",
+      "options": {
+        "A": "Rare genetic traits",
+        "B": "Common adaptive systems",
+        "C": "Professional therapy",
+        "D": "Severe adversity exposure"
+      },
+      "correct_answer": "B",
+      "difficulty": 3,
+      "source_article": "Psychological resilience",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "psychological resilience"
+      ],
+      "x": 0.492018,
+      "y": 0.41448
+    },
+    {
+      "id": "d4e6d5ff481a3433",
+      "question_text": "In the two-parameter IRT model, what does the item characteristic curve plot against respondent ability?",
+      "options": {
+        "A": "Response time",
+        "B": "Score variance",
+        "C": "Correct-response probability",
+        "D": "Item selection rate"
+      },
+      "correct_answer": "C",
+      "difficulty": 4,
+      "source_article": "Item response theory",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "item response theory"
+      ],
+      "x": 0.609338,
+      "y": 0.430129
+    },
+    {
+      "id": "ed7c4348487be06e",
+      "question_text": "What capability of structural equation modeling goes beyond standard multiple regression?",
+      "options": {
+        "A": "Bayesian priors",
+        "B": "Nonparametric bootstrapping",
+        "C": "Ordinal transformation",
+        "D": "Latent variable estimation"
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Structural equation modeling",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "structural equation modeling"
+      ],
+      "x": 0.580144,
+      "y": 0.452335
+    },
+    {
+      "id": "e6cf3cd121151246",
+      "question_text": "Which model predicts that a disorder emerges only when genetic vulnerability meets sufficient environmental stress?",
+      "options": {
+        "A": "Diathesis-stress",
+        "B": "Differential susceptibility",
+        "C": "Epigenetic accumulation",
+        "D": "Bioecological systems"
+      },
+      "correct_answer": "A",
+      "difficulty": 4,
+      "source_article": "Gene–environment interaction",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "gene-environment interaction"
+      ],
+      "x": 0.470991,
+      "y": 0.26679
+    },
+    {
+      "id": "64c655ec7e2ba204",
+      "question_text": "Ader and Cohen showed that pairing a taste with immunosuppression could later suppress immunity from taste alone. What did this establish?",
+      "options": {
+        "A": "Stress-induced immunosuppression",
+        "B": "Conditioned immune responses",
+        "C": "Learned helplessness",
+        "D": "Neurotransmitter depletion"
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "Psychoneuroimmunology",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "psychoneuroimmunology"
+      ],
+      "x": 0.69315,
+      "y": 0.203189
+    },
+    {
+      "id": "66e49591c2494b68",
+      "question_text": "What is the primary methodological advantage of ecological momentary assessment over retrospective questionnaires?",
+      "options": {
+        "A": "Larger sample sizes",
+        "B": "Eliminated response bias",
+        "C": "Reduced recall bias",
+        "D": "Simplified consent"
+      },
+      "correct_answer": "C",
+      "difficulty": 4,
+      "source_article": "Ecological momentary assessment",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "ecological momentary assessment"
+      ],
+      "x": 0.600068,
+      "y": 0.328501
+    },
+    {
+      "id": "0feb97be8a262ffd",
+      "question_text": "Which psychophysical law replaced the Weber-Fechner logarithmic function with a power function for perceived intensity?",
+      "options": {
+        "A": "Bloch's law",
+        "B": "Hick's law",
+        "C": "Ricco's law",
+        "D": "Stevens' power law"
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Weber–Fechner law",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "Weber-Fechner law"
+      ],
+      "x": 0.761552,
+      "y": 0.291113
+    },
+    {
+      "id": "b1132e36d975777b",
+      "question_text": "In meta-analysis, which statistic quantifies the proportion of effect-size variability due to true heterogeneity?",
+      "options": {
+        "A": "I-squared",
+        "B": "Fail-safe N",
+        "C": "Q-statistic",
+        "D": "Tau-squared"
+      },
+      "correct_answer": "A",
+      "difficulty": 4,
+      "source_article": "Meta-analysis",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "meta-analysis in psychology"
+      ],
+      "x": 0.620238,
+      "y": 0.755023
+    },
+    {
+      "id": "de20554f1c053be6",
+      "question_text": "In signal detection theory, which measure quantifies an observer's ability to discriminate signal from noise?",
+      "options": {
+        "A": "Beta criterion",
+        "B": "d-prime",
+        "C": "False alarm rate",
+        "D": "ROC area"
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "Detection theory",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "signal detection theory applications in psychology"
+      ],
+      "x": 0.515174,
+      "y": 0.781642
+    },
+    {
+      "id": "9f8446171ee988c0",
+      "question_text": "In Bayesian statistics, what quantity compares evidence for one model versus another as an alternative to p-values?",
+      "options": {
+        "A": "Posterior odds",
+        "B": "Credible interval",
+        "C": "Bayes factor",
+        "D": "Prior density"
+      },
+      "correct_answer": "C",
+      "difficulty": 4,
+      "source_article": "Bayesian statistics",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "Bayesian statistics in psychology"
+      ],
+      "x": 0.683235,
+      "y": 0.731834
+    },
+    {
+      "id": "a4d6487272b0f7c4",
+      "question_text": "Which receptor acts as a coincidence detector for hippocampal long-term potentiation?",
+      "options": {
+        "A": "AMPA receptor",
+        "B": "GABA-A receptor",
+        "C": "mGluR5 receptor",
+        "D": "NMDA receptor"
+      },
+      "correct_answer": "D",
+      "difficulty": 4,
+      "source_article": "Long-term potentiation",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "long-term potentiation"
+      ],
+      "x": 0.751602,
+      "y": 0.130981
+    },
+    {
+      "id": "a3a9383a80ecddb1",
+      "question_text": "In prospect theory's value function, how do equal-magnitude gains and losses differ in psychological impact?",
+      "options": {
+        "A": "Losses loom larger",
+        "B": "Gains feel stronger",
+        "C": "Both feel equal",
+        "D": "Gains diminish faster"
+      },
+      "correct_answer": "A",
+      "difficulty": 4,
+      "source_article": "Behavioral economics",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "behavioral economics"
+      ],
+      "x": 0.609837,
+      "y": 0.441463
+    },
+    {
+      "id": "846aed3403d3dffc",
+      "question_text": "The Reproducibility Project replicated 100 psychology studies. Approximately what fraction of significant findings replicated?",
+      "options": {
+        "A": "About three-quarters",
+        "B": "About one-third",
+        "C": "About one-half",
+        "D": "About two-thirds"
+      },
+      "correct_answer": "B",
+      "difficulty": 4,
+      "source_article": "Replication crisis",
+      "domain_ids": [
+        "psychology"
+      ],
+      "concepts_tested": [
+        "replication crisis in psychology"
+      ],
+      "x": 0.587654,
+      "y": 0.306242
+    }
+  ],
+  "labels": [],
+  "articles": []
+}

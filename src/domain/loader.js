@@ -123,19 +123,29 @@ async function readWithProgress(body, total, onProgress) {
  * @returns {Promise<Array>} Flat deduplicated array of question objects.
  */
 export async function loadQuestionsForDomain(domainId, basePath) {
-  // Fast path: if the root domain bundle is already cached, extract questions
-  // from it directly (+ any cached descendants). Avoids blocking on 50+ in-flight
-  // fetches when called for 'all' right after boot.
   const cached = $domainCache.get().get(domainId);
   if (cached) {
     const descendantIds = getDescendants(domainId);
+    // Fast path: use cached bundles only if ALL descendants are cached.
+    // Otherwise fall through to the full parallel fetch so the question
+    // pool includes every descendant's questions.
+    if (descendantIds.length === 0) {
+      return _deduplicateQuestions([cached]);
+    }
     const bundles = [cached];
+    let allCached = true;
     for (const id of descendantIds) {
       const cb = $domainCache.get().get(id);
-      if (cb) bundles.push(cb);
-      // Skip uncached descendants — they'll be available on future calls
+      if (cb) {
+        bundles.push(cb);
+      } else {
+        allCached = false;
+      }
     }
-    return _deduplicateQuestions(bundles);
+    if (allCached) {
+      return _deduplicateQuestions(bundles);
+    }
+    // Fall through to full fetch — not all descendants are cached yet
   }
 
   const idsToLoad = [domainId, ...getDescendants(domainId)];

@@ -1000,7 +1000,7 @@ Pipeline scripts: `embed_questions_v2.py`, `embed_transcripts.py`,
 `fit_umap_joint.py`, `export_domain_bundles_v2.py`.
 
 This supersedes the previous approach where UMAP trained only on
-articles + questions (spec 001, `rebuild_umap_v2.py`).**
+articles + questions (spec 001, `build_umap.py`).**
 
 ### Low — Document but Do Not Block
 

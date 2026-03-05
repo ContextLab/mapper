@@ -46,7 +46,7 @@ def ensure_originals_exist():
     ]:
         if not path.exists():
             print(f"ERROR: Original {label} coords not found at {path}")
-            print("These should have been created by rebuild_umap_v2.py")
+            print("These should have been created by build_umap.py")
             sys.exit(1)
 
     # Sanity check: originals should NOT have coords_original key (that's a flat file)
@@ -190,15 +190,16 @@ def main():
             f"top-10% has {stats_before['articles_in_top10pct_frac']:.1%} of articles"
         )
 
-        flat_articles, flat_questions, params = flatten_coordinates_patched(
+        flat_articles, flat_secondary, params = flatten_coordinates_patched(
             article_coords=article_coords,
-            question_coords=question_coords,
+            secondary_coords={"questions": question_coords},
             mu=args.mu,
             n_clusters=args.clusters,
             knn_k=args.knn,
             margin=args.margin,
             seed=args.seed,
         )
+        flat_questions = flat_secondary["questions"]
 
         stats_after = compute_density_stats(flat_articles)
         print_density_comparison(stats_before, stats_after)
@@ -211,15 +212,16 @@ def main():
             f"top-10% has {stats_before['articles_in_top10pct_frac']:.1%} of articles"
         )
 
-        flat_articles, flat_questions, params = flatten_coordinates(
+        flat_articles, flat_secondary, params = flatten_coordinates(
             article_coords=article_coords,
-            question_coords=question_coords,
+            secondary_coords={"questions": question_coords},
             mu=args.mu,
             subsample_m=args.subsample,
             knn_k=args.knn,
             margin=args.margin,
             seed=args.seed,
         )
+        flat_questions = flat_secondary["questions"]
 
         stats_after = compute_density_stats(flat_articles)
         print_density_comparison(stats_before, stats_after)

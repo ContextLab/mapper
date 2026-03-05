@@ -1,9 +1,15 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures.js';
+
+const TUTORIAL_DISMISSED = JSON.stringify({
+  completed: false, dismissed: true, step: 1, subStep: 1,
+  hasSkippedQuestion: false, skipToastShown: false, returningUser: false,
+});
 
 test.describe('Responsive Layout (SC-008)', () => {
   test('mobile viewport 375x667 is usable', async ({ browser }) => {
     const context = await browser.newContext({ viewport: { width: 375, height: 667 } });
     const page = await context.newPage();
+    await page.addInitScript((state) => { localStorage.setItem('mapper-tutorial', state); }, TUTORIAL_DISMISSED);
     await page.goto('/');
     await page.waitForSelector('#landing', { timeout: 10000 });
 
@@ -17,6 +23,7 @@ test.describe('Responsive Layout (SC-008)', () => {
   test('tablet viewport 768x1024 is usable', async ({ browser }) => {
     const context = await browser.newContext({ viewport: { width: 768, height: 1024 } });
     const page = await context.newPage();
+    await page.addInitScript((state) => { localStorage.setItem('mapper-tutorial', state); }, TUTORIAL_DISMISSED);
     await page.goto('/');
     await page.waitForSelector('#landing', { timeout: 10000 });
     await page.screenshot({ path: 'tests/visual/screenshots/tablet-768x1024.png', fullPage: true });
@@ -26,6 +33,7 @@ test.describe('Responsive Layout (SC-008)', () => {
   test('desktop viewport 1280x800 is usable', async ({ browser }) => {
     const context = await browser.newContext({ viewport: { width: 1280, height: 800 } });
     const page = await context.newPage();
+    await page.addInitScript((state) => { localStorage.setItem('mapper-tutorial', state); }, TUTORIAL_DISMISSED);
     await page.goto('/');
     await page.waitForSelector('#landing', { timeout: 10000 });
     await page.screenshot({ path: 'tests/visual/screenshots/desktop-1280x800.png', fullPage: true });
@@ -39,6 +47,7 @@ test.describe('Responsive Layout (SC-008)', () => {
       hasTouch: true,
     });
     const page = await context.newPage();
+    await page.addInitScript((state) => { localStorage.setItem('mapper-tutorial', state); }, TUTORIAL_DISMISSED);
     await page.goto('/');
 
     // Click start to enter map (triggers switchDomain('all'))

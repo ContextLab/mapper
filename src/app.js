@@ -314,8 +314,8 @@ async function boot() {
   setupKeyboardNav({ onEscape: handleEscape });
   wireSubscriptions();
 
-  // Initialize tutorial after app is fully wired
-  initTutorial({ responsesCount: $responses.get().length });
+  // Tutorial is initialized after first domain switch (when map becomes visible)
+  // See switchDomain() — initTutorial() called there on first run.
 
   announce('Knowledge Mapper loaded. Select a domain to begin.');
 }
@@ -496,6 +496,9 @@ async function switchDomain(domainId) {
     renderer.setAnsweredQuestions(responsesToAnsweredDots($responses.get(), questionIndex));
 
     mapInitialized = true;
+
+    // Start tutorial now that the map is visible (after user clicks "Map my knowledge!")
+    initTutorial({ responsesCount: $responses.get().length });
 
     // Set video markers now that the map is initialized
     const { data: earlyVideos } = videoLoader.getVideos();

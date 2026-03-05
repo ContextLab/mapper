@@ -7,7 +7,7 @@
  * T-V068: Player load time (<3s)
  * T-V070: Embed-blocked fallback
  */
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures.js';
 
 const LOAD_TIMEOUT = 15000;
 

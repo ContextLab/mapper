@@ -54,7 +54,6 @@ const STEPS = [
 
 // ── Internal state ──────────────────────────────────────────────────
 let state = null;
-let _appState = null;
 let _questionsAnsweredInStep = 0;
 const prefersReducedMotion = () =>
   typeof window !== 'undefined' &&
@@ -92,7 +91,6 @@ function defaultState() {
  * @param {{ responsesCount?: number }} appState
  */
 export function initTutorial(appState = {}) {
-  _appState = appState;
   const saved = loadState();
 
   if (saved && (saved.completed || saved.dismissed)) {
@@ -379,12 +377,13 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish)
   Object.assign(modal.style, {
     position: 'fixed',
     zIndex: '9999',
-    background: '#1e1e2e',
-    color: '#fff',
+    background: 'var(--color-bg, #ffffff)',
+    color: 'var(--color-text, #0f172a)',
     maxWidth: mobile ? 'none' : `${MODAL_MAX_WIDTH}px`,
     padding: '20px',
     borderRadius: mobile ? '12px 12px 0 0' : '12px',
-    boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
+    boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
+    border: '1px solid var(--color-border, rgba(226,232,240,0.8))',
     fontFamily: 'system-ui, -apple-system, sans-serif',
     lineHeight: '1.5',
     opacity: '0',
@@ -434,7 +433,7 @@ function buildModalDOM(modal, title, message, showNextBtn, isFinish) {
   dismissBtn.setAttribute('aria-label', 'Close tutorial');
   Object.assign(dismissBtn.style, {
     position: 'absolute', top: '8px', right: '8px', background: 'none',
-    border: 'none', color: '#aaa', fontSize: '20px', cursor: 'pointer',
+    border: 'none', color: 'var(--color-text-muted, #64748b)', fontSize: '20px', cursor: 'pointer',
     padding: '4px 8px', lineHeight: '1',
   });
   dismissBtn.textContent = '\u00d7';
@@ -443,13 +442,13 @@ function buildModalDOM(modal, title, message, showNextBtn, isFinish) {
 
   // Title
   const titleEl = document.createElement('div');
-  Object.assign(titleEl.style, { fontWeight: '700', fontSize: '1.1em', marginBottom: '8px' });
+  Object.assign(titleEl.style, { fontWeight: '700', fontSize: '1.1em', marginBottom: '8px', color: 'var(--color-primary, #00693e)' });
   titleEl.textContent = title;
   modal.appendChild(titleEl);
 
   // Message — split on newlines, each line as a paragraph
   const msgContainer = document.createElement('div');
-  Object.assign(msgContainer.style, { fontSize: '0.95em', color: '#ccc' });
+  Object.assign(msgContainer.style, { fontSize: '0.95em', color: 'var(--color-text-muted, #64748b)' });
   const lines = message.split('\n');
   for (const line of lines) {
     if (line.trim() === '') {
@@ -473,7 +472,7 @@ function buildModalDOM(modal, title, message, showNextBtn, isFinish) {
   skipLink.href = '#';
   skipLink.className = 'tutorial-skip-link';
   Object.assign(skipLink.style, {
-    color: '#888', fontSize: '0.85em', textDecoration: 'underline', cursor: 'pointer',
+    color: 'var(--color-text-muted, #64748b)', fontSize: '0.85em', textDecoration: 'underline', cursor: 'pointer',
   });
   skipLink.textContent = 'Skip Tutorial';
   skipLink.addEventListener('click', (e) => { e.preventDefault(); dismissTutorial(); });
@@ -483,7 +482,7 @@ function buildModalDOM(modal, title, message, showNextBtn, isFinish) {
     const nextBtn = document.createElement('button');
     nextBtn.className = 'tutorial-next-btn';
     Object.assign(nextBtn.style, {
-      background: 'var(--tutorial-accent, #6C63FF)', color: '#fff', border: 'none',
+      background: 'var(--color-primary, #00693e)', color: '#fff', border: 'none',
       padding: '8px 20px', borderRadius: '8px', fontSize: '0.95em', cursor: 'pointer',
       fontWeight: '600',
     });
@@ -497,7 +496,7 @@ function buildModalDOM(modal, title, message, showNextBtn, isFinish) {
   // Replay link for completion step
   if (isFinish) {
     const replayP = document.createElement('p');
-    Object.assign(replayP.style, { marginTop: '12px', fontSize: '0.8em', color: '#888' });
+    Object.assign(replayP.style, { marginTop: '12px', fontSize: '0.8em', color: 'var(--color-text-muted, #64748b)' });
     const replayLink = document.createElement('a');
     replayLink.href = '#';
     replayLink.className = 'tutorial-replay-btn';

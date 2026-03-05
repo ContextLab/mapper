@@ -47,6 +47,119 @@ export function makePrng(seed) {
   };
 }
 
+// ─── Tutorial flow ──────────────────────────────────────────
+
+/**
+ * Click through the full tutorial for 'complete' personas.
+ * Handles all 8 steps: click-advance, answer questions, switch domains.
+ */
+async function completeTutorialFlow(page) {
+  const nextBtn = page.locator('.tutorial-next-btn');
+  const modal = page.locator('#tutorial-modal');
+
+  // Helper: wait for tutorial modal and click Next/Finish
+  async function clickNext(timeout = 3000) {
+    await nextBtn.waitFor({ state: 'visible', timeout });
+    await nextBtn.click();
+    await page.waitForTimeout(350);
+  }
+
+  // Helper: answer one question via the quiz panel
+  async function answerOneQuestion() {
+    const optionBtns = page.locator('#options-container button');
+    await optionBtns.first().waitFor({ state: 'visible', timeout: 5000 });
+    await optionBtns.first().click();
+    await page.waitForTimeout(1000); // auto-advance delay
+  }
+
+  try {
+    // Wait for tutorial to appear on landing page
+    await modal.waitFor({ state: 'visible', timeout: 5000 });
+
+    // Tutorial renders on landing — click start button through the cutout
+    // or if no cutout, the start button may be behind the overlay.
+    // Click Next on step 1 substeps first (they're on the tutorial modal itself).
+    // Step 1: UI Orientation — 3 substeps, all click-advance
+    await clickNext(); // substep 1: map
+    await clickNext(); // substep 2: quiz panel
+    await clickNext(); // substep 3: video panel (may be skipped on mobile)
+
+    // Step 2: "Try It!" — answer one question
+    await modal.waitFor({ state: 'visible', timeout: 3000 });
+    await answerOneQuestion();
+
+    // Step 3: "Building Your Map" — answer 4 questions
+    await modal.waitFor({ state: 'visible', timeout: 3000 });
+    for (let i = 0; i < 4; i++) {
+      await answerOneQuestion();
+    }
+
+    // Step 4: "Skipping Questions" — conditional, may be skipped
+    // If it appears, answer or skip a question
+    try {
+      await modal.waitFor({ state: 'visible', timeout: 2000 });
+      const skipBtn = page.locator('.skip-btn, [data-action="skip"]');
+      if (await skipBtn.isVisible().catch(() => false)) {
+        await skipBtn.click();
+        await page.waitForTimeout(1000);
+      } else {
+        await answerOneQuestion();
+      }
+    } catch {
+      // Step was skipped (conditional)
+    }
+
+    // Step 5: "Switch Domains" — change domain via dropdown
+    try {
+      await modal.waitFor({ state: 'visible', timeout: 2000 });
+      const trigger = page.locator('.domain-selector .custom-select-trigger');
+      await trigger.click();
+      // Pick the second option (different from current)
+      const options = page.locator('.domain-selector .custom-select-option');
+      const count = await options.count();
+      if (count > 1) {
+        await options.nth(1).click();
+      }
+      await page.waitForTimeout(1500); // domain switch + tutorial advance
+    } catch {
+      // Step may have been auto-advanced
+    }
+
+    // Step 6: "Explore Another Domain" — answer 2 questions
+    try {
+      await modal.waitFor({ state: 'visible', timeout: 2000 });
+      for (let i = 0; i < 2; i++) {
+        await answerOneQuestion();
+      }
+    } catch {
+      // May have advanced
+    }
+
+    // Step 7: "Discover Features" — 3 substeps, all click-advance
+    try {
+      await modal.waitFor({ state: 'visible', timeout: 2000 });
+      await clickNext(); // trophy
+      await clickNext(); // suggest
+      await clickNext(); // share
+    } catch {
+      // May have completed
+    }
+
+    // Step 8: Completion — click Finish
+    try {
+      await modal.waitFor({ state: 'visible', timeout: 2000 });
+      await clickNext(); // Finish button
+    } catch {
+      // Tutorial already done
+    }
+
+    // Wait for overlay to be removed
+    await page.waitForTimeout(500);
+  } catch {
+    // Tutorial didn't appear or completed early — continue with test
+  }
+}
+
 // ─── Domain selection ────────────────────────────────────────
 
 /**
@@ -361,9 +474,42 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
     ? Infinity // Pedants answer until questions run out
     : persona.numQuestions;
 
+  // Handle tutorial based on persona personality
+  const tutorialBehavior = persona.tutorialBehavior || 'dismiss';
+  if (tutorialBehavior === 'dismiss') {
+    // Pre-dismiss: persona would close it immediately
+    await page.addInitScript(() => {
+      localStorage.setItem('mapper-tutorial', JSON.stringify({
+        completed: false, dismissed: true, step: 1, subStep: 1,
+        hasSkippedQuestion: false, skipToastShown: false, returningUser: false,
+      }));
+    });
+  } else {
+    // 'skip' and 'complete': override fixture dismissal — let tutorial appear
+    await page.addInitScript(() => {
+      localStorage.removeItem('mapper-tutorial');
+    });
+  }
+
   // Navigate to app
   await page.goto('/');
   await page.waitForSelector('#landing', { timeout: LOAD_TIMEOUT });
+
+  // Handle tutorial before domain selection (overlay blocks clicks)
+  if (tutorialBehavior === 'skip') {
+    // Tutorial modal renders at z-index 9999 — "Skip Tutorial" is clickable
+    const skipLink = page.locator('.tutorial-skip-link');
+    try {
+      await skipLink.waitFor({ state: 'visible', timeout: 5000 });
+      await skipLink.click();
+      await page.waitForTimeout(300);
+    } catch {
+      // Tutorial may not have appeared (already dismissed)
+    }
+  } else if (tutorialBehavior === 'complete') {
+    // Click through all tutorial steps (handles start button + domain switching internally)
+    await completeTutorialFlow(page);
+  }
 
   // Select initial domain
   const initialDomain = persona.domain === 'all' ? 'All (General)' : persona.domain;

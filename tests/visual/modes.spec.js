@@ -1,5 +1,5 @@
 /** US3: Smart question mode selection visual test. */
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures.js';
 
 const LOAD_TIMEOUT = 15000;
 

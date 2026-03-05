@@ -12,9 +12,9 @@
   --dur-long: 500ms;
   --dur-xlong: 800ms;
 
-  /* Tutorial accent colors */
-  --tutorial-accent: #6C63FF;
-  --tutorial-success: #4CAF50;
+  /* Tutorial accent colors — match site primary */
+  --tutorial-accent: var(--color-primary, #00693e);
+  --tutorial-success: var(--color-correct, #059669);
   --tutorial-gap: 12px;
 }
 
@@ -29,8 +29,8 @@
 }
 
 @keyframes tutorialPulse {
-  0%, 100% { outline-color: var(--tutorial-accent); box-shadow: 0 0 0 0 rgba(108, 99, 255, 0.3); }
-  50% { outline-color: var(--tutorial-accent); box-shadow: 0 0 12px 4px rgba(108, 99, 255, 0.2); }
+  0%, 100% { outline-color: var(--tutorial-accent); box-shadow: 0 0 0 0 rgba(0, 105, 62, 0.3); }
+  50% { outline-color: var(--tutorial-accent); box-shadow: 0 0 12px 4px rgba(0, 105, 62, 0.2); }
 }
 
 /* Tutorial overlay */
@@ -85,7 +85,7 @@
 @media (prefers-reduced-motion: reduce) {
   .tutorial-highlight {
     animation: none;
-    box-shadow: 0 0 8px 2px rgba(108, 99, 255, 0.3);
+    box-shadow: 0 0 8px 2px rgba(0, 105, 62, 0.3);
   }
 
   #tutorial-modal {

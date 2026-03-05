@@ -7,7 +7,7 @@
  *
  * Run a single pedant: npx playwright test persona-pedant.spec.js -g "Pedant: Dr. Pedantic"
  */
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures.js';
 import { PERSONAS } from './personas/definitions.js';
 import { loadQuestionDb, getQuestionsForDomain, getAllDomainIds } from './personas/question-loader.js';
 import { runPersonaSession, cleanWorkingFiles } from './personas/runner.js';

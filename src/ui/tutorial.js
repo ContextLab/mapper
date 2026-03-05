@@ -2,68 +2,156 @@
 
 const STORAGE_KEY = 'mapper-tutorial';
 const HIGHLIGHT_PAD = 8;
-const MODAL_MAX_WIDTH = 360;
+const MODAL_MAX_WIDTH = 380;
 const MOBILE_BP = 480;
+const HIGHLIGHT_REFRESH_MS = 200;
 
 // ── Step definitions ────────────────────────────────────────────────
-// onEnter: selector to click/activate when entering this step
-// arrowTarget: selector to draw an arrow towards (e.g., a toggle button)
-// showFeedback: if true, show correct/wrong feedback after answer before proceeding
+// advanceOn: event that moves to next step/substep
+// onEnter: comma-separated actions to run when entering (openQuiz, closeQuiz, openVideo, closeVideo, closeModals)
+// arrowTarget: selector for animated arrow
+// arrowSide: 'left'|'right'|'above'|'below' — which side of target to place arrow
+// removeOverlayOnAction: remove graying when the advanceOn action occurs
+// followUp: { message, advanceOn } — second phase after the initial action
+// showFeedback: show answer/skip feedback in-modal (step 4 only)
 const STEPS = [
   {
-    id: 1, title: 'Welcome to Your Knowledge Map', subSteps: [
-      { title: 'Your Knowledge Map', highlight: '#map-container', message: 'This is your Knowledge Map. Each dot is a topic. As you answer questions, colors appear \u2014 green for strong areas, red for gaps.', advanceOn: 'click' },
-      { title: 'The Quiz Panel', highlight: '#quiz-panel', message: 'Questions appear here. Answer them to build your map. Click the toggle arrow to open and close this panel.', advanceOn: 'click', arrowTarget: '#quiz-toggle', onEnter: 'openQuiz' },
-      { title: 'Video Recommendations', highlight: '#video-panel', message: 'Video recommendations live here. They target your weakest areas for maximum learning. Click the toggle arrow to open and close.', advanceOn: 'click', skipOnMobile: true, arrowTarget: '#video-toggle', onEnter: 'openVideo' },
+    id: 1, title: 'Your Knowledge Map', subSteps: [
+      {
+        title: 'Your Knowledge Map',
+        highlight: '#map-container',
+        message: 'This is your *knowledge map*: a representation of everything you know! Each location on the map represents a different concept. You can zoom out to see an overview, or zoom in to see fine details.',
+        advanceOn: 'click',
+      },
+      {
+        title: 'Your Knowledge Map',
+        highlight: '#map-container',
+        message: 'Hover over different locations to see what sorts of concepts "live" nearby. We\'ve included thousands of Wikipedia articles and Khan Academy videos as "landmarks" to help give a sense of the landscape! Click on anything to read the article or see the video.',
+        advanceOn: 'click',
+      },
     ]
   },
   {
-    id: 2, title: 'Try Answering a Question', highlight: '#quiz-panel',
-    message: "Go ahead \u2014 pick the answer you think is correct!",
-    messageReturning: 'Your map already has some data \u2014 let\u2019s keep exploring!',
-    advanceOn: 'answer',
-    showFeedback: true,
-  },
-  {
-    id: 3, title: 'Building Your Map', highlight: '#quiz-panel', advanceOn: 'answer', questionTarget: 3,
-    message: 'Nice! Notice the map updating with each answer. Keep going \u2014 answer a few more questions.',
+    id: 2, title: 'The Quiz Panel',
+    highlight: '#quiz-panel, #quiz-toggle',
+    arrowTarget: '#quiz-toggle',
+    arrowSide: 'above',
     onEnter: 'openQuiz',
-  },
-  {
-    id: 4, title: 'Skipping Questions', highlight: '.skip-btn, [data-action="skip"]',
-    conditional: 'skipNotUsed',
-    message: "Not sure about a question? You can press Skip anytime \u2014 the system will note that topic might be unfamiliar.",
+    message: 'Questions appear here. Answer them to build your map. Click the toggle arrow to open and close this panel.',
     advanceOn: 'click',
   },
   {
-    id: 5, title: 'Switch Domains', highlight: '.domain-selector',
-    message: 'Try a different knowledge area! Click the domain dropdown to switch.',
-    arrowTarget: '.domain-selector .custom-select-trigger',
-    advanceOn: 'domain-change',
-    postMessage: 'Great choice! Each domain reveals different areas of your knowledge map.',
-  },
-  {
-    id: 6, title: 'Explore Another Domain', highlight: '#quiz-panel', advanceOn: 'answer', questionTarget: 2,
-    message: 'Answer a couple questions here to see a different region of your map light up.',
-    onEnter: 'openQuiz',
-  },
-  {
-    id: 7, title: 'Discover Features', subSteps: [
-      { title: 'Your Expertise', highlight: '#trophy-btn', message: 'See your estimated strongest topics here, ranked by confidence.', advanceOn: 'click' },
-      { title: 'Learning Suggestions', highlight: '#suggest-btn', message: 'Get video recommendations targeted at your biggest knowledge gaps.', advanceOn: 'click' },
-      { title: 'Share Your Map', highlight: '#share-btn', message: 'Share a snapshot of your knowledge map with friends!', advanceOn: 'click' },
+    id: 3, title: 'Video Recommendations', subSteps: [
+      {
+        title: 'Video Recommendations',
+        highlight: '#video-panel, #video-toggle',
+        arrowTarget: '#video-toggle',
+        arrowSide: 'above',
+        onEnter: 'closeQuiz,openVideo',
+        skipOnMobile: true,
+        message: 'Every video in our dataset lives at a different location on the map. This list shows all of the videos contained within the *current* view. The list adjusts dynamically as you zoom and pan.',
+        advanceOn: 'click',
+      },
+      {
+        title: 'Video Recommendations',
+        highlight: '#video-panel, #video-toggle',
+        skipOnMobile: true,
+        message: 'Hover over any video in the list to see its *trajectory*: the "path" of concepts it touches on from moment to moment. Click on any video to watch it!',
+        advanceOn: 'click',
+      },
     ]
   },
   {
-    id: 8, title: "You\u2019re All Set!", advanceOn: 'click', isCompletion: true,
+    id: 4, title: 'Try Answering a Question',
+    highlight: '#quiz-panel',
+    onEnter: 'closeVideo,openQuiz',
+    message: "Now let's start mapping your knowledge! Pick whatever answer you think is correct. If you don't know, just press the skip button. Our system learns with each question you answer. Knowing what you don't know tells us something too!",
+    advanceOn: 'answer', // also responds to 'skip'
+    showFeedback: true,
+    removeOverlayOnAction: true,
+  },
+  {
+    id: 5, title: 'Building Your Map', subSteps: [
+      {
+        title: 'Building Your Map',
+        message: 'Answer a few more questions and see how your map updates.',
+        advanceOn: 'answer',
+        questionTarget: 2,
+      },
+      {
+        title: 'Building Your Map',
+        arrowTarget: '#auto-advance-label',
+        message: 'Try toggling the "Auto-advance" switch. Pausing after each question gives you a chance to review the correct answer. You can also click on the Wikipedia and Khan Academy links to learn more.',
+        advanceOn: 'toggle-auto-advance',
+      },
+      {
+        title: 'Building Your Map',
+        message: "Answer one more question and then we'll move on.",
+        advanceOn: 'answer',
+        questionTarget: 1,
+      },
+    ]
+  },
+  {
+    id: 6, title: 'Switch Domains',
+    highlight: '.domain-selector',
+    message: 'Select a different knowledge domain from the dropdown menu to focus in on that part of your map!',
+    arrowTarget: '.domain-selector .custom-select-trigger',
+    arrowSide: 'right',
+    advanceOn: 'domain-change',
+    removeOverlayOnAction: true,
+  },
+  {
+    id: 7, title: 'Exploring Domain-Specific Knowledge',
+    highlight: '#quiz-panel',
+    advanceOn: 'answer',
+    questionTarget: 2,
+    dynamicMessage: true, // message set in renderCurrentStep based on selected domain
+    onEnter: 'openQuiz',
+  },
+  {
+    id: 8, title: 'Your Expertise',
+    highlight: '#trophy-btn',
+    message: "Now that you've answered a few questions, our system has started to understand your knowledge map's peaks and valleys. You can click this button to view a ranked list of your strongest areas. Try it out!",
+    advanceOn: 'expertise-click',
+    removeOverlayOnAction: true,
+    followUp: { dynamicMessage: true, advanceOn: 'click' },
+  },
+  {
+    id: 9, title: 'Fill in Your Knowledge Gaps!',
+    highlight: '#suggest-btn',
+    onEnter: 'closeModals',
+    message: 'Click this button to see a list of Khan Academy videos that will help you efficiently fill in gaps in your knowledge that our system has identified.',
+    advanceOn: 'suggest-click',
+    removeOverlayOnAction: true,
+    followUp: { message: 'Click on any video to watch it!', advanceOn: 'click' },
+  },
+  {
+    id: 10, title: 'Share Your Map',
+    highlight: '#share-btn',
+    onEnter: 'closeModals',
+    message: 'Click this button to share your map on social media. Try it out!',
+    advanceOn: 'share-click',
+    removeOverlayOnAction: true,
+    followUp: { message: 'You can share on LinkedIn, X, or Bluesky. You can also download an image of your map to show it off!', advanceOn: 'click' },
+  },
+  {
+    id: 11, title: 'Tutorial Complete!',
+    advanceOn: 'click',
+    isCompletion: true,
   },
 ];
 
 // ── Internal state ──────────────────────────────────────────────────
 let state = null;
 let _questionsAnsweredInStep = 0;
-let _lastAnswerCorrect = null; // true/false after an answer during showFeedback step
-let _waitingForContinue = false; // true when feedback is displayed, waiting for user to click Continue
+let _lastAnswerCorrect = null;
+let _lastAnswerSkipped = false;
+let _inFollowUp = false; // true when showing follow-up message after initial action
+let _highlightInterval = null; // interval for dynamic highlight refresh
+let _currentHighlightSelector = null;
+let _dragState = null; // { startX, startY, origLeft, origTop } for modal dragging
+
 const prefersReducedMotion = () =>
   typeof window !== 'undefined' &&
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -95,58 +183,90 @@ function defaultState() {
 
 // ── Public API ──────────────────────────────────────────────────────
 
-/**
- * Initialise the tutorial. Called once from app.js after first render.
- * @param {{ responsesCount?: number }} appState
- */
 export function initTutorial(appState = {}) {
-  // Check if pre-dismissed (e.g., by test fixtures setting localStorage before page load)
   const saved = loadState();
   if (saved && saved.dismissed) {
     state = saved;
-    return; // respect pre-set dismissal
+    return;
   }
 
-  // Always start fresh each session — tutorial is a quick walkthrough every time
   state = defaultState();
   state.returningUser = (appState.responsesCount || 0) > 0;
   _questionsAnsweredInStep = 0;
+  _inFollowUp = false;
   saveState();
   renderCurrentStep();
 }
 
-/**
- * Advance the tutorial in response to an app event.
- * @param {'answer'|'skip'|'domain-change'|'click'|'dismiss'} event
- */
 export function advanceTutorial(event) {
   if (!state || state.completed || state.dismissed) return;
-
-  // Handle skip events globally — track hasSkippedQuestion
-  if (event === 'skip') {
-    if (!state.hasSkippedQuestion) {
-      state.hasSkippedQuestion = true;
-      if (!state.skipToastShown) {
-        state.skipToastShown = true;
-        showToast('Noted! The system now knows this topic might be unfamiliar.');
-      }
-      saveState();
-    }
-  }
 
   if (event === 'dismiss') {
     dismissTutorial();
     return;
   }
 
+  // Track skip usage globally
+  if (event === 'skip') {
+    if (!state.hasSkippedQuestion) {
+      state.hasSkippedQuestion = true;
+      saveState();
+    }
+    // Show skip toast only if we're past step 4 (skip is explained there)
+    if (state.step > 4 && !state.skipToastShown) {
+      state.skipToastShown = true;
+      showToast('Noted! The system now knows this topic might be unfamiliar.');
+      saveState();
+    }
+  }
+
   const stepDef = getStepDef(state.step);
   if (!stepDef) { completeTutorial(); return; }
+
+  // Handle follow-up state — waiting for click/dismiss after action
+  if (_inFollowUp) {
+    const fu = stepDef.followUp || (stepDef.subSteps && resolveSubStep(stepDef, state.subStep)?.followUp);
+    if (fu && (fu.advanceOn === event || event === 'click' || event === 'modal-dismiss')) {
+      _inFollowUp = false;
+      moveToNextStep();
+    }
+    return;
+  }
 
   // Steps with subSteps
   if (stepDef.subSteps) {
     const sub = resolveSubStep(stepDef, state.subStep);
     if (!sub) { moveToNextStep(); return; }
-    if (sub.advanceOn === event || event === 'click') {
+
+    // SubStep with questionTarget
+    if (sub.questionTarget && (sub.advanceOn === 'answer')) {
+      if (event === 'answer' || event === 'skip') {
+        _questionsAnsweredInStep++;
+        if (_questionsAnsweredInStep >= sub.questionTarget) {
+          const nextSub = nextValidSubStep(stepDef, state.subStep + 1);
+          if (nextSub !== null) {
+            state.subStep = nextSub;
+            _questionsAnsweredInStep = 0;
+            saveState();
+            renderCurrentStep();
+          } else {
+            moveToNextStep();
+          }
+        }
+      }
+      return;
+    }
+
+    // Normal subStep advance
+    if (sub.advanceOn === event || (sub.advanceOn === 'click' && event === 'click')) {
+      // Check for follow-up
+      if (sub.followUp && !_inFollowUp) {
+        _inFollowUp = true;
+        if (sub.removeOverlayOnAction) removeOverlayOnly();
+        updateModalMessage(sub.followUp.message || '');
+        return;
+      }
+
       const nextSub = nextValidSubStep(stepDef, state.subStep + 1);
       if (nextSub !== null) {
         state.subStep = nextSub;
@@ -160,8 +280,8 @@ export function advanceTutorial(event) {
     return;
   }
 
-  // Steps with questionTarget — need N answers
-  if (stepDef.questionTarget && stepDef.advanceOn === 'answer') {
+  // Step with questionTarget (non-subStep)
+  if (stepDef.questionTarget && (stepDef.advanceOn === 'answer')) {
     if (event === 'answer' || event === 'skip') {
       _questionsAnsweredInStep++;
       if (_questionsAnsweredInStep >= stepDef.questionTarget) {
@@ -171,65 +291,73 @@ export function advanceTutorial(event) {
     return;
   }
 
-  // advanceOn === 'any' — any event advances
-  if (stepDef.advanceOn === 'any') {
-    if (stepDef.postMessage) {
-      showToast(stepDef.postMessage);
-    }
-    moveToNextStep();
+  // Step 4 special: showFeedback on answer or skip
+  if (stepDef.showFeedback && (event === 'answer' || event === 'skip')) {
+    if (stepDef.removeOverlayOnAction) removeOverlayOnly();
+    showInModalFeedback(event === 'skip');
+    _inFollowUp = true; // wait for Continue click
     return;
   }
 
   // Normal step — advance when event matches
-  if (stepDef.advanceOn === event) {
-    // If step has showFeedback, display feedback before advancing
-    if (stepDef.showFeedback && event === 'answer' && !_waitingForContinue) {
-      _waitingForContinue = true;
-      showAnswerFeedback(_lastAnswerCorrect);
+  if (stepDef.advanceOn === event || (stepDef.advanceOn === 'answer' && event === 'skip')) {
+    // Check for follow-up
+    if (stepDef.followUp && !_inFollowUp) {
+      _inFollowUp = true;
+      if (stepDef.removeOverlayOnAction) removeOverlayOnly();
+      const fuMsg = stepDef.followUp.dynamicMessage
+        ? buildDynamicFollowUp(stepDef)
+        : (stepDef.followUp.message || '');
+      updateModalMessage(fuMsg);
       return;
     }
-    if (stepDef.postMessage) {
-      showToast(stepDef.postMessage);
-    }
+
+    if (stepDef.removeOverlayOnAction) removeOverlayOnly();
+    if (stepDef.postMessage) showToast(stepDef.postMessage);
     moveToNextStep();
+    return;
   }
 
-  // Handle Continue click after feedback
-  if (event === 'click' && _waitingForContinue) {
-    _waitingForContinue = false;
-    _lastAnswerCorrect = null;
+  // 'click' event can advance follow-ups or steps waiting for click
+  if (event === 'click' && _inFollowUp) {
+    _inFollowUp = false;
+    moveToNextStep();
+    return;
+  }
+
+  // Modal-dismiss events can advance interactive steps
+  if (event === 'modal-dismiss' && _inFollowUp) {
+    _inFollowUp = false;
     moveToNextStep();
   }
 }
 
-/** Dismiss and stop the tutorial without completing it. */
 export function dismissTutorial() {
   if (!state) state = defaultState();
   state.dismissed = true;
   saveState();
   removeOverlay();
+  stopHighlightRefresh();
 }
 
-/** Reset all tutorial state and restart from step 1. */
 export function resetTutorial() {
   try { localStorage.removeItem(STORAGE_KEY); } catch { /* noop */ }
   state = defaultState();
   _questionsAnsweredInStep = 0;
+  _inFollowUp = false;
   saveState();
   renderCurrentStep();
 }
 
-/** Set the result of the last answer for feedback display. Called from app.js. */
-export function setAnswerFeedback(wasCorrect) {
+export function setAnswerFeedback(wasCorrect, wasSkipped = false) {
   _lastAnswerCorrect = wasCorrect;
+  _lastAnswerSkipped = wasSkipped;
 }
 
-/** Whether the tutorial is currently active (not completed/dismissed). */
 export function isTutorialActive() {
   return !!(state && !state.completed && !state.dismissed);
 }
 
-/** Return the current { step, subStep } or null. */
 export function getTutorialStep() {
   if (!isTutorialActive()) return null;
   return { step: state.step, subStep: state.subStep };
@@ -246,19 +374,10 @@ function moveToNextStep() {
   const nextDef = getStepDef(nextId);
   if (!nextDef) { completeTutorial(); return; }
 
-  // Skip conditional steps
-  if (nextDef.conditional === 'skipNotUsed' && state.hasSkippedQuestion) {
-    state.step = nextId;
-    state.subStep = 1;
-    _questionsAnsweredInStep = 0;
-    saveState();
-    moveToNextStep();
-    return;
-  }
-
   state.step = nextId;
   state.subStep = nextDef.subSteps ? nextValidSubStep(nextDef, 1) || 1 : 1;
   _questionsAnsweredInStep = 0;
+  _inFollowUp = false;
   saveState();
   renderCurrentStep();
 }
@@ -268,9 +387,9 @@ function completeTutorial() {
   state.completed = true;
   saveState();
   removeOverlay();
+  stopHighlightRefresh();
 }
 
-/** Resolve a subStep index, skipping mobile-only entries when needed. */
 function resolveSubStep(stepDef, idx) {
   if (!stepDef.subSteps) return null;
   const sub = stepDef.subSteps[idx - 1];
@@ -303,32 +422,36 @@ function renderCurrentStep() {
   let message = stepDef.message || '';
   let title = stepDef.title || '';
   let arrowTarget = stepDef.arrowTarget || null;
+  let arrowSide = stepDef.arrowSide || 'left';
   let onEnter = stepDef.onEnter || null;
 
   // SubStep handling
   if (stepDef.subSteps) {
     const sub = resolveSubStep(stepDef, state.subStep);
     if (!sub) { moveToNextStep(); return; }
-    highlight = sub.highlight || highlight;
+    highlight = sub.highlight ?? highlight;
     message = sub.message || message;
     title = sub.title || title;
-    arrowTarget = sub.arrowTarget || arrowTarget;
-    onEnter = sub.onEnter || onEnter;
+    arrowTarget = sub.arrowTarget ?? arrowTarget;
+    arrowSide = sub.arrowSide || arrowSide;
+    onEnter = sub.onEnter ?? onEnter;
   }
 
-  // Returning-user alternate message
-  if (stepDef.messageReturning && state.returningUser) {
-    message = stepDef.messageReturning;
+  // Dynamic message for step 7 (domain-specific)
+  if (stepDef.dynamicMessage || (stepDef.subSteps && resolveSubStep(stepDef, state.subStep)?.dynamicMessage)) {
+    message = buildDynamicMessage(stepDef);
   }
 
   // Completion step
   if (stepDef.isCompletion) {
-    message = buildCompletionMessage();
+    message = "You've finished the formal tutorial. You can continue answering questions to refine your map and expand your knowledge!\n\nReplay the tutorial any time using the ? button near the top of the screen.";
   }
 
-  // Execute onEnter action (activate component)
+  // Execute onEnter actions
   if (onEnter) {
-    executeOnEnter(onEnter);
+    for (const action of onEnter.split(',')) {
+      executeOnEnter(action.trim());
+    }
   }
 
   const advanceOn = stepDef.subSteps
@@ -337,150 +460,311 @@ function renderCurrentStep() {
   const isFinish = !!stepDef.isCompletion;
   const showNextBtn = advanceOn === 'click' || isFinish;
 
-  renderOverlay(highlight, title, message, showNextBtn, isFinish, arrowTarget);
+  _currentHighlightSelector = highlight;
+  renderOverlay(highlight, title, message, showNextBtn, isFinish, arrowTarget, arrowSide);
+  startHighlightRefresh();
 }
 
-/** Show answer feedback in the tutorial modal after step 2. */
-function showAnswerFeedback(wasCorrect) {
-  const title = wasCorrect ? 'Correct!' : 'Not quite';
-  const message = wasCorrect
-    ? 'Great job! Notice how the map updated \u2014 a green region is forming where you got it right.'
-    : 'No worries! The map still learns from wrong answers \u2014 it highlights areas to focus on.';
-  const feedbackColor = wasCorrect
-    ? 'var(--color-correct, #059669)'
-    : 'var(--color-incorrect, #dc2626)';
+function buildDynamicMessage(stepDef) {
+  // Step 7: include current domain name
+  if (stepDef.id === 7) {
+    const domainEl = document.querySelector('.custom-select-trigger .select-value, .custom-select-trigger');
+    const domain = domainEl?.textContent?.trim() || 'a new domain';
+    return `You selected ${domain} from the menu\u2014now all of the questions you see will be focused on this one area. You can go back to mapping general knowledge by selecting "All (General)" from the dropdown menu. But first, try answering a couple of questions in the domain you selected. Remember, you can always skip if you need to!`;
+  }
+  return '';
+}
 
-  removeOverlay();
+function buildDynamicFollowUp(stepDef) {
+  // Step 8: expertise follow-up with top areas
+  if (stepDef.id === 8) {
+    const items = document.querySelectorAll('.expertise-item, .expertise-row, .ranking-item');
+    const areas = Array.from(items).slice(0, 3).map(el => el.textContent?.trim()).filter(Boolean);
+    if (areas.length >= 3) {
+      return `Nice! It looks like your top areas are ${areas[0]}, ${areas[1]}, and ${areas[2]}. Keep answering to refine these rankings!`;
+    }
+    return 'Nice! Keep answering questions to build up your expertise rankings!';
+  }
+  return '';
+}
 
-  const modal = document.createElement('div');
-  modal.id = 'tutorial-modal';
-  const mobile = isMobile();
-  Object.assign(modal.style, {
-    position: 'fixed', zIndex: '9999',
-    background: 'var(--color-bg, #ffffff)', color: 'var(--color-text, #0f172a)',
-    maxWidth: mobile ? 'none' : `${MODAL_MAX_WIDTH}px`,
-    padding: '20px', borderRadius: mobile ? '12px 12px 0 0' : '12px',
-    boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
-    border: '1px solid var(--color-border, rgba(226,232,240,0.8))',
-    fontFamily: 'system-ui, -apple-system, sans-serif', lineHeight: '1.5',
-    top: '50%', left: '50%', transform: 'translate(-50%,-50%)',
-  });
-  if (mobile) {
-    Object.assign(modal.style, { bottom: '0', left: '0', right: '0', top: 'auto', transform: 'none' });
+/** Show answer/skip feedback within the existing modal (step 4). */
+function showInModalFeedback(wasSkipped) {
+  const modal = document.getElementById('tutorial-modal');
+  if (!modal) return;
+
+  // Determine feedback content
+  let feedbackTitle, feedbackMsg, feedbackColor;
+  if (wasSkipped) {
+    feedbackTitle = 'Skipped';
+    feedbackMsg = "Great\u2014you recognized that you didn't know this one! Skipping when you don't know something gives you a little credit. Notice how the map updated: a yellow dot was added to the map to denote which concept this question tested. Since you recognized a gap in your knowledge, the map is shaded slightly red. And areas *around* that question are updated too: a knowledge gap for one concept implies gaps in knowledge about *related* concepts too!";
+    feedbackColor = 'var(--color-warning, #d97706)';
+  } else if (_lastAnswerCorrect) {
+    feedbackTitle = 'Correct!';
+    feedbackMsg = "Nice, you got it right! Notice how the map updated: a green dot was added to the map to denote which concept this question tested. And areas *around* that question are updated too: knowledge about one concept implies knowledge about *related* concepts too!";
+    feedbackColor = 'var(--color-correct, #059669)';
+  } else {
+    feedbackTitle = 'Not quite!';
+    feedbackMsg = "Not quite! Notice how the map updated: a red dot was added to the map to denote which concept this question tested. And areas *around* that question are updated too: a knowledge gap for one concept implies gaps in knowledge about *related* concepts too!";
+    feedbackColor = 'var(--color-incorrect, #dc2626)';
   }
 
-  // Title row with icon inline
-  const titleRow = document.createElement('div');
-  Object.assign(titleRow.style, { display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: feedbackColor });
-  const icon = document.createElement('span');
-  Object.assign(icon.style, { fontSize: '1.4em', lineHeight: '1' });
-  icon.textContent = wasCorrect ? '\u2713' : '\u2717';
-  titleRow.appendChild(icon);
-  const titleEl = document.createElement('span');
-  Object.assign(titleEl.style, { fontWeight: '700', fontSize: '1.1em' });
-  titleEl.textContent = title;
-  titleRow.appendChild(titleEl);
-  modal.appendChild(titleRow);
+  // Update modal content in place
+  const titleEl = modal.querySelector('[data-tutorial-title]');
+  const msgContainer = modal.querySelector('[data-tutorial-message]');
+  const footer = modal.querySelector('[data-tutorial-footer]');
 
-  // Message
-  const msgEl = document.createElement('p');
-  Object.assign(msgEl.style, { fontSize: '0.95em', color: 'var(--color-text-muted, #64748b)', margin: '0.4em 0' });
-  msgEl.textContent = message;
-  modal.appendChild(msgEl);
+  if (titleEl) {
+    titleEl.style.color = feedbackColor;
+    titleEl.textContent = feedbackTitle;
+  }
+  if (msgContainer) {
+    msgContainer.innerHTML = '';
+    renderMarkdownLite(msgContainer, feedbackMsg);
+  }
 
-  // Continue button
-  const continueBtn = document.createElement('button');
-  Object.assign(continueBtn.style, {
-    background: 'var(--color-primary, #00693e)', color: '#fff', border: 'none',
-    padding: '8px 20px', borderRadius: '8px', fontSize: '0.95em', cursor: 'pointer',
-    fontWeight: '600', marginTop: '16px', display: 'block', width: '100%',
-  });
-  continueBtn.textContent = 'Continue';
-  continueBtn.addEventListener('click', () => advanceTutorial('click'));
-  modal.appendChild(continueBtn);
-
-  document.body.appendChild(modal);
+  // Replace footer with Continue button
+  if (footer) {
+    footer.innerHTML = '';
+    const continueBtn = document.createElement('button');
+    continueBtn.className = 'tutorial-next-btn';
+    Object.assign(continueBtn.style, {
+      background: 'var(--color-primary, #00693e)', color: '#fff', border: 'none',
+      padding: '8px 20px', borderRadius: '8px', fontSize: '0.95em', cursor: 'pointer',
+      fontWeight: '600', width: '100%',
+    });
+    continueBtn.textContent = 'Continue';
+    continueBtn.addEventListener('click', () => {
+      _inFollowUp = false;
+      _lastAnswerCorrect = null;
+      _lastAnswerSkipped = false;
+      moveToNextStep();
+    });
+    footer.appendChild(continueBtn);
+  }
 }
 
-/** Activate a component when entering a tutorial step. */
+/** Update the modal message text (for follow-up states). */
+function updateModalMessage(message) {
+  const modal = document.getElementById('tutorial-modal');
+  if (!modal) return;
+  const msgContainer = modal.querySelector('[data-tutorial-message]');
+  if (msgContainer) {
+    msgContainer.innerHTML = '';
+    renderMarkdownLite(msgContainer, message);
+  }
+
+  // Ensure Next button is visible
+  const footer = modal.querySelector('[data-tutorial-footer]');
+  if (footer && !footer.querySelector('.tutorial-next-btn')) {
+    const skipLink = footer.querySelector('.tutorial-skip-link');
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'tutorial-next-btn';
+    Object.assign(nextBtn.style, {
+      background: 'var(--color-primary, #00693e)', color: '#fff', border: 'none',
+      padding: '8px 20px', borderRadius: '8px', fontSize: '0.95em', cursor: 'pointer',
+      fontWeight: '600',
+    });
+    nextBtn.textContent = 'Next';
+    nextBtn.addEventListener('click', () => advanceTutorial('click'));
+    footer.appendChild(nextBtn);
+  }
+}
+
 function executeOnEnter(action) {
   if (action === 'openVideo') {
     const panel = document.getElementById('video-panel');
     const toggleBtn = document.getElementById('video-toggle');
-    if (panel && !panel.classList.contains('open')) {
-      toggleBtn?.click();
-    }
+    if (panel && !panel.classList.contains('open')) toggleBtn?.click();
+  } else if (action === 'closeVideo') {
+    const panel = document.getElementById('video-panel');
+    const toggleBtn = document.getElementById('video-toggle');
+    if (panel && panel.classList.contains('open')) toggleBtn?.click();
   } else if (action === 'openQuiz') {
     const panel = document.getElementById('quiz-panel');
     const toggleBtn = document.getElementById('quiz-toggle');
-    if (panel && !panel.classList.contains('open')) {
-      toggleBtn?.click();
-    }
+    if (panel && !panel.classList.contains('open')) toggleBtn?.click();
+  } else if (action === 'closeQuiz') {
+    const panel = document.getElementById('quiz-panel');
+    const toggleBtn = document.getElementById('quiz-toggle');
+    if (panel && panel.classList.contains('open')) toggleBtn?.click();
+  } else if (action === 'closeModals') {
+    // Close any open app modals (expertise, suggest, share)
+    document.querySelectorAll('.modal-overlay, .share-overlay, #expertise-modal, #suggest-modal').forEach(el => {
+      const closeBtn = el.querySelector('.close-btn, [aria-label="Close"]');
+      if (closeBtn) closeBtn.click();
+      else el.remove();
+    });
   }
 }
 
-function buildCompletionMessage() {
-  return "You're all set! Keep answering questions to refine your map.\n\nYou can replay the tutorial anytime using the \u2753 button in the header.";
+// ── Dynamic highlight refresh ───────────────────────────────────────
+
+function startHighlightRefresh() {
+  stopHighlightRefresh();
+  if (!_currentHighlightSelector) return;
+
+  _highlightInterval = setInterval(() => {
+    const overlay = document.getElementById('tutorial-overlay');
+    if (!overlay || !_currentHighlightSelector) { stopHighlightRefresh(); return; }
+
+    const highlightEl = queryFirst(_currentHighlightSelector);
+    if (highlightEl) {
+      updateClipPath(overlay, highlightEl);
+    }
+  }, HIGHLIGHT_REFRESH_MS);
+
+  // Also listen for resize
+  window.addEventListener('resize', _onResizeHighlight);
+}
+
+function stopHighlightRefresh() {
+  if (_highlightInterval) { clearInterval(_highlightInterval); _highlightInterval = null; }
+  window.removeEventListener('resize', _onResizeHighlight);
+}
+
+function _onResizeHighlight() {
+  const overlay = document.getElementById('tutorial-overlay');
+  if (!overlay || !_currentHighlightSelector) return;
+  const highlightEl = queryFirst(_currentHighlightSelector);
+  if (highlightEl) updateClipPath(overlay, highlightEl);
+
+  // Also reposition arrow
+  const arrowEl = document.getElementById('tutorial-arrow');
+  if (arrowEl && arrowEl._targetSelector) {
+    const target = queryFirst(arrowEl._targetSelector);
+    if (target) repositionArrow(arrowEl, target, arrowEl._side);
+  }
+}
+
+function updateClipPath(overlay, highlightEl) {
+  const rect = highlightEl.getBoundingClientRect();
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const x1 = Math.max(0, rect.left - HIGHLIGHT_PAD);
+  const y1 = Math.max(0, rect.top - HIGHLIGHT_PAD);
+  const x2 = Math.min(vw, rect.right + HIGHLIGHT_PAD);
+  const y2 = Math.min(vh, rect.bottom + HIGHLIGHT_PAD);
+
+  overlay.style.clipPath = `polygon(
+    0% 0%, 0% 100%, ${x1}px 100%, ${x1}px ${y1}px,
+    ${x2}px ${y1}px, ${x2}px ${y2}px, ${x1}px ${y2}px,
+    ${x1}px 100%, 100% 100%, 100% 0%
+  )`;
 }
 
 // ── Overlay & Modal DOM ─────────────────────────────────────────────
 
 function removeOverlay() {
+  stopHighlightRefresh();
   const overlay = document.getElementById('tutorial-overlay');
   if (overlay) overlay.remove();
   const modal = document.getElementById('tutorial-modal');
   if (modal) modal.remove();
   const arrow = document.getElementById('tutorial-arrow');
   if (arrow) arrow.remove();
-  // Remove highlight classes
   document.querySelectorAll('.tutorial-highlight').forEach(el =>
     el.classList.remove('tutorial-highlight'));
+  _currentHighlightSelector = null;
 }
 
-/** Render an animated arrow pointing at a target element. */
-function renderArrow(targetEl) {
+/** Remove only the overlay (graying), keep modal and arrow. */
+function removeOverlayOnly() {
+  const overlay = document.getElementById('tutorial-overlay');
+  if (overlay) overlay.remove();
+  document.querySelectorAll('.tutorial-highlight').forEach(el =>
+    el.classList.remove('tutorial-highlight'));
+  stopHighlightRefresh();
+  _currentHighlightSelector = null;
+}
+
+function renderArrow(targetEl, side = 'left') {
   const existing = document.getElementById('tutorial-arrow');
   if (existing) existing.remove();
 
-  const rect = targetEl.getBoundingClientRect();
   const arrow = document.createElement('div');
   arrow.id = 'tutorial-arrow';
-
-  // Position the arrow to the left of the target, pointing right
-  const arrowSize = 32;
-  const top = rect.top + rect.height / 2 - arrowSize / 2;
-  const left = rect.left - arrowSize - 8;
+  arrow._targetSelector = null; // set by caller
+  arrow._side = side;
 
   Object.assign(arrow.style, {
     position: 'fixed',
     zIndex: '10000',
-    top: `${top}px`,
-    left: `${left}px`,
-    width: `${arrowSize}px`,
-    height: `${arrowSize}px`,
+    width: '32px',
+    height: '32px',
     pointerEvents: 'none',
-    animation: 'tutorialArrowBounce 1s ease-in-out infinite',
   });
 
-  // SVG arrow pointing right
+  // SVG arrow — direction depends on side
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   svg.setAttribute('viewBox', '0 0 32 32');
   svg.setAttribute('width', '32');
   svg.setAttribute('height', '32');
   const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-  path.setAttribute('d', 'M6 16 L22 16 L16 10 M22 16 L16 22');
+
+  let d, animation;
+  if (side === 'right') {
+    // Arrow pointing left (placed to the right of target)
+    d = 'M26 16 L10 16 L16 10 M10 16 L16 22';
+    animation = 'tutorialArrowBounceLeft 1s ease-in-out infinite';
+  } else if (side === 'above') {
+    // Arrow pointing down (placed above target)
+    d = 'M16 6 L16 22 L10 16 M16 22 L22 16';
+    animation = 'tutorialArrowBounceDown 1s ease-in-out infinite';
+  } else if (side === 'below') {
+    // Arrow pointing up (placed below target)
+    d = 'M16 26 L16 10 L10 16 M16 10 L22 16';
+    animation = 'tutorialArrowBounceUp 1s ease-in-out infinite';
+  } else {
+    // Arrow pointing right (placed to the left of target)
+    d = 'M6 16 L22 16 L16 10 M22 16 L16 22';
+    animation = 'tutorialArrowBounce 1s ease-in-out infinite';
+  }
+
+  path.setAttribute('d', d);
   path.setAttribute('stroke', 'var(--color-primary, #00693e)');
   path.setAttribute('stroke-width', '3');
   path.setAttribute('stroke-linecap', 'round');
   path.setAttribute('stroke-linejoin', 'round');
   path.setAttribute('fill', 'none');
+  // Add drop shadow for visibility
+  const filter = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+  filter.innerHTML = '<filter id="arrow-shadow"><feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#fff" flood-opacity="0.9"/></filter>';
+  svg.appendChild(filter);
+  path.setAttribute('filter', 'url(#arrow-shadow)');
   svg.appendChild(path);
   arrow.appendChild(svg);
+  arrow.style.animation = animation;
 
+  repositionArrow(arrow, targetEl, side);
   document.body.appendChild(arrow);
+  return arrow;
 }
 
-function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish, arrowTargetSelector) {
+function repositionArrow(arrow, targetEl, side) {
+  const rect = targetEl.getBoundingClientRect();
+  const size = 32;
+  let top, left;
+
+  if (side === 'right') {
+    top = rect.top + rect.height / 2 - size / 2;
+    left = rect.right + 8;
+  } else if (side === 'above') {
+    top = rect.top - size - 8;
+    left = rect.left + rect.width / 2 - size / 2;
+  } else if (side === 'below') {
+    top = rect.bottom + 8;
+    left = rect.left + rect.width / 2 - size / 2;
+  } else {
+    top = rect.top + rect.height / 2 - size / 2;
+    left = rect.left - size - 8;
+  }
+
+  arrow.style.top = `${top}px`;
+  arrow.style.left = `${left}px`;
+}
+
+function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish, arrowTargetSelector, arrowSide = 'left') {
   removeOverlay();
 
   // Overlay
@@ -490,32 +774,18 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
     position: 'fixed',
     inset: '0',
     zIndex: '9998',
-    background: 'rgba(0,0,0,0.5)',
+    background: 'rgba(0,0,0,0.45)',
     pointerEvents: 'none',
     transition: prefersReducedMotion() ? 'none' : 'opacity 300ms var(--ease-emphasized-decel, ease)',
   });
 
-  // Clip-path cutout for highlighted element
   let highlightEl = null;
   if (highlightSelector) {
     highlightEl = queryFirst(highlightSelector);
   }
 
   if (highlightEl) {
-    const rect = highlightEl.getBoundingClientRect();
-    const vw = window.innerWidth;
-    const vh = window.innerHeight;
-    const x1 = Math.max(0, rect.left - HIGHLIGHT_PAD);
-    const y1 = Math.max(0, rect.top - HIGHLIGHT_PAD);
-    const x2 = Math.min(vw, rect.right + HIGHLIGHT_PAD);
-    const y2 = Math.min(vh, rect.bottom + HIGHLIGHT_PAD);
-
-    overlay.style.clipPath = `polygon(
-      0% 0%, 0% 100%, ${x1}px 100%, ${x1}px ${y1}px,
-      ${x2}px ${y1}px, ${x2}px ${y2}px, ${x1}px ${y2}px,
-      ${x1}px 100%, 100% 100%, 100% 0%
-    )`;
-
+    updateClipPath(overlay, highlightEl);
     highlightEl.classList.add('tutorial-highlight');
   }
 
@@ -532,6 +802,7 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
     background: 'var(--color-bg, #ffffff)',
     color: 'var(--color-text, #0f172a)',
     maxWidth: mobile ? 'none' : `${MODAL_MAX_WIDTH}px`,
+    width: mobile ? 'auto' : `${MODAL_MAX_WIDTH}px`,
     padding: '20px',
     borderRadius: mobile ? '12px 12px 0 0' : '12px',
     boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
@@ -541,33 +812,34 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
     opacity: '0',
     transform: prefersReducedMotion() ? 'none' : 'translateY(8px)',
     transition: prefersReducedMotion() ? 'none' : 'opacity 300ms var(--ease-emphasized-decel, ease), transform 300ms var(--ease-emphasized-decel, ease)',
+    cursor: 'default',
   });
 
   if (mobile) {
     Object.assign(modal.style, { bottom: '0', left: '0', right: '0' });
   }
 
-  // Build content via DOM (no innerHTML)
   buildModalDOM(modal, title, message, showNextBtn, isFinish);
+  makeDraggable(modal);
 
   document.body.appendChild(modal);
 
-  // Position modal near highlight (desktop only, non-completion)
+  // Position modal
   if (!mobile && highlightEl && !isFinish) {
     positionModal(modal, highlightEl);
   } else if (!mobile) {
-    // Center
     Object.assign(modal.style, {
       top: '50%', left: '50%',
       transform: prefersReducedMotion() ? 'translate(-50%,-50%)' : 'translate(-50%,-50%) translateY(8px)',
     });
   }
 
-  // Arrow pointing to a target element (e.g., toggle button)
+  // Arrow
   if (arrowTargetSelector) {
     const arrowEl = queryFirst(arrowTargetSelector);
     if (arrowEl) {
-      renderArrow(arrowEl);
+      const a = renderArrow(arrowEl, arrowSide);
+      a._targetSelector = arrowTargetSelector;
     }
   }
 
@@ -587,56 +859,59 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
 }
 
 function buildModalDOM(modal, title, message, showNextBtn, isFinish) {
-  // Dismiss button
+  // Drag handle + dismiss
+  const header = document.createElement('div');
+  Object.assign(header.style, {
+    display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+    marginBottom: '8px', cursor: 'grab', userSelect: 'none',
+  });
+  header.className = 'tutorial-drag-handle';
+
+  const titleEl = document.createElement('div');
+  titleEl.setAttribute('data-tutorial-title', '');
+  Object.assign(titleEl.style, { fontWeight: '700', fontSize: '1.1em', color: 'var(--color-primary, #00693e)' });
+  titleEl.textContent = title;
+  header.appendChild(titleEl);
+
   const dismissBtn = document.createElement('button');
   dismissBtn.className = 'tutorial-dismiss';
   dismissBtn.setAttribute('aria-label', 'Close tutorial');
   Object.assign(dismissBtn.style, {
-    position: 'absolute', top: '8px', right: '8px', background: 'none',
-    border: 'none', color: 'var(--color-text-muted, #64748b)', fontSize: '20px', cursor: 'pointer',
-    padding: '4px 8px', lineHeight: '1',
+    background: 'none', border: 'none', color: 'var(--color-text-muted, #64748b)',
+    fontSize: '20px', cursor: 'pointer', padding: '4px 8px', lineHeight: '1',
+    flexShrink: '0',
   });
   dismissBtn.textContent = '\u00d7';
   dismissBtn.addEventListener('click', () => dismissTutorial());
-  modal.appendChild(dismissBtn);
+  header.appendChild(dismissBtn);
 
-  // Title
-  const titleEl = document.createElement('div');
-  Object.assign(titleEl.style, { fontWeight: '700', fontSize: '1.1em', marginBottom: '8px', color: 'var(--color-primary, #00693e)' });
-  titleEl.textContent = title;
-  modal.appendChild(titleEl);
+  modal.appendChild(header);
 
-  // Message — split on newlines, each line as a paragraph
+  // Message
   const msgContainer = document.createElement('div');
+  msgContainer.setAttribute('data-tutorial-message', '');
   Object.assign(msgContainer.style, { fontSize: '0.95em', color: 'var(--color-text-muted, #64748b)' });
-  const lines = message.split('\n');
-  for (const line of lines) {
-    if (line.trim() === '') {
-      msgContainer.appendChild(document.createElement('br'));
-    } else {
-      const p = document.createElement('p');
-      Object.assign(p.style, { margin: '0.4em 0' });
-      p.textContent = line;
-      msgContainer.appendChild(p);
-    }
-  }
+  renderMarkdownLite(msgContainer, message);
   modal.appendChild(msgContainer);
 
-  // Footer row
+  // Footer
   const footer = document.createElement('div');
+  footer.setAttribute('data-tutorial-footer', '');
   Object.assign(footer.style, {
     marginTop: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
   });
 
-  const skipLink = document.createElement('a');
-  skipLink.href = '#';
-  skipLink.className = 'tutorial-skip-link';
-  Object.assign(skipLink.style, {
-    color: 'var(--color-text-muted, #64748b)', fontSize: '0.85em', textDecoration: 'underline', cursor: 'pointer',
-  });
-  skipLink.textContent = 'Skip Tutorial';
-  skipLink.addEventListener('click', (e) => { e.preventDefault(); dismissTutorial(); });
-  footer.appendChild(skipLink);
+  if (!isFinish) {
+    const skipLink = document.createElement('a');
+    skipLink.href = '#';
+    skipLink.className = 'tutorial-skip-link';
+    Object.assign(skipLink.style, {
+      color: 'var(--color-text-muted, #64748b)', fontSize: '0.85em', textDecoration: 'underline', cursor: 'pointer',
+    });
+    skipLink.textContent = 'Skip Tutorial';
+    skipLink.addEventListener('click', (e) => { e.preventDefault(); dismissTutorial(); });
+    footer.appendChild(skipLink);
+  }
 
   if (showNextBtn) {
     const nextBtn = document.createElement('button');
@@ -653,19 +928,108 @@ function buildModalDOM(modal, title, message, showNextBtn, isFinish) {
 
   modal.appendChild(footer);
 
-  // Replay link for completion step
+  // Completion step extras
   if (isFinish) {
-    const replayP = document.createElement('p');
-    Object.assign(replayP.style, { marginTop: '12px', fontSize: '0.8em', color: 'var(--color-text-muted, #64748b)' });
-    const replayLink = document.createElement('a');
-    replayLink.href = '#';
-    replayLink.className = 'tutorial-replay-btn';
-    Object.assign(replayLink.style, { color: '#888', textDecoration: 'underline' });
-    replayLink.textContent = 'Replay tutorial';
-    replayLink.addEventListener('click', (e) => { e.preventDefault(); resetTutorial(); });
-    replayP.appendChild(replayLink);
-    modal.appendChild(replayP);
+    const startOver = document.createElement('p');
+    Object.assign(startOver.style, { marginTop: '12px', fontSize: '0.85em', textAlign: 'center' });
+    const startOverLink = document.createElement('a');
+    startOverLink.href = '#';
+    startOverLink.className = 'tutorial-replay-btn';
+    Object.assign(startOverLink.style, { color: 'var(--color-text-muted, #64748b)', textDecoration: 'underline', cursor: 'pointer' });
+    startOverLink.textContent = 'Start Over';
+    startOverLink.addEventListener('click', (e) => { e.preventDefault(); resetTutorial(); });
+    startOver.appendChild(startOverLink);
+    modal.appendChild(startOver);
   }
+}
+
+/** Render simple markdown: *italic* → <em>, preserving newlines as paragraphs. */
+function renderMarkdownLite(container, text) {
+  const lines = text.split('\n');
+  for (const line of lines) {
+    if (line.trim() === '') {
+      container.appendChild(document.createElement('br'));
+      continue;
+    }
+    const p = document.createElement('p');
+    Object.assign(p.style, { margin: '0.4em 0' });
+    // Simple *italic* rendering
+    const parts = line.split(/(\*[^*]+\*)/g);
+    for (const part of parts) {
+      if (part.startsWith('*') && part.endsWith('*') && part.length > 2) {
+        const em = document.createElement('em');
+        em.textContent = part.slice(1, -1);
+        p.appendChild(em);
+      } else {
+        p.appendChild(document.createTextNode(part));
+      }
+    }
+    container.appendChild(p);
+  }
+}
+
+// ── Draggable modal ─────────────────────────────────────────────────
+
+function makeDraggable(modal) {
+  const handle = modal.querySelector('.tutorial-drag-handle');
+  if (!handle) return;
+
+  handle.addEventListener('mousedown', (e) => {
+    if (e.target.closest('button, a')) return; // don't drag on buttons
+    e.preventDefault();
+    const rect = modal.getBoundingClientRect();
+    _dragState = { startX: e.clientX, startY: e.clientY, origLeft: rect.left, origTop: rect.top };
+    modal.style.transition = 'none';
+    handle.style.cursor = 'grabbing';
+
+    function onMove(ev) {
+      if (!_dragState) return;
+      const dx = ev.clientX - _dragState.startX;
+      const dy = ev.clientY - _dragState.startY;
+      modal.style.left = `${_dragState.origLeft + dx}px`;
+      modal.style.top = `${_dragState.origTop + dy}px`;
+      modal.style.transform = 'none';
+      modal.style.right = 'auto';
+      modal.style.bottom = 'auto';
+    }
+    function onUp() {
+      _dragState = null;
+      handle.style.cursor = 'grab';
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseup', onUp);
+    }
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onUp);
+  });
+
+  // Touch support
+  handle.addEventListener('touchstart', (e) => {
+    if (e.target.closest('button, a')) return;
+    const touch = e.touches[0];
+    const rect = modal.getBoundingClientRect();
+    _dragState = { startX: touch.clientX, startY: touch.clientY, origLeft: rect.left, origTop: rect.top };
+    modal.style.transition = 'none';
+
+    function onTouchMove(ev) {
+      if (!_dragState) return;
+      ev.preventDefault();
+      const t = ev.touches[0];
+      const dx = t.clientX - _dragState.startX;
+      const dy = t.clientY - _dragState.startY;
+      modal.style.left = `${_dragState.origLeft + dx}px`;
+      modal.style.top = `${_dragState.origTop + dy}px`;
+      modal.style.transform = 'none';
+      modal.style.right = 'auto';
+      modal.style.bottom = 'auto';
+    }
+    function onTouchEnd() {
+      _dragState = null;
+      document.removeEventListener('touchmove', onTouchMove);
+      document.removeEventListener('touchend', onTouchEnd);
+    }
+    document.addEventListener('touchmove', onTouchMove, { passive: false });
+    document.addEventListener('touchend', onTouchEnd);
+  }, { passive: true });
 }
 
 function positionModal(modal, highlightEl) {
@@ -673,21 +1037,16 @@ function positionModal(modal, highlightEl) {
   const vw = window.innerWidth;
   const vh = window.innerHeight;
   const gap = 16;
-
-  // Prefer placing below; fall back to above, then right, then left
   const mw = MODAL_MAX_WIDTH;
   let left = Math.max(12, Math.min(rect.left, vw - mw - 12));
   let top = rect.bottom + gap + HIGHLIGHT_PAD;
 
   if (top + 200 > vh) {
-    // try above
     top = rect.top - gap - HIGHLIGHT_PAD - 200;
     if (top < 12) {
-      // place to the right
       top = Math.max(12, rect.top);
       left = rect.right + gap + HIGHLIGHT_PAD;
       if (left + mw > vw) {
-        // place to the left
         left = rect.left - gap - HIGHLIGHT_PAD - mw;
         if (left < 12) left = 12;
       }
@@ -710,16 +1069,18 @@ function showToast(msg) {
   toast.id = 'tutorial-toast';
   Object.assign(toast.style, {
     position: 'fixed',
-    bottom: '24px',
+    top: '24px',
     left: '50%',
     transform: 'translateX(-50%)',
-    background: '#333',
-    color: '#fff',
+    background: 'var(--color-bg, #ffffff)',
+    color: 'var(--color-text, #0f172a)',
     padding: '12px 24px',
     borderRadius: '8px',
+    border: '1px solid var(--color-border, rgba(226,232,240,0.8))',
+    boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
     fontSize: '0.9em',
     zIndex: '10000',
-    maxWidth: '320px',
+    maxWidth: '360px',
     textAlign: 'center',
     opacity: '0',
     transition: prefersReducedMotion() ? 'none' : 'opacity 300ms ease',
@@ -727,9 +1088,7 @@ function showToast(msg) {
   toast.textContent = msg;
   document.body.appendChild(toast);
 
-  requestAnimationFrame(() => {
-    toast.style.opacity = '1';
-  });
+  requestAnimationFrame(() => { toast.style.opacity = '1'; });
 
   setTimeout(() => {
     toast.style.opacity = '0';
@@ -739,7 +1098,6 @@ function showToast(msg) {
 
 // ── Utilities ───────────────────────────────────────────────────────
 
-/** Query first matching element from a potentially comma-separated selector. */
 function queryFirst(selector) {
   const parts = selector.split(',').map(s => s.trim());
   for (const s of parts) {

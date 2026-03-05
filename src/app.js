@@ -223,6 +223,7 @@ async function boot() {
         GLOBAL_GRID_SIZE,
       );
       insights.showLeaderboard(dk);
+      advanceTutorial('expertise-click');
     });
   }
 
@@ -230,6 +231,7 @@ async function boot() {
   if (suggestBtn) {
     suggestBtn.addEventListener('click', () => {
       if (!globalEstimator) return;
+      advanceTutorial('suggest-click');
       // On mobile (<=480px), toggle the video discovery panel instead of the modal
       if (window.innerWidth <= 480) {
         toggleVideoPanel();
@@ -248,6 +250,12 @@ async function boot() {
   // Initialize video modal and wire completion callback
   videoModal.init();
   videoModal.onVideoComplete(handleVideoComplete);
+
+  // Wire share button click for tutorial
+  const shareBtn = document.getElementById('share-btn');
+  if (shareBtn) {
+    shareBtn.addEventListener('click', () => advanceTutorial('share-click'));
+  }
 
   share.init(headerEl, () => renderer._canvas, () => {
     if (!currentDomainBundle) return [];
@@ -310,6 +318,26 @@ async function boot() {
   if (quizToggle) {
     quizToggle.addEventListener('click', () => toggleQuizPanel());
   }
+
+  // Wire auto-advance toggle for tutorial (created dynamically by modes.js)
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.auto-advance-track') || e.target.closest('.auto-advance-label')) {
+      advanceTutorial('toggle-auto-advance');
+    }
+  });
+
+  // Wire modal-dismiss for tutorial (insights/share/video modals closing)
+  // Uses a body-level observer since insights-modal is created dynamically
+  new MutationObserver((mutations) => {
+    for (const m of mutations) {
+      if (m.type === 'attributes' && m.attributeName === 'hidden') {
+        const el = m.target;
+        if (el.hidden && (el.id === 'insights-modal' || el.id === 'share-modal')) {
+          advanceTutorial('modal-dismiss');
+        }
+      }
+    }
+  }).observe(document.body, { attributes: true, attributeFilter: ['hidden'], subtree: true });
 
   setupKeyboardNav({ onEscape: handleEscape });
   wireSubscriptions();
@@ -755,6 +783,7 @@ function handleSkip() {
   }, 0);
 
   // Advance tutorial on skip event
+  setAnswerFeedback(false, true);
   advanceTutorial('skip');
 }
 

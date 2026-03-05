@@ -511,10 +511,6 @@ function buildDomainList(items) {
     nameSpan.className = 'insights-concept';
     const label = (item.name || '').trim();
     nameSpan.textContent = label;
-    if (item.level === 'sub') {
-      nameSpan.style.paddingLeft = '0.75rem';
-      nameSpan.style.fontSize = '0.8rem';
-    }
 
     const pctSpan = document.createElement('span');
     pctSpan.className = 'insights-pct';

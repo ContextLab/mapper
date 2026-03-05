@@ -167,7 +167,7 @@
         "A": "The base case",
         "B": "The recursive case",
         "C": "The termination flag",
-        "D": "The stack sentinel"
+        "D": "The loop invariant"
       },
       "correct_answer": "A",
       "difficulty": 1,

@@ -119,6 +119,7 @@ export async function answerQuestion(page, persona, questionDb, rand) {
 
   if (!question) {
     // Can't find in DB — answer randomly
+    console.warn('[runner] ? answer: DB miss — question text not found in index. Text preview:', displayedText.substring(0, 80));
     const firstBtn = page.locator('.quiz-option:not([disabled])').first();
     await firstBtn.click();
     return {
@@ -232,6 +233,7 @@ export async function answerQuestion(page, persona, questionDb, rand) {
   } else if (shouldBeCorrect && selectedAnswer === question.correct_answer) {
     // We intended correct but got it wrong — mapping error.
     // Mark as unknown since we can't determine the actual key clicked.
+    console.warn('[runner] ? answer: mapping error — intended correct but DOM says wrong. Question:', question.id, 'correctKey:', question.correct_answer);
     selectedAnswer = '?';
   }
 

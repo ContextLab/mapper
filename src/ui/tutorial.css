@@ -1,0 +1,114 @@
+/* Tutorial Mode — M3 Motion Design Tokens & Styles */
+
+:root {
+  /* M3 Emphasized easing */
+  --ease-emphasized-decel: cubic-bezier(0.05, 0.7, 0.1, 1.0);
+  --ease-emphasized-accel: cubic-bezier(0.3, 0.0, 0.8, 0.15);
+  --ease-standard: cubic-bezier(0.2, 0.0, 0.0, 1.0);
+
+  /* Durations */
+  --dur-short: 150ms;
+  --dur-medium: 300ms;
+  --dur-long: 500ms;
+  --dur-xlong: 800ms;
+
+  /* Tutorial accent colors */
+  --tutorial-accent: #6C63FF;
+  --tutorial-success: #4CAF50;
+  --tutorial-gap: 12px;
+}
+
+/* Highlight ring on targeted elements */
+.tutorial-highlight {
+  position: relative;
+  z-index: 9999;
+  outline: 2px solid var(--tutorial-accent);
+  outline-offset: 4px;
+  border-radius: 8px;
+  animation: tutorialPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes tutorialPulse {
+  0%, 100% { outline-color: var(--tutorial-accent); box-shadow: 0 0 0 0 rgba(108, 99, 255, 0.3); }
+  50% { outline-color: var(--tutorial-accent); box-shadow: 0 0 12px 4px rgba(108, 99, 255, 0.2); }
+}
+
+/* Tutorial overlay */
+#tutorial-overlay {
+  pointer-events: auto;
+}
+
+/* Tutorial modal */
+#tutorial-modal {
+  pointer-events: auto;
+}
+
+#tutorial-modal .tutorial-dismiss:hover {
+  color: #fff;
+}
+
+#tutorial-modal .tutorial-next-btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
+#tutorial-modal .tutorial-skip-link:hover {
+  color: #bbb;
+}
+
+/* Tutorial toast */
+#tutorial-toast {
+  pointer-events: none;
+}
+
+/* Tutorial SVG animations */
+.tutorial-svg-animation {
+  display: block;
+  margin: 12px auto;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.tutorial-svg-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity var(--dur-long) var(--ease-standard);
+}
+
+.tutorial-svg-frame.active {
+  opacity: 1;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .tutorial-highlight {
+    animation: none;
+    box-shadow: 0 0 8px 2px rgba(108, 99, 255, 0.3);
+  }
+
+  #tutorial-modal {
+    transition: none !important;
+  }
+
+  #tutorial-overlay {
+    transition: none !important;
+  }
+
+  .tutorial-svg-frame {
+    transition: none;
+  }
+}
+
+/* Mobile bottom-sheet adjustments */
+@media (max-width: 480px) {
+  #tutorial-modal {
+    max-width: none !important;
+    border-radius: 12px 12px 0 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: auto !important;
+  }
+}

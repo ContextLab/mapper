@@ -981,16 +981,16 @@
     },
     {
       "id": "96dce65d7d55c50f",
-      "question_text": "Larmor's theorem states a weak magnetic field on electrons in a central potential is equivalent to what?",
+      "question_text": "What is the Larmor precession frequency of a charged particle in a uniform magnetic field $B$?",
       "options": {
-        "A": "Uniform translation",
-        "B": "Larmor precession",
-        "C": "Larmor rotation",
-        "D": "Uniform oscillation"
+        "A": "$\\omega_L = eB/(2m)$",
+        "B": "$\\omega_L = eB/m$",
+        "C": "$\\omega_L = 2eB/m$",
+        "D": "$\\omega_L = eB/(4\\pi m)$"
       },
-      "correct_answer": "C",
+      "correct_answer": "A",
       "difficulty": 4,
-      "source_article": "Larmor precession",
+      "source_article": "Larmor_precession",
       "domain_ids": [
         "physics"
       ],

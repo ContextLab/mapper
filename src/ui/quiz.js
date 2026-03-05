@@ -279,9 +279,57 @@ function handleKeyDown(e) {
   if (['4', 'D'].includes(key)) handleOptionClick('D');
 }
 
+/**
+ * Validate a question object for required fields and structure.
+ * @param {object} question
+ * @returns {{valid: boolean, reason: string}}
+ */
+export function isValidQuestion(question) {
+  if (!question) return { valid: false, reason: 'question is null or undefined' };
+
+  const text = question.question_text;
+  if (!text || typeof text !== 'string' || text.trim().length < 10) {
+    return { valid: false, reason: 'question_text is missing or under 10 characters' };
+  }
+
+  const opts = question.options;
+  if (!opts || typeof opts !== 'object') {
+    return { valid: false, reason: 'options is missing or not an object' };
+  }
+  const validKeys = Object.keys(opts).filter(k => typeof opts[k] === 'string' && opts[k].trim() !== '');
+  if (validKeys.length < 4) {
+    return { valid: false, reason: `options has only ${validKeys.length} valid keys (need 4)` };
+  }
+
+  const correct = question.correct_answer;
+  if (!correct || !(correct in opts)) {
+    return { valid: false, reason: 'correct_answer is missing or does not match any option key' };
+  }
+
+  return { valid: true, reason: '' };
+}
+
 export function showQuestion(question) {
+  // Null means "no more questions" — clear the display gracefully
+  if (!question) {
+    currentQuestion = null;
+    if (uiElements.question) uiElements.question.textContent = 'All questions answered!';
+    if (uiElements.options) uiElements.options.forEach(btn => { btn.hidden = true; });
+    if (uiElements.instruction) uiElements.instruction.hidden = true;
+    if (uiElements.feedback) uiElements.feedback.textContent = '';
+    if (uiElements.actions) uiElements.actions.hidden = true;
+    return;
+  }
+
+  // Validate question structure
+  const validation = isValidQuestion(question);
+  if (!validation.valid) {
+    console.warn('[quiz] Skipping invalid question:', question.id, validation.reason);
+    return;
+  }
+
   currentQuestion = question;
-  
+
   if (uiElements.wrapper) {
     uiElements.wrapper.classList.remove('fade-in');
     void uiElements.wrapper.offsetWidth;

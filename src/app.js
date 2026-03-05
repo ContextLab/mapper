@@ -28,6 +28,8 @@ import * as modes from './ui/modes.js';
 
 import * as insights from './ui/insights.js';
 import * as share from './ui/share.js';
+import { checkMilestone, highlightExpertiseButton, updateProgressDisplay } from './ui/milestones.js';
+import { initTutorial, advanceTutorial, isTutorialActive } from './ui/tutorial.js';
 import * as videoModal from './ui/video-modal.js';
 import * as videoLoader from './domain/video-loader.js';
 import * as videoPanel from './ui/video-panel.js';
@@ -52,6 +54,7 @@ let currentDomainBundle = null; // Points to allDomainBundle once loaded
 let aggregatedQuestions = [];   // Questions for active domain + descendants (CL-049)
 let currentViewport = { x_min: 0, x_max: 1, y_min: 0, y_max: 1 };
 let domainQuestionCount = 0;
+let consecutiveCorrect = 0;
 let switchGeneration = 0;
 let questionIndex = new Map();
 let mergedVideoWindows = []; // Accumulated window coords from recent unwatched-between videos
@@ -311,6 +314,9 @@ async function boot() {
   setupKeyboardNav({ onEscape: handleEscape });
   wireSubscriptions();
 
+  // Initialize tutorial after app is fully wired
+  initTutorial({ responsesCount: $responses.get().length });
+
   announce('Knowledge Mapper loaded. Select a domain to begin.');
 }
 
@@ -545,6 +551,9 @@ async function switchDomain(domainId) {
   announce(`Navigated to ${domainName}. ${aggregatedQuestions.length} questions available.`);
 
   selectAndShowNextQuestion();
+
+  // Advance tutorial on domain switch
+  advanceTutorial('domain-change');
 }
 
 function selectAndShowNextQuestion() {
@@ -553,7 +562,19 @@ function selectAndShowNextQuestion() {
   const answeredIds = $answeredIds.get();
   // Use aggregated questions (own + descendants) per CL-049
   const pool = aggregatedQuestions.length > 0 ? aggregatedQuestions : (currentDomainBundle.questions || []);
-  const available = pool.filter(q => !answeredIds.has(q.id));
+  let available = pool.filter(q => !answeredIds.has(q.id) && quiz.isValidQuestion(q).valid);
+
+  // Filter to questions belonging to the active domain's lineage (CL-T014)
+  const activeDomain = $activeDomain.get();
+  if (activeDomain && activeDomain !== 'all') {
+    const descendants = registry.getDescendants(activeDomain);
+    const domainObj = registry.getDomain(activeDomain);
+    const validIds = new Set([activeDomain, ...descendants]);
+    if (domainObj && domainObj.parent_id) validIds.add(domainObj.parent_id);
+    available = available.filter(q =>
+      q.domain_ids && q.domain_ids.some(id => validIds.has(id))
+    );
+  }
 
   if (available.length === 0) {
     announce('All questions answered! Great work exploring the knowledge map.');
@@ -648,6 +669,24 @@ function handleAnswer(selectedKey, question) {
       }
     }
   }, 0);
+
+  // Engagement: track streak, update progress display, check milestones
+  if (isCorrect) {
+    consecutiveCorrect++;
+  } else {
+    consecutiveCorrect = 0;
+  }
+  const totalAnswered = $responses.get().length;
+  updateProgressDisplay(totalAnswered, consecutiveCorrect);
+  if (!isTutorialActive()) {
+    checkMilestone(totalAnswered);
+  }
+  if (totalAnswered >= 15 && !isTutorialActive()) {
+    highlightExpertiseButton();
+  }
+
+  // Advance tutorial on answer event
+  advanceTutorial('answer');
 }
 
 function handleSkip() {
@@ -703,6 +742,9 @@ function handleSkip() {
     const estimates = estimator.predict();
     $estimates.set(estimates);
   }, 0);
+
+  // Advance tutorial on skip event
+  advanceTutorial('skip');
 }
 
 function handleReset() {

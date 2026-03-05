@@ -5,10 +5,10 @@
     "parent_id": null,
     "level": "general",
     "region": {
-      "x_min": 0.651629,
-      "x_max": 0.746808,
-      "y_min": 0.400219,
-      "y_max": 0.871958
+      "x_min": 0.346121,
+      "x_max": 0.91324,
+      "y_min": 0.26614,
+      "y_max": 0.770786
     },
     "grid_size": 70
   },
@@ -24,8 +24,8 @@
       },
       "correct_answer": "A",
       "difficulty": 1,
-      "x": 0.665983,
-      "y": 0.817127
+      "x": 0.883641,
+      "y": 0.610969
     },
     {
       "id": "f269c9f2b6351c23",
@@ -38,8 +38,8 @@
       },
       "correct_answer": "B",
       "difficulty": 1,
-      "x": 0.656629,
-      "y": 0.803653
+      "x": 0.878653,
+      "y": 0.594906
     },
     {
       "id": "e0d7029ab49e4244",
@@ -52,8 +52,8 @@
       },
       "correct_answer": "C",
       "difficulty": 1,
-      "x": 0.666326,
-      "y": 0.818221
+      "x": 0.881837,
+      "y": 0.622092
     },
     {
       "id": "7cc9f44e45d2824d",
@@ -73,8 +73,8 @@
       "concepts_tested": [
         "computer network"
       ],
-      "x": 0.656926,
-      "y": 0.804818
+      "x": 0.875204,
+      "y": 0.588599
     },
     {
       "id": "4e3742d0d6eb7e89",
@@ -87,8 +87,8 @@
       },
       "correct_answer": "A",
       "difficulty": 1,
-      "x": 0.660333,
-      "y": 0.808118
+      "x": 0.881206,
+      "y": 0.615061
     },
     {
       "id": "af24d119a0c43f5a",
@@ -108,8 +108,8 @@
       "concepts_tested": [
         "computer virus"
       ],
-      "x": 0.66176,
-      "y": 0.810227
+      "x": 0.47108,
+      "y": 0.27114
     },
     {
       "id": "9c1d42f95eca2359",
@@ -122,8 +122,8 @@
       },
       "correct_answer": "C",
       "difficulty": 1,
-      "x": 0.657863,
-      "y": 0.804762
+      "x": 0.876257,
+      "y": 0.608031
     },
     {
       "id": "f76f5d97151a70bf",
@@ -136,8 +136,8 @@
       },
       "correct_answer": "D",
       "difficulty": 1,
-      "x": 0.664058,
-      "y": 0.814412
+      "x": 0.874224,
+      "y": 0.604216
     },
     {
       "id": "de7a72b33cf8dc8d",
@@ -150,8 +150,8 @@
       },
       "correct_answer": "A",
       "difficulty": 1,
-      "x": 0.66814,
-      "y": 0.821457
+      "x": 0.891061,
+      "y": 0.624983
     },
     {
       "id": "76c5d22eef86b614",
@@ -164,8 +164,8 @@
       },
       "correct_answer": "B",
       "difficulty": 1,
-      "x": 0.662423,
-      "y": 0.810906
+      "x": 0.878278,
+      "y": 0.597507
     },
     {
       "id": "47ae7fffb013e108",
@@ -178,8 +178,8 @@
       },
       "correct_answer": "C",
       "difficulty": 1,
-      "x": 0.667775,
-      "y": 0.820149
+      "x": 0.883921,
+      "y": 0.619882
     },
     {
       "id": "759e90f8c5c5dec1",
@@ -192,8 +192,8 @@
       },
       "correct_answer": "D",
       "difficulty": 1,
-      "x": 0.658008,
-      "y": 0.800569
+      "x": 0.351121,
+      "y": 0.468006
     },
     {
       "id": "211ca65ec1920dd8",
@@ -206,8 +206,8 @@
       },
       "correct_answer": "A",
       "difficulty": 1,
-      "x": 0.676366,
-      "y": 0.831404
+      "x": 0.864808,
+      "y": 0.606184
     },
     {
       "id": "1f4f200d000f23b7",
@@ -227,8 +227,8 @@
       "concepts_tested": [
         "relational database"
       ],
-      "x": 0.676745,
-      "y": 0.83672
+      "x": 0.895185,
+      "y": 0.695009
     },
     {
       "id": "8dda7129adb159f1",
@@ -248,8 +248,8 @@
       "concepts_tested": [
         "SQL"
       ],
-      "x": 0.669585,
-      "y": 0.823331
+      "x": 0.871571,
+      "y": 0.655396
     },
     {
       "id": "ddd59f5f3e15eddd",
@@ -269,8 +269,8 @@
       "concepts_tested": [
         "TCP/IP"
       ],
-      "x": 0.672508,
-      "y": 0.837514
+      "x": 0.881383,
+      "y": 0.566545
     },
     {
       "id": "b6cefe4cf3e308b1",
@@ -290,8 +290,8 @@
       "concepts_tested": [
         "version control"
       ],
-      "x": 0.681249,
-      "y": 0.844311
+      "x": 0.887897,
+      "y": 0.683415
     },
     {
       "id": "95164dba268ac6af",
@@ -311,8 +311,8 @@
       "concepts_tested": [
         "object-oriented programming"
       ],
-      "x": 0.669141,
-      "y": 0.822527
+      "x": 0.85365,
+      "y": 0.638865
     },
     {
       "id": "6fbac1f65ade8b16",
@@ -332,8 +332,8 @@
       "concepts_tested": [
         "process (computing)"
       ],
-      "x": 0.6749,
-      "y": 0.833388
+      "x": 0.873253,
+      "y": 0.642523
     },
     {
       "id": "eb1db5c5978bbf18",
@@ -353,8 +353,8 @@
       "concepts_tested": [
         "virtual memory"
       ],
-      "x": 0.680541,
-      "y": 0.843845
+      "x": 0.887112,
+      "y": 0.690377
     },
     {
       "id": "1dba972f6aa1f758",
@@ -374,8 +374,8 @@
       "concepts_tested": [
         "CPU cache"
       ],
-      "x": 0.681995,
-      "y": 0.846772
+      "x": 0.892672,
+      "y": 0.700892
     },
     {
       "id": "9efbe1fbbe576216",
@@ -395,8 +395,8 @@
       "concepts_tested": [
         "public-key cryptography"
       ],
-      "x": 0.677102,
-      "y": 0.836334
+      "x": 0.818794,
+      "y": 0.670359
     },
     {
       "id": "2170d23750c600e1",
@@ -409,8 +409,8 @@
       },
       "correct_answer": "C",
       "difficulty": 2,
-      "x": 0.669236,
-      "y": 0.823554
+      "x": 0.864053,
+      "y": 0.677654
     },
     {
       "id": "e398e4aa770de029",
@@ -423,8 +423,8 @@
       },
       "correct_answer": "D",
       "difficulty": 2,
-      "x": 0.677107,
-      "y": 0.837505
+      "x": 0.860617,
+      "y": 0.687807
     },
     {
       "id": "37fb30361cdd219b",
@@ -444,8 +444,8 @@
       "concepts_tested": [
         "functional programming"
       ],
-      "x": 0.673913,
-      "y": 0.830478
+      "x": 0.882705,
+      "y": 0.678025
     },
     {
       "id": "b3530608666a55d3",
@@ -465,8 +465,8 @@
       "concepts_tested": [
         "firewall (computing)"
       ],
-      "x": 0.669691,
-      "y": 0.824618
+      "x": 0.878532,
+      "y": 0.684969
     },
     {
       "id": "d9b6d0b3949fbad9",
@@ -486,8 +486,8 @@
       "concepts_tested": [
         "concurrency (computer science)"
       ],
-      "x": 0.678898,
-      "y": 0.840683
+      "x": 0.856558,
+      "y": 0.686289
     },
     {
       "id": "d793f1508e3f72ae",
@@ -507,8 +507,8 @@
       "concepts_tested": [
         "distributed system"
       ],
-      "x": 0.681976,
-      "y": 0.845851
+      "x": 0.892756,
+      "y": 0.718749
     },
     {
       "id": "2732fef58747b6b2",
@@ -528,8 +528,8 @@
       "concepts_tested": [
         "database normalization"
       ],
-      "x": 0.676258,
-      "y": 0.83462
+      "x": 0.868134,
+      "y": 0.681141
     },
     {
       "id": "7fd51e5c4d87936f",
@@ -549,8 +549,8 @@
       "concepts_tested": [
         "compiler design"
       ],
-      "x": 0.668859,
-      "y": 0.821071
+      "x": 0.87171,
+      "y": 0.527683
     },
     {
       "id": "d06872a0c98b27a8",
@@ -570,8 +570,8 @@
       "concepts_tested": [
         "compiler design"
       ],
-      "x": 0.68068,
-      "y": 0.839606
+      "x": 0.888084,
+      "y": 0.538887
     },
     {
       "id": "4a38ff28edf50a1e",
@@ -591,8 +591,8 @@
       "concepts_tested": [
         "instruction set architecture"
       ],
-      "x": 0.677511,
-      "y": 0.83678
+      "x": 0.886546,
+      "y": 0.602176
     },
     {
       "id": "d6477145756a4ad7",
@@ -612,8 +612,8 @@
       "concepts_tested": [
         "containerization"
       ],
-      "x": 0.673566,
-      "y": 0.831316
+      "x": 0.900718,
+      "y": 0.678686
     },
     {
       "id": "ba9fc719dbd67f16",
@@ -633,8 +633,8 @@
       "concepts_tested": [
         "domain name system"
       ],
-      "x": 0.662758,
-      "y": 0.816675
+      "x": 0.877841,
+      "y": 0.415764
     },
     {
       "id": "2f3b3a5369b57d32",
@@ -654,8 +654,8 @@
       "concepts_tested": [
         "garbage collection"
       ],
-      "x": 0.683086,
-      "y": 0.846515
+      "x": 0.840576,
+      "y": 0.651343
     },
     {
       "id": "4b9c1542011ebcb5",
@@ -675,8 +675,8 @@
       "concepts_tested": [
         "transport layer security"
       ],
-      "x": 0.679839,
-      "y": 0.845968
+      "x": 0.874784,
+      "y": 0.725304
     },
     {
       "id": "8de6fd806bfd92a8",
@@ -696,8 +696,8 @@
       "concepts_tested": [
         "MapReduce"
       ],
-      "x": 0.674996,
-      "y": 0.834239
+      "x": 0.839949,
+      "y": 0.650664
     },
     {
       "id": "e79e96e8e3edc5fe",
@@ -717,8 +717,8 @@
       "concepts_tested": [
         "software design pattern"
       ],
-      "x": 0.663502,
-      "y": 0.810904
+      "x": 0.700213,
+      "y": 0.527958
     },
     {
       "id": "187332b01a33f3dd",
@@ -738,8 +738,8 @@
       "concepts_tested": [
         "CAP theorem"
       ],
-      "x": 0.680476,
-      "y": 0.84309
+      "x": 0.90824,
+      "y": 0.765786
     },
     {
       "id": "727ccc2755373ea0",
@@ -759,8 +759,8 @@
       "concepts_tested": [
         "Paxos (computer science)"
       ],
-      "x": 0.68758,
-      "y": 0.857558
+      "x": 0.848315,
+      "y": 0.746686
     },
     {
       "id": "775c8f41cbf70ed6",
@@ -780,8 +780,8 @@
       "concepts_tested": [
         "cache coherence"
       ],
-      "x": 0.675527,
-      "y": 0.836259
+      "x": 0.887861,
+      "y": 0.700682
     },
     {
       "id": "241983c99eca6928",
@@ -801,8 +801,8 @@
       "concepts_tested": [
         "out-of-order execution"
       ],
-      "x": 0.741808,
-      "y": 0.405219
+      "x": 0.874839,
+      "y": 0.691039
     },
     {
       "id": "fa50c6df32f2568f",
@@ -822,8 +822,8 @@
       "concepts_tested": [
         "write-ahead logging"
       ],
-      "x": 0.684837,
-      "y": 0.851
+      "x": 0.884325,
+      "y": 0.73554
     },
     {
       "id": "1b13387954de84ff",
@@ -843,8 +843,8 @@
       "concepts_tested": [
         "software transactional memory"
       ],
-      "x": 0.681885,
-      "y": 0.846471
+      "x": 0.891174,
+      "y": 0.683452
     },
     {
       "id": "86a8f626562cec55",
@@ -864,8 +864,8 @@
       "concepts_tested": [
         "LLVM"
       ],
-      "x": 0.67619,
-      "y": 0.835054
+      "x": 0.868791,
+      "y": 0.64415
     },
     {
       "id": "f703f165fe24f647",
@@ -885,8 +885,8 @@
       "concepts_tested": [
         "Spectre (vulnerability)"
       ],
-      "x": 0.686284,
-      "y": 0.855266
+      "x": 0.885055,
+      "y": 0.699755
     },
     {
       "id": "0915dfaae8ca64af",
@@ -906,8 +906,8 @@
       "concepts_tested": [
         "Byzantine fault tolerance"
       ],
-      "x": 0.68836,
-      "y": 0.859492
+      "x": 0.849828,
+      "y": 0.747284
     },
     {
       "id": "9e7bf1d73fc659c5",
@@ -927,8 +927,8 @@
       "concepts_tested": [
         "conflict-free replicated data type"
       ],
-      "x": 0.677884,
-      "y": 0.839778
+      "x": 0.89987,
+      "y": 0.725089
     },
     {
       "id": "d322a3e519119f1f",
@@ -948,8 +948,8 @@
       "concepts_tested": [
         "memory consistency model"
       ],
-      "x": 0.692023,
-      "y": 0.866958
+      "x": 0.899755,
+      "y": 0.700966
     },
     {
       "id": "2ea68efefc1428a1",
@@ -969,8 +969,8 @@
       "concepts_tested": [
         "query optimization"
       ],
-      "x": 0.676535,
-      "y": 0.835279
+      "x": 0.862727,
+      "y": 0.699134
     }
   ],
   "labels": [],

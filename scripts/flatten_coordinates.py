@@ -900,7 +900,22 @@ def main():
     )
 
     print(f"\nDone! Flattened coordinates saved with mu={args.mu}")
-    print(f"  To adjust: python scripts/flatten_coordinates.py --mu <value>")
+
+    # Auto-export to domain JSON files
+    # This ensures domain JSONs and index.json bounding boxes stay in sync
+    # with the flattened coordinates. Previously this was a manual step that
+    # was easy to forget (see: 2026-03-04 session where we had to do it by hand).
+    print("\n" + "-" * 70)
+    print("Auto-exporting flattened coordinates to domain JSON files...")
+    print("-" * 70)
+    try:
+        sys.path.insert(0, str(Path(__file__).parent))
+        from export_coords_to_domains import run_export
+        run_export()
+        print("\nPipeline complete! Domain JSONs and index.json are up to date.")
+    except Exception as e:
+        print(f"\nWARNING: Auto-export failed: {e}")
+        print("  Run manually: python scripts/export_coords_to_domains.py")
 
 
 if __name__ == "__main__":

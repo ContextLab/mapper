@@ -5,10 +5,10 @@
     "parent_id": "philosophy",
     "level": "sub",
     "region": {
-      "x_min": 0.637157,
-      "x_max": 0.688054,
-      "y_min": 0.766238,
-      "y_max": 0.845166
+      "x_min": 0.28599,
+      "x_max": 0.77506,
+      "y_min": 0.449245,
+      "y_max": 0.676888
     },
     "grid_size": 70
   },
@@ -24,8 +24,8 @@
       },
       "correct_answer": "A",
       "difficulty": 1,
-      "x": 0.652634,
-      "y": 0.789462
+      "x": 0.415715,
+      "y": 0.629338
     },
     {
       "id": "66d1c2082f63c1d4",
@@ -38,8 +38,8 @@
       },
       "correct_answer": "B",
       "difficulty": 1,
-      "x": 0.654678,
-      "y": 0.792473
+      "x": 0.444053,
+      "y": 0.57812
     },
     {
       "id": "1ddbf893ab1e7a3a",
@@ -52,8 +52,8 @@
       },
       "correct_answer": "C",
       "difficulty": 1,
-      "x": 0.662253,
-      "y": 0.806739
+      "x": 0.306129,
+      "y": 0.623995
     },
     {
       "id": "05f8a09a22684a8f",
@@ -66,8 +66,8 @@
       },
       "correct_answer": "D",
       "difficulty": 1,
-      "x": 0.647452,
-      "y": 0.780032
+      "x": 0.512686,
+      "y": 0.562138
     },
     {
       "id": "98361b0135a9d23d",
@@ -80,8 +80,8 @@
       },
       "correct_answer": "A",
       "difficulty": 1,
-      "x": 0.651862,
-      "y": 0.787717
+      "x": 0.430254,
+      "y": 0.619732
     },
     {
       "id": "a9d8ff3fb48984e4",
@@ -94,8 +94,8 @@
       },
       "correct_answer": "B",
       "difficulty": 1,
-      "x": 0.648456,
-      "y": 0.782124
+      "x": 0.418188,
+      "y": 0.624461
     },
     {
       "id": "8a87cbfc4299dfb6",
@@ -115,8 +115,8 @@
       "concepts_tested": [
         "good and evil"
       ],
-      "x": 0.652328,
-      "y": 0.788119
+      "x": 0.489352,
+      "y": 0.584279
     },
     {
       "id": "7000fedfdfed6bbc",
@@ -136,8 +136,8 @@
       "concepts_tested": [
         "conscience"
       ],
-      "x": 0.650065,
-      "y": 0.785666
+      "x": 0.427042,
+      "y": 0.619407
     },
     {
       "id": "6a47783b82d51fd3",
@@ -150,8 +150,8 @@
       },
       "correct_answer": "A",
       "difficulty": 1,
-      "x": 0.657481,
-      "y": 0.797712
+      "x": 0.437182,
+      "y": 0.613739
     },
     {
       "id": "94f709de8a7057af",
@@ -164,8 +164,8 @@
       },
       "correct_answer": "B",
       "difficulty": 1,
-      "x": 0.654859,
-      "y": 0.791926
+      "x": 0.472006,
+      "y": 0.591879
     },
     {
       "id": "4b83594a68bc3a76",
@@ -178,8 +178,8 @@
       },
       "correct_answer": "C",
       "difficulty": 1,
-      "x": 0.65147,
-      "y": 0.786935
+      "x": 0.469912,
+      "y": 0.591218
     },
     {
       "id": "6a57e580c0f3bd84",
@@ -199,8 +199,8 @@
       "concepts_tested": [
         "harm"
       ],
-      "x": 0.647874,
-      "y": 0.780614
+      "x": 0.404123,
+      "y": 0.642667
     },
     {
       "id": "37301d8e191c350e",
@@ -213,8 +213,8 @@
       },
       "correct_answer": "A",
       "difficulty": 1,
-      "x": 0.671005,
-      "y": 0.820961
+      "x": 0.29099,
+      "y": 0.608718
     },
     {
       "id": "867085f9a4c7b6ff",
@@ -234,8 +234,8 @@
       "concepts_tested": [
         "utilitarianism"
       ],
-      "x": 0.658752,
-      "y": 0.799833
+      "x": 0.414047,
+      "y": 0.671888
     },
     {
       "id": "dacd95ab01f044c3",
@@ -255,8 +255,8 @@
       "concepts_tested": [
         "categorical imperative"
       ],
-      "x": 0.64484,
-      "y": 0.775577
+      "x": 0.48932,
+      "y": 0.591244
     },
     {
       "id": "c6dfdfd4f79c7fa5",
@@ -276,8 +276,8 @@
       "concepts_tested": [
         "virtue ethics"
       ],
-      "x": 0.646549,
-      "y": 0.77836
+      "x": 0.446249,
+      "y": 0.606682
     },
     {
       "id": "2fe4047c1af96260",
@@ -297,8 +297,8 @@
       "concepts_tested": [
         "deontological ethics"
       ],
-      "x": 0.650681,
-      "y": 0.785195
+      "x": 0.462995,
+      "y": 0.627013
     },
     {
       "id": "995256432b4ee241",
@@ -318,8 +318,8 @@
       "concepts_tested": [
         "consequentialism"
       ],
-      "x": 0.649557,
-      "y": 0.783385
+      "x": 0.517622,
+      "y": 0.56409
     },
     {
       "id": "8ae5ad3861434856",
@@ -339,8 +339,8 @@
       "concepts_tested": [
         "social contract"
       ],
-      "x": 0.66305,
-      "y": 0.804548
+      "x": 0.375809,
+      "y": 0.541548
     },
     {
       "id": "047496bedddce1ed",
@@ -360,8 +360,8 @@
       "concepts_tested": [
         "trolley problem"
       ],
-      "x": 0.662697,
-      "y": 0.806728
+      "x": 0.422113,
+      "y": 0.653956
     },
     {
       "id": "e1326a5a78cf34d4",
@@ -381,8 +381,8 @@
       "concepts_tested": [
         "moral relativism"
       ],
-      "x": 0.657304,
-      "y": 0.796067
+      "x": 0.518004,
+      "y": 0.589867
     },
     {
       "id": "a9ff787d5b01e984",
@@ -402,8 +402,8 @@
       "concepts_tested": [
         "natural law"
       ],
-      "x": 0.664675,
-      "y": 0.806672
+      "x": 0.526449,
+      "y": 0.576638
     },
     {
       "id": "6d862ee498e02eb9",
@@ -423,8 +423,8 @@
       "concepts_tested": [
         "hedonism"
       ],
-      "x": 0.653682,
-      "y": 0.790051
+      "x": 0.490899,
+      "y": 0.557208
     },
     {
       "id": "e41da386706744a2",
@@ -444,8 +444,8 @@
       "concepts_tested": [
         "moral realism"
       ],
-      "x": 0.663181,
-      "y": 0.806107
+      "x": 0.508597,
+      "y": 0.605349
     },
     {
       "id": "7c920b116c3bbe51",
@@ -465,8 +465,8 @@
       "concepts_tested": [
         "applied ethics"
       ],
-      "x": 0.66221,
-      "y": 0.803182
+      "x": 0.467212,
+      "y": 0.607798
     },
     {
       "id": "c207cb77353df4e0",
@@ -486,8 +486,8 @@
       "concepts_tested": [
         "golden rule"
       ],
-      "x": 0.649228,
-      "y": 0.783756
+      "x": 0.487235,
+      "y": 0.59233
     },
     {
       "id": "59c311049bbdf9b3",
@@ -507,8 +507,8 @@
       "concepts_tested": [
         "moral universalism"
       ],
-      "x": 0.672376,
-      "y": 0.821255
+      "x": 0.52995,
+      "y": 0.591942
     },
     {
       "id": "08ffb242f6cd7fc2",
@@ -528,8 +528,8 @@
       "concepts_tested": [
         "act utilitarianism vs rule utilitarianism"
       ],
-      "x": 0.657517,
-      "y": 0.797545
+      "x": 0.511847,
+      "y": 0.583692
     },
     {
       "id": "d8dd44f42c680c2b",
@@ -549,8 +549,8 @@
       "concepts_tested": [
         "doctrine of double effect"
       ],
-      "x": 0.666399,
-      "y": 0.814796
+      "x": 0.469851,
+      "y": 0.654025
     },
     {
       "id": "f8d7187f045f3100",
@@ -570,8 +570,8 @@
       "concepts_tested": [
         "moral intuitionism"
       ],
-      "x": 0.653864,
-      "y": 0.790591
+      "x": 0.492262,
+      "y": 0.60041
     },
     {
       "id": "37d51d9babee2058",
@@ -591,8 +591,8 @@
       "concepts_tested": [
         "error theory"
       ],
-      "x": 0.659695,
-      "y": 0.800429
+      "x": 0.497882,
+      "y": 0.607476
     },
     {
       "id": "3b0c662b7f472ecc",
@@ -612,8 +612,8 @@
       "concepts_tested": [
         "prima facie duties"
       ],
-      "x": 0.6664,
-      "y": 0.812694
+      "x": 0.490983,
+      "y": 0.642741
     },
     {
       "id": "d586a03a461d3759",
@@ -633,8 +633,8 @@
       "concepts_tested": [
         "reflective equilibrium"
       ],
-      "x": 0.657418,
-      "y": 0.796673
+      "x": 0.51093,
+      "y": 0.562882
     },
     {
       "id": "03581fa604a5bf14",
@@ -654,8 +654,8 @@
       "concepts_tested": [
         "moral luck"
       ],
-      "x": 0.657004,
-      "y": 0.79609
+      "x": 0.411867,
+      "y": 0.630749
     },
     {
       "id": "b3ba70bd1f8e08f6",
@@ -675,8 +675,8 @@
       "concepts_tested": [
         "egoism"
       ],
-      "x": 0.657852,
-      "y": 0.798493
+      "x": 0.386561,
+      "y": 0.63308
     },
     {
       "id": "ab1164a77b4348dc",
@@ -696,8 +696,8 @@
       "concepts_tested": [
         "bioethics"
       ],
-      "x": 0.660197,
-      "y": 0.800324
+      "x": 0.463723,
+      "y": 0.61145
     },
     {
       "id": "f94838e8ca6af1e9",
@@ -717,8 +717,8 @@
       "concepts_tested": [
         "animal ethics"
       ],
-      "x": 0.653145,
-      "y": 0.789525
+      "x": 0.422793,
+      "y": 0.630948
     },
     {
       "id": "ddf73e588e964292",
@@ -738,8 +738,8 @@
       "concepts_tested": [
         "distributive justice"
       ],
-      "x": 0.642157,
-      "y": 0.771238
+      "x": 0.421679,
+      "y": 0.575952
     },
     {
       "id": "ff392d15764e32ca",
@@ -759,8 +759,8 @@
       "concepts_tested": [
         "non-identity problem"
       ],
-      "x": 0.683054,
-      "y": 0.840166
+      "x": 0.512457,
+      "y": 0.629604
     },
     {
       "id": "33e0f0e08dc20f42",
@@ -780,8 +780,8 @@
       "concepts_tested": [
         "contractualism"
       ],
-      "x": 0.660548,
-      "y": 0.802781
+      "x": 0.500339,
+      "y": 0.639016
     },
     {
       "id": "ab612518aeb8d19f",
@@ -801,8 +801,8 @@
       "concepts_tested": [
         "expressivist metaethics"
       ],
-      "x": 0.663781,
-      "y": 0.808168
+      "x": 0.77006,
+      "y": 0.454245
     },
     {
       "id": "8a07ba782fba0806",
@@ -822,8 +822,8 @@
       "concepts_tested": [
         "moral particularism"
       ],
-      "x": 0.650337,
-      "y": 0.785964
+      "x": 0.503383,
+      "y": 0.623112
     },
     {
       "id": "74aefe94e894a23b",
@@ -843,8 +843,8 @@
       "concepts_tested": [
         "effective altruism"
       ],
-      "x": 0.648178,
-      "y": 0.781138
+      "x": 0.488668,
+      "y": 0.586001
     },
     {
       "id": "6a28536835aab766",
@@ -864,8 +864,8 @@
       "concepts_tested": [
         "repugnant conclusion"
       ],
-      "x": 0.680719,
-      "y": 0.836437
+      "x": 0.502877,
+      "y": 0.631164
     },
     {
       "id": "f300785c6b42420a",
@@ -885,8 +885,8 @@
       "concepts_tested": [
         "Frankfurt cases"
       ],
-      "x": 0.670784,
-      "y": 0.819911
+      "x": 0.486484,
+      "y": 0.645381
     },
     {
       "id": "8335ac1c02ceb4d6",
@@ -906,8 +906,8 @@
       "concepts_tested": [
         "moral functionalism"
       ],
-      "x": 0.669893,
-      "y": 0.816513
+      "x": 0.448354,
+      "y": 0.64163
     },
     {
       "id": "fa7d0f20ecdc7f81",
@@ -927,8 +927,8 @@
       "concepts_tested": [
         "Kantian constructivism"
       ],
-      "x": 0.659992,
-      "y": 0.799861
+      "x": 0.525167,
+      "y": 0.575666
     },
     {
       "id": "a5631c87fd058f28",
@@ -948,8 +948,8 @@
       "concepts_tested": [
         "adaptive preferences"
       ],
-      "x": 0.661063,
-      "y": 0.806237
+      "x": 0.487372,
+      "y": 0.493816
     },
     {
       "id": "6692efd164399bb3",
@@ -969,8 +969,8 @@
       "concepts_tested": [
         "just war theory"
       ],
-      "x": 0.662285,
-      "y": 0.804311
+      "x": 0.46714,
+      "y": 0.559831
     },
     {
       "id": "3d287d0908f689a5",
@@ -990,8 +990,8 @@
       "concepts_tested": [
         "moral encroachment"
       ],
-      "x": 0.656751,
-      "y": 0.7952
+      "x": 0.519063,
+      "y": 0.588447
     }
   ],
   "labels": [],

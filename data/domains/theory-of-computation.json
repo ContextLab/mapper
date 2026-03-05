@@ -5,10 +5,10 @@
     "parent_id": "computer-science",
     "level": "sub",
     "region": {
-      "x_min": 0.653891,
-      "x_max": 0.693745,
-      "y_min": 0.801129,
-      "y_max": 0.865262
+      "x_min": 0.679739,
+      "x_max": 0.930632,
+      "y_min": 0.444981,
+      "y_max": 0.858667
     },
     "grid_size": 70
   },
@@ -31,8 +31,8 @@
       "concepts_tested": [
         "algorithm"
       ],
-      "x": 0.662782,
-      "y": 0.812141
+      "x": 0.85273,
+      "y": 0.628417
     },
     {
       "id": "183034f1e4e2dd5a",
@@ -52,8 +52,8 @@
       "concepts_tested": [
         "Turing machine"
       ],
-      "x": 0.68227,
-      "y": 0.838984
+      "x": 0.778943,
+      "y": 0.591778
     },
     {
       "id": "e22e61c7d9d2139d",
@@ -73,8 +73,8 @@
       "concepts_tested": [
         "programming language"
       ],
-      "x": 0.669411,
-      "y": 0.822521
+      "x": 0.86039,
+      "y": 0.605022
     },
     {
       "id": "dc437bd7e4394612",
@@ -94,8 +94,8 @@
       "concepts_tested": [
         "binary code"
       ],
-      "x": 0.660378,
-      "y": 0.808019
+      "x": 0.83865,
+      "y": 0.449981
     },
     {
       "id": "2c854cebd9caf599",
@@ -115,8 +115,8 @@
       "concepts_tested": [
         "encryption"
       ],
-      "x": 0.660754,
-      "y": 0.812221
+      "x": 0.843084,
+      "y": 0.463102
     },
     {
       "id": "62662af09053e549",
@@ -136,8 +136,8 @@
       "concepts_tested": [
         "loop"
       ],
-      "x": 0.688111,
-      "y": 0.857523
+      "x": 0.857403,
+      "y": 0.669437
     },
     {
       "id": "e706107f4ba20650",
@@ -157,8 +157,8 @@
       "concepts_tested": [
         "compiler"
       ],
-      "x": 0.658891,
-      "y": 0.806129
+      "x": 0.86126,
+      "y": 0.575986
     },
     {
       "id": "0a980cb6d00b5703",
@@ -178,8 +178,8 @@
       "concepts_tested": [
         "recursion"
       ],
-      "x": 0.682812,
-      "y": 0.842334
+      "x": 0.860165,
+      "y": 0.669859
     },
     {
       "id": "cc1a4622f77cf92c",
@@ -199,8 +199,8 @@
       "concepts_tested": [
         "sorting algorithm"
       ],
-      "x": 0.681486,
-      "y": 0.842068
+      "x": 0.895006,
+      "y": 0.77351
     },
     {
       "id": "08c742f9caee6814",
@@ -220,8 +220,8 @@
       "concepts_tested": [
         "complexity"
       ],
-      "x": 0.674107,
-      "y": 0.831708
+      "x": 0.845237,
+      "y": 0.715754
     },
     {
       "id": "fe1e23bf5da5750b",
@@ -241,8 +241,8 @@
       "concepts_tested": [
         "halting problem"
       ],
-      "x": 0.679018,
-      "y": 0.836738
+      "x": 0.835553,
+      "y": 0.630506
     },
     {
       "id": "ae141f215c1e7c5c",
@@ -262,8 +262,8 @@
       "concepts_tested": [
         "formal language"
       ],
-      "x": 0.677521,
-      "y": 0.833875
+      "x": 0.892363,
+      "y": 0.568263
     },
     {
       "id": "36e8374e79694912",
@@ -283,8 +283,8 @@
       "concepts_tested": [
         "Boolean logic"
       ],
-      "x": 0.677328,
-      "y": 0.835593
+      "x": 0.684739,
+      "y": 0.619083
     },
     {
       "id": "3ebe78deb3a9a1af",
@@ -304,8 +304,8 @@
       "concepts_tested": [
         "finite automaton"
       ],
-      "x": 0.684648,
-      "y": 0.846265
+      "x": 0.9064,
+      "y": 0.571871
     },
     {
       "id": "d8585461ac517439",
@@ -325,8 +325,8 @@
       "concepts_tested": [
         "regular expression"
       ],
-      "x": 0.683122,
-      "y": 0.844175
+      "x": 0.912279,
+      "y": 0.563868
     },
     {
       "id": "95980e8e27601197",
@@ -346,8 +346,8 @@
       "concepts_tested": [
         "context-free grammar"
       ],
-      "x": 0.679804,
-      "y": 0.837125
+      "x": 0.912526,
+      "y": 0.538913
     },
     {
       "id": "94a8daac0b713199",
@@ -367,8 +367,8 @@
       "concepts_tested": [
         "pushdown automaton"
       ],
-      "x": 0.684865,
-      "y": 0.846202
+      "x": 0.925632,
+      "y": 0.62474
     },
     {
       "id": "3450c97f0248c305",
@@ -388,8 +388,8 @@
       "concepts_tested": [
         "NP-completeness"
       ],
-      "x": 0.68098,
-      "y": 0.838605
+      "x": 0.755089,
+      "y": 0.652945
     },
     {
       "id": "c5b97436bc35be87",
@@ -409,8 +409,8 @@
       "concepts_tested": [
         "P versus NP problem"
       ],
-      "x": 0.679427,
-      "y": 0.838416
+      "x": 0.789801,
+      "y": 0.671259
     },
     {
       "id": "056941ed2266566e",
@@ -430,8 +430,8 @@
       "concepts_tested": [
         "nondeterministic Turing machine"
       ],
-      "x": 0.680308,
-      "y": 0.837987
+      "x": 0.85277,
+      "y": 0.582152
     },
     {
       "id": "c9a609dd529d3180",
@@ -451,8 +451,8 @@
       "concepts_tested": [
         "decidability"
       ],
-      "x": 0.684026,
-      "y": 0.843719
+      "x": 0.849242,
+      "y": 0.596219
     },
     {
       "id": "5c76ceb7133f54df",
@@ -472,8 +472,8 @@
       "concepts_tested": [
         "Chomsky hierarchy"
       ],
-      "x": 0.683751,
-      "y": 0.843679
+      "x": 0.915928,
+      "y": 0.55111
     },
     {
       "id": "2751cf137effe669",
@@ -493,8 +493,8 @@
       "concepts_tested": [
         "parse tree"
       ],
-      "x": 0.678342,
-      "y": 0.834892
+      "x": 0.903708,
+      "y": 0.535015
     },
     {
       "id": "e41260ab8bfca1be",
@@ -514,8 +514,8 @@
       "concepts_tested": [
         "polynomial time"
       ],
-      "x": 0.688233,
-      "y": 0.856287
+      "x": 0.921674,
+      "y": 0.805831
     },
     {
       "id": "1ad79a0561def52e",
@@ -535,8 +535,8 @@
       "concepts_tested": [
         "reduction (complexity)"
       ],
-      "x": 0.68546,
-      "y": 0.852897
+      "x": 0.834663,
+      "y": 0.677537
     },
     {
       "id": "a3009a580622ed44",
@@ -556,8 +556,8 @@
       "concepts_tested": [
         "pumping lemma"
       ],
-      "x": 0.683657,
-      "y": 0.845541
+      "x": 0.916211,
+      "y": 0.570366
     },
     {
       "id": "6f6167516d0d7a84",
@@ -577,8 +577,8 @@
       "concepts_tested": [
         "Church-Turing thesis"
       ],
-      "x": 0.682575,
-      "y": 0.839246
+      "x": 0.716936,
+      "y": 0.586169
     },
     {
       "id": "028ec9a708613394",
@@ -598,8 +598,8 @@
       "concepts_tested": [
         "diagonalization argument"
       ],
-      "x": 0.685028,
-      "y": 0.844578
+      "x": 0.711555,
+      "y": 0.674392
     },
     {
       "id": "3da28a2ff94f32f0",
@@ -619,8 +619,8 @@
       "concepts_tested": [
         "space complexity"
       ],
-      "x": 0.684583,
-      "y": 0.849282
+      "x": 0.774097,
+      "y": 0.746724
     },
     {
       "id": "9397f5d91af535a9",
@@ -640,8 +640,8 @@
       "concepts_tested": [
         "Cook-Levin theorem"
       ],
-      "x": 0.682422,
-      "y": 0.842346
+      "x": 0.733697,
+      "y": 0.661362
     },
     {
       "id": "08c124d411c4858a",
@@ -661,8 +661,8 @@
       "concepts_tested": [
         "Cook-Levin theorem"
       ],
-      "x": 0.681937,
-      "y": 0.84103
+      "x": 0.735967,
+      "y": 0.655661
     },
     {
       "id": "d123a66fcb3fa1ba",
@@ -682,8 +682,8 @@
       "concepts_tested": [
         "Myhill-Nerode theorem"
       ],
-      "x": 0.684005,
-      "y": 0.84479
+      "x": 0.91214,
+      "y": 0.584342
     },
     {
       "id": "c622eccf7801104b",
@@ -703,8 +703,8 @@
       "concepts_tested": [
         "Turing completeness"
       ],
-      "x": 0.681731,
-      "y": 0.840369
+      "x": 0.751869,
+      "y": 0.625442
     },
     {
       "id": "5cb1e5c513d9e665",
@@ -724,8 +724,8 @@
       "concepts_tested": [
         "context-sensitive language"
       ],
-      "x": 0.68107,
-      "y": 0.839811
+      "x": 0.915694,
+      "y": 0.554825
     },
     {
       "id": "91746668d058fb27",
@@ -745,8 +745,8 @@
       "concepts_tested": [
         "closure properties of formal languages"
       ],
-      "x": 0.683184,
-      "y": 0.84433
+      "x": 0.918141,
+      "y": 0.553027
     },
     {
       "id": "1babf870693bd9a5",
@@ -766,8 +766,8 @@
       "concepts_tested": [
         "PSPACE"
       ],
-      "x": 0.681763,
-      "y": 0.841159
+      "x": 0.737007,
+      "y": 0.659734
     },
     {
       "id": "d88db6ae489ec560",
@@ -787,8 +787,8 @@
       "concepts_tested": [
         "randomized algorithm"
       ],
-      "x": 0.683025,
-      "y": 0.84785
+      "x": 0.882905,
+      "y": 0.739248
     },
     {
       "id": "369c36e8875b1a68",
@@ -808,8 +808,8 @@
       "concepts_tested": [
         "amortized analysis"
       ],
-      "x": 0.68491,
-      "y": 0.851054
+      "x": 0.922967,
+      "y": 0.792151
     },
     {
       "id": "5e4a4414fe43c052",
@@ -829,8 +829,8 @@
       "concepts_tested": [
         "Rice's theorem"
       ],
-      "x": 0.685575,
-      "y": 0.846527
+      "x": 0.731992,
+      "y": 0.625378
     },
     {
       "id": "b6203e891b8f0f4f",
@@ -850,8 +850,8 @@
       "concepts_tested": [
         "oracle machine"
       ],
-      "x": 0.67906,
-      "y": 0.83604
+      "x": 0.709362,
+      "y": 0.62741
     },
     {
       "id": "63a0ea98bddb1d37",
@@ -873,8 +873,8 @@
         "invariance theorem",
         "uncomputability"
       ],
-      "x": 0.688745,
-      "y": 0.860262
+      "x": 0.761535,
+      "y": 0.66642
     },
     {
       "id": "a6add411ebc996b1",
@@ -896,8 +896,8 @@
         "uniform circuits",
         "P/poly"
       ],
-      "x": 0.683735,
-      "y": 0.844601
+      "x": 0.801485,
+      "y": 0.724063
     },
     {
       "id": "ff1bcd73b6b6383e",
@@ -919,8 +919,8 @@
         "IP = PSPACE",
         "Shamir's theorem"
       ],
-      "x": 0.686353,
-      "y": 0.84913
+      "x": 0.776452,
+      "y": 0.733672
     },
     {
       "id": "ac2f42cad11de897",
@@ -942,8 +942,8 @@
         "Goldwasser-Micali-Rackoff",
         "soundness vs zero-knowledge"
       ],
-      "x": 0.682773,
-      "y": 0.841525
+      "x": 0.707183,
+      "y": 0.639964
     },
     {
       "id": "3284dfde05341ad6",
@@ -965,8 +965,8 @@
         "sum-check protocol",
         "IP = PSPACE"
       ],
-      "x": 0.686476,
-      "y": 0.85132
+      "x": 0.776184,
+      "y": 0.740021
     },
     {
       "id": "74aac898c3f13fd3",
@@ -988,8 +988,8 @@
         "oracle machines",
         "PH collapse"
       ],
-      "x": 0.686426,
-      "y": 0.852957
+      "x": 0.853148,
+      "y": 0.827746
     },
     {
       "id": "08c837f4e2f8c4c3",
@@ -1011,8 +1011,8 @@
         "Fagin's theorem",
         "Immerman-Vardi theorem"
       ],
-      "x": 0.682999,
-      "y": 0.843808
+      "x": 0.73107,
+      "y": 0.66909
     },
     {
       "id": "514280e278a74306",
@@ -1034,8 +1034,8 @@
         "space complexity",
         "PSPACE = NPSPACE"
       ],
-      "x": 0.687928,
-      "y": 0.858141
+      "x": 0.723368,
+      "y": 0.853667
     },
     {
       "id": "b272580c4010fd62",
@@ -1057,8 +1057,8 @@
         "Hartmanis-Stearns",
         "diagonalization"
       ],
-      "x": 0.687233,
-      "y": 0.855394
+      "x": 0.86604,
+      "y": 0.803888
     },
     {
       "id": "d165077577474aa7",
@@ -1080,8 +1080,8 @@
         "undecidability",
         "Emil Post"
       ],
-      "x": 0.679375,
-      "y": 0.837996
+      "x": 0.78502,
+      "y": 0.660874
     }
   ],
   "labels": [],

@@ -5,10 +5,10 @@
     "parent_id": "economics",
     "level": "sub",
     "region": {
-      "x_min": 0.145703,
-      "x_max": 0.901173,
-      "y_min": 0.412871,
-      "y_max": 0.850357
+      "x_min": 0.23514,
+      "x_max": 0.560336,
+      "y_min": 0.394377,
+      "y_max": 0.80596
     },
     "grid_size": 70
   },
@@ -24,8 +24,8 @@
       },
       "correct_answer": "A",
       "difficulty": 1,
-      "x": 0.661375,
-      "y": 0.806058
+      "x": 0.263934,
+      "y": 0.733168
     },
     {
       "id": "aa584dba3acde042",
@@ -38,8 +38,8 @@
       },
       "correct_answer": "B",
       "difficulty": 1,
-      "x": 0.663353,
-      "y": 0.808774
+      "x": 0.24014,
+      "y": 0.767012
     },
     {
       "id": "a0e40b02d2413415",
@@ -52,8 +52,8 @@
       },
       "correct_answer": "C",
       "difficulty": 1,
-      "x": 0.658892,
-      "y": 0.799838
+      "x": 0.253626,
+      "y": 0.740024
     },
     {
       "id": "0fce6bbddb9949c6",
@@ -66,8 +66,8 @@
       },
       "correct_answer": "D",
       "difficulty": 1,
-      "x": 0.652515,
-      "y": 0.789861
+      "x": 0.284198,
+      "y": 0.694252
     },
     {
       "id": "148ef7350d54555f",
@@ -80,8 +80,8 @@
       },
       "correct_answer": "A",
       "difficulty": 1,
-      "x": 0.663875,
-      "y": 0.81029
+      "x": 0.300632,
+      "y": 0.732229
     },
     {
       "id": "1f402f6531817ba9",
@@ -101,8 +101,8 @@
       "concepts_tested": [
         "central bank"
       ],
-      "x": 0.676359,
-      "y": 0.828557
+      "x": 0.311902,
+      "y": 0.694481
     },
     {
       "id": "fe48cfba52609f7b",
@@ -115,8 +115,8 @@
       },
       "correct_answer": "C",
       "difficulty": 1,
-      "x": 0.648308,
-      "y": 0.781579
+      "x": 0.299385,
+      "y": 0.692248
     },
     {
       "id": "2a45bfdc665d04b0",
@@ -129,8 +129,8 @@
       },
       "correct_answer": "D",
       "difficulty": 1,
-      "x": 0.649157,
-      "y": 0.782829
+      "x": 0.282787,
+      "y": 0.68826
     },
     {
       "id": "0f1f366f048e4786",
@@ -143,8 +143,8 @@
       },
       "correct_answer": "A",
       "difficulty": 1,
-      "x": 0.657217,
-      "y": 0.796763
+      "x": 0.267043,
+      "y": 0.718048
     },
     {
       "id": "66508748fc1eddea",
@@ -157,8 +157,8 @@
       },
       "correct_answer": "B",
       "difficulty": 1,
-      "x": 0.644394,
-      "y": 0.775109
+      "x": 0.283513,
+      "y": 0.695023
     },
     {
       "id": "67c64b7990548c80",
@@ -171,8 +171,8 @@
       },
       "correct_answer": "C",
       "difficulty": 1,
-      "x": 0.663168,
-      "y": 0.808475
+      "x": 0.356282,
+      "y": 0.656674
     },
     {
       "id": "449f5f6e4456e622",
@@ -185,8 +185,8 @@
       },
       "correct_answer": "D",
       "difficulty": 1,
-      "x": 0.669008,
-      "y": 0.820814
+      "x": 0.324466,
+      "y": 0.737235
     },
     {
       "id": "41637e87398663fb",
@@ -199,8 +199,8 @@
       },
       "correct_answer": "A",
       "difficulty": 1,
-      "x": 0.663911,
-      "y": 0.80962
+      "x": 0.302463,
+      "y": 0.734008
     },
     {
       "id": "4798affd5db8d124",
@@ -220,8 +220,8 @@
       "concepts_tested": [
         "Phillips curve"
       ],
-      "x": 0.6666,
-      "y": 0.81215
+      "x": 0.285883,
+      "y": 0.761485
     },
     {
       "id": "bbefb09eb624f9b6",
@@ -241,8 +241,8 @@
       "concepts_tested": [
         "quantitative easing"
       ],
-      "x": 0.667581,
-      "y": 0.814912
+      "x": 0.310995,
+      "y": 0.699902
     },
     {
       "id": "a10967cfcd0d8337",
@@ -262,8 +262,8 @@
       "concepts_tested": [
         "fiscal multiplier"
       ],
-      "x": 0.660255,
-      "y": 0.800877
+      "x": 0.304442,
+      "y": 0.739594
     },
     {
       "id": "4afde6089b30cb3a",
@@ -283,8 +283,8 @@
       "concepts_tested": [
         "aggregate demand"
       ],
-      "x": 0.664503,
-      "y": 0.811353
+      "x": 0.334217,
+      "y": 0.731429
     },
     {
       "id": "8ff391e4ef2a79c9",
@@ -304,8 +304,8 @@
       "concepts_tested": [
         "aggregate supply"
       ],
-      "x": 0.671102,
-      "y": 0.821287
+      "x": 0.326607,
+      "y": 0.725987
     },
     {
       "id": "ea87a75175eccc5f",
@@ -325,8 +325,8 @@
       "concepts_tested": [
         "money supply"
       ],
-      "x": 0.664442,
-      "y": 0.811243
+      "x": 0.350461,
+      "y": 0.65949
     },
     {
       "id": "879ef75428bea3fe",
@@ -346,8 +346,8 @@
       "concepts_tested": [
         "open market operations"
       ],
-      "x": 0.683989,
-      "y": 0.84117
+      "x": 0.305745,
+      "y": 0.710176
     },
     {
       "id": "9f792b2ef3a5db80",
@@ -367,8 +367,8 @@
       "concepts_tested": [
         "balance of payments"
       ],
-      "x": 0.662578,
-      "y": 0.809783
+      "x": 0.323575,
+      "y": 0.681097
     },
     {
       "id": "a7b2010b6c4a3b17",
@@ -388,8 +388,8 @@
       "concepts_tested": [
         "purchasing power parity"
       ],
-      "x": 0.67024,
-      "y": 0.81698
+      "x": 0.327501,
+      "y": 0.731892
     },
     {
       "id": "24e7d3f0220ad8f7",
@@ -409,8 +409,8 @@
       "concepts_tested": [
         "comparative advantage"
       ],
-      "x": 0.674415,
-      "y": 0.82406
+      "x": 0.327888,
+      "y": 0.728811
     },
     {
       "id": "a4b90c0a1e6ec0fa",
@@ -430,8 +430,8 @@
       "concepts_tested": [
         "business cycle"
       ],
-      "x": 0.663702,
-      "y": 0.811026
+      "x": 0.299994,
+      "y": 0.710986
     },
     {
       "id": "61369d3195104184",
@@ -451,8 +451,8 @@
       "concepts_tested": [
         "hyperinflation"
       ],
-      "x": 0.661836,
-      "y": 0.805721
+      "x": 0.30358,
+      "y": 0.709895
     },
     {
       "id": "fcaacbb6dc43fcfa",
@@ -472,8 +472,8 @@
       "concepts_tested": [
         "stagflation"
       ],
-      "x": 0.657043,
-      "y": 0.796265
+      "x": 0.257186,
+      "y": 0.737626
     },
     {
       "id": "99016607f46039bb",
@@ -493,8 +493,8 @@
       "concepts_tested": [
         "IS-LM model"
       ],
-      "x": 0.896173,
-      "y": 0.556532
+      "x": 0.319345,
+      "y": 0.754404
     },
     {
       "id": "8e1fabe03b089536",
@@ -514,8 +514,8 @@
       "concepts_tested": [
         "liquidity trap"
       ],
-      "x": 0.654851,
-      "y": 0.793491
+      "x": 0.279911,
+      "y": 0.744522
     },
     {
       "id": "69361e10474de351",
@@ -535,8 +535,8 @@
       "concepts_tested": [
         "Mundell-Fleming model"
       ],
-      "x": 0.660925,
-      "y": 0.80389
+      "x": 0.293207,
+      "y": 0.724305
     },
     {
       "id": "9949ddebbc944b04",
@@ -556,8 +556,8 @@
       "concepts_tested": [
         "Taylor rule"
       ],
-      "x": 0.676449,
-      "y": 0.824262
+      "x": 0.247128,
+      "y": 0.776688
     },
     {
       "id": "2c0dfe145bfb25f7",
@@ -577,8 +577,8 @@
       "concepts_tested": [
         "natural rate of unemployment"
       ],
-      "x": 0.663871,
-      "y": 0.808171
+      "x": 0.298385,
+      "y": 0.710173
     },
     {
       "id": "b544b797c82e4c83",
@@ -598,8 +598,8 @@
       "concepts_tested": [
         "crowding out"
       ],
-      "x": 0.669084,
-      "y": 0.817476
+      "x": 0.33903,
+      "y": 0.712552
     },
     {
       "id": "5d54b2f8b2ff177e",
@@ -619,8 +619,8 @@
       "concepts_tested": [
         "Solow growth model"
       ],
-      "x": 0.677162,
-      "y": 0.83231
+      "x": 0.343694,
+      "y": 0.71914
     },
     {
       "id": "aad385c40d728f53",
@@ -633,8 +633,8 @@
       },
       "correct_answer": "B",
       "difficulty": 3,
-      "x": 0.674959,
-      "y": 0.83498
+      "x": 0.395632,
+      "y": 0.80096
     },
     {
       "id": "e8cc99b98a1cdc77",
@@ -654,8 +654,8 @@
       "concepts_tested": [
         "sterilization"
       ],
-      "x": 0.684971,
-      "y": 0.843449
+      "x": 0.313921,
+      "y": 0.703663
     },
     {
       "id": "d55724fe204e996e",
@@ -675,8 +675,8 @@
       "concepts_tested": [
         "Okun's law"
       ],
-      "x": 0.662727,
-      "y": 0.805042
+      "x": 0.318903,
+      "y": 0.731586
     },
     {
       "id": "2d294b0a37b36516",
@@ -696,8 +696,8 @@
       "concepts_tested": [
         "output gap"
       ],
-      "x": 0.664153,
-      "y": 0.809718
+      "x": 0.294556,
+      "y": 0.714241
     },
     {
       "id": "19efb14bb0cd1dfe",
@@ -717,8 +717,8 @@
       "concepts_tested": [
         "Dutch disease"
       ],
-      "x": 0.659158,
-      "y": 0.799983
+      "x": 0.281936,
+      "y": 0.732027
     },
     {
       "id": "54ecdea611f2c95d",
@@ -738,8 +738,8 @@
       "concepts_tested": [
         "Ricardian equivalence"
       ],
-      "x": 0.681813,
-      "y": 0.838694
+      "x": 0.326416,
+      "y": 0.707547
     },
     {
       "id": "6e6c32963a6ae3f8",
@@ -759,8 +759,8 @@
       "concepts_tested": [
         "real business cycle theory"
       ],
-      "x": 0.662894,
-      "y": 0.809551
+      "x": 0.317509,
+      "y": 0.694455
     },
     {
       "id": "085f1365c3bb7969",
@@ -780,8 +780,8 @@
       "concepts_tested": [
         "dynamic stochastic general equilibrium"
       ],
-      "x": 0.667231,
-      "y": 0.818289
+      "x": 0.555336,
+      "y": 0.464886
     },
     {
       "id": "8bd2df56cfe81a9c",
@@ -801,8 +801,8 @@
       "concepts_tested": [
         "New Keynesian economics"
       ],
-      "x": 0.150703,
-      "y": 0.417871
+      "x": 0.317427,
+      "y": 0.735554
     },
     {
       "id": "b9625e3f93f0f604",
@@ -822,8 +822,8 @@
       "concepts_tested": [
         "time inconsistency"
       ],
-      "x": 0.670803,
-      "y": 0.817034
+      "x": 0.281826,
+      "y": 0.739701
     },
     {
       "id": "959a20fccb4aecbe",
@@ -843,8 +843,8 @@
       "concepts_tested": [
         "Overlapping generations model"
       ],
-      "x": 0.660516,
-      "y": 0.806617
+      "x": 0.489932,
+      "y": 0.399377
     },
     {
       "id": "2811e9c29c125598",
@@ -864,8 +864,8 @@
       "concepts_tested": [
         "Ramsey-Cass-Koopmans model"
       ],
-      "x": 0.681797,
-      "y": 0.845357
+      "x": 0.382012,
+      "y": 0.765159
     },
     {
       "id": "826b9cce930342e1",
@@ -885,8 +885,8 @@
       "concepts_tested": [
         "endogenous growth theory"
       ],
-      "x": 0.667515,
-      "y": 0.815525
+      "x": 0.326544,
+      "y": 0.703317
     },
     {
       "id": "d0063c8fb9e65744",
@@ -906,8 +906,8 @@
       "concepts_tested": [
         "Balassa-Samuelson effect"
       ],
-      "x": 0.66836,
-      "y": 0.815973
+      "x": 0.302065,
+      "y": 0.744399
     },
     {
       "id": "fff26a43f6d69edf",
@@ -927,8 +927,8 @@
       "concepts_tested": [
         "impossible trinity"
       ],
-      "x": 0.66411,
-      "y": 0.81013
+      "x": 0.272995,
+      "y": 0.7436
     },
     {
       "id": "f43cf352e6c6d4ae",
@@ -948,8 +948,8 @@
       "concepts_tested": [
         "Friedman's k-percent rule"
       ],
-      "x": 0.677687,
-      "y": 0.830093
+      "x": 0.278092,
+      "y": 0.744753
     },
     {
       "id": "32649383376a2611",
@@ -969,8 +969,8 @@
       "concepts_tested": [
         "menu cost"
       ],
-      "x": 0.665926,
-      "y": 0.812114
+      "x": 0.305643,
+      "y": 0.755154
     }
   ],
   "labels": [],

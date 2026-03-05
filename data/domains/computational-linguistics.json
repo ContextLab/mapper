@@ -5,10 +5,10 @@
     "parent_id": "linguistics",
     "level": "sub",
     "region": {
-      "x_min": 0.650858,
-      "x_max": 0.687625,
-      "y_min": 0.796816,
-      "y_max": 0.849849
+      "x_min": 0.2392,
+      "x_max": 0.92561,
+      "y_min": 0.156901,
+      "y_max": 0.754617
     },
     "grid_size": 70
   },
@@ -31,8 +31,8 @@
       "concepts_tested": [
         "natural language processing"
       ],
-      "x": 0.663027,
-      "y": 0.811467
+      "x": 0.819819,
+      "y": 0.476491
     },
     {
       "id": "5bc9294a5c3336c0",
@@ -52,8 +52,8 @@
       "concepts_tested": [
         "machine translation"
       ],
-      "x": 0.655858,
-      "y": 0.801816
+      "x": 0.842396,
+      "y": 0.544736
     },
     {
       "id": "bdd5db640a99ba99",
@@ -66,8 +66,8 @@
       },
       "correct_answer": "C",
       "difficulty": 1,
-      "x": 0.665745,
-      "y": 0.816344
+      "x": 0.844788,
+      "y": 0.49304
     },
     {
       "id": "cd5beb3c8ec00e3a",
@@ -80,8 +80,8 @@
       },
       "correct_answer": "D",
       "difficulty": 1,
-      "x": 0.664939,
-      "y": 0.816551
+      "x": 0.87708,
+      "y": 0.590292
     },
     {
       "id": "558e10b3122fdbf9",
@@ -101,8 +101,8 @@
       "concepts_tested": [
         "speech recognition"
       ],
-      "x": 0.660825,
-      "y": 0.811623
+      "x": 0.856793,
+      "y": 0.421251
     },
     {
       "id": "84358fdb3d6f38a0",
@@ -115,8 +115,8 @@
       },
       "correct_answer": "B",
       "difficulty": 1,
-      "x": 0.66093,
-      "y": 0.809658
+      "x": 0.851772,
+      "y": 0.454458
     },
     {
       "id": "b5a6b31df79137b8",
@@ -136,8 +136,8 @@
       "concepts_tested": [
         "search engine"
       ],
-      "x": 0.661531,
-      "y": 0.813564
+      "x": 0.2442,
+      "y": 0.161901
     },
     {
       "id": "cc6e1a3215da0448",
@@ -150,8 +150,8 @@
       },
       "correct_answer": "D",
       "difficulty": 1,
-      "x": 0.659434,
-      "y": 0.806963
+      "x": 0.849568,
+      "y": 0.482151
     },
     {
       "id": "9fb8850543d21d3d",
@@ -164,8 +164,8 @@
       },
       "correct_answer": "A",
       "difficulty": 1,
-      "x": 0.665069,
-      "y": 0.813379
+      "x": 0.817897,
+      "y": 0.487212
     },
     {
       "id": "2eed9c17eef9a01d",
@@ -185,8 +185,8 @@
       "concepts_tested": [
         "spam filter"
       ],
-      "x": 0.660757,
-      "y": 0.809013
+      "x": 0.830521,
+      "y": 0.52857
     },
     {
       "id": "a67b23a0c1b4d3b4",
@@ -199,8 +199,8 @@
       },
       "correct_answer": "C",
       "difficulty": 1,
-      "x": 0.660581,
-      "y": 0.807424
+      "x": 0.843043,
+      "y": 0.444758
     },
     {
       "id": "bf223ebab9c0441c",
@@ -213,8 +213,8 @@
       },
       "correct_answer": "D",
       "difficulty": 1,
-      "x": 0.664371,
-      "y": 0.814355
+      "x": 0.844371,
+      "y": 0.498545
     },
     {
       "id": "fd436cd93746961c",
@@ -227,8 +227,8 @@
       },
       "correct_answer": "A",
       "difficulty": 1,
-      "x": 0.667396,
-      "y": 0.818542
+      "x": 0.824968,
+      "y": 0.556038
     },
     {
       "id": "8b0c72b3879a9bed",
@@ -248,8 +248,8 @@
       "concepts_tested": [
         "tokenization"
       ],
-      "x": 0.662822,
-      "y": 0.811505
+      "x": 0.85806,
+      "y": 0.535335
     },
     {
       "id": "5092ca1cf3d4394a",
@@ -269,8 +269,8 @@
       "concepts_tested": [
         "part-of-speech tagging"
       ],
-      "x": 0.662759,
-      "y": 0.806214
+      "x": 0.896804,
+      "y": 0.402586
     },
     {
       "id": "63d0adf21667aabd",
@@ -290,8 +290,8 @@
       "concepts_tested": [
         "named entity recognition"
       ],
-      "x": 0.662613,
-      "y": 0.806682
+      "x": 0.899817,
+      "y": 0.399125
     },
     {
       "id": "04393e9903e71380",
@@ -311,8 +311,8 @@
       "concepts_tested": [
         "parsing"
       ],
-      "x": 0.672072,
-      "y": 0.824762
+      "x": 0.899345,
+      "y": 0.485282
     },
     {
       "id": "262b4bad0dd7593e",
@@ -332,8 +332,8 @@
       "concepts_tested": [
         "corpus"
       ],
-      "x": 0.669901,
-      "y": 0.823655
+      "x": 0.855175,
+      "y": 0.552121
     },
     {
       "id": "070487ba5ce3a7b1",
@@ -353,8 +353,8 @@
       "concepts_tested": [
         "n-gram"
       ],
-      "x": 0.661261,
-      "y": 0.809382
+      "x": 0.847048,
+      "y": 0.517267
     },
     {
       "id": "7f861bbb0bb95d76",
@@ -374,8 +374,8 @@
       "concepts_tested": [
         "bag of words"
       ],
-      "x": 0.66505,
-      "y": 0.815346
+      "x": 0.846041,
+      "y": 0.508708
     },
     {
       "id": "11f80ad912bea1ae",
@@ -395,8 +395,8 @@
       "concepts_tested": [
         "TF-IDF"
       ],
-      "x": 0.667639,
-      "y": 0.820817
+      "x": 0.606909,
+      "y": 0.749617
     },
     {
       "id": "1695bb65e2766b10",
@@ -416,8 +416,8 @@
       "concepts_tested": [
         "stop words"
       ],
-      "x": 0.665766,
-      "y": 0.816233
+      "x": 0.820482,
+      "y": 0.492164
     },
     {
       "id": "e0526a2368f5088c",
@@ -437,8 +437,8 @@
       "concepts_tested": [
         "stemming"
       ],
-      "x": 0.66451,
-      "y": 0.814598
+      "x": 0.81289,
+      "y": 0.503689
     },
     {
       "id": "9bdcefff7b130a13",
@@ -458,8 +458,8 @@
       "concepts_tested": [
         "dependency parsing"
       ],
-      "x": 0.670094,
-      "y": 0.819729
+      "x": 0.912829,
+      "y": 0.423009
     },
     {
       "id": "a172bd0bb5702111",
@@ -479,8 +479,8 @@
       "concepts_tested": [
         "word embedding"
       ],
-      "x": 0.660223,
-      "y": 0.809522
+      "x": 0.817893,
+      "y": 0.468754
     },
     {
       "id": "38b69410e2063793",
@@ -500,8 +500,8 @@
       "concepts_tested": [
         "language model"
       ],
-      "x": 0.665188,
-      "y": 0.817083
+      "x": 0.820008,
+      "y": 0.557304
     },
     {
       "id": "f294877ec193c29b",
@@ -521,8 +521,8 @@
       "concepts_tested": [
         "CYK algorithm"
       ],
-      "x": 0.677288,
-      "y": 0.833778
+      "x": 0.909022,
+      "y": 0.539585
     },
     {
       "id": "e09f3dff855c1cc8",
@@ -542,8 +542,8 @@
       "concepts_tested": [
         "hidden Markov model"
       ],
-      "x": 0.677642,
-      "y": 0.840514
+      "x": 0.800744,
+      "y": 0.6676
     },
     {
       "id": "541d4c58aca9402e",
@@ -563,8 +563,8 @@
       "concepts_tested": [
         "perplexity"
       ],
-      "x": 0.668411,
-      "y": 0.823499
+      "x": 0.797037,
+      "y": 0.592108
     },
     {
       "id": "434cea52d47d7a37",
@@ -584,8 +584,8 @@
       "concepts_tested": [
         "attention mechanism"
       ],
-      "x": 0.666531,
-      "y": 0.822555
+      "x": 0.810782,
+      "y": 0.605547
     },
     {
       "id": "07ae9b93fb141c70",
@@ -605,8 +605,8 @@
       "concepts_tested": [
         "beam search"
       ],
-      "x": 0.662089,
-      "y": 0.811044
+      "x": 0.828946,
+      "y": 0.62251
     },
     {
       "id": "7e3513693de946a7",
@@ -626,8 +626,8 @@
       "concepts_tested": [
         "word2vec"
       ],
-      "x": 0.665316,
-      "y": 0.818208
+      "x": 0.820465,
+      "y": 0.580308
     },
     {
       "id": "fe5145bc1edec5ec",
@@ -647,8 +647,8 @@
       "concepts_tested": [
         "conditional random field"
       ],
-      "x": 0.670035,
-      "y": 0.825112
+      "x": 0.830553,
+      "y": 0.634984
     },
     {
       "id": "c8665c6d710e106a",
@@ -668,8 +668,8 @@
       "concepts_tested": [
         "semantic role labeling"
       ],
-      "x": 0.66399,
-      "y": 0.807393
+      "x": 0.911028,
+      "y": 0.330759
     },
     {
       "id": "25de47f19f2de08f",
@@ -689,8 +689,8 @@
       "concepts_tested": [
         "coreference resolution"
       ],
-      "x": 0.663439,
-      "y": 0.807968
+      "x": 0.883315,
+      "y": 0.416611
     },
     {
       "id": "909a39e840e95c79",
@@ -710,8 +710,8 @@
       "concepts_tested": [
         "distributional semantics"
       ],
-      "x": 0.663582,
-      "y": 0.812232
+      "x": 0.814899,
+      "y": 0.428125
     },
     {
       "id": "1e53813bf349c646",
@@ -724,8 +724,8 @@
       },
       "correct_answer": "A",
       "difficulty": 3,
-      "x": 0.656627,
-      "y": 0.803184
+      "x": 0.812348,
+      "y": 0.570945
     },
     {
       "id": "0c16382ece525f62",
@@ -745,8 +745,8 @@
       "concepts_tested": [
         "byte pair encoding"
       ],
-      "x": 0.664983,
-      "y": 0.815695
+      "x": 0.850364,
+      "y": 0.518569
     },
     {
       "id": "4c88e0b0923150e9",
@@ -759,8 +759,8 @@
       },
       "correct_answer": "C",
       "difficulty": 4,
-      "x": 0.666535,
-      "y": 0.814114
+      "x": 0.912986,
+      "y": 0.379375
     },
     {
       "id": "1a06ada4432e2e06",
@@ -780,8 +780,8 @@
       "concepts_tested": [
         "head-driven phrase structure grammar"
       ],
-      "x": 0.673039,
-      "y": 0.825539
+      "x": 0.869784,
+      "y": 0.46457
     },
     {
       "id": "e11a6043afa260fe",
@@ -803,8 +803,8 @@
         "Occam's razor",
         "model selection"
       ],
-      "x": 0.673114,
-      "y": 0.831279
+      "x": 0.790608,
+      "y": 0.641543
     },
     {
       "id": "761f6c35b58305c0",
@@ -826,8 +826,8 @@
         "Baum-Welch algorithm",
         "inside-outside algorithm"
       ],
-      "x": 0.675781,
-      "y": 0.835004
+      "x": 0.822368,
+      "y": 0.670594
     },
     {
       "id": "77390c6ae6c9dfa4",
@@ -849,8 +849,8 @@
         "forward-backward algorithm",
         "probabilistic context-free grammar"
       ],
-      "x": 0.672007,
-      "y": 0.829217
+      "x": 0.822732,
+      "y": 0.66726
     },
     {
       "id": "03935ed01904f6ef",
@@ -872,8 +872,8 @@
         "multilingual embeddings",
         "multilingual BERT"
       ],
-      "x": 0.664485,
-      "y": 0.81504
+      "x": 0.847017,
+      "y": 0.544181
     },
     {
       "id": "16f4e3a85aaede1a",
@@ -886,8 +886,8 @@
       },
       "correct_answer": "A",
       "difficulty": 4,
-      "x": 0.67701,
-      "y": 0.837917
+      "x": 0.877576,
+      "y": 0.516187
     },
     {
       "id": "8dd2ca6227cfe610",
@@ -909,8 +909,8 @@
         "log-linear model",
         "multinomial logistic regression"
       ],
-      "x": 0.676597,
-      "y": 0.838058
+      "x": 0.755933,
+      "y": 0.707522
     },
     {
       "id": "9668809fc999001a",
@@ -932,8 +932,8 @@
         "structured prediction",
         "approximate inference"
       ],
-      "x": 0.680757,
-      "y": 0.843164
+      "x": 0.869976,
+      "y": 0.74243
     },
     {
       "id": "29b1339a03d1c989",
@@ -955,8 +955,8 @@
         "chart parsing",
         "parsing complexity"
       ],
-      "x": 0.682625,
-      "y": 0.844849
+      "x": 0.92061,
+      "y": 0.746233
     },
     {
       "id": "cff528f3ea9971fd",
@@ -978,8 +978,8 @@
         "finite-state transducers",
         "agglutinative morphology"
       ],
-      "x": 0.676334,
-      "y": 0.83157
+      "x": 0.897464,
+      "y": 0.452474
     },
     {
       "id": "2e75996b636e945e",
@@ -1001,8 +1001,8 @@
         "semantic graph",
         "syntax-semantics abstraction"
       ],
-      "x": 0.674922,
-      "y": 0.829919
+      "x": 0.896207,
+      "y": 0.504071
     }
   ],
   "labels": [],

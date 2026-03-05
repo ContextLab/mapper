@@ -9,7 +9,7 @@ const SPRING = 0.012;
 const FRICTION = 0.94;
 const REPEL_RADIUS = 10;
 const REPEL_FORCE = 4;
-const PARTICLE_SIZE = 1.5;
+const PARTICLE_SIZE = 2;
 
 /**
  * Pre-compute subsampled particle coordinates from articles and video windows.
@@ -332,6 +332,7 @@ export class ParticleSystem {
     const r = 0;
     const g = 105;
     const b = 62;
+    const radius = PARTICLE_SIZE;
 
     for (const level of levels) {
       if (level.particles.length === 0) continue;
@@ -339,7 +340,8 @@ export class ParticleSystem {
       ctx.beginPath();
       for (const p of level.particles) {
         if (p.x < -10 || p.x > w + 10 || p.y < -10 || p.y > h + 10) continue;
-        ctx.rect(p.x, p.y, PARTICLE_SIZE, PARTICLE_SIZE);
+        ctx.moveTo(p.x + radius, p.y);
+        ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
       }
       ctx.fill();
     }

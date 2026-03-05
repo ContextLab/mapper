@@ -5,10 +5,10 @@
     "parent_id": "sociology",
     "level": "sub",
     "region": {
-      "x_min": 0.634875,
-      "x_max": 0.675731,
-      "y_min": 0.762223,
-      "y_max": 0.824114
+      "x_min": 0.293476,
+      "x_max": 0.483473,
+      "y_min": 0.393979,
+      "y_max": 0.673462
     },
     "grid_size": 70
   },
@@ -24,8 +24,8 @@
       },
       "correct_answer": "A",
       "difficulty": 1,
-      "x": 0.662385,
-      "y": 0.805775
+      "x": 0.345518,
+      "y": 0.515496
     },
     {
       "id": "fee2607ede1b5fc2",
@@ -38,8 +38,8 @@
       },
       "correct_answer": "B",
       "difficulty": 1,
-      "x": 0.66096,
-      "y": 0.802322
+      "x": 0.387997,
+      "y": 0.507818
     },
     {
       "id": "ae3e93e4809a1ffb",
@@ -52,8 +52,8 @@
       },
       "correct_answer": "C",
       "difficulty": 1,
-      "x": 0.656423,
-      "y": 0.795081
+      "x": 0.430973,
+      "y": 0.500773
     },
     {
       "id": "6c3a9f3377cc0d4b",
@@ -66,8 +66,8 @@
       },
       "correct_answer": "D",
       "difficulty": 1,
-      "x": 0.668709,
-      "y": 0.81393
+      "x": 0.341581,
+      "y": 0.519726
     },
     {
       "id": "0de223c776d8586a",
@@ -80,8 +80,8 @@
       },
       "correct_answer": "A",
       "difficulty": 1,
-      "x": 0.665939,
-      "y": 0.81143
+      "x": 0.370463,
+      "y": 0.513427
     },
     {
       "id": "1efd2625b2eeaa21",
@@ -94,8 +94,8 @@
       },
       "correct_answer": "B",
       "difficulty": 1,
-      "x": 0.667046,
-      "y": 0.812987
+      "x": 0.359211,
+      "y": 0.515758
     },
     {
       "id": "d2486c05aaa83241",
@@ -108,8 +108,8 @@
       },
       "correct_answer": "C",
       "difficulty": 1,
-      "x": 0.669876,
-      "y": 0.817804
+      "x": 0.32857,
+      "y": 0.538376
     },
     {
       "id": "7058d462841e1bec",
@@ -122,8 +122,8 @@
       },
       "correct_answer": "D",
       "difficulty": 1,
-      "x": 0.665309,
-      "y": 0.810944
+      "x": 0.34976,
+      "y": 0.501114
     },
     {
       "id": "0cb6d6271dc91994",
@@ -136,8 +136,8 @@
       },
       "correct_answer": "A",
       "difficulty": 1,
-      "x": 0.668013,
-      "y": 0.814076
+      "x": 0.340964,
+      "y": 0.529707
     },
     {
       "id": "dc633c07451a2df7",
@@ -150,8 +150,8 @@
       },
       "correct_answer": "B",
       "difficulty": 1,
-      "x": 0.668471,
-      "y": 0.81607
+      "x": 0.365191,
+      "y": 0.507117
     },
     {
       "id": "fb8a8fba27d670b0",
@@ -171,8 +171,8 @@
       "concepts_tested": [
         "inequality"
       ],
-      "x": 0.662215,
-      "y": 0.807751
+      "x": 0.420471,
+      "y": 0.495454
     },
     {
       "id": "a867d9fac2c26e59",
@@ -192,8 +192,8 @@
       "concepts_tested": [
         "citizenship"
       ],
-      "x": 0.64961,
-      "y": 0.783858
+      "x": 0.322943,
+      "y": 0.646377
     },
     {
       "id": "3b55a30197e80473",
@@ -213,8 +213,8 @@
       "concepts_tested": [
         "bureaucracy"
       ],
-      "x": 0.657865,
-      "y": 0.800481
+      "x": 0.406048,
+      "y": 0.521255
     },
     {
       "id": "c648d3e168df9013",
@@ -234,8 +234,8 @@
       "concepts_tested": [
         "hegemony"
       ],
-      "x": 0.663389,
-      "y": 0.808094
+      "x": 0.36724,
+      "y": 0.53562
     },
     {
       "id": "159e623870359325",
@@ -255,8 +255,8 @@
       "concepts_tested": [
         "civil society"
       ],
-      "x": 0.659608,
-      "y": 0.802557
+      "x": 0.44164,
+      "y": 0.417581
     },
     {
       "id": "164d78a1c53e017d",
@@ -276,8 +276,8 @@
       "concepts_tested": [
         "political socialization"
       ],
-      "x": 0.663492,
-      "y": 0.808617
+      "x": 0.451007,
+      "y": 0.398979
     },
     {
       "id": "0c64588bf1a96520",
@@ -297,8 +297,8 @@
       "concepts_tested": [
         "social movement"
       ],
-      "x": 0.668611,
-      "y": 0.81594
+      "x": 0.339501,
+      "y": 0.533118
     },
     {
       "id": "4642128b66f31bf4",
@@ -318,8 +318,8 @@
       "concepts_tested": [
         "legitimacy"
       ],
-      "x": 0.655479,
-      "y": 0.795739
+      "x": 0.386345,
+      "y": 0.536958
     },
     {
       "id": "37265d9ced8497bc",
@@ -339,8 +339,8 @@
       "concepts_tested": [
         "collective action"
       ],
-      "x": 0.664733,
-      "y": 0.810127
+      "x": 0.412008,
+      "y": 0.523894
     },
     {
       "id": "85838253e11dbdea",
@@ -360,8 +360,8 @@
       "concepts_tested": [
         "voting behavior"
       ],
-      "x": 0.661722,
-      "y": 0.805641
+      "x": 0.434493,
+      "y": 0.441177
     },
     {
       "id": "8d8ec2e289dcbb29",
@@ -381,8 +381,8 @@
       "concepts_tested": [
         "political culture"
       ],
-      "x": 0.656822,
-      "y": 0.7968
+      "x": 0.410616,
+      "y": 0.496006
     },
     {
       "id": "490536963802bccc",
@@ -395,8 +395,8 @@
       },
       "correct_answer": "B",
       "difficulty": 2,
-      "x": 0.6588,
-      "y": 0.800633
+      "x": 0.378517,
+      "y": 0.540214
     },
     {
       "id": "aeddf8daf7e767ec",
@@ -416,8 +416,8 @@
       "concepts_tested": [
         "pluralism"
       ],
-      "x": 0.660143,
-      "y": 0.805231
+      "x": 0.384959,
+      "y": 0.539568
     },
     {
       "id": "11d9ef46e8a5dd06",
@@ -437,8 +437,8 @@
       "concepts_tested": [
         "authoritarianism"
       ],
-      "x": 0.661586,
-      "y": 0.806078
+      "x": 0.419521,
+      "y": 0.514854
     },
     {
       "id": "89e3b9417f89295d",
@@ -458,8 +458,8 @@
       "concepts_tested": [
         "welfare state"
       ],
-      "x": 0.649675,
-      "y": 0.784401
+      "x": 0.426026,
+      "y": 0.561412
     },
     {
       "id": "019246750c244908",
@@ -472,8 +472,8 @@
       },
       "correct_answer": "B",
       "difficulty": 2,
-      "x": 0.65996,
-      "y": 0.801896
+      "x": 0.371239,
+      "y": 0.52673
     },
     {
       "id": "6d826a99642e8d8e",
@@ -493,8 +493,8 @@
       "concepts_tested": [
         "Weber's types of authority"
       ],
-      "x": 0.648589,
-      "y": 0.782745
+      "x": 0.386916,
+      "y": 0.539604
     },
     {
       "id": "f72a30d6baa80b82",
@@ -514,8 +514,8 @@
       "concepts_tested": [
         "Gramsci's cultural hegemony"
       ],
-      "x": 0.66403,
-      "y": 0.809622
+      "x": 0.36486,
+      "y": 0.536557
     },
     {
       "id": "59176301bacd9b52",
@@ -535,8 +535,8 @@
       "concepts_tested": [
         "relative deprivation"
       ],
-      "x": 0.656947,
-      "y": 0.798286
+      "x": 0.466381,
+      "y": 0.479407
     },
     {
       "id": "24ff656e2a7c4eed",
@@ -556,8 +556,8 @@
       "concepts_tested": [
         "resource mobilization theory"
       ],
-      "x": 0.66321,
-      "y": 0.806706
+      "x": 0.412323,
+      "y": 0.484385
     },
     {
       "id": "e546832ecfd38cd8",
@@ -577,8 +577,8 @@
       "concepts_tested": [
         "political opportunity structure"
       ],
-      "x": 0.662348,
-      "y": 0.806017
+      "x": 0.366307,
+      "y": 0.547791
     },
     {
       "id": "05135a91fc323c65",
@@ -591,8 +591,8 @@
       },
       "correct_answer": "D",
       "difficulty": 3,
-      "x": 0.664823,
-      "y": 0.811635
+      "x": 0.380713,
+      "y": 0.550321
     },
     {
       "id": "60df97fedf7cdc35",
@@ -612,8 +612,8 @@
       "concepts_tested": [
         "Mills' power elite"
       ],
-      "x": 0.6595,
-      "y": 0.799371
+      "x": 0.386387,
+      "y": 0.538833
     },
     {
       "id": "a3d32d18b444d2ec",
@@ -633,8 +633,8 @@
       "concepts_tested": [
         "collective identity"
       ],
-      "x": 0.66088,
-      "y": 0.804255
+      "x": 0.383772,
+      "y": 0.507973
     },
     {
       "id": "4ce2e625a623f463",
@@ -654,8 +654,8 @@
       "concepts_tested": [
         "framing theory"
       ],
-      "x": 0.654614,
-      "y": 0.794116
+      "x": 0.469821,
+      "y": 0.470811
     },
     {
       "id": "bd4e2de1a1502e39",
@@ -675,8 +675,8 @@
       "concepts_tested": [
         "democratization"
       ],
-      "x": 0.657772,
-      "y": 0.798659
+      "x": 0.379147,
+      "y": 0.533826
     },
     {
       "id": "737d31ce1a4432ff",
@@ -696,8 +696,8 @@
       "concepts_tested": [
         "state capacity"
       ],
-      "x": 0.650739,
-      "y": 0.786167
+      "x": 0.298476,
+      "y": 0.668462
     },
     {
       "id": "a2784df7fb8f4798",
@@ -717,8 +717,8 @@
       "concepts_tested": [
         "clientelism"
       ],
-      "x": 0.649768,
-      "y": 0.785045
+      "x": 0.385337,
+      "y": 0.578956
     },
     {
       "id": "7835ad9e67605e70",
@@ -738,8 +738,8 @@
       "concepts_tested": [
         "Bourdieu's political field"
       ],
-      "x": 0.663603,
-      "y": 0.805962
+      "x": 0.368197,
+      "y": 0.531033
     },
     {
       "id": "0c6d2eaa17a4f044",
@@ -759,8 +759,8 @@
       "concepts_tested": [
         "Skocpol's states and social revolutions"
       ],
-      "x": 0.654901,
-      "y": 0.792782
+      "x": 0.378475,
+      "y": 0.514862
     },
     {
       "id": "02b9461cf6e72d09",
@@ -780,8 +780,8 @@
       "concepts_tested": [
         "Tilly's war-making and state-making"
       ],
-      "x": 0.667104,
-      "y": 0.813811
+      "x": 0.3987,
+      "y": 0.445038
     },
     {
       "id": "d285d10c7a086d1b",
@@ -801,8 +801,8 @@
       "concepts_tested": [
         "Poulantzas's relative autonomy of the state"
       ],
-      "x": 0.659221,
-      "y": 0.800428
+      "x": 0.353108,
+      "y": 0.554262
     },
     {
       "id": "02ebafad802f959d",
@@ -822,8 +822,8 @@
       "concepts_tested": [
         "Esping-Andersen's welfare state regimes"
       ],
-      "x": 0.651254,
-      "y": 0.787368
+      "x": 0.413531,
+      "y": 0.564418
     },
     {
       "id": "3eab4b35c90f1570",
@@ -843,8 +843,8 @@
       "concepts_tested": [
         "Mann's sources of social power"
       ],
-      "x": 0.650824,
-      "y": 0.786812
+      "x": 0.3906,
+      "y": 0.571182
     },
     {
       "id": "a804421cb6904581",
@@ -864,8 +864,8 @@
       "concepts_tested": [
         "Lipset's political man"
       ],
-      "x": 0.639875,
-      "y": 0.767223
+      "x": 0.389442,
+      "y": 0.535859
     },
     {
       "id": "b27509cea28ee098",
@@ -885,8 +885,8 @@
       "concepts_tested": [
         "Habermas's public sphere"
       ],
-      "x": 0.652868,
-      "y": 0.788939
+      "x": 0.460357,
+      "y": 0.535112
     },
     {
       "id": "b372c74f44b7dd0d",
@@ -906,8 +906,8 @@
       "concepts_tested": [
         "McAdam's political process model"
       ],
-      "x": 0.670731,
-      "y": 0.819114
+      "x": 0.402938,
+      "y": 0.502497
     },
     {
       "id": "972d65136a8770c4",
@@ -927,8 +927,8 @@
       "concepts_tested": [
         "neo-corporatism"
       ],
-      "x": 0.65481,
-      "y": 0.793274
+      "x": 0.407506,
+      "y": 0.485809
     },
     {
       "id": "1f83ff726c5ed8b3",
@@ -948,8 +948,8 @@
       "concepts_tested": [
         "racial formation theory"
       ],
-      "x": 0.661245,
-      "y": 0.808535
+      "x": 0.478473,
+      "y": 0.42092
     },
     {
       "id": "ad8f738c6386fa3f",
@@ -969,8 +969,8 @@
       "concepts_tested": [
         "Gaventa's power cube"
       ],
-      "x": 0.660831,
-      "y": 0.807497
+      "x": 0.375096,
+      "y": 0.542568
     }
   ],
   "labels": [],

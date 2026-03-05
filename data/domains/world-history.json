@@ -5,10 +5,10 @@
     "parent_id": null,
     "level": "general",
     "region": {
-      "x_min": 0.185579,
-      "x_max": 0.791277,
-      "y_min": 0.3909,
-      "y_max": 0.836097
+      "x_min": 0.130254,
+      "x_max": 0.524556,
+      "y_min": 0.255769,
+      "y_max": 0.942144
     },
     "grid_size": 70
   },
@@ -24,8 +24,8 @@
       },
       "correct_answer": "A",
       "difficulty": 1,
-      "x": 0.670869,
-      "y": 0.819853
+      "x": 0.254511,
+      "y": 0.592858
     },
     {
       "id": "e9fa60ca7fc948fe",
@@ -45,8 +45,8 @@
       "concepts_tested": [
         "slavery"
       ],
-      "x": 0.65797,
-      "y": 0.794605
+      "x": 0.184773,
+      "y": 0.657942
     },
     {
       "id": "af9869fd2b4b9a6a",
@@ -66,8 +66,8 @@
       "concepts_tested": [
         "World War I"
       ],
-      "x": 0.659496,
-      "y": 0.79765
+      "x": 0.161761,
+      "y": 0.608626
     },
     {
       "id": "b7a36f513af89d48",
@@ -87,8 +87,8 @@
       "concepts_tested": [
         "World War II"
       ],
-      "x": 0.66212,
-      "y": 0.804988
+      "x": 0.150742,
+      "y": 0.644072
     },
     {
       "id": "6406db44b6216eaf",
@@ -108,8 +108,8 @@
       "concepts_tested": [
         "ancient Egypt"
       ],
-      "x": 0.659073,
-      "y": 0.800698
+      "x": 0.228763,
+      "y": 0.419515
     },
     {
       "id": "3e6a37395dcebde6",
@@ -129,8 +129,8 @@
       "concepts_tested": [
         "Roman Empire"
       ],
-      "x": 0.654643,
-      "y": 0.789225
+      "x": 0.151277,
+      "y": 0.589571
     },
     {
       "id": "e25308e7e7a58b74",
@@ -150,8 +150,8 @@
       "concepts_tested": [
         "Silk Road"
       ],
-      "x": 0.659943,
-      "y": 0.803127
+      "x": 0.194304,
+      "y": 0.467421
     },
     {
       "id": "18dfbf1216eed5ad",
@@ -171,8 +171,8 @@
       "concepts_tested": [
         "Cold War"
       ],
-      "x": 0.656385,
-      "y": 0.793328
+      "x": 0.149694,
+      "y": 0.612155
     },
     {
       "id": "d5cdafb016828744",
@@ -192,8 +192,8 @@
       "concepts_tested": [
         "decolonization"
       ],
-      "x": 0.660893,
-      "y": 0.802322
+      "x": 0.15612,
+      "y": 0.663586
     },
     {
       "id": "6313e6aaa1a484cc",
@@ -213,8 +213,8 @@
       "concepts_tested": [
         "Industrial Revolution"
       ],
-      "x": 0.786277,
-      "y": 0.583882
+      "x": 0.20617,
+      "y": 0.536572
     },
     {
       "id": "3439be22c12c2273",
@@ -234,8 +234,8 @@
       "concepts_tested": [
         "ancient Greece"
       ],
-      "x": 0.581538,
-      "y": 0.687625
+      "x": 0.253932,
+      "y": 0.422983
     },
     {
       "id": "e4856ee3dec8f6e8",
@@ -255,8 +255,8 @@
       "concepts_tested": [
         "Mongol Empire"
       ],
-      "x": 0.660285,
-      "y": 0.802919
+      "x": 0.183711,
+      "y": 0.48493
     },
     {
       "id": "9fd31a5adf069416",
@@ -276,8 +276,8 @@
       "concepts_tested": [
         "Atlantic slave trade"
       ],
-      "x": 0.666037,
-      "y": 0.812725
+      "x": 0.197924,
+      "y": 0.60077
     },
     {
       "id": "e657576919df60c3",
@@ -297,8 +297,8 @@
       "concepts_tested": [
         "Ottoman Empire"
       ],
-      "x": 0.315374,
-      "y": 0.438108
+      "x": 0.147456,
+      "y": 0.566631
     },
     {
       "id": "ffca76781bcf5edb",
@@ -318,8 +318,8 @@
       "concepts_tested": [
         "Aztec Empire"
       ],
-      "x": 0.668407,
-      "y": 0.816006
+      "x": 0.287827,
+      "y": 0.510208
     },
     {
       "id": "dd39257c897969e2",
@@ -339,8 +339,8 @@
       "concepts_tested": [
         "Inca Empire"
       ],
-      "x": 0.663733,
-      "y": 0.812465
+      "x": 0.21586,
+      "y": 0.297985
     },
     {
       "id": "fdaa17fc4d7767ac",
@@ -360,8 +360,8 @@
       "concepts_tested": [
         "Scramble for Africa"
       ],
-      "x": 0.661729,
-      "y": 0.798362
+      "x": 0.163918,
+      "y": 0.612592
     },
     {
       "id": "38bc39eb170df369",
@@ -381,8 +381,8 @@
       "concepts_tested": [
         "Mesopotamia"
       ],
-      "x": 0.543511,
-      "y": 0.64092
+      "x": 0.20529,
+      "y": 0.305893
     },
     {
       "id": "9e580871017add83",
@@ -402,8 +402,8 @@
       "concepts_tested": [
         "transatlantic triangular trade"
       ],
-      "x": 0.660967,
-      "y": 0.804767
+      "x": 0.190367,
+      "y": 0.574323
     },
     {
       "id": "cdc68b1e323d6522",
@@ -423,8 +423,8 @@
       "concepts_tested": [
         "Mali Empire"
       ],
-      "x": 0.660819,
-      "y": 0.804647
+      "x": 0.172545,
+      "y": 0.528282
     },
     {
       "id": "a905ad641171359c",
@@ -444,8 +444,8 @@
       "concepts_tested": [
         "Mughal Empire"
       ],
-      "x": 0.658619,
-      "y": 0.799358
+      "x": 0.184355,
+      "y": 0.490563
     },
     {
       "id": "13f4b5305e309aed",
@@ -465,8 +465,8 @@
       "concepts_tested": [
         "non-aligned movement"
       ],
-      "x": 0.659651,
-      "y": 0.799545
+      "x": 0.153513,
+      "y": 0.647952
     },
     {
       "id": "1328ed96adb08831",
@@ -486,8 +486,8 @@
       "concepts_tested": [
         "apartheid"
       ],
-      "x": 0.665021,
-      "y": 0.676443
+      "x": 0.164528,
+      "y": 0.692986
     },
     {
       "id": "c81c5577d7d4a1f7",
@@ -507,8 +507,8 @@
       "concepts_tested": [
         "Rwandan genocide"
       ],
-      "x": 0.466703,
-      "y": 0.626087
+      "x": 0.19314,
+      "y": 0.593219
     },
     {
       "id": "65181b42c4e73777",
@@ -528,8 +528,8 @@
       "concepts_tested": [
         "Phoenicia"
       ],
-      "x": 0.663264,
-      "y": 0.811496
+      "x": 0.198618,
+      "y": 0.297285
     },
     {
       "id": "165cfcedd89499af",
@@ -549,8 +549,8 @@
       "concepts_tested": [
         "Meiji Restoration"
       ],
-      "x": 0.658513,
-      "y": 0.79606
+      "x": 0.19549,
+      "y": 0.544129
     },
     {
       "id": "ed7f82b5d9cd4d79",
@@ -570,8 +570,8 @@
       "concepts_tested": [
         "Bandung Conference"
       ],
-      "x": 0.660287,
-      "y": 0.800929
+      "x": 0.196972,
+      "y": 0.599654
     },
     {
       "id": "6cb7710880d4b311",
@@ -591,8 +591,8 @@
       "concepts_tested": [
         "Haitian Revolution"
       ],
-      "x": 0.66247,
-      "y": 0.805405
+      "x": 0.209826,
+      "y": 0.590347
     },
     {
       "id": "6bb9c4679d82b4d4",
@@ -612,8 +612,8 @@
       "concepts_tested": [
         "Songhai Empire"
       ],
-      "x": 0.657718,
-      "y": 0.79734
+      "x": 0.176186,
+      "y": 0.510632
     },
     {
       "id": "55c46f63d05f973a",
@@ -633,8 +633,8 @@
       "concepts_tested": [
         "Reconquista"
       ],
-      "x": 0.656148,
-      "y": 0.793101
+      "x": 0.158193,
+      "y": 0.584693
     },
     {
       "id": "2064b00c7968483f",
@@ -654,8 +654,8 @@
       "concepts_tested": [
         "Swahili civilization"
       ],
-      "x": 0.665372,
-      "y": 0.812161
+      "x": 0.168108,
+      "y": 0.565128
     },
     {
       "id": "59879f7a5ceb0cab",
@@ -675,8 +675,8 @@
       "concepts_tested": [
         "Polynesian navigation"
       ],
-      "x": 0.190579,
-      "y": 0.831097
+      "x": 0.442007,
+      "y": 0.937144
     },
     {
       "id": "a69bc99ad266f2b7",
@@ -696,8 +696,8 @@
       "concepts_tested": [
         "Berlin Conference"
       ],
-      "x": 0.660957,
-      "y": 0.800816
+      "x": 0.196407,
+      "y": 0.599574
     },
     {
       "id": "0b651cd0c452cb96",
@@ -717,8 +717,8 @@
       "concepts_tested": [
         "Columbian Exchange"
       ],
-      "x": 0.661779,
-      "y": 0.804862
+      "x": 0.199975,
+      "y": 0.554511
     },
     {
       "id": "e054fe85cd28e217",
@@ -738,8 +738,8 @@
       "concepts_tested": [
         "Zulu Kingdom"
       ],
-      "x": 0.658653,
-      "y": 0.804417
+      "x": 0.201137,
+      "y": 0.376019
     },
     {
       "id": "b9752d6ca29e16d5",
@@ -759,8 +759,8 @@
       "concepts_tested": [
         "pan-Africanism"
       ],
-      "x": 0.660205,
-      "y": 0.800688
+      "x": 0.187815,
+      "y": 0.601868
     },
     {
       "id": "d25b0e3ddc58d1bb",
@@ -780,8 +780,8 @@
       "concepts_tested": [
         "Indian Ocean trade"
       ],
-      "x": 0.667216,
-      "y": 0.816481
+      "x": 0.227403,
+      "y": 0.514449
     },
     {
       "id": "9cb41bfaed8bb305",
@@ -801,8 +801,8 @@
       "concepts_tested": [
         "Latin American independence"
       ],
-      "x": 0.658083,
-      "y": 0.796664
+      "x": 0.135254,
+      "y": 0.62197
     },
     {
       "id": "82607912dafa38c1",
@@ -822,8 +822,8 @@
       "concepts_tested": [
         "world-systems theory"
       ],
-      "x": 0.65081,
-      "y": 0.786219
+      "x": 0.376283,
+      "y": 0.554932
     },
     {
       "id": "437f2cbd96fe2ed0",
@@ -843,8 +843,8 @@
       "concepts_tested": [
         "Axial Age"
       ],
-      "x": 0.653674,
-      "y": 0.790302
+      "x": 0.519556,
+      "y": 0.576423
     },
     {
       "id": "9d28ecc9fe4eaea8",
@@ -864,8 +864,8 @@
       "concepts_tested": [
         "Great Divergence"
       ],
-      "x": 0.66333,
-      "y": 0.806099
+      "x": 0.195123,
+      "y": 0.545429
     },
     {
       "id": "46fd3ce7b27cd170",
@@ -885,8 +885,8 @@
       "concepts_tested": [
         "Annales school"
       ],
-      "x": 0.667245,
-      "y": 0.816377
+      "x": 0.268219,
+      "y": 0.276615
     },
     {
       "id": "0adaee4450f7e4c5",
@@ -906,8 +906,8 @@
       "concepts_tested": [
         "subaltern studies"
       ],
-      "x": 0.377697,
-      "y": 0.3959
+      "x": 0.473969,
+      "y": 0.464132
     },
     {
       "id": "0bb40b38add876fe",
@@ -927,8 +927,8 @@
       "concepts_tested": [
         "Asante Empire"
       ],
-      "x": 0.659056,
-      "y": 0.801534
+      "x": 0.226817,
+      "y": 0.417303
     },
     {
       "id": "4d3e87336d3106ee",
@@ -948,8 +948,8 @@
       "concepts_tested": [
         "Khmer Empire"
       ],
-      "x": 0.57456,
-      "y": 0.673847
+      "x": 0.205594,
+      "y": 0.401758
     },
     {
       "id": "f515015271a3f1c7",
@@ -969,8 +969,8 @@
       "concepts_tested": [
         "Great Zimbabwe"
       ],
-      "x": 0.661131,
-      "y": 0.804715
+      "x": 0.173626,
+      "y": 0.534033
     },
     {
       "id": "2198a3c46140688e",
@@ -990,8 +990,8 @@
       "concepts_tested": [
         "dependency theory"
       ],
-      "x": 0.657212,
-      "y": 0.797591
+      "x": 0.366201,
+      "y": 0.552682
     },
     {
       "id": "452be2cff57b575c",
@@ -1011,8 +1011,8 @@
       "concepts_tested": [
         "Longue durée"
       ],
-      "x": 0.656787,
-      "y": 0.804021
+      "x": 0.258797,
+      "y": 0.661727
     },
     {
       "id": "74d07f35cb4e648f",
@@ -1032,8 +1032,8 @@
       "concepts_tested": [
         "Treaty of Tordesillas"
       ],
-      "x": 0.330194,
-      "y": 0.825712
+      "x": 0.148688,
+      "y": 0.601902
     },
     {
       "id": "499f4bfe1e07985c",
@@ -1053,8 +1053,8 @@
       "concepts_tested": [
         "Benin Bronzes"
       ],
-      "x": 0.663377,
-      "y": 0.810366
+      "x": 0.228295,
+      "y": 0.260769
     }
   ],
   "labels": [],

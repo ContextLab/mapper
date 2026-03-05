@@ -5,10 +5,10 @@
     "parent_id": "world-history",
     "level": "sub",
     "region": {
-      "x_min": 0.197194,
-      "x_max": 0.816649,
-      "y_min": 0.183966,
-      "y_max": 0.822635
+      "x_min": 0.132395,
+      "x_max": 0.279529,
+      "y_min": 0.53532,
+      "y_max": 0.744253
     },
     "grid_size": 70
   },
@@ -31,8 +31,8 @@
       "concepts_tested": [
         "Declaration of Independence"
       ],
-      "x": 0.658545,
-      "y": 0.796165
+      "x": 0.226983,
+      "y": 0.607367
     },
     {
       "id": "a0e0258e00ab0229",
@@ -52,8 +52,8 @@
       "concepts_tested": [
         "Civil War"
       ],
-      "x": 0.680892,
-      "y": 0.315308
+      "x": 0.137395,
+      "y": 0.672026
     },
     {
       "id": "6d6bc7a94c49b0b4",
@@ -73,8 +73,8 @@
       "concepts_tested": [
         "Constitution of the United States"
       ],
-      "x": 0.656505,
-      "y": 0.793035
+      "x": 0.237134,
+      "y": 0.613506
     },
     {
       "id": "f0cc41f097f0ed32",
@@ -94,8 +94,8 @@
       "concepts_tested": [
         "abolition of slavery"
       ],
-      "x": 0.659406,
-      "y": 0.797962
+      "x": 0.213633,
+      "y": 0.602317
     },
     {
       "id": "d8bf33eccd5a14d7",
@@ -115,8 +115,8 @@
       "concepts_tested": [
         "World War II (American involvement)"
       ],
-      "x": 0.453706,
-      "y": 0.6591
+      "x": 0.138976,
+      "y": 0.660874
     },
     {
       "id": "8b86f24da3737783",
@@ -136,8 +136,8 @@
       "concepts_tested": [
         "Great Depression"
       ],
-      "x": 0.663166,
-      "y": 0.805959
+      "x": 0.168177,
+      "y": 0.731222
     },
     {
       "id": "8d6394a6b4c76418",
@@ -157,8 +157,8 @@
       "concepts_tested": [
         "Civil Rights Movement"
       ],
-      "x": 0.660579,
-      "y": 0.80119
+      "x": 0.203991,
+      "y": 0.596285
     },
     {
       "id": "94e5466b4e3724eb",
@@ -178,8 +178,8 @@
       "concepts_tested": [
         "American Revolution"
       ],
-      "x": 0.659153,
-      "y": 0.798137
+      "x": 0.207234,
+      "y": 0.593663
     },
     {
       "id": "6b7ef6cfbd523483",
@@ -199,8 +199,8 @@
       "concepts_tested": [
         "Emancipation Proclamation"
       ],
-      "x": 0.657891,
-      "y": 0.794685
+      "x": 0.173754,
+      "y": 0.671781
     },
     {
       "id": "e342702e9c1ed7ba",
@@ -220,8 +220,8 @@
       "concepts_tested": [
         "Moon landing"
       ],
-      "x": 0.537119,
-      "y": 0.354286
+      "x": 0.204393,
+      "y": 0.603317
     },
     {
       "id": "781b61705921cc8a",
@@ -241,8 +241,8 @@
       "concepts_tested": [
         "September 11 attacks"
       ],
-      "x": 0.309842,
-      "y": 0.532459
+      "x": 0.154518,
+      "y": 0.651255
     },
     {
       "id": "8abd6948dea21046",
@@ -262,8 +262,8 @@
       "concepts_tested": [
         "Louisiana Purchase"
       ],
-      "x": 0.659684,
-      "y": 0.799724
+      "x": 0.194453,
+      "y": 0.655981
     },
     {
       "id": "0fb9f53dc78b9f95",
@@ -276,8 +276,8 @@
       },
       "correct_answer": "A",
       "difficulty": 1,
-      "x": 0.21312,
-      "y": 0.508697
+      "x": 0.226362,
+      "y": 0.62705
     },
     {
       "id": "844a7834542894ac",
@@ -297,8 +297,8 @@
       "concepts_tested": [
         "Reconstruction"
       ],
-      "x": 0.657795,
-      "y": 0.79469
+      "x": 0.189098,
+      "y": 0.635846
     },
     {
       "id": "ca7ca51b7a09b1f3",
@@ -318,8 +318,8 @@
       "concepts_tested": [
         "New Deal"
       ],
-      "x": 0.725178,
-      "y": 0.65108
+      "x": 0.183032,
+      "y": 0.663544
     },
     {
       "id": "439d1428285e82f8",
@@ -339,8 +339,8 @@
       "concepts_tested": [
         "Manifest Destiny"
       ],
-      "x": 0.659764,
-      "y": 0.798723
+      "x": 0.201899,
+      "y": 0.637726
     },
     {
       "id": "e0b657ac9050995b",
@@ -360,8 +360,8 @@
       "concepts_tested": [
         "Progressive Era"
       ],
-      "x": 0.657826,
-      "y": 0.794059
+      "x": 0.178909,
+      "y": 0.67474
     },
     {
       "id": "d359a2584e7337f1",
@@ -381,8 +381,8 @@
       "concepts_tested": [
         "Cold War"
       ],
-      "x": 0.659529,
-      "y": 0.799002
+      "x": 0.155117,
+      "y": 0.640294
     },
     {
       "id": "fad64b41688117ec",
@@ -402,8 +402,8 @@
       "concepts_tested": [
         "Vietnam War"
       ],
-      "x": 0.404072,
-      "y": 0.188966
+      "x": 0.186906,
+      "y": 0.651106
     },
     {
       "id": "41c290e1124311b3",
@@ -423,8 +423,8 @@
       "concepts_tested": [
         "Gilded Age"
       ],
-      "x": 0.657554,
-      "y": 0.798268
+      "x": 0.157246,
+      "y": 0.54032
     },
     {
       "id": "dc0fb7708a0df0ef",
@@ -444,8 +444,8 @@
       "concepts_tested": [
         "Great Society"
       ],
-      "x": 0.811649,
-      "y": 0.590862
+      "x": 0.221086,
+      "y": 0.624229
     },
     {
       "id": "abeb20e95759934b",
@@ -465,8 +465,8 @@
       "concepts_tested": [
         "Trail of Tears"
       ],
-      "x": 0.659043,
-      "y": 0.79579
+      "x": 0.206475,
+      "y": 0.648806
     },
     {
       "id": "b241e806b9fd654d",
@@ -486,8 +486,8 @@
       "concepts_tested": [
         "Watergate scandal"
       ],
-      "x": 0.531074,
-      "y": 0.575009
+      "x": 0.214612,
+      "y": 0.577388
     },
     {
       "id": "264e8f16704e0d17",
@@ -507,8 +507,8 @@
       "concepts_tested": [
         "women's suffrage in the United States"
       ],
-      "x": 0.654712,
-      "y": 0.787784
+      "x": 0.197677,
+      "y": 0.662703
     },
     {
       "id": "ac77c91d76153059",
@@ -528,8 +528,8 @@
       "concepts_tested": [
         "Industrial Revolution in the United States"
       ],
-      "x": 0.786939,
-      "y": 0.586335
+      "x": 0.215353,
+      "y": 0.563971
     },
     {
       "id": "b0bd7e2ae9d552e5",
@@ -549,8 +549,8 @@
       "concepts_tested": [
         "Korean War"
       ],
-      "x": 0.654969,
-      "y": 0.792405
+      "x": 0.152855,
+      "y": 0.636409
     },
     {
       "id": "f498cff15f80d3a4",
@@ -570,8 +570,8 @@
       "concepts_tested": [
         "Missouri Compromise"
       ],
-      "x": 0.658061,
-      "y": 0.794717
+      "x": 0.166401,
+      "y": 0.688118
     },
     {
       "id": "242a8e8b3c1547a3",
@@ -591,8 +591,8 @@
       "concepts_tested": [
         "Dred Scott v. Sandford"
       ],
-      "x": 0.642462,
-      "y": 0.760659
+      "x": 0.189078,
+      "y": 0.682535
     },
     {
       "id": "a87a7bc1d9c2e0b9",
@@ -612,8 +612,8 @@
       "concepts_tested": [
         "Populist movement"
       ],
-      "x": 0.727313,
-      "y": 0.273437
+      "x": 0.200765,
+      "y": 0.634075
     },
     {
       "id": "d8bfcaa5bffbb268",
@@ -633,8 +633,8 @@
       "concepts_tested": [
         "Radical Reconstruction"
       ],
-      "x": 0.655831,
-      "y": 0.790428
+      "x": 0.166678,
+      "y": 0.684087
     },
     {
       "id": "314785b961477c7e",
@@ -656,8 +656,8 @@
         "Spanish-American War",
         "Treaty of Paris 1898"
       ],
-      "x": 0.328785,
-      "y": 0.371089
+      "x": 0.148082,
+      "y": 0.641375
     },
     {
       "id": "1ba327287e917ca0",
@@ -679,8 +679,8 @@
         "abolitionism",
         "antebellum reform"
       ],
-      "x": 0.633781,
-      "y": 0.339704
+      "x": 0.191924,
+      "y": 0.625154
     },
     {
       "id": "97c1cf559b42b950",
@@ -702,8 +702,8 @@
         "Alain Locke",
         "New Negro Movement"
       ],
-      "x": 0.65785,
-      "y": 0.798097
+      "x": 0.199626,
+      "y": 0.613092
     },
     {
       "id": "f49231e0b7d3feca",
@@ -725,8 +725,8 @@
         "Army-McCarthy hearings",
         "Red Scare"
       ],
-      "x": 0.657558,
-      "y": 0.794214
+      "x": 0.21295,
+      "y": 0.618815
     },
     {
       "id": "30052b16d86e2b68",
@@ -748,8 +748,8 @@
         "popular sovereignty",
         "Missouri Compromise repeal"
       ],
-      "x": 0.658017,
-      "y": 0.794334
+      "x": 0.169455,
+      "y": 0.684244
     },
     {
       "id": "9fde46270ed0b6f7",
@@ -771,8 +771,8 @@
         "George Kennan",
         "Cold War strategy"
       ],
-      "x": 0.332209,
-      "y": 0.764017
+      "x": 0.211763,
+      "y": 0.631286
     },
     {
       "id": "dfb8b47d30e5db98",
@@ -794,8 +794,8 @@
         "Bill of Rights",
         "Constitution ratification"
       ],
-      "x": 0.202194,
-      "y": 0.508313
+      "x": 0.244003,
+      "y": 0.616873
     },
     {
       "id": "b5b2f0e966b42bb0",
@@ -817,8 +817,8 @@
         "crop-lien system",
         "post-Civil War South"
       ],
-      "x": 0.666461,
-      "y": 0.816097
+      "x": 0.244037,
+      "y": 0.593187
     },
     {
       "id": "a0f5228acac074a7",
@@ -840,8 +840,8 @@
         "John C. Calhoun",
         "Tariff of Abominations"
       ],
-      "x": 0.659082,
-      "y": 0.797047
+      "x": 0.184148,
+      "y": 0.65911
     },
     {
       "id": "85c091b8ee790b4f",
@@ -864,8 +864,8 @@
         "Second Bank of the United States",
         "Panic of 1837"
       ],
-      "x": 0.660025,
-      "y": 0.798025
+      "x": 0.168632,
+      "y": 0.726231
     },
     {
       "id": "a608af4669a11fe0",
@@ -887,8 +887,8 @@
         "popular sovereignty",
         "Missouri Compromise"
       ],
-      "x": 0.659566,
-      "y": 0.7978
+      "x": 0.166205,
+      "y": 0.68369
     },
     {
       "id": "b43e6f5d323d243f",
@@ -910,8 +910,8 @@
         "Reconstruction",
         "War Department"
       ],
-      "x": 0.656066,
-      "y": 0.790724
+      "x": 0.16692,
+      "y": 0.67192
     },
     {
       "id": "0d735b8e60ca507c",
@@ -933,8 +933,8 @@
         "Quasi-War",
         "early American foreign policy"
       ],
-      "x": 0.660356,
-      "y": 0.799879
+      "x": 0.215645,
+      "y": 0.603292
     },
     {
       "id": "5e5b689730d54bd4",
@@ -956,8 +956,8 @@
         "Great Depression",
         "protectionism"
       ],
-      "x": 0.664904,
-      "y": 0.809102
+      "x": 0.247791,
+      "y": 0.739253
     },
     {
       "id": "4e39f607bdf45650",
@@ -979,8 +979,8 @@
         "Brandeis Brief",
         "Lochner v. New York"
       ],
-      "x": 0.726553,
-      "y": 0.342187
+      "x": 0.208067,
+      "y": 0.666577
     },
     {
       "id": "8deacd7bb3c75c24",
@@ -1002,8 +1002,8 @@
         "American imperialism",
         "Good Neighbor policy"
       ],
-      "x": 0.657036,
-      "y": 0.793007
+      "x": 0.153078,
+      "y": 0.694829
     },
     {
       "id": "4374cf2075197066",
@@ -1025,8 +1025,8 @@
         "Great Depression politics",
         "Hoover presidency"
       ],
-      "x": 0.65795,
-      "y": 0.794911
+      "x": 0.216185,
+      "y": 0.607212
     },
     {
       "id": "271f24d39ec522ec",
@@ -1048,8 +1048,8 @@
         "Gilded Age corruption",
         "transcontinental railroad"
       ],
-      "x": 0.668701,
-      "y": 0.817635
+      "x": 0.274529,
+      "y": 0.603825
     },
     {
       "id": "738407f14068350a",
@@ -1071,8 +1071,8 @@
         "New York Times Co. v. United States",
         "First Amendment"
       ],
-      "x": 0.657451,
-      "y": 0.793713
+      "x": 0.229751,
+      "y": 0.628254
     },
     {
       "id": "38b6ffa2f1b66944",
@@ -1094,8 +1094,8 @@
         "executive war powers",
         "congressional oversight"
       ],
-      "x": 0.237893,
-      "y": 0.393527
+      "x": 0.198552,
+      "y": 0.660741
     }
   ],
   "labels": [],

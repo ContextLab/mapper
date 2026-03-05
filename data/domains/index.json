@@ -7,10 +7,10 @@
       "parent_id": "physics",
       "level": "sub",
       "region": {
-        "x_min": 0.145798,
-        "x_max": 0.697883,
-        "y_min": 0.442283,
-        "y_max": 0.868751
+        "x_min": 0.361772,
+        "x_max": 0.611772,
+        "y_min": 0.80021,
+        "y_max": 1.0
       },
       "grid_size": 70,
       "question_count": 50
@@ -21,10 +21,10 @@
       "parent_id": "physics",
       "level": "sub",
       "region": {
-        "x_min": 0.657708,
-        "x_max": 0.709708,
-        "y_min": 0.829596,
-        "y_max": 0.881596
+        "x_min": 0.410458,
+        "x_max": 0.792441,
+        "y_min": 0.744716,
+        "y_max": 0.994716
       },
       "grid_size": 70,
       "question_count": 50
@@ -35,10 +35,10 @@
       "parent_id": "art-history",
       "level": "sub",
       "region": {
-        "x_min": 0.254915,
-        "x_max": 0.675289,
-        "y_min": 0.280988,
-        "y_max": 0.825863
+        "x_min": 0.0,
+        "x_max": 0.245014,
+        "y_min": 0.319702,
+        "y_max": 0.579317
       },
       "grid_size": 70,
       "question_count": 50
@@ -49,10 +49,10 @@
       "parent_id": "art-history",
       "level": "sub",
       "region": {
-        "x_min": 0.204429,
-        "x_max": 0.674708,
-        "y_min": 0.501506,
-        "y_max": 0.821248
+        "x_min": 0.0,
+        "x_max": 0.246529,
+        "y_min": 0.207599,
+        "y_max": 0.457599
       },
       "grid_size": 70,
       "question_count": 50
@@ -63,10 +63,10 @@
       "parent_id": "biology",
       "level": "sub",
       "region": {
-        "x_min": 0.228795,
-        "x_max": 0.746087,
-        "y_min": 0.213835,
-        "y_max": 0.862981
+        "x_min": 0.430498,
+        "x_max": 0.684161,
+        "y_min": 0.0,
+        "y_max": 0.239347
       },
       "grid_size": 70,
       "question_count": 50
@@ -77,10 +77,10 @@
       "parent_id": "biology",
       "level": "sub",
       "region": {
-        "x_min": 0.639142,
-        "x_max": 0.691142,
-        "y_min": 0.797434,
-        "y_max": 0.849434
+        "x_min": 0.315702,
+        "x_max": 0.604023,
+        "y_min": 0.0,
+        "y_max": 0.249557
       },
       "grid_size": 70,
       "question_count": 50
@@ -91,10 +91,10 @@
       "parent_id": "neuroscience",
       "level": "sub",
       "region": {
-        "x_min": 0.643098,
-        "x_max": 0.695098,
-        "y_min": 0.802461,
-        "y_max": 0.857479
+        "x_min": 0.583937,
+        "x_max": 0.8702,
+        "y_min": 0.087137,
+        "y_max": 0.470324
       },
       "grid_size": 70,
       "question_count": 50
@@ -105,10 +105,10 @@
       "parent_id": "neuroscience",
       "level": "sub",
       "region": {
-        "x_min": 0.648519,
-        "x_max": 0.700519,
-        "y_min": 0.809699,
-        "y_max": 0.868216
+        "x_min": 0.494967,
+        "x_max": 0.867688,
+        "y_min": 0.093094,
+        "y_max": 0.867101
       },
       "grid_size": 70,
       "question_count": 50
@@ -119,10 +119,10 @@
       "parent_id": "neuroscience",
       "level": "sub",
       "region": {
-        "x_min": 0.650456,
-        "x_max": 0.702456,
-        "y_min": 0.82214,
-        "y_max": 0.87414
+        "x_min": 0.568175,
+        "x_max": 0.85364,
+        "y_min": 0.0,
+        "y_max": 0.247685
       },
       "grid_size": 70,
       "question_count": 50
@@ -133,10 +133,10 @@
       "parent_id": "mathematics",
       "level": "sub",
       "region": {
-        "x_min": 0.258003,
-        "x_max": 0.791945,
-        "y_min": 0.068773,
-        "y_max": 0.902988
+        "x_min": 0.528774,
+        "x_max": 0.778774,
+        "y_min": 0.725898,
+        "y_max": 0.975898
       },
       "grid_size": 70,
       "question_count": 50
@@ -147,10 +147,10 @@
       "parent_id": "mathematics",
       "level": "sub",
       "region": {
-        "x_min": 0.159772,
-        "x_max": 0.708965,
-        "y_min": 0.248149,
-        "y_max": 0.892093
+        "x_min": 0.672173,
+        "x_max": 0.922173,
+        "y_min": 0.715593,
+        "y_max": 0.965593
       },
       "grid_size": 70,
       "question_count": 50
@@ -161,10 +161,10 @@
       "parent_id": "mathematics",
       "level": "sub",
       "region": {
-        "x_min": 0.662902,
-        "x_max": 0.714902,
-        "y_min": 0.831481,
-        "y_max": 0.883481
+        "x_min": 0.674001,
+        "x_max": 0.946227,
+        "y_min": 0.759722,
+        "y_max": 1.0
       },
       "grid_size": 70,
       "question_count": 50
@@ -175,10 +175,10 @@
       "parent_id": "mathematics",
       "level": "sub",
       "region": {
-        "x_min": 0.131484,
-        "x_max": 0.70271,
-        "y_min": 0.238119,
-        "y_max": 0.877937
+        "x_min": 0.533607,
+        "x_max": 0.783607,
+        "y_min": 0.653157,
+        "y_max": 0.903157
       },
       "grid_size": 70,
       "question_count": 50
@@ -189,10 +189,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.142566,
-        "x_max": 0.862719,
-        "y_min": 0.127928,
-        "y_max": 0.908716
+        "x_min": 0.361772,
+        "x_max": 0.792441,
+        "y_min": 0.722639,
+        "y_max": 1.0
       },
       "grid_size": 120,
       "question_count": 150
@@ -203,10 +203,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.654087,
-        "x_max": 0.706087,
-        "y_min": 0.199048,
-        "y_max": 0.880189
+        "x_min": 0.494967,
+        "x_max": 0.8702,
+        "y_min": 0.0,
+        "y_max": 0.867101
       },
       "grid_size": 120,
       "question_count": 199
@@ -217,10 +217,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.127232,
-        "x_max": 0.919529,
-        "y_min": 0.068773,
-        "y_max": 0.902988
+        "x_min": 0.528774,
+        "x_max": 0.946227,
+        "y_min": 0.555343,
+        "y_max": 1.0
       },
       "grid_size": 120,
       "question_count": 250
@@ -231,10 +231,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.204369,
-        "x_max": 0.677749,
-        "y_min": 0.280945,
-        "y_max": 0.828059
+        "x_min": 0.0,
+        "x_max": 0.56756,
+        "y_min": 0.196029,
+        "y_max": 0.579317
       },
       "grid_size": 120,
       "question_count": 150
@@ -245,10 +245,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.225204,
-        "x_max": 0.929205,
-        "y_min": 0.165898,
-        "y_max": 0.863921
+        "x_min": 0.315702,
+        "x_max": 0.722938,
+        "y_min": 0.0,
+        "y_max": 0.762741
       },
       "grid_size": 120,
       "question_count": 150
@@ -273,10 +273,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.178157,
-        "x_max": 0.824071,
-        "y_min": 0.176123,
-        "y_max": 0.84394
+        "x_min": 0.072126,
+        "x_max": 0.524274,
+        "y_min": 0.2476,
+        "y_max": 0.773299
       },
       "grid_size": 70,
       "question_count": 50
@@ -287,10 +287,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.646565,
-        "x_max": 0.743675,
-        "y_min": 0.395896,
-        "y_max": 0.880686
+        "x_min": 0.58616,
+        "x_max": 0.980238,
+        "y_min": 0.360516,
+        "y_max": 0.865696
       },
       "grid_size": 70,
       "question_count": 50
@@ -301,10 +301,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.135794,
-        "x_max": 0.911083,
-        "y_min": 0.144833,
-        "y_max": 0.883364
+        "x_min": 0.197365,
+        "x_max": 0.739651,
+        "y_min": 0.345701,
+        "y_max": 0.854729
       },
       "grid_size": 70,
       "question_count": 50
@@ -315,10 +315,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.637192,
-        "x_max": 0.895368,
-        "y_min": 0.744722,
-        "y_max": 0.853348
+        "x_min": 0.32826,
+        "x_max": 0.800102,
+        "y_min": 0.257211,
+        "y_max": 0.73496
       },
       "grid_size": 70,
       "question_count": 50
@@ -329,10 +329,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.642549,
-        "x_max": 0.694549,
-        "y_min": 0.784657,
-        "y_max": 0.860757
+        "x_min": 0.637064,
+        "x_max": 0.975314,
+        "y_min": 0.246975,
+        "y_max": 0.776721
       },
       "grid_size": 70,
       "question_count": 50
@@ -343,10 +343,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.630687,
-        "x_max": 0.682687,
-        "y_min": 0.766061,
-        "y_max": 0.826485
+        "x_min": 0.27358,
+        "x_max": 0.734146,
+        "y_min": 0.230537,
+        "y_max": 0.629025
       },
       "grid_size": 70,
       "question_count": 50
@@ -357,10 +357,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.567078,
-        "x_max": 0.684605,
-        "y_min": 0.485609,
-        "y_max": 0.865186
+        "x_min": 0.369925,
+        "x_max": 0.836264,
+        "y_min": 0.080126,
+        "y_max": 0.770596
       },
       "grid_size": 70,
       "question_count": 50
@@ -371,10 +371,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.256106,
-        "x_max": 0.685886,
-        "y_min": 0.257695,
-        "y_max": 0.860186
+        "x_min": 0.082767,
+        "x_max": 0.440849,
+        "y_min": 0.081901,
+        "y_max": 0.569448
       },
       "grid_size": 70,
       "question_count": 50
@@ -385,10 +385,10 @@
       "parent_id": "world-history",
       "level": "sub",
       "region": {
-        "x_min": 0.190005,
-        "x_max": 0.823838,
-        "y_min": 0.176392,
-        "y_max": 0.830209
+        "x_min": 0.072126,
+        "x_max": 0.322126,
+        "y_min": 0.523299,
+        "y_max": 0.773299
       },
       "grid_size": 70,
       "question_count": 50
@@ -399,10 +399,10 @@
       "parent_id": "world-history",
       "level": "sub",
       "region": {
-        "x_min": 0.258905,
-        "x_max": 0.764711,
-        "y_min": 0.230625,
-        "y_max": 0.82811
+        "x_min": 0.087456,
+        "x_max": 0.350986,
+        "y_min": 0.391012,
+        "y_max": 0.696034
       },
       "grid_size": 70,
       "question_count": 50
@@ -413,10 +413,10 @@
       "parent_id": "world-history",
       "level": "sub",
       "region": {
-        "x_min": 0.227871,
-        "x_max": 0.682707,
-        "y_min": 0.275671,
-        "y_max": 0.84102
+        "x_min": 0.099126,
+        "x_max": 0.524274,
+        "y_min": 0.332481,
+        "y_max": 0.694833
       },
       "grid_size": 70,
       "question_count": 50
@@ -427,10 +427,10 @@
       "parent_id": "computer-science",
       "level": "sub",
       "region": {
-        "x_min": 0.645329,
-        "x_max": 0.697329,
-        "y_min": 0.787234,
-        "y_max": 0.873013
+        "x_min": 0.58616,
+        "x_max": 0.891741,
+        "y_min": 0.360516,
+        "y_max": 0.865696
       },
       "grid_size": 70,
       "question_count": 50
@@ -441,10 +441,10 @@
       "parent_id": "computer-science",
       "level": "sub",
       "region": {
-        "x_min": 0.647818,
-        "x_max": 0.699818,
-        "y_min": 0.805046,
-        "y_max": 0.861344
+        "x_min": 0.660349,
+        "x_max": 0.970084,
+        "y_min": 0.486769,
+        "y_max": 0.854957
       },
       "grid_size": 70,
       "question_count": 50
@@ -455,10 +455,10 @@
       "parent_id": "computer-science",
       "level": "sub",
       "region": {
-        "x_min": 0.654826,
-        "x_max": 0.706826,
-        "y_min": 0.81947,
-        "y_max": 0.87147
+        "x_min": 0.704606,
+        "x_max": 0.980238,
+        "y_min": 0.609107,
+        "y_max": 0.859107
       },
       "grid_size": 70,
       "question_count": 50
@@ -469,10 +469,10 @@
       "parent_id": "economics",
       "level": "sub",
       "region": {
-        "x_min": 0.388943,
-        "x_max": 0.698152,
-        "y_min": 0.144833,
-        "y_max": 0.883364
+        "x_min": 0.205455,
+        "x_max": 0.685934,
+        "y_min": 0.443457,
+        "y_max": 0.854729
       },
       "grid_size": 70,
       "question_count": 50
@@ -483,10 +483,10 @@
       "parent_id": "economics",
       "level": "sub",
       "region": {
-        "x_min": 0.135794,
-        "x_max": 0.911083,
-        "y_min": 0.409321,
-        "y_max": 0.853907
+        "x_min": 0.197365,
+        "x_max": 0.447365,
+        "y_min": 0.58706,
+        "y_max": 0.83706
       },
       "grid_size": 70,
       "question_count": 50
@@ -497,10 +497,10 @@
       "parent_id": "philosophy",
       "level": "sub",
       "region": {
-        "x_min": 0.636605,
-        "x_max": 0.688605,
-        "y_min": 0.769859,
-        "y_max": 0.841545
+        "x_min": 0.32826,
+        "x_max": 0.57826,
+        "y_min": 0.474346,
+        "y_max": 0.724346
       },
       "grid_size": 70,
       "question_count": 50
@@ -511,10 +511,10 @@
       "parent_id": "philosophy",
       "level": "sub",
       "region": {
-        "x_min": 0.641003,
-        "x_max": 0.693003,
-        "y_min": 0.785603,
-        "y_max": 0.841111
+        "x_min": 0.499139,
+        "x_max": 0.800102,
+        "y_min": 0.257211,
+        "y_max": 0.621274
       },
       "grid_size": 70,
       "question_count": 50
@@ -525,10 +525,10 @@
       "parent_id": "philosophy",
       "level": "sub",
       "region": {
-        "x_min": 0.648456,
-        "x_max": 0.700456,
-        "y_min": 0.803461,
-        "y_max": 0.855461
+        "x_min": 0.522547,
+        "x_max": 0.772547,
+        "y_min": 0.48496,
+        "y_max": 0.73496
       },
       "grid_size": 70,
       "question_count": 50
@@ -539,10 +539,10 @@
       "parent_id": "philosophy",
       "level": "sub",
       "region": {
-        "x_min": 0.643111,
-        "x_max": 0.695111,
-        "y_min": 0.787377,
-        "y_max": 0.852511
+        "x_min": 0.483691,
+        "x_max": 0.765555,
+        "y_min": 0.405105,
+        "y_max": 0.691769
       },
       "grid_size": 70,
       "question_count": 50
@@ -553,10 +553,10 @@
       "parent_id": "linguistics",
       "level": "sub",
       "region": {
-        "x_min": 0.642812,
-        "x_max": 0.694812,
-        "y_min": 0.784964,
-        "y_max": 0.860751
+        "x_min": 0.688316,
+        "x_max": 0.975314,
+        "y_min": 0.309327,
+        "y_max": 0.578277
       },
       "grid_size": 70,
       "question_count": 50
@@ -567,10 +567,10 @@
       "parent_id": "linguistics",
       "level": "sub",
       "region": {
-        "x_min": 0.640495,
-        "x_max": 0.692495,
-        "y_min": 0.78505,
-        "y_max": 0.840728
+        "x_min": 0.637064,
+        "x_max": 0.954133,
+        "y_min": 0.299873,
+        "y_max": 0.659352
       },
       "grid_size": 70,
       "question_count": 50
@@ -581,10 +581,10 @@
       "parent_id": "linguistics",
       "level": "sub",
       "region": {
-        "x_min": 0.643241,
-        "x_max": 0.695241,
-        "y_min": 0.797333,
-        "y_max": 0.849333
+        "x_min": 0.716778,
+        "x_max": 0.966778,
+        "y_min": 0.338262,
+        "y_max": 0.776721
       },
       "grid_size": 70,
       "question_count": 50
@@ -595,10 +595,10 @@
       "parent_id": "sociology",
       "level": "sub",
       "region": {
-        "x_min": 0.629303,
-        "x_max": 0.681303,
-        "y_min": 0.766185,
-        "y_max": 0.820152
+        "x_min": 0.27358,
+        "x_max": 0.52358,
+        "y_min": 0.377747,
+        "y_max": 0.627747
       },
       "grid_size": 70,
       "question_count": 50
@@ -609,10 +609,10 @@
       "parent_id": "sociology",
       "level": "sub",
       "region": {
-        "x_min": 0.637673,
-        "x_max": 0.689673,
-        "y_min": 0.782802,
-        "y_max": 0.834802
+        "x_min": 0.277614,
+        "x_max": 0.531579,
+        "y_min": 0.253857,
+        "y_max": 0.629025
       },
       "grid_size": 70,
       "question_count": 50
@@ -623,10 +623,10 @@
       "parent_id": "psychology",
       "level": "sub",
       "region": {
-        "x_min": 0.643939,
-        "x_max": 0.695939,
-        "y_min": 0.801741,
-        "y_max": 0.858987
+        "x_min": 0.538898,
+        "x_max": 0.836264,
+        "y_min": 0.177097,
+        "y_max": 0.583976
       },
       "grid_size": 70,
       "question_count": 50
@@ -637,10 +637,10 @@
       "parent_id": "psychology",
       "level": "sub",
       "region": {
-        "x_min": 0.634608,
-        "x_max": 0.686608,
-        "y_min": 0.778719,
-        "y_max": 0.830719
+        "x_min": 0.378986,
+        "x_max": 0.67389,
+        "y_min": 0.303479,
+        "y_max": 0.555007
       },
       "grid_size": 70,
       "question_count": 50
@@ -651,10 +651,10 @@
       "parent_id": "psychology",
       "level": "sub",
       "region": {
-        "x_min": 0.567081,
-        "x_max": 0.684476,
-        "y_min": 0.48562,
-        "y_max": 0.864611
+        "x_min": 0.417274,
+        "x_max": 0.832463,
+        "y_min": 0.107871,
+        "y_max": 0.514079
       },
       "grid_size": 70,
       "question_count": 50
@@ -665,10 +665,10 @@
       "parent_id": "psychology",
       "level": "sub",
       "region": {
-        "x_min": 0.637195,
-        "x_max": 0.689195,
-        "y_min": 0.77608,
-        "y_max": 0.855836
+        "x_min": 0.462355,
+        "x_max": 0.780419,
+        "y_min": 0.160925,
+        "y_max": 0.497869
       },
       "grid_size": 70,
       "question_count": 50
@@ -679,10 +679,10 @@
       "parent_id": "archaeology",
       "level": "sub",
       "region": {
-        "x_min": 0.544174,
-        "x_max": 0.669118,
-        "y_min": 0.258294,
-        "y_max": 0.829637
+        "x_min": 0.082767,
+        "x_max": 0.407583,
+        "y_min": 0.081901,
+        "y_max": 0.411892
       },
       "grid_size": 70,
       "question_count": 50
@@ -693,16 +693,16 @@
       "parent_id": "archaeology",
       "level": "sub",
       "region": {
-        "x_min": 0.639385,
-        "x_max": 0.691385,
-        "y_min": 0.792655,
-        "y_max": 0.844655
+        "x_min": 0.147068,
+        "x_max": 0.440849,
+        "y_min": 0.108447,
+        "y_max": 0.390746
       },
       "grid_size": 70,
       "question_count": 50
     }
   ],
-  "generated": "2026-02-27T14:54:55",
+  "generated": "2026-03-04T22:13:31",
   "params": {
     "top_sub": 500,
     "top_general": 1000,

@@ -51,7 +51,7 @@ export function makePrng(seed) {
 
 /**
  * Click through the full tutorial for 'complete' personas.
- * Handles all 8 steps: click-advance, answer questions, switch domains.
+ * Handles all 11 steps: click-advance, answer questions, switch domains, button clicks.
  */
 async function completeTutorialFlow(page) {
   const nextBtn = page.locator('.tutorial-next-btn');
@@ -70,21 +70,39 @@ async function completeTutorialFlow(page) {
     await optionBtns.first().waitFor({ state: 'visible', timeout: 5000 });
     await optionBtns.first().click();
     await page.waitForTimeout(1000); // auto-advance delay
+    // If auto-advance is off, click the quiz Next button to load the next question
+    const quizNextBtn = page.locator('#quiz-panel .quiz-next-btn, #quiz-panel button:has-text("Next")');
+    try {
+      if (await quizNextBtn.first().isVisible({ timeout: 500 })) {
+        await quizNextBtn.first().click();
+        await page.waitForTimeout(500);
+      }
+    } catch {
+      // Auto-advance handled it
+    }
   }
 
   try {
-    // Wait for tutorial modal (appears after "Map my knowledge!" is clicked)
     await modal.waitFor({ state: 'visible', timeout: 5000 });
 
-    // Step 1: UI Orientation — 3 substeps, all click-advance
-    await clickNext(); // substep 1: map
-    await clickNext(); // substep 2: quiz panel
-    await clickNext(); // substep 3: video panel (may be skipped on mobile)
+    // Step 1: Your Knowledge Map — 2 substeps, click Next each
+    await clickNext(); // substep 1
+    await clickNext(); // substep 2
 
-    // Step 2: "Try Answering a Question" — answer, see feedback, click Continue
+    // Step 2: The Quiz Panel — click Next
+    await clickNext();
+
+    // Step 3: Video Recommendations — 2 substeps (may be skipped on mobile)
+    try {
+      await clickNext(); // substep 1
+      await clickNext(); // substep 2
+    } catch {
+      // Skipped on mobile
+    }
+
+    // Step 4: Try Answering a Question — answer, see feedback, click Continue
     await modal.waitFor({ state: 'visible', timeout: 3000 });
     await answerOneQuestion();
-    // Feedback modal appears — click Continue
     try {
       const continueBtn = page.locator('#tutorial-modal button', { hasText: 'Continue' });
       await continueBtn.waitFor({ state: 'visible', timeout: 3000 });
@@ -94,39 +112,51 @@ async function completeTutorialFlow(page) {
       // Feedback may not have appeared
     }
 
-    // Step 3: "Building Your Map" — answer 3 questions
+    // Step 5: Building Your Map — 3 substeps
+    // Substep 1: answer 2 questions
     await modal.waitFor({ state: 'visible', timeout: 3000 });
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 2; i++) {
       await answerOneQuestion();
     }
-
-    // Step 4: "Skipping Questions" — informational, click Next
+    // Substep 2: toggle auto-advance (off then back on)
     try {
       await modal.waitFor({ state: 'visible', timeout: 2000 });
-      await clickNext();
+      const autoAdvanceTrack = page.locator('.auto-advance-track');
+      await autoAdvanceTrack.waitFor({ state: 'visible', timeout: 2000 });
+      await autoAdvanceTrack.click(); // toggle OFF — advances tutorial
+      await page.waitForTimeout(500);
+      // Toggle back ON so subsequent answers auto-advance
+      await autoAdvanceTrack.click();
+      await page.waitForTimeout(300);
     } catch {
-      // Step was skipped (conditional — already used skip)
+      try { await clickNext(1000); } catch { /* continue */ }
+    }
+    // Substep 3: answer 1 more question
+    try {
+      await modal.waitFor({ state: 'visible', timeout: 2000 });
+      await answerOneQuestion();
+    } catch {
+      // May have advanced
     }
 
-    // Step 5: "Switch Domains" — change domain via dropdown
+    // Step 6: Switch Domains — select from dropdown
     try {
       await modal.waitFor({ state: 'visible', timeout: 2000 });
       const trigger = page.locator('.domain-selector .custom-select-trigger');
       await trigger.click();
-      // Pick the second option (different from current)
       const options = page.locator('.domain-selector .custom-select-option');
       const count = await options.count();
       if (count > 1) {
         await options.nth(1).click();
       }
-      await page.waitForTimeout(1500); // domain switch + tutorial advance
+      await page.waitForTimeout(1500);
     } catch {
-      // Step may have been auto-advanced
+      // May have auto-advanced
     }
 
-    // Step 6: "Explore Another Domain" — answer 2 questions
+    // Step 7: Exploring Domain-Specific Knowledge — answer 2
     try {
-      await modal.waitFor({ state: 'visible', timeout: 2000 });
+      await modal.waitFor({ state: 'visible', timeout: 3000 });
       for (let i = 0; i < 2; i++) {
         await answerOneQuestion();
       }
@@ -134,25 +164,47 @@ async function completeTutorialFlow(page) {
       // May have advanced
     }
 
-    // Step 7: "Discover Features" — 3 substeps, all click-advance
+    // Step 8: Your Expertise — click trophy button, then follow-up Next
     try {
       await modal.waitFor({ state: 'visible', timeout: 2000 });
-      await clickNext(); // trophy
-      await clickNext(); // suggest
-      await clickNext(); // share
+      const trophyBtn = page.locator('#trophy-btn');
+      await trophyBtn.click();
+      await page.waitForTimeout(500);
+      await clickNext(2000);
     } catch {
       // May have completed
     }
 
-    // Step 8: Completion — click Finish
+    // Step 9: Fill in Your Knowledge Gaps! — click suggest, then follow-up Next
     try {
       await modal.waitFor({ state: 'visible', timeout: 2000 });
-      await clickNext(); // Finish button
+      const suggestBtn = page.locator('#suggest-btn');
+      await suggestBtn.click();
+      await page.waitForTimeout(500);
+      await clickNext(2000);
+    } catch {
+      // May have completed
+    }
+
+    // Step 10: Share Your Map — click share, then follow-up Next
+    try {
+      await modal.waitFor({ state: 'visible', timeout: 2000 });
+      const shareBtn = page.locator('#share-btn');
+      await shareBtn.click();
+      await page.waitForTimeout(500);
+      await clickNext(2000);
+    } catch {
+      // May have completed
+    }
+
+    // Step 11: Tutorial Complete! — click Start Over / dismiss
+    try {
+      await modal.waitFor({ state: 'visible', timeout: 2000 });
+      await clickNext();
     } catch {
       // Tutorial already done
     }
 
-    // Wait for overlay to be removed
     await page.waitForTimeout(500);
   } catch {
     // Tutorial didn't appear or completed early — continue with test

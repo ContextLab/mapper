@@ -80,7 +80,8 @@ const STEPS = [
       },
       {
         title: 'Building Your Map',
-        arrowTarget: '#auto-advance-label',
+        arrowTarget: '.auto-advance-label',
+        arrowSide: 'right',
         message: 'Try toggling the "Auto-advance" switch. Pausing after each question gives you a chance to review the correct answer. You can also click on the Wikipedia and Khan Academy links to learn more.',
         advanceOn: 'toggle-auto-advance',
       },
@@ -138,6 +139,7 @@ const STEPS = [
   {
     id: 11, title: 'Tutorial Complete!',
     advanceOn: 'click',
+    onEnter: 'closeModals',
     isCompletion: true,
   },
 ];
@@ -185,8 +187,17 @@ function defaultState() {
 
 export function initTutorial(appState = {}) {
   const saved = loadState();
-  if (saved && saved.dismissed) {
+  if (saved && (saved.dismissed || saved.completed)) {
     state = saved;
+    return;
+  }
+
+  // Preserve in-progress tutorial state across domain switches / re-inits
+  if (saved && saved.step > 1) {
+    state = saved;
+    _questionsAnsweredInStep = 0;
+    _inFollowUp = false;
+    renderCurrentStep();
     return;
   }
 
@@ -460,15 +471,15 @@ function renderCurrentStep() {
   const isFinish = !!stepDef.isCompletion;
   const showNextBtn = advanceOn === 'click' || isFinish;
 
-  _currentHighlightSelector = highlight;
   renderOverlay(highlight, title, message, showNextBtn, isFinish, arrowTarget, arrowSide);
+  _currentHighlightSelector = highlight; // Set AFTER renderOverlay (which calls removeOverlay → clears it)
   startHighlightRefresh();
 }
 
 function buildDynamicMessage(stepDef) {
   // Step 7: include current domain name
   if (stepDef.id === 7) {
-    const domainEl = document.querySelector('.custom-select-trigger .select-value, .custom-select-trigger');
+    const domainEl = document.querySelector('.custom-select-value');
     const domain = domainEl?.textContent?.trim() || 'a new domain';
     return `You selected ${domain} from the menu\u2014now all of the questions you see will be focused on this one area. You can go back to mapping general knowledge by selecting "All (General)" from the dropdown menu. But first, try answering a couple of questions in the domain you selected. Remember, you can always skip if you need to!`;
   }
@@ -476,12 +487,15 @@ function buildDynamicMessage(stepDef) {
 }
 
 function buildDynamicFollowUp(stepDef) {
-  // Step 8: expertise follow-up with top areas
+  // Step 8: expertise follow-up with top sub-domain areas + parent domain summary
   if (stepDef.id === 8) {
-    const items = document.querySelectorAll('.expertise-item, .expertise-row, .ranking-item');
+    const items = document.querySelectorAll('#insights-modal-body .insights-concept');
     const areas = Array.from(items).slice(0, 3).map(el => el.textContent?.trim()).filter(Boolean);
     if (areas.length >= 3) {
-      return `Nice! It looks like your top areas are ${areas[0]}, ${areas[1]}, and ${areas[2]}. Keep answering to refine these rankings!`;
+      // Find the parent domain of the top sub-domain via the insights data attribute or DOM
+      const firstLi = document.querySelector('#insights-modal-body li');
+      const parentDomain = firstLi?.dataset?.parentName || areas[0];
+      return `Nice! It looks like your top areas are ${areas[0]}, ${areas[1]}, and ${areas[2]}. You must be pretty good at ${parentDomain}!`;
     }
     return 'Nice! Keep answering questions to build up your expertise rankings!';
   }
@@ -589,11 +603,16 @@ function executeOnEnter(action) {
     const toggleBtn = document.getElementById('quiz-toggle');
     if (panel && panel.classList.contains('open')) toggleBtn?.click();
   } else if (action === 'closeModals') {
-    // Close any open app modals (expertise, suggest, share)
-    document.querySelectorAll('.modal-overlay, .share-overlay, #expertise-modal, #suggest-modal').forEach(el => {
-      const closeBtn = el.querySelector('.close-btn, [aria-label="Close"]');
+    // Close any open app modals (insights/expertise, video suggest, share, recommended videos)
+    for (const id of ['insights-modal', 'share-modal', 'video-modal']) {
+      const m = document.getElementById(id);
+      if (m && !m.hidden) m.hidden = true;
+    }
+    // Also try generic modal overlays
+    document.querySelectorAll('.modal-overlay, .share-overlay').forEach(el => {
+      const closeBtn = el.querySelector('.close-modal, .close-btn, [aria-label="Close"]');
       if (closeBtn) closeBtn.click();
-      else el.remove();
+      else el.hidden = true;
     });
   }
 }
@@ -611,6 +630,13 @@ function startHighlightRefresh() {
     const highlightEl = queryFirst(_currentHighlightSelector);
     if (highlightEl) {
       updateClipPath(overlay, highlightEl);
+    }
+
+    // Also reposition arrow (panels may animate after onEnter)
+    const arrowEl = document.getElementById('tutorial-arrow');
+    if (arrowEl && arrowEl._targetSelector) {
+      const target = queryFirst(arrowEl._targetSelector);
+      if (target) repositionArrow(arrowEl, target, arrowEl._side);
     }
   }, HIGHLIGHT_REFRESH_MS);
 
@@ -770,19 +796,19 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
   // Overlay
   const overlay = document.createElement('div');
   overlay.id = 'tutorial-overlay';
-  Object.assign(overlay.style, {
-    position: 'fixed',
-    inset: '0',
-    zIndex: '9998',
-    background: 'rgba(0,0,0,0.45)',
-    pointerEvents: 'none',
-    transition: prefersReducedMotion() ? 'none' : 'opacity 300ms var(--ease-emphasized-decel, ease)',
-  });
-
   let highlightEl = null;
   if (highlightSelector) {
     highlightEl = queryFirst(highlightSelector);
   }
+
+  Object.assign(overlay.style, {
+    position: 'fixed',
+    inset: '0',
+    zIndex: '9998',
+    background: highlightEl ? 'rgba(0,0,0,0.45)' : 'transparent',
+    pointerEvents: 'none',
+    transition: prefersReducedMotion() ? 'none' : 'opacity 300ms var(--ease-emphasized-decel, ease)',
+  });
 
   if (highlightEl) {
     updateClipPath(overlay, highlightEl);

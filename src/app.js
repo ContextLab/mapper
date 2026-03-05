@@ -1128,6 +1128,9 @@ function setupAboutModal() {
   btn.addEventListener('click', () => { modal.hidden = !modal.hidden; });
   const closeBtn = modal.querySelector('.close-modal');
   if (closeBtn) closeBtn.addEventListener('click', () => { modal.hidden = true; });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.hidden) modal.hidden = true;
+  });
 
   // Wire up inline info link on landing page to open the about modal
   const landingInfoLink = document.getElementById('landing-info-link');

@@ -152,6 +152,7 @@ async function boot() {
     }
     if (videos && videos.length > 0) {
       videoPanel.setVideos(videosToMarkers(videos));
+      if (minimap) minimap.setVideos(videosToLastPoints(videos));
     }
   });
 
@@ -268,10 +269,10 @@ async function boot() {
     const videos = [];
     if (videoData) {
       for (const v of videoData) {
-        if (!v.windows) continue;
-        for (const [x, y] of v.windows) {
-          videos.push({ x, y });
-        }
+        if (!v.windows || v.windows.length === 0) continue;
+        // Only include complete-transcript embedding (last point)
+        const last = v.windows[v.windows.length - 1];
+        videos.push({ x: last[0], y: last[1] });
       }
     }
     return { estimateGrid: grid, articles, answeredQuestions, videos };
@@ -355,6 +356,16 @@ function articlesToPoints(articles) {
     url: a.url,
     excerpt: a.excerpt || '',
   }));
+}
+
+function videosToLastPoints(videos) {
+  const points = [];
+  for (const v of videos) {
+    if (!v.windows || v.windows.length === 0) continue;
+    const last = v.windows[v.windows.length - 1];
+    points.push({ x: last[0], y: last[1] });
+  }
+  return points;
 }
 
 function videosToMarkers(videos) {
@@ -485,6 +496,7 @@ async function switchDomain(domainId) {
     if (earlyVideos && earlyVideos.length > 0) {
       renderer.setVideos(videosToMarkers(earlyVideos));
       videoPanel.setVideos(videosToMarkers(earlyVideos));
+      if (minimap) minimap.setVideos(videosToLastPoints(earlyVideos));
     }
   }
 

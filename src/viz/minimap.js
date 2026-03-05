@@ -19,6 +19,7 @@ export class Minimap {
     this.estimates = null;
     this.heatmapRegion = null;
     this.articles = [];
+    this.videos = [];
 
     // Viewport-rect drag inside the minimap canvas
     this._isDragging = false;
@@ -140,6 +141,7 @@ export class Minimap {
   setViewport(viewport) { this.currentViewport = viewport; this.render(); }
   setEstimates(estimates, region) { this.estimates = estimates; if (region) this.heatmapRegion = region; this.render(); }
   setArticles(articles) { this.articles = articles || []; this.render(); }
+  setVideos(videos) { this.videos = videos || []; this.render(); }
   onClick(handler) { this.clickHandler = handler; }
   onNavigate(handler) { this.navigateHandler = handler; }
   onPan(handler) { this.panHandler = handler; }
@@ -400,6 +402,7 @@ export class Minimap {
 
     this._drawHeatmap(ctx, w, h);
     this._drawArticles(ctx, w, h);
+    this._drawVideos(ctx, w, h);
 
     if (this.currentViewport) {
       this._drawViewportRect(ctx, w, h);
@@ -441,6 +444,14 @@ export class Minimap {
     ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
     for (const a of this.articles) {
       ctx.fillRect(a.x * w, a.y * h, 1, 1);
+    }
+  }
+
+  _drawVideos(ctx, w, h) {
+    if (this.videos.length === 0) return;
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
+    for (const v of this.videos) {
+      ctx.fillRect(v.x * w, v.y * h, 1, 1);
     }
   }
 

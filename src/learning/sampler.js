@@ -52,21 +52,57 @@ export class Sampler {
       : candidates;
 
     const pool = inViewport.length > 0 ? inViewport : candidates;
-    let best = null;
-    let bestScore = -Infinity;
 
+    // Score all candidates
+    const scored = [];
     for (const q of pool) {
       const cell = this._questionToCell(q);
       const key = `${cell.gx},${cell.gy}`;
       const est = estimateMap.get(key);
-      const score = this._scoreByPhase(q, est, phase);
+      scored.push({ q, score: this._scoreByPhase(q, est, phase), cell });
+    }
 
-      if (score > bestScore) {
-        bestScore = score;
-        best = { questionId: q.id, score, cellGx: cell.gx, cellGy: cell.gy };
+    // During calibrate, break score ties with spatial diversity
+    if (phase === 'calibrate' && scored.length > 1) {
+      const maxScore = scored.reduce((m, s) => Math.max(m, s.score), -Infinity);
+      const tied = scored.filter(s => s.score >= maxScore * 0.95);
+
+      if (tied.length > 1) {
+        const answeredLocs = questions.filter(q => answeredIds.has(q.id));
+        let best = tied[0];
+        let bestDist = -Infinity;
+
+        for (const t of tied) {
+          let dist;
+          if (answeredLocs.length === 0) {
+            // First question: prefer near map center for a balanced start
+            dist = -Math.hypot(t.q.x - 0.5, t.q.y - 0.5);
+          } else {
+            // Subsequent: maximize minimum distance from answered questions
+            dist = Infinity;
+            for (const a of answeredLocs) {
+              const d = Math.hypot(t.q.x - a.x, t.q.y - a.y);
+              if (d < dist) dist = d;
+            }
+          }
+          if (dist > bestDist) {
+            bestDist = dist;
+            best = t;
+          }
+        }
+        return { questionId: best.q.id, score: best.score, cellGx: best.cell.gx, cellGy: best.cell.gy };
       }
     }
 
+    // Default: pick highest score
+    let best = null;
+    let bestScore = -Infinity;
+    for (const s of scored) {
+      if (s.score > bestScore) {
+        bestScore = s.score;
+        best = { questionId: s.q.id, score: s.score, cellGx: s.cell.gx, cellGy: s.cell.gy };
+      }
+    }
     return best;
   }
 

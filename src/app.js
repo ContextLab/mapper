@@ -29,7 +29,7 @@ import * as modes from './ui/modes.js';
 import * as insights from './ui/insights.js';
 import * as share from './ui/share.js';
 import { checkMilestone, highlightExpertiseButton, updateProgressDisplay } from './ui/milestones.js';
-import { initTutorial, advanceTutorial, isTutorialActive } from './ui/tutorial.js';
+import { initTutorial, advanceTutorial, isTutorialActive, resetTutorial, setAnswerFeedback } from './ui/tutorial.js';
 import * as videoModal from './ui/video-modal.js';
 import * as videoLoader from './domain/video-loader.js';
 import * as videoPanel from './ui/video-panel.js';
@@ -500,6 +500,13 @@ async function switchDomain(domainId) {
     // Start tutorial now that the map is visible (after user clicks "Map my knowledge!")
     initTutorial({ responsesCount: $responses.get().length });
 
+    // Show and wire the tutorial button in the header
+    const tutorialBtn = document.getElementById('tutorial-btn');
+    if (tutorialBtn) {
+      tutorialBtn.hidden = false;
+      tutorialBtn.addEventListener('click', () => resetTutorial());
+    }
+
     // Set video markers now that the map is initialized
     const { data: earlyVideos } = videoLoader.getVideos();
     if (earlyVideos && earlyVideos.length > 0) {
@@ -688,7 +695,8 @@ function handleAnswer(selectedKey, question) {
     highlightExpertiseButton();
   }
 
-  // Advance tutorial on answer event
+  // Advance tutorial on answer event (pass feedback for step 2)
+  setAnswerFeedback(isCorrect);
   advanceTutorial('answer');
 }
 

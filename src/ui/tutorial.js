@@ -6,55 +6,64 @@ const MODAL_MAX_WIDTH = 360;
 const MOBILE_BP = 480;
 
 // ── Step definitions ────────────────────────────────────────────────
+// onEnter: selector to click/activate when entering this step
+// arrowTarget: selector to draw an arrow towards (e.g., a toggle button)
+// showFeedback: if true, show correct/wrong feedback after answer before proceeding
 const STEPS = [
   {
-    id: 1, title: 'Your Knowledge Map', subSteps: [
-      { highlight: '#map-container', message: 'This is your Knowledge Map. Related topics cluster nearby, and colors show your knowledge level \u2014 green for strong, red for gaps.', advanceOn: 'click' },
-      { highlight: '#quiz-panel', message: 'Answer questions here to build your map. Each answer adds data about what you know.', advanceOn: 'click' },
-      { highlight: '#video-panel', message: 'Explore video recommendations here to fill knowledge gaps.', advanceOn: 'click', skipOnMobile: true },
+    id: 1, title: 'Welcome to Your Knowledge Map', subSteps: [
+      { title: 'Your Knowledge Map', highlight: '#map-container', message: 'This is your Knowledge Map. Each dot is a topic. As you answer questions, colors appear \u2014 green for strong areas, red for gaps.', advanceOn: 'click' },
+      { title: 'The Quiz Panel', highlight: '#quiz-panel', message: 'Questions appear here. Answer them to build your map. Click the toggle arrow to open and close this panel.', advanceOn: 'click', arrowTarget: '#quiz-toggle', onEnter: 'openQuiz' },
+      { title: 'Video Recommendations', highlight: '#video-panel', message: 'Video recommendations live here. They target your weakest areas for maximum learning. Click the toggle arrow to open and close.', advanceOn: 'click', skipOnMobile: true, arrowTarget: '#video-toggle', onEnter: 'openVideo' },
     ]
   },
   {
-    id: 2, title: 'Try It!', highlight: '#quiz-panel',
-    message: "Let's try answering a question!",
-    messageReturning: 'Your map already has some data \u2014 let\u2019s explore further!',
+    id: 2, title: 'Try Answering a Question', highlight: '#quiz-panel',
+    message: "Go ahead \u2014 pick the answer you think is correct!",
+    messageReturning: 'Your map already has some data \u2014 let\u2019s keep exploring!',
     advanceOn: 'answer',
+    showFeedback: true,
   },
   {
-    id: 3, title: 'Building Your Map', advanceOn: 'answer', questionTarget: 4,
-    message: 'Great work! Notice how the map is developing. Each answer refines your knowledge profile.',
+    id: 3, title: 'Building Your Map', highlight: '#quiz-panel', advanceOn: 'answer', questionTarget: 3,
+    message: 'Nice! Notice the map updating with each answer. Keep going \u2014 answer a few more questions.',
+    onEnter: 'openQuiz',
   },
   {
     id: 4, title: 'Skipping Questions', highlight: '.skip-btn, [data-action="skip"]',
     conditional: 'skipNotUsed',
-    message: 'Not sure about a question? You can skip it \u2014 the system notes this topic might be unfamiliar.',
-    advanceOn: 'any',
+    message: "Not sure about a question? You can press Skip anytime \u2014 the system will note that topic might be unfamiliar.",
+    advanceOn: 'click',
   },
   {
-    id: 5, title: 'Switch Domains', highlight: '.domain-dropdown, #domain-select',
-    message: 'Try exploring a different domain! Select one from the dropdown.',
+    id: 5, title: 'Switch Domains', highlight: '.domain-selector',
+    message: 'Try a different knowledge area! Click the domain dropdown to switch.',
+    arrowTarget: '.domain-selector .custom-select-trigger',
     advanceOn: 'domain-change',
     postMessage: 'Great choice! Each domain reveals different areas of your knowledge map.',
   },
   {
-    id: 6, title: 'Explore Another Domain', advanceOn: 'answer', questionTarget: 2,
-    message: 'Answer a few questions in this domain to see how different map regions develop.',
+    id: 6, title: 'Explore Another Domain', highlight: '#quiz-panel', advanceOn: 'answer', questionTarget: 2,
+    message: 'Answer a couple questions here to see a different region of your map light up.',
+    onEnter: 'openQuiz',
   },
   {
     id: 7, title: 'Discover Features', subSteps: [
-      { highlight: '#trophy-btn', message: 'Your estimated strongest topics, ranked. Tap to explore!', advanceOn: 'click' },
-      { highlight: '#suggest-btn', message: 'Videos picked for your biggest knowledge gaps. Watching these gives you the largest boost!', advanceOn: 'click' },
-      { highlight: '.share-btn, [data-action="share"]', message: 'Share your knowledge map with friends!', advanceOn: 'click' },
+      { title: 'Your Expertise', highlight: '#trophy-btn', message: 'See your estimated strongest topics here, ranked by confidence.', advanceOn: 'click' },
+      { title: 'Learning Suggestions', highlight: '#suggest-btn', message: 'Get video recommendations targeted at your biggest knowledge gaps.', advanceOn: 'click' },
+      { title: 'Share Your Map', highlight: '#share-btn', message: 'Share a snapshot of your knowledge map with friends!', advanceOn: 'click' },
     ]
   },
   {
-    id: 8, title: "You're Ready!", advanceOn: 'click', isCompletion: true,
+    id: 8, title: "You\u2019re All Set!", advanceOn: 'click', isCompletion: true,
   },
 ];
 
 // ── Internal state ──────────────────────────────────────────────────
 let state = null;
 let _questionsAnsweredInStep = 0;
+let _lastAnswerCorrect = null; // true/false after an answer during showFeedback step
+let _waitingForContinue = false; // true when feedback is displayed, waiting for user to click Continue
 const prefersReducedMotion = () =>
   typeof window !== 'undefined' &&
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -91,20 +100,15 @@ function defaultState() {
  * @param {{ responsesCount?: number }} appState
  */
 export function initTutorial(appState = {}) {
+  // Check if pre-dismissed (e.g., by test fixtures setting localStorage before page load)
   const saved = loadState();
-
-  if (saved && (saved.completed || saved.dismissed)) {
+  if (saved && saved.dismissed) {
     state = saved;
-    return; // don't start
+    return; // respect pre-set dismissal
   }
 
-  if (saved) {
-    // resume in-progress tutorial
-    state = { ...defaultState(), ...saved };
-  } else {
-    state = defaultState();
-  }
-
+  // Always start fresh each session — tutorial is a quick walkthrough every time
+  state = defaultState();
   state.returningUser = (appState.responsesCount || 0) > 0;
   _questionsAnsweredInStep = 0;
   saveState();
@@ -178,9 +182,22 @@ export function advanceTutorial(event) {
 
   // Normal step — advance when event matches
   if (stepDef.advanceOn === event) {
+    // If step has showFeedback, display feedback before advancing
+    if (stepDef.showFeedback && event === 'answer' && !_waitingForContinue) {
+      _waitingForContinue = true;
+      showAnswerFeedback(_lastAnswerCorrect);
+      return;
+    }
     if (stepDef.postMessage) {
       showToast(stepDef.postMessage);
     }
+    moveToNextStep();
+  }
+
+  // Handle Continue click after feedback
+  if (event === 'click' && _waitingForContinue) {
+    _waitingForContinue = false;
+    _lastAnswerCorrect = null;
     moveToNextStep();
   }
 }
@@ -200,6 +217,11 @@ export function resetTutorial() {
   _questionsAnsweredInStep = 0;
   saveState();
   renderCurrentStep();
+}
+
+/** Set the result of the last answer for feedback display. Called from app.js. */
+export function setAnswerFeedback(wasCorrect) {
+  _lastAnswerCorrect = wasCorrect;
 }
 
 /** Whether the tutorial is currently active (not completed/dismissed). */
@@ -279,7 +301,9 @@ function renderCurrentStep() {
 
   let highlight = stepDef.highlight || null;
   let message = stepDef.message || '';
-  const title = stepDef.title || '';
+  let title = stepDef.title || '';
+  let arrowTarget = stepDef.arrowTarget || null;
+  let onEnter = stepDef.onEnter || null;
 
   // SubStep handling
   if (stepDef.subSteps) {
@@ -287,6 +311,9 @@ function renderCurrentStep() {
     if (!sub) { moveToNextStep(); return; }
     highlight = sub.highlight || highlight;
     message = sub.message || message;
+    title = sub.title || title;
+    arrowTarget = sub.arrowTarget || arrowTarget;
+    onEnter = sub.onEnter || onEnter;
   }
 
   // Returning-user alternate message
@@ -299,17 +326,101 @@ function renderCurrentStep() {
     message = buildCompletionMessage();
   }
 
+  // Execute onEnter action (activate component)
+  if (onEnter) {
+    executeOnEnter(onEnter);
+  }
+
   const advanceOn = stepDef.subSteps
     ? (resolveSubStep(stepDef, state.subStep)?.advanceOn || 'click')
     : (stepDef.advanceOn || 'click');
   const isFinish = !!stepDef.isCompletion;
   const showNextBtn = advanceOn === 'click' || isFinish;
 
-  renderOverlay(highlight, title, message, showNextBtn, isFinish);
+  renderOverlay(highlight, title, message, showNextBtn, isFinish, arrowTarget);
+}
+
+/** Show answer feedback in the tutorial modal after step 2. */
+function showAnswerFeedback(wasCorrect) {
+  const title = wasCorrect ? 'Correct!' : 'Not quite';
+  const message = wasCorrect
+    ? 'Great job! Notice how the map updated \u2014 a green region is forming where you got it right.'
+    : 'No worries! The map still learns from wrong answers \u2014 it highlights areas to focus on.';
+  const feedbackColor = wasCorrect
+    ? 'var(--color-correct, #059669)'
+    : 'var(--color-incorrect, #dc2626)';
+
+  removeOverlay();
+
+  const modal = document.createElement('div');
+  modal.id = 'tutorial-modal';
+  const mobile = isMobile();
+  Object.assign(modal.style, {
+    position: 'fixed', zIndex: '9999',
+    background: 'var(--color-bg, #ffffff)', color: 'var(--color-text, #0f172a)',
+    maxWidth: mobile ? 'none' : `${MODAL_MAX_WIDTH}px`,
+    padding: '20px', borderRadius: mobile ? '12px 12px 0 0' : '12px',
+    boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
+    border: '1px solid var(--color-border, rgba(226,232,240,0.8))',
+    fontFamily: 'system-ui, -apple-system, sans-serif', lineHeight: '1.5',
+    top: '50%', left: '50%', transform: 'translate(-50%,-50%)',
+  });
+  if (mobile) {
+    Object.assign(modal.style, { bottom: '0', left: '0', right: '0', top: 'auto', transform: 'none' });
+  }
+
+  // Title row with icon inline
+  const titleRow = document.createElement('div');
+  Object.assign(titleRow.style, { display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: feedbackColor });
+  const icon = document.createElement('span');
+  Object.assign(icon.style, { fontSize: '1.4em', lineHeight: '1' });
+  icon.textContent = wasCorrect ? '\u2713' : '\u2717';
+  titleRow.appendChild(icon);
+  const titleEl = document.createElement('span');
+  Object.assign(titleEl.style, { fontWeight: '700', fontSize: '1.1em' });
+  titleEl.textContent = title;
+  titleRow.appendChild(titleEl);
+  modal.appendChild(titleRow);
+
+  // Message
+  const msgEl = document.createElement('p');
+  Object.assign(msgEl.style, { fontSize: '0.95em', color: 'var(--color-text-muted, #64748b)', margin: '0.4em 0' });
+  msgEl.textContent = message;
+  modal.appendChild(msgEl);
+
+  // Continue button
+  const continueBtn = document.createElement('button');
+  Object.assign(continueBtn.style, {
+    background: 'var(--color-primary, #00693e)', color: '#fff', border: 'none',
+    padding: '8px 20px', borderRadius: '8px', fontSize: '0.95em', cursor: 'pointer',
+    fontWeight: '600', marginTop: '16px', display: 'block', width: '100%',
+  });
+  continueBtn.textContent = 'Continue';
+  continueBtn.addEventListener('click', () => advanceTutorial('click'));
+  modal.appendChild(continueBtn);
+
+  document.body.appendChild(modal);
+}
+
+/** Activate a component when entering a tutorial step. */
+function executeOnEnter(action) {
+  if (action === 'openVideo') {
+    const panel = document.getElementById('video-panel');
+    const toggleBtn = document.getElementById('video-toggle');
+    if (panel && !panel.classList.contains('open')) {
+      toggleBtn?.click();
+    }
+  } else if (action === 'openQuiz') {
+    const panel = document.getElementById('quiz-panel');
+    const toggleBtn = document.getElementById('quiz-toggle');
+    if (panel && !panel.classList.contains('open')) {
+      toggleBtn?.click();
+    }
+  }
 }
 
 function buildCompletionMessage() {
-  return "You're all set! Keep answering questions to refine your map.\n\nYour strongest: [domain]\nMost room to grow: [domain]\n\nYou can replay the tutorial anytime from Settings.";
+  return "You're all set! Keep answering questions to refine your map.\n\nYou can replay the tutorial anytime using the \u2753 button in the header.";
 }
 
 // ── Overlay & Modal DOM ─────────────────────────────────────────────
@@ -319,12 +430,57 @@ function removeOverlay() {
   if (overlay) overlay.remove();
   const modal = document.getElementById('tutorial-modal');
   if (modal) modal.remove();
+  const arrow = document.getElementById('tutorial-arrow');
+  if (arrow) arrow.remove();
   // Remove highlight classes
   document.querySelectorAll('.tutorial-highlight').forEach(el =>
     el.classList.remove('tutorial-highlight'));
 }
 
-function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish) {
+/** Render an animated arrow pointing at a target element. */
+function renderArrow(targetEl) {
+  const existing = document.getElementById('tutorial-arrow');
+  if (existing) existing.remove();
+
+  const rect = targetEl.getBoundingClientRect();
+  const arrow = document.createElement('div');
+  arrow.id = 'tutorial-arrow';
+
+  // Position the arrow to the left of the target, pointing right
+  const arrowSize = 32;
+  const top = rect.top + rect.height / 2 - arrowSize / 2;
+  const left = rect.left - arrowSize - 8;
+
+  Object.assign(arrow.style, {
+    position: 'fixed',
+    zIndex: '10000',
+    top: `${top}px`,
+    left: `${left}px`,
+    width: `${arrowSize}px`,
+    height: `${arrowSize}px`,
+    pointerEvents: 'none',
+    animation: 'tutorialArrowBounce 1s ease-in-out infinite',
+  });
+
+  // SVG arrow pointing right
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('viewBox', '0 0 32 32');
+  svg.setAttribute('width', '32');
+  svg.setAttribute('height', '32');
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', 'M6 16 L22 16 L16 10 M22 16 L16 22');
+  path.setAttribute('stroke', 'var(--color-primary, #00693e)');
+  path.setAttribute('stroke-width', '3');
+  path.setAttribute('stroke-linecap', 'round');
+  path.setAttribute('stroke-linejoin', 'round');
+  path.setAttribute('fill', 'none');
+  svg.appendChild(path);
+  arrow.appendChild(svg);
+
+  document.body.appendChild(arrow);
+}
+
+function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish, arrowTargetSelector) {
   removeOverlay();
 
   // Overlay
@@ -335,6 +491,7 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish)
     inset: '0',
     zIndex: '9998',
     background: 'rgba(0,0,0,0.5)',
+    pointerEvents: 'none',
     transition: prefersReducedMotion() ? 'none' : 'opacity 300ms var(--ease-emphasized-decel, ease)',
   });
 
@@ -361,11 +518,6 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish)
 
     highlightEl.classList.add('tutorial-highlight');
   }
-
-  // Prevent clicks through overlay (except on highlighted element)
-  overlay.addEventListener('click', (e) => {
-    e.stopPropagation();
-  });
 
   document.body.appendChild(overlay);
 
@@ -409,6 +561,14 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish)
       top: '50%', left: '50%',
       transform: prefersReducedMotion() ? 'translate(-50%,-50%)' : 'translate(-50%,-50%) translateY(8px)',
     });
+  }
+
+  // Arrow pointing to a target element (e.g., toggle button)
+  if (arrowTargetSelector) {
+    const arrowEl = queryFirst(arrowTargetSelector);
+    if (arrowEl) {
+      renderArrow(arrowEl);
+    }
   }
 
   // Animate in

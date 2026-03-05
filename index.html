@@ -574,6 +574,7 @@
         #app[data-screen="welcome"] .logo span { display: none; }
         #app[data-screen="welcome"] #trophy-btn { display: none; }
         #app[data-screen="welcome"] #suggest-btn { display: none; }
+        #app[data-screen="welcome"] #tutorial-btn { display: none; }
         #app[data-screen="welcome"] #minimap-container { display: none; }
         #app[data-screen="welcome"] .domain-selector .custom-select { display: none; }
         #app[data-screen="welcome"] .control-btn:not([aria-label="Import saved progress"]) { display: none; }
@@ -814,6 +815,9 @@
                 </button>
                 <button id="share-btn" class="btn-icon" aria-label="Share your knowledge map" data-tooltip="Share">
                     <i class="fa-solid fa-share-nodes"></i>
+                </button>
+                <button id="tutorial-btn" class="btn-icon" aria-label="Start tutorial" data-tooltip="Tutorial" hidden>
+                    <i class="fa-solid fa-circle-question"></i>
                 </button>
                 <button id="about-btn" class="btn-icon" aria-label="About this project" data-tooltip="About">
                     <i class="fa-solid fa-circle-info"></i>

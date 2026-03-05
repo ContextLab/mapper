@@ -28,6 +28,11 @@
   animation: tutorialPulse 1.5s ease-in-out infinite;
 }
 
+@keyframes tutorialArrowBounce {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
+}
+
 @keyframes tutorialPulse {
   0%, 100% { outline-color: var(--tutorial-accent); box-shadow: 0 0 0 0 rgba(0, 105, 62, 0.3); }
   50% { outline-color: var(--tutorial-accent); box-shadow: 0 0 12px 4px rgba(0, 105, 62, 0.2); }

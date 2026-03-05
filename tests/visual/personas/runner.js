@@ -66,47 +66,46 @@ async function completeTutorialFlow(page) {
 
   // Helper: answer one question via the quiz panel
   async function answerOneQuestion() {
-    const optionBtns = page.locator('#options-container button');
+    const optionBtns = page.locator('.quiz-option');
     await optionBtns.first().waitFor({ state: 'visible', timeout: 5000 });
     await optionBtns.first().click();
     await page.waitForTimeout(1000); // auto-advance delay
   }
 
   try {
-    // Wait for tutorial to appear on landing page
+    // Wait for tutorial modal (appears after "Map my knowledge!" is clicked)
     await modal.waitFor({ state: 'visible', timeout: 5000 });
 
-    // Tutorial renders on landing — click start button through the cutout
-    // or if no cutout, the start button may be behind the overlay.
-    // Click Next on step 1 substeps first (they're on the tutorial modal itself).
     // Step 1: UI Orientation — 3 substeps, all click-advance
     await clickNext(); // substep 1: map
     await clickNext(); // substep 2: quiz panel
     await clickNext(); // substep 3: video panel (may be skipped on mobile)
 
-    // Step 2: "Try It!" — answer one question
+    // Step 2: "Try Answering a Question" — answer, see feedback, click Continue
     await modal.waitFor({ state: 'visible', timeout: 3000 });
     await answerOneQuestion();
+    // Feedback modal appears — click Continue
+    try {
+      const continueBtn = page.locator('#tutorial-modal button', { hasText: 'Continue' });
+      await continueBtn.waitFor({ state: 'visible', timeout: 3000 });
+      await continueBtn.click();
+      await page.waitForTimeout(350);
+    } catch {
+      // Feedback may not have appeared
+    }
 
-    // Step 3: "Building Your Map" — answer 4 questions
+    // Step 3: "Building Your Map" — answer 3 questions
     await modal.waitFor({ state: 'visible', timeout: 3000 });
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 3; i++) {
       await answerOneQuestion();
     }
 
-    // Step 4: "Skipping Questions" — conditional, may be skipped
-    // If it appears, answer or skip a question
+    // Step 4: "Skipping Questions" — informational, click Next
     try {
       await modal.waitFor({ state: 'visible', timeout: 2000 });
-      const skipBtn = page.locator('.skip-btn, [data-action="skip"]');
-      if (await skipBtn.isVisible().catch(() => false)) {
-        await skipBtn.click();
-        await page.waitForTimeout(1000);
-      } else {
-        await answerOneQuestion();
-      }
+      await clickNext();
     } catch {
-      // Step was skipped (conditional)
+      // Step was skipped (conditional — already used skip)
     }
 
     // Step 5: "Switch Domains" — change domain via dropdown
@@ -495,9 +494,14 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
   await page.goto('/');
   await page.waitForSelector('#landing', { timeout: LOAD_TIMEOUT });
 
-  // Handle tutorial before domain selection (overlay blocks clicks)
+  // Click "Map my knowledge!" to leave landing (tutorial starts after this)
+  await page.waitForSelector('#landing-start-btn[data-ready]', { timeout: LOAD_TIMEOUT });
+  await page.locator('#landing-start-btn').click();
+  // Wait for map screen — quiz panel appears after domain bundle loads
+  await page.waitForSelector('.quiz-question', { timeout: 30000 });
+
+  // Handle tutorial after map loads (overlay blocks domain selector clicks)
   if (tutorialBehavior === 'skip') {
-    // Tutorial modal renders at z-index 9999 — "Skip Tutorial" is clickable
     const skipLink = page.locator('.tutorial-skip-link');
     try {
       await skipLink.waitFor({ state: 'visible', timeout: 5000 });
@@ -507,11 +511,11 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
       // Tutorial may not have appeared (already dismissed)
     }
   } else if (tutorialBehavior === 'complete') {
-    // Click through all tutorial steps (handles start button + domain switching internally)
     await completeTutorialFlow(page);
   }
+  // dismiss personas: tutorial was pre-dismissed via localStorage — no action needed
 
-  // Select initial domain
+  // Select initial domain (already past landing page)
   const initialDomain = persona.domain === 'all' ? 'All (General)' : persona.domain;
   await selectDomain(page, initialDomain);
   await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });

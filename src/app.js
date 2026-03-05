@@ -195,9 +195,6 @@ async function boot() {
       onVideoHover: (videoId) => {
         if (renderer) renderer.setHoveredVideoId(videoId);
       },
-      onToggleMarkers: (visible) => {
-        if (renderer) renderer.setShowVideoMarkers(visible);
-      },
     });
   }
 

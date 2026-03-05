@@ -4,7 +4,6 @@ let containerEl = null;
 let listEl = null;
 let searchEl = null;
 let countEl = null;
-let toggleEl = null;
 let allMarkers = [];      // Full set of video markers [{x, y, videoId, title, thumbnailUrl, durationS}]
 let filteredVideos = [];   // Grouped, viewport-filtered, deduplicated
 let currentViewport = { x_min: 0, x_max: 1, y_min: 0, y_max: 1 };
@@ -12,16 +11,12 @@ let watchedSet = new Set();
 let searchQuery = '';
 let onSelectCb = null;
 let onHoverCb = null;
-let onToggleMarkersCb = null;
-let markersVisible = false;
 let debounceTimer = null;
 
 export function init(container, options = {}) {
   containerEl = container;
   onSelectCb = options.onVideoSelect || null;
   onHoverCb = options.onVideoHover || null;
-  onToggleMarkersCb = options.onToggleMarkers || null;
-
   // Inject styles
   if (!document.getElementById('video-panel-styles')) {
     const style = document.createElement('style');
@@ -45,21 +40,8 @@ export function init(container, options = {}) {
   countEl.className = 'video-panel-count';
   countEl.textContent = '0';
 
-  toggleEl = document.createElement('button');
-  toggleEl.className = 'video-panel-marker-toggle';
-  toggleEl.type = 'button';
-  toggleEl.title = 'Show/hide video markers on map';
-  toggleEl.textContent = 'Show on map';
-  toggleEl.addEventListener('click', () => {
-    markersVisible = !markersVisible;
-    toggleEl.textContent = markersVisible ? 'Hide on map' : 'Show on map';
-    toggleEl.classList.toggle('active', markersVisible);
-    if (onToggleMarkersCb) onToggleMarkersCb(markersVisible);
-  });
-
   titleRow.appendChild(title);
   titleRow.appendChild(countEl);
-  titleRow.appendChild(toggleEl);
   header.appendChild(titleRow);
 
   searchEl = document.createElement('input');
@@ -121,7 +103,6 @@ export function destroy() {
   listEl = null;
   searchEl = null;
   countEl = null;
-  toggleEl = null;
 }
 
 // ─── Internal ─────────────────────────────────

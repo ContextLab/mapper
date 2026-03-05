@@ -38,7 +38,7 @@ export class Renderer {
     this._videoMarkers = [];
     this._videoTrajectories = new Map(); // videoId → [{x, y}] in temporal order
     this._hoveredVideoId = null;
-    this._showVideoMarkers = false;
+    this._showVideoMarkers = true;
     this._questions = [];
     this._questionMap = new Map();
     this._estimateGrid = null; // Float64Array or null, 50*50 flat grid for O(1) lookup
@@ -687,22 +687,32 @@ export class Renderer {
     const half = size / 2;
 
     if (this._showVideoMarkers) {
-      // Draw all markers subtly
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.10)';
-      for (const v of this._videoMarkers) {
-        const px = v.x * w;
-        const py = v.y * h;
+      // Draw only the complete-transcript embedding (last point) per video
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.12)';
+      for (const [, pts] of this._videoTrajectories) {
+        const last = pts[pts.length - 1];
+        const px = last.x * w;
+        const py = last.y * h;
         ctx.fillRect(px - half, py - half, size, size);
       }
     }
 
-    // Highlight hovered video's markers
+    // On hover: darken the hovered point and show the full trajectory
     if (this._hoveredVideoId) {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
-      for (const v of this._videoMarkers) {
-        if (v.videoId !== this._hoveredVideoId) continue;
-        const px = v.x * w;
-        const py = v.y * h;
+      const pts = this._videoTrajectories.get(this._hoveredVideoId);
+      if (pts) {
+        // Draw all trajectory points
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+        for (const pt of pts) {
+          const px = pt.x * w;
+          const py = pt.y * h;
+          ctx.fillRect(px - half, py - half, size, size);
+        }
+        // Darken the complete-transcript point (last)
+        const last = pts[pts.length - 1];
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+        const px = last.x * w;
+        const py = last.y * h;
         ctx.fillRect(px - half, py - half, size * 1.5, size * 1.5);
       }
     }

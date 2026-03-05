@@ -189,10 +189,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.361772,
-        "x_max": 0.792441,
+        "x_min": 0.376748,
+        "x_max": 0.690789,
         "y_min": 0.722639,
-        "y_max": 1.0
+        "y_max": 0.972639
       },
       "grid_size": 120,
       "question_count": 150
@@ -203,10 +203,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.494967,
-        "x_max": 0.8702,
-        "y_min": 0.0,
-        "y_max": 0.867101
+        "x_min": 0.609386,
+        "x_max": 0.867487,
+        "y_min": 0.02607,
+        "y_max": 0.27607
       },
       "grid_size": 120,
       "question_count": 199
@@ -217,10 +217,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.528774,
-        "x_max": 0.946227,
+        "x_min": 0.60508,
+        "x_max": 0.929374,
         "y_min": 0.555343,
-        "y_max": 1.0
+        "y_max": 0.947106
       },
       "grid_size": 120,
       "question_count": 250
@@ -231,10 +231,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.0,
+        "x_min": 0.02343,
         "x_max": 0.56756,
         "y_min": 0.196029,
-        "y_max": 0.579317
+        "y_max": 0.565103
       },
       "grid_size": 120,
       "question_count": 150
@@ -245,9 +245,9 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.315702,
+        "x_min": 0.320509,
         "x_max": 0.722938,
-        "y_min": 0.0,
+        "y_min": 0.059551,
         "y_max": 0.762741
       },
       "grid_size": 120,
@@ -259,10 +259,10 @@
       "parent_id": null,
       "level": "all",
       "region": {
-        "x_min": 0.0,
-        "x_max": 1.0,
-        "y_min": 0.0,
-        "y_max": 1.0
+        "x_min": 0.247496,
+        "x_max": 0.775038,
+        "y_min": 0.118194,
+        "y_max": 0.916249
       },
       "grid_size": 50,
       "question_count": 949
@@ -273,10 +273,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.072126,
-        "x_max": 0.524274,
+        "x_min": 0.099141,
+        "x_max": 0.462431,
         "y_min": 0.2476,
-        "y_max": 0.773299
+        "y_max": 0.712749
       },
       "grid_size": 70,
       "question_count": 50
@@ -287,10 +287,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.58616,
-        "x_max": 0.980238,
-        "y_min": 0.360516,
-        "y_max": 0.865696
+        "x_min": 0.701696,
+        "x_max": 0.951696,
+        "y_min": 0.444861,
+        "y_max": 0.79167
       },
       "grid_size": 70,
       "question_count": 50
@@ -301,10 +301,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.197365,
+        "x_min": 0.203541,
         "x_max": 0.739651,
         "y_min": 0.345701,
-        "y_max": 0.854729
+        "y_max": 0.839727
       },
       "grid_size": 70,
       "question_count": 50
@@ -315,10 +315,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.32826,
-        "x_max": 0.800102,
-        "y_min": 0.257211,
-        "y_max": 0.73496
+        "x_min": 0.400828,
+        "x_max": 0.77444,
+        "y_min": 0.395179,
+        "y_max": 0.663896
       },
       "grid_size": 70,
       "question_count": 50
@@ -329,10 +329,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.637064,
-        "x_max": 0.975314,
+        "x_min": 0.685167,
+        "x_max": 0.941376,
         "y_min": 0.246975,
-        "y_max": 0.776721
+        "y_max": 0.545808
       },
       "grid_size": 70,
       "question_count": 50
@@ -343,10 +343,10 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.27358,
+        "x_min": 0.279964,
         "x_max": 0.734146,
         "y_min": 0.230537,
-        "y_max": 0.629025
+        "y_max": 0.616508
       },
       "grid_size": 70,
       "question_count": 50
@@ -358,7 +358,7 @@
       "level": "general",
       "region": {
         "x_min": 0.369925,
-        "x_max": 0.836264,
+        "x_max": 0.811444,
         "y_min": 0.080126,
         "y_max": 0.770596
       },
@@ -371,9 +371,9 @@
       "parent_id": null,
       "level": "general",
       "region": {
-        "x_min": 0.082767,
-        "x_max": 0.440849,
-        "y_min": 0.081901,
+        "x_min": 0.125056,
+        "x_max": 0.375056,
+        "y_min": 0.117288,
         "y_max": 0.569448
       },
       "grid_size": 70,
@@ -583,7 +583,7 @@
       "region": {
         "x_min": 0.716778,
         "x_max": 0.966778,
-        "y_min": 0.338262,
+        "y_min": 0.338263,
         "y_max": 0.776721
       },
       "grid_size": 70,

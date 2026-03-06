@@ -549,29 +549,31 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
   // Click "Map my knowledge!" to leave landing (tutorial starts after this)
   await page.waitForSelector('#landing-start-btn[data-ready]', { timeout: LOAD_TIMEOUT });
   await page.locator('#landing-start-btn').click();
-  // Wait for map screen — quiz panel appears after domain bundle loads
-  await page.waitForSelector('.quiz-question', { timeout: 30000 });
 
-  // Handle tutorial after map loads (overlay blocks domain selector clicks)
+  // Handle tutorial before waiting for quiz (overlay can block quiz visibility)
   if (tutorialBehavior === 'skip') {
-    const skipLink = page.locator('.tutorial-skip-link');
+    // Dismiss tutorial via the × button (skip link was removed)
+    const dismissBtn = page.locator('#tutorial-modal .tutorial-dismiss');
     try {
-      await skipLink.waitFor({ state: 'visible', timeout: 5000 });
-      await skipLink.click();
+      await dismissBtn.waitFor({ state: 'visible', timeout: 5000 });
+      await dismissBtn.click();
       await page.waitForTimeout(300);
     } catch {
-      // Tutorial may not have appeared (already dismissed)
+      // Tutorial may not have appeared (already dismissed via localStorage)
     }
   } else if (tutorialBehavior === 'complete') {
     await completeTutorialFlow(page);
   }
   // dismiss personas: tutorial was pre-dismissed via localStorage — no action needed
 
+  // Wait for map screen — quiz panel appears after domain bundle loads
+  await page.waitForSelector('.quiz-option', { state: 'visible', timeout: 30000 });
+
   // Select initial domain (already past landing page)
   const initialDomain = persona.domain === 'all' ? 'All (General)' : persona.domain;
   await selectDomain(page, initialDomain);
   await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
-  await page.waitForSelector('.quiz-question', { timeout: 5000 });
+  await page.waitForSelector('.quiz-option', { state: 'visible', timeout: 5000 });
 
   // Wait for domain bundles to fully load (the app announces "N questions available"
   // via the #live-region when switchDomain completes with aggregated questions).
@@ -596,7 +598,7 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
       }
       // Now switch back to "all" — all descendants should be cached
       await selectDomain(page, 'All (General)');
-      await page.waitForSelector('.quiz-question', { timeout: 5000 });
+      await page.waitForSelector('.quiz-option', { state: 'visible', timeout: 5000 });
       await page.waitForTimeout(3000); // Let aggregation settle
     } else {
       await page.waitForTimeout(3000); // Allow async descendant bundles to load
@@ -611,7 +613,7 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
       } else {
         await selectDomain(page, initialDomain);
       }
-      await page.waitForSelector('.quiz-question', { timeout: 5000 });
+      await page.waitForSelector('.quiz-option', { state: 'visible', timeout: 5000 });
       await page.waitForTimeout(2000);
     }
   } else {
@@ -644,7 +646,7 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
       const nextDomain = domainSequence[currentDomainIndex];
       const displayDomain = nextDomain === 'all' ? 'All (General)' : nextDomain;
       await selectDomain(page, displayDomain);
-      await page.waitForSelector('.quiz-question', { timeout: 5000 });
+      await page.waitForSelector('.quiz-option', { state: 'visible', timeout: 5000 });
       await page.waitForTimeout(500);
       prevQuestionText = null; // Reset after domain switch
     }

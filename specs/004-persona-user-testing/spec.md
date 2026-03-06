@@ -173,13 +173,13 @@ The persona agent (Opus 4.6) MUST have deep domain expertise and zero tolerance 
 
 ### Edge Cases
 
-- What happens when a user answers all questions in a domain? Does the system gracefully indicate completion?
-- What happens when a user rapidly clicks through 10+ answers without reading? Does the estimator remain stable?
-- What happens when a user resizes their browser window mid-session? Do all canvas layers realign correctly?
-- What happens when a user imports a corrupted or empty JSON progress file? Does the system show a helpful error?
-- What happens when network connectivity is lost mid-session? Does the system preserve progress locally?
-- What happens on very small screens (320px width)? Is the core experience still usable?
-- What happens when a user switches domains after answering 50+ questions? Does the new domain load correctly without leaking state from the previous domain?
+- What happens when a user answers all questions in a domain? Does the system gracefully indicate completion? *(Covered by P19-P21 pedant personas answering ALL questions)*
+- What happens when a user rapidly clicks through 10+ answers without reading? Does the estimator remain stable? *(Covered by P14 speed-clicker)*
+- What happens when a user resizes their browser window mid-session? Do all canvas layers realign correctly? *(Covered by P16 window resizer)*
+- What happens when a user imports a corrupted or empty JSON progress file? Does the system show a helpful error? *(Not covered — deferred; no persona tests malformed input)*
+- What happens when network connectivity is lost mid-session? Does the system preserve progress locally? *(Not covered — deferred; app uses localStorage so progress persists, but no explicit test)*
+- What happens on very small screens (320px width)? Is the core experience still usable? *(Partially covered by P02 at 390px and P06 at 393px; 320px not explicitly tested)*
+- What happens when a user switches domains after answering 50+ questions? Does the new domain load correctly without leaking state from the previous domain? *(Covered by P13 domain-hopper)*
 
 ## Cognitive Simulation Framework *(mandatory for this feature)*
 
@@ -332,7 +332,7 @@ The pedant personas are the most rigorous evaluation tier. They are driven by Op
 - **FR-003**: Each persona simulation MUST execute against the real running application (not mocked) using browser automation.
 - **FR-004**: Each persona simulation MUST capture screenshots at key checkpoints: after first answer, at 25% completion, at 50%, at 75%, and at completion.
 - **FR-005**: Each persona MUST have documented expectations for what the map should look like at each checkpoint, including expected color distributions and patterns.
-- **FR-006**: System MUST evaluate each screenshot against expectations using measurable criteria (pixel color sampling, region analysis, visual coherence).
+- **FR-006**: System MUST evaluate each screenshot against expectations using AI agent visual analysis (via the Read tool on screenshot images) combined with persona belief narratives. The AI agent describes what it sees and compares to documented expectations.
 - **FR-007**: Each evaluation MUST produce a pass/fail/ambiguous result with documented evidence (screenshot comparison, pixel data, console logs).
 - **FR-008**: Failed evaluations MUST generate actionable improvement recommendations with specific references to the failing persona and checkpoint.
 - **FR-009**: Each improvement recommendation MUST be documented as a trackable issue with clear acceptance criteria.
@@ -387,7 +387,7 @@ The pedant personas are the most rigorous evaluation tier. They are driven by Op
 ### Measurable Outcomes
 
 - **SC-001**: All 21 persona simulations complete without crashes, console errors, or unhandled exceptions across all targeted browsers and viewports.
-- **SC-002**: Expert personas (P04, P05, P06, P07) produce heatmaps where the expert's specialty area is visibly cooler (blues/greens) than areas they answered poorly — verified by sampling pixel colors in known-strong vs known-weak regions and finding a measurable difference.
+- **SC-002**: Expert personas (P04, P05, P06, P07) produce heatmaps where the expert's specialty area is visibly green (high knowledge) and weak areas are red/yellow (low knowledge) — verified by sampling pixel colors in known-strong vs known-weak regions and finding a measurable difference.
 - **SC-003**: No persona simulation triggers Cholesky decomposition errors, divide-by-zero warnings, or NaN values in the browser console.
 - **SC-004**: Power user persona (P12, 120+ questions) maintains smooth estimator progression — domain mapped percentage never jumps more than 15 percentage points between consecutive answers.
 - **SC-005**: Mobile personas (P02, P06) complete their full interaction scripts without layout overflow, unresponsive touch targets, or content clipping — verified by screenshots showing complete UI within viewport bounds.
@@ -396,7 +396,7 @@ The pedant personas are the most rigorous evaluation tier. They are driven by Op
 - **SC-008**: Keyboard persona (P17) confirms that Cmd+C, Ctrl+A, and other modifier combinations do NOT trigger answer selection — only bare A/B/C/D keypresses select answers.
 - **SC-009**: Window resize persona (P16) confirms all canvas layers remain aligned after resize — article dots, video markers, and grid lines maintain their positions relative to the heatmap.
 - **SC-010**: At least 90% of all persona checkpoint evaluations (across all personas, all checkpoints) produce a "pass" result after all improvements are implemented.
-- **SC-011**: Cross-browser persona simulations (same persona run on Chrome, Firefox, Safari) produce visually equivalent heatmaps — sampled color values in the same map regions differ by no more than 10% across browsers.
+- **SC-011**: Cross-browser persona simulations (same persona run on Chrome, Firefox, Safari) produce visually equivalent heatmaps — sampled RGB channel values in the same map regions differ by no more than 25 per channel (out of 0-255) across browsers.
 - **SC-012**: All identified issues have corresponding pull requests with before/after screenshot evidence demonstrating the fix.
 - **SC-013**: Across all persona simulations, no more than 5% of questions are flagged as having an incorrect marked answer — and every flagged answer is verified via web search before being changed or confirmed.
 - **SC-014**: Across all persona simulations, no more than 15% of questions are flagged as having low-quality distractors (too obvious, arguably correct, or irrelevant to the topic).

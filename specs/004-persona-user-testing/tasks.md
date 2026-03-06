@@ -176,7 +176,7 @@
 
 ### Implementation for User Story 8
 
-- [X] T030 [US8] Add video discovery test case to `tests/visual/persona-agents.spec.js` — after P10 completes 35 questions: open video panel (click toggle), verify recommendations appear (wait for video list items), hover a video to see trajectory highlight on map, simulate video watch (trigger completion callback), capture screenshot showing map update. Write video-specific checkpoint data
+- [X] T030 [US8] Add video discovery test case to `tests/visual/persona-agents.spec.js` — after P10 completes 35 questions (depends on P10 test case from T021): open video panel (click toggle), verify recommendations appear (wait for video list items), hover a video to see trajectory highlight on map, simulate video watch (trigger completion callback), capture screenshot showing map update. Write video-specific checkpoint data
 
 **Checkpoint**: Video panel integration works end-to-end with persona simulation
 
@@ -190,12 +190,25 @@
 
 ### Implementation for Edge Case Personas
 
-- [X] T031 [P] [US6] Add P15 (import/export) edge-case test to `tests/visual/persona-agents.spec.js` — answer 20 physics questions, export progress JSON via share modal, navigate to landing page, import from file input, verify all 20 answers restored on map (count answered-question markers in screenshot)
-- [X] T032 [P] [US6] Add P16 (window resize) edge-case test to `tests/visual/persona-agents.spec.js` — answer 15 mathematics questions at 1920px, resize browser to 800px, capture screenshot, verify canvas layers (heatmap, articles, grid) remain aligned after resize
-- [X] T033 [P] [US6] Add P17 (keyboard shortcuts) edge-case test to `tests/visual/persona-agents.spec.js` — answer 20 biology questions using A/B/C/D keys, then press Cmd+C, Ctrl+A, and other modifier combos, verify no accidental answer selection triggered by modifier keys
-- [X] T034 [P] [US6] Add P18 (share modal) edge-case test to `tests/visual/persona-agents.spec.js` — answer 25 physics questions, open share modal, verify social media buttons have correct URLs, copy text button copies to clipboard, copy image button copies map screenshot
+- [X] T031 [P] [Edge] Add P15 (import/export) edge-case test (depends on T050 bug fix) to `tests/visual/persona-agents.spec.js` — answer 20 physics questions, export progress JSON via share modal, navigate to landing page, import from file input, verify all 20 answers restored on map (count answered-question markers in screenshot)
+- [X] T032 [P] [Edge] Add P16 (window resize) edge-case test to `tests/visual/persona-agents.spec.js` — answer 15 mathematics questions at 1920px, resize browser to 800px, capture screenshot, verify canvas layers (heatmap, articles, grid) remain aligned after resize
+- [X] T033 [P] [Edge] Add P17 (keyboard shortcuts) edge-case test to `tests/visual/persona-agents.spec.js` — answer 20 biology questions using A/B/C/D keys, then press Cmd+C, Ctrl+A, and other modifier combos, verify no accidental answer selection triggered by modifier keys
+- [X] T034 [P] [Edge] Add P18 (share modal) edge-case test to `tests/visual/persona-agents.spec.js` — answer 25 physics questions, open share modal, verify social media buttons have correct URLs, copy text button copies to clipboard, copy image button copies map screenshot
 
 **Checkpoint**: Edge-case personas verify niche functionality without regressions
+
+---
+
+## Phase 12b: Uncovered Requirement Verification
+
+**Purpose**: Verify functional requirements not covered by dedicated persona tasks
+
+- [ ] T058 [P] [FR-018] Verify that skipping a question reveals the correct answer and relevant educational links — add assertion in `tests/visual/personas/runner.js` `answerQuestion()` skip path or in persona-agents.spec.js checkpoint validation
+- [ ] T059 [P] [FR-019] Verify that article titles in hover popups display with spaces (not underscores) — add assertion in a checkpoint capture or dedicated regression test in persona-agents.spec.js
+- [ ] T060 [P] [FR-022] Verify that the hover popup does not block scrolling/panning when cursor enters popup during a drag operation — add interaction test in persona-agents.spec.js edge-case section
+- [ ] T061 [SC-018] Measure question-map alignment: compute percentage of questions positioned in the wrong topical region. Add measurement step in `tests/visual/personas/report-compiler.js` `compileReport()` or as a standalone audit in the pedant evaluation output. Target: ≤10%
+
+**Checkpoint**: All functional requirements have at least one verifying task
 
 ---
 
@@ -206,8 +219,8 @@
 - [X] T035 Create aggregate report generator in `tests/visual/personas/report-compiler.js` — add `compileAggregateReport(reportsDir)` that reads all individual `{personaId}-report.json` files, produces a summary table (persona, result, issues count by severity, question flags count), calculates overall pass rate (SC-010 target: 90%+), writes `tests/visual/reports/aggregate-report.md`
 - [X] T036 [P] Add `.working/` cleanup utility to `tests/visual/personas/runner.js` — export `cleanWorkingFiles(personaId)` that removes stale checkpoint/eval files for a persona before starting a fresh simulation (prevents resume from stale data)
 - [X] T037 [P] Update `tests/visual/persona-simulation.spec.js` (existing file) — add comment header noting it is superseded by the new framework in `persona-agents.spec.js` and `persona-pedant.spec.js` for AI-driven evaluation. Keep it functional as a fast mechanical smoke test
-- [X] T038 Run all Playwright tests (`npx playwright test`) to verify no regressions from framework additions — existing 179+ tests must still pass
-- [X] T039 Run unit tests (`npx vitest run`) to verify no regressions — existing 82 tests must still pass
+- [X] T038 Run all Playwright tests (`npx playwright test`) to verify no regressions from framework additions — existing 179+ tests must still pass (mid-stream verification before remaining phases)
+- [X] T039 Run unit tests (`npx vitest run`) to verify no regressions — existing 82 tests must still pass (mid-stream verification)
 
 ---
 
@@ -226,7 +239,8 @@
 - **US6 Cross-Browser (Phase 9)**: Depends on US1 (uses P01 as baseline)
 - **US7 Power User (Phase 10)**: Depends on Foundational — may need estimator fix (T029)
 - **US8 Video (Phase 11)**: Depends on Foundational + US4 (P10 defined there)
-- **Edge Cases (Phase 12)**: Depends on Foundational
+- **Edge Cases (Phase 12)**: Depends on Foundational. T031 depends on T050 (import bug fix)
+- **Uncovered FRs (Phase 12b)**: Depends on Foundational — can run parallel to other phases
 - **Polish (Phase 13)**: Depends on all user stories being complete
 
 ### User Story Dependencies
@@ -260,6 +274,7 @@
 - T031 sub-tasks (different personas) can run in parallel
 - T035, T036, T037 can run in parallel in Polish
 - T031, T032, T033, T034 can run in parallel (different edge-case personas)
+- T058, T059, T060 can run in parallel (different FRs, different files)
 
 ---
 
@@ -355,8 +370,8 @@ Task: "Add pedant verification prompts in tests/visual/personas/evaluator-prompt
 
 **Purpose**: Commit, verify, close issues
 
-- [X] T053 Run all Playwright tests to verify no regressions after all changes
-- [X] T054 Run unit tests to verify no regressions
+- [X] T053 Run all Playwright tests to verify no regressions after all changes (final verification — all phases complete)
+- [X] T054 Run unit tests to verify no regressions (final verification)
 - [X] T055 Commit and push all changes to `004-persona-user-testing` branch
 - [X] T056 Close GitHub issue #32 (question quality addressed by audit)
 - [X] T057 Post update comments on issues #26, #27, #28, #29, #30 with status and evidence
@@ -372,3 +387,4 @@ Task: "Add pedant verification prompts in tests/visual/personas/evaluator-prompt
 - Estimator fix (T029) may be needed before US7 can PASS — research.md R7 documents the probable fix approach
 - Correction applicator (T019) is used after pedant simulations to update question banks — changes go to feature branch only
 - All framework code goes in `tests/` — no production source changes unless bugs are discovered during simulation
+- Issue #31 (research paper links) is deferred (P4) — no task needed until DOI goes live

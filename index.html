@@ -711,7 +711,7 @@
                 flex-direction: column;
             }
             #quiz-panel.open {
-                width: 100% !important; height: 50vh;
+                width: 100% !important; height: 55vh;
                 padding: 0.75rem 1rem;
                 overflow: hidden; /* Panel itself doesn't scroll; .quiz-content does */
             }
@@ -720,6 +720,7 @@
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
                 min-height: 0; /* Allow flex child to shrink below content size */
+                padding-bottom: 12px;
             }
             /* Compact quiz text on mobile */
             #quiz-panel .quiz-question { font-size: 0.9rem; line-height: 1.35; }
@@ -745,7 +746,7 @@
             /* Override JS icon swap: force chevron-right to also point up when closed */
             .quiz-toggle-btn:not(.panel-open) i.fa-chevron-right { transform: rotate(-90deg); }
             /* Arrow points DOWN when open (pull down to close) */
-            .quiz-toggle-btn.panel-open { bottom: 50vh; right: 50%; background: var(--color-surface); color: var(--color-text-muted); }
+            .quiz-toggle-btn.panel-open { bottom: 55vh; right: 50%; background: var(--color-surface); color: var(--color-text-muted); }
             .quiz-toggle-btn.panel-open i.fa-chevron-right { transform: rotate(90deg); }
             .quiz-toggle-btn.panel-open i.fa-chevron-left { transform: rotate(-90deg); }
 

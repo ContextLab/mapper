@@ -338,3 +338,9 @@ scripts/poc_*
 tests/visual/.working/
 tests/visual/reports/
 tests/visual/screenshots/personas/
+
+# Domain audit working files
+data/domains/.working/
+
+# Video audit working files (v2)
+data/videos/.working/audit-v2/

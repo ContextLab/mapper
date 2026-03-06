@@ -92,7 +92,8 @@ export function applyWatchedPenalty(scored, watchedIds) {
 /**
  * Compute full ranking: score → penalize → sort → top 10.
  *
- * Uses ExpectedGain if a running difference map exists, otherwise TLP.
+ * Blends TLP and ExpectedGain based on diff map coverage.
+ * With no diff map, uses pure TLP. As coverage grows, weight shifts to ExpectedGain.
  *
  * @param {Array} videos - All loaded videos
  * @param {Array} globalEstimates - CellEstimate[] from globalEstimator.predict()
@@ -103,15 +104,26 @@ export function applyWatchedPenalty(scored, watchedIds) {
 export function computeRanking(videos, globalEstimates, watchedIds, runningDiffMap) {
   if (!videos || videos.length === 0) return [];
 
-  const useExpectedGain = runningDiffMap !== null;
-  const scoreFn = useExpectedGain
-    ? (v) => computeExpectedGain(v, globalEstimates, runningDiffMap, DEFAULT_LENGTH_SCALE)
-    : (v) => computeTLP(v, globalEstimates);
+  // Blend TLP and ExpectedGain based on diff map coverage.
+  // With sparse coverage (e.g. after 1 video), TLP dominates so unexplored
+  // areas still get meaningful scores. As more videos are watched the diff
+  // map fills in and ExpectedGain takes over.
+  let beta = 0; // weight for ExpectedGain; 0 = pure TLP, 1 = pure EG
+  if (runningDiffMap !== null) {
+    let covered = 0;
+    for (let i = 0; i < runningDiffMap.length; i++) {
+      if (Math.abs(runningDiffMap[i]) >= 1e-4) covered++;
+    }
+    beta = Math.min(1, covered / (runningDiffMap.length * 0.25));
+  }
 
-  const scored = videos.map((video) => ({
-    video,
-    score: scoreFn(video),
-  }));
+  const scored = videos.map((video) => {
+    const tlp = computeTLP(video, globalEstimates);
+    const eg = runningDiffMap !== null
+      ? computeExpectedGain(video, globalEstimates, runningDiffMap, DEFAULT_LENGTH_SCALE)
+      : 0;
+    return { video, score: (1 - beta) * tlp + beta * eg };
+  });
 
   applyWatchedPenalty(scored, watchedIds);
 

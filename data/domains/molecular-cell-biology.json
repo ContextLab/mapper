@@ -790,7 +790,7 @@
         "A": "Decreases proportionally",
         "B": "Remains unchanged",
         "C": "Increases",
-        "D": "Drops to zero"
+        "D": "Decreases proportionally to inhibitor concentration"
       },
       "correct_answer": "B",
       "difficulty": 3,

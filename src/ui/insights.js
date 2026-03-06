@@ -387,8 +387,8 @@ export function showLeaderboard(domainKnowledge) {
     return;
   }
 
-  // Only show domains with nearby evidence
-  const evidenced = domainKnowledge.filter(c => c.hasEvidence !== false);
+  // Only show sub-domains with nearby evidence
+  const evidenced = domainKnowledge.filter(c => c.hasEvidence !== false && c.level === 'sub');
   if (evidenced.length === 0) {
     bodyEl.textContent = '';
     const msg = document.createElement('div');
@@ -408,7 +408,12 @@ export function showLeaderboard(domainKnowledge) {
   explainer.textContent = 'Your top areas of expertise, ranked highest first. '
     + 'Each score averages the GP prediction at every question coordinate in that domain.';
   bodyEl.appendChild(explainer);
-  bodyEl.appendChild(buildDomainList(top10));
+  // Build parent name lookup for sub-domains
+  const parentNames = new Map();
+  for (const d of domainKnowledge) {
+    if (d.level === 'general') parentNames.set(d.domainId, d.name);
+  }
+  bodyEl.appendChild(buildDomainList(top10, parentNames));
   const caveat = document.createElement('p');
   caveat.className = 'insights-caveat';
   const strong = document.createElement('strong');
@@ -491,7 +496,7 @@ export function hide() {
 // ======== Private helpers ========
 
 /** Build a DOM list of domain rankings. */
-function buildDomainList(items) {
+function buildDomainList(items, parentNames = new Map()) {
   const ul = document.createElement('ul');
   ul.className = 'insights-modal-list';
   const barColor = 'var(--color-correct)';
@@ -502,6 +507,9 @@ function buildDomainList(items) {
     const noData = item.hasEvidence === false;
 
     const li = document.createElement('li');
+    if (item.parentId && parentNames.has(item.parentId)) {
+      li.dataset.parentName = parentNames.get(item.parentId);
+    }
 
     const rank = document.createElement('span');
     rank.className = 'insights-rank';

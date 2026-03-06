@@ -17,7 +17,7 @@
  * Uses actual BALD/phase-based question selection, real GP estimator,
  * and real video recommender — exactly what a user would see.
  */
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures.js';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 

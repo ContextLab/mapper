@@ -10,7 +10,7 @@
  *
  * Run a single persona: npx playwright test persona-agents.spec.js -g "Persona: Alex"
  */
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures.js';
 import { PERSONAS } from './personas/definitions.js';
 import { loadQuestionDb } from './personas/question-loader.js';
 import { runPersonaSession, cleanWorkingFiles } from './personas/runner.js';

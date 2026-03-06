@@ -1,5 +1,5 @@
 /** Edge case tests: slow network (T065) and rapid domain switching (T068). */
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures.js';
 
 const LOAD_TIMEOUT = 15000;
 

@@ -12,6 +12,9 @@
 
 
 
+    <!-- Tutorial styles -->
+    <link rel="stylesheet" href="src/ui/tutorial.css">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous" onerror="console.error('Font Awesome failed to load'); document.body.classList.add('fa-failed'); document.getElementById('cdn-warning').hidden=false;">
 
@@ -571,6 +574,7 @@
         #app[data-screen="welcome"] .logo span { display: none; }
         #app[data-screen="welcome"] #trophy-btn { display: none; }
         #app[data-screen="welcome"] #suggest-btn { display: none; }
+        #app[data-screen="welcome"] #tutorial-btn { display: none; }
         #app[data-screen="welcome"] #minimap-container { display: none; }
         #app[data-screen="welcome"] .domain-selector .custom-select { display: none; }
         #app[data-screen="welcome"] .control-btn:not([aria-label="Import saved progress"]) { display: none; }
@@ -741,7 +745,7 @@
             /* Override JS icon swap: force chevron-right to also point up when closed */
             .quiz-toggle-btn:not(.panel-open) i.fa-chevron-right { transform: rotate(-90deg); }
             /* Arrow points DOWN when open (pull down to close) */
-            .quiz-toggle-btn.panel-open { bottom: 60vh; right: 50%; background: var(--color-surface); color: var(--color-text-muted); }
+            .quiz-toggle-btn.panel-open { bottom: 50vh; right: 50%; background: var(--color-surface); color: var(--color-text-muted); }
             .quiz-toggle-btn.panel-open i.fa-chevron-right { transform: rotate(90deg); }
             .quiz-toggle-btn.panel-open i.fa-chevron-left { transform: rotate(-90deg); }
 
@@ -811,6 +815,9 @@
                 </button>
                 <button id="share-btn" class="btn-icon" aria-label="Share your knowledge map" data-tooltip="Share">
                     <i class="fa-solid fa-share-nodes"></i>
+                </button>
+                <button id="tutorial-btn" class="btn-icon" aria-label="Start tutorial" data-tooltip="Tutorial" hidden>
+                    <i class="fa-solid fa-circle-question"></i>
                 </button>
                 <button id="about-btn" class="btn-icon" aria-label="About this project" data-tooltip="About">
                     <i class="fa-solid fa-circle-info"></i>

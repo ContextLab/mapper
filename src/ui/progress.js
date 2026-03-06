@@ -51,6 +51,7 @@ export function initConfidence(container) {
   });
 
   confidenceText = document.createElement('div');
+  confidenceText.className = 'progress-pct';
   Object.assign(confidenceText.style, {
     fontSize: '0.75rem',
     fontFamily: 'var(--font-heading)',

@@ -47,6 +47,170 @@ export function makePrng(seed) {
   };
 }
 
+// ─── Tutorial flow ──────────────────────────────────────────
+
+/**
+ * Click through the full tutorial for 'complete' personas.
+ * Handles all 11 steps: click-advance, answer questions, switch domains, button clicks.
+ */
+async function completeTutorialFlow(page) {
+  const nextBtn = page.locator('.tutorial-next-btn');
+  const modal = page.locator('#tutorial-modal');
+
+  // Helper: wait for tutorial modal and click Next/Finish
+  async function clickNext(timeout = 3000) {
+    await nextBtn.waitFor({ state: 'visible', timeout });
+    await nextBtn.click();
+    await page.waitForTimeout(350);
+  }
+
+  // Helper: answer one question via the quiz panel
+  async function answerOneQuestion() {
+    const optionBtns = page.locator('.quiz-option');
+    await optionBtns.first().waitFor({ state: 'visible', timeout: 5000 });
+    await optionBtns.first().click();
+    await page.waitForTimeout(1000); // auto-advance delay
+    // If auto-advance is off, click the quiz Next button to load the next question
+    const quizNextBtn = page.locator('#quiz-panel .quiz-next-btn, #quiz-panel button:has-text("Next")');
+    try {
+      if (await quizNextBtn.first().isVisible({ timeout: 500 })) {
+        await quizNextBtn.first().click();
+        await page.waitForTimeout(500);
+      }
+    } catch {
+      // Auto-advance handled it
+    }
+  }
+
+  try {
+    await modal.waitFor({ state: 'visible', timeout: 5000 });
+
+    // Step 1: Your Knowledge Map — 2 substeps, click Next each
+    await clickNext(); // substep 1
+    await clickNext(); // substep 2
+
+    // Step 2: The Quiz Panel — click Next
+    await clickNext();
+
+    // Step 3: Video Recommendations — 2 substeps (may be skipped on mobile)
+    try {
+      await clickNext(); // substep 1
+      await clickNext(); // substep 2
+    } catch {
+      // Skipped on mobile
+    }
+
+    // Step 4: Try Answering a Question — answer, see feedback, click Continue
+    await modal.waitFor({ state: 'visible', timeout: 3000 });
+    await answerOneQuestion();
+    try {
+      const continueBtn = page.locator('#tutorial-modal button', { hasText: 'Continue' });
+      await continueBtn.waitFor({ state: 'visible', timeout: 3000 });
+      await continueBtn.click();
+      await page.waitForTimeout(350);
+    } catch {
+      // Feedback may not have appeared
+    }
+
+    // Step 5: Building Your Map — 3 substeps
+    // Substep 1: answer 2 questions
+    await modal.waitFor({ state: 'visible', timeout: 3000 });
+    for (let i = 0; i < 2; i++) {
+      await answerOneQuestion();
+    }
+    // Substep 2: toggle auto-advance (off then back on)
+    try {
+      await modal.waitFor({ state: 'visible', timeout: 2000 });
+      const autoAdvanceTrack = page.locator('.auto-advance-track');
+      await autoAdvanceTrack.waitFor({ state: 'visible', timeout: 2000 });
+      await autoAdvanceTrack.click(); // toggle OFF — advances tutorial
+      await page.waitForTimeout(500);
+      // Toggle back ON so subsequent answers auto-advance
+      await autoAdvanceTrack.click();
+      await page.waitForTimeout(300);
+    } catch {
+      try { await clickNext(1000); } catch { /* continue */ }
+    }
+    // Substep 3: answer 1 more question
+    try {
+      await modal.waitFor({ state: 'visible', timeout: 2000 });
+      await answerOneQuestion();
+    } catch {
+      // May have advanced
+    }
+
+    // Step 6: Switch Domains — select from dropdown
+    try {
+      await modal.waitFor({ state: 'visible', timeout: 2000 });
+      const trigger = page.locator('.domain-selector .custom-select-trigger');
+      await trigger.click();
+      const options = page.locator('.domain-selector .custom-select-option');
+      const count = await options.count();
+      if (count > 1) {
+        await options.nth(1).click();
+      }
+      await page.waitForTimeout(1500);
+    } catch {
+      // May have auto-advanced
+    }
+
+    // Step 7: Exploring Domain-Specific Knowledge — answer 2
+    try {
+      await modal.waitFor({ state: 'visible', timeout: 3000 });
+      for (let i = 0; i < 2; i++) {
+        await answerOneQuestion();
+      }
+    } catch {
+      // May have advanced
+    }
+
+    // Step 8: Your Expertise — click trophy button, then follow-up Next
+    try {
+      await modal.waitFor({ state: 'visible', timeout: 2000 });
+      const trophyBtn = page.locator('#trophy-btn');
+      await trophyBtn.click();
+      await page.waitForTimeout(500);
+      await clickNext(2000);
+    } catch {
+      // May have completed
+    }
+
+    // Step 9: Fill in Your Knowledge Gaps! — click suggest, then follow-up Next
+    try {
+      await modal.waitFor({ state: 'visible', timeout: 2000 });
+      const suggestBtn = page.locator('#suggest-btn');
+      await suggestBtn.click();
+      await page.waitForTimeout(500);
+      await clickNext(2000);
+    } catch {
+      // May have completed
+    }
+
+    // Step 10: Share Your Map — click share, then follow-up Next
+    try {
+      await modal.waitFor({ state: 'visible', timeout: 2000 });
+      const shareBtn = page.locator('#share-btn');
+      await shareBtn.click();
+      await page.waitForTimeout(500);
+      await clickNext(2000);
+    } catch {
+      // May have completed
+    }
+
+    // Step 11: Tutorial Complete! — click Start Over / dismiss
+    try {
+      await modal.waitFor({ state: 'visible', timeout: 2000 });
+      await clickNext();
+    } catch {
+      // Tutorial already done
+    }
+
+    await page.waitForTimeout(500);
+  } catch {
+    // Tutorial didn't appear or completed early — continue with test
+  }
+}
+
 // ─── Domain selection ────────────────────────────────────────
 
 /**
@@ -119,6 +283,7 @@ export async function answerQuestion(page, persona, questionDb, rand) {
 
   if (!question) {
     // Can't find in DB — answer randomly
+    console.warn('[runner] ? answer: DB miss — question text not found in index. Text preview:', displayedText.substring(0, 80));
     const firstBtn = page.locator('.quiz-option:not([disabled])').first();
     await firstBtn.click();
     return {
@@ -232,6 +397,7 @@ export async function answerQuestion(page, persona, questionDb, rand) {
   } else if (shouldBeCorrect && selectedAnswer === question.correct_answer) {
     // We intended correct but got it wrong — mapping error.
     // Mark as unknown since we can't determine the actual key clicked.
+    console.warn('[runner] ? answer: mapping error — intended correct but DOM says wrong. Question:', question.id, 'correctKey:', question.correct_answer);
     selectedAnswer = '?';
   }
 
@@ -359,11 +525,49 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
     ? Infinity // Pedants answer until questions run out
     : persona.numQuestions;
 
+  // Handle tutorial based on persona personality
+  const tutorialBehavior = persona.tutorialBehavior || 'dismiss';
+  if (tutorialBehavior === 'dismiss') {
+    // Pre-dismiss: persona would close it immediately
+    await page.addInitScript(() => {
+      localStorage.setItem('mapper-tutorial', JSON.stringify({
+        completed: false, dismissed: true, step: 1, subStep: 1,
+        hasSkippedQuestion: false, skipToastShown: false, returningUser: false,
+      }));
+    });
+  } else {
+    // 'skip' and 'complete': override fixture dismissal — let tutorial appear
+    await page.addInitScript(() => {
+      localStorage.removeItem('mapper-tutorial');
+    });
+  }
+
   // Navigate to app
   await page.goto('/');
   await page.waitForSelector('#landing', { timeout: LOAD_TIMEOUT });
 
-  // Select initial domain
+  // Click "Map my knowledge!" to leave landing (tutorial starts after this)
+  await page.waitForSelector('#landing-start-btn[data-ready]', { timeout: LOAD_TIMEOUT });
+  await page.locator('#landing-start-btn').click();
+  // Wait for map screen — quiz panel appears after domain bundle loads
+  await page.waitForSelector('.quiz-question', { timeout: 30000 });
+
+  // Handle tutorial after map loads (overlay blocks domain selector clicks)
+  if (tutorialBehavior === 'skip') {
+    const skipLink = page.locator('.tutorial-skip-link');
+    try {
+      await skipLink.waitFor({ state: 'visible', timeout: 5000 });
+      await skipLink.click();
+      await page.waitForTimeout(300);
+    } catch {
+      // Tutorial may not have appeared (already dismissed)
+    }
+  } else if (tutorialBehavior === 'complete') {
+    await completeTutorialFlow(page);
+  }
+  // dismiss personas: tutorial was pre-dismissed via localStorage — no action needed
+
+  // Select initial domain (already past landing page)
   const initialDomain = persona.domain === 'all' ? 'All (General)' : persona.domain;
   await selectDomain(page, initialDomain);
   await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });

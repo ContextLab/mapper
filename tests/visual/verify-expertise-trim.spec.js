@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures.js';
 
 test('expertise modal: names are trimmed and limited to top 10', async ({ page }) => {
   test.setTimeout(90000);

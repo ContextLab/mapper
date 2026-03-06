@@ -28,6 +28,8 @@ import * as modes from './ui/modes.js';
 
 import * as insights from './ui/insights.js';
 import * as share from './ui/share.js';
+import { checkMilestone, highlightExpertiseButton, updateProgressDisplay } from './ui/milestones.js';
+import { initTutorial, advanceTutorial, isTutorialActive, resetTutorial, setAnswerFeedback } from './ui/tutorial.js';
 import * as videoModal from './ui/video-modal.js';
 import * as videoLoader from './domain/video-loader.js';
 import * as videoPanel from './ui/video-panel.js';
@@ -52,6 +54,7 @@ let currentDomainBundle = null; // Points to allDomainBundle once loaded
 let aggregatedQuestions = [];   // Questions for active domain + descendants (CL-049)
 let currentViewport = { x_min: 0, x_max: 1, y_min: 0, y_max: 1 };
 let domainQuestionCount = 0;
+let consecutiveCorrect = 0;
 let switchGeneration = 0;
 let questionIndex = new Map();
 let mergedVideoWindows = []; // Accumulated window coords from recent unwatched-between videos
@@ -220,6 +223,7 @@ async function boot() {
         GLOBAL_GRID_SIZE,
       );
       insights.showLeaderboard(dk);
+      advanceTutorial('expertise-click');
     });
   }
 
@@ -227,6 +231,7 @@ async function boot() {
   if (suggestBtn) {
     suggestBtn.addEventListener('click', () => {
       if (!globalEstimator) return;
+      advanceTutorial('suggest-click');
       // On mobile (<=480px), toggle the video discovery panel instead of the modal
       if (window.innerWidth <= 480) {
         toggleVideoPanel();
@@ -245,6 +250,12 @@ async function boot() {
   // Initialize video modal and wire completion callback
   videoModal.init();
   videoModal.onVideoComplete(handleVideoComplete);
+
+  // Wire share button click for tutorial
+  const shareBtn = document.getElementById('share-btn');
+  if (shareBtn) {
+    shareBtn.addEventListener('click', () => advanceTutorial('share-click'));
+  }
 
   share.init(headerEl, () => renderer._canvas, () => {
     if (!currentDomainBundle) return [];
@@ -308,8 +319,31 @@ async function boot() {
     quizToggle.addEventListener('click', () => toggleQuizPanel());
   }
 
+  // Wire auto-advance toggle for tutorial (created dynamically by modes.js)
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.auto-advance-track') || e.target.closest('.auto-advance-label')) {
+      advanceTutorial('toggle-auto-advance');
+    }
+  });
+
+  // Wire modal-dismiss for tutorial (insights/share/video modals closing)
+  // Uses a body-level observer since insights-modal is created dynamically
+  new MutationObserver((mutations) => {
+    for (const m of mutations) {
+      if (m.type === 'attributes' && m.attributeName === 'hidden') {
+        const el = m.target;
+        if (el.hidden && (el.id === 'insights-modal' || el.id === 'share-modal')) {
+          advanceTutorial('modal-dismiss');
+        }
+      }
+    }
+  }).observe(document.body, { attributes: true, attributeFilter: ['hidden'], subtree: true });
+
   setupKeyboardNav({ onEscape: handleEscape });
   wireSubscriptions();
+
+  // Tutorial is initialized after first domain switch (when map becomes visible)
+  // See switchDomain() — initTutorial() called there on first run.
 
   announce('Knowledge Mapper loaded. Select a domain to begin.');
 }
@@ -491,6 +525,16 @@ async function switchDomain(domainId) {
 
     mapInitialized = true;
 
+    // Start tutorial now that the map is visible (after user clicks "Map my knowledge!")
+    initTutorial({ responsesCount: $responses.get().length });
+
+    // Show and wire the tutorial button in the header
+    const tutorialBtn = document.getElementById('tutorial-btn');
+    if (tutorialBtn) {
+      tutorialBtn.hidden = false;
+      tutorialBtn.addEventListener('click', () => resetTutorial());
+    }
+
     // Set video markers now that the map is initialized
     const { data: earlyVideos } = videoLoader.getVideos();
     if (earlyVideos && earlyVideos.length > 0) {
@@ -545,6 +589,9 @@ async function switchDomain(domainId) {
   announce(`Navigated to ${domainName}. ${aggregatedQuestions.length} questions available.`);
 
   selectAndShowNextQuestion();
+
+  // Advance tutorial on domain switch
+  advanceTutorial('domain-change');
 }
 
 function selectAndShowNextQuestion() {
@@ -553,7 +600,19 @@ function selectAndShowNextQuestion() {
   const answeredIds = $answeredIds.get();
   // Use aggregated questions (own + descendants) per CL-049
   const pool = aggregatedQuestions.length > 0 ? aggregatedQuestions : (currentDomainBundle.questions || []);
-  const available = pool.filter(q => !answeredIds.has(q.id));
+  let available = pool.filter(q => !answeredIds.has(q.id) && quiz.isValidQuestion(q).valid);
+
+  // Filter to questions belonging to the active domain's lineage (CL-T014)
+  const activeDomain = $activeDomain.get();
+  if (activeDomain && activeDomain !== 'all') {
+    const descendants = registry.getDescendants(activeDomain);
+    const domainObj = registry.getDomain(activeDomain);
+    const validIds = new Set([activeDomain, ...descendants]);
+    if (domainObj && domainObj.parent_id) validIds.add(domainObj.parent_id);
+    available = available.filter(q =>
+      q.domain_ids && q.domain_ids.some(id => validIds.has(id))
+    );
+  }
 
   if (available.length === 0) {
     announce('All questions answered! Great work exploring the knowledge map.');
@@ -648,6 +707,25 @@ function handleAnswer(selectedKey, question) {
       }
     }
   }, 0);
+
+  // Engagement: track streak, update progress display, check milestones
+  if (isCorrect) {
+    consecutiveCorrect++;
+  } else {
+    consecutiveCorrect = 0;
+  }
+  const totalAnswered = $responses.get().length;
+  updateProgressDisplay(totalAnswered, consecutiveCorrect);
+  if (!isTutorialActive()) {
+    checkMilestone(totalAnswered);
+  }
+  if (totalAnswered >= 15 && !isTutorialActive()) {
+    highlightExpertiseButton();
+  }
+
+  // Advance tutorial on answer event (pass feedback for step 2)
+  setAnswerFeedback(isCorrect);
+  advanceTutorial('answer');
 }
 
 function handleSkip() {
@@ -703,6 +781,10 @@ function handleSkip() {
     const estimates = estimator.predict();
     $estimates.set(estimates);
   }, 0);
+
+  // Advance tutorial on skip event
+  setAnswerFeedback(false, true);
+  advanceTutorial('skip');
 }
 
 function handleReset() {
@@ -1046,6 +1128,9 @@ function setupAboutModal() {
   btn.addEventListener('click', () => { modal.hidden = !modal.hidden; });
   const closeBtn = modal.querySelector('.close-modal');
   if (closeBtn) closeBtn.addEventListener('click', () => { modal.hidden = true; });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.hidden) modal.hidden = true;
+  });
 
   // Wire up inline info link on landing page to open the about modal
   const landingInfoLink = document.getElementById('landing-info-link');

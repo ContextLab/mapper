@@ -7,7 +7,7 @@
  * Reuses proven patterns from persona-simulation.spec.js but structured
  * as reusable exports for the AI evaluation pipeline.
  */
-import { writeFileSync, mkdirSync, existsSync, readdirSync, unlinkSync } from 'node:fs';
+import { writeFileSync, readFileSync, mkdirSync, existsSync, readdirSync, unlinkSync } from 'node:fs';
 import { resolve, join } from 'node:path';
 import { lookupQuestion, lookupQuestionById } from './question-loader.js';
 
@@ -540,6 +540,15 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
     ? Infinity // Pedants answer until questions run out
     : persona.numQuestions;
 
+  // Inject resume data if provided (pre-populate localStorage with prior responses)
+  const resumeData = options.resumeData || null;
+  if (resumeData) {
+    const responsesJson = JSON.stringify(resumeData.responses);
+    await page.addInitScript((json) => {
+      localStorage.setItem('mapper:responses', json);
+    }, responsesJson);
+  }
+
   // Handle tutorial based on persona personality
   const tutorialBehavior = persona.tutorialBehavior || 'dismiss';
   if (tutorialBehavior === 'dismiss') {
@@ -653,12 +662,12 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
     await page.waitForTimeout(500);
   }
 
-  // Track state
-  const allResults = [];
+  // Track state — seed with resume data if available
+  const allResults = resumeData ? [...resumeData.allResults] : [];
   let currentBatch = [];
   const consoleErrors = [];
-  let checkpointNum = 0;
-  const checkpoints = [];
+  let checkpointNum = resumeData ? resumeData.startCheckpoint : 0;
+  const checkpoints = resumeData ? [...resumeData.checkpoints] : [];
   let currentDomainIndex = 0;
 
   // Capture console errors
@@ -765,6 +774,72 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
     finalScreenshotPath,
     startTime: checkpoints[0]?.timestamp || Date.now(),
     endTime: Date.now(),
+  };
+}
+
+// ─── Resume utility ──────────────────────────────────────────
+
+/**
+ * Build resume payload from existing checkpoints + question DB.
+ * Returns { responses, checkpoints, allResults, startCheckpoint } or null if no checkpoints.
+ *
+ * @param {string} personaId
+ * @param {object} questionDb - { byId: Map }
+ */
+export function buildResumePayload(personaId, questionDb) {
+  const workingDir = resolve('tests/visual/.working/personas');
+  if (!existsSync(workingDir)) return null;
+
+  const files = readdirSync(workingDir)
+    .filter(f => f.startsWith(`${personaId}-checkpoint-`) && f.endsWith('.json'))
+    .sort((a, b) => {
+      const numA = parseInt(a.match(/checkpoint-(\d+)/)?.[1] || '0');
+      const numB = parseInt(b.match(/checkpoint-(\d+)/)?.[1] || '0');
+      return numA - numB;
+    });
+
+  if (files.length === 0) return null;
+
+  const allResults = [];
+  const checkpoints = [];
+  const responses = []; // localStorage-compatible response objects
+
+  for (const file of files) {
+    const cp = JSON.parse(readFileSync(join(workingDir, file), 'utf-8'));
+    checkpoints.push(cp);
+    for (const q of cp.questionsInBatch) {
+      // Look up x,y from question DB
+      const dbQ = questionDb.byId.get(q.questionId);
+      const x = dbQ?.x ?? 0.5;
+      const y = dbQ?.y ?? 0.5;
+
+      allResults.push({
+        questionId: q.questionId,
+        questionText: q.questionText,
+        correct: q.wasCorrect,
+        selectedAnswer: q.selectedAnswer,
+        correctAnswer: q.correctAnswer,
+        domainId: q.domainId,
+      });
+
+      responses.push({
+        question_id: q.questionId,
+        domain_id: q.domainId,
+        selected: q.selectedAnswer,
+        is_correct: q.wasCorrect,
+        is_skipped: q.selectedAnswer === '?',
+        timestamp: cp.timestamp,
+        x,
+        y,
+      });
+    }
+  }
+
+  return {
+    responses,
+    checkpoints,
+    allResults,
+    startCheckpoint: checkpoints.length,
   };
 }
 

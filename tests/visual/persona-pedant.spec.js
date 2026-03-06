@@ -10,7 +10,7 @@
 import { test, expect } from './fixtures.js';
 import { PERSONAS } from './personas/definitions.js';
 import { loadQuestionDb, getQuestionsForDomain, getAllDomainIds } from './personas/question-loader.js';
-import { runPersonaSession, cleanWorkingFiles } from './personas/runner.js';
+import { runPersonaSession, cleanWorkingFiles, buildResumePayload } from './personas/runner.js';
 
 // Load question database
 const questionDb = loadQuestionDb();
@@ -71,12 +71,19 @@ for (const persona of pedants) {
       const timeoutMs = Math.max(600_000, expectedQuestions * 16_000 + 300_000);
       test.setTimeout(timeoutMs);
 
-      cleanWorkingFiles(persona.id);
+      // Resume from existing checkpoints if available, otherwise clean start
+      const resumeData = buildResumePayload(persona.id, questionDb);
+      if (resumeData) {
+        console.log(`Resuming ${persona.name} from checkpoint ${resumeData.startCheckpoint} (${resumeData.allResults.length} questions already answered)`);
+      } else {
+        cleanWorkingFiles(persona.id);
+      }
 
       // Pedants use the same runner but with numQuestions='ALL' which
       // means the runner answers until it runs out of questions or errors
       const session = await runPersonaSession(page, persona, questionDb, {
         seed: persona.id.charCodeAt(1) * 1000 + persona.id.charCodeAt(2),
+        resumeData,
       });
 
       // Pedants should answer many questions

@@ -25,7 +25,10 @@
       "correct_answer": "A",
       "difficulty": 1,
       "x": 0.752175,
-      "y": 0.269247
+      "y": 0.269247,
+      "domain_ids": [
+        "cognitive-psychology"
+      ]
     },
     {
       "id": "3f4c42468868c343",
@@ -39,7 +42,10 @@
       "correct_answer": "B",
       "difficulty": 1,
       "x": 0.680512,
-      "y": 0.301686
+      "y": 0.301686,
+      "domain_ids": [
+        "cognitive-psychology"
+      ]
     },
     {
       "id": "847218286e9952d9",
@@ -221,7 +227,10 @@
       "correct_answer": "C",
       "difficulty": 1,
       "x": 0.65888,
-      "y": 0.463921
+      "y": 0.463921,
+      "domain_ids": [
+        "cognitive-psychology"
+      ]
     },
     {
       "id": "9f962bd244e79e1c",
@@ -235,7 +244,10 @@
       "correct_answer": "D",
       "difficulty": 1,
       "x": 0.68724,
-      "y": 0.297489
+      "y": 0.297489,
+      "domain_ids": [
+        "cognitive-psychology"
+      ]
     },
     {
       "id": "95ddf37399d46b3b",

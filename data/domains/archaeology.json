@@ -340,7 +340,10 @@
       "correct_answer": "D",
       "difficulty": 2,
       "x": 0.225443,
-      "y": 0.234874
+      "y": 0.234874,
+      "domain_ids": [
+        "archaeology"
+      ]
     },
     {
       "id": "833d2a88549ecb86",
@@ -417,7 +420,10 @@
       "correct_answer": "D",
       "difficulty": 2,
       "x": 0.225647,
-      "y": 0.228148
+      "y": 0.228148,
+      "domain_ids": [
+        "archaeology"
+      ]
     },
     {
       "id": "83a78e484e31a157",
@@ -515,7 +521,10 @@
       "correct_answer": "A",
       "difficulty": 2,
       "x": 0.229985,
-      "y": 0.21549
+      "y": 0.21549,
+      "domain_ids": [
+        "archaeology"
+      ]
     },
     {
       "id": "7df1c58eccce045e",
@@ -592,7 +601,10 @@
       "correct_answer": "A",
       "difficulty": 3,
       "x": 0.224467,
-      "y": 0.234822
+      "y": 0.234822,
+      "domain_ids": [
+        "archaeology"
+      ]
     },
     {
       "id": "119ccbd17b3efeba",

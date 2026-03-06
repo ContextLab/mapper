@@ -88,7 +88,10 @@
       "correct_answer": "D",
       "difficulty": 1,
       "x": 0.540052,
-      "y": 0.107594
+      "y": 0.107594,
+      "domain_ids": [
+        "biology"
+      ]
     },
     {
       "id": "dd6595565016d418",
@@ -335,7 +338,10 @@
       "correct_answer": "D",
       "difficulty": 2,
       "x": 0.445715,
-      "y": 0.172443
+      "y": 0.172443,
+      "domain_ids": [
+        "biology"
+      ]
     },
     {
       "id": "d5b8e88738ace822",

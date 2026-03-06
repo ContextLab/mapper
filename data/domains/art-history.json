@@ -697,7 +697,10 @@
       "correct_answer": "A",
       "difficulty": 3,
       "x": 0.143576,
-      "y": 0.226133
+      "y": 0.226133,
+      "domain_ids": [
+        "art-history"
+      ]
     },
     {
       "id": "5cdc8436a84cc1bf",

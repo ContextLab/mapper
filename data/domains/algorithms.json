@@ -235,7 +235,10 @@
       "correct_answer": "C",
       "difficulty": 1,
       "x": 0.798966,
-      "y": 0.722526
+      "y": 0.722526,
+      "domain_ids": [
+        "algorithms"
+      ]
     },
     {
       "id": "15e36a8e13639d78",
@@ -291,7 +294,10 @@
       "correct_answer": "B",
       "difficulty": 2,
       "x": 0.92984,
-      "y": 0.800927
+      "y": 0.800927,
+      "domain_ids": [
+        "algorithms"
+      ]
     },
     {
       "id": "4c58c2b07952af49",
@@ -347,7 +353,10 @@
       "correct_answer": "A",
       "difficulty": 2,
       "x": 0.863829,
-      "y": 0.758957
+      "y": 0.758957,
+      "domain_ids": [
+        "algorithms"
+      ]
     },
     {
       "id": "752d449ed6dbbc57",
@@ -403,7 +412,10 @@
       "correct_answer": "D",
       "difficulty": 2,
       "x": 0.92519,
-      "y": 0.782522
+      "y": 0.782522,
+      "domain_ids": [
+        "algorithms"
+      ]
     },
     {
       "id": "c2974501d5c5c21d",
@@ -606,7 +618,10 @@
       "correct_answer": "B",
       "difficulty": 3,
       "x": 0.864193,
-      "y": 0.762102
+      "y": 0.762102,
+      "domain_ids": [
+        "algorithms"
+      ]
     },
     {
       "id": "3a3e10ab0c171324",
@@ -971,7 +986,10 @@
       "correct_answer": "C",
       "difficulty": 4,
       "x": 0.732226,
-      "y": 0.664763
+      "y": 0.664763,
+      "domain_ids": [
+        "algorithms"
+      ]
     },
     {
       "id": "bf7f56ea0c6e6e04",
@@ -1008,7 +1026,10 @@
       "correct_answer": "A",
       "difficulty": 4,
       "x": 0.930602,
-      "y": 0.815921
+      "y": 0.815921,
+      "domain_ids": [
+        "algorithms"
+      ]
     },
     {
       "id": "f78d88dfbf52751d",

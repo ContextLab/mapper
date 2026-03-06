@@ -382,7 +382,10 @@
       "correct_answer": "B",
       "difficulty": 2,
       "x": 0.167123,
-      "y": 0.233283
+      "y": 0.233283,
+      "domain_ids": [
+        "prehistoric-archaeology"
+      ]
     },
     {
       "id": "63738e6500c59b28",
@@ -669,7 +672,10 @@
       "correct_answer": "D",
       "difficulty": 3,
       "x": 0.159777,
-      "y": 0.235257
+      "y": 0.235257,
+      "domain_ids": [
+        "prehistoric-archaeology"
+      ]
     },
     {
       "id": "767787a70a60af1a",

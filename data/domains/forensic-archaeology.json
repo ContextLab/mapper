@@ -130,7 +130,10 @@
       "correct_answer": "B",
       "difficulty": 1,
       "x": 0.308794,
-      "y": 0.271423
+      "y": 0.271423,
+      "domain_ids": [
+        "forensic-archaeology"
+      ]
     },
     {
       "id": "ca14f8cca3282769",
@@ -417,7 +420,10 @@
       "correct_answer": "D",
       "difficulty": 2,
       "x": 0.203985,
-      "y": 0.187923
+      "y": 0.187923,
+      "domain_ids": [
+        "forensic-archaeology"
+      ]
     },
     {
       "id": "54dad0c9321cff89",
@@ -452,7 +458,10 @@
       "correct_answer": "B",
       "difficulty": 2,
       "x": 0.249261,
-      "y": 0.206862
+      "y": 0.206862,
+      "domain_ids": [
+        "forensic-archaeology"
+      ]
     },
     {
       "id": "b777ab35b67970ba",
@@ -508,7 +517,10 @@
       "correct_answer": "A",
       "difficulty": 2,
       "x": 0.191409,
-      "y": 0.157551
+      "y": 0.157551,
+      "domain_ids": [
+        "forensic-archaeology"
+      ]
     },
     {
       "id": "8d24dc0196a274ed",

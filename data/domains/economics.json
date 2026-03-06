@@ -25,7 +25,10 @@
       "correct_answer": "A",
       "difficulty": 1,
       "x": 0.341686,
-      "y": 0.663538
+      "y": 0.663538,
+      "domain_ids": [
+        "economics"
+      ]
     },
     {
       "id": "5e491fd6a9e0e666",
@@ -102,7 +105,10 @@
       "correct_answer": "A",
       "difficulty": 1,
       "x": 0.363718,
-      "y": 0.647966
+      "y": 0.647966,
+      "domain_ids": [
+        "economics"
+      ]
     },
     {
       "id": "c99e7157f4ed3bd9",
@@ -221,7 +227,10 @@
       "correct_answer": "C",
       "difficulty": 1,
       "x": 0.306462,
-      "y": 0.717465
+      "y": 0.717465,
+      "domain_ids": [
+        "economics"
+      ]
     },
     {
       "id": "647caa8301b3f119",
@@ -403,7 +412,10 @@
       "correct_answer": "D",
       "difficulty": 2,
       "x": 0.624633,
-      "y": 0.807486
+      "y": 0.807486,
+      "domain_ids": [
+        "economics"
+      ]
     },
     {
       "id": "92f484006d34a56e",
@@ -669,7 +681,10 @@
       "correct_answer": "A",
       "difficulty": 3,
       "x": 0.627118,
-      "y": 0.804278
+      "y": 0.804278,
+      "domain_ids": [
+        "economics"
+      ]
     },
     {
       "id": "430465b3641c39c2",
@@ -725,7 +740,10 @@
       "correct_answer": "D",
       "difficulty": 3,
       "x": 0.274199,
-      "y": 0.725261
+      "y": 0.725261,
+      "domain_ids": [
+        "economics"
+      ]
     },
     {
       "id": "69e860f31afb0795",
@@ -739,7 +757,10 @@
       "correct_answer": "A",
       "difficulty": 3,
       "x": 0.379589,
-      "y": 0.723631
+      "y": 0.723631,
+      "domain_ids": [
+        "economics"
+      ]
     },
     {
       "id": "f4eccfcd69e4d975",
@@ -1005,7 +1026,10 @@
       "correct_answer": "B",
       "difficulty": 4,
       "x": 0.578925,
-      "y": 0.631306
+      "y": 0.631306,
+      "domain_ids": [
+        "economics"
+      ]
     }
   ],
   "labels": [],

@@ -46,7 +46,10 @@
       "correct_answer": "B",
       "difficulty": 1,
       "x": 0.778841,
-      "y": 0.113619
+      "y": 0.113619,
+      "domain_ids": [
+        "neuroscience"
+      ]
     },
     {
       "id": "5aefe321412496b4",
@@ -774,7 +777,10 @@
       "correct_answer": "A",
       "difficulty": 3,
       "x": 0.818704,
-      "y": 0.188385
+      "y": 0.188385,
+      "domain_ids": [
+        "neuroscience"
+      ]
     },
     {
       "id": "bb65bade49324cf7",

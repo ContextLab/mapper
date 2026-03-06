@@ -151,7 +151,10 @@
       "correct_answer": "C",
       "difficulty": 1,
       "x": 0.870812,
-      "y": 0.410447
+      "y": 0.410447,
+      "domain_ids": [
+        "linguistics"
+      ]
     },
     {
       "id": "100a00782fd29ef2",
@@ -501,7 +504,10 @@
       "correct_answer": "D",
       "difficulty": 2,
       "x": 0.806755,
-      "y": 0.403187
+      "y": 0.403187,
+      "domain_ids": [
+        "linguistics"
+      ]
     },
     {
       "id": "1e071de74ed56a5f",

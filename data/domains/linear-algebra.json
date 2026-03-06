@@ -216,10 +216,10 @@
       "id": "e275928e36625ab8",
       "question_text": "How is the 2-norm condition number $\\kappa_2(A)$ computed from singular values?",
       "options": {
-        "A": "$\\sigma_{\\max} - \\sigma_{\\min}$",
-        "B": "$\\sigma_{\\max}^2 / \\sigma_{\\min}^2$",
-        "C": "$\\sigma_{\\max} / \\sigma_{\\min}$",
-        "D": "$\\sigma_{\\max} \\cdot \\sigma_{\\min}$"
+        "A": "$\\sigma_{\\text{max}} - \\sigma_{\\text{min}}$",
+        "B": "$\\sigma_{\\text{max}}^2 / \\sigma_{\\text{min}}^2$",
+        "C": "$\\sigma_{\\text{max}} / \\sigma_{\\text{min}}$",
+        "D": "$\\sigma_{\\text{max}} \\cdot \\sigma_{\\text{min}}$"
       },
       "correct_answer": "C",
       "difficulty": 4,
@@ -241,9 +241,9 @@
       "question_text": "What triple does Sylvester's law of inertia say congruence transformations preserve for a real symmetric matrix?",
       "options": {
         "A": "$(\\det, \\operatorname{tr}, \\operatorname{rank})$",
-        "B": "$(\\sigma_{\\max}, \\sigma_{\\min}, \\operatorname{rank})$",
+        "B": "$(\\sigma_{\\text{max}}, \\sigma_{\\text{min}}, \\operatorname{rank})$",
         "C": "Eigenvalue multiset",
-        "D": "$(n_+, n_-, n_0)$"
+        "D": "$(n_{+}, n_{-}, n_{0})$"
       },
       "correct_answer": "D",
       "difficulty": 4,

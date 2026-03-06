@@ -17,7 +17,7 @@ import { runPersonaSession, cleanWorkingFiles } from './personas/runner.js';
 
 // Load question database once for all tests
 const questionDb = loadQuestionDb();
-console.log(`Question DB loaded: ${questionDb.size} questions for persona-agents`);
+console.log(`Question DB loaded: ${questionDb.byId.size} questions for persona-agents`);
 
 // ─── Reporter Personas (P01-P03) ─────────────────────────────
 

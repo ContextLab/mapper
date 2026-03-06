@@ -14,7 +14,7 @@ import { runPersonaSession, cleanWorkingFiles } from './personas/runner.js';
 
 // Load question database
 const questionDb = loadQuestionDb();
-console.log(`Question DB loaded: ${questionDb.size} questions for persona-pedant`);
+console.log(`Question DB loaded: ${questionDb.byId.size} questions for persona-pedant`);
 
 // ─── Pedant Personas (P19-P21) ───────────────────────────────
 

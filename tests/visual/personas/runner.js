@@ -9,7 +9,7 @@
  */
 import { writeFileSync, mkdirSync, existsSync, readdirSync, unlinkSync } from 'node:fs';
 import { resolve, join } from 'node:path';
-import { lookupQuestion } from './question-loader.js';
+import { lookupQuestion, lookupQuestionById } from './question-loader.js';
 
 const LOAD_TIMEOUT = 15000;
 
@@ -278,8 +278,23 @@ export async function getDisplayedQuestion(page) {
  * @returns {Promise<object>} Answer result with question data
  */
 export async function answerQuestion(page, persona, questionDb, rand) {
+  // Try to get the question ID directly from app state (avoids LaTeX text-matching issues)
+  let question = null;
+  try {
+    const appQuestion = await page.evaluate(() => {
+      const q = window.__mapper?.getCurrentQuestion?.();
+      return q ? { id: q.id } : null;
+    });
+    if (appQuestion?.id) {
+      question = lookupQuestionById(questionDb, appQuestion.id);
+    }
+  } catch { /* app state not available — fall through to text matching */ }
+
+  // Fallback: text-based matching
   const displayedText = await getDisplayedQuestion(page);
-  const question = lookupQuestion(questionDb, displayedText);
+  if (!question) {
+    question = lookupQuestion(questionDb.byText || questionDb, displayedText);
+  }
 
   if (!question) {
     // Can't find in DB — answer randomly

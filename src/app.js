@@ -314,7 +314,7 @@ async function boot() {
   }
 
   if (import.meta.env.DEV) {
-    window.__mapper = { registry, estimator, sampler, renderer, minimap, $activeDomain, $estimates, $responses };
+    window.__mapper = { registry, estimator, sampler, renderer, minimap, $activeDomain, $estimates, $responses, getCurrentQuestion: quiz.getCurrentQuestion };
   }
 
   const quizToggle = document.getElementById('quiz-toggle');

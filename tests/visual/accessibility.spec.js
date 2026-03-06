@@ -16,7 +16,7 @@ test.describe('Accessibility (FR-023)', () => {
 
   test('Escape key closes about modal', async ({ page }) => {
     // Wait for boot() to complete — keyboard nav is wired inside boot()
-    await page.waitForSelector('#landing-start-btn[data-ready]', { timeout: 15000 });
+    await page.waitForSelector('#landing-start-btn[data-ready]:not([disabled])', { timeout: 15000 });
 
     const aboutBtn = page.locator('#about-btn');
     await aboutBtn.waitFor({ state: 'visible', timeout: 5000 });

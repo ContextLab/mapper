@@ -115,7 +115,6 @@ async function boot() {
         landingStartBtn.disabled = true;
       }
     });
-    landingStartBtn.dataset.ready = 'true';
   }
 
   // Eagerly load the "all" domain — this is the permanent, full dataset.
@@ -127,6 +126,10 @@ async function boot() {
     questionIndex = new Map(allDomainBundle.questions.map(q => [q.id, q]));
     insights.setConcepts(allDomainBundle.questions, allDomainBundle.articles);
     insights.setDomains(registry.getDomains());
+
+    // Signal that data is loaded and button is clickable.
+    // Tests wait for [data-ready] before clicking — must come AFTER data loads.
+    if (landingStartBtn) landingStartBtn.dataset.ready = 'true';
 
     // Initialize particles in the background — don't block the transition.
     // If user already clicked start, skip particles entirely (they'd be destroyed anyway).

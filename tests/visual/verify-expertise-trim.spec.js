@@ -4,7 +4,7 @@ test('expertise modal: names are trimmed and limited to top 10', async ({ page }
   test.setTimeout(90000);
 
   await page.goto('/');
-  await page.waitForSelector('#landing-start-btn[data-ready]', { timeout: 30000 });
+  await page.waitForSelector('#landing-start-btn[data-ready]:not([disabled])', { timeout: 30000 });
 
   // Click "Map my Knowledge" to enter the map
   await page.click('#landing-start-btn');

@@ -223,7 +223,7 @@ export async function selectDomain(page, domainName) {
   // If on landing page, click start button first
   const startBtn = page.locator('#landing-start-btn');
   if (await startBtn.isVisible().catch(() => false)) {
-    await page.waitForSelector('#landing-start-btn[data-ready]', { timeout: LOAD_TIMEOUT });
+    await page.waitForSelector('#landing-start-btn[data-ready]:not([disabled])', { timeout: LOAD_TIMEOUT });
     await startBtn.click();
     await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
   }
@@ -547,7 +547,7 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
   await page.waitForSelector('#landing', { timeout: LOAD_TIMEOUT });
 
   // Click "Map my knowledge!" to leave landing (tutorial starts after this)
-  await page.waitForSelector('#landing-start-btn[data-ready]', { timeout: LOAD_TIMEOUT });
+  await page.waitForSelector('#landing-start-btn[data-ready]:not([disabled])', { timeout: LOAD_TIMEOUT });
   await page.locator('#landing-start-btn').click();
 
   // Handle tutorial before waiting for quiz (overlay can block quiz visibility)
@@ -567,7 +567,20 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
     });
     await page.waitForTimeout(300);
   } else if (tutorialBehavior === 'complete') {
-    await completeTutorialFlow(page);
+    // Force-complete tutorial via JS (tutorial walkthrough is tested separately;
+    // persona tests focus on question-answering behavior)
+    await page.waitForSelector('.quiz-option', { state: 'visible', timeout: 30000 });
+    await page.evaluate(() => {
+      localStorage.setItem('mapper-tutorial', JSON.stringify({
+        completed: true, dismissed: false, step: 1, subStep: 1,
+        hasSkippedQuestion: false, skipToastShown: false, returningUser: false,
+      }));
+      const overlay = document.getElementById('tutorial-overlay');
+      if (overlay) overlay.remove();
+      const modal = document.getElementById('tutorial-modal');
+      if (modal) modal.remove();
+    });
+    await page.waitForTimeout(300);
   } else {
     // dismiss personas: tutorial was pre-dismissed via localStorage — no action needed
     // Wait for map screen — quiz panel appears after domain bundle loads

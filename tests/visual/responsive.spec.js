@@ -51,7 +51,7 @@ test.describe('Responsive Layout (SC-008)', () => {
     await page.goto('/');
 
     // Click start to enter map (triggers switchDomain('all'))
-    await page.waitForSelector('#landing-start-btn[data-ready]', { timeout: 15000 });
+    await page.waitForSelector('#landing-start-btn[data-ready]:not([disabled])', { timeout: 15000 });
     await page.locator('#landing-start-btn').click();
 
     // Wait for question to load (switchDomain loads all bundles via deduped fetches)

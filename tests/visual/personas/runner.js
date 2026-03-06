@@ -552,22 +552,27 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
 
   // Handle tutorial before waiting for quiz (overlay can block quiz visibility)
   if (tutorialBehavior === 'skip') {
-    // Dismiss tutorial via the × button (skip link was removed)
-    const dismissBtn = page.locator('#tutorial-modal .tutorial-dismiss');
-    try {
-      await dismissBtn.waitFor({ state: 'visible', timeout: 5000 });
-      await dismissBtn.click();
-      await page.waitForTimeout(300);
-    } catch {
-      // Tutorial may not have appeared (already dismissed via localStorage)
-    }
+    // Wait for quiz to load, then force-dismiss tutorial via JS (more reliable than clicking)
+    await page.waitForSelector('.quiz-option', { state: 'visible', timeout: 30000 });
+    await page.evaluate(() => {
+      // Dismiss tutorial by setting localStorage and removing overlay/modal
+      localStorage.setItem('mapper-tutorial', JSON.stringify({
+        completed: false, dismissed: true, step: 1, subStep: 1,
+        hasSkippedQuestion: false, skipToastShown: false, returningUser: false,
+      }));
+      const overlay = document.getElementById('tutorial-overlay');
+      if (overlay) overlay.remove();
+      const modal = document.getElementById('tutorial-modal');
+      if (modal) modal.remove();
+    });
+    await page.waitForTimeout(300);
   } else if (tutorialBehavior === 'complete') {
     await completeTutorialFlow(page);
+  } else {
+    // dismiss personas: tutorial was pre-dismissed via localStorage — no action needed
+    // Wait for map screen — quiz panel appears after domain bundle loads
+    await page.waitForSelector('.quiz-option', { state: 'visible', timeout: 30000 });
   }
-  // dismiss personas: tutorial was pre-dismissed via localStorage — no action needed
-
-  // Wait for map screen — quiz panel appears after domain bundle loads
-  await page.waitForSelector('.quiz-option', { state: 'visible', timeout: 30000 });
 
   // Select initial domain (already past landing page)
   const initialDomain = persona.domain === 'all' ? 'All (General)' : persona.domain;

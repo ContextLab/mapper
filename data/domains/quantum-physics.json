@@ -697,7 +697,7 @@
       "question_text": "In quantum teleportation, Alice sends Bob 2 classical bits. What does Bob do with them?",
       "options": {
         "A": "Measures four bases",
-        "B": "Applies four unitaries",
+        "B": "Applies one of four unitaries",
         "C": "Corrects Alice's qubit",
         "D": "Applies two unitaries"
       },

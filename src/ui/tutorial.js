@@ -581,7 +581,6 @@ function updateModalMessage(message) {
   // Ensure Next button is visible
   const footer = modal.querySelector('[data-tutorial-footer]');
   if (footer && !footer.querySelector('.tutorial-next-btn')) {
-    const skipLink = footer.querySelector('.tutorial-skip-link');
     const nextBtn = document.createElement('button');
     nextBtn.className = 'tutorial-next-btn';
     Object.assign(nextBtn.style, {
@@ -869,9 +868,10 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
 
   document.body.appendChild(modal);
 
-  // Position modal
+  // Position modal (immediate + deferred to catch panel transitions)
   if (!mobile && highlightEl && !isFinish) {
     positionModal(modal, highlightEl);
+    setTimeout(() => positionModal(modal, highlightEl), 350);
   } else if (!mobile) {
     Object.assign(modal.style, {
       top: '50%', left: '50%',
@@ -943,20 +943,10 @@ function buildModalDOM(modal, title, message, showNextBtn, isFinish) {
   const footer = document.createElement('div');
   footer.setAttribute('data-tutorial-footer', '');
   Object.assign(footer.style, {
-    marginTop: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+    marginTop: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px',
   });
 
-  if (!isFinish) {
-    const skipLink = document.createElement('a');
-    skipLink.href = '#';
-    skipLink.className = 'tutorial-skip-link';
-    Object.assign(skipLink.style, {
-      color: 'var(--color-text-muted, #64748b)', fontSize: '0.85em', textDecoration: 'underline', cursor: 'pointer',
-    });
-    skipLink.textContent = 'Skip Tutorial';
-    skipLink.addEventListener('click', (e) => { e.preventDefault(); dismissTutorial(); });
-    footer.appendChild(skipLink);
-  }
+  // Skip link removed — dismiss button (×) in header serves the same purpose
 
   if (showNextBtn) {
     const nextBtn = document.createElement('button');
@@ -973,19 +963,7 @@ function buildModalDOM(modal, title, message, showNextBtn, isFinish) {
 
   modal.appendChild(footer);
 
-  // Completion step extras
-  if (isFinish) {
-    const startOver = document.createElement('p');
-    Object.assign(startOver.style, { marginTop: '12px', fontSize: '0.85em', textAlign: 'center' });
-    const startOverLink = document.createElement('a');
-    startOverLink.href = '#';
-    startOverLink.className = 'tutorial-replay-btn';
-    Object.assign(startOverLink.style, { color: 'var(--color-text-muted, #64748b)', textDecoration: 'underline', cursor: 'pointer' });
-    startOverLink.textContent = 'Start Over';
-    startOverLink.addEventListener('click', (e) => { e.preventDefault(); resetTutorial(); });
-    startOver.appendChild(startOverLink);
-    modal.appendChild(startOver);
-  }
+  // Start Over link removed — users can replay via the ? button in the header
 }
 
 /** Render simple markdown: *italic* → <em>, preserving newlines as paragraphs. */
@@ -1085,30 +1063,49 @@ function positionModal(modal, highlightEl) {
   const mw = MODAL_MAX_WIDTH;
   const headerH = 56;
 
-  // Find the "map area" — the space not occupied by quiz/video panels.
-  // Quiz panel is on the right (~30% of vw), video panel on the left when open.
-  const quizPanel = document.getElementById('quiz-panel');
-  const qpLeft = quizPanel ? quizPanel.getBoundingClientRect().left : vw;
-  const videoPanel = document.getElementById('video-panel');
-  const vpRight = (videoPanel && videoPanel.classList.contains('open'))
-    ? videoPanel.getBoundingClientRect().right : 0;
-
-  // Available horizontal band for the modal: between video panel right and quiz panel left
-  const safeLeft = Math.max(12, vpRight + gap);
-  const safeRight = Math.max(safeLeft + mw, qpLeft - gap);
-
   let left, top;
 
-  // Default: place in the safe map area, horizontally centered
-  left = Math.max(safeLeft, Math.min(safeRight - mw, (safeLeft + safeRight - mw) / 2));
+  const isRight = rect.left > vw * 0.5;    // highlight on right side (quiz panel)
+  const isLeft = rect.right < vw * 0.4;    // highlight on left side (video panel)
+  const isTop = rect.bottom < vh * 0.25;   // highlight in header area
+  const isLarge = rect.width > vw * 0.5;   // highlight spans most of viewport (map)
+
+  if (isLarge) {
+    // Large element (map container) — center modal in map area
+    const quizPanel = document.getElementById('quiz-panel');
+    const qpLeft = quizPanel ? quizPanel.getBoundingClientRect().left : vw;
+    const safeLeft = Math.max(12, gap);
+    const safeRight = Math.max(safeLeft + mw, qpLeft - gap);
+    left = Math.max(safeLeft, Math.min(safeRight - mw, (safeLeft + safeRight - mw) / 2));
+    top = Math.max(headerH + gap, rect.top + gap);
+  } else if (isRight) {
+    // Right-side highlight — place modal to the left of highlight
+    left = rect.left - mw - gap;
+    if (left < 12) left = 12;
+    top = Math.max(headerH + gap, rect.top);
+  } else if (isLeft) {
+    // Left-side highlight — place modal to the right of highlight
+    left = rect.right + gap;
+    if (left + mw > vw - 12) left = vw - mw - 12;
+    top = Math.max(headerH + gap, rect.top);
+  } else if (isTop) {
+    // Header element — place modal below highlight
+    left = Math.max(12, Math.min(rect.left, vw - mw - 12));
+    top = rect.bottom + gap;
+  } else {
+    // Fallback — place below the highlight
+    left = Math.max(12, Math.min(rect.left, vw - mw - 12));
+    top = rect.bottom + gap;
+    if (top + 200 > vh - 12) {
+      top = Math.max(headerH + gap, rect.top - 200 - gap);
+    }
+  }
+
+  // Clamp within viewport
   if (left + mw > vw - 12) left = vw - mw - 12;
   if (left < 12) left = 12;
-
-  // Vertically: below header, aligned to highlight top
-  top = Math.max(headerH + gap, rect.top);
-  if (top + 200 > vh - 12) {
-    top = Math.max(headerH + gap, vh - 212);
-  }
+  if (top + 200 > vh - 12) top = Math.max(headerH + gap, vh - 212);
+  if (top < headerH + gap) top = headerH + gap;
 
   Object.assign(modal.style, {
     top: `${top}px`,

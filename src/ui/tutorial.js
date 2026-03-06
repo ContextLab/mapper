@@ -82,6 +82,7 @@ const STEPS = [
         title: 'Building Your Map',
         arrowTarget: '.auto-advance-label',
         arrowSide: 'right',
+        skipOnMobile: true,
         message: 'Try toggling the "Auto-advance" switch. Pausing after each question gives you a chance to review the correct answer. You can also click on the Wikipedia and Khan Academy links to learn more.',
         advanceOn: 'toggle-auto-advance',
       },
@@ -113,6 +114,7 @@ const STEPS = [
   {
     id: 8, title: 'Your Expertise',
     highlight: '#trophy-btn',
+    skipOnMobile: true,
     message: "Now that you've answered a few questions, our system has started to understand your knowledge map's peaks and valleys. You can click this button to view a ranked list of your strongest areas. Try it out!",
     advanceOn: 'expertise-click',
     removeOverlayOnAction: true,
@@ -121,6 +123,7 @@ const STEPS = [
   {
     id: 9, title: 'Fill in Your Knowledge Gaps!',
     highlight: '#suggest-btn',
+    skipOnMobile: true,
     onEnter: 'closeModals',
     message: 'Click this button to see a list of Khan Academy videos that will help you efficiently fill in gaps in your knowledge that our system has identified.',
     advanceOn: 'suggest-click',
@@ -381,8 +384,13 @@ function getStepDef(id) {
 }
 
 function moveToNextStep() {
-  const nextId = state.step + 1;
-  const nextDef = getStepDef(nextId);
+  let nextId = state.step + 1;
+  let nextDef = getStepDef(nextId);
+  // Skip top-level steps marked skipOnMobile
+  while (nextDef && nextDef.skipOnMobile && isMobile()) {
+    nextId++;
+    nextDef = getStepDef(nextId);
+  }
   if (!nextDef) { completeTutorial(); return; }
 
   state.step = nextId;
@@ -428,6 +436,8 @@ function isMobile() {
 function renderCurrentStep() {
   const stepDef = getStepDef(state.step);
   if (!stepDef) { completeTutorial(); return; }
+  // Skip top-level steps marked skipOnMobile on render (e.g. resumed state)
+  if (stepDef.skipOnMobile && isMobile()) { moveToNextStep(); return; }
 
   let highlight = stepDef.highlight || null;
   let message = stepDef.message || '';
@@ -842,7 +852,16 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
   });
 
   if (mobile) {
-    Object.assign(modal.style, { bottom: '0', left: '0', right: '0' });
+    // If the highlighted element or the open quiz panel occupies the lower viewport,
+    // position modal at top so it doesn't cover the interaction target.
+    const highlightInBottom = highlightEl && highlightEl.getBoundingClientRect().bottom > window.innerHeight * 0.6;
+    const quizOpen = document.getElementById('quiz-panel')?.classList.contains('open');
+    const useTop = highlightInBottom || (!highlightEl && quizOpen);
+    if (useTop) {
+      Object.assign(modal.style, { top: '0', left: '0', right: '0', borderRadius: '0 0 12px 12px' });
+    } else {
+      Object.assign(modal.style, { bottom: '0', left: '0', right: '0' });
+    }
   }
 
   buildModalDOM(modal, title, message, showNextBtn, isFinish);
@@ -1064,23 +1083,35 @@ function positionModal(modal, highlightEl) {
   const vh = window.innerHeight;
   const gap = 16;
   const mw = MODAL_MAX_WIDTH;
-  let left = Math.max(12, Math.min(rect.left, vw - mw - 12));
-  let top = rect.bottom + gap + HIGHLIGHT_PAD;
+  const headerH = 56;
 
-  if (top + 200 > vh) {
-    top = rect.top - gap - HIGHLIGHT_PAD - 200;
-    if (top < 12) {
-      top = Math.max(12, rect.top);
-      left = rect.right + gap + HIGHLIGHT_PAD;
-      if (left + mw > vw) {
-        left = rect.left - gap - HIGHLIGHT_PAD - mw;
-        if (left < 12) left = 12;
-      }
-    }
+  // Find the "map area" — the space not occupied by quiz/video panels.
+  // Quiz panel is on the right (~30% of vw), video panel on the left when open.
+  const quizPanel = document.getElementById('quiz-panel');
+  const qpLeft = quizPanel ? quizPanel.getBoundingClientRect().left : vw;
+  const videoPanel = document.getElementById('video-panel');
+  const vpRight = (videoPanel && videoPanel.classList.contains('open'))
+    ? videoPanel.getBoundingClientRect().right : 0;
+
+  // Available horizontal band for the modal: between video panel right and quiz panel left
+  const safeLeft = Math.max(12, vpRight + gap);
+  const safeRight = Math.max(safeLeft + mw, qpLeft - gap);
+
+  let left, top;
+
+  // Default: place in the safe map area, horizontally centered
+  left = Math.max(safeLeft, Math.min(safeRight - mw, (safeLeft + safeRight - mw) / 2));
+  if (left + mw > vw - 12) left = vw - mw - 12;
+  if (left < 12) left = 12;
+
+  // Vertically: below header, aligned to highlight top
+  top = Math.max(headerH + gap, rect.top);
+  if (top + 200 > vh - 12) {
+    top = Math.max(headerH + gap, vh - 212);
   }
 
   Object.assign(modal.style, {
-    top: `${Math.max(12, top)}px`,
+    top: `${top}px`,
     left: `${left}px`,
   });
 }

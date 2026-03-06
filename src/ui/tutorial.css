@@ -96,10 +96,7 @@
 @media (max-width: 480px) {
   #tutorial-modal {
     max-width: none !important;
-    border-radius: 12px 12px 0 0 !important;
-    bottom: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    top: auto !important;
   }
 }

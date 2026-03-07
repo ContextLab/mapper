@@ -795,6 +795,8 @@ function removeOverlay() {
   if (overlay) overlay.remove();
   const modal = document.getElementById('tutorial-modal');
   if (modal) modal.remove();
+  const welcome = document.getElementById('tutorial-welcome');
+  if (welcome) welcome.remove();
   const arrow = document.getElementById('tutorial-arrow');
   if (arrow) arrow.remove();
   document.querySelectorAll('.tutorial-highlight').forEach(el =>
@@ -914,7 +916,7 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
     inset: '0',
     zIndex: '9998',
     background: 'transparent',
-    pointerEvents: highlightEl ? 'auto' : 'none',
+    pointerEvents: 'none',
     transition: prefersReducedMotion() ? 'none' : 'opacity 300ms var(--ease-emphasized-decel, ease)',
   });
 
@@ -1245,90 +1247,6 @@ function showToast(msg) {
     toast.style.opacity = '0';
     setTimeout(() => toast.remove(), 350);
   }, 3000);
-}
-
-// ── Welcome prompt ──────────────────────────────────────────────────
-
-function showWelcomePrompt() {
-  const modal = document.createElement('div');
-  modal.id = 'tutorial-welcome';
-
-  const mobile = isMobile();
-  Object.assign(modal.style, {
-    position: 'fixed',
-    zIndex: '10001',
-    background: 'var(--color-bg, #ffffff)',
-    color: 'var(--color-text, #0f172a)',
-    maxWidth: mobile ? '90vw' : '420px',
-    width: mobile ? '90vw' : '420px',
-    padding: '28px 24px',
-    borderRadius: '16px',
-    boxShadow: '0 12px 40px rgba(0,0,0,0.15)',
-    border: '1px solid var(--color-border, rgba(226,232,240,0.8))',
-    fontFamily: 'system-ui, -apple-system, sans-serif',
-    lineHeight: '1.6',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    textAlign: 'center',
-    opacity: '0',
-    transition: prefersReducedMotion() ? 'none' : 'opacity 300ms ease, transform 300ms ease',
-  });
-
-  const title = document.createElement('h2');
-  Object.assign(title.style, {
-    margin: '0 0 12px', fontSize: '1.3em', fontWeight: '700',
-    color: 'var(--color-primary, #00693e)',
-  });
-  title.textContent = 'Welcome to Knowledge Mapper!';
-  modal.appendChild(title);
-
-  const msg = document.createElement('p');
-  Object.assign(msg.style, {
-    margin: '0 0 20px', fontSize: '0.95em',
-    color: 'var(--color-text-muted, #64748b)',
-  });
-  msg.textContent = "Would you like a quick tour of the interface? It only takes a minute.";
-  modal.appendChild(msg);
-
-  const btnContainer = document.createElement('div');
-  Object.assign(btnContainer.style, {
-    display: 'flex', gap: '12px', justifyContent: 'center',
-  });
-
-  const yesBtn = document.createElement('button');
-  Object.assign(yesBtn.style, {
-    background: 'var(--color-primary, #00693e)', color: '#fff', border: 'none',
-    padding: '10px 24px', borderRadius: '8px', fontSize: '0.95em',
-    cursor: 'pointer', fontWeight: '600',
-  });
-  yesBtn.textContent = 'Yes, show me around';
-  yesBtn.addEventListener('click', () => {
-    modal.remove();
-    renderCurrentStep();
-  });
-  btnContainer.appendChild(yesBtn);
-
-  const noBtn = document.createElement('button');
-  Object.assign(noBtn.style, {
-    background: 'transparent', color: 'var(--color-text-muted, #64748b)',
-    border: '1px solid var(--color-border, rgba(226,232,240,0.8))',
-    padding: '10px 24px', borderRadius: '8px', fontSize: '0.95em',
-    cursor: 'pointer', fontWeight: '500',
-  });
-  noBtn.textContent = "No thanks";
-  noBtn.addEventListener('click', () => {
-    modal.remove();
-    dismissTutorial();
-  });
-  btnContainer.appendChild(noBtn);
-
-  modal.appendChild(btnContainer);
-  document.body.appendChild(modal);
-
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => { modal.style.opacity = '1'; });
-  });
 }
 
 // ── Utilities ───────────────────────────────────────────────────────

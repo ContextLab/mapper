@@ -29,7 +29,7 @@ import * as modes from './ui/modes.js';
 import * as insights from './ui/insights.js';
 import * as share from './ui/share.js';
 import { checkMilestone, highlightExpertiseButton, updateProgressDisplay } from './ui/milestones.js';
-import { initTutorial, advanceTutorial, isTutorialActive, resetTutorial, setAnswerFeedback } from './ui/tutorial.js';
+import { initTutorial, advanceTutorial, isTutorialActive, resetTutorial, dismissTutorial, setAnswerFeedback } from './ui/tutorial.js';
 import * as videoModal from './ui/video-modal.js';
 import * as videoLoader from './domain/video-loader.js';
 import * as videoPanel from './ui/video-panel.js';
@@ -767,6 +767,11 @@ function handleSkip() {
   quiz.showSkipFeedback(question);
   announce('Skipped. The correct answer is highlighted.');
 
+  // Reset streak and update progress display
+  consecutiveCorrect = 0;
+  const totalAnswered = $responses.get().length;
+  updateProgressDisplay(totalAnswered, consecutiveCorrect);
+
   // Revert non-auto modes back to auto after skip
   modes.revertToAutoIfNeeded();
 
@@ -792,6 +797,7 @@ function handleSkip() {
 
 function handleReset() {
   if (!confirm('Are you sure? This will clear all progress.')) return;
+  dismissTutorial();
   resetAll();
   currentDomainBundle = null;
   mapInitialized = false;

@@ -209,24 +209,30 @@ function formatDuration(seconds) {
 
 const PANEL_CSS = `
   #video-panel {
-    width: 0;
+    width: var(--sidebar-width);
     min-width: 0;
     background: var(--color-surface);
     box-shadow: 2px 0 24px rgba(0,0,0,0.3), 1px 0 0 var(--color-border);
     z-index: 10;
     display: flex;
     flex-direction: column;
-    padding: 0;
+    padding: 0 1.25rem;
     overflow: hidden;
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-100%);
+    margin-left: calc(-1 * var(--sidebar-width));
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    contain: layout style;
     flex-shrink: 0;
     order: -1;
+    opacity: 0;
   }
   #video-panel.open {
-    width: var(--sidebar-width);
+    transform: translateX(0);
     padding: 1rem 1.25rem;
     overflow-y: auto;
     overflow-x: hidden;
+    opacity: 1;
   }
   #video-panel::-webkit-scrollbar { width: 5px; }
   #video-panel::-webkit-scrollbar-track { background: transparent; }
@@ -265,7 +271,7 @@ const PANEL_CSS = `
     background: var(--color-surface-raised);
     color: var(--color-text-muted);
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
     font-family: var(--font-body);
   }
   .video-panel-marker-toggle:hover {
@@ -317,11 +323,11 @@ const PANEL_CSS = `
     padding: 0.6rem 0.75rem;
     border-radius: 6px;
     cursor: pointer;
-    transition: background 0.15s ease;
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
     border-bottom: 1px solid rgba(148,163,184,0.1);
   }
   .video-panel-item:hover {
-    background: var(--color-surface-raised);
+    background-color: var(--color-surface-raised);
     box-shadow: 0 0 8px var(--color-glow-primary);
   }
   .video-panel-item.watched {
@@ -362,8 +368,9 @@ const PANEL_CSS = `
     align-items: center;
     justify-content: center;
     font-size: 0.75rem;
-    transition: all 0.2s ease;
+    transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 2px 0 8px rgba(0,0,0,0.15);
+    will-change: transform;
   }
   .video-toggle-btn:hover {
     color: var(--color-primary);
@@ -371,12 +378,12 @@ const PANEL_CSS = `
     box-shadow: 2px 0 12px var(--color-glow-primary);
   }
   .video-toggle-btn.panel-open {
-    left: var(--sidebar-width);
+    transform: translateY(-50%) translateX(var(--sidebar-width));
   }
   .video-toggle-btn[hidden] { display: none; }
 
   @media (max-width: 768px) {
-    #video-panel.open { width: 50%; }
+    /* sidebar-width variable handles sizing; transform handles show/hide */
   }
   @media (max-width: 480px) {
     /* Mobile: video panel is a bottom sheet, controlled by index.html styles */

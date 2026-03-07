@@ -425,7 +425,7 @@ export function showLeaderboard(domainKnowledge) {
 }
 
 /**
- * Show suggestions modal — bottom 10 least-known concepts with Khan Academy links.
+ * Show suggestions modal — bottom 50 least-known concepts with Khan Academy links.
  */
 export function showSuggestions(conceptKnowledge) {
   if (!modalEl) return;
@@ -477,14 +477,14 @@ export function showSuggestions(conceptKnowledge) {
   });
   // Fall back to unfiltered if filtering removes too many
   const candidates = filtered.length >= 10 ? filtered : sorted;
-  const top10 = candidates.slice(0, 10);
+  const top50 = candidates.slice(0, 50);
 
   const explainer = '<p class="insights-explainer">'
     + 'Clicking a link below will search <strong>Khan Academy</strong> for related learning content. '
     + 'Suggestions are based on concepts where the system estimates your knowledge is lowest, '
     + 'determined by your responses to nearby questions on the map.'
     + '</p>';
-  bodyEl.innerHTML = explainer + renderList(top10, 'var(--color-incorrect)', true) + CAVEAT_HTML;
+  bodyEl.innerHTML = explainer + renderList(top50, 'var(--color-incorrect)', true) + CAVEAT_HTML;
   modalEl.hidden = false;
 }
 
@@ -545,7 +545,7 @@ function buildDomainList(items, parentNames = new Map()) {
 
 /** Build an HTML string list of concept rankings. */
 function renderList(items, barColor, showLinks) {
-  let html = '<ul class="insights-modal-list">';
+  let html = '<ul class="insights-modal-list" style="max-height:400px;overflow-y:auto;">';
   for (let i = 0; i < items.length; i++) {
     const item = items[i];
     const pct = Math.round(item.knowledge * 100);

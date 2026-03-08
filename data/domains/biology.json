@@ -91,7 +91,8 @@
       "y": 0.107594,
       "domain_ids": [
         "biology"
-      ]
+      ],
+      "source_article": "Biology"
     },
     {
       "id": "dd6595565016d418",
@@ -341,7 +342,8 @@
       "y": 0.172443,
       "domain_ids": [
         "biology"
-      ]
+      ],
+      "source_article": "Homo sapiens"
     },
     {
       "id": "d5b8e88738ace822",
@@ -602,9 +604,9 @@
     },
     {
       "id": "a0090177c49a40ce",
-      "question_text": "Two species compete for identical resources in the same niche. What does the competitive exclusion principle predict?",
+      "question_text": "Two species compete for identical resources in the same niche. According to Gause's principle, what is the predicted long-term outcome?",
       "options": {
-        "A": "Competitive exclusion",
+        "A": "One species will be eliminated from the niche",
         "B": "Character displacement",
         "C": "Stable coexistence",
         "D": "Niche expansion"

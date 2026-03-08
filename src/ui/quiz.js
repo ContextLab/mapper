@@ -1,6 +1,7 @@
 /** Quiz UI for question display, answer input, and feedback. */
 
 import { announce } from '../utils/accessibility.js';
+import { $quizDrawerCollapsed } from '../state/store.js';
 
 // Domains where Khan Academy has good content coverage
 const KHAN_DOMAINS = new Set([
@@ -95,6 +96,7 @@ export function init(container) {
         font-size: 0.85rem;
         color: var(--color-text);
         transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+        will-change: background-color, border-color, box-shadow, color, opacity;
         min-height: 44px;
         display: block;
         width: 100%;
@@ -249,6 +251,47 @@ export function init(container) {
   }
 
   document.addEventListener('keydown', handleKeyDown);
+
+  // ── Mobile drawer pull handle ──
+  const drawerPull = document.createElement('div');
+  drawerPull.className = 'drawer-pull';
+  drawerPull.setAttribute('aria-label', 'Toggle quiz drawer');
+  const pullBar = document.createElement('div');
+  pullBar.className = 'drawer-pull-bar';
+  drawerPull.appendChild(pullBar);
+  // Insert before quiz-content
+  const quizContent = container.querySelector('.quiz-content');
+  container.insertBefore(drawerPull, quizContent);
+
+  // Tap drawer pull to toggle collapsed state
+  drawerPull.addEventListener('click', () => {
+    $quizDrawerCollapsed.set(!$quizDrawerCollapsed.get());
+  });
+
+  // Swipe gesture detection on the quiz panel (mobile only)
+  let touchStartY = 0;
+  container.addEventListener('touchstart', (e) => {
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+  container.addEventListener('touchend', (e) => {
+    const deltaY = e.changedTouches[0].clientY - touchStartY;
+    if (deltaY > 50) {
+      // Swipe down → collapse
+      $quizDrawerCollapsed.set(true);
+    } else if (deltaY < -50 && $quizDrawerCollapsed.get()) {
+      // Swipe up when collapsed → expand
+      $quizDrawerCollapsed.set(false);
+    }
+  }, { passive: true });
+
+  // Subscribe to collapsed atom → toggle CSS class
+  $quizDrawerCollapsed.subscribe((collapsed) => {
+    container.classList.toggle('drawer-collapsed', collapsed);
+    const toggleBtn = document.getElementById('quiz-toggle');
+    if (toggleBtn) {
+      toggleBtn.classList.toggle('drawer-collapsed-toggle', collapsed);
+    }
+  });
 
   const resizeHandle = container.querySelector('.resize-handle');
   if (resizeHandle) {

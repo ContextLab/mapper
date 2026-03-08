@@ -519,12 +519,12 @@
     },
     {
       "id": "1ad79a0561def52e",
-      "question_text": "Reducing problem A to problem B means an efficient solver for B also efficiently solves what?",
+      "question_text": "If problem X can be reduced to problem Y in polynomial time, and Y has an efficient solution, what can be concluded?",
       "options": {
-        "A": "Problem A",
-        "B": "Neither problem",
-        "C": "A harder problem",
-        "D": "Only B"
+        "A": "X can also be solved efficiently",
+        "B": "Neither problem is solvable",
+        "C": "A harder problem arises",
+        "D": "Only Y is solvable"
       },
       "correct_answer": "A",
       "difficulty": 2,

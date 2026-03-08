@@ -12,6 +12,7 @@ import {
   $preVideoSnapshot,
   $runningDifferenceMap,
   $phase,
+  $quizDrawerCollapsed,
 } from './state/store.js';
 import * as registry from './domain/registry.js';
 import { load as loadDomain, loadQuestionsForDomain } from './domain/loader.js';
@@ -467,6 +468,7 @@ async function switchDomain(domainId) {
     particleSystem = null;
   }
 
+  $quizDrawerCollapsed.set(false);
   renderer.abortTransition();
 
   if (!allDomainBundle) return;

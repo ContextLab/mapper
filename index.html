@@ -101,8 +101,6 @@
 
         #app-header {
             background: var(--color-surface);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--color-border);
             box-shadow: 0 1px 12px var(--color-glow-primary);
             padding: 0 1.25rem;
@@ -375,7 +373,7 @@
             padding: 0;
             overflow: hidden;
             transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            will-change: width;
+            will-change: transform;
             contain: layout style;
             flex-shrink: 0;
         }
@@ -445,9 +443,8 @@
             border: 1px solid rgba(0, 105, 62, 0.3);
             border-radius: 8px;
             z-index: 5;
-            backdrop-filter: blur(4px);
             overflow: hidden;
-            transition: opacity 0.3s, box-shadow 0.3s;
+            transition: opacity 0.3s;
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
             margin: 0;
             padding: 0;
@@ -468,7 +465,6 @@
             position: fixed;
             inset: 0;
             background: rgba(0,0,0,0.7);
-            backdrop-filter: blur(4px);
             z-index: 1000;
             display: flex;
             align-items: center;
@@ -531,8 +527,7 @@
         /* Loading modal */
         #loading-modal {
             z-index: 1100;
-            background: rgba(248, 250, 252, 0.85);
-            backdrop-filter: blur(8px);
+            background: rgba(248, 250, 252, 0.92);
         }
         #loading-modal:not([hidden]) { opacity: 1; pointer-events: auto; }
         .loading-modal-card {
@@ -728,6 +723,38 @@
             /* Compact quiz text on mobile */
             #quiz-panel .quiz-question { font-size: 0.9rem; line-height: 1.35; }
             #quiz-panel .quiz-option { padding: 0.5rem 0.75rem; font-size: 0.85rem; min-height: 44px; }
+
+            /* ── Drawer pull handle (mobile only) ── */
+            .drawer-pull {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 32px;
+                cursor: pointer;
+                flex-shrink: 0;
+                touch-action: none;
+            }
+            .drawer-pull-bar {
+                width: 40px;
+                height: 4px;
+                border-radius: 2px;
+                background: var(--color-text-muted);
+                opacity: 0.5;
+            }
+
+            /* ── Collapsed drawer state ── */
+            #quiz-panel.open.drawer-collapsed {
+                height: 32px !important;
+                padding: 0 !important;
+                overflow: hidden;
+            }
+            #quiz-panel.open.drawer-collapsed .quiz-content {
+                display: none;
+            }
+            /* Move toggle button down when drawer is collapsed */
+            .quiz-toggle-btn.panel-open.drawer-collapsed-toggle {
+                bottom: 32px;
+            }
 
             /* ── Quiz toggle: centered bottom tab ── */
             .quiz-toggle-btn {

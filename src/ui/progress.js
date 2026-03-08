@@ -71,9 +71,11 @@ export function initConfidence(container) {
   confidenceFill = document.createElement('div');
   Object.assign(confidenceFill.style, {
     height: '100%',
-    width: '0%',
+    width: '100%',
     background: '#00693e',
-    transition: 'width 0.3s ease'
+    transition: 'transform 0.3s ease',
+    transform: 'scaleX(0)',
+    transformOrigin: 'left'
   });
 
   track.appendChild(confidenceFill);
@@ -89,6 +91,6 @@ export function updateConfidence(coverage) {
   // Guard against NaN from GP numerical instability
   const safeCoverage = isFinite(coverage) ? coverage : 0;
   const pct = Math.min(100, Math.max(0, safeCoverage * 100));
-  confidenceFill.style.width = `${pct}%`;
+  confidenceFill.style.transform = `scaleX(${pct / 100})`;
   confidenceText.textContent = `Domain mapped: ${Math.round(pct)}%`;
 }

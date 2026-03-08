@@ -219,7 +219,7 @@ const PANEL_CSS = `
     padding: 0;
     overflow: hidden;
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: width;
+    will-change: transform;
     contain: layout style;
     flex-shrink: 0;
     order: -1;

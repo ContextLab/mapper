@@ -8,7 +8,7 @@
       "x_min": 0.048076,
       "x_max": 0.867762,
       "y_min": 0.090858,
-      "y_max": 1.0
+      "y_max": 1
     },
     "grid_size": 70
   },
@@ -70,7 +70,8 @@
       "y": 0.955311,
       "domain_ids": [
         "astrophysics"
-      ]
+      ],
+      "source_article": "Hertzsprung–Russell diagram"
     },
     {
       "id": "9dc410268e2d0749",
@@ -171,7 +172,8 @@
       "y": 0.93472,
       "domain_ids": [
         "astrophysics"
-      ]
+      ],
+      "source_article": "Big Bang"
     },
     {
       "id": "12efb35c55a8abaa",
@@ -1049,7 +1051,8 @@
       "y": 0.886419,
       "domain_ids": [
         "astrophysics"
-      ]
+      ],
+      "source_article": "Photon"
     }
   ],
   "labels": [

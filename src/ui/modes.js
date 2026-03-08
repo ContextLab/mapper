@@ -47,7 +47,7 @@ export function init(container) {
         font-size: 0.75rem;
         font-family: var(--font-body);
         color: var(--color-text-muted);
-        transition: all 0.15s ease;
+        transition: border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
         white-space: nowrap;
         position: relative;
       }
@@ -156,7 +156,7 @@ export function init(container) {
         font-size: 0.75rem;
         font-family: var(--font-body);
         color: #b8860b;
-        transition: all 0.15s ease;
+        transition: border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
         white-space: nowrap;
       }
       .skip-btn:hover {

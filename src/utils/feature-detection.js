@@ -87,11 +87,10 @@
     const content = document.createElement('div');
     content.style.cssText = `
       max-width: 600px;
-      background: rgba(30, 41, 59, 0.8);
+      background: rgba(30, 41, 59, 0.92);
       border: 1px solid rgba(51, 65, 85, 0.6);
       border-radius: 12px;
       padding: 3rem 2rem;
-      backdrop-filter: blur(10px);
     `;
 
     const heading = document.createElement('h1');
@@ -193,7 +192,7 @@
       font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
       box-shadow: 0 4px 12px rgba(0, 105, 62, 0.3);
     `;
     button.textContent = 'Try Anyway (May Not Work)';

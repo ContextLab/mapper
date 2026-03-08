@@ -85,7 +85,9 @@ export function init() {
         display: block;
         height: 100%;
         border-radius: 3px;
-        transition: width 0.3s ease;
+        transition: transform 0.3s ease;
+        transform-origin: left;
+        width: 100%;
       }
       .insights-empty-msg {
         color: var(--color-text-muted);
@@ -529,7 +531,7 @@ function buildDomainList(items, parentNames = new Map()) {
     barOuter.className = 'insights-bar-mini';
     const barFill = document.createElement('span');
     barFill.className = 'insights-bar-fill-mini';
-    barFill.style.width = `${noData ? 0 : pct}%`;
+    barFill.style.transform = `scaleX(${noData ? 0 : pct / 100})`;
     barFill.style.background = barColor;
     barOuter.appendChild(barFill);
 

@@ -264,7 +264,7 @@ function showListView() {
     barSpan.className = 'video-gain-bar';
     const fillSpan = document.createElement('span');
     fillSpan.className = 'video-gain-fill';
-    fillSpan.style.width = `${pct}%`;
+    fillSpan.style.transform = `scaleX(${pct / 100})`;
     barSpan.appendChild(fillSpan);
     gainSpan.appendChild(barSpan);
 
@@ -629,7 +629,9 @@ const MODAL_CSS = `
     display: block;
     height: 100%;
     border-radius: 3px;
-    transition: width 0.3s ease;
+    transition: transform 0.3s ease;
+    transform-origin: left;
+    width: 100%;
   }
 
   .gain-high .video-gain-fill { background: var(--color-correct); }
@@ -689,7 +691,7 @@ const MODAL_CSS = `
     cursor: pointer;
     font-size: 0.8rem;
     font-family: var(--font-body);
-    transition: all 0.15s ease;
+    transition: border-color 0.15s ease, color 0.15s ease;
   }
   .video-back-btn:hover {
     border-color: var(--color-primary);
@@ -753,7 +755,7 @@ const MODAL_CSS = `
     cursor: pointer;
     font-size: 0.75rem;
     font-family: var(--font-body);
-    transition: all 0.15s ease;
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
     min-width: unset;
     min-height: unset;
   }

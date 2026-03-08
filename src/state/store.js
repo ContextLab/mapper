@@ -54,6 +54,9 @@ export const $transitionState = atom('idle');
 /** Current question mode */
 export const $questionMode = atom('auto');
 
+/** Whether the quiz drawer is collapsed on mobile (showing only pull handle) */
+export const $quizDrawerCollapsed = atom(false);
+
 // === Computed atoms ===
 
 /** Set of answered question IDs (derived from $responses) */

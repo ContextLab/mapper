@@ -214,7 +214,10 @@
       "correct_answer": "B",
       "difficulty": 1,
       "x": 0.501686,
-      "y": 0.833011
+      "y": 0.833011,
+      "domain_ids": [
+        "quantum-physics"
+      ]
     },
     {
       "id": "02e3943480bd85e8",
@@ -270,7 +273,10 @@
       "correct_answer": "A",
       "difficulty": 1,
       "x": 0.555835,
-      "y": 0.842513
+      "y": 0.842513,
+      "domain_ids": [
+        "quantum-physics"
+      ]
     },
     {
       "id": "f6c28cf26b525dd4",
@@ -697,7 +703,7 @@
       "question_text": "In quantum teleportation, Alice sends Bob 2 classical bits. What does Bob do with them?",
       "options": {
         "A": "Measures four bases",
-        "B": "Applies four unitaries",
+        "B": "Applies one of four unitaries",
         "C": "Corrects Alice's qubit",
         "D": "Applies two unitaries"
       },
@@ -855,7 +861,10 @@
       "difficulty": 4,
       "source_article": "Asymptotic_freedom",
       "x": 0.596057,
-      "y": 0.913762
+      "y": 0.913762,
+      "domain_ids": [
+        "quantum-physics"
+      ]
     },
     {
       "id": "934366dfd67bbadf",

@@ -193,7 +193,10 @@
       "correct_answer": "A",
       "difficulty": 1,
       "x": 0.530254,
-      "y": 0.306783
+      "y": 0.306783,
+      "domain_ids": [
+        "clinical-psychology"
+      ]
     },
     {
       "id": "dbb0400ae337d5ae",
@@ -585,7 +588,10 @@
       "correct_answer": "D",
       "difficulty": 3,
       "x": 0.585072,
-      "y": 0.289008
+      "y": 0.289008,
+      "domain_ids": [
+        "clinical-psychology"
+      ]
     },
     {
       "id": "d25bead0744d216f",
@@ -767,7 +773,10 @@
       "correct_answer": "A",
       "difficulty": 3,
       "x": 0.534353,
-      "y": 0.493093
+      "y": 0.493093,
+      "domain_ids": [
+        "clinical-psychology"
+      ]
     },
     {
       "id": "7c597d1f837fd4d3",
@@ -949,7 +958,10 @@
       "correct_answer": "B",
       "difficulty": 4,
       "x": 0.56449,
-      "y": 0.439058
+      "y": 0.439058,
+      "domain_ids": [
+        "clinical-psychology"
+      ]
     },
     {
       "id": "4093ac271e763688",
@@ -984,7 +996,10 @@
       "correct_answer": "D",
       "difficulty": 4,
       "x": 0.68328,
-      "y": 0.298258
+      "y": 0.298258,
+      "domain_ids": [
+        "clinical-psychology"
+      ]
     },
     {
       "id": "f72c3e6aa19e1ab3",

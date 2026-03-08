@@ -25,7 +25,10 @@
       "correct_answer": "A",
       "difficulty": 1,
       "x": 0.8107,
-      "y": 0.426714
+      "y": 0.426714,
+      "domain_ids": [
+        "semantics"
+      ]
     },
     {
       "id": "0a937d45bd1cd730",
@@ -333,7 +336,10 @@
       "correct_answer": "D",
       "difficulty": 2,
       "x": 0.905445,
-      "y": 0.366671
+      "y": 0.366671,
+      "domain_ids": [
+        "semantics"
+      ]
     },
     {
       "id": "66371b8485d70208",

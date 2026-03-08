@@ -102,6 +102,7 @@
         #app-header {
             background: var(--color-surface);
             backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--color-border);
             box-shadow: 0 1px 12px var(--color-glow-primary);
             padding: 0 1.25rem;
@@ -134,7 +135,7 @@
             color: var(--color-text-muted);
             cursor: pointer;
             font-size: 0.95rem;
-            transition: all 0.2s ease;
+            transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
         }
         .btn-icon:hover:not(:disabled) {
             color: var(--color-primary);
@@ -373,7 +374,9 @@
             flex-direction: column;
             padding: 0;
             overflow: hidden;
-            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: width;
+            contain: layout style;
             flex-shrink: 0;
         }
         #quiz-panel.open {
@@ -400,7 +403,7 @@
             align-items: center;
             justify-content: center;
             font-size: 0.75rem;
-            transition: all 0.2s ease, background-color 0.4s ease;
+            transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.4s ease, right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: -2px 0 8px rgba(0,0,0,0.15);
         }
         .quiz-toggle-btn:hover {
@@ -515,7 +518,7 @@
             color: var(--color-text-muted);
             cursor: pointer;
             font-size: 1rem;
-            transition: all 0.2s ease;
+            transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
             z-index: 1;
             padding: 0;
         }
@@ -711,7 +714,7 @@
                 flex-direction: column;
             }
             #quiz-panel.open {
-                width: 100% !important; height: 50vh;
+                width: 100% !important; height: 55vh;
                 padding: 0.75rem 1rem;
                 overflow: hidden; /* Panel itself doesn't scroll; .quiz-content does */
             }
@@ -720,10 +723,11 @@
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
                 min-height: 0; /* Allow flex child to shrink below content size */
+                padding-bottom: 12px;
             }
             /* Compact quiz text on mobile */
             #quiz-panel .quiz-question { font-size: 0.9rem; line-height: 1.35; }
-            #quiz-panel .quiz-option { padding: 0.5rem 0.75rem; font-size: 0.85rem; min-height: 40px; }
+            #quiz-panel .quiz-option { padding: 0.5rem 0.75rem; font-size: 0.85rem; min-height: 44px; }
 
             /* ── Quiz toggle: centered bottom tab ── */
             .quiz-toggle-btn {
@@ -745,7 +749,7 @@
             /* Override JS icon swap: force chevron-right to also point up when closed */
             .quiz-toggle-btn:not(.panel-open) i.fa-chevron-right { transform: rotate(-90deg); }
             /* Arrow points DOWN when open (pull down to close) */
-            .quiz-toggle-btn.panel-open { bottom: 50vh; right: 50%; background: var(--color-surface); color: var(--color-text-muted); }
+            .quiz-toggle-btn.panel-open { bottom: 55vh; right: 50%; background: var(--color-surface); color: var(--color-text-muted); }
             .quiz-toggle-btn.panel-open i.fa-chevron-right { transform: rotate(90deg); }
             .quiz-toggle-btn.panel-open i.fa-chevron-left { transform: rotate(-90deg); }
 
@@ -977,6 +981,13 @@
                 Randomly clicking through questions without thinking will generate estimates
                 that aren&rsquo;t useful or meaningful.
             </p>
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--color-border);">
+                <img src="src/img/nsf.png" alt="NSF logo" style="width: 40px; height: 40px; flex-shrink: 0;">
+                <p style="font-size: 0.75rem; color: var(--color-text-muted); margin: 0; line-height: 1.5;">
+                    This work was supported by NSF award number
+                    <a href="https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2145172" target="_blank" rel="noopener">2145172</a>.
+                </p>
+            </div>
         </div>
     </div>
 

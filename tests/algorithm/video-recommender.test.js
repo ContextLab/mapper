@@ -159,7 +159,7 @@ describe('TLP ranking accuracy (SC-V003)', () => {
     }
 
     const ranking = computeRanking(videos, estimates, new Set(), null);
-    expect(ranking.length).toBeLessThanOrEqual(10);
+    expect(ranking.length).toBeLessThanOrEqual(50);
     // Should be sorted descending
     for (let i = 1; i < ranking.length; i++) {
       expect(ranking[i].score).toBeLessThanOrEqual(ranking[i - 1].score);

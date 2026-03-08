@@ -6,7 +6,7 @@ const BASE = 'http://localhost:5173';
 async function selectDomain(page) {
   // Wait for app JS to initialize, then click start button to enter the map
   const startBtn = page.locator('#landing-start-btn');
-  await page.waitForSelector('#landing-start-btn[data-ready]', { timeout: 15000 });
+  await page.waitForSelector('#landing-start-btn[data-ready]:not([disabled])', { timeout: 15000 });
   await startBtn.click();
 
   // Wait for the map/quiz to load

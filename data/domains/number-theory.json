@@ -25,7 +25,10 @@
       "correct_answer": "A",
       "difficulty": 1,
       "x": 0.871661,
-      "y": 0.875852
+      "y": 0.875852,
+      "domain_ids": [
+        "number-theory"
+      ]
     },
     {
       "id": "6d3b0b0cc538d710",
@@ -62,7 +65,10 @@
       "correct_answer": "C",
       "difficulty": 1,
       "x": 0.873708,
-      "y": 0.888894
+      "y": 0.888894,
+      "domain_ids": [
+        "number-theory"
+      ]
     },
     {
       "id": "de04d051869ea362",
@@ -76,7 +82,10 @@
       "correct_answer": "D",
       "difficulty": 1,
       "x": 0.875674,
-      "y": 0.889983
+      "y": 0.889983,
+      "domain_ids": [
+        "number-theory"
+      ]
     },
     {
       "id": "086ef6614b498d57",
@@ -90,7 +99,10 @@
       "correct_answer": "A",
       "difficulty": 1,
       "x": 0.87583,
-      "y": 0.898167
+      "y": 0.898167,
+      "domain_ids": [
+        "number-theory"
+      ]
     },
     {
       "id": "6562ffc666e50374",
@@ -104,7 +116,10 @@
       "correct_answer": "B",
       "difficulty": 1,
       "x": 0.869418,
-      "y": 0.886594
+      "y": 0.886594,
+      "domain_ids": [
+        "number-theory"
+      ]
     },
     {
       "id": "07fac799f4d61363",
@@ -142,7 +157,10 @@
       "correct_answer": "D",
       "difficulty": 1,
       "x": 0.870858,
-      "y": 0.883947
+      "y": 0.883947,
+      "domain_ids": [
+        "number-theory"
+      ]
     },
     {
       "id": "b8f0fe2c501af4a3",
@@ -156,7 +174,10 @@
       "correct_answer": "A",
       "difficulty": 1,
       "x": 0.865956,
-      "y": 0.889998
+      "y": 0.889998,
+      "domain_ids": [
+        "number-theory"
+      ]
     },
     {
       "id": "344f518eea293a28",
@@ -170,7 +191,10 @@
       "correct_answer": "B",
       "difficulty": 1,
       "x": 0.870523,
-      "y": 0.886234
+      "y": 0.886234,
+      "domain_ids": [
+        "number-theory"
+      ]
     },
     {
       "id": "c8f1399b5efbb637",
@@ -184,7 +208,10 @@
       "correct_answer": "C",
       "difficulty": 1,
       "x": 0.882508,
-      "y": 0.903854
+      "y": 0.903854,
+      "domain_ids": [
+        "number-theory"
+      ]
     },
     {
       "id": "8fb1d19e334ff52e",
@@ -244,7 +271,10 @@
       "correct_answer": "B",
       "difficulty": 2,
       "x": 0.867274,
-      "y": 0.888165
+      "y": 0.888165,
+      "domain_ids": [
+        "number-theory"
+      ]
     },
     {
       "id": "e94944b9ed650753",
@@ -258,7 +288,10 @@
       "correct_answer": "C",
       "difficulty": 2,
       "x": 0.874526,
-      "y": 0.88321
+      "y": 0.88321,
+      "domain_ids": [
+        "number-theory"
+      ]
     },
     {
       "id": "923ce9e41bbbdad0",
@@ -446,7 +479,10 @@
       "correct_answer": "D",
       "difficulty": 2,
       "x": 0.854355,
-      "y": 0.894385
+      "y": 0.894385,
+      "domain_ids": [
+        "number-theory"
+      ]
     },
     {
       "id": "875eb413a06cb00d",
@@ -506,7 +542,10 @@
       "correct_answer": "C",
       "difficulty": 3,
       "x": 0.868164,
-      "y": 0.888963
+      "y": 0.888963,
+      "domain_ids": [
+        "number-theory"
+      ]
     },
     {
       "id": "a1d05f22ee572816",
@@ -635,7 +674,10 @@
       "correct_answer": "A",
       "difficulty": 3,
       "x": 0.870481,
-      "y": 0.904402
+      "y": 0.904402,
+      "domain_ids": [
+        "number-theory"
+      ]
     },
     {
       "id": "956f802f45de5ce0",
@@ -863,7 +905,10 @@
       "correct_answer": "C",
       "difficulty": 4,
       "x": 0.823796,
-      "y": 0.90126
+      "y": 0.90126,
+      "domain_ids": [
+        "number-theory"
+      ]
     },
     {
       "id": "6bd4cec7ad77d128",

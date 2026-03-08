@@ -25,7 +25,10 @@
       "correct_answer": "A",
       "difficulty": 1,
       "x": 0.837467,
-      "y": 0.870046
+      "y": 0.870046,
+      "domain_ids": [
+        "linear-algebra"
+      ]
     },
     {
       "id": "88018fa7d1c4e9c6",
@@ -39,7 +42,10 @@
       "correct_answer": "B",
       "difficulty": 1,
       "x": 0.838338,
-      "y": 0.85961
+      "y": 0.85961,
+      "domain_ids": [
+        "linear-algebra"
+      ]
     },
     {
       "id": "f676e47449aa1911",
@@ -53,7 +59,10 @@
       "correct_answer": "C",
       "difficulty": 1,
       "x": 0.834311,
-      "y": 0.848288
+      "y": 0.848288,
+      "domain_ids": [
+        "linear-algebra"
+      ]
     },
     {
       "id": "9c7be30ad9ef90b4",
@@ -67,7 +76,10 @@
       "correct_answer": "D",
       "difficulty": 1,
       "x": 0.7794,
-      "y": 0.815502
+      "y": 0.815502,
+      "domain_ids": [
+        "linear-algebra"
+      ]
     },
     {
       "id": "5f79f5c94e50ce7f",
@@ -102,7 +114,10 @@
       "correct_answer": "B",
       "difficulty": 1,
       "x": 0.790082,
-      "y": 0.8473
+      "y": 0.8473,
+      "domain_ids": [
+        "linear-algebra"
+      ]
     },
     {
       "id": "86b99c156a574778",
@@ -201,10 +216,10 @@
       "id": "e275928e36625ab8",
       "question_text": "How is the 2-norm condition number $\\kappa_2(A)$ computed from singular values?",
       "options": {
-        "A": "$\\sigma_{\\max} - \\sigma_{\\min}$",
-        "B": "$\\sigma_{\\max}^2 / \\sigma_{\\min}^2$",
-        "C": "$\\sigma_{\\max} / \\sigma_{\\min}$",
-        "D": "$\\sigma_{\\max} \\cdot \\sigma_{\\min}$"
+        "A": "$\\sigma_{\\text{max}} - \\sigma_{\\text{min}}$",
+        "B": "$\\sigma_{\\text{max}}^2 / \\sigma_{\\text{min}}^2$",
+        "C": "$\\sigma_{\\text{max}} / \\sigma_{\\text{min}}$",
+        "D": "$\\sigma_{\\text{max}} \\cdot \\sigma_{\\text{min}}$"
       },
       "correct_answer": "C",
       "difficulty": 4,
@@ -226,9 +241,9 @@
       "question_text": "What triple does Sylvester's law of inertia say congruence transformations preserve for a real symmetric matrix?",
       "options": {
         "A": "$(\\det, \\operatorname{tr}, \\operatorname{rank})$",
-        "B": "$(\\sigma_{\\max}, \\sigma_{\\min}, \\operatorname{rank})$",
+        "B": "$(\\sigma_{\\text{max}}, \\sigma_{\\text{min}}, \\operatorname{rank})$",
         "C": "Eigenvalue multiset",
-        "D": "$(n_+, n_-, n_0)$"
+        "D": "$(n_{+}, n_{-}, n_{0})$"
       },
       "correct_answer": "D",
       "difficulty": 4,
@@ -419,7 +434,10 @@
       "correct_answer": "D",
       "difficulty": 1,
       "x": 0.777762,
-      "y": 0.845496
+      "y": 0.845496,
+      "domain_ids": [
+        "linear-algebra"
+      ]
     },
     {
       "id": "86344e125578e1fd",
@@ -596,7 +614,10 @@
       "correct_answer": "D",
       "difficulty": 2,
       "x": 0.771939,
-      "y": 0.85171
+      "y": 0.85171,
+      "domain_ids": [
+        "linear-algebra"
+      ]
     },
     {
       "id": "b1f7b6d24f0309d8",
@@ -766,7 +787,10 @@
       "correct_answer": "D",
       "difficulty": 2,
       "x": 0.760528,
-      "y": 0.85937
+      "y": 0.85937,
+      "domain_ids": [
+        "linear-algebra"
+      ]
     },
     {
       "id": "5441d46fac039205",
@@ -780,7 +804,10 @@
       "correct_answer": "A",
       "difficulty": 2,
       "x": 0.776708,
-      "y": 0.858352
+      "y": 0.858352,
+      "domain_ids": [
+        "linear-algebra"
+      ]
     },
     {
       "id": "3cf31d63ae773fa2",
@@ -965,7 +992,10 @@
       "correct_answer": "B",
       "difficulty": 4,
       "x": 0.791685,
-      "y": 0.880061
+      "y": 0.880061,
+      "domain_ids": [
+        "linear-algebra"
+      ]
     },
     {
       "id": "19f459957d6c1bbc",

@@ -25,7 +25,10 @@
       "correct_answer": "A",
       "difficulty": 1,
       "x": 0.418292,
-      "y": 0.087621
+      "y": 0.087621,
+      "domain_ids": [
+        "genetics"
+      ]
     },
     {
       "id": "fe2b008b080f91e9",
@@ -102,7 +105,10 @@
       "correct_answer": "A",
       "difficulty": 1,
       "x": 0.418965,
-      "y": 0.124091
+      "y": 0.124091,
+      "domain_ids": [
+        "genetics"
+      ]
     },
     {
       "id": "57a2c7973777c816",
@@ -116,7 +122,10 @@
       "correct_answer": "B",
       "difficulty": 1,
       "x": 0.454211,
-      "y": 0.128265
+      "y": 0.128265,
+      "domain_ids": [
+        "genetics"
+      ]
     },
     {
       "id": "e81678bb7a731a8d",
@@ -151,7 +160,10 @@
       "correct_answer": "D",
       "difficulty": 1,
       "x": 0.449137,
-      "y": 0.116651
+      "y": 0.116651,
+      "domain_ids": [
+        "genetics"
+      ]
     },
     {
       "id": "0d1a4ddf236854ae",
@@ -564,7 +576,10 @@
       "correct_answer": "D",
       "difficulty": 3,
       "x": 0.505039,
-      "y": 0.084507
+      "y": 0.084507,
+      "domain_ids": [
+        "genetics"
+      ]
     },
     {
       "id": "39e3aa7da4defb8b",

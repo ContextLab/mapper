@@ -1,7 +1,6 @@
 // Tutorial mode — state machine, modal rendering, step logic
 
 const STORAGE_KEY = 'mapper-tutorial';
-const HIGHLIGHT_PAD = 8;
 const MODAL_MAX_WIDTH = 380;
 const MOBILE_BP = 480;
 const HIGHLIGHT_REFRESH_MS = 200;
@@ -41,9 +40,9 @@ const STEPS = [
     advanceOn: 'click',
   },
   {
-    id: 3, title: 'Video Recommendations', subSteps: [
+    id: 3, title: 'Videos in View', subSteps: [
       {
-        title: 'Video Recommendations',
+        title: 'Videos in View',
         highlight: '#video-panel, #video-toggle',
         arrowTarget: '#video-toggle',
         arrowSide: 'above',
@@ -53,7 +52,7 @@ const STEPS = [
         advanceOn: 'click',
       },
       {
-        title: 'Video Recommendations',
+        title: 'Videos in View',
         highlight: '#video-panel, #video-toggle',
         skipOnMobile: true,
         message: 'Hover over any video in the list to see its *trajectory*: the "path" of concepts it touches on from moment to moment. Click on any video to watch it!',
@@ -115,7 +114,7 @@ const STEPS = [
     id: 8, title: 'Your Expertise',
     highlight: '#trophy-btn',
     skipOnMobile: true,
-    message: "Now that you've answered a few questions, our system has started to understand your knowledge map's peaks and valleys. You can click this button to view a ranked list of your strongest areas. Try it out!",
+    message: "As you answer questions, the system builds a picture of your knowledge. Click this button to see how your answers are shaping up so far. Keep in mind, it gets more accurate with more questions!",
     advanceOn: 'expertise-click',
     removeOverlayOnAction: true,
     followUp: { dynamicMessage: true, advanceOn: 'click' },
@@ -125,7 +124,7 @@ const STEPS = [
     highlight: '#suggest-btn',
     skipOnMobile: true,
     onEnter: 'closeModals',
-    message: 'Click this button to see a list of Khan Academy videos that will help you efficiently fill in gaps in your knowledge that our system has identified.',
+    message: 'Click this button to see recommended Khan Academy videos based on your answers so far. These suggestions will become more targeted as you answer more questions!',
     advanceOn: 'suggest-click',
     removeOverlayOnAction: true,
     followUp: { message: 'Click on any video to watch it!', advanceOn: 'click' },
@@ -140,7 +139,30 @@ const STEPS = [
     followUp: { message: 'You can share on LinkedIn, X, or Bluesky. You can also download an image of your map to show it off!', advanceOn: 'click' },
   },
   {
-    id: 11, title: 'Tutorial Complete!',
+    id: 11, title: 'Question Modes',
+    highlight: '.modes-wrapper',
+    skipOnMobile: true,
+    onEnter: 'closeModals,openQuiz',
+    message: 'These buttons let you control the difficulty of your questions. "Give me an easy one" picks questions the system thinks you\'ll get right. "Challenge me" picks harder ones. "Test my weak spots" focuses on areas where your knowledge seems weakest.',
+    advanceOn: 'click',
+  },
+  {
+    id: 12, title: 'Save & Load Progress',
+    highlight: '.header-left',
+    skipOnMobile: true,
+    onEnter: 'closeModals',
+    message: 'Use these buttons to export your progress (download a file), import previously saved progress, or reset and start fresh.',
+    advanceOn: 'click',
+  },
+  {
+    id: 13, title: 'Learn More',
+    highlight: '#about-btn',
+    onEnter: 'closeModals',
+    message: 'Want to learn more about how Knowledge Mapper works? Click the "About" button to read about the technique, view the research paper, and explore the methodology behind the system.',
+    advanceOn: 'click',
+  },
+  {
+    id: 14, title: 'Tutorial Complete!',
     advanceOn: 'click',
     onEnter: 'closeModals',
     isCompletion: true,
@@ -209,7 +231,15 @@ export function initTutorial(appState = {}) {
   _questionsAnsweredInStep = 0;
   _inFollowUp = false;
   saveState();
-  renderCurrentStep();
+
+  // Returning users skip the tutorial entirely
+  if (state.returningUser) {
+    dismissTutorial();
+    return;
+  }
+
+  // Show welcome prompt instead of immediately starting tutorial
+  showWelcomePrompt();
 }
 
 export function advanceTutorial(event) {
@@ -431,6 +461,103 @@ function isMobile() {
   return typeof window !== 'undefined' && window.innerWidth <= MOBILE_BP;
 }
 
+// ── Welcome prompt ──────────────────────────────────────────────────
+
+function showWelcomePrompt() {
+  removeOverlay();
+
+  const modal = document.createElement('div');
+  modal.id = 'tutorial-welcome';
+
+  const mobile = isMobile();
+  Object.assign(modal.style, {
+    position: 'fixed',
+    zIndex: '9999',
+    background: 'var(--color-bg, #ffffff)',
+    color: 'var(--color-text, #0f172a)',
+    maxWidth: mobile ? 'none' : `${MODAL_MAX_WIDTH}px`,
+    width: mobile ? 'auto' : `${MODAL_MAX_WIDTH}px`,
+    padding: '24px',
+    borderRadius: mobile ? '12px 12px 0 0' : '12px',
+    boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
+    border: '1px solid var(--color-border, rgba(226,232,240,0.8))',
+    fontFamily: 'system-ui, -apple-system, sans-serif',
+    lineHeight: '1.5',
+    textAlign: 'center',
+    opacity: '0',
+    transition: prefersReducedMotion() ? 'none' : 'opacity 300ms ease',
+  });
+
+  if (mobile) {
+    Object.assign(modal.style, { bottom: '0', left: '0', right: '0' });
+  } else {
+    Object.assign(modal.style, {
+      top: '50%', left: '50%',
+      transform: 'translate(-50%, -50%)',
+    });
+  }
+
+  const title = document.createElement('div');
+  Object.assign(title.style, {
+    fontWeight: '700', fontSize: '1.2em',
+    color: 'var(--color-primary, #00693e)',
+    marginBottom: '12px',
+  });
+  title.textContent = 'Welcome to Knowledge Mapper!';
+  modal.appendChild(title);
+
+  const msg = document.createElement('p');
+  Object.assign(msg.style, {
+    fontSize: '0.95em',
+    color: 'var(--color-text-muted, #64748b)',
+    margin: '0 0 20px 0',
+  });
+  msg.textContent = 'Would you like a quick tour of the interface? It only takes a minute.';
+  modal.appendChild(msg);
+
+  const btnRow = document.createElement('div');
+  Object.assign(btnRow.style, {
+    display: 'flex', flexDirection: 'column', gap: '10px', alignItems: 'center',
+  });
+
+  const yesBtn = document.createElement('button');
+  Object.assign(yesBtn.style, {
+    background: 'var(--color-primary, #00693e)', color: '#fff', border: 'none',
+    padding: '10px 24px', borderRadius: '8px', fontSize: '0.95em', cursor: 'pointer',
+    fontWeight: '600', width: '100%',
+  });
+  yesBtn.textContent = 'Yes, show me around';
+  yesBtn.addEventListener('click', () => {
+    modal.remove();
+    renderCurrentStep();
+  });
+  btnRow.appendChild(yesBtn);
+
+  const noBtn = document.createElement('button');
+  Object.assign(noBtn.style, {
+    background: 'transparent',
+    color: 'var(--color-text-muted, #64748b)',
+    border: '1px solid var(--color-border, rgba(226,232,240,0.8))',
+    padding: '10px 24px', borderRadius: '8px', fontSize: '0.95em', cursor: 'pointer',
+    fontWeight: '500', width: '100%',
+  });
+  noBtn.textContent = "No thanks, I'll explore on my own";
+  noBtn.addEventListener('click', () => {
+    modal.remove();
+    dismissTutorial();
+  });
+  btnRow.appendChild(noBtn);
+
+  modal.appendChild(btnRow);
+  document.body.appendChild(modal);
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      modal.style.opacity = '1';
+    });
+  });
+}
+
 // ── Rendering ───────────────────────────────────────────────────────
 
 function renderCurrentStep() {
@@ -502,12 +629,9 @@ function buildDynamicFollowUp(stepDef) {
     const items = document.querySelectorAll('#insights-modal-body .insights-concept');
     const areas = Array.from(items).slice(0, 3).map(el => el.textContent?.trim()).filter(Boolean);
     if (areas.length >= 3) {
-      // Find the parent domain of the top sub-domain via the insights data attribute or DOM
-      const firstLi = document.querySelector('#insights-modal-body li');
-      const parentDomain = firstLi?.dataset?.parentName || areas[0];
-      return `Nice! It looks like your top areas are ${areas[0]}, ${areas[1]}, and ${areas[2]}. You must be pretty good at ${parentDomain}!`;
+      return `Based on your answers so far, your strongest areas appear to be ${areas[0]}, ${areas[1]}, and ${areas[2]}. Keep answering questions for a more complete picture of your knowledge!`;
     }
-    return 'Nice! Keep answering questions to build up your expertise rankings!';
+    return 'Keep answering questions to see your knowledge profile take shape!';
   }
   return '';
 }
@@ -633,15 +757,9 @@ function startHighlightRefresh() {
   if (!_currentHighlightSelector) return;
 
   _highlightInterval = setInterval(() => {
-    const overlay = document.getElementById('tutorial-overlay');
-    if (!overlay || !_currentHighlightSelector) { stopHighlightRefresh(); return; }
+    if (!_currentHighlightSelector) { stopHighlightRefresh(); return; }
 
-    const highlightEl = queryFirst(_currentHighlightSelector);
-    if (highlightEl) {
-      updateClipPath(overlay, highlightEl);
-    }
-
-    // Also reposition arrow (panels may animate after onEnter)
+    // Reposition arrow (panels may animate after onEnter)
     const arrowEl = document.getElementById('tutorial-arrow');
     if (arrowEl && arrowEl._targetSelector) {
       const target = queryFirst(arrowEl._targetSelector);
@@ -659,33 +777,14 @@ function stopHighlightRefresh() {
 }
 
 function _onResizeHighlight() {
-  const overlay = document.getElementById('tutorial-overlay');
-  if (!overlay || !_currentHighlightSelector) return;
-  const highlightEl = queryFirst(_currentHighlightSelector);
-  if (highlightEl) updateClipPath(overlay, highlightEl);
+  if (!_currentHighlightSelector) return;
 
-  // Also reposition arrow
+  // Reposition arrow
   const arrowEl = document.getElementById('tutorial-arrow');
   if (arrowEl && arrowEl._targetSelector) {
     const target = queryFirst(arrowEl._targetSelector);
     if (target) repositionArrow(arrowEl, target, arrowEl._side);
   }
-}
-
-function updateClipPath(overlay, highlightEl) {
-  const rect = highlightEl.getBoundingClientRect();
-  const vw = window.innerWidth;
-  const vh = window.innerHeight;
-  const x1 = Math.max(0, rect.left - HIGHLIGHT_PAD);
-  const y1 = Math.max(0, rect.top - HIGHLIGHT_PAD);
-  const x2 = Math.min(vw, rect.right + HIGHLIGHT_PAD);
-  const y2 = Math.min(vh, rect.bottom + HIGHLIGHT_PAD);
-
-  overlay.style.clipPath = `polygon(
-    0% 0%, 0% 100%, ${x1}px 100%, ${x1}px ${y1}px,
-    ${x2}px ${y1}px, ${x2}px ${y2}px, ${x1}px ${y2}px,
-    ${x1}px 100%, 100% 100%, 100% 0%
-  )`;
 }
 
 // ── Overlay & Modal DOM ─────────────────────────────────────────────
@@ -696,6 +795,8 @@ function removeOverlay() {
   if (overlay) overlay.remove();
   const modal = document.getElementById('tutorial-modal');
   if (modal) modal.remove();
+  const welcome = document.getElementById('tutorial-welcome');
+  if (welcome) welcome.remove();
   const arrow = document.getElementById('tutorial-arrow');
   if (arrow) arrow.remove();
   document.querySelectorAll('.tutorial-highlight').forEach(el =>
@@ -814,13 +915,12 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
     position: 'fixed',
     inset: '0',
     zIndex: '9998',
-    background: highlightEl ? 'rgba(0,0,0,0.45)' : 'transparent',
+    background: 'transparent',
     pointerEvents: 'none',
     transition: prefersReducedMotion() ? 'none' : 'opacity 300ms var(--ease-emphasized-decel, ease)',
   });
 
   if (highlightEl) {
-    updateClipPath(overlay, highlightEl);
     highlightEl.classList.add('tutorial-highlight');
   }
 
@@ -846,7 +946,7 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
     lineHeight: '1.5',
     opacity: '0',
     transform: prefersReducedMotion() ? 'none' : 'translateY(8px)',
-    transition: prefersReducedMotion() ? 'none' : 'opacity 300ms var(--ease-emphasized-decel, ease), transform 300ms var(--ease-emphasized-decel, ease)',
+    transition: prefersReducedMotion() ? 'none' : 'opacity 300ms var(--ease-emphasized-decel, ease), transform 300ms var(--ease-emphasized-decel, ease), left 300ms var(--ease-emphasized-decel, ease), top 300ms var(--ease-emphasized-decel, ease)',
     cursor: 'default',
   });
 
@@ -872,6 +972,8 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
   if (!mobile && highlightEl && !isFinish) {
     positionModal(modal, highlightEl);
     setTimeout(() => positionModal(modal, highlightEl), 350);
+    setTimeout(() => positionModal(modal, highlightEl), 600);
+    setTimeout(() => positionModal(modal, highlightEl), 700);
   } else if (!mobile) {
     Object.assign(modal.style, {
       top: '50%', left: '50%',
@@ -1071,12 +1173,12 @@ function positionModal(modal, highlightEl) {
   const isLarge = rect.width > vw * 0.5;   // highlight spans most of viewport (map)
 
   if (isLarge) {
-    // Large element (map container) — center modal in map area
-    const quizPanel = document.getElementById('quiz-panel');
-    const qpLeft = quizPanel ? quizPanel.getBoundingClientRect().left : vw;
-    const safeLeft = Math.max(12, gap);
-    const safeRight = Math.max(safeLeft + mw, qpLeft - gap);
-    left = Math.max(safeLeft, Math.min(safeRight - mw, (safeLeft + safeRight - mw) / 2));
+    // Large element (map container) — center modal in the map area.
+    // Use the map container's actual width (adjusts when quiz panel opens).
+    const mapEl = document.getElementById('map-container');
+    const mapRect = mapEl ? mapEl.getBoundingClientRect() : rect;
+    left = mapRect.left + (mapRect.width - mw) / 2;
+    if (left < gap) left = gap;
     top = Math.max(headerH + gap, rect.top + gap);
   } else if (isRight) {
     // Right-side highlight — place modal to the left of highlight

@@ -277,7 +277,10 @@
       "correct_answer": "A",
       "difficulty": 1,
       "x": 0.226362,
-      "y": 0.62705
+      "y": 0.62705,
+      "domain_ids": [
+        "us-history"
+      ]
     },
     {
       "id": "844a7834542894ac",

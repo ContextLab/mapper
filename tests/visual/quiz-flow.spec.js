@@ -7,7 +7,7 @@ async function selectDomain(page, domainName) {
   // If on landing page, click start button to enter the map first
   const startBtn = page.locator('#landing-start-btn');
   if (await startBtn.isVisible().catch(() => false)) {
-    await page.waitForSelector('#landing-start-btn[data-ready]', { timeout: LOAD_TIMEOUT });
+    await page.waitForSelector('#landing-start-btn[data-ready]:not([disabled])', { timeout: LOAD_TIMEOUT });
     await startBtn.click();
     await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
   }

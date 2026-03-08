@@ -67,7 +67,10 @@
       "correct_answer": "C",
       "difficulty": 1,
       "x": 0.427215,
-      "y": 0.955311
+      "y": 0.955311,
+      "domain_ids": [
+        "astrophysics"
+      ]
     },
     {
       "id": "9dc410268e2d0749",
@@ -165,7 +168,10 @@
       "correct_answer": "D",
       "difficulty": 1,
       "x": 0.518932,
-      "y": 0.93472
+      "y": 0.93472,
+      "domain_ids": [
+        "astrophysics"
+      ]
     },
     {
       "id": "12efb35c55a8abaa",
@@ -1040,7 +1046,10 @@
       "correct_answer": "B",
       "difficulty": 4,
       "x": 0.515657,
-      "y": 0.886419
+      "y": 0.886419,
+      "domain_ids": [
+        "astrophysics"
+      ]
     }
   ],
   "labels": [

@@ -29,7 +29,7 @@ import * as modes from './ui/modes.js';
 import * as insights from './ui/insights.js';
 import * as share from './ui/share.js';
 import { checkMilestone, highlightExpertiseButton, updateProgressDisplay } from './ui/milestones.js';
-import { initTutorial, advanceTutorial, isTutorialActive, resetTutorial, setAnswerFeedback } from './ui/tutorial.js';
+import { initTutorial, advanceTutorial, isTutorialActive, resetTutorial, dismissTutorial, setAnswerFeedback } from './ui/tutorial.js';
 import * as videoModal from './ui/video-modal.js';
 import * as videoLoader from './domain/video-loader.js';
 import * as videoPanel from './ui/video-panel.js';
@@ -115,7 +115,6 @@ async function boot() {
         landingStartBtn.disabled = true;
       }
     });
-    landingStartBtn.dataset.ready = 'true';
   }
 
   // Eagerly load the "all" domain — this is the permanent, full dataset.
@@ -127,6 +126,10 @@ async function boot() {
     questionIndex = new Map(allDomainBundle.questions.map(q => [q.id, q]));
     insights.setConcepts(allDomainBundle.questions, allDomainBundle.articles);
     insights.setDomains(registry.getDomains());
+
+    // Signal that data is loaded and button is clickable.
+    // Tests wait for [data-ready] before clicking — must come AFTER data loads.
+    if (landingStartBtn) landingStartBtn.dataset.ready = 'true';
 
     // Initialize particles in the background — don't block the transition.
     // If user already clicked start, skip particles entirely (they'd be destroyed anyway).
@@ -311,7 +314,7 @@ async function boot() {
   }
 
   if (import.meta.env.DEV) {
-    window.__mapper = { registry, estimator, sampler, renderer, minimap, $activeDomain, $estimates, $responses };
+    window.__mapper = { registry, estimator, sampler, renderer, minimap, $activeDomain, $estimates, $responses, getCurrentQuestion: quiz.getCurrentQuestion };
   }
 
   const quizToggle = document.getElementById('quiz-toggle');
@@ -764,6 +767,11 @@ function handleSkip() {
   quiz.showSkipFeedback(question);
   announce('Skipped. The correct answer is highlighted.');
 
+  // Reset streak and update progress display
+  consecutiveCorrect = 0;
+  const totalAnswered = $responses.get().length;
+  updateProgressDisplay(totalAnswered, consecutiveCorrect);
+
   // Revert non-auto modes back to auto after skip
   modes.revertToAutoIfNeeded();
 
@@ -789,6 +797,7 @@ function handleSkip() {
 
 function handleReset() {
   if (!confirm('Are you sure? This will clear all progress.')) return;
+  dismissTutorial();
   resetAll();
   currentDomainBundle = null;
   mapInitialized = false;

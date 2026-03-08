@@ -25,7 +25,10 @@
       "correct_answer": "C",
       "difficulty": 1,
       "x": 0.692453,
-      "y": 0.316314
+      "y": 0.316314,
+      "domain_ids": [
+        "cognitive-neuroscience"
+      ]
     },
     {
       "id": "9d364649fb1f6b8c",
@@ -375,7 +378,10 @@
       "correct_answer": "B",
       "difficulty": 2,
       "x": 0.771208,
-      "y": 0.257931
+      "y": 0.257931,
+      "domain_ids": [
+        "cognitive-neuroscience"
+      ]
     },
     {
       "id": "e5d59706b7ea2e38",

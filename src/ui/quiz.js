@@ -2,6 +2,23 @@
 
 import { announce } from '../utils/accessibility.js';
 
+// Domains where Khan Academy has good content coverage
+const KHAN_DOMAINS = new Set([
+  'physics', 'astrophysics', 'quantum-physics',
+  'biology', 'genetics', 'molecular-cell-biology', 'neurobiology',
+  'mathematics', 'calculus', 'linear-algebra', 'number-theory', 'probability-statistics',
+  'computer-science', 'artificial-intelligence-ml', 'theory-of-computation', 'algorithms',
+  'economics', 'microeconomics', 'macroeconomics',
+  'neuroscience', 'cognitive-neuroscience', 'computational-neuroscience',
+]);
+
+/** Check if a question's domains overlap with Khan Academy coverage. */
+function hasKhanCoverage(question) {
+  const ids = question?.domain_ids;
+  if (!ids || !Array.isArray(ids)) return false;
+  return ids.some(id => KHAN_DOMAINS.has(id));
+}
+
 let answerCallback = null;
 let nextCallback = null;
 let currentQuestion = null;
@@ -77,7 +94,7 @@ export function init(container) {
         font-family: var(--font-body);
         font-size: 0.85rem;
         color: var(--color-text);
-        transition: all 0.2s ease;
+        transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, opacity 0.2s ease;
         min-height: 44px;
         display: block;
         width: 100%;
@@ -152,7 +169,7 @@ export function init(container) {
         font-size: 0.82rem;
         font-weight: 600;
         cursor: pointer;
-        transition: all 0.2s ease;
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
         min-height: 36px;
       }
       .quiz-next-btn:hover {
@@ -168,7 +185,7 @@ export function init(container) {
         font-family: var(--font-body);
         font-size: 0.75rem;
         cursor: pointer;
-        transition: all 0.2s ease;
+        transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
         text-decoration: none;
         display: inline-flex;
         align-items: center;
@@ -442,10 +459,10 @@ function handleOptionClick(selectedDisplayKey) {
       uiElements.wikiBtn.hidden = true;
     }
 
-    // Show Khan Academy search link based on question concepts or article
+    // Show Khan Academy search link only for domains Khan covers well
     if (uiElements.khanBtn) {
       const searchTerm = currentQuestion.source_article || '';
-      if (searchTerm) {
+      if (searchTerm && hasKhanCoverage(currentQuestion)) {
         uiElements.khanBtn.href = `https://www.khanacademy.org/search?referer=%2F&page_search_query=${encodeURIComponent(searchTerm)}`;
         uiElements.khanBtn.hidden = false;
       } else {
@@ -498,7 +515,7 @@ export function showSkipFeedback(question) {
 
     if (uiElements.khanBtn) {
       const searchTerm = question.source_article || '';
-      if (searchTerm) {
+      if (searchTerm && hasKhanCoverage(question)) {
         uiElements.khanBtn.href = `https://www.khanacademy.org/search?referer=%2F&page_search_query=${encodeURIComponent(searchTerm)}`;
         uiElements.khanBtn.hidden = false;
       } else {

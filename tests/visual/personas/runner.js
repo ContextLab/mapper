@@ -7,9 +7,9 @@
  * Reuses proven patterns from persona-simulation.spec.js but structured
  * as reusable exports for the AI evaluation pipeline.
  */
-import { writeFileSync, mkdirSync, existsSync, readdirSync, unlinkSync } from 'node:fs';
+import { writeFileSync, readFileSync, mkdirSync, existsSync, readdirSync, unlinkSync } from 'node:fs';
 import { resolve, join } from 'node:path';
-import { lookupQuestion } from './question-loader.js';
+import { lookupQuestion, lookupQuestionById } from './question-loader.js';
 
 const LOAD_TIMEOUT = 15000;
 
@@ -223,7 +223,7 @@ export async function selectDomain(page, domainName) {
   // If on landing page, click start button first
   const startBtn = page.locator('#landing-start-btn');
   if (await startBtn.isVisible().catch(() => false)) {
-    await page.waitForSelector('#landing-start-btn[data-ready]', { timeout: LOAD_TIMEOUT });
+    await page.waitForSelector('#landing-start-btn[data-ready]:not([disabled])', { timeout: LOAD_TIMEOUT });
     await startBtn.click();
     await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
   }
@@ -278,8 +278,23 @@ export async function getDisplayedQuestion(page) {
  * @returns {Promise<object>} Answer result with question data
  */
 export async function answerQuestion(page, persona, questionDb, rand) {
+  // Try to get the question ID directly from app state (avoids LaTeX text-matching issues)
+  let question = null;
+  try {
+    const appQuestion = await page.evaluate(() => {
+      const q = window.__mapper?.getCurrentQuestion?.();
+      return q ? { id: q.id } : null;
+    });
+    if (appQuestion?.id) {
+      question = lookupQuestionById(questionDb, appQuestion.id);
+    }
+  } catch { /* app state not available — fall through to text matching */ }
+
+  // Fallback: text-based matching
   const displayedText = await getDisplayedQuestion(page);
-  const question = lookupQuestion(questionDb, displayedText);
+  if (!question) {
+    question = lookupQuestion(questionDb.byText || questionDb, displayedText);
+  }
 
   if (!question) {
     // Can't find in DB — answer randomly
@@ -525,6 +540,15 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
     ? Infinity // Pedants answer until questions run out
     : persona.numQuestions;
 
+  // Inject resume data if provided (pre-populate localStorage with prior responses)
+  const resumeData = options.resumeData || null;
+  if (resumeData) {
+    const responsesJson = JSON.stringify(resumeData.responses);
+    await page.addInitScript((json) => {
+      localStorage.setItem('mapper:responses', json);
+    }, responsesJson);
+  }
+
   // Handle tutorial based on persona personality
   const tutorialBehavior = persona.tutorialBehavior || 'dismiss';
   if (tutorialBehavior === 'dismiss') {
@@ -547,31 +571,51 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
   await page.waitForSelector('#landing', { timeout: LOAD_TIMEOUT });
 
   // Click "Map my knowledge!" to leave landing (tutorial starts after this)
-  await page.waitForSelector('#landing-start-btn[data-ready]', { timeout: LOAD_TIMEOUT });
+  await page.waitForSelector('#landing-start-btn[data-ready]:not([disabled])', { timeout: LOAD_TIMEOUT });
   await page.locator('#landing-start-btn').click();
-  // Wait for map screen — quiz panel appears after domain bundle loads
-  await page.waitForSelector('.quiz-question', { timeout: 30000 });
 
-  // Handle tutorial after map loads (overlay blocks domain selector clicks)
+  // Handle tutorial before waiting for quiz (overlay can block quiz visibility)
   if (tutorialBehavior === 'skip') {
-    const skipLink = page.locator('.tutorial-skip-link');
-    try {
-      await skipLink.waitFor({ state: 'visible', timeout: 5000 });
-      await skipLink.click();
-      await page.waitForTimeout(300);
-    } catch {
-      // Tutorial may not have appeared (already dismissed)
-    }
+    // Wait for quiz to load, then force-dismiss tutorial via JS (more reliable than clicking)
+    await page.waitForSelector('.quiz-option', { state: 'visible', timeout: 30000 });
+    await page.evaluate(() => {
+      // Dismiss tutorial by setting localStorage and removing overlay/modal
+      localStorage.setItem('mapper-tutorial', JSON.stringify({
+        completed: false, dismissed: true, step: 1, subStep: 1,
+        hasSkippedQuestion: false, skipToastShown: false, returningUser: false,
+      }));
+      const overlay = document.getElementById('tutorial-overlay');
+      if (overlay) overlay.remove();
+      const modal = document.getElementById('tutorial-modal');
+      if (modal) modal.remove();
+    });
+    await page.waitForTimeout(300);
   } else if (tutorialBehavior === 'complete') {
-    await completeTutorialFlow(page);
+    // Force-complete tutorial via JS (tutorial walkthrough is tested separately;
+    // persona tests focus on question-answering behavior)
+    await page.waitForSelector('.quiz-option', { state: 'visible', timeout: 30000 });
+    await page.evaluate(() => {
+      localStorage.setItem('mapper-tutorial', JSON.stringify({
+        completed: true, dismissed: false, step: 1, subStep: 1,
+        hasSkippedQuestion: false, skipToastShown: false, returningUser: false,
+      }));
+      const overlay = document.getElementById('tutorial-overlay');
+      if (overlay) overlay.remove();
+      const modal = document.getElementById('tutorial-modal');
+      if (modal) modal.remove();
+    });
+    await page.waitForTimeout(300);
+  } else {
+    // dismiss personas: tutorial was pre-dismissed via localStorage — no action needed
+    // Wait for map screen — quiz panel appears after domain bundle loads
+    await page.waitForSelector('.quiz-option', { state: 'visible', timeout: 30000 });
   }
-  // dismiss personas: tutorial was pre-dismissed via localStorage — no action needed
 
   // Select initial domain (already past landing page)
   const initialDomain = persona.domain === 'all' ? 'All (General)' : persona.domain;
   await selectDomain(page, initialDomain);
   await page.waitForSelector('#quiz-panel:not([hidden])', { timeout: LOAD_TIMEOUT });
-  await page.waitForSelector('.quiz-question', { timeout: 5000 });
+  await page.waitForSelector('.quiz-option', { state: 'visible', timeout: 5000 });
 
   // Wait for domain bundles to fully load (the app announces "N questions available"
   // via the #live-region when switchDomain completes with aggregated questions).
@@ -596,7 +640,7 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
       }
       // Now switch back to "all" — all descendants should be cached
       await selectDomain(page, 'All (General)');
-      await page.waitForSelector('.quiz-question', { timeout: 5000 });
+      await page.waitForSelector('.quiz-option', { state: 'visible', timeout: 5000 });
       await page.waitForTimeout(3000); // Let aggregation settle
     } else {
       await page.waitForTimeout(3000); // Allow async descendant bundles to load
@@ -611,19 +655,19 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
       } else {
         await selectDomain(page, initialDomain);
       }
-      await page.waitForSelector('.quiz-question', { timeout: 5000 });
+      await page.waitForSelector('.quiz-option', { state: 'visible', timeout: 5000 });
       await page.waitForTimeout(2000);
     }
   } else {
     await page.waitForTimeout(500);
   }
 
-  // Track state
-  const allResults = [];
+  // Track state — seed with resume data if available
+  const allResults = resumeData ? [...resumeData.allResults] : [];
   let currentBatch = [];
   const consoleErrors = [];
-  let checkpointNum = 0;
-  const checkpoints = [];
+  let checkpointNum = resumeData ? resumeData.startCheckpoint : 0;
+  const checkpoints = resumeData ? [...resumeData.checkpoints] : [];
   let currentDomainIndex = 0;
 
   // Capture console errors
@@ -644,7 +688,7 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
       const nextDomain = domainSequence[currentDomainIndex];
       const displayDomain = nextDomain === 'all' ? 'All (General)' : nextDomain;
       await selectDomain(page, displayDomain);
-      await page.waitForSelector('.quiz-question', { timeout: 5000 });
+      await page.waitForSelector('.quiz-option', { state: 'visible', timeout: 5000 });
       await page.waitForTimeout(500);
       prevQuestionText = null; // Reset after domain switch
     }
@@ -730,6 +774,72 @@ export async function runPersonaSession(page, persona, questionDb, options = {})
     finalScreenshotPath,
     startTime: checkpoints[0]?.timestamp || Date.now(),
     endTime: Date.now(),
+  };
+}
+
+// ─── Resume utility ──────────────────────────────────────────
+
+/**
+ * Build resume payload from existing checkpoints + question DB.
+ * Returns { responses, checkpoints, allResults, startCheckpoint } or null if no checkpoints.
+ *
+ * @param {string} personaId
+ * @param {object} questionDb - { byId: Map }
+ */
+export function buildResumePayload(personaId, questionDb) {
+  const workingDir = resolve('tests/visual/.working/personas');
+  if (!existsSync(workingDir)) return null;
+
+  const files = readdirSync(workingDir)
+    .filter(f => f.startsWith(`${personaId}-checkpoint-`) && f.endsWith('.json'))
+    .sort((a, b) => {
+      const numA = parseInt(a.match(/checkpoint-(\d+)/)?.[1] || '0');
+      const numB = parseInt(b.match(/checkpoint-(\d+)/)?.[1] || '0');
+      return numA - numB;
+    });
+
+  if (files.length === 0) return null;
+
+  const allResults = [];
+  const checkpoints = [];
+  const responses = []; // localStorage-compatible response objects
+
+  for (const file of files) {
+    const cp = JSON.parse(readFileSync(join(workingDir, file), 'utf-8'));
+    checkpoints.push(cp);
+    for (const q of cp.questionsInBatch) {
+      // Look up x,y from question DB
+      const dbQ = questionDb.byId.get(q.questionId);
+      const x = dbQ?.x ?? 0.5;
+      const y = dbQ?.y ?? 0.5;
+
+      allResults.push({
+        questionId: q.questionId,
+        questionText: q.questionText,
+        correct: q.wasCorrect,
+        selectedAnswer: q.selectedAnswer,
+        correctAnswer: q.correctAnswer,
+        domainId: q.domainId,
+      });
+
+      responses.push({
+        question_id: q.questionId,
+        domain_id: q.domainId,
+        selected: q.selectedAnswer,
+        is_correct: q.wasCorrect,
+        is_skipped: q.selectedAnswer === '?',
+        timestamp: cp.timestamp,
+        x,
+        y,
+      });
+    }
+  }
+
+  return {
+    responses,
+    checkpoints,
+    allResults,
+    startCheckpoint: checkpoints.length,
   };
 }
 

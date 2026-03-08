@@ -14,12 +14,15 @@ import { resolve } from 'node:path';
 /**
  * Load the complete question database from disk.
  *
- * @returns {Map<string, object>} Map keyed by first 100 chars of question_text
+ * @returns {{ byText: Map<string, object>, byId: Map<string, object> }}
+ *   byText: Map keyed by first 100 chars of question_text
+ *   byId: Map keyed by question id
  */
 export function loadQuestionDb() {
   const indexPath = resolve('data/domains/index.json');
   const indexData = JSON.parse(readFileSync(indexPath, 'utf-8'));
-  const db = new Map();
+  const byText = new Map();
+  const byId = new Map();
 
   for (const d of Object.values(indexData.domains)) {
     if (!d || !d.id) continue;
@@ -30,13 +33,14 @@ export function loadQuestionDb() {
       for (const q of qs) {
         if (q.question_text && q.id) {
           const key = q.question_text.trim().substring(0, 100);
-          db.set(key, q);
+          byText.set(key, q);
+          byId.set(q.id, q);
         }
       }
     } catch { /* skip missing domain files */ }
   }
 
-  return db;
+  return { byText, byId };
 }
 
 /**
@@ -98,10 +102,21 @@ function stripLatex(text) {
 }
 
 /**
+ * Look up a question by ID from the byId index.
+ *
+ * @param {{ byText: Map, byId: Map }} db - The loaded question database
+ * @param {string} questionId - Question ID from app state
+ * @returns {object|null} Matched question object, or null
+ */
+export function lookupQuestionById(db, questionId) {
+  return db.byId.get(questionId) || null;
+}
+
+/**
  * Look up a question by matching displayed text against the database.
  * Tries exact prefix match first, then fuzzy fallback with LaTeX normalization.
  *
- * @param {Map<string, object>} questionDb - The loaded question database
+ * @param {Map<string, object>} questionDb - The byText map from loadQuestionDb()
  * @param {string} displayedText - Text from the DOM .quiz-question element
  * @returns {object|null} Matched question object, or null
  */

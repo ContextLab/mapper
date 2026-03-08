@@ -406,7 +406,7 @@ export function showLeaderboard(domainKnowledge) {
   const explainer = document.createElement('p');
   explainer.className = 'insights-explainer';
   explainer.textContent = 'Your top areas of expertise, ranked highest first. '
-    + 'Each score averages the GP prediction at every question coordinate in that domain.';
+    + 'Each score reflects your estimated knowledge across questions in that domain.';
   bodyEl.appendChild(explainer);
   // Build parent name lookup for sub-domains
   const parentNames = new Map();

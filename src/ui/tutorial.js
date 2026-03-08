@@ -124,7 +124,7 @@ const STEPS = [
     highlight: '#suggest-btn',
     skipOnMobile: true,
     onEnter: 'closeModals',
-    message: 'Click this button to see a list of Khan Academy videos that will help you efficiently fill in gaps in your knowledge that our system has identified.',
+    message: 'Click this button to see recommended Khan Academy videos based on your answers so far. These suggestions will become more targeted as you answer more questions!',
     advanceOn: 'suggest-click',
     removeOverlayOnAction: true,
     followUp: { message: 'Click on any video to watch it!', advanceOn: 'click' },
@@ -946,7 +946,7 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
     lineHeight: '1.5',
     opacity: '0',
     transform: prefersReducedMotion() ? 'none' : 'translateY(8px)',
-    transition: prefersReducedMotion() ? 'none' : 'opacity 300ms var(--ease-emphasized-decel, ease), transform 300ms var(--ease-emphasized-decel, ease)',
+    transition: prefersReducedMotion() ? 'none' : 'opacity 300ms var(--ease-emphasized-decel, ease), transform 300ms var(--ease-emphasized-decel, ease), left 300ms var(--ease-emphasized-decel, ease), top 300ms var(--ease-emphasized-decel, ease)',
     cursor: 'default',
   });
 
@@ -1173,9 +1173,12 @@ function positionModal(modal, highlightEl) {
   const isLarge = rect.width > vw * 0.5;   // highlight spans most of viewport (map)
 
   if (isLarge) {
-    // Large element (map container) — pin modal to left area so it stays
-    // consistent when the quiz panel opens/closes between steps
-    left = gap;
+    // Large element (map container) — center modal in the map area.
+    // Use the map container's actual width (adjusts when quiz panel opens).
+    const mapEl = document.getElementById('map-container');
+    const mapRect = mapEl ? mapEl.getBoundingClientRect() : rect;
+    left = mapRect.left + (mapRect.width - mw) / 2;
+    if (left < gap) left = gap;
     top = Math.max(headerH + gap, rect.top + gap);
   } else if (isRight) {
     // Right-side highlight — place modal to the left of highlight

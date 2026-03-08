@@ -21,7 +21,7 @@ import {
 const GRID_SIZE = 50;
 const EMA_ALPHA = 0.3;
 const WATCHED_PENALTY = 0.1;
-const TOP_N = 10;
+const TOP_N = 50;
 
 // ─── Grid helpers ───────────────────────────────────────────
 

@@ -209,30 +209,26 @@ function formatDuration(seconds) {
 
 const PANEL_CSS = `
   #video-panel {
-    width: var(--sidebar-width);
+    width: 0;
     min-width: 0;
     background: var(--color-surface);
     box-shadow: 2px 0 24px rgba(0,0,0,0.3), 1px 0 0 var(--color-border);
     z-index: 10;
     display: flex;
     flex-direction: column;
-    padding: 0 1.25rem;
+    padding: 0;
     overflow: hidden;
-    transform: translateX(-100%);
-    margin-left: calc(-1 * var(--sidebar-width));
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: width;
     contain: layout style;
     flex-shrink: 0;
     order: -1;
-    opacity: 0;
   }
   #video-panel.open {
-    transform: translateX(0);
+    width: var(--sidebar-width);
     padding: 1rem 1.25rem;
     overflow-y: auto;
     overflow-x: hidden;
-    opacity: 1;
   }
   #video-panel::-webkit-scrollbar { width: 5px; }
   #video-panel::-webkit-scrollbar-track { background: transparent; }

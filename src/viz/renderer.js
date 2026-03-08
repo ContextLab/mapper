@@ -53,6 +53,13 @@ export class Renderer {
 
     this._resizeObserver = null;
 
+    // Offscreen heatmap cache — avoids 10k-cell recalculation every frame
+    this._heatmapCanvas = null;
+    this._heatmapDirty = true;
+
+    // rAF render coalescing — prevents multiple renders per frame
+    this._renderScheduled = false;
+
     this._onReanswer = null;
     this._onVideoClick = null;
     this._onViewportChange = null;
@@ -158,7 +165,8 @@ export class Renderer {
     // ResizeObserver for flex layout changes
     this._resizeObserver = new ResizeObserver(() => {
       this._resize();
-      this._render();
+      this._heatmapDirty = true;
+      this._scheduleRender();
       this._notifyViewport();
     });
     this._resizeObserver.observe(this._container);
@@ -175,7 +183,7 @@ export class Renderer {
     this._canvas.addEventListener('touchend', this._onTouchEnd);
     window.addEventListener('resize', this._onResize);
 
-    this._render();
+    this._scheduleRender();
   }
 
   /**
@@ -187,7 +195,7 @@ export class Renderer {
     if (this._colorbarEl) {
       this._colorbarEl.style.display = this._points.length > 0 ? 'block' : 'none';
     }
-    this._render();
+    this._scheduleRender();
   }
 
   /**
@@ -214,7 +222,8 @@ export class Renderer {
         this._estimateEvidence[e.gy * n + e.gx] = e.evidenceCount || 0;
       }
     }
-    this._render();
+    this._heatmapDirty = true;
+    this._scheduleRender();
   }
 
   setLabels(labels, region, gridSize) {
@@ -226,7 +235,7 @@ export class Renderer {
     for (const l of this._labels) {
       this._labelMap.set(`${l.gx},${l.gy}`, l);
     }
-    this._render();
+    this._scheduleRender();
   }
 
   /**
@@ -235,7 +244,7 @@ export class Renderer {
    */
   setAnsweredQuestions(data) {
     this._answeredData = data || [];
-    this._render();
+    this._scheduleRender();
   }
 
   /**
@@ -253,7 +262,7 @@ export class Renderer {
       }
       this._videoTrajectories.get(m.videoId).push({ x: m.x, y: m.y });
     }
-    this._render();
+    this._scheduleRender();
   }
 
   /**
@@ -270,13 +279,13 @@ export class Renderer {
 
   setShowVideoMarkers(visible) {
     this._showVideoMarkers = !!visible;
-    this._render();
+    this._scheduleRender();
   }
 
   setHoveredVideoId(videoId) {
     if (this._hoveredVideoId === videoId) return;
     this._hoveredVideoId = videoId || null;
-    this._render();
+    this._scheduleRender();
   }
 
   addQuestions(questions) {
@@ -501,6 +510,19 @@ export class Renderer {
     this._canvas.height = rect.height * this._dpr;
   }
 
+  /**
+   * Coalesce render calls — multiple _scheduleRender() calls per frame
+   * result in a single _render() via requestAnimationFrame.
+   */
+  _scheduleRender() {
+    if (this._renderScheduled) return;
+    this._renderScheduled = true;
+    requestAnimationFrame(() => {
+      this._renderScheduled = false;
+      this._render();
+    });
+  }
+
   _render() {
     if (!this._ctx || !this._width || !this._height) return;
 
@@ -513,7 +535,7 @@ export class Renderer {
     ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, w, h);
 
-    this._drawHeatmap(ctx, w, h);
+    this._blitHeatmap(ctx, w, h);
 
     ctx.save();
     ctx.translate(this._panX, this._panY);
@@ -544,47 +566,44 @@ export class Renderer {
     }
   }
 
-  _drawHeatmap(ctx, w, h) {
-    if (!this._estimateGrid || this._heatmapEstimates.length === 0) return;
+  /**
+   * Render heatmap to an offscreen canvas (only when data changes).
+   * The offscreen canvas is in world-normalized [0,1] space for the heatmap region,
+   * so pan/zoom just repositions it via drawImage — no per-cell recalculation.
+   */
+  _rebuildHeatmapCache() {
+    if (!this._estimateGrid || this._heatmapEstimates.length === 0) {
+      this._heatmapCanvas = null;
+      return;
+    }
 
     const N = this._heatmapGridSize || 50;
     const grid = this._estimateGrid;
     const evidence = this._estimateEvidence;
     const region = this._heatmapRegion;
-    if (!region) return;
+    if (!region) { this._heatmapCanvas = null; return; }
 
-    // Use more screen cells for a smoother appearance. The GP grid is N×N but
-    // we sample at higher resolution and bilinearly interpolate between cells.
-    const SCREEN_CELLS = 100;
-    const cellW = w / SCREEN_CELLS;
-    const cellH = h / SCREEN_CELLS;
+    // Offscreen canvas sized to cover the heatmap region in screen pixels
+    const CELLS = 80; // resolution of the cached heatmap texture
+    if (!this._heatmapCanvas) {
+      this._heatmapCanvas = document.createElement('canvas');
+    }
+    this._heatmapCanvas.width = CELLS;
+    this._heatmapCanvas.height = CELLS;
+    const hctx = this._heatmapCanvas.getContext('2d');
 
-    const rXMin = region.x_min;
-    const rYMin = region.y_min;
-    const rXSpan = region.x_max - region.x_min;
-    const rYSpan = region.y_max - region.y_min;
-
-    // Helper: bilinear interpolation of grid values
     function sampleGrid(gxf, gyf) {
       const gx0 = Math.max(0, Math.min(N - 1, Math.floor(gxf)));
       const gy0 = Math.max(0, Math.min(N - 1, Math.floor(gyf)));
       const gx1 = Math.min(N - 1, gx0 + 1);
       const gy1 = Math.min(N - 1, gy0 + 1);
-      const fx = gxf - gx0; // fractional x [0,1)
-      const fy = gyf - gy0; // fractional y [0,1)
-
-      const v00 = grid[gy0 * N + gx0];
-      const v10 = grid[gy0 * N + gx1];
-      const v01 = grid[gy1 * N + gx0];
-      const v11 = grid[gy1 * N + gx1];
-
-      // Bilinear blend
-      const top = v00 + (v10 - v00) * fx;
-      const bot = v01 + (v11 - v01) * fx;
+      const fx = gxf - gx0;
+      const fy = gyf - gy0;
+      const top = grid[gy0 * N + gx0] + (grid[gy0 * N + gx1] - grid[gy0 * N + gx0]) * fx;
+      const bot = grid[gy1 * N + gx0] + (grid[gy1 * N + gx1] - grid[gy1 * N + gx0]) * fx;
       return top + (bot - top) * fy;
     }
 
-    // Helper: bilinear interpolation of evidence counts (for opacity)
     function sampleEvidence(gxf, gyf) {
       const gx0 = Math.max(0, Math.min(N - 1, Math.floor(gxf)));
       const gy0 = Math.max(0, Math.min(N - 1, Math.floor(gyf)));
@@ -592,47 +611,57 @@ export class Renderer {
       const gy1 = Math.min(N - 1, gy0 + 1);
       const fx = gxf - gx0;
       const fy = gyf - gy0;
-
-      const e00 = evidence[gy0 * N + gx0];
-      const e10 = evidence[gy0 * N + gx1];
-      const e01 = evidence[gy1 * N + gx0];
-      const e11 = evidence[gy1 * N + gx1];
-
-      const top = e00 + (e10 - e00) * fx;
-      const bot = e01 + (e11 - e01) * fx;
+      const top = evidence[gy0 * N + gx0] + (evidence[gy0 * N + gx1] - evidence[gy0 * N + gx0]) * fx;
+      const bot = evidence[gy1 * N + gx0] + (evidence[gy1 * N + gx1] - evidence[gy1 * N + gx0]) * fx;
       return top + (bot - top) * fy;
     }
 
-    ctx.globalAlpha = 0.45;
+    // Render each cell of the heatmap texture in grid-normalized space
+    for (let cy = 0; cy < CELLS; cy++) {
+      for (let cx = 0; cx < CELLS; cx++) {
+        const gxf = (cx + 0.5) / CELLS * N - 0.5;
+        const gyf = (cy + 0.5) / CELLS * N - 0.5;
 
-    for (let sy = 0; sy < SCREEN_CELLS; sy++) {
-      for (let sx = 0; sx < SCREEN_CELLS; sx++) {
-        // Center of this screen cell → world normalized coordinate
-        const centerSX = (sx + 0.5) * cellW;
-        const centerSY = (sy + 0.5) * cellH;
-        const wx = (centerSX - this._panX) / (this._zoom * w);
-        const wy = (centerSY - this._panY) / (this._zoom * h);
-
-        // Map world coord to fractional grid position within domain region
-        const gxf = ((wx - rXMin) / rXSpan) * N - 0.5;
-        const gyf = ((wy - rYMin) / rYSpan) * N - 0.5;
-
-        if (gxf < -1 || gxf >= N || gyf < -1 || gyf >= N) {
-          // Outside domain region — draw neutral prior
-          ctx.fillStyle = 'rgba(245, 220, 105, 0.25)';
-          ctx.fillRect(sx * cellW, sy * cellH, cellW + 0.5, cellH + 0.5);
-          continue;
+        if (gxf < -0.5 || gxf >= N - 0.5 || gyf < -0.5 || gyf >= N - 0.5) {
+          hctx.fillStyle = 'rgba(245, 220, 105, 0.25)';
+        } else {
+          const val = sampleGrid(gxf, gyf);
+          const ev = sampleEvidence(gxf, gyf);
+          const [r, g, b] = valueToColor(val);
+          const a = ev < 0.5 ? 0.5 : 0.75;
+          hctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
         }
-
-        const val = sampleGrid(gxf, gyf);
-        const ev = sampleEvidence(gxf, gyf);
-        const [r, g, b] = valueToColor(val);
-        const a = ev < 0.5 ? 0.5 : 0.75;
-        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
-        ctx.fillRect(sx * cellW, sy * cellH, cellW + 0.5, cellH + 0.5);
+        hctx.fillRect(cx, cy, 1, 1);
       }
     }
 
+    this._heatmapDirty = false;
+  }
+
+  /**
+   * Draw cached heatmap image onto the main canvas, positioned by pan/zoom.
+   * This is O(1) — just a single drawImage call per frame.
+   */
+  _blitHeatmap(ctx, w, h) {
+    if (!this._estimateGrid || this._heatmapEstimates.length === 0) return;
+    const region = this._heatmapRegion;
+    if (!region) return;
+
+    // Rebuild offscreen cache if heatmap data changed
+    if (this._heatmapDirty || !this._heatmapCanvas) {
+      this._rebuildHeatmapCache();
+    }
+    if (!this._heatmapCanvas) return;
+
+    // Map the heatmap region [x_min,y_min]-[x_max,y_max] to screen coordinates
+    const x0 = this._panX + region.x_min * this._zoom * w;
+    const y0 = this._panY + region.y_min * this._zoom * h;
+    const rw = (region.x_max - region.x_min) * this._zoom * w;
+    const rh = (region.y_max - region.y_min) * this._zoom * h;
+
+    ctx.globalAlpha = 0.45;
+    ctx.imageSmoothingEnabled = true;
+    ctx.drawImage(this._heatmapCanvas, x0, y0, rw, rh);
     ctx.globalAlpha = 1;
   }
 
@@ -865,7 +894,8 @@ export class Renderer {
       this._panY *= this._height / oldH;
       this._clampPanZoom();
     }
-    this._render();
+    this._heatmapDirty = true;
+    this._scheduleRender();
   }
 
   _handleWheel(e) {
@@ -887,7 +917,7 @@ export class Renderer {
     this._zoom = newZoom;
 
     this._clampPanZoom();
-    this._render();
+    this._scheduleRender();
     this._notifyViewport();
   }
 
@@ -934,7 +964,7 @@ export class Renderer {
       this._selectionEnd = null;
       this._suppressNextClick = true;
       this._canvas.style.cursor = '';
-      this._render();
+      this._scheduleRender();
       return;
     }
 
@@ -957,7 +987,7 @@ export class Renderer {
 
     if (this._isSelecting && this._selectionStart) {
       this._selectionEnd = { x: mx, y: my };
-      this._render();
+      this._scheduleRender();
       return;
     }
 
@@ -970,7 +1000,7 @@ export class Renderer {
       this._lastMouse = { x: e.clientX, y: e.clientY };
 
       this._clampPanZoom();
-      this._render();
+      this._scheduleRender();
       this._notifyViewport();
       return;
     }
@@ -994,7 +1024,7 @@ export class Renderer {
     }
     // Re-render when hover state changes (trajectory visibility or article highlight)
     if (this._hoveredVideoId !== prevHoveredVideoId || this._hoveredPoint !== prevHoveredPoint) {
-      this._render();
+      this._scheduleRender();
     }
   }
 
@@ -1193,7 +1223,7 @@ export class Renderer {
         this._panY = my - s * (my - this._panY);
         this._zoom = newZoom;
         this._clampPanZoom();
-        this._render();
+        this._scheduleRender();
         this._notifyViewport();
       }
 
@@ -1208,7 +1238,7 @@ export class Renderer {
       this._panY += dy;
       this._lastMouse = { x: t.clientX, y: t.clientY };
       this._clampPanZoom();
-      this._render();
+      this._scheduleRender();
       this._notifyViewport();
     }
   }

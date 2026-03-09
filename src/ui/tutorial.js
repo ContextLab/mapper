@@ -35,6 +35,7 @@ const STEPS = [
     highlight: '#quiz-panel, #quiz-toggle',
     arrowTarget: '#quiz-toggle',
     arrowSide: 'above',
+    positionHint: 'quiz-final',
     onEnter: 'openQuiz',
     message: 'Questions appear here. Answer them to build your map. Click the toggle arrow to open and close this panel.',
     advanceOn: 'click',

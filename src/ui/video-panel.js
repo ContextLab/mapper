@@ -209,24 +209,25 @@ function formatDuration(seconds) {
 
 const PANEL_CSS = `
   #video-panel {
-    width: 0;
-    min-width: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: var(--sidebar-width);
     background: var(--color-surface);
     box-shadow: 2px 0 24px rgba(0,0,0,0.3), 1px 0 0 var(--color-border);
     z-index: 10;
     display: flex;
     flex-direction: column;
-    padding: 0;
+    padding: 1rem 1.25rem;
     overflow: hidden;
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
     contain: layout style;
-    flex-shrink: 0;
-    order: -1;
   }
   #video-panel.open {
-    width: var(--sidebar-width);
-    padding: 1rem 1.25rem;
+    transform: translateX(0);
     overflow-y: auto;
     overflow-x: hidden;
   }

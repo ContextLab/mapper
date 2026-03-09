@@ -352,25 +352,29 @@ async function boot() {
   announce('Knowledge Mapper loaded. Select a domain to begin.');
 }
 
+/** Update heatmap display on renderer and minimap using global estimates.
+ *  Call this after every $estimates.set() instead of doing it via subscription
+ *  to avoid a redundant globalEstimator.predict() on every $estimates change.
+ *  Returns the global estimates array for callers that need it. */
+let _lastGlobalEstimates = null;
+function updateHeatmapDisplay() {
+  if (!renderer || !currentDomainBundle || !globalEstimator) return null;
+  _lastGlobalEstimates = globalEstimator.predict();
+  renderer.setHeatmap(_lastGlobalEstimates, GLOBAL_REGION);
+  if (minimap) {
+    minimap.setEstimates(_lastGlobalEstimates, GLOBAL_REGION);
+  }
+  return _lastGlobalEstimates;
+}
+
 function wireSubscriptions() {
   $activeDomain.subscribe(async (domainId) => {
     if (!domainId) return;
     await switchDomain(domainId);
   });
 
-  $estimates.subscribe(() => {
-    if (!renderer) return;
-    // Don't show heatmap until a domain has been selected (welcome screen should be clean)
-    if (!currentDomainBundle) return;
-    // Both renderer and minimap always show global estimates covering full [0,1] space
-    if (globalEstimator) {
-      const globalEstimates = globalEstimator.predict();
-      renderer.setHeatmap(globalEstimates, GLOBAL_REGION);
-      if (minimap) {
-        minimap.setEstimates(globalEstimates, GLOBAL_REGION);
-      }
-    }
-  });
+  // Heatmap display is updated directly via updateHeatmapDisplay() at each
+  // $estimates.set() call site — avoids redundant globalEstimator.predict().
 
   $coverage.subscribe((coverage) => {
     updateConfidence(coverage);
@@ -524,6 +528,7 @@ async function switchDomain(domainId) {
 
     const estimates = estimator.predict();
     $estimates.set(estimates);
+    updateHeatmapDisplay();
 
     renderer.setPoints(articlesToPoints(allDomainBundle.articles));
     renderer.setAnsweredQuestions(responsesToAnsweredDots($responses.get(), questionIndex));
@@ -699,13 +704,15 @@ function handleAnswer(selectedKey, question) {
     globalEstimator.observe(qx, qy, isCorrect, UNIFORM_LENGTH_SCALE, difficulty);
     const estimates = estimator.predict();
     $estimates.set(estimates);
+    updateHeatmapDisplay();
 
     const coverage = Math.round($coverage.get() * 100);
     announce(`${coverage}% mapped.`);
 
     // Video recommendation: post-video diff map flow (T-V052, FR-V021)
     if ($preVideoSnapshot.get() !== null) {
-      const globalEstimates = globalEstimator.predict();
+      // Reuse global estimates already computed by updateHeatmapDisplay above
+      const globalEstimates = _lastGlobalEstimates || globalEstimator.predict();
       const result = handlePostVideoQuestion(globalEstimates, mergedVideoWindows);
       if (result.phaseComplete) {
         mergedVideoWindows = [];
@@ -790,6 +797,7 @@ function handleSkip() {
     globalEstimator.observeSkip(qx, qy, UNIFORM_LENGTH_SCALE, difficulty);
     const estimates = estimator.predict();
     $estimates.set(estimates);
+    updateHeatmapDisplay();
   }, 0);
 
   // Advance tutorial on skip event
@@ -928,6 +936,7 @@ function handleImport(data) {
     if (globalEstimator) globalEstimator.restore(relevant, UNIFORM_LENGTH_SCALE, questionIndex);
     const estimates = estimator.predict();
     $estimates.set(estimates);
+    updateHeatmapDisplay();
 
     domainQuestionCount = merged.length;
     modes.updateAvailability(domainQuestionCount);

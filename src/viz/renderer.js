@@ -53,10 +53,6 @@ export class Renderer {
 
     this._resizeObserver = null;
 
-    // Offscreen heatmap cache — avoids 10k-cell recalculation every frame
-    this._heatmapCanvas = null;
-    this._heatmapDirty = true;
-
     // rAF render coalescing — prevents multiple renders per frame
     this._renderScheduled = false;
 
@@ -162,12 +158,18 @@ export class Renderer {
     // Size canvas
     this._resize();
 
-    // ResizeObserver for flex layout changes
+    // ResizeObserver for flex layout changes — debounced to avoid white flash
+    // during panel open/close transitions (300ms width animation).
+    // Only resize+render after 100ms of no resize events.
+    this._resizeTimer = null;
     this._resizeObserver = new ResizeObserver(() => {
-      this._resize();
-      this._heatmapDirty = true;
-      this._scheduleRender();
-      this._notifyViewport();
+      if (this._resizeTimer) clearTimeout(this._resizeTimer);
+      this._resizeTimer = setTimeout(() => {
+        this._resizeTimer = null;
+        this._resize();
+        this._scheduleRender();
+        this._notifyViewport();
+      }, 100);
     });
     this._resizeObserver.observe(this._container);
 
@@ -222,7 +224,6 @@ export class Renderer {
         this._estimateEvidence[e.gy * n + e.gx] = e.evidenceCount || 0;
       }
     }
-    this._heatmapDirty = true;
     this._scheduleRender();
   }
 
@@ -535,7 +536,7 @@ export class Renderer {
     ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, w, h);
 
-    this._blitHeatmap(ctx, w, h);
+    this._drawHeatmap(ctx, w, h);
 
     ctx.save();
     ctx.translate(this._panX, this._panY);
@@ -571,26 +572,25 @@ export class Renderer {
    * The offscreen canvas is in world-normalized [0,1] space for the heatmap region,
    * so pan/zoom just repositions it via drawImage — no per-cell recalculation.
    */
-  _rebuildHeatmapCache() {
-    if (!this._estimateGrid || this._heatmapEstimates.length === 0) {
-      this._heatmapCanvas = null;
-      return;
-    }
+  _drawHeatmap(ctx, w, h) {
+    if (!this._estimateGrid || this._heatmapEstimates.length === 0) return;
 
     const N = this._heatmapGridSize || 50;
     const grid = this._estimateGrid;
     const evidence = this._estimateEvidence;
     const region = this._heatmapRegion;
-    if (!region) { this._heatmapCanvas = null; return; }
+    if (!region) return;
 
-    // Offscreen canvas sized to cover the heatmap region in screen pixels
-    const CELLS = 80; // resolution of the cached heatmap texture
-    if (!this._heatmapCanvas) {
-      this._heatmapCanvas = document.createElement('canvas');
-    }
-    this._heatmapCanvas.width = CELLS;
-    this._heatmapCanvas.height = CELLS;
-    const hctx = this._heatmapCanvas.getContext('2d');
+    // Use more screen cells for a smoother appearance. The GP grid is N×N but
+    // we sample at higher resolution and bilinearly interpolate between cells.
+    const SCREEN_CELLS = 100;
+    const cellW = w / SCREEN_CELLS;
+    const cellH = h / SCREEN_CELLS;
+
+    const rXMin = region.x_min;
+    const rYMin = region.y_min;
+    const rXSpan = region.x_max - region.x_min;
+    const rYSpan = region.y_max - region.y_min;
 
     function sampleGrid(gxf, gyf) {
       const gx0 = Math.max(0, Math.min(N - 1, Math.floor(gxf)));
@@ -616,52 +616,33 @@ export class Renderer {
       return top + (bot - top) * fy;
     }
 
-    // Render each cell of the heatmap texture in grid-normalized space
-    for (let cy = 0; cy < CELLS; cy++) {
-      for (let cx = 0; cx < CELLS; cx++) {
-        const gxf = (cx + 0.5) / CELLS * N - 0.5;
-        const gyf = (cy + 0.5) / CELLS * N - 0.5;
+    ctx.globalAlpha = 0.45;
 
-        if (gxf < -0.5 || gxf >= N - 0.5 || gyf < -0.5 || gyf >= N - 0.5) {
-          hctx.fillStyle = 'rgba(245, 220, 105, 0.25)';
-        } else {
-          const val = sampleGrid(gxf, gyf);
-          const ev = sampleEvidence(gxf, gyf);
-          const [r, g, b] = valueToColor(val);
-          const a = ev < 0.5 ? 0.5 : 0.75;
-          hctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
+    for (let sy = 0; sy < SCREEN_CELLS; sy++) {
+      for (let sx = 0; sx < SCREEN_CELLS; sx++) {
+        const centerSX = (sx + 0.5) * cellW;
+        const centerSY = (sy + 0.5) * cellH;
+        const wx = (centerSX - this._panX) / (this._zoom * w);
+        const wy = (centerSY - this._panY) / (this._zoom * h);
+
+        const gxf = ((wx - rXMin) / rXSpan) * N - 0.5;
+        const gyf = ((wy - rYMin) / rYSpan) * N - 0.5;
+
+        if (gxf < -1 || gxf >= N || gyf < -1 || gyf >= N) {
+          ctx.fillStyle = 'rgba(245, 220, 105, 0.25)';
+          ctx.fillRect(sx * cellW, sy * cellH, cellW + 0.5, cellH + 0.5);
+          continue;
         }
-        hctx.fillRect(cx, cy, 1, 1);
+
+        const val = sampleGrid(gxf, gyf);
+        const ev = sampleEvidence(gxf, gyf);
+        const [r, g, b] = valueToColor(val);
+        const a = ev < 0.5 ? 0.5 : 0.75;
+        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
+        ctx.fillRect(sx * cellW, sy * cellH, cellW + 0.5, cellH + 0.5);
       }
     }
 
-    this._heatmapDirty = false;
-  }
-
-  /**
-   * Draw cached heatmap image onto the main canvas, positioned by pan/zoom.
-   * This is O(1) — just a single drawImage call per frame.
-   */
-  _blitHeatmap(ctx, w, h) {
-    if (!this._estimateGrid || this._heatmapEstimates.length === 0) return;
-    const region = this._heatmapRegion;
-    if (!region) return;
-
-    // Rebuild offscreen cache if heatmap data changed
-    if (this._heatmapDirty || !this._heatmapCanvas) {
-      this._rebuildHeatmapCache();
-    }
-    if (!this._heatmapCanvas) return;
-
-    // Map the heatmap region [x_min,y_min]-[x_max,y_max] to screen coordinates
-    const x0 = this._panX + region.x_min * this._zoom * w;
-    const y0 = this._panY + region.y_min * this._zoom * h;
-    const rw = (region.x_max - region.x_min) * this._zoom * w;
-    const rh = (region.y_max - region.y_min) * this._zoom * h;
-
-    ctx.globalAlpha = 0.45;
-    ctx.imageSmoothingEnabled = true;
-    ctx.drawImage(this._heatmapCanvas, x0, y0, rw, rh);
     ctx.globalAlpha = 1;
   }
 
@@ -894,7 +875,6 @@ export class Renderer {
       this._panY *= this._height / oldH;
       this._clampPanZoom();
     }
-    this._heatmapDirty = true;
     this._scheduleRender();
   }
 

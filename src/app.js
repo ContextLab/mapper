@@ -30,7 +30,7 @@ import * as modes from './ui/modes.js';
 import * as insights from './ui/insights.js';
 import * as share from './ui/share.js';
 import { checkMilestone, highlightExpertiseButton, updateProgressDisplay } from './ui/milestones.js';
-import { initTutorial, advanceTutorial, isTutorialActive, resetTutorial, dismissTutorial, setAnswerFeedback } from './ui/tutorial.js';
+import { initTutorial, advanceTutorial, isTutorialActive, resetTutorial, dismissTutorial, setAnswerFeedback, goToStep as tutorialGoToStep } from './ui/tutorial.js';
 import * as videoModal from './ui/video-modal.js';
 import * as videoLoader from './domain/video-loader.js';
 import * as videoPanel from './ui/video-panel.js';
@@ -176,15 +176,16 @@ async function boot() {
   controls.onExport(handleExport);
   controls.onImport(handleImport);
 
-  // Move action buttons (upload/download/reset) from domain-selector to header-right
-  // Append AFTER main icons so they're off-screen to the right on mobile (scroll right to reveal)
+  // Move action buttons (reset/download/upload) from domain-selector to header-right
+  // Insert BEFORE main icons (left side, after map icon/dropdown)
   const headerRight = headerEl.querySelector('.header-right');
   const actionBtns = controls.getActionButtons();
   if (headerRight && actionBtns.importButton) {
-    // Append in order: reset, download, upload (revealed by scrolling right)
-    headerRight.appendChild(actionBtns.resetButton);
-    headerRight.appendChild(actionBtns.exportButton);
-    headerRight.appendChild(actionBtns.importButton);
+    const first = headerRight.firstChild;
+    // Insert in order: reset, download, upload (left side of icon bar)
+    headerRight.insertBefore(actionBtns.resetButton, first);
+    headerRight.insertBefore(actionBtns.exportButton, first);
+    headerRight.insertBefore(actionBtns.importButton, first);
     for (const btn of [actionBtns.resetButton, actionBtns.exportButton, actionBtns.importButton]) {
       btn.classList.add('btn-icon');
     }
@@ -324,7 +325,7 @@ async function boot() {
   }
 
   if (import.meta.env.DEV) {
-    window.__mapper = { registry, estimator, sampler, renderer, minimap, $activeDomain, $estimates, $responses, getCurrentQuestion: quiz.getCurrentQuestion };
+    window.__mapper = { registry, estimator, sampler, renderer, minimap, $activeDomain, $estimates, $responses, getCurrentQuestion: quiz.getCurrentQuestion, tutorialGoToStep };
   }
 
   const quizToggle = document.getElementById('quiz-toggle');

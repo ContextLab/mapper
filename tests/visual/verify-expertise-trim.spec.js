@@ -12,12 +12,29 @@ test('expertise modal: names are trimmed and limited to top 10', async ({ page }
 
   // Answer 6 questions to unlock expertise areas
   for (let i = 0; i < 6; i++) {
-    const optionBtn = await page.waitForSelector('.quiz-option', { timeout: 10000 });
-    await optionBtn.click();
-    await page.waitForTimeout(900);
+    // Wait for a fresh quiz-question to appear
+    await page.waitForSelector('.quiz-question', { timeout: 10000 });
+    const questionText = await page.textContent('.quiz-question');
+    // Click the first option
+    await page.locator('.quiz-option').first().click();
+    // Wait for either a new question or for the current question to change
+    try {
+      await page.waitForFunction(
+        (prevText) => {
+          const q = document.querySelector('.quiz-question');
+          return q && q.textContent !== prevText;
+        },
+        questionText,
+        { timeout: 5000 }
+      );
+    } catch {
+      // If question didn't change (e.g., last question), just wait
+      await page.waitForTimeout(1500);
+    }
   }
 
-  // Click the trophy button to open the expertise modal
+  // Wait for trophy button to become enabled (updateInsightButtons)
+  await page.waitForSelector('#trophy-btn:not([disabled])', { timeout: 10000 });
   await page.click('#trophy-btn');
   await page.waitForSelector('#insights-modal:not([hidden])', { timeout: 5000 });
 

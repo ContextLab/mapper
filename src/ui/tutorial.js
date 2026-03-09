@@ -436,6 +436,20 @@ export function getTutorialStep() {
   return { step: state.step, subStep: state.subStep };
 }
 
+/** Programmatically jump to a specific tutorial step (for testing). */
+export function goToStep(step, subStep = 1) {
+  if (!state) state = defaultState();
+  state.completed = false;
+  state.dismissed = false;
+  state.welcomeShown = true;
+  state.step = step;
+  state.subStep = subStep;
+  _questionsAnsweredInStep = 0;
+  _inFollowUp = false;
+  saveState();
+  renderCurrentStep();
+}
+
 // ── Step navigation helpers ─────────────────────────────────────────
 
 function getStepDef(id) {

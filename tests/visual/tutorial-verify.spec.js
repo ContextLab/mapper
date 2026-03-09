@@ -23,23 +23,35 @@ async function clickStartAndWaitForMap(page) {
   await page.waitForTimeout(2000);
 }
 
-async function setTutorialState(page, step, subStep = 1) {
+async function goToTutorialStep(page, step, subStep = 1) {
   await page.evaluate(({ step, subStep }) => {
-    localStorage.setItem('mapper-tutorial', JSON.stringify({
-      completed: false, dismissed: false,
-      step, subStep,
-      hasSkippedQuestion: false, skipToastShown: false, returningUser: false,
-    }));
+    if (window.__mapper && window.__mapper.tutorialGoToStep) {
+      window.__mapper.tutorialGoToStep(step, subStep);
+    }
   }, { step, subStep });
+  await page.waitForTimeout(500);
 }
 
 async function answerQuestion(page) {
-  // Wait for quiz option to be visible
-  const opt = page.locator('.quiz-option:not([disabled])').first();
   try {
+    await page.waitForSelector('.quiz-question', { timeout: 5000 });
+    const prevText = await page.textContent('.quiz-question');
+    const opt = page.locator('.quiz-option:not([disabled])').first();
     await opt.waitFor({ state: 'visible', timeout: 5000 });
     await opt.click({ timeout: 5000 });
-    await page.waitForTimeout(1500);
+    // Wait for question to change (auto-advance) or timeout
+    try {
+      await page.waitForFunction(
+        (prev) => {
+          const q = document.querySelector('.quiz-question');
+          return q && q.textContent !== prev;
+        },
+        prevText,
+        { timeout: 5000 }
+      );
+    } catch {
+      await page.waitForTimeout(1500);
+    }
     return true;
   } catch { return false; }
 }
@@ -67,8 +79,8 @@ test.describe('Tutorial visual verification', () => {
     await page.setViewportSize({ width: 1280, height: 800 });
     await resetAndLoad(page);
     // Set tutorial to step 6 (Switch Domains) to test highlight on dropdown
-    await setTutorialState(page, 6);
     await clickStartAndWaitForMap(page);
+    await goToTutorialStep(page, 6);
     await page.waitForTimeout(2000);
 
     // Take screenshot showing the domain selector highlighted (#42)
@@ -133,8 +145,8 @@ test.describe('Tutorial visual verification', () => {
   test('Issue #41: Title says "Videos in View"', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 });
     await resetAndLoad(page);
-    await setTutorialState(page, 3, 1);
     await clickStartAndWaitForMap(page);
+    await goToTutorialStep(page, 3, 1);
     await page.waitForSelector('#tutorial-modal', { timeout: 10000 });
     await page.waitForTimeout(800);
 
@@ -146,8 +158,8 @@ test.describe('Tutorial visual verification', () => {
   test('Issue #44: Expertise text softened', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 });
     await resetAndLoad(page);
-    await setTutorialState(page, 8);
     await clickStartAndWaitForMap(page);
+    await goToTutorialStep(page, 8);
     await page.waitForSelector('#tutorial-modal', { timeout: 10000 });
     await page.waitForTimeout(500);
 
@@ -159,10 +171,10 @@ test.describe('Tutorial visual verification', () => {
   test('Issue #45: New tutorial steps exist (modes, save/load, about)', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 });
     await resetAndLoad(page);
+    await clickStartAndWaitForMap(page);
 
     // Step 11: Question Modes
-    await setTutorialState(page, 11);
-    await clickStartAndWaitForMap(page);
+    await goToTutorialStep(page, 11);
     await page.waitForSelector('#tutorial-modal', { timeout: 10000 });
     await page.waitForTimeout(500);
     const title11 = await page.textContent('[data-tutorial-title]');
@@ -170,10 +182,7 @@ test.describe('Tutorial visual verification', () => {
     await page.screenshot({ path: `${SHOTS}/issue45-step11-modes.png` });
 
     // Step 12: Save & Load
-    await setTutorialState(page, 12);
-    await page.goto(BASE);
-    await page.waitForSelector('#landing-start-btn[data-ready="true"]', { timeout: 30000 });
-    await clickStartAndWaitForMap(page);
+    await goToTutorialStep(page, 12);
     await page.waitForSelector('#tutorial-modal', { timeout: 10000 });
     await page.waitForTimeout(500);
     const title12 = await page.textContent('[data-tutorial-title]');
@@ -181,10 +190,7 @@ test.describe('Tutorial visual verification', () => {
     await page.screenshot({ path: `${SHOTS}/issue45-step12-save-load.png` });
 
     // Step 13: Learn More
-    await setTutorialState(page, 13);
-    await page.goto(BASE);
-    await page.waitForSelector('#landing-start-btn[data-ready="true"]', { timeout: 30000 });
-    await clickStartAndWaitForMap(page);
+    await goToTutorialStep(page, 13);
     await page.waitForSelector('#tutorial-modal', { timeout: 10000 });
     await page.waitForTimeout(500);
     const title13 = await page.textContent('[data-tutorial-title]');
@@ -277,8 +283,8 @@ test.describe('Tutorial visual verification', () => {
         const list = document.querySelector('#insights-modal-body .insights-modal-list');
         return {
           count: items.length,
-          maxHeight: list?.style.maxHeight || getComputedStyle(list).maxHeight,
-          overflowY: list?.style.overflowY || getComputedStyle(list).overflowY,
+          maxHeight: list ? (list.style.maxHeight || getComputedStyle(list).maxHeight) : 'not-found',
+          overflowY: list ? (list.style.overflowY || getComputedStyle(list).overflowY) : 'not-found',
         };
       });
       console.log('Issue #48: Items:', info.count, 'maxHeight:', info.maxHeight, 'overflow:', info.overflowY);

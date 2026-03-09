@@ -192,7 +192,9 @@ export function init(container) {
     wrapper.appendChild(btn);
   }
 
-  // Skip button
+  container.prepend(wrapper);
+
+  // Skip button — placed after .quiz-instruction inside .quiz-content
   skipBtnEl = document.createElement('button');
   skipBtnEl.className = 'skip-btn';
   skipBtnEl.textContent = '';
@@ -204,9 +206,14 @@ export function init(container) {
   skipBtnEl.addEventListener('click', () => {
     if (onSkipCb) onSkipCb();
   });
-  wrapper.appendChild(skipBtnEl);
+  const instructionEl = container.querySelector('.quiz-instruction');
+  if (instructionEl) {
+    instructionEl.after(skipBtnEl);
+  } else {
+    container.appendChild(skipBtnEl);
+  }
 
-  // Auto-advance toggle
+  // Auto-advance toggle — placed after .modes-wrapper (not inside it)
   const toggleWrap = document.createElement('div');
   toggleWrap.className = 'auto-advance-wrap';
 
@@ -243,10 +250,8 @@ export function init(container) {
 
   toggleWrap.appendChild(track);
   toggleWrap.appendChild(label);
-  wrapper.appendChild(toggleWrap);
+  wrapper.after(toggleWrap);
   autoAdvanceToggleEl = track;
-
-  container.prepend(wrapper);
 }
 
 export function onModeSelect(callback) {
@@ -280,6 +285,14 @@ export function getActiveMode() {
 
 export function isAutoAdvance() {
   return autoAdvance;
+}
+
+export function setAutoAdvance(value) {
+  autoAdvance = !!value;
+  if (autoAdvanceToggleEl) {
+    autoAdvanceToggleEl.classList.toggle('on', autoAdvance);
+    autoAdvanceToggleEl.setAttribute('aria-checked', String(autoAdvance));
+  }
 }
 
 function handleSelect(modeId, type) {

@@ -90,6 +90,15 @@
   #tutorial-overlay { transition: none !important; }
 }
 
+/* Tutorial Complete — highlighted ? button with circle */
+.tutorial-btn-highlight {
+  background: var(--color-text-muted, #64748b) !important;
+  color: #fff !important;
+  border-radius: 50% !important;
+  border-color: var(--color-text-muted, #64748b) !important;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2) !important;
+}
+
 /* Mobile bottom-sheet adjustments */
 @media (max-width: 480px) {
   #tutorial-modal {

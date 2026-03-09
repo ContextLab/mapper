@@ -1269,7 +1269,7 @@ export class Renderer {
       const [cr, cg, cb] = valueToColor(hit.estimateValue ?? 0.5);
       const borderColor = `rgb(${cr},${cg},${cb})`;
       const icon = '<i class="fa-brands fa-youtube" style="color:#c4302b;font-size:0.85em;"></i>';
-      const videoTitle = (hit.title || 'Video').split('|')[0].trim();
+      const videoTitle = (hit.title || 'Video').split('|')[0].trim().replace(/\s*\([^)]*\)\s*$/, '');
       let html = `<div style="font-weight:600;margin-bottom:4px;">${icon} ${this._escapeHtml(videoTitle)}</div>`;
       html += `<div style="font-size:0.73rem;color:var(--color-text-muted);">${duration} &middot; Click to play</div>`;
       const trajectory = this._videoTrajectories.get(hit.videoId);

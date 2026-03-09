@@ -40,19 +40,19 @@ const STEPS = [
     advanceOn: 'click',
   },
   {
-    id: 3, title: 'Videos in View', subSteps: [
+    id: 3, title: 'Video Sidebar', subSteps: [
       {
-        title: 'Videos in View',
+        title: 'Video Sidebar',
         highlight: '#video-panel, #video-toggle',
         arrowTarget: '#video-toggle',
         arrowSide: 'above',
         onEnter: 'closeQuiz,openVideo',
         skipOnMobile: true,
-        message: 'Every video in our dataset lives at a different location on the map. This list shows all of the videos contained within the *current* view. The list adjusts dynamically as you zoom and pan.',
+        message: 'Every video in our dataset lives at a different location on the map. This menu shows all of the videos contained within the current map view. The list adjusts dynamically as you zoom and pan.',
         advanceOn: 'click',
       },
       {
-        title: 'Videos in View',
+        title: 'Video Sidebar',
         highlight: '#video-panel, #video-toggle',
         skipOnMobile: true,
         message: 'Hover over any video in the list to see its *trajectory*: the "path" of concepts it touches on from moment to moment. Click on any video to watch it!',
@@ -63,6 +63,7 @@ const STEPS = [
   {
     id: 4, title: 'Try Answering a Question',
     highlight: '#quiz-panel',
+    positionHint: 'quiz-final',
     onEnter: 'closeVideo,openQuiz',
     message: "Now let's start mapping your knowledge! Pick whatever answer you think is correct. If you don't know, just press the skip button. Our system learns with each question you answer. Knowing what you don't know tells us something too!",
     advanceOn: 'answer', // also responds to 'skip'
@@ -73,12 +74,14 @@ const STEPS = [
     id: 5, title: 'Building Your Map', subSteps: [
       {
         title: 'Building Your Map',
+        positionHint: 'quiz-final',
         message: 'Answer a few more questions and see how your map updates.',
         advanceOn: 'answer',
         questionTarget: 2,
       },
       {
         title: 'Building Your Map',
+        positionHint: 'quiz-final',
         arrowTarget: '.auto-advance-label',
         arrowSide: 'right',
         skipOnMobile: true,
@@ -87,14 +90,32 @@ const STEPS = [
       },
       {
         title: 'Building Your Map',
-        message: "Answer one more question and then we'll move on.",
+        positionHint: 'quiz-final',
+        message: "Answer one more question to see how things work when auto-advance is disabled. Then we'll re-enable auto-advance and move on.",
         advanceOn: 'answer',
         questionTarget: 1,
       },
     ]
   },
   {
-    id: 6, title: 'Switch Domains',
+    id: 6, title: 'Question Modes',
+    highlight: '.modes-wrapper',
+    skipOnMobile: true,
+    onEnter: 'closeModals,openQuiz,enableAutoAdvance',
+    message: 'These buttons let you control the difficulty of your next question. "Give me an easy one" picks a question the system thinks you\'ll get right. "Challenge me" picks a hard question. "Test my weak spots" focuses on areas where your knowledge seems weakest.',
+    advanceOn: 'click',
+  },
+  {
+    id: 7, title: 'Save & Load Progress',
+    highlight: '.header-left',
+    positionHint: 'left',
+    skipOnMobile: true,
+    onEnter: 'closeModals',
+    message: 'Use these buttons to export your progress (download a file), import previously saved progress, or reset and start fresh.',
+    advanceOn: 'click',
+  },
+  {
+    id: 8, title: 'Switch Domains',
     highlight: '.domain-selector',
     message: 'Select a different knowledge domain from the dropdown menu to focus in on that part of your map!',
     arrowTarget: '.domain-selector .custom-select-trigger',
@@ -103,7 +124,7 @@ const STEPS = [
     removeOverlayOnAction: true,
   },
   {
-    id: 7, title: 'Exploring Domain-Specific Knowledge',
+    id: 9, title: 'Exploring Domain-Specific Knowledge',
     highlight: '#quiz-panel',
     advanceOn: 'answer',
     questionTarget: 2,
@@ -111,8 +132,9 @@ const STEPS = [
     onEnter: 'openQuiz',
   },
   {
-    id: 8, title: 'Your Expertise',
+    id: 10, title: 'Your Expertise',
     highlight: '#trophy-btn',
+    positionHint: 'right',
     skipOnMobile: true,
     message: "As you answer questions, the system builds a picture of your knowledge. Click this button to see how your answers are shaping up so far. Keep in mind, it gets more accurate with more questions!",
     advanceOn: 'expertise-click',
@@ -120,8 +142,9 @@ const STEPS = [
     followUp: { dynamicMessage: true, advanceOn: 'click' },
   },
   {
-    id: 9, title: 'Fill in Your Knowledge Gaps!',
+    id: 11, title: 'Fill in Your Knowledge Gaps!',
     highlight: '#suggest-btn',
+    positionHint: 'right',
     skipOnMobile: true,
     onEnter: 'closeModals',
     message: 'Click this button to see recommended Khan Academy videos based on your answers so far. These suggestions will become more targeted as you answer more questions!',
@@ -130,8 +153,9 @@ const STEPS = [
     followUp: { message: 'Click on any video to watch it!', advanceOn: 'click' },
   },
   {
-    id: 10, title: 'Share Your Map',
+    id: 12, title: 'Share Your Map',
     highlight: '#share-btn',
+    positionHint: 'right',
     onEnter: 'closeModals',
     message: 'Click this button to share your map on social media. Try it out!',
     advanceOn: 'share-click',
@@ -139,24 +163,9 @@ const STEPS = [
     followUp: { message: 'You can share on LinkedIn, X, or Bluesky. You can also download an image of your map to show it off!', advanceOn: 'click' },
   },
   {
-    id: 11, title: 'Question Modes',
-    highlight: '.modes-wrapper',
-    skipOnMobile: true,
-    onEnter: 'closeModals,openQuiz',
-    message: 'These buttons let you control the difficulty of your questions. "Give me an easy one" picks questions the system thinks you\'ll get right. "Challenge me" picks harder ones. "Test my weak spots" focuses on areas where your knowledge seems weakest.',
-    advanceOn: 'click',
-  },
-  {
-    id: 12, title: 'Save & Load Progress',
-    highlight: '.header-left',
-    skipOnMobile: true,
-    onEnter: 'closeModals',
-    message: 'Use these buttons to export your progress (download a file), import previously saved progress, or reset and start fresh.',
-    advanceOn: 'click',
-  },
-  {
     id: 13, title: 'Learn More',
     highlight: '#about-btn',
+    positionHint: 'right',
     onEnter: 'closeModals',
     message: 'Want to learn more about how Knowledge Mapper works? Click the "About" button to read about the technique, view the research paper, and explore the methodology behind the system.',
     advanceOn: 'click',
@@ -164,7 +173,9 @@ const STEPS = [
   {
     id: 14, title: 'Tutorial Complete!',
     advanceOn: 'click',
-    onEnter: 'closeModals',
+    onEnter: 'closeModals,showTutorialBtn',
+    arrowTarget: '#tutorial-btn',
+    arrowSide: 'below',
     isCompletion: true,
   },
 ];
@@ -572,6 +583,7 @@ function renderCurrentStep() {
   let arrowTarget = stepDef.arrowTarget || null;
   let arrowSide = stepDef.arrowSide || 'left';
   let onEnter = stepDef.onEnter || null;
+  let positionHint = stepDef.positionHint || null;
 
   // SubStep handling
   if (stepDef.subSteps) {
@@ -583,6 +595,7 @@ function renderCurrentStep() {
     arrowTarget = sub.arrowTarget ?? arrowTarget;
     arrowSide = sub.arrowSide || arrowSide;
     onEnter = sub.onEnter ?? onEnter;
+    positionHint = sub.positionHint ?? positionHint;
   }
 
   // Dynamic message for step 7 (domain-specific)
@@ -608,14 +621,14 @@ function renderCurrentStep() {
   const isFinish = !!stepDef.isCompletion;
   const showNextBtn = advanceOn === 'click' || isFinish;
 
-  renderOverlay(highlight, title, message, showNextBtn, isFinish, arrowTarget, arrowSide);
+  renderOverlay(highlight, title, message, showNextBtn, isFinish, arrowTarget, arrowSide, positionHint);
   _currentHighlightSelector = highlight; // Set AFTER renderOverlay (which calls removeOverlay → clears it)
   startHighlightRefresh();
 }
 
 function buildDynamicMessage(stepDef) {
-  // Step 7: include current domain name
-  if (stepDef.id === 7) {
+  // Step 9 (Exploring Domain-Specific Knowledge): include current domain name
+  if (stepDef.id === 9) {
     const domainEl = document.querySelector('.custom-select-value');
     const domain = domainEl?.textContent?.trim() || 'a new domain';
     return `You selected ${domain} from the menu\u2014now all of the questions you see will be focused on this one area. You can go back to mapping general knowledge by selecting "All (General)" from the dropdown menu. But first, try answering a couple of questions in the domain you selected. Remember, you can always skip if you need to!`;
@@ -624,8 +637,8 @@ function buildDynamicMessage(stepDef) {
 }
 
 function buildDynamicFollowUp(stepDef) {
-  // Step 8: expertise follow-up with top sub-domain areas + parent domain summary
-  if (stepDef.id === 8) {
+  // Step 10 (Your Expertise): follow-up with top sub-domain areas
+  if (stepDef.id === 10) {
     const items = document.querySelectorAll('#insights-modal-body .insights-concept');
     const areas = Array.from(items).slice(0, 3).map(el => el.textContent?.trim()).filter(Boolean);
     if (areas.length >= 3) {
@@ -652,8 +665,8 @@ function showInModalFeedback(wasSkipped) {
     feedbackMsg = "Nice, you got it right! Notice how the map updated: a green dot was added to the map to denote which concept this question tested. And areas *around* that question are updated too: knowledge about one concept implies knowledge about *related* concepts too!";
     feedbackColor = 'var(--color-correct, #059669)';
   } else {
-    feedbackTitle = 'Not quite!';
-    feedbackMsg = "Not quite! Notice how the map updated: a red dot was added to the map to denote which concept this question tested. And areas *around* that question are updated too: a knowledge gap for one concept implies gaps in knowledge about *related* concepts too!";
+    feedbackTitle = 'Not Quite!';
+    feedbackMsg = "You missed that one! Notice how the map updated: a red dot was added to the map to denote which concept this question tested. And areas *around* that question are updated too: a knowledge gap for one concept implies gaps in knowledge about *related* concepts too!";
     feedbackColor = 'var(--color-incorrect, #dc2626)';
   }
 
@@ -747,6 +760,19 @@ function executeOnEnter(action) {
       if (closeBtn) closeBtn.click();
       else el.hidden = true;
     });
+  } else if (action === 'enableAutoAdvance') {
+    // Re-enable auto-advance after the user toggled it off during step 5
+    const track = document.querySelector('.auto-advance-track');
+    if (track && !track.classList.contains('on')) {
+      track.click(); // toggles it on
+    }
+  } else if (action === 'showTutorialBtn') {
+    const tutBtn = document.getElementById('tutorial-btn');
+    if (tutBtn) {
+      tutBtn.hidden = false;
+      // Add highlighted circle style
+      tutBtn.classList.add('tutorial-btn-highlight');
+    }
   }
 }
 
@@ -801,6 +827,9 @@ function removeOverlay() {
   if (arrow) arrow.remove();
   document.querySelectorAll('.tutorial-highlight').forEach(el =>
     el.classList.remove('tutorial-highlight'));
+  // Clean up tutorial button highlight
+  const tutBtn = document.getElementById('tutorial-btn');
+  if (tutBtn) tutBtn.classList.remove('tutorial-btn-highlight');
   _currentHighlightSelector = null;
 }
 
@@ -900,7 +929,7 @@ function repositionArrow(arrow, targetEl, side) {
   arrow.style.left = `${left}px`;
 }
 
-function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish, arrowTargetSelector, arrowSide = 'left') {
+function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish, arrowTargetSelector, arrowSide = 'left', positionHint = null) {
   removeOverlay();
 
   // Overlay
@@ -970,10 +999,10 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
 
   // Position modal (immediate + deferred to catch panel transitions)
   if (!mobile && highlightEl && !isFinish) {
-    positionModal(modal, highlightEl);
-    setTimeout(() => positionModal(modal, highlightEl), 350);
-    setTimeout(() => positionModal(modal, highlightEl), 600);
-    setTimeout(() => positionModal(modal, highlightEl), 700);
+    positionModal(modal, highlightEl, positionHint);
+    setTimeout(() => positionModal(modal, highlightEl, positionHint), 350);
+    setTimeout(() => positionModal(modal, highlightEl, positionHint), 600);
+    setTimeout(() => positionModal(modal, highlightEl, positionHint), 700);
   } else if (!mobile) {
     Object.assign(modal.style, {
       top: '50%', left: '50%',
@@ -1157,8 +1186,7 @@ function makeDraggable(modal) {
   }, { passive: true });
 }
 
-function positionModal(modal, highlightEl) {
-  const rect = highlightEl.getBoundingClientRect();
+function positionModal(modal, highlightEl, positionHint = null) {
   const vw = window.innerWidth;
   const vh = window.innerHeight;
   const gap = 16;
@@ -1167,6 +1195,35 @@ function positionModal(modal, highlightEl) {
 
   let left, top;
 
+  // Position hints override normal positioning
+  if (positionHint === 'quiz-final') {
+    // Position as if quiz panel is at its final open position (right edge)
+    const sidebarW = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--sidebar-width')) || 380;
+    left = vw - sidebarW - mw - gap;
+    if (left < 12) left = 12;
+    top = headerH + gap;
+    Object.assign(modal.style, { top: `${top}px`, left: `${left}px` });
+    return;
+  }
+
+  if (positionHint === 'right') {
+    // Right-aligned: right edge of modal has same margin as header-to-modal gap
+    left = vw - mw - gap;
+    top = headerH + gap;
+    Object.assign(modal.style, { top: `${top}px`, left: `${left}px` });
+    return;
+  }
+
+  if (positionHint === 'left') {
+    // Left-aligned: left edge of modal has same margin as header-to-modal gap
+    left = gap;
+    top = headerH + gap;
+    Object.assign(modal.style, { top: `${top}px`, left: `${left}px` });
+    return;
+  }
+
+  const rect = highlightEl.getBoundingClientRect();
+
   const isRight = rect.left > vw * 0.5;    // highlight on right side (quiz panel)
   const isLeft = rect.right < vw * 0.4;    // highlight on left side (video panel)
   const isTop = rect.bottom < vh * 0.25;   // highlight in header area
@@ -1174,7 +1231,6 @@ function positionModal(modal, highlightEl) {
 
   if (isLarge) {
     // Large element (map container) — center modal in the map area.
-    // Use the map container's actual width (adjusts when quiz panel opens).
     const mapEl = document.getElementById('map-container');
     const mapRect = mapEl ? mapEl.getBoundingClientRect() : rect;
     left = mapRect.left + (mapRect.width - mw) / 2;

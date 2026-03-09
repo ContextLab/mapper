@@ -185,7 +185,7 @@ function renderList() {
 
     const titleSpan = document.createElement('span');
     titleSpan.className = 'video-panel-item-title';
-    titleSpan.textContent = (v.title || '').split('|')[0].trim();
+    titleSpan.textContent = (v.title || '').split('|')[0].trim().replace(/\s*\([^)]*\)\s*$/, '');
 
     const meta = document.createElement('span');
     meta.className = 'video-panel-item-meta';

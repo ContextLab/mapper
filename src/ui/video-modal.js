@@ -151,7 +151,7 @@ export function playVideo(video) {
   // Video title
   const titleDiv = document.createElement('div');
   titleDiv.className = 'video-player-title';
-  titleDiv.textContent = (video.title || 'Video').split('|')[0].trim();
+  titleDiv.textContent = (video.title || 'Video').split('|')[0].trim().replace(/\s*\([^)]*\)\s*$/, '');
   playerContainerEl.appendChild(titleDiv);
 
   // Player frame container
@@ -251,7 +251,7 @@ function showListView() {
     // Title
     const titleSpan = document.createElement('span');
     titleSpan.className = 'video-title';
-    const displayTitle = (video.title || '').split('|')[0].trim();
+    const displayTitle = (video.title || '').split('|')[0].trim().replace(/\s*\([^)]*\)\s*$/, '');
     titleSpan.textContent = displayTitle;
     titleSpan.title = displayTitle;
     li.appendChild(titleSpan);
@@ -342,7 +342,7 @@ function showPlayerView(video, score) {
   // Video title
   const titleDiv = document.createElement('div');
   titleDiv.className = 'video-player-title';
-  titleDiv.textContent = (video.title || '').split('|')[0].trim();
+  titleDiv.textContent = (video.title || '').split('|')[0].trim().replace(/\s*\([^)]*\)\s*$/, '');
   playerContainerEl.appendChild(titleDiv);
 
   // Player frame container

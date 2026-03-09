@@ -236,11 +236,6 @@ async function boot() {
     suggestBtn.addEventListener('click', () => {
       if (!globalEstimator) return;
       advanceTutorial('suggest-click');
-      // On mobile (<=480px), toggle the video discovery panel instead of the modal
-      if (window.innerWidth <= 480) {
-        toggleVideoPanel();
-        return;
-      }
       const { data, promise } = videoLoader.getVideos();
       if (data) {
         openVideoModal(data);
@@ -1000,6 +995,13 @@ function toggleQuizPanel(show) {
   if (!quizPanel) return;
 
   if (show === undefined) show = !quizPanel.classList.contains('open');
+
+  // On mobile, if drawer is collapsed and user is closing the panel,
+  // expand the drawer instead (so the pull handle stays accessible)
+  if (!show && window.innerWidth <= 480 && $quizDrawerCollapsed.get()) {
+    $quizDrawerCollapsed.set(false);
+    return;
+  }
 
   if (show) {
     // On mobile, close the video panel to avoid overlapping bottom sheets

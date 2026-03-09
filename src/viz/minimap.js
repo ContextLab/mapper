@@ -138,7 +138,7 @@ export class Minimap {
   }
 
   setActive(domainId) { this.activeDomainId = domainId; this.render(); }
-  setViewport(viewport) { this.currentViewport = viewport; this.render(); }
+  setViewport(viewport) { if (this._suppressViewportUpdates) return; this.currentViewport = viewport; this.render(); }
   setEstimates(estimates, region) { this.estimates = estimates; if (region) this.heatmapRegion = region; this.render(); }
   setArticles(articles) { this.articles = articles || []; this.render(); }
   setVideos(videos) { this.videos = videos || []; this.render(); }
@@ -170,6 +170,7 @@ export class Minimap {
 
     if (this._isInsideViewport(mx, my) && this.currentViewport) {
       this._isDragging = true;
+      this._suppressViewportUpdates = true;
       const vp = this.currentViewport;
       const vpCx = ((vp.x_min + vp.x_max) / 2) * this.width;
       const vpCy = ((vp.y_min + vp.y_max) / 2) * this.height;
@@ -238,6 +239,7 @@ export class Minimap {
 
     if (this._isDragging) {
       this._isDragging = false;
+      this._suppressViewportUpdates = false;
       this._didDrag = true;  // suppress the click event that fires right after pointerup
       this._dragOffset = null;
       this.canvas.style.cursor = 'pointer';

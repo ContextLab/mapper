@@ -111,7 +111,17 @@
             z-index: 100;
         }
         .header-left { display: flex; align-items: center; gap: 0.75rem; }
-        .header-right { display: flex; align-items: center; gap: 0.5rem; }
+        .header-right {
+            display: flex; align-items: center; gap: 0.5rem;
+            justify-content: flex-end;
+            overflow-x: auto; overflow-y: hidden;
+            scrollbar-width: none; /* Firefox */
+            -webkit-overflow-scrolling: touch;
+            flex-shrink: 1; min-width: 0;
+        }
+        .header-right::-webkit-scrollbar { display: none; }
+        .header-right .btn-icon,
+        .header-right .control-btn { flex-shrink: 0; }
         .logo {
             font-family: var(--font-heading);
             font-weight: 700;
@@ -316,7 +326,8 @@
             box-shadow: 0 0 8px var(--color-glow-primary);
         }
         .custom-select-arrow {
-            font-size: 0.65rem;
+            display: flex; align-items: center;
+            font-size: 0.75rem;
             color: var(--color-text-muted);
             transition: transform 0.2s;
         }
@@ -587,6 +598,11 @@
         #app[data-screen="welcome"] #minimap-container { display: none; }
         #app[data-screen="welcome"] .domain-selector .custom-select { display: none; }
         #app[data-screen="welcome"] .control-btn:not([aria-label="Import saved progress"]) { display: none; }
+        /* Welcome screen: upload (left) — share + info (right) */
+        #app[data-screen="welcome"] .header-right [aria-label="Import saved progress"] {
+            order: -1;
+            margin-right: auto;
+        }
 
         .sr-only {
             position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
@@ -690,11 +706,9 @@
             #app[data-screen="map"] .logo { display: none; }
             .logo span { display: none; }
             .logo { font-size: 0.95rem; }
-            .header-left { gap: 0.3rem; flex: 1; min-width: 0; }
-            .header-right { gap: 0.25rem; flex-shrink: 0; }
-            /* Trophy and suggest buttons visible on mobile */
-            .control-btn[aria-label="Reset all progress"] { display: none !important; }
-            .btn-icon { min-width: 34px; min-height: 34px; font-size: 0.85rem; }
+            .header-left { gap: 0.3rem; flex: 0 0 auto; }
+            .header-right { gap: 0.25rem; flex: 1; min-width: 0; }
+            .btn-icon, .control-btn { min-width: 34px; min-height: 34px; font-size: 0.85rem; }
             /* Make dropdown arrow easier to see on mobile */
             .custom-select-arrow { font-size: 0.9rem; }
             /* Hide custom tooltips on touch devices */
@@ -707,8 +721,9 @@
             #quiz-panel {
                 position: absolute;
                 top: auto; bottom: 0; left: 0; right: 0;
-                width: 100% !important; height: 0;
+                width: 100% !important; height: 48px;
                 padding: 0;
+                padding-bottom: env(safe-area-inset-bottom, 0px);
                 transform: none;
                 border-radius: 16px 16px 0 0;
                 box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
@@ -717,7 +732,9 @@
                 flex-shrink: 0;
                 display: flex;
                 flex-direction: column;
+                background: var(--color-surface);
             }
+            #quiz-panel:not(.open) .quiz-content { display: none; }
             #quiz-panel.open {
                 width: 100% !important; height: 55vh;
                 padding: 0.75rem 1rem;
@@ -728,7 +745,7 @@
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
                 min-height: 0; /* Allow flex child to shrink below content size */
-                padding-bottom: 12px;
+                padding-bottom: 60px;
             }
             /* Compact quiz text on mobile */
             #quiz-panel .quiz-question { font-size: 0.9rem; line-height: 1.35; }
@@ -739,57 +756,22 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                height: 32px;
+                height: 48px;
                 cursor: pointer;
                 flex-shrink: 0;
                 touch-action: none;
+                background: var(--color-surface-raised);
+                border-bottom: 1px solid var(--color-border);
             }
             .drawer-pull-bar {
-                width: 40px;
-                height: 4px;
-                border-radius: 2px;
-                background: var(--color-text-muted);
-                opacity: 0.5;
+                width: 56px;
+                height: 6px;
+                border-radius: 3px;
+                background: #999;
             }
 
-            /* ── Collapsed drawer state ── */
-            #quiz-panel.open.drawer-collapsed {
-                height: 32px !important;
-                padding: 0 !important;
-                overflow: hidden;
-            }
-            #quiz-panel.open.drawer-collapsed .quiz-content {
-                display: none;
-            }
-            /* Move toggle button down when drawer is collapsed */
-            #quiz-panel.open.drawer-collapsed .quiz-toggle-btn {
-                bottom: 32px;
-            }
-
-            /* ── Quiz toggle: wide bottom pull tab ── */
-            .quiz-toggle-btn {
-                top: auto;
-                bottom: 0;
-                right: 50%;
-                transform: translateX(50%);
-                width: 80px;
-                height: 32px;
-                border-radius: 12px 12px 0 0;
-                border: 1px solid var(--color-border);
-                border-bottom: none;
-                background: var(--color-primary);
-                color: #fff;
-                box-shadow: 0 -2px 12px rgba(0,0,0,0.25);
-                z-index: 22;
-            }
-            /* Arrow points UP when closed (pull up to open): chevron-left rotated 90° CW = ^ */
-            .quiz-toggle-btn i { transform: rotate(90deg); }
-            /* Override JS icon swap: force chevron-right to also point up when closed */
-            #quiz-panel:not(.open) .quiz-toggle-btn i.fa-chevron-right { transform: rotate(-90deg); }
-            /* Arrow points DOWN when open (pull down to close) */
-            #quiz-panel.open .quiz-toggle-btn { bottom: 55vh; right: 50%; background: var(--color-surface); color: var(--color-text-muted); }
-            #quiz-panel.open .quiz-toggle-btn i.fa-chevron-right { transform: rotate(90deg); }
-            #quiz-panel.open .quiz-toggle-btn i.fa-chevron-left { transform: rotate(-90deg); }
+            /* ── Quiz toggle: hidden on mobile (drawer pull replaces it) ── */
+            .quiz-toggle-btn { display: none !important; }
 
             /* ── Video panel: bottom sheet on mobile (not hidden) ── */
             #video-panel {
@@ -842,6 +824,20 @@
                 min-width: 44px;
                 touch-action: manipulation;
             }
+        }
+
+        /* ── Landscape phone: short viewport, wide screen ── */
+        @media (max-height: 500px) and (orientation: landscape) {
+            :root { --header-height: 44px; }
+            #minimap-container {
+                width: 160px; height: 120px;
+                bottom: 12px; left: 12px;
+                z-index: 10; /* Above quiz/video panel toggles */
+            }
+            /* Quiz panel: right-side drawer in landscape */
+            #quiz-panel.open { height: auto; max-height: 100%; }
+            /* Video panel: left-side drawer in landscape */
+            #video-panel.open { height: auto; max-height: 100%; }
         }
     </style>
 </head>

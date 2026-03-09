@@ -270,24 +270,34 @@ export function init(container) {
   const quizContent = container.querySelector('.quiz-content');
   container.insertBefore(drawerPull, quizContent);
 
-  // Tap drawer pull to toggle collapsed state
+  // Tap drawer pull to toggle panel (mobile) or collapsed state (desktop)
   drawerPull.addEventListener('click', () => {
-    $quizDrawerCollapsed.set(!$quizDrawerCollapsed.get());
+    if (window.innerWidth <= 480) {
+      // Dispatch custom event that app.js listens for (more reliable than clicking hidden button)
+      container.dispatchEvent(new CustomEvent('drawer-pull-toggle', { bubbles: true }));
+    } else {
+      $quizDrawerCollapsed.set(!$quizDrawerCollapsed.get());
+    }
   });
 
-  // Swipe gesture detection on the quiz panel (mobile only)
+  // Swipe gesture detection on the quiz panel
   let touchStartY = 0;
   container.addEventListener('touchstart', (e) => {
     touchStartY = e.touches[0].clientY;
   }, { passive: true });
   container.addEventListener('touchend', (e) => {
     const deltaY = e.changedTouches[0].clientY - touchStartY;
-    if (deltaY > 50) {
-      // Swipe down → collapse
-      $quizDrawerCollapsed.set(true);
-    } else if (deltaY < -50 && $quizDrawerCollapsed.get()) {
-      // Swipe up when collapsed → expand
-      $quizDrawerCollapsed.set(false);
+    if (window.innerWidth <= 480) {
+      // Mobile: swipe down closes, swipe up opens
+      if (deltaY > 50 && container.classList.contains('open')) {
+        container.dispatchEvent(new CustomEvent('drawer-pull-toggle', { bubbles: true }));
+      } else if (deltaY < -50 && !container.classList.contains('open')) {
+        container.dispatchEvent(new CustomEvent('drawer-pull-toggle', { bubbles: true }));
+      }
+    } else {
+      // Desktop: swipe toggles collapsed state
+      if (deltaY > 50) $quizDrawerCollapsed.set(true);
+      else if (deltaY < -50 && $quizDrawerCollapsed.get()) $quizDrawerCollapsed.set(false);
     }
   }, { passive: true });
 

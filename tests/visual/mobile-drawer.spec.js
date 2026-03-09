@@ -48,39 +48,44 @@ test.describe('Mobile Collapsible Drawer (US3)', () => {
     await expect(drawerPull).toBeVisible();
   });
 
-  test('tapping drawer pull collapses quiz panel', async ({ page }) => {
+  test('tapping drawer pull closes quiz panel', async ({ page }) => {
     await selectDomain(page, 'physics');
     await page.waitForSelector('#quiz-panel.open', { timeout: LOAD_TIMEOUT });
     await page.waitForTimeout(500);
 
-    // Tap the drawer pull to collapse
+    // Tap the drawer pull to close
     await page.locator('.drawer-pull').click();
     await page.waitForTimeout(500);
 
     const panel = page.locator('#quiz-panel');
-    await expect(panel).toHaveClass(/drawer-collapsed/);
-    await page.screenshot({ path: 'tests/visual/screenshots/mobile-drawer-collapsed.png' });
+    await expect(panel).not.toHaveClass(/\bopen\b/);
+
+    // Panel should be short (just the drawer pull bar, ~48px)
+    const height = await panel.evaluate(el => el.getBoundingClientRect().height);
+    expect(height).toBeLessThanOrEqual(60);
+    await page.screenshot({ path: 'tests/visual/screenshots/mobile-drawer-closed.png' });
   });
 
-  test('tapping drawer pull again expands quiz panel', async ({ page }) => {
+  test('tapping drawer pull again reopens quiz panel', async ({ page }) => {
     await selectDomain(page, 'physics');
     await page.waitForSelector('#quiz-panel.open', { timeout: LOAD_TIMEOUT });
     await page.waitForTimeout(500);
 
-    // Collapse
-    await page.locator('.drawer-pull').click();
-    await page.waitForTimeout(500);
     const panel = page.locator('#quiz-panel');
-    await expect(panel).toHaveClass(/drawer-collapsed/);
 
-    // Expand
+    // Close
     await page.locator('.drawer-pull').click();
     await page.waitForTimeout(500);
-    await expect(panel).not.toHaveClass(/drawer-collapsed/);
-    await page.screenshot({ path: 'tests/visual/screenshots/mobile-drawer-expanded.png' });
+    await expect(panel).not.toHaveClass(/\bopen\b/);
+
+    // Reopen
+    await page.locator('.drawer-pull').click();
+    await page.waitForTimeout(500);
+    await expect(panel).toHaveClass(/\bopen\b/);
+    await page.screenshot({ path: 'tests/visual/screenshots/mobile-drawer-reopened.png' });
   });
 
-  test('quiz progress is preserved after collapse/expand', async ({ page }) => {
+  test('quiz progress is preserved after close/open', async ({ page }) => {
     await selectDomain(page, 'physics');
     await page.waitForSelector('#quiz-panel.open', { timeout: LOAD_TIMEOUT });
 
@@ -90,10 +95,7 @@ test.describe('Mobile Collapsible Drawer (US3)', () => {
     await option.click();
     await page.waitForTimeout(1500);
 
-    // Get question text before collapse
-    const questionBefore = await page.locator('.quiz-question').textContent();
-
-    // Collapse and expand
+    // Close and reopen
     await page.locator('.drawer-pull').click();
     await page.waitForTimeout(500);
     await page.locator('.drawer-pull').click();
@@ -105,7 +107,7 @@ test.describe('Mobile Collapsible Drawer (US3)', () => {
     expect(questionAfter.length).toBeGreaterThan(0);
   });
 
-  test('swipe down collapses quiz panel', async ({ browser }) => {
+  test('swipe down closes quiz panel', async ({ browser }) => {
     const context = await browser.newContext({
       viewport: { width: 375, height: 667 },
       hasTouch: true,
@@ -134,28 +136,29 @@ test.describe('Mobile Collapsible Drawer (US3)', () => {
     }, { x: box.x + box.width / 2, startY: box.y + 20, endY: box.y + 100 });
     await page.waitForTimeout(500);
 
-    // Panel should be collapsed
-    await page.screenshot({ path: 'tests/visual/screenshots/mobile-swipe-collapsed.png' });
+    // Panel should be closed
+    await expect(panel).not.toHaveClass(/\bopen\b/);
+    await page.screenshot({ path: 'tests/visual/screenshots/mobile-swipe-closed.png' });
     await context.close();
   });
 
-  test('domain switch resets drawer to expanded', async ({ page }) => {
+  test('domain switch reopens quiz panel', async ({ page }) => {
     await selectDomain(page, 'physics');
     await page.waitForSelector('#quiz-panel.open', { timeout: LOAD_TIMEOUT });
     await page.waitForTimeout(500);
 
-    // Collapse
+    // Close
     await page.locator('.drawer-pull').click();
     await page.waitForTimeout(500);
     const panel = page.locator('#quiz-panel');
-    await expect(panel).toHaveClass(/drawer-collapsed/);
+    await expect(panel).not.toHaveClass(/\bopen\b/);
 
     // Switch domain
     await selectDomain(page, 'biology');
     await page.waitForSelector('.quiz-question', { timeout: LOAD_TIMEOUT });
     await page.waitForTimeout(500);
 
-    // Should be expanded again
-    await expect(panel).not.toHaveClass(/drawer-collapsed/);
+    // Should be open again
+    await expect(panel).toHaveClass(/\bopen\b/);
   });
 });

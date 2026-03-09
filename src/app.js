@@ -176,6 +176,20 @@ async function boot() {
   controls.onExport(handleExport);
   controls.onImport(handleImport);
 
+  // Move action buttons (upload/download/reset) from domain-selector to header-right
+  // Append AFTER main icons so they're off-screen to the right on mobile (scroll right to reveal)
+  const headerRight = headerEl.querySelector('.header-right');
+  const actionBtns = controls.getActionButtons();
+  if (headerRight && actionBtns.importButton) {
+    // Append in order: reset, download, upload (revealed by scrolling right)
+    headerRight.appendChild(actionBtns.resetButton);
+    headerRight.appendChild(actionBtns.exportButton);
+    headerRight.appendChild(actionBtns.importButton);
+    for (const btn of [actionBtns.resetButton, actionBtns.exportButton, actionBtns.importButton]) {
+      btn.classList.add('btn-icon');
+    }
+  }
+
   const quizPanel = document.getElementById('quiz-panel');
   quiz.init(quizPanel);
   quiz.onAnswer(handleAnswer);
@@ -316,6 +330,12 @@ async function boot() {
   const quizToggle = document.getElementById('quiz-toggle');
   if (quizToggle) {
     quizToggle.addEventListener('click', () => toggleQuizPanel());
+  }
+
+  // Mobile drawer pull toggle (custom event from quiz.js)
+  const quizPanelEl = document.getElementById('quiz-panel');
+  if (quizPanelEl) {
+    quizPanelEl.addEventListener('drawer-pull-toggle', () => toggleQuizPanel());
   }
 
   // Wire auto-advance toggle for tutorial (created dynamically by modes.js)
@@ -589,6 +609,12 @@ async function switchDomain(domainId) {
   const videoToggleBtn = document.getElementById('video-toggle');
   if (videoToggleBtn) videoToggleBtn.removeAttribute('hidden');
   controls.showActionButtons();
+
+  // Reset header scroll to start (main icons are first, utility icons scroll right)
+  const headerIconBar = document.querySelector('.header-right');
+  if (headerIconBar) {
+    headerIconBar.scrollLeft = 0;
+  }
 
   const domainName = registry.getDomains().find(d => d.id === domainId)?.name || domainId;
   announce(`Navigated to ${domainName}. ${aggregatedQuestions.length} questions available.`);
@@ -996,13 +1022,6 @@ function toggleQuizPanel(show) {
 
   if (show === undefined) show = !quizPanel.classList.contains('open');
 
-  // On mobile, if drawer is collapsed and user is closing the panel,
-  // expand the drawer instead (so the pull handle stays accessible)
-  if (!show && window.innerWidth <= 480 && $quizDrawerCollapsed.get()) {
-    $quizDrawerCollapsed.set(false);
-    return;
-  }
-
   if (show) {
     // On mobile, close the video panel to avoid overlapping bottom sheets
     if (window.innerWidth <= 480) {
@@ -1012,6 +1031,8 @@ function toggleQuizPanel(show) {
       }
     }
     quizPanel.classList.add('open');
+    // On mobile, ensure drawer-collapsed is cleared when opening
+    if (window.innerWidth <= 480) $quizDrawerCollapsed.set(false);
     if (toggleBtn) {
       toggleBtn.querySelector('i').className = 'fa-solid fa-chevron-right';
       toggleBtn.setAttribute('aria-label', 'Close quiz panel');

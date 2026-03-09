@@ -99,16 +99,19 @@
   box-shadow: 0 0 12px rgba(0,0,0,0.2) !important;
 }
 
-/* Allow box-shadow to escape scrollable containers during tutorial highlight */
-.quiz-content:has(.tutorial-highlight),
-.video-panel-list:has(.tutorial-highlight) {
-  overflow: visible !important;
+/* Allow box-shadow to escape scrollable containers during tutorial highlight (desktop only).
+   On mobile, keep overflow scrollable and scroll the highlight into view instead. */
+@media (min-width: 481px) {
+  .quiz-content:has(.tutorial-highlight),
+  .video-panel-list:has(.tutorial-highlight) {
+    overflow: visible !important;
+  }
 }
 
-/* Tighter highlight around question mode buttons */
+/* Tighter highlight around question mode buttons — vertically centered */
 .modes-wrapper.tutorial-highlight {
-  padding-bottom: 0.25rem;
-  margin-bottom: 0.25rem;
+  padding: 0.25rem 0;
+  margin: 0.25rem 0;
 }
 
 /* Mobile bottom-sheet adjustments */

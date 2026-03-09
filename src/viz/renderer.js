@@ -1182,6 +1182,34 @@ export class Renderer {
       };
       this._lastMouse = { x: this._lastTouchCenter.x, y: this._lastTouchCenter.y };
     } else if (e.touches.length === 1) {
+      // If a tooltip is pinned, check whether user tapped the same item or elsewhere
+      if (this._tooltipPinned && this._pinnedHit) {
+        const rect = this._canvas.getBoundingClientRect();
+        const mx = e.touches[0].clientX - rect.left;
+        const my = e.touches[0].clientY - rect.top;
+        const hit = this._hitTest(mx, my);
+        if (hit && hit === this._pinnedHit) {
+          // Tap same item again → open it
+          if (hit.type === 'video' && this._onVideoClick) {
+            this._onVideoClick(hit);
+          } else if (hit.url) {
+            this._openInBackground(hit.url);
+          } else if (hit.type === 'cell' && hit.label && hit.label.source_article) {
+            const url = 'https://en.wikipedia.org/wiki/' + encodeURIComponent(hit.label.source_article);
+            this._openInBackground(url);
+          }
+        }
+        // Dismiss pinned tooltip regardless (tap same = open+dismiss, tap elsewhere = dismiss)
+        this._tooltipPinned = false;
+        this._pinnedHit = null;
+        this._hoveredPoint = null;
+        this._hoveredVideoId = null;
+        this._hideTooltip();
+        this._scheduleRender();
+        e.preventDefault();
+        return;
+      }
+
       // Single finger: hover mode (show labels/tooltips like desktop mousemove)
       this._isTouchHovering = true;
       this._isDragging = false;
@@ -1265,17 +1293,18 @@ export class Renderer {
 
   _handleTouchEnd(e) {
     if (e.touches.length === 0) {
-      // Tap: if we were hovering over something and didn't drag, treat as click
+      // If hovering over something and didn't drag, pin the tooltip (don't open)
       if (this._isTouchHovering && this._hoveredPoint && !this._dragMoved) {
-        const hit = this._hoveredPoint;
-        if (hit.type === 'video' && this._onVideoClick) {
-          this._onVideoClick(hit);
-        } else if (hit.url) {
-          this._openInBackground(hit.url);
-        } else if (hit.type === 'cell' && hit.label && hit.label.source_article) {
-          const url = 'https://en.wikipedia.org/wiki/' + encodeURIComponent(hit.label.source_article);
-          this._openInBackground(url);
-        }
+        this._tooltipPinned = true;
+        this._pinnedHit = this._hoveredPoint;
+        // Keep tooltip visible — don't clear hovered state
+        this._isTouchHovering = false;
+        this._isDragging = false;
+        this._lastMouse = null;
+        this._lastTouchDist = null;
+        this._lastTouchCenter = null;
+        // Don't hide tooltip or clear hoveredPoint — leave them pinned
+        return;
       }
 
       this._isTouchHovering = false;

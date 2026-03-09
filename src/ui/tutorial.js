@@ -487,7 +487,11 @@ function nextValidSubStep(stepDef, from) {
 }
 
 function isMobile() {
-  return typeof window !== 'undefined' && window.innerWidth <= MOBILE_BP;
+  if (typeof window === 'undefined') return false;
+  if (window.innerWidth <= MOBILE_BP) return true;
+  // Landscape phone: short viewport + landscape orientation
+  if (window.innerHeight <= 500 && window.matchMedia('(orientation: landscape)').matches) return true;
+  return false;
 }
 
 // ── Welcome prompt ──────────────────────────────────────────────────
@@ -972,6 +976,10 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
 
   if (highlightEl) {
     highlightEl.classList.add('tutorial-highlight');
+    // On mobile, scroll the highlighted element into view within its scrollable container
+    if (isMobile()) {
+      requestAnimationFrame(() => highlightEl.scrollIntoView({ behavior: 'smooth', block: 'center' }));
+    }
   }
 
   document.body.appendChild(overlay);
@@ -1001,15 +1009,28 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
   });
 
   if (mobile) {
-    // If the highlighted element or the open quiz panel occupies the lower viewport,
-    // position modal at top so it doesn't cover the interaction target.
-    const highlightInBottom = highlightEl && highlightEl.getBoundingClientRect().bottom > window.innerHeight * 0.6;
-    const quizOpen = document.getElementById('quiz-panel')?.classList.contains('open');
-    const useTop = highlightInBottom || (!highlightEl && quizOpen);
-    if (useTop) {
-      Object.assign(modal.style, { top: '0', left: '0', right: '0', borderRadius: '0 0 12px 12px' });
+    const isLandscape = window.matchMedia('(orientation: landscape)').matches;
+    if (isLandscape) {
+      // Landscape: position modal in center, offset from drawer pulls
+      const quizOpen = document.getElementById('quiz-panel')?.classList.contains('open');
+      const videoOpen = document.getElementById('video-panel')?.classList.contains('open');
+      const leftInset = videoOpen ? '40px' : '12px';
+      const rightInset = quizOpen ? '40px' : '12px';
+      Object.assign(modal.style, {
+        top: '50%', left: leftInset, right: rightInset,
+        transform: 'translateY(-50%)',
+        maxWidth: 'none', borderRadius: '12px',
+      });
     } else {
-      Object.assign(modal.style, { bottom: '0', left: '0', right: '0' });
+      // Portrait: bottom sheet or top bar
+      const highlightInBottom = highlightEl && highlightEl.getBoundingClientRect().bottom > window.innerHeight * 0.6;
+      const quizOpen = document.getElementById('quiz-panel')?.classList.contains('open');
+      const useTop = highlightInBottom || (!highlightEl && quizOpen);
+      if (useTop) {
+        Object.assign(modal.style, { top: '0', left: '0', right: '0', borderRadius: '0 0 12px 12px' });
+      } else {
+        Object.assign(modal.style, { bottom: '0', left: '0', right: '0' });
+      }
     }
   }
 

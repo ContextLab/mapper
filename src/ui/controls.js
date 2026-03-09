@@ -48,7 +48,9 @@ function createDropdown(placeholder, items, onChange) {
 
   const arrow = document.createElement('span');
   arrow.className = 'custom-select-arrow';
-  arrow.textContent = '\u25BE';
+  const arrowIcon = document.createElement('i');
+  arrowIcon.className = 'fa-solid fa-chevron-down';
+  arrow.appendChild(arrowIcon);
 
   trigger.appendChild(valueSpan);
   trigger.appendChild(arrow);
@@ -168,7 +170,6 @@ export function init(headerElement) {
         box-shadow: 0 0 8px var(--color-glow-primary);
       }
       @media (max-width: 768px) {
-        .header-left { flex: 1; }
         .domain-selector { flex: 1; }
       }
     `;
@@ -253,6 +254,10 @@ export function init(headerElement) {
   });
   container.appendChild(importButton);
 
+}
+
+export function getActionButtons() {
+  return { resetButton, exportButton, importButton };
 }
 
 export function onDomainSelect(callback) {

@@ -232,16 +232,16 @@ export function showShareDialog() {
           ${teaserText}
         </p>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.25rem;">
-          <button type="button" class="share-action-btn" data-action="linkedin" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #0a66c2; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: all 0.2s ease;">
+          <button type="button" class="share-action-btn" data-action="linkedin" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #0a66c2; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease;">
             <i class="fa-brands fa-linkedin"></i> LinkedIn
           </button>
-          <button type="button" class="share-action-btn" data-action="twitter" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #000000; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: all 0.2s ease;">
+          <button type="button" class="share-action-btn" data-action="twitter" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #000000; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease;">
             <i class="fa-brands fa-x-twitter"></i> X
           </button>
-          <button type="button" class="share-action-btn" data-action="bluesky" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #1185fe; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: all 0.2s ease;">
+          <button type="button" class="share-action-btn" data-action="bluesky" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #1185fe; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease;">
             <i class="fa-brands fa-bluesky"></i> Bluesky
           </button>
-          <button type="button" class="share-action-btn" data-action="copy" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: var(--color-primary); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: all 0.2s ease;">
+          <button type="button" class="share-action-btn" data-action="copy" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: var(--color-primary); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease;">
             <i class="fa-solid fa-copy"></i> Copy
           </button>
         </div>
@@ -316,20 +316,20 @@ export function showShareDialog() {
       </div>
 
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem;">
-        <button class="share-action-btn" data-action="linkedin" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #0a66c2; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: all 0.2s ease;">
+        <button class="share-action-btn" data-action="linkedin" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #0a66c2; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease;">
           <i class="fa-brands fa-linkedin"></i> LinkedIn
         </button>
-        <button class="share-action-btn" data-action="twitter" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #000000; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: all 0.2s ease;">
+        <button class="share-action-btn" data-action="twitter" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #000000; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease;">
           <i class="fa-brands fa-x-twitter"></i> X
         </button>
-        <button class="share-action-btn" data-action="bluesky" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #1185fe; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: all 0.2s ease;">
+        <button class="share-action-btn" data-action="bluesky" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #1185fe; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease;">
           <i class="fa-brands fa-bluesky"></i> Bluesky
         </button>
-        <button class="share-action-btn" data-action="copy" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: var(--color-primary); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: all 0.2s ease;">
+        <button class="share-action-btn" data-action="copy" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: var(--color-primary); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease;">
           <i class="fa-solid fa-copy"></i> Copy
         </button>
         ${imageDataUrl ? `
-        <button class="share-action-btn" data-action="copy-image" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: var(--color-secondary); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: all 0.2s ease;">
+        <button class="share-action-btn" data-action="copy-image" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: var(--color-secondary); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease;">
           <i class="fa-solid fa-image"></i> Copy Image
         </button>
         ` : ''}
@@ -337,12 +337,12 @@ export function showShareDialog() {
 
       ${imageDataUrl ? `
         ${IMGUR_CLIENT_ID ? `
-        <button class="share-action-btn" data-action="imgur" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #1bb76e; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: all 0.2s ease; margin-bottom: 0.75rem;">
+        <button class="share-action-btn" data-action="imgur" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #1bb76e; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease; margin-bottom: 0.75rem;">
           <i class="fa-solid fa-upload"></i> Upload &amp; Get Shareable Link
         </button>
         <div id="imgur-result" style="display:none; margin-bottom: 0.75rem; padding: 0.75rem; background: var(--color-surface-raised); border-radius: 6px; font-size: 0.85rem; word-break: break-all;"></div>
         ` : ''}
-        <button class="share-action-btn" data-action="download" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: var(--color-secondary); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: all 0.2s ease; margin-bottom: 1rem;">
+        <button class="share-action-btn" data-action="download" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: var(--color-secondary); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease; margin-bottom: 1rem;">
           <i class="fa-solid fa-download"></i> Download Image
         </button>
       ` : ''}

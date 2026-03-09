@@ -31,8 +31,8 @@ export function init(container) {
         display: flex;
         flex-wrap: wrap;
         gap: 0.35rem;
-        margin-bottom: 0.75rem;
-        padding-bottom: 0.75rem;
+        margin-bottom: 0.35rem;
+        padding-bottom: 0.35rem;
         border-bottom: 1px solid var(--color-border);
       }
       .mode-btn {
@@ -47,7 +47,7 @@ export function init(container) {
         font-size: 0.75rem;
         font-family: var(--font-body);
         color: var(--color-text-muted);
-        transition: all 0.15s ease;
+        transition: border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
         white-space: nowrap;
         position: relative;
       }
@@ -107,6 +107,8 @@ export function init(container) {
         align-items: center;
         gap: 0.3rem;
         margin-left: 0.25rem;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
       }
       .auto-advance-label {
         font-size: 0.68rem;
@@ -145,23 +147,25 @@ export function init(container) {
         transform: translateX(14px);
       }
       .skip-btn {
-        display: inline-flex;
+        display: flex;
         align-items: center;
         gap: 0.35rem;
-        padding: 0.35rem 0.6rem;
+        padding: 0.75rem 1rem;
         border: 1px solid #d4a017;
-        border-radius: 16px;
+        border-radius: 8px;
         background: var(--color-surface-raised);
         cursor: pointer;
-        font-size: 0.75rem;
+        font-size: 0.85rem;
         font-family: var(--font-body);
         color: #b8860b;
-        transition: all 0.15s ease;
-        white-space: nowrap;
+        transition: border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+        width: 100%;
+        text-align: left;
+        min-height: 44px;
+        margin-top: 0.4rem;
       }
       .skip-btn:hover {
-        background: #d4a017;
-        color: #ffffff;
+        border-color: #b8860b;
         box-shadow: 0 0 8px rgba(212, 160, 23, 0.4);
       }
     `;
@@ -192,7 +196,9 @@ export function init(container) {
     wrapper.appendChild(btn);
   }
 
-  // Skip button
+  container.prepend(wrapper);
+
+  // Skip button — placed after .quiz-options as the last option
   skipBtnEl = document.createElement('button');
   skipBtnEl.className = 'skip-btn';
   skipBtnEl.textContent = '';
@@ -204,9 +210,14 @@ export function init(container) {
   skipBtnEl.addEventListener('click', () => {
     if (onSkipCb) onSkipCb();
   });
-  wrapper.appendChild(skipBtnEl);
+  const optionsEl = container.querySelector('.quiz-options');
+  if (optionsEl) {
+    optionsEl.after(skipBtnEl);
+  } else {
+    container.appendChild(skipBtnEl);
+  }
 
-  // Auto-advance toggle
+  // Auto-advance toggle — placed after .modes-wrapper (not inside it)
   const toggleWrap = document.createElement('div');
   toggleWrap.className = 'auto-advance-wrap';
 
@@ -243,10 +254,8 @@ export function init(container) {
 
   toggleWrap.appendChild(track);
   toggleWrap.appendChild(label);
-  wrapper.appendChild(toggleWrap);
+  wrapper.after(toggleWrap);
   autoAdvanceToggleEl = track;
-
-  container.prepend(wrapper);
 }
 
 export function onModeSelect(callback) {
@@ -280,6 +289,18 @@ export function getActiveMode() {
 
 export function isAutoAdvance() {
   return autoAdvance;
+}
+
+export function setSkipVisible(visible) {
+  if (skipBtnEl) skipBtnEl.hidden = !visible;
+}
+
+export function setAutoAdvance(value) {
+  autoAdvance = !!value;
+  if (autoAdvanceToggleEl) {
+    autoAdvanceToggleEl.classList.toggle('on', autoAdvance);
+    autoAdvanceToggleEl.setAttribute('aria-checked', String(autoAdvance));
+  }
 }
 
 function handleSelect(modeId, type) {

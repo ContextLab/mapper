@@ -12,6 +12,7 @@ import {
   $preVideoSnapshot,
   $runningDifferenceMap,
   $phase,
+  $quizDrawerCollapsed,
 } from './state/store.js';
 import * as registry from './domain/registry.js';
 import { load as loadDomain, loadQuestionsForDomain } from './domain/loader.js';
@@ -351,25 +352,29 @@ async function boot() {
   announce('Knowledge Mapper loaded. Select a domain to begin.');
 }
 
+/** Update heatmap display on renderer and minimap using global estimates.
+ *  Call this after every $estimates.set() instead of doing it via subscription
+ *  to avoid a redundant globalEstimator.predict() on every $estimates change.
+ *  Returns the global estimates array for callers that need it. */
+let _lastGlobalEstimates = null;
+function updateHeatmapDisplay() {
+  if (!renderer || !currentDomainBundle || !globalEstimator) return null;
+  _lastGlobalEstimates = globalEstimator.predict();
+  renderer.setHeatmap(_lastGlobalEstimates, GLOBAL_REGION);
+  if (minimap) {
+    minimap.setEstimates(_lastGlobalEstimates, GLOBAL_REGION);
+  }
+  return _lastGlobalEstimates;
+}
+
 function wireSubscriptions() {
   $activeDomain.subscribe(async (domainId) => {
     if (!domainId) return;
     await switchDomain(domainId);
   });
 
-  $estimates.subscribe(() => {
-    if (!renderer) return;
-    // Don't show heatmap until a domain has been selected (welcome screen should be clean)
-    if (!currentDomainBundle) return;
-    // Both renderer and minimap always show global estimates covering full [0,1] space
-    if (globalEstimator) {
-      const globalEstimates = globalEstimator.predict();
-      renderer.setHeatmap(globalEstimates, GLOBAL_REGION);
-      if (minimap) {
-        minimap.setEstimates(globalEstimates, GLOBAL_REGION);
-      }
-    }
-  });
+  // Heatmap display is updated directly via updateHeatmapDisplay() at each
+  // $estimates.set() call site — avoids redundant globalEstimator.predict().
 
   $coverage.subscribe((coverage) => {
     updateConfidence(coverage);
@@ -467,6 +472,7 @@ async function switchDomain(domainId) {
     particleSystem = null;
   }
 
+  $quizDrawerCollapsed.set(false);
   renderer.abortTransition();
 
   if (!allDomainBundle) return;
@@ -522,6 +528,7 @@ async function switchDomain(domainId) {
 
     const estimates = estimator.predict();
     $estimates.set(estimates);
+    updateHeatmapDisplay();
 
     renderer.setPoints(articlesToPoints(allDomainBundle.articles));
     renderer.setAnsweredQuestions(responsesToAnsweredDots($responses.get(), questionIndex));
@@ -591,6 +598,7 @@ async function switchDomain(domainId) {
   const domainName = registry.getDomains().find(d => d.id === domainId)?.name || domainId;
   announce(`Navigated to ${domainName}. ${aggregatedQuestions.length} questions available.`);
 
+  modes.setSkipVisible(true);
   selectAndShowNextQuestion();
 
   // Advance tutorial on domain switch
@@ -618,8 +626,16 @@ function selectAndShowNextQuestion() {
   }
 
   if (available.length === 0) {
-    announce('All questions answered! Great work exploring the knowledge map.');
-    quiz.showQuestion(null);
+    // Check if ALL domains are exhausted or just the current one
+    const allPool = (currentDomainBundle.questions || []);
+    const allExhausted = allPool.every(q => answeredIds.has(q.id) || !quiz.isValidQuestion(q).valid);
+    const msg = allExhausted
+      ? "You've finished mapping your knowledge. Congratulations!"
+      : "You've finished mapping this domain; try choosing another domain from the dropdown menu!";
+    announce(msg);
+    quiz.showQuestion(null, msg);
+    modes.setSkipVisible(false);
+    progress.updateConfidence(1.0);
     return;
   }
 
@@ -697,13 +713,15 @@ function handleAnswer(selectedKey, question) {
     globalEstimator.observe(qx, qy, isCorrect, UNIFORM_LENGTH_SCALE, difficulty);
     const estimates = estimator.predict();
     $estimates.set(estimates);
+    updateHeatmapDisplay();
 
     const coverage = Math.round($coverage.get() * 100);
     announce(`${coverage}% mapped.`);
 
     // Video recommendation: post-video diff map flow (T-V052, FR-V021)
     if ($preVideoSnapshot.get() !== null) {
-      const globalEstimates = globalEstimator.predict();
+      // Reuse global estimates already computed by updateHeatmapDisplay above
+      const globalEstimates = _lastGlobalEstimates || globalEstimator.predict();
       const result = handlePostVideoQuestion(globalEstimates, mergedVideoWindows);
       if (result.phaseComplete) {
         mergedVideoWindows = [];
@@ -788,6 +806,7 @@ function handleSkip() {
     globalEstimator.observeSkip(qx, qy, UNIFORM_LENGTH_SCALE, difficulty);
     const estimates = estimator.predict();
     $estimates.set(estimates);
+    updateHeatmapDisplay();
   }, 0);
 
   // Advance tutorial on skip event
@@ -926,6 +945,7 @@ function handleImport(data) {
     if (globalEstimator) globalEstimator.restore(relevant, UNIFORM_LENGTH_SCALE, questionIndex);
     const estimates = estimator.predict();
     $estimates.set(estimates);
+    updateHeatmapDisplay();
 
     domainQuestionCount = merged.length;
     modes.updateAvailability(domainQuestionCount);
@@ -991,14 +1011,12 @@ function toggleQuizPanel(show) {
     }
     quizPanel.classList.add('open');
     if (toggleBtn) {
-      toggleBtn.classList.add('panel-open');
       toggleBtn.querySelector('i').className = 'fa-solid fa-chevron-right';
       toggleBtn.setAttribute('aria-label', 'Close quiz panel');
     }
   } else {
     quizPanel.classList.remove('open');
     if (toggleBtn) {
-      toggleBtn.classList.remove('panel-open');
       toggleBtn.querySelector('i').className = 'fa-solid fa-chevron-left';
       toggleBtn.setAttribute('aria-label', 'Open quiz panel');
     }
@@ -1019,14 +1037,12 @@ function toggleVideoPanel(show) {
     }
     panel.classList.add('open');
     if (toggleBtn) {
-      toggleBtn.classList.add('panel-open');
       toggleBtn.querySelector('i').className = 'fa-solid fa-chevron-left';
       toggleBtn.setAttribute('aria-label', 'Close video panel');
     }
   } else {
     panel.classList.remove('open');
     if (toggleBtn) {
-      toggleBtn.classList.remove('panel-open');
       toggleBtn.querySelector('i').className = 'fa-solid fa-chevron-right';
       toggleBtn.setAttribute('aria-label', 'Open video panel');
     }

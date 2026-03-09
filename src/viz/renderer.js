@@ -53,6 +53,9 @@ export class Renderer {
 
     this._resizeObserver = null;
 
+    // rAF render coalescing — prevents multiple renders per frame
+    this._renderScheduled = false;
+
     this._onReanswer = null;
     this._onVideoClick = null;
     this._onViewportChange = null;
@@ -96,6 +99,7 @@ export class Renderer {
     this._onTouchEnd = this._handleTouchEnd.bind(this);
     this._lastTouchDist = null;
     this._lastTouchCenter = null;
+    this._isTouchHovering = false;
   }
 
   /**
@@ -131,6 +135,7 @@ export class Renderer {
 
     // DOM colorbar (draggable)
     this._colorbarEl = document.createElement('div');
+    this._colorbarEl.className = 'map-colorbar';
     this._colorbarEl.style.cssText =
       'position:absolute;bottom:16px;right:16px;z-index:15;' +
       'width:12px;height:120px;border-radius:6px;cursor:grab;' +
@@ -155,11 +160,18 @@ export class Renderer {
     // Size canvas
     this._resize();
 
-    // ResizeObserver for flex layout changes
+    // ResizeObserver for flex layout changes — debounced to avoid white flash
+    // during panel open/close transitions (300ms width animation).
+    // Only resize+render after 100ms of no resize events.
+    this._resizeTimer = null;
     this._resizeObserver = new ResizeObserver(() => {
-      this._resize();
-      this._render();
-      this._notifyViewport();
+      if (this._resizeTimer) clearTimeout(this._resizeTimer);
+      this._resizeTimer = setTimeout(() => {
+        this._resizeTimer = null;
+        this._resize();
+        this._scheduleRender();
+        this._notifyViewport();
+      }, 100);
     });
     this._resizeObserver.observe(this._container);
 
@@ -175,7 +187,7 @@ export class Renderer {
     this._canvas.addEventListener('touchend', this._onTouchEnd);
     window.addEventListener('resize', this._onResize);
 
-    this._render();
+    this._scheduleRender();
   }
 
   /**
@@ -187,7 +199,7 @@ export class Renderer {
     if (this._colorbarEl) {
       this._colorbarEl.style.display = this._points.length > 0 ? 'block' : 'none';
     }
-    this._render();
+    this._scheduleRender();
   }
 
   /**
@@ -214,7 +226,7 @@ export class Renderer {
         this._estimateEvidence[e.gy * n + e.gx] = e.evidenceCount || 0;
       }
     }
-    this._render();
+    this._scheduleRender();
   }
 
   setLabels(labels, region, gridSize) {
@@ -226,7 +238,7 @@ export class Renderer {
     for (const l of this._labels) {
       this._labelMap.set(`${l.gx},${l.gy}`, l);
     }
-    this._render();
+    this._scheduleRender();
   }
 
   /**
@@ -235,7 +247,7 @@ export class Renderer {
    */
   setAnsweredQuestions(data) {
     this._answeredData = data || [];
-    this._render();
+    this._scheduleRender();
   }
 
   /**
@@ -253,7 +265,7 @@ export class Renderer {
       }
       this._videoTrajectories.get(m.videoId).push({ x: m.x, y: m.y });
     }
-    this._render();
+    this._scheduleRender();
   }
 
   /**
@@ -270,13 +282,13 @@ export class Renderer {
 
   setShowVideoMarkers(visible) {
     this._showVideoMarkers = !!visible;
-    this._render();
+    this._scheduleRender();
   }
 
   setHoveredVideoId(videoId) {
     if (this._hoveredVideoId === videoId) return;
     this._hoveredVideoId = videoId || null;
-    this._render();
+    this._scheduleRender();
   }
 
   addQuestions(questions) {
@@ -501,6 +513,19 @@ export class Renderer {
     this._canvas.height = rect.height * this._dpr;
   }
 
+  /**
+   * Coalesce render calls — multiple _scheduleRender() calls per frame
+   * result in a single _render() via requestAnimationFrame.
+   */
+  _scheduleRender() {
+    if (this._renderScheduled) return;
+    this._renderScheduled = true;
+    requestAnimationFrame(() => {
+      this._renderScheduled = false;
+      this._render();
+    });
+  }
+
   _render() {
     if (!this._ctx || !this._width || !this._height) return;
 
@@ -544,6 +569,11 @@ export class Renderer {
     }
   }
 
+  /**
+   * Render heatmap to an offscreen canvas (only when data changes).
+   * The offscreen canvas is in world-normalized [0,1] space for the heatmap region,
+   * so pan/zoom just repositions it via drawImage — no per-cell recalculation.
+   */
   _drawHeatmap(ctx, w, h) {
     if (!this._estimateGrid || this._heatmapEstimates.length === 0) return;
 
@@ -564,27 +594,18 @@ export class Renderer {
     const rXSpan = region.x_max - region.x_min;
     const rYSpan = region.y_max - region.y_min;
 
-    // Helper: bilinear interpolation of grid values
     function sampleGrid(gxf, gyf) {
       const gx0 = Math.max(0, Math.min(N - 1, Math.floor(gxf)));
       const gy0 = Math.max(0, Math.min(N - 1, Math.floor(gyf)));
       const gx1 = Math.min(N - 1, gx0 + 1);
       const gy1 = Math.min(N - 1, gy0 + 1);
-      const fx = gxf - gx0; // fractional x [0,1)
-      const fy = gyf - gy0; // fractional y [0,1)
-
-      const v00 = grid[gy0 * N + gx0];
-      const v10 = grid[gy0 * N + gx1];
-      const v01 = grid[gy1 * N + gx0];
-      const v11 = grid[gy1 * N + gx1];
-
-      // Bilinear blend
-      const top = v00 + (v10 - v00) * fx;
-      const bot = v01 + (v11 - v01) * fx;
+      const fx = gxf - gx0;
+      const fy = gyf - gy0;
+      const top = grid[gy0 * N + gx0] + (grid[gy0 * N + gx1] - grid[gy0 * N + gx0]) * fx;
+      const bot = grid[gy1 * N + gx0] + (grid[gy1 * N + gx1] - grid[gy1 * N + gx0]) * fx;
       return top + (bot - top) * fy;
     }
 
-    // Helper: bilinear interpolation of evidence counts (for opacity)
     function sampleEvidence(gxf, gyf) {
       const gx0 = Math.max(0, Math.min(N - 1, Math.floor(gxf)));
       const gy0 = Math.max(0, Math.min(N - 1, Math.floor(gyf)));
@@ -592,14 +613,8 @@ export class Renderer {
       const gy1 = Math.min(N - 1, gy0 + 1);
       const fx = gxf - gx0;
       const fy = gyf - gy0;
-
-      const e00 = evidence[gy0 * N + gx0];
-      const e10 = evidence[gy0 * N + gx1];
-      const e01 = evidence[gy1 * N + gx0];
-      const e11 = evidence[gy1 * N + gx1];
-
-      const top = e00 + (e10 - e00) * fx;
-      const bot = e01 + (e11 - e01) * fx;
+      const top = evidence[gy0 * N + gx0] + (evidence[gy0 * N + gx1] - evidence[gy0 * N + gx0]) * fx;
+      const bot = evidence[gy1 * N + gx0] + (evidence[gy1 * N + gx1] - evidence[gy1 * N + gx0]) * fx;
       return top + (bot - top) * fy;
     }
 
@@ -607,18 +622,15 @@ export class Renderer {
 
     for (let sy = 0; sy < SCREEN_CELLS; sy++) {
       for (let sx = 0; sx < SCREEN_CELLS; sx++) {
-        // Center of this screen cell → world normalized coordinate
         const centerSX = (sx + 0.5) * cellW;
         const centerSY = (sy + 0.5) * cellH;
         const wx = (centerSX - this._panX) / (this._zoom * w);
         const wy = (centerSY - this._panY) / (this._zoom * h);
 
-        // Map world coord to fractional grid position within domain region
         const gxf = ((wx - rXMin) / rXSpan) * N - 0.5;
         const gyf = ((wy - rYMin) / rYSpan) * N - 0.5;
 
         if (gxf < -1 || gxf >= N || gyf < -1 || gyf >= N) {
-          // Outside domain region — draw neutral prior
           ctx.fillStyle = 'rgba(245, 220, 105, 0.25)';
           ctx.fillRect(sx * cellW, sy * cellH, cellW + 0.5, cellH + 0.5);
           continue;
@@ -865,7 +877,7 @@ export class Renderer {
       this._panY *= this._height / oldH;
       this._clampPanZoom();
     }
-    this._render();
+    this._scheduleRender();
   }
 
   _handleWheel(e) {
@@ -887,7 +899,7 @@ export class Renderer {
     this._zoom = newZoom;
 
     this._clampPanZoom();
-    this._render();
+    this._scheduleRender();
     this._notifyViewport();
   }
 
@@ -934,7 +946,7 @@ export class Renderer {
       this._selectionEnd = null;
       this._suppressNextClick = true;
       this._canvas.style.cursor = '';
-      this._render();
+      this._scheduleRender();
       return;
     }
 
@@ -957,7 +969,7 @@ export class Renderer {
 
     if (this._isSelecting && this._selectionStart) {
       this._selectionEnd = { x: mx, y: my };
-      this._render();
+      this._scheduleRender();
       return;
     }
 
@@ -970,7 +982,7 @@ export class Renderer {
       this._lastMouse = { x: e.clientX, y: e.clientY };
 
       this._clampPanZoom();
-      this._render();
+      this._scheduleRender();
       this._notifyViewport();
       return;
     }
@@ -994,7 +1006,7 @@ export class Renderer {
     }
     // Re-render when hover state changes (trajectory visibility or article highlight)
     if (this._hoveredVideoId !== prevHoveredVideoId || this._hoveredPoint !== prevHoveredPoint) {
-      this._render();
+      this._scheduleRender();
     }
   }
 
@@ -1151,10 +1163,16 @@ export class Renderer {
     return null;
   }
 
-  // Touch handling for pinch-zoom
+  // Touch handling: single finger = hover/tooltip, two fingers = pan + pinch-zoom
   _handleTouchStart(e) {
     if (e.touches.length === 2) {
       e.preventDefault();
+      // Cancel any single-finger hover
+      this._isTouchHovering = false;
+      this._hideTooltip();
+
+      this._isDragging = true;
+      this._dragMoved = false;
       const t0 = e.touches[0];
       const t1 = e.touches[1];
       this._lastTouchDist = Math.hypot(t1.clientX - t0.clientX, t1.clientY - t0.clientY);
@@ -1162,10 +1180,21 @@ export class Renderer {
         x: (t0.clientX + t1.clientX) / 2,
         y: (t0.clientY + t1.clientY) / 2,
       };
+      this._lastMouse = { x: this._lastTouchCenter.x, y: this._lastTouchCenter.y };
     } else if (e.touches.length === 1) {
-      this._isDragging = true;
-      this._dragMoved = false;
-      this._lastMouse = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      // Single finger: hover mode (show labels/tooltips like desktop mousemove)
+      this._isTouchHovering = true;
+      this._isDragging = false;
+      const rect = this._canvas.getBoundingClientRect();
+      const mx = e.touches[0].clientX - rect.left;
+      const my = e.touches[0].clientY - rect.top;
+      const hit = this._hitTest(mx, my);
+      if (hit) {
+        this._hoveredPoint = hit;
+        this._hoveredVideoId = hit.type === 'video' ? hit.videoId : null;
+        this._showTooltip(this._buildTooltipHTML(hit), mx, my);
+      }
+      this._scheduleRender();
     }
   }
 
@@ -1180,10 +1209,20 @@ export class Renderer {
         y: (t0.clientY + t1.clientY) / 2,
       };
 
+      // Pan with two-finger drag
+      if (this._lastMouse) {
+        const dx = center.x - this._lastMouse.x;
+        const dy = center.y - this._lastMouse.y;
+        if (Math.abs(dx) > 2 || Math.abs(dy) > 2) this._dragMoved = true;
+        this._panX += dx;
+        this._panY += dy;
+      }
+      this._lastMouse = { x: center.x, y: center.y };
+
+      // Pinch zoom
       const rect = this._canvas.getBoundingClientRect();
       const mx = center.x - rect.left;
       const my = center.y - rect.top;
-
       const scale = dist / this._lastTouchDist;
       const newZoom = Math.max(1, Math.min(10, this._zoom * scale));
 
@@ -1192,32 +1231,63 @@ export class Renderer {
         this._panX = mx - s * (mx - this._panX);
         this._panY = my - s * (my - this._panY);
         this._zoom = newZoom;
-        this._clampPanZoom();
-        this._render();
-        this._notifyViewport();
       }
+
+      this._clampPanZoom();
+      this._scheduleRender();
+      this._notifyViewport();
 
       this._lastTouchDist = dist;
       this._lastTouchCenter = center;
-    } else if (e.touches.length === 1 && this._isDragging && this._lastMouse) {
-      const t = e.touches[0];
-      const dx = t.clientX - this._lastMouse.x;
-      const dy = t.clientY - this._lastMouse.y;
-      if (Math.abs(dx) > 2 || Math.abs(dy) > 2) this._dragMoved = true;
-      this._panX += dx;
-      this._panY += dy;
-      this._lastMouse = { x: t.clientX, y: t.clientY };
-      this._clampPanZoom();
-      this._render();
-      this._notifyViewport();
+    } else if (e.touches.length === 1 && this._isTouchHovering) {
+      // Single finger drag: update hover position (show labels)
+      e.preventDefault();
+      const rect = this._canvas.getBoundingClientRect();
+      const mx = e.touches[0].clientX - rect.left;
+      const my = e.touches[0].clientY - rect.top;
+      const prevHoveredVideoId = this._hoveredVideoId;
+      const prevHoveredPoint = this._hoveredPoint;
+      const hit = this._hitTest(mx, my);
+      if (hit) {
+        this._hoveredPoint = hit;
+        this._hoveredVideoId = hit.type === 'video' ? hit.videoId : null;
+        this._showTooltip(this._buildTooltipHTML(hit), mx, my);
+      } else {
+        this._hoveredPoint = null;
+        this._hoveredVideoId = null;
+        this._hideTooltip();
+      }
+      if (this._hoveredVideoId !== prevHoveredVideoId || this._hoveredPoint !== prevHoveredPoint) {
+        this._scheduleRender();
+      }
     }
   }
 
-  _handleTouchEnd() {
-    this._isDragging = false;
-    this._lastMouse = null;
-    this._lastTouchDist = null;
-    this._lastTouchCenter = null;
+  _handleTouchEnd(e) {
+    if (e.touches.length === 0) {
+      // Tap: if we were hovering over something and didn't drag, treat as click
+      if (this._isTouchHovering && this._hoveredPoint && !this._dragMoved) {
+        const hit = this._hoveredPoint;
+        if (hit.type === 'video' && this._onVideoClick) {
+          this._onVideoClick(hit);
+        } else if (hit.url) {
+          this._openInBackground(hit.url);
+        } else if (hit.type === 'cell' && hit.label && hit.label.source_article) {
+          const url = 'https://en.wikipedia.org/wiki/' + encodeURIComponent(hit.label.source_article);
+          this._openInBackground(url);
+        }
+      }
+
+      this._isTouchHovering = false;
+      this._isDragging = false;
+      this._lastMouse = null;
+      this._lastTouchDist = null;
+      this._lastTouchCenter = null;
+      this._hoveredPoint = null;
+      this._hoveredVideoId = null;
+      this._hideTooltip();
+      this._scheduleRender();
+    }
   }
 
   // ======== PRIVATE: Tooltip ========
@@ -1259,7 +1329,7 @@ export class Renderer {
       const [cr, cg, cb] = valueToColor(hit.estimateValue ?? 0.5);
       const borderColor = `rgb(${cr},${cg},${cb})`;
       const icon = '<i class="fa-brands fa-youtube" style="color:#c4302b;font-size:0.85em;"></i>';
-      const videoTitle = (hit.title || 'Video').split('|')[0].trim();
+      const videoTitle = (hit.title || 'Video').split('|')[0].trim().replace(/\s*\([^)]*\)\s*$/, '');
       let html = `<div style="font-weight:600;margin-bottom:4px;">${icon} ${this._escapeHtml(videoTitle)}</div>`;
       html += `<div style="font-size:0.73rem;color:var(--color-text-muted);">${duration} &middot; Click to play</div>`;
       const trajectory = this._videoTrajectories.get(hit.videoId);

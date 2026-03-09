@@ -61,6 +61,32 @@ export function init(container, options = {}) {
 
   containerEl.appendChild(header);
   containerEl.appendChild(listEl);
+
+  // Resize handle (right edge)
+  const resizeHandle = document.createElement('div');
+  resizeHandle.className = 'video-resize-handle';
+  containerEl.appendChild(resizeHandle);
+
+  let resizing = false;
+  resizeHandle.addEventListener('mousedown', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    resizing = true;
+    resizeHandle.classList.add('active');
+    const onMove = (ev) => {
+      if (!resizing) return;
+      const newWidth = Math.max(280, Math.min(600, ev.clientX));
+      document.documentElement.style.setProperty('--video-sidebar-width', newWidth + 'px');
+    };
+    const onUp = () => {
+      resizing = false;
+      resizeHandle.classList.remove('active');
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseup', onUp);
+    };
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onUp);
+  });
 }
 
 export function setVideos(markers) {
@@ -185,7 +211,7 @@ function renderList() {
 
     const titleSpan = document.createElement('span');
     titleSpan.className = 'video-panel-item-title';
-    titleSpan.textContent = (v.title || '').split('|')[0].trim();
+    titleSpan.textContent = (v.title || '').split('|')[0].trim().replace(/\s*\([^)]*\)\s*$/, '');
 
     const meta = document.createElement('span');
     meta.className = 'video-panel-item-meta';
@@ -209,24 +235,27 @@ function formatDuration(seconds) {
 
 const PANEL_CSS = `
   #video-panel {
-    width: 0;
-    min-width: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: var(--video-sidebar-width);
     background: var(--color-surface);
     box-shadow: 2px 0 24px rgba(0,0,0,0.3), 1px 0 0 var(--color-border);
     z-index: 10;
     display: flex;
     flex-direction: column;
-    padding: 0;
-    overflow: hidden;
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: width;
-    contain: layout style;
-    flex-shrink: 0;
-    order: -1;
+    padding: 1rem 1.25rem;
+    overflow: visible;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
   }
   #video-panel.open {
-    width: var(--sidebar-width);
-    padding: 1rem 1.25rem;
+    transform: translateX(0);
+  }
+  /* Scrolling on .video-panel-list so toggle can overflow */
+  #video-panel.open .video-panel-list {
     overflow-y: auto;
     overflow-x: hidden;
   }
@@ -349,9 +378,9 @@ const PANEL_CSS = `
   .video-toggle-btn {
     position: absolute;
     top: 50%;
-    left: 0;
+    right: -28px;
     transform: translateY(-50%);
-    z-index: 9;
+    z-index: 11;
     width: 28px;
     height: 56px;
     border: 1px solid var(--color-border);
@@ -364,25 +393,37 @@ const PANEL_CSS = `
     align-items: center;
     justify-content: center;
     font-size: 0.75rem;
-    transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 2px 0 8px rgba(0,0,0,0.15);
-    will-change: transform;
   }
   .video-toggle-btn:hover {
     color: var(--color-primary);
     border-color: var(--color-primary);
     box-shadow: 2px 0 12px var(--color-glow-primary);
   }
-  .video-toggle-btn.panel-open {
-    transform: translateY(-50%) translateX(var(--sidebar-width));
-  }
   .video-toggle-btn[hidden] { display: none; }
 
   @media (max-width: 768px) {
     /* sidebar-width variable handles sizing; transform handles show/hide */
   }
+  .video-resize-handle {
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 6px;
+    cursor: col-resize;
+    z-index: 11;
+    background: transparent;
+    transition: background 0.2s;
+  }
+  .video-resize-handle:hover,
+  .video-resize-handle.active {
+    background: var(--color-primary);
+    box-shadow: 0 0 8px var(--color-glow-primary);
+  }
+
   @media (max-width: 480px) {
     /* Mobile: video panel is a bottom sheet, controlled by index.html styles */
     .video-toggle-btn { display: none; }
+    .video-resize-handle { display: none; }
   }
 `;

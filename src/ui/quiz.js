@@ -1,6 +1,7 @@
 /** Quiz UI for question display, answer input, and feedback. */
 
 import { announce } from '../utils/accessibility.js';
+import { $quizDrawerCollapsed } from '../state/store.js';
 
 // Domains where Khan Academy has good content coverage
 const KHAN_DOMAINS = new Set([
@@ -68,20 +69,20 @@ export function init(container) {
         font-size: 0.82rem;
         line-height: 1.6;
         color: var(--color-text);
-        margin-bottom: 1.25rem;
+        margin-bottom: 0.35rem;
         text-align: left;
         text-indent: 0;
       }
       .quiz-instruction {
         font-size: 0.72rem;
         color: var(--color-text-muted);
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.45rem;
         font-style: italic;
       }
       .quiz-options {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.4rem;
       }
       .quiz-option {
         padding: 0.75rem 1rem;
@@ -95,6 +96,7 @@ export function init(container) {
         font-size: 0.85rem;
         color: var(--color-text);
         transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+        will-change: background-color, border-color, box-shadow, color, opacity;
         min-height: 44px;
         display: block;
         width: 100%;
@@ -134,9 +136,11 @@ export function init(container) {
         opacity: 1 !important;
       }
       .quiz-feedback {
-        margin-bottom: 0.5rem;
         font-family: var(--font-body);
         font-weight: bold;
+      }
+      .quiz-feedback:not(:empty) {
+        margin-bottom: 0.5rem;
         min-height: 1.5em;
       }
       .quiz-meta {
@@ -203,26 +207,31 @@ export function init(container) {
   }
 
 
+  // Preserve toggle button (lives inside the panel for animation sync)
+  const toggleBtn = container.querySelector('.quiz-toggle-btn');
   container.innerHTML = `
     <div class="resize-handle"></div>
     <div class="quiz-content">
       <div class="quiz-question" aria-live="polite"></div>
       <div class="quiz-instruction">Click on the correct response</div>
-      <div class="quiz-feedback" aria-live="assertive"></div>
-      <div class="quiz-actions" hidden>
-        <button class="quiz-next-btn" aria-label="Next question">Next <i class="fa-solid fa-arrow-right" style="margin-left:0.3rem;font-size:0.75rem"></i></button>
-        <a class="quiz-learn-btn" target="_blank" rel="noopener" data-learn="wikipedia" hidden><i class="fa-brands fa-wikipedia-w"></i> Wikipedia</a>
-        <a class="quiz-learn-btn" target="_blank" rel="noopener" data-learn="khan" hidden><i class="fa-solid fa-graduation-cap"></i> Khan Academy</a>
+      <div class="quiz-feedback-area">
+        <div class="quiz-feedback" aria-live="assertive"></div>
+        <div class="quiz-actions" hidden>
+          <button class="quiz-next-btn" aria-label="Next question">Next <i class="fa-solid fa-arrow-right" style="margin-left:0.3rem;font-size:0.75rem"></i></button>
+          <a class="quiz-learn-btn" target="_blank" rel="noopener" data-learn="wikipedia" hidden><i class="fa-brands fa-wikipedia-w"></i> Wikipedia</a>
+          <a class="quiz-learn-btn" target="_blank" rel="noopener" data-learn="khan" hidden><i class="fa-solid fa-graduation-cap"></i> Khan Academy</a>
+        </div>
+        <div class="quiz-options" role="group" aria-label="Answer options">
+          <button class="quiz-option" data-key="A" aria-label="Option A"></button>
+          <button class="quiz-option" data-key="B" aria-label="Option B"></button>
+          <button class="quiz-option" data-key="C" aria-label="Option C"></button>
+          <button class="quiz-option" data-key="D" aria-label="Option D"></button>
+        </div>
+        <div class="quiz-meta"></div>
       </div>
-      <div class="quiz-options" role="group" aria-label="Answer options">
-        <button class="quiz-option" data-key="A" aria-label="Option A"></button>
-        <button class="quiz-option" data-key="B" aria-label="Option B"></button>
-        <button class="quiz-option" data-key="C" aria-label="Option C"></button>
-        <button class="quiz-option" data-key="D" aria-label="Option D"></button>
-      </div>
-      <div class="quiz-meta"></div>
     </div>
   `;
+  if (toggleBtn) container.appendChild(toggleBtn);
 
   uiElements = {
     wrapper: container.querySelector('.quiz-content'),
@@ -250,6 +259,47 @@ export function init(container) {
 
   document.addEventListener('keydown', handleKeyDown);
 
+  // ── Mobile drawer pull handle ──
+  const drawerPull = document.createElement('div');
+  drawerPull.className = 'drawer-pull';
+  drawerPull.setAttribute('aria-label', 'Toggle quiz drawer');
+  const pullBar = document.createElement('div');
+  pullBar.className = 'drawer-pull-bar';
+  drawerPull.appendChild(pullBar);
+  // Insert before quiz-content
+  const quizContent = container.querySelector('.quiz-content');
+  container.insertBefore(drawerPull, quizContent);
+
+  // Tap drawer pull to toggle collapsed state
+  drawerPull.addEventListener('click', () => {
+    $quizDrawerCollapsed.set(!$quizDrawerCollapsed.get());
+  });
+
+  // Swipe gesture detection on the quiz panel (mobile only)
+  let touchStartY = 0;
+  container.addEventListener('touchstart', (e) => {
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+  container.addEventListener('touchend', (e) => {
+    const deltaY = e.changedTouches[0].clientY - touchStartY;
+    if (deltaY > 50) {
+      // Swipe down → collapse
+      $quizDrawerCollapsed.set(true);
+    } else if (deltaY < -50 && $quizDrawerCollapsed.get()) {
+      // Swipe up when collapsed → expand
+      $quizDrawerCollapsed.set(false);
+    }
+  }, { passive: true });
+
+  // Subscribe to collapsed atom → toggle CSS class
+  $quizDrawerCollapsed.subscribe((collapsed) => {
+    container.classList.toggle('drawer-collapsed', collapsed);
+    const toggleBtn = document.getElementById('quiz-toggle');
+    if (toggleBtn) {
+      toggleBtn.classList.toggle('drawer-collapsed-toggle', collapsed);
+    }
+  });
+
   const resizeHandle = container.querySelector('.resize-handle');
   if (resizeHandle) {
     let resizing = false;
@@ -260,7 +310,7 @@ export function init(container) {
       const onMove = (ev) => {
         if (!resizing) return;
         const newWidth = Math.max(280, Math.min(600, window.innerWidth - ev.clientX));
-        document.documentElement.style.setProperty('--sidebar-width', newWidth + 'px');
+        document.documentElement.style.setProperty('--quiz-sidebar-width', newWidth + 'px');
       };
       const onUp = () => {
         resizing = false;
@@ -326,15 +376,16 @@ export function isValidQuestion(question) {
   return { valid: true, reason: '' };
 }
 
-export function showQuestion(question) {
+export function showQuestion(question, completionMsg) {
   // Null means "no more questions" — clear the display gracefully
   if (!question) {
     currentQuestion = null;
-    if (uiElements.question) uiElements.question.textContent = 'All questions answered!';
+    if (uiElements.question) uiElements.question.textContent = completionMsg || 'All questions answered!';
     if (uiElements.options) uiElements.options.forEach(btn => { btn.hidden = true; });
     if (uiElements.instruction) uiElements.instruction.hidden = true;
     if (uiElements.feedback) uiElements.feedback.textContent = '';
     if (uiElements.actions) uiElements.actions.hidden = true;
+    if (uiElements.meta) uiElements.meta.textContent = '';
     return;
   }
 
@@ -558,7 +609,7 @@ export function getCurrentQuestion() {
 export function renderLatex(text) {
   if (!text) return '';
   
-  return text.replace(/\$([^$]+)\$/g, (match, content) => {
+  return text.replace(/\$([^$]+)\$/g, (_match, content) => {
     if (/^[0-9.,\s]+$/.test(content)) {
       return content;
     }

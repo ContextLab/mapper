@@ -160,7 +160,7 @@ export function init(headerElement) {
         cursor: pointer;
         color: var(--color-text-muted);
         font-size: 1rem;
-        transition: all 0.2s ease;
+        transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
       }
       .control-btn:hover {
         border-color: var(--color-primary);

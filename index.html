@@ -38,7 +38,8 @@
             --font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             --header-height: 56px;
-            --sidebar-width: 380px;
+            --video-sidebar-width: 380px;
+            --quiz-sidebar-width: 380px;
         }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -101,8 +102,6 @@
 
         #app-header {
             background: var(--color-surface);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--color-border);
             box-shadow: 0 1px 12px var(--color-glow-primary);
             padding: 0 1.25rem;
@@ -200,6 +199,12 @@
             transition: opacity 0.5s ease;
         }
         #landing.hidden { opacity: 0; pointer-events: none; visibility: hidden; }
+        /* Hide panels on welcome screen — no transition flash */
+        #app[data-screen="welcome"] #video-panel,
+        #app[data-screen="welcome"] #quiz-panel {
+            transition: none;
+            visibility: hidden;
+        }
 
         #particle-canvas {
             position: absolute;
@@ -364,33 +369,38 @@
         }
 
         #quiz-panel {
-            position: relative;
-            width: 0;
-            min-width: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: var(--quiz-sidebar-width);
             background: var(--color-surface);
             box-shadow: -2px 0 24px rgba(0,0,0,0.3), -1px 0 0 var(--color-border);
             z-index: 10;
             display: flex;
             flex-direction: column;
-            padding: 0;
-            overflow: hidden;
-            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            will-change: width;
-            contain: layout style;
-            flex-shrink: 0;
+            padding: 0.6rem 1.25rem;
+            overflow: visible;
+            transform: translateX(100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
         }
         #quiz-panel.open {
-            width: var(--sidebar-width);
-            padding: 1rem 1.25rem;
+            transform: translateX(0);
+        }
+        /* Scrolling handled by .quiz-content so toggle button can overflow */
+        #quiz-panel.open .quiz-content {
             overflow-y: auto;
             overflow-x: hidden;
+            flex: 1;
+            min-height: 0;
         }
         .quiz-toggle-btn {
             position: absolute;
             top: 50%;
-            right: 0;
+            left: -28px;
             transform: translateY(-50%);
-            z-index: 9;
+            z-index: 11;
             width: 28px;
             height: 56px;
             border: 1px solid var(--color-border);
@@ -403,7 +413,7 @@
             align-items: center;
             justify-content: center;
             font-size: 0.75rem;
-            transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.4s ease, right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.4s ease;
             box-shadow: -2px 0 8px rgba(0,0,0,0.15);
         }
         .quiz-toggle-btn:hover {
@@ -411,11 +421,10 @@
             border-color: var(--color-primary);
             box-shadow: -2px 0 12px var(--color-glow-primary);
         }
-        .quiz-toggle-btn.panel-open {
-            right: var(--sidebar-width);
-        }
         
         .quiz-toggle-btn[hidden] { display: none; }
+        /* Drawer pull: hidden on desktop, shown on mobile via media query */
+        .drawer-pull { display: none; }
         .resize-handle {
             position: absolute;
             left: 0; top: 0; bottom: 0;
@@ -445,9 +454,8 @@
             border: 1px solid rgba(0, 105, 62, 0.3);
             border-radius: 8px;
             z-index: 5;
-            backdrop-filter: blur(4px);
             overflow: hidden;
-            transition: opacity 0.3s, box-shadow 0.3s;
+            transition: opacity 0.3s;
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
             margin: 0;
             padding: 0;
@@ -468,7 +476,6 @@
             position: fixed;
             inset: 0;
             background: rgba(0,0,0,0.7);
-            backdrop-filter: blur(4px);
             z-index: 1000;
             display: flex;
             align-items: center;
@@ -531,8 +538,7 @@
         /* Loading modal */
         #loading-modal {
             z-index: 1100;
-            background: rgba(248, 250, 252, 0.85);
-            backdrop-filter: blur(8px);
+            background: rgba(248, 250, 252, 0.92);
         }
         #loading-modal:not([hidden]) { opacity: 1; pointer-events: auto; }
         .loading-modal-card {
@@ -670,7 +676,7 @@
         }
 
         @media (max-width: 768px) {
-            :root { --sidebar-width: 50%; }
+            :root { --video-sidebar-width: 50%; --quiz-sidebar-width: 50%; }
             #app-header { padding: 0 1rem; }
             #quiz-panel.open {
                 width: 50%;
@@ -686,9 +692,7 @@
             .logo { font-size: 0.95rem; }
             .header-left { gap: 0.3rem; flex: 1; min-width: 0; }
             .header-right { gap: 0.25rem; flex-shrink: 0; }
-            /* Hide non-essential header buttons on mobile */
-            #trophy-btn { display: none; }
-            #suggest-btn { display: none; } /* Videos accessible via video panel toggle */
+            /* Trophy and suggest buttons visible on mobile */
             .control-btn[aria-label="Reset all progress"] { display: none !important; }
             .btn-icon { min-width: 34px; min-height: 34px; font-size: 0.85rem; }
             /* Make dropdown arrow easier to see on mobile */
@@ -704,6 +708,7 @@
                 position: absolute;
                 top: auto; bottom: 0; left: 0; right: 0;
                 width: 100% !important; height: 0;
+                padding: 0;
                 transform: none;
                 border-radius: 16px 16px 0 0;
                 box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
@@ -729,29 +734,62 @@
             #quiz-panel .quiz-question { font-size: 0.9rem; line-height: 1.35; }
             #quiz-panel .quiz-option { padding: 0.5rem 0.75rem; font-size: 0.85rem; min-height: 44px; }
 
-            /* ── Quiz toggle: centered bottom tab ── */
+            /* ── Drawer pull handle (mobile only) ── */
+            .drawer-pull {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 32px;
+                cursor: pointer;
+                flex-shrink: 0;
+                touch-action: none;
+            }
+            .drawer-pull-bar {
+                width: 40px;
+                height: 4px;
+                border-radius: 2px;
+                background: var(--color-text-muted);
+                opacity: 0.5;
+            }
+
+            /* ── Collapsed drawer state ── */
+            #quiz-panel.open.drawer-collapsed {
+                height: 32px !important;
+                padding: 0 !important;
+                overflow: hidden;
+            }
+            #quiz-panel.open.drawer-collapsed .quiz-content {
+                display: none;
+            }
+            /* Move toggle button down when drawer is collapsed */
+            #quiz-panel.open.drawer-collapsed .quiz-toggle-btn {
+                bottom: 32px;
+            }
+
+            /* ── Quiz toggle: wide bottom pull tab ── */
             .quiz-toggle-btn {
                 top: auto;
                 bottom: 0;
                 right: 50%;
                 transform: translateX(50%);
-                width: 56px;
-                height: 28px;
-                border-radius: 8px 8px 0 0;
+                width: 80px;
+                height: 32px;
+                border-radius: 12px 12px 0 0;
                 border: 1px solid var(--color-border);
                 border-bottom: none;
                 background: var(--color-primary);
                 color: #fff;
-                box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+                box-shadow: 0 -2px 12px rgba(0,0,0,0.25);
+                z-index: 22;
             }
             /* Arrow points UP when closed (pull up to open): chevron-left rotated 90° CW = ^ */
             .quiz-toggle-btn i { transform: rotate(90deg); }
             /* Override JS icon swap: force chevron-right to also point up when closed */
-            .quiz-toggle-btn:not(.panel-open) i.fa-chevron-right { transform: rotate(-90deg); }
+            #quiz-panel:not(.open) .quiz-toggle-btn i.fa-chevron-right { transform: rotate(-90deg); }
             /* Arrow points DOWN when open (pull down to close) */
-            .quiz-toggle-btn.panel-open { bottom: 55vh; right: 50%; background: var(--color-surface); color: var(--color-text-muted); }
-            .quiz-toggle-btn.panel-open i.fa-chevron-right { transform: rotate(90deg); }
-            .quiz-toggle-btn.panel-open i.fa-chevron-left { transform: rotate(-90deg); }
+            #quiz-panel.open .quiz-toggle-btn { bottom: 55vh; right: 50%; background: var(--color-surface); color: var(--color-text-muted); }
+            #quiz-panel.open .quiz-toggle-btn i.fa-chevron-right { transform: rotate(90deg); }
+            #quiz-panel.open .quiz-toggle-btn i.fa-chevron-left { transform: rotate(-90deg); }
 
             /* ── Video panel: bottom sheet on mobile (not hidden) ── */
             #video-panel {
@@ -760,6 +798,7 @@
                 top: auto; bottom: 0; left: 0; right: 0;
                 width: 100% !important; height: 0;
                 min-width: 0;
+                padding: 0;
                 transform: none;
                 border-radius: 16px 16px 0 0;
                 box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
@@ -791,6 +830,13 @@
 
             #minimap-container { display: none; }
             .resize-handle { display: none; }
+            /* Colorbar: position above quiz panel so bottom isn't cut off */
+            .map-colorbar {
+                bottom: auto !important;
+                top: 70px !important;
+                right: 8px !important;
+                height: 80px !important;
+            }
             button, a, .quiz-option {
                 min-height: 44px;
                 min-width: 44px;
@@ -854,26 +900,22 @@
                 </div>
             </section>
 
-            <!-- Video Discovery Panel -->
+            <!-- Video Discovery Panel (toggle inside for synchronized animation) -->
             <aside id="video-panel" aria-label="Video Lectures">
+                <button id="video-toggle" class="video-toggle-btn" hidden aria-label="Open video panel" data-tooltip="Show/hide lectures">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
                 <!-- Content injected by video-panel.js -->
             </aside>
-
-            <!-- Video Panel Toggle -->
-            <button id="video-toggle" class="video-toggle-btn" hidden aria-label="Open video panel" data-tooltip="Show/hide lectures">
-                <i class="fa-solid fa-chevron-right"></i>
-            </button>
 
             <!-- Map Visualization -->
             <section id="map-container" aria-label="Interactive Heatmap" tabindex="0"></section>
 
-            <!-- Quiz Panel Toggle -->
-            <button id="quiz-toggle" class="quiz-toggle-btn" hidden aria-label="Open quiz panel" data-tooltip="Show/hide questions">
-                <i class="fa-solid fa-chevron-left"></i>
-            </button>
-
-            <!-- Quiz / Interaction Panel -->
+            <!-- Quiz / Interaction Panel (toggle inside for synchronized animation) -->
             <aside id="quiz-panel" aria-label="Quiz Question">
+                <button id="quiz-toggle" class="quiz-toggle-btn" hidden aria-label="Open quiz panel" data-tooltip="Show/hide questions">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
                 <!-- Content injected by app.js -->
             </aside>
 

@@ -66,6 +66,9 @@ export class ParticleSystem {
     this._onMouseDown = this._onMouseDown.bind(this);
     this._onMouseUp = this._onMouseUp.bind(this);
     this._onWheel = this._onWheel.bind(this);
+    this._onTouchStart = this._onTouchStart.bind(this);
+    this._onTouchMove = this._onTouchMove.bind(this);
+    this._onTouchEnd = this._onTouchEnd.bind(this);
     this._onResize = this._onResize.bind(this);
     this._tick = this._tick.bind(this);
   }
@@ -85,6 +88,9 @@ export class ParticleSystem {
     canvas.addEventListener('mouseleave', this._onMouseLeave);
     canvas.addEventListener('mousedown', this._onMouseDown);
     canvas.addEventListener('wheel', this._onWheel, { passive: false });
+    canvas.addEventListener('touchstart', this._onTouchStart, { passive: false });
+    canvas.addEventListener('touchmove', this._onTouchMove, { passive: false });
+    canvas.addEventListener('touchend', this._onTouchEnd);
     window.addEventListener('mouseup', this._onMouseUp);
     canvas.style.cursor = 'grab';
 
@@ -221,6 +227,80 @@ export class ParticleSystem {
 
     this._clampView();
     this._updateHomePositions();
+  }
+
+  _onTouchStart(e) {
+    if (e.touches.length === 2) {
+      // Two-finger: pan (like mouse drag)
+      e.preventDefault();
+      this._dragging = true;
+      const cx = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+      const cy = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+      this._dragStartX = cx;
+      this._dragStartY = cy;
+      this._dragStartViewX = this.viewX;
+      this._dragStartViewY = this.viewY;
+      this._lastPinchDist = Math.hypot(
+        e.touches[1].clientX - e.touches[0].clientX,
+        e.touches[1].clientY - e.touches[0].clientY
+      );
+      this.mouse.active = false;
+    } else if (e.touches.length === 1) {
+      // Single finger: hover effect (scatter particles)
+      const rect = this.canvas.getBoundingClientRect();
+      this.mouse.x = e.touches[0].clientX - rect.left;
+      this.mouse.y = e.touches[0].clientY - rect.top;
+      this.mouse.active = true;
+    }
+  }
+
+  _onTouchMove(e) {
+    if (e.touches.length === 2) {
+      e.preventDefault();
+      const cx = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+      const cy = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+      const rect = this.canvas.getBoundingClientRect();
+
+      // Pan
+      const dx = (cx - this._dragStartX) / rect.width * this.viewW;
+      const dy = (cy - this._dragStartY) / rect.height * this.viewH;
+      this.viewX = this._dragStartViewX - dx;
+      this.viewY = this._dragStartViewY - dy;
+
+      // Pinch zoom
+      const dist = Math.hypot(
+        e.touches[1].clientX - e.touches[0].clientX,
+        e.touches[1].clientY - e.touches[0].clientY
+      );
+      if (this._lastPinchDist) {
+        const factor = this._lastPinchDist / dist;
+        const maxW = this._boundsMaxX - this._boundsMinX;
+        const maxH = this._boundsMaxY - this._boundsMinY;
+        this.viewW = Math.min(maxW, Math.max(0.05, this.viewW * factor));
+        this.viewH = Math.min(maxH, Math.max(0.05, this.viewH * factor));
+      }
+      this._lastPinchDist = dist;
+
+      this._clampView();
+      this._updateHomePositions();
+      this.mouse.active = false;
+    } else if (e.touches.length === 1 && !this._dragging) {
+      // Single finger: update hover position
+      const rect = this.canvas.getBoundingClientRect();
+      this.mouse.x = e.touches[0].clientX - rect.left;
+      this.mouse.y = e.touches[0].clientY - rect.top;
+      this.mouse.active = true;
+    }
+  }
+
+  _onTouchEnd(e) {
+    if (e.touches.length === 0) {
+      this._dragging = false;
+      this._lastPinchDist = null;
+      this.mouse.active = false;
+      this.mouse.x = -9999;
+      this.mouse.y = -9999;
+    }
   }
 
   _clampView() {

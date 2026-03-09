@@ -598,6 +598,7 @@ async function switchDomain(domainId) {
   const domainName = registry.getDomains().find(d => d.id === domainId)?.name || domainId;
   announce(`Navigated to ${domainName}. ${aggregatedQuestions.length} questions available.`);
 
+  modes.setSkipVisible(true);
   selectAndShowNextQuestion();
 
   // Advance tutorial on domain switch
@@ -625,8 +626,16 @@ function selectAndShowNextQuestion() {
   }
 
   if (available.length === 0) {
-    announce('All questions answered! Great work exploring the knowledge map.');
-    quiz.showQuestion(null);
+    // Check if ALL domains are exhausted or just the current one
+    const allPool = (currentDomainBundle.questions || []);
+    const allExhausted = allPool.every(q => answeredIds.has(q.id) || !quiz.isValidQuestion(q).valid);
+    const msg = allExhausted
+      ? "You've finished mapping your knowledge. Congratulations!"
+      : "You've finished mapping this domain; try choosing another domain from the dropdown menu!";
+    announce(msg);
+    quiz.showQuestion(null, msg);
+    modes.setSkipVisible(false);
+    progress.updateConfidence(1.0);
     return;
   }
 

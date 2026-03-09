@@ -220,6 +220,7 @@ function defaultState() {
   return {
     completed: false,
     dismissed: false,
+    welcomeShown: false,
     step: 1,
     subStep: 1,
     hasSkippedQuestion: false,
@@ -232,17 +233,24 @@ function defaultState() {
 
 export function initTutorial(appState = {}) {
   const saved = loadState();
+
+  // Already dismissed or completed — never re-show
   if (saved && (saved.dismissed || saved.completed)) {
     state = saved;
     return;
   }
 
-  // Preserve in-progress tutorial state across domain switches / re-inits
-  if (saved && saved.step > 1) {
-    state = saved;
+  // Welcome prompt was already shown (user accepted tutorial previously).
+  // On page refresh + "Map my knowledge!", clear in-progress state silently
+  // instead of resuming mid-tutorial.
+  if (saved && saved.welcomeShown) {
+    state = defaultState();
+    state.welcomeShown = true;   // remember we already showed welcome
+    state.dismissed = true;       // don't restart automatically
     _questionsAnsweredInStep = 0;
     _inFollowUp = false;
-    renderCurrentStep();
+    saveState();
+    removeOverlay();
     return;
   }
 
@@ -407,6 +415,7 @@ export function dismissTutorial() {
 export function resetTutorial() {
   try { localStorage.removeItem(STORAGE_KEY); } catch { /* noop */ }
   state = defaultState();
+  state.welcomeShown = true;  // don't re-show welcome prompt on future refresh
   _questionsAnsweredInStep = 0;
   _inFollowUp = false;
   saveState();
@@ -549,6 +558,8 @@ function showWelcomePrompt() {
   yesBtn.textContent = 'Yes, show me around';
   yesBtn.addEventListener('click', () => {
     modal.remove();
+    state.welcomeShown = true;
+    saveState();
     renderCurrentStep();
   });
   btnRow.appendChild(yesBtn);
@@ -564,6 +575,7 @@ function showWelcomePrompt() {
   noBtn.textContent = "No thanks, I'll explore on my own";
   noBtn.addEventListener('click', () => {
     modal.remove();
+    state.welcomeShown = true;
     dismissTutorial();
   });
   btnRow.appendChild(noBtn);
@@ -636,8 +648,8 @@ function renderCurrentStep() {
 }
 
 function buildDynamicMessage(stepDef) {
-  // Step 9 (Exploring Domain-Specific Knowledge): include current domain name
-  if (stepDef.id === 9) {
+  // Step 10 (Exploring Domain-Specific Knowledge): include current domain name
+  if (stepDef.id === 10) {
     const domainEl = document.querySelector('.custom-select-value');
     const domain = domainEl?.textContent?.trim() || 'a new domain';
     return `You selected ${domain} from the menu\u2014now all of the questions you see will be focused on this one area. You can go back to mapping general knowledge by selecting "All (General)" from the dropdown menu. But first, try answering a couple of questions in the domain you selected. Remember, you can always skip if you need to!`;
@@ -646,8 +658,8 @@ function buildDynamicMessage(stepDef) {
 }
 
 function buildDynamicFollowUp(stepDef) {
-  // Step 10 (Your Expertise): follow-up with top sub-domain areas
-  if (stepDef.id === 10) {
+  // Step 11 (Your Expertise): follow-up with top sub-domain areas
+  if (stepDef.id === 11) {
     const items = document.querySelectorAll('#insights-modal-body .insights-concept');
     const areas = Array.from(items).slice(0, 3).map(el => el.textContent?.trim()).filter(Boolean);
     if (areas.length >= 3) {
@@ -1007,8 +1019,13 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
   document.body.appendChild(modal);
 
   // Position modal (immediate + deferred to catch panel transitions)
-  if (!mobile && highlightEl && !isFinish) {
+  if (!mobile && (highlightEl || positionHint) && !isFinish) {
+    // Disable transition for initial placement so modal doesn't animate from default position
+    modal.style.transition = 'none';
     positionModal(modal, highlightEl, positionHint);
+    requestAnimationFrame(() => {
+      modal.style.transition = prefersReducedMotion() ? 'none' : 'opacity 300ms var(--ease-emphasized-decel, ease), transform 300ms var(--ease-emphasized-decel, ease), left 300ms var(--ease-emphasized-decel, ease), top 300ms var(--ease-emphasized-decel, ease)';
+    });
     setTimeout(() => positionModal(modal, highlightEl, positionHint), 350);
     setTimeout(() => positionModal(modal, highlightEl, positionHint), 600);
     setTimeout(() => positionModal(modal, highlightEl, positionHint), 700);
@@ -1032,8 +1049,8 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       modal.style.opacity = '1';
-      if (!mobile && highlightEl && !isFinish) {
-        modal.style.transform = 'translateY(0)';
+      if (!mobile && (highlightEl || positionHint) && !isFinish) {
+        modal.style.transform = 'none';
       } else if (!mobile) {
         modal.style.transform = 'translate(-50%,-50%)';
       } else {
@@ -1215,7 +1232,7 @@ function positionModal(modal, highlightEl, positionHint = null) {
     left = vw - sidebarW - mw - gap;
     if (left < 12) left = 12;
     top = headerH + gap;
-    Object.assign(modal.style, { top: `${top}px`, left: `${left}px` });
+    Object.assign(modal.style, { top: `${top}px`, left: `${left}px`, transform: 'none' });
     return;
   }
 
@@ -1225,7 +1242,7 @@ function positionModal(modal, highlightEl, positionHint = null) {
     left = sidebarW + gap;
     if (left + mw > vw - 12) left = vw - mw - 12;
     top = headerH + gap;
-    Object.assign(modal.style, { top: `${top}px`, left: `${left}px` });
+    Object.assign(modal.style, { top: `${top}px`, left: `${left}px`, transform: 'none' });
     return;
   }
 
@@ -1233,7 +1250,7 @@ function positionModal(modal, highlightEl, positionHint = null) {
     // Right-aligned: right edge of modal has same margin as header-to-modal gap
     left = vw - mw - gap;
     top = headerH + gap;
-    Object.assign(modal.style, { top: `${top}px`, left: `${left}px` });
+    Object.assign(modal.style, { top: `${top}px`, left: `${left}px`, transform: 'none' });
     return;
   }
 
@@ -1241,7 +1258,7 @@ function positionModal(modal, highlightEl, positionHint = null) {
     // Left-aligned: left edge of modal has same margin as header-to-modal gap
     left = gap;
     top = headerH + gap;
-    Object.assign(modal.style, { top: `${top}px`, left: `${left}px` });
+    Object.assign(modal.style, { top: `${top}px`, left: `${left}px`, transform: 'none' });
     return;
   }
 
@@ -1291,6 +1308,7 @@ function positionModal(modal, highlightEl, positionHint = null) {
   Object.assign(modal.style, {
     top: `${top}px`,
     left: `${left}px`,
+    transform: 'none',
   });
 }
 

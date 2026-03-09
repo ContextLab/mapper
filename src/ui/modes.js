@@ -291,6 +291,10 @@ export function isAutoAdvance() {
   return autoAdvance;
 }
 
+export function setSkipVisible(visible) {
+  if (skipBtnEl) skipBtnEl.hidden = !visible;
+}
+
 export function setAutoAdvance(value) {
   autoAdvance = !!value;
   if (autoAdvanceToggleEl) {

@@ -101,7 +101,15 @@ const STEPS = [
     ]
   },
   {
-    id: 6, title: 'Question Modes',
+    id: 6, title: 'Deep Dive!',
+    highlight: '.quiz-feedback-area',
+    positionHint: 'quiz-final',
+    onEnter: 'openQuiz',
+    message: "Every question has an associated Wikipedia article and/or Khan Academy video. Click the buttons to view. If you answer incorrectly or skip a question, you can see the correct answer highlighted in green. Remember: every mistake is an opportunity to learn and grow!",
+    advanceOn: 'click',
+  },
+  {
+    id: 7, title: 'Question Modes',
     highlight: '.modes-wrapper',
     skipOnMobile: true,
     onEnter: 'closeModals,openQuiz,enableAutoAdvance',
@@ -109,7 +117,7 @@ const STEPS = [
     advanceOn: 'click',
   },
   {
-    id: 7, title: 'Save & Load Progress',
+    id: 8, title: 'Save & Load Progress',
     highlight: '.header-left',
     positionHint: 'left',
     skipOnMobile: true,
@@ -118,7 +126,7 @@ const STEPS = [
     advanceOn: 'click',
   },
   {
-    id: 8, title: 'Switch Domains',
+    id: 9, title: 'Switch Domains',
     highlight: '.domain-selector',
     message: 'Select a different knowledge domain from the dropdown menu to focus in on that part of your map!',
     arrowTarget: '.domain-selector .custom-select-trigger',
@@ -127,7 +135,7 @@ const STEPS = [
     removeOverlayOnAction: true,
   },
   {
-    id: 9, title: 'Exploring Domain-Specific Knowledge',
+    id: 10, title: 'Exploring Domain-Specific Knowledge',
     highlight: '#quiz-panel',
     advanceOn: 'answer',
     questionTarget: 2,
@@ -135,7 +143,7 @@ const STEPS = [
     onEnter: 'openQuiz',
   },
   {
-    id: 10, title: 'Your Expertise',
+    id: 11, title: 'Your Expertise',
     highlight: '#trophy-btn',
     positionHint: 'right',
     message: "As you answer questions, the system builds a picture of your knowledge. Click this button to see how your answers are shaping up so far. Keep in mind, it gets more accurate with more questions!",
@@ -144,7 +152,7 @@ const STEPS = [
     followUp: { dynamicMessage: true, advanceOn: 'click' },
   },
   {
-    id: 11, title: 'Fill in Your Knowledge Gaps!',
+    id: 12, title: 'Fill in Your Knowledge Gaps!',
     highlight: '#suggest-btn',
     positionHint: 'right',
     onEnter: 'closeModals',
@@ -154,7 +162,7 @@ const STEPS = [
     followUp: { message: 'Click on any video to watch it!', advanceOn: 'click' },
   },
   {
-    id: 12, title: 'Share Your Map',
+    id: 13, title: 'Share Your Map',
     highlight: '#share-btn',
     positionHint: 'right',
     onEnter: 'closeModals',
@@ -164,7 +172,7 @@ const STEPS = [
     followUp: { message: 'You can share on LinkedIn, X, or Bluesky. You can also download an image of your map to show it off!', advanceOn: 'click' },
   },
   {
-    id: 13, title: 'Learn More',
+    id: 14, title: 'Learn More',
     highlight: '#about-btn',
     positionHint: 'right',
     onEnter: 'closeModals',
@@ -172,7 +180,7 @@ const STEPS = [
     advanceOn: 'click',
   },
   {
-    id: 14, title: 'Tutorial Complete!',
+    id: 15, title: 'Tutorial Complete!',
     advanceOn: 'click',
     onEnter: 'closeModals,showTutorialBtn',
     arrowTarget: '#tutorial-btn',

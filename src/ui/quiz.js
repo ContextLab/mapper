@@ -214,19 +214,21 @@ export function init(container) {
     <div class="quiz-content">
       <div class="quiz-question" aria-live="polite"></div>
       <div class="quiz-instruction">Click on the correct response</div>
-      <div class="quiz-feedback" aria-live="assertive"></div>
-      <div class="quiz-actions" hidden>
-        <button class="quiz-next-btn" aria-label="Next question">Next <i class="fa-solid fa-arrow-right" style="margin-left:0.3rem;font-size:0.75rem"></i></button>
-        <a class="quiz-learn-btn" target="_blank" rel="noopener" data-learn="wikipedia" hidden><i class="fa-brands fa-wikipedia-w"></i> Wikipedia</a>
-        <a class="quiz-learn-btn" target="_blank" rel="noopener" data-learn="khan" hidden><i class="fa-solid fa-graduation-cap"></i> Khan Academy</a>
+      <div class="quiz-feedback-area">
+        <div class="quiz-feedback" aria-live="assertive"></div>
+        <div class="quiz-options" role="group" aria-label="Answer options">
+          <button class="quiz-option" data-key="A" aria-label="Option A"></button>
+          <button class="quiz-option" data-key="B" aria-label="Option B"></button>
+          <button class="quiz-option" data-key="C" aria-label="Option C"></button>
+          <button class="quiz-option" data-key="D" aria-label="Option D"></button>
+        </div>
+        <div class="quiz-actions" hidden>
+          <button class="quiz-next-btn" aria-label="Next question">Next <i class="fa-solid fa-arrow-right" style="margin-left:0.3rem;font-size:0.75rem"></i></button>
+          <a class="quiz-learn-btn" target="_blank" rel="noopener" data-learn="wikipedia" hidden><i class="fa-brands fa-wikipedia-w"></i> Wikipedia</a>
+          <a class="quiz-learn-btn" target="_blank" rel="noopener" data-learn="khan" hidden><i class="fa-solid fa-graduation-cap"></i> Khan Academy</a>
+        </div>
+        <div class="quiz-meta"></div>
       </div>
-      <div class="quiz-options" role="group" aria-label="Answer options">
-        <button class="quiz-option" data-key="A" aria-label="Option A"></button>
-        <button class="quiz-option" data-key="B" aria-label="Option B"></button>
-        <button class="quiz-option" data-key="C" aria-label="Option C"></button>
-        <button class="quiz-option" data-key="D" aria-label="Option D"></button>
-      </div>
-      <div class="quiz-meta"></div>
     </div>
   `;
   if (toggleBtn) container.appendChild(toggleBtn);

@@ -31,8 +31,8 @@ export function init(container) {
         display: flex;
         flex-wrap: wrap;
         gap: 0.35rem;
-        margin-bottom: 0.75rem;
-        padding-bottom: 0.75rem;
+        margin-bottom: 0.35rem;
+        padding-bottom: 0.35rem;
         border-bottom: 1px solid var(--color-border);
       }
       .mode-btn {
@@ -107,8 +107,8 @@ export function init(container) {
         align-items: center;
         gap: 0.3rem;
         margin-left: 0.25rem;
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
       }
       .auto-advance-label {
         font-size: 0.68rem;
@@ -162,7 +162,7 @@ export function init(container) {
         width: 100%;
         text-align: left;
         min-height: 44px;
-        margin-top: 0.5rem;
+        margin-top: 0.4rem;
       }
       .skip-btn:hover {
         border-color: #b8860b;

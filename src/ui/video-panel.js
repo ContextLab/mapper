@@ -76,7 +76,7 @@ export function init(container, options = {}) {
     const onMove = (ev) => {
       if (!resizing) return;
       const newWidth = Math.max(280, Math.min(600, ev.clientX));
-      document.documentElement.style.setProperty('--sidebar-width', newWidth + 'px');
+      document.documentElement.style.setProperty('--video-sidebar-width', newWidth + 'px');
     };
     const onUp = () => {
       resizing = false;
@@ -239,21 +239,23 @@ const PANEL_CSS = `
     left: 0;
     top: 0;
     bottom: 0;
-    width: var(--sidebar-width);
+    width: var(--video-sidebar-width);
     background: var(--color-surface);
     box-shadow: 2px 0 24px rgba(0,0,0,0.3), 1px 0 0 var(--color-border);
     z-index: 10;
     display: flex;
     flex-direction: column;
     padding: 1rem 1.25rem;
-    overflow: hidden;
+    overflow: visible;
     transform: translateX(-100%);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
-    contain: layout style;
   }
   #video-panel.open {
     transform: translateX(0);
+  }
+  /* Scrolling on .video-panel-list so toggle can overflow */
+  #video-panel.open .video-panel-list {
     overflow-y: auto;
     overflow-x: hidden;
   }
@@ -376,9 +378,9 @@ const PANEL_CSS = `
   .video-toggle-btn {
     position: absolute;
     top: 50%;
-    left: 0;
+    right: -28px;
     transform: translateY(-50%);
-    z-index: 9;
+    z-index: 11;
     width: 28px;
     height: 56px;
     border: 1px solid var(--color-border);
@@ -391,17 +393,13 @@ const PANEL_CSS = `
     align-items: center;
     justify-content: center;
     font-size: 0.75rem;
-    transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 2px 0 8px rgba(0,0,0,0.15);
-    will-change: transform;
   }
   .video-toggle-btn:hover {
     color: var(--color-primary);
     border-color: var(--color-primary);
     box-shadow: 2px 0 12px var(--color-glow-primary);
-  }
-  .video-toggle-btn.panel-open {
-    transform: translateY(-50%) translateX(var(--sidebar-width));
   }
   .video-toggle-btn[hidden] { display: none; }
 

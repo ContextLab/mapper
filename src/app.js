@@ -1002,14 +1002,12 @@ function toggleQuizPanel(show) {
     }
     quizPanel.classList.add('open');
     if (toggleBtn) {
-      toggleBtn.classList.add('panel-open');
       toggleBtn.querySelector('i').className = 'fa-solid fa-chevron-right';
       toggleBtn.setAttribute('aria-label', 'Close quiz panel');
     }
   } else {
     quizPanel.classList.remove('open');
     if (toggleBtn) {
-      toggleBtn.classList.remove('panel-open');
       toggleBtn.querySelector('i').className = 'fa-solid fa-chevron-left';
       toggleBtn.setAttribute('aria-label', 'Open quiz panel');
     }
@@ -1030,14 +1028,12 @@ function toggleVideoPanel(show) {
     }
     panel.classList.add('open');
     if (toggleBtn) {
-      toggleBtn.classList.add('panel-open');
       toggleBtn.querySelector('i').className = 'fa-solid fa-chevron-left';
       toggleBtn.setAttribute('aria-label', 'Close video panel');
     }
   } else {
     panel.classList.remove('open');
     if (toggleBtn) {
-      toggleBtn.classList.remove('panel-open');
       toggleBtn.querySelector('i').className = 'fa-solid fa-chevron-right';
       toggleBtn.setAttribute('aria-label', 'Open video panel');
     }

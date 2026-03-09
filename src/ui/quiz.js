@@ -69,20 +69,20 @@ export function init(container) {
         font-size: 0.82rem;
         line-height: 1.6;
         color: var(--color-text);
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.35rem;
         text-align: left;
         text-indent: 0;
       }
       .quiz-instruction {
         font-size: 0.72rem;
         color: var(--color-text-muted);
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.45rem;
         font-style: italic;
       }
       .quiz-options {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.4rem;
       }
       .quiz-option {
         padding: 0.75rem 1rem;
@@ -136,9 +136,11 @@ export function init(container) {
         opacity: 1 !important;
       }
       .quiz-feedback {
-        margin-bottom: 0.5rem;
         font-family: var(--font-body);
         font-weight: bold;
+      }
+      .quiz-feedback:not(:empty) {
+        margin-bottom: 0.5rem;
         min-height: 1.5em;
       }
       .quiz-meta {
@@ -205,6 +207,8 @@ export function init(container) {
   }
 
 
+  // Preserve toggle button (lives inside the panel for animation sync)
+  const toggleBtn = container.querySelector('.quiz-toggle-btn');
   container.innerHTML = `
     <div class="resize-handle"></div>
     <div class="quiz-content">
@@ -225,6 +229,7 @@ export function init(container) {
       <div class="quiz-meta"></div>
     </div>
   `;
+  if (toggleBtn) container.appendChild(toggleBtn);
 
   uiElements = {
     wrapper: container.querySelector('.quiz-content'),
@@ -303,7 +308,7 @@ export function init(container) {
       const onMove = (ev) => {
         if (!resizing) return;
         const newWidth = Math.max(280, Math.min(600, window.innerWidth - ev.clientX));
-        document.documentElement.style.setProperty('--sidebar-width', newWidth + 'px');
+        document.documentElement.style.setProperty('--quiz-sidebar-width', newWidth + 'px');
       };
       const onUp = () => {
         resizing = false;

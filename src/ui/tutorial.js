@@ -605,7 +605,7 @@ function renderCurrentStep() {
 
   // Completion step
   if (stepDef.isCompletion) {
-    message = "You've finished the formal tutorial. You can continue answering questions to refine your map and expand your knowledge!\n\nReplay the tutorial any time using the <span style=\"display:inline-flex;align-items:center;justify-content:center;width:1.3em;height:1.3em;border-radius:50%;background:var(--color-text-muted,#64748b);color:#fff;font-size:0.85em;font-weight:600;vertical-align:middle\">?</span> button near the top of the screen.";
+    message = "You've finished the formal tutorial. You can continue answering questions to refine your map and expand your knowledge!\n\nReplay the tutorial any time using the <span style=\"display:inline-flex;align-items:center;justify-content:center;width:1.3em;height:1.3em;border-radius:50%;background:var(--color-text-muted,#64748b);color:#fff;font-size:0.85em;font-weight:600;vertical-align:text-bottom\">?</span> button near the top of the screen.";
   }
 
   // Execute onEnter actions
@@ -1202,7 +1202,7 @@ function positionModal(modal, highlightEl, positionHint = null) {
   // Position hints override normal positioning
   if (positionHint === 'quiz-final') {
     // Position as if quiz panel is at its final open position (right edge)
-    const sidebarW = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--sidebar-width')) || 380;
+    const sidebarW = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--quiz-sidebar-width')) || 380;
     left = vw - sidebarW - mw - gap;
     if (left < 12) left = 12;
     top = headerH + gap;
@@ -1212,7 +1212,7 @@ function positionModal(modal, highlightEl, positionHint = null) {
 
   if (positionHint === 'video-final') {
     // Position as if video panel is at its final open position (left edge)
-    const sidebarW = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--sidebar-width')) || 380;
+    const sidebarW = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--video-sidebar-width')) || 380;
     left = sidebarW + gap;
     if (left + mw > vw - 12) left = vw - mw - 12;
     top = headerH + gap;

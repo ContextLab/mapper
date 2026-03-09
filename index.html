@@ -38,7 +38,8 @@
             --font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             --header-height: 56px;
-            --sidebar-width: 380px;
+            --video-sidebar-width: 380px;
+            --quiz-sidebar-width: 380px;
         }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -198,6 +199,12 @@
             transition: opacity 0.5s ease;
         }
         #landing.hidden { opacity: 0; pointer-events: none; visibility: hidden; }
+        /* Hide panels on welcome screen — no transition flash */
+        #app[data-screen="welcome"] #video-panel,
+        #app[data-screen="welcome"] #quiz-panel {
+            transition: none;
+            visibility: hidden;
+        }
 
         #particle-canvas {
             position: absolute;
@@ -366,30 +373,34 @@
             right: 0;
             top: 0;
             bottom: 0;
-            width: var(--sidebar-width);
+            width: var(--quiz-sidebar-width);
             background: var(--color-surface);
             box-shadow: -2px 0 24px rgba(0,0,0,0.3), -1px 0 0 var(--color-border);
             z-index: 10;
             display: flex;
             flex-direction: column;
-            padding: 1rem 1.25rem;
-            overflow: hidden;
+            padding: 0.6rem 1.25rem;
+            overflow: visible;
             transform: translateX(100%);
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             will-change: transform;
-            contain: layout style;
         }
         #quiz-panel.open {
             transform: translateX(0);
+        }
+        /* Scrolling handled by .quiz-content so toggle button can overflow */
+        #quiz-panel.open .quiz-content {
             overflow-y: auto;
             overflow-x: hidden;
+            flex: 1;
+            min-height: 0;
         }
         .quiz-toggle-btn {
             position: absolute;
             top: 50%;
-            right: 0;
+            left: -28px;
             transform: translateY(-50%);
-            z-index: 9;
+            z-index: 11;
             width: 28px;
             height: 56px;
             border: 1px solid var(--color-border);
@@ -402,16 +413,13 @@
             align-items: center;
             justify-content: center;
             font-size: 0.75rem;
-            transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.4s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.4s ease;
             box-shadow: -2px 0 8px rgba(0,0,0,0.15);
         }
         .quiz-toggle-btn:hover {
             color: var(--color-primary);
             border-color: var(--color-primary);
             box-shadow: -2px 0 12px var(--color-glow-primary);
-        }
-        .quiz-toggle-btn.panel-open {
-            transform: translateY(-50%) translateX(calc(-1 * var(--sidebar-width)));
         }
         
         .quiz-toggle-btn[hidden] { display: none; }
@@ -668,7 +676,7 @@
         }
 
         @media (max-width: 768px) {
-            :root { --sidebar-width: 50%; }
+            :root { --video-sidebar-width: 50%; --quiz-sidebar-width: 50%; }
             #app-header { padding: 0 1rem; }
             #quiz-panel.open {
                 width: 50%;
@@ -754,7 +762,7 @@
                 display: none;
             }
             /* Move toggle button down when drawer is collapsed */
-            .quiz-toggle-btn.panel-open.drawer-collapsed-toggle {
+            #quiz-panel.open.drawer-collapsed .quiz-toggle-btn {
                 bottom: 32px;
             }
 
@@ -777,11 +785,11 @@
             /* Arrow points UP when closed (pull up to open): chevron-left rotated 90° CW = ^ */
             .quiz-toggle-btn i { transform: rotate(90deg); }
             /* Override JS icon swap: force chevron-right to also point up when closed */
-            .quiz-toggle-btn:not(.panel-open) i.fa-chevron-right { transform: rotate(-90deg); }
+            #quiz-panel:not(.open) .quiz-toggle-btn i.fa-chevron-right { transform: rotate(-90deg); }
             /* Arrow points DOWN when open (pull down to close) */
-            .quiz-toggle-btn.panel-open { bottom: 55vh; right: 50%; background: var(--color-surface); color: var(--color-text-muted); }
-            .quiz-toggle-btn.panel-open i.fa-chevron-right { transform: rotate(90deg); }
-            .quiz-toggle-btn.panel-open i.fa-chevron-left { transform: rotate(-90deg); }
+            #quiz-panel.open .quiz-toggle-btn { bottom: 55vh; right: 50%; background: var(--color-surface); color: var(--color-text-muted); }
+            #quiz-panel.open .quiz-toggle-btn i.fa-chevron-right { transform: rotate(90deg); }
+            #quiz-panel.open .quiz-toggle-btn i.fa-chevron-left { transform: rotate(-90deg); }
 
             /* ── Video panel: bottom sheet on mobile (not hidden) ── */
             #video-panel {
@@ -892,26 +900,22 @@
                 </div>
             </section>
 
-            <!-- Video Discovery Panel -->
+            <!-- Video Discovery Panel (toggle inside for synchronized animation) -->
             <aside id="video-panel" aria-label="Video Lectures">
+                <button id="video-toggle" class="video-toggle-btn" hidden aria-label="Open video panel" data-tooltip="Show/hide lectures">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
                 <!-- Content injected by video-panel.js -->
             </aside>
-
-            <!-- Video Panel Toggle -->
-            <button id="video-toggle" class="video-toggle-btn" hidden aria-label="Open video panel" data-tooltip="Show/hide lectures">
-                <i class="fa-solid fa-chevron-right"></i>
-            </button>
 
             <!-- Map Visualization -->
             <section id="map-container" aria-label="Interactive Heatmap" tabindex="0"></section>
 
-            <!-- Quiz Panel Toggle -->
-            <button id="quiz-toggle" class="quiz-toggle-btn" hidden aria-label="Open quiz panel" data-tooltip="Show/hide questions">
-                <i class="fa-solid fa-chevron-left"></i>
-            </button>
-
-            <!-- Quiz / Interaction Panel -->
+            <!-- Quiz / Interaction Panel (toggle inside for synchronized animation) -->
             <aside id="quiz-panel" aria-label="Quiz Question">
+                <button id="quiz-toggle" class="quiz-toggle-btn" hidden aria-label="Open quiz panel" data-tooltip="Show/hide questions">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
                 <!-- Content injected by app.js -->
             </aside>
 

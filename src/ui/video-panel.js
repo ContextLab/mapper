@@ -61,6 +61,32 @@ export function init(container, options = {}) {
 
   containerEl.appendChild(header);
   containerEl.appendChild(listEl);
+
+  // Resize handle (right edge)
+  const resizeHandle = document.createElement('div');
+  resizeHandle.className = 'video-resize-handle';
+  containerEl.appendChild(resizeHandle);
+
+  let resizing = false;
+  resizeHandle.addEventListener('mousedown', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    resizing = true;
+    resizeHandle.classList.add('active');
+    const onMove = (ev) => {
+      if (!resizing) return;
+      const newWidth = Math.max(280, Math.min(600, ev.clientX));
+      document.documentElement.style.setProperty('--sidebar-width', newWidth + 'px');
+    };
+    const onUp = () => {
+      resizing = false;
+      resizeHandle.classList.remove('active');
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseup', onUp);
+    };
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onUp);
+  });
 }
 
 export function setVideos(markers) {
@@ -382,8 +408,24 @@ const PANEL_CSS = `
   @media (max-width: 768px) {
     /* sidebar-width variable handles sizing; transform handles show/hide */
   }
+  .video-resize-handle {
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 6px;
+    cursor: col-resize;
+    z-index: 11;
+    background: transparent;
+    transition: background 0.2s;
+  }
+  .video-resize-handle:hover,
+  .video-resize-handle.active {
+    background: var(--color-primary);
+    box-shadow: 0 0 8px var(--color-glow-primary);
+  }
+
   @media (max-width: 480px) {
     /* Mobile: video panel is a bottom sheet, controlled by index.html styles */
     .video-toggle-btn { display: none; }
+    .video-resize-handle { display: none; }
   }
 `;

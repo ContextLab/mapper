@@ -46,6 +46,7 @@ const STEPS = [
         highlight: '#video-panel, #video-toggle',
         arrowTarget: '#video-toggle',
         arrowSide: 'above',
+        positionHint: 'video-final',
         onEnter: 'closeQuiz,openVideo',
         skipOnMobile: true,
         message: 'Every video in our dataset lives at a different location on the map. This menu shows all of the videos contained within the current map view. The list adjusts dynamically as you zoom and pan.',
@@ -54,6 +55,7 @@ const STEPS = [
       {
         title: 'Video Sidebar',
         highlight: '#video-panel, #video-toggle',
+        positionHint: 'video-final',
         skipOnMobile: true,
         message: 'Hover over any video in the list to see its *trajectory*: the "path" of concepts it touches on from moment to moment. Click on any video to watch it!',
         advanceOn: 'click',
@@ -77,7 +79,7 @@ const STEPS = [
         positionHint: 'quiz-final',
         message: 'Answer a few more questions and see how your map updates.',
         advanceOn: 'answer',
-        questionTarget: 2,
+        questionTarget: 3,
       },
       {
         title: 'Building Your Map',
@@ -135,7 +137,6 @@ const STEPS = [
     id: 10, title: 'Your Expertise',
     highlight: '#trophy-btn',
     positionHint: 'right',
-    skipOnMobile: true,
     message: "As you answer questions, the system builds a picture of your knowledge. Click this button to see how your answers are shaping up so far. Keep in mind, it gets more accurate with more questions!",
     advanceOn: 'expertise-click',
     removeOverlayOnAction: true,
@@ -145,7 +146,6 @@ const STEPS = [
     id: 11, title: 'Fill in Your Knowledge Gaps!',
     highlight: '#suggest-btn',
     positionHint: 'right',
-    skipOnMobile: true,
     onEnter: 'closeModals',
     message: 'Click this button to see recommended Khan Academy videos based on your answers so far. These suggestions will become more targeted as you answer more questions!',
     advanceOn: 'suggest-click',
@@ -605,7 +605,7 @@ function renderCurrentStep() {
 
   // Completion step
   if (stepDef.isCompletion) {
-    message = "You've finished the formal tutorial. You can continue answering questions to refine your map and expand your knowledge!\n\nReplay the tutorial any time using the ? button near the top of the screen.";
+    message = "You've finished the formal tutorial. You can continue answering questions to refine your map and expand your knowledge!\n\nReplay the tutorial any time using the <span style=\"display:inline-flex;align-items:center;justify-content:center;width:1.3em;height:1.3em;border-radius:50%;background:var(--color-text-muted,#64748b);color:#fff;font-size:0.85em;font-weight:600;vertical-align:middle\">?</span> button near the top of the screen.";
   }
 
   // Execute onEnter actions
@@ -1107,13 +1107,17 @@ function renderMarkdownLite(container, text) {
     }
     const p = document.createElement('p');
     Object.assign(p.style, { margin: '0.4em 0' });
-    // Simple *italic* rendering
-    const parts = line.split(/(\*[^*]+\*)/g);
+    // Simple *italic* and <span> rendering
+    const parts = line.split(/(\*[^*]+\*|<span[^>]*>.*?<\/span>)/g);
     for (const part of parts) {
       if (part.startsWith('*') && part.endsWith('*') && part.length > 2) {
         const em = document.createElement('em');
         em.textContent = part.slice(1, -1);
         p.appendChild(em);
+      } else if (part.startsWith('<span')) {
+        const temp = document.createElement('template');
+        temp.innerHTML = part;
+        p.appendChild(temp.content);
       } else {
         p.appendChild(document.createTextNode(part));
       }
@@ -1201,6 +1205,16 @@ function positionModal(modal, highlightEl, positionHint = null) {
     const sidebarW = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--sidebar-width')) || 380;
     left = vw - sidebarW - mw - gap;
     if (left < 12) left = 12;
+    top = headerH + gap;
+    Object.assign(modal.style, { top: `${top}px`, left: `${left}px` });
+    return;
+  }
+
+  if (positionHint === 'video-final') {
+    // Position as if video panel is at its final open position (left edge)
+    const sidebarW = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--sidebar-width')) || 380;
+    left = sidebarW + gap;
+    if (left + mw > vw - 12) left = vw - mw - 12;
     top = headerH + gap;
     Object.assign(modal.style, { top: `${top}px`, left: `${left}px` });
     return;

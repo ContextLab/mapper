@@ -69,14 +69,14 @@ export function init(container) {
         font-size: 0.82rem;
         line-height: 1.6;
         color: var(--color-text);
-        margin-bottom: 1.25rem;
+        margin-bottom: 0.5rem;
         text-align: left;
         text-indent: 0;
       }
       .quiz-instruction {
         font-size: 0.72rem;
         color: var(--color-text-muted);
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.5rem;
         font-style: italic;
       }
       .quiz-options {

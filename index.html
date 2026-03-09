@@ -415,6 +415,8 @@
         }
         
         .quiz-toggle-btn[hidden] { display: none; }
+        /* Drawer pull: hidden on desktop, shown on mobile via media query */
+        .drawer-pull { display: none; }
         .resize-handle {
             position: absolute;
             left: 0; top: 0; bottom: 0;
@@ -682,9 +684,7 @@
             .logo { font-size: 0.95rem; }
             .header-left { gap: 0.3rem; flex: 1; min-width: 0; }
             .header-right { gap: 0.25rem; flex-shrink: 0; }
-            /* Hide non-essential header buttons on mobile */
-            #trophy-btn { display: none; }
-            #suggest-btn { display: none; } /* Videos accessible via video panel toggle */
+            /* Trophy and suggest buttons visible on mobile */
             .control-btn[aria-label="Reset all progress"] { display: none !important; }
             .btn-icon { min-width: 34px; min-height: 34px; font-size: 0.85rem; }
             /* Make dropdown arrow easier to see on mobile */
@@ -758,20 +758,21 @@
                 bottom: 32px;
             }
 
-            /* ── Quiz toggle: centered bottom tab ── */
+            /* ── Quiz toggle: wide bottom pull tab ── */
             .quiz-toggle-btn {
                 top: auto;
                 bottom: 0;
                 right: 50%;
                 transform: translateX(50%);
-                width: 56px;
-                height: 28px;
-                border-radius: 8px 8px 0 0;
+                width: 80px;
+                height: 32px;
+                border-radius: 12px 12px 0 0;
                 border: 1px solid var(--color-border);
                 border-bottom: none;
                 background: var(--color-primary);
                 color: #fff;
-                box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+                box-shadow: 0 -2px 12px rgba(0,0,0,0.25);
+                z-index: 22;
             }
             /* Arrow points UP when closed (pull up to open): chevron-left rotated 90° CW = ^ */
             .quiz-toggle-btn i { transform: rotate(90deg); }
@@ -821,6 +822,13 @@
 
             #minimap-container { display: none; }
             .resize-handle { display: none; }
+            /* Colorbar: position above quiz panel so bottom isn't cut off */
+            .map-colorbar {
+                bottom: auto !important;
+                top: 70px !important;
+                right: 8px !important;
+                height: 80px !important;
+            }
             button, a, .quiz-option {
                 min-height: 44px;
                 min-width: 44px;

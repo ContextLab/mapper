@@ -107,6 +107,8 @@ export function init(container) {
         align-items: center;
         gap: 0.3rem;
         margin-left: 0.25rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
       }
       .auto-advance-label {
         font-size: 0.68rem;
@@ -145,23 +147,25 @@ export function init(container) {
         transform: translateX(14px);
       }
       .skip-btn {
-        display: inline-flex;
+        display: flex;
         align-items: center;
         gap: 0.35rem;
-        padding: 0.35rem 0.6rem;
+        padding: 0.75rem 1rem;
         border: 1px solid #d4a017;
-        border-radius: 16px;
+        border-radius: 8px;
         background: var(--color-surface-raised);
         cursor: pointer;
-        font-size: 0.75rem;
+        font-size: 0.85rem;
         font-family: var(--font-body);
         color: #b8860b;
         transition: border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-        white-space: nowrap;
+        width: 100%;
+        text-align: left;
+        min-height: 44px;
+        margin-top: 0.5rem;
       }
       .skip-btn:hover {
-        background: #d4a017;
-        color: #ffffff;
+        border-color: #b8860b;
         box-shadow: 0 0 8px rgba(212, 160, 23, 0.4);
       }
     `;
@@ -194,7 +198,7 @@ export function init(container) {
 
   container.prepend(wrapper);
 
-  // Skip button — placed after .quiz-instruction inside .quiz-content
+  // Skip button — placed after .quiz-options as the last option
   skipBtnEl = document.createElement('button');
   skipBtnEl.className = 'skip-btn';
   skipBtnEl.textContent = '';
@@ -206,9 +210,9 @@ export function init(container) {
   skipBtnEl.addEventListener('click', () => {
     if (onSkipCb) onSkipCb();
   });
-  const instructionEl = container.querySelector('.quiz-instruction');
-  if (instructionEl) {
-    instructionEl.after(skipBtnEl);
+  const optionsEl = container.querySelector('.quiz-options');
+  if (optionsEl) {
+    optionsEl.after(skipBtnEl);
   } else {
     container.appendChild(skipBtnEl);
   }

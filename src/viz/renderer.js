@@ -99,6 +99,7 @@ export class Renderer {
     this._onTouchEnd = this._handleTouchEnd.bind(this);
     this._lastTouchDist = null;
     this._lastTouchCenter = null;
+    this._isTouchHovering = false;
   }
 
   /**
@@ -134,6 +135,7 @@ export class Renderer {
 
     // DOM colorbar (draggable)
     this._colorbarEl = document.createElement('div');
+    this._colorbarEl.className = 'map-colorbar';
     this._colorbarEl.style.cssText =
       'position:absolute;bottom:16px;right:16px;z-index:15;' +
       'width:12px;height:120px;border-radius:6px;cursor:grab;' +
@@ -1161,10 +1163,16 @@ export class Renderer {
     return null;
   }
 
-  // Touch handling for pinch-zoom
+  // Touch handling: single finger = hover/tooltip, two fingers = pan + pinch-zoom
   _handleTouchStart(e) {
     if (e.touches.length === 2) {
       e.preventDefault();
+      // Cancel any single-finger hover
+      this._isTouchHovering = false;
+      this._hideTooltip();
+
+      this._isDragging = true;
+      this._dragMoved = false;
       const t0 = e.touches[0];
       const t1 = e.touches[1];
       this._lastTouchDist = Math.hypot(t1.clientX - t0.clientX, t1.clientY - t0.clientY);
@@ -1172,10 +1180,21 @@ export class Renderer {
         x: (t0.clientX + t1.clientX) / 2,
         y: (t0.clientY + t1.clientY) / 2,
       };
+      this._lastMouse = { x: this._lastTouchCenter.x, y: this._lastTouchCenter.y };
     } else if (e.touches.length === 1) {
-      this._isDragging = true;
-      this._dragMoved = false;
-      this._lastMouse = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      // Single finger: hover mode (show labels/tooltips like desktop mousemove)
+      this._isTouchHovering = true;
+      this._isDragging = false;
+      const rect = this._canvas.getBoundingClientRect();
+      const mx = e.touches[0].clientX - rect.left;
+      const my = e.touches[0].clientY - rect.top;
+      const hit = this._hitTest(mx, my);
+      if (hit) {
+        this._hoveredPoint = hit;
+        this._hoveredVideoId = hit.type === 'video' ? hit.videoId : null;
+        this._showTooltip(this._buildTooltipHTML(hit), mx, my);
+      }
+      this._scheduleRender();
     }
   }
 
@@ -1190,10 +1209,20 @@ export class Renderer {
         y: (t0.clientY + t1.clientY) / 2,
       };
 
+      // Pan with two-finger drag
+      if (this._lastMouse) {
+        const dx = center.x - this._lastMouse.x;
+        const dy = center.y - this._lastMouse.y;
+        if (Math.abs(dx) > 2 || Math.abs(dy) > 2) this._dragMoved = true;
+        this._panX += dx;
+        this._panY += dy;
+      }
+      this._lastMouse = { x: center.x, y: center.y };
+
+      // Pinch zoom
       const rect = this._canvas.getBoundingClientRect();
       const mx = center.x - rect.left;
       const my = center.y - rect.top;
-
       const scale = dist / this._lastTouchDist;
       const newZoom = Math.max(1, Math.min(10, this._zoom * scale));
 
@@ -1202,32 +1231,63 @@ export class Renderer {
         this._panX = mx - s * (mx - this._panX);
         this._panY = my - s * (my - this._panY);
         this._zoom = newZoom;
-        this._clampPanZoom();
-        this._scheduleRender();
-        this._notifyViewport();
       }
 
-      this._lastTouchDist = dist;
-      this._lastTouchCenter = center;
-    } else if (e.touches.length === 1 && this._isDragging && this._lastMouse) {
-      const t = e.touches[0];
-      const dx = t.clientX - this._lastMouse.x;
-      const dy = t.clientY - this._lastMouse.y;
-      if (Math.abs(dx) > 2 || Math.abs(dy) > 2) this._dragMoved = true;
-      this._panX += dx;
-      this._panY += dy;
-      this._lastMouse = { x: t.clientX, y: t.clientY };
       this._clampPanZoom();
       this._scheduleRender();
       this._notifyViewport();
+
+      this._lastTouchDist = dist;
+      this._lastTouchCenter = center;
+    } else if (e.touches.length === 1 && this._isTouchHovering) {
+      // Single finger drag: update hover position (show labels)
+      e.preventDefault();
+      const rect = this._canvas.getBoundingClientRect();
+      const mx = e.touches[0].clientX - rect.left;
+      const my = e.touches[0].clientY - rect.top;
+      const prevHoveredVideoId = this._hoveredVideoId;
+      const prevHoveredPoint = this._hoveredPoint;
+      const hit = this._hitTest(mx, my);
+      if (hit) {
+        this._hoveredPoint = hit;
+        this._hoveredVideoId = hit.type === 'video' ? hit.videoId : null;
+        this._showTooltip(this._buildTooltipHTML(hit), mx, my);
+      } else {
+        this._hoveredPoint = null;
+        this._hoveredVideoId = null;
+        this._hideTooltip();
+      }
+      if (this._hoveredVideoId !== prevHoveredVideoId || this._hoveredPoint !== prevHoveredPoint) {
+        this._scheduleRender();
+      }
     }
   }
 
-  _handleTouchEnd() {
-    this._isDragging = false;
-    this._lastMouse = null;
-    this._lastTouchDist = null;
-    this._lastTouchCenter = null;
+  _handleTouchEnd(e) {
+    if (e.touches.length === 0) {
+      // Tap: if we were hovering over something and didn't drag, treat as click
+      if (this._isTouchHovering && this._hoveredPoint && !this._dragMoved) {
+        const hit = this._hoveredPoint;
+        if (hit.type === 'video' && this._onVideoClick) {
+          this._onVideoClick(hit);
+        } else if (hit.url) {
+          this._openInBackground(hit.url);
+        } else if (hit.type === 'cell' && hit.label && hit.label.source_article) {
+          const url = 'https://en.wikipedia.org/wiki/' + encodeURIComponent(hit.label.source_article);
+          this._openInBackground(url);
+        }
+      }
+
+      this._isTouchHovering = false;
+      this._isDragging = false;
+      this._lastMouse = null;
+      this._lastTouchDist = null;
+      this._lastTouchCenter = null;
+      this._hoveredPoint = null;
+      this._hoveredVideoId = null;
+      this._hideTooltip();
+      this._scheduleRender();
+    }
   }
 
   // ======== PRIVATE: Tooltip ========

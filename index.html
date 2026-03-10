@@ -2,7 +2,7 @@
 <html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Wikipedia Knowledge Map - An interactive visualization of 250,000 Wikipedia articles, their semantic relationships, and difficulty levels.">
     <title>Knowledge Mapper</title>
 
@@ -50,6 +50,7 @@
             color: var(--color-text);
             overflow: hidden;
             height: 100vh;
+            height: 100dvh; /* accounts for mobile browser chrome */
             width: 100vw;
         }
 
@@ -721,9 +722,11 @@
             #quiz-panel {
                 position: absolute;
                 top: auto; bottom: 0; left: 0; right: 0;
-                width: 100% !important; height: 48px;
+                width: 100% !important;
+                /* Drawer pull (32px) + safe-area (fallback 16px for Android gesture bar) */
+                height: calc(32px + env(safe-area-inset-bottom, 16px));
                 padding: 0;
-                padding-bottom: env(safe-area-inset-bottom, 0px);
+                padding-bottom: env(safe-area-inset-bottom, 16px);
                 transform: none;
                 border-radius: 16px 16px 0 0;
                 box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
@@ -735,9 +738,11 @@
                 background: var(--color-surface);
             }
             #quiz-panel:not(.open) .quiz-content { display: none; }
+            /* Hide everything except drawer pull when closed (important overrides inline styles) */
+            #quiz-panel:not(.open) > *:not(.drawer-pull) { display: none !important; }
             #quiz-panel.open {
                 width: 100% !important; height: 55vh;
-                padding: 0.75rem 1rem;
+                padding: 0;
                 overflow: hidden; /* Panel itself doesn't scroll; .quiz-content does */
             }
             #quiz-panel.open .quiz-content {
@@ -745,7 +750,12 @@
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
                 min-height: 0; /* Allow flex child to shrink below content size */
-                padding-bottom: 60px;
+                padding: 0.75rem 1rem 60px;
+            }
+            /* Add horizontal padding to progress bar when open */
+            #quiz-panel.open > *:not(.drawer-pull):not(.quiz-content) {
+                padding-left: 1rem;
+                padding-right: 1rem;
             }
             /* Compact quiz text on mobile */
             #quiz-panel .quiz-question { font-size: 0.9rem; line-height: 1.35; }
@@ -756,18 +766,21 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                height: 48px;
+                height: 32px;
+                width: 100%;
                 cursor: pointer;
                 flex-shrink: 0;
                 touch-action: none;
-                background: var(--color-surface-raised);
+                background: var(--color-surface);
                 border-bottom: 1px solid var(--color-border);
+                order: -1; /* Always appear first in flex column */
             }
             .drawer-pull-bar {
                 width: 56px;
                 height: 6px;
                 border-radius: 3px;
                 background: #999;
+                margin: 0 auto;
             }
 
             /* ── Quiz toggle: hidden on mobile (drawer pull replaces it) ── */
@@ -812,10 +825,10 @@
 
             #minimap-container { display: none; }
             .resize-handle { display: none; }
-            /* Colorbar: position above quiz panel so bottom isn't cut off */
+            /* Colorbar: position above quiz panel at bottom-right */
             .map-colorbar {
-                bottom: auto !important;
-                top: 70px !important;
+                bottom: 60px !important;
+                top: auto !important;
                 right: 8px !important;
                 height: 80px !important;
             }

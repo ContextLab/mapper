@@ -141,7 +141,7 @@ export class Renderer {
       'width:12px;height:120px;border-radius:6px;cursor:grab;' +
       'background:linear-gradient(to bottom, rgb(0,105,62), rgb(245,220,105) 50%, rgb(157,22,46));' +
       'box-shadow:0 2px 8px rgba(0,0,0,0.15);border:1px solid rgba(0,0,0,0.1);' +
-      'display:none;user-select:none;';
+      'display:none;user-select:none;touch-action:none;';
     const topLabel = document.createElement('div');
     topLabel.style.cssText = 'position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:9px;color:rgba(0,0,0,0.55);font-family:var(--font-body);white-space:nowrap;';
     topLabel.textContent = 'High';
@@ -793,34 +793,56 @@ export class Renderer {
     let offsetX = 0;
     let offsetY = 0;
 
-    this._colorbarEl.addEventListener('mousedown', (e) => {
+    const startDrag = (clientX, clientY) => {
       dragging = true;
-      offsetX = e.clientX - this._colorbarEl.offsetLeft;
-      offsetY = e.clientY - this._colorbarEl.offsetTop;
+      offsetX = clientX - this._colorbarEl.offsetLeft;
+      offsetY = clientY - this._colorbarEl.offsetTop;
       this._colorbarEl.style.cursor = 'grabbing';
-      e.stopPropagation();
-    });
+    };
 
-    this._cbMouseMove = (e) => {
+    const moveDrag = (clientX, clientY) => {
       if (!dragging) return;
       const rect = this._container.getBoundingClientRect();
-      const x = e.clientX - offsetX;
-      const y = e.clientY - offsetY;
+      const x = clientX - offsetX;
+      const y = clientY - offsetY;
       this._colorbarEl.style.left = Math.max(0, Math.min(rect.width - 30, x)) + 'px';
       this._colorbarEl.style.top = Math.max(0, Math.min(rect.height - 150, y)) + 'px';
       this._colorbarEl.style.right = 'auto';
       this._colorbarEl.style.bottom = 'auto';
     };
 
-    this._cbMouseUp = () => {
+    const endDrag = () => {
       if (dragging) {
         dragging = false;
         this._colorbarEl.style.cursor = 'grab';
       }
     };
 
+    // Mouse events
+    this._colorbarEl.addEventListener('mousedown', (e) => {
+      startDrag(e.clientX, e.clientY);
+      e.stopPropagation();
+    });
+    this._cbMouseMove = (e) => moveDrag(e.clientX, e.clientY);
+    this._cbMouseUp = endDrag;
     window.addEventListener('mousemove', this._cbMouseMove);
     window.addEventListener('mouseup', this._cbMouseUp);
+
+    // Touch events (mobile drag)
+    this._colorbarEl.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1) {
+        startDrag(e.touches[0].clientX, e.touches[0].clientY);
+        e.stopPropagation();
+        e.preventDefault();
+      }
+    }, { passive: false });
+    this._colorbarEl.addEventListener('touchmove', (e) => {
+      if (e.touches.length === 1 && dragging) {
+        moveDrag(e.touches[0].clientX, e.touches[0].clientY);
+        e.preventDefault();
+      }
+    }, { passive: false });
+    this._colorbarEl.addEventListener('touchend', endDrag);
   }
 
   // ======== Pan/Zoom ========

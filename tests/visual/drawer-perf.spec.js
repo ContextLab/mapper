@@ -26,9 +26,14 @@ test.describe('Drawer Animation (no white flash)', () => {
     // Take baseline screenshot with panel open
     const beforeClose = await page.screenshot();
 
-    // Close quiz panel
+    // Close quiz panel (use drawer pull on mobile, toggle button on desktop)
+    const drawerPull = page.locator('.drawer-pull');
     const toggleBtn = page.locator('.quiz-toggle-btn');
-    await toggleBtn.click();
+    if (await drawerPull.isVisible().catch(() => false)) {
+      await drawerPull.click();
+    } else {
+      await toggleBtn.click();
+    }
     // Wait for transition midpoint — capture during animation
     await page.waitForTimeout(150);
     const duringClose = await page.screenshot({ path: 'tests/visual/screenshots/drawer-during-close.png' });
@@ -69,10 +74,10 @@ test.describe('Drawer Animation (no white flash)', () => {
     await setupMap(page);
 
     // Measure time for 5 open/close cycles
-    const toggleBtn = page.locator('.quiz-toggle-btn');
     const timings = await page.evaluate(async () => {
       const results = [];
-      const toggle = document.querySelector('.quiz-toggle-btn');
+      const isMobile = window.innerWidth <= 480;
+      const toggle = isMobile ? document.querySelector('.drawer-pull') : document.querySelector('.quiz-toggle-btn');
       if (!toggle) return [{ error: 'no toggle btn' }];
       for (let i = 0; i < 5; i++) {
         const start = performance.now();

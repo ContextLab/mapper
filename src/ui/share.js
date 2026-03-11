@@ -306,7 +306,7 @@ export function showShareDialog() {
 
       ${imageDataUrl ? `
         <div style="margin-bottom: 1.5rem; text-align: center;">
-          <img src="${imageDataUrl}" alt="Knowledge map preview" style="max-width: 100%; max-height: 300px; border-radius: 8px; border: 1px solid var(--color-border);">
+          <img src="${imageDataUrl}" alt="Knowledge map preview" style="max-width: 100%; max-height: 300px; border-radius: 8px; border: 1.5px solid var(--color-border);">
         </div>
       ` : ''}
 

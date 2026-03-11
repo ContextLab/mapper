@@ -324,14 +324,14 @@
     },
     {
       "id": "ef720fa11235c088",
-      "question_text": "The Born rule gives the probability density of finding a particle as which function of $\\psi$?",
+      "question_text": "According to the Born rule, what does $|\\psi(x)|^2$ represent physically?",
       "options": {
-        "A": "$\\psi(x)$",
-        "B": "$\\nabla\\psi(x)$",
-        "C": "$\\psi^*(x)$",
-        "D": "$|\\psi(x)|^2$"
+        "A": "The energy of the particle at position $x$",
+        "B": "The probability density of finding the particle near $x$",
+        "C": "The momentum of the particle at position $x$",
+        "D": "The phase of the wave function at position $x$"
       },
-      "correct_answer": "D",
+      "correct_answer": "B",
       "difficulty": 2,
       "source_article": "Born rule",
       "domain_ids": [

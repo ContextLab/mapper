@@ -1,214 +1,122 @@
-# Tasks: Fix Mobile Mode
+# Tasks: Fix Mobile Mode (Updated 2026-03-11)
 
 **Input**: Design documents from `/specs/007-fix-mobile-mode/`
-**Prerequisites**: plan.md (required), spec.md (required), research.md, data-model.md, quickstart.md
+**Prerequisites**: plan.md (required), spec.md (required)
 
-**Tests**: Tests are included — spec requires Playwright verification and cross-device testing.
-
-**Organization**: Tasks are grouped by user story to enable independent implementation and testing of each story.
+**Pivot**: Portrait phone mode abandoned. Force landscape on phone-sized map screen. Address GitHub issues #51-53.
 
 ## Format: `[ID] [P?] [Story] Description`
 
 - **[P]**: Can run in parallel (different files, no dependencies)
-- **[Story]**: Which user story this task belongs to (e.g., US1, US2, US3)
-- Include exact file paths in descriptions
+- **[Story]**: Which user story this task belongs to
 
 ---
 
-## Phase 1: Setup
+## Phase 1: Setup & Completed Work
 
-**Purpose**: Branch preparation and audit of current state
+**Purpose**: Track what's already done from prior implementation
 
-- [ ] T001 Audit current header HTML structure and button DOM order in index.html (lines 864-890)
-- [ ] T002 Audit current drawer pull CSS and identify all padding/margin sources in index.html (lines 722-786)
-- [ ] T003 Audit current colorbar mobile CSS and touch event handling in index.html (lines 831-837) and src/viz/renderer.js
-
----
-
-## Phase 2: Foundational (Blocking Prerequisites)
-
-**Purpose**: Structural HTML change that US1 depends on
-
-**CRITICAL**: No user story work can begin until this phase is complete
-
-- [ ] T004 Add `.header-actions` div between `.header-left` and `.header-right` in index.html (line ~871)
-- [ ] T005 Add base CSS for `.header-actions` in index.html: `display: flex; align-items: center; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; flex-shrink: 1; min-width: 0;` and hide scrollbar with `::-webkit-scrollbar { display: none; }`
-
-**Checkpoint**: New `.header-actions` container exists in DOM and CSS, ready for button insertion
+- [X] T001 Add `.header-actions` div and CSS in index.html
+- [X] T002 Move reset/download/upload buttons to `.header-actions` in src/app.js
+- [X] T003 Fix drawer pull centering: change quiz-panel from position:absolute to position:fixed + width:100vw in index.html
+- [X] T004 Add defensive CSS on .drawer-pull in index.html
+- [X] T005 Add header constraint: max-width:100vw + box-sizing:border-box on #app-header in index.html
+- [X] T006 Update border thickness to 1.5px and color opacity across all UI in index.html + src/ui/*.js
+- [X] T007 Reset clears tutorial state (localStorage remove mapper-tutorial) in src/app.js
+- [X] T008 Create tests/visual/mobile-header.spec.js (5 tests)
+- [X] T009 Create tests/visual/mobile-colorbar.spec.js (3 tests)
+- [X] T010 Add drawer pull centering + drift tests in tests/visual/mobile-drawer.spec.js
 
 ---
 
-## Phase 3: User Story 1 — Header Button Split Layout (Priority: P1) MVP
+## Phase 2: Force Landscape on Phone Map Screen (US1, Priority: P1)
 
-**Goal**: Reset/download/upload on left (in `.header-actions`), trophy/video/share/tutorial/info on right (in `.header-right`), independent scroll reveal, dropdown fixed.
+**Goal**: Phone-sized devices auto-lock to landscape when entering the map screen. Release lock on return to welcome screen.
 
-**Independent Test**: On 375px viewport, verify button positions, swipe both directions, dropdown stays fixed.
+**Independent Test**: On a phone viewport, entering map screen triggers landscape lock; reset returns to portrait-allowed.
 
-### Implementation for User Story 1
+- [X] T011 [US1] Add orientation lock utility: create src/ui/orientation.js with `lockLandscape()` and `unlockOrientation()` using Screen Orientation API with feature detection fallback
+- [X] T012 [US1] Call `lockLandscape()` when transitioning to map screen in src/app.js (after switchDomain or landing-start-btn click)
+- [X] T013 [US1] Call `unlockOrientation()` in handleReset() in src/app.js when returning to welcome screen
+- [X] T014 [US1] Add phone detection: only lock if `screen.width <= 480 || screen.height <= 480` (catches both orientations) + touch check in src/ui/orientation.js
+- [X] T015 [US1] Add CSS fallback: if orientation API unavailable, show "rotate device" overlay on phone portrait map screen in index.html
+- [X] T016 [US1] Verify all header buttons visible without scrolling in landscape phone viewport (667x375) — tests updated to 667x375
+- [X] T017 [US1] Test: mobile tests updated to landscape viewport (667x375) — all 35 tests passing
 
-- [ ] T006 [US1] Update src/app.js: change button insertion target from `.header-right` to `.header-actions` for reset/download/upload buttons (lines 179-191)
-- [ ] T007 [US1] Update mobile CSS in index.html: set `.header-actions { flex: 1; gap: 0.25rem; min-width: 0; }` and `.header-right { flex: 1; gap: 0.25rem; min-width: 0; justify-content: flex-end; }` inside `@media (max-width: 480px)` (line ~710)
-- [ ] T008 [US1] Update src/app.js: set initial scroll positions — `.header-actions` scrollLeft=0 (left buttons visible), `.header-right` scrollLeft=scrollWidth (right buttons visible) (line ~615)
-- [ ] T009 [US1] Update welcome screen CSS in index.html: move `[aria-label="Import saved progress"]` rule from `.header-right` to `.header-actions` context; hide `.header-actions` buttons except upload on welcome screen (lines 601-606)
-- [ ] T010 [US1] Verify dropdown remains fixed: ensure `.header-left` has `flex: 0 0 auto` on mobile so it never scrolls (already set line 710, confirm no regression)
-
-### Tests for User Story 1
-
-- [ ] T011 [US1] Create tests/visual/mobile-header.spec.js: test left-group button positions (reset/download/upload after dropdown)
-- [ ] T012 [US1] Add test in mobile-header.spec.js: swipe right reveals hidden left-group buttons
-- [ ] T013 [US1] Add test in mobile-header.spec.js: swipe left reveals hidden right-group buttons
-- [ ] T014 [US1] Add test in mobile-header.spec.js: dropdown stays visible during header scroll
-- [ ] T015 [US1] Add test in mobile-header.spec.js: welcome screen shows only upload (left) and share/info (right)
-
-**Checkpoint**: Header buttons correctly split into two groups with independent scroll. All US1 tests pass.
+**Checkpoint**: Phone map screen locks to landscape. Welcome screen allows portrait.
 
 ---
 
-## Phase 4: User Story 2 — Drawer Pull Centering (Priority: P1)
+## Phase 3: Colorbar Repositioning with Quiz Panel (US2, Priority: P1, GitHub #51)
 
-**Goal**: Grab bar perfectly centered horizontally at all times, through any number of open/close cycles.
+**Goal**: Colorbar stays visible when quiz panel is expanded. Repositions automatically. Manual drag preserved.
 
-**Independent Test**: Open/close drawer 10 times, measure pull bar offset each time — must be within 1px of center.
+**Independent Test**: With quiz panel open, colorbar is fully visible and not behind panel.
 
-### Implementation for User Story 2
+- [X] T018 [US2] Update colorbar positioning logic in src/viz/renderer.js: MutationObserver on quiz panel class changes, auto-reposition colorbar
+- [X] T019 [US2] Ensure colorbar respects user-dragged position: _colorbarUserDragged flag skips auto-reposition
+- [X] T020 [US2] Update tests/visual/mobile-colorbar.spec.js: added colorbar-within-viewport test + existing overlap test covers this
+- [X] T021 [US2] Test colorbar on desktop too: added Desktop Colorbar Visibility test verifying no overlap with side quiz panel
 
-- [ ] T016 [US2] Add defensive CSS to `.drawer-pull` in index.html mobile section: `padding: 0 !important; margin: 0 !important; box-sizing: border-box;` (line ~765)
-- [ ] T017 [US2] Audit and confirm `#quiz-panel` has `padding: 0` in BOTH open and closed mobile states in index.html (lines 722-747) — remove any padding that could affect drawer pull width
-- [ ] T018 [US2] Verify `.drawer-pull-bar` absolute centering CSS is correct: `position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);` in index.html (line ~777)
-- [ ] T019 [US2] Audit src/app.js and src/ui/progress.js for any JS that sets inline styles on `#quiz-panel` or `.drawer-pull` during open/close transitions — ensure no padding/margin is set inline
-
-### Tests for User Story 2
-
-- [ ] T020 [US2] Add centering verification test in tests/visual/mobile-drawer.spec.js: measure pull bar horizontal offset from panel center, assert within 1px
-- [ ] T021 [US2] Add cycling test in tests/visual/mobile-drawer.spec.js: open/close drawer 10 times, measure centering after each cycle, assert no drift
-
-**Checkpoint**: Drawer pull bar stays centered through all state transitions. All US2 tests pass.
+**Checkpoint**: Colorbar always visible regardless of panel state. Drag preserved.
 
 ---
 
-## Phase 5: User Story 3 — Colorbar Visibility (Priority: P2)
+## Phase 4: Header Button Hover Fix (US3, Priority: P2, GitHub #52)
 
-**Goal**: Colorbar visible on mobile portrait, positioned top-right, touch-draggable.
+**Goal**: Remove scale transform on hover to prevent border clipping from overflow containers.
 
-**Independent Test**: On 375x667 viewport with heatmap visible, colorbar is visible and touch-draggable.
+- [X] T022 [US3] Remove `transform: scale(1.05)` from `.btn-icon:hover:not(:disabled)` in index.html — done in prior session
+- [X] T023 [US3] Verify hover effect still looks good (color change + border-color + box-shadow remain) — verified, no scale in CSS
 
-### Implementation for User Story 3
-
-- [ ] T022 [US3] Verify colorbar mobile CSS in index.html (line ~831): `top: 8px; right: 8px; height: 80px; z-index: 16` — confirm no overlap with header (z-index 100) or quiz panel (z-index 20)
-- [ ] T023 [US3] Verify touch drag events in src/viz/renderer.js: touchstart/touchmove/touchend handlers with `passive: false` and `touch-action: none` inline style on colorbar element
-- [ ] T024 [US3] Test colorbar visibility when quiz panel is open (55vh) — ensure colorbar at top-right is above the panel area
-
-### Tests for User Story 3
-
-- [ ] T025 [P] [US3] Create tests/visual/mobile-colorbar.spec.js: test colorbar is visible on 375x667 viewport after answering a question
-- [ ] T026 [P] [US3] Add test in mobile-colorbar.spec.js: colorbar remains visible when quiz panel is open
-- [ ] T027 [US3] Add test in mobile-colorbar.spec.js: colorbar bounding box does not overlap with quiz panel or header
-
-**Checkpoint**: Colorbar visible and functional on mobile. All US3 tests pass.
+**Checkpoint**: No border clipping on hover.
 
 ---
 
-## Phase 6: User Story 4 — Cross-Device Verification (Priority: P2)
+## Phase 5: Question Quality Fixes (US4, Priority: P2, GitHub #53)
 
-**Goal**: All fixes verified on Android emulator and iOS simulator with screenshot evidence.
+**Goal**: Fix Born rule and t-statistic questions.
 
-**Independent Test**: Screenshots from both platforms confirm correct rendering for all three fix areas.
+- [X] T024 [P] [US4] Fix Born rule question in data/domains/quantum-physics.json — rewritten to "what does |ψ(x)|² represent physically?"
+- [X] T025 [P] [US4] Fix t-statistic question in data/domains/probability-statistics.json — rewritten to "why t-distribution rather than standard normal?"
 
-### Implementation for User Story 4
-
-- [ ] T028 [US4] Run full Playwright test suite across Chromium, WebKit, Firefox with mobile viewports — capture results
-- [ ] T029 [US4] Start Android emulator, set up adb port forwarding (`adb reverse tcp:5173 tcp:5173`), load app in Chrome, capture screenshots of: header layout, drawer pull open/closed, colorbar
-- [ ] T030 [US4] Start iOS Simulator from Xcode, load app in Safari, capture screenshots of: header layout, drawer pull open/closed, colorbar
-- [ ] T031 [US4] Compare Android and iOS screenshots — document any platform-specific rendering differences and fix if needed
-- [ ] T032 [US4] Run existing test suites to confirm no regressions: `npm test` (unit) and `npx playwright test` (E2E)
-
-**Checkpoint**: Cross-device verification complete with screenshot evidence. All existing tests pass.
+**Checkpoint**: Both questions corrected.
 
 ---
 
-## Phase 7: Polish & Cross-Cutting Concerns
+## Phase 6: Cross-Device & Cross-Mode Verification (US6, Priority: P2)
 
-**Purpose**: Final cleanup and regression check
+**Goal**: Verify all fixes across phone landscape, tablet portrait/landscape, desktop.
 
-- [ ] T033 Run all existing Playwright tests (mobile-drawer, drawer-perf, core) and fix any regressions
-- [ ] T034 Run `npm test` (Vitest unit tests) and fix any failures
-- [ ] T035 Verify desktop layout is unaffected by mobile CSS changes — take desktop Playwright screenshot
-- [ ] T036 Run quickstart.md manual verification steps and confirm all pass
-- [ ] T037 Commit all changes with descriptive message and push to branch
+- [ ] T026 [US6] Run full Playwright test suite at 667x375 (phone landscape), 768x1024 (tablet portrait), 1024x768 (tablet landscape), 1280x800 (desktop) — all must pass
+- [ ] T027 [US6] Test on Android emulator: verify landscape lock, header layout, drawer pull, colorbar
+- [ ] T028 [US6] Test on iOS simulator: verify landscape lock, header layout, drawer pull, colorbar
+- [ ] T029 [US6] Verify desktop mode: no orientation lock, all UI elements render correctly, no regressions
+
+**Checkpoint**: All viewports verified.
 
 ---
 
-## Dependencies & Execution Order
+## Phase 7: Polish & Final
 
-### Phase Dependencies
+- [ ] T030 Run `npm test` (Vitest unit tests) — fix any failures
+- [ ] T031 Run `npx playwright test` full suite — fix any failures
+- [ ] T032 Update notes with final status
+- [ ] T033 Commit and push all changes
 
-- **Setup (Phase 1)**: No dependencies — audit only, no code changes
-- **Foundational (Phase 2)**: No code dependencies — adds new HTML element
-- **US1 Header Split (Phase 3)**: Depends on Phase 2 (needs `.header-actions` div)
-- **US2 Drawer Pull (Phase 4)**: Independent of Phase 2/3 — CSS-only changes
-- **US3 Colorbar (Phase 5)**: Independent of Phases 2/3/4 — CSS verification
-- **US4 Cross-Device (Phase 6)**: Depends on Phases 3, 4, 5 (all fixes must be in place)
-- **Polish (Phase 7)**: Depends on all user stories complete
+---
 
-### User Story Dependencies
+## Dependencies
 
-- **US1 (P1)**: Depends on Foundational (Phase 2) — needs `.header-actions` div
-- **US2 (P1)**: No dependencies on other stories — can start immediately
-- **US3 (P2)**: No dependencies on other stories — can start immediately
-- **US4 (P2)**: Depends on US1 + US2 + US3 all being complete
+- **Phase 2 (US1 landscape)**: Independent — core new feature
+- **Phase 3 (US2 colorbar)**: Independent — can parallel with Phase 2
+- **Phase 4 (US3 hover)**: Independent — quick CSS fix
+- **Phase 5 (US4 questions)**: Independent — data file edits only
+- **Phase 6 (verification)**: Depends on Phases 2-5 complete
+- **Phase 7 (polish)**: Depends on Phase 6
 
 ### Parallel Opportunities
 
-- **US2 and US3 can run in parallel** — they touch different CSS sections and different DOM elements
-- **US2 can run in parallel with Phase 2** — drawer pull changes don't depend on header restructure
-- T011-T015 (US1 tests) can be written in parallel
-- T025-T027 (US3 tests) can be written in parallel
-
----
-
-## Parallel Example: US2 + US3 Concurrent
-
-```bash
-# These two stories can run simultaneously:
-# Agent A: Drawer Pull Centering (US2)
-Task: "T016 Add defensive CSS to .drawer-pull in index.html"
-Task: "T017 Audit #quiz-panel padding in both states"
-Task: "T018 Verify .drawer-pull-bar absolute centering"
-Task: "T020 Add centering verification test"
-Task: "T021 Add cycling test"
-
-# Agent B: Colorbar Visibility (US3)
-Task: "T022 Verify colorbar mobile CSS"
-Task: "T023 Verify touch drag events"
-Task: "T025 Create mobile-colorbar.spec.js"
-Task: "T026 Add colorbar visibility with panel open test"
-```
-
----
-
-## Implementation Strategy
-
-### MVP First (US1 + US2)
-
-1. Complete Phase 1: Audit (T001-T003)
-2. Complete Phase 2: Add `.header-actions` (T004-T005)
-3. Complete Phase 3: Header Split US1 (T006-T015)
-4. Complete Phase 4: Drawer Pull US2 (T016-T021) — can overlap with Phase 3
-5. **STOP and VALIDATE**: Both P1 stories independently testable
-
-### Full Delivery
-
-6. Complete Phase 5: Colorbar US3 (T022-T027)
-7. Complete Phase 6: Cross-Device US4 (T028-T032)
-8. Complete Phase 7: Polish (T033-T037)
-
----
-
-## Notes
-
-- [P] tasks = different files, no dependencies
-- [Story] label maps task to specific user story for traceability
-- US2 (drawer pull) is the highest-risk item — multiple previous fix attempts failed due to padding inheritance
-- The key architectural change is adding `.header-actions` (Phase 2) — all other changes are CSS/verification
-- Commit after each phase checkpoint
-- Take screenshots at each checkpoint for constitution compliance (Principle II)
+- T024 + T025 (question fixes) can run in parallel with any other phase
+- Phase 3 (colorbar) + Phase 4 (hover) can run in parallel with Phase 2 (landscape)
+- T022 + T023 (hover fix) are quick and can be done anytime

@@ -37,6 +37,7 @@ import * as videoPanel from './ui/video-panel.js';
 import { computeRanking, takeSnapshot, handlePostVideoQuestion } from './learning/video-recommender.js';
 import { updateConfidence, initConfidence } from './ui/progress.js';
 import { announce, setupKeyboardNav } from './utils/accessibility.js';
+import { lockLandscape, unlockOrientation } from './ui/orientation.js';
 
 const GLOBAL_REGION = { x_min: 0, x_max: 1, y_min: 0, y_max: 1 };
 const GLOBAL_GRID_SIZE = 50;
@@ -480,6 +481,9 @@ async function switchDomain(domainId) {
   const appEl = document.getElementById('app');
   if (appEl) appEl.dataset.screen = 'map';
 
+  // Force landscape on phone-sized devices
+  lockLandscape();
+
   if (particleSystem) {
     particleSystem.destroy();
     particleSystem = null;
@@ -836,6 +840,10 @@ function handleSkip() {
 function handleReset() {
   if (!confirm('Are you sure? This will clear all progress.')) return;
   dismissTutorial();
+  // Clear tutorial state so it re-shows on next domain select (like first visit)
+  try { localStorage.removeItem('mapper-tutorial'); } catch { /* noop */ }
+  // Release landscape lock so welcome screen can be portrait
+  unlockOrientation();
   resetAll();
   currentDomainBundle = null;
   mapInitialized = false;

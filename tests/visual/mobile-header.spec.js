@@ -13,7 +13,8 @@ async function enterMapMode(page) {
 }
 
 test.describe('Mobile Header Button Layout (US1)', () => {
-  test.use({ viewport: { width: 375, height: 667 } });
+  // Use landscape viewport: phones force landscape on map screen
+  test.use({ viewport: { width: 667, height: 375 } });
 
   test('action buttons are in header-actions container (left group)', async ({ page }) => {
     await enterMapMode(page);

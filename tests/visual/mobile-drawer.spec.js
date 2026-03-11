@@ -17,7 +17,8 @@ async function selectDomain(page, domainName) {
 }
 
 test.describe('Mobile Collapsible Drawer (US3)', () => {
-  test.use({ viewport: { width: 375, height: 667 } });
+  // Use landscape viewport: phones force landscape on map screen
+  test.use({ viewport: { width: 667, height: 375 } });
 
   test.beforeEach(async ({ page }) => {
     await page.goto('/');

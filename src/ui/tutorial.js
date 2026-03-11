@@ -25,7 +25,11 @@ const STEPS = [
       {
         title: 'Your Knowledge Map',
         highlight: '#map-container',
-        message: 'Hover over different locations to see what sorts of concepts "live" nearby. We\'ve included thousands of Wikipedia articles and Khan Academy videos as "landmarks" to help give a sense of the landscape! Click on anything to read the article or see the video.',
+        message: () => {
+          const touch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+          const verb = touch ? 'Drag your finger over' : 'Hover over';
+          return `${verb} different locations to see what sorts of concepts "live" nearby. We've included thousands of Wikipedia articles and Khan Academy videos as "landmarks" to help give a sense of the landscape! ${touch ? 'Tap' : 'Click'} on anything to read the article or see the video.`;
+        },
         advanceOn: 'click',
       },
     ]
@@ -37,7 +41,10 @@ const STEPS = [
     arrowSide: 'above',
     positionHint: 'quiz-final',
     onEnter: 'openQuiz',
-    message: 'Questions appear here. Answer them to build your map. Click the toggle arrow to open and close this panel.',
+    message: () => {
+      const touch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      return `Questions appear here. Answer them to build your map. ${touch ? 'Tap' : 'Click'} the toggle arrow to open and close this panel.`;
+    },
     advanceOn: 'click',
   },
   {
@@ -49,7 +56,6 @@ const STEPS = [
         arrowSide: 'above',
         positionHint: 'video-final',
         onEnter: 'closeQuiz,openVideo',
-        skipOnMobile: true,
         message: 'Every video in our dataset lives at a different location on the map. This menu shows all of the videos contained within the current map view. The list adjusts dynamically as you zoom and pan.',
         advanceOn: 'click',
       },
@@ -57,8 +63,11 @@ const STEPS = [
         title: 'Video Sidebar',
         highlight: '#video-panel, #video-toggle',
         positionHint: 'video-final',
-        skipOnMobile: true,
-        message: 'Hover over any video in the list to see its *trajectory*: the "path" of concepts it touches on from moment to moment. Click on any video to watch it!',
+        message: () => {
+          const touch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+          const verb = touch ? 'Drag your finger over' : 'Hover over';
+          return `${verb} any video in the list to see its *trajectory*: the "path" of concepts it touches on from moment to moment. ${touch ? 'Tap' : 'Click'} on any video to watch it!`;
+        },
         advanceOn: 'click',
       },
     ]
@@ -87,8 +96,10 @@ const STEPS = [
         positionHint: 'quiz-final',
         arrowTarget: '.auto-advance-label',
         arrowSide: 'right',
-        skipOnMobile: true,
-        message: 'Try toggling the "Auto-advance" switch. Pausing after each question gives you a chance to review the correct answer. You can also click on the Wikipedia and Khan Academy links to learn more.',
+        message: () => {
+          const touch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+          return `Try toggling the "Auto-advance" switch. Pausing after each question gives you a chance to review the correct answer. You can also ${touch ? 'tap' : 'click on'} the Wikipedia and Khan Academy links to learn more.`;
+        },
         advanceOn: 'toggle-auto-advance',
       },
       {
@@ -103,15 +114,17 @@ const STEPS = [
   {
     id: 6, title: 'Deep Dive!',
     highlight: '.quiz-feedback-area',
-    positionHint: 'quiz-final',
-    onEnter: 'openQuiz',
-    message: "Every question has an associated Wikipedia article and/or Khan Academy video. Click the buttons to view. If you answer incorrectly or skip a question, you can see the correct answer highlighted in green. Remember: every mistake is an opportunity to learn and grow!",
+    positionHint: 'left',
+    onEnter: 'openQuiz,enableAutoAdvance',
+    message: () => {
+      const touch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      return `Every question has an associated Wikipedia article and/or Khan Academy video. ${touch ? 'Tap' : 'Click'} the buttons to view. If you answer incorrectly or skip a question, you can see the correct answer highlighted in green. Remember: every mistake is an opportunity to learn and grow!`;
+    },
     advanceOn: 'click',
   },
   {
     id: 7, title: 'Question Modes',
     highlight: '.modes-wrapper',
-    skipOnMobile: true,
     onEnter: 'closeModals,openQuiz,enableAutoAdvance',
     message: 'These buttons let you control the difficulty of your next question. "Give me an easy one" picks a question the system thinks you\'ll get right. "Challenge me" picks a hard question. "Test my weak spots" focuses on areas where your knowledge seems weakest.',
     advanceOn: 'click',
@@ -120,7 +133,6 @@ const STEPS = [
     id: 8, title: 'Save & Load Progress',
     highlight: '.header-left',
     positionHint: 'left',
-    skipOnMobile: true,
     onEnter: 'closeModals',
     message: 'Use these buttons to export your progress (download a file), import previously saved progress, or reset and start fresh.',
     advanceOn: 'click',
@@ -137,6 +149,7 @@ const STEPS = [
   {
     id: 10, title: 'Exploring Domain-Specific Knowledge',
     highlight: '#quiz-panel',
+    positionHint: 'left',
     advanceOn: 'answer',
     questionTarget: 2,
     dynamicMessage: true, // message set in renderCurrentStep based on selected domain
@@ -146,7 +159,10 @@ const STEPS = [
     id: 11, title: 'Your Expertise',
     highlight: '#trophy-btn',
     positionHint: 'right',
-    message: "As you answer questions, the system builds a picture of your knowledge. Click this button to see how your answers are shaping up so far. Keep in mind, it gets more accurate with more questions!",
+    message: () => {
+      const touch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      return `As you answer questions, the system builds a picture of your knowledge. ${touch ? 'Tap' : 'Click'} this button to see how your answers are shaping up so far. Keep in mind, it gets more accurate with more questions!`;
+    },
     advanceOn: 'expertise-click',
     removeOverlayOnAction: true,
     followUp: { dynamicMessage: true, advanceOn: 'click' },
@@ -156,17 +172,23 @@ const STEPS = [
     highlight: '#suggest-btn',
     positionHint: 'right',
     onEnter: 'closeModals',
-    message: 'Click this button to see recommended Khan Academy videos based on your answers so far. These suggestions will become more targeted as you answer more questions!',
+    message: () => {
+      const touch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      return `${touch ? 'Tap' : 'Click'} this button to see recommended Khan Academy videos based on your answers so far. These suggestions will become more targeted as you answer more questions!`;
+    },
     advanceOn: 'suggest-click',
     removeOverlayOnAction: true,
-    followUp: { message: 'Click on any video to watch it!', advanceOn: 'click' },
+    followUp: { message: () => { const t = 'ontouchstart' in window || navigator.maxTouchPoints > 0; return `${t ? 'Tap' : 'Click'} on any video to watch it!`; }, advanceOn: 'click' },
   },
   {
     id: 13, title: 'Share Your Map',
     highlight: '#share-btn',
     positionHint: 'right',
     onEnter: 'closeModals',
-    message: 'Click this button to share your map on social media. Try it out!',
+    message: () => {
+      const touch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      return `${touch ? 'Tap' : 'Click'} this button to share your map on social media. Try it out!`;
+    },
     advanceOn: 'share-click',
     removeOverlayOnAction: true,
     followUp: { message: 'You can share on LinkedIn, X, or Bluesky. You can also download an image of your map to show it off!', advanceOn: 'click' },
@@ -176,7 +198,10 @@ const STEPS = [
     highlight: '#about-btn',
     positionHint: 'right',
     onEnter: 'closeModals',
-    message: 'Want to learn more about how Knowledge Mapper works? Click the "About" button to read about the technique, view the research paper, and explore the methodology behind the system.',
+    message: () => {
+      const touch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      return `Want to learn more about how Knowledge Mapper works? ${touch ? 'Tap' : 'Click'} the "About" button to read about the technique, view the research paper, and explore the methodology behind the system.`;
+    },
     advanceOn: 'click',
   },
   {
@@ -335,7 +360,7 @@ export function advanceTutorial(event) {
       if (sub.followUp && !_inFollowUp) {
         _inFollowUp = true;
         if (sub.removeOverlayOnAction) removeOverlayOnly();
-        updateModalMessage(sub.followUp.message || '');
+        updateModalMessage(typeof sub.followUp.message === 'function' ? sub.followUp.message() : (sub.followUp.message || ''));
         return;
       }
 
@@ -379,7 +404,7 @@ export function advanceTutorial(event) {
       if (stepDef.removeOverlayOnAction) removeOverlayOnly();
       const fuMsg = stepDef.followUp.dynamicMessage
         ? buildDynamicFollowUp(stepDef)
-        : (stepDef.followUp.message || '');
+        : (typeof stepDef.followUp.message === 'function' ? stepDef.followUp.message() : (stepDef.followUp.message || ''));
       updateModalMessage(fuMsg);
       return;
     }
@@ -402,6 +427,61 @@ export function advanceTutorial(event) {
     _inFollowUp = false;
     moveToNextStep();
   }
+}
+
+function showDismissConfirmation() {
+  // Don't stack confirmations
+  if (document.getElementById('tutorial-dismiss-confirm')) return;
+
+  const overlay = document.createElement('div');
+  overlay.id = 'tutorial-dismiss-confirm';
+  Object.assign(overlay.style, {
+    position: 'fixed', inset: '0', zIndex: '10001',
+    background: 'rgba(0,0,0,0.5)',
+    display: 'flex', alignItems: 'center', justifyContent: 'center',
+  });
+
+  const dialog = document.createElement('div');
+  Object.assign(dialog.style, {
+    background: 'var(--color-bg, #fff)', borderRadius: '12px',
+    padding: '24px', maxWidth: '320px', width: '90%',
+    boxShadow: '0 8px 32px rgba(0,0,0,0.2)',
+    textAlign: 'center', fontFamily: 'system-ui, -apple-system, sans-serif',
+  });
+
+  const msg = document.createElement('p');
+  Object.assign(msg.style, { margin: '0 0 16px', fontSize: '1rem', color: 'var(--color-text, #0f172a)' });
+  msg.textContent = 'Are you sure you want to exit the tutorial?';
+  dialog.appendChild(msg);
+
+  const btnRow = document.createElement('div');
+  Object.assign(btnRow.style, { display: 'flex', gap: '12px', justifyContent: 'center' });
+
+  const cancelBtn = document.createElement('button');
+  Object.assign(cancelBtn.style, {
+    padding: '8px 20px', borderRadius: '8px', border: '1.5px solid var(--color-border, #ccc)',
+    background: 'var(--color-bg, #fff)', cursor: 'pointer', fontSize: '0.9rem',
+  });
+  cancelBtn.textContent = 'Continue Tutorial';
+  cancelBtn.addEventListener('click', () => overlay.remove());
+
+  const exitBtn = document.createElement('button');
+  Object.assign(exitBtn.style, {
+    padding: '8px 20px', borderRadius: '8px', border: 'none',
+    background: 'var(--color-primary, #00693e)', color: '#fff',
+    cursor: 'pointer', fontSize: '0.9rem',
+  });
+  exitBtn.textContent = 'Exit Tutorial';
+  exitBtn.addEventListener('click', () => { overlay.remove(); dismissTutorial(); });
+
+  btnRow.appendChild(cancelBtn);
+  btnRow.appendChild(exitBtn);
+  dialog.appendChild(btnRow);
+  overlay.appendChild(dialog);
+
+  // Click outside to cancel
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
+  document.body.appendChild(overlay);
 }
 
 export function dismissTutorial() {
@@ -480,6 +560,18 @@ function completeTutorial() {
   saveState();
   removeOverlay();
   stopHighlightRefresh();
+
+  // Re-select "All (General)" domain and zoom fully out
+  const allOption = document.querySelector('.custom-select-option[data-value="all"]');
+  if (allOption) allOption.click();
+
+  // Jump to full view after domain switch settles
+  setTimeout(() => {
+    const renderer = window.__mapper?.renderer;
+    if (renderer) {
+      renderer.jumpTo({ x_min: 0, y_min: 0, x_max: 1, y_max: 1 });
+    }
+  }, 300);
 }
 
 function resolveSubStep(stepDef, idx) {
@@ -617,7 +709,7 @@ function renderCurrentStep() {
   if (stepDef.skipOnMobile && isMobile()) { moveToNextStep(); return; }
 
   let highlight = stepDef.highlight || null;
-  let message = stepDef.message || '';
+  let message = typeof stepDef.message === 'function' ? stepDef.message() : (stepDef.message || '');
   let title = stepDef.title || '';
   let arrowTarget = stepDef.arrowTarget || null;
   let arrowSide = stepDef.arrowSide || 'left';
@@ -629,7 +721,7 @@ function renderCurrentStep() {
     const sub = resolveSubStep(stepDef, state.subStep);
     if (!sub) { moveToNextStep(); return; }
     highlight = sub.highlight ?? highlight;
-    message = sub.message || message;
+    message = sub.message ? (typeof sub.message === 'function' ? sub.message() : sub.message) : message;
     title = sub.title || title;
     arrowTarget = sub.arrowTarget ?? arrowTarget;
     arrowSide = sub.arrowSide || arrowSide;
@@ -1025,16 +1117,27 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
   if (mobile) {
     const isLandscape = window.matchMedia('(orientation: landscape)').matches;
     if (isLandscape) {
-      // Landscape: position modal in center, offset from drawer pulls
-      const quizOpen = document.getElementById('quiz-panel')?.classList.contains('open');
-      const videoOpen = document.getElementById('video-panel')?.classList.contains('open');
-      const leftInset = videoOpen ? '40px' : '12px';
-      const rightInset = quizOpen ? '40px' : '12px';
+      // Landscape: position modal under header, left or right based on positionHint
+      const headerH = document.getElementById('app-header')?.offsetHeight || 48;
+      const topPos = (headerH + 8) + 'px';
+      const isRightSide = positionHint === 'right' || positionHint === 'video-final';
+      const isLeftSide = positionHint === 'left' || positionHint === 'quiz-final';
       Object.assign(modal.style, {
-        top: '50%', left: leftInset, right: rightInset,
-        transform: 'translateY(-50%)',
-        maxWidth: 'none', borderRadius: '12px',
+        maxWidth: `${MODAL_MAX_WIDTH}px`, borderRadius: '12px',
+        top: topPos,
       });
+      if (isRightSide) {
+        modal.style.right = '12px';
+        modal.style.left = 'auto';
+      } else if (isLeftSide) {
+        modal.style.left = '12px';
+        modal.style.right = 'auto';
+      } else {
+        // Default: center
+        modal.style.left = '50%';
+        modal.style.right = 'auto';
+        modal.style.transform = 'translateX(-50%)';
+      }
     } else {
       // Portrait: bottom sheet or top bar
       const highlightInBottom = highlightEl && highlightEl.getBoundingClientRect().bottom > window.innerHeight * 0.6;
@@ -1119,7 +1222,7 @@ function buildModalDOM(modal, title, message, showNextBtn, isFinish) {
     flexShrink: '0',
   });
   dismissBtn.textContent = '\u00d7';
-  dismissBtn.addEventListener('click', () => dismissTutorial());
+  dismissBtn.addEventListener('click', () => showDismissConfirmation());
   header.appendChild(dismissBtn);
 
   modal.appendChild(header);

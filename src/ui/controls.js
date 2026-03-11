@@ -156,7 +156,7 @@ export function init(headerElement) {
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 1px solid var(--color-border);
+        border: 1.5px solid var(--color-border);
         border-radius: 6px;
         background: var(--color-surface-raised);
         cursor: pointer;

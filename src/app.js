@@ -176,16 +176,13 @@ async function boot() {
   controls.onExport(handleExport);
   controls.onImport(handleImport);
 
-  // Move action buttons (reset/download/upload) from domain-selector to header-right
-  // Insert BEFORE main icons (left side, after map icon/dropdown)
-  const headerRight = headerEl.querySelector('.header-right');
+  // Move action buttons (reset/download/upload) into .header-actions (left group)
+  const headerActions = headerEl.querySelector('.header-actions');
   const actionBtns = controls.getActionButtons();
-  if (headerRight && actionBtns.importButton) {
-    const first = headerRight.firstChild;
-    // Insert in order: reset, download, upload (left side of icon bar)
-    headerRight.insertBefore(actionBtns.resetButton, first);
-    headerRight.insertBefore(actionBtns.exportButton, first);
-    headerRight.insertBefore(actionBtns.importButton, first);
+  if (headerActions && actionBtns.importButton) {
+    headerActions.appendChild(actionBtns.resetButton);
+    headerActions.appendChild(actionBtns.exportButton);
+    headerActions.appendChild(actionBtns.importButton);
     for (const btn of [actionBtns.resetButton, actionBtns.exportButton, actionBtns.importButton]) {
       btn.classList.add('btn-icon');
     }
@@ -611,11 +608,11 @@ async function switchDomain(domainId) {
   if (videoToggleBtn) videoToggleBtn.removeAttribute('hidden');
   controls.showActionButtons();
 
-  // Reset header scroll to start (main icons are first, utility icons scroll right)
-  const headerIconBar = document.querySelector('.header-right');
-  if (headerIconBar) {
-    headerIconBar.scrollLeft = 0;
-  }
+  // Set initial scroll positions for header button groups
+  const headerActionsBar = document.querySelector('.header-actions');
+  if (headerActionsBar) headerActionsBar.scrollLeft = 0; // left buttons visible
+  const headerRightBar = document.querySelector('.header-right');
+  if (headerRightBar) headerRightBar.scrollLeft = headerRightBar.scrollWidth; // right buttons visible
 
   const domainName = registry.getDomains().find(d => d.id === domainId)?.name || domainId;
   announce(`Navigated to ${domainName}. ${aggregatedQuestions.length} questions available.`);

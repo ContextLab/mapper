@@ -121,6 +121,16 @@
             flex-shrink: 1; min-width: 0;
         }
         .header-right::-webkit-scrollbar { display: none; }
+        .header-actions {
+            display: flex; align-items: center; gap: 0.5rem;
+            overflow-x: auto; overflow-y: hidden;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+            flex-shrink: 1; min-width: 0;
+        }
+        .header-actions::-webkit-scrollbar { display: none; }
+        .header-actions .btn-icon,
+        .header-actions .control-btn { flex-shrink: 0; }
         .header-right .btn-icon,
         .header-right .control-btn { flex-shrink: 0; }
         .logo {
@@ -599,11 +609,8 @@
         #app[data-screen="welcome"] #minimap-container { display: none; }
         #app[data-screen="welcome"] .domain-selector .custom-select { display: none; }
         #app[data-screen="welcome"] .control-btn:not([aria-label="Import saved progress"]) { display: none; }
-        /* Welcome screen: upload (left) — share + info (right) */
-        #app[data-screen="welcome"] .header-right [aria-label="Import saved progress"] {
-            order: -1;
-            margin-right: auto;
-        }
+        /* Welcome screen: hide action buttons except upload (which is in .header-actions) */
+        #app[data-screen="welcome"] .header-actions .btn-icon:not([aria-label="Import saved progress"]) { display: none; }
 
         .sr-only {
             position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
@@ -708,7 +715,8 @@
             .logo span { display: none; }
             .logo { font-size: 0.95rem; }
             .header-left { gap: 0.3rem; flex: 0 0 auto; }
-            .header-right { gap: 0.25rem; flex: 1; min-width: 0; }
+            .header-actions { gap: 0.25rem; flex: 1; min-width: 0; }
+            .header-right { gap: 0.25rem; flex: 1; min-width: 0; justify-content: flex-end; }
             .btn-icon, .control-btn { min-width: 34px; min-height: 34px; font-size: 0.85rem; }
             /* Make dropdown arrow easier to see on mobile */
             .custom-select-arrow { font-size: 0.9rem; }
@@ -720,9 +728,9 @@
 
             /* ── Quiz panel: bottom sheet ── */
             #quiz-panel {
-                position: absolute;
+                position: fixed;
                 top: auto; bottom: 0; left: 0; right: 0;
-                width: 100% !important;
+                width: 100vw !important;
                 /* Drawer pull (32px) + safe-area (fallback 16px for Android gesture bar) */
                 height: calc(32px + env(safe-area-inset-bottom, 16px));
                 padding: 0;
@@ -741,7 +749,7 @@
             /* Hide everything except drawer pull when closed (important overrides inline styles) */
             #quiz-panel:not(.open) > *:not(.drawer-pull) { display: none !important; }
             #quiz-panel.open {
-                width: 100% !important; height: 55vh;
+                width: 100vw !important; height: 55vh;
                 padding: 0;
                 overflow: hidden; /* Panel itself doesn't scroll; .quiz-content does */
             }
@@ -763,24 +771,29 @@
 
             /* ── Drawer pull handle (mobile only) ── */
             .drawer-pull {
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                display: block;
+                position: relative;
                 height: 32px;
-                width: 100%;
+                width: 100% !important;
                 cursor: pointer;
                 flex-shrink: 0;
                 touch-action: none;
                 background: var(--color-surface);
                 border-bottom: 1px solid var(--color-border);
                 order: -1; /* Always appear first in flex column */
+                padding: 0 !important;
+                margin: 0 !important;
+                box-sizing: border-box;
             }
             .drawer-pull-bar {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
                 width: 56px;
                 height: 6px;
                 border-radius: 3px;
                 background: #999;
-                margin: 0 auto;
             }
 
             /* ── Quiz toggle: hidden on mobile (drawer pull replaces it) ── */
@@ -825,12 +838,13 @@
 
             #minimap-container { display: none; }
             .resize-handle { display: none; }
-            /* Colorbar: position above quiz panel at bottom-right */
+            /* Colorbar: top-right on mobile to avoid quiz panel overlap */
             .map-colorbar {
-                bottom: 60px !important;
-                top: auto !important;
+                bottom: auto !important;
+                top: 8px !important;
                 right: 8px !important;
                 height: 80px !important;
+                z-index: 16 !important;
             }
             button, a, .quiz-option {
                 min-height: 44px;
@@ -865,6 +879,7 @@
                 <!-- Domain selector placeholder -->
                 <div class="domain-selector" hidden aria-label="Select knowledge domain"></div>
             </div>
+            <div class="header-actions"></div>
             <div class="header-right">
                 <button id="trophy-btn" class="btn-icon" aria-label="My areas of expertise" data-tooltip="My areas of expertise" disabled>
                     <i class="fa-solid fa-trophy"></i>

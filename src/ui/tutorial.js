@@ -462,7 +462,7 @@ function showDismissConfirmation() {
     padding: '8px 20px', borderRadius: '8px', border: '1.5px solid var(--color-border, #ccc)',
     background: 'var(--color-bg, #fff)', cursor: 'pointer', fontSize: '0.9rem',
   });
-  cancelBtn.textContent = 'Continue Tutorial';
+  cancelBtn.textContent = 'Cancel';
   cancelBtn.addEventListener('click', () => overlay.remove());
 
   const exitBtn = document.createElement('button');
@@ -471,7 +471,7 @@ function showDismissConfirmation() {
     background: 'var(--color-primary, #00693e)', color: '#fff',
     cursor: 'pointer', fontSize: '0.9rem',
   });
-  exitBtn.textContent = 'Exit Tutorial';
+  exitBtn.textContent = 'Exit';
   exitBtn.addEventListener('click', () => { overlay.remove(); dismissTutorial(); });
 
   btnRow.appendChild(cancelBtn);

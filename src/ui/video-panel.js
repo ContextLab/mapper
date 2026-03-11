@@ -292,7 +292,7 @@ const PANEL_CSS = `
     font-size: 0.7rem;
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
-    border: 1px solid var(--color-border);
+    border: 1.5px solid var(--color-border);
     background: var(--color-surface-raised);
     color: var(--color-text-muted);
     cursor: pointer;
@@ -313,7 +313,7 @@ const PANEL_CSS = `
     width: 100%;
     padding: 0.5rem 0.75rem;
     border-radius: 6px;
-    border: 1px solid var(--color-border);
+    border: 1.5px solid var(--color-border);
     background: var(--color-surface-raised);
     color: var(--color-text);
     font-family: var(--font-body);
@@ -383,7 +383,7 @@ const PANEL_CSS = `
     z-index: 11;
     width: 28px;
     height: 56px;
-    border: 1px solid var(--color-border);
+    border: 1.5px solid var(--color-border);
     border-left: none;
     border-radius: 0 8px 8px 0;
     background: var(--color-surface);

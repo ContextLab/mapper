@@ -450,14 +450,14 @@
     },
     {
       "id": "16be768a1526ab0d",
-      "question_text": "When estimating $\\sigma$ from the sample, which distribution does the $t$-test statistic follow under the null, and why not the standard normal?",
+      "question_text": "Why does a $t$-test use the $t$-distribution rather than the standard normal distribution?",
       "options": {
-        "A": "$t$-distribution",
-        "B": "$F$-distribution",
-        "C": "Standard normal",
-        "D": "$\\chi^2$ distribution"
+        "A": "The sample size must always be less than 30",
+        "B": "Estimating $\\sigma$ from the sample introduces extra uncertainty in the tails",
+        "C": "The population must be skewed for a $t$-test to apply",
+        "D": "The $t$-distribution corrects for multiple comparisons"
       },
-      "correct_answer": "A",
+      "correct_answer": "B",
       "difficulty": 2,
       "source_article": "Student's t-test",
       "domain_ids": [

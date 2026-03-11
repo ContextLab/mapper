@@ -40,7 +40,7 @@ export function init(container) {
         align-items: center;
         gap: 0.35rem;
         padding: 0.35rem 0.6rem;
-        border: 1px solid var(--color-border);
+        border: 1.5px solid var(--color-border);
         border-radius: 16px;
         background: var(--color-surface-raised);
         cursor: pointer;
@@ -122,7 +122,7 @@ export function init(container) {
         width: 30px;
         height: 16px;
         background: var(--color-surface-raised);
-        border: 1px solid var(--color-border);
+        border: 1.5px solid var(--color-border);
         border-radius: 8px;
         cursor: pointer;
         transition: background 0.25s ease, border-color 0.25s ease;

@@ -114,11 +114,18 @@
   margin: 0.25rem 0;
 }
 
-/* Mobile bottom-sheet adjustments */
-@media (max-width: 480px) {
+/* Mobile bottom-sheet adjustments — portrait only */
+@media (max-width: 480px) and (orientation: portrait) {
   #tutorial-modal {
     max-width: none !important;
     left: 0 !important;
     right: 0 !important;
+  }
+}
+
+/* Mobile landscape — constrain modal width (positioning handled by JS) */
+@media (max-height: 500px) and (orientation: landscape) {
+  #tutorial-modal {
+    max-width: 380px;
   }
 }

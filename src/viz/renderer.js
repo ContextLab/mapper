@@ -48,6 +48,7 @@ export class Renderer {
     this._labelGridSize = 0;
     this._labelMap = new Map();
     this._colorbarEl = null;
+    this._colorbarUserDragged = false;
     this._cbMouseMove = null;
     this._cbMouseUp = null;
 
@@ -156,6 +157,7 @@ export class Renderer {
     this._colorbarEl.appendChild(sideLabel);
     container.appendChild(this._colorbarEl);
     this._initColorbarDrag();
+    this._initColorbarPanelObserver();
 
     // Size canvas
     this._resize();
@@ -788,6 +790,49 @@ export class Renderer {
     ctx.restore();
   }
 
+  _initColorbarPanelObserver() {
+    const quizPanel = document.getElementById('quiz-panel');
+    if (!quizPanel) return;
+
+    const reposition = () => {
+      if (this._colorbarUserDragged || !this._colorbarEl) return;
+      const panelOpen = quizPanel.classList.contains('open');
+      const isMobile = window.innerWidth <= 768;
+
+      if (panelOpen && isMobile) {
+        // Mobile: panel is a bottom drawer — move colorbar above it
+        const panelRect = quizPanel.getBoundingClientRect();
+        const containerRect = this._container.getBoundingClientRect();
+        const panelTopRelative = panelRect.top - containerRect.top;
+        const newBottom = containerRect.height - panelTopRelative + 8;
+        this._colorbarEl.style.bottom = newBottom + 'px';
+        this._colorbarEl.style.right = '16px';
+        this._colorbarEl.style.left = 'auto';
+        this._colorbarEl.style.top = 'auto';
+      } else if (panelOpen && !isMobile) {
+        // Desktop: panel is a right sidebar — move colorbar left of it
+        const panelWidth = quizPanel.offsetWidth;
+        this._colorbarEl.style.right = (panelWidth + 24) + 'px';
+        this._colorbarEl.style.bottom = '16px';
+        this._colorbarEl.style.left = 'auto';
+        this._colorbarEl.style.top = 'auto';
+      } else {
+        // Panel closed — return to default
+        this._colorbarEl.style.right = '16px';
+        this._colorbarEl.style.bottom = '16px';
+        this._colorbarEl.style.left = 'auto';
+        this._colorbarEl.style.top = 'auto';
+      }
+    };
+
+    // Observe class changes on quiz panel
+    this._panelObserver = new MutationObserver(reposition);
+    this._panelObserver.observe(quizPanel, { attributes: true, attributeFilter: ['class'] });
+
+    // Also reposition on resize (panel dimensions may change)
+    window.addEventListener('resize', reposition);
+  }
+
   _initColorbarDrag() {
     let dragging = false;
     let offsetX = 0;
@@ -814,6 +859,7 @@ export class Renderer {
     const endDrag = () => {
       if (dragging) {
         dragging = false;
+        this._colorbarUserDragged = true;
         this._colorbarEl.style.cursor = 'grab';
       }
     };

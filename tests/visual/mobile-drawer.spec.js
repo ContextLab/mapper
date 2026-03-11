@@ -17,7 +17,8 @@ async function selectDomain(page, domainName) {
 }
 
 test.describe('Mobile Collapsible Drawer (US3)', () => {
-  test.use({ viewport: { width: 375, height: 667 } });
+  // Use landscape viewport: phones force landscape on map screen
+  test.use({ viewport: { width: 667, height: 375 } });
 
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
@@ -140,5 +141,47 @@ test.describe('Mobile Collapsible Drawer (US3)', () => {
 
     // Should be open again
     await expect(panel).toHaveClass(/\bopen\b/);
+  });
+
+  test('drawer pull bar is horizontally centered in viewport', async ({ page }) => {
+    await selectDomain(page, 'physics');
+    await page.waitForSelector('#quiz-panel.open', { timeout: LOAD_TIMEOUT });
+    await page.waitForTimeout(500);
+
+    const offset = await page.evaluate(() => {
+      const bar = document.querySelector('.drawer-pull-bar');
+      if (!bar) return { error: 'element not found' };
+      const barRect = bar.getBoundingClientRect();
+      const viewportCenter = window.innerWidth / 2;
+      const barCenter = barRect.left + barRect.width / 2;
+      return { viewportCenter, barCenter, drift: Math.abs(viewportCenter - barCenter) };
+    });
+
+    expect(offset.drift).toBeLessThanOrEqual(1);
+  });
+
+  test('drawer pull centering does not drift after 10 open/close cycles', async ({ page }) => {
+    await selectDomain(page, 'physics');
+    await page.waitForSelector('#quiz-panel.open', { timeout: LOAD_TIMEOUT });
+    await page.waitForTimeout(500);
+
+    for (let i = 0; i < 10; i++) {
+      await page.locator('.drawer-pull').click();
+      await page.waitForTimeout(400);
+      await page.locator('.drawer-pull').click();
+      await page.waitForTimeout(400);
+    }
+
+    const offset = await page.evaluate(() => {
+      const bar = document.querySelector('.drawer-pull-bar');
+      if (!bar) return { error: 'element not found' };
+      const barRect = bar.getBoundingClientRect();
+      const viewportCenter = window.innerWidth / 2;
+      const barCenter = barRect.left + barRect.width / 2;
+      return { viewportCenter, barCenter, drift: Math.abs(viewportCenter - barCenter) };
+    });
+
+    expect(offset.drift).toBeLessThanOrEqual(1);
+    await page.screenshot({ path: 'tests/visual/screenshots/mobile-drawer-centering-after-cycles.png' });
   });
 });

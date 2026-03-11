@@ -87,7 +87,7 @@ export function init(container) {
       .quiz-option {
         padding: 0.75rem 1rem;
         border-radius: 8px;
-        border: 1px solid var(--color-border);
+        border: 1.5px solid var(--color-border);
         background: var(--color-surface-raised);
         margin-bottom: 0.25rem;
         cursor: pointer;
@@ -183,7 +183,7 @@ export function init(container) {
       .quiz-learn-btn {
         padding: 0.4rem 0.75rem;
         border-radius: 6px;
-        border: 1px solid var(--color-border);
+        border: 1.5px solid var(--color-border);
         background: var(--color-surface-raised);
         color: var(--color-text-muted);
         font-family: var(--font-body);

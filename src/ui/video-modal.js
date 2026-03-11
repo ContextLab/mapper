@@ -684,7 +684,7 @@ const MODAL_CSS = `
     align-items: center;
     gap: 0.3rem;
     padding: 0.35rem 0.6rem;
-    border: 1px solid var(--color-border);
+    border: 1.5px solid var(--color-border);
     border-radius: 6px;
     background: var(--color-surface-raised);
     color: var(--color-text-muted);
@@ -748,7 +748,7 @@ const MODAL_CSS = `
 
   .speed-btn {
     padding: 0.3rem 0.6rem;
-    border: 1px solid var(--color-border);
+    border: 1.5px solid var(--color-border);
     border-radius: 6px;
     background: var(--color-surface-raised);
     color: var(--color-text-muted);

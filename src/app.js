@@ -494,12 +494,28 @@ async function switchDomain(domainId) {
 
   if (!allDomainBundle) return;
 
-  // Look up the target domain's region from the registry (index.json)
-  // — the single source of truth for bounding boxes.
+  // Look up the target domain's region from the registry (index.json).
+  // For parent domains, compute the union bounding box of the domain + all descendants
+  // so the view encompasses all sub-domain content.
   let targetRegion = GLOBAL_REGION;
   const registryEntry = registry.getDomain(domainId);
   if (registryEntry && registryEntry.region) {
-    targetRegion = registryEntry.region;
+    const descendants = registry.getDescendants(domainId);
+    if (descendants.length > 0) {
+      let { x_min, x_max, y_min, y_max } = registryEntry.region;
+      for (const descId of descendants) {
+        const desc = registry.getDomain(descId);
+        if (desc && desc.region) {
+          x_min = Math.min(x_min, desc.region.x_min);
+          x_max = Math.max(x_max, desc.region.x_max);
+          y_min = Math.min(y_min, desc.region.y_min);
+          y_max = Math.max(y_max, desc.region.y_max);
+        }
+      }
+      targetRegion = { x_min, x_max, y_min, y_max };
+    } else {
+      targetRegion = registryEntry.region;
+    }
   }
 
   // Ensure the domain bundle is loaded/cached (for questions & labels).

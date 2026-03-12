@@ -210,6 +210,14 @@ export class Minimap {
     const clampedCx = Math.max(vpW / 2, Math.min(1 - vpW / 2, cx));
     const clampedCy = Math.max(vpH / 2, Math.min(1 - vpH / 2, cy));
 
+    // Update viewport rect locally during drag (round-trip is suppressed)
+    this.currentViewport = {
+      x_min: clampedCx - vpW / 2, x_max: clampedCx + vpW / 2,
+      y_min: clampedCy - vpH / 2, y_max: clampedCy + vpH / 2,
+    };
+    this.render();
+    this._didDrag = true;
+
     this.panHandler(clampedCx, clampedCy, false);
   }
 

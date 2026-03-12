@@ -260,6 +260,8 @@ async function boot() {
         if (landing) landing.classList.remove('hidden');
         if (appEl) appEl.dataset.screen = 'welcome';
         logo.setAttribute('data-tooltip', 'Map my knowledge!');
+        // Reset active domain so re-entering map triggers switchDomain again
+        $activeDomain.set(null);
         // Re-create particle system for the welcome screen
         const pCanvas = document.getElementById('particle-canvas');
         if (pCanvas && allDomainBundle) {

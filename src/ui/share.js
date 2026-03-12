@@ -1,4 +1,7 @@
-/** Social sharing: canvas → PNG, optional Imgur upload for embeddable links. */
+/** Social sharing: canvas → PNG, token URL generation, social platform sharing. */
+
+import { buildIndex } from '../sharing/question-index.js';
+import { encodeToken } from '../sharing/token-codec.js';
 
 const IMGUR_CLIENT_ID = '';
 
@@ -15,10 +18,11 @@ let getCanvasRef = null;
 let getExpertiseAreasRef = null;
 let getAnswerCountRef = null;
 let getShareDataRef = null;
+let getTokenDataRef = null;
 
 const SHARE_MIN_ANSWERS = 5;
 
-export function init(headerElement, getCanvas, getExpertiseAreas, getAnswerCount, getShareData) {
+export function init(headerElement, getCanvas, getExpertiseAreas, getAnswerCount, getShareData, getTokenData) {
   if (!headerElement) return;
 
   headerEl = headerElement;
@@ -26,6 +30,7 @@ export function init(headerElement, getCanvas, getExpertiseAreas, getAnswerCount
   getExpertiseAreasRef = getExpertiseAreas;
   getAnswerCountRef = getAnswerCount || (() => 0);
   getShareDataRef = getShareData || null;
+  getTokenDataRef = getTokenData || null;
 
   const shareBtn = document.getElementById('share-btn');
   if (shareBtn) {
@@ -207,6 +212,25 @@ function generateShareImage(data) {
   return canvas.toDataURL('image/png');
 }
 
+/**
+ * Generate a token URL from current responses, or return the generic URL.
+ * @returns {string}
+ */
+function generateTokenUrl() {
+  const tokenData = getTokenDataRef ? getTokenDataRef() : null;
+  if (!tokenData || !tokenData.responses || tokenData.responses.length === 0 || !tokenData.questions) {
+    return window.location.origin + '/mapper/';
+  }
+  try {
+    const index = buildIndex(tokenData.questions);
+    const token = encodeToken(tokenData.responses, index);
+    return window.location.origin + '/mapper/?t=' + token;
+  } catch (err) {
+    console.error('[share] Failed to generate token URL:', err);
+    return window.location.origin + '/mapper/';
+  }
+}
+
 export function showShareDialog() {
   const modal = document.getElementById('share-modal');
   if (!modal) return;
@@ -216,8 +240,8 @@ export function showShareDialog() {
 
   if (totalAnswers < SHARE_MIN_ANSWERS || !expertiseAreas || expertiseAreas.length === 0) {
     const contentEl = modal.querySelector('.share-modal-content');
-    const teaserUrl = 'https://context-lab.com/mapper';
-    const teaserText = 'Check out \u{1F5FA}\uFE0F Knowledge Mapper: an interactive tool that maps out everything you know! Answer questions and watch a personalized map of YOUR knowledge take shape in real time.\n\nhttps://context-lab.com/mapper';
+    const teaserUrl = generateTokenUrl();
+    const teaserText = `Check out \u{1F5FA}\uFE0F Knowledge Mapper: an interactive tool that maps out everything you know! Answer questions and watch a personalized map of YOUR knowledge take shape in real time.\n\n${teaserUrl}`;
     const remaining = Math.max(0, SHARE_MIN_ANSWERS - totalAnswers);
     const progressNote = totalAnswers > 0 && remaining > 0
       ? `Answer ${remaining} more question${remaining !== 1 ? 's' : ''} to unlock your personalized share with top expertise areas!`
@@ -231,7 +255,7 @@ export function showShareDialog() {
         <p style="line-height: 1.7; margin-bottom: 1.25rem; font-size: 0.9rem;">
           ${teaserText}
         </p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.25rem;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; margin-bottom: 1.25rem;">
           <button type="button" class="share-action-btn" data-action="linkedin" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #0a66c2; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease;">
             <i class="fa-brands fa-linkedin"></i> LinkedIn
           </button>
@@ -241,10 +265,19 @@ export function showShareDialog() {
           <button type="button" class="share-action-btn" data-action="bluesky" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #1185fe; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease;">
             <i class="fa-brands fa-bluesky"></i> Bluesky
           </button>
+          <button type="button" class="share-action-btn" data-action="facebook" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #1877f2; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease;">
+            <i class="fa-brands fa-facebook"></i> Facebook
+          </button>
+          <button type="button" class="share-action-btn" data-action="instagram" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #e4405f; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease;">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </button>
           <button type="button" class="share-action-btn" data-action="copy" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: var(--color-primary); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease;">
             <i class="fa-solid fa-copy"></i> Copy
           </button>
         </div>
+        <button type="button" class="share-action-btn" data-action="copy-link" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: var(--color-secondary, #4a6741); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease; margin-bottom: 1.25rem;">
+          <i class="fa-solid fa-link"></i> Copy Link
+        </button>
         <p style="font-size: 0.8rem; color: var(--color-text-muted); text-align: center; font-style: italic;">
           ${progressNote}
         </p>
@@ -293,9 +326,9 @@ export function showShareDialog() {
     }
   }
 
-  // Compose share text
-  const shareText = `I mapped my knowledge with \u{1F5FA}\uFE0F Knowledge Mapper! My top areas: ${top3}\n\n\nhttps://context-lab.com/mapper`;
-  const shareUrl = 'https://context-lab.com/mapper';
+  // Compose share text with token URL
+  const shareUrl = generateTokenUrl();
+  const shareText = `I mapped my knowledge with \u{1F5FA}\uFE0F Knowledge Mapper! My top areas: ${top3}\n\n\n${shareUrl}`;
 
   // Populate modal
   const contentEl = modal.querySelector('.share-modal-content');
@@ -315,7 +348,7 @@ export function showShareDialog() {
         <p style="font-size: 0.95rem; line-height: 1.5; margin: 0; word-break: break-word;">${shareText}</p>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem;">
         <button class="share-action-btn" data-action="linkedin" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #0a66c2; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease;">
           <i class="fa-brands fa-linkedin"></i> LinkedIn
         </button>
@@ -325,8 +358,19 @@ export function showShareDialog() {
         <button class="share-action-btn" data-action="bluesky" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #1185fe; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease;">
           <i class="fa-brands fa-bluesky"></i> Bluesky
         </button>
+        <button class="share-action-btn" data-action="facebook" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #1877f2; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease;">
+          <i class="fa-brands fa-facebook"></i> Facebook
+        </button>
+        <button class="share-action-btn" data-action="instagram" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: #e4405f; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease;">
+          <i class="fa-brands fa-instagram"></i> Instagram
+        </button>
         <button class="share-action-btn" data-action="copy" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: var(--color-primary); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease;">
           <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <button class="share-action-btn" data-action="copy-link" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: var(--color-secondary, #4a6741); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease;">
+          <i class="fa-solid fa-link"></i> Copy Link
         </button>
         ${imageDataUrl ? `
         <button class="share-action-btn" data-action="copy-image" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; background: var(--color-secondary); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s ease, transform 0.2s ease;">
@@ -400,6 +444,54 @@ async function handleShareAction(action, shareText, shareUrl, imageDataUrl) {
   } else if (action === 'bluesky') {
     const blueskyUrl = `https://bsky.app/intent/compose?text=${encodeURIComponent(shareText)}`;
     openInBackground(blueskyUrl);
+  } else if (action === 'facebook') {
+    const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+    openInBackground(fbUrl);
+  } else if (action === 'instagram') {
+    // Instagram has no web share intent — copy to clipboard and prompt user
+    const igText = shareText;
+    navigator.clipboard.writeText(igText).then(() => {
+      const btn = document.querySelector('[data-action="instagram"]');
+      if (btn) {
+        const originalHTML = btn.textContent;
+        btn.textContent = '';
+        const icon = document.createElement('i');
+        icon.className = 'fa-solid fa-check';
+        btn.appendChild(icon);
+        btn.appendChild(document.createTextNode(' Copied! Paste into Instagram'));
+        setTimeout(() => {
+          btn.textContent = '';
+          const igIcon = document.createElement('i');
+          igIcon.className = 'fa-brands fa-instagram';
+          btn.appendChild(igIcon);
+          btn.appendChild(document.createTextNode(' Instagram'));
+        }, 3000);
+      }
+    }).catch(err => {
+      console.error('[share] Failed to copy for Instagram:', err);
+    });
+  } else if (action === 'copy-link') {
+    const tokenUrl = generateTokenUrl();
+    navigator.clipboard.writeText(tokenUrl).then(() => {
+      const btn = document.querySelector('[data-action="copy-link"]');
+      if (btn) {
+        const orig = btn.textContent;
+        btn.textContent = '';
+        const icon = document.createElement('i');
+        icon.className = 'fa-solid fa-check';
+        btn.appendChild(icon);
+        btn.appendChild(document.createTextNode(' Copied!'));
+        setTimeout(() => {
+          btn.textContent = '';
+          const linkIcon = document.createElement('i');
+          linkIcon.className = 'fa-solid fa-link';
+          btn.appendChild(linkIcon);
+          btn.appendChild(document.createTextNode(' Copy Link'));
+        }, 2000);
+      }
+    }).catch(err => {
+      console.error('[share] Failed to copy link:', err);
+    });
   } else if (action === 'copy') {
     navigator.clipboard.writeText(shareText).then(() => {
       const btn = document.querySelector('[data-action="copy"]');

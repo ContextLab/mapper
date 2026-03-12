@@ -38,6 +38,7 @@ import { computeRanking, takeSnapshot, handlePostVideoQuestion } from './learnin
 import { updateConfidence, initConfidence } from './ui/progress.js';
 import { announce, setupKeyboardNav } from './utils/accessibility.js';
 import { lockLandscape, unlockOrientation } from './ui/orientation.js';
+import { decodeSharedToken, applySharedViewChrome } from './sharing/shared-view.js';
 
 const GLOBAL_REGION = { x_min: 0, x_max: 1, y_min: 0, y_max: 1 };
 const GLOBAL_GRID_SIZE = 50;
@@ -63,6 +64,11 @@ let mergedVideoWindows = []; // Accumulated window coords from recent unwatched-
 let mapInitialized = false; // True once articles/questions/labels are set on the renderer
 
 async function boot() {
+  // Detect shared view mode via ?t= URL parameter (T012/T016)
+  const urlParams = new URLSearchParams(window.location.search);
+  const sharedToken = urlParams.get('t');
+  let sharedData = null;
+
   const storageAvailable = isAvailable();
   if (!storageAvailable) {
     showNotice('Progress won\u2019t be saved across visits (localStorage unavailable).');
@@ -79,6 +85,15 @@ async function boot() {
     console.error('[app] Failed to load domain registry:', err);
     showLandingError('Could not load domain data. Please try refreshing.');
     return;
+  }
+
+  // Decode shared token now that registry is ready (needs descendant info)
+  if (sharedToken) {
+    try {
+      sharedData = await decodeSharedToken(sharedToken);
+    } catch (err) {
+      console.warn('[app] Shared token decode failed, falling back to normal boot:', err);
+    }
   }
 
   const particleCanvas = document.getElementById('particle-canvas');
@@ -103,7 +118,7 @@ async function boot() {
 
   // Attach the landing button BEFORE the data load so it's responsive immediately.
   // If clicked before data loads, we store the intent and act on it once data arrives.
-  let earlyStartRequested = false;
+  let earlyStartRequested = !!sharedData; // Auto-start in shared mode
   const landingStartBtn = document.getElementById('landing-start-btn');
   if (landingStartBtn) {
     landingStartBtn.addEventListener('click', () => {
@@ -146,8 +161,18 @@ async function boot() {
   }
 
   // If user clicked "Map my Knowledge" while data was loading, transition now.
+  // In shared mode, this auto-starts the map without user interaction.
   if (earlyStartRequested) {
     $activeDomain.set('all');
+  }
+
+  // In shared mode, inject decoded responses and apply read-only chrome
+  // after the map has initialized via switchDomain.
+  if (sharedData) {
+    // Wait a tick for switchDomain to finish rendering
+    await new Promise(r => setTimeout(r, 200));
+    injectSharedResponses(sharedData.responses);
+    applySharedViewChrome(sharedData.tokenString);
   }
 
   // Start background video catalog loading (T-V051, FR-V041)
@@ -187,6 +212,24 @@ async function boot() {
     for (const btn of [actionBtns.resetButton, actionBtns.exportButton, actionBtns.importButton]) {
       btn.classList.add('btn-icon');
     }
+  }
+
+  // Logo click → return to welcome screen (works in both regular and shared views)
+  const logo = headerEl.querySelector('.logo');
+  if (logo) {
+    logo.style.cursor = 'pointer';
+    logo.addEventListener('click', () => {
+      // If on map screen with responses, confirm before resetting
+      const appEl = document.getElementById('app');
+      if (appEl && appEl.dataset.screen === 'map' && $responses.get().length > 0) {
+        handleReset();
+      } else {
+        // Already on welcome or no responses — just go to welcome
+        const landing = document.getElementById('landing');
+        if (landing) landing.classList.remove('hidden');
+        if (appEl) appEl.dataset.screen = 'welcome';
+      }
+    });
   }
 
   const quizPanel = document.getElementById('quiz-panel');
@@ -299,6 +342,11 @@ async function boot() {
       }
     }
     return { estimateGrid: grid, articles, answeredQuestions, videos };
+  }, () => {
+    if (!allDomainBundle) return null;
+    // Use aggregatedQuestions (all 2500) for token encoding, not allDomainBundle.questions (only 50)
+    const qs = aggregatedQuestions.length > 0 ? aggregatedQuestions : allDomainBundle.questions;
+    return { responses: $responses.get(), questions: qs };
   });
 
   const minimapContainer = document.getElementById('minimap-container');
@@ -851,6 +899,56 @@ function handleSkip() {
   // Advance tutorial on skip event
   setAnswerFeedback(false, true);
   advanceTutorial('skip');
+}
+
+/** Inject shared-view responses into the running app and update visualization. */
+function injectSharedResponses(responses) {
+  // Reset estimators to clear any locally-loaded responses
+  estimator.reset();
+  estimator.init(GLOBAL_GRID_SIZE, GLOBAL_REGION);
+  globalEstimator.reset();
+  globalEstimator.init(GLOBAL_GRID_SIZE, GLOBAL_REGION);
+
+  // Back up the user's own responses before overwriting with shared data
+  const ownResponses = localStorage.getItem('mapper:responses');
+  if (ownResponses) {
+    localStorage.setItem('mapper:responses:backup', ownResponses);
+  }
+
+  // Set responses on the store (overrides any local responses)
+  $responses.set(responses || []);
+
+  // Restore the backup so navigating away doesn't lose the user's own progress
+  if (ownResponses) {
+    localStorage.setItem('mapper:responses', ownResponses);
+  } else {
+    localStorage.removeItem('mapper:responses');
+  }
+
+  if (!responses || responses.length === 0) {
+    // Empty shared map — clear heatmap and dots
+    renderer.setHeatmap([], GLOBAL_REGION);
+    renderer.setAnsweredQuestions([]);
+    if (minimap) minimap.setEstimates([], GLOBAL_REGION);
+    return;
+  }
+
+  // Feed each response into the estimators
+  for (const r of responses) {
+    if (r.x == null || r.y == null) continue;
+    const diff = r.difficulty || 1;
+    if (r.is_skipped) {
+      estimator.observeSkip(r.x, r.y, UNIFORM_LENGTH_SCALE, diff);
+      globalEstimator.observeSkip(r.x, r.y, UNIFORM_LENGTH_SCALE, diff);
+    } else {
+      estimator.observe(r.x, r.y, r.is_correct, UNIFORM_LENGTH_SCALE, diff);
+      globalEstimator.observe(r.x, r.y, r.is_correct, UNIFORM_LENGTH_SCALE, diff);
+    }
+  }
+
+  // Update the heatmap and answered dots
+  updateHeatmapDisplay();
+  renderer.setAnsweredQuestions(responsesToAnsweredDots(responses, questionIndex));
 }
 
 function handleReset() {

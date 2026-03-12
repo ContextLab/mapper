@@ -1,9 +1,9 @@
 /** Question mode selector with availability gating per FR-010/FR-011. */
 
 const QUESTION_MODES = [
-  { id: 'easy', label: 'Give me an easy one', icon: 'fa-face-smile', minAnswers: 5, type: 'question', enabledTooltip: 'Next question will be one the model predicts you can answer' },
-  { id: 'hardest-can-answer', label: 'Challenge me', icon: 'fa-fire', minAnswers: 5, type: 'question', enabledTooltip: 'Next question will be the hardest the model thinks you can get right' },
-  { id: 'dont-know', label: "Test my weak spots", icon: 'fa-circle-question', minAnswers: 5, type: 'question', enabledTooltip: 'Next question will be from a low-knowledge area' },
+  { id: 'easy', label: 'Give me an easy one', icon: 'fa-face-smile', minAnswers: 5, type: 'question', enabledTooltip: 'Get a question from a high-knowledge area' },
+  { id: 'hardest-can-answer', label: 'Challenge me', icon: 'fa-fire', minAnswers: 5, type: 'question', enabledTooltip: 'Get the hardest question the system thinks you can probably answer correctly' },
+  { id: 'dont-know', label: "Test my weak spots", icon: 'fa-circle-question', minAnswers: 5, type: 'question', enabledTooltip: 'Get a question from a low-knowledge area' },
 ];
 
 const INSIGHT_MODES = [];

@@ -250,6 +250,9 @@ async function boot() {
         if (toggleBtn) toggleBtn.setAttribute('hidden', '');
         const videoToggleBtn = document.getElementById('video-toggle');
         if (videoToggleBtn) videoToggleBtn.setAttribute('hidden', '');
+        // Clear visual layers so the welcome screen particle canvas isn't obscured
+        renderer.setHeatmap([], GLOBAL_REGION);
+        renderer.setAnsweredQuestions([]);
         const landing = document.getElementById('landing');
         if (landing) landing.classList.remove('hidden');
         if (appEl) appEl.dataset.screen = 'welcome';

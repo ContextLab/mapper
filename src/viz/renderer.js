@@ -138,7 +138,7 @@ export class Renderer {
     this._colorbarEl = document.createElement('div');
     this._colorbarEl.className = 'map-colorbar';
     this._colorbarEl.style.cssText =
-      'position:absolute;bottom:16px;right:16px;z-index:15;' +
+      'position:absolute;bottom:16px;right:16px;z-index:25;' +
       'width:12px;height:120px;border-radius:6px;cursor:grab;' +
       'background:linear-gradient(to bottom, rgb(0,105,62), rgb(245,220,105) 50%, rgb(157,22,46));' +
       'box-shadow:0 2px 8px rgba(0,0,0,0.15);border:1px solid rgba(0,0,0,0.1);' +
@@ -808,25 +808,38 @@ export class Renderer {
       }
       if (this._colorbarUserDragged) return;
 
-      if (panelOpen && isMobile) {
-        // Mobile: panel is a bottom drawer — move colorbar above it
+      if (panelOpen) {
         const panelRect = quizPanel.getBoundingClientRect();
         const containerRect = this._container.getBoundingClientRect();
-        const panelTopRelative = panelRect.top - containerRect.top;
-        const newBottom = containerRect.height - panelTopRelative + 8;
+        const isBottomDrawer = panelRect.width > containerRect.width * 0.8;
+
+        if (isBottomDrawer) {
+          // Bottom drawer (mobile portrait): move colorbar above the panel
+          const panelTopRelative = panelRect.top - containerRect.top;
+          const newBottom = containerRect.height - panelTopRelative + 8;
+          this._colorbarEl.style.bottom = newBottom + 'px';
+          this._colorbarEl.style.right = '16px';
+          this._colorbarEl.style.left = 'auto';
+          this._colorbarEl.style.top = 'auto';
+        } else {
+          // Right sidebar (desktop or landscape): move colorbar left of the panel
+          const panelLeftRelative = panelRect.left - containerRect.left;
+          this._colorbarEl.style.left = (panelLeftRelative - 30) + 'px';
+          this._colorbarEl.style.bottom = '16px';
+          this._colorbarEl.style.right = 'auto';
+          this._colorbarEl.style.top = 'auto';
+        }
+      } else if (isMobile) {
+        // Panel closed on mobile — position above the drawer pull area
+        const panelRect = quizPanel.getBoundingClientRect();
+        const containerRect = this._container.getBoundingClientRect();
+        const newBottom = containerRect.height - (panelRect.top - containerRect.top) + 8;
         this._colorbarEl.style.bottom = newBottom + 'px';
         this._colorbarEl.style.right = '16px';
         this._colorbarEl.style.left = 'auto';
         this._colorbarEl.style.top = 'auto';
-      } else if (panelOpen && !isMobile) {
-        // Desktop: panel is a right sidebar — move colorbar left of it
-        const panelWidth = quizPanel.offsetWidth;
-        this._colorbarEl.style.right = (panelWidth + 24) + 'px';
-        this._colorbarEl.style.bottom = '16px';
-        this._colorbarEl.style.left = 'auto';
-        this._colorbarEl.style.top = 'auto';
       } else {
-        // Panel closed — return to default
+        // Panel closed on desktop — return to default
         this._colorbarEl.style.right = '16px';
         this._colorbarEl.style.bottom = '16px';
         this._colorbarEl.style.left = 'auto';

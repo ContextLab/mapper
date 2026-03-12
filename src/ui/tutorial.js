@@ -425,7 +425,7 @@ function showDismissConfirmation() {
   const overlay = document.createElement('div');
   overlay.id = 'tutorial-dismiss-confirm';
   Object.assign(overlay.style, {
-    position: 'fixed', inset: '0', zIndex: '10001',
+    position: 'fixed', inset: '0', zIndex: '10005',
     background: 'rgba(0,0,0,0.5)',
     display: 'flex', alignItems: 'center', justifyContent: 'center',
   });
@@ -479,6 +479,7 @@ export function dismissTutorial() {
   saveState();
   removeOverlay();
   stopHighlightRefresh();
+  document.body.classList.remove('tutorial-active');
 }
 
 export function resetTutorial() {
@@ -549,6 +550,7 @@ function completeTutorial() {
   saveState();
   removeOverlay();
   stopHighlightRefresh();
+  document.body.classList.remove('tutorial-active');
 
   // Re-select "All (General)" domain and zoom fully out
   const allOption = document.querySelector('.custom-select-option[data-value="all"]');
@@ -692,6 +694,7 @@ function showWelcomePrompt() {
 // ── Rendering ───────────────────────────────────────────────────────
 
 function renderCurrentStep() {
+  document.body.classList.add('tutorial-active');
   const stepDef = getStepDef(state.step);
   if (!stepDef) { completeTutorial(); return; }
   // Skip top-level steps marked skipOnMobile on render (e.g. resumed state)
@@ -900,13 +903,16 @@ function executeOnEnter(action) {
 
 function startHighlightRefresh() {
   stopHighlightRefresh();
-  if (!_currentHighlightSelector) return;
+
+  // Start refresh if there's a highlight OR an active arrow (arrow-only steps need repositioning too)
+  const hasArrow = !!document.getElementById('tutorial-arrow');
+  if (!_currentHighlightSelector && !hasArrow) return;
 
   _highlightInterval = setInterval(() => {
-    if (!_currentHighlightSelector) { stopHighlightRefresh(); return; }
+    const arrowEl = document.getElementById('tutorial-arrow');
+    if (!_currentHighlightSelector && !arrowEl) { stopHighlightRefresh(); return; }
 
     // Reposition arrow (panels may animate after onEnter)
-    const arrowEl = document.getElementById('tutorial-arrow');
     if (arrowEl && arrowEl._targetSelector) {
       const target = queryFirst(arrowEl._targetSelector);
       if (target) repositionArrow(arrowEl, target, arrowEl._side);
@@ -923,9 +929,7 @@ function stopHighlightRefresh() {
 }
 
 function _onResizeHighlight() {
-  if (!_currentHighlightSelector) return;
-
-  // Reposition arrow
+  // Reposition arrow on resize (works for both highlight and arrow-only steps)
   const arrowEl = document.getElementById('tutorial-arrow');
   if (arrowEl && arrowEl._targetSelector) {
     const target = queryFirst(arrowEl._targetSelector);
@@ -974,7 +978,7 @@ function renderArrow(targetEl, side = 'left') {
 
   Object.assign(arrow.style, {
     position: 'fixed',
-    zIndex: '10000',
+    zIndex: '10003',
     width: '32px',
     height: '32px',
     pointerEvents: 'none',
@@ -1027,7 +1031,20 @@ function renderArrow(targetEl, side = 'left') {
 }
 
 function repositionArrow(arrow, targetEl, side) {
-  const rect = targetEl.getBoundingClientRect();
+  let rect = targetEl.getBoundingClientRect();
+
+  // If target is hidden (zero dimensions), try its parent panel as fallback
+  if (rect.width === 0 && rect.height === 0) {
+    const panel = targetEl.closest('#video-panel, #quiz-panel');
+    if (panel) rect = panel.getBoundingClientRect();
+    // Still zero? Hide arrow
+    if (rect.width === 0 && rect.height === 0) {
+      arrow.style.display = 'none';
+      return;
+    }
+  }
+  arrow.style.display = '';
+
   const size = 32;
   let top, left;
 

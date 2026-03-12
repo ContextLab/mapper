@@ -16,12 +16,23 @@
 /* Highlight ring on targeted elements */
 .tutorial-highlight {
   position: relative;
-  z-index: 9999;
+  z-index: 10002 !important;
   outline: 2px solid var(--tutorial-accent);
   outline-offset: 4px;
   border-radius: inherit;
   box-shadow: 0 0 0 9999px rgba(0,0,0,0.45), 0 0 8px 2px rgba(0, 105, 62, 0.4);
   animation: tutorialPulse 1.5s ease-in-out infinite;
+}
+
+/* During tutorial, raise drawers and pulls above the tutorial modal (z-index 9999) */
+body.tutorial-active #quiz-panel,
+body.tutorial-active #video-panel {
+  z-index: 10000 !important;
+}
+body.tutorial-active .quiz-toggle-btn,
+body.tutorial-active .video-toggle-btn,
+body.tutorial-active .drawer-pull {
+  z-index: 10001 !important;
 }
 
 /* Arrow bounce animations for each direction */
@@ -83,8 +94,8 @@
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .tutorial-highlight {
-    animation: none;
-    box-shadow: 0 0 0 9999px rgba(0,0,0,0.45), 0 0 8px 2px rgba(0, 105, 62, 0.3);
+    animation: none !important;
+    box-shadow: 0 0 0 9999px rgba(0,0,0,0.45), 0 0 8px 2px rgba(0, 105, 62, 0.3) !important;
   }
   #tutorial-modal { transition: none !important; }
   #tutorial-overlay { transition: none !important; }

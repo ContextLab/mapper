@@ -90,8 +90,8 @@ const STEPS = [
       {
         title: 'Building Your Map',
         positionHint: 'quiz-final',
-        arrowTarget: '.auto-advance-label',
-        arrowSide: 'right',
+        arrowTarget: '.auto-advance-track',
+        arrowSide: 'left',
         message: () => {
           const touch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
           return `Try toggling the "Auto-advance" switch. Pausing after each question gives you a chance to review the correct answer. You can also ${touch ? 'tap' : 'click on'} the Wikipedia and Khan Academy links to learn more.`;

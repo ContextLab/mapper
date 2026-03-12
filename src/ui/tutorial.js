@@ -433,13 +433,23 @@ function showDismissConfirmation() {
   const dialog = document.createElement('div');
   Object.assign(dialog.style, {
     background: 'var(--color-bg, #fff)', borderRadius: '12px',
-    padding: '24px', maxWidth: '320px', width: '90%',
-    boxShadow: '0 8px 32px rgba(0,0,0,0.2)',
-    textAlign: 'center', fontFamily: 'var(--font-body, -apple-system, BlinkMacSystemFont, sans-serif)',
+    padding: '20px', maxWidth: '320px', width: '90%',
+    boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
+    border: '1px solid var(--color-border, rgba(226,232,240,0.8))',
+    fontFamily: 'system-ui, -apple-system, sans-serif',
+    lineHeight: '1.5',
   });
 
+  const titleEl = document.createElement('div');
+  Object.assign(titleEl.style, {
+    fontWeight: '700', fontSize: '1.1em', color: 'var(--color-primary, #00693e)',
+    marginBottom: '8px', textAlign: 'center',
+  });
+  titleEl.textContent = 'Exit Tutorial?';
+  dialog.appendChild(titleEl);
+
   const msg = document.createElement('p');
-  Object.assign(msg.style, { margin: '0 0 16px', fontSize: '1rem', color: 'var(--color-text, #0f172a)' });
+  Object.assign(msg.style, { margin: '0 0 16px', fontSize: '0.95em', color: 'var(--color-text-muted, #64748b)', textAlign: 'center' });
   msg.textContent = 'Are you sure you want to exit the tutorial?';
   dialog.appendChild(msg);
 
@@ -449,7 +459,8 @@ function showDismissConfirmation() {
   const cancelBtn = document.createElement('button');
   Object.assign(cancelBtn.style, {
     padding: '8px 20px', borderRadius: '8px', border: '1.5px solid var(--color-border, #ccc)',
-    background: 'var(--color-bg, #fff)', cursor: 'pointer', fontSize: '0.9rem',
+    background: 'var(--color-bg, #fff)', cursor: 'pointer', fontSize: '0.95em',
+    fontFamily: 'system-ui, -apple-system, sans-serif',
   });
   cancelBtn.textContent = 'Cancel';
   cancelBtn.addEventListener('click', () => overlay.remove());
@@ -458,7 +469,8 @@ function showDismissConfirmation() {
   Object.assign(exitBtn.style, {
     padding: '8px 20px', borderRadius: '8px', border: 'none',
     background: 'var(--color-primary, #00693e)', color: '#fff',
-    cursor: 'pointer', fontSize: '0.9rem',
+    cursor: 'pointer', fontSize: '0.95em', fontWeight: '600',
+    fontFamily: 'system-ui, -apple-system, sans-serif',
   });
   exitBtn.textContent = 'Exit';
   exitBtn.addEventListener('click', () => { overlay.remove(); dismissTutorial(); });

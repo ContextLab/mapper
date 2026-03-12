@@ -602,7 +602,7 @@ function showWelcomePrompt() {
   const mobile = isMobile();
   Object.assign(modal.style, {
     position: 'fixed',
-    zIndex: '9999',
+    zIndex: '10002',
     background: 'var(--color-bg, #ffffff)',
     color: 'var(--color-text, #0f172a)',
     maxWidth: mobile ? 'none' : `${MODAL_MAX_WIDTH}px`,
@@ -1081,7 +1081,7 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
     position: 'fixed',
     inset: '0',
     zIndex: '9998',
-    background: 'transparent',
+    background: highlightEl ? 'transparent' : 'rgba(0,0,0,0.45)',
     pointerEvents: 'none',
     transition: prefersReducedMotion() ? 'none' : 'opacity 300ms var(--ease-emphasized-decel, ease)',
   });
@@ -1103,7 +1103,7 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
   const mobile = isMobile();
   Object.assign(modal.style, {
     position: 'fixed',
-    zIndex: '9999',
+    zIndex: '10002',
     background: 'var(--color-bg, #ffffff)',
     color: 'var(--color-text, #0f172a)',
     maxWidth: mobile ? 'none' : `${MODAL_MAX_WIDTH}px`,

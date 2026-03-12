@@ -24,7 +24,7 @@
   animation: tutorialPulse 1.5s ease-in-out infinite;
 }
 
-/* During tutorial, raise drawers and pulls above the tutorial modal and highlights */
+/* During tutorial, raise drawers and pulls above the overlay and highlights */
 body.tutorial-active #quiz-panel,
 body.tutorial-active #video-panel {
   z-index: 10000 !important;

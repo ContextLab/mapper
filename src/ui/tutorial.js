@@ -440,7 +440,7 @@ function showDismissConfirmation() {
     background: 'var(--color-bg, #fff)', borderRadius: '12px',
     padding: '24px', maxWidth: '320px', width: '90%',
     boxShadow: '0 8px 32px rgba(0,0,0,0.2)',
-    textAlign: 'center', fontFamily: 'system-ui, -apple-system, sans-serif',
+    textAlign: 'center', fontFamily: 'var(--font-body, -apple-system, BlinkMacSystemFont, sans-serif)',
   });
 
   const msg = document.createElement('p');

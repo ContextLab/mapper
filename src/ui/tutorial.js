@@ -1123,26 +1123,73 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
   if (mobile) {
     const isLandscape = window.matchMedia('(orientation: landscape)').matches;
     if (isLandscape) {
-      // Landscape: position modal under header, left or right based on positionHint
+      // Landscape: position modal under header, avoiding any open panel
       const headerH = document.getElementById('app-header')?.offsetHeight || 48;
       const topPos = (headerH + 8) + 'px';
-      const isRightSide = positionHint === 'right' || positionHint === 'video-final';
-      const isLeftSide = positionHint === 'left' || positionHint === 'quiz-final';
-      Object.assign(modal.style, {
-        maxWidth: `${MODAL_MAX_WIDTH}px`, borderRadius: '12px',
-        top: topPos,
-      });
-      if (isRightSide) {
-        modal.style.right = '12px';
-        modal.style.left = 'auto';
-      } else if (isLeftSide) {
-        modal.style.left = '12px';
-        modal.style.right = 'auto';
+
+      // Detect which panels are open and compute available space
+      const quizPanel = document.getElementById('quiz-panel');
+      const videoPanel = document.getElementById('video-panel');
+      const quizOpen = quizPanel?.classList.contains('open');
+      const videoOpen = videoPanel?.classList.contains('open');
+      const toggleWidth = 36; // drawer toggle tab extends past panel edge
+
+      // Determine best side: prefer positionHint, then place away from open panels
+      const hintRight = positionHint === 'right' || positionHint === 'video-final';
+      const hintLeft = positionHint === 'left' || positionHint === 'quiz-final';
+      let placeLeft = hintLeft;
+      let placeRight = hintRight;
+      if (!placeLeft && !placeRight) {
+        // No hint: place opposite the open panel, or left by default
+        placeLeft = !videoOpen;
+        placeRight = videoOpen && !quizOpen;
+      }
+
+      // Calculate available width on each side (accounting for panel + toggle)
+      let availLeft = window.innerWidth;
+      let availRight = window.innerWidth;
+      if (quizOpen && quizPanel) {
+        // Quiz panel is on the RIGHT — constrains left space and right space
+        const qpRect = quizPanel.getBoundingClientRect();
+        availLeft = Math.min(availLeft, qpRect.left - toggleWidth);
+        availRight = Math.min(availRight, window.innerWidth - qpRect.left);
+      }
+      if (videoOpen && videoPanel) {
+        // Video panel is on the LEFT — constrains right space and left space
+        const vpRect = videoPanel.getBoundingClientRect();
+        availRight = Math.min(availRight, window.innerWidth - vpRect.right - toggleWidth);
+        availLeft = Math.min(availLeft, vpRect.right);
+      }
+
+      // If preferred side has no room, flip; if neither side has room, overlay on top
+      const minUsable = 160;
+      if (placeLeft && availLeft < minUsable && availRight > availLeft) {
+        placeLeft = false; placeRight = true;
+      } else if (placeRight && availRight < minUsable && availLeft > availRight) {
+        placeRight = false; placeLeft = true;
+      }
+
+      const chosenAvail = placeLeft ? availLeft : availRight;
+      if (chosenAvail < minUsable) {
+        // Both sides blocked (both panels open) — center overlay on top
+        Object.assign(modal.style, {
+          maxWidth: `${MODAL_MAX_WIDTH}px`, borderRadius: '12px',
+          top: topPos, left: '50%', right: 'auto',
+          transform: 'translateX(-50%)',
+        });
       } else {
-        // Default: center
-        modal.style.left = '50%';
-        modal.style.right = 'auto';
-        modal.style.transform = 'translateX(-50%)';
+        const maxW = Math.min(MODAL_MAX_WIDTH, chosenAvail - 24);
+        Object.assign(modal.style, {
+          maxWidth: Math.max(maxW, minUsable) + 'px', borderRadius: '12px',
+          top: topPos,
+        });
+        if (placeRight) {
+          modal.style.right = '12px';
+          modal.style.left = 'auto';
+        } else {
+          modal.style.left = '12px';
+          modal.style.right = 'auto';
+        }
       }
     } else {
       // Portrait: bottom sheet or top bar

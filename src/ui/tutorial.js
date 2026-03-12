@@ -36,7 +36,6 @@ const STEPS = [
   },
   {
     id: 2, title: 'The Quiz Panel',
-    highlight: '#quiz-toggle',
     arrowTarget: '#quiz-toggle',
     arrowSide: 'above',
     positionHint: 'quiz-final',
@@ -51,7 +50,6 @@ const STEPS = [
     id: 3, title: 'Video Sidebar', subSteps: [
       {
         title: 'Video Sidebar',
-        highlight: '#video-toggle',
         arrowTarget: '#video-toggle',
         arrowSide: 'above',
         positionHint: 'video-final',
@@ -61,7 +59,6 @@ const STEPS = [
       },
       {
         title: 'Video Sidebar',
-        highlight: '#video-toggle',
         positionHint: 'video-final',
         message: () => {
           const touch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;

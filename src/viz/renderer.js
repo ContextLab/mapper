@@ -796,7 +796,7 @@ export class Renderer {
 
     let lastPanelOpen = quizPanel.classList.contains('open');
 
-    const reposition = () => {
+    const repositionNow = () => {
       if (!this._colorbarEl) return;
       const panelOpen = quizPanel.classList.contains('open');
       const isMobile = window.innerWidth <= 768;
@@ -829,8 +829,8 @@ export class Renderer {
           this._colorbarEl.style.right = 'auto';
           this._colorbarEl.style.top = 'auto';
         }
-      } else if (isMobile) {
-        // Panel closed on mobile — position above the drawer pull area
+      } else if (isMobile && window.innerHeight > window.innerWidth) {
+        // Panel closed on mobile portrait — position above the drawer pull area
         const panelRect = quizPanel.getBoundingClientRect();
         const containerRect = this._container.getBoundingClientRect();
         const newBottom = containerRect.height - (panelRect.top - containerRect.top) + 8;
@@ -839,12 +839,20 @@ export class Renderer {
         this._colorbarEl.style.left = 'auto';
         this._colorbarEl.style.top = 'auto';
       } else {
-        // Panel closed on desktop — return to default
+        // Panel closed on desktop or landscape — return to default
         this._colorbarEl.style.right = '16px';
         this._colorbarEl.style.bottom = '16px';
         this._colorbarEl.style.left = 'auto';
         this._colorbarEl.style.top = 'auto';
       }
+    };
+
+    // Debounced reposition — waits for CSS transitions to settle
+    let repositionTimer = null;
+    const reposition = () => {
+      repositionNow();
+      clearTimeout(repositionTimer);
+      repositionTimer = setTimeout(repositionNow, 350);
     };
 
     // Observe class changes AND style changes (drag-resize) on quiz panel
@@ -859,6 +867,9 @@ export class Renderer {
 
     // Also reposition on resize (panel dimensions may change)
     window.addEventListener('resize', reposition);
+
+    // Initial reposition in case panel is already open on load
+    reposition();
   }
 
   _initColorbarDrag() {

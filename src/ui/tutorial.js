@@ -309,12 +309,6 @@ export function advanceTutorial(event) {
       state.hasSkippedQuestion = true;
       saveState();
     }
-    // Show skip toast only if we're past step 4 (skip is explained there)
-    if (state.step > 4 && !state.skipToastShown) {
-      state.skipToastShown = true;
-      showToast('Noted! The system now knows this topic might be unfamiliar.');
-      saveState();
-    }
   }
 
   const stepDef = getStepDef(state.step);

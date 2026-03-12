@@ -794,10 +794,19 @@ export class Renderer {
     const quizPanel = document.getElementById('quiz-panel');
     if (!quizPanel) return;
 
+    let lastPanelOpen = quizPanel.classList.contains('open');
+
     const reposition = () => {
-      if (this._colorbarUserDragged || !this._colorbarEl) return;
+      if (!this._colorbarEl) return;
       const panelOpen = quizPanel.classList.contains('open');
       const isMobile = window.innerWidth <= 768;
+
+      // Reset user-drag flag when panel state toggles (open↔close)
+      if (panelOpen !== lastPanelOpen) {
+        this._colorbarUserDragged = false;
+        lastPanelOpen = panelOpen;
+      }
+      if (this._colorbarUserDragged) return;
 
       if (panelOpen && isMobile) {
         // Mobile: panel is a bottom drawer — move colorbar above it
@@ -825,9 +834,15 @@ export class Renderer {
       }
     };
 
-    // Observe class changes on quiz panel
+    // Observe class changes AND style changes (drag-resize) on quiz panel
     this._panelObserver = new MutationObserver(reposition);
-    this._panelObserver.observe(quizPanel, { attributes: true, attributeFilter: ['class'] });
+    this._panelObserver.observe(quizPanel, { attributes: true, attributeFilter: ['class', 'style'] });
+
+    // Also watch for size changes via ResizeObserver (handles drag-to-resize)
+    if (typeof ResizeObserver !== 'undefined') {
+      this._panelResizeObserver = new ResizeObserver(reposition);
+      this._panelResizeObserver.observe(quizPanel);
+    }
 
     // Also reposition on resize (panel dimensions may change)
     window.addEventListener('resize', reposition);

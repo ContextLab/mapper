@@ -304,7 +304,6 @@ export function showShareDialog() {
   }
 
   // Get top 3 expertise areas
-  const top3 = expertiseAreas.slice(0, 3).map(a => a.label).join(', ');
 
   let imageDataUrl = '';
   const shareData = getShareDataRef ? getShareDataRef() : null;
@@ -328,7 +327,7 @@ export function showShareDialog() {
 
   // Compose share text with token URL
   const shareUrl = generateTokenUrl();
-  const shareText = `I mapped my knowledge with \u{1F5FA}\uFE0F Knowledge Mapper! My top areas: ${top3}\n\n\n${shareUrl}`;
+  const shareText = `I mapped my knowledge with \u{1F5FA}\uFE0F Knowledge Mapper! Here's what I know: ${shareUrl}`;
 
   // Populate modal
   const contentEl = modal.querySelector('.share-modal-content');

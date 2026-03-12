@@ -766,8 +766,12 @@
             /* Hide custom tooltips on touch devices */
             .ui-tooltip { display: none !important; }
 
-            /* ── Quiz panel: collapse mode buttons to free space for questions ── */
-            .modes-wrapper { display: none !important; }
+            /* ── Quiz panel: compact mode buttons + auto-advance for mobile ── */
+            .modes-wrapper { gap: 0.2rem; margin-bottom: 0.2rem; padding-bottom: 0.2rem; }
+            .mode-btn { width: 28px; height: 28px; font-size: 0.75rem; }
+            .auto-advance-label { font-size: 0.7rem; margin: 0; padding: 0; line-height: 1; }
+            .auto-advance-label input { width: 24px; height: 14px; }
+            .auto-advance-wrap { margin: 0 !important; padding: 0 0.8rem !important; }
 
             /* ── Quiz panel: bottom sheet ── */
             #quiz-panel {
@@ -910,7 +914,8 @@
             #video-panel.open { height: auto; max-height: 100%; }
 
             /* Compact quiz panel for landscape phones (#58) */
-            .modes-wrapper { display: none !important; }
+            .modes-wrapper { gap: 0.2rem; margin-bottom: 0.15rem; padding-bottom: 0.15rem; }
+            .mode-btn { width: 26px; height: 26px; font-size: 0.7rem; }
             .auto-advance-label { font-size: 0.7rem; margin: 0; padding: 0; line-height: 1; }
             .auto-advance-label input { width: 24px; height: 14px; }
             .auto-advance-wrap { margin: 0 !important; padding: 0 0.8rem !important; }

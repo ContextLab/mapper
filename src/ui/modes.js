@@ -260,7 +260,9 @@ export function init(container) {
 
   toggleWrap.appendChild(track);
   toggleWrap.appendChild(label);
-  wrapper.appendChild(toggleWrap);
+  // Place auto-advance toggle after .modes-wrapper, not inside it,
+  // so mobile CSS can hide modes-wrapper without hiding the toggle.
+  wrapper.after(toggleWrap);
   autoAdvanceToggleEl = track;
 }
 

@@ -1,9 +1,9 @@
 /** Question mode selector with availability gating per FR-010/FR-011. */
 
 const QUESTION_MODES = [
-  { id: 'easy', label: 'Give me an easy one', icon: 'fa-face-smile', minAnswers: 5, type: 'question', enabledTooltip: 'Get a question from a high-knowledge area' },
-  { id: 'hardest-can-answer', label: 'Challenge me', icon: 'fa-fire', minAnswers: 5, type: 'question', enabledTooltip: 'Get the hardest question the system thinks you can probably answer correctly' },
-  { id: 'dont-know', label: "Test my weak spots", icon: 'fa-circle-question', minAnswers: 5, type: 'question', enabledTooltip: 'Get a question from a low-knowledge area' },
+  { id: 'easy', label: 'Give me an easy one', icon: 'fa-baby', minAnswers: 5, type: 'question', enabledTooltip: 'Give me an easy one' },
+  { id: 'hardest-can-answer', label: 'Challenge me', icon: 'fa-fire', minAnswers: 5, type: 'question', enabledTooltip: 'Challenge me' },
+  { id: 'dont-know', label: "Test my weak spots", icon: 'fa-bullseye', minAnswers: 5, type: 'question', enabledTooltip: 'Test my weak spots' },
 ];
 
 const INSIGHT_MODES = [];
@@ -29,7 +29,8 @@ export function init(container) {
     style.textContent = `
       .modes-wrapper {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        align-items: center;
         gap: 0.35rem;
         margin-bottom: 0.35rem;
         padding-bottom: 0.35rem;
@@ -38,18 +39,21 @@ export function init(container) {
       .mode-btn {
         display: inline-flex;
         align-items: center;
-        gap: 0.35rem;
-        padding: 0.35rem 0.6rem;
+        justify-content: center;
+        padding: 0.35rem;
+        width: 32px;
+        height: 32px;
         border: 1.5px solid var(--color-border);
-        border-radius: 16px;
+        border-radius: 50%;
         background: var(--color-surface-raised);
         cursor: pointer;
-        font-size: 0.75rem;
+        font-size: 0.85rem;
         font-family: var(--font-body);
         color: var(--color-text-muted);
         transition: border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
         white-space: nowrap;
         position: relative;
+        flex-shrink: 0;
       }
       .mode-btn:hover:not(:disabled) {
         border-color: var(--color-primary);
@@ -106,9 +110,7 @@ export function init(container) {
         display: inline-flex;
         align-items: center;
         gap: 0.3rem;
-        margin-left: 0.25rem;
-        margin-top: 0.25rem;
-        margin-bottom: 0.25rem;
+        margin-left: auto;
       }
       .auto-advance-label {
         font-size: 0.68rem;
@@ -181,7 +183,11 @@ export function init(container) {
     const btn = document.createElement('button');
     btn.className = 'mode-btn' + (mode.id === activeMode ? ' active' : '');
     if (mode.type === 'insight') btn.classList.add('mode-btn--insight');
-    btn.innerHTML = `<i class="fa-solid ${mode.icon}"></i> ${mode.label}`;
+    const icon = document.createElement('i');
+    icon.className = `fa-solid ${mode.icon}`;
+    btn.textContent = '';
+    btn.appendChild(icon);
+    btn.setAttribute('aria-label', mode.label);
     btn.dataset.mode = mode.id;
     btn.dataset.type = mode.type;
     btn.dataset.tooltip = mode.enabledTooltip || '';
@@ -254,7 +260,7 @@ export function init(container) {
 
   toggleWrap.appendChild(track);
   toggleWrap.appendChild(label);
-  wrapper.after(toggleWrap);
+  wrapper.appendChild(toggleWrap);
   autoAdvanceToggleEl = track;
 }
 

@@ -90,8 +90,8 @@ const STEPS = [
       {
         title: 'Building Your Map',
         positionHint: 'quiz-final',
-        arrowTarget: '.auto-advance-label',
-        arrowSide: 'right',
+        arrowTarget: '.auto-advance-track',
+        arrowSide: 'left',
         message: () => {
           const touch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
           return `Try toggling the "Auto-advance" switch. Pausing after each question gives you a chance to review the correct answer. You can also ${touch ? 'tap' : 'click on'} the Wikipedia and Khan Academy links to learn more.`;
@@ -122,7 +122,7 @@ const STEPS = [
     id: 7, title: 'Question Modes',
     highlight: '.modes-wrapper',
     onEnter: 'closeModals,openQuiz,enableAutoAdvance',
-    message: 'These buttons let you control the difficulty of your next question. "Give me an easy one" picks a question the system thinks you\'ll get right. "Challenge me" picks a hard question. "Test my weak spots" focuses on areas where your knowledge seems weakest.',
+    message: 'These icons let you control the difficulty of your next question. The baby icon picks an easy question, the flame icon picks a challenging one, and the bullseye targets your weak spots. Hover over each icon for a description.',
     advanceOn: 'click',
   },
   {

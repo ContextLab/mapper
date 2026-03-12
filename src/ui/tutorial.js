@@ -36,7 +36,7 @@ const STEPS = [
   },
   {
     id: 2, title: 'The Quiz Panel',
-    highlight: '#quiz-panel, #quiz-toggle',
+    highlight: '#quiz-toggle',
     arrowTarget: '#quiz-toggle',
     arrowSide: 'above',
     positionHint: 'quiz-final',
@@ -51,7 +51,7 @@ const STEPS = [
     id: 3, title: 'Video Sidebar', subSteps: [
       {
         title: 'Video Sidebar',
-        highlight: '#video-panel, #video-toggle',
+        highlight: '#video-toggle',
         arrowTarget: '#video-toggle',
         arrowSide: 'above',
         positionHint: 'video-final',
@@ -61,7 +61,7 @@ const STEPS = [
       },
       {
         title: 'Video Sidebar',
-        highlight: '#video-panel, #video-toggle',
+        highlight: '#video-toggle',
         positionHint: 'video-final',
         message: () => {
           const touch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
@@ -74,7 +74,6 @@ const STEPS = [
   },
   {
     id: 4, title: 'Try Answering a Question',
-    highlight: '#quiz-panel',
     positionHint: 'quiz-final',
     onEnter: 'closeVideo,openQuiz',
     message: "Now let's start mapping your knowledge! Pick whatever answer you think is correct. If you don't know, just press the skip button. Our system learns with each question you answer. Knowing what you don't know tells us something too!",
@@ -148,7 +147,6 @@ const STEPS = [
   },
   {
     id: 10, title: 'Exploring Domain-Specific Knowledge',
-    highlight: '#quiz-panel',
     positionHint: 'left',
     advanceOn: 'answer',
     questionTarget: 2,

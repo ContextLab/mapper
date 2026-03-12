@@ -214,20 +214,53 @@ async function boot() {
     }
   }
 
-  // Logo click → return to welcome screen (works in both regular and shared views)
+  // Logo click — context-dependent behavior:
+  // Welcome screen: start mapping (same as "Map my knowledge!" button)
+  // Map screen: return to welcome without clearing progress
+  // Shared view (?t=): reload without token to start user's own session
   const logo = headerEl.querySelector('.logo');
+  const isSharedView = new URLSearchParams(window.location.search).has('t');
   if (logo) {
     logo.style.cursor = 'pointer';
+    if (isSharedView) {
+      logo.setAttribute('data-tooltip', 'Click here to map out your knowledge!');
+    }
     logo.addEventListener('click', () => {
-      // If on map screen with responses, confirm before resetting
       const appEl = document.getElementById('app');
-      if (appEl && appEl.dataset.screen === 'map' && $responses.get().length > 0) {
-        handleReset();
-      } else {
-        // Already on welcome or no responses — just go to welcome
+      const screen = appEl?.dataset.screen;
+
+      if (isSharedView) {
+        // Shared view → reload without ?t= param to start user's own session
+        window.location.href = window.location.origin + window.location.pathname;
+        return;
+      }
+
+      if (screen === 'welcome') {
+        // Welcome screen → start mapping (same as start button)
+        if (allDomainBundle) {
+          $activeDomain.set('all');
+        }
+      } else if (screen === 'map') {
+        // Map screen → return to welcome without clearing progress
+        unlockOrientation();
+        renderer.abortTransition();
+        toggleQuizPanel(false);
+        toggleVideoPanel(false);
+        const toggleBtn = document.getElementById('quiz-toggle');
+        if (toggleBtn) toggleBtn.setAttribute('hidden', '');
+        const videoToggleBtn = document.getElementById('video-toggle');
+        if (videoToggleBtn) videoToggleBtn.setAttribute('hidden', '');
         const landing = document.getElementById('landing');
         if (landing) landing.classList.remove('hidden');
         if (appEl) appEl.dataset.screen = 'welcome';
+        logo.setAttribute('data-tooltip', 'Map my knowledge!');
+        // Re-create particle system for the welcome screen
+        const pCanvas = document.getElementById('particle-canvas');
+        if (pCanvas && allDomainBundle) {
+          particleSystem = new ParticleSystem();
+          const points = subsampleParticlePoints(allDomainBundle.articles);
+          particleSystem.initWithPoints(pCanvas, points);
+        }
       }
     });
   }
@@ -528,6 +561,10 @@ async function switchDomain(domainId) {
 
   const appEl = document.getElementById('app');
   if (appEl) appEl.dataset.screen = 'map';
+
+  // Update logo tooltip for map screen
+  const logo = document.querySelector('.logo');
+  if (logo) logo.setAttribute('data-tooltip', 'Return to welcome screen');
 
   // Force landscape on phone-sized devices
   lockLandscape();

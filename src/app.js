@@ -946,20 +946,24 @@ function injectSharedResponses(responses) {
   globalEstimator.reset();
   globalEstimator.init(GLOBAL_GRID_SIZE, GLOBAL_REGION);
 
-  // Back up the user's own responses before overwriting with shared data
+  // Save the user's own responses before we touch the store
   const ownResponses = localStorage.getItem('mapper:responses');
-  if (ownResponses) {
-    localStorage.setItem('mapper:responses:backup', ownResponses);
-  }
 
-  // Set responses on the store (overrides any local responses)
+  // Prevent persistentAtom from writing shared responses to localStorage.
+  // Block all writes to 'mapper:responses' for the entire shared view session,
+  // since subscriptions/computed atoms may trigger re-persists at any time.
+  const origSetItem = localStorage.setItem.bind(localStorage);
+  localStorage.setItem = function(key, value) {
+    if (key === 'mapper:responses') return; // block shared data from persisting
+    origSetItem(key, value);
+  };
+
+  // Set responses on the store (updates in-memory only, localStorage write is blocked)
   $responses.set(responses || []);
 
-  // Restore the backup so navigating away doesn't lose the user's own progress
+  // Ensure user's own data stays intact in localStorage
   if (ownResponses) {
-    localStorage.setItem('mapper:responses', ownResponses);
-  } else {
-    localStorage.removeItem('mapper:responses');
+    origSetItem('mapper:responses', ownResponses);
   }
 
   if (!responses || responses.length === 0) {

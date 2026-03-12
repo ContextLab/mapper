@@ -130,7 +130,7 @@ const STEPS = [
   },
   {
     id: 8, title: 'Save & Load Progress',
-    highlight: '.header-left',
+    highlight: '.header-actions',
     positionHint: 'left',
     onEnter: 'closeModals',
     message: 'Use these buttons to export your progress (download a file), import previously saved progress, or reset and start fresh.',

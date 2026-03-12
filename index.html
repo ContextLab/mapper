@@ -706,6 +706,9 @@
         @media (max-width: 768px) {
             :root { --video-sidebar-width: 50%; --quiz-sidebar-width: 50%; }
             #app-header { padding: 0 1rem; }
+            /* Hide logo text on narrow screens; keep icon */
+            .logo span { display: none; }
+            .logo { white-space: nowrap; }
             #quiz-panel.open {
                 width: 50%;
             }

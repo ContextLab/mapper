@@ -1114,83 +1114,85 @@ function renderOverlay(highlightSelector, title, message, showNextBtn, isFinish,
     border: '1px solid var(--color-border, rgba(226,232,240,0.8))',
     fontFamily: 'system-ui, -apple-system, sans-serif',
     lineHeight: '1.5',
+    boxSizing: 'border-box',
+    overflowY: 'auto',
+    maxHeight: 'calc(100vh - 60px)',
     opacity: '0',
     transform: prefersReducedMotion() ? 'none' : 'translateY(8px)',
     transition: prefersReducedMotion() ? 'none' : 'opacity 300ms var(--ease-emphasized-decel, ease), transform 300ms var(--ease-emphasized-decel, ease), left 300ms var(--ease-emphasized-decel, ease), top 300ms var(--ease-emphasized-decel, ease)',
     cursor: 'default',
   });
 
+  // Mobile landscape positioning — extracted so it can be re-run after panel transitions
+  function positionMobileLandscape(m) {
+    const headerH = document.getElementById('app-header')?.offsetHeight || 48;
+    const topPos = (headerH + 8) + 'px';
+    m.style.maxHeight = `calc(100vh - ${headerH + 12}px)`;
+    const quizPanel = document.getElementById('quiz-panel');
+    const videoPanel = document.getElementById('video-panel');
+    const quizOpen = quizPanel?.classList.contains('open');
+    const videoOpen = videoPanel?.classList.contains('open');
+    const toggleWidth = 36;
+
+    const hintRight = positionHint === 'right' || positionHint === 'video-final';
+    const hintLeft = positionHint === 'left' || positionHint === 'quiz-final';
+    let placeLeft = hintLeft;
+    let placeRight = hintRight;
+    if (!placeLeft && !placeRight) {
+      placeLeft = !videoOpen;
+      placeRight = videoOpen && !quizOpen;
+    }
+
+    let availLeft = window.innerWidth;
+    let availRight = window.innerWidth;
+    if (quizOpen && quizPanel) {
+      const qpRect = quizPanel.getBoundingClientRect();
+      availLeft = Math.min(availLeft, qpRect.left - toggleWidth);
+      availRight = Math.min(availRight, window.innerWidth - qpRect.left);
+    }
+    if (videoOpen && videoPanel) {
+      const vpRect = videoPanel.getBoundingClientRect();
+      availRight = Math.min(availRight, window.innerWidth - vpRect.right - toggleWidth);
+      availLeft = Math.min(availLeft, vpRect.right);
+    }
+
+    const minUsable = 160;
+    if (placeLeft && availLeft < minUsable && availRight > availLeft) {
+      placeLeft = false; placeRight = true;
+    } else if (placeRight && availRight < minUsable && availLeft > availRight) {
+      placeRight = false; placeLeft = true;
+    }
+
+    const chosenAvail = placeLeft ? availLeft : availRight;
+    if (chosenAvail < minUsable) {
+      Object.assign(m.style, {
+        width: `${MODAL_MAX_WIDTH}px`, maxWidth: '90vw', borderRadius: '12px',
+        top: topPos, left: '50%', right: 'auto',
+        transform: 'translateX(-50%)',
+      });
+    } else {
+      const usableW = Math.max(Math.min(MODAL_MAX_WIDTH, chosenAvail - 24), minUsable);
+      Object.assign(m.style, {
+        width: usableW + 'px', maxWidth: usableW + 'px', borderRadius: '12px',
+        top: topPos,
+      });
+      if (placeRight) {
+        m.style.right = '12px';
+        m.style.left = 'auto';
+      } else {
+        m.style.left = '12px';
+        m.style.right = 'auto';
+      }
+    }
+  }
+
   if (mobile) {
     const isLandscape = window.matchMedia('(orientation: landscape)').matches;
     if (isLandscape) {
-      // Landscape: position modal under header, avoiding any open panel
-      const headerH = document.getElementById('app-header')?.offsetHeight || 48;
-      const topPos = (headerH + 8) + 'px';
-
-      // Detect which panels are open and compute available space
-      const quizPanel = document.getElementById('quiz-panel');
-      const videoPanel = document.getElementById('video-panel');
-      const quizOpen = quizPanel?.classList.contains('open');
-      const videoOpen = videoPanel?.classList.contains('open');
-      const toggleWidth = 36; // drawer toggle tab extends past panel edge
-
-      // Determine best side: prefer positionHint, then place away from open panels
-      const hintRight = positionHint === 'right' || positionHint === 'video-final';
-      const hintLeft = positionHint === 'left' || positionHint === 'quiz-final';
-      let placeLeft = hintLeft;
-      let placeRight = hintRight;
-      if (!placeLeft && !placeRight) {
-        // No hint: place opposite the open panel, or left by default
-        placeLeft = !videoOpen;
-        placeRight = videoOpen && !quizOpen;
-      }
-
-      // Calculate available width on each side (accounting for panel + toggle)
-      let availLeft = window.innerWidth;
-      let availRight = window.innerWidth;
-      if (quizOpen && quizPanel) {
-        // Quiz panel is on the RIGHT — constrains left space and right space
-        const qpRect = quizPanel.getBoundingClientRect();
-        availLeft = Math.min(availLeft, qpRect.left - toggleWidth);
-        availRight = Math.min(availRight, window.innerWidth - qpRect.left);
-      }
-      if (videoOpen && videoPanel) {
-        // Video panel is on the LEFT — constrains right space and left space
-        const vpRect = videoPanel.getBoundingClientRect();
-        availRight = Math.min(availRight, window.innerWidth - vpRect.right - toggleWidth);
-        availLeft = Math.min(availLeft, vpRect.right);
-      }
-
-      // If preferred side has no room, flip; if neither side has room, overlay on top
-      const minUsable = 160;
-      if (placeLeft && availLeft < minUsable && availRight > availLeft) {
-        placeLeft = false; placeRight = true;
-      } else if (placeRight && availRight < minUsable && availLeft > availRight) {
-        placeRight = false; placeLeft = true;
-      }
-
-      const chosenAvail = placeLeft ? availLeft : availRight;
-      if (chosenAvail < minUsable) {
-        // Both sides blocked (both panels open) — center overlay on top
-        Object.assign(modal.style, {
-          maxWidth: `${MODAL_MAX_WIDTH}px`, borderRadius: '12px',
-          top: topPos, left: '50%', right: 'auto',
-          transform: 'translateX(-50%)',
-        });
-      } else {
-        const maxW = Math.min(MODAL_MAX_WIDTH, chosenAvail - 24);
-        Object.assign(modal.style, {
-          maxWidth: Math.max(maxW, minUsable) + 'px', borderRadius: '12px',
-          top: topPos,
-        });
-        if (placeRight) {
-          modal.style.right = '12px';
-          modal.style.left = 'auto';
-        } else {
-          modal.style.left = '12px';
-          modal.style.right = 'auto';
-        }
-      }
+      positionMobileLandscape(modal);
+      // Defer reposition to catch panel CSS transitions
+      setTimeout(() => positionMobileLandscape(modal), 350);
+      setTimeout(() => positionMobileLandscape(modal), 600);
     } else {
       // Portrait: bottom sheet or top bar
       const highlightInBottom = highlightEl && highlightEl.getBoundingClientRect().bottom > window.innerHeight * 0.6;
@@ -1353,6 +1355,8 @@ function makeDraggable(modal) {
     if (e.target.closest('button, a')) return; // don't drag on buttons
     e.preventDefault();
     const rect = modal.getBoundingClientRect();
+    // Lock width so text doesn't reflow when right/bottom are cleared
+    modal.style.width = rect.width + 'px';
     _dragState = { startX: e.clientX, startY: e.clientY, origLeft: rect.left, origTop: rect.top };
     modal.style.transition = 'none';
     handle.style.cursor = 'grabbing';
@@ -1382,6 +1386,8 @@ function makeDraggable(modal) {
     if (e.target.closest('button, a')) return;
     const touch = e.touches[0];
     const rect = modal.getBoundingClientRect();
+    // Lock width so text doesn't reflow when right/bottom are cleared
+    modal.style.width = rect.width + 'px';
     _dragState = { startX: touch.clientX, startY: touch.clientY, origLeft: rect.left, origTop: rect.top };
     modal.style.transition = 'none';
 

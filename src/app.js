@@ -242,6 +242,7 @@ async function boot() {
         }
       } else if (screen === 'map') {
         // Map screen → return to welcome without clearing progress
+        dismissTutorial();
         unlockOrientation();
         renderer.abortTransition();
         toggleQuizPanel(false);

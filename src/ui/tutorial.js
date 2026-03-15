@@ -186,7 +186,7 @@ const STEPS = [
     },
     advanceOn: 'share-click',
     removeOverlayOnAction: true,
-    followUp: { message: 'You can share on LinkedIn, X, or Bluesky. You can also download an image of your map to show it off!', advanceOn: 'click' },
+    followUp: { message: 'You can share your map on several social media platforms. You can also download an image of your map to show it off!', advanceOn: 'click' },
   },
   {
     id: 14, title: 'Learn More',
